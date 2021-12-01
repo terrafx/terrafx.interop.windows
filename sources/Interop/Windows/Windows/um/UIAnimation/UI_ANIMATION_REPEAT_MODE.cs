@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='UI_ANIMATION_REPEAT_MODE.xml' path='doc/member[@name="UI_ANIMATION_REPEAT_MODE"]/*' />
 public enum UI_ANIMATION_REPEAT_MODE
 {
+    /// <include file='UI_ANIMATION_REPEAT_MODE.xml' path='doc/member[@name="UI_ANIMATION_REPEAT_MODE.UI_ANIMATION_REPEAT_MODE_NORMAL"]/*' />
     UI_ANIMATION_REPEAT_MODE_NORMAL = 0,
+
+    /// <include file='UI_ANIMATION_REPEAT_MODE.xml' path='doc/member[@name="UI_ANIMATION_REPEAT_MODE.UI_ANIMATION_REPEAT_MODE_ALTERNATE"]/*' />
     UI_ANIMATION_REPEAT_MODE_ALTERNATE = 1,
 }

@@ -5,20 +5,27 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CONSOLE_FONT_INFOEX.xml' path='doc/member[@name="CONSOLE_FONT_INFOEX"]/*' />
 public unsafe partial struct CONSOLE_FONT_INFOEX
 {
+    /// <include file='CONSOLE_FONT_INFOEX.xml' path='doc/member[@name="CONSOLE_FONT_INFOEX.cbSize"]/*' />
     [NativeTypeName("ULONG")]
     public uint cbSize;
 
+    /// <include file='CONSOLE_FONT_INFOEX.xml' path='doc/member[@name="CONSOLE_FONT_INFOEX.nFont"]/*' />
     [NativeTypeName("DWORD")]
     public uint nFont;
 
+    /// <include file='CONSOLE_FONT_INFOEX.xml' path='doc/member[@name="CONSOLE_FONT_INFOEX.dwFontSize"]/*' />
     public COORD dwFontSize;
 
+    /// <include file='CONSOLE_FONT_INFOEX.xml' path='doc/member[@name="CONSOLE_FONT_INFOEX.FontFamily"]/*' />
     public uint FontFamily;
 
+    /// <include file='CONSOLE_FONT_INFOEX.xml' path='doc/member[@name="CONSOLE_FONT_INFOEX.FontWeight"]/*' />
     public uint FontWeight;
 
+    /// <include file='CONSOLE_FONT_INFOEX.xml' path='doc/member[@name="CONSOLE_FONT_INFOEX.FaceName"]/*' />
     [NativeTypeName("WCHAR [32]")]
     public fixed ushort FaceName[32];
 }

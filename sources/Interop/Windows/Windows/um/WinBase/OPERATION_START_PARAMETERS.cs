@@ -7,15 +7,19 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='OPERATION_START_PARAMETERS.xml' path='doc/member[@name="OPERATION_START_PARAMETERS"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public partial struct OPERATION_START_PARAMETERS
 {
+    /// <include file='OPERATION_START_PARAMETERS.xml' path='doc/member[@name="OPERATION_START_PARAMETERS.Version"]/*' />
     [NativeTypeName("ULONG")]
     public uint Version;
 
+    /// <include file='OPERATION_START_PARAMETERS.xml' path='doc/member[@name="OPERATION_START_PARAMETERS.OperationId"]/*' />
     [NativeTypeName("OPERATION_ID")]
     public uint OperationId;
 
+    /// <include file='OPERATION_START_PARAMETERS.xml' path='doc/member[@name="OPERATION_START_PARAMETERS.Flags"]/*' />
     [NativeTypeName("ULONG")]
     public uint Flags;
 }

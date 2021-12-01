@@ -5,12 +5,16 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DISPLAYCONFIG_PATH_INFO.xml' path='doc/member[@name="DISPLAYCONFIG_PATH_INFO"]/*' />
 public partial struct DISPLAYCONFIG_PATH_INFO
 {
+    /// <include file='DISPLAYCONFIG_PATH_INFO.xml' path='doc/member[@name="DISPLAYCONFIG_PATH_INFO.sourceInfo"]/*' />
     public DISPLAYCONFIG_PATH_SOURCE_INFO sourceInfo;
 
+    /// <include file='DISPLAYCONFIG_PATH_INFO.xml' path='doc/member[@name="DISPLAYCONFIG_PATH_INFO.targetInfo"]/*' />
     public DISPLAYCONFIG_PATH_TARGET_INFO targetInfo;
 
+    /// <include file='DISPLAYCONFIG_PATH_INFO.xml' path='doc/member[@name="DISPLAYCONFIG_PATH_INFO.flags"]/*' />
     [NativeTypeName("UINT32")]
     public uint flags;
 }

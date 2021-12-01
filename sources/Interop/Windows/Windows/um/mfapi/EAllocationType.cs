@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='EAllocationType.xml' path='doc/member[@name="EAllocationType"]/*' />
 public enum EAllocationType
 {
+    /// <include file='EAllocationType.xml' path='doc/member[@name="EAllocationType.eAllocationTypeDynamic"]/*' />
     eAllocationTypeDynamic,
+
+    /// <include file='EAllocationType.xml' path='doc/member[@name="EAllocationType.eAllocationTypeRT"]/*' />
     eAllocationTypeRT,
+
+    /// <include file='EAllocationType.xml' path='doc/member[@name="EAllocationType.eAllocationTypePageable"]/*' />
     eAllocationTypePageable,
+
+    /// <include file='EAllocationType.xml' path='doc/member[@name="EAllocationType.eAllocationTypeIgnore"]/*' />
     eAllocationTypeIgnore,
 }

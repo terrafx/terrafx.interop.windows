@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ATTACHMENT_PROMPT.xml' path='doc/member[@name="ATTACHMENT_PROMPT"]/*' />
 public enum ATTACHMENT_PROMPT
 {
+    /// <include file='ATTACHMENT_PROMPT.xml' path='doc/member[@name="ATTACHMENT_PROMPT.ATTACHMENT_PROMPT_NONE"]/*' />
     ATTACHMENT_PROMPT_NONE = 0,
+
+    /// <include file='ATTACHMENT_PROMPT.xml' path='doc/member[@name="ATTACHMENT_PROMPT.ATTACHMENT_PROMPT_SAVE"]/*' />
     ATTACHMENT_PROMPT_SAVE = 0x1,
+
+    /// <include file='ATTACHMENT_PROMPT.xml' path='doc/member[@name="ATTACHMENT_PROMPT.ATTACHMENT_PROMPT_EXEC"]/*' />
     ATTACHMENT_PROMPT_EXEC = 0x2,
+
+    /// <include file='ATTACHMENT_PROMPT.xml' path='doc/member[@name="ATTACHMENT_PROMPT.ATTACHMENT_PROMPT_EXEC_OR_SAVE"]/*' />
     ATTACHMENT_PROMPT_EXEC_OR_SAVE = 0x3,
 }

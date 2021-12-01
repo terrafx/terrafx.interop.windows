@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAppxManifestOptionalPackageInfo.xml' path='doc/member[@name="IAppxManifestOptionalPackageInfo"]/*' />
 [Guid("2634847D-5B5D-4FE5-A243-002FF95EDC7E")]
 [NativeTypeName("struct IAppxManifestOptionalPackageInfo : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IAppxManifestOptionalPackageInfo : IAppxManifestOpt
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IAppxManifestOptionalPackageInfo : IAppxManifestOpt
         return ((delegate* unmanaged<IAppxManifestOptionalPackageInfo*, Guid*, void**, int>)(lpVtbl[0]))((IAppxManifestOptionalPackageInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IAppxManifestOptionalPackageInfo : IAppxManifestOpt
         return ((delegate* unmanaged<IAppxManifestOptionalPackageInfo*, uint>)(lpVtbl[1]))((IAppxManifestOptionalPackageInfo*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IAppxManifestOptionalPackageInfo : IAppxManifestOpt
         return ((delegate* unmanaged<IAppxManifestOptionalPackageInfo*, uint>)(lpVtbl[2]))((IAppxManifestOptionalPackageInfo*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAppxManifestOptionalPackageInfo.xml' path='doc/member[@name="IAppxManifestOptionalPackageInfo.GetIsOptionalPackage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetIsOptionalPackage(BOOL* isOptionalPackage)
@@ -48,6 +53,7 @@ public unsafe partial struct IAppxManifestOptionalPackageInfo : IAppxManifestOpt
         return ((delegate* unmanaged<IAppxManifestOptionalPackageInfo*, BOOL*, int>)(lpVtbl[3]))((IAppxManifestOptionalPackageInfo*)Unsafe.AsPointer(ref this), isOptionalPackage);
     }
 
+    /// <include file='IAppxManifestOptionalPackageInfo.xml' path='doc/member[@name="IAppxManifestOptionalPackageInfo.GetMainPackageName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetMainPackageName([NativeTypeName("LPWSTR *")] ushort** mainPackageName)

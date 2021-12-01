@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DISPLAYCONFIG_TARGET_DEVICE_NAME">
+    <summary>
+      <para>The DISPLAYCONFIG_TARGET_DEVICE_NAME structure contains information about the target.</para>
+    </summary>
+    <remarks>
+      <para>Extended display identification data (EDID) is a set of data that is provided by a display to describe its capabilities to a graphics adapter. EDID data allows a computer to detect the type of monitor that is connected to it. EDID data includes the manufacturer name, the product type, the timings that are supported by the display, the display size, as well as other display characteristics. EDID is defined by a standard published by the Video Electronics Standards Association (VESA).</para>
+      <para>A named device object has a path and name of the form <i>\Device\DeviceName</i>. This is known as the <i>device name</i> of the device object.</para>
+      <para>If an application calls the <see cref="DisplayConfigGetDeviceInfo" /> function to obtain the monitor name and <b>DisplayConfigGetDeviceInfo</b> either cannot get the monitor name or the target is forced without a monitor connected, the string in the <b>monitorFriendlyDeviceName</b> member of the DISPLAYCONFIG_TARGET_DEVICE_NAME structure is a <b>NULL</b> string and none of the bit-field flags in the <see cref="DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS" /> structure are set.</para>
+    </remarks>
+    <seealso cref="DISPLAYCONFIG_DEVICE_INFO_HEADER" />
+    <seealso cref="DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS" />
+    <seealso cref="DISPLAYCONFIG_VIDEO_OUTPUT_TECHNOLOGY" />
+    <seealso cref="DisplayConfigGetDeviceInfo" />
+  </member>
+  <member name="DISPLAYCONFIG_TARGET_DEVICE_NAME.header">
+    <summary>
+      <para>A <see cref="DISPLAYCONFIG_DEVICE_INFO_HEADER" /> structure that contains information about the request for the target device name. The caller should set the <b>type</b> member of DISPLAYCONFIG_DEVICE_INFO_HEADER to DISPLAYCONFIG_DEVICE_INFO_GET_TARGET_NAME and the <b>adapterId</b> and <b>id</b> members of DISPLAYCONFIG_DEVICE_INFO_HEADER to the target for which the caller wants the target device name. The caller should set the <b>size</b> member of DISPLAYCONFIG_DEVICE_INFO_HEADER to at least the size of the DISPLAYCONFIG_TARGET_DEVICE_NAME structure.</para>
+    </summary>
+  </member>
+  <member name="DISPLAYCONFIG_TARGET_DEVICE_NAME.flags">
+    <summary>
+      <para>A <see cref="DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS" /> structure that identifies, in bit-field flags, information about the target.</para>
+    </summary>
+  </member>
+  <member name="DISPLAYCONFIG_TARGET_DEVICE_NAME.outputTechnology">
+    <summary>
+      <para>A value from the <see cref="DISPLAYCONFIG_VIDEO_OUTPUT_TECHNOLOGY" /> enumeration that specifies the target's connector type.</para>
+    </summary>
+  </member>
+  <member name="DISPLAYCONFIG_TARGET_DEVICE_NAME.edidManufactureId">
+    <summary>
+      <para>The manufacture identifier from the monitor extended display identification data (EDID). This member is set only when the <b>edidIdsValid</b> bit-field is set in the <b>flags</b> member.</para>
+    </summary>
+  </member>
+  <member name="DISPLAYCONFIG_TARGET_DEVICE_NAME.edidProductCodeId">
+    <summary>
+      <para>The product code from the monitor EDID. This member is set only when the <b>edidIdsValid</b> bit-field is set in the <b>flags</b> member.</para>
+    </summary>
+  </member>
+  <member name="DISPLAYCONFIG_TARGET_DEVICE_NAME.connectorInstance">
+    <summary>
+      <para>The one-based instance number of this particular target only when the adapter has multiple targets of this type. The connector instance is a consecutive one-based number that is unique within each adapter. If this is the only target of this type on the adapter, this value is zero.</para>
+    </summary>
+  </member>
+  <member name="DISPLAYCONFIG_TARGET_DEVICE_NAME.monitorFriendlyDeviceName">
+    <summary>
+      <para>A NULL-terminated WCHAR string that is the  device name for the monitor. This name can be used with <i>SetupAPI.dll</i> to obtain the device name that is contained in the installation package.</para>
+    </summary>
+  </member>
+  <member name="DISPLAYCONFIG_TARGET_DEVICE_NAME.monitorDevicePath">
+    <summary>
+      <para>A NULL-terminated WCHAR string that is the  path to the device name for the monitor. This path can be used with <i>SetupAPI.dll</i> to obtain the device name that is contained in the installation package.</para>
+    </summary>
+  </member>
+</doc>

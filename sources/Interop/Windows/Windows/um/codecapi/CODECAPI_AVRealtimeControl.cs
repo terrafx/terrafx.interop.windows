@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVRealtimeControl.xml' path='doc/member[@name="CODECAPI_AVRealtimeControl"]/*' />
 [Guid("6F440632-C4AD-4BF7-9E52-456942B454B0")]
 public partial struct CODECAPI_AVRealtimeControl
 {

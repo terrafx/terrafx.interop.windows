@@ -9,28 +9,37 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DVD_TitleAttributes.xml' path='doc/member[@name="DVD_TitleAttributes"]/*' />
 public partial struct DVD_TitleAttributes
 {
+    /// <include file='DVD_TitleAttributes.xml' path='doc/member[@name="DVD_TitleAttributes.Anonymous"]/*' />
     [NativeTypeName("tagDVD_TitleMainAttributes::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/strmif.h:22382:5)")]
     public _Anonymous_e__Union Anonymous;
 
+    /// <include file='DVD_TitleAttributes.xml' path='doc/member[@name="DVD_TitleAttributes.VideoAttributes"]/*' />
     public DVD_VideoAttributes VideoAttributes;
 
+    /// <include file='DVD_TitleAttributes.xml' path='doc/member[@name="DVD_TitleAttributes.ulNumberOfAudioStreams"]/*' />
     [NativeTypeName("ULONG")]
     public uint ulNumberOfAudioStreams;
 
+    /// <include file='DVD_TitleAttributes.xml' path='doc/member[@name="DVD_TitleAttributes.AudioAttributes"]/*' />
     [NativeTypeName("DVD_AudioAttributes [8]")]
     public _AudioAttributes_e__FixedBuffer AudioAttributes;
 
+    /// <include file='DVD_TitleAttributes.xml' path='doc/member[@name="DVD_TitleAttributes.MultichannelAudioAttributes"]/*' />
     [NativeTypeName("DVD_MultichannelAudioAttributes [8]")]
     public _MultichannelAudioAttributes_e__FixedBuffer MultichannelAudioAttributes;
 
+    /// <include file='DVD_TitleAttributes.xml' path='doc/member[@name="DVD_TitleAttributes.ulNumberOfSubpictureStreams"]/*' />
     [NativeTypeName("ULONG")]
     public uint ulNumberOfSubpictureStreams;
 
+    /// <include file='DVD_TitleAttributes.xml' path='doc/member[@name="DVD_TitleAttributes.SubpictureAttributes"]/*' />
     [NativeTypeName("DVD_SubpictureAttributes [32]")]
     public _SubpictureAttributes_e__FixedBuffer SubpictureAttributes;
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.AppMode"]/*' />
     public ref DVD_TITLE_APPMODE AppMode
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -40,6 +49,7 @@ public partial struct DVD_TitleAttributes
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.TitleLength"]/*' />
     public ref DVD_HMSF_TIMECODE TitleLength
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -49,16 +59,20 @@ public partial struct DVD_TitleAttributes
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public partial struct _Anonymous_e__Union
     {
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.AppMode"]/*' />
         [FieldOffset(0)]
         public DVD_TITLE_APPMODE AppMode;
 
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.TitleLength"]/*' />
         [FieldOffset(0)]
         public DVD_HMSF_TIMECODE TitleLength;
     }
 
+    /// <include file='_AudioAttributes_e__FixedBuffer.xml' path='doc/member[@name="_AudioAttributes_e__FixedBuffer"]/*' />
     public partial struct _AudioAttributes_e__FixedBuffer
     {
         public DVD_AudioAttributes e0;
@@ -83,6 +97,7 @@ public partial struct DVD_TitleAttributes
         public Span<DVD_AudioAttributes> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 8);
     }
 
+    /// <include file='_MultichannelAudioAttributes_e__FixedBuffer.xml' path='doc/member[@name="_MultichannelAudioAttributes_e__FixedBuffer"]/*' />
     public partial struct _MultichannelAudioAttributes_e__FixedBuffer
     {
         public DVD_MultichannelAudioAttributes e0;
@@ -107,6 +122,7 @@ public partial struct DVD_TitleAttributes
         public Span<DVD_MultichannelAudioAttributes> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 8);
     }
 
+    /// <include file='_SubpictureAttributes_e__FixedBuffer.xml' path='doc/member[@name="_SubpictureAttributes_e__FixedBuffer"]/*' />
     public partial struct _SubpictureAttributes_e__FixedBuffer
     {
         public DVD_SubpictureAttributes e0;

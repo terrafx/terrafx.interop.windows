@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IColumnProvider.GetColumnInfo">
+    <summary>
+      <para>Requests information about a column.</para>
+    </summary>
+    <param name="dwIndex">
+      <para>Type: <b>DWORD</b></para>
+      <para>The column's zero-based index. It is an arbitrary value that is used to enumerate columns.</para>
+    </param>
+    <param name="psci">
+      <para>Type: <b><see cref="SHCOLUMNINFO" />*</b></para>
+      <para>A pointer to an <see cref="SHCOLUMNINFO" /> structure to hold the column information.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns a COM error value to indicate that the request was unsuccessful or one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Request successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>Column index out of range.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method is called to assign an index to the column and to ask for details on what kind of information the column will contain.</para>
+    </remarks>
+    <seealso cref="IColumnProvider" />
+  </member>
+  <member name="IColumnProvider.GetItemData">
+    <summary>
+      <para>Requests column data for a specified file.</para>
+    </summary>
+    <param name="pscid">
+      <para>Type: <b>LPCSHCOLUMNID</b></para>
+      <para>An <a href="https://docs.microsoft.com//windows/desktop/shell/objects">SHCOLUMNID</a> structure that identifies the column.</para>
+    </param>
+    <param name="pscd">
+      <para>Type: <b>LPCSHCOLUMNDATA</b></para>
+      <para>An <see cref="SHCOLUMNDATA" /> structure that specifies the file.</para>
+    </param>
+    <param name="pvarData">
+      <para>Type: <b>VARIANT*</b></para>
+      <para>A pointer to a <b>VARIANT</b> with the data for the file specified by <i>pscd</i> that belongs in the column specified by <i>pscid</i>. Set this value if the file is a member of the class supported by the column provider.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_OK if file data is returned, S_FALSE if the file is not supported by the column provider and no data is returned, or a COM error value otherwise.</para>
+    </returns>
+    <remarks>
+      <para>This method is called to retrieve the data for a file to be displayed in the specified column. It should be thread-safe.</para>
+      <para>This method is called for every file that Windows Explorer displays, even though many of them will not be supported by a particular column provider. To improve performance, first check the <b>pwszExt</b> member of the structure pointed to by <i>pscd</i> to see if it has a file name extension that is supported by the column provider. If not, avoid unnecessary processing by immediately returning S_FALSE.</para>
+    </remarks>
+  </member>
+  <member name="IColumnProvider.Initialize">
+    <summary>
+      <para>Initializes an <see cref="IColumnProvider" /> interface.</para>
+    </summary>
+    <param name="psci">
+      <para>Type: <b>LPCSHCOLUMNINIT</b></para>
+      <para>An <see cref="SHCOLUMNINIT" /> structure with initialization information, including the folder whose contents are to be displayed.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IColumnProvider">
+    <summary>
+      <para>Exposes methods that enable the addition of custom columns in the Windows Explorer Details view.</para>
+      <para>
+        <b>Note</b>  Support for <b>IColumnProvider</b> has been removed as of Windows Vista. The Windows property system is used in its place. See <a href="https://docs.microsoft.com//windows/desktop/properties/windows-properties-system">Windows Property System</a> for conceptual materials that explain the use of the new system.</para>
+    </summary>
+    <remarks>
+      <para>The Windows Explorer Details view typically displays several standard columns. Each column lists information, such as the file size or type, for each file in the current folder. There can also be a number of columns that the user can choose to display. When the user right-clicks one of the column headers, a list of the available columns is displayed in a dialog box. By creating a column provider object that exports the <b>IColumnProvider</b> interface, you can add custom columns to that dialog box for display by Windows Explorer. For example, a collection of files that contain music could use a column provider to display columns listing the artist and piece contained by each file.</para>
+      <para>A column provider is a global object that is called every time Windows Explorer displays the Details view. Windows Explorer queries all registered column providers for their column characteristics. If the user has selected one of the column provider's columns, Windows Explorer queries the column provider for the associated data for each file in the folder. It then displays all the selected columns.</para>
+      <para>Typically, column providers are used to display one or more custom columns for a particular <a href="https://docs.microsoft.com//windows/desktop/shell/fa-file-types">file type</a>. When a column provider receives a request for data, it provides it if the file is a member of its supported type. Otherwise, it ignores the request by returning S_FALSE.</para>
+      <para>Columns are identified by an <a href="https://docs.microsoft.com//windows/desktop/shell/objects">SHCOLUMNID</a> structure that contains an <b>fmtid</b>/<b>pid</b> pair. If possible, use existing <b>fmtid</b>s and <b>pid</b>s. If a folder contains files of more than one file type, the data from different types can be merged into the same column. For instance, the Author <b>pid</b> from the summary information property set can be used for a wide variety of purposes. If you use a custom <b>SHCOLUMNID</b> structure, the column will display data only for those files that are members of the supported type. If the folder contains other files, their entries will be blank.</para>
+      <para>Implement an object that exports this interface when you want to have one or more custom columns displayed in the Windows Explorer Details view. Windows Explorer calls the interface methods to request the information it needs to display the column. The procedure used by Windows Explorer is as follows:</para>
+      <list type="number">
+        <item>
+          <description>Call <see cref="IColumnProvider.Initialize" /> to specify the folder to display.</description>
+        </item>
+        <item>
+          <description>Call <see cref="IColumnProvider.GetColumnInfo" /> to retrieve the column's characteristics.</description>
+        </item>
+        <item>
+          <description>If the column has been selected by the user, call <see cref="IColumnProvider.GetItemData" /> for each file in the folder to retrieve the data that belongs in the file's column entry.</description>
+        </item>
+      </list>
+      <para>In addition to normal Component Object Model (COM) registration, the column provider object must also be registered with Windows Explorer. To do so, add a subkey named with the string form of the object's GUID to this key.</para>
+      <code>
+        <b>HKEY_CLASSES_ROOT</b>
+        <b>Folder</b>
+        <b>shellex</b>
+        <b>ColumnHandlers</b>
+      </code>
+      <para>This interface is called by Windows Explorer. It is not typically used by applications.</para>
+    </remarks>
+  </member>
+</doc>

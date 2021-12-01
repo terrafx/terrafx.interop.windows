@@ -5,11 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ABC.xml' path='doc/member[@name="ABC"]/*' />
 public partial struct ABC
 {
+    /// <include file='ABC.xml' path='doc/member[@name="ABC.abcA"]/*' />
     public int abcA;
 
+    /// <include file='ABC.xml' path='doc/member[@name="ABC.abcB"]/*' />
     public uint abcB;
 
+    /// <include file='ABC.xml' path='doc/member[@name="ABC.abcC"]/*' />
     public int abcC;
 }

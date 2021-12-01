@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IKsControl.xml' path='doc/member[@name="IKsControl"]/*' />
 [Guid("28F54685-06FD-11D2-B27A-00A0C9223196")]
 [NativeTypeName("struct IKsControl : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IKsControl : IKsControl.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IKsControl : IKsControl.Interface
         return ((delegate* unmanaged<IKsControl*, Guid*, void**, int>)(lpVtbl[0]))((IKsControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IKsControl : IKsControl.Interface
         return ((delegate* unmanaged<IKsControl*, uint>)(lpVtbl[1]))((IKsControl*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IKsControl : IKsControl.Interface
         return ((delegate* unmanaged<IKsControl*, uint>)(lpVtbl[2]))((IKsControl*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IKsControl.xml' path='doc/member[@name="IKsControl.KsProperty"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT KsProperty([NativeTypeName("PKSPROPERTY")] KSIDENTIFIER* Property, [NativeTypeName("ULONG")] uint PropertyLength, void* PropertyData, [NativeTypeName("ULONG")] uint DataLength, [NativeTypeName("ULONG *")] uint* BytesReturned)
@@ -46,6 +51,7 @@ public unsafe partial struct IKsControl : IKsControl.Interface
         return ((delegate* unmanaged<IKsControl*, KSIDENTIFIER*, uint, void*, uint, uint*, int>)(lpVtbl[3]))((IKsControl*)Unsafe.AsPointer(ref this), Property, PropertyLength, PropertyData, DataLength, BytesReturned);
     }
 
+    /// <include file='IKsControl.xml' path='doc/member[@name="IKsControl.KsMethod"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT KsMethod([NativeTypeName("PKSMETHOD")] KSIDENTIFIER* Method, [NativeTypeName("ULONG")] uint MethodLength, void* MethodData, [NativeTypeName("ULONG")] uint DataLength, [NativeTypeName("ULONG *")] uint* BytesReturned)
@@ -53,6 +59,7 @@ public unsafe partial struct IKsControl : IKsControl.Interface
         return ((delegate* unmanaged<IKsControl*, KSIDENTIFIER*, uint, void*, uint, uint*, int>)(lpVtbl[4]))((IKsControl*)Unsafe.AsPointer(ref this), Method, MethodLength, MethodData, DataLength, BytesReturned);
     }
 
+    /// <include file='IKsControl.xml' path='doc/member[@name="IKsControl.KsEvent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT KsEvent([NativeTypeName("PKSEVENT")] KSIDENTIFIER* Event, [NativeTypeName("ULONG")] uint EventLength, void* EventData, [NativeTypeName("ULONG")] uint DataLength, [NativeTypeName("ULONG *")] uint* BytesReturned)

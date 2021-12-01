@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="VfwCompressDialogs">
+    <summary>
+      <para>Specifies a dialog box that might exist in a Video for Windows compression (codec) driver.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-enumerated-types">DirectShow Enumerated Types</seealso>
+    <seealso cref="IAMVfwCaptureDialogs Interface" />
+  </member>
+  <member name="VfwCompressDialogs.VfwCompressDialog_Config">
+    <summary>
+      <para>Configure dialog box.</para>
+    </summary>
+  </member>
+  <member name="VfwCompressDialogs.VfwCompressDialog_About">
+    <summary>
+      <para>About dialog box.</para>
+    </summary>
+  </member>
+  <member name="VfwCompressDialogs.VfwCompressDialog_QueryConfig">
+    <summary>
+      <para>Specifies whether the Configure dialog box is available.</para>
+    </summary>
+  </member>
+  <member name="VfwCompressDialogs.VfwCompressDialog_QueryAbout">
+    <summary>
+      <para>Specifies whether the About dialog box is available.</para>
+    </summary>
+  </member>
+</doc>

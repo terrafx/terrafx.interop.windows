@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAnchor.xml' path='doc/member[@name="IAnchor"]/*' />
 [Guid("0FEB7E34-5A60-4356-8EF7-ABDEC2FF7CF8")]
 [NativeTypeName("struct IAnchor : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IAnchor : IAnchor.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IAnchor : IAnchor.Interface
         return ((delegate* unmanaged<IAnchor*, Guid*, void**, int>)(lpVtbl[0]))((IAnchor*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IAnchor : IAnchor.Interface
         return ((delegate* unmanaged<IAnchor*, uint>)(lpVtbl[1]))((IAnchor*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IAnchor : IAnchor.Interface
         return ((delegate* unmanaged<IAnchor*, uint>)(lpVtbl[2]))((IAnchor*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAnchor.xml' path='doc/member[@name="IAnchor.SetGravity"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetGravity(TsGravity gravity)
@@ -46,6 +51,7 @@ public unsafe partial struct IAnchor : IAnchor.Interface
         return ((delegate* unmanaged<IAnchor*, TsGravity, int>)(lpVtbl[3]))((IAnchor*)Unsafe.AsPointer(ref this), gravity);
     }
 
+    /// <include file='IAnchor.xml' path='doc/member[@name="IAnchor.GetGravity"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetGravity(TsGravity* pgravity)
@@ -53,6 +59,7 @@ public unsafe partial struct IAnchor : IAnchor.Interface
         return ((delegate* unmanaged<IAnchor*, TsGravity*, int>)(lpVtbl[4]))((IAnchor*)Unsafe.AsPointer(ref this), pgravity);
     }
 
+    /// <include file='IAnchor.xml' path='doc/member[@name="IAnchor.IsEqual"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT IsEqual(IAnchor* paWith, BOOL* pfEqual)
@@ -60,6 +67,7 @@ public unsafe partial struct IAnchor : IAnchor.Interface
         return ((delegate* unmanaged<IAnchor*, IAnchor*, BOOL*, int>)(lpVtbl[5]))((IAnchor*)Unsafe.AsPointer(ref this), paWith, pfEqual);
     }
 
+    /// <include file='IAnchor.xml' path='doc/member[@name="IAnchor.Compare"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Compare(IAnchor* paWith, [NativeTypeName("LONG *")] int* plResult)
@@ -67,6 +75,7 @@ public unsafe partial struct IAnchor : IAnchor.Interface
         return ((delegate* unmanaged<IAnchor*, IAnchor*, int*, int>)(lpVtbl[6]))((IAnchor*)Unsafe.AsPointer(ref this), paWith, plResult);
     }
 
+    /// <include file='IAnchor.xml' path='doc/member[@name="IAnchor.Shift"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT Shift([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LONG")] int cchReq, [NativeTypeName("LONG *")] int* pcch, IAnchor* paHaltAnchor)
@@ -74,6 +83,7 @@ public unsafe partial struct IAnchor : IAnchor.Interface
         return ((delegate* unmanaged<IAnchor*, uint, int, int*, IAnchor*, int>)(lpVtbl[7]))((IAnchor*)Unsafe.AsPointer(ref this), dwFlags, cchReq, pcch, paHaltAnchor);
     }
 
+    /// <include file='IAnchor.xml' path='doc/member[@name="IAnchor.ShiftTo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT ShiftTo(IAnchor* paSite)
@@ -81,6 +91,7 @@ public unsafe partial struct IAnchor : IAnchor.Interface
         return ((delegate* unmanaged<IAnchor*, IAnchor*, int>)(lpVtbl[8]))((IAnchor*)Unsafe.AsPointer(ref this), paSite);
     }
 
+    /// <include file='IAnchor.xml' path='doc/member[@name="IAnchor.ShiftRegion"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT ShiftRegion([NativeTypeName("DWORD")] uint dwFlags, TsShiftDir dir, BOOL* pfNoRegion)
@@ -88,6 +99,7 @@ public unsafe partial struct IAnchor : IAnchor.Interface
         return ((delegate* unmanaged<IAnchor*, uint, TsShiftDir, BOOL*, int>)(lpVtbl[9]))((IAnchor*)Unsafe.AsPointer(ref this), dwFlags, dir, pfNoRegion);
     }
 
+    /// <include file='IAnchor.xml' path='doc/member[@name="IAnchor.SetChangeHistoryMask"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT SetChangeHistoryMask([NativeTypeName("DWORD")] uint dwMask)
@@ -95,6 +107,7 @@ public unsafe partial struct IAnchor : IAnchor.Interface
         return ((delegate* unmanaged<IAnchor*, uint, int>)(lpVtbl[10]))((IAnchor*)Unsafe.AsPointer(ref this), dwMask);
     }
 
+    /// <include file='IAnchor.xml' path='doc/member[@name="IAnchor.GetChangeHistory"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT GetChangeHistory([NativeTypeName("DWORD *")] uint* pdwHistory)
@@ -102,6 +115,7 @@ public unsafe partial struct IAnchor : IAnchor.Interface
         return ((delegate* unmanaged<IAnchor*, uint*, int>)(lpVtbl[11]))((IAnchor*)Unsafe.AsPointer(ref this), pdwHistory);
     }
 
+    /// <include file='IAnchor.xml' path='doc/member[@name="IAnchor.ClearChangeHistory"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT ClearChangeHistory()
@@ -109,6 +123,7 @@ public unsafe partial struct IAnchor : IAnchor.Interface
         return ((delegate* unmanaged<IAnchor*, int>)(lpVtbl[12]))((IAnchor*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAnchor.xml' path='doc/member[@name="IAnchor.Clone"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT Clone(IAnchor** ppaClone)

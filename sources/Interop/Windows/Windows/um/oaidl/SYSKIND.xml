@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SYSKIND">
+    <summary>
+      <para>Identifies the target operating system platform.</para>
+    </summary>
+  </member>
+  <member name="SYSKIND.SYS_WIN16">
+    <summary>
+      <para>The target operating system for the type library is 16-bit Windows. By default, data members are packed.</para>
+    </summary>
+  </member>
+  <member name="SYSKIND.SYS_WIN32">
+    <summary>
+      <para>The target operating system for the type library is 32-bit Windows. By default, data members are naturally aligned (for example, 2-byte integers are aligned on even-byte boundaries; 4-byte integers are aligned on quad-word boundaries, and so on).</para>
+    </summary>
+  </member>
+  <member name="SYSKIND.SYS_MAC">
+    <summary>
+      <para>The target operating system for the type library is Apple Macintosh. By default, all data members are aligned on even-byte boundaries.</para>
+    </summary>
+  </member>
+  <member name="SYSKIND.SYS_WIN64">
+    <summary>
+      <para>The target operating system for the type library is 64-bit Windows.</para>
+    </summary>
+  </member>
+</doc>

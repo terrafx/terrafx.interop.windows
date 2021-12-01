@@ -5,17 +5,22 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='FILE_FS_PERSISTENT_VOLUME_INFORMATION.xml' path='doc/member[@name="FILE_FS_PERSISTENT_VOLUME_INFORMATION"]/*' />
 public partial struct FILE_FS_PERSISTENT_VOLUME_INFORMATION
 {
+    /// <include file='FILE_FS_PERSISTENT_VOLUME_INFORMATION.xml' path='doc/member[@name="FILE_FS_PERSISTENT_VOLUME_INFORMATION.VolumeFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint VolumeFlags;
 
+    /// <include file='FILE_FS_PERSISTENT_VOLUME_INFORMATION.xml' path='doc/member[@name="FILE_FS_PERSISTENT_VOLUME_INFORMATION.FlagMask"]/*' />
     [NativeTypeName("DWORD")]
     public uint FlagMask;
 
+    /// <include file='FILE_FS_PERSISTENT_VOLUME_INFORMATION.xml' path='doc/member[@name="FILE_FS_PERSISTENT_VOLUME_INFORMATION.Version"]/*' />
     [NativeTypeName("DWORD")]
     public uint Version;
 
+    /// <include file='FILE_FS_PERSISTENT_VOLUME_INFORMATION.xml' path='doc/member[@name="FILE_FS_PERSISTENT_VOLUME_INFORMATION.Reserved"]/*' />
     [NativeTypeName("DWORD")]
     public uint Reserved;
 }

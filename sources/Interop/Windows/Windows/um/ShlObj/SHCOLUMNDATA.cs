@@ -5,20 +5,26 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SHCOLUMNDATA.xml' path='doc/member[@name="SHCOLUMNDATA"]/*' />
 public unsafe partial struct SHCOLUMNDATA
 {
+    /// <include file='SHCOLUMNDATA.xml' path='doc/member[@name="SHCOLUMNDATA.dwFlags"]/*' />
     [NativeTypeName("ULONG")]
     public uint dwFlags;
 
+    /// <include file='SHCOLUMNDATA.xml' path='doc/member[@name="SHCOLUMNDATA.dwFileAttributes"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFileAttributes;
 
+    /// <include file='SHCOLUMNDATA.xml' path='doc/member[@name="SHCOLUMNDATA.dwReserved"]/*' />
     [NativeTypeName("ULONG")]
     public uint dwReserved;
 
+    /// <include file='SHCOLUMNDATA.xml' path='doc/member[@name="SHCOLUMNDATA.pwszExt"]/*' />
     [NativeTypeName("WCHAR *")]
     public ushort* pwszExt;
 
+    /// <include file='SHCOLUMNDATA.xml' path='doc/member[@name="SHCOLUMNDATA.wszFile"]/*' />
     [NativeTypeName("WCHAR [260]")]
     public fixed ushort wszFile[260];
 }

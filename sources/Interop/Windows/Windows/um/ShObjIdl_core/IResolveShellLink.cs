@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IResolveShellLink.xml' path='doc/member[@name="IResolveShellLink"]/*' />
 [Guid("5CD52983-9449-11D2-963A-00C04F79ADF0")]
 [NativeTypeName("struct IResolveShellLink : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IResolveShellLink : IResolveShellLink.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IResolveShellLink : IResolveShellLink.Interface
         return ((delegate* unmanaged<IResolveShellLink*, Guid*, void**, int>)(lpVtbl[0]))((IResolveShellLink*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IResolveShellLink : IResolveShellLink.Interface
         return ((delegate* unmanaged<IResolveShellLink*, uint>)(lpVtbl[1]))((IResolveShellLink*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IResolveShellLink : IResolveShellLink.Interface
         return ((delegate* unmanaged<IResolveShellLink*, uint>)(lpVtbl[2]))((IResolveShellLink*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IResolveShellLink.xml' path='doc/member[@name="IResolveShellLink.ResolveShellLink"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT ResolveShellLink(IUnknown* punkLink, HWND hwnd, [NativeTypeName("DWORD")] uint fFlags)

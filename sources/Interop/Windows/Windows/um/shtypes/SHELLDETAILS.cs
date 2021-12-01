@@ -7,12 +7,16 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SHELLDETAILS.xml' path='doc/member[@name="SHELLDETAILS"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct SHELLDETAILS
 {
+    /// <include file='SHELLDETAILS.xml' path='doc/member[@name="SHELLDETAILS.fmt"]/*' />
     public int fmt;
 
+    /// <include file='SHELLDETAILS.xml' path='doc/member[@name="SHELLDETAILS.cxChar"]/*' />
     public int cxChar;
 
+    /// <include file='SHELLDETAILS.xml' path='doc/member[@name="SHELLDETAILS.str"]/*' />
     public STRRET str;
 }

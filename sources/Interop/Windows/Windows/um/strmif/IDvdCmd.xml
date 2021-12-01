@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDvdCmd.WaitForEnd">
+    <summary>
+      <para>The <code>WaitForEnd</code> method blocks the DVD Navigator until the command associated with this object completes or is canceled.</para>
+    </summary>
+    <returns>
+      <para>Returns S_OK if successful or an <b>HRESULT</b> error code otherwise.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-applications">DVD Applications</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IDvdCmd Interface" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/synchronizing-dvd-commands">Synchronizing DVD Commands</seealso>
+  </member>
+  <member name="IDvdCmd.WaitForStart">
+    <summary>
+      <para>The <code>WaitForStart</code> method blocks the DVD Navigator until the command associated with this object begins.</para>
+    </summary>
+    <returns>
+      <para>Returns S_OK if successful or an <b>HRESULT</b> error code otherwise.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-applications">DVD Applications</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IDvdCmd Interface" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/synchronizing-dvd-commands">Synchronizing DVD Commands</seealso>
+  </member>
+  <member name="IDvdCmd">
+    <summary>
+      <para>The <code>IDvdCmd</code> interface waits for DVD commands to start or end.</para>
+      <para>The DVD Navigator creates synchronization objects that expose this interface. The application can use the object to block the DVD Navigator until the command starts or completes. For more information on using this interface, see <a href="https://docs.microsoft.com//windows/desktop/DirectShow/synchronizing-dvd-commands">Synchronizing DVD Commands</a>. (This topic also discusses other ways to synchronize commands without using synchronization objects.)</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-applications">DVD Applications</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/synchronizing-dvd-commands">Synchronizing DVD Commands</seealso>
+  </member>
+</doc>

@@ -5,33 +5,44 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='EXTLOGFONTA.xml' path='doc/member[@name="EXTLOGFONTA"]/*' />
 public unsafe partial struct EXTLOGFONTA
 {
+    /// <include file='EXTLOGFONTA.xml' path='doc/member[@name="EXTLOGFONTA.elfLogFont"]/*' />
     public LOGFONTA elfLogFont;
 
+    /// <include file='EXTLOGFONTA.xml' path='doc/member[@name="EXTLOGFONTA.elfFullName"]/*' />
     [NativeTypeName("BYTE [64]")]
     public fixed byte elfFullName[64];
 
+    /// <include file='EXTLOGFONTA.xml' path='doc/member[@name="EXTLOGFONTA.elfStyle"]/*' />
     [NativeTypeName("BYTE [32]")]
     public fixed byte elfStyle[32];
 
+    /// <include file='EXTLOGFONTA.xml' path='doc/member[@name="EXTLOGFONTA.elfVersion"]/*' />
     [NativeTypeName("DWORD")]
     public uint elfVersion;
 
+    /// <include file='EXTLOGFONTA.xml' path='doc/member[@name="EXTLOGFONTA.elfStyleSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint elfStyleSize;
 
+    /// <include file='EXTLOGFONTA.xml' path='doc/member[@name="EXTLOGFONTA.elfMatch"]/*' />
     [NativeTypeName("DWORD")]
     public uint elfMatch;
 
+    /// <include file='EXTLOGFONTA.xml' path='doc/member[@name="EXTLOGFONTA.elfReserved"]/*' />
     [NativeTypeName("DWORD")]
     public uint elfReserved;
 
+    /// <include file='EXTLOGFONTA.xml' path='doc/member[@name="EXTLOGFONTA.elfVendorId"]/*' />
     [NativeTypeName("BYTE [4]")]
     public fixed byte elfVendorId[4];
 
+    /// <include file='EXTLOGFONTA.xml' path='doc/member[@name="EXTLOGFONTA.elfCulture"]/*' />
     [NativeTypeName("DWORD")]
     public uint elfCulture;
 
+    /// <include file='EXTLOGFONTA.xml' path='doc/member[@name="EXTLOGFONTA.elfPanose"]/*' />
     public PANOSE elfPanose;
 }

@@ -8,17 +8,21 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DEVICE_LB_PROVISIONING_DESCRIPTOR.xml' path='doc/member[@name="DEVICE_LB_PROVISIONING_DESCRIPTOR"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public unsafe partial struct DEVICE_LB_PROVISIONING_DESCRIPTOR
 {
+    /// <include file='DEVICE_LB_PROVISIONING_DESCRIPTOR.xml' path='doc/member[@name="DEVICE_LB_PROVISIONING_DESCRIPTOR.Version"]/*' />
     [NativeTypeName("DWORD")]
     public uint Version;
 
+    /// <include file='DEVICE_LB_PROVISIONING_DESCRIPTOR.xml' path='doc/member[@name="DEVICE_LB_PROVISIONING_DESCRIPTOR.Size"]/*' />
     [NativeTypeName("DWORD")]
     public uint Size;
 
     public byte _bitfield;
 
+    /// <include file='DEVICE_LB_PROVISIONING_DESCRIPTOR.xml' path='doc/member[@name="DEVICE_LB_PROVISIONING_DESCRIPTOR.ThinProvisioningEnabled"]/*' />
     [NativeTypeName("byte : 1")]
     public byte ThinProvisioningEnabled
     {
@@ -35,6 +39,7 @@ public unsafe partial struct DEVICE_LB_PROVISIONING_DESCRIPTOR
         }
     }
 
+    /// <include file='DEVICE_LB_PROVISIONING_DESCRIPTOR.xml' path='doc/member[@name="DEVICE_LB_PROVISIONING_DESCRIPTOR.ThinProvisioningReadZeros"]/*' />
     [NativeTypeName("byte : 1")]
     public byte ThinProvisioningReadZeros
     {
@@ -51,6 +56,7 @@ public unsafe partial struct DEVICE_LB_PROVISIONING_DESCRIPTOR
         }
     }
 
+    /// <include file='DEVICE_LB_PROVISIONING_DESCRIPTOR.xml' path='doc/member[@name="DEVICE_LB_PROVISIONING_DESCRIPTOR.AnchorSupported"]/*' />
     [NativeTypeName("byte : 3")]
     public byte AnchorSupported
     {
@@ -67,6 +73,7 @@ public unsafe partial struct DEVICE_LB_PROVISIONING_DESCRIPTOR
         }
     }
 
+    /// <include file='DEVICE_LB_PROVISIONING_DESCRIPTOR.xml' path='doc/member[@name="DEVICE_LB_PROVISIONING_DESCRIPTOR.UnmapGranularityAlignmentValid"]/*' />
     [NativeTypeName("byte : 1")]
     public byte UnmapGranularityAlignmentValid
     {
@@ -83,6 +90,7 @@ public unsafe partial struct DEVICE_LB_PROVISIONING_DESCRIPTOR
         }
     }
 
+    /// <include file='DEVICE_LB_PROVISIONING_DESCRIPTOR.xml' path='doc/member[@name="DEVICE_LB_PROVISIONING_DESCRIPTOR.GetFreeSpaceSupported"]/*' />
     [NativeTypeName("byte : 1")]
     public byte GetFreeSpaceSupported
     {
@@ -99,6 +107,7 @@ public unsafe partial struct DEVICE_LB_PROVISIONING_DESCRIPTOR
         }
     }
 
+    /// <include file='DEVICE_LB_PROVISIONING_DESCRIPTOR.xml' path='doc/member[@name="DEVICE_LB_PROVISIONING_DESCRIPTOR.MapSupported"]/*' />
     [NativeTypeName("byte : 1")]
     public byte MapSupported
     {
@@ -115,18 +124,23 @@ public unsafe partial struct DEVICE_LB_PROVISIONING_DESCRIPTOR
         }
     }
 
+    /// <include file='DEVICE_LB_PROVISIONING_DESCRIPTOR.xml' path='doc/member[@name="DEVICE_LB_PROVISIONING_DESCRIPTOR.Reserved1"]/*' />
     [NativeTypeName("BYTE [7]")]
     public fixed byte Reserved1[7];
 
+    /// <include file='DEVICE_LB_PROVISIONING_DESCRIPTOR.xml' path='doc/member[@name="DEVICE_LB_PROVISIONING_DESCRIPTOR.OptimalUnmapGranularity"]/*' />
     [NativeTypeName("DWORDLONG")]
     public ulong OptimalUnmapGranularity;
 
+    /// <include file='DEVICE_LB_PROVISIONING_DESCRIPTOR.xml' path='doc/member[@name="DEVICE_LB_PROVISIONING_DESCRIPTOR.UnmapGranularityAlignment"]/*' />
     [NativeTypeName("DWORDLONG")]
     public ulong UnmapGranularityAlignment;
 
+    /// <include file='DEVICE_LB_PROVISIONING_DESCRIPTOR.xml' path='doc/member[@name="DEVICE_LB_PROVISIONING_DESCRIPTOR.MaxUnmapLbaCount"]/*' />
     [NativeTypeName("DWORD")]
     public uint MaxUnmapLbaCount;
 
+    /// <include file='DEVICE_LB_PROVISIONING_DESCRIPTOR.xml' path='doc/member[@name="DEVICE_LB_PROVISIONING_DESCRIPTOR.MaxUnmapBlockDescriptorCount"]/*' />
     [NativeTypeName("DWORD")]
     public uint MaxUnmapBlockDescriptorCount;
 }

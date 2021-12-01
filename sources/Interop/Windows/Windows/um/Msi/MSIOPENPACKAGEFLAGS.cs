@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MSIOPENPACKAGEFLAGS.xml' path='doc/member[@name="MSIOPENPACKAGEFLAGS"]/*' />
 public enum MSIOPENPACKAGEFLAGS
 {
+    /// <include file='MSIOPENPACKAGEFLAGS.xml' path='doc/member[@name="MSIOPENPACKAGEFLAGS.MSIOPENPACKAGEFLAGS_IGNOREMACHINESTATE"]/*' />
     MSIOPENPACKAGEFLAGS_IGNOREMACHINESTATE = 0x00000001,
 }

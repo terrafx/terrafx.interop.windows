@@ -5,8 +5,10 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ENCLAVE_LOAD_DATA_VBS_BASIC.xml' path='doc/member[@name="ENCLAVE_LOAD_DATA_VBS_BASIC"]/*' />
 public partial struct ENCLAVE_LOAD_DATA_VBS_BASIC
 {
+    /// <include file='ENCLAVE_LOAD_DATA_VBS_BASIC.xml' path='doc/member[@name="ENCLAVE_LOAD_DATA_VBS_BASIC.PageType"]/*' />
     [NativeTypeName("DWORD")]
     public uint PageType;
 }

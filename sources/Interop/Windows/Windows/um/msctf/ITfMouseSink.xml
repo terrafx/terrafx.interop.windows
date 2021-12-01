@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ITfMouseSink.OnMouseEvent">
+    <summary>
+      <para>Called when a mouse event occurs over a range of text.</para>
+    </summary>
+    <param name="uEdge">
+      <para>Contains the offset, in characters, of the mouse position from the start of the range of text. For more information, see the Remarks section.</para>
+    </param>
+    <param name="uQuadrant">
+      <para>Contains the zero-based quadrant index, relative to the edge, that the mouse position lies in. For more information, see the Remarks section.</para>
+    </param>
+    <param name="dwBtnStatus">
+      <para>Indicates the mouse button state at the time of the event. See the <i>wParam</i> parameter of the <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-mousemove">WM_MOUSEMOVE</a> message for possible values.</para>
+    </param>
+    <param name="pfEaten">
+      <para>Pointer to a BOOL that, on exit, indicates if the mouse event was handled. If this value receives <b>TRUE</b>, the mouse event was handled. If this value is <b>FALSE</b>, the mouse event was not handled.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The caller should translate double-click events into multiple mouse button down events. This enables a text service to detect double-click events even if the context window does not support double-clicks.</para>
+      <para>
+        <i>uEdge</i> contains the offset, in characters, of the mouse position from the start of the text range. The mouse position is always rounded to the closest edge. Each edge is divided into four equal quadrants with two quadrants preceding the edge and two quadrants following the edge. <i>uQuadrant</i> contains the zero-based quadrant index of the mouse position. In the figure below, point "X" is in quadrant 2 of edge 1 and point "Y" is in quadrant 1 of edge 3.</para>
+      <para>
+        <img alt="Quadrant relationship to edge of a range of text" src="https://docs.microsoft.com/windows/win32/api/msctf/images/mousedge.gif" />
+      </para>
+    </remarks>
+    <seealso cref="ITfMouseSink" />
+    <seealso cref="ITfMouseTracker.AdviseMouseSink " />
+    <seealso cref="ITfMouseTrackerACP.AdviseMouseSink " />
+    <seealso href="https://docs.microsoft.com//windows/desktop/inputdev/wm-mousemove">WM_MOUSEMOVE</seealso>
+  </member>
+  <member name="ITfMouseSink">
+    <summary>
+      <para>The <b>ITfMouseSink</b> interface is implemented by a text service to receive mouse event notifications. A mouse event sink is installed with the <see cref="ITfMouseTracker.AdviseMouseSink" /> method of one of the <see cref="ITfMouseTracker" /> interfaces.</para>
+    </summary>
+    <seealso cref="ITfMouseTracker.AdviseMouseSink " />
+    <seealso cref="ITfMouseTrackerACP.AdviseMouseSink " />
+    <seealso cref="IUnknown" />
+  </member>
+</doc>

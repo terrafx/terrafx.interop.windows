@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DEDUP_CONTAINER_EXTENT.xml' path='doc/member[@name="DEDUP_CONTAINER_EXTENT"]/*' />
 public partial struct DEDUP_CONTAINER_EXTENT
 {
+    /// <include file='DEDUP_CONTAINER_EXTENT.xml' path='doc/member[@name="DEDUP_CONTAINER_EXTENT.ContainerIndex"]/*' />
     [NativeTypeName("ULONG")]
     public uint ContainerIndex;
 
+    /// <include file='DEDUP_CONTAINER_EXTENT.xml' path='doc/member[@name="DEDUP_CONTAINER_EXTENT.StartOffset"]/*' />
     [NativeTypeName("long long")]
     public long StartOffset;
 
+    /// <include file='DEDUP_CONTAINER_EXTENT.xml' path='doc/member[@name="DEDUP_CONTAINER_EXTENT.Length"]/*' />
     [NativeTypeName("long long")]
     public long Length;
 }

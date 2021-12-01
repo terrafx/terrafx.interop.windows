@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFMetadataProvider.xml' path='doc/member[@name="IMFMetadataProvider"]/*' />
 [Guid("56181D2D-E221-4ADB-B1C8-3CEE6A53F76F")]
 [NativeTypeName("struct IMFMetadataProvider : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMFMetadataProvider : IMFMetadataProvider.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMFMetadataProvider : IMFMetadataProvider.Interface
         return ((delegate* unmanaged<IMFMetadataProvider*, Guid*, void**, int>)(lpVtbl[0]))((IMFMetadataProvider*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMFMetadataProvider : IMFMetadataProvider.Interface
         return ((delegate* unmanaged<IMFMetadataProvider*, uint>)(lpVtbl[1]))((IMFMetadataProvider*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMFMetadataProvider : IMFMetadataProvider.Interface
         return ((delegate* unmanaged<IMFMetadataProvider*, uint>)(lpVtbl[2]))((IMFMetadataProvider*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFMetadataProvider.xml' path='doc/member[@name="IMFMetadataProvider.GetMFMetadata"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetMFMetadata(IMFPresentationDescriptor* pPresentationDescriptor, [NativeTypeName("DWORD")] uint dwStreamIdentifier, [NativeTypeName("DWORD")] uint dwFlags, IMFMetadata** ppMFMetadata)

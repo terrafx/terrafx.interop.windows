@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="VMRVIDEOSTREAMINFO">
+    <summary>
+      <para>This topic applies to Windows XP or later.</para>
+      <para>The <code>VMRVIDEOSTREAMINFO</code> structure is used in the VMR-7 filter's call to <see cref="IVMRImageCompositor.CompositeImage" /> on the image compositor.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-structures">DirectShow Structures</seealso>
+  </member>
+  <member name="VMRVIDEOSTREAMINFO.pddsVideoSurface">
+    <summary>
+      <para>Specifies the DirectDraw surface that contains the video to be composited.</para>
+    </summary>
+  </member>
+  <member name="VMRVIDEOSTREAMINFO.dwWidth">
+    <summary>
+      <para>Specifies the width of the video rectangle.</para>
+    </summary>
+  </member>
+  <member name="VMRVIDEOSTREAMINFO.dwHeight">
+    <summary>
+      <para>Specifies the height of the video rectangle.</para>
+    </summary>
+  </member>
+  <member name="VMRVIDEOSTREAMINFO.dwStrmID">
+    <summary>
+      <para>Specifies the input stream. This value corresponds to the input pin.</para>
+    </summary>
+  </member>
+  <member name="VMRVIDEOSTREAMINFO.fAlpha">
+    <summary>
+      <para>Specifies the alpha value for this stream. (Not per-pixel alpha.)</para>
+    </summary>
+  </member>
+  <member name="VMRVIDEOSTREAMINFO.ddClrKey">
+    <summary>
+      <para>Specifies the source color key value or -1 if color keying is not to be used for this stream.</para>
+    </summary>
+  </member>
+  <member name="VMRVIDEOSTREAMINFO.rNormal">
+    <summary>
+      <para>Specifies the position of the image in composition space.</para>
+    </summary>
+  </member>
+</doc>

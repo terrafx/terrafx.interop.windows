@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DISPID_SpeechPhraseReplacements.xml' path='doc/member[@name="DISPID_SpeechPhraseReplacements"]/*' />
 public enum DISPID_SpeechPhraseReplacements
 {
+    /// <include file='DISPID_SpeechPhraseReplacements.xml' path='doc/member[@name="DISPID_SpeechPhraseReplacements.DISPID_SPRsCount"]/*' />
     DISPID_SPRsCount = 1,
+
+    /// <include file='DISPID_SpeechPhraseReplacements.xml' path='doc/member[@name="DISPID_SpeechPhraseReplacements.DISPID_SPRsItem"]/*' />
     DISPID_SPRsItem = (0),
+
+    /// <include file='DISPID_SpeechPhraseReplacements.xml' path='doc/member[@name="DISPID_SpeechPhraseReplacements.DISPID_SPRs_NewEnum"]/*' />
     DISPID_SPRs_NewEnum = (-4),
 }

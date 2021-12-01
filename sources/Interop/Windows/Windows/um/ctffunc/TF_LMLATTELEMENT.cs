@@ -8,23 +8,30 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TF_LMLATTELEMENT.xml' path='doc/member[@name="TF_LMLATTELEMENT"]/*' />
 public unsafe partial struct TF_LMLATTELEMENT
 {
+    /// <include file='TF_LMLATTELEMENT.xml' path='doc/member[@name="TF_LMLATTELEMENT.dwFrameStart"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFrameStart;
 
+    /// <include file='TF_LMLATTELEMENT.xml' path='doc/member[@name="TF_LMLATTELEMENT.dwFrameLen"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFrameLen;
 
+    /// <include file='TF_LMLATTELEMENT.xml' path='doc/member[@name="TF_LMLATTELEMENT.dwFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFlags;
 
+    /// <include file='TF_LMLATTELEMENT.xml' path='doc/member[@name="TF_LMLATTELEMENT.Anonymous"]/*' />
     [NativeTypeName("TF_LMLATTELEMENT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/ctffunc.h:2394:36)")]
     public _Anonymous_e__Union Anonymous;
 
+    /// <include file='TF_LMLATTELEMENT.xml' path='doc/member[@name="TF_LMLATTELEMENT.bstrText"]/*' />
     [NativeTypeName("BSTR")]
     public ushort* bstrText;
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.iCost"]/*' />
     public ref int iCost
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -34,9 +41,11 @@ public unsafe partial struct TF_LMLATTELEMENT
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public partial struct _Anonymous_e__Union
     {
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.iCost"]/*' />
         [FieldOffset(0)]
         public int iCost;
     }

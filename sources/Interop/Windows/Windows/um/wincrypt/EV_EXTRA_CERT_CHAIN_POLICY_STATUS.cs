@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='EV_EXTRA_CERT_CHAIN_POLICY_STATUS.xml' path='doc/member[@name="EV_EXTRA_CERT_CHAIN_POLICY_STATUS"]/*' />
 public partial struct EV_EXTRA_CERT_CHAIN_POLICY_STATUS
 {
+    /// <include file='EV_EXTRA_CERT_CHAIN_POLICY_STATUS.xml' path='doc/member[@name="EV_EXTRA_CERT_CHAIN_POLICY_STATUS.cbSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbSize;
 
+    /// <include file='EV_EXTRA_CERT_CHAIN_POLICY_STATUS.xml' path='doc/member[@name="EV_EXTRA_CERT_CHAIN_POLICY_STATUS.dwQualifiers"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwQualifiers;
 
+    /// <include file='EV_EXTRA_CERT_CHAIN_POLICY_STATUS.xml' path='doc/member[@name="EV_EXTRA_CERT_CHAIN_POLICY_STATUS.dwIssuanceUsageIndex"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwIssuanceUsageIndex;
 }

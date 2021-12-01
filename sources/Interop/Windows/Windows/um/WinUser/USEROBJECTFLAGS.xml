@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="USEROBJECTFLAGS">
+    <summary>
+      <para>Contains information about a window station or desktop handle.</para>
+    </summary>
+    <seealso cref="CreateDesktop" />
+    <seealso cref="GetUserObjectInformation" />
+    <seealso cref="OpenDesktop" />
+    <seealso cref="OpenInputDesktop" />
+    <seealso cref="SetUserObjectInformation" />
+  </member>
+  <member name="USEROBJECTFLAGS.fInherit">
+    <summary>
+      <para>If this member is TRUE, new processes inherit the handle. Otherwise, the handle is not inherited.</para>
+    </summary>
+  </member>
+  <member name="USEROBJECTFLAGS.fReserved">
+    <summary>
+      <para>Reserved for future use. This member must be FALSE.</para>
+    </summary>
+  </member>
+  <member name="USEROBJECTFLAGS.dwFlags">
+    <summary>
+      <para>For window stations, this member can contain the following window station attribute.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>WSF_VISIBLE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0001L</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Window station has visible display surfaces.</para>
+          </description>
+        </item>
+      </list>
+      <para>For desktops, the <b>dwFlags</b> member can contain the following value.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>DF_ALLOWOTHERACCOUNTHOOK</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0001L</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Allows processes running in other accounts on the desktop to set hooks in this process.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+</doc>

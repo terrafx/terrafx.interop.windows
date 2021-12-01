@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="RM_FILTER_INFO">
+    <summary>
+      <para>Contains information about modifications to restart or shutdown actions. Add, remove, and list modifications to specified applications and services that have been registered with the Restart Manager session by using the <see cref="RmAddFilter" />, <see cref="RmRemoveFilter" />, and the <see cref="RmGetFilterList" /> functions.</para>
+    </summary>
+    <seealso cref="RM_FILTER_TRIGGER" />
+    <seealso cref="RmGetFilterList" />
+  </member>
+  <member name="RM_FILTER_INFO.FilterAction">
+    <summary>
+      <para>This member contains a <see cref="RM_FILTER_ACTION" /> enumeration value. Use the value  <b>RmNoRestart</b></para>
+      <para>to prevent the restart of the application or service. Use the value  <b>RmNoShutdown</b> to prevent the shutdown and restart of the application or service.</para>
+    </summary>
+  </member>
+  <member name="RM_FILTER_INFO.FilterTrigger">
+    <summary>
+      <para>This member contains a <see cref="RM_FILTER_TRIGGER" /> enumeration value. Use the value  <b>RmFilterTriggerFile</b> to modify the restart or shutdown actions  of an application referenced by the executable's full path filename. Use  the value <b>RmFilterTriggerProcess</b> to modify the restart or shutdown actions   of an application referenced by a <see cref="RM_UNIQUE_PROCESS" /> structure. Use  the value <b>RmFilterTriggerService</b></para>
+      <para>to modify the restart or shutdown actions of a service referenced by the short service name.</para>
+    </summary>
+  </member>
+  <member name="RM_FILTER_INFO.cbNextOffset">
+    <summary>
+      <para>The offset in bytes to the next structure.</para>
+    </summary>
+  </member>
+  <member name="RM_FILTER_INFO.strFilename">
+    <summary>
+      <para>If the value of <b>FilterTrigger</b> is <b>RmFilterTriggerFile</b>, this member contains a pointer to a string value that contains the application filename.</para>
+    </summary>
+  </member>
+  <member name="RM_FILTER_INFO.Process">
+    <summary>
+      <para>If the value of <b>FilterTrigger</b> is  <b>RmFilterTriggerProcess</b>,  this member is a  <see cref="RM_PROCESS_INFO" /> structure for the application.</para>
+    </summary>
+  </member>
+  <member name="RM_FILTER_INFO.strServiceShortName">
+    <summary>
+      <para>If the value of <b>FilterTrigger</b> is <b>RmFilterTriggerService</b> this member is a pointer to a string value that contains the short service name.</para>
+    </summary>
+  </member>
+</doc>

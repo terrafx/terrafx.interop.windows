@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_XML_READER_INPUT_TYPE.xml' path='doc/member[@name="WS_XML_READER_INPUT_TYPE"]/*' />
 public enum WS_XML_READER_INPUT_TYPE
 {
+    /// <include file='WS_XML_READER_INPUT_TYPE.xml' path='doc/member[@name="WS_XML_READER_INPUT_TYPE.WS_XML_READER_INPUT_TYPE_BUFFER"]/*' />
     WS_XML_READER_INPUT_TYPE_BUFFER = 1,
+
+    /// <include file='WS_XML_READER_INPUT_TYPE.xml' path='doc/member[@name="WS_XML_READER_INPUT_TYPE.WS_XML_READER_INPUT_TYPE_STREAM"]/*' />
     WS_XML_READER_INPUT_TYPE_STREAM = 2,
 }

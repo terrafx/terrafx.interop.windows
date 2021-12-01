@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITfFnPropertyUIStatus.xml' path='doc/member[@name="ITfFnPropertyUIStatus"]/*' />
 [Guid("2338AC6E-2B9D-44C0-A75E-EE64F256B3BD")]
 [NativeTypeName("struct ITfFnPropertyUIStatus : ITfFunction")]
 [NativeInheritance("ITfFunction")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITfFnPropertyUIStatus : ITfFnPropertyUIStatus.Inter
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITfFnPropertyUIStatus : ITfFnPropertyUIStatus.Inter
         return ((delegate* unmanaged<ITfFnPropertyUIStatus*, Guid*, void**, int>)(lpVtbl[0]))((ITfFnPropertyUIStatus*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITfFnPropertyUIStatus : ITfFnPropertyUIStatus.Inter
         return ((delegate* unmanaged<ITfFnPropertyUIStatus*, uint>)(lpVtbl[1]))((ITfFnPropertyUIStatus*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITfFnPropertyUIStatus : ITfFnPropertyUIStatus.Inter
         return ((delegate* unmanaged<ITfFnPropertyUIStatus*, uint>)(lpVtbl[2]))((ITfFnPropertyUIStatus*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ITfFunction.GetDisplayName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetDisplayName([NativeTypeName("BSTR *")] ushort** pbstrName)
@@ -46,6 +51,7 @@ public unsafe partial struct ITfFnPropertyUIStatus : ITfFnPropertyUIStatus.Inter
         return ((delegate* unmanaged<ITfFnPropertyUIStatus*, ushort**, int>)(lpVtbl[3]))((ITfFnPropertyUIStatus*)Unsafe.AsPointer(ref this), pbstrName);
     }
 
+    /// <include file='ITfFnPropertyUIStatus.xml' path='doc/member[@name="ITfFnPropertyUIStatus.GetStatus"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetStatus([NativeTypeName("const GUID &")] Guid* refguidProp, [NativeTypeName("DWORD *")] uint* pdw)
@@ -53,6 +59,7 @@ public unsafe partial struct ITfFnPropertyUIStatus : ITfFnPropertyUIStatus.Inter
         return ((delegate* unmanaged<ITfFnPropertyUIStatus*, Guid*, uint*, int>)(lpVtbl[4]))((ITfFnPropertyUIStatus*)Unsafe.AsPointer(ref this), refguidProp, pdw);
     }
 
+    /// <include file='ITfFnPropertyUIStatus.xml' path='doc/member[@name="ITfFnPropertyUIStatus.SetStatus"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetStatus([NativeTypeName("const GUID &")] Guid* refguidProp, [NativeTypeName("DWORD")] uint dw)

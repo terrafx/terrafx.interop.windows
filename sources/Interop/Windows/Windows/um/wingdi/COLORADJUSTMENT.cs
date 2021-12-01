@@ -5,37 +5,50 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='COLORADJUSTMENT.xml' path='doc/member[@name="COLORADJUSTMENT"]/*' />
 public partial struct COLORADJUSTMENT
 {
+    /// <include file='COLORADJUSTMENT.xml' path='doc/member[@name="COLORADJUSTMENT.caSize"]/*' />
     [NativeTypeName("WORD")]
     public ushort caSize;
 
+    /// <include file='COLORADJUSTMENT.xml' path='doc/member[@name="COLORADJUSTMENT.caFlags"]/*' />
     [NativeTypeName("WORD")]
     public ushort caFlags;
 
+    /// <include file='COLORADJUSTMENT.xml' path='doc/member[@name="COLORADJUSTMENT.caIlluminantIndex"]/*' />
     [NativeTypeName("WORD")]
     public ushort caIlluminantIndex;
 
+    /// <include file='COLORADJUSTMENT.xml' path='doc/member[@name="COLORADJUSTMENT.caRedGamma"]/*' />
     [NativeTypeName("WORD")]
     public ushort caRedGamma;
 
+    /// <include file='COLORADJUSTMENT.xml' path='doc/member[@name="COLORADJUSTMENT.caGreenGamma"]/*' />
     [NativeTypeName("WORD")]
     public ushort caGreenGamma;
 
+    /// <include file='COLORADJUSTMENT.xml' path='doc/member[@name="COLORADJUSTMENT.caBlueGamma"]/*' />
     [NativeTypeName("WORD")]
     public ushort caBlueGamma;
 
+    /// <include file='COLORADJUSTMENT.xml' path='doc/member[@name="COLORADJUSTMENT.caReferenceBlack"]/*' />
     [NativeTypeName("WORD")]
     public ushort caReferenceBlack;
 
+    /// <include file='COLORADJUSTMENT.xml' path='doc/member[@name="COLORADJUSTMENT.caReferenceWhite"]/*' />
     [NativeTypeName("WORD")]
     public ushort caReferenceWhite;
 
+    /// <include file='COLORADJUSTMENT.xml' path='doc/member[@name="COLORADJUSTMENT.caContrast"]/*' />
     public short caContrast;
 
+    /// <include file='COLORADJUSTMENT.xml' path='doc/member[@name="COLORADJUSTMENT.caBrightness"]/*' />
     public short caBrightness;
 
+    /// <include file='COLORADJUSTMENT.xml' path='doc/member[@name="COLORADJUSTMENT.caColorfulness"]/*' />
     public short caColorfulness;
 
+    /// <include file='COLORADJUSTMENT.xml' path='doc/member[@name="COLORADJUSTMENT.caRedGreenTint"]/*' />
     public short caRedGreenTint;
 }

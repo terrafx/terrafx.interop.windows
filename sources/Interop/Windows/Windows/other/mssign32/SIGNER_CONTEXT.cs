@@ -5,13 +5,17 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SIGNER_CONTEXT.xml' path='doc/member[@name="SIGNER_CONTEXT"]/*' />
 public unsafe partial struct SIGNER_CONTEXT
 {
+    /// <include file='SIGNER_CONTEXT.xml' path='doc/member[@name="SIGNER_CONTEXT.cbSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbSize;
 
+    /// <include file='SIGNER_CONTEXT.xml' path='doc/member[@name="SIGNER_CONTEXT.cbBlob"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbBlob;
 
+    /// <include file='SIGNER_CONTEXT.xml' path='doc/member[@name="SIGNER_CONTEXT.pbBlob"]/*' />
     public byte* pbBlob;
 }

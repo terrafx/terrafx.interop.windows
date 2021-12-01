@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IRulesApplied.xml' path='doc/member[@name="IRulesApplied"]/*' />
 [Guid("305104BF-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IRulesApplied : IDispatch")]
 [NativeInheritance("IDispatch")]
@@ -16,6 +17,7 @@ public unsafe partial struct IRulesApplied : IRulesApplied.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IRulesApplied : IRulesApplied.Interface
         return ((delegate* unmanaged<IRulesApplied*, Guid*, void**, int>)(lpVtbl[0]))((IRulesApplied*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IRulesApplied : IRulesApplied.Interface
         return ((delegate* unmanaged<IRulesApplied*, uint>)(lpVtbl[1]))((IRulesApplied*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IRulesApplied : IRulesApplied.Interface
         return ((delegate* unmanaged<IRulesApplied*, uint>)(lpVtbl[2]))((IRulesApplied*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct IRulesApplied : IRulesApplied.Interface
         return ((delegate* unmanaged<IRulesApplied*, uint*, int>)(lpVtbl[3]))((IRulesApplied*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct IRulesApplied : IRulesApplied.Interface
         return ((delegate* unmanaged<IRulesApplied*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IRulesApplied*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
@@ -60,6 +67,7 @@ public unsafe partial struct IRulesApplied : IRulesApplied.Interface
         return ((delegate* unmanaged<IRulesApplied*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IRulesApplied*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
+    /// <inheritdoc cref="IDispatch.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
@@ -67,6 +75,7 @@ public unsafe partial struct IRulesApplied : IRulesApplied.Interface
         return ((delegate* unmanaged<IRulesApplied*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IRulesApplied*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
+    /// <include file='IRulesApplied.xml' path='doc/member[@name="IRulesApplied.get_element"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT get_element(IHTMLElement** p)
@@ -74,6 +83,7 @@ public unsafe partial struct IRulesApplied : IRulesApplied.Interface
         return ((delegate* unmanaged<IRulesApplied*, IHTMLElement**, int>)(lpVtbl[7]))((IRulesApplied*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IRulesApplied.xml' path='doc/member[@name="IRulesApplied.get_inlineStyles"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT get_inlineStyles(IHTMLStyle** p)
@@ -81,6 +91,7 @@ public unsafe partial struct IRulesApplied : IRulesApplied.Interface
         return ((delegate* unmanaged<IRulesApplied*, IHTMLStyle**, int>)(lpVtbl[8]))((IRulesApplied*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IRulesApplied.xml' path='doc/member[@name="IRulesApplied.get_appliedRules"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT get_appliedRules(IHTMLStyleSheetRulesAppliedCollection** p)
@@ -88,6 +99,7 @@ public unsafe partial struct IRulesApplied : IRulesApplied.Interface
         return ((delegate* unmanaged<IRulesApplied*, IHTMLStyleSheetRulesAppliedCollection**, int>)(lpVtbl[9]))((IRulesApplied*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IRulesApplied.xml' path='doc/member[@name="IRulesApplied.propertyIsInline"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT propertyIsInline([NativeTypeName("BSTR")] ushort* name, [NativeTypeName("VARIANT_BOOL *")] short* p)
@@ -95,6 +107,7 @@ public unsafe partial struct IRulesApplied : IRulesApplied.Interface
         return ((delegate* unmanaged<IRulesApplied*, ushort*, short*, int>)(lpVtbl[10]))((IRulesApplied*)Unsafe.AsPointer(ref this), name, p);
     }
 
+    /// <include file='IRulesApplied.xml' path='doc/member[@name="IRulesApplied.propertyIsInheritable"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT propertyIsInheritable([NativeTypeName("BSTR")] ushort* name, [NativeTypeName("VARIANT_BOOL *")] short* p)
@@ -102,6 +115,7 @@ public unsafe partial struct IRulesApplied : IRulesApplied.Interface
         return ((delegate* unmanaged<IRulesApplied*, ushort*, short*, int>)(lpVtbl[11]))((IRulesApplied*)Unsafe.AsPointer(ref this), name, p);
     }
 
+    /// <include file='IRulesApplied.xml' path='doc/member[@name="IRulesApplied.hasInheritableProperty"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT hasInheritableProperty([NativeTypeName("VARIANT_BOOL *")] short* p)

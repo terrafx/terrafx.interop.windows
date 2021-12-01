@@ -9,44 +9,58 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ARM64_NT_CONTEXT.xml' path='doc/member[@name="ARM64_NT_CONTEXT"]/*' />
 public unsafe partial struct ARM64_NT_CONTEXT
 {
+    /// <include file='ARM64_NT_CONTEXT.xml' path='doc/member[@name="ARM64_NT_CONTEXT.ContextFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint ContextFlags;
 
+    /// <include file='ARM64_NT_CONTEXT.xml' path='doc/member[@name="ARM64_NT_CONTEXT.Cpsr"]/*' />
     [NativeTypeName("DWORD")]
     public uint Cpsr;
 
+    /// <include file='ARM64_NT_CONTEXT.xml' path='doc/member[@name="ARM64_NT_CONTEXT.Anonymous"]/*' />
     [NativeTypeName("_ARM64_NT_CONTEXT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:6685:18)")]
     public _Anonymous_e__Union Anonymous;
 
+    /// <include file='ARM64_NT_CONTEXT.xml' path='doc/member[@name="ARM64_NT_CONTEXT.Sp"]/*' />
     [NativeTypeName("DWORD64")]
     public ulong Sp;
 
+    /// <include file='ARM64_NT_CONTEXT.xml' path='doc/member[@name="ARM64_NT_CONTEXT.Pc"]/*' />
     [NativeTypeName("DWORD64")]
     public ulong Pc;
 
+    /// <include file='ARM64_NT_CONTEXT.xml' path='doc/member[@name="ARM64_NT_CONTEXT.V"]/*' />
     [NativeTypeName("ARM64_NT_NEON128 [32]")]
     public _V_e__FixedBuffer V;
 
+    /// <include file='ARM64_NT_CONTEXT.xml' path='doc/member[@name="ARM64_NT_CONTEXT.Fpcr"]/*' />
     [NativeTypeName("DWORD")]
     public uint Fpcr;
 
+    /// <include file='ARM64_NT_CONTEXT.xml' path='doc/member[@name="ARM64_NT_CONTEXT.Fpsr"]/*' />
     [NativeTypeName("DWORD")]
     public uint Fpsr;
 
+    /// <include file='ARM64_NT_CONTEXT.xml' path='doc/member[@name="ARM64_NT_CONTEXT.Bcr"]/*' />
     [NativeTypeName("DWORD [8]")]
     public fixed uint Bcr[8];
 
+    /// <include file='ARM64_NT_CONTEXT.xml' path='doc/member[@name="ARM64_NT_CONTEXT.Bvr"]/*' />
     [NativeTypeName("DWORD64 [8]")]
     public fixed ulong Bvr[8];
 
+    /// <include file='ARM64_NT_CONTEXT.xml' path='doc/member[@name="ARM64_NT_CONTEXT.Wcr"]/*' />
     [NativeTypeName("DWORD [2]")]
     public fixed uint Wcr[2];
 
+    /// <include file='ARM64_NT_CONTEXT.xml' path='doc/member[@name="ARM64_NT_CONTEXT.Wvr"]/*' />
     [NativeTypeName("DWORD64 [2]")]
     public fixed ulong Wvr[2];
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.X0"]/*' />
     public ref ulong X0
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -56,6 +70,7 @@ public unsafe partial struct ARM64_NT_CONTEXT
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.X1"]/*' />
     public ref ulong X1
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -65,6 +80,7 @@ public unsafe partial struct ARM64_NT_CONTEXT
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.X2"]/*' />
     public ref ulong X2
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -74,6 +90,7 @@ public unsafe partial struct ARM64_NT_CONTEXT
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.X3"]/*' />
     public ref ulong X3
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -83,6 +100,7 @@ public unsafe partial struct ARM64_NT_CONTEXT
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.X4"]/*' />
     public ref ulong X4
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -92,6 +110,7 @@ public unsafe partial struct ARM64_NT_CONTEXT
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.X5"]/*' />
     public ref ulong X5
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -101,6 +120,7 @@ public unsafe partial struct ARM64_NT_CONTEXT
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.X6"]/*' />
     public ref ulong X6
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -110,6 +130,7 @@ public unsafe partial struct ARM64_NT_CONTEXT
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.X7"]/*' />
     public ref ulong X7
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -119,6 +140,7 @@ public unsafe partial struct ARM64_NT_CONTEXT
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.X8"]/*' />
     public ref ulong X8
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -128,6 +150,7 @@ public unsafe partial struct ARM64_NT_CONTEXT
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.X9"]/*' />
     public ref ulong X9
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -137,6 +160,7 @@ public unsafe partial struct ARM64_NT_CONTEXT
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.X10"]/*' />
     public ref ulong X10
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -146,6 +170,7 @@ public unsafe partial struct ARM64_NT_CONTEXT
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.X11"]/*' />
     public ref ulong X11
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -155,6 +180,7 @@ public unsafe partial struct ARM64_NT_CONTEXT
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.X12"]/*' />
     public ref ulong X12
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -164,6 +190,7 @@ public unsafe partial struct ARM64_NT_CONTEXT
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.X13"]/*' />
     public ref ulong X13
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -173,6 +200,7 @@ public unsafe partial struct ARM64_NT_CONTEXT
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.X14"]/*' />
     public ref ulong X14
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -182,6 +210,7 @@ public unsafe partial struct ARM64_NT_CONTEXT
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.X15"]/*' />
     public ref ulong X15
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -191,6 +220,7 @@ public unsafe partial struct ARM64_NT_CONTEXT
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.X16"]/*' />
     public ref ulong X16
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -200,6 +230,7 @@ public unsafe partial struct ARM64_NT_CONTEXT
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.X17"]/*' />
     public ref ulong X17
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -209,6 +240,7 @@ public unsafe partial struct ARM64_NT_CONTEXT
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.X18"]/*' />
     public ref ulong X18
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -218,6 +250,7 @@ public unsafe partial struct ARM64_NT_CONTEXT
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.X19"]/*' />
     public ref ulong X19
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -227,6 +260,7 @@ public unsafe partial struct ARM64_NT_CONTEXT
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.X20"]/*' />
     public ref ulong X20
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -236,6 +270,7 @@ public unsafe partial struct ARM64_NT_CONTEXT
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.X21"]/*' />
     public ref ulong X21
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -245,6 +280,7 @@ public unsafe partial struct ARM64_NT_CONTEXT
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.X22"]/*' />
     public ref ulong X22
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -254,6 +290,7 @@ public unsafe partial struct ARM64_NT_CONTEXT
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.X23"]/*' />
     public ref ulong X23
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -263,6 +300,7 @@ public unsafe partial struct ARM64_NT_CONTEXT
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.X24"]/*' />
     public ref ulong X24
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -272,6 +310,7 @@ public unsafe partial struct ARM64_NT_CONTEXT
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.X25"]/*' />
     public ref ulong X25
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -281,6 +320,7 @@ public unsafe partial struct ARM64_NT_CONTEXT
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.X26"]/*' />
     public ref ulong X26
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -290,6 +330,7 @@ public unsafe partial struct ARM64_NT_CONTEXT
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.X27"]/*' />
     public ref ulong X27
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -299,6 +340,7 @@ public unsafe partial struct ARM64_NT_CONTEXT
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.X28"]/*' />
     public ref ulong X28
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -308,6 +350,7 @@ public unsafe partial struct ARM64_NT_CONTEXT
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Fp"]/*' />
     public ref ulong Fp
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -317,6 +360,7 @@ public unsafe partial struct ARM64_NT_CONTEXT
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Lr"]/*' />
     public ref ulong Lr
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -326,6 +370,7 @@ public unsafe partial struct ARM64_NT_CONTEXT
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.X"]/*' />
     public Span<ulong> X
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -335,114 +380,150 @@ public unsafe partial struct ARM64_NT_CONTEXT
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public unsafe partial struct _Anonymous_e__Union
     {
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("_ARM64_NT_CONTEXT::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:6686:21)")]
         public _Anonymous_e__Struct Anonymous;
 
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.X"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("DWORD64 [31]")]
         public fixed ulong X[31];
 
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />
         public partial struct _Anonymous_e__Struct
         {
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.X0"]/*' />
             [NativeTypeName("DWORD64")]
             public ulong X0;
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.X1"]/*' />
             [NativeTypeName("DWORD64")]
             public ulong X1;
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.X2"]/*' />
             [NativeTypeName("DWORD64")]
             public ulong X2;
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.X3"]/*' />
             [NativeTypeName("DWORD64")]
             public ulong X3;
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.X4"]/*' />
             [NativeTypeName("DWORD64")]
             public ulong X4;
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.X5"]/*' />
             [NativeTypeName("DWORD64")]
             public ulong X5;
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.X6"]/*' />
             [NativeTypeName("DWORD64")]
             public ulong X6;
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.X7"]/*' />
             [NativeTypeName("DWORD64")]
             public ulong X7;
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.X8"]/*' />
             [NativeTypeName("DWORD64")]
             public ulong X8;
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.X9"]/*' />
             [NativeTypeName("DWORD64")]
             public ulong X9;
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.X10"]/*' />
             [NativeTypeName("DWORD64")]
             public ulong X10;
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.X11"]/*' />
             [NativeTypeName("DWORD64")]
             public ulong X11;
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.X12"]/*' />
             [NativeTypeName("DWORD64")]
             public ulong X12;
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.X13"]/*' />
             [NativeTypeName("DWORD64")]
             public ulong X13;
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.X14"]/*' />
             [NativeTypeName("DWORD64")]
             public ulong X14;
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.X15"]/*' />
             [NativeTypeName("DWORD64")]
             public ulong X15;
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.X16"]/*' />
             [NativeTypeName("DWORD64")]
             public ulong X16;
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.X17"]/*' />
             [NativeTypeName("DWORD64")]
             public ulong X17;
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.X18"]/*' />
             [NativeTypeName("DWORD64")]
             public ulong X18;
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.X19"]/*' />
             [NativeTypeName("DWORD64")]
             public ulong X19;
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.X20"]/*' />
             [NativeTypeName("DWORD64")]
             public ulong X20;
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.X21"]/*' />
             [NativeTypeName("DWORD64")]
             public ulong X21;
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.X22"]/*' />
             [NativeTypeName("DWORD64")]
             public ulong X22;
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.X23"]/*' />
             [NativeTypeName("DWORD64")]
             public ulong X23;
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.X24"]/*' />
             [NativeTypeName("DWORD64")]
             public ulong X24;
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.X25"]/*' />
             [NativeTypeName("DWORD64")]
             public ulong X25;
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.X26"]/*' />
             [NativeTypeName("DWORD64")]
             public ulong X26;
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.X27"]/*' />
             [NativeTypeName("DWORD64")]
             public ulong X27;
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.X28"]/*' />
             [NativeTypeName("DWORD64")]
             public ulong X28;
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Fp"]/*' />
             [NativeTypeName("DWORD64")]
             public ulong Fp;
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Lr"]/*' />
             [NativeTypeName("DWORD64")]
             public ulong Lr;
         }
     }
 
+    /// <include file='_V_e__FixedBuffer.xml' path='doc/member[@name="_V_e__FixedBuffer"]/*' />
     public partial struct _V_e__FixedBuffer
     {
         public ARM64_NT_NEON128 e0;

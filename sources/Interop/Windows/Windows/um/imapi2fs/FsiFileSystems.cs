@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='FsiFileSystems.xml' path='doc/member[@name="FsiFileSystems"]/*' />
 public enum FsiFileSystems
 {
+    /// <include file='FsiFileSystems.xml' path='doc/member[@name="FsiFileSystems.FsiFileSystemNone"]/*' />
     FsiFileSystemNone = 0,
+
+    /// <include file='FsiFileSystems.xml' path='doc/member[@name="FsiFileSystems.FsiFileSystemISO9660"]/*' />
     FsiFileSystemISO9660 = 1,
+
+    /// <include file='FsiFileSystems.xml' path='doc/member[@name="FsiFileSystems.FsiFileSystemJoliet"]/*' />
     FsiFileSystemJoliet = 2,
+
+    /// <include file='FsiFileSystems.xml' path='doc/member[@name="FsiFileSystems.FsiFileSystemUDF"]/*' />
     FsiFileSystemUDF = 4,
+
+    /// <include file='FsiFileSystems.xml' path='doc/member[@name="FsiFileSystems.FsiFileSystemUnknown"]/*' />
     FsiFileSystemUnknown = 0x40000000,
 }

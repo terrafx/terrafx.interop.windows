@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class HEAP
 {
+    /// <include file='HEAP.xml' path='doc/member[@name="HEAP.HEAP_MAKE_TAG_FLAGS"]/*' />
     [return: NativeTypeName("DWORD")]
     public static uint HEAP_MAKE_TAG_FLAGS([NativeTypeName("DWORD")] uint TagBase, [NativeTypeName("DWORD")] uint Tag)
     {

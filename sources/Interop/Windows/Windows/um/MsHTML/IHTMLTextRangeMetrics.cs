@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IHTMLTextRangeMetrics.xml' path='doc/member[@name="IHTMLTextRangeMetrics"]/*' />
 [Guid("3050F40B-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IHTMLTextRangeMetrics : IDispatch")]
 [NativeInheritance("IDispatch")]
@@ -16,6 +17,7 @@ public unsafe partial struct IHTMLTextRangeMetrics : IHTMLTextRangeMetrics.Inter
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IHTMLTextRangeMetrics : IHTMLTextRangeMetrics.Inter
         return ((delegate* unmanaged<IHTMLTextRangeMetrics*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLTextRangeMetrics*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IHTMLTextRangeMetrics : IHTMLTextRangeMetrics.Inter
         return ((delegate* unmanaged<IHTMLTextRangeMetrics*, uint>)(lpVtbl[1]))((IHTMLTextRangeMetrics*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IHTMLTextRangeMetrics : IHTMLTextRangeMetrics.Inter
         return ((delegate* unmanaged<IHTMLTextRangeMetrics*, uint>)(lpVtbl[2]))((IHTMLTextRangeMetrics*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct IHTMLTextRangeMetrics : IHTMLTextRangeMetrics.Inter
         return ((delegate* unmanaged<IHTMLTextRangeMetrics*, uint*, int>)(lpVtbl[3]))((IHTMLTextRangeMetrics*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct IHTMLTextRangeMetrics : IHTMLTextRangeMetrics.Inter
         return ((delegate* unmanaged<IHTMLTextRangeMetrics*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IHTMLTextRangeMetrics*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
@@ -60,6 +67,7 @@ public unsafe partial struct IHTMLTextRangeMetrics : IHTMLTextRangeMetrics.Inter
         return ((delegate* unmanaged<IHTMLTextRangeMetrics*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLTextRangeMetrics*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
+    /// <inheritdoc cref="IDispatch.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
@@ -67,6 +75,7 @@ public unsafe partial struct IHTMLTextRangeMetrics : IHTMLTextRangeMetrics.Inter
         return ((delegate* unmanaged<IHTMLTextRangeMetrics*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IHTMLTextRangeMetrics*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
+    /// <include file='IHTMLTextRangeMetrics.xml' path='doc/member[@name="IHTMLTextRangeMetrics.get_offsetTop"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT get_offsetTop([NativeTypeName("long *")] int* p)
@@ -74,6 +83,7 @@ public unsafe partial struct IHTMLTextRangeMetrics : IHTMLTextRangeMetrics.Inter
         return ((delegate* unmanaged<IHTMLTextRangeMetrics*, int*, int>)(lpVtbl[7]))((IHTMLTextRangeMetrics*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLTextRangeMetrics.xml' path='doc/member[@name="IHTMLTextRangeMetrics.get_offsetLeft"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT get_offsetLeft([NativeTypeName("long *")] int* p)
@@ -81,6 +91,7 @@ public unsafe partial struct IHTMLTextRangeMetrics : IHTMLTextRangeMetrics.Inter
         return ((delegate* unmanaged<IHTMLTextRangeMetrics*, int*, int>)(lpVtbl[8]))((IHTMLTextRangeMetrics*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLTextRangeMetrics.xml' path='doc/member[@name="IHTMLTextRangeMetrics.get_boundingTop"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT get_boundingTop([NativeTypeName("long *")] int* p)
@@ -88,6 +99,7 @@ public unsafe partial struct IHTMLTextRangeMetrics : IHTMLTextRangeMetrics.Inter
         return ((delegate* unmanaged<IHTMLTextRangeMetrics*, int*, int>)(lpVtbl[9]))((IHTMLTextRangeMetrics*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLTextRangeMetrics.xml' path='doc/member[@name="IHTMLTextRangeMetrics.get_boundingLeft"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT get_boundingLeft([NativeTypeName("long *")] int* p)
@@ -95,6 +107,7 @@ public unsafe partial struct IHTMLTextRangeMetrics : IHTMLTextRangeMetrics.Inter
         return ((delegate* unmanaged<IHTMLTextRangeMetrics*, int*, int>)(lpVtbl[10]))((IHTMLTextRangeMetrics*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLTextRangeMetrics.xml' path='doc/member[@name="IHTMLTextRangeMetrics.get_boundingWidth"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT get_boundingWidth([NativeTypeName("long *")] int* p)
@@ -102,6 +115,7 @@ public unsafe partial struct IHTMLTextRangeMetrics : IHTMLTextRangeMetrics.Inter
         return ((delegate* unmanaged<IHTMLTextRangeMetrics*, int*, int>)(lpVtbl[11]))((IHTMLTextRangeMetrics*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLTextRangeMetrics.xml' path='doc/member[@name="IHTMLTextRangeMetrics.get_boundingHeight"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT get_boundingHeight([NativeTypeName("long *")] int* p)

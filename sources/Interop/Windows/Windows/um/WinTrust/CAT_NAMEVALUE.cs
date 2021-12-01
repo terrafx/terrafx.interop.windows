@@ -5,13 +5,17 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CAT_NAMEVALUE.xml' path='doc/member[@name="CAT_NAMEVALUE"]/*' />
 public unsafe partial struct CAT_NAMEVALUE
 {
+    /// <include file='CAT_NAMEVALUE.xml' path='doc/member[@name="CAT_NAMEVALUE.pwszTag"]/*' />
     [NativeTypeName("LPWSTR")]
     public ushort* pwszTag;
 
+    /// <include file='CAT_NAMEVALUE.xml' path='doc/member[@name="CAT_NAMEVALUE.fdwFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint fdwFlags;
 
+    /// <include file='CAT_NAMEVALUE.xml' path='doc/member[@name="CAT_NAMEVALUE.Value"]/*' />
     public CRYPT_DATA_BLOB Value;
 }

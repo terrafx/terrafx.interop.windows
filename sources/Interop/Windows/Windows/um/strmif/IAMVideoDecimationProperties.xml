@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IAMVideoDecimationProperties.QueryDecimationUsage">
+    <summary>
+      <para>The <code>QueryDecimationUsage</code> method retrieves the current decimation strategy.</para>
+    </summary>
+    <param name="lpUsage">
+      <para>Pointer to a variable of type <see cref="DECIMATION_USAGE" /> that receives the decimation setting.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value that depends on the implementation of the interface. The DirectShow implementation returns S_OK if successful, or E_FAIL or another error code otherwise.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMVideoDecimationProperties Interface" />
+  </member>
+  <member name="IAMVideoDecimationProperties.SetDecimationUsage">
+    <summary>
+      <para>The <code>SetDecimationUsage</code> method sets the decimation strategy.</para>
+    </summary>
+    <param name="Usage">
+      <para>Member of the <see cref="DECIMATION_USAGE" /> enumeration that specifies the decimation strategy.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value that depends on the implementation of the interface. The DirectShow implementation returns S_OK if successful, or E_INVALIDARG otherwise.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMVideoDecimationProperties Interface" />
+  </member>
+  <member name="IAMVideoDecimationProperties">
+    <summary>
+      <para>The <code>IAMVideoDecimationProperties</code> interface controls how the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/overlay-mixer-filter">Overlay Mixer</a> performs video decimation</para>
+      <para>If a video window is smaller than the native size of the video being displayed, the video renderer must <i>decimate</i> the incoming video—that is, scale the video down to the smaller size. Decimation can be performed in one of the following places.</para>
+      <list type="bullet">
+        <item>
+          <description>The overlay hardware on the VGA chip.</description>
+        </item>
+        <item>
+          <description>The scaler built in to the video port (if the connection is through a video port).</description>
+        </item>
+        <item>
+          <description>The decoder supplying video to the renderer.</description>
+        </item>
+      </list>
+      <para>An application can call methods on this interface to select a particular decimation strategy, in order to optimize performance. However, most applications will have no occasion to use this interface. Unless your application is designed to support particular hardware, there is no reason to modify the Overlay Mixer filter's default behavior for decimation.</para>
+    </summary>
+  </member>
+</doc>

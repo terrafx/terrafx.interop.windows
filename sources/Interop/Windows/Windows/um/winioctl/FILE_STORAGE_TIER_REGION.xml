@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="FILE_STORAGE_TIER_REGION">
+    <summary>
+      <para>Describes a single storage tier region.</para>
+    </summary>
+  </member>
+  <member name="FILE_STORAGE_TIER_REGION.TierId">
+    <summary>
+      <para>Tier ID.</para>
+    </summary>
+  </member>
+  <member name="FILE_STORAGE_TIER_REGION.Offset">
+    <summary>
+      <para>Offset from the beginning of the volume of this region, in bytes.</para>
+    </summary>
+  </member>
+  <member name="FILE_STORAGE_TIER_REGION.Length">
+    <summary>
+      <para>Length of region in bytes.</para>
+    </summary>
+  </member>
+</doc>

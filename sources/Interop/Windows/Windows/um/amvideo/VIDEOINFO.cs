@@ -9,26 +9,35 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='VIDEOINFO.xml' path='doc/member[@name="VIDEOINFO"]/*' />
 public unsafe partial struct VIDEOINFO
 {
+    /// <include file='VIDEOINFO.xml' path='doc/member[@name="VIDEOINFO.rcSource"]/*' />
     public RECT rcSource;
 
+    /// <include file='VIDEOINFO.xml' path='doc/member[@name="VIDEOINFO.rcTarget"]/*' />
     public RECT rcTarget;
 
+    /// <include file='VIDEOINFO.xml' path='doc/member[@name="VIDEOINFO.dwBitRate"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwBitRate;
 
+    /// <include file='VIDEOINFO.xml' path='doc/member[@name="VIDEOINFO.dwBitErrorRate"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwBitErrorRate;
 
+    /// <include file='VIDEOINFO.xml' path='doc/member[@name="VIDEOINFO.AvgTimePerFrame"]/*' />
     [NativeTypeName("REFERENCE_TIME")]
     public long AvgTimePerFrame;
 
+    /// <include file='VIDEOINFO.xml' path='doc/member[@name="VIDEOINFO.bmiHeader"]/*' />
     public BITMAPINFOHEADER bmiHeader;
 
+    /// <include file='VIDEOINFO.xml' path='doc/member[@name="VIDEOINFO.Anonymous"]/*' />
     [NativeTypeName("tagVIDEOINFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/amvideo.h:319:5)")]
     public _Anonymous_e__Union Anonymous;
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.bmiColors"]/*' />
     public Span<RGBQUAD> bmiColors
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -38,6 +47,7 @@ public unsafe partial struct VIDEOINFO
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.dwBitMasks"]/*' />
     public Span<uint> dwBitMasks
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -47,6 +57,7 @@ public unsafe partial struct VIDEOINFO
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.TrueColorInfo"]/*' />
     public ref TRUECOLORINFO TrueColorInfo
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -56,20 +67,25 @@ public unsafe partial struct VIDEOINFO
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public unsafe partial struct _Anonymous_e__Union
     {
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.bmiColors"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("RGBQUAD [256]")]
         public _bmiColors_e__FixedBuffer bmiColors;
 
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.dwBitMasks"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("DWORD [3]")]
         public fixed uint dwBitMasks[3];
 
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.TrueColorInfo"]/*' />
         [FieldOffset(0)]
         public TRUECOLORINFO TrueColorInfo;
 
+        /// <include file='_bmiColors_e__FixedBuffer.xml' path='doc/member[@name="_bmiColors_e__FixedBuffer"]/*' />
         public partial struct _bmiColors_e__FixedBuffer
         {
             public RGBQUAD e0;

@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='OLEUPDATE.xml' path='doc/member[@name="OLEUPDATE"]/*' />
 public enum OLEUPDATE
 {
+    /// <include file='OLEUPDATE.xml' path='doc/member[@name="OLEUPDATE.OLEUPDATE_ALWAYS"]/*' />
     OLEUPDATE_ALWAYS = 1,
+
+    /// <include file='OLEUPDATE.xml' path='doc/member[@name="OLEUPDATE.OLEUPDATE_ONCALL"]/*' />
     OLEUPDATE_ONCALL = 3,
 }

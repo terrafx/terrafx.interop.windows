@@ -5,12 +5,16 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_XML_BASE64_TEXT.xml' path='doc/member[@name="WS_XML_BASE64_TEXT"]/*' />
 public unsafe partial struct WS_XML_BASE64_TEXT
 {
+    /// <include file='WS_XML_BASE64_TEXT.xml' path='doc/member[@name="WS_XML_BASE64_TEXT.text"]/*' />
     public WS_XML_TEXT text;
 
+    /// <include file='WS_XML_BASE64_TEXT.xml' path='doc/member[@name="WS_XML_BASE64_TEXT.bytes"]/*' />
     public byte* bytes;
 
+    /// <include file='WS_XML_BASE64_TEXT.xml' path='doc/member[@name="WS_XML_BASE64_TEXT.length"]/*' />
     [NativeTypeName("ULONG")]
     public uint length;
 }

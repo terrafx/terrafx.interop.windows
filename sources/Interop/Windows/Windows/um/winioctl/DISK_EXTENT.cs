@@ -5,12 +5,16 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DISK_EXTENT.xml' path='doc/member[@name="DISK_EXTENT"]/*' />
 public partial struct DISK_EXTENT
 {
+    /// <include file='DISK_EXTENT.xml' path='doc/member[@name="DISK_EXTENT.DiskNumber"]/*' />
     [NativeTypeName("DWORD")]
     public uint DiskNumber;
 
+    /// <include file='DISK_EXTENT.xml' path='doc/member[@name="DISK_EXTENT.StartingOffset"]/*' />
     public LARGE_INTEGER StartingOffset;
 
+    /// <include file='DISK_EXTENT.xml' path='doc/member[@name="DISK_EXTENT.ExtentLength"]/*' />
     public LARGE_INTEGER ExtentLength;
 }

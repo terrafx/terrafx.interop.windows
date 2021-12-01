@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CRYPT_DEFAULT_CONTEXT_MULTI_OID_PARA.xml' path='doc/member[@name="CRYPT_DEFAULT_CONTEXT_MULTI_OID_PARA"]/*' />
 public unsafe partial struct CRYPT_DEFAULT_CONTEXT_MULTI_OID_PARA
 {
+    /// <include file='CRYPT_DEFAULT_CONTEXT_MULTI_OID_PARA.xml' path='doc/member[@name="CRYPT_DEFAULT_CONTEXT_MULTI_OID_PARA.cOID"]/*' />
     [NativeTypeName("DWORD")]
     public uint cOID;
 
+    /// <include file='CRYPT_DEFAULT_CONTEXT_MULTI_OID_PARA.xml' path='doc/member[@name="CRYPT_DEFAULT_CONTEXT_MULTI_OID_PARA.rgpszOID"]/*' />
     [NativeTypeName("LPSTR *")]
     public sbyte** rgpszOID;
 }

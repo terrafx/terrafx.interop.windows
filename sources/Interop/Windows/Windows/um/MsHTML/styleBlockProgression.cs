@@ -5,12 +5,24 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='styleBlockProgression.xml' path='doc/member[@name="styleBlockProgression"]/*' />
 public enum styleBlockProgression
 {
+    /// <include file='styleBlockProgression.xml' path='doc/member[@name="styleBlockProgression.styleBlockProgressionTb"]/*' />
     styleBlockProgressionTb = 0,
+
+    /// <include file='styleBlockProgression.xml' path='doc/member[@name="styleBlockProgression.styleBlockProgressionRl"]/*' />
     styleBlockProgressionRl = 1,
+
+    /// <include file='styleBlockProgression.xml' path='doc/member[@name="styleBlockProgression.styleBlockProgressionBt"]/*' />
     styleBlockProgressionBt = 2,
+
+    /// <include file='styleBlockProgression.xml' path='doc/member[@name="styleBlockProgression.styleBlockProgressionLr"]/*' />
     styleBlockProgressionLr = 3,
+
+    /// <include file='styleBlockProgression.xml' path='doc/member[@name="styleBlockProgression.styleBlockProgressionNotSet"]/*' />
     styleBlockProgressionNotSet = 4,
+
+    /// <include file='styleBlockProgression.xml' path='doc/member[@name="styleBlockProgression.styleBlockProgression_Max"]/*' />
     styleBlockProgression_Max = 2147483647,
 }

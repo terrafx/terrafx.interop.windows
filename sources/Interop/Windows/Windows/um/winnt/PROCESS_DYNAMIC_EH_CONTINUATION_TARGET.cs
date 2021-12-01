@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PROCESS_DYNAMIC_EH_CONTINUATION_TARGET.xml' path='doc/member[@name="PROCESS_DYNAMIC_EH_CONTINUATION_TARGET"]/*' />
 public partial struct PROCESS_DYNAMIC_EH_CONTINUATION_TARGET
 {
+    /// <include file='PROCESS_DYNAMIC_EH_CONTINUATION_TARGET.xml' path='doc/member[@name="PROCESS_DYNAMIC_EH_CONTINUATION_TARGET.TargetAddress"]/*' />
     [NativeTypeName("ULONG_PTR")]
     public nuint TargetAddress;
 
+    /// <include file='PROCESS_DYNAMIC_EH_CONTINUATION_TARGET.xml' path='doc/member[@name="PROCESS_DYNAMIC_EH_CONTINUATION_TARGET.Flags"]/*' />
     [NativeTypeName("ULONG_PTR")]
     public nuint Flags;
 }

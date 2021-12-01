@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='UPSTATES.xml' path='doc/member[@name="UPSTATES"]/*' />
 public enum UPSTATES
 {
+    /// <include file='UPSTATES.xml' path='doc/member[@name="UPSTATES.UPS_NORMAL"]/*' />
     UPS_NORMAL = 1,
+
+    /// <include file='UPSTATES.xml' path='doc/member[@name="UPSTATES.UPS_HOT"]/*' />
     UPS_HOT = 2,
+
+    /// <include file='UPSTATES.xml' path='doc/member[@name="UPSTATES.UPS_PRESSED"]/*' />
     UPS_PRESSED = 3,
+
+    /// <include file='UPSTATES.xml' path='doc/member[@name="UPSTATES.UPS_DISABLED"]/*' />
     UPS_DISABLED = 4,
 }

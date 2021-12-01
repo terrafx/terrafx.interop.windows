@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MIB_IPADDRROW">
+    <summary>
+      <para>The
+<b>MIB_IPADDRROW</b> specifies information for a particular IPv4 address in the <see cref="MIB_IPADDRTABLE" /> structure.</para>
+    </summary>
+    <remarks>
+      <para>On Windows XP and later, the <b>dwIndex</b> member of the <b>MIB_IPADDRROW</b> structure has a data type of <b>IF_INDEX</b>. The <b>wType</b> member is only available  on Windows XP and later. On Windows 2000 and earlier, this member is defined as <b>Unused2</b>.</para>
+      <para>The <see cref="GetIpAddrTable" /> function retrieves the interface–to–IPv4 address mapping table on a local computer and returns this information in an <see cref="MIB_IPADDRTABLE" /> structure. The <b>table</b> member in the <b>MIB_IPADDRTABLE</b> structure contains an array of <b>MIB_IPADDRROW</b> entries.</para>
+      <para>On the Microsoft Windows Software Development Kit (SDK) released for Windows Vista and later, the organization of header files has changed and the <b>MIB_IPADDRROW</b> structure is defined in the <i>Ipmib.h</i> header file not in the <i>Iprtrmib.h</i> header file. Note that the <i>Ipmib.h</i> header file is automatically included in <i>Iprtrmib.h</i> which is automatically included in the <i>Iphlpapi.h</i> header file. The  <i>Ipmib.h</i> and <i>Iprtrmib.h</i> header files should never be used directly.</para>
+    </remarks>
+    <seealso cref="GetIpAddrTable" />
+    <seealso cref="MIB_IPADDRTABLE" />
+  </member>
+  <member name="MIB_IPADDRROW.dwAddr">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The IPv4 address in network byte order.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPADDRROW.dwIndex">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The index of the interface associated with this IPv4 address.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPADDRROW.dwMask">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The subnet mask for the IPv4 address in network byte order.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPADDRROW.dwBCastAddr">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The broadcast address in network byte order. A broadcast address is typically the IPv4 address with the host portion set to either all zeros or all ones.</para>
+      <para>The proper value for this member is not returned by the <see cref="GetIpAddrTable" /> function.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPADDRROW.dwReasmSize">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The maximum re-assembly size for received datagrams.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPADDRROW.unused1">
+    <summary>
+      <para>Type: <b>unsigned short</b></para>
+      <para>This member is reserved.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPADDRROW.unused2">
+    <summary>
+      <para>Type: <b>unsigned short</b></para>
+      <para>This member is reserved.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPADDRROW">
+    <summary>
+      <para>The
+<b>MIB_IPADDRROW</b> specifies information for a particular IPv4 address in the <see cref="MIB_IPADDRTABLE" /> structure.</para>
+    </summary>
+    <remarks>
+      <para>On Windows XP and later, the <b>dwIndex</b> member of the <b>MIB_IPADDRROW</b> structure has a data type of <b>IF_INDEX</b>. The <b>wType</b> member is only available  on Windows XP and later. On Windows 2000 and earlier, this member is defined as <b>Unused2</b>.</para>
+      <para>The <see cref="GetIpAddrTable" /> function retrieves the interface–to–IPv4 address mapping table on a local computer and returns this information in an <see cref="MIB_IPADDRTABLE" /> structure. The <b>table</b> member in the <b>MIB_IPADDRTABLE</b> structure contains an array of <b>MIB_IPADDRROW</b> entries.</para>
+      <para>On the Microsoft Windows Software Development Kit (SDK) released for Windows Vista and later, the organization of header files has changed and the <b>MIB_IPADDRROW</b> structure is defined in the <i>Ipmib.h</i> header file not in the <i>Iprtrmib.h</i> header file. Note that the <i>Ipmib.h</i> header file is automatically included in <i>Iprtrmib.h</i> which is automatically included in the <i>Iphlpapi.h</i> header file. The  <i>Ipmib.h</i> and <i>Iprtrmib.h</i> header files should never be used directly.</para>
+    </remarks>
+    <seealso cref="GetIpAddrTable" />
+    <seealso cref="MIB_IPADDRTABLE" />
+  </member>
+  <member name="MIB_IPADDRROW.dwAddr">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The IPv4 address in network byte order.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPADDRROW.dwIndex">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The index of the interface associated with this IPv4 address.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPADDRROW.dwMask">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The subnet mask for the IPv4 address in network byte order.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPADDRROW.dwBCastAddr">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The broadcast address in network byte order. A broadcast address is typically the IPv4 address with the host portion set to either all zeros or all ones.</para>
+      <para>The proper value for this member is not returned by the <see cref="GetIpAddrTable" /> function.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPADDRROW.dwReasmSize">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The maximum re-assembly size for received datagrams.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPADDRROW.unused1">
+    <summary>
+      <para>Type: <b>unsigned short</b></para>
+      <para>This member is reserved.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPADDRROW.wType">
+    <summary>
+      <para>Type: <b>unsigned short</b></para>
+      <para>The address type or state. This member can be a  combination of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>MIB_IPADDR_PRIMARY</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0001</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Primary IP address</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>MIB_IPADDR_DYNAMIC</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0004</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Dynamic IP address</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>MIB_IPADDR_DISCONNECTED</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0008</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Address is on disconnected interface</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>MIB_IPADDR_DELETED</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0040</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Address is being deleted</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>MIB_IPADDR_TRANSIENT</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0080</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Transient address</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+</doc>

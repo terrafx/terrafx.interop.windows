@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WINHTTP_ASYNC_RESULT.xml' path='doc/member[@name="WINHTTP_ASYNC_RESULT"]/*' />
 public partial struct WINHTTP_ASYNC_RESULT
 {
+    /// <include file='WINHTTP_ASYNC_RESULT.xml' path='doc/member[@name="WINHTTP_ASYNC_RESULT.dwResult"]/*' />
     [NativeTypeName("DWORD_PTR")]
     public nuint dwResult;
 
+    /// <include file='WINHTTP_ASYNC_RESULT.xml' path='doc/member[@name="WINHTTP_ASYNC_RESULT.dwError"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwError;
 }

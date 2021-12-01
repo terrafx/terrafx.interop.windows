@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ICopyHookW.CopyCallback">
+    <summary>
+      <para>Determines whether the Shell will be allowed to move, copy, delete, or rename a folder or printer object.</para>
+    </summary>
+    <param name="hwnd">
+      <para>A handle to the window that the copy hook handler should use as the parent for any user interface elements the handler may need to display. If <b>FOF_SILENT</b> is specified in <i>wFunc</i>, the method should ignore this parameter.</para>
+    </param>
+    <param name="wFunc">
+      <para>The operation to perform. This parameter can be one of the values listed under the <b>wFunc</b> member of the <see cref="SHFILEOPSTRUCT" /> structure.</para>
+    </param>
+    <param name="wFlags">
+      <para>The flags that control the operation. This parameter can be one or more of the values listed under the <i>fFlags</i> member of the <see cref="SHFILEOPSTRUCT" /> structure.</para>
+      <para>For printer copy hooks, this value is one of the following values defined in Shellapi.h.</para>
+      <para>| Value       | Description |
+|-------------|------------|
+|  <b>PO_DELETE</b>      | A printer is being deleted. <i>pszSrcFile</i> points to the full path to the specified printer.           |
+|  <b>PO_RENAME</b>       | A printer is being renamed. The <i>pszSrcFile</i> parameter points to the printer's new name. The <i>pszDestFile</i> parameter points to the old name.           |
+| <b>PO_PORTCHANGE</b>    | Not supported. Do not use.          |
+| <b>PO_REN_PORT</b>    | Not supported. Do not use.           |</para>
+    </param>
+    <param name="pszSrcFile">
+      <para>A pointer to a string that contains the name of the source folder.</para>
+    </param>
+    <param name="dwSrcAttribs">
+      <para>The attributes of the source folder. This parameter can be a combination of any of the file attribute flags (FILE_ATTRIBUTE_*) defined in the header files. See [https://docs.microsoft.com/windows/desktop/FileIO/file-attribute-constants](File Attribute Constants).</para>
+    </param>
+    <param name="pszDestFile">
+      <para>A pointer to a string that contains the name of the destination folder.</para>
+    </param>
+    <param name="dwDestAttribs">
+      <para>The attributes of the destination folder. This parameter can be a combination of any of the file attribute flags (FILE_ATTRIBUTE_*) defined in the header files. See [https://docs.microsoft.com/windows/desktop/FileIO/file-attribute-constants](File Attribute Constants).</para>
+    </param>
+    <returns>
+      <para>Returns an integer value that indicates whether the Shell should perform the operation. One of the following:</para>
+      <para>| Value       | Description |
+|-------------|------------|
+| <b>IDYES</b>       | Allows the operation.           |
+| <b>IDNO</b>        | Prevents the operation on this folder but continues with any other operations that have been approved (for example, a batch copy operation).           |
+| <b>IDCANCEL</b>    | Prevents the current operation and cancels any pending operations.           |</para>
+    </returns>
+    <remarks>
+      <para>The Shell calls each copy hook handler registered for a folder or printer object until all the handlers have been called, or until one of them returns IDNO or IDCANCEL.</para>
+      <para>Copy hook handlers for folders are registered under the following key:</para>
+      <para>
+        <b>HKEY_CLASSES_ROOT/Directory/Shellex/CopyHookHandlers/your_copyhook/{copyhook CLSID value}</b>
+      </para>
+      <para>Copy hook handlers for printers are registered under the following key.</para>
+      <para>
+        <b>HKEY_CLASSES_ROOT/Printers/Shellex/CopyHookHandlers/your_copyhook/{copyhook CLSID value}</b>
+      </para>
+      <para>When this method is called, the Shell initializes the <see cref="ICopyHookW" /> interface directly without using an <see cref="IShellExtInit" /> interface first.</para>
+    </remarks>
+  </member>
+  <member name="ICopyHookW">
+    <summary>
+      <para>Exposes a method that creates a <i>copy hook handler</i>. A copy hook handler is a Shell extension that determines if a Shell folder or printer object can be moved, copied, renamed, or deleted. The Shell calls the <see cref="ICopyHookW.CopyCallback" /> method prior to performing one of these operations.</para>
+    </summary>
+    <remarks>
+      <para>The copy hook handler, which is an OLE in-process server (a dll), does not perform the task itself, but it does approve or disapprove the action. If the Shell receives approval from the copy hook handler, it performs the file system operation. Copy hook handlers are not informed about the success of an operation, so they cannot monitor actions taken on folder objects unless <see cref="FindFirstChangeNotification" /> is used.</para>
+      <para>A folder object can have multiple copy hook handlers. For example, even if the Shell already has a copy hook handler registered for a particular folder object, you can still register one of your own. If two or more copy hook handlers are registered for an object, the Shell simply calls each of them before performing one of the specified file system operations.</para>
+      <para>The Shell initializes <b>ICopyHookA</b> directly, without using the <see cref="IShellExtInit" /> interface first.</para>
+      <para>
+        <see cref="CopyCallback" /> returns an int value that indicates whether the Shell should perform the operation. The Shell will call each copy hook handler registered for a folder object until all the handlers have been called or until one of them has returned a value other than IDYES. The handler returns IDYES to specify that the operation should be performed, or IDNO or IDCANCEL to specify that the operation should be discontinued.</para>
+      <para>Implement a copy hook handler when you want to be able to control when, or if, these file system operations are performed on a given object. You might want to use a copy hook handler on shared folders, for example.</para>
+      <para>You do not call this Shell extension directly. <see cref="CopyCallback" /> is called by the Shell prior to moving, copying, deleting, or renaming a Shell folder object.</para>
+      <blockquote>
+        <para>[!NOTE]
+The shlobj.h header defines ICopyHook as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+  </member>
+</doc>

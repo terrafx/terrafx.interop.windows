@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVEncMPAEmphasisType.xml' path='doc/member[@name="CODECAPI_AVEncMPAEmphasisType"]/*' />
 [Guid("2D59FCDA-BF4E-4ED6-B5DF-5B03B36B0A1F")]
 public partial struct CODECAPI_AVEncMPAEmphasisType
 {

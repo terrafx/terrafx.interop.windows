@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IFileDialog2.xml' path='doc/member[@name="IFileDialog2"]/*' />
 [Guid("61744FC7-85B5-4791-A9B0-272276309B13")]
 [NativeTypeName("struct IFileDialog2 : IFileDialog")]
 [NativeInheritance("IFileDialog")]
@@ -16,6 +17,7 @@ public unsafe partial struct IFileDialog2 : IFileDialog2.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IFileDialog2 : IFileDialog2.Interface
         return ((delegate* unmanaged<IFileDialog2*, Guid*, void**, int>)(lpVtbl[0]))((IFileDialog2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IFileDialog2 : IFileDialog2.Interface
         return ((delegate* unmanaged<IFileDialog2*, uint>)(lpVtbl[1]))((IFileDialog2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IFileDialog2 : IFileDialog2.Interface
         return ((delegate* unmanaged<IFileDialog2*, uint>)(lpVtbl[2]))((IFileDialog2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IModalWindow.Show" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Show(HWND hwndOwner)
@@ -46,6 +51,7 @@ public unsafe partial struct IFileDialog2 : IFileDialog2.Interface
         return ((delegate* unmanaged<IFileDialog2*, HWND, int>)(lpVtbl[3]))((IFileDialog2*)Unsafe.AsPointer(ref this), hwndOwner);
     }
 
+    /// <inheritdoc cref="IFileDialog.SetFileTypes" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetFileTypes(uint cFileTypes, [NativeTypeName("const COMDLG_FILTERSPEC *")] COMDLG_FILTERSPEC* rgFilterSpec)
@@ -53,6 +59,7 @@ public unsafe partial struct IFileDialog2 : IFileDialog2.Interface
         return ((delegate* unmanaged<IFileDialog2*, uint, COMDLG_FILTERSPEC*, int>)(lpVtbl[4]))((IFileDialog2*)Unsafe.AsPointer(ref this), cFileTypes, rgFilterSpec);
     }
 
+    /// <inheritdoc cref="IFileDialog.SetFileTypeIndex" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetFileTypeIndex(uint iFileType)
@@ -60,6 +67,7 @@ public unsafe partial struct IFileDialog2 : IFileDialog2.Interface
         return ((delegate* unmanaged<IFileDialog2*, uint, int>)(lpVtbl[5]))((IFileDialog2*)Unsafe.AsPointer(ref this), iFileType);
     }
 
+    /// <inheritdoc cref="IFileDialog.GetFileTypeIndex" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetFileTypeIndex(uint* piFileType)
@@ -67,6 +75,7 @@ public unsafe partial struct IFileDialog2 : IFileDialog2.Interface
         return ((delegate* unmanaged<IFileDialog2*, uint*, int>)(lpVtbl[6]))((IFileDialog2*)Unsafe.AsPointer(ref this), piFileType);
     }
 
+    /// <inheritdoc cref="IFileDialog.Advise" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT Advise(IFileDialogEvents* pfde, [NativeTypeName("DWORD *")] uint* pdwCookie)
@@ -74,6 +83,7 @@ public unsafe partial struct IFileDialog2 : IFileDialog2.Interface
         return ((delegate* unmanaged<IFileDialog2*, IFileDialogEvents*, uint*, int>)(lpVtbl[7]))((IFileDialog2*)Unsafe.AsPointer(ref this), pfde, pdwCookie);
     }
 
+    /// <inheritdoc cref="IFileDialog.Unadvise" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT Unadvise([NativeTypeName("DWORD")] uint dwCookie)
@@ -81,6 +91,7 @@ public unsafe partial struct IFileDialog2 : IFileDialog2.Interface
         return ((delegate* unmanaged<IFileDialog2*, uint, int>)(lpVtbl[8]))((IFileDialog2*)Unsafe.AsPointer(ref this), dwCookie);
     }
 
+    /// <inheritdoc cref="IFileDialog.SetOptions" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT SetOptions([NativeTypeName("FILEOPENDIALOGOPTIONS")] uint fos)
@@ -88,6 +99,7 @@ public unsafe partial struct IFileDialog2 : IFileDialog2.Interface
         return ((delegate* unmanaged<IFileDialog2*, uint, int>)(lpVtbl[9]))((IFileDialog2*)Unsafe.AsPointer(ref this), fos);
     }
 
+    /// <inheritdoc cref="IFileDialog.GetOptions" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT GetOptions([NativeTypeName("FILEOPENDIALOGOPTIONS *")] uint* pfos)
@@ -95,6 +107,7 @@ public unsafe partial struct IFileDialog2 : IFileDialog2.Interface
         return ((delegate* unmanaged<IFileDialog2*, uint*, int>)(lpVtbl[10]))((IFileDialog2*)Unsafe.AsPointer(ref this), pfos);
     }
 
+    /// <inheritdoc cref="IFileDialog.SetDefaultFolder" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT SetDefaultFolder(IShellItem* psi)
@@ -102,6 +115,7 @@ public unsafe partial struct IFileDialog2 : IFileDialog2.Interface
         return ((delegate* unmanaged<IFileDialog2*, IShellItem*, int>)(lpVtbl[11]))((IFileDialog2*)Unsafe.AsPointer(ref this), psi);
     }
 
+    /// <inheritdoc cref="IFileDialog.SetFolder" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT SetFolder(IShellItem* psi)
@@ -109,6 +123,7 @@ public unsafe partial struct IFileDialog2 : IFileDialog2.Interface
         return ((delegate* unmanaged<IFileDialog2*, IShellItem*, int>)(lpVtbl[12]))((IFileDialog2*)Unsafe.AsPointer(ref this), psi);
     }
 
+    /// <inheritdoc cref="IFileDialog.GetFolder" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT GetFolder(IShellItem** ppsi)
@@ -116,6 +131,7 @@ public unsafe partial struct IFileDialog2 : IFileDialog2.Interface
         return ((delegate* unmanaged<IFileDialog2*, IShellItem**, int>)(lpVtbl[13]))((IFileDialog2*)Unsafe.AsPointer(ref this), ppsi);
     }
 
+    /// <inheritdoc cref="IFileDialog.GetCurrentSelection" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT GetCurrentSelection(IShellItem** ppsi)
@@ -123,6 +139,7 @@ public unsafe partial struct IFileDialog2 : IFileDialog2.Interface
         return ((delegate* unmanaged<IFileDialog2*, IShellItem**, int>)(lpVtbl[14]))((IFileDialog2*)Unsafe.AsPointer(ref this), ppsi);
     }
 
+    /// <inheritdoc cref="IFileDialog.SetFileName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT SetFileName([NativeTypeName("LPCWSTR")] ushort* pszName)
@@ -130,6 +147,7 @@ public unsafe partial struct IFileDialog2 : IFileDialog2.Interface
         return ((delegate* unmanaged<IFileDialog2*, ushort*, int>)(lpVtbl[15]))((IFileDialog2*)Unsafe.AsPointer(ref this), pszName);
     }
 
+    /// <inheritdoc cref="IFileDialog.GetFileName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT GetFileName([NativeTypeName("LPWSTR *")] ushort** pszName)
@@ -137,6 +155,7 @@ public unsafe partial struct IFileDialog2 : IFileDialog2.Interface
         return ((delegate* unmanaged<IFileDialog2*, ushort**, int>)(lpVtbl[16]))((IFileDialog2*)Unsafe.AsPointer(ref this), pszName);
     }
 
+    /// <inheritdoc cref="IFileDialog.SetTitle" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT SetTitle([NativeTypeName("LPCWSTR")] ushort* pszTitle)
@@ -144,6 +163,7 @@ public unsafe partial struct IFileDialog2 : IFileDialog2.Interface
         return ((delegate* unmanaged<IFileDialog2*, ushort*, int>)(lpVtbl[17]))((IFileDialog2*)Unsafe.AsPointer(ref this), pszTitle);
     }
 
+    /// <inheritdoc cref="IFileDialog.SetOkButtonLabel" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT SetOkButtonLabel([NativeTypeName("LPCWSTR")] ushort* pszText)
@@ -151,6 +171,7 @@ public unsafe partial struct IFileDialog2 : IFileDialog2.Interface
         return ((delegate* unmanaged<IFileDialog2*, ushort*, int>)(lpVtbl[18]))((IFileDialog2*)Unsafe.AsPointer(ref this), pszText);
     }
 
+    /// <inheritdoc cref="IFileDialog.SetFileNameLabel" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT SetFileNameLabel([NativeTypeName("LPCWSTR")] ushort* pszLabel)
@@ -158,6 +179,7 @@ public unsafe partial struct IFileDialog2 : IFileDialog2.Interface
         return ((delegate* unmanaged<IFileDialog2*, ushort*, int>)(lpVtbl[19]))((IFileDialog2*)Unsafe.AsPointer(ref this), pszLabel);
     }
 
+    /// <inheritdoc cref="IFileDialog.GetResult" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public HRESULT GetResult(IShellItem** ppsi)
@@ -165,6 +187,7 @@ public unsafe partial struct IFileDialog2 : IFileDialog2.Interface
         return ((delegate* unmanaged<IFileDialog2*, IShellItem**, int>)(lpVtbl[20]))((IFileDialog2*)Unsafe.AsPointer(ref this), ppsi);
     }
 
+    /// <inheritdoc cref="IFileDialog.AddPlace" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
     public HRESULT AddPlace(IShellItem* psi, FDAP fdap)
@@ -172,6 +195,7 @@ public unsafe partial struct IFileDialog2 : IFileDialog2.Interface
         return ((delegate* unmanaged<IFileDialog2*, IShellItem*, FDAP, int>)(lpVtbl[21]))((IFileDialog2*)Unsafe.AsPointer(ref this), psi, fdap);
     }
 
+    /// <inheritdoc cref="IFileDialog.SetDefaultExtension" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
     public HRESULT SetDefaultExtension([NativeTypeName("LPCWSTR")] ushort* pszDefaultExtension)
@@ -179,6 +203,7 @@ public unsafe partial struct IFileDialog2 : IFileDialog2.Interface
         return ((delegate* unmanaged<IFileDialog2*, ushort*, int>)(lpVtbl[22]))((IFileDialog2*)Unsafe.AsPointer(ref this), pszDefaultExtension);
     }
 
+    /// <inheritdoc cref="IFileDialog.Close" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
     public HRESULT Close(HRESULT hr)
@@ -186,6 +211,7 @@ public unsafe partial struct IFileDialog2 : IFileDialog2.Interface
         return ((delegate* unmanaged<IFileDialog2*, HRESULT, int>)(lpVtbl[23]))((IFileDialog2*)Unsafe.AsPointer(ref this), hr);
     }
 
+    /// <inheritdoc cref="IFileDialog.SetClientGuid" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(24)]
     public HRESULT SetClientGuid([NativeTypeName("const GUID &")] Guid* guid)
@@ -193,6 +219,7 @@ public unsafe partial struct IFileDialog2 : IFileDialog2.Interface
         return ((delegate* unmanaged<IFileDialog2*, Guid*, int>)(lpVtbl[24]))((IFileDialog2*)Unsafe.AsPointer(ref this), guid);
     }
 
+    /// <inheritdoc cref="IFileDialog.ClearClientData" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(25)]
     public HRESULT ClearClientData()
@@ -200,6 +227,7 @@ public unsafe partial struct IFileDialog2 : IFileDialog2.Interface
         return ((delegate* unmanaged<IFileDialog2*, int>)(lpVtbl[25]))((IFileDialog2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IFileDialog.SetFilter" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(26)]
     public HRESULT SetFilter(IShellItemFilter* pFilter)
@@ -207,6 +235,7 @@ public unsafe partial struct IFileDialog2 : IFileDialog2.Interface
         return ((delegate* unmanaged<IFileDialog2*, IShellItemFilter*, int>)(lpVtbl[26]))((IFileDialog2*)Unsafe.AsPointer(ref this), pFilter);
     }
 
+    /// <include file='IFileDialog2.xml' path='doc/member[@name="IFileDialog2.SetCancelButtonLabel"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(27)]
     public HRESULT SetCancelButtonLabel([NativeTypeName("LPCWSTR")] ushort* pszLabel)
@@ -214,6 +243,7 @@ public unsafe partial struct IFileDialog2 : IFileDialog2.Interface
         return ((delegate* unmanaged<IFileDialog2*, ushort*, int>)(lpVtbl[27]))((IFileDialog2*)Unsafe.AsPointer(ref this), pszLabel);
     }
 
+    /// <include file='IFileDialog2.xml' path='doc/member[@name="IFileDialog2.SetNavigationRoot"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(28)]
     public HRESULT SetNavigationRoot(IShellItem* psi)

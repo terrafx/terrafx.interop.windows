@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CERT_NAME_VALUE">
+    <summary>
+      <para>The <b>CERT_NAME_VALUE</b> structure contains a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/r-gly">relative distinguished name</a> (RDN) attribute value. It is like the
+<see cref="CERT_RDN_ATTR" /> structure, except that it does not include the object identifier member that is a member of <b>CERT_RDN_ATTR</b>. As in <b>CERT_RDN_ATTR</b>, the interpretation of the <b>Value</b> member depends on <b>dwValueType</b>.</para>
+    </summary>
+    <seealso cref="CERT_RDN" />
+    <seealso cref="CERT_RDN_ATTR" />
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_INTEGER_BLOB</seealso>
+    <seealso cref="CertRDNValueToStr" />
+  </member>
+  <member name="CERT_NAME_VALUE.dwValueType">
+    <summary>
+      <para>Indicates the interpretation of the <b>Value</b> member. For documentation on possible values of <b>dwValueType</b>, see
+<see cref="CERT_RDN_ATTR" />.</para>
+    </summary>
+  </member>
+  <member name="CERT_NAME_VALUE.Value">
+    <summary>
+      <para>
+        <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_INTEGER_BLOB</a> structure that contains the RDN attribute. The <b>cbData</b> member of <b>Value</b> is the length, in bytes, of the <b>pbData</b> member. It is not the number of elements in the <b>pbData</b> string.</para>
+      <para>For example, a <b>DWORD</b> is 32 bits or 4 bytes long. If the <b>pbData</b> member of <b>Value</b> is a <b>DWORD</b> array, the <b>cbData</b> member of <b>Value</b> would be four times the number of <b>DWORD</b> elements in the array. A <b>short</b> data type is 16 bits or 2 bytes long. If the <b>pbData</b> member is an array of <b>short</b> data types, the <b>cbData</b> member must be two times the length of the array.</para>
+      <para>The <b>pbData</b> member of <b>Value</b> can be a null-terminated array of 8-bit or 16-bit characters or a fixed-length array of elements. If <b>dwValueType</b> is set to CERT_RDN_ENCODED_BLOB, <b>pbData</b> is encoded.</para>
+    </summary>
+  </member>
+</doc>

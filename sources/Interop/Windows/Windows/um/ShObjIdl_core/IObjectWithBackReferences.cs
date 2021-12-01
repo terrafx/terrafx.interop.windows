@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IObjectWithBackReferences.xml' path='doc/member[@name="IObjectWithBackReferences"]/*' />
 [Guid("321A6A6A-D61F-4BF3-97AE-14BE2986BB36")]
 [NativeTypeName("struct IObjectWithBackReferences : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IObjectWithBackReferences : IObjectWithBackReferenc
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IObjectWithBackReferences : IObjectWithBackReferenc
         return ((delegate* unmanaged<IObjectWithBackReferences*, Guid*, void**, int>)(lpVtbl[0]))((IObjectWithBackReferences*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IObjectWithBackReferences : IObjectWithBackReferenc
         return ((delegate* unmanaged<IObjectWithBackReferences*, uint>)(lpVtbl[1]))((IObjectWithBackReferences*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IObjectWithBackReferences : IObjectWithBackReferenc
         return ((delegate* unmanaged<IObjectWithBackReferences*, uint>)(lpVtbl[2]))((IObjectWithBackReferences*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IObjectWithBackReferences.xml' path='doc/member[@name="IObjectWithBackReferences.RemoveBackReferences"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT RemoveBackReferences()

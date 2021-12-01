@@ -1,0 +1,1013 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ICreateTypeInfo2.DeleteFuncDesc">
+    <summary>
+      <para>Deletes a function description specified by the index number.</para>
+    </summary>
+    <param name="index">
+      <para>The index of the function whose description is to be deleted. The index should be in the range of 0 to 1 less than the number of functions in this type.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>S_OK
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_INVALIDARG
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>One or more of the arguments is not valid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_OUTOFMEMORY
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Insufficient memory to complete the operation.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-icreatetypeinfo2">ICreateTypeInfo2</seealso>
+  </member>
+  <member name="ICreateTypeInfo2.DeleteFuncDescByMemId">
+    <summary>
+      <para>Deletes the specified function description (FUNCDESC).</para>
+    </summary>
+    <param name="memid">
+      <para>The member identifier of the FUNCDESC to delete.</para>
+    </param>
+    <param name="invKind">
+      <para>The type of the invocation.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>S_OK
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_INVALIDARG
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>One or more of the arguments is not valid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_OUTOFMEMORY
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Insufficient memory to complete the operation.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-icreatetypeinfo2">ICreateTypeInfo2</seealso>
+  </member>
+  <member name="ICreateTypeInfo2.DeleteImplType">
+    <summary>
+      <para>Deletes the IMPLTYPE flags for the indexed interface.</para>
+    </summary>
+    <param name="index">
+      <para>The index of the interface for which to delete the type flags.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>S_OK
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_INVALIDARG
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>One or more of the arguments is not valid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_OUTOFMEMORY
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Insufficient memory to complete the operation.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-icreatetypeinfo2">ICreateTypeInfo2</seealso>
+  </member>
+  <member name="ICreateTypeInfo2.DeleteVarDesc">
+    <summary>
+      <para>Deletes the specified VARDESC structure.</para>
+    </summary>
+    <param name="index">
+      <para>The index number of the VARDESC structure.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>S_OK
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_INVALIDARG
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>One or more of the arguments is not valid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_OUTOFMEMORY
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Insufficient memory to complete the operation.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>TYPE_E_IOERROR</b>
+            </para>
+          </description>
+          <description>
+            <para>The function cannot read from the file.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>TYPE_E_INVDATAREAD</b>
+            </para>
+          </description>
+          <description>
+            <para>The function cannot read from the file.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>TYPE_E_UNSUPFORMAT</b>
+            </para>
+          </description>
+          <description>
+            <para>The type library has an old format.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>TYPE_E_INVALIDSTATE</b>
+            </para>
+          </description>
+          <description>
+            <para>The type library cannot be opened.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-icreatetypeinfo2">ICreateTypeInfo2</seealso>
+  </member>
+  <member name="ICreateTypeInfo2.DeleteVarDescByMemId">
+    <summary>
+      <para>Deletes the specified VARDESC structure.</para>
+    </summary>
+    <param name="memid">
+      <para>The member identifier of the VARDESC to be deleted.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>S_OK
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_INVALIDARG
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>One or more of the arguments is not valid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_OUTOFMEMORY
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Insufficient memory to complete the operation.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>TYPE_E_IOERROR</b>
+            </para>
+          </description>
+          <description>
+            <para>The function cannot read from the file.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>TYPE_E_INVDATAREAD</b>
+            </para>
+          </description>
+          <description>
+            <para>The function cannot read from the file.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>TYPE_E_UNSUPFORMAT</b>
+            </para>
+          </description>
+          <description>
+            <para>The type library has an old format.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>TYPE_E_INVALIDSTATE</b>
+            </para>
+          </description>
+          <description>
+            <para>The type library cannot be opened.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-icreatetypeinfo2">ICreateTypeInfo2</seealso>
+  </member>
+  <member name="ICreateTypeInfo2.SetCustData">
+    <summary>
+      <para>Sets a value for custom data.</para>
+    </summary>
+    <param name="guid">
+      <para>The unique identifier that can be used to identify the data.</para>
+    </param>
+    <param name="pVarVal">
+      <para>The data to store (any variant except an object).</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>S_OK
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_INVALIDARG
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>One or more of the arguments is not valid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_OUTOFMEMORY
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Insufficient memory to complete the operation.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-icreatetypeinfo2">ICreateTypeInfo2</seealso>
+  </member>
+  <member name="ICreateTypeInfo2.SetFuncCustData">
+    <summary>
+      <para>Sets a value for custom data for the specified function.</para>
+    </summary>
+    <param name="index">
+      <para>The index of the function for which to set the custom data.</para>
+    </param>
+    <param name="guid">
+      <para>The unique identifier used to identify the data.</para>
+    </param>
+    <param name="pVarVal">
+      <para>The data to store (any variant except an object).</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>S_OK
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_INVALIDARG
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>One or more of the arguments is not valid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_OUTOFMEMORY
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Insufficient memory to complete the operation.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-icreatetypeinfo2">ICreateTypeInfo2</seealso>
+  </member>
+  <member name="ICreateTypeInfo2.SetFuncHelpStringContext">
+    <summary>
+      <para>Sets a Help context value for a specified function.</para>
+    </summary>
+    <param name="index">
+      <para>The index of the function for which to set the help string context.</para>
+    </param>
+    <param name="dwHelpStringContext">
+      <para>The Help string context for a localized string.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>S_OK
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_INVALIDARG
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>One or more of the arguments is not valid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_OUTOFMEMORY
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Insufficient memory to complete the operation.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-icreatetypeinfo2">ICreateTypeInfo2</seealso>
+  </member>
+  <member name="ICreateTypeInfo2.SetHelpStringContext">
+    <summary>
+      <para>Sets the context number for the specified Help string.</para>
+    </summary>
+    <param name="dwHelpStringContext">
+      <para>The Help string context number.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>S_OK
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_INVALIDARG
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>One or more of the arguments is not valid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_OUTOFMEMORY
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Insufficient memory to complete the operation.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-icreatetypeinfo2">ICreateTypeInfo2</seealso>
+  </member>
+  <member name="ICreateTypeInfo2.SetImplTypeCustData">
+    <summary>
+      <para>Sets a value for custom data for the specified implementation type.</para>
+    </summary>
+    <param name="index">
+      <para>The index of the variable for which to set the custom data.</para>
+    </param>
+    <param name="guid">
+      <para>The unique identifier used to identify the data.</para>
+    </param>
+    <param name="pVarVal">
+      <para>The data to store (any variant except an object).</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>S_OK
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_INVALIDARG
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>One or more of the arguments is not valid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_OUTOFMEMORY
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Insufficient memory to complete the operation.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-icreatetypeinfo2">ICreateTypeInfo2</seealso>
+  </member>
+  <member name="ICreateTypeInfo2.SetName">
+    <summary>
+      <para>Sets the name of the typeinfo.</para>
+    </summary>
+    <param name="szName">
+      <para>The name to be assigned.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>S_OK
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_INVALIDARG
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>One or more of the arguments is not valid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_OUTOFMEMORY
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Insufficient memory to complete the operation.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-icreatetypeinfo2">ICreateTypeInfo2</seealso>
+  </member>
+  <member name="ICreateTypeInfo2.SetParamCustData">
+    <summary>
+      <para>Sets a value for the custom data for the specified parameter.</para>
+    </summary>
+    <param name="indexFunc">
+      <para>The index of the function for which to set the custom data.</para>
+    </param>
+    <param name="indexParam">
+      <para>The index of the parameter of the function for which to set the custom data.</para>
+    </param>
+    <param name="guid">
+      <para>The globally unique identifier (GUID) used to identify the data.</para>
+    </param>
+    <param name="pVarVal">
+      <para>The data to store (any variant except an object).</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>S_OK
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_INVALIDARG
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>One or more of the arguments is not valid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_OUTOFMEMORY
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Insufficient memory to complete the operation.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-icreatetypeinfo2">ICreateTypeInfo2</seealso>
+  </member>
+  <member name="ICreateTypeInfo2.SetVarCustData">
+    <summary>
+      <para>Sets a value for custom data for the specified variable.</para>
+    </summary>
+    <param name="index">
+      <para>The index of the variable for which to set the custom data.</para>
+    </param>
+    <param name="guid">
+      <para>The globally unique ID (GUID) used to identify the data.</para>
+    </param>
+    <param name="pVarVal">
+      <para>The data to store (any variant except an object).</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>S_OK
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_INVALIDARG
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>One or more of the arguments is not valid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_OUTOFMEMORY
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Insufficient memory to complete the operation.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-icreatetypeinfo2">ICreateTypeInfo2</seealso>
+  </member>
+  <member name="ICreateTypeInfo2.SetVarHelpStringContext">
+    <summary>
+      <para>Sets a Help context value for a specified variable.</para>
+    </summary>
+    <param name="index">
+      <para>The index of the variable.</para>
+    </param>
+    <param name="dwHelpStringContext">
+      <para>The Help string context for a localized string.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>S_OK
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_INVALIDARG
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>One or more of the arguments is not valid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_OUTOFMEMORY
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Insufficient memory to complete the operation.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-icreatetypeinfo2">ICreateTypeInfo2</seealso>
+  </member>
+  <member name="ICreateTypeInfo2">
+    <summary>
+      <para>Provides the tools for creating and administering the type information defined through the type description. Derives from <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-icreatetypeinfo">ICreateTypeInfo</a>, and adds methods for deleting items that have been added through ICreateTypeInfo.</para>
+      <para>The <a href="https://docs.microsoft.com//previous-versions/windows/desktop/automat/out">ICreateTypeInfo.LayOut</a> method provides a way for the creator of the type information to check for any errors. A call to QueryInterface can be made to the ICreateTypeInfo instance at any time for its ITypeInfo interface. Calling any of the methods in the ITypeInfointerface that require layout information lays out the type information automatically.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/automat/using-type-building-interfaces-and-functions">Type Building Interfaces and Functions </seealso>
+  </member>
+</doc>

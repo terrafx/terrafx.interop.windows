@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IURL_SETURL_FLAGS.xml' path='doc/member[@name="IURL_SETURL_FLAGS"]/*' />
 public enum IURL_SETURL_FLAGS
 {
+    /// <include file='IURL_SETURL_FLAGS.xml' path='doc/member[@name="IURL_SETURL_FLAGS.IURL_SETURL_FL_GUESS_PROTOCOL"]/*' />
     IURL_SETURL_FL_GUESS_PROTOCOL = 0x0001,
+
+    /// <include file='IURL_SETURL_FLAGS.xml' path='doc/member[@name="IURL_SETURL_FLAGS.IURL_SETURL_FL_USE_DEFAULT_PROTOCOL"]/*' />
     IURL_SETURL_FL_USE_DEFAULT_PROTOCOL = 0x0002,
 }

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IHTMLCommentElement2.xml' path='doc/member[@name="IHTMLCommentElement2"]/*' />
 [Guid("3050F813-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IHTMLCommentElement2 : IDispatch")]
 [NativeInheritance("IDispatch")]
@@ -16,6 +17,7 @@ public unsafe partial struct IHTMLCommentElement2 : IHTMLCommentElement2.Interfa
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IHTMLCommentElement2 : IHTMLCommentElement2.Interfa
         return ((delegate* unmanaged<IHTMLCommentElement2*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLCommentElement2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IHTMLCommentElement2 : IHTMLCommentElement2.Interfa
         return ((delegate* unmanaged<IHTMLCommentElement2*, uint>)(lpVtbl[1]))((IHTMLCommentElement2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IHTMLCommentElement2 : IHTMLCommentElement2.Interfa
         return ((delegate* unmanaged<IHTMLCommentElement2*, uint>)(lpVtbl[2]))((IHTMLCommentElement2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct IHTMLCommentElement2 : IHTMLCommentElement2.Interfa
         return ((delegate* unmanaged<IHTMLCommentElement2*, uint*, int>)(lpVtbl[3]))((IHTMLCommentElement2*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct IHTMLCommentElement2 : IHTMLCommentElement2.Interfa
         return ((delegate* unmanaged<IHTMLCommentElement2*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IHTMLCommentElement2*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
@@ -60,6 +67,7 @@ public unsafe partial struct IHTMLCommentElement2 : IHTMLCommentElement2.Interfa
         return ((delegate* unmanaged<IHTMLCommentElement2*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLCommentElement2*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
+    /// <inheritdoc cref="IDispatch.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
@@ -67,6 +75,7 @@ public unsafe partial struct IHTMLCommentElement2 : IHTMLCommentElement2.Interfa
         return ((delegate* unmanaged<IHTMLCommentElement2*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IHTMLCommentElement2*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
+    /// <include file='IHTMLCommentElement2.xml' path='doc/member[@name="IHTMLCommentElement2.put_data"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT put_data([NativeTypeName("BSTR")] ushort* v)
@@ -74,6 +83,7 @@ public unsafe partial struct IHTMLCommentElement2 : IHTMLCommentElement2.Interfa
         return ((delegate* unmanaged<IHTMLCommentElement2*, ushort*, int>)(lpVtbl[7]))((IHTMLCommentElement2*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLCommentElement2.xml' path='doc/member[@name="IHTMLCommentElement2.get_data"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT get_data([NativeTypeName("BSTR *")] ushort** p)
@@ -81,6 +91,7 @@ public unsafe partial struct IHTMLCommentElement2 : IHTMLCommentElement2.Interfa
         return ((delegate* unmanaged<IHTMLCommentElement2*, ushort**, int>)(lpVtbl[8]))((IHTMLCommentElement2*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLCommentElement2.xml' path='doc/member[@name="IHTMLCommentElement2.get_length"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT get_length([NativeTypeName("long *")] int* p)
@@ -88,6 +99,7 @@ public unsafe partial struct IHTMLCommentElement2 : IHTMLCommentElement2.Interfa
         return ((delegate* unmanaged<IHTMLCommentElement2*, int*, int>)(lpVtbl[9]))((IHTMLCommentElement2*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLCommentElement2.xml' path='doc/member[@name="IHTMLCommentElement2.substringData"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT substringData([NativeTypeName("long")] int offset, [NativeTypeName("long")] int Count, [NativeTypeName("BSTR *")] ushort** pbstrsubString)
@@ -95,6 +107,7 @@ public unsafe partial struct IHTMLCommentElement2 : IHTMLCommentElement2.Interfa
         return ((delegate* unmanaged<IHTMLCommentElement2*, int, int, ushort**, int>)(lpVtbl[10]))((IHTMLCommentElement2*)Unsafe.AsPointer(ref this), offset, Count, pbstrsubString);
     }
 
+    /// <include file='IHTMLCommentElement2.xml' path='doc/member[@name="IHTMLCommentElement2.appendData"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT appendData([NativeTypeName("BSTR")] ushort* bstrstring)
@@ -102,6 +115,7 @@ public unsafe partial struct IHTMLCommentElement2 : IHTMLCommentElement2.Interfa
         return ((delegate* unmanaged<IHTMLCommentElement2*, ushort*, int>)(lpVtbl[11]))((IHTMLCommentElement2*)Unsafe.AsPointer(ref this), bstrstring);
     }
 
+    /// <include file='IHTMLCommentElement2.xml' path='doc/member[@name="IHTMLCommentElement2.insertData"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT insertData([NativeTypeName("long")] int offset, [NativeTypeName("BSTR")] ushort* bstrstring)
@@ -109,6 +123,7 @@ public unsafe partial struct IHTMLCommentElement2 : IHTMLCommentElement2.Interfa
         return ((delegate* unmanaged<IHTMLCommentElement2*, int, ushort*, int>)(lpVtbl[12]))((IHTMLCommentElement2*)Unsafe.AsPointer(ref this), offset, bstrstring);
     }
 
+    /// <include file='IHTMLCommentElement2.xml' path='doc/member[@name="IHTMLCommentElement2.deleteData"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT deleteData([NativeTypeName("long")] int offset, [NativeTypeName("long")] int Count)
@@ -116,6 +131,7 @@ public unsafe partial struct IHTMLCommentElement2 : IHTMLCommentElement2.Interfa
         return ((delegate* unmanaged<IHTMLCommentElement2*, int, int, int>)(lpVtbl[13]))((IHTMLCommentElement2*)Unsafe.AsPointer(ref this), offset, Count);
     }
 
+    /// <include file='IHTMLCommentElement2.xml' path='doc/member[@name="IHTMLCommentElement2.replaceData"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT replaceData([NativeTypeName("long")] int offset, [NativeTypeName("long")] int Count, [NativeTypeName("BSTR")] ushort* bstrstring)

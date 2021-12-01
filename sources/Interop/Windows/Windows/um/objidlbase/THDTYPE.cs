@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='THDTYPE.xml' path='doc/member[@name="THDTYPE"]/*' />
 public enum THDTYPE
 {
+    /// <include file='THDTYPE.xml' path='doc/member[@name="THDTYPE.THDTYPE_BLOCKMESSAGES"]/*' />
     THDTYPE_BLOCKMESSAGES = 0,
+
+    /// <include file='THDTYPE.xml' path='doc/member[@name="THDTYPE.THDTYPE_PROCESSMESSAGES"]/*' />
     THDTYPE_PROCESSMESSAGES = 1,
 }

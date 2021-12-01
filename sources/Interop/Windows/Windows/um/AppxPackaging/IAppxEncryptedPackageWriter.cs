@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAppxEncryptedPackageWriter.xml' path='doc/member[@name="IAppxEncryptedPackageWriter"]/*' />
 [Guid("F43D0B0B-1379-40E2-9B29-682EA2BF42AF")]
 [NativeTypeName("struct IAppxEncryptedPackageWriter : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IAppxEncryptedPackageWriter : IAppxEncryptedPackage
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IAppxEncryptedPackageWriter : IAppxEncryptedPackage
         return ((delegate* unmanaged<IAppxEncryptedPackageWriter*, Guid*, void**, int>)(lpVtbl[0]))((IAppxEncryptedPackageWriter*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IAppxEncryptedPackageWriter : IAppxEncryptedPackage
         return ((delegate* unmanaged<IAppxEncryptedPackageWriter*, uint>)(lpVtbl[1]))((IAppxEncryptedPackageWriter*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IAppxEncryptedPackageWriter : IAppxEncryptedPackage
         return ((delegate* unmanaged<IAppxEncryptedPackageWriter*, uint>)(lpVtbl[2]))((IAppxEncryptedPackageWriter*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAppxEncryptedPackageWriter.xml' path='doc/member[@name="IAppxEncryptedPackageWriter.AddPayloadFileEncrypted"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT AddPayloadFileEncrypted([NativeTypeName("LPCWSTR")] ushort* fileName, APPX_COMPRESSION_OPTION compressionOption, IStream* inputStream)
@@ -48,6 +53,7 @@ public unsafe partial struct IAppxEncryptedPackageWriter : IAppxEncryptedPackage
         return ((delegate* unmanaged<IAppxEncryptedPackageWriter*, ushort*, APPX_COMPRESSION_OPTION, IStream*, int>)(lpVtbl[3]))((IAppxEncryptedPackageWriter*)Unsafe.AsPointer(ref this), fileName, compressionOption, inputStream);
     }
 
+    /// <include file='IAppxEncryptedPackageWriter.xml' path='doc/member[@name="IAppxEncryptedPackageWriter.Close"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Close()

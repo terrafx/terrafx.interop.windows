@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IWICColorContext.xml' path='doc/member[@name="IWICColorContext"]/*' />
 [Guid("3C613A02-34B2-44EA-9A7C-45AEA9C6FD6D")]
 [NativeTypeName("struct IWICColorContext : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IWICColorContext : IWICColorContext.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IWICColorContext : IWICColorContext.Interface
         return ((delegate* unmanaged<IWICColorContext*, Guid*, void**, int>)(lpVtbl[0]))((IWICColorContext*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IWICColorContext : IWICColorContext.Interface
         return ((delegate* unmanaged<IWICColorContext*, uint>)(lpVtbl[1]))((IWICColorContext*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IWICColorContext : IWICColorContext.Interface
         return ((delegate* unmanaged<IWICColorContext*, uint>)(lpVtbl[2]))((IWICColorContext*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IWICColorContext.xml' path='doc/member[@name="IWICColorContext.InitializeFromFilename"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT InitializeFromFilename([NativeTypeName("LPCWSTR")] ushort* wzFilename)
@@ -46,6 +51,7 @@ public unsafe partial struct IWICColorContext : IWICColorContext.Interface
         return ((delegate* unmanaged<IWICColorContext*, ushort*, int>)(lpVtbl[3]))((IWICColorContext*)Unsafe.AsPointer(ref this), wzFilename);
     }
 
+    /// <include file='IWICColorContext.xml' path='doc/member[@name="IWICColorContext.InitializeFromMemory"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT InitializeFromMemory([NativeTypeName("const BYTE *")] byte* pbBuffer, uint cbBufferSize)
@@ -53,6 +59,7 @@ public unsafe partial struct IWICColorContext : IWICColorContext.Interface
         return ((delegate* unmanaged<IWICColorContext*, byte*, uint, int>)(lpVtbl[4]))((IWICColorContext*)Unsafe.AsPointer(ref this), pbBuffer, cbBufferSize);
     }
 
+    /// <include file='IWICColorContext.xml' path='doc/member[@name="IWICColorContext.InitializeFromExifColorSpace"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT InitializeFromExifColorSpace(uint value)
@@ -60,6 +67,7 @@ public unsafe partial struct IWICColorContext : IWICColorContext.Interface
         return ((delegate* unmanaged<IWICColorContext*, uint, int>)(lpVtbl[5]))((IWICColorContext*)Unsafe.AsPointer(ref this), value);
     }
 
+    /// <include file='IWICColorContext.xml' path='doc/member[@name="IWICColorContext.GetType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetType(WICColorContextType* pType)
@@ -67,6 +75,7 @@ public unsafe partial struct IWICColorContext : IWICColorContext.Interface
         return ((delegate* unmanaged<IWICColorContext*, WICColorContextType*, int>)(lpVtbl[6]))((IWICColorContext*)Unsafe.AsPointer(ref this), pType);
     }
 
+    /// <include file='IWICColorContext.xml' path='doc/member[@name="IWICColorContext.GetProfileBytes"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetProfileBytes(uint cbBuffer, byte* pbBuffer, uint* pcbActual)
@@ -74,6 +83,7 @@ public unsafe partial struct IWICColorContext : IWICColorContext.Interface
         return ((delegate* unmanaged<IWICColorContext*, uint, byte*, uint*, int>)(lpVtbl[7]))((IWICColorContext*)Unsafe.AsPointer(ref this), cbBuffer, pbBuffer, pcbActual);
     }
 
+    /// <include file='IWICColorContext.xml' path='doc/member[@name="IWICColorContext.GetExifColorSpace"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetExifColorSpace(uint* pValue)

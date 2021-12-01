@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='_DVDECODERRESOLUTION.xml' path='doc/member[@name="_DVDECODERRESOLUTION"]/*' />
 public enum _DVDECODERRESOLUTION
 {
+    /// <include file='_DVDECODERRESOLUTION.xml' path='doc/member[@name="_DVDECODERRESOLUTION.DVDECODERRESOLUTION_720x480"]/*' />
     DVDECODERRESOLUTION_720x480 = 1000,
+
+    /// <include file='_DVDECODERRESOLUTION.xml' path='doc/member[@name="_DVDECODERRESOLUTION.DVDECODERRESOLUTION_360x240"]/*' />
     DVDECODERRESOLUTION_360x240 = 1001,
+
+    /// <include file='_DVDECODERRESOLUTION.xml' path='doc/member[@name="_DVDECODERRESOLUTION.DVDECODERRESOLUTION_180x120"]/*' />
     DVDECODERRESOLUTION_180x120 = 1002,
+
+    /// <include file='_DVDECODERRESOLUTION.xml' path='doc/member[@name="_DVDECODERRESOLUTION.DVDECODERRESOLUTION_88x60"]/*' />
     DVDECODERRESOLUTION_88x60 = 1003,
 }

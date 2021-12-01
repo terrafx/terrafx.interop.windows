@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="AnalogVideoStandard">
+    <summary>
+      <para>The <b>AnalogVideoStandard</b> enumeration specifies the format of an analog television signal.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-enumerated-types">DirectShow Enumerated Types</seealso>
+    <seealso cref="IAMTVTuner" />
+  </member>
+  <member name="AnalogVideoStandard.AnalogVideo_None">
+    <summary>
+      <para>Digital sensor.</para>
+    </summary>
+  </member>
+  <member name="AnalogVideoStandard.AnalogVideo_NTSC_M">
+    <summary>
+      <para>NTSC (M) standard, 7.5 IRE black.</para>
+    </summary>
+  </member>
+  <member name="AnalogVideoStandard.AnalogVideo_NTSC_M_J">
+    <summary>
+      <para>NTSC (M) standard, 0 IRE black (Japan).</para>
+    </summary>
+  </member>
+  <member name="AnalogVideoStandard.AnalogVideo_NTSC_433">
+    <summary>
+      <para>NTSC-433.</para>
+    </summary>
+  </member>
+  <member name="AnalogVideoStandard.AnalogVideo_PAL_B">
+    <summary>
+      <para>PAL-B standard.</para>
+    </summary>
+  </member>
+  <member name="AnalogVideoStandard.AnalogVideo_PAL_D">
+    <summary>
+      <para>PAL (D) standard.</para>
+    </summary>
+  </member>
+  <member name="AnalogVideoStandard.AnalogVideo_PAL_G">
+    <summary></summary>
+  </member>
+  <member name="AnalogVideoStandard.AnalogVideo_PAL_H">
+    <summary>
+      <para>PAL (H) standard.</para>
+    </summary>
+  </member>
+  <member name="AnalogVideoStandard.AnalogVideo_PAL_I">
+    <summary>
+      <para>PAL (I) standard.</para>
+    </summary>
+  </member>
+  <member name="AnalogVideoStandard.AnalogVideo_PAL_M">
+    <summary>
+      <para>PAL (M) standard.</para>
+    </summary>
+  </member>
+  <member name="AnalogVideoStandard.AnalogVideo_PAL_N">
+    <summary>
+      <para>PAL (N) standard.</para>
+    </summary>
+  </member>
+  <member name="AnalogVideoStandard.AnalogVideo_PAL_60">
+    <summary>
+      <para>PAL-60 standard.</para>
+    </summary>
+  </member>
+  <member name="AnalogVideoStandard.AnalogVideo_SECAM_B">
+    <summary>
+      <para>SECAM (B) standard.</para>
+    </summary>
+  </member>
+  <member name="AnalogVideoStandard.AnalogVideo_SECAM_D">
+    <summary>
+      <para>SECAM (D) standard.</para>
+    </summary>
+  </member>
+  <member name="AnalogVideoStandard.AnalogVideo_SECAM_G">
+    <summary>
+      <para>SECAM (G) standard.</para>
+    </summary>
+  </member>
+  <member name="AnalogVideoStandard.AnalogVideo_SECAM_H">
+    <summary>
+      <para>SECAM (H) standard.</para>
+    </summary>
+  </member>
+  <member name="AnalogVideoStandard.AnalogVideo_SECAM_K">
+    <summary>
+      <para>SECAM (K) standard.</para>
+    </summary>
+  </member>
+  <member name="AnalogVideoStandard.AnalogVideo_SECAM_K1">
+    <summary>
+      <para>SECAM (K1) standard.</para>
+    </summary>
+  </member>
+  <member name="AnalogVideoStandard.AnalogVideo_SECAM_L">
+    <summary>
+      <para>SECAM (L) standard.</para>
+    </summary>
+  </member>
+  <member name="AnalogVideoStandard.AnalogVideo_SECAM_L1">
+    <summary>
+      <para>SECAM (L1) standard.</para>
+    </summary>
+  </member>
+  <member name="AnalogVideoStandard.AnalogVideo_PAL_N_COMBO">
+    <summary>
+      <para>Combination (N) PAL standard (Argentina).</para>
+    </summary>
+  </member>
+  <member name="AnalogVideoStandard.AnalogVideoMask_MCE_NTSC">
+    <summary></summary>
+  </member>
+  <member name="AnalogVideoStandard.AnalogVideoMask_MCE_PAL">
+    <summary></summary>
+  </member>
+  <member name="AnalogVideoStandard.AnalogVideoMask_MCE_SECAM">
+    <summary></summary>
+  </member>
+</doc>

@@ -5,15 +5,20 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DISPPARAMS.xml' path='doc/member[@name="DISPPARAMS"]/*' />
 public unsafe partial struct DISPPARAMS
 {
+    /// <include file='DISPPARAMS.xml' path='doc/member[@name="DISPPARAMS.rgvarg"]/*' />
     [NativeTypeName("VARIANTARG *")]
     public VARIANT* rgvarg;
 
+    /// <include file='DISPPARAMS.xml' path='doc/member[@name="DISPPARAMS.rgdispidNamedArgs"]/*' />
     [NativeTypeName("DISPID *")]
     public int* rgdispidNamedArgs;
 
+    /// <include file='DISPPARAMS.xml' path='doc/member[@name="DISPPARAMS.cArgs"]/*' />
     public uint cArgs;
 
+    /// <include file='DISPPARAMS.xml' path='doc/member[@name="DISPPARAMS.cNamedArgs"]/*' />
     public uint cNamedArgs;
 }

@@ -1,0 +1,290 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IShellItemArray.BindToHandler">
+    <summary>
+      <para>Binds to an object by means of the specified handler.</para>
+    </summary>
+    <param name="pbc">
+      <para>Type: <b><see cref="IBindCtx" />*</b></para>
+      <para>A pointer to an <see cref="IBindCtx" /> interface on a bind context object.</para>
+    </param>
+    <param name="bhid">
+      <para>Type: <b>REFGUID</b></para>
+      <para>One of the following values, defined in Shlguid.h, that determine the handler.</para>
+      <h4>BHID_SFUIObject</h4>
+      <para>Restricts usage to <see cref="GetUIObjectOf" />. Use this handler type only for a flat item array, where all items are in the same folder.</para>
+      <h4>BHID_DataObject</h4>
+      <para>
+        <b>Introduced in Windows Vista</b>: Gets an <see cref="IDataObject" /> object for use with an item or an array of items. Use this handler type only for flat data objects or item arrays created by <see cref="SHCreateShellItemArrayFromDataObject" />.</para>
+      <h4>BHID_AssociationArray</h4>
+      <para>
+        <b>Introduced in Windows Vista</b>: Gets an <see cref="IQueryAssociations" /> object for use with an item or an array of items. This only retrieves the association array object for the first item in the <see cref="IShellItemArray" /></para>
+    </param>
+    <param name="riid">
+      <para>Type: <b>REFIID</b></para>
+      <para>The IID of the object type to retrieve.</para>
+    </param>
+    <param name="ppvOut">
+      <para>Type: <b>void**</b></para>
+      <para>When this methods returns, contains the object specified in <i>riid</i> that is returned by the handler specified by <i>rbhid</i>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IShellItemArray.EnumItems">
+    <summary>
+      <para>Gets an enumerator of the items in the array.</para>
+    </summary>
+    <param name="ppenumShellItems">
+      <para>Type: <b><see cref="IEnumShellItems" />**</b></para>
+      <para>When this method returns, contains an <see cref="IEnumShellItems" /> pointer that enumerates the <see cref="shell items" /> that are in the array.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IShellItem" />
+    <seealso cref="IShellItemArray" />
+  </member>
+  <member name="IShellItemArray.GetAttributes">
+    <summary>
+      <para>Gets the attributes of the set of items contained in an <see cref="IShellItemArray" />. If the array contains more than one item, the attributes retrieved by this method are not the attributes of single items, but a logical combination of all of the requested attributes of all of the items.</para>
+    </summary>
+    <param name="AttribFlags">
+      <para>Type: <b>SIATTRIBFLAGS</b></para>
+      <para>If the array contains a single item, this method provides the same results as <see cref="GetAttributes" />. However, if the array contains multiple items, the attribute sets of all the items are combined into a single attribute set and returned in the value pointed to by <i>psfgaoAttribs</i>. This parameter takes one of the following values to define how that final attribute set is determined:</para>
+      <h4>SIATTRIBFLAGS_AND (0x00000001)</h4>
+      <para>0x00000001. If there are multiple items in the array, use a bitwise AND to combine the attributes across items. For instance, if the array contains two items where one item can be moved (SFGAO_CANMOVE) and a second item cannot, the method returns (1 &amp; 0) or 0 for that attribute bit.</para>
+      <h4>SIATTRIBFLAGS_OR (0x00000002)</h4>
+      <para>0x00000002. If there are multiple items in the array, use a bitwise OR to combine the attributes across items. For instance, if the array contains two items where one item can be moved (SFGAO_CANMOVE) and a second item cannot, the method returns (1 | 0) or 1 for that attribute bit.</para>
+      <h4>SIATTRIBFLAGS_APPCOMPAT (0x00000003)</h4>
+      <para>0x00000003. Retrieve the attributes directly from the Shell data source. To use this value, the Shell item array must have been initialized as an <see cref="IShellFolder" /> with its contents specified as an array of child PIDLs.</para>
+      <h4>SIATTRIBFLAGS_MASK (0x00000003)</h4>
+      <para>0x00000003. A mask for SIATTRIBFLAGS_AND, SIATTRIBFLAGS_OR, and SIATTRIBFLAGS_APPCOMPAT. Callers normally do not use this value.</para>
+      <h4>SIATTRIBFLAGS_ALLITEMS (0x00004000)</h4>
+      <para>0x00004000. <b>Windows 7 and later</b>. Examine all items in the array to compute the attributes. Note that this can result in poor performance over large arrays and therefore it should be used only when needed. Cases in which you pass this flag should be extremely rare. See Remarks for more details.</para>
+    </param>
+    <param name="sfgaoMask">
+      <para>Type: <b>SFGAOF</b></para>
+      <para>A mask that specifies what particular attributes are being requested. A bitwise OR of one or more of the <a href="https://docs.microsoft.com//windows/desktop/shell/sfgao">SFGAO</a> values.</para>
+    </param>
+    <param name="psfgaoAttribs">
+      <para>Type: <b>SFGAOF*</b></para>
+      <para>A bitmap that, when this method returns successfully, contains the values of the requested attributes.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_OK if the attributes returned exactly match those requested in <i>sfgaoMask</i>, S_FALSE if the attributes do not exactly match, or a standard COM error value otherwise.</para>
+    </returns>
+    <remarks>
+      <para>The Shell item array caches individual attributes after they have been determined.</para>
+      <para>As this method passes through the array gathering attribute information, it normally stops looking at a particular attribute after that value is irrevocably set. For instance, if the SIATTRIBFLAGS_AND flag is set, after an attribute is found not to be set on an item (a value of 0), there is no need to continue examining that attribute value on other items because the result of the AND operation will always be 0. Therefore, the final set of attributes is commonly calculated by looking at only the first few items in the array, which is all that is needed to obtain the final value. If you have a need to examine all items in the array, set the SIATTRIBFLAGS_ALLITEMS flag. However, be aware that this can slow the method's return considerably, so do not do so without cause.</para>
+    </remarks>
+  </member>
+  <member name="IShellItemArray.GetCount">
+    <summary>
+      <para>Gets the number of items in the given <see cref="IShellItem" /> array.</para>
+    </summary>
+    <param name="pdwNumItems">
+      <para>Type: <b>DWORD*</b></para>
+      <para>When this method returns, contains the number of items in the <see cref="IShellItemArray" />.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IShellItem" />
+    <seealso cref="IShellItemArray" />
+    <seealso cref="IShellItemArray.GetItemAt" />
+  </member>
+  <member name="IShellItemArray.GetItemAt">
+    <summary>
+      <para>Gets the item at the given index in the <see cref="IShellItemArray" />.</para>
+    </summary>
+    <param name="dwIndex">
+      <para>Type: <b>DWORD</b></para>
+      <para>The index of the <see cref="IShellItem" /> requested in the <see cref="IShellItemArray" /></para>
+    </param>
+    <param name="ppsi">
+      <para>Type: <b><see cref="IShellItem" />**</b></para>
+      <para>When this method returns, contains the requested <see cref="IShellItem" /> pointer.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This function returns E_FAIL if the requested index is out of bounds of the <see cref="IShellItemArray" />.</para>
+    </remarks>
+    <seealso cref="IShellItem" />
+    <seealso cref="IShellItemArray" />
+    <seealso cref="IShellItemArray.GetCount" />
+  </member>
+  <member name="IShellItemArray.GetPropertyDescriptionList">
+    <summary>
+      <para>Gets a property description list for the items in the shell item array.</para>
+    </summary>
+    <param name="keyType">
+      <para>Type: <b>REFPROPERTYKEY</b></para>
+      <para>A reference to the <see cref="PROPERTYKEY" /> structure specifying which property list to retrieve.</para>
+    </param>
+    <param name="riid">
+      <para>Type: <b>REFIID</b></para>
+      <para>The IID of the object type to retrieve.</para>
+    </param>
+    <param name="ppv">
+      <para>Type: <b>void**</b></para>
+      <para>When this method returns, contains the interface requested in riid.  This will typically be <see cref="IPropertyDescriptionList" />.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This function is used to determine a list of properties that are applicable to a set of shell items.  The type of list is specified by a <see cref="PROPERTYKEY" /> structure.  Supported list types include but are not limited to:</para>
+      <list type="bullet">
+        <item>
+          <description>PKEY_PropList_PreviewDetails </description>
+        </item>
+        <item>
+          <description>PKEY_PropList_PreviewTitle </description>
+        </item>
+        <item>
+          <description>PKEY_PropList_FullDetails </description>
+        </item>
+        <item>
+          <description>PKEY_PropList_TileInfo</description>
+        </item>
+        <item>
+          <description>PKEY_PropList_ExtendedTileInfo </description>
+        </item>
+        <item>
+          <description>PKEY_PropList_InfoTip </description>
+        </item>
+        <item>
+          <description>PKEY_PropList_QuickTip </description>
+        </item>
+        <item>
+          <description>PKEY_PropList_FileOperationPrompt</description>
+        </item>
+        <item>
+          <description>PKEY_PropList_ConflictPrompt</description>
+        </item>
+        <item>
+          <description>PKEY_PropList_SetDefaultsFor</description>
+        </item>
+        <item>
+          <description>PKEY_PropList_NonPersonal</description>
+        </item>
+        <item>
+          <description>PKEY_NewMenuPreferredTypes</description>
+        </item>
+        <item>
+          <description>PKEY_NewMenuAllowedTypes</description>
+        </item>
+      </list>
+      <para>If the shell item array contains more than one item, then this method will obtain an intersection of the properties that would be returned for each item individually.</para>
+    </remarks>
+    <seealso cref="IShellItemArray" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/properties/building-property-handlers-property-lists">Property Lists</seealso>
+  </member>
+  <member name="IShellItemArray.GetPropertyStore">
+    <summary>
+      <para>Gets a property store.</para>
+    </summary>
+    <param name="flags">
+      <para>Type: <b><see cref="GETPROPERTYSTOREFLAGS" /></b></para>
+      <para>One of the <see cref="GETPROPERTYSTOREFLAGS" /> constants.</para>
+    </param>
+    <param name="riid">
+      <para>Type: <b>REFIID</b></para>
+      <para>The IID of the object type to retrieve.</para>
+    </param>
+    <param name="ppv">
+      <para>Type: <b>void**</b></para>
+      <para>When this method returns, contains interface pointer requested in riid.  This is typically <see cref="IPropertyStore" /> or <see cref="IPropertyStoreCapabilities" />.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This method is used to obtain a read-only property store that aggregates properties gathered from all the items in the shell item array.</para>
+      <para>If there is more than one item in the shell item array, then the resulting property store will aggregate the values from each item according to a set of rules determined by each property.   Values read from the property store will be coerced to a canonical form prior to aggregation as discussed at <see cref="CoerceToCanonicalValue" />.  The output from a call to <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/bb761473(v=vs.85)">IPropertyStore.GetValue</a> is computed as follows:</para>
+      <list type="bullet">
+        <item>
+          <description>Single valued properties follow the rule specified by the <a href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-typeinfo">aggregation type</a> string in the property description schema.</description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>If the aggregation type is "DateRange" and the property type is a filetime, returns a VT_VECTOR | VT_FILETIME of two values, or a VT_FILETIME value if the values were identical.</description>
+              </item>
+              <item>
+                <description>If the aggregation type is "First", returns the first non-empty value.</description>
+              </item>
+              <item>
+                <description>If the aggregation type is "Sum", returns the sum.</description>
+              </item>
+              <item>
+                <description>If the aggregation type is "Average", returns the average of all non-empty values.</description>
+              </item>
+              <item>
+                <description>If the aggregation type is "Minimum", returns the minimum value.</description>
+              </item>
+              <item>
+                <description>If the aggregation type is "Union" and the property type is a string, returns a VT_VECTOR | VT_LPWSTR containing the union of values.  The order of the values is unspecified.</description>
+              </item>
+              <item>
+                <description>If the aggregation type is unspecified, incompatible, or "Default", either returns a single value if it is identical for all items in the array, or a special value used to indicate that the values differ between some of the items.  The special value is a VT_VECTOR | VT_LPWSTR containing two strings: "Multiple" and "Values".  Calling applications should check for this special value by checking for VT_VECTOR | VT_LPWSTR if <see cref="GetTypeFlags" /> indicates the property is single-valued.</description>
+              </item>
+            </list>
+          </description>
+        </item>
+        <item>
+          <description>Multi-valued string properties return an intersection of their strings.  The order is unspecified.</description>
+        </item>
+      </list>
+      <para>Calls to <see cref="IsPropertyWritable" /> will return S_FALSE only if all the items have property handlers that implement <see cref="IPropertyStoreCapabilities" /> and all the property stores indicate they do not support writing the property.</para>
+      <para>Calling applications may achieve other aggregation behaviors by accessing the individual shell items and their property stores directly.  See <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/bb761472(v=vs.85)">IPropertyStore.GetCount</a>, <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/bb761471(v=vs.85)">IPropertyStore.GetAt</a>, and <see cref="GetPropertyStore" />.</para>
+      <para>Writing to an array of shell items is supported via the <see cref="IFileOperation" /> API.</para>
+    </remarks>
+  </member>
+  <member name="IShellItemArray">
+    <summary>
+      <para>Exposes methods that create and manipulate <see cref="Shell item" /> arrays.</para>
+    </summary>
+    <remarks>
+      <para>A shell item array may be created using one of the following functions:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <see cref="SHCreateShellItemArray" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="SHCreateShellItemArrayFromDataObject" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="SHCreateShellItemArrayFromIDLists" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="SHCreateShellItemArrayFromShellItem" />
+          </description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="IEnumShellItems" />
+    <seealso cref="IShellItem" />
+  </member>
+</doc>

@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SPVPITCH.xml' path='doc/member[@name="SPVPITCH"]/*' />
 public partial struct SPVPITCH
 {
+    /// <include file='SPVPITCH.xml' path='doc/member[@name="SPVPITCH.MiddleAdj"]/*' />
     [NativeTypeName("long")]
     public int MiddleAdj;
 
+    /// <include file='SPVPITCH.xml' path='doc/member[@name="SPVPITCH.RangeAdj"]/*' />
     [NativeTypeName("long")]
     public int RangeAdj;
 }

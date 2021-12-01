@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MF_TIMED_TEXT_TRACK_KIND">
+    <summary>
+      <para>Specifies the kind of timed text track.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+  </member>
+  <member name="MF_TIMED_TEXT_TRACK_KIND.MF_TIMED_TEXT_TRACK_KIND_UNKNOWN">
+    <summary>
+      <para>The kind of timed text track is unknown.</para>
+    </summary>
+  </member>
+  <member name="MF_TIMED_TEXT_TRACK_KIND.MF_TIMED_TEXT_TRACK_KIND_SUBTITLES">
+    <summary>
+      <para>The kind of timed text track is subtitles.</para>
+    </summary>
+  </member>
+  <member name="MF_TIMED_TEXT_TRACK_KIND.MF_TIMED_TEXT_TRACK_KIND_CAPTIONS">
+    <summary>
+      <para>The kind of timed text track is closed captions.</para>
+    </summary>
+  </member>
+  <member name="MF_TIMED_TEXT_TRACK_KIND.MF_TIMED_TEXT_TRACK_KIND_METADATA">
+    <summary>
+      <para>The kind of timed text track is metadata.</para>
+    </summary>
+  </member>
+</doc>

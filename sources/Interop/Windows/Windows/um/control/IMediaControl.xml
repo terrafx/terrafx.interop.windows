@@ -1,0 +1,284 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMediaControl.AddSourceFilter">
+    <summary>
+      <para>The <code>AddSourceFilter</code> method adds a source filter to the filter graph.</para>
+      <para>This method is intended for use by Visual Basic 6.0 applications. It was documented for Visual Basic 6.0 as the <b>FilgraphManager.AddSourceFilter</b> method. C++ applications should use the <see cref="IGraphBuilder.AddSourceFilter" /> method instead.</para>
+    </summary>
+    <param name="strFilename">
+      <para>Specifies the name of the file to load.</para>
+    </param>
+    <param name="ppUnk">
+      <para>Receives a pointer to the <b>IDispatch</b> interface.  The caller must release the interface. You can query the returned pointer for the <b>IFilterInfo</b> interface.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMediaControl Interface" />
+  </member>
+  <member name="IMediaControl.GetState">
+    <summary>
+      <para>The <code>GetState</code> method retrieves the state of the filter graph—paused, running, or stopped.</para>
+      <para>State transitions are not necessarily synchronous. Therefore, when you call this method, the filter graph might be in transition to a new state. In that case, the method blocks until the transition completes or until the specified time-out elapses.</para>
+    </summary>
+    <param name="msTimeout">
+      <para>Duration of the time-out, in milliseconds, or INFINITE to specify an infinite time-out.</para>
+    </param>
+    <param name="pfs">
+      <para>Receives a member of the <see cref="FILTER_STATE" /> enumeration.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_S_STATE_INTERMEDIATE</b>
+            </para>
+          </description>
+          <description>
+            <para>The filter graph is still in transition to the indicated state.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_S_CANT_CUE</b>
+            </para>
+          </description>
+          <description>
+            <para>The filter graph is paused, but cannot cue data.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>Failure.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Applications can use this method to determine whether playback has started after a call to <see cref="IMediaControl.Run" />. Generally, applications should have their own mechanism for tracking which state they have put the filter graph into. Applications typically use the current state to determine which user interface controls are enabled or disabled. For example, once the graph goes into the running state, the application might disable a "Play" button and enable "Stop" and "Pause" buttons.</para>
+      <para>If the filter graph is in a transition to a new state, the returned state is the new state, not the previous state.</para>
+      <para>This method returns an error if there is a call on another thread to change the state while this method is blocked.</para>
+      <para>Avoid specifying a time-out of INFINITE, because threads cannot process messages while waiting in <code>GetState</code>. If you call <code>GetState</code> from the thread that processes Windows messages, specify small wait times on the call in order to remain responsive to user input. This is especially important when the source is streaming over a network or from the Internet because state transitions in these environments can take significantly more time to complete.</para>
+      <para>The <see cref="FILTER_STATE" /> enumeration. You can cast the variable as follows:</para>
+      <code>
+FILTER_STATE fs;
+hr = pControl-&gt;GetState(msTimeOut, (OAFilterState*)&amp;amp;amp;amp;amp;amp;fs);
+
+</code>
+      <para>For more information about filter graph states, see <a href="https://docs.microsoft.com//windows/desktop/DirectShow/filter-states">Filter States</a>.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IMediaControl Interface" />
+  </member>
+  <member name="IMediaControl.get_FilterCollection">
+    <summary>
+      <para>The <code>get_FilterCollection</code> method retrieves a collection of the filters in the filter graph.</para>
+      <para>This method is intended for use by Visual Basic 6.0 applications. It was documented for Visual Basic 6.0 as the <b>FilgraphManager.FilterCollection</b> property. C++ applications should use the <see cref="IFilterGraph.EnumFilters" /> method instead.</para>
+    </summary>
+    <param name="ppUnk">
+      <para>Receives a pointer to the <b>IDispatch</b> interface.  The caller must release the interface. You can query the returned pointer for the <b>IAMCollection</b> interface. The collection contains a list of <b>IFilterInfo</b> pointers.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMediaControl Interface" />
+  </member>
+  <member name="IMediaControl.get_RegFilterCollection">
+    <summary>
+      <para>The <code>get_RegFilterCollection</code> method retrieves a collection of all the filters listed in the registry.</para>
+      <para>This method is intended for use by Visual Basic 6.0 applications. It was documented for Visual Basic 6.0 as the <b>FilgraphManager.RegFilterCollection</b> property. C++ applications should use the <see cref="IFilterMapper2.EnumMatchingFilters" /> method instead.</para>
+    </summary>
+    <param name="ppUnk">
+      <para>Receives a pointer to the <b>IDispatch</b> interface.  The caller must release the interface. You can query the returned pointer for the <b>IAMCollection</b> interface. The collection contains a list of <b>IRegFilterInfo</b> pointers.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMediaControl Interface" />
+  </member>
+  <member name="IMediaControl.Pause">
+    <summary>
+      <para>The <code>Pause</code> method pauses all the filters in the filter graph.</para>
+    </summary>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>The graph paused successfully, but some filters have not completed the state transition.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>All filters in the graph completed the transition to a paused state.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Pausing the filter graph cues the graph for immediate rendering when the graph is next run. While the graph is paused, filters process data but do not render it. Data is pushed through the graph and processed by transform filters as far as buffering permits, but renderer filters do not render the data. However, video renderers display a static poster frame of the first sample.</para>
+      <para>If the method returns S_FALSE, call the <see cref="IMediaControl.GetState" /> method to wait for the state transition to complete, or to check if the transition has completed. When you call <code>Pause</code> to display the first frame of a video file, always follow it immediately with a call to <b>GetState</b> to ensure that the state transition has completed. Failure to do this can result in the video rectangle being painted black.</para>
+      <para>If the method fails, it stops the graph before returning.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IMediaControl Interface" />
+    <seealso cref="IMediaControl.StopWhenReady" />
+  </member>
+  <member name="IMediaControl.RenderFile">
+    <summary>
+      <para>The <code>RenderFile</code> method builds a filter graph that renders the specified file.</para>
+      <para>This method is intended for use by Visual Basic 6.0 applications. It was documented for Visual Basic 6.0 as the <b>FilgraphManager.RenderFile</b> method. C++ applications should use the <see cref="IGraphBuilder.RenderFile" /> method instead.</para>
+    </summary>
+    <param name="strFilename">
+      <para>Specifies the name of the file to load.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMediaControl Interface" />
+  </member>
+  <member name="IMediaControl.Run">
+    <summary>
+      <para>The <code>Run</code> method runs all the filters in the filter graph. While the graph is running, data moves through the graph and is rendered.</para>
+    </summary>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>The graph is preparing to run, but some filters have not completed the transition to a running state.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>All filters in the graph completed the transition to a running state.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>If the filter graph is stopped, this method pauses the graph before running. If the graph is already running, the method returns S_OK but has no effect.</para>
+      <para>The graph runs until the application calls the <see cref="IMediaControl.Pause" /> or <see cref="IMediaControl.Stop" /> method. When playback reaches the end of the stream, the graph continues to run, but the filters do not stream any more data. At that point, the application can pause or stop the graph. For information about the end-of-stream event, see <b>IMediaControl.Pause</b> and <a href="https://docs.microsoft.com//windows/desktop/DirectShow/ec-complete">EC_COMPLETE</a>.</para>
+      <para>This method does not seek to the beginning of the stream. Therefore, if you run the graph, pause it, and then run it again, playback resumes from the paused position. If you run the graph after it has reached the end of the stream, nothing is rendered. To seek the graph, use the <see cref="IMediaSeeking" /> interface.</para>
+      <para>If method returns <b>S_FALSE</b>, it means that the method returned before all of the filters switched to a running state. The filters will complete the transition after the method returns. Optionally, you can wait  for the transition to complete by calling the <see cref="IMediaControl.GetState" /> method with a timeout value. However, this is not required.</para>
+      <para>If the <b>Run</b> method returns an error code, it means that one or more filters failed to run. However, some filters might be in a running state. In a multistream graph, entire streams might be playing successfully. Typically the application would tear down the graph and report an error in this case.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IMediaControl Interface" />
+  </member>
+  <member name="IMediaControl.Stop">
+    <summary>
+      <para>The <code>Stop</code> method stops all the filters in the graph.</para>
+    </summary>
+    <returns>
+      <para>Returns S_OK if successful, or an <b>HRESULT</b> value that indicates the cause of the error.</para>
+    </returns>
+    <remarks>
+      <para>If the graph is running, this method pauses the graph before stopping it. While paused, video renderers can copy the current frame to display as a poster frame.</para>
+      <para>This method does not seek to the beginning of the stream. If you call this method and then call the <see cref="IMediaControl.Run" /> method, playback resumes from the stopped position. To seek, use the <see cref="IMediaSeeking" /> interface.</para>
+      <para>The Filter Graph Manager pauses all the filters in the graph, and then calls the <see cref="IMediaFilter.Stop" /> method on all filters, without waiting for the pause operations to complete. Therefore, some filters might have their <code>Stop</code> method called before they complete their pause operation. If you develop a custom rendering filter, you might need to handle this case by pausing the filter if it receives a stop command while in a running state. However, most filters do not need to take any special action in this regard.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IMediaControl Interface" />
+    <seealso cref="StopWhenReady" />
+  </member>
+  <member name="IMediaControl.StopWhenReady">
+    <summary>
+      <para>The <code>StopWhenReady</code> method pauses the filter graph, allowing filters to queue data, and then stops the filter graph.</para>
+    </summary>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>The graph was still transitioning to the paused state when the method returned.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method is useful if you want to seek the filter graph while the graph is stopped. As long as the filter graph is stopped, changes in the current position do not repaint the video window with a new frame. Therefore, calling <see cref="IMediaSeeking.SetPositions" /> does not update the video window. To update the window after the seek operation, call <code>StopWhenReady</code>. This method transitions the graph to a paused state, waits for the pause operation to complete, and then transitions the graph back to stopped. The pause operation queues data in the graph, so that the video renderer receives and displays the new frame.</para>
+      <para>This method is asynchronous. It waits on a separate thread for the pause to complete. The calling thread does not block, which enables the application to respond to user input. When the method returns, the logical state of the graph is stopped, even before the pause operation completes. If you call the <see cref="IMediaControl.GetState" /> method at this point, it returns State_Stopped.</para>
+      <para>If the application issues another state-change command (such as pause, run, or seek) before the pause operation completes, the new command cancels the pending stop command. The pause operation completes, but the graph does not stop.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IMediaControl Interface" />
+  </member>
+  <member name="IMediaControl">
+    <summary>
+      <para>The <code>IMediaControl</code> interface provides methods for controlling the flow of data through the filter graph. It includes methods for running, pausing, and stopping the graph. The Filter Graph Manager implements this interface. For more information on filter graph states, see <a href="https://docs.microsoft.com//windows/desktop/DirectShow/data-flow-in-the-filter-graph">Data Flow in the Filter Graph</a>.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-idispatch">IDispatch</seealso>
+  </member>
+</doc>

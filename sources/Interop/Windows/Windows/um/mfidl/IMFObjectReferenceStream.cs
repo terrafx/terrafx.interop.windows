@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFObjectReferenceStream.xml' path='doc/member[@name="IMFObjectReferenceStream"]/*' />
 [Guid("09EF5BE3-C8A7-469E-8B70-73BF25BB193F")]
 [NativeTypeName("struct IMFObjectReferenceStream : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMFObjectReferenceStream : IMFObjectReferenceStream
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMFObjectReferenceStream : IMFObjectReferenceStream
         return ((delegate* unmanaged<IMFObjectReferenceStream*, Guid*, void**, int>)(lpVtbl[0]))((IMFObjectReferenceStream*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMFObjectReferenceStream : IMFObjectReferenceStream
         return ((delegate* unmanaged<IMFObjectReferenceStream*, uint>)(lpVtbl[1]))((IMFObjectReferenceStream*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMFObjectReferenceStream : IMFObjectReferenceStream
         return ((delegate* unmanaged<IMFObjectReferenceStream*, uint>)(lpVtbl[2]))((IMFObjectReferenceStream*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFObjectReferenceStream.xml' path='doc/member[@name="IMFObjectReferenceStream.SaveReference"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SaveReference([NativeTypeName("const IID &")] Guid* riid, IUnknown* pUnk)
@@ -46,6 +51,7 @@ public unsafe partial struct IMFObjectReferenceStream : IMFObjectReferenceStream
         return ((delegate* unmanaged<IMFObjectReferenceStream*, Guid*, IUnknown*, int>)(lpVtbl[3]))((IMFObjectReferenceStream*)Unsafe.AsPointer(ref this), riid, pUnk);
     }
 
+    /// <include file='IMFObjectReferenceStream.xml' path='doc/member[@name="IMFObjectReferenceStream.LoadReference"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT LoadReference([NativeTypeName("const IID &")] Guid* riid, void** ppv)

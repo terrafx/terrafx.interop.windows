@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_SECURITY_TOKEN_REFERENCE_MODE">
+    <summary>
+      <para>With message and mixed-mode security bindings, the mechanism to use to
+refer to a security token from signatures, encrypted items and derived
+tokens.  The security runtime can use the right reference on its own
+most of the time, and this needs to be explicitly set only when a
+specific reference mechanism is required, typically for interop with
+another platform that supports only that reference form.</para>
+    </summary>
+  </member>
+  <member name="WS_SECURITY_TOKEN_REFERENCE_MODE.WS_SECURITY_TOKEN_REFERENCE_MODE_LOCAL_ID">
+    <summary>
+      <para>The id of the serialized security token is used to refer to it.  This
+reference mechanism can be used only when the security token is
+serialized in the same message as the item (such as a signature) that
+needs to refer to the security token.</para>
+    </summary>
+  </member>
+  <member name="WS_SECURITY_TOKEN_REFERENCE_MODE.WS_SECURITY_TOKEN_REFERENCE_MODE_XML_BUFFER">
+    <summary>
+      <para>An opaque XML buffer that is used as a token reference (for example, as in a custom token).</para>
+    </summary>
+  </member>
+  <member name="WS_SECURITY_TOKEN_REFERENCE_MODE.WS_SECURITY_TOKEN_REFERENCE_MODE_CERT_THUMBPRINT">
+    <summary>
+      <para>The thumbprint of a certificate is used to refer to it.</para>
+    </summary>
+  </member>
+  <member name="WS_SECURITY_TOKEN_REFERENCE_MODE.WS_SECURITY_TOKEN_REFERENCE_MODE_SECURITY_CONTEXT_ID">
+    <summary>
+      <para>The context-id is used to refer to a security context token.</para>
+    </summary>
+  </member>
+  <member name="WS_SECURITY_TOKEN_REFERENCE_MODE.WS_SECURITY_TOKEN_REFERENCE_MODE_SAML_ASSERTION_ID">
+    <summary>
+      <para>The SAML assertion ID is used to refer to the SAML token.</para>
+    </summary>
+  </member>
+</doc>

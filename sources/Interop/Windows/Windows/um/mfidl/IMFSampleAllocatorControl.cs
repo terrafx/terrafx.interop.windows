@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFSampleAllocatorControl.xml' path='doc/member[@name="IMFSampleAllocatorControl"]/*' />
 [Guid("DA62B958-3A38-4A97-BD27-149C640C0771")]
 [NativeTypeName("struct IMFSampleAllocatorControl : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IMFSampleAllocatorControl : IMFSampleAllocatorContr
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IMFSampleAllocatorControl : IMFSampleAllocatorContr
         return ((delegate* unmanaged<IMFSampleAllocatorControl*, Guid*, void**, int>)(lpVtbl[0]))((IMFSampleAllocatorControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IMFSampleAllocatorControl : IMFSampleAllocatorContr
         return ((delegate* unmanaged<IMFSampleAllocatorControl*, uint>)(lpVtbl[1]))((IMFSampleAllocatorControl*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IMFSampleAllocatorControl : IMFSampleAllocatorContr
         return ((delegate* unmanaged<IMFSampleAllocatorControl*, uint>)(lpVtbl[2]))((IMFSampleAllocatorControl*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFSampleAllocatorControl.xml' path='doc/member[@name="IMFSampleAllocatorControl.SetDefaultAllocator"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetDefaultAllocator([NativeTypeName("DWORD")] uint dwOutputStreamID, IUnknown* pAllocator)
@@ -48,6 +53,7 @@ public unsafe partial struct IMFSampleAllocatorControl : IMFSampleAllocatorContr
         return ((delegate* unmanaged<IMFSampleAllocatorControl*, uint, IUnknown*, int>)(lpVtbl[3]))((IMFSampleAllocatorControl*)Unsafe.AsPointer(ref this), dwOutputStreamID, pAllocator);
     }
 
+    /// <include file='IMFSampleAllocatorControl.xml' path='doc/member[@name="IMFSampleAllocatorControl.GetAllocatorUsage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetAllocatorUsage([NativeTypeName("DWORD")] uint dwOutputStreamID, [NativeTypeName("DWORD *")] uint* pdwInputStreamID, MFSampleAllocatorUsage* peUsage)

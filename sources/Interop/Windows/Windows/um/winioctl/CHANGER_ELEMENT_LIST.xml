@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CHANGER_ELEMENT_LIST">
+    <summary>
+      <para>Represents a range of elements of a single type, typically for an operation such as getting or initializing the status of multiple elements.</para>
+    </summary>
+    <seealso cref="CHANGER_ELEMENT" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_changer_reinitialize_transport">IOCTL_CHANGER_REINITIALIZE_TRANSPORT</seealso>
+  </member>
+  <member name="CHANGER_ELEMENT_LIST.Element">
+    <summary>
+      <para>A
+<see cref="CHANGER_ELEMENT" /> structure that represent the first element in the range.</para>
+    </summary>
+  </member>
+  <member name="CHANGER_ELEMENT_LIST.NumberOfElements">
+    <summary>
+      <para>The number of elements in the range.</para>
+    </summary>
+  </member>
+</doc>

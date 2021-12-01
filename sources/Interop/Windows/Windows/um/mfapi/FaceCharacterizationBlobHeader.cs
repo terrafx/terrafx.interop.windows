@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='FaceCharacterizationBlobHeader.xml' path='doc/member[@name="FaceCharacterizationBlobHeader"]/*' />
 public partial struct FaceCharacterizationBlobHeader
 {
+    /// <include file='FaceCharacterizationBlobHeader.xml' path='doc/member[@name="FaceCharacterizationBlobHeader.Size"]/*' />
     [NativeTypeName("ULONG")]
     public uint Size;
 
+    /// <include file='FaceCharacterizationBlobHeader.xml' path='doc/member[@name="FaceCharacterizationBlobHeader.Count"]/*' />
     [NativeTypeName("ULONG")]
     public uint Count;
 }

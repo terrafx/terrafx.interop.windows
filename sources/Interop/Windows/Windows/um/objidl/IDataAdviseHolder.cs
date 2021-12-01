@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IDataAdviseHolder.xml' path='doc/member[@name="IDataAdviseHolder"]/*' />
 [Guid("00000110-0000-0000-C000-000000000046")]
 [NativeTypeName("struct IDataAdviseHolder : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IDataAdviseHolder : IDataAdviseHolder.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IDataAdviseHolder : IDataAdviseHolder.Interface
         return ((delegate* unmanaged<IDataAdviseHolder*, Guid*, void**, int>)(lpVtbl[0]))((IDataAdviseHolder*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IDataAdviseHolder : IDataAdviseHolder.Interface
         return ((delegate* unmanaged<IDataAdviseHolder*, uint>)(lpVtbl[1]))((IDataAdviseHolder*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IDataAdviseHolder : IDataAdviseHolder.Interface
         return ((delegate* unmanaged<IDataAdviseHolder*, uint>)(lpVtbl[2]))((IDataAdviseHolder*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDataAdviseHolder.xml' path='doc/member[@name="IDataAdviseHolder.Advise"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Advise(IDataObject* pDataObject, FORMATETC* pFetc, [NativeTypeName("DWORD")] uint advf, IAdviseSink* pAdvise, [NativeTypeName("DWORD *")] uint* pdwConnection)
@@ -46,6 +51,7 @@ public unsafe partial struct IDataAdviseHolder : IDataAdviseHolder.Interface
         return ((delegate* unmanaged<IDataAdviseHolder*, IDataObject*, FORMATETC*, uint, IAdviseSink*, uint*, int>)(lpVtbl[3]))((IDataAdviseHolder*)Unsafe.AsPointer(ref this), pDataObject, pFetc, advf, pAdvise, pdwConnection);
     }
 
+    /// <include file='IDataAdviseHolder.xml' path='doc/member[@name="IDataAdviseHolder.Unadvise"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Unadvise([NativeTypeName("DWORD")] uint dwConnection)
@@ -53,6 +59,7 @@ public unsafe partial struct IDataAdviseHolder : IDataAdviseHolder.Interface
         return ((delegate* unmanaged<IDataAdviseHolder*, uint, int>)(lpVtbl[4]))((IDataAdviseHolder*)Unsafe.AsPointer(ref this), dwConnection);
     }
 
+    /// <include file='IDataAdviseHolder.xml' path='doc/member[@name="IDataAdviseHolder.EnumAdvise"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT EnumAdvise(IEnumSTATDATA** ppenumAdvise)
@@ -60,6 +67,7 @@ public unsafe partial struct IDataAdviseHolder : IDataAdviseHolder.Interface
         return ((delegate* unmanaged<IDataAdviseHolder*, IEnumSTATDATA**, int>)(lpVtbl[5]))((IDataAdviseHolder*)Unsafe.AsPointer(ref this), ppenumAdvise);
     }
 
+    /// <include file='IDataAdviseHolder.xml' path='doc/member[@name="IDataAdviseHolder.SendOnDataChange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT SendOnDataChange(IDataObject* pDataObject, [NativeTypeName("DWORD")] uint dwReserved, [NativeTypeName("DWORD")] uint advf)

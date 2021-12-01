@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFMediaError.xml' path='doc/member[@name="IMFMediaError"]/*' />
 [Guid("FC0E10D2-AB2A-4501-A951-06BB1075184C")]
 [NativeTypeName("struct IMFMediaError : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IMFMediaError : IMFMediaError.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IMFMediaError : IMFMediaError.Interface
         return ((delegate* unmanaged<IMFMediaError*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaError*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IMFMediaError : IMFMediaError.Interface
         return ((delegate* unmanaged<IMFMediaError*, uint>)(lpVtbl[1]))((IMFMediaError*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IMFMediaError : IMFMediaError.Interface
         return ((delegate* unmanaged<IMFMediaError*, uint>)(lpVtbl[2]))((IMFMediaError*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFMediaError.xml' path='doc/member[@name="IMFMediaError.GetErrorCode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public ushort GetErrorCode()
@@ -48,6 +53,7 @@ public unsafe partial struct IMFMediaError : IMFMediaError.Interface
         return ((delegate* unmanaged<IMFMediaError*, ushort>)(lpVtbl[3]))((IMFMediaError*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFMediaError.xml' path='doc/member[@name="IMFMediaError.GetExtendedErrorCode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetExtendedErrorCode()
@@ -55,6 +61,7 @@ public unsafe partial struct IMFMediaError : IMFMediaError.Interface
         return ((delegate* unmanaged<IMFMediaError*, int>)(lpVtbl[4]))((IMFMediaError*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFMediaError.xml' path='doc/member[@name="IMFMediaError.SetErrorCode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetErrorCode(MF_MEDIA_ENGINE_ERR error)
@@ -62,6 +69,7 @@ public unsafe partial struct IMFMediaError : IMFMediaError.Interface
         return ((delegate* unmanaged<IMFMediaError*, MF_MEDIA_ENGINE_ERR, int>)(lpVtbl[5]))((IMFMediaError*)Unsafe.AsPointer(ref this), error);
     }
 
+    /// <include file='IMFMediaError.xml' path='doc/member[@name="IMFMediaError.SetExtendedErrorCode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT SetExtendedErrorCode(HRESULT error)

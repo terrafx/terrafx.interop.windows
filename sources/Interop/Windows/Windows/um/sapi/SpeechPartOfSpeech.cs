@@ -7,15 +7,33 @@ using static TerraFX.Interop.Windows.SPPARTOFSPEECH;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SpeechPartOfSpeech.xml' path='doc/member[@name="SpeechPartOfSpeech"]/*' />
 public enum SpeechPartOfSpeech
 {
+    /// <include file='SpeechPartOfSpeech.xml' path='doc/member[@name="SpeechPartOfSpeech.SPSNotOverriden"]/*' />
     SPSNotOverriden = SPPS_NotOverriden,
+
+    /// <include file='SpeechPartOfSpeech.xml' path='doc/member[@name="SpeechPartOfSpeech.SPSUnknown"]/*' />
     SPSUnknown = SPPS_Unknown,
+
+    /// <include file='SpeechPartOfSpeech.xml' path='doc/member[@name="SpeechPartOfSpeech.SPSNoun"]/*' />
     SPSNoun = SPPS_Noun,
+
+    /// <include file='SpeechPartOfSpeech.xml' path='doc/member[@name="SpeechPartOfSpeech.SPSVerb"]/*' />
     SPSVerb = SPPS_Verb,
+
+    /// <include file='SpeechPartOfSpeech.xml' path='doc/member[@name="SpeechPartOfSpeech.SPSModifier"]/*' />
     SPSModifier = SPPS_Modifier,
+
+    /// <include file='SpeechPartOfSpeech.xml' path='doc/member[@name="SpeechPartOfSpeech.SPSFunction"]/*' />
     SPSFunction = SPPS_Function,
+
+    /// <include file='SpeechPartOfSpeech.xml' path='doc/member[@name="SpeechPartOfSpeech.SPSInterjection"]/*' />
     SPSInterjection = SPPS_Interjection,
+
+    /// <include file='SpeechPartOfSpeech.xml' path='doc/member[@name="SpeechPartOfSpeech.SPSLMA"]/*' />
     SPSLMA = SPPS_LMA,
+
+    /// <include file='SpeechPartOfSpeech.xml' path='doc/member[@name="SpeechPartOfSpeech.SPSSuppressWord"]/*' />
     SPSSuppressWord = SPPS_SuppressWord,
 }

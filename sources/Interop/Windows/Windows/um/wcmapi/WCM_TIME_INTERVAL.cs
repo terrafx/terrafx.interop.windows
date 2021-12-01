@@ -7,27 +7,35 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WCM_TIME_INTERVAL.xml' path='doc/member[@name="WCM_TIME_INTERVAL"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public partial struct WCM_TIME_INTERVAL
 {
+    /// <include file='WCM_TIME_INTERVAL.xml' path='doc/member[@name="WCM_TIME_INTERVAL.wYear"]/*' />
     [NativeTypeName("WORD")]
     public ushort wYear;
 
+    /// <include file='WCM_TIME_INTERVAL.xml' path='doc/member[@name="WCM_TIME_INTERVAL.wMonth"]/*' />
     [NativeTypeName("WORD")]
     public ushort wMonth;
 
+    /// <include file='WCM_TIME_INTERVAL.xml' path='doc/member[@name="WCM_TIME_INTERVAL.wDay"]/*' />
     [NativeTypeName("WORD")]
     public ushort wDay;
 
+    /// <include file='WCM_TIME_INTERVAL.xml' path='doc/member[@name="WCM_TIME_INTERVAL.wHour"]/*' />
     [NativeTypeName("WORD")]
     public ushort wHour;
 
+    /// <include file='WCM_TIME_INTERVAL.xml' path='doc/member[@name="WCM_TIME_INTERVAL.wMinute"]/*' />
     [NativeTypeName("WORD")]
     public ushort wMinute;
 
+    /// <include file='WCM_TIME_INTERVAL.xml' path='doc/member[@name="WCM_TIME_INTERVAL.wSecond"]/*' />
     [NativeTypeName("WORD")]
     public ushort wSecond;
 
+    /// <include file='WCM_TIME_INTERVAL.xml' path='doc/member[@name="WCM_TIME_INTERVAL.wMilliseconds"]/*' />
     [NativeTypeName("WORD")]
     public ushort wMilliseconds;
 }

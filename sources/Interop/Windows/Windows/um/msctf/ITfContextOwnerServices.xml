@@ -1,0 +1,355 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ITfContextOwnerServices.CreateRange">
+    <summary>
+      <para>The <b>ITfContextOwnerServices.CreateRange</b> method creates a new ranged based upon a specified character position.</para>
+    </summary>
+    <param name="acpStart">
+      <para>Specifies the starting character position of the range.</para>
+    </param>
+    <param name="acpEnd">
+      <para>Specifies the ending character position of the range.</para>
+    </param>
+    <param name="ppRange">
+      <para>Receives a pointer to the range object within the specified starting and ending character positions.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>The specified range is <b>NULL</b> or the specified starting character position is less than zero or the specified starting character position is greater than the specified ending character position.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+  </member>
+  <member name="ITfContextOwnerServices.ForceLoadProperty">
+    <summary>
+      <para>Forces a property load.</para>
+    </summary>
+    <param name="pProp">
+      <para>Pointer to an <see cref="ITfProperty" /> object that specifies the property to load.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>A memory allocation error occurred.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>An unspecified error occurred.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The application must be able to grant a synchronous read-only lock before calling this method.</para>
+    </remarks>
+    <seealso cref="ITfContextOwnerServices interface" />
+    <seealso cref="ITfContextOwnerServices.Unserialize" />
+    <seealso cref="ITfProperty interface" />
+  </member>
+  <member name="ITfContextOwnerServices.OnAttributeChange">
+    <summary>
+      <para>Called by a context owner to generate notifications that a support attribute value changed.</para>
+    </summary>
+    <param name="rguidAttribute">
+      <para>Specifies the GUID of the support attribute.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>A support attribute is a read-only property maintained by the context owner. The supported attributes are in the Tsattrs.h header file.</para>
+    </remarks>
+    <seealso cref="ITfContextOwnerServices interface" />
+  </member>
+  <member name="ITfContextOwnerServices.OnLayoutChange">
+    <summary>
+      <para>The <b>ITfContextOwnerServices.OnLayoutChange</b> method is called by the context owner when the on-screen representation of the text stream is updated during a composition. Text stream updates include when the position of the window that contains the text is changed or if the screen coordinates of the text change.</para>
+    </summary>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>A call to <b>ITfContextOwnerServices.OnLayoutChange</b> could be in response to a text edit, font size change, window movement/resizing, and so on.</para>
+      <para>If a call to <see cref="ITfContextView.GetTextExt" /> or <see cref="ITfContextOwner.GetACPFromPoint" /> fails because the application did not calculate the screen layout (Return Value: TS_E_NOLAYOUT), the application must then call <b>ITfContextOwnerServices.OnLayoutChange</b> when the information is ready.</para>
+    </remarks>
+    <seealso cref="ITfContextOwner.GetACPFromPoint " />
+    <seealso cref="ITfContextOwnerServices" />
+    <seealso cref="ITfContextView.GetTextExt " />
+  </member>
+  <member name="ITfContextOwnerServices.OnStatusChange">
+    <summary>
+      <para>The <b>ITfContextOwnerServices.OnStatusChange</b> method is called by the context owner when the <b>dwDynamicFlags</b> member of the <see cref="TS_STATUS" /> structure returned by the <see cref="ITfContextOwner.GetStatus" /> method changes.</para>
+    </summary>
+    <param name="dwFlags">
+      <para>Specifies the dynamic status flag.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="ITfContextOwner.GetStatus " />
+    <seealso cref="ITfContextOwnerServices" />
+    <seealso cref="TS_STATUS " />
+  </member>
+  <member name="ITfContextOwnerServices.Serialize">
+    <summary>
+      <para>The <b>ITfContextOwnerServices.Serialize</b> method obtains a property from a range of text and writes the property data into a stream object. This enables an application to store property data, for example, when writing the data to a file.</para>
+    </summary>
+    <param name="pProp">
+      <para>Pointer to an <see cref="ITfProperty" /> interface that identifies the property to serialize.</para>
+    </param>
+    <param name="pRange">
+      <para>Pointer to an <see cref="ITfRange" /> interface that identifies the range that the property is obtained from.</para>
+    </param>
+    <param name="pHdr">
+      <para>Pointer to a <see cref="TF_PERSISTENT_PROPERTY_HEADER_ACP" /> structure that receives the header data for the property.</para>
+    </param>
+    <param name="pStream">
+      <para>Pointer to an <b>IStream</b> object that the TSF manager will write the property data to.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>The property cannot be serialized.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>An unspecified error occurred.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The property header data placed in <i>pHdr</i> is common to all properties and must be preserved with the data written into <i>pStream</i>. This same data pair must be passed to <see cref="ITfContextOwnerServices.Unserialize" /> to restore the property data.</para>
+      <para>An application can save all of the properties for the entire document by performing the following steps.</para>
+      <list type="bullet">
+        <item>
+          <description>Enumerate all properties using <see cref="ITfContext.EnumProperties" />.</description>
+        </item>
+        <item>
+          <description>Within each property, enumerate the ranges using <see cref="ITfReadOnlyProperty.EnumRanges" />.</description>
+        </item>
+        <item>
+          <description>Pass the current property and range to this method.</description>
+        </item>
+        <item>
+          <description>Write the data placed in <i>pHdr</i> to the file.</description>
+        </item>
+        <item>
+          <description>Write the data added to <i>pStream</i> to the file.</description>
+        </item>
+      </list>
+      <para>When calling this method, the application must be able to grant a synchronous read-only lock.</para>
+    </remarks>
+    <seealso cref="ITfContextOwnerServices" />
+    <seealso cref="ITfProperty " />
+    <seealso cref="ITfRange " />
+    <seealso cref="TF_PERSISTENT_PROPERTY_HEADER_ACP " />
+  </member>
+  <member name="ITfContextOwnerServices.Unserialize">
+    <summary>
+      <para>Applies previously serialized property data to a property object.</para>
+    </summary>
+    <param name="pProp">
+      <para>Pointer to an <see cref="ITfProperty" /> object that receives the property data.</para>
+    </param>
+    <param name="pHdr">
+      <para>Pointer to a <see cref="TF_PERSISTENT_PROPERTY_HEADER_ACP" /> structure that contains the header data for the property.</para>
+    </param>
+    <param name="pStream">
+      <para>Pointer to an <b>IStream</b> object that contains the property data. This parameter can be <b>NULL</b> if <i>pLoader</i> is not <b>NULL</b>. This parameter is ignored if <i>pLoader</i> is not <b>NULL</b>.</para>
+    </param>
+    <param name="pLoader">
+      <para>Pointer to an <see cref="ITfPersistentPropertyLoaderACP" /> object that the TSF manager uses to obtain the property data. This parameter can be <b>NULL</b> if <i>pStream</i> is not <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>TF_S_ASYNC</b>
+            </para>
+          </description>
+          <description>
+            <para>The property data is obtained asynchronously.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>TF_E_SYNCHRONOUS</b>
+            </para>
+          </description>
+          <description>
+            <para>A synchronous read-only lock cannot be obtained.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>An unspecified error occurred.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>If <i>pStream</i> is specified rather than <i>pLoader</i>, the property data is read from <i>pStream</i> during the call to this method. If <i>pLoader</i> is specified rather than <i>pStream</i>, the property data is read from <i>pLoader</i> asynchronously. Using <i>pStream</i> can cause long delays if the property data is large.</para>
+      <para>When calling this method, the application must be able to grant a synchronous read-only lock.</para>
+    </remarks>
+    <seealso cref="ITfContextOwnerServices interface" />
+    <seealso cref="ITfContextOwnerServices.Serialize" />
+    <seealso cref="ITfProperty interface" />
+    <seealso cref="ITfPersistentPropertyLoaderACP interface" />
+    <seealso cref="TF_PERSISTENT_PROPERTY_HEADER_ACP structure" />
+  </member>
+  <member name="ITfContextOwnerServices">
+    <summary>
+      <para>The <b>ITfContextOwnerServices</b> interface is implemented by the manager and used by a text service or application acting as context owners. The interface provides notification changes to sinks and other services to context owners that do not implement the <see cref="ITextStoreACP" /> or <see cref="ITextStoreAnchor" /> interfaces. Clients obtain this interface by calling the <see cref="ITfContext.QueryInterface" /> method.</para>
+    </summary>
+  </member>
+</doc>

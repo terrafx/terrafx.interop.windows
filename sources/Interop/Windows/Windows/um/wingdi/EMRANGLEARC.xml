@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="EMRANGLEARC">
+    <summary>
+      <para>The <b>EMRANGLEARC</b> structure contains members for the <see cref="AngleArc" /> enhanced metafile record.</para>
+    </summary>
+    <seealso cref="AngleArc" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafile-structures">Metafile Structures</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafiles">Metafiles Overview</seealso>
+  </member>
+  <member name="EMRANGLEARC.emr">
+    <summary>
+      <para>The base structure for all record types.</para>
+    </summary>
+  </member>
+  <member name="EMRANGLEARC.ptlCenter">
+    <summary>
+      <para>Logical coordinates of a circle's center.</para>
+    </summary>
+  </member>
+  <member name="EMRANGLEARC.nRadius">
+    <summary>
+      <para>A circle's radius, in logical units.</para>
+    </summary>
+  </member>
+  <member name="EMRANGLEARC.eStartAngle">
+    <summary>
+      <para>An arc's start angle, in degrees.</para>
+    </summary>
+  </member>
+  <member name="EMRANGLEARC.eSweepAngle">
+    <summary>
+      <para>An arc's sweep angle, in degrees.</para>
+    </summary>
+  </member>
+</doc>

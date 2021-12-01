@@ -5,15 +5,20 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CTL_FIND_USAGE_PARA.xml' path='doc/member[@name="CTL_FIND_USAGE_PARA"]/*' />
 public unsafe partial struct CTL_FIND_USAGE_PARA
 {
+    /// <include file='CTL_FIND_USAGE_PARA.xml' path='doc/member[@name="CTL_FIND_USAGE_PARA.cbSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbSize;
 
+    /// <include file='CTL_FIND_USAGE_PARA.xml' path='doc/member[@name="CTL_FIND_USAGE_PARA.SubjectUsage"]/*' />
     public CTL_USAGE SubjectUsage;
 
+    /// <include file='CTL_FIND_USAGE_PARA.xml' path='doc/member[@name="CTL_FIND_USAGE_PARA.ListIdentifier"]/*' />
     public CRYPT_DATA_BLOB ListIdentifier;
 
+    /// <include file='CTL_FIND_USAGE_PARA.xml' path='doc/member[@name="CTL_FIND_USAGE_PARA.pSigner"]/*' />
     [NativeTypeName("PCERT_INFO")]
     public CERT_INFO* pSigner;
 }

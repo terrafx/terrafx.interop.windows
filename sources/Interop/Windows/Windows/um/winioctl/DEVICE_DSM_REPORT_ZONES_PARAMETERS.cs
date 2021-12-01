@@ -5,15 +5,20 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DEVICE_DSM_REPORT_ZONES_PARAMETERS.xml' path='doc/member[@name="DEVICE_DSM_REPORT_ZONES_PARAMETERS"]/*' />
 public unsafe partial struct DEVICE_DSM_REPORT_ZONES_PARAMETERS
 {
+    /// <include file='DEVICE_DSM_REPORT_ZONES_PARAMETERS.xml' path='doc/member[@name="DEVICE_DSM_REPORT_ZONES_PARAMETERS.Size"]/*' />
     [NativeTypeName("DWORD")]
     public uint Size;
 
+    /// <include file='DEVICE_DSM_REPORT_ZONES_PARAMETERS.xml' path='doc/member[@name="DEVICE_DSM_REPORT_ZONES_PARAMETERS.ReportOption"]/*' />
     public byte ReportOption;
 
+    /// <include file='DEVICE_DSM_REPORT_ZONES_PARAMETERS.xml' path='doc/member[@name="DEVICE_DSM_REPORT_ZONES_PARAMETERS.Partial"]/*' />
     public byte Partial;
 
+    /// <include file='DEVICE_DSM_REPORT_ZONES_PARAMETERS.xml' path='doc/member[@name="DEVICE_DSM_REPORT_ZONES_PARAMETERS.Reserved"]/*' />
     [NativeTypeName("BYTE [2]")]
     public fixed byte Reserved[2];
 }

@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_METADATA_EXCHANGE_TYPE.xml' path='doc/member[@name="WS_METADATA_EXCHANGE_TYPE"]/*' />
 public enum WS_METADATA_EXCHANGE_TYPE
 {
+    /// <include file='WS_METADATA_EXCHANGE_TYPE.xml' path='doc/member[@name="WS_METADATA_EXCHANGE_TYPE.WS_METADATA_EXCHANGE_TYPE_NONE"]/*' />
     WS_METADATA_EXCHANGE_TYPE_NONE = 0,
+
+    /// <include file='WS_METADATA_EXCHANGE_TYPE.xml' path='doc/member[@name="WS_METADATA_EXCHANGE_TYPE.WS_METADATA_EXCHANGE_TYPE_MEX"]/*' />
     WS_METADATA_EXCHANGE_TYPE_MEX = 1,
+
+    /// <include file='WS_METADATA_EXCHANGE_TYPE.xml' path='doc/member[@name="WS_METADATA_EXCHANGE_TYPE.WS_METADATA_EXCHANGE_TYPE_HTTP_GET"]/*' />
     WS_METADATA_EXCHANGE_TYPE_HTTP_GET = 2,
 }

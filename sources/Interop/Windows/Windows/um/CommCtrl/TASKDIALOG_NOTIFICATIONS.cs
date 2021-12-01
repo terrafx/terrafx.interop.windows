@@ -5,17 +5,39 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TASKDIALOG_NOTIFICATIONS.xml' path='doc/member[@name="TASKDIALOG_NOTIFICATIONS"]/*' />
 public enum TASKDIALOG_NOTIFICATIONS
 {
+    /// <include file='TASKDIALOG_NOTIFICATIONS.xml' path='doc/member[@name="TASKDIALOG_NOTIFICATIONS.TDN_CREATED"]/*' />
     TDN_CREATED = 0,
+
+    /// <include file='TASKDIALOG_NOTIFICATIONS.xml' path='doc/member[@name="TASKDIALOG_NOTIFICATIONS.TDN_NAVIGATED"]/*' />
     TDN_NAVIGATED = 1,
+
+    /// <include file='TASKDIALOG_NOTIFICATIONS.xml' path='doc/member[@name="TASKDIALOG_NOTIFICATIONS.TDN_BUTTON_CLICKED"]/*' />
     TDN_BUTTON_CLICKED = 2,
+
+    /// <include file='TASKDIALOG_NOTIFICATIONS.xml' path='doc/member[@name="TASKDIALOG_NOTIFICATIONS.TDN_HYPERLINK_CLICKED"]/*' />
     TDN_HYPERLINK_CLICKED = 3,
+
+    /// <include file='TASKDIALOG_NOTIFICATIONS.xml' path='doc/member[@name="TASKDIALOG_NOTIFICATIONS.TDN_TIMER"]/*' />
     TDN_TIMER = 4,
+
+    /// <include file='TASKDIALOG_NOTIFICATIONS.xml' path='doc/member[@name="TASKDIALOG_NOTIFICATIONS.TDN_DESTROYED"]/*' />
     TDN_DESTROYED = 5,
+
+    /// <include file='TASKDIALOG_NOTIFICATIONS.xml' path='doc/member[@name="TASKDIALOG_NOTIFICATIONS.TDN_RADIO_BUTTON_CLICKED"]/*' />
     TDN_RADIO_BUTTON_CLICKED = 6,
+
+    /// <include file='TASKDIALOG_NOTIFICATIONS.xml' path='doc/member[@name="TASKDIALOG_NOTIFICATIONS.TDN_DIALOG_CONSTRUCTED"]/*' />
     TDN_DIALOG_CONSTRUCTED = 7,
+
+    /// <include file='TASKDIALOG_NOTIFICATIONS.xml' path='doc/member[@name="TASKDIALOG_NOTIFICATIONS.TDN_VERIFICATION_CLICKED"]/*' />
     TDN_VERIFICATION_CLICKED = 8,
+
+    /// <include file='TASKDIALOG_NOTIFICATIONS.xml' path='doc/member[@name="TASKDIALOG_NOTIFICATIONS.TDN_HELP"]/*' />
     TDN_HELP = 9,
+
+    /// <include file='TASKDIALOG_NOTIFICATIONS.xml' path='doc/member[@name="TASKDIALOG_NOTIFICATIONS.TDN_EXPANDO_BUTTON_CLICKED"]/*' />
     TDN_EXPANDO_BUTTON_CLICKED = 10,
 }

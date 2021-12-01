@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAMTimecodeGenerator.xml' path='doc/member[@name="IAMTimecodeGenerator"]/*' />
 [Guid("9B496CE0-811B-11CF-8C77-00AA006B6814")]
 [NativeTypeName("struct IAMTimecodeGenerator : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IAMTimecodeGenerator : IAMTimecodeGenerator.Interfa
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IAMTimecodeGenerator : IAMTimecodeGenerator.Interfa
         return ((delegate* unmanaged<IAMTimecodeGenerator*, Guid*, void**, int>)(lpVtbl[0]))((IAMTimecodeGenerator*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IAMTimecodeGenerator : IAMTimecodeGenerator.Interfa
         return ((delegate* unmanaged<IAMTimecodeGenerator*, uint>)(lpVtbl[1]))((IAMTimecodeGenerator*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IAMTimecodeGenerator : IAMTimecodeGenerator.Interfa
         return ((delegate* unmanaged<IAMTimecodeGenerator*, uint>)(lpVtbl[2]))((IAMTimecodeGenerator*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAMTimecodeGenerator.xml' path='doc/member[@name="IAMTimecodeGenerator.GetTCGMode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTCGMode([NativeTypeName("long")] int Param, [NativeTypeName("long *")] int* pValue)
@@ -46,6 +51,7 @@ public unsafe partial struct IAMTimecodeGenerator : IAMTimecodeGenerator.Interfa
         return ((delegate* unmanaged<IAMTimecodeGenerator*, int, int*, int>)(lpVtbl[3]))((IAMTimecodeGenerator*)Unsafe.AsPointer(ref this), Param, pValue);
     }
 
+    /// <include file='IAMTimecodeGenerator.xml' path='doc/member[@name="IAMTimecodeGenerator.SetTCGMode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetTCGMode([NativeTypeName("long")] int Param, [NativeTypeName("long")] int Value)
@@ -53,6 +59,7 @@ public unsafe partial struct IAMTimecodeGenerator : IAMTimecodeGenerator.Interfa
         return ((delegate* unmanaged<IAMTimecodeGenerator*, int, int, int>)(lpVtbl[4]))((IAMTimecodeGenerator*)Unsafe.AsPointer(ref this), Param, Value);
     }
 
+    /// <include file='IAMTimecodeGenerator.xml' path='doc/member[@name="IAMTimecodeGenerator.put_VITCLine"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT put_VITCLine([NativeTypeName("long")] int Line)
@@ -60,6 +67,7 @@ public unsafe partial struct IAMTimecodeGenerator : IAMTimecodeGenerator.Interfa
         return ((delegate* unmanaged<IAMTimecodeGenerator*, int, int>)(lpVtbl[5]))((IAMTimecodeGenerator*)Unsafe.AsPointer(ref this), Line);
     }
 
+    /// <include file='IAMTimecodeGenerator.xml' path='doc/member[@name="IAMTimecodeGenerator.get_VITCLine"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT get_VITCLine([NativeTypeName("long *")] int* pLine)
@@ -67,6 +75,7 @@ public unsafe partial struct IAMTimecodeGenerator : IAMTimecodeGenerator.Interfa
         return ((delegate* unmanaged<IAMTimecodeGenerator*, int*, int>)(lpVtbl[6]))((IAMTimecodeGenerator*)Unsafe.AsPointer(ref this), pLine);
     }
 
+    /// <include file='IAMTimecodeGenerator.xml' path='doc/member[@name="IAMTimecodeGenerator.SetTimecode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT SetTimecode([NativeTypeName("PTIMECODE_SAMPLE")] TIMECODE_SAMPLE* pTimecodeSample)
@@ -74,6 +83,7 @@ public unsafe partial struct IAMTimecodeGenerator : IAMTimecodeGenerator.Interfa
         return ((delegate* unmanaged<IAMTimecodeGenerator*, TIMECODE_SAMPLE*, int>)(lpVtbl[7]))((IAMTimecodeGenerator*)Unsafe.AsPointer(ref this), pTimecodeSample);
     }
 
+    /// <include file='IAMTimecodeGenerator.xml' path='doc/member[@name="IAMTimecodeGenerator.GetTimecode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetTimecode([NativeTypeName("PTIMECODE_SAMPLE")] TIMECODE_SAMPLE* pTimecodeSample)

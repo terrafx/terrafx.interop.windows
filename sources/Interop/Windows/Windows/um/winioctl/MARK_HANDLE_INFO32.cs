@@ -9,18 +9,23 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MARK_HANDLE_INFO32.xml' path='doc/member[@name="MARK_HANDLE_INFO32"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public partial struct MARK_HANDLE_INFO32
 {
+    /// <include file='MARK_HANDLE_INFO32.xml' path='doc/member[@name="MARK_HANDLE_INFO32.Anonymous"]/*' />
     [NativeTypeName("_MARK_HANDLE_INFO32::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:11717:5)")]
     public _Anonymous_e__Union Anonymous;
 
+    /// <include file='MARK_HANDLE_INFO32.xml' path='doc/member[@name="MARK_HANDLE_INFO32.VolumeHandle"]/*' />
     [NativeTypeName("UINT32")]
     public uint VolumeHandle;
 
+    /// <include file='MARK_HANDLE_INFO32.xml' path='doc/member[@name="MARK_HANDLE_INFO32.HandleInfo"]/*' />
     [NativeTypeName("DWORD")]
     public uint HandleInfo;
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.UsnSourceInfo"]/*' />
     public ref uint UsnSourceInfo
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -30,6 +35,7 @@ public partial struct MARK_HANDLE_INFO32
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.CopyNumber"]/*' />
     public ref uint CopyNumber
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -39,13 +45,16 @@ public partial struct MARK_HANDLE_INFO32
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public partial struct _Anonymous_e__Union
     {
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.UsnSourceInfo"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("DWORD")]
         public uint UsnSourceInfo;
 
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.CopyNumber"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("DWORD")]
         public uint CopyNumber;

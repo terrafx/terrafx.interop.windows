@@ -7,11 +7,14 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CREATIVEFASTSPEECH8WAVEFORMAT.xml' path='doc/member[@name="CREATIVEFASTSPEECH8WAVEFORMAT"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct CREATIVEFASTSPEECH8WAVEFORMAT
 {
+    /// <include file='CREATIVEFASTSPEECH8WAVEFORMAT.xml' path='doc/member[@name="CREATIVEFASTSPEECH8WAVEFORMAT.wfx"]/*' />
     public WAVEFORMATEX wfx;
 
+    /// <include file='CREATIVEFASTSPEECH8WAVEFORMAT.xml' path='doc/member[@name="CREATIVEFASTSPEECH8WAVEFORMAT.wRevision"]/*' />
     [NativeTypeName("WORD")]
     public ushort wRevision;
 }

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITransferDestination.xml' path='doc/member[@name="ITransferDestination"]/*' />
 [Guid("48ADDD32-3CA5-4124-ABE3-B5A72531B207")]
 [NativeTypeName("struct ITransferDestination : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITransferDestination : ITransferDestination.Interfa
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITransferDestination : ITransferDestination.Interfa
         return ((delegate* unmanaged<ITransferDestination*, Guid*, void**, int>)(lpVtbl[0]))((ITransferDestination*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITransferDestination : ITransferDestination.Interfa
         return ((delegate* unmanaged<ITransferDestination*, uint>)(lpVtbl[1]))((ITransferDestination*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITransferDestination : ITransferDestination.Interfa
         return ((delegate* unmanaged<ITransferDestination*, uint>)(lpVtbl[2]))((ITransferDestination*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITransferDestination.xml' path='doc/member[@name="ITransferDestination.Advise"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Advise(ITransferAdviseSink* psink, [NativeTypeName("DWORD *")] uint* pdwCookie)
@@ -46,6 +51,7 @@ public unsafe partial struct ITransferDestination : ITransferDestination.Interfa
         return ((delegate* unmanaged<ITransferDestination*, ITransferAdviseSink*, uint*, int>)(lpVtbl[3]))((ITransferDestination*)Unsafe.AsPointer(ref this), psink, pdwCookie);
     }
 
+    /// <include file='ITransferDestination.xml' path='doc/member[@name="ITransferDestination.Unadvise"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Unadvise([NativeTypeName("DWORD")] uint dwCookie)
@@ -53,6 +59,7 @@ public unsafe partial struct ITransferDestination : ITransferDestination.Interfa
         return ((delegate* unmanaged<ITransferDestination*, uint, int>)(lpVtbl[4]))((ITransferDestination*)Unsafe.AsPointer(ref this), dwCookie);
     }
 
+    /// <include file='ITransferDestination.xml' path='doc/member[@name="ITransferDestination.CreateItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT CreateItem([NativeTypeName("LPCWSTR")] ushort* pszName, [NativeTypeName("DWORD")] uint dwAttributes, [NativeTypeName("ULONGLONG")] ulong ullSize, [NativeTypeName("TRANSFER_SOURCE_FLAGS")] uint flags, [NativeTypeName("const IID &")] Guid* riidItem, void** ppvItem, [NativeTypeName("const IID &")] Guid* riidResources, void** ppvResources)

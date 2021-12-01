@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='htmlMarqueeBehavior.xml' path='doc/member[@name="htmlMarqueeBehavior"]/*' />
 public enum htmlMarqueeBehavior
 {
+    /// <include file='htmlMarqueeBehavior.xml' path='doc/member[@name="htmlMarqueeBehavior.htmlMarqueeBehaviorscroll"]/*' />
     htmlMarqueeBehaviorscroll = 1,
+
+    /// <include file='htmlMarqueeBehavior.xml' path='doc/member[@name="htmlMarqueeBehavior.htmlMarqueeBehaviorslide"]/*' />
     htmlMarqueeBehaviorslide = 2,
+
+    /// <include file='htmlMarqueeBehavior.xml' path='doc/member[@name="htmlMarqueeBehavior.htmlMarqueeBehavioralternate"]/*' />
     htmlMarqueeBehavioralternate = 3,
+
+    /// <include file='htmlMarqueeBehavior.xml' path='doc/member[@name="htmlMarqueeBehavior.htmlMarqueeBehavior_Max"]/*' />
     htmlMarqueeBehavior_Max = 2147483647,
 }

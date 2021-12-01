@@ -5,12 +5,16 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='LVINSERTGROUPSORTED.xml' path='doc/member[@name="LVINSERTGROUPSORTED"]/*' />
 public unsafe partial struct LVINSERTGROUPSORTED
 {
+    /// <include file='LVINSERTGROUPSORTED.xml' path='doc/member[@name="LVINSERTGROUPSORTED.pfnGroupCompare"]/*' />
     [NativeTypeName("PFNLVGROUPCOMPARE")]
     public delegate* unmanaged<int, int, void*, int> pfnGroupCompare;
 
+    /// <include file='LVINSERTGROUPSORTED.xml' path='doc/member[@name="LVINSERTGROUPSORTED.pvData"]/*' />
     public void* pvData;
 
+    /// <include file='LVINSERTGROUPSORTED.xml' path='doc/member[@name="LVINSERTGROUPSORTED.lvGroup"]/*' />
     public LVGROUP lvGroup;
 }

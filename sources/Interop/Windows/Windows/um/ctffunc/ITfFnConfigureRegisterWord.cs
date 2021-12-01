@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITfFnConfigureRegisterWord.xml' path='doc/member[@name="ITfFnConfigureRegisterWord"]/*' />
 [Guid("BB95808A-6D8F-4BCA-8400-5390B586AEDF")]
 [NativeTypeName("struct ITfFnConfigureRegisterWord : ITfFunction")]
 [NativeInheritance("ITfFunction")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITfFnConfigureRegisterWord : ITfFnConfigureRegister
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITfFnConfigureRegisterWord : ITfFnConfigureRegister
         return ((delegate* unmanaged<ITfFnConfigureRegisterWord*, Guid*, void**, int>)(lpVtbl[0]))((ITfFnConfigureRegisterWord*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITfFnConfigureRegisterWord : ITfFnConfigureRegister
         return ((delegate* unmanaged<ITfFnConfigureRegisterWord*, uint>)(lpVtbl[1]))((ITfFnConfigureRegisterWord*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITfFnConfigureRegisterWord : ITfFnConfigureRegister
         return ((delegate* unmanaged<ITfFnConfigureRegisterWord*, uint>)(lpVtbl[2]))((ITfFnConfigureRegisterWord*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ITfFunction.GetDisplayName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetDisplayName([NativeTypeName("BSTR *")] ushort** pbstrName)
@@ -46,6 +51,7 @@ public unsafe partial struct ITfFnConfigureRegisterWord : ITfFnConfigureRegister
         return ((delegate* unmanaged<ITfFnConfigureRegisterWord*, ushort**, int>)(lpVtbl[3]))((ITfFnConfigureRegisterWord*)Unsafe.AsPointer(ref this), pbstrName);
     }
 
+    /// <include file='ITfFnConfigureRegisterWord.xml' path='doc/member[@name="ITfFnConfigureRegisterWord.Show"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Show(HWND hwndParent, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const GUID &")] Guid* rguidProfile, [NativeTypeName("BSTR")] ushort* bstrRegistered)

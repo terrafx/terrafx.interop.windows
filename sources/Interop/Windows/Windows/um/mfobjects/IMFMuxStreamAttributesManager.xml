@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFMuxStreamAttributesManager.GetAttributes">
+    <summary>
+      <para>Gets the <see cref="IMFAttributes" /> for the substream with the specified index.</para>
+    </summary>
+    <param name="dwMuxStreamIndex">
+      <para>The index of the substream for which attributes are retrieved.</para>
+    </param>
+    <param name="ppStreamAttributes">
+      <para>The attributes for the specified substream.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>Invalid argument.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_INVALIDSTREAMNUMBER</b>
+            </para>
+          </description>
+          <description>
+            <para>The stream specified substream index is invalid. Call <see cref="GetStreamCount" /> to get the number of substreams managed by the multiplexed media source.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IMFMuxStreamMediaTypeManager" />
+  </member>
+  <member name="IMFMuxStreamAttributesManager.GetStreamCount">
+    <summary>
+      <para>Gets the count of substreams managed by the multiplexed media source.</para>
+    </summary>
+    <param name="pdwMuxStreamCount">
+      <para>The count of substreams managed by the multiplexed media source.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>Invalid argument.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IMFMuxStreamMediaTypeManager" />
+  </member>
+  <member name="IMFMuxStreamAttributesManager">
+    <summary>
+      <para>Provides access to the <see cref="IMFAttributes" /> of the substreams of a multiplexed media source.</para>
+    </summary>
+  </member>
+</doc>

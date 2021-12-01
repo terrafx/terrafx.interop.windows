@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IProtectFocus.xml' path='doc/member[@name="IProtectFocus"]/*' />
 [Guid("D81F90A3-8156-44F7-AD28-5ABB87003274")]
 [NativeTypeName("struct IProtectFocus : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IProtectFocus : IProtectFocus.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IProtectFocus : IProtectFocus.Interface
         return ((delegate* unmanaged<IProtectFocus*, Guid*, void**, int>)(lpVtbl[0]))((IProtectFocus*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IProtectFocus : IProtectFocus.Interface
         return ((delegate* unmanaged<IProtectFocus*, uint>)(lpVtbl[1]))((IProtectFocus*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IProtectFocus : IProtectFocus.Interface
         return ((delegate* unmanaged<IProtectFocus*, uint>)(lpVtbl[2]))((IProtectFocus*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IProtectFocus.xml' path='doc/member[@name="IProtectFocus.AllowFocusChange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT AllowFocusChange(BOOL* pfAllow)

@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PUSHBUTTONDROPDOWNSTATES.xml' path='doc/member[@name="PUSHBUTTONDROPDOWNSTATES"]/*' />
 public enum PUSHBUTTONDROPDOWNSTATES
 {
+    /// <include file='PUSHBUTTONDROPDOWNSTATES.xml' path='doc/member[@name="PUSHBUTTONDROPDOWNSTATES.PBDDS_NORMAL"]/*' />
     PBDDS_NORMAL = 1,
+
+    /// <include file='PUSHBUTTONDROPDOWNSTATES.xml' path='doc/member[@name="PUSHBUTTONDROPDOWNSTATES.PBDDS_DISABLED"]/*' />
     PBDDS_DISABLED = 2,
 }

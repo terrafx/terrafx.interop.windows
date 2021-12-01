@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFTimedTextBinary.xml' path='doc/member[@name="IMFTimedTextBinary"]/*' />
 [Guid("4AE3A412-0545-43C4-BF6F-6B97A5C6C432")]
 [NativeTypeName("struct IMFTimedTextBinary : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IMFTimedTextBinary : IMFTimedTextBinary.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IMFTimedTextBinary : IMFTimedTextBinary.Interface
         return ((delegate* unmanaged<IMFTimedTextBinary*, Guid*, void**, int>)(lpVtbl[0]))((IMFTimedTextBinary*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IMFTimedTextBinary : IMFTimedTextBinary.Interface
         return ((delegate* unmanaged<IMFTimedTextBinary*, uint>)(lpVtbl[1]))((IMFTimedTextBinary*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IMFTimedTextBinary : IMFTimedTextBinary.Interface
         return ((delegate* unmanaged<IMFTimedTextBinary*, uint>)(lpVtbl[2]))((IMFTimedTextBinary*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFTimedTextBinary.xml' path='doc/member[@name="IMFTimedTextBinary.GetData"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetData([NativeTypeName("const BYTE **")] byte** data, [NativeTypeName("DWORD *")] uint* length)

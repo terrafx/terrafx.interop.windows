@@ -11,6 +11,7 @@ using TerraFX.Interop.WinRT;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IPlayToSourceClassFactory.xml' path='doc/member[@name="IPlayToSourceClassFactory"]/*' />
 [Guid("842B32A3-9B9B-4D1C-B3F3-49193248A554")]
 [NativeTypeName("struct IPlayToSourceClassFactory : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -19,6 +20,7 @@ public unsafe partial struct IPlayToSourceClassFactory : IPlayToSourceClassFacto
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -26,6 +28,7 @@ public unsafe partial struct IPlayToSourceClassFactory : IPlayToSourceClassFacto
         return ((delegate* unmanaged<IPlayToSourceClassFactory*, Guid*, void**, int>)(lpVtbl[0]))((IPlayToSourceClassFactory*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -34,6 +37,7 @@ public unsafe partial struct IPlayToSourceClassFactory : IPlayToSourceClassFacto
         return ((delegate* unmanaged<IPlayToSourceClassFactory*, uint>)(lpVtbl[1]))((IPlayToSourceClassFactory*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -42,6 +46,7 @@ public unsafe partial struct IPlayToSourceClassFactory : IPlayToSourceClassFacto
         return ((delegate* unmanaged<IPlayToSourceClassFactory*, uint>)(lpVtbl[2]))((IPlayToSourceClassFactory*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IPlayToSourceClassFactory.xml' path='doc/member[@name="IPlayToSourceClassFactory.CreateInstance"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT CreateInstance([NativeTypeName("DWORD")] uint dwFlags, IPlayToControl* pControl, IInspectable** ppSource)

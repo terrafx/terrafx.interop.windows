@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HW_PROFILE_INFOA.xml' path='doc/member[@name="HW_PROFILE_INFOA"]/*' />
 public unsafe partial struct HW_PROFILE_INFOA
 {
+    /// <include file='HW_PROFILE_INFOA.xml' path='doc/member[@name="HW_PROFILE_INFOA.dwDockInfo"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwDockInfo;
 
+    /// <include file='HW_PROFILE_INFOA.xml' path='doc/member[@name="HW_PROFILE_INFOA.szHwProfileGuid"]/*' />
     [NativeTypeName("CHAR [39]")]
     public fixed sbyte szHwProfileGuid[39];
 
+    /// <include file='HW_PROFILE_INFOA.xml' path='doc/member[@name="HW_PROFILE_INFOA.szHwProfileName"]/*' />
     [NativeTypeName("CHAR [80]")]
     public fixed sbyte szHwProfileName[80];
 }

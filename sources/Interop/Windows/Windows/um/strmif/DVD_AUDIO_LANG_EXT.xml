@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DVD_AUDIO_LANG_EXT">
+    <summary>
+      <para>Defines flags that indicate whether an audio stream contains audio language extensions.</para>
+    </summary>
+    <remarks>
+      <para>This enumeration is used in the <see cref="IDvdInfo2.GetAudioAttributes" /> and <see cref="IDvdInfo2.GetDefaultAudioLanguage" /> methods.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-enumerated-types">DirectShow Enumerated Types</seealso>
+    <seealso cref="IDvdInfo2" />
+  </member>
+  <member name="DVD_AUDIO_LANG_EXT.DVD_AUD_EXT_NotSpecified">
+    <summary>
+      <para>The DVD doesn't specify an audio language extension for this audio stream.</para>
+    </summary>
+  </member>
+  <member name="DVD_AUDIO_LANG_EXT.DVD_AUD_EXT_Captions">
+    <summary>
+      <para>The audio stream contains captions.</para>
+    </summary>
+  </member>
+  <member name="DVD_AUDIO_LANG_EXT.DVD_AUD_EXT_VisuallyImpaired">
+    <summary>
+      <para>The audio stream contains content for people with low vision.</para>
+    </summary>
+  </member>
+  <member name="DVD_AUDIO_LANG_EXT.DVD_AUD_EXT_DirectorComments1">
+    <summary>
+      <para>The audio stream contains "director comments 1."</para>
+    </summary>
+  </member>
+  <member name="DVD_AUDIO_LANG_EXT.DVD_AUD_EXT_DirectorComments2">
+    <summary>
+      <para>The audio stream contains "director comments 2."</para>
+    </summary>
+  </member>
+</doc>

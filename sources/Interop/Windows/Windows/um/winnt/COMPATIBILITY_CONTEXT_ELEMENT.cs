@@ -7,12 +7,16 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='COMPATIBILITY_CONTEXT_ELEMENT.xml' path='doc/member[@name="COMPATIBILITY_CONTEXT_ELEMENT"]/*' />
 public partial struct COMPATIBILITY_CONTEXT_ELEMENT
 {
+    /// <include file='COMPATIBILITY_CONTEXT_ELEMENT.xml' path='doc/member[@name="COMPATIBILITY_CONTEXT_ELEMENT.Id"]/*' />
     public Guid Id;
 
+    /// <include file='COMPATIBILITY_CONTEXT_ELEMENT.xml' path='doc/member[@name="COMPATIBILITY_CONTEXT_ELEMENT.Type"]/*' />
     public ACTCTX_COMPATIBILITY_ELEMENT_TYPE Type;
 
+    /// <include file='COMPATIBILITY_CONTEXT_ELEMENT.xml' path='doc/member[@name="COMPATIBILITY_CONTEXT_ELEMENT.MaxVersionTested"]/*' />
     [NativeTypeName("ULONGLONG")]
     public ulong MaxVersionTested;
 }

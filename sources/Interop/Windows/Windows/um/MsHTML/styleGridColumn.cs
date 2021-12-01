@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='styleGridColumn.xml' path='doc/member[@name="styleGridColumn"]/*' />
 public enum styleGridColumn
 {
+    /// <include file='styleGridColumn.xml' path='doc/member[@name="styleGridColumn.styleGridColumnNotSet"]/*' />
     styleGridColumnNotSet = 0,
+
+    /// <include file='styleGridColumn.xml' path='doc/member[@name="styleGridColumn.styleGridColumn_Max"]/*' />
     styleGridColumn_Max = 2147483647,
 }

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='INamespaceWalkCB2.xml' path='doc/member[@name="INamespaceWalkCB2"]/*' />
 [Guid("7AC7492B-C38E-438A-87DB-68737844FF70")]
 [NativeTypeName("struct INamespaceWalkCB2 : INamespaceWalkCB")]
 [NativeInheritance("INamespaceWalkCB")]
@@ -16,6 +17,7 @@ public unsafe partial struct INamespaceWalkCB2 : INamespaceWalkCB2.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct INamespaceWalkCB2 : INamespaceWalkCB2.Interface
         return ((delegate* unmanaged<INamespaceWalkCB2*, Guid*, void**, int>)(lpVtbl[0]))((INamespaceWalkCB2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct INamespaceWalkCB2 : INamespaceWalkCB2.Interface
         return ((delegate* unmanaged<INamespaceWalkCB2*, uint>)(lpVtbl[1]))((INamespaceWalkCB2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct INamespaceWalkCB2 : INamespaceWalkCB2.Interface
         return ((delegate* unmanaged<INamespaceWalkCB2*, uint>)(lpVtbl[2]))((INamespaceWalkCB2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="INamespaceWalkCB.FoundItem" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT FoundItem(IShellFolder* psf, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl)
@@ -46,6 +51,7 @@ public unsafe partial struct INamespaceWalkCB2 : INamespaceWalkCB2.Interface
         return ((delegate* unmanaged<INamespaceWalkCB2*, IShellFolder*, ITEMIDLIST*, int>)(lpVtbl[3]))((INamespaceWalkCB2*)Unsafe.AsPointer(ref this), psf, pidl);
     }
 
+    /// <inheritdoc cref="INamespaceWalkCB.EnterFolder" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT EnterFolder(IShellFolder* psf, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl)
@@ -53,6 +59,7 @@ public unsafe partial struct INamespaceWalkCB2 : INamespaceWalkCB2.Interface
         return ((delegate* unmanaged<INamespaceWalkCB2*, IShellFolder*, ITEMIDLIST*, int>)(lpVtbl[4]))((INamespaceWalkCB2*)Unsafe.AsPointer(ref this), psf, pidl);
     }
 
+    /// <inheritdoc cref="INamespaceWalkCB.LeaveFolder" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT LeaveFolder(IShellFolder* psf, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl)
@@ -60,6 +67,7 @@ public unsafe partial struct INamespaceWalkCB2 : INamespaceWalkCB2.Interface
         return ((delegate* unmanaged<INamespaceWalkCB2*, IShellFolder*, ITEMIDLIST*, int>)(lpVtbl[5]))((INamespaceWalkCB2*)Unsafe.AsPointer(ref this), psf, pidl);
     }
 
+    /// <inheritdoc cref="INamespaceWalkCB.InitializeProgressDialog" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT InitializeProgressDialog([NativeTypeName("LPWSTR *")] ushort** ppszTitle, [NativeTypeName("LPWSTR *")] ushort** ppszCancel)
@@ -67,6 +75,7 @@ public unsafe partial struct INamespaceWalkCB2 : INamespaceWalkCB2.Interface
         return ((delegate* unmanaged<INamespaceWalkCB2*, ushort**, ushort**, int>)(lpVtbl[6]))((INamespaceWalkCB2*)Unsafe.AsPointer(ref this), ppszTitle, ppszCancel);
     }
 
+    /// <include file='INamespaceWalkCB2.xml' path='doc/member[@name="INamespaceWalkCB2.WalkComplete"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT WalkComplete(HRESULT hr)

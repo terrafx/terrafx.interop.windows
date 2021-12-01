@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DAV_CALLBACK_AUTH_UNP">
+    <summary>
+      <para>Stores user name and password information that was retrieved by the <a href="https://docs.microsoft.com//windows/desktop/api/davclnt/nc-davclnt-pfndavauthcallback">DavAuthCallback</a> callback function.</para>
+    </summary>
+    <remarks>
+      <para>This structure is included as a member in the <see cref="DAV_CALLBACK_CRED" /> structure.</para>
+      <para>The <a href="https://docs.microsoft.com//windows/desktop/api/davclnt/nc-davclnt-pfndavauthcallback_freecred">DavFreeCredCallback</a> callback function should free only the buffer that the <b>pBuffer</b> member points to, not the entire structure.</para>
+    </remarks>
+    <seealso cref="DAV_CALLBACK_AUTH_BLOB" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/davclnt/nc-davclnt-pfndavauthcallback">DavAuthCallback</seealso>
+  </member>
+  <member name="DAV_CALLBACK_AUTH_UNP.pszUserName">
+    <summary>
+      <para>A pointer to a string that contains the user name. This string is allocated by the <a href="https://docs.microsoft.com//windows/desktop/api/davclnt/nc-davclnt-pfndavauthcallback">DavAuthCallback</a> callback function.</para>
+    </summary>
+  </member>
+  <member name="DAV_CALLBACK_AUTH_UNP.ulUserNameLength">
+    <summary>
+      <para>The length, in WCHAR, of the user name, not including the terminating <b>NULL</b> character.</para>
+    </summary>
+  </member>
+  <member name="DAV_CALLBACK_AUTH_UNP.pszPassword">
+    <summary>
+      <para>A pointer to a string that contains the password. This string is allocated by <a href="https://docs.microsoft.com//windows/desktop/api/davclnt/nc-davclnt-pfndavauthcallback">DavAuthCallback</a>.</para>
+    </summary>
+  </member>
+  <member name="DAV_CALLBACK_AUTH_UNP.ulPasswordLength">
+    <summary>
+      <para>The length, in WCHAR, of the password, not including the terminating <b>NULL</b> character.</para>
+    </summary>
+  </member>
+</doc>

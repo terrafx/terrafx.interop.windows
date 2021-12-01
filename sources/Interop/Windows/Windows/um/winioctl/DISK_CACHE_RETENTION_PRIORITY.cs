@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DISK_CACHE_RETENTION_PRIORITY.xml' path='doc/member[@name="DISK_CACHE_RETENTION_PRIORITY"]/*' />
 public enum DISK_CACHE_RETENTION_PRIORITY
 {
+    /// <include file='DISK_CACHE_RETENTION_PRIORITY.xml' path='doc/member[@name="DISK_CACHE_RETENTION_PRIORITY.EqualPriority"]/*' />
     EqualPriority,
+
+    /// <include file='DISK_CACHE_RETENTION_PRIORITY.xml' path='doc/member[@name="DISK_CACHE_RETENTION_PRIORITY.KeepPrefetchedData"]/*' />
     KeepPrefetchedData,
+
+    /// <include file='DISK_CACHE_RETENTION_PRIORITY.xml' path='doc/member[@name="DISK_CACHE_RETENTION_PRIORITY.KeepReadData"]/*' />
     KeepReadData,
 }

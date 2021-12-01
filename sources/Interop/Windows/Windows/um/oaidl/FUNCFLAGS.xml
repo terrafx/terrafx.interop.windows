@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="FUNCFLAGS">
+    <summary>
+      <para>Specifies function flags.</para>
+    </summary>
+    <remarks>
+      <para>FUNCFLAG_FHIDDEN means that the property should never be shown in object browsers, property browsers, and so on. This function is useful for removing items from an object model. Code can bind to the member, but the user will never know that the member exists.</para>
+      <para>FUNCFLAG_FNONBROWSABLE means that the property should not be displayed in a properties browser. It is used in circumstances in which an error would occur if the property were shown in a properties browser.</para>
+      <para>FUNCFLAG_FRESRICTED means that macro-oriented programmers should not be allowed to access this member. These members are usually treated as _FHIDDEN by tools such as Visual Basic, with the main difference being that code cannot bind to those members.</para>
+    </remarks>
+  </member>
+  <member name="FUNCFLAGS.FUNCFLAG_FRESTRICTED">
+    <summary>
+      <para>The function should not be accessible from macro languages. This flag is intended for system-level functions or functions that type browsers should not display.</para>
+    </summary>
+  </member>
+  <member name="FUNCFLAGS.FUNCFLAG_FSOURCE">
+    <summary>
+      <para>The function returns an object that is a source of events.</para>
+    </summary>
+  </member>
+  <member name="FUNCFLAGS.FUNCFLAG_FBINDABLE">
+    <summary>
+      <para>The function that supports data binding.</para>
+    </summary>
+  </member>
+  <member name="FUNCFLAGS.FUNCFLAG_FREQUESTEDIT">
+    <summary>
+      <para>When set, any call to a method that sets the property results first in a call to <b>IPropertyNotifySink.OnRequestEdit</b>. The implementation of <b>OnRequestEdit</b> determines if the call is allowed to set the property.</para>
+    </summary>
+  </member>
+  <member name="FUNCFLAGS.FUNCFLAG_FDISPLAYBIND">
+    <summary>
+      <para>The function that is displayed to the user as bindable. FUNC_FBINDABLE must also be set.</para>
+    </summary>
+  </member>
+  <member name="FUNCFLAGS.FUNCFLAG_FDEFAULTBIND">
+    <summary>
+      <para>The function that best represents the object. Only one function in a type information can have this attribute.</para>
+    </summary>
+  </member>
+  <member name="FUNCFLAGS.FUNCFLAG_FHIDDEN">
+    <summary>
+      <para>The function should not be displayed to the user, although it exists and is bindable.</para>
+    </summary>
+  </member>
+  <member name="FUNCFLAGS.FUNCFLAG_FUSESGETLASTERROR">
+    <summary>
+      <para>The function supports <b>GetLastError</b>. If an error occurs during the function, the caller can call <b>GetLastError</b> to retrieve the error code.</para>
+    </summary>
+  </member>
+  <member name="FUNCFLAGS.FUNCFLAG_FDEFAULTCOLLELEM">
+    <summary>
+      <para>Permits an optimization in which the compiler looks for a member named xyz on the type of abc. If such a member is found and is flagged as an accessor function for an element of the default collection, then a call is generated to that member function. Permitted on members in dispinterfaces and interfaces; not permitted on modules. For more information, refer to defaultcollelem in Type Libraries and the Object Description Language.</para>
+    </summary>
+  </member>
+  <member name="FUNCFLAGS.FUNCFLAG_FUIDEFAULT">
+    <summary>
+      <para>The type information member is the default member for display in the user interface.</para>
+    </summary>
+  </member>
+  <member name="FUNCFLAGS.FUNCFLAG_FNONBROWSABLE">
+    <summary>
+      <para>The property appears in an object browser, but not in a properties browser.</para>
+    </summary>
+  </member>
+  <member name="FUNCFLAGS.FUNCFLAG_FREPLACEABLE">
+    <summary>
+      <para>Tags the interface as having default behaviors.</para>
+    </summary>
+  </member>
+  <member name="FUNCFLAGS.FUNCFLAG_FIMMEDIATEBIND">
+    <summary>
+      <para>Mapped as individual bindable properties.</para>
+    </summary>
+  </member>
+</doc>

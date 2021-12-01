@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ITfStatusSink.OnStatusChange">
+    <summary>
+      <para>Receives a notification when one of the dynamic flags of the TF_STATUS structure changes.</para>
+    </summary>
+    <param name="pic">
+      <para>Pointer to the <see cref="ITfContext" /> interface whose status has changed.</para>
+    </param>
+    <param name="dwFlags">
+      <para>Indicates that one of the dynamic flags changed.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This method receives a callback when one of the flags of the <b>dwDynamicFlags</b> member of the <b>TF_STATUS</b> structure changes value. To obtain the changed flag(s), use the <see cref="ITfContext.GetStatus" /> method.</para>
+    </remarks>
+    <seealso cref="ITfContext " />
+    <seealso cref="ITfContext.GetStatus " />
+    <seealso cref="ITfStatusSink" />
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms629192(v=vs.85)">TF_STATUS
+</seealso>
+  </member>
+  <member name="ITfStatusSink">
+    <summary>
+      <para>The <b>ITfStatusSink</b> interface supports changes to the global document status. This advise sink is installed by calling <see cref="ITfSource.AdviseSink" /> with IID_ITfStatusSink. A text service can optionally implement this interface.</para>
+    </summary>
+    <seealso cref="ITfContext " />
+    <seealso cref="ITfSource.AdviseSink " />
+    <seealso cref="IUnknown" />
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms629192(v=vs.85)">TF_STATUS
+</seealso>
+  </member>
+</doc>

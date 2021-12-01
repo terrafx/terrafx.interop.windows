@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IWICImageEncoder.WriteFrame">
+    <summary>
+      <para>Encodes the image to the frame given by the <a href="https://docs.microsoft.com//windows/desktop/wic/-wic-imp-iwicbitmapframeencode">IWICBitmapFrameEncode</a>.</para>
+    </summary>
+    <param name="pImage">
+      <para>Type: <b><see cref="ID2D1Image" />*</b></para>
+      <para>The Direct2D image that will be encoded.</para>
+    </param>
+    <param name="pFrameEncode">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/wic/-wic-imp-iwicbitmapframeencode">IWICBitmapFrameEncode</a>*</b></para>
+      <para>The frame encoder to which the image is written.</para>
+    </param>
+    <param name="pImageParameters">
+      <para>Type: <b>const <see cref="WICImageParameters" />*</b></para>
+      <para>Additional parameters to control encoding.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The image passed in must be created on the same device as in <see cref="IWICImagingFactory2.CreateImageEncoder" />. If the <i>pImageParameters</i> are not specified, a set of useful defaults will be assumed, see <see cref="WICImageParameters" /> for more info.</para>
+      <para>You must correctly and independently have set up the <a href="https://docs.microsoft.com//windows/desktop/wic/-wic-imp-iwicbitmapframeencode">IWICBitmapFrameEncode</a> before calling this API.</para>
+    </remarks>
+    <seealso cref="IWICImageEncoder" />
+  </member>
+  <member name="IWICImageEncoder.WriteFrameThumbnail">
+    <summary>
+      <para>Encodes the image as a thumbnail to the frame given by the <a href="https://docs.microsoft.com//windows/desktop/wic/-wic-imp-iwicbitmapframeencode">IWICBitmapFrameEncode</a>.</para>
+    </summary>
+    <param name="pImage">
+      <para>Type: <b><see cref="ID2D1Image" />*</b></para>
+      <para>The Direct2D image that will be encoded.</para>
+    </param>
+    <param name="pFrameEncode">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/wic/-wic-imp-iwicbitmapframeencode">IWICBitmapFrameEncode</a>*</b></para>
+      <para>The frame encoder on which the thumbnail is set.</para>
+    </param>
+    <param name="pImageParameters">
+      <para>Type: <b>const <see cref="WICImageParameters" />*</b></para>
+      <para>Additional parameters to control encoding.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The image passed in must be created on the same device as in <see cref="IWICImagingFactory2.CreateImageEncoder" />. If the <i>pImageParameters</i> are not specified, a set of useful defaults will be assumed, see <see cref="WICImageParameters" /> for more info.</para>
+      <para>You must correctly and independently have set up the <a href="https://docs.microsoft.com//windows/desktop/wic/-wic-imp-iwicbitmapframeencode">IWICBitmapFrameEncode</a> before calling this API.</para>
+    </remarks>
+    <seealso cref="IWICImageEncoder" />
+  </member>
+  <member name="IWICImageEncoder.WriteThumbnail">
+    <summary>
+      <para>Encodes the given image as the thumbnail to the given WIC bitmap encoder.</para>
+    </summary>
+    <param name="pImage">
+      <para>Type: <b><see cref="ID2D1Image" />*</b></para>
+      <para>The Direct2D image that will be encoded.</para>
+    </param>
+    <param name="pEncoder">
+      <para>Type: <b><see cref="IWICBitmapEncoder" />*</b></para>
+      <para>The encoder on which the thumbnail is set.</para>
+    </param>
+    <param name="pImageParameters">
+      <para>Type: <b>const <see cref="WICImageParameters" />*</b></para>
+      <para>Additional parameters to control encoding.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>You must create the image that you pass in on the same device as in <see cref="IWICImagingFactory2.CreateImageEncoder" />. If you don't specify additional parameters in the variable that <i>pImageParameters</i> points to, the encoder uses a set of useful defaults. For info about these defaults, see <see cref="WICImageParameters" />.</para>
+      <para>Before you call <b>WriteThumbnail</b>, you must set up the <see cref="IWICBitmapEncoder" /> interface for the encoder on which you want to set the thumbnail.</para>
+      <para>If <b>WriteThumbnail</b> fails, it might return E_OUTOFMEMORY, D2DERR_WRONG_RESOURCE_DOMAIN, or other error codes from the encoder.</para>
+    </remarks>
+    <seealso cref="IWICImageEncoder" />
+    <seealso cref="IWICImagingFactory2.CreateImageEncoder" />
+    <seealso cref="WICImageParameters" />
+  </member>
+  <member name="IWICImageEncoder">
+    <summary>
+      <para>Encodes <see cref="ID2D1Image" /> interfaces to an <a href="https://docs.microsoft.com//windows/desktop/wic/-wic-imp-iwicbitmapencoder">IWICBitmapEncoder</a>.  The input images can be larger than the maximum device texture size.</para>
+    </summary>
+  </member>
+</doc>

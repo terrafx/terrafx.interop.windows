@@ -5,13 +5,17 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='FLAG_STGMEDIUM.xml' path='doc/member[@name="FLAG_STGMEDIUM"]/*' />
 public partial struct FLAG_STGMEDIUM
 {
+    /// <include file='FLAG_STGMEDIUM.xml' path='doc/member[@name="FLAG_STGMEDIUM.ContextFlags"]/*' />
     [NativeTypeName("LONG")]
     public int ContextFlags;
 
+    /// <include file='FLAG_STGMEDIUM.xml' path='doc/member[@name="FLAG_STGMEDIUM.fPassOwnership"]/*' />
     [NativeTypeName("LONG")]
     public int fPassOwnership;
 
+    /// <include file='FLAG_STGMEDIUM.xml' path='doc/member[@name="FLAG_STGMEDIUM.Stgmed"]/*' />
     public STGMEDIUM Stgmed;
 }

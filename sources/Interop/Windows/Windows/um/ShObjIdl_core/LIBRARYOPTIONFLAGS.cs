@@ -7,10 +7,16 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='LIBRARYOPTIONFLAGS.xml' path='doc/member[@name="LIBRARYOPTIONFLAGS"]/*' />
 [Flags]
 public enum LIBRARYOPTIONFLAGS
 {
+    /// <include file='LIBRARYOPTIONFLAGS.xml' path='doc/member[@name="LIBRARYOPTIONFLAGS.LOF_DEFAULT"]/*' />
     LOF_DEFAULT = 0,
+
+    /// <include file='LIBRARYOPTIONFLAGS.xml' path='doc/member[@name="LIBRARYOPTIONFLAGS.LOF_PINNEDTONAVPANE"]/*' />
     LOF_PINNEDTONAVPANE = 0x1,
+
+    /// <include file='LIBRARYOPTIONFLAGS.xml' path='doc/member[@name="LIBRARYOPTIONFLAGS.LOF_MASK_ALL"]/*' />
     LOF_MASK_ALL = 0x1,
 }

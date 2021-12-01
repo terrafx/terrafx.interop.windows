@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SPPRONUNCIATIONFLAGS.xml' path='doc/member[@name="SPPRONUNCIATIONFLAGS"]/*' />
 public enum SPPRONUNCIATIONFLAGS
 {
+    /// <include file='SPPRONUNCIATIONFLAGS.xml' path='doc/member[@name="SPPRONUNCIATIONFLAGS.ePRONFLAG_USED"]/*' />
     ePRONFLAG_USED = (1 << 0),
 }

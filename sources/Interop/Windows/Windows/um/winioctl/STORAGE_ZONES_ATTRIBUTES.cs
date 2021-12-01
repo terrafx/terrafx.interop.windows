@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STORAGE_ZONES_ATTRIBUTES.xml' path='doc/member[@name="STORAGE_ZONES_ATTRIBUTES"]/*' />
 public enum STORAGE_ZONES_ATTRIBUTES
 {
+    /// <include file='STORAGE_ZONES_ATTRIBUTES.xml' path='doc/member[@name="STORAGE_ZONES_ATTRIBUTES.ZonesAttributeTypeAndLengthMayDifferent"]/*' />
     ZonesAttributeTypeAndLengthMayDifferent = 0,
+
+    /// <include file='STORAGE_ZONES_ATTRIBUTES.xml' path='doc/member[@name="STORAGE_ZONES_ATTRIBUTES.ZonesAttributeTypeSameLengthSame"]/*' />
     ZonesAttributeTypeSameLengthSame = 1,
+
+    /// <include file='STORAGE_ZONES_ATTRIBUTES.xml' path='doc/member[@name="STORAGE_ZONES_ATTRIBUTES.ZonesAttributeTypeSameLastZoneLengthDifferent"]/*' />
     ZonesAttributeTypeSameLastZoneLengthDifferent = 2,
+
+    /// <include file='STORAGE_ZONES_ATTRIBUTES.xml' path='doc/member[@name="STORAGE_ZONES_ATTRIBUTES.ZonesAttributeTypeMayDifferentLengthSame"]/*' />
     ZonesAttributeTypeMayDifferentLengthSame = 3,
 }

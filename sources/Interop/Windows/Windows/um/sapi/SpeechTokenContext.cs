@@ -7,11 +7,21 @@ using static TerraFX.Interop.Windows.CLSCTX;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SpeechTokenContext.xml' path='doc/member[@name="SpeechTokenContext"]/*' />
 public enum SpeechTokenContext
 {
+    /// <include file='SpeechTokenContext.xml' path='doc/member[@name="SpeechTokenContext.STCInprocServer"]/*' />
     STCInprocServer = CLSCTX_INPROC_SERVER,
+
+    /// <include file='SpeechTokenContext.xml' path='doc/member[@name="SpeechTokenContext.STCInprocHandler"]/*' />
     STCInprocHandler = CLSCTX_INPROC_HANDLER,
+
+    /// <include file='SpeechTokenContext.xml' path='doc/member[@name="SpeechTokenContext.STCLocalServer"]/*' />
     STCLocalServer = CLSCTX_LOCAL_SERVER,
+
+    /// <include file='SpeechTokenContext.xml' path='doc/member[@name="SpeechTokenContext.STCRemoteServer"]/*' />
     STCRemoteServer = CLSCTX_REMOTE_SERVER,
+
+    /// <include file='SpeechTokenContext.xml' path='doc/member[@name="SpeechTokenContext.STCAll"]/*' />
     STCAll = (((CLSCTX_INPROC_SERVER | CLSCTX_INPROC_HANDLER) | CLSCTX_LOCAL_SERVER) | CLSCTX_REMOTE_SERVER),
 }

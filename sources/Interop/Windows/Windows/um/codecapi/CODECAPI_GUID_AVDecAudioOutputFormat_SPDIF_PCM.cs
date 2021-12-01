@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_GUID_AVDecAudioOutputFormat_SPDIF_PCM.xml' path='doc/member[@name="CODECAPI_GUID_AVDecAudioOutputFormat_SPDIF_PCM"]/*' />
 [Guid("696E1D32-548F-4036-825F-7026C60011BD")]
 public partial struct CODECAPI_GUID_AVDecAudioOutputFormat_SPDIF_PCM
 {

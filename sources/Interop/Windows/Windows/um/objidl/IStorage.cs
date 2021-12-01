@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IStorage.xml' path='doc/member[@name="IStorage"]/*' />
 [Guid("0000000B-0000-0000-C000-000000000046")]
 [NativeTypeName("struct IStorage : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IStorage : IStorage.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IStorage : IStorage.Interface
         return ((delegate* unmanaged<IStorage*, Guid*, void**, int>)(lpVtbl[0]))((IStorage*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IStorage : IStorage.Interface
         return ((delegate* unmanaged<IStorage*, uint>)(lpVtbl[1]))((IStorage*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IStorage : IStorage.Interface
         return ((delegate* unmanaged<IStorage*, uint>)(lpVtbl[2]))((IStorage*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IStorage.xml' path='doc/member[@name="IStorage.CreateStream"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT CreateStream([NativeTypeName("const OLECHAR *")] ushort* pwcsName, [NativeTypeName("DWORD")] uint grfMode, [NativeTypeName("DWORD")] uint reserved1, [NativeTypeName("DWORD")] uint reserved2, IStream** ppstm)
@@ -46,6 +51,7 @@ public unsafe partial struct IStorage : IStorage.Interface
         return ((delegate* unmanaged<IStorage*, ushort*, uint, uint, uint, IStream**, int>)(lpVtbl[3]))((IStorage*)Unsafe.AsPointer(ref this), pwcsName, grfMode, reserved1, reserved2, ppstm);
     }
 
+    /// <include file='IStorage.xml' path='doc/member[@name="IStorage.OpenStream"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT OpenStream([NativeTypeName("const OLECHAR *")] ushort* pwcsName, void* reserved1, [NativeTypeName("DWORD")] uint grfMode, [NativeTypeName("DWORD")] uint reserved2, IStream** ppstm)
@@ -53,6 +59,7 @@ public unsafe partial struct IStorage : IStorage.Interface
         return ((delegate* unmanaged<IStorage*, ushort*, void*, uint, uint, IStream**, int>)(lpVtbl[4]))((IStorage*)Unsafe.AsPointer(ref this), pwcsName, reserved1, grfMode, reserved2, ppstm);
     }
 
+    /// <include file='IStorage.xml' path='doc/member[@name="IStorage.CreateStorage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT CreateStorage([NativeTypeName("const OLECHAR *")] ushort* pwcsName, [NativeTypeName("DWORD")] uint grfMode, [NativeTypeName("DWORD")] uint reserved1, [NativeTypeName("DWORD")] uint reserved2, IStorage** ppstg)
@@ -60,6 +67,7 @@ public unsafe partial struct IStorage : IStorage.Interface
         return ((delegate* unmanaged<IStorage*, ushort*, uint, uint, uint, IStorage**, int>)(lpVtbl[5]))((IStorage*)Unsafe.AsPointer(ref this), pwcsName, grfMode, reserved1, reserved2, ppstg);
     }
 
+    /// <include file='IStorage.xml' path='doc/member[@name="IStorage.OpenStorage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT OpenStorage([NativeTypeName("const OLECHAR *")] ushort* pwcsName, IStorage* pstgPriority, [NativeTypeName("DWORD")] uint grfMode, [NativeTypeName("SNB")] ushort** snbExclude, [NativeTypeName("DWORD")] uint reserved, IStorage** ppstg)
@@ -67,6 +75,7 @@ public unsafe partial struct IStorage : IStorage.Interface
         return ((delegate* unmanaged<IStorage*, ushort*, IStorage*, uint, ushort**, uint, IStorage**, int>)(lpVtbl[6]))((IStorage*)Unsafe.AsPointer(ref this), pwcsName, pstgPriority, grfMode, snbExclude, reserved, ppstg);
     }
 
+    /// <include file='IStorage.xml' path='doc/member[@name="IStorage.CopyTo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT CopyTo([NativeTypeName("DWORD")] uint ciidExclude, [NativeTypeName("const IID *")] Guid* rgiidExclude, [NativeTypeName("SNB")] ushort** snbExclude, IStorage* pstgDest)
@@ -74,6 +83,7 @@ public unsafe partial struct IStorage : IStorage.Interface
         return ((delegate* unmanaged<IStorage*, uint, Guid*, ushort**, IStorage*, int>)(lpVtbl[7]))((IStorage*)Unsafe.AsPointer(ref this), ciidExclude, rgiidExclude, snbExclude, pstgDest);
     }
 
+    /// <include file='IStorage.xml' path='doc/member[@name="IStorage.MoveElementTo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT MoveElementTo([NativeTypeName("const OLECHAR *")] ushort* pwcsName, IStorage* pstgDest, [NativeTypeName("const OLECHAR *")] ushort* pwcsNewName, [NativeTypeName("DWORD")] uint grfFlags)
@@ -81,6 +91,7 @@ public unsafe partial struct IStorage : IStorage.Interface
         return ((delegate* unmanaged<IStorage*, ushort*, IStorage*, ushort*, uint, int>)(lpVtbl[8]))((IStorage*)Unsafe.AsPointer(ref this), pwcsName, pstgDest, pwcsNewName, grfFlags);
     }
 
+    /// <include file='IStorage.xml' path='doc/member[@name="IStorage.Commit"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT Commit([NativeTypeName("DWORD")] uint grfCommitFlags)
@@ -88,6 +99,7 @@ public unsafe partial struct IStorage : IStorage.Interface
         return ((delegate* unmanaged<IStorage*, uint, int>)(lpVtbl[9]))((IStorage*)Unsafe.AsPointer(ref this), grfCommitFlags);
     }
 
+    /// <include file='IStorage.xml' path='doc/member[@name="IStorage.Revert"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT Revert()
@@ -95,6 +107,7 @@ public unsafe partial struct IStorage : IStorage.Interface
         return ((delegate* unmanaged<IStorage*, int>)(lpVtbl[10]))((IStorage*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IStorage.xml' path='doc/member[@name="IStorage.EnumElements"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT EnumElements([NativeTypeName("DWORD")] uint reserved1, void* reserved2, [NativeTypeName("DWORD")] uint reserved3, IEnumSTATSTG** ppenum)
@@ -102,6 +115,7 @@ public unsafe partial struct IStorage : IStorage.Interface
         return ((delegate* unmanaged<IStorage*, uint, void*, uint, IEnumSTATSTG**, int>)(lpVtbl[11]))((IStorage*)Unsafe.AsPointer(ref this), reserved1, reserved2, reserved3, ppenum);
     }
 
+    /// <include file='IStorage.xml' path='doc/member[@name="IStorage.DestroyElement"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT DestroyElement([NativeTypeName("const OLECHAR *")] ushort* pwcsName)
@@ -109,6 +123,7 @@ public unsafe partial struct IStorage : IStorage.Interface
         return ((delegate* unmanaged<IStorage*, ushort*, int>)(lpVtbl[12]))((IStorage*)Unsafe.AsPointer(ref this), pwcsName);
     }
 
+    /// <include file='IStorage.xml' path='doc/member[@name="IStorage.RenameElement"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT RenameElement([NativeTypeName("const OLECHAR *")] ushort* pwcsOldName, [NativeTypeName("const OLECHAR *")] ushort* pwcsNewName)
@@ -116,6 +131,7 @@ public unsafe partial struct IStorage : IStorage.Interface
         return ((delegate* unmanaged<IStorage*, ushort*, ushort*, int>)(lpVtbl[13]))((IStorage*)Unsafe.AsPointer(ref this), pwcsOldName, pwcsNewName);
     }
 
+    /// <include file='IStorage.xml' path='doc/member[@name="IStorage.SetElementTimes"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT SetElementTimes([NativeTypeName("const OLECHAR *")] ushort* pwcsName, [NativeTypeName("const FILETIME *")] FILETIME* pctime, [NativeTypeName("const FILETIME *")] FILETIME* patime, [NativeTypeName("const FILETIME *")] FILETIME* pmtime)
@@ -123,6 +139,7 @@ public unsafe partial struct IStorage : IStorage.Interface
         return ((delegate* unmanaged<IStorage*, ushort*, FILETIME*, FILETIME*, FILETIME*, int>)(lpVtbl[14]))((IStorage*)Unsafe.AsPointer(ref this), pwcsName, pctime, patime, pmtime);
     }
 
+    /// <include file='IStorage.xml' path='doc/member[@name="IStorage.SetClass"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT SetClass([NativeTypeName("const IID &")] Guid* clsid)
@@ -130,6 +147,7 @@ public unsafe partial struct IStorage : IStorage.Interface
         return ((delegate* unmanaged<IStorage*, Guid*, int>)(lpVtbl[15]))((IStorage*)Unsafe.AsPointer(ref this), clsid);
     }
 
+    /// <include file='IStorage.xml' path='doc/member[@name="IStorage.SetStateBits"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT SetStateBits([NativeTypeName("DWORD")] uint grfStateBits, [NativeTypeName("DWORD")] uint grfMask)
@@ -137,6 +155,7 @@ public unsafe partial struct IStorage : IStorage.Interface
         return ((delegate* unmanaged<IStorage*, uint, uint, int>)(lpVtbl[16]))((IStorage*)Unsafe.AsPointer(ref this), grfStateBits, grfMask);
     }
 
+    /// <include file='IStorage.xml' path='doc/member[@name="IStorage.Stat"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT Stat(STATSTG* pstatstg, [NativeTypeName("DWORD")] uint grfStatFlag)

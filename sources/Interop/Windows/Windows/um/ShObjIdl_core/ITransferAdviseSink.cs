@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITransferAdviseSink.xml' path='doc/member[@name="ITransferAdviseSink"]/*' />
 [Guid("D594D0D8-8DA7-457B-B3B4-CE5DBAAC0B88")]
 [NativeTypeName("struct ITransferAdviseSink : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITransferAdviseSink : ITransferAdviseSink.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITransferAdviseSink : ITransferAdviseSink.Interface
         return ((delegate* unmanaged<ITransferAdviseSink*, Guid*, void**, int>)(lpVtbl[0]))((ITransferAdviseSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITransferAdviseSink : ITransferAdviseSink.Interface
         return ((delegate* unmanaged<ITransferAdviseSink*, uint>)(lpVtbl[1]))((ITransferAdviseSink*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITransferAdviseSink : ITransferAdviseSink.Interface
         return ((delegate* unmanaged<ITransferAdviseSink*, uint>)(lpVtbl[2]))((ITransferAdviseSink*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITransferAdviseSink.xml' path='doc/member[@name="ITransferAdviseSink.UpdateProgress"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT UpdateProgress([NativeTypeName("ULONGLONG")] ulong ullSizeCurrent, [NativeTypeName("ULONGLONG")] ulong ullSizeTotal, int nFilesCurrent, int nFilesTotal, int nFoldersCurrent, int nFoldersTotal)
@@ -46,6 +51,7 @@ public unsafe partial struct ITransferAdviseSink : ITransferAdviseSink.Interface
         return ((delegate* unmanaged<ITransferAdviseSink*, ulong, ulong, int, int, int, int, int>)(lpVtbl[3]))((ITransferAdviseSink*)Unsafe.AsPointer(ref this), ullSizeCurrent, ullSizeTotal, nFilesCurrent, nFilesTotal, nFoldersCurrent, nFoldersTotal);
     }
 
+    /// <include file='ITransferAdviseSink.xml' path='doc/member[@name="ITransferAdviseSink.UpdateTransferState"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT UpdateTransferState([NativeTypeName("TRANSFER_ADVISE_STATE")] uint ts)
@@ -53,6 +59,7 @@ public unsafe partial struct ITransferAdviseSink : ITransferAdviseSink.Interface
         return ((delegate* unmanaged<ITransferAdviseSink*, uint, int>)(lpVtbl[4]))((ITransferAdviseSink*)Unsafe.AsPointer(ref this), ts);
     }
 
+    /// <include file='ITransferAdviseSink.xml' path='doc/member[@name="ITransferAdviseSink.ConfirmOverwrite"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT ConfirmOverwrite(IShellItem* psiSource, IShellItem* psiDestParent, [NativeTypeName("LPCWSTR")] ushort* pszName)
@@ -60,6 +67,7 @@ public unsafe partial struct ITransferAdviseSink : ITransferAdviseSink.Interface
         return ((delegate* unmanaged<ITransferAdviseSink*, IShellItem*, IShellItem*, ushort*, int>)(lpVtbl[5]))((ITransferAdviseSink*)Unsafe.AsPointer(ref this), psiSource, psiDestParent, pszName);
     }
 
+    /// <include file='ITransferAdviseSink.xml' path='doc/member[@name="ITransferAdviseSink.ConfirmEncryptionLoss"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT ConfirmEncryptionLoss(IShellItem* psiSource)
@@ -67,6 +75,7 @@ public unsafe partial struct ITransferAdviseSink : ITransferAdviseSink.Interface
         return ((delegate* unmanaged<ITransferAdviseSink*, IShellItem*, int>)(lpVtbl[6]))((ITransferAdviseSink*)Unsafe.AsPointer(ref this), psiSource);
     }
 
+    /// <include file='ITransferAdviseSink.xml' path='doc/member[@name="ITransferAdviseSink.FileFailure"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT FileFailure(IShellItem* psi, [NativeTypeName("LPCWSTR")] ushort* pszItem, HRESULT hrError, [NativeTypeName("LPWSTR")] ushort* pszRename, [NativeTypeName("ULONG")] uint cchRename)
@@ -74,6 +83,7 @@ public unsafe partial struct ITransferAdviseSink : ITransferAdviseSink.Interface
         return ((delegate* unmanaged<ITransferAdviseSink*, IShellItem*, ushort*, HRESULT, ushort*, uint, int>)(lpVtbl[7]))((ITransferAdviseSink*)Unsafe.AsPointer(ref this), psi, pszItem, hrError, pszRename, cchRename);
     }
 
+    /// <include file='ITransferAdviseSink.xml' path='doc/member[@name="ITransferAdviseSink.SubStreamFailure"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT SubStreamFailure(IShellItem* psi, [NativeTypeName("LPCWSTR")] ushort* pszStreamName, HRESULT hrError)
@@ -81,6 +91,7 @@ public unsafe partial struct ITransferAdviseSink : ITransferAdviseSink.Interface
         return ((delegate* unmanaged<ITransferAdviseSink*, IShellItem*, ushort*, HRESULT, int>)(lpVtbl[8]))((ITransferAdviseSink*)Unsafe.AsPointer(ref this), psi, pszStreamName, hrError);
     }
 
+    /// <include file='ITransferAdviseSink.xml' path='doc/member[@name="ITransferAdviseSink.PropertyFailure"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT PropertyFailure(IShellItem* psi, [NativeTypeName("const PROPERTYKEY *")] PROPERTYKEY* pkey, HRESULT hrError)

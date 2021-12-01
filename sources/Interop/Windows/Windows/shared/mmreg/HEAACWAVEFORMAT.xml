@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="HEAACWAVEFORMAT">
+    <summary>
+      <para>Contains format data for an AAC or HE-AAC stream that includes AudioSpecificConfig() data.</para>
+    </summary>
+    <remarks>
+      <para>Use this structure to access the AudioSpecificConfig() data that follows an <see cref="HEAACWAVEINFO" /> structure. This data is present only when the <b>wStructType</b> member of the <b>HEAACWAVEFORMAT</b> structure is zero.</para>
+    </remarks>
+  </member>
+  <member name="HEAACWAVEFORMAT.wfInfo">
+    <summary>
+      <para>A <see cref="HEAACWAVEINFO" /> structure.</para>
+    </summary>
+  </member>
+  <member name="HEAACWAVEFORMAT.pbAudioSpecificConfig">
+    <summary>
+      <para>A byte array that contains the value of AudioSpecificConfig(), as defined by ISO/IEC 14496-3. The array might be larger than the size given in the structure declaration. Use the value of <b>wfInfo.wfx.cbSize</b>  to determine the size.</para>
+    </summary>
+  </member>
+</doc>

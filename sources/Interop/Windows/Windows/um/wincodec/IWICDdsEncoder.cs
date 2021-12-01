@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IWICDdsEncoder.xml' path='doc/member[@name="IWICDdsEncoder"]/*' />
 [Guid("5CACDB4C-407E-41B3-B936-D0F010CD6732")]
 [NativeTypeName("struct IWICDdsEncoder : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IWICDdsEncoder : IWICDdsEncoder.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IWICDdsEncoder : IWICDdsEncoder.Interface
         return ((delegate* unmanaged<IWICDdsEncoder*, Guid*, void**, int>)(lpVtbl[0]))((IWICDdsEncoder*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IWICDdsEncoder : IWICDdsEncoder.Interface
         return ((delegate* unmanaged<IWICDdsEncoder*, uint>)(lpVtbl[1]))((IWICDdsEncoder*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IWICDdsEncoder : IWICDdsEncoder.Interface
         return ((delegate* unmanaged<IWICDdsEncoder*, uint>)(lpVtbl[2]))((IWICDdsEncoder*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IWICDdsEncoder.xml' path='doc/member[@name="IWICDdsEncoder.SetParameters"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetParameters(WICDdsParameters* pParameters)
@@ -48,6 +53,7 @@ public unsafe partial struct IWICDdsEncoder : IWICDdsEncoder.Interface
         return ((delegate* unmanaged<IWICDdsEncoder*, WICDdsParameters*, int>)(lpVtbl[3]))((IWICDdsEncoder*)Unsafe.AsPointer(ref this), pParameters);
     }
 
+    /// <include file='IWICDdsEncoder.xml' path='doc/member[@name="IWICDdsEncoder.GetParameters"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetParameters(WICDdsParameters* pParameters)
@@ -55,6 +61,7 @@ public unsafe partial struct IWICDdsEncoder : IWICDdsEncoder.Interface
         return ((delegate* unmanaged<IWICDdsEncoder*, WICDdsParameters*, int>)(lpVtbl[4]))((IWICDdsEncoder*)Unsafe.AsPointer(ref this), pParameters);
     }
 
+    /// <include file='IWICDdsEncoder.xml' path='doc/member[@name="IWICDdsEncoder.CreateNewFrame"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT CreateNewFrame(IWICBitmapFrameEncode** ppIFrameEncode, uint* pArrayIndex, uint* pMipLevel, uint* pSliceIndex)

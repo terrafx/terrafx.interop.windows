@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_XML_NODE_TYPE">
+    <summary>
+      <para>The type of <see cref="WS_XML_NODE" /> structure.</para>
+    </summary>
+    <remarks>
+      <para>The BNF for node types within a document is:</para>
+      <code>
+Xml := StartInput Whitespace Element Whitespace EndInput
+Whitespace := (Text | Comment)* // Text is whitespace only
+Element := StartElement ElementContent EndElement
+ElementContent := (Element | Text | Comment | CData)*
+StartElement := WS_XML_NODE_TYPE_ELEMENT
+EndElement := WS_XML_NODE_TYPE_END_ELEMENT
+Text := WS_XML_NODE_TYPE_TEXT
+Comment := WS_XML_NODE_TYPE_COMMENT
+CData := WS_XML_NODE_TYPE_CDATA Text* WS_XML_NODE_TYPE_END_CDATA
+StartInput := WS_XML_NODE_TYPE_BOF
+EndInput := WS_XML_NODE_TYPE_EOF
+</code>
+    </remarks>
+  </member>
+  <member name="WS_XML_NODE_TYPE.WS_XML_NODE_TYPE_ELEMENT">
+    <summary>
+      <para>A start element. (e.g. &lt;a:purchaseOrder xmlns:a="http://tempuri.org" id="5"&gt;)</para>
+    </summary>
+  </member>
+  <member name="WS_XML_NODE_TYPE.WS_XML_NODE_TYPE_TEXT">
+    <summary>
+      <para>Element, attribute, or CDATA content.</para>
+    </summary>
+  </member>
+  <member name="WS_XML_NODE_TYPE.WS_XML_NODE_TYPE_END_ELEMENT">
+    <summary>
+      <para>An end element. (e.g. &lt;/purchaseOrder&gt;)</para>
+    </summary>
+  </member>
+  <member name="WS_XML_NODE_TYPE.WS_XML_NODE_TYPE_COMMENT">
+    <summary>
+      <para>A comment. (For example, &lt;!--The message follows--&gt;)</para>
+    </summary>
+  </member>
+  <member name="WS_XML_NODE_TYPE.WS_XML_NODE_TYPE_CDATA">
+    <summary>
+      <para>The start of a CDATA section (i.e. &lt;![CDATA[)</para>
+    </summary>
+  </member>
+  <member name="WS_XML_NODE_TYPE.WS_XML_NODE_TYPE_END_CDATA">
+    <summary>
+      <para>The end of a CDATA section (i.e. ]]&gt;)</para>
+    </summary>
+  </member>
+  <member name="WS_XML_NODE_TYPE.WS_XML_NODE_TYPE_EOF">
+    <summary>
+      <para>The final node of an xml stream.</para>
+    </summary>
+  </member>
+  <member name="WS_XML_NODE_TYPE.WS_XML_NODE_TYPE_BOF">
+    <summary>
+      <para>The first node of an xml stream.</para>
+    </summary>
+  </member>
+</doc>

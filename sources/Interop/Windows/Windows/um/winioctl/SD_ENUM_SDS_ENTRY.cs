@@ -5,20 +5,26 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SD_ENUM_SDS_ENTRY.xml' path='doc/member[@name="SD_ENUM_SDS_ENTRY"]/*' />
 public unsafe partial struct SD_ENUM_SDS_ENTRY
 {
+    /// <include file='SD_ENUM_SDS_ENTRY.xml' path='doc/member[@name="SD_ENUM_SDS_ENTRY.Hash"]/*' />
     [NativeTypeName("DWORD")]
     public uint Hash;
 
+    /// <include file='SD_ENUM_SDS_ENTRY.xml' path='doc/member[@name="SD_ENUM_SDS_ENTRY.SecurityId"]/*' />
     [NativeTypeName("DWORD")]
     public uint SecurityId;
 
+    /// <include file='SD_ENUM_SDS_ENTRY.xml' path='doc/member[@name="SD_ENUM_SDS_ENTRY.Offset"]/*' />
     [NativeTypeName("DWORDLONG")]
     public ulong Offset;
 
+    /// <include file='SD_ENUM_SDS_ENTRY.xml' path='doc/member[@name="SD_ENUM_SDS_ENTRY.Length"]/*' />
     [NativeTypeName("DWORD")]
     public uint Length;
 
+    /// <include file='SD_ENUM_SDS_ENTRY.xml' path='doc/member[@name="SD_ENUM_SDS_ENTRY.Descriptor"]/*' />
     [NativeTypeName("BYTE [1]")]
     public fixed byte Descriptor[1];
 }

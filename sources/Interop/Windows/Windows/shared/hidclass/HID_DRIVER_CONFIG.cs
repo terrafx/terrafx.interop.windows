@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HID_DRIVER_CONFIG.xml' path='doc/member[@name="HID_DRIVER_CONFIG"]/*' />
 public partial struct HID_DRIVER_CONFIG
 {
+    /// <include file='HID_DRIVER_CONFIG.xml' path='doc/member[@name="HID_DRIVER_CONFIG.Size"]/*' />
     [NativeTypeName("ULONG")]
     public uint Size;
 
+    /// <include file='HID_DRIVER_CONFIG.xml' path='doc/member[@name="HID_DRIVER_CONFIG.RingBufferSize"]/*' />
     [NativeTypeName("ULONG")]
     public uint RingBufferSize;
 }

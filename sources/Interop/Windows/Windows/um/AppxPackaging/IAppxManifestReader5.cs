@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAppxManifestReader5.xml' path='doc/member[@name="IAppxManifestReader5"]/*' />
 [Guid("8D7AE132-A690-4C00-B75A-6AAE1FEAAC80")]
 [NativeTypeName("struct IAppxManifestReader5 : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IAppxManifestReader5 : IAppxManifestReader5.Interfa
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IAppxManifestReader5 : IAppxManifestReader5.Interfa
         return ((delegate* unmanaged<IAppxManifestReader5*, Guid*, void**, int>)(lpVtbl[0]))((IAppxManifestReader5*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IAppxManifestReader5 : IAppxManifestReader5.Interfa
         return ((delegate* unmanaged<IAppxManifestReader5*, uint>)(lpVtbl[1]))((IAppxManifestReader5*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IAppxManifestReader5 : IAppxManifestReader5.Interfa
         return ((delegate* unmanaged<IAppxManifestReader5*, uint>)(lpVtbl[2]))((IAppxManifestReader5*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAppxManifestReader5.xml' path='doc/member[@name="IAppxManifestReader5.GetMainPackageDependencies"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetMainPackageDependencies(IAppxManifestMainPackageDependenciesEnumerator** mainPackageDependencies)

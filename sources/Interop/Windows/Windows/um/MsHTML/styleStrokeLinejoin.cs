@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='styleStrokeLinejoin.xml' path='doc/member[@name="styleStrokeLinejoin"]/*' />
 public enum styleStrokeLinejoin
 {
+    /// <include file='styleStrokeLinejoin.xml' path='doc/member[@name="styleStrokeLinejoin.styleStrokeLinejoinNotSet"]/*' />
     styleStrokeLinejoinNotSet = 0,
+
+    /// <include file='styleStrokeLinejoin.xml' path='doc/member[@name="styleStrokeLinejoin.styleStrokeLinejoinMiter"]/*' />
     styleStrokeLinejoinMiter = 1,
+
+    /// <include file='styleStrokeLinejoin.xml' path='doc/member[@name="styleStrokeLinejoin.styleStrokeLinejoinRound"]/*' />
     styleStrokeLinejoinRound = 2,
+
+    /// <include file='styleStrokeLinejoin.xml' path='doc/member[@name="styleStrokeLinejoin.styleStrokeLinejoinBevel"]/*' />
     styleStrokeLinejoinBevel = 3,
+
+    /// <include file='styleStrokeLinejoin.xml' path='doc/member[@name="styleStrokeLinejoin.styleStrokeLinejoin_Max"]/*' />
     styleStrokeLinejoin_Max = 2147483647,
 }

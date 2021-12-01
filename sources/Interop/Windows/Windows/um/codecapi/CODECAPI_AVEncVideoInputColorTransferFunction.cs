@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVEncVideoInputColorTransferFunction.xml' path='doc/member[@name="CODECAPI_AVEncVideoInputColorTransferFunction"]/*' />
 [Guid("8C056111-A9C3-4B08-A0A0-CE13F8A27C75")]
 public partial struct CODECAPI_AVEncVideoInputColorTransferFunction
 {

@@ -7,10 +7,13 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TRANSACTION_NOTIFICATION_MARSHAL_ARGUMENT.xml' path='doc/member[@name="TRANSACTION_NOTIFICATION_MARSHAL_ARGUMENT"]/*' />
 public partial struct TRANSACTION_NOTIFICATION_MARSHAL_ARGUMENT
 {
+    /// <include file='TRANSACTION_NOTIFICATION_MARSHAL_ARGUMENT.xml' path='doc/member[@name="TRANSACTION_NOTIFICATION_MARSHAL_ARGUMENT.MarshalCookie"]/*' />
     [NativeTypeName("ULONG")]
     public uint MarshalCookie;
 
+    /// <include file='TRANSACTION_NOTIFICATION_MARSHAL_ARGUMENT.xml' path='doc/member[@name="TRANSACTION_NOTIFICATION_MARSHAL_ARGUMENT.UOW"]/*' />
     public Guid UOW;
 }

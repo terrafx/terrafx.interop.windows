@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='OLECMDEXECOPT.xml' path='doc/member[@name="OLECMDEXECOPT"]/*' />
 public enum OLECMDEXECOPT
 {
+    /// <include file='OLECMDEXECOPT.xml' path='doc/member[@name="OLECMDEXECOPT.OLECMDEXECOPT_DODEFAULT"]/*' />
     OLECMDEXECOPT_DODEFAULT = 0,
+
+    /// <include file='OLECMDEXECOPT.xml' path='doc/member[@name="OLECMDEXECOPT.OLECMDEXECOPT_PROMPTUSER"]/*' />
     OLECMDEXECOPT_PROMPTUSER = 1,
+
+    /// <include file='OLECMDEXECOPT.xml' path='doc/member[@name="OLECMDEXECOPT.OLECMDEXECOPT_DONTPROMPTUSER"]/*' />
     OLECMDEXECOPT_DONTPROMPTUSER = 2,
+
+    /// <include file='OLECMDEXECOPT.xml' path='doc/member[@name="OLECMDEXECOPT.OLECMDEXECOPT_SHOWHELP"]/*' />
     OLECMDEXECOPT_SHOWHELP = 3,
 }

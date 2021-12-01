@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IAudioCaptureClient.GetNextPacketSize">
+    <summary>
+      <para>The <b>GetNextPacketSize</b> method retrieves the number of frames in the next data packet in the capture endpoint buffer.</para>
+    </summary>
+    <param name="pNumFramesInNextPacket">
+      <para>Pointer to a <b>UINT32</b> variable into which the method writes the frame count (the number of audio frames in the next capture packet).</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>AUDCLNT_E_DEVICE_INVALIDATED</b>
+            </para>
+          </description>
+          <description>
+            <para>The audio endpoint device has been unplugged, or the audio hardware or associated hardware resources have been reconfigured, disabled, removed, or otherwise made unavailable for use.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>AUDCLNT_E_SERVICE_NOT_RUNNING</b>
+            </para>
+          </description>
+          <description>
+            <para>The Windows audio service is not running.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>Parameter <i>pNumFramesInNextPacket</i> is <b>NULL</b>.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Use this method only with shared-mode streams. It does not work with exclusive-mode streams.</para>
+      <para>Before calling the <see cref="IAudioCaptureClient.GetBuffer" /> method to retrieve the next data packet, the client can call <b>GetNextPacketSize</b> to retrieve the number of audio frames in the next packet. The count reported by <b>GetNextPacketSize</b> matches the count retrieved in the <b>GetBuffer</b> call (through the <i>pNumFramesToRead</i> output parameter) that follows the <b>GetNextPacketSize</b> call.</para>
+      <para>A packet always consists of an integral number of audio frames.</para>
+      <para>
+        <b>GetNextPacketSize</b> must be called in the same thread as the <see cref="GetBuffer" /> and <see cref="IAudioCaptureClient.ReleaseBuffer" /> method calls that get and release the packets in the capture endpoint buffer.</para>
+      <para>For a code example that uses the <b>GetNextPacketSize</b> method, see <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/capturing-a-stream">Capturing a Stream</a>.</para>
+    </remarks>
+    <seealso cref="IAudioCaptureClient Interface" />
+    <seealso cref="IAudioCaptureClient.GetBuffer" />
+    <seealso cref="IAudioCaptureClient.ReleaseBuffer" />
+    <seealso cref="IAudioClient.GetCurrentPadding" />
+  </member>
+  <member name="IAudioCaptureClient.ReleaseBuffer">
+    <summary>
+      <para>The <b>ReleaseBuffer</b> method releases the buffer.</para>
+    </summary>
+    <param name="NumFramesRead">
+      <para>The number of audio frames that the client read from the capture buffer. This parameter must be either equal to the number of frames in the previously acquired data packet or 0.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>AUDCLNT_E_INVALID_SIZE</b>
+            </para>
+          </description>
+          <description>
+            <para>The <i>NumFramesRead</i> parameter is set to a value other than the data packet size or 0.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>AUDCLNT_E_OUT_OF_ORDER</b>
+            </para>
+          </description>
+          <description>
+            <para>This call was not preceded by a corresponding <see cref="IAudioCaptureClient.GetBuffer" /> call.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>AUDCLNT_E_DEVICE_INVALIDATED</b>
+            </para>
+          </description>
+          <description>
+            <para>The audio endpoint device has been unplugged, or the audio hardware or associated hardware resources have been reconfigured, disabled, removed, or otherwise made unavailable for use.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>AUDCLNT_E_SERVICE_NOT_RUNNING</b>
+            </para>
+          </description>
+          <description>
+            <para>The Windows audio service is not running.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The client should call this method when it finishes reading a data packet that it obtained previously by calling the <see cref="IAudioCaptureClient.GetBuffer" /> method.</para>
+      <para>The data in the packet that the client obtained from a <see cref="GetBuffer" /> call is guaranteed to remain valid until the client calls <b>ReleaseBuffer</b> to release the packet.</para>
+      <para>Between each <see cref="GetBuffer" /> call and its corresponding <b>ReleaseBuffer</b> call, the client must either read the entire data packet or none of it. If the client reads the entire packet following the <b>GetBuffer</b> call, then it should call <b>ReleaseBuffer</b> with <i>NumFramesRead</i> set to the total number of frames in the data packet. In this case, the next call to <b>GetBuffer</b> will produce a new data packet. If the client reads none of the data from the packet following the call to <b>GetBuffer</b>, then it should call <b>ReleaseBuffer</b> with <i>NumFramesRead</i> set to 0. In this case, the next <b>GetBuffer</b> call will produce the same data packet as in the previous <b>GetBuffer</b> call.</para>
+      <para>If the client calls <b>ReleaseBuffer</b> with <i>NumFramesRead</i> set to any value other than the packet size or 0, then the call fails and returns error code AUDCLNT_E_INVALID_SIZE.</para>
+      <para>Clients should avoid excessive delays between the <see cref="GetBuffer" /> call that acquires a buffer and the <b>ReleaseBuffer</b> call that releases the buffer. The implementation of the audio engine assumes that the <b>GetBuffer</b> call and the corresponding <b>ReleaseBuffer</b> call occur within the same buffer-processing period. Clients that delay releasing a buffer for more than one period risk losing sample data.</para>
+      <para>For a code example that calls the <b>ReleaseBuffer</b> method, see <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/capturing-a-stream">Capturing a Stream</a>.</para>
+    </remarks>
+    <seealso cref="IAudioCaptureClient Interface" />
+    <seealso cref="IAudioCaptureClient.GetBuffer" />
+  </member>
+  <member name="IAudioCaptureClient">
+    <summary>
+      <para>The <b>IAudioCaptureClient</b> interface enables a client to read input data from a capture endpoint buffer. The client obtains a reference to the <b>IAudioCaptureClient</b> interface on a stream object by calling the <see cref="IAudioClient.GetService" /> method with parameter <i>riid</i> set to REFIID IID_IAudioCaptureClient.</para>
+      <para>The methods in this interface manage the movement of data packets that contain capture data. The length of a data packet is expressed as the number of audio frames in the packet. The size of an audio frame is specified by the <b>nBlockAlign</b> member of the <b>WAVEFORMATEX (or WAVEFORMATEXTENSIBLE)</b> structure that the client obtains by calling the <see cref="IAudioClient.GetMixFormat" /> method. The size in bytes of an audio frame equals the number of channels in the stream multiplied by the sample size per channel. For example, the frame size is four bytes for a stereo (2-channel) stream with 16-bit samples. A packet always contains an integral number of audio frames.</para>
+      <para>When releasing an <b>IAudioCaptureClient</b> interface instance, the client must call the <b>Release</b> method of the instance from the same thread as the call to <b>IAudioClient.GetService</b> that created the object.</para>
+      <para>For a code example that uses the <b>IAudioCaptureClient</b> interface, see <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/capturing-a-stream">Capturing a Stream</a>.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/CoreAudio/core-audio-interfaces">Core Audio Interfaces</seealso>
+    <seealso cref="IAudioClient.GetMixFormat" />
+    <seealso cref="IAudioClient.GetService" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/CoreAudio/wasapi">WASAPI</seealso>
+  </member>
+</doc>

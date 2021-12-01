@@ -5,12 +5,16 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STORAGE_PROPERTY_SET.xml' path='doc/member[@name="STORAGE_PROPERTY_SET"]/*' />
 public unsafe partial struct STORAGE_PROPERTY_SET
 {
+    /// <include file='STORAGE_PROPERTY_SET.xml' path='doc/member[@name="STORAGE_PROPERTY_SET.PropertyId"]/*' />
     public STORAGE_PROPERTY_ID PropertyId;
 
+    /// <include file='STORAGE_PROPERTY_SET.xml' path='doc/member[@name="STORAGE_PROPERTY_SET.SetType"]/*' />
     public STORAGE_SET_TYPE SetType;
 
+    /// <include file='STORAGE_PROPERTY_SET.xml' path='doc/member[@name="STORAGE_PROPERTY_SET.AdditionalParameters"]/*' />
     [NativeTypeName("BYTE [1]")]
     public fixed byte AdditionalParameters[1];
 }

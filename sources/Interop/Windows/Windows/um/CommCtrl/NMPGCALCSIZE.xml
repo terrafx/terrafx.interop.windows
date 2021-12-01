@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="NMPGCALCSIZE">
+    <summary>
+      <para>Contains and receives information that the pager control uses to calculate the scrollable area of the contained window. It is used with the <a href="https://docs.microsoft.com//windows/desktop/Controls/pgn-calcsize">PGN_CALCSIZE</a> notification.</para>
+    </summary>
+  </member>
+  <member name="NMPGCALCSIZE.hdr">
+    <summary>
+      <para>Type: <b><see cref="NMHDR" /></b></para>
+      <para>
+        <see cref="NMHDR" /> structure that contains information about the notification.</para>
+    </summary>
+  </member>
+  <member name="NMPGCALCSIZE.dwFlag">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">DWORD</a></b></para>
+      <para>Value that indicates which dimension is being requested. This will be one of the following values:</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>PGF_CALCHEIGHT</b>
+          </description>
+          <description>
+            <para>The height of the scrollable area is being requested. The height must be placed in the
+<b>iHeight</b> member before returning from the notification.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>PGF_CALCWIDTH</b>
+          </description>
+          <description>
+            <para>The width of the scrollable area is being requested. The width must be placed in the
+<b>iWidth</b> member before returning from the notification.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="NMPGCALCSIZE.iWidth">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>Receives the desired width of the scrollable area, in pixels.</para>
+    </summary>
+  </member>
+  <member name="NMPGCALCSIZE.iHeight">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>Receives the desired height of the scrollable area, in pixels.</para>
+    </summary>
+  </member>
+</doc>

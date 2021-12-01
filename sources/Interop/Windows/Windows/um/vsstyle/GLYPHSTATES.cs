@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='GLYPHSTATES.xml' path='doc/member[@name="GLYPHSTATES"]/*' />
 public enum GLYPHSTATES
 {
+    /// <include file='GLYPHSTATES.xml' path='doc/member[@name="GLYPHSTATES.GLPS_CLOSED"]/*' />
     GLPS_CLOSED = 1,
+
+    /// <include file='GLYPHSTATES.xml' path='doc/member[@name="GLYPHSTATES.GLPS_OPENED"]/*' />
     GLPS_OPENED = 2,
 }

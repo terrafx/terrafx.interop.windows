@@ -5,13 +5,17 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TTPOLYGONHEADER.xml' path='doc/member[@name="TTPOLYGONHEADER"]/*' />
 public partial struct TTPOLYGONHEADER
 {
+    /// <include file='TTPOLYGONHEADER.xml' path='doc/member[@name="TTPOLYGONHEADER.cb"]/*' />
     [NativeTypeName("DWORD")]
     public uint cb;
 
+    /// <include file='TTPOLYGONHEADER.xml' path='doc/member[@name="TTPOLYGONHEADER.dwType"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwType;
 
+    /// <include file='TTPOLYGONHEADER.xml' path='doc/member[@name="TTPOLYGONHEADER.pfxStart"]/*' />
     public POINTFX pfxStart;
 }

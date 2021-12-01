@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_FAULT_REASON.xml' path='doc/member[@name="WS_FAULT_REASON"]/*' />
 public partial struct WS_FAULT_REASON
 {
+    /// <include file='WS_FAULT_REASON.xml' path='doc/member[@name="WS_FAULT_REASON.text"]/*' />
     public WS_STRING text;
 
+    /// <include file='WS_FAULT_REASON.xml' path='doc/member[@name="WS_FAULT_REASON.lang"]/*' />
     public WS_STRING lang;
 }

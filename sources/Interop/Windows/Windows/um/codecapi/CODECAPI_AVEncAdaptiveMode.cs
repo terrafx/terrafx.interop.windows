@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVEncAdaptiveMode.xml' path='doc/member[@name="CODECAPI_AVEncAdaptiveMode"]/*' />
 [Guid("4419B185-DA1F-4F53-BC76-097D0C1EFB1E")]
 public partial struct CODECAPI_AVEncAdaptiveMode
 {

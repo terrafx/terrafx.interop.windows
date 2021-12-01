@@ -5,8 +5,10 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='FILE_SET_SPARSE_BUFFER.xml' path='doc/member[@name="FILE_SET_SPARSE_BUFFER"]/*' />
 public partial struct FILE_SET_SPARSE_BUFFER
 {
+    /// <include file='FILE_SET_SPARSE_BUFFER.xml' path='doc/member[@name="FILE_SET_SPARSE_BUFFER.SetSparse"]/*' />
     [NativeTypeName("BOOLEAN")]
     public byte SetSparse;
 }

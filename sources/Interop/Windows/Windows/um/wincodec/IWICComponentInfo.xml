@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IWICComponentInfo.GetAuthor">
+    <summary>
+      <para>Retrieves the name of component's author.</para>
+    </summary>
+    <param name="cchAuthor">
+      <para>Type: <b>UINT</b></para>
+      <para>The size of the <i>wzAuthor</i> buffer.</para>
+    </param>
+    <param name="wzAuthor">
+      <para>Type: <b>WCHAR*</b></para>
+      <para>A pointer that receives the name of the component's author.
+The locale of the string depends on the value that the codec wrote to the registry at install time. For built-in components, these strings are always in English.</para>
+    </param>
+    <param name="pcchActual">
+      <para>Type: <b>UINT*</b></para>
+      <para>A pointer that receives the actual length of the component's authors name. The author name is optional; if an author name is not specified by the component, the length returned is 0.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>If <i>cchAuthor</i> is 0 and <i>wzAuthor</i> is <b>NULL</b>, the required buffer size is returned in <i>pccchActual</i>.</para>
+    </remarks>
+  </member>
+  <member name="IWICComponentInfo.GetCLSID">
+    <summary>
+      <para>Retrieves the component's class identifier (CLSID)</para>
+    </summary>
+    <param name="pclsid">
+      <para>Type: <b>CLSID*</b></para>
+      <para>A pointer that receives the component's CLSID.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IWICComponentInfo.GetComponentType">
+    <summary>
+      <para>Retrieves the component's <see cref="WICComponentType" />.</para>
+    </summary>
+    <param name="pType">
+      <para>Type: <b><see cref="WICComponentType" />*</b></para>
+      <para>A pointer that receives the <see cref="WICComponentType" />.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IWICComponentInfo.GetFriendlyName">
+    <summary>
+      <para>Retrieves the component's friendly name, which is a human-readable display name for the component.</para>
+    </summary>
+    <param name="cchFriendlyName">
+      <para>Type: <b>UINT</b></para>
+      <para>The size of the <i>wzFriendlyName</i> buffer.</para>
+    </param>
+    <param name="wzFriendlyName">
+      <para>Type: <b>WCHAR*</b></para>
+      <para>A pointer that receives the friendly name of the component.
+The locale of the string depends on the value that the codec wrote to the registry at install time. For built-in components, these strings are always in English.</para>
+    </param>
+    <param name="pcchActual">
+      <para>Type: <b>UINT*</b></para>
+      <para>A pointer that receives the actual length of the component's friendly name.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>If <i>cchFriendlyName</i> is 0 and <i>wzFriendlyName</i> is <b>NULL</b>, the required buffer size is returned in <i>pccchActual</i>.</para>
+    </remarks>
+  </member>
+  <member name="IWICComponentInfo.GetSigningStatus">
+    <summary>
+      <para>Retrieves the signing status of the component.</para>
+    </summary>
+    <param name="pStatus">
+      <para>Type: <b>DWORD*</b></para>
+      <para>A pointer that receives the <see cref="WICComponentSigning" /> status of the component.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Signing is unused by WIC. Therefore, all components WICComponentSigned.</para>
+      <para>This function can be used to determine whether a component has no binary component or has been added to the disabled components list in the registry.</para>
+    </remarks>
+  </member>
+  <member name="IWICComponentInfo.GetSpecVersion">
+    <summary>
+      <para>Retrieves the component's specification version.</para>
+    </summary>
+    <param name="cchSpecVersion">
+      <para>Type: <b>UINT</b></para>
+      <para>The size of the <i>wzSpecVersion</i> buffer.</para>
+    </param>
+    <param name="wzSpecVersion">
+      <para>Type: <b>WCHAR*</b></para>
+      <para>When this method returns, contain a culture invariant string of the component's specification version. The version form is NN.NN.NN.NN.</para>
+    </param>
+    <param name="pcchActual">
+      <para>Type: <b>UINT*</b></para>
+      <para>A pointer that receives the actual length of the component's specification version. The specification version is optional; if a value is not specified by the component, the length returned is 0.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>All built-in components return "1.0.0.0", except for pixel formats, which do not have a spec version.</para>
+      <para>If <i>cchAuthor</i> is 0 and <i>wzAuthor</i> is <b>NULL</b>, the required buffer size is returned in <i>pccchActual</i>.</para>
+    </remarks>
+  </member>
+  <member name="IWICComponentInfo.GetVendorGUID">
+    <summary>
+      <para>Retrieves the vendor GUID.</para>
+    </summary>
+    <param name="pguidVendor">
+      <para>Type: <b>GUID*</b></para>
+      <para>A pointer that receives the component's vendor GUID.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IWICComponentInfo.GetVersion">
+    <summary>
+      <para>Retrieves the component's version.</para>
+    </summary>
+    <param name="cchVersion">
+      <para>Type: <b>UINT</b></para>
+      <para>The size of the <i>wzVersion</i> buffer.</para>
+    </param>
+    <param name="wzVersion">
+      <para>Type: <b>WCHAR*</b></para>
+      <para>A pointer that receives a culture invariant string of the component's version.</para>
+    </param>
+    <param name="pcchActual">
+      <para>Type: <b>UINT*</b></para>
+      <para>A pointer that receives the actual length of the component's version. The version is optional; if a value is not specified by the component, the length returned is 0.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>All built-in components return "1.0.0.0", except for pixel formats, which do not have a version.</para>
+      <para>If <i>cchAuthor</i> is 0 and <i>wzAuthor</i> is <b>NULL</b>, the required buffer size is returned in <i>pccchActual</i>.</para>
+    </remarks>
+  </member>
+  <member name="IWICComponentInfo">
+    <summary>
+      <para>Exposes methods that provide component information.</para>
+    </summary>
+  </member>
+</doc>

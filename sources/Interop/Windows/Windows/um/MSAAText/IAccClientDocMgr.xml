@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IAccClientDocMgr.GetDocuments">
+    <summary>
+      <para>Clients call <b>IAccClientDocMgr.GetDocuments</b> to get a list of all documents that have been registered with the Microsoft Active Accessibility run time.
+<b>Note</b>  Active Accessibility Text Services is deprecated. Please see
+<a href="https://docs.microsoft.com//windows/win32/tsf/text-services-framework">Microsoft Windows Text Services Framework</a> for more information on advanced text input and natural language technologies.</para>
+    </summary>
+    <param name="enumUnknown">
+      <para>Type: <b>IEnumUnknown*</b></para>
+      <para>A list of document interface pointers.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
+      <para>If successful, returns S_OK.</para>
+    </returns>
+    <remarks>
+      <para>Servers might need to poll this method more than once before they receive a document. There can be a limited time lapse (approximately second) between when a document appears in the system and when it is registered with document services.</para>
+    </remarks>
+  </member>
+  <member name="IAccClientDocMgr.GetFocused">
+    <summary>
+      <para>Clients call the <b>IAccClientDocMgr.GetFocused</b> method to access a pointer for the document that has focus.
+<b>Note</b>  Active Accessibility Text Services is deprecated. Please see
+<a href="https://docs.microsoft.com//windows/win32/tsf/text-services-framework">Microsoft Windows Text Services Framework</a> for more information on advanced text input and natural language technologies.</para>
+    </summary>
+    <param name="riid">
+      <para>Type: <b>REFIID</b></para>
+      <para>IID of the document being requested. This is usually IID_ITextStoreAnchor.</para>
+    </param>
+    <param name="ppunk">
+      <para>Type: <b>IUnknown*</b></para>
+      <para>Interface pointer to the document being requested.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
+      <para>If successful, returns S_OK.</para>
+    </returns>
+    <remarks>
+      <para>If the window that has focus is not a document that implements the <see cref="ITextStoreACP" /> interface, <i>ppunk</i> will be <b>NULL</b>.</para>
+      <para>Servers might need to poll this method more than once before they receive a document. There can be a limited time lapse (approximately second) between when a document appears in the system and when it is registered with document services.</para>
+    </remarks>
+  </member>
+  <member name="IAccClientDocMgr.LookupByHWND">
+    <summary>
+      <para>Clients call <b>IAccClientDocMgr.LookupByHWND</b> to get a document by providing the <b>HWND</b> for the document.
+<b>Note</b>  Active Accessibility Text Services is deprecated. Please see
+<a href="https://docs.microsoft.com//windows/win32/tsf/text-services-framework">Microsoft Windows Text Services Framework</a> for more information on advanced text input and natural language technologies.</para>
+    </summary>
+    <param name="hWnd">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>The <b>HWND</b> of the document to be returned.</para>
+    </param>
+    <param name="riid">
+      <para>Type: <b>REFIID</b></para>
+      <para>IID of the document being requested. This is usually IID_ITextStoreAnchor.</para>
+    </param>
+    <param name="ppunk">
+      <para>Type: <b>IUnknown*</b></para>
+      <para>Interface pointer to the document being requested.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
+      <para>If successful, returns S_OK.</para>
+      <para>If not successful, returns the following value or another standard COM error code.</para>
+      <list type="table">
+        <listheader>
+          <description>Error</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>If the <b>HWND</b> does not correspond to an active document, then <i>ppunk</i> will be <b>NULL</b>.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Servers might need to poll this method more than once before they receive a document. There can be a limited time lapse (approximately second) between when a document appears in the system and when it is registered with document services.</para>
+    </remarks>
+  </member>
+  <member name="IAccClientDocMgr.LookupByPoint">
+    <summary>
+      <para>Clients call <b>IAccClientDocMgr.LookupByPoint</b> to get a document object from a point within the document.
+<b>Note</b>  Active Accessibility Text Services is deprecated. Please see
+<a href="https://docs.microsoft.com//windows/win32/tsf/text-services-framework">Microsoft Windows Text Services Framework</a> for more information on advanced text input and natural language technologies.</para>
+    </summary>
+    <param name="pt">
+      <para>Type: <b>POINT</b></para>
+      <para>A point inside the bounding rectangle of the document to be returned.</para>
+    </param>
+    <param name="riid">
+      <para>Type: <b>REFIID</b></para>
+      <para>IID of the document being requested. This is usually IID_ITextStoreAnchor.</para>
+    </param>
+    <param name="ppunk">
+      <para>Type: <b>IUnknown*</b></para>
+      <para>Interface pointer to the document being requested.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
+      <para>If successful, returns S_OK.</para>
+      <para>If not successful, returns the following value or another standard COM error code.</para>
+      <list type="table">
+        <listheader>
+          <description>Error</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>If the value in <i>pt</i> does not fall within the bounding rectangle of an active document, then <i>ppunk</i> will be <b>NULL</b>.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Servers might need to poll this method more than once before they receive a document. There can be a limited time lapse (approximately second) between when a document appears in the system and when it is registered with document services.</para>
+    </remarks>
+  </member>
+</doc>

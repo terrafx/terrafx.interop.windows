@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SVGMetadataElement.xml' path='doc/member[@name="SVGMetadataElement"]/*' />
 [Guid("305105D7-98B5-11CF-BB82-00AA00BDCE0B")]
 public partial struct SVGMetadataElement
 {

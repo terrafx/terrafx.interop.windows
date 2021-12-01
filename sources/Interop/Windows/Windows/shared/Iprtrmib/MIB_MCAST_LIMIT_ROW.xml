@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MIB_MCAST_LIMIT_ROW">
+    <summary>
+      <para>The <b>MIB_MCAST_LIMIT_ROW</b> structure contains the configurable limit information from a corresponding <see cref="MIB_IPMCAST_IF_ENTRY" /> structure.</para>
+    </summary>
+    <seealso cref="MIB_IPMCAST_IF_ENTRY" />
+  </member>
+  <member name="MIB_MCAST_LIMIT_ROW.dwTtl">
+    <summary>
+      <para>The time-to-live value for a multicast interface.</para>
+    </summary>
+  </member>
+  <member name="MIB_MCAST_LIMIT_ROW.dwRateLimit">
+    <summary>
+      <para>The rate limit for a multicast interface.</para>
+    </summary>
+  </member>
+</doc>

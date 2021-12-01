@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMAGEHLP_SYMBOLW64_PACKAGE.xml' path='doc/member[@name="IMAGEHLP_SYMBOLW64_PACKAGE"]/*' />
 public unsafe partial struct IMAGEHLP_SYMBOLW64_PACKAGE
 {
+    /// <include file='IMAGEHLP_SYMBOLW64_PACKAGE.xml' path='doc/member[@name="IMAGEHLP_SYMBOLW64_PACKAGE.sym"]/*' />
     public IMAGEHLP_SYMBOLW64 sym;
 
+    /// <include file='IMAGEHLP_SYMBOLW64_PACKAGE.xml' path='doc/member[@name="IMAGEHLP_SYMBOLW64_PACKAGE.name"]/*' />
     [NativeTypeName("WCHAR [2001]")]
     public fixed ushort name[2001];
 }

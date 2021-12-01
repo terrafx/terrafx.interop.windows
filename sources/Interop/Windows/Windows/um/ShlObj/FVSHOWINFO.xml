@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="FVSHOWINFO">
+    <summary>
+      <para>Contains information that the file viewer uses to display a file.</para>
+    </summary>
+  </member>
+  <member name="FVSHOWINFO.cbSize">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The size of the structure, in bytes.</para>
+    </summary>
+  </member>
+  <member name="FVSHOWINFO.hwndOwner">
+    <summary>
+      <para>Type: <b>HWND</b></para>
+      <para>A window handle to the owner of the window where the file will be displayed.</para>
+    </summary>
+  </member>
+  <member name="FVSHOWINFO.iShow">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>The show command for the window. This parameter is one of the <b>SW_</b> values detailed in <see cref="ShowWindow" />.</para>
+    </summary>
+  </member>
+  <member name="FVSHOWINFO.dwFlags">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>Flags that determine what the file viewer displays. This member can be one or more of the following values.</para>
+      <h4>FVSIF_CANVIEWIT</h4>
+      <para>The file viewer can display the file.</para>
+      <h4>FVSIF_NEWFAILED</h4>
+      <para>The file viewer specified a new file to display, but no viewer could display the file. The file viewer should either continue to display the previous file or terminate.</para>
+      <h4>FVSIF_NEWFILE</h4>
+      <para>A drag-and-drop operation has dropped a file on the file viewer window. The file viewer passes the name of the file to the Shell by copying the name to the <b>strNewFile</b> member. The Shell attempts to load a file viewer that can display the new file.</para>
+      <h4>FVSIF_PINNED</h4>
+      <para>A pinned window exists. A file viewer should either use the pinned window to display the file or set a new pinned window and display the file in it.</para>
+      <h4>FVSIF_RECT</h4>
+      <para>The <b>rect</b> member contains valid data.</para>
+    </summary>
+  </member>
+  <member name="FVSHOWINFO.rect">
+    <summary>
+      <para>Type: <b><see cref="RECT" /></b></para>
+      <para>The <see cref="RECT" /> structure that specifies the size and position of the file viewer's window. This member is valid only if the <b>dwFlags</b> member includes the <b>FVSIF_RECT</b> value.</para>
+    </summary>
+  </member>
+  <member name="FVSHOWINFO.punkRel">
+    <summary>
+      <para>Type: <b><see cref="IUnknown" />*</b></para>
+      <para>The address of an interface that has its <see cref="Release" /> method called by a new file viewer to release the previous file viewer. This member is used when a drag-and-drop operation drops a file on the file viewer's window.</para>
+    </summary>
+  </member>
+  <member name="FVSHOWINFO.strNewFile">
+    <summary>
+      <para>Type: <b>OLECHAR[MAX_PATH]</b></para>
+      <para>The address of a string that specifies the name of a new file to display. A file viewer sets this member when a drag-and-drop operation drops a file on the file viewer's window.</para>
+    </summary>
+  </member>
+</doc>

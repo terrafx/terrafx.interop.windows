@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DELETE_USN_JOURNAL_DATA.xml' path='doc/member[@name="DELETE_USN_JOURNAL_DATA"]/*' />
 public partial struct DELETE_USN_JOURNAL_DATA
 {
+    /// <include file='DELETE_USN_JOURNAL_DATA.xml' path='doc/member[@name="DELETE_USN_JOURNAL_DATA.UsnJournalID"]/*' />
     [NativeTypeName("DWORDLONG")]
     public ulong UsnJournalID;
 
+    /// <include file='DELETE_USN_JOURNAL_DATA.xml' path='doc/member[@name="DELETE_USN_JOURNAL_DATA.DeleteFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint DeleteFlags;
 }

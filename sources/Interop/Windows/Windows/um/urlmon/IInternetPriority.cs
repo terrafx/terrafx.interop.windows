@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IInternetPriority.xml' path='doc/member[@name="IInternetPriority"]/*' />
 [Guid("79EAC9EB-BAF9-11CE-8C82-00AA004BA90B")]
 [NativeTypeName("struct IInternetPriority : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IInternetPriority : IInternetPriority.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IInternetPriority : IInternetPriority.Interface
         return ((delegate* unmanaged<IInternetPriority*, Guid*, void**, int>)(lpVtbl[0]))((IInternetPriority*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IInternetPriority : IInternetPriority.Interface
         return ((delegate* unmanaged<IInternetPriority*, uint>)(lpVtbl[1]))((IInternetPriority*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IInternetPriority : IInternetPriority.Interface
         return ((delegate* unmanaged<IInternetPriority*, uint>)(lpVtbl[2]))((IInternetPriority*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IInternetPriority.xml' path='doc/member[@name="IInternetPriority.SetPriority"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetPriority([NativeTypeName("LONG")] int nPriority)
@@ -46,6 +51,7 @@ public unsafe partial struct IInternetPriority : IInternetPriority.Interface
         return ((delegate* unmanaged<IInternetPriority*, int, int>)(lpVtbl[3]))((IInternetPriority*)Unsafe.AsPointer(ref this), nPriority);
     }
 
+    /// <include file='IInternetPriority.xml' path='doc/member[@name="IInternetPriority.GetPriority"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetPriority([NativeTypeName("LONG *")] int* pnPriority)

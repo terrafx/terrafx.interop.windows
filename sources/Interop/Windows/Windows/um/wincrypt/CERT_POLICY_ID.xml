@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CERT_POLICY_ID">
+    <summary>
+      <para>The <b>CERT_POLICY_ID</b> structure contains a list of certificate policies that the certificate expressly supports, together with optional qualifier information pertaining to these policies.</para>
+      <para>
+        <b>CERT_POLICY_ID</b> is a component of
+<see cref="CERT_KEY_USAGE_RESTRICTION_INFO" />.</para>
+    </summary>
+    <seealso cref="CERT_KEY_USAGE_RESTRICTION_INFO" />
+  </member>
+  <member name="CERT_POLICY_ID.cCertPolicyElementId">
+    <summary>
+      <para>Number of elements in the <b>rgpszCertPolicyElementId</b> array.</para>
+    </summary>
+  </member>
+  <member name="CERT_POLICY_ID.rgpszCertPolicyElementId">
+    <summary>
+      <para>Array of pointers to policy element identifier strings.</para>
+    </summary>
+  </member>
+</doc>

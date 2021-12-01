@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DELETE_USN_JOURNAL_DATA">
+    <summary>
+      <para>Contains information on the deletion of an update sequence number (USN) change journal using the
+<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_delete_usn_journal">FSCTL_DELETE_USN_JOURNAL</a> control code.</para>
+    </summary>
+    <remarks>
+      <para>For more information, see
+<a href="https://docs.microsoft.com//windows/desktop/FileIO/creating-modifying-and-deleting-a-change-journal">Creating, Modifying, and Deleting a Change Journal</a>.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_delete_usn_journal">FSCTL_DELETE_USN_JOURNAL</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_query_usn_journal">FSCTL_QUERY_USN_JOURNAL</seealso>
+  </member>
+  <member name="DELETE_USN_JOURNAL_DATA.UsnJournalID">
+    <summary>
+      <para>The identifier of the change journal to be deleted.</para>
+      <para>If the journal is active and deletion is requested by setting the USN_DELETE_FLAG_DELETE flag in the <b>DeleteFlags</b> member, then this identifier must specify the change journal for the current volume. Use
+<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_query_usn_journal">FSCTL_QUERY_USN_JOURNAL</a> to retrieve the identifier of this change journal. If in this case the identifier is not for the current volume's change journal,
+<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_delete_usn_journal">FSCTL_DELETE_USN_JOURNAL</a> fails.</para>
+      <para>If notification instead of deletion is requested by setting only the USN_DELETE_FLAG_NOTIFY flag in <b>DeleteFlags</b>, <b>UsnJournalID</b> is ignored.</para>
+    </summary>
+  </member>
+  <member name="DELETE_USN_JOURNAL_DATA.DeleteFlags">
+    <summary>
+      <para>Indicates whether deletion or notification regarding deletion is performed, or both. The <b>DeleteFlags</b> member must contain one or both of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>USN_DELETE_FLAG_DELETE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000001</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>If this flag is set and the USN_DELETE_FLAG_NOTIFY flag is not set, the
+<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_delete_usn_journal">FSCTL_DELETE_USN_JOURNAL</a> operation starts the journal deletion process and returns immediately. The journal deletion process continues, if necessary, across system restarts.</para>
+            <para>If this flag is set and the USN_DELETE_FLAG_NOTIFY flag is also set, both deletion and notification occur.
+If this flag is set and the journal is active, you must provide the identifier for the change journal for the current volume in <b>UsnJournalID</b> or the operation fails. If the journal is not active, then <b>UsnJournalID</b> is ignored and the journal is deleted.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>USN_DELETE_FLAG_NOTIFY</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000002</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>If this flag is set, the call sets up notification about when deletion is complete. The journal deletion request is completed when the journal deletion process is complete. If this flag is set and the USN_DELETE_FLAG_DELETE flag is not set, then the call sets up notification of a deletion that may already be in progress. For example, when your application starts, it might use this flag to determine if a deletion is in progress.</para>
+            <para>If this flag is set and the USN_DELETE_FLAG_DELETE flag is also set, both deletion and notification occur.
+The notification is performed using an I/O completion port or another mechanism for asynchronous event notification.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+</doc>

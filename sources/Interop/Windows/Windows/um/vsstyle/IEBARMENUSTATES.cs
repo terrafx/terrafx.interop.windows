@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IEBARMENUSTATES.xml' path='doc/member[@name="IEBARMENUSTATES"]/*' />
 public enum IEBARMENUSTATES
 {
+    /// <include file='IEBARMENUSTATES.xml' path='doc/member[@name="IEBARMENUSTATES.EBM_NORMAL"]/*' />
     EBM_NORMAL = 1,
+
+    /// <include file='IEBARMENUSTATES.xml' path='doc/member[@name="IEBARMENUSTATES.EBM_HOT"]/*' />
     EBM_HOT = 2,
+
+    /// <include file='IEBARMENUSTATES.xml' path='doc/member[@name="IEBARMENUSTATES.EBM_PRESSED"]/*' />
     EBM_PRESSED = 3,
 }

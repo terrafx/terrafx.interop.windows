@@ -5,11 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DRAGLISTINFO.xml' path='doc/member[@name="DRAGLISTINFO"]/*' />
 public partial struct DRAGLISTINFO
 {
+    /// <include file='DRAGLISTINFO.xml' path='doc/member[@name="DRAGLISTINFO.uNotification"]/*' />
     public uint uNotification;
 
+    /// <include file='DRAGLISTINFO.xml' path='doc/member[@name="DRAGLISTINFO.hWnd"]/*' />
     public HWND hWnd;
 
+    /// <include file='DRAGLISTINFO.xml' path='doc/member[@name="DRAGLISTINFO.ptCursor"]/*' />
     public POINT ptCursor;
 }

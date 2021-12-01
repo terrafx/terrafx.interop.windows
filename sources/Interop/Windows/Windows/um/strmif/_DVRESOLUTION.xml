@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="_DVRESOLUTION">
+    <summary>
+      <para>Indicates the digital video (DV) decoding resolution.</para>
+    </summary>
+    <remarks>
+      <para>The decoding resolution depends on whether the current format is NTSC or PAL:</para>
+      <list type="table">
+        <listheader>
+          <description>Enumeration</description>
+          <description>NTSC</description>
+          <description>PAL</description>
+        </listheader>
+        <item>
+          <description>DVRESOLUTION_FULL</description>
+          <description>720 x 480</description>
+          <description>720 x 576</description>
+        </item>
+        <item>
+          <description>DVRESOLUTION_HALF</description>
+          <description>360 x 240</description>
+          <description>360 x 288</description>
+        </item>
+        <item>
+          <description>DVRESOLUTION_QUARTER</description>
+          <description>180 x 120</description>
+          <description>180 x 144</description>
+        </item>
+        <item>
+          <description>DVRESOLUTION_DC</description>
+          <description>88 x 60</description>
+          <description>88 x 72</description>
+        </item>
+      </list>
+      <para>The following enumeration defined in strmif.h is equivalent to the <b>_DVRESOLUTION</b> enumeration. It is included for compatibility with existing applications.</para>
+      <code>enum _DVDECODERRESOLUTION {
+    DVDECODERRESOLUTION_720x480     =   1000,
+    DVDECODERRESOLUTION_360x240     =   1001,
+    DVDECODERRESOLUTION_180x120     =   1002,
+    DVDECODERRESOLUTION_88x60       =   1003
+};
+</code>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-enumerated-types">DirectShow Enumerated Types</seealso>
+    <seealso cref="IIPDVDec Interface" />
+  </member>
+  <member name="_DVRESOLUTION.DVRESOLUTION_FULL">
+    <summary>
+      <para>Decode at full size.</para>
+    </summary>
+  </member>
+  <member name="_DVRESOLUTION.DVRESOLUTION_HALF">
+    <summary>
+      <para>Decode at half size.</para>
+    </summary>
+  </member>
+  <member name="_DVRESOLUTION.DVRESOLUTION_QUARTER">
+    <summary>
+      <para>Decode at quarter size.</para>
+    </summary>
+  </member>
+  <member name="_DVRESOLUTION.DVRESOLUTION_DC">
+    <summary>
+      <para>Decode at one-eighth size.</para>
+    </summary>
+  </member>
+</doc>

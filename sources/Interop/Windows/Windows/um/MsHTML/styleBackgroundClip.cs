@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='styleBackgroundClip.xml' path='doc/member[@name="styleBackgroundClip"]/*' />
 public enum styleBackgroundClip
 {
+    /// <include file='styleBackgroundClip.xml' path='doc/member[@name="styleBackgroundClip.styleBackgroundClipBorderBox"]/*' />
     styleBackgroundClipBorderBox = 0,
+
+    /// <include file='styleBackgroundClip.xml' path='doc/member[@name="styleBackgroundClip.styleBackgroundClipPaddingBox"]/*' />
     styleBackgroundClipPaddingBox = 1,
+
+    /// <include file='styleBackgroundClip.xml' path='doc/member[@name="styleBackgroundClip.styleBackgroundClipContentBox"]/*' />
     styleBackgroundClipContentBox = 2,
+
+    /// <include file='styleBackgroundClip.xml' path='doc/member[@name="styleBackgroundClip.styleBackgroundClipNotSet"]/*' />
     styleBackgroundClipNotSet = 3,
+
+    /// <include file='styleBackgroundClip.xml' path='doc/member[@name="styleBackgroundClip.styleBackgroundClip_Max"]/*' />
     styleBackgroundClip_Max = 2147483647,
 }

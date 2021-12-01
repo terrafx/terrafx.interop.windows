@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IEnumTfInputProcessorProfiles.xml' path='doc/member[@name="IEnumTfInputProcessorProfiles"]/*' />
 [Guid("71C6E74D-0F28-11D8-A82A-00065B84435C")]
 [NativeTypeName("struct IEnumTfInputProcessorProfiles : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IEnumTfInputProcessorProfiles : IEnumTfInputProcess
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IEnumTfInputProcessorProfiles : IEnumTfInputProcess
         return ((delegate* unmanaged<IEnumTfInputProcessorProfiles*, Guid*, void**, int>)(lpVtbl[0]))((IEnumTfInputProcessorProfiles*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IEnumTfInputProcessorProfiles : IEnumTfInputProcess
         return ((delegate* unmanaged<IEnumTfInputProcessorProfiles*, uint>)(lpVtbl[1]))((IEnumTfInputProcessorProfiles*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IEnumTfInputProcessorProfiles : IEnumTfInputProcess
         return ((delegate* unmanaged<IEnumTfInputProcessorProfiles*, uint>)(lpVtbl[2]))((IEnumTfInputProcessorProfiles*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IEnumTfInputProcessorProfiles.xml' path='doc/member[@name="IEnumTfInputProcessorProfiles.Clone"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Clone(IEnumTfInputProcessorProfiles** ppEnum)
@@ -46,6 +51,7 @@ public unsafe partial struct IEnumTfInputProcessorProfiles : IEnumTfInputProcess
         return ((delegate* unmanaged<IEnumTfInputProcessorProfiles*, IEnumTfInputProcessorProfiles**, int>)(lpVtbl[3]))((IEnumTfInputProcessorProfiles*)Unsafe.AsPointer(ref this), ppEnum);
     }
 
+    /// <include file='IEnumTfInputProcessorProfiles.xml' path='doc/member[@name="IEnumTfInputProcessorProfiles.Next"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Next([NativeTypeName("ULONG")] uint ulCount, TF_INPUTPROCESSORPROFILE* pProfile, [NativeTypeName("ULONG *")] uint* pcFetch)
@@ -53,6 +59,7 @@ public unsafe partial struct IEnumTfInputProcessorProfiles : IEnumTfInputProcess
         return ((delegate* unmanaged<IEnumTfInputProcessorProfiles*, uint, TF_INPUTPROCESSORPROFILE*, uint*, int>)(lpVtbl[4]))((IEnumTfInputProcessorProfiles*)Unsafe.AsPointer(ref this), ulCount, pProfile, pcFetch);
     }
 
+    /// <include file='IEnumTfInputProcessorProfiles.xml' path='doc/member[@name="IEnumTfInputProcessorProfiles.Reset"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT Reset()
@@ -60,6 +67,7 @@ public unsafe partial struct IEnumTfInputProcessorProfiles : IEnumTfInputProcess
         return ((delegate* unmanaged<IEnumTfInputProcessorProfiles*, int>)(lpVtbl[5]))((IEnumTfInputProcessorProfiles*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IEnumTfInputProcessorProfiles.xml' path='doc/member[@name="IEnumTfInputProcessorProfiles.Skip"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Skip([NativeTypeName("ULONG")] uint ulCount)

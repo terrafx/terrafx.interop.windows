@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='POINT.xml' path='doc/member[@name="POINT"]/*' />
 public partial struct POINT
 {
+    /// <include file='POINT.xml' path='doc/member[@name="POINT.x"]/*' />
     [NativeTypeName("LONG")]
     public int x;
 
+    /// <include file='POINT.xml' path='doc/member[@name="POINT.y"]/*' />
     [NativeTypeName("LONG")]
     public int y;
 }

@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MF_FILE_ACCESSMODE.xml' path='doc/member[@name="MF_FILE_ACCESSMODE"]/*' />
 public enum MF_FILE_ACCESSMODE
 {
+    /// <include file='MF_FILE_ACCESSMODE.xml' path='doc/member[@name="MF_FILE_ACCESSMODE.MF_ACCESSMODE_READ"]/*' />
     MF_ACCESSMODE_READ = 1,
+
+    /// <include file='MF_FILE_ACCESSMODE.xml' path='doc/member[@name="MF_FILE_ACCESSMODE.MF_ACCESSMODE_WRITE"]/*' />
     MF_ACCESSMODE_WRITE = 2,
+
+    /// <include file='MF_FILE_ACCESSMODE.xml' path='doc/member[@name="MF_FILE_ACCESSMODE.MF_ACCESSMODE_READWRITE"]/*' />
     MF_ACCESSMODE_READWRITE = 3,
 }

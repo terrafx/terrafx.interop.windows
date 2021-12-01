@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='eAVDSPSpeakerFill.xml' path='doc/member[@name="eAVDSPSpeakerFill"]/*' />
 public enum eAVDSPSpeakerFill
 {
+    /// <include file='eAVDSPSpeakerFill.xml' path='doc/member[@name="eAVDSPSpeakerFill.eAVDSPSpeakerFill_OFF"]/*' />
     eAVDSPSpeakerFill_OFF = 0,
+
+    /// <include file='eAVDSPSpeakerFill.xml' path='doc/member[@name="eAVDSPSpeakerFill.eAVDSPSpeakerFill_ON"]/*' />
     eAVDSPSpeakerFill_ON = 1,
+
+    /// <include file='eAVDSPSpeakerFill.xml' path='doc/member[@name="eAVDSPSpeakerFill.eAVDSPSpeakerFill_AUTO"]/*' />
     eAVDSPSpeakerFill_AUTO = 2,
 }

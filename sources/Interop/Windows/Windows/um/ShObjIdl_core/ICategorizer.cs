@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ICategorizer.xml' path='doc/member[@name="ICategorizer"]/*' />
 [Guid("A3B14589-9174-49A8-89A3-06A1AE2B9BA7")]
 [NativeTypeName("struct ICategorizer : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ICategorizer : ICategorizer.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ICategorizer : ICategorizer.Interface
         return ((delegate* unmanaged<ICategorizer*, Guid*, void**, int>)(lpVtbl[0]))((ICategorizer*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ICategorizer : ICategorizer.Interface
         return ((delegate* unmanaged<ICategorizer*, uint>)(lpVtbl[1]))((ICategorizer*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ICategorizer : ICategorizer.Interface
         return ((delegate* unmanaged<ICategorizer*, uint>)(lpVtbl[2]))((ICategorizer*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ICategorizer.xml' path='doc/member[@name="ICategorizer.GetDescription"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetDescription([NativeTypeName("LPWSTR")] ushort* pszDesc, uint cch)
@@ -46,6 +51,7 @@ public unsafe partial struct ICategorizer : ICategorizer.Interface
         return ((delegate* unmanaged<ICategorizer*, ushort*, uint, int>)(lpVtbl[3]))((ICategorizer*)Unsafe.AsPointer(ref this), pszDesc, cch);
     }
 
+    /// <include file='ICategorizer.xml' path='doc/member[@name="ICategorizer.GetCategory"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetCategory(uint cidl, [NativeTypeName("LPCITEMIDLIST *")] ITEMIDLIST** apidl, [NativeTypeName("DWORD *")] uint* rgCategoryIds)
@@ -53,6 +59,7 @@ public unsafe partial struct ICategorizer : ICategorizer.Interface
         return ((delegate* unmanaged<ICategorizer*, uint, ITEMIDLIST**, uint*, int>)(lpVtbl[4]))((ICategorizer*)Unsafe.AsPointer(ref this), cidl, apidl, rgCategoryIds);
     }
 
+    /// <include file='ICategorizer.xml' path='doc/member[@name="ICategorizer.GetCategoryInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetCategoryInfo([NativeTypeName("DWORD")] uint dwCategoryId, CATEGORY_INFO* pci)
@@ -60,6 +67,7 @@ public unsafe partial struct ICategorizer : ICategorizer.Interface
         return ((delegate* unmanaged<ICategorizer*, uint, CATEGORY_INFO*, int>)(lpVtbl[5]))((ICategorizer*)Unsafe.AsPointer(ref this), dwCategoryId, pci);
     }
 
+    /// <include file='ICategorizer.xml' path='doc/member[@name="ICategorizer.CompareCategory"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT CompareCategory(CATSORT_FLAGS csfFlags, [NativeTypeName("DWORD")] uint dwCategoryId1, [NativeTypeName("DWORD")] uint dwCategoryId2)

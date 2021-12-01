@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='AMBISONICS_CHANNEL_ORDERING.xml' path='doc/member[@name="AMBISONICS_CHANNEL_ORDERING"]/*' />
 public enum AMBISONICS_CHANNEL_ORDERING
 {
+    /// <include file='AMBISONICS_CHANNEL_ORDERING.xml' path='doc/member[@name="AMBISONICS_CHANNEL_ORDERING.AMBISONICS_CHANNEL_ORDERING_ACN"]/*' />
     AMBISONICS_CHANNEL_ORDERING_ACN = 0,
 }

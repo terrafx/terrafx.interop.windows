@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="TfAnchor">
+    <summary>
+      <para>Elements of the <b>TfAnchor</b> enumeration specify the start anchor or end anchor of an <see cref="ITfRange" /> object.</para>
+    </summary>
+    <remarks>
+      <para>A range refers to a span of text in a document. Each range is delimited by a start anchor and an end anchor.</para>
+    </remarks>
+    <seealso cref="ITfRange " />
+    <seealso cref="TF_HALTCOND " />
+  </member>
+  <member name="TfAnchor.TF_ANCHOR_START">
+    <summary>
+      <para>Specifies the start anchor of the <b>ITfRange</b> object.</para>
+    </summary>
+  </member>
+  <member name="TfAnchor.TF_ANCHOR_END">
+    <summary>
+      <para>Specifies the end anchor of the <b>ITfRange</b> object.</para>
+    </summary>
+  </member>
+</doc>

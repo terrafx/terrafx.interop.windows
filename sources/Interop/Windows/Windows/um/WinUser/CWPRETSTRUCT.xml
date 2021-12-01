@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CWPRETSTRUCT">
+    <summary>
+      <para>Defines the message parameters passed to a <b>WH_CALLWNDPROCRET</b> hook procedure, <a href="https://docs.microsoft.com//windows/desktop/api/winuser/nc-winuser-hookproc">CallWndRetProc</a>.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/winuser/nc-winuser-hookproc">CallWndRetProc</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/winmsg/hooks">Hooks</seealso>
+    <seealso cref="SetWindowsHookEx" />
+  </member>
+  <member name="CWPRETSTRUCT.lResult">
+    <summary>
+      <para>Type: <b>LRESULT</b></para>
+      <para>The return value of the window procedure that processed the message specified by the
+<b>message</b> value.</para>
+    </summary>
+  </member>
+  <member name="CWPRETSTRUCT.lParam">
+    <summary>
+      <para>Type: <b>LPARAM</b></para>
+      <para>Additional information about the message. The exact meaning depends on the
+<b>message</b> value.</para>
+    </summary>
+  </member>
+  <member name="CWPRETSTRUCT.wParam">
+    <summary>
+      <para>Type: <b>WPARAM</b></para>
+      <para>Additional information about the message. The exact meaning depends on the
+<b>message</b> value.</para>
+    </summary>
+  </member>
+  <member name="CWPRETSTRUCT.message">
+    <summary>
+      <para>Type: <b>UINT</b></para>
+      <para>The message.</para>
+    </summary>
+  </member>
+  <member name="CWPRETSTRUCT.hwnd">
+    <summary>
+      <para>Type: <b>HWND</b></para>
+      <para>A handle to the window that processed the message specified by the
+<b>message</b> value.</para>
+    </summary>
+  </member>
+</doc>

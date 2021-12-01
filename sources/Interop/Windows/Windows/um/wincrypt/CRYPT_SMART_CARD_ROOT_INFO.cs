@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CRYPT_SMART_CARD_ROOT_INFO.xml' path='doc/member[@name="CRYPT_SMART_CARD_ROOT_INFO"]/*' />
 public unsafe partial struct CRYPT_SMART_CARD_ROOT_INFO
 {
+    /// <include file='CRYPT_SMART_CARD_ROOT_INFO.xml' path='doc/member[@name="CRYPT_SMART_CARD_ROOT_INFO.rgbCardID"]/*' />
     [NativeTypeName("BYTE [16]")]
     public fixed byte rgbCardID[16];
 
+    /// <include file='CRYPT_SMART_CARD_ROOT_INFO.xml' path='doc/member[@name="CRYPT_SMART_CARD_ROOT_INFO.luid"]/*' />
     public ROOT_INFO_LUID luid;
 }

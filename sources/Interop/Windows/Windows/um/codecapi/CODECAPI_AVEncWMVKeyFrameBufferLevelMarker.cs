@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVEncWMVKeyFrameBufferLevelMarker.xml' path='doc/member[@name="CODECAPI_AVEncWMVKeyFrameBufferLevelMarker"]/*' />
 [Guid("51FF1115-33AC-426C-A1B1-09321BDF96B4")]
 public partial struct CODECAPI_AVEncWMVKeyFrameBufferLevelMarker
 {

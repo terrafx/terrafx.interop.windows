@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="_DMO_INPUT_DATA_BUFFER_FLAGS">
+    <summary>
+      <para>The <code>DMO_INPUT_DATA_BUFFER_FLAGS</code> enumeration defines flags that describe an input buffer.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dmo-enumerated-types">DMO Enumerated Types</seealso>
+    <seealso cref="IMediaObject.ProcessInput" />
+  </member>
+  <member name="_DMO_INPUT_DATA_BUFFER_FLAGS.DMO_INPUT_DATA_BUFFERF_SYNCPOINT">
+    <summary>
+      <para>The beginning of the data is a synchronization point.</para>
+    </summary>
+  </member>
+  <member name="_DMO_INPUT_DATA_BUFFER_FLAGS.DMO_INPUT_DATA_BUFFERF_TIME">
+    <summary>
+      <para>The buffer's time stamp is valid.</para>
+      <para>The buffer's indicated time length is valid.</para>
+    </summary>
+  </member>
+  <member name="_DMO_INPUT_DATA_BUFFER_FLAGS.DMO_INPUT_DATA_BUFFERF_TIMELENGTH">
+    <summary>
+      <para>The buffer's indicated time length is valid.</para>
+    </summary>
+  </member>
+  <member name="_DMO_INPUT_DATA_BUFFER_FLAGS.DMO_INPUT_DATA_BUFFERF_DISCONTINUITY">
+    <summary></summary>
+  </member>
+</doc>

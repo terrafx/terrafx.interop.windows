@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IElementBehaviorFocus.xml' path='doc/member[@name="IElementBehaviorFocus"]/*' />
 [Guid("3050F6B6-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IElementBehaviorFocus : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IElementBehaviorFocus : IElementBehaviorFocus.Inter
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IElementBehaviorFocus : IElementBehaviorFocus.Inter
         return ((delegate* unmanaged<IElementBehaviorFocus*, Guid*, void**, int>)(lpVtbl[0]))((IElementBehaviorFocus*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IElementBehaviorFocus : IElementBehaviorFocus.Inter
         return ((delegate* unmanaged<IElementBehaviorFocus*, uint>)(lpVtbl[1]))((IElementBehaviorFocus*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IElementBehaviorFocus : IElementBehaviorFocus.Inter
         return ((delegate* unmanaged<IElementBehaviorFocus*, uint>)(lpVtbl[2]))((IElementBehaviorFocus*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IElementBehaviorFocus.xml' path='doc/member[@name="IElementBehaviorFocus.GetFocusRect"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetFocusRect(RECT* pRect)

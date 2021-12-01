@@ -7,12 +7,15 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='UNSIGNED_RATIO.xml' path='doc/member[@name="UNSIGNED_RATIO"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct UNSIGNED_RATIO
 {
+    /// <include file='UNSIGNED_RATIO.xml' path='doc/member[@name="UNSIGNED_RATIO.uiNumerator"]/*' />
     [NativeTypeName("UINT32")]
     public uint uiNumerator;
 
+    /// <include file='UNSIGNED_RATIO.xml' path='doc/member[@name="UNSIGNED_RATIO.uiDenominator"]/*' />
     [NativeTypeName("UINT32")]
     public uint uiDenominator;
 }

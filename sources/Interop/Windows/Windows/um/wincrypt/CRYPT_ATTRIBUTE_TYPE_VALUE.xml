@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CRYPT_ATTRIBUTE_TYPE_VALUE">
+    <summary>
+      <para>The <b>CRYPT_ATTRIBUTE_TYPE_VALUE</b> structure contains a single attribute value. The <b>Value</b> member's <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_OBJID_BLOB</a> is encoded.</para>
+    </summary>
+    <seealso cref="CERT_ALT_NAME_ENTRY" />
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_INTEGER_BLOB</seealso>
+  </member>
+  <member name="CRYPT_ATTRIBUTE_TYPE_VALUE.pszObjId">
+    <summary>
+      <para>
+        <a href="https://docs.microsoft.com//windows/desktop/SecGloss/o-gly">Object identifier</a> (OID) that specifies the attribute type data contained in the <b>Value</b> BLOB.</para>
+    </summary>
+  </member>
+  <member name="CRYPT_ATTRIBUTE_TYPE_VALUE.Value">
+    <summary>
+      <para>A <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_OBJID_BLOB</a> that contains the encoded attribute. The <b>cbData</b> member of the <b>CRYPT_OBJID_BLOB</b> structure indicates the length of the <b>pbData</b> member. The <b>pbData</b> member contains the attribute information.</para>
+    </summary>
+  </member>
+</doc>

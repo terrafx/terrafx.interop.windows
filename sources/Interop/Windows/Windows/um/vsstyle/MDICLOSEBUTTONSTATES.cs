@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MDICLOSEBUTTONSTATES.xml' path='doc/member[@name="MDICLOSEBUTTONSTATES"]/*' />
 public enum MDICLOSEBUTTONSTATES
 {
+    /// <include file='MDICLOSEBUTTONSTATES.xml' path='doc/member[@name="MDICLOSEBUTTONSTATES.MDCL_NORMAL"]/*' />
     MDCL_NORMAL = 1,
+
+    /// <include file='MDICLOSEBUTTONSTATES.xml' path='doc/member[@name="MDICLOSEBUTTONSTATES.MDCL_HOT"]/*' />
     MDCL_HOT = 2,
+
+    /// <include file='MDICLOSEBUTTONSTATES.xml' path='doc/member[@name="MDICLOSEBUTTONSTATES.MDCL_PUSHED"]/*' />
     MDCL_PUSHED = 3,
+
+    /// <include file='MDICLOSEBUTTONSTATES.xml' path='doc/member[@name="MDICLOSEBUTTONSTATES.MDCL_DISABLED"]/*' />
     MDCL_DISABLED = 4,
 }

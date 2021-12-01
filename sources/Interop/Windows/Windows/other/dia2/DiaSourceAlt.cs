@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DiaSourceAlt.xml' path='doc/member[@name="DiaSourceAlt"]/*' />
 [Guid("91904831-49CA-4766-B95C-25397E2DD6DC")]
 public partial struct DiaSourceAlt
 {

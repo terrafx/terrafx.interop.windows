@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IActivateAudioInterfaceAsyncOperation.xml' path='doc/member[@name="IActivateAudioInterfaceAsyncOperation"]/*' />
 [Guid("72A22D78-CDE4-431D-B8CC-843A71199B6D")]
 [NativeTypeName("struct IActivateAudioInterfaceAsyncOperation : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IActivateAudioInterfaceAsyncOperation : IActivateAu
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IActivateAudioInterfaceAsyncOperation : IActivateAu
         return ((delegate* unmanaged<IActivateAudioInterfaceAsyncOperation*, Guid*, void**, int>)(lpVtbl[0]))((IActivateAudioInterfaceAsyncOperation*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IActivateAudioInterfaceAsyncOperation : IActivateAu
         return ((delegate* unmanaged<IActivateAudioInterfaceAsyncOperation*, uint>)(lpVtbl[1]))((IActivateAudioInterfaceAsyncOperation*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IActivateAudioInterfaceAsyncOperation : IActivateAu
         return ((delegate* unmanaged<IActivateAudioInterfaceAsyncOperation*, uint>)(lpVtbl[2]))((IActivateAudioInterfaceAsyncOperation*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IActivateAudioInterfaceAsyncOperation.xml' path='doc/member[@name="IActivateAudioInterfaceAsyncOperation.GetActivateResult"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetActivateResult(HRESULT* activateResult, IUnknown** activatedInterface)

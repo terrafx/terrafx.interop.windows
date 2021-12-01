@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFReadWriteClassFactory.xml' path='doc/member[@name="IMFReadWriteClassFactory"]/*' />
 [Guid("E7FE2E12-661C-40DA-92F9-4F002AB67627")]
 [NativeTypeName("struct IMFReadWriteClassFactory : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMFReadWriteClassFactory : IMFReadWriteClassFactory
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMFReadWriteClassFactory : IMFReadWriteClassFactory
         return ((delegate* unmanaged<IMFReadWriteClassFactory*, Guid*, void**, int>)(lpVtbl[0]))((IMFReadWriteClassFactory*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMFReadWriteClassFactory : IMFReadWriteClassFactory
         return ((delegate* unmanaged<IMFReadWriteClassFactory*, uint>)(lpVtbl[1]))((IMFReadWriteClassFactory*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMFReadWriteClassFactory : IMFReadWriteClassFactory
         return ((delegate* unmanaged<IMFReadWriteClassFactory*, uint>)(lpVtbl[2]))((IMFReadWriteClassFactory*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFReadWriteClassFactory.xml' path='doc/member[@name="IMFReadWriteClassFactory.CreateInstanceFromURL"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT CreateInstanceFromURL([NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("LPCWSTR")] ushort* pwszURL, IMFAttributes* pAttributes, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppvObject)
@@ -46,6 +51,7 @@ public unsafe partial struct IMFReadWriteClassFactory : IMFReadWriteClassFactory
         return ((delegate* unmanaged<IMFReadWriteClassFactory*, Guid*, ushort*, IMFAttributes*, Guid*, void**, int>)(lpVtbl[3]))((IMFReadWriteClassFactory*)Unsafe.AsPointer(ref this), clsid, pwszURL, pAttributes, riid, ppvObject);
     }
 
+    /// <include file='IMFReadWriteClassFactory.xml' path='doc/member[@name="IMFReadWriteClassFactory.CreateInstanceFromObject"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT CreateInstanceFromObject([NativeTypeName("const IID &")] Guid* clsid, IUnknown* punkObject, IMFAttributes* pAttributes, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppvObject)

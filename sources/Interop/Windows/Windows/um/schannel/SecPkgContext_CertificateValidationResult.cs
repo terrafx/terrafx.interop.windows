@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SecPkgContext_CertificateValidationResult.xml' path='doc/member[@name="SecPkgContext_CertificateValidationResult"]/*' />
 public partial struct SecPkgContext_CertificateValidationResult
 {
+    /// <include file='SecPkgContext_CertificateValidationResult.xml' path='doc/member[@name="SecPkgContext_CertificateValidationResult.dwChainErrorStatus"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwChainErrorStatus;
 
+    /// <include file='SecPkgContext_CertificateValidationResult.xml' path='doc/member[@name="SecPkgContext_CertificateValidationResult.hrVerifyChainStatus"]/*' />
     public HRESULT hrVerifyChainStatus;
 }

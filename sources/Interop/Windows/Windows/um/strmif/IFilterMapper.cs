@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IFilterMapper.xml' path='doc/member[@name="IFilterMapper"]/*' />
 [Guid("56A868A3-0AD4-11CE-B03A-0020AF0BA770")]
 [NativeTypeName("struct IFilterMapper : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IFilterMapper : IFilterMapper.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IFilterMapper : IFilterMapper.Interface
         return ((delegate* unmanaged<IFilterMapper*, Guid*, void**, int>)(lpVtbl[0]))((IFilterMapper*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IFilterMapper : IFilterMapper.Interface
         return ((delegate* unmanaged<IFilterMapper*, uint>)(lpVtbl[1]))((IFilterMapper*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IFilterMapper : IFilterMapper.Interface
         return ((delegate* unmanaged<IFilterMapper*, uint>)(lpVtbl[2]))((IFilterMapper*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IFilterMapper.xml' path='doc/member[@name="IFilterMapper.RegisterFilter"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT RegisterFilter([NativeTypeName("CLSID")] Guid clsid, [NativeTypeName("LPCWSTR")] ushort* Name, [NativeTypeName("DWORD")] uint dwMerit)
@@ -46,6 +51,7 @@ public unsafe partial struct IFilterMapper : IFilterMapper.Interface
         return ((delegate* unmanaged<IFilterMapper*, Guid, ushort*, uint, int>)(lpVtbl[3]))((IFilterMapper*)Unsafe.AsPointer(ref this), clsid, Name, dwMerit);
     }
 
+    /// <include file='IFilterMapper.xml' path='doc/member[@name="IFilterMapper.RegisterFilterInstance"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT RegisterFilterInstance([NativeTypeName("CLSID")] Guid clsid, [NativeTypeName("LPCWSTR")] ushort* Name, [NativeTypeName("CLSID *")] Guid* MRId)
@@ -53,6 +59,7 @@ public unsafe partial struct IFilterMapper : IFilterMapper.Interface
         return ((delegate* unmanaged<IFilterMapper*, Guid, ushort*, Guid*, int>)(lpVtbl[4]))((IFilterMapper*)Unsafe.AsPointer(ref this), clsid, Name, MRId);
     }
 
+    /// <include file='IFilterMapper.xml' path='doc/member[@name="IFilterMapper.RegisterPin"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT RegisterPin([NativeTypeName("CLSID")] Guid Filter, [NativeTypeName("LPCWSTR")] ushort* Name, BOOL bRendered, BOOL bOutput, BOOL bZero, BOOL bMany, [NativeTypeName("CLSID")] Guid ConnectsToFilter, [NativeTypeName("LPCWSTR")] ushort* ConnectsToPin)
@@ -60,6 +67,7 @@ public unsafe partial struct IFilterMapper : IFilterMapper.Interface
         return ((delegate* unmanaged<IFilterMapper*, Guid, ushort*, BOOL, BOOL, BOOL, BOOL, Guid, ushort*, int>)(lpVtbl[5]))((IFilterMapper*)Unsafe.AsPointer(ref this), Filter, Name, bRendered, bOutput, bZero, bMany, ConnectsToFilter, ConnectsToPin);
     }
 
+    /// <include file='IFilterMapper.xml' path='doc/member[@name="IFilterMapper.RegisterPinType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT RegisterPinType([NativeTypeName("CLSID")] Guid clsFilter, [NativeTypeName("LPCWSTR")] ushort* strName, [NativeTypeName("CLSID")] Guid clsMajorType, [NativeTypeName("CLSID")] Guid clsSubType)
@@ -67,6 +75,7 @@ public unsafe partial struct IFilterMapper : IFilterMapper.Interface
         return ((delegate* unmanaged<IFilterMapper*, Guid, ushort*, Guid, Guid, int>)(lpVtbl[6]))((IFilterMapper*)Unsafe.AsPointer(ref this), clsFilter, strName, clsMajorType, clsSubType);
     }
 
+    /// <include file='IFilterMapper.xml' path='doc/member[@name="IFilterMapper.UnregisterFilter"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT UnregisterFilter([NativeTypeName("CLSID")] Guid Filter)
@@ -74,6 +83,7 @@ public unsafe partial struct IFilterMapper : IFilterMapper.Interface
         return ((delegate* unmanaged<IFilterMapper*, Guid, int>)(lpVtbl[7]))((IFilterMapper*)Unsafe.AsPointer(ref this), Filter);
     }
 
+    /// <include file='IFilterMapper.xml' path='doc/member[@name="IFilterMapper.UnregisterFilterInstance"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT UnregisterFilterInstance([NativeTypeName("CLSID")] Guid MRId)
@@ -81,6 +91,7 @@ public unsafe partial struct IFilterMapper : IFilterMapper.Interface
         return ((delegate* unmanaged<IFilterMapper*, Guid, int>)(lpVtbl[8]))((IFilterMapper*)Unsafe.AsPointer(ref this), MRId);
     }
 
+    /// <include file='IFilterMapper.xml' path='doc/member[@name="IFilterMapper.UnregisterPin"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT UnregisterPin([NativeTypeName("CLSID")] Guid Filter, [NativeTypeName("LPCWSTR")] ushort* Name)
@@ -88,6 +99,7 @@ public unsafe partial struct IFilterMapper : IFilterMapper.Interface
         return ((delegate* unmanaged<IFilterMapper*, Guid, ushort*, int>)(lpVtbl[9]))((IFilterMapper*)Unsafe.AsPointer(ref this), Filter, Name);
     }
 
+    /// <include file='IFilterMapper.xml' path='doc/member[@name="IFilterMapper.EnumMatchingFilters"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT EnumMatchingFilters(IEnumRegFilters** ppEnum, [NativeTypeName("DWORD")] uint dwMerit, BOOL bInputNeeded, [NativeTypeName("CLSID")] Guid clsInMaj, [NativeTypeName("CLSID")] Guid clsInSub, BOOL bRender, BOOL bOututNeeded, [NativeTypeName("CLSID")] Guid clsOutMaj, [NativeTypeName("CLSID")] Guid clsOutSub)

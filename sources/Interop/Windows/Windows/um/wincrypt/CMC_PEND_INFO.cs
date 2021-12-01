@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CMC_PEND_INFO.xml' path='doc/member[@name="CMC_PEND_INFO"]/*' />
 public partial struct CMC_PEND_INFO
 {
+    /// <include file='CMC_PEND_INFO.xml' path='doc/member[@name="CMC_PEND_INFO.PendToken"]/*' />
     public CRYPT_DATA_BLOB PendToken;
 
+    /// <include file='CMC_PEND_INFO.xml' path='doc/member[@name="CMC_PEND_INFO.PendTime"]/*' />
     public FILETIME PendTime;
 }

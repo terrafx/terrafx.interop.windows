@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='eAVEncMuxOutput.xml' path='doc/member[@name="eAVEncMuxOutput"]/*' />
 public enum eAVEncMuxOutput
 {
+    /// <include file='eAVEncMuxOutput.xml' path='doc/member[@name="eAVEncMuxOutput.eAVEncMuxOutputAuto"]/*' />
     eAVEncMuxOutputAuto = 0,
+
+    /// <include file='eAVEncMuxOutput.xml' path='doc/member[@name="eAVEncMuxOutput.eAVEncMuxOutputPS"]/*' />
     eAVEncMuxOutputPS = 1,
+
+    /// <include file='eAVEncMuxOutput.xml' path='doc/member[@name="eAVEncMuxOutput.eAVEncMuxOutputTS"]/*' />
     eAVEncMuxOutputTS = 2,
 }

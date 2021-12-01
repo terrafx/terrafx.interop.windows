@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='GET_DISK_ATTRIBUTES.xml' path='doc/member[@name="GET_DISK_ATTRIBUTES"]/*' />
 public partial struct GET_DISK_ATTRIBUTES
 {
+    /// <include file='GET_DISK_ATTRIBUTES.xml' path='doc/member[@name="GET_DISK_ATTRIBUTES.Version"]/*' />
     [NativeTypeName("DWORD")]
     public uint Version;
 
+    /// <include file='GET_DISK_ATTRIBUTES.xml' path='doc/member[@name="GET_DISK_ATTRIBUTES.Reserved1"]/*' />
     [NativeTypeName("DWORD")]
     public uint Reserved1;
 
+    /// <include file='GET_DISK_ATTRIBUTES.xml' path='doc/member[@name="GET_DISK_ATTRIBUTES.Attributes"]/*' />
     [NativeTypeName("DWORDLONG")]
     public ulong Attributes;
 }

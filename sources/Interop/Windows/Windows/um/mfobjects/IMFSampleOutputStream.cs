@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFSampleOutputStream.xml' path='doc/member[@name="IMFSampleOutputStream"]/*' />
 [Guid("8FEED468-6F7E-440D-869A-49BDD283AD0D")]
 [NativeTypeName("struct IMFSampleOutputStream : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IMFSampleOutputStream : IMFSampleOutputStream.Inter
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IMFSampleOutputStream : IMFSampleOutputStream.Inter
         return ((delegate* unmanaged<IMFSampleOutputStream*, Guid*, void**, int>)(lpVtbl[0]))((IMFSampleOutputStream*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IMFSampleOutputStream : IMFSampleOutputStream.Inter
         return ((delegate* unmanaged<IMFSampleOutputStream*, uint>)(lpVtbl[1]))((IMFSampleOutputStream*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IMFSampleOutputStream : IMFSampleOutputStream.Inter
         return ((delegate* unmanaged<IMFSampleOutputStream*, uint>)(lpVtbl[2]))((IMFSampleOutputStream*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFSampleOutputStream.xml' path='doc/member[@name="IMFSampleOutputStream.BeginWriteSample"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT BeginWriteSample(IMFSample* pSample, IMFAsyncCallback* pCallback, IUnknown* punkState)
@@ -48,6 +53,7 @@ public unsafe partial struct IMFSampleOutputStream : IMFSampleOutputStream.Inter
         return ((delegate* unmanaged<IMFSampleOutputStream*, IMFSample*, IMFAsyncCallback*, IUnknown*, int>)(lpVtbl[3]))((IMFSampleOutputStream*)Unsafe.AsPointer(ref this), pSample, pCallback, punkState);
     }
 
+    /// <include file='IMFSampleOutputStream.xml' path='doc/member[@name="IMFSampleOutputStream.EndWriteSample"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT EndWriteSample(IMFAsyncResult* pResult)
@@ -55,6 +61,7 @@ public unsafe partial struct IMFSampleOutputStream : IMFSampleOutputStream.Inter
         return ((delegate* unmanaged<IMFSampleOutputStream*, IMFAsyncResult*, int>)(lpVtbl[4]))((IMFSampleOutputStream*)Unsafe.AsPointer(ref this), pResult);
     }
 
+    /// <include file='IMFSampleOutputStream.xml' path='doc/member[@name="IMFSampleOutputStream.Close"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT Close()

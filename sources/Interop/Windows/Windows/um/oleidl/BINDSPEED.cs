@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='BINDSPEED.xml' path='doc/member[@name="BINDSPEED"]/*' />
 public enum BINDSPEED
 {
+    /// <include file='BINDSPEED.xml' path='doc/member[@name="BINDSPEED.BINDSPEED_INDEFINITE"]/*' />
     BINDSPEED_INDEFINITE = 1,
+
+    /// <include file='BINDSPEED.xml' path='doc/member[@name="BINDSPEED.BINDSPEED_MODERATE"]/*' />
     BINDSPEED_MODERATE = 2,
+
+    /// <include file='BINDSPEED.xml' path='doc/member[@name="BINDSPEED.BINDSPEED_IMMEDIATE"]/*' />
     BINDSPEED_IMMEDIATE = 3,
 }

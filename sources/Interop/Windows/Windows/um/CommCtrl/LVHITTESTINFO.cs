@@ -5,15 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='LVHITTESTINFO.xml' path='doc/member[@name="LVHITTESTINFO"]/*' />
 public partial struct LVHITTESTINFO
 {
+    /// <include file='LVHITTESTINFO.xml' path='doc/member[@name="LVHITTESTINFO.pt"]/*' />
     public POINT pt;
 
+    /// <include file='LVHITTESTINFO.xml' path='doc/member[@name="LVHITTESTINFO.flags"]/*' />
     public uint flags;
 
+    /// <include file='LVHITTESTINFO.xml' path='doc/member[@name="LVHITTESTINFO.iItem"]/*' />
     public int iItem;
 
+    /// <include file='LVHITTESTINFO.xml' path='doc/member[@name="LVHITTESTINFO.iSubItem"]/*' />
     public int iSubItem;
 
+    /// <include file='LVHITTESTINFO.xml' path='doc/member[@name="LVHITTESTINFO.iGroup"]/*' />
     public int iGroup;
 }

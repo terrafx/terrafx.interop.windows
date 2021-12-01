@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='eAVEncCommonStreamEndHandling.xml' path='doc/member[@name="eAVEncCommonStreamEndHandling"]/*' />
 public enum eAVEncCommonStreamEndHandling
 {
+    /// <include file='eAVEncCommonStreamEndHandling.xml' path='doc/member[@name="eAVEncCommonStreamEndHandling.eAVEncCommonStreamEndHandling_DiscardPartial"]/*' />
     eAVEncCommonStreamEndHandling_DiscardPartial = 0,
+
+    /// <include file='eAVEncCommonStreamEndHandling.xml' path='doc/member[@name="eAVEncCommonStreamEndHandling.eAVEncCommonStreamEndHandling_EnsureComplete"]/*' />
     eAVEncCommonStreamEndHandling_EnsureComplete = 1,
 }

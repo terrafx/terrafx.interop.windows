@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ENUMTEXTMETRICW.xml' path='doc/member[@name="ENUMTEXTMETRICW"]/*' />
 public partial struct ENUMTEXTMETRICW
 {
+    /// <include file='ENUMTEXTMETRICW.xml' path='doc/member[@name="ENUMTEXTMETRICW.etmNewTextMetricEx"]/*' />
     public NEWTEXTMETRICEXW etmNewTextMetricEx;
 
+    /// <include file='ENUMTEXTMETRICW.xml' path='doc/member[@name="ENUMTEXTMETRICW.etmAxesList"]/*' />
     public AXESLISTW etmAxesList;
 }

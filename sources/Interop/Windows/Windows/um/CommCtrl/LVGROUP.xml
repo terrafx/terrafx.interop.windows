@@ -1,0 +1,666 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="LVGROUP">
+    <summary>
+      <para>Used to set and retrieve groups.</para>
+    </summary>
+    <remarks>
+      <para>All strings returned in this structure should be treated as read-only.</para>
+      <para>The creation of subsets is not currently supported, and <b>pszSubsetTitle</b> cannot be set by applications.</para>
+    </remarks>
+  </member>
+  <member name="LVGROUP.cbSize">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Size of this structure, in bytes.</para>
+    </summary>
+  </member>
+  <member name="LVGROUP.mask">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Mask that specifies which members of the structure are valid input. One or more of the following values:</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>LVGF_NONE</b>
+          </description>
+          <description>
+            <para>No other items are valid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>LVGF_HEADER</b>
+          </description>
+          <description>
+            <b>pszHeader</b> and <b>cchHeader</b> members are valid.
+</description>
+        </item>
+        <item>
+          <description>
+            <b>LVGF_FOOTER</b>
+          </description>
+          <description>
+            <b>pszFooter</b> and <b>cchFooter</b> members are valid.
+</description>
+        </item>
+        <item>
+          <description>
+            <b>LVGF_STATE</b>
+          </description>
+          <description>
+            <b>state</b> and <b>stateMask</b> members are valid.
+</description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b></b>
+                </description>
+              </item>
+              <item>
+                <description>LVGF_ALIGN</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <b>uAlign</b> member is valid.
+</description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b></b>
+                </description>
+              </item>
+              <item>
+                <description>LVGF_GROUPID</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <b>iGroupId</b> member is valid.
+</description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b></b>
+                </description>
+              </item>
+              <item>
+                <description>LVGF_SUBTITLE</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>
+              <a href="https://docs.microsoft.com//windows/desktop/Controls/common-control-versions">Version 6.00 and later</a>. The <b>pszSubtitle</b> member is valid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b></b>
+                </description>
+              </item>
+              <item>
+                <description>LVGF_TASK</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>
+              <a href="https://docs.microsoft.com//windows/desktop/Controls/common-control-versions">Version 6.00 and later</a>. The <b>pszTask</b> member is valid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b></b>
+                </description>
+              </item>
+              <item>
+                <description>LVGF_DESCRIPTIONTOP</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>
+              <a href="https://docs.microsoft.com//windows/desktop/Controls/common-control-versions">Version 6.00 and later</a>. The <b>pszDescriptionTop</b> member is valid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b></b>
+                </description>
+              </item>
+              <item>
+                <description>LVGF_DESCRIPTIONBOTTOM</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>
+              <a href="https://docs.microsoft.com//windows/desktop/Controls/common-control-versions">Version 6.00 and later</a>. The <b>pszDescriptionBottom</b> member is valid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b></b>
+                </description>
+              </item>
+              <item>
+                <description>LVGF_TITLEIMAGE</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>
+              <a href="https://docs.microsoft.com//windows/desktop/Controls/common-control-versions">Version 6.00 and later</a>. The <b>iTitleImage</b> member is valid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b></b>
+                </description>
+              </item>
+              <item>
+                <description>LVGF_EXTENDEDIMAGE</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>
+              <a href="https://docs.microsoft.com//windows/desktop/Controls/common-control-versions">Version 6.00 and later</a>. The <b>iExtendedImage</b> member is valid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b></b>
+                </description>
+              </item>
+              <item>
+                <description>LVGF_ITEMS</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>
+              <a href="https://docs.microsoft.com//windows/desktop/Controls/common-control-versions">Version 6.00 and later</a>. The <b>cItems</b> member is valid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b></b>
+                </description>
+              </item>
+              <item>
+                <description>LVGF_SUBSET</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>
+              <a href="https://docs.microsoft.com//windows/desktop/Controls/common-control-versions">Version 6.00 and later</a>. The <b>pszSubsetTitle</b> member is valid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b></b>
+                </description>
+              </item>
+              <item>
+                <description>LVGF_SUBSETITEMS</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>
+              <a href="https://docs.microsoft.com//windows/desktop/Controls/common-control-versions">Version 6.00 and later</a>. The <b>cchSubsetTitle</b> member is valid.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="LVGROUP.pszHeader">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPWSTR</a></b></para>
+      <para>Pointer to a null-terminated string that contains the header text when item information is being set. If group information is being retrieved, this member specifies the address of the buffer that receives the header text.</para>
+    </summary>
+  </member>
+  <member name="LVGROUP.cchHeader">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>Size in <b>TCHAR</b>s of the buffer pointed to by the <b>pszHeader</b> member. If the structure is not receiving information about a group, this member is ignored.</para>
+    </summary>
+  </member>
+  <member name="LVGROUP.pszFooter">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPWSTR</a></b></para>
+      <para>Pointer to a null-terminated string that contains the footer text when item information is being set. If group information is being retrieved, this member specifies the address of the buffer that receives the footer text.</para>
+    </summary>
+  </member>
+  <member name="LVGROUP.cchFooter">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>Size in <b>TCHAR</b>s of the buffer pointed to by the <b>pszFooter</b> member. If the structure is not receiving information about a group, this member is ignored.</para>
+    </summary>
+  </member>
+  <member name="LVGROUP.iGroupId">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>ID of the group.</para>
+    </summary>
+  </member>
+  <member name="LVGROUP.stateMask">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Mask used with <a href="https://docs.microsoft.com//windows/desktop/Controls/lvm-getgroupinfo">LVM_GETGROUPINFO</a>  and <a href="https://docs.microsoft.com//windows/desktop/Controls/lvm-setgroupinfo">LVM_SETGROUPINFO</a> to specify which flags in the <b>state</b> value are being retrieved or set.</para>
+    </summary>
+  </member>
+  <member name="LVGROUP.state">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Flag that can have one of the following values:</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b></b>
+                </description>
+              </item>
+              <item>
+                <description>LVGS_NORMAL</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Groups are expanded, the group name is displayed, and all items in the group are displayed.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b></b>
+                </description>
+              </item>
+              <item>
+                <description>LVGS_COLLAPSED</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The group is collapsed.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b></b>
+                </description>
+              </item>
+              <item>
+                <description>LVGS_HIDDEN</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The group is hidden.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b></b>
+                </description>
+              </item>
+              <item>
+                <description>LVGS_NOHEADER</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>
+              <a href="https://docs.microsoft.com//windows/desktop/Controls/common-control-versions">Version 6.00 and later</a>. The group does not display a header.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b></b>
+                </description>
+              </item>
+              <item>
+                <description>LVGS_COLLAPSIBLE</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>
+              <a href="https://docs.microsoft.com//windows/desktop/Controls/common-control-versions">Version 6.00 and later</a>. The group can be collapsed.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b></b>
+                </description>
+              </item>
+              <item>
+                <description>LVGS_FOCUSED</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>
+              <a href="https://docs.microsoft.com//windows/desktop/Controls/common-control-versions">Version 6.00 and later</a>. The group has keyboard focus.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b></b>
+                </description>
+              </item>
+              <item>
+                <description>LVGS_SELECTED</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>
+              <a href="https://docs.microsoft.com//windows/desktop/Controls/common-control-versions">Version 6.00 and later</a>. The group is selected.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b></b>
+                </description>
+              </item>
+              <item>
+                <description>LVGS_SUBSETED</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>
+              <a href="https://docs.microsoft.com//windows/desktop/Controls/common-control-versions">Version 6.00 and later</a>. The group displays only a portion of its items.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b></b>
+                </description>
+              </item>
+              <item>
+                <description>LVGS_SUBSETLINKFOCUSED</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>
+              <a href="https://docs.microsoft.com//windows/desktop/Controls/common-control-versions">Version 6.00 and later</a>. The subset link of the group has keyboard focus.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="LVGROUP.uAlign">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Indicates the alignment of the header or footer text for the group. It can have one or more of the following values. Use one of the header flags. Footer flags are optional.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b></b>
+                </description>
+              </item>
+              <item>
+                <description>LVGA_FOOTER_CENTER</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Footer text is centered horizontally in the window.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b></b>
+                </description>
+              </item>
+              <item>
+                <description>LVGA_FOOTER_LEFT</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Footer text is aligned at the left of the window.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b></b>
+                </description>
+              </item>
+              <item>
+                <description>LVGA_FOOTER_RIGHT</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Footer text is aligned at the right of the window.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b></b>
+                </description>
+              </item>
+              <item>
+                <description>LVGA_HEADER_CENTER</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Header text is centered horizontally in the window.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b></b>
+                </description>
+              </item>
+              <item>
+                <description>LVGA_HEADER_LEFT</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Header text is aligned at the left of the window.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b></b>
+                </description>
+              </item>
+              <item>
+                <description>LVGA_HEADER_RIGHT</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Header text is aligned at the right of the window.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="LVGROUP.pszSubtitle">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPWSTR</a></b></para>
+      <para>Pointer to a null-terminated string that contains the subtitle text when item information is being set. If group information is being retrieved, this member specifies the address of the buffer that receives the subtitle text. This element is drawn under the header text.</para>
+    </summary>
+  </member>
+  <member name="LVGROUP.cchSubtitle">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Size, in <b>TCHAR</b>s, of the buffer pointed to by the <b>pszSubtitle</b> member. If the structure is not receiving information about a group, this member is ignored.</para>
+    </summary>
+  </member>
+  <member name="LVGROUP.pszTask">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPWSTR</a></b></para>
+      <para>Pointer to a null-terminated string that contains the text for a task link when item information is being set. If group information is being retrieved, this member specifies the address of the buffer that receives the task text. This item is drawn right-aligned opposite the header text. When clicked by the user, the task link generates an <a href="https://docs.microsoft.com//windows/desktop/Controls/lvn-linkclick">LVN_LINKCLICK</a> notification.</para>
+    </summary>
+  </member>
+  <member name="LVGROUP.cchTask">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Size in <b>TCHAR</b>s of the buffer pointed to by the <b>pszTask</b> member. If the structure is not receiving information about a group, this member is ignored.</para>
+    </summary>
+  </member>
+  <member name="LVGROUP.pszDescriptionTop">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPWSTR</a></b></para>
+      <para>Pointer to a null-terminated string that contains the top description text when item information is being set. If group information is being retrieved, this member specifies the address of the buffer that receives the top description text. This item is drawn opposite the title image when there is a title image, no extended image, and <b>uAlign</b>==<b>LVGA_HEADER_CENTER</b>.</para>
+    </summary>
+  </member>
+  <member name="LVGROUP.cchDescriptionTop">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Size in <b>TCHAR</b>s of the buffer pointed to by the <b>pszDescriptionTop</b> member. If the structure is not receiving information about a group, this member is ignored.</para>
+    </summary>
+  </member>
+  <member name="LVGROUP.pszDescriptionBottom">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPWSTR</a></b></para>
+      <para>Pointer to a null-terminated string that contains the bottom description text when item information is being set. If group information is being retrieved, this member specifies the address of the buffer that receives the bottom description text. This item is drawn under the top description text when there is a title image, no extended image, and <b>uAlign</b>==<b>LVGA_HEADER_CENTER</b>.</para>
+    </summary>
+  </member>
+  <member name="LVGROUP.cchDescriptionBottom">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Size in <b>TCHAR</b>s of the buffer pointed to by the <b>pszDescriptionBottom</b> member. If the structure is not receiving information about a group, this member is ignored.</para>
+    </summary>
+  </member>
+  <member name="LVGROUP.iTitleImage">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>Index of the title image in the control imagelist.</para>
+    </summary>
+  </member>
+  <member name="LVGROUP.iExtendedImage">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>Index of the extended image in the control imagelist.</para>
+    </summary>
+  </member>
+  <member name="LVGROUP.iFirstItem">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>Read-only.</para>
+    </summary>
+  </member>
+  <member name="LVGROUP.cItems">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Read-only in non-owner data mode.</para>
+    </summary>
+  </member>
+  <member name="LVGROUP.pszSubsetTitle">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPWSTR</a></b></para>
+      <para>
+        <b>NULL</b> if group is not a subset. Pointer to a null-terminated string that contains the subset title text when item information is being set. If group information is being retrieved, this member specifies the address of the buffer that receives the subset title text.</para>
+    </summary>
+  </member>
+  <member name="LVGROUP.cchSubsetTitle">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Size in <b>TCHAR</b>s of the buffer pointed to by the <b>pszSubsetTitle</b> member. If the structure is not receiving information about a group, this member is ignored.</para>
+    </summary>
+  </member>
+</doc>

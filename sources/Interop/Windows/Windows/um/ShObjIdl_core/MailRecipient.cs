@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MailRecipient.xml' path='doc/member[@name="MailRecipient"]/*' />
 [Guid("9E56BE60-C50F-11CF-9A2C-00A0C90A90CE")]
 public partial struct MailRecipient
 {

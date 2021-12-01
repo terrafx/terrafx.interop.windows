@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="INTERACTION_STATE">
+    <summary>
+      <para>Specifies the state of the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/interaction-context-portal">Interaction Context</a> object.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/nf-interactioncontext-getstateinteractioncontext">GetStateInteractionContext</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/enumerations">Interaction Context Enumerations</seealso>
+  </member>
+  <member name="INTERACTION_STATE.INTERACTION_STATE_IDLE">
+    <summary>
+      <para>There are no ongoing interactions and all transitional states (inertia, double tap) are complete. It is safe to reuse the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/interaction-context-portal">Interaction Context</a> object.</para>
+    </summary>
+  </member>
+  <member name="INTERACTION_STATE.INTERACTION_STATE_IN_INTERACTION">
+    <summary>
+      <para>There is an ongoing interaction. One or more contacts are detected, or inertia is in progress.</para>
+    </summary>
+  </member>
+  <member name="INTERACTION_STATE.INTERACTION_STATE_POSSIBLE_DOUBLE_TAP">
+    <summary>
+      <para>All contacts are lifted, but the time threshold for double tap has not been crossed.</para>
+    </summary>
+  </member>
+  <member name="INTERACTION_STATE.INTERACTION_STATE_MAX">
+    <summary>
+      <para>Maximum number of interactions exceeded.</para>
+    </summary>
+  </member>
+</doc>

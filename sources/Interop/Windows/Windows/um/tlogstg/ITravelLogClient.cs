@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITravelLogClient.xml' path='doc/member[@name="ITravelLogClient"]/*' />
 [Guid("241C033E-E659-43DA-AA4D-4086DBC4758D")]
 [NativeTypeName("struct ITravelLogClient : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITravelLogClient : ITravelLogClient.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITravelLogClient : ITravelLogClient.Interface
         return ((delegate* unmanaged<ITravelLogClient*, Guid*, void**, int>)(lpVtbl[0]))((ITravelLogClient*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITravelLogClient : ITravelLogClient.Interface
         return ((delegate* unmanaged<ITravelLogClient*, uint>)(lpVtbl[1]))((ITravelLogClient*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITravelLogClient : ITravelLogClient.Interface
         return ((delegate* unmanaged<ITravelLogClient*, uint>)(lpVtbl[2]))((ITravelLogClient*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITravelLogClient.xml' path='doc/member[@name="ITravelLogClient.FindWindowByIndex"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT FindWindowByIndex([NativeTypeName("DWORD")] uint dwID, IUnknown** ppunk)
@@ -46,6 +51,7 @@ public unsafe partial struct ITravelLogClient : ITravelLogClient.Interface
         return ((delegate* unmanaged<ITravelLogClient*, uint, IUnknown**, int>)(lpVtbl[3]))((ITravelLogClient*)Unsafe.AsPointer(ref this), dwID, ppunk);
     }
 
+    /// <include file='ITravelLogClient.xml' path='doc/member[@name="ITravelLogClient.GetWindowData"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetWindowData(IStream* pStream, [NativeTypeName("LPWINDOWDATA")] WINDOWDATA* pWinData)
@@ -53,6 +59,7 @@ public unsafe partial struct ITravelLogClient : ITravelLogClient.Interface
         return ((delegate* unmanaged<ITravelLogClient*, IStream*, WINDOWDATA*, int>)(lpVtbl[4]))((ITravelLogClient*)Unsafe.AsPointer(ref this), pStream, pWinData);
     }
 
+    /// <include file='ITravelLogClient.xml' path='doc/member[@name="ITravelLogClient.LoadHistoryPosition"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT LoadHistoryPosition([NativeTypeName("LPWSTR")] ushort* pszUrlLocation, [NativeTypeName("DWORD")] uint dwPosition)

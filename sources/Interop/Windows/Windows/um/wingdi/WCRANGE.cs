@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WCRANGE.xml' path='doc/member[@name="WCRANGE"]/*' />
 public partial struct WCRANGE
 {
+    /// <include file='WCRANGE.xml' path='doc/member[@name="WCRANGE.wcLow"]/*' />
     [NativeTypeName("WCHAR")]
     public ushort wcLow;
 
+    /// <include file='WCRANGE.xml' path='doc/member[@name="WCRANGE.cGlyphs"]/*' />
     public ushort cGlyphs;
 }

@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFCaptureEngineOnSampleCallback.OnSample">
+    <summary>
+      <para>Called when the capture sink receives a sample.</para>
+    </summary>
+    <param name="pSample">
+      <para>A pointer to the <see cref="IMFSample" /> interface. Use this interface to get the time stamp, duration, and stream data. For more information, see <a href="https://docs.microsoft.com//windows/desktop/medfound/media-samples">Media Samples</a>. This parameter can be <b>NULL</b>, so make sure to check for a <b>NULL</b> value before you dereference the pointer.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFCaptureEngineOnSampleCallback" />
+  </member>
+  <member name="IMFCaptureEngineOnSampleCallback">
+    <summary>
+      <para>Callback interface to receive data from the capture engine.</para>
+    </summary>
+    <remarks>
+      <para>To set the callback interface, call one of the following methods.</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <see cref="IMFCapturePhotoSink.SetSampleCallback" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IMFCapturePreviewSink.SetSampleCallback" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IMFCaptureRecordSink.SetSampleCallback" />
+          </description>
+        </item>
+      </list>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+  </member>
+</doc>

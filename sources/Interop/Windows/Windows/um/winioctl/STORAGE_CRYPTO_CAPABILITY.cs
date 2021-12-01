@@ -5,21 +5,28 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STORAGE_CRYPTO_CAPABILITY.xml' path='doc/member[@name="STORAGE_CRYPTO_CAPABILITY"]/*' />
 public partial struct STORAGE_CRYPTO_CAPABILITY
 {
+    /// <include file='STORAGE_CRYPTO_CAPABILITY.xml' path='doc/member[@name="STORAGE_CRYPTO_CAPABILITY.Version"]/*' />
     [NativeTypeName("DWORD")]
     public uint Version;
 
+    /// <include file='STORAGE_CRYPTO_CAPABILITY.xml' path='doc/member[@name="STORAGE_CRYPTO_CAPABILITY.Size"]/*' />
     [NativeTypeName("DWORD")]
     public uint Size;
 
+    /// <include file='STORAGE_CRYPTO_CAPABILITY.xml' path='doc/member[@name="STORAGE_CRYPTO_CAPABILITY.CryptoCapabilityIndex"]/*' />
     [NativeTypeName("DWORD")]
     public uint CryptoCapabilityIndex;
 
+    /// <include file='STORAGE_CRYPTO_CAPABILITY.xml' path='doc/member[@name="STORAGE_CRYPTO_CAPABILITY.AlgorithmId"]/*' />
     public STORAGE_CRYPTO_ALGORITHM_ID AlgorithmId;
 
+    /// <include file='STORAGE_CRYPTO_CAPABILITY.xml' path='doc/member[@name="STORAGE_CRYPTO_CAPABILITY.KeySize"]/*' />
     public STORAGE_CRYPTO_KEY_SIZE KeySize;
 
+    /// <include file='STORAGE_CRYPTO_CAPABILITY.xml' path='doc/member[@name="STORAGE_CRYPTO_CAPABILITY.DataUnitSizeBitmask"]/*' />
     [NativeTypeName("DWORD")]
     public uint DataUnitSizeBitmask;
 }

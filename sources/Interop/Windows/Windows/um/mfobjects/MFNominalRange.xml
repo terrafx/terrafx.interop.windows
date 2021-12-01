@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MFNominalRange">
+    <summary>
+      <para>Specifies whether color data includes headroom and toeroom. Headroom allows for values beyond 1.0 white ("whiter than white"), and toeroom allows for values below reference 0.0 black ("blacker than black").</para>
+    </summary>
+    <remarks>
+      <para>This enumeration is used with the <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-mt-video-nominal-range-attribute">MF_MT_VIDEO_NOMINAL_RANGE</a> attribute.</para>
+      <para>For more information about these values, see the remarks for the <see cref="DXVA2_NominalRange" /> enumeration, which is the DirectX Video Acceleration (DXVA) equivalent of this enumeration.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/extended-color-information">Extended Color Information</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/video-media-types">Video Media Types</seealso>
+  </member>
+  <member name="MFNominalRange.MFNominalRange_Unknown">
+    <summary>
+      <para>Unknown nominal range.</para>
+    </summary>
+  </member>
+  <member name="MFNominalRange.MFNominalRange_Normal">
+    <summary>
+      <para>Equivalent to MFNominalRange_0_255.</para>
+    </summary>
+  </member>
+  <member name="MFNominalRange.MFNominalRange_Wide">
+    <summary>
+      <para>Equivalent to MFNominalRange_16_235.</para>
+    </summary>
+  </member>
+  <member name="MFNominalRange.MFNominalRange_0_255">
+    <summary>
+      <para>The normalized range [0...1] maps to [0...255] for 8-bit samples or [0...1023] for 10-bit samples.</para>
+    </summary>
+  </member>
+  <member name="MFNominalRange.MFNominalRange_16_235">
+    <summary>
+      <para>The normalized range [0...1] maps to [16...235] for 8-bit samples or [64...940] for 10-bit samples.</para>
+    </summary>
+  </member>
+  <member name="MFNominalRange.MFNominalRange_48_208">
+    <summary>
+      <para>The normalized range [0..1] maps to [48...208] for 8-bit samples or [64...940] for 10-bit samples.</para>
+    </summary>
+  </member>
+  <member name="MFNominalRange.MFNominalRange_64_127">
+    <summary>
+      <para>The normalized range [0..1] maps to [64...127] for 8-bit samples or [256...508] for 10-bit samples. This range is used in the xRGB color space.</para>
+      <para>
+        <b>Note</b>  Requires Windows 7 or later.</para>
+    </summary>
+  </member>
+  <member name="MFNominalRange.MFNominalRange_Last">
+    <summary></summary>
+  </member>
+  <member name="MFNominalRange.MFNominalRange_ForceDWORD">
+    <summary></summary>
+  </member>
+</doc>

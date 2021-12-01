@@ -7,22 +7,28 @@ using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='FPO_DATA.xml' path='doc/member[@name="FPO_DATA"]/*' />
 public partial struct FPO_DATA
 {
+    /// <include file='FPO_DATA.xml' path='doc/member[@name="FPO_DATA.ulOffStart"]/*' />
     [NativeTypeName("DWORD")]
     public uint ulOffStart;
 
+    /// <include file='FPO_DATA.xml' path='doc/member[@name="FPO_DATA.cbProcSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbProcSize;
 
+    /// <include file='FPO_DATA.xml' path='doc/member[@name="FPO_DATA.cdwLocals"]/*' />
     [NativeTypeName("DWORD")]
     public uint cdwLocals;
 
+    /// <include file='FPO_DATA.xml' path='doc/member[@name="FPO_DATA.cdwParams"]/*' />
     [NativeTypeName("WORD")]
     public ushort cdwParams;
 
     public ushort _bitfield;
 
+    /// <include file='FPO_DATA.xml' path='doc/member[@name="FPO_DATA.cbProlog"]/*' />
     [NativeTypeName("WORD : 8")]
     public ushort cbProlog
     {
@@ -39,6 +45,7 @@ public partial struct FPO_DATA
         }
     }
 
+    /// <include file='FPO_DATA.xml' path='doc/member[@name="FPO_DATA.cbRegs"]/*' />
     [NativeTypeName("WORD : 3")]
     public ushort cbRegs
     {
@@ -55,6 +62,7 @@ public partial struct FPO_DATA
         }
     }
 
+    /// <include file='FPO_DATA.xml' path='doc/member[@name="FPO_DATA.fHasSEH"]/*' />
     [NativeTypeName("WORD : 1")]
     public ushort fHasSEH
     {
@@ -71,6 +79,7 @@ public partial struct FPO_DATA
         }
     }
 
+    /// <include file='FPO_DATA.xml' path='doc/member[@name="FPO_DATA.fUseBP"]/*' />
     [NativeTypeName("WORD : 1")]
     public ushort fUseBP
     {
@@ -87,6 +96,7 @@ public partial struct FPO_DATA
         }
     }
 
+    /// <include file='FPO_DATA.xml' path='doc/member[@name="FPO_DATA.reserved"]/*' />
     [NativeTypeName("WORD : 1")]
     public ushort reserved
     {
@@ -103,6 +113,7 @@ public partial struct FPO_DATA
         }
     }
 
+    /// <include file='FPO_DATA.xml' path='doc/member[@name="FPO_DATA.cbFrame"]/*' />
     [NativeTypeName("WORD : 2")]
     public ushort cbFrame
     {

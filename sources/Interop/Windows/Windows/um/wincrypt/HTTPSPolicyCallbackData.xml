@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="HTTPSPolicyCallbackData">
+    <summary>
+      <para>The <b>SSL_EXTRA_CERT_CHAIN_POLICY_PARA</b> structure, also identified by the name <b>HTTPSPolicyCallbackData</b>,  holds policy information used in the verification of <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">Secure Sockets Layer</a> (SSL) client/server certificate chains.</para>
+    </summary>
+  </member>
+  <member name="HTTPSPolicyCallbackData.DUMMYUNIONNAME">
+    <summary></summary>
+  </member>
+  <member name="HTTPSPolicyCallbackData.DUMMYUNIONNAME.cbStruct">
+    <summary>
+      <para>
+        <b>DWORD</b> value that specifies the number of bytes in this structure.</para>
+    </summary>
+  </member>
+  <member name="HTTPSPolicyCallbackData.DUMMYUNIONNAME.cbSize">
+    <summary>
+      <para>
+        <b>DWORD</b> value that specifies the size, in bytes,  of this structure.</para>
+    </summary>
+  </member>
+  <member name="HTTPSPolicyCallbackData.dwAuthType">
+    <summary>
+      <para>
+        <b>DWORD</b> value that specifies the type of authentication. This member can be one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>AUTHTYPE_CLIENT</b>
+                </description>
+              </item>
+              <item>
+                <description>1</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The client is being authenticated.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>AUTHTYPE_SERVER</b>
+                </description>
+              </item>
+              <item>
+                <description>2</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The server is being authenticated.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="HTTPSPolicyCallbackData.fdwChecks">
+    <summary>
+      <para>
+        <b>DWORD</b> value that specifies certificate errors to ignore. This can be a bitwise combination of the following flags.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>SECURITY_FLAG_IGNORE_REVOCATION</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000080</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Ignore errors associated with a revoked certificate.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>SECURITY_FLAG_IGNORE_UNKNOWN_CA</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000100</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Ignore errors associated with an unknown <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certification authority</a>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>SECURITY_FLAG_IGNORE_WRONG_USAGE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000200</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Ignore errors associated with the use of a certificate.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>SECURITY_FLAG_IGNORE_CERT_CN_INVALID</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00001000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Ignore errors associated with a certificate that contains a common name that is not valid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>SECURITY_FLAG_IGNORE_CERT_DATE_INVALID</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00002000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Ignore errors associated with an expired certificate.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="HTTPSPolicyCallbackData.pwszServerName">
+    <summary>
+      <para>A pointer to a null-terminated wide character string that contains the server name. This member is ignored if the value of the <b>dwAuthType</b> member is <b>AUTHTYPE_CLIENT</b>.</para>
+      <para>If the string is Punycode encoded, then the server name from the certificate, either the DNS name or common name, is converted to a Punycode encoded string. Matching is then performed, label-by-label if the name contains wildcards, or a case-insensitive exact match otherwise.</para>
+      <para>If the string contains Unicode characters outside of the ASCII character set and the subject name, either the DNS name or common name, is a Punycode encoded string then it is Punycode encoded before comparison.</para>
+    </summary>
+  </member>
+</doc>

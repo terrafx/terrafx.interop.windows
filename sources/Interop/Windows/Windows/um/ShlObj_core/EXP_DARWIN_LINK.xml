@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="EXP_DARWIN_LINK">
+    <summary>
+      <para>Holds an extra data block used by <see cref="IShellLinkDataList" />. It holds the link's Windows Installer ID.</para>
+    </summary>
+    <remarks>
+      <para>
+        <see cref="IShellLinkDataList.GetFlags" /> returns the flag SLDF_HAS_DARWINID for links that have a darwin signature.</para>
+    </remarks>
+    <seealso cref="IShellLinkDataList.GetFlags" />
+  </member>
+  <member name="EXP_DARWIN_LINK.dbh">
+    <summary>
+      <para>Type: <b><see cref="DATABLOCK_HEADER" /></b></para>
+      <para>
+        <see cref="DATABLOCK_HEADER" /> structure stating the size and signature of the <b>EXP_DARWIN_LINK</b> structure. The following is the only recognized signature value.</para>
+      <h4>EXP_DARWIN_ID_SIG</h4>
+      <para>The <b>EXP_DARWIN_LINK</b> structure contains a Windows Installer ID.</para>
+    </summary>
+  </member>
+  <member name="EXP_DARWIN_LINK.DUMMYSTRUCTNAME">
+    <summary></summary>
+  </member>
+  <member name="EXP_DARWIN_LINK.szDarwinID">
+    <summary>
+      <para>Type: <b>__wchar_t[MAX_PATH]</b></para>
+      <para>The link's ID in the form of an ANSI string.</para>
+    </summary>
+  </member>
+  <member name="EXP_DARWIN_LINK.szwDarwinID">
+    <summary>
+      <para>Type: <b>WCHAR[MAX_PATH]</b></para>
+      <para>The link's ID in the form of an Unicode string.</para>
+    </summary>
+  </member>
+</doc>

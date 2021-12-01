@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="TRANSACTION_NOTIFICATION_RECOVERY_ARGUMENT">
+    <summary>
+      <para>Indicates the transaction  to be recovered. This structure is sent with a recovery notification.</para>
+    </summary>
+    <seealso cref="GetNotificationResourceManager" />
+    <seealso cref="GetNotificationResourceManagerAsync" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/Ktm/kernel-transaction-manager-structures">Kernel Transaction Manager Structures</seealso>
+    <seealso cref="TRANSACTION_NOTIFICATION" />
+  </member>
+  <member name="TRANSACTION_NOTIFICATION_RECOVERY_ARGUMENT.EnlistmentId">
+    <summary>
+      <para>The enlistment identifier.</para>
+    </summary>
+  </member>
+  <member name="TRANSACTION_NOTIFICATION_RECOVERY_ARGUMENT.UOW">
+    <summary>
+      <para>The transaction identifier, sometimes called the unit of work.</para>
+    </summary>
+  </member>
+</doc>

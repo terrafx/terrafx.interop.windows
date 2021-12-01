@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DISPID_SpeechPhraseRules.xml' path='doc/member[@name="DISPID_SpeechPhraseRules"]/*' />
 public enum DISPID_SpeechPhraseRules
 {
+    /// <include file='DISPID_SpeechPhraseRules.xml' path='doc/member[@name="DISPID_SpeechPhraseRules.DISPID_SPRulesCount"]/*' />
     DISPID_SPRulesCount = 1,
+
+    /// <include file='DISPID_SpeechPhraseRules.xml' path='doc/member[@name="DISPID_SpeechPhraseRules.DISPID_SPRulesItem"]/*' />
     DISPID_SPRulesItem = (0),
+
+    /// <include file='DISPID_SpeechPhraseRules.xml' path='doc/member[@name="DISPID_SpeechPhraseRules.DISPID_SPRules_NewEnum"]/*' />
     DISPID_SPRules_NewEnum = (-4),
 }

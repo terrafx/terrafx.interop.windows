@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CACLIPDATA.xml' path='doc/member[@name="CACLIPDATA"]/*' />
 public unsafe partial struct CACLIPDATA
 {
+    /// <include file='CACLIPDATA.xml' path='doc/member[@name="CACLIPDATA.cElems"]/*' />
     [NativeTypeName("ULONG")]
     public uint cElems;
 
+    /// <include file='CACLIPDATA.xml' path='doc/member[@name="CACLIPDATA.pElems"]/*' />
     public CLIPDATA* pElems;
 }

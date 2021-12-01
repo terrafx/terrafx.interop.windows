@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='eAVEncDDProductionRoomType.xml' path='doc/member[@name="eAVEncDDProductionRoomType"]/*' />
 public enum eAVEncDDProductionRoomType
 {
+    /// <include file='eAVEncDDProductionRoomType.xml' path='doc/member[@name="eAVEncDDProductionRoomType.eAVEncDDProductionRoomType_NotIndicated"]/*' />
     eAVEncDDProductionRoomType_NotIndicated = 0,
+
+    /// <include file='eAVEncDDProductionRoomType.xml' path='doc/member[@name="eAVEncDDProductionRoomType.eAVEncDDProductionRoomType_Large"]/*' />
     eAVEncDDProductionRoomType_Large = 1,
+
+    /// <include file='eAVEncDDProductionRoomType.xml' path='doc/member[@name="eAVEncDDProductionRoomType.eAVEncDDProductionRoomType_Small"]/*' />
     eAVEncDDProductionRoomType_Small = 2,
 }

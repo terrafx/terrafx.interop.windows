@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="UMS_CREATE_THREAD_ATTRIBUTES">
+    <summary>
+      <para>Specifies attributes for a user-mode scheduling (UMS) worker thread.</para>
+      <para>This structure is used with the <see cref="UpdateProcThreadAttribute" /> function.</para>
+    </summary>
+  </member>
+  <member name="UMS_CREATE_THREAD_ATTRIBUTES.UmsVersion">
+    <summary>
+      <para>The UMS version for which the application was built. This parameter must be <b>UMS_VERSION</b>.</para>
+    </summary>
+  </member>
+  <member name="UMS_CREATE_THREAD_ATTRIBUTES.UmsContext">
+    <summary>
+      <para>A pointer to a UMS thread context for the worker thread to be created. This pointer is provided by the <see cref="CreateUmsThreadContext" /> function.</para>
+    </summary>
+  </member>
+  <member name="UMS_CREATE_THREAD_ATTRIBUTES.UmsCompletionList">
+    <summary>
+      <para>A pointer to a UMS completion list. This pointer is provided by the <see cref="CreateUmsCompletionList" /> function. The newly created worker thread is queued to the specified completion list.</para>
+    </summary>
+  </member>
+</doc>

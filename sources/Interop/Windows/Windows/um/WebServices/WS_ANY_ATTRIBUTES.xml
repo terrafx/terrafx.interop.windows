@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_ANY_ATTRIBUTES">
+    <summary>
+      <para>This type is used to store a set of attributes
+that have not been directly mapped to field of
+a structure.</para>
+    </summary>
+    <remarks>
+      <para>This structure is typically used to preserve unknown attributes
+when deserializing a structure.
+See <see cref="WS_ANY_ATTRIBUTES_FIELD_MAPPING" /> and <see cref="WS_ANY_ATTRIBUTES_TYPE" /> for more
+information.</para>
+    </remarks>
+  </member>
+  <member name="WS_ANY_ATTRIBUTES.attributes">
+    <summary>
+      <para>An array of attributes.  This field may
+be <b>NULL</b> if attributeCount is zero.</para>
+    </summary>
+  </member>
+  <member name="WS_ANY_ATTRIBUTES.attributeCount">
+    <summary>
+      <para>The number of attributes in the array.</para>
+    </summary>
+  </member>
+</doc>

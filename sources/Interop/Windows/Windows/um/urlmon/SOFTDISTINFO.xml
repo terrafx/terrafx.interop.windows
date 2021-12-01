@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SOFTDISTINFO">
+    <summary>
+      <para>Contains information about a software update.</para>
+    </summary>
+    <remarks>
+      <para>The most-significant unsigned long integer of a version number contains the major and minor version numbers. The least-significant unsigned long integer of the version number contains the custom version and build numbers.</para>
+    </remarks>
+  </member>
+  <member name="SOFTDISTINFO.cbSize">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The size of the structure, in bytes.</para>
+    </summary>
+  </member>
+  <member name="SOFTDISTINFO.dwFlags">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>This parameter can take one of the following values.</para>
+      <h4>SOFTDIST_FLAG_USAGE_EMAIL</h4>
+      <h4>SOFTDIST_FLAG_USAGE_PRECACHE</h4>
+      <h4>SOFTDIST_FLAG_USAGE_AUTOINSTALL</h4>
+      <h4>SOFTDIST_FLAG_DELETE_SUBSCRIPTION</h4>
+    </summary>
+  </member>
+  <member name="SOFTDISTINFO.dwAdState">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The advertised state. It can take one of the following values.</para>
+      <h4>SOFTDIST_ADSTATE_NONE (0x00000000)</h4>
+      <para>"Update available" dialog box has not been presented to the user.</para>
+      <h4>SOFTDIST_ADSTATE_AVAILABLE (0x00000001)</h4>
+      <para>"Files downloaded" dialog box has not been presented to the user.</para>
+      <h4>SOFTDIST_ADSTATE_DOWNLOADED (0x00000002)</h4>
+      <para>"Program installed" dialog box has not been presented to the user.</para>
+      <h4>SOFTDIST_ADSTATE_INSTALLED (0x00000003)</h4>
+      <para>"Program installed" dialog box has been presented to the user.</para>
+    </summary>
+  </member>
+  <member name="SOFTDISTINFO.szTitle">
+    <summary>
+      <para>Type: <b>LPWSTR</b></para>
+      <para>A string that contains the contents of the TITLE flag from the associated .cdf file.</para>
+    </summary>
+  </member>
+  <member name="SOFTDISTINFO.szAbstract">
+    <summary>
+      <para>Type: <b>LPWSTR</b></para>
+      <para>A string that contains the contents of the ABSTRACT flag from the associated .cdf file.</para>
+    </summary>
+  </member>
+  <member name="SOFTDISTINFO.szHREF">
+    <summary>
+      <para>Type: <b>LPWSTR</b></para>
+      <para>A string that contains the URL of the webpage to advertise or install the update.</para>
+    </summary>
+  </member>
+  <member name="SOFTDISTINFO.dwInstalledVersionMS">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The most-significant unsigned long integer value of the installed version number.</para>
+    </summary>
+  </member>
+  <member name="SOFTDISTINFO.dwInstalledVersionLS">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The least-significant unsigned long integer value of the installed version number.</para>
+    </summary>
+  </member>
+  <member name="SOFTDISTINFO.dwUpdateVersionMS">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The most-significant unsigned long integer value of the update version number.</para>
+    </summary>
+  </member>
+  <member name="SOFTDISTINFO.dwUpdateVersionLS">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The least-significant unsigned long integer value of the update version number.</para>
+    </summary>
+  </member>
+  <member name="SOFTDISTINFO.dwAdvertisedVersionMS">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The most-significant unsigned long integer value of the advertised version number.</para>
+    </summary>
+  </member>
+  <member name="SOFTDISTINFO.dwAdvertisedVersionLS">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The least-significant unsigned long integer value of the advertised version number.</para>
+    </summary>
+  </member>
+  <member name="SOFTDISTINFO.dwReserved">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>Reserved. Must be set to zero.</para>
+    </summary>
+  </member>
+</doc>

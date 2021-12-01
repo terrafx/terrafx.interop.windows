@@ -7,16 +7,21 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MFPinholeCameraIntrinsic_IntrinsicModel.xml' path='doc/member[@name="MFPinholeCameraIntrinsic_IntrinsicModel"]/*' />
 [SupportedOSPlatform("windows10.0")]
 public partial struct MFPinholeCameraIntrinsic_IntrinsicModel
 {
+    /// <include file='MFPinholeCameraIntrinsic_IntrinsicModel.xml' path='doc/member[@name="MFPinholeCameraIntrinsic_IntrinsicModel.Width"]/*' />
     [NativeTypeName("UINT32")]
     public uint Width;
 
+    /// <include file='MFPinholeCameraIntrinsic_IntrinsicModel.xml' path='doc/member[@name="MFPinholeCameraIntrinsic_IntrinsicModel.Height"]/*' />
     [NativeTypeName("UINT32")]
     public uint Height;
 
+    /// <include file='MFPinholeCameraIntrinsic_IntrinsicModel.xml' path='doc/member[@name="MFPinholeCameraIntrinsic_IntrinsicModel.CameraModel"]/*' />
     public MFCameraIntrinsic_PinholeCameraModel CameraModel;
 
+    /// <include file='MFPinholeCameraIntrinsic_IntrinsicModel.xml' path='doc/member[@name="MFPinholeCameraIntrinsic_IntrinsicModel.DistortionModel"]/*' />
     public MFCameraIntrinsic_DistortionModel DistortionModel;
 }

@@ -7,11 +7,14 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SONARCWAVEFORMAT.xml' path='doc/member[@name="SONARCWAVEFORMAT"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct SONARCWAVEFORMAT
 {
+    /// <include file='SONARCWAVEFORMAT.xml' path='doc/member[@name="SONARCWAVEFORMAT.wfx"]/*' />
     public WAVEFORMATEX wfx;
 
+    /// <include file='SONARCWAVEFORMAT.xml' path='doc/member[@name="SONARCWAVEFORMAT.wCompType"]/*' />
     [NativeTypeName("WORD")]
     public ushort wCompType;
 }

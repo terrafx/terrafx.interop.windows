@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='GPO_LINK.xml' path='doc/member[@name="GPO_LINK"]/*' />
 public enum GPO_LINK
 {
+    /// <include file='GPO_LINK.xml' path='doc/member[@name="GPO_LINK.GPLinkUnknown"]/*' />
     GPLinkUnknown = 0,
+
+    /// <include file='GPO_LINK.xml' path='doc/member[@name="GPO_LINK.GPLinkMachine"]/*' />
     GPLinkMachine,
+
+    /// <include file='GPO_LINK.xml' path='doc/member[@name="GPO_LINK.GPLinkSite"]/*' />
     GPLinkSite,
+
+    /// <include file='GPO_LINK.xml' path='doc/member[@name="GPO_LINK.GPLinkDomain"]/*' />
     GPLinkDomain,
+
+    /// <include file='GPO_LINK.xml' path='doc/member[@name="GPO_LINK.GPLinkOrganizationalUnit"]/*' />
     GPLinkOrganizationalUnit,
 }

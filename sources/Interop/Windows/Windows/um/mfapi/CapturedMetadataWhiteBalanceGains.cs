@@ -5,11 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CapturedMetadataWhiteBalanceGains.xml' path='doc/member[@name="CapturedMetadataWhiteBalanceGains"]/*' />
 public partial struct CapturedMetadataWhiteBalanceGains
 {
+    /// <include file='CapturedMetadataWhiteBalanceGains.xml' path='doc/member[@name="CapturedMetadataWhiteBalanceGains.R"]/*' />
     public float R;
 
+    /// <include file='CapturedMetadataWhiteBalanceGains.xml' path='doc/member[@name="CapturedMetadataWhiteBalanceGains.G"]/*' />
     public float G;
 
+    /// <include file='CapturedMetadataWhiteBalanceGains.xml' path='doc/member[@name="CapturedMetadataWhiteBalanceGains.B"]/*' />
     public float B;
 }

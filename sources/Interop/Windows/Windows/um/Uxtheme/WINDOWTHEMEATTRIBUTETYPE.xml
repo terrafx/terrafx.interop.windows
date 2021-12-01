@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WINDOWTHEMEATTRIBUTETYPE">
+    <summary>
+      <para>Specifies the type of visual style attribute to set on a window.</para>
+    </summary>
+    <seealso cref="SetWindowThemeAttribute" />
+  </member>
+  <member name="WINDOWTHEMEATTRIBUTETYPE.WTA_NONCLIENT">
+    <summary>
+      <para>Non-client area window attributes will be set.</para>
+    </summary>
+  </member>
+</doc>

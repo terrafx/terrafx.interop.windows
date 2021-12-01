@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ITfLangBarItemSink.OnUpdate">
+    <summary>
+      <para>Notifies the language bar of a change in a language bar item.</para>
+    </summary>
+    <param name="dwFlags">
+      <para>Contains a set of flags that indicate changes in the language bar item. This can be a combination of one or more of the <a href="https://docs.microsoft.com//windows/desktop/TSF/tf-lbi--constants">TF_LBI_*</a> values.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>An unspecified error occurred.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>A language bar item should call this method when the internal state of the item changes. TSF will update the language bar user interface appropriately.</para>
+    </remarks>
+    <seealso cref="ITfLangBarItemSink" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/tf-lbi--constants">TF_LBI_* Constants</seealso>
+  </member>
+  <member name="ITfLangBarItemSink">
+    <summary>
+      <para>The <b>ITfLangBarItemSink</b> interface is implemented by the language bar and used by a language bar item provider to notify the language bar of changes to a language bar item.</para>
+      <para>The language bar item provider obtains an instance of this interface when the language bar calls the provider's <see cref="ITfSource.AdviseSink" /> with identifier IID_ITfLangBarItemSink.</para>
+    </summary>
+    <seealso cref="ITfSource.AdviseSink " />
+    <seealso cref="IUnknown" />
+  </member>
+</doc>

@@ -5,13 +5,17 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='BANNER_NOTIFICATION.xml' path='doc/member[@name="BANNER_NOTIFICATION"]/*' />
 public unsafe partial struct BANNER_NOTIFICATION
 {
+    /// <include file='BANNER_NOTIFICATION.xml' path='doc/member[@name="BANNER_NOTIFICATION.@event"]/*' />
     public BANNER_NOTIFICATION_EVENT @event;
 
+    /// <include file='BANNER_NOTIFICATION.xml' path='doc/member[@name="BANNER_NOTIFICATION.providerIdentity"]/*' />
     [NativeTypeName("LPCWSTR")]
     public ushort* providerIdentity;
 
+    /// <include file='BANNER_NOTIFICATION.xml' path='doc/member[@name="BANNER_NOTIFICATION.contentId"]/*' />
     [NativeTypeName("LPCWSTR")]
     public ushort* contentId;
 }

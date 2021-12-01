@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="FILE_ALLOCATED_RANGE_BUFFER">
+    <summary>
+      <para>Indicates a range of bytes in a file. This structure is used with the
+<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_query_allocated_ranges">FSCTL_QUERY_ALLOCATED_RANGES</a> control code. On input, the structure indicates the range of the file to search. On output, the operation retrieves an array of
+<b>FILE_ALLOCATED_RANGE_BUFFER</b> structures to indicate the allocated ranges within the search range.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_query_allocated_ranges">FSCTL_QUERY_ALLOCATED_RANGES</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/FileIO/sparse-files">Sparse Files</seealso>
+  </member>
+  <member name="FILE_ALLOCATED_RANGE_BUFFER.FileOffset">
+    <summary>
+      <para>The file offset of the start of a range of bytes in a file, in bytes.</para>
+    </summary>
+  </member>
+  <member name="FILE_ALLOCATED_RANGE_BUFFER.Length">
+    <summary>
+      <para>The size of the range, in bytes.</para>
+    </summary>
+  </member>
+</doc>

@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SHARDAPPIDINFOLINK">
+    <summary>
+      <para>Contains data used by <see cref="SHAddToRecentDocs" /> to identify both an item, in this case through an <see cref="IShellLink" />, and the process that it is associated with.</para>
+    </summary>
+    <remarks>
+      <para>The <see cref="IShellLink" /> instance pointed to by <b>psl</b> must provide the following:</para>
+      <list type="bullet">
+        <item>
+          <description>Either a pointer to an item identifier list (PIDL) (<see cref="IShellLink.SetIDList" />) or the target path (<see cref="IShellLink.SetPath" /> or <see cref="IShellLink.SetRelativePath" />)</description>
+        </item>
+        <item>
+          <description>Command-line arguments (<see cref="IShellLink.SetArguments" />)</description>
+        </item>
+        <item>
+          <description>Icon location  (<see cref="IShellLink.SetIconLocation" />)</description>
+        </item>
+      </list>
+      <para>The display name must be set through the item's <a href="https://docs.microsoft.com//windows/desktop/properties/props-system-title">System.Title (PKEY_Title)</a> property. The property can directly hold the display name or it can be an indirect string representation, such as "@shell32.dll,-1324", to use a stored string. An indirect string enables the item name to be displayed in the user's selected language.</para>
+      <para>Optionally, the description field (<see cref="IShellLink.SetDescription" />) can be set to provide a custom tooltip for the item in the Jump List.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/shell/appids">Application User Model IDs (AppUserModelIDs)</seealso>
+    <seealso cref="SHARDAPPIDINFO" />
+    <seealso cref="SHARDAPPIDINFOIDLIST" />
+    <seealso cref="SHAddToRecentDocs" />
+  </member>
+  <member name="SHARDAPPIDINFOLINK.psl">
+    <summary>
+      <para>Type: <b><see cref="IShellLink" />*</b></para>
+      <para>Pointer to an <see cref="IShellLink" /> instance that, when launched, opens the item. The shortcut is not added by <see cref="SHAddToRecentDocs" /> to the user's <b>Recent</b> folder (<a href="https://docs.microsoft.com//windows/desktop/shell/csidl">CSIDL_RECENT</a>, <a href="https://docs.microsoft.com//windows/desktop/shell/knownfolderid">FOLDERID_Recent</a>), but it is added to the <b>Recent</b> category in the specified application's Jump List.</para>
+    </summary>
+  </member>
+  <member name="SHARDAPPIDINFOLINK.pszAppID">
+    <summary>
+      <para>Type: <b>PCWSTR</b></para>
+      <para>The application-defined AppUserModelID associated with the item.</para>
+    </summary>
+  </member>
+</doc>

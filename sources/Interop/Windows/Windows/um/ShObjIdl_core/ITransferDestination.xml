@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ITransferDestination.Advise">
+    <summary>
+      <para>Sets up an advisory connection for notifications on the status of file operations.</para>
+    </summary>
+    <param name="psink">
+      <para>Type: <b><see cref="ITransferAdviseSink" />*</b></para>
+      <para>A pointer to an <see cref="ITransferAdviseSink" /> notification interface to update the calling application using methods on this interface.</para>
+    </param>
+    <param name="pdwCookie">
+      <para>Type: <b>DWORD*</b></para>
+      <para>A pointer to a returned token that uniquely identifies this connection. The calling application uses this token later to delete the connection by passing it to the <see cref="ITransferDestination.Unadvise" /> method. If the connection is not successfully established, this value is zero.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Any HRESULTs other than listed indicate a failure.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The Interface successfully associated.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_UNEXPECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The handler can only handle one sink interface.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Call <b>ITransferDestination.Advise</b> before calling any other <see cref="ITransferDestination" /> methods so the handler can callback for any errors that might occur. If not set, the handler should consider it an indication that no feedback is available and do the "default" operation.</para>
+    </remarks>
+  </member>
+  <member name="ITransferDestination.CreateItem">
+    <summary>
+      <para>Creates the specified file.</para>
+    </summary>
+    <param name="pszName">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>A pointer to a null-terminated buffer that contains the name of the file relative to the current directory.</para>
+    </param>
+    <param name="dwAttributes">
+      <para>Type: <b>DWORD</b></para>
+      <para>One or more of the FILE_ATTRIBUTE flags defined in the <see cref="BY_HANDLE_FILE_INFORMATION" /> structure. The most significant value is FILE_ATTRIBUTE_DIRECTORY, which indicates that a folder should be created.</para>
+    </param>
+    <param name="ullSize">
+      <para>Type: <b>ULONGLONG</b></para>
+      <para>The size, in bytes, of the file to create. This value can be 0 if the size is unknown.</para>
+    </param>
+    <param name="flags">
+      <para>Type: <b><see cref="TRANSFER_SOURCE_FLAGS" /></b></para>
+      <para>Flags that control the file operation. One or more of the <see cref="TRANSFER_SOURCE_FLAGS" /> flags.</para>
+    </param>
+    <param name="riidItem">
+      <para>Type: <b>REFIID</b></para>
+      <para>A reference to the IID of the interface to retrieve through <i>ppvItem</i>, typically IID_IShellItem or another interface that derives from it.</para>
+    </param>
+    <param name="ppvItem">
+      <para>Type: <b>void**</b></para>
+      <para>When this method returns, contains the interface pointer requested in <i>riidItem</i>. This is typically <see cref="IShellItem" /> or a derived interface.</para>
+    </param>
+    <param name="riidResources">
+      <para>Type: <b>REFIID</b></para>
+      <para>A reference to the IID of the interface to retrieve through <i>ppvResources</i>, typically IID_IShellItemResources or another interface that derives from it.</para>
+    </param>
+    <param name="ppvResources">
+      <para>Type: <b>void**</b></para>
+      <para>When this method returns, contains the interface pointer requested in <i>riidResources</i>. This is typically <see cref="IShellItemResources" /> or a derived interface.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns a success code if successful, or an error value otherwise. Success codes include:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <b>S_OK</b>: The move succeeded and <i>ppvItem</i> and <i>ppvResources</i> both point to valid objects.</description>
+        </item>
+        <item>
+          <description>
+            <b>COPYENGINE_S_USER_IGNORED</b>: The destination item already exists and has not been overwritten. The values pointed to by <i>ppvItem</i> and <i>ppvResources</i> are <b>NULL</b>. If the caller is implementing a move as a copy and delete operation, the caller should complete the move by deleting the source item.</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method may be used to create a Shell item object representing the destination folder for a copy or move operation. The <see cref="ITransferSource" /> interface provides methods to actually move objects of <see cref="IShellItem" /> to the destination.</para>
+      <para>Call <see cref="ITransferDestination.Advise" /> before calling any other <see cref="ITransferDestination" /> methods so the handler can callback on any errors that might occur. If not set, the handler should consider it an indication that no feedback is available and to do the "default" operation.</para>
+      <para>It is recommended that you use the <b>IID_PPV_ARGS</b> macro, defined in Objbase.h, to package the <i>riidResources</i> and <i>ppvResources</i> parameters. This macro provides the correct IID based on the interface pointed to by the value in <i>ppvResources</i>, which eliminates the possibility of a coding error.</para>
+    </remarks>
+  </member>
+  <member name="ITransferDestination.Unadvise">
+    <summary>
+      <para>Terminates an advisory connection.</para>
+    </summary>
+    <param name="dwCookie">
+      <para>Type: <b>DWORD</b></para>
+      <para>A connection token previously returned from <see cref="ITransferDestination.Advise" />. Identifies the connection to be terminated.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Any HRESULTs other than those listed here indicate a failure.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The connection was successfully terminated.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>CONNECT_E_NOCONNECTION</b>
+            </para>
+          </description>
+          <description>
+            <para>The value in <i>dwCookie</i> does not represent a valid connection.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Terminates an advisory connection previously established through the <see cref="ITransferDestination.Advise" /> method.</para>
+    </remarks>
+  </member>
+  <member name="ITransferDestination">
+    <summary>
+      <para>Exposes methods that create a destination Shell item for a copy or move operation. This interface is provided to allow more control over file operations by providing an <see cref="ITransferDestination.Advise" /> method.</para>
+    </summary>
+    <seealso cref="ITransferSource" />
+  </member>
+</doc>

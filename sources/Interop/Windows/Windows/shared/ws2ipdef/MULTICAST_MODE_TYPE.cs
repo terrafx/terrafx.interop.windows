@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MULTICAST_MODE_TYPE.xml' path='doc/member[@name="MULTICAST_MODE_TYPE"]/*' />
 public enum MULTICAST_MODE_TYPE
 {
+    /// <include file='MULTICAST_MODE_TYPE.xml' path='doc/member[@name="MULTICAST_MODE_TYPE.MCAST_INCLUDE"]/*' />
     MCAST_INCLUDE = 0,
+
+    /// <include file='MULTICAST_MODE_TYPE.xml' path='doc/member[@name="MULTICAST_MODE_TYPE.MCAST_EXCLUDE"]/*' />
     MCAST_EXCLUDE,
 }

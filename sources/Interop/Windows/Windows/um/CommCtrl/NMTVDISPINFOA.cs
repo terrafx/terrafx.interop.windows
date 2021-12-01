@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NMTVDISPINFOA.xml' path='doc/member[@name="NMTVDISPINFOA"]/*' />
 public partial struct NMTVDISPINFOA
 {
+    /// <include file='NMTVDISPINFOA.xml' path='doc/member[@name="NMTVDISPINFOA.hdr"]/*' />
     public NMHDR hdr;
 
+    /// <include file='NMTVDISPINFOA.xml' path='doc/member[@name="NMTVDISPINFOA.item"]/*' />
     public TVITEMA item;
 }

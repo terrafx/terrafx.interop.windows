@@ -5,17 +5,22 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='AM_DVD_YUV.xml' path='doc/member[@name="AM_DVD_YUV"]/*' />
 public partial struct AM_DVD_YUV
 {
+    /// <include file='AM_DVD_YUV.xml' path='doc/member[@name="AM_DVD_YUV.Reserved"]/*' />
     [NativeTypeName("UCHAR")]
     public byte Reserved;
 
+    /// <include file='AM_DVD_YUV.xml' path='doc/member[@name="AM_DVD_YUV.Y"]/*' />
     [NativeTypeName("UCHAR")]
     public byte Y;
 
+    /// <include file='AM_DVD_YUV.xml' path='doc/member[@name="AM_DVD_YUV.U"]/*' />
     [NativeTypeName("UCHAR")]
     public byte U;
 
+    /// <include file='AM_DVD_YUV.xml' path='doc/member[@name="AM_DVD_YUV.V"]/*' />
     [NativeTypeName("UCHAR")]
     public byte V;
 }

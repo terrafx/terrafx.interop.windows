@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ICreateDevEnum">
+    <summary>
+      <para>The <b>ICreateDevEnum</b> interface creates an enumerator for a category of filters, such as video capture devices or audio capture devices. The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/system-device-enumerator">System Device Enumerator</a> exposes this interface.</para>
+      <para>Applications can use this interface to enumerate filters within a category. The <see cref="CreateClassEnumerator" /> method returns an enumerator object for a specific filter category. The enumerator object supports the <see cref="IEnumMoniker" /> interface and returns a list of monikers, where each moniker represents a filter.</para>
+      <para>In some cases, the same DirectShow filter manages an entire category of hardware devices. In that case, the moniker represents the device, and the moniker is used to initialize the filter. The application can treat each device as a separate filter, regardless of the underlying implementation.</para>
+      <para>For more information on using this interface, see <a href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-system-device-enumerator">Using the System Device Enumerator</a>.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/interfaces">Interfaces</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-system-device-enumerator">Using the System Device Enumerator</seealso>
+  </member>
+</doc>

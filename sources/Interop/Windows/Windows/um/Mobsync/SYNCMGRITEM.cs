@@ -7,23 +7,31 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SYNCMGRITEM.xml' path='doc/member[@name="SYNCMGRITEM"]/*' />
 public unsafe partial struct SYNCMGRITEM
 {
+    /// <include file='SYNCMGRITEM.xml' path='doc/member[@name="SYNCMGRITEM.cbSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbSize;
 
+    /// <include file='SYNCMGRITEM.xml' path='doc/member[@name="SYNCMGRITEM.dwFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFlags;
 
+    /// <include file='SYNCMGRITEM.xml' path='doc/member[@name="SYNCMGRITEM.ItemID"]/*' />
     public Guid ItemID;
 
+    /// <include file='SYNCMGRITEM.xml' path='doc/member[@name="SYNCMGRITEM.dwItemState"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwItemState;
 
+    /// <include file='SYNCMGRITEM.xml' path='doc/member[@name="SYNCMGRITEM.hIcon"]/*' />
     public HICON hIcon;
 
+    /// <include file='SYNCMGRITEM.xml' path='doc/member[@name="SYNCMGRITEM.wszItemName"]/*' />
     [NativeTypeName("WCHAR [128]")]
     public fixed ushort wszItemName[128];
 
+    /// <include file='SYNCMGRITEM.xml' path='doc/member[@name="SYNCMGRITEM.ftLastUpdate"]/*' />
     public FILETIME ftLastUpdate;
 }

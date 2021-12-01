@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SHCOLUMNINFO">
+    <summary>
+      <para>Contains information about the properties of a column. It is used by <see cref="IColumnProvider.GetColumnInfo" />.</para>
+    </summary>
+    <seealso cref="IColumnProvider.GetColumnInfo" />
+  </member>
+  <member name="SHCOLUMNINFO.scid">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/shell/objects">SHCOLUMNID</a></b></para>
+      <para>A <a href="https://docs.microsoft.com//windows/desktop/shell/objects">SHCOLUMNID</a> structure that uniquely identifies the column.</para>
+    </summary>
+  </member>
+  <member name="SHCOLUMNINFO.vt">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms221127(v=vs.85)">VARTYPE</a></b></para>
+      <para>The native <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms221127(v=vs.85)">VARIANT</a> type of the column's data.</para>
+    </summary>
+  </member>
+  <member name="SHCOLUMNINFO.fmt">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>
+        <see cref="List view format" />. This member is normally set to LVCFMT_LEFT.</para>
+    </summary>
+  </member>
+  <member name="SHCOLUMNINFO.cChars">
+    <summary>
+      <para>Type: <b>UINT</b></para>
+      <para>The default width of the column, in characters.</para>
+    </summary>
+  </member>
+  <member name="SHCOLUMNINFO.csFlags">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>Flags indicating the default column state. It can be a combination of the following flags.</para>
+      <h4>SHCOLSTATE_TYPE_STR</h4>
+      <para>A string.</para>
+      <h4>SHCOLSTATE_TYPE_INT</h4>
+      <para>An integer.</para>
+      <h4>SHCOLSTATE_TYPE_DATE</h4>
+      <para>A date.</para>
+      <h4>SHCOLSTATE_ONBYDEFAULT</h4>
+      <para>Shown by default in Windows Explorer Details view, even if the user has not selected the column. If this flag is set, the column will be displayed for all folders. There is no way to force a column to be displayed on a per-folder basis.</para>
+      <h4>SHCOLSTATE_SLOW</h4>
+      <para>Slow to compute. Windows Explorer should retrieve the data asynchronously and do the computation on a background thread.</para>
+      <h4>SHCOLSTATE_EXTENDED</h4>
+      <para>Provided by a handler, not the folder object.</para>
+      <h4>SHCOLSTATE_SECONDARYUI</h4>
+      <para>Not displayed in the shortcut menu, but listed in the <b>More...</b> dialog box.</para>
+      <h4>SHCOLSTATE_HIDDEN</h4>
+      <para>Not displayed in the user interface.</para>
+    </summary>
+  </member>
+  <member name="SHCOLUMNINFO.wszTitle">
+    <summary>
+      <para>Type: <b>WCHAR[MAX_COLUMN_NAME_LEN]</b></para>
+      <para>A null-terminated Unicode string with the column's title. It must contain no more than MAX_COLUMN_NAME_LEN characters, including the terminating <b>NULL</b>.</para>
+    </summary>
+  </member>
+  <member name="SHCOLUMNINFO.wszDescription">
+    <summary>
+      <para>Type: <b>WCHAR[MAX_COLUMN_DESC_LEN]</b></para>
+      <para>A null-terminated Unicode string with the column's description. It must contain no more than MAX_COLUMN_DESC_LEN characters, including the terminating <b>NULL</b>.</para>
+    </summary>
+  </member>
+</doc>

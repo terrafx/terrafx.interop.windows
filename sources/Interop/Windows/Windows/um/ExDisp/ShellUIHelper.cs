@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ShellUIHelper.xml' path='doc/member[@name="ShellUIHelper"]/*' />
 [Guid("64AB4BB7-111E-11D1-8F79-00C04FC2FBE1")]
 public partial struct ShellUIHelper
 {

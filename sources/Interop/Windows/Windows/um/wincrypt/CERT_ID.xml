@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CERT_ID">
+    <summary>
+      <para>The <b>CERT_ID</b> structure is used as a flexible means of uniquely identifying a certificate.</para>
+    </summary>
+  </member>
+  <member name="CERT_ID.dwIdChoice">
+    <summary>
+      <para>A <b>DWORD</b> value that indicates which member of the union is being used. This can be one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>CERT_ID_ISSUER_SERIAL_NUMBER</b>
+          </description>
+          <description>
+            <para>IssuerSerialNumber</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>CERT_ID_KEY_IDENTIFIER</b>
+          </description>
+          <description>
+            <para>KeyId</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>CERT_ID_SHA1_HASH</b>
+          </description>
+          <description>
+            <para>HashId</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="CERT_ID.DUMMYUNIONNAME">
+    <summary></summary>
+  </member>
+  <member name="CERT_ID.DUMMYUNIONNAME.IssuerSerialNumber">
+    <summary>
+      <para>A
+<see cref="CERT_ISSUER_SERIAL_NUMBER" /> structure that uniquely identifies a certificate.</para>
+    </summary>
+  </member>
+  <member name="CERT_ID.DUMMYUNIONNAME.KeyId">
+    <summary>
+      <para>A
+<a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_HASH_BLOB</a> structure that contains a certificate key identifier.</para>
+    </summary>
+  </member>
+  <member name="CERT_ID.DUMMYUNIONNAME.HashId">
+    <summary>
+      <para>A <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_HASH_BLOB</a> that contains a SHA1 <a href="https://docs.microsoft.com//windows/desktop/SecGloss/h-gly">hash</a> of the certificate to be used as a unique identifier of the certificate.</para>
+    </summary>
+  </member>
+</doc>

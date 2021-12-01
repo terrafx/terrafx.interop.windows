@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='StaticNodeList.xml' path='doc/member[@name="StaticNodeList"]/*' />
 [Guid("30510467-98B5-11CF-BB82-00AA00BDCE0B")]
 public partial struct StaticNodeList
 {

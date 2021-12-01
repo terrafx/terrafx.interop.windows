@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='FILE_REFERENCE_RANGE.xml' path='doc/member[@name="FILE_REFERENCE_RANGE"]/*' />
 public partial struct FILE_REFERENCE_RANGE
 {
+    /// <include file='FILE_REFERENCE_RANGE.xml' path='doc/member[@name="FILE_REFERENCE_RANGE.StartingFileReferenceNumber"]/*' />
     [NativeTypeName("DWORDLONG")]
     public ulong StartingFileReferenceNumber;
 
+    /// <include file='FILE_REFERENCE_RANGE.xml' path='doc/member[@name="FILE_REFERENCE_RANGE.EndingFileReferenceNumber"]/*' />
     [NativeTypeName("DWORDLONG")]
     public ulong EndingFileReferenceNumber;
 }

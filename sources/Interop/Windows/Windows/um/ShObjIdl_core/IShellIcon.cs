@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IShellIcon.xml' path='doc/member[@name="IShellIcon"]/*' />
 [Guid("000214E5-0000-0000-C000-000000000046")]
 [NativeTypeName("struct IShellIcon : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IShellIcon : IShellIcon.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IShellIcon : IShellIcon.Interface
         return ((delegate* unmanaged<IShellIcon*, Guid*, void**, int>)(lpVtbl[0]))((IShellIcon*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IShellIcon : IShellIcon.Interface
         return ((delegate* unmanaged<IShellIcon*, uint>)(lpVtbl[1]))((IShellIcon*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IShellIcon : IShellIcon.Interface
         return ((delegate* unmanaged<IShellIcon*, uint>)(lpVtbl[2]))((IShellIcon*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IShellIcon.xml' path='doc/member[@name="IShellIcon.GetIconOf"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetIconOf([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, uint flags, int* pIconIndex)

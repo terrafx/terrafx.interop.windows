@@ -8,14 +8,18 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CMSG_RECIPIENT_ENCODE_INFO.xml' path='doc/member[@name="CMSG_RECIPIENT_ENCODE_INFO"]/*' />
 public unsafe partial struct CMSG_RECIPIENT_ENCODE_INFO
 {
+    /// <include file='CMSG_RECIPIENT_ENCODE_INFO.xml' path='doc/member[@name="CMSG_RECIPIENT_ENCODE_INFO.dwRecipientChoice"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwRecipientChoice;
 
+    /// <include file='CMSG_RECIPIENT_ENCODE_INFO.xml' path='doc/member[@name="CMSG_RECIPIENT_ENCODE_INFO.Anonymous"]/*' />
     [NativeTypeName("_CMSG_RECIPIENT_ENCODE_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/wincrypt.h:7013:5)")]
     public _Anonymous_e__Union Anonymous;
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pKeyTrans"]/*' />
     public ref CMSG_KEY_TRANS_RECIPIENT_ENCODE_INFO* pKeyTrans
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -25,6 +29,7 @@ public unsafe partial struct CMSG_RECIPIENT_ENCODE_INFO
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pKeyAgree"]/*' />
     public ref CMSG_KEY_AGREE_RECIPIENT_ENCODE_INFO* pKeyAgree
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -34,6 +39,7 @@ public unsafe partial struct CMSG_RECIPIENT_ENCODE_INFO
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pMailList"]/*' />
     public ref CMSG_MAIL_LIST_RECIPIENT_ENCODE_INFO* pMailList
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -43,17 +49,21 @@ public unsafe partial struct CMSG_RECIPIENT_ENCODE_INFO
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public unsafe partial struct _Anonymous_e__Union
     {
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pKeyTrans"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("PCMSG_KEY_TRANS_RECIPIENT_ENCODE_INFO")]
         public CMSG_KEY_TRANS_RECIPIENT_ENCODE_INFO* pKeyTrans;
 
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pKeyAgree"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("PCMSG_KEY_AGREE_RECIPIENT_ENCODE_INFO")]
         public CMSG_KEY_AGREE_RECIPIENT_ENCODE_INFO* pKeyAgree;
 
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pMailList"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("PCMSG_MAIL_LIST_RECIPIENT_ENCODE_INFO")]
         public CMSG_MAIL_LIST_RECIPIENT_ENCODE_INFO* pMailList;

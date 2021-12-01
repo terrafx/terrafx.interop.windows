@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='AM_STREAM_INFO_FLAGS.xml' path='doc/member[@name="AM_STREAM_INFO_FLAGS"]/*' />
 public enum AM_STREAM_INFO_FLAGS
 {
+    /// <include file='AM_STREAM_INFO_FLAGS.xml' path='doc/member[@name="AM_STREAM_INFO_FLAGS.AM_STREAM_INFO_START_DEFINED"]/*' />
     AM_STREAM_INFO_START_DEFINED = 0x1,
+
+    /// <include file='AM_STREAM_INFO_FLAGS.xml' path='doc/member[@name="AM_STREAM_INFO_FLAGS.AM_STREAM_INFO_STOP_DEFINED"]/*' />
     AM_STREAM_INFO_STOP_DEFINED = 0x2,
+
+    /// <include file='AM_STREAM_INFO_FLAGS.xml' path='doc/member[@name="AM_STREAM_INFO_FLAGS.AM_STREAM_INFO_DISCARDING"]/*' />
     AM_STREAM_INFO_DISCARDING = 0x4,
+
+    /// <include file='AM_STREAM_INFO_FLAGS.xml' path='doc/member[@name="AM_STREAM_INFO_FLAGS.AM_STREAM_INFO_STOP_SEND_EXTRA"]/*' />
     AM_STREAM_INFO_STOP_SEND_EXTRA = 0x10,
 }

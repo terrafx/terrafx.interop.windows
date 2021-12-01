@@ -7,11 +7,19 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MFVideo3DFormat.xml' path='doc/member[@name="MFVideo3DFormat"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public enum MFVideo3DFormat
 {
+    /// <include file='MFVideo3DFormat.xml' path='doc/member[@name="MFVideo3DFormat.MFVideo3DSampleFormat_BaseView"]/*' />
     MFVideo3DSampleFormat_BaseView = 0,
+
+    /// <include file='MFVideo3DFormat.xml' path='doc/member[@name="MFVideo3DFormat.MFVideo3DSampleFormat_MultiView"]/*' />
     MFVideo3DSampleFormat_MultiView = 1,
+
+    /// <include file='MFVideo3DFormat.xml' path='doc/member[@name="MFVideo3DFormat.MFVideo3DSampleFormat_Packed_LeftRight"]/*' />
     MFVideo3DSampleFormat_Packed_LeftRight = 2,
+
+    /// <include file='MFVideo3DFormat.xml' path='doc/member[@name="MFVideo3DFormat.MFVideo3DSampleFormat_Packed_TopBottom"]/*' />
     MFVideo3DSampleFormat_Packed_TopBottom = 3,
 }

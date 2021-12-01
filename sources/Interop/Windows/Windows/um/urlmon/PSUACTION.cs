@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PSUACTION.xml' path='doc/member[@name="PSUACTION"]/*' />
 public enum PSUACTION
 {
+    /// <include file='PSUACTION.xml' path='doc/member[@name="PSUACTION.PSU_DEFAULT"]/*' />
     PSU_DEFAULT = 1,
+
+    /// <include file='PSUACTION.xml' path='doc/member[@name="PSUACTION.PSU_SECURITY_URL_ONLY"]/*' />
     PSU_SECURITY_URL_ONLY = (PSU_DEFAULT + 1),
 }

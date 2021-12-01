@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IOmNavigator.xml' path='doc/member[@name="IOmNavigator"]/*' />
 [Guid("FECEAAA5-8405-11CF-8BA1-00AA00476DA6")]
 [NativeTypeName("struct IOmNavigator : IDispatch")]
 [NativeInheritance("IDispatch")]
@@ -16,6 +17,7 @@ public unsafe partial struct IOmNavigator : IOmNavigator.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IOmNavigator : IOmNavigator.Interface
         return ((delegate* unmanaged<IOmNavigator*, Guid*, void**, int>)(lpVtbl[0]))((IOmNavigator*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IOmNavigator : IOmNavigator.Interface
         return ((delegate* unmanaged<IOmNavigator*, uint>)(lpVtbl[1]))((IOmNavigator*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IOmNavigator : IOmNavigator.Interface
         return ((delegate* unmanaged<IOmNavigator*, uint>)(lpVtbl[2]))((IOmNavigator*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct IOmNavigator : IOmNavigator.Interface
         return ((delegate* unmanaged<IOmNavigator*, uint*, int>)(lpVtbl[3]))((IOmNavigator*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct IOmNavigator : IOmNavigator.Interface
         return ((delegate* unmanaged<IOmNavigator*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IOmNavigator*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
@@ -60,6 +67,7 @@ public unsafe partial struct IOmNavigator : IOmNavigator.Interface
         return ((delegate* unmanaged<IOmNavigator*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IOmNavigator*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
+    /// <inheritdoc cref="IDispatch.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
@@ -67,6 +75,7 @@ public unsafe partial struct IOmNavigator : IOmNavigator.Interface
         return ((delegate* unmanaged<IOmNavigator*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IOmNavigator*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
+    /// <include file='IOmNavigator.xml' path='doc/member[@name="IOmNavigator.get_appCodeName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT get_appCodeName([NativeTypeName("BSTR *")] ushort** p)
@@ -74,6 +83,7 @@ public unsafe partial struct IOmNavigator : IOmNavigator.Interface
         return ((delegate* unmanaged<IOmNavigator*, ushort**, int>)(lpVtbl[7]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IOmNavigator.xml' path='doc/member[@name="IOmNavigator.get_appName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT get_appName([NativeTypeName("BSTR *")] ushort** p)
@@ -81,6 +91,7 @@ public unsafe partial struct IOmNavigator : IOmNavigator.Interface
         return ((delegate* unmanaged<IOmNavigator*, ushort**, int>)(lpVtbl[8]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IOmNavigator.xml' path='doc/member[@name="IOmNavigator.get_appVersion"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT get_appVersion([NativeTypeName("BSTR *")] ushort** p)
@@ -88,6 +99,7 @@ public unsafe partial struct IOmNavigator : IOmNavigator.Interface
         return ((delegate* unmanaged<IOmNavigator*, ushort**, int>)(lpVtbl[9]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IOmNavigator.xml' path='doc/member[@name="IOmNavigator.get_userAgent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT get_userAgent([NativeTypeName("BSTR *")] ushort** p)
@@ -95,6 +107,7 @@ public unsafe partial struct IOmNavigator : IOmNavigator.Interface
         return ((delegate* unmanaged<IOmNavigator*, ushort**, int>)(lpVtbl[10]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IOmNavigator.xml' path='doc/member[@name="IOmNavigator.javaEnabled"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT javaEnabled([NativeTypeName("VARIANT_BOOL *")] short* enabled)
@@ -102,6 +115,7 @@ public unsafe partial struct IOmNavigator : IOmNavigator.Interface
         return ((delegate* unmanaged<IOmNavigator*, short*, int>)(lpVtbl[11]))((IOmNavigator*)Unsafe.AsPointer(ref this), enabled);
     }
 
+    /// <include file='IOmNavigator.xml' path='doc/member[@name="IOmNavigator.taintEnabled"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT taintEnabled([NativeTypeName("VARIANT_BOOL *")] short* enabled)
@@ -109,6 +123,7 @@ public unsafe partial struct IOmNavigator : IOmNavigator.Interface
         return ((delegate* unmanaged<IOmNavigator*, short*, int>)(lpVtbl[12]))((IOmNavigator*)Unsafe.AsPointer(ref this), enabled);
     }
 
+    /// <include file='IOmNavigator.xml' path='doc/member[@name="IOmNavigator.get_mimeTypes"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT get_mimeTypes(IHTMLMimeTypesCollection** p)
@@ -116,6 +131,7 @@ public unsafe partial struct IOmNavigator : IOmNavigator.Interface
         return ((delegate* unmanaged<IOmNavigator*, IHTMLMimeTypesCollection**, int>)(lpVtbl[13]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IOmNavigator.xml' path='doc/member[@name="IOmNavigator.get_plugins"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT get_plugins(IHTMLPluginsCollection** p)
@@ -123,6 +139,7 @@ public unsafe partial struct IOmNavigator : IOmNavigator.Interface
         return ((delegate* unmanaged<IOmNavigator*, IHTMLPluginsCollection**, int>)(lpVtbl[14]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IOmNavigator.xml' path='doc/member[@name="IOmNavigator.get_cookieEnabled"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT get_cookieEnabled([NativeTypeName("VARIANT_BOOL *")] short* p)
@@ -130,6 +147,7 @@ public unsafe partial struct IOmNavigator : IOmNavigator.Interface
         return ((delegate* unmanaged<IOmNavigator*, short*, int>)(lpVtbl[15]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IOmNavigator.xml' path='doc/member[@name="IOmNavigator.get_opsProfile"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT get_opsProfile(IHTMLOpsProfile** p)
@@ -137,6 +155,7 @@ public unsafe partial struct IOmNavigator : IOmNavigator.Interface
         return ((delegate* unmanaged<IOmNavigator*, IHTMLOpsProfile**, int>)(lpVtbl[16]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IOmNavigator.xml' path='doc/member[@name="IOmNavigator.toString"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT toString([NativeTypeName("BSTR *")] ushort** @string)
@@ -144,6 +163,7 @@ public unsafe partial struct IOmNavigator : IOmNavigator.Interface
         return ((delegate* unmanaged<IOmNavigator*, ushort**, int>)(lpVtbl[17]))((IOmNavigator*)Unsafe.AsPointer(ref this), @string);
     }
 
+    /// <include file='IOmNavigator.xml' path='doc/member[@name="IOmNavigator.get_cpuClass"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT get_cpuClass([NativeTypeName("BSTR *")] ushort** p)
@@ -151,6 +171,7 @@ public unsafe partial struct IOmNavigator : IOmNavigator.Interface
         return ((delegate* unmanaged<IOmNavigator*, ushort**, int>)(lpVtbl[18]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IOmNavigator.xml' path='doc/member[@name="IOmNavigator.get_systemLanguage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT get_systemLanguage([NativeTypeName("BSTR *")] ushort** p)
@@ -158,6 +179,7 @@ public unsafe partial struct IOmNavigator : IOmNavigator.Interface
         return ((delegate* unmanaged<IOmNavigator*, ushort**, int>)(lpVtbl[19]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IOmNavigator.xml' path='doc/member[@name="IOmNavigator.get_browserLanguage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public HRESULT get_browserLanguage([NativeTypeName("BSTR *")] ushort** p)
@@ -165,6 +187,7 @@ public unsafe partial struct IOmNavigator : IOmNavigator.Interface
         return ((delegate* unmanaged<IOmNavigator*, ushort**, int>)(lpVtbl[20]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IOmNavigator.xml' path='doc/member[@name="IOmNavigator.get_userLanguage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
     public HRESULT get_userLanguage([NativeTypeName("BSTR *")] ushort** p)
@@ -172,6 +195,7 @@ public unsafe partial struct IOmNavigator : IOmNavigator.Interface
         return ((delegate* unmanaged<IOmNavigator*, ushort**, int>)(lpVtbl[21]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IOmNavigator.xml' path='doc/member[@name="IOmNavigator.get_platform"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
     public HRESULT get_platform([NativeTypeName("BSTR *")] ushort** p)
@@ -179,6 +203,7 @@ public unsafe partial struct IOmNavigator : IOmNavigator.Interface
         return ((delegate* unmanaged<IOmNavigator*, ushort**, int>)(lpVtbl[22]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IOmNavigator.xml' path='doc/member[@name="IOmNavigator.get_appMinorVersion"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
     public HRESULT get_appMinorVersion([NativeTypeName("BSTR *")] ushort** p)
@@ -186,6 +211,7 @@ public unsafe partial struct IOmNavigator : IOmNavigator.Interface
         return ((delegate* unmanaged<IOmNavigator*, ushort**, int>)(lpVtbl[23]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IOmNavigator.xml' path='doc/member[@name="IOmNavigator.get_connectionSpeed"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(24)]
     public HRESULT get_connectionSpeed([NativeTypeName("long *")] int* p)
@@ -193,6 +219,7 @@ public unsafe partial struct IOmNavigator : IOmNavigator.Interface
         return ((delegate* unmanaged<IOmNavigator*, int*, int>)(lpVtbl[24]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IOmNavigator.xml' path='doc/member[@name="IOmNavigator.get_onLine"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(25)]
     public HRESULT get_onLine([NativeTypeName("VARIANT_BOOL *")] short* p)
@@ -200,6 +227,7 @@ public unsafe partial struct IOmNavigator : IOmNavigator.Interface
         return ((delegate* unmanaged<IOmNavigator*, short*, int>)(lpVtbl[25]))((IOmNavigator*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IOmNavigator.xml' path='doc/member[@name="IOmNavigator.get_userProfile"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(26)]
     public HRESULT get_userProfile(IHTMLOpsProfile** p)

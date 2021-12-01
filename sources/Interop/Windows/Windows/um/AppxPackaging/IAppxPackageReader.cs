@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAppxPackageReader.xml' path='doc/member[@name="IAppxPackageReader"]/*' />
 [Guid("B5C49650-99BC-481C-9A34-3D53A4106708")]
 [NativeTypeName("struct IAppxPackageReader : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IAppxPackageReader : IAppxPackageReader.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IAppxPackageReader : IAppxPackageReader.Interface
         return ((delegate* unmanaged<IAppxPackageReader*, Guid*, void**, int>)(lpVtbl[0]))((IAppxPackageReader*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IAppxPackageReader : IAppxPackageReader.Interface
         return ((delegate* unmanaged<IAppxPackageReader*, uint>)(lpVtbl[1]))((IAppxPackageReader*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IAppxPackageReader : IAppxPackageReader.Interface
         return ((delegate* unmanaged<IAppxPackageReader*, uint>)(lpVtbl[2]))((IAppxPackageReader*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAppxPackageReader.xml' path='doc/member[@name="IAppxPackageReader.GetBlockMap"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetBlockMap(IAppxBlockMapReader** blockMapReader)
@@ -48,6 +53,7 @@ public unsafe partial struct IAppxPackageReader : IAppxPackageReader.Interface
         return ((delegate* unmanaged<IAppxPackageReader*, IAppxBlockMapReader**, int>)(lpVtbl[3]))((IAppxPackageReader*)Unsafe.AsPointer(ref this), blockMapReader);
     }
 
+    /// <include file='IAppxPackageReader.xml' path='doc/member[@name="IAppxPackageReader.GetFootprintFile"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetFootprintFile(APPX_FOOTPRINT_FILE_TYPE type, IAppxFile** file)
@@ -55,6 +61,7 @@ public unsafe partial struct IAppxPackageReader : IAppxPackageReader.Interface
         return ((delegate* unmanaged<IAppxPackageReader*, APPX_FOOTPRINT_FILE_TYPE, IAppxFile**, int>)(lpVtbl[4]))((IAppxPackageReader*)Unsafe.AsPointer(ref this), type, file);
     }
 
+    /// <include file='IAppxPackageReader.xml' path='doc/member[@name="IAppxPackageReader.GetPayloadFile"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetPayloadFile([NativeTypeName("LPCWSTR")] ushort* fileName, IAppxFile** file)
@@ -62,6 +69,7 @@ public unsafe partial struct IAppxPackageReader : IAppxPackageReader.Interface
         return ((delegate* unmanaged<IAppxPackageReader*, ushort*, IAppxFile**, int>)(lpVtbl[5]))((IAppxPackageReader*)Unsafe.AsPointer(ref this), fileName, file);
     }
 
+    /// <include file='IAppxPackageReader.xml' path='doc/member[@name="IAppxPackageReader.GetPayloadFiles"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetPayloadFiles(IAppxFilesEnumerator** filesEnumerator)
@@ -69,6 +77,7 @@ public unsafe partial struct IAppxPackageReader : IAppxPackageReader.Interface
         return ((delegate* unmanaged<IAppxPackageReader*, IAppxFilesEnumerator**, int>)(lpVtbl[6]))((IAppxPackageReader*)Unsafe.AsPointer(ref this), filesEnumerator);
     }
 
+    /// <include file='IAppxPackageReader.xml' path='doc/member[@name="IAppxPackageReader.GetManifest"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetManifest(IAppxManifestReader** manifestReader)

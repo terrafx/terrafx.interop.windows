@@ -5,30 +5,43 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HDITEMW.xml' path='doc/member[@name="HDITEMW"]/*' />
 public unsafe partial struct HDITEMW
 {
+    /// <include file='HDITEMW.xml' path='doc/member[@name="HDITEMW.mask"]/*' />
     public uint mask;
 
+    /// <include file='HDITEMW.xml' path='doc/member[@name="HDITEMW.cxy"]/*' />
     public int cxy;
 
+    /// <include file='HDITEMW.xml' path='doc/member[@name="HDITEMW.pszText"]/*' />
     [NativeTypeName("LPWSTR")]
     public ushort* pszText;
 
+    /// <include file='HDITEMW.xml' path='doc/member[@name="HDITEMW.hbm"]/*' />
     public HBITMAP hbm;
 
+    /// <include file='HDITEMW.xml' path='doc/member[@name="HDITEMW.cchTextMax"]/*' />
     public int cchTextMax;
 
+    /// <include file='HDITEMW.xml' path='doc/member[@name="HDITEMW.fmt"]/*' />
     public int fmt;
 
+    /// <include file='HDITEMW.xml' path='doc/member[@name="HDITEMW.lParam"]/*' />
     public LPARAM lParam;
 
+    /// <include file='HDITEMW.xml' path='doc/member[@name="HDITEMW.iImage"]/*' />
     public int iImage;
 
+    /// <include file='HDITEMW.xml' path='doc/member[@name="HDITEMW.iOrder"]/*' />
     public int iOrder;
 
+    /// <include file='HDITEMW.xml' path='doc/member[@name="HDITEMW.type"]/*' />
     public uint type;
 
+    /// <include file='HDITEMW.xml' path='doc/member[@name="HDITEMW.pvFilter"]/*' />
     public void* pvFilter;
 
+    /// <include file='HDITEMW.xml' path='doc/member[@name="HDITEMW.state"]/*' />
     public uint state;
 }

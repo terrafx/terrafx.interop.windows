@@ -7,10 +7,13 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DEVICE_DSM_CONVERSION_OUTPUT.xml' path='doc/member[@name="DEVICE_DSM_CONVERSION_OUTPUT"]/*' />
 public partial struct DEVICE_DSM_CONVERSION_OUTPUT
 {
+    /// <include file='DEVICE_DSM_CONVERSION_OUTPUT.xml' path='doc/member[@name="DEVICE_DSM_CONVERSION_OUTPUT.Version"]/*' />
     [NativeTypeName("DWORD")]
     public uint Version;
 
+    /// <include file='DEVICE_DSM_CONVERSION_OUTPUT.xml' path='doc/member[@name="DEVICE_DSM_CONVERSION_OUTPUT.Source"]/*' />
     public Guid Source;
 }

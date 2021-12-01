@@ -5,11 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MDINEXTMENU.xml' path='doc/member[@name="MDINEXTMENU"]/*' />
 public partial struct MDINEXTMENU
 {
+    /// <include file='MDINEXTMENU.xml' path='doc/member[@name="MDINEXTMENU.hmenuIn"]/*' />
     public HMENU hmenuIn;
 
+    /// <include file='MDINEXTMENU.xml' path='doc/member[@name="MDINEXTMENU.hmenuNext"]/*' />
     public HMENU hmenuNext;
 
+    /// <include file='MDINEXTMENU.xml' path='doc/member[@name="MDINEXTMENU.hwndNext"]/*' />
     public HWND hwndNext;
 }

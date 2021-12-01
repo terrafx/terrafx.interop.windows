@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="eAVDecAudioDualMono">
+    <summary>
+      <para>Specifies whether the input audio stream is stereo or dual mono. This enumeration is used with the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avdecaudiodualmono-property">AVDecAudioDualMono</a> property.</para>
+    </summary>
+    <remarks>
+      <para>In dual mono encoding, each channel is encoded separately. In stereo encoding, both channels are encoded together.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-enumerations">Codec API Enumerations</seealso>
+    <seealso cref="ICodecAPI Interface" />
+  </member>
+  <member name="eAVDecAudioDualMono.eAVDecAudioDualMono_IsNotDualMono">
+    <summary>
+      <para>The input bit stream is not dual mono.</para>
+    </summary>
+  </member>
+  <member name="eAVDecAudioDualMono.eAVDecAudioDualMono_IsDualMono">
+    <summary>
+      <para>The input bit stream is dual mono.</para>
+    </summary>
+  </member>
+  <member name="eAVDecAudioDualMono.eAVDecAudioDualMono_UnSpecified">
+    <summary>
+      <para>There is no indication in the bit stream whether the audio is dual mono.</para>
+    </summary>
+  </member>
+</doc>

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IStdMarshalInfo.xml' path='doc/member[@name="IStdMarshalInfo"]/*' />
 [Guid("00000018-0000-0000-C000-000000000046")]
 [NativeTypeName("struct IStdMarshalInfo : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IStdMarshalInfo : IStdMarshalInfo.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IStdMarshalInfo : IStdMarshalInfo.Interface
         return ((delegate* unmanaged<IStdMarshalInfo*, Guid*, void**, int>)(lpVtbl[0]))((IStdMarshalInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IStdMarshalInfo : IStdMarshalInfo.Interface
         return ((delegate* unmanaged<IStdMarshalInfo*, uint>)(lpVtbl[1]))((IStdMarshalInfo*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IStdMarshalInfo : IStdMarshalInfo.Interface
         return ((delegate* unmanaged<IStdMarshalInfo*, uint>)(lpVtbl[2]))((IStdMarshalInfo*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IStdMarshalInfo.xml' path='doc/member[@name="IStdMarshalInfo.GetClassForHandler"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetClassForHandler([NativeTypeName("DWORD")] uint dwDestContext, void* pvDestContext, [NativeTypeName("CLSID *")] Guid* pClsid)

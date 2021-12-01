@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='YAMAHA_ADPCMWAVEFORMAT.xml' path='doc/member[@name="YAMAHA_ADPCMWAVEFORMAT"]/*' />
 public partial struct YAMAHA_ADPCMWAVEFORMAT
 {
+    /// <include file='YAMAHA_ADPCMWAVEFORMAT.xml' path='doc/member[@name="YAMAHA_ADPCMWAVEFORMAT.wfx"]/*' />
     public WAVEFORMATEX wfx;
 }

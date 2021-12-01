@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IOleLink.xml' path='doc/member[@name="IOleLink"]/*' />
 [Guid("0000011D-0000-0000-C000-000000000046")]
 [NativeTypeName("struct IOleLink : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IOleLink : IOleLink.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IOleLink : IOleLink.Interface
         return ((delegate* unmanaged<IOleLink*, Guid*, void**, int>)(lpVtbl[0]))((IOleLink*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IOleLink : IOleLink.Interface
         return ((delegate* unmanaged<IOleLink*, uint>)(lpVtbl[1]))((IOleLink*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IOleLink : IOleLink.Interface
         return ((delegate* unmanaged<IOleLink*, uint>)(lpVtbl[2]))((IOleLink*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IOleLink.xml' path='doc/member[@name="IOleLink.SetUpdateOptions"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetUpdateOptions([NativeTypeName("DWORD")] uint dwUpdateOpt)
@@ -46,6 +51,7 @@ public unsafe partial struct IOleLink : IOleLink.Interface
         return ((delegate* unmanaged<IOleLink*, uint, int>)(lpVtbl[3]))((IOleLink*)Unsafe.AsPointer(ref this), dwUpdateOpt);
     }
 
+    /// <include file='IOleLink.xml' path='doc/member[@name="IOleLink.GetUpdateOptions"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetUpdateOptions([NativeTypeName("DWORD *")] uint* pdwUpdateOpt)
@@ -53,6 +59,7 @@ public unsafe partial struct IOleLink : IOleLink.Interface
         return ((delegate* unmanaged<IOleLink*, uint*, int>)(lpVtbl[4]))((IOleLink*)Unsafe.AsPointer(ref this), pdwUpdateOpt);
     }
 
+    /// <include file='IOleLink.xml' path='doc/member[@name="IOleLink.SetSourceMoniker"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetSourceMoniker(IMoniker* pmk, [NativeTypeName("const IID &")] Guid* rclsid)
@@ -60,6 +67,7 @@ public unsafe partial struct IOleLink : IOleLink.Interface
         return ((delegate* unmanaged<IOleLink*, IMoniker*, Guid*, int>)(lpVtbl[5]))((IOleLink*)Unsafe.AsPointer(ref this), pmk, rclsid);
     }
 
+    /// <include file='IOleLink.xml' path='doc/member[@name="IOleLink.GetSourceMoniker"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetSourceMoniker(IMoniker** ppmk)
@@ -67,6 +75,7 @@ public unsafe partial struct IOleLink : IOleLink.Interface
         return ((delegate* unmanaged<IOleLink*, IMoniker**, int>)(lpVtbl[6]))((IOleLink*)Unsafe.AsPointer(ref this), ppmk);
     }
 
+    /// <include file='IOleLink.xml' path='doc/member[@name="IOleLink.SetSourceDisplayName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT SetSourceDisplayName([NativeTypeName("LPCOLESTR")] ushort* pszStatusText)
@@ -74,6 +83,7 @@ public unsafe partial struct IOleLink : IOleLink.Interface
         return ((delegate* unmanaged<IOleLink*, ushort*, int>)(lpVtbl[7]))((IOleLink*)Unsafe.AsPointer(ref this), pszStatusText);
     }
 
+    /// <include file='IOleLink.xml' path='doc/member[@name="IOleLink.GetSourceDisplayName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetSourceDisplayName([NativeTypeName("LPOLESTR *")] ushort** ppszDisplayName)
@@ -81,6 +91,7 @@ public unsafe partial struct IOleLink : IOleLink.Interface
         return ((delegate* unmanaged<IOleLink*, ushort**, int>)(lpVtbl[8]))((IOleLink*)Unsafe.AsPointer(ref this), ppszDisplayName);
     }
 
+    /// <include file='IOleLink.xml' path='doc/member[@name="IOleLink.BindToSource"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT BindToSource([NativeTypeName("DWORD")] uint bindflags, IBindCtx* pbc)
@@ -88,6 +99,7 @@ public unsafe partial struct IOleLink : IOleLink.Interface
         return ((delegate* unmanaged<IOleLink*, uint, IBindCtx*, int>)(lpVtbl[9]))((IOleLink*)Unsafe.AsPointer(ref this), bindflags, pbc);
     }
 
+    /// <include file='IOleLink.xml' path='doc/member[@name="IOleLink.BindIfRunning"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT BindIfRunning()
@@ -95,6 +107,7 @@ public unsafe partial struct IOleLink : IOleLink.Interface
         return ((delegate* unmanaged<IOleLink*, int>)(lpVtbl[10]))((IOleLink*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IOleLink.xml' path='doc/member[@name="IOleLink.GetBoundSource"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT GetBoundSource(IUnknown** ppunk)
@@ -102,6 +115,7 @@ public unsafe partial struct IOleLink : IOleLink.Interface
         return ((delegate* unmanaged<IOleLink*, IUnknown**, int>)(lpVtbl[11]))((IOleLink*)Unsafe.AsPointer(ref this), ppunk);
     }
 
+    /// <include file='IOleLink.xml' path='doc/member[@name="IOleLink.UnbindSource"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT UnbindSource()
@@ -109,6 +123,7 @@ public unsafe partial struct IOleLink : IOleLink.Interface
         return ((delegate* unmanaged<IOleLink*, int>)(lpVtbl[12]))((IOleLink*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IOleLink.xml' path='doc/member[@name="IOleLink.Update"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT Update(IBindCtx* pbc)

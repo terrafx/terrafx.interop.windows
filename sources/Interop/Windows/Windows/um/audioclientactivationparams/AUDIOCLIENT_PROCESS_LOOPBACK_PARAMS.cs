@@ -7,11 +7,14 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='AUDIOCLIENT_PROCESS_LOOPBACK_PARAMS.xml' path='doc/member[@name="AUDIOCLIENT_PROCESS_LOOPBACK_PARAMS"]/*' />
 [SupportedOSPlatform("windows10.0.19043.0")]
 public partial struct AUDIOCLIENT_PROCESS_LOOPBACK_PARAMS
 {
+    /// <include file='AUDIOCLIENT_PROCESS_LOOPBACK_PARAMS.xml' path='doc/member[@name="AUDIOCLIENT_PROCESS_LOOPBACK_PARAMS.TargetProcessId"]/*' />
     [NativeTypeName("DWORD")]
     public uint TargetProcessId;
 
+    /// <include file='AUDIOCLIENT_PROCESS_LOOPBACK_PARAMS.xml' path='doc/member[@name="AUDIOCLIENT_PROCESS_LOOPBACK_PARAMS.ProcessLoopbackMode"]/*' />
     public PROCESS_LOOPBACK_MODE ProcessLoopbackMode;
 }

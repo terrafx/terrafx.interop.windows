@@ -1,0 +1,649 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IBrowserService.CacheOLEServer">
+    <summary>
+      <para>Deprecated. Caches a reference to an external object to avoid reloading the server on reuse.</para>
+    </summary>
+    <param name="pole">
+      <para>Type: <b><see cref="IOleObject" />*</b></para>
+      <para>A pointer to an <see cref="IOleObject" /> interface that represents the external object.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IBrowserService.CanNavigateNow">
+    <summary>
+      <para>Deprecated. Returns a value that indicates whether navigation is currently allowed.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_OK if navigation is allowed, or S_FALSE if the browser is busy.</para>
+    </returns>
+  </member>
+  <member name="IBrowserService.DisplayParseError">
+    <summary>
+      <para>Deprecated. Displays a URL that failed to be successfully parsed by <see cref="IBrowserService.IEParseDisplayName" />.</para>
+    </summary>
+    <param name="hres">
+      <para>Type: <b>HRESULT</b></para>
+      <para>An <b>HRESULT</b> returned by <see cref="IBrowserService.IEParseDisplayName" />. If this parameter is a success code, E_OUTOFMEMORY, or HRESULT_FROM_WIN32(ERROR_CANCELLED), this method does nothing.</para>
+    </param>
+    <param name="pwszPath">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>A pointer to a buffer containing the URL that failed to parse. This method displays the failed URL in an error dialog box.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The <b>HRESULT</b> returned by <see cref="IBrowserService.IEParseDisplayName" /> can be passed to <b>IBrowserService.DisplayParseError</b> without first checking for success or failure.</para>
+    </remarks>
+  </member>
+  <member name="IBrowserService.GetBrowserByIndex">
+    <summary>
+      <para>Deprecated. Retrieves the browser with the given index.</para>
+    </summary>
+    <param name="dwID">
+      <para>Type: <b>DWORD</b></para>
+      <para>A value of type <b>DWORD</b> that indicates the index of the browser.</para>
+    </param>
+    <param name="ppunk">
+      <para>Type: <b><see cref="IUnknown" />**</b></para>
+      <para>The address of a pointer to an <see cref="IUnknown" /> that indicates the browser with the given index. The calling application must release this resource when it is no longer needed.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IBrowserService.GetBrowserIndex">
+    <summary>
+      <para>Deprecated. Retrieves the index of the browser in the window hierarchy.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>DWORD</b></para>
+      <para>The index of the browser. A value of -1 indicates the top frame browser.</para>
+    </returns>
+    <remarks>
+      <para>The index can be used to find a particular browser window.</para>
+    </remarks>
+  </member>
+  <member name="IBrowserService.GetFlags">
+    <summary>
+      <para>Deprecated. Retrieves the current set of browser flags.</para>
+    </summary>
+    <param name="pdwFlags">
+      <para>Type: <b>DWORD*</b></para>
+      <para>A pointer to an object of type <b>DWORD</b> that represents the current set of flags. A combination of the following values.</para>
+      <h4>BSF_REGISTERASDROPTARGET (0x00000001)</h4>
+      <para>0x00000001. The browser is registered as a drop target for navigation.</para>
+      <h4>BSF_THEATERMODE (0x00000002)</h4>
+      <para>0x00000002. The browser is in theater mode. <b> Not supported by</b>:  Internet Explorer 7 or Windows Vista.</para>
+      <h4>BSF_NOLOCALFILEWARNING (0x00000010)</h4>
+      <para>0x00000010. Display a no local file warning.</para>
+      <h4>BSF_UISETBYAUTOMATION (0x00000100)</h4>
+      <para>0x00000100. The browser's UI is set by automation.</para>
+      <h4>BSF_RESIZABLE (0x00000200)</h4>
+      <para>0x00000200. The browser can be resized. <b>Not supported by </b>:  Internet Explorer 7 or Windows Vista.</para>
+      <h4>BSF_CANMAXIMIZE (0x00000400)</h4>
+      <para>0x00000400. The browser can be maximized. <b>Not supported by</b>:  Internet Explorer 7 or Windows Vista.</para>
+      <h4>BSF_TOPBROWSER (0x00000800)</h4>
+      <para>0x00000800. The browser is the top browser window.</para>
+      <h4>BSF_NAVNOHISTORY (0x00001000)</h4>
+      <para>0x00001000. The current location should be added to the history.</para>
+      <h4>BSF_HTMLNAVCANCELED (0x00002000)</h4>
+      <para>0x00002000. Navigation was canceled.</para>
+      <h4>BSF_DONTSHOWNAVCANCELPAGE (0x00004000)</h4>
+      <para>0x00004000. Do not display a page explaining that the navigation was canceled.</para>
+      <h4>BSF_SETNAVIGATABLECODEPAGE (0x00008000)</h4>
+      <para>0x00008000. Set a navigable code page.</para>
+      <h4>BSF_DELEGATEDNAVIGATION (0x00010000)</h4>
+      <para>0x00010000. Navigation has been delegated.</para>
+      <h4>BSF_TRUSTEDFORACTIVEX (0x00020000)</h4>
+      <para>0x00020000. Trust ActiveX objects.</para>
+      <h4>BSF_MERGEDMENUS (0x00040000)</h4>
+      <para>0x00040000. Indicates that this browser instance has merged menus. <b> Not supported by</b>: Internet Explorer 7 or Windows Vista.</para>
+      <h4>BSF_FEEDNAVIGATION (0x00080000)</h4>
+      <para>0x00080000. Set on navigation to a feed.</para>
+      <h4>BSF_FEEDSUBSCRIBED (0x00100000)</h4>
+      <para>0x00100000. Set on navigation to a subscribed feed.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IBrowserService.GetHistoryObject">
+    <summary>
+      <para>Deprecated. Retrieves an <see cref="IOleObject" /> that represents the browser's history object.</para>
+    </summary>
+    <param name="ppole">
+      <para>Type: <b><see cref="IOleObject" />**</b></para>
+      <para>The address of a pointer to an <see cref="IOleObject" /> that represents the browser's history object.</para>
+    </param>
+    <param name="pstm">
+      <para>Type: <b><see cref="IStream" />**</b></para>
+      <para>The address of a pointer to the history object's <see cref="IStream" />. This parameter may be <b>NULL</b>.</para>
+    </param>
+    <param name="ppbc">
+      <para>Type: <b><see cref="IBindCtx" />**</b></para>
+      <para>The address of a pointer to the history object stream's <see cref="IBindCtx" />. This parameter may be <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>If <i>pstm</i> is not <b>NULL</b>, you can call <see cref="QueryInterface" /> on <see cref="IOleObject" /> to get a pointer to <a href="https://docs.microsoft.com//previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa768215(v=vs.85)">IPersistHistory</a>.</para>
+      <para>
+        <see cref="IStream" /> and <see cref="IBindCtx" /> can be passed to <a href="https://docs.microsoft.com//previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa768216(v=vs.85)">IPersistHistory.LoadHistory</a>.</para>
+      <para>The calling application must release all three pointers if non-<b>NULL</b>.</para>
+    </remarks>
+  </member>
+  <member name="IBrowserService.GetNavigateState">
+    <summary>
+      <para>Deprecated. Retrieves the browser's current navigation state.</para>
+    </summary>
+    <param name="pbnstate">
+      <para>Type: <b><see cref="BNSTATE" />*</b></para>
+      <para>A pointer to a value from the <see cref="BNSTATE" /> enumeration indicating the current navigation state.</para>
+      <h4>BNS_NORMAL (0)</h4>
+      <para>The normal state.</para>
+      <h4>BNS_BEGIN_NAVIGATE (1)</h4>
+      <para>A begin navigation event has occurred.</para>
+      <h4>BNS_NAVIGATE (2)</h4>
+      <para>A navigation event has occurred.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IBrowserService.GetOleObject">
+    <summary>
+      <para>Deprecated. Retrieves an <see cref="IOleObject" /> for the browser.</para>
+    </summary>
+    <param name="ppobjv">
+      <para>Type: <b><see cref="IOleObject" />**</b></para>
+      <para>The address that receives a pointer to the retrieved <see cref="IOleObject" />.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IBrowserService.GetPalette">
+    <summary>
+      <para>Deprecated. Retrieves the browser's palette.</para>
+    </summary>
+    <param name="hpal">
+      <para>Type: <b>HPALETTE*</b></para>
+      <para>A pointer to the browser's palette handle, if one exists.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_OK if successful, or E_FAIL if there is no palette.</para>
+    </returns>
+    <remarks>
+      <para>The calling application should not call <see cref="DeleteObject" /> on the palette handle retrieved in <i>hpal</i>.</para>
+    </remarks>
+  </member>
+  <member name="IBrowserService.GetParentSite">
+    <summary>
+      <para>Deprecated. Retrieves the browser parent's in-place client site.</para>
+    </summary>
+    <param name="ppipsite">
+      <para>Type: <b><see cref="IOleInPlaceSite" />**</b></para>
+      <para>The address of a pointer to an <see cref="IOleInPlaceSite" /> that indicates the browser parent's in-place client site.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>A client site is the display site for embedded objects and provides position and conceptual information about the object.</para>
+    </remarks>
+  </member>
+  <member name="IBrowserService.GetPidl">
+    <summary>
+      <para>Deprecated. Retrieves a copy of the current pointer to an item identifier list (PIDL).</para>
+    </summary>
+    <param name="ppidl">
+      <para>Type: <b>LPITEMIDLIST*</b></para>
+      <para>A pointer to the current PIDL.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The calling application is responsible for freeing the PIDL by calling <see cref="ILFree" /> when the PIDL is no longer needed.</para>
+    </remarks>
+  </member>
+  <member name="IBrowserService.GetSetCodePage">
+    <summary>
+      <para>Deprecated. Sets a new character code page and retrieves a pointer to the previous code page.</para>
+    </summary>
+    <param name="pvarIn">
+      <para>Type: <b>VARIANT*</b></para>
+      <para>A pointer to a <b>VARIANT</b> that represents the new character code page. Only VT_I4 is supported. This parameter can be <b>NULL</b>.</para>
+    </param>
+    <param name="pvarOut">
+      <para>Type: <b>VARIANT*</b></para>
+      <para>A pointer to a <b>VARIANT</b> that represents the previous character code page. Only VT_I4 is supported. This parameter can be <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IBrowserService.GetTitle">
+    <summary>
+      <para>Deprecated. Retrieves the title of a browser window.</para>
+    </summary>
+    <param name="psv">
+      <para>Type: <b><see cref="IShellView" />*</b></para>
+      <para>A pointer to an <see cref="IShellView" /> that represents the browser's current view.</para>
+    </param>
+    <param name="pszName">
+      <para>Type: <b>LPWSTR</b></para>
+      <para>A pointer to a buffer that receives the title.</para>
+    </param>
+    <param name="cchName">
+      <para>Type: <b>DWORD</b></para>
+      <para>The size, in characters, of the buffer pointed to by <i>pszName</i>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IBrowserService.GetTravelLog">
+    <summary>
+      <para>Deprecated. Retrieves the browser's <see cref="ITravelLog" />.</para>
+    </summary>
+    <param name="pptl">
+      <para>Type: <b><see cref="ITravelLog" />**</b></para>
+      <para>The address that receives a pointer to the browser's <see cref="ITravelLog" />.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IBrowserService.IEGetDisplayName">
+    <summary>
+      <para>Deprecated. Retrieves the URL that corresponds to a pointer to an item identifier list (PIDL).</para>
+    </summary>
+    <param name="pidl">
+      <para>Type: <b>LPCITEMIDLIST</b></para>
+      <para>The PIDL for which to get the corresponding URL.</para>
+    </param>
+    <param name="pwszName">
+      <para>Type: <b>LPWSTR</b></para>
+      <para>A pointer to a buffer of at least INTERNET_MAX_URL_LENGTH characters to receive the URL.</para>
+    </param>
+    <param name="uFlags">
+      <para>Type: <b>UINT</b></para>
+      <para>One of the following values specifying the form of the retrieved URL.</para>
+      <h4>SHGDN_NORMAL (0)</h4>
+      <para>The URL is relative to the folder from which the request was made. SHGDN_NORMAL is equivalent to <b>NULL</b> and therefore should not be combined with other flags.</para>
+      <h4>SHGDN_FORADDRESSBAR (0)</h4>
+      <para>The URL is suitable for display in an address bar combo box.</para>
+      <h4>SHGDN_FORPARSING (0)</h4>
+      <para>The URL can be used for parsing.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IBrowserService.IEParseDisplayName">
+    <summary>
+      <para>Deprecated. Parses a URL into a pointer to an item identifier list (PIDL).</para>
+    </summary>
+    <param name="uiCP">
+      <para>Type: <b>UINT</b></para>
+      <para>A value of type <b>UINT</b> that indicates the code page (for example, CP_ACP, the system default code page) to use in the parsing.</para>
+    </param>
+    <param name="pwszPath">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>A pointer to a buffer containing the URL as a Unicode string.</para>
+    </param>
+    <param name="ppidlOut">
+      <para>Type: <b>LPITEMIDLIST*</b></para>
+      <para>The PIDL created from the parsed URL.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IBrowserService.IsControlWindowShown">
+    <summary>
+      <para>Deprecated. Retrieves a value that indicates whether a specified frame control is currently visible.</para>
+    </summary>
+    <param name="id">
+      <para>Type: <b>UINT</b></para>
+      <para>The frame control to check.</para>
+      <para>
+        <b>Note</b>  These frame controls may not be supported in future versions of Windows.</para>
+      <h4>FCW_STATUS (0x0001)</h4>
+      <para>The browser's status bar.</para>
+      <h4>FCW_TOOLBAR (0x0002)</h4>
+      <para>The browser's toolbar.</para>
+      <h4>FCW_TREE (0x0003)</h4>
+      <para>The browser's tree view.</para>
+      <h4>FCW_INTERNETBAR (0x0006)</h4>
+      <para>The browser's Media Bar.</para>
+      <h4>FCW_PROGRESS (0x0008)</h4>
+      <para>The browser's progress bar.</para>
+    </param>
+    <param name="pfShown">
+      <para>Type: <b>BOOL*</b></para>
+      <para>A value of type <b>BOOL</b> that indicates whether the specified frame control is visible.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IBrowserService.NavigateToPidl">
+    <summary>
+      <para>Deprecated. Navigates the browser to the location indicated by a pointer to an item identifier list (PIDL).</para>
+    </summary>
+    <param name="pidl">
+      <para>Type: <b>LPCITEMIDLIST</b></para>
+      <para>The PIDL of the location.</para>
+    </param>
+    <param name="grfHLNF">
+      <para>Type: <b>DWORD</b></para>
+      <para>One or more of the following flags.</para>
+      <h4>HLNF_NAVIGATINGBACK (0x00000004)</h4>
+      <para>The navigation is to the previous destination in the browse context.</para>
+      <h4>HLNF_NAVIGATINGFORWARD (0x00000008)</h4>
+      <para>The navigation is to the next destination in the browse context.</para>
+      <h4>HLNF_CALLERUNTRUSTED (0x00200000)</h4>
+      <para>The navigation was possibly initiated through a webpage by scripting code already on the system.</para>
+      <h4>HLNF_TRUSTEDFORACTIVEX (0x00400000)</h4>
+      <para>The navigation allows Microsoft ActiveX prompts.</para>
+      <h4>HLNF_DISABLEWINDOWRESTRICTIONS (0x00800000)</h4>
+      <para>A new window is created by a URL in a zone with window restrictions security mitigation disabled.</para>
+      <h4>HLNF_TRUSTFIRSTDOWNLOAD (0x01000000)</h4>
+      <para>The new window is the result of a user-initiated action. If the destination attempts a download on entry, it should be trusted.</para>
+      <h4>HLNF_UNTRUSTEDFORDOWNLOAD (0x02000000)</h4>
+      <para>Microsoft Internet Explorer is navigating to an untrusted non-HTML file. Do not download the file.</para>
+      <h4>HLNF_EXTERNALNAVIGATE (0x10000000)</h4>
+      <h4>HLNF_ALLOW_AUTONAVIGATE (0x20000000)</h4>
+      <h4>HLNF_NEWWINDOWSMANAGED (0x80000000)</h4>
+      <para>If this navigation results in a new window, it should be subject to Pop-up Manager.</para>
+      <h4>SHHLNF_WRITENOHISTORY (0x08000000)</h4>
+      <para>The destination of the current navigation should not be placed into the browser's history record.</para>
+      <h4>SHHLNF_NOAUTOSELECT (0x04000000)</h4>
+      <para>The destination of the current navigation should not be automatically selected from the browser's history record.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IBrowserService" />
+    <seealso cref="_NavigateToPidl" />
+  </member>
+  <member name="IBrowserService.NotifyRedirect">
+    <summary>
+      <para>Deprecated. Updates the browser to the specified pointer to an item identifier list (PIDL), navigating if necessary. This method is called when a page is redirected.</para>
+    </summary>
+    <param name="psv">
+      <para>Type: <b><see cref="IShellView" />*</b></para>
+      <para>A pointer to an <see cref="IShellView" /> that indicates the browser's view. The view must be either the browser's current view or the pending view.</para>
+    </param>
+    <param name="pidl">
+      <para>Type: <b>LPCITEMIDLIST</b></para>
+      <para>The PIDL to use in the update.</para>
+    </param>
+    <param name="pfDidBrowse">
+      <para>Type: <b>BOOL*</b></para>
+      <para>Optional. A pointer to a value of type <b>BOOL</b> that indicates whether navigation occurred.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IBrowserService.OnHttpEquiv">
+    <summary>
+      <para>Deprecated. Called when the document object responds to an <a href="https://developer.mozilla.org/en-us/docs/web/html/attributes">HTTP-EQUIV</a> metatag by issuing either the <b>OLECMDID_HTTPEQUIV</b> or <b>OLECMDID_HTTPEQUIV_DONE</b> command through <see cref="IOleCommandTarget.Exec" />.</para>
+    </summary>
+    <param name="psv">
+      <para>Type: <b><see cref="IShellView" />*</b></para>
+      <para>A pointer to an <see cref="IShellView" /> that indicates the browser's view. The view must be either the browser's current view or the pending view.</para>
+    </param>
+    <param name="fDone">
+      <para>Type: <b>BOOL</b></para>
+      <para>A value of type <b>BOOL</b> that indicates which command to issue.</para>
+      <h4>TRUE</h4>
+      <para>
+        <b>OLECMDID_HTTPEQUIV_DONE</b>
+      </para>
+      <h4>FALSE</h4>
+      <para>
+        <b>OLECMDID_HTTPEQUIV</b>
+      </para>
+    </param>
+    <param name="pvarargIn">
+      <para>Type: <b>VARIANT*</b></para>
+      <para>=A pointer to an object of type <b>VARIANT</b>. This is the equivalent of the <see cref="IOleCommandTarget.Exec" /> parameter <i>pvaIn</i>.</para>
+    </param>
+    <param name="pvarargOut">
+      <para>Type: <b>VARIANT*</b></para>
+      <para>A pointer to an object of type <b>VARIANT</b>. This is the equivalent of the <see cref="IOleCommandTarget.Exec" /> parameter <i>pvaOut</i>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IBrowserService.RegisterWindow">
+    <summary>
+      <para>Deprecated. Registers the browser in the list of browser windows.</para>
+    </summary>
+    <param name="fForceRegister">
+      <para>Type: <b>BOOL</b></para>
+      <para>A value of type <b>BOOL</b> that indicates whether to reregister the browser window if it was previously registered. If set to <b>TRUE</b> and the window was previously registered, this method will unregister and reregister the browser window.</para>
+      <h4>TRUE</h4>
+      <para>Force the window to be unregistered then reregistered.</para>
+      <h4>FALSE</h4>
+      <para>If the window is already registered, do nothing.</para>
+    </param>
+    <param name="swc">
+      <para>Type: <b>int</b></para>
+      <para>One of the <see cref="ShellWindowTypeConstants" /> values to indicate the nature of the window. Note that these values are defined in Expdisp.h.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IBrowserService.SetFlags">
+    <summary>
+      <para>Deprecated. Sets flags that indicate browser status.</para>
+    </summary>
+    <param name="dwFlags">
+      <para>Type: <b>DWORD</b></para>
+      <para>A bitmask used in conjunction with the flags indicated in <i>dwFlagMask</i>. For each <i>dwFlagMask</i> bit, the corresponding bit in this value sets (1) or disables (0) that state.</para>
+    </param>
+    <param name="dwFlagMask">
+      <para>Type: <b>DWORD</b></para>
+      <para>One or more of the following values.</para>
+      <h4>BSF_REGISTERASDROPTARGET (0x00000001)</h4>
+      <para>The browser is registered as a drop target for navigation.</para>
+      <h4>BSF_THEATERMODE (0x00000002)</h4>
+      <para>The browser is in theater mode. <b>Not supported by</b>:      Internet Explorer 7 or Windows Vista</para>
+      <h4>BSF_NOLOCALFILEWARNING (0x00000010)</h4>
+      <para>Display a no local file warning.</para>
+      <h4>BSF_UISETBYAUTOMATION (0x00000100)</h4>
+      <para>The browser's UI is set by automation.</para>
+      <h4>BSF_RESIZABLE (0x00000200)</h4>
+      <para>The browser can be resized. <b>Not supported by </b>: Internet Explorer 7 or Windows Vista</para>
+      <h4>BSF_CANMAXIMIZE (0x00000400)</h4>
+      <para>The browser can be maximized. <b>Not supported by </b>: Internet Explorer 7 or Windows Vista</para>
+      <h4>BSF_TOPBROWSER (0x00000800)</h4>
+      <para>The browser is the top browser window.</para>
+      <h4>BSF_NAVNOHISTORY (0x00001000)</h4>
+      <para>The current location should be added to the history.</para>
+      <h4>BSF_HTMLNAVCANCELED (0x00002000)</h4>
+      <para>Navigation was canceled.</para>
+      <h4>BSF_DONTSHOWNAVCANCELPAGE (0x00004000)</h4>
+      <para>Do not display a page explaining that the navigation was canceled.</para>
+      <h4>BSF_SETNAVIGATABLECODEPAGE (0x00008000)</h4>
+      <para>Set a navigable code page.</para>
+      <h4>BSF_DELEGATEDNAVIGATION (0x00010000)</h4>
+      <para>Navigation has been delegated.</para>
+      <h4>BSF_TRUSTEDFORACTIVEX (0x00020000)</h4>
+      <para>Trust ActiveX objects.</para>
+      <h4>BSF_MERGEDMENUS (0x00040000)</h4>
+      <para>0x00040000. 0x00040000. Indicates that this browser instance has merged menus. <b> Not supported by</b>: Internet Explorer 7 or Windows Vista.</para>
+      <h4>BSF_FEEDNAVIGATION (0x00080000)</h4>
+      <para>0x00080000. Set on navigation to a feed.</para>
+      <h4>BSF_FEEDSUBSCRIBED (0x00100000)</h4>
+      <para>0x00100000. Set on navigation to a subscribed feed.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IBrowserService.SetHistoryObject">
+    <summary>
+      <para>Deprecated. Sets the browser's history object.</para>
+    </summary>
+    <param name="pole">
+      <para>Type: <b><see cref="IOleObject" />*</b></para>
+      <para>A pointer to an <see cref="IOleObject" /> that represents the history object to set.</para>
+    </param>
+    <param name="fIsLocalAnchor">
+      <para>Type: <b>BOOL</b></para>
+      <para>A value that specifies whether the new entry is a local or a remote file. Used in the case of the reuse of an inner object.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This method will fail if the browser already has a history object.</para>
+    </remarks>
+  </member>
+  <member name="IBrowserService.SetNavigateState">
+    <summary>
+      <para>Deprecated. Sets the current navigation state. This method affects the cursor and animation.</para>
+    </summary>
+    <param name="bnstate">
+      <para>Type: <b><see cref="BNSTATE" /></b></para>
+      <para>The value from the <see cref="BNSTATE" /> enumeration that indicates the navigation state.</para>
+      <h4>BNS_NORMAL (0)</h4>
+      <para>The normal state.</para>
+      <h4>BNS_BEGIN_NAVIGATE (1)</h4>
+      <para>A begin navigation event has occurred.</para>
+      <h4>BNS_NAVIGATE (2)</h4>
+      <para>A navigation event has occurred.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IBrowserService.SetReferrer">
+    <summary>
+      <para>Deprecated. Sets the pointer to an item identifier list (PIDL) used for zone checking when creating a new window.</para>
+    </summary>
+    <param name="pidl">
+      <para>Type: <b>LPITEMIDLIST</b></para>
+      <para>A pointer to the <see cref="ITEMIDLIST" /> structure (PIDL) used for zone checking.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IBrowserService.SetTitle">
+    <summary>
+      <para>Deprecated. Sets the title of a browser window.</para>
+    </summary>
+    <param name="psv">
+      <para>Type: <b><see cref="IShellView" />*</b></para>
+      <para>A pointer to an <see cref="IShellView" /> that represents the browser's view. The view must be either the browser's current view or the pending view.</para>
+    </param>
+    <param name="pszName">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>A pointer to a buffer containing the browser window's title as a Unicode string.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IBrowserService.ShowControlWindow">
+    <summary>
+      <para>Deprecated. Shows or hides various frame controls.</para>
+    </summary>
+    <param name="id">
+      <para>Type: <b>UINT</b></para>
+      <para>A value that indicates the frame control to show or hide. One of the following values as defined in Shobjidl.h or -1 for fullscreen/kiosk mode.</para>
+      <para>
+        <b>Note</b>  These frame controls may not be supported in future versions of Windows.</para>
+      <h4>FCW_STATUS (0x0001)</h4>
+      <para>The browser's status bar.</para>
+      <h4>FCW_TOOLBAR (0x0002)</h4>
+      <para>The browser's toolbar.</para>
+      <h4>FCW_TREE (0x0003)</h4>
+      <para>The browser's tree view.</para>
+      <h4>FCW_INTERNETBAR (0x0006)</h4>
+      <para>The browser's Media Bar.</para>
+      <h4>FCW_PROGRESS (0x0008)</h4>
+      <para>The browser's progress bar.</para>
+    </param>
+    <param name="fShow">
+      <para>Type: <b>BOOL</b></para>
+      <para>A value that indicates whether to show or hide the frame control.</para>
+      <h4>TRUE</h4>
+      <para>Show the control.</para>
+      <h4>FALSE</h4>
+      <para>Hide the control.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IBrowserService.UpdateBackForwardState">
+    <summary>
+      <para>Deprecated. Updates the state of the browser's <b>Back</b> and <b>Forward</b> buttons.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IBrowserService.UpdateWindowList">
+    <summary>
+      <para>Deprecated. Instructs the browser to update the pointer to an item identifier list (PIDL) in the window list. This method is called after navigation.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IBrowserService">
+    <summary>
+      <para>Deprecated. The methods exposed by this interface are analogous to virtual protected methods in normal C++ inheritance. The objects' inheritance hierarchy spans multiple DLLs. The hierarchy is made up of a base class and several derived classes that correspond to controls, including CLSID_WebBrowser and the user's desktop. Objects not in the hierarchy should not implement this interface or use most of its methods.</para>
+    </summary>
+    <remarks>
+      <para>In a direct inheritance scheme, these methods would be protected members. For that reason, it is recommended that this interface not be used directly by implementers. If it is used directly, existing data could be at risk.</para>
+    </remarks>
+  </member>
+</doc>

@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="VMRMode">
+    <summary>
+      <para>The <b>VMRMode</b> enumeration type is used in calls to the <see cref="IVMRFilterConfig.GetRenderingMode" /> and <see cref="IVMRFilterConfig.SetRenderingMode" /> methods to retrieve or specify the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/video-mixing-renderer-filter-7">Video Mixing Renderer Filter 7</a> (VMR-7) rendering mode.</para>
+    </summary>
+    <remarks>
+      <para>These modes are mutually exclusive. The <b>VMRMode_Renderless</b> flag means that the application is providing its own allocator-presenter, which is responsible for all drawing to the screen. The <b>VMRMode_Windowed</b> flag is the default mode of the VMR-7. See <a href="https://docs.microsoft.com//windows/desktop/DirectShow/vmr-modes-of-operation">VMR Modes of Operation</a> for more information on the rendering modes.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-enumerated-types">DirectShow Enumerated Types</seealso>
+  </member>
+  <member name="VMRMode.VMRMode_Windowed">
+    <summary>
+      <para>Windowed mode.</para>
+    </summary>
+  </member>
+  <member name="VMRMode.VMRMode_Windowless">
+    <summary>
+      <para>Windowless mode.</para>
+    </summary>
+  </member>
+  <member name="VMRMode.VMRMode_Renderless">
+    <summary>
+      <para>Renderless mode.</para>
+    </summary>
+  </member>
+  <member name="VMRMode.VMRMode_Mask">
+    <summary>
+      <para>Bitwise <b>OR</b> of all above flags; this is not a valid value to pass to <see cref="SetRenderingMode" />.</para>
+    </summary>
+  </member>
+</doc>

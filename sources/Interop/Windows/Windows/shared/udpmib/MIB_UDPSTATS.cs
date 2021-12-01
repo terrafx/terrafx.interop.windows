@@ -5,20 +5,26 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MIB_UDPSTATS.xml' path='doc/member[@name="MIB_UDPSTATS"]/*' />
 public partial struct MIB_UDPSTATS
 {
+    /// <include file='MIB_UDPSTATS.xml' path='doc/member[@name="MIB_UDPSTATS.dwInDatagrams"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwInDatagrams;
 
+    /// <include file='MIB_UDPSTATS.xml' path='doc/member[@name="MIB_UDPSTATS.dwNoPorts"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwNoPorts;
 
+    /// <include file='MIB_UDPSTATS.xml' path='doc/member[@name="MIB_UDPSTATS.dwInErrors"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwInErrors;
 
+    /// <include file='MIB_UDPSTATS.xml' path='doc/member[@name="MIB_UDPSTATS.dwOutDatagrams"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwOutDatagrams;
 
+    /// <include file='MIB_UDPSTATS.xml' path='doc/member[@name="MIB_UDPSTATS.dwNumAddrs"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwNumAddrs;
 }

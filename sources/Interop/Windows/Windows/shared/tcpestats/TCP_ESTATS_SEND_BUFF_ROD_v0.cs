@@ -5,17 +5,22 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TCP_ESTATS_SEND_BUFF_ROD_v0.xml' path='doc/member[@name="TCP_ESTATS_SEND_BUFF_ROD_v0"]/*' />
 public partial struct TCP_ESTATS_SEND_BUFF_ROD_v0
 {
+    /// <include file='TCP_ESTATS_SEND_BUFF_ROD_v0.xml' path='doc/member[@name="TCP_ESTATS_SEND_BUFF_ROD_v0.CurRetxQueue"]/*' />
     [NativeTypeName("SIZE_T")]
     public nuint CurRetxQueue;
 
+    /// <include file='TCP_ESTATS_SEND_BUFF_ROD_v0.xml' path='doc/member[@name="TCP_ESTATS_SEND_BUFF_ROD_v0.MaxRetxQueue"]/*' />
     [NativeTypeName("SIZE_T")]
     public nuint MaxRetxQueue;
 
+    /// <include file='TCP_ESTATS_SEND_BUFF_ROD_v0.xml' path='doc/member[@name="TCP_ESTATS_SEND_BUFF_ROD_v0.CurAppWQueue"]/*' />
     [NativeTypeName("SIZE_T")]
     public nuint CurAppWQueue;
 
+    /// <include file='TCP_ESTATS_SEND_BUFF_ROD_v0.xml' path='doc/member[@name="TCP_ESTATS_SEND_BUFF_ROD_v0.MaxAppWQueue"]/*' />
     [NativeTypeName("SIZE_T")]
     public nuint MaxAppWQueue;
 }

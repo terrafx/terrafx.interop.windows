@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DWM_BLURBEHIND">
+    <summary>
+      <para>Specifies Desktop Window Manager (DWM) blur-behind properties. Used by the <see cref="DwmEnableBlurBehindWindow" /> function.</para>
+    </summary>
+  </member>
+  <member name="DWM_BLURBEHIND.dwFlags">
+    <summary>
+      <para>A bitwise combination of <a href="https://docs.microsoft.com//windows/desktop/dwm/dwm-bb-constants">DWM Blur Behind</a> constant values that indicates which of the members of this structure have been set.</para>
+    </summary>
+  </member>
+  <member name="DWM_BLURBEHIND.fEnable">
+    <summary>
+      <para>
+        <b>TRUE</b> to register the window handle to DWM blur behind; <b>FALSE</b> to unregister the window handle from DWM blur behind.</para>
+    </summary>
+  </member>
+  <member name="DWM_BLURBEHIND.hRgnBlur">
+    <summary>
+      <para>The region within the client area where the blur behind will be applied. A <b>NULL</b> value will apply the blur behind the entire client area.</para>
+    </summary>
+  </member>
+  <member name="DWM_BLURBEHIND.fTransitionOnMaximized">
+    <summary>
+      <para>
+        <b>TRUE</b> if the window's colorization should transition to match the maximized windows; otherwise, <b>FALSE</b>.</para>
+    </summary>
+  </member>
+</doc>

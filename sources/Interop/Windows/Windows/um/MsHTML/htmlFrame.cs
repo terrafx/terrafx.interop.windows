@@ -5,17 +5,39 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='htmlFrame.xml' path='doc/member[@name="htmlFrame"]/*' />
 public enum htmlFrame
 {
+    /// <include file='htmlFrame.xml' path='doc/member[@name="htmlFrame.htmlFrameNotSet"]/*' />
     htmlFrameNotSet = 0,
+
+    /// <include file='htmlFrame.xml' path='doc/member[@name="htmlFrame.htmlFramevoid"]/*' />
     htmlFramevoid = 1,
+
+    /// <include file='htmlFrame.xml' path='doc/member[@name="htmlFrame.htmlFrameabove"]/*' />
     htmlFrameabove = 2,
+
+    /// <include file='htmlFrame.xml' path='doc/member[@name="htmlFrame.htmlFramebelow"]/*' />
     htmlFramebelow = 3,
+
+    /// <include file='htmlFrame.xml' path='doc/member[@name="htmlFrame.htmlFramehsides"]/*' />
     htmlFramehsides = 4,
+
+    /// <include file='htmlFrame.xml' path='doc/member[@name="htmlFrame.htmlFramelhs"]/*' />
     htmlFramelhs = 5,
+
+    /// <include file='htmlFrame.xml' path='doc/member[@name="htmlFrame.htmlFramerhs"]/*' />
     htmlFramerhs = 6,
+
+    /// <include file='htmlFrame.xml' path='doc/member[@name="htmlFrame.htmlFramevsides"]/*' />
     htmlFramevsides = 7,
+
+    /// <include file='htmlFrame.xml' path='doc/member[@name="htmlFrame.htmlFramebox"]/*' />
     htmlFramebox = 8,
+
+    /// <include file='htmlFrame.xml' path='doc/member[@name="htmlFrame.htmlFrameborder"]/*' />
     htmlFrameborder = 9,
+
+    /// <include file='htmlFrame.xml' path='doc/member[@name="htmlFrame.htmlFrame_Max"]/*' />
     htmlFrame_Max = 2147483647,
 }

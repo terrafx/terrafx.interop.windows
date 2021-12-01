@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='GROUPBOXSTATES.xml' path='doc/member[@name="GROUPBOXSTATES"]/*' />
 public enum GROUPBOXSTATES
 {
+    /// <include file='GROUPBOXSTATES.xml' path='doc/member[@name="GROUPBOXSTATES.GBS_NORMAL"]/*' />
     GBS_NORMAL = 1,
+
+    /// <include file='GROUPBOXSTATES.xml' path='doc/member[@name="GROUPBOXSTATES.GBS_DISABLED"]/*' />
     GBS_DISABLED = 2,
 }

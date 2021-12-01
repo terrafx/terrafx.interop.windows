@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IContactProperties.xml' path='doc/member[@name="IContactProperties"]/*' />
 [Guid("70DD27DD-5CBD-46E8-BEF0-23B6B346288F")]
 [NativeTypeName("struct IContactProperties : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IContactProperties : IContactProperties.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IContactProperties : IContactProperties.Interface
         return ((delegate* unmanaged<IContactProperties*, Guid*, void**, int>)(lpVtbl[0]))((IContactProperties*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IContactProperties : IContactProperties.Interface
         return ((delegate* unmanaged<IContactProperties*, uint>)(lpVtbl[1]))((IContactProperties*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IContactProperties : IContactProperties.Interface
         return ((delegate* unmanaged<IContactProperties*, uint>)(lpVtbl[2]))((IContactProperties*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IContactProperties.xml' path='doc/member[@name="IContactProperties.GetString"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetString([NativeTypeName("LPCWSTR")] ushort* pszPropertyName, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPWSTR")] ushort* pszValue, [NativeTypeName("DWORD")] uint cchValue, [NativeTypeName("DWORD *")] uint* pdwcchPropertyValueRequired)
@@ -46,6 +51,7 @@ public unsafe partial struct IContactProperties : IContactProperties.Interface
         return ((delegate* unmanaged<IContactProperties*, ushort*, uint, ushort*, uint, uint*, int>)(lpVtbl[3]))((IContactProperties*)Unsafe.AsPointer(ref this), pszPropertyName, dwFlags, pszValue, cchValue, pdwcchPropertyValueRequired);
     }
 
+    /// <include file='IContactProperties.xml' path='doc/member[@name="IContactProperties.GetDate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetDate([NativeTypeName("LPCWSTR")] ushort* pszPropertyName, [NativeTypeName("DWORD")] uint dwFlags, FILETIME* pftDateTime)
@@ -53,6 +59,7 @@ public unsafe partial struct IContactProperties : IContactProperties.Interface
         return ((delegate* unmanaged<IContactProperties*, ushort*, uint, FILETIME*, int>)(lpVtbl[4]))((IContactProperties*)Unsafe.AsPointer(ref this), pszPropertyName, dwFlags, pftDateTime);
     }
 
+    /// <include file='IContactProperties.xml' path='doc/member[@name="IContactProperties.GetBinary"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetBinary([NativeTypeName("LPCWSTR")] ushort* pszPropertyName, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPWSTR")] ushort* pszContentType, [NativeTypeName("DWORD")] uint cchContentType, [NativeTypeName("DWORD *")] uint* pdwcchContentTypeRequired, IStream** ppStream)
@@ -60,6 +67,7 @@ public unsafe partial struct IContactProperties : IContactProperties.Interface
         return ((delegate* unmanaged<IContactProperties*, ushort*, uint, ushort*, uint, uint*, IStream**, int>)(lpVtbl[5]))((IContactProperties*)Unsafe.AsPointer(ref this), pszPropertyName, dwFlags, pszContentType, cchContentType, pdwcchContentTypeRequired, ppStream);
     }
 
+    /// <include file='IContactProperties.xml' path='doc/member[@name="IContactProperties.GetLabels"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetLabels([NativeTypeName("LPCWSTR")] ushort* pszArrayElementName, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPWSTR")] ushort* pszLabels, [NativeTypeName("DWORD")] uint cchLabels, [NativeTypeName("DWORD *")] uint* pdwcchLabelsRequired)
@@ -67,6 +75,7 @@ public unsafe partial struct IContactProperties : IContactProperties.Interface
         return ((delegate* unmanaged<IContactProperties*, ushort*, uint, ushort*, uint, uint*, int>)(lpVtbl[6]))((IContactProperties*)Unsafe.AsPointer(ref this), pszArrayElementName, dwFlags, pszLabels, cchLabels, pdwcchLabelsRequired);
     }
 
+    /// <include file='IContactProperties.xml' path='doc/member[@name="IContactProperties.SetString"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT SetString([NativeTypeName("LPCWSTR")] ushort* pszPropertyName, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPCWSTR")] ushort* pszValue)
@@ -74,6 +83,7 @@ public unsafe partial struct IContactProperties : IContactProperties.Interface
         return ((delegate* unmanaged<IContactProperties*, ushort*, uint, ushort*, int>)(lpVtbl[7]))((IContactProperties*)Unsafe.AsPointer(ref this), pszPropertyName, dwFlags, pszValue);
     }
 
+    /// <include file='IContactProperties.xml' path='doc/member[@name="IContactProperties.SetDate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT SetDate([NativeTypeName("LPCWSTR")] ushort* pszPropertyName, [NativeTypeName("DWORD")] uint dwFlags, FILETIME ftDateTime)
@@ -81,6 +91,7 @@ public unsafe partial struct IContactProperties : IContactProperties.Interface
         return ((delegate* unmanaged<IContactProperties*, ushort*, uint, FILETIME, int>)(lpVtbl[8]))((IContactProperties*)Unsafe.AsPointer(ref this), pszPropertyName, dwFlags, ftDateTime);
     }
 
+    /// <include file='IContactProperties.xml' path='doc/member[@name="IContactProperties.SetBinary"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT SetBinary([NativeTypeName("LPCWSTR")] ushort* pszPropertyName, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPCWSTR")] ushort* pszContentType, IStream* pStream)
@@ -88,6 +99,7 @@ public unsafe partial struct IContactProperties : IContactProperties.Interface
         return ((delegate* unmanaged<IContactProperties*, ushort*, uint, ushort*, IStream*, int>)(lpVtbl[9]))((IContactProperties*)Unsafe.AsPointer(ref this), pszPropertyName, dwFlags, pszContentType, pStream);
     }
 
+    /// <include file='IContactProperties.xml' path='doc/member[@name="IContactProperties.SetLabels"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT SetLabels([NativeTypeName("LPCWSTR")] ushort* pszArrayElementName, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD")] uint dwLabelCount, [NativeTypeName("LPCWSTR []")] ushort** ppszLabels)
@@ -95,6 +107,7 @@ public unsafe partial struct IContactProperties : IContactProperties.Interface
         return ((delegate* unmanaged<IContactProperties*, ushort*, uint, uint, ushort**, int>)(lpVtbl[10]))((IContactProperties*)Unsafe.AsPointer(ref this), pszArrayElementName, dwFlags, dwLabelCount, ppszLabels);
     }
 
+    /// <include file='IContactProperties.xml' path='doc/member[@name="IContactProperties.CreateArrayNode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT CreateArrayNode([NativeTypeName("LPCWSTR")] ushort* pszArrayName, [NativeTypeName("DWORD")] uint dwFlags, BOOL fAppend, [NativeTypeName("LPWSTR")] ushort* pszNewArrayElementName, [NativeTypeName("DWORD")] uint cchNewArrayElementName, [NativeTypeName("DWORD *")] uint* pdwcchNewArrayElementNameRequired)
@@ -102,6 +115,7 @@ public unsafe partial struct IContactProperties : IContactProperties.Interface
         return ((delegate* unmanaged<IContactProperties*, ushort*, uint, BOOL, ushort*, uint, uint*, int>)(lpVtbl[11]))((IContactProperties*)Unsafe.AsPointer(ref this), pszArrayName, dwFlags, fAppend, pszNewArrayElementName, cchNewArrayElementName, pdwcchNewArrayElementNameRequired);
     }
 
+    /// <include file='IContactProperties.xml' path='doc/member[@name="IContactProperties.DeleteProperty"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT DeleteProperty([NativeTypeName("LPCWSTR")] ushort* pszPropertyName, [NativeTypeName("DWORD")] uint dwFlags)
@@ -109,6 +123,7 @@ public unsafe partial struct IContactProperties : IContactProperties.Interface
         return ((delegate* unmanaged<IContactProperties*, ushort*, uint, int>)(lpVtbl[12]))((IContactProperties*)Unsafe.AsPointer(ref this), pszPropertyName, dwFlags);
     }
 
+    /// <include file='IContactProperties.xml' path='doc/member[@name="IContactProperties.DeleteArrayNode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT DeleteArrayNode([NativeTypeName("LPCWSTR")] ushort* pszArrayElementName, [NativeTypeName("DWORD")] uint dwFlags)
@@ -116,6 +131,7 @@ public unsafe partial struct IContactProperties : IContactProperties.Interface
         return ((delegate* unmanaged<IContactProperties*, ushort*, uint, int>)(lpVtbl[13]))((IContactProperties*)Unsafe.AsPointer(ref this), pszArrayElementName, dwFlags);
     }
 
+    /// <include file='IContactProperties.xml' path='doc/member[@name="IContactProperties.DeleteLabels"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT DeleteLabels([NativeTypeName("LPCWSTR")] ushort* pszArrayElementName, [NativeTypeName("DWORD")] uint dwFlags)
@@ -123,6 +139,7 @@ public unsafe partial struct IContactProperties : IContactProperties.Interface
         return ((delegate* unmanaged<IContactProperties*, ushort*, uint, int>)(lpVtbl[14]))((IContactProperties*)Unsafe.AsPointer(ref this), pszArrayElementName, dwFlags);
     }
 
+    /// <include file='IContactProperties.xml' path='doc/member[@name="IContactProperties.GetPropertyCollection"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT GetPropertyCollection(IContactPropertyCollection** ppPropertyCollection, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPCWSTR")] ushort* pszMultiValueName, [NativeTypeName("DWORD")] uint dwLabelCount, [NativeTypeName("LPCWSTR []")] ushort** ppszLabels, BOOL fAnyLabelMatches)

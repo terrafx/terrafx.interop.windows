@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MFVideoSphericalProjectionMode.xml' path='doc/member[@name="MFVideoSphericalProjectionMode"]/*' />
 public enum MFVideoSphericalProjectionMode
 {
+    /// <include file='MFVideoSphericalProjectionMode.xml' path='doc/member[@name="MFVideoSphericalProjectionMode.MFVideoSphericalProjectionMode_Spherical"]/*' />
     MFVideoSphericalProjectionMode_Spherical = 0,
+
+    /// <include file='MFVideoSphericalProjectionMode.xml' path='doc/member[@name="MFVideoSphericalProjectionMode.MFVideoSphericalProjectionMode_Flat"]/*' />
     MFVideoSphericalProjectionMode_Flat = (MFVideoSphericalProjectionMode_Spherical + 1),
 }

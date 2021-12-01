@@ -9,23 +9,30 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SYNCHRONIZATION_BARRIER.xml' path='doc/member[@name="SYNCHRONIZATION_BARRIER"]/*' />
 public partial struct SYNCHRONIZATION_BARRIER
 {
+    /// <include file='SYNCHRONIZATION_BARRIER.xml' path='doc/member[@name="SYNCHRONIZATION_BARRIER.Reserved1"]/*' />
     [NativeTypeName("DWORD")]
     public uint Reserved1;
 
+    /// <include file='SYNCHRONIZATION_BARRIER.xml' path='doc/member[@name="SYNCHRONIZATION_BARRIER.Reserved2"]/*' />
     [NativeTypeName("DWORD")]
     public uint Reserved2;
 
+    /// <include file='SYNCHRONIZATION_BARRIER.xml' path='doc/member[@name="SYNCHRONIZATION_BARRIER.Reserved3"]/*' />
     [NativeTypeName("ULONG_PTR [2]")]
     public _Reserved3_e__FixedBuffer Reserved3;
 
+    /// <include file='SYNCHRONIZATION_BARRIER.xml' path='doc/member[@name="SYNCHRONIZATION_BARRIER.Reserved4"]/*' />
     [NativeTypeName("DWORD")]
     public uint Reserved4;
 
+    /// <include file='SYNCHRONIZATION_BARRIER.xml' path='doc/member[@name="SYNCHRONIZATION_BARRIER.Reserved5"]/*' />
     [NativeTypeName("DWORD")]
     public uint Reserved5;
 
+    /// <include file='_Reserved3_e__FixedBuffer.xml' path='doc/member[@name="_Reserved3_e__FixedBuffer"]/*' />
     public partial struct _Reserved3_e__FixedBuffer
     {
         public nuint e0;

@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='XmlConformanceLevel.xml' path='doc/member[@name="XmlConformanceLevel"]/*' />
 public enum XmlConformanceLevel
 {
+    /// <include file='XmlConformanceLevel.xml' path='doc/member[@name="XmlConformanceLevel.XmlConformanceLevel_Auto"]/*' />
     XmlConformanceLevel_Auto = 0,
+
+    /// <include file='XmlConformanceLevel.xml' path='doc/member[@name="XmlConformanceLevel.XmlConformanceLevel_Fragment"]/*' />
     XmlConformanceLevel_Fragment = 1,
+
+    /// <include file='XmlConformanceLevel.xml' path='doc/member[@name="XmlConformanceLevel.XmlConformanceLevel_Document"]/*' />
     XmlConformanceLevel_Document = 2,
+
+    /// <include file='XmlConformanceLevel.xml' path='doc/member[@name="XmlConformanceLevel._XmlConformanceLevel_Last"]/*' />
     _XmlConformanceLevel_Last = 2,
 }

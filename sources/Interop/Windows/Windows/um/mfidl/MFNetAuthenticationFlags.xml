@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MFNetAuthenticationFlags">
+    <summary>
+      <para>Specifies how the user's credentials will be used.</para>
+    </summary>
+    <seealso cref="IMFNetCredentialCache.GetCredential" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/network-source-authentication">Network Source Authentication</seealso>
+  </member>
+  <member name="MFNetAuthenticationFlags.MFNET_AUTHENTICATION_PROXY">
+    <summary>
+      <para>The credentials will be used to authenticate with a proxy.</para>
+    </summary>
+  </member>
+  <member name="MFNetAuthenticationFlags.MFNET_AUTHENTICATION_CLEAR_TEXT">
+    <summary>
+      <para>The credentials will be sent over the network unencrypted.</para>
+    </summary>
+  </member>
+  <member name="MFNetAuthenticationFlags.MFNET_AUTHENTICATION_LOGGED_ON_USER">
+    <summary>
+      <para>The credentials must be from a user who is currently logged on.</para>
+    </summary>
+  </member>
+</doc>

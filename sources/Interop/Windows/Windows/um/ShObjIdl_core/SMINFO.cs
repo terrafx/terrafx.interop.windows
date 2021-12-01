@@ -5,16 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SMINFO.xml' path='doc/member[@name="SMINFO"]/*' />
 public partial struct SMINFO
 {
+    /// <include file='SMINFO.xml' path='doc/member[@name="SMINFO.dwMask"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwMask;
 
+    /// <include file='SMINFO.xml' path='doc/member[@name="SMINFO.dwType"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwType;
 
+    /// <include file='SMINFO.xml' path='doc/member[@name="SMINFO.dwFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFlags;
 
+    /// <include file='SMINFO.xml' path='doc/member[@name="SMINFO.iIcon"]/*' />
     public int iIcon;
 }

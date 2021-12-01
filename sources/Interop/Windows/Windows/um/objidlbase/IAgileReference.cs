@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAgileReference.xml' path='doc/member[@name="IAgileReference"]/*' />
 [Guid("C03F6A43-65A4-9818-987E-E0B810D2A6F2")]
 [NativeTypeName("struct IAgileReference : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IAgileReference : IAgileReference.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IAgileReference : IAgileReference.Interface
         return ((delegate* unmanaged<IAgileReference*, Guid*, void**, int>)(lpVtbl[0]))((IAgileReference*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IAgileReference : IAgileReference.Interface
         return ((delegate* unmanaged<IAgileReference*, uint>)(lpVtbl[1]))((IAgileReference*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IAgileReference : IAgileReference.Interface
         return ((delegate* unmanaged<IAgileReference*, uint>)(lpVtbl[2]))((IAgileReference*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAgileReference.xml' path='doc/member[@name="IAgileReference.Resolve"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Resolve([NativeTypeName("const IID &")] Guid* riid, void** ppvObjectReference)

@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CBT_CREATEWNDA.xml' path='doc/member[@name="CBT_CREATEWNDA"]/*' />
 public unsafe partial struct CBT_CREATEWNDA
 {
+    /// <include file='CBT_CREATEWNDA.xml' path='doc/member[@name="CBT_CREATEWNDA.lpcs"]/*' />
     [NativeTypeName("struct tagCREATESTRUCTA *")]
     public CREATESTRUCTA* lpcs;
 
+    /// <include file='CBT_CREATEWNDA.xml' path='doc/member[@name="CBT_CREATEWNDA.hwndInsertAfter"]/*' />
     public HWND hwndInsertAfter;
 }

@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CERT_POLICY_QUALIFIER_USER_NOTICE.xml' path='doc/member[@name="CERT_POLICY_QUALIFIER_USER_NOTICE"]/*' />
 public unsafe partial struct CERT_POLICY_QUALIFIER_USER_NOTICE
 {
+    /// <include file='CERT_POLICY_QUALIFIER_USER_NOTICE.xml' path='doc/member[@name="CERT_POLICY_QUALIFIER_USER_NOTICE.pNoticeReference"]/*' />
     public CERT_POLICY_QUALIFIER_NOTICE_REFERENCE* pNoticeReference;
 
+    /// <include file='CERT_POLICY_QUALIFIER_USER_NOTICE.xml' path='doc/member[@name="CERT_POLICY_QUALIFIER_USER_NOTICE.pszDisplayText"]/*' />
     [NativeTypeName("LPWSTR")]
     public ushort* pszDisplayText;
 }

@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WOF_EXTERNAL_INFO.xml' path='doc/member[@name="WOF_EXTERNAL_INFO"]/*' />
 public partial struct WOF_EXTERNAL_INFO
 {
+    /// <include file='WOF_EXTERNAL_INFO.xml' path='doc/member[@name="WOF_EXTERNAL_INFO.Version"]/*' />
     [NativeTypeName("DWORD")]
     public uint Version;
 
+    /// <include file='WOF_EXTERNAL_INFO.xml' path='doc/member[@name="WOF_EXTERNAL_INFO.Provider"]/*' />
     [NativeTypeName("DWORD")]
     public uint Provider;
 }

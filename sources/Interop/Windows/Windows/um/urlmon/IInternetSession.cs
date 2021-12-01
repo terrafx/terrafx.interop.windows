@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IInternetSession.xml' path='doc/member[@name="IInternetSession"]/*' />
 [Guid("79EAC9E7-BAF9-11CE-8C82-00AA004BA90B")]
 [NativeTypeName("struct IInternetSession : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IInternetSession : IInternetSession.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IInternetSession : IInternetSession.Interface
         return ((delegate* unmanaged<IInternetSession*, Guid*, void**, int>)(lpVtbl[0]))((IInternetSession*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IInternetSession : IInternetSession.Interface
         return ((delegate* unmanaged<IInternetSession*, uint>)(lpVtbl[1]))((IInternetSession*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IInternetSession : IInternetSession.Interface
         return ((delegate* unmanaged<IInternetSession*, uint>)(lpVtbl[2]))((IInternetSession*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IInternetSession.xml' path='doc/member[@name="IInternetSession.RegisterNameSpace"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT RegisterNameSpace(IClassFactory* pCF, [NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("LPCWSTR")] ushort* pwzProtocol, [NativeTypeName("ULONG")] uint cPatterns, [NativeTypeName("const LPCWSTR *")] ushort** ppwzPatterns, [NativeTypeName("DWORD")] uint dwReserved)
@@ -46,6 +51,7 @@ public unsafe partial struct IInternetSession : IInternetSession.Interface
         return ((delegate* unmanaged<IInternetSession*, IClassFactory*, Guid*, ushort*, uint, ushort**, uint, int>)(lpVtbl[3]))((IInternetSession*)Unsafe.AsPointer(ref this), pCF, rclsid, pwzProtocol, cPatterns, ppwzPatterns, dwReserved);
     }
 
+    /// <include file='IInternetSession.xml' path='doc/member[@name="IInternetSession.UnregisterNameSpace"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT UnregisterNameSpace(IClassFactory* pCF, [NativeTypeName("LPCWSTR")] ushort* pszProtocol)
@@ -53,6 +59,7 @@ public unsafe partial struct IInternetSession : IInternetSession.Interface
         return ((delegate* unmanaged<IInternetSession*, IClassFactory*, ushort*, int>)(lpVtbl[4]))((IInternetSession*)Unsafe.AsPointer(ref this), pCF, pszProtocol);
     }
 
+    /// <include file='IInternetSession.xml' path='doc/member[@name="IInternetSession.RegisterMimeFilter"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT RegisterMimeFilter(IClassFactory* pCF, [NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("LPCWSTR")] ushort* pwzType)
@@ -60,6 +67,7 @@ public unsafe partial struct IInternetSession : IInternetSession.Interface
         return ((delegate* unmanaged<IInternetSession*, IClassFactory*, Guid*, ushort*, int>)(lpVtbl[5]))((IInternetSession*)Unsafe.AsPointer(ref this), pCF, rclsid, pwzType);
     }
 
+    /// <include file='IInternetSession.xml' path='doc/member[@name="IInternetSession.UnregisterMimeFilter"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT UnregisterMimeFilter(IClassFactory* pCF, [NativeTypeName("LPCWSTR")] ushort* pwzType)
@@ -67,6 +75,7 @@ public unsafe partial struct IInternetSession : IInternetSession.Interface
         return ((delegate* unmanaged<IInternetSession*, IClassFactory*, ushort*, int>)(lpVtbl[6]))((IInternetSession*)Unsafe.AsPointer(ref this), pCF, pwzType);
     }
 
+    /// <include file='IInternetSession.xml' path='doc/member[@name="IInternetSession.CreateBinding"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT CreateBinding([NativeTypeName("LPBC")] IBindCtx* pBC, [NativeTypeName("LPCWSTR")] ushort* szUrl, IUnknown* pUnkOuter, IUnknown** ppUnk, IInternetProtocol** ppOInetProt, [NativeTypeName("DWORD")] uint dwOption)
@@ -74,6 +83,7 @@ public unsafe partial struct IInternetSession : IInternetSession.Interface
         return ((delegate* unmanaged<IInternetSession*, IBindCtx*, ushort*, IUnknown*, IUnknown**, IInternetProtocol**, uint, int>)(lpVtbl[7]))((IInternetSession*)Unsafe.AsPointer(ref this), pBC, szUrl, pUnkOuter, ppUnk, ppOInetProt, dwOption);
     }
 
+    /// <include file='IInternetSession.xml' path='doc/member[@name="IInternetSession.SetSessionOption"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT SetSessionOption([NativeTypeName("DWORD")] uint dwOption, [NativeTypeName("LPVOID")] void* pBuffer, [NativeTypeName("DWORD")] uint dwBufferLength, [NativeTypeName("DWORD")] uint dwReserved)
@@ -81,6 +91,7 @@ public unsafe partial struct IInternetSession : IInternetSession.Interface
         return ((delegate* unmanaged<IInternetSession*, uint, void*, uint, uint, int>)(lpVtbl[8]))((IInternetSession*)Unsafe.AsPointer(ref this), dwOption, pBuffer, dwBufferLength, dwReserved);
     }
 
+    /// <include file='IInternetSession.xml' path='doc/member[@name="IInternetSession.GetSessionOption"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT GetSessionOption([NativeTypeName("DWORD")] uint dwOption, [NativeTypeName("LPVOID")] void* pBuffer, [NativeTypeName("DWORD *")] uint* pdwBufferLength, [NativeTypeName("DWORD")] uint dwReserved)

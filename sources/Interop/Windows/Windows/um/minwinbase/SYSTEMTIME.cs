@@ -5,29 +5,38 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SYSTEMTIME.xml' path='doc/member[@name="SYSTEMTIME"]/*' />
 public partial struct SYSTEMTIME
 {
+    /// <include file='SYSTEMTIME.xml' path='doc/member[@name="SYSTEMTIME.wYear"]/*' />
     [NativeTypeName("WORD")]
     public ushort wYear;
 
+    /// <include file='SYSTEMTIME.xml' path='doc/member[@name="SYSTEMTIME.wMonth"]/*' />
     [NativeTypeName("WORD")]
     public ushort wMonth;
 
+    /// <include file='SYSTEMTIME.xml' path='doc/member[@name="SYSTEMTIME.wDayOfWeek"]/*' />
     [NativeTypeName("WORD")]
     public ushort wDayOfWeek;
 
+    /// <include file='SYSTEMTIME.xml' path='doc/member[@name="SYSTEMTIME.wDay"]/*' />
     [NativeTypeName("WORD")]
     public ushort wDay;
 
+    /// <include file='SYSTEMTIME.xml' path='doc/member[@name="SYSTEMTIME.wHour"]/*' />
     [NativeTypeName("WORD")]
     public ushort wHour;
 
+    /// <include file='SYSTEMTIME.xml' path='doc/member[@name="SYSTEMTIME.wMinute"]/*' />
     [NativeTypeName("WORD")]
     public ushort wMinute;
 
+    /// <include file='SYSTEMTIME.xml' path='doc/member[@name="SYSTEMTIME.wSecond"]/*' />
     [NativeTypeName("WORD")]
     public ushort wSecond;
 
+    /// <include file='SYSTEMTIME.xml' path='doc/member[@name="SYSTEMTIME.wMilliseconds"]/*' />
     [NativeTypeName("WORD")]
     public ushort wMilliseconds;
 }

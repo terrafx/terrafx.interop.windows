@@ -7,9 +7,13 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='READ_DIRECTORY_NOTIFY_INFORMATION_CLASS.xml' path='doc/member[@name="READ_DIRECTORY_NOTIFY_INFORMATION_CLASS"]/*' />
 [SupportedOSPlatform("windows10.0.16299.0")]
 public enum READ_DIRECTORY_NOTIFY_INFORMATION_CLASS
 {
+    /// <include file='READ_DIRECTORY_NOTIFY_INFORMATION_CLASS.xml' path='doc/member[@name="READ_DIRECTORY_NOTIFY_INFORMATION_CLASS.ReadDirectoryNotifyInformation"]/*' />
     ReadDirectoryNotifyInformation = 1,
+
+    /// <include file='READ_DIRECTORY_NOTIFY_INFORMATION_CLASS.xml' path='doc/member[@name="READ_DIRECTORY_NOTIFY_INFORMATION_CLASS.ReadDirectoryNotifyExtendedInformation"]/*' />
     ReadDirectoryNotifyExtendedInformation,
 }

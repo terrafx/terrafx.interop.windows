@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAudioSessionEvents.xml' path='doc/member[@name="IAudioSessionEvents"]/*' />
 [Guid("24918ACC-64B3-37C1-8CA9-74A66E9957A8")]
 [NativeTypeName("struct IAudioSessionEvents : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IAudioSessionEvents : IAudioSessionEvents.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IAudioSessionEvents : IAudioSessionEvents.Interface
         return ((delegate* unmanaged<IAudioSessionEvents*, Guid*, void**, int>)(lpVtbl[0]))((IAudioSessionEvents*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IAudioSessionEvents : IAudioSessionEvents.Interface
         return ((delegate* unmanaged<IAudioSessionEvents*, uint>)(lpVtbl[1]))((IAudioSessionEvents*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IAudioSessionEvents : IAudioSessionEvents.Interface
         return ((delegate* unmanaged<IAudioSessionEvents*, uint>)(lpVtbl[2]))((IAudioSessionEvents*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAudioSessionEvents.xml' path='doc/member[@name="IAudioSessionEvents.OnDisplayNameChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT OnDisplayNameChanged([NativeTypeName("LPCWSTR")] ushort* NewDisplayName, [NativeTypeName("LPCGUID")] Guid* EventContext)
@@ -46,6 +51,7 @@ public unsafe partial struct IAudioSessionEvents : IAudioSessionEvents.Interface
         return ((delegate* unmanaged<IAudioSessionEvents*, ushort*, Guid*, int>)(lpVtbl[3]))((IAudioSessionEvents*)Unsafe.AsPointer(ref this), NewDisplayName, EventContext);
     }
 
+    /// <include file='IAudioSessionEvents.xml' path='doc/member[@name="IAudioSessionEvents.OnIconPathChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT OnIconPathChanged([NativeTypeName("LPCWSTR")] ushort* NewIconPath, [NativeTypeName("LPCGUID")] Guid* EventContext)
@@ -53,6 +59,7 @@ public unsafe partial struct IAudioSessionEvents : IAudioSessionEvents.Interface
         return ((delegate* unmanaged<IAudioSessionEvents*, ushort*, Guid*, int>)(lpVtbl[4]))((IAudioSessionEvents*)Unsafe.AsPointer(ref this), NewIconPath, EventContext);
     }
 
+    /// <include file='IAudioSessionEvents.xml' path='doc/member[@name="IAudioSessionEvents.OnSimpleVolumeChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT OnSimpleVolumeChanged(float NewVolume, BOOL NewMute, [NativeTypeName("LPCGUID")] Guid* EventContext)
@@ -60,6 +67,7 @@ public unsafe partial struct IAudioSessionEvents : IAudioSessionEvents.Interface
         return ((delegate* unmanaged<IAudioSessionEvents*, float, BOOL, Guid*, int>)(lpVtbl[5]))((IAudioSessionEvents*)Unsafe.AsPointer(ref this), NewVolume, NewMute, EventContext);
     }
 
+    /// <include file='IAudioSessionEvents.xml' path='doc/member[@name="IAudioSessionEvents.OnChannelVolumeChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT OnChannelVolumeChanged([NativeTypeName("DWORD")] uint ChannelCount, [NativeTypeName("float []")] float* NewChannelVolumeArray, [NativeTypeName("DWORD")] uint ChangedChannel, [NativeTypeName("LPCGUID")] Guid* EventContext)
@@ -67,6 +75,7 @@ public unsafe partial struct IAudioSessionEvents : IAudioSessionEvents.Interface
         return ((delegate* unmanaged<IAudioSessionEvents*, uint, float*, uint, Guid*, int>)(lpVtbl[6]))((IAudioSessionEvents*)Unsafe.AsPointer(ref this), ChannelCount, NewChannelVolumeArray, ChangedChannel, EventContext);
     }
 
+    /// <include file='IAudioSessionEvents.xml' path='doc/member[@name="IAudioSessionEvents.OnGroupingParamChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT OnGroupingParamChanged([NativeTypeName("LPCGUID")] Guid* NewGroupingParam, [NativeTypeName("LPCGUID")] Guid* EventContext)
@@ -74,6 +83,7 @@ public unsafe partial struct IAudioSessionEvents : IAudioSessionEvents.Interface
         return ((delegate* unmanaged<IAudioSessionEvents*, Guid*, Guid*, int>)(lpVtbl[7]))((IAudioSessionEvents*)Unsafe.AsPointer(ref this), NewGroupingParam, EventContext);
     }
 
+    /// <include file='IAudioSessionEvents.xml' path='doc/member[@name="IAudioSessionEvents.OnStateChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT OnStateChanged(AudioSessionState NewState)
@@ -81,6 +91,7 @@ public unsafe partial struct IAudioSessionEvents : IAudioSessionEvents.Interface
         return ((delegate* unmanaged<IAudioSessionEvents*, AudioSessionState, int>)(lpVtbl[8]))((IAudioSessionEvents*)Unsafe.AsPointer(ref this), NewState);
     }
 
+    /// <include file='IAudioSessionEvents.xml' path='doc/member[@name="IAudioSessionEvents.OnSessionDisconnected"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT OnSessionDisconnected(AudioSessionDisconnectReason DisconnectReason)

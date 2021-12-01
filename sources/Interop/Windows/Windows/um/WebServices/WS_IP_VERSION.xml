@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_IP_VERSION">
+    <summary>
+      <para>Specifies an IP version.</para>
+    </summary>
+  </member>
+  <member name="WS_IP_VERSION.WS_IP_VERSION_4">
+    <summary>
+      <para>Use IPv4.</para>
+    </summary>
+  </member>
+  <member name="WS_IP_VERSION.WS_IP_VERSION_6">
+    <summary>
+      <para>Use IPv6.</para>
+    </summary>
+  </member>
+  <member name="WS_IP_VERSION.WS_IP_VERSION_AUTO">
+    <summary></summary>
+  </member>
+</doc>

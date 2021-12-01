@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='VMRFrequency.xml' path='doc/member[@name="VMRFrequency"]/*' />
 public partial struct VMRFrequency
 {
+    /// <include file='VMRFrequency.xml' path='doc/member[@name="VMRFrequency.dwNumerator"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwNumerator;
 
+    /// <include file='VMRFrequency.xml' path='doc/member[@name="VMRFrequency.dwDenominator"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwDenominator;
 }

@@ -5,17 +5,22 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SCM_PHYSICAL_DEVICE_INSTANCE.xml' path='doc/member[@name="SCM_PHYSICAL_DEVICE_INSTANCE"]/*' />
 public unsafe partial struct SCM_PHYSICAL_DEVICE_INSTANCE
 {
+    /// <include file='SCM_PHYSICAL_DEVICE_INSTANCE.xml' path='doc/member[@name="SCM_PHYSICAL_DEVICE_INSTANCE.Version"]/*' />
     [NativeTypeName("DWORD")]
     public uint Version;
 
+    /// <include file='SCM_PHYSICAL_DEVICE_INSTANCE.xml' path='doc/member[@name="SCM_PHYSICAL_DEVICE_INSTANCE.Size"]/*' />
     [NativeTypeName("DWORD")]
     public uint Size;
 
+    /// <include file='SCM_PHYSICAL_DEVICE_INSTANCE.xml' path='doc/member[@name="SCM_PHYSICAL_DEVICE_INSTANCE.NfitHandle"]/*' />
     [NativeTypeName("DWORD")]
     public uint NfitHandle;
 
+    /// <include file='SCM_PHYSICAL_DEVICE_INSTANCE.xml' path='doc/member[@name="SCM_PHYSICAL_DEVICE_INSTANCE.SymbolicLink"]/*' />
     [NativeTypeName("WCHAR [256]")]
     public fixed ushort SymbolicLink[256];
 }

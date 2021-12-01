@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="OLEVERBATTRIB">
+    <summary>
+      <para>Describes the attributes of a specified verb for an object.</para>
+    </summary>
+    <remarks>
+      <para>Values are used in the enumerator (which supports the <see cref="IEnumOLEVERB" /> interface) that is created by a call to <see cref="IOleObject.EnumVerbs" />.</para>
+    </remarks>
+    <seealso cref="IEnumOLEVERB" />
+    <seealso cref="IOleObject.EnumVerbs" />
+    <seealso cref="OLEVERB" />
+  </member>
+  <member name="OLEVERBATTRIB.OLEVERBATTRIB_NEVERDIRTIES">
+    <summary>
+      <para>Executing this verb will not cause the object to become dirty and is therefore in need of saving to persistent storage.</para>
+    </summary>
+  </member>
+  <member name="OLEVERBATTRIB.OLEVERBATTRIB_ONCONTAINERMENU">
+    <summary>
+      <para>Indicates a verb that should appear in the container's menu of verbs for this object. OLEIVERB_HIDE, OLEIVERB_SHOW, and OLEIVERB_OPEN never have this value set.</para>
+    </summary>
+  </member>
+</doc>

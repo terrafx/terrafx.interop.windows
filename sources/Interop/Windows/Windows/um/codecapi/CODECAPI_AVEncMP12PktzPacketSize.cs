@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVEncMP12PktzPacketSize.xml' path='doc/member[@name="CODECAPI_AVEncMP12PktzPacketSize"]/*' />
 [Guid("AB71347A-1332-4DDE-A0E5-CCF7DA8A0F22")]
 public partial struct CODECAPI_AVEncMP12PktzPacketSize
 {

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_SERVICE_PROXY_STATE">
+    <summary>
+      <para>The state of the service proxy.</para>
+    </summary>
+  </member>
+  <member name="WS_SERVICE_PROXY_STATE.WS_SERVICE_PROXY_STATE_CREATED">
+    <summary></summary>
+  </member>
+  <member name="WS_SERVICE_PROXY_STATE.WS_SERVICE_PROXY_STATE_OPENING">
+    <summary></summary>
+  </member>
+  <member name="WS_SERVICE_PROXY_STATE.WS_SERVICE_PROXY_STATE_OPEN">
+    <summary></summary>
+  </member>
+  <member name="WS_SERVICE_PROXY_STATE.WS_SERVICE_PROXY_STATE_CLOSING">
+    <summary></summary>
+  </member>
+  <member name="WS_SERVICE_PROXY_STATE.WS_SERVICE_PROXY_STATE_CLOSED">
+    <summary></summary>
+  </member>
+  <member name="WS_SERVICE_PROXY_STATE.WS_SERVICE_PROXY_STATE_FAULTED">
+    <summary></summary>
+  </member>
+</doc>

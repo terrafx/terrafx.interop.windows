@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='INoMarshal.xml' path='doc/member[@name="INoMarshal"]/*' />
 [Guid("ECC8691B-C1DB-4DC0-855E-65F6C551AF49")]
 [NativeTypeName("struct INoMarshal : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct INoMarshal : INoMarshal.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct INoMarshal : INoMarshal.Interface
         return ((delegate* unmanaged<INoMarshal*, Guid*, void**, int>)(lpVtbl[0]))((INoMarshal*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct INoMarshal : INoMarshal.Interface
         return ((delegate* unmanaged<INoMarshal*, uint>)(lpVtbl[1]))((INoMarshal*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]

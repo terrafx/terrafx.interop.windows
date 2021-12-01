@@ -5,16 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='EMREOF.xml' path='doc/member[@name="EMREOF"]/*' />
 public partial struct EMREOF
 {
+    /// <include file='EMREOF.xml' path='doc/member[@name="EMREOF.emr"]/*' />
     public EMR emr;
 
+    /// <include file='EMREOF.xml' path='doc/member[@name="EMREOF.nPalEntries"]/*' />
     [NativeTypeName("DWORD")]
     public uint nPalEntries;
 
+    /// <include file='EMREOF.xml' path='doc/member[@name="EMREOF.offPalEntries"]/*' />
     [NativeTypeName("DWORD")]
     public uint offPalEntries;
 
+    /// <include file='EMREOF.xml' path='doc/member[@name="EMREOF.nSizeLast"]/*' />
     [NativeTypeName("DWORD")]
     public uint nSizeLast;
 }

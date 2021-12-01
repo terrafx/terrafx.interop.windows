@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='INewShortcutHookW.xml' path='doc/member[@name="INewShortcutHookW"]/*' />
 [Guid("000214F7-0000-0000-C000-000000000046")]
 [NativeTypeName("struct INewShortcutHookW : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct INewShortcutHookW : INewShortcutHookW.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct INewShortcutHookW : INewShortcutHookW.Interface
         return ((delegate* unmanaged<INewShortcutHookW*, Guid*, void**, int>)(lpVtbl[0]))((INewShortcutHookW*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct INewShortcutHookW : INewShortcutHookW.Interface
         return ((delegate* unmanaged<INewShortcutHookW*, uint>)(lpVtbl[1]))((INewShortcutHookW*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct INewShortcutHookW : INewShortcutHookW.Interface
         return ((delegate* unmanaged<INewShortcutHookW*, uint>)(lpVtbl[2]))((INewShortcutHookW*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='INewShortcutHookW.xml' path='doc/member[@name="INewShortcutHookW.SetReferent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetReferent([NativeTypeName("PCWSTR")] ushort* pcszReferent, HWND hwnd)
@@ -46,6 +51,7 @@ public unsafe partial struct INewShortcutHookW : INewShortcutHookW.Interface
         return ((delegate* unmanaged<INewShortcutHookW*, ushort*, HWND, int>)(lpVtbl[3]))((INewShortcutHookW*)Unsafe.AsPointer(ref this), pcszReferent, hwnd);
     }
 
+    /// <include file='INewShortcutHookW.xml' path='doc/member[@name="INewShortcutHookW.GetReferent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetReferent([NativeTypeName("PWSTR")] ushort* pszReferent, int cchReferent)
@@ -53,6 +59,7 @@ public unsafe partial struct INewShortcutHookW : INewShortcutHookW.Interface
         return ((delegate* unmanaged<INewShortcutHookW*, ushort*, int, int>)(lpVtbl[4]))((INewShortcutHookW*)Unsafe.AsPointer(ref this), pszReferent, cchReferent);
     }
 
+    /// <include file='INewShortcutHookW.xml' path='doc/member[@name="INewShortcutHookW.SetFolder"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetFolder([NativeTypeName("PCWSTR")] ushort* pcszFolder)
@@ -60,6 +67,7 @@ public unsafe partial struct INewShortcutHookW : INewShortcutHookW.Interface
         return ((delegate* unmanaged<INewShortcutHookW*, ushort*, int>)(lpVtbl[5]))((INewShortcutHookW*)Unsafe.AsPointer(ref this), pcszFolder);
     }
 
+    /// <include file='INewShortcutHookW.xml' path='doc/member[@name="INewShortcutHookW.GetFolder"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetFolder([NativeTypeName("PWSTR")] ushort* pszFolder, int cchFolder)
@@ -67,6 +75,7 @@ public unsafe partial struct INewShortcutHookW : INewShortcutHookW.Interface
         return ((delegate* unmanaged<INewShortcutHookW*, ushort*, int, int>)(lpVtbl[6]))((INewShortcutHookW*)Unsafe.AsPointer(ref this), pszFolder, cchFolder);
     }
 
+    /// <include file='INewShortcutHookW.xml' path='doc/member[@name="INewShortcutHookW.GetName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetName([NativeTypeName("PWSTR")] ushort* pszName, int cchName)
@@ -74,6 +83,7 @@ public unsafe partial struct INewShortcutHookW : INewShortcutHookW.Interface
         return ((delegate* unmanaged<INewShortcutHookW*, ushort*, int, int>)(lpVtbl[7]))((INewShortcutHookW*)Unsafe.AsPointer(ref this), pszName, cchName);
     }
 
+    /// <include file='INewShortcutHookW.xml' path='doc/member[@name="INewShortcutHookW.GetExtension"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetExtension([NativeTypeName("PWSTR")] ushort* pszExtension, int cchExtension)

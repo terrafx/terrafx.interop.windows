@@ -5,15 +5,20 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PROPERTY_METRICS.xml' path='doc/member[@name="PROPERTY_METRICS"]/*' />
 public partial struct PROPERTY_METRICS
 {
+    /// <include file='PROPERTY_METRICS.xml' path='doc/member[@name="PROPERTY_METRICS.nLogicalMin"]/*' />
     [NativeTypeName("LONG")]
     public int nLogicalMin;
 
+    /// <include file='PROPERTY_METRICS.xml' path='doc/member[@name="PROPERTY_METRICS.nLogicalMax"]/*' />
     [NativeTypeName("LONG")]
     public int nLogicalMax;
 
+    /// <include file='PROPERTY_METRICS.xml' path='doc/member[@name="PROPERTY_METRICS.Units"]/*' />
     public PROPERTY_UNITS Units;
 
+    /// <include file='PROPERTY_METRICS.xml' path='doc/member[@name="PROPERTY_METRICS.fResolution"]/*' />
     public float fResolution;
 }

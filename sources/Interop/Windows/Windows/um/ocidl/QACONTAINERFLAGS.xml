@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="QACONTAINERFLAGS">
+    <summary>
+      <para>Indicates ambient properties supplied by the container. It is used in the <b>dwAmbientFlags</b> member of the <see cref="QACONTAINER" /> structure.</para>
+    </summary>
+    <seealso cref="QACONTAINER" />
+  </member>
+  <member name="QACONTAINERFLAGS.QACONTAINER_SHOWHATCHING">
+    <summary>
+      <para>Specifies the ShowHatching ambient property, which has a standard ambient DISPID of -712.</para>
+    </summary>
+  </member>
+  <member name="QACONTAINERFLAGS.QACONTAINER_SHOWGRABHANDLES">
+    <summary>
+      <para>Specifies the ShowGrabHandles ambient property, which has a standard ambient DISPID of -711.</para>
+    </summary>
+  </member>
+  <member name="QACONTAINERFLAGS.QACONTAINER_USERMODE">
+    <summary>
+      <para>Specifies the UserMode ambient property, which has a standard ambient DISPID of -709.</para>
+    </summary>
+  </member>
+  <member name="QACONTAINERFLAGS.QACONTAINER_DISPLAYASDEFAULT">
+    <summary>
+      <para>Specifies the DisplayAsDefault ambient property, which has a standard ambient DISPID of -713.</para>
+    </summary>
+  </member>
+  <member name="QACONTAINERFLAGS.QACONTAINER_UIDEAD">
+    <summary>
+      <para>Specifies the UIDead ambient property, which has a standard ambient DISPID of -710.</para>
+    </summary>
+  </member>
+  <member name="QACONTAINERFLAGS.QACONTAINER_AUTOCLIP">
+    <summary>
+      <para>Specifies the AutoClip ambient property, which has a standard ambient DISPID of -715.</para>
+    </summary>
+  </member>
+  <member name="QACONTAINERFLAGS.QACONTAINER_MESSAGEREFLECT">
+    <summary>
+      <para>Specifies the MessageReflect ambient property, which has a standard ambient DISPID of -706.</para>
+    </summary>
+  </member>
+  <member name="QACONTAINERFLAGS.QACONTAINER_SUPPORTSMNEMONICS">
+    <summary>
+      <para>Specifies the SupportsMnemonics ambient property, which has a standard ambient DISPID of -714.</para>
+    </summary>
+  </member>
+</doc>

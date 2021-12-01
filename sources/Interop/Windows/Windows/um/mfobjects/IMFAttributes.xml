@@ -1,0 +1,1812 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFAttributes.Compare">
+    <summary>
+      <para>Compares the attributes on this object with the attributes on another object.</para>
+    </summary>
+    <param name="pTheirs">
+      <para>Pointer to the <see cref="IMFAttributes" /> interface of the object to compare with this object.</para>
+    </param>
+    <param name="MatchType">
+      <para>Member of the <see cref="MF_ATTRIBUTES_MATCH_TYPE" /> enumeration, specifying the type of comparison to make.</para>
+    </param>
+    <param name="pbResult">
+      <para>Receives a Boolean value. The value is <b>TRUE</b> if the two sets of attributes match in the way specified by the <i>MatchType</i> parameter. Otherwise, the value is <b>FALSE</b>.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>If <i>pThis</i> is the object whose <b>Compare</b> method is called, and <i>pTheirs</i> is the object passed in as the <i>pTheirs</i> parameter, the following comparisons are defined by <i>MatchType</i>.</para>
+      <list type="table">
+        <listheader>
+          <description>Match type</description>
+          <description>Returns <b>TRUE</b> if and only if</description>
+        </listheader>
+        <item>
+          <description>
+            <b>MF_ATTRIBUTES_MATCH_OUR_ITEMS</b>
+          </description>
+          <description>For every attribute in <i>pThis</i>, an attribute with the same key and value exists in <i>pTheirs</i>.</description>
+        </item>
+        <item>
+          <description>
+            <b>MF_ATTRIBUTES_MATCH_THEIR_ITEMS</b>
+          </description>
+          <description>For every attribute in <i>pTheirs</i>, an attribute with the same key and value exists in <i>pThis</i>.</description>
+        </item>
+        <item>
+          <description>
+            <b>MF_ATTRIBUTES_MATCH_ALL_ITEMS</b>
+          </description>
+          <description>The key/value pairs are identical in both objects.</description>
+        </item>
+        <item>
+          <description>
+            <b>MF_ATTRIBUTES_MATCH_INTERSECTION</b>
+          </description>
+          <description>Take the intersection of the keys in <i>pThis</i> and the keys in <i>pTheirs</i>. The values associated with those keys are identical in both <i>pThis</i> and <i>pTheirs</i>.</description>
+        </item>
+        <item>
+          <description>
+            <b>MF_ATTRIBUTES_MATCH_SMALLER</b>
+          </description>
+          <description>Take the object with the smallest number of attributes. For every attribute in that object, an attribute with the same key and value exists in the other object.</description>
+        </item>
+      </list>
+      <para>The <i>pTheirs</i> and <i>pbResult</i> parameters must not be <b>NULL</b>. If either parameter is <b>NULL</b>, an access violation occurs.</para>
+      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
+      <list type="bullet">
+        <item>
+          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
+        </item>
+        <item>
+          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/attributes-and-properties">Attributes and Properties</seealso>
+    <seealso cref="IMFAttributes" />
+  </member>
+  <member name="IMFAttributes.CompareItem">
+    <summary>
+      <para>Queries whether a stored attribute value equals to a specified <b>PROPVARIANT</b>.</para>
+    </summary>
+    <param name="guidKey">
+      <para>GUID that identifies which value to query.</para>
+    </param>
+    <param name="Value">
+      <para>
+        <b>PROPVARIANT</b> that contains the value to compare.</para>
+    </param>
+    <param name="pbResult">
+      <para>Receives a Boolean value indicating whether the attribute matches the value given in <i>Value</i>. See Remarks. This parameter must not be <b>NULL</b>. If this parameter is <b>NULL</b>, an access violation occurs.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The method sets <i>pbResult</i> to <b>FALSE</b> for any of the following reasons:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <para>No attribute is found whose key matches the one given in <i>guidKey</i>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>The attribute's <b>PROPVARIANT</b> type does not match the type given in <i>Value</i>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>The attribute value does not match the value given in <i>Value</i>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>The method fails.</para>
+          </description>
+        </item>
+      </list>
+      <para>Otherwise, the method sets <i>pbResult</i> to <b>TRUE</b>.</para>
+      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
+      <list type="bullet">
+        <item>
+          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
+        </item>
+        <item>
+          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/attributes-and-properties">Attributes and Properties</seealso>
+    <seealso cref="IMFAttributes" />
+  </member>
+  <member name="IMFAttributes.DeleteAllItems">
+    <summary>
+      <para>Removes all key/value pairs from the object's attribute list.</para>
+    </summary>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
+      <list type="bullet">
+        <item>
+          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
+        </item>
+        <item>
+          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/attributes-and-properties">Attributes and Properties</seealso>
+    <seealso cref="IMFAttributes" />
+  </member>
+  <member name="IMFAttributes.DeleteItem">
+    <summary>
+      <para>Removes a key/value pair from the object's attribute list.</para>
+    </summary>
+    <param name="guidKey">
+      <para>GUID that identifies the value to delete.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>If the specified key does not exist, the method returns <b>S_OK</b>.</para>
+      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
+      <list type="bullet">
+        <item>
+          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
+        </item>
+        <item>
+          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/attributes-and-properties">Attributes and Properties</seealso>
+    <seealso cref="IMFAttributes" />
+  </member>
+  <member name="IMFAttributes.GetAllocatedBlob">
+    <summary>
+      <para>Retrieves a byte array associated with a key. This method allocates the memory for the array.</para>
+    </summary>
+    <param name="guidKey">
+      <para>GUID that identifies which value to retrieve. The attribute type must be <b>MF_ATTRIBUTE_BLOB</b>.</para>
+    </param>
+    <param name="ppBuf">
+      <para>If the key is found and the value is a byte array, this parameter receives a copy of the array. The caller must free the memory for the array by calling <see cref="CoTaskMemFree" />.</para>
+    </param>
+    <param name="pcbSize">
+      <para>Receives the size of the array, in bytes.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_ATTRIBUTENOTFOUND</b>
+            </para>
+          </description>
+          <description>
+            <para>The specified key was not found.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_INVALIDTYPE</b>
+            </para>
+          </description>
+          <description>
+            <para>The attribute value is not a byte array.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>To copy a byte array value into a caller-allocated buffer, use the <see cref="IMFAttributes.GetBlob" /> method.</para>
+      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
+      <list type="bullet">
+        <item>
+          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
+        </item>
+        <item>
+          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/attributes-and-properties">Attributes and Properties</seealso>
+    <seealso cref="IMFAttributes" />
+    <seealso cref="MF_ATTRIBUTE_TYPE" />
+  </member>
+  <member name="IMFAttributes.GetAllocatedString">
+    <summary>
+      <para>Gets a wide-character string associated with a key. This method allocates the memory for the string.</para>
+    </summary>
+    <param name="guidKey">
+      <para>A GUID that identifies which value to retrieve. The attribute type must be <b>MF_ATTRIBUTE_STRING</b>.</para>
+    </param>
+    <param name="ppwszValue">
+      <para>If the key is found and the value is a string type, this parameter receives a copy of the string. The caller must free the memory for the string by calling <see cref="CoTaskMemFree" />.</para>
+    </param>
+    <param name="pcchLength">
+      <para>Receives the number of characters in the string, excluding the terminating <b>NULL</b> character. This parameter must not be <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_ATTRIBUTENOTFOUND</b>
+            </para>
+          </description>
+          <description>
+            <para>The specified key was not found.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_INVALIDTYPE</b>
+            </para>
+          </description>
+          <description>
+            <para>The attribute value is not a string.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>To copy a string value into a caller-allocated buffer, use the <see cref="IMFAttributes.GetString" /> method.</para>
+      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
+      <list type="bullet">
+        <item>
+          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
+        </item>
+        <item>
+          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
+        </item>
+      </list>
+      <b>Note</b>  An earlier version of the documentation incorrectly stated that the <i>pcchLength</i> parameter can be <b>NULL</b>. Setting this parameter to <b>NULL</b> might succeed in some cases, but is not guaranteed. The caller must pass a non-<b>NULL</b> pointer for this parameter.
+</remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/attributes-and-properties">Attributes and Properties</seealso>
+    <seealso cref="IMFAttributes" />
+    <seealso cref="MF_ATTRIBUTE_TYPE" />
+  </member>
+  <member name="IMFAttributes.GetBlob">
+    <summary>
+      <para>Retrieves a byte array associated with a key. This method copies the array into a caller-allocated buffer.</para>
+    </summary>
+    <param name="guidKey">
+      <para>GUID that identifies which value to retrieve. The attribute type must be <b>MF_ATTRIBUTE_BLOB</b>.</para>
+    </param>
+    <param name="pBuf">
+      <para>Pointer to a buffer allocated by the caller. If the key is found and the value is a byte array, the method copies the array into this buffer. To find the required size of the buffer, call <see cref="IMFAttributes.GetBlobSize" />.</para>
+    </param>
+    <param name="cbBufSize">
+      <para>The size of the <i>pBuf</i> buffer, in bytes.</para>
+    </param>
+    <param name="pcbBlobSize">
+      <para>Receives the size of the byte array. This parameter can be <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>
+                <b>S_OK</b>
+              </b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>
+                <b>E_NOT_SUFFICIENT_BUFFER</b>
+              </b>
+            </para>
+          </description>
+          <description>
+            <para>The buffer is not large enough to the array.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>
+                <b>MF_E_ATTRIBUTENOTFOUND</b>
+              </b>
+            </para>
+          </description>
+          <description>
+            <para>The specified key was not found.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>
+                <b>MF_E_INVALIDTYPE</b>
+              </b>
+            </para>
+          </description>
+          <description>
+            <para>The attribute value is not a byte array.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>You can also use the <see cref="IMFAttributes.GetAllocatedBlob" /> method, which allocates the buffer to hold the byte array.</para>
+      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
+      <list type="bullet">
+        <item>
+          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
+        </item>
+        <item>
+          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
+        </item>
+      </list>
+      <h4>Examples</h4>
+      <para>The following code example shows how to get an attribute whose value is a byte array.</para>
+      <code>HRESULT AttributeGetBlob(IMFAttributes *pAttributes)
+{
+    HRESULT hr = S_OK;
+    UINT32 cbBlob = 0;
+    BYTE *pBlob = NULL;
+
+    hr = pAttributes-&gt;GetBlobSize(MY_ATTRIBUTE, &amp;amp;amp;amp;amp;amp;cbBlob);
+
+    if (SUCCEEDED(hr))
+    {
+        pBlob = new BYTE[cbBlob];
+        if (pBlob == NULL)
+        {
+            hr = E_OUTOFMEMORY;
+        }
+    }
+
+    if (SUCCEEDED(hr))
+    {
+        hr = pAttributes-&gt;GetBlob(MY_ATTRIBUTE, pBlob, cbBlob, &amp;amp;amp;amp;amp;amp;cbBlob);
+    }
+
+    if (pBlob)
+    {
+        delete [] pBlob;
+    }
+    return hr;
+}
+</code>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/attributes-and-properties">Attributes and Properties</seealso>
+    <seealso cref="IMFAttributes" />
+    <seealso cref="MF_ATTRIBUTE_TYPE" />
+  </member>
+  <member name="IMFAttributes.GetBlobSize">
+    <summary>
+      <para>Retrieves the length of a byte array associated with a key.</para>
+    </summary>
+    <param name="guidKey">
+      <para>GUID that identifies which value to retrieve. The attribute type must be <b>MF_ATTRIBUTE_BLOB</b>.</para>
+    </param>
+    <param name="pcbBlobSize">
+      <para>If the key is found and the value is a byte array, this parameter receives the size of the array, in bytes.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_ATTRIBUTENOTFOUND</b>
+            </para>
+          </description>
+          <description>
+            <para>The specified key was not found.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_INVALIDTYPE</b>
+            </para>
+          </description>
+          <description>
+            <para>The attribute value is not a byte array.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>To get the byte array, call <see cref="IMFAttributes.GetBlob" />.</para>
+      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
+      <list type="bullet">
+        <item>
+          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
+        </item>
+        <item>
+          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/attributes-and-properties">Attributes and Properties</seealso>
+    <seealso cref="IMFAttributes" />
+    <seealso cref="MF_ATTRIBUTE_TYPE" />
+  </member>
+  <member name="IMFAttributes.GetCount">
+    <summary>
+      <para>Retrieves the number of attributes that are set on this object.</para>
+    </summary>
+    <param name="pcItems">
+      <para>Receives the number of attributes. This parameter must not be <b>NULL</b>. If this parameter is <b>NULL</b>, an access violation occurs.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>To enumerate all of the attributes, call <see cref="IMFAttributes.GetItemByIndex" /> for each index value.</para>
+      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
+      <list type="bullet">
+        <item>
+          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
+        </item>
+        <item>
+          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/attributes-and-properties">Attributes and Properties</seealso>
+    <seealso cref="IMFAttributes" />
+  </member>
+  <member name="IMFAttributes.GetDouble">
+    <summary>
+      <para>Retrieves a <b>double</b> value associated with a key.</para>
+    </summary>
+    <param name="guidKey">
+      <para>GUID that identifies which value to retrieve. The attribute type must be <b>MF_ATTRIBUTE_DOUBLE</b>.</para>
+    </param>
+    <param name="pfValue">
+      <para>Receives a <b>double</b> value. If the key is found and the data type is <b>double</b>, the method copies the value into this parameter. Otherwise, the original value of this parameter is not changed.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_ATTRIBUTENOTFOUND</b>
+            </para>
+          </description>
+          <description>
+            <para>The specified key was not found.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_INVALIDTYPE</b>
+            </para>
+          </description>
+          <description>
+            <para>The attribute value is not a <b>double</b>.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
+      <list type="bullet">
+        <item>
+          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
+        </item>
+        <item>
+          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/attributes-and-properties">Attributes and Properties</seealso>
+    <seealso cref="IMFAttributes" />
+    <seealso cref="MFGetAttributeDouble" />
+    <seealso cref="MF_ATTRIBUTE_TYPE" />
+  </member>
+  <member name="IMFAttributes.GetGUID">
+    <summary>
+      <para>Retrieves a GUID value associated with a key.</para>
+    </summary>
+    <param name="guidKey">
+      <para>GUID that identifies which value to retrieve. The attribute type must be <b>MF_ATTRIBUTE_GUID</b>.</para>
+    </param>
+    <param name="pguidValue">
+      <para>Receives a GUID value. If the key is found and the data type is GUID, the method copies the value into this parameter. Otherwise, the original value of this parameter is not changed.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_ATTRIBUTENOTFOUND</b>
+            </para>
+          </description>
+          <description>
+            <para>The specified key was not found.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_INVALIDTYPE</b>
+            </para>
+          </description>
+          <description>
+            <para>The attribute value is not a GUID.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
+      <list type="bullet">
+        <item>
+          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
+        </item>
+        <item>
+          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/attributes-and-properties">Attributes and Properties</seealso>
+    <seealso cref="IMFAttributes" />
+    <seealso cref="MF_ATTRIBUTE_TYPE" />
+  </member>
+  <member name="IMFAttributes.GetItem">
+    <summary>
+      <para>Retrieves the value associated with a key.</para>
+    </summary>
+    <param name="guidKey">
+      <para>A GUID that identifies which value to retrieve.</para>
+    </param>
+    <param name="pValue">
+      <para>A pointer to a <b>PROPVARIANT</b> that receives the value. The method fills the <b>PROPVARIANT</b> with a copy of the stored value, if the value is found. Call <b>PropVariantClear</b> to free the memory allocated by this method. This parameter can be <b>NULL</b>. If this parameter is <b>NULL</b>, the method searches for the key and returns S_OK if the key is found, but does not copy the value.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_ATTRIBUTENOTFOUND</b>
+            </para>
+          </description>
+          <description>
+            <para>The specified key was not found.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
+      <list type="bullet">
+        <item>
+          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
+        </item>
+        <item>
+          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
+        </item>
+      </list>
+      <h4>Examples</h4>
+      <para>The following example copies an attribute from one attribute store to another.</para>
+      <code>HRESULT CopyAttribute(IMFAttributes *pFrom, IMFAttributes *pTo, REFGUID guidKey)
+{
+    PROPVARIANT val;
+
+    HRESULT hr = pFrom-&gt;GetItem(guidKey, &amp;amp;amp;amp;amp;amp;val);
+
+    if (SUCCEEDED(hr))
+    {
+        hr = pTo-&gt;SetItem(guidKey, val);
+        PropVariantClear(&amp;amp;amp;amp;amp;amp;val);
+    }
+    else if (hr == MF_E_ATTRIBUTENOTFOUND)
+    {
+        hr = S_OK;
+    }
+    return hr;
+}
+
+</code>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/attributes-and-properties">Attributes and Properties</seealso>
+    <seealso cref="IMFAttributes" />
+  </member>
+  <member name="IMFAttributes.GetItemByIndex">
+    <summary>
+      <para>Retrieves an attribute at the specified index.</para>
+    </summary>
+    <param name="unIndex">
+      <para>Index of the attribute to retrieve. To get the number of attributes, call <see cref="IMFAttributes.GetCount" />.</para>
+    </param>
+    <param name="pguidKey">
+      <para>Receives the GUID that identifies this attribute.</para>
+    </param>
+    <param name="pValue">
+      <para>Pointer to a <b>PROPVARIANT</b> that receives the value. This parameter can be <b>NULL</b>. If it is not <b>NULL</b>, the method fills the <b>PROPVARIANT</b> with a copy of the attribute value. Call <b>PropVariantClear</b> to free the memory allocated by this method.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>Invalid index.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>To enumerate all of an object's attributes in a thread-safe way, do the following:</para>
+      <list type="number">
+        <item>
+          <description>
+            <para>Call <see cref="IMFAttributes.LockStore" /> to prevent another thread from adding or deleting attributes.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>Call <see cref="IMFAttributes.GetCount" /> to find the number of attributes.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>Call <b>GetItemByIndex</b> to get each attribute by index.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>Call <see cref="IMFAttributes.UnlockStore" /> to unlock the attribute store.</para>
+          </description>
+        </item>
+      </list>
+      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
+      <list type="bullet">
+        <item>
+          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
+        </item>
+        <item>
+          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/attributes-and-properties">Attributes and Properties</seealso>
+    <seealso cref="IMFAttributes" />
+  </member>
+  <member name="IMFAttributes.GetItemType">
+    <summary>
+      <para>Retrieves the data type of the value associated with a key.</para>
+    </summary>
+    <param name="guidKey">
+      <para>GUID that identifies which value to query.</para>
+    </param>
+    <param name="pType">
+      <para>Receives a member of the <see cref="MF_ATTRIBUTE_TYPE" /> enumeration.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_ATTRIBUTENOTFOUND</b>
+            </para>
+          </description>
+          <description>
+            <para>The specified key is not stored in this object.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
+      <list type="bullet">
+        <item>
+          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
+        </item>
+        <item>
+          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/attributes-and-properties">Attributes and Properties</seealso>
+    <seealso cref="IMFAttributes" />
+  </member>
+  <member name="IMFAttributes.GetString">
+    <summary>
+      <para>Retrieves a wide-character string associated with a key.</para>
+    </summary>
+    <param name="guidKey">
+      <para>GUID that identifies which value to retrieve. The attribute type must be <b>MF_ATTRIBUTE_STRING</b>.</para>
+    </param>
+    <param name="pwszValue">
+      <para>Pointer to a wide-character array allocated by the caller. The array must be large enough to hold the string, including the terminating <b>NULL</b> character. If the key is found and the value is a string type, the method copies the string into this buffer. To find the length of the string, call <see cref="IMFAttributes.GetStringLength" />.</para>
+    </param>
+    <param name="cchBufSize">
+      <para>The size of the <i>pwszValue</i> array, in characters. This value includes the terminating NULL character.</para>
+    </param>
+    <param name="pcchLength">
+      <para>Receives the number of characters in the string, excluding the terminating <b>NULL</b> character. This parameter can be <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>The length of the string is too large to fit in a <b>UINT32</b> value.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_NOT_SUFFICIENT_BUFFER</b>
+            </para>
+          </description>
+          <description>
+            <para>The buffer is not large enough to hold the string.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_ATTRIBUTENOTFOUND</b>
+            </para>
+          </description>
+          <description>
+            <para>The specified key was not found.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_INVALIDTYPE</b>
+            </para>
+          </description>
+          <description>
+            <para>The attribute value is not a string.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>You can also use the <see cref="IMFAttributes.GetAllocatedString" /> method, which allocates the buffer to hold the string.</para>
+      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
+      <list type="bullet">
+        <item>
+          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
+        </item>
+        <item>
+          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
+        </item>
+      </list>
+      <h4>Examples</h4>
+      <para>The following code example shows how to get an attribute whose value is a string.</para>
+      <code>HRESULT AttributeGetString(IMFAttributes *pAttributes)
+{
+    HRESULT hr = S_OK;
+    UINT32 cchLength = 0;
+    WCHAR *pString = NULL;
+
+    hr = pAttributes-&gt;GetStringLength(MY_ATTRIBUTE, &amp;amp;amp;amp;amp;amp;cchLength);
+
+    if (SUCCEEDED(hr))
+    {
+        pString = new WCHAR[cchLength + 1];
+        if (pString == NULL)
+        {
+            hr = E_OUTOFMEMORY;
+        }
+    }
+
+    if (SUCCEEDED(hr))
+    {
+        hr = pAttributes-&gt;GetString(
+            MY_ATTRIBUTE, pString, cchLength + 1, &amp;amp;amp;amp;amp;amp;cchLength);
+    }
+
+    if (pString)
+    {
+        delete [] pString;
+    }
+    return hr;
+}
+</code>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/attributes-and-properties">Attributes and Properties</seealso>
+    <seealso cref="IMFAttributes" />
+    <seealso cref="MF_ATTRIBUTE_TYPE" />
+  </member>
+  <member name="IMFAttributes.GetStringLength">
+    <summary>
+      <para>Retrieves the length of a string value associated with a key.</para>
+    </summary>
+    <param name="guidKey">
+      <para>GUID that identifies which value to retrieve. The attribute type must be <b>MF_ATTRIBUTE_STRING</b>.</para>
+    </param>
+    <param name="pcchLength">
+      <para>If the key is found and the value is a string type, this parameter receives the number of characters in the string, not including the terminating <b>NULL</b> character. To get the string value, call <see cref="IMFAttributes.GetString" />.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_ATTRIBUTENOTFOUND</b>
+            </para>
+          </description>
+          <description>
+            <para>The specified key was not found.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_INVALIDTYPE</b>
+            </para>
+          </description>
+          <description>
+            <para>The attribute value is not a string.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
+      <list type="bullet">
+        <item>
+          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
+        </item>
+        <item>
+          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/attributes-and-properties">Attributes and Properties</seealso>
+    <seealso cref="IMFAttributes" />
+    <seealso cref="MF_ATTRIBUTE_TYPE" />
+  </member>
+  <member name="IMFAttributes.GetUINT32">
+    <summary>
+      <para>Retrieves a <b>UINT32</b> value associated with a key.</para>
+    </summary>
+    <param name="guidKey">
+      <para>GUID that identifies which value to retrieve. The attribute type must be <b>MF_ATTRIBUTE_UINT32</b>.</para>
+    </param>
+    <param name="punValue">
+      <para>Receives a <b>UINT32</b> value. If the key is found and the data type is <b>UINT32</b>, the method copies the value into this parameter. Otherwise, the original value of this parameter is not changed.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_ATTRIBUTENOTFOUND</b>
+            </para>
+          </description>
+          <description>
+            <para>The specified key was not found.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_INVALIDTYPE</b>
+            </para>
+          </description>
+          <description>
+            <para>The attribute value is not a <b>UINT32</b>.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
+      <list type="bullet">
+        <item>
+          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
+        </item>
+        <item>
+          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/attributes-and-properties">Attributes and Properties</seealso>
+    <seealso cref="IMFAttributes" />
+    <seealso cref="MFGetAttributeUINT32" />
+    <seealso cref="MF_ATTRIBUTE_TYPE" />
+  </member>
+  <member name="IMFAttributes.GetUINT64">
+    <summary>
+      <para>Retrieves a <b>UINT64</b> value associated with a key.</para>
+    </summary>
+    <param name="guidKey">
+      <para>GUID that identifies which value to retrieve. The attribute type must be <b>MF_ATTRIBUTE_UINT64</b>.</para>
+    </param>
+    <param name="punValue">
+      <para>Receives a <b>UINT64</b> value. If the key is found and the data type is <b>UINT64</b>, the method copies the value into this parameter. Otherwise, the original value of this parameter is not changed.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_ATTRIBUTENOTFOUND</b>
+            </para>
+          </description>
+          <description>
+            <para>The specified key was not found.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_INVALIDTYPE</b>
+            </para>
+          </description>
+          <description>
+            <para>The attribute value is not a <b>UINT64</b>.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
+      <list type="bullet">
+        <item>
+          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
+        </item>
+        <item>
+          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/attributes-and-properties">Attributes and Properties</seealso>
+    <seealso cref="IMFAttributes" />
+    <seealso cref="MFGetAttributeUINT64" />
+    <seealso cref="MF_ATTRIBUTE_TYPE" />
+  </member>
+  <member name="IMFAttributes.GetUnknown">
+    <summary>
+      <para>Retrieves an interface pointer associated with a key.</para>
+    </summary>
+    <param name="guidKey">
+      <para>GUID that identifies which value to retrieve. The attribute type must be <b>MF_ATTRIBUTE_IUNKNOWN</b>.</para>
+    </param>
+    <param name="riid">
+      <para>Interface identifier (IID) of the interface to retrieve.</para>
+    </param>
+    <param name="ppv">
+      <para>Receives a pointer to the requested interface. The caller must release the interface.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_NOINTERFACE</b>
+            </para>
+          </description>
+          <description>
+            <para>The attribute value is an <b>IUnknown</b> pointer but does not support requested interface.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_ATTRIBUTENOTFOUND</b>
+            </para>
+          </description>
+          <description>
+            <para>The specified key was not found.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_INVALIDTYPE</b>
+            </para>
+          </description>
+          <description>
+            <para>The attribute value is not an <b>IUnknown</b> pointer.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
+      <list type="bullet">
+        <item>
+          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
+        </item>
+        <item>
+          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/attributes-and-properties">Attributes and Properties</seealso>
+    <seealso cref="IMFAttributes" />
+    <seealso cref="MF_ATTRIBUTE_TYPE" />
+  </member>
+  <member name="IMFAttributes.LockStore">
+    <summary>
+      <para>Locks the attribute store so that no other thread can access it. If the attribute store is already locked by another thread, this method blocks until the other thread unlocks the object. After calling this method, call <see cref="IMFAttributes.UnlockStore" /> to unlock the object.</para>
+    </summary>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method can cause a deadlock if a thread that calls <b>LockStore</b> waits on a thread that calls any other <see cref="IMFAttributes" /> methods on the same object.</para>
+      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
+      <list type="bullet">
+        <item>
+          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
+        </item>
+        <item>
+          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/attributes-and-properties">Attributes and Properties</seealso>
+    <seealso cref="IMFAttributes" />
+  </member>
+  <member name="IMFAttributes.SetBlob">
+    <summary>
+      <para>Associates a byte array with a key.</para>
+    </summary>
+    <param name="guidKey">
+      <para>GUID that identifies the value to set. If this key already exists, the method overwrites the old value.</para>
+    </param>
+    <param name="pBuf">
+      <para>Pointer to a byte array to associate with this key. The method stores a copy of the array.</para>
+    </param>
+    <param name="cbBufSize">
+      <para>Size of the array, in bytes.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>To retrieve the byte array, call <see cref="IMFAttributes.GetBlob" /> or <see cref="IMFAttributes.GetAllocatedBlob" />.</para>
+      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
+      <list type="bullet">
+        <item>
+          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
+        </item>
+        <item>
+          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/attributes-and-properties">Attributes and Properties</seealso>
+    <seealso cref="IMFAttributes" />
+  </member>
+  <member name="IMFAttributes.SetDouble">
+    <summary>
+      <para>Associates a <b>double</b> value with a key.</para>
+    </summary>
+    <param name="guidKey">
+      <para>GUID that identifies the value to set. If this key already exists, the method overwrites the old value.</para>
+    </param>
+    <param name="fValue">
+      <para>New value for this key.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>To retrieve the double value, call <see cref="IMFAttributes.GetDouble" />.</para>
+      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
+      <list type="bullet">
+        <item>
+          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
+        </item>
+        <item>
+          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/attributes-and-properties">Attributes and Properties</seealso>
+    <seealso cref="IMFAttributes" />
+  </member>
+  <member name="IMFAttributes.SetGUID">
+    <summary>
+      <para>Associates a GUID value with a key.</para>
+    </summary>
+    <param name="guidKey">
+      <para>GUID that identifies the value to set. If this key already exists, the method overwrites the old value.</para>
+    </param>
+    <param name="guidValue">
+      <para>New value for this key.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>Insufficient memory.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>To retrieve the GUID value, call <see cref="IMFAttributes.GetGUID" />.</para>
+      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
+      <list type="bullet">
+        <item>
+          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
+        </item>
+        <item>
+          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/attributes-and-properties">Attributes and Properties</seealso>
+    <seealso cref="IMFAttributes" />
+  </member>
+  <member name="IMFAttributes.SetItem">
+    <summary>
+      <para>Adds an attribute value with a specified key.</para>
+    </summary>
+    <param name="guidKey">
+      <para>A GUID that identifies the value to set. If this key already exists, the method overwrites the old value.</para>
+    </param>
+    <param name="Value">
+      <para>A <b>PROPVARIANT</b> that contains the attribute value. The method copies the value. The <b>PROPVARIANT</b> type must be one of the types listed in the <see cref="MF_ATTRIBUTE_TYPE" /> enumeration.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>Insufficient memory.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_INVALIDTYPE</b>
+            </para>
+          </description>
+          <description>
+            <para>Invalid attribute type.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method checks whether the <b>PROPVARIANT</b> type is one of the attribute types defined in <see cref="MF_ATTRIBUTE_TYPE" />, and fails if an unsupported type is used. However, this method does not check whether the <b>PROPVARIANT</b> is the correct type for the specified attribute GUID. (There is no programmatic way to associate attribute GUIDs with property types.) For a list of Media Foundation attributes and their data types, see <a href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-attributes">Media Foundation Attributes</a>.</para>
+      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
+      <list type="bullet">
+        <item>
+          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
+        </item>
+        <item>
+          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/attributes-and-properties">Attributes and Properties</seealso>
+    <seealso cref="IMFAttributes" />
+  </member>
+  <member name="IMFAttributes.SetString">
+    <summary>
+      <para>Associates a wide-character string with a key.</para>
+    </summary>
+    <param name="guidKey">
+      <para>GUID that identifies the value to set. If this key already exists, the method overwrites the old value.</para>
+    </param>
+    <param name="wszValue">
+      <para>Null-terminated wide-character string to associate with this key. The method stores a copy of the string.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>To retrieve the string, call <see cref="IMFAttributes.GetString" /> or <see cref="IMFAttributes.GetAllocatedString" />.</para>
+      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
+      <list type="bullet">
+        <item>
+          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
+        </item>
+        <item>
+          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/attributes-and-properties">Attributes and Properties</seealso>
+    <seealso cref="IMFAttributes" />
+  </member>
+  <member name="IMFAttributes.SetUINT32">
+    <summary>
+      <para>Associates a <b>UINT32</b> value with a key.</para>
+    </summary>
+    <param name="guidKey">
+      <para>GUID that identifies the value to set. If this key already exists, the method overwrites the old value.</para>
+    </param>
+    <param name="unValue">
+      <para>New value for this key.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>To retrieve the <b>UINT32</b> value, call <see cref="IMFAttributes.GetUINT32" />.</para>
+      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
+      <list type="bullet">
+        <item>
+          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
+        </item>
+        <item>
+          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/attributes-and-properties">Attributes and Properties</seealso>
+    <seealso cref="IMFAttributes" />
+  </member>
+  <member name="IMFAttributes.SetUINT64">
+    <summary>
+      <para>Associates a <b>UINT64</b> value with a key.</para>
+    </summary>
+    <param name="guidKey">
+      <para>GUID that identifies the value to set. If this key already exists, the method overwrites the old value.</para>
+    </param>
+    <param name="unValue">
+      <para>New value for this key.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>To retrieve the <b>UINT64</b> value, call <see cref="IMFAttributes.GetUINT64" />.</para>
+      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
+      <list type="bullet">
+        <item>
+          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
+        </item>
+        <item>
+          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/attributes-and-properties">Attributes and Properties</seealso>
+    <seealso cref="IMFAttributes" />
+  </member>
+  <member name="IMFAttributes.SetUnknown">
+    <summary>
+      <para>Associates an <b>IUnknown</b> pointer with a key.</para>
+    </summary>
+    <param name="guidKey">
+      <para>GUID that identifies the value to set. If this key already exists, the method overwrites the old value.</para>
+    </param>
+    <param name="pUnknown">
+      <para>
+        <b>IUnknown</b> pointer to be associated with this key.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>To retrieve the <b>IUnknown</b> pointer, call <see cref="IMFAttributes.GetUnknown" />.</para>
+      <para>It is not an error to call <b>SetUnknown</b> with <i>pUnknown</i> equal to <b>NULL</b>. However, <see cref="GetUnknown" /> will return <b>MF_E_INVALIDTYPE</b>.</para>
+      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
+      <list type="bullet">
+        <item>
+          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
+        </item>
+        <item>
+          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/attributes-and-properties">Attributes and Properties</seealso>
+    <seealso cref="IMFAttributes" />
+  </member>
+  <member name="IMFAttributes.UnlockStore">
+    <summary>
+      <para>Unlocks the attribute store after a call to the <see cref="IMFAttributes.LockStore" /> method. While the object is unlocked, multiple threads can access the object's attributes.</para>
+    </summary>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
+      <list type="bullet">
+        <item>
+          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
+        </item>
+        <item>
+          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/attributes-and-properties">Attributes and Properties</seealso>
+    <seealso cref="IMFAttributes" />
+  </member>
+  <member name="IMFAttributes">
+    <summary>
+      <para>Provides a generic way to store key/value pairs on an object. The keys are <b>GUID</b>s, and the values can be any of the following data types: <b>UINT32</b>, <b>UINT64</b>, <b>double</b>, <b>GUID</b>, wide-character string, byte array, or <b>IUnknown</b> pointer. The standard implementation of this interface holds a thread lock while values are added, deleted, or retrieved.</para>
+      <para>For a list of predefined attribute <b>GUID</b>s, see <a href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-attributes">Media Foundation Attributes</a>. Each attribute <b>GUID</b> has an expected data type. The various "set" methods in <b>IMFAttributes</b> do not validate the type against the attribute <b>GUID</b>. It is the application's responsibility to set the correct type for the attribute.</para>
+      <para>To create an empty attribute store, call <see cref="MFCreateAttributes" />.</para>
+    </summary>
+    <remarks>
+      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
+      <list type="bullet">
+        <item>
+          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
+        </item>
+        <item>
+          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/attributes-and-properties">Attributes and Properties</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+  </member>
+</doc>

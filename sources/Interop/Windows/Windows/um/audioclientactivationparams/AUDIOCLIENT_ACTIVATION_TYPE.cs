@@ -7,9 +7,13 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='AUDIOCLIENT_ACTIVATION_TYPE.xml' path='doc/member[@name="AUDIOCLIENT_ACTIVATION_TYPE"]/*' />
 [SupportedOSPlatform("windows10.0.19043.0")]
 public enum AUDIOCLIENT_ACTIVATION_TYPE
 {
+    /// <include file='AUDIOCLIENT_ACTIVATION_TYPE.xml' path='doc/member[@name="AUDIOCLIENT_ACTIVATION_TYPE.AUDIOCLIENT_ACTIVATION_TYPE_DEFAULT"]/*' />
     AUDIOCLIENT_ACTIVATION_TYPE_DEFAULT = 0,
+
+    /// <include file='AUDIOCLIENT_ACTIVATION_TYPE.xml' path='doc/member[@name="AUDIOCLIENT_ACTIVATION_TYPE.AUDIOCLIENT_ACTIVATION_TYPE_PROCESS_LOOPBACK"]/*' />
     AUDIOCLIENT_ACTIVATION_TYPE_PROCESS_LOOPBACK = 1,
 }

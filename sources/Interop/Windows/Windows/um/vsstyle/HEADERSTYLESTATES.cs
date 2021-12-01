@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HEADERSTYLESTATES.xml' path='doc/member[@name="HEADERSTYLESTATES"]/*' />
 public enum HEADERSTYLESTATES
 {
+    /// <include file='HEADERSTYLESTATES.xml' path='doc/member[@name="HEADERSTYLESTATES.HBG_DETAILS"]/*' />
     HBG_DETAILS = 1,
+
+    /// <include file='HEADERSTYLESTATES.xml' path='doc/member[@name="HEADERSTYLESTATES.HBG_ICON"]/*' />
     HBG_ICON = 2,
 }

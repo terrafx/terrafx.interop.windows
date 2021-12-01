@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITfFnShowHelp.xml' path='doc/member[@name="ITfFnShowHelp"]/*' />
 [Guid("5AB1D30C-094D-4C29-8EA5-0BF59BE87BF3")]
 [NativeTypeName("struct ITfFnShowHelp : ITfFunction")]
 [NativeInheritance("ITfFunction")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITfFnShowHelp : ITfFnShowHelp.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITfFnShowHelp : ITfFnShowHelp.Interface
         return ((delegate* unmanaged<ITfFnShowHelp*, Guid*, void**, int>)(lpVtbl[0]))((ITfFnShowHelp*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITfFnShowHelp : ITfFnShowHelp.Interface
         return ((delegate* unmanaged<ITfFnShowHelp*, uint>)(lpVtbl[1]))((ITfFnShowHelp*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITfFnShowHelp : ITfFnShowHelp.Interface
         return ((delegate* unmanaged<ITfFnShowHelp*, uint>)(lpVtbl[2]))((ITfFnShowHelp*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ITfFunction.GetDisplayName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetDisplayName([NativeTypeName("BSTR *")] ushort** pbstrName)
@@ -46,6 +51,7 @@ public unsafe partial struct ITfFnShowHelp : ITfFnShowHelp.Interface
         return ((delegate* unmanaged<ITfFnShowHelp*, ushort**, int>)(lpVtbl[3]))((ITfFnShowHelp*)Unsafe.AsPointer(ref this), pbstrName);
     }
 
+    /// <include file='ITfFnShowHelp.xml' path='doc/member[@name="ITfFnShowHelp.Show"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Show(HWND hwndParent)

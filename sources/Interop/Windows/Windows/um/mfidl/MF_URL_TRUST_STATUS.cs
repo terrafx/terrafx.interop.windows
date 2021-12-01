@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MF_URL_TRUST_STATUS.xml' path='doc/member[@name="MF_URL_TRUST_STATUS"]/*' />
 public enum MF_URL_TRUST_STATUS
 {
+    /// <include file='MF_URL_TRUST_STATUS.xml' path='doc/member[@name="MF_URL_TRUST_STATUS.MF_LICENSE_URL_UNTRUSTED"]/*' />
     MF_LICENSE_URL_UNTRUSTED = 0,
+
+    /// <include file='MF_URL_TRUST_STATUS.xml' path='doc/member[@name="MF_URL_TRUST_STATUS.MF_LICENSE_URL_TRUSTED"]/*' />
     MF_LICENSE_URL_TRUSTED = (MF_LICENSE_URL_UNTRUSTED + 1),
+
+    /// <include file='MF_URL_TRUST_STATUS.xml' path='doc/member[@name="MF_URL_TRUST_STATUS.MF_LICENSE_URL_TAMPERED"]/*' />
     MF_LICENSE_URL_TAMPERED = (MF_LICENSE_URL_TRUSTED + 1),
 }

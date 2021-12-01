@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MFCameraIntrinsic_DistortionModelType.xml' path='doc/member[@name="MFCameraIntrinsic_DistortionModelType"]/*' />
 public enum MFCameraIntrinsic_DistortionModelType
 {
+    /// <include file='MFCameraIntrinsic_DistortionModelType.xml' path='doc/member[@name="MFCameraIntrinsic_DistortionModelType.MFCameraIntrinsic_DistortionModelType_6KT"]/*' />
     MFCameraIntrinsic_DistortionModelType_6KT = 0,
+
+    /// <include file='MFCameraIntrinsic_DistortionModelType.xml' path='doc/member[@name="MFCameraIntrinsic_DistortionModelType.MFCameraIntrinsic_DistortionModelType_ArcTan"]/*' />
     MFCameraIntrinsic_DistortionModelType_ArcTan = (MFCameraIntrinsic_DistortionModelType_6KT + 1),
 }

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IFileSinkFilter2.xml' path='doc/member[@name="IFileSinkFilter2"]/*' />
 [Guid("00855B90-CE1B-11D0-BD4F-00A0C911CE86")]
 [NativeTypeName("struct IFileSinkFilter2 : IFileSinkFilter")]
 [NativeInheritance("IFileSinkFilter")]
@@ -16,6 +17,7 @@ public unsafe partial struct IFileSinkFilter2 : IFileSinkFilter2.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IFileSinkFilter2 : IFileSinkFilter2.Interface
         return ((delegate* unmanaged<IFileSinkFilter2*, Guid*, void**, int>)(lpVtbl[0]))((IFileSinkFilter2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IFileSinkFilter2 : IFileSinkFilter2.Interface
         return ((delegate* unmanaged<IFileSinkFilter2*, uint>)(lpVtbl[1]))((IFileSinkFilter2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IFileSinkFilter2 : IFileSinkFilter2.Interface
         return ((delegate* unmanaged<IFileSinkFilter2*, uint>)(lpVtbl[2]))((IFileSinkFilter2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IFileSinkFilter.SetFileName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetFileName([NativeTypeName("LPCOLESTR")] ushort* pszFileName, [NativeTypeName("const AM_MEDIA_TYPE *")] AM_MEDIA_TYPE* pmt)
@@ -46,6 +51,7 @@ public unsafe partial struct IFileSinkFilter2 : IFileSinkFilter2.Interface
         return ((delegate* unmanaged<IFileSinkFilter2*, ushort*, AM_MEDIA_TYPE*, int>)(lpVtbl[3]))((IFileSinkFilter2*)Unsafe.AsPointer(ref this), pszFileName, pmt);
     }
 
+    /// <inheritdoc cref="IFileSinkFilter.GetCurFile" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetCurFile([NativeTypeName("LPOLESTR *")] ushort** ppszFileName, AM_MEDIA_TYPE* pmt)
@@ -53,6 +59,7 @@ public unsafe partial struct IFileSinkFilter2 : IFileSinkFilter2.Interface
         return ((delegate* unmanaged<IFileSinkFilter2*, ushort**, AM_MEDIA_TYPE*, int>)(lpVtbl[4]))((IFileSinkFilter2*)Unsafe.AsPointer(ref this), ppszFileName, pmt);
     }
 
+    /// <include file='IFileSinkFilter2.xml' path='doc/member[@name="IFileSinkFilter2.SetMode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetMode([NativeTypeName("DWORD")] uint dwFlags)
@@ -60,6 +67,7 @@ public unsafe partial struct IFileSinkFilter2 : IFileSinkFilter2.Interface
         return ((delegate* unmanaged<IFileSinkFilter2*, uint, int>)(lpVtbl[5]))((IFileSinkFilter2*)Unsafe.AsPointer(ref this), dwFlags);
     }
 
+    /// <include file='IFileSinkFilter2.xml' path='doc/member[@name="IFileSinkFilter2.GetMode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetMode([NativeTypeName("DWORD *")] uint* pdwFlags)

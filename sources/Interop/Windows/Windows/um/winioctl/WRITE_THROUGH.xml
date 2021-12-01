@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WRITE_THROUGH">
+    <summary>
+      <para>Specifies whether a storage device supports write-through caching.</para>
+    </summary>
+    <remarks>
+      <para>The <a href="https://docs.microsoft.com/ni-winioctl-ioctl_storage_query_property.md">IOCTL_STORAGE_QUERY_PROPERTY</a> control code reports this value in the <see cref="STORAGE_WRITE_CACHE_PROPERTY" /> structure.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/FileIO/disk-management-enumeration-types">Disk Management Enumeration Types</seealso>
+    <seealso href="https://docs.microsoft.com/ni-winioctl-ioctl_storage_query_property.md">IOCTL_STORAGE_QUERY_PROPERTY</seealso>
+    <seealso cref="STORAGE_WRITE_CACHE_PROPERTY" />
+  </member>
+  <member name="WRITE_THROUGH.WriteThroughUnknown">
+    <summary>
+      <para>Indicates that no information is available about the write-through capabilities of the device.</para>
+    </summary>
+  </member>
+  <member name="WRITE_THROUGH.WriteThroughNotSupported">
+    <summary>
+      <para>Indicates that the device does not support write-through caching.</para>
+    </summary>
+  </member>
+  <member name="WRITE_THROUGH.WriteThroughSupported">
+    <summary>
+      <para>Indicates that the device supports write-through caching.</para>
+    </summary>
+  </member>
+</doc>

@@ -5,32 +5,42 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='USN_JOURNAL_DATA.xml' path='doc/member[@name="USN_JOURNAL_DATA"]/*' />
 public partial struct USN_JOURNAL_DATA
 {
+    /// <include file='USN_JOURNAL_DATA.xml' path='doc/member[@name="USN_JOURNAL_DATA.UsnJournalID"]/*' />
     [NativeTypeName("DWORDLONG")]
     public ulong UsnJournalID;
 
+    /// <include file='USN_JOURNAL_DATA.xml' path='doc/member[@name="USN_JOURNAL_DATA.FirstUsn"]/*' />
     [NativeTypeName("USN")]
     public long FirstUsn;
 
+    /// <include file='USN_JOURNAL_DATA.xml' path='doc/member[@name="USN_JOURNAL_DATA.NextUsn"]/*' />
     [NativeTypeName("USN")]
     public long NextUsn;
 
+    /// <include file='USN_JOURNAL_DATA.xml' path='doc/member[@name="USN_JOURNAL_DATA.LowestValidUsn"]/*' />
     [NativeTypeName("USN")]
     public long LowestValidUsn;
 
+    /// <include file='USN_JOURNAL_DATA.xml' path='doc/member[@name="USN_JOURNAL_DATA.MaxUsn"]/*' />
     [NativeTypeName("USN")]
     public long MaxUsn;
 
+    /// <include file='USN_JOURNAL_DATA.xml' path='doc/member[@name="USN_JOURNAL_DATA.MaximumSize"]/*' />
     [NativeTypeName("DWORDLONG")]
     public ulong MaximumSize;
 
+    /// <include file='USN_JOURNAL_DATA.xml' path='doc/member[@name="USN_JOURNAL_DATA.AllocationDelta"]/*' />
     [NativeTypeName("DWORDLONG")]
     public ulong AllocationDelta;
 
+    /// <include file='USN_JOURNAL_DATA.xml' path='doc/member[@name="USN_JOURNAL_DATA.MinSupportedMajorVersion"]/*' />
     [NativeTypeName("WORD")]
     public ushort MinSupportedMajorVersion;
 
+    /// <include file='USN_JOURNAL_DATA.xml' path='doc/member[@name="USN_JOURNAL_DATA.MaxSupportedMajorVersion"]/*' />
     [NativeTypeName("WORD")]
     public ushort MaxSupportedMajorVersion;
 }

@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IAMDeviceRemoval.DeviceInfo">
+    <summary>
+      <para>The <code>DeviceInfo</code> method retrieves information about the device.</para>
+    </summary>
+    <param name="pclsidInterfaceClass">
+      <para>Receives a GUID that specifies the device interface class.</para>
+    </param>
+    <param name="pwszSymbolicLink">
+      <para>Receives a pointer to a string that contains the Plug and Play (PnP) device path for the device. The caller must release the string by calling <see cref="CoTaskMemFree" />. This parameter can be <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>For more information about the device interface classes and device paths, see Device I/O in the Windows SDK documentation.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMDeviceRemoval Interface" />
+  </member>
+  <member name="IAMDeviceRemoval.Disassociate">
+    <summary>
+      <para>The <code>Disassociate</code> method disassociates the KsProxy filter from the device by closing the device handle. The Filter Graph Manager calls this method if it receives a notification that the device was removed.</para>
+    </summary>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMDeviceRemoval Interface" />
+  </member>
+  <member name="IAMDeviceRemoval.Reassociate">
+    <summary>
+      <para>The <code>Reassociate</code> method reassociates the KsProxy filter with the device. The Filter Graph Manager calls this method if it receives a notification that the device has returned after being removed.</para>
+    </summary>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMDeviceRemoval Interface" />
+  </member>
+  <member name="IAMDeviceRemoval">
+    <summary>
+      <para>The <code>IAMDeviceRemoval</code> interface provides a way for the Filter Graph Manager to register for device removal events for a capture device. The KsProxy filter exposes this interface. (See <a href="https://docs.microsoft.com//windows/desktop/DirectShow/wdm-video-capture-filter">WDM Video Capture Filter</a>.)</para>
+      <para>Applications typically do not use this interface, and third-party filters do not need to implement this interface. To get a pointer to this interface, call <b>QueryInterface</b> on the KsProxy filter.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/interfaces">Interfaces</seealso>
+  </member>
+</doc>

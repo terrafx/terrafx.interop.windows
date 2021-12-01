@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVEncMP12MuxSysCSPS.xml' path='doc/member[@name="CODECAPI_AVEncMP12MuxSysCSPS"]/*' />
 [Guid("7952FF45-9C0D-4822-BC82-8AD772E02993")]
 public partial struct CODECAPI_AVEncMP12MuxSysCSPS
 {

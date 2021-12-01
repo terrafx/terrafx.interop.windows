@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IInkD2DRenderer2.xml' path='doc/member[@name="IInkD2DRenderer2"]/*' />
 [Guid("0A95DCD9-4578-4B71-B20B-BF664D4BFEEE")]
 [NativeTypeName("struct IInkD2DRenderer2 : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IInkD2DRenderer2 : IInkD2DRenderer2.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IInkD2DRenderer2 : IInkD2DRenderer2.Interface
         return ((delegate* unmanaged<IInkD2DRenderer2*, Guid*, void**, int>)(lpVtbl[0]))((IInkD2DRenderer2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IInkD2DRenderer2 : IInkD2DRenderer2.Interface
         return ((delegate* unmanaged<IInkD2DRenderer2*, uint>)(lpVtbl[1]))((IInkD2DRenderer2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IInkD2DRenderer2 : IInkD2DRenderer2.Interface
         return ((delegate* unmanaged<IInkD2DRenderer2*, uint>)(lpVtbl[2]))((IInkD2DRenderer2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IInkD2DRenderer2.xml' path='doc/member[@name="IInkD2DRenderer2.Draw"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Draw(IUnknown* pD2D1DeviceContext, IUnknown* pInkStrokeIterable, INK_HIGH_CONTRAST_ADJUSTMENT highContrastAdjustment)

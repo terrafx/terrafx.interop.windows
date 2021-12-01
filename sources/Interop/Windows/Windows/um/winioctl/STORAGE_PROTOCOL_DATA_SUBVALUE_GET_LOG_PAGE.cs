@@ -8,17 +8,21 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STORAGE_PROTOCOL_DATA_SUBVALUE_GET_LOG_PAGE.xml' path='doc/member[@name="STORAGE_PROTOCOL_DATA_SUBVALUE_GET_LOG_PAGE"]/*' />
 [StructLayout(LayoutKind.Explicit)]
 public partial struct STORAGE_PROTOCOL_DATA_SUBVALUE_GET_LOG_PAGE
 {
+    /// <include file='STORAGE_PROTOCOL_DATA_SUBVALUE_GET_LOG_PAGE.xml' path='doc/member[@name="STORAGE_PROTOCOL_DATA_SUBVALUE_GET_LOG_PAGE.Anonymous"]/*' />
     [FieldOffset(0)]
     [NativeTypeName("_STORAGE_PROTOCOL_DATA_SUBVALUE_GET_LOG_PAGE::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:2261:5)")]
     public _Anonymous_e__Struct Anonymous;
 
+    /// <include file='STORAGE_PROTOCOL_DATA_SUBVALUE_GET_LOG_PAGE.xml' path='doc/member[@name="STORAGE_PROTOCOL_DATA_SUBVALUE_GET_LOG_PAGE.AsUlong"]/*' />
     [FieldOffset(0)]
     [NativeTypeName("DWORD")]
     public uint AsUlong;
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.RetainAsynEvent"]/*' />
     public uint RetainAsynEvent
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -34,6 +38,7 @@ public partial struct STORAGE_PROTOCOL_DATA_SUBVALUE_GET_LOG_PAGE
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.LogSpecificField"]/*' />
     public uint LogSpecificField
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -49,6 +54,7 @@ public partial struct STORAGE_PROTOCOL_DATA_SUBVALUE_GET_LOG_PAGE
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Reserved"]/*' />
     public uint Reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -64,10 +70,12 @@ public partial struct STORAGE_PROTOCOL_DATA_SUBVALUE_GET_LOG_PAGE
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />
     public partial struct _Anonymous_e__Struct
     {
         public uint _bitfield;
 
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.RetainAsynEvent"]/*' />
         [NativeTypeName("DWORD : 1")]
         public uint RetainAsynEvent
         {
@@ -84,6 +92,7 @@ public partial struct STORAGE_PROTOCOL_DATA_SUBVALUE_GET_LOG_PAGE
             }
         }
 
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.LogSpecificField"]/*' />
         [NativeTypeName("DWORD : 4")]
         public uint LogSpecificField
         {
@@ -100,6 +109,7 @@ public partial struct STORAGE_PROTOCOL_DATA_SUBVALUE_GET_LOG_PAGE
             }
         }
 
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Reserved"]/*' />
         [NativeTypeName("DWORD : 27")]
         public uint Reserved
         {

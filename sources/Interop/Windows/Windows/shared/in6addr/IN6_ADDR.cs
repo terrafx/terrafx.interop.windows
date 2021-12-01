@@ -7,18 +7,23 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IN6_ADDR.xml' path='doc/member[@name="IN6_ADDR"]/*' />
 public partial struct IN6_ADDR
 {
+    /// <include file='IN6_ADDR.xml' path='doc/member[@name="IN6_ADDR.u"]/*' />
     [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/in6addr.h:26:5)")]
     public _u_e__Union u;
 
+    /// <include file='_u_e__Union.xml' path='doc/member[@name="_u_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public unsafe partial struct _u_e__Union
     {
+        /// <include file='_u_e__Union.xml' path='doc/member[@name="_u_e__Union.Byte"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("UCHAR [16]")]
         public fixed byte Byte[16];
 
+        /// <include file='_u_e__Union.xml' path='doc/member[@name="_u_e__Union.Word"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("USHORT [8]")]
         public fixed ushort Word[8];

@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IRpcOptions.Query">
+    <summary>
+      <para>Retrieves the value of an RPC binding option property.</para>
+    </summary>
+    <param name="pPrx">
+      <para>A pointer to the proxy whose property is being queried.</para>
+    </param>
+    <param name="dwProperty">
+      <para>An identifier of the property to be queried, which must be COMBND_RPCTIMEOUT or COMBND_SERVER_LOCALITY (this flag is available starting with Windows Server 2003.)</para>
+    </param>
+    <param name="pdwValue">
+      <para>A pointer to the property value.</para>
+    </param>
+    <returns>
+      <para>This method can return the standard return values E_INVALIDARG, E_OUTOFMEMORY, E_UNEXPECTED, E_FAIL, and S_OK.</para>
+    </returns>
+    <remarks>
+      <para>While the COMBND_RPCTIMEOUT property can also be set using the <see cref="Set" /> method, the COMBND_SERVER_LOCALITY property can only be queried.</para>
+      <para>See <see cref="IRpcOptions" /> for a table of the possible values of the COMBND_RPCTIMEOUT property.</para>
+      <para>The possible values of the COMBND_SERVER_LOCALITY property, which describes the degree of remoteness of the RPC connection, are enumerated in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>SERVER_LOCALITY_PROCESS_LOCAL
+</description>
+          <description>The counterpart is in the same process as the client.
+</description>
+        </item>
+        <item>
+          <description>SERVER_LOCALITY_MACHINE_LOCAL
+</description>
+          <description>The counterpart is on the same computer as the client but in a different process.
+</description>
+        </item>
+        <item>
+          <description>SERVER_LOCALITY_REMOTE
+</description>
+          <description>The counterpart is on a remote computer.
+</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="IRpcOptions" />
+  </member>
+  <member name="IRpcOptions.Set">
+    <summary>
+      <para>Sets the value of an RPC binding option property.</para>
+    </summary>
+    <param name="pPrx">
+      <para>A pointer to the proxy whose property is being set.</para>
+    </param>
+    <param name="dwProperty">
+      <para>An identifier of the property to be set, which must be COMBND_RPCTIMEOUT.</para>
+    </param>
+    <param name="dwValue">
+      <para>The new value of the property.</para>
+    </param>
+    <returns>
+      <para>This method can return the standard return values E_INVALIDARG, E_OUTOFMEMORY, E_UNEXPECTED, E_FAIL, and S_OK.</para>
+    </returns>
+    <remarks>
+      <para>See <see cref="IRpcOptions" /> for a table of the possible values of the COMBND_RPCTIMEOUT property.</para>
+    </remarks>
+    <seealso cref="IRpcOptions" />
+  </member>
+  <member name="IRpcOptions">
+    <summary>
+      <para>Enables callers to set or query the values of various properties that control how COM handles remote procedure calls (RPC).</para>
+    </summary>
+    <remarks>
+      <para>Using this interface, callers can set or query the COMBND_RPCTIMEOUT property, which controls how long your machine will attempt to establish RPC communications with another before failing. The property can have any one of the values enumerated in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>RPC_C_BINDING_INFINITE_TIMEOUT
+</description>
+          <description>Keep trying to establish communications with no timeout.
+</description>
+        </item>
+        <item>
+          <description>RPC_C_BINDING_MIN_TIMEOUT
+</description>
+          <description>Try to establish communications for the minimum time required by the protocol. This value favors performance over reliability.</description>
+        </item>
+        <item>
+          <description>RPC_C_BINDING_DEFAULT_TIMEOUT
+</description>
+          <description>Try to establish communications for the default time. The value strikes a balance between performance and reliability.</description>
+        </item>
+        <item>
+          <description>RPC_C_BINDING_MAX_TIMEOUT
+</description>
+          <description>Try to establish communications for the maximum time allowed by the protocol. This value favors reliability over performance.</description>
+        </item>
+      </list>
+    </remarks>
+  </member>
+</doc>

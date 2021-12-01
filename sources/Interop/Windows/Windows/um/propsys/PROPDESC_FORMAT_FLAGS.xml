@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PROPDESC_FORMAT_FLAGS">
+    <summary>
+      <para>Used by property description helper functions, such as <see cref="PSFormatForDisplay" />, to indicate the format of a property string.</para>
+    </summary>
+    <remarks>
+      <para>These values are defined in propsys.h and propsys.idl.</para>
+      <para>Typically use one, or a bitwise combination of these flags to specify format. Some flags are mutually exclusive, for example PDFF_SHORTTIME  | PDFF_LONGTIME | PDFF_HIDETIME, is not allowed.</para>
+    </remarks>
+  </member>
+  <member name="PROPDESC_FORMAT_FLAGS.PDFF_DEFAULT">
+    <summary>
+      <para>Use the format settings specified in the property's .propdesc file.</para>
+    </summary>
+  </member>
+  <member name="PROPDESC_FORMAT_FLAGS.PDFF_PREFIXNAME">
+    <summary>
+      <para>Precede the value with the property's display name. If the <i>hideLabelPrefix</i> attribute of the <a href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-labelinfo">labelInfo</a> element in the property's .propinfo file is set to <b>true</b>, then this flag is ignored.</para>
+    </summary>
+  </member>
+  <member name="PROPDESC_FORMAT_FLAGS.PDFF_FILENAME">
+    <summary>
+      <para>Treat the string as a file name.</para>
+    </summary>
+  </member>
+  <member name="PROPDESC_FORMAT_FLAGS.PDFF_ALWAYSKB">
+    <summary>
+      <para>Byte sizes are always displayed in KB, regardless of size. This enables clean alignment of the values in the column. This flag applies only to properties that have been declared as type <b>Integer</b> in the <i>displayType</i> attribute of the <a href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-displayinfo">displayInfo</a> element in the property's .propinfo file. This flag overrides the <a href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-numberformat">numberFormat</a> setting.</para>
+    </summary>
+  </member>
+  <member name="PROPDESC_FORMAT_FLAGS.PDFF_RESERVED_RIGHTTOLEFT">
+    <summary>
+      <para>Reserved.</para>
+    </summary>
+  </member>
+  <member name="PROPDESC_FORMAT_FLAGS.PDFF_SHORTTIME">
+    <summary>
+      <para>Display time as "hh:mm am/pm".</para>
+    </summary>
+  </member>
+  <member name="PROPDESC_FORMAT_FLAGS.PDFF_LONGTIME">
+    <summary>
+      <para>Display time as "hh:mm:ss am/pm".</para>
+    </summary>
+  </member>
+  <member name="PROPDESC_FORMAT_FLAGS.PDFF_HIDETIME">
+    <summary>
+      <para>Hide the time portion of <code>datetime</code>.</para>
+    </summary>
+  </member>
+  <member name="PROPDESC_FORMAT_FLAGS.PDFF_SHORTDATE">
+    <summary>
+      <para>Display date as "MM/DD/YY". For example, "03/21/04".</para>
+    </summary>
+  </member>
+  <member name="PROPDESC_FORMAT_FLAGS.PDFF_LONGDATE">
+    <summary>
+      <para>Display date as "DayOfWeek, Month day, year". For example, "Monday, March 21, 2009".</para>
+    </summary>
+  </member>
+  <member name="PROPDESC_FORMAT_FLAGS.PDFF_HIDEDATE">
+    <summary>
+      <para>Hide the date portion of <code>datetime</code>.</para>
+    </summary>
+  </member>
+  <member name="PROPDESC_FORMAT_FLAGS.PDFF_RELATIVEDATE">
+    <summary>
+      <para>Use friendly date descriptions. For example, "Yesterday".</para>
+    </summary>
+  </member>
+  <member name="PROPDESC_FORMAT_FLAGS.PDFF_USEEDITINVITATION">
+    <summary>
+      <para>Return the invitation text if formatting failed or the value was empty. Invitation text is text displayed in a text box as a cue for the user, such as "Enter your name". Formatting can fail if the data entered is not of an expected type, such as when alpha characters have been entered in a phone-number field.</para>
+    </summary>
+  </member>
+  <member name="PROPDESC_FORMAT_FLAGS.PDFF_READONLY">
+    <summary>
+      <para>If this flag is used, the <b>PDFF_USEEDITINVITATION</b> flag must also be specified. When the formatting flags are <b>PDFF_READONLY</b> | <b>PDFF_USEEDITINVITATION</b> and the algorithm would have shown invitation text, a string is returned that indicates the value is "Unknown" instead of returning the invitation text.</para>
+    </summary>
+  </member>
+  <member name="PROPDESC_FORMAT_FLAGS.PDFF_NOAUTOREADINGORDER">
+    <summary>
+      <para>Do not detect reading order automatically. Useful when converting to ANSI to omit the Unicode reading order characters. However, reading order characters for some values are still returned.</para>
+    </summary>
+  </member>
+</doc>

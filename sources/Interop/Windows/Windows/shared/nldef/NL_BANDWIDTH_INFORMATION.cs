@@ -7,15 +7,19 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NL_BANDWIDTH_INFORMATION.xml' path='doc/member[@name="NL_BANDWIDTH_INFORMATION"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public partial struct NL_BANDWIDTH_INFORMATION
 {
+    /// <include file='NL_BANDWIDTH_INFORMATION.xml' path='doc/member[@name="NL_BANDWIDTH_INFORMATION.Bandwidth"]/*' />
     [NativeTypeName("ULONG64")]
     public ulong Bandwidth;
 
+    /// <include file='NL_BANDWIDTH_INFORMATION.xml' path='doc/member[@name="NL_BANDWIDTH_INFORMATION.Instability"]/*' />
     [NativeTypeName("ULONG64")]
     public ulong Instability;
 
+    /// <include file='NL_BANDWIDTH_INFORMATION.xml' path='doc/member[@name="NL_BANDWIDTH_INFORMATION.BandwidthPeaked"]/*' />
     [NativeTypeName("BOOLEAN")]
     public byte BandwidthPeaked;
 }

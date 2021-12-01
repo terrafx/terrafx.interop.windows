@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVEncVideoIntraLayerPrediction.xml' path='doc/member[@name="CODECAPI_AVEncVideoIntraLayerPrediction"]/*' />
 [Guid("D3AF46B8-BF47-44BB-A283-69F0B0228FF9")]
 public partial struct CODECAPI_AVEncVideoIntraLayerPrediction
 {

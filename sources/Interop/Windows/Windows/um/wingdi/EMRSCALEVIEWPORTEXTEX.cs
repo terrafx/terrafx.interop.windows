@@ -5,19 +5,25 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='EMRSCALEVIEWPORTEXTEX.xml' path='doc/member[@name="EMRSCALEVIEWPORTEXTEX"]/*' />
 public partial struct EMRSCALEVIEWPORTEXTEX
 {
+    /// <include file='EMRSCALEVIEWPORTEXTEX.xml' path='doc/member[@name="EMRSCALEVIEWPORTEXTEX.emr"]/*' />
     public EMR emr;
 
+    /// <include file='EMRSCALEVIEWPORTEXTEX.xml' path='doc/member[@name="EMRSCALEVIEWPORTEXTEX.xNum"]/*' />
     [NativeTypeName("LONG")]
     public int xNum;
 
+    /// <include file='EMRSCALEVIEWPORTEXTEX.xml' path='doc/member[@name="EMRSCALEVIEWPORTEXTEX.xDenom"]/*' />
     [NativeTypeName("LONG")]
     public int xDenom;
 
+    /// <include file='EMRSCALEVIEWPORTEXTEX.xml' path='doc/member[@name="EMRSCALEVIEWPORTEXTEX.yNum"]/*' />
     [NativeTypeName("LONG")]
     public int yNum;
 
+    /// <include file='EMRSCALEVIEWPORTEXTEX.xml' path='doc/member[@name="EMRSCALEVIEWPORTEXTEX.yDenom"]/*' />
     [NativeTypeName("LONG")]
     public int yDenom;
 }

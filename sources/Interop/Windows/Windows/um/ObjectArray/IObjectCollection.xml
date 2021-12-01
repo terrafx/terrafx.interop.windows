@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IObjectCollection.AddFromArray">
+    <summary>
+      <para>Adds the objects contained in an <see cref="IObjectArray" /> to the collection.</para>
+    </summary>
+    <param name="poaSource">
+      <para>Type: <b><see cref="IObjectArray" />*</b></para>
+      <para>Pointer to the <see cref="IObjectArray" /> whose contents are to be added to the collection.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IObjectCollection.AddObject">
+    <summary>
+      <para>Adds a single object to the collection.</para>
+    </summary>
+    <param name="punk">
+      <para>Type: <b><see cref="IUnknown" />*</b></para>
+      <para>Pointer to the <see cref="IUnknown" /> of the object to be added to the collection.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IObjectCollection.Clear">
+    <summary>
+      <para>Removes all objects from the collection.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IObjectCollection.RemoveObjectAt">
+    <summary>
+      <para>Removes a single, specified object from the collection.</para>
+    </summary>
+    <param name="uiIndex">
+      <para>Type: <b>UINT*</b></para>
+      <para>A pointer to the index of the object within the collection.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IObjectCollection">
+    <summary>
+      <para>Extends the <see cref="IObjectArray" /> interface by providing methods that enable clients to add and remove objects that support <see cref="IUnknown" /> in a collection.</para>
+    </summary>
+    <remarks>
+      <h3>When to Use</h3>
+      <para>Use this interface to interact with a collection of generic objects.</para>
+    </remarks>
+  </member>
+</doc>

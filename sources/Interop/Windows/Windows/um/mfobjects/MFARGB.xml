@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MFARGB">
+    <summary>
+      <para>Describes an ARGB color value.</para>
+    </summary>
+    <seealso cref="MFPaletteEntry Union" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-structures">Media Foundation Structures</seealso>
+  </member>
+  <member name="MFARGB.rgbBlue">
+    <summary>
+      <para>Blue value.</para>
+    </summary>
+  </member>
+  <member name="MFARGB.rgbGreen">
+    <summary>
+      <para>Green value.</para>
+    </summary>
+  </member>
+  <member name="MFARGB.rgbRed">
+    <summary>
+      <para>Red value.</para>
+    </summary>
+  </member>
+  <member name="MFARGB.rgbAlpha">
+    <summary>
+      <para>Alpha value.</para>
+    </summary>
+  </member>
+</doc>

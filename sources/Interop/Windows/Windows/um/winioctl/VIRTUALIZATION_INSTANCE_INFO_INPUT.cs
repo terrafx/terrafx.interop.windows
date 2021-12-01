@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='VIRTUALIZATION_INSTANCE_INFO_INPUT.xml' path='doc/member[@name="VIRTUALIZATION_INSTANCE_INFO_INPUT"]/*' />
 public partial struct VIRTUALIZATION_INSTANCE_INFO_INPUT
 {
+    /// <include file='VIRTUALIZATION_INSTANCE_INFO_INPUT.xml' path='doc/member[@name="VIRTUALIZATION_INSTANCE_INFO_INPUT.NumberOfWorkerThreads"]/*' />
     [NativeTypeName("DWORD")]
     public uint NumberOfWorkerThreads;
 
+    /// <include file='VIRTUALIZATION_INSTANCE_INFO_INPUT.xml' path='doc/member[@name="VIRTUALIZATION_INSTANCE_INFO_INPUT.Flags"]/*' />
     [NativeTypeName("DWORD")]
     public uint Flags;
 }

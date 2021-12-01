@@ -5,21 +5,28 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ADMINISTRATOR_POWER_POLICY.xml' path='doc/member[@name="ADMINISTRATOR_POWER_POLICY"]/*' />
 public partial struct ADMINISTRATOR_POWER_POLICY
 {
+    /// <include file='ADMINISTRATOR_POWER_POLICY.xml' path='doc/member[@name="ADMINISTRATOR_POWER_POLICY.MinSleep"]/*' />
     public SYSTEM_POWER_STATE MinSleep;
 
+    /// <include file='ADMINISTRATOR_POWER_POLICY.xml' path='doc/member[@name="ADMINISTRATOR_POWER_POLICY.MaxSleep"]/*' />
     public SYSTEM_POWER_STATE MaxSleep;
 
+    /// <include file='ADMINISTRATOR_POWER_POLICY.xml' path='doc/member[@name="ADMINISTRATOR_POWER_POLICY.MinVideoTimeout"]/*' />
     [NativeTypeName("DWORD")]
     public uint MinVideoTimeout;
 
+    /// <include file='ADMINISTRATOR_POWER_POLICY.xml' path='doc/member[@name="ADMINISTRATOR_POWER_POLICY.MaxVideoTimeout"]/*' />
     [NativeTypeName("DWORD")]
     public uint MaxVideoTimeout;
 
+    /// <include file='ADMINISTRATOR_POWER_POLICY.xml' path='doc/member[@name="ADMINISTRATOR_POWER_POLICY.MinSpindownTimeout"]/*' />
     [NativeTypeName("DWORD")]
     public uint MinSpindownTimeout;
 
+    /// <include file='ADMINISTRATOR_POWER_POLICY.xml' path='doc/member[@name="ADMINISTRATOR_POWER_POLICY.MaxSpindownTimeout"]/*' />
     [NativeTypeName("DWORD")]
     public uint MaxSpindownTimeout;
 }

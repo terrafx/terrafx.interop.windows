@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DWMFLIP3DWINDOWPOLICY">
+    <summary>
+      <para>Flags used by the <see cref="DwmSetWindowAttribute" /> function to specify the Flip3D window policy.</para>
+    </summary>
+    <remarks>
+      <para>To use a <b>DWMFLIP3DWINDOWPOLICY</b> value, set the <i>dwAttribute</i> parameter of the <see cref="DwmSetWindowAttribute" /> function to <b>DWMWA_FLIP3D_POLICY</b>. Set the <i>pvAttribute</i> parameter to the <b>DWMFLIP3DWINDOWPOLICY</b> value.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/dwm/composition-ovw">Enable and Control DWM Composition</seealso>
+  </member>
+  <member name="DWMFLIP3DWINDOWPOLICY.DWMFLIP3D_DEFAULT">
+    <summary>
+      <para>Use the window's style and visibility settings to determine whether to hide or include the window in Flip3D rendering.</para>
+    </summary>
+  </member>
+  <member name="DWMFLIP3DWINDOWPOLICY.DWMFLIP3D_EXCLUDEBELOW">
+    <summary>
+      <para>Exclude the window from Flip3D and display it below the Flip3D rendering.</para>
+    </summary>
+  </member>
+  <member name="DWMFLIP3DWINDOWPOLICY.DWMFLIP3D_EXCLUDEABOVE">
+    <summary>
+      <para>Exclude the window from Flip3D and display it above the Flip3D rendering.</para>
+    </summary>
+  </member>
+  <member name="DWMFLIP3DWINDOWPOLICY.DWMFLIP3D_LAST">
+    <summary>
+      <para>The maximum recognized <see cref="DWMFLIP3DWINDOWPOLICY" /> value, used for validation purposes.</para>
+    </summary>
+  </member>
+</doc>

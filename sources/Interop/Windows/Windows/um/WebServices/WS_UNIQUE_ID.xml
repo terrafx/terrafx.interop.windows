@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_UNIQUE_ID">
+    <summary>
+      <para>Represents a unique ID URI.</para>
+    </summary>
+    <remarks>
+      <para>This structure represents a URI that is used as a unique ID.
+It has native support for GUID-based URI's, but can also
+accommodate other unique-id URI's as a string.</para>
+    </remarks>
+  </member>
+  <member name="WS_UNIQUE_ID.uri">
+    <summary>
+      <para>A string representation of the URI.  If length is zero,
+then the unique ID is a guid, and the value is stored
+in the guid field.  Otherwise, the URI is a string
+and the string value is stored in the uri field.</para>
+    </summary>
+  </member>
+  <member name="WS_UNIQUE_ID.guid">
+    <summary>
+      <para>If the uri.length field is 0, then this field contains
+the GUID representation of the unique ID.  Otherwise
+the value of the field is not defined.</para>
+    </summary>
+  </member>
+</doc>

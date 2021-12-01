@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MOUSE_WHEEL_PARAMETER">
+    <summary>
+      <para>Specifies the manipulations that can be mapped to mouse wheel rotation.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/nf-interactioncontext-getmousewheelparameterinteractioncontext">GetMouseWheelParameterInteractionContext</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/enumerations">Interaction Context Enumerations</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/nf-interactioncontext-setmousewheelparameterinteractioncontext">SetMouseWheelParameterInteractionContext</seealso>
+  </member>
+  <member name="MOUSE_WHEEL_PARAMETER.MOUSE_WHEEL_PARAMETER_CHAR_TRANSLATION_X">
+    <summary>
+      <para>Scrolling/panning distance along the x-axis.</para>
+    </summary>
+  </member>
+  <member name="MOUSE_WHEEL_PARAMETER.MOUSE_WHEEL_PARAMETER_CHAR_TRANSLATION_Y">
+    <summary>
+      <para>Scrolling/panning distance along the y-axis.</para>
+    </summary>
+  </member>
+  <member name="MOUSE_WHEEL_PARAMETER.MOUSE_WHEEL_PARAMETER_DELTA_SCALE">
+    <summary>
+      <para>The relative change in scale, as a multiplier, since the last input message.</para>
+    </summary>
+  </member>
+  <member name="MOUSE_WHEEL_PARAMETER.MOUSE_WHEEL_PARAMETER_DELTA_ROTATION">
+    <summary>
+      <para>The relative change in rotation, in radians, since the last input message.</para>
+    </summary>
+  </member>
+  <member name="MOUSE_WHEEL_PARAMETER.MOUSE_WHEEL_PARAMETER_PAGE_TRANSLATION_X">
+    <summary>
+      <para>Paging distance along the x-axis.</para>
+    </summary>
+  </member>
+  <member name="MOUSE_WHEEL_PARAMETER.MOUSE_WHEEL_PARAMETER_PAGE_TRANSLATION_Y">
+    <summary>
+      <para>Paging distance along the y-axis.</para>
+    </summary>
+  </member>
+  <member name="MOUSE_WHEEL_PARAMETER.MOUSE_WHEEL_PARAMETER_MAX">
+    <summary>
+      <para>Maximum number of interactions exceeded.</para>
+    </summary>
+  </member>
+</doc>

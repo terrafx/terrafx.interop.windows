@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFVideoSampleAllocatorNotify.xml' path='doc/member[@name="IMFVideoSampleAllocatorNotify"]/*' />
 [Guid("A792CDBE-C374-4E89-8335-278E7B9956A4")]
 [NativeTypeName("struct IMFVideoSampleAllocatorNotify : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMFVideoSampleAllocatorNotify : IMFVideoSampleAlloc
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMFVideoSampleAllocatorNotify : IMFVideoSampleAlloc
         return ((delegate* unmanaged<IMFVideoSampleAllocatorNotify*, Guid*, void**, int>)(lpVtbl[0]))((IMFVideoSampleAllocatorNotify*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMFVideoSampleAllocatorNotify : IMFVideoSampleAlloc
         return ((delegate* unmanaged<IMFVideoSampleAllocatorNotify*, uint>)(lpVtbl[1]))((IMFVideoSampleAllocatorNotify*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMFVideoSampleAllocatorNotify : IMFVideoSampleAlloc
         return ((delegate* unmanaged<IMFVideoSampleAllocatorNotify*, uint>)(lpVtbl[2]))((IMFVideoSampleAllocatorNotify*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFVideoSampleAllocatorNotify.xml' path='doc/member[@name="IMFVideoSampleAllocatorNotify.NotifyRelease"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT NotifyRelease()

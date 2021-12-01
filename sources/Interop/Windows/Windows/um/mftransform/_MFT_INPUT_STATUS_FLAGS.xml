@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="_MFT_INPUT_STATUS_FLAGS">
+    <summary>
+      <para>Indicates the status of an input stream on a Media Foundation transform (MFT).</para>
+    </summary>
+    <seealso cref="IMFTransform.GetInputStatus" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-transforms">Media Foundation Transforms</seealso>
+  </member>
+  <member name="_MFT_INPUT_STATUS_FLAGS.MFT_INPUT_STATUS_ACCEPT_DATA">
+    <summary>
+      <para>The input stream can receive more data at this time. To deliver more input data, call <see cref="IMFTransform.ProcessInput" />.</para>
+    </summary>
+  </member>
+</doc>

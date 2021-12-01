@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IPinInfo.xml' path='doc/member[@name="IPinInfo"]/*' />
 [Guid("56A868BD-0AD4-11CE-B03A-0020AF0BA770")]
 [NativeTypeName("struct IPinInfo : IDispatch")]
 [NativeInheritance("IDispatch")]
@@ -16,6 +17,7 @@ public unsafe partial struct IPinInfo : IPinInfo.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IPinInfo : IPinInfo.Interface
         return ((delegate* unmanaged<IPinInfo*, Guid*, void**, int>)(lpVtbl[0]))((IPinInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IPinInfo : IPinInfo.Interface
         return ((delegate* unmanaged<IPinInfo*, uint>)(lpVtbl[1]))((IPinInfo*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IPinInfo : IPinInfo.Interface
         return ((delegate* unmanaged<IPinInfo*, uint>)(lpVtbl[2]))((IPinInfo*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct IPinInfo : IPinInfo.Interface
         return ((delegate* unmanaged<IPinInfo*, uint*, int>)(lpVtbl[3]))((IPinInfo*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct IPinInfo : IPinInfo.Interface
         return ((delegate* unmanaged<IPinInfo*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IPinInfo*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
@@ -60,6 +67,7 @@ public unsafe partial struct IPinInfo : IPinInfo.Interface
         return ((delegate* unmanaged<IPinInfo*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IPinInfo*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
+    /// <inheritdoc cref="IDispatch.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
@@ -67,6 +75,7 @@ public unsafe partial struct IPinInfo : IPinInfo.Interface
         return ((delegate* unmanaged<IPinInfo*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IPinInfo*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
+    /// <include file='IPinInfo.xml' path='doc/member[@name="IPinInfo.get_Pin"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT get_Pin(IUnknown** ppUnk)
@@ -74,6 +83,7 @@ public unsafe partial struct IPinInfo : IPinInfo.Interface
         return ((delegate* unmanaged<IPinInfo*, IUnknown**, int>)(lpVtbl[7]))((IPinInfo*)Unsafe.AsPointer(ref this), ppUnk);
     }
 
+    /// <include file='IPinInfo.xml' path='doc/member[@name="IPinInfo.get_ConnectedTo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT get_ConnectedTo(IDispatch** ppUnk)
@@ -81,6 +91,7 @@ public unsafe partial struct IPinInfo : IPinInfo.Interface
         return ((delegate* unmanaged<IPinInfo*, IDispatch**, int>)(lpVtbl[8]))((IPinInfo*)Unsafe.AsPointer(ref this), ppUnk);
     }
 
+    /// <include file='IPinInfo.xml' path='doc/member[@name="IPinInfo.get_ConnectionMediaType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT get_ConnectionMediaType(IDispatch** ppUnk)
@@ -88,6 +99,7 @@ public unsafe partial struct IPinInfo : IPinInfo.Interface
         return ((delegate* unmanaged<IPinInfo*, IDispatch**, int>)(lpVtbl[9]))((IPinInfo*)Unsafe.AsPointer(ref this), ppUnk);
     }
 
+    /// <include file='IPinInfo.xml' path='doc/member[@name="IPinInfo.get_FilterInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT get_FilterInfo(IDispatch** ppUnk)
@@ -95,6 +107,7 @@ public unsafe partial struct IPinInfo : IPinInfo.Interface
         return ((delegate* unmanaged<IPinInfo*, IDispatch**, int>)(lpVtbl[10]))((IPinInfo*)Unsafe.AsPointer(ref this), ppUnk);
     }
 
+    /// <include file='IPinInfo.xml' path='doc/member[@name="IPinInfo.get_Name"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT get_Name([NativeTypeName("BSTR *")] ushort** ppUnk)
@@ -102,6 +115,7 @@ public unsafe partial struct IPinInfo : IPinInfo.Interface
         return ((delegate* unmanaged<IPinInfo*, ushort**, int>)(lpVtbl[11]))((IPinInfo*)Unsafe.AsPointer(ref this), ppUnk);
     }
 
+    /// <include file='IPinInfo.xml' path='doc/member[@name="IPinInfo.get_Direction"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT get_Direction([NativeTypeName("LONG *")] int* ppDirection)
@@ -109,6 +123,7 @@ public unsafe partial struct IPinInfo : IPinInfo.Interface
         return ((delegate* unmanaged<IPinInfo*, int*, int>)(lpVtbl[12]))((IPinInfo*)Unsafe.AsPointer(ref this), ppDirection);
     }
 
+    /// <include file='IPinInfo.xml' path='doc/member[@name="IPinInfo.get_PinID"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT get_PinID([NativeTypeName("BSTR *")] ushort** strPinID)
@@ -116,6 +131,7 @@ public unsafe partial struct IPinInfo : IPinInfo.Interface
         return ((delegate* unmanaged<IPinInfo*, ushort**, int>)(lpVtbl[13]))((IPinInfo*)Unsafe.AsPointer(ref this), strPinID);
     }
 
+    /// <include file='IPinInfo.xml' path='doc/member[@name="IPinInfo.get_MediaTypes"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT get_MediaTypes(IDispatch** ppUnk)
@@ -123,6 +139,7 @@ public unsafe partial struct IPinInfo : IPinInfo.Interface
         return ((delegate* unmanaged<IPinInfo*, IDispatch**, int>)(lpVtbl[14]))((IPinInfo*)Unsafe.AsPointer(ref this), ppUnk);
     }
 
+    /// <include file='IPinInfo.xml' path='doc/member[@name="IPinInfo.Connect"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT Connect(IUnknown* pPin)
@@ -130,6 +147,7 @@ public unsafe partial struct IPinInfo : IPinInfo.Interface
         return ((delegate* unmanaged<IPinInfo*, IUnknown*, int>)(lpVtbl[15]))((IPinInfo*)Unsafe.AsPointer(ref this), pPin);
     }
 
+    /// <include file='IPinInfo.xml' path='doc/member[@name="IPinInfo.ConnectDirect"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT ConnectDirect(IUnknown* pPin)
@@ -137,6 +155,7 @@ public unsafe partial struct IPinInfo : IPinInfo.Interface
         return ((delegate* unmanaged<IPinInfo*, IUnknown*, int>)(lpVtbl[16]))((IPinInfo*)Unsafe.AsPointer(ref this), pPin);
     }
 
+    /// <include file='IPinInfo.xml' path='doc/member[@name="IPinInfo.ConnectWithType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT ConnectWithType(IUnknown* pPin, IDispatch* pMediaType)
@@ -144,6 +163,7 @@ public unsafe partial struct IPinInfo : IPinInfo.Interface
         return ((delegate* unmanaged<IPinInfo*, IUnknown*, IDispatch*, int>)(lpVtbl[17]))((IPinInfo*)Unsafe.AsPointer(ref this), pPin, pMediaType);
     }
 
+    /// <include file='IPinInfo.xml' path='doc/member[@name="IPinInfo.Disconnect"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT Disconnect()
@@ -151,6 +171,7 @@ public unsafe partial struct IPinInfo : IPinInfo.Interface
         return ((delegate* unmanaged<IPinInfo*, int>)(lpVtbl[18]))((IPinInfo*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IPinInfo.xml' path='doc/member[@name="IPinInfo.Render"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT Render()

@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IUIManagerEventSink.OnWindowClosed">
+    <summary>
+      <para>Called by the TSF after closing the IME UI.</para>
+    </summary>
+    <returns>
+      <para>Ignored.</para>
+    </returns>
+    <seealso cref="IUIManagerEventSink" />
+  </member>
+  <member name="IUIManagerEventSink.OnWindowClosing">
+    <summary>
+      <para>Called by the TSF before closing the IME UI.</para>
+    </summary>
+    <returns>
+      <para>Ignored.</para>
+    </returns>
+    <seealso cref="IUIManagerEventSink" />
+  </member>
+  <member name="IUIManagerEventSink.OnWindowOpened">
+    <summary>
+      <para>Called by the TSF after opening an IME UI.</para>
+    </summary>
+    <param name="prcBounds">
+      <para>Pointer to a <b>RECT</b> structure defining the affected area (in screen coordinates).</para>
+    </param>
+    <returns>
+      <para>Ignored.</para>
+    </returns>
+    <seealso cref="IUIManagerEventSink" />
+  </member>
+  <member name="IUIManagerEventSink.OnWindowOpening">
+    <summary>
+      <para>Called by the TSF before opening an IME UI.</para>
+    </summary>
+    <param name="prcBounds">
+      <para>Pointer to a <b>RECT</b> structure defining the affected area (in screen coordinates).</para>
+    </param>
+    <returns>
+      <para>Ignored.</para>
+    </returns>
+    <seealso cref="IUIManagerEventSink" />
+  </member>
+  <member name="IUIManagerEventSink.OnWindowUpdated">
+    <summary>
+      <para>Called by the TSF after resizing and/or relocating the opened IME UI.</para>
+    </summary>
+    <param name="prcUpdatedBounds">
+      <para>Pointer to a <b>RECT</b> structure defining the affected area (in screen coordinates).</para>
+    </param>
+    <returns>
+      <para>Ignored.</para>
+    </returns>
+    <seealso cref="IUIManagerEventSink" />
+  </member>
+  <member name="IUIManagerEventSink.OnWindowUpdating">
+    <summary>
+      <para>Called by the TSF before resizing and/or relocating the opened IME UI.</para>
+    </summary>
+    <param name="prcUpdatedBounds">
+      <para>Pointer to a <b>RECT</b> structure defining the affected area (in screen coordinates).</para>
+    </param>
+    <returns>
+      <para>Ignored.</para>
+    </returns>
+    <seealso cref="IUIManagerEventSink" />
+  </member>
+  <member name="IUIManagerEventSink">
+    <summary>
+      <para>The <b>IUIManagerEventSink</b> interface is implemented by an app supporting IME UI integration to receive notifications of IME UI appearance. This enables the app to rearrange its UI layout to avoid having the app's UI elements overlapped by the IME UI.</para>
+      <para>Call the TSF manager <see cref="ITfSource.AdviseSink" /> with <b>IID_IUIManagerEventSink</b> to install this sink.
+<b>Note</b>  This interface may not be supported for all IMEs. There may be differences in support between IME on the Desktop and IME in the new Windows UI on Windows 8.1.</para>
+    </summary>
+  </member>
+</doc>

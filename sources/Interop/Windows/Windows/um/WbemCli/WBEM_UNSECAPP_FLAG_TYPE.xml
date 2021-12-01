@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WBEM_UNSECAPP_FLAG_TYPE">
+    <summary>
+      <para>Used to control access checks on callbacks when using the <see cref="IWbemUnsecuredApartment.CreateSinkStub" /> method.</para>
+    </summary>
+  </member>
+  <member name="WBEM_UNSECAPP_FLAG_TYPE.WBEM_FLAG_UNSECAPP_DEFAULT_CHECK_ACCESS">
+    <summary>
+      <para>Unsecapp.exe reads the registry key UnsecAppAccessControlDefault to determine if it should authenticate callbacks.</para>
+    </summary>
+  </member>
+  <member name="WBEM_UNSECAPP_FLAG_TYPE.WBEM_FLAG_UNSECAPP_CHECK_ACCESS">
+    <summary>
+      <para>Unsecapp.exe authenticates callbacks regardless of the setting of the registry key UnsecAppAccessControlDefault.</para>
+    </summary>
+  </member>
+  <member name="WBEM_UNSECAPP_FLAG_TYPE.WBEM_FLAG_UNSECAPP_DONT_CHECK_ACCESS">
+    <summary>
+      <para>Unsecapp.exe does not authenticate callbacks regardless of the setting of the registry key UnsecAppAccessControlDefault.</para>
+    </summary>
+  </member>
+</doc>

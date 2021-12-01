@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ATTACHMENT_ACTION.xml' path='doc/member[@name="ATTACHMENT_ACTION"]/*' />
 public enum ATTACHMENT_ACTION
 {
+    /// <include file='ATTACHMENT_ACTION.xml' path='doc/member[@name="ATTACHMENT_ACTION.ATTACHMENT_ACTION_CANCEL"]/*' />
     ATTACHMENT_ACTION_CANCEL = 0,
+
+    /// <include file='ATTACHMENT_ACTION.xml' path='doc/member[@name="ATTACHMENT_ACTION.ATTACHMENT_ACTION_SAVE"]/*' />
     ATTACHMENT_ACTION_SAVE = 0x1,
+
+    /// <include file='ATTACHMENT_ACTION.xml' path='doc/member[@name="ATTACHMENT_ACTION.ATTACHMENT_ACTION_EXEC"]/*' />
     ATTACHMENT_ACTION_EXEC = 0x2,
 }

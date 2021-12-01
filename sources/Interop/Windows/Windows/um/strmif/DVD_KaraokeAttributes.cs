@@ -5,16 +5,22 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DVD_KaraokeAttributes.xml' path='doc/member[@name="DVD_KaraokeAttributes"]/*' />
 public unsafe partial struct DVD_KaraokeAttributes
 {
+    /// <include file='DVD_KaraokeAttributes.xml' path='doc/member[@name="DVD_KaraokeAttributes.bVersion"]/*' />
     public byte bVersion;
 
+    /// <include file='DVD_KaraokeAttributes.xml' path='doc/member[@name="DVD_KaraokeAttributes.fMasterOfCeremoniesInGuideVocal1"]/*' />
     public BOOL fMasterOfCeremoniesInGuideVocal1;
 
+    /// <include file='DVD_KaraokeAttributes.xml' path='doc/member[@name="DVD_KaraokeAttributes.fDuet"]/*' />
     public BOOL fDuet;
 
+    /// <include file='DVD_KaraokeAttributes.xml' path='doc/member[@name="DVD_KaraokeAttributes.ChannelAssignment"]/*' />
     public DVD_KARAOKE_ASSIGNMENT ChannelAssignment;
 
+    /// <include file='DVD_KaraokeAttributes.xml' path='doc/member[@name="DVD_KaraokeAttributes.wChannelContents"]/*' />
     [NativeTypeName("WORD [8]")]
     public fixed ushort wChannelContents[8];
 }

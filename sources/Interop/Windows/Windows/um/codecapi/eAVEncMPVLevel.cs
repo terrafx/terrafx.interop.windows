@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='eAVEncMPVLevel.xml' path='doc/member[@name="eAVEncMPVLevel"]/*' />
 public enum eAVEncMPVLevel
 {
+    /// <include file='eAVEncMPVLevel.xml' path='doc/member[@name="eAVEncMPVLevel.eAVEncMPVLevel_Low"]/*' />
     eAVEncMPVLevel_Low = 1,
+
+    /// <include file='eAVEncMPVLevel.xml' path='doc/member[@name="eAVEncMPVLevel.eAVEncMPVLevel_Main"]/*' />
     eAVEncMPVLevel_Main = 2,
+
+    /// <include file='eAVEncMPVLevel.xml' path='doc/member[@name="eAVEncMPVLevel.eAVEncMPVLevel_High1440"]/*' />
     eAVEncMPVLevel_High1440 = 3,
+
+    /// <include file='eAVEncMPVLevel.xml' path='doc/member[@name="eAVEncMPVLevel.eAVEncMPVLevel_High"]/*' />
     eAVEncMPVLevel_High = 4,
 }

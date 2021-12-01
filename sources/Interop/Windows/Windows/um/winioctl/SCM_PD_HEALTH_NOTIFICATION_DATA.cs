@@ -7,7 +7,9 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SCM_PD_HEALTH_NOTIFICATION_DATA.xml' path='doc/member[@name="SCM_PD_HEALTH_NOTIFICATION_DATA"]/*' />
 public partial struct SCM_PD_HEALTH_NOTIFICATION_DATA
 {
+    /// <include file='SCM_PD_HEALTH_NOTIFICATION_DATA.xml' path='doc/member[@name="SCM_PD_HEALTH_NOTIFICATION_DATA.DeviceGuid"]/*' />
     public Guid DeviceGuid;
 }

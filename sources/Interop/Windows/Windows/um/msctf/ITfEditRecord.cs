@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITfEditRecord.xml' path='doc/member[@name="ITfEditRecord"]/*' />
 [Guid("42D4D099-7C1A-4A89-B836-6C6F22160DF0")]
 [NativeTypeName("struct ITfEditRecord : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITfEditRecord : ITfEditRecord.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITfEditRecord : ITfEditRecord.Interface
         return ((delegate* unmanaged<ITfEditRecord*, Guid*, void**, int>)(lpVtbl[0]))((ITfEditRecord*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITfEditRecord : ITfEditRecord.Interface
         return ((delegate* unmanaged<ITfEditRecord*, uint>)(lpVtbl[1]))((ITfEditRecord*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITfEditRecord : ITfEditRecord.Interface
         return ((delegate* unmanaged<ITfEditRecord*, uint>)(lpVtbl[2]))((ITfEditRecord*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITfEditRecord.xml' path='doc/member[@name="ITfEditRecord.GetSelectionStatus"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetSelectionStatus(BOOL* pfChanged)
@@ -46,6 +51,7 @@ public unsafe partial struct ITfEditRecord : ITfEditRecord.Interface
         return ((delegate* unmanaged<ITfEditRecord*, BOOL*, int>)(lpVtbl[3]))((ITfEditRecord*)Unsafe.AsPointer(ref this), pfChanged);
     }
 
+    /// <include file='ITfEditRecord.xml' path='doc/member[@name="ITfEditRecord.GetTextAndPropertyUpdates"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTextAndPropertyUpdates([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("const GUID **")] Guid** prgProperties, [NativeTypeName("ULONG")] uint cProperties, IEnumTfRanges** ppEnum)

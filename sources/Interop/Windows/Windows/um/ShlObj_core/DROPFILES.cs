@@ -7,15 +7,20 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DROPFILES.xml' path='doc/member[@name="DROPFILES"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct DROPFILES
 {
+    /// <include file='DROPFILES.xml' path='doc/member[@name="DROPFILES.pFiles"]/*' />
     [NativeTypeName("DWORD")]
     public uint pFiles;
 
+    /// <include file='DROPFILES.xml' path='doc/member[@name="DROPFILES.pt"]/*' />
     public POINT pt;
 
+    /// <include file='DROPFILES.xml' path='doc/member[@name="DROPFILES.fNC"]/*' />
     public BOOL fNC;
 
+    /// <include file='DROPFILES.xml' path='doc/member[@name="DROPFILES.fWide"]/*' />
     public BOOL fWide;
 }

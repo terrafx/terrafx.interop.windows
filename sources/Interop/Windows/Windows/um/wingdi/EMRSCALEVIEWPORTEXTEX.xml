@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="EMRSCALEVIEWPORTEXTEX">
+    <summary>
+      <para>The <b>EMRSCALEVIEWPORTEXTEX</b> and <b>EMRSCALEWINDOWEXTEX</b> structures contain members for the <see cref="ScaleViewportExtEx" /> and <see cref="ScaleWindowExtEx" /> enhanced metafile records.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafile-structures">Metafile Structures</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafiles">Metafiles Overview</seealso>
+  </member>
+  <member name="EMRSCALEVIEWPORTEXTEX.emr">
+    <summary>
+      <para>Base structure for all record types.</para>
+    </summary>
+  </member>
+  <member name="EMRSCALEVIEWPORTEXTEX.xNum">
+    <summary>
+      <para>Horizontal multiplicand.</para>
+    </summary>
+  </member>
+  <member name="EMRSCALEVIEWPORTEXTEX.xDenom">
+    <summary>
+      <para>Horizontal divisor.</para>
+    </summary>
+  </member>
+  <member name="EMRSCALEVIEWPORTEXTEX.yNum">
+    <summary>
+      <para>Vertical multiplicand.</para>
+    </summary>
+  </member>
+  <member name="EMRSCALEVIEWPORTEXTEX.yDenom">
+    <summary>
+      <para>Vertical divisor.</para>
+    </summary>
+  </member>
+</doc>

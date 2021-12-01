@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="EMRCREATECOLORSPACEW">
+    <summary>
+      <para>The <b>EMRCREATECOLORSPACEW</b> structure contains members for the <see cref="CreateColorSpace" /> enhanced metafile record.
+It differs from <see cref="EMRCREATECOLORSPACE" /> in that it has a Unicode logical color space and also has an optional array containing raw source profile data.</para>
+    </summary>
+    <seealso cref="CreateColorSpace" />
+    <seealso cref="EMRCREATECOLORSPACE" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafile-structures">Metafile Structures</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafiles">Metafiles Overview</seealso>
+  </member>
+  <member name="EMRCREATECOLORSPACEW.emr">
+    <summary>
+      <para>The base structure for all record types.</para>
+    </summary>
+  </member>
+  <member name="EMRCREATECOLORSPACEW.ihCS">
+    <summary>
+      <para>Index of the color space in handle table.</para>
+    </summary>
+  </member>
+  <member name="EMRCREATECOLORSPACEW.lcs">
+    <summary>
+      <para>Logical color space. Note, this is the Unicode version of the structure.</para>
+    </summary>
+  </member>
+  <member name="EMRCREATECOLORSPACEW.dwFlags">
+    <summary>
+      <para>Can be the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Flag</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>CREATECOLORSPACE_EMBEDED</description>
+          <description>Indicates that a color space is embedded in the metafile.</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="EMRCREATECOLORSPACEW.cbData">
+    <summary>
+      <para>Size of the raw source profile data in bytes, if it is attached.</para>
+    </summary>
+  </member>
+  <member name="EMRCREATECOLORSPACEW.Data">
+    <summary>
+      <para>An array containing the source profile data. The size of the array is <b>cbData</b>.</para>
+    </summary>
+  </member>
+</doc>

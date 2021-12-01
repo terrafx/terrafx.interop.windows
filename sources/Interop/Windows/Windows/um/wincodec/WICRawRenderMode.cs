@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WICRawRenderMode.xml' path='doc/member[@name="WICRawRenderMode"]/*' />
 public enum WICRawRenderMode
 {
+    /// <include file='WICRawRenderMode.xml' path='doc/member[@name="WICRawRenderMode.WICRawRenderModeDraft"]/*' />
     WICRawRenderModeDraft = 0x1,
+
+    /// <include file='WICRawRenderMode.xml' path='doc/member[@name="WICRawRenderMode.WICRawRenderModeNormal"]/*' />
     WICRawRenderModeNormal = 0x2,
+
+    /// <include file='WICRawRenderMode.xml' path='doc/member[@name="WICRawRenderMode.WICRawRenderModeBestQuality"]/*' />
     WICRawRenderModeBestQuality = 0x3,
+
+    /// <include file='WICRawRenderMode.xml' path='doc/member[@name="WICRawRenderMode.WICRAWRENDERMODE_FORCE_DWORD"]/*' />
     WICRAWRENDERMODE_FORCE_DWORD = 0x7fffffff,
 }

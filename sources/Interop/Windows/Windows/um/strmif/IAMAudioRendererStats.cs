@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAMAudioRendererStats.xml' path='doc/member[@name="IAMAudioRendererStats"]/*' />
 [Guid("22320CB2-D41A-11D2-BF7C-D7CB9DF0BF93")]
 [NativeTypeName("struct IAMAudioRendererStats : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IAMAudioRendererStats : IAMAudioRendererStats.Inter
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IAMAudioRendererStats : IAMAudioRendererStats.Inter
         return ((delegate* unmanaged<IAMAudioRendererStats*, Guid*, void**, int>)(lpVtbl[0]))((IAMAudioRendererStats*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IAMAudioRendererStats : IAMAudioRendererStats.Inter
         return ((delegate* unmanaged<IAMAudioRendererStats*, uint>)(lpVtbl[1]))((IAMAudioRendererStats*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IAMAudioRendererStats : IAMAudioRendererStats.Inter
         return ((delegate* unmanaged<IAMAudioRendererStats*, uint>)(lpVtbl[2]))((IAMAudioRendererStats*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAMAudioRendererStats.xml' path='doc/member[@name="IAMAudioRendererStats.GetStatParam"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetStatParam([NativeTypeName("DWORD")] uint dwParam, [NativeTypeName("DWORD *")] uint* pdwParam1, [NativeTypeName("DWORD *")] uint* pdwParam2)

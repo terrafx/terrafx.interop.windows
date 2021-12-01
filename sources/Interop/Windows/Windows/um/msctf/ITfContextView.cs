@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITfContextView.xml' path='doc/member[@name="ITfContextView"]/*' />
 [Guid("2433BF8E-0F9B-435C-BA2C-180611978C30")]
 [NativeTypeName("struct ITfContextView : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITfContextView : ITfContextView.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITfContextView : ITfContextView.Interface
         return ((delegate* unmanaged<ITfContextView*, Guid*, void**, int>)(lpVtbl[0]))((ITfContextView*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITfContextView : ITfContextView.Interface
         return ((delegate* unmanaged<ITfContextView*, uint>)(lpVtbl[1]))((ITfContextView*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITfContextView : ITfContextView.Interface
         return ((delegate* unmanaged<ITfContextView*, uint>)(lpVtbl[2]))((ITfContextView*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITfContextView.xml' path='doc/member[@name="ITfContextView.GetRangeFromPoint"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetRangeFromPoint([NativeTypeName("TfEditCookie")] uint ec, [NativeTypeName("const POINT *")] POINT* ppt, [NativeTypeName("DWORD")] uint dwFlags, ITfRange** ppRange)
@@ -46,6 +51,7 @@ public unsafe partial struct ITfContextView : ITfContextView.Interface
         return ((delegate* unmanaged<ITfContextView*, uint, POINT*, uint, ITfRange**, int>)(lpVtbl[3]))((ITfContextView*)Unsafe.AsPointer(ref this), ec, ppt, dwFlags, ppRange);
     }
 
+    /// <include file='ITfContextView.xml' path='doc/member[@name="ITfContextView.GetTextExt"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTextExt([NativeTypeName("TfEditCookie")] uint ec, ITfRange* pRange, RECT* prc, BOOL* pfClipped)
@@ -53,6 +59,7 @@ public unsafe partial struct ITfContextView : ITfContextView.Interface
         return ((delegate* unmanaged<ITfContextView*, uint, ITfRange*, RECT*, BOOL*, int>)(lpVtbl[4]))((ITfContextView*)Unsafe.AsPointer(ref this), ec, pRange, prc, pfClipped);
     }
 
+    /// <include file='ITfContextView.xml' path='doc/member[@name="ITfContextView.GetScreenExt"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetScreenExt(RECT* prc)
@@ -60,6 +67,7 @@ public unsafe partial struct ITfContextView : ITfContextView.Interface
         return ((delegate* unmanaged<ITfContextView*, RECT*, int>)(lpVtbl[5]))((ITfContextView*)Unsafe.AsPointer(ref this), prc);
     }
 
+    /// <include file='ITfContextView.xml' path='doc/member[@name="ITfContextView.GetWnd"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetWnd(HWND* phwnd)

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="AppPolicyWindowingModel">
+    <summary>
+      <para>The AppPolicyWindowingModel enumeration indicates whether a process uses a CoreWindow-based, or a HWND-based, windowing model.</para>
+    </summary>
+  </member>
+  <member name="AppPolicyWindowingModel.AppPolicyWindowingModel_None">
+    <summary>
+      <para>Indicates that the process doesn't have a windowing model.</para>
+    </summary>
+  </member>
+  <member name="AppPolicyWindowingModel.AppPolicyWindowingModel_Universal">
+    <summary>
+      <para>Indicates that the process's windowing model is CoreWindow-based.</para>
+    </summary>
+  </member>
+  <member name="AppPolicyWindowingModel.AppPolicyWindowingModel_ClassicDesktop">
+    <summary>
+      <para>Indicates that the process's windowing model is HWND-based.</para>
+    </summary>
+  </member>
+  <member name="AppPolicyWindowingModel.AppPolicyWindowingModel_ClassicPhone">
+    <summary>
+      <para>Indicates that the process's windowing model is Silverlight-based, and does not provide notifications for window state changes.</para>
+    </summary>
+  </member>
+</doc>

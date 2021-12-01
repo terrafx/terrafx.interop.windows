@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_LISTENER_PROPERTIES.xml' path='doc/member[@name="WS_LISTENER_PROPERTIES"]/*' />
 public unsafe partial struct WS_LISTENER_PROPERTIES
 {
+    /// <include file='WS_LISTENER_PROPERTIES.xml' path='doc/member[@name="WS_LISTENER_PROPERTIES.properties"]/*' />
     public WS_LISTENER_PROPERTY* properties;
 
+    /// <include file='WS_LISTENER_PROPERTIES.xml' path='doc/member[@name="WS_LISTENER_PROPERTIES.propertyCount"]/*' />
     [NativeTypeName("ULONG")]
     public uint propertyCount;
 }

@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MFSequencerTopologyFlags.xml' path='doc/member[@name="MFSequencerTopologyFlags"]/*' />
 public enum MFSequencerTopologyFlags
 {
+    /// <include file='MFSequencerTopologyFlags.xml' path='doc/member[@name="MFSequencerTopologyFlags.SequencerTopologyFlags_Last"]/*' />
     SequencerTopologyFlags_Last = 0x1,
 }

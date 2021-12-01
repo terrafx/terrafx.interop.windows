@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='svgPreserveAlpha.xml' path='doc/member[@name="svgPreserveAlpha"]/*' />
 public enum svgPreserveAlpha
 {
+    /// <include file='svgPreserveAlpha.xml' path='doc/member[@name="svgPreserveAlpha.SVG_PRESERVEALPHA_FALSE"]/*' />
     SVG_PRESERVEALPHA_FALSE = 0,
+
+    /// <include file='svgPreserveAlpha.xml' path='doc/member[@name="svgPreserveAlpha.SVG_PRESERVEALPHA_TRUE"]/*' />
     SVG_PRESERVEALPHA_TRUE = 1,
+
+    /// <include file='svgPreserveAlpha.xml' path='doc/member[@name="svgPreserveAlpha.svgPreserveAlpha_Max"]/*' />
     svgPreserveAlpha_Max = 2147483647,
 }

@@ -5,12 +5,16 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CMSG_SIGNED_AND_ENVELOPED_ENCODE_INFO.xml' path='doc/member[@name="CMSG_SIGNED_AND_ENVELOPED_ENCODE_INFO"]/*' />
 public partial struct CMSG_SIGNED_AND_ENVELOPED_ENCODE_INFO
 {
+    /// <include file='CMSG_SIGNED_AND_ENVELOPED_ENCODE_INFO.xml' path='doc/member[@name="CMSG_SIGNED_AND_ENVELOPED_ENCODE_INFO.cbSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbSize;
 
+    /// <include file='CMSG_SIGNED_AND_ENVELOPED_ENCODE_INFO.xml' path='doc/member[@name="CMSG_SIGNED_AND_ENVELOPED_ENCODE_INFO.SignedInfo"]/*' />
     public CMSG_SIGNED_ENCODE_INFO SignedInfo;
 
+    /// <include file='CMSG_SIGNED_AND_ENVELOPED_ENCODE_INFO.xml' path='doc/member[@name="CMSG_SIGNED_AND_ENVELOPED_ENCODE_INFO.EnvelopedInfo"]/*' />
     public CMSG_ENVELOPED_ENCODE_INFO EnvelopedInfo;
 }

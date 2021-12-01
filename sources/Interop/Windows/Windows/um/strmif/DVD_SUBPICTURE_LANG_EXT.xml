@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DVD_SUBPICTURE_LANG_EXT">
+    <summary>
+      <para>Defines the possible language extensions in a specified subpicture stream.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-enumerated-types">DirectShow Enumerated Types</seealso>
+    <seealso cref="IDvdControl2.SelectDefaultSubpictureLanguage" />
+    <seealso cref="IDvdInfo2.GetDefaultSubpictureLanguage" />
+  </member>
+  <member name="DVD_SUBPICTURE_LANG_EXT.DVD_SP_EXT_NotSpecified">
+    <summary>
+      <para>Indicates that no language extensions are present.</para>
+    </summary>
+  </member>
+  <member name="DVD_SUBPICTURE_LANG_EXT.DVD_SP_EXT_Caption_Normal">
+    <summary>
+      <para>Indicates that the specified stream contains normal captions.</para>
+    </summary>
+  </member>
+  <member name="DVD_SUBPICTURE_LANG_EXT.DVD_SP_EXT_Caption_Big">
+    <summary>
+      <para>Indicates that the specified stream contains big captions.</para>
+    </summary>
+  </member>
+  <member name="DVD_SUBPICTURE_LANG_EXT.DVD_SP_EXT_Caption_Children">
+    <summary>
+      <para>Indicates that the specified stream contains captions for children.</para>
+    </summary>
+  </member>
+  <member name="DVD_SUBPICTURE_LANG_EXT.DVD_SP_EXT_CC_Normal">
+    <summary>
+      <para>Indicates that the specified stream contains normal closed captions.</para>
+    </summary>
+  </member>
+  <member name="DVD_SUBPICTURE_LANG_EXT.DVD_SP_EXT_CC_Big">
+    <summary>
+      <para>Indicates that the specified stream contains big closed captions.</para>
+    </summary>
+  </member>
+  <member name="DVD_SUBPICTURE_LANG_EXT.DVD_SP_EXT_CC_Children">
+    <summary>
+      <para>Indicates that the specified stream contains closed captions for children.</para>
+    </summary>
+  </member>
+  <member name="DVD_SUBPICTURE_LANG_EXT.DVD_SP_EXT_Forced">
+    <summary>
+      <para>Indicates that the subpicture stream is forcedly activated, meaning that the application will not be able to turn it off.</para>
+    </summary>
+  </member>
+  <member name="DVD_SUBPICTURE_LANG_EXT.DVD_SP_EXT_DirectorComments_Normal">
+    <summary>
+      <para>Indicates that the specified stream contains normal-sized director's comments.</para>
+    </summary>
+  </member>
+  <member name="DVD_SUBPICTURE_LANG_EXT.DVD_SP_EXT_DirectorComments_Big">
+    <summary>
+      <para>Indicates that the specified stream contains large-sized director's comments.</para>
+    </summary>
+  </member>
+  <member name="DVD_SUBPICTURE_LANG_EXT.DVD_SP_EXT_DirectorComments_Children">
+    <summary>
+      <para>Indicates that the specified stream contains director's comments for children.</para>
+    </summary>
+  </member>
+</doc>

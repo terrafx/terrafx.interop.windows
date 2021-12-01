@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='styleBorderWidth.xml' path='doc/member[@name="styleBorderWidth"]/*' />
 public enum styleBorderWidth
 {
+    /// <include file='styleBorderWidth.xml' path='doc/member[@name="styleBorderWidth.styleBorderWidthThin"]/*' />
     styleBorderWidthThin = 0,
+
+    /// <include file='styleBorderWidth.xml' path='doc/member[@name="styleBorderWidth.styleBorderWidthMedium"]/*' />
     styleBorderWidthMedium = 1,
+
+    /// <include file='styleBorderWidth.xml' path='doc/member[@name="styleBorderWidth.styleBorderWidthThick"]/*' />
     styleBorderWidthThick = 2,
+
+    /// <include file='styleBorderWidth.xml' path='doc/member[@name="styleBorderWidth.styleBorderWidth_Max"]/*' />
     styleBorderWidth_Max = 2147483647,
 }

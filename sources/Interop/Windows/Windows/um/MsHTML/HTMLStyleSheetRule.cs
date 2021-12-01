@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HTMLStyleSheetRule.xml' path='doc/member[@name="HTMLStyleSheetRule"]/*' />
 [Guid("3050F3CE-98B5-11CF-BB82-00AA00BDCE0B")]
 public partial struct HTMLStyleSheetRule
 {

@@ -5,12 +5,16 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='COMPOSITIONFORM.xml' path='doc/member[@name="COMPOSITIONFORM"]/*' />
 public partial struct COMPOSITIONFORM
 {
+    /// <include file='COMPOSITIONFORM.xml' path='doc/member[@name="COMPOSITIONFORM.dwStyle"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwStyle;
 
+    /// <include file='COMPOSITIONFORM.xml' path='doc/member[@name="COMPOSITIONFORM.ptCurrentPos"]/*' />
     public POINT ptCurrentPos;
 
+    /// <include file='COMPOSITIONFORM.xml' path='doc/member[@name="COMPOSITIONFORM.rcArea"]/*' />
     public RECT rcArea;
 }

@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='EMRPIXELFORMAT.xml' path='doc/member[@name="EMRPIXELFORMAT"]/*' />
 public partial struct EMRPIXELFORMAT
 {
+    /// <include file='EMRPIXELFORMAT.xml' path='doc/member[@name="EMRPIXELFORMAT.emr"]/*' />
     public EMR emr;
 
+    /// <include file='EMRPIXELFORMAT.xml' path='doc/member[@name="EMRPIXELFORMAT.pfd"]/*' />
     public PIXELFORMATDESCRIPTOR pfd;
 }

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="AM_DVDCOPY_TITLEKEY">
+    <summary>
+      <para>Specifies the DVD title key from the current content.</para>
+    </summary>
+    <remarks>
+      <para>The AM_PROPERTY_DVDCOPY_TITLE_KEY property uses this structure.</para>
+      <para>A title key is used for the DVD CSS key exchange for decryption. Implementors should get a CSS license and further instructions from CSS.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-copy-protection-property-set">DVD Copy Protection Property Set</seealso>
+  </member>
+  <member name="AM_DVDCOPY_TITLEKEY.KeyFlags">
+    <summary>
+      <para>Key flags.</para>
+    </summary>
+  </member>
+  <member name="AM_DVDCOPY_TITLEKEY.TitleKey">
+    <summary>
+      <para>Title key.</para>
+    </summary>
+  </member>
+  <member name="AM_DVDCOPY_TITLEKEY.Reserved">
+    <summary>
+      <para>Reserved.</para>
+    </summary>
+  </member>
+</doc>

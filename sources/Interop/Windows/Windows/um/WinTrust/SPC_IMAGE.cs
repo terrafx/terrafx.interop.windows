@@ -5,16 +5,22 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SPC_IMAGE.xml' path='doc/member[@name="SPC_IMAGE"]/*' />
 public unsafe partial struct SPC_IMAGE
 {
+    /// <include file='SPC_IMAGE.xml' path='doc/member[@name="SPC_IMAGE.pImageLink"]/*' />
     [NativeTypeName("struct SPC_LINK_ *")]
     public SPC_LINK* pImageLink;
 
+    /// <include file='SPC_IMAGE.xml' path='doc/member[@name="SPC_IMAGE.Bitmap"]/*' />
     public CRYPT_DATA_BLOB Bitmap;
 
+    /// <include file='SPC_IMAGE.xml' path='doc/member[@name="SPC_IMAGE.Metafile"]/*' />
     public CRYPT_DATA_BLOB Metafile;
 
+    /// <include file='SPC_IMAGE.xml' path='doc/member[@name="SPC_IMAGE.EnhancedMetafile"]/*' />
     public CRYPT_DATA_BLOB EnhancedMetafile;
 
+    /// <include file='SPC_IMAGE.xml' path='doc/member[@name="SPC_IMAGE.GifFile"]/*' />
     public CRYPT_DATA_BLOB GifFile;
 }

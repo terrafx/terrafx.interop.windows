@@ -5,12 +5,24 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='textDecoration.xml' path='doc/member[@name="textDecoration"]/*' />
 public enum textDecoration
 {
+    /// <include file='textDecoration.xml' path='doc/member[@name="textDecoration.textDecorationNone"]/*' />
     textDecorationNone = 0,
+
+    /// <include file='textDecoration.xml' path='doc/member[@name="textDecoration.textDecorationUnderline"]/*' />
     textDecorationUnderline = 1,
+
+    /// <include file='textDecoration.xml' path='doc/member[@name="textDecoration.textDecorationOverline"]/*' />
     textDecorationOverline = 2,
+
+    /// <include file='textDecoration.xml' path='doc/member[@name="textDecoration.textDecorationLineThrough"]/*' />
     textDecorationLineThrough = 3,
+
+    /// <include file='textDecoration.xml' path='doc/member[@name="textDecoration.textDecorationBlink"]/*' />
     textDecorationBlink = 4,
+
+    /// <include file='textDecoration.xml' path='doc/member[@name="textDecoration.textDecoration_Max"]/*' />
     textDecoration_Max = 2147483647,
 }

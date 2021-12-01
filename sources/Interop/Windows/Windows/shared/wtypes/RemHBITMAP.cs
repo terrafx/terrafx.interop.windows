@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='RemHBITMAP.xml' path='doc/member[@name="RemHBITMAP"]/*' />
 public unsafe partial struct RemHBITMAP
 {
+    /// <include file='RemHBITMAP.xml' path='doc/member[@name="RemHBITMAP.cbData"]/*' />
     [NativeTypeName("ULONG")]
     public uint cbData;
 
+    /// <include file='RemHBITMAP.xml' path='doc/member[@name="RemHBITMAP.data"]/*' />
     [NativeTypeName("byte [1]")]
     public fixed byte data[1];
 }

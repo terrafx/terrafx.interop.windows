@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="HEAPLIST32">
+    <summary>
+      <para>Describes an entry from a list that enumerates the heaps used by a specified process.</para>
+    </summary>
+    <seealso cref="Heap32ListFirst" />
+    <seealso cref="Heap32ListNext" />
+  </member>
+  <member name="HEAPLIST32.dwSize">
+    <summary>
+      <para>The size of the structure, in bytes. Before calling the
+<see cref="Heap32ListFirst" /> function, set this member to <code>sizeof(HEAPLIST32)</code>. If you do not initialize <b>dwSize</b>,
+<b>Heap32ListFirst</b> will fail.</para>
+    </summary>
+  </member>
+  <member name="HEAPLIST32.th32ProcessID">
+    <summary>
+      <para>The identifier of the process to be examined.</para>
+    </summary>
+  </member>
+  <member name="HEAPLIST32.th32HeapID">
+    <summary>
+      <para>The heap identifier. This is not a handle, and has meaning only to the tool help functions.</para>
+    </summary>
+  </member>
+  <member name="HEAPLIST32.dwFlags">
+    <summary>
+      <para>This member can be one of the  following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>HF32_DEFAULT</b>
+          </description>
+          <description>
+            <para>Process's default heap</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+</doc>

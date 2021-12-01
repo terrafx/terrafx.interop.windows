@@ -5,8 +5,10 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SD_QUERY_STATS_INPUT.xml' path='doc/member[@name="SD_QUERY_STATS_INPUT"]/*' />
 public partial struct SD_QUERY_STATS_INPUT
 {
+    /// <include file='SD_QUERY_STATS_INPUT.xml' path='doc/member[@name="SD_QUERY_STATS_INPUT.Reserved"]/*' />
     [NativeTypeName("DWORD")]
     public uint Reserved;
 }

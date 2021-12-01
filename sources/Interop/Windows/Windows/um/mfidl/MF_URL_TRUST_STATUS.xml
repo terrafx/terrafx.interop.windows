@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MF_URL_TRUST_STATUS">
+    <summary>
+      <para>Indicates whether the URL is from a trusted source.</para>
+    </summary>
+    <seealso cref="IMFContentEnabler.GetEnableURL" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+  </member>
+  <member name="MF_URL_TRUST_STATUS.MF_LICENSE_URL_UNTRUSTED">
+    <summary>
+      <para>The validity of the URL cannot be guaranteed because it is not signed. The application should warn the user.</para>
+    </summary>
+  </member>
+  <member name="MF_URL_TRUST_STATUS.MF_LICENSE_URL_TRUSTED">
+    <summary>
+      <para>The URL is the original one provided with the content.</para>
+    </summary>
+  </member>
+  <member name="MF_URL_TRUST_STATUS.MF_LICENSE_URL_TAMPERED">
+    <summary>
+      <para>The URL was originally signed and has been tampered with. The file should be considered corrupted, and the application should not navigate to the URL without issuing a strong warning the user.</para>
+    </summary>
+  </member>
+</doc>

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CLAIM_SECURITY_ATTRIBUTES_INFORMATION">
+    <summary>
+      <para>The <b>CLAIM_SECURITY_ATTRIBUTES_INFORMATION</b> structure defines the security attributes for the claim.</para>
+    </summary>
+  </member>
+  <member name="CLAIM_SECURITY_ATTRIBUTES_INFORMATION.Version">
+    <summary>
+      <para>The version of the security attribute. This must be CLAIM_SECURITY_ATTRIBUTES_INFORMATION_VERSION_V1.</para>
+    </summary>
+  </member>
+  <member name="CLAIM_SECURITY_ATTRIBUTES_INFORMATION.Reserved">
+    <summary>
+      <para>This member is currently reserved and must be zero when setting an attribute and is ignored when getting an attribute.</para>
+    </summary>
+  </member>
+  <member name="CLAIM_SECURITY_ATTRIBUTES_INFORMATION.AttributeCount">
+    <summary>
+      <para>The number of values.</para>
+    </summary>
+  </member>
+  <member name="CLAIM_SECURITY_ATTRIBUTES_INFORMATION.Attribute">
+    <summary>
+      <para>The actual attribute.</para>
+    </summary>
+  </member>
+  <member name="CLAIM_SECURITY_ATTRIBUTES_INFORMATION.Attribute.pAttributeV1">
+    <summary>
+      <para>Pointer to an array that contains the <b>AttributeCount</b> member of the <see cref="CLAIM_SECURITY_ATTRIBUTE_V1" /> structure.</para>
+    </summary>
+  </member>
+</doc>

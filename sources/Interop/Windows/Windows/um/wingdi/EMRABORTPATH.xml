@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="EMRABORTPATH">
+    <summary>
+      <para>Contains data for the <see cref="AbortPath" />, <see cref="BeginPath" />, <see cref="EndPath" />, <see cref="CloseFigure" />, <see cref="FlattenPath" />, <see cref="WidenPath" />, <see cref="SetMetaRgn" />, <see cref="SaveDC" />, and <see cref="RealizePalette" /> enhanced metafile records.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafile-structures">Metafile Structures</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafiles">Metafiles Overview</seealso>
+  </member>
+  <member name="EMRABORTPATH.emr">
+    <summary>
+      <para>The base structure for all record types.</para>
+    </summary>
+  </member>
+</doc>

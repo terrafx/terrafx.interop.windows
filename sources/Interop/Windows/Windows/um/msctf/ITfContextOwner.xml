@@ -1,0 +1,321 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ITfContextOwner.GetACPFromPoint">
+    <summary>
+      <para>The <b>ITfContextOwner.GetACPFromPoint</b> method converts a point in screen coordinates to an application character position.</para>
+    </summary>
+    <param name="ptScreen">
+      <para>Pointer to the <b>POINT</b> structure with the screen coordinates of the point.</para>
+    </param>
+    <param name="dwFlags">
+      <para>Specifies the character position to return based upon the screen coordinates of the point relative to a character bounding box. By default, the character position returned is the character bounding box containing the screen coordinates of the point. If the point is outside a character's bounding box, the method returns <b>NULL</b> or TF_E_INVALIDPOINT.</para>
+      <para>If the GXFPF_ROUND_NEAREST flag is specified for this parameter and the screen coordinates of the point are contained in a character bounding box, the character position returned is the bounding edge closest to the screen coordinates of the point.</para>
+      <para>If the GXFPF_NEAREST flag is specified for this parameter and the screen coordinates of the point are not contained in a character bounding box, the closest character position is returned.</para>
+      <para>The bit flags can be combined.</para>
+    </param>
+    <param name="pacp">
+      <para>Receives the character position that corresponds to the screen coordinates of the point</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>TS_E_INVALIDPOINT</b>
+            </para>
+          </description>
+          <description>
+            <para>The <i>ptScreen</i> parameter is not within the bounding box of any character.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>TS_E_NOLAYOUT</b>
+            </para>
+          </description>
+          <description>
+            <para>The application has not calculated a text layout.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>
+        <img alt="Point 1 is in character bounding box and point 2 is outside the character bounding box." src="https://docs.microsoft.com/windows/win32/api/msctf/images/ACPFig01.gif" />
+      </para>
+      <para>Use the illustration to determine the character position returned based on the flags used in the <i>dwFlags</i> parameter.</para>
+      <para>
+        <b>Point 1
+</b>
+      </para>
+      <list type="bullet">
+        <item>
+          <description>Default-- <i>pacp = 0</i> --The screen coordinates of the point is inside the character bounding box of Character Position 0.</description>
+        </item>
+        <item>
+          <description>GXPF_ROUND_NEAREST-- <i>pacp = 1</i> --The screen coordinates of the point is closest to Range Position 1 which is the starting range position of Character Position 1.</description>
+        </item>
+        <item>
+          <description>GXPF_NEAREST-- <i>pacp = 0</i> --The default behavior occurs because the point lies within the character bounding box of Character Position 0.</description>
+        </item>
+      </list>
+      <b>Point 2</b>
+      <list type="bullet">
+        <item>
+          <description>Default-- <i>hr = TF_E_INVALIDPOINT</i> --The screen coordinates of the point is outside a character bounding box.</description>
+        </item>
+        <item>
+          <description>GXPF_ROUND_NEAREST-- <i>hr = TF_E_INVALIDPOINT</i> --The default behavior occurs because the screen coordinates of the point is outside a character bounding box.</description>
+        </item>
+        <item>
+          <description>GXPF_NEAREST-- <i>pacp = 1</i> --The closest character position to the screen coordinates of the point is Character Position 1.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="ITextStoreACP.GetACPFromPoint " />
+    <seealso cref="ITfContextOwner" />
+    <seealso cref="ITfContextView.GetRangeFromPoint " />
+    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/tsviewcookie">TsViewCookie
+</seealso>
+  </member>
+  <member name="ITfContextOwner.GetAttribute">
+    <summary>
+      <para>The <b>ITfContextOwner.GetAttribute</b> method returns the value of a supported attribute. If the attribute is unsupported, the <i>pvarValue</i> parameter is set to VT_EMPTY.</para>
+    </summary>
+    <param name="rguidAttribute">
+      <para>Specifies the attribute GUID.</para>
+    </param>
+    <param name="pvarValue">
+      <para>Receives the attribute value. If the attribute is unsupported, this parameter is set to VT_EMPTY.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Context owners using the default text store of the TSF manager can implement a simplified version of attributes with this method. The supported attributes are application or text service dependent. For more information about predefined attributes recognized in TSF, see the following topics.</para>
+    </remarks>
+    <seealso cref="ITfContextOwner" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/other-predefined-attributes">Other Predefined Attributes</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/predefined-font-attributes">Predefined Font Attributes</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/predefined-list-attributes">Predefined List Attributes</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/predefined-text-attributes">Predefined Text Attributes</seealso>
+  </member>
+  <member name="ITfContextOwner.GetScreenExt">
+    <summary>
+      <para>The <b>ITfContextOwner.GetScreenExt</b> method returns the bounding box, in screen coordinates, of the display surface where the text stream is rendered.</para>
+    </summary>
+    <param name="prc">
+      <para>Receives the bounding box screen coordinates of the display surface of the document.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>If the text is not currently displayed, for example if the document window is minimized, <i>prc</i> is set to { 0, 0, 0, 0 }.</para>
+    </remarks>
+    <seealso cref="ITextStoreACP.GetScreenExt " />
+    <seealso cref="ITfContextOwner" />
+    <seealso cref="ITfContextView.GetScreenExt " />
+    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/tsviewcookie">TsViewCookie
+</seealso>
+  </member>
+  <member name="ITfContextOwner.GetStatus">
+    <summary>
+      <para>The <b>ITfContextOwner.GetStatus</b> method obtains the status of a document. The document status is returned through the <see cref="TS_STATUS" /> structure.</para>
+    </summary>
+    <param name="pdcs">
+      <para>Receives the <see cref="TS_STATUS" /> structure that contains the document status. Cannot be <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="ITextStoreACP.GetStatus " />
+    <seealso cref="ITfContextOwner" />
+    <seealso cref="TS_STATUS " />
+  </member>
+  <member name="ITfContextOwner.GetTextExt">
+    <summary>
+      <para>The <b>ITfContextOwner.GetTextExt</b> method returns the bounding box, in screen coordinates, of the text at a specified character position. The caller must have a read-only lock on the document before calling this method.</para>
+    </summary>
+    <param name="acpStart">
+      <para>Specifies the starting character position of the text to get in the document.</para>
+    </param>
+    <param name="acpEnd">
+      <para>Specifies the ending character position of the text to get in the document.</para>
+    </param>
+    <param name="prc">
+      <para>Receives the bounding box, in screen coordinates, of the text at the specified character positions.</para>
+    </param>
+    <param name="pfClipped">
+      <para>Receives the Boolean value that specifies if the text in the bounding box has been clipped. If this parameter is <b>TRUE</b>, the bounding box contains clipped text and does not include the entire requested range of text. The bounding box is clipped because of the requested range is not visible.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>TS_E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>The specified start and end character positions are equal.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>TS_E_INVALIDPOS</b>
+            </para>
+          </description>
+          <description>
+            <para>The range specified by the <i>acpStart</i> and <i>acpEnd</i> parameters extends past the end of the document or the top of the document.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>TS_E_NOLAYOUT</b>
+            </para>
+          </description>
+          <description>
+            <para>The application has not calculated a text layout.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>TS_E_NOLOCK</b>
+            </para>
+          </description>
+          <description>
+            <para>The caller does not have a read-only lock on the document.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>If the document window is minimized, or if the specified text is not currently visible, the method returns S_OK with the <i>prc</i> parameter set to {0,0,0,0}.</para>
+    </remarks>
+    <seealso cref="ITextStoreACP.GetTextExt " />
+    <seealso cref="ITfContextOwner" />
+    <seealso cref="ITfContextView.GetTextExt " />
+  </member>
+  <member name="ITfContextOwner.GetWnd">
+    <summary>
+      <para>The <b>ITfContextOwner.GetWnd</b> method returns the handle to a window that corresponds to the current document.</para>
+    </summary>
+    <param name="phwnd">
+      <para>Receives a pointer to the handle of the window that corresponds to the current document. This parameter can be <b>NULL</b> if the document does not have the corresponding handle to the window.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>A document might not have a corresponding window handle if the document is in memory but not displayed on the screen or if the document is a windowless control and the control does not know the window handle of the owner of the windowless controls. Callers cannot assume that the <i>phwnd</i> parameter will receive a non-<b>NULL</b> value even if the method is successful. Callers can also receive a <b>NULL</b> value for the <i>phwnd</i> parameter.</para>
+    </remarks>
+  </member>
+  <member name="ITfContextOwner">
+    <summary>
+      <para>The <b>ITfContextOwner</b> interface is implemented by an application or a text service to receive text input without having a text store. An instance of this interface is obtained when the application calls the <see cref="ITfSource.AdviseSink" /> method.</para>
+    </summary>
+    <seealso cref="ITfSource.AdviseSink " />
+    <seealso cref="IUnknown" />
+  </member>
+</doc>

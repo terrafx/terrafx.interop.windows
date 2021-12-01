@@ -10,15 +10,19 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MFPinholeCameraIntrinsics.xml' path='doc/member[@name="MFPinholeCameraIntrinsics"]/*' />
 [SupportedOSPlatform("windows10.0")]
 public partial struct MFPinholeCameraIntrinsics
 {
+    /// <include file='MFPinholeCameraIntrinsics.xml' path='doc/member[@name="MFPinholeCameraIntrinsics.IntrinsicModelCount"]/*' />
     [NativeTypeName("UINT32")]
     public uint IntrinsicModelCount;
 
+    /// <include file='MFPinholeCameraIntrinsics.xml' path='doc/member[@name="MFPinholeCameraIntrinsics.IntrinsicModels"]/*' />
     [NativeTypeName("MFPinholeCameraIntrinsic_IntrinsicModel [1]")]
     public _IntrinsicModels_e__FixedBuffer IntrinsicModels;
 
+    /// <include file='_IntrinsicModels_e__FixedBuffer.xml' path='doc/member[@name="_IntrinsicModels_e__FixedBuffer"]/*' />
     public partial struct _IntrinsicModels_e__FixedBuffer
     {
         public MFPinholeCameraIntrinsic_IntrinsicModel e0;

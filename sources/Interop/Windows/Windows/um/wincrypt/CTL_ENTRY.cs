@@ -5,13 +5,17 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CTL_ENTRY.xml' path='doc/member[@name="CTL_ENTRY"]/*' />
 public unsafe partial struct CTL_ENTRY
 {
+    /// <include file='CTL_ENTRY.xml' path='doc/member[@name="CTL_ENTRY.SubjectIdentifier"]/*' />
     public CRYPT_DATA_BLOB SubjectIdentifier;
 
+    /// <include file='CTL_ENTRY.xml' path='doc/member[@name="CTL_ENTRY.cAttribute"]/*' />
     [NativeTypeName("DWORD")]
     public uint cAttribute;
 
+    /// <include file='CTL_ENTRY.xml' path='doc/member[@name="CTL_ENTRY.rgAttribute"]/*' />
     [NativeTypeName("PCRYPT_ATTRIBUTE")]
     public CRYPT_ATTRIBUTE* rgAttribute;
 }

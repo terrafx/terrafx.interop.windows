@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PLACEHOLDER_STATES">
+    <summary>
+      <para>Specifies the states that a placeholder file can have. Retrieve this value through the System.FilePlaceholderStatus (PKEY_FilePlaceholderStatus) property.</para>
+    </summary>
+  </member>
+  <member name="PLACEHOLDER_STATES.PS_NONE">
+    <summary>
+      <para>None of the other states apply at this time.</para>
+    </summary>
+  </member>
+  <member name="PLACEHOLDER_STATES.PS_MARKED_FOR_OFFLINE_AVAILABILITY">
+    <summary>
+      <para>May already be or eventually will be available offline.</para>
+    </summary>
+  </member>
+  <member name="PLACEHOLDER_STATES.PS_FULL_PRIMARY_STREAM_AVAILABLE">
+    <summary>
+      <para>The primary stream has been made fully available.</para>
+    </summary>
+  </member>
+  <member name="PLACEHOLDER_STATES.PS_CREATE_FILE_ACCESSIBLE">
+    <summary>
+      <para>The file is accessible through a call to the <see cref="CreateFile" /> function, without requesting the opening of reparse points.</para>
+    </summary>
+  </member>
+  <member name="PLACEHOLDER_STATES.PS_CLOUDFILE_PLACEHOLDER">
+    <summary></summary>
+  </member>
+  <member name="PLACEHOLDER_STATES.PS_DEFAULT">
+    <summary></summary>
+  </member>
+  <member name="PLACEHOLDER_STATES.PS_ALL">
+    <summary>
+      <para>A bitmask value for all valid PLACEHOLDER_STATES flags.</para>
+    </summary>
+  </member>
+</doc>

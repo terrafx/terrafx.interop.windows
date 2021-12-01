@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IStorageProviderCopyHook.xml' path='doc/member[@name="IStorageProviderCopyHook"]/*' />
 [Guid("7BF992A9-AF7A-4DBA-B2E5-4D080B1ECBC6")]
 [NativeTypeName("struct IStorageProviderCopyHook : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IStorageProviderCopyHook : IStorageProviderCopyHook
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IStorageProviderCopyHook : IStorageProviderCopyHook
         return ((delegate* unmanaged<IStorageProviderCopyHook*, Guid*, void**, int>)(lpVtbl[0]))((IStorageProviderCopyHook*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IStorageProviderCopyHook : IStorageProviderCopyHook
         return ((delegate* unmanaged<IStorageProviderCopyHook*, uint>)(lpVtbl[1]))((IStorageProviderCopyHook*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IStorageProviderCopyHook : IStorageProviderCopyHook
         return ((delegate* unmanaged<IStorageProviderCopyHook*, uint>)(lpVtbl[2]))((IStorageProviderCopyHook*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IStorageProviderCopyHook.xml' path='doc/member[@name="IStorageProviderCopyHook.CopyCallback"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT CopyCallback(HWND hwnd, uint operation, uint flags, [NativeTypeName("LPCWSTR")] ushort* srcFile, [NativeTypeName("DWORD")] uint srcAttribs, [NativeTypeName("LPCWSTR")] ushort* destFile, [NativeTypeName("DWORD")] uint destAttribs, uint* result)

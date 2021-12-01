@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ARP_SEND_REPLY.xml' path='doc/member[@name="ARP_SEND_REPLY"]/*' />
 public partial struct ARP_SEND_REPLY
 {
+    /// <include file='ARP_SEND_REPLY.xml' path='doc/member[@name="ARP_SEND_REPLY.DestAddress"]/*' />
     [NativeTypeName("IPAddr")]
     public uint DestAddress;
 
+    /// <include file='ARP_SEND_REPLY.xml' path='doc/member[@name="ARP_SEND_REPLY.SrcAddress"]/*' />
     [NativeTypeName("IPAddr")]
     public uint SrcAddress;
 }

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ISpatialAudioObjectRenderStream.xml' path='doc/member[@name="ISpatialAudioObjectRenderStream"]/*' />
 [Guid("BAB5F473-B423-477B-85F5-B5A332A04153")]
 [NativeTypeName("struct ISpatialAudioObjectRenderStream : ISpatialAudioObjectRenderStreamBase")]
 [NativeInheritance("ISpatialAudioObjectRenderStreamBase")]
@@ -16,6 +17,7 @@ public unsafe partial struct ISpatialAudioObjectRenderStream : ISpatialAudioObje
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ISpatialAudioObjectRenderStream : ISpatialAudioObje
         return ((delegate* unmanaged<ISpatialAudioObjectRenderStream*, Guid*, void**, int>)(lpVtbl[0]))((ISpatialAudioObjectRenderStream*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ISpatialAudioObjectRenderStream : ISpatialAudioObje
         return ((delegate* unmanaged<ISpatialAudioObjectRenderStream*, uint>)(lpVtbl[1]))((ISpatialAudioObjectRenderStream*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ISpatialAudioObjectRenderStream : ISpatialAudioObje
         return ((delegate* unmanaged<ISpatialAudioObjectRenderStream*, uint>)(lpVtbl[2]))((ISpatialAudioObjectRenderStream*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ISpatialAudioObjectRenderStreamBase.GetAvailableDynamicObjectCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetAvailableDynamicObjectCount([NativeTypeName("UINT32 *")] uint* value)
@@ -46,6 +51,7 @@ public unsafe partial struct ISpatialAudioObjectRenderStream : ISpatialAudioObje
         return ((delegate* unmanaged<ISpatialAudioObjectRenderStream*, uint*, int>)(lpVtbl[3]))((ISpatialAudioObjectRenderStream*)Unsafe.AsPointer(ref this), value);
     }
 
+    /// <inheritdoc cref="ISpatialAudioObjectRenderStreamBase.GetService" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetService([NativeTypeName("const IID &")] Guid* riid, void** service)
@@ -53,6 +59,7 @@ public unsafe partial struct ISpatialAudioObjectRenderStream : ISpatialAudioObje
         return ((delegate* unmanaged<ISpatialAudioObjectRenderStream*, Guid*, void**, int>)(lpVtbl[4]))((ISpatialAudioObjectRenderStream*)Unsafe.AsPointer(ref this), riid, service);
     }
 
+    /// <inheritdoc cref="ISpatialAudioObjectRenderStreamBase.Start" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT Start()
@@ -60,6 +67,7 @@ public unsafe partial struct ISpatialAudioObjectRenderStream : ISpatialAudioObje
         return ((delegate* unmanaged<ISpatialAudioObjectRenderStream*, int>)(lpVtbl[5]))((ISpatialAudioObjectRenderStream*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ISpatialAudioObjectRenderStreamBase.Stop" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Stop()
@@ -67,6 +75,7 @@ public unsafe partial struct ISpatialAudioObjectRenderStream : ISpatialAudioObje
         return ((delegate* unmanaged<ISpatialAudioObjectRenderStream*, int>)(lpVtbl[6]))((ISpatialAudioObjectRenderStream*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ISpatialAudioObjectRenderStreamBase.Reset" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT Reset()
@@ -74,6 +83,7 @@ public unsafe partial struct ISpatialAudioObjectRenderStream : ISpatialAudioObje
         return ((delegate* unmanaged<ISpatialAudioObjectRenderStream*, int>)(lpVtbl[7]))((ISpatialAudioObjectRenderStream*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ISpatialAudioObjectRenderStreamBase.BeginUpdatingAudioObjects" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT BeginUpdatingAudioObjects([NativeTypeName("UINT32 *")] uint* availableDynamicObjectCount, [NativeTypeName("UINT32 *")] uint* frameCountPerBuffer)
@@ -81,6 +91,7 @@ public unsafe partial struct ISpatialAudioObjectRenderStream : ISpatialAudioObje
         return ((delegate* unmanaged<ISpatialAudioObjectRenderStream*, uint*, uint*, int>)(lpVtbl[8]))((ISpatialAudioObjectRenderStream*)Unsafe.AsPointer(ref this), availableDynamicObjectCount, frameCountPerBuffer);
     }
 
+    /// <inheritdoc cref="ISpatialAudioObjectRenderStreamBase.EndUpdatingAudioObjects" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT EndUpdatingAudioObjects()
@@ -88,6 +99,7 @@ public unsafe partial struct ISpatialAudioObjectRenderStream : ISpatialAudioObje
         return ((delegate* unmanaged<ISpatialAudioObjectRenderStream*, int>)(lpVtbl[9]))((ISpatialAudioObjectRenderStream*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ISpatialAudioObjectRenderStream.xml' path='doc/member[@name="ISpatialAudioObjectRenderStream.ActivateSpatialAudioObject"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT ActivateSpatialAudioObject(AudioObjectType type, ISpatialAudioObject** audioObject)

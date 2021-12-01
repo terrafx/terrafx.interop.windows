@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDataObjectProvider.GetDataObject">
+    <summary>
+      <para>Gets an <see cref="IDataObject" /> representation of the current <a href="https://docs.microsoft.com//uwp/api/Windows.ApplicationModel.DataTransfer.DataPackage">DataPackage</a> object.</para>
+    </summary>
+    <param name="dataObject">
+      <para>Type: <b><see cref="IDataObject" />**</b></para>
+      <para>The address of an <see cref="IDataObject" /> interface pointer that, when this method returns successfully, points to the <b>IDataObject</b> representation of the <a href="https://docs.microsoft.com//uwp/api/Windows.ApplicationModel.DataTransfer.DataPackage">DataPackage</a> object.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDataObjectProvider" />
+    <seealso cref="IDataObjectProvider.SetDataObject" />
+  </member>
+  <member name="IDataObjectProvider.SetDataObject">
+    <summary>
+      <para>Wraps an <see cref="IDataObject" /> instance as a Windows Runtime <a href="https://docs.microsoft.com//uwp/api/Windows.ApplicationModel.DataTransfer.DataPackage">DataPackage</a>.</para>
+    </summary>
+    <param name="dataObject">
+      <para>An <see cref="IDataObject" /> interface pointer to the data object from which to build the DataPackage object.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDataObjectProvider" />
+    <seealso cref="IDataObjectProvider.GetDataObject" />
+  </member>
+  <member name="IDataObjectProvider">
+    <summary>
+      <para>Provides methods that enable you to set or retrieve a <a href="https://docs.microsoft.com//uwp/api/Windows.ApplicationModel.DataTransfer.DataPackage">DataPackage</a> object's <see cref="IDataObject interface" />, which the DataPackage uses to support interoperability. The DataPackage object is used by an app to provide data to another app.</para>
+    </summary>
+    <remarks>
+      <h3>When to implement</h3>
+      <para>Do not implement this interface. An implementation is provided as part of the DataPackage object.</para>
+    </remarks>
+    <seealso cref="IUnknown" />
+  </member>
+</doc>

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="VOLUME_DISK_EXTENTS">
+    <summary>
+      <para>Represents a physical location on a disk. It is the output buffer for the
+<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_volume_get_volume_disk_extents">IOCTL_VOLUME_GET_VOLUME_DISK_EXTENTS</a></para>
+      <para>control code.</para>
+    </summary>
+    <seealso cref="DISK_EXTENT" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_volume_get_volume_disk_extents">IOCTL_VOLUME_GET_VOLUME_DISK_EXTENTS</seealso>
+  </member>
+  <member name="VOLUME_DISK_EXTENTS.NumberOfDiskExtents">
+    <summary>
+      <para>The number of disks in the volume (a volume can span multiple disks).</para>
+      <para>An extent is a contiguous run of sectors on one disk. When the number of extents returned is greater than
+one (1), the error code  <b>ERROR_MORE_DATA</b> is returned. You should call
+<see cref="DeviceIoControl" /> again, allocating enough buffer
+space based on the value of <b>NumberOfDiskExtents</b> after the first
+<b>DeviceIoControl</b> call.</para>
+    </summary>
+  </member>
+  <member name="VOLUME_DISK_EXTENTS.Extents">
+    <summary>
+      <para>An array of <see cref="DISK_EXTENT" /> structures.</para>
+    </summary>
+  </member>
+</doc>

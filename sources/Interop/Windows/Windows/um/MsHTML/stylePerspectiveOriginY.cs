@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='stylePerspectiveOriginY.xml' path='doc/member[@name="stylePerspectiveOriginY"]/*' />
 public enum stylePerspectiveOriginY
 {
+    /// <include file='stylePerspectiveOriginY.xml' path='doc/member[@name="stylePerspectiveOriginY.stylePerspectiveOriginYNotSet"]/*' />
     stylePerspectiveOriginYNotSet = 0,
+
+    /// <include file='stylePerspectiveOriginY.xml' path='doc/member[@name="stylePerspectiveOriginY.stylePerspectiveOriginYTop"]/*' />
     stylePerspectiveOriginYTop = 1,
+
+    /// <include file='stylePerspectiveOriginY.xml' path='doc/member[@name="stylePerspectiveOriginY.stylePerspectiveOriginYCenter"]/*' />
     stylePerspectiveOriginYCenter = 2,
+
+    /// <include file='stylePerspectiveOriginY.xml' path='doc/member[@name="stylePerspectiveOriginY.stylePerspectiveOriginYBottom"]/*' />
     stylePerspectiveOriginYBottom = 3,
+
+    /// <include file='stylePerspectiveOriginY.xml' path='doc/member[@name="stylePerspectiveOriginY.stylePerspectiveOriginY_Max"]/*' />
     stylePerspectiveOriginY_Max = 2147483647,
 }

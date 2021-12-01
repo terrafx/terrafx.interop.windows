@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ISVGPatternElement.xml' path='doc/member[@name="ISVGPatternElement"]/*' />
 [Guid("3051052C-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct ISVGPatternElement : IDispatch")]
 [NativeInheritance("IDispatch")]
@@ -16,6 +17,7 @@ public unsafe partial struct ISVGPatternElement : ISVGPatternElement.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ISVGPatternElement : ISVGPatternElement.Interface
         return ((delegate* unmanaged<ISVGPatternElement*, Guid*, void**, int>)(lpVtbl[0]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ISVGPatternElement : ISVGPatternElement.Interface
         return ((delegate* unmanaged<ISVGPatternElement*, uint>)(lpVtbl[1]))((ISVGPatternElement*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ISVGPatternElement : ISVGPatternElement.Interface
         return ((delegate* unmanaged<ISVGPatternElement*, uint>)(lpVtbl[2]))((ISVGPatternElement*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct ISVGPatternElement : ISVGPatternElement.Interface
         return ((delegate* unmanaged<ISVGPatternElement*, uint*, int>)(lpVtbl[3]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct ISVGPatternElement : ISVGPatternElement.Interface
         return ((delegate* unmanaged<ISVGPatternElement*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
@@ -60,6 +67,7 @@ public unsafe partial struct ISVGPatternElement : ISVGPatternElement.Interface
         return ((delegate* unmanaged<ISVGPatternElement*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
+    /// <inheritdoc cref="IDispatch.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
@@ -67,6 +75,7 @@ public unsafe partial struct ISVGPatternElement : ISVGPatternElement.Interface
         return ((delegate* unmanaged<ISVGPatternElement*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
+    /// <include file='ISVGPatternElement.xml' path='doc/member[@name="ISVGPatternElement.putref_patternUnits"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT putref_patternUnits(ISVGAnimatedEnumeration* v)
@@ -74,6 +83,7 @@ public unsafe partial struct ISVGPatternElement : ISVGPatternElement.Interface
         return ((delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedEnumeration*, int>)(lpVtbl[7]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='ISVGPatternElement.xml' path='doc/member[@name="ISVGPatternElement.get_patternUnits"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT get_patternUnits(ISVGAnimatedEnumeration** p)
@@ -81,6 +91,7 @@ public unsafe partial struct ISVGPatternElement : ISVGPatternElement.Interface
         return ((delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedEnumeration**, int>)(lpVtbl[8]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='ISVGPatternElement.xml' path='doc/member[@name="ISVGPatternElement.putref_patternContentUnits"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT putref_patternContentUnits(ISVGAnimatedEnumeration* v)
@@ -88,6 +99,7 @@ public unsafe partial struct ISVGPatternElement : ISVGPatternElement.Interface
         return ((delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedEnumeration*, int>)(lpVtbl[9]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='ISVGPatternElement.xml' path='doc/member[@name="ISVGPatternElement.get_patternContentUnits"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT get_patternContentUnits(ISVGAnimatedEnumeration** p)
@@ -95,6 +107,7 @@ public unsafe partial struct ISVGPatternElement : ISVGPatternElement.Interface
         return ((delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedEnumeration**, int>)(lpVtbl[10]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='ISVGPatternElement.xml' path='doc/member[@name="ISVGPatternElement.putref_patternTransform"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT putref_patternTransform(ISVGAnimatedTransformList* v)
@@ -102,6 +115,7 @@ public unsafe partial struct ISVGPatternElement : ISVGPatternElement.Interface
         return ((delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedTransformList*, int>)(lpVtbl[11]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='ISVGPatternElement.xml' path='doc/member[@name="ISVGPatternElement.get_patternTransform"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT get_patternTransform(ISVGAnimatedTransformList** p)
@@ -109,6 +123,7 @@ public unsafe partial struct ISVGPatternElement : ISVGPatternElement.Interface
         return ((delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedTransformList**, int>)(lpVtbl[12]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='ISVGPatternElement.xml' path='doc/member[@name="ISVGPatternElement.putref_x"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT putref_x(ISVGAnimatedLength* v)
@@ -116,6 +131,7 @@ public unsafe partial struct ISVGPatternElement : ISVGPatternElement.Interface
         return ((delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedLength*, int>)(lpVtbl[13]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='ISVGPatternElement.xml' path='doc/member[@name="ISVGPatternElement.get_x"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT get_x(ISVGAnimatedLength** p)
@@ -123,6 +139,7 @@ public unsafe partial struct ISVGPatternElement : ISVGPatternElement.Interface
         return ((delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedLength**, int>)(lpVtbl[14]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='ISVGPatternElement.xml' path='doc/member[@name="ISVGPatternElement.putref_y"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT putref_y(ISVGAnimatedLength* v)
@@ -130,6 +147,7 @@ public unsafe partial struct ISVGPatternElement : ISVGPatternElement.Interface
         return ((delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedLength*, int>)(lpVtbl[15]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='ISVGPatternElement.xml' path='doc/member[@name="ISVGPatternElement.get_y"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT get_y(ISVGAnimatedLength** p)
@@ -137,6 +155,7 @@ public unsafe partial struct ISVGPatternElement : ISVGPatternElement.Interface
         return ((delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedLength**, int>)(lpVtbl[16]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='ISVGPatternElement.xml' path='doc/member[@name="ISVGPatternElement.putref_width"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT putref_width(ISVGAnimatedLength* v)
@@ -144,6 +163,7 @@ public unsafe partial struct ISVGPatternElement : ISVGPatternElement.Interface
         return ((delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedLength*, int>)(lpVtbl[17]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='ISVGPatternElement.xml' path='doc/member[@name="ISVGPatternElement.get_width"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT get_width(ISVGAnimatedLength** p)
@@ -151,6 +171,7 @@ public unsafe partial struct ISVGPatternElement : ISVGPatternElement.Interface
         return ((delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedLength**, int>)(lpVtbl[18]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='ISVGPatternElement.xml' path='doc/member[@name="ISVGPatternElement.putref_height"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT putref_height(ISVGAnimatedLength* v)
@@ -158,6 +179,7 @@ public unsafe partial struct ISVGPatternElement : ISVGPatternElement.Interface
         return ((delegate* unmanaged<ISVGPatternElement*, ISVGAnimatedLength*, int>)(lpVtbl[19]))((ISVGPatternElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='ISVGPatternElement.xml' path='doc/member[@name="ISVGPatternElement.get_height"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public HRESULT get_height(ISVGAnimatedLength** p)

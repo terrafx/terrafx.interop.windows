@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MENUGETOBJECTINFO">
+    <summary>
+      <para>Contains information about the menu that the mouse cursor is on.</para>
+    </summary>
+    <remarks>
+      <para>The <b>MENUGETOBJECTINFO</b> structure is used only in drag-and-drop menus. When the
+<a href="https://docs.microsoft.com//windows/desktop/menurc/wm-menugetobject">WM_MENUGETOBJECT</a>  message is sent,
+<i>lParam</i> is a pointer to this structure.</para>
+      <para>To create a drag-and-drop menu, call <see cref="SetMenuInfo" /> with <b>MNS_DRAGDROP</b> set.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/menurc/menus">Menus</seealso>
+    <seealso cref="SetMenuInfo" />
+  </member>
+  <member name="MENUGETOBJECTINFO.dwFlags">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The position of the mouse cursor with respect to the item indicated by
+<b>uPos</b>. It is a bitmask of the following values:</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>MNGOF_BOTTOMGAP</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000002</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The mouse is on the bottom of the item indicated by
+<b>uPos</b>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>MNGOF_TOPGAP</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000001</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The mouse is on the top of the item indicated by
+<b>uPos</b>.</para>
+          </description>
+        </item>
+      </list>
+      <para>If neither MNGOF_BOTTOMGAP nor MNGOF_TOPGAP is set, then the mouse is directly on the item indicated by <b>uPos</b>.</para>
+    </summary>
+  </member>
+  <member name="MENUGETOBJECTINFO.uPos">
+    <summary>
+      <para>Type: <b>UINT</b></para>
+      <para>The position of the item the mouse cursor is on.</para>
+    </summary>
+  </member>
+  <member name="MENUGETOBJECTINFO.hmenu">
+    <summary>
+      <para>Type: <b>HMENU</b></para>
+      <para>A handle to the menu the mouse cursor is on.</para>
+    </summary>
+  </member>
+  <member name="MENUGETOBJECTINFO.riid">
+    <summary>
+      <para>Type: <b>PVOID</b></para>
+      <para>The identifier of the requested interface. Currently it can only be <see cref="IDropTarget" />.</para>
+    </summary>
+  </member>
+  <member name="MENUGETOBJECTINFO.pvObj">
+    <summary>
+      <para>Type: <b>PVOID</b></para>
+      <para>A pointer to the interface corresponding to the
+<b>riid</b> member. This pointer is to be returned by the application when processing the message.</para>
+    </summary>
+  </member>
+</doc>

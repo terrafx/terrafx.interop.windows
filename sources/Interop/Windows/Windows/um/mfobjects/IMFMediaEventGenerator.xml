@@ -1,0 +1,359 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFMediaEventGenerator.BeginGetEvent">
+    <summary>
+      <para>Begins an asynchronous request for the next event in the queue.</para>
+    </summary>
+    <param name="pCallback">
+      <para>Pointer to the <see cref="IMFAsyncCallback" /> interface of a callback object. The client must implement this interface.</para>
+    </param>
+    <param name="punkState">
+      <para>Pointer to the <b>IUnknown</b> interface of a state object, defined by the caller. This parameter can be <b>NULL</b>. You can use this object to hold state information. The object is returned to the caller when the callback is invoked.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer argument.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_MULTIPLE_BEGIN</b>
+            </para>
+          </description>
+          <description>
+            <para>There is a pending request with the same callback pointer and a different state object.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_MULTIPLE_SUBSCRIBERS</b>
+            </para>
+          </description>
+          <description>
+            <para>There is a pending request with a different callback pointer.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_SHUTDOWN</b>
+            </para>
+          </description>
+          <description>
+            <para>The object was shut down.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_S_MULTIPLE_BEGIN</b>
+            </para>
+          </description>
+          <description>
+            <para>There is a pending request with the same callback pointer and state object.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>When a new event is available, the event generator calls the <see cref="IMFAsyncCallback.Invoke" /> method. The <b>Invoke</b> method should call <see cref="IMFMediaEventGenerator.EndGetEvent" /> to get a pointer to the <see cref="IMFMediaEvent" /> interface, and use that interface to examine the event.</para>
+      <para>Do not call <b>BeginGetEvent</b> a second time before calling <see cref="EndGetEvent" />. While the first call is still pending, additional calls to the same object will fail. Also, the <see cref="IMFMediaEventGenerator.GetEvent" /> method fails if an asynchronous request is still pending.</para>
+      <h4>Examples</h4>
+      <para>The following code shows a typical implementation of <see cref="IMFAsyncCallback.Invoke" /> for the <b>BeginGetEvent</b> method. The <b>Invoke</b> method calls <see cref="EndGetEvent" /> to get the event data. Then it calls <b>BeginGetEvent</b> again to request another event.</para>
+      <code>//////////////////////////////////////////////////////////////////////
+//  Name: CEventHandler.Invoke
+//  Callback for asynchronous BeginGetEvent method.
+//
+//  pAsyncResult: Pointer to the result.
+//
+//  This code example assumes that CEventHandler is a class that
+//  implements the IMFAsyncCallback interface.
+///////////////////////////////////////////////////////////////////////
+HRESULT CEventHandler.Invoke(IMFAsyncResult *pAsyncResult)
+{
+    HRESULT hr = S_OK;
+    IMFMediaEvent* pEvent = NULL;
+    MediaEventType meType = MEUnknown;
+    BOOL fGetAnotherEvent = TRUE;
+    HRESULT hrStatus = S_OK;
+
+    // Get the event from the event queue.
+    // Assume that m_pEventGenerator is a valid pointer to the
+    // event generator's IMFMediaEventGenerator interface.
+    hr = m_pEventGenerator-&gt;EndGetEvent(pAsyncResult, &amp;amp;amp;amp;amp;amp;pEvent);
+
+    // Get the event type.
+    if (SUCCEEDED(hr))
+    {
+        hr = pEvent-&gt;GetType(&amp;amp;amp;amp;amp;amp;meType);
+    }
+
+    // Get the event status. If the operation that triggered the event
+    // did not succeed, the status is a failure code.
+    if (SUCCEEDED(hr))
+    {
+        hr = pEvent-&gt;GetStatus(&amp;amp;amp;amp;amp;amp;hrStatus);
+    }
+
+    if (SUCCEEDED(hr))
+    {
+        // TODO: Handle the event.
+    }
+
+    // If not finished, request another event.
+    // Pass in a pointer to this instance of the application's
+    // CEventHandler class, which implements the callback.
+    if (fGetAnotherEvent)
+    {
+        hr = m_pEventGenerator-&gt;BeginGetEvent(this, NULL);
+    }
+
+    SAFE_RELEASE(pEvent);
+    return hr;
+}
+</code>
+    </remarks>
+    <seealso cref="IMFMediaEventGenerator" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-event-generators">Media Event Generators</seealso>
+  </member>
+  <member name="IMFMediaEventGenerator.EndGetEvent">
+    <summary>
+      <para>Completes an asynchronous request for the next event in the queue.</para>
+    </summary>
+    <param name="pResult">
+      <para>Pointer to the <see cref="IMFAsyncResult" /> interface. Pass in the same pointer that your callback object received in the <see cref="Invoke" /> method.</para>
+    </param>
+    <param name="ppEvent">
+      <para>Receives a pointer to the <see cref="IMFMediaEvent" /> interface. The caller must release the interface.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_SHUTDOWN</b>
+            </para>
+          </description>
+          <description>
+            <para>The object was shut down.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Call this method from inside your application's <see cref="IMFAsyncCallback.Invoke" /> method. For example code, see <see cref="IMFMediaEventGenerator.BeginGetEvent" />.</para>
+    </remarks>
+    <seealso cref="IMFMediaEventGenerator" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-event-generators">Media Event Generators</seealso>
+  </member>
+  <member name="IMFMediaEventGenerator.GetEvent">
+    <summary>
+      <para>Retrieves the next event in the queue. This method is synchronous.</para>
+    </summary>
+    <param name="dwFlags">
+      <para>Specifies one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>0</b>
+          </description>
+          <description>
+            <para>The method blocks until the event generator queues an event.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>MF_EVENT_FLAG_NO_WAIT</b>
+          </description>
+          <description>
+            <para>The method returns immediately.</para>
+          </description>
+        </item>
+      </list>
+    </param>
+    <param name="ppEvent">
+      <para>Receives a pointer to the <see cref="IMFMediaEvent" /> interface. The caller must release the interface.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>NULL pointer argument.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_MULTIPLE_SUBSCRIBERS</b>
+            </para>
+          </description>
+          <description>
+            <para>There is a pending request.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_NO_EVENTS_AVAILABLE</b>
+            </para>
+          </description>
+          <description>
+            <para>There are no events in the queue.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_SHUTDOWN</b>
+            </para>
+          </description>
+          <description>
+            <para>The object was shut down.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method executes synchronously.</para>
+      <para>If the queue already contains an event, the method returns S_OK immediately. If the queue does not contain an event, the behavior depends on the value of <i>dwFlags</i>:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <para>If <i>dwFlags</i> is 0, the method blocks indefinitely until a new event is queued, or until the event generator is shut down.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>If <i>dwFlags</i> is MF_EVENT_FLAG_NO_WAIT, the method fails immediately with the return code MF_E_NO_EVENTS_AVAILABLE.</para>
+          </description>
+        </item>
+      </list>
+      <para>This method returns MF_E_MULTIPLE_SUBSCRIBERS if you previously called <see cref="IMFMediaEventGenerator.BeginGetEvent" /> and have not yet called <see cref="IMFMediaEventGenerator.EndGetEvent" />.</para>
+    </remarks>
+    <seealso cref="IMFMediaEventGenerator" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-event-generators">Media Event Generators</seealso>
+  </member>
+  <member name="IMFMediaEventGenerator.QueueEvent">
+    <summary>
+      <para>Puts a new event in the object's queue.</para>
+    </summary>
+    <param name="met">
+      <para>Specifies the event type. The event type is returned by the event's <see cref="IMFMediaEvent.GetType" /> method. For a list of event types, see <a href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-events">Media Foundation Events</a>.</para>
+    </param>
+    <param name="guidExtendedType">
+      <para>The extended type. If the event does not have an extended type, use the value GUID_NULL. The extended type is returned by the event's <see cref="IMFMediaEvent.GetExtendedType" /> method.</para>
+    </param>
+    <param name="hrStatus">
+      <para>A success or failure code indicating the status of the event. This value is returned by the event's <see cref="IMFMediaEvent.GetStatus" /> method.</para>
+    </param>
+    <param name="pvValue">
+      <para>Pointer to a <b>PROPVARIANT</b> that contains the event value. This parameter can be <b>NULL</b>. This value is returned by the event's <see cref="IMFMediaEvent.GetValue" /> method.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_SHUTDOWN</b>
+            </para>
+          </description>
+          <description>
+            <para>The object was shut down.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IMFMediaEventGenerator" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-event-generators">Media Event Generators</seealso>
+  </member>
+  <member name="IMFMediaEventGenerator">
+    <summary>
+      <para>Retrieves events from any Media Foundation object that generates events.</para>
+    </summary>
+    <remarks>
+      <para>An object that supports this interface maintains a queue of events. The client of the object can retrieve the events either synchronously or asynchronously. The synchronous method is <see cref="GetEvent" />. The asynchronous methods are <see cref="BeginGetEvent" /> and <see cref="EndGetEvent" />.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-event-generators">Media Event Generators</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+  </member>
+</doc>

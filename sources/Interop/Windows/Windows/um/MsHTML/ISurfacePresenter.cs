@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ISurfacePresenter.xml' path='doc/member[@name="ISurfacePresenter"]/*' />
 [Guid("305106E2-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct ISurfacePresenter : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ISurfacePresenter : ISurfacePresenter.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ISurfacePresenter : ISurfacePresenter.Interface
         return ((delegate* unmanaged<ISurfacePresenter*, Guid*, void**, int>)(lpVtbl[0]))((ISurfacePresenter*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ISurfacePresenter : ISurfacePresenter.Interface
         return ((delegate* unmanaged<ISurfacePresenter*, uint>)(lpVtbl[1]))((ISurfacePresenter*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ISurfacePresenter : ISurfacePresenter.Interface
         return ((delegate* unmanaged<ISurfacePresenter*, uint>)(lpVtbl[2]))((ISurfacePresenter*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ISurfacePresenter.xml' path='doc/member[@name="ISurfacePresenter.Present"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Present(uint uBuffer, RECT* pDirty)
@@ -46,6 +51,7 @@ public unsafe partial struct ISurfacePresenter : ISurfacePresenter.Interface
         return ((delegate* unmanaged<ISurfacePresenter*, uint, RECT*, int>)(lpVtbl[3]))((ISurfacePresenter*)Unsafe.AsPointer(ref this), uBuffer, pDirty);
     }
 
+    /// <include file='ISurfacePresenter.xml' path='doc/member[@name="ISurfacePresenter.GetBuffer"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetBuffer(uint backBufferIndex, [NativeTypeName("const IID &")] Guid* riid, void** ppBuffer)
@@ -53,6 +59,7 @@ public unsafe partial struct ISurfacePresenter : ISurfacePresenter.Interface
         return ((delegate* unmanaged<ISurfacePresenter*, uint, Guid*, void**, int>)(lpVtbl[4]))((ISurfacePresenter*)Unsafe.AsPointer(ref this), backBufferIndex, riid, ppBuffer);
     }
 
+    /// <include file='ISurfacePresenter.xml' path='doc/member[@name="ISurfacePresenter.IsCurrent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT IsCurrent(BOOL* pIsCurrent)

@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFNetSchemeHandlerConfig.GetNumberOfSupportedProtocols">
+    <summary>
+      <para>Retrieves the number of protocols supported by the network scheme plug-in.</para>
+    </summary>
+    <param name="pcProtocols">
+      <para>Receives the number of protocols.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IMFNetSchemeHandlerConfig" />
+  </member>
+  <member name="IMFNetSchemeHandlerConfig.GetSupportedProtocolType">
+    <summary>
+      <para>Retrieves a supported protocol by index</para>
+    </summary>
+    <param name="nProtocolIndex">
+      <para>Zero-based index of the protocol to retrieve. To get the number of supported protocols, call <see cref="IMFNetSchemeHandlerConfig.GetNumberOfSupportedProtocols" />.</para>
+    </param>
+    <param name="pnProtocolType">
+      <para>Receives a member of the <see cref="MFNETSOURCE_PROTOCOL_TYPE" /> enumeration.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>The value passed in the <i>nProtocolIndex</i> parameter was greater than the total number of supported protocols, returned by <see cref="GetNumberOfSupportedProtocols" />.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IMFNetSchemeHandlerConfig" />
+  </member>
+  <member name="IMFNetSchemeHandlerConfig.ResetProtocolRolloverSettings">
+    <summary>
+      <para>Not implemented in this release.</para>
+    </summary>
+    <returns>
+      <para>This method returns S_OK.</para>
+    </returns>
+    <seealso cref="IMFNetSchemeHandlerConfig" />
+  </member>
+  <member name="IMFNetSchemeHandlerConfig">
+    <summary>
+      <para>Configures a network scheme plug-in.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/supported-protocols">Supported Protocols</seealso>
+  </member>
+</doc>

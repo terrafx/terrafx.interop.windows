@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DVD_VideoAttributes">
+    <summary>
+      <para>The <code>DVD_VideoAttributes</code> structure describes the attributes of the video stream for the current title or menu.</para>
+    </summary>
+    <remarks>
+      <para>This structure is filled when an application calls the <see cref="IDvdInfo2.GetCurrentVideoAttributes" /> method.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-structures">DirectShow Structures</seealso>
+  </member>
+  <member name="DVD_VideoAttributes.fPanscanPermitted">
+    <summary>
+      <para>
+        <b>TRUE</b> means the picture can be shown as pan-scan if the display aspect ratio is 4 x 3.</para>
+    </summary>
+  </member>
+  <member name="DVD_VideoAttributes.fLetterboxPermitted">
+    <summary>
+      <para>
+        <b>TRUE</b> means the picture can be shown as letterbox if the display aspect ratio is 4 x 3.</para>
+    </summary>
+  </member>
+  <member name="DVD_VideoAttributes.ulAspectX">
+    <summary>
+      <para>The video stream's X aspect (4 or 16).</para>
+    </summary>
+  </member>
+  <member name="DVD_VideoAttributes.ulAspectY">
+    <summary>
+      <para>The video stream's Y aspect (3 or 9).</para>
+    </summary>
+  </member>
+  <member name="DVD_VideoAttributes.ulFrameRate">
+    <summary>
+      <para>The frame rate in hertz (Hz), either 50 or 60.</para>
+    </summary>
+  </member>
+  <member name="DVD_VideoAttributes.ulFrameHeight">
+    <summary>
+      <para>The frame height in lines (525 for a frame rate of 60 Hz or 625 for 50 Hz).</para>
+    </summary>
+  </member>
+  <member name="DVD_VideoAttributes.Compression">
+    <summary>
+      <para>Variable of type <see cref="DVD_VIDEO_COMPRESSION" /> indicating the MPEG compression type used on the disc.</para>
+    </summary>
+  </member>
+  <member name="DVD_VideoAttributes.fLine21Field1InGOP">
+    <summary>
+      <para>
+        <b>TRUE</b> means there is user data in line 21, field 1.</para>
+    </summary>
+  </member>
+  <member name="DVD_VideoAttributes.fLine21Field2InGOP">
+    <summary>
+      <para>
+        <b>TRUE</b> means there is user data in line 21, field 2.</para>
+    </summary>
+  </member>
+  <member name="DVD_VideoAttributes.ulSourceResolutionX">
+    <summary>
+      <para>The x-axis source resolution (352, 704, or 720).</para>
+    </summary>
+  </member>
+  <member name="DVD_VideoAttributes.ulSourceResolutionY">
+    <summary>
+      <para>The y-axis source resolution (240, 480, 288, or 576).</para>
+    </summary>
+  </member>
+  <member name="DVD_VideoAttributes.fIsSourceLetterboxed">
+    <summary>
+      <para>
+        <b>TRUE</b> means the source video is in letterbox format. Subpictures and menu buttons can only be displayed in the active video area.</para>
+    </summary>
+  </member>
+  <member name="DVD_VideoAttributes.fIsFilmMode">
+    <summary>
+      <para>For 625/50 Hz systems, <b>TRUE</b> means "film mode" and <b>FALSE</b> means "camera mode."</para>
+    </summary>
+  </member>
+</doc>

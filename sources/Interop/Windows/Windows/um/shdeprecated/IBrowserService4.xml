@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IBrowserService4.ActivateView">
+    <summary>
+      <para>Deprecated.</para>
+    </summary>
+    <param name="fPendingView">
+      <para>Type: <b>BOOL</b></para>
+      <para>Specifies whether the view is pending.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IBrowserService4.SaveViewState">
+    <summary>
+      <para>Deprecated.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IBrowserService4._ResizeAllBorders">
+    <summary>
+      <para>Deprecated.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IBrowserService4">
+    <summary>
+      <para>Deprecated.</para>
+    </summary>
+    <remarks>
+      <para>This interface also provides the methods of the <see cref="IBrowserService" />, <see cref="IBrowserService2" />, and <see cref="IBrowserService3" /> interfaces, from which it inherits.</para>
+    </remarks>
+  </member>
+</doc>

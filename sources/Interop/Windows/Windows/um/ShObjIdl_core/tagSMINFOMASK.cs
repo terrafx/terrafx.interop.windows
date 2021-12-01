@@ -7,10 +7,16 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='tagSMINFOMASK.xml' path='doc/member[@name="tagSMINFOMASK"]/*' />
 [Flags]
 public enum tagSMINFOMASK
 {
+    /// <include file='tagSMINFOMASK.xml' path='doc/member[@name="tagSMINFOMASK.SMIM_TYPE"]/*' />
     SMIM_TYPE = 0x1,
+
+    /// <include file='tagSMINFOMASK.xml' path='doc/member[@name="tagSMINFOMASK.SMIM_FLAGS"]/*' />
     SMIM_FLAGS = 0x2,
+
+    /// <include file='tagSMINFOMASK.xml' path='doc/member[@name="tagSMINFOMASK.SMIM_ICON"]/*' />
     SMIM_ICON = 0x4,
 }

@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='eAVDecVideoH264ErrorConcealment.xml' path='doc/member[@name="eAVDecVideoH264ErrorConcealment"]/*' />
 public enum eAVDecVideoH264ErrorConcealment
 {
+    /// <include file='eAVDecVideoH264ErrorConcealment.xml' path='doc/member[@name="eAVDecVideoH264ErrorConcealment.eErrorConcealmentTypeDrop"]/*' />
     eErrorConcealmentTypeDrop = 0,
+
+    /// <include file='eAVDecVideoH264ErrorConcealment.xml' path='doc/member[@name="eAVDecVideoH264ErrorConcealment.eErrorConcealmentTypeBasic"]/*' />
     eErrorConcealmentTypeBasic = 1,
+
+    /// <include file='eAVDecVideoH264ErrorConcealment.xml' path='doc/member[@name="eAVDecVideoH264ErrorConcealment.eErrorConcealmentTypeAdvanced"]/*' />
     eErrorConcealmentTypeAdvanced = 2,
+
+    /// <include file='eAVDecVideoH264ErrorConcealment.xml' path='doc/member[@name="eAVDecVideoH264ErrorConcealment.eErrorConcealmentTypeDXVASetBlack"]/*' />
     eErrorConcealmentTypeDXVASetBlack = 3,
 }

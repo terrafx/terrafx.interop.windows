@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SOURCE_MEDIA">
+    <summary>
+      <para>The
+<b>SOURCE_MEDIA</b> structure is used with the
+<a href="https://docs.microsoft.com//windows/desktop/SetupApi/spfilenotify-needmedia">SPFILENOTIFY_NEEDMEDIA</a> notification to pass source media information.</para>
+    </summary>
+    <remarks>
+      <blockquote>
+        <para>[!NOTE]
+The setupapi.h header defines SOURCE_MEDIA as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/SetupApi/overview">Overview</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/SetupApi/spfilenotify-needmedia">SPFILENOTIFY_NEEDMEDIA</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/SetupApi/structures--setup-api-">Structures</seealso>
+  </member>
+  <member name="SOURCE_MEDIA.Reserved">
+    <summary>
+      <para>This member is not currently used.</para>
+    </summary>
+  </member>
+  <member name="SOURCE_MEDIA.Tagfile">
+    <summary>
+      <para>Optional  tag file that can be used to identify the source media.</para>
+    </summary>
+  </member>
+  <member name="SOURCE_MEDIA.Description">
+    <summary>
+      <para>Human-readable description of the source media.</para>
+    </summary>
+  </member>
+  <member name="SOURCE_MEDIA.SourcePath">
+    <summary>
+      <para>Path to the source that needs the new media.</para>
+    </summary>
+  </member>
+  <member name="SOURCE_MEDIA.SourceFile">
+    <summary>
+      <para>Source file to be retrieved from the new media.</para>
+    </summary>
+  </member>
+  <member name="SOURCE_MEDIA.Flags">
+    <summary>
+      <para>Copy style information that modifies how errors are handled. This member can be one or more of the following values.</para>
+      <h4>SP_COPY_WARNIFSKIP</h4>
+      <para>Inform the user that skipping the file may affect the installation.</para>
+      <h4>SP_COPY_NOSKIP</h4>
+      <para>Do not offer the user the option to skip the file.</para>
+      <h4>SP_FLAG_CABINETCONTINUATION</h4>
+      <para>The current source file is continued in another cabinet file.</para>
+      <h4>SP_COPY_NOBROWSE</h4>
+      <para>Do not offer the user the option to browse.</para>
+    </summary>
+  </member>
+  <member name="SOURCE_MEDIA">
+    <summary>
+      <para>The
+<b>SOURCE_MEDIA</b> structure is used with the
+<a href="https://docs.microsoft.com//windows/desktop/SetupApi/spfilenotify-needmedia">SPFILENOTIFY_NEEDMEDIA</a> notification to pass source media information.</para>
+    </summary>
+    <remarks>
+      <blockquote>
+        <para>[!NOTE]
+The setupapi.h header defines SOURCE_MEDIA as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/SetupApi/overview">Overview</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/SetupApi/spfilenotify-needmedia">SPFILENOTIFY_NEEDMEDIA</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/SetupApi/structures--setup-api-">Structures</seealso>
+  </member>
+  <member name="SOURCE_MEDIA.Reserved">
+    <summary>
+      <para>This member is not currently used.</para>
+    </summary>
+  </member>
+  <member name="SOURCE_MEDIA.Tagfile">
+    <summary>
+      <para>Optional  tag file that can be used to identify the source media.</para>
+    </summary>
+  </member>
+  <member name="SOURCE_MEDIA.Description">
+    <summary>
+      <para>Human-readable description of the source media.</para>
+    </summary>
+  </member>
+  <member name="SOURCE_MEDIA.SourcePath">
+    <summary>
+      <para>Path to the source that needs the new media.</para>
+    </summary>
+  </member>
+  <member name="SOURCE_MEDIA.SourceFile">
+    <summary>
+      <para>Source file to be retrieved from the new media.</para>
+    </summary>
+  </member>
+  <member name="SOURCE_MEDIA.Flags">
+    <summary>
+      <para>Copy style information that modifies how errors are handled. This member can be one or more of the following values.</para>
+      <h4>SP_COPY_WARNIFSKIP</h4>
+      <para>Inform the user that skipping the file may affect the installation.</para>
+      <h4>SP_COPY_NOSKIP</h4>
+      <para>Do not offer the user the option to skip the file.</para>
+      <h4>SP_FLAG_CABINETCONTINUATION</h4>
+      <para>The current source file is continued in another cabinet file.</para>
+      <h4>SP_COPY_NOBROWSE</h4>
+      <para>Do not offer the user the option to browse.</para>
+      <h5>- Flags.SP_COPY_NOBROWSE</h5>
+      <para>Do not offer the user the option to browse.</para>
+      <h5>- Flags.SP_COPY_NOSKIP</h5>
+      <para>Do not offer the user the option to skip the file.</para>
+      <h5>- Flags.SP_COPY_WARNIFSKIP</h5>
+      <para>Inform the user that skipping the file may affect the installation.</para>
+      <h5>- Flags.SP_FLAG_CABINETCONTINUATION</h5>
+      <para>The current source file is continued in another cabinet file.</para>
+    </summary>
+  </member>
+</doc>

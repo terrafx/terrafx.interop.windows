@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IHTMLPainter.xml' path='doc/member[@name="IHTMLPainter"]/*' />
 [Guid("3050F6A6-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IHTMLPainter : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IHTMLPainter : IHTMLPainter.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IHTMLPainter : IHTMLPainter.Interface
         return ((delegate* unmanaged<IHTMLPainter*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLPainter*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IHTMLPainter : IHTMLPainter.Interface
         return ((delegate* unmanaged<IHTMLPainter*, uint>)(lpVtbl[1]))((IHTMLPainter*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IHTMLPainter : IHTMLPainter.Interface
         return ((delegate* unmanaged<IHTMLPainter*, uint>)(lpVtbl[2]))((IHTMLPainter*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IHTMLPainter.xml' path='doc/member[@name="IHTMLPainter.Draw"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Draw(RECT rcBounds, RECT rcUpdate, [NativeTypeName("LONG")] int lDrawFlags, HDC hdc, [NativeTypeName("LPVOID")] void* pvDrawObject)
@@ -46,6 +51,7 @@ public unsafe partial struct IHTMLPainter : IHTMLPainter.Interface
         return ((delegate* unmanaged<IHTMLPainter*, RECT, RECT, int, HDC, void*, int>)(lpVtbl[3]))((IHTMLPainter*)Unsafe.AsPointer(ref this), rcBounds, rcUpdate, lDrawFlags, hdc, pvDrawObject);
     }
 
+    /// <include file='IHTMLPainter.xml' path='doc/member[@name="IHTMLPainter.OnResize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT OnResize(SIZE size)
@@ -53,6 +59,7 @@ public unsafe partial struct IHTMLPainter : IHTMLPainter.Interface
         return ((delegate* unmanaged<IHTMLPainter*, SIZE, int>)(lpVtbl[4]))((IHTMLPainter*)Unsafe.AsPointer(ref this), size);
     }
 
+    /// <include file='IHTMLPainter.xml' path='doc/member[@name="IHTMLPainter.GetPainterInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetPainterInfo(HTML_PAINTER_INFO* pInfo)
@@ -60,6 +67,7 @@ public unsafe partial struct IHTMLPainter : IHTMLPainter.Interface
         return ((delegate* unmanaged<IHTMLPainter*, HTML_PAINTER_INFO*, int>)(lpVtbl[5]))((IHTMLPainter*)Unsafe.AsPointer(ref this), pInfo);
     }
 
+    /// <include file='IHTMLPainter.xml' path='doc/member[@name="IHTMLPainter.HitTestPoint"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT HitTestPoint(POINT pt, BOOL* pbHit, [NativeTypeName("LONG *")] int* plPartID)

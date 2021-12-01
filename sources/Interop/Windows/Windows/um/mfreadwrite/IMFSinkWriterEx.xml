@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFSinkWriterEx.GetTransformForStream">
+    <summary>
+      <para>Gets a pointer to a Media Foundation transform (MFT) for a specified stream.</para>
+    </summary>
+    <param name="dwStreamIndex">
+      <para>The zero-based index of a stream.</para>
+    </param>
+    <param name="dwTransformIndex">
+      <para>The zero-based index of the MFT to retrieve.</para>
+    </param>
+    <param name="pGuidCategory">
+      <para>Receives a pointer to a GUID that specifies the category of the MFT. For a list of possible values, see <a href="https://docs.microsoft.com//windows/desktop/medfound/mft-category">MFT_CATEGORY</a>.</para>
+    </param>
+    <param name="ppTransform">
+      <para>Receives a pointer to the <see cref="IMFTransform" /> interface of the MFT. The caller must release the interface.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFSinkWriterEx" />
+  </member>
+  <member name="IMFSinkWriterEx">
+    <summary>
+      <para>Extends the <see cref="IMFSinkWriter" /> interface.</para>
+      <para>The <a href="https://docs.microsoft.com//windows/desktop/medfound/sink-writer">Sink Writer</a> implements this interface in Windows 8. To get a pointer to this interface, call <see cref="QueryInterface" /> on the Sink Writer.</para>
+    </summary>
+    <seealso cref="IMFSinkWriter" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/sink-writer">Sink Writer</seealso>
+  </member>
+</doc>

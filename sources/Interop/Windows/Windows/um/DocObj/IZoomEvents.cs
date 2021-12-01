@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IZoomEvents.xml' path='doc/member[@name="IZoomEvents"]/*' />
 [Guid("41B68150-904C-4E17-A0BA-A438182E359D")]
 [NativeTypeName("struct IZoomEvents : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IZoomEvents : IZoomEvents.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IZoomEvents : IZoomEvents.Interface
         return ((delegate* unmanaged<IZoomEvents*, Guid*, void**, int>)(lpVtbl[0]))((IZoomEvents*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IZoomEvents : IZoomEvents.Interface
         return ((delegate* unmanaged<IZoomEvents*, uint>)(lpVtbl[1]))((IZoomEvents*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IZoomEvents : IZoomEvents.Interface
         return ((delegate* unmanaged<IZoomEvents*, uint>)(lpVtbl[2]))((IZoomEvents*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IZoomEvents.xml' path='doc/member[@name="IZoomEvents.OnZoomPercentChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT OnZoomPercentChanged([NativeTypeName("ULONG")] uint ulZoomPercent)

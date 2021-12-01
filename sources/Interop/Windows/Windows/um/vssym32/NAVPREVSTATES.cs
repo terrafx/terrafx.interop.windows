@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NAVPREVSTATES.xml' path='doc/member[@name="NAVPREVSTATES"]/*' />
 public enum NAVPREVSTATES
 {
+    /// <include file='NAVPREVSTATES.xml' path='doc/member[@name="NAVPREVSTATES.MCNP_NORMAL"]/*' />
     MCNP_NORMAL = 1,
+
+    /// <include file='NAVPREVSTATES.xml' path='doc/member[@name="NAVPREVSTATES.MCNP_HOT"]/*' />
     MCNP_HOT = 2,
+
+    /// <include file='NAVPREVSTATES.xml' path='doc/member[@name="NAVPREVSTATES.MCNP_PRESSED"]/*' />
     MCNP_PRESSED = 3,
+
+    /// <include file='NAVPREVSTATES.xml' path='doc/member[@name="NAVPREVSTATES.MCNP_DISABLED"]/*' />
     MCNP_DISABLED = 4,
 }

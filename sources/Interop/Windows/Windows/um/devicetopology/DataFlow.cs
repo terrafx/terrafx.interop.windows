@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DataFlow.xml' path='doc/member[@name="DataFlow"]/*' />
 public enum DataFlow
 {
+    /// <include file='DataFlow.xml' path='doc/member[@name="DataFlow.In"]/*' />
     In = 0,
+
+    /// <include file='DataFlow.xml' path='doc/member[@name="DataFlow.Out"]/*' />
     Out = (In + 1),
 }

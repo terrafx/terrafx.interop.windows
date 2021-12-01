@@ -1,0 +1,227 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CERT_SELECT_CRITERIA">
+    <summary>
+      <para>The <b>CERT_SELECT_CRITERIA</b> structure specifies selection criteria that is passed to the <see cref="CertSelectCertificateChains" /> function.</para>
+    </summary>
+  </member>
+  <member name="CERT_SELECT_CRITERIA.dwType">
+    <summary>
+      <para>Specifies the type of selection criteria used for the <b>ppPara</b> member. This member can have one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CERT_SELECT_BY_ENHKEY_USAGE</b>
+                </description>
+              </item>
+              <item>
+                <description>1</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Select certificates  based on  a specific <a href="https://docs.microsoft.com//windows/desktop/SecGloss/e-gly">enhanced key usage</a>. When this flag is set, the <i>ppPara</i> must reference a null-terminated <a href="https://docs.microsoft.com//windows/desktop/SecGloss/o-gly">object identifier</a> (OID) ANSI string that specifies the enhanced key usage.</para>
+            <para>This criteria is evaluated on the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certificate</a>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CERT_SELECT_BY_KEY_USAGE</b>
+                </description>
+              </item>
+              <item>
+                <description>2</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Select certificates  based on  a specific <b>szOID_KEY_USAGE</b> extension in the certificate.  When this flag is set, the <b>ppPara </b> member must reference a <see cref="CERT_EXTENSION" /> structure where the value of the extension is a <b>DWORD</b> that identifies the Key Usage bits.</para>
+            <para>This criteria is evaluated on the certificate.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CERT_SELECT_BY_POLICY_OID</b>
+                </description>
+              </item>
+              <item>
+                <description>3</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Select certificates based on a specific issuance policy. The <b>ppPara</b> member must reference a null-terminated OID ANSI string of the desired issuance policy.</para>
+            <para>This criteria is evaluated on the issuance policy of the certificate chain.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CERT_SELECT_BY_PROV_NAME</b>
+                </description>
+              </item>
+              <item>
+                <description>4</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Select certificates based on a specific <a href="https://docs.microsoft.com//windows/desktop/SecGloss/p-gly">private key</a> provider. The <b>ppPara</b> member must reference a  null-terminated Unicode string that represents the name of the provider.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CERT_SELECT_BY_EXTENSION</b>
+                </description>
+              </item>
+              <item>
+                <description>5</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Select certificates based on the presence of a specified extension and an optional specified value. The <b>ppPara</b> member must reference a <see cref="CERT_EXTENSION" /> structure that specifies the extension OID and the  associated value.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CERT_SELECT_BY_SUBJECT_HOST_NAME</b>
+                </description>
+              </item>
+              <item>
+                <description>6</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Select certificates based on the Subject DNS HOST Name. The <b>ppPara</b> member must reference a null-terminated Unicode string that contains the subject host name. The selection performed based on this flag  is the same as the evaluation of the <b>pwszServerName</b> member of the <see cref="SSL_EXTRA_CERT_CHAIN_POLICY_PARA" /> structure during a call to the <see cref="CertVerifyCertificateChainPolicy" /> function.</para>
+            <para>This criteria is evaluated on the certificate.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CERT_SELECT_BY_ISSUER_ATTR</b>
+                </description>
+              </item>
+              <item>
+                <description>7</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Select certificates based on the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/r-gly">relative distinguished name</a> (RDN) element of the issuer of the certificate.  The <b>ppPara</b> member must reference a <see cref="CERT_RDN" /> structure that contains the RDN element of the issuer.</para>
+            <para>This criteria is evaluated on the certificate chain.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CERT_SELECT_BY_SUBJECT_ATTR</b>
+                </description>
+              </item>
+              <item>
+                <description>8</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Select certificates based on the RDN element in the Subject of the certificate.  The <b>ppPara</b> member must be a reference to a <see cref="CERT_RDN" /> structure that contains the RDN element of the Subject.</para>
+            <para>This criteria is evaluated on the certificate.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CERT_SELECT_BY_ISSUER_NAME</b>
+                </description>
+              </item>
+              <item>
+                <description>9</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Select certificates based on the issuer of the certificate. The <b>ppPara</b> member must be a reference to a <see cref="CERT_NAME_BLOB" /> structure that contains the name of the issuer.</para>
+            <para>This criteria is evaluated on the certificate chain.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CERT_SELECT_BY_PUBLIC_KEY</b>
+                </description>
+              </item>
+              <item>
+                <description>10</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Select certificates based on the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/p-gly">public key</a> of the certificate.  The <b>ppPara</b> member must reference a pointer to  a <see cref="CERT_PUBLIC_KEY_INFO" /> structure that contains the public key.</para>
+            <para>This criteria is evaluated on the certificate.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CERT_SELECT_BY_TLS_SIGNATURES</b>
+                </description>
+              </item>
+              <item>
+                <description>11</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Select certificates based on the <see cref="Transport Layer Security protocol" /> (TLS) Signature requirement. The <b>ppPara</b> member must reference a <see cref="SecPkgContext_SupportedSignatures" /> structure.</para>
+            <para>This criteria is evaluated on the certificate.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="CERT_SELECT_CRITERIA.cPara">
+    <summary>
+      <para>A <b>DWORD</b> value that specifies the number of search attributes specified in the <b>ppPara</b> member.</para>
+    </summary>
+  </member>
+  <member name="CERT_SELECT_CRITERIA.ppPara">
+    <summary>
+      <para>A pointer to a pointer to one or more selection values.  The data type depends on the selection type specified by the <b>dwType</b> member. If more than one selection value is present, an application must match only one value.</para>
+    </summary>
+  </member>
+</doc>

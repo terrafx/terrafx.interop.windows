@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IHTMLEditHost2.xml' path='doc/member[@name="IHTMLEditHost2"]/*' />
 [Guid("3050F848-98B5-11CF-BB82-00AA00BDCE0D")]
 [NativeTypeName("struct IHTMLEditHost2 : IHTMLEditHost")]
 [NativeInheritance("IHTMLEditHost")]
@@ -16,6 +17,7 @@ public unsafe partial struct IHTMLEditHost2 : IHTMLEditHost2.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IHTMLEditHost2 : IHTMLEditHost2.Interface
         return ((delegate* unmanaged<IHTMLEditHost2*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLEditHost2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IHTMLEditHost2 : IHTMLEditHost2.Interface
         return ((delegate* unmanaged<IHTMLEditHost2*, uint>)(lpVtbl[1]))((IHTMLEditHost2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IHTMLEditHost2 : IHTMLEditHost2.Interface
         return ((delegate* unmanaged<IHTMLEditHost2*, uint>)(lpVtbl[2]))((IHTMLEditHost2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IHTMLEditHost.SnapRect" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SnapRect(IHTMLElement* pIElement, RECT* prcNew, ELEMENT_CORNER eHandle)
@@ -46,6 +51,7 @@ public unsafe partial struct IHTMLEditHost2 : IHTMLEditHost2.Interface
         return ((delegate* unmanaged<IHTMLEditHost2*, IHTMLElement*, RECT*, ELEMENT_CORNER, int>)(lpVtbl[3]))((IHTMLEditHost2*)Unsafe.AsPointer(ref this), pIElement, prcNew, eHandle);
     }
 
+    /// <include file='IHTMLEditHost2.xml' path='doc/member[@name="IHTMLEditHost2.PreDrag"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT PreDrag()

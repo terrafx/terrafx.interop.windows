@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SVGPolylineElement.xml' path='doc/member[@name="SVGPolylineElement"]/*' />
 [Guid("3051057C-98B5-11CF-BB82-00AA00BDCE0B")]
 public partial struct SVGPolylineElement
 {

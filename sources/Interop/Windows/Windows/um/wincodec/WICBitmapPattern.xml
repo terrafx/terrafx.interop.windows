@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WICBitmapPattern">
+    <summary>
+      <para>Contains members that identify a pattern within an image file which can be used to identify a particular format.</para>
+    </summary>
+  </member>
+  <member name="WICBitmapPattern.Position">
+    <summary>
+      <para>Type: <b>ULARGE_INTEGER</b></para>
+      <para>The offset the pattern is located in the file.</para>
+    </summary>
+  </member>
+  <member name="WICBitmapPattern.Length">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The pattern length.</para>
+    </summary>
+  </member>
+  <member name="WICBitmapPattern.Pattern">
+    <summary>
+      <para>Type: <b>BYTE*</b></para>
+      <para>The actual pattern.</para>
+    </summary>
+  </member>
+  <member name="WICBitmapPattern.Mask">
+    <summary>
+      <para>Type: <b>BYTE*</b></para>
+      <para>The pattern mask.</para>
+    </summary>
+  </member>
+  <member name="WICBitmapPattern.EndOfStream">
+    <summary>
+      <para>Type: <b>BOOL</b></para>
+      <para>The end of the stream.</para>
+    </summary>
+  </member>
+</doc>

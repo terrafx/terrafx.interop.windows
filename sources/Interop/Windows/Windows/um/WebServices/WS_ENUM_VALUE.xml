@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_ENUM_VALUE">
+    <summary>
+      <para>Provides serialization information about a single value that
+is part of an enumeration (<see cref="WS_ENUM_DESCRIPTION" />).</para>
+    </summary>
+  </member>
+  <member name="WS_ENUM_VALUE.value">
+    <summary>
+      <para>The numeric enum value.</para>
+    </summary>
+  </member>
+  <member name="WS_ENUM_VALUE.name">
+    <summary>
+      <para>The serialized form of the value.</para>
+    </summary>
+  </member>
+</doc>

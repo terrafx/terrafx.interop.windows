@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IWICDevelopRaw.xml' path='doc/member[@name="IWICDevelopRaw"]/*' />
 [Guid("FBEC5E44-F7BE-4B65-B7F8-C0C81FEF026D")]
 [NativeTypeName("struct IWICDevelopRaw : IWICBitmapFrameDecode")]
 [NativeInheritance("IWICBitmapFrameDecode")]
@@ -16,6 +17,7 @@ public unsafe partial struct IWICDevelopRaw : IWICDevelopRaw.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IWICDevelopRaw : IWICDevelopRaw.Interface
         return ((delegate* unmanaged<IWICDevelopRaw*, Guid*, void**, int>)(lpVtbl[0]))((IWICDevelopRaw*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IWICDevelopRaw : IWICDevelopRaw.Interface
         return ((delegate* unmanaged<IWICDevelopRaw*, uint>)(lpVtbl[1]))((IWICDevelopRaw*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IWICDevelopRaw : IWICDevelopRaw.Interface
         return ((delegate* unmanaged<IWICDevelopRaw*, uint>)(lpVtbl[2]))((IWICDevelopRaw*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IWICBitmapSource.GetSize" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetSize(uint* puiWidth, uint* puiHeight)
@@ -46,6 +51,7 @@ public unsafe partial struct IWICDevelopRaw : IWICDevelopRaw.Interface
         return ((delegate* unmanaged<IWICDevelopRaw*, uint*, uint*, int>)(lpVtbl[3]))((IWICDevelopRaw*)Unsafe.AsPointer(ref this), puiWidth, puiHeight);
     }
 
+    /// <inheritdoc cref="IWICBitmapSource.GetPixelFormat" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetPixelFormat([NativeTypeName("WICPixelFormatGUID *")] Guid* pPixelFormat)
@@ -53,6 +59,7 @@ public unsafe partial struct IWICDevelopRaw : IWICDevelopRaw.Interface
         return ((delegate* unmanaged<IWICDevelopRaw*, Guid*, int>)(lpVtbl[4]))((IWICDevelopRaw*)Unsafe.AsPointer(ref this), pPixelFormat);
     }
 
+    /// <inheritdoc cref="IWICBitmapSource.GetResolution" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetResolution(double* pDpiX, double* pDpiY)
@@ -60,6 +67,7 @@ public unsafe partial struct IWICDevelopRaw : IWICDevelopRaw.Interface
         return ((delegate* unmanaged<IWICDevelopRaw*, double*, double*, int>)(lpVtbl[5]))((IWICDevelopRaw*)Unsafe.AsPointer(ref this), pDpiX, pDpiY);
     }
 
+    /// <inheritdoc cref="IWICBitmapSource.CopyPalette" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT CopyPalette(IWICPalette* pIPalette)
@@ -67,6 +75,7 @@ public unsafe partial struct IWICDevelopRaw : IWICDevelopRaw.Interface
         return ((delegate* unmanaged<IWICDevelopRaw*, IWICPalette*, int>)(lpVtbl[6]))((IWICDevelopRaw*)Unsafe.AsPointer(ref this), pIPalette);
     }
 
+    /// <inheritdoc cref="IWICBitmapSource.CopyPixels" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT CopyPixels([NativeTypeName("const WICRect *")] WICRect* prc, uint cbStride, uint cbBufferSize, byte* pbBuffer)
@@ -74,6 +83,7 @@ public unsafe partial struct IWICDevelopRaw : IWICDevelopRaw.Interface
         return ((delegate* unmanaged<IWICDevelopRaw*, WICRect*, uint, uint, byte*, int>)(lpVtbl[7]))((IWICDevelopRaw*)Unsafe.AsPointer(ref this), prc, cbStride, cbBufferSize, pbBuffer);
     }
 
+    /// <inheritdoc cref="IWICBitmapFrameDecode.GetMetadataQueryReader" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetMetadataQueryReader(IWICMetadataQueryReader** ppIMetadataQueryReader)
@@ -81,6 +91,7 @@ public unsafe partial struct IWICDevelopRaw : IWICDevelopRaw.Interface
         return ((delegate* unmanaged<IWICDevelopRaw*, IWICMetadataQueryReader**, int>)(lpVtbl[8]))((IWICDevelopRaw*)Unsafe.AsPointer(ref this), ppIMetadataQueryReader);
     }
 
+    /// <inheritdoc cref="IWICBitmapFrameDecode.GetColorContexts" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT GetColorContexts(uint cCount, IWICColorContext** ppIColorContexts, uint* pcActualCount)
@@ -88,6 +99,7 @@ public unsafe partial struct IWICDevelopRaw : IWICDevelopRaw.Interface
         return ((delegate* unmanaged<IWICDevelopRaw*, uint, IWICColorContext**, uint*, int>)(lpVtbl[9]))((IWICDevelopRaw*)Unsafe.AsPointer(ref this), cCount, ppIColorContexts, pcActualCount);
     }
 
+    /// <inheritdoc cref="IWICBitmapFrameDecode.GetThumbnail" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT GetThumbnail(IWICBitmapSource** ppIThumbnail)
@@ -95,6 +107,7 @@ public unsafe partial struct IWICDevelopRaw : IWICDevelopRaw.Interface
         return ((delegate* unmanaged<IWICDevelopRaw*, IWICBitmapSource**, int>)(lpVtbl[10]))((IWICDevelopRaw*)Unsafe.AsPointer(ref this), ppIThumbnail);
     }
 
+    /// <include file='IWICDevelopRaw.xml' path='doc/member[@name="IWICDevelopRaw.QueryRawCapabilitiesInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT QueryRawCapabilitiesInfo(WICRawCapabilitiesInfo* pInfo)
@@ -102,6 +115,7 @@ public unsafe partial struct IWICDevelopRaw : IWICDevelopRaw.Interface
         return ((delegate* unmanaged<IWICDevelopRaw*, WICRawCapabilitiesInfo*, int>)(lpVtbl[11]))((IWICDevelopRaw*)Unsafe.AsPointer(ref this), pInfo);
     }
 
+    /// <include file='IWICDevelopRaw.xml' path='doc/member[@name="IWICDevelopRaw.LoadParameterSet"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT LoadParameterSet(WICRawParameterSet ParameterSet)
@@ -109,6 +123,7 @@ public unsafe partial struct IWICDevelopRaw : IWICDevelopRaw.Interface
         return ((delegate* unmanaged<IWICDevelopRaw*, WICRawParameterSet, int>)(lpVtbl[12]))((IWICDevelopRaw*)Unsafe.AsPointer(ref this), ParameterSet);
     }
 
+    /// <include file='IWICDevelopRaw.xml' path='doc/member[@name="IWICDevelopRaw.GetCurrentParameterSet"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT GetCurrentParameterSet(IPropertyBag2** ppCurrentParameterSet)
@@ -116,6 +131,7 @@ public unsafe partial struct IWICDevelopRaw : IWICDevelopRaw.Interface
         return ((delegate* unmanaged<IWICDevelopRaw*, IPropertyBag2**, int>)(lpVtbl[13]))((IWICDevelopRaw*)Unsafe.AsPointer(ref this), ppCurrentParameterSet);
     }
 
+    /// <include file='IWICDevelopRaw.xml' path='doc/member[@name="IWICDevelopRaw.SetExposureCompensation"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT SetExposureCompensation(double ev)
@@ -123,6 +139,7 @@ public unsafe partial struct IWICDevelopRaw : IWICDevelopRaw.Interface
         return ((delegate* unmanaged<IWICDevelopRaw*, double, int>)(lpVtbl[14]))((IWICDevelopRaw*)Unsafe.AsPointer(ref this), ev);
     }
 
+    /// <include file='IWICDevelopRaw.xml' path='doc/member[@name="IWICDevelopRaw.GetExposureCompensation"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT GetExposureCompensation(double* pEV)
@@ -130,6 +147,7 @@ public unsafe partial struct IWICDevelopRaw : IWICDevelopRaw.Interface
         return ((delegate* unmanaged<IWICDevelopRaw*, double*, int>)(lpVtbl[15]))((IWICDevelopRaw*)Unsafe.AsPointer(ref this), pEV);
     }
 
+    /// <include file='IWICDevelopRaw.xml' path='doc/member[@name="IWICDevelopRaw.SetWhitePointRGB"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT SetWhitePointRGB(uint Red, uint Green, uint Blue)
@@ -137,6 +155,7 @@ public unsafe partial struct IWICDevelopRaw : IWICDevelopRaw.Interface
         return ((delegate* unmanaged<IWICDevelopRaw*, uint, uint, uint, int>)(lpVtbl[16]))((IWICDevelopRaw*)Unsafe.AsPointer(ref this), Red, Green, Blue);
     }
 
+    /// <include file='IWICDevelopRaw.xml' path='doc/member[@name="IWICDevelopRaw.GetWhitePointRGB"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT GetWhitePointRGB(uint* pRed, uint* pGreen, uint* pBlue)
@@ -144,6 +163,7 @@ public unsafe partial struct IWICDevelopRaw : IWICDevelopRaw.Interface
         return ((delegate* unmanaged<IWICDevelopRaw*, uint*, uint*, uint*, int>)(lpVtbl[17]))((IWICDevelopRaw*)Unsafe.AsPointer(ref this), pRed, pGreen, pBlue);
     }
 
+    /// <include file='IWICDevelopRaw.xml' path='doc/member[@name="IWICDevelopRaw.SetNamedWhitePoint"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT SetNamedWhitePoint(WICNamedWhitePoint WhitePoint)
@@ -151,6 +171,7 @@ public unsafe partial struct IWICDevelopRaw : IWICDevelopRaw.Interface
         return ((delegate* unmanaged<IWICDevelopRaw*, WICNamedWhitePoint, int>)(lpVtbl[18]))((IWICDevelopRaw*)Unsafe.AsPointer(ref this), WhitePoint);
     }
 
+    /// <include file='IWICDevelopRaw.xml' path='doc/member[@name="IWICDevelopRaw.GetNamedWhitePoint"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT GetNamedWhitePoint(WICNamedWhitePoint* pWhitePoint)
@@ -158,6 +179,7 @@ public unsafe partial struct IWICDevelopRaw : IWICDevelopRaw.Interface
         return ((delegate* unmanaged<IWICDevelopRaw*, WICNamedWhitePoint*, int>)(lpVtbl[19]))((IWICDevelopRaw*)Unsafe.AsPointer(ref this), pWhitePoint);
     }
 
+    /// <include file='IWICDevelopRaw.xml' path='doc/member[@name="IWICDevelopRaw.SetWhitePointKelvin"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public HRESULT SetWhitePointKelvin(uint WhitePointKelvin)
@@ -165,6 +187,7 @@ public unsafe partial struct IWICDevelopRaw : IWICDevelopRaw.Interface
         return ((delegate* unmanaged<IWICDevelopRaw*, uint, int>)(lpVtbl[20]))((IWICDevelopRaw*)Unsafe.AsPointer(ref this), WhitePointKelvin);
     }
 
+    /// <include file='IWICDevelopRaw.xml' path='doc/member[@name="IWICDevelopRaw.GetWhitePointKelvin"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
     public HRESULT GetWhitePointKelvin(uint* pWhitePointKelvin)
@@ -172,6 +195,7 @@ public unsafe partial struct IWICDevelopRaw : IWICDevelopRaw.Interface
         return ((delegate* unmanaged<IWICDevelopRaw*, uint*, int>)(lpVtbl[21]))((IWICDevelopRaw*)Unsafe.AsPointer(ref this), pWhitePointKelvin);
     }
 
+    /// <include file='IWICDevelopRaw.xml' path='doc/member[@name="IWICDevelopRaw.GetKelvinRangeInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
     public HRESULT GetKelvinRangeInfo(uint* pMinKelvinTemp, uint* pMaxKelvinTemp, uint* pKelvinTempStepValue)
@@ -179,6 +203,7 @@ public unsafe partial struct IWICDevelopRaw : IWICDevelopRaw.Interface
         return ((delegate* unmanaged<IWICDevelopRaw*, uint*, uint*, uint*, int>)(lpVtbl[22]))((IWICDevelopRaw*)Unsafe.AsPointer(ref this), pMinKelvinTemp, pMaxKelvinTemp, pKelvinTempStepValue);
     }
 
+    /// <include file='IWICDevelopRaw.xml' path='doc/member[@name="IWICDevelopRaw.SetContrast"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
     public HRESULT SetContrast(double Contrast)
@@ -186,6 +211,7 @@ public unsafe partial struct IWICDevelopRaw : IWICDevelopRaw.Interface
         return ((delegate* unmanaged<IWICDevelopRaw*, double, int>)(lpVtbl[23]))((IWICDevelopRaw*)Unsafe.AsPointer(ref this), Contrast);
     }
 
+    /// <include file='IWICDevelopRaw.xml' path='doc/member[@name="IWICDevelopRaw.GetContrast"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(24)]
     public HRESULT GetContrast(double* pContrast)
@@ -193,6 +219,7 @@ public unsafe partial struct IWICDevelopRaw : IWICDevelopRaw.Interface
         return ((delegate* unmanaged<IWICDevelopRaw*, double*, int>)(lpVtbl[24]))((IWICDevelopRaw*)Unsafe.AsPointer(ref this), pContrast);
     }
 
+    /// <include file='IWICDevelopRaw.xml' path='doc/member[@name="IWICDevelopRaw.SetGamma"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(25)]
     public HRESULT SetGamma(double Gamma)
@@ -200,6 +227,7 @@ public unsafe partial struct IWICDevelopRaw : IWICDevelopRaw.Interface
         return ((delegate* unmanaged<IWICDevelopRaw*, double, int>)(lpVtbl[25]))((IWICDevelopRaw*)Unsafe.AsPointer(ref this), Gamma);
     }
 
+    /// <include file='IWICDevelopRaw.xml' path='doc/member[@name="IWICDevelopRaw.GetGamma"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(26)]
     public HRESULT GetGamma(double* pGamma)
@@ -207,6 +235,7 @@ public unsafe partial struct IWICDevelopRaw : IWICDevelopRaw.Interface
         return ((delegate* unmanaged<IWICDevelopRaw*, double*, int>)(lpVtbl[26]))((IWICDevelopRaw*)Unsafe.AsPointer(ref this), pGamma);
     }
 
+    /// <include file='IWICDevelopRaw.xml' path='doc/member[@name="IWICDevelopRaw.SetSharpness"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(27)]
     public HRESULT SetSharpness(double Sharpness)
@@ -214,6 +243,7 @@ public unsafe partial struct IWICDevelopRaw : IWICDevelopRaw.Interface
         return ((delegate* unmanaged<IWICDevelopRaw*, double, int>)(lpVtbl[27]))((IWICDevelopRaw*)Unsafe.AsPointer(ref this), Sharpness);
     }
 
+    /// <include file='IWICDevelopRaw.xml' path='doc/member[@name="IWICDevelopRaw.GetSharpness"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(28)]
     public HRESULT GetSharpness(double* pSharpness)
@@ -221,6 +251,7 @@ public unsafe partial struct IWICDevelopRaw : IWICDevelopRaw.Interface
         return ((delegate* unmanaged<IWICDevelopRaw*, double*, int>)(lpVtbl[28]))((IWICDevelopRaw*)Unsafe.AsPointer(ref this), pSharpness);
     }
 
+    /// <include file='IWICDevelopRaw.xml' path='doc/member[@name="IWICDevelopRaw.SetSaturation"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(29)]
     public HRESULT SetSaturation(double Saturation)
@@ -228,6 +259,7 @@ public unsafe partial struct IWICDevelopRaw : IWICDevelopRaw.Interface
         return ((delegate* unmanaged<IWICDevelopRaw*, double, int>)(lpVtbl[29]))((IWICDevelopRaw*)Unsafe.AsPointer(ref this), Saturation);
     }
 
+    /// <include file='IWICDevelopRaw.xml' path='doc/member[@name="IWICDevelopRaw.GetSaturation"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(30)]
     public HRESULT GetSaturation(double* pSaturation)
@@ -235,6 +267,7 @@ public unsafe partial struct IWICDevelopRaw : IWICDevelopRaw.Interface
         return ((delegate* unmanaged<IWICDevelopRaw*, double*, int>)(lpVtbl[30]))((IWICDevelopRaw*)Unsafe.AsPointer(ref this), pSaturation);
     }
 
+    /// <include file='IWICDevelopRaw.xml' path='doc/member[@name="IWICDevelopRaw.SetTint"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(31)]
     public HRESULT SetTint(double Tint)
@@ -242,6 +275,7 @@ public unsafe partial struct IWICDevelopRaw : IWICDevelopRaw.Interface
         return ((delegate* unmanaged<IWICDevelopRaw*, double, int>)(lpVtbl[31]))((IWICDevelopRaw*)Unsafe.AsPointer(ref this), Tint);
     }
 
+    /// <include file='IWICDevelopRaw.xml' path='doc/member[@name="IWICDevelopRaw.GetTint"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(32)]
     public HRESULT GetTint(double* pTint)
@@ -249,6 +283,7 @@ public unsafe partial struct IWICDevelopRaw : IWICDevelopRaw.Interface
         return ((delegate* unmanaged<IWICDevelopRaw*, double*, int>)(lpVtbl[32]))((IWICDevelopRaw*)Unsafe.AsPointer(ref this), pTint);
     }
 
+    /// <include file='IWICDevelopRaw.xml' path='doc/member[@name="IWICDevelopRaw.SetNoiseReduction"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(33)]
     public HRESULT SetNoiseReduction(double NoiseReduction)
@@ -256,6 +291,7 @@ public unsafe partial struct IWICDevelopRaw : IWICDevelopRaw.Interface
         return ((delegate* unmanaged<IWICDevelopRaw*, double, int>)(lpVtbl[33]))((IWICDevelopRaw*)Unsafe.AsPointer(ref this), NoiseReduction);
     }
 
+    /// <include file='IWICDevelopRaw.xml' path='doc/member[@name="IWICDevelopRaw.GetNoiseReduction"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(34)]
     public HRESULT GetNoiseReduction(double* pNoiseReduction)
@@ -263,6 +299,7 @@ public unsafe partial struct IWICDevelopRaw : IWICDevelopRaw.Interface
         return ((delegate* unmanaged<IWICDevelopRaw*, double*, int>)(lpVtbl[34]))((IWICDevelopRaw*)Unsafe.AsPointer(ref this), pNoiseReduction);
     }
 
+    /// <include file='IWICDevelopRaw.xml' path='doc/member[@name="IWICDevelopRaw.SetDestinationColorContext"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(35)]
     public HRESULT SetDestinationColorContext(IWICColorContext* pColorContext)
@@ -270,6 +307,7 @@ public unsafe partial struct IWICDevelopRaw : IWICDevelopRaw.Interface
         return ((delegate* unmanaged<IWICDevelopRaw*, IWICColorContext*, int>)(lpVtbl[35]))((IWICDevelopRaw*)Unsafe.AsPointer(ref this), pColorContext);
     }
 
+    /// <include file='IWICDevelopRaw.xml' path='doc/member[@name="IWICDevelopRaw.SetToneCurve"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(36)]
     public HRESULT SetToneCurve(uint cbToneCurveSize, [NativeTypeName("const WICRawToneCurve *")] WICRawToneCurve* pToneCurve)
@@ -277,6 +315,7 @@ public unsafe partial struct IWICDevelopRaw : IWICDevelopRaw.Interface
         return ((delegate* unmanaged<IWICDevelopRaw*, uint, WICRawToneCurve*, int>)(lpVtbl[36]))((IWICDevelopRaw*)Unsafe.AsPointer(ref this), cbToneCurveSize, pToneCurve);
     }
 
+    /// <include file='IWICDevelopRaw.xml' path='doc/member[@name="IWICDevelopRaw.GetToneCurve"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(37)]
     public HRESULT GetToneCurve(uint cbToneCurveBufferSize, WICRawToneCurve* pToneCurve, uint* pcbActualToneCurveBufferSize)
@@ -284,6 +323,7 @@ public unsafe partial struct IWICDevelopRaw : IWICDevelopRaw.Interface
         return ((delegate* unmanaged<IWICDevelopRaw*, uint, WICRawToneCurve*, uint*, int>)(lpVtbl[37]))((IWICDevelopRaw*)Unsafe.AsPointer(ref this), cbToneCurveBufferSize, pToneCurve, pcbActualToneCurveBufferSize);
     }
 
+    /// <include file='IWICDevelopRaw.xml' path='doc/member[@name="IWICDevelopRaw.SetRotation"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(38)]
     public HRESULT SetRotation(double Rotation)
@@ -291,6 +331,7 @@ public unsafe partial struct IWICDevelopRaw : IWICDevelopRaw.Interface
         return ((delegate* unmanaged<IWICDevelopRaw*, double, int>)(lpVtbl[38]))((IWICDevelopRaw*)Unsafe.AsPointer(ref this), Rotation);
     }
 
+    /// <include file='IWICDevelopRaw.xml' path='doc/member[@name="IWICDevelopRaw.GetRotation"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(39)]
     public HRESULT GetRotation(double* pRotation)
@@ -298,6 +339,7 @@ public unsafe partial struct IWICDevelopRaw : IWICDevelopRaw.Interface
         return ((delegate* unmanaged<IWICDevelopRaw*, double*, int>)(lpVtbl[39]))((IWICDevelopRaw*)Unsafe.AsPointer(ref this), pRotation);
     }
 
+    /// <include file='IWICDevelopRaw.xml' path='doc/member[@name="IWICDevelopRaw.SetRenderMode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(40)]
     public HRESULT SetRenderMode(WICRawRenderMode RenderMode)
@@ -305,6 +347,7 @@ public unsafe partial struct IWICDevelopRaw : IWICDevelopRaw.Interface
         return ((delegate* unmanaged<IWICDevelopRaw*, WICRawRenderMode, int>)(lpVtbl[40]))((IWICDevelopRaw*)Unsafe.AsPointer(ref this), RenderMode);
     }
 
+    /// <include file='IWICDevelopRaw.xml' path='doc/member[@name="IWICDevelopRaw.GetRenderMode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(41)]
     public HRESULT GetRenderMode(WICRawRenderMode* pRenderMode)
@@ -312,6 +355,7 @@ public unsafe partial struct IWICDevelopRaw : IWICDevelopRaw.Interface
         return ((delegate* unmanaged<IWICDevelopRaw*, WICRawRenderMode*, int>)(lpVtbl[41]))((IWICDevelopRaw*)Unsafe.AsPointer(ref this), pRenderMode);
     }
 
+    /// <include file='IWICDevelopRaw.xml' path='doc/member[@name="IWICDevelopRaw.SetNotificationCallback"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(42)]
     public HRESULT SetNotificationCallback(IWICDevelopRawNotificationCallback* pCallback)

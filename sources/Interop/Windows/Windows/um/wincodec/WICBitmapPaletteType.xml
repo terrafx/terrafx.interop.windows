@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WICBitmapPaletteType">
+    <summary>
+      <para>Specifies the type of palette used for an indexed image format.</para>
+    </summary>
+  </member>
+  <member name="WICBitmapPaletteType.WICBitmapPaletteTypeCustom">
+    <summary>
+      <para>An arbitrary custom palette provided by caller.</para>
+    </summary>
+  </member>
+  <member name="WICBitmapPaletteType.WICBitmapPaletteTypeMedianCut">
+    <summary>
+      <para>An optimal palette generated using a median-cut algorithm. Derived from the colors in an image.</para>
+    </summary>
+  </member>
+  <member name="WICBitmapPaletteType.WICBitmapPaletteTypeFixedBW">
+    <summary>
+      <para>A black and white palette.</para>
+    </summary>
+  </member>
+  <member name="WICBitmapPaletteType.WICBitmapPaletteTypeFixedHalftone8">
+    <summary>
+      <para>A palette that has its 8-color on-off primaries and the 16 system colors added. With duplicates removed, 16 colors are available.</para>
+    </summary>
+  </member>
+  <member name="WICBitmapPaletteType.WICBitmapPaletteTypeFixedHalftone27">
+    <summary>
+      <para>A palette that has 3 intensity levels of each primary: 27-color on-off primaries and the 16 system colors added. With duplicates removed, 35 colors are available.</para>
+    </summary>
+  </member>
+  <member name="WICBitmapPaletteType.WICBitmapPaletteTypeFixedHalftone64">
+    <summary>
+      <para>A palette that has 4 intensity levels of each primary: 64-color on-off primaries and the 16 system colors added. With duplicates removed, 72 colors are available.</para>
+    </summary>
+  </member>
+  <member name="WICBitmapPaletteType.WICBitmapPaletteTypeFixedHalftone125">
+    <summary>
+      <para>A palette that has 5 intensity levels of each primary: 125-color on-off primaries and the 16 system colors added. With duplicates removed, 133 colors are available.</para>
+    </summary>
+  </member>
+  <member name="WICBitmapPaletteType.WICBitmapPaletteTypeFixedHalftone216">
+    <summary>
+      <para>A palette that has 6 intensity levels of each primary: 216-color on-off primaries and the 16 system colors added. With duplicates removed, 224 colors are available. This is the same as <b>WICBitmapPaletteFixedHalftoneWeb</b>.</para>
+    </summary>
+  </member>
+  <member name="WICBitmapPaletteType.WICBitmapPaletteTypeFixedWebPalette">
+    <summary>
+      <para>A palette that has 6 intensity levels of each primary: 216-color on-off primaries and the 16 system colors added. With duplicates removed, 224 colors are available. This is the same as <b>WICBitmapPaletteTypeFixedHalftone216</b>.</para>
+    </summary>
+  </member>
+  <member name="WICBitmapPaletteType.WICBitmapPaletteTypeFixedHalftone252">
+    <summary>
+      <para>A palette that has its 252-color on-off primaries and the 16 system colors added. With duplicates removed, 256 colors are available.</para>
+    </summary>
+  </member>
+  <member name="WICBitmapPaletteType.WICBitmapPaletteTypeFixedHalftone256">
+    <summary>
+      <para>A palette that has its 256-color on-off primaries and the 16 system colors added. With duplicates removed, 256 colors are available.</para>
+    </summary>
+  </member>
+  <member name="WICBitmapPaletteType.WICBitmapPaletteTypeFixedGray4">
+    <summary>
+      <para>A palette that has 4 shades of gray.</para>
+    </summary>
+  </member>
+  <member name="WICBitmapPaletteType.WICBitmapPaletteTypeFixedGray16">
+    <summary>
+      <para>A palette that has 16 shades of gray.</para>
+    </summary>
+  </member>
+  <member name="WICBitmapPaletteType.WICBitmapPaletteTypeFixedGray256">
+    <summary>
+      <para>A palette that has 256 shades of gray.</para>
+    </summary>
+  </member>
+  <member name="WICBitmapPaletteType.WICBITMAPPALETTETYPE_FORCE_DWORD">
+    <summary></summary>
+  </member>
+</doc>

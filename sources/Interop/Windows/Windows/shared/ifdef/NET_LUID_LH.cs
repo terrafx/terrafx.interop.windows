@@ -8,21 +8,26 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NET_LUID_LH.xml' path='doc/member[@name="NET_LUID_LH"]/*' />
 [StructLayout(LayoutKind.Explicit)]
 public partial struct NET_LUID_LH
 {
+    /// <include file='NET_LUID_LH.xml' path='doc/member[@name="NET_LUID_LH.Value"]/*' />
     [FieldOffset(0)]
     [NativeTypeName("ULONG64")]
     public ulong Value;
 
+    /// <include file='NET_LUID_LH.xml' path='doc/member[@name="NET_LUID_LH.Info"]/*' />
     [FieldOffset(0)]
     [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/ifdef.h:121:5)")]
     public _Info_e__Struct Info;
 
+    /// <include file='_Info_e__Struct.xml' path='doc/member[@name="_Info_e__Struct"]/*' />
     public partial struct _Info_e__Struct
     {
         public ulong _bitfield;
 
+        /// <include file='_Info_e__Struct.xml' path='doc/member[@name="_Info_e__Struct.Reserved"]/*' />
         [NativeTypeName("ULONG64 : 24")]
         public ulong Reserved
         {
@@ -39,6 +44,7 @@ public partial struct NET_LUID_LH
             }
         }
 
+        /// <include file='_Info_e__Struct.xml' path='doc/member[@name="_Info_e__Struct.NetLuidIndex"]/*' />
         [NativeTypeName("ULONG64 : 24")]
         public ulong NetLuidIndex
         {
@@ -55,6 +61,7 @@ public partial struct NET_LUID_LH
             }
         }
 
+        /// <include file='_Info_e__Struct.xml' path='doc/member[@name="_Info_e__Struct.IfType"]/*' />
         [NativeTypeName("ULONG64 : 16")]
         public ulong IfType
         {

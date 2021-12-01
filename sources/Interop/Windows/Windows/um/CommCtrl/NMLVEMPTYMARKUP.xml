@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="NMLVEMPTYMARKUP">
+    <summary>
+      <para>Contains information used with the <a href="https://docs.microsoft.com//windows/desktop/Controls/lvn-getemptymarkup">LVN_GETEMPTYMARKUP</a> notification code.</para>
+    </summary>
+  </member>
+  <member name="NMLVEMPTYMARKUP.hdr">
+    <summary>
+      <para>Type: <b><see cref="NMHDR" /></b></para>
+      <para>Info on the notification message.</para>
+    </summary>
+  </member>
+  <member name="NMLVEMPTYMARKUP.dwFlags">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">DWORD</a></b></para>
+      <para>One of the following values. If <b>NULL</b>, markup is rendered left-justified in the listview area.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>EMF_CENTERED</b>
+          </description>
+          <description>
+            <para>Render markup centered in the listview area.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="NMLVEMPTYMARKUP.szMarkup">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">WCHAR</a>[L_MAX_URL_LENGTH]</b></para>
+      <para>Markup to display.</para>
+    </summary>
+  </member>
+</doc>

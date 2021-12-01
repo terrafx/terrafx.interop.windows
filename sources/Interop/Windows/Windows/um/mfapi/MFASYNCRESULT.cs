@@ -8,23 +8,30 @@ using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MFASYNCRESULT.xml' path='doc/member[@name="MFASYNCRESULT"]/*' />
 [NativeTypeName("struct tagMFASYNCRESULT : IMFAsyncResult")]
 [NativeInheritance("IMFAsyncResult")]
 public unsafe partial struct MFASYNCRESULT : MFASYNCRESULT.Interface
 {
     public void** lpVtbl;
 
+    /// <include file='MFASYNCRESULT.xml' path='doc/member[@name="MFASYNCRESULT.overlapped"]/*' />
     public OVERLAPPED overlapped;
 
+    /// <include file='MFASYNCRESULT.xml' path='doc/member[@name="MFASYNCRESULT.pCallback"]/*' />
     public IMFAsyncCallback* pCallback;
 
+    /// <include file='MFASYNCRESULT.xml' path='doc/member[@name="MFASYNCRESULT.hrStatusResult"]/*' />
     public HRESULT hrStatusResult;
 
+    /// <include file='MFASYNCRESULT.xml' path='doc/member[@name="MFASYNCRESULT.dwBytesTransferred"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwBytesTransferred;
 
+    /// <include file='MFASYNCRESULT.xml' path='doc/member[@name="MFASYNCRESULT.hEvent"]/*' />
     public HANDLE hEvent;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -32,6 +39,7 @@ public unsafe partial struct MFASYNCRESULT : MFASYNCRESULT.Interface
         return ((delegate* unmanaged<MFASYNCRESULT*, Guid*, void**, int>)(lpVtbl[0]))((MFASYNCRESULT*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +48,7 @@ public unsafe partial struct MFASYNCRESULT : MFASYNCRESULT.Interface
         return ((delegate* unmanaged<MFASYNCRESULT*, uint>)(lpVtbl[1]))((MFASYNCRESULT*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -48,6 +57,7 @@ public unsafe partial struct MFASYNCRESULT : MFASYNCRESULT.Interface
         return ((delegate* unmanaged<MFASYNCRESULT*, uint>)(lpVtbl[2]))((MFASYNCRESULT*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IMFAsyncResult.GetState" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetState(IUnknown** ppunkState)
@@ -55,6 +65,7 @@ public unsafe partial struct MFASYNCRESULT : MFASYNCRESULT.Interface
         return ((delegate* unmanaged<MFASYNCRESULT*, IUnknown**, int>)(lpVtbl[3]))((MFASYNCRESULT*)Unsafe.AsPointer(ref this), ppunkState);
     }
 
+    /// <inheritdoc cref="IMFAsyncResult.GetStatus" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetStatus()
@@ -62,6 +73,7 @@ public unsafe partial struct MFASYNCRESULT : MFASYNCRESULT.Interface
         return ((delegate* unmanaged<MFASYNCRESULT*, int>)(lpVtbl[4]))((MFASYNCRESULT*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IMFAsyncResult.SetStatus" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetStatus(HRESULT hrStatus)
@@ -69,6 +81,7 @@ public unsafe partial struct MFASYNCRESULT : MFASYNCRESULT.Interface
         return ((delegate* unmanaged<MFASYNCRESULT*, HRESULT, int>)(lpVtbl[5]))((MFASYNCRESULT*)Unsafe.AsPointer(ref this), hrStatus);
     }
 
+    /// <inheritdoc cref="IMFAsyncResult.GetObject" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetObject(IUnknown** ppObject)
@@ -76,6 +89,7 @@ public unsafe partial struct MFASYNCRESULT : MFASYNCRESULT.Interface
         return ((delegate* unmanaged<MFASYNCRESULT*, IUnknown**, int>)(lpVtbl[6]))((MFASYNCRESULT*)Unsafe.AsPointer(ref this), ppObject);
     }
 
+    /// <inheritdoc cref="IMFAsyncResult.GetStateNoAddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public IUnknown* GetStateNoAddRef()

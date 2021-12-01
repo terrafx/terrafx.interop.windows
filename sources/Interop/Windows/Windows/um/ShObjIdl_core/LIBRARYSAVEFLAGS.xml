@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="LIBRARYSAVEFLAGS">
+    <summary>
+      <para>Specifies the options for handling a name collision when saving a library.</para>
+    </summary>
+    <remarks>
+      <h3>Used By</h3>
+      <list type="bullet">
+        <item>
+          <description>
+            <see cref="IShellLibrary.Save" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IShellLibrary.SaveInKnownFolder" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="SHSaveLibraryInFolderPath" />
+          </description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="IShellLibrary" />
+  </member>
+  <member name="LIBRARYSAVEFLAGS.LSF_FAILIFTHERE">
+    <summary>
+      <para>If a library with the same name already exists, the save operation fails.</para>
+    </summary>
+  </member>
+  <member name="LIBRARYSAVEFLAGS.LSF_OVERRIDEEXISTING">
+    <summary>
+      <para>If a library with the same name already exists, the save operation overwrites the existing library.</para>
+    </summary>
+  </member>
+  <member name="LIBRARYSAVEFLAGS.LSF_MAKEUNIQUENAME">
+    <summary>
+      <para>If a library with the same name already exists, the save operation generates a new, unique name for the library.</para>
+    </summary>
+  </member>
+</doc>

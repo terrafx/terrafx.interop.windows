@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ICMP_ERROR_INFO">
+    <summary>
+      <para>Used to store received ICMP error information.</para>
+    </summary>
+  </member>
+  <member name="ICMP_ERROR_INFO.srcaddress">
+    <summary>
+      <para>Type: <b><see cref="SOCKADDR_INET" /></b></para>
+      <para>The source IP address of the ICMP error.</para>
+    </summary>
+  </member>
+  <member name="ICMP_ERROR_INFO.protocol">
+    <summary>
+      <para>Type: <b>IPPROTO</b></para>
+      <para>The protocol of the ICMP error (either <b>IPPROTO_ICMP</b> or <b>IPPROTO_ICMPV6</b>).</para>
+    </summary>
+  </member>
+  <member name="ICMP_ERROR_INFO.type">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">UINT8</a></b></para>
+      <para>The ICMP error type.</para>
+    </summary>
+  </member>
+  <member name="ICMP_ERROR_INFO.code">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">UINT8</a></b></para>
+      <para>The ICMP error code.</para>
+    </summary>
+  </member>
+</doc>

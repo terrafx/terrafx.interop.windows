@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='RM_UNIQUE_PROCESS.xml' path='doc/member[@name="RM_UNIQUE_PROCESS"]/*' />
 public partial struct RM_UNIQUE_PROCESS
 {
+    /// <include file='RM_UNIQUE_PROCESS.xml' path='doc/member[@name="RM_UNIQUE_PROCESS.dwProcessId"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwProcessId;
 
+    /// <include file='RM_UNIQUE_PROCESS.xml' path='doc/member[@name="RM_UNIQUE_PROCESS.ProcessStartTime"]/*' />
     public FILETIME ProcessStartTime;
 }

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="_MFP_MEDIAITEM_CHARACTERISTICS">
+    <summary>
+      <para>
+        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</para>
+      <para>Contains flags that describe a media item.</para>
+    </summary>
+    <remarks>
+      <para>The following <b>typedef</b> is defined for combining flags from this enumeration.</para>
+      <code>typedef UINT32 MFP_MEDIAITEM_CHARACTERISTICS;
+</code>
+    </remarks>
+    <seealso cref="IMFPMediaItem.GetCharacteristics" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+  </member>
+  <member name="_MFP_MEDIAITEM_CHARACTERISTICS.MFP_MEDIAITEM_IS_LIVE">
+    <summary>
+      <para>The media item represents a live data source, such as video camera. If playback is stopped and then restarted, there will be a gap in the content.</para>
+    </summary>
+  </member>
+  <member name="_MFP_MEDIAITEM_CHARACTERISTICS.MFP_MEDIAITEM_CAN_SEEK">
+    <summary>
+      <para>The media item supports seeking. If this flag is absent, the <see cref="IMFPMediaPlayer.SetPosition" /> method will fail.</para>
+    </summary>
+  </member>
+  <member name="_MFP_MEDIAITEM_CHARACTERISTICS.MFP_MEDIAITEM_CAN_PAUSE">
+    <summary>
+      <para>The media item can pause. If this flag is absent, the <see cref="IMFPMediaPlayer.Pause" /> method will likely fail.</para>
+    </summary>
+  </member>
+  <member name="_MFP_MEDIAITEM_CHARACTERISTICS.MFP_MEDIAITEM_HAS_SLOW_SEEK">
+    <summary>
+      <para>Seeking can take a long time. For example, the source might download content through HTTP.</para>
+    </summary>
+  </member>
+</doc>

@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MSISOURCETYPE.xml' path='doc/member[@name="MSISOURCETYPE"]/*' />
 public enum MSISOURCETYPE
 {
+    /// <include file='MSISOURCETYPE.xml' path='doc/member[@name="MSISOURCETYPE.MSISOURCETYPE_UNKNOWN"]/*' />
     MSISOURCETYPE_UNKNOWN = 0x00000000,
+
+    /// <include file='MSISOURCETYPE.xml' path='doc/member[@name="MSISOURCETYPE.MSISOURCETYPE_NETWORK"]/*' />
     MSISOURCETYPE_NETWORK = 0x00000001,
+
+    /// <include file='MSISOURCETYPE.xml' path='doc/member[@name="MSISOURCETYPE.MSISOURCETYPE_URL"]/*' />
     MSISOURCETYPE_URL = 0x00000002,
+
+    /// <include file='MSISOURCETYPE.xml' path='doc/member[@name="MSISOURCETYPE.MSISOURCETYPE_MEDIA"]/*' />
     MSISOURCETYPE_MEDIA = 0x00000004,
 }

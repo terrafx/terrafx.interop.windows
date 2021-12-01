@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WINHTTP_WEB_SOCKET_BUFFER_TYPE">
+    <summary>
+      <para>The <b>WINHTTP_WEB_SOCKET_BUFFER_TYPE</b> enumeration includes types of WebSocket buffers.</para>
+    </summary>
+  </member>
+  <member name="WINHTTP_WEB_SOCKET_BUFFER_TYPE.WINHTTP_WEB_SOCKET_BINARY_MESSAGE_BUFFER_TYPE">
+    <summary>
+      <para>Buffer contains either the entire binary message or the last part of it.</para>
+    </summary>
+  </member>
+  <member name="WINHTTP_WEB_SOCKET_BUFFER_TYPE.WINHTTP_WEB_SOCKET_BINARY_FRAGMENT_BUFFER_TYPE">
+    <summary>
+      <para>Buffer contains only part of a binary message.</para>
+    </summary>
+  </member>
+  <member name="WINHTTP_WEB_SOCKET_BUFFER_TYPE.WINHTTP_WEB_SOCKET_UTF8_MESSAGE_BUFFER_TYPE">
+    <summary>
+      <para>Buffer contains either the entire UTF-8 message or the last part of it.</para>
+    </summary>
+  </member>
+  <member name="WINHTTP_WEB_SOCKET_BUFFER_TYPE.WINHTTP_WEB_SOCKET_UTF8_FRAGMENT_BUFFER_TYPE">
+    <summary>
+      <para>Buffer contains only part of a UTF-8 message.</para>
+    </summary>
+  </member>
+  <member name="WINHTTP_WEB_SOCKET_BUFFER_TYPE.WINHTTP_WEB_SOCKET_CLOSE_BUFFER_TYPE">
+    <summary>
+      <para>The server sent a close frame.</para>
+    </summary>
+  </member>
+</doc>

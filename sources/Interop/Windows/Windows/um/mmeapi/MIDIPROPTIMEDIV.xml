@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MIDIPROPTIMEDIV">
+    <summary>
+      <para>The <b>MIDIPROPTIMEDIV</b> structure contains the time division property for a stream.</para>
+    </summary>
+    <remarks>
+      <para>The time division property is read or written by the <a href="https://docs.microsoft.com//previous-versions/dd798490(v=vs.85)">midiStreamProperty</a> function.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Multimedia/midi-structures">MIDI Structures</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Multimedia/musical-instrument-digital-interface--midi">Musical Instrument Digital Interface (MIDI)</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/dd798490(v=vs.85)">midiStreamProperty</seealso>
+  </member>
+  <member name="MIDIPROPTIMEDIV.cbStruct">
+    <summary>
+      <para>Length, in bytes, of this structure. This member must be filled in for both the MIDIPROP_SET and MIDIPROP_GET operations of the <a href="https://docs.microsoft.com//previous-versions/dd798490(v=vs.85)">midiStreamProperty</a> function.</para>
+    </summary>
+  </member>
+  <member name="MIDIPROPTIMEDIV.dwTimeDiv">
+    <summary>
+      <para>Time division for this stream, in the format specified in the <i>Standard MIDI Files 1.0</i> specification. The low 16 bits of this <b>DWORD</b> value contain the time division. This member is set in a MIDIPROP_SET operation and is filled on return from a MIDIPROP_GET operation.</para>
+    </summary>
+  </member>
+</doc>

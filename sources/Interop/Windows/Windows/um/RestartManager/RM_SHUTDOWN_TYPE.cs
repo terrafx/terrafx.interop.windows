@@ -7,9 +7,13 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='RM_SHUTDOWN_TYPE.xml' path='doc/member[@name="RM_SHUTDOWN_TYPE"]/*' />
 [Flags]
 public enum RM_SHUTDOWN_TYPE
 {
+    /// <include file='RM_SHUTDOWN_TYPE.xml' path='doc/member[@name="RM_SHUTDOWN_TYPE.RmForceShutdown"]/*' />
     RmForceShutdown = 0x1,
+
+    /// <include file='RM_SHUTDOWN_TYPE.xml' path='doc/member[@name="RM_SHUTDOWN_TYPE.RmShutdownOnlyRegistered"]/*' />
     RmShutdownOnlyRegistered = 0x10,
 }

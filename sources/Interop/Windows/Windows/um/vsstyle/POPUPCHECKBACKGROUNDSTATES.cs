@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='POPUPCHECKBACKGROUNDSTATES.xml' path='doc/member[@name="POPUPCHECKBACKGROUNDSTATES"]/*' />
 public enum POPUPCHECKBACKGROUNDSTATES
 {
+    /// <include file='POPUPCHECKBACKGROUNDSTATES.xml' path='doc/member[@name="POPUPCHECKBACKGROUNDSTATES.MCB_DISABLED"]/*' />
     MCB_DISABLED = 1,
+
+    /// <include file='POPUPCHECKBACKGROUNDSTATES.xml' path='doc/member[@name="POPUPCHECKBACKGROUNDSTATES.MCB_NORMAL"]/*' />
     MCB_NORMAL = 2,
+
+    /// <include file='POPUPCHECKBACKGROUNDSTATES.xml' path='doc/member[@name="POPUPCHECKBACKGROUNDSTATES.MCB_BITMAP"]/*' />
     MCB_BITMAP = 3,
 }

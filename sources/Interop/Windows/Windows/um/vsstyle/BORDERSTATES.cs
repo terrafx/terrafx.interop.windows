@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='BORDERSTATES.xml' path='doc/member[@name="BORDERSTATES"]/*' />
 public enum BORDERSTATES
 {
+    /// <include file='BORDERSTATES.xml' path='doc/member[@name="BORDERSTATES.CBB_NORMAL"]/*' />
     CBB_NORMAL = 1,
+
+    /// <include file='BORDERSTATES.xml' path='doc/member[@name="BORDERSTATES.CBB_HOT"]/*' />
     CBB_HOT = 2,
+
+    /// <include file='BORDERSTATES.xml' path='doc/member[@name="BORDERSTATES.CBB_FOCUSED"]/*' />
     CBB_FOCUSED = 3,
+
+    /// <include file='BORDERSTATES.xml' path='doc/member[@name="BORDERSTATES.CBB_DISABLED"]/*' />
     CBB_DISABLED = 4,
 }

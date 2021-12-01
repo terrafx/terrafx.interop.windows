@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IPropertyStore.xml' path='doc/member[@name="IPropertyStore"]/*' />
 [Guid("886D8EEB-8CF2-4446-8D02-CDBA1DBDCF99")]
 [NativeTypeName("struct IPropertyStore : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IPropertyStore : IPropertyStore.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IPropertyStore : IPropertyStore.Interface
         return ((delegate* unmanaged<IPropertyStore*, Guid*, void**, int>)(lpVtbl[0]))((IPropertyStore*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IPropertyStore : IPropertyStore.Interface
         return ((delegate* unmanaged<IPropertyStore*, uint>)(lpVtbl[1]))((IPropertyStore*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IPropertyStore : IPropertyStore.Interface
         return ((delegate* unmanaged<IPropertyStore*, uint>)(lpVtbl[2]))((IPropertyStore*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IPropertyStore.xml' path='doc/member[@name="IPropertyStore.GetCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetCount([NativeTypeName("DWORD *")] uint* cProps)
@@ -46,6 +51,7 @@ public unsafe partial struct IPropertyStore : IPropertyStore.Interface
         return ((delegate* unmanaged<IPropertyStore*, uint*, int>)(lpVtbl[3]))((IPropertyStore*)Unsafe.AsPointer(ref this), cProps);
     }
 
+    /// <include file='IPropertyStore.xml' path='doc/member[@name="IPropertyStore.GetAt"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetAt([NativeTypeName("DWORD")] uint iProp, PROPERTYKEY* pkey)
@@ -53,6 +59,7 @@ public unsafe partial struct IPropertyStore : IPropertyStore.Interface
         return ((delegate* unmanaged<IPropertyStore*, uint, PROPERTYKEY*, int>)(lpVtbl[4]))((IPropertyStore*)Unsafe.AsPointer(ref this), iProp, pkey);
     }
 
+    /// <include file='IPropertyStore.xml' path='doc/member[@name="IPropertyStore.GetValue"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetValue([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key, PROPVARIANT* pv)
@@ -60,6 +67,7 @@ public unsafe partial struct IPropertyStore : IPropertyStore.Interface
         return ((delegate* unmanaged<IPropertyStore*, PROPERTYKEY*, PROPVARIANT*, int>)(lpVtbl[5]))((IPropertyStore*)Unsafe.AsPointer(ref this), key, pv);
     }
 
+    /// <include file='IPropertyStore.xml' path='doc/member[@name="IPropertyStore.SetValue"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT SetValue([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key, [NativeTypeName("const PROPVARIANT &")] PROPVARIANT* propvar)
@@ -67,6 +75,7 @@ public unsafe partial struct IPropertyStore : IPropertyStore.Interface
         return ((delegate* unmanaged<IPropertyStore*, PROPERTYKEY*, PROPVARIANT*, int>)(lpVtbl[6]))((IPropertyStore*)Unsafe.AsPointer(ref this), key, propvar);
     }
 
+    /// <include file='IPropertyStore.xml' path='doc/member[@name="IPropertyStore.Commit"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT Commit()

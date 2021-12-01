@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CSV_CONTROL_PARAM.xml' path='doc/member[@name="CSV_CONTROL_PARAM"]/*' />
 public partial struct CSV_CONTROL_PARAM
 {
+    /// <include file='CSV_CONTROL_PARAM.xml' path='doc/member[@name="CSV_CONTROL_PARAM.Operation"]/*' />
     public CSV_CONTROL_OP Operation;
 
+    /// <include file='CSV_CONTROL_PARAM.xml' path='doc/member[@name="CSV_CONTROL_PARAM.Unused"]/*' />
     [NativeTypeName("LONGLONG")]
     public long Unused;
 }

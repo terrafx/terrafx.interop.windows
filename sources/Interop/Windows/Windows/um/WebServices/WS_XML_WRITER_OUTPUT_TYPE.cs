@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_XML_WRITER_OUTPUT_TYPE.xml' path='doc/member[@name="WS_XML_WRITER_OUTPUT_TYPE"]/*' />
 public enum WS_XML_WRITER_OUTPUT_TYPE
 {
+    /// <include file='WS_XML_WRITER_OUTPUT_TYPE.xml' path='doc/member[@name="WS_XML_WRITER_OUTPUT_TYPE.WS_XML_WRITER_OUTPUT_TYPE_BUFFER"]/*' />
     WS_XML_WRITER_OUTPUT_TYPE_BUFFER = 1,
+
+    /// <include file='WS_XML_WRITER_OUTPUT_TYPE.xml' path='doc/member[@name="WS_XML_WRITER_OUTPUT_TYPE.WS_XML_WRITER_OUTPUT_TYPE_STREAM"]/*' />
     WS_XML_WRITER_OUTPUT_TYPE_STREAM = 2,
 }

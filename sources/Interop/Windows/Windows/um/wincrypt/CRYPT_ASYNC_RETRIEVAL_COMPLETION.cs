@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CRYPT_ASYNC_RETRIEVAL_COMPLETION.xml' path='doc/member[@name="CRYPT_ASYNC_RETRIEVAL_COMPLETION"]/*' />
 public unsafe partial struct CRYPT_ASYNC_RETRIEVAL_COMPLETION
 {
+    /// <include file='CRYPT_ASYNC_RETRIEVAL_COMPLETION.xml' path='doc/member[@name="CRYPT_ASYNC_RETRIEVAL_COMPLETION.pfnCompletion"]/*' />
     [NativeTypeName("PFN_CRYPT_ASYNC_RETRIEVAL_COMPLETION_FUNC")]
     public delegate* unmanaged<void*, uint, sbyte*, sbyte*, void*, void> pfnCompletion;
 
+    /// <include file='CRYPT_ASYNC_RETRIEVAL_COMPLETION.xml' path='doc/member[@name="CRYPT_ASYNC_RETRIEVAL_COMPLETION.pvCompletion"]/*' />
     [NativeTypeName("LPVOID")]
     public void* pvCompletion;
 }

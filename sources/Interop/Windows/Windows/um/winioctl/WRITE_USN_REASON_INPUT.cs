@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WRITE_USN_REASON_INPUT.xml' path='doc/member[@name="WRITE_USN_REASON_INPUT"]/*' />
 public partial struct WRITE_USN_REASON_INPUT
 {
+    /// <include file='WRITE_USN_REASON_INPUT.xml' path='doc/member[@name="WRITE_USN_REASON_INPUT.Flags"]/*' />
     [NativeTypeName("DWORD")]
     public uint Flags;
 
+    /// <include file='WRITE_USN_REASON_INPUT.xml' path='doc/member[@name="WRITE_USN_REASON_INPUT.UsnReasonToWrite"]/*' />
     [NativeTypeName("DWORD")]
     public uint UsnReasonToWrite;
 }

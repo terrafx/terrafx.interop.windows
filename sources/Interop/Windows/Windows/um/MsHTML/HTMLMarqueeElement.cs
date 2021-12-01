@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HTMLMarqueeElement.xml' path='doc/member[@name="HTMLMarqueeElement"]/*' />
 [Guid("3050F2B9-98B5-11CF-BB82-00AA00BDCE0B")]
 public partial struct HTMLMarqueeElement
 {

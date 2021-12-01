@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFMediaEventQueue.xml' path='doc/member[@name="IMFMediaEventQueue"]/*' />
 [Guid("36F846FC-2256-48B6-B58E-E2B638316581")]
 [NativeTypeName("struct IMFMediaEventQueue : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMFMediaEventQueue : IMFMediaEventQueue.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMFMediaEventQueue : IMFMediaEventQueue.Interface
         return ((delegate* unmanaged<IMFMediaEventQueue*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaEventQueue*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMFMediaEventQueue : IMFMediaEventQueue.Interface
         return ((delegate* unmanaged<IMFMediaEventQueue*, uint>)(lpVtbl[1]))((IMFMediaEventQueue*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMFMediaEventQueue : IMFMediaEventQueue.Interface
         return ((delegate* unmanaged<IMFMediaEventQueue*, uint>)(lpVtbl[2]))((IMFMediaEventQueue*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFMediaEventQueue.xml' path='doc/member[@name="IMFMediaEventQueue.GetEvent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetEvent([NativeTypeName("DWORD")] uint dwFlags, IMFMediaEvent** ppEvent)
@@ -46,6 +51,7 @@ public unsafe partial struct IMFMediaEventQueue : IMFMediaEventQueue.Interface
         return ((delegate* unmanaged<IMFMediaEventQueue*, uint, IMFMediaEvent**, int>)(lpVtbl[3]))((IMFMediaEventQueue*)Unsafe.AsPointer(ref this), dwFlags, ppEvent);
     }
 
+    /// <include file='IMFMediaEventQueue.xml' path='doc/member[@name="IMFMediaEventQueue.BeginGetEvent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT BeginGetEvent(IMFAsyncCallback* pCallback, IUnknown* punkState)
@@ -53,6 +59,7 @@ public unsafe partial struct IMFMediaEventQueue : IMFMediaEventQueue.Interface
         return ((delegate* unmanaged<IMFMediaEventQueue*, IMFAsyncCallback*, IUnknown*, int>)(lpVtbl[4]))((IMFMediaEventQueue*)Unsafe.AsPointer(ref this), pCallback, punkState);
     }
 
+    /// <include file='IMFMediaEventQueue.xml' path='doc/member[@name="IMFMediaEventQueue.EndGetEvent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT EndGetEvent(IMFAsyncResult* pResult, IMFMediaEvent** ppEvent)
@@ -60,6 +67,7 @@ public unsafe partial struct IMFMediaEventQueue : IMFMediaEventQueue.Interface
         return ((delegate* unmanaged<IMFMediaEventQueue*, IMFAsyncResult*, IMFMediaEvent**, int>)(lpVtbl[5]))((IMFMediaEventQueue*)Unsafe.AsPointer(ref this), pResult, ppEvent);
     }
 
+    /// <include file='IMFMediaEventQueue.xml' path='doc/member[@name="IMFMediaEventQueue.QueueEvent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT QueueEvent(IMFMediaEvent* pEvent)
@@ -67,6 +75,7 @@ public unsafe partial struct IMFMediaEventQueue : IMFMediaEventQueue.Interface
         return ((delegate* unmanaged<IMFMediaEventQueue*, IMFMediaEvent*, int>)(lpVtbl[6]))((IMFMediaEventQueue*)Unsafe.AsPointer(ref this), pEvent);
     }
 
+    /// <include file='IMFMediaEventQueue.xml' path='doc/member[@name="IMFMediaEventQueue.QueueEventParamVar"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT QueueEventParamVar([NativeTypeName("MediaEventType")] uint met, [NativeTypeName("const GUID &")] Guid* guidExtendedType, HRESULT hrStatus, [NativeTypeName("const PROPVARIANT *")] PROPVARIANT* pvValue)
@@ -74,6 +83,7 @@ public unsafe partial struct IMFMediaEventQueue : IMFMediaEventQueue.Interface
         return ((delegate* unmanaged<IMFMediaEventQueue*, uint, Guid*, HRESULT, PROPVARIANT*, int>)(lpVtbl[7]))((IMFMediaEventQueue*)Unsafe.AsPointer(ref this), met, guidExtendedType, hrStatus, pvValue);
     }
 
+    /// <include file='IMFMediaEventQueue.xml' path='doc/member[@name="IMFMediaEventQueue.QueueEventParamUnk"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT QueueEventParamUnk([NativeTypeName("MediaEventType")] uint met, [NativeTypeName("const GUID &")] Guid* guidExtendedType, HRESULT hrStatus, IUnknown* pUnk)
@@ -81,6 +91,7 @@ public unsafe partial struct IMFMediaEventQueue : IMFMediaEventQueue.Interface
         return ((delegate* unmanaged<IMFMediaEventQueue*, uint, Guid*, HRESULT, IUnknown*, int>)(lpVtbl[8]))((IMFMediaEventQueue*)Unsafe.AsPointer(ref this), met, guidExtendedType, hrStatus, pUnk);
     }
 
+    /// <include file='IMFMediaEventQueue.xml' path='doc/member[@name="IMFMediaEventQueue.Shutdown"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT Shutdown()

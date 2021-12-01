@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IElementNamespace.xml' path='doc/member[@name="IElementNamespace"]/*' />
 [Guid("3050F671-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IElementNamespace : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IElementNamespace : IElementNamespace.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IElementNamespace : IElementNamespace.Interface
         return ((delegate* unmanaged<IElementNamespace*, Guid*, void**, int>)(lpVtbl[0]))((IElementNamespace*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IElementNamespace : IElementNamespace.Interface
         return ((delegate* unmanaged<IElementNamespace*, uint>)(lpVtbl[1]))((IElementNamespace*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IElementNamespace : IElementNamespace.Interface
         return ((delegate* unmanaged<IElementNamespace*, uint>)(lpVtbl[2]))((IElementNamespace*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IElementNamespace.xml' path='doc/member[@name="IElementNamespace.AddTag"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT AddTag([NativeTypeName("BSTR")] ushort* bstrTagName, [NativeTypeName("LONG")] int lFlags)

@@ -5,13 +5,17 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HARDWARE_COUNTER_DATA.xml' path='doc/member[@name="HARDWARE_COUNTER_DATA"]/*' />
 public partial struct HARDWARE_COUNTER_DATA
 {
+    /// <include file='HARDWARE_COUNTER_DATA.xml' path='doc/member[@name="HARDWARE_COUNTER_DATA.Type"]/*' />
     public HARDWARE_COUNTER_TYPE Type;
 
+    /// <include file='HARDWARE_COUNTER_DATA.xml' path='doc/member[@name="HARDWARE_COUNTER_DATA.Reserved"]/*' />
     [NativeTypeName("DWORD")]
     public uint Reserved;
 
+    /// <include file='HARDWARE_COUNTER_DATA.xml' path='doc/member[@name="HARDWARE_COUNTER_DATA.Value"]/*' />
     [NativeTypeName("DWORD64")]
     public ulong Value;
 }

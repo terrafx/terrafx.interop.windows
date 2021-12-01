@@ -5,23 +5,30 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SecPkgContext_CertInfo.xml' path='doc/member[@name="SecPkgContext_CertInfo"]/*' />
 public unsafe partial struct SecPkgContext_CertInfo
 {
+    /// <include file='SecPkgContext_CertInfo.xml' path='doc/member[@name="SecPkgContext_CertInfo.dwVersion"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwVersion;
 
+    /// <include file='SecPkgContext_CertInfo.xml' path='doc/member[@name="SecPkgContext_CertInfo.cbSubjectName"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbSubjectName;
 
+    /// <include file='SecPkgContext_CertInfo.xml' path='doc/member[@name="SecPkgContext_CertInfo.pwszSubjectName"]/*' />
     [NativeTypeName("LPWSTR")]
     public ushort* pwszSubjectName;
 
+    /// <include file='SecPkgContext_CertInfo.xml' path='doc/member[@name="SecPkgContext_CertInfo.cbIssuerName"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbIssuerName;
 
+    /// <include file='SecPkgContext_CertInfo.xml' path='doc/member[@name="SecPkgContext_CertInfo.pwszIssuerName"]/*' />
     [NativeTypeName("LPWSTR")]
     public ushort* pwszIssuerName;
 
+    /// <include file='SecPkgContext_CertInfo.xml' path='doc/member[@name="SecPkgContext_CertInfo.dwKeySize"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwKeySize;
 }

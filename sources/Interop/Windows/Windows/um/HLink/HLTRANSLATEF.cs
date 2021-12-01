@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HLTRANSLATEF.xml' path='doc/member[@name="HLTRANSLATEF"]/*' />
 public enum HLTRANSLATEF
 {
+    /// <include file='HLTRANSLATEF.xml' path='doc/member[@name="HLTRANSLATEF.HLTRANSLATEF_DEFAULT"]/*' />
     HLTRANSLATEF_DEFAULT = 0,
+
+    /// <include file='HLTRANSLATEF.xml' path='doc/member[@name="HLTRANSLATEF.HLTRANSLATEF_DONTAPPLYDEFAULTPREFIX"]/*' />
     HLTRANSLATEF_DONTAPPLYDEFAULTPREFIX = 0x1,
 }

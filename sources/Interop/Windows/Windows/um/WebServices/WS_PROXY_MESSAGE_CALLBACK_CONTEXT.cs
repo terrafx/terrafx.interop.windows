@@ -7,10 +7,13 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_PROXY_MESSAGE_CALLBACK_CONTEXT.xml' path='doc/member[@name="WS_PROXY_MESSAGE_CALLBACK_CONTEXT"]/*' />
 public unsafe partial struct WS_PROXY_MESSAGE_CALLBACK_CONTEXT
 {
+    /// <include file='WS_PROXY_MESSAGE_CALLBACK_CONTEXT.xml' path='doc/member[@name="WS_PROXY_MESSAGE_CALLBACK_CONTEXT.callback"]/*' />
     [NativeTypeName("WS_PROXY_MESSAGE_CALLBACK")]
     public delegate* unmanaged<IntPtr, IntPtr, void*, IntPtr, HRESULT> callback;
 
+    /// <include file='WS_PROXY_MESSAGE_CALLBACK_CONTEXT.xml' path='doc/member[@name="WS_PROXY_MESSAGE_CALLBACK_CONTEXT.state"]/*' />
     public void* state;
 }

@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SOURCEFILEW.xml' path='doc/member[@name="SOURCEFILEW"]/*' />
 public unsafe partial struct SOURCEFILEW
 {
+    /// <include file='SOURCEFILEW.xml' path='doc/member[@name="SOURCEFILEW.ModBase"]/*' />
     [NativeTypeName("DWORD64")]
     public ulong ModBase;
 
+    /// <include file='SOURCEFILEW.xml' path='doc/member[@name="SOURCEFILEW.FileName"]/*' />
     [NativeTypeName("PWSTR")]
     public ushort* FileName;
 }

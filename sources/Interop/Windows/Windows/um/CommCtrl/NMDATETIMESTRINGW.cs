@@ -5,15 +5,20 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NMDATETIMESTRINGW.xml' path='doc/member[@name="NMDATETIMESTRINGW"]/*' />
 public unsafe partial struct NMDATETIMESTRINGW
 {
+    /// <include file='NMDATETIMESTRINGW.xml' path='doc/member[@name="NMDATETIMESTRINGW.nmhdr"]/*' />
     public NMHDR nmhdr;
 
+    /// <include file='NMDATETIMESTRINGW.xml' path='doc/member[@name="NMDATETIMESTRINGW.pszUserString"]/*' />
     [NativeTypeName("LPCWSTR")]
     public ushort* pszUserString;
 
+    /// <include file='NMDATETIMESTRINGW.xml' path='doc/member[@name="NMDATETIMESTRINGW.st"]/*' />
     public SYSTEMTIME st;
 
+    /// <include file='NMDATETIMESTRINGW.xml' path='doc/member[@name="NMDATETIMESTRINGW.dwFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFlags;
 }

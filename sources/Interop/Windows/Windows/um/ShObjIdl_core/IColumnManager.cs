@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IColumnManager.xml' path='doc/member[@name="IColumnManager"]/*' />
 [Guid("D8EC27BB-3F3B-4042-B10A-4ACFD924D453")]
 [NativeTypeName("struct IColumnManager : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IColumnManager : IColumnManager.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IColumnManager : IColumnManager.Interface
         return ((delegate* unmanaged<IColumnManager*, Guid*, void**, int>)(lpVtbl[0]))((IColumnManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IColumnManager : IColumnManager.Interface
         return ((delegate* unmanaged<IColumnManager*, uint>)(lpVtbl[1]))((IColumnManager*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IColumnManager : IColumnManager.Interface
         return ((delegate* unmanaged<IColumnManager*, uint>)(lpVtbl[2]))((IColumnManager*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IColumnManager.xml' path='doc/member[@name="IColumnManager.SetColumnInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetColumnInfo([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* propkey, [NativeTypeName("const CM_COLUMNINFO *")] CM_COLUMNINFO* pcmci)
@@ -46,6 +51,7 @@ public unsafe partial struct IColumnManager : IColumnManager.Interface
         return ((delegate* unmanaged<IColumnManager*, PROPERTYKEY*, CM_COLUMNINFO*, int>)(lpVtbl[3]))((IColumnManager*)Unsafe.AsPointer(ref this), propkey, pcmci);
     }
 
+    /// <include file='IColumnManager.xml' path='doc/member[@name="IColumnManager.GetColumnInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetColumnInfo([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* propkey, CM_COLUMNINFO* pcmci)
@@ -53,6 +59,7 @@ public unsafe partial struct IColumnManager : IColumnManager.Interface
         return ((delegate* unmanaged<IColumnManager*, PROPERTYKEY*, CM_COLUMNINFO*, int>)(lpVtbl[4]))((IColumnManager*)Unsafe.AsPointer(ref this), propkey, pcmci);
     }
 
+    /// <include file='IColumnManager.xml' path='doc/member[@name="IColumnManager.GetColumnCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetColumnCount(CM_ENUM_FLAGS dwFlags, uint* puCount)
@@ -60,6 +67,7 @@ public unsafe partial struct IColumnManager : IColumnManager.Interface
         return ((delegate* unmanaged<IColumnManager*, CM_ENUM_FLAGS, uint*, int>)(lpVtbl[5]))((IColumnManager*)Unsafe.AsPointer(ref this), dwFlags, puCount);
     }
 
+    /// <include file='IColumnManager.xml' path='doc/member[@name="IColumnManager.GetColumns"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetColumns(CM_ENUM_FLAGS dwFlags, PROPERTYKEY* rgkeyOrder, uint cColumns)
@@ -67,6 +75,7 @@ public unsafe partial struct IColumnManager : IColumnManager.Interface
         return ((delegate* unmanaged<IColumnManager*, CM_ENUM_FLAGS, PROPERTYKEY*, uint, int>)(lpVtbl[6]))((IColumnManager*)Unsafe.AsPointer(ref this), dwFlags, rgkeyOrder, cColumns);
     }
 
+    /// <include file='IColumnManager.xml' path='doc/member[@name="IColumnManager.SetColumns"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT SetColumns([NativeTypeName("const PROPERTYKEY *")] PROPERTYKEY* rgkeyOrder, uint cVisible)

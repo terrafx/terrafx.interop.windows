@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ISharingConfigurationManager.xml' path='doc/member[@name="ISharingConfigurationManager"]/*' />
 [Guid("B4CD448A-9C86-4466-9201-2E62105B87AE")]
 [NativeTypeName("struct ISharingConfigurationManager : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ISharingConfigurationManager : ISharingConfiguratio
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ISharingConfigurationManager : ISharingConfiguratio
         return ((delegate* unmanaged<ISharingConfigurationManager*, Guid*, void**, int>)(lpVtbl[0]))((ISharingConfigurationManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ISharingConfigurationManager : ISharingConfiguratio
         return ((delegate* unmanaged<ISharingConfigurationManager*, uint>)(lpVtbl[1]))((ISharingConfigurationManager*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ISharingConfigurationManager : ISharingConfiguratio
         return ((delegate* unmanaged<ISharingConfigurationManager*, uint>)(lpVtbl[2]))((ISharingConfigurationManager*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ISharingConfigurationManager.xml' path='doc/member[@name="ISharingConfigurationManager.CreateShare"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT CreateShare(DEF_SHARE_ID dsid, SHARE_ROLE role)
@@ -46,6 +51,7 @@ public unsafe partial struct ISharingConfigurationManager : ISharingConfiguratio
         return ((delegate* unmanaged<ISharingConfigurationManager*, DEF_SHARE_ID, SHARE_ROLE, int>)(lpVtbl[3]))((ISharingConfigurationManager*)Unsafe.AsPointer(ref this), dsid, role);
     }
 
+    /// <include file='ISharingConfigurationManager.xml' path='doc/member[@name="ISharingConfigurationManager.DeleteShare"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT DeleteShare(DEF_SHARE_ID dsid)
@@ -53,6 +59,7 @@ public unsafe partial struct ISharingConfigurationManager : ISharingConfiguratio
         return ((delegate* unmanaged<ISharingConfigurationManager*, DEF_SHARE_ID, int>)(lpVtbl[4]))((ISharingConfigurationManager*)Unsafe.AsPointer(ref this), dsid);
     }
 
+    /// <include file='ISharingConfigurationManager.xml' path='doc/member[@name="ISharingConfigurationManager.ShareExists"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT ShareExists(DEF_SHARE_ID dsid)
@@ -60,6 +67,7 @@ public unsafe partial struct ISharingConfigurationManager : ISharingConfiguratio
         return ((delegate* unmanaged<ISharingConfigurationManager*, DEF_SHARE_ID, int>)(lpVtbl[5]))((ISharingConfigurationManager*)Unsafe.AsPointer(ref this), dsid);
     }
 
+    /// <include file='ISharingConfigurationManager.xml' path='doc/member[@name="ISharingConfigurationManager.GetSharePermissions"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetSharePermissions(DEF_SHARE_ID dsid, SHARE_ROLE* pRole)
@@ -67,6 +75,7 @@ public unsafe partial struct ISharingConfigurationManager : ISharingConfiguratio
         return ((delegate* unmanaged<ISharingConfigurationManager*, DEF_SHARE_ID, SHARE_ROLE*, int>)(lpVtbl[6]))((ISharingConfigurationManager*)Unsafe.AsPointer(ref this), dsid, pRole);
     }
 
+    /// <include file='ISharingConfigurationManager.xml' path='doc/member[@name="ISharingConfigurationManager.SharePrinters"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT SharePrinters()
@@ -74,6 +83,7 @@ public unsafe partial struct ISharingConfigurationManager : ISharingConfiguratio
         return ((delegate* unmanaged<ISharingConfigurationManager*, int>)(lpVtbl[7]))((ISharingConfigurationManager*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ISharingConfigurationManager.xml' path='doc/member[@name="ISharingConfigurationManager.StopSharingPrinters"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT StopSharingPrinters()
@@ -81,6 +91,7 @@ public unsafe partial struct ISharingConfigurationManager : ISharingConfiguratio
         return ((delegate* unmanaged<ISharingConfigurationManager*, int>)(lpVtbl[8]))((ISharingConfigurationManager*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ISharingConfigurationManager.xml' path='doc/member[@name="ISharingConfigurationManager.ArePrintersShared"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT ArePrintersShared()

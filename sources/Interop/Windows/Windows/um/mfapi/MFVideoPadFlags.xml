@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MFVideoPadFlags">
+    <summary>
+      <para>Specifies whether to pad a video image so that it fits within a specified aspect ratio.</para>
+    </summary>
+    <remarks>
+      <para>Use these flags with the <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-mt-pad-control-flags-attribute">MF_MT_PAD_CONTROL_FLAGS</a> attribute.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+  </member>
+  <member name="MFVideoPadFlags.MFVideoPadFlag_PAD_TO_None">
+    <summary>
+      <para>Do not pad the image.</para>
+    </summary>
+  </member>
+  <member name="MFVideoPadFlags.MFVideoPadFlag_PAD_TO_4x3">
+    <summary>
+      <para>Pad the image so that it can be displayed in a 4×3 area.</para>
+    </summary>
+  </member>
+  <member name="MFVideoPadFlags.MFVideoPadFlag_PAD_TO_16x9">
+    <summary>
+      <para>Pad the image so that it can be displayed in a 16×9 area.</para>
+    </summary>
+  </member>
+</doc>

@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVAudioSampleRate.xml' path='doc/member[@name="CODECAPI_AVAudioSampleRate"]/*' />
 [Guid("971D2723-1ACB-42E7-855C-520A4B70A5F2")]
 public partial struct CODECAPI_AVAudioSampleRate
 {

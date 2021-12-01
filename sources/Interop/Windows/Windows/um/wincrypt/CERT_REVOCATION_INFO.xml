@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CERT_REVOCATION_INFO">
+    <summary>
+      <para>The <b>CERT_REVOCATION_INFO</b> structure indicates the revocation status of a certificate in a CERT_CHAIN_ELEMENT.</para>
+    </summary>
+    <seealso cref="CERT_CHAIN_ELEMENT" />
+  </member>
+  <member name="CERT_REVOCATION_INFO.cbSize">
+    <summary>
+      <para>Size of this structure in bytes.</para>
+    </summary>
+  </member>
+  <member name="CERT_REVOCATION_INFO.dwRevocationResult">
+    <summary>
+      <para>Currently defined values are:</para>
+      <list type="bullet">
+        <item>
+          <description>CERT_TRUST_IS_REVOKED</description>
+        </item>
+        <item>
+          <description>CERT_TRUST_REVOCATION_STATUS_IS_UNKNOWN</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="CERT_REVOCATION_INFO.pszRevocationOid">
+    <summary>
+      <para>Not currently used and is set to <b>NULL</b>.</para>
+    </summary>
+  </member>
+  <member name="CERT_REVOCATION_INFO.pvOidSpecificInfo">
+    <summary>
+      <para>Not currently used and is set to <b>NULL</b>.</para>
+    </summary>
+  </member>
+  <member name="CERT_REVOCATION_INFO.fHasFreshnessTime">
+    <summary>
+      <para>BOOL set to <b>TRUE</b> if dwFreshnessTime has been updated.</para>
+    </summary>
+  </member>
+  <member name="CERT_REVOCATION_INFO.dwFreshnessTime">
+    <summary>
+      <para>If <b>fHasFreshnessTime</b> is <b>TRUE</b>, holds the CurrentTime minus the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certificate revocation list's</a> (CRL's). This time is in seconds.</para>
+    </summary>
+  </member>
+  <member name="CERT_REVOCATION_INFO.pCrlInfo">
+    <summary>
+      <para>For CRL base revocation checking, a non-<b>NULL</b> pointer to a CERT_REVOCATION_CRL_INFO structure.</para>
+    </summary>
+  </member>
+</doc>

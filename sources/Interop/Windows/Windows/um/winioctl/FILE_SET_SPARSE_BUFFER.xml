@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="FILE_SET_SPARSE_BUFFER">
+    <summary>
+      <para>Specifies the sparse state to be set.<b>Windows Server 2003 and Windows XP:  </b>This structure is optional. For more information, see
+<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_set_sparse">FSCTL_SET_SPARSE</a>.</para>
+    </summary>
+    <seealso cref="DeviceIoControl" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_set_sparse">FSCTL_SET_SPARSE</seealso>
+  </member>
+  <member name="FILE_SET_SPARSE_BUFFER.SetSparse">
+    <summary>
+      <para>If <b>TRUE</b>, makes the file sparse.</para>
+      <para>If <b>FALSE</b>, makes the file not sparse.</para>
+      <para>
+        <b>Windows Server 2008 R2, Windows 7, Windows Server 2008 and Windows Vista:  </b>A value of <b>FALSE</b> for this member is valid only on files that no longer have any
+sparse regions. For more information, see
+<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_set_sparse">FSCTL_SET_SPARSE</a>.</para>
+      <para>
+        <b>Windows Server 2003 and Windows XP:  </b>A value of <b>FALSE</b> for this member is not supported. Specifying
+<b>FALSE</b> will cause the
+<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_set_sparse">FSCTL_SET_SPARSE</a> call to fail.</para>
+    </summary>
+  </member>
+</doc>

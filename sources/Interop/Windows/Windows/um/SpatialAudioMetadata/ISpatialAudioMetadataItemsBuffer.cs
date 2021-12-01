@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ISpatialAudioMetadataItemsBuffer.xml' path='doc/member[@name="ISpatialAudioMetadataItemsBuffer"]/*' />
 [Guid("42640A16-E1BD-42D9-9FF6-031AB71A2DBA")]
 [NativeTypeName("struct ISpatialAudioMetadataItemsBuffer : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct ISpatialAudioMetadataItemsBuffer : ISpatialAudioMet
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct ISpatialAudioMetadataItemsBuffer : ISpatialAudioMet
         return ((delegate* unmanaged<ISpatialAudioMetadataItemsBuffer*, Guid*, void**, int>)(lpVtbl[0]))((ISpatialAudioMetadataItemsBuffer*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct ISpatialAudioMetadataItemsBuffer : ISpatialAudioMet
         return ((delegate* unmanaged<ISpatialAudioMetadataItemsBuffer*, uint>)(lpVtbl[1]))((ISpatialAudioMetadataItemsBuffer*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct ISpatialAudioMetadataItemsBuffer : ISpatialAudioMet
         return ((delegate* unmanaged<ISpatialAudioMetadataItemsBuffer*, uint>)(lpVtbl[2]))((ISpatialAudioMetadataItemsBuffer*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ISpatialAudioMetadataItemsBuffer.xml' path='doc/member[@name="ISpatialAudioMetadataItemsBuffer.AttachToBuffer"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT AttachToBuffer(byte* buffer, [NativeTypeName("UINT32")] uint bufferLength)
@@ -48,6 +53,7 @@ public unsafe partial struct ISpatialAudioMetadataItemsBuffer : ISpatialAudioMet
         return ((delegate* unmanaged<ISpatialAudioMetadataItemsBuffer*, byte*, uint, int>)(lpVtbl[3]))((ISpatialAudioMetadataItemsBuffer*)Unsafe.AsPointer(ref this), buffer, bufferLength);
     }
 
+    /// <include file='ISpatialAudioMetadataItemsBuffer.xml' path='doc/member[@name="ISpatialAudioMetadataItemsBuffer.AttachToPopulatedBuffer"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT AttachToPopulatedBuffer(byte* buffer, [NativeTypeName("UINT32")] uint bufferLength)
@@ -55,6 +61,7 @@ public unsafe partial struct ISpatialAudioMetadataItemsBuffer : ISpatialAudioMet
         return ((delegate* unmanaged<ISpatialAudioMetadataItemsBuffer*, byte*, uint, int>)(lpVtbl[4]))((ISpatialAudioMetadataItemsBuffer*)Unsafe.AsPointer(ref this), buffer, bufferLength);
     }
 
+    /// <include file='ISpatialAudioMetadataItemsBuffer.xml' path='doc/member[@name="ISpatialAudioMetadataItemsBuffer.DetachBuffer"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT DetachBuffer()

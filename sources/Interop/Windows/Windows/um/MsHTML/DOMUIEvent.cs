@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DOMUIEvent.xml' path='doc/member[@name="DOMUIEvent"]/*' />
 [Guid("305106CB-98B5-11CF-BB82-00AA00BDCE0B")]
 public partial struct DOMUIEvent
 {

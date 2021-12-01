@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVDSPSpeakerFill.xml' path='doc/member[@name="CODECAPI_AVDSPSpeakerFill"]/*' />
 [Guid("5612BCA1-56DA-4582-8DA1-CA8090F92768")]
 public partial struct CODECAPI_AVDSPSpeakerFill
 {

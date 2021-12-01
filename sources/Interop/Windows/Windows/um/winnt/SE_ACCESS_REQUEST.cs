@@ -5,29 +5,38 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SE_ACCESS_REQUEST.xml' path='doc/member[@name="SE_ACCESS_REQUEST"]/*' />
 public unsafe partial struct SE_ACCESS_REQUEST
 {
+    /// <include file='SE_ACCESS_REQUEST.xml' path='doc/member[@name="SE_ACCESS_REQUEST.Size"]/*' />
     [NativeTypeName("DWORD")]
     public uint Size;
 
+    /// <include file='SE_ACCESS_REQUEST.xml' path='doc/member[@name="SE_ACCESS_REQUEST.SeSecurityDescriptor"]/*' />
     [NativeTypeName("PSE_SECURITY_DESCRIPTOR")]
     public SE_SECURITY_DESCRIPTOR* SeSecurityDescriptor;
 
+    /// <include file='SE_ACCESS_REQUEST.xml' path='doc/member[@name="SE_ACCESS_REQUEST.DesiredAccess"]/*' />
     [NativeTypeName("ACCESS_MASK")]
     public uint DesiredAccess;
 
+    /// <include file='SE_ACCESS_REQUEST.xml' path='doc/member[@name="SE_ACCESS_REQUEST.PreviouslyGrantedAccess"]/*' />
     [NativeTypeName("ACCESS_MASK")]
     public uint PreviouslyGrantedAccess;
 
+    /// <include file='SE_ACCESS_REQUEST.xml' path='doc/member[@name="SE_ACCESS_REQUEST.PrincipalSelfSid"]/*' />
     [NativeTypeName("PSID")]
     public void* PrincipalSelfSid;
 
+    /// <include file='SE_ACCESS_REQUEST.xml' path='doc/member[@name="SE_ACCESS_REQUEST.GenericMapping"]/*' />
     [NativeTypeName("PGENERIC_MAPPING")]
     public GENERIC_MAPPING* GenericMapping;
 
+    /// <include file='SE_ACCESS_REQUEST.xml' path='doc/member[@name="SE_ACCESS_REQUEST.ObjectTypeListCount"]/*' />
     [NativeTypeName("DWORD")]
     public uint ObjectTypeListCount;
 
+    /// <include file='SE_ACCESS_REQUEST.xml' path='doc/member[@name="SE_ACCESS_REQUEST.ObjectTypeList"]/*' />
     [NativeTypeName("POBJECT_TYPE_LIST")]
     public OBJECT_TYPE_LIST* ObjectTypeList;
 }

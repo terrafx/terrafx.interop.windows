@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TA_TRANSFORM_TYPE.xml' path='doc/member[@name="TA_TRANSFORM_TYPE"]/*' />
 public enum TA_TRANSFORM_TYPE
 {
+    /// <include file='TA_TRANSFORM_TYPE.xml' path='doc/member[@name="TA_TRANSFORM_TYPE.TATT_TRANSLATE_2D"]/*' />
     TATT_TRANSLATE_2D,
+
+    /// <include file='TA_TRANSFORM_TYPE.xml' path='doc/member[@name="TA_TRANSFORM_TYPE.TATT_SCALE_2D"]/*' />
     TATT_SCALE_2D,
+
+    /// <include file='TA_TRANSFORM_TYPE.xml' path='doc/member[@name="TA_TRANSFORM_TYPE.TATT_OPACITY"]/*' />
     TATT_OPACITY,
+
+    /// <include file='TA_TRANSFORM_TYPE.xml' path='doc/member[@name="TA_TRANSFORM_TYPE.TATT_CLIP"]/*' />
     TATT_CLIP,
 }

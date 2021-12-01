@@ -5,24 +5,33 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='COMPAREITEMSTRUCT.xml' path='doc/member[@name="COMPAREITEMSTRUCT"]/*' />
 public partial struct COMPAREITEMSTRUCT
 {
+    /// <include file='COMPAREITEMSTRUCT.xml' path='doc/member[@name="COMPAREITEMSTRUCT.CtlType"]/*' />
     public uint CtlType;
 
+    /// <include file='COMPAREITEMSTRUCT.xml' path='doc/member[@name="COMPAREITEMSTRUCT.CtlID"]/*' />
     public uint CtlID;
 
+    /// <include file='COMPAREITEMSTRUCT.xml' path='doc/member[@name="COMPAREITEMSTRUCT.hwndItem"]/*' />
     public HWND hwndItem;
 
+    /// <include file='COMPAREITEMSTRUCT.xml' path='doc/member[@name="COMPAREITEMSTRUCT.itemID1"]/*' />
     public uint itemID1;
 
+    /// <include file='COMPAREITEMSTRUCT.xml' path='doc/member[@name="COMPAREITEMSTRUCT.itemData1"]/*' />
     [NativeTypeName("ULONG_PTR")]
     public nuint itemData1;
 
+    /// <include file='COMPAREITEMSTRUCT.xml' path='doc/member[@name="COMPAREITEMSTRUCT.itemID2"]/*' />
     public uint itemID2;
 
+    /// <include file='COMPAREITEMSTRUCT.xml' path='doc/member[@name="COMPAREITEMSTRUCT.itemData2"]/*' />
     [NativeTypeName("ULONG_PTR")]
     public nuint itemData2;
 
+    /// <include file='COMPAREITEMSTRUCT.xml' path='doc/member[@name="COMPAREITEMSTRUCT.dwLocaleId"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwLocaleId;
 }

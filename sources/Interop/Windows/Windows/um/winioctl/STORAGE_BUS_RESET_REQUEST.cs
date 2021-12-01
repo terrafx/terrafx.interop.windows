@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STORAGE_BUS_RESET_REQUEST.xml' path='doc/member[@name="STORAGE_BUS_RESET_REQUEST"]/*' />
 public partial struct STORAGE_BUS_RESET_REQUEST
 {
+    /// <include file='STORAGE_BUS_RESET_REQUEST.xml' path='doc/member[@name="STORAGE_BUS_RESET_REQUEST.PathId"]/*' />
     public byte PathId;
 }

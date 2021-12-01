@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PPM_WMI_LEGACY_PERFSTATE.xml' path='doc/member[@name="PPM_WMI_LEGACY_PERFSTATE"]/*' />
 public partial struct PPM_WMI_LEGACY_PERFSTATE
 {
+    /// <include file='PPM_WMI_LEGACY_PERFSTATE.xml' path='doc/member[@name="PPM_WMI_LEGACY_PERFSTATE.Frequency"]/*' />
     [NativeTypeName("DWORD")]
     public uint Frequency;
 
+    /// <include file='PPM_WMI_LEGACY_PERFSTATE.xml' path='doc/member[@name="PPM_WMI_LEGACY_PERFSTATE.Flags"]/*' />
     [NativeTypeName("DWORD")]
     public uint Flags;
 
+    /// <include file='PPM_WMI_LEGACY_PERFSTATE.xml' path='doc/member[@name="PPM_WMI_LEGACY_PERFSTATE.PercentFrequency"]/*' />
     [NativeTypeName("DWORD")]
     public uint PercentFrequency;
 }

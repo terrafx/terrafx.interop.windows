@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='RM_FILTER_TRIGGER.xml' path='doc/member[@name="RM_FILTER_TRIGGER"]/*' />
 public enum RM_FILTER_TRIGGER
 {
+    /// <include file='RM_FILTER_TRIGGER.xml' path='doc/member[@name="RM_FILTER_TRIGGER.RmFilterTriggerInvalid"]/*' />
     RmFilterTriggerInvalid = 0,
+
+    /// <include file='RM_FILTER_TRIGGER.xml' path='doc/member[@name="RM_FILTER_TRIGGER.RmFilterTriggerFile"]/*' />
     RmFilterTriggerFile,
+
+    /// <include file='RM_FILTER_TRIGGER.xml' path='doc/member[@name="RM_FILTER_TRIGGER.RmFilterTriggerProcess"]/*' />
     RmFilterTriggerProcess,
+
+    /// <include file='RM_FILTER_TRIGGER.xml' path='doc/member[@name="RM_FILTER_TRIGGER.RmFilterTriggerService"]/*' />
     RmFilterTriggerService,
 }

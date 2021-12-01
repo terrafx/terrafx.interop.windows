@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAudioClockAdjustment.xml' path='doc/member[@name="IAudioClockAdjustment"]/*' />
 [Guid("F6E4C0A0-46D9-4FB8-BE21-57A3EF2B626C")]
 [NativeTypeName("struct IAudioClockAdjustment : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IAudioClockAdjustment : IAudioClockAdjustment.Inter
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IAudioClockAdjustment : IAudioClockAdjustment.Inter
         return ((delegate* unmanaged<IAudioClockAdjustment*, Guid*, void**, int>)(lpVtbl[0]))((IAudioClockAdjustment*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IAudioClockAdjustment : IAudioClockAdjustment.Inter
         return ((delegate* unmanaged<IAudioClockAdjustment*, uint>)(lpVtbl[1]))((IAudioClockAdjustment*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IAudioClockAdjustment : IAudioClockAdjustment.Inter
         return ((delegate* unmanaged<IAudioClockAdjustment*, uint>)(lpVtbl[2]))((IAudioClockAdjustment*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAudioClockAdjustment.xml' path='doc/member[@name="IAudioClockAdjustment.SetSampleRate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetSampleRate(float flSampleRate)

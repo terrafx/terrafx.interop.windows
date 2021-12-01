@@ -7,25 +7,61 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PROCESS_MITIGATION_POLICY.xml' path='doc/member[@name="PROCESS_MITIGATION_POLICY"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public enum PROCESS_MITIGATION_POLICY
 {
+    /// <include file='PROCESS_MITIGATION_POLICY.xml' path='doc/member[@name="PROCESS_MITIGATION_POLICY.ProcessDEPPolicy"]/*' />
     ProcessDEPPolicy,
+
+    /// <include file='PROCESS_MITIGATION_POLICY.xml' path='doc/member[@name="PROCESS_MITIGATION_POLICY.ProcessASLRPolicy"]/*' />
     ProcessASLRPolicy,
+
+    /// <include file='PROCESS_MITIGATION_POLICY.xml' path='doc/member[@name="PROCESS_MITIGATION_POLICY.ProcessDynamicCodePolicy"]/*' />
     ProcessDynamicCodePolicy,
+
+    /// <include file='PROCESS_MITIGATION_POLICY.xml' path='doc/member[@name="PROCESS_MITIGATION_POLICY.ProcessStrictHandleCheckPolicy"]/*' />
     ProcessStrictHandleCheckPolicy,
+
+    /// <include file='PROCESS_MITIGATION_POLICY.xml' path='doc/member[@name="PROCESS_MITIGATION_POLICY.ProcessSystemCallDisablePolicy"]/*' />
     ProcessSystemCallDisablePolicy,
+
+    /// <include file='PROCESS_MITIGATION_POLICY.xml' path='doc/member[@name="PROCESS_MITIGATION_POLICY.ProcessMitigationOptionsMask"]/*' />
     ProcessMitigationOptionsMask,
+
+    /// <include file='PROCESS_MITIGATION_POLICY.xml' path='doc/member[@name="PROCESS_MITIGATION_POLICY.ProcessExtensionPointDisablePolicy"]/*' />
     ProcessExtensionPointDisablePolicy,
+
+    /// <include file='PROCESS_MITIGATION_POLICY.xml' path='doc/member[@name="PROCESS_MITIGATION_POLICY.ProcessControlFlowGuardPolicy"]/*' />
     ProcessControlFlowGuardPolicy,
+
+    /// <include file='PROCESS_MITIGATION_POLICY.xml' path='doc/member[@name="PROCESS_MITIGATION_POLICY.ProcessSignaturePolicy"]/*' />
     ProcessSignaturePolicy,
+
+    /// <include file='PROCESS_MITIGATION_POLICY.xml' path='doc/member[@name="PROCESS_MITIGATION_POLICY.ProcessFontDisablePolicy"]/*' />
     ProcessFontDisablePolicy,
+
+    /// <include file='PROCESS_MITIGATION_POLICY.xml' path='doc/member[@name="PROCESS_MITIGATION_POLICY.ProcessImageLoadPolicy"]/*' />
     ProcessImageLoadPolicy,
+
+    /// <include file='PROCESS_MITIGATION_POLICY.xml' path='doc/member[@name="PROCESS_MITIGATION_POLICY.ProcessSystemCallFilterPolicy"]/*' />
     ProcessSystemCallFilterPolicy,
+
+    /// <include file='PROCESS_MITIGATION_POLICY.xml' path='doc/member[@name="PROCESS_MITIGATION_POLICY.ProcessPayloadRestrictionPolicy"]/*' />
     ProcessPayloadRestrictionPolicy,
+
+    /// <include file='PROCESS_MITIGATION_POLICY.xml' path='doc/member[@name="PROCESS_MITIGATION_POLICY.ProcessChildProcessPolicy"]/*' />
     ProcessChildProcessPolicy,
+
+    /// <include file='PROCESS_MITIGATION_POLICY.xml' path='doc/member[@name="PROCESS_MITIGATION_POLICY.ProcessSideChannelIsolationPolicy"]/*' />
     ProcessSideChannelIsolationPolicy,
+
+    /// <include file='PROCESS_MITIGATION_POLICY.xml' path='doc/member[@name="PROCESS_MITIGATION_POLICY.ProcessUserShadowStackPolicy"]/*' />
     ProcessUserShadowStackPolicy,
+
+    /// <include file='PROCESS_MITIGATION_POLICY.xml' path='doc/member[@name="PROCESS_MITIGATION_POLICY.ProcessRedirectionTrustPolicy"]/*' />
     ProcessRedirectionTrustPolicy,
+
+    /// <include file='PROCESS_MITIGATION_POLICY.xml' path='doc/member[@name="PROCESS_MITIGATION_POLICY.MaxProcessMitigationPolicy"]/*' />
     MaxProcessMitigationPolicy,
 }

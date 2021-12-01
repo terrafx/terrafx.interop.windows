@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IWebBrowser2.GetTypeInfo">
+    <summary>
+      <para>Retrieves the type information for an object, which can then be used to get the type information for an interface.</para>
+    </summary>
+    <param name="iTInfo">
+      <para>The type information to return. Pass 0 to retrieve type information for the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-idispatch">IDispatch</a> implementation.</para>
+    </param>
+    <param name="lcid">
+      <para>The locale identifier for the type information. An object may be able to return different type information for different languages. This is important for classes that support localized member names. For classes that do not support localized member names, this parameter can be ignored.</para>
+    </param>
+    <param name="ppTInfo">
+      <para>The requested type information object.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>DISP_E_BADINDEX
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The <i>iTInfo</i> parameter was not 0.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-idispatch">IDispatch</seealso>
+    <seealso cref="IWebBrowser2" />
+  </member>
+</doc>

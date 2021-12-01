@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CERT_REVOCATION_CRL_INFO">
+    <summary>
+      <para>Contains information updated by a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certificate revocation list</a> (CRL) revocation type handler. The <b>CERT_REVOCATION_CRL_INFO</b> structure is used with both base and delta CRLs.</para>
+    </summary>
+  </member>
+  <member name="CERT_REVOCATION_CRL_INFO.cbSize">
+    <summary>
+      <para>Size, in bytes, of the structure.</para>
+    </summary>
+  </member>
+  <member name="CERT_REVOCATION_CRL_INFO.pBaseCrlContext">
+    <summary></summary>
+  </member>
+  <member name="CERT_REVOCATION_CRL_INFO.pDeltaCrlContext">
+    <summary></summary>
+  </member>
+  <member name="CERT_REVOCATION_CRL_INFO.pCrlEntry">
+    <summary>
+      <para>A pointer to an entry in either the base CRL or the delta CRL.</para>
+    </summary>
+  </member>
+  <member name="CERT_REVOCATION_CRL_INFO.fDeltaCrlEntry">
+    <summary>
+      <para>
+        <b>TRUE</b> if <b>pCrlEntry</b> points to an entry in the delta CRL. <b>FALSE</b> if <b>pCrlEntry</b> points to an entry in the base CRL.</para>
+    </summary>
+  </member>
+  <member name="CERT_REVOCATION_CRL_INFO.pBaseCRLContext">
+    <summary>
+      <para>A pointer to a base CRL context.</para>
+    </summary>
+  </member>
+  <member name="CERT_REVOCATION_CRL_INFO.pDeltaCRLContext">
+    <summary>
+      <para>A pointer to a delta CRL context.</para>
+    </summary>
+  </member>
+</doc>

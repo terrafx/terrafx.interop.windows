@@ -7,17 +7,23 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_CUSTOM_CERT_CREDENTIAL.xml' path='doc/member[@name="WS_CUSTOM_CERT_CREDENTIAL"]/*' />
 public unsafe partial struct WS_CUSTOM_CERT_CREDENTIAL
 {
+    /// <include file='WS_CUSTOM_CERT_CREDENTIAL.xml' path='doc/member[@name="WS_CUSTOM_CERT_CREDENTIAL.credential"]/*' />
     public WS_CERT_CREDENTIAL credential;
 
+    /// <include file='WS_CUSTOM_CERT_CREDENTIAL.xml' path='doc/member[@name="WS_CUSTOM_CERT_CREDENTIAL.getCertCallback"]/*' />
     [NativeTypeName("WS_GET_CERT_CALLBACK")]
     public delegate* unmanaged<void*, WS_ENDPOINT_ADDRESS*, WS_STRING*, CERT_CONTEXT**, IntPtr, HRESULT> getCertCallback;
 
+    /// <include file='WS_CUSTOM_CERT_CREDENTIAL.xml' path='doc/member[@name="WS_CUSTOM_CERT_CREDENTIAL.getCertCallbackState"]/*' />
     public void* getCertCallbackState;
 
+    /// <include file='WS_CUSTOM_CERT_CREDENTIAL.xml' path='doc/member[@name="WS_CUSTOM_CERT_CREDENTIAL.certIssuerListNotificationCallback"]/*' />
     [NativeTypeName("WS_CERT_ISSUER_LIST_NOTIFICATION_CALLBACK")]
     public delegate* unmanaged<void*, SecPkgContext_IssuerListInfoEx*, IntPtr, HRESULT> certIssuerListNotificationCallback;
 
+    /// <include file='WS_CUSTOM_CERT_CREDENTIAL.xml' path='doc/member[@name="WS_CUSTOM_CERT_CREDENTIAL.certIssuerListNotificationCallbackState"]/*' />
     public void* certIssuerListNotificationCallbackState;
 }

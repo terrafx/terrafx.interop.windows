@@ -5,17 +5,22 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='GENERIC_MAPPING.xml' path='doc/member[@name="GENERIC_MAPPING"]/*' />
 public partial struct GENERIC_MAPPING
 {
+    /// <include file='GENERIC_MAPPING.xml' path='doc/member[@name="GENERIC_MAPPING.GenericRead"]/*' />
     [NativeTypeName("ACCESS_MASK")]
     public uint GenericRead;
 
+    /// <include file='GENERIC_MAPPING.xml' path='doc/member[@name="GENERIC_MAPPING.GenericWrite"]/*' />
     [NativeTypeName("ACCESS_MASK")]
     public uint GenericWrite;
 
+    /// <include file='GENERIC_MAPPING.xml' path='doc/member[@name="GENERIC_MAPPING.GenericExecute"]/*' />
     [NativeTypeName("ACCESS_MASK")]
     public uint GenericExecute;
 
+    /// <include file='GENERIC_MAPPING.xml' path='doc/member[@name="GENERIC_MAPPING.GenericAll"]/*' />
     [NativeTypeName("ACCESS_MASK")]
     public uint GenericAll;
 }

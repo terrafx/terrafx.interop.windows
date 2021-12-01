@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IAppxBundleReader.GetBlockMap">
+    <summary>
+      <para>Retrieves a read-only block map object from the bundle.</para>
+    </summary>
+    <param name="blockMapReader">
+      <para>Type: <b><see cref="IAppxBlockMapReader" />**</b></para>
+      <para>The object model of the block map of a package in the bundle.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IAppxBundleReader" />
+  </member>
+  <member name="IAppxBundleReader.GetFootprintFile">
+    <summary>
+      <para>Retrieves the specified type of footprint file from the bundle.</para>
+    </summary>
+    <param name="fileType">
+      <para>Type: <b><see cref="APPX_BUNDLE_FOOTPRINT_FILE_TYPE" /></b></para>
+      <para>The type of footprint file to be retrieved.</para>
+    </param>
+    <param name="footprintFile">
+      <para>Type: <b><see cref="IAppxFile" />**</b></para>
+      <para>The file object that corresponds to the footprint file of <i>fileType</i>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an error code that includes, but is not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>The <i>fileType</i> parameter is not a valid value in the <see cref="APPX_BUNDLE_FOOTPRINT_FILE_TYPE" /> enumeration.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>HRESULT_FROM_WIN32(ERROR_FILE_NOT_FOUND)</b>
+            </para>
+          </description>
+          <description>
+            <para>The bundle doesn't contain a footprint file of the specified type.</para>
+            <para>
+              <see cref="GetFootprintFile" /> can return this error for the <see cref="APPX_BUNDLE_FOOTPRINT_FILE_TYPE_SIGNATURE" /> type.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IAppxBundleReader" />
+  </member>
+  <member name="IAppxBundleReader.GetManifest">
+    <summary>
+      <para>Retrieves a read-only manifest object from the bundle.</para>
+    </summary>
+    <param name="manifestReader">
+      <para>Type: <b>IAppxBundleManifestReader**</b></para>
+      <para>The object model of the bundle manifest.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IAppxBundleReader" />
+  </member>
+  <member name="IAppxBundleReader.GetPayloadPackage">
+    <summary>
+      <para>Retrieves an appx file object for the payload package with the specified file name.</para>
+    </summary>
+    <param name="fileName">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCWSTR</a></b></para>
+      <para>The name of the payload file to be retrieved.</para>
+    </param>
+    <param name="payloadPackage">
+      <para>Type: <b><see cref="IAppxFile" />**</b></para>
+      <para>The payload file object the that corresponds to <i>fileName</i>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an error code that includes, but is not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>HRESULT_FROM_WIN32(ERROR_FILE_NOT_FOUND)</b>
+            </para>
+          </description>
+          <description>
+            <para>There is no payload file with the specified file name.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>You can pass the file object’s stream into <see cref="IAppxFactory.CreatePackageReader" /> to get a package reader object over the appx file.</para>
+    </remarks>
+    <seealso cref="IAppxBundleReader" />
+  </member>
+  <member name="IAppxBundleReader.GetPayloadPackages">
+    <summary>
+      <para>Retrieves an enumerator that iterates over the list of all payload packages in the bundle.</para>
+    </summary>
+    <param name="payloadPackages">
+      <para>Type: <b><see cref="IAppxFilesEnumerator" />**</b></para>
+      <para>An enumerator over all payload packages in the bundle.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IAppxBundleReader" />
+  </member>
+  <member name="IAppxBundleReader">
+    <summary>
+      <para>Provides a read-only object model for bundle packages.</para>
+    </summary>
+    <remarks>
+      <para>You can use the <see cref="CreateBundleReader" /> method of the <see cref="IAppxBundleFactory" /> interface to retrieve the <b>IAppxBundleReader</b> object.</para>
+      <para>Through <b>IAppxBundleReader</b>, you can retrieve both footprint files, such as the bundle’s manifest, block map, and signature, and app packages that are contained in the bundle.</para>
+    </remarks>
+  </member>
+</doc>

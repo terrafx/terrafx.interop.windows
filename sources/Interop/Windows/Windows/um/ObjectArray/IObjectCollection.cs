@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IObjectCollection.xml' path='doc/member[@name="IObjectCollection"]/*' />
 [Guid("5632B1A4-E38A-400A-928A-D4CD63230295")]
 [NativeTypeName("struct IObjectCollection : IObjectArray")]
 [NativeInheritance("IObjectArray")]
@@ -16,6 +17,7 @@ public unsafe partial struct IObjectCollection : IObjectCollection.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IObjectCollection : IObjectCollection.Interface
         return ((delegate* unmanaged<IObjectCollection*, Guid*, void**, int>)(lpVtbl[0]))((IObjectCollection*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IObjectCollection : IObjectCollection.Interface
         return ((delegate* unmanaged<IObjectCollection*, uint>)(lpVtbl[1]))((IObjectCollection*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IObjectCollection : IObjectCollection.Interface
         return ((delegate* unmanaged<IObjectCollection*, uint>)(lpVtbl[2]))((IObjectCollection*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IObjectArray.GetCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetCount(uint* pcObjects)
@@ -46,6 +51,7 @@ public unsafe partial struct IObjectCollection : IObjectCollection.Interface
         return ((delegate* unmanaged<IObjectCollection*, uint*, int>)(lpVtbl[3]))((IObjectCollection*)Unsafe.AsPointer(ref this), pcObjects);
     }
 
+    /// <inheritdoc cref="IObjectArray.GetAt" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetAt(uint uiIndex, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
@@ -53,6 +59,7 @@ public unsafe partial struct IObjectCollection : IObjectCollection.Interface
         return ((delegate* unmanaged<IObjectCollection*, uint, Guid*, void**, int>)(lpVtbl[4]))((IObjectCollection*)Unsafe.AsPointer(ref this), uiIndex, riid, ppv);
     }
 
+    /// <include file='IObjectCollection.xml' path='doc/member[@name="IObjectCollection.AddObject"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT AddObject(IUnknown* punk)
@@ -60,6 +67,7 @@ public unsafe partial struct IObjectCollection : IObjectCollection.Interface
         return ((delegate* unmanaged<IObjectCollection*, IUnknown*, int>)(lpVtbl[5]))((IObjectCollection*)Unsafe.AsPointer(ref this), punk);
     }
 
+    /// <include file='IObjectCollection.xml' path='doc/member[@name="IObjectCollection.AddFromArray"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT AddFromArray(IObjectArray* poaSource)
@@ -67,6 +75,7 @@ public unsafe partial struct IObjectCollection : IObjectCollection.Interface
         return ((delegate* unmanaged<IObjectCollection*, IObjectArray*, int>)(lpVtbl[6]))((IObjectCollection*)Unsafe.AsPointer(ref this), poaSource);
     }
 
+    /// <include file='IObjectCollection.xml' path='doc/member[@name="IObjectCollection.RemoveObjectAt"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT RemoveObjectAt(uint uiIndex)
@@ -74,6 +83,7 @@ public unsafe partial struct IObjectCollection : IObjectCollection.Interface
         return ((delegate* unmanaged<IObjectCollection*, uint, int>)(lpVtbl[7]))((IObjectCollection*)Unsafe.AsPointer(ref this), uiIndex);
     }
 
+    /// <include file='IObjectCollection.xml' path='doc/member[@name="IObjectCollection.Clear"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT Clear()

@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DISPID_SpeechPhraseBuilder.xml' path='doc/member[@name="DISPID_SpeechPhraseBuilder"]/*' />
 public enum DISPID_SpeechPhraseBuilder
 {
+    /// <include file='DISPID_SpeechPhraseBuilder.xml' path='doc/member[@name="DISPID_SpeechPhraseBuilder.DISPID_SPPBRestorePhraseFromMemory"]/*' />
     DISPID_SPPBRestorePhraseFromMemory = 1,
 }

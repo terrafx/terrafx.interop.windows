@@ -1,0 +1,288 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CRYPT_TIMESTAMP_RESPONSE">
+    <summary>
+      <para>The <b>CRYPT_TIMESTAMP_RESPONSE</b> structure is used internally to encapsulate  an <a href="https://docs.microsoft.com//windows/desktop/SecGloss/a-gly">Abstract Syntax Notation One</a> (ASN.1) <a href="https://docs.microsoft.com//windows/desktop/SecGloss/d-gly">Distinguished Encoding Rules</a> (DER) encoded response.</para>
+    </summary>
+  </member>
+  <member name="CRYPT_TIMESTAMP_RESPONSE.dwStatus">
+    <summary>
+      <para>A <b>DWORD</b> value that indicates the status of the time stamp response.</para>
+      <para>This member can be one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TIMESTAMP_STATUS_GRANTED</b>
+                </description>
+              </item>
+              <item>
+                <description>0</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>A TimeStampToken  is present in the <b>ContentInfo</b> member.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TIMESTAMP_STATUS_GRANTED_WITH_MODS</b>
+                </description>
+              </item>
+              <item>
+                <description>1</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>A TimeStampToken,
+with modifications, is present in the <b>ContentInfo</b> member.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TIMESTAMP_STATUS_REJECTED</b>
+                </description>
+              </item>
+              <item>
+                <description>2</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The time stamp request was rejected.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TIMESTAMP_STATUS_WAITING</b>
+                </description>
+              </item>
+              <item>
+                <description>3</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The time stamp request is still pending.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TIMESTAMP_STATUS_REVOCATION_WARNING</b>
+                </description>
+              </item>
+              <item>
+                <description>4</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The message in the <b>ContentInfo</b> member contains a warning that a revocation is imminent
+.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TIMESTAMP_STATUS_REVOKED</b>
+                </description>
+              </item>
+              <item>
+                <description>5</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The message in the <b>ContentInfo</b> member is a notification that a revocation has occurred.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="CRYPT_TIMESTAMP_RESPONSE.cFreeText">
+    <summary>
+      <para>Optional. The length, in characters, of the string pointed to by the <b>rgFreeText</b> member.</para>
+    </summary>
+  </member>
+  <member name="CRYPT_TIMESTAMP_RESPONSE.rgFreeText">
+    <summary>
+      <para>Optional. A pointer to a string that contains the text information about request failure.</para>
+    </summary>
+  </member>
+  <member name="CRYPT_TIMESTAMP_RESPONSE.FailureInfo">
+    <summary>
+      <para>A <see cref="CRYPT_BIT_BLOB" /> structure that contains the reason why the time stamp request was rejected. Each flag is encoded as a bit in the structure.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TIMESTAMP_FAILURE_BAD_ALG</b>
+                </description>
+              </item>
+              <item>
+                <description>0</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>An unrecognized or unsupported algorithm identifier was specified.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TIMESTAMP_FAILURE_BAD_REQUEST</b>
+                </description>
+              </item>
+              <item>
+                <description>2</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The transaction is not permitted or supported.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TIMESTAMP_FAILURE_BAD_FORMAT</b>
+                </description>
+              </item>
+              <item>
+                <description>5</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The data submitted is in the wrong format.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TIMESTAMP_FAILURE_TIME_NOT_AVAILABLE</b>
+                </description>
+              </item>
+              <item>
+                <description>14</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The Time Stamping Authority (TSA) time source is not available.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TIMESTAMP_FAILURE_POLICY_NOT_SUPPORTED</b>
+                </description>
+              </item>
+              <item>
+                <description>15</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The requested TSA policy is not supported by the TSA.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TIMESTAMP_FAILURE_EXTENSION_NOT_SUPPORTED</b>
+                </description>
+              </item>
+              <item>
+                <description>16</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The requested extension is not supported by the TSA.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TIMESTAMP_FAILURE_INFO_NOT_AVAILABLE</b>
+                </description>
+              </item>
+              <item>
+                <description>17</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The additional information requested was not recognized or is not available.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TIMESTAMP_FAILURE_SYSTEM_FAILURE</b>
+                </description>
+              </item>
+              <item>
+                <description>25</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The request cannot be handled due to a system failure.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="CRYPT_TIMESTAMP_RESPONSE.ContentInfo">
+    <summary>
+      <para>A <see cref="CRYPT_DER_BLOB" /> structure that encapsulates a signed data content type in Cryptographic Message Syntax (CMS) format.</para>
+    </summary>
+  </member>
+</doc>

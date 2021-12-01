@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DVASPECT.xml' path='doc/member[@name="DVASPECT"]/*' />
 public enum DVASPECT
 {
+    /// <include file='DVASPECT.xml' path='doc/member[@name="DVASPECT.DVASPECT_CONTENT"]/*' />
     DVASPECT_CONTENT = 1,
+
+    /// <include file='DVASPECT.xml' path='doc/member[@name="DVASPECT.DVASPECT_THUMBNAIL"]/*' />
     DVASPECT_THUMBNAIL = 2,
+
+    /// <include file='DVASPECT.xml' path='doc/member[@name="DVASPECT.DVASPECT_ICON"]/*' />
     DVASPECT_ICON = 4,
+
+    /// <include file='DVASPECT.xml' path='doc/member[@name="DVASPECT.DVASPECT_DOCPRINT"]/*' />
     DVASPECT_DOCPRINT = 8,
 }

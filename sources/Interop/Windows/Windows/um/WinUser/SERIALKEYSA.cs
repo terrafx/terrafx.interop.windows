@@ -5,22 +5,30 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SERIALKEYSA.xml' path='doc/member[@name="SERIALKEYSA"]/*' />
 public unsafe partial struct SERIALKEYSA
 {
+    /// <include file='SERIALKEYSA.xml' path='doc/member[@name="SERIALKEYSA.cbSize"]/*' />
     public uint cbSize;
 
+    /// <include file='SERIALKEYSA.xml' path='doc/member[@name="SERIALKEYSA.dwFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFlags;
 
+    /// <include file='SERIALKEYSA.xml' path='doc/member[@name="SERIALKEYSA.lpszActivePort"]/*' />
     [NativeTypeName("LPSTR")]
     public sbyte* lpszActivePort;
 
+    /// <include file='SERIALKEYSA.xml' path='doc/member[@name="SERIALKEYSA.lpszPort"]/*' />
     [NativeTypeName("LPSTR")]
     public sbyte* lpszPort;
 
+    /// <include file='SERIALKEYSA.xml' path='doc/member[@name="SERIALKEYSA.iBaudRate"]/*' />
     public uint iBaudRate;
 
+    /// <include file='SERIALKEYSA.xml' path='doc/member[@name="SERIALKEYSA.iPortState"]/*' />
     public uint iPortState;
 
+    /// <include file='SERIALKEYSA.xml' path='doc/member[@name="SERIALKEYSA.iActive"]/*' />
     public uint iActive;
 }

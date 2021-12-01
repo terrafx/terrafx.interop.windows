@@ -7,24 +7,32 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='POINTER_TOUCH_INFO.xml' path='doc/member[@name="POINTER_TOUCH_INFO"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public partial struct POINTER_TOUCH_INFO
 {
+    /// <include file='POINTER_TOUCH_INFO.xml' path='doc/member[@name="POINTER_TOUCH_INFO.pointerInfo"]/*' />
     public POINTER_INFO pointerInfo;
 
+    /// <include file='POINTER_TOUCH_INFO.xml' path='doc/member[@name="POINTER_TOUCH_INFO.touchFlags"]/*' />
     [NativeTypeName("TOUCH_FLAGS")]
     public uint touchFlags;
 
+    /// <include file='POINTER_TOUCH_INFO.xml' path='doc/member[@name="POINTER_TOUCH_INFO.touchMask"]/*' />
     [NativeTypeName("TOUCH_MASK")]
     public uint touchMask;
 
+    /// <include file='POINTER_TOUCH_INFO.xml' path='doc/member[@name="POINTER_TOUCH_INFO.rcContact"]/*' />
     public RECT rcContact;
 
+    /// <include file='POINTER_TOUCH_INFO.xml' path='doc/member[@name="POINTER_TOUCH_INFO.rcContactRaw"]/*' />
     public RECT rcContactRaw;
 
+    /// <include file='POINTER_TOUCH_INFO.xml' path='doc/member[@name="POINTER_TOUCH_INFO.orientation"]/*' />
     [NativeTypeName("UINT32")]
     public uint orientation;
 
+    /// <include file='POINTER_TOUCH_INFO.xml' path='doc/member[@name="POINTER_TOUCH_INFO.pressure"]/*' />
     [NativeTypeName("UINT32")]
     public uint pressure;
 }

@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="VMRALPHABITMAP">
+    <summary>
+      <para>The <b>VMRALPHABITMAP</b> structure is used in the VMR-7 filter's <see cref="IVMRMixerBitmap" /> methods when the application is providing a static alpha-blended bitmap to be displayed on the composited video frame.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-structures">DirectShow Structures</seealso>
+  </member>
+  <member name="VMRALPHABITMAP.dwFlags">
+    <summary>
+      <para>Flags that instruct the mixer where to find the bitmap. The following values are defined.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>VMRBITMAP_DISABLE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000001</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Disable the bitmap. This flag cannot be combined with other flags.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>VMRBITMAP_HDC</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000002</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Obtain the bitmap from the HDC. If this flag is set, the <b>hdc</b> member must specify a valid handle to a device context, and the <b>pDDS</b> member must be <b>NULL</b>.</para>
+            <para>If this flag is absent, the <b>pDDS</b> member must point to a valid DirectDraw surface, and the <b>hdc</b> member must be <b>NULL</b>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>VMRBITMAP_ENTIREDDS</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000004</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Take the entire DirectDraw surface. When this flag is specified, <b>rSrc</b> is ignored. This flag cannot be combined with the <b>VMRBITMAP_HDC</b> flag.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>VMRBITMAP_SRCCOLORKEY</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000008</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The <b>clrSrcKey</b> value is valid and should be used when blending.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>VMRBITMAP_SRCRECT</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000010</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Indicates that the <b>rSrc</b> rectangle is valid and specifies a sub-rectangle of the original app image to be blended.</para>
+            <para>This flag is only valid for the  <see cref="IVMRMixerBitmap.UpdateAlphaBitmapParameters" /> method. For the <see cref="IVMRMixerBitmap.SetAlphaBitmap" /> method, the <b>rSrc</b> member must refer to the entire bitmap.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="VMRALPHABITMAP.hdc">
+    <summary>
+      <para>The handle to the device context for the bitmap. Specify <b>NULL</b> if the bitmap is located in a DirectDraw surface.</para>
+    </summary>
+  </member>
+  <member name="VMRALPHABITMAP.pDDS">
+    <summary>
+      <para>Pointer to a DirectDraw surface that contains the bitmap. Specify <b>NULL</b> if the bitmap is to be obtained from a GDI device context. If a DirectDraw surface is specified,
+the pixel format must be ARGB-32 or RGB-32. If the surface contains per-pixel alpha, do not set the VMRBITMAP_SRCCOLORKEY flag in <b>dwFlags</b>.</para>
+    </summary>
+  </member>
+  <member name="VMRALPHABITMAP.rSrc">
+    <summary>
+      <para>Specifies the source rectangle in either the GDI device context or the DirectDraw surface.</para>
+    </summary>
+  </member>
+  <member name="VMRALPHABITMAP.rDest">
+    <summary>
+      <para>Specifies the destination rectangle in composition space.</para>
+    </summary>
+  </member>
+  <member name="VMRALPHABITMAP.fAlpha">
+    <summary>
+      <para>Specifies the alpha blending value; must be a value from 0.0 to 1.0 (inclusive).</para>
+    </summary>
+  </member>
+  <member name="VMRALPHABITMAP.clrSrcKey">
+    <summary>
+      <para>Specifies the source color key.</para>
+    </summary>
+  </member>
+</doc>

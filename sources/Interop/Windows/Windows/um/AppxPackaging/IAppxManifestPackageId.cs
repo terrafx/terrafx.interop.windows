@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAppxManifestPackageId.xml' path='doc/member[@name="IAppxManifestPackageId"]/*' />
 [Guid("283CE2D7-7153-4A91-9649-7A0F7240945F")]
 [NativeTypeName("struct IAppxManifestPackageId : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IAppxManifestPackageId : IAppxManifestPackageId.Int
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IAppxManifestPackageId : IAppxManifestPackageId.Int
         return ((delegate* unmanaged<IAppxManifestPackageId*, Guid*, void**, int>)(lpVtbl[0]))((IAppxManifestPackageId*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IAppxManifestPackageId : IAppxManifestPackageId.Int
         return ((delegate* unmanaged<IAppxManifestPackageId*, uint>)(lpVtbl[1]))((IAppxManifestPackageId*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IAppxManifestPackageId : IAppxManifestPackageId.Int
         return ((delegate* unmanaged<IAppxManifestPackageId*, uint>)(lpVtbl[2]))((IAppxManifestPackageId*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAppxManifestPackageId.xml' path='doc/member[@name="IAppxManifestPackageId.GetName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetName([NativeTypeName("LPWSTR *")] ushort** name)
@@ -48,6 +53,7 @@ public unsafe partial struct IAppxManifestPackageId : IAppxManifestPackageId.Int
         return ((delegate* unmanaged<IAppxManifestPackageId*, ushort**, int>)(lpVtbl[3]))((IAppxManifestPackageId*)Unsafe.AsPointer(ref this), name);
     }
 
+    /// <include file='IAppxManifestPackageId.xml' path='doc/member[@name="IAppxManifestPackageId.GetArchitecture"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetArchitecture(APPX_PACKAGE_ARCHITECTURE* architecture)
@@ -55,6 +61,7 @@ public unsafe partial struct IAppxManifestPackageId : IAppxManifestPackageId.Int
         return ((delegate* unmanaged<IAppxManifestPackageId*, APPX_PACKAGE_ARCHITECTURE*, int>)(lpVtbl[4]))((IAppxManifestPackageId*)Unsafe.AsPointer(ref this), architecture);
     }
 
+    /// <include file='IAppxManifestPackageId.xml' path='doc/member[@name="IAppxManifestPackageId.GetPublisher"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetPublisher([NativeTypeName("LPWSTR *")] ushort** publisher)
@@ -62,6 +69,7 @@ public unsafe partial struct IAppxManifestPackageId : IAppxManifestPackageId.Int
         return ((delegate* unmanaged<IAppxManifestPackageId*, ushort**, int>)(lpVtbl[5]))((IAppxManifestPackageId*)Unsafe.AsPointer(ref this), publisher);
     }
 
+    /// <include file='IAppxManifestPackageId.xml' path='doc/member[@name="IAppxManifestPackageId.GetVersion"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetVersion([NativeTypeName("UINT64 *")] ulong* packageVersion)
@@ -69,6 +77,7 @@ public unsafe partial struct IAppxManifestPackageId : IAppxManifestPackageId.Int
         return ((delegate* unmanaged<IAppxManifestPackageId*, ulong*, int>)(lpVtbl[6]))((IAppxManifestPackageId*)Unsafe.AsPointer(ref this), packageVersion);
     }
 
+    /// <include file='IAppxManifestPackageId.xml' path='doc/member[@name="IAppxManifestPackageId.GetResourceId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetResourceId([NativeTypeName("LPWSTR *")] ushort** resourceId)
@@ -76,6 +85,7 @@ public unsafe partial struct IAppxManifestPackageId : IAppxManifestPackageId.Int
         return ((delegate* unmanaged<IAppxManifestPackageId*, ushort**, int>)(lpVtbl[7]))((IAppxManifestPackageId*)Unsafe.AsPointer(ref this), resourceId);
     }
 
+    /// <include file='IAppxManifestPackageId.xml' path='doc/member[@name="IAppxManifestPackageId.ComparePublisher"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT ComparePublisher([NativeTypeName("LPCWSTR")] ushort* other, BOOL* isSame)
@@ -83,6 +93,7 @@ public unsafe partial struct IAppxManifestPackageId : IAppxManifestPackageId.Int
         return ((delegate* unmanaged<IAppxManifestPackageId*, ushort*, BOOL*, int>)(lpVtbl[8]))((IAppxManifestPackageId*)Unsafe.AsPointer(ref this), other, isSame);
     }
 
+    /// <include file='IAppxManifestPackageId.xml' path='doc/member[@name="IAppxManifestPackageId.GetPackageFullName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT GetPackageFullName([NativeTypeName("LPWSTR *")] ushort** packageFullName)
@@ -90,6 +101,7 @@ public unsafe partial struct IAppxManifestPackageId : IAppxManifestPackageId.Int
         return ((delegate* unmanaged<IAppxManifestPackageId*, ushort**, int>)(lpVtbl[9]))((IAppxManifestPackageId*)Unsafe.AsPointer(ref this), packageFullName);
     }
 
+    /// <include file='IAppxManifestPackageId.xml' path='doc/member[@name="IAppxManifestPackageId.GetPackageFamilyName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT GetPackageFamilyName([NativeTypeName("LPWSTR *")] ushort** packageFamilyName)

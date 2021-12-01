@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ENCLAVE_INIT_INFO_VBS">
+    <summary>
+      <para>Contains architecture-specific information to use to initialize an enclave when the enclave type is <b>ENCLAVE_TYPE_VBS</b>, which specifies a virtualization-based security (VBS) enclave.</para>
+    </summary>
+    <seealso cref="InitializeEnclave" />
+  </member>
+  <member name="ENCLAVE_INIT_INFO_VBS.Length">
+    <summary>
+      <para>The total length of the <b>ENCLAVE_INIT_INFO_VBS</b> structure, in bytes.</para>
+    </summary>
+  </member>
+  <member name="ENCLAVE_INIT_INFO_VBS.ThreadCount">
+    <summary>
+      <para>Upon entry to the <see cref="InitializeEnclave" /> function, specifies the number of threads to create in the enclave. Upon successful return from <b>InitializeEnclave</b>, contains the number of threads the function actually created.</para>
+    </summary>
+  </member>
+</doc>

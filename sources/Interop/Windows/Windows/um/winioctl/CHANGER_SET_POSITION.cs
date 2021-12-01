@@ -5,12 +5,16 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CHANGER_SET_POSITION.xml' path='doc/member[@name="CHANGER_SET_POSITION"]/*' />
 public partial struct CHANGER_SET_POSITION
 {
+    /// <include file='CHANGER_SET_POSITION.xml' path='doc/member[@name="CHANGER_SET_POSITION.Transport"]/*' />
     public CHANGER_ELEMENT Transport;
 
+    /// <include file='CHANGER_SET_POSITION.xml' path='doc/member[@name="CHANGER_SET_POSITION.Destination"]/*' />
     public CHANGER_ELEMENT Destination;
 
+    /// <include file='CHANGER_SET_POSITION.xml' path='doc/member[@name="CHANGER_SET_POSITION.Flip"]/*' />
     [NativeTypeName("BOOLEAN")]
     public byte Flip;
 }

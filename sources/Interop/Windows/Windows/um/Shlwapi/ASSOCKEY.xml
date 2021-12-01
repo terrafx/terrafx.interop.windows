@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ASSOCKEY">
+    <summary>
+      <para>Specifies the type of key to be returned by <see cref="IQueryAssociations.GetKey" />.</para>
+    </summary>
+  </member>
+  <member name="ASSOCKEY.ASSOCKEY_SHELLEXECCLASS">
+    <summary>
+      <para>A key that is passed to <see cref="ShellExecuteEx" /> through a <see cref="SHELLEXECUTEINFO" /> structure.</para>
+    </summary>
+  </member>
+  <member name="ASSOCKEY.ASSOCKEY_APP">
+    <summary>
+      <para>An <b>Application</b> key for the file type.</para>
+    </summary>
+  </member>
+  <member name="ASSOCKEY.ASSOCKEY_CLASS">
+    <summary>
+      <para>A ProgID or class key.</para>
+    </summary>
+  </member>
+  <member name="ASSOCKEY.ASSOCKEY_BASECLASS">
+    <summary>
+      <para>A BaseClass value.</para>
+    </summary>
+  </member>
+  <member name="ASSOCKEY.ASSOCKEY_MAX">
+    <summary></summary>
+  </member>
+</doc>

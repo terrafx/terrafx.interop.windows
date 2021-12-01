@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TASKBANDPARTS.xml' path='doc/member[@name="TASKBANDPARTS"]/*' />
 public enum TASKBANDPARTS
 {
+    /// <include file='TASKBANDPARTS.xml' path='doc/member[@name="TASKBANDPARTS.TDP_GROUPCOUNT"]/*' />
     TDP_GROUPCOUNT = 1,
+
+    /// <include file='TASKBANDPARTS.xml' path='doc/member[@name="TASKBANDPARTS.TDP_FLASHBUTTON"]/*' />
     TDP_FLASHBUTTON = 2,
+
+    /// <include file='TASKBANDPARTS.xml' path='doc/member[@name="TASKBANDPARTS.TDP_FLASHBUTTONGROUPMENU"]/*' />
     TDP_FLASHBUTTONGROUPMENU = 3,
 }

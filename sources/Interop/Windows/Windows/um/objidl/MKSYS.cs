@@ -5,16 +5,36 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MKSYS.xml' path='doc/member[@name="MKSYS"]/*' />
 public enum MKSYS
 {
+    /// <include file='MKSYS.xml' path='doc/member[@name="MKSYS.MKSYS_NONE"]/*' />
     MKSYS_NONE = 0,
+
+    /// <include file='MKSYS.xml' path='doc/member[@name="MKSYS.MKSYS_GENERICCOMPOSITE"]/*' />
     MKSYS_GENERICCOMPOSITE = 1,
+
+    /// <include file='MKSYS.xml' path='doc/member[@name="MKSYS.MKSYS_FILEMONIKER"]/*' />
     MKSYS_FILEMONIKER = 2,
+
+    /// <include file='MKSYS.xml' path='doc/member[@name="MKSYS.MKSYS_ANTIMONIKER"]/*' />
     MKSYS_ANTIMONIKER = 3,
+
+    /// <include file='MKSYS.xml' path='doc/member[@name="MKSYS.MKSYS_ITEMMONIKER"]/*' />
     MKSYS_ITEMMONIKER = 4,
+
+    /// <include file='MKSYS.xml' path='doc/member[@name="MKSYS.MKSYS_POINTERMONIKER"]/*' />
     MKSYS_POINTERMONIKER = 5,
+
+    /// <include file='MKSYS.xml' path='doc/member[@name="MKSYS.MKSYS_CLASSMONIKER"]/*' />
     MKSYS_CLASSMONIKER = 7,
+
+    /// <include file='MKSYS.xml' path='doc/member[@name="MKSYS.MKSYS_OBJREFMONIKER"]/*' />
     MKSYS_OBJREFMONIKER = 8,
+
+    /// <include file='MKSYS.xml' path='doc/member[@name="MKSYS.MKSYS_SESSIONMONIKER"]/*' />
     MKSYS_SESSIONMONIKER = 9,
+
+    /// <include file='MKSYS.xml' path='doc/member[@name="MKSYS.MKSYS_LUAMONIKER"]/*' />
     MKSYS_LUAMONIKER = 10,
 }

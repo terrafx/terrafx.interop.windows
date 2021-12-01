@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMediaSample2.xml' path='doc/member[@name="IMediaSample2"]/*' />
 [Guid("36B73884-C2C8-11CF-8B46-00805F6CEF60")]
 [NativeTypeName("struct IMediaSample2 : IMediaSample")]
 [NativeInheritance("IMediaSample")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMediaSample2 : IMediaSample2.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMediaSample2 : IMediaSample2.Interface
         return ((delegate* unmanaged<IMediaSample2*, Guid*, void**, int>)(lpVtbl[0]))((IMediaSample2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMediaSample2 : IMediaSample2.Interface
         return ((delegate* unmanaged<IMediaSample2*, uint>)(lpVtbl[1]))((IMediaSample2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMediaSample2 : IMediaSample2.Interface
         return ((delegate* unmanaged<IMediaSample2*, uint>)(lpVtbl[2]))((IMediaSample2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IMediaSample.GetPointer" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetPointer(byte** ppBuffer)
@@ -46,6 +51,7 @@ public unsafe partial struct IMediaSample2 : IMediaSample2.Interface
         return ((delegate* unmanaged<IMediaSample2*, byte**, int>)(lpVtbl[3]))((IMediaSample2*)Unsafe.AsPointer(ref this), ppBuffer);
     }
 
+    /// <inheritdoc cref="IMediaSample.GetSize" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     [return: NativeTypeName("long")]
@@ -54,6 +60,7 @@ public unsafe partial struct IMediaSample2 : IMediaSample2.Interface
         return ((delegate* unmanaged<IMediaSample2*, int>)(lpVtbl[4]))((IMediaSample2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IMediaSample.GetTime" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetTime([NativeTypeName("REFERENCE_TIME *")] long* pTimeStart, [NativeTypeName("REFERENCE_TIME *")] long* pTimeEnd)
@@ -61,6 +68,7 @@ public unsafe partial struct IMediaSample2 : IMediaSample2.Interface
         return ((delegate* unmanaged<IMediaSample2*, long*, long*, int>)(lpVtbl[5]))((IMediaSample2*)Unsafe.AsPointer(ref this), pTimeStart, pTimeEnd);
     }
 
+    /// <inheritdoc cref="IMediaSample.SetTime" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT SetTime([NativeTypeName("REFERENCE_TIME *")] long* pTimeStart, [NativeTypeName("REFERENCE_TIME *")] long* pTimeEnd)
@@ -68,6 +76,7 @@ public unsafe partial struct IMediaSample2 : IMediaSample2.Interface
         return ((delegate* unmanaged<IMediaSample2*, long*, long*, int>)(lpVtbl[6]))((IMediaSample2*)Unsafe.AsPointer(ref this), pTimeStart, pTimeEnd);
     }
 
+    /// <inheritdoc cref="IMediaSample.IsSyncPoint" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT IsSyncPoint()
@@ -75,6 +84,7 @@ public unsafe partial struct IMediaSample2 : IMediaSample2.Interface
         return ((delegate* unmanaged<IMediaSample2*, int>)(lpVtbl[7]))((IMediaSample2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IMediaSample.SetSyncPoint" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT SetSyncPoint(BOOL bIsSyncPoint)
@@ -82,6 +92,7 @@ public unsafe partial struct IMediaSample2 : IMediaSample2.Interface
         return ((delegate* unmanaged<IMediaSample2*, BOOL, int>)(lpVtbl[8]))((IMediaSample2*)Unsafe.AsPointer(ref this), bIsSyncPoint);
     }
 
+    /// <inheritdoc cref="IMediaSample.IsPreroll" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT IsPreroll()
@@ -89,6 +100,7 @@ public unsafe partial struct IMediaSample2 : IMediaSample2.Interface
         return ((delegate* unmanaged<IMediaSample2*, int>)(lpVtbl[9]))((IMediaSample2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IMediaSample.SetPreroll" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT SetPreroll(BOOL bIsPreroll)
@@ -96,6 +108,7 @@ public unsafe partial struct IMediaSample2 : IMediaSample2.Interface
         return ((delegate* unmanaged<IMediaSample2*, BOOL, int>)(lpVtbl[10]))((IMediaSample2*)Unsafe.AsPointer(ref this), bIsPreroll);
     }
 
+    /// <inheritdoc cref="IMediaSample.GetActualDataLength" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     [return: NativeTypeName("long")]
@@ -104,6 +117,7 @@ public unsafe partial struct IMediaSample2 : IMediaSample2.Interface
         return ((delegate* unmanaged<IMediaSample2*, int>)(lpVtbl[11]))((IMediaSample2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IMediaSample.SetActualDataLength" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT SetActualDataLength([NativeTypeName("long")] int __MIDL__IMediaSample0000)
@@ -111,6 +125,7 @@ public unsafe partial struct IMediaSample2 : IMediaSample2.Interface
         return ((delegate* unmanaged<IMediaSample2*, int, int>)(lpVtbl[12]))((IMediaSample2*)Unsafe.AsPointer(ref this), __MIDL__IMediaSample0000);
     }
 
+    /// <inheritdoc cref="IMediaSample.GetMediaType" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT GetMediaType(AM_MEDIA_TYPE** ppMediaType)
@@ -118,6 +133,7 @@ public unsafe partial struct IMediaSample2 : IMediaSample2.Interface
         return ((delegate* unmanaged<IMediaSample2*, AM_MEDIA_TYPE**, int>)(lpVtbl[13]))((IMediaSample2*)Unsafe.AsPointer(ref this), ppMediaType);
     }
 
+    /// <inheritdoc cref="IMediaSample.SetMediaType" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT SetMediaType(AM_MEDIA_TYPE* pMediaType)
@@ -125,6 +141,7 @@ public unsafe partial struct IMediaSample2 : IMediaSample2.Interface
         return ((delegate* unmanaged<IMediaSample2*, AM_MEDIA_TYPE*, int>)(lpVtbl[14]))((IMediaSample2*)Unsafe.AsPointer(ref this), pMediaType);
     }
 
+    /// <inheritdoc cref="IMediaSample.IsDiscontinuity" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT IsDiscontinuity()
@@ -132,6 +149,7 @@ public unsafe partial struct IMediaSample2 : IMediaSample2.Interface
         return ((delegate* unmanaged<IMediaSample2*, int>)(lpVtbl[15]))((IMediaSample2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IMediaSample.SetDiscontinuity" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT SetDiscontinuity(BOOL bDiscontinuity)
@@ -139,6 +157,7 @@ public unsafe partial struct IMediaSample2 : IMediaSample2.Interface
         return ((delegate* unmanaged<IMediaSample2*, BOOL, int>)(lpVtbl[16]))((IMediaSample2*)Unsafe.AsPointer(ref this), bDiscontinuity);
     }
 
+    /// <inheritdoc cref="IMediaSample.GetMediaTime" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT GetMediaTime([NativeTypeName("LONGLONG *")] long* pTimeStart, [NativeTypeName("LONGLONG *")] long* pTimeEnd)
@@ -146,6 +165,7 @@ public unsafe partial struct IMediaSample2 : IMediaSample2.Interface
         return ((delegate* unmanaged<IMediaSample2*, long*, long*, int>)(lpVtbl[17]))((IMediaSample2*)Unsafe.AsPointer(ref this), pTimeStart, pTimeEnd);
     }
 
+    /// <inheritdoc cref="IMediaSample.SetMediaTime" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT SetMediaTime([NativeTypeName("LONGLONG *")] long* pTimeStart, [NativeTypeName("LONGLONG *")] long* pTimeEnd)
@@ -153,6 +173,7 @@ public unsafe partial struct IMediaSample2 : IMediaSample2.Interface
         return ((delegate* unmanaged<IMediaSample2*, long*, long*, int>)(lpVtbl[18]))((IMediaSample2*)Unsafe.AsPointer(ref this), pTimeStart, pTimeEnd);
     }
 
+    /// <include file='IMediaSample2.xml' path='doc/member[@name="IMediaSample2.GetProperties"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT GetProperties([NativeTypeName("DWORD")] uint cbProperties, byte* pbProperties)
@@ -160,6 +181,7 @@ public unsafe partial struct IMediaSample2 : IMediaSample2.Interface
         return ((delegate* unmanaged<IMediaSample2*, uint, byte*, int>)(lpVtbl[19]))((IMediaSample2*)Unsafe.AsPointer(ref this), cbProperties, pbProperties);
     }
 
+    /// <include file='IMediaSample2.xml' path='doc/member[@name="IMediaSample2.SetProperties"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public HRESULT SetProperties([NativeTypeName("DWORD")] uint cbProperties, [NativeTypeName("const BYTE *")] byte* pbProperties)

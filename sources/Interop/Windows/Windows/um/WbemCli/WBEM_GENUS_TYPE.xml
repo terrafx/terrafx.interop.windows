@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WBEM_GENUS_TYPE">
+    <summary>
+      <para>Contains constants used to distinguish between classes and instances.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/wmi-system-properties">WMI System Properties</seealso>
+  </member>
+  <member name="WBEM_GENUS_TYPE.WBEM_GENUS_CLASS">
+    <summary></summary>
+  </member>
+  <member name="WBEM_GENUS_TYPE.WBEM_GENUS_INSTANCE">
+    <summary></summary>
+  </member>
+</doc>

@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PropertiesUI.xml' path='doc/member[@name="PropertiesUI"]/*' />
 [Guid("D912F8CF-0396-4915-884E-FB425D32943B")]
 public partial struct PropertiesUI
 {

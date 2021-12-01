@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="AM_QueryRate">
+    <summary>
+      <para>The <b>AM_QueryRate</b> structure is used to query the decoder's maximum full-frame rate for forward and reverse playback.</para>
+    </summary>
+    <remarks>
+      <para>Rate is the inverse of speed. For example, if the playback speed is 2x, the rate is 1/2, so the <b>Rate</b> member is set to 5000. Reverse rates are negative.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/am-rate-queryfullframerate-property">AM_RATE_QueryFullFrameRate Property</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/rate-change-property-set">Rate Change Property Set</seealso>
+  </member>
+  <member name="AM_QueryRate.lMaxForwardFullFrame">
+    <summary>
+      <para>Specifies the maximum forward full-frame rate, as rate x 10000.</para>
+    </summary>
+  </member>
+  <member name="AM_QueryRate.lMaxReverseFullFrame">
+    <summary>
+      <para>Specifies the maximum reverse full-frame rate, as rate x 10000.</para>
+    </summary>
+  </member>
+</doc>

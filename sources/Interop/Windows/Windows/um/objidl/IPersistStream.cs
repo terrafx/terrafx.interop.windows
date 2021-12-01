@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IPersistStream.xml' path='doc/member[@name="IPersistStream"]/*' />
 [Guid("00000109-0000-0000-C000-000000000046")]
 [NativeTypeName("struct IPersistStream : IPersist")]
 [NativeInheritance("IPersist")]
@@ -16,6 +17,7 @@ public unsafe partial struct IPersistStream : IPersistStream.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IPersistStream : IPersistStream.Interface
         return ((delegate* unmanaged<IPersistStream*, Guid*, void**, int>)(lpVtbl[0]))((IPersistStream*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IPersistStream : IPersistStream.Interface
         return ((delegate* unmanaged<IPersistStream*, uint>)(lpVtbl[1]))((IPersistStream*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IPersistStream : IPersistStream.Interface
         return ((delegate* unmanaged<IPersistStream*, uint>)(lpVtbl[2]))((IPersistStream*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IPersist.GetClassID" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetClassID([NativeTypeName("CLSID *")] Guid* pClassID)
@@ -46,6 +51,7 @@ public unsafe partial struct IPersistStream : IPersistStream.Interface
         return ((delegate* unmanaged<IPersistStream*, Guid*, int>)(lpVtbl[3]))((IPersistStream*)Unsafe.AsPointer(ref this), pClassID);
     }
 
+    /// <include file='IPersistStream.xml' path='doc/member[@name="IPersistStream.IsDirty"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT IsDirty()
@@ -53,6 +59,7 @@ public unsafe partial struct IPersistStream : IPersistStream.Interface
         return ((delegate* unmanaged<IPersistStream*, int>)(lpVtbl[4]))((IPersistStream*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IPersistStream.xml' path='doc/member[@name="IPersistStream.Load"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT Load(IStream* pStm)
@@ -60,6 +67,7 @@ public unsafe partial struct IPersistStream : IPersistStream.Interface
         return ((delegate* unmanaged<IPersistStream*, IStream*, int>)(lpVtbl[5]))((IPersistStream*)Unsafe.AsPointer(ref this), pStm);
     }
 
+    /// <include file='IPersistStream.xml' path='doc/member[@name="IPersistStream.Save"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Save(IStream* pStm, BOOL fClearDirty)
@@ -67,6 +75,7 @@ public unsafe partial struct IPersistStream : IPersistStream.Interface
         return ((delegate* unmanaged<IPersistStream*, IStream*, BOOL, int>)(lpVtbl[6]))((IPersistStream*)Unsafe.AsPointer(ref this), pStm, fClearDirty);
     }
 
+    /// <include file='IPersistStream.xml' path='doc/member[@name="IPersistStream.GetSizeMax"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetSizeMax(ULARGE_INTEGER* pcbSize)

@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PRJ_PLACEHOLDER_INFO">
+    <summary>
+      <para>A buffer of metadata for the placeholder file or directory.</para>
+    </summary>
+  </member>
+  <member name="PRJ_PLACEHOLDER_INFO.FileBasicInfo">
+    <summary>
+      <para>A structure that supplies basic information about the item: the size of the file in bytes (should be zero if the IsDirectory field is set to TRUE), the item’s timestamps, and its attributes.</para>
+    </summary>
+  </member>
+  <member name="PRJ_PLACEHOLDER_INFO.EaInformation">
+    <summary>
+      <para>A structure that supplies extended attribute (EA) information about the item.</para>
+    </summary>
+  </member>
+  <member name="PRJ_PLACEHOLDER_INFO.EaInformation.EaBufferSize">
+    <summary>
+      <para>The size in bytes of the extended attribute buffer. If there is no extended attribute information, this must be set to 0.</para>
+    </summary>
+  </member>
+  <member name="PRJ_PLACEHOLDER_INFO.EaInformation.OffsetToFirstEa">
+    <summary>
+      <para>The offset, in bytes, from the start of the <b>PRJ_PLACEHOLDER_INFO</b> structure to the first FILE_FULL_EA_INFORMATION entry.</para>
+    </summary>
+  </member>
+  <member name="PRJ_PLACEHOLDER_INFO.SecurityInformation">
+    <summary>
+      <para>Supplies custom security descriptor information about the item.</para>
+    </summary>
+  </member>
+  <member name="PRJ_PLACEHOLDER_INFO.SecurityInformation.SecurityBufferSize">
+    <summary>
+      <para>The size, in bytes, of the custom security descriptor. If there is no custom security descriptor, this must be set to 0.</para>
+    </summary>
+  </member>
+  <member name="PRJ_PLACEHOLDER_INFO.SecurityInformation.OffsetToSecurityDescriptor">
+    <summary>
+      <para>Specifies the offset, in bytes,  from the start of the <b>PRJ_PLACEHOLDER_INFO</b> structure to the SECURITY_DESCRIPTOR structure.</para>
+    </summary>
+  </member>
+  <member name="PRJ_PLACEHOLDER_INFO.StreamsInformation">
+    <summary>
+      <para>Supplies information about alternate data streams for the item.</para>
+    </summary>
+  </member>
+  <member name="PRJ_PLACEHOLDER_INFO.StreamsInformation.StreamsInfoBufferSize">
+    <summary>
+      <para>The size, in bytes, of alternate data stream information for the placeholder. If there are no alternate data streams, this must be set to 0.</para>
+    </summary>
+  </member>
+  <member name="PRJ_PLACEHOLDER_INFO.StreamsInformation.OffsetToFirstStreamInfo">
+    <summary>
+      <para>The offset, in bytes, from the start of the <b>PRJ_PLACEHOLDER_INFO</b> structure to the first FILE_STREAM_INFORMATION entry.</para>
+    </summary>
+  </member>
+  <member name="PRJ_PLACEHOLDER_INFO.VariableData [1]">
+    <summary>
+      <para>Start of the variable-length buffer to hold EAs, a custom security descriptor, and alternate data stream information.</para>
+    </summary>
+  </member>
+  <member name="PRJ_PLACEHOLDER_INFO.versionInfo">
+    <summary>
+      <para>Version information for the placeholder (see <see cref="PrjMarkDirectoryAsPlaceholder" /> for more information on PRJ_PLACEHOLDER_VERSION_INFO)</para>
+    </summary>
+  </member>
+</doc>

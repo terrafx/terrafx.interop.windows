@@ -1,0 +1,2739 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CRYPT_ALGORITHM_IDENTIFIER">
+    <summary>
+      <para>The <b>CRYPT_ALGORITHM_IDENTIFIER</b> structure specifies an algorithm used to encrypt a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/p-gly">private key</a>. The structure includes the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/o-gly">object identifier</a> (OID) of the algorithm and any needed parameters for that algorithm. The parameters contained in its <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_OBJID_BLOB</a> are encoded.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/SecCrypto/alg-id">ALG_ID</seealso>
+    <seealso cref="CERT_INFO" />
+    <seealso cref="CERT_PUBLIC_KEY_INFO" />
+    <seealso cref="CERT_SIGNED_CONTENT_INFO" />
+    <seealso cref="CMSG_ENVELOPED_ENCODE_INFO" />
+    <seealso cref="CMSG_HASHED_ENCODE_INFO" />
+    <seealso cref="CMSG_SIGNER_ENCODE_INFO" />
+    <seealso cref="CMSG_SIGNER_INFO" />
+    <seealso cref="CRL_INFO" />
+    <seealso cref="CRYPT_ENCRYPT_MESSAGE_PARA" />
+    <seealso cref="CRYPT_HASH_MESSAGE_PARA" />
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_INTEGER_BLOB</seealso>
+    <seealso cref="CRYPT_PRIVATE_KEY_INFO" />
+    <seealso cref="CRYPT_SIGN_MESSAGE_PARA" />
+    <seealso cref="CryptMsgGetParam" />
+  </member>
+  <member name="CRYPT_ALGORITHM_IDENTIFIER.pszObjId">
+    <summary>
+      <para>An OID of an algorithm. This member can be one of the following values.  This list is only representative. New algorithms are being defined by</para>
+      <para>various users.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_RSA</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.2.840.113549"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Root object identifier for the RSA asymmetric encryption algorithm family. RSA stands for Ron Rivest, Adi Shamir and Leonard Adleman, the mathematicians who invented the algorithm. This is a popular asymmetric algorithm that can be used for encryption or signing.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_PKCS</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.2.840.113549.1"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Root object identifier for the PKCS (Public Key Cryptography Standards) group of standards that define public key or asymmetric cryptography.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_RSA_HASH</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.2.840.113549.2"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>RSA signing (encryption) algorithm that uses a hashing algorithm to hash the content before signing it.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_RSA_ENCRYPT</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.2.840.113549.3"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>RSA encryption algorithm.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_PKCS_1</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.2.840.113549.1.1"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>PKCS#1 is the first Public Key Cryptography Standard (PKCS) published by  RSA Laboratories. The PKCS#1 standard defines the properties of encryption and decryption employed by the RSA algorithm.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_PKCS_2</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.2.840.113549.1.2"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>PKCS#2 was a Public Key Cryptography Standard (PKCS) that dealt with RSA encryption of message digests. It has been merged into PKCS#1.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_PKCS_3</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.2.840.113549.1.3"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>PKCS#3 is a Public Key Cryptography Standard (PKCS)  that defines the Diffie-Hellman key agreement protocol.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_PKCS_4</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.2.840.113549.1.4"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>PKCS#4 was a Public Key Cryptography Standard (PKCS) that defined the RSA key syntax. It has been merged into PKCS#1.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_PKCS_5</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.2.840.113549.1.5"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>PKCS#5 is a Public Key Cryptography Standard (PKCS)  that provides recommendations for the implementation of
+password-based cryptography. It  covers key derivation functions,
+encryption schemes, message-authentication schemes, and ASN.1 syntax
+structure.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_PKCS_6</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.2.840.113549.1.6"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>PKCS#6 is a Public Key Cryptography Standard (PKCS)  that describes the syntax for extended certificate information, a set of attributes that provides additional information about the
+entity whose public key is certified in the X.509
+certificate.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_PKCS_7</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.2.840.113549.1.7"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>PKCS#7 is a Public Key Cryptography Standard (PKCS)  that describes the general types of content to which cryptography can be applied. This includes data, signed data,
+enveloped data, signed-and-enveloped data, digested data,
+and encrypted data.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_PKCS_8</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.2.840.113549.1.8"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>PKCS#8 is a Public Key Cryptography Standard (PKCS) that defines the syntax for private key information in the <b>PrivateKeyInfo</b> ASN.1 type.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_PKCS_9</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.2.840.113549.1.9"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>PKCS#8 is a Public Key Cryptography Standard (PKCS) that defines attribute types for use in
+PKCS#6 extended certificates, PKCS#7 digitally signed
+messages, PKCS#8 private-key information, and PKCS#10
+certificate-signing requests.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_PKCS_10</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.2.840.113549.1.10"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>PKCS#10 is a Public Key Cryptography Standard (PKCS) that describes the certificate request syntax.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_PKCS_12</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.2.840.113549.1.12"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>PKCS#12 is a Public Key Cryptography Standard (PKCS) that describes the personal information exchange (PFX) format used to transfer personal identity information such as private keys and certificates.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_RSA_MD2</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.2.840.113549.2.2"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>RSA algorithm coupled with an MD2 message digest algorithm that hashes the message contents before signing.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_RSA_MD4</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.2.840.113549.2.4"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>RSA algorithm coupled with an MD4 message digest algorithm that hashes the message contents before signing.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_RSA_MD5</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.2.840.113549.2.5"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>RSA algorithm coupled with an MD5 message digest algorithm that hashes the message contents before signing.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_RSA_RSA</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.2.840.113549.1.1.1"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>RSA is used to both encrypt and sign content.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_RSA_MD2RSA</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.2.840.113549.1.1.2"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>RSA is used to encrypt the content and to sign the content hash created by using the MD2 message digest algorithm.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_RSA_MD4RSA</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.2.840.113549.1.1.3"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>RSA is used to encrypt the content and to sign the content hash created by using the MD4 message digest algorithm.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_RSA_MD5RSA</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.2.840.113549.1.1.4"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>RSA is used to encrypt the content and to sign the content hash created by using the MD5 message digest algorithm.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_RSA_SHA1RSA</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.2.840.113549.1.1.5"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>RSA is used to encrypt the content and to sign the content hash created by using the Secure Hashing Algorithm (SHA) algorithm.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_RSA_SETOAEP_RSA</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.2.840.113549.1.1.6"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>RSA that uses Optimal Asymmetric Encryption Padding (OAEP) encoding.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_RSAES_OAEP</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.2.840.113549.1.1.7"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Public-key encryption scheme combining Optimal Asymmetric Encryption Padding (OAEP) with the RSAEP encryption primitive. RSAES-OAEP takes a plaintext as input, transforms it into an encoded message by using OAEP and applies RSAEP to the result using the RSA public key.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_RSA_MGF1</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.2.840.113549.1.1.8"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>RSA algorithm that uses the mask generator function (MGF1)</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_RSA_PSPECIFIED</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.2.840.113549.1.1.9"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>RSA algorithm.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_RSA_SSA_PSS</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.2.840.113549.1.1.10"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>RSA algorithm that uses the probabilistic signature scheme (PSS).</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_RSA_SHA256RSA</b>
+                </description>
+              </item>
+              <item>
+                <description>1.2.840.113549.1.1.11</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>RSA is used to encrypt the content and to sign the hash created by using the Secure Hashing Algorithm 256 (SHA256) algorithm.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_RSA_SHA384RSA</b>
+                </description>
+              </item>
+              <item>
+                <description>1.2.840.113549.1.1.12</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>RSA is used to encrypt the content and to sign the hash created by using the Secure Hashing Algorithm 384 (SHA384) algorithm.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b> szOID_RSA_SHA512RSA</b>
+                </description>
+              </item>
+              <item>
+                <description>1.2.840.113549.1.1.13</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>RSA is used to encrypt the content and to sign the hash created by using the Secure Hashing Algorithm 512 (SHA512) algorithm.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_RSA_DH</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.2.840.113549.1.3.1"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>RSA algorithm combined with the Diffie-Hellman key exchange algorithm.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_RSA_data</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.2.840.113549.1.7.1"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>RSA applied over the PKCS#7 ASN.1 <b>Data</b> type.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_RSA_signedData</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.2.840.113549.1.7.2"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>RSA applied over the PKCS#7 ASN.1 <b>SignedData</b> type.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_RSA_envelopedData</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.2.840.113549.1.7.3"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>RSA applied over the PKCS#7 ASN.1 <b>EnvelopedData</b> type.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_RSA_signEnvData</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.2.840.113549.1.7.4"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>RSA applied over the PKCS#7 ASN.1 <b>SignedAndEnvelopedData</b> type.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_RSA_digestedData</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.2.840.113549.1.7.5"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>RSA applied over the PKCS#7 ASN.1 <b>DigestedData</b> type.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_RSA_hashedData</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.2.840.113549.1.7.5"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>RSA algorithm applied to hashed data.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_RSA_encryptedData</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.2.840.113549.1.7.6"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>RSA applied over the PKCS#7 ASN.1 <b>EncryptedData</b> type.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_RSA_emailAddr</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.2.840.113549.1.9.1"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>RSA applied to the to an ASN.1 email address.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_RSA_unstructName</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.2.840.113549.1.9.2"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>RSA applied to the an ASN.1 unstructured name.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_RSA_contentType</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.2.840.113549.1.9.3"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>RSA applied to the ASN.1 content type value.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_RSA_messageDigest</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.2.840.113549.1.9.4"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>RSA applied to a message digest.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_RSA_signingTime</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.2.840.113549.1.9.5"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>RSA applied to the signing date and time value</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_RSA_counterSign</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.2.840.113549.1.9.6"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>RSA applied to the counter signature.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_RSA_challengePwd</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.2.840.113549.1.9.7"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>RSA applied to a challenge password.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_RSA_unstructAddr</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.2.840.113549.1.9.8"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>RSA applied to an unstructured address.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_RSA_extCertAttrs</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.2.840.113549.1.9.9"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>RSA applied to the certificate attributes.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_RSA_certExtensions</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.2.840.113549.1.9.14"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>RSA applied to certificate extensions.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_RSA_SMIMECapabilities</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.2.840.113549.1.9.15"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>RSA applied to the Multipurpose Internet Mail Extensions (MIME)</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_RSA_preferSignedData</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.2.840.113549.1.9.15.1"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>RSA applied to the SMIME <b>preferSignedData</b> capability preference.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_TIMESTAMP_TOKEN</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.2.840.113549.1.9.16.1.4"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Timestamp object identifier.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_RFC3161_counterSign</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.2.840.113549.1.9.16.1.4"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Counter signature of a signature.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_RSA_SMIMEalg</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.2.840.113549.1.9.16.3"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>RSA applied to the Multipurpose Internet Mail Extensions (MIME) algorithm.  SMIME reports the decryption capabilities of an email recipient to an email sender so that the sender can choose the most secure algorithm supported by both parties.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_RSA_SMIMEalgESDH</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.2.840.113549.1.9.16.3.5"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>RSA applied to the specified SMIME ESDH  algorithm.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_RSA_SMIMEalgCMS3DESwrap</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.2.840.113549.1.9.16.3.6"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>RSA applied to the SMIME algorithm. Triple DES is used for key wrapping.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_RSA_SMIMEalgCMSRC2wrap</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.2.840.113549.1.9.16.3.7"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>RSA applied to the SMIME algorithm. RC2 is used for key wrapping.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_RSA_RC2CBC</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.2.840.113549.3.2"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>RSA that uses the Rivest Cipher (RC2) block cipher algorithm coupled with a cipher-block chaining mode of operation.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_RSA_RC4</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.2.840.113549.3.4"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>RSA that uses the Rivest Cipher (RC4) block cipher algorithm coupled with a cipher-block chaining mode of operation.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_RSA_DES_EDE3_CBC</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.2.840.113549.3.7"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>RSA that uses the triple Data Encryption Standard (DES) algorithm coupled with a cipher-block chaining mode of operation.   The encryption operation is performed as encrypt-decrypt-encrypt.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_RSA_RC5_CBCPad</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.2.840.113549.3.9"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>RSA that uses the Rivest Cipher (RC5) block cipher algorithm coupled with a cipher-block chaining pad mode of operation</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_ANSI_x942</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.2.840.10046"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Root object identifier for the ANSI X942 standard.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_ANSI_x942_DH</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.2.840.10046.2.1"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Diffie-Hellman Key Exchange Algorithm.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_X957</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.2.840.10040"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Root object identifier for the X957 standard.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_X957_DSA</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.2.840.10040.4.1"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Digital Signature Algorithm (DSA).</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_X957_SHA1DSA</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.2.840.10040.4.3"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Digital Signature Algorithm (DSA) coupled with the Secure Hashing Algorithm (SHA) algorithm.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_ECC_PUBLIC_KEY</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.2.840.10045.2.1"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Elliptic curve public key cryptography.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_ECC_CURVE_P256</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.2.840.10045.3.1.7"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>256 bit elliptic curve.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_ECC_CURVE_P384</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.3.132.0.34"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>384 bit elliptic curve.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_ECC_CURVE_P521</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.3.132.0.35"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>512 bit elliptic curve.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_ECDSA_SHA1</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.2.840.10045.4.1"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Elliptic curve Digital Signature Algorithm (DSA) coupled with the Secure Hashing Algorithm (SHA) algorithm.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_ECDSA_SPECIFIED</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.2.840.10045.4.3"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Elliptic curve Digital Signature Algorithm (DSA).</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_ECDSA_SHA256</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.2.840.10045.4.3.2"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Elliptic curve Digital Signature Algorithm (DSA) coupled with the Secure Hashing Algorithm (SHA256) algorithm.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_ECDSA_SHA384</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.2.840.10045.4.3.3"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Elliptic curve Digital Signature Algorithm (DSA) coupled with the Secure Hashing Algorithm (SHA384) algorithm.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_ECDSA_SHA512</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.2.840.10045.4.3.4"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Elliptic curve Digital Signature Algorithm (DSA) coupled with the Secure Hashing Algorithm (SHA512) algorithm.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_NIST_AES128_CBC</b>
+                </description>
+              </item>
+              <item>
+                <description>"2.16.840.1.101.3.4.1.2"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>128 bit Advanced Encryption Standard (AES) algorithm with cipher-block chaining mode of operation.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_NIST_AES192_CBC</b>
+                </description>
+              </item>
+              <item>
+                <description>"2.16.840.1.101.3.4.1.22"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>192 bit Advanced Encryption Standard (AES) algorithm with cipher-block chaining mode of operation.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_NIST_AES256_CBC</b>
+                </description>
+              </item>
+              <item>
+                <description>"2.16.840.1.101.3.4.1.42"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>256 bit Advanced Encryption Standard (AES) algorithm with cipher-block chaining mode of operation.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_NIST_AES128_WRAP</b>
+                </description>
+              </item>
+              <item>
+                <description>"2.16.840.1.101.3.4.1.5"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>128 bit Advanced Encryption Standard (AES) algorithm used for key wrapping.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_NIST_AES192_WRAP</b>
+                </description>
+              </item>
+              <item>
+                <description>"2.16.840.1.101.3.4.1.25"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>192 bit Advanced Encryption Standard (AES) algorithm used for key wrapping.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_NIST_AES256_WRAP</b>
+                </description>
+              </item>
+              <item>
+                <description>"2.16.840.1.101.3.4.1.45"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>256 bit Advanced Encryption Standard (AES) algorithm used for key wrapping.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_DATA STRUCTURE</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.2.840.10040.4.3"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Unspecified data structure.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_DH_SINGLE_PASS_STDDH_SHA1_KDF</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.3.133.16.840.63.0.2"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Single pass SHA1 key derivation.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_DH_SINGLE_PASS_STDDH_SHA256_KDF</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.3.132.1.11.1"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Single pass SHA256 key derivation.</para>
+            <para>
+              <b>Windows Server 2008, Windows Vista, Windows Server 2003 and Windows XP:  </b>This OID is not supported.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_DH_SINGLE_PASS_STDDH_SHA384_KDF</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.3.132.1.11.2"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Single pass SHA384 key derivation.</para>
+            <para>
+              <b>Windows Server 2008, Windows Vista, Windows Server 2003 and Windows XP:  </b>This OID is not supported.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_DS</b>
+                </description>
+              </item>
+              <item>
+                <description>"2.5"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Enveloped signature.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_DSALG</b>
+                </description>
+              </item>
+              <item>
+                <description>"2.5.8"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Enveloped digital signature algorithm.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_DSALG_CRPT</b>
+                </description>
+              </item>
+              <item>
+                <description>"2.5.8.1"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Digital signature algorithm applied to encrypted content.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_DSALG_HASH</b>
+                </description>
+              </item>
+              <item>
+                <description>"2.5.8.2"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Digital signature algorithm applied to hashed content.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_DSALG_SIGN</b>
+                </description>
+              </item>
+              <item>
+                <description>"2.5.8.3"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Digital signature algorithm applied to a signature.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_DSALG_RSA</b>
+                </description>
+              </item>
+              <item>
+                <description>"2.5.8.1.1"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Enveloped digital signature algorithm applied to RSA encrypted or signed content.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_OIW</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.3.14"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>NIST OSE Implementors' Workshop (OIW) root object identifier.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_OIWSEC</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.3.14.3.2"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>NIST OSE Implementors' Workshop (OIW) Security standard root object identifier.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_OIWSEC_md4RSA</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.3.14.3.2.2"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>NIST OSE Implementors' Workshop (OIW) Security RSA algorithm applied to  a hash created by using the Message Digest (MD4) algorithm.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_OIWSEC_md5RSA</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.3.14.3.2.3"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>NIST OSE Implementors' Workshop (OIW) Security RSA algorithm applied to a hash created by using the Message Digest (MD5) algorithm.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_OIWSEC_md4RSA2</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.3.14.3.2.4"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>NIST OSE Implementors' Workshop (OIW) Security RSA2 algorithm applied to a hash created by using the Message Digest (MD5) algorithm.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_OIWSEC_desECB</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.3.14.3.2.6"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>NIST OSE Implementors' Workshop (OIW) Security Data Encryption Standard (DES) algorithm coupled with a electronic codebook mode of operation.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_OIWSEC_desCBC</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.3.14.3.2.7"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>NIST OSE Implementors' Workshop (OIW) Security Data Encryption Standard (DES) algorithm coupled with a cipher-block chaining mode of operation.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_OIWSEC_desOFB</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.3.14.3.2.8"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Data Encryption Standard (DES) algorithm coupled with a cipher-block chaining mode of operation.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_OIWSEC_desCFB</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.3.14.3.2.9"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>NIST OSE Implementors' Workshop (OIW) Security Data Encryption Standard (DES) algorithm coupled with a output feedback mode of operation.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_OIWSEC_desMAC</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.3.14.3.2.10"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>NIST OSE Implementors' Workshop (OIW) Security Data Encryption Standard (DES) algorithm coupled with a message authentication code (MAC) that hashes both the pre-image and the key.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_OIWSEC_rsaSign</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.3.14.3.2.11"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>NIST OSE Implementors' Workshop (OIW) Security RSA signature algorithm.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_OIWSEC_dsa</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.3.14.3.2.12"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>NIST OSE Implementors' Workshop (OIW) Security Digital Signature Algorithm (DSA).</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_OIWSEC_shaDSA</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.3.14.3.2.13"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>NIST OSE Implementors' Workshop (OIW) Security Digital Signature Algorithm (DSA) that uses the Secure Hashing Algorithm (SHA) to hash the message contents.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_OIWSEC_mdc2RSA</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.3.14.3.2.14"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>NIST OSE Implementors' Workshop (OIW) Security RSA algorithm that uses the Modification Detection Code 2 (MDC2) or Meyer-Schilling hash function.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_OIWSEC_shaRSA</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.3.14.3.2.15"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>NIST OSE Implementors' Workshop (OIW) Security RSA algorithm coupled with the Secure Hashing Algorithm (SHA).</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_OIWSEC_dhCommMod</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.3.14.3.2.16"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>NIST OSE Implementors' Workshop (OIW) Security Diffie-Hellman key exchange algorithm.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_OIWSEC_desEDE</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.3.14.3.2.17"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>NIST OSE Implementors' Workshop (OIW) Security Data Encryption Standard (DES) algorithm coupled with the encrypt-decrypt-encrypt (EDE) multiple encryption mode of operation.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_OIWSEC_sha</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.3.14.3.2.18"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>NIST OSE Implementors' Workshop (OIW) Security Secure Hashing Algorithm (SHA).</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_OIWSEC_mdc2</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.3.14.3.2.19"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>NIST OSE Implementors' Workshop (OIW) Security Modification Detection Code 2 (MDC2) or Meyer-Schilling hash function.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_OIWSEC_dsaComm</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.3.14.3.2.20"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>NIST OSE Implementors' Workshop (OIW) Security Digital Signature Algorithm (DSA).</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_OIWSEC_dsaCommSHA</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.3.14.3.2.21"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>NIST OSE Implementors' Workshop (OIW) Security Digital Signature Algorithm (DSA) coupled with the Secure Hashing Algorithm (SHA).</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_OIWSEC_rsaXchg</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.3.14.3.2.22"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>NIST OSE Implementors' Workshop (OIW) Security RSA algorithm.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_OIWSEC_keyHashSeal</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.3.14.3.2.23"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>NIST OSE Implementors' Workshop (OIW) Security hashing algorithm.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_OIWSEC_md2RSASign</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.3.14.3.2.24"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>NIST OSE Implementors' Workshop (OIW) Security RSA algorithm coupled with the Message Digest (MD2) hashing algorithm.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_OIWSEC_md5RSASign</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.3.14.3.2.25"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>NIST OSE Implementors' Workshop (OIW) Security RSA algorithm coupled with the Message Digest (MD5) hashing algorithm.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_OIWSEC_sha1</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.3.14.3.2.26"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>NIST OSE Implementors' Workshop (OIW) Security Secure Hashing (SHA1) algorithm.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_OIWSEC_dsaSHA1</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.3.14.3.2.27"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>NIST OSE Implementors' Workshop (OIW) Security Digital Signature Algorithm (DSA) that uses the Secure Hashing Algorithm 1 (SHA1).</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_OIWSEC_dsaCommSHA1</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.3.14.3.2.28"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>NIST OSE Implementors' Workshop (OIW) Security Digital Signature Algorithm (DSA) that uses the Secure Hashing Algorithm 1 (SHA1).</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_OIWSEC_sha1RSASign</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.3.14.3.2.29"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>NIST OSE Implementors' Workshop (OIW) Security RSA algorithm that uses the Secure Hashing Algorithm 1 (SHA1).</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_OIWDIR</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.3.14.7.2"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>NIST OSE Implementors' Workshop (OIW) Directory root object identifier.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_OIWDIR_CRPT</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.3.14.7.2.1"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>NIST OSE Implementors' Workshop (OIW) Directory generic encryption algorithm.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_OIWDIR_HASH</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.3.14.7.2.2"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>NIST OSE Implementors' Workshop (OIW) Directory generic hashing algorithm.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_OIWDIR_SIGN</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.3.14.7.2.3"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>NIST OSE Implementors' Workshop (OIW) Directory generic signing algorithm.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_OIWDIR_md2</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.3.14.7.2.2.1"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>NIST OSE Implementors' Workshop (OIW) Directory Message digest (MD2) algorithm.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_OIWDIR_md2RSA</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.3.14.7.2.3.1"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>NIST OSE Implementors' Workshop (OIW) Directory RSA algorithm coupled with the Message digest (MD2) hashing algorithm.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_INFOSEC</b>
+                </description>
+              </item>
+              <item>
+                <description>"2.16.840.1.101.2.1"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>INFOSEC object identifier root.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_INFOSEC_sdnsSignature</b>
+                </description>
+              </item>
+              <item>
+                <description>"2.16.840.1.101.2.1.1.1"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Signature algorithm.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_INFOSEC_mosaicSignature</b>
+                </description>
+              </item>
+              <item>
+                <description>"2.16.840.1.101.2.1.1.2"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Signature algorithm.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_INFOSEC_sdnsConfidentiality</b>
+                </description>
+              </item>
+              <item>
+                <description>"2.16.840.1.101.2.1.1.3"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Encryption algorithm.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_INFOSEC_mosaicConfidentiality</b>
+                </description>
+              </item>
+              <item>
+                <description>"2.16.840.1.101.2.1.1.4"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Encryption algorithm.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_INFOSEC_sdnsIntegrity</b>
+                </description>
+              </item>
+              <item>
+                <description>"2.16.840.1.101.2.1.1.5"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Signing algorithm.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_INFOSEC_mosaicIntegrity</b>
+                </description>
+              </item>
+              <item>
+                <description>"2.16.840.1.101.2.1.1.6"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Signing algorithm.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_INFOSEC_sdnsTokenProtection</b>
+                </description>
+              </item>
+              <item>
+                <description>"2.16.840.1.101.2.1.1.7"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Secure Data Network System token encryption.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_INFOSEC_mosaicTokenProtection</b>
+                </description>
+              </item>
+              <item>
+                <description>"2.16.840.1.101.2.1.1.8"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Mosaic token encryption.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_INFOSEC_sdnsKeyManagement</b>
+                </description>
+              </item>
+              <item>
+                <description>"2.16.840.1.101.2.1.1.9"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Secure Data Network System key management.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_INFOSEC_mosaicKeyManagement</b>
+                </description>
+              </item>
+              <item>
+                <description>"2.16.840.1.101.2.1.1.10"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Mosaic key management.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_INFOSEC_sdnsKMandSig</b>
+                </description>
+              </item>
+              <item>
+                <description>"2.16.840.1.101.2.1.1.11"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Secure Data Network System  key management and signature.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_INFOSEC_mosaicKMandSig</b>
+                </description>
+              </item>
+              <item>
+                <description>"2.16.840.1.101.2.1.1.12"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Mosaic key management and signature.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_INFOSEC_SuiteASignature</b>
+                </description>
+              </item>
+              <item>
+                <description>"2.16.840.1.101.2.1.1.13"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>National Security Agency (NSA) Suite A Cryptography signature algorithm.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_INFOSEC_SuiteAConfidentiality</b>
+                </description>
+              </item>
+              <item>
+                <description>"2.16.840.1.101.2.1.1.14"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>National Security Agency (NSA) Suite A Cryptography encryption algorithm.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_INFOSEC_SuiteAIntegrity</b>
+                </description>
+              </item>
+              <item>
+                <description>"2.16.840.1.101.2.1.1.15"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>National Security Agency (NSA) Suite A Cryptography signature algorithm.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_INFOSEC_SuiteATokenProtection</b>
+                </description>
+              </item>
+              <item>
+                <description>"2.16.840.1.101.2.1.1.16"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>National Security Agency (NSA) Suite A Cryptography security token encryption.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_INFOSEC_SuiteAKeyManagement</b>
+                </description>
+              </item>
+              <item>
+                <description>"2.16.840.1.101.2.1.1.17"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>National Security Agency (NSA) Suite A Cryptography security key management.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_INFOSEC_SuiteAKMandSig</b>
+                </description>
+              </item>
+              <item>
+                <description>"2.16.840.1.101.2.1.1.18"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>National Security Agency (NSA) Suite A Cryptography key management and signature.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_INFOSEC_mosaicUpdatedSig</b>
+                </description>
+              </item>
+              <item>
+                <description>"2.16.840.1.101.2.1.1.19"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Mosaic updated signature.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_INFOSEC_mosaicKMandUpdSig</b>
+                </description>
+              </item>
+              <item>
+                <description>"2.16.840.1.101.2.1.1.20"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Mosaic key management and updated signature.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_INFOSEC_mosaicUpdatedInteg</b>
+                </description>
+              </item>
+              <item>
+                <description>"2.16.840.1.101.2.1.1.21"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Mosaic updated signature.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_NIST_sha256</b>
+                </description>
+              </item>
+              <item>
+                <description>"2.16.840.1.101.3.4.2.1"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Secure hashing algorithm (SHA) that uses a 256 bit key.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b> szOID_NIST_sha384</b>
+                </description>
+              </item>
+              <item>
+                <description> "2.16.840.1.101.3.4.2.2"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Secure hashing algorithm (SHA) that uses a 384 bit key.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b> szOID_NIST_sha512</b>
+                </description>
+              </item>
+              <item>
+                <description>  "2.16.840.1.101.3.4.2.3"
+</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Secure hashing algorithm (SHA) that uses a 512 bit key.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_PKIX_NO_SIGNATURE</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.3.6.1.5.5.7.6.2"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>No signature.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_RSA_SSA_PSS</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.2.840.113549.1.1.10"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>RSA Signature Scheme with Appendix and Probabilistic Signature Scheme.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_ECDSA_SPECIFIED</b>
+                </description>
+              </item>
+              <item>
+                <description>"1.2.840.10045.4.3"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Elliptic Curve Digital Signature Algorithm (ECDSA).</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="CRYPT_ALGORITHM_IDENTIFIER.Parameters">
+    <summary>
+      <para>A <a href="https://docs.microsoft.com//windows/desktop/SecGloss/b-gly">BLOB</a>  that provides encoded algorithm-specific parameters. In many cases, there are no parameters. This is indicated by setting the <b>cbData</b> member of the <b>Parameters</b> BLOB to zero.</para>
+      <para>The following algorithms have the specified encoded parameters. For more information, see
+<a href="https://docs.microsoft.com//windows/desktop/SecCrypto/constants-for-cryptencodeobject-and-cryptdecodeobject">Constants for CryptEncodeObject and CryptDecodeObject</a>.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>szOID_OIWSEC_dsa</b>
+          </description>
+          <description>
+            <para>A <see cref="CERT_DSS_PARAMETERS" /> structure.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>szOID_RSA_RC2CBC</b>
+          </description>
+          <description>
+            <para>A <see cref="CRYPT_RC2_CBC_PARAMETERS" /> structure.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>szOID_OIWSEC_desCBC</b>
+          </description>
+          <description>
+            <para>A <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_DATA_BLOB</a> that contains an <a href="https://docs.microsoft.com//windows/desktop/SecGloss/i-gly">initialization vector</a> in the form of an octet string.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>szOID_RSA_DES_EDE3_CBC</b>
+          </description>
+          <description>
+            <para>A <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_DATA_BLOB</a> that contains an <a href="https://docs.microsoft.com//windows/desktop/SecGloss/i-gly">initialization vector</a> in the form of an octet string.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>szOID_RSA_RC4</b>
+          </description>
+          <description>
+            <para>A <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_DATA_BLOB</a> that contains an <a href="https://docs.microsoft.com//windows/desktop/SecGloss/i-gly">initialization vector</a> in the form of an octet string.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>szOID_RSA_SSA_PSS</b>
+          </description>
+          <description>
+            <para>A <see cref="CRYPT_RSA_SSA_PSS_PARAMETERS" /> structure.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>szOID_ECDSA_SPECIFIED</b>
+          </description>
+          <description>
+            <para>A <b>CRYPT_ALGORITHM_IDENTIFIER</b> structure.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+</doc>

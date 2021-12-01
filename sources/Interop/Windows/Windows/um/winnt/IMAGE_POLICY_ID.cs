@@ -5,19 +5,45 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMAGE_POLICY_ID.xml' path='doc/member[@name="IMAGE_POLICY_ID"]/*' />
 public enum IMAGE_POLICY_ID
 {
+    /// <include file='IMAGE_POLICY_ID.xml' path='doc/member[@name="IMAGE_POLICY_ID.ImagePolicyIdNone"]/*' />
     ImagePolicyIdNone = 0,
+
+    /// <include file='IMAGE_POLICY_ID.xml' path='doc/member[@name="IMAGE_POLICY_ID.ImagePolicyIdEtw"]/*' />
     ImagePolicyIdEtw,
+
+    /// <include file='IMAGE_POLICY_ID.xml' path='doc/member[@name="IMAGE_POLICY_ID.ImagePolicyIdDebug"]/*' />
     ImagePolicyIdDebug,
+
+    /// <include file='IMAGE_POLICY_ID.xml' path='doc/member[@name="IMAGE_POLICY_ID.ImagePolicyIdCrashDump"]/*' />
     ImagePolicyIdCrashDump,
+
+    /// <include file='IMAGE_POLICY_ID.xml' path='doc/member[@name="IMAGE_POLICY_ID.ImagePolicyIdCrashDumpKey"]/*' />
     ImagePolicyIdCrashDumpKey,
+
+    /// <include file='IMAGE_POLICY_ID.xml' path='doc/member[@name="IMAGE_POLICY_ID.ImagePolicyIdCrashDumpKeyGuid"]/*' />
     ImagePolicyIdCrashDumpKeyGuid,
+
+    /// <include file='IMAGE_POLICY_ID.xml' path='doc/member[@name="IMAGE_POLICY_ID.ImagePolicyIdParentSd"]/*' />
     ImagePolicyIdParentSd,
+
+    /// <include file='IMAGE_POLICY_ID.xml' path='doc/member[@name="IMAGE_POLICY_ID.ImagePolicyIdParentSdRev"]/*' />
     ImagePolicyIdParentSdRev,
+
+    /// <include file='IMAGE_POLICY_ID.xml' path='doc/member[@name="IMAGE_POLICY_ID.ImagePolicyIdSvn"]/*' />
     ImagePolicyIdSvn,
+
+    /// <include file='IMAGE_POLICY_ID.xml' path='doc/member[@name="IMAGE_POLICY_ID.ImagePolicyIdDeviceId"]/*' />
     ImagePolicyIdDeviceId,
+
+    /// <include file='IMAGE_POLICY_ID.xml' path='doc/member[@name="IMAGE_POLICY_ID.ImagePolicyIdCapability"]/*' />
     ImagePolicyIdCapability,
+
+    /// <include file='IMAGE_POLICY_ID.xml' path='doc/member[@name="IMAGE_POLICY_ID.ImagePolicyIdScenarioId"]/*' />
     ImagePolicyIdScenarioId,
+
+    /// <include file='IMAGE_POLICY_ID.xml' path='doc/member[@name="IMAGE_POLICY_ID.ImagePolicyIdMaximum"]/*' />
     ImagePolicyIdMaximum,
 }

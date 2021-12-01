@@ -5,20 +5,26 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DLLVERSIONINFO.xml' path='doc/member[@name="DLLVERSIONINFO"]/*' />
 public partial struct DLLVERSIONINFO
 {
+    /// <include file='DLLVERSIONINFO.xml' path='doc/member[@name="DLLVERSIONINFO.cbSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbSize;
 
+    /// <include file='DLLVERSIONINFO.xml' path='doc/member[@name="DLLVERSIONINFO.dwMajorVersion"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwMajorVersion;
 
+    /// <include file='DLLVERSIONINFO.xml' path='doc/member[@name="DLLVERSIONINFO.dwMinorVersion"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwMinorVersion;
 
+    /// <include file='DLLVERSIONINFO.xml' path='doc/member[@name="DLLVERSIONINFO.dwBuildNumber"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwBuildNumber;
 
+    /// <include file='DLLVERSIONINFO.xml' path='doc/member[@name="DLLVERSIONINFO.dwPlatformID"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwPlatformID;
 }

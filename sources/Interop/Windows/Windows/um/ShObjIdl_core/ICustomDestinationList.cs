@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ICustomDestinationList.xml' path='doc/member[@name="ICustomDestinationList"]/*' />
 [Guid("6332DEBF-87B5-4670-90C0-5E57B408A49E")]
 [NativeTypeName("struct ICustomDestinationList : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ICustomDestinationList : ICustomDestinationList.Int
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ICustomDestinationList : ICustomDestinationList.Int
         return ((delegate* unmanaged<ICustomDestinationList*, Guid*, void**, int>)(lpVtbl[0]))((ICustomDestinationList*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ICustomDestinationList : ICustomDestinationList.Int
         return ((delegate* unmanaged<ICustomDestinationList*, uint>)(lpVtbl[1]))((ICustomDestinationList*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ICustomDestinationList : ICustomDestinationList.Int
         return ((delegate* unmanaged<ICustomDestinationList*, uint>)(lpVtbl[2]))((ICustomDestinationList*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ICustomDestinationList.xml' path='doc/member[@name="ICustomDestinationList.SetAppID"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetAppID([NativeTypeName("LPCWSTR")] ushort* pszAppID)
@@ -46,6 +51,7 @@ public unsafe partial struct ICustomDestinationList : ICustomDestinationList.Int
         return ((delegate* unmanaged<ICustomDestinationList*, ushort*, int>)(lpVtbl[3]))((ICustomDestinationList*)Unsafe.AsPointer(ref this), pszAppID);
     }
 
+    /// <include file='ICustomDestinationList.xml' path='doc/member[@name="ICustomDestinationList.BeginList"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT BeginList(uint* pcMinSlots, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
@@ -53,6 +59,7 @@ public unsafe partial struct ICustomDestinationList : ICustomDestinationList.Int
         return ((delegate* unmanaged<ICustomDestinationList*, uint*, Guid*, void**, int>)(lpVtbl[4]))((ICustomDestinationList*)Unsafe.AsPointer(ref this), pcMinSlots, riid, ppv);
     }
 
+    /// <include file='ICustomDestinationList.xml' path='doc/member[@name="ICustomDestinationList.AppendCategory"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT AppendCategory([NativeTypeName("LPCWSTR")] ushort* pszCategory, IObjectArray* poa)
@@ -60,6 +67,7 @@ public unsafe partial struct ICustomDestinationList : ICustomDestinationList.Int
         return ((delegate* unmanaged<ICustomDestinationList*, ushort*, IObjectArray*, int>)(lpVtbl[5]))((ICustomDestinationList*)Unsafe.AsPointer(ref this), pszCategory, poa);
     }
 
+    /// <include file='ICustomDestinationList.xml' path='doc/member[@name="ICustomDestinationList.AppendKnownCategory"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT AppendKnownCategory(KNOWNDESTCATEGORY category)
@@ -67,6 +75,7 @@ public unsafe partial struct ICustomDestinationList : ICustomDestinationList.Int
         return ((delegate* unmanaged<ICustomDestinationList*, KNOWNDESTCATEGORY, int>)(lpVtbl[6]))((ICustomDestinationList*)Unsafe.AsPointer(ref this), category);
     }
 
+    /// <include file='ICustomDestinationList.xml' path='doc/member[@name="ICustomDestinationList.AddUserTasks"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT AddUserTasks(IObjectArray* poa)
@@ -74,6 +83,7 @@ public unsafe partial struct ICustomDestinationList : ICustomDestinationList.Int
         return ((delegate* unmanaged<ICustomDestinationList*, IObjectArray*, int>)(lpVtbl[7]))((ICustomDestinationList*)Unsafe.AsPointer(ref this), poa);
     }
 
+    /// <include file='ICustomDestinationList.xml' path='doc/member[@name="ICustomDestinationList.CommitList"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT CommitList()
@@ -81,6 +91,7 @@ public unsafe partial struct ICustomDestinationList : ICustomDestinationList.Int
         return ((delegate* unmanaged<ICustomDestinationList*, int>)(lpVtbl[8]))((ICustomDestinationList*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ICustomDestinationList.xml' path='doc/member[@name="ICustomDestinationList.GetRemovedDestinations"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT GetRemovedDestinations([NativeTypeName("const IID &")] Guid* riid, void** ppv)
@@ -88,6 +99,7 @@ public unsafe partial struct ICustomDestinationList : ICustomDestinationList.Int
         return ((delegate* unmanaged<ICustomDestinationList*, Guid*, void**, int>)(lpVtbl[9]))((ICustomDestinationList*)Unsafe.AsPointer(ref this), riid, ppv);
     }
 
+    /// <include file='ICustomDestinationList.xml' path='doc/member[@name="ICustomDestinationList.DeleteList"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT DeleteList([NativeTypeName("LPCWSTR")] ushort* pszAppID)
@@ -95,6 +107,7 @@ public unsafe partial struct ICustomDestinationList : ICustomDestinationList.Int
         return ((delegate* unmanaged<ICustomDestinationList*, ushort*, int>)(lpVtbl[10]))((ICustomDestinationList*)Unsafe.AsPointer(ref this), pszAppID);
     }
 
+    /// <include file='ICustomDestinationList.xml' path='doc/member[@name="ICustomDestinationList.AbortList"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT AbortList()

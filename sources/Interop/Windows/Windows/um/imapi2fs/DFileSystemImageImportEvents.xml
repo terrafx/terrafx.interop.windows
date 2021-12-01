@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DFileSystemImageImportEvents.UpdateImport">
+    <summary>
+      <para>Receives import notification for every file and directory item imported from an optical medium.</para>
+    </summary>
+    <param name="object">
+      <para>Pointer to an <see cref="IFilesystemImage3" /> interface of a file system image object to which data is being imported.</para>
+    </param>
+    <param name="fileSystem">
+      <para>Type of the file system currently being imported. For possible values, see the <see cref="FsiFileSystems" /> enumeration type.</para>
+    </param>
+    <param name="currentItem">
+      <para>A string containing the name of the file or directory being imported at the moment.</para>
+    </param>
+    <param name="importedDirectoryItems">
+      <para>The number of directories imported so far.</para>
+    </param>
+    <param name="totalDirectoryItems">
+      <para>The total number of directories to be imported from the optical medium.</para>
+    </param>
+    <param name="importedFileItems">
+      <para>The number of files imported so far.</para>
+    </param>
+    <param name="totalFileItems">
+      <para>The total number of files to be imported from the optical medium.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Notifications are sent in response to calling one of the following methods for importing a file system.</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <see cref="IFileSystemImage.ImportFileSystem" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IFileSystemImage.ImportSpecificFileSystem" />
+          </description>
+        </item>
+      </list>
+      <para>UpdateImport method receives import notifications from ISO9660, Joliet and UDF file systems. A notification is sent:</para>
+      <list type="bullet">
+        <item>
+          <description>Once after every individual imported file.</description>
+        </item>
+        <item>
+          <description>Once before every directory import begins.</description>
+        </item>
+      </list>
+      <para>The <i>totalFileItems</i> parameter of an <b>UpdateImport</b> event is always set to (-1) for ISO9660 and Joliet file systems, because of the difficulty quickly and accurately determining the total number of files in an ISO9660/Joliet file system prior to import.</para>
+      <para>Import notifications are generated only for files and directories, and not for associated named streams.</para>
+      <para>If the <i>currentItem</i> is a directory, it contains a back slash '' at the end.</para>
+    </remarks>
+    <seealso cref="DFileSystemImageImportEvents" />
+  </member>
+  <member name="DFileSystemImageImportEvents">
+    <summary>
+      <para>Use this interface to receives notifications regarding the current file system import operation.</para>
+    </summary>
+    <remarks>
+      <para>This interface supports import notifications for ISO9660, Joliet and UDF file systems.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-idispatch">IDispatch</seealso>
+  </member>
+</doc>

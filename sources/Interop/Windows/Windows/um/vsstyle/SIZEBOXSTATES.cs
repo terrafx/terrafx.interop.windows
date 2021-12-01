@@ -5,14 +5,30 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SIZEBOXSTATES.xml' path='doc/member[@name="SIZEBOXSTATES"]/*' />
 public enum SIZEBOXSTATES
 {
+    /// <include file='SIZEBOXSTATES.xml' path='doc/member[@name="SIZEBOXSTATES.SZB_RIGHTALIGN"]/*' />
     SZB_RIGHTALIGN = 1,
+
+    /// <include file='SIZEBOXSTATES.xml' path='doc/member[@name="SIZEBOXSTATES.SZB_LEFTALIGN"]/*' />
     SZB_LEFTALIGN = 2,
+
+    /// <include file='SIZEBOXSTATES.xml' path='doc/member[@name="SIZEBOXSTATES.SZB_TOPRIGHTALIGN"]/*' />
     SZB_TOPRIGHTALIGN = 3,
+
+    /// <include file='SIZEBOXSTATES.xml' path='doc/member[@name="SIZEBOXSTATES.SZB_TOPLEFTALIGN"]/*' />
     SZB_TOPLEFTALIGN = 4,
+
+    /// <include file='SIZEBOXSTATES.xml' path='doc/member[@name="SIZEBOXSTATES.SZB_HALFBOTTOMRIGHTALIGN"]/*' />
     SZB_HALFBOTTOMRIGHTALIGN = 5,
+
+    /// <include file='SIZEBOXSTATES.xml' path='doc/member[@name="SIZEBOXSTATES.SZB_HALFBOTTOMLEFTALIGN"]/*' />
     SZB_HALFBOTTOMLEFTALIGN = 6,
+
+    /// <include file='SIZEBOXSTATES.xml' path='doc/member[@name="SIZEBOXSTATES.SZB_HALFTOPRIGHTALIGN"]/*' />
     SZB_HALFTOPRIGHTALIGN = 7,
+
+    /// <include file='SIZEBOXSTATES.xml' path='doc/member[@name="SIZEBOXSTATES.SZB_HALFTOPLEFTALIGN"]/*' />
     SZB_HALFTOPLEFTALIGN = 8,
 }

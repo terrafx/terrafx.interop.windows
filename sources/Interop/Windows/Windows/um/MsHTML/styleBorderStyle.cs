@@ -5,19 +5,45 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='styleBorderStyle.xml' path='doc/member[@name="styleBorderStyle"]/*' />
 public enum styleBorderStyle
 {
+    /// <include file='styleBorderStyle.xml' path='doc/member[@name="styleBorderStyle.styleBorderStyleNotSet"]/*' />
     styleBorderStyleNotSet = 0,
+
+    /// <include file='styleBorderStyle.xml' path='doc/member[@name="styleBorderStyle.styleBorderStyleDotted"]/*' />
     styleBorderStyleDotted = 1,
+
+    /// <include file='styleBorderStyle.xml' path='doc/member[@name="styleBorderStyle.styleBorderStyleDashed"]/*' />
     styleBorderStyleDashed = 2,
+
+    /// <include file='styleBorderStyle.xml' path='doc/member[@name="styleBorderStyle.styleBorderStyleSolid"]/*' />
     styleBorderStyleSolid = 3,
+
+    /// <include file='styleBorderStyle.xml' path='doc/member[@name="styleBorderStyle.styleBorderStyleDouble"]/*' />
     styleBorderStyleDouble = 4,
+
+    /// <include file='styleBorderStyle.xml' path='doc/member[@name="styleBorderStyle.styleBorderStyleGroove"]/*' />
     styleBorderStyleGroove = 5,
+
+    /// <include file='styleBorderStyle.xml' path='doc/member[@name="styleBorderStyle.styleBorderStyleRidge"]/*' />
     styleBorderStyleRidge = 6,
+
+    /// <include file='styleBorderStyle.xml' path='doc/member[@name="styleBorderStyle.styleBorderStyleInset"]/*' />
     styleBorderStyleInset = 7,
+
+    /// <include file='styleBorderStyle.xml' path='doc/member[@name="styleBorderStyle.styleBorderStyleOutset"]/*' />
     styleBorderStyleOutset = 8,
+
+    /// <include file='styleBorderStyle.xml' path='doc/member[@name="styleBorderStyle.styleBorderStyleWindowInset"]/*' />
     styleBorderStyleWindowInset = 9,
+
+    /// <include file='styleBorderStyle.xml' path='doc/member[@name="styleBorderStyle.styleBorderStyleNone"]/*' />
     styleBorderStyleNone = 10,
+
+    /// <include file='styleBorderStyle.xml' path='doc/member[@name="styleBorderStyle.styleBorderStyleHidden"]/*' />
     styleBorderStyleHidden = 11,
+
+    /// <include file='styleBorderStyle.xml' path='doc/member[@name="styleBorderStyle.styleBorderStyle_Max"]/*' />
     styleBorderStyle_Max = 2147483647,
 }

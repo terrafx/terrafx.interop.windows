@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CTL_ENTRY">
+    <summary>
+      <para>The <b>CTL_ENTRY</b> structure is an element of a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certificate trust list</a> (CTL).</para>
+    </summary>
+    <seealso cref="CRYPT_ATTRIBUTE" />
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_INTEGER_BLOB</seealso>
+    <seealso cref="CTL_INFO" />
+  </member>
+  <member name="CTL_ENTRY.SubjectIdentifier">
+    <summary>
+      <para>
+        <a href="https://docs.microsoft.com//windows/desktop/SecGloss/b-gly">BLOB</a> containing a unique identifier of a subject. It can be a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/h-gly">hash</a> or any unique byte sequence.</para>
+    </summary>
+  </member>
+  <member name="CTL_ENTRY.cAttribute">
+    <summary>
+      <para>Count of elements in the <b>rgAttribute</b> member array.</para>
+    </summary>
+  </member>
+  <member name="CTL_ENTRY.rgAttribute">
+    <summary>
+      <para>Array of
+<see cref="CRYPT_ATTRIBUTE" /> structures, each holding information about the subject.</para>
+    </summary>
+  </member>
+</doc>

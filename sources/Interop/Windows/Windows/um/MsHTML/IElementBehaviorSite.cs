@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IElementBehaviorSite.xml' path='doc/member[@name="IElementBehaviorSite"]/*' />
 [Guid("3050F427-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IElementBehaviorSite : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IElementBehaviorSite : IElementBehaviorSite.Interfa
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IElementBehaviorSite : IElementBehaviorSite.Interfa
         return ((delegate* unmanaged<IElementBehaviorSite*, Guid*, void**, int>)(lpVtbl[0]))((IElementBehaviorSite*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IElementBehaviorSite : IElementBehaviorSite.Interfa
         return ((delegate* unmanaged<IElementBehaviorSite*, uint>)(lpVtbl[1]))((IElementBehaviorSite*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IElementBehaviorSite : IElementBehaviorSite.Interfa
         return ((delegate* unmanaged<IElementBehaviorSite*, uint>)(lpVtbl[2]))((IElementBehaviorSite*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IElementBehaviorSite.xml' path='doc/member[@name="IElementBehaviorSite.GetElement"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetElement(IHTMLElement** ppElement)
@@ -46,6 +51,7 @@ public unsafe partial struct IElementBehaviorSite : IElementBehaviorSite.Interfa
         return ((delegate* unmanaged<IElementBehaviorSite*, IHTMLElement**, int>)(lpVtbl[3]))((IElementBehaviorSite*)Unsafe.AsPointer(ref this), ppElement);
     }
 
+    /// <include file='IElementBehaviorSite.xml' path='doc/member[@name="IElementBehaviorSite.RegisterNotification"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT RegisterNotification([NativeTypeName("LONG")] int lEvent)

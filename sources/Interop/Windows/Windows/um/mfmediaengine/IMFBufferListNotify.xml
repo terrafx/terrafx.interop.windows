@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFBufferListNotify.OnAddSourceBuffer">
+    <summary>
+      <para>Indicates that a <see cref="IMFSourceBuffer" /> has been added.</para>
+    </summary>
+    <seealso cref="IMFBufferListNotify" />
+  </member>
+  <member name="IMFBufferListNotify.OnRemoveSourceBuffer">
+    <summary>
+      <para>Indicates that a <see cref="IMFSourceBuffer" /> has been removed.</para>
+    </summary>
+    <seealso cref="IMFBufferListNotify" />
+  </member>
+  <member name="IMFBufferListNotify">
+    <summary>
+      <para>Enables <see cref="IMFSourceBufferList" /> object to notify its clients of important state changes.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+  </member>
+</doc>

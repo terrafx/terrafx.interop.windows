@@ -7,14 +7,19 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_XML_DICTIONARY.xml' path='doc/member[@name="WS_XML_DICTIONARY"]/*' />
 public unsafe partial struct WS_XML_DICTIONARY
 {
+    /// <include file='WS_XML_DICTIONARY.xml' path='doc/member[@name="WS_XML_DICTIONARY.guid"]/*' />
     public Guid guid;
 
+    /// <include file='WS_XML_DICTIONARY.xml' path='doc/member[@name="WS_XML_DICTIONARY.strings"]/*' />
     public WS_XML_STRING* strings;
 
+    /// <include file='WS_XML_DICTIONARY.xml' path='doc/member[@name="WS_XML_DICTIONARY.stringCount"]/*' />
     [NativeTypeName("ULONG")]
     public uint stringCount;
 
+    /// <include file='WS_XML_DICTIONARY.xml' path='doc/member[@name="WS_XML_DICTIONARY.isConst"]/*' />
     public BOOL isConst;
 }

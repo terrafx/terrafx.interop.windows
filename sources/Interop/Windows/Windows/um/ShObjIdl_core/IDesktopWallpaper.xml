@@ -1,0 +1,397 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDesktopWallpaper.AdvanceSlideshow">
+    <summary>
+      <para>Switches the wallpaper on a specified monitor to the next image in the slideshow.</para>
+    </summary>
+    <param name="monitorID">
+      <para>The ID of the monitor on which to change the wallpaper image. This ID can be obtained through the <see cref="GetMonitorDevicePathAt" /> method. If this parameter is set to <b>NULL</b>, the monitor scheduled to change next is used.</para>
+    </param>
+    <param name="direction">
+      <para>The direction that the slideshow should advance. One of the following DESKTOP_SLIDESHOW_DIRECTION values:</para>
+      <h4>DSD_FORWARD (0)</h4>
+      <para>Advance the slideshow forward.</para>
+      <h4>DSD_BACKWARD (1)</h4>
+      <para>Advance the slideshow backward.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDesktopWallpaper" />
+  </member>
+  <member name="IDesktopWallpaper.Enable">
+    <summary>
+      <para>Enables or disables the desktop background.</para>
+    </summary>
+    <param name="enable">
+      <para>
+        <b>TRUE</b> to enable the desktop background, <b>FALSE</b> to disable it.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code, including the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>The desktop wallpaper is already in the state you're asking for through this call.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FILE_NOT_FOUND</b>
+            </para>
+          </description>
+          <description>
+            <para>The desktop wallpaper that would be used when the background is enabled is missing from its expected location. Call <see cref="SetWallpaper" /> to specify a new wallpaper.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method would normally be called to disable the desktop background for performance reasons.</para>
+      <para>When the desktop background is disabled, a solid color is shown in its place. To get or set the specific color, use the <see cref="GetBackgroundColor" /> and <see cref="SetBackgroundColor" /> methods.</para>
+      <para>
+        <b>Note</b>  A call to the <see cref="IDesktopWallpaper_SetWallpaper" /> or <see cref="IDesktopWallpaper_SetSlideshow" /> methods will enable the desktop background even if it is currently disabled through this method.</para>
+    </remarks>
+    <seealso cref="IDesktopWallpaper" />
+  </member>
+  <member name="IDesktopWallpaper.GetBackgroundColor">
+    <summary>
+      <para>Retrieves the color that is visible on the desktop when no image is displayed or when the desktop background has been disabled. This color is also used as a border when the desktop wallpaper does not fill the entire screen.</para>
+    </summary>
+    <param name="color">
+      <para>A pointer to a <a href="https://docs.microsoft.com//windows/desktop/gdi/colorref">COLORREF</a> value that, when this method returns successfully, receives the RGB color value. If this method fails, this value is set to 0.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDesktopWallpaper" />
+    <seealso cref="IDesktopWallpaper.SetBackgroundColor" />
+  </member>
+  <member name="IDesktopWallpaper.GetMonitorDevicePathAt">
+    <summary>
+      <para>Retrieves the unique ID of one of the system's monitors.</para>
+    </summary>
+    <param name="monitorIndex">
+      <para>The number of the monitor. Call <see cref="GetMonitorDevicePathCount" /> to determine the total number of monitors.</para>
+    </param>
+    <param name="monitorID">
+      <para>A pointer to the address of a buffer that, when this method returns successfully, receives the monitor's ID.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code, including the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>A <b>NULL</b> pointer was provided in <i>monitorID</i>.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method can be called on monitors that are currently detached but that have an image assigned to them. Call <see cref="GetMonitorRECT" /> to distinguish between attached and detached monitors.</para>
+    </remarks>
+    <seealso cref="IDesktopWallpaper" />
+    <seealso cref="IDesktopWallpaper.GetMonitorDevicePathCount" />
+  </member>
+  <member name="IDesktopWallpaper.GetMonitorDevicePathCount">
+    <summary>
+      <para>Retrieves the number of monitors that are associated with the system.</para>
+    </summary>
+    <param name="count">
+      <para>A pointer to a value that, when this method returns successfully, receives the number of monitors.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code, including the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>A <b>NULL</b> pointer was provided in <i>monitorID</i>.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The count retrieved through this method includes monitors that are currently detached but that have an image assigned to them. Call <see cref="GetMonitorRECT" /> to distinguish between attached and detached monitors.</para>
+    </remarks>
+    <seealso cref="IDesktopWallpaper" />
+    <seealso cref="IDesktopWallpaper.GetMonitorDevicePathAt" />
+  </member>
+  <member name="IDesktopWallpaper.GetMonitorRECT">
+    <summary>
+      <para>Retrieves the display rectangle of the specified monitor.</para>
+    </summary>
+    <param name="monitorID">
+      <para>The ID of the monitor to query. You can get this value through <see cref="GetMonitorDevicePathAt" />.</para>
+    </param>
+    <param name="displayRect">
+      <para>A pointer to a <see cref="RECT" /> structure that, when this method returns successfully, receives the display rectangle of the monitor specified by <i>monitorID</i>, in screen coordinates.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code, including the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>The monitor specified by <i>monitorID</i> is not currently attached to the system.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>A <b>NULL</b> pointer was provided in <i>displayRect</i>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>The ID supplied in <i>monitorID</i> cannot be found.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IDesktopWallpaper" />
+  </member>
+  <member name="IDesktopWallpaper.GetPosition">
+    <summary>
+      <para>Retrieves the current display value for the desktop background image.</para>
+    </summary>
+    <param name="position">
+      <para>A pointer to a value that, when this method returns successfully, receives one of the <see cref="DESKTOP_WALLPAPER_POSITION" /> enumeration values that specify how the image is being displayed on the system's monitors.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code, including the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>A <b>NULL</b> pointer was provided in <i>position</i>.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IDesktopWallpaper" />
+    <seealso cref="IDesktopWallpaper.SetPosition" />
+  </member>
+  <member name="IDesktopWallpaper.GetSlideshowOptions">
+    <summary>
+      <para>Gets the current desktop wallpaper slideshow settings for shuffle and timing.</para>
+    </summary>
+    <param name="options">
+      <para>Type: <b>DESKTOP_SLIDESHOW_OPTIONS*</b></para>
+      <para>A pointer to a value that, when this method returns successfully, receives either 0 to indicate that shuffle is disabled or the following value.</para>
+      <h4>DSO_SHUFFLEIMAGES (0x01)</h4>
+      <para>Shuffle is enabled; the images are shown in a random order.</para>
+    </param>
+    <param name="slideshowTick">
+      <para>Type: <b>UINT*</b></para>
+      <para>A pointer to a value that, when this method returns successfully, receives the interval between image transitions, in milliseconds.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code, including the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>A <b>NULL</b> pointer was provided in one of the parameters.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IDesktopWallpaper" />
+    <seealso cref="IDesktopWallpaper.SetSlideshowOptions" />
+  </member>
+  <member name="IDesktopWallpaper.GetStatus">
+    <summary>
+      <para>Gets the current status of the slideshow.</para>
+    </summary>
+    <param name="state">
+      <para>A pointer to a DESKTOP_SLIDESHOW_STATE value that, when this method returns successfully, receives one or more of the following flags.</para>
+      <h4>DSS_ENABLED (0x01)</h4>
+      <para>Slideshows are enabled.</para>
+      <h4>DSS_SLIDESHOW (0x02)</h4>
+      <para>A slideshow is currently configured.</para>
+      <h4>DSS_DISABLED_BY_REMOTE_SESSION (0x04)</h4>
+      <para>A remote session has temporarily disabled the slideshow.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDesktopWallpaper" />
+  </member>
+  <member name="IDesktopWallpaper.GetWallpaper">
+    <summary>
+      <para>Gets the current desktop wallpaper.</para>
+    </summary>
+    <param name="monitorID">
+      <para>The ID of the monitor. This value can be obtained through <see cref="GetMonitorDevicePathAt" />.</para>
+      <para>This value can be set to <b>NULL</b>. In that case, if a single wallpaper image is displayed on all of the system's monitors, the method returns successfully. If this value is set to <b>NULL</b> and different monitors are displaying different wallpapers or a slideshow is running, the method returns S_FALSE and an empty string in the <i>wallpaper</i> parameter.</para>
+    </param>
+    <param name="wallpaper">
+      <para>The address of a pointer to a buffer that, when this method returns successfully, receives the path to the wallpaper image file. Note that this image could be currently displayed on all of the system's monitors, not just the monitor specified in the <i>monitorID</i> parameter.</para>
+      <para>This string will be empty if no wallpaper image is being displayed or if a monitor is displaying a solid color. The string will also be empty if the method fails.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDesktopWallpaper" />
+    <seealso cref="IDesktopWallpaper.SetWallpaper" />
+  </member>
+  <member name="IDesktopWallpaper.SetBackgroundColor">
+    <summary>
+      <para>Sets the color that is visible on the desktop when no image is displayed or when the desktop background has been disabled. This color is also used as a border when the desktop wallpaper does not fill the entire screen.</para>
+    </summary>
+    <param name="color">
+      <para>A <a href="https://docs.microsoft.com//windows/desktop/gdi/colorref">COLORREF</a> value that specifies the background RGB color value.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDesktopWallpaper" />
+    <seealso cref="IDesktopWallpaper.GetBackgroundColor" />
+  </member>
+  <member name="IDesktopWallpaper.SetPosition">
+    <summary>
+      <para>Sets the display option for the desktop wallpaper image, determining whether the image should be centered, tiled, or stretched.</para>
+    </summary>
+    <param name="position">
+      <para>One of the <see cref="DESKTOP_WALLPAPER_POSITION" /> enumeration values that specify how the image will be displayed on the system's monitors.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code, including the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>The desktop wallpaper is already displayed as asked for in <i>position</i>.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IDesktopWallpaper" />
+    <seealso cref="IDesktopWallpaper.GetPosition" />
+  </member>
+  <member name="IDesktopWallpaper.SetSlideshow">
+    <summary>
+      <para>Specifies the images to use for the desktop wallpaper slideshow.</para>
+    </summary>
+    <param name="items">
+      <para>A pointer to an <see cref="IShellItemArray" /> that contains the slideshow images. This array can contain individual items stored in the same container (files stored in a folder), or it can contain a single item which is the container itself (a folder that contains images). Any other configuration of the array will cause this method to fail.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDesktopWallpaper" />
+    <seealso cref="IDesktopWallpaper.GetSlideshow" />
+  </member>
+  <member name="IDesktopWallpaper.SetSlideshowOptions">
+    <summary>
+      <para>Sets the desktop wallpaper slideshow settings for shuffle and timing.</para>
+    </summary>
+    <param name="options">
+      <para>Set to either 0 to disable shuffle or the following value.</para>
+      <h4>DSO_SHUFFLEIMAGES (0x01)</h4>
+      <para>Enable shuffle; advance through the slideshow in a random order.</para>
+    </param>
+    <param name="slideshowTick">
+      <para>The amount of time, in milliseconds, between image transitions.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDesktopWallpaper" />
+    <seealso cref="IDesktopWallpaper.GetSlideshowOptions" />
+  </member>
+  <member name="IDesktopWallpaper.SetWallpaper">
+    <summary>
+      <para>Sets the desktop wallpaper.</para>
+    </summary>
+    <param name="monitorID">
+      <para>The ID of the monitor. This value can be obtained through <see cref="GetMonitorDevicePathAt" />. Set this value to NULL to set the wallpaper image on all monitors.</para>
+    </param>
+    <param name="wallpaper">
+      <para>The full path of the wallpaper image file.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDesktopWallpaper" />
+    <seealso cref="IDesktopWallpaper.GetWallpaper" />
+  </member>
+  <member name="IDesktopWallpaper">
+    <summary>
+      <para>Provides methods for managing the desktop wallpaper.</para>
+    </summary>
+    <seealso cref="IUnknown" />
+  </member>
+</doc>

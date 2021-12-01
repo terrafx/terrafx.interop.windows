@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="TCP_ESTATS_DATA_ROD_v0">
+    <summary>
+      <para>The <b>TCP_ESTATS_DATA_ROD_v0</b> structure contains read-only dynamic information for extended TCP statistics on data transfer for a TCP connection.</para>
+    </summary>
+    <remarks>
+      <para>The <b>TCP_ESTATS_DATA_ROD_v0</b> structure is used as part of the TCP extended statistics feature available on Windows Vista and later.</para>
+      <para>The <b>TCP_ESTATS_DATA_ROD_v0</b> is defined as version 0 of the structure for  read-only dynamic information for extended TCP statistics on data transfer for a TCP connection.  This information is available after the connection has been established.</para>
+      <para>The <b>TCP_ESTATS_DATA_ROD_v0</b> structure is retrieved by calls to  the <see cref="GetPerTcp6ConnectionEStats" /> or <see cref="GetPerTcpConnectionEStats" /> functions when <b>TcpConnectionEstatsData</b> is passed in the <i>EstatsType</i> parameter. Extended TCP statistics need to be enabled to retrieve this structure.</para>
+      <para>The members of this structure are defined in the IETF RFC on the TCP Extended Statistics MIB. For more information, see <a href="http://tools.ietf.org/html/rfc4898">http://www.ietf.org/rfc/rfc4898.txt</a>.</para>
+      <para>The following is the mapping of the members in the <b>TCP_ESTATS_DATA_ROD_v0</b> structure to the entries defined in RFC 4898 for extended TCP statistics:</para>
+      <list type="table">
+        <listheader>
+          <description>Term</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <b>DataBytesOut</b>
+          </description>
+          <description>
+            <para>tcpEStatsPerfDataOctetsOut</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>DataSegsOut</b>
+          </description>
+          <description>
+            <para>tcpEStatsPerfDataSegsOut</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>DataBytesIn</b>
+          </description>
+          <description>
+            <para>tcpEStatsPerfDataOctetsIn</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>DataSegsIn</b>
+          </description>
+          <description>
+            <para>tcpEStatsPerfDataSegsIn</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>SegsOut</b>
+          </description>
+          <description>
+            <para>tcpEStatsPerfSegsOut</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>SegsIn</b>
+          </description>
+          <description>
+            <para>tcpEStatsPerfSegsIn</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>SoftErrors</b>
+          </description>
+          <description>
+            <para>tcpEStatsStackSoftErrors</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>SoftErrorReason</b>
+          </description>
+          <description>
+            <para>tcpEStatsStackSoftErrorReason</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>SndUna</b>
+          </description>
+          <description>
+            <para>tcpEStatsAppSndUna</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>SndNxt</b>
+          </description>
+          <description>
+            <para>tcpEStatsAppSndNxt</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>SndMax</b>
+          </description>
+          <description>
+            <para>tcpEStatsAppSndMax</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>ThruBytesAcked</b>
+          </description>
+          <description>
+            <para>tcpEStatsAppThruOctetsAcked</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>RcvNxt</b>
+          </description>
+          <description>
+            <para>tcpEStatsAppRcvNxt</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>ThruBytesReceived</b>
+          </description>
+          <description>
+            <para>tcpEStatsAppThruOctetsReceived</para>
+          </description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="GetPerTcp6ConnectionEStats" />
+    <seealso cref="GetPerTcpConnectionEStats" />
+    <seealso cref="TCP_ESTATS_TYPE" />
+  </member>
+  <member name="TCP_ESTATS_DATA_ROD_v0.DataBytesOut">
+    <summary>
+      <para>Type: <b>ULONG64</b></para>
+      <para>The number of octets of data contained in transmitted
+segments, including retransmitted data.  Note that this does
+not include TCP headers.</para>
+    </summary>
+  </member>
+  <member name="TCP_ESTATS_DATA_ROD_v0.DataSegsOut">
+    <summary>
+      <para>Type: <b>ULONG64</b></para>
+      <para>The number of segments sent containing a positive length
+data segment.</para>
+    </summary>
+  </member>
+  <member name="TCP_ESTATS_DATA_ROD_v0.DataBytesIn">
+    <summary>
+      <para>Type: <b>ULONG64</b></para>
+      <para>The number of octets contained in received data segments,
+including retransmitted data.  Note that this does not
+include TCP headers.</para>
+    </summary>
+  </member>
+  <member name="TCP_ESTATS_DATA_ROD_v0.DataSegsIn">
+    <summary>
+      <para>Type: <b>ULONG64</b></para>
+      <para>The number of segments received containing a positive
+length data segment.</para>
+    </summary>
+  </member>
+  <member name="TCP_ESTATS_DATA_ROD_v0.SegsOut">
+    <summary>
+      <para>Type: <b>ULONG64</b></para>
+      <para>The total number of segments sent.</para>
+    </summary>
+  </member>
+  <member name="TCP_ESTATS_DATA_ROD_v0.SegsIn">
+    <summary>
+      <para>Type: <b></b></para>
+      <para>The total number of segments received.</para>
+    </summary>
+  </member>
+  <member name="TCP_ESTATS_DATA_ROD_v0.SoftErrors">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The number of segments that fail various consistency tests
+during TCP input processing.  Soft errors might cause the
+segment to be discarded but some do not.  Some of these soft
+errors cause the generation of a TCP acknowledgment, while
+others are silently discarded.</para>
+    </summary>
+  </member>
+  <member name="TCP_ESTATS_DATA_ROD_v0.SoftErrorReason">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>A value that identifies which consistency test most recently
+failed during TCP input processing.  This object is set every time the <b>SoftErrors</b> member is incremented.</para>
+    </summary>
+  </member>
+  <member name="TCP_ESTATS_DATA_ROD_v0.SndUna">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The value of the oldest unacknowledged sequence
+number. Note that this member is a TCP state variable.</para>
+    </summary>
+  </member>
+  <member name="TCP_ESTATS_DATA_ROD_v0.SndNxt">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The next sequence number to be sent.
+Note that this member is not monotonic (and thus not
+a counter), because TCP sometimes retransmits lost data by
+pulling the member back to the missing data.</para>
+    </summary>
+  </member>
+  <member name="TCP_ESTATS_DATA_ROD_v0.SndMax">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The farthest forward (right most or largest) sequence number to be sent.
+Note that this will be equal to the <b>SndNxt</b> member except
+when the <b>SndNxt</b> member is pulled back during recovery.</para>
+    </summary>
+  </member>
+  <member name="TCP_ESTATS_DATA_ROD_v0.ThruBytesAcked">
+    <summary>
+      <para>Type: <b>ULONG64</b></para>
+      <para>The number of octets for which cumulative acknowledgments
+have been received.  Note that this will be the sum of
+changes to the <b>SndNxt</b> member.</para>
+    </summary>
+  </member>
+  <member name="TCP_ESTATS_DATA_ROD_v0.RcvNxt">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The next sequence number to be received.
+Note that this member is not monotonic (and thus not
+a counter), because TCP sometimes retransmits lost data by
+pulling the member back to the missing data.</para>
+    </summary>
+  </member>
+  <member name="TCP_ESTATS_DATA_ROD_v0.ThruBytesReceived">
+    <summary>
+      <para>Type: <b>ULONG64</b></para>
+      <para>The number of octets for which cumulative acknowledgments
+have been sent.  Note that this will be the sum of changes
+to the <b>RcvNxt</b> member.</para>
+    </summary>
+  </member>
+</doc>

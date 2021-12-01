@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WIN32_FIND_STREAM_DATA">
+    <summary>
+      <para>Contains information about the stream found by the
+<see cref="FindFirstStreamW" /> or
+<see cref="FindNextStreamW" /> function.</para>
+    </summary>
+    <seealso cref="FindFirstStreamW" />
+    <seealso cref="FindNextStreamW" />
+    <seealso cref="LARGE_INTEGER" />
+  </member>
+  <member name="WIN32_FIND_STREAM_DATA.StreamSize">
+    <summary>
+      <para>A <see cref="LARGE_INTEGER" /> value that specifies the
+size of the stream, in bytes.</para>
+    </summary>
+  </member>
+  <member name="WIN32_FIND_STREAM_DATA.cStreamName">
+    <summary>
+      <para>The name of the stream. The string name format is
+":<i>streamname</i>:$<i>streamtype</i>".</para>
+    </summary>
+  </member>
+</doc>

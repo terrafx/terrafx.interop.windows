@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MIB_OPAQUE_QUERY">
+    <summary>
+      <para>The
+<b>MIB_OPAQUE_QUERY</b> structure contains information for a MIB opaque query.</para>
+    </summary>
+    <seealso cref="MIB_OPAQUE_INFO" />
+  </member>
+  <member name="MIB_OPAQUE_QUERY.dwVarId">
+    <summary>
+      <para>The identifier of the MIB object to query.</para>
+    </summary>
+  </member>
+  <member name="MIB_OPAQUE_QUERY.rgdwVarIndex">
+    <summary>
+      <para>The index of the MIB object to query.</para>
+    </summary>
+  </member>
+</doc>

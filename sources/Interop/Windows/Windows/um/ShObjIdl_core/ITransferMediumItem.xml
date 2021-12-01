@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ITransferMediumItem">
+    <summary>
+      <para>Used by a copy engine to get the item on which to call <see cref="QueryInterface" /> to return a pointer to interface <see cref="ITransferDestination" /> or interface <see cref="ITransferSource" />. These interfaces can be queried and enumerated for copy, move, or delete operations.</para>
+    </summary>
+    <remarks>
+      <para>This interface provides only the methods of the <see cref="IRelatedItem" /> interface, from which it inherits.</para>
+    </remarks>
+  </member>
+</doc>

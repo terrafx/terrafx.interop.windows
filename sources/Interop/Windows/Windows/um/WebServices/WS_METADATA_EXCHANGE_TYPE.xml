@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_METADATA_EXCHANGE_TYPE">
+    <summary>
+      <para>Information about enabling and disabling types of metadata exchange.</para>
+    </summary>
+  </member>
+  <member name="WS_METADATA_EXCHANGE_TYPE.WS_METADATA_EXCHANGE_TYPE_NONE">
+    <summary>
+      <para>Disables WS-MetadataExchange/HTTP GET servicing on the <see cref="endpoint" />.
+This is the default value of  <see cref="WS_SERVICE_ENDPOINT_PROPERTY_METADATA_EXCHANGE_TYPE" /> property.</para>
+    </summary>
+  </member>
+  <member name="WS_METADATA_EXCHANGE_TYPE.WS_METADATA_EXCHANGE_TYPE_MEX">
+    <summary>
+      <para>Enables servicing of WS-MetadataExchange 1.1 request servicing on the <see cref="endpoint" />.</para>
+    </summary>
+  </member>
+  <member name="WS_METADATA_EXCHANGE_TYPE.WS_METADATA_EXCHANGE_TYPE_HTTP_GET">
+    <summary>
+      <para>Enables servicing of HTTP GET request servicing on the <see cref="endpoint" /> for metadata
+retrieval.</para>
+    </summary>
+  </member>
+</doc>

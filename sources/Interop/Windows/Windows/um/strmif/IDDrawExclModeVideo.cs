@@ -10,6 +10,7 @@ using TerraFX.Interop.DirectX;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IDDrawExclModeVideo.xml' path='doc/member[@name="IDDrawExclModeVideo"]/*' />
 [Guid("153ACC21-D83B-11D1-82BF-00A0C9696C8F")]
 [NativeTypeName("struct IDDrawExclModeVideo : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -17,6 +18,7 @@ public unsafe partial struct IDDrawExclModeVideo : IDDrawExclModeVideo.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct IDDrawExclModeVideo : IDDrawExclModeVideo.Interface
         return ((delegate* unmanaged<IDDrawExclModeVideo*, Guid*, void**, int>)(lpVtbl[0]))((IDDrawExclModeVideo*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct IDDrawExclModeVideo : IDDrawExclModeVideo.Interface
         return ((delegate* unmanaged<IDDrawExclModeVideo*, uint>)(lpVtbl[1]))((IDDrawExclModeVideo*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct IDDrawExclModeVideo : IDDrawExclModeVideo.Interface
         return ((delegate* unmanaged<IDDrawExclModeVideo*, uint>)(lpVtbl[2]))((IDDrawExclModeVideo*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDDrawExclModeVideo.xml' path='doc/member[@name="IDDrawExclModeVideo.SetDDrawObject"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetDDrawObject(IDirectDraw* pDDrawObject)
@@ -47,6 +52,7 @@ public unsafe partial struct IDDrawExclModeVideo : IDDrawExclModeVideo.Interface
         return ((delegate* unmanaged<IDDrawExclModeVideo*, IDirectDraw*, int>)(lpVtbl[3]))((IDDrawExclModeVideo*)Unsafe.AsPointer(ref this), pDDrawObject);
     }
 
+    /// <include file='IDDrawExclModeVideo.xml' path='doc/member[@name="IDDrawExclModeVideo.GetDDrawObject"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetDDrawObject(IDirectDraw** ppDDrawObject, BOOL* pbUsingExternal)
@@ -54,6 +60,7 @@ public unsafe partial struct IDDrawExclModeVideo : IDDrawExclModeVideo.Interface
         return ((delegate* unmanaged<IDDrawExclModeVideo*, IDirectDraw**, BOOL*, int>)(lpVtbl[4]))((IDDrawExclModeVideo*)Unsafe.AsPointer(ref this), ppDDrawObject, pbUsingExternal);
     }
 
+    /// <include file='IDDrawExclModeVideo.xml' path='doc/member[@name="IDDrawExclModeVideo.SetDDrawSurface"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetDDrawSurface(IDirectDrawSurface* pDDrawSurface)
@@ -61,6 +68,7 @@ public unsafe partial struct IDDrawExclModeVideo : IDDrawExclModeVideo.Interface
         return ((delegate* unmanaged<IDDrawExclModeVideo*, IDirectDrawSurface*, int>)(lpVtbl[5]))((IDDrawExclModeVideo*)Unsafe.AsPointer(ref this), pDDrawSurface);
     }
 
+    /// <include file='IDDrawExclModeVideo.xml' path='doc/member[@name="IDDrawExclModeVideo.GetDDrawSurface"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetDDrawSurface(IDirectDrawSurface** ppDDrawSurface, BOOL* pbUsingExternal)
@@ -68,6 +76,7 @@ public unsafe partial struct IDDrawExclModeVideo : IDDrawExclModeVideo.Interface
         return ((delegate* unmanaged<IDDrawExclModeVideo*, IDirectDrawSurface**, BOOL*, int>)(lpVtbl[6]))((IDDrawExclModeVideo*)Unsafe.AsPointer(ref this), ppDDrawSurface, pbUsingExternal);
     }
 
+    /// <include file='IDDrawExclModeVideo.xml' path='doc/member[@name="IDDrawExclModeVideo.SetDrawParameters"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT SetDrawParameters([NativeTypeName("const RECT *")] RECT* prcSource, [NativeTypeName("const RECT *")] RECT* prcTarget)
@@ -75,6 +84,7 @@ public unsafe partial struct IDDrawExclModeVideo : IDDrawExclModeVideo.Interface
         return ((delegate* unmanaged<IDDrawExclModeVideo*, RECT*, RECT*, int>)(lpVtbl[7]))((IDDrawExclModeVideo*)Unsafe.AsPointer(ref this), prcSource, prcTarget);
     }
 
+    /// <include file='IDDrawExclModeVideo.xml' path='doc/member[@name="IDDrawExclModeVideo.GetNativeVideoProps"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetNativeVideoProps([NativeTypeName("DWORD *")] uint* pdwVideoWidth, [NativeTypeName("DWORD *")] uint* pdwVideoHeight, [NativeTypeName("DWORD *")] uint* pdwPictAspectRatioX, [NativeTypeName("DWORD *")] uint* pdwPictAspectRatioY)
@@ -82,6 +92,7 @@ public unsafe partial struct IDDrawExclModeVideo : IDDrawExclModeVideo.Interface
         return ((delegate* unmanaged<IDDrawExclModeVideo*, uint*, uint*, uint*, uint*, int>)(lpVtbl[8]))((IDDrawExclModeVideo*)Unsafe.AsPointer(ref this), pdwVideoWidth, pdwVideoHeight, pdwPictAspectRatioX, pdwPictAspectRatioY);
     }
 
+    /// <include file='IDDrawExclModeVideo.xml' path='doc/member[@name="IDDrawExclModeVideo.SetCallbackInterface"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT SetCallbackInterface(IDDrawExclModeVideoCallback* pCallback, [NativeTypeName("DWORD")] uint dwFlags)

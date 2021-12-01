@@ -9,14 +9,18 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IP_INTERFACE_INFO.xml' path='doc/member[@name="IP_INTERFACE_INFO"]/*' />
 public partial struct IP_INTERFACE_INFO
 {
+    /// <include file='IP_INTERFACE_INFO.xml' path='doc/member[@name="IP_INTERFACE_INFO.NumAdapters"]/*' />
     [NativeTypeName("LONG")]
     public int NumAdapters;
 
+    /// <include file='IP_INTERFACE_INFO.xml' path='doc/member[@name="IP_INTERFACE_INFO.Adapter"]/*' />
     [NativeTypeName("IP_ADAPTER_INDEX_MAP [1]")]
     public _Adapter_e__FixedBuffer Adapter;
 
+    /// <include file='_Adapter_e__FixedBuffer.xml' path='doc/member[@name="_Adapter_e__FixedBuffer"]/*' />
     public partial struct _Adapter_e__FixedBuffer
     {
         public IP_ADAPTER_INDEX_MAP e0;

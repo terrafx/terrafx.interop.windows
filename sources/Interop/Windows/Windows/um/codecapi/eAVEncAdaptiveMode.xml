@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="eAVEncAdaptiveMode">
+    <summary>
+      <para>Specifies the adaptive encoding mode for a video encoder.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+  </member>
+  <member name="eAVEncAdaptiveMode.eAVEncAdaptiveMode_None">
+    <summary>
+      <para>Do not perform adaptive encoding.</para>
+    </summary>
+  </member>
+  <member name="eAVEncAdaptiveMode.eAVEncAdaptiveMode_Resolution">
+    <summary>
+      <para>Adaptively change the frame resolution.</para>
+    </summary>
+  </member>
+  <member name="eAVEncAdaptiveMode.eAVEncAdaptiveMode_FrameRate">
+    <summary>
+      <para>Adaptively change the frame rate.</para>
+    </summary>
+  </member>
+</doc>

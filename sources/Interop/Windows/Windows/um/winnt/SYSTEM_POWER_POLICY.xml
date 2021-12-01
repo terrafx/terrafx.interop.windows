@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SYSTEM_POWER_POLICY">
+    <summary>
+      <para>Contains information about the current system power policy.</para>
+    </summary>
+    <seealso cref="CallNtPowerInformation" />
+    <seealso cref="POWER_ACTION_POLICY" />
+    <seealso cref="SYSTEM_POWER_LEVEL" />
+  </member>
+  <member name="SYSTEM_POWER_POLICY.Revision">
+    <summary>
+      <para>The current structure revision.</para>
+    </summary>
+  </member>
+  <member name="SYSTEM_POWER_POLICY.PowerButton">
+    <summary>
+      <para>A
+<see cref="POWER_ACTION_POLICY" /> structure that defines the system power action to initiate when the system power button is pressed.</para>
+    </summary>
+  </member>
+  <member name="SYSTEM_POWER_POLICY.SleepButton">
+    <summary>
+      <para>A
+<see cref="POWER_ACTION_POLICY" /> structure that defines the system power action to initiate when the system sleep button is pressed.</para>
+    </summary>
+  </member>
+  <member name="SYSTEM_POWER_POLICY.LidClose">
+    <summary>
+      <para>A
+<see cref="POWER_ACTION_POLICY" /> structure that defines the system power action to initiate when the system lid switch is closed.</para>
+    </summary>
+  </member>
+  <member name="SYSTEM_POWER_POLICY.LidOpenWake">
+    <summary>
+      <para>The maximum power state (highest Sx value) from which a lid-open event should wake the system. This member must be one of the
+<see cref="SYSTEM_POWER_STATE" /> enumeration type values.</para>
+    </summary>
+  </member>
+  <member name="SYSTEM_POWER_POLICY.Reserved">
+    <summary>
+      <para>Reserved.</para>
+    </summary>
+  </member>
+  <member name="SYSTEM_POWER_POLICY.Idle">
+    <summary>
+      <para>A
+<see cref="POWER_ACTION_POLICY" /> structure that defines the system power action to initiate when the system idle timer expires.</para>
+    </summary>
+  </member>
+  <member name="SYSTEM_POWER_POLICY.IdleTimeout">
+    <summary>
+      <para>The time that the level of system activity must remain below the idle detection threshold before the system idle timer expires, in seconds.</para>
+    </summary>
+  </member>
+  <member name="SYSTEM_POWER_POLICY.IdleSensitivity">
+    <summary>
+      <para>The level of system activity that defines the threshold for idle detection, expressed as a percentage.</para>
+    </summary>
+  </member>
+  <member name="SYSTEM_POWER_POLICY.DynamicThrottle">
+    <summary>
+      <para>The current system processor dynamic throttling policy. This member must be one of the values described in
+<a href="https://docs.microsoft.com//windows/desktop/Power/processor-performance-control-policy-constants">Processor Performance Control Policy Constants</a>.</para>
+    </summary>
+  </member>
+  <member name="SYSTEM_POWER_POLICY.Spare2">
+    <summary>
+      <para>Reserved.</para>
+    </summary>
+  </member>
+  <member name="SYSTEM_POWER_POLICY.MinSleep">
+    <summary>
+      <para>The minimum system sleep state (lowest Sx value) currently supported. This member must be one of the
+<see cref="SYSTEM_POWER_STATE" /> enumeration type values.</para>
+    </summary>
+  </member>
+  <member name="SYSTEM_POWER_POLICY.MaxSleep">
+    <summary>
+      <para>The maximum system sleep state (highest Sx value) currently supported. This member must be one of the
+<see cref="SYSTEM_POWER_STATE" /> enumeration type values.</para>
+    </summary>
+  </member>
+  <member name="SYSTEM_POWER_POLICY.ReducedLatencySleep">
+    <summary>
+      <para>The system power state (Sx value) to enter on a system sleep action when there are outstanding latency requirements. This member must be one of the
+<see cref="SYSTEM_POWER_STATE" /> enumeration type values. If an application calls
+<see cref="RequestWakeupLatency" /> with LT_LOWEST_LATENCY, <b>ReducedLatencySleep</b> will be used in place of <b>MaxSleep</b>.</para>
+    </summary>
+  </member>
+  <member name="SYSTEM_POWER_POLICY.WinLogonFlags">
+    <summary>
+      <para>This member can be zero or WINLOGON_LOCK_ON_SLEEP (0x00000001).</para>
+    </summary>
+  </member>
+  <member name="SYSTEM_POWER_POLICY.Spare3">
+    <summary>
+      <para>Reserved.</para>
+    </summary>
+  </member>
+  <member name="SYSTEM_POWER_POLICY.DozeS4Timeout">
+    <summary>
+      <para>The time to wait between entering the suspend state and entering the hibernate sleeping state, in seconds. A value of zero indicates never hibernate.</para>
+    </summary>
+  </member>
+  <member name="SYSTEM_POWER_POLICY.BroadcastCapacityResolution">
+    <summary>
+      <para>The resolution of change in current battery capacity that should cause the system to be notified of a system power state changed event.</para>
+    </summary>
+  </member>
+  <member name="SYSTEM_POWER_POLICY.DischargePolicy">
+    <summary>
+      <para>An array of
+<see cref="SYSTEM_POWER_LEVEL" /> structures that defines the actions to take at system battery discharge events.</para>
+    </summary>
+  </member>
+  <member name="SYSTEM_POWER_POLICY.VideoTimeout">
+    <summary>
+      <para>The time before the display is turned off, in seconds.</para>
+    </summary>
+  </member>
+  <member name="SYSTEM_POWER_POLICY.VideoDimDisplay">
+    <summary>
+      <para>If this member is <b>TRUE</b>, the system includes support for display dimming.</para>
+    </summary>
+  </member>
+  <member name="SYSTEM_POWER_POLICY.VideoReserved">
+    <summary>
+      <para>Reserved.</para>
+    </summary>
+  </member>
+  <member name="SYSTEM_POWER_POLICY.SpindownTimeout">
+    <summary>
+      <para>The time before power to fixed disk drives is turned off, in seconds.</para>
+    </summary>
+  </member>
+  <member name="SYSTEM_POWER_POLICY.OptimizeForPower">
+    <summary>
+      <para>If this member is <b>TRUE</b>, the system will turn on cooling fans and run the processor at full speed when passive cooling is specified. This causes the operating system to be biased toward using the fan and running the processor at full speed.</para>
+    </summary>
+  </member>
+  <member name="SYSTEM_POWER_POLICY.FanThrottleTolerance">
+    <summary>
+      <para>The lower limit that the processor may be throttled down to prior to turning on system fans in response to a thermal event, expressed as a percentage.</para>
+    </summary>
+  </member>
+  <member name="SYSTEM_POWER_POLICY.ForcedThrottle">
+    <summary>
+      <para>The processor throttle level to be imposed by the system, expressed as a percentage.</para>
+    </summary>
+  </member>
+  <member name="SYSTEM_POWER_POLICY.MinThrottle">
+    <summary>
+      <para>The minimum processor throttle level, expressed as a percentage.</para>
+    </summary>
+  </member>
+  <member name="SYSTEM_POWER_POLICY.OverThrottled">
+    <summary>
+      <para>A
+<see cref="POWER_ACTION_POLICY" /> structure that defines the system power action to initiate in response to a thermal event when processor throttling is unable to adequately reduce the system temperature.</para>
+    </summary>
+  </member>
+</doc>

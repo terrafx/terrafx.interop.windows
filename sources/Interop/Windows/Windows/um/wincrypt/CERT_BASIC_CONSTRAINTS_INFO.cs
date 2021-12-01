@@ -5,18 +5,24 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CERT_BASIC_CONSTRAINTS_INFO.xml' path='doc/member[@name="CERT_BASIC_CONSTRAINTS_INFO"]/*' />
 public unsafe partial struct CERT_BASIC_CONSTRAINTS_INFO
 {
+    /// <include file='CERT_BASIC_CONSTRAINTS_INFO.xml' path='doc/member[@name="CERT_BASIC_CONSTRAINTS_INFO.SubjectType"]/*' />
     public CRYPT_BIT_BLOB SubjectType;
 
+    /// <include file='CERT_BASIC_CONSTRAINTS_INFO.xml' path='doc/member[@name="CERT_BASIC_CONSTRAINTS_INFO.fPathLenConstraint"]/*' />
     public BOOL fPathLenConstraint;
 
+    /// <include file='CERT_BASIC_CONSTRAINTS_INFO.xml' path='doc/member[@name="CERT_BASIC_CONSTRAINTS_INFO.dwPathLenConstraint"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwPathLenConstraint;
 
+    /// <include file='CERT_BASIC_CONSTRAINTS_INFO.xml' path='doc/member[@name="CERT_BASIC_CONSTRAINTS_INFO.cSubtreesConstraint"]/*' />
     [NativeTypeName("DWORD")]
     public uint cSubtreesConstraint;
 
+    /// <include file='CERT_BASIC_CONSTRAINTS_INFO.xml' path='doc/member[@name="CERT_BASIC_CONSTRAINTS_INFO.rgSubtreesConstraint"]/*' />
     [NativeTypeName("CERT_NAME_BLOB *")]
     public CRYPT_DATA_BLOB* rgSubtreesConstraint;
 }

@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MESSAGE_RESOURCE_ENTRY.xml' path='doc/member[@name="MESSAGE_RESOURCE_ENTRY"]/*' />
 public unsafe partial struct MESSAGE_RESOURCE_ENTRY
 {
+    /// <include file='MESSAGE_RESOURCE_ENTRY.xml' path='doc/member[@name="MESSAGE_RESOURCE_ENTRY.Length"]/*' />
     [NativeTypeName("WORD")]
     public ushort Length;
 
+    /// <include file='MESSAGE_RESOURCE_ENTRY.xml' path='doc/member[@name="MESSAGE_RESOURCE_ENTRY.Flags"]/*' />
     [NativeTypeName("WORD")]
     public ushort Flags;
 
+    /// <include file='MESSAGE_RESOURCE_ENTRY.xml' path='doc/member[@name="MESSAGE_RESOURCE_ENTRY.Text"]/*' />
     [NativeTypeName("BYTE [1]")]
     public fixed byte Text[1];
 }

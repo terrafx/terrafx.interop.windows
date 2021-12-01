@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFMediaEngineClassFactory2.CreateMediaKeys2">
+    <summary>
+      <para>Creates a media keys object based on the specified key system.</para>
+    </summary>
+    <param name="keySystem">
+      <para>The media key system.</para>
+    </param>
+    <param name="defaultCdmStorePath">
+      <para>Points to the default file location for the  store Content Decryption Module (CDM) data.</para>
+    </param>
+    <param name="inprivateCdmStorePath">
+      <para>Points to a the inprivate location for the  store Content Decryption Module (CDM) data. Specifying this path allows the CDM to comply with the application’s privacy policy by putting personal information in the file location indicated by this path.</para>
+    </param>
+    <param name="ppKeys">
+      <para>Receives the media keys.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFMediaEngineClassFactory2" />
+    <seealso cref="IMFMediaKeys" />
+  </member>
+  <member name="IMFMediaEngineClassFactory2">
+    <summary>
+      <para>Creates an instance of the <see cref="IMFMediaKeys" /> object.</para>
+    </summary>
+    <seealso cref="IMFMediaEngineClassFactoryEx" />
+    <seealso cref="IMFMediaKeys" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+  </member>
+</doc>

@@ -7,9 +7,13 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STORAGE_DEVICE_POWER_CAP_UNITS.xml' path='doc/member[@name="STORAGE_DEVICE_POWER_CAP_UNITS"]/*' />
 [SupportedOSPlatform("windows10.0")]
 public enum STORAGE_DEVICE_POWER_CAP_UNITS
 {
+    /// <include file='STORAGE_DEVICE_POWER_CAP_UNITS.xml' path='doc/member[@name="STORAGE_DEVICE_POWER_CAP_UNITS.StorageDevicePowerCapUnitsPercent"]/*' />
     StorageDevicePowerCapUnitsPercent,
+
+    /// <include file='STORAGE_DEVICE_POWER_CAP_UNITS.xml' path='doc/member[@name="STORAGE_DEVICE_POWER_CAP_UNITS.StorageDevicePowerCapUnitsMilliwatts"]/*' />
     StorageDevicePowerCapUnitsMilliwatts,
 }

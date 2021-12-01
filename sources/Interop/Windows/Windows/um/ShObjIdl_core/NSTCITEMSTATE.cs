@@ -7,13 +7,25 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NSTCITEMSTATE.xml' path='doc/member[@name="NSTCITEMSTATE"]/*' />
 [Flags]
 public enum NSTCITEMSTATE
 {
+    /// <include file='NSTCITEMSTATE.xml' path='doc/member[@name="NSTCITEMSTATE.NSTCIS_NONE"]/*' />
     NSTCIS_NONE = 0,
+
+    /// <include file='NSTCITEMSTATE.xml' path='doc/member[@name="NSTCITEMSTATE.NSTCIS_SELECTED"]/*' />
     NSTCIS_SELECTED = 0x1,
+
+    /// <include file='NSTCITEMSTATE.xml' path='doc/member[@name="NSTCITEMSTATE.NSTCIS_EXPANDED"]/*' />
     NSTCIS_EXPANDED = 0x2,
+
+    /// <include file='NSTCITEMSTATE.xml' path='doc/member[@name="NSTCITEMSTATE.NSTCIS_BOLD"]/*' />
     NSTCIS_BOLD = 0x4,
+
+    /// <include file='NSTCITEMSTATE.xml' path='doc/member[@name="NSTCITEMSTATE.NSTCIS_DISABLED"]/*' />
     NSTCIS_DISABLED = 0x8,
+
+    /// <include file='NSTCITEMSTATE.xml' path='doc/member[@name="NSTCITEMSTATE.NSTCIS_SELECTEDNOEXPAND"]/*' />
     NSTCIS_SELECTEDNOEXPAND = 0x10,
 }

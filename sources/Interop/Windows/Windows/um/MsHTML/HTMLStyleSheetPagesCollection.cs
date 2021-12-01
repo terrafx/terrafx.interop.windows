@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HTMLStyleSheetPagesCollection.xml' path='doc/member[@name="HTMLStyleSheetPagesCollection"]/*' />
 [Guid("3050F7F1-98B5-11CF-BB82-00AA00BDCE0B")]
 public partial struct HTMLStyleSheetPagesCollection
 {

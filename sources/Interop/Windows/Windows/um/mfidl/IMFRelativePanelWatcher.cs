@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFRelativePanelWatcher.xml' path='doc/member[@name="IMFRelativePanelWatcher"]/*' />
 [Guid("421AF7F6-573E-4AD0-8FDA-2E57CEDB18C6")]
 [NativeTypeName("struct IMFRelativePanelWatcher : IMFShutdown")]
 [NativeInheritance("IMFShutdown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IMFRelativePanelWatcher : IMFRelativePanelWatcher.I
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IMFRelativePanelWatcher : IMFRelativePanelWatcher.I
         return ((delegate* unmanaged<IMFRelativePanelWatcher*, Guid*, void**, int>)(lpVtbl[0]))((IMFRelativePanelWatcher*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IMFRelativePanelWatcher : IMFRelativePanelWatcher.I
         return ((delegate* unmanaged<IMFRelativePanelWatcher*, uint>)(lpVtbl[1]))((IMFRelativePanelWatcher*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IMFRelativePanelWatcher : IMFRelativePanelWatcher.I
         return ((delegate* unmanaged<IMFRelativePanelWatcher*, uint>)(lpVtbl[2]))((IMFRelativePanelWatcher*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IMFShutdown.Shutdown" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Shutdown()
@@ -48,6 +53,7 @@ public unsafe partial struct IMFRelativePanelWatcher : IMFRelativePanelWatcher.I
         return ((delegate* unmanaged<IMFRelativePanelWatcher*, int>)(lpVtbl[3]))((IMFRelativePanelWatcher*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IMFShutdown.GetShutdownStatus" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetShutdownStatus(MFSHUTDOWN_STATUS* pStatus)
@@ -55,6 +61,7 @@ public unsafe partial struct IMFRelativePanelWatcher : IMFRelativePanelWatcher.I
         return ((delegate* unmanaged<IMFRelativePanelWatcher*, MFSHUTDOWN_STATUS*, int>)(lpVtbl[4]))((IMFRelativePanelWatcher*)Unsafe.AsPointer(ref this), pStatus);
     }
 
+    /// <include file='IMFRelativePanelWatcher.xml' path='doc/member[@name="IMFRelativePanelWatcher.BeginGetReport"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT BeginGetReport(IMFAsyncCallback* pCallback, IUnknown* pState)
@@ -62,6 +69,7 @@ public unsafe partial struct IMFRelativePanelWatcher : IMFRelativePanelWatcher.I
         return ((delegate* unmanaged<IMFRelativePanelWatcher*, IMFAsyncCallback*, IUnknown*, int>)(lpVtbl[5]))((IMFRelativePanelWatcher*)Unsafe.AsPointer(ref this), pCallback, pState);
     }
 
+    /// <include file='IMFRelativePanelWatcher.xml' path='doc/member[@name="IMFRelativePanelWatcher.EndGetReport"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT EndGetReport(IMFAsyncResult* pResult, IMFRelativePanelReport** ppRelativePanelReport)
@@ -69,6 +77,7 @@ public unsafe partial struct IMFRelativePanelWatcher : IMFRelativePanelWatcher.I
         return ((delegate* unmanaged<IMFRelativePanelWatcher*, IMFAsyncResult*, IMFRelativePanelReport**, int>)(lpVtbl[6]))((IMFRelativePanelWatcher*)Unsafe.AsPointer(ref this), pResult, ppRelativePanelReport);
     }
 
+    /// <include file='IMFRelativePanelWatcher.xml' path='doc/member[@name="IMFRelativePanelWatcher.GetReport"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetReport(IMFRelativePanelReport** ppRelativePanelReport)

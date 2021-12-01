@@ -7,14 +7,19 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MANIPULATION_VELOCITY.xml' path='doc/member[@name="MANIPULATION_VELOCITY"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public partial struct MANIPULATION_VELOCITY
 {
+    /// <include file='MANIPULATION_VELOCITY.xml' path='doc/member[@name="MANIPULATION_VELOCITY.velocityX"]/*' />
     public float velocityX;
 
+    /// <include file='MANIPULATION_VELOCITY.xml' path='doc/member[@name="MANIPULATION_VELOCITY.velocityY"]/*' />
     public float velocityY;
 
+    /// <include file='MANIPULATION_VELOCITY.xml' path='doc/member[@name="MANIPULATION_VELOCITY.velocityExpansion"]/*' />
     public float velocityExpansion;
 
+    /// <include file='MANIPULATION_VELOCITY.xml' path='doc/member[@name="MANIPULATION_VELOCITY.velocityAngular"]/*' />
     public float velocityAngular;
 }

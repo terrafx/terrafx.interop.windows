@@ -5,17 +5,23 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CACHE_DESCRIPTOR.xml' path='doc/member[@name="CACHE_DESCRIPTOR"]/*' />
 public partial struct CACHE_DESCRIPTOR
 {
+    /// <include file='CACHE_DESCRIPTOR.xml' path='doc/member[@name="CACHE_DESCRIPTOR.Level"]/*' />
     public byte Level;
 
+    /// <include file='CACHE_DESCRIPTOR.xml' path='doc/member[@name="CACHE_DESCRIPTOR.Associativity"]/*' />
     public byte Associativity;
 
+    /// <include file='CACHE_DESCRIPTOR.xml' path='doc/member[@name="CACHE_DESCRIPTOR.LineSize"]/*' />
     [NativeTypeName("WORD")]
     public ushort LineSize;
 
+    /// <include file='CACHE_DESCRIPTOR.xml' path='doc/member[@name="CACHE_DESCRIPTOR.Size"]/*' />
     [NativeTypeName("DWORD")]
     public uint Size;
 
+    /// <include file='CACHE_DESCRIPTOR.xml' path='doc/member[@name="CACHE_DESCRIPTOR.Type"]/*' />
     public PROCESSOR_CACHE_TYPE Type;
 }

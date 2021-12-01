@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ACTIVATION_CONTEXT_BASIC_INFORMATION.xml' path='doc/member[@name="ACTIVATION_CONTEXT_BASIC_INFORMATION"]/*' />
 public partial struct ACTIVATION_CONTEXT_BASIC_INFORMATION
 {
+    /// <include file='ACTIVATION_CONTEXT_BASIC_INFORMATION.xml' path='doc/member[@name="ACTIVATION_CONTEXT_BASIC_INFORMATION.hActCtx"]/*' />
     public HANDLE hActCtx;
 
+    /// <include file='ACTIVATION_CONTEXT_BASIC_INFORMATION.xml' path='doc/member[@name="ACTIVATION_CONTEXT_BASIC_INFORMATION.dwFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFlags;
 }

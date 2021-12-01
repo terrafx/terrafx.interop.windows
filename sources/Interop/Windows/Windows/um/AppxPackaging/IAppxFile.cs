@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAppxFile.xml' path='doc/member[@name="IAppxFile"]/*' />
 [Guid("91DF827B-94FD-468F-827B-57F41B2F6F2E")]
 [NativeTypeName("struct IAppxFile : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IAppxFile : IAppxFile.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IAppxFile : IAppxFile.Interface
         return ((delegate* unmanaged<IAppxFile*, Guid*, void**, int>)(lpVtbl[0]))((IAppxFile*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IAppxFile : IAppxFile.Interface
         return ((delegate* unmanaged<IAppxFile*, uint>)(lpVtbl[1]))((IAppxFile*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IAppxFile : IAppxFile.Interface
         return ((delegate* unmanaged<IAppxFile*, uint>)(lpVtbl[2]))((IAppxFile*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAppxFile.xml' path='doc/member[@name="IAppxFile.GetCompressionOption"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetCompressionOption(APPX_COMPRESSION_OPTION* compressionOption)
@@ -48,6 +53,7 @@ public unsafe partial struct IAppxFile : IAppxFile.Interface
         return ((delegate* unmanaged<IAppxFile*, APPX_COMPRESSION_OPTION*, int>)(lpVtbl[3]))((IAppxFile*)Unsafe.AsPointer(ref this), compressionOption);
     }
 
+    /// <include file='IAppxFile.xml' path='doc/member[@name="IAppxFile.GetContentType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetContentType([NativeTypeName("LPWSTR *")] ushort** contentType)
@@ -55,6 +61,7 @@ public unsafe partial struct IAppxFile : IAppxFile.Interface
         return ((delegate* unmanaged<IAppxFile*, ushort**, int>)(lpVtbl[4]))((IAppxFile*)Unsafe.AsPointer(ref this), contentType);
     }
 
+    /// <include file='IAppxFile.xml' path='doc/member[@name="IAppxFile.GetName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetName([NativeTypeName("LPWSTR *")] ushort** fileName)
@@ -62,6 +69,7 @@ public unsafe partial struct IAppxFile : IAppxFile.Interface
         return ((delegate* unmanaged<IAppxFile*, ushort**, int>)(lpVtbl[5]))((IAppxFile*)Unsafe.AsPointer(ref this), fileName);
     }
 
+    /// <include file='IAppxFile.xml' path='doc/member[@name="IAppxFile.GetSize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetSize([NativeTypeName("UINT64 *")] ulong* size)
@@ -69,6 +77,7 @@ public unsafe partial struct IAppxFile : IAppxFile.Interface
         return ((delegate* unmanaged<IAppxFile*, ulong*, int>)(lpVtbl[6]))((IAppxFile*)Unsafe.AsPointer(ref this), size);
     }
 
+    /// <include file='IAppxFile.xml' path='doc/member[@name="IAppxFile.GetStream"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetStream(IStream** stream)

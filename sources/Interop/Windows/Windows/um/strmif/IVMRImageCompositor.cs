@@ -10,6 +10,7 @@ using TerraFX.Interop.DirectX;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IVMRImageCompositor.xml' path='doc/member[@name="IVMRImageCompositor"]/*' />
 [Guid("7A4FB5AF-479F-4074-BB40-CE6722E43C82")]
 [NativeTypeName("struct IVMRImageCompositor : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -17,6 +18,7 @@ public unsafe partial struct IVMRImageCompositor : IVMRImageCompositor.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct IVMRImageCompositor : IVMRImageCompositor.Interface
         return ((delegate* unmanaged<IVMRImageCompositor*, Guid*, void**, int>)(lpVtbl[0]))((IVMRImageCompositor*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct IVMRImageCompositor : IVMRImageCompositor.Interface
         return ((delegate* unmanaged<IVMRImageCompositor*, uint>)(lpVtbl[1]))((IVMRImageCompositor*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct IVMRImageCompositor : IVMRImageCompositor.Interface
         return ((delegate* unmanaged<IVMRImageCompositor*, uint>)(lpVtbl[2]))((IVMRImageCompositor*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IVMRImageCompositor.xml' path='doc/member[@name="IVMRImageCompositor.InitCompositionTarget"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT InitCompositionTarget(IUnknown* pD3DDevice, [NativeTypeName("LPDIRECTDRAWSURFACE7")] IDirectDrawSurface7* pddsRenderTarget)
@@ -47,6 +52,7 @@ public unsafe partial struct IVMRImageCompositor : IVMRImageCompositor.Interface
         return ((delegate* unmanaged<IVMRImageCompositor*, IUnknown*, IDirectDrawSurface7*, int>)(lpVtbl[3]))((IVMRImageCompositor*)Unsafe.AsPointer(ref this), pD3DDevice, pddsRenderTarget);
     }
 
+    /// <include file='IVMRImageCompositor.xml' path='doc/member[@name="IVMRImageCompositor.TermCompositionTarget"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT TermCompositionTarget(IUnknown* pD3DDevice, [NativeTypeName("LPDIRECTDRAWSURFACE7")] IDirectDrawSurface7* pddsRenderTarget)
@@ -54,6 +60,7 @@ public unsafe partial struct IVMRImageCompositor : IVMRImageCompositor.Interface
         return ((delegate* unmanaged<IVMRImageCompositor*, IUnknown*, IDirectDrawSurface7*, int>)(lpVtbl[4]))((IVMRImageCompositor*)Unsafe.AsPointer(ref this), pD3DDevice, pddsRenderTarget);
     }
 
+    /// <include file='IVMRImageCompositor.xml' path='doc/member[@name="IVMRImageCompositor.SetStreamMediaType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetStreamMediaType([NativeTypeName("DWORD")] uint dwStrmID, AM_MEDIA_TYPE* pmt, BOOL fTexture)
@@ -61,6 +68,7 @@ public unsafe partial struct IVMRImageCompositor : IVMRImageCompositor.Interface
         return ((delegate* unmanaged<IVMRImageCompositor*, uint, AM_MEDIA_TYPE*, BOOL, int>)(lpVtbl[5]))((IVMRImageCompositor*)Unsafe.AsPointer(ref this), dwStrmID, pmt, fTexture);
     }
 
+    /// <include file='IVMRImageCompositor.xml' path='doc/member[@name="IVMRImageCompositor.CompositeImage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT CompositeImage(IUnknown* pD3DDevice, [NativeTypeName("LPDIRECTDRAWSURFACE7")] IDirectDrawSurface7* pddsRenderTarget, AM_MEDIA_TYPE* pmtRenderTarget, [NativeTypeName("REFERENCE_TIME")] long rtStart, [NativeTypeName("REFERENCE_TIME")] long rtEnd, [NativeTypeName("DWORD")] uint dwClrBkGnd, VMRVIDEOSTREAMINFO* pVideoStreamInfo, uint cStreams)

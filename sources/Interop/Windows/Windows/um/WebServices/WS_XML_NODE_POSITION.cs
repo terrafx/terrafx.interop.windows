@@ -7,9 +7,12 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_XML_NODE_POSITION.xml' path='doc/member[@name="WS_XML_NODE_POSITION"]/*' />
 public unsafe partial struct WS_XML_NODE_POSITION
 {
+    /// <include file='WS_XML_NODE_POSITION.xml' path='doc/member[@name="WS_XML_NODE_POSITION.buffer"]/*' />
     public IntPtr buffer;
 
+    /// <include file='WS_XML_NODE_POSITION.xml' path='doc/member[@name="WS_XML_NODE_POSITION.node"]/*' />
     public void* node;
 }

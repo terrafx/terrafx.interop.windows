@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IWbemConfigureRefresher.xml' path='doc/member[@name="IWbemConfigureRefresher"]/*' />
 [Guid("49353C92-516B-11D1-AEA6-00C04FB68820")]
 [NativeTypeName("struct IWbemConfigureRefresher : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IWbemConfigureRefresher : IWbemConfigureRefresher.I
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IWbemConfigureRefresher : IWbemConfigureRefresher.I
         return ((delegate* unmanaged<IWbemConfigureRefresher*, Guid*, void**, int>)(lpVtbl[0]))((IWbemConfigureRefresher*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IWbemConfigureRefresher : IWbemConfigureRefresher.I
         return ((delegate* unmanaged<IWbemConfigureRefresher*, uint>)(lpVtbl[1]))((IWbemConfigureRefresher*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IWbemConfigureRefresher : IWbemConfigureRefresher.I
         return ((delegate* unmanaged<IWbemConfigureRefresher*, uint>)(lpVtbl[2]))((IWbemConfigureRefresher*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IWbemConfigureRefresher.xml' path='doc/member[@name="IWbemConfigureRefresher.AddObjectByPath"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT AddObjectByPath(IWbemServices* pNamespace, [NativeTypeName("LPCWSTR")] ushort* wszPath, [NativeTypeName("long")] int lFlags, IWbemContext* pContext, IWbemClassObject** ppRefreshable, [NativeTypeName("long *")] int* plId)
@@ -46,6 +51,7 @@ public unsafe partial struct IWbemConfigureRefresher : IWbemConfigureRefresher.I
         return ((delegate* unmanaged<IWbemConfigureRefresher*, IWbemServices*, ushort*, int, IWbemContext*, IWbemClassObject**, int*, int>)(lpVtbl[3]))((IWbemConfigureRefresher*)Unsafe.AsPointer(ref this), pNamespace, wszPath, lFlags, pContext, ppRefreshable, plId);
     }
 
+    /// <include file='IWbemConfigureRefresher.xml' path='doc/member[@name="IWbemConfigureRefresher.AddObjectByTemplate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT AddObjectByTemplate(IWbemServices* pNamespace, IWbemClassObject* pTemplate, [NativeTypeName("long")] int lFlags, IWbemContext* pContext, IWbemClassObject** ppRefreshable, [NativeTypeName("long *")] int* plId)
@@ -53,6 +59,7 @@ public unsafe partial struct IWbemConfigureRefresher : IWbemConfigureRefresher.I
         return ((delegate* unmanaged<IWbemConfigureRefresher*, IWbemServices*, IWbemClassObject*, int, IWbemContext*, IWbemClassObject**, int*, int>)(lpVtbl[4]))((IWbemConfigureRefresher*)Unsafe.AsPointer(ref this), pNamespace, pTemplate, lFlags, pContext, ppRefreshable, plId);
     }
 
+    /// <include file='IWbemConfigureRefresher.xml' path='doc/member[@name="IWbemConfigureRefresher.AddRefresher"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT AddRefresher(IWbemRefresher* pRefresher, [NativeTypeName("long")] int lFlags, [NativeTypeName("long *")] int* plId)
@@ -60,6 +67,7 @@ public unsafe partial struct IWbemConfigureRefresher : IWbemConfigureRefresher.I
         return ((delegate* unmanaged<IWbemConfigureRefresher*, IWbemRefresher*, int, int*, int>)(lpVtbl[5]))((IWbemConfigureRefresher*)Unsafe.AsPointer(ref this), pRefresher, lFlags, plId);
     }
 
+    /// <include file='IWbemConfigureRefresher.xml' path='doc/member[@name="IWbemConfigureRefresher.Remove"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Remove([NativeTypeName("long")] int lId, [NativeTypeName("long")] int lFlags)
@@ -67,6 +75,7 @@ public unsafe partial struct IWbemConfigureRefresher : IWbemConfigureRefresher.I
         return ((delegate* unmanaged<IWbemConfigureRefresher*, int, int, int>)(lpVtbl[6]))((IWbemConfigureRefresher*)Unsafe.AsPointer(ref this), lId, lFlags);
     }
 
+    /// <include file='IWbemConfigureRefresher.xml' path='doc/member[@name="IWbemConfigureRefresher.AddEnum"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT AddEnum(IWbemServices* pNamespace, [NativeTypeName("LPCWSTR")] ushort* wszClassName, [NativeTypeName("long")] int lFlags, IWbemContext* pContext, IWbemHiPerfEnum** ppEnum, [NativeTypeName("long *")] int* plId)

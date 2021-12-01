@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SYSKIND.xml' path='doc/member[@name="SYSKIND"]/*' />
 public enum SYSKIND
 {
+    /// <include file='SYSKIND.xml' path='doc/member[@name="SYSKIND.SYS_WIN16"]/*' />
     SYS_WIN16 = 0,
+
+    /// <include file='SYSKIND.xml' path='doc/member[@name="SYSKIND.SYS_WIN32"]/*' />
     SYS_WIN32 = (SYS_WIN16 + 1),
+
+    /// <include file='SYSKIND.xml' path='doc/member[@name="SYSKIND.SYS_MAC"]/*' />
     SYS_MAC = (SYS_WIN32 + 1),
+
+    /// <include file='SYSKIND.xml' path='doc/member[@name="SYSKIND.SYS_WIN64"]/*' />
     SYS_WIN64 = (SYS_MAC + 1),
 }

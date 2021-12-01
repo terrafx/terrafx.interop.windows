@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ICredentialProviderCredentialWithFieldOptions.xml' path='doc/member[@name="ICredentialProviderCredentialWithFieldOptions"]/*' />
 [Guid("DBC6FB30-C843-49E3-A645-573E6F39446A")]
 [NativeTypeName("struct ICredentialProviderCredentialWithFieldOptions : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct ICredentialProviderCredentialWithFieldOptions : ICr
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct ICredentialProviderCredentialWithFieldOptions : ICr
         return ((delegate* unmanaged<ICredentialProviderCredentialWithFieldOptions*, Guid*, void**, int>)(lpVtbl[0]))((ICredentialProviderCredentialWithFieldOptions*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct ICredentialProviderCredentialWithFieldOptions : ICr
         return ((delegate* unmanaged<ICredentialProviderCredentialWithFieldOptions*, uint>)(lpVtbl[1]))((ICredentialProviderCredentialWithFieldOptions*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct ICredentialProviderCredentialWithFieldOptions : ICr
         return ((delegate* unmanaged<ICredentialProviderCredentialWithFieldOptions*, uint>)(lpVtbl[2]))((ICredentialProviderCredentialWithFieldOptions*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ICredentialProviderCredentialWithFieldOptions.xml' path='doc/member[@name="ICredentialProviderCredentialWithFieldOptions.GetFieldOptions"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetFieldOptions([NativeTypeName("DWORD")] uint fieldID, CREDENTIAL_PROVIDER_CREDENTIAL_FIELD_OPTIONS* options)

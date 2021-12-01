@@ -1,0 +1,2387 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IVideoWindow.GetMaxIdealImageSize">
+    <summary>
+      <para>The <code>GetMaxIdealImageSize</code> method retrieves the maximum ideal image size for the video image.</para>
+    </summary>
+    <param name="pWidth">
+      <para>Receives the maximum ideal width, in pixels.</para>
+    </param>
+    <param name="pHeight">
+      <para>Receives the maximum ideal height, in pixels.</para>
+    </param>
+    <returns>
+      <para>Possible return values include the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>Could not retrieve a maximum image size.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_WRONG_STATE</b>
+            </para>
+          </description>
+          <description>
+            <para>Filter is stopped.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The maximum ideal size may differ from the native video size, because the video hardware might have specific stretching requirements.</para>
+      <para>This method returns S_FALSE under various circumstances:</para>
+      <list type="bullet">
+        <item>
+          <description>The filter is using an <see cref="IOverlay" /> transport.</description>
+        </item>
+        <item>
+          <description>UseWhenFullScreen mode is on. (See <a href="https://docs.microsoft.com//previous-versions/ms785118(v=vs.85)">IDirectDrawVideo.UseWhenFullScreen</a>.)</description>
+        </item>
+        <item>
+          <description>The video surface has no maximum overlay stretch. (The <b>dwMaxOverlayStretch</b> member of the DDCAPS structure is zero. See <a href="https://docs.microsoft.com//previous-versions/ms785104(v=vs.85)">IDirectDrawVideo.GetCaps</a>.)</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IVideoWindow Interface" />
+    <seealso cref="IVideoWindow.GetMinIdealImageSize" />
+  </member>
+  <member name="IVideoWindow.GetMinIdealImageSize">
+    <summary>
+      <para>The <code>GetMinIdealImageSize</code> method retrieves the minimum ideal size for the video image.</para>
+    </summary>
+    <param name="pWidth">
+      <para>Receives the minimum ideal width, in pixels.</para>
+    </param>
+    <param name="pHeight">
+      <para>Receives the minimum ideal height, in pixels.</para>
+    </param>
+    <returns>
+      <para>Possible return values include the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>Could not retrieve a minimum image size.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_WRONG_STATE</b>
+            </para>
+          </description>
+          <description>
+            <para>Filter is stopped.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The maximum ideal size may differ from the native video size, because the video hardware might have specific stretching requirements.</para>
+      <para>This method returns S_FALSE under various circumstances:</para>
+      <list type="bullet">
+        <item>
+          <description>The filter is using an <see cref="IOverlay" /> transport.</description>
+        </item>
+        <item>
+          <description>UseWhenFullScreen mode is on. (See <a href="https://docs.microsoft.com//previous-versions/ms785118(v=vs.85)">IDirectDrawVideo.UseWhenFullScreen</a>.)</description>
+        </item>
+        <item>
+          <description>Video playback is using a stretchable offscreen surface. (The <b>dwCaps</b> member of the DDCAPS structure includes the DDCAPS_BLTSTRETCH flag. See <a href="https://docs.microsoft.com//previous-versions/ms785104(v=vs.85)">IDirectDrawVideo.GetCaps</a>.)</description>
+        </item>
+        <item>
+          <description>The video surface has no minimum overlay stretch. (The <b>dwMinOverlayStretch</b> member of the DDCAPS structure is zero. See <a href="https://docs.microsoft.com//previous-versions/ms785104(v=vs.85)">IDirectDrawVideo.GetCaps</a>.)</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IVideoWindow Interface" />
+    <seealso cref="IVideoWindow.GetMaxIdealImageSize" />
+  </member>
+  <member name="IVideoWindow.GetRestorePosition">
+    <summary>
+      <para>The <code>GetRestorePosition</code> method retrieves the restored window position.</para>
+    </summary>
+    <param name="pLeft">
+      <para>Receives the x-coordinate, in pixels.</para>
+    </param>
+    <param name="pTop">
+      <para>Receives the y-coordinate, in pixels.</para>
+    </param>
+    <param name="pWidth">
+      <para>Receives the width of the window, in pixels.</para>
+    </param>
+    <param name="pHeight">
+      <para>Receives the height of the window, in pixels.</para>
+    </param>
+    <returns>
+      <para>Possible return values include the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_NOT_CONNECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The video renderer filter is not connected.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>If the video window is minimized or maximized, you can use this method to get the window's restored position.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IVideoWindow Interface" />
+  </member>
+  <member name="IVideoWindow.GetWindowPosition">
+    <summary>
+      <para>The <code>GetWindowPosition</code> method retrieves the position of the video window.</para>
+    </summary>
+    <param name="pLeft">
+      <para>Receives the x-coordinate, in pixels.</para>
+    </param>
+    <param name="pTop">
+      <para>Receives the y-coordinate, in pixels.</para>
+    </param>
+    <param name="pWidth">
+      <para>Receives the width of the window, in pixels.</para>
+    </param>
+    <param name="pHeight">
+      <para>Receives the height of the window, in pixels.</para>
+    </param>
+    <returns>
+      <para>Possible return values include the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_NOT_CONNECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The video renderer filter is not connected.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method has the same effect as calling the <see cref="IVideoWindow.get_Left" />, <see cref="IVideoWindow.get_Top" />, <see cref="IVideoWindow.get_Width" />, and <see cref="IVideoWindow.get_Height" /> methods.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IVideoWindow Interface" />
+    <seealso cref="IVideoWindow.SetWindowPosition" />
+  </member>
+  <member name="IVideoWindow.get_AutoShow">
+    <summary>
+      <para>The <code>get_AutoShow</code> method queries whether the video renderer automatically shows the video window when it receives video data.</para>
+    </summary>
+    <param name="AutoShow">
+      <para>Receives one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value
+</description>
+          <description>Description
+</description>
+        </listheader>
+        <item>
+          <description>OATRUE
+</description>
+          <description>If the video renderer pauses or runs, it will automatically show the video window.</description>
+        </item>
+        <item>
+          <description>OAFALSE
+</description>
+          <description>The video renderer will not automatically show the video window.</description>
+        </item>
+      </list>
+    </param>
+    <returns>
+      <para>Possible return values include the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_NOT_CONNECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The video renderer filter is not connected.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IVideoWindow Interface" />
+  </member>
+  <member name="IVideoWindow.get_BackgroundPalette">
+    <summary>
+      <para>The <code>get_BackgroundPalette</code> method queries whether the video window realizes its palette in the background..</para>
+    </summary>
+    <param name="pBackgroundPalette">
+      <para>Receives one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value
+</description>
+          <description>Description
+</description>
+        </listheader>
+        <item>
+          <description>OATRUE
+</description>
+          <description>The video window realizes the palette in the background.</description>
+        </item>
+        <item>
+          <description>OAFALSE
+</description>
+          <description>The video window does not realize the palette in the background.</description>
+        </item>
+      </list>
+    </param>
+    <returns>
+      <para>Possible return values include the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_NOT_CONNECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The video renderer filter is not connected.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IVideoWindow Interface" />
+    <seealso cref="IVideoWindow.put_BackgroundPalette" />
+  </member>
+  <member name="IVideoWindow.get_BorderColor">
+    <summary>
+      <para>The <code>get_BorderColor</code> method retrieves the color that appears around the edges of the destination rectangle.</para>
+    </summary>
+    <param name="Color">
+      <para>Receives a <b>COLORREF</b> value.</para>
+    </param>
+    <returns>
+      <para>Possible return values include the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_NOT_CONNECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The video renderer filter is not connected.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IVideoWindow Interface" />
+    <seealso cref="IVideoWindow.put_BorderColor" />
+  </member>
+  <member name="IVideoWindow.get_Caption">
+    <summary>
+      <para>The <code>get_Caption</code> method retrieves the video window caption.</para>
+    </summary>
+    <param name="strCaption">
+      <para>Pointer to a <b>BSTR</b> that receives the caption.</para>
+    </param>
+    <returns>
+      <para>Possible return values include the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_NOT_CONNECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The video renderer filter is not connected.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The caller must free the returned string, using the <b>SysFreeString</b> function.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IVideoWindow Interface" />
+    <seealso cref="IVideoWindow.put_Caption" />
+  </member>
+  <member name="IVideoWindow.get_FullScreenMode">
+    <summary>
+      <para>The <code>get_FullScreenMode</code> method queries whether the video renderer is in full-screen mode.</para>
+    </summary>
+    <param name="FullScreenMode">
+      <para>Receives the value OATRUE if the video renderer is in full-screen mode, or OAFALSE otherwise.</para>
+    </param>
+    <returns>
+      <para>Possible return values include the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_NOTIMPL</b>
+            </para>
+          </description>
+          <description>
+            <para>This filter does not support full-screen mode.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_NOT_CONNECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The video renderer filter is not connected.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>When the Filter Graph Manager is switching to full-screen mode, it calls this method to determine whether the current video renderer supports this mode. If the renderer does not have inherent support for full-screen playback, it should return E_NOTIMPL. If if does, it should return S_OK, and also return the correct value in the <i>FullScreenMode</i> parameter.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IVideoWindow Interface" />
+    <seealso cref="IVideoWindow.put_FullScreenMode" />
+  </member>
+  <member name="IVideoWindow.get_Height">
+    <summary>
+      <para>The <code>get_Height</code> method retrieves the height of the video window.</para>
+    </summary>
+    <param name="pHeight">
+      <para>Receives the height, in pixels.</para>
+    </param>
+    <returns>
+      <para>Possible return values include the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_NOT_CONNECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The video renderer filter is not connected.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IVideoWindow Interface" />
+    <seealso cref="IVideoWindow.put_Height" />
+  </member>
+  <member name="IVideoWindow.get_Left">
+    <summary>
+      <para>The <code>get_Left</code> method retrieves the video window's x-axis coordinate.</para>
+    </summary>
+    <param name="pLeft">
+      <para>Receives the x-axis coordinate, in pixels.</para>
+    </param>
+    <returns>
+      <para>Possible return values include the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_NOT_CONNECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The video renderer filter is not connected.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IVideoWindow Interface" />
+    <seealso cref="IVideoWindow.put_Left" />
+  </member>
+  <member name="IVideoWindow.get_MessageDrain">
+    <summary>
+      <para>The <code>get_MessageDrain</code> method retrieves the window that receives mouse and keyboard messages from the video window, if any.</para>
+    </summary>
+    <param name="Drain">
+      <para>Receives a handle to the window, as an <a href="https://docs.microsoft.com//windows/desktop/DirectShow/oahwnd">OAHWND</a> type. If no message drain was set, this parameter receives the value <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>Possible return values include the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_NOT_CONNECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The video renderer filter is not connected.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IVideoWindow Interface" />
+    <seealso cref="IVideoWindow.put_MessageDrain" />
+  </member>
+  <member name="IVideoWindow.get_Owner">
+    <summary>
+      <para>The <code>get_Owner</code> method retrieves the video window's parent window, if any.</para>
+    </summary>
+    <param name="Owner">
+      <para>Receives a handle to the window, as an <a href="https://docs.microsoft.com//windows/desktop/DirectShow/oahwnd">OAHWND</a> type. If the video window has no parent, this parameter receives the value <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>Possible return values include the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_NOT_CONNECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The video renderer filter is not connected.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IVideoWindow Interface" />
+  </member>
+  <member name="IVideoWindow.get_Top">
+    <summary>
+      <para>The <code>get_Top</code> method retrieves the video window's y-coordinate.</para>
+    </summary>
+    <param name="pTop">
+      <para>Receives the y-coordinate, in pixels.</para>
+    </param>
+    <returns>
+      <para>Possible return values include the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_NOT_CONNECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The video renderer filter is not connected.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IVideoWindow Interface" />
+    <seealso cref="IVideoWindow.put_Top" />
+  </member>
+  <member name="IVideoWindow.get_Visible">
+    <summary>
+      <para>The <code>get_Visible</code> method queries whether the video window is visible.</para>
+    </summary>
+    <param name="pVisible">
+      <para>Receives the value OATRUE if the window is visible, or OAFALSE if the window is hidden.</para>
+    </param>
+    <returns>
+      <para>Possible return values include the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_NOT_CONNECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The video renderer filter is not connected.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method checks for the WS_VISIBLE style bit, by calling the Windows <b>IsWindowVisible</b> method.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IVideoWindow Interface" />
+    <seealso cref="IVideoWindow.put_Visible" />
+  </member>
+  <member name="IVideoWindow.get_Width">
+    <summary>
+      <para>The <code>get_Width</code> method retrieves the width of the video window.</para>
+    </summary>
+    <param name="pWidth">
+      <para>Receives the width, in pixels.</para>
+    </param>
+    <returns>
+      <para>Possible return values include the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_NOT_CONNECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The video renderer filter is not connected.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IVideoWindow Interface" />
+    <seealso cref="IVideoWindow.put_Width" />
+  </member>
+  <member name="IVideoWindow.get_WindowState">
+    <summary>
+      <para>The <code>get_WindowState</code> method queries whether the video window is visible, hidden, minimized, or maximized.</para>
+    </summary>
+    <param name="WindowState">
+      <para>Receives one of the following flags:</para>
+      <list type="bullet">
+        <item>
+          <description>SW_HIDE</description>
+        </item>
+        <item>
+          <description>SW_MAXIMIZE</description>
+        </item>
+        <item>
+          <description>SW_MINIMIZE</description>
+        </item>
+        <item>
+          <description>SW_SHOW</description>
+        </item>
+      </list>
+      <para>The meanings of these flags are defined by the Windows <b>ShowWindow</b> function.</para>
+    </param>
+    <returns>
+      <para>Possible return values include the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_NOT_CONNECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The video renderer filter is not connected.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IVideoWindow Interface" />
+    <seealso cref="IVideoWindow.put_WindowState" />
+  </member>
+  <member name="IVideoWindow.get_WindowStyle">
+    <summary>
+      <para>The <code>get_WindowStyle</code> method retrieves the window styles on the video window.</para>
+    </summary>
+    <param name="WindowStyle">
+      <para>Receives the window style flags.</para>
+    </param>
+    <returns>
+      <para>Possible return values include the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_NOT_CONNECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The video renderer filter is not connected.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method calls the Windows <b>GetWindowLong</b> function with the value GWL_STYLE.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IVideoWindow Interface" />
+    <seealso cref="IVideoWindow.get_WindowStyleEx" />
+    <seealso cref="IVideoWindow.put_WindowStyle" />
+  </member>
+  <member name="IVideoWindow.get_WindowStyleEx">
+    <summary>
+      <para>The <code>get_WindowStyleEx</code> method retrieves the extended window styles on the video window.</para>
+    </summary>
+    <param name="WindowStyleEx">
+      <para>Receives the window style flags.</para>
+    </param>
+    <returns>
+      <para>Possible return values include the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_NOT_CONNECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The video renderer filter is not connected.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method calls the Windows <b>GetWindowLong</b> function with the value GWL_EXSTYLE.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IVideoWindow Interface" />
+    <seealso cref="IVideoWindow.get_WindowStyle" />
+    <seealso cref="IVideoWindow.put_WindowStyleEx" />
+  </member>
+  <member name="IVideoWindow.HideCursor">
+    <summary>
+      <para>The <code>HideCursor</code> method shows or hides the cursor when the mouse is positioned over the video window.</para>
+    </summary>
+    <param name="HideCursor">
+      <para>Specifies whether to show or hide the cursor. Must be one of the following values:</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>OATRUE</b>
+          </description>
+          <description>
+            <para>Hide the cursor.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>OAFALSE</b>
+          </description>
+          <description>
+            <para>Show the cursor.</para>
+          </description>
+        </item>
+      </list>
+    </param>
+    <returns>
+      <para>Possible return values include the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>Invalid argument.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_NOT_CONNECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The video renderer filter is not connected.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IVideoWindow Interface" />
+    <seealso cref="IVideoWindow.IsCursorHidden" />
+  </member>
+  <member name="IVideoWindow.IsCursorHidden">
+    <summary>
+      <para>The <code>IsCursorHidden</code> method queries whether the cursor is hidden.</para>
+    </summary>
+    <param name="CursorHidden">
+      <para>Receives the value OATRUE if the cursor is hidden, or OAFALSE if the cursor is displayed.</para>
+    </param>
+    <returns>
+      <para>Possible return values include the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_NOT_CONNECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The video renderer filter is not connected.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IVideoWindow Interface" />
+    <seealso cref="IVideoWindow.HideCursor" />
+  </member>
+  <member name="IVideoWindow.NotifyOwnerMessage">
+    <summary>
+      <para>The <code>NotifyOwnerMessage</code> method forwards a message to the video window.</para>
+    </summary>
+    <param name="hwnd">
+      <para>A handle to the window, as an <a href="https://docs.microsoft.com//windows/desktop/DirectShow/oahwnd">OAHWND</a> value.</para>
+    </param>
+    <param name="uMsg">
+      <para>Specifies the message.</para>
+    </param>
+    <param name="wParam">
+      <para>Message parameter.</para>
+    </param>
+    <param name="lParam">
+      <para>Message parameter.</para>
+    </param>
+    <returns>
+      <para>Possible return values include the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_NOT_CONNECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The video renderer filter is not connected.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The Filter Graph Manager calls this method to pass various messages to the renderer, including the following:</para>
+      <list type="bullet">
+        <item>
+          <description>WM_ACTIVATEAPP</description>
+        </item>
+        <item>
+          <description>WM_DEVMODECHANGE</description>
+        </item>
+        <item>
+          <description>WM_DISPLAYCHANGE</description>
+        </item>
+        <item>
+          <description>WM_PALETTECHANGED</description>
+        </item>
+        <item>
+          <description>WM_PALETTEISCHANGING</description>
+        </item>
+        <item>
+          <description>WM_QUERYNEWPALETTE</description>
+        </item>
+        <item>
+          <description>WM_SYSCOLORCHANGE</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IVideoWindow Interface" />
+  </member>
+  <member name="IVideoWindow.put_AutoShow">
+    <summary>
+      <para>The <code>put_AutoShow</code> method specifies whether the video renderer automatically shows the video window when it receives video data.</para>
+    </summary>
+    <param name="AutoShow">
+      <para>Specifies whether the video renderer automatically shows the video window. Must be one of the following values:</para>
+      <list type="table">
+        <listheader>
+          <description>Value
+</description>
+          <description>Description
+</description>
+        </listheader>
+        <item>
+          <description>OATRUE
+</description>
+          <description>If the video renderer pauses or runs, it will automatically show the video window. (Default.)</description>
+        </item>
+        <item>
+          <description>OAFALSE
+</description>
+          <description>The video renderer will not automatically show the video window.</description>
+        </item>
+      </list>
+    </param>
+    <returns>
+      <para>Possible return values include the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>Invalid argument.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_NOT_CONNECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The video renderer filter is not connected.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>By default, when the filter graph changes state to paused or running, the video renderer shows the video window and moves it to the foreground. If the user closes the window, it will not automatically reappear.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IVideoWindow Interface" />
+    <seealso cref="IVideoWindow.get_AutoShow" />
+  </member>
+  <member name="IVideoWindow.put_BackgroundPalette">
+    <summary>
+      <para>The <code>put_BackgroundPalette</code> method specifies whether the video window realizes its palette in the background.</para>
+    </summary>
+    <param name="BackgroundPalette">
+      <para>Specifies whether the video renderer realizes it palette in the background. Must be one of the following values:</para>
+      <list type="table">
+        <listheader>
+          <description>Value
+</description>
+          <description>Description
+</description>
+        </listheader>
+        <item>
+          <description>OATRUE
+</description>
+          <description>The video renderer realizes the palette in the background.</description>
+        </item>
+        <item>
+          <description>OAFALSE
+</description>
+          <description>The video renderer does not realize the palette in the background. (Default.)</description>
+        </item>
+      </list>
+    </param>
+    <returns>
+      <para>Possible return values include the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>Invalid argument.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_NOT_CONNECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The video renderer filter is not connected.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>If <i>BackgroundPalette</i> is <b>OATRUE</b> and the video image requires a palette, the video renderer will realize that palette in the background. Any colors that the palette uses will change to their closest match in the display palette prior to drawing. This ensures that an application will not have its palette disturbed. However, it imposes severe performance penalties on the video.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IVideoWindow Interface" />
+    <seealso cref="IVideoWindow.get_BackgroundPalette" />
+  </member>
+  <member name="IVideoWindow.put_BorderColor">
+    <summary>
+      <para>The <code>put_BorderColor</code> method sets the color that appears around the edges of the destination rectangle.</para>
+    </summary>
+    <param name="Color">
+      <para>The border color, specified as a <b>COLORREF</b> value.</para>
+    </param>
+    <returns>
+      <para>Possible return values include the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_NOT_CONNECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The video renderer filter is not connected.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>If the destination rectangle is smaller than the client area of the video window, a border is exposed around the edges of the video. The default color is black. Use this method to override the default color. If a palette is in use, a nonsystem color is converted to its closest match.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IBasicVideo.SetDestinationPosition" />
+    <seealso cref="IVideoWindow Interface" />
+    <seealso cref="IVideoWindow.get_BorderColor" />
+  </member>
+  <member name="IVideoWindow.put_Caption">
+    <summary>
+      <para>The <code>put_Caption</code> method sets the video window caption.</para>
+    </summary>
+    <param name="strCaption">
+      <para>A <b>BSTR</b> that contains the caption.</para>
+    </param>
+    <returns>
+      <para>Possible return values include the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_NOT_CONNECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The video renderer filter is not connected.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IVideoWindow Interface" />
+    <seealso cref="IVideoWindow.get_Caption" />
+  </member>
+  <member name="IVideoWindow.put_FullScreenMode">
+    <summary>
+      <para>The <code>put_FullScreenMode</code> method enables or disables full-screen video rendering.</para>
+    </summary>
+    <param name="FullScreenMode">
+      <para>Boolean value that specifies whether to enable or disable full-screen mode. Must be one of the following values:</para>
+      <list type="table">
+        <listheader>
+          <description>Value
+</description>
+          <description>Description
+</description>
+        </listheader>
+        <item>
+          <description>OATRUE
+</description>
+          <description>Switch to full-screen mode.</description>
+        </item>
+        <item>
+          <description>OAFALSE
+</description>
+          <description>Disable full-screen mode. (Default.)</description>
+        </item>
+      </list>
+    </param>
+    <returns>
+      <para>Possible return values include the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_NOTIMPL</b>
+            </para>
+          </description>
+          <description>
+            <para>Filter does not support full-screen mode.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>Already in the requested mode.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_NO_FULLSCREEN</b>
+            </para>
+          </description>
+          <description>
+            <para>Could not find any filter that supports full-screen mode.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Depending on the video renderer, the switch to full-screen mode may not be visible until the application runs or pauses the graph. In full-screen mode, if the user switches away from the application (for example, using ALT + TAB), the Filter Graph Manager sends an <a href="https://docs.microsoft.com//windows/desktop/DirectShow/ec-fullscreen-lost">EC_FULLSCREEN_LOST</a> event.</para>
+      <para>The following remarks describe how the Filter Graph Manager implements full-screen mode. Application developers can probably ignore this information, but it may be useful if you are writing a custom video renderer.</para>
+      <para>When an application switches to full-screen mode, the Filter Graph Manager searches for a video renderer that will function most efficiently. In order of preference, these are:</para>
+      <list type="number">
+        <item>
+          <description>Any video renderer in the filter graph that natively supports full-screen mode.</description>
+        </item>
+        <item>
+          <description>Any video renderer in the filter graph that can stretch the video to full-screen without a significant performance cost.</description>
+        </item>
+        <item>
+          <description>The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/full-screen-renderer-filter">Full Screen Renderer</a> filter.</description>
+        </item>
+        <item>
+          <description>Any video renderer in the filter graph that supports <b>IVideoWindow</b>.</description>
+        </item>
+      </list>
+      <para>For the first option, the Filter Graph Manager calls <see cref="IVideoWindow.get_FullScreenMode" /> on every video renderer in the graph. Most renderers return E_NOTIMPL, indicating the filter does not natively support full-screen mode. If any renderer returns a value not equal to E_NOTIMPL, the Filter Graph Manager uses that one.</para>
+      <para>For the second option, the Filter Graph Manager calls <see cref="IVideoWindow.GetMaxIdealImageSize" /> and <b>GetMinIdealImageSize</b> on every video renderer in the graph. If the size of the display falls within the filter's reported range, it indicates that the filter can stretch the video without a significant performance cost.</para>
+      <para>
+        <b>Note</b>  If the graph is stopped, the Filter Graph Manager pauses each renderer before calling these methods. This gives the renderer an opportunity to initialize any resources it needs, because many renderers cannot determine these values while they are stopped.</para>
+      <para>Except on older hardware, the second option will generally succeed. The third option is to use the Full Screen Renderer filter, adding it to the graph if necessary. The fourth option is simply to find the first renderer in the graph that supports <b>IVideoWindow</b>, and stretch the video regardless of performance.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IVideoWindow Interface" />
+    <seealso cref="IVideoWindow.get_FullScreenMode" />
+  </member>
+  <member name="IVideoWindow.put_Height">
+    <summary>
+      <para>The <code>put_Height</code> method sets the height of the video window.</para>
+    </summary>
+    <param name="Height">
+      <para>The height, in pixels.</para>
+    </param>
+    <returns>
+      <para>Possible return values include the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>Invalid argument.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_NOT_CONNECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The video renderer filter is not connected.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IVideoWindow Interface" />
+    <seealso cref="IVideoWindow.get_Height" />
+  </member>
+  <member name="IVideoWindow.put_Left">
+    <summary>
+      <para>The <code>put_Left</code> method sets the x-coordinate of the video window.</para>
+    </summary>
+    <param name="Left">
+      <para>The x-coordinate, in pixels.</para>
+    </param>
+    <returns>
+      <para>Possible return values include the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>Invalid argument.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_NOT_CONNECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The video renderer filter is not connected.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IVideoWindow Interface" />
+    <seealso cref="IVideoWindow.get_Left" />
+  </member>
+  <member name="IVideoWindow.put_MessageDrain">
+    <summary>
+      <para>The <code>put_MessageDrain</code> method specifies a window to receive mouse and keyboard messages from the video window.</para>
+    </summary>
+    <param name="Drain">
+      <para>A handle to the window, as an <a href="https://docs.microsoft.com//windows/desktop/DirectShow/oahwnd">OAHWND</a> value.</para>
+    </param>
+    <returns>
+      <para>Possible return values include the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_NOT_CONNECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The video renderer filter is not connected.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method enables an application to respond to mouse and keyboard events generated within the video window.</para>
+      <para>If <i>Drain</i> is non-<b>NULL</b>, the video renderer forwards certain messages to the specified window, using the <b>PostMessage</b> function. Which messages are forwarded might depend on the video renderer in use. The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/video-renderer-filter">Video Renderer</a> and Video Mixing Renderer (VMR) filters forward the following messages:</para>
+      <list type="bullet">
+        <item>
+          <description>WM_CHAR</description>
+        </item>
+        <item>
+          <description>WM_DEADCHAR</description>
+        </item>
+        <item>
+          <description>WM_KEYDOWN</description>
+        </item>
+        <item>
+          <description>WM_KEYUP</description>
+        </item>
+        <item>
+          <description>WM_LBUTTONDBLCLK</description>
+        </item>
+        <item>
+          <description>WM_LBUTTONDOWN</description>
+        </item>
+        <item>
+          <description>WM_LBUTTONUP</description>
+        </item>
+        <item>
+          <description>WM_MBUTTONDBLCLK</description>
+        </item>
+        <item>
+          <description>WM_MBUTTONDOWN</description>
+        </item>
+        <item>
+          <description>WM_MBUTTONUP</description>
+        </item>
+        <item>
+          <description>WM_MOUSEACTIVATE</description>
+        </item>
+        <item>
+          <description>WM_MOUSEMOVE</description>
+        </item>
+        <item>
+          <description>WM_NCLBUTTONDBLCLK</description>
+        </item>
+        <item>
+          <description>WM_NCLBUTTONDOWN</description>
+        </item>
+        <item>
+          <description>WM_NCLBUTTONUP</description>
+        </item>
+        <item>
+          <description>WM_NCMBUTTONDBLCLK</description>
+        </item>
+        <item>
+          <description>WM_NCMBUTTONDOWN</description>
+        </item>
+        <item>
+          <description>WM_NCMBUTTONUP</description>
+        </item>
+        <item>
+          <description>WM_NCMOUSEMOVE</description>
+        </item>
+        <item>
+          <description>WM_NCRBUTTONDBLCLK</description>
+        </item>
+        <item>
+          <description>WM_NCRBUTTONDOWN</description>
+        </item>
+        <item>
+          <description>WM_NCRBUTTONUP</description>
+        </item>
+        <item>
+          <description>WM_RBUTTONDBLCLK</description>
+        </item>
+        <item>
+          <description>WM_RBUTTONDOWN</description>
+        </item>
+        <item>
+          <description>WM_RBUTTONUP</description>
+        </item>
+        <item>
+          <description>WM_SYSCHAR</description>
+        </item>
+        <item>
+          <description>WM_SYSDEADCHAR</description>
+        </item>
+        <item>
+          <description>WM_SYSKEYDOWN</description>
+        </item>
+        <item>
+          <description>WM_SYSKEYUP</description>
+        </item>
+      </list>
+      <para>The message drain window does not need to be a parent of the video window, so full-screen applications can use this method.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IVideoWindow Interface" />
+    <seealso cref="IVideoWindow.get_MessageDrain" />
+  </member>
+  <member name="IVideoWindow.put_Owner">
+    <summary>
+      <para>The <code>put_Owner</code> method specifies a parent window for the video window.</para>
+    </summary>
+    <param name="Owner">
+      <para>A handle to the parent window, as an <a href="https://docs.microsoft.com//windows/desktop/DirectShow/oahwnd">OAHWND</a> value, or <b>NULL</b> to remove the existing parent.</para>
+    </param>
+    <returns>
+      <para>Possible return values include the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_NOT_CONNECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The video renderer filter is not connected.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Use this method to display videos in a compound document. This method changes the parent of the video window and sets the WS_CHILD style for the video window.</para>
+      <para>Reset the owner to <b>NULL</b> before releasing the Filter Graph Manager. Otherwise, messages will continue to be sent to this window and errors will likely occur when the application is terminated.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IVideoWindow Interface" />
+    <seealso cref="IVideoWindow.get_Owner" />
+  </member>
+  <member name="IVideoWindow.put_Top">
+    <summary>
+      <para>The <code>put_Top</code> method specifies the y-coordinate of the video window.</para>
+    </summary>
+    <param name="Top">
+      <para>The y-coordinate, in pixels.</para>
+    </param>
+    <returns>
+      <para>Possible return values include the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>Invalid argument.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_NOT_CONNECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The video renderer filter is not connected.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IVideoWindow Interface" />
+    <seealso cref="IVideoWindow.get_Top" />
+  </member>
+  <member name="IVideoWindow.put_Visible">
+    <summary>
+      <para>The <code>put_Visible</code> method shows or hides the video window.</para>
+    </summary>
+    <param name="Visible">
+      <para>Specifies whether to show or hide the window. Must be one of the following values:</para>
+      <list type="table">
+        <listheader>
+          <description>Value
+</description>
+          <description>Description
+</description>
+        </listheader>
+        <item>
+          <description>OATRUE
+</description>
+          <description>Show the window.</description>
+        </item>
+        <item>
+          <description>OAFALSE
+</description>
+          <description>Hide the window.</description>
+        </item>
+      </list>
+    </param>
+    <returns>
+      <para>Possible return values include the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>Invalid argument.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_NOT_CONNECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The video renderer filter is not connected.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IVideoWindow Interface" />
+    <seealso cref="IVideoWindow.get_Visible" />
+  </member>
+  <member name="IVideoWindow.put_Width">
+    <summary>
+      <para>The <code>put_Width</code> method specifies the width of the video window.</para>
+    </summary>
+    <param name="Width">
+      <para>The width, in pixels.</para>
+    </param>
+    <returns>
+      <para>Possible return values include the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>Invalid argument.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_NOT_CONNECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The video renderer filter is not connected.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IVideoWindow Interface" />
+    <seealso cref="IVideoWindow.get_Width" />
+  </member>
+  <member name="IVideoWindow.put_WindowState">
+    <summary>
+      <para>The <code>put_WindowState</code> method shows, hides, minimizes, or maximizes the video window.</para>
+    </summary>
+    <param name="WindowState">
+      <para>Flag that specifies how the window is to be shown. The value can be any constant defined for the <i>nCmdShow</i> parameter of the <see cref="ShowWindow" /> function.</para>
+    </param>
+    <returns>
+      <para>Possible return values include the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_NOT_CONNECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The video renderer filter is not connected.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IVideoWindow Interface" />
+    <seealso cref="IVideoWindow.get_WindowState" />
+  </member>
+  <member name="IVideoWindow.put_WindowStyle">
+    <summary>
+      <para>The <code>put_WindowStyle</code> method sets the window styles on the video window.</para>
+    </summary>
+    <param name="WindowStyle">
+      <para>One or more flags from the GWL_STYLE value of the Windows <b>SetWindowLong</b> function.</para>
+    </param>
+    <returns>
+      <para>Possible return values include the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_NOT_CONNECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The video renderer filter is not connected.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method is a thin wrapper over the <b>SetWindowLong</b> function and must be treated with care. In particular, you should retrieve the current styles and then add or remove flags. With some exceptions, flags allowed by the Windows <b>CreateWindow</b> function are acceptable. However, do not use this method to change the window size, and do not use the following flags:</para>
+      <list type="bullet">
+        <item>
+          <description>WS_DISABLED</description>
+        </item>
+        <item>
+          <description>WS_HSCROLL</description>
+        </item>
+        <item>
+          <description>WS_ICONIC</description>
+        </item>
+        <item>
+          <description>WS_MAXIMIZE</description>
+        </item>
+        <item>
+          <description>WS_MINIMIZE</description>
+        </item>
+        <item>
+          <description>WS_VSCROLL</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IVideoWindow Interface" />
+    <seealso cref="IVideoWindow.get_WindowStyle" />
+    <seealso cref="IVideoWindow.put_WindowStyleEx" />
+  </member>
+  <member name="IVideoWindow.put_WindowStyleEx">
+    <summary>
+      <para>The <code>put_WindowStyleEx</code> method sets the extended window styles on the video window.</para>
+    </summary>
+    <param name="WindowStyleEx">
+      <para>One or more flags from the GWL_EXSTYLE value of the Windows <b>SetWindowLong</b> function.</para>
+    </param>
+    <returns>
+      <para>Possible return values include the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_NOT_CONNECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The video renderer filter is not connected.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method is a thin wrapper over the <b>SetWindowLong</b> function and must be treated with care. In particular, you should retrieve the current styles and then add or remove flags. With some exceptions, flags allowed by the Windows <b>CreateWindow</b> function are acceptable. However, do not use this method to change the window size.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IVideoWindow Interface" />
+    <seealso cref="IVideoWindow.get_WindowStyleEx" />
+    <seealso cref="IVideoWindow.put_WindowStyle" />
+  </member>
+  <member name="IVideoWindow.SetWindowForeground">
+    <summary>
+      <para>The <code>SetWindowForeground</code> method places the video window at the top of the Z order.</para>
+    </summary>
+    <param name="Focus">
+      <para>Specifies whether to give the window focus. Must be one of the following values:</para>
+      <list type="table">
+        <listheader>
+          <description>Value
+</description>
+          <description>Description
+</description>
+        </listheader>
+        <item>
+          <description>OATRUE
+</description>
+          <description>Give the window focus.</description>
+        </item>
+        <item>
+          <description>OAFALSE
+</description>
+          <description>Do not give the window focus.</description>
+        </item>
+      </list>
+    </param>
+    <returns>
+      <para>Possible return values include the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>Invalid argument.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_NOT_CONNECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The video renderer filter is not connected.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IVideoWindow Interface" />
+  </member>
+  <member name="IVideoWindow.SetWindowPosition">
+    <summary>
+      <para>The <code>SetWindowPosition</code> method sets the position of the video window.</para>
+    </summary>
+    <param name="Left">
+      <para>The x-coordinate, in pixels.</para>
+    </param>
+    <param name="Top">
+      <para>The y-coordinate, in pixels.</para>
+    </param>
+    <param name="Width">
+      <para>The width, in pixels.</para>
+    </param>
+    <param name="Height">
+      <para>The height, in pixels.</para>
+    </param>
+    <returns>
+      <para>Possible return values include the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>Invalid argument.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_NOT_CONNECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The video renderer filter is not connected.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method has the same effect as calling the <see cref="IVideoWindow.put_Left" />, <see cref="IVideoWindow.put_Top" />, <see cref="IVideoWindow.put_Width" />, and <see cref="IVideoWindow.put_Height" /> methods.</para>
+      <para>If resizing the window to the specified dimensions is impossible, this method modifies the window's size and location to make the window fit. Call the <see cref="IVideoWindow.GetWindowPosition" /> method to determine the result.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IVideoWindow Interface" />
+  </member>
+  <member name="IVideoWindow">
+    <summary>
+      <para>The <code>IVideoWindow</code> interface sets properties on the video window. Applications can use it to set the window owner, the position and dimensions of the window, and other properties.</para>
+      <para>
+        <b>Note</b>  The <see cref="IVMRWindowlessControl" /> or <a href="https://docs.microsoft.com//previous-versions/ms787155(v=vs.85)">IVMRWindowlessControl9</a> interface is now preferred over <code>IVideoWindow</code>. For more information, see <a href="https://docs.microsoft.com//windows/desktop/DirectShow/using-windowless-mode">Using Windowless Mode</a>.</para>
+      <para>The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/video-renderer-filter">Video Renderer</a> filter and the Filter Graph Manager both expose this interface. The Filter Graph Manager forwards all method calls to the Video Renderer. It also forwards certain window messages that the Video Renderer needs to receive, such as <a href="https://docs.microsoft.com//windows/desktop/gdi/wm-displaychange">WM_DISPLAYCHANGE</a>. Because the video window is usually a child of an application window, the filter would not otherwise receive these messages. Therefore it relies on the Filter Graph Manager to forward them.</para>
+      <para>In most cases, an application should query the Filter Graph Manager for this interface, and not call the filter directly, because of the messaging issue just described. However, if the filter graph has more than one Video Renderer, the Filter Graph Manager only communicates with one of them, selected arbitrarily. Therefore, if your application uses multiple video windows, use the <code>IVideoWindow</code> interface directly on the filters. In that case, you must forward window messages to each Video Renderer instance, using the <see cref="IVideoWindow.NotifyOwnerMessage" /> method.</para>
+      <para>To prevent the video window from flickering during repaints, override the default handling for the <a href="https://docs.microsoft.com//windows/desktop/winmsg/wm-erasebkgnd">WM_ERASEBKGND</a> message and do not erase the window. (For MFC applications, override <b>CWnd.OnEraseBkgnd</b> with an empty handler.)</para>
+      <para>Properties set on a video renderer persist between successive connections and disconnections.</para>
+      <para>Because this interface is Automation-compatible, all Boolean values are defined as OAFALSE (0) and OATRUE (–1).</para>
+      <para>
+        <b>Error codes: </b>If the video renderer filter is not connected to another filter, all methods return the error code VFW_E_NOT_CONNECTED. For the Filter Graph Manager's implementation, if the graph does not contain a video renderer filter, all methods return E_NOINTERFACE. Note that the Filter Graph Manager exposes the interface even when the graph does not contain a video renderer, so an application can query for the interface before it builds the graph.</para>
+      <para>
+        <b>Filter Developers: </b>You can use the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/cbasevideowindow">CBaseVideoWindow</a> class to help implement this interface.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-idispatch">IDispatch</seealso>
+  </member>
+</doc>

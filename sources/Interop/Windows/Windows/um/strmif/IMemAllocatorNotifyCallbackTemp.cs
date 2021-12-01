@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMemAllocatorNotifyCallbackTemp.xml' path='doc/member[@name="IMemAllocatorNotifyCallbackTemp"]/*' />
 [Guid("92980B30-C1DE-11D2-ABF5-00A0C905F375")]
 [NativeTypeName("struct IMemAllocatorNotifyCallbackTemp : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMemAllocatorNotifyCallbackTemp : IMemAllocatorNoti
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMemAllocatorNotifyCallbackTemp : IMemAllocatorNoti
         return ((delegate* unmanaged<IMemAllocatorNotifyCallbackTemp*, Guid*, void**, int>)(lpVtbl[0]))((IMemAllocatorNotifyCallbackTemp*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMemAllocatorNotifyCallbackTemp : IMemAllocatorNoti
         return ((delegate* unmanaged<IMemAllocatorNotifyCallbackTemp*, uint>)(lpVtbl[1]))((IMemAllocatorNotifyCallbackTemp*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMemAllocatorNotifyCallbackTemp : IMemAllocatorNoti
         return ((delegate* unmanaged<IMemAllocatorNotifyCallbackTemp*, uint>)(lpVtbl[2]))((IMemAllocatorNotifyCallbackTemp*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMemAllocatorNotifyCallbackTemp.xml' path='doc/member[@name="IMemAllocatorNotifyCallbackTemp.NotifyRelease"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT NotifyRelease()

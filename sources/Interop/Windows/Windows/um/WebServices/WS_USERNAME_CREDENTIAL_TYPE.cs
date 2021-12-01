@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_USERNAME_CREDENTIAL_TYPE.xml' path='doc/member[@name="WS_USERNAME_CREDENTIAL_TYPE"]/*' />
 public enum WS_USERNAME_CREDENTIAL_TYPE
 {
+    /// <include file='WS_USERNAME_CREDENTIAL_TYPE.xml' path='doc/member[@name="WS_USERNAME_CREDENTIAL_TYPE.WS_STRING_USERNAME_CREDENTIAL_TYPE"]/*' />
     WS_STRING_USERNAME_CREDENTIAL_TYPE = 1,
 }

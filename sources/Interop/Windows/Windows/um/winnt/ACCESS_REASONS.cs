@@ -5,8 +5,10 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ACCESS_REASONS.xml' path='doc/member[@name="ACCESS_REASONS"]/*' />
 public unsafe partial struct ACCESS_REASONS
 {
+    /// <include file='ACCESS_REASONS.xml' path='doc/member[@name="ACCESS_REASONS.Data"]/*' />
     [NativeTypeName("ACCESS_REASON [32]")]
     public fixed uint Data[32];
 }

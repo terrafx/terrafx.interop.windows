@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFTimedTextStyle2.xml' path='doc/member[@name="IMFTimedTextStyle2"]/*' />
 [Guid("DB639199-C809-4C89-BFCA-D0BBB9729D6E")]
 [NativeTypeName("struct IMFTimedTextStyle2 : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMFTimedTextStyle2 : IMFTimedTextStyle2.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMFTimedTextStyle2 : IMFTimedTextStyle2.Interface
         return ((delegate* unmanaged<IMFTimedTextStyle2*, Guid*, void**, int>)(lpVtbl[0]))((IMFTimedTextStyle2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMFTimedTextStyle2 : IMFTimedTextStyle2.Interface
         return ((delegate* unmanaged<IMFTimedTextStyle2*, uint>)(lpVtbl[1]))((IMFTimedTextStyle2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMFTimedTextStyle2 : IMFTimedTextStyle2.Interface
         return ((delegate* unmanaged<IMFTimedTextStyle2*, uint>)(lpVtbl[2]))((IMFTimedTextStyle2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFTimedTextStyle2.xml' path='doc/member[@name="IMFTimedTextStyle2.GetRuby"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetRuby(IMFTimedTextRuby** ruby)
@@ -46,6 +51,7 @@ public unsafe partial struct IMFTimedTextStyle2 : IMFTimedTextStyle2.Interface
         return ((delegate* unmanaged<IMFTimedTextStyle2*, IMFTimedTextRuby**, int>)(lpVtbl[3]))((IMFTimedTextStyle2*)Unsafe.AsPointer(ref this), ruby);
     }
 
+    /// <include file='IMFTimedTextStyle2.xml' path='doc/member[@name="IMFTimedTextStyle2.GetBouten"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetBouten(IMFTimedTextBouten** bouten)
@@ -53,6 +59,7 @@ public unsafe partial struct IMFTimedTextStyle2 : IMFTimedTextStyle2.Interface
         return ((delegate* unmanaged<IMFTimedTextStyle2*, IMFTimedTextBouten**, int>)(lpVtbl[4]))((IMFTimedTextStyle2*)Unsafe.AsPointer(ref this), bouten);
     }
 
+    /// <include file='IMFTimedTextStyle2.xml' path='doc/member[@name="IMFTimedTextStyle2.IsTextCombined"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT IsTextCombined(BOOL* value)
@@ -60,6 +67,7 @@ public unsafe partial struct IMFTimedTextStyle2 : IMFTimedTextStyle2.Interface
         return ((delegate* unmanaged<IMFTimedTextStyle2*, BOOL*, int>)(lpVtbl[5]))((IMFTimedTextStyle2*)Unsafe.AsPointer(ref this), value);
     }
 
+    /// <include file='IMFTimedTextStyle2.xml' path='doc/member[@name="IMFTimedTextStyle2.GetFontAngleInDegrees"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetFontAngleInDegrees(double* value)

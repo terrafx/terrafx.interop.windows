@@ -7,10 +7,16 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='EXTCONN.xml' path='doc/member[@name="EXTCONN"]/*' />
 [Flags]
 public enum EXTCONN
 {
+    /// <include file='EXTCONN.xml' path='doc/member[@name="EXTCONN.EXTCONN_STRONG"]/*' />
     EXTCONN_STRONG = 0x1,
+
+    /// <include file='EXTCONN.xml' path='doc/member[@name="EXTCONN.EXTCONN_WEAK"]/*' />
     EXTCONN_WEAK = 0x2,
+
+    /// <include file='EXTCONN.xml' path='doc/member[@name="EXTCONN.EXTCONN_CALLABLE"]/*' />
     EXTCONN_CALLABLE = 0x4,
 }

@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MKRREDUCE.xml' path='doc/member[@name="MKRREDUCE"]/*' />
 public enum MKRREDUCE
 {
+    /// <include file='MKRREDUCE.xml' path='doc/member[@name="MKRREDUCE.MKRREDUCE_ONE"]/*' />
     MKRREDUCE_ONE = (3 << 16),
+
+    /// <include file='MKRREDUCE.xml' path='doc/member[@name="MKRREDUCE.MKRREDUCE_TOUSER"]/*' />
     MKRREDUCE_TOUSER = (2 << 16),
+
+    /// <include file='MKRREDUCE.xml' path='doc/member[@name="MKRREDUCE.MKRREDUCE_THROUGHUSER"]/*' />
     MKRREDUCE_THROUGHUSER = (1 << 16),
+
+    /// <include file='MKRREDUCE.xml' path='doc/member[@name="MKRREDUCE.MKRREDUCE_ALL"]/*' />
     MKRREDUCE_ALL = 0,
 }

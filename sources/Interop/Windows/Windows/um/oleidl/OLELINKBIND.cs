@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='OLELINKBIND.xml' path='doc/member[@name="OLELINKBIND"]/*' />
 public enum OLELINKBIND
 {
+    /// <include file='OLELINKBIND.xml' path='doc/member[@name="OLELINKBIND.OLELINKBIND_EVENIFCLASSDIFF"]/*' />
     OLELINKBIND_EVENIFCLASSDIFF = 1,
 }

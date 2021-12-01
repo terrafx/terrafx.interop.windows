@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="INTERFACE_INFO_EX">
+    <summary>
+      <para>The
+<b>INTERFACE_INFO_EX</b> structure is used in conjunction with the <b>SIO_GET_INTERFACE_LIST IOCTL</b> command to obtain information about an interface IP address. Unlike the <see cref="INTERFACE_INFO" /> structure, <b>INTERFACE_INFO_EX</b> is address-size independent, enabling it to work with IPv6.</para>
+    </summary>
+    <remarks>
+      <para>On the Microsoft Windows Software Development Kit (SDK) released for Windows Vista and later, the organization of header files has changed and the <b>INTERFACE_INFO_EX</b> structure is defined in the <i>Ws2ipdef.h</i> header file which is automatically included in the <i>Ws2tcpip.h</i> header file. The <i>Ws2ipdef.h</i>  header files should never be used directly.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/WinSock/winsock-ioctls">Winsock IOCTLs</seealso>
+  </member>
+  <member name="INTERFACE_INFO_EX.iiFlags">
+    <summary>
+      <para>Bitmask describing the status of the interface. The following flags are possible.</para>
+      <list type="table">
+        <listheader>
+          <description>Flag</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>IFF_UP</b>
+          </description>
+          <description>
+            <para>The interface is running.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>IFF_BROADCAST</b>
+          </description>
+          <description>
+            <para>The broadcast feature is supported.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>IFF_LOOPBACK</b>
+          </description>
+          <description>
+            <para>The loopback interface is running.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>IFF_POINTTOPOINT</b>
+          </description>
+          <description>
+            <para>The interface is using point-to-point link.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>IFF_MULTICAST</b>
+          </description>
+          <description>
+            <para>The multicast feature is supported.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="INTERFACE_INFO_EX.iiAddress">
+    <summary>
+      <para>Address of an interface.</para>
+    </summary>
+  </member>
+  <member name="INTERFACE_INFO_EX.iiBroadcastAddress">
+    <summary>
+      <para>Broadcast address of the interface or the address of the other side for point-to-point links.</para>
+    </summary>
+  </member>
+  <member name="INTERFACE_INFO_EX.iiNetmask">
+    <summary>
+      <para>Netmask used by the interface.</para>
+    </summary>
+  </member>
+</doc>

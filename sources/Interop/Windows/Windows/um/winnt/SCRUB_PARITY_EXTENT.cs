@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SCRUB_PARITY_EXTENT.xml' path='doc/member[@name="SCRUB_PARITY_EXTENT"]/*' />
 public partial struct SCRUB_PARITY_EXTENT
 {
+    /// <include file='SCRUB_PARITY_EXTENT.xml' path='doc/member[@name="SCRUB_PARITY_EXTENT.Offset"]/*' />
     [NativeTypeName("LONGLONG")]
     public long Offset;
 
+    /// <include file='SCRUB_PARITY_EXTENT.xml' path='doc/member[@name="SCRUB_PARITY_EXTENT.Length"]/*' />
     [NativeTypeName("ULONGLONG")]
     public ulong Length;
 }

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IScriptEventHandler.xml' path='doc/member[@name="IScriptEventHandler"]/*' />
 [Guid("3051083A-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IScriptEventHandler : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IScriptEventHandler : IScriptEventHandler.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IScriptEventHandler : IScriptEventHandler.Interface
         return ((delegate* unmanaged<IScriptEventHandler*, Guid*, void**, int>)(lpVtbl[0]))((IScriptEventHandler*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IScriptEventHandler : IScriptEventHandler.Interface
         return ((delegate* unmanaged<IScriptEventHandler*, uint>)(lpVtbl[1]))((IScriptEventHandler*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IScriptEventHandler : IScriptEventHandler.Interface
         return ((delegate* unmanaged<IScriptEventHandler*, uint>)(lpVtbl[2]))((IScriptEventHandler*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IScriptEventHandler.xml' path='doc/member[@name="IScriptEventHandler.FunctionName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT FunctionName([NativeTypeName("BSTR *")] ushort** pbstrFunctionName)
@@ -46,6 +51,7 @@ public unsafe partial struct IScriptEventHandler : IScriptEventHandler.Interface
         return ((delegate* unmanaged<IScriptEventHandler*, ushort**, int>)(lpVtbl[3]))((IScriptEventHandler*)Unsafe.AsPointer(ref this), pbstrFunctionName);
     }
 
+    /// <include file='IScriptEventHandler.xml' path='doc/member[@name="IScriptEventHandler.DebugDocumentContext"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT DebugDocumentContext(IUnknown** ppDebugDocumentContext)
@@ -53,6 +59,7 @@ public unsafe partial struct IScriptEventHandler : IScriptEventHandler.Interface
         return ((delegate* unmanaged<IScriptEventHandler*, IUnknown**, int>)(lpVtbl[4]))((IScriptEventHandler*)Unsafe.AsPointer(ref this), ppDebugDocumentContext);
     }
 
+    /// <include file='IScriptEventHandler.xml' path='doc/member[@name="IScriptEventHandler.EventHandlerDispatch"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT EventHandlerDispatch(IDispatch** ppDispHandler)
@@ -60,6 +67,7 @@ public unsafe partial struct IScriptEventHandler : IScriptEventHandler.Interface
         return ((delegate* unmanaged<IScriptEventHandler*, IDispatch**, int>)(lpVtbl[5]))((IScriptEventHandler*)Unsafe.AsPointer(ref this), ppDispHandler);
     }
 
+    /// <include file='IScriptEventHandler.xml' path='doc/member[@name="IScriptEventHandler.UsesCapture"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT UsesCapture(BOOL* pfUsesCapture)
@@ -67,6 +75,7 @@ public unsafe partial struct IScriptEventHandler : IScriptEventHandler.Interface
         return ((delegate* unmanaged<IScriptEventHandler*, BOOL*, int>)(lpVtbl[6]))((IScriptEventHandler*)Unsafe.AsPointer(ref this), pfUsesCapture);
     }
 
+    /// <include file='IScriptEventHandler.xml' path='doc/member[@name="IScriptEventHandler.Cookie"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT Cookie([NativeTypeName("ULONGLONG *")] ulong* pullCookie)

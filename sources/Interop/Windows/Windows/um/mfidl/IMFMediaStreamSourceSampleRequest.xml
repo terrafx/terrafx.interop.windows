@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFMediaStreamSourceSampleRequest.SetSample">
+    <summary>
+      <para>Sets the sample for the media stream source.</para>
+    </summary>
+    <param name="value">
+      <para>The sample for the media stream source.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/imfmediastreamsourcesamplerequest">IMFMediaStreamSourceSampleRequest</seealso>
+  </member>
+  <member name="IMFMediaStreamSourceSampleRequest">
+    <summary>
+      <para>Represents a request for a  sample from a MediaStreamSource.</para>
+    </summary>
+    <remarks>
+      <para>
+        <b>MFMediaStreamSourceSampleRequest</b> is implemented by the
+<a href="https://docs.microsoft.com//uwp/api/windows.media.core.mediastreamsourcesamplerequest">Windows.Media.Core.MediaStreamSourceSampleRequest</a> runtime class.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+  </member>
+</doc>

@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='AM_AC3_DOWNMIX.xml' path='doc/member[@name="AM_AC3_DOWNMIX"]/*' />
 public partial struct AM_AC3_DOWNMIX
 {
+    /// <include file='AM_AC3_DOWNMIX.xml' path='doc/member[@name="AM_AC3_DOWNMIX.fDownMix"]/*' />
     public BOOL fDownMix;
 
+    /// <include file='AM_AC3_DOWNMIX.xml' path='doc/member[@name="AM_AC3_DOWNMIX.fDolbySurround"]/*' />
     public BOOL fDolbySurround;
 }

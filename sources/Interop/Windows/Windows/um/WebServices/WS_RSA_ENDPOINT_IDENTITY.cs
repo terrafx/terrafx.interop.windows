@@ -5,11 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_RSA_ENDPOINT_IDENTITY.xml' path='doc/member[@name="WS_RSA_ENDPOINT_IDENTITY"]/*' />
 public partial struct WS_RSA_ENDPOINT_IDENTITY
 {
+    /// <include file='WS_RSA_ENDPOINT_IDENTITY.xml' path='doc/member[@name="WS_RSA_ENDPOINT_IDENTITY.identity"]/*' />
     public WS_ENDPOINT_IDENTITY identity;
 
+    /// <include file='WS_RSA_ENDPOINT_IDENTITY.xml' path='doc/member[@name="WS_RSA_ENDPOINT_IDENTITY.modulus"]/*' />
     public WS_BYTES modulus;
 
+    /// <include file='WS_RSA_ENDPOINT_IDENTITY.xml' path='doc/member[@name="WS_RSA_ENDPOINT_IDENTITY.exponent"]/*' />
     public WS_BYTES exponent;
 }

@@ -7,23 +7,31 @@ using TerraFX.Interop.DirectX;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='VMRVIDEOSTREAMINFO.xml' path='doc/member[@name="VMRVIDEOSTREAMINFO"]/*' />
 public unsafe partial struct VMRVIDEOSTREAMINFO
 {
+    /// <include file='VMRVIDEOSTREAMINFO.xml' path='doc/member[@name="VMRVIDEOSTREAMINFO.pddsVideoSurface"]/*' />
     [NativeTypeName("LPDIRECTDRAWSURFACE7")]
     public IDirectDrawSurface7* pddsVideoSurface;
 
+    /// <include file='VMRVIDEOSTREAMINFO.xml' path='doc/member[@name="VMRVIDEOSTREAMINFO.dwWidth"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwWidth;
 
+    /// <include file='VMRVIDEOSTREAMINFO.xml' path='doc/member[@name="VMRVIDEOSTREAMINFO.dwHeight"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwHeight;
 
+    /// <include file='VMRVIDEOSTREAMINFO.xml' path='doc/member[@name="VMRVIDEOSTREAMINFO.dwStrmID"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwStrmID;
 
+    /// <include file='VMRVIDEOSTREAMINFO.xml' path='doc/member[@name="VMRVIDEOSTREAMINFO.fAlpha"]/*' />
     public float fAlpha;
 
+    /// <include file='VMRVIDEOSTREAMINFO.xml' path='doc/member[@name="VMRVIDEOSTREAMINFO.ddClrKey"]/*' />
     public DDCOLORKEY ddClrKey;
 
+    /// <include file='VMRVIDEOSTREAMINFO.xml' path='doc/member[@name="VMRVIDEOSTREAMINFO.rNormal"]/*' />
     public NORMALIZEDRECT rNormal;
 }

@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="Windows.BITMASKS">
+    <summary>
+      <para>The <code>BITMASKS</code> macro retrieves the color masks from a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/amvideo/ns-amvideo-videoinfo">VIDEOINFO</a> structure.</para>
+    </summary>
+    <param name="pbmi">
+      <para>Pointer to a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/amvideo/ns-amvideo-videoinfo">VIDEOINFO</a> structure.</para>
+    </param>
+    <remarks>
+      <para>This macro calculates the address as an offset from the start of the <see cref="BITMAPINFOHEADER" /> structure, using the value of <b>bmiHeader.biSize</b>. Make sure to initialize the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/amvideo/ns-amvideo-videoinfo">VIDEOINFO</a> structure before calling this macro.</para>
+      <para>You can access the color masks in the array using the following constants, defined in Amvideo.h:</para>
+      <code>#define iRED   0
+#define iGREEN 1
+#define iBLUE  2  </code>
+      <h4>Examples</h4>
+      <code>VIDEOINFO *pVi;
+
+/* Initialize pVi (not shown). */
+
+DWORD dwRed   = BITMASKS(pVi)[iRED];
+DWORD dwGreen = BITMASKS(pVi)[iGREEN];
+DWORD dwBlue  = BITMASKS(pVi)[iBLUE];
+</code>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/video-and-image-functions">Video and Image Functions</seealso>
+  </member>
+  <member name="Windows.BIT_MASKS_MATCH">
+    <summary>
+      <para>The <code>BIT_MASKS_MATCH</code> macro compares the color masks for two <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/amvideo/ns-amvideo-videoinfo">VIDEOINFO</a> structures.</para>
+    </summary>
+    <param name="pbmi1">
+      <para>Pointer to the first VIDEOINFO structure.</para>
+    </param>
+    <param name="pbmi2">
+      <para>Pointer to the second VIDEOINFO structure.</para>
+    </param>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/video-and-image-functions">Video and Image Functions</seealso>
+  </member>
+  <member name="Windows.COLORS">
+    <summary>
+      <para>The COLORS macro retrieves the palette entries from a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/amvideo/ns-amvideo-videoinfo">VIDEOINFO</a> structure.</para>
+    </summary>
+    <param name="pbmi">
+      <para>Pointer to a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/amvideo/ns-amvideo-videoinfo">VIDEOINFO</a> structure.</para>
+    </param>
+    <remarks>
+      <para>This macro calculates the address as an offset from the start of the <see cref="BITMAPINFOHEADER" /> structure, using the value of <b>bmiHeader.biSize</b>. Make sure to initialize the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/amvideo/ns-amvideo-videoinfo">VIDEOINFO</a> structure before calling this macro.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/video-and-image-functions">Video and Image Functions</seealso>
+  </member>
+  <member name="Windows.DIBSIZE">
+    <summary>
+      <para>The <code>DIBSIZE</code> macro calculates the number of bytes required by a device-independent bitmap (DIB).</para>
+    </summary>
+    <param name="bi">
+      <para>Specifies a <see cref="BITMAPINFOHEADER" /> structure.</para>
+    </param>
+    <remarks>
+      <para>The size of a DIB is calculated as <code>stride * height</code>, where stride is width * bits per pixel/8, rounded up to the nearest <b>DWORD</b> alignment; and height is the absolute value of <i>biHeight</i>.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/video-and-image-functions">Video and Image Functions</seealso>
+  </member>
+  <member name="Windows.HEADER">
+    <summary>
+      <para>The <b>HEADER</b> macro returns the address of the <see cref="BITMAPINFOHEADER" /> within a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/amvideo/ns-amvideo-videoinfoheader">VIDEOINFOHEADER</a>.</para>
+    </summary>
+    <param name="pVideoInfo">
+      <para>Pointer to a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/amvideo/ns-amvideo-videoinfoheader">VIDEOINFOHEADER</a> structure.</para>
+    </param>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/video-and-image-functions">Video and Image Functions</seealso>
+  </member>
+  <member name="Windows.MPEG1_SEQUENCE_INFO">
+    <summary>
+      <para>The <code>MPEG1_SEQUENCE_INFO</code> macro returns the address of the sequence header inside an <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/amvideo/ns-amvideo-mpeg1videoinfo">MPEG1VIDEOINFO</a> structure.</para>
+    </summary>
+    <param name="pv">
+      <para>Pointer to an <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/amvideo/ns-amvideo-mpeg1videoinfo">MPEG1VIDEOINFO</a> structure.</para>
+    </param>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/video-and-image-functions">Video and Image Functions</seealso>
+  </member>
+  <member name="Windows.PALETTE_ENTRIES">
+    <summary>
+      <para>The <b>PALETTE_ENTRIES</b> macro retrieves the maximum number of colors in the palette of a specified bitmap.</para>
+    </summary>
+    <param name="pbmi">
+      <para>Pointer to a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/amvideo/ns-amvideo-videoinfoheader">VIDEOINFOHEADER</a> structure.</para>
+    </param>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/video-and-image-functions">Video and Image Functions</seealso>
+  </member>
+  <member name="Windows.PALETTISED">
+    <summary>
+      <para>The <code>PALETTISED</code> macro checks whether a bitmap has a color depth of 8 bits or less.</para>
+    </summary>
+    <param name="pbmi">
+      <para>Pointer to a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/amvideo/ns-amvideo-videoinfoheader">VIDEOINFOHEADER</a> structure.</para>
+    </param>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/containspalette">ContainsPalette</seealso>
+    <seealso cref="PALETTE_ENTRIES" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/video-and-image-functions">Video and Image Functions</seealso>
+  </member>
+  <member name="Windows.RESET_HEADER">
+    <summary>
+      <para>The <code>RESET_HEADER</code> macro fills a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/amvideo/ns-amvideo-videoinfoheader">VIDEOINFOHEADER</a> with zeroes. You can also use this macro to clear just the <b>VIDEOINFOHEADER</b> portion of a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/amvideo/ns-amvideo-videoinfo">VIDEOINFO</a> structure.</para>
+      <para>This macro is equivalent to calling <b>ZeroMemory</b> with <code>sizeof(VIDEOINFOHEADER)</code>.</para>
+    </summary>
+    <param name="pbmi">
+      <para>Pointer to a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/amvideo/ns-amvideo-videoinfoheader">VIDEOINFOHEADER</a> structure.</para>
+    </param>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/video-and-image-functions">Video and Image Functions</seealso>
+  </member>
+  <member name="Windows.RESET_MASKS">
+    <summary>
+      <para>The <b>RESET_MASKS</b> macro fills the color mask fields in a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/amvideo/ns-amvideo-videoinfo">VIDEOINFO</a> structure with zeroes.</para>
+    </summary>
+    <param name="pbmi">
+      <para>Pointer to a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/amvideo/ns-amvideo-videoinfo">VIDEOINFO</a> structure.</para>
+    </param>
+    <remarks>
+      <para>As defined in the header file Amvideo.h, this macro is not correct and will cause a compile error. Replace it with the following:</para>
+      <code>
+#undef RESET_MASKS
+#define RESET_MASKS(x) (ZeroMemory((PVOID)(x)-&gt;dwBitMasks, SIZE_MASKS))
+
+</code>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/video-and-image-functions">Video and Image Functions</seealso>
+  </member>
+  <member name="Windows.RESET_PALETTE">
+    <summary>
+      <para>The <code>RESET_PALETTE</code> macro fills the palette entries in a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/amvideo/ns-amvideo-videoinfo">VIDEOINFO</a> structure with zeroes.</para>
+    </summary>
+    <param name="pbmi">
+      <para>Pointer to a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/amvideo/ns-amvideo-videoinfo">VIDEOINFO</a> structure.</para>
+    </param>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/video-and-image-functions">Video and Image Functions</seealso>
+  </member>
+  <member name="Windows.SIZE_MPEG1VIDEOINFO">
+    <summary>
+      <para>The <code>SIZE_MPEG1VIDEOINFO</code> macro calculates the size of an <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/amvideo/ns-amvideo-mpeg1videoinfo">MPEG1VIDEOINFO</a> structure, including the sequence header (<b>bSequenceHeader</b>).</para>
+    </summary>
+    <param name="pv">
+      <para>Pointer to an <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/amvideo/ns-amvideo-mpeg1videoinfo">MPEG1VIDEOINFO</a> structure.</para>
+    </param>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/video-and-image-functions">Video and Image Functions</seealso>
+  </member>
+</doc>

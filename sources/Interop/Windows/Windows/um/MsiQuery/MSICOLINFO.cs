@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MSICOLINFO.xml' path='doc/member[@name="MSICOLINFO"]/*' />
 public enum MSICOLINFO
 {
+    /// <include file='MSICOLINFO.xml' path='doc/member[@name="MSICOLINFO.MSICOLINFO_NAMES"]/*' />
     MSICOLINFO_NAMES = 0,
+
+    /// <include file='MSICOLINFO.xml' path='doc/member[@name="MSICOLINFO.MSICOLINFO_TYPES"]/*' />
     MSICOLINFO_TYPES = 1,
 }

@@ -7,9 +7,13 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='VPWATERMARKFLAGS.xml' path='doc/member[@name="VPWATERMARKFLAGS"]/*' />
 [Flags]
 public enum VPWATERMARKFLAGS
 {
+    /// <include file='VPWATERMARKFLAGS.xml' path='doc/member[@name="VPWATERMARKFLAGS.VPWF_DEFAULT"]/*' />
     VPWF_DEFAULT = 0,
+
+    /// <include file='VPWATERMARKFLAGS.xml' path='doc/member[@name="VPWATERMARKFLAGS.VPWF_ALPHABLEND"]/*' />
     VPWF_ALPHABLEND = 0x1,
 }

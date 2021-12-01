@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAppPublisher.xml' path='doc/member[@name="IAppPublisher"]/*' />
 [Guid("07250A10-9CF9-11D1-9076-006008059382")]
 [NativeTypeName("struct IAppPublisher : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IAppPublisher : IAppPublisher.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IAppPublisher : IAppPublisher.Interface
         return ((delegate* unmanaged<IAppPublisher*, Guid*, void**, int>)(lpVtbl[0]))((IAppPublisher*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IAppPublisher : IAppPublisher.Interface
         return ((delegate* unmanaged<IAppPublisher*, uint>)(lpVtbl[1]))((IAppPublisher*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IAppPublisher : IAppPublisher.Interface
         return ((delegate* unmanaged<IAppPublisher*, uint>)(lpVtbl[2]))((IAppPublisher*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAppPublisher.xml' path='doc/member[@name="IAppPublisher.GetNumberOfCategories"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetNumberOfCategories([NativeTypeName("DWORD *")] uint* pdwCat)
@@ -46,6 +51,7 @@ public unsafe partial struct IAppPublisher : IAppPublisher.Interface
         return ((delegate* unmanaged<IAppPublisher*, uint*, int>)(lpVtbl[3]))((IAppPublisher*)Unsafe.AsPointer(ref this), pdwCat);
     }
 
+    /// <include file='IAppPublisher.xml' path='doc/member[@name="IAppPublisher.GetCategories"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetCategories(APPCATEGORYINFOLIST* pAppCategoryList)
@@ -53,6 +59,7 @@ public unsafe partial struct IAppPublisher : IAppPublisher.Interface
         return ((delegate* unmanaged<IAppPublisher*, APPCATEGORYINFOLIST*, int>)(lpVtbl[4]))((IAppPublisher*)Unsafe.AsPointer(ref this), pAppCategoryList);
     }
 
+    /// <include file='IAppPublisher.xml' path='doc/member[@name="IAppPublisher.GetNumberOfApps"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetNumberOfApps([NativeTypeName("DWORD *")] uint* pdwApps)
@@ -60,6 +67,7 @@ public unsafe partial struct IAppPublisher : IAppPublisher.Interface
         return ((delegate* unmanaged<IAppPublisher*, uint*, int>)(lpVtbl[5]))((IAppPublisher*)Unsafe.AsPointer(ref this), pdwApps);
     }
 
+    /// <include file='IAppPublisher.xml' path='doc/member[@name="IAppPublisher.EnumApps"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT EnumApps(Guid* pAppCategoryId, IEnumPublishedApps** ppepa)

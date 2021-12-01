@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IPropertyDescriptionList.xml' path='doc/member[@name="IPropertyDescriptionList"]/*' />
 [Guid("1F9FC1D0-C39B-4B26-817F-011967D3440E")]
 [NativeTypeName("struct IPropertyDescriptionList : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IPropertyDescriptionList : IPropertyDescriptionList
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IPropertyDescriptionList : IPropertyDescriptionList
         return ((delegate* unmanaged<IPropertyDescriptionList*, Guid*, void**, int>)(lpVtbl[0]))((IPropertyDescriptionList*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IPropertyDescriptionList : IPropertyDescriptionList
         return ((delegate* unmanaged<IPropertyDescriptionList*, uint>)(lpVtbl[1]))((IPropertyDescriptionList*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IPropertyDescriptionList : IPropertyDescriptionList
         return ((delegate* unmanaged<IPropertyDescriptionList*, uint>)(lpVtbl[2]))((IPropertyDescriptionList*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IPropertyDescriptionList.xml' path='doc/member[@name="IPropertyDescriptionList.GetCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetCount(uint* pcElem)
@@ -46,6 +51,7 @@ public unsafe partial struct IPropertyDescriptionList : IPropertyDescriptionList
         return ((delegate* unmanaged<IPropertyDescriptionList*, uint*, int>)(lpVtbl[3]))((IPropertyDescriptionList*)Unsafe.AsPointer(ref this), pcElem);
     }
 
+    /// <include file='IPropertyDescriptionList.xml' path='doc/member[@name="IPropertyDescriptionList.GetAt"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetAt(uint iElem, [NativeTypeName("const IID &")] Guid* riid, void** ppv)

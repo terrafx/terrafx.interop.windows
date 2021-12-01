@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IDiaStackWalkFrame.xml' path='doc/member[@name="IDiaStackWalkFrame"]/*' />
 [Guid("07C590C1-438D-4F47-BDCD-4397BC81AD75")]
 [NativeTypeName("struct IDiaStackWalkFrame : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IDiaStackWalkFrame : IDiaStackWalkFrame.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IDiaStackWalkFrame : IDiaStackWalkFrame.Interface
         return ((delegate* unmanaged<IDiaStackWalkFrame*, Guid*, void**, int>)(lpVtbl[0]))((IDiaStackWalkFrame*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IDiaStackWalkFrame : IDiaStackWalkFrame.Interface
         return ((delegate* unmanaged<IDiaStackWalkFrame*, uint>)(lpVtbl[1]))((IDiaStackWalkFrame*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IDiaStackWalkFrame : IDiaStackWalkFrame.Interface
         return ((delegate* unmanaged<IDiaStackWalkFrame*, uint>)(lpVtbl[2]))((IDiaStackWalkFrame*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDiaStackWalkFrame.xml' path='doc/member[@name="IDiaStackWalkFrame.get_registerValue"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT get_registerValue([NativeTypeName("DWORD")] uint index, [NativeTypeName("ULONGLONG *")] ulong* pRetVal)
@@ -46,6 +51,7 @@ public unsafe partial struct IDiaStackWalkFrame : IDiaStackWalkFrame.Interface
         return ((delegate* unmanaged<IDiaStackWalkFrame*, uint, ulong*, int>)(lpVtbl[3]))((IDiaStackWalkFrame*)Unsafe.AsPointer(ref this), index, pRetVal);
     }
 
+    /// <include file='IDiaStackWalkFrame.xml' path='doc/member[@name="IDiaStackWalkFrame.put_registerValue"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT put_registerValue([NativeTypeName("DWORD")] uint index, [NativeTypeName("ULONGLONG")] ulong NewVal)
@@ -53,6 +59,7 @@ public unsafe partial struct IDiaStackWalkFrame : IDiaStackWalkFrame.Interface
         return ((delegate* unmanaged<IDiaStackWalkFrame*, uint, ulong, int>)(lpVtbl[4]))((IDiaStackWalkFrame*)Unsafe.AsPointer(ref this), index, NewVal);
     }
 
+    /// <include file='IDiaStackWalkFrame.xml' path='doc/member[@name="IDiaStackWalkFrame.readMemory"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT readMemory([NativeTypeName("enum MemoryTypeEnum")] MemoryTypeEnum type, [NativeTypeName("ULONGLONG")] ulong va, [NativeTypeName("DWORD")] uint cbData, [NativeTypeName("DWORD *")] uint* pcbData, byte* pbData)
@@ -60,6 +67,7 @@ public unsafe partial struct IDiaStackWalkFrame : IDiaStackWalkFrame.Interface
         return ((delegate* unmanaged<IDiaStackWalkFrame*, MemoryTypeEnum, ulong, uint, uint*, byte*, int>)(lpVtbl[5]))((IDiaStackWalkFrame*)Unsafe.AsPointer(ref this), type, va, cbData, pcbData, pbData);
     }
 
+    /// <include file='IDiaStackWalkFrame.xml' path='doc/member[@name="IDiaStackWalkFrame.searchForReturnAddress"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT searchForReturnAddress(IDiaFrameData* frame, [NativeTypeName("ULONGLONG *")] ulong* returnAddress)
@@ -67,6 +75,7 @@ public unsafe partial struct IDiaStackWalkFrame : IDiaStackWalkFrame.Interface
         return ((delegate* unmanaged<IDiaStackWalkFrame*, IDiaFrameData*, ulong*, int>)(lpVtbl[6]))((IDiaStackWalkFrame*)Unsafe.AsPointer(ref this), frame, returnAddress);
     }
 
+    /// <include file='IDiaStackWalkFrame.xml' path='doc/member[@name="IDiaStackWalkFrame.searchForReturnAddressStart"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT searchForReturnAddressStart(IDiaFrameData* frame, [NativeTypeName("ULONGLONG")] ulong startAddress, [NativeTypeName("ULONGLONG *")] ulong* returnAddress)

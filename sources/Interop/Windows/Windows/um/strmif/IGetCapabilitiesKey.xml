@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IGetCapabilitiesKey.GetCapabilitiesKey">
+    <summary>
+      <para>The <b>GetCapabilitiesKey</b> method gets a registry key that contains capability information for the codec.</para>
+    </summary>
+    <param name="pHKey">
+      <para>Receives a handle to the registry key. The caller must close the handle by calling <b>RegCloseKey</b>.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>HRESULT_FROM_WIN32(ERROR_FILE_NOT_FOUND)</b>
+            </para>
+          </description>
+          <description>
+            <para>There is no capabilities key for this codec.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>To enumerate the values for the returned key, call <b>RegEnumValue</b>.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/encoder-api">Encoder API</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IGetCapabilitiesKey" />
+  </member>
+  <member name="IGetCapabilitiesKey">
+    <summary>
+      <para>The <b>IGetCapabilitiesKey</b> interface enables an application to retrieve the capabilities of a software or hardware codec from the registry, without creating an instance of the encoder filter. The moniker for the codec filter exposes this interface. For more information, see <a href="https://docs.microsoft.com//windows/desktop/DirectShow/encoder-api">Encoder API</a>.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/interfaces">Interfaces</seealso>
+  </member>
+</doc>

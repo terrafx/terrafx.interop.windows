@@ -8,11 +8,14 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PROCESS_MITIGATION_SIDE_CHANNEL_ISOLATION_POLICY.xml' path='doc/member[@name="PROCESS_MITIGATION_SIDE_CHANNEL_ISOLATION_POLICY"]/*' />
 public partial struct PROCESS_MITIGATION_SIDE_CHANNEL_ISOLATION_POLICY
 {
+    /// <include file='PROCESS_MITIGATION_SIDE_CHANNEL_ISOLATION_POLICY.xml' path='doc/member[@name="PROCESS_MITIGATION_SIDE_CHANNEL_ISOLATION_POLICY.Anonymous"]/*' />
     [NativeTypeName("_PROCESS_MITIGATION_SIDE_CHANNEL_ISOLATION_POLICY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:12896:5)")]
     public _Anonymous_e__Union Anonymous;
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Flags"]/*' />
     public ref uint Flags
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -22,6 +25,7 @@ public partial struct PROCESS_MITIGATION_SIDE_CHANNEL_ISOLATION_POLICY
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.SmtBranchTargetIsolation"]/*' />
     public uint SmtBranchTargetIsolation
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -37,6 +41,7 @@ public partial struct PROCESS_MITIGATION_SIDE_CHANNEL_ISOLATION_POLICY
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.IsolateSecurityDomain"]/*' />
     public uint IsolateSecurityDomain
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -52,6 +57,7 @@ public partial struct PROCESS_MITIGATION_SIDE_CHANNEL_ISOLATION_POLICY
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.DisablePageCombine"]/*' />
     public uint DisablePageCombine
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -67,6 +73,7 @@ public partial struct PROCESS_MITIGATION_SIDE_CHANNEL_ISOLATION_POLICY
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.SpeculativeStoreBypassDisable"]/*' />
     public uint SpeculativeStoreBypassDisable
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -82,6 +89,7 @@ public partial struct PROCESS_MITIGATION_SIDE_CHANNEL_ISOLATION_POLICY
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.ReservedFlags"]/*' />
     public uint ReservedFlags
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -97,21 +105,26 @@ public partial struct PROCESS_MITIGATION_SIDE_CHANNEL_ISOLATION_POLICY
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public partial struct _Anonymous_e__Union
     {
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Flags"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("DWORD")]
         public uint Flags;
 
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("_PROCESS_MITIGATION_SIDE_CHANNEL_ISOLATION_POLICY::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:12898:9)")]
         public _Anonymous_e__Struct Anonymous;
 
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />
         public partial struct _Anonymous_e__Struct
         {
             public uint _bitfield;
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.SmtBranchTargetIsolation"]/*' />
             [NativeTypeName("DWORD : 1")]
             public uint SmtBranchTargetIsolation
             {
@@ -128,6 +141,7 @@ public partial struct PROCESS_MITIGATION_SIDE_CHANNEL_ISOLATION_POLICY
                 }
             }
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.IsolateSecurityDomain"]/*' />
             [NativeTypeName("DWORD : 1")]
             public uint IsolateSecurityDomain
             {
@@ -144,6 +158,7 @@ public partial struct PROCESS_MITIGATION_SIDE_CHANNEL_ISOLATION_POLICY
                 }
             }
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.DisablePageCombine"]/*' />
             [NativeTypeName("DWORD : 1")]
             public uint DisablePageCombine
             {
@@ -160,6 +175,7 @@ public partial struct PROCESS_MITIGATION_SIDE_CHANNEL_ISOLATION_POLICY
                 }
             }
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.SpeculativeStoreBypassDisable"]/*' />
             [NativeTypeName("DWORD : 1")]
             public uint SpeculativeStoreBypassDisable
             {
@@ -176,6 +192,7 @@ public partial struct PROCESS_MITIGATION_SIDE_CHANNEL_ISOLATION_POLICY
                 }
             }
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.ReservedFlags"]/*' />
             [NativeTypeName("DWORD : 28")]
             public uint ReservedFlags
             {

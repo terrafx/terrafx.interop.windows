@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='BULK_SECURITY_TEST_DATA.xml' path='doc/member[@name="BULK_SECURITY_TEST_DATA"]/*' />
 public unsafe partial struct BULK_SECURITY_TEST_DATA
 {
+    /// <include file='BULK_SECURITY_TEST_DATA.xml' path='doc/member[@name="BULK_SECURITY_TEST_DATA.DesiredAccess"]/*' />
     [NativeTypeName("ACCESS_MASK")]
     public uint DesiredAccess;
 
+    /// <include file='BULK_SECURITY_TEST_DATA.xml' path='doc/member[@name="BULK_SECURITY_TEST_DATA.SecurityIds"]/*' />
     [NativeTypeName("DWORD [1]")]
     public fixed uint SecurityIds[1];
 }

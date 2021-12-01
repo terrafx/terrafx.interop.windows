@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TRACKSTATES.xml' path='doc/member[@name="TRACKSTATES"]/*' />
 public enum TRACKSTATES
 {
+    /// <include file='TRACKSTATES.xml' path='doc/member[@name="TRACKSTATES.TRS_NORMAL"]/*' />
     TRS_NORMAL = 1,
 }

@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='GLYPHFONTSIZINGTYPE.xml' path='doc/member[@name="GLYPHFONTSIZINGTYPE"]/*' />
 public enum GLYPHFONTSIZINGTYPE
 {
+    /// <include file='GLYPHFONTSIZINGTYPE.xml' path='doc/member[@name="GLYPHFONTSIZINGTYPE.GFST_NONE"]/*' />
     GFST_NONE = 0,
+
+    /// <include file='GLYPHFONTSIZINGTYPE.xml' path='doc/member[@name="GLYPHFONTSIZINGTYPE.GFST_SIZE"]/*' />
     GFST_SIZE = 1,
+
+    /// <include file='GLYPHFONTSIZINGTYPE.xml' path='doc/member[@name="GLYPHFONTSIZINGTYPE.GFST_DPI"]/*' />
     GFST_DPI = 2,
 }

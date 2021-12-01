@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='VMRPresentationFlags.xml' path='doc/member[@name="VMRPresentationFlags"]/*' />
 public enum VMRPresentationFlags
 {
+    /// <include file='VMRPresentationFlags.xml' path='doc/member[@name="VMRPresentationFlags.VMRSample_SyncPoint"]/*' />
     VMRSample_SyncPoint = 0x1,
+
+    /// <include file='VMRPresentationFlags.xml' path='doc/member[@name="VMRPresentationFlags.VMRSample_Preroll"]/*' />
     VMRSample_Preroll = 0x2,
+
+    /// <include file='VMRPresentationFlags.xml' path='doc/member[@name="VMRPresentationFlags.VMRSample_Discontinuity"]/*' />
     VMRSample_Discontinuity = 0x4,
+
+    /// <include file='VMRPresentationFlags.xml' path='doc/member[@name="VMRPresentationFlags.VMRSample_TimeValid"]/*' />
     VMRSample_TimeValid = 0x8,
+
+    /// <include file='VMRPresentationFlags.xml' path='doc/member[@name="VMRPresentationFlags.VMRSample_SrcDstRectsValid"]/*' />
     VMRSample_SrcDstRectsValid = 0x10,
 }

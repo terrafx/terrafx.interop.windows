@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IObjMgr.Append">
+    <summary>
+      <para>Appends an object to the collection of managed objects.</para>
+    </summary>
+    <param name="punk">
+      <para>Type: <b><see cref="IUnknown" />*</b></para>
+      <para>The address of the <see cref="IUnknown" /> interface of the object to be added to the list.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_OK if successful, or a COM error code otherwise.</para>
+    </returns>
+    <seealso cref="IObjMgr" />
+    <seealso cref="IObjMgr.Remove" />
+  </member>
+  <member name="IObjMgr.Remove">
+    <summary>
+      <para>Removes an object from the collection of managed objects.</para>
+    </summary>
+    <param name="punk">
+      <para>Type: <b><see cref="IUnknown" />*</b></para>
+      <para>The address of the <see cref="IUnknown" /> interface of the object to be removed from the list.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_OK if successful, or a COM error code otherwise.</para>
+    </returns>
+    <seealso cref="IObjMgr" />
+    <seealso cref="IObjMgr.Append" />
+  </member>
+  <member name="IObjMgr">
+    <summary>
+      <para>Exposes methods that allow a client to append or remove an object from a collection of objects managed by a server object.</para>
+    </summary>
+    <remarks>
+      <para>This interface is implemented by objects that manage a collection of other objects. It is exported to allow clients of the object to request that objects be added to or removed from the collection.</para>
+      <para>Use this interface to add or delete an object from the server object's collection of managed objects.</para>
+    </remarks>
+  </member>
+</doc>

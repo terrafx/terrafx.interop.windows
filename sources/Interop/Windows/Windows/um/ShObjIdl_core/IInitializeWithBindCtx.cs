@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IInitializeWithBindCtx.xml' path='doc/member[@name="IInitializeWithBindCtx"]/*' />
 [Guid("71C0D2BC-726D-45CC-A6C0-2E31C1DB2159")]
 [NativeTypeName("struct IInitializeWithBindCtx : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IInitializeWithBindCtx : IInitializeWithBindCtx.Int
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IInitializeWithBindCtx : IInitializeWithBindCtx.Int
         return ((delegate* unmanaged<IInitializeWithBindCtx*, Guid*, void**, int>)(lpVtbl[0]))((IInitializeWithBindCtx*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IInitializeWithBindCtx : IInitializeWithBindCtx.Int
         return ((delegate* unmanaged<IInitializeWithBindCtx*, uint>)(lpVtbl[1]))((IInitializeWithBindCtx*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IInitializeWithBindCtx : IInitializeWithBindCtx.Int
         return ((delegate* unmanaged<IInitializeWithBindCtx*, uint>)(lpVtbl[2]))((IInitializeWithBindCtx*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IInitializeWithBindCtx.xml' path='doc/member[@name="IInitializeWithBindCtx.Initialize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Initialize(IBindCtx* pbc)

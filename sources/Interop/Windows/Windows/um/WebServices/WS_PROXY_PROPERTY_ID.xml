@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_PROXY_PROPERTY_ID">
+    <summary>
+      <para>Optional parameters for configuring the service proxy. With an exception of
+<b>WS_PROXY_PROPERTY_STATE</b> all the values are only supported for
+use with <see cref="WsCreateServiceProxy" /> as part of the <see cref="WS_PROXY_PROPERTY*" /> parameter.</para>
+    </summary>
+  </member>
+  <member name="WS_PROXY_PROPERTY_ID.WS_PROXY_PROPERTY_CALL_TIMEOUT">
+    <summary>
+      <para>The maximum amount of time in milliseconds for a call to remain pending.
+Default is 30000 milliseconds(30 seconds).  It is of type <b>ULONG</b>.</para>
+      <para>If an application wishes to have no timeout associated with a call, it can set the value to INFINITE.</para>
+      <para>This property is write only.</para>
+    </summary>
+  </member>
+  <member name="WS_PROXY_PROPERTY_ID.WS_PROXY_PROPERTY_MESSAGE_PROPERTIES">
+    <summary>
+      <para>This property allows the user to specify properties of the message
+objects used by the service proxy to send and receive messages.</para>
+      <para>This property may be specified when the service proxy is created.</para>
+      <para>The value specified should be of type <see cref="WS_MESSAGE_PROPERTIES" />.</para>
+      <para>The following message properties may be specified:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <see cref="WS_MESSAGE_PROPERTY_HEAP_PROPERTIES" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="WS_MESSAGE_PROPERTY_XML_READER_PROPERTIES" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="WS_MESSAGE_PROPERTY_XML_WRITER_PROPERTIES" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="WS_MESSAGE_PROPERTY_MAX_PROCESSED_HEADERS" />
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="WS_PROXY_PROPERTY_ID.WS_PROXY_PROPERTY_MAX_CALL_POOL_SIZE">
+    <summary>
+      <para>Each call in the service proxy is represented by an object internal to the service proxy.
+A call object is designed such that after every call it can be reused.
+This allows applications to scale better in scenarios where they expect
+large number of calls over the service proxy. The default value for this property is 5.
+It is of type <b>USHORT</b>.</para>
+      <para>This property is write only.</para>
+    </summary>
+  </member>
+  <member name="WS_PROXY_PROPERTY_ID.WS_PROXY_PROPERTY_STATE">
+    <summary>
+      <para>The current state of the service proxy.
+It is of type <see cref="WS_SERVICE_PROXY_STATE" />.</para>
+      <para>This property is read only.</para>
+      <para>The returned value is a snapshot of the current state, so it is
+possible that the state may have changed before the caller has
+had a chance to examine the value.</para>
+    </summary>
+  </member>
+  <member name="WS_PROXY_PROPERTY_ID.WS_PROXY_PROPERTY_MAX_PENDING_CALLS">
+    <summary>
+      <para>The maximum number of pending calls allowed on the service proxy. If the
+maximum number of calls pending on the service proxy reaches this limit, the
+incoming calls will be rejected with <b>WS_E_QUOTA_EXCEEDED</b> (see <a href="https://docs.microsoft.com//windows/desktop/wsw/windows-web-services-return-values">Windows Web Services Return Values</a>). The default value
+for this property is 100.
+It is of type <b>ULONG</b>.</para>
+      <para>This property is write only.</para>
+    </summary>
+  </member>
+  <member name="WS_PROXY_PROPERTY_ID.WS_PROXY_PROPERTY_MAX_CLOSE_TIMEOUT">
+    <summary>
+      <para>The amount of time in milliseconds the service proxy will wait for the pending calls to complete.
+Once the timeout expires, the service proxy will abort itself.</para>
+      <para>The default value for this property is 5000 (5 seconds).</para>
+      <para>This property is write only.
+It is of type <b>ULONG</b>.</para>
+    </summary>
+  </member>
+  <member name="WS_PROXY_PROPERTY_ID.WS_PROXY_FAULT_LANG_ID">
+    <summary>
+      <para>The LANGID that would be used for returning a fault. If none specified default user locale will be used. It is of type <a href="https://docs.microsoft.com//windows/desktop/Intl/language-identifiers">LANGID</a>.</para>
+      <para>This property is write only.</para>
+    </summary>
+  </member>
+</doc>

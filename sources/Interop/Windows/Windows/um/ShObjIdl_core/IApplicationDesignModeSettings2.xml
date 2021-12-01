@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IApplicationDesignModeSettings2.GetApplicationSizeBounds">
+    <summary>
+      <para>This methods retrieves the size bounds supported by the application.</para>
+    </summary>
+    <param name="minApplicationSizePixels">
+      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/dd145106(v=vs.85)">SIZE</a>*</b></para>
+      <para>When this method returns successfully, receives a pointer to a <a href="https://docs.microsoft.com//previous-versions/dd145106(v=vs.85)">SIZE</a> structure that defines the minimum possible window size.</para>
+    </param>
+    <param name="maxApplicationSizePixels">
+      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/dd145106(v=vs.85)">SIZE</a>*</b></para>
+      <para>When this method returns successfully, receives a pointer to a <a href="https://docs.microsoft.com//previous-versions/dd145106(v=vs.85)">SIZE</a> structure that defines the maximum possible window size.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IApplicationDesignModeSettings2" />
+  </member>
+  <member name="IApplicationDesignModeSettings2.GetApplicationViewOrientation">
+    <summary>
+      <para>Gets the orientation of the application design mode window.</para>
+    </summary>
+    <param name="applicationSizePixels">
+      <para>Type: <b>SIZE</b></para>
+      <para>The application window size.</para>
+    </param>
+    <param name="viewOrientation">
+      <para>Type: <b><see cref="APPLICATION_VIEW_ORIENTATION" />*</b></para>
+      <para>When this method returns successfully, receives a pointer to an  <see cref="APPLICATION_VIEW_ORIENTATION" /> structure.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IApplicationDesignModeSettings2" />
+  </member>
+  <member name="IApplicationDesignModeSettings2.SetAdjacentDisplayEdges">
+    <summary>
+      <para>Sets whether the application window will be  adjacent to the edge of the emulated display.</para>
+    </summary>
+    <param name="adjacentDisplayEdges">
+      <para>Type: <b>ADJACENT_DISPLAY_EDGES</b></para>
+      <para>The edge which should be adjacent.</para>
+      <h4>ADE_NONE (0x0)</h4>
+      <para>The widow will not be adjacent to either edge.</para>
+      <h4>ADE_LEFT (0x1)</h4>
+      <para>the left edge of the window will be adjacent.</para>
+      <h4>ADE_RIGHT (0x2)</h4>
+      <para>The right edge of the window will be adjacent.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IApplicationDesignModeSettings" />
+    <seealso cref="IApplicationDesignModeSettings2" />
+  </member>
+  <member name="IApplicationDesignModeSettings2.SetApplicationViewMinWidth">
+    <summary>
+      <para>Sets the desired minimum width of the application design mode window.</para>
+    </summary>
+    <param name="viewMinWidth">
+      <para>Type: <b>APPLICATION_VIEW_MIN_WIDTH</b></para>
+      <para>The minimum width value.</para>
+      <h4>AVMW_DEFAULT (0)</h4>
+      <para>Uses the default minimum width.</para>
+      <h4>AVMW_320 (1)</h4>
+      <para>Sets the minimum width at 320 pixels.</para>
+      <h4>AVMW_500 (2)</h4>
+      <para>Sets the minimum width at 500 pixels.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IApplicationDesignModeSettings2" />
+  </member>
+  <member name="IApplicationDesignModeSettings2.SetApplicationViewOrientation">
+    <summary>
+      <para>Sets the window orientation used for the design mode window.</para>
+    </summary>
+    <param name="viewOrientation">
+      <para>Type: <b><see cref="APPLICATION_VIEW_ORIENTATION" /></b></para>
+      <para>The orientation of the design mode window to use. Either <b>AVO_LANDSCAPE</b> or <b>AVO_PORTRAIT</b>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IApplicationDesignModeSettings2" />
+  </member>
+  <member name="IApplicationDesignModeSettings2.SetIsOnLockScreen">
+    <summary>
+      <para>This method determines whether or not the application, in design mode, can display information on the Windows 8 lock screen.</para>
+    </summary>
+    <param name="isOnLockScreen">
+      <para>Type: <b>BOOL</b></para>
+      <para>When set to <b>TRUE</b>, the application will display information on the lock screen. When set to <b>FALSE</b>, information will not be displayed.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IApplicationDesignModeSettings2" />
+  </member>
+  <member name="IApplicationDesignModeSettings2.SetNativeDisplayOrientation">
+    <summary>
+      <para>Sets the orientation of the emulated display for the design mode window.</para>
+    </summary>
+    <param name="nativeDisplayOrientation">
+      <para>Type: <b>NATIVE_DISPLAY_ORIENTATION</b></para>
+      <para>The native orientation of the display to emulate.</para>
+      <h4>NDO_LANDSCAPE (0)</h4>
+      <para>Landscape orientation, with the display width greater than the height.</para>
+      <h4>NDO_PORTRAIT (1)</h4>
+      <para>Portrait orientation, with the display height greater than the width.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IApplicationDesignModeSettings2" />
+  </member>
+  <member name="IApplicationDesignModeSettings2">
+    <summary>
+      <para>Enables development tool applications to dynamically control system and user states, such as native display resolution, device scale factor, and application view layout, reported to Windows Store apps for the purpose of testing Windows Store apps running in design mode for a wide range of form factors without the need for the actual hardware. Also enables testing of changes in normally user-controlled state to test Windows Store apps under a variety of scenarios.</para>
+    </summary>
+    <remarks>
+      <para>This interface is acquired by cocreating CLSID_ApplicationDesignModeSettings. It is an extension of the original <see cref="IApplicationDesignModeSettings" /> interface.</para>
+      <h4>Examples</h4>
+      <para>In this example, Visual Studio is launching an application in design mode that has overridden the minimum width on a display of size 1366x768. It is then enabling a slider control that allows the user to dynamically change the applications width. To do this, it needs to use the new <see cref="SetApplicationViewMinWidth" /> and <see cref="GetApplicationSizeBounds" /> APIs to compute the minimum and maximum sizes allowed for this type of application.</para>
+      <code>ComPtr&lt;IApplicationDesignModeSettings&gt; spDesignModeSettings;
+
+// CoCreate the design mode settings object
+HRESULT hr = CoCreateInstance(CLSID_ApplicationDesignModeSettings, nullptr, CLSCTX_INPROC, IID_PPV_ARGS(&amp;amp;amp;amp;amp;amp;spDesignModeSettings));
+if (SUCCEEDED(hr))
+{
+    ComPtr&lt;IInitializeWithWindow&gt; spInitializeWithWindow;
+    hr = pDesignModeSettings-&gt;QueryInterface(IID_PPV_ARGS(&amp;amp;amp;amp;amp;amp;spInitializeWithWindow);
+    if (SUCCEEDED(hr))
+    {
+        // Before we set any design mode state, we must first initialize the
+        // design mode settings object with a proxy core window. Since apps
+        // running in design mode don't have an actual core window, we must
+        // supply an HWND that can be used as a proxy.
+        hr = spInitializeWithWindow-&gt;Initialize(hwndProxyCoreWindow);
+    }
+
+    if (SUCCEEDED(hr))
+    {
+        // Set the native display size to 1366x768
+        SIZE sizeDisplay = {1366, 768};
+        hr = spDesignModeSettings-&gt;SetNativeDisplaySize(sizeDisplay);
+        if (SUCCEEDED(hr))
+        {
+            // Set the native display orientation to landscape
+            hr = spDesignModeSettings-&gt;SetNativeDisplayOrientation(NDO_LANDSCAPE);
+            if (SUCCEEDED(hr))
+            {
+                // Set the scale factor to 100%
+                DEVICE_SCALE_FACTOR scaleFactor = SCALE_100_PERCENT;
+                hr = spDesignModeSettings-&gt;SetScaleFactor(scaleFactor);
+            }
+        }
+    }
+
+    if (SUCCEEDED(hr))
+    {
+
+        // Override the app’s minimum width
+        hr = spDesignModeSettings-&gt;SetApplicationViewMinWidth(AVMW_320);
+        if (SUCCEEDED(hr))
+        {
+            SIZE sizeAppMin;
+            SIZE sizeAppMax;
+            hr = spDesignModeSettings-&gt;GetApplicationSizeBounds(&amp;amp;amp;amp;amp;amp;sizeAppMin, &amp;amp;amp;amp;amp;amp;sizeAppMax);
+            if (SUCCEEDED(hr))
+            {
+                // Push the min and max size to the slider control,
+                // to update the values that it maps to
+                …
+
+                // Start by sizing the app to its min bound, so compute the
+                // resulting view orientation
+                APPLICATION_VIEW_ORIENTATION viewOrientation;
+                hr = spDesignModeSettings-&gt;GetApplicationViewOrientation(sizeAppMin, &amp;amp;amp;amp;amp;amp;viewOrientation);
+                if (SUCCEEDED(hr))
+                {
+                    // Set the app view orientation
+                    hr = spDesignModeSettings-&gt;SetApplicationViewOrientation(viewOrientation);
+                }
+            }
+        }
+    }
+
+    if (SUCCEEDED(hr))
+    {
+        // Set the adjacent display edges so that the app is touching just the left edge of the screen
+        hr = spDesignModeSettings-&gt;SetAdjacentDisplayEdges(ADE_LEFT);
+    }
+}
+
+</code>
+    </remarks>
+    <seealso cref="IApplicationDesignModeSettings" />
+  </member>
+</doc>

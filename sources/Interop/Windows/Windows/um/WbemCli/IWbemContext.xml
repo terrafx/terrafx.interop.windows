@@ -1,0 +1,245 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IWbemContext.BeginEnumeration">
+    <summary>
+      <para>The
+<b>IWbemContext.BeginEnumeration</b> method resets the enumeration of all the context values in the object. This method must be called before the first call to
+<see cref="IWbemContext.Next" /> to enumerate all of the context values in the object. The order in which context values are enumerated is guaranteed to be invariant for a given instance of
+<see cref="IWbemContext" />.</para>
+    </summary>
+    <param name="lFlags">
+      <para>Reserved. This parameter must be 0.</para>
+    </param>
+    <returns>
+      <para>This method returns an <b>HRESULT</b> indicating the status of the method call. The following list lists the value contained within an <b>HRESULT</b>.</para>
+    </returns>
+    <seealso cref="IWbemContext" />
+    <seealso cref="IWbemContext.EndEnumeration" />
+    <seealso cref="IWbemContext.Next" />
+  </member>
+  <member name="IWbemContext.Clone">
+    <summary>
+      <para>The
+<b>IWbemContext.Clone</b> method makes a logical copy of the current
+<see cref="IWbemContext" /> object. This method can be useful when many calls must be made which have largely identical
+<b>IWbemContext</b> objects.</para>
+    </summary>
+    <param name="ppNewCopy">
+      <para>Must point to <b>NULL</b> on entry. It receives a pointer to the new object containing the clone of the current object. The returned pointer has a positive reference count. The caller must call <b>IWbemServices.Release</b> on this pointer when it is no longer needed. On error, this pointer is left unmodified, and a new object is not returned.</para>
+    </param>
+    <returns>
+      <para>This method returns an <b>HRESULT</b> indicating the status of the method call. The following list lists the value contained within an <b>HRESULT</b>.</para>
+    </returns>
+  </member>
+  <member name="IWbemContext.DeleteAll">
+    <summary>
+      <para>The
+<b>IWbemContext.DeleteAll</b> method removes all named context values from the current object, thus emptying the object.</para>
+    </summary>
+    <returns>
+      <para>This method returns an <b>HRESULT</b> indicating the status of the method call. The following list lists the value contained within an <b>HRESULT</b>.</para>
+    </returns>
+    <seealso cref="IWbemContext" />
+    <seealso cref="IWbemContext.DeleteValue" />
+  </member>
+  <member name="IWbemContext.DeleteValue">
+    <summary>
+      <para>The
+<b>IWbemContext.DeleteValue</b> method deletes a named context value created by
+<see cref="IWbemContext.SetValue" />.</para>
+    </summary>
+    <param name="wszName">
+      <para>Pointer to a valid <b>BSTR</b> containing the named context value to delete. The pointer is treated as read-only.</para>
+    </param>
+    <param name="lFlags">
+      <para>Reserved. This parameter must be 0.</para>
+    </param>
+    <returns>
+      <para>This method returns an <b>HRESULT</b> indicating the status of the method call. The following list lists the value contained within an <b>HRESULT</b>.</para>
+    </returns>
+    <seealso cref="IWbemContext" />
+    <seealso cref="IWbemContext.GetValue" />
+    <seealso cref="IWbemContext.SetValue" />
+  </member>
+  <member name="IWbemContext.EndEnumeration">
+    <summary>
+      <para>The
+<b>IWbemContext.EndEnumeration</b> method ends an enumeration sequence that begins with
+<see cref="IWbemContext.BeginEnumeration" />. This call is not required, but it releases as early as possible any system resources associated with the enumeration.</para>
+    </summary>
+    <returns>
+      <para>This method returns an <b>HRESULT</b> indicating the status of the method call. The following list lists the value contained within an <b>HRESULT</b>.</para>
+    </returns>
+    <seealso cref="IWbemContext" />
+    <seealso cref="IWbemContext.BeginEnumeration" />
+    <seealso cref="IWbemContext.Next" />
+  </member>
+  <member name="IWbemContext.GetNames">
+    <summary>
+      <para>The
+<b>IWbemContext.GetNames</b> method returns a <b>SAFEARRAY</b> structure of all of the names of the named context values. After all the names are known,
+<see cref="GetValue" /> can be called on each name to retrieve the value. This technique is a way of accessing the context values that is different from calling the
+<see cref="BeginEnumeration" />,
+<see cref="Next" />, and
+<see cref="EndEnumeration" /> methods.</para>
+    </summary>
+    <param name="lFlags">
+      <para>Reserved. This parameter must be 0.</para>
+    </param>
+    <param name="pNames">
+      <para>This parameter cannot be <b>NULL</b>, but on entry it must point to <b>NULL</b>. If no error is returned, on exit <i>pstrNames</i> receives a pointer to a new <b>SAFEARRAY</b> structure of type VT_BSTR containing all the context value names. The caller must call <b>SafeArrayDestroy</b> on the returned pointer when the array is no longer required. If an error code is returned, the pointer is left unmodified.</para>
+      <para>
+        <b>Note</b>  If there are no named values in the object, the call succeeds and returns an array of length 0.</para>
+    </param>
+    <returns>
+      <para>This method returns an <b>HRESULT</b> indicating the status of the method call. The following list lists the value contained within an <b>HRESULT</b>.</para>
+    </returns>
+    <remarks>
+      <para>For more information about using <b>SAFEARRAY</b> structures of <b>BSTR</b> values, see
+<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/retrieving-part-of-an-instance">Retrieving Part of a WMI Instance</a>.</para>
+    </remarks>
+    <seealso cref="IWbemContext" />
+    <seealso cref="IWbemContext.BeginEnumeration" />
+    <seealso cref="IWbemContext.GetValue" />
+  </member>
+  <member name="IWbemContext.GetValue">
+    <summary>
+      <para>The
+<b>IWbemContext.GetValue</b> method is used to retrieve a specific named context value by name.</para>
+    </summary>
+    <param name="wszName">
+      <para>Name for which the value is to be retrieved. This must point to a valid <b>BSTR</b>. The pointer is treated as read-only.</para>
+    </param>
+    <param name="lFlags">
+      <para>Reserved. This parameter must be 0.</para>
+    </param>
+    <param name="pValue">
+      <para>This parameter cannot be <b>NULL</b> and must point to an uninitialized <b>VARIANT</b>. If no error is returned, the <b>VARIANT</b> is initialized using <b>VariantInit</b>, and then set to contain the context value. The caller must call <b>VariantClear</b> on this pointer when the value is no longer required. If an error code is returned, the <b>VARIANT</b> pointed to by <i>pValue</i> is left unmodified.</para>
+      <para>It is possible that an entire
+<see cref="IWbemClassObject" /> object can be returned inside the <b>VARIANT</b>. If that is the case, then <b>VT_UNKNOWN</b> is the <b>VARIANT</b> type. The caller can take the <b>IUnknown</b> pointer and execute <b>QueryInterface</b> to obtain the
+<b>IWbemClassObject</b> pointer.</para>
+    </param>
+    <returns>
+      <para>This method returns an <b>HRESULT</b> indicating the status of the method call. The following list lists the value contained within an <b>HRESULT</b>.</para>
+    </returns>
+    <seealso cref="IWbemContext" />
+    <seealso cref="IWbemContext.SetValue" />
+  </member>
+  <member name="IWbemContext.Next">
+    <summary>
+      <para>The
+<b>IWbemContext.Next</b> method retrieves the next value in an enumeration of all context values beginning with
+<see cref="IWbemContext.BeginEnumeration" />.</para>
+    </summary>
+    <param name="lFlags">
+      <para>Reserved. This parameter must be 0.</para>
+    </param>
+    <param name="pstrName">
+      <para>This parameter cannot be <b>NULL</b>. The pointer must not point to an active <b>BSTR</b> on entry, and ideally it should be set to point to <b>NULL</b>. If no error code is returned, it is set to point to a newly allocated <b>BSTR</b> containing the context value name.</para>
+      <para>The caller must call <b>SysFreeString</b> on the returned string when it is no longer required. If <b>WBEM_S_NO_MORE_DATA</b> returns, <i>pstrName</i> is set to point to <b>NULL</b>, in which case <b>SysFreeString</b> should not be called. Note that if <i>pstrName</i> points to a valid <b>BSTR</b> on entry, this <b>BSTR</b> is not freed, and a memory leak occurs.</para>
+    </param>
+    <param name="pValue">
+      <para>This parameter cannot be <b>NULL</b>, and it must point to an empty or uninitialized <b>VARIANT</b>. If no error is returned, the <b>VARIANT</b> is initialized using <b>VariantInit</b>, and then set to contain the context value. The caller must call <b>VariantClear</b> on this pointer when the value is no longer required. If an error code is returned, the <b>VARIANT</b> pointed to by <i>pValue</i> is left unmodified.</para>
+      <para>If <b>WBEM_S_NO_MORE_DATA</b> returns, this parameter is set to point to a <b>VARIANT</b> of type <b>VT_NULL</b>.</para>
+      <para>It is possible that an entire
+<see cref="IWbemClassObject" /> object may be returned inside the <b>VARIANT</b>. If that is the case, then <b>VT_UNKNOWN</b> is the <b>VARIANT</b> type. The caller can take the <b>IUnknown</b> pointer and execute <b>QueryInterface</b> to obtain the
+<b>IWbemClassObject</b> pointer.</para>
+      <para>
+        <b>Note</b>  At the end of the enumeration, <b>WBEM_S_NO_MORE_DATA</b> is returned. The returned <b>VARIANT</b> is of type <b>VT_NULL</b>, and the returned <i>pstrName</i> is <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>This method returns an <b>HRESULT</b> indicating the status of the method call. The following list lists the value contained within an <b>HRESULT</b>.</para>
+    </returns>
+    <seealso cref="IWbemContext" />
+    <seealso cref="IWbemContext.BeginEnumeration" />
+    <seealso cref="IWbemContext.EndEnumeration" />
+  </member>
+  <member name="IWbemContext.SetValue">
+    <summary>
+      <para>The
+<b>IWbemContext.SetValue</b> method creates or overwrites a named context value.</para>
+    </summary>
+    <param name="wszName">
+      <para>Cannot be <b>NULL</b>. It is a read-only pointer that  indicates the context value name. This value must be <b>null</b>-terminated.</para>
+    </param>
+    <param name="lFlags">
+      <para>Reserved. This parameter must be 0 (zero).</para>
+    </param>
+    <param name="pValue">
+      <para>Must point to a valid <b>VARIANT</b>, which is treated as read-only. The value in the <b>VARIANT</b> becomes the named context value. An entire
+<see cref="IWbemClassObject" /> object can be stored as well as a simple value by enclosing it in a <b>VARIANT</b> that uses the <b>VT_UNKNOWN</b> type. The caller must execute <see cref="QueryInterface" /> on the
+<b>IWbemClassObject</b> object by asking for <b>IID_IUnknown</b>, and by using the returned pointer in the <b>VARIANT</b>.</para>
+      <para>If <i>pValue</i> is to contain an embedded
+<see cref="IWbemClassObject" /> object, the caller must call <see cref="IWbemClassObject.QueryInterface" /> for <b>IID_IUnknown</b> and place the resulting pointer in the <b>VARIANT</b> by using a type of <b>VT_UNKNOWN</b>. The original embedded object is copied during the write operation, and so cannot be modified by the operation.</para>
+    </param>
+    <returns>
+      <para>This method returns an <b>HRESULT</b> that indicates the status of a method call. The following list lists and describes the values contained in an <b>HRESULT</b>.</para>
+    </returns>
+    <seealso cref="IWbemContext" />
+    <seealso cref="IWbemContext.GetValue" />
+  </member>
+  <member name="IWbemContext">
+    <summary>
+      <para>The
+<b>IWbemContext</b> interface is optionally used to communicate  additional context information to providers when submitting
+<see cref="IWbemServices" /> calls to WMI. All primary calls in
+<b>IWbemServices</b> take an optional parameter pointing to an object of this type.</para>
+    </summary>
+    <remarks>
+      <para>Often, dynamic providers require more information than is specified in the normal parameters of an
+<see cref="IWbemServices" /> method. For example, to manipulate any WMI schema objects that it provides, a provider may need to know a Simple Network Management Protocol (SNMP) community name, or a Structured Query Language (SQL) database and table name. A client can add this information to an
+<b>IWbemContext</b> object and send the
+<b>IWbemContext</b> object along with the call as one of the parameters.</para>
+      <para>Providers should use content objects sparingly. It is recommended that it is never required. If a provider requires a large amount of highly specific context information to respond to a request, then all clients must be coded to provide this information, thus breaking the uniform access model that is the basis of WMI. Nevertheless, in some cases it cannot be avoided. Therefore, this mechanism is provided to make it possible to access such providers. Developers of such providers should provide adequate documentation so that developers of client software can successfully manipulate such CIM objects.</para>
+      <para>Providers that support the use of
+<b>IWbemContext</b> to allow clients to specify more information in a request should restrict the types of values they support to the types in the following list:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <b>VT_I4</b>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>VT_R8</b>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>VT_BOOL</b>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>VT_BSTR</b>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>VT_UNKNOWN</b>
+          </description>
+        </item>
+        <item>
+          <description>Any of the above combined with <b>VT_ARRAY</b></description>
+        </item>
+      </list>
+      <b>Note</b>  Only objects that support
+<see cref="IWbemClassObject" /> can marshal their <see cref="IUnknown" /> methods in an
+<b>IWbemContext</b> instance using a variant of type <b>VT_UNKNOWN</b>.
+<para>An
+<b>IWbemContext</b> object, which is created using <see cref="CoCreateInstanceEx" />, is a simple container of named values. Access these methods to fill in  context information required by a dynamic provider. After the call to one of the
+<see cref="IWbemServices" /> methods, the
+<b>IWbemContext</b> object can be reused for another call, or it can be deallocated using <see cref="Release" /> and another object created for other calls to
+<b>IWbemServices</b> methods.</para><para>The information contained in an
+<b>IWbemContext</b> object is entirely determined by the underlying provider. WMI does not use the information, but forwards it to the provider. Providers must publish the context information they require for these service requests.</para><para>The client application calls <see cref="CoCreateInstanceEx" /> to create a single context object. Then, it calls
+<see cref="SetValue" /> one or more times to set up context values for the provider. Finally, it submits the object to one of the
+<see cref="IWbemServices" /> methods, which immediately calls <see cref="Release" /> on the context object after the call has returned. The other methods are for use primarily by providers that receive the context object and have to extract information.</para></remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/com-api-for-wmi">COM API for WMI</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/creating-and-declaring-an-instance-using-c-">Creating and Declaring an Instance Using C++</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/making-calls-to-wmi">Making Calls to WMI</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/requesting-wmi-data-on-a-64-bit-platform">Requesting WMI Data on a 64-bit Platform</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/retrieving-part-of-an-instance">Retrieving Part of a WMI Instance</seealso>
+  </member>
+</doc>

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IActiveDesktopP.xml' path='doc/member[@name="IActiveDesktopP"]/*' />
 [Guid("52502EE0-EC80-11D0-89AB-00C04FC2972D")]
 [NativeTypeName("struct IActiveDesktopP : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IActiveDesktopP : IActiveDesktopP.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IActiveDesktopP : IActiveDesktopP.Interface
         return ((delegate* unmanaged<IActiveDesktopP*, Guid*, void**, int>)(lpVtbl[0]))((IActiveDesktopP*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IActiveDesktopP : IActiveDesktopP.Interface
         return ((delegate* unmanaged<IActiveDesktopP*, uint>)(lpVtbl[1]))((IActiveDesktopP*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IActiveDesktopP : IActiveDesktopP.Interface
         return ((delegate* unmanaged<IActiveDesktopP*, uint>)(lpVtbl[2]))((IActiveDesktopP*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IActiveDesktopP.xml' path='doc/member[@name="IActiveDesktopP.SetSafeMode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetSafeMode([NativeTypeName("DWORD")] uint dwFlags)
@@ -46,6 +51,7 @@ public unsafe partial struct IActiveDesktopP : IActiveDesktopP.Interface
         return ((delegate* unmanaged<IActiveDesktopP*, uint, int>)(lpVtbl[3]))((IActiveDesktopP*)Unsafe.AsPointer(ref this), dwFlags);
     }
 
+    /// <include file='IActiveDesktopP.xml' path='doc/member[@name="IActiveDesktopP.EnsureUpdateHTML"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT EnsureUpdateHTML()
@@ -53,6 +59,7 @@ public unsafe partial struct IActiveDesktopP : IActiveDesktopP.Interface
         return ((delegate* unmanaged<IActiveDesktopP*, int>)(lpVtbl[4]))((IActiveDesktopP*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IActiveDesktopP.xml' path='doc/member[@name="IActiveDesktopP.SetScheme"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetScheme([NativeTypeName("PCWSTR")] ushort* pwszSchemeName, [NativeTypeName("DWORD")] uint dwFlags)
@@ -60,6 +67,7 @@ public unsafe partial struct IActiveDesktopP : IActiveDesktopP.Interface
         return ((delegate* unmanaged<IActiveDesktopP*, ushort*, uint, int>)(lpVtbl[5]))((IActiveDesktopP*)Unsafe.AsPointer(ref this), pwszSchemeName, dwFlags);
     }
 
+    /// <include file='IActiveDesktopP.xml' path='doc/member[@name="IActiveDesktopP.GetScheme"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetScheme([NativeTypeName("PWSTR")] ushort* pwszSchemeName, [NativeTypeName("DWORD *")] uint* pdwcchBuffer, [NativeTypeName("DWORD")] uint dwFlags)

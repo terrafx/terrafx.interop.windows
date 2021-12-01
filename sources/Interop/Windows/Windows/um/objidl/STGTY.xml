@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="STGTY">
+    <summary>
+      <para>The
+<b>STGTY</b> enumeration values are used in the <b>type</b> member of the
+<see cref="STATSTG" /> structure to indicate the type of the storage element. A storage element is a storage object, a stream object, or a byte-array object (LOCKBYTES).</para>
+    </summary>
+    <seealso cref="IStream" />
+    <seealso cref="STATSTG" />
+  </member>
+  <member name="STGTY.STGTY_STORAGE">
+    <summary>
+      <para>Indicates that the storage element is a storage object.</para>
+    </summary>
+  </member>
+  <member name="STGTY.STGTY_STREAM">
+    <summary>
+      <para>Indicates that the storage element is a stream object.</para>
+    </summary>
+  </member>
+  <member name="STGTY.STGTY_LOCKBYTES">
+    <summary>
+      <para>Indicates that the storage element is a byte-array object.</para>
+    </summary>
+  </member>
+  <member name="STGTY.STGTY_PROPERTY">
+    <summary>
+      <para>Indicates that the storage element is a property storage object.</para>
+    </summary>
+  </member>
+</doc>

@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CONDITION_TYPE">
+    <summary>
+      <para>Provides a set of flags to be used with the following methods to indicate the type of condition tree node:
+<see cref="ICondition.GetConditionType" />,
+<see cref="IConditionFactory.MakeAndOr" />,
+<see cref="IConditionFactory2.CreateCompoundFromArray" />, and
+<see cref="IConditionFactory2.CreateCompoundFromObjectArray" />.</para>
+    </summary>
+    <remarks>
+      <para>In Windows 7, this enumeration is defined in structuredquerycondition.idl and structuredquerycondition.h. Prior to Windows 7 this enumeration was declared in structuredquery.h and structuredquery.idl.</para>
+      <para>The <a href="https://github.com/microsoft/windows-classic-samples/tree/master/samples/win7samples/winui/windowssearch/structuredquerysample">StructuredQuerySample</a> demonstrates how to read lines from the console, parse them using the system schema, and display the resulting condition trees.</para>
+    </remarks>
+    <seealso cref="CONDITION_CREATION_OPTIONS" />
+    <seealso cref="CONDITION_OPERATION" />
+    <seealso cref="ICondition" />
+    <seealso cref="ICondition2" />
+    <seealso cref="IConditionFactory" />
+    <seealso cref="IConditionFactory2" />
+    <seealso cref="IConditionGenerator" />
+  </member>
+  <member name="CONDITION_TYPE.CT_AND_CONDITION">
+    <summary>
+      <para>Indicates that the values of the subterms are combined by "AND".</para>
+    </summary>
+  </member>
+  <member name="CONDITION_TYPE.CT_OR_CONDITION">
+    <summary>
+      <para>Indicates that the values of the subterms are combined by "OR".</para>
+    </summary>
+  </member>
+  <member name="CONDITION_TYPE.CT_NOT_CONDITION">
+    <summary>
+      <para>Indicates a "NOT" comparison of subterms.</para>
+    </summary>
+  </member>
+  <member name="CONDITION_TYPE.CT_LEAF_CONDITION">
+    <summary>
+      <para>Indicates that the node is a comparison between a property and a constant value using a <see cref="CONDITION_OPERATION" />.</para>
+    </summary>
+  </member>
+</doc>

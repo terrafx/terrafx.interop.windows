@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="RM_REBOOT_REASON">
+    <summary>
+      <para>Describes the reasons a restart of the system is needed.</para>
+    </summary>
+    <seealso cref="RmGetList" />
+  </member>
+  <member name="RM_REBOOT_REASON.RmRebootReasonNone">
+    <summary>
+      <para>A system restart is not required.</para>
+    </summary>
+  </member>
+  <member name="RM_REBOOT_REASON.RmRebootReasonPermissionDenied">
+    <summary>
+      <para>The current user does not have
+sufficient privileges to shut down one or more processes.</para>
+    </summary>
+  </member>
+  <member name="RM_REBOOT_REASON.RmRebootReasonSessionMismatch">
+    <summary>
+      <para>One or more processes are
+running in another Terminal Services session.</para>
+    </summary>
+  </member>
+  <member name="RM_REBOOT_REASON.RmRebootReasonCriticalProcess">
+    <summary>
+      <para>A system restart is needed because one or more processes to be shut down are critical processes.</para>
+    </summary>
+  </member>
+  <member name="RM_REBOOT_REASON.RmRebootReasonCriticalService">
+    <summary>
+      <para>A system restart is needed because one or more services to be shut down are critical services.</para>
+    </summary>
+  </member>
+  <member name="RM_REBOOT_REASON.RmRebootReasonDetectedSelf">
+    <summary>
+      <para>A system restart is needed because the current process must be shut down.</para>
+    </summary>
+  </member>
+</doc>

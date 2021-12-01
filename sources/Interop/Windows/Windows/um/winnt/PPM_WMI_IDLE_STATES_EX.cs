@@ -9,26 +9,34 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PPM_WMI_IDLE_STATES_EX.xml' path='doc/member[@name="PPM_WMI_IDLE_STATES_EX"]/*' />
 public unsafe partial struct PPM_WMI_IDLE_STATES_EX
 {
+    /// <include file='PPM_WMI_IDLE_STATES_EX.xml' path='doc/member[@name="PPM_WMI_IDLE_STATES_EX.Type"]/*' />
     [NativeTypeName("DWORD")]
     public uint Type;
 
+    /// <include file='PPM_WMI_IDLE_STATES_EX.xml' path='doc/member[@name="PPM_WMI_IDLE_STATES_EX.Count"]/*' />
     [NativeTypeName("DWORD")]
     public uint Count;
 
+    /// <include file='PPM_WMI_IDLE_STATES_EX.xml' path='doc/member[@name="PPM_WMI_IDLE_STATES_EX.TargetState"]/*' />
     [NativeTypeName("DWORD")]
     public uint TargetState;
 
+    /// <include file='PPM_WMI_IDLE_STATES_EX.xml' path='doc/member[@name="PPM_WMI_IDLE_STATES_EX.OldState"]/*' />
     [NativeTypeName("DWORD")]
     public uint OldState;
 
+    /// <include file='PPM_WMI_IDLE_STATES_EX.xml' path='doc/member[@name="PPM_WMI_IDLE_STATES_EX.TargetProcessors"]/*' />
     [NativeTypeName("PVOID")]
     public void* TargetProcessors;
 
+    /// <include file='PPM_WMI_IDLE_STATES_EX.xml' path='doc/member[@name="PPM_WMI_IDLE_STATES_EX.State"]/*' />
     [NativeTypeName("PPM_WMI_IDLE_STATE [1]")]
     public _State_e__FixedBuffer State;
 
+    /// <include file='_State_e__FixedBuffer.xml' path='doc/member[@name="_State_e__FixedBuffer"]/*' />
     public partial struct _State_e__FixedBuffer
     {
         public PPM_WMI_IDLE_STATE e0;

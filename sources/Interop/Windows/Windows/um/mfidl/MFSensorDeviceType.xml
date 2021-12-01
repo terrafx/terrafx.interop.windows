@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MFSensorDeviceType">
+    <summary>
+      <para>Specifies the type of a sensor device. A value from this enumeration is returned by <see cref="IMFSensorDevice.GetDeviceType" />.</para>
+    </summary>
+  </member>
+  <member name="MFSensorDeviceType.MFSensorDeviceType_Unknown">
+    <summary>
+      <para>The sensor device type is unknown.</para>
+    </summary>
+  </member>
+  <member name="MFSensorDeviceType.MFSensorDeviceType_Device">
+    <summary>
+      <para>The sensor device is a physical device. Physical cameras may register as <a href="https://docs.microsoft.com//previous-versions/ff548567(v=vs.85)">KSCATEGORY_SENSOR_CAMERA</a> or <a href="https://docs.microsoft.com//previous-versions/ff548567(v=vs.85)">KSCATEGORY_VIDEO_CAMERA</a>  or both.</para>
+    </summary>
+  </member>
+  <member name="MFSensorDeviceType.MFSensorDeviceType_MediaSource">
+    <summary>
+      <para>The sensor device is a custom media source.</para>
+    </summary>
+  </member>
+  <member name="MFSensorDeviceType.MFSensorDeviceType_FrameProvider">
+    <summary>
+      <para>The sensor device is a legacy frame provider.</para>
+    </summary>
+  </member>
+  <member name="MFSensorDeviceType.MFSensorDeviceType_SensorTransform">
+    <summary></summary>
+  </member>
+</doc>

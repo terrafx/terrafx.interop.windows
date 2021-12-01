@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IPersistMediaPropertyBag.xml' path='doc/member[@name="IPersistMediaPropertyBag"]/*' />
 [Guid("5738E040-B67F-11D0-BD4D-00A0C911CE86")]
 [NativeTypeName("struct IPersistMediaPropertyBag : IPersist")]
 [NativeInheritance("IPersist")]
@@ -16,6 +17,7 @@ public unsafe partial struct IPersistMediaPropertyBag : IPersistMediaPropertyBag
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IPersistMediaPropertyBag : IPersistMediaPropertyBag
         return ((delegate* unmanaged<IPersistMediaPropertyBag*, Guid*, void**, int>)(lpVtbl[0]))((IPersistMediaPropertyBag*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IPersistMediaPropertyBag : IPersistMediaPropertyBag
         return ((delegate* unmanaged<IPersistMediaPropertyBag*, uint>)(lpVtbl[1]))((IPersistMediaPropertyBag*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IPersistMediaPropertyBag : IPersistMediaPropertyBag
         return ((delegate* unmanaged<IPersistMediaPropertyBag*, uint>)(lpVtbl[2]))((IPersistMediaPropertyBag*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IPersist.GetClassID" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetClassID([NativeTypeName("CLSID *")] Guid* pClassID)
@@ -46,6 +51,7 @@ public unsafe partial struct IPersistMediaPropertyBag : IPersistMediaPropertyBag
         return ((delegate* unmanaged<IPersistMediaPropertyBag*, Guid*, int>)(lpVtbl[3]))((IPersistMediaPropertyBag*)Unsafe.AsPointer(ref this), pClassID);
     }
 
+    /// <include file='IPersistMediaPropertyBag.xml' path='doc/member[@name="IPersistMediaPropertyBag.InitNew"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT InitNew()
@@ -53,6 +59,7 @@ public unsafe partial struct IPersistMediaPropertyBag : IPersistMediaPropertyBag
         return ((delegate* unmanaged<IPersistMediaPropertyBag*, int>)(lpVtbl[4]))((IPersistMediaPropertyBag*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IPersistMediaPropertyBag.xml' path='doc/member[@name="IPersistMediaPropertyBag.Load"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT Load(IMediaPropertyBag* pPropBag, IErrorLog* pErrorLog)
@@ -60,6 +67,7 @@ public unsafe partial struct IPersistMediaPropertyBag : IPersistMediaPropertyBag
         return ((delegate* unmanaged<IPersistMediaPropertyBag*, IMediaPropertyBag*, IErrorLog*, int>)(lpVtbl[5]))((IPersistMediaPropertyBag*)Unsafe.AsPointer(ref this), pPropBag, pErrorLog);
     }
 
+    /// <include file='IPersistMediaPropertyBag.xml' path='doc/member[@name="IPersistMediaPropertyBag.Save"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Save(IMediaPropertyBag* pPropBag, BOOL fClearDirty, BOOL fSaveAllProperties)

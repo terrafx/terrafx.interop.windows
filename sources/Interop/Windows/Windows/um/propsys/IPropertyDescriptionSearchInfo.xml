@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IPropertyDescriptionSearchInfo.GetColumnIndexType">
+    <summary>
+      <para>Determines the how the current property is indexed.</para>
+    </summary>
+    <param name="ppdciType">
+      <para>Type: <b><see cref="PROPDESC_COLUMNINDEX_TYPE" />*</b></para>
+      <para>When this method returns successfully, contains a pointer to a <see cref="PROPDESC_COLUMNINDEX_TYPE" /> constant. This constant describes whether the property is indexed and if so, if it is indexed in memory or on disk.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IPropertyDescriptionSearchInfo" />
+    <seealso cref="PROPDESC_COLUMNINDEX_TYPE" />
+  </member>
+  <member name="IPropertyDescriptionSearchInfo.GetMaxSize">
+    <summary>
+      <para>Gets the maximum size value from the property schema's <a href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-searchinfo">searchInfo</a> element.</para>
+    </summary>
+    <param name="pcbMaxSize">
+      <para>Type: <b>UINT*</b></para>
+      <para>Pointer to a value that, when this method returns successfully, receives the value of the maxSize attribute of the <a href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-searchinfo">searchInfo</a> element. The default is:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <b>Windows Vista</b>: 128 bytes</description>
+        </item>
+        <item>
+          <description>
+            <b>Windows 7 and later</b>: 512 bytes</description>
+        </item>
+      </list>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IPropertyDescriptionSearchInfo.GetProjectionString">
+    <summary>
+      <para>Returns a pointer to a string containing the canonical name of the item.</para>
+    </summary>
+    <param name="ppszProjection">
+      <para>Type: <b>LPWSTR*</b></para>
+      <para>When this method returns successfully, contains a pointer to a string containing the canonical name of the item.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IPropertyDescriptionSearchInfo.GetSearchInfoFlags">
+    <summary>
+      <para>Gets the <see cref="PROPDESC_SEARCHINFO_FLAGS" /> associated with the property.</para>
+    </summary>
+    <param name="ppdsiFlags">
+      <para>Type: <b><see cref="PROPDESC_SEARCHINFO_FLAGS" />*</b></para>
+      <para>When this method returns successfully, contains a pointer to the <see cref="PROPDESC_SEARCHINFO_FLAGS" /> associated with the property.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IPropertyDescriptionSearchInfo" />
+    <seealso cref="PROPDESC_SEARCHINFO_FLAGS" />
+  </member>
+  <member name="IPropertyDescriptionSearchInfo">
+    <summary>
+      <para>Exposes search-related information for a property. The information provided by this interface comes from the <a href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-propertydescription">propertyDescription</a> schema, <a href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-searchinfo">searchInfo</a> element for a given property. This information is used by the Windows Search Indexer. Most calling applications will not need to call this interface.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-propertydescription">propertyDescription</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-searchinfo">searchInfo</seealso>
+  </member>
+</doc>

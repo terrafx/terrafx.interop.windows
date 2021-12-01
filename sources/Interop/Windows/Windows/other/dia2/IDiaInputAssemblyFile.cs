@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IDiaInputAssemblyFile.xml' path='doc/member[@name="IDiaInputAssemblyFile"]/*' />
 [Guid("3BFE56B0-390C-4863-9430-1F3D083B7684")]
 [NativeTypeName("struct IDiaInputAssemblyFile : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IDiaInputAssemblyFile : IDiaInputAssemblyFile.Inter
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IDiaInputAssemblyFile : IDiaInputAssemblyFile.Inter
         return ((delegate* unmanaged<IDiaInputAssemblyFile*, Guid*, void**, int>)(lpVtbl[0]))((IDiaInputAssemblyFile*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IDiaInputAssemblyFile : IDiaInputAssemblyFile.Inter
         return ((delegate* unmanaged<IDiaInputAssemblyFile*, uint>)(lpVtbl[1]))((IDiaInputAssemblyFile*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IDiaInputAssemblyFile : IDiaInputAssemblyFile.Inter
         return ((delegate* unmanaged<IDiaInputAssemblyFile*, uint>)(lpVtbl[2]))((IDiaInputAssemblyFile*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDiaInputAssemblyFile.xml' path='doc/member[@name="IDiaInputAssemblyFile.get_uniqueId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT get_uniqueId([NativeTypeName("DWORD *")] uint* pRetVal)
@@ -46,6 +51,7 @@ public unsafe partial struct IDiaInputAssemblyFile : IDiaInputAssemblyFile.Inter
         return ((delegate* unmanaged<IDiaInputAssemblyFile*, uint*, int>)(lpVtbl[3]))((IDiaInputAssemblyFile*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
+    /// <include file='IDiaInputAssemblyFile.xml' path='doc/member[@name="IDiaInputAssemblyFile.get_index"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT get_index([NativeTypeName("DWORD *")] uint* pRetVal)
@@ -53,6 +59,7 @@ public unsafe partial struct IDiaInputAssemblyFile : IDiaInputAssemblyFile.Inter
         return ((delegate* unmanaged<IDiaInputAssemblyFile*, uint*, int>)(lpVtbl[4]))((IDiaInputAssemblyFile*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
+    /// <include file='IDiaInputAssemblyFile.xml' path='doc/member[@name="IDiaInputAssemblyFile.get_timestamp"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT get_timestamp([NativeTypeName("DWORD *")] uint* pRetVal)
@@ -60,6 +67,7 @@ public unsafe partial struct IDiaInputAssemblyFile : IDiaInputAssemblyFile.Inter
         return ((delegate* unmanaged<IDiaInputAssemblyFile*, uint*, int>)(lpVtbl[5]))((IDiaInputAssemblyFile*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
+    /// <include file='IDiaInputAssemblyFile.xml' path='doc/member[@name="IDiaInputAssemblyFile.get_pdbAvailableAtILMerge"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT get_pdbAvailableAtILMerge(BOOL* pRetVal)
@@ -67,6 +75,7 @@ public unsafe partial struct IDiaInputAssemblyFile : IDiaInputAssemblyFile.Inter
         return ((delegate* unmanaged<IDiaInputAssemblyFile*, BOOL*, int>)(lpVtbl[6]))((IDiaInputAssemblyFile*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
+    /// <include file='IDiaInputAssemblyFile.xml' path='doc/member[@name="IDiaInputAssemblyFile.get_fileName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT get_fileName([NativeTypeName("BSTR *")] ushort** pRetVal)
@@ -74,6 +83,7 @@ public unsafe partial struct IDiaInputAssemblyFile : IDiaInputAssemblyFile.Inter
         return ((delegate* unmanaged<IDiaInputAssemblyFile*, ushort**, int>)(lpVtbl[7]))((IDiaInputAssemblyFile*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
+    /// <include file='IDiaInputAssemblyFile.xml' path='doc/member[@name="IDiaInputAssemblyFile.get_version"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT get_version([NativeTypeName("DWORD")] uint cbData, [NativeTypeName("DWORD *")] uint* pcbData, byte* pbData)

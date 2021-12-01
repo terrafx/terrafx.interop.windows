@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAdvancedMediaCaptureSettings.xml' path='doc/member[@name="IAdvancedMediaCaptureSettings"]/*' />
 [Guid("24E0485F-A33E-4AA1-B564-6019B1D14F65")]
 [NativeTypeName("struct IAdvancedMediaCaptureSettings : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IAdvancedMediaCaptureSettings : IAdvancedMediaCaptu
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IAdvancedMediaCaptureSettings : IAdvancedMediaCaptu
         return ((delegate* unmanaged<IAdvancedMediaCaptureSettings*, Guid*, void**, int>)(lpVtbl[0]))((IAdvancedMediaCaptureSettings*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IAdvancedMediaCaptureSettings : IAdvancedMediaCaptu
         return ((delegate* unmanaged<IAdvancedMediaCaptureSettings*, uint>)(lpVtbl[1]))((IAdvancedMediaCaptureSettings*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IAdvancedMediaCaptureSettings : IAdvancedMediaCaptu
         return ((delegate* unmanaged<IAdvancedMediaCaptureSettings*, uint>)(lpVtbl[2]))((IAdvancedMediaCaptureSettings*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAdvancedMediaCaptureSettings.xml' path='doc/member[@name="IAdvancedMediaCaptureSettings.GetDirectxDeviceManager"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetDirectxDeviceManager(IMFDXGIDeviceManager** value)

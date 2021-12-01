@@ -8,43 +8,56 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMAGE_DELAYLOAD_DESCRIPTOR.xml' path='doc/member[@name="IMAGE_DELAYLOAD_DESCRIPTOR"]/*' />
 public partial struct IMAGE_DELAYLOAD_DESCRIPTOR
 {
+    /// <include file='IMAGE_DELAYLOAD_DESCRIPTOR.xml' path='doc/member[@name="IMAGE_DELAYLOAD_DESCRIPTOR.Attributes"]/*' />
     [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:19594:5)")]
     public _Attributes_e__Union Attributes;
 
+    /// <include file='IMAGE_DELAYLOAD_DESCRIPTOR.xml' path='doc/member[@name="IMAGE_DELAYLOAD_DESCRIPTOR.DllNameRVA"]/*' />
     [NativeTypeName("DWORD")]
     public uint DllNameRVA;
 
+    /// <include file='IMAGE_DELAYLOAD_DESCRIPTOR.xml' path='doc/member[@name="IMAGE_DELAYLOAD_DESCRIPTOR.ModuleHandleRVA"]/*' />
     [NativeTypeName("DWORD")]
     public uint ModuleHandleRVA;
 
+    /// <include file='IMAGE_DELAYLOAD_DESCRIPTOR.xml' path='doc/member[@name="IMAGE_DELAYLOAD_DESCRIPTOR.ImportAddressTableRVA"]/*' />
     [NativeTypeName("DWORD")]
     public uint ImportAddressTableRVA;
 
+    /// <include file='IMAGE_DELAYLOAD_DESCRIPTOR.xml' path='doc/member[@name="IMAGE_DELAYLOAD_DESCRIPTOR.ImportNameTableRVA"]/*' />
     [NativeTypeName("DWORD")]
     public uint ImportNameTableRVA;
 
+    /// <include file='IMAGE_DELAYLOAD_DESCRIPTOR.xml' path='doc/member[@name="IMAGE_DELAYLOAD_DESCRIPTOR.BoundImportAddressTableRVA"]/*' />
     [NativeTypeName("DWORD")]
     public uint BoundImportAddressTableRVA;
 
+    /// <include file='IMAGE_DELAYLOAD_DESCRIPTOR.xml' path='doc/member[@name="IMAGE_DELAYLOAD_DESCRIPTOR.UnloadInformationTableRVA"]/*' />
     [NativeTypeName("DWORD")]
     public uint UnloadInformationTableRVA;
 
+    /// <include file='IMAGE_DELAYLOAD_DESCRIPTOR.xml' path='doc/member[@name="IMAGE_DELAYLOAD_DESCRIPTOR.TimeDateStamp"]/*' />
     [NativeTypeName("DWORD")]
     public uint TimeDateStamp;
 
+    /// <include file='_Attributes_e__Union.xml' path='doc/member[@name="_Attributes_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public partial struct _Attributes_e__Union
     {
+        /// <include file='_Attributes_e__Union.xml' path='doc/member[@name="_Attributes_e__Union.AllAttributes"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("DWORD")]
         public uint AllAttributes;
 
+        /// <include file='_Attributes_e__Union.xml' path='doc/member[@name="_Attributes_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("_IMAGE_DELAYLOAD_DESCRIPTOR::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:19596:9)")]
         public _Anonymous_e__Struct Anonymous;
 
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.RvaBased"]/*' />
         public uint RvaBased
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -60,6 +73,7 @@ public partial struct IMAGE_DELAYLOAD_DESCRIPTOR
             }
         }
 
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.ReservedAttributes"]/*' />
         public uint ReservedAttributes
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -75,10 +89,12 @@ public partial struct IMAGE_DELAYLOAD_DESCRIPTOR
             }
         }
 
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />
         public partial struct _Anonymous_e__Struct
         {
             public uint _bitfield;
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.RvaBased"]/*' />
             [NativeTypeName("DWORD : 1")]
             public uint RvaBased
             {
@@ -95,6 +111,7 @@ public partial struct IMAGE_DELAYLOAD_DESCRIPTOR
                 }
             }
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.ReservedAttributes"]/*' />
             [NativeTypeName("DWORD : 31")]
             public uint ReservedAttributes
             {

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IPackageExecutionStateChangeNotification.OnStateChanged">
+    <summary>
+      <para>Called when package state changes during Windows Store app debugging.</para>
+    </summary>
+    <param name="pszPackageFullName">
+      <para>The package full name.</para>
+    </param>
+    <param name="pesNewState">
+      <para>The new state that the package changed to.</para>
+    </param>
+    <returns>
+      <para>Return <b>S_OK</b> when you implement the <b>OnStateChanged</b> method.</para>
+    </returns>
+    <seealso cref="IPackageExecutionStateChangeNotification" />
+    <seealso cref="RegisterForPackageStateChanges" />
+  </member>
+  <member name="IPackageExecutionStateChangeNotification">
+    <summary>
+      <para>Enables receiving package state-change notifications during Windows Store app debugging.</para>
+    </summary>
+    <remarks>
+      <para>Implement the <b>IPackageExecutionStateChangeNotification</b> interface when you need to receive package state-change notifications during Windows Store app debugging.</para>
+      <para>Call the <see cref="RegisterForPackageStateChanges" /> method to register for package state-change notifications.</para>
+    </remarks>
+    <seealso cref="IUnknown" />
+    <seealso cref="RegisterForPackageStateChanges" />
+  </member>
+</doc>

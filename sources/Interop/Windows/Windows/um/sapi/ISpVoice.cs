@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ISpVoice.xml' path='doc/member[@name="ISpVoice"]/*' />
 [Guid("6C44DF74-72B9-4992-A1EC-EF996E0422D4")]
 [NativeTypeName("struct ISpVoice : ISpEventSource")]
 [NativeInheritance("ISpEventSource")]
@@ -16,6 +17,7 @@ public unsafe partial struct ISpVoice : ISpVoice.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ISpVoice : ISpVoice.Interface
         return ((delegate* unmanaged<ISpVoice*, Guid*, void**, int>)(lpVtbl[0]))((ISpVoice*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ISpVoice : ISpVoice.Interface
         return ((delegate* unmanaged<ISpVoice*, uint>)(lpVtbl[1]))((ISpVoice*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ISpVoice : ISpVoice.Interface
         return ((delegate* unmanaged<ISpVoice*, uint>)(lpVtbl[2]))((ISpVoice*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ISpNotifySource.SetNotifySink" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetNotifySink(ISpNotifySink* pNotifySink)
@@ -46,6 +51,7 @@ public unsafe partial struct ISpVoice : ISpVoice.Interface
         return ((delegate* unmanaged<ISpVoice*, ISpNotifySink*, int>)(lpVtbl[3]))((ISpVoice*)Unsafe.AsPointer(ref this), pNotifySink);
     }
 
+    /// <inheritdoc cref="ISpNotifySource.SetNotifyWindowMessage" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetNotifyWindowMessage(HWND hWnd, uint Msg, WPARAM wParam, LPARAM lParam)
@@ -53,6 +59,7 @@ public unsafe partial struct ISpVoice : ISpVoice.Interface
         return ((delegate* unmanaged<ISpVoice*, HWND, uint, WPARAM, LPARAM, int>)(lpVtbl[4]))((ISpVoice*)Unsafe.AsPointer(ref this), hWnd, Msg, wParam, lParam);
     }
 
+    /// <inheritdoc cref="ISpNotifySource.SetNotifyCallbackFunction" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetNotifyCallbackFunction([NativeTypeName("SPNOTIFYCALLBACK *")] delegate* unmanaged<WPARAM, LPARAM, void> pfnCallback, WPARAM wParam, LPARAM lParam)
@@ -60,6 +67,7 @@ public unsafe partial struct ISpVoice : ISpVoice.Interface
         return ((delegate* unmanaged<ISpVoice*, delegate* unmanaged<WPARAM, LPARAM, void>, WPARAM, LPARAM, int>)(lpVtbl[5]))((ISpVoice*)Unsafe.AsPointer(ref this), pfnCallback, wParam, lParam);
     }
 
+    /// <inheritdoc cref="ISpNotifySource.SetNotifyCallbackInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT SetNotifyCallbackInterface(ISpNotifyCallback* pSpCallback, WPARAM wParam, LPARAM lParam)
@@ -67,6 +75,7 @@ public unsafe partial struct ISpVoice : ISpVoice.Interface
         return ((delegate* unmanaged<ISpVoice*, ISpNotifyCallback*, WPARAM, LPARAM, int>)(lpVtbl[6]))((ISpVoice*)Unsafe.AsPointer(ref this), pSpCallback, wParam, lParam);
     }
 
+    /// <inheritdoc cref="ISpNotifySource.SetNotifyWin32Event" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT SetNotifyWin32Event()
@@ -74,6 +83,7 @@ public unsafe partial struct ISpVoice : ISpVoice.Interface
         return ((delegate* unmanaged<ISpVoice*, int>)(lpVtbl[7]))((ISpVoice*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ISpNotifySource.WaitForNotifyEvent" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT WaitForNotifyEvent([NativeTypeName("DWORD")] uint dwMilliseconds)
@@ -81,6 +91,7 @@ public unsafe partial struct ISpVoice : ISpVoice.Interface
         return ((delegate* unmanaged<ISpVoice*, uint, int>)(lpVtbl[8]))((ISpVoice*)Unsafe.AsPointer(ref this), dwMilliseconds);
     }
 
+    /// <inheritdoc cref="ISpNotifySource.GetNotifyEventHandle" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HANDLE GetNotifyEventHandle()
@@ -88,6 +99,7 @@ public unsafe partial struct ISpVoice : ISpVoice.Interface
         return ((HANDLE)(((delegate* unmanaged<ISpVoice*, void*>)(lpVtbl[9]))((ISpVoice*)Unsafe.AsPointer(ref this))));
     }
 
+    /// <inheritdoc cref="ISpEventSource.SetInterest" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT SetInterest([NativeTypeName("ULONGLONG")] ulong ullEventInterest, [NativeTypeName("ULONGLONG")] ulong ullQueuedInterest)
@@ -95,6 +107,7 @@ public unsafe partial struct ISpVoice : ISpVoice.Interface
         return ((delegate* unmanaged<ISpVoice*, ulong, ulong, int>)(lpVtbl[10]))((ISpVoice*)Unsafe.AsPointer(ref this), ullEventInterest, ullQueuedInterest);
     }
 
+    /// <inheritdoc cref="ISpEventSource.GetEvents" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT GetEvents([NativeTypeName("ULONG")] uint ulCount, SPEVENT* pEventArray, [NativeTypeName("ULONG *")] uint* pulFetched)
@@ -102,6 +115,7 @@ public unsafe partial struct ISpVoice : ISpVoice.Interface
         return ((delegate* unmanaged<ISpVoice*, uint, SPEVENT*, uint*, int>)(lpVtbl[11]))((ISpVoice*)Unsafe.AsPointer(ref this), ulCount, pEventArray, pulFetched);
     }
 
+    /// <inheritdoc cref="ISpEventSource.GetInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT GetInfo(SPEVENTSOURCEINFO* pInfo)
@@ -109,6 +123,7 @@ public unsafe partial struct ISpVoice : ISpVoice.Interface
         return ((delegate* unmanaged<ISpVoice*, SPEVENTSOURCEINFO*, int>)(lpVtbl[12]))((ISpVoice*)Unsafe.AsPointer(ref this), pInfo);
     }
 
+    /// <include file='ISpVoice.xml' path='doc/member[@name="ISpVoice.SetOutput"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT SetOutput(IUnknown* pUnkOutput, BOOL fAllowFormatChanges)
@@ -116,6 +131,7 @@ public unsafe partial struct ISpVoice : ISpVoice.Interface
         return ((delegate* unmanaged<ISpVoice*, IUnknown*, BOOL, int>)(lpVtbl[13]))((ISpVoice*)Unsafe.AsPointer(ref this), pUnkOutput, fAllowFormatChanges);
     }
 
+    /// <include file='ISpVoice.xml' path='doc/member[@name="ISpVoice.GetOutputObjectToken"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT GetOutputObjectToken(ISpObjectToken** ppObjectToken)
@@ -123,6 +139,7 @@ public unsafe partial struct ISpVoice : ISpVoice.Interface
         return ((delegate* unmanaged<ISpVoice*, ISpObjectToken**, int>)(lpVtbl[14]))((ISpVoice*)Unsafe.AsPointer(ref this), ppObjectToken);
     }
 
+    /// <include file='ISpVoice.xml' path='doc/member[@name="ISpVoice.GetOutputStream"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT GetOutputStream(ISpStreamFormat** ppStream)
@@ -130,6 +147,7 @@ public unsafe partial struct ISpVoice : ISpVoice.Interface
         return ((delegate* unmanaged<ISpVoice*, ISpStreamFormat**, int>)(lpVtbl[15]))((ISpVoice*)Unsafe.AsPointer(ref this), ppStream);
     }
 
+    /// <include file='ISpVoice.xml' path='doc/member[@name="ISpVoice.Pause"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT Pause()
@@ -137,6 +155,7 @@ public unsafe partial struct ISpVoice : ISpVoice.Interface
         return ((delegate* unmanaged<ISpVoice*, int>)(lpVtbl[16]))((ISpVoice*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ISpVoice.xml' path='doc/member[@name="ISpVoice.Resume"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT Resume()
@@ -144,6 +163,7 @@ public unsafe partial struct ISpVoice : ISpVoice.Interface
         return ((delegate* unmanaged<ISpVoice*, int>)(lpVtbl[17]))((ISpVoice*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ISpVoice.xml' path='doc/member[@name="ISpVoice.SetVoice"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT SetVoice(ISpObjectToken* pToken)
@@ -151,6 +171,7 @@ public unsafe partial struct ISpVoice : ISpVoice.Interface
         return ((delegate* unmanaged<ISpVoice*, ISpObjectToken*, int>)(lpVtbl[18]))((ISpVoice*)Unsafe.AsPointer(ref this), pToken);
     }
 
+    /// <include file='ISpVoice.xml' path='doc/member[@name="ISpVoice.GetVoice"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT GetVoice(ISpObjectToken** ppToken)
@@ -158,6 +179,7 @@ public unsafe partial struct ISpVoice : ISpVoice.Interface
         return ((delegate* unmanaged<ISpVoice*, ISpObjectToken**, int>)(lpVtbl[19]))((ISpVoice*)Unsafe.AsPointer(ref this), ppToken);
     }
 
+    /// <include file='ISpVoice.xml' path='doc/member[@name="ISpVoice.Speak"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public HRESULT Speak([NativeTypeName("LPCWSTR")] ushort* pwcs, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("ULONG *")] uint* pulStreamNumber)
@@ -165,6 +187,7 @@ public unsafe partial struct ISpVoice : ISpVoice.Interface
         return ((delegate* unmanaged<ISpVoice*, ushort*, uint, uint*, int>)(lpVtbl[20]))((ISpVoice*)Unsafe.AsPointer(ref this), pwcs, dwFlags, pulStreamNumber);
     }
 
+    /// <include file='ISpVoice.xml' path='doc/member[@name="ISpVoice.SpeakStream"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
     public HRESULT SpeakStream(IStream* pStream, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("ULONG *")] uint* pulStreamNumber)
@@ -172,6 +195,7 @@ public unsafe partial struct ISpVoice : ISpVoice.Interface
         return ((delegate* unmanaged<ISpVoice*, IStream*, uint, uint*, int>)(lpVtbl[21]))((ISpVoice*)Unsafe.AsPointer(ref this), pStream, dwFlags, pulStreamNumber);
     }
 
+    /// <include file='ISpVoice.xml' path='doc/member[@name="ISpVoice.GetStatus"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
     public HRESULT GetStatus(SPVOICESTATUS* pStatus, [NativeTypeName("LPWSTR *")] ushort** ppszLastBookmark)
@@ -179,6 +203,7 @@ public unsafe partial struct ISpVoice : ISpVoice.Interface
         return ((delegate* unmanaged<ISpVoice*, SPVOICESTATUS*, ushort**, int>)(lpVtbl[22]))((ISpVoice*)Unsafe.AsPointer(ref this), pStatus, ppszLastBookmark);
     }
 
+    /// <include file='ISpVoice.xml' path='doc/member[@name="ISpVoice.Skip"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
     public HRESULT Skip([NativeTypeName("LPCWSTR")] ushort* pItemType, [NativeTypeName("long")] int lNumItems, [NativeTypeName("ULONG *")] uint* pulNumSkipped)
@@ -186,6 +211,7 @@ public unsafe partial struct ISpVoice : ISpVoice.Interface
         return ((delegate* unmanaged<ISpVoice*, ushort*, int, uint*, int>)(lpVtbl[23]))((ISpVoice*)Unsafe.AsPointer(ref this), pItemType, lNumItems, pulNumSkipped);
     }
 
+    /// <include file='ISpVoice.xml' path='doc/member[@name="ISpVoice.SetPriority"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(24)]
     public HRESULT SetPriority(SPVPRIORITY ePriority)
@@ -193,6 +219,7 @@ public unsafe partial struct ISpVoice : ISpVoice.Interface
         return ((delegate* unmanaged<ISpVoice*, SPVPRIORITY, int>)(lpVtbl[24]))((ISpVoice*)Unsafe.AsPointer(ref this), ePriority);
     }
 
+    /// <include file='ISpVoice.xml' path='doc/member[@name="ISpVoice.GetPriority"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(25)]
     public HRESULT GetPriority(SPVPRIORITY* pePriority)
@@ -200,6 +227,7 @@ public unsafe partial struct ISpVoice : ISpVoice.Interface
         return ((delegate* unmanaged<ISpVoice*, SPVPRIORITY*, int>)(lpVtbl[25]))((ISpVoice*)Unsafe.AsPointer(ref this), pePriority);
     }
 
+    /// <include file='ISpVoice.xml' path='doc/member[@name="ISpVoice.SetAlertBoundary"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(26)]
     public HRESULT SetAlertBoundary(SPEVENTENUM eBoundary)
@@ -207,6 +235,7 @@ public unsafe partial struct ISpVoice : ISpVoice.Interface
         return ((delegate* unmanaged<ISpVoice*, SPEVENTENUM, int>)(lpVtbl[26]))((ISpVoice*)Unsafe.AsPointer(ref this), eBoundary);
     }
 
+    /// <include file='ISpVoice.xml' path='doc/member[@name="ISpVoice.GetAlertBoundary"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(27)]
     public HRESULT GetAlertBoundary(SPEVENTENUM* peBoundary)
@@ -214,6 +243,7 @@ public unsafe partial struct ISpVoice : ISpVoice.Interface
         return ((delegate* unmanaged<ISpVoice*, SPEVENTENUM*, int>)(lpVtbl[27]))((ISpVoice*)Unsafe.AsPointer(ref this), peBoundary);
     }
 
+    /// <include file='ISpVoice.xml' path='doc/member[@name="ISpVoice.SetRate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(28)]
     public HRESULT SetRate([NativeTypeName("long")] int RateAdjust)
@@ -221,6 +251,7 @@ public unsafe partial struct ISpVoice : ISpVoice.Interface
         return ((delegate* unmanaged<ISpVoice*, int, int>)(lpVtbl[28]))((ISpVoice*)Unsafe.AsPointer(ref this), RateAdjust);
     }
 
+    /// <include file='ISpVoice.xml' path='doc/member[@name="ISpVoice.GetRate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(29)]
     public HRESULT GetRate([NativeTypeName("long *")] int* pRateAdjust)
@@ -228,6 +259,7 @@ public unsafe partial struct ISpVoice : ISpVoice.Interface
         return ((delegate* unmanaged<ISpVoice*, int*, int>)(lpVtbl[29]))((ISpVoice*)Unsafe.AsPointer(ref this), pRateAdjust);
     }
 
+    /// <include file='ISpVoice.xml' path='doc/member[@name="ISpVoice.SetVolume"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(30)]
     public HRESULT SetVolume(ushort usVolume)
@@ -235,6 +267,7 @@ public unsafe partial struct ISpVoice : ISpVoice.Interface
         return ((delegate* unmanaged<ISpVoice*, ushort, int>)(lpVtbl[30]))((ISpVoice*)Unsafe.AsPointer(ref this), usVolume);
     }
 
+    /// <include file='ISpVoice.xml' path='doc/member[@name="ISpVoice.GetVolume"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(31)]
     public HRESULT GetVolume(ushort* pusVolume)
@@ -242,6 +275,7 @@ public unsafe partial struct ISpVoice : ISpVoice.Interface
         return ((delegate* unmanaged<ISpVoice*, ushort*, int>)(lpVtbl[31]))((ISpVoice*)Unsafe.AsPointer(ref this), pusVolume);
     }
 
+    /// <include file='ISpVoice.xml' path='doc/member[@name="ISpVoice.WaitUntilDone"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(32)]
     public HRESULT WaitUntilDone([NativeTypeName("ULONG")] uint msTimeout)
@@ -249,6 +283,7 @@ public unsafe partial struct ISpVoice : ISpVoice.Interface
         return ((delegate* unmanaged<ISpVoice*, uint, int>)(lpVtbl[32]))((ISpVoice*)Unsafe.AsPointer(ref this), msTimeout);
     }
 
+    /// <include file='ISpVoice.xml' path='doc/member[@name="ISpVoice.SetSyncSpeakTimeout"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(33)]
     public HRESULT SetSyncSpeakTimeout([NativeTypeName("ULONG")] uint msTimeout)
@@ -256,6 +291,7 @@ public unsafe partial struct ISpVoice : ISpVoice.Interface
         return ((delegate* unmanaged<ISpVoice*, uint, int>)(lpVtbl[33]))((ISpVoice*)Unsafe.AsPointer(ref this), msTimeout);
     }
 
+    /// <include file='ISpVoice.xml' path='doc/member[@name="ISpVoice.GetSyncSpeakTimeout"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(34)]
     public HRESULT GetSyncSpeakTimeout([NativeTypeName("ULONG *")] uint* pmsTimeout)
@@ -263,6 +299,7 @@ public unsafe partial struct ISpVoice : ISpVoice.Interface
         return ((delegate* unmanaged<ISpVoice*, uint*, int>)(lpVtbl[34]))((ISpVoice*)Unsafe.AsPointer(ref this), pmsTimeout);
     }
 
+    /// <include file='ISpVoice.xml' path='doc/member[@name="ISpVoice.SpeakCompleteEvent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(35)]
     public HANDLE SpeakCompleteEvent()
@@ -270,6 +307,7 @@ public unsafe partial struct ISpVoice : ISpVoice.Interface
         return ((HANDLE)(((delegate* unmanaged<ISpVoice*, void*>)(lpVtbl[35]))((ISpVoice*)Unsafe.AsPointer(ref this))));
     }
 
+    /// <include file='ISpVoice.xml' path='doc/member[@name="ISpVoice.IsUISupported"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(36)]
     public HRESULT IsUISupported([NativeTypeName("LPCWSTR")] ushort* pszTypeOfUI, void* pvExtraData, [NativeTypeName("ULONG")] uint cbExtraData, BOOL* pfSupported)
@@ -277,6 +315,7 @@ public unsafe partial struct ISpVoice : ISpVoice.Interface
         return ((delegate* unmanaged<ISpVoice*, ushort*, void*, uint, BOOL*, int>)(lpVtbl[36]))((ISpVoice*)Unsafe.AsPointer(ref this), pszTypeOfUI, pvExtraData, cbExtraData, pfSupported);
     }
 
+    /// <include file='ISpVoice.xml' path='doc/member[@name="ISpVoice.DisplayUI"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(37)]
     public HRESULT DisplayUI(HWND hwndParent, [NativeTypeName("LPCWSTR")] ushort* pszTitle, [NativeTypeName("LPCWSTR")] ushort* pszTypeOfUI, void* pvExtraData, [NativeTypeName("ULONG")] uint cbExtraData)

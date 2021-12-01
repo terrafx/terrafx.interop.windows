@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMAGEHLP_GET_TYPE_INFO_PARAMS">
+    <summary>
+      <para>Contains type information for a module.</para>
+    </summary>
+    <seealso cref="IMAGEHLP_SYMBOL_TYPE_INFO" />
+    <seealso cref="SymGetTypeInfoEx" />
+  </member>
+  <member name="IMAGEHLP_GET_TYPE_INFO_PARAMS.SizeOfStruct">
+    <summary>
+      <para>The size of this structure, in bytes.</para>
+    </summary>
+  </member>
+  <member name="IMAGEHLP_GET_TYPE_INFO_PARAMS.Flags">
+    <summary>
+      <para>This member can be one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAGEHLP_GET_TYPE_INFO_CHILDREN</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000002</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Retrieve information about the children of the specified types, not the types themselves.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAGEHLP_GET_TYPE_INFO_UNCACHED</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000001</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Do not cache the data for later retrievals. It is good to use this flag if you will not be requesting the information again.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="IMAGEHLP_GET_TYPE_INFO_PARAMS.NumIds">
+    <summary>
+      <para>The number of elements specified in the <b>TypeIds</b> array.</para>
+    </summary>
+  </member>
+  <member name="IMAGEHLP_GET_TYPE_INFO_PARAMS.TypeIds">
+    <summary>
+      <para>An array of type indexes.</para>
+    </summary>
+  </member>
+  <member name="IMAGEHLP_GET_TYPE_INFO_PARAMS.TagFilter">
+    <summary>
+      <para>The filter for return values. For example, set this member to 1 &lt;&lt; <b>SymTagData</b> to return only results with a symbol tag of <b>SymTagData</b>. For a list of tags, see the <b>SymTagEnum</b> type defined in Dbghelp.h</para>
+    </summary>
+  </member>
+  <member name="IMAGEHLP_GET_TYPE_INFO_PARAMS.NumReqs">
+    <summary>
+      <para>The number of elements specified in the arrays specified in the <b>ReqKinds</b>, <b>ReqOffsets</b>, and <b>ReqSizes</b> members. These arrays must be the same size.</para>
+    </summary>
+  </member>
+  <member name="IMAGEHLP_GET_TYPE_INFO_PARAMS.ReqKinds">
+    <summary>
+      <para>An array of information types to be requested. Each element is one of the enumeration values in the <see cref="IMAGEHLP_SYMBOL_TYPE_INFO" /> enumeration type.</para>
+    </summary>
+  </member>
+  <member name="IMAGEHLP_GET_TYPE_INFO_PARAMS.ReqOffsets">
+    <summary>
+      <para>An array of offsets that specify where to store the data for each request within each element of <b>Buffer</b> array.</para>
+    </summary>
+  </member>
+  <member name="IMAGEHLP_GET_TYPE_INFO_PARAMS.ReqSizes">
+    <summary>
+      <para>The size of each data request, in bytes. The required sizes are described in <see cref="IMAGEHLP_SYMBOL_TYPE_INFO" />.</para>
+    </summary>
+  </member>
+  <member name="IMAGEHLP_GET_TYPE_INFO_PARAMS.ReqStride">
+    <summary>
+      <para>The number of bytes for each element in the <b>Buffer</b> array.</para>
+    </summary>
+  </member>
+  <member name="IMAGEHLP_GET_TYPE_INFO_PARAMS.BufferSize">
+    <summary>
+      <para>The size of the <b>Buffer</b> array, in bytes.</para>
+    </summary>
+  </member>
+  <member name="IMAGEHLP_GET_TYPE_INFO_PARAMS.Buffer">
+    <summary>
+      <para>An array of records used for storing query results. Each record is separated by <b>ReqStride</b> bytes. Each type for which data is to be retrieved requires one record in the array. Within each record, there are <b>NumReqs</b> pieces of data stored as the result of individual queries. The data is stored within the record according to the offsets specified in <b>ReqOffsets</b>. The format of the data depends on the value of the <b>ReqKinds</b> member in use.</para>
+    </summary>
+  </member>
+  <member name="IMAGEHLP_GET_TYPE_INFO_PARAMS.EntriesMatched">
+    <summary>
+      <para>The number of type entries that match the filter.</para>
+    </summary>
+  </member>
+  <member name="IMAGEHLP_GET_TYPE_INFO_PARAMS.EntriesFilled">
+    <summary>
+      <para>The number of elements in the <b>Buffer</b> array that received results.</para>
+    </summary>
+  </member>
+  <member name="IMAGEHLP_GET_TYPE_INFO_PARAMS.TagsFound">
+    <summary>
+      <para>A bitmask indicating all tag bits encountered during the search operation.</para>
+    </summary>
+  </member>
+  <member name="IMAGEHLP_GET_TYPE_INFO_PARAMS.AllReqsValid">
+    <summary>
+      <para>A bitmask indicate the bit-wise AND of all <b>ReqsValid</b> fields.</para>
+    </summary>
+  </member>
+  <member name="IMAGEHLP_GET_TYPE_INFO_PARAMS.NumReqsValid">
+    <summary>
+      <para>The size of <b>ReqsValid</b>, in elements.</para>
+    </summary>
+  </member>
+  <member name="IMAGEHLP_GET_TYPE_INFO_PARAMS.ReqsValid">
+    <summary>
+      <para>A bitmask indexed by <b>Buffer</b> element index that indicates which request data is valid. This member can be <b>NULL</b>.</para>
+    </summary>
+  </member>
+</doc>

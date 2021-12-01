@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="TBS_CONTEXT_PARAMS">
+    <summary>
+      <para>Specifies the version of the TBS context implementation.</para>
+      <para>To connect to TBS, the client must run as administrator. TBS also limits access to locality ZERO.</para>
+    </summary>
+  </member>
+  <member name="TBS_CONTEXT_PARAMS.version">
+    <summary>
+      <para>The version of the TBS context implementation. This parameter must be TBS_CONTEXT_VERSION_ONE.</para>
+    </summary>
+  </member>
+</doc>

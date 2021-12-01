@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="eAVFastDecodeMode">
+    <summary>
+      <para>Specifies the video decoding speed. This enumeration is used with the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avdecvideofastdecodemode">AVDecVideoFastDecodeMode</a> property.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-enumerations">Codec API Enumerations</seealso>
+    <seealso cref="ICodecAPI Interface" />
+  </member>
+  <member name="eAVFastDecodeMode.eVideoDecodeCompliant">
+    <summary>
+      <para>Use normal decoding.</para>
+    </summary>
+  </member>
+  <member name="eAVFastDecodeMode.eVideoDecodeOptimalLF">
+    <summary>
+      <para>Use the optimal loop filter.</para>
+    </summary>
+  </member>
+  <member name="eAVFastDecodeMode.eVideoDecodeDisableLF">
+    <summary>
+      <para>Disable the loop filter.</para>
+    </summary>
+  </member>
+  <member name="eAVFastDecodeMode.eVideoDecodeFastest">
+    <summary>
+      <para>Use the fastest decoding mode.</para>
+    </summary>
+  </member>
+</doc>

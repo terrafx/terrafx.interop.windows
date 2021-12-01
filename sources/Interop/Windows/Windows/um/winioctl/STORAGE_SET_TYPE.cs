@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STORAGE_SET_TYPE.xml' path='doc/member[@name="STORAGE_SET_TYPE"]/*' />
 public enum STORAGE_SET_TYPE
 {
+    /// <include file='STORAGE_SET_TYPE.xml' path='doc/member[@name="STORAGE_SET_TYPE.PropertyStandardSet"]/*' />
     PropertyStandardSet = 0,
+
+    /// <include file='STORAGE_SET_TYPE.xml' path='doc/member[@name="STORAGE_SET_TYPE.PropertyExistsSet"]/*' />
     PropertyExistsSet,
+
+    /// <include file='STORAGE_SET_TYPE.xml' path='doc/member[@name="STORAGE_SET_TYPE.PropertySetMaxDefined"]/*' />
     PropertySetMaxDefined,
 }

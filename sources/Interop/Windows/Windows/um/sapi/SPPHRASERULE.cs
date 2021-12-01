@@ -5,28 +5,37 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SPPHRASERULE.xml' path='doc/member[@name="SPPHRASERULE"]/*' />
 public unsafe partial struct SPPHRASERULE
 {
+    /// <include file='SPPHRASERULE.xml' path='doc/member[@name="SPPHRASERULE.pszName"]/*' />
     [NativeTypeName("LPCWSTR")]
     public ushort* pszName;
 
+    /// <include file='SPPHRASERULE.xml' path='doc/member[@name="SPPHRASERULE.ulId"]/*' />
     [NativeTypeName("ULONG")]
     public uint ulId;
 
+    /// <include file='SPPHRASERULE.xml' path='doc/member[@name="SPPHRASERULE.ulFirstElement"]/*' />
     [NativeTypeName("ULONG")]
     public uint ulFirstElement;
 
+    /// <include file='SPPHRASERULE.xml' path='doc/member[@name="SPPHRASERULE.ulCountOfElements"]/*' />
     [NativeTypeName("ULONG")]
     public uint ulCountOfElements;
 
+    /// <include file='SPPHRASERULE.xml' path='doc/member[@name="SPPHRASERULE.pNextSibling"]/*' />
     [NativeTypeName("const SPPHRASERULE *")]
     public SPPHRASERULE* pNextSibling;
 
+    /// <include file='SPPHRASERULE.xml' path='doc/member[@name="SPPHRASERULE.pFirstChild"]/*' />
     [NativeTypeName("const SPPHRASERULE *")]
     public SPPHRASERULE* pFirstChild;
 
+    /// <include file='SPPHRASERULE.xml' path='doc/member[@name="SPPHRASERULE.SREngineConfidence"]/*' />
     public float SREngineConfidence;
 
+    /// <include file='SPPHRASERULE.xml' path='doc/member[@name="SPPHRASERULE.Confidence"]/*' />
     [NativeTypeName("signed char")]
     public sbyte Confidence;
 }

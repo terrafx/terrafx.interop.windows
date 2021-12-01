@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='AudioSessionState.xml' path='doc/member[@name="AudioSessionState"]/*' />
 public enum AudioSessionState
 {
+    /// <include file='AudioSessionState.xml' path='doc/member[@name="AudioSessionState.AudioSessionStateInactive"]/*' />
     AudioSessionStateInactive = 0,
+
+    /// <include file='AudioSessionState.xml' path='doc/member[@name="AudioSessionState.AudioSessionStateActive"]/*' />
     AudioSessionStateActive = 1,
+
+    /// <include file='AudioSessionState.xml' path='doc/member[@name="AudioSessionState.AudioSessionStateExpired"]/*' />
     AudioSessionStateExpired = 2,
 }

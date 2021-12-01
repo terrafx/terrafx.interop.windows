@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PENDINGMSG.xml' path='doc/member[@name="PENDINGMSG"]/*' />
 public enum PENDINGMSG
 {
+    /// <include file='PENDINGMSG.xml' path='doc/member[@name="PENDINGMSG.PENDINGMSG_CANCELCALL"]/*' />
     PENDINGMSG_CANCELCALL = 0,
+
+    /// <include file='PENDINGMSG.xml' path='doc/member[@name="PENDINGMSG.PENDINGMSG_WAITNOPROCESS"]/*' />
     PENDINGMSG_WAITNOPROCESS = 1,
+
+    /// <include file='PENDINGMSG.xml' path='doc/member[@name="PENDINGMSG.PENDINGMSG_WAITDEFPROCESS"]/*' />
     PENDINGMSG_WAITDEFPROCESS = 2,
 }

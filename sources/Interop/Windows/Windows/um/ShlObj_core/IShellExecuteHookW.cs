@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IShellExecuteHookW.xml' path='doc/member[@name="IShellExecuteHookW"]/*' />
 [Guid("000214FB-0000-0000-C000-000000000046")]
 [NativeTypeName("struct IShellExecuteHookW : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IShellExecuteHookW : IShellExecuteHookW.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IShellExecuteHookW : IShellExecuteHookW.Interface
         return ((delegate* unmanaged<IShellExecuteHookW*, Guid*, void**, int>)(lpVtbl[0]))((IShellExecuteHookW*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IShellExecuteHookW : IShellExecuteHookW.Interface
         return ((delegate* unmanaged<IShellExecuteHookW*, uint>)(lpVtbl[1]))((IShellExecuteHookW*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IShellExecuteHookW : IShellExecuteHookW.Interface
         return ((delegate* unmanaged<IShellExecuteHookW*, uint>)(lpVtbl[2]))((IShellExecuteHookW*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IShellExecuteHookW.xml' path='doc/member[@name="IShellExecuteHookW.Execute"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Execute([NativeTypeName("LPSHELLEXECUTEINFOW")] void* pei)

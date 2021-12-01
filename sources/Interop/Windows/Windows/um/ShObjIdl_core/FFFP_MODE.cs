@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='FFFP_MODE.xml' path='doc/member[@name="FFFP_MODE"]/*' />
 public enum FFFP_MODE
 {
+    /// <include file='FFFP_MODE.xml' path='doc/member[@name="FFFP_MODE.FFFP_EXACTMATCH"]/*' />
     FFFP_EXACTMATCH = 0,
+
+    /// <include file='FFFP_MODE.xml' path='doc/member[@name="FFFP_MODE.FFFP_NEARESTPARENTMATCH"]/*' />
     FFFP_NEARESTPARENTMATCH = (FFFP_EXACTMATCH + 1),
 }

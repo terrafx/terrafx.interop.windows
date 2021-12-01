@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="APPX_PACKAGE_ARCHITECTURE2">
+    <summary>
+      <para>Specifies the processor architectures supported by a package.</para>
+    </summary>
+    <seealso cref="IAppxManifestPackageId.GetArchitecture" />
+  </member>
+  <member name="APPX_PACKAGE_ARCHITECTURE2.APPX_PACKAGE_ARCHITECTURE2_X86">
+    <summary>
+      <para>The x86, 32-bit processor architecture.</para>
+    </summary>
+  </member>
+  <member name="APPX_PACKAGE_ARCHITECTURE2.APPX_PACKAGE_ARCHITECTURE2_ARM">
+    <summary>
+      <para>The ARM processor architecture.</para>
+    </summary>
+  </member>
+  <member name="APPX_PACKAGE_ARCHITECTURE2.APPX_PACKAGE_ARCHITECTURE2_X64">
+    <summary>
+      <para>The x64, 64-bit processor architecture.</para>
+    </summary>
+  </member>
+  <member name="APPX_PACKAGE_ARCHITECTURE2.APPX_PACKAGE_ARCHITECTURE2_NEUTRAL">
+    <summary>
+      <para>Any  processor architecture.</para>
+    </summary>
+  </member>
+  <member name="APPX_PACKAGE_ARCHITECTURE2.APPX_PACKAGE_ARCHITECTURE2_ARM64">
+    <summary>
+      <para>The 64-bit ARM processor architecture.</para>
+    </summary>
+  </member>
+  <member name="APPX_PACKAGE_ARCHITECTURE2.APPX_PACKAGE_ARCHITECTURE2_X86_ON_ARM64">
+    <summary>
+      <para>A 32-bit app package that runs on a 64-bit ARM processor.</para>
+    </summary>
+  </member>
+  <member name="APPX_PACKAGE_ARCHITECTURE2.APPX_PACKAGE_ARCHITECTURE2_UNKNOWN">
+    <summary>
+      <para>Unknown app package architecture.</para>
+    </summary>
+  </member>
+</doc>

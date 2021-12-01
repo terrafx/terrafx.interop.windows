@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CERT_CREATE_CONTEXT_PARA">
+    <summary>
+      <para>The <b>CERT_CREATE_CONTEXT_PARA</b> structure defines additional values that can be used when calling the <see cref="CertCreateContext" /> function.</para>
+    </summary>
+    <seealso cref="CertCreateContext" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/wincrypt/nc-wincrypt-pfn_cert_create_context_sort_func">PFN_CERT_CREATE_CONTEXT_SORT_FUNC</seealso>
+  </member>
+  <member name="CERT_CREATE_CONTEXT_PARA.cbSize">
+    <summary>
+      <para>The size, in bytes, of this structure.</para>
+    </summary>
+  </member>
+  <member name="CERT_CREATE_CONTEXT_PARA.pfnFree">
+    <summary>
+      <para>A pointer to the function that  frees the <i>pbEncoded</i> parameter of the <see cref="CertCreateContext" /> function. The  <b>pfnFree</b> function is called when the context created by  <b>CertCreateContext</b> is freed. This value can be <b>NULL</b>, in which case the <i>pbEncoded</i> parameter of the <b>CertCreateContext</b> function is not freed.</para>
+    </summary>
+  </member>
+  <member name="CERT_CREATE_CONTEXT_PARA.pvFree">
+    <summary>
+      <para>The address of the memory that gets freed by the <b>pfnFree</b> function. If <b>pvFree</b> is <b>NULL</b>, then the <i>pbEncoded</i> parameter of the <see cref="CertCreateContext" /> function is freed.</para>
+    </summary>
+  </member>
+  <member name="CERT_CREATE_CONTEXT_PARA.pfnSort">
+    <summary>
+      <para>A <a href="https://docs.microsoft.com//windows/desktop/api/wincrypt/nc-wincrypt-pfn_cert_create_context_sort_func">PFN_CERT_CREATE_CONTEXT_SORT_FUNC</a> function pointer that will be called for each sorted context entry.</para>
+      <para>This member is only present for a <b>CERT_STORE_CTL_CONTEXT</b> when the <b>CERT_CREATE_CONTEXT_SORTED_FLAG</b> flag is set in the <i>dwFlags</i> parameter of the <see cref="CertCreateContext" /> function. You must verify that this member is present before trying to access it by examining the <b>cbSize</b> member of this structure.</para>
+    </summary>
+  </member>
+  <member name="CERT_CREATE_CONTEXT_PARA.pvSort">
+    <summary>
+      <para>An application-defined value that will be passed in the <i>pvSort</i> parameter of the <a href="https://docs.microsoft.com//windows/desktop/api/wincrypt/nc-wincrypt-pfn_cert_create_context_sort_func">PFN_CERT_CREATE_CONTEXT_SORT_FUNC</a> callback function.</para>
+      <para>This member is only present for a <b>CERT_STORE_CTL_CONTEXT</b> when the <b>CERT_CREATE_CONTEXT_SORTED_FLAG</b> flag is set in the <i>dwFlags</i> parameter of the <see cref="CertCreateContext" /> function. You must verify that this member is present before trying to access it by examining the <b>cbSize</b> member of this structure.</para>
+    </summary>
+  </member>
+</doc>

@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IWICPlanarBitmapSourceTransform.CopyPixels">
+    <summary>
+      <para>Copies pixels into the destination planes.  Configured by the supplied input parameters.</para>
+      <para>If a <i>dstTransform</i>, scale, or format conversion is specified, <i>cbStride</i> is the transformed stride and is based on the destination pixel format of the <i>pDstPlanes</i> parameter, not the original source's pixel format.</para>
+    </summary>
+    <param name="prcSource">
+      <para>Type: <b>const <see cref="WICRect" />*</b></para>
+      <para>The source rectangle of pixels to copy.</para>
+    </param>
+    <param name="uiWidth">
+      <para>Type: <b>UINT</b></para>
+      <para>The width to scale the source bitmap.  This parameter must be equal to a value obtainable through <see cref="IWICPlanarBitmapSourceTransform. DoesSupportTransform" />.</para>
+    </param>
+    <param name="uiHeight">
+      <para>Type: <b>UINT</b></para>
+      <para>The height to scale the source bitmap.  This parameter must be equal to a value obtainable through <see cref="IWICPlanarBitmapSourceTransform. DoesSupportTransform" />.</para>
+    </param>
+    <param name="dstTransform">
+      <para>Type: <b><see cref="WICBitmapTransformOptions" /></b></para>
+      <para>The desired rotation or flip to perform prior to the pixel copy.  A rotate can be combined with a flip horizontal or a flip vertical, see <see cref="WICBitmapTransformOptions" />.</para>
+    </param>
+    <param name="dstPlanarOptions">
+      <para>Type: <b>const <see cref="WICPlanarOptions" /></b></para>
+      <para>Used to specify additional configuration options for the transform.  See <see cref="WICPlanarOptions" /> for more detail.</para>
+      <para>WIC JPEG Decoder:
+<see cref="WICPlanarOptionsPreserveSubsampling" /> can be specified to retain the subsampling ratios when downscaling.  By default, the JPEG decoder attempts to preserve quality by downscaling only the Y plane in some cases, changing the image to 4:4:4 chroma subsampling.</para>
+    </param>
+    <param name="pDstPlanes">
+      <para>Type: <b><see cref="WICBitmapPlane" /></b></para>
+      <para>Specifies the pixel format and output buffer for each component plane.  The number of planes and pixel format of each plane must match values obtainable through  <see cref="IWICPlanarBitmapSourceTransform.DoesSupportTransform" />.</para>
+    </param>
+    <param name="cPlanes">
+      <para>Type: <b>UINT</b></para>
+      <para>The number of component planes specified by the <i>pDstPlanes</i> parameter.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If the specified scale, flip/rotate, and planar format configuration is not supported this method fails with <b>WINCODEC_ERR_INVALIDPARAMETER</b>.  You can check if a transform is supported by calling <see cref="IWICPlanarBitmapSourceTransform.DoesSupportTransform" />.</para>
+    </returns>
+    <remarks>
+      <para>WIC JPEG Decoder:
+Depending on the configured chroma subsampling of the image, the source rectangle has the following restrictions:</para>
+      <list type="table">
+        <listheader>
+          <description>Chroma Subsampling</description>
+          <description>X Coordinate</description>
+          <description>Y Coordinate</description>
+          <description>Chroma Width</description>
+          <description>Chroma Height</description>
+        </listheader>
+        <item>
+          <description>4:2:0</description>
+          <description>Multiple of 2</description>
+          <description>Multiple of 2</description>
+          <description>lumaWidth / 2 Rounded up to the nearest integer.</description>
+          <description>lumaHeight / 2 Rounded up to the nearest integer.</description>
+        </item>
+        <item>
+          <description>4:2:2</description>
+          <description>Multiple of 2</description>
+          <description>Any</description>
+          <description>lumaWidth / 2 Rounded up to the nearest integer.</description>
+          <description>lumaHeight</description>
+        </item>
+        <item>
+          <description>4:4:4</description>
+          <description>Any</description>
+          <description>Any</description>
+          <description>llumaWidth</description>
+          <description>llumaHeight</description>
+        </item>
+        <item>
+          <description>4:4:0</description>
+          <description>Any</description>
+          <description>Multiple of 2</description>
+          <description>lumaWidth</description>
+          <description>llumaHeight / 2 Rounded up to the nearest integer.</description>
+        </item>
+      </list>
+      <para>The <i>pDstPlanes</i> parameter supports the following pixel formats.</para>
+      <list type="table">
+        <listheader>
+          <description>Plane Count</description>
+          <description>Plane 1</description>
+          <description>Plane 2</description>
+          <description>Plane 3</description>
+        </listheader>
+        <item>
+          <description>3</description>
+          <description>GUID_WICPixelFormat8bppY</description>
+          <description>GUID_WICPixelFormat8bppCb</description>
+          <description>GUID_WICPixelFormat8bppCr</description>
+        </item>
+        <item>
+          <description>2</description>
+          <description>GUID_WICPixelFormat8bppY</description>
+          <description>GUID_WICPixelFormat16bppCbCr</description>
+          <description>N/A</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="IWICPlanarBitmapSourceTransform" />
+  </member>
+  <member name="IWICPlanarBitmapSourceTransform">
+    <summary>
+      <para>Provides access to planar Y’CbCr pixel formats where pixel components are stored in separate component planes.  This interface also allows access to other codec optimizations for flip/rotate, scale, and format conversion to other Y’CbCr planar formats; this is similar to the pre-existing <see cref="IWICBitmapSourceTransform" /> interface.</para>
+      <para>QueryInterface can be used to obtain this interface from the Windows provided implementations of <see cref="IWICBitmapFrameDecode" /> for the JPEG decoder, <see cref="IWICBitmapScaler" />, <see cref="IWICBitmapFlipRotator" />, and <see cref="IWICColorTransform" />.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/wic/jpeg-ycbcr-support">JPEG YCbCr Support</seealso>
+  </member>
+</doc>

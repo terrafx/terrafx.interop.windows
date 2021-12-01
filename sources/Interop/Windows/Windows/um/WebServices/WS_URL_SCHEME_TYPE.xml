@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_URL_SCHEME_TYPE">
+    <summary>
+      <para>The set of schemes used with <see cref="WsDecodeUrl" />, <see cref="WsEncodeUrl" />,
+and <see cref="WsCombineUrl" />.</para>
+    </summary>
+  </member>
+  <member name="WS_URL_SCHEME_TYPE.WS_URL_HTTP_SCHEME_TYPE">
+    <summary>
+      <para>Denotes the "http" scheme: <see cref="WS_HTTP_URL" /></para>
+    </summary>
+  </member>
+  <member name="WS_URL_SCHEME_TYPE.WS_URL_HTTPS_SCHEME_TYPE">
+    <summary>
+      <para>Denotes the "https" scheme: <see cref="WS_HTTPS_URL" /></para>
+    </summary>
+  </member>
+  <member name="WS_URL_SCHEME_TYPE.WS_URL_NETTCP_SCHEME_TYPE">
+    <summary>
+      <para>Denotes the "net.tcp" scheme: <see cref="WS_NETTCP_URL" /></para>
+    </summary>
+  </member>
+  <member name="WS_URL_SCHEME_TYPE.WS_URL_SOAPUDP_SCHEME_TYPE">
+    <summary>
+      <para>Denotes the "soap.udp" scheme: <see cref="WS_SOAPUDP_URL" /></para>
+    </summary>
+  </member>
+  <member name="WS_URL_SCHEME_TYPE.WS_URL_NETPIPE_SCHEME_TYPE">
+    <summary>
+      <para>Windows 8 or later: Denotes the "net.pipe" scheme: <see cref="WS_NETPIPE_URL" /></para>
+    </summary>
+  </member>
+</doc>

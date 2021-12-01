@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IEnumFilters.xml' path='doc/member[@name="IEnumFilters"]/*' />
 [Guid("56A86893-0AD4-11CE-B03A-0020AF0BA770")]
 [NativeTypeName("struct IEnumFilters : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IEnumFilters : IEnumFilters.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IEnumFilters : IEnumFilters.Interface
         return ((delegate* unmanaged<IEnumFilters*, Guid*, void**, int>)(lpVtbl[0]))((IEnumFilters*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IEnumFilters : IEnumFilters.Interface
         return ((delegate* unmanaged<IEnumFilters*, uint>)(lpVtbl[1]))((IEnumFilters*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IEnumFilters : IEnumFilters.Interface
         return ((delegate* unmanaged<IEnumFilters*, uint>)(lpVtbl[2]))((IEnumFilters*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IEnumFilters.xml' path='doc/member[@name="IEnumFilters.Next"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Next([NativeTypeName("ULONG")] uint cFilters, IBaseFilter** ppFilter, [NativeTypeName("ULONG *")] uint* pcFetched)
@@ -46,6 +51,7 @@ public unsafe partial struct IEnumFilters : IEnumFilters.Interface
         return ((delegate* unmanaged<IEnumFilters*, uint, IBaseFilter**, uint*, int>)(lpVtbl[3]))((IEnumFilters*)Unsafe.AsPointer(ref this), cFilters, ppFilter, pcFetched);
     }
 
+    /// <include file='IEnumFilters.xml' path='doc/member[@name="IEnumFilters.Skip"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Skip([NativeTypeName("ULONG")] uint cFilters)
@@ -53,6 +59,7 @@ public unsafe partial struct IEnumFilters : IEnumFilters.Interface
         return ((delegate* unmanaged<IEnumFilters*, uint, int>)(lpVtbl[4]))((IEnumFilters*)Unsafe.AsPointer(ref this), cFilters);
     }
 
+    /// <include file='IEnumFilters.xml' path='doc/member[@name="IEnumFilters.Reset"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT Reset()
@@ -60,6 +67,7 @@ public unsafe partial struct IEnumFilters : IEnumFilters.Interface
         return ((delegate* unmanaged<IEnumFilters*, int>)(lpVtbl[5]))((IEnumFilters*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IEnumFilters.xml' path='doc/member[@name="IEnumFilters.Clone"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Clone(IEnumFilters** ppEnum)

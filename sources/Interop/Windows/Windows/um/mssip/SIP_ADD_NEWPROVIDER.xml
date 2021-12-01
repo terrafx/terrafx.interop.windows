@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SIP_ADD_NEWPROVIDER">
+    <summary>
+      <para>The <b>SIP_ADD_NEWPROVIDER</b> structure defines a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">subject interface package</a> (SIP). This structure is used by the <see cref="CryptSIPAddProvider" /> function.</para>
+    </summary>
+    <seealso cref="CryptSIPAddProvider" />
+  </member>
+  <member name="SIP_ADD_NEWPROVIDER.cbStruct">
+    <summary>
+      <para>The size, in bytes, of this structure. Set this value to <code>sizeof(SIP_ADD_NEWPROVIDER)</code>.</para>
+    </summary>
+  </member>
+  <member name="SIP_ADD_NEWPROVIDER.pgSubject">
+    <summary>
+      <para>Pointer to the GUID that identifies the SIP.</para>
+    </summary>
+  </member>
+  <member name="SIP_ADD_NEWPROVIDER.pwszDLLFileName">
+    <summary>
+      <para>Pointer to a null-terminated string that contains the name of the DLL file.</para>
+    </summary>
+  </member>
+  <member name="SIP_ADD_NEWPROVIDER.pwszMagicNumber">
+    <summary>
+      <para>This member is not used.</para>
+    </summary>
+  </member>
+  <member name="SIP_ADD_NEWPROVIDER.pwszIsFunctionName">
+    <summary>
+      <para>Pointer to a null-terminated string that contains the name of the function that determines whether the file contents are supported by this SIP. This member can be <b>NULL</b>. The signature for this function pointer is described in <a href="https://docs.microsoft.com//windows/desktop/api/mssip/nc-mssip-pfnisfilesupported">pfnIsFileSupported</a>.</para>
+    </summary>
+  </member>
+  <member name="SIP_ADD_NEWPROVIDER.pwszGetFuncName">
+    <summary>
+      <para>Pointer to a null-terminated string that contains the name of the function that retrieves the signed data. The signature for this function pointer is described in <see cref="CryptSIPGetSignedDataMsg" />.</para>
+    </summary>
+  </member>
+  <member name="SIP_ADD_NEWPROVIDER.pwszPutFuncName">
+    <summary>
+      <para>Pointer to a null-terminated string that contains the name of the function that stores the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/a-gly">Authenticode</a> signature in the target file. The signature for this function pointer is described in <see cref="CryptSIPPutSignedDataMsg" />.</para>
+    </summary>
+  </member>
+  <member name="SIP_ADD_NEWPROVIDER.pwszCreateFuncName">
+    <summary>
+      <para>Pointer to a null-terminated string that contains the name of the function that creates the hash. The signature for this function pointer is described in <see cref="CryptSIPCreateIndirectData" />.</para>
+    </summary>
+  </member>
+  <member name="SIP_ADD_NEWPROVIDER.pwszVerifyFuncName">
+    <summary>
+      <para>Pointer to a null-terminated string that contains the name of the function that verifies the hash. The signature for this function pointer is described in <see cref="CryptSIPVerifyIndirectData" />.</para>
+    </summary>
+  </member>
+  <member name="SIP_ADD_NEWPROVIDER.pwszRemoveFuncName">
+    <summary>
+      <para>Pointer to a null-terminated string that contains the name of the function that removes the signed data. The signature for this function pointer is described in <see cref="CryptSIPRemoveSignedDataMsg" />.</para>
+    </summary>
+  </member>
+  <member name="SIP_ADD_NEWPROVIDER.pwszIsFunctionNameFmt2">
+    <summary>
+      <para>Pointer to a null-terminated string that contains the name of the function that determines whether the file name extension is supported by this SIP. This member can be <b>NULL</b>. The signature for this function pointer is described in <a href="https://docs.microsoft.com//windows/desktop/api/mssip/nc-mssip-pfnisfilesupportedname">pfnIsFileSupportedName</a>.</para>
+    </summary>
+  </member>
+  <member name="SIP_ADD_NEWPROVIDER.pwszGetCapFuncName">
+    <summary>
+      <para>Pointer to a null-terminated string that contains the name  of the function that determines the capabilities of the SIP. If this parameter is set to <b>NULL</b>, multiple signatures are not available for this SIP. The signature for this function pointer is described in <a href="https://docs.microsoft.com//windows/desktop/api/mssip/nc-mssip-pcryptsipgetcaps">pCryptSIPGetCaps</a>.</para>
+      <para>
+        <b>Windows Server 2008 R2, Windows 7, Windows Server 2008, Windows Vista, Windows Server 2003 and Windows XP:  </b>This member is not available.</para>
+    </summary>
+  </member>
+</doc>

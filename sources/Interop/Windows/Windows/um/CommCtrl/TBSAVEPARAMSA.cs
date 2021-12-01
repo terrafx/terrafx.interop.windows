@@ -5,13 +5,17 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TBSAVEPARAMSA.xml' path='doc/member[@name="TBSAVEPARAMSA"]/*' />
 public unsafe partial struct TBSAVEPARAMSA
 {
+    /// <include file='TBSAVEPARAMSA.xml' path='doc/member[@name="TBSAVEPARAMSA.hkr"]/*' />
     public HKEY hkr;
 
+    /// <include file='TBSAVEPARAMSA.xml' path='doc/member[@name="TBSAVEPARAMSA.pszSubKey"]/*' />
     [NativeTypeName("LPCSTR")]
     public sbyte* pszSubKey;
 
+    /// <include file='TBSAVEPARAMSA.xml' path='doc/member[@name="TBSAVEPARAMSA.pszValueName"]/*' />
     [NativeTypeName("LPCSTR")]
     public sbyte* pszValueName;
 }

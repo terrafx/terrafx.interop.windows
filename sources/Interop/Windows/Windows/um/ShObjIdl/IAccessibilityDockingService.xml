@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IAccessibilityDockingService.DockWindow">
+    <summary>
+      <para>Docks the specified window handle to the specified monitor handle.</para>
+    </summary>
+    <param name="hwnd">
+      <para>The accessibility application window that will be docked on the passed monitor handle.</para>
+    </param>
+    <param name="hMonitor">
+      <para>The monitor on which the accessibility application window will be docked.</para>
+    </param>
+    <param name="cyRequested">
+      <para>TBD</para>
+    </param>
+    <param name="pCallback">
+      <para>The callback pointer on which the accessibility application will receive the <see cref="Undock" /> notification.</para>
+      <h4>- uHeight [in]</h4>
+      <para>The height at which the window will be docked, in pixels, if this function is successful. Must be less than or equal to the <i>puMaxHeight</i> variable retrieved from a call to the <a href="https://docs.microsoft.com//windows/desktop/com/iaccessibilitydockingservice-getavailablesize">GetAvailableSize</a> method.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>The window handle or monitor handle is not valid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_ACCESSDENIED</b>
+            </para>
+          </description>
+          <description>
+            <para>The calling process is not a UIAcess accessibility application or the calling process does not own the window.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>IMM_E_DOCKOCCUPIED</b>
+            </para>
+          </description>
+          <description>
+            <para>There is already another window occupying the docking space. Only one window can be docked at a time.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>IMM_E_INSUFFICIENTHEIGHT</b>
+            </para>
+          </description>
+          <description>
+            <para>The requested <i>uHeight</i> is larger than the maximum allowed docking height for the specified monitor. However, if this error code is being returned, it means that this monitor does support docking, though at a height indicated by a call to the <a href="https://docs.microsoft.com//windows/desktop/com/iaccessibilitydockingservice-getavailablesize">GetAvailableSize</a> method.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>HRESULT_FROM_WIN32(ERROR_INVALID_MONITOR_HANDLE)</b>
+            </para>
+          </description>
+          <description>
+            <para>The monitor specified by the monitor handle does not support docking.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IAccessibilityDockingService" />
+  </member>
+  <member name="IAccessibilityDockingService.GetAvailableSize">
+    <summary>
+      <para>Retrieves the dimensions available on a specific screen for displaying an accessibility window.</para>
+    </summary>
+    <param name="hMonitor">
+      <para>Type: <b>HMONITOR</b></para>
+      <para>The handle of the monitor whose available docking size is to be retrieved. For information on how to retrieve an <b>HMONITOR</b>, see <see cref="MonitorFromWindow" />.</para>
+    </param>
+    <param name="pcxFixed">
+      <para>Type: <b>UINT*</b></para>
+      <para>When this method returns successfully, this parameter receives the fixed width, in physical pixels, available for docking on the specified monitor. Any window docked to this monitor will be sized to this width.</para>
+      <para>If the method fails, this value is set to 0.</para>
+      <para>If this value is <b>NULL</b>, an access violation will occur.</para>
+    </param>
+    <param name="pcyMax">
+      <para>Type: <b>UINT*</b></para>
+      <para>When this method returns successfully, this parameter receives the maximum height, in physical pixels, available for a docked window on the specified monitor.</para>
+      <para>If the method fails, this value is set to 0.</para>
+      <para>If this value is <b>NULL</b>, an access violation will occur.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns a standard return value, including the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>HRESULT_FROM_WIN32(ERROR_INVALID_MONITOR_HANDLE)</b>
+            </para>
+          </description>
+          <description>
+            <para>The monitor specified by <i>hMonitor</i> does not support docking.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <h3>When to use</h3>
+      <para>A docked accessibility window is limited in the amount of space that it can use on any screen. Therefore, before trying to dock an accessibility window, call this function to get the available dimensions. You cannot dock any window that would cause a Windows Store app to have access to less than 768 vertical screen pixels.</para>
+      <h4>Examples</h4>
+      <para>This example shows this method in use.</para>
+      <code>
+ IAccessibilityDockingService *pDockingService;
+
+ HRESULT hr = CoCreateInstance(CLSID_AccessibilityDockingService, CLSCTX_INPROV_SERVER, nullptr, IID_PPV_ARGS(&amp;amp;amp;amp;amp;amp;pDockingService));
+ if (SUCCEEDED(hr))
+ {
+     UINT uMaxHeight;
+     UINT uFixedWidth;
+
+     HMONITOR hMonitor = MonitorFromWindow(_hwndMyApplication, MONITOR_DEFAULTTONULL);
+     if (hMonitor != nullptr)
+     {
+         hr = pDockingService-&gt;GetAvailableSize(hMonitor, &amp;amp;amp;amp;amp;amp;uMaxHeight, &amp;amp;amp;amp;amp;amp;uFixedWidth);
+     }
+ }
+</code>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/hh448546(v=vs.85)">IAccessibilityDockingService</seealso>
+  </member>
+  <member name="IAccessibilityDockingService.UndockWindow">
+    <summary>
+      <para>Undocks the specified window handle if it is currently docked.</para>
+    </summary>
+    <param name="hwnd">
+      <para>TBD</para>
+    </param>
+    <param name="hWnd">
+      <para>Specifies the window that will be undocked.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_ACCESSDENIED</b>
+            </para>
+          </description>
+          <description>
+            <para>The window does not belong to the calling process.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>HRESULT_FROM_WIN32(ERROR_INVALID_WINDOW_HANDLE)</b>
+            </para>
+          </description>
+          <description>
+            <para>The window is not docked.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method can only be used to undock windows that belong to the calling process.</para>
+      <h4>Examples</h4>
+      <code>class CAccessibilityApplicationWindow : public IAccessibilityDockingServiceCallback
+{
+
+    ....
+    ....
+
+    HRESULT _Undock()
+    {
+        return _pDockingService-&gt;UndockWindow(_hwndMyApplication);
+    }
+
+    IAccessibilityDockingService *_pDockingService;
+    HWND _hwndMyApplication;
+}
+</code>
+    </remarks>
+    <seealso cref="IAccessibilityDockingService" />
+  </member>
+  <member name="IAccessibilityDockingService">
+    <summary>
+      <para>Docks an application window to the bottom of a monitor when a Windows Store app is visible and not snapped, or when the launcher is visible.</para>
+    </summary>
+  </member>
+</doc>

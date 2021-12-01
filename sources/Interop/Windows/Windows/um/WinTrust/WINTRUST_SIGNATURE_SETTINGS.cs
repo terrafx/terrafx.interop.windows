@@ -7,24 +7,31 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WINTRUST_SIGNATURE_SETTINGS.xml' path='doc/member[@name="WINTRUST_SIGNATURE_SETTINGS"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public unsafe partial struct WINTRUST_SIGNATURE_SETTINGS
 {
+    /// <include file='WINTRUST_SIGNATURE_SETTINGS.xml' path='doc/member[@name="WINTRUST_SIGNATURE_SETTINGS.cbStruct"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbStruct;
 
+    /// <include file='WINTRUST_SIGNATURE_SETTINGS.xml' path='doc/member[@name="WINTRUST_SIGNATURE_SETTINGS.dwIndex"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwIndex;
 
+    /// <include file='WINTRUST_SIGNATURE_SETTINGS.xml' path='doc/member[@name="WINTRUST_SIGNATURE_SETTINGS.dwFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFlags;
 
+    /// <include file='WINTRUST_SIGNATURE_SETTINGS.xml' path='doc/member[@name="WINTRUST_SIGNATURE_SETTINGS.cSecondarySigs"]/*' />
     [NativeTypeName("DWORD")]
     public uint cSecondarySigs;
 
+    /// <include file='WINTRUST_SIGNATURE_SETTINGS.xml' path='doc/member[@name="WINTRUST_SIGNATURE_SETTINGS.dwVerifiedSigIndex"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwVerifiedSigIndex;
 
+    /// <include file='WINTRUST_SIGNATURE_SETTINGS.xml' path='doc/member[@name="WINTRUST_SIGNATURE_SETTINGS.pCryptoPolicy"]/*' />
     [NativeTypeName("PCERT_STRONG_SIGN_PARA")]
     public CERT_STRONG_SIGN_PARA* pCryptoPolicy;
 }

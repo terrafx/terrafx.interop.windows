@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IFolderView.xml' path='doc/member[@name="IFolderView"]/*' />
 [Guid("CDE725B0-CCC9-4519-917E-325D72FAB4CE")]
 [NativeTypeName("struct IFolderView : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IFolderView : IFolderView.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IFolderView : IFolderView.Interface
         return ((delegate* unmanaged<IFolderView*, Guid*, void**, int>)(lpVtbl[0]))((IFolderView*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IFolderView : IFolderView.Interface
         return ((delegate* unmanaged<IFolderView*, uint>)(lpVtbl[1]))((IFolderView*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IFolderView : IFolderView.Interface
         return ((delegate* unmanaged<IFolderView*, uint>)(lpVtbl[2]))((IFolderView*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IFolderView.xml' path='doc/member[@name="IFolderView.GetCurrentViewMode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetCurrentViewMode(uint* pViewMode)
@@ -46,6 +51,7 @@ public unsafe partial struct IFolderView : IFolderView.Interface
         return ((delegate* unmanaged<IFolderView*, uint*, int>)(lpVtbl[3]))((IFolderView*)Unsafe.AsPointer(ref this), pViewMode);
     }
 
+    /// <include file='IFolderView.xml' path='doc/member[@name="IFolderView.SetCurrentViewMode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetCurrentViewMode(uint ViewMode)
@@ -53,6 +59,7 @@ public unsafe partial struct IFolderView : IFolderView.Interface
         return ((delegate* unmanaged<IFolderView*, uint, int>)(lpVtbl[4]))((IFolderView*)Unsafe.AsPointer(ref this), ViewMode);
     }
 
+    /// <include file='IFolderView.xml' path='doc/member[@name="IFolderView.GetFolder"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetFolder([NativeTypeName("const IID &")] Guid* riid, void** ppv)
@@ -60,6 +67,7 @@ public unsafe partial struct IFolderView : IFolderView.Interface
         return ((delegate* unmanaged<IFolderView*, Guid*, void**, int>)(lpVtbl[5]))((IFolderView*)Unsafe.AsPointer(ref this), riid, ppv);
     }
 
+    /// <include file='IFolderView.xml' path='doc/member[@name="IFolderView.Item"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Item(int iItemIndex, [NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidl)
@@ -67,6 +75,7 @@ public unsafe partial struct IFolderView : IFolderView.Interface
         return ((delegate* unmanaged<IFolderView*, int, ITEMIDLIST**, int>)(lpVtbl[6]))((IFolderView*)Unsafe.AsPointer(ref this), iItemIndex, ppidl);
     }
 
+    /// <include file='IFolderView.xml' path='doc/member[@name="IFolderView.ItemCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT ItemCount(uint uFlags, int* pcItems)
@@ -74,6 +83,7 @@ public unsafe partial struct IFolderView : IFolderView.Interface
         return ((delegate* unmanaged<IFolderView*, uint, int*, int>)(lpVtbl[7]))((IFolderView*)Unsafe.AsPointer(ref this), uFlags, pcItems);
     }
 
+    /// <include file='IFolderView.xml' path='doc/member[@name="IFolderView.Items"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT Items(uint uFlags, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
@@ -81,6 +91,7 @@ public unsafe partial struct IFolderView : IFolderView.Interface
         return ((delegate* unmanaged<IFolderView*, uint, Guid*, void**, int>)(lpVtbl[8]))((IFolderView*)Unsafe.AsPointer(ref this), uFlags, riid, ppv);
     }
 
+    /// <include file='IFolderView.xml' path='doc/member[@name="IFolderView.GetSelectionMarkedItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT GetSelectionMarkedItem(int* piItem)
@@ -88,6 +99,7 @@ public unsafe partial struct IFolderView : IFolderView.Interface
         return ((delegate* unmanaged<IFolderView*, int*, int>)(lpVtbl[9]))((IFolderView*)Unsafe.AsPointer(ref this), piItem);
     }
 
+    /// <include file='IFolderView.xml' path='doc/member[@name="IFolderView.GetFocusedItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT GetFocusedItem(int* piItem)
@@ -95,6 +107,7 @@ public unsafe partial struct IFolderView : IFolderView.Interface
         return ((delegate* unmanaged<IFolderView*, int*, int>)(lpVtbl[10]))((IFolderView*)Unsafe.AsPointer(ref this), piItem);
     }
 
+    /// <include file='IFolderView.xml' path='doc/member[@name="IFolderView.GetItemPosition"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT GetItemPosition([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, POINT* ppt)
@@ -102,6 +115,7 @@ public unsafe partial struct IFolderView : IFolderView.Interface
         return ((delegate* unmanaged<IFolderView*, ITEMIDLIST*, POINT*, int>)(lpVtbl[11]))((IFolderView*)Unsafe.AsPointer(ref this), pidl, ppt);
     }
 
+    /// <include file='IFolderView.xml' path='doc/member[@name="IFolderView.GetSpacing"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT GetSpacing(POINT* ppt)
@@ -109,6 +123,7 @@ public unsafe partial struct IFolderView : IFolderView.Interface
         return ((delegate* unmanaged<IFolderView*, POINT*, int>)(lpVtbl[12]))((IFolderView*)Unsafe.AsPointer(ref this), ppt);
     }
 
+    /// <include file='IFolderView.xml' path='doc/member[@name="IFolderView.GetDefaultSpacing"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT GetDefaultSpacing(POINT* ppt)
@@ -116,6 +131,7 @@ public unsafe partial struct IFolderView : IFolderView.Interface
         return ((delegate* unmanaged<IFolderView*, POINT*, int>)(lpVtbl[13]))((IFolderView*)Unsafe.AsPointer(ref this), ppt);
     }
 
+    /// <include file='IFolderView.xml' path='doc/member[@name="IFolderView.GetAutoArrange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT GetAutoArrange()
@@ -123,6 +139,7 @@ public unsafe partial struct IFolderView : IFolderView.Interface
         return ((delegate* unmanaged<IFolderView*, int>)(lpVtbl[14]))((IFolderView*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IFolderView.xml' path='doc/member[@name="IFolderView.SelectItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT SelectItem(int iItem, [NativeTypeName("DWORD")] uint dwFlags)
@@ -130,6 +147,7 @@ public unsafe partial struct IFolderView : IFolderView.Interface
         return ((delegate* unmanaged<IFolderView*, int, uint, int>)(lpVtbl[15]))((IFolderView*)Unsafe.AsPointer(ref this), iItem, dwFlags);
     }
 
+    /// <include file='IFolderView.xml' path='doc/member[@name="IFolderView.SelectAndPositionItems"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT SelectAndPositionItems(uint cidl, [NativeTypeName("LPCITEMIDLIST *")] ITEMIDLIST** apidl, POINT* apt, [NativeTypeName("DWORD")] uint dwFlags)

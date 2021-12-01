@@ -5,17 +5,22 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TCP_ESTATS_FINE_RTT_ROD_v0.xml' path='doc/member[@name="TCP_ESTATS_FINE_RTT_ROD_v0"]/*' />
 public partial struct TCP_ESTATS_FINE_RTT_ROD_v0
 {
+    /// <include file='TCP_ESTATS_FINE_RTT_ROD_v0.xml' path='doc/member[@name="TCP_ESTATS_FINE_RTT_ROD_v0.RttVar"]/*' />
     [NativeTypeName("ULONG")]
     public uint RttVar;
 
+    /// <include file='TCP_ESTATS_FINE_RTT_ROD_v0.xml' path='doc/member[@name="TCP_ESTATS_FINE_RTT_ROD_v0.MaxRtt"]/*' />
     [NativeTypeName("ULONG")]
     public uint MaxRtt;
 
+    /// <include file='TCP_ESTATS_FINE_RTT_ROD_v0.xml' path='doc/member[@name="TCP_ESTATS_FINE_RTT_ROD_v0.MinRtt"]/*' />
     [NativeTypeName("ULONG")]
     public uint MinRtt;
 
+    /// <include file='TCP_ESTATS_FINE_RTT_ROD_v0.xml' path='doc/member[@name="TCP_ESTATS_FINE_RTT_ROD_v0.SumRtt"]/*' />
     [NativeTypeName("ULONG")]
     public uint SumRtt;
 }

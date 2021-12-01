@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="EXPCMDSTATE">
+    <summary>
+      <para>
+        <b>EXPCMDSTATE</b> values represent the command state of a Shell item.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Controls/button-types-and-styles">Button Types</seealso>
+    <seealso cref="IExplorerCommand.GetState" />
+    <seealso cref="IExplorerCommandState.GetState" />
+  </member>
+  <member name="EXPCMDSTATE.ECS_ENABLED">
+    <summary>
+      <para>The item is enabled.</para>
+    </summary>
+  </member>
+  <member name="EXPCMDSTATE.ECS_DISABLED">
+    <summary>
+      <para>The item is unavailable. It might be displayed to the user as a dimmed, inaccessible item.</para>
+    </summary>
+  </member>
+  <member name="EXPCMDSTATE.ECS_HIDDEN">
+    <summary>
+      <para>The item is hidden.</para>
+    </summary>
+  </member>
+  <member name="EXPCMDSTATE.ECS_CHECKBOX">
+    <summary>
+      <para>The item is displayed with a check box and that check box is not checked.</para>
+    </summary>
+  </member>
+  <member name="EXPCMDSTATE.ECS_CHECKED">
+    <summary>
+      <para>The item is displayed with a check box and that check box is checked. <b>ECS_CHECKED</b> is always returned with ECS_CHECKBOX.</para>
+    </summary>
+  </member>
+  <member name="EXPCMDSTATE.ECS_RADIOCHECK">
+    <summary>
+      <para>
+        <b>Windows 7 and later</b>. The item is one of a group of mutually exclusive options selected through a radio button. ECS_RADIOCHECK does not imply that the item is the selected option, though it might be.</para>
+    </summary>
+  </member>
+</doc>

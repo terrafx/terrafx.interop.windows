@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MIB_ICMP.xml' path='doc/member[@name="MIB_ICMP"]/*' />
 public partial struct MIB_ICMP
 {
+    /// <include file='MIB_ICMP.xml' path='doc/member[@name="MIB_ICMP.stats"]/*' />
     public MIBICMPINFO stats;
 }

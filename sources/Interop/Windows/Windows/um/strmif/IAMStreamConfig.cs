@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAMStreamConfig.xml' path='doc/member[@name="IAMStreamConfig"]/*' />
 [Guid("C6E13340-30AC-11D0-A18C-00A0C9118956")]
 [NativeTypeName("struct IAMStreamConfig : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IAMStreamConfig : IAMStreamConfig.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IAMStreamConfig : IAMStreamConfig.Interface
         return ((delegate* unmanaged<IAMStreamConfig*, Guid*, void**, int>)(lpVtbl[0]))((IAMStreamConfig*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IAMStreamConfig : IAMStreamConfig.Interface
         return ((delegate* unmanaged<IAMStreamConfig*, uint>)(lpVtbl[1]))((IAMStreamConfig*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IAMStreamConfig : IAMStreamConfig.Interface
         return ((delegate* unmanaged<IAMStreamConfig*, uint>)(lpVtbl[2]))((IAMStreamConfig*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAMStreamConfig.xml' path='doc/member[@name="IAMStreamConfig.SetFormat"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetFormat(AM_MEDIA_TYPE* pmt)
@@ -46,6 +51,7 @@ public unsafe partial struct IAMStreamConfig : IAMStreamConfig.Interface
         return ((delegate* unmanaged<IAMStreamConfig*, AM_MEDIA_TYPE*, int>)(lpVtbl[3]))((IAMStreamConfig*)Unsafe.AsPointer(ref this), pmt);
     }
 
+    /// <include file='IAMStreamConfig.xml' path='doc/member[@name="IAMStreamConfig.GetFormat"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetFormat(AM_MEDIA_TYPE** ppmt)
@@ -53,6 +59,7 @@ public unsafe partial struct IAMStreamConfig : IAMStreamConfig.Interface
         return ((delegate* unmanaged<IAMStreamConfig*, AM_MEDIA_TYPE**, int>)(lpVtbl[4]))((IAMStreamConfig*)Unsafe.AsPointer(ref this), ppmt);
     }
 
+    /// <include file='IAMStreamConfig.xml' path='doc/member[@name="IAMStreamConfig.GetNumberOfCapabilities"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetNumberOfCapabilities(int* piCount, int* piSize)
@@ -60,6 +67,7 @@ public unsafe partial struct IAMStreamConfig : IAMStreamConfig.Interface
         return ((delegate* unmanaged<IAMStreamConfig*, int*, int*, int>)(lpVtbl[5]))((IAMStreamConfig*)Unsafe.AsPointer(ref this), piCount, piSize);
     }
 
+    /// <include file='IAMStreamConfig.xml' path='doc/member[@name="IAMStreamConfig.GetStreamCaps"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetStreamCaps(int iIndex, AM_MEDIA_TYPE** ppmt, byte* pSCC)

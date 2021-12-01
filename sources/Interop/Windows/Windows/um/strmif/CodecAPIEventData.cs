@@ -7,13 +7,17 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CodecAPIEventData.xml' path='doc/member[@name="CodecAPIEventData"]/*' />
 public unsafe partial struct CodecAPIEventData
 {
+    /// <include file='CodecAPIEventData.xml' path='doc/member[@name="CodecAPIEventData.guid"]/*' />
     public Guid guid;
 
+    /// <include file='CodecAPIEventData.xml' path='doc/member[@name="CodecAPIEventData.dataLength"]/*' />
     [NativeTypeName("DWORD")]
     public uint dataLength;
 
+    /// <include file='CodecAPIEventData.xml' path='doc/member[@name="CodecAPIEventData.reserved"]/*' />
     [NativeTypeName("DWORD [3]")]
     public fixed uint reserved[3];
 }

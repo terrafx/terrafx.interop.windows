@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DVD_AUDIO_APPMODE">
+    <summary>
+      <para>Indicates the current audio mode as retrieved in a call to <see cref="IDvdInfo2.GetAudioAttributes" />.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-enumerated-types">DirectShow Enumerated Types</seealso>
+    <seealso cref="IDvdInfo2.GetAudioAttributes" />
+  </member>
+  <member name="DVD_AUDIO_APPMODE.DVD_AudioMode_None">
+    <summary>
+      <para>No special audio mode. The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-navigator-filter">DVD Navigator Filter</a> will send the audio to the decoder with no special processing.</para>
+    </summary>
+  </member>
+  <member name="DVD_AUDIO_APPMODE.DVD_AudioMode_Karaoke">
+    <summary>
+      <para>The current audio mode is karaoke content.</para>
+    </summary>
+  </member>
+  <member name="DVD_AUDIO_APPMODE.DVD_AudioMode_Surround">
+    <summary>
+      <para>The current audio mode is surround sound.</para>
+    </summary>
+  </member>
+  <member name="DVD_AUDIO_APPMODE.DVD_AudioMode_Other">
+    <summary>
+      <para>Unrecognized audio mode.</para>
+    </summary>
+  </member>
+</doc>

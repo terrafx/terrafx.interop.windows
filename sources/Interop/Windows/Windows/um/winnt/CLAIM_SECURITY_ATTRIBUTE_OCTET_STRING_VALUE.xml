@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CLAIM_SECURITY_ATTRIBUTE_OCTET_STRING_VALUE">
+    <summary>
+      <para>The     <b>CLAIM_SECURITY_ATTRIBUTE_OCTET_STRING_VALUE</b> structure specifies  the <b>OCTET_STRING</b> value type of the claim security attribute.</para>
+    </summary>
+  </member>
+  <member name="CLAIM_SECURITY_ATTRIBUTE_OCTET_STRING_VALUE.pValue">
+    <summary>
+      <para>A pointer buffer that contains the <b>OCTET_STRING</b> value. The value is a series of bytes of the length indicated in the <b>ValueLength</b>  member.</para>
+    </summary>
+  </member>
+  <member name="CLAIM_SECURITY_ATTRIBUTE_OCTET_STRING_VALUE.ValueLength">
+    <summary>
+      <para>The length, in bytes, of the <b>OCTET_STRING</b>  value.</para>
+    </summary>
+  </member>
+</doc>

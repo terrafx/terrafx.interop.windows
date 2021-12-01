@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='EMREXCLUDECLIPRECT.xml' path='doc/member[@name="EMREXCLUDECLIPRECT"]/*' />
 public partial struct EMREXCLUDECLIPRECT
 {
+    /// <include file='EMREXCLUDECLIPRECT.xml' path='doc/member[@name="EMREXCLUDECLIPRECT.emr"]/*' />
     public EMR emr;
 
+    /// <include file='EMREXCLUDECLIPRECT.xml' path='doc/member[@name="EMREXCLUDECLIPRECT.rclClip"]/*' />
     public RECTL rclClip;
 }

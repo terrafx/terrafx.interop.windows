@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IDiaSectionContrib.xml' path='doc/member[@name="IDiaSectionContrib"]/*' />
 [Guid("0CF4B60E-35B1-4C6C-BDD8-854B9C8E3857")]
 [NativeTypeName("struct IDiaSectionContrib : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IDiaSectionContrib : IDiaSectionContrib.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IDiaSectionContrib : IDiaSectionContrib.Interface
         return ((delegate* unmanaged<IDiaSectionContrib*, Guid*, void**, int>)(lpVtbl[0]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IDiaSectionContrib : IDiaSectionContrib.Interface
         return ((delegate* unmanaged<IDiaSectionContrib*, uint>)(lpVtbl[1]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IDiaSectionContrib : IDiaSectionContrib.Interface
         return ((delegate* unmanaged<IDiaSectionContrib*, uint>)(lpVtbl[2]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDiaSectionContrib.xml' path='doc/member[@name="IDiaSectionContrib.get_compiland"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT get_compiland(IDiaSymbol** pRetVal)
@@ -46,6 +51,7 @@ public unsafe partial struct IDiaSectionContrib : IDiaSectionContrib.Interface
         return ((delegate* unmanaged<IDiaSectionContrib*, IDiaSymbol**, int>)(lpVtbl[3]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
+    /// <include file='IDiaSectionContrib.xml' path='doc/member[@name="IDiaSectionContrib.get_addressSection"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT get_addressSection([NativeTypeName("DWORD *")] uint* pRetVal)
@@ -53,6 +59,7 @@ public unsafe partial struct IDiaSectionContrib : IDiaSectionContrib.Interface
         return ((delegate* unmanaged<IDiaSectionContrib*, uint*, int>)(lpVtbl[4]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
+    /// <include file='IDiaSectionContrib.xml' path='doc/member[@name="IDiaSectionContrib.get_addressOffset"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT get_addressOffset([NativeTypeName("DWORD *")] uint* pRetVal)
@@ -60,6 +67,7 @@ public unsafe partial struct IDiaSectionContrib : IDiaSectionContrib.Interface
         return ((delegate* unmanaged<IDiaSectionContrib*, uint*, int>)(lpVtbl[5]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
+    /// <include file='IDiaSectionContrib.xml' path='doc/member[@name="IDiaSectionContrib.get_relativeVirtualAddress"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT get_relativeVirtualAddress([NativeTypeName("DWORD *")] uint* pRetVal)
@@ -67,6 +75,7 @@ public unsafe partial struct IDiaSectionContrib : IDiaSectionContrib.Interface
         return ((delegate* unmanaged<IDiaSectionContrib*, uint*, int>)(lpVtbl[6]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
+    /// <include file='IDiaSectionContrib.xml' path='doc/member[@name="IDiaSectionContrib.get_virtualAddress"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT get_virtualAddress([NativeTypeName("ULONGLONG *")] ulong* pRetVal)
@@ -74,6 +83,7 @@ public unsafe partial struct IDiaSectionContrib : IDiaSectionContrib.Interface
         return ((delegate* unmanaged<IDiaSectionContrib*, ulong*, int>)(lpVtbl[7]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
+    /// <include file='IDiaSectionContrib.xml' path='doc/member[@name="IDiaSectionContrib.get_length"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT get_length([NativeTypeName("DWORD *")] uint* pRetVal)
@@ -81,6 +91,7 @@ public unsafe partial struct IDiaSectionContrib : IDiaSectionContrib.Interface
         return ((delegate* unmanaged<IDiaSectionContrib*, uint*, int>)(lpVtbl[8]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
+    /// <include file='IDiaSectionContrib.xml' path='doc/member[@name="IDiaSectionContrib.get_notPaged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT get_notPaged(BOOL* pRetVal)
@@ -88,6 +99,7 @@ public unsafe partial struct IDiaSectionContrib : IDiaSectionContrib.Interface
         return ((delegate* unmanaged<IDiaSectionContrib*, BOOL*, int>)(lpVtbl[9]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
+    /// <include file='IDiaSectionContrib.xml' path='doc/member[@name="IDiaSectionContrib.get_code"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT get_code(BOOL* pRetVal)
@@ -95,6 +107,7 @@ public unsafe partial struct IDiaSectionContrib : IDiaSectionContrib.Interface
         return ((delegate* unmanaged<IDiaSectionContrib*, BOOL*, int>)(lpVtbl[10]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
+    /// <include file='IDiaSectionContrib.xml' path='doc/member[@name="IDiaSectionContrib.get_initializedData"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT get_initializedData(BOOL* pRetVal)
@@ -102,6 +115,7 @@ public unsafe partial struct IDiaSectionContrib : IDiaSectionContrib.Interface
         return ((delegate* unmanaged<IDiaSectionContrib*, BOOL*, int>)(lpVtbl[11]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
+    /// <include file='IDiaSectionContrib.xml' path='doc/member[@name="IDiaSectionContrib.get_uninitializedData"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT get_uninitializedData(BOOL* pRetVal)
@@ -109,6 +123,7 @@ public unsafe partial struct IDiaSectionContrib : IDiaSectionContrib.Interface
         return ((delegate* unmanaged<IDiaSectionContrib*, BOOL*, int>)(lpVtbl[12]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
+    /// <include file='IDiaSectionContrib.xml' path='doc/member[@name="IDiaSectionContrib.get_remove"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT get_remove(BOOL* pRetVal)
@@ -116,6 +131,7 @@ public unsafe partial struct IDiaSectionContrib : IDiaSectionContrib.Interface
         return ((delegate* unmanaged<IDiaSectionContrib*, BOOL*, int>)(lpVtbl[13]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
+    /// <include file='IDiaSectionContrib.xml' path='doc/member[@name="IDiaSectionContrib.get_comdat"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT get_comdat(BOOL* pRetVal)
@@ -123,6 +139,7 @@ public unsafe partial struct IDiaSectionContrib : IDiaSectionContrib.Interface
         return ((delegate* unmanaged<IDiaSectionContrib*, BOOL*, int>)(lpVtbl[14]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
+    /// <include file='IDiaSectionContrib.xml' path='doc/member[@name="IDiaSectionContrib.get_discardable"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT get_discardable(BOOL* pRetVal)
@@ -130,6 +147,7 @@ public unsafe partial struct IDiaSectionContrib : IDiaSectionContrib.Interface
         return ((delegate* unmanaged<IDiaSectionContrib*, BOOL*, int>)(lpVtbl[15]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
+    /// <include file='IDiaSectionContrib.xml' path='doc/member[@name="IDiaSectionContrib.get_notCached"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT get_notCached(BOOL* pRetVal)
@@ -137,6 +155,7 @@ public unsafe partial struct IDiaSectionContrib : IDiaSectionContrib.Interface
         return ((delegate* unmanaged<IDiaSectionContrib*, BOOL*, int>)(lpVtbl[16]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
+    /// <include file='IDiaSectionContrib.xml' path='doc/member[@name="IDiaSectionContrib.get_share"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT get_share(BOOL* pRetVal)
@@ -144,6 +163,7 @@ public unsafe partial struct IDiaSectionContrib : IDiaSectionContrib.Interface
         return ((delegate* unmanaged<IDiaSectionContrib*, BOOL*, int>)(lpVtbl[17]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
+    /// <include file='IDiaSectionContrib.xml' path='doc/member[@name="IDiaSectionContrib.get_execute"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT get_execute(BOOL* pRetVal)
@@ -151,6 +171,7 @@ public unsafe partial struct IDiaSectionContrib : IDiaSectionContrib.Interface
         return ((delegate* unmanaged<IDiaSectionContrib*, BOOL*, int>)(lpVtbl[18]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
+    /// <include file='IDiaSectionContrib.xml' path='doc/member[@name="IDiaSectionContrib.get_read"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT get_read(BOOL* pRetVal)
@@ -158,6 +179,7 @@ public unsafe partial struct IDiaSectionContrib : IDiaSectionContrib.Interface
         return ((delegate* unmanaged<IDiaSectionContrib*, BOOL*, int>)(lpVtbl[19]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
+    /// <include file='IDiaSectionContrib.xml' path='doc/member[@name="IDiaSectionContrib.get_write"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public HRESULT get_write(BOOL* pRetVal)
@@ -165,6 +187,7 @@ public unsafe partial struct IDiaSectionContrib : IDiaSectionContrib.Interface
         return ((delegate* unmanaged<IDiaSectionContrib*, BOOL*, int>)(lpVtbl[20]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
+    /// <include file='IDiaSectionContrib.xml' path='doc/member[@name="IDiaSectionContrib.get_dataCrc"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
     public HRESULT get_dataCrc([NativeTypeName("DWORD *")] uint* pRetVal)
@@ -172,6 +195,7 @@ public unsafe partial struct IDiaSectionContrib : IDiaSectionContrib.Interface
         return ((delegate* unmanaged<IDiaSectionContrib*, uint*, int>)(lpVtbl[21]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
+    /// <include file='IDiaSectionContrib.xml' path='doc/member[@name="IDiaSectionContrib.get_relocationsCrc"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
     public HRESULT get_relocationsCrc([NativeTypeName("DWORD *")] uint* pRetVal)
@@ -179,6 +203,7 @@ public unsafe partial struct IDiaSectionContrib : IDiaSectionContrib.Interface
         return ((delegate* unmanaged<IDiaSectionContrib*, uint*, int>)(lpVtbl[22]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
+    /// <include file='IDiaSectionContrib.xml' path='doc/member[@name="IDiaSectionContrib.get_compilandId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
     public HRESULT get_compilandId([NativeTypeName("DWORD *")] uint* pRetVal)
@@ -186,6 +211,7 @@ public unsafe partial struct IDiaSectionContrib : IDiaSectionContrib.Interface
         return ((delegate* unmanaged<IDiaSectionContrib*, uint*, int>)(lpVtbl[23]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
+    /// <include file='IDiaSectionContrib.xml' path='doc/member[@name="IDiaSectionContrib.get_code16bit"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(24)]
     public HRESULT get_code16bit(BOOL* pRetVal)

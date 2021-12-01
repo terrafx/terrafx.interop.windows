@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITfClientId.xml' path='doc/member[@name="ITfClientId"]/*' />
 [Guid("D60A7B49-1B9F-4BE2-B702-47E9DC05DEC3")]
 [NativeTypeName("struct ITfClientId : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITfClientId : ITfClientId.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITfClientId : ITfClientId.Interface
         return ((delegate* unmanaged<ITfClientId*, Guid*, void**, int>)(lpVtbl[0]))((ITfClientId*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITfClientId : ITfClientId.Interface
         return ((delegate* unmanaged<ITfClientId*, uint>)(lpVtbl[1]))((ITfClientId*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITfClientId : ITfClientId.Interface
         return ((delegate* unmanaged<ITfClientId*, uint>)(lpVtbl[2]))((ITfClientId*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITfClientId.xml' path='doc/member[@name="ITfClientId.GetClientId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetClientId([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("TfClientId *")] uint* ptid)

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WBEM_LIMITS">
+    <summary>
+      <para>Defines some limit values.</para>
+    </summary>
+  </member>
+  <member name="WBEM_LIMITS.WBEM_MAX_IDENTIFIER">
+    <summary></summary>
+  </member>
+  <member name="WBEM_LIMITS.WBEM_MAX_QUERY">
+    <summary></summary>
+  </member>
+  <member name="WBEM_LIMITS.WBEM_MAX_PATH">
+    <summary></summary>
+  </member>
+  <member name="WBEM_LIMITS.WBEM_MAX_OBJECT_NESTING">
+    <summary></summary>
+  </member>
+  <member name="WBEM_LIMITS.WBEM_MAX_USER_PROPERTIES">
+    <summary></summary>
+  </member>
+</doc>

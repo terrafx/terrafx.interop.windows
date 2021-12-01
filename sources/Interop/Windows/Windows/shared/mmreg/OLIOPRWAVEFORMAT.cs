@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='OLIOPRWAVEFORMAT.xml' path='doc/member[@name="OLIOPRWAVEFORMAT"]/*' />
 public partial struct OLIOPRWAVEFORMAT
 {
+    /// <include file='OLIOPRWAVEFORMAT.xml' path='doc/member[@name="OLIOPRWAVEFORMAT.wfx"]/*' />
     public WAVEFORMATEX wfx;
 }

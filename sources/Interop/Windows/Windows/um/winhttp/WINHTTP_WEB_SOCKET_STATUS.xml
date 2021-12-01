@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WINHTTP_WEB_SOCKET_STATUS">
+    <summary>
+      <para>The <b>WINHTTP_WEB_SOCKET_STATUS</b> enumeration includes the status of a WebSocket operation.</para>
+    </summary>
+    <remarks>
+      <para>A <b>WINHTTP_WEB_SOCKET_STATUS</b> structure is passed to the completion callback of <see cref="WinHttpWebSocketSend" /> when <i>dwInternetStatus</i>  is <b>WINHTTP_CALLBACK_STATUS_READ_COMPLETE</b>.</para>
+      <para>A <b>WINHTTP_WEB_SOCKET_STATUS</b> structure is passed to the completion callback of <see cref="WinHttpWebSocketReceive" /> when <i>dwInternetStatus</i>  is <b>WINHTTP_CALLBACK_STATUS_WRITE_COMPLETE</b>.</para>
+      <para>A <b>WINHTTP_WEB_SOCKET_STATUS</b> structure is passed to the completion callback of <see cref="WinHttpWebSocketClose" /> when <i>dwInternetStatus</i>  is <b>WINHTTP_CALLBACK_STATUS_CLOSE_COMPLETE</b>.</para>
+      <para>A <b>WINHTTP_WEB_SOCKET_STATUS</b> structure is passed to the completion callback of <see cref="WinHttpWebSocketShutdown" /> when <i>dwInternetStatus</i>  is <b>WINHTTP_CALLBACK_STATUS_SHUTDOWN_COMPLETE</b>.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/winhttp/nc-winhttp-winhttp_status_callback">WINHTTP_STATUS_CALLBACK</seealso>
+    <seealso cref="WINHTTP_WEB_SOCKET_BUFFER_TYPE" />
+    <seealso cref="WinHttpWebSocketClose" />
+    <seealso cref="WinHttpWebSocketReceive" />
+    <seealso cref="WinHttpWebSocketSend" />
+    <seealso cref="WinHttpWebSocketShutdown" />
+  </member>
+  <member name="WINHTTP_WEB_SOCKET_STATUS.dwBytesTransferred">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The amount of bytes transferred in the operation.</para>
+    </summary>
+  </member>
+  <member name="WINHTTP_WEB_SOCKET_STATUS.eBufferType">
+    <summary>
+      <para>Type: <b><see cref="WINHTTP_WEB_SOCKET_BUFFER_TYPE" /></b></para>
+      <para>The type of data in the buffer.</para>
+    </summary>
+  </member>
+</doc>

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MF_MEDIA_ENGINE_CANPLAY">
+    <summary>
+      <para>Specifies the likelihood that the Media Engine can play a specified type of media resource.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+  </member>
+  <member name="MF_MEDIA_ENGINE_CANPLAY.MF_MEDIA_ENGINE_CANPLAY_NOT_SUPPORTED">
+    <summary>
+      <para>The Media Engine cannot play the resource.</para>
+    </summary>
+  </member>
+  <member name="MF_MEDIA_ENGINE_CANPLAY.MF_MEDIA_ENGINE_CANPLAY_MAYBE">
+    <summary>
+      <para>The Media Engine might be able to play the resource.</para>
+    </summary>
+  </member>
+  <member name="MF_MEDIA_ENGINE_CANPLAY.MF_MEDIA_ENGINE_CANPLAY_PROBABLY">
+    <summary>
+      <para>The Media Engine can probably play the resource.</para>
+    </summary>
+  </member>
+</doc>

@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SYNCMGR_CONFLICT_ITEM_TYPE.xml' path='doc/member[@name="SYNCMGR_CONFLICT_ITEM_TYPE"]/*' />
 public enum SYNCMGR_CONFLICT_ITEM_TYPE
 {
+    /// <include file='SYNCMGR_CONFLICT_ITEM_TYPE.xml' path='doc/member[@name="SYNCMGR_CONFLICT_ITEM_TYPE.SYNCMGR_CIT_UPDATED"]/*' />
     SYNCMGR_CIT_UPDATED = 0x1,
+
+    /// <include file='SYNCMGR_CONFLICT_ITEM_TYPE.xml' path='doc/member[@name="SYNCMGR_CONFLICT_ITEM_TYPE.SYNCMGR_CIT_DELETED"]/*' />
     SYNCMGR_CIT_DELETED = 0x2,
 }

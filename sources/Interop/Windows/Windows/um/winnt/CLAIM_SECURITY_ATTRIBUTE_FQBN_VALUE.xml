@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CLAIM_SECURITY_ATTRIBUTE_FQBN_VALUE">
+    <summary>
+      <para>The <b>CLAIM_SECURITY_ATTRIBUTE_FQBN_VALUE</b> structure specifies the fully qualified binary name.</para>
+    </summary>
+  </member>
+  <member name="CLAIM_SECURITY_ATTRIBUTE_FQBN_VALUE.Version">
+    <summary>
+      <para>The version of the fully qualified binary name value.</para>
+    </summary>
+  </member>
+  <member name="CLAIM_SECURITY_ATTRIBUTE_FQBN_VALUE.Name">
+    <summary>
+      <para>A fully qualified binary name.</para>
+    </summary>
+  </member>
+</doc>

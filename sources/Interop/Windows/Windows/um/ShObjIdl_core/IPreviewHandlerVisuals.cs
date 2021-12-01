@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IPreviewHandlerVisuals.xml' path='doc/member[@name="IPreviewHandlerVisuals"]/*' />
 [Guid("196BF9A5-B346-4EF0-AA1E-5DCDB76768B1")]
 [NativeTypeName("struct IPreviewHandlerVisuals : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IPreviewHandlerVisuals : IPreviewHandlerVisuals.Int
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IPreviewHandlerVisuals : IPreviewHandlerVisuals.Int
         return ((delegate* unmanaged<IPreviewHandlerVisuals*, Guid*, void**, int>)(lpVtbl[0]))((IPreviewHandlerVisuals*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IPreviewHandlerVisuals : IPreviewHandlerVisuals.Int
         return ((delegate* unmanaged<IPreviewHandlerVisuals*, uint>)(lpVtbl[1]))((IPreviewHandlerVisuals*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IPreviewHandlerVisuals : IPreviewHandlerVisuals.Int
         return ((delegate* unmanaged<IPreviewHandlerVisuals*, uint>)(lpVtbl[2]))((IPreviewHandlerVisuals*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IPreviewHandlerVisuals.xml' path='doc/member[@name="IPreviewHandlerVisuals.SetBackgroundColor"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetBackgroundColor(COLORREF color)
@@ -46,6 +51,7 @@ public unsafe partial struct IPreviewHandlerVisuals : IPreviewHandlerVisuals.Int
         return ((delegate* unmanaged<IPreviewHandlerVisuals*, COLORREF, int>)(lpVtbl[3]))((IPreviewHandlerVisuals*)Unsafe.AsPointer(ref this), color);
     }
 
+    /// <include file='IPreviewHandlerVisuals.xml' path='doc/member[@name="IPreviewHandlerVisuals.SetFont"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetFont([NativeTypeName("const LOGFONTW *")] LOGFONTW* plf)
@@ -53,6 +59,7 @@ public unsafe partial struct IPreviewHandlerVisuals : IPreviewHandlerVisuals.Int
         return ((delegate* unmanaged<IPreviewHandlerVisuals*, LOGFONTW*, int>)(lpVtbl[4]))((IPreviewHandlerVisuals*)Unsafe.AsPointer(ref this), plf);
     }
 
+    /// <include file='IPreviewHandlerVisuals.xml' path='doc/member[@name="IPreviewHandlerVisuals.SetTextColor"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetTextColor(COLORREF color)

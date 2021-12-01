@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='EMRABORTPATH.xml' path='doc/member[@name="EMRABORTPATH"]/*' />
 public partial struct EMRABORTPATH
 {
+    /// <include file='EMRABORTPATH.xml' path='doc/member[@name="EMRABORTPATH.emr"]/*' />
     public EMR emr;
 }

@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="_IManipulationEvents.ManipulationCompleted">
+    <summary>
+      <para>Handles the event when manipulation or inertia finishes.</para>
+    </summary>
+    <param name="x">
+      <para>The origin x-coordinate in user-defined coordinates.</para>
+    </param>
+    <param name="y">
+      <para>The origin y-coordinate in user-defined coordinates.</para>
+    </param>
+    <param name="cumulativeTranslationX">
+      <para>The total translation about the x-axis since the beginning of the manipulation in user-defined coordinates.</para>
+    </param>
+    <param name="cumulativeTranslationY">
+      <para>The total translation about the y-axis since the beginning of the manipulation in user-defined coordinates.</para>
+    </param>
+    <param name="cumulativeScale">
+      <para>The total scale change since the beginning of the manipulation as a percentage of the original size.</para>
+    </param>
+    <param name="cumulativeExpansion">
+      <para>The total expansion change since the beginning of the manipulation in user-defined coordinates.</para>
+    </param>
+    <param name="cumulativeRotation">
+      <para>The total rotation change since the beginning of the manipulation in radians.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, it returns an HRESULT error code.</para>
+    </returns>
+    <remarks>
+      <para>Manipulation events are generated for both the <see cref="IInertiaProcessor" /> and <see cref="IManipulationProcessor" /> interfaces.
+If you are using the values from the <see cref="TOUCHINPUT" /> structure in calls to <see cref="ProcessUp" />, the coordinates will be in
+hundredths of a pixel.</para>
+      <para>
+        <b>Note</b>  When using inertia, calls to <see cref="IInertiaProcessor.Complete" /> can force the current manipulation to be extrapolated resulting in large deltas being passed to the ManipulationCompleted event.
+To address this issue, perform updates on the completed event in addition to the delta event.</para>
+      <h4>Examples</h4>
+      <para>The following code shows an implementation of the ManipulationCompleted method.</para>
+      <code>
+
+
+HRESULT STDMETHODCALLTYPE CManipulationEventSink.ManipulationCompleted(
+    /* [in] */ FLOAT x,
+    /* [in] */ FLOAT y,
+    /* [in] */ FLOAT cumulativeTranslationX,
+    /* [in] */ FLOAT cumulativeTranslationY,
+    /* [in] */ FLOAT cumulativeScale,
+    /* [in] */ FLOAT cumulativeExpansion,
+    /* [in] */ FLOAT cumulativeRotation)
+{
+    m_cCompletedEventCount ++;
+
+    m_fX = x;
+    m_fY = y;
+    m_fCumulativeTranslationX = cumulativeTranslationX;
+    m_fCumulativeTranslationY = cumulativeTranslationY;
+    m_fCumulativeScale = cumulativeScale;
+    m_fCumulativeExpansion = cumulativeExpansion;
+    m_fCumulativeRotation = cumulativeRotation;
+
+    // Place your code handler here to do any operations based on the manipulation.
+
+    return S_OK;
+}
+
+
+</code>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/adding-manipulation-support-in-unmanaged-code">Adding Manipulation Support to Unmanaged Code</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/-imanipulationevents-methods">Methods</seealso>
+    <seealso cref="_IManipulationEvents" />
+  </member>
+  <member name="_IManipulationEvents.ManipulationDelta">
+    <summary>
+      <para>Handles events that happen when a manipulated object changes.</para>
+    </summary>
+    <param name="x">
+      <para>The origin x-coordinate in user-defined coordinates.</para>
+    </param>
+    <param name="y">
+      <para>The origin y-coordinate in user-defined coordinates.</para>
+    </param>
+    <param name="translationDeltaX">
+      <para>The translation change about the x-axis in user-defined coordinates since the last event.</para>
+    </param>
+    <param name="translationDeltaY">
+      <para>The translation change about the y-axis in user-defined coordinates since the last event.</para>
+    </param>
+    <param name="scaleDelta">
+      <para>The scale change since the previous event as a percentage of the previous scale.</para>
+    </param>
+    <param name="expansionDelta">
+      <para>The expansion change since the previous event in user-defined coordinates.</para>
+    </param>
+    <param name="rotationDelta">
+      <para>The rotation change since the previous event in radians.</para>
+    </param>
+    <param name="cumulativeTranslationX">
+      <para>The translation about the x-axis since the beginning of the manipulation in user-defined coordinates.</para>
+    </param>
+    <param name="cumulativeTranslationY">
+      <para>The translation about the y-axis since the beginning of the manipulation in user-defined coordinates.</para>
+    </param>
+    <param name="cumulativeScale">
+      <para>The scale change since the beginning of the manipulation as a percentage of the original size.</para>
+    </param>
+    <param name="cumulativeExpansion">
+      <para>The expansion change since the beginning of the manipulation in user-defined coordinates.</para>
+    </param>
+    <param name="cumulativeRotation">
+      <para>The rotation change since the beginning of the manipulation in radians.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, it returns an HRESULT error code.</para>
+    </returns>
+    <remarks>
+      <para>Manipulation events are generated for both the <see cref="IInertiaProcessor" /> and <see cref="IManipulationProcessor" /> interfaces.
+If you are using the values from the <see cref="TOUCHINPUT" /> structure in calls to <see cref="ProcessMove" />, the coordinates will be in
+hundredths of a pixel.</para>
+      <para>
+        <b>Note</b>  When using inertia, calls to <see cref="IInertiaProcessor.Complete" /> can force the current manipulation to be extrapolated resulting in large deltas being passed to the ManipulationCompleted event.
+To address this issue, perform updates on the completed event in addition to the delta event.</para>
+      <h4>Examples</h4>
+      <para>The following code shows an implementation of the ManipulationDelta method.</para>
+      <code>HRESULT STDMETHODCALLTYPE CManipulationEventSink.ManipulationDelta(
+    /* [in] */ FLOAT x,
+    /* [in] */ FLOAT y,
+    /* [in] */ FLOAT translationDeltaX,
+    /* [in] */ FLOAT translationDeltaY,
+    /* [in] */ FLOAT scaleDelta,
+    /* [in] */ FLOAT expansionDelta,
+    /* [in] */ FLOAT rotationDelta,
+    /* [in] */ FLOAT cumulativeTranslationX,
+    /* [in] */ FLOAT cumulativeTranslationY,
+    /* [in] */ FLOAT cumulativeScale,
+    /* [in] */ FLOAT cumulativeExpansion,
+    /* [in] */ FLOAT cumulativeRotation)
+{
+    m_cDeltaEventCount ++;
+
+    // Place your code handler here to do any operations based on the manipulation.
+
+    return S_OK;
+}
+
+</code>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/adding-manipulation-support-in-unmanaged-code">Adding Manipulation Support to Unmanaged Code</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/-imanipulationevents-methods">Methods</seealso>
+    <seealso cref="_IManipulationEvents" />
+  </member>
+  <member name="_IManipulationEvents.ManipulationStarted">
+    <summary>
+      <para>Handles the event for when manipulation or inertia begins.</para>
+    </summary>
+    <param name="x">
+      <para>The origin x-coordinate in user-defined coordinates.</para>
+    </param>
+    <param name="y">
+      <para>The origin y-coordinate in user-defined coordinates.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, it returns an HRESULT error code.</para>
+    </returns>
+    <remarks>
+      <para>Manipulation events are generated for both the <see cref="IInertiaProcessor" /> and <see cref="IManipulationProcessor" /> interfaces.
+If you are using the values from the <see cref="TOUCHINPUT" /> structure in calls to <see cref="ProcessDown" />, the coordinates will be in
+hundredths of a pixel.</para>
+      <h4>Examples</h4>
+      <para>The following code shows an implementation of the ManipulationStarted method.</para>
+      <code>
+HRESULT STDMETHODCALLTYPE CManipulationEventSink.ManipulationStarted(
+    /* [in] */ FLOAT x,
+    /* [in] */ FLOAT y)
+{
+    m_cStartedEventCount ++;
+
+    // place your code handler here to do any operations based on the manipulation
+
+    return S_OK;
+}
+
+
+</code>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/adding-manipulation-support-in-unmanaged-code">Adding Manipulation Support to Unmanaged Code</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/-imanipulationevents-methods">Methods</seealso>
+    <seealso cref="_IManipulationEvents" />
+  </member>
+  <member name="_IManipulationEvents">
+    <summary>
+      <para>Handles manipulation and inertia events.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/intertmanip-classes-and-interfaces">Classes and Interfaces</seealso>
+  </member>
+</doc>

@@ -7,10 +7,13 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PROPERTYKEY.xml' path='doc/member[@name="PROPERTYKEY"]/*' />
 public partial struct PROPERTYKEY
 {
+    /// <include file='PROPERTYKEY.xml' path='doc/member[@name="PROPERTYKEY.fmtid"]/*' />
     public Guid fmtid;
 
+    /// <include file='PROPERTYKEY.xml' path='doc/member[@name="PROPERTYKEY.pid"]/*' />
     [NativeTypeName("DWORD")]
     public uint pid;
 }

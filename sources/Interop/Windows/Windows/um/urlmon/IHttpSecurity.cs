@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IHttpSecurity.xml' path='doc/member[@name="IHttpSecurity"]/*' />
 [Guid("79EAC9D7-BAFA-11CE-8C82-00AA004BA90B")]
 [NativeTypeName("struct IHttpSecurity : IWindowForBindingUI")]
 [NativeInheritance("IWindowForBindingUI")]
@@ -16,6 +17,7 @@ public unsafe partial struct IHttpSecurity : IHttpSecurity.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IHttpSecurity : IHttpSecurity.Interface
         return ((delegate* unmanaged<IHttpSecurity*, Guid*, void**, int>)(lpVtbl[0]))((IHttpSecurity*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IHttpSecurity : IHttpSecurity.Interface
         return ((delegate* unmanaged<IHttpSecurity*, uint>)(lpVtbl[1]))((IHttpSecurity*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IHttpSecurity : IHttpSecurity.Interface
         return ((delegate* unmanaged<IHttpSecurity*, uint>)(lpVtbl[2]))((IHttpSecurity*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IWindowForBindingUI.GetWindow" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetWindow([NativeTypeName("const GUID &")] Guid* rguidReason, HWND* phwnd)
@@ -46,6 +51,7 @@ public unsafe partial struct IHttpSecurity : IHttpSecurity.Interface
         return ((delegate* unmanaged<IHttpSecurity*, Guid*, HWND*, int>)(lpVtbl[3]))((IHttpSecurity*)Unsafe.AsPointer(ref this), rguidReason, phwnd);
     }
 
+    /// <include file='IHttpSecurity.xml' path='doc/member[@name="IHttpSecurity.OnSecurityProblem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT OnSecurityProblem([NativeTypeName("DWORD")] uint dwProblem)

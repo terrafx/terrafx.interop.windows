@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CRYPT_DECODE_PARA.xml' path='doc/member[@name="CRYPT_DECODE_PARA"]/*' />
 public unsafe partial struct CRYPT_DECODE_PARA
 {
+    /// <include file='CRYPT_DECODE_PARA.xml' path='doc/member[@name="CRYPT_DECODE_PARA.cbSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbSize;
 
+    /// <include file='CRYPT_DECODE_PARA.xml' path='doc/member[@name="CRYPT_DECODE_PARA.pfnAlloc"]/*' />
     [NativeTypeName("PFN_CRYPT_ALLOC")]
     public delegate* unmanaged<nuint, void*> pfnAlloc;
 
+    /// <include file='CRYPT_DECODE_PARA.xml' path='doc/member[@name="CRYPT_DECODE_PARA.pfnFree"]/*' />
     [NativeTypeName("PFN_CRYPT_FREE")]
     public delegate* unmanaged<void*, void> pfnFree;
 }

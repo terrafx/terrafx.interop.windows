@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IAppxManifestProperties">
+    <summary>
+      <para>Provides read-only access to the properties section of a package manifest.</para>
+    </summary>
+    <remarks>
+      <para>The properties section of the manifest is defined using the <a href="https://docs.microsoft.com//uwp/schemas/appxpackage/appxmanifestschema/element-properties">Properties</a> element.</para>
+      <para>This object can be retrieved using the <see cref="IAppxManifestReader.GetProperties" /> method.</para>
+      <h4>Examples</h4>
+      <para>For an example, see <a href="https://docs.microsoft.com//windows/desktop/appxpkg/how-to-query-package-identity-information">Quickstart: Read app package manifest info</a>.</para>
+    </remarks>
+    <seealso cref="IAppxManifestReader.GetProperties" />
+  </member>
+</doc>

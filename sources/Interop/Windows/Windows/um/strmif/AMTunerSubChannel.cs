@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='AMTunerSubChannel.xml' path='doc/member[@name="AMTunerSubChannel"]/*' />
 public enum AMTunerSubChannel
 {
+    /// <include file='AMTunerSubChannel.xml' path='doc/member[@name="AMTunerSubChannel.AMTUNER_SUBCHAN_NO_TUNE"]/*' />
     AMTUNER_SUBCHAN_NO_TUNE = -2,
+
+    /// <include file='AMTunerSubChannel.xml' path='doc/member[@name="AMTunerSubChannel.AMTUNER_SUBCHAN_DEFAULT"]/*' />
     AMTUNER_SUBCHAN_DEFAULT = -1,
 }

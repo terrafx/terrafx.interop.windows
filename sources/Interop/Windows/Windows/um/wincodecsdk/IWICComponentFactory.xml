@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IWICComponentFactory.CreateEncoderPropertyBag">
+    <summary>
+      <para>Creates an encoder property bag.</para>
+    </summary>
+    <param name="ppropOptions">
+      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa768188(v=vs.85)">PROPBAG2</a>*</b></para>
+      <para>Pointer to an array of <a href="https://docs.microsoft.com//previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa768188(v=vs.85)">PROPBAG2</a> options used to create the encoder property bag.</para>
+    </param>
+    <param name="cCount">
+      <para>Type: <b>UINT</b></para>
+      <para>The number of <a href="https://docs.microsoft.com//previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa768188(v=vs.85)">PROPBAG2</a> structures in the <i>ppropOptions</i> array.</para>
+    </param>
+    <param name="ppIPropertyBag">
+      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa768192(v=vs.85)">IPropertyBag2</a>**</b></para>
+      <para>A pointer that receives a pointer to an encoder <a href="https://docs.microsoft.com//previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa768192(v=vs.85)">IPropertyBag2</a>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IWICComponentFactory.CreateMetadataReader">
+    <summary>
+      <para>Creates an <see cref="IWICMetadataReader" /> based on the given parameters.</para>
+    </summary>
+    <param name="guidMetadataFormat">
+      <para>Type: <b>REFGUID</b></para>
+      <para>The GUID of the desired metadata format.</para>
+    </param>
+    <param name="pguidVendor">
+      <para>Type: <b>const GUID*</b></para>
+      <para>Pointer to the GUID of the desired metadata reader vendor.</para>
+    </param>
+    <param name="dwOptions">
+      <para>Type: <b>DWORD</b></para>
+      <para>The <see cref="WICPersistOptions" /> and <see cref="WICMetadataCreationOptions" /> options to use when creating the metadata reader.</para>
+    </param>
+    <param name="pIStream">
+      <para>Type: <b><see cref="IStream" />*</b></para>
+      <para>Pointer to a stream in which to initialize the reader with. If <b>NULL</b>, the metadata reader will be empty.</para>
+    </param>
+    <param name="ppIReader">
+      <para>Type: <b><see cref="IWICMetadataReader" />**</b></para>
+      <para>A pointer that receives a pointer to the new metadata reader.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IWICComponentFactory.CreateMetadataReaderFromContainer">
+    <summary>
+      <para>Creates an <see cref="IWICMetadataReader" /> based on the given parameters.</para>
+    </summary>
+    <param name="guidContainerFormat">
+      <para>Type: <b>REFGUID</b></para>
+      <para>The container format GUID to base the reader on.</para>
+    </param>
+    <param name="pguidVendor">
+      <para>Type: <b>const GUID*</b></para>
+      <para>Pointer to the vendor GUID of the metadata reader.</para>
+    </param>
+    <param name="dwOptions">
+      <para>Type: <b>DWORD</b></para>
+      <para>The <see cref="WICPersistOptions" /> and <see cref="WICMetadataCreationOptions" /> options to use when creating the metadata reader.</para>
+    </param>
+    <param name="pIStream">
+      <para>Type: <b><see cref="IStream" />*</b></para>
+      <para>Pointer to a stream in which to initialize the reader with. If <b>NULL</b>, the metadata reader will be empty.</para>
+    </param>
+    <param name="ppIReader">
+      <para>Type: <b><see cref="IWICMetadataReader" />**</b></para>
+      <para>A pointer that receives a pointer to the new metadata reader</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IWICComponentFactory.CreateMetadataWriter">
+    <summary>
+      <para>Creates an <see cref="IWICMetadataWriter" /> based on the given parameters.</para>
+    </summary>
+    <param name="guidMetadataFormat">
+      <para>Type: <b>REFGUID</b></para>
+      <para>The GUID of the desired metadata format.</para>
+    </param>
+    <param name="pguidVendor">
+      <para>Type: <b>const GUID*</b></para>
+      <para>Pointer to the GUID of the desired metadata reader vendor.</para>
+    </param>
+    <param name="dwMetadataOptions">
+      <para>Type: <b>DWORD</b></para>
+      <para>The <see cref="WICPersistOptions" /> and <see cref="WICMetadataCreationOptions" /> options to use when creating the metadata reader.</para>
+    </param>
+    <param name="ppIWriter">
+      <para>Type: <b><see cref="IWICMetadataWriter" />**</b></para>
+      <para>A pointer that receives a pointer to the new metadata writer.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IWICComponentFactory.CreateMetadataWriterFromReader">
+    <summary>
+      <para>Creates an <see cref="IWICMetadataWriter" /> from the given <see cref="IWICMetadataReader" />.</para>
+    </summary>
+    <param name="pIReader">
+      <para>Type: <b><see cref="IWICMetadataReader" />*</b></para>
+      <para>Pointer to the metadata reader to base the metadata writer on.</para>
+    </param>
+    <param name="pguidVendor">
+      <para>Type: <b>const GUID*</b></para>
+      <para>Pointer to the GUID of the desired metadata reader vendor.</para>
+    </param>
+    <param name="ppIWriter">
+      <para>Type: <b><see cref="IWICMetadataWriter" />**</b></para>
+      <para>A pointer that receives a pointer to the new metadata writer.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IWICComponentFactory.CreateQueryReaderFromBlockReader">
+    <summary>
+      <para>Creates a <see cref="IWICMetadataQueryReader" /> from the given <see cref="IWICMetadataBlockReader" />.</para>
+    </summary>
+    <param name="pIBlockReader">
+      <para>Type: <b><see cref="IWICMetadataBlockReader" />*</b></para>
+      <para>Pointer to the block reader to base the query reader on.</para>
+    </param>
+    <param name="ppIQueryReader">
+      <para>Type: <b><see cref="IWICMetadataQueryReader" />**</b></para>
+      <para>A pointer that receives a pointer to the new metadata query reader.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IWICComponentFactory.CreateQueryWriterFromBlockWriter">
+    <summary>
+      <para>Creates a <see cref="IWICMetadataQueryWriter" /> from the given <see cref="IWICMetadataBlockWriter" />.</para>
+    </summary>
+    <param name="pIBlockWriter">
+      <para>Type: <b><see cref="IWICMetadataBlockWriter" />*</b></para>
+      <para>Pointer to the metadata block reader to base the metadata query writer on.</para>
+    </param>
+    <param name="ppIQueryWriter">
+      <para>Type: <b><see cref="IWICMetadataQueryWriter" />**</b></para>
+      <para>A pointer that receives a pointer to the new metadata query writer.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IWICComponentFactory">
+    <summary>
+      <para>Exposes methods that create components used by component developers. This includes metadata readers, writers and other services for use by codec and metadata handler developers.</para>
+    </summary>
+  </member>
+</doc>

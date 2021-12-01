@@ -9,14 +9,18 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TOKEN_PRIVILEGES.xml' path='doc/member[@name="TOKEN_PRIVILEGES"]/*' />
 public partial struct TOKEN_PRIVILEGES
 {
+    /// <include file='TOKEN_PRIVILEGES.xml' path='doc/member[@name="TOKEN_PRIVILEGES.PrivilegeCount"]/*' />
     [NativeTypeName("DWORD")]
     public uint PrivilegeCount;
 
+    /// <include file='TOKEN_PRIVILEGES.xml' path='doc/member[@name="TOKEN_PRIVILEGES.Privileges"]/*' />
     [NativeTypeName("LUID_AND_ATTRIBUTES [1]")]
     public _Privileges_e__FixedBuffer Privileges;
 
+    /// <include file='_Privileges_e__FixedBuffer.xml' path='doc/member[@name="_Privileges_e__FixedBuffer"]/*' />
     public partial struct _Privileges_e__FixedBuffer
     {
         public LUID_AND_ATTRIBUTES e0;

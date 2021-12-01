@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TF_PRESERVEDKEY.xml' path='doc/member[@name="TF_PRESERVEDKEY"]/*' />
 public partial struct TF_PRESERVEDKEY
 {
+    /// <include file='TF_PRESERVEDKEY.xml' path='doc/member[@name="TF_PRESERVEDKEY.uVKey"]/*' />
     public uint uVKey;
 
+    /// <include file='TF_PRESERVEDKEY.xml' path='doc/member[@name="TF_PRESERVEDKEY.uModifiers"]/*' />
     public uint uModifiers;
 }

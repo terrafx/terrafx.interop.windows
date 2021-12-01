@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IHTMLApplicationCache.xml' path='doc/member[@name="IHTMLApplicationCache"]/*' />
 [Guid("30510828-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IHTMLApplicationCache : IDispatch")]
 [NativeInheritance("IDispatch")]
@@ -16,6 +17,7 @@ public unsafe partial struct IHTMLApplicationCache : IHTMLApplicationCache.Inter
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IHTMLApplicationCache : IHTMLApplicationCache.Inter
         return ((delegate* unmanaged<IHTMLApplicationCache*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLApplicationCache*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IHTMLApplicationCache : IHTMLApplicationCache.Inter
         return ((delegate* unmanaged<IHTMLApplicationCache*, uint>)(lpVtbl[1]))((IHTMLApplicationCache*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IHTMLApplicationCache : IHTMLApplicationCache.Inter
         return ((delegate* unmanaged<IHTMLApplicationCache*, uint>)(lpVtbl[2]))((IHTMLApplicationCache*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct IHTMLApplicationCache : IHTMLApplicationCache.Inter
         return ((delegate* unmanaged<IHTMLApplicationCache*, uint*, int>)(lpVtbl[3]))((IHTMLApplicationCache*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct IHTMLApplicationCache : IHTMLApplicationCache.Inter
         return ((delegate* unmanaged<IHTMLApplicationCache*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IHTMLApplicationCache*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
@@ -60,6 +67,7 @@ public unsafe partial struct IHTMLApplicationCache : IHTMLApplicationCache.Inter
         return ((delegate* unmanaged<IHTMLApplicationCache*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLApplicationCache*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
+    /// <inheritdoc cref="IDispatch.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
@@ -67,6 +75,7 @@ public unsafe partial struct IHTMLApplicationCache : IHTMLApplicationCache.Inter
         return ((delegate* unmanaged<IHTMLApplicationCache*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IHTMLApplicationCache*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
+    /// <include file='IHTMLApplicationCache.xml' path='doc/member[@name="IHTMLApplicationCache.get_status"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT get_status([NativeTypeName("long *")] int* p)
@@ -74,6 +83,7 @@ public unsafe partial struct IHTMLApplicationCache : IHTMLApplicationCache.Inter
         return ((delegate* unmanaged<IHTMLApplicationCache*, int*, int>)(lpVtbl[7]))((IHTMLApplicationCache*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLApplicationCache.xml' path='doc/member[@name="IHTMLApplicationCache.put_onchecking"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT put_onchecking(VARIANT v)
@@ -81,6 +91,7 @@ public unsafe partial struct IHTMLApplicationCache : IHTMLApplicationCache.Inter
         return ((delegate* unmanaged<IHTMLApplicationCache*, VARIANT, int>)(lpVtbl[8]))((IHTMLApplicationCache*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLApplicationCache.xml' path='doc/member[@name="IHTMLApplicationCache.get_onchecking"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT get_onchecking(VARIANT* p)
@@ -88,6 +99,7 @@ public unsafe partial struct IHTMLApplicationCache : IHTMLApplicationCache.Inter
         return ((delegate* unmanaged<IHTMLApplicationCache*, VARIANT*, int>)(lpVtbl[9]))((IHTMLApplicationCache*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLApplicationCache.xml' path='doc/member[@name="IHTMLApplicationCache.put_onerror"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT put_onerror(VARIANT v)
@@ -95,6 +107,7 @@ public unsafe partial struct IHTMLApplicationCache : IHTMLApplicationCache.Inter
         return ((delegate* unmanaged<IHTMLApplicationCache*, VARIANT, int>)(lpVtbl[10]))((IHTMLApplicationCache*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLApplicationCache.xml' path='doc/member[@name="IHTMLApplicationCache.get_onerror"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT get_onerror(VARIANT* p)
@@ -102,6 +115,7 @@ public unsafe partial struct IHTMLApplicationCache : IHTMLApplicationCache.Inter
         return ((delegate* unmanaged<IHTMLApplicationCache*, VARIANT*, int>)(lpVtbl[11]))((IHTMLApplicationCache*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLApplicationCache.xml' path='doc/member[@name="IHTMLApplicationCache.put_onnoupdate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT put_onnoupdate(VARIANT v)
@@ -109,6 +123,7 @@ public unsafe partial struct IHTMLApplicationCache : IHTMLApplicationCache.Inter
         return ((delegate* unmanaged<IHTMLApplicationCache*, VARIANT, int>)(lpVtbl[12]))((IHTMLApplicationCache*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLApplicationCache.xml' path='doc/member[@name="IHTMLApplicationCache.get_onnoupdate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT get_onnoupdate(VARIANT* p)
@@ -116,6 +131,7 @@ public unsafe partial struct IHTMLApplicationCache : IHTMLApplicationCache.Inter
         return ((delegate* unmanaged<IHTMLApplicationCache*, VARIANT*, int>)(lpVtbl[13]))((IHTMLApplicationCache*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLApplicationCache.xml' path='doc/member[@name="IHTMLApplicationCache.put_ondownloading"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT put_ondownloading(VARIANT v)
@@ -123,6 +139,7 @@ public unsafe partial struct IHTMLApplicationCache : IHTMLApplicationCache.Inter
         return ((delegate* unmanaged<IHTMLApplicationCache*, VARIANT, int>)(lpVtbl[14]))((IHTMLApplicationCache*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLApplicationCache.xml' path='doc/member[@name="IHTMLApplicationCache.get_ondownloading"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT get_ondownloading(VARIANT* p)
@@ -130,6 +147,7 @@ public unsafe partial struct IHTMLApplicationCache : IHTMLApplicationCache.Inter
         return ((delegate* unmanaged<IHTMLApplicationCache*, VARIANT*, int>)(lpVtbl[15]))((IHTMLApplicationCache*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLApplicationCache.xml' path='doc/member[@name="IHTMLApplicationCache.put_onprogress"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT put_onprogress(VARIANT v)
@@ -137,6 +155,7 @@ public unsafe partial struct IHTMLApplicationCache : IHTMLApplicationCache.Inter
         return ((delegate* unmanaged<IHTMLApplicationCache*, VARIANT, int>)(lpVtbl[16]))((IHTMLApplicationCache*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLApplicationCache.xml' path='doc/member[@name="IHTMLApplicationCache.get_onprogress"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT get_onprogress(VARIANT* p)
@@ -144,6 +163,7 @@ public unsafe partial struct IHTMLApplicationCache : IHTMLApplicationCache.Inter
         return ((delegate* unmanaged<IHTMLApplicationCache*, VARIANT*, int>)(lpVtbl[17]))((IHTMLApplicationCache*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLApplicationCache.xml' path='doc/member[@name="IHTMLApplicationCache.put_onupdateready"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT put_onupdateready(VARIANT v)
@@ -151,6 +171,7 @@ public unsafe partial struct IHTMLApplicationCache : IHTMLApplicationCache.Inter
         return ((delegate* unmanaged<IHTMLApplicationCache*, VARIANT, int>)(lpVtbl[18]))((IHTMLApplicationCache*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLApplicationCache.xml' path='doc/member[@name="IHTMLApplicationCache.get_onupdateready"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT get_onupdateready(VARIANT* p)
@@ -158,6 +179,7 @@ public unsafe partial struct IHTMLApplicationCache : IHTMLApplicationCache.Inter
         return ((delegate* unmanaged<IHTMLApplicationCache*, VARIANT*, int>)(lpVtbl[19]))((IHTMLApplicationCache*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLApplicationCache.xml' path='doc/member[@name="IHTMLApplicationCache.put_oncached"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public HRESULT put_oncached(VARIANT v)
@@ -165,6 +187,7 @@ public unsafe partial struct IHTMLApplicationCache : IHTMLApplicationCache.Inter
         return ((delegate* unmanaged<IHTMLApplicationCache*, VARIANT, int>)(lpVtbl[20]))((IHTMLApplicationCache*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLApplicationCache.xml' path='doc/member[@name="IHTMLApplicationCache.get_oncached"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
     public HRESULT get_oncached(VARIANT* p)
@@ -172,6 +195,7 @@ public unsafe partial struct IHTMLApplicationCache : IHTMLApplicationCache.Inter
         return ((delegate* unmanaged<IHTMLApplicationCache*, VARIANT*, int>)(lpVtbl[21]))((IHTMLApplicationCache*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLApplicationCache.xml' path='doc/member[@name="IHTMLApplicationCache.put_onobsolete"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
     public HRESULT put_onobsolete(VARIANT v)
@@ -179,6 +203,7 @@ public unsafe partial struct IHTMLApplicationCache : IHTMLApplicationCache.Inter
         return ((delegate* unmanaged<IHTMLApplicationCache*, VARIANT, int>)(lpVtbl[22]))((IHTMLApplicationCache*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLApplicationCache.xml' path='doc/member[@name="IHTMLApplicationCache.get_onobsolete"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
     public HRESULT get_onobsolete(VARIANT* p)
@@ -186,6 +211,7 @@ public unsafe partial struct IHTMLApplicationCache : IHTMLApplicationCache.Inter
         return ((delegate* unmanaged<IHTMLApplicationCache*, VARIANT*, int>)(lpVtbl[23]))((IHTMLApplicationCache*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLApplicationCache.xml' path='doc/member[@name="IHTMLApplicationCache.update"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(24)]
     public HRESULT update()
@@ -193,6 +219,7 @@ public unsafe partial struct IHTMLApplicationCache : IHTMLApplicationCache.Inter
         return ((delegate* unmanaged<IHTMLApplicationCache*, int>)(lpVtbl[24]))((IHTMLApplicationCache*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IHTMLApplicationCache.xml' path='doc/member[@name="IHTMLApplicationCache.swapCache"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(25)]
     public HRESULT swapCache()
@@ -200,6 +227,7 @@ public unsafe partial struct IHTMLApplicationCache : IHTMLApplicationCache.Inter
         return ((delegate* unmanaged<IHTMLApplicationCache*, int>)(lpVtbl[25]))((IHTMLApplicationCache*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IHTMLApplicationCache.xml' path='doc/member[@name="IHTMLApplicationCache.abort"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(26)]
     public HRESULT abort()

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITimeAndNoticeControl.xml' path='doc/member[@name="ITimeAndNoticeControl"]/*' />
 [Guid("BC0BF6AE-8878-11D1-83E9-00C04FC2C6D4")]
 [NativeTypeName("struct ITimeAndNoticeControl : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITimeAndNoticeControl : ITimeAndNoticeControl.Inter
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITimeAndNoticeControl : ITimeAndNoticeControl.Inter
         return ((delegate* unmanaged<ITimeAndNoticeControl*, Guid*, void**, int>)(lpVtbl[0]))((ITimeAndNoticeControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITimeAndNoticeControl : ITimeAndNoticeControl.Inter
         return ((delegate* unmanaged<ITimeAndNoticeControl*, uint>)(lpVtbl[1]))((ITimeAndNoticeControl*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITimeAndNoticeControl : ITimeAndNoticeControl.Inter
         return ((delegate* unmanaged<ITimeAndNoticeControl*, uint>)(lpVtbl[2]))((ITimeAndNoticeControl*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITimeAndNoticeControl.xml' path='doc/member[@name="ITimeAndNoticeControl.SuppressChanges"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SuppressChanges([NativeTypeName("DWORD")] uint res1, [NativeTypeName("DWORD")] uint res2)

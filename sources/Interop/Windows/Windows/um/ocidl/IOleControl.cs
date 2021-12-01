@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IOleControl.xml' path='doc/member[@name="IOleControl"]/*' />
 [Guid("B196B288-BAB4-101A-B69C-00AA00341D07")]
 [NativeTypeName("struct IOleControl : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IOleControl : IOleControl.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IOleControl : IOleControl.Interface
         return ((delegate* unmanaged<IOleControl*, Guid*, void**, int>)(lpVtbl[0]))((IOleControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IOleControl : IOleControl.Interface
         return ((delegate* unmanaged<IOleControl*, uint>)(lpVtbl[1]))((IOleControl*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IOleControl : IOleControl.Interface
         return ((delegate* unmanaged<IOleControl*, uint>)(lpVtbl[2]))((IOleControl*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IOleControl.xml' path='doc/member[@name="IOleControl.GetControlInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetControlInfo(CONTROLINFO* pCI)
@@ -46,6 +51,7 @@ public unsafe partial struct IOleControl : IOleControl.Interface
         return ((delegate* unmanaged<IOleControl*, CONTROLINFO*, int>)(lpVtbl[3]))((IOleControl*)Unsafe.AsPointer(ref this), pCI);
     }
 
+    /// <include file='IOleControl.xml' path='doc/member[@name="IOleControl.OnMnemonic"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT OnMnemonic(MSG* pMsg)
@@ -53,6 +59,7 @@ public unsafe partial struct IOleControl : IOleControl.Interface
         return ((delegate* unmanaged<IOleControl*, MSG*, int>)(lpVtbl[4]))((IOleControl*)Unsafe.AsPointer(ref this), pMsg);
     }
 
+    /// <include file='IOleControl.xml' path='doc/member[@name="IOleControl.OnAmbientPropertyChange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT OnAmbientPropertyChange([NativeTypeName("DISPID")] int dispID)
@@ -60,6 +67,7 @@ public unsafe partial struct IOleControl : IOleControl.Interface
         return ((delegate* unmanaged<IOleControl*, int, int>)(lpVtbl[5]))((IOleControl*)Unsafe.AsPointer(ref this), dispID);
     }
 
+    /// <include file='IOleControl.xml' path='doc/member[@name="IOleControl.FreezeEvents"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT FreezeEvents(BOOL bFreeze)

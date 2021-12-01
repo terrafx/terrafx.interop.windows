@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MF_TOPONODE_DRAIN_MODE">
+    <summary>
+      <para>Defines at what times a transform in a topology is drained.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/mf-toponode-drain-attribute">MF_TOPONODE_DRAIN</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+  </member>
+  <member name="MF_TOPONODE_DRAIN_MODE.MF_TOPONODE_DRAIN_DEFAULT">
+    <summary>
+      <para>The transform is drained when the end of a stream is reached. It is not drained when markout is reached at the end of a segment.</para>
+    </summary>
+  </member>
+  <member name="MF_TOPONODE_DRAIN_MODE.MF_TOPONODE_DRAIN_ALWAYS">
+    <summary>
+      <para>The transform is drained whenever a topology ends.</para>
+    </summary>
+  </member>
+  <member name="MF_TOPONODE_DRAIN_MODE.MF_TOPONODE_DRAIN_NEVER">
+    <summary>
+      <para>The transform is never drained.</para>
+    </summary>
+  </member>
+</doc>

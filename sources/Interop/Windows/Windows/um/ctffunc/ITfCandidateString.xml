@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ITfCandidateString.GetIndex">
+    <param name="pnIndex">
+      <para>Pointer to a <b>ULONG</b> value that receives the zero-based index of the candidate string object within the candidate list.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <i>pnIndex</i> is invalid.
+</description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="ITfCandidateList " />
+    <seealso cref="ITfCandidateString" />
+  </member>
+  <member name="ITfCandidateString.GetString">
+    <summary>
+      <para>Obtains the text of the candidate string object.</para>
+    </summary>
+    <param name="pbstr">
+      <para>Pointer to a <b>BSTR</b> value that receives the text of the candidate string object. The caller must release this memory using <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oleauto/nf-oleauto-sysfreestring">SysFreeString</a> when it is no longer required.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <i>pbstr</i> is invalid.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>A memory allocation failure occurred.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="ITfCandidateString" />
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oleauto/nf-oleauto-sysfreestring">SysFreeString</seealso>
+  </member>
+  <member name="ITfCandidateString">
+    <summary>
+      <para>The <b>ITfCandidateString</b> interface is implemented by a text service and is used by the TSF manager or a client to obtain information about a candidate string object.</para>
+      <para>The TSF manager implements this interface to provide access to this interface to other clients. This enables the TSF manager to function as a mediator between the client and the text service.</para>
+      <para>To obtain an instance of this interface, the TSF manager or client can call <see cref="ITfCandidateList.GetCandidate" />.</para>
+    </summary>
+  </member>
+</doc>

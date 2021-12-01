@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DVD_AudioAttributes">
+    <summary>
+      <para>The <code>DVD_AudioAttributes</code> structure is used in <see cref="IDvdInfo2.GetAudioAttributes" /> to receive the various audio attributes of the disc.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-structures">DirectShow Structures</seealso>
+  </member>
+  <member name="DVD_AudioAttributes.AppMode">
+    <summary>
+      <para>Indicates the current audio mode. If the mode returned is DVD_AudioMode_Karaoke, call <see cref="IDvdInfo2.GetKaraokeAttributes" /> to get more info.</para>
+    </summary>
+  </member>
+  <member name="DVD_AudioAttributes.AppModeData">
+    <summary></summary>
+  </member>
+  <member name="DVD_AudioAttributes.AudioFormat">
+    <summary>
+      <para>Describes the format (encoding mode) of the audio stream.</para>
+    </summary>
+  </member>
+  <member name="DVD_AudioAttributes.Language">
+    <summary>
+      <para>An <b>LCID</b> value indicating the language of the audio stream. Is zero if no language is present.</para>
+    </summary>
+  </member>
+  <member name="DVD_AudioAttributes.LanguageExtension">
+    <summary>
+      <para>A <see cref="DVD_AUDIO_LANG_EXT" /> enumeration that will be filled in if any information is available on the disc.</para>
+    </summary>
+  </member>
+  <member name="DVD_AudioAttributes.fHasMultichannelInfo">
+    <summary>
+      <para>Indicates whether multichannel attributes are present. If <b>TRUE</b>, it means there is additional mixing information available, such as for SurroundSound. Call <see cref="IDvdInfo2.GetTitleAttributes" /> to retrieve the multichannel information.</para>
+    </summary>
+  </member>
+  <member name="DVD_AudioAttributes.dwFrequency">
+    <summary>
+      <para>The frequency in hertz (48k, 96k) of the audio stream.</para>
+    </summary>
+  </member>
+  <member name="DVD_AudioAttributes.bQuantization">
+    <summary>
+      <para>The resolution of the audio stream (16, 20, 24 bits, or other) Zero indicates the resolution is unknown.</para>
+    </summary>
+  </member>
+  <member name="DVD_AudioAttributes.bNumberOfChannels">
+    <summary>
+      <para>The number of channels. For example, 5.1 Dolby AC-3 has six channels.</para>
+    </summary>
+  </member>
+  <member name="DVD_AudioAttributes.dwReserved">
+    <summary>
+      <para>Reserved.</para>
+    </summary>
+  </member>
+</doc>

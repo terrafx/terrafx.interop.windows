@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_SECURITY_PROPERTIES.xml' path='doc/member[@name="WS_SECURITY_PROPERTIES"]/*' />
 public unsafe partial struct WS_SECURITY_PROPERTIES
 {
+    /// <include file='WS_SECURITY_PROPERTIES.xml' path='doc/member[@name="WS_SECURITY_PROPERTIES.properties"]/*' />
     public WS_SECURITY_PROPERTY* properties;
 
+    /// <include file='WS_SECURITY_PROPERTIES.xml' path='doc/member[@name="WS_SECURITY_PROPERTIES.propertyCount"]/*' />
     [NativeTypeName("ULONG")]
     public uint propertyCount;
 }

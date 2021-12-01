@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="UI_ANIMATION_MODE">
+    <summary>
+      <para>Defines animation modes.</para>
+    </summary>
+    <seealso cref="IUIAnimationManager.SetAnimationMode" />
+  </member>
+  <member name="UI_ANIMATION_MODE.UI_ANIMATION_MODE_DISABLED">
+    <summary>
+      <para>Animation is disabled.</para>
+    </summary>
+  </member>
+  <member name="UI_ANIMATION_MODE.UI_ANIMATION_MODE_SYSTEM_DEFAULT">
+    <summary>
+      <para>The animation mode is managed by the system.</para>
+    </summary>
+  </member>
+  <member name="UI_ANIMATION_MODE.UI_ANIMATION_MODE_ENABLED">
+    <summary>
+      <para>Animation is enabled.</para>
+    </summary>
+  </member>
+</doc>

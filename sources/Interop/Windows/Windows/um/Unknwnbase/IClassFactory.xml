@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IClassFactory.LockServer">
+    <summary>
+      <para>Locks an object application open in memory. This enables instances to be created more quickly.</para>
+    </summary>
+    <param name="fLock">
+      <para>If <b>TRUE</b>, increments the lock count; if <b>FALSE</b>, decrements the lock count.</para>
+    </param>
+    <returns>
+      <para>This method can return the standard return values E_OUTOFMEMORY, E_UNEXPECTED, E_FAIL, and S_OK.</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>IClassFactory.LockServer</b> controls whether an object's server is kept in memory. Keeping the application alive in memory allows instances to be created more quickly.</para>
+      <h3>Notes to Callers</h3>
+      <para>Most clients do not need to call this method. It is provided only for those clients that require special performance in creating multiple instances of their objects.</para>
+      <h3>Notes to Implementers</h3>
+      <para>If the lock count is zero, there are no more objects in use, and the application is not under user control, the server can be closed. One way to implement <b>LockServer</b> is to call the <see cref="CoLockObjectExternal" /> function.</para>
+      <para>The process that locks the object application is responsible for unlocking it. After the class object is released, there is no mechanism that guarantees the caller connection to the same class later (as in the case where a class object is registered as single-use). It is important to count all calls, not just the last one, to <b>LockServer</b>, because calls must be balanced before attempting to release the pointer to the <see cref="IClassFactory" /> interface on the class object or an error results. For every call to <b>LockServer</b> with <i>fLock</i> set to <b>TRUE</b>, there must be a call to <b>LockServer</b> with <i>fLock</i> set to <b>FALSE</b>. When the lock count and the class object reference count are both zero, the class object can be freed.</para>
+    </remarks>
+    <seealso cref="CoLockObjectExternal" />
+    <seealso cref="IClassFactory" />
+  </member>
+  <member name="IClassFactory">
+    <summary>
+      <para>Enables a class of objects to be created.</para>
+    </summary>
+    <seealso cref="CoCreateInstance" />
+    <seealso cref="CoGetClassObject" />
+    <seealso cref="OleCreate" />
+  </member>
+</doc>

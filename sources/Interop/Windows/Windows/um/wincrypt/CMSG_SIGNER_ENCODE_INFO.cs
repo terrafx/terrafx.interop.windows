@@ -8,36 +8,48 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CMSG_SIGNER_ENCODE_INFO.xml' path='doc/member[@name="CMSG_SIGNER_ENCODE_INFO"]/*' />
 public unsafe partial struct CMSG_SIGNER_ENCODE_INFO
 {
+    /// <include file='CMSG_SIGNER_ENCODE_INFO.xml' path='doc/member[@name="CMSG_SIGNER_ENCODE_INFO.cbSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbSize;
 
+    /// <include file='CMSG_SIGNER_ENCODE_INFO.xml' path='doc/member[@name="CMSG_SIGNER_ENCODE_INFO.pCertInfo"]/*' />
     [NativeTypeName("PCERT_INFO")]
     public CERT_INFO* pCertInfo;
 
+    /// <include file='CMSG_SIGNER_ENCODE_INFO.xml' path='doc/member[@name="CMSG_SIGNER_ENCODE_INFO.Anonymous"]/*' />
     [NativeTypeName("_CMSG_SIGNER_ENCODE_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/wincrypt.h:6732:5)")]
     public _Anonymous_e__Union Anonymous;
 
+    /// <include file='CMSG_SIGNER_ENCODE_INFO.xml' path='doc/member[@name="CMSG_SIGNER_ENCODE_INFO.dwKeySpec"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwKeySpec;
 
+    /// <include file='CMSG_SIGNER_ENCODE_INFO.xml' path='doc/member[@name="CMSG_SIGNER_ENCODE_INFO.HashAlgorithm"]/*' />
     public CRYPT_ALGORITHM_IDENTIFIER HashAlgorithm;
 
+    /// <include file='CMSG_SIGNER_ENCODE_INFO.xml' path='doc/member[@name="CMSG_SIGNER_ENCODE_INFO.pvHashAuxInfo"]/*' />
     public void* pvHashAuxInfo;
 
+    /// <include file='CMSG_SIGNER_ENCODE_INFO.xml' path='doc/member[@name="CMSG_SIGNER_ENCODE_INFO.cAuthAttr"]/*' />
     [NativeTypeName("DWORD")]
     public uint cAuthAttr;
 
+    /// <include file='CMSG_SIGNER_ENCODE_INFO.xml' path='doc/member[@name="CMSG_SIGNER_ENCODE_INFO.rgAuthAttr"]/*' />
     [NativeTypeName("PCRYPT_ATTRIBUTE")]
     public CRYPT_ATTRIBUTE* rgAuthAttr;
 
+    /// <include file='CMSG_SIGNER_ENCODE_INFO.xml' path='doc/member[@name="CMSG_SIGNER_ENCODE_INFO.cUnauthAttr"]/*' />
     [NativeTypeName("DWORD")]
     public uint cUnauthAttr;
 
+    /// <include file='CMSG_SIGNER_ENCODE_INFO.xml' path='doc/member[@name="CMSG_SIGNER_ENCODE_INFO.rgUnauthAttr"]/*' />
     [NativeTypeName("PCRYPT_ATTRIBUTE")]
     public CRYPT_ATTRIBUTE* rgUnauthAttr;
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.hCryptProv"]/*' />
     public ref HCRYPTPROV hCryptProv
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -47,6 +59,7 @@ public unsafe partial struct CMSG_SIGNER_ENCODE_INFO
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.hNCryptKey"]/*' />
     public ref nuint hNCryptKey
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -56,12 +69,15 @@ public unsafe partial struct CMSG_SIGNER_ENCODE_INFO
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public partial struct _Anonymous_e__Union
     {
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.hCryptProv"]/*' />
         [FieldOffset(0)]
         public HCRYPTPROV hCryptProv;
 
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.hNCryptKey"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("NCRYPT_KEY_HANDLE")]
         public nuint hNCryptKey;

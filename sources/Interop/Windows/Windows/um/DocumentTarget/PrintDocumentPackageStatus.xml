@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PrintDocumentPackageStatus">
+    <summary>
+      <para>Defines a payload to be used by the <see cref="PackageStatusUpdated" /> method. This structure is a generic version of XPS_JOB_STATUS.</para>
+    </summary>
+    <seealso cref="PackageStatusUpdated" />
+  </member>
+  <member name="PrintDocumentPackageStatus.JobId">
+    <summary>
+      <para>The job ID.</para>
+    </summary>
+  </member>
+  <member name="PrintDocumentPackageStatus.CurrentDocument">
+    <summary>
+      <para>The zero-based index of the most recently processed document.</para>
+    </summary>
+  </member>
+  <member name="PrintDocumentPackageStatus.CurrentPage">
+    <summary>
+      <para>The zero-based index of the most recently processed page in the current document</para>
+    </summary>
+  </member>
+  <member name="PrintDocumentPackageStatus.CurrentPageTotal">
+    <summary>
+      <para>A running total of the number of pages that have been processed by the print job.</para>
+    </summary>
+  </member>
+  <member name="PrintDocumentPackageStatus.Completion">
+    <summary>
+      <para>The completion status of the job.</para>
+    </summary>
+  </member>
+  <member name="PrintDocumentPackageStatus.PackageStatus">
+    <summary>
+      <para>The error state of the job.</para>
+    </summary>
+  </member>
+</doc>

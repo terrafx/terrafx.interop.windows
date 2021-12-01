@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAMAnalogVideoDecoder.xml' path='doc/member[@name="IAMAnalogVideoDecoder"]/*' />
 [Guid("C6E13350-30AC-11D0-A18C-00A0C9118956")]
 [NativeTypeName("struct IAMAnalogVideoDecoder : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IAMAnalogVideoDecoder : IAMAnalogVideoDecoder.Inter
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IAMAnalogVideoDecoder : IAMAnalogVideoDecoder.Inter
         return ((delegate* unmanaged<IAMAnalogVideoDecoder*, Guid*, void**, int>)(lpVtbl[0]))((IAMAnalogVideoDecoder*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IAMAnalogVideoDecoder : IAMAnalogVideoDecoder.Inter
         return ((delegate* unmanaged<IAMAnalogVideoDecoder*, uint>)(lpVtbl[1]))((IAMAnalogVideoDecoder*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IAMAnalogVideoDecoder : IAMAnalogVideoDecoder.Inter
         return ((delegate* unmanaged<IAMAnalogVideoDecoder*, uint>)(lpVtbl[2]))((IAMAnalogVideoDecoder*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAMAnalogVideoDecoder.xml' path='doc/member[@name="IAMAnalogVideoDecoder.get_AvailableTVFormats"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT get_AvailableTVFormats([NativeTypeName("long *")] int* lAnalogVideoStandard)
@@ -46,6 +51,7 @@ public unsafe partial struct IAMAnalogVideoDecoder : IAMAnalogVideoDecoder.Inter
         return ((delegate* unmanaged<IAMAnalogVideoDecoder*, int*, int>)(lpVtbl[3]))((IAMAnalogVideoDecoder*)Unsafe.AsPointer(ref this), lAnalogVideoStandard);
     }
 
+    /// <include file='IAMAnalogVideoDecoder.xml' path='doc/member[@name="IAMAnalogVideoDecoder.put_TVFormat"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT put_TVFormat([NativeTypeName("long")] int lAnalogVideoStandard)
@@ -53,6 +59,7 @@ public unsafe partial struct IAMAnalogVideoDecoder : IAMAnalogVideoDecoder.Inter
         return ((delegate* unmanaged<IAMAnalogVideoDecoder*, int, int>)(lpVtbl[4]))((IAMAnalogVideoDecoder*)Unsafe.AsPointer(ref this), lAnalogVideoStandard);
     }
 
+    /// <include file='IAMAnalogVideoDecoder.xml' path='doc/member[@name="IAMAnalogVideoDecoder.get_TVFormat"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT get_TVFormat([NativeTypeName("long *")] int* plAnalogVideoStandard)
@@ -60,6 +67,7 @@ public unsafe partial struct IAMAnalogVideoDecoder : IAMAnalogVideoDecoder.Inter
         return ((delegate* unmanaged<IAMAnalogVideoDecoder*, int*, int>)(lpVtbl[5]))((IAMAnalogVideoDecoder*)Unsafe.AsPointer(ref this), plAnalogVideoStandard);
     }
 
+    /// <include file='IAMAnalogVideoDecoder.xml' path='doc/member[@name="IAMAnalogVideoDecoder.get_HorizontalLocked"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT get_HorizontalLocked([NativeTypeName("long *")] int* plLocked)
@@ -67,6 +75,7 @@ public unsafe partial struct IAMAnalogVideoDecoder : IAMAnalogVideoDecoder.Inter
         return ((delegate* unmanaged<IAMAnalogVideoDecoder*, int*, int>)(lpVtbl[6]))((IAMAnalogVideoDecoder*)Unsafe.AsPointer(ref this), plLocked);
     }
 
+    /// <include file='IAMAnalogVideoDecoder.xml' path='doc/member[@name="IAMAnalogVideoDecoder.put_VCRHorizontalLocking"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT put_VCRHorizontalLocking([NativeTypeName("long")] int lVCRHorizontalLocking)
@@ -74,6 +83,7 @@ public unsafe partial struct IAMAnalogVideoDecoder : IAMAnalogVideoDecoder.Inter
         return ((delegate* unmanaged<IAMAnalogVideoDecoder*, int, int>)(lpVtbl[7]))((IAMAnalogVideoDecoder*)Unsafe.AsPointer(ref this), lVCRHorizontalLocking);
     }
 
+    /// <include file='IAMAnalogVideoDecoder.xml' path='doc/member[@name="IAMAnalogVideoDecoder.get_VCRHorizontalLocking"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT get_VCRHorizontalLocking([NativeTypeName("long *")] int* plVCRHorizontalLocking)
@@ -81,6 +91,7 @@ public unsafe partial struct IAMAnalogVideoDecoder : IAMAnalogVideoDecoder.Inter
         return ((delegate* unmanaged<IAMAnalogVideoDecoder*, int*, int>)(lpVtbl[8]))((IAMAnalogVideoDecoder*)Unsafe.AsPointer(ref this), plVCRHorizontalLocking);
     }
 
+    /// <include file='IAMAnalogVideoDecoder.xml' path='doc/member[@name="IAMAnalogVideoDecoder.get_NumberOfLines"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT get_NumberOfLines([NativeTypeName("long *")] int* plNumberOfLines)
@@ -88,6 +99,7 @@ public unsafe partial struct IAMAnalogVideoDecoder : IAMAnalogVideoDecoder.Inter
         return ((delegate* unmanaged<IAMAnalogVideoDecoder*, int*, int>)(lpVtbl[9]))((IAMAnalogVideoDecoder*)Unsafe.AsPointer(ref this), plNumberOfLines);
     }
 
+    /// <include file='IAMAnalogVideoDecoder.xml' path='doc/member[@name="IAMAnalogVideoDecoder.put_OutputEnable"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT put_OutputEnable([NativeTypeName("long")] int lOutputEnable)
@@ -95,6 +107,7 @@ public unsafe partial struct IAMAnalogVideoDecoder : IAMAnalogVideoDecoder.Inter
         return ((delegate* unmanaged<IAMAnalogVideoDecoder*, int, int>)(lpVtbl[10]))((IAMAnalogVideoDecoder*)Unsafe.AsPointer(ref this), lOutputEnable);
     }
 
+    /// <include file='IAMAnalogVideoDecoder.xml' path='doc/member[@name="IAMAnalogVideoDecoder.get_OutputEnable"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT get_OutputEnable([NativeTypeName("long *")] int* plOutputEnable)

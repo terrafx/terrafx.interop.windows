@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDelegateFolder.SetItemAlloc">
+    <summary>
+      <para>Provides the delegate folder an <see cref="IMalloc" /> interface used to allocate and free item IDs.</para>
+    </summary>
+    <param name="pmalloc">
+      <para>Type: <b><see cref="IMalloc" />*</b></para>
+      <para>A pointer to an <see cref="IMalloc" /> interface.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IDelegateFolder">
+    <summary>
+      <para>Exposes a method through which a delegate folder is given the <see cref="IMalloc" /> interface required to allocate and free item IDs.</para>
+    </summary>
+    <remarks>
+      <para>The IDs allocated by the delegate folder are in the form of <see cref="DELEGATEITEMID" /> structures. It is the delegate's job to pack its data into the pointer to an item identifier list (PIDL) in the <b>DELEGATEITEMID</b> format.</para>
+    </remarks>
+  </member>
+</doc>

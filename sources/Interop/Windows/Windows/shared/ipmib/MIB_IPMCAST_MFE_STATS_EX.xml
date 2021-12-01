@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MIB_IPMCAST_MFE_STATS_EX">
+    <summary>
+      <para>The <b>MIB_IPMCAST_MFE_STATS_EX</b> structure stores the extended statistics associated with a Multicast Forwarding Entry (MFE).</para>
+    </summary>
+    <remarks>
+      <para>The <b>MIB_IPMCAST_MFE_STATS_EX</b> structure extends the functionality of <see cref="MIB_IPMCAST_MFE_STATS" /> by including additional information on MFE packets.</para>
+      <para>This structure does not have a fixed size. Use the <b>SIZEOF_MIB_MFE_STATS_EX(X)</b> macro to determine the size of this structure. This macro is defined in the Iprtrmib.h header file.</para>
+      <para>The <b>dwRouteProtocol</b>, <b>dwRouteNetwork</b>, and <b>dwRouteMask</b> members uniquely identify the route to which this MFE is related.</para>
+      <para>On the Microsoft Windows Software Development Kit (SDK) released for Windows Vista and later, the organization of header files has changed. This  structure is defined in the <i>Ipmib.h</i> header file, not in the <i>Iprtrmib.h</i> header file. Note that the <i>Ipmib.h</i> header file is automatically included in <i>Iprtrmib.h</i>, which is automatically included in the <i>Iphlpapi.h</i> header file. The  <i>Ipmib.h</i> and <i>Iprtrmib.h</i> header files should never be used directly.</para>
+    </remarks>
+    <seealso cref="MIB_IPMCAST_MFE_STATS" />
+    <seealso cref="MIB_MFE_STATS_TABLE_EX" />
+  </member>
+  <member name="MIB_IPMCAST_MFE_STATS_EX.dwGroup">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The multicast group for this MFE. A value of zero indicates a wildcard group.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPMCAST_MFE_STATS_EX.dwSource">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The range of source addresses for this MFE. A value of zero indicates a wildcard source.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPMCAST_MFE_STATS_EX.dwSrcMask">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The IPv4 subnet mask that corresponds to <b>dwSourceAddr</b>. The <b>dwSourceAddr</b> and <b>dwSourceMask</b> members are used together to define a range of sources.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPMCAST_MFE_STATS_EX.dwUpStrmNgbr">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The upstream neighbor that is related to this MFE.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPMCAST_MFE_STATS_EX.dwInIfIndex">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The index of the incoming interface to which this MFE is related.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPMCAST_MFE_STATS_EX.dwInIfProtocol">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The routing protocol that owns the incoming interface to which this MFE is related.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPMCAST_MFE_STATS_EX.dwRouteProtocol">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The client that created the route.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPMCAST_MFE_STATS_EX.dwRouteNetwork">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The address associated with the route referred to by <b>dwRouteProtocol</b>.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPMCAST_MFE_STATS_EX.dwRouteMask">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The mask associated with the route referred to by <b>dwRouteProtocol</b>.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPMCAST_MFE_STATS_EX.ulUpTime">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The time, in 100ths of a seconds, since the MFE was created.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPMCAST_MFE_STATS_EX.ulExpiryTime">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The time, in 100ths of a seconds, until the MFE will be deleted. Zero is specified if the MFE is not subject to aging requirements.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPMCAST_MFE_STATS_EX.ulNumOutIf">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The number of interfaces in the outgoing interface list for this MFE.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPMCAST_MFE_STATS_EX.ulInPkts">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The number of packets that have been forwarded that matched this MFE.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPMCAST_MFE_STATS_EX.ulInOctets">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The number of octets of data forwarded that match this MFE.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPMCAST_MFE_STATS_EX.ulPktsDifferentIf">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The number of packets matching this MFE that were dropped due to an incoming interface check.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPMCAST_MFE_STATS_EX.ulQueueOverflow">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The number of packets matching this MFE that were dropped due to a queue overflow. There is one queue per MFE.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPMCAST_MFE_STATS_EX.ulUninitMfe">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The number of uninitialized packets that matched this MFE.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPMCAST_MFE_STATS_EX.ulNegativeMfe">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The number of packets matching this MFE discarded due to a negative error value.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPMCAST_MFE_STATS_EX.ulInDiscards">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The number of discarded forwarded packets that matched this MFE.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPMCAST_MFE_STATS_EX.ulInHdrErrors">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The number of packets matching this MFE discarded due to bad or malformed header values (such as a bad Time-to-Live value).</para>
+    </summary>
+  </member>
+  <member name="MIB_IPMCAST_MFE_STATS_EX.ulTotalOutPackets">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The total number of MFE packets  transmitted across all associated interfaces. Note that one packet sent over N interfaces will count as N packets within this value.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPMCAST_MFE_STATS_EX.rgmiosOutStats">
+    <summary></summary>
+  </member>
+</doc>

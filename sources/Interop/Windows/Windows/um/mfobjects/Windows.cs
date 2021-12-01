@@ -10,9 +10,11 @@ namespace TerraFX.Interop.Windows;
 
 public static unsafe partial class Windows
 {
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSerializeAttributesToStream"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFSerializeAttributesToStream(IMFAttributes* pAttr, [NativeTypeName("DWORD")] uint dwOptions, IStream* pStm);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFDeserializeAttributesFromStream"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFDeserializeAttributesFromStream(IMFAttributes* pAttr, [NativeTypeName("DWORD")] uint dwOptions, IStream* pStm);
 

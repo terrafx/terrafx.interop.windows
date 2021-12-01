@@ -1,0 +1,687 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="Windows.AddPointerInteractionContext">
+    <summary>
+      <para>Include  the specified pointer in the set of pointers processed by the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/interaction-context-portal">Interaction Context</a> object.</para>
+    </summary>
+    <param name="interactionContext">
+      <para>Handle to the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/interaction-context-portal">Interaction Context</a> object.</para>
+    </param>
+    <param name="pointerId">
+      <para>ID of the pointer.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns S_OK.</para>
+      <para>Otherwise, it returns an HRESULT error code.</para>
+    </returns>
+    <remarks>
+      <para>Turn pointer filtering on by setting INTERACTION_CONTEXT_PROPERTY_FILTER_POINTERS in <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/nf-interactioncontext-setpropertyinteractioncontext">SetPropertyInteractionContext</a>.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/nf-interactioncontext-getpropertyinteractioncontext">GetPropertyInteractionContext</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/functions">Interaction Context Functions</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/nf-interactioncontext-removepointerinteractioncontext">RemovePointerInteractionContext</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/nf-interactioncontext-setpropertyinteractioncontext">SetPropertyInteractionContext</seealso>
+  </member>
+  <member name="Windows.BufferPointerPacketsInteractionContext">
+    <summary>
+      <para>Adds the history for a single input pointer to the buffer of the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/interaction-context-portal">Interaction Context</a> object.</para>
+    </summary>
+    <param name="interactionContext">
+      <para>The handle of the interaction context.</para>
+    </param>
+    <param name="entriesCount">
+      <para>The number of entries in the pointer history.</para>
+    </param>
+    <param name="pointerInfo">
+      <para>Basic pointer information common to all pointer types.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns S_OK.</para>
+      <para>Otherwise, it returns an HRESULT error code.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/hinteractioncontext">HINTERACTIONCONTEXT</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/functions">Interaction Context Functions</seealso>
+    <seealso cref="POINTER_INFO" />
+  </member>
+  <member name="Windows.CreateInteractionContext">
+    <summary>
+      <para>Creates and initializes an <a href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/interaction-context-portal">Interaction Context</a> object.</para>
+    </summary>
+    <param name="interactionContext">
+      <para>Pointer to a handle for the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/interaction-context-portal">Interaction Context</a>.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns S_OK.</para>
+      <para>Otherwise, it returns an HRESULT error code.</para>
+    </returns>
+    <remarks>
+      <para>
+        <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/nf-interactioncontext-destroyinteractioncontext">DestroyInteractionContext</a> must be called to destroy any interaction context created by <b>CreateInteractionContext</b>.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/nf-interactioncontext-destroyinteractioncontext">DestroyInteractionContext</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/hinteractioncontext">HINTERACTIONCONTEXT</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/functions">Interaction Context Functions</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/nf-interactioncontext-resetinteractioncontext">ResetInteractionContext</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/nf-interactioncontext-stopinteractioncontext">StopInteractionContext</seealso>
+  </member>
+  <member name="Windows.DestroyInteractionContext">
+    <summary>
+      <para>Destroys the specified <a href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/interaction-context-portal">Interaction Context</a> object.</para>
+    </summary>
+    <param name="interactionContext">
+      <para>The handle of the interaction context.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns S_OK.</para>
+      <para>Otherwise, it returns an HRESULT error code.</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>DestroyInteractionContext</b> must be called to destroy any interaction context created by <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/nf-interactioncontext-createinteractioncontext">CreateInteractionContext</a>.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/nf-interactioncontext-createinteractioncontext">CreateInteractionContext</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/hinteractioncontext">HINTERACTIONCONTEXT</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/functions">Interaction Context Functions</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/nf-interactioncontext-resetinteractioncontext">ResetInteractionContext</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/nf-interactioncontext-stopinteractioncontext">StopInteractionContext</seealso>
+  </member>
+  <member name="Windows.GetCrossSlideParameterInteractionContext">
+    <summary>
+      <para>Gets the cross-slide interaction behavior.</para>
+    </summary>
+    <param name="interactionContext">
+      <para>The handle of the interaction context.</para>
+    </param>
+    <param name="threshold">
+      <para>One of the constants from <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/ne-interactioncontext-cross_slide_threshold">CROSS_SLIDE_THRESHOLD</a>.</para>
+    </param>
+    <param name="distance">
+      <para>The distance threshold of <i>threshold</i>.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns S_OK.</para>
+      <para>Otherwise, it returns an HRESULT error code.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/ns-interactioncontext-cross_slide_parameter">CROSS_SLIDE_PARAMETER</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/hinteractioncontext">HINTERACTIONCONTEXT</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/functions">Interaction Context Functions</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/nf-interactioncontext-setcrossslideparametersinteractioncontext">SetCrossSlideParametersInteractionContext</seealso>
+  </member>
+  <member name="Windows.GetInertiaParameterInteractionContext">
+    <summary>
+      <para>Gets the inertia behavior of a manipulation (translation, rotation, scaling).</para>
+    </summary>
+    <param name="interactionContext">
+      <para>The handle of the interaction context.</para>
+    </param>
+    <param name="inertiaParameter">
+      <para>One of the constants from <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/ne-interactioncontext-inertia_parameter">INERTIA_PARAMETER</a>.</para>
+    </param>
+    <param name="value">
+      <para>The value of <i>inertiaParameter</i>. This value is one of the following:</para>
+      <list type="bullet">
+        <item>
+          <description>The rate of deceleration, in radians/ms².</description>
+        </item>
+        <item>
+          <description>For translation, the relative change in screen location, in HIMETRIC units.</description>
+        </item>
+        <item>
+          <description>For rotation, the relative change in angle of rotation, in radians</description>
+        </item>
+        <item>
+          <description>For scaling, the relative change in size, in HIMETRIC units.</description>
+        </item>
+      </list>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns S_OK.</para>
+      <para>Otherwise, it returns an HRESULT error code.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/hinteractioncontext">HINTERACTIONCONTEXT</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/functions">Interaction Context Functions</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/nf-interactioncontext-setinertiaparameterinteractioncontext">SetInertiaParameterInteractionContext</seealso>
+  </member>
+  <member name="Windows.GetInteractionConfigurationInteractionContext">
+    <summary>
+      <para>Gets interaction configuration state  for the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/interaction-context-portal">Interaction Context</a> object.</para>
+    </summary>
+    <param name="interactionContext">
+      <para>Pointer to a handle for the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/interaction-context-portal">Interaction Context</a>.</para>
+    </param>
+    <param name="configurationCount">
+      <para>Number of interaction configurations.</para>
+    </param>
+    <param name="configuration">
+      <para>The interactions enabled for this <a href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/interaction-context-portal">Interaction Context</a> object.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns S_OK.</para>
+      <para>Otherwise, it returns an HRESULT error code.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/hinteractioncontext">HINTERACTIONCONTEXT</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/ns-interactioncontext-interaction_context_configuration">INTERACTION_CONTEXT_CONFIGURATION</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/functions">Interaction Context Functions</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/nf-interactioncontext-setinteractionconfigurationinteractioncontext">SetInteractionConfigurationInteractionContext</seealso>
+  </member>
+  <member name="Windows.GetMouseWheelParameterInteractionContext">
+    <summary>
+      <para>Gets the mouse wheel state for the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/interaction-context-portal">Interaction Context</a> object.</para>
+    </summary>
+    <param name="interactionContext">
+      <para>Pointer to a handle for the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/interaction-context-portal">Interaction Context</a>.</para>
+    </param>
+    <param name="value">
+      <para>The value of <i>parameter</i>.</para>
+    </param>
+    <param name="parameter">
+      <para>One of the constants from <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/ne-interactioncontext-mouse_wheel_parameter">MOUSE_WHEEL_PARAMETER</a>.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns S_OK.</para>
+      <para>Otherwise, it returns an HRESULT error code.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/hinteractioncontext">HINTERACTIONCONTEXT</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/functions">Interaction Context Functions</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/nf-interactioncontext-setmousewheelparameterinteractioncontext">SetMouseWheelParameterInteractionContext</seealso>
+  </member>
+  <member name="Windows.GetPropertyInteractionContext">
+    <summary>
+      <para>Gets <a href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/interaction-context-portal">Interaction Context</a> object properties.</para>
+    </summary>
+    <param name="interactionContext">
+      <para>Handle to the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/interaction-context-portal">Interaction Context</a> object.</para>
+    </param>
+    <param name="contextProperty">
+      <para>One of the constants identified by <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/ne-interactioncontext-interaction_context_property">INTERACTION_CONTEXT_PROPERTY</a>.</para>
+    </param>
+    <param name="value">
+      <para>The value of the property.</para>
+      <para>Valid values for <i>contextProperty</i> are:</para>
+      <list type="table">
+        <listheader>
+          <description>
+            <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/ne-interactioncontext-interaction_context_property">INTERACTION_CONTEXT_PROPERTY_MEASUREMENT_UNITS</a>
+          </description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>INTERACTION_CONTEXT_PROPERTY_MEASUREMENT_UNITS_HIMETRIC</b>
+                </description>
+              </item>
+              <item>
+                <description>0</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Measurement units are HIMETRIC  units (0.01 mm).</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>INTERACTION_CONTEXT_PROPERTY_MEASUREMENT_UNITS_SCREEN</b>
+                </description>
+              </item>
+              <item>
+                <description>1</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Measurement units are screen pixels. This is the default value.</para>
+          </description>
+        </item>
+      </list>
+      <list type="table">
+        <listheader>
+          <description>
+            <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/ne-interactioncontext-interaction_context_property">INTERACTION_CONTEXT_PROPERTY_UI_FEEDBACK</a>
+          </description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>INTERACTION_CONTEXT_PROPERTY_UI_FEEDBACK_OFF</b>
+                </description>
+              </item>
+              <item>
+                <description>0</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Visual feedback for user interactions is disabled (the caller is responsible for displaying visual feedback). For more info, see <a href="https://docs.microsoft.com//previous-versions/windows/desktop/input_feedback/input-feedback-configuration-portal">Input Feedback Configuration</a>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>INTERACTION_CONTEXT_PROPERTY_UI_FEEDBACK_ON</b>
+                </description>
+              </item>
+              <item>
+                <description>1</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Visual feedback for user interactions is enabled. This is the default value. For more info, see <a href="https://docs.microsoft.com//previous-versions/windows/desktop/input_feedback/input-feedback-configuration-portal">Input Feedback Configuration</a>.</para>
+          </description>
+        </item>
+      </list>
+      <list type="table">
+        <listheader>
+          <description>INTERACTION_CONTEXT_PROPERTY_FILTER_POINTERS</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>INTERACTION_CONTEXT_PROPERTY_FILTER_POINTERS_OFF</b>
+                </description>
+              </item>
+              <item>
+                <description>0</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Pointer filtering is disabled (all pointer input data is processed).</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>INTERACTION_CONTEXT_PROPERTY_FILTER_POINTERS_ON</b>
+                </description>
+              </item>
+              <item>
+                <description>1</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Pointer filtering is enabled (only pointers specified through <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/nf-interactioncontext-addpointerinteractioncontext">AddPointerInteractionContext</a> are processed). This is the default value.</para>
+          </description>
+        </item>
+      </list>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns S_OK.</para>
+      <para>Otherwise, it returns an HRESULT error code.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/hinteractioncontext">HINTERACTIONCONTEXT</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/functions">Interaction Context Functions</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/nf-interactioncontext-setpropertyinteractioncontext">SetPropertyInteractionContext</seealso>
+  </member>
+  <member name="Windows.GetStateInteractionContext">
+    <summary>
+      <para>Gets current <a href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/interaction-context-portal">Interaction Context</a> state and the time when the context will return to idle state.</para>
+    </summary>
+    <param name="interactionContext">
+      <para>Pointer to a handle for the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/interaction-context-portal">Interaction Context</a>.</para>
+    </param>
+    <param name="pointerInfo">
+      <para>Basic pointer information common to all pointer types.</para>
+    </param>
+    <param name="state">
+      <para>One of the constants from <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/ne-interactioncontext-interaction_state">INTERACTION_STATE</a>.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns S_OK.</para>
+      <para>Otherwise, it returns an HRESULT error code.</para>
+    </returns>
+    <remarks>
+      <para>After interaction ends, the interaction context might still be busy reporting inertia, or expecting second tap in a double tap gesture (in general, if multi-stroke gesture is possible). This function allows the caller to find out when it is safe to treat the Interaction Context object as idle. The main purpose of this function is management of pools of interaction contexts.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/hinteractioncontext">HINTERACTIONCONTEXT</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/functions">Interaction Context Functions</seealso>
+  </member>
+  <member name="Windows.ProcessBufferedPacketsInteractionContext">
+    <summary>
+      <para>Process buffered packets at the end of a pointer input frame.</para>
+    </summary>
+    <param name="interactionContext">
+      <para>Pointer to a handle for the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/interaction-context-portal">Interaction Context</a>.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns S_OK.</para>
+      <para>Otherwise, it returns an HRESULT error code.</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>ProcessBufferedPacketsInteractionContext</b> is called at the end of the frame, when the buffer contains all the pointer histories from the frame.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/hinteractioncontext">HINTERACTIONCONTEXT</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/functions">Interaction Context Functions</seealso>
+  </member>
+  <member name="Windows.ProcessInertiaInteractionContext">
+    <summary>
+      <para>Sends timer input to the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/interaction-context-portal">Interaction Context</a> object for inertia processing.</para>
+    </summary>
+    <param name="interactionContext">
+      <para>Pointer to a handle for the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/interaction-context-portal">Interaction Context</a>.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns S_OK.</para>
+      <para>Otherwise, it returns an HRESULT error code.</para>
+    </returns>
+    <remarks>
+      <para>The caller is responsible for creating timer when inertia starts, and for driving inertia input with the timer by calling this function from the timer callback. Recommended timer period is 15 ms.</para>
+      <para>This function has no effect outside inertia.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/hinteractioncontext">HINTERACTIONCONTEXT</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/functions">Interaction Context Functions</seealso>
+  </member>
+  <member name="Windows.ProcessPointerFramesInteractionContext">
+    <summary>
+      <para>Processes a set of pointer input frames.</para>
+    </summary>
+    <param name="interactionContext">
+      <para>Pointer to a handle for the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/interaction-context-portal">Interaction Context</a>.</para>
+    </param>
+    <param name="entriesCount">
+      <para>Number of frames to process.</para>
+    </param>
+    <param name="pointerCount">
+      <para>Number of pointers in each frame.</para>
+    </param>
+    <param name="pointerInfo">
+      <para>Pointer to the array of frames (of size <i>entriesCount</i>).</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns S_OK.</para>
+      <para>Otherwise, it returns an HRESULT error code.</para>
+    </returns>
+    <remarks>
+      <para>Output notifications are sent as required.</para>
+      <para>Frames must be processed in reverse chronological order (most recent data first).</para>
+      <para>Each frame must have the same set  of input pointers.</para>
+      <para>Each pointer must originate from a different contact.</para>
+      <para>If pointer filtering is set, a sub-frame that includes the specified pointers is extracted from each frame. Pointers are specified through  <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/nf-interactioncontext-addpointerinteractioncontext">AddPointerInteractionContext</a> and pointer filtering turned on by setting INTERACTION_CONTEXT_PROPERTY_FILTER_POINTERS in <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/nf-interactioncontext-setpropertyinteractioncontext">SetPropertyInteractionContext</a>.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/hinteractioncontext">HINTERACTIONCONTEXT</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/functions">Interaction Context Functions</seealso>
+  </member>
+  <member name="Windows.RegisterOutputCallbackInteractionContext">
+    <summary>
+      <para>Registers a callback to receive interaction events from an <a href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/interaction-context-portal">Interaction Context</a> object.</para>
+    </summary>
+    <param name="interactionContext">
+      <para>Handle to the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/interaction-context-portal">Interaction Context</a>.</para>
+    </param>
+    <param name="outputCallback">
+      <para>The callback function.</para>
+    </param>
+    <param name="clientData">
+      <para>A pointer to an object that contains information about the client. The value typically points to the object for which the member function is called (<b>this</b>).</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns S_OK.</para>
+      <para>Otherwise, it returns an HRESULT error code.</para>
+    </returns>
+    <remarks>
+      <para>Each instance of an <a href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/interaction-context-portal">Interaction Context</a> is limited to one output callback. Registering a callback function overwrites any existing callback registration for the Interaction Context.</para>
+      <para>This function is typically called after the creation of an <a href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/interaction-context-portal">Interaction Context</a> or when the Interaction Context is reassigned to another UI element.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/ns-interactioncontext-interaction_context_output">INTERACTION_CONTEXT_OUTPUT</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/nc-interactioncontext-interaction_context_output_callback">INTERACTION_CONTEXT_OUTPUT_CALLBACK</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/functions">Interaction Context Functions</seealso>
+  </member>
+  <member name="Windows.RemovePointerInteractionContext">
+    <summary>
+      <para>Remove  the specified pointer from the set of pointers processed by the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/interaction-context-portal">Interaction Context</a> object.</para>
+    </summary>
+    <param name="interactionContext">
+      <para>Handle to the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/interaction-context-portal">Interaction Context</a> object.</para>
+    </param>
+    <param name="pointerId">
+      <para>ID of the pointer.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns S_OK.</para>
+      <para>Otherwise, it returns an HRESULT error code.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/nf-interactioncontext-addpointerinteractioncontext">AddPointerInteractionContext</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/functions">Interaction Context Functions</seealso>
+  </member>
+  <member name="Windows.ResetInteractionContext">
+    <summary>
+      <para>Resets the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/ne-interactioncontext-interaction_state">interaction state</a>, interaction configuration settings, and all parameters to their initial state.  Current interactions are cancelled without notifications.
+<a href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/interaction-context-portal">Interaction Context</a> must be reconfigured before next use.</para>
+    </summary>
+    <param name="interactionContext">
+      <para>Pointer to a handle for the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/interaction-context-portal">Interaction Context</a>.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns S_OK.</para>
+      <para>Otherwise, it returns an HRESULT error code.</para>
+    </returns>
+    <remarks>
+      <para>Useful for managing a pool of <a href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/interaction-context-portal">Interaction Context</a> objects.</para>
+      <para>Current interactions are cancelled without notifications.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/nf-interactioncontext-createinteractioncontext">CreateInteractionContext</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/nf-interactioncontext-destroyinteractioncontext">DestroyInteractionContext</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/hinteractioncontext">HINTERACTIONCONTEXT</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/functions">Interaction Context Functions</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/nf-interactioncontext-stopinteractioncontext">StopInteractionContext</seealso>
+  </member>
+  <member name="Windows.SetCrossSlideParametersInteractionContext">
+    <summary>
+      <para>Configures the cross-slide interaction.</para>
+    </summary>
+    <param name="interactionContext">
+      <para>The handle of the interaction context.</para>
+    </param>
+    <param name="parameterCount">
+      <para>Number of parameters to set.</para>
+    </param>
+    <param name="crossSlideParameters">
+      <para>The cross-slide threshold and its distance threshold.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns S_OK.</para>
+      <para>Otherwise, it returns an HRESULT error code.</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>SetCrossSlideParametersInteractionContext</b> fails if a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/ns-interactioncontext-cross_slide_parameter">CROSS_SLIDE_PARAMETER</a> is enabled, but not specified  in the <i>crossSlideParameters</i> parameter.</para>
+      <h4>Examples</h4>
+      <para>This example demonstrates how to set custom cross-slide thresholds.</para>
+      <code>//  SetCrossSlideParametersInteractionContext
+
+CROSS_SLIDE_PARAMETER crossSlideParameters[4];
+crossSlideParameters[0].threshold = CROSS_SLIDE_THRESHOLD_SELECT_START;
+crossSlideParameters[0].distance = customSelectStart;
+crossSlideParameters[1].threshold = CROSS_SLIDE_THRESHOLD_SPEED_BUMP_START;
+crossSlideParameters[1].distance = customSpeedBumpStart;
+crossSlideParameters[2].threshold = CROSS_SLIDE_THRESHOLD_SPEED_BUMP_END;
+crossSlideParameters[2].distance = customSpeedBumpEnd;
+crossSlideParameters[3].threshold = CROSS_SLIDE_THRESHOLD_REARRANGE_START;
+crossSlideParameters[3].distance = customRearrangeStart;
+
+
+// set thresholds for select, speedbump, and rearrange
+SetCrossSlideParametersInteractionContext(
+    m_interactionContext,
+    4,
+    crossSlideParameters);
+
+</code>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/ns-interactioncontext-cross_slide_parameter">CROSS_SLIDE_PARAMETER</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/nf-interactioncontext-getcrossslideparameterinteractioncontext">GetCrossSlideParameterInteractionContext</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/hinteractioncontext">HINTERACTIONCONTEXT</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/functions">Interaction Context Functions</seealso>
+  </member>
+  <member name="Windows.SetInertiaParameterInteractionContext">
+    <summary>
+      <para>Configures the inertia behavior of a manipulation (translation, rotation, scaling) after the contact is lifted.</para>
+    </summary>
+    <param name="interactionContext">
+      <para>The handle of the interaction context.</para>
+    </param>
+    <param name="inertiaParameter">
+      <para>One of the constants from <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/ne-interactioncontext-inertia_parameter">INERTIA_PARAMETER</a>.</para>
+    </param>
+    <param name="value">
+      <para>One of the following:</para>
+      <list type="bullet">
+        <item>
+          <description>The rate of deceleration, in radians/ms².</description>
+        </item>
+        <item>
+          <description>For translation, the relative change in screen location, in HIMETRIC units.</description>
+        </item>
+        <item>
+          <description>For rotation, the relative change in angle of rotation, in radianx</description>
+        </item>
+        <item>
+          <description>For scaling, the relative change in size, in HIMETRIC units.</description>
+        </item>
+      </list>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns S_OK.</para>
+      <para>Otherwise, it returns an HRESULT error code.</para>
+    </returns>
+    <remarks>
+      <para>
+        <a href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/interaction-context-portal">Interaction Context</a> uses the inertia system setting for all manipulations (translation, rotation, scaling). This function overrides the system setting.</para>
+      <para>To restore the system setting, set <i>value</i> to INERTIA_PARAMETER_INVALID_VALUE    FLT_MAX.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/nf-interactioncontext-getinertiaparameterinteractioncontext">GetInertiaParameterInteractionContext</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/hinteractioncontext">HINTERACTIONCONTEXT</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/functions">Interaction Context Functions</seealso>
+  </member>
+  <member name="Windows.SetInteractionConfigurationInteractionContext">
+    <summary>
+      <para>Configures the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/interaction-context-portal">Interaction Context</a> object to process the specified manipulations.</para>
+    </summary>
+    <param name="interactionContext">
+      <para>The handle of the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/interaction-context-portal">Interaction Context</a>.</para>
+    </param>
+    <param name="configurationCount">
+      <para>The number of interactions being configured.</para>
+    </param>
+    <param name="configuration">
+      <para>The interactions to enable for this <a href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/interaction-context-portal">Interaction Context</a> object.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns S_OK.</para>
+      <para>Otherwise, it returns an HRESULT error code.</para>
+    </returns>
+    <remarks>
+      <para>By default, no configuration flags are set (no interactions are enabled). Each interaction must be explicitly declared.</para>
+      <para>Configuration changes are applied only to new interactions.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/nf-interactioncontext-getinteractionconfigurationinteractioncontext">GetInteractionConfigurationInteractionContext</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/hinteractioncontext">HINTERACTIONCONTEXT</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/ns-interactioncontext-interaction_context_configuration">INTERACTION_CONTEXT_CONFIGURATION</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/functions">Interaction Context Functions</seealso>
+  </member>
+  <member name="Windows.SetMouseWheelParameterInteractionContext">
+    <summary>
+      <para>Sets the parameter values for mouse wheel input.</para>
+    </summary>
+    <param name="interactionContext">
+      <para>Pointer to a handle for the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/interaction-context-portal">Interaction Context</a>.</para>
+    </param>
+    <param name="value">
+      <para>The value for <i>parameter</i>.</para>
+    </param>
+    <param name="parameter">
+      <para>One of the constants identified by <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/ne-interactioncontext-mouse_wheel_parameter">MOUSE_WHEEL_PARAMETER</a>.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns S_OK.</para>
+      <para>Otherwise, it returns an HRESULT error code.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/nf-interactioncontext-getmousewheelparameterinteractioncontext">GetMouseWheelParameterInteractionContext</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/hinteractioncontext">HINTERACTIONCONTEXT</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/functions">Interaction Context Functions</seealso>
+  </member>
+  <member name="Windows.SetPivotInteractionContext">
+    <summary>
+      <para>Sets the center point, and the pivot radius from the center point, for a rotation manipulation using a single input pointer.</para>
+    </summary>
+    <param name="interactionContext">
+      <para>Pointer to a handle for the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/interaction-context-portal">Interaction Context</a>.</para>
+    </param>
+    <param name="x">
+      <para>The x-coordinate for the screen location of the center point.</para>
+    </param>
+    <param name="y">
+      <para>The y-coordinate for the screen location of the center point.</para>
+    </param>
+    <param name="radius">
+      <para>The offset between the center point and the single input pointer, in HIMETRIC units.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns S_OK.</para>
+      <para>Otherwise, it returns an HRESULT error code.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/hinteractioncontext">HINTERACTIONCONTEXT</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/functions">Interaction Context Functions</seealso>
+  </member>
+  <member name="Windows.SetPropertyInteractionContext">
+    <summary>
+      <para>Sets <a href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/interaction-context-portal">Interaction Context</a> object properties.</para>
+    </summary>
+    <param name="interactionContext">
+      <para>Handle to the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/interaction-context-portal">Interaction Context</a> object.</para>
+    </param>
+    <param name="contextProperty">
+      <para>One of the constants identified by <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/ne-interactioncontext-interaction_context_property">INTERACTION_CONTEXT_PROPERTY</a>.</para>
+    </param>
+    <param name="value">
+      <para>The value of the constant identified by <i>contextProperty</i>.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns S_OK.</para>
+      <para>Otherwise, it returns an HRESULT error code.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/nf-interactioncontext-addpointerinteractioncontext">AddPointerInteractionContext</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/nf-interactioncontext-getpropertyinteractioncontext">GetPropertyInteractionContext</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/hinteractioncontext">HINTERACTIONCONTEXT</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/functions">Interaction Context Functions</seealso>
+  </member>
+  <member name="Windows.StopInteractionContext">
+    <summary>
+      <para>Sets the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/ne-interactioncontext-interaction_state">interaction state</a> to INTERACTION_STATE_IDLE and leaves all interaction configuration settings and parameters intact. Current interactions are cancelled and notifications sent as required.
+<a href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/interaction-context-portal">Interaction Context</a> does not have to be reconfigured before next use.</para>
+    </summary>
+    <param name="interactionContext">
+      <para>Handle to the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/interaction-context-portal">Interaction Context</a> object.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns S_OK.</para>
+      <para>Otherwise, it returns an HRESULT error code.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/nf-interactioncontext-createinteractioncontext">CreateInteractionContext</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/nf-interactioncontext-destroyinteractioncontext">DestroyInteractionContext</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/hinteractioncontext">HINTERACTIONCONTEXT</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/functions">Interaction Context Functions</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/nf-interactioncontext-resetinteractioncontext">ResetInteractionContext</seealso>
+  </member>
+</doc>

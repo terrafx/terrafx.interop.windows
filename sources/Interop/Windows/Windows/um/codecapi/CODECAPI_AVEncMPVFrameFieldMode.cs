@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVEncMPVFrameFieldMode.xml' path='doc/member[@name="CODECAPI_AVEncMPVFrameFieldMode"]/*' />
 [Guid("ACB5DE96-7B93-4C2F-8825-B0295FA93BF4")]
 public partial struct CODECAPI_AVEncMPVFrameFieldMode
 {

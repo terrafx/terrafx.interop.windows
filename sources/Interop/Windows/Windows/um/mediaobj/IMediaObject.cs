@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMediaObject.xml' path='doc/member[@name="IMediaObject"]/*' />
 [Guid("D8AD0F58-5494-4102-97C5-EC798E59BCF4")]
 [NativeTypeName("struct IMediaObject : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMediaObject : IMediaObject.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMediaObject : IMediaObject.Interface
         return ((delegate* unmanaged<IMediaObject*, Guid*, void**, int>)(lpVtbl[0]))((IMediaObject*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMediaObject : IMediaObject.Interface
         return ((delegate* unmanaged<IMediaObject*, uint>)(lpVtbl[1]))((IMediaObject*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMediaObject : IMediaObject.Interface
         return ((delegate* unmanaged<IMediaObject*, uint>)(lpVtbl[2]))((IMediaObject*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMediaObject.xml' path='doc/member[@name="IMediaObject.GetStreamCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetStreamCount([NativeTypeName("DWORD *")] uint* pcInputStreams, [NativeTypeName("DWORD *")] uint* pcOutputStreams)
@@ -46,6 +51,7 @@ public unsafe partial struct IMediaObject : IMediaObject.Interface
         return ((delegate* unmanaged<IMediaObject*, uint*, uint*, int>)(lpVtbl[3]))((IMediaObject*)Unsafe.AsPointer(ref this), pcInputStreams, pcOutputStreams);
     }
 
+    /// <include file='IMediaObject.xml' path='doc/member[@name="IMediaObject.GetInputStreamInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetInputStreamInfo([NativeTypeName("DWORD")] uint dwInputStreamIndex, [NativeTypeName("DWORD *")] uint* pdwFlags)
@@ -53,6 +59,7 @@ public unsafe partial struct IMediaObject : IMediaObject.Interface
         return ((delegate* unmanaged<IMediaObject*, uint, uint*, int>)(lpVtbl[4]))((IMediaObject*)Unsafe.AsPointer(ref this), dwInputStreamIndex, pdwFlags);
     }
 
+    /// <include file='IMediaObject.xml' path='doc/member[@name="IMediaObject.GetOutputStreamInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetOutputStreamInfo([NativeTypeName("DWORD")] uint dwOutputStreamIndex, [NativeTypeName("DWORD *")] uint* pdwFlags)
@@ -60,6 +67,7 @@ public unsafe partial struct IMediaObject : IMediaObject.Interface
         return ((delegate* unmanaged<IMediaObject*, uint, uint*, int>)(lpVtbl[5]))((IMediaObject*)Unsafe.AsPointer(ref this), dwOutputStreamIndex, pdwFlags);
     }
 
+    /// <include file='IMediaObject.xml' path='doc/member[@name="IMediaObject.GetInputType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetInputType([NativeTypeName("DWORD")] uint dwInputStreamIndex, [NativeTypeName("DWORD")] uint dwTypeIndex, DMO_MEDIA_TYPE* pmt)
@@ -67,6 +75,7 @@ public unsafe partial struct IMediaObject : IMediaObject.Interface
         return ((delegate* unmanaged<IMediaObject*, uint, uint, DMO_MEDIA_TYPE*, int>)(lpVtbl[6]))((IMediaObject*)Unsafe.AsPointer(ref this), dwInputStreamIndex, dwTypeIndex, pmt);
     }
 
+    /// <include file='IMediaObject.xml' path='doc/member[@name="IMediaObject.GetOutputType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetOutputType([NativeTypeName("DWORD")] uint dwOutputStreamIndex, [NativeTypeName("DWORD")] uint dwTypeIndex, DMO_MEDIA_TYPE* pmt)
@@ -74,6 +83,7 @@ public unsafe partial struct IMediaObject : IMediaObject.Interface
         return ((delegate* unmanaged<IMediaObject*, uint, uint, DMO_MEDIA_TYPE*, int>)(lpVtbl[7]))((IMediaObject*)Unsafe.AsPointer(ref this), dwOutputStreamIndex, dwTypeIndex, pmt);
     }
 
+    /// <include file='IMediaObject.xml' path='doc/member[@name="IMediaObject.SetInputType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT SetInputType([NativeTypeName("DWORD")] uint dwInputStreamIndex, [NativeTypeName("const DMO_MEDIA_TYPE *")] DMO_MEDIA_TYPE* pmt, [NativeTypeName("DWORD")] uint dwFlags)
@@ -81,6 +91,7 @@ public unsafe partial struct IMediaObject : IMediaObject.Interface
         return ((delegate* unmanaged<IMediaObject*, uint, DMO_MEDIA_TYPE*, uint, int>)(lpVtbl[8]))((IMediaObject*)Unsafe.AsPointer(ref this), dwInputStreamIndex, pmt, dwFlags);
     }
 
+    /// <include file='IMediaObject.xml' path='doc/member[@name="IMediaObject.SetOutputType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT SetOutputType([NativeTypeName("DWORD")] uint dwOutputStreamIndex, [NativeTypeName("const DMO_MEDIA_TYPE *")] DMO_MEDIA_TYPE* pmt, [NativeTypeName("DWORD")] uint dwFlags)
@@ -88,6 +99,7 @@ public unsafe partial struct IMediaObject : IMediaObject.Interface
         return ((delegate* unmanaged<IMediaObject*, uint, DMO_MEDIA_TYPE*, uint, int>)(lpVtbl[9]))((IMediaObject*)Unsafe.AsPointer(ref this), dwOutputStreamIndex, pmt, dwFlags);
     }
 
+    /// <include file='IMediaObject.xml' path='doc/member[@name="IMediaObject.GetInputCurrentType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT GetInputCurrentType([NativeTypeName("DWORD")] uint dwInputStreamIndex, DMO_MEDIA_TYPE* pmt)
@@ -95,6 +107,7 @@ public unsafe partial struct IMediaObject : IMediaObject.Interface
         return ((delegate* unmanaged<IMediaObject*, uint, DMO_MEDIA_TYPE*, int>)(lpVtbl[10]))((IMediaObject*)Unsafe.AsPointer(ref this), dwInputStreamIndex, pmt);
     }
 
+    /// <include file='IMediaObject.xml' path='doc/member[@name="IMediaObject.GetOutputCurrentType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT GetOutputCurrentType([NativeTypeName("DWORD")] uint dwOutputStreamIndex, DMO_MEDIA_TYPE* pmt)
@@ -102,6 +115,7 @@ public unsafe partial struct IMediaObject : IMediaObject.Interface
         return ((delegate* unmanaged<IMediaObject*, uint, DMO_MEDIA_TYPE*, int>)(lpVtbl[11]))((IMediaObject*)Unsafe.AsPointer(ref this), dwOutputStreamIndex, pmt);
     }
 
+    /// <include file='IMediaObject.xml' path='doc/member[@name="IMediaObject.GetInputSizeInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT GetInputSizeInfo([NativeTypeName("DWORD")] uint dwInputStreamIndex, [NativeTypeName("DWORD *")] uint* pcbSize, [NativeTypeName("DWORD *")] uint* pcbMaxLookahead, [NativeTypeName("DWORD *")] uint* pcbAlignment)
@@ -109,6 +123,7 @@ public unsafe partial struct IMediaObject : IMediaObject.Interface
         return ((delegate* unmanaged<IMediaObject*, uint, uint*, uint*, uint*, int>)(lpVtbl[12]))((IMediaObject*)Unsafe.AsPointer(ref this), dwInputStreamIndex, pcbSize, pcbMaxLookahead, pcbAlignment);
     }
 
+    /// <include file='IMediaObject.xml' path='doc/member[@name="IMediaObject.GetOutputSizeInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT GetOutputSizeInfo([NativeTypeName("DWORD")] uint dwOutputStreamIndex, [NativeTypeName("DWORD *")] uint* pcbSize, [NativeTypeName("DWORD *")] uint* pcbAlignment)
@@ -116,6 +131,7 @@ public unsafe partial struct IMediaObject : IMediaObject.Interface
         return ((delegate* unmanaged<IMediaObject*, uint, uint*, uint*, int>)(lpVtbl[13]))((IMediaObject*)Unsafe.AsPointer(ref this), dwOutputStreamIndex, pcbSize, pcbAlignment);
     }
 
+    /// <include file='IMediaObject.xml' path='doc/member[@name="IMediaObject.GetInputMaxLatency"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT GetInputMaxLatency([NativeTypeName("DWORD")] uint dwInputStreamIndex, [NativeTypeName("REFERENCE_TIME *")] long* prtMaxLatency)
@@ -123,6 +139,7 @@ public unsafe partial struct IMediaObject : IMediaObject.Interface
         return ((delegate* unmanaged<IMediaObject*, uint, long*, int>)(lpVtbl[14]))((IMediaObject*)Unsafe.AsPointer(ref this), dwInputStreamIndex, prtMaxLatency);
     }
 
+    /// <include file='IMediaObject.xml' path='doc/member[@name="IMediaObject.SetInputMaxLatency"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT SetInputMaxLatency([NativeTypeName("DWORD")] uint dwInputStreamIndex, [NativeTypeName("REFERENCE_TIME")] long rtMaxLatency)
@@ -130,6 +147,7 @@ public unsafe partial struct IMediaObject : IMediaObject.Interface
         return ((delegate* unmanaged<IMediaObject*, uint, long, int>)(lpVtbl[15]))((IMediaObject*)Unsafe.AsPointer(ref this), dwInputStreamIndex, rtMaxLatency);
     }
 
+    /// <include file='IMediaObject.xml' path='doc/member[@name="IMediaObject.Flush"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT Flush()
@@ -137,6 +155,7 @@ public unsafe partial struct IMediaObject : IMediaObject.Interface
         return ((delegate* unmanaged<IMediaObject*, int>)(lpVtbl[16]))((IMediaObject*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMediaObject.xml' path='doc/member[@name="IMediaObject.Discontinuity"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT Discontinuity([NativeTypeName("DWORD")] uint dwInputStreamIndex)
@@ -144,6 +163,7 @@ public unsafe partial struct IMediaObject : IMediaObject.Interface
         return ((delegate* unmanaged<IMediaObject*, uint, int>)(lpVtbl[17]))((IMediaObject*)Unsafe.AsPointer(ref this), dwInputStreamIndex);
     }
 
+    /// <include file='IMediaObject.xml' path='doc/member[@name="IMediaObject.AllocateStreamingResources"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT AllocateStreamingResources()
@@ -151,6 +171,7 @@ public unsafe partial struct IMediaObject : IMediaObject.Interface
         return ((delegate* unmanaged<IMediaObject*, int>)(lpVtbl[18]))((IMediaObject*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMediaObject.xml' path='doc/member[@name="IMediaObject.FreeStreamingResources"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT FreeStreamingResources()
@@ -158,6 +179,7 @@ public unsafe partial struct IMediaObject : IMediaObject.Interface
         return ((delegate* unmanaged<IMediaObject*, int>)(lpVtbl[19]))((IMediaObject*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMediaObject.xml' path='doc/member[@name="IMediaObject.GetInputStatus"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public HRESULT GetInputStatus([NativeTypeName("DWORD")] uint dwInputStreamIndex, [NativeTypeName("DWORD *")] uint* dwFlags)
@@ -165,6 +187,7 @@ public unsafe partial struct IMediaObject : IMediaObject.Interface
         return ((delegate* unmanaged<IMediaObject*, uint, uint*, int>)(lpVtbl[20]))((IMediaObject*)Unsafe.AsPointer(ref this), dwInputStreamIndex, dwFlags);
     }
 
+    /// <include file='IMediaObject.xml' path='doc/member[@name="IMediaObject.ProcessInput"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
     public HRESULT ProcessInput([NativeTypeName("DWORD")] uint dwInputStreamIndex, IMediaBuffer* pBuffer, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("REFERENCE_TIME")] long rtTimestamp, [NativeTypeName("REFERENCE_TIME")] long rtTimelength)
@@ -172,6 +195,7 @@ public unsafe partial struct IMediaObject : IMediaObject.Interface
         return ((delegate* unmanaged<IMediaObject*, uint, IMediaBuffer*, uint, long, long, int>)(lpVtbl[21]))((IMediaObject*)Unsafe.AsPointer(ref this), dwInputStreamIndex, pBuffer, dwFlags, rtTimestamp, rtTimelength);
     }
 
+    /// <include file='IMediaObject.xml' path='doc/member[@name="IMediaObject.ProcessOutput"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
     public HRESULT ProcessOutput([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD")] uint cOutputBufferCount, DMO_OUTPUT_DATA_BUFFER* pOutputBuffers, [NativeTypeName("DWORD *")] uint* pdwStatus)
@@ -179,6 +203,7 @@ public unsafe partial struct IMediaObject : IMediaObject.Interface
         return ((delegate* unmanaged<IMediaObject*, uint, uint, DMO_OUTPUT_DATA_BUFFER*, uint*, int>)(lpVtbl[22]))((IMediaObject*)Unsafe.AsPointer(ref this), dwFlags, cOutputBufferCount, pOutputBuffers, pdwStatus);
     }
 
+    /// <include file='IMediaObject.xml' path='doc/member[@name="IMediaObject.Lock"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
     public HRESULT Lock([NativeTypeName("LONG")] int bLock)

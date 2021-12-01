@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="_DVENCODERRESOLUTION">
+    <summary>
+      <para>Indicates the digital video (DV) encoding resolution.</para>
+    </summary>
+    <remarks>
+      <para>The meaning of the enumeration elements depends on whether the current format is NTSC or PAL:</para>
+      <list type="table">
+        <listheader>
+          <description>Element</description>
+          <description>NTSC</description>
+          <description>PAL</description>
+        </listheader>
+        <item>
+          <description>DVENCODERRESOLUTION_720x480</description>
+          <description>720 x 480</description>
+          <description>720 x 576</description>
+        </item>
+        <item>
+          <description>DVENCODERRESOLUTION_360x240</description>
+          <description>360 x 240</description>
+          <description>360 x 288</description>
+        </item>
+        <item>
+          <description>DVENCODERRESOLUTION_180x120</description>
+          <description>180 x 120</description>
+          <description>180 x 144</description>
+        </item>
+        <item>
+          <description>DVENCODERRESOLUTION_88x60</description>
+          <description>88 x 60</description>
+          <description>88 x 72</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-enumerated-types">DirectShow Enumerated Types</seealso>
+    <seealso cref="IDVEnc Interface" />
+  </member>
+  <member name="_DVENCODERRESOLUTION.DVENCODERRESOLUTION_720x480">
+    <summary>
+      <para>See Remarks.</para>
+    </summary>
+  </member>
+  <member name="_DVENCODERRESOLUTION.DVENCODERRESOLUTION_360x240">
+    <summary>
+      <para>See Remarks.</para>
+    </summary>
+  </member>
+  <member name="_DVENCODERRESOLUTION.DVENCODERRESOLUTION_180x120">
+    <summary>
+      <para>See Remarks.</para>
+    </summary>
+  </member>
+  <member name="_DVENCODERRESOLUTION.DVENCODERRESOLUTION_88x60">
+    <summary>
+      <para>See Remarks.</para>
+    </summary>
+  </member>
+</doc>

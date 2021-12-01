@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IShellItemResources.xml' path='doc/member[@name="IShellItemResources"]/*' />
 [Guid("FF5693BE-2CE0-4D48-B5C5-40817D1ACDB9")]
 [NativeTypeName("struct IShellItemResources : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IShellItemResources : IShellItemResources.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IShellItemResources : IShellItemResources.Interface
         return ((delegate* unmanaged<IShellItemResources*, Guid*, void**, int>)(lpVtbl[0]))((IShellItemResources*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IShellItemResources : IShellItemResources.Interface
         return ((delegate* unmanaged<IShellItemResources*, uint>)(lpVtbl[1]))((IShellItemResources*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IShellItemResources : IShellItemResources.Interface
         return ((delegate* unmanaged<IShellItemResources*, uint>)(lpVtbl[2]))((IShellItemResources*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IShellItemResources.xml' path='doc/member[@name="IShellItemResources.GetAttributes"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetAttributes([NativeTypeName("DWORD *")] uint* pdwAttributes)
@@ -46,6 +51,7 @@ public unsafe partial struct IShellItemResources : IShellItemResources.Interface
         return ((delegate* unmanaged<IShellItemResources*, uint*, int>)(lpVtbl[3]))((IShellItemResources*)Unsafe.AsPointer(ref this), pdwAttributes);
     }
 
+    /// <include file='IShellItemResources.xml' path='doc/member[@name="IShellItemResources.GetSize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetSize([NativeTypeName("ULONGLONG *")] ulong* pullSize)
@@ -53,6 +59,7 @@ public unsafe partial struct IShellItemResources : IShellItemResources.Interface
         return ((delegate* unmanaged<IShellItemResources*, ulong*, int>)(lpVtbl[4]))((IShellItemResources*)Unsafe.AsPointer(ref this), pullSize);
     }
 
+    /// <include file='IShellItemResources.xml' path='doc/member[@name="IShellItemResources.GetTimes"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetTimes(FILETIME* pftCreation, FILETIME* pftWrite, FILETIME* pftAccess)
@@ -60,6 +67,7 @@ public unsafe partial struct IShellItemResources : IShellItemResources.Interface
         return ((delegate* unmanaged<IShellItemResources*, FILETIME*, FILETIME*, FILETIME*, int>)(lpVtbl[5]))((IShellItemResources*)Unsafe.AsPointer(ref this), pftCreation, pftWrite, pftAccess);
     }
 
+    /// <include file='IShellItemResources.xml' path='doc/member[@name="IShellItemResources.SetTimes"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT SetTimes([NativeTypeName("const FILETIME *")] FILETIME* pftCreation, [NativeTypeName("const FILETIME *")] FILETIME* pftWrite, [NativeTypeName("const FILETIME *")] FILETIME* pftAccess)
@@ -67,6 +75,7 @@ public unsafe partial struct IShellItemResources : IShellItemResources.Interface
         return ((delegate* unmanaged<IShellItemResources*, FILETIME*, FILETIME*, FILETIME*, int>)(lpVtbl[6]))((IShellItemResources*)Unsafe.AsPointer(ref this), pftCreation, pftWrite, pftAccess);
     }
 
+    /// <include file='IShellItemResources.xml' path='doc/member[@name="IShellItemResources.GetResourceDescription"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetResourceDescription([NativeTypeName("const SHELL_ITEM_RESOURCE *")] SHELL_ITEM_RESOURCE* pcsir, [NativeTypeName("LPWSTR *")] ushort** ppszDescription)
@@ -74,6 +83,7 @@ public unsafe partial struct IShellItemResources : IShellItemResources.Interface
         return ((delegate* unmanaged<IShellItemResources*, SHELL_ITEM_RESOURCE*, ushort**, int>)(lpVtbl[7]))((IShellItemResources*)Unsafe.AsPointer(ref this), pcsir, ppszDescription);
     }
 
+    /// <include file='IShellItemResources.xml' path='doc/member[@name="IShellItemResources.EnumResources"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT EnumResources(IEnumResources** ppenumr)
@@ -81,6 +91,7 @@ public unsafe partial struct IShellItemResources : IShellItemResources.Interface
         return ((delegate* unmanaged<IShellItemResources*, IEnumResources**, int>)(lpVtbl[8]))((IShellItemResources*)Unsafe.AsPointer(ref this), ppenumr);
     }
 
+    /// <include file='IShellItemResources.xml' path='doc/member[@name="IShellItemResources.SupportsResource"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT SupportsResource([NativeTypeName("const SHELL_ITEM_RESOURCE *")] SHELL_ITEM_RESOURCE* pcsir)
@@ -88,6 +99,7 @@ public unsafe partial struct IShellItemResources : IShellItemResources.Interface
         return ((delegate* unmanaged<IShellItemResources*, SHELL_ITEM_RESOURCE*, int>)(lpVtbl[9]))((IShellItemResources*)Unsafe.AsPointer(ref this), pcsir);
     }
 
+    /// <include file='IShellItemResources.xml' path='doc/member[@name="IShellItemResources.OpenResource"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT OpenResource([NativeTypeName("const SHELL_ITEM_RESOURCE *")] SHELL_ITEM_RESOURCE* pcsir, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
@@ -95,6 +107,7 @@ public unsafe partial struct IShellItemResources : IShellItemResources.Interface
         return ((delegate* unmanaged<IShellItemResources*, SHELL_ITEM_RESOURCE*, Guid*, void**, int>)(lpVtbl[10]))((IShellItemResources*)Unsafe.AsPointer(ref this), pcsir, riid, ppv);
     }
 
+    /// <include file='IShellItemResources.xml' path='doc/member[@name="IShellItemResources.CreateResource"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT CreateResource([NativeTypeName("const SHELL_ITEM_RESOURCE *")] SHELL_ITEM_RESOURCE* pcsir, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
@@ -102,6 +115,7 @@ public unsafe partial struct IShellItemResources : IShellItemResources.Interface
         return ((delegate* unmanaged<IShellItemResources*, SHELL_ITEM_RESOURCE*, Guid*, void**, int>)(lpVtbl[11]))((IShellItemResources*)Unsafe.AsPointer(ref this), pcsir, riid, ppv);
     }
 
+    /// <include file='IShellItemResources.xml' path='doc/member[@name="IShellItemResources.MarkForDelete"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT MarkForDelete()

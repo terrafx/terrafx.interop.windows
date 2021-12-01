@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVDecDDMatrixDecodingMode.xml' path='doc/member[@name="CODECAPI_AVDecDDMatrixDecodingMode"]/*' />
 [Guid("DDC811A5-04ED-4BF3-A0CA-D00449F9355F")]
 public partial struct CODECAPI_AVDecDDMatrixDecodingMode
 {

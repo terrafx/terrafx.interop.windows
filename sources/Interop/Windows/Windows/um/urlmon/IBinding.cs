@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IBinding.xml' path='doc/member[@name="IBinding"]/*' />
 [Guid("79EAC9C0-BAF9-11CE-8C82-00AA004BA90B")]
 [NativeTypeName("struct IBinding : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IBinding : IBinding.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IBinding : IBinding.Interface
         return ((delegate* unmanaged<IBinding*, Guid*, void**, int>)(lpVtbl[0]))((IBinding*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IBinding : IBinding.Interface
         return ((delegate* unmanaged<IBinding*, uint>)(lpVtbl[1]))((IBinding*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IBinding : IBinding.Interface
         return ((delegate* unmanaged<IBinding*, uint>)(lpVtbl[2]))((IBinding*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IBinding.xml' path='doc/member[@name="IBinding.Abort"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Abort()
@@ -46,6 +51,7 @@ public unsafe partial struct IBinding : IBinding.Interface
         return ((delegate* unmanaged<IBinding*, int>)(lpVtbl[3]))((IBinding*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IBinding.xml' path='doc/member[@name="IBinding.Suspend"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Suspend()
@@ -53,6 +59,7 @@ public unsafe partial struct IBinding : IBinding.Interface
         return ((delegate* unmanaged<IBinding*, int>)(lpVtbl[4]))((IBinding*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IBinding.xml' path='doc/member[@name="IBinding.Resume"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT Resume()
@@ -60,6 +67,7 @@ public unsafe partial struct IBinding : IBinding.Interface
         return ((delegate* unmanaged<IBinding*, int>)(lpVtbl[5]))((IBinding*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IBinding.xml' path='doc/member[@name="IBinding.SetPriority"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT SetPriority([NativeTypeName("LONG")] int nPriority)
@@ -67,6 +75,7 @@ public unsafe partial struct IBinding : IBinding.Interface
         return ((delegate* unmanaged<IBinding*, int, int>)(lpVtbl[6]))((IBinding*)Unsafe.AsPointer(ref this), nPriority);
     }
 
+    /// <include file='IBinding.xml' path='doc/member[@name="IBinding.GetPriority"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetPriority([NativeTypeName("LONG *")] int* pnPriority)
@@ -74,6 +83,7 @@ public unsafe partial struct IBinding : IBinding.Interface
         return ((delegate* unmanaged<IBinding*, int*, int>)(lpVtbl[7]))((IBinding*)Unsafe.AsPointer(ref this), pnPriority);
     }
 
+    /// <include file='IBinding.xml' path='doc/member[@name="IBinding.GetBindResult"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetBindResult([NativeTypeName("CLSID *")] Guid* pclsidProtocol, [NativeTypeName("DWORD *")] uint* pdwResult, [NativeTypeName("LPOLESTR *")] ushort** pszResult, [NativeTypeName("DWORD *")] uint* pdwReserved)

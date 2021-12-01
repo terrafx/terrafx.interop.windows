@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="LVHITTESTINFO">
+    <summary>
+      <para>Contains information about a hit test. This structure has been extended to accommodate subitem hit-testing. It is used in association with the <a href="https://docs.microsoft.com//windows/desktop/Controls/lvm-hittest">LVM_HITTEST</a> and <a href="https://docs.microsoft.com//windows/desktop/Controls/lvm-subitemhittest">LVM_SUBITEMHITTEST</a> messages and their related macros. This structure supersedes the
+<b>LVHITTESTINFO</b> structure.</para>
+    </summary>
+  </member>
+  <member name="LVHITTESTINFO.pt">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/dd162805(v=vs.85)">POINT</a></b></para>
+      <para>The position to hit test, in client coordinates.</para>
+    </summary>
+  </member>
+  <member name="LVHITTESTINFO.flags">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The variable that receives information about the results of a hit test. This member can be one or more of the following values:</para>
+      <para>You can use LVHT_ABOVE, LVHT_BELOW, LVHT_TOLEFT, and LVHT_TORIGHT to determine whether to scroll the contents of a list-view control. Two of these values may be combined. For example, if the position is above and to the left of the client area, you could use both LVHT_ABOVE and LVHT_TOLEFT.</para>
+      <para>You can test for LVHT_ONITEM to determine whether a specified position is over a list-view item. This value is a bitwise-OR operation on LVHT_ONITEMICON, LVHT_ONITEMLABEL, and LVHT_ONITEMSTATEICON.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>LVHT_ABOVE</b>
+          </description>
+          <description>
+            <para>The position is above the control's client area.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>LVHT_BELOW</b>
+          </description>
+          <description>
+            <para>The position is below the control's client area.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>LVHT_NOWHERE</b>
+          </description>
+          <description>
+            <para>The position is inside the list-view control's client window, but it is not over a list item.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>LVHT_ONITEMICON</b>
+          </description>
+          <description>
+            <para>The position is over a list-view item's icon.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>LVHT_ONITEMLABEL</b>
+          </description>
+          <description>
+            <para>The position is over a list-view item's text.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>LVHT_ONITEMSTATEICON</b>
+          </description>
+          <description>
+            <para>The position is over the state image of a list-view item.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>LVHT_TOLEFT</b>
+          </description>
+          <description>
+            <para>The position is to the left of the list-view control's client area.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>LVHT_TORIGHT</b>
+          </description>
+          <description>
+            <para>The position is to the right of the list-view control's client area.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>LVHT_EX_GROUP_HEADER</b>
+          </description>
+          <description>
+            <b>Windows Vista.</b> The point is within the group header.
+</description>
+        </item>
+        <item>
+          <description>
+            <b>LVHT_EX_GROUP_FOOTER</b>
+          </description>
+          <description>
+            <b>Windows Vista.</b> The point is within the group footer.
+</description>
+        </item>
+        <item>
+          <description>
+            <b>LVHT_EX_GROUP_COLLAPSE</b>
+          </description>
+          <description>
+            <b>Windows Vista.</b> The point is within the collapse/expand button of the group.
+</description>
+        </item>
+        <item>
+          <description>
+            <b>LVHT_EX_GROUP_BACKGROUND</b>
+          </description>
+          <description>
+            <b>Windows Vista.</b> The point is within the area of the group where items are displayed.
+</description>
+        </item>
+        <item>
+          <description>
+            <b>LVHT_EX_GROUP_STATEICON</b>
+          </description>
+          <description>
+            <b>Windows Vista.</b>  The point is within the state icon of the group.
+</description>
+        </item>
+        <item>
+          <description>
+            <b>LVHT_EX_GROUP_SUBSETLINK</b>
+          </description>
+          <description>
+            <b>Windows Vista.</b> The point is within the subset link of the group.
+</description>
+        </item>
+        <item>
+          <description>
+            <b>LVHT_EX_GROUP</b>
+          </description>
+          <description>
+            <b>Windows Vista.</b> LVHT_EX_GROUP_BACKGROUND | LVHT_EX_GROUP_COLLAPSE | LVHT_EX_GROUP_FOOTER | LVHT_EX_GROUP_HEADER | LVHT_EX_GROUP_STATEICON | LVHT_EX_GROUP_SUBSETLINK.
+</description>
+        </item>
+        <item>
+          <description>
+            <b>LVHT_EX_ONCONTENTS</b>
+          </description>
+          <description>
+            <b>Windows Vista.</b> The point is within the icon or text content of the item and not on the background.
+</description>
+        </item>
+        <item>
+          <description>
+            <b>LVHT_EX_FOOTER</b>
+          </description>
+          <description>
+            <b>Windows Vista.</b> The point is within the footer of the list-view control.
+</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="LVHITTESTINFO.iItem">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>Receives the index of the matching item. Or if hit-testing a subitem, this value represents the subitem's parent item.</para>
+    </summary>
+  </member>
+  <member name="LVHITTESTINFO.iSubItem">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>
+        <a href="https://docs.microsoft.com//windows/desktop/Controls/common-control-versions">Version 4.70</a>. Receives the index of the matching subitem. When hit-testing an item, this member will be zero.</para>
+    </summary>
+  </member>
+  <member name="LVHITTESTINFO.iGroup">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>
+        <a href="https://docs.microsoft.com//windows/desktop/Controls/common-control-versions">Windows Vista</a>. Group index of the item hit (read only). Valid only for owner data. If the point is within an item that is displayed in multiple groups then <b>iGroup</b> will specify the group index of the item.</para>
+    </summary>
+  </member>
+</doc>

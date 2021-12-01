@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HTMLSysMenuFlag.xml' path='doc/member[@name="HTMLSysMenuFlag"]/*' />
 public enum HTMLSysMenuFlag
 {
+    /// <include file='HTMLSysMenuFlag.xml' path='doc/member[@name="HTMLSysMenuFlag.HTMLSysMenuFlagNo"]/*' />
     HTMLSysMenuFlagNo = 0,
+
+    /// <include file='HTMLSysMenuFlag.xml' path='doc/member[@name="HTMLSysMenuFlag.HTMLSysMenuFlagYes"]/*' />
     HTMLSysMenuFlagYes = 0x80000,
+
+    /// <include file='HTMLSysMenuFlag.xml' path='doc/member[@name="HTMLSysMenuFlag.HTMLSysMenuFlag_Max"]/*' />
     HTMLSysMenuFlag_Max = 2147483647,
 }

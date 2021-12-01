@@ -1,0 +1,3672 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="Windows.PropVariantToWinRTPropertyValue">
+    <summary>
+      <para>Extracts data from a <see cref="PROPVARIANT" /> structure into a Windows Runtime property value. Note that in some cases more than one <see cref="PROPVARIANT" /> type maps to a single Windows Runtime property type.</para>
+    </summary>
+    <param name="propvar">
+      <para>Reference to a source <see cref="PROPVARIANT" /> structure.</para>
+    </param>
+    <param name="riid">
+      <para>A reference to the IID of the interface to retrieve through <i>ppv</i>, typically IID_IPropertyValue (defined in Windows.Foundation.h).</para>
+    </param>
+    <param name="ppv">
+      <para>When this method returns successfully, contains the interface pointer requested in <i>riid</i>. This is typically an <a href="https://docs.microsoft.com//uwp/api/Windows.Foundation.IPropertyValue">IPropertyValue</a> pointer. If the call fails, this value is <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>We recommend that you use the <see cref="IID_PPV_ARGS" /> macro, defined in Objbase.h, to package the <i>riid</i> and <i>ppv</i> parameters. This macro provides the correct IID based on the interface pointed to by the value in <i>ppv</i>, which eliminates the possibility of a coding error in <i>riid</i> that could lead to unexpected results.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//uwp/api/Windows.Foundation.PropertyValue">PropertyValue class</seealso>
+  </member>
+  <member name="Windows.PSCoerceToCanonicalValue">
+    <summary>
+      <para>Converts the value of a property to the canonical value, according to the property description.</para>
+    </summary>
+    <param name="key">
+      <para>Type: <b>REFPROPERTYKEY</b></para>
+      <para>Reference to a <see cref="PROPERTYKEY" /> structure that identifies the property whose value is to be coerced.</para>
+    </param>
+    <param name="ppropvar">
+      <para>Type: <b><see cref="PROPVARIANT" />*</b></para>
+      <para>On entry, contains a pointer to a <see cref="PROPVARIANT" /> structure that contains the original value. When this function returns successfully, contains the canonical value.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Possible return values include the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The function succeeded. The property value specified by <i>ppropvar</i> is now in a canonical form.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>INPLACE_S_TRUNCATED</b>
+            </para>
+          </description>
+          <description>
+            <para>The property value specified by <i>ppropvar</i> is now in a truncated, canonical form.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>The <i>ppropvar</i> parameter is invalid. The <see cref="PROPVARIANT" /> structure has been cleared.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>TYPE_E_TYPEMISMATCH</b>
+            </para>
+          </description>
+          <description>
+            <para>Coercion from the value's type to the property description's type was not possible. The <see cref="PROPVARIANT" /> structure has been cleared.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>Any other failure code</b>
+            </para>
+          </description>
+          <description>
+            <para>Coercion from the value's type to the property description's type was not possible. The <see cref="PROPVARIANT" /> structure has been cleared.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This function is a wrapper around the system's implementation of <see cref="IPropertyDescription.CoerceToCanonicalValue" />.</para>
+      <para>Most property descriptions specify the type that their values are expected to use. For example, the property description for <a href="https://docs.microsoft.com//windows/desktop/properties/props-system-title">System.Title</a> specifies that System.Title values should be of type VT_LPWSTR. This function coerces values to this type, and then coerces the result into a canonical form.</para>
+      <para>It is important to note that if this function fails, it will have already called <a href="https://docs.microsoft.com//previous-versions/windows/desktop/oe/oe-imimeallocator-propvariantclear">PropVariantClear</a> on the input <see cref="PROPVARIANT" /> structure. Only if this function succeeds is the calling application responsible for calling <b>PropVariantClear</b> on <i>ppropvar</i> when the structure is no longer needed.</para>
+      <para>The coercion performed by this function is also performed by the property system during calls to <see cref="IPropertyStore.GetValue" /> and <see cref="IPropertyStore.SetValue" />. Applications can either depend on the property system to perform the coercions or can use this function to perform the coercion at a time of the application's choosing.</para>
+      <para>The coercion is performed in four steps, as follows:</para>
+      <list type="number">
+        <item>
+          <description>The following values are converted to VT_EMPTY.
+<list type="bullet"><item><description>Values of type VT_NULL.</description></item><item><description>Values of type VT_LPWSTR, VT_BSTR, or VT_LPSTR whose pointer is <b>NULL</b>.</description></item><item><description>Values of type VT_LPWSTR, VT_BSTR, or VT_LPSTR that are empty or consist entirely of spaces.</description></item><item><description>Values of type VT_FILETIME prior to midnight 1601/01/02.</description></item></list></description>
+        </item>
+        <item>
+          <description>If the value is not of type VT_EMPTY after Step 1, it is converted to the type specified by the property description. The type of a property description can be obtained by calling <see cref="IPropertyDescription.GetPropertyType" />. For information on how the property schema influences the type of a property description, see <a href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-typeinfo">typeInfo</a>. Conversions are performed as follows:
+<list type="bullet"><item><description>Values of type VT_LPWSTR, VT_BSTR, or VT_LPSTR are converted to VT_VECTOR | VT_LPWSTR using <see cref="InitPropVariantFromStringAsVector" />.</description></item><item><description>All other conversions are performed using <see cref="PropVariantChangeType" /></description></item></list></description>
+        </item>
+        <item>
+          <description>After Steps 2 and 3, the value is coerced into a canonical form based on its type. The canonical forms are summarized in the following table.
+<list type="table"><listheader><description>Value Type</description><description>Canonical Form</description></listheader><item><description>VT_EMPTY</description><description>Always canonical.</description></item><item><description>VT_LPWSTR</description><description><list type="bullet"><item><description>No leading or trailing spaces. The string is non-empty and non-<b>NULL</b>. For example, L"Alice".</description></item><item><description>If this is a tree property (that is, if the <a href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-typeinfo">typeInfo</a> element's <i>isTreeProperty</i> attribute is <b>TRUE</b>), then it must not have leading or trailing forward slashes (/), must not have spaces between the text and the forward slashes, and must not have two consecutive forward slashes(/). For example, L"Friend/Bob".</description></item><item><description>Coercion removes unnecessary characters and results in VT_EMPTY if there was no content.</description></item></list></description></item><item><description>VT_VECTOR | VT_LPWSTR</description><description><list type="bullet"><item><description>Each string in the vector must adhere to the rules for VT_LPWSTR listed above. In addition, the vector must have no duplicates and have no null pointers.</description></item><item><description>If this is a tree property, then no value can be the ancestor of another value. For example, L"Friend" is an ancestor of L"Friend/Bob".</description></item><item><description>If there is no content, coercion removes duplicate and ancestor characters and results in VT_EMPTY.</description></item></list></description></item></list></description>
+        </item>
+        <item>
+          <description>If applicable, the value is checked against the property description type enumeration.  The checks in the following table apply.
+<list type="table"><listheader><description>Enumeration Type</description><description>Value Type</description><description>Canonical Form</description></listheader><item><description>Discrete or Ranged</description><description>VT_EMPTY</description><description>Always canonical</description></item><item><description>Discrete</description><description>VT_LPWSTR</description><description>The string matches one of the enumerated strings allowed for the property. Comparisons are case-insensitive. If not, convert the value to VT_EMPTY.</description></item><item><description>Discrete</description><description>Numeric</description><description>The number matches one of the enumerated values allowed for the property. If not, convert the value to VT_EMPTY.</description></item><item><description>Discrete</description><description>VT_VECTOR | VT_LPWSTR</description><description>Each string in the vector matches one of the enumerated strings allowed for the property. Comparisons are case-insensitive. If not, remove that string from the vector. If the resulting vector is empty, convert the value to VT_EMPTY.</description></item><item><description>Discrete</description><description>VT_VECTOR | Numeric</description><description>Each number in the vector matches one of the enumerated values allowed for the property. If not, remove that number from the vector. If the resulting vector is empty, convert the value to VT_EMPTY.</description></item><item><description>Ranged</description><description>VT_LPWSTR</description><description>The string exists in the range allowed for the property. Comparisons are case-sensitive. If not, convert the value to VT_EMPTY.</description></item><item><description>Ranged</description><description>Numeric</description><description>The number exists in the range allowed for the property. If not, convert the value to VT_EMPTY.</description></item><item><description>Ranged</description><description>VT_VECTOR | VT_LPWSTR</description><description>Each string in the vector exists in the range allowed for the property. Comparisons are case-sensitive. If not, remove that string from the vector. If the resulting vector is empty, convert the value to VT_EMPTY.</description></item><item><description>Ranged</description><description>VT_VECTOR | Numeric</description><description>Each number in the vector exists in the range allowed for the property. If not, remove that number from the vector. If the resulting vector is empty, convert the value to VT_EMPTY.</description></item></list></description>
+        </item>
+      </list>
+      <h4>Examples</h4>
+      <para>The following example, to be included as part of a larger program, demonstrates how to use <see cref="PSCoerceToCanonicalValue" /> to coerce a value to the type required for PKEY_Keywords.</para>
+      <code>// PROPVARIANT propvar;
+// Assume variable propvar is initialized and valid.
+
+HRESULT hr = PSCoerceToCanonicalValue(PKEY_Keywords, &amp;amp;amp;amp;amp;amp;propvar);
+
+if (SUCCEEDED(hr))
+{
+    // The conversion succeeded and propvar now is of the correct type for
+    // PKEY_Keywords, or VT_EMPTY.
+    PropVariantClear(&amp;amp;amp;amp;amp;amp;propvar);
+}
+else
+{
+    // The conversion failed and propvar is now VT_EMPTY.
+}
+</code>
+    </remarks>
+    <seealso cref="IPropertyDescription" />
+    <seealso cref="IShellItem2.GetPropertyStore" />
+    <seealso cref="PropVariantChangeType" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-entry">Property Description Schema</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-typeinfo">typeInfo</seealso>
+  </member>
+  <member name="Windows.PSCreateAdapterFromPropertyStore">
+    <summary>
+      <para>Creates an adapter from an <see cref="IPropertyStore" />.</para>
+    </summary>
+    <param name="pps">
+      <para>Type: <b><see cref="IPropertyStore" />*</b></para>
+      <para>Pointer to an <see cref="IPropertyStore" /> object that represents the property store.</para>
+    </param>
+    <param name="riid">
+      <para>Type: <b>REFIID</b></para>
+      <para>Reference to an IID.</para>
+    </param>
+    <param name="ppv">
+      <para>Type: <b>void**</b></para>
+      <para>When this function returns, contains the interface pointer requested in <i>riid</i>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The adapter object implements <see cref="IPropertySetStorage" />, <see cref="IPropertyStore" />, <see cref="IPropertyStoreCapabilities" />, and <see cref="IObjectProvider" />.</para>
+      <para>Use this function if you need an object that implements <see cref="IPropertyStore" /> with an API that requires an <see cref="IPropertySetStorage" /> interface. The object created can also be useful to a namespace extension that wants to provide support for binding to namespace items using <b>IPropertySetStorage</b>. Applications must call this object from only one thread at a time.</para>
+      <para>The adapter property store created by this function retains a reference to the source <see cref="IPropertyStore" /> interface. Therefore, the calling application is free to release its reference to the source <b>IPropertyStore</b> whenever convenient after calling this function.</para>
+      <para>The adapter property store makes calls to methods on the <see cref="IPropertyStore" /> interface as appropriate. Therefore, if the calling application is writing values to the store, it should call the <see cref="IPropertyStore.Commit" /> method on only one of the interfaces.</para>
+      <h4>Examples</h4>
+      <para>The following example, to be included as part of a larger program, demonstrates how to use <see cref="PSCreateAdapterFromPropertyStore" /> to use an adapter property store to convert an <see cref="IPropertyStore" /> interface into an <see cref="IPropertySetStorage" /> interface.</para>
+      <code>// IPropertyStore *ppropstore;
+// Assume variable ppropstore is initialized and valid
+IPropertySetStorage *pSetStorage;
+
+HRESULT hr = PSCreateadapterFromPropertyStore(ppropstore, IID_PPV_ARGS(&amp;amp;amp;amp;amp;amp;pSetStorage));
+
+if (SUCCEEDED(hr))
+{
+    // pSetStorage is now valid and can be used to access the data in ppropstore.
+    pSetStorage-&gt;Release();
+}
+</code>
+    </remarks>
+    <seealso cref="IPropertySetStorage" />
+    <seealso cref="IPropertyStore" />
+    <seealso cref="PSCreatePropertyStoreFromPropertySetStorage" />
+  </member>
+  <member name="Windows.PSCreateDelayedMultiplexPropertyStore">
+    <summary>
+      <para>Creates a read-only, delayed-binding property store that contains multiple property stores.</para>
+    </summary>
+    <param name="flags">
+      <para>Type: <b><see cref="GETPROPERTYSTOREFLAGS" /></b></para>
+      <para>One or more <see cref="GETPROPERTYSTOREFLAGS" /> values. These values specify details of the created property store object.</para>
+    </param>
+    <param name="pdpsf">
+      <para>Type: <b><see cref="IDelayedPropertyStoreFactory" />*</b></para>
+      <para>Interface pointer to an instance of <see cref="IDelayedPropertyStoreFactory" />.</para>
+    </param>
+    <param name="rgStoreIds">
+      <para>Type: <b>const DWORD*</b></para>
+      <para>Pointer to an array of property store IDs. This array does not need to be initialized.</para>
+    </param>
+    <param name="cStores">
+      <para>Type: <b>DWORD</b></para>
+      <para>The number of elements in the array pointed to by <i>rgStoreIds</i>.</para>
+    </param>
+    <param name="riid">
+      <para>Type: <b>REFIID</b></para>
+      <para>Reference to the requested IID of the interface that will represent the created property store.</para>
+    </param>
+    <param name="ppv">
+      <para>Type: <b>void**</b></para>
+      <para>When this function returns, contains the interface pointer requested in <i>riid</i>. This is typically <see cref="IPropertyStore" />.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This function creates a Component Object Model (COM) object that implements <see cref="IPropertyStore" />,
+<see cref="INamedPropertyStore" />, <see cref="IObjectProvider" />, and <see cref="IPropertyStoreCapabilities" />.</para>
+      <para>Applications must call this object from only one thread at a time.</para>
+      <para>You must initialize COM with <see cref="CoInitialize" /> or <see cref="OleInitialize" /> before you call <see cref="PSCreateDelayedMultiplexPropertyStore" />. COM must remain initialized for the lifetime of this object.</para>
+      <para>
+        <see cref="PSCreateDelayedMultiplexPropertyStore" /> is designed as an alternative to <see cref="PSCreateMultiplexPropertyStore" />, which requires that the array of property stores be initialized before it creates the multiplex property store.</para>
+      <para>The delayed binding mechanism is designed as a performance enhancement for calls to <see cref="IPropertyStore.GetValue" /> on a multiplex property store. When asked for the value of a property, the delayed multiplex property store checks each of the property stores for the value. After the value is found, there is no need to create and initialize subsequent stores. The delayed multiplex property store stops searching for a value when one of the property stores returns a success code and a non-VT_EMPTY value.</para>
+      <para>When the delayed multiplex property store needs to access a particular property store, it first checks to see if it has already obtained an interface to that property store. If not, it calls <see cref="IDelayedPropertyStoreFactory.GetDelayedPropertyStore" /> with the appropriate property store ID to obtain the property store. It always uses the property store IDs in the order in which they are provided by the application. It is possible that not all IDs will be used.</para>
+      <para>If the call to <see cref="IDelayedPropertyStoreFactory" /> fails with E_NOTIMPL or E_ACCESSDENIED for a particular property store ID, or if the application specified <see cref="GPS_BESTEFFORT" />, then the failure is ignored and the delayed multiplex property store moves on to the next property store.</para>
+      <para>In some cases, it might be beneficial to use <see cref="PSCreateDelayedMultiplexPropertyStore" /> in place of <see cref="PSCreateMultiplexPropertyStore" />. For example, if an application needs to multiplex two property stores and the first property store is not memory-intensive to initialize and provides PKEY_Size information. Often, calling applications ask for a multiplex property store and then ask for only PKEY_Size before they release the object. In such a case, the application could avoid the cost of initializing the second property store by calling <b>PSCreateDelayedMultiplexPropertyStore</b> and implementing <see cref="IDelayedPropertyStoreFactory" />.</para>
+      <h4>Examples</h4>
+      <para>The following example, to be included as part of a larger program, demonstrates how to use <see cref="PSCreateDelayedMultiplexPropertyStore" /> in an implementation of <see cref="IPropertyStoreFactory.GetPropertyStore" />.</para>
+      <code>// CMyFactory is a reference-counted COM object that implements both IPropertyStoreFactory and IDelayedPropertyStoreFactory.
+
+// CMyFactory is assumed to be fully implemented, but for the sake of brevity,
+// many functions are not shown here.
+
+// Private functions are indicated with an underscore prefix.
+
+// The hope is that the fastest property store satisfies the caller's queries
+// so that the slower property stores are never created.
+
+// CMyFactory implementation for IPropertyStoreFactory.GetPropertyStore
+HRESULT CMyFactory.GetPropertyStore( __in GETPROPERTYSTOREFLAGS flags,
+                                      __in_opt IUnknown *pUnkFactory,
+                                      __in REFIID riid,
+                                      __deref_out void **ppv)
+{
+    *ppv = NULL;
+    HRESULT hr;
+
+    // This application creates only read-only stores.
+    if (flags &amp;amp;amp;amp;amp;amp; GPS_READWRITE)
+    {
+        hr = STG_E_ACCESSDENIED;
+    }
+    else
+    {
+        // More advanced applications would check other GETPROPERTYSTOREFLAGS
+        // flags and respond appropriately.
+
+        // This application always creates its stores in-process, so it
+        // ignores the pUnkFactory value.
+
+        DWORD rgStoreIds[] = {0, 1, 2};
+
+        hr = PSCreateDelayedMultiplexPropertyStore(flags, this, rgStoreIds, ARRAYSIZE(rgStoreIds), riid, ppv);
+    }
+
+    return hr;
+}
+
+// CMyFactory implementation of IDelayedPropertyStoreFactory.GetDelayedPropertyStore
+HRESULT CMyFactory.GetDelayedPropertyStore(GETPROPERTYSTOREFLAGS flags,
+                                            DWORD dwStoreId,
+                                            REFIID riid,
+                                            void **ppv)
+{
+    *ppv = NULL;
+    HRESULT hr;
+
+    // Note: The IDs here match the IDs in rgStoreIds above.
+
+    if (dwStoreId == 0)
+    {
+        // This store is the fastest at returning properties.
+
+        hr = _CreateFastestPropertyStore(flags, riid, ppv);
+    }
+    else if (dwStoreId == 1)
+    {
+        // This store is slower at returning properties.
+        hr = _CreateSlowerPropertyStore(flags, riid, ppv);
+    }
+    else if (dwStoreId == 2)
+    {
+        // This store is very slow at returning properties.
+        hr = _CreateSlowestPropertyStore(flags, riid, ppv);
+    }
+    else
+    {
+        // This should never happen.
+        hr = E_UNEXPECTED;
+    }
+
+    return hr;
+}
+</code>
+    </remarks>
+    <seealso cref="IPropertyStoreFactory" />
+    <seealso cref="PSCreateMultiplexPropertyStore" />
+  </member>
+  <member name="Windows.PSCreateMemoryPropertyStore">
+    <summary>
+      <para>Creates an in-memory property store.</para>
+    </summary>
+    <param name="riid">
+      <para>Type: <b>REFIID</b></para>
+      <para>Reference to the requested interface ID.</para>
+    </param>
+    <param name="ppv">
+      <para>Type: <b>void**</b></para>
+      <para>When this function returns, contains a pointer to the desired interface, typically <see cref="IPropertyStore" /> or <see cref="IPersistSerializedPropStorage" />.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This function creates an in-memory property store object that implements <see cref="IPropertyStore" />, <see cref="INamedPropertyStore" />, <see cref="IPropertyStoreCache" />, <see cref="IPersistStream" />, <see cref="IPropertyBag" />, and <see cref="IPersistSerializedPropStorage" />.</para>
+      <para>The memory property store does not correspond to a file and is designed for use as a cache. <see cref="IPropertyStore.Commit" /> is a no-op, and the data stored in the object persists only as long as the object does.</para>
+      <para>The memory property store is thread safe. It aggregates the free-threaded marshaller and uses critical sections to protect its data members.</para>
+      <h4>Examples</h4>
+      <para>The following example, to be included as part of a larger program, demonstrates how to use <see cref="PSCreateMemoryPropertyStore" />.</para>
+      <code>IPropertyStore *ppropstore;
+
+HRESULT hr = PSCreateMemoryPropertyStore(IID_PPV_ARGS(&amp;amp;amp;amp;amp;amp;ppropstore));
+
+if (SUCCEEDED(hr))
+{
+    // ppropstore is now valid.
+    ppropstore-&gt;Release();
+}
+</code>
+    </remarks>
+    <seealso cref="PSCreateMultiplexPropertyStore" />
+  </member>
+  <member name="Windows.PSCreateMultiplexPropertyStore">
+    <summary>
+      <para>Creates a read-only property store that contains multiple property stores, each of which must support either <see cref="IPropertyStore" /> or <see cref="IPropertySetStorage" />.</para>
+    </summary>
+    <param name="prgpunkStores">
+      <para>Type: <b><see cref="IUnknown" />**</b></para>
+      <para>Address of a pointer to an array of property stores that implement either <see cref="IPropertyStore" /> or <see cref="IPropertySetStorage" />.</para>
+    </param>
+    <param name="cStores">
+      <para>Type: <b>DWORD</b></para>
+      <para>The number of elements in the array referenced in <i>prgpunkStores</i>.</para>
+    </param>
+    <param name="riid">
+      <para>Type: <b>REFIID</b></para>
+      <para>Reference to the requested IID.</para>
+    </param>
+    <param name="ppv">
+      <para>Type: <b>void**</b></para>
+      <para>When this function returns, contains the interface pointer requested in <i>riid</i>. This is typically <see cref="IPropertyStore" />.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This function creates a Component Object Model (COM) object that implements <see cref="IPropertyStore" />, <see cref="INamedPropertyStore" />, <see cref="IObjectProvider" />, and <see cref="IPropertyStoreCapabilities" />. The multiplex property store object aggregates the properties exposed from multiple property stores.</para>
+      <para>This object can be useful for aggregating the properties from multiple existing property store implementations in a Shell namespace extension, or for reusing an existing property store and providing additional read-only properties.</para>
+      <para>Applications must call this object from only one thread at a time.</para>
+      <para>You must initialize COM with <see cref="CoInitialize" /> or <see cref="OleInitialize" /> before you call <see cref="PSCreateDelayedMultiplexPropertyStore" />. COM must remain initialized for the lifetime of this object.</para>
+      <para>Each of the objects in the array <i>prgpunkStores</i> must implement either <see cref="IPropertyStore" /> or <see cref="IPropertySetStorage" />. If an object implements <b>IPropertySetStorage</b>, it is wrapped using <see cref="PSCreatePropertyStoreFromPropertySetStorage" /> for use in the multiplex property store.</para>
+      <para>The multiplex property store implementation of <see cref="IPropertyStore.GetValue" /> asks each of the provided property stores for the value. The multiplex property store stops searching when one of the property stores returns a success code and a non-VT_EMPTY value. Failure codes cause the search to end and are passed back to the calling application.</para>
+      <para>The multiplex property store implementation of <see cref="IPropertyStoreCapabilities.IsPropertyWritable" /> delegates the call to the first store that implements <see cref="IPropertyStoreCapabilities" />. If multiple stores implement <b>IPropertyStoreCapabilities</b>, the subsequent ones are ignored. If no store implements <b>IPropertyStoreCapabilities</b>, this method returns <b>S_OK</b>.</para>
+      <h4>Examples</h4>
+      <para>The following example, to be included as part of a larger program, demonstrates how to use <see cref="PSCreateMultiplexPropertyStore" /> in an implementation of <see cref="IPropertyStoreFactory.GetPropertyStore" />.</para>
+      <code>// CMyFactory is a reference counted COM object that implements
+// both IPropertyStoreFactory.
+
+// CMyFactory is assumed to be fully implemented, but for the sake of brevity,
+// many functions are not shown here.
+
+// Private functions are prefixed with an underscore.
+
+// CMyFactory implementation for IPropertyStoreFactory.GetPropertyStore.
+HRESULT CMyFactory.GetPropertyStore(__in GETPROPERTYSTOREFLAGS flags,
+                                     __in_opt IUnknown *pUnkFactory,
+                                     __in REFIID riid,
+                                     __deref_out void **ppv)
+{
+    *ppv = NULL;
+    HRESULT hr;
+
+    // This application creates only read-only stores.
+    if (flags &amp;amp;amp;amp;amp;amp; GPS_READWRITE)
+    {
+        hr = STG_E_ACCESSDENIED;
+    }
+    else
+    {
+        // More advanced applications would check other GETPROPERTYSTOREFLAGS
+        // flags and respond appropriately.
+
+        // CMyFactory multiplexes two property stores.
+        IPropertyStore *ppsFirst;
+
+        hr = _CreateFirstStore(IID_PPV_ARGS(&amp;amp;amp;amp;amp;amp;ppsFirst));
+
+        if (SUCCEEDED(hr))
+        {
+            IPropertyStore *ppsSecond;
+
+            hr = _CreateSecondStore(IID_PPV_ARGS(&amp;amp;amp;amp;amp;amp;ppsSecond));
+
+            if (SUCCEEDED(hr))
+            {
+                IUnknown *rgStores[] = {ppsFirst, ppsSecond};
+
+                hr = PSCreateMultiplexPropertyStore(rgStores, ARRAYSIZE(rgStores), riid, ppv);
+
+                ppsSecond-&gt;Release();
+            }
+            ppsFirst-&gt;Release();
+        }
+    }
+    return hr;
+}
+</code>
+    </remarks>
+    <seealso cref="IPropertyStoreFactory" />
+    <seealso cref="PSCreateDelayedMultiplexPropertyStore" />
+  </member>
+  <member name="Windows.PSCreatePropertyChangeArray">
+    <summary>
+      <para>Creates a container for a set of <see cref="IPropertyChange" /> objects. This container can be used with <see cref="IFileOperation" /> to apply a set of property changes to a set of files.</para>
+    </summary>
+    <param name="rgpropkey">
+      <para>Type: <b>const <see cref="PROPERTYKEY" />*</b></para>
+      <para>Pointer to an array of <see cref="PROPERTYKEY" /> structures that name the specific properties whose changes are being stored. If this value is <b>NULL</b>, <i>cChanges</i> must be 0.</para>
+    </param>
+    <param name="rgflags">
+      <para>Type: <b>const <see cref="PKA_FLAGS" />*</b></para>
+      <para>Pointer to an array of <see cref="PKA_FLAGS" /> values. If this value is <b>NULL</b>, <i>cChanges</i> must be 0.</para>
+    </param>
+    <param name="rgpropvar">
+      <para>Type: <b>const <see cref="PROPVARIANT" />*</b></para>
+      <para>Pointer to an array of <see cref="PROPVARIANT" /> structures. If this value is <b>NULL</b>, <i>cChanges</i> must be 0.</para>
+    </param>
+    <param name="cChanges">
+      <para>Type: <b>UINT</b></para>
+      <para>Count of changes to be applied. This is the number of elements in each of the arrays <i>rgpropkey</i>, <i>rgflags</i>, and <i>rgpropvar</i>.</para>
+    </param>
+    <param name="riid">
+      <para>Type: <b>REFIID</b></para>
+      <para>Reference to the ID of the requested interface.</para>
+    </param>
+    <param name="ppv">
+      <para>Type: <b>void**</b></para>
+      <para>When this function returns, contains the interface pointer requested in <i>riid</i>. This is typically <see cref="IPropertyChangeArray" />.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This function creates a Component Object Model (COM) object that implements <see cref="IPropertyChangeArray" />. This object is a container for a set of <see cref="IPropertyChange" /> interfaces and can be used with <see cref="IFileOperation" /> to apply a set of property changes to a set of files.</para>
+      <para>You must initialize COM with <see cref="CoInitialize" /> or <see cref="OleInitialize" /> before you call <see cref="PSCreatePropertyChangeArray" />. COM must remain initialized for the lifetime of this object. The property change array executes in a single-threaded apartment (STA).</para>
+      <para>A property change array can be initialized either by specifying simple changes by using the parameters, or by using various <see cref="IPropertyChangeArray" /> methods to insert or append additional changes.</para>
+      <para>The parameters are tied together by their index value. For instance, for property rgpropkey[0], the new value rgpropvar[0] is applied as specified by rgflags[0]. The <i>cChanges</i> parameter states how many of these sets there are. Therefore, the number of elements in each array should be the same: ARRAYSIZE(rgpropkey) = ARRAYSIZE(rgflags) = ARRAYSIZE(rgpropvar) = cChanges.</para>
+      <para>
+        <see cref="IFileOperation" /> applies all changes in the property change array to a file simultaneously to avoid opening the file multiple times.</para>
+      <h4>Examples</h4>
+      <para>The following example, to be included as part of a larger program, demonstrates how to use <see cref="PSCreatePropertyChangeArray" /> to set the <a href="https://docs.microsoft.com//windows/desktop/Tapi/comment-ovr">Comment</a> property to "Fun" and <a href="https://docs.microsoft.com//windows/desktop/wmformat/rating">Rating</a> to 4 on one or more files.</para>
+      <code>// IFileOperation *pfo;
+// Assume variable pfo has been initialized by calling SetOperationFlags,
+// ApplyPropertiesToItems, and SetProgressMessage as appropriate.
+
+PROPVARIANT rgpropvar[2] = {0};
+
+HRESULT hr = InitPropVariantFromString(L"Fun", &amp;amp;amp;amp;amp;amp;rgpropvar[0]);
+
+if (SUCCEEDED(hr))
+{
+    hr = InitPropVariantFromUInt32(RATING_FOUR_STARS_SET, &amp;amp;amp;amp;amp;amp;rgpropvar[1]);
+
+    if (SUCCEEDED(hr))
+    {
+        REFPROPERTYKEY rgkey[2] = {PKEY_Comment, PKEY_Rating};
+        PKA_FLAGS rgflags[2] = {PKA_SET, PKA_SET};
+        IPropertyChangeArray *pChangeArray;
+
+        hr = PSCreatePropertyChangeArray(rgkey, rgflags, rgpropvar, 2, IID_PPV_ARGS(&amp;amp;amp;amp;amp;amp;pChangeArray));
+
+        if (SUCCEEDED(hr))
+        {
+            hr = pfo-&gt;SetProperties(pChangeArray);
+
+            if (SUCCEEDED(hr))
+            {
+                hr = pfo-&gt;PerformOperations();
+            }
+            pChangeArray-&gt;Release();
+        }
+    }
+    ClearPropVariantArray(rgpropvar, ARRAYSIZE(rgpropvar));
+}
+</code>
+    </remarks>
+    <seealso cref="PSCreateSimplePropertyChange" />
+  </member>
+  <member name="Windows.PSCreatePropertyStoreFromObject">
+    <summary>
+      <para>Accepts the <see cref="IUnknown" /> interface of an object that supports <see cref="IPropertyStore" /> or <see cref="IPropertySetStorage" />. If the object supports <b>IPropertySetStorage</b>, it is wrapped so that it supports <b>IPropertyStore</b>.</para>
+    </summary>
+    <param name="punk">
+      <para>Type: <b><see cref="IUnknown" />*</b></para>
+      <para>A pointer to an interface that supports either <see cref="IPropertyStore" /> or <see cref="IPropertySetStorage" />.</para>
+    </param>
+    <param name="grfMode">
+      <para>Type: <b>DWORD</b></para>
+      <para>Specifies the access mode to use. One of these values:</para>
+      <h4>STGM_READ</h4>
+      <para>Open for reading.</para>
+      <h4>STGM_READWRITE</h4>
+      <para>Open for reading and writing.</para>
+    </param>
+    <param name="riid">
+      <para>Type: <b>REFIID</b></para>
+      <para>Reference to the requested IID.</para>
+    </param>
+    <param name="ppv">
+      <para>Type: <b>void**</b></para>
+      <para>When this function returns successfully, contains the address of a pointer to an interface guaranteed to support <see cref="IPropertyStore" />.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>If the object pointed to by <i>punk</i> already supports <see cref="IPropertyStore" />, no wrapper is created and the <i>punk</i> is returned unaltered.</para>
+    </remarks>
+    <seealso cref="PSCreatePropertyStoreFromPropertySetStorage" />
+  </member>
+  <member name="Windows.PSCreatePropertyStoreFromPropertySetStorage">
+    <summary>
+      <para>Wraps an <see cref="IPropertySetStorage" /> interface in an <see cref="IPropertyStore" /> interface.</para>
+    </summary>
+    <param name="ppss">
+      <para>Type: <b><see cref="IPropertySetStorage" />*</b></para>
+      <para>A pointer to an <see cref="IPropertySetStorage" /> interface.</para>
+    </param>
+    <param name="grfMode">
+      <para>Type: <b>DWORD</b></para>
+      <para>Specifies the access mode to enforce. grfMode should match the access mode used to open the <see cref="IPropertySetStorage" />. Valid values are as follows:</para>
+      <h4>STGM_READ</h4>
+      <para>Calls to <see cref="IPropertyStore.SetValue" /> update an internal cache of properties, and calls to <see cref="IPropertyStore.Commit" /> call the appropriate <see cref="IPropertySetStorage" /> methods to write out the changed properties.</para>
+      <h4>STGM_WRITE</h4>
+      <para>Not supported.</para>
+      <h4>STGM_READWRITE</h4>
+      <para>Not supported.</para>
+    </param>
+    <param name="riid">
+      <para>Type: <b>REFIID</b></para>
+      <para>Reference to an IID.</para>
+    </param>
+    <param name="ppv">
+      <para>Type: <b>void**</b></para>
+      <para>When this function returns, contains the interface pointer specified in <i>riid</i>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This function wraps an <see cref="IPropertySetStorage" /> interface in an <see cref="IPropertyStore" /> interface. Any value other than <b>STGM_READ</b> for <i>grfMode</i>, causes calls to <see cref="IPropertyStore.SetValue" /> and <see cref="IPropertyStore.Commit" /> to fail with <b>STG_E_ACCESSDENIED.</b></para>
+    </remarks>
+  </member>
+  <member name="Windows.PSCreateSimplePropertyChange">
+    <summary>
+      <para>Creates a simple property change.</para>
+    </summary>
+    <param name="flags">
+      <para>Type: <b><see cref="PKA_FLAGS" /></b></para>
+      <para>
+        <see cref="PKA_FLAGS" /> flags.</para>
+    </param>
+    <param name="key">
+      <para>Type: <b>REFPROPERTYKEY</b></para>
+      <para>Reference to a <see cref="PROPERTYKEY" /> structure.</para>
+    </param>
+    <param name="propvar">
+      <para>Type: <b>REFPROPVARIANT</b></para>
+      <para>Reference to a <see cref="PROPVARIANT" /> structure.</para>
+    </param>
+    <param name="riid">
+      <para>Type: <b>REFIID</b></para>
+      <para>Reference to a specified IID.</para>
+    </param>
+    <param name="ppv">
+      <para>Type: <b>void**</b></para>
+      <para>The address of an <see cref="IPropertyChange" /> interface pointer.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Property changes can be placed into an <see cref="IPropertyChangeArray" /> which can then be used with <see cref="IFileOperation" /> to modify the properties on an item.</para>
+    </remarks>
+  </member>
+  <member name="Windows.PSEnumeratePropertyDescriptions">
+    <summary>
+      <para>A wrapper API that calls the schema subsystem's <see cref="IPropertySystem.EnumeratePropertyDescriptions" />. This function retrieves an instance of the subsystem object that implements <see cref="IPropertyDescriptionList" />, to obtain either the entire list or a partial list of property descriptions in the system.</para>
+    </summary>
+    <param name="filterOn">
+      <para>Type: <b><see cref="PROPDESC_ENUMFILTER" /></b></para>
+      <para>The list to return. <see cref="PROPDESC_ENUMFILTER" /> shows the valid values for this method.</para>
+    </param>
+    <param name="riid">
+      <para>Type: <b>REFIID</b></para>
+      <para>Reference to the  interface ID of the requested interface.</para>
+    </param>
+    <param name="ppv">
+      <para>Type: <b>void**</b></para>
+      <para>The address of an <see cref="IPropertyDescriptionList" /> interface pointer.</para>
+    </param>
+    <returns>
+      <para>Type: <b>PSSTDAPI</b></para>
+      <para>Returns one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Indicates an interface is obtained.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>Indicates that <i>ppv</i> is <b>NULL</b>.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>We recommend that you use the IID_PPV_ARGS macro, defined in objbase.h, to package the <i>riid</i> and <i>ppv</i> parameters. This macro provides the correct IID based on the interface pointed to by the value in <i>ppv</i>, eliminating the possibility of a coding error.</para>
+    </remarks>
+  </member>
+  <member name="Windows.PSFormatForDisplay">
+    <summary>
+      <para>Gets a formatted, Unicode string representation of a property value stored in a <see cref="PROPVARIANT" /> structure. The caller is responsible for allocating the output buffer.</para>
+    </summary>
+    <param name="propkey">
+      <para>Type: <b>REFPROPERTYKEY</b></para>
+      <para>Reference to a <see cref="PROPERTYKEY" /> that names the property whose value is being retrieved.</para>
+    </param>
+    <param name="propvar">
+      <para>Type: <b>REFPROPVARIANT</b></para>
+      <para>Reference to a <see cref="PROPVARIANT" /> structure that contains the type and value of the property.</para>
+    </param>
+    <param name="pdfFlags">
+      <para>Type: <b><see cref="PROPDESC_FORMAT_FLAGS" /></b></para>
+      <para>A flag that specifies the format to apply to the property string. See <see cref="PROPDESC_FORMAT_FLAGS" /> for possible values.</para>
+    </param>
+    <param name="pwszText">
+      <para>Type: <b>LPWSTR</b></para>
+      <para>When the function returns, contains a pointer to the formatted value as a null-terminated, Unicode string. The calling application is responsible for allocating memory for the buffer before it calls <see cref="PSFormatForDisplay" />.</para>
+    </param>
+    <param name="cchText">
+      <para>Type: <b>DWORD</b></para>
+      <para>Specifies the length of the buffer at <i>pwszText</i> in <b>WCHAR</b><b>s</b>, including the terminating null character.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The formatted string was successfully created.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>The formatted string was not created. S_FALSE indicates that an empty string resulted from a VT_EMPTY.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>Indicates allocation failed.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This function calls the schema subsystem's implementation of <see cref="IPropertySystem.FormatForDisplay" />. That call provides a Unicode string representation of a property value, with additional formatting based on one or more <see cref="PROPDESC_FORMAT_FLAGS" />. If the <see cref="PROPERTYKEY" /> is not recognized by the schema subsystem, <b>IPropertySystem.FormatForDisplay</b> attempts to format the value according to the value's <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms221127(v=vs.85)">VARTYPE</a>.</para>
+      <para>You must initialize Component Object Model (COM) with <see cref="CoInitialize" /> or <see cref="OleInitialize" /> before you call <see cref="PSFormatPropertyValue" />.</para>
+      <para>The purpose of this function is to convert data into a string suitable for display to the user. The value is formatted according to the current locale, the language of the user, the <see cref="PROPDESC_FORMAT_FLAGS" />, and the property description specified by the property key. For information on how the property description schema influences the formatting of the value, see the following topics:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-displayinfo">displayInfo</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusstringformat/nl-gdiplusstringformat-stringformat">stringFormat</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-booleanformat">booleanFormat</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-numberformat">numberFormat</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="NMDATETIMEFORMAT" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-enumeratedlist">enumeratedList</a>
+          </description>
+        </item>
+      </list>
+      <para>Typically, the <b>PROPDESC_FORMAT_FLAGS</b> are used to modify the format prescribed by the property description.</para>
+      <para>The output string can contain Unicode directional characters. These nonspacing characters influence the Unicode bidirectional algorithm so that the values appear correctly when a left-to-right (LTR) language is drawn on a right-to-left (RTL) window, or an RTL is drawn on a LTR window. These characters include the following: <code>"\x200e", "\x200f", "\x202a", "\x202b", "\x202c", "\x202d", "\x202e".</code></para>
+      <para>The following properties use special formats and are unaffected by the <see cref="PROPDESC_FORMAT_FLAGS" />. Note that examples cited are for strings with a current locale set to English; typically, output is localized except where noted.</para>
+      <list type="table">
+        <listheader>
+          <description>Property</description>
+          <description>Format</description>
+        </listheader>
+        <item>
+          <description>System.FileAttributes</description>
+          <description>The following file attributes are converted to letters and appended to create a string (for example, a value of 0x1801 is converted to "RCO"):</description>
+        </item>
+        <item>
+          <description> </description>
+          <description>FILE_ATTRIBUTE_READONLY- 'R'</description>
+        </item>
+        <item>
+          <description> </description>
+          <description>FILE_ATTRIBUTE_SYSTEM - 'S'</description>
+        </item>
+        <item>
+          <description> </description>
+          <description>FILE_ATTRIBUTE_ARCHIVE -'A'</description>
+        </item>
+        <item>
+          <description> </description>
+          <description>FILE_ATTRIBUTE_COMPRESSED - 'C'</description>
+        </item>
+        <item>
+          <description> </description>
+          <description>FILE_ATTRIBUTE_ENCRYPTED - 'E'</description>
+        </item>
+        <item>
+          <description> </description>
+          <description>FILE_ATTRIBUTE_OFFLINE - 'O'</description>
+        </item>
+        <item>
+          <description> </description>
+          <description>FILE_ATTRIBUTE_NOT_CONTENT_INDEXED - 'I'</description>
+        </item>
+        <item>
+          <description>System.Photo.ISOSpeed</description>
+          <description>For example, "ISO-400".</description>
+        </item>
+        <item>
+          <description>System.Photo.ShutterSpeed</description>
+          <description>
+            <para>The APEX value is converted to an exposure time using this formula:</para>
+            <para>
+              <code>Exposure_time = 2^(-APEX_value)</code>
+            </para>
+            <para>For example, "2 sec."or "1/125 sec.".</para>
+          </description>
+        </item>
+        <item>
+          <description>System.Photo.ExposureTime</description>
+          <description>For example, "2 sec."or "1/125 sec." </description>
+        </item>
+        <item>
+          <description>System.Photo.Aperture</description>
+          <description>
+            <para>The APEX value is converted to an F number using this formula:</para>
+            <para>
+              <code>F_Number = 2^(APEX_Value / 2)</code>
+            </para>
+            <para>For example, "f/5.6".</para>
+          </description>
+        </item>
+        <item>
+          <description>System.Photo.FNumber</description>
+          <description>For example, "f/5.6".</description>
+        </item>
+        <item>
+          <description>System.Photo.SubjectDistance</description>
+          <description>For example, "15 m"or "250 mm".</description>
+        </item>
+        <item>
+          <description>System.Photo.FocalLength</description>
+          <description>For example, "50 mm".</description>
+        </item>
+        <item>
+          <description>System.Photo.FlashEnergy</description>
+          <description>For example, "500 bpcs".</description>
+        </item>
+        <item>
+          <description>System.Photo.ExposureBias</description>
+          <description>For example, "-2 step", " 0 step", or "+3 step".</description>
+        </item>
+        <item>
+          <description>System.Computer.DecoratedFreeSpace</description>
+          <description>For example, "105 MB free of 13.2 GB".</description>
+        </item>
+        <item>
+          <description>System.ItemType</description>
+          <description>For example, "Application" or "JPEG Image".</description>
+        </item>
+        <item>
+          <description>System.ControlPanel.Category</description>
+          <description>For example, "Appearance and Personalization".</description>
+        </item>
+        <item>
+          <description>System.ComputerName</description>
+          <description>For example, "LITWARE05 (this computer)" or "testbox07".</description>
+        </item>
+      </list>
+      <para>If the property key does not correspond to a property description in any of the registered property schemas, then this function chooses a format based on the type of the value.</para>
+      <list type="table">
+        <listheader>
+          <description>Type of the value</description>
+          <description>Format</description>
+        </listheader>
+        <item>
+          <description>VT_BOOLEAN</description>
+          <description>Not supported.</description>
+        </item>
+        <item>
+          <description>VT_FILETIME</description>
+          <description>Date/time string as specified by <see cref="PROPDESC_FORMAT_FLAGS" /> and the current locale. PDFF_SHORTTIME and PDFF_SHORTDATE are the default. For example, "11/13/2006 3:22 PM".</description>
+        </item>
+        <item>
+          <description>Numeric VARTYPE</description>
+          <description>Decimal string in the current locale. For example, "42". </description>
+        </item>
+        <item>
+          <description>VT_LPWSTR or other</description>
+          <description>Converted to a string. Sequences of "\r", "\t", or "\n" are replaced with a single space.</description>
+        </item>
+        <item>
+          <description>VT_VECTOR | anything</description>
+          <description>Semicolon separated values. A semicolon is used regardless of locale.</description>
+        </item>
+      </list>
+      <h4>Examples</h4>
+      <para>The following example, to be included as part of a larger program, demonstrates how to use <see cref="PSFormatForDisplay" /> to format a rating value.</para>
+      <code>PROPVARIANT propvar;
+
+HRESULT hr = InitPropVariantFromUInt32(RATING_THREE_STARS_SET, &amp;amp;amp;amp;amp;amp;propvar);
+
+if (SUCCEEDED(hr))
+{
+    WCHAR szValue[100];
+
+    hr = PSFormatForDisplay(PKEY_Rating, propvar, PDFF_DEFAULT, szValue, ARRAYSIZE(szValue));
+
+    if (SUCCEEDED(hr))
+    {
+        // szValue contains a formatted string similar to "3 stars".
+    }
+    PropVariantClear(&amp;amp;amp;amp;amp;amp;propvar);
+}
+</code>
+    </remarks>
+    <seealso cref="PSFormatForDisplayAlloc" />
+    <seealso cref="PSFormatPropertyValue" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-entry">Property Description Schema</seealso>
+  </member>
+  <member name="Windows.PSFormatForDisplayAlloc">
+    <summary>
+      <para>Gets a formatted, Unicode string representation of a property value stored in a <see cref="PROPVARIANT" /> structure. This function allocates memory for the output string.</para>
+    </summary>
+    <param name="key">
+      <para>Type: <b>REFPROPERTYKEY</b></para>
+      <para>Reference to a <see cref="PROPERTYKEY" /> that names the property whose value is being retrieved.</para>
+    </param>
+    <param name="propvar">
+      <para>Type: <b>REFPROPVARIANT</b></para>
+      <para>Reference to a <see cref="PROPVARIANT" /> structure that contains the type and value of the property.</para>
+    </param>
+    <param name="pdff">
+      <para>Type: <b><see cref="PROPDESC_FORMAT_FLAGS" /></b></para>
+      <para>One or more flags that specify the format to apply to the property string. See <see cref="PROPDESC_FORMAT_FLAGS" /> for possible values.</para>
+    </param>
+    <param name="ppszDisplay">
+      <para>Type: <b>PWSTR*</b></para>
+      <para>When the function returns, contains a pointer to a null-terminated, Unicode string representation of the requested property value.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The formatted string was successfully created. <b>S_OK</b> together with an empty return string indicates that there was an empty input string or a non-empty value that was formatted as an empty string.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>The formatted string was not created. S_FALSE together with an empty return string indicates that the empty string resulted from a VT_EMPTY.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>Indicates allocation failed.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This function calls the schema subsystem's implementation of <see cref="IPropertySystem.FormatForDisplayAlloc" />. That call provides a Unicode string representation of a property value, with additional formatting based on one or more <see cref="PROPDESC_FORMAT_FLAGS" />. If the <see cref="PROPERTYKEY" /> is not recognized by the schema subsystem, <b>IPropertySystem.FormatForDisplayAlloc</b> attempts to format the value according to the value's <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms221127(v=vs.85)">VARTYPE</a>.</para>
+      <para>You must initialize Component Object Model (COM) with <see cref="CoInitialize" /> or <see cref="OleInitialize" /> before you call <see cref="PSFormatForDisplayAlloc" />.</para>
+      <para>The function allocates memory through <see cref="CoTaskMemAlloc" /> and returns a pointer to that memory through the <i>ppszDisplay</i> parameter. The calling application must use <see cref="CoTaskMemFree" /> to release that resource when it is no longer needed.</para>
+      <para>The purpose of this function is to convert data into a string suitable for display to the user. The value is formatted according to the current locale, the language of the user, the <see cref="PROPDESC_FORMAT_FLAGS" />, and the property description specified by the property key. For information on how the property description schema influences the formatting of the value, see the following topics:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-displayinfo">displayInfo</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusstringformat/nl-gdiplusstringformat-stringformat">stringFormat</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-booleanformat">booleanFormat</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-numberformat">numberFormat</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="NMDATETIMEFORMAT" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-enumeratedlist">enumeratedList</a>
+          </description>
+        </item>
+      </list>
+      <para>Typically, the <b>PROPDESC_FORMAT_FLAGS</b> are used to modify the format prescribed by the property description.</para>
+      <para>The output string can contain Unicode directional characters. These nonspacing characters influence the Unicode bidirectional algorithm so that the values appear correctly when a left-to-right (LTR) language is drawn on a right-to-left (RTL) window, or an RTL is drawn on a LTR window. These characters include the following: <code>"\x200e", "\x200f", "\x202a", "\x202b", "\x202c", "\x202d", "\x202e".</code></para>
+      <para>The following properties use special formats and are unaffected by the <see cref="PROPDESC_FORMAT_FLAGS" />. Note that examples cited are for strings with a current locale set to English; typically, output is localized except where noted.</para>
+      <list type="table">
+        <listheader>
+          <description>Property</description>
+          <description>Format</description>
+        </listheader>
+        <item>
+          <description>System.FileAttributes</description>
+          <description>The following file attributes are converted to letters and appended to create a string (for example, a value of 0x1801 (FILE_ATTRIBUTE_READONLY | FILE_ATTRIBUTE_COMPRESSED | FILE_ATTRIBUTE_OFFLINE) is converted to "RCO"):
+<list type="bullet"><item><description>FILE_ATTRIBUTE_READONLY (0x00000001) - 'R'</description></item><item><description>FILE_ATTRIBUTE_SYSTEM (0x00000004) - 'S'</description></item><item><description>FILE_ATTRIBUTE_ARCHIVE (0x00000020) -'A'</description></item><item><description>FILE_ATTRIBUTE_COMPRESSED (0x00000800) - 'C'</description></item><item><description>FILE_ATTRIBUTE_ENCRYPTED (0x00004000) - 'E'</description></item><item><description>FILE_ATTRIBUTE_OFFLINE (0x00001000) - 'O'</description></item><item><description>FILE_ATTRIBUTE_NOT_CONTENT_INDEXED (0x00002000) - 'I'</description></item></list></description>
+        </item>
+        <item>
+          <description>System.Photo.ISOSpeed</description>
+          <description>For example, "ISO-400".</description>
+        </item>
+        <item>
+          <description>System.Photo.ShutterSpeed</description>
+          <description>
+            <para>The APEX value is converted to an exposure time using this formula:</para>
+            <para>
+              <code>Exposure_time = 2^(-APEX_value)</code>
+            </para>
+            <para>For example, "2 sec."or "1/125 sec.".</para>
+          </description>
+        </item>
+        <item>
+          <description>System.Photo.ExposureTime</description>
+          <description>For example, "2 sec."or "1/125 sec." </description>
+        </item>
+        <item>
+          <description>System.Photo.Aperture</description>
+          <description>
+            <para>The APEX value is converted to an F number using this formula:</para>
+            <para>
+              <code>F_Number = 2^(APEX_Value / 2)</code>
+            </para>
+            <para>For example, "f/5.6".</para>
+          </description>
+        </item>
+        <item>
+          <description>System.Photo.FNumber</description>
+          <description>For example, "f/5.6".</description>
+        </item>
+        <item>
+          <description>System.Photo.SubjectDistance</description>
+          <description>For example, "15 m"or "250 mm".</description>
+        </item>
+        <item>
+          <description>System.Photo.FocalLength</description>
+          <description>For example, "50 mm".</description>
+        </item>
+        <item>
+          <description>System.Photo.FlashEnergy</description>
+          <description>For example, "500 bpcs".</description>
+        </item>
+        <item>
+          <description>System.Photo.ExposureBias</description>
+          <description>For example, "-2 step", " 0 step", or "+3 step".</description>
+        </item>
+        <item>
+          <description>System.Computer.DecoratedFreeSpace</description>
+          <description>For example, "105 MB free of 13.2 GB".</description>
+        </item>
+        <item>
+          <description>System.ItemType</description>
+          <description>For example, "Application" or "JPEG Image".</description>
+        </item>
+        <item>
+          <description>System.ControlPanel.Category</description>
+          <description>For example, "Appearance and Personalization".</description>
+        </item>
+        <item>
+          <description>System.ComputerName</description>
+          <description>For example, "LITWARE05 (this computer)" or "testbox07".</description>
+        </item>
+      </list>
+      <para>If the property key does not correspond to a property description in any of the registered property schemas, then this function chooses a format based on the type of the value.</para>
+      <list type="table">
+        <listheader>
+          <description>Type of the value</description>
+          <description>Format</description>
+        </listheader>
+        <item>
+          <description>VT_BOOLEAN</description>
+          <description>Not supported.</description>
+        </item>
+        <item>
+          <description>VT_FILETIME</description>
+          <description>Date/time string as specified by <see cref="PROPDESC_FORMAT_FLAGS" /> and the current locale. PDFF_SHORTTIME and PDFF_SHORTDATE are the default. For example, "11/13/2006 3:22 PM".</description>
+        </item>
+        <item>
+          <description>Numeric VARTYPE</description>
+          <description>Decimal string in the current locale. For example, "42". </description>
+        </item>
+        <item>
+          <description>VT_LPWSTR or other</description>
+          <description>Converted to a string. Sequences of "\r", "\t", or "\n" are replaced with a single space.</description>
+        </item>
+        <item>
+          <description>VT_VECTOR | anything</description>
+          <description>Semicolon separated values. A semicolon is used regardless of locale.</description>
+        </item>
+      </list>
+      <h4>Examples</h4>
+      <para>The following example, to be included as part of a larger program, demonstrates how to use <see cref="PSFormatForDisplayAlloc" /> to format a rating value.</para>
+      <code>PROPVARIANT propvar;
+
+HRESULT hr = InitPropVariantFromUInt32(RATING_THREE_STARS_SET, &amp;amp;amp;amp;amp;amp;propvar);
+
+if (SUCCEEDED(hr))
+{
+    PWSTR pszValue;
+
+    hr = PSFormatForDisplayAlloc(PKEY_Rating, propvar, PDFF_DEFAULT, &amp;amp;amp;amp;amp;amp;pszValue);
+
+    if (SUCCEEDED(hr))
+    {
+        // pszValue contains a formatted string similar to "3 stars".
+         CoTaskMemFree(pszValue);
+    }
+    PropVariantClear(&amp;amp;amp;amp;amp;amp;propvar);
+}
+</code>
+    </remarks>
+    <seealso cref="PSFormatForDisplay" />
+    <seealso cref="PSFormatPropertyValue" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-entry">Property Description Schema</seealso>
+  </member>
+  <member name="Windows.PSFormatPropertyValue">
+    <summary>
+      <para>Gets a formatted, Unicode string representation of a property value stored in a property store. This function allocates memory for the output string.</para>
+    </summary>
+    <param name="pps">
+      <para>Type: <b><see cref="IPropertyStore" />*</b></para>
+      <para>Pointer to an <see cref="IPropertyStore" />, which represents the property store from which the property value is taken.</para>
+    </param>
+    <param name="ppd">
+      <para>Type: <b><see cref="IPropertyDescription" />*</b></para>
+      <para>Pointer to an <see cref="IPropertyDescription" />, which represents the property whose value is being retrieved.</para>
+    </param>
+    <param name="pdff">
+      <para>Type: <b><see cref="PROPDESC_FORMAT_FLAGS" /></b></para>
+      <para>One or more <see cref="PROPDESC_FORMAT_FLAGS" /> that specify the format to apply to the property string. See <b>PROPDESC_FORMAT_FLAGS</b> for possible values.</para>
+    </param>
+    <param name="ppszDisplay">
+      <para>Type: <b>LPWSTR*</b></para>
+      <para>When the function returns, contains a pointer to the formatted value as a null-terminated, Unicode string.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This function uses the <i>ppd</i> parameter to call <see cref="IPropertyDescription.FormatForDisplay" />. That call provides a Unicode string representation of a property value, with additional formatting based on one or more <see cref="PROPDESC_FORMAT_FLAGS" />.</para>
+      <para>You must initialize Component Object Model (COM) with <see cref="CoInitialize" /> or <see cref="OleInitialize" /> before you call <see cref="PSFormatPropertyValue" />.</para>
+      <para>The function allocates memory and returns a pointer to that memory in <i>ppszDisplay</i>. The calling application must use <see cref="CoTaskMemFree" /> to release the string specified by <i>ppszDisplay</i> when it is no longer needed.</para>
+      <para>The purpose of this function is to convert data into a string suitable for display to the user. The value is formatted according to the current locale, the language of the user, the <see cref="PROPDESC_FORMAT_FLAGS" />, and the property description specified by the property key. For information on how the property description schema influences the formatting of the value, see the following topics:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-displayinfo">displayInfo</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusstringformat/nl-gdiplusstringformat-stringformat">stringFormat</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-booleanformat">booleanFormat</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-numberformat">numberFormat</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="NMDATETIMEFORMAT" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-enumeratedlist">enumeratedList</a>
+          </description>
+        </item>
+      </list>
+      <para>Typically, the <b>PROPDESC_FORMAT_FLAGS</b> are used to modify the format prescribed by the property description.</para>
+      <para>The output string can contain Unicode directional characters. These nonspacing characters influence the Unicode bidirectional algorithm so that the values appear correctly when a left-to-right (LTR) language is drawn on a right-to-left (RTL) window, or an RTL is drawn on a LTR window. These characters include the following: <code>"\x200e", "\x200f", "\x202a", "\x202b", "\x202c", "\x202d", "\x202e".</code></para>
+      <para>The following properties use special formats and are unaffected by the <see cref="PROPDESC_FORMAT_FLAGS" />. Note that examples cited are for strings with a current locale set to English; typically, output is localized except where noted.</para>
+      <list type="table">
+        <listheader>
+          <description>Property</description>
+          <description>Format</description>
+        </listheader>
+        <item>
+          <description>System.FileAttributes</description>
+          <description>The following file attributes are converted to letters and appended to create a string (for example, a value of 0x1801 (FILE_ATTRIBUTE_READONLY | FILE_ATTRIBUTE_COMPRESSED | FILE_ATTRIBUTE_OFFLINE) is converted to "RCO"):
+<list type="bullet"><item><description>FILE_ATTRIBUTE_READONLY (0x00000001) - 'R'</description></item><item><description>FILE_ATTRIBUTE_SYSTEM (0x00000004) - 'S'</description></item><item><description>FILE_ATTRIBUTE_ARCHIVE (0x00000020) -'A'</description></item><item><description>FILE_ATTRIBUTE_COMPRESSED (0x00000800) - 'C'</description></item><item><description>FILE_ATTRIBUTE_ENCRYPTED (0x00004000) - 'E'</description></item><item><description>FILE_ATTRIBUTE_OFFLINE (0x00001000) - 'O'</description></item><item><description>FILE_ATTRIBUTE_NOT_CONTENT_INDEXED (0x00002000) - 'I'</description></item></list></description>
+        </item>
+        <item>
+          <description>System.Photo.ISOSpeed</description>
+          <description>For example, "ISO-400".</description>
+        </item>
+        <item>
+          <description>System.Photo.ShutterSpeed</description>
+          <description>
+            <para>The APEX value is converted to an exposure time using this formula:</para>
+            <para>
+              <code>Exposure_time = 2^(-APEX_value)</code>
+            </para>
+            <para>For example, "2 sec."or "1/125 sec.".</para>
+          </description>
+        </item>
+        <item>
+          <description>System.Photo.ExposureTime</description>
+          <description>For example, "2 sec."or "1/125 sec." </description>
+        </item>
+        <item>
+          <description>System.Photo.Aperture</description>
+          <description>
+            <para>The APEX value is converted to an F number using this formula:</para>
+            <para>
+              <code>F_Number = 2^(APEX_Value / 2)</code>
+            </para>
+            <para>For example, "f/5.6".</para>
+          </description>
+        </item>
+        <item>
+          <description>System.Photo.FNumber</description>
+          <description>For example, "f/5.6".</description>
+        </item>
+        <item>
+          <description>System.Photo.SubjectDistance</description>
+          <description>For example, "15 m"or "250 mm".</description>
+        </item>
+        <item>
+          <description>System.Photo.FocalLength</description>
+          <description>For example, "50 mm".</description>
+        </item>
+        <item>
+          <description>System.Photo.FlashEnergy</description>
+          <description>For example, "500 bpcs".</description>
+        </item>
+        <item>
+          <description>System.Photo.ExposureBias</description>
+          <description>For example, "-2 step", " 0 step", or "+3 step".</description>
+        </item>
+        <item>
+          <description>System.Computer.DecoratedFreeSpace</description>
+          <description>For example, "105 MB free of 13.2 GB".</description>
+        </item>
+        <item>
+          <description>System.ItemType</description>
+          <description>For example, "Application" or "JPEG Image".</description>
+        </item>
+        <item>
+          <description>System.ControlPanel.Category</description>
+          <description>For example, "Appearance and Personalization".</description>
+        </item>
+        <item>
+          <description>System.ComputerName</description>
+          <description>For example, "LITWARE05 (this computer)" or "testbox07".</description>
+        </item>
+      </list>
+      <para>If the property key does not correspond to a property description in any of the registered property schemas, then this function chooses a format based on the type of the value.</para>
+      <list type="table">
+        <listheader>
+          <description>Type of the value</description>
+          <description>Format</description>
+        </listheader>
+        <item>
+          <description>VT_BOOLEAN</description>
+          <description>Not supported.</description>
+        </item>
+        <item>
+          <description>VT_FILETIME</description>
+          <description>Date/time string as specified by <see cref="PROPDESC_FORMAT_FLAGS" /> and the current locale. PDFF_SHORTTIME and PDFF_SHORTDATE are the default. For example, "11/13/2006 3:22 PM".</description>
+        </item>
+        <item>
+          <description>Numeric VARTYPE</description>
+          <description>Decimal string in the current locale. For example, "42". </description>
+        </item>
+        <item>
+          <description>VT_LPWSTR or other</description>
+          <description>Converted to a string. Sequences of "\r", "\t", or "\n" are replaced with a single space.</description>
+        </item>
+        <item>
+          <description>VT_VECTOR | anything</description>
+          <description>Semicolon separated values. A semicolon is used regardless of locale.</description>
+        </item>
+      </list>
+      <h4>Examples</h4>
+      <para>The following example, to be included as part of a larger program, demonstrates how to use <see cref="PSFormatPropertyValue" /> to format a rating value.</para>
+      <code>// IPropertyStore *pStore;
+// Assume the variable pps is initialized and valid.
+IPropertyDescription *pPropDesc;
+
+HRESULT hr = PSGetPropertyDescription(PKEY_Rating, IID_PPV_ARGS(&amp;amp;amp;amp;amp;amp;pPropDesc));
+
+if (SUCCEEDED(hr))
+{
+    PWSTR pszValue;
+
+    hr = PSFormatPropertyValue(pStore, pPropDesc, PDFF_DEFAULT, &amp;amp;amp;amp;amp;amp;pszValue);
+
+    if (SUCCEEDED(hr))
+    {
+        // pszValue contains a formatted string similar to "3 stars".
+        CoTaskMemFree(pszValue);
+    }
+    pPropDesc-&gt;Release();
+}
+</code>
+    </remarks>
+    <seealso cref="PSFormatForDisplay" />
+    <seealso cref="PSFormatForDisplayAlloc" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-entry">Property Description Schema</seealso>
+  </member>
+  <member name="Windows.PSGetImageReferenceForValue">
+    <summary>
+      <para>Gets an instance of a property description interface for a specified property.</para>
+    </summary>
+    <param name="propkey">
+      <para>Type: <b>REFPROPERTYKEY</b></para>
+      <para>A reference to a <see cref="PROPERTYKEY" /> structure that specifies the property.</para>
+    </param>
+    <param name="propvar">
+      <para>Type: <b>REFIID</b></para>
+      <para>A reference to the IID of the interface to retrieve through <i>ppv</i>.</para>
+    </param>
+    <param name="ppszImageRes">
+      <para>Type: <b>void**</b></para>
+      <para>When this function returns successfully, contains the interface pointer requested in <i>riid</i>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns <b>S_OK</b> if successful, or an error value otherwise, including the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>TYPE_E_ELEMENTNOTFOUND</b>
+            </para>
+          </description>
+          <description></description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>We recommend that you use the <see cref="IID_PPV_ARGS" /> macro, defined in Objbase.h, to package the <i>riid</i> and <i>ppv</i> parameters. This macro provides the correct IID based on the interface pointed to by the value in <i>ppv</i>, which eliminates the possibility of a coding error in <i>riid</i> that could lead to unexpected results.</para>
+    </remarks>
+  </member>
+  <member name="Windows.PSGetItemPropertyHandler">
+    <summary>
+      <para>Retrieves a property handler for a Shell item.</para>
+    </summary>
+    <param name="punkItem">
+      <para>Type: <b><see cref="IUnknown" />*</b></para>
+      <para>A pointer to the <see cref="IUnknown" /> interface of a Shell item that supports <see cref="IShellItem" />.</para>
+      <para>
+        <b>Windows XP:</b> Use <see cref="SHCreateShellItem" /> to create the Shell item.</para>
+      <para>
+        <b>Windows Vista:</b> Use <see cref="SHCreateItemFromIDList" />, <see cref="SHCreateItemFromParsingName" />, <see cref="SHCreateItemFromRelativeName" />, <see cref="SHCreateItemInKnownFolder" />, or <see cref="SHCreateItemWithParent" /> to create the Shell item.</para>
+    </param>
+    <param name="fReadWrite">
+      <para>Type: <b>BOOL</b></para>
+      <para>
+        <b>TRUE</b> to retrieve a read/write property handler. <b>FALSE</b> to retrieve a read-only property handler.</para>
+    </param>
+    <param name="riid">
+      <para>Type: <b>REFIID</b></para>
+      <para>Reference to the IID of the interface the handler object should return. This should be <see cref="IPropertyStore" /> or an interface derived from <b>IPropertyStore</b>.</para>
+    </param>
+    <param name="ppv">
+      <para>Type: <b>void**</b></para>
+      <para>When this function returns, contains the interface pointer requested in <i>riid</i>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>PSSTDAPI</b></para>
+      <para>Returns <b>S_OK</b> if successful, or an error value otherwise.</para>
+    </returns>
+    <remarks>
+      <para>This function is supported in Windows XP and Windows Vista. For applications supported only on Windows Vista or later, it is recommended that you use <see cref="IShellItem2.GetPropertyStore" /> instead of <see cref="PSGetItemPropertyHandler" />. That method provides a richer set of properties in the property store that is returned.</para>
+      <para>This function is approximately equivalent to passing the GPS_HANDLERPROPERTIESONLY flag to <see cref="IShellItem2.GetPropertyStore" />.</para>
+      <para>You must initialize Component Object Model (COM) with <see cref="CoInitialize" /> or <see cref="OleInitialize" /> before you call <see cref="PSGetItemPropertyHandler" />. COM must remain initialized for the lifetime of this object.</para>
+      <h4>Examples</h4>
+      <para>The following example, to be included as part of a larger program, demonstrates how to use <see cref="PSGetItemPropertyHandler" /> to obtain a property handler for an item.</para>
+      <code>// IShellItem *psi;
+// Assume variable psi is valid and initialized.
+IPropertyStore *pStore;
+
+HRESULT hr = PSGetItemPropertyHandler(psi, FALSE, IID_PPV_ARGS(&amp;amp;amp;amp;amp;amp;pStore));
+
+if (SUCCEEDED(hr))
+{
+    // pStore is now valid and contains properties exposed through the
+    // property handler for the item.
+
+    pStore-&gt;Release();
+}
+</code>
+    </remarks>
+  </member>
+  <member name="Windows.PSGetItemPropertyHandlerWithCreateObject">
+    <summary>
+      <para>Retrieves a property handler for a Shell item.</para>
+    </summary>
+    <param name="punkItem">
+      <para>Type: <b><see cref="IUnknown" />*</b></para>
+      <para>A pointer to the <see cref="IUnknown" /> interface of a Shell item that supports <see cref="IShellItem" />.</para>
+      <para>
+        <b>Windows XP:</b> Use <see cref="SHCreateShellItem" /> to create the Shell item.</para>
+      <para>
+        <b>Windows Vista:</b> Use <see cref="SHCreateItemFromIDList" />, <see cref="SHCreateItemFromParsingName" />, <see cref="SHCreateItemFromRelativeName" />, <see cref="SHCreateItemInKnownFolder" />, or <see cref="SHCreateItemWithParent" /> to create the Shell item.</para>
+    </param>
+    <param name="fReadWrite">
+      <para>Type: <b>BOOL</b></para>
+      <para>
+        <b>TRUE</b> to retrieve a read/write property handler. <b>FALSE</b> to retrieve a read-only property handler.</para>
+    </param>
+    <param name="punkCreateObject">
+      <para>Type: <b><see cref="IUnknown" />*</b></para>
+      <para>Pointer to the <see cref="IUnknown" /> interface of a class factory object that supports <see cref="ICreateObject" />.</para>
+    </param>
+    <param name="riid">
+      <para>Type: <b>REFIID</b></para>
+      <para>A reference to the IID of the interface to retrieve through <i>ppv</i>.</para>
+    </param>
+    <param name="ppv">
+      <para>Type: <b>void**</b></para>
+      <para>When this function returns successfully, contains the interface pointer requested in <i>riid</i>. This is typically <see cref="IPropertyStore" /> or <see cref="IPropertyStoreCapabilities" />.</para>
+    </param>
+    <returns>
+      <para>Type: <b>PSSTDAPI</b></para>
+      <para>Returns <b>S_OK</b> if successful, or an error value otherwise.</para>
+    </returns>
+    <remarks>
+      <para>This function is supported in Windows XP as part of the Microsoft Windows Desktop Search (WDS) redistributable which includes <see cref="IPropertyStore" /> and supporting interfaces. For applications supported only on Windows Vista or later, we recommend that you use <see cref="IShellItem2.GetPropertyStoreWithCreateObject" /> instead of <see cref="PSGetItemPropertyHandlerWithCreateObject" /> because <b>IShellItem2.GetPropertyStoreWithCreateObject</b> provides a richer set of properties in the property store that is returned.</para>
+      <para>This function is approximately equivalent to passing the GPS_HANDLERPROPERTIESONLY flag to <see cref="IShellItem2.GetPropertyStoreWithCreateObject" />.</para>
+      <para>The <i>punkCreateObject</i> parameter enables the creation of a property store in a different context than that of the caller. For instance, the <see cref="ICreateObject" /> implementation can cause the property store to be created in another process. This parameter is used only for property handlers that support it and that are registered under <code>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\PropertySystem\PropertyHandlers</code>.</para>
+      <para>You must initialize Component Object Model (COM) with <see cref="CoInitialize" /> or <see cref="OleInitialize" /> before you call <see cref="PSGetItemPropertyHandlerWithCreateObject" />. COM must remain initialized for the lifetime of this object.</para>
+      <h4>Examples</h4>
+      <para>The following example, to be included as part of a larger program, demonstrates how to use <see cref="PSGetItemPropertyHandlerWithCreateObject" /> to obtain a property handler for an item.</para>
+      <code>// IShellItem *psi;
+// ICreateObject *pco;
+// Assume variables pco and psi are valid and initialized.
+IPropertyStore *pStore;
+
+HRESULT hr = PSGetItemPropertyHandlerWithCreateObject(psi, FALSE, pco, IID_PPV_ARGS(&amp;amp;amp;amp;amp;amp;pStore));
+
+if (SUCCEEDED(hr))
+{
+    // pStore is now valid and contains properties exposed through the
+    // property handler for the item.
+
+    pStore-&gt;Release();
+}
+</code>
+    </remarks>
+    <seealso cref="IShellItem2.GetPropertyStoreWithCreateObject" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/properties/building-property-handlers-property-handlers">Initializing Property Handlers</seealso>
+  </member>
+  <member name="Windows.PSGetNamedPropertyFromPropertyStorage">
+    <summary>
+      <para>Gets a value from serialized property storage by property name.</para>
+    </summary>
+    <param name="psps">
+      <para>Type: <b>PCUSERIALIZEDPROPSTORAGE</b></para>
+      <para>A pointer to an allocated buffer that contains the serialized properties. Call <see cref="IPersistSerializedPropStorage.GetPropertyStorage" /> to obtain the buffer.</para>
+    </param>
+    <param name="cb">
+      <para>Type: <b>DWORD</b></para>
+      <para>The size, in bytes, of the USERIALIZESPROPSTORAGE buffer pointed to by <i>psps</i>.</para>
+    </param>
+    <param name="pszName">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>A pointer to a null-terminated, Unicode string that contains the name of the property.</para>
+    </param>
+    <param name="ppropvar">
+      <para>Type: <b><see cref="PROPVARIANT" />*</b></para>
+      <para>When this function returns, contains the requested value.</para>
+    </param>
+    <returns>
+      <para>Type: <b>PSSTDAPI</b></para>
+      <para>Returns <b>S_OK</b> if successful, or an error value otherwise.</para>
+    </returns>
+    <remarks>
+      <para>This function is intended to be called if the calling application already has a serialized property storage and needs no more than a few properties from storage. If many properties need to be retrieved, performance can be enhanced by creating a memory property store by calling <see cref="PSCreateMemoryPropertyStore" />, initializing the property store by calling <see cref="IPersistSerializedPropStorage.SetPropertyStorage" />, and using <see cref="INamedPropertyStore" /> or <see cref="IPropertyStore" /> to retrieve the properties.</para>
+      <para>Note that <see cref="PSGetNamedPropertyFromPropertyStorage" /> works only on serialized buffers created by the system implementation of <see cref="IPersistSerializedPropStorage" />. You must first obtain a memory property store by calling <see cref="PSCreateMemoryPropertyStore" />; that store can then create a serialized buffer using the <b>IPersistSerializedPropStorage</b> interface.</para>
+      <para>Although SERIALIZEDPROPSTORAGE is an opaque serialized data structure whose format may change in the future, earlier formats will be supported on subsequent versions of Windows. Because the format is opaque, applications should use supported property storage APIs to access and manipulate the serialized buffer (see <see cref="IPersistSerializedPropStorage" /> and  <see cref="PSGetPropertyFromPropertyStorage" />).</para>
+      <h4>Examples</h4>
+      <para>The following example, to be included as part of a larger program, demonstrates how to use <see cref="PSGetNamedPropertyFromPropertyStorage" /> to read a value from serialized property storage.</para>
+      <code>// SERIALIZEDPROPSTORAGE *pStorage;
+// DWORD cbStorage;
+// Assume the variables pStorage and cbStorage are initialized and valid.
+PROPVARIANT propvar;
+
+HRESULT hr = PSGetNamedPropertyFromPropertyStorage(pStorage, cb, L"MyProperty", &amp;amp;amp;amp;amp;amp;propvar);
+
+if (SUCCEEDED(hr))
+{
+    // propvar is now valid.
+
+    PropVariantClear(&amp;amp;amp;amp;amp;amp;propvar);
+}
+</code>
+    </remarks>
+    <seealso cref="PSGetPropertyFromPropertyStorage" />
+  </member>
+  <member name="Windows.PSGetNameFromPropertyKey">
+    <summary>
+      <para>Retrieves the canonical name of the property, given its <see cref="PROPERTYKEY" />.</para>
+    </summary>
+    <param name="propkey">
+      <para>Type: <b>REFPROPERTYKEY</b></para>
+      <para>Reference to a <see cref="PROPERTYKEY" /> structure that identifies the requested property.</para>
+    </param>
+    <param name="ppszCanonicalName">
+      <para>Type: <b>PWSTR*</b></para>
+      <para>When this function returns, contains a pointer to the property name as a null-terminated Unicode string.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The property's canonical name is obtained.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>TYPE_E_ELEMENTNOTFOUND</b>
+            </para>
+          </description>
+          <description>
+            <para>Indicates that the <see cref="PROPERTYKEY" /> does not exist in the schema subsystem cache.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Retrieves a canonical name for a specified property key. Like property keys, canonical names uniquely identify a property. For example, <code>System.Keywords</code> is the canonical name for <code>PKEY_Keywords</code>. This function succeeds only for properties registered as part of the property schema.</para>
+      <para>It is the responsibility of the calling application to use <see cref="CoTaskMemFree" /> to release the string referred to by <i>ppszCanonicalName</i> when it is no longer needed.</para>
+      <h4>Examples</h4>
+      <para>The following example, to be included as part of a larger program, demonstrates how to use <see cref="PSGetNameFromPropertyKey" /> to read a value from serialized property storage.</para>
+      <code>PWSTR pszName;
+
+HRESULT hr = PSGetNameFromPropertyKey(PKEY_Keywords, &amp;amp;amp;amp;amp;amp;pszName);
+
+if (SUCCEEDED(hr))
+{
+    // pszName now contains L"System.Keywords"
+
+    CoTaskMemFree(pszName);
+}
+</code>
+    </remarks>
+    <seealso cref="IPropertyDescription.GetCanonicalName" />
+    <seealso cref="PSGetPropertyDescriptionByName" />
+    <seealso cref="PSGetPropertyKeyFromName" />
+    <seealso cref="PSStringFromPropertyKey" />
+  </member>
+  <member name="Windows.PSGetPropertyDescription">
+    <summary>
+      <para>Gets an instance of a property description interface for a property specified by a <see cref="PROPERTYKEY" /> structure.</para>
+    </summary>
+    <param name="propkey">
+      <para>Type: <b>REFPROPERTYKEY</b></para>
+      <para>Reference to a <see cref="PROPERTYKEY" />.</para>
+    </param>
+    <param name="riid">
+      <para>Type: <b>REFIID</b></para>
+      <para>Reference to the interface ID of the requested interface.</para>
+    </param>
+    <param name="ppv">
+      <para>Type: <b>void**</b></para>
+      <para>When this function returns, contains the interface pointer requested in <i>riid</i>. This is typically <see cref="IPropertyDescription" />, <see cref="IPropertyDescriptionAliasInfo" />, or <see cref="IPropertyDescriptionSearchInfo" />.</para>
+    </param>
+    <returns>
+      <para>Type: <b>PSSTDAPI</b></para>
+      <para>Returns one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The interface was obtained.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>The <i>ppv</i> parameter is <b>NULL</b>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>TYPE_E_ELEMENTNOTFOUND</b>
+            </para>
+          </description>
+          <description>
+            <para>The <see cref="PROPERTYKEY" /> does not exist in the schema subsystem cache.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>We recommend that you use the <b>IID_PPV_ARGS</b> macro, defined in Objbase.h, to package the <i>riid</i> and <i>ppv</i> parameters. This macro provides the correct IID based on the interface pointed to by the value in <i>ppv</i>, which eliminates the possibility of a coding error.</para>
+      <h4>Examples</h4>
+      <para>The following example, to be included as part of a larger program, demonstrates how to use <see cref="PSGetPropertyDescription" /> to get the property description for the ratings property.</para>
+      <code>IPropertyDescription *pPropDesc;
+
+HRESULT hr = PSGetPropertyDescription(PKEY_Ratings, IID_PPV_ARGS(&amp;amp;amp;amp;amp;amp;pPropDesc));
+
+if (SUCCEEDED(hr))
+{
+    // pPropDesc is now valid.
+
+    pPropDesc-&gt;Release();
+}
+</code>
+    </remarks>
+    <seealso cref="PSGetPropertyDescriptionByName" />
+    <seealso cref="PSGetPropertySystem" />
+  </member>
+  <member name="Windows.PSGetPropertyDescriptionByName">
+    <summary>
+      <para>Gets an instance of a property description interface for a specified property name.</para>
+    </summary>
+    <param name="pszCanonicalName">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>A pointer to a null-terminated, Unicode string that identifies the property.</para>
+    </param>
+    <param name="riid">
+      <para>Type: <b>REFIID</b></para>
+      <para>Reference to the interface ID of the requested property.</para>
+    </param>
+    <param name="ppv">
+      <para>Type: <b>void**</b></para>
+      <para>When this function returns, contains the interface pointer requested in <i>riid</i>. This is typically <see cref="IPropertyDescription" />, <see cref="IPropertyDescriptionAliasInfo" />, or  <see cref="IPropertyDescriptionSearchInfo" />.</para>
+    </param>
+    <returns>
+      <para>Type: <b>PSSTDAPI</b></para>
+      <para>Returns one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The interface was obtained.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>The <i>pszCanonicalName</i> parameter is <b>NULL</b>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>TYPE_E_ELEMENTNOTFOUND</b>
+            </para>
+          </description>
+          <description>
+            <para>The canonical name does not exist in the schema subsystem cache.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>It is recommended that you use the IID_PPV_ARGS macro, defined in objbase.h, to package the <i>riid</i> and <i>ppv</i> parameters. This macro provides the correct IID based on the interface pointed to by the value in <i>ppv</i>, eliminating the possibility of a coding error.</para>
+      <para>We recommend that <i>pszCanonicalName</i> point to the canonical name of a property, for example, <code>L"System.Keywords"</code>. The canonical name is case sensitive.</para>
+      <para>In addition to the new canonical names, callers can pass a legacy name for a property. The following table contains the complete list of supported legacy names and the canonical names they correspond to.</para>
+      <list type="table">
+        <listheader>
+          <description>Property name</description>
+          <description>Maps to property</description>
+        </listheader>
+        <item>
+          <description>Access</description>
+          <description>System.DateAccessed</description>
+        </item>
+        <item>
+          <description>Album</description>
+          <description>System.Music.AlbumTitle</description>
+        </item>
+        <item>
+          <description>AllocSize</description>
+          <description>System.FileAllocationSize</description>
+        </item>
+        <item>
+          <description>Aperture</description>
+          <description>System.Photo.Aperture</description>
+        </item>
+        <item>
+          <description>Artist</description>
+          <description>System.Music.Artist</description>
+        </item>
+        <item>
+          <description>Attrib</description>
+          <description>System.FileAttributes</description>
+        </item>
+        <item>
+          <description>Attributes</description>
+          <description>System.FileAttributes</description>
+        </item>
+        <item>
+          <description>AttributesDescription</description>
+          <description>System.FileAttributesDisplay</description>
+        </item>
+        <item>
+          <description>Audio Format</description>
+          <description>System.Audio.Format</description>
+        </item>
+        <item>
+          <description>Audio Sample Size</description>
+          <description>System.Audio.SampleSize</description>
+        </item>
+        <item>
+          <description>BitDepth</description>
+          <description>System.Image.BitDepth</description>
+        </item>
+        <item>
+          <description>Bitrate</description>
+          <description>System.Audio.EncodingBitrate</description>
+        </item>
+        <item>
+          <description>CameraModel</description>
+          <description>System.Photo.CameraModel</description>
+        </item>
+        <item>
+          <description>Capacity</description>
+          <description>System.Capacity</description>
+        </item>
+        <item>
+          <description>Channels</description>
+          <description>System.Audio.ChannelCount</description>
+        </item>
+        <item>
+          <description>ColorSpace</description>
+          <description>System.Image.ColorSpace</description>
+        </item>
+        <item>
+          <description>Company</description>
+          <description>System.Company</description>
+        </item>
+        <item>
+          <description>Compression</description>
+          <description>System.Video.Compression</description>
+        </item>
+        <item>
+          <description>Compression</description>
+          <description>System.Video.Compression</description>
+        </item>
+        <item>
+          <description>Copyright</description>
+          <description>System.Copyright</description>
+        </item>
+        <item>
+          <description>Copyright</description>
+          <description>System.Copyright</description>
+        </item>
+        <item>
+          <description>Copyright</description>
+          <description>System.Image.Copyright</description>
+        </item>
+        <item>
+          <description>Create</description>
+          <description>System.DateCreated</description>
+        </item>
+        <item>
+          <description>CSCStatus</description>
+          <description>System.OfflineStatus</description>
+        </item>
+        <item>
+          <description>Data Rate</description>
+          <description>System.Video.EncodingBitrate</description>
+        </item>
+        <item>
+          <description>DateDeleted</description>
+          <description>System.Recycle.DateDeleted</description>
+        </item>
+        <item>
+          <description>DeletedFrom</description>
+          <description>System.Recycle.DeletedFrom</description>
+        </item>
+        <item>
+          <description>Dimensions</description>
+          <description>System.Image.Dimensions</description>
+        </item>
+        <item>
+          <description>Directory</description>
+          <description>System.ItemFolderNameDisplay</description>
+        </item>
+        <item>
+          <description>Distance</description>
+          <description>System.Photo.SubjectDistance</description>
+        </item>
+        <item>
+          <description>DocAppName</description>
+          <description>System.ApplicationName</description>
+        </item>
+        <item>
+          <description>DocAuthor</description>
+          <description>System.Author</description>
+        </item>
+        <item>
+          <description>DocByteCount</description>
+          <description>System.Document.ByteCount</description>
+        </item>
+        <item>
+          <description>DocCategory</description>
+          <description>System.Category</description>
+        </item>
+        <item>
+          <description>DocCharCount</description>
+          <description>System.Document.CharacterCount</description>
+        </item>
+        <item>
+          <description>DocComments</description>
+          <description>System.Comment</description>
+        </item>
+        <item>
+          <description>DocCompany</description>
+          <description>System.Company</description>
+        </item>
+        <item>
+          <description>DocCreatedTm</description>
+          <description>System.Document.DateCreated</description>
+        </item>
+        <item>
+          <description>DocEditTime</description>
+          <description>System.Document.TotalEditingTime</description>
+        </item>
+        <item>
+          <description>DocHiddenCount</description>
+          <description>System.Document.HiddenSlideCount</description>
+        </item>
+        <item>
+          <description>DocKeywords</description>
+          <description>System.Keywords</description>
+        </item>
+        <item>
+          <description>DocLastAuthor</description>
+          <description>System.Document.LastAuthor</description>
+        </item>
+        <item>
+          <description>DocLastPrinted</description>
+          <description>System.Document.DatePrinted</description>
+        </item>
+        <item>
+          <description>DocLastSavedTm</description>
+          <description>System.Document.DateSaved</description>
+        </item>
+        <item>
+          <description>DocLineCount</description>
+          <description>System.Document.LineCount</description>
+        </item>
+        <item>
+          <description>DocManager</description>
+          <description>System.Document.Manager</description>
+        </item>
+        <item>
+          <description>DocNoteCount</description>
+          <description>System.Document.NoteCount</description>
+        </item>
+        <item>
+          <description>DocPageCount</description>
+          <description>System.Document.PageCount</description>
+        </item>
+        <item>
+          <description>DocParaCount</description>
+          <description>System.Document.ParagraphCount</description>
+        </item>
+        <item>
+          <description>DocPresentationTarget</description>
+          <description>System.Document.PresentationFormat</description>
+        </item>
+        <item>
+          <description>DocRevNumber</description>
+          <description>System.Document.RevisionNumber</description>
+        </item>
+        <item>
+          <description>DocSlideCount</description>
+          <description>System.Document.SlideCount</description>
+        </item>
+        <item>
+          <description>DocSubject</description>
+          <description>System.Subject</description>
+        </item>
+        <item>
+          <description>DocTemplate</description>
+          <description>System.Document.Template</description>
+        </item>
+        <item>
+          <description>DocTitle</description>
+          <description>System.Title</description>
+        </item>
+        <item>
+          <description>DocWordCount</description>
+          <description>System.Document.WordCount</description>
+        </item>
+        <item>
+          <description>DRM Description</description>
+          <description>System.DRM.Description</description>
+        </item>
+        <item>
+          <description>Duration</description>
+          <description>System.Media.Duration</description>
+        </item>
+        <item>
+          <description>EquipMake</description>
+          <description>System.Photo.CameraManufacturer</description>
+        </item>
+        <item>
+          <description>ExposureBias</description>
+          <description>System.Photo.ExposureBias</description>
+        </item>
+        <item>
+          <description>ExposureProg</description>
+          <description>System.Photo.ExposureProgram</description>
+        </item>
+        <item>
+          <description>ExposureTime</description>
+          <description>System.Photo.ExposureTime</description>
+        </item>
+        <item>
+          <description>FaxCallerID</description>
+          <description>System.Fax.CallerID</description>
+        </item>
+        <item>
+          <description>FaxCSID</description>
+          <description>System.Fax.CSID</description>
+        </item>
+        <item>
+          <description>FaxRecipientName</description>
+          <description>System.Fax.RecipientName</description>
+        </item>
+        <item>
+          <description>FaxRecipientNumber</description>
+          <description>System.Fax.RecipientNumber</description>
+        </item>
+        <item>
+          <description>FaxRouting</description>
+          <description>System.Fax.Routing</description>
+        </item>
+        <item>
+          <description>FaxSenderName</description>
+          <description>System.Fax.SenderName</description>
+        </item>
+        <item>
+          <description>FaxTime</description>
+          <description>System.Fax.Time</description>
+        </item>
+        <item>
+          <description>FaxTSID</description>
+          <description>System.Fax.TSID</description>
+        </item>
+        <item>
+          <description>FileDescription</description>
+          <description>System.FileDescription</description>
+        </item>
+        <item>
+          <description>FileSystem</description>
+          <description>System.Volume.FileSystem</description>
+        </item>
+        <item>
+          <description>FileType</description>
+          <description>System.Image.FileType</description>
+        </item>
+        <item>
+          <description>FileVersion</description>
+          <description>System.FileVersion</description>
+        </item>
+        <item>
+          <description>Flash</description>
+          <description>System.Photo.Flash</description>
+        </item>
+        <item>
+          <description>FlashEnergy</description>
+          <description>System.Photo.FlashEnergy</description>
+        </item>
+        <item>
+          <description>FNumber</description>
+          <description>System.Photo.FNumber</description>
+        </item>
+        <item>
+          <description>FocalLength</description>
+          <description>System.Photo.FocalLength</description>
+        </item>
+        <item>
+          <description>Frame Rate</description>
+          <description>System.Video.FrameRate</description>
+        </item>
+        <item>
+          <description>FrameCount</description>
+          <description>System.Media.FrameCount</description>
+        </item>
+        <item>
+          <description>FreeSpace</description>
+          <description>System.FreeSpace</description>
+        </item>
+        <item>
+          <description>Genre</description>
+          <description>System.Music.Genre</description>
+        </item>
+        <item>
+          <description>ImageX</description>
+          <description>System.Image.HorizontalSize</description>
+        </item>
+        <item>
+          <description>ImageY</description>
+          <description>System.Image.VerticalSize</description>
+        </item>
+        <item>
+          <description>ISOSpeed</description>
+          <description>System.Photo.ISOSpeed</description>
+        </item>
+        <item>
+          <description>LightSource</description>
+          <description>System.Photo.LightSource</description>
+        </item>
+        <item>
+          <description>LinksUpToDate</description>
+          <description>System.Document.LinksDirty</description>
+        </item>
+        <item>
+          <description>LinkTarget</description>
+          <description>System.Link.TargetParsingPath</description>
+        </item>
+        <item>
+          <description>Lyrics</description>
+          <description>System.Music.Lyrics</description>
+        </item>
+        <item>
+          <description>Manager</description>
+          <description>System.Document.Manager</description>
+        </item>
+        <item>
+          <description>MeteringMode</description>
+          <description>System.Photo.MeteringMode</description>
+        </item>
+        <item>
+          <description>MMClipCount</description>
+          <description>System.Document.MultimediaClipCount</description>
+        </item>
+        <item>
+          <description>Name</description>
+          <description>System.ItemNameDisplay</description>
+        </item>
+        <item>
+          <description>Owner</description>
+          <description>System.FileOwner</description>
+        </item>
+        <item>
+          <description>Play Count</description>
+          <description>System.DRM.PlayCount</description>
+        </item>
+        <item>
+          <description>Play Expires</description>
+          <description>System.DRM.DatePlayExpires</description>
+        </item>
+        <item>
+          <description>Play Starts</description>
+          <description>System.DRM.DatePlayStarts</description>
+        </item>
+        <item>
+          <description>PresentationTarget</description>
+          <description>System.Document.PresentationFormat</description>
+        </item>
+        <item>
+          <description>ProductName</description>
+          <description>System.Software.ProductName</description>
+        </item>
+        <item>
+          <description>ProductVersion</description>
+          <description>System.Software.ProductVersion</description>
+        </item>
+        <item>
+          <description>Project</description>
+          <description>System.Media.Project</description>
+        </item>
+        <item>
+          <description>Protected</description>
+          <description>System.DRM.IsProtected</description>
+        </item>
+        <item>
+          <description>Rank</description>
+          <description>System.Search.Rank</description>
+        </item>
+        <item>
+          <description>Rating</description>
+          <description>System.Rating</description>
+        </item>
+        <item>
+          <description>ResolutionX</description>
+          <description>System.Image.HorizontalResolution</description>
+        </item>
+        <item>
+          <description>ResolutionY</description>
+          <description>System.Image.VerticalResolution</description>
+        </item>
+        <item>
+          <description>Sample Rate</description>
+          <description>System.Audio.SampleRate</description>
+        </item>
+        <item>
+          <description>Scale</description>
+          <description>System.Document.Scale</description>
+        </item>
+        <item>
+          <description>ShutterSpeed</description>
+          <description>System.Photo.ShutterSpeed</description>
+        </item>
+        <item>
+          <description>Size</description>
+          <description>System.Size</description>
+        </item>
+        <item>
+          <description>Software</description>
+          <description>System.SoftwareUsed</description>
+        </item>
+        <item>
+          <description>Status</description>
+          <description>System.Media.Status</description>
+        </item>
+        <item>
+          <description>Status</description>
+          <description>System.Status</description>
+        </item>
+        <item>
+          <description>Stream Name</description>
+          <description>System.Video.StreamName</description>
+        </item>
+        <item>
+          <description>SyncCopyIn</description>
+          <description>System.Sync.CopyIn</description>
+        </item>
+        <item>
+          <description>Track</description>
+          <description>System.Music.TrackNumber</description>
+        </item>
+        <item>
+          <description>Type</description>
+          <description>System.ItemTypeText</description>
+        </item>
+        <item>
+          <description>Video Sample Size</description>
+          <description>System.Video.SampleSize</description>
+        </item>
+        <item>
+          <description>WhenTaken</description>
+          <description>System.Photo.DateTaken</description>
+        </item>
+        <item>
+          <description>Write</description>
+          <description>System.DateModified</description>
+        </item>
+        <item>
+          <description>Year</description>
+          <description>System.Media.Year</description>
+        </item>
+      </list>
+      <h4>Examples</h4>
+      <para>The following example, to be included as part of a larger program, demonstrates how to use <see cref="PSGetPropertyDescriptionByName" /> to retrieve the description for the ratings property.</para>
+      <code>IPropertyDescription *pPropDesc;
+
+HRESULT hr = PSGetPropertyDescriptionByName(L"System.Rating", IID_PPV_ARGS(&amp;amp;amp;amp;amp;amp;pPropDesc))
+
+if (SUCCEEDED(hr))
+{
+    // pPropDesc is now valid.
+
+    pPropDesc-&gt;Release();
+}
+</code>
+    </remarks>
+    <seealso cref="IPropertySystem" />
+    <seealso cref="PSGetPropertyDescription" />
+  </member>
+  <member name="Windows.PSGetPropertyDescriptionListFromString">
+    <summary>
+      <para>Gets an instance of a property description list interface for a specified property list.</para>
+    </summary>
+    <param name="pszPropList">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>Pointer to a null-terminated, Unicode string that identifies the property list. See <see cref="IPropertySystem.GetPropertyDescriptionListFromString" /> for more information about the format of this parameter.</para>
+    </param>
+    <param name="riid">
+      <para>Type: <b>REFIID</b></para>
+      <para>Reference to the interface ID of the requested interface.</para>
+    </param>
+    <param name="ppv">
+      <para>Type: <b>void**</b></para>
+      <para>When this function returns, contains the interface pointer requested in <i>riid</i>. This is typically <see cref="IPropertyDescriptionList" />.</para>
+    </param>
+    <returns>
+      <para>Type: <b>PSSTDAPI</b></para>
+      <para>Returns one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The interface was obtained.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>The <i>ppv</i> parameter is <b>NULL</b>.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This function calls the property subsystem implementation of <see cref="IPropertySystem.GetPropertyDescriptionListFromString" /> to obtain a collection of properties provided as a semicolon-delimited property list string.</para>
+      <para>We recommend that you use the <b>IID_PPV_ARGS</b> macro, defined in Objbase.h, to package the <i>riid</i> and <i>ppv</i> parameters. This macro provides the correct IID based on the interface pointed to by the value in <i>ppv</i>, which eliminates the possibility of a coding error.</para>
+      <para>For more information about property schemas, see <a href="https://docs.microsoft.com//windows/desktop/properties/building-property-handlers-property-schemas">Property Schemas</a>.</para>
+      <h4>Examples</h4>
+      <para>The following example, to be included as part of a larger program, demonstrates how to use <see cref="PSGetPropertyDescriptionListFromString" />.</para>
+      <code>IPropertyDescriptionList *pList;
+
+HRESULT hr = PSGetPropertyDescriptionListFromString(L"prop:System.Title;System.Size",
+                                                    IID_PPV_ARGS(&amp;amp;amp;amp;amp;amp;pList));
+
+if (SUCCEEDED(hr))
+{
+    // pList is now valid.
+
+    pList-&gt;Release();
+}
+</code>
+    </remarks>
+  </member>
+  <member name="Windows.PSGetPropertyFromPropertyStorage">
+    <summary>
+      <para>Gets the value of a property as stored in serialized property storage.</para>
+    </summary>
+    <param name="psps">
+      <para>Type: <b>PCUSERIALIZEDPROPSTORAGE</b></para>
+      <para>Pointer to an allocated buffer that contains the serialized properties. This buffer is obtained by a call to <see cref="IPersistSerializedPropStorage.GetPropertyStorage" />.</para>
+    </param>
+    <param name="cb">
+      <para>Type: <b>DWORD</b></para>
+      <para>The size, in bytes, of the <b>USERIALIZESPROPSTORAGE</b> buffer pointed to by <i>psps</i>.</para>
+    </param>
+    <param name="rpkey">
+      <para>Type: <b>REFPROPERTYKEY</b></para>
+      <para>Reference to the <see cref="PROPERTYKEY" /> that identifies the property for which to get the value.</para>
+    </param>
+    <param name="ppropvar">
+      <para>Type: <b><see cref="PROPVARIANT" />**</b></para>
+      <para>When this function returns, contains the requested value.</para>
+    </param>
+    <returns>
+      <para>Type: <b>PSSTDAPI</b></para>
+      <para>Returns <b>S_OK</b> if successful, or an error value otherwise.</para>
+    </returns>
+    <remarks>
+      <para>This function is intended to be called if the calling application already has a serialized property storage and needs no more than a few properties from storage. If many properties need to be retrieved, performance can be enhanced by creating a memory property store through <see cref="PSCreateMemoryPropertyStore" />, initializing the property store by calling <see cref="IPersistSerializedPropStorage.SetPropertyStorage" />, and by using <see cref="IPropertyStore" /> to retrieve the properties.</para>
+      <para>Note that <see cref="PSGetPropertyFromPropertyStorage" /> works only on serialized buffers created by the system implementation of <see cref="IPersistSerializedPropStorage" />. You must first obtain a memory property store by calling <see cref="PSCreateMemoryPropertyStore" />. That store can then create a serialized buffer using the <b>IPersistSerializedPropStorage</b> interface.</para>
+      <para>Although SERIALIZEDPROPSTORAGE is an opaque serialized data structure whose format may change in the future, earlier formats will be supported on subsequent versions of Windows. Because the format is opaque, applications should use supported property storage APIs to access and manipulate the serialized buffer (see <see cref="IPersistSerializedPropStorage" />).</para>
+      <h4>Examples</h4>
+      <para>The following example, to be included as part of a larger program, demonstrates how to use <see cref="PSGetPropertyFromPropertyStorage" /> to read a value from serialized property storage.</para>
+      <code>// SERIALIZEDPROPSTORAGE *pStorage;
+// DWORD cbStorage;
+// Assume the variables pStorage and cbStorage are initialized and valid.
+PROPVARIANT propvar;
+
+HRESULT hr = PSGetPropertyFromPropertyStorage(pStorage, cb, PKEY_Rating, &amp;amp;amp;amp;amp;amp;propvar);
+
+if (SUCCEEDED(hr))
+{
+    // propvar is now valid.
+
+    PropVariantClear(&amp;amp;amp;amp;amp;amp;propvar);
+}
+</code>
+    </remarks>
+    <seealso cref="PSGetNamedPropertyFromPropertyStorage" />
+  </member>
+  <member name="Windows.PSGetPropertyKeyFromName">
+    <summary>
+      <para>Gets the property key for a canonical property name.</para>
+    </summary>
+    <param name="pszName">
+      <para>Type: <b>PCWSTR</b></para>
+      <para>Pointer to a property name as a null-terminated, Unicode string.</para>
+    </param>
+    <param name="ppropkey">
+      <para>Type: <b><see cref="PROPERTYKEY" />*</b></para>
+      <para>When this function returns, contains the requested property key.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Property key structure was obtained.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>The <i>pszName</i> parameter is <b>NULL</b>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>TYPE_E_ELEMENTNOTFOUND</b>
+            </para>
+          </description>
+          <description>
+            <para>The canonical property name does not exist in the schema subsystem cache.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Property keys uniquely identify a property. For example, <code>PKEY_Keywords</code> corresponds to <code>System.Keywords</code>. This function succeeds only for properties registered as part of the property schema.</para>
+      <para>See <see cref="PSGetPropertyDescriptionByName" /> for a list of legacy property names that are also supported by the function.</para>
+      <h4>Examples</h4>
+      <para>The following example, to be included as part of a larger program, demonstrates how to use <see cref="PSGetPropertyKeyFromName" /> to obtain the property key for <code>System.Keywords</code>.</para>
+      <code>PROPERTYKEY key;
+
+HRESULT hr = PSGetPropertyKeyFromName(L"System.Keywords", &amp;amp;amp;amp;amp;amp;key);
+
+if (SUCCEEDED(hr))
+{
+    // The property key is now valid.
+}
+</code>
+    </remarks>
+    <seealso cref="IPropertyDescription.GetPropertyKey" />
+    <seealso cref="PSGetNameFromPropertyKey" />
+    <seealso cref="PSGetPropertyDescription" />
+    <seealso cref="PSPropertyKeyFromString" />
+  </member>
+  <member name="Windows.PSGetPropertySystem">
+    <summary>
+      <para>Gets an instance of the subsystem object that implements <see cref="IPropertySystem" />.</para>
+    </summary>
+    <param name="riid">
+      <para>Type: <b>REFIID</b></para>
+      <para>Reference to the IID of the requested interface.</para>
+    </param>
+    <param name="ppv">
+      <para>Type: <b>void**</b></para>
+      <para>When this function returns, contains the interface pointer requested in <i>riid</i>. This is typically <see cref="IPropertySystem" />.</para>
+    </param>
+    <returns>
+      <para>Type: <b>PSSTDAPI</b></para>
+      <para>Returns one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The interface was obtained.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>The <i>ppv</i> parameter is <b>NULL</b>.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>You must initialize Component Object Model (COM) with <see cref="CoInitialize" /> or <see cref="OleInitialize" /> prior to calling <see cref="PSGetPropertySystem" />.  COM must remain initialized for the lifetime of this object. The property system object aggregates the free-threaded marshaller and is thread-safe.</para>
+      <para>We recommend that you use the IID_PPV_ARGS macro defined in Objbase.h to package the <i>riid</i> and <i>ppv</i> parameters. This macro provides the correct IID based on the interface pointed to by the value in <i>ppv</i>, which eliminates the possibility of a coding error.</para>
+      <h4>Examples</h4>
+      <para>The following example, to be included as part of a larger program, demonstrates how to use <see cref="PSGetPropertySystem" />.</para>
+      <code>IPropertySystem *pSystem;
+
+HRESULT hr = PSGetPropertySystem(IID_PPV_ARGS(&amp;amp;amp;amp;amp;amp;pSystem));
+
+if (SUCCEEDED(hr))
+{
+    // pSystem is now valid.
+
+    pSystem-&gt;Release();
+}
+</code>
+    </remarks>
+  </member>
+  <member name="Windows.PSGetPropertyValue">
+    <summary>
+      <para>Gets a property value from a property store.</para>
+    </summary>
+    <param name="pps">
+      <para>Type: <b><see cref="IPropertyStore" />*</b></para>
+      <para>Pointer to an instance of the <see cref="IPropertyStore" /> interface, which represents the property store from which to get the value.</para>
+    </param>
+    <param name="ppd">
+      <para>Type: <b><see cref="IPropertyDescription" />*</b></para>
+      <para>Pointer to an instance of the <see cref="IPropertyDescription" /> interface, which represents the property in the property store.</para>
+    </param>
+    <param name="ppropvar">
+      <para>Type: <b><see cref="PROPVARIANT" />*</b></para>
+      <para>Pointer to an uninitialized <see cref="PROPVARIANT" /> structure. When this function returns, points to the requested property value.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This helper function is used to read a property value from a store. If the calling code already has a <see cref="PROPERTYKEY" /> structure, it might be simpler to call <see cref="IPropertyStore.GetValue" /> directly.</para>
+      <h4>Examples</h4>
+      <para>The following example, to be included as part of a larger program, demonstrates how to use <see cref="PSGetPropertyValue" />.</para>
+      <code>// IPropertyDescription *pPropDesc;
+// IPropertyStore *pStore;
+// Assume the variables pPropDesc and pStore are initialized and valid.
+PROPVARIANT propvar;
+
+HRESULT hr = PSGetPropertyValue(pStore, pPropDesc, &amp;amp;amp;amp;amp;amp;propvar);
+
+if (SUCCEEDED(hr))
+{
+    // propvar is valid.
+
+    PropVariantClear(&amp;amp;amp;amp;amp;amp;propvar);
+}
+</code>
+    </remarks>
+    <seealso cref="PSSetPropertyValue" />
+  </member>
+  <member name="Windows.PSLookupPropertyHandlerCLSID">
+    <summary>
+      <para>Gets the class identifier (CLSID) of a per-computer, registered file property handler.</para>
+    </summary>
+    <param name="pszFilePath">
+      <para>Type: <b>PCWSTR</b></para>
+      <para>Pointer to a null-terminated, Unicode buffer that contains the absolute path of the file whose property handler CLSID is requested.</para>
+    </param>
+    <param name="pclsid">
+      <para>Type: <b>CLSID*</b></para>
+      <para>When this function returns, contains the requested property handler CLSID.</para>
+    </param>
+    <returns>
+      <para>Type: <b>PSSTDAPI</b></para>
+      <para>Returns <b>S_OK</b> if successful, or an error value otherwise.</para>
+    </returns>
+    <remarks>
+      <para>For information on how to register your handler, see <a href="https://docs.microsoft.com//windows/desktop/properties/building-property-handlers-property-handlers">Initializing Property Handlers</a>.</para>
+      <para>This function returns only those handlers registered under <b>HKEY_LOCAL_MACHINE</b>.</para>
+      <para>Most calling applications should not need to call this method or use <see cref="CoCreateInstance" /> to create a property handler directly. Instead, calling applications should use <see cref="IShellItem2.GetPropertyStore" /> to create a property store for a Shell item on Windows Vista. <b>IShellItem2.GetPropertyStore</b> provides the largest set of available properties for a Shell item, and the most options for customizing exactly which properties to return.</para>
+      <para>If no property handler is registered for the specified file, this function returns an error code. When this happens, it might still be possible to read certain file system properties from the property store returned from <see cref="IShellItem2.GetPropertyStore" />.</para>
+      <para>Applications that need to create a property handler from code and that must run both on Windows Vista and on Windows XP can call <see cref="PSGetItemPropertyHandler" /> to create a property store for a Shell item through the Microsoft Windows Desktop Search (WDS) redistributable.</para>
+      <h4>Examples</h4>
+      <para>The following example, to be included as part of a larger program, demonstrates how to use <see cref="PSLookupPropertyHandlerCLSID" />.</para>
+      <code>CLSID clsid;
+
+HRESULT hr = PSLookupPropertyHandlerCLSID(L"C:\\windows\\system32\\shell32.dll", &amp;amp;amp;amp;amp;amp;clsid);
+
+if (SUCCEEDED(hr))
+{
+    // clsid contains the CLSID of the property handler used for
+    // C:\windows\system32\shell32.dll.
+}
+</code>
+    </remarks>
+    <seealso cref="IShellItem2.GetPropertyStore" />
+    <seealso cref="PSGetItemPropertyHandler" />
+  </member>
+  <member name="Windows.PSPropertyBag_Delete">
+    <summary>
+      <para>Deletes a property from a property bag.</para>
+    </summary>
+    <param name="propBag">
+      <para>Type: <b><see cref="IPropertyBag" />*</b></para>
+      <para>A pointer to an <see cref="IPropertyBag" /> object that represents the property bag in which the property is stored.</para>
+    </param>
+    <param name="propName">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>A null-terminated property name string.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The property bag property function API converts between window types and the <b>VARIANT</b> type that is used to express values in a property bag. Doing so eases property bag usage, simplifies applications, and avoids common coding errors.</para>
+    </remarks>
+    <seealso cref="PSPropertyBag_ReadType" />
+  </member>
+  <member name="Windows.PSPropertyBag_ReadBOOL">
+    <summary>
+      <para>Reads the <b>BOOL</b> data value of a property in a property bag.</para>
+    </summary>
+    <param name="propBag">
+      <para>Type: <b><see cref="IPropertyBag" />*</b></para>
+      <para>A pointer to an <see cref="IPropertyBag" /> object that represents the property bag in which the property is stored.</para>
+    </param>
+    <param name="propName">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>A null-terminated property name string.</para>
+    </param>
+    <param name="value">
+      <para>Type: <b>BOOL*</b></para>
+      <para>When this function returns successfully, contains a pointer to the value read from the property.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The property bag property function API converts between windows types and the <b>VARIANT</b> type that is used to express values in a property bag.  Doing so eases property bag usage, simplifies applications, and avoids common coding errors.</para>
+    </remarks>
+    <seealso cref="PSGetPropertySystem" />
+    <seealso cref="PSPropertyBag_WriteBOOL" />
+  </member>
+  <member name="Windows.PSPropertyBag_ReadBSTR">
+    <summary>
+      <para>Reads a <b>BSTR</b> data value from a property in a property bag.</para>
+    </summary>
+    <param name="propBag">
+      <para>Type: <b><see cref="IPropertyBag" />*</b></para>
+      <para>A pointer to an <see cref="IPropertyBag" /> object that represents the property bag in which the property is stored.</para>
+    </param>
+    <param name="propName">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>A null-terminated property name string.</para>
+    </param>
+    <param name="value">
+      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/windows/desktop/automat/bstr">BSTR</a>*</b></para>
+      <para>When this function returns, contains a pointer to a <b>BSTR</b> property value.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The property bag property function API converts between window types and the <b>VARIANT</b> type that is used to express values in a property bag.  Doing so eases property bag usage, simplifies applications, and avoids common coding errors.</para>
+    </remarks>
+    <seealso cref="PSPropertyBag_WriteBSTR" />
+  </member>
+  <member name="Windows.PSPropertyBag_ReadDWORD">
+    <summary>
+      <para>Reads a <b>DWORD</b> data value from property in a property bag.</para>
+    </summary>
+    <param name="propBag">
+      <para>Type: <b><see cref="IPropertyBag" />*</b></para>
+      <para>A pointer to an <see cref="IPropertyBag" /> object that represents the property bag in which the property is stored.</para>
+    </param>
+    <param name="propName">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>A pointer to a null-terminated property name string.</para>
+    </param>
+    <param name="value">
+      <para>Type: <b>DWORD*</b></para>
+      <para>When this function returns, contains a pointer to a <b>DWORD</b> property value.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The property bag property function API converts between window types and the <b>VARIANT</b> type that is used to express values in a property bag. Doing so eases property bag usage, simplifies applications, and avoids common coding errors.</para>
+    </remarks>
+    <seealso cref="PSPropertyBag_WriteDWORD" />
+  </member>
+  <member name="Windows.PSPropertyBag_ReadGUID">
+    <summary>
+      <para>Reads the GUID data value from a property in a property bag.</para>
+    </summary>
+    <param name="propBag">
+      <para>Type: <b><see cref="IPropertyBag" />*</b></para>
+      <para>A pointer to an <see cref="IPropertyBag" /> object that represents the property bag in which the property is stored.</para>
+    </param>
+    <param name="propName">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>A null-terminated property name string.</para>
+    </param>
+    <param name="value">
+      <para>Type: <b>GUID*</b></para>
+      <para>When this function returns, contains a pointer to a GUID property value.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The property bag property function API converts between window types and the <b>VARIANT</b> type that is used to express values in a property bag. Doing so eases property bag usage, simplifies applications, and avoids common coding errors.</para>
+    </remarks>
+    <seealso cref="PSPropertyBag_WriteGUID" />
+  </member>
+  <member name="Windows.PSPropertyBag_ReadInt">
+    <summary>
+      <para>Reads an <b>int</b> data value from a property in a property bag.</para>
+    </summary>
+    <param name="propBag">
+      <para>Type: <b><see cref="IPropertyBag" />*</b></para>
+      <para>A pointer to an <see cref="IPropertyBag" /> object that represents the property bag in which the property is stored.</para>
+    </param>
+    <param name="propName">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>A null-terminated property name string.</para>
+    </param>
+    <param name="value">
+      <para>Type: <b>int*</b></para>
+      <para>When this function returns, contains a pointer to an <b>int</b> property value.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>If the property bag does not already contain the specified property, the call still succeeds.</para>
+      <para>The property bag property function API converts between window types and the <b>VARIANT</b> type that is used to express values in a property bag. Doing so eases property bag usage, simplifies applications, and avoids common coding errors.</para>
+    </remarks>
+    <seealso cref="PSPropertyBag_WriteInt" />
+  </member>
+  <member name="Windows.PSPropertyBag_ReadLONG">
+    <summary>
+      <para>Reads a <b>LONG</b> data value from a property in a property bag.</para>
+    </summary>
+    <param name="propBag">
+      <para>Type: <b><see cref="IPropertyBag" />*</b></para>
+      <para>A pointer to an <see cref="IPropertyBag" /> object that represents the property bag in which the property is stored.</para>
+    </param>
+    <param name="propName">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>A null-terminated property name string.</para>
+    </param>
+    <param name="value">
+      <para>Type: <b>LONG*</b></para>
+      <para>When this function returns, contains a pointer to a <b>LONG</b> property value.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>If the property bag does not already contain the specified property, the call still succeeds.</para>
+      <para>The property bag property function API converts between window types and the <b>VARIANT</b> type that is used to express values in a property bag. Doing so eases property bag usage, simplifies applications, and avoids common coding errors.</para>
+    </remarks>
+    <seealso cref="PSPropertyBag_WriteLONG" />
+  </member>
+  <member name="Windows.PSPropertyBag_ReadPOINTL">
+    <summary>
+      <para>Retrieves the property coordinates stored in a <a href="https://docs.microsoft.com//previous-versions/dd162807(v=vs.85)">POINTL</a> structure of a specified property bag.</para>
+    </summary>
+    <param name="propBag">
+      <para>Type: <b><see cref="IPropertyBag" />*</b></para>
+      <para>A pointer to an <see cref="IPropertyBag" /> object that represents the property bag in which the property is stored.</para>
+    </param>
+    <param name="propName">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>A null-terminated property name string.</para>
+    </param>
+    <param name="value">
+      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/dd162807(v=vs.85)">POINTL</a>*</b></para>
+      <para>When this function returns, contains a pointer to a <a href="https://docs.microsoft.com//previous-versions/dd162807(v=vs.85)">POINTL</a> structure that contains the property coordinates.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The property bag property function API converts between window types and the <b>VARIANT</b> type that is used to express values in a property bag. Doing so eases property bag usage, simplifies applications, and avoids common coding errors.</para>
+    </remarks>
+    <seealso cref="PSPropertyBag_WritePOINTL" />
+  </member>
+  <member name="Windows.PSPropertyBag_ReadPOINTS">
+    <summary>
+      <para>Retrieves the property coordinates stored in a <a href="https://docs.microsoft.com//previous-versions/dd162808(v=vs.85)">POINTS</a> structure of a specified property bag.</para>
+    </summary>
+    <param name="propBag">
+      <para>Type: <b><see cref="IPropertyBag" />*</b></para>
+      <para>A pointer to an <see cref="IPropertyBag" /> object that represents the property bag in which the property is stored.</para>
+    </param>
+    <param name="propName">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>A null-terminated property name string.</para>
+    </param>
+    <param name="value">
+      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/dd162808(v=vs.85)">POINTS</a>*</b></para>
+      <para>When this function returns successfully, contains a pointer to a <a href="https://docs.microsoft.com//previous-versions/dd162808(v=vs.85)">POINTS</a> structure that contains the property coordinates.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The property bag property function API converts between window types and the <b>VARIANT</b> type that is used to express values in a property bag. Doing so eases property bag usage, simplifies applications, and avoids common coding errors.</para>
+    </remarks>
+    <seealso cref="PSPropertyBag_WritePOINTS" />
+  </member>
+  <member name="Windows.PSPropertyBag_ReadPropertyKey">
+    <summary>
+      <para>Reads the property key of a property in a specified property bag.</para>
+    </summary>
+    <param name="propBag">
+      <para>Type: <b><see cref="IPropertyBag" />*</b></para>
+      <para>A pointer to an <see cref="IPropertyBag" /> object that represents the property bag in which the property is stored.</para>
+    </param>
+    <param name="propName">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>A null-terminated property name string.</para>
+    </param>
+    <param name="value">
+      <para>Type: <b><see cref="PROPERTYKEY" />*</b></para>
+      <para>When this function returns, contains a pointer to a property key value.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The property bag property function API converts between window types and the <b>VARIANT</b> type that is used to express values in a property bag. Doing so eases property bag usage, simplifies applications, and avoids common coding errors.</para>
+    </remarks>
+    <seealso cref="PSPropertyBag_WritePropertyKey" />
+  </member>
+  <member name="Windows.PSPropertyBag_ReadRECTL">
+    <summary>
+      <para>Retrieves the coordinates of a rectangle stored in a property contained in a specified property bag.</para>
+    </summary>
+    <param name="propBag">
+      <para>Type: <b><see cref="IPropertyBag" />*</b></para>
+      <para>A pointer to an <see cref="IPropertyBag" /> object that represents the property bag in which the property is stored.</para>
+    </param>
+    <param name="propName">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>A null-terminated property name string.</para>
+    </param>
+    <param name="value">
+      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/dd162907(v=vs.85)">RECTL</a>*</b></para>
+      <para>When this function returns, contains a pointer to a <a href="https://docs.microsoft.com//previous-versions/dd162907(v=vs.85)">RECTL</a> structure that contains the property coordinates.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The property bag property function API converts between window types and the <b>VARIANT</b> type that is used to express values in a property bag. Doing so eases property bag usage, simplifies applications, and avoids common coding errors.</para>
+    </remarks>
+    <seealso cref="PSPropertyBag_WriteRECTL" />
+  </member>
+  <member name="Windows.PSPropertyBag_ReadSHORT">
+    <summary>
+      <para>Reads the SHORT data value of a property in a property bag.</para>
+    </summary>
+    <param name="propBag">
+      <para>Type: <b><see cref="IPropertyBag" />*</b></para>
+      <para>A pointer to an <see cref="IPropertyBag" /> object that represents the property bag in which the property is stored.</para>
+    </param>
+    <param name="propName">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>A null-terminated property name string.</para>
+    </param>
+    <param name="value">
+      <para>Type: <b>SHORT*</b></para>
+      <para>When this function returns, contains a pointer to a SHORT property value.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The property bag property function API converts between window types and the <b>VARIANT</b> type that is used to express values in a property bag. Doing so eases property bag usage, simplifies applications, and avoids common coding errors.</para>
+    </remarks>
+    <seealso cref="PSPropertyBag_WriteSHORT" />
+  </member>
+  <member name="Windows.PSPropertyBag_ReadStr">
+    <summary>
+      <para>Reads the string data value of a property in a property bag.</para>
+    </summary>
+    <param name="propBag">
+      <para>Type: <b><see cref="IPropertyBag" />*</b></para>
+      <para>A pointer to an <see cref="IPropertyBag" /> object that represents the property bag in which the property is stored.</para>
+    </param>
+    <param name="propName">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>A null-terminated property name string.</para>
+    </param>
+    <param name="value">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>When this function returns, contains a pointer to a string property value.</para>
+    </param>
+    <param name="characterCount">
+      <para>Type: <b>int</b></para>
+      <para>This function returns the  integer that represents the size (maximum number of characters) of the <i>value</i> parameter being returned.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The property bag property function API converts between window types and the <b>VARIANT</b> type that is used to express values in a property bag. Doing so eases property bag usage, simplifies applications, and avoids common coding errors.</para>
+    </remarks>
+    <seealso cref="PSPropertyBag_WriteStr" />
+  </member>
+  <member name="Windows.PSPropertyBag_ReadStrAlloc">
+    <summary>
+      <para>Reads a string data value from a property in a property bag and allocates memory for the string that is read.</para>
+    </summary>
+    <param name="propBag">
+      <para>Type: <b><see cref="IPropertyBag" />*</b></para>
+      <para>A pointer to an <see cref="IPropertyBag" /> object that represents the property bag in which the property is stored.</para>
+    </param>
+    <param name="propName">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>A pointer to a null-terminated property name string.</para>
+    </param>
+    <param name="value">
+      <para>Type: <b>PWSTR*</b></para>
+      <para>When this function returns, contains a pointer to a string data value from a property in a property bag and allocates memory for the string that is read. The caller of the <see cref="PSPropertyBag_ReadStrAlloc" /> function needs to call a <see cref="CoTaskMemFree" /> function on this parameter.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The property bag property function API converts between window types and the <b>VARIANT</b> type that is used to express values in a property bag. Doing so eases property bag usage, simplifies applications, and avoids common coding errors.</para>
+    </remarks>
+  </member>
+  <member name="Windows.PSPropertyBag_ReadStream">
+    <summary>
+      <para>Reads the data stream stored in a given property contained in a specified property bag.</para>
+    </summary>
+    <param name="propBag">
+      <para>Type: <b><see cref="IPropertyBag" />*</b></para>
+      <para>A pointer to an <see cref="IPropertyBag" /> object, that represents the property bag in which the property is stored.</para>
+    </param>
+    <param name="propName">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>A pointer to a null-terminated property name string.</para>
+    </param>
+    <param name="value">
+      <para>Type: <b><see cref="IStream" />**</b></para>
+      <para>The address of a pointer that, when this function returns successfully, receives the <see cref="IStream" /> object.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The caller of the <see cref="PSPropertyBag_ReadStream" /> function needs to call a <see cref="IUnknown.Release" /> method on the <see cref="IStream" /> object returned by this function.</para>
+      <para>
+        <see cref="IPropertyBag" /> and <see cref="IPersistPropertyBag" /> optimize Save As Text functionality. <b>IPropertyBag</b> and <a href="https://docs.microsoft.com//previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa768192(v=vs.85)">IPropertyBag2</a> provide an object with a property bag in which the object can save its properties persistently. <b>IPropertyBag2</b> allows the object to obtain type information for each property: <a href="https://docs.microsoft.com//previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa768194(v=vs.85)">IPropertyBag2.Read</a> causes one or more properties to be read from the property bag, and <a href="https://docs.microsoft.com//previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa768195(v=vs.85)">IPropertyBag2.Write</a> causes one or more properties to be saved into the property bag.</para>
+    </remarks>
+    <seealso cref="PSPropertyBag_WriteStream" />
+  </member>
+  <member name="Windows.PSPropertyBag_ReadType">
+    <summary>
+      <para>Reads the type of data value of a property that is stored in a property bag.</para>
+    </summary>
+    <param name="propBag">
+      <para>Type: <b><see cref="IPropertyBag" />*</b></para>
+      <para>A pointer to an <see cref="IPropertyBag" /> object, that represents the property bag in which the property is stored.</para>
+    </param>
+    <param name="propName">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>A pointer to a null-terminated property name string.</para>
+    </param>
+    <param name="var">
+      <para>Type: <b>VARIANT*</b></para>
+      <para>Returns on successful function completion a pointer to a <b>VARIANT</b> data type that contains the property value.</para>
+    </param>
+    <param name="type">
+      <para>Type: <b>VARTYPE*</b></para>
+      <para>If <i>type</i> is VT_EMPTY, this function reads the <b>VARIANT</b> of the property in the IPropertyBag   <i>propBag</i> parameter. If <i>type</i> is not VT_EMPTY and not the same as the <b>VARIANT</b> read, then this function attempts to convert the <b>VARIANT</b> read to the <b>VARTYPE</b> defined by <i>type</i> parameter before returning.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>
+        <see cref="IPropertyBag" /> and <see cref="IPersistPropertyBag" /> optimize Save As Text functionality. <b>IPropertyBag</b> and <a href="https://docs.microsoft.com//previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa768192(v=vs.85)">IPropertyBag2</a> provide an object with a property bag in which the object can save its properties persistently. <b>IPropertyBag2</b> allows the object to obtain type information for each property: <a href="https://docs.microsoft.com//previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa768194(v=vs.85)">IPropertyBag2.Read</a> causes one or more properties to be read from the property bag, and <a href="https://docs.microsoft.com//previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa768195(v=vs.85)">IPropertyBag2.Write</a> causes one or more properties to be saved into the property bag.</para>
+    </remarks>
+    <seealso cref="PSPropertyBag_Delete" />
+  </member>
+  <member name="Windows.PSPropertyBag_ReadULONGLONG">
+    <summary>
+      <para>Reads a <b>ULONGLONG</b> data value from a property in a property bag.</para>
+    </summary>
+    <param name="propBag">
+      <para>Type: <b><see cref="IPropertyBag" />*</b></para>
+      <para>A pointer to an <see cref="IPropertyBag" /> object that represents the property bag in which the property is stored.</para>
+    </param>
+    <param name="propName">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>A null-terminated property name string.</para>
+    </param>
+    <param name="value">
+      <para>Type: <b>ULONGLONG</b></para>
+      <para>When this function returns, contains a pointer to a <b>ULONGLONG</b> property value.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The property bag property function API converts between window types and the <b>VARIANT</b> type that is used to express values in a property bag. Doing so eases property bag usage, simplifies applications, and avoids common coding errors.</para>
+    </remarks>
+    <seealso cref="PSPropertyBag_WriteULONGLONG" />
+  </member>
+  <member name="Windows.PSPropertyBag_ReadUnknown">
+    <summary>
+      <para>Reads a given property of an unknown data value in a property bag.</para>
+    </summary>
+    <param name="propBag">
+      <para>Type: <b><see cref="IPropertyBag" />*</b></para>
+      <para>A pointer to an <see cref="IPropertyBag" /> object, that represents the property bag in which the property is stored.</para>
+    </param>
+    <param name="propName">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>A pointer to a null-terminated property name string.</para>
+    </param>
+    <param name="riid">
+      <para>Type: <b>REFIID</b></para>
+      <para>A reference to the IID of the interface to retrieve through <i>ppv</i>. This interface IID should be <see cref="IPropertyBag" /> or an interface derived from <b>IPropertyBag</b>.</para>
+    </param>
+    <param name="ppv">
+      <para>Type: <b>void**</b></para>
+      <para>When this method returns successfully, contains the interface pointer requested in <i>riid</i>. This is typically <i>riid</i>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>
+        <see cref="IPropertyBag" /> and <see cref="IPersistPropertyBag" /> optimize Save As Text functionality. <b>IPropertyBag</b> and <a href="https://docs.microsoft.com//previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa768192(v=vs.85)">IPropertyBag2</a> provide an object with a property bag in which the object can save its properties persistently. <b>IPropertyBag2</b> allows the object to obtain type information for each property: <a href="https://docs.microsoft.com//previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa768194(v=vs.85)">IPropertyBag2.Read</a> causes one or more properties to be read from the property bag, and <a href="https://docs.microsoft.com//previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa768195(v=vs.85)">IPropertyBag2.Write</a> causes one or more properties to be saved into the property bag.</para>
+    </remarks>
+    <seealso cref="PSPropertyBag_WriteUnknown" />
+  </member>
+  <member name="Windows.PSPropertyBag_WriteBOOL">
+    <summary>
+      <para>Sets the <b>BOOL</b> value of a property in a property bag.</para>
+    </summary>
+    <param name="propBag">
+      <para>Type: <b><see cref="IPropertyBag" />*</b></para>
+      <para>A pointer to an <see cref="IPropertyBag" /> object that represents the property bag in which the property is stored.</para>
+    </param>
+    <param name="propName">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>A null-terminated property name string.</para>
+    </param>
+    <param name="value">
+      <para>Type: <b>BOOL</b></para>
+      <para>The <b>BOOL</b> value to which the named property should be set.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The property bag property function API converts between window types and the <b>VARIANT</b> type that is used to express values in a property bag. Doing so eases property bag usage, simplifies applications, and avoids common coding errors.</para>
+    </remarks>
+    <seealso cref="PSPropertyBag_ReadBOOL" />
+  </member>
+  <member name="Windows.PSPropertyBag_WriteBSTR">
+    <summary>
+      <para>Sets the <b>BSTR</b> value of a property in a property bag.</para>
+    </summary>
+    <param name="propBag">
+      <para>Type: <b><see cref="IPropertyBag" />*</b></para>
+      <para>A pointer to an <see cref="IPropertyBag" /> object that represents the property bag in which the property is stored.</para>
+    </param>
+    <param name="propName">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>A null-terminated property name string.</para>
+    </param>
+    <param name="value">
+      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/windows/desktop/automat/bstr">BSTR</a></b></para>
+      <para>The <b>BSTR</b> value to which the named property should be set.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The property bag property function API converts between window types and the <b>VARIANT</b> type that is used to express values in a property bag. Doing so eases property bag usage, simplifies applications, and avoids common coding errors.</para>
+    </remarks>
+    <seealso cref="PSPropertyBag_ReadBSTR" />
+  </member>
+  <member name="Windows.PSPropertyBag_WriteDWORD">
+    <summary>
+      <para>Sets the <b>DWORD</b> value of a property in a property bag.</para>
+    </summary>
+    <param name="propBag">
+      <para>Type: <b><see cref="IPropertyBag" />*</b></para>
+      <para>A pointer to an <see cref="IPropertyBag" /> object that represents the property bag in which the property is stored.</para>
+    </param>
+    <param name="propName">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>A null-terminated property name string.</para>
+    </param>
+    <param name="value">
+      <para>Type: <b>DWORD</b></para>
+      <para>A <b>DWORD</b> value to which the named property should be set.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The property bag property function API converts between window types and the <b>VARIANT</b> type that is used to express values in a property bag. Doing so eases property bag usage, simplifies applications, and avoids common coding errors.</para>
+    </remarks>
+    <seealso cref="PSPropertyBag_ReadDWORD" />
+  </member>
+  <member name="Windows.PSPropertyBag_WriteGUID">
+    <summary>
+      <para>Sets the GUID value of a property in a property bag.</para>
+    </summary>
+    <param name="propBag">
+      <para>Type: <b><see cref="IPropertyBag" />*</b></para>
+      <para>A pointer to an <see cref="IPropertyBag" /> object that represents the property bag in which the property is stored.</para>
+    </param>
+    <param name="propName">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>A null-terminated property name string.</para>
+    </param>
+    <param name="value">
+      <para>Type: <b>const GUID*</b></para>
+      <para>A pointer to a GUID value to which the named property should be set.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The property bag property function API converts between window types and the <b>VARIANT</b> type that is used to express values in a property bag.  Doing so eases property bag usage, simplifies applications, and avoids common coding errors.</para>
+    </remarks>
+    <seealso cref="PSPropertyBag_ReadGUID" />
+  </member>
+  <member name="Windows.PSPropertyBag_WriteInt">
+    <summary>
+      <para>Sets the <b>int</b> value of a property in a property bag.</para>
+    </summary>
+    <param name="propBag">
+      <para>Type: <b><see cref="IPropertyBag" />*</b></para>
+      <para>A pointer to an <see cref="IPropertyBag" /> object that represents the property bag in which the property is stored.</para>
+    </param>
+    <param name="propName">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>A null-terminated property name string.</para>
+    </param>
+    <param name="value">
+      <para>Type: <b>int</b></para>
+      <para>The <b>int</b> value to which the property should be set.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The property bag property function API converts between window types and the <b>VARIANT</b> type that is used to express values in a property bag. Doing so eases property bag usage, simplifies applications, and avoids common coding errors.</para>
+    </remarks>
+    <seealso cref="PSPropertyBag_ReadInt" />
+  </member>
+  <member name="Windows.PSPropertyBag_WriteLONG">
+    <summary>
+      <para>Sets the <b>LONG</b> value of a property in a property bag.</para>
+    </summary>
+    <param name="propBag">
+      <para>Type: <b><see cref="IPropertyBag" />*</b></para>
+      <para>A pointer to an <see cref="IPropertyBag" /> object that represents the property bag in which the property is stored.</para>
+    </param>
+    <param name="propName">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>A null-terminated property name string.</para>
+    </param>
+    <param name="value">
+      <para>Type: <b>LONG</b></para>
+      <para>The <b>LONG</b> value to which the property should be set.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The property bag property function API converts between window types and the <b>VARIANT</b> type that is used to express values in a property bag. Doing so eases property bag usage, simplifies applications, and avoids common coding errors.</para>
+    </remarks>
+    <seealso cref="PSPropertyBag_ReadLONG" />
+  </member>
+  <member name="Windows.PSPropertyBag_WritePOINTL">
+    <summary>
+      <para>Stores the property coordinates in a<a href="https://docs.microsoft.com//previous-versions/dd162807(v=vs.85)">POINTL</a> structure of a specified property bag.</para>
+    </summary>
+    <param name="propBag">
+      <para>Type: <b><see cref="IPropertyBag" />*</b></para>
+      <para>A pointer to an <see cref="IPropertyBag" /> object that represents the property bag in which the property is stored.</para>
+    </param>
+    <param name="propName">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>A null-terminated property name string.</para>
+    </param>
+    <param name="value">
+      <para>Type: <b>const <a href="https://docs.microsoft.com//previous-versions/dd162807(v=vs.85)">POINTL</a>*</b></para>
+      <para>A pointer to a <a href="https://docs.microsoft.com//previous-versions/dd162807(v=vs.85)">POINTL</a> structure that specifies the coordinates to store in the  property.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The property bag property function API converts between window types and the <b>VARIANT</b> type that is used to express values in a property bag. Doing so eases property bag usage, simplifies applications, and avoids common coding errors.</para>
+    </remarks>
+    <seealso cref="PSPropertyBag_ReadPOINTL" />
+  </member>
+  <member name="Windows.PSPropertyBag_WritePOINTS">
+    <summary>
+      <para>Stores the property coordinates in a<a href="https://docs.microsoft.com//previous-versions/dd162808(v=vs.85)">POINTS</a> structure of a specified property bag.</para>
+    </summary>
+    <param name="propBag">
+      <para>Type: <b><see cref="IPropertyBag" />*</b></para>
+      <para>A pointer to an <see cref="IPropertyBag" /> object that represents the property bag in which the property is stored.</para>
+    </param>
+    <param name="propName">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>A null-terminated property name string.</para>
+    </param>
+    <param name="value">
+      <para>Type: <b>const <a href="https://docs.microsoft.com//previous-versions/dd162808(v=vs.85)">POINTS</a>*</b></para>
+      <para>Pointer to a <a href="https://docs.microsoft.com//previous-versions/dd162808(v=vs.85)">POINTS</a> structure that specifies the coordinates to store in the property.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The property bag property function API converts between window types and the <b>VARIANT</b> type that is used to express values in a property bag. Doing so eases property bag usage, simplifies applications, and avoids common coding errors.</para>
+    </remarks>
+    <seealso cref="PSPropertyBag_ReadPOINTS" />
+  </member>
+  <member name="Windows.PSPropertyBag_WritePropertyKey">
+    <summary>
+      <para>Sets the property key value of a property in a property bag.</para>
+    </summary>
+    <param name="propBag">
+      <para>Type: <b><see cref="IPropertyBag" />*</b></para>
+      <para>A pointer to an <see cref="IPropertyBag" /> object that represents the property bag in which the property is stored.</para>
+    </param>
+    <param name="propName">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>A null-terminated property name string.</para>
+    </param>
+    <param name="value">
+      <para>Type: <b>REFPROPERTYKEY</b></para>
+      <para>A <see cref="PROPERTYKEY" /> structure that specifies the property key value to store in the property.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Property keys uniquely identify a property. For example, <code>PKEY_Keywords</code> corresponds to <code>System.Keywords</code>. This function succeeds only for properties registered as part of the property schema.</para>
+      <para>The property bag property function API converts between window types and the <b>VARIANT</b> type that is used to express values in a property bag. Doing so eases property bag usage, simplifies applications, and avoids common coding errors.</para>
+    </remarks>
+    <seealso cref="PSPropertyBag_ReadPropertyKey" />
+  </member>
+  <member name="Windows.PSPropertyBag_WriteRECTL">
+    <summary>
+      <para>Stores the coordinates of a rectangle in a property in a property bag.</para>
+    </summary>
+    <param name="propBag">
+      <para>Type: <b><see cref="IPropertyBag" />*</b></para>
+      <para>A pointer to an <see cref="IPropertyBag" /> object that represents the property bag in which the property is stored.</para>
+    </param>
+    <param name="propName">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>A null-terminated property name string.</para>
+    </param>
+    <param name="value">
+      <para>Type: <b>const <a href="https://docs.microsoft.com//previous-versions/dd162907(v=vs.85)">RECTL</a>*</b></para>
+      <para>A pointer to a <a href="https://docs.microsoft.com//previous-versions/dd162907(v=vs.85)">RECTL</a> structure that specifies the coordinates to store in the property.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The property bag property function API converts between window types and the <b>VARIANT</b> type that is used to express values in a property bag. Doing so eases property bag usage, simplifies applications, and avoids common coding errors.</para>
+    </remarks>
+    <seealso cref="PSPropertyBag_ReadRECTL" />
+  </member>
+  <member name="Windows.PSPropertyBag_WriteSHORT">
+    <summary>
+      <para>Sets the SHORT value of a property in a property bag.</para>
+    </summary>
+    <param name="propBag">
+      <para>Type: <b><see cref="IPropertyBag" />*</b></para>
+      <para>A pointer to an <see cref="IPropertyBag" /> object that represents the property bag in which the property is stored.</para>
+    </param>
+    <param name="propName">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>A null-terminated property name string.</para>
+    </param>
+    <param name="value">
+      <para>Type: <b>SHORT</b></para>
+      <para>The SHORT value to which the property should be set.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The property bag property function API converts between window types and the <b>VARIANT</b> type that is used to express values in a property bag. Doing so eases property bag usage, simplifies applications, and avoids common coding errors.</para>
+    </remarks>
+    <seealso cref="PSPropertyBag_ReadSHORT" />
+  </member>
+  <member name="Windows.PSPropertyBag_WriteStr">
+    <summary>
+      <para>Sets the string value of a property in a property bag.</para>
+    </summary>
+    <param name="propBag">
+      <para>Type: <b><see cref="IPropertyBag" />*</b></para>
+      <para>A pointer to an <see cref="IPropertyBag" /> object that represents the property bag in which the property is stored.</para>
+    </param>
+    <param name="propName">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>A null-terminated property name string.</para>
+    </param>
+    <param name="value">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>The string value to which the property should be set.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The property bag property function API converts between window types and the <b>VARIANT</b> type that is used to express values in a property bag. Doing so eases property bag usage, simplifies applications, and avoids common coding errors.</para>
+    </remarks>
+    <seealso cref="PSPropertyBag_ReadStr" />
+  </member>
+  <member name="Windows.PSPropertyBag_WriteStream">
+    <summary>
+      <para>Writes a data stream to a property in a property bag.</para>
+    </summary>
+    <param name="propBag">
+      <para>Type: <b><see cref="IPropertyBag" />*</b></para>
+      <para>A pointer to an <see cref="IPropertyBag" /> object that represents the property bag in which the property is stored.</para>
+    </param>
+    <param name="propName">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>A null-terminated property name string.</para>
+    </param>
+    <param name="value">
+      <para>Type: <b><see cref="IStream" />*</b></para>
+      <para>A pointer to the <see cref="IStream" /> object to write to the property.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The property bag property function API converts between window types and the <b>VARIANT</b> type that is used to express values in a property bag. Doing so eases property bag usage, simplifies applications, and avoids common coding errors.</para>
+    </remarks>
+    <seealso cref="PSPropertyBag_ReadStream" />
+  </member>
+  <member name="Windows.PSPropertyBag_WriteULONGLONG">
+    <summary>
+      <para>Sets the <b>ULONGLONG</b> value of a property in a property bag.</para>
+    </summary>
+    <param name="propBag">
+      <para>Type: <b><see cref="IPropertyBag" />*</b></para>
+      <para>A pointer to an <see cref="IPropertyBag" /> object that represents the property bag in which the property is stored.</para>
+    </param>
+    <param name="propName">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>A null-terminated property name string.</para>
+    </param>
+    <param name="value">
+      <para>Type: <b>ULONGLONG</b></para>
+      <para>An <b>ULONGLONG</b> value to which the property should be set.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The property bag property function API converts between window types and the <b>VARIANT</b> type that is used to express values in a property bag. Doing so eases property bag usage, simplifies applications, and avoids common coding errors.</para>
+    </remarks>
+    <seealso cref="PSPropertyBag_ReadULONGLONG" />
+  </member>
+  <member name="Windows.PSPropertyBag_WriteUnknown">
+    <summary>
+      <para>Writes a property of an unknown data value in a property bag.</para>
+    </summary>
+    <param name="propBag">
+      <para>Type: <b><see cref="IPropertyBag" />*</b></para>
+      <para>A pointer to an <see cref="IPropertyBag" /> object that represents the property bag in which the property is stored.</para>
+    </param>
+    <param name="propName">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>A pointer to a null-terminated property name string.</para>
+    </param>
+    <param name="punk">
+      <para>Type: <b><see cref="IUnknown" />*</b></para>
+      <para>A pointer to an <see cref="IUnknown" /> derived interface that copies the specified property of an unknown data value in a property bag.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The property bag property function API converts between window types and the <b>VARIANT</b> type that is used to express values in a property bag. Doing so eases property bag usage, simplifies applications, and avoids common coding errors.</para>
+    </remarks>
+    <seealso cref="PSPropertyBag_ReadUnknown" />
+  </member>
+  <member name="Windows.PSPropertyKeyFromString">
+    <summary>
+      <para>Converts a string to a <see cref="PROPERTYKEY" /> structure.</para>
+    </summary>
+    <param name="pszString">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>Pointer to a null-terminated, Unicode string to be converted.</para>
+    </param>
+    <param name="pkey">
+      <para>Type: <b><see cref="PROPERTYKEY" />*</b></para>
+      <para>When this function returns, contains a pointer to a <see cref="PROPERTYKEY" /> structure.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The string to be converted must be formatted as <code>"{fmtid} pid"</code>. For instance, the string that corresponds to <code>PKEY_Title</code> is: <code>"{F29F85E0-4FF9-1068-AB91-08002B27B3D9} 2"</code>. <see cref="PSStringFromPropertyKey" /> outputs strings in this format.</para>
+      <para>This function succeeds for any valid property key string, even if the property does not exist in the property schema.</para>
+      <h4>Examples</h4>
+      <para>The following example, to be included as part of a larger program, demonstrates how to use <see cref="PSPropertyKeyFromString" />.</para>
+      <code>PROPERTYKEY key;
+
+HRESULT hr = PSPropertyKeyFromString(L"{F29F85E0-4FF9-1068-AB91-08002B27B3D9} 2", &amp;amp;amp;amp;amp;amp;key);
+
+if (SUCCEEDED(hr))
+{
+    // The key variable is now valid.
+}
+</code>
+    </remarks>
+    <seealso cref="PSGetPropertyKeyFromName" />
+    <seealso cref="PSStringFromPropertyKey" />
+  </member>
+  <member name="Windows.PSRefreshPropertySchema">
+    <summary>
+      <para>Not supported.</para>
+      <para>It is valid to call this function, but it is not implemented to perform any function so there is no reason to do so.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Schema files reloaded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_ACCESSDENIED</b>
+            </para>
+          </description>
+          <description>
+            <para>The calling context does not have proper privileges.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.PSRegisterPropertySchema">
+    <summary>
+      <para>Informs the schema subsystem of the addition of a property description schema file.</para>
+    </summary>
+    <param name="pszPath">
+      <para>Type: <b>PCWSTR</b></para>
+      <para>Pointer to the full file path, as a Unicode string, to the <a href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-entry">property description schema</a> (.propdesc) file on the local machine. This can be either a fully-specified full path, or a full path that includes environment variables such as <code>%PROGRAMFILES%</code>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>All property descriptions in the schema were registered.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_ACCESSDENIED</b>
+            </para>
+          </description>
+          <description>
+            <para>The calling context does not have proper privileges.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>INPLACE_S_TRUNCATED</b>
+            </para>
+          </description>
+          <description>
+            <para>One or more property descriptions in the schema failed to register. The specific failures are logged in the application event log.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This function is a wrapper API for the schema subsystem's implementation of <see cref="IPropertySystem.RegisterPropertySchema" />. Call this function only when the file is first installed on the computer. Typically, a setup application calls this function after it installs the .propdesc file, which should be stored in the install directory of the application under Program Files. Multiple calls can be made to <b>IPropertySystem.RegisterPropertySchema</b> in order to register multiple schema files.</para>
+      <para>When registering property schema files, remember that they can be read by processes running as different users. Therefore, it is important to place a schema file in a location that grants read access to all users on the machine. Similarly, use the absolute path to the file in this function's <i>pszPath</i> parameter.</para>
+      <para>
+        <b>Note</b>  Because schemas are specific to the machine and cannot be registered for each individual user, registering a file path under user profiles is not supported on Windows Vista.</para>
+      <para>If a full or partial failure is encountered that prevents a property description from being loaded, the cause is recorded in the application event log. This function fails with E_ACCESSDENIED if the calling context does not have proper privileges, which includes write access to HKEY_LOCAL_MACHINE. It is the responsibility of the calling application to obtain privileges through User Account Control (UAC) mechanisms.</para>
+    </remarks>
+  </member>
+  <member name="Windows.PSSetPropertyValue">
+    <summary>
+      <para>Sets the value of a property in a property store.</para>
+    </summary>
+    <param name="pps">
+      <para>Type: <b><see cref="IPropertyStore" />*</b></para>
+      <para>Pointer to an instance of the <see cref="IPropertyStore" /> interface, which represents the property store that contains the property.</para>
+    </param>
+    <param name="ppd">
+      <para>Type: <b><see cref="IPropertyDescription" />*</b></para>
+      <para>Pointer to an instance of the <see cref="IPropertyDescription" /> interface, which identifies the individual property.</para>
+    </param>
+    <param name="propvar">
+      <para>Type: <b>REFPROPVARIANT</b></para>
+      <para>Reference to a <see cref="PROPVARIANT" /> structure that contains the new value.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This helper function is used to write a property value to a store. If the calling code already has a <see cref="PROPERTYKEY" /> structure, it might be simpler to call <see cref="IPropertyStore.SetValue" /> directly.</para>
+      <h4>Examples</h4>
+      <para>The following example, to be included as part of a larger program, demonstrates how to use <see cref="PSSetPropertyValue" />.</para>
+      <code>// IPropertyDescription *pPropDesc;
+// IPropertyStore *pStore;
+// PROPVARIANT propvar;
+// Assume the variables pStore, pPropDesc, and propvar are initialized and valid.
+
+HRESULT hr = PSSetPropertyValue(pStore, pPropDesc, propvar);
+
+if (SUCCEEDED(hr))
+{
+    // The value has been written to the store but has not been committed yet.
+}
+</code>
+    </remarks>
+    <seealso cref="IPropertyStore.Commit" />
+    <seealso cref="PSGetPropertyValue" />
+  </member>
+  <member name="Windows.PSStringFromPropertyKey">
+    <summary>
+      <para>Creates a string that identifies a property from that property's key.</para>
+    </summary>
+    <param name="pkey">
+      <para>Type: <b>REFPROPERTYKEY</b></para>
+      <para>Reference to a <see cref="PROPERTYKEY" /> structure that identifies a property.</para>
+    </param>
+    <param name="psz">
+      <para>Type: <b>LPWSTR</b></para>
+      <para>Pointer to a buffer that receives the output string. The buffer should be large enough to contain PKEYSTR_MAX <b>WCHAR</b><b>s</b>.</para>
+    </param>
+    <param name="cch">
+      <para>Type: <b>UINT</b></para>
+      <para>The length of the buffer pointed to by <i>psz</i>, in <b>WCHAR</b><b>s</b>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The string format retrieved is <code>"{propkey.fmtid} propkey.pid"</code>. For example, the output string for <code>PKEY_Title</code> is <code>"{F29F85E0-4FF9-1068-AB91-08002B27B3D9} 2"</code>.</para>
+      <h4>Examples</h4>
+      <para>The following example, to be included as part of a larger program, demonstrates the use of <see cref="PSPropertyKeyFromString" />.</para>
+      <code>WCHAR szKey[PKEYSTR_MAX]
+
+HRESULT hr = PSStringFromPropertyKey(PKEY_Title, szKey, ARRAYSIZE(szKey));
+
+if (SUCCEEDED(hr))
+{
+    // szKey is now valid.
+}
+</code>
+    </remarks>
+    <seealso cref="PSGetNameFromPropertyKey" />
+    <seealso cref="PSPropertyKeyFromString" />
+  </member>
+  <member name="Windows.PSUnregisterPropertySchema">
+    <summary>
+      <para>Informs the schema subsystem of the removal of a property description schema file.</para>
+    </summary>
+    <param name="pszPath">
+      <para>Type: <b>PCWSTR</b></para>
+      <para>Pointer to the full file path, as a Unicode string, to the property description schema (.propdesc) file on the local machine. This can be either a fully-specified full path, or a full path that includes environment variables such as <code>%PROGRAMFILES%</code>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The schema was unregistered.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_ACCESSDENIED</b>
+            </para>
+          </description>
+          <description>
+            <para>The calling context does not have proper privileges.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This function is a wrapper for the schema subsystem's implementation of <see cref="IPropertySystem.UnregisterPropertySchema" />. Call this method when the file is being uninstalled from the computer. Typically, a setup application calls this method before or after uninstalling the .propdesc file. This method can be called after the file no longer exists.</para>
+      <para>This function fails with a code of E_ACCESSDENIED if the calling context does not have proper privileges, which include write access to HKLM (HKEY_LOCAL_MACHINE). It is the responsibility of the calling application to obtain privileges through User Account Control (UAC) mechanisms.</para>
+    </remarks>
+    <seealso cref="PSRegisterPropertySchema" />
+  </member>
+  <member name="Windows.WinRTPropertyValueToPropVariant">
+    <summary>
+      <para>Copies the content from a Windows runtime property value to a <see cref="PROPVARIANT" /> structure.</para>
+    </summary>
+    <param name="punkPropertyValue">
+      <para>A pointer to the <see cref="IUnknown" /> interface from which this function can access the contents of a Windows runtime property value by retrieving and using the <see cref="Windows.Foundation.IPropertyValue" /> interface.</para>
+    </param>
+    <param name="ppropvar">
+      <para>Pointer to a <see cref="PROPVARIANT" /> structure. When this function returns, the <b>PROPVARIANT</b> contains the converted info.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="PropVariantToWinRTPropertyValue" />
+  </member>
+</doc>

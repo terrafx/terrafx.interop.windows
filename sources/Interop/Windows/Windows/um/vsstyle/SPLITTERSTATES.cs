@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SPLITTERSTATES.xml' path='doc/member[@name="SPLITTERSTATES"]/*' />
 public enum SPLITTERSTATES
 {
+    /// <include file='SPLITTERSTATES.xml' path='doc/member[@name="SPLITTERSTATES.SPLITS_NORMAL"]/*' />
     SPLITS_NORMAL = 1,
+
+    /// <include file='SPLITTERSTATES.xml' path='doc/member[@name="SPLITTERSTATES.SPLITS_HOT"]/*' />
     SPLITS_HOT = 2,
+
+    /// <include file='SPLITTERSTATES.xml' path='doc/member[@name="SPLITTERSTATES.SPLITS_PRESSED"]/*' />
     SPLITS_PRESSED = 3,
 }

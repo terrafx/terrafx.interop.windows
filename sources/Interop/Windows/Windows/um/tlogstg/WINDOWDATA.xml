@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WINDOWDATA">
+    <summary>
+      <para>Stores window data.</para>
+    </summary>
+  </member>
+  <member name="WINDOWDATA.dwWindowID">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The window ID.</para>
+    </summary>
+  </member>
+  <member name="WINDOWDATA.uiCP">
+    <summary>
+      <para>Type: <b>UINT</b></para>
+      <para>The codepage of the current entry.</para>
+    </summary>
+  </member>
+  <member name="WINDOWDATA.pidl">
+    <summary>
+      <para>Type: <b>PIDLIST_ABSOLUTE</b></para>
+      <para>The current PIDL.</para>
+    </summary>
+  </member>
+  <member name="WINDOWDATA.lpszUrl">
+    <summary>
+      <para>Type: <b>LPWSTR</b></para>
+      <para>A pointer to a buffer to hold the window URL.</para>
+    </summary>
+  </member>
+  <member name="WINDOWDATA.lpszUrlLocation">
+    <summary>
+      <para>Type: <b>LPWSTR</b></para>
+      <para>A pointer to a buffer to hold the window URL Location (local anchor).</para>
+    </summary>
+  </member>
+  <member name="WINDOWDATA.lpszTitle">
+    <summary>
+      <para>Type: <b>LPWSTR</b></para>
+      <para>A pointer to a buffer to hold the window title.</para>
+    </summary>
+  </member>
+</doc>

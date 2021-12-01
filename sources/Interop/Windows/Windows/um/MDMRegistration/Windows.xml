@@ -1,0 +1,303 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="Windows.DiscoverManagementService">
+    <summary>
+      <para>Discovers the MDM service. The discovery process uses the
+<a href="https://docs.microsoft.com//openspecs/windows_protocols/ms-mde/5c841535-042e-489e-913c-9d783d741267">[MS-MDE]: Mobile Device Enrollment Protocol</a></para>
+      <para>protocol.</para>
+    </summary>
+    <param name="pszUPN">
+      <para>Address of a <b>NULL</b>-terminated Unicode string containing the user principal name
+(UPN) of the user requesting registration.</para>
+    </param>
+    <param name="ppMgmtInfo">
+      <para>Address of a <see cref="MANAGEMENT_SERVICE_INFO" /></para>
+      <para>structure that contains pointers to the URIs of the management and authentication services.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the return value is <b>ERROR_SUCCESS</b>. If the function
+fails, the returned value describes the error. Possible
+values include those listed at
+<a href="https://docs.microsoft.com//windows/desktop/MDMReg/mdm-registration-constants">MDM Registration Error Values</a>.</para>
+    </returns>
+    <remarks>
+      <para>The caller of this function must be running as an elevated process.</para>
+    </remarks>
+    <seealso cref="MANAGEMENT_SERVICE_INFO" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/MDMReg/mdm-registration-constants">MDM Registration Error Values</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/MDMReg/mdm-registration-functions">MDM Registration Functions</seealso>
+  </member>
+  <member name="Windows.DiscoverManagementServiceEx">
+    <summary>
+      <para>Discovers the MDM service using a candidate server. The discovery process uses the
+<a href="https://docs.microsoft.com//openspecs/windows_protocols/ms-mde/5c841535-042e-489e-913c-9d783d741267">[MS-MDE]: Mobile Device Enrollment Protocol</a></para>
+      <para>protocol.</para>
+    </summary>
+    <param name="pszUPN">
+      <para>Address of a <b>NULL</b>-terminated Unicode string containing the user principal name
+(UPN) of the user requesting registration.</para>
+    </param>
+    <param name="pszDiscoveryServiceCandidate">
+      <para>Address of a <b>NULL</b>-terminated Unicode string containing the discovery service
+candidate to use in lieu of automatic discovery.</para>
+    </param>
+    <param name="ppMgmtInfo">
+      <para>Address of a <see cref="MANAGEMENT_SERVICE_INFO" /></para>
+      <para>structure that contains pointers to the URIs of the management and authentication services.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the return value is <b>ERROR_SUCCESS</b>. If the function
+fails, the returned value describes the error. Possible
+values include those listed at
+<a href="https://docs.microsoft.com//windows/desktop/MDMReg/mdm-registration-constants">MDM Registration Error Values</a>.</para>
+    </returns>
+    <remarks>
+      <para>The caller of this function must be running as an elevated process.</para>
+      <para>This function is not available before Windows Server 2012 R2 Update and Windows 8.1 Update.</para>
+    </remarks>
+    <seealso cref="DiscoverManagementService" />
+    <seealso cref="MANAGEMENT_SERVICE_INFO" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/MDMReg/mdm-registration-constants">MDM Registration Error Values</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/MDMReg/mdm-registration-functions">MDM Registration Functions</seealso>
+  </member>
+  <member name="Windows.GetDeviceManagementConfigInfo">
+    <summary>
+      <para>Gets the config info associated with the provider ID.</para>
+    </summary>
+    <param name="providerID">
+      <para>Type: _In_ <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">PCWSTR</a></b></para>
+      <para>A string containing the provider ID.</para>
+    </param>
+    <param name="configStringBufferLength">
+      <para>Type: _Inout_ <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">DWORD</a>*</b></para>
+      <para>A pointer to the buffer length (the size of <i>configString</i> in chars).</para>
+    </param>
+    <param name="configString">
+      <para>Type: _Out_writes_to_opt_(*configStringBufferLength, *configStringBufferLength) <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">PWSTR</a></b></para>
+      <para>A buffer which, if the function completes successfully, will contain the config info.</para>
+      <para>If the buffer isn't large enough to hold the data, then the function returns <b>ERROR_MORE_DATA</b>, and stores the required buffer size in the variable pointed to by <i>configStringBufferLength</i>. In that case, the contents of the <i>configString</i> buffer are undefined.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>If the function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a><a href="https://docs.microsoft.com//windows/desktop/com/com-error-codes-10">error code</a>.</para>
+    </returns>
+  </member>
+  <member name="Windows.GetDeviceRegistrationInfo">
+    <summary>
+      <para>Retrieves the device registration information.</para>
+    </summary>
+    <param name="DeviceInformationClass">
+      <para>Contains the maximum length that can be returned through the <i>pszHyperlink</i></para>
+      <para>parameter.</para>
+    </param>
+    <param name="ppDeviceRegistrationInfo">
+      <para>Details of the device registration.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the return value is <b>ERROR_SUCCESS</b>. .</para>
+    </returns>
+    <remarks>
+      <para>The caller of this function must be running as an elevated process.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/MDMReg/mdm-registration-constants">MDM Registration Error Values</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/MDMReg/mdm-registration-functions">MDM Registration Functions</seealso>
+  </member>
+  <member name="Windows.GetManagementAppHyperlink">
+    <summary>
+      <para>Retrieves the management app hyperlink associated with the MDM service.</para>
+    </summary>
+    <param name="cchHyperlink">
+      <para>Contains the maximum length that can be returned through the <i>pszHyperlink</i></para>
+      <para>parameter.</para>
+    </param>
+    <param name="pszHyperlink">
+      <para>Address of a buffer that receives the <b>NULL</b>-terminated Unicode string with the
+hyperlink of the management app associated with the management service.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the return value is <b>ERROR_SUCCESS</b>. If the function
+fails, the returned value describes the error. Possible values include those listed at
+<a href="https://docs.microsoft.com//windows/desktop/MDMReg/mdm-registration-constants">MDM Registration Error Values</a>.</para>
+    </returns>
+    <remarks>
+      <para>The caller of this function must be running as an elevated process.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/MDMReg/mdm-registration-constants">MDM Registration Error Values</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/MDMReg/mdm-registration-functions">MDM Registration Functions</seealso>
+  </member>
+  <member name="Windows.IsDeviceRegisteredWithManagement">
+    <summary>
+      <para>Checks whether the device is registered with an MDM service. If the device is registered,
+it also returns the user principal name (UPN) of the registered user.</para>
+    </summary>
+    <param name="pfIsDeviceRegisteredWithManagement">
+      <para>Address of a <b>BOOL</b> indicates whether the device is registered.</para>
+    </param>
+    <param name="cchUPN">
+      <para>Contains the maximum length that can be returned through the <i>pszUPN</i></para>
+      <para>parameter.</para>
+    </param>
+    <param name="pszUPN">
+      <para>Optional address of a buffer that receives the  <b>NULL</b>-terminated Unicode string
+containing the UPN of the user registered with the management service. If <i>pszUPN</i> is
+<b>NULL</b> then the <b>BOOL</b> pointed to by the
+<i>pfIsDeviceRegisteredWithManagement</i> parameter is updated to indicate whether the device
+is registered and the function returns <b>ERROR_SUCCESS</b>.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the return value is <b>ERROR_SUCCESS</b> and the
+<b>BOOL</b> pointed to by the
+<i>pfIsDeviceRegisteredWithManagement</i> parameter contains <b>TRUE</b></para>
+      <para>or <b>FALSE</b>. If <b>TRUE</b>, the Unicode string pointed to by the
+<i>pszUPN</i> parameter contains the UPN of the registered user. If the function fails, the
+returned value describes the error. Possible values include those listed at
+<a href="https://docs.microsoft.com//windows/desktop/MDMReg/mdm-registration-constants">MDM Registration Error Values</a>.</para>
+      <para>If the buffer size indicated by the <i>cchUPN</i> parameter is too small then the call will fail with
+<b>STRSAFE_E_INSUFFICIENT_BUFFER</b> but the <b>BOOL</b> pointed to by
+the <i>pfIsDeviceRegisteredWithManagement</i> parameter will be updated to indicate whether
+the device is registered.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/MDMReg/mdm-registration-constants">MDM Registration Error Values</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/MDMReg/mdm-registration-functions">MDM Registration Functions</seealso>
+  </member>
+  <member name="Windows.IsManagementRegistrationAllowed">
+    <summary>
+      <para>Checks whether MDM registration is allowed by local policy.</para>
+    </summary>
+    <param name="pfIsManagementRegistrationAllowed">
+      <para>Address of a <b>BOOL</b> that receives a value indication whether registration is allowed.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the return value is <b>ERROR_SUCCESS</b> and the <b>BOOL</b> pointed to by the <i>pfIsManagementRegistrationAllowed</i> parameter contains <b>TRUE</b> or <b>FALSE</b>. If the function fails, the returned value describes the error. Possible
+values include those listed at
+<a href="https://docs.microsoft.com//windows/desktop/MDMReg/mdm-registration-constants">MDM Registration Error Values</a>.</para>
+    </returns>
+    <remarks>
+      <para>The caller of this function must be running as an elevated process.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/MDMReg/mdm-registration-constants">MDM Registration Error Values</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/MDMReg/mdm-registration-functions">MDM Registration Functions</seealso>
+    <seealso cref="SetManagedExternally" />
+  </member>
+  <member name="Windows.RegisterDeviceWithManagement">
+    <summary>
+      <para>Registers a device with a MDM service, using the
+<a href="https://docs.microsoft.com//openspecs/windows_protocols/ms-mde/5c841535-042e-489e-913c-9d783d741267">[MS-MDE]: Mobile Device Enrollment Protocol</a>.</para>
+    </summary>
+    <param name="pszUPN">
+      <para>Address of a <b>NULL</b>-terminated Unicode string containing the user principal name
+(UPN) of the user requesting the registration.</para>
+      <para>
+        <b>Windows 8.1:  </b>This parameter was located after the <i>ppszMDMServiceUri</i> parameter in Windows 8.1.</para>
+    </param>
+    <param name="ppszMDMServiceUri">
+      <para>Address of a <b>NULL</b>-terminated Unicode string containing the URI of the MDM
+service.</para>
+    </param>
+    <param name="ppzsAccessToken">
+      <para>Address of a <b>NULL</b>-terminated Unicode string containing a token acquired from
+a Secure Token Service which the management service will use to validate the user.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the return value is <b>ERROR_SUCCESS</b>. If the function fails, the returned value describes the error. Possible
+values include those listed at
+<a href="https://docs.microsoft.com//windows/desktop/MDMReg/mdm-registration-constants">MDM Registration Error Values</a>.</para>
+    </returns>
+    <remarks>
+      <para>The caller of this function must be running as an elevated process.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/MDMReg/mdm-registration-constants">MDM Registration Error Values</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/MDMReg/mdm-registration-functions">MDM Registration Functions</seealso>
+    <seealso cref="UnregisterDeviceWithManagement" />
+  </member>
+  <member name="Windows.RegisterDeviceWithManagementUsingAADCredentials">
+    <summary>
+      <para>Registers a device with a MDM service, using Azure Active Directory (AAD) credentials.</para>
+    </summary>
+    <param name="UserToken">
+      <para>The User to impersonate when attempting to get AAD token</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the return value is <b>ERROR_SUCCESS</b>. If the function fails, the returned value describes the error. Possible
+values include those listed at
+<a href="https://docs.microsoft.com//windows/desktop/MDMReg/mdm-registration-constants">MDM Registration Error Values</a>.</para>
+    </returns>
+    <remarks>
+      <para>The caller of this function must be running as an elevated process.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/MDMReg/mdm-registration-constants">MDM Registration Error Values</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/MDMReg/mdm-registration-functions">MDM Registration Functions</seealso>
+    <seealso cref="UnregisterDeviceWithManagement" />
+  </member>
+  <member name="Windows.RegisterDeviceWithManagementUsingAADDeviceCredentials">
+    <summary>
+      <para>Registers a device with a MDM service, using Azure Active Directory (AAD) device credentials.</para>
+    </summary>
+    <returns>
+      <para>If the function succeeds, the return value is <b>ERROR_SUCCESS</b>. If the function fails, the returned value describes the error. Possible
+values include those listed at
+<a href="https://docs.microsoft.com//windows/desktop/MDMReg/mdm-registration-constants">MDM Registration Error Values</a>.</para>
+    </returns>
+  </member>
+  <member name="Windows.SetDeviceManagementConfigInfo">
+    <summary>
+      <para>Sets the config info associated with the provider ID.</para>
+    </summary>
+    <param name="providerID">
+      <para>Type: _In_ <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">PCWSTR</a></b></para>
+      <para>A string containing the provider ID.</para>
+    </param>
+    <param name="configString">
+      <para>Type: _In_ <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">PCWSTR</a></b></para>
+      <para>A string containing containing the config info (the data to write).</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>If the function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a><a href="https://docs.microsoft.com//windows/desktop/com/com-error-codes-10">error code</a>.</para>
+    </returns>
+  </member>
+  <member name="Windows.SetManagedExternally">
+    <summary>
+      <para>Indicates to the MDM agent that the device is managed externally and is not to be registered with an
+MDM service.</para>
+    </summary>
+    <param name="IsManagedExternally">
+      <para>If <b>TRUE</b> this device is not to be registered with an MDM service. If
+<b>FALSE</b> this device can be registered with an MDM service.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the return value is <b>ERROR_SUCCESS</b>. If the function fails, the returned value describes the error. Possible
+values include those listed at
+<a href="https://docs.microsoft.com//windows/desktop/MDMReg/mdm-registration-constants">MDM Registration Error Values</a>.</para>
+    </returns>
+    <remarks>
+      <para>The caller of this function must be running as an elevated process.</para>
+    </remarks>
+    <seealso cref="IsManagementRegistrationAllowed" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/MDMReg/mdm-registration-constants">MDM Registration Error Values</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/MDMReg/mdm-registration-functions">MDM Registration Functions</seealso>
+  </member>
+  <member name="Windows.UnregisterDeviceWithManagement">
+    <summary>
+      <para>Unregisters a device with the MDM service</para>
+    </summary>
+    <param name="RemoveEnterpriseData">
+      <para>
+        <b>TRUE</b> if resources are to be removed during unregistration,
+<b>FALSE</b> otherwise.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the return value is <b>ERROR_SUCCESS</b>. If the function
+fails, the returned value describes the error. Possible
+values include those listed at
+<a href="https://docs.microsoft.com//windows/desktop/MDMReg/mdm-registration-constants">MDM Registration Error Values</a>.</para>
+    </returns>
+    <remarks>
+      <para>The caller of this function must be running as an elevated process.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/MDMReg/mdm-registration-constants">MDM Registration Error Values</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/MDMReg/mdm-registration-functions">MDM Registration Functions</seealso>
+  </member>
+</doc>

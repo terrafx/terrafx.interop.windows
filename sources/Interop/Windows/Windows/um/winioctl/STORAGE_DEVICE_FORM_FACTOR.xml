@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="STORAGE_DEVICE_FORM_FACTOR">
+    <summary>
+      <para>Specifies the form factor of a device.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_DEVICE_FORM_FACTOR.FormFactorUnknown">
+    <summary></summary>
+  </member>
+  <member name="STORAGE_DEVICE_FORM_FACTOR.FormFactor3_5">
+    <summary>
+      <para>3.5-inch nominal form factor.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_DEVICE_FORM_FACTOR.FormFactor2_5">
+    <summary>
+      <para>2.5-inch nominal form factor.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_DEVICE_FORM_FACTOR.FormFactor1_8">
+    <summary>
+      <para>1.8-inch nominal form factor.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_DEVICE_FORM_FACTOR.FormFactor1_8Less">
+    <summary>
+      <para>Less than 1.8-inch nominal form factor.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_DEVICE_FORM_FACTOR.FormFactorEmbedded">
+    <summary>
+      <para>Embedded on board.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_DEVICE_FORM_FACTOR.FormFactorMemoryCard">
+    <summary>
+      <para>Memory card such as SD, CF.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_DEVICE_FORM_FACTOR.FormFactormSata">
+    <summary>
+      <para>mSATA</para>
+    </summary>
+  </member>
+  <member name="STORAGE_DEVICE_FORM_FACTOR.FormFactorM_2">
+    <summary>
+      <para>M.2</para>
+    </summary>
+  </member>
+  <member name="STORAGE_DEVICE_FORM_FACTOR.FormFactorPCIeBoard">
+    <summary>
+      <para>PCIe card plug into slot.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_DEVICE_FORM_FACTOR.FormFactorDimm">
+    <summary>
+      <para>DIMM slot.</para>
+    </summary>
+  </member>
+</doc>

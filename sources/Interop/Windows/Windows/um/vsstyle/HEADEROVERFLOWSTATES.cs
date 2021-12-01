@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HEADEROVERFLOWSTATES.xml' path='doc/member[@name="HEADEROVERFLOWSTATES"]/*' />
 public enum HEADEROVERFLOWSTATES
 {
+    /// <include file='HEADEROVERFLOWSTATES.xml' path='doc/member[@name="HEADEROVERFLOWSTATES.HOFS_NORMAL"]/*' />
     HOFS_NORMAL = 1,
+
+    /// <include file='HEADEROVERFLOWSTATES.xml' path='doc/member[@name="HEADEROVERFLOWSTATES.HOFS_HOT"]/*' />
     HOFS_HOT = 2,
 }

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ISpRecoContext2.xml' path='doc/member[@name="ISpRecoContext2"]/*' />
 [Guid("BEAD311C-52FF-437F-9464-6B21054CA73D")]
 [NativeTypeName("struct ISpRecoContext2 : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ISpRecoContext2 : ISpRecoContext2.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ISpRecoContext2 : ISpRecoContext2.Interface
         return ((delegate* unmanaged<ISpRecoContext2*, Guid*, void**, int>)(lpVtbl[0]))((ISpRecoContext2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ISpRecoContext2 : ISpRecoContext2.Interface
         return ((delegate* unmanaged<ISpRecoContext2*, uint>)(lpVtbl[1]))((ISpRecoContext2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ISpRecoContext2 : ISpRecoContext2.Interface
         return ((delegate* unmanaged<ISpRecoContext2*, uint>)(lpVtbl[2]))((ISpRecoContext2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ISpRecoContext2.xml' path='doc/member[@name="ISpRecoContext2.SetGrammarOptions"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetGrammarOptions([NativeTypeName("DWORD")] uint eGrammarOptions)
@@ -46,6 +51,7 @@ public unsafe partial struct ISpRecoContext2 : ISpRecoContext2.Interface
         return ((delegate* unmanaged<ISpRecoContext2*, uint, int>)(lpVtbl[3]))((ISpRecoContext2*)Unsafe.AsPointer(ref this), eGrammarOptions);
     }
 
+    /// <include file='ISpRecoContext2.xml' path='doc/member[@name="ISpRecoContext2.GetGrammarOptions"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetGrammarOptions([NativeTypeName("DWORD *")] uint* peGrammarOptions)
@@ -53,6 +59,7 @@ public unsafe partial struct ISpRecoContext2 : ISpRecoContext2.Interface
         return ((delegate* unmanaged<ISpRecoContext2*, uint*, int>)(lpVtbl[4]))((ISpRecoContext2*)Unsafe.AsPointer(ref this), peGrammarOptions);
     }
 
+    /// <include file='ISpRecoContext2.xml' path='doc/member[@name="ISpRecoContext2.SetAdaptationData2"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetAdaptationData2([NativeTypeName("LPCWSTR")] ushort* pAdaptationData, [NativeTypeName("const ULONG")] uint cch, [NativeTypeName("LPCWSTR")] ushort* pTopicName, [NativeTypeName("DWORD")] uint eAdaptationSettings, SPADAPTATIONRELEVANCE eRelevance)

@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DEVICE_SEEK_PENALTY_DESCRIPTOR.xml' path='doc/member[@name="DEVICE_SEEK_PENALTY_DESCRIPTOR"]/*' />
 public partial struct DEVICE_SEEK_PENALTY_DESCRIPTOR
 {
+    /// <include file='DEVICE_SEEK_PENALTY_DESCRIPTOR.xml' path='doc/member[@name="DEVICE_SEEK_PENALTY_DESCRIPTOR.Version"]/*' />
     [NativeTypeName("DWORD")]
     public uint Version;
 
+    /// <include file='DEVICE_SEEK_PENALTY_DESCRIPTOR.xml' path='doc/member[@name="DEVICE_SEEK_PENALTY_DESCRIPTOR.Size"]/*' />
     [NativeTypeName("DWORD")]
     public uint Size;
 
+    /// <include file='DEVICE_SEEK_PENALTY_DESCRIPTOR.xml' path='doc/member[@name="DEVICE_SEEK_PENALTY_DESCRIPTOR.IncursSeekPenalty"]/*' />
     [NativeTypeName("BOOLEAN")]
     public byte IncursSeekPenalty;
 }

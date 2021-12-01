@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WINHTTP_REQUEST_STATS">
+    <summary>
+      <para>The <b>WINHTTP_REQUEST_STATS</b> structure contains a variety of statistics for a request.</para>
+    </summary>
+    <remarks>
+      <para>This structure is used with <see cref="WinHttpQueryOption" /> to retrieve statistics for a request by specifying the <b>WINHTTP_OPTION_REQUEST_STATS</b> flag.</para>
+    </remarks>
+    <seealso cref="WinHttpQueryOption" />
+  </member>
+  <member name="WINHTTP_REQUEST_STATS.ullFlags">
+    <summary>
+      <para>Flags containing details on how the request was made. The following flags are available.</para>
+      <para>| Value | Meaning |
+|-|-|
+| WINHTTP_REQUEST_STAT_FLAG_TCP_FAST_OPEN | TCP Fast Open occurred. |
+| WINHTTP_REQUEST_STAT_FLAG_TLS_SESSION_RESUMPTION | TLS Session Resumption occurred. |
+| WINHTTP_REQUEST_STAT_FLAG_TLS_FALSE_START | TLS False Start occurred. |
+| WINHTTP_REQUEST_STAT_FLAG_PROXY_TLS_SESSION_RESUMPTION | TLS Session Resumption occurred for the proxy connection. |
+| WINHTTP_REQUEST_STAT_FLAG_PROXY_TLS_FALSE_START | TLS False Start occurred for the proxy connection. |
+| WINHTTP_REQUEST_STAT_FLAG_FIRST_REQUEST | This is the first request on the connection. |</para>
+    </summary>
+  </member>
+  <member name="WINHTTP_REQUEST_STATS.ulIndex">
+    <summary>
+      <para>The index of the request on the connection. This indicates how many prior requests were sent over the shared connection.</para>
+    </summary>
+  </member>
+  <member name="WINHTTP_REQUEST_STATS.cStats">
+    <summary>
+      <para>Unsigned long integer value that contains the number of statistics to retrieve. This should generally be set to <b>WinHttpRequestStatLast</b>.</para>
+    </summary>
+  </member>
+  <member name="WINHTTP_REQUEST_STATS.rgullStats">
+    <summary>
+      <para>Array of unsigned long long integer values that will contain the returned statistics, indexed by <see cref="WINHTTP_REQUEST_STAT_ENTRY" />.</para>
+    </summary>
+  </member>
+</doc>

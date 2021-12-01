@@ -8,27 +8,35 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MIXERLINECONTROLSW.xml' path='doc/member[@name="MIXERLINECONTROLSW"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public unsafe partial struct MIXERLINECONTROLSW
 {
+    /// <include file='MIXERLINECONTROLSW.xml' path='doc/member[@name="MIXERLINECONTROLSW.cbStruct"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbStruct;
 
+    /// <include file='MIXERLINECONTROLSW.xml' path='doc/member[@name="MIXERLINECONTROLSW.dwLineID"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwLineID;
 
+    /// <include file='MIXERLINECONTROLSW.xml' path='doc/member[@name="MIXERLINECONTROLSW.Anonymous"]/*' />
     [NativeTypeName("tagMIXERLINECONTROLSW::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/mmeapi.h:2234:5)")]
     public _Anonymous_e__Union Anonymous;
 
+    /// <include file='MIXERLINECONTROLSW.xml' path='doc/member[@name="MIXERLINECONTROLSW.cControls"]/*' />
     [NativeTypeName("DWORD")]
     public uint cControls;
 
+    /// <include file='MIXERLINECONTROLSW.xml' path='doc/member[@name="MIXERLINECONTROLSW.cbmxctrl"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbmxctrl;
 
+    /// <include file='MIXERLINECONTROLSW.xml' path='doc/member[@name="MIXERLINECONTROLSW.pamxctrl"]/*' />
     [NativeTypeName("LPMIXERCONTROLW")]
     public MIXERCONTROLW* pamxctrl;
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.dwControlID"]/*' />
     public ref uint dwControlID
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -38,6 +46,7 @@ public unsafe partial struct MIXERLINECONTROLSW
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.dwControlType"]/*' />
     public ref uint dwControlType
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -47,13 +56,16 @@ public unsafe partial struct MIXERLINECONTROLSW
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit, Pack = 1)]
     public partial struct _Anonymous_e__Union
     {
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.dwControlID"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("DWORD")]
         public uint dwControlID;
 
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.dwControlType"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("DWORD")]
         public uint dwControlType;

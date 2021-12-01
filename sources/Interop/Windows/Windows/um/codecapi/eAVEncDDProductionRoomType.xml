@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="eAVEncDDProductionRoomType">
+    <summary>
+      <para>Specifies the room type for a Dolby Digital audio stream. This enumeration is used with the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avencddproductionroomtype-property">AVEncDDProductionRoomType</a> property.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-enumerations">Codec API Enumerations</seealso>
+    <seealso cref="ICodecAPI Interface" />
+  </member>
+  <member name="eAVEncDDProductionRoomType.eAVEncDDProductionRoomType_NotIndicated">
+    <summary>
+      <para>The room type is not indicated.</para>
+    </summary>
+  </member>
+  <member name="eAVEncDDProductionRoomType.eAVEncDDProductionRoomType_Large">
+    <summary>
+      <para>Large room.</para>
+    </summary>
+  </member>
+  <member name="eAVEncDDProductionRoomType.eAVEncDDProductionRoomType_Small">
+    <summary>
+      <para>Small room.</para>
+    </summary>
+  </member>
+</doc>

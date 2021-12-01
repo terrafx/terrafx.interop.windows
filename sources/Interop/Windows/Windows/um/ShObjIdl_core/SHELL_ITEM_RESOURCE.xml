@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SHELL_ITEM_RESOURCE">
+    <summary>
+      <para>Defines Shell item resource.</para>
+    </summary>
+  </member>
+  <member name="SHELL_ITEM_RESOURCE.guidType">
+    <summary>
+      <para>Type: <b>GUID</b></para>
+      <para>The <b>GUID</b> that identifies the item.</para>
+    </summary>
+  </member>
+  <member name="SHELL_ITEM_RESOURCE.szName">
+    <summary>
+      <para>Type: <b>WCHAR[MAX_PATH]</b></para>
+      <para>The item name. A null-terminated Unicode buffer of size MAX_LENGTH characters.</para>
+    </summary>
+  </member>
+</doc>

@@ -5,12 +5,24 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DESCKIND.xml' path='doc/member[@name="DESCKIND"]/*' />
 public enum DESCKIND
 {
+    /// <include file='DESCKIND.xml' path='doc/member[@name="DESCKIND.DESCKIND_NONE"]/*' />
     DESCKIND_NONE = 0,
+
+    /// <include file='DESCKIND.xml' path='doc/member[@name="DESCKIND.DESCKIND_FUNCDESC"]/*' />
     DESCKIND_FUNCDESC = (DESCKIND_NONE + 1),
+
+    /// <include file='DESCKIND.xml' path='doc/member[@name="DESCKIND.DESCKIND_VARDESC"]/*' />
     DESCKIND_VARDESC = (DESCKIND_FUNCDESC + 1),
+
+    /// <include file='DESCKIND.xml' path='doc/member[@name="DESCKIND.DESCKIND_TYPECOMP"]/*' />
     DESCKIND_TYPECOMP = (DESCKIND_VARDESC + 1),
+
+    /// <include file='DESCKIND.xml' path='doc/member[@name="DESCKIND.DESCKIND_IMPLICITAPPOBJ"]/*' />
     DESCKIND_IMPLICITAPPOBJ = (DESCKIND_TYPECOMP + 1),
+
+    /// <include file='DESCKIND.xml' path='doc/member[@name="DESCKIND.DESCKIND_MAX"]/*' />
     DESCKIND_MAX = (DESCKIND_IMPLICITAPPOBJ + 1),
 }

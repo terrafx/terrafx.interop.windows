@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAppxEncryptedBundleWriter2.xml' path='doc/member[@name="IAppxEncryptedBundleWriter2"]/*' />
 [Guid("E644BE82-F0FA-42B8-A956-8D1CB48EE379")]
 [NativeTypeName("struct IAppxEncryptedBundleWriter2 : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IAppxEncryptedBundleWriter2 : IAppxEncryptedBundleW
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IAppxEncryptedBundleWriter2 : IAppxEncryptedBundleW
         return ((delegate* unmanaged<IAppxEncryptedBundleWriter2*, Guid*, void**, int>)(lpVtbl[0]))((IAppxEncryptedBundleWriter2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IAppxEncryptedBundleWriter2 : IAppxEncryptedBundleW
         return ((delegate* unmanaged<IAppxEncryptedBundleWriter2*, uint>)(lpVtbl[1]))((IAppxEncryptedBundleWriter2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IAppxEncryptedBundleWriter2 : IAppxEncryptedBundleW
         return ((delegate* unmanaged<IAppxEncryptedBundleWriter2*, uint>)(lpVtbl[2]))((IAppxEncryptedBundleWriter2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAppxEncryptedBundleWriter2.xml' path='doc/member[@name="IAppxEncryptedBundleWriter2.AddExternalPackageReference"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT AddExternalPackageReference([NativeTypeName("LPCWSTR")] ushort* fileName, IStream* inputStream)

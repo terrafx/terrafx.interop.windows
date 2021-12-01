@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IOleDocumentSite.xml' path='doc/member[@name="IOleDocumentSite"]/*' />
 [Guid("B722BCC7-4E68-101B-A2BC-00AA00404770")]
 [NativeTypeName("struct IOleDocumentSite : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IOleDocumentSite : IOleDocumentSite.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IOleDocumentSite : IOleDocumentSite.Interface
         return ((delegate* unmanaged<IOleDocumentSite*, Guid*, void**, int>)(lpVtbl[0]))((IOleDocumentSite*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IOleDocumentSite : IOleDocumentSite.Interface
         return ((delegate* unmanaged<IOleDocumentSite*, uint>)(lpVtbl[1]))((IOleDocumentSite*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IOleDocumentSite : IOleDocumentSite.Interface
         return ((delegate* unmanaged<IOleDocumentSite*, uint>)(lpVtbl[2]))((IOleDocumentSite*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IOleDocumentSite.xml' path='doc/member[@name="IOleDocumentSite.ActivateMe"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT ActivateMe(IOleDocumentView* pViewToActivate)

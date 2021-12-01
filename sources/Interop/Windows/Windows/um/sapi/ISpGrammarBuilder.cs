@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ISpGrammarBuilder.xml' path='doc/member[@name="ISpGrammarBuilder"]/*' />
 [Guid("8137828F-591A-4A42-BE58-49EA7EBAAC68")]
 [NativeTypeName("struct ISpGrammarBuilder : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ISpGrammarBuilder : ISpGrammarBuilder.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ISpGrammarBuilder : ISpGrammarBuilder.Interface
         return ((delegate* unmanaged<ISpGrammarBuilder*, Guid*, void**, int>)(lpVtbl[0]))((ISpGrammarBuilder*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ISpGrammarBuilder : ISpGrammarBuilder.Interface
         return ((delegate* unmanaged<ISpGrammarBuilder*, uint>)(lpVtbl[1]))((ISpGrammarBuilder*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ISpGrammarBuilder : ISpGrammarBuilder.Interface
         return ((delegate* unmanaged<ISpGrammarBuilder*, uint>)(lpVtbl[2]))((ISpGrammarBuilder*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ISpGrammarBuilder.xml' path='doc/member[@name="ISpGrammarBuilder.ResetGrammar"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT ResetGrammar([NativeTypeName("WORD")] ushort NewLanguage)
@@ -46,6 +51,7 @@ public unsafe partial struct ISpGrammarBuilder : ISpGrammarBuilder.Interface
         return ((delegate* unmanaged<ISpGrammarBuilder*, ushort, int>)(lpVtbl[3]))((ISpGrammarBuilder*)Unsafe.AsPointer(ref this), NewLanguage);
     }
 
+    /// <include file='ISpGrammarBuilder.xml' path='doc/member[@name="ISpGrammarBuilder.GetRule"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetRule([NativeTypeName("LPCWSTR")] ushort* pszRuleName, [NativeTypeName("DWORD")] uint dwRuleId, [NativeTypeName("DWORD")] uint dwAttributes, BOOL fCreateIfNotExist, SPSTATEHANDLE* phInitialState)
@@ -53,6 +59,7 @@ public unsafe partial struct ISpGrammarBuilder : ISpGrammarBuilder.Interface
         return ((delegate* unmanaged<ISpGrammarBuilder*, ushort*, uint, uint, BOOL, SPSTATEHANDLE*, int>)(lpVtbl[4]))((ISpGrammarBuilder*)Unsafe.AsPointer(ref this), pszRuleName, dwRuleId, dwAttributes, fCreateIfNotExist, phInitialState);
     }
 
+    /// <include file='ISpGrammarBuilder.xml' path='doc/member[@name="ISpGrammarBuilder.ClearRule"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT ClearRule(SPSTATEHANDLE hState)
@@ -60,6 +67,7 @@ public unsafe partial struct ISpGrammarBuilder : ISpGrammarBuilder.Interface
         return ((delegate* unmanaged<ISpGrammarBuilder*, SPSTATEHANDLE, int>)(lpVtbl[5]))((ISpGrammarBuilder*)Unsafe.AsPointer(ref this), hState);
     }
 
+    /// <include file='ISpGrammarBuilder.xml' path='doc/member[@name="ISpGrammarBuilder.CreateNewState"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT CreateNewState(SPSTATEHANDLE hState, SPSTATEHANDLE* phState)
@@ -67,6 +75,7 @@ public unsafe partial struct ISpGrammarBuilder : ISpGrammarBuilder.Interface
         return ((delegate* unmanaged<ISpGrammarBuilder*, SPSTATEHANDLE, SPSTATEHANDLE*, int>)(lpVtbl[6]))((ISpGrammarBuilder*)Unsafe.AsPointer(ref this), hState, phState);
     }
 
+    /// <include file='ISpGrammarBuilder.xml' path='doc/member[@name="ISpGrammarBuilder.AddWordTransition"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT AddWordTransition(SPSTATEHANDLE hFromState, SPSTATEHANDLE hToState, [NativeTypeName("LPCWSTR")] ushort* psz, [NativeTypeName("LPCWSTR")] ushort* pszSeparators, SPGRAMMARWORDTYPE eWordType, float Weight, [NativeTypeName("const SPPROPERTYINFO *")] SPPROPERTYINFO* pPropInfo)
@@ -74,6 +83,7 @@ public unsafe partial struct ISpGrammarBuilder : ISpGrammarBuilder.Interface
         return ((delegate* unmanaged<ISpGrammarBuilder*, SPSTATEHANDLE, SPSTATEHANDLE, ushort*, ushort*, SPGRAMMARWORDTYPE, float, SPPROPERTYINFO*, int>)(lpVtbl[7]))((ISpGrammarBuilder*)Unsafe.AsPointer(ref this), hFromState, hToState, psz, pszSeparators, eWordType, Weight, pPropInfo);
     }
 
+    /// <include file='ISpGrammarBuilder.xml' path='doc/member[@name="ISpGrammarBuilder.AddRuleTransition"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT AddRuleTransition(SPSTATEHANDLE hFromState, SPSTATEHANDLE hToState, SPSTATEHANDLE hRule, float Weight, [NativeTypeName("const SPPROPERTYINFO *")] SPPROPERTYINFO* pPropInfo)
@@ -81,6 +91,7 @@ public unsafe partial struct ISpGrammarBuilder : ISpGrammarBuilder.Interface
         return ((delegate* unmanaged<ISpGrammarBuilder*, SPSTATEHANDLE, SPSTATEHANDLE, SPSTATEHANDLE, float, SPPROPERTYINFO*, int>)(lpVtbl[8]))((ISpGrammarBuilder*)Unsafe.AsPointer(ref this), hFromState, hToState, hRule, Weight, pPropInfo);
     }
 
+    /// <include file='ISpGrammarBuilder.xml' path='doc/member[@name="ISpGrammarBuilder.AddResource"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT AddResource(SPSTATEHANDLE hRuleState, [NativeTypeName("LPCWSTR")] ushort* pszResourceName, [NativeTypeName("LPCWSTR")] ushort* pszResourceValue)
@@ -88,6 +99,7 @@ public unsafe partial struct ISpGrammarBuilder : ISpGrammarBuilder.Interface
         return ((delegate* unmanaged<ISpGrammarBuilder*, SPSTATEHANDLE, ushort*, ushort*, int>)(lpVtbl[9]))((ISpGrammarBuilder*)Unsafe.AsPointer(ref this), hRuleState, pszResourceName, pszResourceValue);
     }
 
+    /// <include file='ISpGrammarBuilder.xml' path='doc/member[@name="ISpGrammarBuilder.Commit"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT Commit([NativeTypeName("DWORD")] uint dwReserved)

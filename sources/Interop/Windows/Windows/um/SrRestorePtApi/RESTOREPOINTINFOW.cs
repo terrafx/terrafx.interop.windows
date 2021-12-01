@@ -7,18 +7,23 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='RESTOREPOINTINFOW.xml' path='doc/member[@name="RESTOREPOINTINFOW"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public unsafe partial struct RESTOREPOINTINFOW
 {
+    /// <include file='RESTOREPOINTINFOW.xml' path='doc/member[@name="RESTOREPOINTINFOW.dwEventType"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwEventType;
 
+    /// <include file='RESTOREPOINTINFOW.xml' path='doc/member[@name="RESTOREPOINTINFOW.dwRestorePtType"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwRestorePtType;
 
+    /// <include file='RESTOREPOINTINFOW.xml' path='doc/member[@name="RESTOREPOINTINFOW.llSequenceNumber"]/*' />
     [NativeTypeName("INT64")]
     public long llSequenceNumber;
 
+    /// <include file='RESTOREPOINTINFOW.xml' path='doc/member[@name="RESTOREPOINTINFOW.szDescription"]/*' />
     [NativeTypeName("WCHAR [256]")]
     public fixed ushort szDescription[256];
 }

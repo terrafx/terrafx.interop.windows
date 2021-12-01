@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='RemSNB.xml' path='doc/member[@name="RemSNB"]/*' />
 public unsafe partial struct RemSNB
 {
+    /// <include file='RemSNB.xml' path='doc/member[@name="RemSNB.ulCntStr"]/*' />
     [NativeTypeName("ULONG")]
     public uint ulCntStr;
 
+    /// <include file='RemSNB.xml' path='doc/member[@name="RemSNB.ulCntChar"]/*' />
     [NativeTypeName("ULONG")]
     public uint ulCntChar;
 
+    /// <include file='RemSNB.xml' path='doc/member[@name="RemSNB.rgString"]/*' />
     [NativeTypeName("OLECHAR [1]")]
     public fixed ushort rgString[1];
 }

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFHDCPStatus.xml' path='doc/member[@name="IMFHDCPStatus"]/*' />
 [Guid("DE400F54-5BF1-40CF-8964-0BEA136B1E3D")]
 [NativeTypeName("struct IMFHDCPStatus : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMFHDCPStatus : IMFHDCPStatus.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMFHDCPStatus : IMFHDCPStatus.Interface
         return ((delegate* unmanaged<IMFHDCPStatus*, Guid*, void**, int>)(lpVtbl[0]))((IMFHDCPStatus*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMFHDCPStatus : IMFHDCPStatus.Interface
         return ((delegate* unmanaged<IMFHDCPStatus*, uint>)(lpVtbl[1]))((IMFHDCPStatus*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMFHDCPStatus : IMFHDCPStatus.Interface
         return ((delegate* unmanaged<IMFHDCPStatus*, uint>)(lpVtbl[2]))((IMFHDCPStatus*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFHDCPStatus.xml' path='doc/member[@name="IMFHDCPStatus.Query"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Query(MF_HDCP_STATUS* pStatus, BOOL* pfStatus)
@@ -46,6 +51,7 @@ public unsafe partial struct IMFHDCPStatus : IMFHDCPStatus.Interface
         return ((delegate* unmanaged<IMFHDCPStatus*, MF_HDCP_STATUS*, BOOL*, int>)(lpVtbl[3]))((IMFHDCPStatus*)Unsafe.AsPointer(ref this), pStatus, pfStatus);
     }
 
+    /// <include file='IMFHDCPStatus.xml' path='doc/member[@name="IMFHDCPStatus.Set"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Set(MF_HDCP_STATUS status)

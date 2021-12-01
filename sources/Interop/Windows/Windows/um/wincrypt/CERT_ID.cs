@@ -8,14 +8,18 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CERT_ID.xml' path='doc/member[@name="CERT_ID"]/*' />
 public partial struct CERT_ID
 {
+    /// <include file='CERT_ID.xml' path='doc/member[@name="CERT_ID.dwIdChoice"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwIdChoice;
 
+    /// <include file='CERT_ID.xml' path='doc/member[@name="CERT_ID.Anonymous"]/*' />
     [NativeTypeName("_CERT_ID::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/wincrypt.h:6665:5)")]
     public _Anonymous_e__Union Anonymous;
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.IssuerSerialNumber"]/*' />
     public ref CERT_ISSUER_SERIAL_NUMBER IssuerSerialNumber
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -25,6 +29,7 @@ public partial struct CERT_ID
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.KeyId"]/*' />
     public ref CRYPT_DATA_BLOB KeyId
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -34,6 +39,7 @@ public partial struct CERT_ID
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.HashId"]/*' />
     public ref CRYPT_DATA_BLOB HashId
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -43,16 +49,20 @@ public partial struct CERT_ID
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public partial struct _Anonymous_e__Union
     {
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.IssuerSerialNumber"]/*' />
         [FieldOffset(0)]
         public CERT_ISSUER_SERIAL_NUMBER IssuerSerialNumber;
 
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.KeyId"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("CRYPT_HASH_BLOB")]
         public CRYPT_DATA_BLOB KeyId;
 
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.HashId"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("CRYPT_HASH_BLOB")]
         public CRYPT_DATA_BLOB HashId;

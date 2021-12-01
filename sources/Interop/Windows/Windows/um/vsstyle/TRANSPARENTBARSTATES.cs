@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TRANSPARENTBARSTATES.xml' path='doc/member[@name="TRANSPARENTBARSTATES"]/*' />
 public enum TRANSPARENTBARSTATES
 {
+    /// <include file='TRANSPARENTBARSTATES.xml' path='doc/member[@name="TRANSPARENTBARSTATES.PBBS_NORMAL"]/*' />
     PBBS_NORMAL = 1,
+
+    /// <include file='TRANSPARENTBARSTATES.xml' path='doc/member[@name="TRANSPARENTBARSTATES.PBBS_PARTIAL"]/*' />
     PBBS_PARTIAL = 2,
 }

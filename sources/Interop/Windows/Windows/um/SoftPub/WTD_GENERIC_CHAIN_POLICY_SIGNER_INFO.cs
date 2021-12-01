@@ -8,29 +8,38 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WTD_GENERIC_CHAIN_POLICY_SIGNER_INFO.xml' path='doc/member[@name="WTD_GENERIC_CHAIN_POLICY_SIGNER_INFO"]/*' />
 public unsafe partial struct WTD_GENERIC_CHAIN_POLICY_SIGNER_INFO
 {
+    /// <include file='WTD_GENERIC_CHAIN_POLICY_SIGNER_INFO.xml' path='doc/member[@name="WTD_GENERIC_CHAIN_POLICY_SIGNER_INFO.Anonymous"]/*' />
     [NativeTypeName("_WTD_GENERIC_CHAIN_POLICY_SIGNER_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/SoftPub.h:133:5)")]
     public _Anonymous_e__Union Anonymous;
 
+    /// <include file='WTD_GENERIC_CHAIN_POLICY_SIGNER_INFO.xml' path='doc/member[@name="WTD_GENERIC_CHAIN_POLICY_SIGNER_INFO.pChainContext"]/*' />
     [NativeTypeName("PCCERT_CHAIN_CONTEXT")]
     public CERT_CHAIN_CONTEXT* pChainContext;
 
+    /// <include file='WTD_GENERIC_CHAIN_POLICY_SIGNER_INFO.xml' path='doc/member[@name="WTD_GENERIC_CHAIN_POLICY_SIGNER_INFO.dwSignerType"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwSignerType;
 
+    /// <include file='WTD_GENERIC_CHAIN_POLICY_SIGNER_INFO.xml' path='doc/member[@name="WTD_GENERIC_CHAIN_POLICY_SIGNER_INFO.pMsgSignerInfo"]/*' />
     [NativeTypeName("PCMSG_SIGNER_INFO")]
     public CMSG_SIGNER_INFO* pMsgSignerInfo;
 
+    /// <include file='WTD_GENERIC_CHAIN_POLICY_SIGNER_INFO.xml' path='doc/member[@name="WTD_GENERIC_CHAIN_POLICY_SIGNER_INFO.dwError"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwError;
 
+    /// <include file='WTD_GENERIC_CHAIN_POLICY_SIGNER_INFO.xml' path='doc/member[@name="WTD_GENERIC_CHAIN_POLICY_SIGNER_INFO.cCounterSigner"]/*' />
     [NativeTypeName("DWORD")]
     public uint cCounterSigner;
 
+    /// <include file='WTD_GENERIC_CHAIN_POLICY_SIGNER_INFO.xml' path='doc/member[@name="WTD_GENERIC_CHAIN_POLICY_SIGNER_INFO.rgpCounterSigner"]/*' />
     [NativeTypeName("PWTD_GENERIC_CHAIN_POLICY_SIGNER_INFO *")]
     public WTD_GENERIC_CHAIN_POLICY_SIGNER_INFO** rgpCounterSigner;
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.cbStruct"]/*' />
     public ref uint cbStruct
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -40,6 +49,7 @@ public unsafe partial struct WTD_GENERIC_CHAIN_POLICY_SIGNER_INFO
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.cbSize"]/*' />
     public ref uint cbSize
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -49,13 +59,16 @@ public unsafe partial struct WTD_GENERIC_CHAIN_POLICY_SIGNER_INFO
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public partial struct _Anonymous_e__Union
     {
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.cbStruct"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("DWORD")]
         public uint cbStruct;
 
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.cbSize"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("DWORD")]
         public uint cbSize;

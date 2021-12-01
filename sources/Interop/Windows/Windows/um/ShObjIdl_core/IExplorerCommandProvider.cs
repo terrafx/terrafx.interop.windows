@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IExplorerCommandProvider.xml' path='doc/member[@name="IExplorerCommandProvider"]/*' />
 [Guid("64961751-0835-43C0-8FFE-D57686530E64")]
 [NativeTypeName("struct IExplorerCommandProvider : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IExplorerCommandProvider : IExplorerCommandProvider
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IExplorerCommandProvider : IExplorerCommandProvider
         return ((delegate* unmanaged<IExplorerCommandProvider*, Guid*, void**, int>)(lpVtbl[0]))((IExplorerCommandProvider*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IExplorerCommandProvider : IExplorerCommandProvider
         return ((delegate* unmanaged<IExplorerCommandProvider*, uint>)(lpVtbl[1]))((IExplorerCommandProvider*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IExplorerCommandProvider : IExplorerCommandProvider
         return ((delegate* unmanaged<IExplorerCommandProvider*, uint>)(lpVtbl[2]))((IExplorerCommandProvider*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IExplorerCommandProvider.xml' path='doc/member[@name="IExplorerCommandProvider.GetCommands"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetCommands(IUnknown* punkSite, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
@@ -46,6 +51,7 @@ public unsafe partial struct IExplorerCommandProvider : IExplorerCommandProvider
         return ((delegate* unmanaged<IExplorerCommandProvider*, IUnknown*, Guid*, void**, int>)(lpVtbl[3]))((IExplorerCommandProvider*)Unsafe.AsPointer(ref this), punkSite, riid, ppv);
     }
 
+    /// <include file='IExplorerCommandProvider.xml' path='doc/member[@name="IExplorerCommandProvider.GetCommand"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetCommand([NativeTypeName("const GUID &")] Guid* rguidCommandId, [NativeTypeName("const IID &")] Guid* riid, void** ppv)

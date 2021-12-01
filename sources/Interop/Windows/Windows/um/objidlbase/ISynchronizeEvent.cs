@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ISynchronizeEvent.xml' path='doc/member[@name="ISynchronizeEvent"]/*' />
 [Guid("00000032-0000-0000-C000-000000000046")]
 [NativeTypeName("struct ISynchronizeEvent : ISynchronizeHandle")]
 [NativeInheritance("ISynchronizeHandle")]
@@ -16,6 +17,7 @@ public unsafe partial struct ISynchronizeEvent : ISynchronizeEvent.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ISynchronizeEvent : ISynchronizeEvent.Interface
         return ((delegate* unmanaged<ISynchronizeEvent*, Guid*, void**, int>)(lpVtbl[0]))((ISynchronizeEvent*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ISynchronizeEvent : ISynchronizeEvent.Interface
         return ((delegate* unmanaged<ISynchronizeEvent*, uint>)(lpVtbl[1]))((ISynchronizeEvent*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ISynchronizeEvent : ISynchronizeEvent.Interface
         return ((delegate* unmanaged<ISynchronizeEvent*, uint>)(lpVtbl[2]))((ISynchronizeEvent*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ISynchronizeHandle.GetHandle" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetHandle(HANDLE* ph)
@@ -46,6 +51,7 @@ public unsafe partial struct ISynchronizeEvent : ISynchronizeEvent.Interface
         return ((delegate* unmanaged<ISynchronizeEvent*, HANDLE*, int>)(lpVtbl[3]))((ISynchronizeEvent*)Unsafe.AsPointer(ref this), ph);
     }
 
+    /// <include file='ISynchronizeEvent.xml' path='doc/member[@name="ISynchronizeEvent.SetEventHandle"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetEventHandle(HANDLE* ph)

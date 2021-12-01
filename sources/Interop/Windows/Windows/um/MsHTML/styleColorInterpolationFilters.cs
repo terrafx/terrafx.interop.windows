@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='styleColorInterpolationFilters.xml' path='doc/member[@name="styleColorInterpolationFilters"]/*' />
 public enum styleColorInterpolationFilters
 {
+    /// <include file='styleColorInterpolationFilters.xml' path='doc/member[@name="styleColorInterpolationFilters.styleColorInterpolationFiltersAuto"]/*' />
     styleColorInterpolationFiltersAuto = 0,
+
+    /// <include file='styleColorInterpolationFilters.xml' path='doc/member[@name="styleColorInterpolationFilters.styleColorInterpolationFiltersSRgb"]/*' />
     styleColorInterpolationFiltersSRgb = 1,
+
+    /// <include file='styleColorInterpolationFilters.xml' path='doc/member[@name="styleColorInterpolationFilters.styleColorInterpolationFiltersLinearRgb"]/*' />
     styleColorInterpolationFiltersLinearRgb = 2,
+
+    /// <include file='styleColorInterpolationFilters.xml' path='doc/member[@name="styleColorInterpolationFilters.styleColorInterpolationFiltersNotSet"]/*' />
     styleColorInterpolationFiltersNotSet = 3,
+
+    /// <include file='styleColorInterpolationFilters.xml' path='doc/member[@name="styleColorInterpolationFilters.styleColorInterpolationFilters_Max"]/*' />
     styleColorInterpolationFilters_Max = 2147483647,
 }

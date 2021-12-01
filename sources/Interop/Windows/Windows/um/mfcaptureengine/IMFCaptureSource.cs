@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFCaptureSource.xml' path='doc/member[@name="IMFCaptureSource"]/*' />
 [Guid("439A42A8-0D2C-4505-BE83-F79B2A05D5C4")]
 [NativeTypeName("struct IMFCaptureSource : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IMFCaptureSource : IMFCaptureSource.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IMFCaptureSource : IMFCaptureSource.Interface
         return ((delegate* unmanaged<IMFCaptureSource*, Guid*, void**, int>)(lpVtbl[0]))((IMFCaptureSource*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IMFCaptureSource : IMFCaptureSource.Interface
         return ((delegate* unmanaged<IMFCaptureSource*, uint>)(lpVtbl[1]))((IMFCaptureSource*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IMFCaptureSource : IMFCaptureSource.Interface
         return ((delegate* unmanaged<IMFCaptureSource*, uint>)(lpVtbl[2]))((IMFCaptureSource*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFCaptureSource.xml' path='doc/member[@name="IMFCaptureSource.GetCaptureDeviceSource"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetCaptureDeviceSource(MF_CAPTURE_ENGINE_DEVICE_TYPE mfCaptureEngineDeviceType, IMFMediaSource** ppMediaSource)
@@ -48,6 +53,7 @@ public unsafe partial struct IMFCaptureSource : IMFCaptureSource.Interface
         return ((delegate* unmanaged<IMFCaptureSource*, MF_CAPTURE_ENGINE_DEVICE_TYPE, IMFMediaSource**, int>)(lpVtbl[3]))((IMFCaptureSource*)Unsafe.AsPointer(ref this), mfCaptureEngineDeviceType, ppMediaSource);
     }
 
+    /// <include file='IMFCaptureSource.xml' path='doc/member[@name="IMFCaptureSource.GetCaptureDeviceActivate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetCaptureDeviceActivate(MF_CAPTURE_ENGINE_DEVICE_TYPE mfCaptureEngineDeviceType, IMFActivate** ppActivate)
@@ -55,6 +61,7 @@ public unsafe partial struct IMFCaptureSource : IMFCaptureSource.Interface
         return ((delegate* unmanaged<IMFCaptureSource*, MF_CAPTURE_ENGINE_DEVICE_TYPE, IMFActivate**, int>)(lpVtbl[4]))((IMFCaptureSource*)Unsafe.AsPointer(ref this), mfCaptureEngineDeviceType, ppActivate);
     }
 
+    /// <include file='IMFCaptureSource.xml' path='doc/member[@name="IMFCaptureSource.GetService"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetService([NativeTypeName("const IID &")] Guid* rguidService, [NativeTypeName("const IID &")] Guid* riid, IUnknown** ppUnknown)
@@ -62,6 +69,7 @@ public unsafe partial struct IMFCaptureSource : IMFCaptureSource.Interface
         return ((delegate* unmanaged<IMFCaptureSource*, Guid*, Guid*, IUnknown**, int>)(lpVtbl[5]))((IMFCaptureSource*)Unsafe.AsPointer(ref this), rguidService, riid, ppUnknown);
     }
 
+    /// <include file='IMFCaptureSource.xml' path='doc/member[@name="IMFCaptureSource.AddEffect"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT AddEffect([NativeTypeName("DWORD")] uint dwSourceStreamIndex, IUnknown* pUnknown)
@@ -69,6 +77,7 @@ public unsafe partial struct IMFCaptureSource : IMFCaptureSource.Interface
         return ((delegate* unmanaged<IMFCaptureSource*, uint, IUnknown*, int>)(lpVtbl[6]))((IMFCaptureSource*)Unsafe.AsPointer(ref this), dwSourceStreamIndex, pUnknown);
     }
 
+    /// <include file='IMFCaptureSource.xml' path='doc/member[@name="IMFCaptureSource.RemoveEffect"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT RemoveEffect([NativeTypeName("DWORD")] uint dwSourceStreamIndex, IUnknown* pUnknown)
@@ -76,6 +85,7 @@ public unsafe partial struct IMFCaptureSource : IMFCaptureSource.Interface
         return ((delegate* unmanaged<IMFCaptureSource*, uint, IUnknown*, int>)(lpVtbl[7]))((IMFCaptureSource*)Unsafe.AsPointer(ref this), dwSourceStreamIndex, pUnknown);
     }
 
+    /// <include file='IMFCaptureSource.xml' path='doc/member[@name="IMFCaptureSource.RemoveAllEffects"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT RemoveAllEffects([NativeTypeName("DWORD")] uint dwSourceStreamIndex)
@@ -83,6 +93,7 @@ public unsafe partial struct IMFCaptureSource : IMFCaptureSource.Interface
         return ((delegate* unmanaged<IMFCaptureSource*, uint, int>)(lpVtbl[8]))((IMFCaptureSource*)Unsafe.AsPointer(ref this), dwSourceStreamIndex);
     }
 
+    /// <include file='IMFCaptureSource.xml' path='doc/member[@name="IMFCaptureSource.GetAvailableDeviceMediaType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT GetAvailableDeviceMediaType([NativeTypeName("DWORD")] uint dwSourceStreamIndex, [NativeTypeName("DWORD")] uint dwMediaTypeIndex, IMFMediaType** ppMediaType)
@@ -90,6 +101,7 @@ public unsafe partial struct IMFCaptureSource : IMFCaptureSource.Interface
         return ((delegate* unmanaged<IMFCaptureSource*, uint, uint, IMFMediaType**, int>)(lpVtbl[9]))((IMFCaptureSource*)Unsafe.AsPointer(ref this), dwSourceStreamIndex, dwMediaTypeIndex, ppMediaType);
     }
 
+    /// <include file='IMFCaptureSource.xml' path='doc/member[@name="IMFCaptureSource.SetCurrentDeviceMediaType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT SetCurrentDeviceMediaType([NativeTypeName("DWORD")] uint dwSourceStreamIndex, IMFMediaType* pMediaType)
@@ -97,6 +109,7 @@ public unsafe partial struct IMFCaptureSource : IMFCaptureSource.Interface
         return ((delegate* unmanaged<IMFCaptureSource*, uint, IMFMediaType*, int>)(lpVtbl[10]))((IMFCaptureSource*)Unsafe.AsPointer(ref this), dwSourceStreamIndex, pMediaType);
     }
 
+    /// <include file='IMFCaptureSource.xml' path='doc/member[@name="IMFCaptureSource.GetCurrentDeviceMediaType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT GetCurrentDeviceMediaType([NativeTypeName("DWORD")] uint dwSourceStreamIndex, IMFMediaType** ppMediaType)
@@ -104,6 +117,7 @@ public unsafe partial struct IMFCaptureSource : IMFCaptureSource.Interface
         return ((delegate* unmanaged<IMFCaptureSource*, uint, IMFMediaType**, int>)(lpVtbl[11]))((IMFCaptureSource*)Unsafe.AsPointer(ref this), dwSourceStreamIndex, ppMediaType);
     }
 
+    /// <include file='IMFCaptureSource.xml' path='doc/member[@name="IMFCaptureSource.GetDeviceStreamCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT GetDeviceStreamCount([NativeTypeName("DWORD *")] uint* pdwStreamCount)
@@ -111,6 +125,7 @@ public unsafe partial struct IMFCaptureSource : IMFCaptureSource.Interface
         return ((delegate* unmanaged<IMFCaptureSource*, uint*, int>)(lpVtbl[12]))((IMFCaptureSource*)Unsafe.AsPointer(ref this), pdwStreamCount);
     }
 
+    /// <include file='IMFCaptureSource.xml' path='doc/member[@name="IMFCaptureSource.GetDeviceStreamCategory"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT GetDeviceStreamCategory([NativeTypeName("DWORD")] uint dwSourceStreamIndex, MF_CAPTURE_ENGINE_STREAM_CATEGORY* pStreamCategory)
@@ -118,6 +133,7 @@ public unsafe partial struct IMFCaptureSource : IMFCaptureSource.Interface
         return ((delegate* unmanaged<IMFCaptureSource*, uint, MF_CAPTURE_ENGINE_STREAM_CATEGORY*, int>)(lpVtbl[13]))((IMFCaptureSource*)Unsafe.AsPointer(ref this), dwSourceStreamIndex, pStreamCategory);
     }
 
+    /// <include file='IMFCaptureSource.xml' path='doc/member[@name="IMFCaptureSource.GetMirrorState"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT GetMirrorState([NativeTypeName("DWORD")] uint dwStreamIndex, BOOL* pfMirrorState)
@@ -125,6 +141,7 @@ public unsafe partial struct IMFCaptureSource : IMFCaptureSource.Interface
         return ((delegate* unmanaged<IMFCaptureSource*, uint, BOOL*, int>)(lpVtbl[14]))((IMFCaptureSource*)Unsafe.AsPointer(ref this), dwStreamIndex, pfMirrorState);
     }
 
+    /// <include file='IMFCaptureSource.xml' path='doc/member[@name="IMFCaptureSource.SetMirrorState"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT SetMirrorState([NativeTypeName("DWORD")] uint dwStreamIndex, BOOL fMirrorState)
@@ -132,6 +149,7 @@ public unsafe partial struct IMFCaptureSource : IMFCaptureSource.Interface
         return ((delegate* unmanaged<IMFCaptureSource*, uint, BOOL, int>)(lpVtbl[15]))((IMFCaptureSource*)Unsafe.AsPointer(ref this), dwStreamIndex, fMirrorState);
     }
 
+    /// <include file='IMFCaptureSource.xml' path='doc/member[@name="IMFCaptureSource.GetStreamIndexFromFriendlyName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT GetStreamIndexFromFriendlyName([NativeTypeName("UINT32")] uint uifriendlyName, [NativeTypeName("DWORD *")] uint* pdwActualStreamIndex)

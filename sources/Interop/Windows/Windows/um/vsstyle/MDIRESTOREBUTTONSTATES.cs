@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MDIRESTOREBUTTONSTATES.xml' path='doc/member[@name="MDIRESTOREBUTTONSTATES"]/*' />
 public enum MDIRESTOREBUTTONSTATES
 {
+    /// <include file='MDIRESTOREBUTTONSTATES.xml' path='doc/member[@name="MDIRESTOREBUTTONSTATES.MDRE_NORMAL"]/*' />
     MDRE_NORMAL = 1,
+
+    /// <include file='MDIRESTOREBUTTONSTATES.xml' path='doc/member[@name="MDIRESTOREBUTTONSTATES.MDRE_HOT"]/*' />
     MDRE_HOT = 2,
+
+    /// <include file='MDIRESTOREBUTTONSTATES.xml' path='doc/member[@name="MDIRESTOREBUTTONSTATES.MDRE_PUSHED"]/*' />
     MDRE_PUSHED = 3,
+
+    /// <include file='MDIRESTOREBUTTONSTATES.xml' path='doc/member[@name="MDIRESTOREBUTTONSTATES.MDRE_DISABLED"]/*' />
     MDRE_DISABLED = 4,
 }

@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SYSTEM_ALARM_CALLBACK_OBJECT_ACE">
+    <summary>
+      <para>Not supported.</para>
+      <para>The <b>SYSTEM_ALARM_CALLBACK_OBJECT_ACE</b> structure is reserved for future use.</para>
+    </summary>
+    <remarks>
+      <para>If neither the <b>ObjectType</b> nor <b>InheritedObjectType</b> GUID is specified, the <b>SYSTEM_ALARM_CALLBACK_OBJECT_ACE</b> structure has the same semantics as the <see cref="SYSTEM_ALARM_CALLBACK_ACE" /> structure. In that case, use the
+<b>SYSTEM_ALARM_CALLBACK_ACE</b> structure because it is smaller and more efficient.</para>
+      <para>An ACL that contains an <b>SYSTEM_ALARM_CALLBACK_OBJECT_ACE</b> must specify the ACL_REVISION_DS revision number in its
+<see cref="ACE_HEADER" /> structure.</para>
+    </remarks>
+  </member>
+  <member name="SYSTEM_ALARM_CALLBACK_OBJECT_ACE.Header">
+    <summary>
+      <para>
+        <see cref="ACE_HEADER" /> structure that specifies the size and type of ACE. It contains flags that control inheritance of the ACE by child objects. The structure also contains flags that indicate whether the ACE audits successful access attempts, failed access attempts, or both. The <b>AceType</b> member of the <b>ACE_HEADER</b> structure should be set to SYSTEM_ALARM_CALLBACK_OBJECT_ACE_TYPE.</para>
+    </summary>
+  </member>
+  <member name="SYSTEM_ALARM_CALLBACK_OBJECT_ACE.Mask">
+    <summary>
+      <para>An
+<a href="https://docs.microsoft.com//windows/desktop/SecAuthZ/access-mask">ACCESS_MASK</a> that specifies the access rights the system will audit for access attempts by the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/t-gly">trustee</a>.</para>
+    </summary>
+  </member>
+  <member name="SYSTEM_ALARM_CALLBACK_OBJECT_ACE.Flags">
+    <summary>
+      <para>A set of bit flags that indicate whether the <b>ObjectType</b> and <b>InheritedObjectType</b> members contain GUIDs. This parameter can be a combination of the following values. Set all undefined bits to zero.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>ACE_OBJECT_TYPE_PRESENT</b>
+          </description>
+          <description>
+            <para>The <b>ObjectType</b> member contains a GUID.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>ACE_INHERITED_OBJECT_TYPE_PRESENT</b>
+          </description>
+          <description>
+            <para>The <b>InheritedObjectType</b> member contains a GUID.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="SYSTEM_ALARM_CALLBACK_OBJECT_ACE.ObjectType">
+    <summary>
+      <para>A
+<see cref="GUID" /> structure that identifies a property set, property, extended right, or type of child object.</para>
+      <para>This member is valid only if the ACE_OBJECT_TYPE_PRESENT bit is set in the <b>Flags</b> member. Otherwise, <b>ObjectType</b> is ignored.</para>
+      <para>The purpose of this GUID depends on the access rights specified in the <b>Mask</b> member.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>ADS_RIGHT_DS_READ_PROP and/or ADS_RIGHT_DS_WRITE_PROP</b>
+          </description>
+          <description>
+            <para>The <b>ObjectType</b> GUID identifies a property set or property of the object. The ACE controls auditing of the trustee's attempts to read or write the property or property set.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>ADS_RIGHT_DS_CONTROL_ACCESS</b>
+          </description>
+          <description>
+            <para>The <b>ObjectType</b> GUID identifies an extended access right.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>ADS_RIGHT_DS_CREATE_CHILD</b>
+          </description>
+          <description>
+            <para>The <b>ObjectType</b> GUID identifies a type of child object. The ACE controls auditing of the trustee's attempts to create this type of child object.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>ADS_RIGHT_DS_SELF</b>
+          </description>
+          <description>
+            <para>The <b>ObjectType</b> GUID identifies a validated write.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="SYSTEM_ALARM_CALLBACK_OBJECT_ACE.InheritedObjectType">
+    <summary>
+      <para>A <see cref="GUID" /> structure that identifies the type of child object that can inherit the ACE.</para>
+      <para>This member is valid only if the ACE_INHERITED_OBJECT_TYPE_PRESENT bit is set in the <b>Flags</b> member. If that bit is not set, <b>InheritedObjectType</b> is ignored and all types of child objects can inherit the ACE. In either case, inheritance is also controlled by the inheritance flags in the
+<see cref="ACE_HEADER" />, as well as by any protection against inheritance placed on the child objects.</para>
+    </summary>
+  </member>
+  <member name="SYSTEM_ALARM_CALLBACK_OBJECT_ACE.SidStart">
+    <summary>
+      <para>The first <b>DWORD</b> of a trustee's ACE. This ACE can be appended with application data. When the <a href="https://docs.microsoft.com//windows/desktop/SecAuthZ/authzaccesscheckcallback">AuthzAccessCheckCallback</a> function is called, this ACE is passed as the <i>pAce</i> parameter of that function.</para>
+    </summary>
+  </member>
+</doc>

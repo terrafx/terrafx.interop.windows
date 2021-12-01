@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CERT_USAGE_MATCH.xml' path='doc/member[@name="CERT_USAGE_MATCH"]/*' />
 public partial struct CERT_USAGE_MATCH
 {
+    /// <include file='CERT_USAGE_MATCH.xml' path='doc/member[@name="CERT_USAGE_MATCH.dwType"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwType;
 
+    /// <include file='CERT_USAGE_MATCH.xml' path='doc/member[@name="CERT_USAGE_MATCH.Usage"]/*' />
     [NativeTypeName("CERT_ENHKEY_USAGE")]
     public CTL_USAGE Usage;
 }

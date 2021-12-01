@@ -7,14 +7,28 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PRINTFLAG.xml' path='doc/member[@name="PRINTFLAG"]/*' />
 [Flags]
 public enum PRINTFLAG
 {
+    /// <include file='PRINTFLAG.xml' path='doc/member[@name="PRINTFLAG.PRINTFLAG_MAYBOTHERUSER"]/*' />
     PRINTFLAG_MAYBOTHERUSER = 1,
+
+    /// <include file='PRINTFLAG.xml' path='doc/member[@name="PRINTFLAG.PRINTFLAG_PROMPTUSER"]/*' />
     PRINTFLAG_PROMPTUSER = 2,
+
+    /// <include file='PRINTFLAG.xml' path='doc/member[@name="PRINTFLAG.PRINTFLAG_USERMAYCHANGEPRINTER"]/*' />
     PRINTFLAG_USERMAYCHANGEPRINTER = 4,
+
+    /// <include file='PRINTFLAG.xml' path='doc/member[@name="PRINTFLAG.PRINTFLAG_RECOMPOSETODEVICE"]/*' />
     PRINTFLAG_RECOMPOSETODEVICE = 8,
+
+    /// <include file='PRINTFLAG.xml' path='doc/member[@name="PRINTFLAG.PRINTFLAG_DONTACTUALLYPRINT"]/*' />
     PRINTFLAG_DONTACTUALLYPRINT = 16,
+
+    /// <include file='PRINTFLAG.xml' path='doc/member[@name="PRINTFLAG.PRINTFLAG_FORCEPROPERTIES"]/*' />
     PRINTFLAG_FORCEPROPERTIES = 32,
+
+    /// <include file='PRINTFLAG.xml' path='doc/member[@name="PRINTFLAG.PRINTFLAG_PRINTTOFILE"]/*' />
     PRINTFLAG_PRINTTOFILE = 64,
 }

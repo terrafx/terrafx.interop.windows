@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ServerInformation">
+    <summary>
+      <para>Represents the implementation of a Component Object Model (COM) interface in a server process.</para>
+    </summary>
+    <remarks>
+      <para>The <b>ServerInformation</b> structure is used by the <see cref="CoDecodeProxy" /> function to enable native debuggers to locate the implementation of a COM interface in a server process, given a Windows Runtime interface on a proxy to the Windows Runtime object.</para>
+    </remarks>
+    <seealso cref="CoDecodeProxy" />
+  </member>
+  <member name="ServerInformation.dwServerPid">
+    <summary>
+      <para>The process ID of the server.</para>
+    </summary>
+  </member>
+  <member name="ServerInformation.dwServerTid">
+    <summary>
+      <para>The thread ID of the server object if it's in the STA, 0 if it's in the MTA, and <b>0x0000FFFF</b> if it's in the NA.</para>
+    </summary>
+  </member>
+  <member name="ServerInformation.ui64ServerAddress">
+    <summary>
+      <para>
+        <i>ui64ServerAddress</i> is considered a 64-bit value type, rather than a pointer  to a 64-bit value, and isn't a pointer to an object in the debugger process. Instead, this address is passed to the <see cref="ReadProcessMemory" /> function.</para>
+    </summary>
+  </member>
+</doc>

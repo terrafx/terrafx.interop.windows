@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_SECURITY_KEY_TYPE.xml' path='doc/member[@name="WS_SECURITY_KEY_TYPE"]/*' />
 public enum WS_SECURITY_KEY_TYPE
 {
+    /// <include file='WS_SECURITY_KEY_TYPE.xml' path='doc/member[@name="WS_SECURITY_KEY_TYPE.WS_SECURITY_KEY_TYPE_NONE"]/*' />
     WS_SECURITY_KEY_TYPE_NONE = 1,
+
+    /// <include file='WS_SECURITY_KEY_TYPE.xml' path='doc/member[@name="WS_SECURITY_KEY_TYPE.WS_SECURITY_KEY_TYPE_SYMMETRIC"]/*' />
     WS_SECURITY_KEY_TYPE_SYMMETRIC = 2,
+
+    /// <include file='WS_SECURITY_KEY_TYPE.xml' path='doc/member[@name="WS_SECURITY_KEY_TYPE.WS_SECURITY_KEY_TYPE_ASYMMETRIC"]/*' />
     WS_SECURITY_KEY_TYPE_ASYMMETRIC = 3,
 }

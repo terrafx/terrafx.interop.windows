@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CERT_RDN_ATTR.xml' path='doc/member[@name="CERT_RDN_ATTR"]/*' />
 public unsafe partial struct CERT_RDN_ATTR
 {
+    /// <include file='CERT_RDN_ATTR.xml' path='doc/member[@name="CERT_RDN_ATTR.pszObjId"]/*' />
     [NativeTypeName("LPSTR")]
     public sbyte* pszObjId;
 
+    /// <include file='CERT_RDN_ATTR.xml' path='doc/member[@name="CERT_RDN_ATTR.dwValueType"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwValueType;
 
+    /// <include file='CERT_RDN_ATTR.xml' path='doc/member[@name="CERT_RDN_ATTR.Value"]/*' />
     [NativeTypeName("CERT_RDN_VALUE_BLOB")]
     public CRYPT_DATA_BLOB Value;
 }

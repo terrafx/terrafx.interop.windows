@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="FILE_COMPRESSION_INFO">
+    <summary>
+      <para>Receives file compression information. Used for any handles. Use only when calling <see cref="GetFileInformationByHandleEx" />.</para>
+    </summary>
+    <seealso cref="FILE_INFO_BY_HANDLE_CLASS" />
+    <seealso cref="GetFileInformationByHandleEx" />
+  </member>
+  <member name="FILE_COMPRESSION_INFO.CompressedFileSize">
+    <summary>
+      <para>The file size of the compressed file.</para>
+    </summary>
+  </member>
+  <member name="FILE_COMPRESSION_INFO.CompressionFormat">
+    <summary>
+      <para>The compression format that is used to compress the file.</para>
+    </summary>
+  </member>
+  <member name="FILE_COMPRESSION_INFO.CompressionUnitShift">
+    <summary>
+      <para>The factor that the compression uses.</para>
+    </summary>
+  </member>
+  <member name="FILE_COMPRESSION_INFO.ChunkShift">
+    <summary>
+      <para>The number of chunks that are shifted by compression.</para>
+    </summary>
+  </member>
+  <member name="FILE_COMPRESSION_INFO.ClusterShift">
+    <summary>
+      <para>The number of clusters that are shifted by compression.</para>
+    </summary>
+  </member>
+  <member name="FILE_COMPRESSION_INFO.Reserved">
+    <summary>
+      <para>Reserved.</para>
+    </summary>
+  </member>
+</doc>

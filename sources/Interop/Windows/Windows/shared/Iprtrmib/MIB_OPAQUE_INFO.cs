@@ -9,14 +9,18 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MIB_OPAQUE_INFO.xml' path='doc/member[@name="MIB_OPAQUE_INFO"]/*' />
 public unsafe partial struct MIB_OPAQUE_INFO
 {
+    /// <include file='MIB_OPAQUE_INFO.xml' path='doc/member[@name="MIB_OPAQUE_INFO.dwId"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwId;
 
+    /// <include file='MIB_OPAQUE_INFO.xml' path='doc/member[@name="MIB_OPAQUE_INFO.Anonymous"]/*' />
     [NativeTypeName("_MIB_OPAQUE_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/Iprtrmib.h:306:5)")]
     public _Anonymous_e__Union Anonymous;
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ullAlign"]/*' />
     public ref ulong ullAlign
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -26,6 +30,7 @@ public unsafe partial struct MIB_OPAQUE_INFO
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.rgbyData"]/*' />
     public Span<byte> rgbyData
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -35,13 +40,16 @@ public unsafe partial struct MIB_OPAQUE_INFO
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public unsafe partial struct _Anonymous_e__Union
     {
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ullAlign"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("ULONGLONG")]
         public ulong ullAlign;
 
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.rgbyData"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("BYTE [1]")]
         public fixed byte rgbyData[1];

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IHTMLCaret.xml' path='doc/member[@name="IHTMLCaret"]/*' />
 [Guid("3050F604-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IHTMLCaret : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IHTMLCaret : IHTMLCaret.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IHTMLCaret : IHTMLCaret.Interface
         return ((delegate* unmanaged<IHTMLCaret*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLCaret*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IHTMLCaret : IHTMLCaret.Interface
         return ((delegate* unmanaged<IHTMLCaret*, uint>)(lpVtbl[1]))((IHTMLCaret*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IHTMLCaret : IHTMLCaret.Interface
         return ((delegate* unmanaged<IHTMLCaret*, uint>)(lpVtbl[2]))((IHTMLCaret*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IHTMLCaret.xml' path='doc/member[@name="IHTMLCaret.MoveCaretToPointer"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT MoveCaretToPointer(IDisplayPointer* pDispPointer, BOOL fScrollIntoView, CARET_DIRECTION eDir)
@@ -46,6 +51,7 @@ public unsafe partial struct IHTMLCaret : IHTMLCaret.Interface
         return ((delegate* unmanaged<IHTMLCaret*, IDisplayPointer*, BOOL, CARET_DIRECTION, int>)(lpVtbl[3]))((IHTMLCaret*)Unsafe.AsPointer(ref this), pDispPointer, fScrollIntoView, eDir);
     }
 
+    /// <include file='IHTMLCaret.xml' path='doc/member[@name="IHTMLCaret.MoveCaretToPointerEx"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT MoveCaretToPointerEx(IDisplayPointer* pDispPointer, BOOL fVisible, BOOL fScrollIntoView, CARET_DIRECTION eDir)
@@ -53,6 +59,7 @@ public unsafe partial struct IHTMLCaret : IHTMLCaret.Interface
         return ((delegate* unmanaged<IHTMLCaret*, IDisplayPointer*, BOOL, BOOL, CARET_DIRECTION, int>)(lpVtbl[4]))((IHTMLCaret*)Unsafe.AsPointer(ref this), pDispPointer, fVisible, fScrollIntoView, eDir);
     }
 
+    /// <include file='IHTMLCaret.xml' path='doc/member[@name="IHTMLCaret.MoveMarkupPointerToCaret"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT MoveMarkupPointerToCaret(IMarkupPointer* pIMarkupPointer)
@@ -60,6 +67,7 @@ public unsafe partial struct IHTMLCaret : IHTMLCaret.Interface
         return ((delegate* unmanaged<IHTMLCaret*, IMarkupPointer*, int>)(lpVtbl[5]))((IHTMLCaret*)Unsafe.AsPointer(ref this), pIMarkupPointer);
     }
 
+    /// <include file='IHTMLCaret.xml' path='doc/member[@name="IHTMLCaret.MoveDisplayPointerToCaret"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT MoveDisplayPointerToCaret(IDisplayPointer* pDispPointer)
@@ -67,6 +75,7 @@ public unsafe partial struct IHTMLCaret : IHTMLCaret.Interface
         return ((delegate* unmanaged<IHTMLCaret*, IDisplayPointer*, int>)(lpVtbl[6]))((IHTMLCaret*)Unsafe.AsPointer(ref this), pDispPointer);
     }
 
+    /// <include file='IHTMLCaret.xml' path='doc/member[@name="IHTMLCaret.IsVisible"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT IsVisible(BOOL* pIsVisible)
@@ -74,6 +83,7 @@ public unsafe partial struct IHTMLCaret : IHTMLCaret.Interface
         return ((delegate* unmanaged<IHTMLCaret*, BOOL*, int>)(lpVtbl[7]))((IHTMLCaret*)Unsafe.AsPointer(ref this), pIsVisible);
     }
 
+    /// <include file='IHTMLCaret.xml' path='doc/member[@name="IHTMLCaret.Show"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT Show(BOOL fScrollIntoView)
@@ -81,6 +91,7 @@ public unsafe partial struct IHTMLCaret : IHTMLCaret.Interface
         return ((delegate* unmanaged<IHTMLCaret*, BOOL, int>)(lpVtbl[8]))((IHTMLCaret*)Unsafe.AsPointer(ref this), fScrollIntoView);
     }
 
+    /// <include file='IHTMLCaret.xml' path='doc/member[@name="IHTMLCaret.Hide"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT Hide()
@@ -88,6 +99,7 @@ public unsafe partial struct IHTMLCaret : IHTMLCaret.Interface
         return ((delegate* unmanaged<IHTMLCaret*, int>)(lpVtbl[9]))((IHTMLCaret*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IHTMLCaret.xml' path='doc/member[@name="IHTMLCaret.InsertText"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT InsertText([NativeTypeName("OLECHAR *")] ushort* pText, [NativeTypeName("LONG")] int lLen)
@@ -95,6 +107,7 @@ public unsafe partial struct IHTMLCaret : IHTMLCaret.Interface
         return ((delegate* unmanaged<IHTMLCaret*, ushort*, int, int>)(lpVtbl[10]))((IHTMLCaret*)Unsafe.AsPointer(ref this), pText, lLen);
     }
 
+    /// <include file='IHTMLCaret.xml' path='doc/member[@name="IHTMLCaret.ScrollIntoView"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT ScrollIntoView()
@@ -102,6 +115,7 @@ public unsafe partial struct IHTMLCaret : IHTMLCaret.Interface
         return ((delegate* unmanaged<IHTMLCaret*, int>)(lpVtbl[11]))((IHTMLCaret*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IHTMLCaret.xml' path='doc/member[@name="IHTMLCaret.GetLocation"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT GetLocation(POINT* pPoint, BOOL fTranslate)
@@ -109,6 +123,7 @@ public unsafe partial struct IHTMLCaret : IHTMLCaret.Interface
         return ((delegate* unmanaged<IHTMLCaret*, POINT*, BOOL, int>)(lpVtbl[12]))((IHTMLCaret*)Unsafe.AsPointer(ref this), pPoint, fTranslate);
     }
 
+    /// <include file='IHTMLCaret.xml' path='doc/member[@name="IHTMLCaret.GetCaretDirection"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT GetCaretDirection(CARET_DIRECTION* peDir)
@@ -116,6 +131,7 @@ public unsafe partial struct IHTMLCaret : IHTMLCaret.Interface
         return ((delegate* unmanaged<IHTMLCaret*, CARET_DIRECTION*, int>)(lpVtbl[13]))((IHTMLCaret*)Unsafe.AsPointer(ref this), peDir);
     }
 
+    /// <include file='IHTMLCaret.xml' path='doc/member[@name="IHTMLCaret.SetCaretDirection"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT SetCaretDirection(CARET_DIRECTION eDir)

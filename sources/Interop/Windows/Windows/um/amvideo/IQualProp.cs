@@ -8,12 +8,14 @@ using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IQualProp.xml' path='doc/member[@name="IQualProp"]/*' />
 [NativeTypeName("struct IQualProp : IUnknown")]
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IQualProp : IQualProp.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -21,6 +23,7 @@ public unsafe partial struct IQualProp : IQualProp.Interface
         return ((delegate* unmanaged<IQualProp*, Guid*, void**, int>)(lpVtbl[0]))((IQualProp*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -29,6 +32,7 @@ public unsafe partial struct IQualProp : IQualProp.Interface
         return ((delegate* unmanaged<IQualProp*, uint>)(lpVtbl[1]))((IQualProp*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -37,6 +41,7 @@ public unsafe partial struct IQualProp : IQualProp.Interface
         return ((delegate* unmanaged<IQualProp*, uint>)(lpVtbl[2]))((IQualProp*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IQualProp.xml' path='doc/member[@name="IQualProp.get_FramesDroppedInRenderer"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT get_FramesDroppedInRenderer(int* pcFrames)
@@ -44,6 +49,7 @@ public unsafe partial struct IQualProp : IQualProp.Interface
         return ((delegate* unmanaged<IQualProp*, int*, int>)(lpVtbl[3]))((IQualProp*)Unsafe.AsPointer(ref this), pcFrames);
     }
 
+    /// <include file='IQualProp.xml' path='doc/member[@name="IQualProp.get_FramesDrawn"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT get_FramesDrawn(int* pcFramesDrawn)
@@ -51,6 +57,7 @@ public unsafe partial struct IQualProp : IQualProp.Interface
         return ((delegate* unmanaged<IQualProp*, int*, int>)(lpVtbl[4]))((IQualProp*)Unsafe.AsPointer(ref this), pcFramesDrawn);
     }
 
+    /// <include file='IQualProp.xml' path='doc/member[@name="IQualProp.get_AvgFrameRate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT get_AvgFrameRate(int* piAvgFrameRate)
@@ -58,6 +65,7 @@ public unsafe partial struct IQualProp : IQualProp.Interface
         return ((delegate* unmanaged<IQualProp*, int*, int>)(lpVtbl[5]))((IQualProp*)Unsafe.AsPointer(ref this), piAvgFrameRate);
     }
 
+    /// <include file='IQualProp.xml' path='doc/member[@name="IQualProp.get_Jitter"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT get_Jitter(int* iJitter)
@@ -65,6 +73,7 @@ public unsafe partial struct IQualProp : IQualProp.Interface
         return ((delegate* unmanaged<IQualProp*, int*, int>)(lpVtbl[6]))((IQualProp*)Unsafe.AsPointer(ref this), iJitter);
     }
 
+    /// <include file='IQualProp.xml' path='doc/member[@name="IQualProp.get_AvgSyncOffset"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT get_AvgSyncOffset(int* piAvg)
@@ -72,6 +81,7 @@ public unsafe partial struct IQualProp : IQualProp.Interface
         return ((delegate* unmanaged<IQualProp*, int*, int>)(lpVtbl[7]))((IQualProp*)Unsafe.AsPointer(ref this), piAvg);
     }
 
+    /// <include file='IQualProp.xml' path='doc/member[@name="IQualProp.get_DevSyncOffset"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT get_DevSyncOffset(int* piDev)

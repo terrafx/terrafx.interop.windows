@@ -5,24 +5,33 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DESKBANDINFO.xml' path='doc/member[@name="DESKBANDINFO"]/*' />
 public unsafe partial struct DESKBANDINFO
 {
+    /// <include file='DESKBANDINFO.xml' path='doc/member[@name="DESKBANDINFO.dwMask"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwMask;
 
+    /// <include file='DESKBANDINFO.xml' path='doc/member[@name="DESKBANDINFO.ptMinSize"]/*' />
     public POINTL ptMinSize;
 
+    /// <include file='DESKBANDINFO.xml' path='doc/member[@name="DESKBANDINFO.ptMaxSize"]/*' />
     public POINTL ptMaxSize;
 
+    /// <include file='DESKBANDINFO.xml' path='doc/member[@name="DESKBANDINFO.ptIntegral"]/*' />
     public POINTL ptIntegral;
 
+    /// <include file='DESKBANDINFO.xml' path='doc/member[@name="DESKBANDINFO.ptActual"]/*' />
     public POINTL ptActual;
 
+    /// <include file='DESKBANDINFO.xml' path='doc/member[@name="DESKBANDINFO.wszTitle"]/*' />
     [NativeTypeName("WCHAR [256]")]
     public fixed ushort wszTitle[256];
 
+    /// <include file='DESKBANDINFO.xml' path='doc/member[@name="DESKBANDINFO.dwModeFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwModeFlags;
 
+    /// <include file='DESKBANDINFO.xml' path='doc/member[@name="DESKBANDINFO.crBkgnd"]/*' />
     public COLORREF crBkgnd;
 }

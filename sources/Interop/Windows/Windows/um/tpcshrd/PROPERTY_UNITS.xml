@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PROPERTY_UNITS">
+    <summary>
+      <para>Defines constant values for the unit of measurement of a property.</para>
+    </summary>
+    <seealso cref="PROPERTY_METRICS Structure" />
+  </member>
+  <member name="PROPERTY_UNITS.PROPERTY_UNITS_DEFAULT">
+    <summary>
+      <para>Units are unknown.</para>
+    </summary>
+  </member>
+  <member name="PROPERTY_UNITS.PROPERTY_UNITS_INCHES">
+    <summary>
+      <para>The property value is in inches.</para>
+    </summary>
+  </member>
+  <member name="PROPERTY_UNITS.PROPERTY_UNITS_CENTIMETERS">
+    <summary>
+      <para>The property value is in centimeters.</para>
+    </summary>
+  </member>
+  <member name="PROPERTY_UNITS.PROPERTY_UNITS_DEGREES">
+    <summary>
+      <para>The property value is in degrees.</para>
+    </summary>
+  </member>
+  <member name="PROPERTY_UNITS.PROPERTY_UNITS_RADIANS">
+    <summary>
+      <para>The property value is in radians.</para>
+    </summary>
+  </member>
+  <member name="PROPERTY_UNITS.PROPERTY_UNITS_SECONDS">
+    <summary>
+      <para>The property value is in seconds.</para>
+    </summary>
+  </member>
+  <member name="PROPERTY_UNITS.PROPERTY_UNITS_POUNDS">
+    <summary>
+      <para>The property value is in pounds.</para>
+    </summary>
+  </member>
+  <member name="PROPERTY_UNITS.PROPERTY_UNITS_GRAMS">
+    <summary>
+      <para>The property value is in grams.</para>
+    </summary>
+  </member>
+  <member name="PROPERTY_UNITS.PROPERTY_UNITS_SILINEAR">
+    <summary></summary>
+  </member>
+  <member name="PROPERTY_UNITS.PROPERTY_UNITS_SIROTATION">
+    <summary></summary>
+  </member>
+  <member name="PROPERTY_UNITS.PROPERTY_UNITS_ENGLINEAR">
+    <summary></summary>
+  </member>
+  <member name="PROPERTY_UNITS.PROPERTY_UNITS_ENGROTATION">
+    <summary></summary>
+  </member>
+  <member name="PROPERTY_UNITS.PROPERTY_UNITS_SLUGS">
+    <summary></summary>
+  </member>
+  <member name="PROPERTY_UNITS.PROPERTY_UNITS_KELVIN">
+    <summary></summary>
+  </member>
+  <member name="PROPERTY_UNITS.PROPERTY_UNITS_FAHRENHEIT">
+    <summary></summary>
+  </member>
+  <member name="PROPERTY_UNITS.PROPERTY_UNITS_AMPERE">
+    <summary></summary>
+  </member>
+  <member name="PROPERTY_UNITS.PROPERTY_UNITS_CANDELA">
+    <summary></summary>
+  </member>
+</doc>

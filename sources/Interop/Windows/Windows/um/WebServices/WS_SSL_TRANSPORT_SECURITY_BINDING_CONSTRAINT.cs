@@ -5,15 +5,20 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_SSL_TRANSPORT_SECURITY_BINDING_CONSTRAINT.xml' path='doc/member[@name="WS_SSL_TRANSPORT_SECURITY_BINDING_CONSTRAINT"]/*' />
 public partial struct WS_SSL_TRANSPORT_SECURITY_BINDING_CONSTRAINT
 {
+    /// <include file='WS_SSL_TRANSPORT_SECURITY_BINDING_CONSTRAINT.xml' path='doc/member[@name="WS_SSL_TRANSPORT_SECURITY_BINDING_CONSTRAINT.bindingConstraint"]/*' />
     public WS_SECURITY_BINDING_CONSTRAINT bindingConstraint;
 
+    /// <include file='WS_SSL_TRANSPORT_SECURITY_BINDING_CONSTRAINT.xml' path='doc/member[@name="WS_SSL_TRANSPORT_SECURITY_BINDING_CONSTRAINT.@out"]/*' />
     [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/WebServices.h:6172:5)")]
     public _out_e__Struct @out;
 
+    /// <include file='_out_e__Struct.xml' path='doc/member[@name="_out_e__Struct"]/*' />
     public partial struct _out_e__Struct
     {
+        /// <include file='_out_e__Struct.xml' path='doc/member[@name="_out_e__Struct.clientCertCredentialRequired"]/*' />
         public BOOL clientCertCredentialRequired;
     }
 }

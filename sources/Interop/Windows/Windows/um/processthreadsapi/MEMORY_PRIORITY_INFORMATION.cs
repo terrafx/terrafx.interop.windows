@@ -7,9 +7,11 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MEMORY_PRIORITY_INFORMATION.xml' path='doc/member[@name="MEMORY_PRIORITY_INFORMATION"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public partial struct MEMORY_PRIORITY_INFORMATION
 {
+    /// <include file='MEMORY_PRIORITY_INFORMATION.xml' path='doc/member[@name="MEMORY_PRIORITY_INFORMATION.MemoryPriority"]/*' />
     [NativeTypeName("ULONG")]
     public uint MemoryPriority;
 }

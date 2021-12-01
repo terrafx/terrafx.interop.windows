@@ -1,0 +1,1154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="Windows.Tbsip_Cancel_Commands">
+    <summary>
+      <para>Cancels all outstanding commands for the specified context.</para>
+    </summary>
+    <param name="hContext">
+      <para>A TBS handle to the context whose commands are to be canceled and that was obtained from previous call to the <see cref="Tbsi_Context_Create" /> function.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the function returns TBS_SUCCESS.</para>
+      <para>If the function fails, it returns a TBS return code that indicates the error.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code/value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TBS_SUCCESS</b>
+                </description>
+              </item>
+              <item>
+                <description>0 (0x0)</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The function was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TBS_E_INTERNAL_ERROR</b>
+                </description>
+              </item>
+              <item>
+                <description>2150121473 (0x80284001)</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>An internal software error occurred.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TBS_E_INVALID_CONTEXT</b>
+                </description>
+              </item>
+              <item>
+                <description>2150121476 (0x80284004)</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The specified context handle does not refer to a valid context.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TBS_E_IOERROR</b>
+                </description>
+              </item>
+              <item>
+                <description>2150121478 (0x80284006)</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>An error occurred while communicating with the TPM.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>When a command is canceled, TBS sends a message to the command that indicates that the command was canceled.</para>
+    </remarks>
+  </member>
+  <member name="Windows.Tbsip_Context_Close">
+    <summary>
+      <para>Closes a context handle, which releases resources associated with the context in TBS and closes the binding handle used to communicate with TBS.</para>
+    </summary>
+    <param name="hContext">
+      <para>A handle of the context to be closed.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the function returns TBS_SUCCESS.</para>
+      <para>If the function fails, it returns a TBS return code that indicates the error.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code/value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TBS_SUCCESS</b>
+                </description>
+              </item>
+              <item>
+                <description>0 (0x0)</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The function was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TBS_E_INTERNAL_ERROR</b>
+                </description>
+              </item>
+              <item>
+                <description>2150121473 (0x80284001)</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>An internal software error occurred.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TBS_E_INVALID_CONTEXT</b>
+                </description>
+              </item>
+              <item>
+                <description>2150121476 (0x80284004)</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The specified context handle does not refer to a valid context.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>When the context handle is closed, the structure associated with the context handle is zeroed, which ensures that  subsequent attempts to use the handle will result in an error. All objects that have been created under this context will be flushed.</para>
+    </remarks>
+  </member>
+  <member name="Windows.Tbsip_Submit_Command">
+    <summary>
+      <para>Submits a Trusted Platform Module (TPM) command to TPM Base Services (TBS) for processing.</para>
+    </summary>
+    <param name="hContext">
+      <para>The handle of the context that is submitting the command.</para>
+    </param>
+    <param name="Locality">
+      <para>Used to set the locality for the TPM command. This must be one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TBS_COMMAND_LOCALITY_ZERO</b>
+                </description>
+              </item>
+              <item>
+                <description>0 (0x0)</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Locality zero. This is the only locality currently supported.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TBS_COMMAND_LOCALITY_ONE</b>
+                </description>
+              </item>
+              <item>
+                <description>1 (0x1)</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Locality one.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TBS_COMMAND_LOCALITY_TWO</b>
+                </description>
+              </item>
+              <item>
+                <description>2 (0x2)</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Locality two.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TBS_COMMAND_LOCALITY_THREE</b>
+                </description>
+              </item>
+              <item>
+                <description>3 (0x3)</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Locality three.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TBS_COMMAND_LOCALITY_FOUR</b>
+                </description>
+              </item>
+              <item>
+                <description>4 (0x4)</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Locality four.</para>
+          </description>
+        </item>
+      </list>
+    </param>
+    <param name="Priority">
+      <para>The priority level that the command should have. This parameter can be one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TBS_COMMAND_PRIORITY_LOW</b>
+                </description>
+              </item>
+              <item>
+                <description>100 (0x64)</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Used for low priority application use.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TBS_COMMAND_PRIORITY_NORMAL</b>
+                </description>
+              </item>
+              <item>
+                <description>200 (0xC8)</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Used for normal priority application use.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TBS_COMMAND_PRIORITY_SYSTEM</b>
+                </description>
+              </item>
+              <item>
+                <description>400 (0x190)</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Used for system tasks that access the TPM.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TBS_COMMAND_PRIORITY_HIGH</b>
+                </description>
+              </item>
+              <item>
+                <description>300 (0x12C)</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Used for high priority application use.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TBS_COMMAND_PRIORITY_MAX</b>
+                </description>
+              </item>
+              <item>
+                <description>2147483648 (0x80000000)</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Used for tasks that originate from the power management system.</para>
+          </description>
+        </item>
+      </list>
+    </param>
+    <param name="pabCommand">
+      <para>A pointer to a buffer that contains the TPM command to process.</para>
+    </param>
+    <param name="cbCommand">
+      <para>The length, in bytes, of the command.</para>
+    </param>
+    <param name="pabResult">
+      <para>A pointer to a buffer to receive the result of the TPM command.  This buffer can be the same as <i>pabCommand</i>.</para>
+    </param>
+    <param name="pcbResult">
+      <para>An integer that, on input, specifies the size, in bytes, of the result buffer.  This value is set when the submit command returns.  If the supplied buffer is too small, this parameter, on output, is set to the required size, in bytes, for the result.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the function returns TBS_SUCCESS.</para>
+      <para>A command can be submitted successfully and still fail at the TPM. In this case, the failure code is returned as a standard TPM error in the result buffer.</para>
+      <para>If the function fails, it returns a TBS return code that indicates the error.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code/value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TBS_SUCCESS</b>
+                </description>
+              </item>
+              <item>
+                <description>0 (0x0)</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The function was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TBS_E_BAD_PARAMETER</b>
+                </description>
+              </item>
+              <item>
+                <description>2150121474 (0x80284002)</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>One or more parameter values are not valid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TBS_E_BUFFER_TOO_LARGE</b>
+                </description>
+              </item>
+              <item>
+                <description>2150121486 (0x8028400E)</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The input or output buffer is too large.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TBS_E_INTERNAL_ERROR</b>
+                </description>
+              </item>
+              <item>
+                <description>2150121473 (0x80284001)</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>An internal software error occurred.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TBS_E_INSUFFICIENT_BUFFER</b>
+                </description>
+              </item>
+              <item>
+                <description>2150121477 (0x80284005)</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The specified output buffer is too small.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TBS_E_INVALID_CONTEXT</b>
+                </description>
+              </item>
+              <item>
+                <description>2150121476 (0x80284004)</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The specified context handle does not refer to a valid context.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TBS_E_INVALID_OUTPUT_POINTER</b>
+                </description>
+              </item>
+              <item>
+                <description>2150121475 (0x80284003)</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>A specified output pointer is not valid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TBS_E_IOERROR</b>
+                </description>
+              </item>
+              <item>
+                <description>2150121478 (0x80284006)</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>An error occurred while communicating with the TPM.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.Tbsi_Context_Create">
+    <summary>
+      <para>Creates a context handle that can be used to pass commands to TBS.</para>
+    </summary>
+    <param name="pContextParams">
+      <para>A parameter to a <see cref="TBS_CONTEXT_PARAMS" /> structure that contains the parameters associated with the context.</para>
+    </param>
+    <param name="phContext">
+      <para>A pointer to a location to store the new context handle.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the function returns TBS_SUCCESS.</para>
+      <para>If the function fails, it returns a TBS return code that indicates the error.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code/value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TBS_SUCCESS</b>
+                </description>
+              </item>
+              <item>
+                <description>0 (0x0)</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The function was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TBS_E_BAD_PARAMETER</b>
+                </description>
+              </item>
+              <item>
+                <description>2150121474 (0x80284002)</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>One or more parameter values are not valid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TBS_E_INTERNAL_ERROR</b>
+                </description>
+              </item>
+              <item>
+                <description>2150121473 (0x80284001)</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>An internal software error occurred.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TBS_E_INVALID_CONTEXT_PARAM</b>
+                </description>
+              </item>
+              <item>
+                <description>2150121479 (0x80284007)</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>A context parameter that is not valid was passed when attempting to create a TBS context.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TBS_E_INVALID_OUTPUT_POINTER</b>
+                </description>
+              </item>
+              <item>
+                <description>2150121475 (0x80284003)</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>A specified output pointer is not valid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TBS_E_SERVICE_DISABLED</b>
+                </description>
+              </item>
+              <item>
+                <description>2150121488 (0x80284010)</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The TBS service has been disabled.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TBS_E_SERVICE_NOT_RUNNING</b>
+                </description>
+              </item>
+              <item>
+                <description>2150121480 (0x80284008)</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The TBS service is not running and could not be started.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TBS_E_SERVICE_START_PENDING</b>
+                </description>
+              </item>
+              <item>
+                <description>2150121483 (0x8028400B)</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The TBS service has been started but is not yet running.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TBS_E_TOO_MANY_TBS_CONTEXTS</b>
+                </description>
+              </item>
+              <item>
+                <description>2150121481 (0x80284009)</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>A new context could not be created because there are too many open contexts.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TBS_E_TPM_NOT_FOUND</b>
+                </description>
+              </item>
+              <item>
+                <description>2150121487 (0x8028400F)</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>A compatible Trusted Platform Module (TPM) Security Device cannot be found on this computer.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The <see cref="TBS_CONTEXT_PARAMS" /> structure can be provided, with the version field set to TPM_VERSION_12.
+Applications interacting with version 2.0 TPM will pass a pointer to a <see cref="TBS_CONTEXT_PARAMS2" /> structure, with the version field set to TPM_VERSION_20. Set the reserved field to 0, and the <b>includeTPm20</b> field to 1. If the application is prepared to interact with a version 1.2 TPM as well (in case the system has no version 2.0 TPM), set the <b>includeTpm12</b> field to 1.</para>
+      <para>If no TPM is present on the system, or the TPM version does not match those requested by the caller, <b>Tbsi_Context_Create</b> will return the TBS_E_TPM_NOT_FOUND (0x8028400) error code.  Application programs must check for both versions and be able to interact with either TPM.</para>
+    </remarks>
+  </member>
+  <member name="Windows.Tbsi_GetDeviceInfo">
+    <summary>
+      <para>Obtains the version of the TPM on the computer.</para>
+    </summary>
+    <param name="Size">
+      <para>Size of the memory location.</para>
+    </param>
+    <param name="Info">
+      <para>A pointer to a <see cref="TPM_DEVICE_INFO" /> structure is returned containing the version information about the TPM. The location must be large enough to hold four 32-bit values.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the function returns TBS_SUCCESS.</para>
+      <para>If the function fails, it returns a TBS return code that indicates the error.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code/value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TBS_SUCCESS</b>
+                </description>
+              </item>
+              <item>
+                <description>0 (0x0)</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The function was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TBS_E_BAD_PARAMETER</b>
+                </description>
+              </item>
+              <item>
+                <description>2150121474 (0x80284002)</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>One or more parameter values are not valid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TBS_E_TPM_NOT_FOUND</b>
+                </description>
+              </item>
+              <item>
+                <description>2150121487 (0x8028400F)</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>A compatible Trusted Platform Module (TPM) Security Device cannot be found on this computer.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.Tbsi_Get_OwnerAuth">
+    <summary>
+      <para>Retrieves the owner authorization  of the TPM if the information is available in the local registry.</para>
+    </summary>
+    <param name="hContext">
+      <para>TBS handle obtained from a previous call to the <see cref="Tbsi_Context_Create" /> function.</para>
+    </param>
+    <param name="ownerauthType">
+      <para>Unsigned 32-bit integer indicating the type of owner authentication.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TBS_OWNERAUTH_TYPE_FULL</b>
+                </description>
+              </item>
+              <item>
+                <description>1</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The owner authorization is full.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TBS_OWNERAUTH_TYPE_ADMIN</b>
+                </description>
+              </item>
+              <item>
+                <description>2</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <b>Note</b>  TPM 1.2 only
+<para>The owner authorization is an administrator.</para></description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TBS_OWNERAUTH_TYPE_USER</b>
+                </description>
+              </item>
+              <item>
+                <description>3</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <b>Note</b>  TPM 1.2 only
+<para>The owner authorization is a user.</para></description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TBS_OWNERAUTH_TYPE_ENDORSEMENT</b>
+                </description>
+              </item>
+              <item>
+                <description>4</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <b>Note</b>  TPM 1.2 only
+<para>The owner authorization is an endorsement authorization.</para></description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TBS_OWNERAUTH_TYPE_ENDORSEMENT_20 </b>
+                </description>
+              </item>
+              <item>
+                <description>12</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <b>Note</b>  TPM 2.0 and later
+<para>The owner authorization is an endorsement authorization.</para></description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TBS_OWNERAUTH_TYPE_STORAGE_20 </b>
+                </description>
+              </item>
+              <item>
+                <description>13</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <b>Note</b>  TPM 2.0 and later
+<para>The owner authorization is an administrator.</para></description>
+        </item>
+      </list>
+    </param>
+    <param name="pOutputBuf">
+      <para>A pointer to a buffer to receive the TPM owner authorization information.</para>
+    </param>
+    <param name="pOutputBufLen">
+      <para>An integer that, on input, specifies the size, in bytes, of the output buffer. On successful return, this value is set to the actual size of the TPM ownerAuth, in bytes.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the function returns <b>TBS_SUCCESS</b>.</para>
+      <para>If the function fails, it returns a TBS return code that indicates the error.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code/value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TBS_SUCCESS</b>
+                </description>
+              </item>
+              <item>
+                <description>0 (0x0)</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The function was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TBS_E_OWNERAUTH_NOT_FOUND</b>
+                </description>
+              </item>
+              <item>
+                <description>2150121493 (0x80284015)</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The requested TPM ownerAuth value was not found.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TBS_E_BAD_PARAMETER</b>
+                </description>
+              </item>
+              <item>
+                <description>2150121474 (0x80284002)</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The requested TPM ownerAuth value does not match the TPM version.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>There are additional authorization values, also known as delegation blobs, derived from the full TPM ownerAuth that allow a subset of the TPM functionality to be executed. The administrator can configure the level of ownerAuth that should be locally stored in the registry through Group Policy and the same can be obtained from this API call.</para>
+      <para>If Active Directory backup of ownerAuth is enabled through Group Policy, the default level of ownerAuth is set as Delegated which means that the full owner auth is removed from the local registry and stored in Active Directory. Only delegation blobs are locally stored in the registry in that case. Although, the level of ownerAuth storage can be explicitly configured to Full resulting in the TPM ownerAuth being locally available in the registry.</para>
+    </remarks>
+  </member>
+  <member name="Windows.Tbsi_Physical_Presence_Command">
+    <summary>
+      <para>Passes a physical presence ACPI command through TBS to the driver.</para>
+    </summary>
+    <param name="hContext">
+      <para>The context of the ACPI command.</para>
+    </param>
+    <param name="pabInput">
+      <para>A pointer to a buffer that contains the input to the ACPI command.</para>
+      <para>The input to the ACPI command is defined in the <a href="https://trustedcomputinggroup.org/specs/pcclient/physical_presence_interface_1-0_1-0_final.pdf">TCG Physical Presence Interface Specification</a> at https://www.trustedcomputinggroup.org/specs/PCClient. The buffer should contain <i>Arg2</i> and <i>Arg3</i> values as defined in this document. The values for <i>Arg0</i> and <i>Arg1</i> are static and automatically added. For example, if this method is used for Get Physical Presence Interface Version, then <i>Arg2</i> is the integer value 1 and <i>Arg3</i> is empty, so the buffer should just contain an integer value of 1. If this method is used for "Submit TPM Operation Request to Pre-OS Environment", then <i>Arg2</i> is the integer value 2 and <i>Arg3</i> will be the integer for the specified operation, such as 1 for enable or 2 for disable.</para>
+    </param>
+    <param name="cbInput">
+      <para>The length, in bytes, of the input buffer.</para>
+    </param>
+    <param name="pabOutput">
+      <para>A pointer to a buffer to contain the output of the ACPI command.</para>
+      <para>The buffer will contain the return value from the  command as defined in the <a href="https://trustedcomputinggroup.org/specs/pcclient/physical_presence_interface_1-0_1-0_final.pdf">TCG Physical Presence Interface Specification</a>.</para>
+    </param>
+    <param name="pcbOutput">
+      <para>A pointer to an unsigned long integer that, on input, specifies the size, in bytes, of the output buffer. If the function succeeds, this parameter, on output, receives the size, in bytes, of the data pointed to by <i>pabOutput</i>. If the function fails, this parameter does not receive a value.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the function returns TBS_SUCCESS.</para>
+      <para>If the function fails, it returns a TBS return code that indicates the error.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code/value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TBS_SUCCESS</b>
+                </description>
+              </item>
+              <item>
+                <description>0 (0x0)</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The function was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TBS_E_BAD_PARAMETER</b>
+                </description>
+              </item>
+              <item>
+                <description>2150121474 (0x80284002)</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>One or more parameter values are not valid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TBS_E_INTERNAL_ERROR</b>
+                </description>
+              </item>
+              <item>
+                <description>2150121473 (0x80284001)</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>An internal software error occurred.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TBS_E_INVALID_CONTEXT_PARAM</b>
+                </description>
+              </item>
+              <item>
+                <description>2150121479 (0x80284007)</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>A context parameter that is not valid was passed when attempting to create a TBS context.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TBS_E_INVALID_OUTPUT_POINTER</b>
+                </description>
+              </item>
+              <item>
+                <description>2150121475 (0x80284003)</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>A specified output pointer is not valid.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>For more information, see <a href="https://trustedcomputinggroup.org/specs/pcclient/physical_presence_interface_1-0_1-0_final.pdf">TCG Physical Presence Interface Specification</a>.</para>
+    </remarks>
+  </member>
+  <member name="Windows.Tbsi_Revoke_Attestation">
+    <summary>
+      <para>Invalidates the PCRs if the ELAM driver detects a policy-violation (a rootkit, for example).</para>
+    </summary>
+    <returns>
+      <list type="table">
+        <listheader>
+          <description>Return code/value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TBS_SUCCESS</b>
+                </description>
+              </item>
+              <item>
+                <description>0 (0x0)</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The function succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TBS_E_INTERNAL_ERROR</b>
+                </description>
+              </item>
+              <item>
+                <description>2150121473 (0x80284001)</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>An internal software error occurred.</para>
+            <para>
+              <b>Note</b>  If TBS_E_INTERNAL_ERROR is returned, the system event log may contain event ID 16385 from the TBS event source with error code 0x80070032.  This may indicate that the hardware platform does not provide a TCG event log to the operating system.  Sometimes this can be resolved by installing a BIOS upgrade from the platform manufacturer.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This function is callable from kernel mode.</para>
+      <para>You must run this function with administrative rights. This function extends PCR[12] by an unspecified value and increment the event counter in the TPM. Both actions are necessary, so the trust is broken in all quotes that are created from here on forward. Since the PCRs are reset on hibernation and the extend to PCR[12] then will disappear, a gap in the event counter will indicate a broken chain of logs.</para>
+      <para>As a result, the WBCL files will not reflect the current state of the TPM for the remainder of the time that the TPM is powered up and remote systems will not be able to form trust in the security state of the system.  Note that anti-malware systems will probably perform additional remediation or alerts, but the invalidation step is crucial if attestation is supported.</para>
+      <para>When the computer goes to hibernation and subsequently resumes, the previous PCR extent will be lost, and the broken trust will not be reflected in the PCR measurements anymore. To address this, the <b>Tbsi_Revoke_Attestation</b> function also increments the monotonic Event Counter located in the TPM. Further TPM attestation validations will notice a gap in the archived WBCL logs’ boot counter values. Upon discovery of such a gap, attestation validation code should fail the validation, just as it would if other required events were not present in the log. Note that the counter in the TPM cannot be rolled back you can't construct the missing WBCL after the fact.</para>
+    </remarks>
+  </member>
+</doc>

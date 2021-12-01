@@ -5,16 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TRANSACTION_NOTIFICATION.xml' path='doc/member[@name="TRANSACTION_NOTIFICATION"]/*' />
 public unsafe partial struct TRANSACTION_NOTIFICATION
 {
+    /// <include file='TRANSACTION_NOTIFICATION.xml' path='doc/member[@name="TRANSACTION_NOTIFICATION.TransactionKey"]/*' />
     [NativeTypeName("PVOID")]
     public void* TransactionKey;
 
+    /// <include file='TRANSACTION_NOTIFICATION.xml' path='doc/member[@name="TRANSACTION_NOTIFICATION.TransactionNotification"]/*' />
     [NativeTypeName("ULONG")]
     public uint TransactionNotification;
 
+    /// <include file='TRANSACTION_NOTIFICATION.xml' path='doc/member[@name="TRANSACTION_NOTIFICATION.TmVirtualClock"]/*' />
     public LARGE_INTEGER TmVirtualClock;
 
+    /// <include file='TRANSACTION_NOTIFICATION.xml' path='doc/member[@name="TRANSACTION_NOTIFICATION.ArgumentLength"]/*' />
     [NativeTypeName("ULONG")]
     public uint ArgumentLength;
 }

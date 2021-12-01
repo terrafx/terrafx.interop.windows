@@ -5,14 +5,30 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HTMLDlgFlag.xml' path='doc/member[@name="HTMLDlgFlag"]/*' />
 public enum HTMLDlgFlag
 {
+    /// <include file='HTMLDlgFlag.xml' path='doc/member[@name="HTMLDlgFlag.HTMLDlgFlagNo"]/*' />
     HTMLDlgFlagNo = 0,
+
+    /// <include file='HTMLDlgFlag.xml' path='doc/member[@name="HTMLDlgFlag.HTMLDlgFlagOff"]/*' />
     HTMLDlgFlagOff = 0,
+
+    /// <include file='HTMLDlgFlag.xml' path='doc/member[@name="HTMLDlgFlag.HTMLDlgFlag0"]/*' />
     HTMLDlgFlag0 = 0,
+
+    /// <include file='HTMLDlgFlag.xml' path='doc/member[@name="HTMLDlgFlag.HTMLDlgFlagYes"]/*' />
     HTMLDlgFlagYes = 1,
+
+    /// <include file='HTMLDlgFlag.xml' path='doc/member[@name="HTMLDlgFlag.HTMLDlgFlagOn"]/*' />
     HTMLDlgFlagOn = 1,
+
+    /// <include file='HTMLDlgFlag.xml' path='doc/member[@name="HTMLDlgFlag.HTMLDlgFlag1"]/*' />
     HTMLDlgFlag1 = 1,
+
+    /// <include file='HTMLDlgFlag.xml' path='doc/member[@name="HTMLDlgFlag.HTMLDlgFlagNotSet"]/*' />
     HTMLDlgFlagNotSet = -1,
+
+    /// <include file='HTMLDlgFlag.xml' path='doc/member[@name="HTMLDlgFlag.HTMLDlgFlag_Max"]/*' />
     HTMLDlgFlag_Max = 2147483647,
 }

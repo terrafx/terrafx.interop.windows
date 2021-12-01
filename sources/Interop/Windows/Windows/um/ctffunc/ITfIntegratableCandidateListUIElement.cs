@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITfIntegratableCandidateListUIElement.xml' path='doc/member[@name="ITfIntegratableCandidateListUIElement"]/*' />
 [Guid("C7A6F54F-B180-416F-B2BF-7BF2E4683D7B")]
 [NativeTypeName("struct ITfIntegratableCandidateListUIElement : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct ITfIntegratableCandidateListUIElement : ITfIntegrat
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct ITfIntegratableCandidateListUIElement : ITfIntegrat
         return ((delegate* unmanaged<ITfIntegratableCandidateListUIElement*, Guid*, void**, int>)(lpVtbl[0]))((ITfIntegratableCandidateListUIElement*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct ITfIntegratableCandidateListUIElement : ITfIntegrat
         return ((delegate* unmanaged<ITfIntegratableCandidateListUIElement*, uint>)(lpVtbl[1]))((ITfIntegratableCandidateListUIElement*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct ITfIntegratableCandidateListUIElement : ITfIntegrat
         return ((delegate* unmanaged<ITfIntegratableCandidateListUIElement*, uint>)(lpVtbl[2]))((ITfIntegratableCandidateListUIElement*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITfIntegratableCandidateListUIElement.xml' path='doc/member[@name="ITfIntegratableCandidateListUIElement.SetIntegrationStyle"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetIntegrationStyle(Guid guidIntegrationStyle)
@@ -48,6 +53,7 @@ public unsafe partial struct ITfIntegratableCandidateListUIElement : ITfIntegrat
         return ((delegate* unmanaged<ITfIntegratableCandidateListUIElement*, Guid, int>)(lpVtbl[3]))((ITfIntegratableCandidateListUIElement*)Unsafe.AsPointer(ref this), guidIntegrationStyle);
     }
 
+    /// <include file='ITfIntegratableCandidateListUIElement.xml' path='doc/member[@name="ITfIntegratableCandidateListUIElement.GetSelectionStyle"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetSelectionStyle(TfIntegratableCandidateListSelectionStyle* ptfSelectionStyle)
@@ -55,6 +61,7 @@ public unsafe partial struct ITfIntegratableCandidateListUIElement : ITfIntegrat
         return ((delegate* unmanaged<ITfIntegratableCandidateListUIElement*, TfIntegratableCandidateListSelectionStyle*, int>)(lpVtbl[4]))((ITfIntegratableCandidateListUIElement*)Unsafe.AsPointer(ref this), ptfSelectionStyle);
     }
 
+    /// <include file='ITfIntegratableCandidateListUIElement.xml' path='doc/member[@name="ITfIntegratableCandidateListUIElement.OnKeyDown"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT OnKeyDown(WPARAM wParam, LPARAM lParam, BOOL* pfEaten)
@@ -62,6 +69,7 @@ public unsafe partial struct ITfIntegratableCandidateListUIElement : ITfIntegrat
         return ((delegate* unmanaged<ITfIntegratableCandidateListUIElement*, WPARAM, LPARAM, BOOL*, int>)(lpVtbl[5]))((ITfIntegratableCandidateListUIElement*)Unsafe.AsPointer(ref this), wParam, lParam, pfEaten);
     }
 
+    /// <include file='ITfIntegratableCandidateListUIElement.xml' path='doc/member[@name="ITfIntegratableCandidateListUIElement.ShowCandidateNumbers"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT ShowCandidateNumbers(BOOL* pfShow)
@@ -69,6 +77,7 @@ public unsafe partial struct ITfIntegratableCandidateListUIElement : ITfIntegrat
         return ((delegate* unmanaged<ITfIntegratableCandidateListUIElement*, BOOL*, int>)(lpVtbl[6]))((ITfIntegratableCandidateListUIElement*)Unsafe.AsPointer(ref this), pfShow);
     }
 
+    /// <include file='ITfIntegratableCandidateListUIElement.xml' path='doc/member[@name="ITfIntegratableCandidateListUIElement.FinalizeExactCompositionString"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT FinalizeExactCompositionString()

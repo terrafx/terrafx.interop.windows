@@ -9,20 +9,26 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STORAGE_DEVICE_FAULT_DOMAIN_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_DEVICE_FAULT_DOMAIN_DESCRIPTOR"]/*' />
 public partial struct STORAGE_DEVICE_FAULT_DOMAIN_DESCRIPTOR
 {
+    /// <include file='STORAGE_DEVICE_FAULT_DOMAIN_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_DEVICE_FAULT_DOMAIN_DESCRIPTOR.Version"]/*' />
     [NativeTypeName("DWORD")]
     public uint Version;
 
+    /// <include file='STORAGE_DEVICE_FAULT_DOMAIN_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_DEVICE_FAULT_DOMAIN_DESCRIPTOR.Size"]/*' />
     [NativeTypeName("DWORD")]
     public uint Size;
 
+    /// <include file='STORAGE_DEVICE_FAULT_DOMAIN_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_DEVICE_FAULT_DOMAIN_DESCRIPTOR.NumberOfFaultDomains"]/*' />
     [NativeTypeName("DWORD")]
     public uint NumberOfFaultDomains;
 
+    /// <include file='STORAGE_DEVICE_FAULT_DOMAIN_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_DEVICE_FAULT_DOMAIN_DESCRIPTOR.FaultDomainIds"]/*' />
     [NativeTypeName("GUID [1]")]
     public _FaultDomainIds_e__FixedBuffer FaultDomainIds;
 
+    /// <include file='_FaultDomainIds_e__FixedBuffer.xml' path='doc/member[@name="_FaultDomainIds_e__FixedBuffer"]/*' />
     public partial struct _FaultDomainIds_e__FixedBuffer
     {
         public Guid e0;

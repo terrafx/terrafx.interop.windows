@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='eAVDDSurroundMode.xml' path='doc/member[@name="eAVDDSurroundMode"]/*' />
 public enum eAVDDSurroundMode
 {
+    /// <include file='eAVDDSurroundMode.xml' path='doc/member[@name="eAVDDSurroundMode.eAVDDSurroundMode_NotIndicated"]/*' />
     eAVDDSurroundMode_NotIndicated = 0,
+
+    /// <include file='eAVDDSurroundMode.xml' path='doc/member[@name="eAVDDSurroundMode.eAVDDSurroundMode_No"]/*' />
     eAVDDSurroundMode_No = 1,
+
+    /// <include file='eAVDDSurroundMode.xml' path='doc/member[@name="eAVDDSurroundMode.eAVDDSurroundMode_Yes"]/*' />
     eAVDDSurroundMode_Yes = 2,
 }

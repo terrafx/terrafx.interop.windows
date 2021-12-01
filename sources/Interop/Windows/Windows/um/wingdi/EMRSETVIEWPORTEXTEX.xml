@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="EMRSETVIEWPORTEXTEX">
+    <summary>
+      <para>The <b>EMRSETVIEWPORTEXTEX</b> and <b>EMRSETWINDOWEXTEX</b> structures contains members for the <b>SetViewportExtEx</b> and <b>SetWindowExtEx</b> enhanced metafile records.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafile-structures">Metafile Structures</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafiles">Metafiles Overview</seealso>
+  </member>
+  <member name="EMRSETVIEWPORTEXTEX.emr">
+    <summary>
+      <para>Base structure for all record types.</para>
+    </summary>
+  </member>
+  <member name="EMRSETVIEWPORTEXTEX.szlExtent">
+    <summary>
+      <para>Horizontal and vertical extents. For <b>SetViewportExtEx</b>, the extents are in device units, and for <b>SetWindowExtEx</b>, the extents are in logical units.</para>
+    </summary>
+  </member>
+</doc>

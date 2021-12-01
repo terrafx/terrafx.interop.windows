@@ -9,14 +9,18 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PSAPI_WORKING_SET_INFORMATION.xml' path='doc/member[@name="PSAPI_WORKING_SET_INFORMATION"]/*' />
 public partial struct PSAPI_WORKING_SET_INFORMATION
 {
+    /// <include file='PSAPI_WORKING_SET_INFORMATION.xml' path='doc/member[@name="PSAPI_WORKING_SET_INFORMATION.NumberOfEntries"]/*' />
     [NativeTypeName("ULONG_PTR")]
     public nuint NumberOfEntries;
 
+    /// <include file='PSAPI_WORKING_SET_INFORMATION.xml' path='doc/member[@name="PSAPI_WORKING_SET_INFORMATION.WorkingSetInfo"]/*' />
     [NativeTypeName("PSAPI_WORKING_SET_BLOCK [1]")]
     public _WorkingSetInfo_e__FixedBuffer WorkingSetInfo;
 
+    /// <include file='_WorkingSetInfo_e__FixedBuffer.xml' path='doc/member[@name="_WorkingSetInfo_e__FixedBuffer"]/*' />
     public partial struct _WorkingSetInfo_e__FixedBuffer
     {
         public PSAPI_WORKING_SET_BLOCK e0;

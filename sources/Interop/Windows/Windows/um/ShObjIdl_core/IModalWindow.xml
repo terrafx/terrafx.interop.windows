@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IModalWindow.Show">
+    <summary>
+      <para>Launches the modal window.</para>
+    </summary>
+    <param name="hwndOwner">
+      <para>Type: <b>HWND</b></para>
+      <para>The handle of the owner window. This value can be <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If the method succeeds, it returns S_OK. Otherwise, it returns an HRESULT error code, including the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>
+                <see cref="HRESULT_FROM_WIN32" />(ERROR_CANCELLED)</b>
+            </para>
+          </description>
+          <description>
+            <para>The user closed the window by cancelling the operation.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+  </member>
+  <member name="IModalWindow">
+    <summary>
+      <para>Exposes a method that represents a modal window. This interface is used in the Windows XP Passport Wizard.</para>
+    </summary>
+    <remarks>
+      <para>
+        <b>IModalWindow</b>'s IID is IID_IModalWindow.</para>
+    </remarks>
+  </member>
+</doc>

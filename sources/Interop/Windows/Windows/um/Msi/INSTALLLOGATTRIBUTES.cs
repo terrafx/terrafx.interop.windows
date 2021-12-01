@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='INSTALLLOGATTRIBUTES.xml' path='doc/member[@name="INSTALLLOGATTRIBUTES"]/*' />
 public enum INSTALLLOGATTRIBUTES
 {
+    /// <include file='INSTALLLOGATTRIBUTES.xml' path='doc/member[@name="INSTALLLOGATTRIBUTES.INSTALLLOGATTRIBUTES_APPEND"]/*' />
     INSTALLLOGATTRIBUTES_APPEND = (1 << 0),
+
+    /// <include file='INSTALLLOGATTRIBUTES.xml' path='doc/member[@name="INSTALLLOGATTRIBUTES.INSTALLLOGATTRIBUTES_FLUSHEACHLINE"]/*' />
     INSTALLLOGATTRIBUTES_FLUSHEACHLINE = (1 << 1),
 }

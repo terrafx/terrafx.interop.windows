@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TRANSPARENTBACKGROUNDSTATES.xml' path='doc/member[@name="TRANSPARENTBACKGROUNDSTATES"]/*' />
 public enum TRANSPARENTBACKGROUNDSTATES
 {
+    /// <include file='TRANSPARENTBACKGROUNDSTATES.xml' path='doc/member[@name="TRANSPARENTBACKGROUNDSTATES.CBTBS_NORMAL"]/*' />
     CBTBS_NORMAL = 1,
+
+    /// <include file='TRANSPARENTBACKGROUNDSTATES.xml' path='doc/member[@name="TRANSPARENTBACKGROUNDSTATES.CBTBS_HOT"]/*' />
     CBTBS_HOT = 2,
+
+    /// <include file='TRANSPARENTBACKGROUNDSTATES.xml' path='doc/member[@name="TRANSPARENTBACKGROUNDSTATES.CBTBS_DISABLED"]/*' />
     CBTBS_DISABLED = 3,
+
+    /// <include file='TRANSPARENTBACKGROUNDSTATES.xml' path='doc/member[@name="TRANSPARENTBACKGROUNDSTATES.CBTBS_FOCUSED"]/*' />
     CBTBS_FOCUSED = 4,
 }

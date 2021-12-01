@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_SECURITY_PROPERTY_CONSTRAINT">
+    <summary>
+      <para>This structure is used to specify a set of constraints
+for a particular security property.
+Any property constraints that are not specified will use
+the default constraints.</para>
+    </summary>
+  </member>
+  <member name="WS_SECURITY_PROPERTY_CONSTRAINT.id">
+    <summary>
+      <para>The id of the security property.  The following security
+property constraints may be specified:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <see cref="WS_SECURITY_PROPERTY_TIMESTAMP_USAGE" />
+            <para>This property constraint may be specified when any
+of the following security bindings are specified:</para>
+            <list type="bullet">
+              <item>
+                <description>
+                  <see cref="WS_USERNAME_MESSAGE_SECURITY_BINDING_CONSTRAINT" />
+                </description>
+              </item>
+              <item>
+                <description>
+                  <see cref="WS_KERBEROS_APREQ_MESSAGE_SECURITY_BINDING_CONSTRAINT" />
+                </description>
+              </item>
+              <item>
+                <description>
+                  <see cref="WS_CERT_MESSAGE_SECURITY_BINDING_CONSTRAINT" />
+                </description>
+              </item>
+              <item>
+                <description>
+                  <see cref="WS_SECURITY_CONTEXT_MESSAGE_SECURITY_BINDING_CONSTRAINT" />
+                </description>
+              </item>
+            </list>
+            <para>If this property is not specified, then the default constraint value
+of <see cref="WS_SECURITY_TIMESTAMP_USAGE_ALWAYS" /> will be used.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="WS_SECURITY_PROPERTY_TRANSPORT_PROTECTION_LEVEL" />
+            <para>This property constraint may be specified when any
+of the following security bindings are specified:</para>
+            <list type="bullet">
+              <item>
+                <description>
+                  <see cref="WS_SSL_TRANSPORT_SECURITY_BINDING_CONSTRAINT" />
+                </description>
+              </item>
+              <item>
+                <description>
+                  <see cref="WS_TCP_SSPI_TRANSPORT_SECURITY_BINDING_CONSTRAINT" />
+                </description>
+              </item>
+              <item>
+                <description>
+                  <see cref="WS_HTTP_HEADER_AUTH_SECURITY_BINDING_CONSTRAINT" />
+                </description>
+              </item>
+            </list>
+            <para>If this property is not specified, then the default constraint value
+of <see cref="WS_PROTECTION_LEVEL_SIGN_AND_ENCRYPT" /> will be used.</para>
+            <para>
+              <b>WS_SECURITY_PROPERTY_SECURITY_HEADER_LAYOUT</b> This property constraint may be specified when any
+of the following security bindings are specified:</para>
+            <list type="bullet">
+              <item>
+                <description>
+                  <see cref="WS_USERNAME_MESSAGE_SECURITY_BINDING_CONSTRAINT" />
+                </description>
+              </item>
+              <item>
+                <description>
+                  <see cref="WS_KERBEROS_APREQ_MESSAGE_SECURITY_BINDING_CONSTRAINT" />
+                </description>
+              </item>
+              <item>
+                <description>
+                  <see cref="WS_CERT_MESSAGE_SECURITY_BINDING_CONSTRAINT" />
+                </description>
+              </item>
+              <item>
+                <description>
+                  <see cref="WS_SECURITY_CONTEXT_MESSAGE_SECURITY_BINDING_CONSTRAINT" />
+                </description>
+              </item>
+            </list>
+            <para>If this property is not specified, then the default constraint value
+of <see cref="WS_SECURITY_HEADER_LAYOUT_STRICT" /> will be used.</para>
+            <para>
+              <b>WS_SECURITY_PROPERTY_SECURITY_HEADER_VERSION</b>This property constraint may be specified when any
+of the following security bindings are specified:</para>
+            <list type="bullet">
+              <item>
+                <description>
+                  <see cref="WS_USERNAME_MESSAGE_SECURITY_BINDING_CONSTRAINT" />
+                </description>
+              </item>
+              <item>
+                <description>
+                  <see cref="WS_KERBEROS_APREQ_MESSAGE_SECURITY_BINDING_CONSTRAINT" />
+                </description>
+              </item>
+              <item>
+                <description>
+                  <see cref="WS_CERT_MESSAGE_SECURITY_BINDING_CONSTRAINT" />
+                </description>
+              </item>
+              <item>
+                <description>
+                  <see cref="WS_SECURITY_CONTEXT_MESSAGE_SECURITY_BINDING_CONSTRAINT" />
+                </description>
+              </item>
+            </list>
+            <para>If this property is not specified, then the default constraint value
+of <see cref="WS_SECURITY_HEADER_VERSION_1_1" /> will be used.</para>
+            <para>
+              <b>WS_SECURITY_PROPERTY_ALGORITHM_SUITE_NAME</b>This property constraint may be specified when any
+of the following security bindings are specified:</para>
+            <list type="bullet">
+              <item>
+                <description>
+                  <see cref="WS_USERNAME_MESSAGE_SECURITY_BINDING_CONSTRAINT" />
+                </description>
+              </item>
+              <item>
+                <description>
+                  <see cref="WS_KERBEROS_APREQ_MESSAGE_SECURITY_BINDING_CONSTRAINT" />
+                </description>
+              </item>
+              <item>
+                <description>
+                  <see cref="WS_CERT_MESSAGE_SECURITY_BINDING_CONSTRAINT" />
+                </description>
+              </item>
+              <item>
+                <description>
+                  <see cref="WS_SECURITY_CONTEXT_MESSAGE_SECURITY_BINDING_CONSTRAINT" />
+                </description>
+              </item>
+            </list>
+            <para>If this property is not specified, then the default constraint value
+of <see cref="WS_SECURITY_ALGORITHM_SUITE_NAME_BASIC256" /> will be used.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="WS_SECURITY_PROPERTY_CONSTRAINT.allowedValues">
+    <summary>
+      <para>An array of values which are acceptable.  The type of
+the values in the array correspond to the type of the values
+of the security property.  See the documentation for
+a particular security property to determine the type of the
+property.</para>
+    </summary>
+  </member>
+  <member name="WS_SECURITY_PROPERTY_CONSTRAINT.allowedValuesSize">
+    <summary>
+      <para>The total size of the allowedValues array, in bytes.  This
+size must be a multiple of the size of the type of the value
+of the property.</para>
+    </summary>
+  </member>
+  <member name="WS_SECURITY_PROPERTY_CONSTRAINT.out">
+    <summary>
+      <para>When <see cref="WsMatchPolicyAlternative" /> returns NOERROR, the
+entire contents of this structure will be filled out.</para>
+    </summary>
+  </member>
+  <member name="WS_SECURITY_PROPERTY_CONSTRAINT.out.securityProperty">
+    <summary></summary>
+  </member>
+</doc>

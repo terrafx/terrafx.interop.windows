@@ -5,16 +5,22 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='EMRANGLEARC.xml' path='doc/member[@name="EMRANGLEARC"]/*' />
 public partial struct EMRANGLEARC
 {
+    /// <include file='EMRANGLEARC.xml' path='doc/member[@name="EMRANGLEARC.emr"]/*' />
     public EMR emr;
 
+    /// <include file='EMRANGLEARC.xml' path='doc/member[@name="EMRANGLEARC.ptlCenter"]/*' />
     public POINTL ptlCenter;
 
+    /// <include file='EMRANGLEARC.xml' path='doc/member[@name="EMRANGLEARC.nRadius"]/*' />
     [NativeTypeName("DWORD")]
     public uint nRadius;
 
+    /// <include file='EMRANGLEARC.xml' path='doc/member[@name="EMRANGLEARC.eStartAngle"]/*' />
     public float eStartAngle;
 
+    /// <include file='EMRANGLEARC.xml' path='doc/member[@name="EMRANGLEARC.eSweepAngle"]/*' />
     public float eSweepAngle;
 }

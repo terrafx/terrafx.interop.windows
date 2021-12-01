@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="POINTER_DEVICE_CURSOR_INFO">
+    <summary>
+      <para>Contains cursor ID mappings  for pointer devices.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/input_pointerdevice/structures">Structures</seealso>
+  </member>
+  <member name="POINTER_DEVICE_CURSOR_INFO.cursorId">
+    <summary>
+      <para>The assigned cursor ID.</para>
+    </summary>
+  </member>
+  <member name="POINTER_DEVICE_CURSOR_INFO.cursor">
+    <summary>
+      <para>The <see cref="POINTER_DEVICE_CURSOR_TYPE" /> that the ID is mapped to.</para>
+    </summary>
+  </member>
+</doc>

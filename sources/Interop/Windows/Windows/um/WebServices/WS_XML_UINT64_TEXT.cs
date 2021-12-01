@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_XML_UINT64_TEXT.xml' path='doc/member[@name="WS_XML_UINT64_TEXT"]/*' />
 public partial struct WS_XML_UINT64_TEXT
 {
+    /// <include file='WS_XML_UINT64_TEXT.xml' path='doc/member[@name="WS_XML_UINT64_TEXT.text"]/*' />
     public WS_XML_TEXT text;
 
+    /// <include file='WS_XML_UINT64_TEXT.xml' path='doc/member[@name="WS_XML_UINT64_TEXT.value"]/*' />
     [NativeTypeName("unsigned long long")]
     public ulong value;
 }

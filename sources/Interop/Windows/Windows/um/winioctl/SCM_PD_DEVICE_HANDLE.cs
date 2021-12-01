@@ -7,16 +7,21 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SCM_PD_DEVICE_HANDLE.xml' path='doc/member[@name="SCM_PD_DEVICE_HANDLE"]/*' />
 public partial struct SCM_PD_DEVICE_HANDLE
 {
+    /// <include file='SCM_PD_DEVICE_HANDLE.xml' path='doc/member[@name="SCM_PD_DEVICE_HANDLE.Version"]/*' />
     [NativeTypeName("DWORD")]
     public uint Version;
 
+    /// <include file='SCM_PD_DEVICE_HANDLE.xml' path='doc/member[@name="SCM_PD_DEVICE_HANDLE.Size"]/*' />
     [NativeTypeName("DWORD")]
     public uint Size;
 
+    /// <include file='SCM_PD_DEVICE_HANDLE.xml' path='doc/member[@name="SCM_PD_DEVICE_HANDLE.DeviceGuid"]/*' />
     public Guid DeviceGuid;
 
+    /// <include file='SCM_PD_DEVICE_HANDLE.xml' path='doc/member[@name="SCM_PD_DEVICE_HANDLE.DeviceHandle"]/*' />
     [NativeTypeName("DWORD")]
     public uint DeviceHandle;
 }

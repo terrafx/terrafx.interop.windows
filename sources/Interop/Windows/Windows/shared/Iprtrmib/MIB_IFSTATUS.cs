@@ -5,18 +5,24 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MIB_IFSTATUS.xml' path='doc/member[@name="MIB_IFSTATUS"]/*' />
 public partial struct MIB_IFSTATUS
 {
+    /// <include file='MIB_IFSTATUS.xml' path='doc/member[@name="MIB_IFSTATUS.dwIfIndex"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwIfIndex;
 
+    /// <include file='MIB_IFSTATUS.xml' path='doc/member[@name="MIB_IFSTATUS.dwAdminStatus"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwAdminStatus;
 
+    /// <include file='MIB_IFSTATUS.xml' path='doc/member[@name="MIB_IFSTATUS.dwOperationalStatus"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwOperationalStatus;
 
+    /// <include file='MIB_IFSTATUS.xml' path='doc/member[@name="MIB_IFSTATUS.bMHbeatActive"]/*' />
     public BOOL bMHbeatActive;
 
+    /// <include file='MIB_IFSTATUS.xml' path='doc/member[@name="MIB_IFSTATUS.bMHbeatAlive"]/*' />
     public BOOL bMHbeatAlive;
 }

@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MSIDBSTATE.xml' path='doc/member[@name="MSIDBSTATE"]/*' />
 public enum MSIDBSTATE
 {
+    /// <include file='MSIDBSTATE.xml' path='doc/member[@name="MSIDBSTATE.MSIDBSTATE_ERROR"]/*' />
     MSIDBSTATE_ERROR = -1,
+
+    /// <include file='MSIDBSTATE.xml' path='doc/member[@name="MSIDBSTATE.MSIDBSTATE_READ"]/*' />
     MSIDBSTATE_READ = 0,
+
+    /// <include file='MSIDBSTATE.xml' path='doc/member[@name="MSIDBSTATE.MSIDBSTATE_WRITE"]/*' />
     MSIDBSTATE_WRITE = 1,
 }

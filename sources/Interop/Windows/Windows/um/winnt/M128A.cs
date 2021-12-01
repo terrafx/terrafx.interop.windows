@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='M128A.xml' path='doc/member[@name="M128A"]/*' />
 public partial struct M128A
 {
+    /// <include file='M128A.xml' path='doc/member[@name="M128A.Low"]/*' />
     [NativeTypeName("ULONGLONG")]
     public ulong Low;
 
+    /// <include file='M128A.xml' path='doc/member[@name="M128A.High"]/*' />
     [NativeTypeName("LONGLONG")]
     public long High;
 }

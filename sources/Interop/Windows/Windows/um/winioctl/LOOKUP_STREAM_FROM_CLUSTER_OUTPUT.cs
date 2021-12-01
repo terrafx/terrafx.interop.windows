@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='LOOKUP_STREAM_FROM_CLUSTER_OUTPUT.xml' path='doc/member[@name="LOOKUP_STREAM_FROM_CLUSTER_OUTPUT"]/*' />
 public partial struct LOOKUP_STREAM_FROM_CLUSTER_OUTPUT
 {
+    /// <include file='LOOKUP_STREAM_FROM_CLUSTER_OUTPUT.xml' path='doc/member[@name="LOOKUP_STREAM_FROM_CLUSTER_OUTPUT.Offset"]/*' />
     [NativeTypeName("DWORD")]
     public uint Offset;
 
+    /// <include file='LOOKUP_STREAM_FROM_CLUSTER_OUTPUT.xml' path='doc/member[@name="LOOKUP_STREAM_FROM_CLUSTER_OUTPUT.NumberOfMatches"]/*' />
     [NativeTypeName("DWORD")]
     public uint NumberOfMatches;
 
+    /// <include file='LOOKUP_STREAM_FROM_CLUSTER_OUTPUT.xml' path='doc/member[@name="LOOKUP_STREAM_FROM_CLUSTER_OUTPUT.BufferSizeRequired"]/*' />
     [NativeTypeName("DWORD")]
     public uint BufferSizeRequired;
 }

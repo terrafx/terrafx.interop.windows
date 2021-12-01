@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MFT_STREAM_STATE_PARAM.xml' path='doc/member[@name="MFT_STREAM_STATE_PARAM"]/*' />
 public partial struct MFT_STREAM_STATE_PARAM
 {
+    /// <include file='MFT_STREAM_STATE_PARAM.xml' path='doc/member[@name="MFT_STREAM_STATE_PARAM.StreamId"]/*' />
     [NativeTypeName("DWORD")]
     public uint StreamId;
 
+    /// <include file='MFT_STREAM_STATE_PARAM.xml' path='doc/member[@name="MFT_STREAM_STATE_PARAM.State"]/*' />
     public MF_STREAM_STATE State;
 }

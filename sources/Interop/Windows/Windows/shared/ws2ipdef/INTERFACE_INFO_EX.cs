@@ -5,14 +5,19 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='INTERFACE_INFO_EX.xml' path='doc/member[@name="INTERFACE_INFO_EX"]/*' />
 public partial struct INTERFACE_INFO_EX
 {
+    /// <include file='INTERFACE_INFO_EX.xml' path='doc/member[@name="INTERFACE_INFO_EX.iiFlags"]/*' />
     [NativeTypeName("ULONG")]
     public uint iiFlags;
 
+    /// <include file='INTERFACE_INFO_EX.xml' path='doc/member[@name="INTERFACE_INFO_EX.iiAddress"]/*' />
     public SOCKET_ADDRESS iiAddress;
 
+    /// <include file='INTERFACE_INFO_EX.xml' path='doc/member[@name="INTERFACE_INFO_EX.iiBroadcastAddress"]/*' />
     public SOCKET_ADDRESS iiBroadcastAddress;
 
+    /// <include file='INTERFACE_INFO_EX.xml' path='doc/member[@name="INTERFACE_INFO_EX.iiNetmask"]/*' />
     public SOCKET_ADDRESS iiNetmask;
 }

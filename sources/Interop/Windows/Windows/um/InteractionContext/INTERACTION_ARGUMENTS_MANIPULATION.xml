@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="INTERACTION_ARGUMENTS_MANIPULATION">
+    <summary>
+      <para>Defines  the state of a manipulation.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/ns-interactioncontext-interaction_context_output">INTERACTION_CONTEXT_OUTPUT</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/structures">Interaction Context Structures</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/nf-interactioncontext-registeroutputcallbackinteractioncontext">RegisterOutputCallbackInteractionContext</seealso>
+  </member>
+  <member name="INTERACTION_ARGUMENTS_MANIPULATION.delta">
+    <summary>
+      <para>The change in translation, rotation, and scale since the last <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/nc-interactioncontext-interaction_context_output_callback">INTERACTION_CONTEXT_OUTPUT_CALLBACK</a>.</para>
+    </summary>
+  </member>
+  <member name="INTERACTION_ARGUMENTS_MANIPULATION.cumulative">
+    <summary>
+      <para>The accumulated change in translation, rotation, and scale since the interaction started.</para>
+    </summary>
+  </member>
+  <member name="INTERACTION_ARGUMENTS_MANIPULATION.velocity">
+    <summary>
+      <para>The velocities of the accumulated transformations for the interaction.</para>
+    </summary>
+  </member>
+  <member name="INTERACTION_ARGUMENTS_MANIPULATION.railsState">
+    <summary>
+      <para>One of the constants from <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/ne-interactioncontext-manipulation_rails_state">MANIPULATION_RAILS_STATE</a>.</para>
+    </summary>
+  </member>
+</doc>

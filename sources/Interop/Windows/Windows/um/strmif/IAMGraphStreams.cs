@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAMGraphStreams.xml' path='doc/member[@name="IAMGraphStreams"]/*' />
 [Guid("632105FA-072E-11D3-8AF9-00C04FB6BD3D")]
 [NativeTypeName("struct IAMGraphStreams : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IAMGraphStreams : IAMGraphStreams.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IAMGraphStreams : IAMGraphStreams.Interface
         return ((delegate* unmanaged<IAMGraphStreams*, Guid*, void**, int>)(lpVtbl[0]))((IAMGraphStreams*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IAMGraphStreams : IAMGraphStreams.Interface
         return ((delegate* unmanaged<IAMGraphStreams*, uint>)(lpVtbl[1]))((IAMGraphStreams*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IAMGraphStreams : IAMGraphStreams.Interface
         return ((delegate* unmanaged<IAMGraphStreams*, uint>)(lpVtbl[2]))((IAMGraphStreams*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAMGraphStreams.xml' path='doc/member[@name="IAMGraphStreams.FindUpstreamInterface"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT FindUpstreamInterface(IPin* pPin, [NativeTypeName("const IID &")] Guid* riid, void** ppvInterface, [NativeTypeName("DWORD")] uint dwFlags)
@@ -46,6 +51,7 @@ public unsafe partial struct IAMGraphStreams : IAMGraphStreams.Interface
         return ((delegate* unmanaged<IAMGraphStreams*, IPin*, Guid*, void**, uint, int>)(lpVtbl[3]))((IAMGraphStreams*)Unsafe.AsPointer(ref this), pPin, riid, ppvInterface, dwFlags);
     }
 
+    /// <include file='IAMGraphStreams.xml' path='doc/member[@name="IAMGraphStreams.SyncUsingStreamOffset"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SyncUsingStreamOffset(BOOL bUseStreamOffset)
@@ -53,6 +59,7 @@ public unsafe partial struct IAMGraphStreams : IAMGraphStreams.Interface
         return ((delegate* unmanaged<IAMGraphStreams*, BOOL, int>)(lpVtbl[4]))((IAMGraphStreams*)Unsafe.AsPointer(ref this), bUseStreamOffset);
     }
 
+    /// <include file='IAMGraphStreams.xml' path='doc/member[@name="IAMGraphStreams.SetMaxGraphLatency"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetMaxGraphLatency([NativeTypeName("REFERENCE_TIME")] long rtMaxGraphLatency)

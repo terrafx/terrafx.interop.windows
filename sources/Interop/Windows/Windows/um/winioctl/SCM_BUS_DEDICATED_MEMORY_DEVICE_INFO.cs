@@ -8,23 +8,30 @@ using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SCM_BUS_DEDICATED_MEMORY_DEVICE_INFO.xml' path='doc/member[@name="SCM_BUS_DEDICATED_MEMORY_DEVICE_INFO"]/*' />
 public partial struct SCM_BUS_DEDICATED_MEMORY_DEVICE_INFO
 {
+    /// <include file='SCM_BUS_DEDICATED_MEMORY_DEVICE_INFO.xml' path='doc/member[@name="SCM_BUS_DEDICATED_MEMORY_DEVICE_INFO.DeviceGuid"]/*' />
     public Guid DeviceGuid;
 
+    /// <include file='SCM_BUS_DEDICATED_MEMORY_DEVICE_INFO.xml' path='doc/member[@name="SCM_BUS_DEDICATED_MEMORY_DEVICE_INFO.DeviceNumber"]/*' />
     [NativeTypeName("DWORD")]
     public uint DeviceNumber;
 
+    /// <include file='SCM_BUS_DEDICATED_MEMORY_DEVICE_INFO.xml' path='doc/member[@name="SCM_BUS_DEDICATED_MEMORY_DEVICE_INFO.Flags"]/*' />
     [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:7360:5)")]
     public _Flags_e__Struct Flags;
 
+    /// <include file='SCM_BUS_DEDICATED_MEMORY_DEVICE_INFO.xml' path='doc/member[@name="SCM_BUS_DEDICATED_MEMORY_DEVICE_INFO.DeviceSize"]/*' />
     [NativeTypeName("DWORDLONG")]
     public ulong DeviceSize;
 
+    /// <include file='_Flags_e__Struct.xml' path='doc/member[@name="_Flags_e__Struct"]/*' />
     public partial struct _Flags_e__Struct
     {
         public uint _bitfield;
 
+        /// <include file='_Flags_e__Struct.xml' path='doc/member[@name="_Flags_e__Struct.ForcedByRegistry"]/*' />
         [NativeTypeName("DWORD : 1")]
         public uint ForcedByRegistry
         {
@@ -41,6 +48,7 @@ public partial struct SCM_BUS_DEDICATED_MEMORY_DEVICE_INFO
             }
         }
 
+        /// <include file='_Flags_e__Struct.xml' path='doc/member[@name="_Flags_e__Struct.Initialized"]/*' />
         [NativeTypeName("DWORD : 1")]
         public uint Initialized
         {
@@ -57,6 +65,7 @@ public partial struct SCM_BUS_DEDICATED_MEMORY_DEVICE_INFO
             }
         }
 
+        /// <include file='_Flags_e__Struct.xml' path='doc/member[@name="_Flags_e__Struct.Reserved"]/*' />
         [NativeTypeName("DWORD : 30")]
         public uint Reserved
         {

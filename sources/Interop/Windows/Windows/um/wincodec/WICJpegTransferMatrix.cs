@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WICJpegTransferMatrix.xml' path='doc/member[@name="WICJpegTransferMatrix"]/*' />
 public enum WICJpegTransferMatrix : uint
 {
+    /// <include file='WICJpegTransferMatrix.xml' path='doc/member[@name="WICJpegTransferMatrix.WICJpegTransferMatrixIdentity"]/*' />
     WICJpegTransferMatrixIdentity = 0,
+
+    /// <include file='WICJpegTransferMatrix.xml' path='doc/member[@name="WICJpegTransferMatrix.WICJpegTransferMatrixBT601"]/*' />
     WICJpegTransferMatrixBT601 = 0x1,
+
+    /// <include file='WICJpegTransferMatrix.xml' path='doc/member[@name="WICJpegTransferMatrix.WICJpegTransferMatrix_FORCE_DWORD"]/*' />
     WICJpegTransferMatrix_FORCE_DWORD = 0x7fffffff,
 }

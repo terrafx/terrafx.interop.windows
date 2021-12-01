@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IEnumFORMATETC.xml' path='doc/member[@name="IEnumFORMATETC"]/*' />
 [Guid("00000103-0000-0000-C000-000000000046")]
 [NativeTypeName("struct IEnumFORMATETC : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IEnumFORMATETC : IEnumFORMATETC.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IEnumFORMATETC : IEnumFORMATETC.Interface
         return ((delegate* unmanaged<IEnumFORMATETC*, Guid*, void**, int>)(lpVtbl[0]))((IEnumFORMATETC*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IEnumFORMATETC : IEnumFORMATETC.Interface
         return ((delegate* unmanaged<IEnumFORMATETC*, uint>)(lpVtbl[1]))((IEnumFORMATETC*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IEnumFORMATETC : IEnumFORMATETC.Interface
         return ((delegate* unmanaged<IEnumFORMATETC*, uint>)(lpVtbl[2]))((IEnumFORMATETC*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IEnumFORMATETC.xml' path='doc/member[@name="IEnumFORMATETC.Next"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Next([NativeTypeName("ULONG")] uint celt, FORMATETC* rgelt, [NativeTypeName("ULONG *")] uint* pceltFetched)
@@ -46,6 +51,7 @@ public unsafe partial struct IEnumFORMATETC : IEnumFORMATETC.Interface
         return ((delegate* unmanaged<IEnumFORMATETC*, uint, FORMATETC*, uint*, int>)(lpVtbl[3]))((IEnumFORMATETC*)Unsafe.AsPointer(ref this), celt, rgelt, pceltFetched);
     }
 
+    /// <include file='IEnumFORMATETC.xml' path='doc/member[@name="IEnumFORMATETC.Skip"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Skip([NativeTypeName("ULONG")] uint celt)
@@ -53,6 +59,7 @@ public unsafe partial struct IEnumFORMATETC : IEnumFORMATETC.Interface
         return ((delegate* unmanaged<IEnumFORMATETC*, uint, int>)(lpVtbl[4]))((IEnumFORMATETC*)Unsafe.AsPointer(ref this), celt);
     }
 
+    /// <include file='IEnumFORMATETC.xml' path='doc/member[@name="IEnumFORMATETC.Reset"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT Reset()
@@ -60,6 +67,7 @@ public unsafe partial struct IEnumFORMATETC : IEnumFORMATETC.Interface
         return ((delegate* unmanaged<IEnumFORMATETC*, int>)(lpVtbl[5]))((IEnumFORMATETC*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IEnumFORMATETC.xml' path='doc/member[@name="IEnumFORMATETC.Clone"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Clone(IEnumFORMATETC** ppenum)

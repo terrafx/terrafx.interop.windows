@@ -5,15 +5,20 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MOVE_FILE_DATA32.xml' path='doc/member[@name="MOVE_FILE_DATA32"]/*' />
 public partial struct MOVE_FILE_DATA32
 {
+    /// <include file='MOVE_FILE_DATA32.xml' path='doc/member[@name="MOVE_FILE_DATA32.FileHandle"]/*' />
     [NativeTypeName("UINT32")]
     public uint FileHandle;
 
+    /// <include file='MOVE_FILE_DATA32.xml' path='doc/member[@name="MOVE_FILE_DATA32.StartingVcn"]/*' />
     public LARGE_INTEGER StartingVcn;
 
+    /// <include file='MOVE_FILE_DATA32.xml' path='doc/member[@name="MOVE_FILE_DATA32.StartingLcn"]/*' />
     public LARGE_INTEGER StartingLcn;
 
+    /// <include file='MOVE_FILE_DATA32.xml' path='doc/member[@name="MOVE_FILE_DATA32.ClusterCount"]/*' />
     [NativeTypeName("DWORD")]
     public uint ClusterCount;
 }

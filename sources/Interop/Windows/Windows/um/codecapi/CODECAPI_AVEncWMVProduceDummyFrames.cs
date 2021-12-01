@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVEncWMVProduceDummyFrames.xml' path='doc/member[@name="CODECAPI_AVEncWMVProduceDummyFrames"]/*' />
 [Guid("D669D001-183C-42E3-A3CA-2F4586D2396C")]
 public partial struct CODECAPI_AVEncWMVProduceDummyFrames
 {

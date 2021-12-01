@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAudioMeterInformation.xml' path='doc/member[@name="IAudioMeterInformation"]/*' />
 [Guid("C02216F6-8C67-4B5B-9D00-D008E73E0064")]
 [NativeTypeName("struct IAudioMeterInformation : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IAudioMeterInformation : IAudioMeterInformation.Int
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IAudioMeterInformation : IAudioMeterInformation.Int
         return ((delegate* unmanaged<IAudioMeterInformation*, Guid*, void**, int>)(lpVtbl[0]))((IAudioMeterInformation*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IAudioMeterInformation : IAudioMeterInformation.Int
         return ((delegate* unmanaged<IAudioMeterInformation*, uint>)(lpVtbl[1]))((IAudioMeterInformation*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IAudioMeterInformation : IAudioMeterInformation.Int
         return ((delegate* unmanaged<IAudioMeterInformation*, uint>)(lpVtbl[2]))((IAudioMeterInformation*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAudioMeterInformation.xml' path='doc/member[@name="IAudioMeterInformation.GetPeakValue"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetPeakValue(float* pfPeak)
@@ -46,6 +51,7 @@ public unsafe partial struct IAudioMeterInformation : IAudioMeterInformation.Int
         return ((delegate* unmanaged<IAudioMeterInformation*, float*, int>)(lpVtbl[3]))((IAudioMeterInformation*)Unsafe.AsPointer(ref this), pfPeak);
     }
 
+    /// <include file='IAudioMeterInformation.xml' path='doc/member[@name="IAudioMeterInformation.GetMeteringChannelCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetMeteringChannelCount(uint* pnChannelCount)
@@ -53,6 +59,7 @@ public unsafe partial struct IAudioMeterInformation : IAudioMeterInformation.Int
         return ((delegate* unmanaged<IAudioMeterInformation*, uint*, int>)(lpVtbl[4]))((IAudioMeterInformation*)Unsafe.AsPointer(ref this), pnChannelCount);
     }
 
+    /// <include file='IAudioMeterInformation.xml' path='doc/member[@name="IAudioMeterInformation.GetChannelsPeakValues"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetChannelsPeakValues([NativeTypeName("UINT32")] uint u32ChannelCount, float* afPeakValues)
@@ -60,6 +67,7 @@ public unsafe partial struct IAudioMeterInformation : IAudioMeterInformation.Int
         return ((delegate* unmanaged<IAudioMeterInformation*, uint, float*, int>)(lpVtbl[5]))((IAudioMeterInformation*)Unsafe.AsPointer(ref this), u32ChannelCount, afPeakValues);
     }
 
+    /// <include file='IAudioMeterInformation.xml' path='doc/member[@name="IAudioMeterInformation.QueryHardwareSupport"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT QueryHardwareSupport([NativeTypeName("DWORD *")] uint* pdwHardwareSupportMask)

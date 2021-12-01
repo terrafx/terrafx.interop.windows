@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MODULEINFO.xml' path='doc/member[@name="MODULEINFO"]/*' />
 public unsafe partial struct MODULEINFO
 {
+    /// <include file='MODULEINFO.xml' path='doc/member[@name="MODULEINFO.lpBaseOfDll"]/*' />
     [NativeTypeName("LPVOID")]
     public void* lpBaseOfDll;
 
+    /// <include file='MODULEINFO.xml' path='doc/member[@name="MODULEINFO.SizeOfImage"]/*' />
     [NativeTypeName("DWORD")]
     public uint SizeOfImage;
 
+    /// <include file='MODULEINFO.xml' path='doc/member[@name="MODULEINFO.EntryPoint"]/*' />
     [NativeTypeName("LPVOID")]
     public void* EntryPoint;
 }

@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DRIVE_LAYOUT_INFORMATION_GPT">
+    <summary>
+      <para>Contains information about a drive's GUID partition table (GPT) partitions.</para>
+    </summary>
+    <seealso cref="DRIVE_LAYOUT_INFORMATION_EX" />
+    <seealso cref="DRIVE_LAYOUT_INFORMATION_MBR" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_disk_get_drive_layout_ex">IOCTL_DISK_GET_DRIVE_LAYOUT_EX</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_disk_set_drive_layout">IOCTL_DISK_SET_DRIVE_LAYOUT_EX</seealso>
+  </member>
+  <member name="DRIVE_LAYOUT_INFORMATION_GPT.DiskId">
+    <summary>
+      <para>The <b>GUID</b> of the disk.</para>
+    </summary>
+  </member>
+  <member name="DRIVE_LAYOUT_INFORMATION_GPT.StartingUsableOffset">
+    <summary>
+      <para>The starting byte offset of the first usable block.</para>
+    </summary>
+  </member>
+  <member name="DRIVE_LAYOUT_INFORMATION_GPT.UsableLength">
+    <summary>
+      <para>The size of the usable blocks on the disk, in bytes.</para>
+    </summary>
+  </member>
+  <member name="DRIVE_LAYOUT_INFORMATION_GPT.MaxPartitionCount">
+    <summary>
+      <para>The maximum number of partitions that can be defined in the usable block.</para>
+    </summary>
+  </member>
+</doc>

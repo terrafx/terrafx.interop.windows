@@ -10,58 +10,73 @@ namespace TerraFX.Interop.Windows;
 
 public static unsafe partial class Windows
 {
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetDeviceRegistrationInfo"]/*' />
     [DllImport("mdmregistration", ExactSpelling = true)]
     [SupportedOSPlatform("windows8.1")]
     public static extern HRESULT GetDeviceRegistrationInfo(REGISTRATION_INFORMATION_CLASS DeviceInformationClass, [NativeTypeName("PVOID *")] void** ppDeviceRegistrationInfo);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IsDeviceRegisteredWithManagement"]/*' />
     [DllImport("mdmregistration", ExactSpelling = true)]
     [SupportedOSPlatform("windows8.1")]
     public static extern HRESULT IsDeviceRegisteredWithManagement(BOOL* pfIsDeviceRegisteredWithManagement, [NativeTypeName("DWORD")] uint cchUPN, [NativeTypeName("LPWSTR")] ushort* pszUPN);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IsManagementRegistrationAllowed"]/*' />
     [DllImport("mdmregistration", ExactSpelling = true)]
     [SupportedOSPlatform("windows8.1")]
     public static extern HRESULT IsManagementRegistrationAllowed(BOOL* pfIsManagementRegistrationAllowed);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IsMdmUxWithoutAadAllowed"]/*' />
     [DllImport("mdmregistration", ExactSpelling = true)]
     public static extern HRESULT IsMdmUxWithoutAadAllowed(BOOL* isEnrollmentAllowed);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetManagedExternally"]/*' />
     [DllImport("mdmregistration", ExactSpelling = true)]
     [SupportedOSPlatform("windows8.1")]
     public static extern HRESULT SetManagedExternally(BOOL IsManagedExternally);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DiscoverManagementService"]/*' />
     [DllImport("mdmregistration", ExactSpelling = true)]
     [SupportedOSPlatform("windows8.1")]
     public static extern HRESULT DiscoverManagementService([NativeTypeName("LPCWSTR")] ushort* pszUPN, [NativeTypeName("PMANAGEMENT_SERVICE_INFO *")] MANAGEMENT_SERVICE_INFO** ppMgmtInfo);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RegisterDeviceWithManagementUsingAADCredentials"]/*' />
     [DllImport("mdmregistration", ExactSpelling = true)]
     [SupportedOSPlatform("windows8.1")]
     public static extern HRESULT RegisterDeviceWithManagementUsingAADCredentials(HANDLE UserToken);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RegisterDeviceWithManagementUsingAADDeviceCredentials"]/*' />
     [DllImport("mdmregistration", ExactSpelling = true)]
     [SupportedOSPlatform("windows8.1")]
     public static extern HRESULT RegisterDeviceWithManagementUsingAADDeviceCredentials();
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RegisterDeviceWithManagementUsingAADDeviceCredentials2"]/*' />
     [DllImport("mdmregistration", ExactSpelling = true)]
     public static extern HRESULT RegisterDeviceWithManagementUsingAADDeviceCredentials2([NativeTypeName("PCWSTR")] ushort* MDMApplicationID);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RegisterDeviceWithManagement"]/*' />
     [DllImport("mdmregistration", ExactSpelling = true)]
     [SupportedOSPlatform("windows8.1")]
     public static extern HRESULT RegisterDeviceWithManagement([NativeTypeName("LPCWSTR")] ushort* pszUPN, [NativeTypeName("LPCWSTR")] ushort* ppszMDMServiceUri, [NativeTypeName("LPCWSTR")] ushort* ppzsAccessToken);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.UnregisterDeviceWithManagement"]/*' />
     [DllImport("mdmregistration", ExactSpelling = true)]
     [SupportedOSPlatform("windows8.1")]
     public static extern HRESULT UnregisterDeviceWithManagement([NativeTypeName("LPCWSTR")] ushort* enrollmentID);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetDeviceManagementConfigInfo"]/*' />
     [DllImport("mdmregistration", ExactSpelling = true)]
     public static extern HRESULT GetDeviceManagementConfigInfo([NativeTypeName("PCWSTR")] ushort* providerID, [NativeTypeName("DWORD *")] uint* configStringBufferLength, [NativeTypeName("PWSTR")] ushort* configString);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetDeviceManagementConfigInfo"]/*' />
     [DllImport("mdmregistration", ExactSpelling = true)]
     public static extern HRESULT SetDeviceManagementConfigInfo([NativeTypeName("PCWSTR")] ushort* providerID, [NativeTypeName("PCWSTR")] ushort* configString);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetManagementAppHyperlink"]/*' />
     [DllImport("mdmregistration", ExactSpelling = true)]
     [SupportedOSPlatform("windows8.1")]
     public static extern HRESULT GetManagementAppHyperlink([NativeTypeName("DWORD")] uint cchHyperlink, [NativeTypeName("LPWSTR")] ushort* pszHyperlink);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DiscoverManagementServiceEx"]/*' />
     [DllImport("mdmregistration", ExactSpelling = true)]
     [SupportedOSPlatform("windows8.1")]
     public static extern HRESULT DiscoverManagementServiceEx([NativeTypeName("LPCWSTR")] ushort* pszUPN, [NativeTypeName("LPCWSTR")] ushort* pszDiscoveryServiceCandidate, [NativeTypeName("PMANAGEMENT_SERVICE_INFO *")] MANAGEMENT_SERVICE_INFO** ppMgmtInfo);

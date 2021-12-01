@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="TCP_ESTATS_OBS_REC_ROD_v0">
+    <summary>
+      <para>The <b>TCP_ESTATS_OBS_REC_ROD_v0</b> structure contains read-only dynamic information for extended TCP statistics observed on the remote receiver for a TCP connection.</para>
+    </summary>
+    <remarks>
+      <para>The <b>TCP_ESTATS_OBS_REC_ROD_v0</b> structure is used as part of the TCP extended statistics feature available on Windows Vista and later.</para>
+      <para>The <b>TCP_ESTATS_OBS_REC_ROD_v0</b> is defined as version 0 of the structure for  read-only dynamic information for extended TCP statistics on the local receiver for a TCP connection.  This information is available after the connection has been established.</para>
+      <para>The <b>TCP_ESTATS_OBS_REC_ROD_v0</b> structure is retrieved by calls to  the <see cref="GetPerTcp6ConnectionEStats" /> or <see cref="GetPerTcpConnectionEStats" /> functions when <b>TcpConnectionEstatsObsRec</b> is passed in the <i>EstatsType</i> parameter. Extended TCP statistics need to be enabled to retrieve this structure.</para>
+      <para>The members of this structure are defined in the IETF RFC on the TCP Extended Statistics MIB. For more information, see <a href="http://tools.ietf.org/html/rfc4898">http://www.ietf.org/rfc/rfc4898.txt</a>.</para>
+      <para>The following is the mapping of the members in the <b>TCP_ESTATS_OBS_REC_ROD_v0</b> structure to the entries defined in RFC 4898 for extended TCP statistics:</para>
+      <list type="table">
+        <listheader>
+          <description>Term</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <b>CurRwinRcvd</b>
+          </description>
+          <description>
+            <para>tcpEStatsPerfCurRwinRcvd</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>MaxRwinRcvd</b>
+          </description>
+          <description>
+            <para>tcpEStatsPerfMaxRwinRcvd</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>MinRwinRcvd</b>
+          </description>
+          <description>
+            <para>No mapping to this member.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>WinScaleRcvd</b>
+          </description>
+          <description>
+            <para>tcpEStatsStackWinScaleRcvd</para>
+          </description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="GetPerTcp6ConnectionEStats" />
+    <seealso cref="GetPerTcpConnectionEStats" />
+    <seealso cref="TCP_ESTATS_TYPE" />
+  </member>
+  <member name="TCP_ESTATS_OBS_REC_ROD_v0.CurRwinRcvd">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The most recent window advertisement, in bytes, received from the remote receiver.</para>
+    </summary>
+  </member>
+  <member name="TCP_ESTATS_OBS_REC_ROD_v0.MaxRwinRcvd">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The maximum window advertisement, in bytes, received from the remote receiver.</para>
+    </summary>
+  </member>
+  <member name="TCP_ESTATS_OBS_REC_ROD_v0.MinRwinRcvd">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The minimum window advertisement, in bytes, received from the remote receiver.</para>
+    </summary>
+  </member>
+  <member name="TCP_ESTATS_OBS_REC_ROD_v0.WinScaleRcvd">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The value of the received window scale option if one was
+received from the remote receiver; otherwise, a value of -1.</para>
+      <para>Note that if both the <b>WinScaleSent</b> member of the  <see cref="TCP_ESTATS_REC_ROD_v0" /> structure  and
+the <b>WinScaleRcvd</b> member are not -1, then Snd.Wind.Scale
+will be the same as this value and used to scale receiver
+window announcements from the remote host to the local
+host.</para>
+    </summary>
+  </member>
+</doc>

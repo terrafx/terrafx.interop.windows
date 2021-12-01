@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="GLYPHMETRICS">
+    <summary>
+      <para>The <b>GLYPHMETRICS</b> structure contains information about the placement and orientation of a glyph in a character cell.</para>
+    </summary>
+    <remarks>
+      <para>Values in the <b>GLYPHMETRICS</b> structure are specified in device units.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/font-and-text-structures">Font and Text Structures</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/fonts-and-text">Fonts and Text Overview</seealso>
+    <seealso cref="GetGlyphOutline" />
+  </member>
+  <member name="GLYPHMETRICS.gmBlackBoxX">
+    <summary>
+      <para>The width of the smallest rectangle that completely encloses the glyph (its black box).</para>
+    </summary>
+  </member>
+  <member name="GLYPHMETRICS.gmBlackBoxY">
+    <summary>
+      <para>The height of the smallest rectangle that completely encloses the glyph (its black box).</para>
+    </summary>
+  </member>
+  <member name="GLYPHMETRICS.gmptGlyphOrigin">
+    <summary>
+      <para>The x- and y-coordinates of the upper left corner of the smallest rectangle that completely encloses the glyph.</para>
+    </summary>
+  </member>
+  <member name="GLYPHMETRICS.gmCellIncX">
+    <summary>
+      <para>The horizontal distance from the origin of the current character cell to the origin of the next character cell.</para>
+    </summary>
+  </member>
+  <member name="GLYPHMETRICS.gmCellIncY">
+    <summary>
+      <para>The vertical distance from the origin of the current character cell to the origin of the next character cell.</para>
+    </summary>
+  </member>
+</doc>

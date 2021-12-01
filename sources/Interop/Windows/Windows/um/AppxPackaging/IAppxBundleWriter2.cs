@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAppxBundleWriter2.xml' path='doc/member[@name="IAppxBundleWriter2"]/*' />
 [Guid("6D8FE971-01CC-49A0-B685-233851279962")]
 [NativeTypeName("struct IAppxBundleWriter2 : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IAppxBundleWriter2 : IAppxBundleWriter2.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IAppxBundleWriter2 : IAppxBundleWriter2.Interface
         return ((delegate* unmanaged<IAppxBundleWriter2*, Guid*, void**, int>)(lpVtbl[0]))((IAppxBundleWriter2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IAppxBundleWriter2 : IAppxBundleWriter2.Interface
         return ((delegate* unmanaged<IAppxBundleWriter2*, uint>)(lpVtbl[1]))((IAppxBundleWriter2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IAppxBundleWriter2 : IAppxBundleWriter2.Interface
         return ((delegate* unmanaged<IAppxBundleWriter2*, uint>)(lpVtbl[2]))((IAppxBundleWriter2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAppxBundleWriter2.xml' path='doc/member[@name="IAppxBundleWriter2.AddExternalPackageReference"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT AddExternalPackageReference([NativeTypeName("LPCWSTR")] ushort* fileName, IStream* inputStream)

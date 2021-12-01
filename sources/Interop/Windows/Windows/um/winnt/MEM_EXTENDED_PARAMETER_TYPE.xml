@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MEM_EXTENDED_PARAMETER_TYPE">
+    <summary>
+      <para>Defines values for extended parameters used for file mapping into an address space.</para>
+    </summary>
+  </member>
+  <member name="MEM_EXTENDED_PARAMETER_TYPE.MemExtendedParameterInvalidType">
+    <summary></summary>
+  </member>
+  <member name="MEM_EXTENDED_PARAMETER_TYPE.MemExtendedParameterAddressRequirements">
+    <summary>
+      <para>This extended parameter type is used to specify alignment and virtual address range restrictions for new memory allocations created by <see cref="VirtualAlloc2" /> and <see cref="MapViewOfFile3" />.</para>
+    </summary>
+  </member>
+  <member name="MEM_EXTENDED_PARAMETER_TYPE.MemExtendedParameterNumaNode">
+    <summary>
+      <para>This extended parameter type is used to specify the preferred NUMA node for new memory allocations created by <see cref="VirtualAlloc2" /> and <see cref="MapViewOfFile3" />.</para>
+    </summary>
+  </member>
+  <member name="MEM_EXTENDED_PARAMETER_TYPE.MemExtendedParameterPartitionHandle">
+    <summary></summary>
+  </member>
+  <member name="MEM_EXTENDED_PARAMETER_TYPE.MemExtendedParameterUserPhysicalHandle">
+    <summary></summary>
+  </member>
+  <member name="MEM_EXTENDED_PARAMETER_TYPE.MemExtendedParameterAttributeFlags">
+    <summary></summary>
+  </member>
+  <member name="MEM_EXTENDED_PARAMETER_TYPE.MemExtendedParameterMax">
+    <summary></summary>
+  </member>
+</doc>

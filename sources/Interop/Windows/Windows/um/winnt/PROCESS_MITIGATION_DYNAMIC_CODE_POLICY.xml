@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PROCESS_MITIGATION_DYNAMIC_CODE_POLICY">
+    <summary>
+      <para>Contains process mitigation policy settings for restricting dynamic code generation and modification.</para>
+    </summary>
+    <seealso cref="GetProcessMitigationPolicy" />
+    <seealso cref="SetProcessMitigationPolicy" />
+  </member>
+  <member name="PROCESS_MITIGATION_DYNAMIC_CODE_POLICY.DUMMYUNIONNAME">
+    <summary></summary>
+  </member>
+  <member name="PROCESS_MITIGATION_DYNAMIC_CODE_POLICY.DUMMYUNIONNAME.Flags">
+    <summary>
+      <para>Reserved for system use.</para>
+    </summary>
+  </member>
+  <member name="PROCESS_MITIGATION_DYNAMIC_CODE_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME">
+    <summary></summary>
+  </member>
+  <member name="PROCESS_MITIGATION_DYNAMIC_CODE_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME.ProhibitDynamicCode">
+    <summary>
+      <para>Set (0x1) to prevent the process from generating dynamic code or modifying existing executable code; otherwise leave unset (0x0).</para>
+    </summary>
+  </member>
+  <member name="PROCESS_MITIGATION_DYNAMIC_CODE_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME.AllowThreadOptOut">
+    <summary>
+      <para>Set (0x1) to allow threads to opt out of the restrictions on dynamic code generation by calling the <see cref="SetThreadInformation" /> function with the <i>ThreadInformation</i> parameter set to <b>ThreadDynamicCodePolicy</b>; otherwise leave unset (0x0). You should not use the <b>AllowThreadOptOut</b> and <b>ThreadDynamicCodePolicy</b> settings together to provide strong security. These settings are only intended to enable applications to adapt their code more easily for full dynamic code restrictions.</para>
+    </summary>
+  </member>
+  <member name="PROCESS_MITIGATION_DYNAMIC_CODE_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME.AllowRemoteDowngrade">
+    <summary>
+      <para>Set (0x1) to allow non-AppContainer processes to modify all of the dynamic code settings for the calling process, including relaxing dynamic code restrictions after they have been set.</para>
+    </summary>
+  </member>
+  <member name="PROCESS_MITIGATION_DYNAMIC_CODE_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME.AuditProhibitDynamicCode">
+    <summary></summary>
+  </member>
+  <member name="PROCESS_MITIGATION_DYNAMIC_CODE_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME.ReservedFlags">
+    <summary>
+      <para>Reserved for system use.</para>
+    </summary>
+  </member>
+</doc>

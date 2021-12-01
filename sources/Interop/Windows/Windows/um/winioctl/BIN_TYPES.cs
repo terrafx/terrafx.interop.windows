@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='BIN_TYPES.xml' path='doc/member[@name="BIN_TYPES"]/*' />
 public enum BIN_TYPES
 {
+    /// <include file='BIN_TYPES.xml' path='doc/member[@name="BIN_TYPES.RequestSize"]/*' />
     RequestSize,
+
+    /// <include file='BIN_TYPES.xml' path='doc/member[@name="BIN_TYPES.RequestLocation"]/*' />
     RequestLocation,
 }

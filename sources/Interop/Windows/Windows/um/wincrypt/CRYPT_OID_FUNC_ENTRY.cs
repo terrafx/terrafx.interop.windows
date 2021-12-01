@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CRYPT_OID_FUNC_ENTRY.xml' path='doc/member[@name="CRYPT_OID_FUNC_ENTRY"]/*' />
 public unsafe partial struct CRYPT_OID_FUNC_ENTRY
 {
+    /// <include file='CRYPT_OID_FUNC_ENTRY.xml' path='doc/member[@name="CRYPT_OID_FUNC_ENTRY.pszOID"]/*' />
     [NativeTypeName("LPCSTR")]
     public sbyte* pszOID;
 
+    /// <include file='CRYPT_OID_FUNC_ENTRY.xml' path='doc/member[@name="CRYPT_OID_FUNC_ENTRY.pvFuncAddr"]/*' />
     public void* pvFuncAddr;
 }

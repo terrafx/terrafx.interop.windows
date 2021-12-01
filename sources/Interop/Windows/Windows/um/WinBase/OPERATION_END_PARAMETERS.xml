@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="OPERATION_END_PARAMETERS">
+    <summary>
+      <para>This structure is used by the <see cref="OperationEnd" /> function.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/oprec/operation-id">OPERATION_ID</seealso>
+    <seealso cref="OPERATION_START_PARAMETERS" />
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/oprec/-operation-portal">Operation Recorder</seealso>
+    <seealso cref="OperationEnd" />
+    <seealso cref="OperationStart" />
+  </member>
+  <member name="OPERATION_END_PARAMETERS.Version">
+    <summary>
+      <para>This parameter should be initialized to the  <b>OPERATION_API_VERSION</b> defined in the Windows SDK.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>OPERATION_API_VERSION</b>
+                </description>
+              </item>
+              <item>
+                <description>1</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>This API was introduced in Windows 8 and Windows Server 2012 as version 1.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="OPERATION_END_PARAMETERS.OperationId">
+    <summary>
+      <para>Each operation has an <a href="https://docs.microsoft.com//previous-versions/windows/desktop/oprec/operation-id">OPERATION_ID</a> namespace that is unique for each process. If two applications both use the same <b>OPERATION_ID</b> value to identify two operations, the system maintains separate contexts for each operation.</para>
+    </summary>
+  </member>
+  <member name="OPERATION_END_PARAMETERS.Flags">
+    <summary>
+      <para>The value of this parameter can include any combination of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>OPERATION_END_DISCARD</b>
+                </description>
+              </item>
+              <item>
+                <description>1</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Specifies that the system should discard the information it has been tracking for this operation. Specify this flag when the operation either fails or does not follow the expected sequence of steps.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+</doc>

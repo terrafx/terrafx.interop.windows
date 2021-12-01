@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IEPDNFLAGS.xml' path='doc/member[@name="IEPDNFLAGS"]/*' />
 public enum IEPDNFLAGS
 {
+    /// <include file='IEPDNFLAGS.xml' path='doc/member[@name="IEPDNFLAGS.IEPDN_BINDINGUI"]/*' />
     IEPDN_BINDINGUI = 0x1,
 }

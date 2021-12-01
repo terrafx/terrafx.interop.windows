@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WCRANGE">
+    <summary>
+      <para>The <b>WCRANGE</b> structure specifies a range of Unicode characters.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/font-and-text-structures">Font and Text Structures</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/fonts-and-text">Fonts and Text Overview</seealso>
+    <seealso cref="GLYPHSET" />
+  </member>
+  <member name="WCRANGE.wcLow">
+    <summary>
+      <para>Low Unicode code point in the range of supported Unicode code points.</para>
+    </summary>
+  </member>
+  <member name="WCRANGE.cGlyphs">
+    <summary>
+      <para>Number of supported Unicode code points in this range.</para>
+    </summary>
+  </member>
+</doc>

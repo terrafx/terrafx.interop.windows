@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="NWMF">
+    <summary>
+      <para>Flags used by <see cref="INewWindowManager.EvaluateNewWindow" />. These values are factors in the decision of whether to display a pop-up window.</para>
+    </summary>
+  </member>
+  <member name="NWMF.NWMF_UNLOADING">
+    <summary>
+      <para>The page is unloading. This flag is set in response to the <a href="https://docs.microsoft.com//previous-versions/aa741480(v=vs.85)">onbeforeunload</a> and <a href="https://docs.microsoft.com//previous-versions/aa741488(v=vs.85)">onunload</a> events. Some pages load pop-up windows when you leave them, not when you enter. This flag is used to identify those situations.</para>
+    </summary>
+  </member>
+  <member name="NWMF.NWMF_USERINITED">
+    <summary>
+      <para>The call to <see cref="INewWindowManager.EvaluateNewWindow" /> is the result of a user-initiated action (a mouse click or key press). Use this flag in conjunction with the <see cref="NWMF_FIRST_USERINITED" /> flag to determine whether the call is a direct or indirect result of the user-initiated action.</para>
+    </summary>
+  </member>
+  <member name="NWMF.NWMF_FIRST">
+    <summary>
+      <para>When <see cref="NWMF_USERINITED" /> is present, this flag indicates that the call to <see cref="INewWindowManager.EvaluateNewWindow" /> is the first query that results from this user-initiated action. Always use this flag in conjunction with <see cref="NWMF_USERINITED" />.</para>
+    </summary>
+  </member>
+  <member name="NWMF.NWMF_OVERRIDEKEY">
+    <summary>
+      <para>The override key (ALT) was pressed. The override key is used to bypass the pop-up manager—allowing all pop-up windows to display—and must be held down at the time that <see cref="INewWindowManager.EvaluateNewWindow" /> is called.</para>
+      <para>
+        <b>Note</b>  When <see cref="INewWindowManager.EvaluateNewWindow" /> is implemented for a <a href="https://docs.microsoft.com//previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa752040(v=vs.85)">WebBrowser</a> control host, the implementer can choose to ignore the override key.</para>
+    </summary>
+  </member>
+  <member name="NWMF.NWMF_SHOWHELP">
+    <summary>
+      <para>The new window attempting to load is the result of a call to the <a href="https://developer.mozilla.org/en-us/docs/web/api/window">showHelp</a> method. Help is sometimes displayed in a separate window, and this flag is valuable in those cases.</para>
+    </summary>
+  </member>
+  <member name="NWMF.NWMF_HTMLDIALOG">
+    <summary>
+      <para>The new window is a dialog box that displays HTML content.</para>
+    </summary>
+  </member>
+  <member name="NWMF.NWMF_FROMDIALOGCHILD">
+    <summary>
+      <para>The <see cref="EvaluateNewWindow" /> method is being called from an HTML dialog. The new window should not show the UI in the parent window.</para>
+    </summary>
+  </member>
+  <member name="NWMF.NWMF_USERREQUESTED">
+    <summary>
+      <para>The new windows was definitely requested by the user, either by selecting Open in New Window from a context menu or pressing Shift and clicking a link.</para>
+    </summary>
+  </member>
+  <member name="NWMF.NWMF_USERALLOWED">
+    <summary>
+      <para>The call to the <see cref="EvaluateNewWindow" /> method is the result of the user requesting a replay that resulted in a refresh.</para>
+    </summary>
+  </member>
+  <member name="NWMF.NWMF_FORCEWINDOW">
+    <summary>
+      <para>The new window should be forced to open in a new window rather than a tab.</para>
+    </summary>
+  </member>
+  <member name="NWMF.NWMF_FORCETAB">
+    <summary>
+      <para>The new window should be forced to open in a new tab.</para>
+    </summary>
+  </member>
+  <member name="NWMF.NWMF_SUGGESTWINDOW">
+    <summary>
+      <para>The new window should open in a new tab unless <see cref="NWMF_FORCEtab" /> is also present, indicating that user wants the window to open as a window.</para>
+    </summary>
+  </member>
+  <member name="NWMF.NWMF_SUGGESTTAB">
+    <summary>
+      <para>The new window should open in a new tab unless <see cref="NWMF_FORCEWINDOW" /> is also present, indicating that user wants the window to open as a window.</para>
+    </summary>
+  </member>
+  <member name="NWMF.NWMF_INACTIVETAB">
+    <summary>
+      <para>The <see cref="EvaluateNewWindow" /> method is being called from an inactive tab.</para>
+    </summary>
+  </member>
+</doc>

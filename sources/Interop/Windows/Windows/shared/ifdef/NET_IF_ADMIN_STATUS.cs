@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NET_IF_ADMIN_STATUS.xml' path='doc/member[@name="NET_IF_ADMIN_STATUS"]/*' />
 public enum NET_IF_ADMIN_STATUS
 {
+    /// <include file='NET_IF_ADMIN_STATUS.xml' path='doc/member[@name="NET_IF_ADMIN_STATUS.NET_IF_ADMIN_STATUS_UP"]/*' />
     NET_IF_ADMIN_STATUS_UP = 1,
+
+    /// <include file='NET_IF_ADMIN_STATUS.xml' path='doc/member[@name="NET_IF_ADMIN_STATUS.NET_IF_ADMIN_STATUS_DOWN"]/*' />
     NET_IF_ADMIN_STATUS_DOWN = 2,
+
+    /// <include file='NET_IF_ADMIN_STATUS.xml' path='doc/member[@name="NET_IF_ADMIN_STATUS.NET_IF_ADMIN_STATUS_TESTING"]/*' />
     NET_IF_ADMIN_STATUS_TESTING = 3,
 }

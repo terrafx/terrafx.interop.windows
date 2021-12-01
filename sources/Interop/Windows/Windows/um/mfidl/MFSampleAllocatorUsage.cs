@@ -7,10 +7,16 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MFSampleAllocatorUsage.xml' path='doc/member[@name="MFSampleAllocatorUsage"]/*' />
 [SupportedOSPlatform("windows10.0.19041.0")]
 public enum MFSampleAllocatorUsage
 {
+    /// <include file='MFSampleAllocatorUsage.xml' path='doc/member[@name="MFSampleAllocatorUsage.MFSampleAllocatorUsage_UsesProvidedAllocator"]/*' />
     MFSampleAllocatorUsage_UsesProvidedAllocator = 0,
+
+    /// <include file='MFSampleAllocatorUsage.xml' path='doc/member[@name="MFSampleAllocatorUsage.MFSampleAllocatorUsage_UsesCustomAllocator"]/*' />
     MFSampleAllocatorUsage_UsesCustomAllocator = (MFSampleAllocatorUsage_UsesProvidedAllocator + 1),
+
+    /// <include file='MFSampleAllocatorUsage.xml' path='doc/member[@name="MFSampleAllocatorUsage.MFSampleAllocatorUsage_DoesNotAllocate"]/*' />
     MFSampleAllocatorUsage_DoesNotAllocate = (MFSampleAllocatorUsage_UsesCustomAllocator + 1),
 }

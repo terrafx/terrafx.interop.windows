@@ -5,11 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NMKEY.xml' path='doc/member[@name="NMKEY"]/*' />
 public partial struct NMKEY
 {
+    /// <include file='NMKEY.xml' path='doc/member[@name="NMKEY.hdr"]/*' />
     public NMHDR hdr;
 
+    /// <include file='NMKEY.xml' path='doc/member[@name="NMKEY.nVKey"]/*' />
     public uint nVKey;
 
+    /// <include file='NMKEY.xml' path='doc/member[@name="NMKEY.uFlags"]/*' />
     public uint uFlags;
 }

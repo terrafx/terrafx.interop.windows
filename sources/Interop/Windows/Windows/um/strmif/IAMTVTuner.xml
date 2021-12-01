@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IAMTVTuner.get_Channel">
+    <summary>
+      <para>The <code>get_Channel</code> method retrieves the channel to which the tuner is set.</para>
+    </summary>
+    <param name="plChannel">
+      <para>Pointer to a variable that receives the channel. For frequencies, see <a href="https://docs.microsoft.com//windows/desktop/DirectShow/international-analog-tv-tuning">International Analog TV Tuning</a></para>
+    </param>
+    <param name="plVideoSubChannel">
+      <para>Pointer to a variable that receives either the video subchannel, or one of the following flags:</para>
+      <list type="table">
+        <listheader>
+          <description>Value
+</description>
+          <description>Description
+</description>
+        </listheader>
+        <item>
+          <description>AMTUNER_SUBCHAN_DEFAULT</description>
+          <description>Default subchannel</description>
+        </item>
+        <item>
+          <description>AMTUNER_SUBCHAN_NO_TUNE</description>
+          <description>No subchannel tuning</description>
+        </item>
+      </list>
+    </param>
+    <param name="plAudioSubChannel">
+      <para>Pointer to a variable that receives either the audio subchannel, or one of the following flags:</para>
+      <list type="table">
+        <listheader>
+          <description>Value
+</description>
+          <description>Description
+</description>
+        </listheader>
+        <item>
+          <description>AMTUNER_SUBCHAN_DEFAULT</description>
+          <description>Default subchannel</description>
+        </item>
+        <item>
+          <description>AMTUNER_SUBCHAN_NO_TUNE</description>
+          <description>No subchannel tuning</description>
+        </item>
+      </list>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value that depends on the implementation of the interface.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMTuner Interface" />
+  </member>
+  <member name="IAMTVTuner.AutoTune">
+    <summary>
+      <para>The <code>AutoTune</code> method scans for a precise signal on the channel's frequency.</para>
+    </summary>
+    <param name="lChannel">
+      <para>TV channel number.</para>
+    </param>
+    <param name="plFoundSignal">
+      <para>Pointer to a variable indicating whether the channel's frequency was found; nonzero indicates found, zero indicates not found.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value that depends on the implementation of the interface.</para>
+    </returns>
+    <remarks>
+      <para>TV channels generally map to a unique frequency depending on regional variances. To avoid interference between multiple transmitters that are assigned the same channel when they are in close geographic proximity, small frequency offsets are introduced at each transmitter. In the United States, this offset ranges up to +/– 26.25 kilohertz (kHz).</para>
+      <para>This method handles the channel-to-frequency conversion and scans for the most precise frequency. Store these values by calling the <see cref="IAMTVTuner.StoreAutoTune" /> method. You can find base frequencies for channels in the appendix <a href="https://docs.microsoft.com//windows/desktop/DirectShow/international-analog-tv-tuning">International Analog TV Tuning</a>.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMTVTuner Interface" />
+    <seealso cref="IAMTuner Interface" />
+  </member>
+  <member name="IAMTVTuner.get_AudioFrequency">
+    <summary>
+      <para>The <code>get_AudioFrequency</code> method retrieves the currently tuned audio frequency.</para>
+    </summary>
+    <param name="lFreq">
+      <para>Pointer to a variable that receives the audio frequency, in hertz (Hz).</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value that depends on the implementation of the interface.</para>
+    </returns>
+    <remarks>
+      <para>This is a diagnostic method that enables you to examine the exact frequency being used for a given channel.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMTVTuner Interface" />
+    <seealso cref="IAMTuner Interface" />
+  </member>
+  <member name="IAMTVTuner.get_AvailableTVFormats">
+    <summary>
+      <para>The <code>get_AvailableTVFormats</code> method retrieves all the analog video TV standards that the tuner supports.</para>
+    </summary>
+    <param name="lAnalogVideoStandard">
+      <para>Pointer to a variable that receives a bitwise combination of values from the <see cref="AnalogVideoStandard" /> enumeration.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value that depends on the implementation of the interface.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMTVTuner Interface" />
+    <seealso cref="IAMTuner Interface" />
+  </member>
+  <member name="IAMTVTuner.get_ConnectInput">
+    <summary>
+      <para>The <code>get_ConnectInput</code> method retrieves the hardware tuner input connection.</para>
+    </summary>
+    <param name="plIndex">
+      <para>Pointer to the input pin to get the connection for.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value that depends on the implementation of the interface.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMTVTuner Interface" />
+    <seealso cref="IAMTuner Interface" />
+  </member>
+  <member name="IAMTVTuner.get_InputType">
+    <summary>
+      <para>The <code>get_InputType</code> method retrieves the input type set in <see cref="IAMTVTuner.put_InputType" />.</para>
+    </summary>
+    <param name="lIndex">
+      <para>Index value that specifies the input pin that will be set.</para>
+    </param>
+    <param name="pInputType">
+      <para>Pointer to a variable the receives a member of the <see cref="TunerInputType" /> enumeration.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value that depends on the implementation of the interface.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMTVTuner Interface" />
+    <seealso cref="IAMTuner Interface" />
+  </member>
+  <member name="IAMTVTuner.get_NumInputConnections">
+    <summary>
+      <para>The <code>get_NumInputConnections</code> method retrieves the number of TV sources plugged into the tuner filter.</para>
+    </summary>
+    <param name="plNumInputConnections">
+      <para>Pointer to a variable that receives the number of TV sources plugged into the tuner filter.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value that depends on the implementation of the interface.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMTVTuner Interface" />
+    <seealso cref="IAMTuner Interface" />
+  </member>
+  <member name="IAMTVTuner.get_TVFormat">
+    <summary>
+      <para>The <code>get_TVFormat</code> method retrieves the current analog video TV standard in use.</para>
+    </summary>
+    <param name="plAnalogVideoStandard">
+      <para>Pointer to a variable that receives a member of the <see cref="AnalogVideoStandard" /> enumeration.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value that depends on the implementation of the interface.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMTVTuner Interface" />
+    <seealso cref="IAMTuner Interface" />
+  </member>
+  <member name="IAMTVTuner.get_VideoFrequency">
+    <summary>
+      <para>The <code>get_VideoFrequency</code> method retrieves the current video frequency.</para>
+    </summary>
+    <param name="lFreq">
+      <para>Pointer to a variable that receives the video frequency, in hertz (Hz).</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value that depends on the implementation of the interface.</para>
+    </returns>
+    <remarks>
+      <para>This is a diagnostic method that enables you to examine the exact frequency being used for a given channel.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMTVTuner Interface" />
+    <seealso cref="IAMTuner Interface" />
+  </member>
+  <member name="IAMTVTuner.put_ConnectInput">
+    <summary>
+      <para>The <code>put_ConnectInput</code> method sets the hardware tuner input connection.</para>
+    </summary>
+    <param name="lIndex">
+      <para>Index value of the input pin to set connection for.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value that depends on the implementation of the interface.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMTVTuner Interface" />
+    <seealso cref="IAMTuner Interface" />
+  </member>
+  <member name="IAMTVTuner.put_InputType">
+    <summary>
+      <para>The <code>put_InputType</code> method sets the tuner input type (cable or antenna).</para>
+    </summary>
+    <param name="lIndex">
+      <para>Index value that specifies the input pin to be set.</para>
+    </param>
+    <param name="InputType">
+      <para>Value indicating the connection type, as specified in the <see cref="TunerInputType" /> enumeration.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value that depends on the implementation of the interface.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMTVTuner Interface" />
+    <seealso cref="IAMTuner Interface" />
+  </member>
+  <member name="IAMTVTuner.StoreAutoTune">
+    <summary>
+      <para>The <code>StoreAutoTune</code> method saves the fine-tuning information for all channels.</para>
+    </summary>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value that depends on the implementation of the interface.</para>
+    </returns>
+    <remarks>
+      <para>Override the channel-to-frequency information stored by this method by setting a new country/region code in the <see cref="IAMTuner.put_CountryCode" /> method. For a listing of country/region codes, see <a href="https://docs.microsoft.com//windows/desktop/DirectShow/international-analog-tv-tuning">International Analog TV Tuning</a>.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMTVTuner Interface" />
+    <seealso cref="IAMTuner Interface" />
+  </member>
+  <member name="IAMTVTuner">
+    <summary>
+      <para>The <code>IAMTVTuner</code> interface controls a TV tuner. The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/tv-tuner-filter">TV Tuner</a> filter implements this interface. Applications can use this interface to set TV channels and to get or set information about their frequencies, and to determine what analog video standards your TV tuner card supports.</para>
+      <para>The interface supports tuners for analog broadcast television and AM/FM radio. It supports tuners with multiple input pins, to enable multiple devices and multiple transmission types. The TV Tuner filter supports worldwide tuning coverage. It maps TV channels to specific frequencies through the <see cref="IAMTuner.put_Channel" /> and <see cref="IAMTVTuner.AutoTune" /> methods. These methods handle the details of the conversion, so that the hardware driver receives an exact frequency.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/analog-television">Analog Television</seealso>
+    <seealso cref="IAMTuner" />
+  </member>
+</doc>

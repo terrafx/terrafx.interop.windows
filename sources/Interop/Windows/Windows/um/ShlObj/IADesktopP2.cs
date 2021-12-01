@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IADesktopP2.xml' path='doc/member[@name="IADesktopP2"]/*' />
 [Guid("B22754E2-4574-11D1-9888-006097DEACF9")]
 [NativeTypeName("struct IADesktopP2 : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IADesktopP2 : IADesktopP2.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IADesktopP2 : IADesktopP2.Interface
         return ((delegate* unmanaged<IADesktopP2*, Guid*, void**, int>)(lpVtbl[0]))((IADesktopP2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IADesktopP2 : IADesktopP2.Interface
         return ((delegate* unmanaged<IADesktopP2*, uint>)(lpVtbl[1]))((IADesktopP2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IADesktopP2 : IADesktopP2.Interface
         return ((delegate* unmanaged<IADesktopP2*, uint>)(lpVtbl[2]))((IADesktopP2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IADesktopP2.xml' path='doc/member[@name="IADesktopP2.ReReadWallpaper"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT ReReadWallpaper()
@@ -46,6 +51,7 @@ public unsafe partial struct IADesktopP2 : IADesktopP2.Interface
         return ((delegate* unmanaged<IADesktopP2*, int>)(lpVtbl[3]))((IADesktopP2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IADesktopP2.xml' path='doc/member[@name="IADesktopP2.GetADObjectFlags"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetADObjectFlags([NativeTypeName("DWORD *")] uint* pdwFlags, [NativeTypeName("DWORD")] uint dwMask)
@@ -53,6 +59,7 @@ public unsafe partial struct IADesktopP2 : IADesktopP2.Interface
         return ((delegate* unmanaged<IADesktopP2*, uint*, uint, int>)(lpVtbl[4]))((IADesktopP2*)Unsafe.AsPointer(ref this), pdwFlags, dwMask);
     }
 
+    /// <include file='IADesktopP2.xml' path='doc/member[@name="IADesktopP2.UpdateAllDesktopSubscriptions"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT UpdateAllDesktopSubscriptions()
@@ -60,6 +67,7 @@ public unsafe partial struct IADesktopP2 : IADesktopP2.Interface
         return ((delegate* unmanaged<IADesktopP2*, int>)(lpVtbl[5]))((IADesktopP2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IADesktopP2.xml' path='doc/member[@name="IADesktopP2.MakeDynamicChanges"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT MakeDynamicChanges(IOleObject* pOleObj)

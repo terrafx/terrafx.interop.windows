@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="NET_IF_CONNECTION_TYPE">
+    <summary>
+      <para>The NET_IF_CONNECTION_TYPE enumeration type specifies the
+<a href="https://docs.microsoft.com//windows-hardware/drivers/network/ndis-network-interfaces2">NDIS network interface</a> connection
+type.</para>
+    </summary>
+  </member>
+  <member name="NET_IF_CONNECTION_TYPE.NET_IF_CONNECTION_DEDICATED">
+    <summary>
+      <para>Specifies the dedicated connection type. The connection comes up automatically when media sense is
+<b>TRUE</b>. For example, an Ethernet connection is dedicated.</para>
+    </summary>
+  </member>
+  <member name="NET_IF_CONNECTION_TYPE.NET_IF_CONNECTION_PASSIVE">
+    <summary>
+      <para>Specifies the passive connection type. The other end must bring up the connection to the local
+station. For example, the RAS interface is passive.</para>
+    </summary>
+  </member>
+  <member name="NET_IF_CONNECTION_TYPE.NET_IF_CONNECTION_DEMAND">
+    <summary>
+      <para>Specifies the demand-dial connection type. A demand-dial connection comes up in response to a
+local action--for example, sending a packet.</para>
+    </summary>
+  </member>
+  <member name="NET_IF_CONNECTION_TYPE.NET_IF_CONNECTION_MAXIMUM">
+    <summary>
+      <para>A maximum value for testing purposes.</para>
+    </summary>
+  </member>
+</doc>

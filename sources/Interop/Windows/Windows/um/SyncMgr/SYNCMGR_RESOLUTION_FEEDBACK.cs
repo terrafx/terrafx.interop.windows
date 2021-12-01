@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SYNCMGR_RESOLUTION_FEEDBACK.xml' path='doc/member[@name="SYNCMGR_RESOLUTION_FEEDBACK"]/*' />
 public enum SYNCMGR_RESOLUTION_FEEDBACK
 {
+    /// <include file='SYNCMGR_RESOLUTION_FEEDBACK.xml' path='doc/member[@name="SYNCMGR_RESOLUTION_FEEDBACK.SYNCMGR_RF_CONTINUE"]/*' />
     SYNCMGR_RF_CONTINUE = 0,
+
+    /// <include file='SYNCMGR_RESOLUTION_FEEDBACK.xml' path='doc/member[@name="SYNCMGR_RESOLUTION_FEEDBACK.SYNCMGR_RF_REFRESH"]/*' />
     SYNCMGR_RF_REFRESH = (SYNCMGR_RF_CONTINUE + 1),
+
+    /// <include file='SYNCMGR_RESOLUTION_FEEDBACK.xml' path='doc/member[@name="SYNCMGR_RESOLUTION_FEEDBACK.SYNCMGR_RF_CANCEL"]/*' />
     SYNCMGR_RF_CANCEL = (SYNCMGR_RF_REFRESH + 1),
 }

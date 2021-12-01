@@ -5,17 +5,22 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='OLECMDTEXT.xml' path='doc/member[@name="OLECMDTEXT"]/*' />
 public unsafe partial struct OLECMDTEXT
 {
+    /// <include file='OLECMDTEXT.xml' path='doc/member[@name="OLECMDTEXT.cmdtextf"]/*' />
     [NativeTypeName("DWORD")]
     public uint cmdtextf;
 
+    /// <include file='OLECMDTEXT.xml' path='doc/member[@name="OLECMDTEXT.cwActual"]/*' />
     [NativeTypeName("ULONG")]
     public uint cwActual;
 
+    /// <include file='OLECMDTEXT.xml' path='doc/member[@name="OLECMDTEXT.cwBuf"]/*' />
     [NativeTypeName("ULONG")]
     public uint cwBuf;
 
+    /// <include file='OLECMDTEXT.xml' path='doc/member[@name="OLECMDTEXT.rgwz"]/*' />
     [NativeTypeName("wchar_t [1]")]
     public fixed ushort rgwz[1];
 }

@@ -7,16 +7,21 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='INTERFACE_TIMESTAMP_CAPABILITIES.xml' path='doc/member[@name="INTERFACE_TIMESTAMP_CAPABILITIES"]/*' />
 [SupportedOSPlatform("windows10.0.22000.0")]
 public partial struct INTERFACE_TIMESTAMP_CAPABILITIES
 {
+    /// <include file='INTERFACE_TIMESTAMP_CAPABILITIES.xml' path='doc/member[@name="INTERFACE_TIMESTAMP_CAPABILITIES.HardwareClockFrequencyHz"]/*' />
     [NativeTypeName("ULONG64")]
     public ulong HardwareClockFrequencyHz;
 
+    /// <include file='INTERFACE_TIMESTAMP_CAPABILITIES.xml' path='doc/member[@name="INTERFACE_TIMESTAMP_CAPABILITIES.SupportsCrossTimestamp"]/*' />
     [NativeTypeName("BOOLEAN")]
     public byte SupportsCrossTimestamp;
 
+    /// <include file='INTERFACE_TIMESTAMP_CAPABILITIES.xml' path='doc/member[@name="INTERFACE_TIMESTAMP_CAPABILITIES.HardwareCapabilities"]/*' />
     public INTERFACE_HARDWARE_TIMESTAMP_CAPABILITIES HardwareCapabilities;
 
+    /// <include file='INTERFACE_TIMESTAMP_CAPABILITIES.xml' path='doc/member[@name="INTERFACE_TIMESTAMP_CAPABILITIES.SoftwareCapabilities"]/*' />
     public INTERFACE_SOFTWARE_TIMESTAMP_CAPABILITIES SoftwareCapabilities;
 }

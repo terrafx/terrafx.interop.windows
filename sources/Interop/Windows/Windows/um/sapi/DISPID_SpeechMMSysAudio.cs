@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DISPID_SpeechMMSysAudio.xml' path='doc/member[@name="DISPID_SpeechMMSysAudio"]/*' />
 public enum DISPID_SpeechMMSysAudio
 {
+    /// <include file='DISPID_SpeechMMSysAudio.xml' path='doc/member[@name="DISPID_SpeechMMSysAudio.DISPID_SMSADeviceId"]/*' />
     DISPID_SMSADeviceId = 300,
+
+    /// <include file='DISPID_SpeechMMSysAudio.xml' path='doc/member[@name="DISPID_SpeechMMSysAudio.DISPID_SMSALineId"]/*' />
     DISPID_SMSALineId = (DISPID_SMSADeviceId + 1),
+
+    /// <include file='DISPID_SpeechMMSysAudio.xml' path='doc/member[@name="DISPID_SpeechMMSysAudio.DISPID_SMSAMMHandle"]/*' />
     DISPID_SMSAMMHandle = (DISPID_SMSALineId + 1),
 }

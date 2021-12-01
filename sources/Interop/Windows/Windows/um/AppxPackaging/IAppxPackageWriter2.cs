@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAppxPackageWriter2.xml' path='doc/member[@name="IAppxPackageWriter2"]/*' />
 [Guid("2CF5C4FD-E54C-4EA5-BA4E-F8C4B105A8C8")]
 [NativeTypeName("struct IAppxPackageWriter2 : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IAppxPackageWriter2 : IAppxPackageWriter2.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IAppxPackageWriter2 : IAppxPackageWriter2.Interface
         return ((delegate* unmanaged<IAppxPackageWriter2*, Guid*, void**, int>)(lpVtbl[0]))((IAppxPackageWriter2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IAppxPackageWriter2 : IAppxPackageWriter2.Interface
         return ((delegate* unmanaged<IAppxPackageWriter2*, uint>)(lpVtbl[1]))((IAppxPackageWriter2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IAppxPackageWriter2 : IAppxPackageWriter2.Interface
         return ((delegate* unmanaged<IAppxPackageWriter2*, uint>)(lpVtbl[2]))((IAppxPackageWriter2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAppxPackageWriter2.xml' path='doc/member[@name="IAppxPackageWriter2.Close"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Close(IStream* manifest, IStream* contentGroupMap)

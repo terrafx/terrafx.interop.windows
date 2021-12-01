@@ -7,12 +7,15 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MIDIPROPTIMEDIV.xml' path='doc/member[@name="MIDIPROPTIMEDIV"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct MIDIPROPTIMEDIV
 {
+    /// <include file='MIDIPROPTIMEDIV.xml' path='doc/member[@name="MIDIPROPTIMEDIV.cbStruct"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbStruct;
 
+    /// <include file='MIDIPROPTIMEDIV.xml' path='doc/member[@name="MIDIPROPTIMEDIV.dwTimeDiv"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwTimeDiv;
 }

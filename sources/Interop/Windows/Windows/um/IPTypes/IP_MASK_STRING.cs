@@ -5,8 +5,10 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IP_MASK_STRING.xml' path='doc/member[@name="IP_MASK_STRING"]/*' />
 public unsafe partial struct IP_MASK_STRING
 {
+    /// <include file='IP_MASK_STRING.xml' path='doc/member[@name="IP_MASK_STRING.String"]/*' />
     [NativeTypeName("char [16]")]
     public fixed sbyte String[16];
 }

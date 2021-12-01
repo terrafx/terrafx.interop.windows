@@ -5,13 +5,27 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='POWER_SETTING_ALTITUDE.xml' path='doc/member[@name="POWER_SETTING_ALTITUDE"]/*' />
 public enum POWER_SETTING_ALTITUDE
 {
+    /// <include file='POWER_SETTING_ALTITUDE.xml' path='doc/member[@name="POWER_SETTING_ALTITUDE.ALTITUDE_GROUP_POLICY"]/*' />
     ALTITUDE_GROUP_POLICY,
+
+    /// <include file='POWER_SETTING_ALTITUDE.xml' path='doc/member[@name="POWER_SETTING_ALTITUDE.ALTITUDE_USER"]/*' />
     ALTITUDE_USER,
+
+    /// <include file='POWER_SETTING_ALTITUDE.xml' path='doc/member[@name="POWER_SETTING_ALTITUDE.ALTITUDE_RUNTIME_OVERRIDE"]/*' />
     ALTITUDE_RUNTIME_OVERRIDE,
+
+    /// <include file='POWER_SETTING_ALTITUDE.xml' path='doc/member[@name="POWER_SETTING_ALTITUDE.ALTITUDE_PROVISIONING"]/*' />
     ALTITUDE_PROVISIONING,
+
+    /// <include file='POWER_SETTING_ALTITUDE.xml' path='doc/member[@name="POWER_SETTING_ALTITUDE.ALTITUDE_OEM_CUSTOMIZATION"]/*' />
     ALTITUDE_OEM_CUSTOMIZATION,
+
+    /// <include file='POWER_SETTING_ALTITUDE.xml' path='doc/member[@name="POWER_SETTING_ALTITUDE.ALTITUDE_INTERNAL_OVERRIDE"]/*' />
     ALTITUDE_INTERNAL_OVERRIDE,
+
+    /// <include file='POWER_SETTING_ALTITUDE.xml' path='doc/member[@name="POWER_SETTING_ALTITUDE.ALTITUDE_OS_DEFAULT"]/*' />
     ALTITUDE_OS_DEFAULT,
 }

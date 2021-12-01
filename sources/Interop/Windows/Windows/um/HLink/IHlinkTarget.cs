@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IHlinkTarget.xml' path='doc/member[@name="IHlinkTarget"]/*' />
 [Guid("79EAC9C4-BAF9-11CE-8C82-00AA004BA90B")]
 [NativeTypeName("struct IHlinkTarget : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IHlinkTarget : IHlinkTarget.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IHlinkTarget : IHlinkTarget.Interface
         return ((delegate* unmanaged<IHlinkTarget*, Guid*, void**, int>)(lpVtbl[0]))((IHlinkTarget*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IHlinkTarget : IHlinkTarget.Interface
         return ((delegate* unmanaged<IHlinkTarget*, uint>)(lpVtbl[1]))((IHlinkTarget*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IHlinkTarget : IHlinkTarget.Interface
         return ((delegate* unmanaged<IHlinkTarget*, uint>)(lpVtbl[2]))((IHlinkTarget*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IHlinkTarget.xml' path='doc/member[@name="IHlinkTarget.SetBrowseContext"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetBrowseContext(IHlinkBrowseContext* pihlbc)
@@ -46,6 +51,7 @@ public unsafe partial struct IHlinkTarget : IHlinkTarget.Interface
         return ((delegate* unmanaged<IHlinkTarget*, IHlinkBrowseContext*, int>)(lpVtbl[3]))((IHlinkTarget*)Unsafe.AsPointer(ref this), pihlbc);
     }
 
+    /// <include file='IHlinkTarget.xml' path='doc/member[@name="IHlinkTarget.GetBrowseContext"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetBrowseContext(IHlinkBrowseContext** ppihlbc)
@@ -53,6 +59,7 @@ public unsafe partial struct IHlinkTarget : IHlinkTarget.Interface
         return ((delegate* unmanaged<IHlinkTarget*, IHlinkBrowseContext**, int>)(lpVtbl[4]))((IHlinkTarget*)Unsafe.AsPointer(ref this), ppihlbc);
     }
 
+    /// <include file='IHlinkTarget.xml' path='doc/member[@name="IHlinkTarget.Navigate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT Navigate([NativeTypeName("DWORD")] uint grfHLNF, [NativeTypeName("LPCWSTR")] ushort* pwzJumpLocation)
@@ -60,6 +67,7 @@ public unsafe partial struct IHlinkTarget : IHlinkTarget.Interface
         return ((delegate* unmanaged<IHlinkTarget*, uint, ushort*, int>)(lpVtbl[5]))((IHlinkTarget*)Unsafe.AsPointer(ref this), grfHLNF, pwzJumpLocation);
     }
 
+    /// <include file='IHlinkTarget.xml' path='doc/member[@name="IHlinkTarget.GetMoniker"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetMoniker([NativeTypeName("LPCWSTR")] ushort* pwzLocation, [NativeTypeName("DWORD")] uint dwAssign, IMoniker** ppimkLocation)
@@ -67,6 +75,7 @@ public unsafe partial struct IHlinkTarget : IHlinkTarget.Interface
         return ((delegate* unmanaged<IHlinkTarget*, ushort*, uint, IMoniker**, int>)(lpVtbl[6]))((IHlinkTarget*)Unsafe.AsPointer(ref this), pwzLocation, dwAssign, ppimkLocation);
     }
 
+    /// <include file='IHlinkTarget.xml' path='doc/member[@name="IHlinkTarget.GetFriendlyName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetFriendlyName([NativeTypeName("LPCWSTR")] ushort* pwzLocation, [NativeTypeName("LPWSTR *")] ushort** ppwzFriendlyName)

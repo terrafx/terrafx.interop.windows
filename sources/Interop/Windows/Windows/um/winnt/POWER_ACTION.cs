@@ -5,15 +5,33 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='POWER_ACTION.xml' path='doc/member[@name="POWER_ACTION"]/*' />
 public enum POWER_ACTION
 {
+    /// <include file='POWER_ACTION.xml' path='doc/member[@name="POWER_ACTION.PowerActionNone"]/*' />
     PowerActionNone = 0,
+
+    /// <include file='POWER_ACTION.xml' path='doc/member[@name="POWER_ACTION.PowerActionReserved"]/*' />
     PowerActionReserved,
+
+    /// <include file='POWER_ACTION.xml' path='doc/member[@name="POWER_ACTION.PowerActionSleep"]/*' />
     PowerActionSleep,
+
+    /// <include file='POWER_ACTION.xml' path='doc/member[@name="POWER_ACTION.PowerActionHibernate"]/*' />
     PowerActionHibernate,
+
+    /// <include file='POWER_ACTION.xml' path='doc/member[@name="POWER_ACTION.PowerActionShutdown"]/*' />
     PowerActionShutdown,
+
+    /// <include file='POWER_ACTION.xml' path='doc/member[@name="POWER_ACTION.PowerActionShutdownReset"]/*' />
     PowerActionShutdownReset,
+
+    /// <include file='POWER_ACTION.xml' path='doc/member[@name="POWER_ACTION.PowerActionShutdownOff"]/*' />
     PowerActionShutdownOff,
+
+    /// <include file='POWER_ACTION.xml' path='doc/member[@name="POWER_ACTION.PowerActionWarmEject"]/*' />
     PowerActionWarmEject,
+
+    /// <include file='POWER_ACTION.xml' path='doc/member[@name="POWER_ACTION.PowerActionDisplayOff"]/*' />
     PowerActionDisplayOff,
 }

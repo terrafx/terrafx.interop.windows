@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_ENVELOPE_VERSION">
+    <summary>
+      <para>The version of the specification used for the envelope
+structure.</para>
+    </summary>
+  </member>
+  <member name="WS_ENVELOPE_VERSION.WS_ENVELOPE_VERSION_SOAP_1_1">
+    <summary>
+      <para>The XML namespace for this version is: 'http://schemas.xmlsoap.org/soap/envelope/'.</para>
+    </summary>
+  </member>
+  <member name="WS_ENVELOPE_VERSION.WS_ENVELOPE_VERSION_SOAP_1_2">
+    <summary>
+      <para>The XML namespace for this version is: 'http://www.w3.org/2003/05/soap-envelope'.</para>
+    </summary>
+  </member>
+  <member name="WS_ENVELOPE_VERSION.WS_ENVELOPE_VERSION_NONE">
+    <summary></summary>
+  </member>
+</doc>

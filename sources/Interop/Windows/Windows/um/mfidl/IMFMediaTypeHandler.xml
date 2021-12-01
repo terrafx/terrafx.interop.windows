@@ -1,0 +1,299 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFMediaTypeHandler.GetCurrentMediaType">
+    <summary>
+      <para>Retrieves the current media type of the object.</para>
+    </summary>
+    <param name="ppMediaType">
+      <para>Receives a pointer to the <see cref="IMFMediaType" /> interface. The caller must release the interface.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_NOT_INITIALIZED</b>
+            </para>
+          </description>
+          <description>
+            <para>No media type is set.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
+      <list type="bullet">
+        <item>
+          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
+        </item>
+        <item>
+          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="IMFMediaTypeHandler" />
+  </member>
+  <member name="IMFMediaTypeHandler.GetMajorType">
+    <summary>
+      <para>Gets the major media type of the object.</para>
+    </summary>
+    <param name="pguidMajorType">
+      <para>Receives a GUID that identifies the major type. For a list of possible values, see <a href="https://docs.microsoft.com//windows/desktop/medfound/media-type-guids">Major Media Types</a>.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The major type identifies what kind of data is in the stream, such as audio or video. To get the specific details of the format, call <see cref="IMFMediaTypeHandler.GetCurrentMediaType" />.</para>
+      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
+      <list type="bullet">
+        <item>
+          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
+        </item>
+        <item>
+          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="IMFMediaTypeHandler" />
+  </member>
+  <member name="IMFMediaTypeHandler.GetMediaTypeByIndex">
+    <summary>
+      <para>Retrieves a media type from the object's list of supported media types.</para>
+    </summary>
+    <param name="dwIndex">
+      <para>Zero-based index of the media type to retrieve. To get the number of media types in the list, call <see cref="IMFMediaTypeHandler.GetMediaTypeCount" />.</para>
+    </param>
+    <param name="ppType">
+      <para>Receives a pointer to the <see cref="IMFMediaType" /> interface. The caller must release the interface.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_NO_MORE_TYPES</b>
+            </para>
+          </description>
+          <description>
+            <para>The <i>dwIndex</i> parameter is out of range.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Media types are returned in the approximate order of preference. The list of supported types is not guaranteed to be complete. To test whether a particular media type is supported, call <see cref="IMFMediaTypeHandler.IsMediaTypeSupported" />.</para>
+      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
+      <list type="bullet">
+        <item>
+          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
+        </item>
+        <item>
+          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="IMFMediaTypeHandler" />
+  </member>
+  <member name="IMFMediaTypeHandler.GetMediaTypeCount">
+    <summary>
+      <para>Retrieves the number of media types in the object's list of supported media types.</para>
+    </summary>
+    <param name="pdwTypeCount">
+      <para>Receives the number of media types in the list.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>To get the supported media types, call <see cref="IMFMediaTypeHandler.GetMediaTypeByIndex" />.</para>
+      <para>For a media source, the media type handler for each stream must contain at least one supported media type. For media sinks, the media type handler for each stream might contain zero media types. In that case, the application must provide the media type. To test whether a particular media type is supported, call <see cref="IMFMediaTypeHandler.IsMediaTypeSupported" />.</para>
+      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
+      <list type="bullet">
+        <item>
+          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
+        </item>
+        <item>
+          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="IMFMediaTypeHandler" />
+  </member>
+  <member name="IMFMediaTypeHandler.IsMediaTypeSupported">
+    <summary>
+      <para>Queries whether the object supports a specified media type.</para>
+    </summary>
+    <param name="pMediaType">
+      <para>Pointer to the <see cref="IMFMediaType" /> interface of the media type to check.</para>
+    </param>
+    <param name="ppMediaType">
+      <para>Receives a pointer to the <see cref="IMFMediaType" /> interface of the closest matching media type, or receives the value <b>NULL</b>. If non-<b>NULL</b>, the caller must release the interface. This parameter can be <b>NULL</b>. See Remarks.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_INVALIDMEDIATYPE</b>
+            </para>
+          </description>
+          <description>
+            <para>The object does not support this media type.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>If the object supports the media type given in <i>pMediaType</i>, the method returns <b>S_OK</b>. For a media source, it means the source can generate data that conforms to that media type. For a media sink, it means the sink can receive data that conforms to that media type. If the object does not support the media type, the method fails.</para>
+      <para>The <i>ppMediaType</i> parameter is optional. If the method fails, the object might use <i>ppMediaType</i> to return a media type that the object does support, and which closely matches the one given in <i>pMediaType</i>. The method is not guaranteed to return a media type in <i>ppMediaType</i>. If no type is returned, this parameter receives a <b>NULL</b> pointer. If the method succeeds, this parameter receives a <b>NULL</b> pointer. If the caller sets <i>ppMediaType</i> to <b>NULL</b>, this parameter is ignored.</para>
+      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
+      <list type="bullet">
+        <item>
+          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
+        </item>
+        <item>
+          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
+        </item>
+      </list>
+      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
+      <list type="bullet">
+        <item>
+          <description>Windows XP with SP2 and later.</description>
+        </item>
+        <item>
+          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="IMFMediaTypeHandler" />
+  </member>
+  <member name="IMFMediaTypeHandler.SetCurrentMediaType">
+    <summary>
+      <para>Sets the object's media type.</para>
+    </summary>
+    <param name="pMediaType">
+      <para>Pointer to the <see cref="IMFMediaType" /> interface of the new media type.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_INVALIDREQUEST</b>
+            </para>
+          </description>
+          <description>
+            <para>Invalid request.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>For media sources, setting the media type means the source will generate data that conforms to that media type. For media sinks, setting the media type means the sink can receive data that conforms to that media type.</para>
+      <para>Any implementation of this method should check whether <i>pMediaType</i> differs from the object's current media type. If the types are identical, the method should return S_OK but avoid releasing and recreating resources unnecessarily. If the types are not identical, the method should validate the new type.</para>
+      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
+      <list type="bullet">
+        <item>
+          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
+        </item>
+        <item>
+          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="IMFMediaTypeHandler" />
+  </member>
+  <member name="IMFMediaTypeHandler">
+    <summary>
+      <para>Gets and sets media types on an object, such as a media source or media sink.</para>
+    </summary>
+    <remarks>
+      <para>This interface is exposed by <i>media-type handlers</i>.</para>
+      <list type="bullet">
+        <item>
+          <description> For media sources, get the media-type handler from the stream descriptor by calling <see cref="IMFStreamDescriptor.GetMediaTypeHandler" />.</description>
+        </item>
+        <item>
+          <description>For media sinks, get the media-type handler by calling <see cref="IMFStreamSink.GetMediaTypeHandler" />.</description>
+        </item>
+      </list>
+      <para>If you are implementing a custom media source or media sink, you can create a simple media-type handler by calling <see cref="MFCreateSimpleTypeHandler" />, or you can provide your own implementation.</para>
+      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
+      <list type="bullet">
+        <item>
+          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
+        </item>
+        <item>
+          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-types">Media Types</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/presentation-descriptors">Presentation Descriptors</seealso>
+  </member>
+</doc>

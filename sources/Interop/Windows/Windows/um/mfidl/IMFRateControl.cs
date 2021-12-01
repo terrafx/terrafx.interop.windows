@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFRateControl.xml' path='doc/member[@name="IMFRateControl"]/*' />
 [Guid("88DDCD21-03C3-4275-91ED-55EE3929328F")]
 [NativeTypeName("struct IMFRateControl : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMFRateControl : IMFRateControl.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMFRateControl : IMFRateControl.Interface
         return ((delegate* unmanaged<IMFRateControl*, Guid*, void**, int>)(lpVtbl[0]))((IMFRateControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMFRateControl : IMFRateControl.Interface
         return ((delegate* unmanaged<IMFRateControl*, uint>)(lpVtbl[1]))((IMFRateControl*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMFRateControl : IMFRateControl.Interface
         return ((delegate* unmanaged<IMFRateControl*, uint>)(lpVtbl[2]))((IMFRateControl*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFRateControl.xml' path='doc/member[@name="IMFRateControl.SetRate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetRate(BOOL fThin, float flRate)
@@ -46,6 +51,7 @@ public unsafe partial struct IMFRateControl : IMFRateControl.Interface
         return ((delegate* unmanaged<IMFRateControl*, BOOL, float, int>)(lpVtbl[3]))((IMFRateControl*)Unsafe.AsPointer(ref this), fThin, flRate);
     }
 
+    /// <include file='IMFRateControl.xml' path='doc/member[@name="IMFRateControl.GetRate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetRate(BOOL* pfThin, float* pflRate)

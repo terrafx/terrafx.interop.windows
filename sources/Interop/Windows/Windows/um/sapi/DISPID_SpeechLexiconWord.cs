@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DISPID_SpeechLexiconWord.xml' path='doc/member[@name="DISPID_SpeechLexiconWord"]/*' />
 public enum DISPID_SpeechLexiconWord
 {
+    /// <include file='DISPID_SpeechLexiconWord.xml' path='doc/member[@name="DISPID_SpeechLexiconWord.DISPID_SLWLangId"]/*' />
     DISPID_SLWLangId = 1,
+
+    /// <include file='DISPID_SpeechLexiconWord.xml' path='doc/member[@name="DISPID_SpeechLexiconWord.DISPID_SLWType"]/*' />
     DISPID_SLWType = (DISPID_SLWLangId + 1),
+
+    /// <include file='DISPID_SpeechLexiconWord.xml' path='doc/member[@name="DISPID_SpeechLexiconWord.DISPID_SLWWord"]/*' />
     DISPID_SLWWord = (DISPID_SLWType + 1),
+
+    /// <include file='DISPID_SpeechLexiconWord.xml' path='doc/member[@name="DISPID_SpeechLexiconWord.DISPID_SLWPronunciations"]/*' />
     DISPID_SLWPronunciations = (DISPID_SLWWord + 1),
 }

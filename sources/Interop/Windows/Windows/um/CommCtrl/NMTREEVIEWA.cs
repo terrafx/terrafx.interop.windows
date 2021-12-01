@@ -5,15 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NMTREEVIEWA.xml' path='doc/member[@name="NMTREEVIEWA"]/*' />
 public partial struct NMTREEVIEWA
 {
+    /// <include file='NMTREEVIEWA.xml' path='doc/member[@name="NMTREEVIEWA.hdr"]/*' />
     public NMHDR hdr;
 
+    /// <include file='NMTREEVIEWA.xml' path='doc/member[@name="NMTREEVIEWA.action"]/*' />
     public uint action;
 
+    /// <include file='NMTREEVIEWA.xml' path='doc/member[@name="NMTREEVIEWA.itemOld"]/*' />
     public TVITEMA itemOld;
 
+    /// <include file='NMTREEVIEWA.xml' path='doc/member[@name="NMTREEVIEWA.itemNew"]/*' />
     public TVITEMA itemNew;
 
+    /// <include file='NMTREEVIEWA.xml' path='doc/member[@name="NMTREEVIEWA.ptDrag"]/*' />
     public POINT ptDrag;
 }

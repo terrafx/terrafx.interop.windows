@@ -3,7 +3,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <NoWarn>0419;1571;1572;1573;1574;1584;1589;1591;1658;$(NoWarn)</NoWarn>
+    <NoWarn>0419;1571;1572;1573;1574;1580;1584;1589;1591;1658;$(NoWarn)</NoWarn>
     <RootNamespace>TerraFX.Interop</RootNamespace>
     <TargetFrameworks>net6.0</TargetFrameworks>
   </PropertyGroup>

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DISPLAYCONFIG_TARGET_MODE">
+    <summary>
+      <para>The DISPLAYCONFIG_TARGET_MODE structure describes a display path target mode.</para>
+    </summary>
+    <seealso cref="DISPLAYCONFIG_VIDEO_SIGNAL_INFO" />
+  </member>
+  <member name="DISPLAYCONFIG_TARGET_MODE.targetVideoSignalInfo">
+    <summary>
+      <para>A <see cref="DISPLAYCONFIG_VIDEO_SIGNAL_INFO" /> structure that contains a detailed description of the current target mode.</para>
+    </summary>
+  </member>
+</doc>

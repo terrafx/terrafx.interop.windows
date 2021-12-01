@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="AASHELLMENUFILENAME">
+    <summary>
+      <para>A variable-size structure that contains information about a menu file name.</para>
+    </summary>
+    <remarks>
+      <para>
+        <b>Important</b>  This structure cannot be used with operating systems later than Windows 2000.</para>
+      <para>When reading an <b>AASHELLMENUFILENAME</b> structure, first read a single SHORT to determine the total size of the structure, then use that value to read the remainder of the structure.</para>
+    </remarks>
+    <seealso cref="AASHELLMENUITEM" />
+  </member>
+  <member name="AASHELLMENUFILENAME.cbTotal">
+    <summary>
+      <para>Type: <b>SHORT</b></para>
+      <para>The size of the structure, in bytes.</para>
+    </summary>
+  </member>
+  <member name="AASHELLMENUFILENAME.rgbReserved">
+    <summary>
+      <para>Type: <b>BYTE[12]</b></para>
+      <para>Reserved. Applications should ignore this value.</para>
+    </summary>
+  </member>
+  <member name="AASHELLMENUFILENAME.szFileName">
+    <summary>
+      <para>Type: <b>TCHAR[1]</b></para>
+      <para>The menu file name. This string is in Unicode on Windows 2000.</para>
+    </summary>
+  </member>
+</doc>

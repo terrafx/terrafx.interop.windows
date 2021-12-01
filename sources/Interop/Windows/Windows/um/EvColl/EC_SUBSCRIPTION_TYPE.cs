@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='EC_SUBSCRIPTION_TYPE.xml' path='doc/member[@name="EC_SUBSCRIPTION_TYPE"]/*' />
 public enum EC_SUBSCRIPTION_TYPE
 {
+    /// <include file='EC_SUBSCRIPTION_TYPE.xml' path='doc/member[@name="EC_SUBSCRIPTION_TYPE.EcSubscriptionTypeSourceInitiated"]/*' />
     EcSubscriptionTypeSourceInitiated = 0,
+
+    /// <include file='EC_SUBSCRIPTION_TYPE.xml' path='doc/member[@name="EC_SUBSCRIPTION_TYPE.EcSubscriptionTypeCollectorInitiated"]/*' />
     EcSubscriptionTypeCollectorInitiated = 1,
 }

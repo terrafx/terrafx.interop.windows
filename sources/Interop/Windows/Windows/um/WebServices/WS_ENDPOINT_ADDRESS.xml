@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_ENDPOINT_ADDRESS">
+    <summary>
+      <para>Represents the network address of an endpoint.</para>
+    </summary>
+    <remarks>
+      <para>Only the URL field is required (other fields may be <b>NULL</b>).</para>
+    </remarks>
+  </member>
+  <member name="WS_ENDPOINT_ADDRESS.url">
+    <summary>
+      <para>The URL portion of the address.</para>
+      <para>The URL is always in escaped form.</para>
+      <para>If this string is zero-length, then
+the URL is assumed to be the anonymous address.  The anonymous
+address string is automatically mapped to/from the zero-length string
+when the endpoint address is serialized or deserialized
+using <see cref="WS_ENDPOINT_ADDRESS_TYPE" />.</para>
+      <para>The value of this field corresponds to the Address element of the
+WS-Addressing specifications.</para>
+    </summary>
+  </member>
+  <member name="WS_ENDPOINT_ADDRESS.headers">
+    <summary>
+      <para>A <a href="https://docs.microsoft.com//windows/desktop/wsw/ws-xml-buffer">WS_XML_BUFFER</a> handle to a set of header elements
+that represent the reference parameters for the endpoint address.</para>
+      <para>The headers are required to properly interact with the endpoint.
+They are used to further qualify the address (URL).</para>
+      <para>The headers should be treated as opaque values to the user of
+the endpoint address.</para>
+      <para>See <see cref="WsAddressMessage" /> for information on how to
+add the headers to a message being sent.</para>
+      <para>This field may be <b>NULL</b> if there are no headers.</para>
+      <para>This value of this field corresponds to the content of the
+ReferenceParameters element of the WS-Addressing specifications.</para>
+    </summary>
+  </member>
+  <member name="WS_ENDPOINT_ADDRESS.extensions">
+    <summary>
+      <para>A <a href="https://docs.microsoft.com//windows/desktop/wsw/ws-xml-buffer">WS_XML_BUFFER</a> handle to a set of extension elements.
+Extension elements are used to include additional information within an
+endpoint address.  This field may be <b>NULL</b> if there are no extension elements.</para>
+      <para>This value of this field corresponds to the other elements
+defined by WS-Addressing and any extension elements.  The elements must
+appear in the correct order according to the specification, followed
+by extension elements.  This field should not contain elements for Address
+or ReferenceParameters, or Identity, since these values are represented directly by
+other fields of this structure.</para>
+      <para>If the ReferenceProperties element is present (as defined by
+<see cref="WS_ADDRESSING_VERSION_0_9" />), it must be the first element
+within the <a href="https://docs.microsoft.com//windows/desktop/wsw/ws-xml-buffer">WS_XML_BUFFER</a>.</para>
+    </summary>
+  </member>
+  <member name="WS_ENDPOINT_ADDRESS.identity">
+    <summary>
+      <para>The security identity of the endpoint represented by this endpoint address.</para>
+      <para>This field corresponds to the Identity element, which is an extension
+of the base WS-Addressing specifications.</para>
+    </summary>
+  </member>
+</doc>

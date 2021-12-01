@@ -5,17 +5,22 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='EXTENDED_ENCRYPTED_DATA_INFO.xml' path='doc/member[@name="EXTENDED_ENCRYPTED_DATA_INFO"]/*' />
 public partial struct EXTENDED_ENCRYPTED_DATA_INFO
 {
+    /// <include file='EXTENDED_ENCRYPTED_DATA_INFO.xml' path='doc/member[@name="EXTENDED_ENCRYPTED_DATA_INFO.ExtendedCode"]/*' />
     [NativeTypeName("DWORD")]
     public uint ExtendedCode;
 
+    /// <include file='EXTENDED_ENCRYPTED_DATA_INFO.xml' path='doc/member[@name="EXTENDED_ENCRYPTED_DATA_INFO.Length"]/*' />
     [NativeTypeName("DWORD")]
     public uint Length;
 
+    /// <include file='EXTENDED_ENCRYPTED_DATA_INFO.xml' path='doc/member[@name="EXTENDED_ENCRYPTED_DATA_INFO.Flags"]/*' />
     [NativeTypeName("DWORD")]
     public uint Flags;
 
+    /// <include file='EXTENDED_ENCRYPTED_DATA_INFO.xml' path='doc/member[@name="EXTENDED_ENCRYPTED_DATA_INFO.Reserved"]/*' />
     [NativeTypeName("DWORD")]
     public uint Reserved;
 }

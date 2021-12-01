@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_SERVICE_SECURITY_IDENTITIES">
+    <summary>
+      <para>A list of Server Principal Names (SPNs) that are used to validate <a href="https://docs.microsoft.com//windows/desktop/wsw/extended-protection">Extended Protection</a>.</para>
+      <para>Only available on the server.</para>
+    </summary>
+  </member>
+  <member name="WS_SERVICE_SECURITY_IDENTITIES.serviceIdentities">
+    <summary>
+      <para>A array of strings representing the SPNs accepted by the server. Wildcards are not allowed.</para>
+    </summary>
+  </member>
+  <member name="WS_SERVICE_SECURITY_IDENTITIES.serviceIdentityCount">
+    <summary>
+      <para>The number of strings in serviceIdentities.</para>
+    </summary>
+  </member>
+</doc>

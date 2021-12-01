@@ -7,17 +7,22 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DEVICE_DSM_OFFLOAD_WRITE_PARAMETERS.xml' path='doc/member[@name="DEVICE_DSM_OFFLOAD_WRITE_PARAMETERS"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public partial struct DEVICE_DSM_OFFLOAD_WRITE_PARAMETERS
 {
+    /// <include file='DEVICE_DSM_OFFLOAD_WRITE_PARAMETERS.xml' path='doc/member[@name="DEVICE_DSM_OFFLOAD_WRITE_PARAMETERS.Flags"]/*' />
     [NativeTypeName("DWORD")]
     public uint Flags;
 
+    /// <include file='DEVICE_DSM_OFFLOAD_WRITE_PARAMETERS.xml' path='doc/member[@name="DEVICE_DSM_OFFLOAD_WRITE_PARAMETERS.Reserved"]/*' />
     [NativeTypeName("DWORD")]
     public uint Reserved;
 
+    /// <include file='DEVICE_DSM_OFFLOAD_WRITE_PARAMETERS.xml' path='doc/member[@name="DEVICE_DSM_OFFLOAD_WRITE_PARAMETERS.TokenOffset"]/*' />
     [NativeTypeName("DWORDLONG")]
     public ulong TokenOffset;
 
+    /// <include file='DEVICE_DSM_OFFLOAD_WRITE_PARAMETERS.xml' path='doc/member[@name="DEVICE_DSM_OFFLOAD_WRITE_PARAMETERS.Token"]/*' />
     public STORAGE_OFFLOAD_TOKEN Token;
 }

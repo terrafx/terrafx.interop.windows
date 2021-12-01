@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PSAPI_WS_WATCH_INFORMATION.xml' path='doc/member[@name="PSAPI_WS_WATCH_INFORMATION"]/*' />
 public unsafe partial struct PSAPI_WS_WATCH_INFORMATION
 {
+    /// <include file='PSAPI_WS_WATCH_INFORMATION.xml' path='doc/member[@name="PSAPI_WS_WATCH_INFORMATION.FaultingPc"]/*' />
     [NativeTypeName("LPVOID")]
     public void* FaultingPc;
 
+    /// <include file='PSAPI_WS_WATCH_INFORMATION.xml' path='doc/member[@name="PSAPI_WS_WATCH_INFORMATION.FaultingVa"]/*' />
     [NativeTypeName("LPVOID")]
     public void* FaultingVa;
 }

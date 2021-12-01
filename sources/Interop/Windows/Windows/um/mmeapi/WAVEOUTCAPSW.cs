@@ -7,30 +7,39 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WAVEOUTCAPSW.xml' path='doc/member[@name="WAVEOUTCAPSW"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public unsafe partial struct WAVEOUTCAPSW
 {
+    /// <include file='WAVEOUTCAPSW.xml' path='doc/member[@name="WAVEOUTCAPSW.wMid"]/*' />
     [NativeTypeName("WORD")]
     public ushort wMid;
 
+    /// <include file='WAVEOUTCAPSW.xml' path='doc/member[@name="WAVEOUTCAPSW.wPid"]/*' />
     [NativeTypeName("WORD")]
     public ushort wPid;
 
+    /// <include file='WAVEOUTCAPSW.xml' path='doc/member[@name="WAVEOUTCAPSW.vDriverVersion"]/*' />
     [NativeTypeName("MMVERSION")]
     public uint vDriverVersion;
 
+    /// <include file='WAVEOUTCAPSW.xml' path='doc/member[@name="WAVEOUTCAPSW.szPname"]/*' />
     [NativeTypeName("WCHAR [32]")]
     public fixed ushort szPname[32];
 
+    /// <include file='WAVEOUTCAPSW.xml' path='doc/member[@name="WAVEOUTCAPSW.dwFormats"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFormats;
 
+    /// <include file='WAVEOUTCAPSW.xml' path='doc/member[@name="WAVEOUTCAPSW.wChannels"]/*' />
     [NativeTypeName("WORD")]
     public ushort wChannels;
 
+    /// <include file='WAVEOUTCAPSW.xml' path='doc/member[@name="WAVEOUTCAPSW.wReserved1"]/*' />
     [NativeTypeName("WORD")]
     public ushort wReserved1;
 
+    /// <include file='WAVEOUTCAPSW.xml' path='doc/member[@name="WAVEOUTCAPSW.dwSupport"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwSupport;
 }

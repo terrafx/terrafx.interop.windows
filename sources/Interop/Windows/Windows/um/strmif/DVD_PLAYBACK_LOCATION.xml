@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DVD_PLAYBACK_LOCATION">
+    <summary>
+      <para>The <code>DVD_PLAYBACK_LOCATION</code> structure indicates DVD playback location.</para>
+    </summary>
+    <remarks>
+      <para>
+        <b>TitleNum</b> and <b>ChapterNum</b> or <b>TitleNum</b> and <b>TimeCode</b> are sufficient to save the playback location for simple linear movies.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-structures">DirectShow Structures</seealso>
+  </member>
+  <member name="DVD_PLAYBACK_LOCATION.TitleNum">
+    <summary>
+      <para>Title number for the whole disc; Title Track Number (TTN) not Video Title Set_Title Track Number (VTS_TTN).</para>
+    </summary>
+  </member>
+  <member name="DVD_PLAYBACK_LOCATION.ChapterNum">
+    <summary>
+      <para>Part-of-title number with title. 0xffffffff if not a simple linear movie.</para>
+    </summary>
+  </member>
+  <member name="DVD_PLAYBACK_LOCATION.TimeCode">
+    <summary>
+      <para>Timecode. Use <see cref="DVD_TIMECODE" /> for current playback time. 0xFFFFFFFF if not a simple linear movie.</para>
+    </summary>
+  </member>
+</doc>

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IHTMLFrameBase2.xml' path='doc/member[@name="IHTMLFrameBase2"]/*' />
 [Guid("3050F6DB-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IHTMLFrameBase2 : IDispatch")]
 [NativeInheritance("IDispatch")]
@@ -16,6 +17,7 @@ public unsafe partial struct IHTMLFrameBase2 : IHTMLFrameBase2.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IHTMLFrameBase2 : IHTMLFrameBase2.Interface
         return ((delegate* unmanaged<IHTMLFrameBase2*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLFrameBase2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IHTMLFrameBase2 : IHTMLFrameBase2.Interface
         return ((delegate* unmanaged<IHTMLFrameBase2*, uint>)(lpVtbl[1]))((IHTMLFrameBase2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IHTMLFrameBase2 : IHTMLFrameBase2.Interface
         return ((delegate* unmanaged<IHTMLFrameBase2*, uint>)(lpVtbl[2]))((IHTMLFrameBase2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct IHTMLFrameBase2 : IHTMLFrameBase2.Interface
         return ((delegate* unmanaged<IHTMLFrameBase2*, uint*, int>)(lpVtbl[3]))((IHTMLFrameBase2*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct IHTMLFrameBase2 : IHTMLFrameBase2.Interface
         return ((delegate* unmanaged<IHTMLFrameBase2*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IHTMLFrameBase2*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
@@ -60,6 +67,7 @@ public unsafe partial struct IHTMLFrameBase2 : IHTMLFrameBase2.Interface
         return ((delegate* unmanaged<IHTMLFrameBase2*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLFrameBase2*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
+    /// <inheritdoc cref="IDispatch.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
@@ -67,6 +75,7 @@ public unsafe partial struct IHTMLFrameBase2 : IHTMLFrameBase2.Interface
         return ((delegate* unmanaged<IHTMLFrameBase2*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IHTMLFrameBase2*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
+    /// <include file='IHTMLFrameBase2.xml' path='doc/member[@name="IHTMLFrameBase2.get_contentWindow"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT get_contentWindow(IHTMLWindow2** p)
@@ -74,6 +83,7 @@ public unsafe partial struct IHTMLFrameBase2 : IHTMLFrameBase2.Interface
         return ((delegate* unmanaged<IHTMLFrameBase2*, IHTMLWindow2**, int>)(lpVtbl[7]))((IHTMLFrameBase2*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLFrameBase2.xml' path='doc/member[@name="IHTMLFrameBase2.put_onload"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT put_onload(VARIANT v)
@@ -81,6 +91,7 @@ public unsafe partial struct IHTMLFrameBase2 : IHTMLFrameBase2.Interface
         return ((delegate* unmanaged<IHTMLFrameBase2*, VARIANT, int>)(lpVtbl[8]))((IHTMLFrameBase2*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLFrameBase2.xml' path='doc/member[@name="IHTMLFrameBase2.get_onload"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT get_onload(VARIANT* p)
@@ -88,6 +99,7 @@ public unsafe partial struct IHTMLFrameBase2 : IHTMLFrameBase2.Interface
         return ((delegate* unmanaged<IHTMLFrameBase2*, VARIANT*, int>)(lpVtbl[9]))((IHTMLFrameBase2*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLFrameBase2.xml' path='doc/member[@name="IHTMLFrameBase2.put_onreadystatechange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT put_onreadystatechange(VARIANT v)
@@ -95,6 +107,7 @@ public unsafe partial struct IHTMLFrameBase2 : IHTMLFrameBase2.Interface
         return ((delegate* unmanaged<IHTMLFrameBase2*, VARIANT, int>)(lpVtbl[10]))((IHTMLFrameBase2*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLFrameBase2.xml' path='doc/member[@name="IHTMLFrameBase2.get_onreadystatechange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT get_onreadystatechange(VARIANT* p)
@@ -102,6 +115,7 @@ public unsafe partial struct IHTMLFrameBase2 : IHTMLFrameBase2.Interface
         return ((delegate* unmanaged<IHTMLFrameBase2*, VARIANT*, int>)(lpVtbl[11]))((IHTMLFrameBase2*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLFrameBase2.xml' path='doc/member[@name="IHTMLFrameBase2.get_readyState"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT get_readyState([NativeTypeName("BSTR *")] ushort** p)
@@ -109,6 +123,7 @@ public unsafe partial struct IHTMLFrameBase2 : IHTMLFrameBase2.Interface
         return ((delegate* unmanaged<IHTMLFrameBase2*, ushort**, int>)(lpVtbl[12]))((IHTMLFrameBase2*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLFrameBase2.xml' path='doc/member[@name="IHTMLFrameBase2.put_allowTransparency"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT put_allowTransparency([NativeTypeName("VARIANT_BOOL")] short v)
@@ -116,6 +131,7 @@ public unsafe partial struct IHTMLFrameBase2 : IHTMLFrameBase2.Interface
         return ((delegate* unmanaged<IHTMLFrameBase2*, short, int>)(lpVtbl[13]))((IHTMLFrameBase2*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLFrameBase2.xml' path='doc/member[@name="IHTMLFrameBase2.get_allowTransparency"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT get_allowTransparency([NativeTypeName("VARIANT_BOOL *")] short* p)

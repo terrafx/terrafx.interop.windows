@@ -7,16 +7,22 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SpatialAudioHrtfDistanceDecay.xml' path='doc/member[@name="SpatialAudioHrtfDistanceDecay"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct SpatialAudioHrtfDistanceDecay
 {
+    /// <include file='SpatialAudioHrtfDistanceDecay.xml' path='doc/member[@name="SpatialAudioHrtfDistanceDecay.Type"]/*' />
     public SpatialAudioHrtfDistanceDecayType Type;
 
+    /// <include file='SpatialAudioHrtfDistanceDecay.xml' path='doc/member[@name="SpatialAudioHrtfDistanceDecay.MaxGain"]/*' />
     public float MaxGain;
 
+    /// <include file='SpatialAudioHrtfDistanceDecay.xml' path='doc/member[@name="SpatialAudioHrtfDistanceDecay.MinGain"]/*' />
     public float MinGain;
 
+    /// <include file='SpatialAudioHrtfDistanceDecay.xml' path='doc/member[@name="SpatialAudioHrtfDistanceDecay.UnityGainDistance"]/*' />
     public float UnityGainDistance;
 
+    /// <include file='SpatialAudioHrtfDistanceDecay.xml' path='doc/member[@name="SpatialAudioHrtfDistanceDecay.CutoffDistance"]/*' />
     public float CutoffDistance;
 }

@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PROPPAGESTATUS.xml' path='doc/member[@name="PROPPAGESTATUS"]/*' />
 public enum PROPPAGESTATUS
 {
+    /// <include file='PROPPAGESTATUS.xml' path='doc/member[@name="PROPPAGESTATUS.PROPPAGESTATUS_DIRTY"]/*' />
     PROPPAGESTATUS_DIRTY = 0x1,
+
+    /// <include file='PROPPAGESTATUS.xml' path='doc/member[@name="PROPPAGESTATUS.PROPPAGESTATUS_VALIDATE"]/*' />
     PROPPAGESTATUS_VALIDATE = 0x2,
+
+    /// <include file='PROPPAGESTATUS.xml' path='doc/member[@name="PROPPAGESTATUS.PROPPAGESTATUS_CLEAN"]/*' />
     PROPPAGESTATUS_CLEAN = 0x4,
 }

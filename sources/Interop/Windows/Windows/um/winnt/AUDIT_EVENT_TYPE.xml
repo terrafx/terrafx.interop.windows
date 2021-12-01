@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="AUDIT_EVENT_TYPE">
+    <summary>
+      <para>The <b>AUDIT_EVENT_TYPE</b> enumeration type defines values that indicate the type of object being audited. The <see cref="AccessCheckByTypeAndAuditAlarm" /> and <see cref="AccessCheckByTypeResultListAndAuditAlarm" /> functions use these values.</para>
+    </summary>
+    <seealso cref="AccessCheckByTypeAndAuditAlarm" />
+    <seealso cref="AccessCheckByTypeResultListAndAuditAlarm" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/SecAuthZ/authorization-enumerations">Authorization Enumerations</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/SecAuthZ/client-server-access-control">Client/Server Access Control Overview</seealso>
+  </member>
+  <member name="AUDIT_EVENT_TYPE.AuditEventObjectAccess">
+    <summary>
+      <para>Indicates an object that generates audit messages only if the system administrator has enabled auditing access to files and objects.</para>
+    </summary>
+  </member>
+  <member name="AUDIT_EVENT_TYPE.AuditEventDirectoryServiceAccess">
+    <summary>
+      <para>Indicates a directory service object that generates audit messages only if the system administrator has enabled auditing access to directory service objects.</para>
+    </summary>
+  </member>
+</doc>

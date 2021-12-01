@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TOKEN_LINKED_TOKEN.xml' path='doc/member[@name="TOKEN_LINKED_TOKEN"]/*' />
 public partial struct TOKEN_LINKED_TOKEN
 {
+    /// <include file='TOKEN_LINKED_TOKEN.xml' path='doc/member[@name="TOKEN_LINKED_TOKEN.LinkedToken"]/*' />
     public HANDLE LinkedToken;
 }

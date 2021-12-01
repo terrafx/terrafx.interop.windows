@@ -7,14 +7,18 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SYSTEM_RESOURCE_ATTRIBUTE_ACE.xml' path='doc/member[@name="SYSTEM_RESOURCE_ATTRIBUTE_ACE"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public partial struct SYSTEM_RESOURCE_ATTRIBUTE_ACE
 {
+    /// <include file='SYSTEM_RESOURCE_ATTRIBUTE_ACE.xml' path='doc/member[@name="SYSTEM_RESOURCE_ATTRIBUTE_ACE.Header"]/*' />
     public ACE_HEADER Header;
 
+    /// <include file='SYSTEM_RESOURCE_ATTRIBUTE_ACE.xml' path='doc/member[@name="SYSTEM_RESOURCE_ATTRIBUTE_ACE.Mask"]/*' />
     [NativeTypeName("ACCESS_MASK")]
     public uint Mask;
 
+    /// <include file='SYSTEM_RESOURCE_ATTRIBUTE_ACE.xml' path='doc/member[@name="SYSTEM_RESOURCE_ATTRIBUTE_ACE.SidStart"]/*' />
     [NativeTypeName("DWORD")]
     public uint SidStart;
 }

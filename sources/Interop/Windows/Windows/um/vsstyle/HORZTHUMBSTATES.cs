@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HORZTHUMBSTATES.xml' path='doc/member[@name="HORZTHUMBSTATES"]/*' />
 public enum HORZTHUMBSTATES
 {
+    /// <include file='HORZTHUMBSTATES.xml' path='doc/member[@name="HORZTHUMBSTATES.HTS_NORMAL"]/*' />
     HTS_NORMAL = 1,
+
+    /// <include file='HORZTHUMBSTATES.xml' path='doc/member[@name="HORZTHUMBSTATES.HTS_HOT"]/*' />
     HTS_HOT = 2,
+
+    /// <include file='HORZTHUMBSTATES.xml' path='doc/member[@name="HORZTHUMBSTATES.HTS_PUSHED"]/*' />
     HTS_PUSHED = 3,
+
+    /// <include file='HORZTHUMBSTATES.xml' path='doc/member[@name="HORZTHUMBSTATES.HTS_DISABLED"]/*' />
     HTS_DISABLED = 4,
 }

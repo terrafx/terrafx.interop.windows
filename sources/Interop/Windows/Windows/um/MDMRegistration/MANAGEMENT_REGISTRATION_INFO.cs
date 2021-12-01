@@ -5,16 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MANAGEMENT_REGISTRATION_INFO.xml' path='doc/member[@name="MANAGEMENT_REGISTRATION_INFO"]/*' />
 public unsafe partial struct MANAGEMENT_REGISTRATION_INFO
 {
+    /// <include file='MANAGEMENT_REGISTRATION_INFO.xml' path='doc/member[@name="MANAGEMENT_REGISTRATION_INFO.fDeviceRegisteredWithManagement"]/*' />
     public BOOL fDeviceRegisteredWithManagement;
 
+    /// <include file='MANAGEMENT_REGISTRATION_INFO.xml' path='doc/member[@name="MANAGEMENT_REGISTRATION_INFO.dwDeviceRegistionKind"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwDeviceRegistionKind;
 
+    /// <include file='MANAGEMENT_REGISTRATION_INFO.xml' path='doc/member[@name="MANAGEMENT_REGISTRATION_INFO.pszUPN"]/*' />
     [NativeTypeName("LPWSTR")]
     public ushort* pszUPN;
 
+    /// <include file='MANAGEMENT_REGISTRATION_INFO.xml' path='doc/member[@name="MANAGEMENT_REGISTRATION_INFO.pszMDMServiceUri"]/*' />
     [NativeTypeName("LPWSTR")]
     public ushort* pszMDMServiceUri;
 }

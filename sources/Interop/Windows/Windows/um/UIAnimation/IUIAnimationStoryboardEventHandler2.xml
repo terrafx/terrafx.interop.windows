@@ -1,0 +1,276 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IUIAnimationStoryboardEventHandler2.OnStoryboardStatusChanged">
+    <summary>
+      <para>Handles storyboard status change events.</para>
+    </summary>
+    <param name="storyboard">
+      <para>The storyboard for which the status has changed.</para>
+    </param>
+    <param name="newStatus">
+      <para>The new status.</para>
+    </param>
+    <param name="previousStatus">
+      <para>The previous status.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns S_OK. Otherwise, it returns an  <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>By default, a call made in a callback method to any other animation method results in the call failing and returning <b>UI_E_ILLEGAL_REENTRANCY</b>. However, there are exceptions to this default. The following methods can be successfully called from <b>OnStoryboardStatusChanged</b>:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <see cref="IUIAnimationManager2.CreateAnimationVariable" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IUIAnimationManager2.CreateStoryboard" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IUIAnimationManager2.GetStoryboardFromTag" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IUIAnimationManager2.GetVariableFromTag" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IUIAnimationStoryboard2.Abandon" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IUIAnimationStoryboard2.AddKeyframeAtOffset" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IUIAnimationStoryboard2.AddKeyframeAfterTransition" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IUIAnimationStoryboard2.AddTransition" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IUIAnimationStoryboard2.AddTransitionAtKeyframe" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IUIAnimationStoryboard2.AddTransitionBetweenKeyframes" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IUIAnimationStoryboard2.Conclude" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IUIAnimationStoryboard2.Finish" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IUIAnimationStoryboard2.GetTag" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IUIAnimationStoryboard2.HoldVariable" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IUIAnimationStoryboard2.RepeatBetweenKeyframes" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IUIAnimationStoryboard2.SetLongestAcceptableDelay" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IUIAnimationStoryboard2.SetStoryboardEventHandler" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IUIAnimationStoryboard2.SetTag" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IUIAnimationStoryboard2.Schedule" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IUIAnimationTransition2.GetDuration" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IUIAnimationTransition2.IsDurationKnown" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IUIAnimationTransition2.SetInitialValue" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IUIAnimationTransition2.SetInitialVelocity" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IUIAnimationVariable2.GetCurrentStoryboard" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IUIAnimationVariable2.GetFinalIntegerValue" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IUIAnimationVariable2.GetFinalValue" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IUIAnimationVariable2.GetIntegerValue" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IUIAnimationVariable2.GetPreviousIntegerValue" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IUIAnimationVariable2.GetPreviousValue" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IUIAnimationVariable2.GetTag" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IUIAnimationVariable2.GetValue" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IUIAnimationVariable2.SetTag" />
+          </description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="IUIAnimationStoryboard2" />
+    <seealso cref="IUIAnimationStoryboard2.GetStatus" />
+    <seealso cref="IUIAnimationStoryboardEventHandler2" />
+    <seealso cref="UI_ANIMATION_STORYBOARD_STATUS" />
+  </member>
+  <member name="IUIAnimationStoryboardEventHandler2.OnStoryboardUpdated">
+    <summary>
+      <para>Handles storyboard update events.</para>
+    </summary>
+    <param name="storyboard">
+      <para>The storyboard that has been updated.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns S_OK. Otherwise, it returns an  <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>This method is called when the value of at least one of the variables that a storyboard is animating has changed since the last call to the <see cref="IUIAnimationManager2.Update" /> method.</para>
+      <para>By default, a call made in a callback method to any other animation method results in the call failing and returning <b>UI_E_ILLEGAL_REENTRANCY</b>. However, there are exceptions to this default. The following methods can be successfully called from <b>OnStoryboardUpdated</b>:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <see cref="IUIAnimationManager2.GetStoryboardFromTag" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IUIAnimationManager2.GetVariableFromTag" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IUIAnimationStoryboard2.GetTag" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IUIAnimationVariable2.GetCurrentStoryboard" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IUIAnimationVariable2.GetFinalIntegerValue" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IUIAnimationVariable2.GetFinalValue" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IUIAnimationVariable2.GetIntegerValue" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IUIAnimationVariable2.GetPreviousIntegerValue" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IUIAnimationVariable2.GetPreviousValue" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IUIAnimationVariable2.GetTag" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IUIAnimationVariable2.GetValue" />
+          </description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="IUIAnimationManager2.Update" />
+    <seealso cref="IUIAnimationStoryboard2" />
+    <seealso cref="IUIAnimationStoryboard2.GetElapsedTime " />
+    <seealso cref="IUIAnimationStoryboardEventHandler2" />
+  </member>
+  <member name="IUIAnimationStoryboardEventHandler2">
+    <summary>
+      <para>Defines methods for handling storyboard events.</para>
+    </summary>
+    <seealso cref="IUIAnimationStoryboard2.GetStatus" />
+    <seealso cref="IUIAnimationStoryboard2.SetStoryboardEventHandler" />
+    <seealso cref="IUnknown" />
+    <seealso cref="UI_ANIMATION_STORYBOARD_STATUS" />
+  </member>
+</doc>

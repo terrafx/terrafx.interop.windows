@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITfTransitoryExtensionUIElement.xml' path='doc/member[@name="ITfTransitoryExtensionUIElement"]/*' />
 [Guid("858F956A-972F-42A2-A2F2-0321E1ABE209")]
 [NativeTypeName("struct ITfTransitoryExtensionUIElement : ITfUIElement")]
 [NativeInheritance("ITfUIElement")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITfTransitoryExtensionUIElement : ITfTransitoryExte
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITfTransitoryExtensionUIElement : ITfTransitoryExte
         return ((delegate* unmanaged<ITfTransitoryExtensionUIElement*, Guid*, void**, int>)(lpVtbl[0]))((ITfTransitoryExtensionUIElement*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITfTransitoryExtensionUIElement : ITfTransitoryExte
         return ((delegate* unmanaged<ITfTransitoryExtensionUIElement*, uint>)(lpVtbl[1]))((ITfTransitoryExtensionUIElement*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITfTransitoryExtensionUIElement : ITfTransitoryExte
         return ((delegate* unmanaged<ITfTransitoryExtensionUIElement*, uint>)(lpVtbl[2]))((ITfTransitoryExtensionUIElement*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ITfUIElement.GetDescription" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetDescription([NativeTypeName("BSTR *")] ushort** pbstrDescription)
@@ -46,6 +51,7 @@ public unsafe partial struct ITfTransitoryExtensionUIElement : ITfTransitoryExte
         return ((delegate* unmanaged<ITfTransitoryExtensionUIElement*, ushort**, int>)(lpVtbl[3]))((ITfTransitoryExtensionUIElement*)Unsafe.AsPointer(ref this), pbstrDescription);
     }
 
+    /// <inheritdoc cref="ITfUIElement.GetGUID" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetGUID(Guid* pguid)
@@ -53,6 +59,7 @@ public unsafe partial struct ITfTransitoryExtensionUIElement : ITfTransitoryExte
         return ((delegate* unmanaged<ITfTransitoryExtensionUIElement*, Guid*, int>)(lpVtbl[4]))((ITfTransitoryExtensionUIElement*)Unsafe.AsPointer(ref this), pguid);
     }
 
+    /// <inheritdoc cref="ITfUIElement.Show" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT Show(BOOL bShow)
@@ -60,6 +67,7 @@ public unsafe partial struct ITfTransitoryExtensionUIElement : ITfTransitoryExte
         return ((delegate* unmanaged<ITfTransitoryExtensionUIElement*, BOOL, int>)(lpVtbl[5]))((ITfTransitoryExtensionUIElement*)Unsafe.AsPointer(ref this), bShow);
     }
 
+    /// <inheritdoc cref="ITfUIElement.IsShown" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT IsShown(BOOL* pbShow)
@@ -67,6 +75,7 @@ public unsafe partial struct ITfTransitoryExtensionUIElement : ITfTransitoryExte
         return ((delegate* unmanaged<ITfTransitoryExtensionUIElement*, BOOL*, int>)(lpVtbl[6]))((ITfTransitoryExtensionUIElement*)Unsafe.AsPointer(ref this), pbShow);
     }
 
+    /// <include file='ITfTransitoryExtensionUIElement.xml' path='doc/member[@name="ITfTransitoryExtensionUIElement.GetDocumentMgr"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetDocumentMgr(ITfDocumentMgr** ppdim)

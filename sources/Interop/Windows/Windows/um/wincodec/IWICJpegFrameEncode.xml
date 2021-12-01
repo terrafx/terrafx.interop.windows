@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IWICJpegFrameEncode.GetAcHuffmanTable">
+    <summary>
+      <para>Retrieves a copy of the AC Huffman table for the specified scan and table.</para>
+    </summary>
+    <param name="scanIndex">
+      <para>Type: <b>UINT</b></para>
+      <para>The zero-based index of the scan for which data is retrieved.</para>
+    </param>
+    <param name="tableIndex">
+      <para>Type: <b>UINT</b></para>
+      <para>The index of the AC Huffman table to retrieve.</para>
+    </param>
+    <param name="pAcHuffmanTable">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-jpeg-ac-huffman-table">DXGI_JPEG_AC_HUFFMAN_TABLE</a>*</b></para>
+      <para>A pointer that receives the table data. This parameter must not be NULL.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>S_OK</para>
+          </description>
+          <description>
+            <para>The operation was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>WINCODEC_ERR_INVALIDJPEGSCANINDEX</para>
+          </description>
+          <description>
+            <para>The specified scan index is invalid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>WINCODEC_ERR_INVALIDPARAMETER</para>
+          </description>
+          <description>
+            <para>Can occur if <i>pAcHuffmanTable</i> is NULL or if <i>tableIndex</i> does not point to a valid table slot. Check the scan header for valid table indices.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IWICJpegFrameEncode" />
+  </member>
+  <member name="IWICJpegFrameEncode.GetDcHuffmanTable">
+    <summary>
+      <para>Retrieves a copy of the DC Huffman table for the specified scan and table.</para>
+    </summary>
+    <param name="scanIndex">
+      <para>The zero-based index of the scan for which data is retrieved.</para>
+    </param>
+    <param name="tableIndex">
+      <para>The index of the DC Huffman table to retrieve.</para>
+    </param>
+    <param name="pDcHuffmanTable">
+      <para>A pointer that receives the table data. This parameter must not be NULL.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>S_OK</para>
+          </description>
+          <description>
+            <para>The operation was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>WINCODEC_ERR_INVALIDJPEGSCANINDEX</para>
+          </description>
+          <description>
+            <para>The specified scan index is invalid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>WINCODEC_ERR_INVALIDPARAMETER</para>
+          </description>
+          <description>
+            <para>Can occur if <i>pTable</i> is NULL or if <i>tableIndex</i> does not point to a valid table slot. Check the scan header for valid table indices.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IWICJpegFrameEncode" />
+  </member>
+  <member name="IWICJpegFrameEncode.GetQuantizationTable">
+    <summary>
+      <para>Retrieves a copy of the quantization table.</para>
+    </summary>
+    <param name="scanIndex">
+      <para>Type: <b>UINT</b></para>
+      <para>The zero-based index of the scan for which data is retrieved.</para>
+    </param>
+    <param name="tableIndex">
+      <para>Type: <b>UINT</b></para>
+      <para>The index of the quantization table to retrieve.</para>
+    </param>
+    <param name="pQuantizationTable">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-jpeg-quantization-table">DXGI_JPEG_QUANTIZATION_TABLE</a>*</b></para>
+      <para>A pointer that receives the table data. This parameter must not be NULL.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>S_OK</para>
+          </description>
+          <description>
+            <para>The operation was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>WINCODEC_ERR_INVALIDJPEGSCANINDEX</para>
+          </description>
+          <description>
+            <para>The specified scan index is invalid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>WINCODEC_ERR_INVALIDPARAMETER</para>
+          </description>
+          <description>
+            <para>Can occur if <i>pTable</i> is NULL or if <i>tableIndex</i> does not point to a valid table slot. Check the scan header for valid table indices.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IWICJpegFrameEncode" />
+  </member>
+  <member name="IWICJpegFrameEncode.WriteScan">
+    <summary>
+      <para>Writes scan data to a JPEG frame.</para>
+    </summary>
+    <param name="cbScanData">
+      <para>Type: <b>UINT</b></para>
+      <para>The size of the data in the <i>pbScanData</i> parameter.</para>
+    </param>
+    <param name="pbScanData">
+      <para>Type: <b>BYTE*</b></para>
+      <para>The scan data to write.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
+      <para>Returns S_OK on successful completion.</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>WriteScan</b> may be called multiple times.  Each call appends the scan data specified to any previous scan data.  Complete the scan by calling <see cref="IWICBitmapFrameEncode.Commit" />.</para>
+      <para>Any calls to set encoder parameters or image metadata that will appear before the scan data in the resulting JPEG file must be completed before the first call to this method.  This includes calls to <see cref="IWICBitmapFrameEncode.SetColorContexts" /> , <see cref="IWICBitmapFrameEncode.SetPalette" />, <see cref="IWICBitmapFrameEncode.SetPixelFormat" />, <see cref="IWICBitmapFrameEncode.SetResolution" />, and <see cref="IWICBitmapFrameEncode.SetThumbnail" />.  <see cref="IWICBitmapFrameEncode.SetSize" /> is required as it has no default value for encoded image size.</para>
+    </remarks>
+    <seealso cref="IWICBitmapFrameEncode" />
+    <seealso cref="IWICJpegFrameEncode" />
+  </member>
+  <member name="IWICJpegFrameEncode">
+    <summary>
+      <para>Exposes methods for writing compressed JPEG scan data directly to the WIC encoder's output stream. Also provides access to the Huffman and quantization tables.</para>
+    </summary>
+    <remarks>
+      <para>Obtain this interface by calling <see cref="IUnknown.QueryInterface" /> on the Windows-provided <see cref="IWICBitmapFrameEncoder" /> interface for the JPEG encoder.</para>
+      <para>The WIC JPEG encoder supports a smaller subset of JPEG features than the decoder does.</para>
+      <list type="bullet">
+        <item>
+          <description>The encoder is limited to a single scan. It does not support encoding images that are multi-scan, either for progressive encoding or planar component data.</description>
+        </item>
+        <item>
+          <description>The encoder supports two quantization tables, two AC Huffman tables, and two DC Huffman tables. The luma tables are used for the Y channel and, in the case of YCCK, the black channel.  The chroma tables are used for the CbCr channels. </description>
+        </item>
+        <item>
+          <description>The encoder supports encoding gray, YCbCr (RGB), and YCCK (CMYK).</description>
+        </item>
+        <item>
+          <description>The encoder supports 4 fixed component subsampling, 4:2:0, 4:2:2, 4:4:0, and 4:4:4.  This subsamples chroma only.</description>
+        </item>
+        <item>
+          <description>The encoder does not support restart markers.</description>
+        </item>
+      </list>
+    </remarks>
+  </member>
+</doc>

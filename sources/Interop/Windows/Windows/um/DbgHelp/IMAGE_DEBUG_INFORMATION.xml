@@ -1,0 +1,508 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMAGE_DEBUG_INFORMATION">
+    <summary>
+      <para>Contains debugging information.
+<b>Note</b>  This structure is used by the
+<see cref="MapDebugInformation" /> and
+<see cref="UnmapDebugInformation" /> functions, which are
+provided only for backward compatibility.</para>
+    </summary>
+    <remarks>
+      <para>The <b>LIST_ENTRY</b> structure is defined as follows:</para>
+      <code>typedef struct _LIST_ENTRY {
+   struct _LIST_ENTRY *Flink;
+   struct _LIST_ENTRY *Blink;
+} LIST_ENTRY, *PLIST_ENTRY, *RESTRICTED_POINTER PRLIST_ENTRY;
+</code>
+    </remarks>
+    <seealso cref="FPO_DATA" />
+    <seealso cref="IMAGE_COFF_SYMBOLS_HEADER" />
+    <seealso cref="IMAGE_DEBUG_DIRECTORY" />
+    <seealso cref="IMAGE_FUNCTION_ENTRY" />
+    <seealso cref="IMAGE_SECTION_HEADER" />
+    <seealso cref="MapDebugInformation" />
+    <seealso cref="UnmapDebugInformation" />
+  </member>
+  <member name="IMAGE_DEBUG_INFORMATION.List">
+    <summary>
+      <para>A linked list of <b>LIST_ENTRY</b> structures.</para>
+    </summary>
+  </member>
+  <member name="IMAGE_DEBUG_INFORMATION.ReservedSize">
+    <summary>
+      <para>The size of the memory allocated for the
+<b>IMAGE_DEBUG_INFORMATION</b> structure and all
+debugging information, in bytes.</para>
+    </summary>
+  </member>
+  <member name="IMAGE_DEBUG_INFORMATION.ReservedMappedBase">
+    <summary>
+      <para>The base address of the image.</para>
+    </summary>
+  </member>
+  <member name="IMAGE_DEBUG_INFORMATION.ReservedMachine">
+    <summary>
+      <para>The computer type. This member can be one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAGE_FILE_MACHINE_I386</b>
+                </description>
+              </item>
+              <item>
+                <description>0x014c</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Intel (32-bit)</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAGE_FILE_MACHINE_IA64</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0200</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Intel Itanium</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAGE_FILE_MACHINE_AMD64</b>
+                </description>
+              </item>
+              <item>
+                <description>0x8664</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>x64 (AMD64 or EM64T)</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="IMAGE_DEBUG_INFORMATION.ReservedCharacteristics">
+    <summary>
+      <para>The characteristics of the image. This member can be one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAGE_FILE_RELOCS_STRIPPED</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0001</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Relocation information is stripped from the file.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAGE_FILE_EXECUTABLE_IMAGE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0002</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The file is executable (there are no unresolved external references).</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAGE_FILE_LINE_NUMS_STRIPPED</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0004</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Line numbers are stripped from the file.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAGE_FILE_LOCAL_SYMS_STRIPPED</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0008</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Local symbols are stripped from file.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAGE_FILE_AGGRESIVE_WS_TRIM</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0010</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Aggressively trim the working set.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAGE_FILE_LARGE_ADDRESS_AWARE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0020</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The application can handle addresses larger than 2 GB.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAGE_FILE_BYTES_REVERSED_LO</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0080</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Bytes of the word are reversed.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAGE_FILE_32BIT_MACHINE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0100</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Computer supports 32-bit words.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAGE_FILE_DEBUG_STRIPPED</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0200</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Debugging information is stored separately in a .dbg file.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAGE_FILE_REMOVABLE_RUN_FROM_SWAP</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0400</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>If the image is on removable media, copy and run from the swap file.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAGE_FILE_NET_RUN_FROM_SWAP</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0800</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>If the image is on the network, copy and run from the swap file.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAGE_FILE_SYSTEM</b>
+                </description>
+              </item>
+              <item>
+                <description>0x1000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>System file.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAGE_FILE_DLL</b>
+                </description>
+              </item>
+              <item>
+                <description>0x2000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>DLL file.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAGE_FILE_UP_SYSTEM_ONLY</b>
+                </description>
+              </item>
+              <item>
+                <description>0x4000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>File should be run only on a uniprocessor computer.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAGE_FILE_BYTES_REVERSED_HI</b>
+                </description>
+              </item>
+              <item>
+                <description>0x8000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Bytes of the word are reversed.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="IMAGE_DEBUG_INFORMATION.ReservedCheckSum">
+    <summary>
+      <para>The checksum of the image.</para>
+    </summary>
+  </member>
+  <member name="IMAGE_DEBUG_INFORMATION.ImageBase">
+    <summary>
+      <para>The requested base address of the image.</para>
+    </summary>
+  </member>
+  <member name="IMAGE_DEBUG_INFORMATION.SizeOfImage">
+    <summary>
+      <para>The size of the image, in bytes.</para>
+    </summary>
+  </member>
+  <member name="IMAGE_DEBUG_INFORMATION.ReservedNumberOfSections">
+    <summary>
+      <para>The number of COFF section headers.</para>
+    </summary>
+  </member>
+  <member name="IMAGE_DEBUG_INFORMATION.ReservedSections">
+    <summary>
+      <para>A pointer to the first COFF section header. For more information, see
+<see cref="IMAGE_SECTION_HEADER" />.</para>
+    </summary>
+  </member>
+  <member name="IMAGE_DEBUG_INFORMATION.ReservedExportedNamesSize">
+    <summary>
+      <para>The size of the <b>ExportedNames</b> member, in bytes.</para>
+    </summary>
+  </member>
+  <member name="IMAGE_DEBUG_INFORMATION.ReservedExportedNames">
+    <summary>
+      <para>A pointer to a series of null-terminated strings that name all the functions exported from the image.</para>
+    </summary>
+  </member>
+  <member name="IMAGE_DEBUG_INFORMATION.ReservedNumberOfFunctionTableEntries">
+    <summary>
+      <para>The number of entries contained in the <b>FunctionTableEntries</b> member.</para>
+    </summary>
+  </member>
+  <member name="IMAGE_DEBUG_INFORMATION.ReservedFunctionTableEntries">
+    <summary>
+      <para>A pointer to the first function table entry. For more information, see
+<see cref="IMAGE_FUNCTION_ENTRY" />.</para>
+    </summary>
+  </member>
+  <member name="IMAGE_DEBUG_INFORMATION.ReservedLowestFunctionStartingAddress">
+    <summary>
+      <para>The lowest function table starting address.</para>
+    </summary>
+  </member>
+  <member name="IMAGE_DEBUG_INFORMATION.ReservedHighestFunctionEndingAddress">
+    <summary>
+      <para>The highest function table ending address.</para>
+    </summary>
+  </member>
+  <member name="IMAGE_DEBUG_INFORMATION.ReservedNumberOfFpoTableEntries">
+    <summary>
+      <para>The number of entries contained in the <b>FpoTableEntries</b> member.</para>
+    </summary>
+  </member>
+  <member name="IMAGE_DEBUG_INFORMATION.ReservedFpoTableEntries">
+    <summary>
+      <para>A pointer to the first FPO entry. For more information, see
+<see cref="FPO_DATA" />.</para>
+    </summary>
+  </member>
+  <member name="IMAGE_DEBUG_INFORMATION.SizeOfCoffSymbols">
+    <summary>
+      <para>The size of the COFF symbol table, in bytes.</para>
+    </summary>
+  </member>
+  <member name="IMAGE_DEBUG_INFORMATION.CoffSymbols">
+    <summary>
+      <para>A pointer to the COFF symbol table.</para>
+    </summary>
+  </member>
+  <member name="IMAGE_DEBUG_INFORMATION.ReservedSizeOfCodeViewSymbols">
+    <summary>
+      <para>The size of the CodeView symbol table, in bytes.</para>
+    </summary>
+  </member>
+  <member name="IMAGE_DEBUG_INFORMATION.ReservedCodeViewSymbols">
+    <summary>
+      <para>A pointer to the beginning of the CodeView symbol table.</para>
+    </summary>
+  </member>
+  <member name="IMAGE_DEBUG_INFORMATION.ImageFilePath">
+    <summary>
+      <para>The relative path to the image file name.</para>
+    </summary>
+  </member>
+  <member name="IMAGE_DEBUG_INFORMATION.ImageFileName">
+    <summary>
+      <para>The image file name.</para>
+    </summary>
+  </member>
+  <member name="IMAGE_DEBUG_INFORMATION.ReservedDebugFilePath">
+    <summary>
+      <para>The full path to the symbol file.</para>
+    </summary>
+  </member>
+  <member name="IMAGE_DEBUG_INFORMATION.ReservedTimeDateStamp">
+    <summary>
+      <para>The timestamp of the image. This represents the date and time the image was created by the linker.</para>
+    </summary>
+  </member>
+  <member name="IMAGE_DEBUG_INFORMATION.ReservedRomImage">
+    <summary>
+      <para>This value is <b>TRUE</b> if the image is a ROM image.</para>
+    </summary>
+  </member>
+  <member name="IMAGE_DEBUG_INFORMATION.ReservedDebugDirectory">
+    <summary>
+      <para>A pointer to the first debug directory. For more information, see
+<see cref="IMAGE_DEBUG_DIRECTORY" />.</para>
+    </summary>
+  </member>
+  <member name="IMAGE_DEBUG_INFORMATION.ReservedNumberOfDebugDirectories">
+    <summary>
+      <para>The number of entries contained in the <b>DebugDirectory</b> member.</para>
+    </summary>
+  </member>
+  <member name="IMAGE_DEBUG_INFORMATION.ReservedOriginalFunctionTableBaseAddress">
+    <summary>
+      <para>The original function table base address.</para>
+    </summary>
+  </member>
+  <member name="IMAGE_DEBUG_INFORMATION.Reserved">
+    <summary>
+      <para>This member is reserved for use by the operating system.</para>
+    </summary>
+  </member>
+</doc>

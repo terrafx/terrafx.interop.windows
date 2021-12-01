@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMarkupTextFrags.xml' path='doc/member[@name="IMarkupTextFrags"]/*' />
 [Guid("3050F5FA-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IMarkupTextFrags : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMarkupTextFrags : IMarkupTextFrags.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMarkupTextFrags : IMarkupTextFrags.Interface
         return ((delegate* unmanaged<IMarkupTextFrags*, Guid*, void**, int>)(lpVtbl[0]))((IMarkupTextFrags*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMarkupTextFrags : IMarkupTextFrags.Interface
         return ((delegate* unmanaged<IMarkupTextFrags*, uint>)(lpVtbl[1]))((IMarkupTextFrags*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMarkupTextFrags : IMarkupTextFrags.Interface
         return ((delegate* unmanaged<IMarkupTextFrags*, uint>)(lpVtbl[2]))((IMarkupTextFrags*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMarkupTextFrags.xml' path='doc/member[@name="IMarkupTextFrags.GetTextFragCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTextFragCount([NativeTypeName("long *")] int* pcFrags)
@@ -46,6 +51,7 @@ public unsafe partial struct IMarkupTextFrags : IMarkupTextFrags.Interface
         return ((delegate* unmanaged<IMarkupTextFrags*, int*, int>)(lpVtbl[3]))((IMarkupTextFrags*)Unsafe.AsPointer(ref this), pcFrags);
     }
 
+    /// <include file='IMarkupTextFrags.xml' path='doc/member[@name="IMarkupTextFrags.GetTextFrag"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTextFrag([NativeTypeName("long")] int iFrag, [NativeTypeName("BSTR *")] ushort** pbstrFrag, IMarkupPointer* pPointerFrag)
@@ -53,6 +59,7 @@ public unsafe partial struct IMarkupTextFrags : IMarkupTextFrags.Interface
         return ((delegate* unmanaged<IMarkupTextFrags*, int, ushort**, IMarkupPointer*, int>)(lpVtbl[4]))((IMarkupTextFrags*)Unsafe.AsPointer(ref this), iFrag, pbstrFrag, pPointerFrag);
     }
 
+    /// <include file='IMarkupTextFrags.xml' path='doc/member[@name="IMarkupTextFrags.RemoveTextFrag"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT RemoveTextFrag([NativeTypeName("long")] int iFrag)
@@ -60,6 +67,7 @@ public unsafe partial struct IMarkupTextFrags : IMarkupTextFrags.Interface
         return ((delegate* unmanaged<IMarkupTextFrags*, int, int>)(lpVtbl[5]))((IMarkupTextFrags*)Unsafe.AsPointer(ref this), iFrag);
     }
 
+    /// <include file='IMarkupTextFrags.xml' path='doc/member[@name="IMarkupTextFrags.InsertTextFrag"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT InsertTextFrag([NativeTypeName("long")] int iFrag, [NativeTypeName("BSTR")] ushort* bstrInsert, IMarkupPointer* pPointerInsert)
@@ -67,6 +75,7 @@ public unsafe partial struct IMarkupTextFrags : IMarkupTextFrags.Interface
         return ((delegate* unmanaged<IMarkupTextFrags*, int, ushort*, IMarkupPointer*, int>)(lpVtbl[6]))((IMarkupTextFrags*)Unsafe.AsPointer(ref this), iFrag, bstrInsert, pPointerInsert);
     }
 
+    /// <include file='IMarkupTextFrags.xml' path='doc/member[@name="IMarkupTextFrags.FindTextFragFromMarkupPointer"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT FindTextFragFromMarkupPointer(IMarkupPointer* pPointerFind, [NativeTypeName("long *")] int* piFrag, BOOL* pfFragFound)

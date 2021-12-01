@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="TF_PERSISTENT_PROPERTY_HEADER_ACP">
+    <summary>
+      <para>The <b>TF_PERSISTENT_PROPERTY_HEADER_ACP</b> structure is used to provide property header data.</para>
+    </summary>
+    <seealso cref="ITextStoreACPServices.Serialize " />
+    <seealso cref="ITextStoreACPServices.Unserialize " />
+    <seealso cref="ITfContextOwnerServices.Serialize " />
+    <seealso cref="ITfContextOwnerServices.Unserialize " />
+    <seealso cref="ITfPersistentPropertyLoaderACP.LoadProperty " />
+  </member>
+  <member name="TF_PERSISTENT_PROPERTY_HEADER_ACP.guidType">
+    <summary>
+      <para>Contains a GUID that identifies the property.</para>
+    </summary>
+  </member>
+  <member name="TF_PERSISTENT_PROPERTY_HEADER_ACP.ichStart">
+    <summary>
+      <para>Contains the starting character position of the property.</para>
+    </summary>
+  </member>
+  <member name="TF_PERSISTENT_PROPERTY_HEADER_ACP.cch">
+    <summary>
+      <para>Contains the number of characters that the property spans.</para>
+    </summary>
+  </member>
+  <member name="TF_PERSISTENT_PROPERTY_HEADER_ACP.cb">
+    <summary>
+      <para>Contains the size, in bytes, of the property value.</para>
+    </summary>
+  </member>
+  <member name="TF_PERSISTENT_PROPERTY_HEADER_ACP.dwPrivate">
+    <summary>
+      <para>Contains a <b>DWORD</b> value defined by the property owner.</para>
+    </summary>
+  </member>
+  <member name="TF_PERSISTENT_PROPERTY_HEADER_ACP.clsidTIP">
+    <summary>
+      <para>Contains the CLSID of the property owner.</para>
+    </summary>
+  </member>
+</doc>

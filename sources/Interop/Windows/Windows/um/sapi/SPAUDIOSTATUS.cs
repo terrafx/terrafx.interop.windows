@@ -5,25 +5,33 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SPAUDIOSTATUS.xml' path='doc/member[@name="SPAUDIOSTATUS"]/*' />
 public partial struct SPAUDIOSTATUS
 {
+    /// <include file='SPAUDIOSTATUS.xml' path='doc/member[@name="SPAUDIOSTATUS.cbFreeBuffSpace"]/*' />
     [NativeTypeName("long")]
     public int cbFreeBuffSpace;
 
+    /// <include file='SPAUDIOSTATUS.xml' path='doc/member[@name="SPAUDIOSTATUS.cbNonBlockingIO"]/*' />
     [NativeTypeName("ULONG")]
     public uint cbNonBlockingIO;
 
+    /// <include file='SPAUDIOSTATUS.xml' path='doc/member[@name="SPAUDIOSTATUS.State"]/*' />
     public SPAUDIOSTATE State;
 
+    /// <include file='SPAUDIOSTATUS.xml' path='doc/member[@name="SPAUDIOSTATUS.CurSeekPos"]/*' />
     [NativeTypeName("ULONGLONG")]
     public ulong CurSeekPos;
 
+    /// <include file='SPAUDIOSTATUS.xml' path='doc/member[@name="SPAUDIOSTATUS.CurDevicePos"]/*' />
     [NativeTypeName("ULONGLONG")]
     public ulong CurDevicePos;
 
+    /// <include file='SPAUDIOSTATUS.xml' path='doc/member[@name="SPAUDIOSTATUS.dwAudioLevel"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwAudioLevel;
 
+    /// <include file='SPAUDIOSTATUS.xml' path='doc/member[@name="SPAUDIOSTATUS.dwReserved2"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwReserved2;
 }

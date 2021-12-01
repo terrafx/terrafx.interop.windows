@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='eAVDecVideoCodecType.xml' path='doc/member[@name="eAVDecVideoCodecType"]/*' />
 public enum eAVDecVideoCodecType
 {
+    /// <include file='eAVDecVideoCodecType.xml' path='doc/member[@name="eAVDecVideoCodecType.eAVDecVideoCodecType_NOTPLAYING"]/*' />
     eAVDecVideoCodecType_NOTPLAYING = 0,
+
+    /// <include file='eAVDecVideoCodecType.xml' path='doc/member[@name="eAVDecVideoCodecType.eAVDecVideoCodecType_MPEG2"]/*' />
     eAVDecVideoCodecType_MPEG2 = 1,
+
+    /// <include file='eAVDecVideoCodecType.xml' path='doc/member[@name="eAVDecVideoCodecType.eAVDecVideoCodecType_H264"]/*' />
     eAVDecVideoCodecType_H264 = 2,
 }

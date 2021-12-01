@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CMSG_CTRL_MAIL_LIST_DECRYPT_PARA">
+    <summary>
+      <para>The <b>CMSG_CTRL_MAIL_LIST_DECRYPT_PARA</b> structure contains information on a mail list message recipient.</para>
+    </summary>
+  </member>
+  <member name="CMSG_CTRL_MAIL_LIST_DECRYPT_PARA.cbSize">
+    <summary>
+      <para>The size, in bytes, of this data structure.</para>
+    </summary>
+  </member>
+  <member name="CMSG_CTRL_MAIL_LIST_DECRYPT_PARA.hCryptProv">
+    <summary>
+      <para>The provider used to do the recipient key encryption and export. If <b>hCryptProv</b> is <b>NULL</b>, the provider specified in <see cref="CMSG_ENVELOPED_ENCODE_INFO" /> is used.</para>
+    </summary>
+  </member>
+  <member name="CMSG_CTRL_MAIL_LIST_DECRYPT_PARA.pMailList">
+    <summary>
+      <para>A pointer to a <see cref="CMSG_MAIL_LIST_RECIPIENT_INFO" /> structure.</para>
+    </summary>
+  </member>
+  <member name="CMSG_CTRL_MAIL_LIST_DECRYPT_PARA.dwRecipientIndex">
+    <summary>
+      <para>Indicates a specific recipient in any array of recipients.</para>
+    </summary>
+  </member>
+  <member name="CMSG_CTRL_MAIL_LIST_DECRYPT_PARA.dwKeyChoice">
+    <summary>
+      <para>Indicates the member of the following union that will be used. Currently only CMSG_MAIL_LIST_HANDLE_KEY_CHOICE is defined.</para>
+    </summary>
+  </member>
+  <member name="CMSG_CTRL_MAIL_LIST_DECRYPT_PARA.DUMMYUNIONNAME">
+    <summary></summary>
+  </member>
+  <member name="CMSG_CTRL_MAIL_LIST_DECRYPT_PARA.DUMMYUNIONNAME.hKeyEncryptionKey">
+    <summary>
+      <para>Handle of the key encryption key. Used with <b>dwKeyChoice</b> set to CMSG_MAIL_LIST_HANDLE_KEY_CHOICE.</para>
+    </summary>
+  </member>
+  <member name="CMSG_CTRL_MAIL_LIST_DECRYPT_PARA.DUMMYUNIONNAME.pvKeyEncryptionKey">
+    <summary>
+      <para>A pointer to a void. Reserved for future use.</para>
+    </summary>
+  </member>
+</doc>

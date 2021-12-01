@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="AM_PROPERTY_SPPAL">
+    <summary>
+      <para>Specifies the DVD subpicture palette.</para>
+    </summary>
+    <remarks>
+      <para>The AM_PROPERTY_DVDSUBPIC_PALETTE property uses this structure.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-subpicture-property-set">DVD Subpicture Property Set</seealso>
+  </member>
+  <member name="AM_PROPERTY_SPPAL.sppal">
+    <summary>
+      <para>Array of 16 YUV elements that correspond to the 4-bit color numbers requested within the subpicture command stream. The YUV elements are of type <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/dvdmedia/ns-dvdmedia-am_dvd_yuv">AM_DVD_YUV</a>.</para>
+    </summary>
+  </member>
+</doc>

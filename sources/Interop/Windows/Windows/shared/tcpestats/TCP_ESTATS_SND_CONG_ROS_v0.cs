@@ -5,8 +5,10 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TCP_ESTATS_SND_CONG_ROS_v0.xml' path='doc/member[@name="TCP_ESTATS_SND_CONG_ROS_v0"]/*' />
 public partial struct TCP_ESTATS_SND_CONG_ROS_v0
 {
+    /// <include file='TCP_ESTATS_SND_CONG_ROS_v0.xml' path='doc/member[@name="TCP_ESTATS_SND_CONG_ROS_v0.LimCwnd"]/*' />
     [NativeTypeName("ULONG")]
     public uint LimCwnd;
 }

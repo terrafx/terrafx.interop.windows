@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PSAPI_WS_WATCH_INFORMATION_EX">
+    <summary>
+      <para>Contains extended information about a page added to a process working set.</para>
+    </summary>
+    <seealso cref="GetWsChangesEx" />
+    <seealso cref="PSAPI_WS_WATCH_INFORMATION" />
+  </member>
+  <member name="PSAPI_WS_WATCH_INFORMATION_EX.BasicInfo">
+    <summary>
+      <para>A <see cref="PSAPI_WS_WATCH_INFORMATION" /> structure.</para>
+    </summary>
+  </member>
+  <member name="PSAPI_WS_WATCH_INFORMATION_EX.FaultingThreadId">
+    <summary>
+      <para>The identifier of the thread that caused the page fault.</para>
+    </summary>
+  </member>
+  <member name="PSAPI_WS_WATCH_INFORMATION_EX.Flags">
+    <summary>
+      <para>This member is reserved for future use.</para>
+    </summary>
+  </member>
+</doc>

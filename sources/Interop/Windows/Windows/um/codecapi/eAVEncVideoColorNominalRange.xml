@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="eAVEncVideoColorNominalRange">
+    <summary>
+      <para>Specifies the nominal range for a video source. This enumeration is used with the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avencvideoinputchromasubsampling-property">AVEncVideoInputChromaSubsampling</a> and <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avencvideooutputchromasubsampling-property">AVEncVideoOutputChromaSubsampling</a> properties.</para>
+      <para>The nominal range describes how luma components normalized to a range of [0..1] map to 8-bit or 10-bit samples. The mapping determines whether the color data includes headroom and toeroom. Headroom allows for values beyond 1.0 white ("whiter than white"), and toeroom allows for values below reference 0.0 black ("blacker than black").</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-enumerations">Codec API Enumerations</seealso>
+    <seealso cref="ICodecAPI Interface" />
+  </member>
+  <member name="eAVEncVideoColorNominalRange.eAVEncVideoColorNominalRange_SameAsSource">
+    <summary>
+      <para>Use the same nominal range as the input video. This flag applies to the <b>AVEncVideoOutputChromaSubsampling</b> property only.</para>
+    </summary>
+  </member>
+  <member name="eAVEncVideoColorNominalRange.eAVEncVideoColorNominalRange_0_255">
+    <summary>
+      <para>The normalized range [0..1] maps to [0...255] for 8-bit samples, or [0..1023] for 10-bit samples.</para>
+    </summary>
+  </member>
+  <member name="eAVEncVideoColorNominalRange.eAVEncVideoColorNominalRange_16_235">
+    <summary>
+      <para>The normalized range [0..1] maps to [16...235] for 8-bit samples, or [64..940] for 10-bit samples.</para>
+    </summary>
+  </member>
+  <member name="eAVEncVideoColorNominalRange.eAVEncVideoColorNominalRange_48_208">
+    <summary>
+      <para>The normalized range [0..1] maps to [48...208] for 8-bit samples.</para>
+    </summary>
+  </member>
+</doc>

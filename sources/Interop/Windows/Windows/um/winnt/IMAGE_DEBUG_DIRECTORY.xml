@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMAGE_DEBUG_DIRECTORY">
+    <summary>
+      <para>Represents the debug directory format.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Debug/imagehlp-structures">ImageHlp Structures</seealso>
+  </member>
+  <member name="IMAGE_DEBUG_DIRECTORY.Characteristics">
+    <summary>
+      <para>Reserved.</para>
+    </summary>
+  </member>
+  <member name="IMAGE_DEBUG_DIRECTORY.TimeDateStamp">
+    <summary>
+      <para>The ime and date the debugging information was created.</para>
+    </summary>
+  </member>
+  <member name="IMAGE_DEBUG_DIRECTORY.MajorVersion">
+    <summary>
+      <para>The major version number of the debugging information format.</para>
+    </summary>
+  </member>
+  <member name="IMAGE_DEBUG_DIRECTORY.MinorVersion">
+    <summary>
+      <para>The minor version number of the debugging information format.</para>
+    </summary>
+  </member>
+  <member name="IMAGE_DEBUG_DIRECTORY.Type">
+    <summary>
+      <para>The format of the debugging information. This member can be one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Constant</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAGE_DEBUG_TYPE_UNKNOWN</b>
+                </description>
+              </item>
+              <item>
+                <description>0</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Unknown value, ignored by all tools.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAGE_DEBUG_TYPE_COFF</b>
+                </description>
+              </item>
+              <item>
+                <description>1</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>COFF debugging information (line numbers, symbol table, and string table). This type of debugging information is also pointed to by fields in the file headers.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAGE_DEBUG_TYPE_CODEVIEW</b>
+                </description>
+              </item>
+              <item>
+                <description>2</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>CodeView debugging information. The format of the data block is described by the CodeView 4.0 specification.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAGE_DEBUG_TYPE_FPO</b>
+                </description>
+              </item>
+              <item>
+                <description>3</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Frame pointer omission (FPO) information. This information tells the debugger how to interpret nonstandard stack frames, which use the EBP register for a purpose other than as a frame pointer.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAGE_DEBUG_TYPE_MISC</b>
+                </description>
+              </item>
+              <item>
+                <description>4</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Miscellaneous information.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAGE_DEBUG_TYPE_EXCEPTION</b>
+                </description>
+              </item>
+              <item>
+                <description>5</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Exception information.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAGE_DEBUG_TYPE_FIXUP</b>
+                </description>
+              </item>
+              <item>
+                <description>6</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Fixup information.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAGE_DEBUG_TYPE_BORLAND</b>
+                </description>
+              </item>
+              <item>
+                <description>9</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Borland debugging information.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="IMAGE_DEBUG_DIRECTORY.SizeOfData">
+    <summary>
+      <para>The size of the debugging information, in bytes. This value does not include the debug directory itself.</para>
+    </summary>
+  </member>
+  <member name="IMAGE_DEBUG_DIRECTORY.AddressOfRawData">
+    <summary>
+      <para>The address of the debugging information when the image is loaded, relative to the image base.</para>
+    </summary>
+  </member>
+  <member name="IMAGE_DEBUG_DIRECTORY.PointerToRawData">
+    <summary>
+      <para>A file pointer to the debugging information.</para>
+    </summary>
+  </member>
+</doc>

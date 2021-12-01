@@ -5,18 +5,25 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NMREBAR.xml' path='doc/member[@name="NMREBAR"]/*' />
 public partial struct NMREBAR
 {
+    /// <include file='NMREBAR.xml' path='doc/member[@name="NMREBAR.hdr"]/*' />
     public NMHDR hdr;
 
+    /// <include file='NMREBAR.xml' path='doc/member[@name="NMREBAR.dwMask"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwMask;
 
+    /// <include file='NMREBAR.xml' path='doc/member[@name="NMREBAR.uBand"]/*' />
     public uint uBand;
 
+    /// <include file='NMREBAR.xml' path='doc/member[@name="NMREBAR.fStyle"]/*' />
     public uint fStyle;
 
+    /// <include file='NMREBAR.xml' path='doc/member[@name="NMREBAR.wID"]/*' />
     public uint wID;
 
+    /// <include file='NMREBAR.xml' path='doc/member[@name="NMREBAR.lParam"]/*' />
     public LPARAM lParam;
 }

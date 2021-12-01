@@ -1,0 +1,4035 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="Windows.ByteToChar">
+    <summary>
+      <para>Converts a value of type <b>BYTE</b> to a value of type <b>CHAR</b>.</para>
+    </summary>
+    <param name="bOperand">
+      <para>The value to convert.</para>
+    </param>
+    <param name="pch">
+      <para>The converted value.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.ByteToInt8">
+    <summary>
+      <para>Converts a value of type <b>BYTE</b> to a value of type <b>INT8</b>.</para>
+    </summary>
+    <param name="bOperand">
+      <para>The value to convert.</para>
+    </param>
+    <param name="pi8Result">
+      <para>The converted value.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.DWordPtrAdd">
+    <summary>
+      <para>Adds two values of type <b>DWORD_PTR</b>.</para>
+    </summary>
+    <param name="dwAugend">
+      <para>Type: <b>DWORD_PTR</b></para>
+      <para>The first value in the equation.</para>
+    </param>
+    <param name="dwAddend">
+      <para>Type: <b>DWORD_PTR</b></para>
+      <para>The value to add to <i>dwAugend</i>.</para>
+    </param>
+    <param name="pdwResult">
+      <para>Type: <b>DWORD_PTR*</b></para>
+      <para>A pointer to the sum. If the operation results in a value that overflows or underflows the capacity of the type, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide arithmetic operations and perform validity checks with minimal impact on performance.</para>
+    </remarks>
+  </member>
+  <member name="Windows.DWordPtrMult">
+    <summary>
+      <para>Multiplies one value of type <b>DWORD_PTR</b> by another.</para>
+    </summary>
+    <param name="dwMultiplicand">
+      <para>Type: <b>DWORD_PTR</b></para>
+      <para>The value to be multiplied by <i>dwMultiplier</i>.</para>
+    </param>
+    <param name="dwMultiplier">
+      <para>Type: <b>DWORD_PTR</b></para>
+      <para>The value by which to multiply <i>dwMultiplicand</i>.</para>
+    </param>
+    <param name="pdwResult">
+      <para>Type: <b>DWORD_PTR*</b></para>
+      <para>A pointer to the result. If the operation results in a value that overflows or underflows the capacity of the type, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide arithmetic operations and perform validity checks with minimal impact on performance.</para>
+    </remarks>
+  </member>
+  <member name="Windows.DWordPtrSub">
+    <summary>
+      <para>Subtracts one value of type <b>DWORD_PTR</b> from another.</para>
+    </summary>
+    <param name="dwMinuend">
+      <para>Type: <b>DWORD_PTR</b></para>
+      <para>The value from which <i>dwSubtrahend</i> is subtracted.</para>
+    </param>
+    <param name="dwSubtrahend">
+      <para>Type: <b>DWORD_PTR</b></para>
+      <para>The value to subtract from <i>dwMinuend</i>.</para>
+    </param>
+    <param name="pdwResult">
+      <para>Type: <b>DWORD_PTR*</b></para>
+      <para>A pointer to the result. If the operation results in a value that overflows or underflows the capacity of the type, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide arithmetic operations and perform validity checks with minimal impact on performance.</para>
+    </remarks>
+  </member>
+  <member name="Windows.Int8Add">
+    <summary>
+      <para>Adds two values of type <b>INT8</b>.</para>
+    </summary>
+    <param name="i8Augend">
+      <para>The first value.</para>
+    </param>
+    <param name="i8Addend">
+      <para>The second value.</para>
+    </param>
+    <param name="pi8Result">
+      <para>The result.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.Int8Mult">
+    <summary>
+      <para>Multiplies two values of type <b>INT8</b>.</para>
+    </summary>
+    <param name="i8Multiplicand">
+      <para>The first value.</para>
+    </param>
+    <param name="i8Multiplier">
+      <para>The second value.</para>
+    </param>
+    <param name="pi8Result">
+      <para>The result.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.Int8Sub">
+    <summary>
+      <para>Subtracts one value of type <b>INT8</b> from another.</para>
+    </summary>
+    <param name="i8Minuend">
+      <para>The first value.</para>
+    </param>
+    <param name="i8Subtrahend">
+      <para>The value to subtract.</para>
+    </param>
+    <param name="pi8Result">
+      <para>The result.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.Int8ToUChar">
+    <summary>
+      <para>Converts a value of type <b>INT8</b> to a value of type <b>UCHAR</b>.</para>
+    </summary>
+    <param name="i8Operand">
+      <para>The value to convert.</para>
+    </param>
+    <param name="pch">
+      <para>The converted value.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.Int8ToUInt">
+    <summary>
+      <para>Converts a value of type <b>INT8</b> to a value of type <b>UINT</b>.</para>
+    </summary>
+    <param name="i8Operand">
+      <para>The value to convert.</para>
+    </param>
+    <param name="puResult">
+      <para>The converted value.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.Int8ToUInt8">
+    <summary>
+      <para>Converts a value of type <b>INT8</b> to a value of type <b>UINT8</b>.</para>
+    </summary>
+    <param name="i8Operand">
+      <para>The value to convert.</para>
+    </param>
+    <param name="pu8Result">
+      <para>The converted value.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.Int8ToUIntPtr">
+    <summary>
+      <para>Converts a value of type <b>INT8</b> to a value of type <b>UINT_PTR</b>.</para>
+    </summary>
+    <param name="i8Operand">
+      <para>The value to convert.</para>
+    </param>
+    <param name="puResult">
+      <para>The converted value.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.Int8ToULong">
+    <summary>
+      <para>Converts a value of type <b>INT8</b> to a value of type <b>ULONG</b>.</para>
+    </summary>
+    <param name="i8Operand">
+      <para>The value to convert.</para>
+    </param>
+    <param name="pulResult">
+      <para>The converted value.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.Int8ToULongLong">
+    <summary>
+      <para>Converts a value of type <b>INT8</b> to a value of type <b>ULONGLONG</b>.</para>
+    </summary>
+    <param name="i8Operand">
+      <para>The value to convert.</para>
+    </param>
+    <param name="pullResult">
+      <para>The converted value.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.Int8ToULongPtr">
+    <summary>
+      <para>Converts a value of type <b>INT8</b> to a value of type <b>ULONG_PTR</b>.</para>
+    </summary>
+    <param name="i8Operand">
+      <para>The value to convert.</para>
+    </param>
+    <param name="pulResult">
+      <para>The converted value.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.Int8ToUShort">
+    <summary>
+      <para>Converts a value of type <b>INT8</b> to a value of type <b>USHORT</b>.</para>
+    </summary>
+    <param name="i8Operand">
+      <para>The value to convert.</para>
+    </param>
+    <param name="pusResult">
+      <para>The converted value.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.IntAdd">
+    <summary>
+      <para>Adds two values of type <b>INT</b>.</para>
+    </summary>
+    <param name="iAugend">
+      <para>The first value.</para>
+    </param>
+    <param name="iAddend">
+      <para>The second value.</para>
+    </param>
+    <param name="piResult">
+      <para>The result.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.IntMult">
+    <summary>
+      <para>Multiplies two values of type <b>INT</b>.</para>
+    </summary>
+    <param name="iMultiplicand">
+      <para>The first value.</para>
+    </param>
+    <param name="iMultiplier">
+      <para>The second value.</para>
+    </param>
+    <param name="piResult">
+      <para>The result.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.IntPtrAdd">
+    <summary>
+      <para>Adds two values of type <b>INT_PTR</b>.</para>
+    </summary>
+    <param name="iAugend">
+      <para>The first value.</para>
+    </param>
+    <param name="iAddend">
+      <para>The second value.</para>
+    </param>
+    <param name="piResult">
+      <para>The result.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.IntPtrMult">
+    <summary>
+      <para>Multiplies two values of type <b>INT_PTR</b>.</para>
+    </summary>
+    <param name="iMultiplicand">
+      <para>The first value.</para>
+    </param>
+    <param name="iMultiplier">
+      <para>The second value.</para>
+    </param>
+    <param name="piResult">
+      <para>The result.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.IntPtrSub">
+    <summary>
+      <para>Subtracts one value of type <b>INT_PTR</b> from another.</para>
+    </summary>
+    <param name="iMinuend">
+      <para>The first value.</para>
+    </param>
+    <param name="iSubtrahend">
+      <para>The value to subtract.</para>
+    </param>
+    <param name="piResult">
+      <para>The result.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.IntPtrToChar">
+    <summary>
+      <para>Converts a value of type <b>INT_PTR</b> to a value of type <b>CHAR</b>.</para>
+    </summary>
+    <param name="iOperand">
+      <para>The value to convert.</para>
+    </param>
+    <param name="pch">
+      <para>The converted value.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.IntPtrToInt">
+    <summary>
+      <para>Converts a value of type <b>INT_PTR</b> to a value of type <b>INT</b>.</para>
+    </summary>
+    <param name="iOperand">
+      <para>Type: <b>INT_PTR</b></para>
+      <para>The value to convert.</para>
+    </param>
+    <param name="piResult">
+      <para>Type: <b>INT*</b></para>
+      <para>The converted value. In the case where the conversion causes a truncation of the original value, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide type conversions and perform validity checks with minimal impact on performance.</para>
+      <para>
+        <b>PtrdiffTToInt</b> is an alias for this function.</para>
+    </remarks>
+  </member>
+  <member name="Windows.IntPtrToInt8">
+    <summary>
+      <para>Converts a value of type <b>INT_PTR</b> to a value of type <b>INT8</b>.</para>
+    </summary>
+    <param name="iOperand">
+      <para>The value to convert.</para>
+    </param>
+    <param name="pi8Result">
+      <para>The converted value.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.IntPtrToLong">
+    <summary>
+      <para>Converts  a value of type <b>INT_PTR</b> to a value of type <b>LONG</b>.</para>
+    </summary>
+    <param name="iOperand">
+      <para>Type: <b>INT_PTR</b></para>
+      <para>The value to be converted.</para>
+    </param>
+    <param name="plResult">
+      <para>Type: <b>LONG*</b></para>
+      <para>A pointer to the converted value. In the case where the conversion causes a truncation of the original value, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide type conversions and perform validity checks with minimal impact on performance.</para>
+    </remarks>
+  </member>
+  <member name="Windows.IntPtrToLongPtr">
+    <summary>
+      <para>Converts a value of type <b>INT_PTR</b> to a value of type <b>LONG_PTR</b>.</para>
+    </summary>
+    <param name="iOperand">
+      <para>The value to convert.</para>
+    </param>
+    <param name="plResult">
+      <para>The converted value.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.IntPtrToShort">
+    <summary>
+      <para>Converts a value of type <b>INT_PTR</b> to a value of type <b>SHORT</b>.</para>
+    </summary>
+    <param name="iOperand">
+      <para>The value to convert.</para>
+    </param>
+    <param name="psResult">
+      <para>The converted value.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.IntPtrToUChar">
+    <summary>
+      <para>Converts a value of type <b>INT_PTR</b> to a value of type <b>UCHAR</b>.</para>
+    </summary>
+    <param name="iOperand">
+      <para>The value to convert.</para>
+    </param>
+    <param name="pch">
+      <para>The converted value.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.IntPtrToUInt">
+    <summary>
+      <para>Converts a value of type <b>INT_PTR</b> to a value of type <b>UINT</b>.</para>
+    </summary>
+    <param name="iOperand">
+      <para>Type: <b>INT_PTR</b></para>
+      <para>The value to be converted.</para>
+    </param>
+    <param name="puResult">
+      <para>Type: <b>UINT*</b></para>
+      <para>A pointer to the converted value. In the case where the conversion causes a truncation of the original value, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide type conversions and perform validity checks with minimal impact on performance.</para>
+      <para>
+        <b>PtrdiffTToUInt</b> is an alias for this function.</para>
+    </remarks>
+  </member>
+  <member name="Windows.IntPtrToUInt8">
+    <summary>
+      <para>Converts a value of type <b>INT_PTR</b> to a value of type <b>UINT8</b>.</para>
+    </summary>
+    <param name="iOperand">
+      <para>The value to convert.</para>
+    </param>
+    <param name="pui8Result">
+      <para>The converted value.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.IntPtrToUIntPtr">
+    <summary>
+      <para>Converts a value of type <b>INT_PTR</b> to a value of type <b>UINT_PTR</b>.</para>
+    </summary>
+    <param name="iOperand">
+      <para>Type: <b>INT_PTR</b></para>
+      <para>A pointer to the value to be converted.</para>
+    </param>
+    <param name="puResult">
+      <para>Type: <b>UINT_PTR*</b></para>
+      <para>The address of the pointer to the converted value. In the case where the conversion causes a truncation of the original value, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide type conversions and perform validity checks with minimal impact on performance.</para>
+      <para>
+        <b>PtrdiffTToUIntPtr</b> is an alias for this function.</para>
+      <para>
+        <b>PtrdiffTToSizeT</b> is an alias for this function.</para>
+      <para>
+        <b>IntPtrToSizeT</b> is an alias for this function.</para>
+    </remarks>
+  </member>
+  <member name="Windows.IntPtrToULong">
+    <summary>
+      <para>Converts a value of type <b>INT_PTR</b> to a value of type <b>ULONG</b>.</para>
+    </summary>
+    <param name="iOperand">
+      <para>Type: <b>INT_PTR</b></para>
+      <para>The value to be converted.</para>
+    </param>
+    <param name="pulResult">
+      <para>Type: <b>ULONG*</b></para>
+      <para>A pointer to the converted value. In the case where the conversion causes a truncation of the original value, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide type conversions and perform validity checks with minimal impact on performance.</para>
+      <para>
+        <b>PtrdiffTToULong</b> is an alias for this function.</para>
+      <para>
+        <b>PtrdiffTToLong</b> is an alias for this function.</para>
+      <para>
+        <b>PtrdiffTToDWord</b> is an alias for this function.</para>
+      <para>
+        <b>IntPtrToDWord</b> is an alias for this function.</para>
+    </remarks>
+  </member>
+  <member name="Windows.IntPtrToULongLong">
+    <summary>
+      <para>Converts a value of type <b>INT_PTR</b> to a value of type <b>ULONGLONG</b>.</para>
+    </summary>
+    <param name="iOperand">
+      <para>Type: <b>INT_PTR</b></para>
+      <para>The value to be converted.</para>
+    </param>
+    <param name="pullResult">
+      <para>Type: <b>ULONGLONG*</b></para>
+      <para>A pointer to the converted value. In the case where the conversion causes a truncation of the original value, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide type conversions and perform validity checks, and to do so with minimal impact on performance.</para>
+      <para>
+        <b>UIntPtrToInt64</b> is an alias for this function.</para>
+    </remarks>
+  </member>
+  <member name="Windows.IntPtrToULongPtr">
+    <summary>
+      <para>Converts a value of type <b>INT_PTR</b> to a value of type <b>ULONG_PTR</b>.</para>
+    </summary>
+    <param name="iOperand">
+      <para>Type: <b>INT_PTR</b></para>
+      <para>The value to be converted.</para>
+    </param>
+    <param name="pulResult">
+      <para>Type: <b>ULONG_PTR*</b></para>
+      <para>A pointer to the converted value. In the case where the conversion causes a truncation of the original value, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide type conversions and perform validity checks with minimal impact on performance.</para>
+      <para>
+        <b>IntPtrToSIZET</b> is an alias for this function.</para>
+      <para>
+        <b>PtrdiffTToULongPtr</b> is an alias for this function.</para>
+      <para>
+        <b>PtrdiffTToSIZET</b> is an alias for this function.</para>
+      <para>
+        <b>IntPtrToDWordPtr</b> is an alias for this function.</para>
+    </remarks>
+  </member>
+  <member name="Windows.IntPtrToUShort">
+    <summary>
+      <para>Converts a value of type <b>INT_PTR</b> to a value of type <b>USHORT</b>.</para>
+    </summary>
+    <param name="iOperand">
+      <para>The value to convert.</para>
+    </param>
+    <param name="pusResult">
+      <para>The converted value.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.IntSub">
+    <summary>
+      <para>Subtracts one value of type <b>INT</b> from another.</para>
+    </summary>
+    <param name="iMinuend">
+      <para>The first value.</para>
+    </param>
+    <param name="iSubtrahend">
+      <para>The value to subtract.</para>
+    </param>
+    <param name="piResult">
+      <para>The result.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.IntToChar">
+    <summary>
+      <para>Converts a value of type <b>INT</b> to a value of type <b>CHAR</b>.</para>
+    </summary>
+    <param name="iOperand">
+      <para>Type: <b>INT</b></para>
+      <para>The value to be converted.</para>
+    </param>
+    <param name="pch">
+      <para>Type: <b>__wchar_t*</b></para>
+      <para>A pointer to the converted value. In the case where the conversion causes a truncation of the original value, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide type conversions and perform validity checks with minimal impact on performance.</para>
+    </remarks>
+  </member>
+  <member name="Windows.IntToInt8">
+    <summary>
+      <para>Converts a value of type <b>INT</b> to a value of type <b>INT8</b>.</para>
+    </summary>
+    <param name="iOperand">
+      <para>The value to convert.</para>
+    </param>
+    <param name="pi8Result">
+      <para>The converted value.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.IntToShort">
+    <summary>
+      <para>Converts a value of type <b>INT</b> to a value of type <b>SHORT</b>.</para>
+    </summary>
+    <param name="iOperand">
+      <para>Type: <b>INT</b></para>
+      <para>The value to be converted.</para>
+    </param>
+    <param name="psResult">
+      <para>Type: <b>SHORT*</b></para>
+      <para>A pointer to the converted value. In the case where the conversion causes a truncation of the original value, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide type conversions and perform validity checks with minimal impact on performance.</para>
+    </remarks>
+  </member>
+  <member name="Windows.IntToUChar">
+    <summary>
+      <para>Converts a value of type <b>INT</b> to a value of type <b>UCHAR</b>.</para>
+    </summary>
+    <param name="iOperand">
+      <para>Type: <b>INT</b></para>
+      <para>The value to be converted.</para>
+    </param>
+    <param name="pch">
+      <para>Type: <b>UCHAR*</b></para>
+      <para>A pointer to the converted value. In the case where the conversion causes a truncation of the original value, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide type conversions and perform validity checks with minimal impact on performance.</para>
+    </remarks>
+  </member>
+  <member name="Windows.IntToUInt">
+    <summary>
+      <para>Converts a value of type <b>INT</b> to a value of type <b>UINT</b>.</para>
+    </summary>
+    <param name="iOperand">
+      <para>Type: <b>INT</b></para>
+      <para>The value to be converted.</para>
+    </param>
+    <param name="puResult">
+      <para>Type: <b>UINT*</b></para>
+      <para>A pointer to the converted value. In the case where the conversion causes a truncation of the original value, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide type conversions and perform validity checks with minimal impact on performance.</para>
+    </remarks>
+  </member>
+  <member name="Windows.IntToUInt8">
+    <summary>
+      <para>Converts a value of type <b>INT</b> to a value of type <b>UINT8</b>.</para>
+    </summary>
+    <param name="iOperand">
+      <para>The value to convert.</para>
+    </param>
+    <param name="pui8Result">
+      <para>The converted value.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>IntToByte</b> is an alias for this function.</para>
+    </remarks>
+  </member>
+  <member name="Windows.IntToULong">
+    <summary>
+      <para>Converts a value of type <b>INT</b> to a value of type <b>ULONG</b>.</para>
+    </summary>
+    <param name="iOperand">
+      <para>Type: <b>INT</b></para>
+      <para>The value to be converted.</para>
+    </param>
+    <param name="pulResult">
+      <para>Type: <b>ULONG*</b></para>
+      <para>A pointer to the converted value. In the case where the conversion causes a truncation of the original value, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide type conversions and perform validity checks with minimal impact on performance.</para>
+      <para>
+        <b>IntToDWord</b> is an alias for this function.</para>
+    </remarks>
+  </member>
+  <member name="Windows.IntToUIntPtr">
+    <summary>
+      <para>Converts a value of type <b>INT</b> to a value of type <b>UINT_PTR</b>.</para>
+    </summary>
+    <param name="iOperand">
+      <para>Type: <b>INT</b></para>
+      <para>The value to be converted.</para>
+    </param>
+    <param name="pullResult">
+      <para>Type: <b>UINT_PTR*</b></para>
+      <para>A pointer to the address of the converted value. In the case where the conversion causes a truncation of the original value, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide type conversions and perform validity checks with minimal impact on performance.</para>
+    </remarks>
+  </member>
+  <member name="Windows.IntToUShort">
+    <summary>
+      <para>Converts a value of type <b>INT</b> to a value of type <b>USHORT</b>.</para>
+    </summary>
+    <param name="iOperand">
+      <para>Type: <b>INT</b></para>
+      <para>The value to be converted.</para>
+    </param>
+    <param name="pusResult">
+      <para>Type: <b>USHORT*</b></para>
+      <para>A pointer to the converted value. In the case where the conversion causes a truncation of the original value, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide type conversions and perform validity checks with minimal impact on performance.</para>
+      <para>
+        <b>IntToWord</b> is an alias for this function.</para>
+    </remarks>
+  </member>
+  <member name="Windows.LongAdd">
+    <summary>
+      <para>Adds two values of type <b>LONG</b>.</para>
+    </summary>
+    <param name="lAugend">
+      <para>The first value.</para>
+    </param>
+    <param name="lAddend">
+      <para>The second value.</para>
+    </param>
+    <param name="plResult">
+      <para>The result.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.LongLongAdd">
+    <summary>
+      <para>Adds two values of type <b>LONGLONG</b>.</para>
+    </summary>
+    <param name="llAugend">
+      <para>The first value.</para>
+    </param>
+    <param name="llAddend">
+      <para>The second value.</para>
+    </param>
+    <param name="pllResult">
+      <para>The result.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.LongLongMult">
+    <summary>
+      <para>Multiplies two values of type <b>LONGLONG</b>.</para>
+    </summary>
+    <param name="llMultiplicand">
+      <para>The first value.</para>
+    </param>
+    <param name="llMultiplier">
+      <para>The second value.</para>
+    </param>
+    <param name="pllResult">
+      <para>The result.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.LongLongSub">
+    <summary>
+      <para>Subtracts one value of type <b>LONGLONG</b> from another.</para>
+    </summary>
+    <param name="llMinuend">
+      <para>The first value.</para>
+    </param>
+    <param name="llSubtrahend">
+      <para>The value to subtract.</para>
+    </param>
+    <param name="pllResult">
+      <para>The result.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.LongLongToChar">
+    <summary>
+      <para>Converts a value of type <b>LONGLONG</b> to a value of type <b>CHAR</b>.</para>
+    </summary>
+    <param name="llOperand">
+      <para>The value to convert.</para>
+    </param>
+    <param name="pch">
+      <para>The converted value.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.LongLongToInt">
+    <summary>
+      <para>Converts a value of type <b>LONGLONG</b> to a value of type <b>INT</b>.</para>
+    </summary>
+    <param name="llOperand">
+      <para>The value to convert.</para>
+    </param>
+    <param name="piResult">
+      <para>The converted value.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>Int64ToInt</b> is an alias for this function.</para>
+    </remarks>
+  </member>
+  <member name="Windows.LongLongToInt8">
+    <summary>
+      <para>Converts a value of type <b>LONGLONG</b> to a value of type <b>INT8</b>.</para>
+    </summary>
+    <param name="llOperand">
+      <para>The value to convert.</para>
+    </param>
+    <param name="pi8Result">
+      <para>The converted value.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.LongLongToIntPtr">
+    <summary>
+      <para>Converts a value of type <b>LONGLONG</b> to a value of type <b>INT_PTR</b>.</para>
+    </summary>
+    <param name="llOperand">
+      <para>The value to convert.</para>
+    </param>
+    <param name="piResult">
+      <para>The converted value.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>Int64ToPtrdiffT</b> is an alias for this function.</para>
+      <para>
+        <b>Int64ToIntPtr</b> is an alias for this function.</para>
+    </remarks>
+  </member>
+  <member name="Windows.LongLongToLong">
+    <summary>
+      <para>Converts a value of type <b>LONGLONG</b> to a value of type <b>LONG</b>.</para>
+    </summary>
+    <param name="llOperand">
+      <para>The value to convert.</para>
+    </param>
+    <param name="plResult">
+      <para>The converted value.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>Int64ToLong</b> is an alias for this function.</para>
+    </remarks>
+  </member>
+  <member name="Windows.LongLongToLongPtr">
+    <summary>
+      <para>Converts a value of type <b>LONGLONG</b> to a value of type <b>LONG_PTR</b>.</para>
+    </summary>
+    <param name="llOperand">
+      <para>The value to convert.</para>
+    </param>
+    <param name="plResult">
+      <para>The converted value.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>Int64ToSSIZET</b> is an alias for this function.</para>
+      <para>
+        <b>Int64ToULongPtr</b> is an alias for this function.</para>
+      <para>
+        <b>Int64ToLongPtr</b> is an alias for this function.</para>
+    </remarks>
+  </member>
+  <member name="Windows.LongLongToShort">
+    <summary>
+      <para>Converts a value of type <b>LONGLONG</b> to a value of type <b>SHORT</b>.</para>
+    </summary>
+    <param name="llOperand">
+      <para>The value to convert.</para>
+    </param>
+    <param name="psResult">
+      <para>The converted value.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.LongLongToUChar">
+    <summary>
+      <para>Converts a value of type <b>LONGLONG</b> to a value of type <b>UCHAR</b>.</para>
+    </summary>
+    <param name="llOperand">
+      <para>The value to convert.</para>
+    </param>
+    <param name="pch">
+      <para>The converted value.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.LongLongToUInt">
+    <summary>
+      <para>Converts a value of type <b>LONGLONG</b> to a value of type <b>UINT</b>.</para>
+    </summary>
+    <param name="llOperand">
+      <para>The value to convert.</para>
+    </param>
+    <param name="puResult">
+      <para>The converted value.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>Int64ToULongPtr</b> is an alias for this function.</para>
+      <para>
+        <b>Int64ToUIntPtr</b> is an alias for this function.</para>
+      <para>
+        <b>Int64ToUInt</b> is an alias for this function.</para>
+      <para>
+        <b>Int64ToSizeT</b> is an alias for this function.</para>
+    </remarks>
+  </member>
+  <member name="Windows.LongLongToUInt8">
+    <summary>
+      <para>Converts a value of type <b>LONGLONG</b> to a value of type <b>UINT8</b>.</para>
+    </summary>
+    <param name="llOperand">
+      <para>The value to convert.</para>
+    </param>
+    <param name="pu8Result">
+      <para>The converted value.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.LongLongToULong">
+    <summary>
+      <para>Converts a value of type <b>LONGLONG</b> to a value of type <b>ULONG</b>.</para>
+    </summary>
+    <param name="llOperand">
+      <para>The value to convert.</para>
+    </param>
+    <param name="pulResult">
+      <para>The converted value.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>Int64ToULong</b> is an alias for this function.</para>
+      <para>
+        <b>Int64ToSIZET</b> is an alias for this function.</para>
+      <para>
+        <b>Int64ToDWordPtr</b> is an alias for this function.</para>
+      <para>
+        <b>IntPtrToULong</b> is an alias for this function.</para>
+      <para>
+        <b>DWordToUShort</b> is an alias for this function.</para>
+    </remarks>
+  </member>
+  <member name="Windows.LongLongToULongLong">
+    <summary>
+      <para>Converts a value of type <b>LONGLONG</b> to a value of type <b>ULONGLONG</b>.</para>
+    </summary>
+    <param name="llOperand">
+      <para>The value to convert.</para>
+    </param>
+    <param name="pullResult">
+      <para>The converted value.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>IntPtrToULongPtr</b> is an alias for this function.</para>
+      <para>
+        <b>IntPtrToUIntPtr</b> is an alias for this function.</para>
+      <para>
+        <b>Int64ToULongLong</b> is an alias for this function.</para>
+    </remarks>
+  </member>
+  <member name="Windows.LongLongToUShort">
+    <summary>
+      <para>Converts a value of type <b>LONGLONG</b> to a value of type <b>USHORT</b>.</para>
+    </summary>
+    <param name="llOperand">
+      <para>The value to convert.</para>
+    </param>
+    <param name="pusResult">
+      <para>The converted value.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.LongMult">
+    <summary>
+      <para>Multiplies two values of type <b>LONG</b>.</para>
+    </summary>
+    <param name="lMultiplicand">
+      <para>The first value.</para>
+    </param>
+    <param name="lMultiplier">
+      <para>The second value.</para>
+    </param>
+    <param name="plResult">
+      <para>The result.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.LongPtrAdd">
+    <summary>
+      <para>Adds two values of type <b>LONG_PTR</b>.</para>
+    </summary>
+    <param name="lAugend">
+      <para>The first value.</para>
+    </param>
+    <param name="lAddend">
+      <para>The second value.</para>
+    </param>
+    <param name="plResult">
+      <para>The result.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.LongPtrMult">
+    <summary>
+      <para>Multiplies two values of type <b>LONG_PTR</b>.</para>
+    </summary>
+    <param name="lMultiplicand">
+      <para>The first value.</para>
+    </param>
+    <param name="lMultiplier">
+      <para>The second value.</para>
+    </param>
+    <param name="plResult">
+      <para>The result.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.LongPtrSub">
+    <summary>
+      <para>Subtracts one value of type <b>LONG_PTR</b> from another.</para>
+    </summary>
+    <param name="lMinuend">
+      <para>The first value.</para>
+    </param>
+    <param name="lSubtrahend">
+      <para>The value to subtract.</para>
+    </param>
+    <param name="plResult">
+      <para>The result.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.LongPtrToChar">
+    <summary>
+      <para>Converts a value of type <b>LONG_PTR</b> to a value of type <b>CHAR</b>.</para>
+    </summary>
+    <param name="lOperand">
+      <para>The value to convert.</para>
+    </param>
+    <param name="pch">
+      <para>The converted value.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.LongPtrToInt">
+    <summary>
+      <para>Converts a value of type <b>LONG_PTR</b> to a value of type <b>INT</b>.</para>
+    </summary>
+    <param name="lOperand">
+      <para>Type: <b>LONG_PTR</b></para>
+      <para>The value to be converted.</para>
+    </param>
+    <param name="piResult">
+      <para>Type: <b>INT*</b></para>
+      <para>A pointer to the converted value. In the case where the conversion causes a truncation of the original value, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide type conversions and perform validity checks with minimal impact on performance.</para>
+      <para>
+        <b>SSIZETToInt</b> is an alias for this function.</para>
+    </remarks>
+  </member>
+  <member name="Windows.LongPtrToInt8">
+    <summary>
+      <para>Converts a value of type <b>LONG_PTR</b> to a value of type <b>INT8</b>.</para>
+    </summary>
+    <param name="lOperand">
+      <para>The value to convert.</para>
+    </param>
+    <param name="pi8Result">
+      <para>The converted value.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.LongPtrToIntPtr">
+    <summary>
+      <para>Converts a value of type <b>LONG_PTR</b> to a value of type <b>INT_PTR</b>.</para>
+    </summary>
+    <param name="lOperand">
+      <para>Type: <b>LONG_PTR</b></para>
+      <para>The value to be converted.</para>
+    </param>
+    <param name="piResult">
+      <para>Type: <b>INT_PTR*</b></para>
+      <para>A pointer to the converted value. In the case where the conversion causes a truncation of the original value, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide type conversions and perform validity checks with minimal impact on performance.</para>
+      <para>
+        <b>SSIZETToIntPtr</b> is an alias for this function.</para>
+    </remarks>
+  </member>
+  <member name="Windows.LongPtrToLong">
+    <summary>
+      <para>Converts a value of type <b>LONG_PTR</b> to a value of type <b>LONG</b>.</para>
+    </summary>
+    <param name="lOperand">
+      <para>Type: <b>LONG_PTR</b></para>
+      <para>The value to be converted.</para>
+    </param>
+    <param name="plResult">
+      <para>Type: <b>LONG*</b></para>
+      <para>A pointer to the converted value. In the case where the conversion causes a truncation of the original value, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide type conversions and perform validity checks with minimal impact on performance.</para>
+      <para>
+        <b>SSIZETToLong</b> is an alias for this function.</para>
+    </remarks>
+  </member>
+  <member name="Windows.LongPtrToShort">
+    <summary>
+      <para>Converts a value of type <b>LONG_PTR</b> to a value of type <b>SHORT</b>.</para>
+    </summary>
+    <param name="lOperand">
+      <para>The value to convert.</para>
+    </param>
+    <param name="psResult">
+      <para>The converted value.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.LongPtrToUChar">
+    <summary>
+      <para>Converts a value of type <b>LONG_PTR</b> to a value of type <b>UCHAR</b>.</para>
+    </summary>
+    <param name="lOperand">
+      <para>The value to convert.</para>
+    </param>
+    <param name="pch">
+      <para>The converted value.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.LongPtrToUInt">
+    <summary>
+      <para>Converts a value of type <b>LONG_PTR</b> to a value of type <b>UINT</b>.</para>
+    </summary>
+    <param name="lOperand">
+      <para>Type: <b>LONG_PTR</b></para>
+      <para>The value to be converted.</para>
+    </param>
+    <param name="puResult">
+      <para>Type: <b>UINT*</b></para>
+      <para>A pointer to the converted value. In the case where the conversion causes a truncation of the original value, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide type conversions and perform validity checks with minimal impact on performance.</para>
+      <para>
+        <b>SSIZETToUInt</b> is an alias for this function.</para>
+    </remarks>
+  </member>
+  <member name="Windows.LongPtrToUInt8">
+    <summary>
+      <para>Converts a value of type <b>LONG_PTR</b> to a value of type <b>UINT8</b>.</para>
+    </summary>
+    <param name="lOperand">
+      <para>The value to convert.</para>
+    </param>
+    <param name="pui8Result">
+      <para>The converted value.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.LongPtrToUIntPtr">
+    <summary>
+      <para>Converts a value of type <b>LONG_PTR</b> to a value of type <b>UINT_PTR</b>.</para>
+    </summary>
+    <param name="lOperand">
+      <para>Type: <b>LONG_PTR</b></para>
+      <para>The value to be converted.</para>
+    </param>
+    <param name="puResult">
+      <para>Type: <b>UINT_PTR*</b></para>
+      <para>A pointer to the converted value. In the case where the conversion causes a truncation of the original value, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of functions designed to provide type conversions and perform validity checks with minimal impact on performance.</para>
+      <para>
+        <b>LongPtrToSizeT</b> is an alias for this function.</para>
+      <para>
+        <b>SSIZETToSizeT</b> is an alias for this function.</para>
+    </remarks>
+  </member>
+  <member name="Windows.LongPtrToULong">
+    <summary>
+      <para>Converts a value of type <b>LONG_PTR</b> to a value of type <b>ULONG</b>.</para>
+    </summary>
+    <param name="lOperand">
+      <para>Type: <b>LONG_PTR</b></para>
+      <para>The value to be converted.</para>
+    </param>
+    <param name="pulResult">
+      <para>Type: <b>ULONG*</b></para>
+      <para>A pointer to the converted value. In the case where the conversion causes a truncation of the original value, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide type conversions and perform validity checks with minimal impact on performance.</para>
+      <para>
+        <b>SSIZETToULong</b> is an alias for this function.</para>
+      <para>
+        <b>SSIZETToUIntPtr</b> is an alias for this function.</para>
+      <para>
+        <b>SSIZETToDWord</b> is an alias for this function.</para>
+      <para>
+        <b>LongPtrToDWord</b> is an alias for this function.</para>
+    </remarks>
+  </member>
+  <member name="Windows.LongPtrToULongLong">
+    <summary>
+      <para>Converts a value of type <b>LONG_PTR</b> to a value of type <b>ULONGLONG</b>.</para>
+    </summary>
+    <param name="lOperand">
+      <para>Type: <b>LONG_PTR</b></para>
+      <para>The value to be converted.</para>
+    </param>
+    <param name="pullResult">
+      <para>Type: <b>ULONGLONG*</b></para>
+      <para>A pointer to the converted value. In the case where the conversion causes a truncation of the original value, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of functions designed to provide type conversions and perform validity checks with minimal impact on performance.</para>
+    </remarks>
+  </member>
+  <member name="Windows.LongPtrToULongPtr">
+    <summary>
+      <para>Converts a value of type <b>LONG_PTR</b> to a value of type <b>ULONG_PTR</b>.</para>
+    </summary>
+    <param name="lOperand">
+      <para>Type: <b>LONG_PTR</b></para>
+      <para>The value to be converted.</para>
+    </param>
+    <param name="pulResult">
+      <para>Type: <b>ULONG_PTR*</b></para>
+      <para>A pointer to the converted value. In the case where the conversion causes a truncation of the original value, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of functions designed to provide type conversions and perform validity checks with minimal impact on performance.</para>
+      <para>
+        <b>LongPtrToSIZET</b> is an alias for this function.</para>
+      <para>
+        <b>SSIZETToULongPtr</b> is an alias for this function.</para>
+      <para>
+        <b>SSIZETToSIZET</b> is an alias for this function.</para>
+      <para>
+        <b>SSIZETToDWordPtr</b> is an alias for this function.</para>
+      <para>
+        <b>LongPtrToDWordPtr</b> is an alias for this function.</para>
+    </remarks>
+  </member>
+  <member name="Windows.LongPtrToUShort">
+    <summary>
+      <para>Converts a value of type <b>LONG_PTR</b> to a value of type <b>USHORT</b>.</para>
+    </summary>
+    <param name="lOperand">
+      <para>The value to convert.</para>
+    </param>
+    <param name="pusResult">
+      <para>The converted value.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.LongSub">
+    <summary>
+      <para>Subtracts one value of type <b>LONG</b> from another.</para>
+    </summary>
+    <param name="lMinuend">
+      <para>The first value.</para>
+    </param>
+    <param name="lSubtrahend">
+      <para>The value to subtract.</para>
+    </param>
+    <param name="plResult">
+      <para>The result.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.LongToChar">
+    <summary>
+      <para>Converts a value of type <b>LONG</b> to a value of type <b>CHAR</b>.</para>
+    </summary>
+    <param name="lOperand">
+      <para>Type: <b>LONG</b></para>
+      <para>The value to be converted.</para>
+    </param>
+    <param name="pch">
+      <para>Type: <b>__wchar_t*</b></para>
+      <para>A pointer to the converted value. In the case where the conversion causes a truncation of the original value, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide type conversions and perform validity checks with minimal impact on performance.</para>
+    </remarks>
+  </member>
+  <member name="Windows.LongToInt">
+    <summary>
+      <para>Converts a value of type <b>LONG</b> to a value of type <b>INT</b>.</para>
+    </summary>
+    <param name="lOperand">
+      <para>Type: <b>LONG</b></para>
+      <para>The value to be converted.</para>
+    </param>
+    <param name="piResult">
+      <para>Type: <b>INT*</b></para>
+      <para>A pointer to the converted value. In the case where the conversion causes a truncation of the original value, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide type conversions and perform validity checks with minimal impact on performance.</para>
+    </remarks>
+  </member>
+  <member name="Windows.LongToInt8">
+    <summary>
+      <para>Converts a value of type <b>LONG</b> to a value of type <b>INT8</b>.</para>
+    </summary>
+    <param name="lOperand">
+      <para>The value to convert.</para>
+    </param>
+    <param name="pi8Result">
+      <para>The converted value.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.LongToIntPtr">
+    <summary>
+      <para>Converts a value of type <b>LONG</b> to a value of type <b>INT_PTR</b>.</para>
+    </summary>
+    <param name="lOperand">
+      <para>Type: <b>LONG</b></para>
+      <para>The value to be converted.</para>
+    </param>
+    <param name="piResult">
+      <para>Type: <b>INT_PTR*</b></para>
+      <para>A pointer to the converted value. In the case where the conversion causes a truncation of the original value, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide type conversions and perform validity checks with minimal impact on performance.</para>
+      <para>
+        <b>LongToPtrdiffT</b> is an alias for this function.</para>
+    </remarks>
+  </member>
+  <member name="Windows.LongToShort">
+    <summary>
+      <para>Converts a value of type <b>LONG</b> to a value of type <b>SHORT</b>.</para>
+    </summary>
+    <param name="lOperand">
+      <para>Type: <b>LONG</b></para>
+      <para>The value to be converted.</para>
+    </param>
+    <param name="psResult">
+      <para>Type: <b>SHORT*</b></para>
+      <para>A pointer to the converted value. In the case where the conversion causes a truncation of the original value, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide type conversions and perform validity checks with minimal impact on performance.</para>
+    </remarks>
+  </member>
+  <member name="Windows.LongToUChar">
+    <summary>
+      <para>Converts a value of type <b>LONG</b> to a value of type <b>UCHAR</b>.</para>
+    </summary>
+    <param name="lOperand">
+      <para>Type: <b>LONG</b></para>
+      <para>The value to be converted.</para>
+    </param>
+    <param name="pch">
+      <para>Type: <b>UCHAR*</b></para>
+      <para>A pointer to the converted value. In the case where the conversion causes a truncation of the original value, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide type conversions and perform validity checks with minimal impact on performance.</para>
+    </remarks>
+  </member>
+  <member name="Windows.LongToUInt">
+    <summary>
+      <para>Converts a value of type <b>LONG</b> to a value of type <b>UINT</b>.</para>
+    </summary>
+    <param name="lOperand">
+      <para>Type: <b>LONG</b></para>
+      <para>The value to be converted.</para>
+    </param>
+    <param name="puResult">
+      <para>Type: <b>UINT*</b></para>
+      <para>A pointer to the converted value. In the case where the conversion causes a truncation of the original value, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide type conversions and perform validity checks with minimal impact on performance.</para>
+    </remarks>
+  </member>
+  <member name="Windows.LongToUInt8">
+    <summary>
+      <para>Converts a value of type <b>LONG</b> to a value of type <b>UINT8</b>.</para>
+    </summary>
+    <param name="lOperand">
+      <para>The value to convert.</para>
+    </param>
+    <param name="pui8Result">
+      <para>The converted value.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of functions designed to provide type conversions and perform validity checks with minimal impact on performance.</para>
+      <para>
+        <b>LongToByte</b> is an alias for this function.</para>
+    </remarks>
+  </member>
+  <member name="Windows.LongToUIntPtr">
+    <summary>
+      <para>Converts a value of type <b>LONG</b> to a value of type <b>UINT_PTR</b>.</para>
+    </summary>
+    <param name="lOperand">
+      <para>Type: <b>LONG</b></para>
+      <para>The value to be converted.</para>
+    </param>
+    <param name="puResult">
+      <para>Type: <b>UINT_PTR*</b></para>
+      <para>A pointer to the converted value. In the case where the conversion causes a truncation of the original value, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide type conversions and perform validity checks with minimal impact on performance.</para>
+      <para>
+        <b>LongToSizeT</b> is an alias for this function.</para>
+    </remarks>
+  </member>
+  <member name="Windows.LongToULong">
+    <summary>
+      <para>Converts a value of type <b>LONG</b> to a value of type <b>ULONG</b>.</para>
+    </summary>
+    <param name="lOperand">
+      <para>Type: <b>LONG</b></para>
+      <para>The value to be converted.</para>
+    </param>
+    <param name="pulResult">
+      <para>Type: <b>ULONG*</b></para>
+      <para>A pointer to the converted value. In the case where the conversion causes a truncation of the original value, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide type conversions and perform validity checks with minimal impact on performance.</para>
+      <para>
+        <b>LongToDWord</b> is an alias for this function.</para>
+    </remarks>
+  </member>
+  <member name="Windows.LongToULongLong">
+    <summary>
+      <para>Converts a value of type <b>LONG</b> to a value of type <b>ULONGLONG</b>.</para>
+    </summary>
+    <param name="lOperand">
+      <para>Type: <b>LONG</b></para>
+      <para>The value to be converted.</para>
+    </param>
+    <param name="pullResult">
+      <para>Type: <b>ULONGLONG*</b></para>
+      <para>A pointer to the converted value. In the case where the conversion causes a truncation of the original value, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide type conversions and perform validity checks with minimal impact on performance.</para>
+    </remarks>
+  </member>
+  <member name="Windows.LongToULongPtr">
+    <summary>
+      <para>Converts a value of type <b>LONG</b> to a value of type <b>ULONG_PTR</b>.</para>
+    </summary>
+    <param name="lOperand">
+      <para>Type: <b>LONG</b></para>
+      <para>The value to be converted.</para>
+    </param>
+    <param name="pulResult">
+      <para>Type: <b>ULONG_PTR*</b></para>
+      <para>A pointer to the converted value. In the case where the conversion causes a truncation of the original value, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide type conversions and perform validity checks with minimal impact on performance.</para>
+      <para>
+        <b>LongToSIZET</b> is an alias for this function.</para>
+      <para>
+        <b>LongToDWordPtr</b> is an alias for this function.</para>
+      <para>
+        <b>PtrdiffTToDWordPtr</b> is an alias for this function.</para>
+    </remarks>
+  </member>
+  <member name="Windows.LongToUShort">
+    <summary>
+      <para>Converts a value of type <b>LONG</b> to a value of type <b>USHORT</b>.</para>
+    </summary>
+    <param name="lOperand">
+      <para>Type: <b>LONG</b></para>
+      <para>The value to be converted.</para>
+    </param>
+    <param name="pusResult">
+      <para>Type: <b>USHORT*</b></para>
+      <para>A pointer to the converted value. In the case where the conversion causes a truncation of the original value, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide type conversions and perform validity checks with minimal impact on performance.</para>
+      <para>
+        <b>LongToWord</b> is an alias for this function.</para>
+    </remarks>
+  </member>
+  <member name="Windows.PtrdiffTAdd">
+    <summary>
+      <para>Adds two values of type <b>ptrdiff_t</b>.</para>
+    </summary>
+    <param name="Augend">
+      <para>The first value.</para>
+    </param>
+    <param name="Addend">
+      <para>The second value.</para>
+    </param>
+    <param name="pResult">
+      <para>The result.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.PtrdiffTMult">
+    <summary>
+      <para>Multiplies two values of type <b>ptrdiff_t</b>.</para>
+    </summary>
+    <param name="Multiplicand">
+      <para>The first value.</para>
+    </param>
+    <param name="Multiplier">
+      <para>The second value.</para>
+    </param>
+    <param name="pResult">
+      <para>The result.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.PtrdiffTSub">
+    <summary>
+      <para>Subtracts one value of type <b>ptrdiff_t</b> from another.</para>
+    </summary>
+    <param name="Minuend">
+      <para>The first value.</para>
+    </param>
+    <param name="Subtrahend">
+      <para>The value to subtract.</para>
+    </param>
+    <param name="pResult">
+      <para>The result.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.ShortAdd">
+    <summary>
+      <para>Adds two values of type <b>SHORT</b>.</para>
+    </summary>
+    <param name="sAugend">
+      <para>The first value.</para>
+    </param>
+    <param name="sAddend">
+      <para>The second value.</para>
+    </param>
+    <param name="psResult">
+      <para>The result.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.ShortMult">
+    <summary>
+      <para>Multiplies two values of type <b>SHORT</b>.</para>
+    </summary>
+    <param name="sMultiplicand">
+      <para>The first value.</para>
+    </param>
+    <param name="sMultiplier">
+      <para>The second value.</para>
+    </param>
+    <param name="psResult">
+      <para>The result.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.ShortSub">
+    <summary>
+      <para>Subtracts one value of type <b>SHORT</b> from another.</para>
+    </summary>
+    <param name="sMinuend">
+      <para>The first value.</para>
+    </param>
+    <param name="sSubtrahend">
+      <para>The value to subtract.</para>
+    </param>
+    <param name="psResult">
+      <para>The result.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.ShortToChar">
+    <summary>
+      <para>Converts a value of type <b>SHORT</b> to a value of <b>CHAR</b>.</para>
+    </summary>
+    <param name="sOperand">
+      <para>Type: <b>SHORT</b></para>
+      <para>The value to be converted.</para>
+    </param>
+    <param name="pch">
+      <para>Type: <b>__wchar_t*</b></para>
+      <para>A pointer to the converted value. In the case where the conversion causes a truncation of the original value, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide type conversions and perform validity checks with minimal impact on performance.</para>
+    </remarks>
+  </member>
+  <member name="Windows.ShortToDWordPtr">
+    <summary>
+      <para>Converts a value of type <b>SHORT</b> to a value of type <b>DWORD_PTR</b>.</para>
+    </summary>
+    <param name="sOperand">
+      <para>The value to convert.</para>
+    </param>
+    <param name="pdwResult">
+      <para>The converted value.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.ShortToInt8">
+    <summary>
+      <para>Converts a value of type <b>SHORT</b> to a value of type <b>INT8</b>.</para>
+    </summary>
+    <param name="sOperand">
+      <para>The value to convert.</para>
+    </param>
+    <param name="pi8Result">
+      <para>The converted value.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.ShortToUChar">
+    <summary>
+      <para>Converts a value of type <b>SHORT</b> to a value of <b>UCHAR</b>.</para>
+    </summary>
+    <param name="sOperand">
+      <para>Type: <b>SHORT</b></para>
+      <para>The value to be converted.</para>
+    </param>
+    <param name="pch">
+      <para>Type: <b>UCHAR*</b></para>
+      <para>A pointer to the converted value. In the case where the conversion causes a truncation of the original value, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide type conversions and perform validity checks with minimal impact on performance.</para>
+    </remarks>
+  </member>
+  <member name="Windows.ShortToUInt">
+    <summary>
+      <para>Converts a value of type <b>SHORT</b> to a value of type <b>UINT</b>.</para>
+    </summary>
+    <param name="sOperand">
+      <para>The value to convert.</para>
+    </param>
+    <param name="puResult">
+      <para>The converted value.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.ShortToUInt8">
+    <summary>
+      <para>Converts a value of type <b>SHORT</b> to a value of type <b>UINT8</b>.</para>
+    </summary>
+    <param name="sOperand">
+      <para>The value to convert.</para>
+    </param>
+    <param name="pui8Result">
+      <para>The converted value.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>ShortToByte</b> is an alias for this function.</para>
+    </remarks>
+  </member>
+  <member name="Windows.ShortToUIntPtr">
+    <summary>
+      <para>Converts a value of type <b>SHORT</b> to a value of type <b>UINT_PTR</b>.</para>
+    </summary>
+    <param name="sOperand">
+      <para>The value to convert.</para>
+    </param>
+    <param name="puResult">
+      <para>The converted value.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.ShortToULong">
+    <summary>
+      <para>Converts a value of type <b>SHORT</b> to a value of type <b>ULONG</b>.</para>
+    </summary>
+    <param name="sOperand">
+      <para>The value to convert.</para>
+    </param>
+    <param name="pulResult">
+      <para>The converted value.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.ShortToULongLong">
+    <summary>
+      <para>Converts a value of type <b>SHORT</b> to a value of type <b>ULONGLONG</b>.</para>
+    </summary>
+    <param name="sOperand">
+      <para>The value to convert.</para>
+    </param>
+    <param name="pullResult">
+      <para>The converted value.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.ShortToULongPtr">
+    <summary>
+      <para>Converts a value of type <b>SHORT</b> to a value of type <b>ULONG_PTR</b>.</para>
+    </summary>
+    <param name="sOperand">
+      <para>The value to convert.</para>
+    </param>
+    <param name="pulResult">
+      <para>The converted value.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.ShortToUShort">
+    <summary>
+      <para>Converts a value of type <b>SHORT</b> to a value of type <b>USHORT</b>.</para>
+    </summary>
+    <param name="sOperand">
+      <para>Type: <b>SHORT</b></para>
+      <para>The value to be converted.</para>
+    </param>
+    <param name="pusResult">
+      <para>Type: <b>USHORT*</b></para>
+      <para>A pointer to the converted value. In the case where the conversion causes a truncation of the original value, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide type conversions and perform validity checks with minimal impact on performance.</para>
+      <para>
+        <b>ShortToWord</b> is an alias for this function.</para>
+    </remarks>
+  </member>
+  <member name="Windows.SizeTAdd">
+    <summary>
+      <para>Adds two values of type <b>size_t</b>.</para>
+    </summary>
+    <param name="Augend">
+      <para>Type: <b>size_t</b></para>
+      <para>The first value in the equation.</para>
+    </param>
+    <param name="Addend">
+      <para>Type: <b>size_t</b></para>
+      <para>The value to add to <i>cbAugend</i>.</para>
+    </param>
+    <param name="pResult">
+      <para>Type: <b>size_t*</b></para>
+      <para>A pointer to the sum. If the operation results in a value that overflows or underflows the capacity of the type, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide arithmetic operations and perform validity checks with minimal impact on performance.</para>
+    </remarks>
+  </member>
+  <member name="Windows.SizeTMult">
+    <summary>
+      <para>Multiplies one value of type <b>size_t</b> by another.</para>
+    </summary>
+    <param name="Multiplicand">
+      <para>Type: <b>size_t</b></para>
+      <para>The value to be multiplied by <i>cbMultiplier</i>.</para>
+    </param>
+    <param name="Multiplier">
+      <para>Type: <b>size_t</b></para>
+      <para>The value by which to multiply <i>cbMultiplicand</i>.</para>
+    </param>
+    <param name="pResult">
+      <para>Type: <b>size_t*</b></para>
+      <para>A pointer to the result. If the operation results in a value that overflows or underflows the capacity of the type, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide arithmetic operations and perform validity checks with minimal impact on performance.</para>
+    </remarks>
+  </member>
+  <member name="Windows.SizeTSub">
+    <summary>
+      <para>Subtracts one value of type <b>size_t</b> from another.</para>
+    </summary>
+    <param name="Minuend">
+      <para>Type: <b>size_t</b></para>
+      <para>The value from which <i>cbSubtrahend</i> is subtracted.</para>
+    </param>
+    <param name="Subtrahend">
+      <para>Type: <b>size_t</b></para>
+      <para>The value to subtract from <i>cbMinuend</i>.</para>
+    </param>
+    <param name="pResult">
+      <para>Type: <b>size_t*</b></para>
+      <para>A pointer to the result. If the operation results in a value that overflows or underflows the capacity of the type, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide arithmetic operations and perform validity checks with minimal impact on performance.</para>
+    </remarks>
+  </member>
+  <member name="Windows.SSIZETAdd">
+    <summary>
+      <para>Adds two SSIZE_T values together.</para>
+    </summary>
+    <param name="Augend">
+      <para>The value to add to <i>Addend</i>.</para>
+    </param>
+    <param name="Addend">
+      <para>The value to be added to <i>Augend</i>.</para>
+    </param>
+    <param name="pResult">
+      <para>When this function returns successfully, points to the sum of <i>Augend</i> plus <i>Addend</i>.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.SSIZETMult">
+    <summary>
+      <para>Multiplies one SSIZE_T value by another.</para>
+    </summary>
+    <param name="Multiplicand">
+      <para>The number to be multiplied.</para>
+    </param>
+    <param name="Multiplier">
+      <para>The number by which to multiply <i>Multiplicand</i>.</para>
+    </param>
+    <param name="pResult">
+      <para>When this function returns successfully, points to the product of <i>Multiplicand</i> times <i>Multiplier</i>.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.SSIZETSub">
+    <summary>
+      <para>Subtracts one SSIZE_T value from another.</para>
+    </summary>
+    <param name="Minuend">
+      <para>The value from which <i>Subtrahend</i> will be subtracted.</para>
+    </param>
+    <param name="Subtrahend">
+      <para>The value to subtract from <i>Minuend</i>.</para>
+    </param>
+    <param name="pResult">
+      <para>When this function returns successfully, points to the difference between <i>Minuend</i> and <i>Subtrahend</i>.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.UInt8Add">
+    <summary>
+      <para>Adds two values of type <b>UINT8</b>.</para>
+    </summary>
+    <param name="u8Augend">
+      <para>The first value.</para>
+    </param>
+    <param name="u8Addend">
+      <para>The second value.</para>
+    </param>
+    <param name="pu8Result">
+      <para>The result.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.UInt8Mult">
+    <summary>
+      <para>Multiplies two values of type <b>UINT8</b>.</para>
+    </summary>
+    <param name="u8Multiplicand">
+      <para>The first value.</para>
+    </param>
+    <param name="u8Multiplier">
+      <para>The second value.</para>
+    </param>
+    <param name="pu8Result">
+      <para>The result.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.UInt8Sub">
+    <summary>
+      <para>Subtracts one value of type <b>UINT8</b> from another.</para>
+    </summary>
+    <param name="u8Minuend">
+      <para>The first value.</para>
+    </param>
+    <param name="u8Subtrahend">
+      <para>The value to subtract.</para>
+    </param>
+    <param name="pu8Result">
+      <para>The result.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.UInt8ToChar">
+    <summary>
+      <para>Converts a value of type <b>UINT8</b> to a value of type <b>CHAR</b>.</para>
+    </summary>
+    <param name="u8Operand">
+      <para>The value to convert.</para>
+    </param>
+    <param name="pch">
+      <para>The converted value.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.UInt8ToInt8">
+    <summary>
+      <para>Converts a value of type <b>UINT8</b> to a value of type <b>INT8</b>.</para>
+    </summary>
+    <param name="u8Operand">
+      <para>The value to convert.</para>
+    </param>
+    <param name="pi8Result">
+      <para>The converted value.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.UIntAdd">
+    <summary>
+      <para>Adds two values of type <b>UINT</b>.</para>
+    </summary>
+    <param name="uAugend">
+      <para>Type: <b>UINT</b></para>
+      <para>The first value in the equation.</para>
+    </param>
+    <param name="uAddend">
+      <para>Type: <b>UINT</b></para>
+      <para>The value to add to <i>uAugend</i>.</para>
+    </param>
+    <param name="puResult">
+      <para>Type: <b>UINT*</b></para>
+      <para>A pointer to the sum. If the operation results in a value that overflows or underflows the capacity of the type, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide arithmetic operations and perform validity checks with minimal impact on performance.</para>
+    </remarks>
+  </member>
+  <member name="Windows.UIntMult">
+    <summary>
+      <para>Multiplies one value of type <b>UINT</b> by another.</para>
+    </summary>
+    <param name="uMultiplicand">
+      <para>Type: <b>UINT</b></para>
+      <para>The value to be multiplied by <i>uMultiplier</i>.</para>
+    </param>
+    <param name="uMultiplier">
+      <para>Type: <b>UINT</b></para>
+      <para>The value by which to multiply <i>uMultiplicand</i>.</para>
+    </param>
+    <param name="puResult">
+      <para>Type: <b>UINT*</b></para>
+      <para>A pointer to the result. If the operation results in a value that overflows or underflows the capacity of the type, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide arithmetic operations and perform validity checks with minimal impact on performance.</para>
+    </remarks>
+  </member>
+  <member name="Windows.UIntPtrAdd">
+    <summary>
+      <para>Adds two values of type <b>UINT_PTR</b>.</para>
+    </summary>
+    <param name="uAugend">
+      <para>Type: <b>UINT_PTR</b></para>
+      <para>The first value in the equation.</para>
+    </param>
+    <param name="uAddend">
+      <para>Type: <b>UINT_PTR</b></para>
+      <para>The value to add to <i>uAugend</i>.</para>
+    </param>
+    <param name="puResult">
+      <para>Type: <b>UINT_PTR*</b></para>
+      <para>A pointer to the sum. If the operation results in a value that overflows or underflows the capacity of the type, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide arithmetic operations and perform validity checks with minimal impact on performance.</para>
+    </remarks>
+  </member>
+  <member name="Windows.UIntPtrMult">
+    <summary>
+      <para>Multiplies one value of type <b>UINT_PTR</b> by another.</para>
+    </summary>
+    <param name="uMultiplicand">
+      <para>Type: <b>UINT_PTR</b></para>
+      <para>The value to be multiplied by <i>uMultiplier</i>.</para>
+    </param>
+    <param name="uMultiplier">
+      <para>Type: <b>UINT_PTR</b></para>
+      <para>The value by which to multiply <i>uMultiplicand</i>.</para>
+    </param>
+    <param name="puResult">
+      <para>Type: <b>UINT_PTR*</b></para>
+      <para>A pointer to the result. If the operation results in a value that overflows or underflows the capacity of the type, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide arithmetic operations and perform validity checks with minimal impact on performance.</para>
+    </remarks>
+  </member>
+  <member name="Windows.UIntPtrSub">
+    <summary>
+      <para>Subtracts one value of type <b>UINT_PTR</b> from another.</para>
+    </summary>
+    <param name="uMinuend">
+      <para>Type: <b>UINT_PTR</b></para>
+      <para>The value from which <i>uSubtrahend</i> is subtracted.</para>
+    </param>
+    <param name="uSubtrahend">
+      <para>Type: <b>UINT_PTR</b></para>
+      <para>The value to subtract from <i>uMinuend</i>.</para>
+    </param>
+    <param name="puResult">
+      <para>Type: <b>UINT_PTR*</b></para>
+      <para>A pointer to the result. If the operation results in a value that overflows or underflows the capacity of the type, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide arithmetic operations and perform validity checks with minimal impact on performance.</para>
+    </remarks>
+  </member>
+  <member name="Windows.UIntPtrToChar">
+    <summary>
+      <para>Converts a value of type <b>UINT_PTR</b> to a value of type <b>CHAR</b>.</para>
+    </summary>
+    <param name="uOperand">
+      <para>The value to convert.</para>
+    </param>
+    <param name="pch">
+      <para>The converted value.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.SIZETToInt">
+    <summary>
+      <para>Converts a value of type <b>SIZE_T</b> to a value of type <b>INT</b>.</para>
+    </summary>
+    <param name="uOperand">
+      <para>Type: <b>SIZE_T</b></para>
+      <para>The value to be converted.</para>
+    </param>
+    <param name="piResult">
+      <para>Type: <b>INT*</b></para>
+      <para>A pointer to the converted value. In the case where the conversion causes a truncation of the original value, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide type conversions and perform validity checks with minimal impact on performance.</para>
+    </remarks>
+  </member>
+  <member name="Windows.UIntPtrToInt16">
+    <summary>
+      <para>Converts a value of type <b>UINT_PTR</b> to a value of type <b>INT16</b>.</para>
+    </summary>
+    <param name="uOperand">
+      <para>The value to convert.</para>
+    </param>
+    <param name="pi16Result">
+      <para>The converted value.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.UIntPtrToInt8">
+    <summary>
+      <para>Converts a value of type <b>UINT_PTR</b> to a value of type <b>INT8</b>.</para>
+    </summary>
+    <param name="uOperand">
+      <para>The value to convert.</para>
+    </param>
+    <param name="pi8Result">
+      <para>The converted value.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.UIntPtrToIntPtr">
+    <summary>
+      <para>Converts a value of type <b>UINT_PTR</b> to a value of type <b>INT_PTR</b>.</para>
+    </summary>
+    <param name="uOperand">
+      <para>Type: <b>UINT_PTR</b></para>
+      <para>The value to be converted.</para>
+    </param>
+    <param name="piResult">
+      <para>Type: <b>INT_PTR*</b></para>
+      <para>A pointer to the converted value. In the case where the conversion causes a truncation of the original value, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide type conversions and perform validity checks with minimal impact on performance.</para>
+      <para>
+        <b>SizeTToPtrdiffT</b> is an alias for this function.</para>
+      <para>
+        <b>SizeTToIntPtr</b> is an alias for this function.</para>
+    </remarks>
+  </member>
+  <member name="Windows.SizeTToLong">
+    <summary>
+      <para>Converts a value of type <b>size_t</b> to a value of type <b>LONG</b>.</para>
+    </summary>
+    <param name="uOperand">
+      <para>Type: <b>size_t</b></para>
+      <para>The value to be converted.</para>
+    </param>
+    <param name="plResult">
+      <para>Type: <b>LONG*</b></para>
+      <para>A pointer to the converted value. In the case where the conversion causes a truncation of the original value, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide type conversions and perform validity checks with minimal impact on performance.</para>
+    </remarks>
+  </member>
+  <member name="Windows.UIntPtrToLongLong">
+    <summary>
+      <para>Converts a value of type <b>UINT_PTR</b> to a value of type <b>LONGLONG</b>.</para>
+    </summary>
+    <param name="uOperand">
+      <para>The value to convert.</para>
+    </param>
+    <param name="pllResult">
+      <para>The converted value.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>SizeTToInt64</b> is an alias for this function.</para>
+    </remarks>
+  </member>
+  <member name="Windows.UIntPtrToLongPtr">
+    <summary>
+      <para>Converts a value of type <b>UINT_PTR</b> to a value of type <b>LONG_PTR</b>.</para>
+    </summary>
+    <param name="uOperand">
+      <para>Type: <b>UINT_PTR</b></para>
+      <para>The value to be converted.</para>
+    </param>
+    <param name="plResult">
+      <para>Type: <b>LONG_PTR*</b></para>
+      <para>A pointer to the converted value. In the case where the conversion causes a truncation of the original value, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide type conversions and perform validity checks with minimal impact on performance.</para>
+      <para>
+        <b>SizeTToSSIZET</b> is an alias for this function.</para>
+      <para>
+        <b>UIntPtrToSSIZET</b> is an alias for this function.</para>
+      <para>
+        <b>SizeTToLongPtr</b> is an alias for this function.</para>
+    </remarks>
+  </member>
+  <member name="Windows.UIntPtrToShort">
+    <summary>
+      <para>Converts a value of type <b>UINT_PTR</b> to a value of type <b>SHORT</b>.</para>
+    </summary>
+    <param name="uOperand">
+      <para>The value to convert.</para>
+    </param>
+    <param name="psResult">
+      <para>The converted value.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.UIntPtrToUChar">
+    <summary>
+      <para>Converts a value of type <b>UINT_PTR</b> to a value of type <b>UCHAR</b>.</para>
+    </summary>
+    <param name="uOperand">
+      <para>The value to convert.</para>
+    </param>
+    <param name="pch">
+      <para>The converted value.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.UIntPtrToUInt">
+    <summary>
+      <para>Converts a value of type <b>UINT_PTR</b> to a value of type <b>UINT</b>.</para>
+    </summary>
+    <param name="uOperand">
+      <para>Type: <b>UINT_PTR</b></para>
+      <para>The value to be converted.</para>
+    </param>
+    <param name="puResult">
+      <para>Type: <b>UINT*</b></para>
+      <para>A pointer to the converted value. In the case where the conversion causes a truncation of the original value, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide type conversions and perform validity checks with minimal impact on performance.</para>
+      <para>
+        <b>SizeTToUInt</b> is an alias for this function.</para>
+    </remarks>
+  </member>
+  <member name="Windows.UIntPtrToUInt16">
+    <summary>
+      <para>Converts a value of type <b>UINT_PTR</b> to a value of type <b>UINT16</b>.</para>
+    </summary>
+    <param name="uOperand">
+      <para>The value to convert.</para>
+    </param>
+    <param name="pu16Result">
+      <para>The converted value.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.UIntPtrToUInt8">
+    <summary>
+      <para>Converts a value of type <b>UINT_PTR</b> to a value of type <b>UINT8</b>.</para>
+    </summary>
+    <param name="uOperand">
+      <para>The value to convert.</para>
+    </param>
+    <param name="pu8Result">
+      <para>The converted value.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.UIntPtrToULong">
+    <summary>
+      <para>Converts a value of type <b>UINT_PTR</b> to a value of type <b>ULONG</b>.</para>
+    </summary>
+    <param name="uOperand">
+      <para>Type: <b>UINT_PTR</b></para>
+      <para>The value to be converted.</para>
+    </param>
+    <param name="pulResult">
+      <para>Type: <b>ULONG*</b></para>
+      <para>A pointer to the converted value. In the case where the conversion causes a truncation of the original value, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide type conversions and perform validity checks with minimal impact on performance.</para>
+      <para>
+        <b>SizeTToULong</b> is an alias for this function.</para>
+      <para>
+        <b>SizeTToDWord</b> is an alias for this function.</para>
+      <para>
+        <b>UIntPtrToDWord</b> is an alias for this function.</para>
+    </remarks>
+  </member>
+  <member name="Windows.UIntPtrToUShort">
+    <summary>
+      <para>Converts a value of type <b>UINT_PTR</b> to a value of type <b>USHORT</b>.</para>
+    </summary>
+    <param name="uOperand">
+      <para>The value to convert.</para>
+    </param>
+    <param name="pusResult">
+      <para>The converted value.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.UIntSub">
+    <summary>
+      <para>Subtracts one value of type <b>UINT</b> from another.</para>
+    </summary>
+    <param name="uMinuend">
+      <para>Type: <b>UINT</b></para>
+      <para>The value from which <i>uSubtrahend</i> is subtracted.</para>
+    </param>
+    <param name="uSubtrahend">
+      <para>Type: <b>UINT</b></para>
+      <para>The value to subtract from <i>uMinuend</i>.</para>
+    </param>
+    <param name="puResult">
+      <para>Type: <b>UINT*</b></para>
+      <para>A pointer to the result. If the operation results in a value that overflows or underflows the capacity of the type, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide arithmetic operations and perform validity checks with minimal impact on performance.</para>
+    </remarks>
+  </member>
+  <member name="Windows.UIntToChar">
+    <summary>
+      <para>Converts a value of type <b>UINT</b> to a value of type <b>CHAR</b>.</para>
+    </summary>
+    <param name="uOperand">
+      <para>Type: <b>UINT</b></para>
+      <para>The value to be converted.</para>
+    </param>
+    <param name="pch">
+      <para>Type: <b>__wchar_t*</b></para>
+      <para>A pointer to the converted value. In the case where the conversion causes a truncation of the original value, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide type conversions and perform validity checks with minimal impact on performance.</para>
+    </remarks>
+  </member>
+  <member name="Windows.UIntToInt">
+    <summary>
+      <para>Converts a value of type <b>UINT</b> to a value of type <b>INT</b>.</para>
+    </summary>
+    <param name="uOperand">
+      <para>Type: <b>UINT</b></para>
+      <para>The value to be converted.</para>
+    </param>
+    <param name="piResult">
+      <para>Type: <b>INT*</b></para>
+      <para>A pointer to the converted value. In the case where the conversion causes a truncation of the original value, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide type conversions and perform validity checks with minimal impact on performance.</para>
+    </remarks>
+  </member>
+  <member name="Windows.UIntToInt8">
+    <summary>
+      <para>Converts a value of type <b>UINT</b> to a value of type <b>INT8</b>.</para>
+    </summary>
+    <param name="uOperand">
+      <para>The value to convert.</para>
+    </param>
+    <param name="pi8Result">
+      <para>The converted value.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.UIntToIntPtr">
+    <summary>
+      <para>Converts a value of type <b>UINT</b> to a value of type <b>INT_PTR</b>.</para>
+    </summary>
+    <param name="uOperand">
+      <para>Type: <b>UINT</b></para>
+      <para>The value to be converted.</para>
+    </param>
+    <param name="piResult">
+      <para>Type: <b>INT_PTR*</b></para>
+      <para>A pointer to the converted value. In the case where the conversion causes a truncation of the original value, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide type conversions and perform validity checks with minimal impact on performance.</para>
+      <para>
+        <b>UIntToPtrdiffT</b> is an alias for this function.</para>
+    </remarks>
+  </member>
+  <member name="Windows.UIntToLong">
+    <summary>
+      <para>Converts a value of type <b>UINT</b> to a value of type <b>LONG</b>.</para>
+    </summary>
+    <param name="uOperand">
+      <para>Type: <b>UINT</b></para>
+      <para>The value to be converted.</para>
+    </param>
+    <param name="plResult">
+      <para>Type: <b>LONG*</b></para>
+      <para>A pointer to the converted value. In the case where the conversion causes a truncation of the original value, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide type conversions and perform validity checks with minimal impact on performance.</para>
+    </remarks>
+  </member>
+  <member name="Windows.UIntToLongPtr">
+    <summary>
+      <para>Converts a value of type <b>UINT</b> to a value of type <b>LONG_PTR</b>.</para>
+    </summary>
+    <param name="uOperand">
+      <para>Type: <b>UINT</b></para>
+      <para>The value to be converted.</para>
+    </param>
+    <param name="plResult">
+      <para>Type: <b>LONGPTR*</b></para>
+      <para>A pointer to the converted value. In the case where the conversion causes a truncation of the original value, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide type conversions and perform validity checks with minimal impact on performance.</para>
+      <para>
+        <b>UIntToSSIZET</b> is an alias for this function.</para>
+    </remarks>
+  </member>
+  <member name="Windows.UIntToShort">
+    <summary>
+      <para>Converts a value of type <b>UINT</b> to a value of type <b>SHORT</b>.</para>
+    </summary>
+    <param name="uOperand">
+      <para>Type: <b>UINT</b></para>
+      <para>The value to be converted.</para>
+    </param>
+    <param name="psResult">
+      <para>Type: <b>SHORT*</b></para>
+      <para>A pointer to the converted value. In the case where the conversion causes a truncation of the original value, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide type conversions and perform validity checks with minimal impact on performance.</para>
+    </remarks>
+  </member>
+  <member name="Windows.UIntToUChar">
+    <summary>
+      <para>Converts a value of type <b>UINT</b> to a value of type <b>UCHAR</b>.</para>
+    </summary>
+    <param name="uOperand">
+      <para>Type: <b>UINT</b></para>
+      <para>The value to be converted.</para>
+    </param>
+    <param name="pch">
+      <para>Type: <b>UCHAR*</b></para>
+      <para>A pointer to the converted value. In the case where the conversion causes a truncation of the original value, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide type conversions and perform validity checks with minimal impact on performance.</para>
+    </remarks>
+  </member>
+  <member name="Windows.UIntToUInt8">
+    <summary>
+      <para>Converts a value of type <b>UINT</b> to a value of type <b>UINT8</b>.</para>
+    </summary>
+    <param name="uOperand">
+      <para>The value to convert.</para>
+    </param>
+    <param name="pui8Result">
+      <para>The converted value.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>UIntToByte</b> is an alias for this function.</para>
+    </remarks>
+  </member>
+  <member name="Windows.UIntToUShort">
+    <summary>
+      <para>Converts a value of type <b>UINT</b> to a value of type <b>USHORT</b>.</para>
+    </summary>
+    <param name="uOperand">
+      <para>Type: <b>UINT</b></para>
+      <para>The value to be converted.</para>
+    </param>
+    <param name="pusResult">
+      <para>Type: <b>USHORT*</b></para>
+      <para>A pointer to the converted value. In the case where the conversion causes a truncation of the original value, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide type conversions and perform validity checks with minimal impact on performance.</para>
+      <para>
+        <b>UIntToWord</b> is an alias for this function.</para>
+    </remarks>
+  </member>
+  <member name="Windows.ULongAdd">
+    <summary>
+      <para>Adds two values of type <b>ULONG</b>.</para>
+    </summary>
+    <param name="ulAugend">
+      <para>Type: <b>ULONG</b></para>
+      <para>The first value in the equation.</para>
+    </param>
+    <param name="ulAddend">
+      <para>Type: <b>ULONG</b></para>
+      <para>The value to add to <i>ulAugend</i>.</para>
+    </param>
+    <param name="pulResult">
+      <para>Type: <b>ULONG*</b></para>
+      <para>A pointer to the sum. If the operation results in a value that overflows or underflows the capacity of the type, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide arithmetic operations and perform validity checks with minimal impact on performance.</para>
+      <para>
+        <b>DWordAdd</b> is an alias for this function.</para>
+    </remarks>
+  </member>
+  <member name="Windows.SIZETAdd">
+    <summary>
+      <para>Adds two values of type <b>SIZE_T</b>.</para>
+    </summary>
+    <param name="ullAugend">
+      <para>Type: <b>SIZE_T</b></para>
+      <para>The first value in the equation.</para>
+    </param>
+    <param name="ullAddend">
+      <para>Type: <b>SIZE_T</b></para>
+      <para>The value to add to <i>cbAugend</i>.</para>
+    </param>
+    <param name="pullResult">
+      <para>Type: <b>SIZE_T*</b></para>
+      <para>A pointer to the sum. If the operation results in a value that overflows or underflows the capacity of the type, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide arithmetic operations and perform validity checks with minimal impact on performance.</para>
+    </remarks>
+  </member>
+  <member name="Windows.SizeTMult">
+    <summary>
+      <para>Multiplies one value of type <b>size_t</b> by another.</para>
+    </summary>
+    <param name="ullMultiplicand">
+      <para>The value to be multiplied by <i>cbMultiplier</i>.</para>
+    </param>
+    <param name="ullMultiplier">
+      <para>The value by which to multiply <i>cbMultiplicand</i>.</para>
+    </param>
+    <param name="pullResult">
+      <para>A pointer to the result. If the operation results in a value that overflows or underflows the capacity of the type, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide arithmetic operations and perform validity checks with minimal impact on performance.</para>
+    </remarks>
+  </member>
+  <member name="Windows.SIZETSub">
+    <summary>
+      <para>Subtracts one value of type <b>SIZE_T</b> from another.</para>
+    </summary>
+    <param name="ullMinuend">
+      <para>Type: <b>SIZE_T</b></para>
+      <para>The value from which <i>cbSubtrahend</i> is subtracted.</para>
+    </param>
+    <param name="ullSubtrahend">
+      <para>Type: <b>SIZE_T</b></para>
+      <para>The value to subtract from <i>cbMinuend</i>.</para>
+    </param>
+    <param name="pullResult">
+      <para>Type: <b>SIZE_T*</b></para>
+      <para>A pointer to the result. If the operation results in a value that overflows or underflows the capacity of the type, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide arithmetic operations and perform validity checks with minimal impact on performance.</para>
+    </remarks>
+  </member>
+  <member name="Windows.ULongLongToChar">
+    <summary>
+      <para>Converts a value of type <b>ULONGLONG</b> to a value of type <b>CHAR</b>.</para>
+    </summary>
+    <param name="ullOperand">
+      <para>The value to convert.</para>
+    </param>
+    <param name="pch">
+      <para>The converted value.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.ULongLongToInt">
+    <summary>
+      <para>Converts a value of type <b>ULONGLONG</b> to a value of type <b>INT</b>.</para>
+    </summary>
+    <param name="ullOperand">
+      <para>Type: <b>ULONGLONG</b></para>
+      <para>The value to be converted.</para>
+    </param>
+    <param name="piResult">
+      <para>Type: <b>INT*</b></para>
+      <para>A pointer to the converted value. In the case where the conversion causes a truncation of the original value, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide type conversions and perform validity checks with minimal impact on performance.</para>
+    </remarks>
+  </member>
+  <member name="Windows.ULongLongToInt8">
+    <summary>
+      <para>Converts a value of type <b>ULONGLONG</b> to a value of type <b>INT8</b>.</para>
+    </summary>
+    <param name="ullOperand">
+      <para>The value to convert.</para>
+    </param>
+    <param name="pi8Result">
+      <para>The converted value.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.ULongLongToLong">
+    <summary>
+      <para>Converts a value of type <b>ULONGLONG</b> to a value of type <b>LONG</b>.</para>
+    </summary>
+    <param name="ullOperand">
+      <para>Type: <b>ULONGLONG</b></para>
+      <para>The value to be converted.</para>
+    </param>
+    <param name="plResult">
+      <para>Type: <b>LONG*</b></para>
+      <para>A pointer to the converted value. In the case where the conversion causes a truncation of the original value, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide type conversions and perform validity checks with minimal impact on performance.</para>
+    </remarks>
+  </member>
+  <member name="Windows.ULongLongToIntPtr">
+    <summary>
+      <para>Converts a value of type <b>ULONGLONG</b> to a value of type <b>INT_PTR</b>.</para>
+    </summary>
+    <param name="ullOperand">
+      <para>Type: <b>ULONGLONG</b></para>
+      <para>The value to be converted.</para>
+    </param>
+    <param name="pllResult">
+      <para>Type: <b>INT_PTR*</b></para>
+      <para>A pointer to the converted value. In the case where the conversion causes a truncation of the original value, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide type conversions and perform validity checks with minimal impact on performance.</para>
+      <para>
+        <b>ULongLongToPtrdiffT</b> is an alias for this function.</para>
+    </remarks>
+  </member>
+  <member name="Windows.ULongLongToLongPtr">
+    <summary>
+      <para>Converts a value of type <b>ULONGLONG</b> to a value of type <b>LONG_PTR</b>.</para>
+    </summary>
+    <param name="ullOperand">
+      <para>Type: <b>ULONGLONG</b></para>
+      <para>The value to be converted.</para>
+    </param>
+    <param name="plResult">
+      <para>Type: <b>LONG_PTR*</b></para>
+      <para>A pointer to the converted value. In the case where the conversion causes a truncation of the original value, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide type conversions and perform validity checks with minimal impact on performance.</para>
+    </remarks>
+  </member>
+  <member name="Windows.ULongLongToShort">
+    <summary>
+      <para>Converts a value of type <b>ULONGLONG</b> to a value of type <b>SHORT</b>.</para>
+    </summary>
+    <param name="ullOperand">
+      <para>The value to convert.</para>
+    </param>
+    <param name="psResult">
+      <para>The converted value.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.ULongLongToUChar">
+    <summary>
+      <para>Converts a value of type <b>ULONGLONG</b> to a value of type <b>UCHAR</b>.</para>
+    </summary>
+    <param name="ullOperand">
+      <para>The value to convert.</para>
+    </param>
+    <param name="pch">
+      <para>The converted value.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.ULongLongToUInt">
+    <summary>
+      <para>Converts a value of type <b>ULONGLONG</b> to a value of type <b>UINT</b>.</para>
+    </summary>
+    <param name="ullOperand">
+      <para>Type: <b>ULONGLONG</b></para>
+      <para>The value to be converted.</para>
+    </param>
+    <param name="puResult">
+      <para>Type: <b>UINT*</b></para>
+      <para>A pointer to the converted value. In the case where the conversion causes a truncation of the original value, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide type conversions and perform validity checks with minimal impact on performance.</para>
+    </remarks>
+  </member>
+  <member name="Windows.ULongLongToUInt8">
+    <summary>
+      <para>Converts a value of type <b>ULONGLONG</b> to a value of type <b>UINT8</b>.</para>
+    </summary>
+    <param name="ullOperand">
+      <para>The value to convert.</para>
+    </param>
+    <param name="pu8Result">
+      <para>The converted value.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.ULongLongToUIntPtr">
+    <summary>
+      <para>Converts a value of type <b>ULONGLONG</b> to a value of type <b>UINT_PTR</b>.</para>
+    </summary>
+    <param name="ullOperand">
+      <para>Type: <b>ULONGLONG</b></para>
+      <para>The value to be converted.</para>
+    </param>
+    <param name="puResult">
+      <para>Type: <b>UINT_PTR*</b></para>
+      <para>A pointer to the converted value. In the case where the conversion causes a truncation of the original value, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide type conversions and perform validity checks with minimal impact on performance.</para>
+      <para>
+        <b>ULongLongToSizeT</b> is an alias for this function.</para>
+    </remarks>
+  </member>
+  <member name="Windows.ULongLongToULong">
+    <summary>
+      <para>Converts a value of type <b>ULONGLONG</b> to a value of type <b>ULONG</b>.</para>
+    </summary>
+    <param name="ullOperand">
+      <para>Type: <b>ULONGLONG</b></para>
+      <para>The value to be converted.</para>
+    </param>
+    <param name="pulResult">
+      <para>Type: <b>ULONG*</b></para>
+      <para>A pointer to the converted value. In the case where the conversion causes a truncation of the original value, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide type conversions and perform validity checks with minimal impact on performance.</para>
+      <para>
+        <b>ULongLongToDWord</b> is an alias for this function.</para>
+    </remarks>
+  </member>
+  <member name="Windows.ULongLongToULongPtr">
+    <summary>
+      <para>Converts a value of type <b>ULONGLONG</b> to a value of type <b>ULONG_PTR</b>.</para>
+    </summary>
+    <param name="ullOperand">
+      <para>Type: <b>ULONGLONG</b></para>
+      <para>The value to be converted.</para>
+    </param>
+    <param name="pulResult">
+      <para>Type: <b>ULONG_PTR*</b></para>
+      <para>A pointer to the converted value. In the case where the conversion causes a truncation of the original value, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide type conversions and perform validity checks with minimal impact on performance.</para>
+      <para>
+        <b>ULongLongToSSIZET</b> is an alias for this function.</para>
+      <para>
+        <b>ULongLongToDWordPtr</b> is an alias for this function.</para>
+    </remarks>
+  </member>
+  <member name="Windows.ULongLongToUShort">
+    <summary>
+      <para>Converts a value of type <b>ULONGLONG</b> to a value of type <b>USHORT</b>.</para>
+    </summary>
+    <param name="ullOperand">
+      <para>The value to convert.</para>
+    </param>
+    <param name="pusResult">
+      <para>The converted value.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.ULongMult">
+    <summary>
+      <para>Multiplies one value of type <b>ULONG</b> by another.</para>
+    </summary>
+    <param name="ulMultiplicand">
+      <para>Type: <b>ULONG</b></para>
+      <para>The value to be multiplied by <i>ulMultiplier</i>.</para>
+    </param>
+    <param name="ulMultiplier">
+      <para>Type: <b>ULONG</b></para>
+      <para>The value by which to multiply <i>ulMultiplicand</i>.</para>
+    </param>
+    <param name="pulResult">
+      <para>Type: <b>ULONG*</b></para>
+      <para>A pointer to the result. If the operation results in a value that overflows or underflows the capacity of the type, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide arithmetic operations and perform validity checks with minimal impact on performance.</para>
+      <para>
+        <b>DWordMult</b> is an alias for this function.</para>
+    </remarks>
+  </member>
+  <member name="Windows.ULongPtrAdd">
+    <summary>
+      <para>Adds two values of type <b>ULONG_PTR</b>.</para>
+    </summary>
+    <param name="ulAugend">
+      <para>Type: <b>ULONG_PTR</b></para>
+      <para>The first value in the equation.</para>
+    </param>
+    <param name="ulAddend">
+      <para>Type: <b>ULONG_PTR</b></para>
+      <para>The value to add to <i>ulAugend</i>.</para>
+    </param>
+    <param name="pulResult">
+      <para>Type: <b>ULONG_PTR*</b></para>
+      <para>A pointer to the sum. If the operation results in a value that overflows or underflows the capacity of the type, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide arithmetic operations and perform validity checks with minimal impact on performance.</para>
+    </remarks>
+  </member>
+  <member name="Windows.ULongPtrMult">
+    <summary>
+      <para>Multiplies one value of type <b>ULONG_PTR</b> by another.</para>
+    </summary>
+    <param name="ulMultiplicand">
+      <para>Type: <b>ULONG_PTR</b></para>
+      <para>The value to be multiplied by <i>ulMultiplier</i>.</para>
+    </param>
+    <param name="ulMultiplier">
+      <para>Type: <b>ULONG_PTR</b></para>
+      <para>The value by which to multiply <i>ulMultiplicand</i>.</para>
+    </param>
+    <param name="pulResult">
+      <para>Type: <b>ULONG_PTR*</b></para>
+      <para>A pointer to the result. If the operation results in a value that overflows or underflows the capacity of the type, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide arithmetic operations and perform validity checks with minimal impact on performance.</para>
+    </remarks>
+  </member>
+  <member name="Windows.ULongPtrSub">
+    <summary>
+      <para>Subtracts one value of type <b>ULONG_PTR</b> from another.</para>
+    </summary>
+    <param name="ulMinuend">
+      <para>Type: <b>ULONG_PTR</b></para>
+      <para>The value from which <i>ulSubtrahend</i> is subtracted.</para>
+    </param>
+    <param name="ulSubtrahend">
+      <para>Type: <b>ULONG_PTR</b></para>
+      <para>The value to subtract from <i>ulMinuend</i>.</para>
+    </param>
+    <param name="pulResult">
+      <para>Type: <b>ULONG_PTR*</b></para>
+      <para>A pointer to the result. If the operation results in a value that overflows or underflows the capacity of the type, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide arithmetic operations and perform validity checks, and to do so with minimal impact on performance.</para>
+    </remarks>
+  </member>
+  <member name="Windows.ULongPtrToChar">
+    <summary>
+      <para>Converts a value of type <b>ULONG_PTR</b> to a value of type <b>CHAR</b>.</para>
+    </summary>
+    <param name="ulOperand">
+      <para>The value to convert.</para>
+    </param>
+    <param name="pch">
+      <para>The converted value.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.SizeTToInt">
+    <summary>
+      <para>Converts a value of type <b>size_t</b> to a value of type <b>INT</b>.</para>
+    </summary>
+    <param name="ulOperand">
+      <para>Type: <b>size_t</b></para>
+      <para>The value to be converted.</para>
+    </param>
+    <param name="piResult">
+      <para>Type: <b>INT*</b></para>
+      <para>A pointer to the converted value. In the case where the conversion causes a truncation of the original value, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide type conversions and perform validity checks with minimal impact on performance.</para>
+    </remarks>
+  </member>
+  <member name="Windows.ULongPtrToInt8">
+    <summary>
+      <para>Converts a value of type <b>ULONG_PTR</b> to a value of type <b>INT8</b>.</para>
+    </summary>
+    <param name="ulOperand">
+      <para>The value to convert.</para>
+    </param>
+    <param name="pi8Result">
+      <para>The converted value.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.ULongPtrToIntPtr">
+    <summary>
+      <para>Converts a value of type <b>ULONG_PTR</b> to a value of type <b>INT_PTR</b>.</para>
+    </summary>
+    <param name="ulOperand">
+      <para>Type: <b>ULONG_PTR</b></para>
+      <para>The value to be converted.</para>
+    </param>
+    <param name="piResult">
+      <para>Type: <b>INT_PTR*</b></para>
+      <para>A pointer to the converted value. In the case where the conversion causes a truncation of the original value, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide type conversions and perform validity checks with minimal impact on performance.</para>
+      <para>
+        <b>DWordPtrToPtrdiffT</b> is an alias for this function.</para>
+      <para>
+        <b>SIZETToPtrdiffT</b> is an alias for this function.</para>
+      <para>
+        <b>SIZETToIntPtr</b> is an alias for this function.</para>
+      <para>
+        <b>ULongPtrToPtrdiffT</b> is an alias for this function.</para>
+      <para>
+        <b>DWordPtrToIntPtr</b> is an alias for this function.</para>
+    </remarks>
+  </member>
+  <member name="Windows.ULongPtrToLong">
+    <summary>
+      <para>Converts a value of type <b>ULONG_PTR</b> to a value of type <b>LONG</b>.</para>
+    </summary>
+    <param name="ulOperand">
+      <para>Type: <b>ULONG_PTR</b></para>
+      <para>The value to be converted.</para>
+    </param>
+    <param name="plResult">
+      <para>Type: <b>LONG*</b></para>
+      <para>A pointer to the converted value. In the case where the conversion causes a truncation of the original value, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide type conversions and perform validity checks with minimal impact on performance.</para>
+      <para>
+        <b>SIZETToLong</b> is an alias for this function.</para>
+      <para>
+        <b>DWordPtrToLong</b> is an alias for this function.</para>
+    </remarks>
+  </member>
+  <member name="Windows.SIZETToInt64">
+    <summary>
+      <para>Converts a value of type <b>SIZE_T</b> to a value of type <b>INT64</b>.</para>
+    </summary>
+    <param name="ulOperand">
+      <para>Type: <b>SIZE_T</b></para>
+      <para>The value to be converted.</para>
+    </param>
+    <param name="pllResult">
+      <para>Type: <b>INT64*</b></para>
+      <para>A pointer to the converted value. In the case where the conversion causes a truncation of the original value, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide type conversions and perform validity checks with minimal impact on performance.</para>
+    </remarks>
+  </member>
+  <member name="Windows.ULongPtrToLongPtr">
+    <summary>
+      <para>Converts a value of type <b>ULONG_PTR</b> to a value of type <b>LONG_PTR</b>.</para>
+    </summary>
+    <param name="ulOperand">
+      <para>Type: <b>ULONG_PTR</b></para>
+      <para>The value to be converted.</para>
+    </param>
+    <param name="plResult">
+      <para>Type: <b>LONG_PTR*</b></para>
+      <para>A pointer to the converted value. In the case where the conversion causes a truncation of the original value, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide type conversions and perform validity checks with minimal impact on performance.</para>
+      <para>
+        <b>DWordPtrToSSIZET</b> is an alias for this function.</para>
+      <para>
+        <b>ULongPtrToSSIZET</b> is an alias for this function.</para>
+      <para>
+        <b>SIZETToSSIZET</b> is an alias for this function.</para>
+      <para>
+        <b>SIZETToLongPtr</b> is an alias for this function.</para>
+      <para>
+        <b>DWordPtrToLongPtr</b> is an alias for this function.</para>
+    </remarks>
+  </member>
+  <member name="Windows.ULongPtrToShort">
+    <summary>
+      <para>Converts a value of type <b>ULONG_PTR</b> to a value of type <b>SHORT</b>.</para>
+    </summary>
+    <param name="ulOperand">
+      <para>The value to convert.</para>
+    </param>
+    <param name="psResult">
+      <para>The converted value.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.ULongPtrToUChar">
+    <summary>
+      <para>Converts a value of type <b>ULONG_PTR</b> to a value of type <b>UCHAR</b>.</para>
+    </summary>
+    <param name="ulOperand">
+      <para>The value to convert.</para>
+    </param>
+    <param name="pch">
+      <para>The converted value.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.ULongPtrToUInt">
+    <summary>
+      <para>Converts a value of type <b>ULONG_PTR</b> to a value of type <b>UINT</b>.</para>
+    </summary>
+    <param name="ulOperand">
+      <para>Type: <b>ULONG_PTR</b></para>
+      <para>The value to be converted.</para>
+    </param>
+    <param name="puResult">
+      <para>Type: <b>UINT*</b></para>
+      <para>A pointer to the converted value. In the case where the conversion causes a truncation of the original value, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide type conversions and perform validity checks with minimal impact on performance.</para>
+      <para>
+        <b>SIZETToUInt</b> is an alias for this function.</para>
+      <para>
+        <b>DWordPtrToUInt</b> is an alias for this function.</para>
+    </remarks>
+  </member>
+  <member name="Windows.ULongPtrToUInt8">
+    <summary>
+      <para>Converts a value of type <b>ULONG_PTR</b> to a value of type <b>UINT8</b>.</para>
+    </summary>
+    <param name="ulOperand">
+      <para>The value to convert.</para>
+    </param>
+    <param name="pui8Result">
+      <para>The converted value.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>ULongToByte</b> is an alias for this function.</para>
+    </remarks>
+  </member>
+  <member name="Windows.ULongPtrToUIntPtr">
+    <summary>
+      <para>Converts a value of type <b>ULONG_PTR</b> to a value of type <b>UINT_PTR</b>.</para>
+    </summary>
+    <param name="ulOperand">
+      <para>Type: <b>ULONG_PTR</b></para>
+      <para>The value to be converted.</para>
+    </param>
+    <param name="puResult">
+      <para>Type: <b>UINT_PTR*</b></para>
+      <para>A pointer to the converted value. In the case where the conversion causes a truncation of the original value, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide type conversions and perform validity checks with minimal impact on performance.</para>
+      <para>
+        <b>DWordPtrToUIntPtr</b> is an alias for this function.</para>
+    </remarks>
+  </member>
+  <member name="Windows.ULongPtrToULong">
+    <summary>
+      <para>Converts a value of type <b>ULONG_PTR</b> to a value of type <b>ULONG</b>.</para>
+    </summary>
+    <param name="ulOperand">
+      <para>Type: <b>ULONG_PTR</b></para>
+      <para>The value to be converted.</para>
+    </param>
+    <param name="pulResult">
+      <para>Type: <b>ULONG*</b></para>
+      <para>A pointer to the converted value. In the case where the conversion causes a truncation of the original value, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide type conversions and perform validity checks with minimal impact on performance.</para>
+      <para>
+        <b>DWordPtrToULong</b> is an alias for this function.</para>
+      <para>
+        <b>SIZETToULong</b> is an alias for this function.</para>
+      <para>
+        <b>ULongPtrToDWord</b> is an alias for this function.</para>
+      <para>
+        <b>DWordPtrToDWord</b> is an alias for this function.</para>
+      <para>
+        <b>SIZETToDWord</b> is an alias for this function.</para>
+    </remarks>
+  </member>
+  <member name="Windows.ULongPtrToUShort">
+    <summary>
+      <para>Converts a value of type <b>ULONG_PTR</b> to a value of type <b>USHORT</b>.</para>
+    </summary>
+    <param name="ulOperand">
+      <para>The value to convert.</para>
+    </param>
+    <param name="pusResult">
+      <para>The converted value.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.ULongSub">
+    <summary>
+      <para>Subtracts one value of type <b>ULONG</b> from another.</para>
+    </summary>
+    <param name="ulMinuend">
+      <para>Type: <b>ULONG</b></para>
+      <para>The value from which <i>ulSubtrahend</i> is subtracted.</para>
+    </param>
+    <param name="ulSubtrahend">
+      <para>Type: <b>ULONG</b></para>
+      <para>The value to subtract from <i>ulMinuend</i>.</para>
+    </param>
+    <param name="pulResult">
+      <para>Type: <b>ULONG*</b></para>
+      <para>A pointer to the result. If the operation results in a value that overflows or underflows the capacity of the type, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide arithmetic operations and perform validity checks with minimal impact on performance.</para>
+      <para>
+        <b>DWordSub</b> is an alias for this function.</para>
+    </remarks>
+  </member>
+  <member name="Windows.ULongToChar">
+    <summary>
+      <para>Converts a value of type <b>ULONG</b> to a value of type <b>CHAR</b>.</para>
+    </summary>
+    <param name="ulOperand">
+      <para>Type: <b>ULONG</b></para>
+      <para>The value to be converted.</para>
+    </param>
+    <param name="pch">
+      <para>Type: <b>__wchar_t*</b></para>
+      <para>A pointer to the converted value. In the case where the conversion causes a truncation of the original value, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide type conversions and perform validity checks with minimal impact on performance.</para>
+      <para>
+        <b>DWordToChar</b> is an alias for this function.</para>
+    </remarks>
+  </member>
+  <member name="Windows.ULongToInt">
+    <summary>
+      <para>Converts a value of type <b>ULONG</b> to a value of type <b>INT</b>.</para>
+    </summary>
+    <param name="ulOperand">
+      <para>Type: <b>ULONG</b></para>
+      <para>The value to be converted.</para>
+    </param>
+    <param name="piResult">
+      <para>Type: <b>INT*</b></para>
+      <para>A pointer to the converted value. In the case where the conversion causes a truncation of the original value, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide type conversions and perform validity checks with minimal impact on performance.</para>
+      <para>
+        <b>DWordToInt</b> is an alias for this function.</para>
+    </remarks>
+  </member>
+  <member name="Windows.ULongToInt8">
+    <summary>
+      <para>Converts a value of type <b>ULONG</b> to a value of type <b>INT8</b>.</para>
+    </summary>
+    <param name="ulOperand">
+      <para>The value to convert.</para>
+    </param>
+    <param name="pi8Result">
+      <para>The converted value.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.ULongToIntPtr">
+    <summary>
+      <para>Converts a value of type <b>ULONG</b> to a value of type <b>INT_PTR</b>.</para>
+    </summary>
+    <param name="ulOperand">
+      <para>Type: <b>ULONG</b></para>
+      <para>The value to be converted.</para>
+    </param>
+    <param name="piResult">
+      <para>Type: <b>INT_PTR*</b></para>
+      <para>A pointer to the converted value. In the case where the conversion causes a truncation of the original value, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide type conversions and perform validity checks with minimal impact on performance.</para>
+      <para>
+        <b>DWordToPtrdiffT</b> is an alias for this function.</para>
+      <para>
+        <b>ULongToPtrdiffT</b> is an alias for this function.</para>
+      <para>
+        <b>DWordToIntPtr</b> is an alias for this function.</para>
+    </remarks>
+  </member>
+  <member name="Windows.ULongToLong">
+    <summary>
+      <para>Converts a value of type <b>ULONG</b> to a value of type <b>LONG</b>.</para>
+    </summary>
+    <param name="ulOperand">
+      <para>Type: <b>ULONG</b></para>
+      <para>The value to be converted.</para>
+    </param>
+    <param name="plResult">
+      <para>Type: <b>LONG*</b></para>
+      <para>A pointer to the converted value. In the case where the conversion causes a truncation of the original value, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide type conversions and perform validity checks with minimal impact on performance.</para>
+      <para>
+        <b>DWordToLong</b> is an alias for this function.</para>
+    </remarks>
+  </member>
+  <member name="Windows.ULongToLongPtr">
+    <summary>
+      <para>Converts a value of type <b>ULONG</b> to a value of type <b>LONG_PTR</b>.</para>
+    </summary>
+    <param name="ulOperand">
+      <para>Type: <b>ULONG</b></para>
+      <para>The value to be converted.</para>
+    </param>
+    <param name="plResult">
+      <para>Type: <b>LONG_PTR*</b></para>
+      <para>A pointer to the converted value. In the case where the conversion causes a truncation of the original value, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide type conversions and perform validity checks with minimal impact on performance.</para>
+      <para>
+        <b>ULongToSSIZET</b> is an alias for this function.</para>
+      <para>
+        <b>DWordToLongPtr</b> is an alias for this function.</para>
+      <para>
+        <b>DWordToSSIZET</b> is an alias for this function.</para>
+    </remarks>
+  </member>
+  <member name="Windows.ULongToShort">
+    <summary>
+      <para>Converts a value of type <b>ULONG</b> to a value of type <b>SHORT</b>.</para>
+    </summary>
+    <param name="ulOperand">
+      <para>Type: <b>ULONG</b></para>
+      <para>The value to be converted.</para>
+    </param>
+    <param name="psResult">
+      <para>Type: <b>SHORT*</b></para>
+      <para>A pointer to the converted value. In the case where the conversion causes a truncation of the original value, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide type conversions and perform validity checks with minimal impact on performance.</para>
+      <para>
+        <b>DWordToShort</b> is an alias for this function.</para>
+    </remarks>
+  </member>
+  <member name="Windows.ULongToUChar">
+    <summary>
+      <para>Converts a value of type <b>ULONG</b> to a value of type <b>UCHAR</b>.</para>
+    </summary>
+    <param name="ulOperand">
+      <para>Type: <b>ULONG</b></para>
+      <para>The value to be converted.</para>
+    </param>
+    <param name="pch">
+      <para>Type: <b>UCHAR*</b></para>
+      <para>A pointer to the converted value. In the case where the conversion causes a truncation of the original value, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide type conversions and perform validity checks with minimal impact on performance.</para>
+      <para>
+        <b>DWordToUChar</b> is an alias for this function.</para>
+    </remarks>
+  </member>
+  <member name="Windows.ULongToUInt">
+    <summary>
+      <para>Converts a value of type <b>ULONG</b> to a value of type <b>UINT</b>.</para>
+    </summary>
+    <param name="ulOperand">
+      <para>Type: <b>ULONG</b></para>
+      <para>The value to be converted.</para>
+    </param>
+    <param name="puResult">
+      <para>Type: <b>UINT*</b></para>
+      <para>A pointer to the converted value. In the case where the conversion causes a truncation of the original value, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide type conversions and perform validity checks with minimal impact on performance.</para>
+      <para>
+        <b>DWordToUInt</b> is an alias for this function.</para>
+    </remarks>
+  </member>
+  <member name="Windows.ULongToUInt8">
+    <summary>
+      <para>Converts a value of type <b>ULONG</b> to a value of type <b>UINT8</b>.</para>
+    </summary>
+    <param name="ulOperand">
+      <para>The value to convert.</para>
+    </param>
+    <param name="pui8Result">
+      <para>The converted value.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>DWordToByte</b> is an alias for this function.</para>
+    </remarks>
+  </member>
+  <member name="Windows.ULongToUIntPtr">
+    <summary>
+      <para>Converts a value of type <b>ULONG</b> to a value of type <b>UINT_PTR</b>.</para>
+    </summary>
+    <param name="ulOperand">
+      <para>Type: <b>ULONG</b></para>
+      <para>The value to be converted.</para>
+    </param>
+    <param name="puiResult">
+      <para>Type: <b>UINT_PTR*</b></para>
+      <para>A pointer to the converted value. In the case where the conversion causes a truncation of the original value, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide type conversions and perform validity checks with minimal impact on performance.</para>
+      <para>
+        <b>DWordToUIntPtr</b> is an alias for this function.</para>
+    </remarks>
+  </member>
+  <member name="Windows.ULongToUShort">
+    <summary>
+      <para>Converts a value of type <b>ULONG</b> to a value of type <b>USHORT</b>.</para>
+    </summary>
+    <param name="ulOperand">
+      <para>Type: <b>ULONG</b></para>
+      <para>The value to be converted.</para>
+    </param>
+    <param name="pusResult">
+      <para>Type: <b>USHORT*</b></para>
+      <para>A pointer to the converted value. In the case where the conversion causes a truncation of the original value, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide type conversions and perform validity checks with minimal impact on performance.</para>
+      <para>
+        <b>Int64ToDWord</b> is an alias for this function.</para>
+      <para>
+        <b>ULongToWord</b> is an alias for this function.</para>
+      <para>
+        <b>DWordToWord</b> is an alias for this function.</para>
+    </remarks>
+  </member>
+  <member name="Windows.UShortAdd">
+    <summary>
+      <para>Adds two values of type <b>USHORT</b>.</para>
+    </summary>
+    <param name="usAugend">
+      <para>Type: <b>USHORT</b></para>
+      <para>The first value in the equation.</para>
+    </param>
+    <param name="usAddend">
+      <para>Type: <b>USHORT</b></para>
+      <para>The value to add to <i>usAugend</i>.</para>
+    </param>
+    <param name="pusResult">
+      <para>Type: <b>USHORT*</b></para>
+      <para>A pointer to the sum. If the operation results in a value that overflows or underflows the capacity of the type, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide arithmetic operations and perform validity checks with minimal impact on performance.</para>
+      <para>
+        <b>WordAdd</b> is an alias for this function.</para>
+    </remarks>
+  </member>
+  <member name="Windows.UShortMult">
+    <summary>
+      <para>Multiplies one value of type <b>USHORT</b> by another.</para>
+    </summary>
+    <param name="usMultiplicand">
+      <para>Type: <b>USHORT</b></para>
+      <para>The value to be multiplied by <i>usMultiplier</i>.</para>
+    </param>
+    <param name="usMultiplier">
+      <para>Type: <b>USHORT</b></para>
+      <para>The value by which to multiply <i>usMultiplicand</i>.</para>
+    </param>
+    <param name="pusResult">
+      <para>Type: <b>USHORT*</b></para>
+      <para>A pointer to the result. If the operation results in a value that overflows or underflows the capacity of the type, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide arithmetic operations and perform validity checks with minimal impact on performance.</para>
+      <para>
+        <b>WordMult</b> is an alias for this function.</para>
+    </remarks>
+  </member>
+  <member name="Windows.UShortSub">
+    <summary>
+      <para>Subtracts one value of type <b>USHORT</b> from another.</para>
+    </summary>
+    <param name="usMinuend">
+      <para>Type: <b>USHORT</b></para>
+      <para>The value from which <i>usSubtrahend</i> is subtracted.</para>
+    </param>
+    <param name="usSubtrahend">
+      <para>Type: <b>USHORT</b></para>
+      <para>The value to subtract from <i>usMinuend</i>.</para>
+    </param>
+    <param name="pusResult">
+      <para>Type: <b>USHORT*</b></para>
+      <para>A pointer to the result. If the operation results in a value that overflows or underflows the capacity of the type, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide arithmetic operations and perform validity checks with minimal impact on performance.</para>
+      <para>
+        <b>WordSub</b> is an alias for this function.</para>
+    </remarks>
+  </member>
+  <member name="Windows.UShortToChar">
+    <summary>
+      <para>Converts a value of type <b>USHORT</b> to a value of type <b>CHAR</b>.</para>
+    </summary>
+    <param name="usOperand">
+      <para>Type: <b>USHORT</b></para>
+      <para>The value to be converted.</para>
+    </param>
+    <param name="pch">
+      <para>Type: <b>__wchar_t*</b></para>
+      <para>A pointer to the converted value. In the case where the conversion causes a truncation of the original value, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide type conversions and perform validity checks with minimal impact on performance.</para>
+      <para>
+        <b>WordToChar</b> is an alias for this function.</para>
+    </remarks>
+  </member>
+  <member name="Windows.UShortToInt8">
+    <summary>
+      <para>Converts a value of type <b>USHORT</b> to a value of type <b>INT8</b>.</para>
+    </summary>
+    <param name="usOperand">
+      <para>The value to convert.</para>
+    </param>
+    <param name="pi8Result">
+      <para>The converted value.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.UShortToShort">
+    <summary>
+      <para>Converts a value of type <b>USHORT</b> to a value of type <b>SHORT</b>.</para>
+    </summary>
+    <param name="usOperand">
+      <para>Type: <b>USHORT</b></para>
+      <para>The value to be converted.</para>
+    </param>
+    <param name="psResult">
+      <para>Type: <b>SHORT*</b></para>
+      <para>A pointer to the converted value. In the case where the conversion causes a truncation of the original value, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide type conversions and perform validity checks with minimal impact on performance.</para>
+      <para>
+        <b>WordToShort</b> is an alias for this function.</para>
+    </remarks>
+  </member>
+  <member name="Windows.UShortToUChar">
+    <summary>
+      <para>Converts a value of type <b>USHORT</b> to a value of type <b>UCHAR</b>.</para>
+    </summary>
+    <param name="usOperand">
+      <para>Type: <b>USHORT</b></para>
+      <para>The value to be converted.</para>
+    </param>
+    <param name="pch">
+      <para>Type: <b>UCHAR*</b></para>
+      <para>A pointer to the converted value. In the case where the conversion causes a truncation of the original value, the function returns INTSAFE_E_ARITHMETIC_OVERFLOW and this parameter is not valid.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This is one of a set of inline functions designed to provide type conversions and perform validity checks with minimal impact on performance.</para>
+      <para>
+        <b>WordToUChar</b> is an alias for this function.</para>
+    </remarks>
+  </member>
+  <member name="Windows.UShortToUInt8">
+    <summary>
+      <para>Converts a value of type <b>USHORT</b> to a value of type <b>UINT8</b>.</para>
+    </summary>
+    <param name="usOperand">
+      <para>The value to convert.</para>
+    </param>
+    <param name="pui8Result">
+      <para>The converted value.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>WordToByte</b> is an alias for this function.</para>
+      <para>
+        <b>UShortToByte</b> is an alias for this function.</para>
+    </remarks>
+  </member>
+</doc>

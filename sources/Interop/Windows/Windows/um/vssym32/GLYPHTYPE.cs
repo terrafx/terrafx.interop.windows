@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='GLYPHTYPE.xml' path='doc/member[@name="GLYPHTYPE"]/*' />
 public enum GLYPHTYPE
 {
+    /// <include file='GLYPHTYPE.xml' path='doc/member[@name="GLYPHTYPE.GT_NONE"]/*' />
     GT_NONE = 0,
+
+    /// <include file='GLYPHTYPE.xml' path='doc/member[@name="GLYPHTYPE.GT_IMAGEGLYPH"]/*' />
     GT_IMAGEGLYPH = 1,
+
+    /// <include file='GLYPHTYPE.xml' path='doc/member[@name="GLYPHTYPE.GT_FONTGLYPH"]/*' />
     GT_FONTGLYPH = 2,
 }

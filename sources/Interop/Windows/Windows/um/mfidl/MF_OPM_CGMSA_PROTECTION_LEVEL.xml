@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MF_OPM_CGMSA_PROTECTION_LEVEL">
+    <summary>
+      <para>Defines protection levels for <b>MFPROTECTION_CGMSA</b>.</para>
+    </summary>
+    <remarks>
+      <para>These flags are equivalent to the OPM_CGMSA_Protection_Level enumeration constants used in the Output Protection Protocol (OPM).</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+  </member>
+  <member name="MF_OPM_CGMSA_PROTECTION_LEVEL.MF_OPM_CGMSA_OFF">
+    <summary>
+      <para>CGMS-A is disabled.</para>
+    </summary>
+  </member>
+  <member name="MF_OPM_CGMSA_PROTECTION_LEVEL.MF_OPM_CGMSA_COPY_FREELY">
+    <summary>
+      <para>The protection level is Copy Freely.</para>
+    </summary>
+  </member>
+  <member name="MF_OPM_CGMSA_PROTECTION_LEVEL.MF_OPM_CGMSA_COPY_NO_MORE">
+    <summary>
+      <para>The protection level is Copy No More.</para>
+    </summary>
+  </member>
+  <member name="MF_OPM_CGMSA_PROTECTION_LEVEL.MF_OPM_CGMSA_COPY_ONE_GENERATION">
+    <summary>
+      <para>The protection level is Copy One Generation.</para>
+    </summary>
+  </member>
+  <member name="MF_OPM_CGMSA_PROTECTION_LEVEL.MF_OPM_CGMSA_COPY_NEVER">
+    <summary>
+      <para>The protection level is Copy Never.</para>
+    </summary>
+  </member>
+  <member name="MF_OPM_CGMSA_PROTECTION_LEVEL.MF_OPM_CGMSA_REDISTRIBUTION_CONTROL_REQUIRED">
+    <summary>
+      <para>Redistribution control (also called the broadcast flag) is required. This flag can be combined with the other flags.</para>
+    </summary>
+  </member>
+</doc>

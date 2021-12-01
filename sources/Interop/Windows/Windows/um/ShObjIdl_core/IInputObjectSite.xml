@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IInputObjectSite.OnFocusChangeIS">
+    <summary>
+      <para>Informs the browser that the focus has changed.</para>
+    </summary>
+    <param name="punkObj">
+      <para>Type: <b><see cref="IUnknown" />*</b></para>
+      <para>The address of the <see cref="IUnknown" /> interface of the object gaining or losing the focus.</para>
+    </param>
+    <param name="fSetFocus">
+      <para>Type: <b>BOOL</b></para>
+      <para>Indicates if the object has gained or lost the focus. If this value is nonzero, the object has gained the focus. If this value is zero, the object has lost the focus.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_OK if the method was successful, or a COM-defined error code otherwise.</para>
+    </returns>
+    <remarks>
+      <para>The calling object should call this method whenever one of its windows gains or loses the input focus.</para>
+    </remarks>
+  </member>
+  <member name="IInputObjectSite">
+    <summary>
+      <para>Exposes a method that is used to communicate focus changes for a user input object contained in the Shell.</para>
+    </summary>
+    <remarks>
+      <para>You do not typically implement this interface. <b>IInputObjectSite</b> is implemented by the Shell or the browser to properly maintain the input focus.</para>
+      <para>You use <b>IInputObjectSite</b> if you are implementing a Shell object that takes user input.</para>
+      <para>
+        <b>IInputObjectSite</b> is derived from <see cref="IUnknown" />. The listed method is specific to <b>IInputObjectSite</b>.</para>
+    </remarks>
+  </member>
+</doc>

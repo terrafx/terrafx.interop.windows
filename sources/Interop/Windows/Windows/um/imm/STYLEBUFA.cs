@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STYLEBUFA.xml' path='doc/member[@name="STYLEBUFA"]/*' />
 public unsafe partial struct STYLEBUFA
 {
+    /// <include file='STYLEBUFA.xml' path='doc/member[@name="STYLEBUFA.dwStyle"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwStyle;
 
+    /// <include file='STYLEBUFA.xml' path='doc/member[@name="STYLEBUFA.szDescription"]/*' />
     [NativeTypeName("CHAR [32]")]
     public fixed sbyte szDescription[32];
 }

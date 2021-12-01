@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="NSTCSTYLE2">
+    <summary>
+      <para>Used by methods of the <see cref="INameSpaceTreeControl2" /> to specify extended display styles in a Shell namespace treeview.</para>
+    </summary>
+    <remarks>
+      <para>The value NSTCS2_ALLMASK can be used to mask for the NSTCS2_INTERRUPTNOTIFICATIONS, NSTCS2_SHOWNULLSPACEMENU, and NSTCS2_DISPLAYPADDING values.</para>
+    </remarks>
+  </member>
+  <member name="NSTCSTYLE2.NSTCS2_DEFAULT">
+    <summary>
+      <para>Displays the tree nodes in default mode, which includes none of the following values.</para>
+    </summary>
+  </member>
+  <member name="NSTCSTYLE2.NSTCS2_INTERRUPTNOTIFICATIONS">
+    <summary>
+      <para>Displays interrupt notifications.</para>
+    </summary>
+  </member>
+  <member name="NSTCSTYLE2.NSTCS2_SHOWNULLSPACEMENU">
+    <summary>
+      <para>Displays the context menu in the padding space.</para>
+    </summary>
+  </member>
+  <member name="NSTCSTYLE2.NSTCS2_DISPLAYPADDING">
+    <summary>
+      <para>Inserts spacing (padding) between top-level nodes.</para>
+    </summary>
+  </member>
+  <member name="NSTCSTYLE2.NSTCS2_DISPLAYPINNEDONLY">
+    <summary>
+      <para>Filters items based on the <a href="https://docs.microsoft.com//windows/desktop/properties/props-system-ispinnedtonamespacetree">System.IsPinnedToNameSpaceTree</a> value when <see cref="INameSpaceTreeControlFolderCapabilities" /> is implemented.</para>
+    </summary>
+  </member>
+  <member name="NSTCSTYLE2.NTSCS2_NOSINGLETONAUTOEXPAND">
+    <summary></summary>
+  </member>
+  <member name="NSTCSTYLE2.NTSCS2_NEVERINSERTNONENUMERATED">
+    <summary>
+      <para>Do not insert nonenumerated (SFGAO_NONENUMERATED) items in the tree.</para>
+      <h4>- NSTCS2_NOSINGLETONAUTOEXPAND</h4>
+      <para>Prevents automatic expansion of singleton nodes in the tree.</para>
+    </summary>
+  </member>
+</doc>

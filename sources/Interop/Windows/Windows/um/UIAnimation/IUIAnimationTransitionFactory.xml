@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IUIAnimationTransitionFactory.CreateTransition">
+    <summary>
+      <para>Creates a transition from a custom interpolator.</para>
+    </summary>
+    <param name="interpolator">
+      <para>The interpolator from which a transition is to be created.</para>
+      <para>The specified object must implement the <see cref="IUIAnimationInterpolator" /> interface.</para>
+    </param>
+    <param name="transition">
+      <para>The new transition.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
+    </returns>
+    <seealso cref="IUIAnimationInterpolator" />
+    <seealso cref="IUIAnimationTransition" />
+    <seealso cref="IUIAnimationTransitionFactory" />
+  </member>
+  <member name="IUIAnimationTransitionFactory">
+    <summary>
+      <para>Defines a method for creating transitions from custom interpolators.</para>
+    </summary>
+    <remarks>
+      <para>When an application requires animation effects that are not available in the transition library, developers can implement custom transitions that it can use. A custom transition is created by first implementing the interpolator function for the transition, and then by using a factory object to generate transitions from the interpolator. An interpolator must implement the <see cref="IUIAnimationInterpolator" /> interface; an implementation of the transition factory object is provided by <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd317024(v=vs.85)">UIAnimationTransitionFactory</a>.</para>
+    </remarks>
+    <seealso cref="IUIAnimationInterpolator" />
+    <seealso cref="IUnknown" />
+  </member>
+</doc>

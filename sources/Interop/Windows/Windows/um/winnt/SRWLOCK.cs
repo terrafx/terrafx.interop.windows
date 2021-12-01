@@ -5,8 +5,10 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SRWLOCK.xml' path='doc/member[@name="SRWLOCK"]/*' />
 public unsafe partial struct SRWLOCK
 {
+    /// <include file='SRWLOCK.xml' path='doc/member[@name="SRWLOCK.Ptr"]/*' />
     [NativeTypeName("PVOID")]
     public void* Ptr;
 }

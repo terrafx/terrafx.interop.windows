@@ -8,35 +8,47 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='FILEDESCRIPTORA.xml' path='doc/member[@name="FILEDESCRIPTORA"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public unsafe partial struct FILEDESCRIPTORA
 {
+    /// <include file='FILEDESCRIPTORA.xml' path='doc/member[@name="FILEDESCRIPTORA.dwFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFlags;
 
+    /// <include file='FILEDESCRIPTORA.xml' path='doc/member[@name="FILEDESCRIPTORA.clsid"]/*' />
     [NativeTypeName("CLSID")]
     public Guid clsid;
 
+    /// <include file='FILEDESCRIPTORA.xml' path='doc/member[@name="FILEDESCRIPTORA.sizel"]/*' />
     [NativeTypeName("SIZEL")]
     public SIZE sizel;
 
+    /// <include file='FILEDESCRIPTORA.xml' path='doc/member[@name="FILEDESCRIPTORA.pointl"]/*' />
     public POINTL pointl;
 
+    /// <include file='FILEDESCRIPTORA.xml' path='doc/member[@name="FILEDESCRIPTORA.dwFileAttributes"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFileAttributes;
 
+    /// <include file='FILEDESCRIPTORA.xml' path='doc/member[@name="FILEDESCRIPTORA.ftCreationTime"]/*' />
     public FILETIME ftCreationTime;
 
+    /// <include file='FILEDESCRIPTORA.xml' path='doc/member[@name="FILEDESCRIPTORA.ftLastAccessTime"]/*' />
     public FILETIME ftLastAccessTime;
 
+    /// <include file='FILEDESCRIPTORA.xml' path='doc/member[@name="FILEDESCRIPTORA.ftLastWriteTime"]/*' />
     public FILETIME ftLastWriteTime;
 
+    /// <include file='FILEDESCRIPTORA.xml' path='doc/member[@name="FILEDESCRIPTORA.nFileSizeHigh"]/*' />
     [NativeTypeName("DWORD")]
     public uint nFileSizeHigh;
 
+    /// <include file='FILEDESCRIPTORA.xml' path='doc/member[@name="FILEDESCRIPTORA.nFileSizeLow"]/*' />
     [NativeTypeName("DWORD")]
     public uint nFileSizeLow;
 
+    /// <include file='FILEDESCRIPTORA.xml' path='doc/member[@name="FILEDESCRIPTORA.cFileName"]/*' />
     [NativeTypeName("CHAR [260]")]
     public fixed sbyte cFileName[260];
 }

@@ -5,11 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_XML_READER_BINARY_ENCODING.xml' path='doc/member[@name="WS_XML_READER_BINARY_ENCODING"]/*' />
 public unsafe partial struct WS_XML_READER_BINARY_ENCODING
 {
+    /// <include file='WS_XML_READER_BINARY_ENCODING.xml' path='doc/member[@name="WS_XML_READER_BINARY_ENCODING.encoding"]/*' />
     public WS_XML_READER_ENCODING encoding;
 
+    /// <include file='WS_XML_READER_BINARY_ENCODING.xml' path='doc/member[@name="WS_XML_READER_BINARY_ENCODING.staticDictionary"]/*' />
     public WS_XML_DICTIONARY* staticDictionary;
 
+    /// <include file='WS_XML_READER_BINARY_ENCODING.xml' path='doc/member[@name="WS_XML_READER_BINARY_ENCODING.dynamicDictionary"]/*' />
     public WS_XML_DICTIONARY* dynamicDictionary;
 }

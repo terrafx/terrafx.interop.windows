@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IHTMLLocation.xml' path='doc/member[@name="IHTMLLocation"]/*' />
 [Guid("163BB1E0-6E00-11CF-837A-48DC04C10000")]
 [NativeTypeName("struct IHTMLLocation : IDispatch")]
 [NativeInheritance("IDispatch")]
@@ -16,6 +17,7 @@ public unsafe partial struct IHTMLLocation : IHTMLLocation.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IHTMLLocation : IHTMLLocation.Interface
         return ((delegate* unmanaged<IHTMLLocation*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLLocation*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IHTMLLocation : IHTMLLocation.Interface
         return ((delegate* unmanaged<IHTMLLocation*, uint>)(lpVtbl[1]))((IHTMLLocation*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IHTMLLocation : IHTMLLocation.Interface
         return ((delegate* unmanaged<IHTMLLocation*, uint>)(lpVtbl[2]))((IHTMLLocation*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct IHTMLLocation : IHTMLLocation.Interface
         return ((delegate* unmanaged<IHTMLLocation*, uint*, int>)(lpVtbl[3]))((IHTMLLocation*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct IHTMLLocation : IHTMLLocation.Interface
         return ((delegate* unmanaged<IHTMLLocation*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IHTMLLocation*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
@@ -60,6 +67,7 @@ public unsafe partial struct IHTMLLocation : IHTMLLocation.Interface
         return ((delegate* unmanaged<IHTMLLocation*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLLocation*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
+    /// <inheritdoc cref="IDispatch.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
@@ -67,6 +75,7 @@ public unsafe partial struct IHTMLLocation : IHTMLLocation.Interface
         return ((delegate* unmanaged<IHTMLLocation*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IHTMLLocation*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
+    /// <include file='IHTMLLocation.xml' path='doc/member[@name="IHTMLLocation.put_href"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT put_href([NativeTypeName("BSTR")] ushort* v)
@@ -74,6 +83,7 @@ public unsafe partial struct IHTMLLocation : IHTMLLocation.Interface
         return ((delegate* unmanaged<IHTMLLocation*, ushort*, int>)(lpVtbl[7]))((IHTMLLocation*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLLocation.xml' path='doc/member[@name="IHTMLLocation.get_href"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT get_href([NativeTypeName("BSTR *")] ushort** p)
@@ -81,6 +91,7 @@ public unsafe partial struct IHTMLLocation : IHTMLLocation.Interface
         return ((delegate* unmanaged<IHTMLLocation*, ushort**, int>)(lpVtbl[8]))((IHTMLLocation*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLLocation.xml' path='doc/member[@name="IHTMLLocation.put_protocol"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT put_protocol([NativeTypeName("BSTR")] ushort* v)
@@ -88,6 +99,7 @@ public unsafe partial struct IHTMLLocation : IHTMLLocation.Interface
         return ((delegate* unmanaged<IHTMLLocation*, ushort*, int>)(lpVtbl[9]))((IHTMLLocation*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLLocation.xml' path='doc/member[@name="IHTMLLocation.get_protocol"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT get_protocol([NativeTypeName("BSTR *")] ushort** p)
@@ -95,6 +107,7 @@ public unsafe partial struct IHTMLLocation : IHTMLLocation.Interface
         return ((delegate* unmanaged<IHTMLLocation*, ushort**, int>)(lpVtbl[10]))((IHTMLLocation*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLLocation.xml' path='doc/member[@name="IHTMLLocation.put_host"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT put_host([NativeTypeName("BSTR")] ushort* v)
@@ -102,6 +115,7 @@ public unsafe partial struct IHTMLLocation : IHTMLLocation.Interface
         return ((delegate* unmanaged<IHTMLLocation*, ushort*, int>)(lpVtbl[11]))((IHTMLLocation*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLLocation.xml' path='doc/member[@name="IHTMLLocation.get_host"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT get_host([NativeTypeName("BSTR *")] ushort** p)
@@ -109,6 +123,7 @@ public unsafe partial struct IHTMLLocation : IHTMLLocation.Interface
         return ((delegate* unmanaged<IHTMLLocation*, ushort**, int>)(lpVtbl[12]))((IHTMLLocation*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLLocation.xml' path='doc/member[@name="IHTMLLocation.put_hostname"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT put_hostname([NativeTypeName("BSTR")] ushort* v)
@@ -116,6 +131,7 @@ public unsafe partial struct IHTMLLocation : IHTMLLocation.Interface
         return ((delegate* unmanaged<IHTMLLocation*, ushort*, int>)(lpVtbl[13]))((IHTMLLocation*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLLocation.xml' path='doc/member[@name="IHTMLLocation.get_hostname"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT get_hostname([NativeTypeName("BSTR *")] ushort** p)
@@ -123,6 +139,7 @@ public unsafe partial struct IHTMLLocation : IHTMLLocation.Interface
         return ((delegate* unmanaged<IHTMLLocation*, ushort**, int>)(lpVtbl[14]))((IHTMLLocation*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLLocation.xml' path='doc/member[@name="IHTMLLocation.put_port"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT put_port([NativeTypeName("BSTR")] ushort* v)
@@ -130,6 +147,7 @@ public unsafe partial struct IHTMLLocation : IHTMLLocation.Interface
         return ((delegate* unmanaged<IHTMLLocation*, ushort*, int>)(lpVtbl[15]))((IHTMLLocation*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLLocation.xml' path='doc/member[@name="IHTMLLocation.get_port"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT get_port([NativeTypeName("BSTR *")] ushort** p)
@@ -137,6 +155,7 @@ public unsafe partial struct IHTMLLocation : IHTMLLocation.Interface
         return ((delegate* unmanaged<IHTMLLocation*, ushort**, int>)(lpVtbl[16]))((IHTMLLocation*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLLocation.xml' path='doc/member[@name="IHTMLLocation.put_pathname"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT put_pathname([NativeTypeName("BSTR")] ushort* v)
@@ -144,6 +163,7 @@ public unsafe partial struct IHTMLLocation : IHTMLLocation.Interface
         return ((delegate* unmanaged<IHTMLLocation*, ushort*, int>)(lpVtbl[17]))((IHTMLLocation*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLLocation.xml' path='doc/member[@name="IHTMLLocation.get_pathname"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT get_pathname([NativeTypeName("BSTR *")] ushort** p)
@@ -151,6 +171,7 @@ public unsafe partial struct IHTMLLocation : IHTMLLocation.Interface
         return ((delegate* unmanaged<IHTMLLocation*, ushort**, int>)(lpVtbl[18]))((IHTMLLocation*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLLocation.xml' path='doc/member[@name="IHTMLLocation.put_search"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT put_search([NativeTypeName("BSTR")] ushort* v)
@@ -158,6 +179,7 @@ public unsafe partial struct IHTMLLocation : IHTMLLocation.Interface
         return ((delegate* unmanaged<IHTMLLocation*, ushort*, int>)(lpVtbl[19]))((IHTMLLocation*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLLocation.xml' path='doc/member[@name="IHTMLLocation.get_search"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public HRESULT get_search([NativeTypeName("BSTR *")] ushort** p)
@@ -165,6 +187,7 @@ public unsafe partial struct IHTMLLocation : IHTMLLocation.Interface
         return ((delegate* unmanaged<IHTMLLocation*, ushort**, int>)(lpVtbl[20]))((IHTMLLocation*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLLocation.xml' path='doc/member[@name="IHTMLLocation.put_hash"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
     public HRESULT put_hash([NativeTypeName("BSTR")] ushort* v)
@@ -172,6 +195,7 @@ public unsafe partial struct IHTMLLocation : IHTMLLocation.Interface
         return ((delegate* unmanaged<IHTMLLocation*, ushort*, int>)(lpVtbl[21]))((IHTMLLocation*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLLocation.xml' path='doc/member[@name="IHTMLLocation.get_hash"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
     public HRESULT get_hash([NativeTypeName("BSTR *")] ushort** p)
@@ -179,6 +203,7 @@ public unsafe partial struct IHTMLLocation : IHTMLLocation.Interface
         return ((delegate* unmanaged<IHTMLLocation*, ushort**, int>)(lpVtbl[22]))((IHTMLLocation*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLLocation.xml' path='doc/member[@name="IHTMLLocation.reload"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
     public HRESULT reload([NativeTypeName("VARIANT_BOOL")] short flag = 0)
@@ -186,6 +211,7 @@ public unsafe partial struct IHTMLLocation : IHTMLLocation.Interface
         return ((delegate* unmanaged<IHTMLLocation*, short, int>)(lpVtbl[23]))((IHTMLLocation*)Unsafe.AsPointer(ref this), flag);
     }
 
+    /// <include file='IHTMLLocation.xml' path='doc/member[@name="IHTMLLocation.replace"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(24)]
     public HRESULT replace([NativeTypeName("BSTR")] ushort* bstr)
@@ -193,6 +219,7 @@ public unsafe partial struct IHTMLLocation : IHTMLLocation.Interface
         return ((delegate* unmanaged<IHTMLLocation*, ushort*, int>)(lpVtbl[24]))((IHTMLLocation*)Unsafe.AsPointer(ref this), bstr);
     }
 
+    /// <include file='IHTMLLocation.xml' path='doc/member[@name="IHTMLLocation.assign"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(25)]
     public HRESULT assign([NativeTypeName("BSTR")] ushort* bstr)
@@ -200,6 +227,7 @@ public unsafe partial struct IHTMLLocation : IHTMLLocation.Interface
         return ((delegate* unmanaged<IHTMLLocation*, ushort*, int>)(lpVtbl[25]))((IHTMLLocation*)Unsafe.AsPointer(ref this), bstr);
     }
 
+    /// <include file='IHTMLLocation.xml' path='doc/member[@name="IHTMLLocation.toString"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(26)]
     public HRESULT toString([NativeTypeName("BSTR *")] ushort** @string)

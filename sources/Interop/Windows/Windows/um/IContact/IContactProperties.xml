@@ -1,0 +1,863 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IContactProperties.CreateArrayNode">
+    <summary>
+      <para>Creates a new array node in a multi-value property.</para>
+    </summary>
+    <param name="pszArrayName">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>Specifies the top-level property for which to create a new node.</para>
+    </param>
+    <param name="dwFlags">
+      <para>Type: <b>DWORD</b></para>
+      <para>Must be CGD_DEFAULT.</para>
+    </param>
+    <param name="fAppend">
+      <para>Type: <b>BOOL</b></para>
+      <para>TRUE for insert after, <b>FALSE</b> for insert before.</para>
+    </param>
+    <param name="pszNewArrayElementName">
+      <para>Type: <b>LPWSTR</b></para>
+      <para>Specifies a user-allocated buffer to store the new array element name.</para>
+    </param>
+    <param name="cchNewArrayElementName">
+      <para>Type: <b>DWORD</b></para>
+      <para>Specifies an allocated buffer size in characters.</para>
+    </param>
+    <param name="pdwcchNewArrayElementNameRequired">
+      <para>Type: <b>DWORD*</b></para>
+      <para>On failure, contains the required size for <i>pszNewArrayElementName</i>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns one of the following values:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>New node is created and name is in <i>pszNewArrayElementName</i>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>ERROR_PATH_NOT_FOUND</b>
+            </para>
+          </description>
+          <description>
+            <para>Macro HRESULT_FROM_WIN32(ERROR_PATH_NOT_FOUND) returned when array name is invalid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>ERROR_INSUFFICIENT_BUFFER</b>
+            </para>
+          </description>
+          <description>
+            <para>Macro HRESULT_FROM_WIN32(ERROR_INSUFFICIENT_BUFFER) returned when <i>pszNewArrayElementName</i> is not large enough to store the value. The required buffer size is stored in <i>pdwcchNewArrayElementNameRequired</i>.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>
+        <b>Note</b>  The first element of an existing set is at index 1.</para>
+      <para>To create a <i>pszArrayName</i> at toplevel/secondlevel[1],
+call this function with <i>pszArrayName</i> == toplevel, fAppend=<b>FALSE</b>.</para>
+      <para>To create an array node that is an extension at [namespace]toplevel/secondlevel[1],
+call this function with <i>pszArrayName</i> == [namespace:secondlevel]toplevel.</para>
+      <para>To append to the set, pass <i>fAppend</i>=TRUE instead;
+<i>pszNewArrayElementName</i> then contains the resulting array node name, including the index.</para>
+    </remarks>
+  </member>
+  <member name="IContactProperties.DeleteArrayNode">
+    <summary>
+      <para>Deletes the data at a specified array entry.</para>
+    </summary>
+    <param name="pszArrayElementName">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>Specifies array entry from which to remove all data.</para>
+    </param>
+    <param name="dwFlags">
+      <para>Type: <b>DWORD</b></para>
+      <para>Must be CGD_DEFAULT.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns one of the following values:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Node is deleted.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>ERROR_PATH_NOT_FOUND</b>
+            </para>
+          </description>
+          <description>
+            <para>Property name doesn't exist for delete.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>
+        <b>Note</b>  Element indexes are unchanged for the entire set. Array node element ID,
+modification and version data can still be enumerated with <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/icontact/nn-icontact-icontactpropertycollection">IContactPropertyCollection</a>.</para>
+    </remarks>
+  </member>
+  <member name="IContactProperties.DeleteLabels">
+    <summary>
+      <para>Deletes the labels at a specified array entry.</para>
+    </summary>
+    <param name="pszArrayElementName">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>Specifies the property to delete labels on.</para>
+    </param>
+    <param name="dwFlags">
+      <para>Type: <b>DWORD</b></para>
+      <para>Must be CGD_DEFAULT.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns one of the following values:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Labels deleted successfully.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>ERROR_PATH_NOT_FOUND</b>
+            </para>
+          </description>
+          <description>
+            <para>Property name doesn't exist for delete.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+  </member>
+  <member name="IContactProperties.DeleteProperty">
+    <summary>
+      <para>Deletes the value at a specified property. Property modification
+and version data can still be enumerated with <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/icontact/nn-icontact-icontactpropertycollection">IContactPropertyCollection</a>.</para>
+    </summary>
+    <param name="pszPropertyName">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>Specifies the property to delete the value for.</para>
+    </param>
+    <param name="dwFlags">
+      <para>Type: <b>DWORD</b></para>
+      <para>Must be CGD_DEFAULT.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns one of the following values:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Property deleted successfully.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>ERROR_PATH_NOT_FOUND</b>
+            </para>
+          </description>
+          <description>
+            <para>Property name doesn't exist for delete.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+  </member>
+  <member name="IContactProperties.GetBinary">
+    <summary>
+      <para>Retrieves the binary data of a property using an <see cref="IStream interface [Structured Storage]" />.</para>
+    </summary>
+    <param name="pszPropertyName">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>Specifies the property to retrieve.</para>
+    </param>
+    <param name="dwFlags">
+      <para>Type: <b>DWORD</b></para>
+      <para>Must be CGD_DEFAULT.</para>
+    </param>
+    <param name="pszContentType">
+      <para>Type: <b>LPWSTR</b></para>
+      <para>Specifies user-allocated buffer to store the MIME content type.</para>
+    </param>
+    <param name="cchContentType">
+      <para>Type: <b>DWORD</b></para>
+      <para>Specifies the allocated buffer size in characters.</para>
+    </param>
+    <param name="pdwcchContentTypeRequired">
+      <para>Type: <b>DWORD*</b></para>
+      <para>On failure, contains the required size for <i>pszContentType</i>.</para>
+    </param>
+    <param name="ppStream">
+      <para>Type: <b>IStream**</b></para>
+      <para>On success, contains a new <see cref="IStream interface [Structured Storage]" />. Use this to retrieve the binary data.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns one of the following values:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <i>ppStream</i> contains an <see cref="IStream interface [Structured Storage]" />.
+Caller must release the reference.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>No data for this value. Either the property has been present in the past
+but its value has been removed or the property is a container of other properties
+(toplevel/secondlevel[3]). The buffer at <i>pszContentType</i> has been zeroed.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>ERROR_PATH_NOT_FOUND</b>
+            </para>
+          </description>
+          <description>
+            <para>No data found for this property name.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>ERROR_INVALID_DATATYPE</b>
+            </para>
+          </description>
+          <description>
+            <para>Unable to get value for this property due to schema.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>ERROR_INSUFFICIENT_BUFFER</b>
+            </para>
+          </description>
+          <description>
+            <i>pszContentType</i> was not large enough to store the value.
+The required buffer size is stored in <i>pdwcchContentTypeRequired</i>.
+</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>To retrieve a single level property, set <i>pszPropertyName</i> to the property name.</para>
+      <para>To retrieve a value from a multi-value (hierarchical) property, include the desired index as part of <i>pszPropertyName</i> using the form: toplevel/secondlevel[1]/thirdlevel. NOTE: the first element of a set is index 1, so index [0] is invalid.</para>
+      <para>For deleted properties, this method returns S_OK and an <see cref="IStream interface [Structured Storage]" /> of zero length. NOTE: For properties not of binary type, this method may return incorrect data in the IStream.</para>
+    </remarks>
+  </member>
+  <member name="IContactProperties.GetDate">
+    <summary>
+      <para>Retrieves the date and time value at a specified property into a caller's
+<see cref="FILETIME" /> structure. All times are stored
+and returned as Coordinated Universal Time (UTC).</para>
+    </summary>
+    <param name="pszPropertyName">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>Specifies the property to retrieve.</para>
+    </param>
+    <param name="dwFlags">
+      <para>Type: <b>DWORD</b></para>
+      <para>Must be CGD_DEFAULT.</para>
+    </param>
+    <param name="pftDateTime">
+      <para>Type: <b><see cref="FILETIME" />*</b></para>
+      <para>Specifies caller-allocated <see cref="FILETIME" /> structure.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns one of the following values:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <i>pftDateTime</i> contains a valid <see cref="FILETIME" />.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>The property has been present in the past but its value has been removed.
+The <see cref="FILETIME" /> has been zeroed.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>ERROR_PATH_NOT_FOUND</b>
+            </para>
+          </description>
+          <description>
+            <para>No data found for this property name.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>To retrieve a single level property, set <i>pszPropertyName</i> to the property name.</para>
+      <para>To retrieve a value from a multi-value (hierarchical) property, include the desired index as part of <i>pszPropertyName</i> using the form: toplevel/secondlevel[1]/thirdlevel. NOTE: the first element of a set is index 1, so index [0] is invalid.</para>
+    </remarks>
+  </member>
+  <member name="IContactProperties.GetLabels">
+    <summary>
+      <para>Retrieves the labels for a specified array element name.</para>
+    </summary>
+    <param name="pszArrayElementName">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>Specifies the array element name.</para>
+    </param>
+    <param name="dwFlags">
+      <para>Type: <b>DWORD</b></para>
+      <para>Must be CGD_DEFAULT.</para>
+    </param>
+    <param name="pszLabels">
+      <para>Type: <b>LPWSTR</b></para>
+      <para>Specifies user-allocated buffer to store the labels.</para>
+    </param>
+    <param name="cchLabels">
+      <para>Type: <b>DWORD</b></para>
+      <para>Specifies allocated buffer size in characters.</para>
+    </param>
+    <param name="pdwcchLabelsRequired">
+      <para>Type: <b>DWORD*</b></para>
+      <para>On failure, contains the required size for <i>pszLabels</i>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns one of the following values:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Retrieval successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>ERROR_PATH_NOT_FOUND</b>
+            </para>
+          </description>
+          <description>
+            <para>No data found for this property name.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>ERROR_INVALID_DATATYPE</b>
+            </para>
+          </description>
+          <description>
+            <para>Unable to get value
+for this property due to schema.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>ERROR_INSUFFICIENT_BUFFER</b>
+            </para>
+          </description>
+          <description>
+            <i>pszLabels</i> was not large enough to store the value.
+The required buffer size is stored in *<i>pdwcchLabelsRequired</i>.
+</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The user-allocated buffer in <i>pszLabels</i> receives a concatenated list of null-terminated strings, followed by an empty string. In other words, the last 4 bytes will be zero. For example,  L"str1\0str2\0\0". NOTE: Succeeds only for multi-value properties. Also, may return labels in a different order than they were set.</para>
+    </remarks>
+  </member>
+  <member name="IContactProperties.GetPropertyCollection">
+    <summary>
+      <para>Returns an <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/icontact/nn-icontact-icontactpropertycollection">IContactPropertyCollection</a> for the current contact.
+Optionally, filters the <b>IContactPropertyCollection</b> to enumerate only some values.</para>
+    </summary>
+    <param name="ppPropertyCollection">
+      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/icontact/nn-icontact-icontactpropertycollection">IContactPropertyCollection</a>**</b></para>
+      <para>On success, points to the new <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/icontact/nn-icontact-icontactpropertycollection">IContactPropertyCollection</a>.</para>
+    </param>
+    <param name="dwFlags">
+      <para>Type: <b>DWORD</b></para>
+      <para>Must be CGD_DEFAULT.</para>
+    </param>
+    <param name="pszMultiValueName">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>Specifies the name of the collection (for example: emailAddresses or [namespace]arrayNode).
+If <b>NULL</b>, all collections are searched for <i>ppszLabels</i>.</para>
+    </param>
+    <param name="dwLabelCount">
+      <para>Type: <b>DWORD</b></para>
+      <para>Specifies the number of labels in <i>ppszLabels</i>.
+If zero, all subproperties with labels are returned.</para>
+    </param>
+    <param name="ppszLabels">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>Specifies an array of string labels to test for.
+All labels in the array must be set to a valid string (not <b>NULL</b>).</para>
+    </param>
+    <param name="fAnyLabelMatches">
+      <para>Type: <b>BOOL</b></para>
+      <para>TRUE if the presence of any label on a given property matches the property.
+FALSE if all labels must be present to match the property.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns one of the following values:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Always returns success.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Caller can enumerate all child properties of a top-level property with
+an optional label filter applied. For example: all emailAddresses where label="work". On success,
+collection has been reset to the location before the first element (if any are present).
+Call <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/icontact/nf-icontact-icontactpropertycollection-next">Next</a> to begin querying data.</para>
+    </remarks>
+  </member>
+  <member name="IContactProperties.GetString">
+    <summary>
+      <para>Retrieves the string value at a specified property into a caller-allocated buffer.</para>
+    </summary>
+    <param name="pszPropertyName">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>Specifies the property to retrieve.</para>
+    </param>
+    <param name="dwFlags">
+      <para>Type: <b>DWORD</b></para>
+      <para>Must be CGD_DEFAULT.</para>
+    </param>
+    <param name="pszValue">
+      <para>Type: <b>LPWSTR</b></para>
+      <para>Specifies user-allocated buffer to store the property.</para>
+    </param>
+    <param name="cchValue">
+      <para>Type: <b>DWORD*</b></para>
+      <para>Specifies allocated buffer size in characters.</para>
+    </param>
+    <param name="pdwcchPropertyValueRequired">
+      <para>Type: <b>DWORD*</b></para>
+      <para>On failure, contains the required size for <i>pszValue</i>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns one of the following values:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <i>pszValue</i> contains the null-terminated value.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>No data for this value. Either the property has been present in the past but its value has been removed
+or the property is a container of other properties (toplevel/secondlevel[3]). The buffer at <i>pszValue</i> has been zeroed.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>ERROR_PATH_NOT_FOUND</b>
+            </para>
+          </description>
+          <description>
+            <para>No data found for this property name.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>ERROR_INSUFFICIENT_BUFFER</b>
+            </para>
+          </description>
+          <description>
+            <i>pszValue</i> was not large enough to store the value.
+The required buffer size is stored in *<i>pdwcchPropertyValueRequired</i>.
+</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>To retrieve a single level property, set <i>pszPropertyName</i> to the property name.</para>
+      <para>To retrieve a value from a multi-value (hierarchical) property, include the desired index as part of <i>pszPropertyName</i> in the form: toplevel/secondlevel[1]/thirdlevel. NOTE: the first element of a set is index 1, so index [0] is invalid. The following example retrieves the Title of the fourth Name property of a contact.</para>
+      <para>
+        <code>L"NameCollection/Name[4]/Title"</code>
+      </para>
+    </remarks>
+  </member>
+  <member name="IContactProperties.SetBinary">
+    <summary>
+      <para>Sets the binary data at a specified property to the contents of a specified <see cref="IStream interface [Structured Storage]" />,
+which contains a null-terminated string (as MIME type) data.</para>
+    </summary>
+    <param name="pszPropertyName">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>Specifies the property to set.</para>
+    </param>
+    <param name="dwFlags">
+      <para>Type: <b>DWORD</b></para>
+      <para>CGD_DEFAULT can be used to create or overwrite the value at <i>pszPropertyName</i>.</para>
+    </param>
+    <param name="pszContentType">
+      <para>Type: <b>LPWSTR</b></para>
+      <para>Specifies null-terminated string representing MIME type to store when CGD_DEFAULT.</para>
+    </param>
+    <param name="pStream">
+      <para>Type: <b>IStream*</b></para>
+      <para>Pointer to <see cref="IStream interface [Structured Storage]" /> object containing data to place at this node.
+NOTE: IStream.Read is called for the data until it succeeds with a zero-length read.
+Any other return value results in a failure and no change.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns one of the following values:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Value is set successfully.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>ERROR_PATH_NOT_FOUND</b>
+            </para>
+          </description>
+          <description>
+            <para>Property name is invalid for set, or property name doesn't exist for delete.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>ERROR_INVALID_DATATYPE</b>
+            </para>
+          </description>
+          <description>
+            <para>Unable to set the value for this property due to schema.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>To set a single-level property, set <i>pszPropertyName</i> to the property name.</para>
+      <para>To set a property from a multi-value property, set <i>pszPropertyName</i></para>
+      <para>to the form: toplevel/secondlevel[4]/thirdlevel.</para>
+    </remarks>
+  </member>
+  <member name="IContactProperties.SetDate">
+    <summary>
+      <para>Sets the date and time value at a specified property to a given
+<see cref="FILETIME" />. All times are stored and returned as Coordinated Universal Time (UTC).</para>
+    </summary>
+    <param name="pszPropertyName">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>Specifies the property to set.</para>
+    </param>
+    <param name="dwFlags">
+      <para>Type: <b>DWORD</b></para>
+      <para>CGD_DEFAULT can be used to create or overwrite value at <i>pszPropertyName</i>.</para>
+    </param>
+    <param name="ftDateTime">
+      <para>Type: <b><see cref="FILETIME" /></b></para>
+      <para>
+        <see cref="FILETIME" /> structure to use for date.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns one of the following values:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Value is set at this property.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>ERROR_PATH_NOT_FOUND</b>
+            </para>
+          </description>
+          <description>
+            <para>Property name invalid for set.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>ERROR_INVALID_DATATYPE</b>
+            </para>
+          </description>
+          <description>
+            <para>Unable to set the value for this property due to schema.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+  </member>
+  <member name="IContactProperties.SetLabels">
+    <summary>
+      <para>Appends the set of labels passed in to the specified property's label set.
+Note: This method does not check for duplicate labels.</para>
+    </summary>
+    <param name="pszArrayElementName">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>Specifies the property to label.</para>
+    </param>
+    <param name="dwFlags">
+      <para>Type: <b>DWORD</b></para>
+      <para>Must be CGD_DEFAULT.</para>
+    </param>
+    <param name="dwLabelCount">
+      <para>Type: <b>DWORD</b></para>
+      <para>Specifies the count of labels in array.</para>
+    </param>
+    <param name="ppszLabels">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>Specifies an array of LPCWSTR labels.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns one of the following values:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Labels set successfully.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>ERROR_PATH_NOT_FOUND</b>
+            </para>
+          </description>
+          <description>
+            <para>No data found for this property name.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>ERROR_INVALID_DATATYPE</b>
+            </para>
+          </description>
+          <description>
+            <para>Unable to set value for this property due to schema.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+  </member>
+  <member name="IContactProperties.SetString">
+    <summary>
+      <para>Sets the string value of a specified property to that of a specified null-terminated string.</para>
+    </summary>
+    <param name="pszPropertyName">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>Specifies the property to set.</para>
+    </param>
+    <param name="dwFlags">
+      <para>Type: <b>DWORD</b></para>
+      <para>CGD_DEFAULT can be used to create or overwrite value at <i>pszPropertyName</i>.</para>
+    </param>
+    <param name="pszValue">
+      <para>Type: <b>LPWSTR</b></para>
+      <para>Specifies null-terminated string to store.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns one of the following values:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Value is set at this property.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>ERROR_PATH_NOT_FOUND</b>
+            </para>
+          </description>
+          <description>
+            <para>Property name invalid for set.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>ERROR_INVALID_DATATYPE</b>
+            </para>
+          </description>
+          <description>
+            <para>Unable to set value for this property due to schema.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>To set a single-level property, set <i>pszPropertyName</i> to the property name.</para>
+      <para>To set a property from a multi-value property, set <i>pszPropertyName</i> to the form:
+toplevel/secondlevel[4]/thirdlevel.</para>
+    </remarks>
+  </member>
+  <member name="IContactProperties">
+    <summary>
+      <para>Do not use. Used to retrieve, set, create, and remove properties on an <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/icontact/nn-icontact-icontact">IContact</a>.
+Property names and extension mechanisms are described in icontactproperties.h.</para>
+    </summary>
+  </member>
+</doc>

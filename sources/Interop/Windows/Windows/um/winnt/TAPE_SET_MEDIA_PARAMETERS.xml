@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="TAPE_SET_MEDIA_PARAMETERS">
+    <summary>
+      <para>The
+<b>TAPE_SET_MEDIA_PARAMETERS</b> structure describes the tape in the tape drive. It is used by the <see cref="SetTapeParameters" /> function.</para>
+    </summary>
+    <seealso cref="SetTapeParameters" />
+  </member>
+  <member name="TAPE_SET_MEDIA_PARAMETERS.BlockSize">
+    <summary>
+      <para>Number of bytes per block. Maximum and minimum block sizes can be obtained by calling the
+<see cref="GetTapeParameters" /> function.</para>
+    </summary>
+  </member>
+</doc>

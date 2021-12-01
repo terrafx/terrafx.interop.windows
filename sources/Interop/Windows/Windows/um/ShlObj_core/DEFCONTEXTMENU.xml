@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DEFCONTEXTMENU">
+    <summary>
+      <para>Contains context menu information used by <see cref="SHCreateDefaultContextMenu" />.</para>
+    </summary>
+    <remarks>
+      <para>If the <b>aKeys</b> and <b>cKeys</b> members are valid and member <b>punkAssociationInfo</b> is also valid (not <b>NULL</b>), the system constructs the menu using the values of <b>aKeys</b> and <b>cKeys</b>, and ignores member <b>punkAssociationInfo</b> (<see cref="IQueryAssociations" />).</para>
+      <para>Members <b>apidl</b> and <b>cidl</b> can be used as parameters to method <see cref="IShellFolder.GetUIObjectOf" /> to retrieve <see cref="IDataObject" />.</para>
+    </remarks>
+  </member>
+  <member name="DEFCONTEXTMENU.hwnd">
+    <summary>
+      <para>Type: <b>HWND</b></para>
+      <para>A handle to the context menu. Set this member to the handle returned from <see cref="CreateMenu" />.</para>
+    </summary>
+  </member>
+  <member name="DEFCONTEXTMENU.pcmcb">
+    <summary>
+      <para>Type: <b><see cref="IContextMenuCB" />*</b></para>
+      <para>A pointer to the <see cref="IContextMenuCB" /> interface supported by the callback object. This value is optional and can be <b>NULL</b>.</para>
+    </summary>
+  </member>
+  <member name="DEFCONTEXTMENU.pidlFolder">
+    <summary>
+      <para>Type: <b>PCIDLIST_ABSOLUTE</b></para>
+      <para>The PIDL of the folder that contains the selected file object(s) or the folder of the context menu if no file objects are selected. This value is optional and can be <b>NULL</b>, in which case the PIDL is computed from the <b>psf</b> member.</para>
+    </summary>
+  </member>
+  <member name="DEFCONTEXTMENU.psf">
+    <summary>
+      <para>Type: <b><see cref="IShellFolder" />*</b></para>
+      <para>A pointer to the <see cref="IShellFolder" /> interface of the folder object that contains the selected file objects, or the folder that contains the context menu if no file objects are selected.</para>
+    </summary>
+  </member>
+  <member name="DEFCONTEXTMENU.cidl">
+    <summary>
+      <para>Type: <b>UINT</b></para>
+      <para>The count of items in member <b>apidl</b>.</para>
+    </summary>
+  </member>
+  <member name="DEFCONTEXTMENU.apidl">
+    <summary>
+      <para>Type: <b>PCUITEMID_CHILD_ARRAY</b></para>
+      <para>A pointer to a constant array of <see cref="ITEMIDLIST" /> structures. Each entry in the array describes a child item to which the context menu applies, for instance, a selected file the user wants to <b>Open</b>.</para>
+    </summary>
+  </member>
+  <member name="DEFCONTEXTMENU.punkAssociationInfo">
+    <summary>
+      <para>Type: <b><see cref="IUnknown" />*</b></para>
+      <para>A pointer to the <see cref="IQueryAssociations" /> interface on the object from which to load extensions. This parameter is optional and thus can be <b>NULL</b>. If this value is <b>NULL</b> and members <b>aKeys</b> and <b>cKeys</b> are also <b>NULL</b> (see Remarks),  <b>punkAssociationInfo</b> is computed from the <b>apidl</b> member and <b>cidl</b> via a request for <b>IQueryAssociations</b> through <see cref="IShellFolder.GetUIObjectOf" />.</para>
+      <para>If <see cref="IShellFolder.GetUIObjectOf" /> returns <b>E_NOTIMPL</b>, a default implementation is provided based on the <i>SFGAO_FOLDER</i> and <i>SFGAO_FILESYSTEM</i> attributes returned from <see cref="IShellFolder.GetAttributesOf" />.</para>
+    </summary>
+  </member>
+  <member name="DEFCONTEXTMENU.cKeys">
+    <summary>
+      <para>Type: <b>UINT</b></para>
+      <para>The count of items in member <b>aKeys</b>. This value can be zero. If the value is zero, the extensions are loaded based on the object that supports interface <see cref="IQueryAssociations" /> as specified by member <b>punkAssociationInfo</b>.  If the value is non-NULL, the extensions are loaded based only on member <b>aKeys</b> and not member <b>punkAssociationInfo</b>.</para>
+      <para>
+        <b>Note</b>  The maximum number of keys is 16. Callers must enforce this limit as the API does not. Failing to do so can result in memory corruption.</para>
+    </summary>
+  </member>
+  <member name="DEFCONTEXTMENU.aKeys">
+    <summary>
+      <para>Type: <b>const HKEY*</b></para>
+      <para>A pointer to an HKEY that specifies the registry key from which to load extensions. This parameter is optional and can be <b>NULL</b>. If the value is <b>NULL</b>, the extensions are loaded based on the object that supports interface <see cref="IQueryAssociations" /> as specified in <b>punkAssociationInfo</b>.</para>
+    </summary>
+  </member>
+</doc>

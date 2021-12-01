@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IInkCommitRequestHandler.xml' path='doc/member[@name="IInkCommitRequestHandler"]/*' />
 [Guid("FABEA3FC-B108-45B6-A9FC-8D08FA9F85CF")]
 [NativeTypeName("struct IInkCommitRequestHandler : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IInkCommitRequestHandler : IInkCommitRequestHandler
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IInkCommitRequestHandler : IInkCommitRequestHandler
         return ((delegate* unmanaged<IInkCommitRequestHandler*, Guid*, void**, int>)(lpVtbl[0]))((IInkCommitRequestHandler*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IInkCommitRequestHandler : IInkCommitRequestHandler
         return ((delegate* unmanaged<IInkCommitRequestHandler*, uint>)(lpVtbl[1]))((IInkCommitRequestHandler*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IInkCommitRequestHandler : IInkCommitRequestHandler
         return ((delegate* unmanaged<IInkCommitRequestHandler*, uint>)(lpVtbl[2]))((IInkCommitRequestHandler*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IInkCommitRequestHandler.xml' path='doc/member[@name="IInkCommitRequestHandler.OnCommitRequested"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT OnCommitRequested()

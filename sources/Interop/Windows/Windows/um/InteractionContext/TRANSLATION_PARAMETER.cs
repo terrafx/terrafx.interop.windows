@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TRANSLATION_PARAMETER.xml' path='doc/member[@name="TRANSLATION_PARAMETER"]/*' />
 public enum TRANSLATION_PARAMETER
 {
+    /// <include file='TRANSLATION_PARAMETER.xml' path='doc/member[@name="TRANSLATION_PARAMETER.TRANSLATION_PARAMETER_MIN_CONTACT_COUNT"]/*' />
     TRANSLATION_PARAMETER_MIN_CONTACT_COUNT = 0x00000000,
+
+    /// <include file='TRANSLATION_PARAMETER.xml' path='doc/member[@name="TRANSLATION_PARAMETER.TRANSLATION_PARAMETER_MAX_CONTACT_COUNT"]/*' />
     TRANSLATION_PARAMETER_MAX_CONTACT_COUNT = 0x00000001,
+
+    /// <include file='TRANSLATION_PARAMETER.xml' path='doc/member[@name="TRANSLATION_PARAMETER.TRANSLATION_PARAMETER_MAX"]/*' />
     TRANSLATION_PARAMETER_MAX = unchecked((int)(0xffffffff)),
 }

@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CERT_DH_PARAMETERS.xml' path='doc/member[@name="CERT_DH_PARAMETERS"]/*' />
 public partial struct CERT_DH_PARAMETERS
 {
+    /// <include file='CERT_DH_PARAMETERS.xml' path='doc/member[@name="CERT_DH_PARAMETERS.p"]/*' />
     [NativeTypeName("CRYPT_UINT_BLOB")]
     public CRYPT_DATA_BLOB p;
 
+    /// <include file='CERT_DH_PARAMETERS.xml' path='doc/member[@name="CERT_DH_PARAMETERS.g"]/*' />
     [NativeTypeName("CRYPT_UINT_BLOB")]
     public CRYPT_DATA_BLOB g;
 }

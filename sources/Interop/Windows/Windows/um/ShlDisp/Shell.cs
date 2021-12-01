@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='Shell.xml' path='doc/member[@name="Shell"]/*' />
 [Guid("13709620-C279-11CE-A49E-444553540000")]
 public partial struct Shell
 {

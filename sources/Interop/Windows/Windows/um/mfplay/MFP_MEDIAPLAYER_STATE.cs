@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MFP_MEDIAPLAYER_STATE.xml' path='doc/member[@name="MFP_MEDIAPLAYER_STATE"]/*' />
 public enum MFP_MEDIAPLAYER_STATE
 {
+    /// <include file='MFP_MEDIAPLAYER_STATE.xml' path='doc/member[@name="MFP_MEDIAPLAYER_STATE.MFP_MEDIAPLAYER_STATE_EMPTY"]/*' />
     MFP_MEDIAPLAYER_STATE_EMPTY = 0,
+
+    /// <include file='MFP_MEDIAPLAYER_STATE.xml' path='doc/member[@name="MFP_MEDIAPLAYER_STATE.MFP_MEDIAPLAYER_STATE_STOPPED"]/*' />
     MFP_MEDIAPLAYER_STATE_STOPPED = 0x1,
+
+    /// <include file='MFP_MEDIAPLAYER_STATE.xml' path='doc/member[@name="MFP_MEDIAPLAYER_STATE.MFP_MEDIAPLAYER_STATE_PLAYING"]/*' />
     MFP_MEDIAPLAYER_STATE_PLAYING = 0x2,
+
+    /// <include file='MFP_MEDIAPLAYER_STATE.xml' path='doc/member[@name="MFP_MEDIAPLAYER_STATE.MFP_MEDIAPLAYER_STATE_PAUSED"]/*' />
     MFP_MEDIAPLAYER_STATE_PAUSED = 0x3,
+
+    /// <include file='MFP_MEDIAPLAYER_STATE.xml' path='doc/member[@name="MFP_MEDIAPLAYER_STATE.MFP_MEDIAPLAYER_STATE_SHUTDOWN"]/*' />
     MFP_MEDIAPLAYER_STATE_SHUTDOWN = 0x4,
 }

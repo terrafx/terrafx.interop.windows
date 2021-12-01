@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_DNS_ENDPOINT_IDENTITY">
+    <summary>
+      <para>Type for specifying an endpoint identity represented by a DNS name.</para>
+    </summary>
+  </member>
+  <member name="WS_DNS_ENDPOINT_IDENTITY.identity">
+    <summary>
+      <para>The base type from which this type and all other endpoint identity types derive.</para>
+    </summary>
+  </member>
+  <member name="WS_DNS_ENDPOINT_IDENTITY.dns">
+    <summary>
+      <para>The DNS name of the endpoint that is represented by this endpoint identity.
+The acceptable forms of the name are as defined by <a href="http://tools.ietf.org/html/rfc1035">RFC 1035</a>.
+In particular, they include both a simple machine name as well as a fully qualified domain name (FQDN).</para>
+    </summary>
+  </member>
+</doc>

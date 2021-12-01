@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFTimecodeTranslate.xml' path='doc/member[@name="IMFTimecodeTranslate"]/*' />
 [Guid("AB9D8661-F7E8-4EF4-9861-89F334F94E74")]
 [NativeTypeName("struct IMFTimecodeTranslate : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMFTimecodeTranslate : IMFTimecodeTranslate.Interfa
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMFTimecodeTranslate : IMFTimecodeTranslate.Interfa
         return ((delegate* unmanaged<IMFTimecodeTranslate*, Guid*, void**, int>)(lpVtbl[0]))((IMFTimecodeTranslate*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMFTimecodeTranslate : IMFTimecodeTranslate.Interfa
         return ((delegate* unmanaged<IMFTimecodeTranslate*, uint>)(lpVtbl[1]))((IMFTimecodeTranslate*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMFTimecodeTranslate : IMFTimecodeTranslate.Interfa
         return ((delegate* unmanaged<IMFTimecodeTranslate*, uint>)(lpVtbl[2]))((IMFTimecodeTranslate*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFTimecodeTranslate.xml' path='doc/member[@name="IMFTimecodeTranslate.BeginConvertTimecodeToHNS"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT BeginConvertTimecodeToHNS([NativeTypeName("const PROPVARIANT *")] PROPVARIANT* pPropVarTimecode, IMFAsyncCallback* pCallback, IUnknown* punkState)
@@ -46,6 +51,7 @@ public unsafe partial struct IMFTimecodeTranslate : IMFTimecodeTranslate.Interfa
         return ((delegate* unmanaged<IMFTimecodeTranslate*, PROPVARIANT*, IMFAsyncCallback*, IUnknown*, int>)(lpVtbl[3]))((IMFTimecodeTranslate*)Unsafe.AsPointer(ref this), pPropVarTimecode, pCallback, punkState);
     }
 
+    /// <include file='IMFTimecodeTranslate.xml' path='doc/member[@name="IMFTimecodeTranslate.EndConvertTimecodeToHNS"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT EndConvertTimecodeToHNS(IMFAsyncResult* pResult, [NativeTypeName("MFTIME *")] long* phnsTime)
@@ -53,6 +59,7 @@ public unsafe partial struct IMFTimecodeTranslate : IMFTimecodeTranslate.Interfa
         return ((delegate* unmanaged<IMFTimecodeTranslate*, IMFAsyncResult*, long*, int>)(lpVtbl[4]))((IMFTimecodeTranslate*)Unsafe.AsPointer(ref this), pResult, phnsTime);
     }
 
+    /// <include file='IMFTimecodeTranslate.xml' path='doc/member[@name="IMFTimecodeTranslate.BeginConvertHNSToTimecode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT BeginConvertHNSToTimecode([NativeTypeName("MFTIME")] long hnsTime, IMFAsyncCallback* pCallback, IUnknown* punkState)
@@ -60,6 +67,7 @@ public unsafe partial struct IMFTimecodeTranslate : IMFTimecodeTranslate.Interfa
         return ((delegate* unmanaged<IMFTimecodeTranslate*, long, IMFAsyncCallback*, IUnknown*, int>)(lpVtbl[5]))((IMFTimecodeTranslate*)Unsafe.AsPointer(ref this), hnsTime, pCallback, punkState);
     }
 
+    /// <include file='IMFTimecodeTranslate.xml' path='doc/member[@name="IMFTimecodeTranslate.EndConvertHNSToTimecode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT EndConvertHNSToTimecode(IMFAsyncResult* pResult, PROPVARIANT* pPropVarTimecode)

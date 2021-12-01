@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='UASFLAGS.xml' path='doc/member[@name="UASFLAGS"]/*' />
 public enum UASFLAGS
 {
+    /// <include file='UASFLAGS.xml' path='doc/member[@name="UASFLAGS.UAS_NORMAL"]/*' />
     UAS_NORMAL = 0,
+
+    /// <include file='UASFLAGS.xml' path='doc/member[@name="UASFLAGS.UAS_BLOCKED"]/*' />
     UAS_BLOCKED = 0x1,
+
+    /// <include file='UASFLAGS.xml' path='doc/member[@name="UASFLAGS.UAS_NOPARENTENABLE"]/*' />
     UAS_NOPARENTENABLE = 0x2,
+
+    /// <include file='UASFLAGS.xml' path='doc/member[@name="UASFLAGS.UAS_MASK"]/*' />
     UAS_MASK = 0x3,
 }

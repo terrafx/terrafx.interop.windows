@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='AM_DvdKaraokeData.xml' path='doc/member[@name="AM_DvdKaraokeData"]/*' />
 public partial struct AM_DvdKaraokeData
 {
+    /// <include file='AM_DvdKaraokeData.xml' path='doc/member[@name="AM_DvdKaraokeData.dwDownmix"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwDownmix;
 
+    /// <include file='AM_DvdKaraokeData.xml' path='doc/member[@name="AM_DvdKaraokeData.dwSpeakerAssignment"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwSpeakerAssignment;
 }

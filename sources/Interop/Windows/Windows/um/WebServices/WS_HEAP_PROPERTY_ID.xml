@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_HEAP_PROPERTY_ID">
+    <summary>
+      <para>Each heap property is identified by an ID and has an associated value.</para>
+    </summary>
+  </member>
+  <member name="WS_HEAP_PROPERTY_ID.WS_HEAP_PROPERTY_MAX_SIZE">
+    <summary>
+      <para>Used with <see cref="WsGetHeapProperty" />.  Returns
+the total number of bytes that can be allocated from the heap.  The total
+number of bytes is defined as sum of the sizes passed in all the calls to
+<see cref="WsAlloc" /> since the heap was created / reset.</para>
+    </summary>
+  </member>
+  <member name="WS_HEAP_PROPERTY_ID.WS_HEAP_PROPERTY_TRIM_SIZE">
+    <summary>
+      <para>Used with <see cref="WsGetHeapProperty" />.
+Returns the maximum number of bytes of memory that the heap will
+retain after a call to <see cref="WsResetHeap" /> call.  This should
+be treated an approximate value due to heap overhead.  If the
+trim size is larger than the max size, then the size of the
+heap will not be trimmed.</para>
+    </summary>
+  </member>
+  <member name="WS_HEAP_PROPERTY_ID.WS_HEAP_PROPERTY_REQUESTED_SIZE">
+    <summary>
+      <para>Used with <see cref="WsGetHeapProperty" />.  Returns the current
+total number of bytes requested from the heap since the heap was
+created/reset.</para>
+    </summary>
+  </member>
+  <member name="WS_HEAP_PROPERTY_ID.WS_HEAP_PROPERTY_ACTUAL_SIZE">
+    <summary>
+      <para>Used with <see cref="WsGetHeapProperty" />.  Returns the current
+total number of bytes that the WS_HEAP has allocated from the
+operating system for purposes of providing allocations.</para>
+    </summary>
+  </member>
+</doc>

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IDMOVideoOutputOptimizations.xml' path='doc/member[@name="IDMOVideoOutputOptimizations"]/*' />
 [Guid("BE8F4F4E-5B16-4D29-B350-7F6B5D9298AC")]
 [NativeTypeName("struct IDMOVideoOutputOptimizations : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IDMOVideoOutputOptimizations : IDMOVideoOutputOptim
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IDMOVideoOutputOptimizations : IDMOVideoOutputOptim
         return ((delegate* unmanaged<IDMOVideoOutputOptimizations*, Guid*, void**, int>)(lpVtbl[0]))((IDMOVideoOutputOptimizations*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IDMOVideoOutputOptimizations : IDMOVideoOutputOptim
         return ((delegate* unmanaged<IDMOVideoOutputOptimizations*, uint>)(lpVtbl[1]))((IDMOVideoOutputOptimizations*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IDMOVideoOutputOptimizations : IDMOVideoOutputOptim
         return ((delegate* unmanaged<IDMOVideoOutputOptimizations*, uint>)(lpVtbl[2]))((IDMOVideoOutputOptimizations*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDMOVideoOutputOptimizations.xml' path='doc/member[@name="IDMOVideoOutputOptimizations.QueryOperationModePreferences"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT QueryOperationModePreferences([NativeTypeName("ULONG")] uint ulOutputStreamIndex, [NativeTypeName("DWORD *")] uint* pdwRequestedCapabilities)
@@ -46,6 +51,7 @@ public unsafe partial struct IDMOVideoOutputOptimizations : IDMOVideoOutputOptim
         return ((delegate* unmanaged<IDMOVideoOutputOptimizations*, uint, uint*, int>)(lpVtbl[3]))((IDMOVideoOutputOptimizations*)Unsafe.AsPointer(ref this), ulOutputStreamIndex, pdwRequestedCapabilities);
     }
 
+    /// <include file='IDMOVideoOutputOptimizations.xml' path='doc/member[@name="IDMOVideoOutputOptimizations.SetOperationMode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetOperationMode([NativeTypeName("ULONG")] uint ulOutputStreamIndex, [NativeTypeName("DWORD")] uint dwEnabledFeatures)
@@ -53,6 +59,7 @@ public unsafe partial struct IDMOVideoOutputOptimizations : IDMOVideoOutputOptim
         return ((delegate* unmanaged<IDMOVideoOutputOptimizations*, uint, uint, int>)(lpVtbl[4]))((IDMOVideoOutputOptimizations*)Unsafe.AsPointer(ref this), ulOutputStreamIndex, dwEnabledFeatures);
     }
 
+    /// <include file='IDMOVideoOutputOptimizations.xml' path='doc/member[@name="IDMOVideoOutputOptimizations.GetCurrentOperationMode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetCurrentOperationMode([NativeTypeName("ULONG")] uint ulOutputStreamIndex, [NativeTypeName("DWORD *")] uint* pdwEnabledFeatures)
@@ -60,6 +67,7 @@ public unsafe partial struct IDMOVideoOutputOptimizations : IDMOVideoOutputOptim
         return ((delegate* unmanaged<IDMOVideoOutputOptimizations*, uint, uint*, int>)(lpVtbl[5]))((IDMOVideoOutputOptimizations*)Unsafe.AsPointer(ref this), ulOutputStreamIndex, pdwEnabledFeatures);
     }
 
+    /// <include file='IDMOVideoOutputOptimizations.xml' path='doc/member[@name="IDMOVideoOutputOptimizations.GetCurrentSampleRequirements"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetCurrentSampleRequirements([NativeTypeName("ULONG")] uint ulOutputStreamIndex, [NativeTypeName("DWORD *")] uint* pdwRequestedFeatures)

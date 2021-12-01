@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ISpPhraseAlt.xml' path='doc/member[@name="ISpPhraseAlt"]/*' />
 [Guid("8FCEBC98-4E49-4067-9C6C-D86A0E092E3D")]
 [NativeTypeName("struct ISpPhraseAlt : ISpPhrase")]
 [NativeInheritance("ISpPhrase")]
@@ -16,6 +17,7 @@ public unsafe partial struct ISpPhraseAlt : ISpPhraseAlt.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ISpPhraseAlt : ISpPhraseAlt.Interface
         return ((delegate* unmanaged<ISpPhraseAlt*, Guid*, void**, int>)(lpVtbl[0]))((ISpPhraseAlt*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ISpPhraseAlt : ISpPhraseAlt.Interface
         return ((delegate* unmanaged<ISpPhraseAlt*, uint>)(lpVtbl[1]))((ISpPhraseAlt*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ISpPhraseAlt : ISpPhraseAlt.Interface
         return ((delegate* unmanaged<ISpPhraseAlt*, uint>)(lpVtbl[2]))((ISpPhraseAlt*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ISpPhrase.GetPhrase" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetPhrase(SPPHRASE** ppCoMemPhrase)
@@ -46,6 +51,7 @@ public unsafe partial struct ISpPhraseAlt : ISpPhraseAlt.Interface
         return ((delegate* unmanaged<ISpPhraseAlt*, SPPHRASE**, int>)(lpVtbl[3]))((ISpPhraseAlt*)Unsafe.AsPointer(ref this), ppCoMemPhrase);
     }
 
+    /// <inheritdoc cref="ISpPhrase.GetSerializedPhrase" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetSerializedPhrase(SPSERIALIZEDPHRASE** ppCoMemPhrase)
@@ -53,6 +59,7 @@ public unsafe partial struct ISpPhraseAlt : ISpPhraseAlt.Interface
         return ((delegate* unmanaged<ISpPhraseAlt*, SPSERIALIZEDPHRASE**, int>)(lpVtbl[4]))((ISpPhraseAlt*)Unsafe.AsPointer(ref this), ppCoMemPhrase);
     }
 
+    /// <inheritdoc cref="ISpPhrase.GetText" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetText([NativeTypeName("ULONG")] uint ulStart, [NativeTypeName("ULONG")] uint ulCount, BOOL fUseTextReplacements, [NativeTypeName("LPWSTR *")] ushort** ppszCoMemText, byte* pbDisplayAttributes)
@@ -60,6 +67,7 @@ public unsafe partial struct ISpPhraseAlt : ISpPhraseAlt.Interface
         return ((delegate* unmanaged<ISpPhraseAlt*, uint, uint, BOOL, ushort**, byte*, int>)(lpVtbl[5]))((ISpPhraseAlt*)Unsafe.AsPointer(ref this), ulStart, ulCount, fUseTextReplacements, ppszCoMemText, pbDisplayAttributes);
     }
 
+    /// <inheritdoc cref="ISpPhrase.Discard" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Discard([NativeTypeName("DWORD")] uint dwValueTypes)
@@ -67,6 +75,7 @@ public unsafe partial struct ISpPhraseAlt : ISpPhraseAlt.Interface
         return ((delegate* unmanaged<ISpPhraseAlt*, uint, int>)(lpVtbl[6]))((ISpPhraseAlt*)Unsafe.AsPointer(ref this), dwValueTypes);
     }
 
+    /// <include file='ISpPhraseAlt.xml' path='doc/member[@name="ISpPhraseAlt.GetAltInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetAltInfo(ISpPhrase** ppParent, [NativeTypeName("ULONG *")] uint* pulStartElementInParent, [NativeTypeName("ULONG *")] uint* pcElementsInParent, [NativeTypeName("ULONG *")] uint* pcElementsInAlt)
@@ -74,6 +83,7 @@ public unsafe partial struct ISpPhraseAlt : ISpPhraseAlt.Interface
         return ((delegate* unmanaged<ISpPhraseAlt*, ISpPhrase**, uint*, uint*, uint*, int>)(lpVtbl[7]))((ISpPhraseAlt*)Unsafe.AsPointer(ref this), ppParent, pulStartElementInParent, pcElementsInParent, pcElementsInAlt);
     }
 
+    /// <include file='ISpPhraseAlt.xml' path='doc/member[@name="ISpPhraseAlt.Commit"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT Commit()

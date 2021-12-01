@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="RPCOLEMESSAGE">
+    <summary>
+      <para>Contains marshaling invocation arguments and return values between COM components.</para>
+    </summary>
+    <seealso cref="IRpcChannelBuffer" />
+    <seealso cref="IRpcStubBuffer" />
+  </member>
+  <member name="RPCOLEMESSAGE.reserved1">
+    <summary>
+      <para>This member is reserved.</para>
+    </summary>
+  </member>
+  <member name="RPCOLEMESSAGE.dataRepresentation">
+    <summary>
+      <para>The data representation with which the data was marshaled.</para>
+    </summary>
+  </member>
+  <member name="RPCOLEMESSAGE.Buffer">
+    <summary>
+      <para>A buffer for marshaled data.</para>
+    </summary>
+  </member>
+  <member name="RPCOLEMESSAGE.cbBuffer">
+    <summary>
+      <para>The size of the buffer, in bytes.</para>
+    </summary>
+  </member>
+  <member name="RPCOLEMESSAGE.iMethod">
+    <summary>
+      <para>The number of the method to be invoked.</para>
+    </summary>
+  </member>
+  <member name="RPCOLEMESSAGE.reserved2">
+    <summary>
+      <para>This member is reserved.</para>
+    </summary>
+  </member>
+  <member name="RPCOLEMESSAGE.rpcFlags">
+    <summary>
+      <para>Status flags for the RPC connection.</para>
+    </summary>
+  </member>
+</doc>

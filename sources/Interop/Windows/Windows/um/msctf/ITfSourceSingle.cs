@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITfSourceSingle.xml' path='doc/member[@name="ITfSourceSingle"]/*' />
 [Guid("73131F9C-56A9-49DD-B0EE-D046633F7528")]
 [NativeTypeName("struct ITfSourceSingle : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITfSourceSingle : ITfSourceSingle.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITfSourceSingle : ITfSourceSingle.Interface
         return ((delegate* unmanaged<ITfSourceSingle*, Guid*, void**, int>)(lpVtbl[0]))((ITfSourceSingle*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITfSourceSingle : ITfSourceSingle.Interface
         return ((delegate* unmanaged<ITfSourceSingle*, uint>)(lpVtbl[1]))((ITfSourceSingle*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITfSourceSingle : ITfSourceSingle.Interface
         return ((delegate* unmanaged<ITfSourceSingle*, uint>)(lpVtbl[2]))((ITfSourceSingle*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITfSourceSingle.xml' path='doc/member[@name="ITfSourceSingle.AdviseSingleSink"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT AdviseSingleSink([NativeTypeName("TfClientId")] uint tid, [NativeTypeName("const IID &")] Guid* riid, IUnknown* punk)
@@ -46,6 +51,7 @@ public unsafe partial struct ITfSourceSingle : ITfSourceSingle.Interface
         return ((delegate* unmanaged<ITfSourceSingle*, uint, Guid*, IUnknown*, int>)(lpVtbl[3]))((ITfSourceSingle*)Unsafe.AsPointer(ref this), tid, riid, punk);
     }
 
+    /// <include file='ITfSourceSingle.xml' path='doc/member[@name="ITfSourceSingle.UnadviseSingleSink"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT UnadviseSingleSink([NativeTypeName("TfClientId")] uint tid, [NativeTypeName("const IID &")] Guid* riid)

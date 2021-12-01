@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ICredentialProviderEvents.xml' path='doc/member[@name="ICredentialProviderEvents"]/*' />
 [Guid("34201E5A-A787-41A3-A5A4-BD6DCF2A854E")]
 [NativeTypeName("struct ICredentialProviderEvents : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ICredentialProviderEvents : ICredentialProviderEven
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ICredentialProviderEvents : ICredentialProviderEven
         return ((delegate* unmanaged<ICredentialProviderEvents*, Guid*, void**, int>)(lpVtbl[0]))((ICredentialProviderEvents*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ICredentialProviderEvents : ICredentialProviderEven
         return ((delegate* unmanaged<ICredentialProviderEvents*, uint>)(lpVtbl[1]))((ICredentialProviderEvents*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ICredentialProviderEvents : ICredentialProviderEven
         return ((delegate* unmanaged<ICredentialProviderEvents*, uint>)(lpVtbl[2]))((ICredentialProviderEvents*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ICredentialProviderEvents.xml' path='doc/member[@name="ICredentialProviderEvents.CredentialsChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT CredentialsChanged([NativeTypeName("UINT_PTR")] nuint upAdviseContext)

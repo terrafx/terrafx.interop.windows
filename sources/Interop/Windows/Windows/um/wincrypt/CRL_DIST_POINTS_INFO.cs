@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CRL_DIST_POINTS_INFO.xml' path='doc/member[@name="CRL_DIST_POINTS_INFO"]/*' />
 public unsafe partial struct CRL_DIST_POINTS_INFO
 {
+    /// <include file='CRL_DIST_POINTS_INFO.xml' path='doc/member[@name="CRL_DIST_POINTS_INFO.cDistPoint"]/*' />
     [NativeTypeName("DWORD")]
     public uint cDistPoint;
 
+    /// <include file='CRL_DIST_POINTS_INFO.xml' path='doc/member[@name="CRL_DIST_POINTS_INFO.rgDistPoint"]/*' />
     [NativeTypeName("PCRL_DIST_POINT")]
     public CRL_DIST_POINT* rgDistPoint;
 }

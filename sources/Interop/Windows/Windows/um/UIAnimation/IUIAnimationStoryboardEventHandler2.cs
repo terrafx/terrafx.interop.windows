@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IUIAnimationStoryboardEventHandler2.xml' path='doc/member[@name="IUIAnimationStoryboardEventHandler2"]/*' />
 [Guid("BAC5F55A-BA7C-414C-B599-FBF850F553C6")]
 [NativeTypeName("struct IUIAnimationStoryboardEventHandler2 : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IUIAnimationStoryboardEventHandler2 : IUIAnimationS
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IUIAnimationStoryboardEventHandler2 : IUIAnimationS
         return ((delegate* unmanaged<IUIAnimationStoryboardEventHandler2*, Guid*, void**, int>)(lpVtbl[0]))((IUIAnimationStoryboardEventHandler2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IUIAnimationStoryboardEventHandler2 : IUIAnimationS
         return ((delegate* unmanaged<IUIAnimationStoryboardEventHandler2*, uint>)(lpVtbl[1]))((IUIAnimationStoryboardEventHandler2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IUIAnimationStoryboardEventHandler2 : IUIAnimationS
         return ((delegate* unmanaged<IUIAnimationStoryboardEventHandler2*, uint>)(lpVtbl[2]))((IUIAnimationStoryboardEventHandler2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IUIAnimationStoryboardEventHandler2.xml' path='doc/member[@name="IUIAnimationStoryboardEventHandler2.OnStoryboardStatusChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT OnStoryboardStatusChanged(IUIAnimationStoryboard2* storyboard, UI_ANIMATION_STORYBOARD_STATUS newStatus, UI_ANIMATION_STORYBOARD_STATUS previousStatus)
@@ -46,6 +51,7 @@ public unsafe partial struct IUIAnimationStoryboardEventHandler2 : IUIAnimationS
         return ((delegate* unmanaged<IUIAnimationStoryboardEventHandler2*, IUIAnimationStoryboard2*, UI_ANIMATION_STORYBOARD_STATUS, UI_ANIMATION_STORYBOARD_STATUS, int>)(lpVtbl[3]))((IUIAnimationStoryboardEventHandler2*)Unsafe.AsPointer(ref this), storyboard, newStatus, previousStatus);
     }
 
+    /// <include file='IUIAnimationStoryboardEventHandler2.xml' path='doc/member[@name="IUIAnimationStoryboardEventHandler2.OnStoryboardUpdated"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT OnStoryboardUpdated(IUIAnimationStoryboard2* storyboard)

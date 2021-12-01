@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='RPCOPT_SERVER_LOCALITY_VALUES.xml' path='doc/member[@name="RPCOPT_SERVER_LOCALITY_VALUES"]/*' />
 public enum RPCOPT_SERVER_LOCALITY_VALUES
 {
+    /// <include file='RPCOPT_SERVER_LOCALITY_VALUES.xml' path='doc/member[@name="RPCOPT_SERVER_LOCALITY_VALUES.SERVER_LOCALITY_PROCESS_LOCAL"]/*' />
     SERVER_LOCALITY_PROCESS_LOCAL = 0,
+
+    /// <include file='RPCOPT_SERVER_LOCALITY_VALUES.xml' path='doc/member[@name="RPCOPT_SERVER_LOCALITY_VALUES.SERVER_LOCALITY_MACHINE_LOCAL"]/*' />
     SERVER_LOCALITY_MACHINE_LOCAL = 1,
+
+    /// <include file='RPCOPT_SERVER_LOCALITY_VALUES.xml' path='doc/member[@name="RPCOPT_SERVER_LOCALITY_VALUES.SERVER_LOCALITY_REMOTE"]/*' />
     SERVER_LOCALITY_REMOTE = 2,
 }

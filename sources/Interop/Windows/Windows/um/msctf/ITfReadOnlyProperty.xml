@@ -1,0 +1,390 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ITfReadOnlyProperty.EnumRanges">
+    <summary>
+      <para>Obtains an enumeration of ranges that contain unique values of the property within the given range.</para>
+    </summary>
+    <param name="ec">
+      <para>Contains an edit cookie that identifies the edit context. This is obtained from <see cref="ITfDocumentMgr.CreateContext" /> or <see cref="ITfEditSession.DoEditSession" />.</para>
+    </param>
+    <param name="ppEnum">
+      <para>Pointer to an <see cref="IEnumTfRanges" /> interface pointer that receives the enumerator object. The caller must release this object when it is no longer required.</para>
+    </param>
+    <param name="pTargetRange">
+      <para>Pointer to an <see cref="ITfRange" /> interface that specifies the range to scan for unique property values. This parameter is optional and can be <b>NULL</b>. For more information, see the Remarks section.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>One or more parameters are invalid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>A memory allocation failure occurred.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>An unspecified error occurred.</para>
+            <para>
+              <b>Note</b>  If an application does not implement <see cref="ITextStoreACP.FindNextAttrTransition" />, ITfReadOnlyProperty.EnumRanges fails with E_FAIL.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>TF_E_NOLOCK</b>
+            </para>
+          </description>
+          <description>
+            <para>The edit context identified by <i>ec</i> does not have a read-only or read/write lock.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>
+        <b>Note:</b> If an application does not implement <see cref="ITextStoreACP.FindNextAttrTransition" />, <b>ITfReadOnlyProperty.EnumRanges</b> fails with E_FAIL.</para>
+      <para>The enumerator obtained by this method will contain a range for each unique value, including empty values, of the specified property. For example, a hypothetical color property can be applied to the following marked up text:</para>
+      <code>
+COLOR:      RR      GGGGGGGG
+TEXT:  this is some colored text
+
+</code>
+      <para>When <b>ITfReadOnlyProperty.EnumRanges</b> is called with <i>pTargetRange</i> set to this range, the enumerator will contain five ranges.</para>
+      <list type="table">
+        <listheader>
+          <description>Range Index</description>
+          <description>Color Property Value</description>
+          <description>Range Text</description>
+        </listheader>
+        <item>
+          <description>0</description>
+          <description>&lt;empty&gt;</description>
+          <description>"this "</description>
+        </item>
+        <item>
+          <description>1</description>
+          <description>R</description>
+          <description>"is"</description>
+        </item>
+        <item>
+          <description>2</description>
+          <description>&lt;empty&gt;</description>
+          <description>" some "</description>
+        </item>
+        <item>
+          <description>3</description>
+          <description>G</description>
+          <description>"colored "</description>
+        </item>
+        <item>
+          <description>4</description>
+          <description>&lt;empty&gt;</description>
+          <description>"text"</description>
+        </item>
+      </list>
+      <para>If <i>pTargetRange</i> is <b>NULL</b>, then the enumerator will begin and end with the first and last range that contains a non-empty property value in the context. Specifying <b>NULL</b> for <i>pTargetRange</i> in the above example would result in an enumerator with three ranges.</para>
+      <list type="table">
+        <listheader>
+          <description>Range Index</description>
+          <description>Color Property Value</description>
+          <description>Text Within Range</description>
+        </listheader>
+        <item>
+          <description>0</description>
+          <description>R</description>
+          <description>"is"</description>
+        </item>
+        <item>
+          <description>1</description>
+          <description>&lt;empty&gt;</description>
+          <description>" some "</description>
+        </item>
+        <item>
+          <description>2</description>
+          <description>G</description>
+          <description>"colored "</description>
+        </item>
+      </list>
+      <para>The enumerated ranges will begin and end with the start and end anchors of <i>pTargetRange</i>, even if either anchor is positioned in the middle of a property.</para>
+    </remarks>
+    <seealso cref="IEnumTfRanges" />
+    <seealso cref="ITfDocumentMgr.CreateContext " />
+    <seealso cref="ITfEditSession.DoEditSession " />
+    <seealso cref="ITfRange" />
+    <seealso cref="ITfReadOnlyProperty" />
+  </member>
+  <member name="ITfReadOnlyProperty.GetContext">
+    <summary>
+      <para>Obtains the context object for the property.</para>
+    </summary>
+    <param name="ppContext">
+      <para>Pointer to an <see cref="ITfContext" /> interface pointer that receives the context object. The caller must release this object when it is no longer required.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <i>ppContext</i> is invalid.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>An unspecified error occurred.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="ITfContext " />
+    <seealso cref="ITfReadOnlyProperty" />
+  </member>
+  <member name="ITfReadOnlyProperty.GetType">
+    <summary>
+      <para>Obtains the property identifier.</para>
+    </summary>
+    <param name="pguid">
+      <para>Pointer to a <b>GUID</b> value that receives the property type identifier. This is the value that the property provider passed to <see cref="ITfCategoryMgr.RegisterCategory" /> when the property was registered. This can be one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>GUID_TFCAT_PROPSTYLE_STATIC</b>
+          </description>
+          <description>
+            <para>The property is a static property.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>GUID_TFCAT_PROPSTYLE_STATICCOMPACT</b>
+          </description>
+          <description>
+            <para>The property is a static-compact property.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>GUID_TFCAT_PROPSTYLE_CUSTOM</b>
+          </description>
+          <description>
+            <para>The property is a custom property.</para>
+          </description>
+        </item>
+      </list>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <i>pguid</i> is invalid.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>An unspecified error occurred.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="ITfCategoryMgr.RegisterCategory " />
+    <seealso cref="ITfReadOnlyProperty" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/properties">Properties</seealso>
+  </member>
+  <member name="ITfReadOnlyProperty.GetValue">
+    <summary>
+      <para>Obtains the value of the property for a range of text.</para>
+    </summary>
+    <param name="ec">
+      <para>Contains an edit cookie that identifies the edit context. This is obtained from <see cref="ITfDocumentMgr.CreateContext" /> or <see cref="ITfEditSession.DoEditSession" />.</para>
+    </param>
+    <param name="pRange">
+      <para>Pointer to an <see cref="ITfRange" /> interface that specifies the range to obtain the property for.</para>
+    </param>
+    <param name="pvarValue">
+      <para>Pointer to a <b>VARIANT</b> value that receives the property value. The data type and contents of this value is defined by the property owner and must be recognized by the caller in order to use this value. The caller must release this data, when it is no longer required, by passing this value to the <b>VariantClear</b> API.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>The range is not covered by the property or the range contains more than one property value. <i>pvarValue</i> receives a VT_EMPTY value.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>One or more parameters are invalid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>An unspecified error occurred.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>TF_E_NOLOCK</b>
+            </para>
+          </description>
+          <description>
+            <para>The edit context identified by <i>ec</i> does not have a read-only or read/write lock.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>If the property has no value over <i>pRange</i>, <i>pRange</i> contains more than one value for the property or the property does not completely cover <i>pRange</i>, <i>pvarValue</i> receives a VT_EMPTY value and the method returns S_FALSE.</para>
+      <code>
+COLOR:      RR      GGGGGGGG
+TEXT:  this is some colored text
+    range--&gt;||&lt;-
+
+</code>
+      <code>
+COLOR:      RR      GGGGGGGG
+TEXT:  this is some colored text
+    range--&gt;|    |&lt;-
+
+</code>
+      <code>
+COLOR:      RR      GGGGGGGG
+TEXT:  this is some colored text
+    range--&gt;|             |&lt;-
+
+</code>
+    </remarks>
+    <seealso cref="ITfDocumentMgr.CreateContext " />
+    <seealso cref="ITfEditSession.DoEditSession " />
+    <seealso cref="ITfRange" />
+    <seealso cref="ITfReadOnlyProperty" />
+  </member>
+  <member name="ITfReadOnlyProperty">
+    <summary>
+      <para>The <b>ITfReadOnlyProperty</b> interface is implemented by the TSF manager and used by an application or text service to obtain property data.</para>
+    </summary>
+    <remarks>
+      <para>An instance of this interface is obtained by using <see cref="ITfContext.GetAppProperty" /> or <see cref="ITfContext.TrackProperties" />.</para>
+    </remarks>
+    <seealso cref="ITfContext.GetAppProperty " />
+    <seealso cref="ITfContext.TrackProperties " />
+    <seealso cref="IUnknown" />
+  </member>
+</doc>

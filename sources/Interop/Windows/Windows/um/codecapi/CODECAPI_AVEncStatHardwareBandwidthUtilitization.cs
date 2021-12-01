@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVEncStatHardwareBandwidthUtilitization.xml' path='doc/member[@name="CODECAPI_AVEncStatHardwareBandwidthUtilitization"]/*' />
 [Guid("0124BA9B-DC41-4826-B45F-18AC01B3D5A8")]
 public partial struct CODECAPI_AVEncStatHardwareBandwidthUtilitization
 {

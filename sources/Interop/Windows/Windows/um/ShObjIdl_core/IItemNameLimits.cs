@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IItemNameLimits.xml' path='doc/member[@name="IItemNameLimits"]/*' />
 [Guid("1DF0D7F1-B267-4D28-8B10-12E23202A5C4")]
 [NativeTypeName("struct IItemNameLimits : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IItemNameLimits : IItemNameLimits.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IItemNameLimits : IItemNameLimits.Interface
         return ((delegate* unmanaged<IItemNameLimits*, Guid*, void**, int>)(lpVtbl[0]))((IItemNameLimits*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IItemNameLimits : IItemNameLimits.Interface
         return ((delegate* unmanaged<IItemNameLimits*, uint>)(lpVtbl[1]))((IItemNameLimits*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IItemNameLimits : IItemNameLimits.Interface
         return ((delegate* unmanaged<IItemNameLimits*, uint>)(lpVtbl[2]))((IItemNameLimits*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IItemNameLimits.xml' path='doc/member[@name="IItemNameLimits.GetValidCharacters"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetValidCharacters([NativeTypeName("LPWSTR *")] ushort** ppwszValidChars, [NativeTypeName("LPWSTR *")] ushort** ppwszInvalidChars)
@@ -46,6 +51,7 @@ public unsafe partial struct IItemNameLimits : IItemNameLimits.Interface
         return ((delegate* unmanaged<IItemNameLimits*, ushort**, ushort**, int>)(lpVtbl[3]))((IItemNameLimits*)Unsafe.AsPointer(ref this), ppwszValidChars, ppwszInvalidChars);
     }
 
+    /// <include file='IItemNameLimits.xml' path='doc/member[@name="IItemNameLimits.GetMaxLength"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetMaxLength([NativeTypeName("LPCWSTR")] ushort* pszName, int* piMaxNameLen)

@@ -5,18 +5,24 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TAPE_GET_MEDIA_PARAMETERS.xml' path='doc/member[@name="TAPE_GET_MEDIA_PARAMETERS"]/*' />
 public partial struct TAPE_GET_MEDIA_PARAMETERS
 {
+    /// <include file='TAPE_GET_MEDIA_PARAMETERS.xml' path='doc/member[@name="TAPE_GET_MEDIA_PARAMETERS.Capacity"]/*' />
     public LARGE_INTEGER Capacity;
 
+    /// <include file='TAPE_GET_MEDIA_PARAMETERS.xml' path='doc/member[@name="TAPE_GET_MEDIA_PARAMETERS.Remaining"]/*' />
     public LARGE_INTEGER Remaining;
 
+    /// <include file='TAPE_GET_MEDIA_PARAMETERS.xml' path='doc/member[@name="TAPE_GET_MEDIA_PARAMETERS.BlockSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint BlockSize;
 
+    /// <include file='TAPE_GET_MEDIA_PARAMETERS.xml' path='doc/member[@name="TAPE_GET_MEDIA_PARAMETERS.PartitionCount"]/*' />
     [NativeTypeName("DWORD")]
     public uint PartitionCount;
 
+    /// <include file='TAPE_GET_MEDIA_PARAMETERS.xml' path='doc/member[@name="TAPE_GET_MEDIA_PARAMETERS.WriteProtected"]/*' />
     [NativeTypeName("BOOLEAN")]
     public byte WriteProtected;
 }

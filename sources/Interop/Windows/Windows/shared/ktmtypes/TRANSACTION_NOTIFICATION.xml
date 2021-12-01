@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="TRANSACTION_NOTIFICATION">
+    <summary>
+      <para>Contains the data that is associated with a transaction notification.</para>
+    </summary>
+    <seealso cref="CreateEnlistment" />
+    <seealso cref="GetNotificationResourceManager" />
+    <seealso cref="GetNotificationResourceManagerAsync" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/Ktm/kernel-transaction-manager-structures">Kernel Transaction Manager Structures</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Ktm/notification-mask">NOTIFICATION_MASK</seealso>
+    <seealso cref="TRANSACTION_NOTIFICATION_RECOVERY_ARGUMENT" />
+  </member>
+  <member name="TRANSACTION_NOTIFICATION.TransactionKey">
+    <summary>
+      <para>The user-defined, opaque ID for this transaction.</para>
+    </summary>
+  </member>
+  <member name="TRANSACTION_NOTIFICATION.TransactionNotification">
+    <summary>
+      <para>The <a href="https://docs.microsoft.com//windows/desktop/Ktm/notification-mask">NOTIFICATION_MASK</a> value for this
+transaction.</para>
+    </summary>
+  </member>
+  <member name="TRANSACTION_NOTIFICATION.TmVirtualClock">
+    <summary>
+      <para>The latest virtual clock value that is associated with this transaction. See
+<see cref="LARGE_INTEGER" />.</para>
+    </summary>
+  </member>
+  <member name="TRANSACTION_NOTIFICATION.ArgumentLength">
+    <summary>
+      <para>Indicates the number of bytes for the
+<see cref="TRANSACTION_NOTIFICATION_RECOVERY_ARGUMENT" /></para>
+      <para>structure that follow this
+<b>TRANSACTION_NOTIFICATION</b> structure.</para>
+    </summary>
+  </member>
+</doc>

@@ -8,26 +8,35 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PARTITION_INFORMATION_EX.xml' path='doc/member[@name="PARTITION_INFORMATION_EX"]/*' />
 public partial struct PARTITION_INFORMATION_EX
 {
+    /// <include file='PARTITION_INFORMATION_EX.xml' path='doc/member[@name="PARTITION_INFORMATION_EX.PartitionStyle"]/*' />
     public PARTITION_STYLE PartitionStyle;
 
+    /// <include file='PARTITION_INFORMATION_EX.xml' path='doc/member[@name="PARTITION_INFORMATION_EX.StartingOffset"]/*' />
     public LARGE_INTEGER StartingOffset;
 
+    /// <include file='PARTITION_INFORMATION_EX.xml' path='doc/member[@name="PARTITION_INFORMATION_EX.PartitionLength"]/*' />
     public LARGE_INTEGER PartitionLength;
 
+    /// <include file='PARTITION_INFORMATION_EX.xml' path='doc/member[@name="PARTITION_INFORMATION_EX.PartitionNumber"]/*' />
     [NativeTypeName("DWORD")]
     public uint PartitionNumber;
 
+    /// <include file='PARTITION_INFORMATION_EX.xml' path='doc/member[@name="PARTITION_INFORMATION_EX.RewritePartition"]/*' />
     [NativeTypeName("BOOLEAN")]
     public byte RewritePartition;
 
+    /// <include file='PARTITION_INFORMATION_EX.xml' path='doc/member[@name="PARTITION_INFORMATION_EX.IsServicePartition"]/*' />
     [NativeTypeName("BOOLEAN")]
     public byte IsServicePartition;
 
+    /// <include file='PARTITION_INFORMATION_EX.xml' path='doc/member[@name="PARTITION_INFORMATION_EX.Anonymous"]/*' />
     [NativeTypeName("_PARTITION_INFORMATION_EX::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:9151:5)")]
     public _Anonymous_e__Union Anonymous;
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Mbr"]/*' />
     public ref PARTITION_INFORMATION_MBR Mbr
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -37,6 +46,7 @@ public partial struct PARTITION_INFORMATION_EX
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Gpt"]/*' />
     public ref PARTITION_INFORMATION_GPT Gpt
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -46,12 +56,15 @@ public partial struct PARTITION_INFORMATION_EX
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public partial struct _Anonymous_e__Union
     {
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Mbr"]/*' />
         [FieldOffset(0)]
         public PARTITION_INFORMATION_MBR Mbr;
 
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Gpt"]/*' />
         [FieldOffset(0)]
         public PARTITION_INFORMATION_GPT Gpt;
     }

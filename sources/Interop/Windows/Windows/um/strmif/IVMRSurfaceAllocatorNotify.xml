@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IVMRSurfaceAllocatorNotify.AdviseSurfaceAllocator">
+    <summary>
+      <para>The <code>AdviseSurfaceAllocator</code> method is called by an application to instruct the VMR to use a custom allocator-presenter.</para>
+    </summary>
+    <param name="dwUserID">
+      <para>An application-defined DWORD_PTR that uniquely identifies this instance of the VMR in scenarios when multiple instances of the VMR are being used with a single instance of an allocator-presenter.</para>
+    </param>
+    <param name="lpIVRMSurfaceAllocator">
+      <para>Specifies the <see cref="IVMRSurfaceAllocator" /> interface on the new allocator-presenter. If this value is <b>NULL</b>, then the VMR will release the client allocator-presenter and restore its default allocator-presenter.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, it returns an error code.</para>
+    </returns>
+    <remarks>
+      <para>The method will cause the default allocator-presenter to be uninstalled and destroyed, and replaced with the specified new component. The new component must also support the <see cref="IVMRImagePresenter" /> interface.</para>
+      <para>This method can be called only once in the lifetime of the VMR. The VMR continues to use the allocator-presenter until the VMR is itself deleted. When the VMR is finally released, it releases its reference count on the custom allocator-presenter object, which allows that object to be freed.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IVMRSurfaceAllocatorNotify Interface" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
+  </member>
+  <member name="IVMRSurfaceAllocatorNotify.ChangeDDrawDevice">
+    <summary>
+      <para>The <code>ChangeDDrawDevice</code> method notifies the VMR that the DirectDraw playback device has changed. For example, on a multi-monitor system, the user has moved the video rectangle from one monitor to another.</para>
+    </summary>
+    <param name="lpDDrawDevice">
+      <para>Specifies the DirectDraw device.</para>
+    </param>
+    <param name="hMonitor">
+      <para>Specifies the handle to the monitor associated with the DirectDraw device.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, it returns an error code.</para>
+    </returns>
+    <remarks>
+      <para>The VMR needs to know which DirectDraw device is being used at any given time in order to associate the Direct3D surfaces being created in the mixer component with that device.</para>
+    </remarks>
+    <seealso cref="IVMRSurfaceAllocatorNotify Interface" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
+  </member>
+  <member name="IVMRSurfaceAllocatorNotify.NotifyEvent">
+    <summary>
+      <para>The <code>NotifyEvent</code> method is called by the allocator-presenter to inform the VMR of any significant DirectShow events during the allocation or presentation processes.</para>
+    </summary>
+    <param name="EventCode">
+      <para>Specifies the event code.</para>
+    </param>
+    <param name="Param1">
+      <para>Specifies Param1 of the event code.</para>
+    </param>
+    <param name="Param2">
+      <para>Specifies Param2 of the event code.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, it returns an error code.</para>
+    </returns>
+    <remarks>
+      <para>The VMR provides the allocator-presenter with a pointer to this interface in a call to <see cref="IVMRSurfaceAllocator.AdviseNotify" />. When the allocator-presenter calls this method and specifies some regular DirectShow event, such as EC_ERRORABORT or EC_VMR_RENDERDEVICE_SET, the VMR will pass the event to the filter graph manager.</para>
+    </remarks>
+    <seealso cref="IVMRSurfaceAllocatorNotify Interface" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
+  </member>
+  <member name="IVMRSurfaceAllocatorNotify.RestoreDDrawSurfaces">
+    <summary>
+      <para>The <code>RestoreDDrawSurfaces</code> method notifies the VMR that a DirectDraw surface "loss" has been detected.</para>
+    </summary>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, it returns an error code.</para>
+    </returns>
+    <seealso cref="IVMRSurfaceAllocatorNotify Interface" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
+  </member>
+  <member name="IVMRSurfaceAllocatorNotify.SetBorderColor">
+    <summary>
+      <para>The <code>SetBorderColor</code> method specifies to the VMR which color to use in areas of the display rectangle which are not being used for video, for example when the video is letterboxed.</para>
+    </summary>
+    <param name="clrBorder">
+      <para>Specifies the border color.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, it returns an error code.</para>
+    </returns>
+    <seealso cref="IVMRSurfaceAllocatorNotify Interface" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
+  </member>
+  <member name="IVMRSurfaceAllocatorNotify.SetDDrawDevice">
+    <summary>
+      <para>The <code>SetDDrawDevice</code> method sets the initial DirectDraw device and monitor to be used for video playback.</para>
+    </summary>
+    <param name="lpDDrawDevice">
+      <para>Specifies the DirectDraw device.</para>
+    </param>
+    <param name="hMonitor">
+      <para>Handle to the monitor associated with the DirectDraw device.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, it returns an error code.</para>
+    </returns>
+    <remarks>
+      <para>The VMR needs to know which DirectDraw device is being used at any given time in order to associate the Direct3D surfaces being created in the mixer component with that device.</para>
+    </remarks>
+    <seealso cref="IVMRSurfaceAllocatorNotify Interface" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
+  </member>
+  <member name="IVMRSurfaceAllocatorNotify">
+    <summary>
+      <para>The <code>IVMRSurfaceAllocatorNotify</code> interface is implemented by the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/video-mixing-renderer-filter-7">Video Mixing Renderer Filter 7</a> (VMR-7). Applications use this interface to set a custom allocator-presenter and the allocator-presenter uses this interface to inform the VMR-7 of changes to the system environment that affect the DirectDraw surfaces.</para>
+      <para>In order for an application to obtain this interface, the VMR must be in renderless mode.</para>
+      <para>For the VMR-9, use the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/vmr9/nn-vmr9-ivmrsurfaceallocatornotify9">IVMRSurfaceAllocatorNotify9</a> interface.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
+  </member>
+</doc>

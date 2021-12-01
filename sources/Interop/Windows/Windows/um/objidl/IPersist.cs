@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IPersist.xml' path='doc/member[@name="IPersist"]/*' />
 [Guid("0000010C-0000-0000-C000-000000000046")]
 [NativeTypeName("struct IPersist : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IPersist : IPersist.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IPersist : IPersist.Interface
         return ((delegate* unmanaged<IPersist*, Guid*, void**, int>)(lpVtbl[0]))((IPersist*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IPersist : IPersist.Interface
         return ((delegate* unmanaged<IPersist*, uint>)(lpVtbl[1]))((IPersist*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IPersist : IPersist.Interface
         return ((delegate* unmanaged<IPersist*, uint>)(lpVtbl[2]))((IPersist*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IPersist.xml' path='doc/member[@name="IPersist.GetClassID"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetClassID([NativeTypeName("CLSID *")] Guid* pClassID)

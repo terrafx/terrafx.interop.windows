@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IViewObject.xml' path='doc/member[@name="IViewObject"]/*' />
 [Guid("0000010D-0000-0000-C000-000000000046")]
 [NativeTypeName("struct IViewObject : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IViewObject : IViewObject.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IViewObject : IViewObject.Interface
         return ((delegate* unmanaged<IViewObject*, Guid*, void**, int>)(lpVtbl[0]))((IViewObject*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IViewObject : IViewObject.Interface
         return ((delegate* unmanaged<IViewObject*, uint>)(lpVtbl[1]))((IViewObject*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IViewObject : IViewObject.Interface
         return ((delegate* unmanaged<IViewObject*, uint>)(lpVtbl[2]))((IViewObject*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IViewObject.xml' path='doc/member[@name="IViewObject.Draw"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Draw([NativeTypeName("DWORD")] uint dwDrawAspect, [NativeTypeName("LONG")] int lindex, void* pvAspect, DVTARGETDEVICE* ptd, HDC hdcTargetDev, HDC hdcDraw, [NativeTypeName("LPCRECTL")] RECTL* lprcBounds, [NativeTypeName("LPCRECTL")] RECTL* lprcWBounds, [NativeTypeName("BOOL (*)(ULONG_PTR) __attribute__((stdcall))")] delegate* unmanaged<nuint, BOOL> pfnContinue, [NativeTypeName("ULONG_PTR")] nuint dwContinue)
@@ -46,6 +51,7 @@ public unsafe partial struct IViewObject : IViewObject.Interface
         return ((delegate* unmanaged<IViewObject*, uint, int, void*, DVTARGETDEVICE*, HDC, HDC, RECTL*, RECTL*, delegate* unmanaged<nuint, BOOL>, nuint, int>)(lpVtbl[3]))((IViewObject*)Unsafe.AsPointer(ref this), dwDrawAspect, lindex, pvAspect, ptd, hdcTargetDev, hdcDraw, lprcBounds, lprcWBounds, pfnContinue, dwContinue);
     }
 
+    /// <include file='IViewObject.xml' path='doc/member[@name="IViewObject.GetColorSet"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetColorSet([NativeTypeName("DWORD")] uint dwDrawAspect, [NativeTypeName("LONG")] int lindex, void* pvAspect, DVTARGETDEVICE* ptd, HDC hicTargetDev, LOGPALETTE** ppColorSet)
@@ -53,6 +59,7 @@ public unsafe partial struct IViewObject : IViewObject.Interface
         return ((delegate* unmanaged<IViewObject*, uint, int, void*, DVTARGETDEVICE*, HDC, LOGPALETTE**, int>)(lpVtbl[4]))((IViewObject*)Unsafe.AsPointer(ref this), dwDrawAspect, lindex, pvAspect, ptd, hicTargetDev, ppColorSet);
     }
 
+    /// <include file='IViewObject.xml' path='doc/member[@name="IViewObject.Freeze"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT Freeze([NativeTypeName("DWORD")] uint dwDrawAspect, [NativeTypeName("LONG")] int lindex, void* pvAspect, [NativeTypeName("DWORD *")] uint* pdwFreeze)
@@ -60,6 +67,7 @@ public unsafe partial struct IViewObject : IViewObject.Interface
         return ((delegate* unmanaged<IViewObject*, uint, int, void*, uint*, int>)(lpVtbl[5]))((IViewObject*)Unsafe.AsPointer(ref this), dwDrawAspect, lindex, pvAspect, pdwFreeze);
     }
 
+    /// <include file='IViewObject.xml' path='doc/member[@name="IViewObject.Unfreeze"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Unfreeze([NativeTypeName("DWORD")] uint dwFreeze)
@@ -67,6 +75,7 @@ public unsafe partial struct IViewObject : IViewObject.Interface
         return ((delegate* unmanaged<IViewObject*, uint, int>)(lpVtbl[6]))((IViewObject*)Unsafe.AsPointer(ref this), dwFreeze);
     }
 
+    /// <include file='IViewObject.xml' path='doc/member[@name="IViewObject.SetAdvise"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT SetAdvise([NativeTypeName("DWORD")] uint aspects, [NativeTypeName("DWORD")] uint advf, IAdviseSink* pAdvSink)
@@ -74,6 +83,7 @@ public unsafe partial struct IViewObject : IViewObject.Interface
         return ((delegate* unmanaged<IViewObject*, uint, uint, IAdviseSink*, int>)(lpVtbl[7]))((IViewObject*)Unsafe.AsPointer(ref this), aspects, advf, pAdvSink);
     }
 
+    /// <include file='IViewObject.xml' path='doc/member[@name="IViewObject.GetAdvise"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetAdvise([NativeTypeName("DWORD *")] uint* pAspects, [NativeTypeName("DWORD *")] uint* pAdvf, IAdviseSink** ppAdvSink)

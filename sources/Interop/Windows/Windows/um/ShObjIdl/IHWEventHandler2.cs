@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IHWEventHandler2.xml' path='doc/member[@name="IHWEventHandler2"]/*' />
 [Guid("CFCC809F-295D-42E8-9FFC-424B33C487E6")]
 [NativeTypeName("struct IHWEventHandler2 : IHWEventHandler")]
 [NativeInheritance("IHWEventHandler")]
@@ -16,6 +17,7 @@ public unsafe partial struct IHWEventHandler2 : IHWEventHandler2.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IHWEventHandler2 : IHWEventHandler2.Interface
         return ((delegate* unmanaged<IHWEventHandler2*, Guid*, void**, int>)(lpVtbl[0]))((IHWEventHandler2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IHWEventHandler2 : IHWEventHandler2.Interface
         return ((delegate* unmanaged<IHWEventHandler2*, uint>)(lpVtbl[1]))((IHWEventHandler2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IHWEventHandler2 : IHWEventHandler2.Interface
         return ((delegate* unmanaged<IHWEventHandler2*, uint>)(lpVtbl[2]))((IHWEventHandler2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IHWEventHandler.Initialize" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Initialize([NativeTypeName("LPCWSTR")] ushort* pszParams)
@@ -46,6 +51,7 @@ public unsafe partial struct IHWEventHandler2 : IHWEventHandler2.Interface
         return ((delegate* unmanaged<IHWEventHandler2*, ushort*, int>)(lpVtbl[3]))((IHWEventHandler2*)Unsafe.AsPointer(ref this), pszParams);
     }
 
+    /// <inheritdoc cref="IHWEventHandler.HandleEvent" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT HandleEvent([NativeTypeName("LPCWSTR")] ushort* pszDeviceID, [NativeTypeName("LPCWSTR")] ushort* pszAltDeviceID, [NativeTypeName("LPCWSTR")] ushort* pszEventType)
@@ -53,6 +59,7 @@ public unsafe partial struct IHWEventHandler2 : IHWEventHandler2.Interface
         return ((delegate* unmanaged<IHWEventHandler2*, ushort*, ushort*, ushort*, int>)(lpVtbl[4]))((IHWEventHandler2*)Unsafe.AsPointer(ref this), pszDeviceID, pszAltDeviceID, pszEventType);
     }
 
+    /// <inheritdoc cref="IHWEventHandler.HandleEventWithContent" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT HandleEventWithContent([NativeTypeName("LPCWSTR")] ushort* pszDeviceID, [NativeTypeName("LPCWSTR")] ushort* pszAltDeviceID, [NativeTypeName("LPCWSTR")] ushort* pszEventType, [NativeTypeName("LPCWSTR")] ushort* pszContentTypeHandler, IDataObject* pdataobject)
@@ -60,6 +67,7 @@ public unsafe partial struct IHWEventHandler2 : IHWEventHandler2.Interface
         return ((delegate* unmanaged<IHWEventHandler2*, ushort*, ushort*, ushort*, ushort*, IDataObject*, int>)(lpVtbl[5]))((IHWEventHandler2*)Unsafe.AsPointer(ref this), pszDeviceID, pszAltDeviceID, pszEventType, pszContentTypeHandler, pdataobject);
     }
 
+    /// <include file='IHWEventHandler2.xml' path='doc/member[@name="IHWEventHandler2.HandleEventWithHWND"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT HandleEventWithHWND([NativeTypeName("LPCWSTR")] ushort* pszDeviceID, [NativeTypeName("LPCWSTR")] ushort* pszAltDeviceID, [NativeTypeName("LPCWSTR")] ushort* pszEventType, HWND hwndOwner)

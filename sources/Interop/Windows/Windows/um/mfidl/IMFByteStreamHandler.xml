@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFByteStreamHandler.BeginCreateObject">
+    <summary>
+      <para>Begins an asynchronous request to create a media source from a byte stream.</para>
+    </summary>
+    <param name="pByteStream">
+      <para>Pointer to the byte stream's <see cref="IMFByteStream" /> interface.</para>
+    </param>
+    <param name="pwszURL">
+      <para>String that contains the original URL of the byte stream. This parameter can be <b>NULL</b>.</para>
+    </param>
+    <param name="dwFlags">
+      <para>Bitwise OR of zero or more flags. See <a href="https://docs.microsoft.com//windows/desktop/medfound/source-resolver-flags">Source Resolver Flags</a>.</para>
+    </param>
+    <param name="pProps">
+      <para>Pointer to the <b>IPropertyStore</b> interface of a property store. The byte-stream handler can use this property store to configure the object. This parameter can be <b>NULL</b>. For more information, see <a href="https://docs.microsoft.com//windows/desktop/medfound/configuring-a-media-source">Configuring a Media Source</a>.</para>
+    </param>
+    <param name="ppIUnknownCancelCookie">
+      <para>Receives an <b>IUnknown</b> pointer or the value <b>NULL</b>. If the value is not <b>NULL</b>, you can cancel the asynchronous operation by passing this pointer to the <see cref="IMFByteStreamHandler.CancelObjectCreation" /> method. The caller must release the interface. This parameter can be <b>NULL</b>.</para>
+    </param>
+    <param name="pCallback">
+      <para>Pointer to the <see cref="IMFAsyncCallback" /> interface of a callback object. The caller must implement this interface.</para>
+    </param>
+    <param name="punkState">
+      <para>Pointer to the <b>IUnknown</b> interface of a state object, defined by the caller. This parameter can be <b>NULL</b>. You can use this object to hold state information. The object is returned to the caller when the callback is invoked.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_CANNOT_PARSE_BYTESTREAM</b>
+            </para>
+          </description>
+          <description>
+            <para>Unable to parse the byte stream.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The <i>dwFlags</i> parameter must contain the MF_RESOLUTION_MEDIASOURCE flag and should not contain the MF_RESOLUTION_BYTESTREAM flag.</para>
+      <para>The byte-stream handler is responsible for parsing the stream and validating the contents. If the stream is not valid or the byte stream handler cannot parse the stream, the handler should return a failure code. The byte stream is not guaranteed to match the type of stream that the byte handler is designed to parse.</para>
+      <para>If the <i>pwszURL</i> parameter is not <b>NULL</b>, the byte-stream handler might use the URL during the resolution process. (For example, it might use the file name extension, if present.) Also, the byte stream might contain the <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-bytestream-content-type-attribute">MF_BYTESTREAM_CONTENT_TYPE</a> attribute, specifying the MIME type.</para>
+      <para>When the operation completes, the byte-stream handler calls the <see cref="IMFAsyncCallback.Invoke" /> method. The <b>Invoke</b> method should call <see cref="IMFByteStreamHandler.EndCreateObject" /> to get a pointer to the media source.</para>
+    </remarks>
+    <seealso cref="IMFByteStreamHandler" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/scheme-handlers-and-byte-stream-handlers">Scheme Handlers and Byte-Stream Handlers</seealso>
+  </member>
+  <member name="IMFByteStreamHandler.CancelObjectCreation">
+    <summary>
+      <para>Cancels the current request to create a media source.</para>
+    </summary>
+    <param name="pIUnknownCancelCookie">
+      <para>Pointer to the <b>IUnknown</b> interface that was returned in the <i>ppIUnknownCancelCookie</i> parameter of the <see cref="IMFByteStreamHandler.BeginCreateObject" /> method.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>You can use this method to cancel a previous call to <see cref="BeginCreateObject" />. Because that method is asynchronous, however, it might be completed before the operation can be canceled. Therefore, your callback might still be invoked after you call this method.</para>
+    </remarks>
+    <seealso cref="IMFByteStreamHandler" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/scheme-handlers-and-byte-stream-handlers">Scheme Handlers and Byte-Stream Handlers</seealso>
+  </member>
+  <member name="IMFByteStreamHandler.EndCreateObject">
+    <summary>
+      <para>Completes an asynchronous request to create a media source.</para>
+    </summary>
+    <param name="pResult">
+      <para>Pointer to the <see cref="IMFAsyncResult" /> interface. Pass in the same pointer that your callback object received in the <see cref="Invoke" /> method.</para>
+    </param>
+    <param name="pObjectType">
+      <para>Receives a member of the <see cref="MF_OBJECT_TYPE" /> enumeration, specifying the type of object that was created.</para>
+    </param>
+    <param name="ppObject">
+      <para>Receives a pointer to the <b>IUnknown</b> interface of the media source. The caller must release the interface.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_ABORT</b>
+            </para>
+          </description>
+          <description>
+            <para>The operation was canceled. See <see cref="IMFByteStreamHandler.CancelObjectCreation" />.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_CANNOT_PARSE_BYTESTREAM</b>
+            </para>
+          </description>
+          <description>
+            <para>Unable to parse the byte stream.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Call this method from inside the <see cref="IMFAsyncCallback.Invoke" /> method.</para>
+    </remarks>
+    <seealso cref="IMFByteStreamHandler" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/scheme-handlers-and-byte-stream-handlers">Scheme Handlers and Byte-Stream Handlers</seealso>
+  </member>
+  <member name="IMFByteStreamHandler.GetMaxNumberOfBytesRequiredForResolution">
+    <summary>
+      <para>Retrieves the maximum number of bytes needed to create the media source or determine that the byte stream handler cannot parse this stream.</para>
+    </summary>
+    <param name="pqwBytes">
+      <para>Receives the maximum number of bytes that are required.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IMFByteStreamHandler" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/scheme-handlers-and-byte-stream-handlers">Scheme Handlers and Byte-Stream Handlers</seealso>
+  </member>
+  <member name="IMFByteStreamHandler">
+    <summary>
+      <para>Creates a media source from a byte stream.</para>
+    </summary>
+    <remarks>
+      <para>Applications do not use this interface directly. This interface is exposed by byte-stream handlers, which are used by the source resolver. When the byte-stream handler is given a byte stream, it parses the stream and creates a media source. Byte-stream handlers are registered by file name extension or MIME type.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/scheme-handlers-and-byte-stream-handlers">Scheme Handlers and Byte-Stream Handlers</seealso>
+  </member>
+</doc>

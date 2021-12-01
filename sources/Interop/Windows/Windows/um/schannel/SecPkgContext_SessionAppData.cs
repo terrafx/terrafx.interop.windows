@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SecPkgContext_SessionAppData.xml' path='doc/member[@name="SecPkgContext_SessionAppData"]/*' />
 public unsafe partial struct SecPkgContext_SessionAppData
 {
+    /// <include file='SecPkgContext_SessionAppData.xml' path='doc/member[@name="SecPkgContext_SessionAppData.dwFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFlags;
 
+    /// <include file='SecPkgContext_SessionAppData.xml' path='doc/member[@name="SecPkgContext_SessionAppData.cbAppData"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbAppData;
 
+    /// <include file='SecPkgContext_SessionAppData.xml' path='doc/member[@name="SecPkgContext_SessionAppData.pbAppData"]/*' />
     [NativeTypeName("PBYTE")]
     public byte* pbAppData;
 }

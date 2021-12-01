@@ -5,13 +5,17 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CERT_FORTEZZA_DATA_PROP.xml' path='doc/member[@name="CERT_FORTEZZA_DATA_PROP"]/*' />
 public unsafe partial struct CERT_FORTEZZA_DATA_PROP
 {
+    /// <include file='CERT_FORTEZZA_DATA_PROP.xml' path='doc/member[@name="CERT_FORTEZZA_DATA_PROP.SerialNumber"]/*' />
     [NativeTypeName("unsigned char [8]")]
     public fixed byte SerialNumber[8];
 
+    /// <include file='CERT_FORTEZZA_DATA_PROP.xml' path='doc/member[@name="CERT_FORTEZZA_DATA_PROP.CertIndex"]/*' />
     public int CertIndex;
 
+    /// <include file='CERT_FORTEZZA_DATA_PROP.xml' path='doc/member[@name="CERT_FORTEZZA_DATA_PROP.CertLabel"]/*' />
     [NativeTypeName("unsigned char [36]")]
     public fixed byte CertLabel[36];
 }

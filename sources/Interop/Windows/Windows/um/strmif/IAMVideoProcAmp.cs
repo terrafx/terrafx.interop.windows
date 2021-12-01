@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAMVideoProcAmp.xml' path='doc/member[@name="IAMVideoProcAmp"]/*' />
 [Guid("C6E13360-30AC-11D0-A18C-00A0C9118956")]
 [NativeTypeName("struct IAMVideoProcAmp : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IAMVideoProcAmp : IAMVideoProcAmp.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IAMVideoProcAmp : IAMVideoProcAmp.Interface
         return ((delegate* unmanaged<IAMVideoProcAmp*, Guid*, void**, int>)(lpVtbl[0]))((IAMVideoProcAmp*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IAMVideoProcAmp : IAMVideoProcAmp.Interface
         return ((delegate* unmanaged<IAMVideoProcAmp*, uint>)(lpVtbl[1]))((IAMVideoProcAmp*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IAMVideoProcAmp : IAMVideoProcAmp.Interface
         return ((delegate* unmanaged<IAMVideoProcAmp*, uint>)(lpVtbl[2]))((IAMVideoProcAmp*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAMVideoProcAmp.xml' path='doc/member[@name="IAMVideoProcAmp.GetRange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetRange([NativeTypeName("long")] int Property, [NativeTypeName("long *")] int* pMin, [NativeTypeName("long *")] int* pMax, [NativeTypeName("long *")] int* pSteppingDelta, [NativeTypeName("long *")] int* pDefault, [NativeTypeName("long *")] int* pCapsFlags)
@@ -46,6 +51,7 @@ public unsafe partial struct IAMVideoProcAmp : IAMVideoProcAmp.Interface
         return ((delegate* unmanaged<IAMVideoProcAmp*, int, int*, int*, int*, int*, int*, int>)(lpVtbl[3]))((IAMVideoProcAmp*)Unsafe.AsPointer(ref this), Property, pMin, pMax, pSteppingDelta, pDefault, pCapsFlags);
     }
 
+    /// <include file='IAMVideoProcAmp.xml' path='doc/member[@name="IAMVideoProcAmp.Set"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Set([NativeTypeName("long")] int Property, [NativeTypeName("long")] int lValue, [NativeTypeName("long")] int Flags)
@@ -53,6 +59,7 @@ public unsafe partial struct IAMVideoProcAmp : IAMVideoProcAmp.Interface
         return ((delegate* unmanaged<IAMVideoProcAmp*, int, int, int, int>)(lpVtbl[4]))((IAMVideoProcAmp*)Unsafe.AsPointer(ref this), Property, lValue, Flags);
     }
 
+    /// <include file='IAMVideoProcAmp.xml' path='doc/member[@name="IAMVideoProcAmp.Get"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT Get([NativeTypeName("long")] int Property, [NativeTypeName("long *")] int* lValue, [NativeTypeName("long *")] int* Flags)

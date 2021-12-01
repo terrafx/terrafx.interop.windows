@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SPEVENTSOURCEINFO.xml' path='doc/member[@name="SPEVENTSOURCEINFO"]/*' />
 public partial struct SPEVENTSOURCEINFO
 {
+    /// <include file='SPEVENTSOURCEINFO.xml' path='doc/member[@name="SPEVENTSOURCEINFO.ullEventInterest"]/*' />
     [NativeTypeName("ULONGLONG")]
     public ulong ullEventInterest;
 
+    /// <include file='SPEVENTSOURCEINFO.xml' path='doc/member[@name="SPEVENTSOURCEINFO.ullQueuedInterest"]/*' />
     [NativeTypeName("ULONGLONG")]
     public ulong ullQueuedInterest;
 
+    /// <include file='SPEVENTSOURCEINFO.xml' path='doc/member[@name="SPEVENTSOURCEINFO.ulCount"]/*' />
     [NativeTypeName("ULONG")]
     public uint ulCount;
 }

@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFSystemId.GetData">
+    <summary>
+      <para>Retrieves system id data.</para>
+    </summary>
+    <param name="size">
+      <para>The size in bytes of the returned data.</para>
+    </param>
+    <param name="data">
+      <para>Receives the returned data.  The caller must free this buffer by calling <see cref="CoTaskMemFree" />.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IMFSystemId" />
+  </member>
+  <member name="IMFSystemId.Setup">
+    <summary>
+      <para>Sets up the <see cref="IMFSystemId" />.</para>
+    </summary>
+    <param name="stage">
+      <para>Stage in the setup process. 0 or 1.</para>
+    </param>
+    <param name="cbIn">
+      <para>Size of the input buffer.</para>
+    </param>
+    <param name="pbIn">
+      <para>The input buffer.</para>
+    </param>
+    <param name="pcbOut">
+      <para>Size of output buffer.</para>
+    </param>
+    <param name="ppbOut">
+      <para>The output buffer.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFSystemId" />
+  </member>
+  <member name="IMFSystemId">
+    <summary>
+      <para>Provides a method that retrieves system id data.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+  </member>
+</doc>

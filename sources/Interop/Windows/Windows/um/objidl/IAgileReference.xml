@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IAgileReference.Resolve">
+    <summary>
+      <para>Gets the interface ID of an agile reference to an object.</para>
+    </summary>
+    <param name="pp">
+      <para>The interface ID of the interface to be retrieved from the agile reference. It is not required to be the same as the registered interface.</para>
+    </param>
+    <param name="unnamedParam2">
+      <para>On successful completion, *<i>ppvObjectReference</i> is a pointer to the interface specified by <i>riid</i>.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>S_OK</para>
+          </description>
+          <description>
+            <para>The method completed successfully.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>E_NOINTERFACE</para>
+          </description>
+          <description>
+            <para>The requested interface isn't implemented on the registered object.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Call the <see cref="RoGetAgileReference" /> function to create an agile reference to an object. Call the <b>Resolve</b> method to localize the object into the apartment in which <b>Resolve</b> is called.</para>
+    </remarks>
+    <seealso cref="IAgileReference" />
+    <seealso cref="RoGetAgileReference" />
+  </member>
+  <member name="IAgileReference.Resolve">
+    <summary>
+      <para>Gets the interface ID of an agile reference to an object.</para>
+    </summary>
+    <param name="">
+      <para>The interface ID of the interface to be retrieved from the agile reference. It is not required to be the same as the registered interface.</para>
+    </param>
+    <param name="ppvObjectReference">
+      <para>On successful completion, *<i>ppvObjectReference</i> is a pointer to the interface specified by <i>riid</i>.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>S_OK</para>
+          </description>
+          <description>
+            <para>The method completed successfully.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>E_NOINTERFACE</para>
+          </description>
+          <description>
+            <para>The requested interface isn't implemented on the registered object.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Call the <see cref="RoGetAgileReference" /> function to create an agile reference to an object. Call the <b>Resolve</b> method to localize the object into the apartment in which <b>Resolve</b> is called.</para>
+    </remarks>
+    <seealso cref="IAgileReference" />
+    <seealso cref="RoGetAgileReference" />
+  </member>
+  <member name="IAgileReference">
+    <summary>
+      <para>Enables retrieving an agile reference to an object.</para>
+    </summary>
+    <remarks>
+      <para>Call the <see cref="RoGetAgileReference" /> function to create an agile reference to an object.</para>
+    </remarks>
+    <seealso cref="IUnknown" />
+    <seealso cref="RoGetAgileReference" />
+  </member>
+</doc>

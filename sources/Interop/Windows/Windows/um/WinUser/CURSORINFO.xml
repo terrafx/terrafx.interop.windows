@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CURSORINFO">
+    <summary>
+      <para>Contains global cursor information.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/menurc/cursors">Cursors</seealso>
+    <seealso cref="GetCursorInfo" />
+    <seealso href="https://docs.microsoft.com//previous-versions/dd162805(v=vs.85)">POINT</seealso>
+  </member>
+  <member name="CURSORINFO.cbSize">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The size of the structure, in bytes. The caller must set this to <code>sizeof(CURSORINFO)</code>.</para>
+    </summary>
+  </member>
+  <member name="CURSORINFO.flags">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The cursor state. This parameter can be one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <para>0</para>
+          </description>
+          <description>
+            <para>The cursor is hidden.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CURSOR_SHOWING</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000001</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The cursor is showing.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CURSOR_SUPPRESSED</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000002</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <b>Windows 8</b>: The cursor is suppressed. This flag indicates that the system is not drawing the cursor because the user is providing input through touch or pen instead of the mouse.
+</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="CURSORINFO.hCursor">
+    <summary>
+      <para>Type: <b>HCURSOR</b></para>
+      <para>A handle to the cursor.</para>
+    </summary>
+  </member>
+  <member name="CURSORINFO.ptScreenPos">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/dd162805(v=vs.85)">POINT</a></b></para>
+      <para>A   structure that receives the screen coordinates of the cursor.</para>
+    </summary>
+  </member>
+</doc>

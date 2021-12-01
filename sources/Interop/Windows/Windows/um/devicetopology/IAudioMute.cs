@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAudioMute.xml' path='doc/member[@name="IAudioMute"]/*' />
 [Guid("DF45AEEA-B74A-4B6B-AFAD-2366B6AA012E")]
 [NativeTypeName("struct IAudioMute : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IAudioMute : IAudioMute.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IAudioMute : IAudioMute.Interface
         return ((delegate* unmanaged<IAudioMute*, Guid*, void**, int>)(lpVtbl[0]))((IAudioMute*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IAudioMute : IAudioMute.Interface
         return ((delegate* unmanaged<IAudioMute*, uint>)(lpVtbl[1]))((IAudioMute*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IAudioMute : IAudioMute.Interface
         return ((delegate* unmanaged<IAudioMute*, uint>)(lpVtbl[2]))((IAudioMute*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAudioMute.xml' path='doc/member[@name="IAudioMute.SetMute"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetMute(BOOL bMuted, [NativeTypeName("LPCGUID")] Guid* pguidEventContext)
@@ -46,6 +51,7 @@ public unsafe partial struct IAudioMute : IAudioMute.Interface
         return ((delegate* unmanaged<IAudioMute*, BOOL, Guid*, int>)(lpVtbl[3]))((IAudioMute*)Unsafe.AsPointer(ref this), bMuted, pguidEventContext);
     }
 
+    /// <include file='IAudioMute.xml' path='doc/member[@name="IAudioMute.GetMute"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetMute(BOOL* pbMuted)

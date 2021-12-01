@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMenuBand.xml' path='doc/member[@name="IMenuBand"]/*' />
 [Guid("568804CD-CBD7-11D0-9816-00C04FD91972")]
 [NativeTypeName("struct IMenuBand : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMenuBand : IMenuBand.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMenuBand : IMenuBand.Interface
         return ((delegate* unmanaged<IMenuBand*, Guid*, void**, int>)(lpVtbl[0]))((IMenuBand*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMenuBand : IMenuBand.Interface
         return ((delegate* unmanaged<IMenuBand*, uint>)(lpVtbl[1]))((IMenuBand*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMenuBand : IMenuBand.Interface
         return ((delegate* unmanaged<IMenuBand*, uint>)(lpVtbl[2]))((IMenuBand*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMenuBand.xml' path='doc/member[@name="IMenuBand.IsMenuMessage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT IsMenuMessage(MSG* pmsg)
@@ -46,6 +51,7 @@ public unsafe partial struct IMenuBand : IMenuBand.Interface
         return ((delegate* unmanaged<IMenuBand*, MSG*, int>)(lpVtbl[3]))((IMenuBand*)Unsafe.AsPointer(ref this), pmsg);
     }
 
+    /// <include file='IMenuBand.xml' path='doc/member[@name="IMenuBand.TranslateMenuMessage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT TranslateMenuMessage(MSG* pmsg, LRESULT* plRet)

@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MemoryTypeEnum.xml' path='doc/member[@name="MemoryTypeEnum"]/*' />
 public enum MemoryTypeEnum
 {
+    /// <include file='MemoryTypeEnum.xml' path='doc/member[@name="MemoryTypeEnum.MemTypeCode"]/*' />
     MemTypeCode,
+
+    /// <include file='MemoryTypeEnum.xml' path='doc/member[@name="MemoryTypeEnum.MemTypeData"]/*' />
     MemTypeData,
+
+    /// <include file='MemoryTypeEnum.xml' path='doc/member[@name="MemoryTypeEnum.MemTypeStack"]/*' />
     MemTypeStack,
+
+    /// <include file='MemoryTypeEnum.xml' path='doc/member[@name="MemoryTypeEnum.MemTypeCodeOnHeap"]/*' />
     MemTypeCodeOnHeap,
+
+    /// <include file='MemoryTypeEnum.xml' path='doc/member[@name="MemoryTypeEnum.MemTypeAny"]/*' />
     MemTypeAny = -1,
 }

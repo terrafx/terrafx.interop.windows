@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SYSTEMRESTORESTATES.xml' path='doc/member[@name="SYSTEMRESTORESTATES"]/*' />
 public enum SYSTEMRESTORESTATES
 {
+    /// <include file='SYSTEMRESTORESTATES.xml' path='doc/member[@name="SYSTEMRESTORESTATES.MSYSR_NORMAL"]/*' />
     MSYSR_NORMAL = 1,
+
+    /// <include file='SYSTEMRESTORESTATES.xml' path='doc/member[@name="SYSTEMRESTORESTATES.MSYSR_DISABLED"]/*' />
     MSYSR_DISABLED = 2,
 }

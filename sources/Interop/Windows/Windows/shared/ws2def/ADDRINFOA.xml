@@ -1,0 +1,732 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ADDRINFOA">
+    <summary>
+      <para>The
+<b>addrinfo</b> structure is used by the
+<see cref="getaddrinfo" /> function to hold host address information.</para>
+    </summary>
+    <remarks>
+      <para>The
+<b>addrinfo</b> structure is used by the
+ANSI   <see cref="getaddrinfo" /> function to hold host address information.</para>
+      <para>The <see cref="addrinfoW" /> structure is the version of this structure used by the Unicode <see cref="GetAddrInfoW" /> function.</para>
+      <para>Macros in the <i>Ws2tcpip.h</i> header file define a <b>ADDRINFOT</b> structure and a mixed-case function name of <b>GetAddrInfo</b>. The <b>GetAddrInfo</b> function should be called with the <i>nodename</i> and <i>servname</i> parameters of a pointer of type  <b>TCHAR</b> and the <i>hints</i> and <i>res</i> parameters of a pointer of type <b>ADDRINFOT</b>. When UNICODE or _UNICODE is not defined, <b>ADDRINFOT</b> is defined to the <b>addrinfo</b> structure and <b>GetAddrInfo</b> is defined to <see cref="getaddrinfo" />, the ANSI version of this function. When UNICODE or _UNICODE is defined, <b>ADDRINFOT</b> is defined to the <see cref="addrinfoW" /> structure and <b>GetAddrInfo</b> is defined to <see cref="GetAddrInfoW" />, the Unicode version of this function.</para>
+      <para>Upon a successful call to <see cref="getaddrinfo" />, a linked list of
+<b>addrinfo</b> structures is returned in the <i>res</i> parameter passed to the <b>getaddrinfo</b> function. The list can be processed by following the pointer provided in the <b>ai_next</b> member of each returned
+<b>addrinfo</b> structure until a <b>NULL</b> pointer is encountered. In each returned
+<b>addrinfo</b> structure, the <b>ai_family</b>, <b>ai_socktype</b>, and <b>ai_protocol</b> members correspond to respective arguments in a
+<see cref="socket" />   or <see cref="WSASocket" /> function call. Also, the <b>ai_addr</b> member in each returned
+<b>addrinfo</b> structure points to a filled-in socket address structure, the length of which is specified in its <b>ai_addrlen</b> member.</para>
+      <h3>Support for getaddrinfo and the addrinfo struct on older versions of Windows
+</h3>
+      <para>The <see cref="getaddrinfo" /> function that uses the <b>addrinfo</b> structure was added to the <i>Ws2_32.dll</i> on Windows XP and later. The <b>addrinfo</b> structure  is defined in the Ws2tcpip.h header file included with the Platform SDK released for Windows XP and later and the Windows SDK released for  Windows Vista and later.</para>
+      <para>To execute an application that uses the <see cref="getaddrinfo" /> function and the <b>addrinfo</b> structure  on earlier versions of Windows (Windows 2000), then you need to include the <i>Ws2tcpip.h</i> and <i>Wspiapi.h</i> files. When the <i>Wspiapi.h</i> include file is added, the <b>getaddrinfo</b> function is defined to the WspiapiGetAddrInfo inline function in the <i>Wspiapi.h</i> file. At runtime, the WspiapiGetAddrInfo function is implemented in such a way that if the <i>Ws2_32.dll</i> or the <i>Wship6.dll</i> (the file containing <b>getaddrinfo</b> in the IPv6 Technology Preview for Windows 2000) does not include <b>getaddrinfo</b>, then a version of  <b>getaddrinfo</b> is implemented inline based on code in the <i>Wspiapi.h</i> header file. This inline code will be used on older Windows platforms that do not natively support the <b>getaddrinfo</b> function.</para>
+      <para>The IPv6  protocol is supported on Windows 2000 when the IPv6 Technology Preview for Windows 2000 is installed. Otherwise <see cref="getaddrinfo" /> support on versions of Windows earlier than Windows XP is limited to handling IPv4 name resolution.</para>
+      <para>The <see cref="GetAddrInfoW" /> function that uses the <see cref="addrinfoW" /> structure is the Unicode version of the <see cref="getaddrinfo" /> function and associated <b>addrinfo</b> structure.  The <b>GetAddrInfoW</b> function was added to the <i>Ws2_32.dll</i> in Windows XP with Service Pack 2 (SP2). The <b>GetAddrInfoW</b> function and the <b>addrinfoW</b> structure cannot be used on versions of Windows earlier than Windows XP with SP2.</para>
+      <h4>Examples</h4>
+      <para>The following code example shows the use of the <b>addrinfo</b> structure.</para>
+      <code>
+#undef UNICODE
+
+#include &lt;winsock2.h&gt;
+#include &lt;ws2tcpip.h&gt;
+#include &lt;stdio.h&gt;
+
+// link with Ws2_32.lib
+#pragma comment(lib, "Ws2_32.lib")
+
+int __cdecl main(int argc, char **argv)
+{
+
+    //-----------------------------------------
+    // Declare and initialize variables
+    WSADATA wsaData;
+    int iResult;
+    INT iRetval;
+
+    DWORD dwRetval;
+
+    int i = 1;
+
+    struct addrinfo *result = NULL;
+    struct addrinfo *ptr = NULL;
+    struct addrinfo hints;
+
+    struct sockaddr_in  *sockaddr_ipv4;
+//    struct sockaddr_in6 *sockaddr_ipv6;
+    LPSOCKADDR sockaddr_ip;
+
+    char ipstringbuffer[46];
+    DWORD ipbufferlength = 46;
+
+    // Validate the parameters
+    if (argc != 3) {
+        printf("usage: %s &lt;hostname&gt;&lt;servicename&gt;\n", argv[0]);
+        printf("       provides protocol-independent translation\n");
+        printf("       from an ANSI host name to an IP address\n");
+        printf("%s example usage\n", argv[0]);
+        printf("   %s www.contoso.com 0\n", argv[0]);
+        return 1;
+    }
+
+    // Initialize Winsock
+    iResult = WSAStartup(MAKEWORD(2, 2), &amp;amp;amp;amp;amp;amp;wsaData);
+    if (iResult != 0) {
+        printf("WSAStartup failed: %d\n", iResult);
+        return 1;
+    }
+
+    //--------------------------------
+    // Setup the hints address info structure
+    // which is passed to the getaddrinfo() function
+    ZeroMemory( &amp;amp;amp;amp;amp;amp;hints, sizeof(hints) );
+    hints.ai_family = AF_UNSPEC;
+    hints.ai_socktype = SOCK_STREAM;
+    hints.ai_protocol = IPPROTO_TCP;
+
+    printf("Calling getaddrinfo with following parameters:\n");
+    printf("\tnodename = %s\n", argv[1]);
+    printf("\tservname (or port) = %s\n\n", argv[2]);
+
+//--------------------------------
+// Call getaddrinfo(). If the call succeeds,
+// the result variable will hold a linked list
+// of addrinfo structures containing response
+// information
+    dwRetval = getaddrinfo(argv[1], argv[2], &amp;amp;amp;amp;amp;amp;hints, &amp;amp;amp;amp;amp;amp;result);
+    if ( dwRetval != 0 ) {
+        printf("getaddrinfo failed with error: %d\n", dwRetval);
+        WSACleanup();
+        return 1;
+    }
+
+    printf("getaddrinfo returned success\n");
+
+    // Retrieve each address and print out the hex bytes
+    for(ptr=result; ptr != NULL ;ptr=ptr-&gt;ai_next) {
+
+        printf("getaddrinfo response %d\n", i++);
+        printf("\tFlags: 0x%x\n", ptr-&gt;ai_flags);
+        printf("\tFamily: ");
+        switch (ptr-&gt;ai_family) {
+            case AF_UNSPEC:
+                printf("Unspecified\n");
+                break;
+            case AF_INET:
+                printf("AF_INET (IPv4)\n");
+                sockaddr_ipv4 = (struct sockaddr_in *) ptr-&gt;ai_addr;
+                printf("\tIPv4 address %s\n",
+                    inet_ntoa(sockaddr_ipv4-&gt;sin_addr) );
+                break;
+            case AF_INET6:
+                printf("AF_INET6 (IPv6)\n");
+                // the InetNtop function is available on Windows Vista and later
+                // sockaddr_ipv6 = (struct sockaddr_in6 *) ptr-&gt;ai_addr;
+                // printf("\tIPv6 address %s\n",
+                //    InetNtop(AF_INET6, &amp;amp;amp;amp;amp;amp;sockaddr_ipv6-&gt;sin6_addr, ipstringbuffer, 46) );
+
+                // We use WSAAddressToString since it is supported on Windows XP and later
+                sockaddr_ip = (LPSOCKADDR) ptr-&gt;ai_addr;
+                // The buffer length is changed by each call to WSAAddresstoString
+                // So we need to set it for each iteration through the loop for safety
+                ipbufferlength = 46;
+                iRetval = WSAAddressToString(sockaddr_ip, (DWORD) ptr-&gt;ai_addrlen, NULL,
+                    ipstringbuffer, &amp;amp;amp;amp;amp;amp;ipbufferlength );
+                if (iRetval)
+                    printf("WSAAddressToString failed with %u\n", WSAGetLastError() );
+                else
+                    printf("\tIPv6 address %s\n", ipstringbuffer);
+                break;
+            case AF_NETBIOS:
+                printf("AF_NETBIOS (NetBIOS)\n");
+                break;
+            default:
+                printf("Other %ld\n", ptr-&gt;ai_family);
+                break;
+        }
+        printf("\tSocket type: ");
+        switch (ptr-&gt;ai_socktype) {
+            case 0:
+                printf("Unspecified\n");
+                break;
+            case SOCK_STREAM:
+                printf("SOCK_STREAM (stream)\n");
+                break;
+            case SOCK_DGRAM:
+                printf("SOCK_DGRAM (datagram) \n");
+                break;
+            case SOCK_RAW:
+                printf("SOCK_RAW (raw) \n");
+                break;
+            case SOCK_RDM:
+                printf("SOCK_RDM (reliable message datagram)\n");
+                break;
+            case SOCK_SEQPACKET:
+                printf("SOCK_SEQPACKET (pseudo-stream packet)\n");
+                break;
+            default:
+                printf("Other %ld\n", ptr-&gt;ai_socktype);
+                break;
+        }
+        printf("\tProtocol: ");
+        switch (ptr-&gt;ai_protocol) {
+            case 0:
+                printf("Unspecified\n");
+                break;
+            case IPPROTO_TCP:
+                printf("IPPROTO_TCP (TCP)\n");
+                break;
+            case IPPROTO_UDP:
+                printf("IPPROTO_UDP (UDP) \n");
+                break;
+            default:
+                printf("Other %ld\n", ptr-&gt;ai_protocol);
+                break;
+        }
+        printf("\tLength of this sockaddr: %d\n", ptr-&gt;ai_addrlen);
+        printf("\tCanonical name: %s\n", ptr-&gt;ai_canonname);
+    }
+
+    freeaddrinfo(result);
+    WSACleanup();
+
+    return 0;
+}
+
+</code>
+    </remarks>
+    <seealso cref="GetAddrInfoW" />
+    <seealso cref="WSAEnumProtocols" />
+    <seealso cref="addrinfoW" />
+    <seealso cref="bind" />
+    <seealso cref="getaddrinfo" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/WinSock/sockaddr-2">sockaddr</seealso>
+  </member>
+  <member name="ADDRINFOA.ai_flags">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>Flags that indicate options used in the
+<see cref="getaddrinfo" /> function.</para>
+      <para>Supported values for the <b>ai_flags</b> member are defined in the <i>Ws2def.h</i> header file on the Windows SDK for Windows 7 and later. These values   are defined in the <i>Ws2tcpip.h</i> header file on the Windows SDK for Windows Server 2008 and Windows Vista.  These values are defined in the <i>Ws2tcpip.h</i> header file on the Platform SDK for   Windows Server 2003, and Windows XP. Supported values  for the <b>ai_flags</b> member can be a combination of the following options.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>AI_PASSIVE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x01</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The socket address will be used in a call to the <see cref="bind" /> function.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>AI_CANONNAME</b>
+                </description>
+              </item>
+              <item>
+                <description>0x02</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The canonical name is returned in the first <b>ai_canonname</b> member.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>AI_NUMERICHOST</b>
+                </description>
+              </item>
+              <item>
+                <description>0x04</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The <i>nodename</i> parameter passed to the <see cref="getaddrinfo" /> function must be a numeric string.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>AI_ALL</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0100</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>If this bit is set, a request is made for IPv6 addresses and IPv4 addresses with <b>AI_V4MAPPED</b>.</para>
+            <para>This option is supported on Windows Vista and later.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>AI_ADDRCONFIG</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0400</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The <see cref="getaddrinfo" /> will resolve only if a global address is configured. The IPv6 and IPv4 loopback address is not considered a valid global address.</para>
+            <para>This option is supported on Windows Vista and later.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>AI_V4MAPPED</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0800</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>If the  <see cref="getaddrinfo" /> request for IPv6 addresses fails, a name service request is made for IPv4 addresses and these addresses are converted to IPv4-mapped IPv6 address format.</para>
+            <para>This option is supported on Windows Vista and later.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>AI_NON_AUTHORITATIVE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x04000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The address information can be from a non-authoritative namespace provider.</para>
+            <para>This option is only supported on Windows Vista and later for the <b>NS_EMAIL</b> namespace.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>AI_SECURE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x08000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The address information is from a secure channel.</para>
+            <para>This option is only supported on Windows Vista and later for the <b>NS_EMAIL</b> namespace.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>AI_RETURN_PREFERRED_NAMES</b>
+                </description>
+              </item>
+              <item>
+                <description>0x010000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The address information is for a preferred name for a user.</para>
+            <para>This option is only supported on Windows Vista and later for the <b>NS_EMAIL</b> namespace.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>AI_FQDN</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00020000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>If a flat name (single label) is specified,  <see cref="getaddrinfo" /> will return the fully qualified domain name that the name eventually resolved to. The fully qualified domain name is returned in the <b>ai_canonname</b> member.</para>
+            <para>This is different than <b>AI_CANONNAME</b> bit flag that returns the canonical name registered in DNS which may be different than the fully qualified domain name  that the flat name resolved to.</para>
+            <para>Only one of the <b>AI_FQDN</b> and <b>AI_CANONNAME</b> bits can be set. The <see cref="getaddrinfo" /> function will fail if both flags are present with <b>EAI_BADFLAGS</b>.</para>
+            <para>This option is supported on Windows 7, Windows Server 2008 R2,  and later.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>AI_FILESERVER</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00040000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>A  hint to the namespace provider that the hostname being queried is being used in a file share scenario. The namespace provider may ignore this hint.</para>
+            <para>This option is supported on Windows 7, Windows Server 2008 R2,  and later.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="ADDRINFOA.ai_family">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>The address family. Possible values for the address family are defined in the <i>Winsock2.h</i> header file.</para>
+      <para>On the Windows SDK released for Windows Vista and later, the organization of header files has changed and the possible values for the address family are defined in the <i>Ws2def.h</i> header file. Note that the <i>Ws2def.h</i> header file is automatically included in <i>Winsock2.h</i>, and should never be used directly.</para>
+      <para>The values currently supported are <b>AF_INET</b> or <b>AF_INET6</b>, which are the Internet
+address family formats for IPv4 and IPv6. Other options for address family (<b>AF_NETBIOS</b> for use with NetBIOS, for example) are supported if a Windows Sockets service provider for the address family is installed. Note that the values for the AF_ address family and PF_ protocol family constants  are identical (for example, <b>AF_UNSPEC</b> and <b>PF_UNSPEC</b>), so either constant can be used.</para>
+      <para>The following table lists common values for the address family although many other values are possible.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>AF_UNSPEC</b>
+                </description>
+              </item>
+              <item>
+                <description>0</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The address family is unspecified.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>AF_INET</b>
+                </description>
+              </item>
+              <item>
+                <description>2</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The Internet Protocol version 4 (IPv4) address family.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>AF_NETBIOS</b>
+                </description>
+              </item>
+              <item>
+                <description>17</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The NetBIOS address family. This address family is only supported if a Windows Sockets provider for NetBIOS is installed.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>AF_INET6</b>
+                </description>
+              </item>
+              <item>
+                <description>23</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The Internet Protocol version 6 (IPv6) address family.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>AF_IRDA</b>
+                </description>
+              </item>
+              <item>
+                <description>26</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The Infrared Data Association (IrDA) address family. This address family is only supported if the computer has an infrared port and driver installed.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>AF_BTH</b>
+                </description>
+              </item>
+              <item>
+                <description>32</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The Bluetooth address family. This address family is only supported if a Bluetooth adapter is installed on Windows Server 2003 or later.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="ADDRINFOA.ai_socktype">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>The socket type. Possible values for the socket type are defined in the <i>Winsock2.h</i> header file.</para>
+      <para>The following table lists the possible values for the socket type supported for Windows Sockets 2:</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>SOCK_STREAM</b>
+                </description>
+              </item>
+              <item>
+                <description>1</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Provides sequenced, reliable, two-way, connection-based byte streams with an OOB data transmission mechanism. Uses the Transmission Control Protocol (TCP) for the Internet address family (<b>AF_INET</b> or <b>AF_INET6</b>). If the <b>ai_family</b> member is <b>AF_IRDA</b>, then <b>SOCK_STREAM</b> is the only supported socket type.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>SOCK_DGRAM</b>
+                </description>
+              </item>
+              <item>
+                <description>2</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Supports datagrams, which are connectionless, unreliable buffers of a fixed (typically small) maximum length. Uses the User Datagram Protocol (UDP) for the Internet address family (<b>AF_INET</b> or <b>AF_INET6</b>).</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>SOCK_RAW</b>
+                </description>
+              </item>
+              <item>
+                <description>3</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Provides a raw socket that allows an application to manipulate the next upper-layer protocol header. To manipulate the IPv4 header, the <a href="https://docs.microsoft.com//windows/desktop/WinSock/ipproto-ip-socket-options">IP_HDRINCL</a> socket option must be set on the socket.  To manipulate the IPv6 header, the <a href="https://docs.microsoft.com//windows/desktop/WinSock/ipproto-ipv6-socket-options">IPV6_HDRINCL</a> socket option must be set on the socket.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>SOCK_RDM</b>
+                </description>
+              </item>
+              <item>
+                <description>4</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Provides a reliable message datagram. An example of this type is the Pragmatic General Multicast (PGM) multicast protocol implementation in Windows, often referred to as <a href="https://docs.microsoft.com//windows/desktop/WinSock/reliable-multicast-programming--pgm-">reliable multicast programming</a>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>SOCK_SEQPACKET</b>
+                </description>
+              </item>
+              <item>
+                <description>5</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Provides a pseudo-stream packet based on datagrams.</para>
+          </description>
+        </item>
+      </list>
+      <para>In Windows Sockets 2, new socket types were introduced. An application can dynamically discover the attributes of each available transport protocol through the
+<see cref="WSAEnumProtocols" /> function. So an application can determine the possible socket type and protocol options for an address family  and use this information when specifying this parameter. Socket type definitions in the <i>Winsock2.h</i> and <i>Ws2def.h</i> header files will be periodically updated as new socket types, address families, and protocols are defined.</para>
+      <para>In Windows Sockets 1.1, the only possible socket types are  <b>SOCK_DATAGRAM</b> and <b>SOCK_STREAM</b>.</para>
+    </summary>
+  </member>
+  <member name="ADDRINFOA.ai_protocol">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>The protocol type. The possible options are specific to the address family and socket type specified. Possible values for the <b>ai_protocol</b> are defined in the  <i>Winsock2.h</i> and <i>Wsrm.h</i> header files.</para>
+      <para>On the Windows SDK released for Windows Vista and later, the organization of header files has changed and this member can be one of the values from the <b>IPPROTO</b> enumeration type defined in the <i>Ws2def.h</i> header file. Note that the <i>Ws2def.h</i> header file is automatically included in <i>Winsock2.h</i>, and should never be used directly.</para>
+      <para>If a value of  0 is specified for <b>ai_protocol</b>, the caller does not
+wish to specify a protocol and the service provider will choose the <b>ai_protocol</b> to use. For protocols other than IPv4 and IPv6, set <b>ai_protocol</b> to zero.</para>
+      <para>The following table lists common values for the <b>ai_protocol</b> member although many other values are possible.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IPPROTO_TCP</b>
+                </description>
+              </item>
+              <item>
+                <description>6</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The Transmission Control Protocol (TCP). This is a possible value when the <b>ai_family</b> member is <b>AF_INET</b> or <b>AF_INET6</b> and the <b>ai_socktype</b> member is <b>SOCK_STREAM</b>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IPPROTO_UDP</b>
+                </description>
+              </item>
+              <item>
+                <description>17</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The User Datagram Protocol (UDP). This is a possible value when the <b>ai_family</b> member is <b>AF_INET</b> or <b>AF_INET6</b> and the <i>type</i> parameter is <b>SOCK_DGRAM</b>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IPPROTO_RM</b>
+                </description>
+              </item>
+              <item>
+                <description>113</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The PGM protocol for reliable multicast. This is a possible value when the <b>ai_family</b> member is <b>AF_INET</b> and the <b>ai_socktype</b> member is <b>SOCK_RDM</b>. On the Windows SDK released for Windows Vista and later,  this value is also called <b>IPPROTO_PGM</b>.</para>
+          </description>
+        </item>
+      </list>
+      <para>If the <b>ai_family</b> member is <b>AF_IRDA</b>, then the <b>ai_protocol</b> must be 0.</para>
+    </summary>
+  </member>
+  <member name="ADDRINFOA.ai_addrlen">
+    <summary>
+      <para>Type: <b>size_t</b></para>
+      <para>The length, in bytes, of the buffer pointed to by the <b>ai_addr</b> member.</para>
+    </summary>
+  </member>
+  <member name="ADDRINFOA.ai_canonname">
+    <summary>
+      <para>Type: <b>char*</b></para>
+      <para>The canonical name for the host.</para>
+    </summary>
+  </member>
+  <member name="ADDRINFOA.ai_addr">
+    <summary>
+      <para>Type: <b>struct sockaddr*</b></para>
+      <para>A pointer to a
+<a href="https://docs.microsoft.com//windows/desktop/WinSock/sockaddr-2">sockaddr</a> structure. The <b>ai_addr</b> member in each returned <b>addrinfo</b> structure points to a filled-in socket address structure. The length, in bytes, of each returned <b>addrinfo</b> structure is specified in the <b>ai_addrlen</b> member.</para>
+    </summary>
+  </member>
+  <member name="ADDRINFOA.ai_next">
+    <summary>
+      <para>Type: <b>struct addrinfo*</b></para>
+      <para>A pointer to the next structure in a linked list. This parameter is set to <b>NULL</b> in the last
+<b>addrinfo</b> structure of a linked list.</para>
+    </summary>
+  </member>
+</doc>

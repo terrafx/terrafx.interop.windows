@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WICRawCapabilitiesInfo">
+    <summary>
+      <para>Defines raw codec capabilities.</para>
+    </summary>
+  </member>
+  <member name="WICRawCapabilitiesInfo.cbSize">
+    <summary>
+      <para>Type: <b>UINT</b></para>
+      <para>Size of the <b>WICRawCapabilitiesInfo</b> structure.</para>
+    </summary>
+  </member>
+  <member name="WICRawCapabilitiesInfo.CodecMajorVersion">
+    <summary>
+      <para>Type: <b>UINT</b></para>
+      <para>The codec's major version.</para>
+    </summary>
+  </member>
+  <member name="WICRawCapabilitiesInfo.CodecMinorVersion">
+    <summary>
+      <para>Type: <b>UINT</b></para>
+      <para>The codec's minor version.</para>
+    </summary>
+  </member>
+  <member name="WICRawCapabilitiesInfo.ExposureCompensationSupport">
+    <summary>
+      <para>Type: <b><see cref="WICRawCapabilities" /></b></para>
+      <para>The <see cref="WICRawCapabilities" /> of exposure compensation support.</para>
+    </summary>
+  </member>
+  <member name="WICRawCapabilitiesInfo.ContrastSupport">
+    <summary>
+      <para>Type: <b><see cref="WICRawCapabilities" /></b></para>
+      <para>The <see cref="WICRawCapabilities" /> of contrast support.</para>
+    </summary>
+  </member>
+  <member name="WICRawCapabilitiesInfo.RGBWhitePointSupport">
+    <summary>
+      <para>Type: <b><see cref="WICRawCapabilities" /></b></para>
+      <para>The <see cref="WICRawCapabilities" /> of RGB white point support.</para>
+    </summary>
+  </member>
+  <member name="WICRawCapabilitiesInfo.NamedWhitePointSupport">
+    <summary>
+      <para>Type: <b><see cref="WICRawCapabilities" /></b></para>
+      <para>The <see cref="WICRawCapabilities" /> of <see cref="WICNamedWhitePoint" /> support.</para>
+    </summary>
+  </member>
+  <member name="WICRawCapabilitiesInfo.NamedWhitePointSupportMask">
+    <summary>
+      <para>Type: <b>UINT</b></para>
+      <para>The <see cref="WICNamedWhitePoint" /> mask.</para>
+    </summary>
+  </member>
+  <member name="WICRawCapabilitiesInfo.KelvinWhitePointSupport">
+    <summary>
+      <para>Type: <b><see cref="WICRawCapabilities" /></b></para>
+      <para>The <see cref="WICRawCapabilities" /> of kelvin white point support.</para>
+    </summary>
+  </member>
+  <member name="WICRawCapabilitiesInfo.GammaSupport">
+    <summary>
+      <para>Type: <b><see cref="WICRawCapabilities" /></b></para>
+      <para>The <see cref="WICRawCapabilities" /> of gamma support.</para>
+    </summary>
+  </member>
+  <member name="WICRawCapabilitiesInfo.TintSupport">
+    <summary>
+      <para>Type: <b><see cref="WICRawCapabilities" /></b></para>
+      <para>The <see cref="WICRawCapabilities" /> of tint support.</para>
+    </summary>
+  </member>
+  <member name="WICRawCapabilitiesInfo.SaturationSupport">
+    <summary>
+      <para>Type: <b><see cref="WICRawCapabilities" /></b></para>
+      <para>The <see cref="WICRawCapabilities" /> of saturation support.</para>
+    </summary>
+  </member>
+  <member name="WICRawCapabilitiesInfo.SharpnessSupport">
+    <summary>
+      <para>Type: <b><see cref="WICRawCapabilities" /></b></para>
+      <para>The <see cref="WICRawCapabilities" /> of sharpness support.</para>
+    </summary>
+  </member>
+  <member name="WICRawCapabilitiesInfo.NoiseReductionSupport">
+    <summary>
+      <para>Type: <b><see cref="WICRawCapabilities" /></b></para>
+      <para>The <see cref="WICRawCapabilities" /> of noise reduction support.</para>
+    </summary>
+  </member>
+  <member name="WICRawCapabilitiesInfo.DestinationColorProfileSupport">
+    <summary>
+      <para>Type: <b><see cref="WICRawCapabilities" /></b></para>
+      <para>The <see cref="WICRawCapabilities" /> of destination color profile support.</para>
+    </summary>
+  </member>
+  <member name="WICRawCapabilitiesInfo.ToneCurveSupport">
+    <summary>
+      <para>Type: <b><see cref="WICRawCapabilities" /></b></para>
+      <para>The <see cref="WICRawCapabilities" /> of tone curve support.</para>
+    </summary>
+  </member>
+  <member name="WICRawCapabilitiesInfo.RotationSupport">
+    <summary>
+      <para>Type: <b><see cref="WICRawRotationCapabilities" /></b></para>
+      <para>The <see cref="WICRawRotationCapabilities" /> of rotation support.</para>
+    </summary>
+  </member>
+  <member name="WICRawCapabilitiesInfo.RenderModeSupport">
+    <summary>
+      <para>Type: <b><see cref="WICRawCapabilities" /></b></para>
+      <para>The <see cref="WICRawCapabilities" /> of <see cref="WICRawRenderMode" /> support.</para>
+    </summary>
+  </member>
+</doc>

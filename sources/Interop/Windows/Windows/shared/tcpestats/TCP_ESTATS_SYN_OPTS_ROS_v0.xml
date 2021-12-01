@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="TCP_ESTATS_SYN_OPTS_ROS_v0">
+    <summary>
+      <para>The <b>TCP_ESTATS_SYN_OPTS_ROS_v0</b> structure contains read-only static information for extended TCP statistics on SYN exchange for a TCP connection.</para>
+    </summary>
+    <remarks>
+      <para>The <b>TCP_ESTATS_SYN_OPTS_ROS_v0</b> structure is used as part of the TCP extended statistics feature available on Windows Vista and later.</para>
+      <para>The <b>TCP_ESTATS_SYN_OPTS_ROS_v0</b> is defined as version 0 of the structure for  read-only static information on SYN exchange for a TCP connection.  The TCP protocol does not permit the members of this structure to change after the SYN exchange. This information is available after the SYN exchange has completed.</para>
+      <para>The <b>TCP_ESTATS_SYN_OPTS_ROS_v0</b> structure is retrieved by calls to  the <see cref="GetPerTcp6ConnectionEStats" /> or <see cref="GetPerTcpConnectionEStats" /> functions when <b>TcpConnectionEstatsSynOpts</b> is passed in the <i>EstatsType</i> parameter. Extended TCP statistics do not need to be enabled to retrieve this structure.</para>
+      <para>The MSS in the <b>MssRcvd</b> and <b>MssSent</b> members is the maximum data in a single TCP datagram. The MSS can be a very large value.</para>
+      <para>The members of this structure are defined in the IETF RFC on the TCP Extended Statistics MIB. For more information, see <a href="http://tools.ietf.org/html/rfc4898">http://www.ietf.org/rfc/rfc4898.txt</a>.</para>
+      <para>The following is the mapping of the members in the <b>TCP_ESTATS_SYN_OPTS_ROS_v0</b> structure to the entries defined in RFC 4898 for extended TCP statistics:</para>
+      <list type="table">
+        <listheader>
+          <description>Term</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <b>ActiveOpen</b>
+          </description>
+          <description>
+            <para>tcpEStatsStackActiveOpen</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>MssRcvd</b>
+          </description>
+          <description>
+            <para>tcpEStatsStackMSSRcvd</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>MssSent</b>
+          </description>
+          <description>
+            <para>tcpEStatsStackMSSSent</para>
+          </description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="GetPerTcp6ConnectionEStats" />
+    <seealso cref="GetPerTcpConnectionEStats" />
+    <seealso cref="TCP_ESTATS_TYPE" />
+  </member>
+  <member name="TCP_ESTATS_SYN_OPTS_ROS_v0.ActiveOpen">
+    <summary>
+      <para>Type: <b>BOOLEAN</b></para>
+      <para>A value that indicates if the TCP connection was an active open.</para>
+      <para>If the local connection traversed the SYN-SENT
+state, then this member is set to <b>TRUE</b>. Otherwise, this member is set to <b>FALSE</b>.</para>
+    </summary>
+  </member>
+  <member name="TCP_ESTATS_SYN_OPTS_ROS_v0.MssRcvd">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The value received in an Maximum Segment Size (MSS) option during the SYN exchange, or zero if no MSS option was received.</para>
+      <para>This value is the maximum data in a single TCP datagram that the remote host  can receive.</para>
+    </summary>
+  </member>
+  <member name="TCP_ESTATS_SYN_OPTS_ROS_v0.MssSent">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The value sent in an MSS option during the SYN exchange, or zero if no MSS option was sent.</para>
+    </summary>
+  </member>
+</doc>

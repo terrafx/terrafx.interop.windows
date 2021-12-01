@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='POWER_REQUEST_TYPE.xml' path='doc/member[@name="POWER_REQUEST_TYPE"]/*' />
 public enum POWER_REQUEST_TYPE
 {
+    /// <include file='POWER_REQUEST_TYPE.xml' path='doc/member[@name="POWER_REQUEST_TYPE.PowerRequestDisplayRequired"]/*' />
     PowerRequestDisplayRequired,
+
+    /// <include file='POWER_REQUEST_TYPE.xml' path='doc/member[@name="POWER_REQUEST_TYPE.PowerRequestSystemRequired"]/*' />
     PowerRequestSystemRequired,
+
+    /// <include file='POWER_REQUEST_TYPE.xml' path='doc/member[@name="POWER_REQUEST_TYPE.PowerRequestAwayModeRequired"]/*' />
     PowerRequestAwayModeRequired,
+
+    /// <include file='POWER_REQUEST_TYPE.xml' path='doc/member[@name="POWER_REQUEST_TYPE.PowerRequestExecutionRequired"]/*' />
     PowerRequestExecutionRequired,
 }

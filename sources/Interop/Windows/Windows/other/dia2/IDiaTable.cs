@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IDiaTable.xml' path='doc/member[@name="IDiaTable"]/*' />
 [Guid("4A59FB77-ABAC-469B-A30B-9ECC85BFEF14")]
 [NativeTypeName("struct IDiaTable : IEnumUnknown")]
 [NativeInheritance("IEnumUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IDiaTable : IDiaTable.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IDiaTable : IDiaTable.Interface
         return ((delegate* unmanaged<IDiaTable*, Guid*, void**, int>)(lpVtbl[0]))((IDiaTable*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IDiaTable : IDiaTable.Interface
         return ((delegate* unmanaged<IDiaTable*, uint>)(lpVtbl[1]))((IDiaTable*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IDiaTable : IDiaTable.Interface
         return ((delegate* unmanaged<IDiaTable*, uint>)(lpVtbl[2]))((IDiaTable*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IEnumUnknown.Next" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Next([NativeTypeName("ULONG")] uint celt, IUnknown** rgelt, [NativeTypeName("ULONG *")] uint* pceltFetched)
@@ -46,6 +51,7 @@ public unsafe partial struct IDiaTable : IDiaTable.Interface
         return ((delegate* unmanaged<IDiaTable*, uint, IUnknown**, uint*, int>)(lpVtbl[3]))((IDiaTable*)Unsafe.AsPointer(ref this), celt, rgelt, pceltFetched);
     }
 
+    /// <inheritdoc cref="IEnumUnknown.Skip" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Skip([NativeTypeName("ULONG")] uint celt)
@@ -53,6 +59,7 @@ public unsafe partial struct IDiaTable : IDiaTable.Interface
         return ((delegate* unmanaged<IDiaTable*, uint, int>)(lpVtbl[4]))((IDiaTable*)Unsafe.AsPointer(ref this), celt);
     }
 
+    /// <inheritdoc cref="IEnumUnknown.Reset" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT Reset()
@@ -60,6 +67,7 @@ public unsafe partial struct IDiaTable : IDiaTable.Interface
         return ((delegate* unmanaged<IDiaTable*, int>)(lpVtbl[5]))((IDiaTable*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IEnumUnknown.Clone" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Clone(IEnumUnknown** ppenum)
@@ -67,6 +75,7 @@ public unsafe partial struct IDiaTable : IDiaTable.Interface
         return ((delegate* unmanaged<IDiaTable*, IEnumUnknown**, int>)(lpVtbl[6]))((IDiaTable*)Unsafe.AsPointer(ref this), ppenum);
     }
 
+    /// <include file='IDiaTable.xml' path='doc/member[@name="IDiaTable.get__NewEnum"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT get__NewEnum(IUnknown** pRetVal)
@@ -74,6 +83,7 @@ public unsafe partial struct IDiaTable : IDiaTable.Interface
         return ((delegate* unmanaged<IDiaTable*, IUnknown**, int>)(lpVtbl[7]))((IDiaTable*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
+    /// <include file='IDiaTable.xml' path='doc/member[@name="IDiaTable.get_name"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT get_name([NativeTypeName("BSTR *")] ushort** pRetVal)
@@ -81,6 +91,7 @@ public unsafe partial struct IDiaTable : IDiaTable.Interface
         return ((delegate* unmanaged<IDiaTable*, ushort**, int>)(lpVtbl[8]))((IDiaTable*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
+    /// <include file='IDiaTable.xml' path='doc/member[@name="IDiaTable.get_Count"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT get_Count([NativeTypeName("LONG *")] int* pRetVal)
@@ -88,6 +99,7 @@ public unsafe partial struct IDiaTable : IDiaTable.Interface
         return ((delegate* unmanaged<IDiaTable*, int*, int>)(lpVtbl[9]))((IDiaTable*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
+    /// <include file='IDiaTable.xml' path='doc/member[@name="IDiaTable.Item"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT Item([NativeTypeName("DWORD")] uint index, IUnknown** element)

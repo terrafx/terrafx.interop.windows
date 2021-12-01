@@ -1,0 +1,353 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IP_INTERFACE_NAME_INFO">
+    <summary>
+      <para>The <b>IP_INTERFACE_NAME_INFO</b> structure contains information about an IPv4 interface on the local computer.</para>
+    </summary>
+    <remarks>
+      <para>In the Microsoft Windows Software Development Kit (SDK), the version of the structure for use on Windows 2000 with Service Pack 1 (SP1) and later is  defined as <b>IP_INTERFACE_NAME_INFO_W2KSP1</b>. When compiling an application if the target platform is Windows 2000 with SP1 and later (<code>NTDDI_VERSION &gt;= NTDDI_WIN2KSP1</code>, <code>_WIN32_WINNT &gt;= 0x0500</code>, or <code>WINVER &gt;= 0x0500</code>), the <b>IP_INTERFACE_NAME_INFO_W2KSP1</b> structure is typedefed to the <b>IP_INTERFACE_NAME_INFO</b> structure.</para>
+      <para>The <b>MediaType</b>, <b>ConnectionType</b>, and <b>AccessType</b> members, definitions and assigned values are available from the Ipifcons.h header file.</para>
+      <para>The optional <b>InterfaceGuid</b> member is often set for dial-up interfaces, and can be used to distinguish multiple dial-up interfaces that share  the same  device GUID.</para>
+    </remarks>
+    <seealso cref="GetAdaptersAddresses" />
+    <seealso cref="NhpAllocateAndGetInterfaceInfoFromStack" />
+  </member>
+  <member name="IP_INTERFACE_NAME_INFO.Index">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The index of the IP interface for the active instance.</para>
+    </summary>
+  </member>
+  <member name="IP_INTERFACE_NAME_INFO.MediaType">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The interface type as defined by the Internet Assigned Names Authority (IANA). Possible values for the interface type are listed in the Ipifcons.h header file.</para>
+      <para>The table below lists common values for the interface type; although, many other values are possible.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IF_TYPE_OTHER</b>
+                </description>
+              </item>
+              <item>
+                <description>1</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Some other type of network interface.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IF_TYPE_ETHERNET_CSMACD</b>
+                </description>
+              </item>
+              <item>
+                <description>6</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>An Ethernet network interface.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IF_TYPE_ISO88025_TOKENRING</b>
+                </description>
+              </item>
+              <item>
+                <description>9</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>A token ring network interface.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IF_TYPE_PPP</b>
+                </description>
+              </item>
+              <item>
+                <description>23</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>A PPP network interface.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IF_TYPE_SOFTWARE_LOOPBACK</b>
+                </description>
+              </item>
+              <item>
+                <description>24</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>A software loopback network interface.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IF_TYPE_ATM</b>
+                </description>
+              </item>
+              <item>
+                <description>37</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>An ATM network interface.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IF_TYPE_IEEE80211</b>
+                </description>
+              </item>
+              <item>
+                <description>71</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>An IEEE 802.11 wireless network interface. On Windows Vista and later, wireless network cards are reported as <b>IF_TYPE_IEEE80211</b>.</para>
+            <para>
+              <b>Windows Server 2003, Windows 2000 Server with SP1 and Windows XP/2000:  </b>Wireless network cards are reported as <b>IF_TYPE_ETHERNET_CSMACD</b>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IF_TYPE_TUNNEL</b>
+                </description>
+              </item>
+              <item>
+                <description>131</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>A tunnel type encapsulation network interface.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IF_TYPE_IEEE1394</b>
+                </description>
+              </item>
+              <item>
+                <description>144</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>An IEEE 1394 (Firewire) high performance serial bus network interface.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="IP_INTERFACE_NAME_INFO.ConnectionType">
+    <summary>
+      <para>Type: <b>UCHAR</b></para>
+      <para>The interface connection type for the adapter.</para>
+      <para>The possible values for this member are defined in the Ipifcons.h header file.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IF_CONNECTION_DEDICATED</b>
+                </description>
+              </item>
+              <item>
+                <description>1</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The connection type is dedicated. The connection comes up automatically when media sense is <b>TRUE</b>. For example, an Ethernet connection is dedicated.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IF_CONNECTION_PASSIVE</b>
+                </description>
+              </item>
+              <item>
+                <description>2</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The connection type is passive. The remote end must bring up the connection to the local station. For example, a RAS interface is passive.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IF_CONNECTION_DEMAND</b>
+                </description>
+              </item>
+              <item>
+                <description>3</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The connection type is demand-dial. A connection of this type comes up in response to a local action (sending a packet, for example).</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="IP_INTERFACE_NAME_INFO.AccessType">
+    <summary>
+      <para>Type: <b>UCHAR</b></para>
+      <para>A value of the <see cref="IF_ACCESS_TYPE" /> enumeration that specifies the access type for the interface.</para>
+      <para>
+        <b>Windows Server 2003, Windows 2000 Server with SP1 and Windows XP/2000:  </b>The possible values for this member are defined in the Ipifcons.h header file.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IF_ACCESS_LOOPBACK</b>
+                </description>
+              </item>
+              <item>
+                <description>1</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The loopback access type. This value indicates that the interface loops back transmit data as receive data.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IF_ACCESS_BROADCAST</b>
+                </description>
+              </item>
+              <item>
+                <description>2</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The LAN access type which includes Ethernet. This value indicates that the interface provides native support for multicast or broadcast services.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IF_ACCESS_POINT_TO_POINT</b>
+                </description>
+              </item>
+              <item>
+                <description>3</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The point to point access type. This value indicates support for CoNDIS/WAN, except for non-broadcast multi-access (NBMA) interfaces.</para>
+            <para>
+              <b>Windows Server 2003, Windows 2000 Server with SP1 and Windows XP/2000:  </b>This  value was defined as <b>IF_ACCESS_POINTTOPOINT</b> in the Ipifcons.h header file.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IF_ACCESS_POINT_TO_MULTI_POINT</b>
+                </description>
+              </item>
+              <item>
+                <description>4</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The point to multipoint access type. This value indicates support for non-broadcast multi-access media, including the RAS internal interface and native ATM.</para>
+            <para>
+              <b>Windows Server 2003, Windows 2000 Server with SP1 and Windows XP/2000:  </b>This  value was defined as <b>IF_ACCESS_POINTTOMULTIPOINT</b> in the Ipifcons.h header file.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="IP_INTERFACE_NAME_INFO.DeviceGuid">
+    <summary>
+      <para>Type: <b>GUID</b></para>
+      <para>The GUID that identifies the underlying device for the interface. This member can be a zero GUID.</para>
+    </summary>
+  </member>
+  <member name="IP_INTERFACE_NAME_INFO.InterfaceGuid">
+    <summary>
+      <para>Type: <b>GUID</b></para>
+      <para>The GUID that identifies the interface mapped to the device. Optional. This member can be a zero GUID.</para>
+    </summary>
+  </member>
+</doc>

@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SHARED_VIRTUAL_DISK_SUPPORT.xml' path='doc/member[@name="SHARED_VIRTUAL_DISK_SUPPORT"]/*' />
 public partial struct SHARED_VIRTUAL_DISK_SUPPORT
 {
+    /// <include file='SHARED_VIRTUAL_DISK_SUPPORT.xml' path='doc/member[@name="SHARED_VIRTUAL_DISK_SUPPORT.SharedVirtualDiskSupport"]/*' />
     public SharedVirtualDiskSupportType SharedVirtualDiskSupport;
 
+    /// <include file='SHARED_VIRTUAL_DISK_SUPPORT.xml' path='doc/member[@name="SHARED_VIRTUAL_DISK_SUPPORT.HandleState"]/*' />
     public SharedVirtualDiskHandleState HandleState;
 }

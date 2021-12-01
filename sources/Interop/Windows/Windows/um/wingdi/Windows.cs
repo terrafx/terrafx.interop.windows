@@ -10,1137 +10,1499 @@ namespace TerraFX.Interop.Windows;
 
 public static unsafe partial class Windows
 {
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.AddFontResourceA"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern int AddFontResourceA([NativeTypeName("LPCSTR")] sbyte* param0);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.AddFontResourceW"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern int AddFontResourceW([NativeTypeName("LPCWSTR")] ushort* param0);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.AnimatePalette"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL AnimatePalette(HPALETTE hPal, uint iStartIndex, uint cEntries, [NativeTypeName("const PALETTEENTRY *")] PALETTEENTRY* ppe);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Arc"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL Arc(HDC hdc, int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.BitBlt"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL BitBlt(HDC hdc, int x, int y, int cx, int cy, HDC hdcSrc, int x1, int y1, [NativeTypeName("DWORD")] uint rop);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CancelDC"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL CancelDC(HDC hdc);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Chord"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL Chord(HDC hdc, int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ChoosePixelFormat"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern int ChoosePixelFormat(HDC hdc, [NativeTypeName("const PIXELFORMATDESCRIPTOR *")] PIXELFORMATDESCRIPTOR* ppfd);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CloseMetaFile"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern HMETAFILE CloseMetaFile(HDC hdc);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CombineRgn"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern int CombineRgn(HRGN hrgnDst, HRGN hrgnSrc1, HRGN hrgnSrc2, int iMode);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CopyMetaFileA"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern HMETAFILE CopyMetaFileA(HMETAFILE param0, [NativeTypeName("LPCSTR")] sbyte* param1);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CopyMetaFileW"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern HMETAFILE CopyMetaFileW(HMETAFILE param0, [NativeTypeName("LPCWSTR")] ushort* param1);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateBitmap"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern HBITMAP CreateBitmap(int nWidth, int nHeight, uint nPlanes, uint nBitCount, [NativeTypeName("const void *")] void* lpBits);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateBitmapIndirect"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern HBITMAP CreateBitmapIndirect([NativeTypeName("const BITMAP *")] BITMAP* pbm);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateBrushIndirect"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern HBRUSH CreateBrushIndirect([NativeTypeName("const LOGBRUSH *")] LOGBRUSH* plbrush);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateCompatibleBitmap"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern HBITMAP CreateCompatibleBitmap(HDC hdc, int cx, int cy);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateDiscardableBitmap"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern HBITMAP CreateDiscardableBitmap(HDC hdc, int cx, int cy);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateCompatibleDC"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern HDC CreateCompatibleDC(HDC hdc);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateDCA"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern HDC CreateDCA([NativeTypeName("LPCSTR")] sbyte* pwszDriver, [NativeTypeName("LPCSTR")] sbyte* pwszDevice, [NativeTypeName("LPCSTR")] sbyte* pszPort, [NativeTypeName("const DEVMODEA *")] DEVMODEA* pdm);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateDCW"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern HDC CreateDCW([NativeTypeName("LPCWSTR")] ushort* pwszDriver, [NativeTypeName("LPCWSTR")] ushort* pwszDevice, [NativeTypeName("LPCWSTR")] ushort* pszPort, [NativeTypeName("const DEVMODEW *")] DEVMODEW* pdm);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateDIBitmap"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern HBITMAP CreateDIBitmap(HDC hdc, [NativeTypeName("const BITMAPINFOHEADER *")] BITMAPINFOHEADER* pbmih, [NativeTypeName("DWORD")] uint flInit, [NativeTypeName("const void *")] void* pjBits, [NativeTypeName("const BITMAPINFO *")] BITMAPINFO* pbmi, uint iUsage);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateDIBPatternBrush"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern HBRUSH CreateDIBPatternBrush(HGLOBAL h, uint iUsage);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateDIBPatternBrushPt"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern HBRUSH CreateDIBPatternBrushPt([NativeTypeName("const void *")] void* lpPackedDIB, uint iUsage);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateEllipticRgn"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern HRGN CreateEllipticRgn(int x1, int y1, int x2, int y2);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateEllipticRgnIndirect"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern HRGN CreateEllipticRgnIndirect([NativeTypeName("const RECT *")] RECT* lprect);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateFontIndirectA"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern HFONT CreateFontIndirectA([NativeTypeName("const LOGFONTA *")] LOGFONTA* lplf);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateFontIndirectW"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern HFONT CreateFontIndirectW([NativeTypeName("const LOGFONTW *")] LOGFONTW* lplf);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateFontA"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern HFONT CreateFontA(int cHeight, int cWidth, int cEscapement, int cOrientation, int cWeight, [NativeTypeName("DWORD")] uint bItalic, [NativeTypeName("DWORD")] uint bUnderline, [NativeTypeName("DWORD")] uint bStrikeOut, [NativeTypeName("DWORD")] uint iCharSet, [NativeTypeName("DWORD")] uint iOutPrecision, [NativeTypeName("DWORD")] uint iClipPrecision, [NativeTypeName("DWORD")] uint iQuality, [NativeTypeName("DWORD")] uint iPitchAndFamily, [NativeTypeName("LPCSTR")] sbyte* pszFaceName);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateFontW"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern HFONT CreateFontW(int cHeight, int cWidth, int cEscapement, int cOrientation, int cWeight, [NativeTypeName("DWORD")] uint bItalic, [NativeTypeName("DWORD")] uint bUnderline, [NativeTypeName("DWORD")] uint bStrikeOut, [NativeTypeName("DWORD")] uint iCharSet, [NativeTypeName("DWORD")] uint iOutPrecision, [NativeTypeName("DWORD")] uint iClipPrecision, [NativeTypeName("DWORD")] uint iQuality, [NativeTypeName("DWORD")] uint iPitchAndFamily, [NativeTypeName("LPCWSTR")] ushort* pszFaceName);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateHatchBrush"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern HBRUSH CreateHatchBrush(int iHatch, COLORREF color);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateICA"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern HDC CreateICA([NativeTypeName("LPCSTR")] sbyte* pszDriver, [NativeTypeName("LPCSTR")] sbyte* pszDevice, [NativeTypeName("LPCSTR")] sbyte* pszPort, [NativeTypeName("const DEVMODEA *")] DEVMODEA* pdm);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateICW"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern HDC CreateICW([NativeTypeName("LPCWSTR")] ushort* pszDriver, [NativeTypeName("LPCWSTR")] ushort* pszDevice, [NativeTypeName("LPCWSTR")] ushort* pszPort, [NativeTypeName("const DEVMODEW *")] DEVMODEW* pdm);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateMetaFileA"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern HDC CreateMetaFileA([NativeTypeName("LPCSTR")] sbyte* pszFile);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateMetaFileW"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern HDC CreateMetaFileW([NativeTypeName("LPCWSTR")] ushort* pszFile);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreatePalette"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern HPALETTE CreatePalette([NativeTypeName("const LOGPALETTE *")] LOGPALETTE* plpal);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreatePen"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern HPEN CreatePen(int iStyle, int cWidth, COLORREF color);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreatePenIndirect"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern HPEN CreatePenIndirect([NativeTypeName("const LOGPEN *")] LOGPEN* plpen);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreatePolyPolygonRgn"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern HRGN CreatePolyPolygonRgn([NativeTypeName("const POINT *")] POINT* pptl, [NativeTypeName("const INT *")] int* pc, int cPoly, int iMode);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreatePatternBrush"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern HBRUSH CreatePatternBrush(HBITMAP hbm);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateRectRgn"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern HRGN CreateRectRgn(int x1, int y1, int x2, int y2);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateRectRgnIndirect"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern HRGN CreateRectRgnIndirect([NativeTypeName("const RECT *")] RECT* lprect);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateRoundRectRgn"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern HRGN CreateRoundRectRgn(int x1, int y1, int x2, int y2, int w, int h);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateScalableFontResourceA"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL CreateScalableFontResourceA([NativeTypeName("DWORD")] uint fdwHidden, [NativeTypeName("LPCSTR")] sbyte* lpszFont, [NativeTypeName("LPCSTR")] sbyte* lpszFile, [NativeTypeName("LPCSTR")] sbyte* lpszPath);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateScalableFontResourceW"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL CreateScalableFontResourceW([NativeTypeName("DWORD")] uint fdwHidden, [NativeTypeName("LPCWSTR")] ushort* lpszFont, [NativeTypeName("LPCWSTR")] ushort* lpszFile, [NativeTypeName("LPCWSTR")] ushort* lpszPath);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateSolidBrush"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern HBRUSH CreateSolidBrush(COLORREF color);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DeleteDC"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL DeleteDC(HDC hdc);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DeleteMetaFile"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL DeleteMetaFile(HMETAFILE hmf);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DeleteObject"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL DeleteObject(HGDIOBJ ho);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DescribePixelFormat"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern int DescribePixelFormat(HDC hdc, int iPixelFormat, uint nBytes, [NativeTypeName("LPPIXELFORMATDESCRIPTOR")] PIXELFORMATDESCRIPTOR* ppfd);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DrawEscape"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern int DrawEscape(HDC hdc, int iEscape, int cjIn, [NativeTypeName("LPCSTR")] sbyte* lpIn);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Ellipse"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL Ellipse(HDC hdc, int left, int top, int right, int bottom);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EnumFontFamiliesExA"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern int EnumFontFamiliesExA(HDC hdc, [NativeTypeName("LPLOGFONTA")] LOGFONTA* lpLogfont, [NativeTypeName("FONTENUMPROCA")] delegate* unmanaged<LOGFONTA*, TEXTMETRICA*, uint, LPARAM, int> lpProc, LPARAM lParam, [NativeTypeName("DWORD")] uint dwFlags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EnumFontFamiliesExW"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern int EnumFontFamiliesExW(HDC hdc, [NativeTypeName("LPLOGFONTW")] LOGFONTW* lpLogfont, [NativeTypeName("FONTENUMPROCW")] delegate* unmanaged<LOGFONTW*, TEXTMETRICW*, uint, LPARAM, int> lpProc, LPARAM lParam, [NativeTypeName("DWORD")] uint dwFlags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EnumFontFamiliesA"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern int EnumFontFamiliesA(HDC hdc, [NativeTypeName("LPCSTR")] sbyte* lpLogfont, [NativeTypeName("FONTENUMPROCA")] delegate* unmanaged<LOGFONTA*, TEXTMETRICA*, uint, LPARAM, int> lpProc, LPARAM lParam);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EnumFontFamiliesW"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern int EnumFontFamiliesW(HDC hdc, [NativeTypeName("LPCWSTR")] ushort* lpLogfont, [NativeTypeName("FONTENUMPROCW")] delegate* unmanaged<LOGFONTW*, TEXTMETRICW*, uint, LPARAM, int> lpProc, LPARAM lParam);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EnumFontsA"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern int EnumFontsA(HDC hdc, [NativeTypeName("LPCSTR")] sbyte* lpLogfont, [NativeTypeName("FONTENUMPROCA")] delegate* unmanaged<LOGFONTA*, TEXTMETRICA*, uint, LPARAM, int> lpProc, LPARAM lParam);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EnumFontsW"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern int EnumFontsW(HDC hdc, [NativeTypeName("LPCWSTR")] ushort* lpLogfont, [NativeTypeName("FONTENUMPROCW")] delegate* unmanaged<LOGFONTW*, TEXTMETRICW*, uint, LPARAM, int> lpProc, LPARAM lParam);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EnumObjects"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern int EnumObjects(HDC hdc, int nType, [NativeTypeName("GOBJENUMPROC")] delegate* unmanaged<void*, LPARAM, int> lpFunc, LPARAM lParam);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EqualRgn"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL EqualRgn(HRGN hrgn1, HRGN hrgn2);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Escape"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern int Escape(HDC hdc, int iEscape, int cjIn, [NativeTypeName("LPCSTR")] sbyte* pvIn, [NativeTypeName("LPVOID")] void* pvOut);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ExtEscape"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern int ExtEscape(HDC hdc, int iEscape, int cjInput, [NativeTypeName("LPCSTR")] sbyte* lpInData, int cjOutput, [NativeTypeName("LPSTR")] sbyte* lpOutData);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ExcludeClipRect"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern int ExcludeClipRect(HDC hdc, int left, int top, int right, int bottom);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ExtCreateRegion"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern HRGN ExtCreateRegion([NativeTypeName("const XFORM *")] XFORM* lpx, [NativeTypeName("DWORD")] uint nCount, [NativeTypeName("const RGNDATA *")] RGNDATA* lpData);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ExtFloodFill"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL ExtFloodFill(HDC hdc, int x, int y, COLORREF color, uint type);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FillRgn"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL FillRgn(HDC hdc, HRGN hrgn, HBRUSH hbr);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FloodFill"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL FloodFill(HDC hdc, int x, int y, COLORREF color);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FrameRgn"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL FrameRgn(HDC hdc, HRGN hrgn, HBRUSH hbr, int w, int h);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetROP2"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern int GetROP2(HDC hdc);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetAspectRatioFilterEx"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL GetAspectRatioFilterEx(HDC hdc, [NativeTypeName("LPSIZE")] SIZE* lpsize);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetBkColor"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern COLORREF GetBkColor(HDC hdc);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetDCBrushColor"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern COLORREF GetDCBrushColor(HDC hdc);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetDCPenColor"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern COLORREF GetDCPenColor(HDC hdc);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetBkMode"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern int GetBkMode(HDC hdc);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetBitmapBits"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     [return: NativeTypeName("LONG")]
     public static extern int GetBitmapBits(HBITMAP hbit, [NativeTypeName("LONG")] int cb, [NativeTypeName("LPVOID")] void* lpvBits);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetBitmapDimensionEx"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL GetBitmapDimensionEx(HBITMAP hbit, [NativeTypeName("LPSIZE")] SIZE* lpsize);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetBoundsRect"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern uint GetBoundsRect(HDC hdc, [NativeTypeName("LPRECT")] RECT* lprect, uint flags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetBrushOrgEx"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL GetBrushOrgEx(HDC hdc, [NativeTypeName("LPPOINT")] POINT* lppt);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetCharWidthA"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL GetCharWidthA(HDC hdc, uint iFirst, uint iLast, [NativeTypeName("LPINT")] int* lpBuffer);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetCharWidthW"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL GetCharWidthW(HDC hdc, uint iFirst, uint iLast, [NativeTypeName("LPINT")] int* lpBuffer);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetCharWidth32A"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL GetCharWidth32A(HDC hdc, uint iFirst, uint iLast, [NativeTypeName("LPINT")] int* lpBuffer);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetCharWidth32W"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL GetCharWidth32W(HDC hdc, uint iFirst, uint iLast, [NativeTypeName("LPINT")] int* lpBuffer);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetCharWidthFloatA"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL GetCharWidthFloatA(HDC hdc, uint iFirst, uint iLast, [NativeTypeName("PFLOAT")] float* lpBuffer);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetCharWidthFloatW"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL GetCharWidthFloatW(HDC hdc, uint iFirst, uint iLast, [NativeTypeName("PFLOAT")] float* lpBuffer);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetCharABCWidthsA"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL GetCharABCWidthsA(HDC hdc, uint wFirst, uint wLast, [NativeTypeName("LPABC")] ABC* lpABC);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetCharABCWidthsW"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL GetCharABCWidthsW(HDC hdc, uint wFirst, uint wLast, [NativeTypeName("LPABC")] ABC* lpABC);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetCharABCWidthsFloatA"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL GetCharABCWidthsFloatA(HDC hdc, uint iFirst, uint iLast, [NativeTypeName("LPABCFLOAT")] ABCFLOAT* lpABC);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetCharABCWidthsFloatW"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL GetCharABCWidthsFloatW(HDC hdc, uint iFirst, uint iLast, [NativeTypeName("LPABCFLOAT")] ABCFLOAT* lpABC);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetClipBox"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern int GetClipBox(HDC hdc, [NativeTypeName("LPRECT")] RECT* lprect);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetClipRgn"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern int GetClipRgn(HDC hdc, HRGN hrgn);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetMetaRgn"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern int GetMetaRgn(HDC hdc, HRGN hrgn);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetCurrentObject"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern HGDIOBJ GetCurrentObject(HDC hdc, uint type);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetCurrentPositionEx"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL GetCurrentPositionEx(HDC hdc, [NativeTypeName("LPPOINT")] POINT* lppt);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetDeviceCaps"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern int GetDeviceCaps(HDC hdc, int index);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetDIBits"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern int GetDIBits(HDC hdc, HBITMAP hbm, uint start, uint cLines, [NativeTypeName("LPVOID")] void* lpvBits, [NativeTypeName("LPBITMAPINFO")] BITMAPINFO* lpbmi, uint usage);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetFontData"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint GetFontData(HDC hdc, [NativeTypeName("DWORD")] uint dwTable, [NativeTypeName("DWORD")] uint dwOffset, [NativeTypeName("PVOID")] void* pvBuffer, [NativeTypeName("DWORD")] uint cjBuffer);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetGlyphOutlineA"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint GetGlyphOutlineA(HDC hdc, uint uChar, uint fuFormat, [NativeTypeName("LPGLYPHMETRICS")] GLYPHMETRICS* lpgm, [NativeTypeName("DWORD")] uint cjBuffer, [NativeTypeName("LPVOID")] void* pvBuffer, [NativeTypeName("const MAT2 *")] MAT2* lpmat2);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetGlyphOutlineW"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint GetGlyphOutlineW(HDC hdc, uint uChar, uint fuFormat, [NativeTypeName("LPGLYPHMETRICS")] GLYPHMETRICS* lpgm, [NativeTypeName("DWORD")] uint cjBuffer, [NativeTypeName("LPVOID")] void* pvBuffer, [NativeTypeName("const MAT2 *")] MAT2* lpmat2);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetGraphicsMode"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern int GetGraphicsMode(HDC hdc);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetMapMode"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern int GetMapMode(HDC hdc);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetMetaFileBitsEx"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern uint GetMetaFileBitsEx(HMETAFILE hMF, uint cbBuffer, [NativeTypeName("LPVOID")] void* lpData);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetMetaFileA"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern HMETAFILE GetMetaFileA([NativeTypeName("LPCSTR")] sbyte* lpName);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetMetaFileW"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern HMETAFILE GetMetaFileW([NativeTypeName("LPCWSTR")] ushort* lpName);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetNearestColor"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern COLORREF GetNearestColor(HDC hdc, COLORREF color);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetNearestPaletteIndex"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern uint GetNearestPaletteIndex(HPALETTE h, COLORREF color);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetObjectType"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint GetObjectType(HGDIOBJ h);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetOutlineTextMetricsA"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern uint GetOutlineTextMetricsA(HDC hdc, uint cjCopy, [NativeTypeName("LPOUTLINETEXTMETRICA")] OUTLINETEXTMETRICA* potm);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetOutlineTextMetricsW"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern uint GetOutlineTextMetricsW(HDC hdc, uint cjCopy, [NativeTypeName("LPOUTLINETEXTMETRICW")] OUTLINETEXTMETRICW* potm);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetPaletteEntries"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern uint GetPaletteEntries(HPALETTE hpal, uint iStart, uint cEntries, [NativeTypeName("LPPALETTEENTRY")] PALETTEENTRY* pPalEntries);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetPixel"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern COLORREF GetPixel(HDC hdc, int x, int y);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetPixelFormat"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern int GetPixelFormat(HDC hdc);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetPolyFillMode"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern int GetPolyFillMode(HDC hdc);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetRasterizerCaps"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL GetRasterizerCaps([NativeTypeName("LPRASTERIZER_STATUS")] RASTERIZER_STATUS* lpraststat, uint cjBytes);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetRandomRgn"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern int GetRandomRgn(HDC hdc, HRGN hrgn, int i);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetRegionData"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint GetRegionData(HRGN hrgn, [NativeTypeName("DWORD")] uint nCount, [NativeTypeName("LPRGNDATA")] RGNDATA* lpRgnData);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetRgnBox"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern int GetRgnBox(HRGN hrgn, [NativeTypeName("LPRECT")] RECT* lprc);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetStockObject"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern HGDIOBJ GetStockObject(int i);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetStretchBltMode"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern int GetStretchBltMode(HDC hdc);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetSystemPaletteEntries"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern uint GetSystemPaletteEntries(HDC hdc, uint iStart, uint cEntries, [NativeTypeName("LPPALETTEENTRY")] PALETTEENTRY* pPalEntries);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetSystemPaletteUse"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern uint GetSystemPaletteUse(HDC hdc);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetTextCharacterExtra"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern int GetTextCharacterExtra(HDC hdc);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetTextAlign"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern uint GetTextAlign(HDC hdc);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetTextColor"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern COLORREF GetTextColor(HDC hdc);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetTextExtentPointA"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL GetTextExtentPointA(HDC hdc, [NativeTypeName("LPCSTR")] sbyte* lpString, int c, [NativeTypeName("LPSIZE")] SIZE* lpsz);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetTextExtentPointW"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL GetTextExtentPointW(HDC hdc, [NativeTypeName("LPCWSTR")] ushort* lpString, int c, [NativeTypeName("LPSIZE")] SIZE* lpsz);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetTextExtentPoint32A"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL GetTextExtentPoint32A(HDC hdc, [NativeTypeName("LPCSTR")] sbyte* lpString, int c, [NativeTypeName("LPSIZE")] SIZE* psizl);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetTextExtentPoint32W"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL GetTextExtentPoint32W(HDC hdc, [NativeTypeName("LPCWSTR")] ushort* lpString, int c, [NativeTypeName("LPSIZE")] SIZE* psizl);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetTextExtentExPointA"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL GetTextExtentExPointA(HDC hdc, [NativeTypeName("LPCSTR")] sbyte* lpszString, int cchString, int nMaxExtent, [NativeTypeName("LPINT")] int* lpnFit, [NativeTypeName("LPINT")] int* lpnDx, [NativeTypeName("LPSIZE")] SIZE* lpSize);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetTextExtentExPointW"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL GetTextExtentExPointW(HDC hdc, [NativeTypeName("LPCWSTR")] ushort* lpszString, int cchString, int nMaxExtent, [NativeTypeName("LPINT")] int* lpnFit, [NativeTypeName("LPINT")] int* lpnDx, [NativeTypeName("LPSIZE")] SIZE* lpSize);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetTextCharset"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern int GetTextCharset(HDC hdc);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetTextCharsetInfo"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern int GetTextCharsetInfo(HDC hdc, [NativeTypeName("LPFONTSIGNATURE")] FONTSIGNATURE* lpSig, [NativeTypeName("DWORD")] uint dwFlags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.TranslateCharsetInfo"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL TranslateCharsetInfo([NativeTypeName("DWORD *")] uint* lpSrc, [NativeTypeName("LPCHARSETINFO")] CHARSETINFO* lpCs, [NativeTypeName("DWORD")] uint dwFlags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetFontLanguageInfo"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint GetFontLanguageInfo(HDC hdc);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetCharacterPlacementA"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint GetCharacterPlacementA(HDC hdc, [NativeTypeName("LPCSTR")] sbyte* lpString, int nCount, int nMexExtent, [NativeTypeName("LPGCP_RESULTSA")] GCP_RESULTSA* lpResults, [NativeTypeName("DWORD")] uint dwFlags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetCharacterPlacementW"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint GetCharacterPlacementW(HDC hdc, [NativeTypeName("LPCWSTR")] ushort* lpString, int nCount, int nMexExtent, [NativeTypeName("LPGCP_RESULTSW")] GCP_RESULTSW* lpResults, [NativeTypeName("DWORD")] uint dwFlags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetFontUnicodeRanges"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint GetFontUnicodeRanges(HDC hdc, [NativeTypeName("LPGLYPHSET")] GLYPHSET* lpgs);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetGlyphIndicesA"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint GetGlyphIndicesA(HDC hdc, [NativeTypeName("LPCSTR")] sbyte* lpstr, int c, [NativeTypeName("LPWORD")] ushort* pgi, [NativeTypeName("DWORD")] uint fl);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetGlyphIndicesW"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint GetGlyphIndicesW(HDC hdc, [NativeTypeName("LPCWSTR")] ushort* lpstr, int c, [NativeTypeName("LPWORD")] ushort* pgi, [NativeTypeName("DWORD")] uint fl);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetTextExtentPointI"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL GetTextExtentPointI(HDC hdc, [NativeTypeName("LPWORD")] ushort* pgiIn, int cgi, [NativeTypeName("LPSIZE")] SIZE* psize);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetTextExtentExPointI"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL GetTextExtentExPointI(HDC hdc, [NativeTypeName("LPWORD")] ushort* lpwszString, int cwchString, int nMaxExtent, [NativeTypeName("LPINT")] int* lpnFit, [NativeTypeName("LPINT")] int* lpnDx, [NativeTypeName("LPSIZE")] SIZE* lpSize);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetCharWidthI"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL GetCharWidthI(HDC hdc, uint giFirst, uint cgi, [NativeTypeName("LPWORD")] ushort* pgi, [NativeTypeName("LPINT")] int* piWidths);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetCharABCWidthsI"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL GetCharABCWidthsI(HDC hdc, uint giFirst, uint cgi, [NativeTypeName("LPWORD")] ushort* pgi, [NativeTypeName("LPABC")] ABC* pabc);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.AddFontResourceExA"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern int AddFontResourceExA([NativeTypeName("LPCSTR")] sbyte* name, [NativeTypeName("DWORD")] uint fl, [NativeTypeName("PVOID")] void* res);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.AddFontResourceExW"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern int AddFontResourceExW([NativeTypeName("LPCWSTR")] ushort* name, [NativeTypeName("DWORD")] uint fl, [NativeTypeName("PVOID")] void* res);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RemoveFontResourceExA"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL RemoveFontResourceExA([NativeTypeName("LPCSTR")] sbyte* name, [NativeTypeName("DWORD")] uint fl, [NativeTypeName("PVOID")] void* pdv);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RemoveFontResourceExW"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL RemoveFontResourceExW([NativeTypeName("LPCWSTR")] ushort* name, [NativeTypeName("DWORD")] uint fl, [NativeTypeName("PVOID")] void* pdv);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.AddFontMemResourceEx"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern HANDLE AddFontMemResourceEx([NativeTypeName("PVOID")] void* pFileView, [NativeTypeName("DWORD")] uint cjSize, [NativeTypeName("PVOID")] void* pvResrved, [NativeTypeName("DWORD *")] uint* pNumFonts);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RemoveFontMemResourceEx"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL RemoveFontMemResourceEx(HANDLE h);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateFontIndirectExA"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern HFONT CreateFontIndirectExA([NativeTypeName("const ENUMLOGFONTEXDVA *")] ENUMLOGFONTEXDVA* param0);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateFontIndirectExW"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern HFONT CreateFontIndirectExW([NativeTypeName("const ENUMLOGFONTEXDVW *")] ENUMLOGFONTEXDVW* param0);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetViewportExtEx"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL GetViewportExtEx(HDC hdc, [NativeTypeName("LPSIZE")] SIZE* lpsize);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetViewportOrgEx"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL GetViewportOrgEx(HDC hdc, [NativeTypeName("LPPOINT")] POINT* lppoint);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetWindowExtEx"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL GetWindowExtEx(HDC hdc, [NativeTypeName("LPSIZE")] SIZE* lpsize);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetWindowOrgEx"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL GetWindowOrgEx(HDC hdc, [NativeTypeName("LPPOINT")] POINT* lppoint);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IntersectClipRect"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern int IntersectClipRect(HDC hdc, int left, int top, int right, int bottom);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.InvertRgn"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL InvertRgn(HDC hdc, HRGN hrgn);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LineDDA"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL LineDDA(int xStart, int yStart, int xEnd, int yEnd, [NativeTypeName("LINEDDAPROC")] delegate* unmanaged<int, int, LPARAM, void> lpProc, LPARAM data);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LineTo"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL LineTo(HDC hdc, int x, int y);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MaskBlt"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL MaskBlt(HDC hdcDest, int xDest, int yDest, int width, int height, HDC hdcSrc, int xSrc, int ySrc, HBITMAP hbmMask, int xMask, int yMask, [NativeTypeName("DWORD")] uint rop);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PlgBlt"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL PlgBlt(HDC hdcDest, [NativeTypeName("const POINT *")] POINT* lpPoint, HDC hdcSrc, int xSrc, int ySrc, int width, int height, HBITMAP hbmMask, int xMask, int yMask);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.OffsetClipRgn"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern int OffsetClipRgn(HDC hdc, int x, int y);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.OffsetRgn"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern int OffsetRgn(HRGN hrgn, int x, int y);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PatBlt"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL PatBlt(HDC hdc, int x, int y, int w, int h, [NativeTypeName("DWORD")] uint rop);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Pie"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL Pie(HDC hdc, int left, int top, int right, int bottom, int xr1, int yr1, int xr2, int yr2);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PlayMetaFile"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL PlayMetaFile(HDC hdc, HMETAFILE hmf);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PaintRgn"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL PaintRgn(HDC hdc, HRGN hrgn);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PolyPolygon"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL PolyPolygon(HDC hdc, [NativeTypeName("const POINT *")] POINT* apt, [NativeTypeName("const INT *")] int* asz, int csz);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PtInRegion"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL PtInRegion(HRGN hrgn, int x, int y);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PtVisible"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL PtVisible(HDC hdc, int x, int y);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RectInRegion"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL RectInRegion(HRGN hrgn, [NativeTypeName("const RECT *")] RECT* lprect);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RectVisible"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL RectVisible(HDC hdc, [NativeTypeName("const RECT *")] RECT* lprect);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Rectangle"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL Rectangle(HDC hdc, int left, int top, int right, int bottom);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RestoreDC"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL RestoreDC(HDC hdc, int nSavedDC);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ResetDCA"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern HDC ResetDCA(HDC hdc, [NativeTypeName("const DEVMODEA *")] DEVMODEA* lpdm);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ResetDCW"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern HDC ResetDCW(HDC hdc, [NativeTypeName("const DEVMODEW *")] DEVMODEW* lpdm);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RealizePalette"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern uint RealizePalette(HDC hdc);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RemoveFontResourceA"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL RemoveFontResourceA([NativeTypeName("LPCSTR")] sbyte* lpFileName);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RemoveFontResourceW"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL RemoveFontResourceW([NativeTypeName("LPCWSTR")] ushort* lpFileName);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RoundRect"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL RoundRect(HDC hdc, int left, int top, int right, int bottom, int width, int height);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ResizePalette"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL ResizePalette(HPALETTE hpal, uint n);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SaveDC"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern int SaveDC(HDC hdc);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SelectClipRgn"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern int SelectClipRgn(HDC hdc, HRGN hrgn);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ExtSelectClipRgn"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern int ExtSelectClipRgn(HDC hdc, HRGN hrgn, int mode);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetMetaRgn"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern int SetMetaRgn(HDC hdc);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SelectObject"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern HGDIOBJ SelectObject(HDC hdc, HGDIOBJ h);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SelectPalette"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern HPALETTE SelectPalette(HDC hdc, HPALETTE hPal, BOOL bForceBkgd);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetBkColor"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern COLORREF SetBkColor(HDC hdc, COLORREF color);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetDCBrushColor"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern COLORREF SetDCBrushColor(HDC hdc, COLORREF color);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetDCPenColor"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern COLORREF SetDCPenColor(HDC hdc, COLORREF color);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetBkMode"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern int SetBkMode(HDC hdc, int mode);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetBitmapBits"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     [return: NativeTypeName("LONG")]
     public static extern int SetBitmapBits(HBITMAP hbm, [NativeTypeName("DWORD")] uint cb, [NativeTypeName("const void *")] void* pvBits);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetBoundsRect"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern uint SetBoundsRect(HDC hdc, [NativeTypeName("const RECT *")] RECT* lprect, uint flags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetDIBits"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern int SetDIBits(HDC hdc, HBITMAP hbm, uint start, uint cLines, [NativeTypeName("const void *")] void* lpBits, [NativeTypeName("const BITMAPINFO *")] BITMAPINFO* lpbmi, uint ColorUse);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetDIBitsToDevice"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern int SetDIBitsToDevice(HDC hdc, int xDest, int yDest, [NativeTypeName("DWORD")] uint w, [NativeTypeName("DWORD")] uint h, int xSrc, int ySrc, uint StartScan, uint cLines, [NativeTypeName("const void *")] void* lpvBits, [NativeTypeName("const BITMAPINFO *")] BITMAPINFO* lpbmi, uint ColorUse);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetMapperFlags"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint SetMapperFlags(HDC hdc, [NativeTypeName("DWORD")] uint flags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetGraphicsMode"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern int SetGraphicsMode(HDC hdc, int iMode);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetMapMode"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern int SetMapMode(HDC hdc, int iMode);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetLayout"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint SetLayout(HDC hdc, [NativeTypeName("DWORD")] uint l);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetLayout"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("DWORD")]
     public static extern uint GetLayout(HDC hdc);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetMetaFileBitsEx"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern HMETAFILE SetMetaFileBitsEx(uint cbBuffer, [NativeTypeName("const BYTE *")] byte* lpData);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetPaletteEntries"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern uint SetPaletteEntries(HPALETTE hpal, uint iStart, uint cEntries, [NativeTypeName("const PALETTEENTRY *")] PALETTEENTRY* pPalEntries);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetPixel"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern COLORREF SetPixel(HDC hdc, int x, int y, COLORREF color);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetPixelV"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL SetPixelV(HDC hdc, int x, int y, COLORREF color);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetPixelFormat"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SetPixelFormat(HDC hdc, int format, [NativeTypeName("const PIXELFORMATDESCRIPTOR *")] PIXELFORMATDESCRIPTOR* ppfd);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetPolyFillMode"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern int SetPolyFillMode(HDC hdc, int mode);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.StretchBlt"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL StretchBlt(HDC hdcDest, int xDest, int yDest, int wDest, int hDest, HDC hdcSrc, int xSrc, int ySrc, int wSrc, int hSrc, [NativeTypeName("DWORD")] uint rop);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetRectRgn"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL SetRectRgn(HRGN hrgn, int left, int top, int right, int bottom);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.StretchDIBits"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern int StretchDIBits(HDC hdc, int xDest, int yDest, int DestWidth, int DestHeight, int xSrc, int ySrc, int SrcWidth, int SrcHeight, [NativeTypeName("const void *")] void* lpBits, [NativeTypeName("const BITMAPINFO *")] BITMAPINFO* lpbmi, uint iUsage, [NativeTypeName("DWORD")] uint rop);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetROP2"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern int SetROP2(HDC hdc, int rop2);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetStretchBltMode"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern int SetStretchBltMode(HDC hdc, int mode);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetSystemPaletteUse"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern uint SetSystemPaletteUse(HDC hdc, uint use);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetTextCharacterExtra"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern int SetTextCharacterExtra(HDC hdc, int extra);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetTextColor"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern COLORREF SetTextColor(HDC hdc, COLORREF color);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetTextAlign"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern uint SetTextAlign(HDC hdc, uint align);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetTextJustification"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL SetTextJustification(HDC hdc, int extra, int count);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.UpdateColors"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL UpdateColors(HDC hdc);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.AlphaBlend"]/*' />
     [DllImport("msimg32", ExactSpelling = true)]
     public static extern BOOL AlphaBlend(HDC hdcDest, int xoriginDest, int yoriginDest, int wDest, int hDest, HDC hdcSrc, int xoriginSrc, int yoriginSrc, int wSrc, int hSrc, BLENDFUNCTION ftn);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.TransparentBlt"]/*' />
     [DllImport("msimg32", ExactSpelling = true)]
     public static extern BOOL TransparentBlt(HDC hdcDest, int xoriginDest, int yoriginDest, int wDest, int hDest, HDC hdcSrc, int xoriginSrc, int yoriginSrc, int wSrc, int hSrc, uint crTransparent);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GradientFill"]/*' />
     [DllImport("msimg32", ExactSpelling = true)]
     public static extern BOOL GradientFill(HDC hdc, [NativeTypeName("PTRIVERTEX")] TRIVERTEX* pVertex, [NativeTypeName("ULONG")] uint nVertex, [NativeTypeName("PVOID")] void* pMesh, [NativeTypeName("ULONG")] uint nMesh, [NativeTypeName("ULONG")] uint ulMode);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GdiAlphaBlend"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL GdiAlphaBlend(HDC hdcDest, int xoriginDest, int yoriginDest, int wDest, int hDest, HDC hdcSrc, int xoriginSrc, int yoriginSrc, int wSrc, int hSrc, BLENDFUNCTION ftn);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GdiTransparentBlt"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL GdiTransparentBlt(HDC hdcDest, int xoriginDest, int yoriginDest, int wDest, int hDest, HDC hdcSrc, int xoriginSrc, int yoriginSrc, int wSrc, int hSrc, uint crTransparent);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GdiGradientFill"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL GdiGradientFill(HDC hdc, [NativeTypeName("PTRIVERTEX")] TRIVERTEX* pVertex, [NativeTypeName("ULONG")] uint nVertex, [NativeTypeName("PVOID")] void* pMesh, [NativeTypeName("ULONG")] uint nCount, [NativeTypeName("ULONG")] uint ulMode);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PlayMetaFileRecord"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL PlayMetaFileRecord(HDC hdc, [NativeTypeName("LPHANDLETABLE")] HANDLETABLE* lpHandleTable, [NativeTypeName("LPMETARECORD")] METARECORD* lpMR, uint noObjs);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EnumMetaFile"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL EnumMetaFile(HDC hdc, HMETAFILE hmf, [NativeTypeName("MFENUMPROC")] delegate* unmanaged<HDC, HANDLETABLE*, METARECORD*, int, LPARAM, int> proc, LPARAM param3);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CloseEnhMetaFile"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern HENHMETAFILE CloseEnhMetaFile(HDC hdc);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CopyEnhMetaFileA"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern HENHMETAFILE CopyEnhMetaFileA(HENHMETAFILE hEnh, [NativeTypeName("LPCSTR")] sbyte* lpFileName);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CopyEnhMetaFileW"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern HENHMETAFILE CopyEnhMetaFileW(HENHMETAFILE hEnh, [NativeTypeName("LPCWSTR")] ushort* lpFileName);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateEnhMetaFileA"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern HDC CreateEnhMetaFileA(HDC hdc, [NativeTypeName("LPCSTR")] sbyte* lpFilename, [NativeTypeName("const RECT *")] RECT* lprc, [NativeTypeName("LPCSTR")] sbyte* lpDesc);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateEnhMetaFileW"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern HDC CreateEnhMetaFileW(HDC hdc, [NativeTypeName("LPCWSTR")] ushort* lpFilename, [NativeTypeName("const RECT *")] RECT* lprc, [NativeTypeName("LPCWSTR")] ushort* lpDesc);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DeleteEnhMetaFile"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL DeleteEnhMetaFile(HENHMETAFILE hmf);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EnumEnhMetaFile"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL EnumEnhMetaFile(HDC hdc, HENHMETAFILE hmf, [NativeTypeName("ENHMFENUMPROC")] delegate* unmanaged<HDC, HANDLETABLE*, ENHMETARECORD*, int, LPARAM, int> proc, [NativeTypeName("LPVOID")] void* param3, [NativeTypeName("const RECT *")] RECT* lpRect);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetEnhMetaFileA"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern HENHMETAFILE GetEnhMetaFileA([NativeTypeName("LPCSTR")] sbyte* lpName);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetEnhMetaFileW"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern HENHMETAFILE GetEnhMetaFileW([NativeTypeName("LPCWSTR")] ushort* lpName);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetEnhMetaFileBits"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern uint GetEnhMetaFileBits(HENHMETAFILE hEMF, uint nSize, [NativeTypeName("LPBYTE")] byte* lpData);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetEnhMetaFileDescriptionA"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern uint GetEnhMetaFileDescriptionA(HENHMETAFILE hemf, uint cchBuffer, [NativeTypeName("LPSTR")] sbyte* lpDescription);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetEnhMetaFileDescriptionW"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern uint GetEnhMetaFileDescriptionW(HENHMETAFILE hemf, uint cchBuffer, [NativeTypeName("LPWSTR")] ushort* lpDescription);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetEnhMetaFileHeader"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern uint GetEnhMetaFileHeader(HENHMETAFILE hemf, uint nSize, [NativeTypeName("LPENHMETAHEADER")] ENHMETAHEADER* lpEnhMetaHeader);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetEnhMetaFilePaletteEntries"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern uint GetEnhMetaFilePaletteEntries(HENHMETAFILE hemf, uint nNumEntries, [NativeTypeName("LPPALETTEENTRY")] PALETTEENTRY* lpPaletteEntries);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetEnhMetaFilePixelFormat"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern uint GetEnhMetaFilePixelFormat(HENHMETAFILE hemf, uint cbBuffer, PIXELFORMATDESCRIPTOR* ppfd);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetWinMetaFileBits"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern uint GetWinMetaFileBits(HENHMETAFILE hemf, uint cbData16, [NativeTypeName("LPBYTE")] byte* pData16, int iMapMode, HDC hdcRef);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PlayEnhMetaFile"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL PlayEnhMetaFile(HDC hdc, HENHMETAFILE hmf, [NativeTypeName("const RECT *")] RECT* lprect);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PlayEnhMetaFileRecord"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL PlayEnhMetaFileRecord(HDC hdc, [NativeTypeName("LPHANDLETABLE")] HANDLETABLE* pht, [NativeTypeName("const ENHMETARECORD *")] ENHMETARECORD* pmr, uint cht);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetEnhMetaFileBits"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern HENHMETAFILE SetEnhMetaFileBits(uint nSize, [NativeTypeName("const BYTE *")] byte* pb);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetWinMetaFileBits"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern HENHMETAFILE SetWinMetaFileBits(uint nSize, [NativeTypeName("const BYTE *")] byte* lpMeta16Data, HDC hdcRef, [NativeTypeName("const METAFILEPICT *")] METAFILEPICT* lpMFP);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GdiComment"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL GdiComment(HDC hdc, uint nSize, [NativeTypeName("const BYTE *")] byte* lpData);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetTextMetricsA"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL GetTextMetricsA(HDC hdc, [NativeTypeName("LPTEXTMETRICA")] TEXTMETRICA* lptm);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetTextMetricsW"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL GetTextMetricsW(HDC hdc, [NativeTypeName("LPTEXTMETRICW")] TEXTMETRICW* lptm);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.AngleArc"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL AngleArc(HDC hdc, int x, int y, [NativeTypeName("DWORD")] uint r, float StartAngle, float SweepAngle);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PolyPolyline"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL PolyPolyline(HDC hdc, [NativeTypeName("const POINT *")] POINT* apt, [NativeTypeName("const DWORD *")] uint* asz, [NativeTypeName("DWORD")] uint csz);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetWorldTransform"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL GetWorldTransform(HDC hdc, [NativeTypeName("LPXFORM")] XFORM* lpxf);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetWorldTransform"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL SetWorldTransform(HDC hdc, [NativeTypeName("const XFORM *")] XFORM* lpxf);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ModifyWorldTransform"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL ModifyWorldTransform(HDC hdc, [NativeTypeName("const XFORM *")] XFORM* lpxf, [NativeTypeName("DWORD")] uint mode);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CombineTransform"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL CombineTransform([NativeTypeName("LPXFORM")] XFORM* lpxfOut, [NativeTypeName("const XFORM *")] XFORM* lpxf1, [NativeTypeName("const XFORM *")] XFORM* lpxf2);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateDIBSection"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HBITMAP CreateDIBSection(HDC hdc, [NativeTypeName("const BITMAPINFO *")] BITMAPINFO* pbmi, uint usage, void** ppvBits, HANDLE hSection, [NativeTypeName("DWORD")] uint offset);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetDIBColorTable"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern uint GetDIBColorTable(HDC hdc, uint iStart, uint cEntries, RGBQUAD* prgbq);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetDIBColorTable"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern uint SetDIBColorTable(HDC hdc, uint iStart, uint cEntries, [NativeTypeName("const RGBQUAD *")] RGBQUAD* prgbq);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetColorAdjustment"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL SetColorAdjustment(HDC hdc, [NativeTypeName("const COLORADJUSTMENT *")] COLORADJUSTMENT* lpca);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetColorAdjustment"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL GetColorAdjustment(HDC hdc, [NativeTypeName("LPCOLORADJUSTMENT")] COLORADJUSTMENT* lpca);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateHalftonePalette"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern HPALETTE CreateHalftonePalette(HDC hdc);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.StartDocA"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern int StartDocA(HDC hdc, [NativeTypeName("const DOCINFOA *")] DOCINFOA* lpdi);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.StartDocW"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern int StartDocW(HDC hdc, [NativeTypeName("const DOCINFOW *")] DOCINFOW* lpdi);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EndDoc"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern int EndDoc(HDC hdc);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.StartPage"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern int StartPage(HDC hdc);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EndPage"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern int EndPage(HDC hdc);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.AbortDoc"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern int AbortDoc(HDC hdc);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetAbortProc"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern int SetAbortProc(HDC hdc, [NativeTypeName("ABORTPROC")] delegate* unmanaged<HDC, int, BOOL> proc);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.AbortPath"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL AbortPath(HDC hdc);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ArcTo"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL ArcTo(HDC hdc, int left, int top, int right, int bottom, int xr1, int yr1, int xr2, int yr2);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.BeginPath"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL BeginPath(HDC hdc);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CloseFigure"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL CloseFigure(HDC hdc);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EndPath"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL EndPath(HDC hdc);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FillPath"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL FillPath(HDC hdc);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FlattenPath"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL FlattenPath(HDC hdc);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetPath"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern int GetPath(HDC hdc, [NativeTypeName("LPPOINT")] POINT* apt, [NativeTypeName("LPBYTE")] byte* aj, int cpt);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PathToRegion"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern HRGN PathToRegion(HDC hdc);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PolyDraw"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL PolyDraw(HDC hdc, [NativeTypeName("const POINT *")] POINT* apt, [NativeTypeName("const BYTE *")] byte* aj, int cpt);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SelectClipPath"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL SelectClipPath(HDC hdc, int mode);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetArcDirection"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern int SetArcDirection(HDC hdc, int dir);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetMiterLimit"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL SetMiterLimit(HDC hdc, float limit, [NativeTypeName("PFLOAT")] float* old);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.StrokeAndFillPath"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL StrokeAndFillPath(HDC hdc);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.StrokePath"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL StrokePath(HDC hdc);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WidenPath"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL WidenPath(HDC hdc);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ExtCreatePen"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern HPEN ExtCreatePen([NativeTypeName("DWORD")] uint iPenStyle, [NativeTypeName("DWORD")] uint cWidth, [NativeTypeName("const LOGBRUSH *")] LOGBRUSH* plbrush, [NativeTypeName("DWORD")] uint cStyle, [NativeTypeName("const DWORD *")] uint* pstyle);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetMiterLimit"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL GetMiterLimit(HDC hdc, [NativeTypeName("PFLOAT")] float* plimit);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetArcDirection"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern int GetArcDirection(HDC hdc);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetObjectA"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern int GetObjectA(HANDLE h, int c, [NativeTypeName("LPVOID")] void* pv);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetObjectW"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern int GetObjectW(HANDLE h, int c, [NativeTypeName("LPVOID")] void* pv);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MoveToEx"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL MoveToEx(HDC hdc, int x, int y, [NativeTypeName("LPPOINT")] POINT* lppt);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.TextOutA"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL TextOutA(HDC hdc, int x, int y, [NativeTypeName("LPCSTR")] sbyte* lpString, int c);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.TextOutW"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL TextOutW(HDC hdc, int x, int y, [NativeTypeName("LPCWSTR")] ushort* lpString, int c);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ExtTextOutA"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL ExtTextOutA(HDC hdc, int x, int y, uint options, [NativeTypeName("const RECT *")] RECT* lprect, [NativeTypeName("LPCSTR")] sbyte* lpString, uint c, [NativeTypeName("const INT *")] int* lpDx);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ExtTextOutW"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL ExtTextOutW(HDC hdc, int x, int y, uint options, [NativeTypeName("const RECT *")] RECT* lprect, [NativeTypeName("LPCWSTR")] ushort* lpString, uint c, [NativeTypeName("const INT *")] int* lpDx);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PolyTextOutA"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL PolyTextOutA(HDC hdc, [NativeTypeName("const POLYTEXTA *")] POLYTEXTA* ppt, int nstrings);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PolyTextOutW"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL PolyTextOutW(HDC hdc, [NativeTypeName("const POLYTEXTW *")] POLYTEXTW* ppt, int nstrings);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreatePolygonRgn"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern HRGN CreatePolygonRgn([NativeTypeName("const POINT *")] POINT* pptl, int cPoint, int iMode);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DPtoLP"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL DPtoLP(HDC hdc, [NativeTypeName("LPPOINT")] POINT* lppt, int c);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LPtoDP"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL LPtoDP(HDC hdc, [NativeTypeName("LPPOINT")] POINT* lppt, int c);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Polygon"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL Polygon(HDC hdc, [NativeTypeName("const POINT *")] POINT* apt, int cpt);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Polyline"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL Polyline(HDC hdc, [NativeTypeName("const POINT *")] POINT* apt, int cpt);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PolyBezier"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL PolyBezier(HDC hdc, [NativeTypeName("const POINT *")] POINT* apt, [NativeTypeName("DWORD")] uint cpt);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PolyBezierTo"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL PolyBezierTo(HDC hdc, [NativeTypeName("const POINT *")] POINT* apt, [NativeTypeName("DWORD")] uint cpt);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PolylineTo"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL PolylineTo(HDC hdc, [NativeTypeName("const POINT *")] POINT* apt, [NativeTypeName("DWORD")] uint cpt);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetViewportExtEx"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL SetViewportExtEx(HDC hdc, int x, int y, [NativeTypeName("LPSIZE")] SIZE* lpsz);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetViewportOrgEx"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL SetViewportOrgEx(HDC hdc, int x, int y, [NativeTypeName("LPPOINT")] POINT* lppt);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetWindowExtEx"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL SetWindowExtEx(HDC hdc, int x, int y, [NativeTypeName("LPSIZE")] SIZE* lpsz);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetWindowOrgEx"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL SetWindowOrgEx(HDC hdc, int x, int y, [NativeTypeName("LPPOINT")] POINT* lppt);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.OffsetViewportOrgEx"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL OffsetViewportOrgEx(HDC hdc, int x, int y, [NativeTypeName("LPPOINT")] POINT* lppt);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.OffsetWindowOrgEx"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL OffsetWindowOrgEx(HDC hdc, int x, int y, [NativeTypeName("LPPOINT")] POINT* lppt);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ScaleViewportExtEx"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL ScaleViewportExtEx(HDC hdc, int xn, int dx, int yn, int yd, [NativeTypeName("LPSIZE")] SIZE* lpsz);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ScaleWindowExtEx"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL ScaleWindowExtEx(HDC hdc, int xn, int xd, int yn, int yd, [NativeTypeName("LPSIZE")] SIZE* lpsz);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetBitmapDimensionEx"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL SetBitmapDimensionEx(HBITMAP hbm, int w, int h, [NativeTypeName("LPSIZE")] SIZE* lpsz);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetBrushOrgEx"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL SetBrushOrgEx(HDC hdc, int x, int y, [NativeTypeName("LPPOINT")] POINT* lppt);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetTextFaceA"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern int GetTextFaceA(HDC hdc, int c, [NativeTypeName("LPSTR")] sbyte* lpName);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetTextFaceW"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern int GetTextFaceW(HDC hdc, int c, [NativeTypeName("LPWSTR")] ushort* lpName);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetKerningPairsA"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint GetKerningPairsA(HDC hdc, [NativeTypeName("DWORD")] uint nPairs, [NativeTypeName("LPKERNINGPAIR")] KERNINGPAIR* lpKernPair);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetKerningPairsW"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint GetKerningPairsW(HDC hdc, [NativeTypeName("DWORD")] uint nPairs, [NativeTypeName("LPKERNINGPAIR")] KERNINGPAIR* lpKernPair);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetDCOrgEx"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL GetDCOrgEx(HDC hdc, [NativeTypeName("LPPOINT")] POINT* lppt);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FixBrushOrgEx"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL FixBrushOrgEx(HDC hdc, int x, int y, [NativeTypeName("LPPOINT")] POINT* ptl);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.UnrealizeObject"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL UnrealizeObject(HGDIOBJ h);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GdiFlush"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL GdiFlush();
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GdiSetBatchLimit"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint GdiSetBatchLimit([NativeTypeName("DWORD")] uint dw);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GdiGetBatchLimit"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint GdiGetBatchLimit();
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetICMMode"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern int SetICMMode(HDC hdc, int mode);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CheckColorsInGamut"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL CheckColorsInGamut(HDC hdc, [NativeTypeName("LPRGBTRIPLE")] RGBTRIPLE* lpRGBTriple, [NativeTypeName("LPVOID")] void* dlpBuffer, [NativeTypeName("DWORD")] uint nCount);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetColorSpace"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern HCOLORSPACE GetColorSpace(HDC hdc);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetLogColorSpaceA"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL GetLogColorSpaceA(HCOLORSPACE hColorSpace, [NativeTypeName("LPLOGCOLORSPACEA")] LOGCOLORSPACEA* lpBuffer, [NativeTypeName("DWORD")] uint nSize);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetLogColorSpaceW"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL GetLogColorSpaceW(HCOLORSPACE hColorSpace, [NativeTypeName("LPLOGCOLORSPACEW")] LOGCOLORSPACEW* lpBuffer, [NativeTypeName("DWORD")] uint nSize);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateColorSpaceA"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern HCOLORSPACE CreateColorSpaceA([NativeTypeName("LPLOGCOLORSPACEA")] LOGCOLORSPACEA* lplcs);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateColorSpaceW"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern HCOLORSPACE CreateColorSpaceW([NativeTypeName("LPLOGCOLORSPACEW")] LOGCOLORSPACEW* lplcs);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetColorSpace"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern HCOLORSPACE SetColorSpace(HDC hdc, HCOLORSPACE hcs);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DeleteColorSpace"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL DeleteColorSpace(HCOLORSPACE hcs);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetICMProfileA"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL GetICMProfileA(HDC hdc, [NativeTypeName("LPDWORD")] uint* pBufSize, [NativeTypeName("LPSTR")] sbyte* pszFilename);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetICMProfileW"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL GetICMProfileW(HDC hdc, [NativeTypeName("LPDWORD")] uint* pBufSize, [NativeTypeName("LPWSTR")] ushort* pszFilename);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetICMProfileA"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL SetICMProfileA(HDC hdc, [NativeTypeName("LPSTR")] sbyte* lpFileName);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetICMProfileW"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL SetICMProfileW(HDC hdc, [NativeTypeName("LPWSTR")] ushort* lpFileName);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetDeviceGammaRamp"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL GetDeviceGammaRamp(HDC hdc, [NativeTypeName("LPVOID")] void* lpRamp);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetDeviceGammaRamp"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL SetDeviceGammaRamp(HDC hdc, [NativeTypeName("LPVOID")] void* lpRamp);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ColorMatchToTarget"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL ColorMatchToTarget(HDC hdc, HDC hdcTarget, [NativeTypeName("DWORD")] uint action);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EnumICMProfilesA"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern int EnumICMProfilesA(HDC hdc, [NativeTypeName("ICMENUMPROCA")] delegate* unmanaged<sbyte*, LPARAM, int> proc, LPARAM param2);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EnumICMProfilesW"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern int EnumICMProfilesW(HDC hdc, [NativeTypeName("ICMENUMPROCW")] delegate* unmanaged<ushort*, LPARAM, int> proc, LPARAM param2);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.UpdateICMRegKeyA"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL UpdateICMRegKeyA([NativeTypeName("DWORD")] uint reserved, [NativeTypeName("LPSTR")] sbyte* lpszCMID, [NativeTypeName("LPSTR")] sbyte* lpszFileName, uint command);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.UpdateICMRegKeyW"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL UpdateICMRegKeyW([NativeTypeName("DWORD")] uint reserved, [NativeTypeName("LPWSTR")] ushort* lpszCMID, [NativeTypeName("LPWSTR")] ushort* lpszFileName, uint command);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ColorCorrectPalette"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     public static extern BOOL ColorCorrectPalette(HDC hdc, HPALETTE hPal, [NativeTypeName("DWORD")] uint deFirst, [NativeTypeName("DWORD")] uint num);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.wglCopyContext"]/*' />
     [DllImport("opengl32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL wglCopyContext(HGLRC param0, HGLRC param1, uint param2);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.wglCreateContext"]/*' />
     [DllImport("opengl32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HGLRC wglCreateContext(HDC param0);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.wglCreateLayerContext"]/*' />
     [DllImport("opengl32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HGLRC wglCreateLayerContext(HDC param0, int param1);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.wglDeleteContext"]/*' />
     [DllImport("opengl32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL wglDeleteContext(HGLRC param0);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.wglGetCurrentContext"]/*' />
     [DllImport("opengl32", ExactSpelling = true)]
     public static extern HGLRC wglGetCurrentContext();
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.wglGetCurrentDC"]/*' />
     [DllImport("opengl32", ExactSpelling = true)]
     public static extern HDC wglGetCurrentDC();
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.wglGetProcAddress"]/*' />
     [DllImport("opengl32", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("PROC")]
     public static extern IntPtr wglGetProcAddress([NativeTypeName("LPCSTR")] sbyte* param0);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.wglMakeCurrent"]/*' />
     [DllImport("opengl32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL wglMakeCurrent(HDC param0, HGLRC param1);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.wglShareLists"]/*' />
     [DllImport("opengl32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL wglShareLists(HGLRC param0, HGLRC param1);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.wglUseFontBitmapsA"]/*' />
     [DllImport("opengl32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL wglUseFontBitmapsA(HDC param0, [NativeTypeName("DWORD")] uint param1, [NativeTypeName("DWORD")] uint param2, [NativeTypeName("DWORD")] uint param3);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.wglUseFontBitmapsW"]/*' />
     [DllImport("opengl32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL wglUseFontBitmapsW(HDC param0, [NativeTypeName("DWORD")] uint param1, [NativeTypeName("DWORD")] uint param2, [NativeTypeName("DWORD")] uint param3);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SwapBuffers"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SwapBuffers(HDC param0);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.wglUseFontOutlinesA"]/*' />
     [DllImport("opengl32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL wglUseFontOutlinesA(HDC param0, [NativeTypeName("DWORD")] uint param1, [NativeTypeName("DWORD")] uint param2, [NativeTypeName("DWORD")] uint param3, float param4, float param5, int param6, [NativeTypeName("LPGLYPHMETRICSFLOAT")] GLYPHMETRICSFLOAT* param7);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.wglUseFontOutlinesW"]/*' />
     [DllImport("opengl32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL wglUseFontOutlinesW(HDC param0, [NativeTypeName("DWORD")] uint param1, [NativeTypeName("DWORD")] uint param2, [NativeTypeName("DWORD")] uint param3, float param4, float param5, int param6, [NativeTypeName("LPGLYPHMETRICSFLOAT")] GLYPHMETRICSFLOAT* param7);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.wglDescribeLayerPlane"]/*' />
     [DllImport("opengl32", ExactSpelling = true)]
     public static extern BOOL wglDescribeLayerPlane(HDC param0, int param1, int param2, uint param3, [NativeTypeName("LPLAYERPLANEDESCRIPTOR")] LAYERPLANEDESCRIPTOR* param4);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.wglSetLayerPaletteEntries"]/*' />
     [DllImport("opengl32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern int wglSetLayerPaletteEntries(HDC param0, int param1, int param2, int param3, [NativeTypeName("const COLORREF *")] COLORREF* param4);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.wglGetLayerPaletteEntries"]/*' />
     [DllImport("opengl32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern int wglGetLayerPaletteEntries(HDC param0, int param1, int param2, int param3, COLORREF* param4);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.wglRealizeLayerPalette"]/*' />
     [DllImport("opengl32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL wglRealizeLayerPalette(HDC param0, int param1, BOOL param2);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.wglSwapLayerBuffers"]/*' />
     [DllImport("opengl32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL wglSwapLayerBuffers(HDC param0, uint param1);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.wglSwapMultipleBuffers"]/*' />
     [DllImport("opengl32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint wglSwapMultipleBuffers(uint param0, [NativeTypeName("const WGLSWAP *")] WGLSWAP* param1);

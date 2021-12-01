@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DAV_CALLBACK_AUTH_BLOB.xml' path='doc/member[@name="DAV_CALLBACK_AUTH_BLOB"]/*' />
 public unsafe partial struct DAV_CALLBACK_AUTH_BLOB
 {
+    /// <include file='DAV_CALLBACK_AUTH_BLOB.xml' path='doc/member[@name="DAV_CALLBACK_AUTH_BLOB.pBuffer"]/*' />
     [NativeTypeName("PVOID")]
     public void* pBuffer;
 
+    /// <include file='DAV_CALLBACK_AUTH_BLOB.xml' path='doc/member[@name="DAV_CALLBACK_AUTH_BLOB.ulSize"]/*' />
     [NativeTypeName("ULONG")]
     public uint ulSize;
 
+    /// <include file='DAV_CALLBACK_AUTH_BLOB.xml' path='doc/member[@name="DAV_CALLBACK_AUTH_BLOB.ulType"]/*' />
     [NativeTypeName("ULONG")]
     public uint ulType;
 }

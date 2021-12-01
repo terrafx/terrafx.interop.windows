@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IIE70DispatchEx.xml' path='doc/member[@name="IIE70DispatchEx"]/*' />
 [Guid("3051046B-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IIE70DispatchEx : IDispatchEx")]
 [NativeInheritance("IDispatchEx")]
@@ -16,6 +17,7 @@ public unsafe partial struct IIE70DispatchEx : IIE70DispatchEx.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IIE70DispatchEx : IIE70DispatchEx.Interface
         return ((delegate* unmanaged<IIE70DispatchEx*, Guid*, void**, int>)(lpVtbl[0]))((IIE70DispatchEx*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IIE70DispatchEx : IIE70DispatchEx.Interface
         return ((delegate* unmanaged<IIE70DispatchEx*, uint>)(lpVtbl[1]))((IIE70DispatchEx*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IIE70DispatchEx : IIE70DispatchEx.Interface
         return ((delegate* unmanaged<IIE70DispatchEx*, uint>)(lpVtbl[2]))((IIE70DispatchEx*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct IIE70DispatchEx : IIE70DispatchEx.Interface
         return ((delegate* unmanaged<IIE70DispatchEx*, uint*, int>)(lpVtbl[3]))((IIE70DispatchEx*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct IIE70DispatchEx : IIE70DispatchEx.Interface
         return ((delegate* unmanaged<IIE70DispatchEx*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IIE70DispatchEx*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
@@ -60,6 +67,7 @@ public unsafe partial struct IIE70DispatchEx : IIE70DispatchEx.Interface
         return ((delegate* unmanaged<IIE70DispatchEx*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IIE70DispatchEx*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
+    /// <inheritdoc cref="IDispatch.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
@@ -67,6 +75,7 @@ public unsafe partial struct IIE70DispatchEx : IIE70DispatchEx.Interface
         return ((delegate* unmanaged<IIE70DispatchEx*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IIE70DispatchEx*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
+    /// <inheritdoc cref="IDispatchEx.GetDispID" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetDispID([NativeTypeName("BSTR")] ushort* bstrName, [NativeTypeName("DWORD")] uint grfdex, [NativeTypeName("DISPID *")] int* pid)
@@ -74,6 +83,7 @@ public unsafe partial struct IIE70DispatchEx : IIE70DispatchEx.Interface
         return ((delegate* unmanaged<IIE70DispatchEx*, ushort*, uint, int*, int>)(lpVtbl[7]))((IIE70DispatchEx*)Unsafe.AsPointer(ref this), bstrName, grfdex, pid);
     }
 
+    /// <inheritdoc cref="IDispatchEx.InvokeEx" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT InvokeEx([NativeTypeName("DISPID")] int id, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pdp, VARIANT* pvarRes, EXCEPINFO* pei, IServiceProvider* pspCaller)
@@ -81,6 +91,7 @@ public unsafe partial struct IIE70DispatchEx : IIE70DispatchEx.Interface
         return ((delegate* unmanaged<IIE70DispatchEx*, int, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, IServiceProvider*, int>)(lpVtbl[8]))((IIE70DispatchEx*)Unsafe.AsPointer(ref this), id, lcid, wFlags, pdp, pvarRes, pei, pspCaller);
     }
 
+    /// <inheritdoc cref="IDispatchEx.DeleteMemberByName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT DeleteMemberByName([NativeTypeName("BSTR")] ushort* bstrName, [NativeTypeName("DWORD")] uint grfdex)
@@ -88,6 +99,7 @@ public unsafe partial struct IIE70DispatchEx : IIE70DispatchEx.Interface
         return ((delegate* unmanaged<IIE70DispatchEx*, ushort*, uint, int>)(lpVtbl[9]))((IIE70DispatchEx*)Unsafe.AsPointer(ref this), bstrName, grfdex);
     }
 
+    /// <inheritdoc cref="IDispatchEx.DeleteMemberByDispID" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT DeleteMemberByDispID([NativeTypeName("DISPID")] int id)
@@ -95,6 +107,7 @@ public unsafe partial struct IIE70DispatchEx : IIE70DispatchEx.Interface
         return ((delegate* unmanaged<IIE70DispatchEx*, int, int>)(lpVtbl[10]))((IIE70DispatchEx*)Unsafe.AsPointer(ref this), id);
     }
 
+    /// <inheritdoc cref="IDispatchEx.GetMemberProperties" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT GetMemberProperties([NativeTypeName("DISPID")] int id, [NativeTypeName("DWORD")] uint grfdexFetch, [NativeTypeName("DWORD *")] uint* pgrfdex)
@@ -102,6 +115,7 @@ public unsafe partial struct IIE70DispatchEx : IIE70DispatchEx.Interface
         return ((delegate* unmanaged<IIE70DispatchEx*, int, uint, uint*, int>)(lpVtbl[11]))((IIE70DispatchEx*)Unsafe.AsPointer(ref this), id, grfdexFetch, pgrfdex);
     }
 
+    /// <inheritdoc cref="IDispatchEx.GetMemberName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT GetMemberName([NativeTypeName("DISPID")] int id, [NativeTypeName("BSTR *")] ushort** pbstrName)
@@ -109,6 +123,7 @@ public unsafe partial struct IIE70DispatchEx : IIE70DispatchEx.Interface
         return ((delegate* unmanaged<IIE70DispatchEx*, int, ushort**, int>)(lpVtbl[12]))((IIE70DispatchEx*)Unsafe.AsPointer(ref this), id, pbstrName);
     }
 
+    /// <inheritdoc cref="IDispatchEx.GetNextDispID" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT GetNextDispID([NativeTypeName("DWORD")] uint grfdex, [NativeTypeName("DISPID")] int id, [NativeTypeName("DISPID *")] int* pid)
@@ -116,6 +131,7 @@ public unsafe partial struct IIE70DispatchEx : IIE70DispatchEx.Interface
         return ((delegate* unmanaged<IIE70DispatchEx*, uint, int, int*, int>)(lpVtbl[13]))((IIE70DispatchEx*)Unsafe.AsPointer(ref this), grfdex, id, pid);
     }
 
+    /// <inheritdoc cref="IDispatchEx.GetNameSpaceParent" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT GetNameSpaceParent(IUnknown** ppunk)

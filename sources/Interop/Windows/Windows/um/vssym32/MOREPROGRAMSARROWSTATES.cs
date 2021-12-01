@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MOREPROGRAMSARROWSTATES.xml' path='doc/member[@name="MOREPROGRAMSARROWSTATES"]/*' />
 public enum MOREPROGRAMSARROWSTATES
 {
+    /// <include file='MOREPROGRAMSARROWSTATES.xml' path='doc/member[@name="MOREPROGRAMSARROWSTATES.SPS_NORMAL"]/*' />
     SPS_NORMAL = 1,
+
+    /// <include file='MOREPROGRAMSARROWSTATES.xml' path='doc/member[@name="MOREPROGRAMSARROWSTATES.SPS_HOT"]/*' />
     SPS_HOT = 2,
+
+    /// <include file='MOREPROGRAMSARROWSTATES.xml' path='doc/member[@name="MOREPROGRAMSARROWSTATES.SPS_PRESSED"]/*' />
     SPS_PRESSED = 3,
 }

@@ -5,24 +5,32 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='EMREXTCREATEPEN.xml' path='doc/member[@name="EMREXTCREATEPEN"]/*' />
 public partial struct EMREXTCREATEPEN
 {
+    /// <include file='EMREXTCREATEPEN.xml' path='doc/member[@name="EMREXTCREATEPEN.emr"]/*' />
     public EMR emr;
 
+    /// <include file='EMREXTCREATEPEN.xml' path='doc/member[@name="EMREXTCREATEPEN.ihPen"]/*' />
     [NativeTypeName("DWORD")]
     public uint ihPen;
 
+    /// <include file='EMREXTCREATEPEN.xml' path='doc/member[@name="EMREXTCREATEPEN.offBmi"]/*' />
     [NativeTypeName("DWORD")]
     public uint offBmi;
 
+    /// <include file='EMREXTCREATEPEN.xml' path='doc/member[@name="EMREXTCREATEPEN.cbBmi"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbBmi;
 
+    /// <include file='EMREXTCREATEPEN.xml' path='doc/member[@name="EMREXTCREATEPEN.offBits"]/*' />
     [NativeTypeName("DWORD")]
     public uint offBits;
 
+    /// <include file='EMREXTCREATEPEN.xml' path='doc/member[@name="EMREXTCREATEPEN.cbBits"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbBits;
 
+    /// <include file='EMREXTCREATEPEN.xml' path='doc/member[@name="EMREXTCREATEPEN.elp"]/*' />
     public EXTLOGPEN32 elp;
 }

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IEnumMediaTypes.xml' path='doc/member[@name="IEnumMediaTypes"]/*' />
 [Guid("89C31040-846B-11CE-97D3-00AA0055595A")]
 [NativeTypeName("struct IEnumMediaTypes : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IEnumMediaTypes : IEnumMediaTypes.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IEnumMediaTypes : IEnumMediaTypes.Interface
         return ((delegate* unmanaged<IEnumMediaTypes*, Guid*, void**, int>)(lpVtbl[0]))((IEnumMediaTypes*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IEnumMediaTypes : IEnumMediaTypes.Interface
         return ((delegate* unmanaged<IEnumMediaTypes*, uint>)(lpVtbl[1]))((IEnumMediaTypes*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IEnumMediaTypes : IEnumMediaTypes.Interface
         return ((delegate* unmanaged<IEnumMediaTypes*, uint>)(lpVtbl[2]))((IEnumMediaTypes*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IEnumMediaTypes.xml' path='doc/member[@name="IEnumMediaTypes.Next"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Next([NativeTypeName("ULONG")] uint cMediaTypes, AM_MEDIA_TYPE** ppMediaTypes, [NativeTypeName("ULONG *")] uint* pcFetched)
@@ -46,6 +51,7 @@ public unsafe partial struct IEnumMediaTypes : IEnumMediaTypes.Interface
         return ((delegate* unmanaged<IEnumMediaTypes*, uint, AM_MEDIA_TYPE**, uint*, int>)(lpVtbl[3]))((IEnumMediaTypes*)Unsafe.AsPointer(ref this), cMediaTypes, ppMediaTypes, pcFetched);
     }
 
+    /// <include file='IEnumMediaTypes.xml' path='doc/member[@name="IEnumMediaTypes.Skip"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Skip([NativeTypeName("ULONG")] uint cMediaTypes)
@@ -53,6 +59,7 @@ public unsafe partial struct IEnumMediaTypes : IEnumMediaTypes.Interface
         return ((delegate* unmanaged<IEnumMediaTypes*, uint, int>)(lpVtbl[4]))((IEnumMediaTypes*)Unsafe.AsPointer(ref this), cMediaTypes);
     }
 
+    /// <include file='IEnumMediaTypes.xml' path='doc/member[@name="IEnumMediaTypes.Reset"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT Reset()
@@ -60,6 +67,7 @@ public unsafe partial struct IEnumMediaTypes : IEnumMediaTypes.Interface
         return ((delegate* unmanaged<IEnumMediaTypes*, int>)(lpVtbl[5]))((IEnumMediaTypes*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IEnumMediaTypes.xml' path='doc/member[@name="IEnumMediaTypes.Clone"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Clone(IEnumMediaTypes** ppEnum)

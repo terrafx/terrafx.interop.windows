@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IErrorLog.AddError">
+    <summary>
+      <para>Adds an error for the specified property to the error log.</para>
+    </summary>
+    <param name="pszPropName">
+      <para>The address of the name of the property to read. This cannot be NULL.</para>
+    </param>
+    <param name="pExcepInfo">
+      <para>Pointer to an array of <see cref="EXCEPINFO" /> structures.</para>
+    </param>
+  </member>
+  <member name="IErrorLog">
+    <summary>
+      <para>Communicates detailed error information between a client and an object.</para>
+    </summary>
+  </member>
+</doc>

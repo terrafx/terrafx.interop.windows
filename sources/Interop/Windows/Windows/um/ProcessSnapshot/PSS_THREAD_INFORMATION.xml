@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PSS_THREAD_INFORMATION">
+    <summary>
+      <para>Holds thread information returned by <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/processsnapshot/nf-processsnapshot-pssquerysnapshot">PssQuerySnapshot</a>.</para>
+    </summary>
+    <remarks>
+      <para>
+        <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/processsnapshot/nf-processsnapshot-pssquerysnapshot">PssQuerySnapshot</a> returns a <b>PSS_THREAD_INFORMATION</b> structure when the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/processsnapshot/ne-processsnapshot-pss_query_information_class">PSS_QUERY_INFORMATION_CLASS</a> member that the caller provides it is  <b>PSS_QUERY_THREAD_INFORMATION</b>.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/proc_snap/process-snapshotting-portal">Process Snapshotting</seealso>
+  </member>
+  <member name="PSS_THREAD_INFORMATION.ThreadsCaptured">
+    <summary>
+      <para>The count of threads in the snapshot.</para>
+    </summary>
+  </member>
+  <member name="PSS_THREAD_INFORMATION.ContextLength">
+    <summary>
+      <para>The length of the <b>CONTEXT</b> record captured, in bytes.</para>
+    </summary>
+  </member>
+</doc>

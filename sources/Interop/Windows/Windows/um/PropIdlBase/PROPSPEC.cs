@@ -8,14 +8,18 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PROPSPEC.xml' path='doc/member[@name="PROPSPEC"]/*' />
 public unsafe partial struct PROPSPEC
 {
+    /// <include file='PROPSPEC.xml' path='doc/member[@name="PROPSPEC.ulKind"]/*' />
     [NativeTypeName("ULONG")]
     public uint ulKind;
 
+    /// <include file='PROPSPEC.xml' path='doc/member[@name="PROPSPEC.Anonymous"]/*' />
     [NativeTypeName("tagPROPSPEC::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/PropIdlBase.h:452:43)")]
     public _Anonymous_e__Union Anonymous;
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.propid"]/*' />
     public ref uint propid
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -25,6 +29,7 @@ public unsafe partial struct PROPSPEC
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.lpwstr"]/*' />
     public ref ushort* lpwstr
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -34,13 +39,16 @@ public unsafe partial struct PROPSPEC
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public unsafe partial struct _Anonymous_e__Union
     {
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.propid"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("PROPID")]
         public uint propid;
 
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.lpwstr"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("LPOLESTR")]
         public ushort* lpwstr;

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="LUID">
+    <summary>
+      <para>The <b>LUID</b> structure stores the video port identifier. This structure is stored in the <b>PortId</b> member of the  <see cref="KSJACK_SINK_INFORMATION" /> structure.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/CoreAudio/core-audio-structures">Core Audio Structures</seealso>
+    <seealso cref="IKsJackSinkInformation.GetJackSinkInformation" />
+  </member>
+  <member name="LUID.LowPart">
+    <summary>
+      <para>LowPart of the video port identifier.</para>
+    </summary>
+  </member>
+  <member name="LUID.HighPart">
+    <summary>
+      <para>HighPart of the video port identifier.</para>
+    </summary>
+  </member>
+</doc>

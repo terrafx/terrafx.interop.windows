@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_RECEIVE_OPTION.xml' path='doc/member[@name="WS_RECEIVE_OPTION"]/*' />
 public enum WS_RECEIVE_OPTION
 {
+    /// <include file='WS_RECEIVE_OPTION.xml' path='doc/member[@name="WS_RECEIVE_OPTION.WS_RECEIVE_REQUIRED_MESSAGE"]/*' />
     WS_RECEIVE_REQUIRED_MESSAGE = 1,
+
+    /// <include file='WS_RECEIVE_OPTION.xml' path='doc/member[@name="WS_RECEIVE_OPTION.WS_RECEIVE_OPTIONAL_MESSAGE"]/*' />
     WS_RECEIVE_OPTIONAL_MESSAGE = 2,
 }

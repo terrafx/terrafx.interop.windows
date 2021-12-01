@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='OLEDCFLAGS.xml' path='doc/member[@name="OLEDCFLAGS"]/*' />
 public enum OLEDCFLAGS
 {
+    /// <include file='OLEDCFLAGS.xml' path='doc/member[@name="OLEDCFLAGS.OLEDC_NODRAW"]/*' />
     OLEDC_NODRAW = 0x1,
+
+    /// <include file='OLEDCFLAGS.xml' path='doc/member[@name="OLEDCFLAGS.OLEDC_PAINTBKGND"]/*' />
     OLEDC_PAINTBKGND = 0x2,
+
+    /// <include file='OLEDCFLAGS.xml' path='doc/member[@name="OLEDCFLAGS.OLEDC_OFFSCREEN"]/*' />
     OLEDC_OFFSCREEN = 0x4,
 }

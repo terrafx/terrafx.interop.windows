@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TCPIP_OWNER_MODULE_BASIC_INFO.xml' path='doc/member[@name="TCPIP_OWNER_MODULE_BASIC_INFO"]/*' />
 public unsafe partial struct TCPIP_OWNER_MODULE_BASIC_INFO
 {
+    /// <include file='TCPIP_OWNER_MODULE_BASIC_INFO.xml' path='doc/member[@name="TCPIP_OWNER_MODULE_BASIC_INFO.pModuleName"]/*' />
     [NativeTypeName("PWCHAR")]
     public ushort* pModuleName;
 
+    /// <include file='TCPIP_OWNER_MODULE_BASIC_INFO.xml' path='doc/member[@name="TCPIP_OWNER_MODULE_BASIC_INFO.pModulePath"]/*' />
     [NativeTypeName("PWCHAR")]
     public ushort* pModulePath;
 }

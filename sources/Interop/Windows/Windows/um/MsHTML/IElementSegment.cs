@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IElementSegment.xml' path='doc/member[@name="IElementSegment"]/*' />
 [Guid("3050F68F-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IElementSegment : ISegment")]
 [NativeInheritance("ISegment")]
@@ -16,6 +17,7 @@ public unsafe partial struct IElementSegment : IElementSegment.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IElementSegment : IElementSegment.Interface
         return ((delegate* unmanaged<IElementSegment*, Guid*, void**, int>)(lpVtbl[0]))((IElementSegment*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IElementSegment : IElementSegment.Interface
         return ((delegate* unmanaged<IElementSegment*, uint>)(lpVtbl[1]))((IElementSegment*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IElementSegment : IElementSegment.Interface
         return ((delegate* unmanaged<IElementSegment*, uint>)(lpVtbl[2]))((IElementSegment*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ISegment.GetPointers" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetPointers(IMarkupPointer* pIStart, IMarkupPointer* pIEnd)
@@ -46,6 +51,7 @@ public unsafe partial struct IElementSegment : IElementSegment.Interface
         return ((delegate* unmanaged<IElementSegment*, IMarkupPointer*, IMarkupPointer*, int>)(lpVtbl[3]))((IElementSegment*)Unsafe.AsPointer(ref this), pIStart, pIEnd);
     }
 
+    /// <include file='IElementSegment.xml' path='doc/member[@name="IElementSegment.GetElement"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetElement(IHTMLElement** ppIElement)
@@ -53,6 +59,7 @@ public unsafe partial struct IElementSegment : IElementSegment.Interface
         return ((delegate* unmanaged<IElementSegment*, IHTMLElement**, int>)(lpVtbl[4]))((IElementSegment*)Unsafe.AsPointer(ref this), ppIElement);
     }
 
+    /// <include file='IElementSegment.xml' path='doc/member[@name="IElementSegment.SetPrimary"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetPrimary(BOOL fPrimary)
@@ -60,6 +67,7 @@ public unsafe partial struct IElementSegment : IElementSegment.Interface
         return ((delegate* unmanaged<IElementSegment*, BOOL, int>)(lpVtbl[5]))((IElementSegment*)Unsafe.AsPointer(ref this), fPrimary);
     }
 
+    /// <include file='IElementSegment.xml' path='doc/member[@name="IElementSegment.IsPrimary"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT IsPrimary(BOOL* pfPrimary)

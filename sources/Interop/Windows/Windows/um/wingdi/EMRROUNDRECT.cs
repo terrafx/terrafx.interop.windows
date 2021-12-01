@@ -5,12 +5,16 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='EMRROUNDRECT.xml' path='doc/member[@name="EMRROUNDRECT"]/*' />
 public partial struct EMRROUNDRECT
 {
+    /// <include file='EMRROUNDRECT.xml' path='doc/member[@name="EMRROUNDRECT.emr"]/*' />
     public EMR emr;
 
+    /// <include file='EMRROUNDRECT.xml' path='doc/member[@name="EMRROUNDRECT.rclBox"]/*' />
     public RECTL rclBox;
 
+    /// <include file='EMRROUNDRECT.xml' path='doc/member[@name="EMRROUNDRECT.szlCorner"]/*' />
     [NativeTypeName("SIZEL")]
     public SIZE szlCorner;
 }

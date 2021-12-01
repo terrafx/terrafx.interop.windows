@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IBrowserFrameOptions.xml' path='doc/member[@name="IBrowserFrameOptions"]/*' />
 [Guid("10DF43C8-1DBE-11D3-8B34-006097DF5BD4")]
 [NativeTypeName("struct IBrowserFrameOptions : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IBrowserFrameOptions : IBrowserFrameOptions.Interfa
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IBrowserFrameOptions : IBrowserFrameOptions.Interfa
         return ((delegate* unmanaged<IBrowserFrameOptions*, Guid*, void**, int>)(lpVtbl[0]))((IBrowserFrameOptions*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IBrowserFrameOptions : IBrowserFrameOptions.Interfa
         return ((delegate* unmanaged<IBrowserFrameOptions*, uint>)(lpVtbl[1]))((IBrowserFrameOptions*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IBrowserFrameOptions : IBrowserFrameOptions.Interfa
         return ((delegate* unmanaged<IBrowserFrameOptions*, uint>)(lpVtbl[2]))((IBrowserFrameOptions*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IBrowserFrameOptions.xml' path='doc/member[@name="IBrowserFrameOptions.GetFrameOptions"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetFrameOptions([NativeTypeName("BROWSERFRAMEOPTIONS")] uint dwMask, [NativeTypeName("BROWSERFRAMEOPTIONS *")] uint* pdwOptions)

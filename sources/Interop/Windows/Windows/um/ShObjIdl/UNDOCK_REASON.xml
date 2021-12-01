@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="UNDOCK_REASON">
+    <summary>
+      <para>Values that indicate the reason that a docked accessibility app window has been undocked. Used by <see cref="IAccessibilityDockingServiceCallback.Undocked" />.</para>
+    </summary>
+  </member>
+  <member name="UNDOCK_REASON.UR_RESOLUTION_CHANGE">
+    <summary>
+      <para>The accessibility window was undocked because the screen resolution has changed.</para>
+    </summary>
+  </member>
+  <member name="UNDOCK_REASON.UR_MONITOR_DISCONNECT">
+    <summary>
+      <para>The monitor on which the accessibility window was docked has been disconnected.</para>
+    </summary>
+  </member>
+</doc>

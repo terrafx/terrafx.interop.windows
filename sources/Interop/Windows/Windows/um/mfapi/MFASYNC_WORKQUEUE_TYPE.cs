@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MFASYNC_WORKQUEUE_TYPE.xml' path='doc/member[@name="MFASYNC_WORKQUEUE_TYPE"]/*' />
 public enum MFASYNC_WORKQUEUE_TYPE
 {
+    /// <include file='MFASYNC_WORKQUEUE_TYPE.xml' path='doc/member[@name="MFASYNC_WORKQUEUE_TYPE.MF_STANDARD_WORKQUEUE"]/*' />
     MF_STANDARD_WORKQUEUE = 0,
+
+    /// <include file='MFASYNC_WORKQUEUE_TYPE.xml' path='doc/member[@name="MFASYNC_WORKQUEUE_TYPE.MF_WINDOW_WORKQUEUE"]/*' />
     MF_WINDOW_WORKQUEUE = 1,
+
+    /// <include file='MFASYNC_WORKQUEUE_TYPE.xml' path='doc/member[@name="MFASYNC_WORKQUEUE_TYPE.MF_MULTITHREADED_WORKQUEUE"]/*' />
     MF_MULTITHREADED_WORKQUEUE = 2,
 }

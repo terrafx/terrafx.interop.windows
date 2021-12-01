@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IVirtualDesktopManager.xml' path='doc/member[@name="IVirtualDesktopManager"]/*' />
 [Guid("A5CD92FF-29BE-454C-8D04-D82879FB3F1B")]
 [NativeTypeName("struct IVirtualDesktopManager : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IVirtualDesktopManager : IVirtualDesktopManager.Int
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IVirtualDesktopManager : IVirtualDesktopManager.Int
         return ((delegate* unmanaged<IVirtualDesktopManager*, Guid*, void**, int>)(lpVtbl[0]))((IVirtualDesktopManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IVirtualDesktopManager : IVirtualDesktopManager.Int
         return ((delegate* unmanaged<IVirtualDesktopManager*, uint>)(lpVtbl[1]))((IVirtualDesktopManager*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IVirtualDesktopManager : IVirtualDesktopManager.Int
         return ((delegate* unmanaged<IVirtualDesktopManager*, uint>)(lpVtbl[2]))((IVirtualDesktopManager*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IVirtualDesktopManager.xml' path='doc/member[@name="IVirtualDesktopManager.IsWindowOnCurrentVirtualDesktop"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT IsWindowOnCurrentVirtualDesktop(HWND topLevelWindow, BOOL* onCurrentDesktop)
@@ -46,6 +51,7 @@ public unsafe partial struct IVirtualDesktopManager : IVirtualDesktopManager.Int
         return ((delegate* unmanaged<IVirtualDesktopManager*, HWND, BOOL*, int>)(lpVtbl[3]))((IVirtualDesktopManager*)Unsafe.AsPointer(ref this), topLevelWindow, onCurrentDesktop);
     }
 
+    /// <include file='IVirtualDesktopManager.xml' path='doc/member[@name="IVirtualDesktopManager.GetWindowDesktopId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetWindowDesktopId(HWND topLevelWindow, Guid* desktopId)
@@ -53,6 +59,7 @@ public unsafe partial struct IVirtualDesktopManager : IVirtualDesktopManager.Int
         return ((delegate* unmanaged<IVirtualDesktopManager*, HWND, Guid*, int>)(lpVtbl[4]))((IVirtualDesktopManager*)Unsafe.AsPointer(ref this), topLevelWindow, desktopId);
     }
 
+    /// <include file='IVirtualDesktopManager.xml' path='doc/member[@name="IVirtualDesktopManager.MoveWindowToDesktop"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT MoveWindowToDesktop(HWND topLevelWindow, [NativeTypeName("const GUID &")] Guid* desktopId)

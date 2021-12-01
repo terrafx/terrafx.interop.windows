@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DispSVGPathSegLinetoAbs.xml' path='doc/member[@name="DispSVGPathSegLinetoAbs"]/*' />
 [Guid("3059001E-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct DispSVGPathSegLinetoAbs : IDispatch")]
 [NativeInheritance("IDispatch")]
@@ -16,6 +17,7 @@ public unsafe partial struct DispSVGPathSegLinetoAbs : DispSVGPathSegLinetoAbs.I
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct DispSVGPathSegLinetoAbs : DispSVGPathSegLinetoAbs.I
         return ((delegate* unmanaged<DispSVGPathSegLinetoAbs*, Guid*, void**, int>)(lpVtbl[0]))((DispSVGPathSegLinetoAbs*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct DispSVGPathSegLinetoAbs : DispSVGPathSegLinetoAbs.I
         return ((delegate* unmanaged<DispSVGPathSegLinetoAbs*, uint>)(lpVtbl[1]))((DispSVGPathSegLinetoAbs*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct DispSVGPathSegLinetoAbs : DispSVGPathSegLinetoAbs.I
         return ((delegate* unmanaged<DispSVGPathSegLinetoAbs*, uint>)(lpVtbl[2]))((DispSVGPathSegLinetoAbs*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct DispSVGPathSegLinetoAbs : DispSVGPathSegLinetoAbs.I
         return ((delegate* unmanaged<DispSVGPathSegLinetoAbs*, uint*, int>)(lpVtbl[3]))((DispSVGPathSegLinetoAbs*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct DispSVGPathSegLinetoAbs : DispSVGPathSegLinetoAbs.I
         return ((delegate* unmanaged<DispSVGPathSegLinetoAbs*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((DispSVGPathSegLinetoAbs*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
@@ -60,6 +67,7 @@ public unsafe partial struct DispSVGPathSegLinetoAbs : DispSVGPathSegLinetoAbs.I
         return ((delegate* unmanaged<DispSVGPathSegLinetoAbs*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((DispSVGPathSegLinetoAbs*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
+    /// <inheritdoc cref="IDispatch.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)

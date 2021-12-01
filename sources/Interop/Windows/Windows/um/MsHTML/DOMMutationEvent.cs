@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DOMMutationEvent.xml' path='doc/member[@name="DOMMutationEvent"]/*' />
 [Guid("305106DB-98B5-11CF-BB82-00AA00BDCE0B")]
 public partial struct DOMMutationEvent
 {

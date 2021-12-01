@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="Windows.MFDeserializeAttributesFromStream">
+    <summary>
+      <para>Loads attributes from a stream into an attribute store.</para>
+    </summary>
+    <param name="pAttr">
+      <para>Pointer to the <see cref="IMFAttributes" /> interface of the attribute store.</para>
+    </param>
+    <param name="dwOptions">
+      <para>Bitwise <b>OR</b> of zero or more flags from the <see cref="MF_ATTRIBUTE_SERIALIZE_OPTIONS" /> enumeration.</para>
+    </param>
+    <param name="pStm">
+      <para>Pointer to the <b>IStream</b> interface of the stream from which to read the attributes.</para>
+    </param>
+    <returns>
+      <para>The function returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Use this function to deserialize an attribute store that was serialized with the <see cref="MFSerializeAttributesToStream" /> function.</para>
+      <para>If <i>dwOptions</i> contains the MF_ATTRIBUTE_SERIALIZE_UNKNOWN_BYREF flag, the function deserializes <b>IUnknown</b> pointers from the stream, as follows:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <para>If the <b>IStream</b> pointer exposes the <see cref="IMFObjectReferenceStream" /> interface (through <b>QueryInterface</b>), the function calls <see cref="IMFObjectReferenceStream.LoadReference" /> to deserialize each pointer.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>Otherwise, the function calls <b>CoUnmarshalInterface</b> to deserialize a proxy for the object.</para>
+          </description>
+        </item>
+      </list>
+      <para>This function deletes any attributes that were previously stored in <i>pAttr</i>.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/attributes-and-properties">Attributes and Properties</seealso>
+    <seealso cref="IMFAttributes" />
+    <seealso cref="MF_ATTRIBUTE_SERIALIZE_OPTIONS" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-functions">Media Foundation Functions</seealso>
+  </member>
+  <member name="Windows.MFSerializeAttributesToStream">
+    <summary>
+      <para>Writes the contents of an attribute store to a stream.</para>
+    </summary>
+    <param name="pAttr">
+      <para>Pointer to the <see cref="IMFAttributes" /> interface of the attribute store.</para>
+    </param>
+    <param name="dwOptions">
+      <para>Bitwise <b>OR</b> of zero or more flags from the <see cref="MF_ATTRIBUTE_SERIALIZE_OPTIONS" /> enumeration.</para>
+    </param>
+    <param name="pStm">
+      <para>Pointer to the <b>IStream</b> interface of the stream where the attributes are saved.</para>
+    </param>
+    <returns>
+      <para>The function returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>If <i>dwOptions</i> contains the MF_ATTRIBUTE_SERIALIZE_UNKNOWN_BYREF flag, the function serializes <b>IUnknown</b> pointers in the attribute store, as follows:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <para>If the <b>IStream</b> pointer exposes the <see cref="IMFObjectReferenceStream" /> interface (through <b>QueryInterface</b>), the function calls <see cref="IMFObjectReferenceStream.SaveReference" /> to serialize each pointer.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>Otherwise, the function calls <b>CoMarshalInterface</b> to serialize a proxy for the object.</para>
+          </description>
+        </item>
+      </list>
+      <para>If <i>dwOptions</i> does not include the MF_ATTRIBUTE_SERIALIZE_UNKNOWN_BYREF flag, the function skips <b>IUnknown</b> pointers in the attribute store.</para>
+      <para>To load the attributes from the stream, call <see cref="MFDeserializeAttributesFromStream" />.</para>
+      <para>The main purpose of this function is to marshal attributes across process boundaries.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/attributes-and-properties">Attributes and Properties</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-functions">Media Foundation Functions</seealso>
+  </member>
+</doc>

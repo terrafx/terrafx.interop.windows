@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="NET_ADDRESS_FORMAT">
+    <summary>
+      <para>The <b>NET_ADDRESS_FORMAT</b> enumeration specifies the format of a network address returned by the <see cref="ParseNetworkString" /> function.</para>
+    </summary>
+    <remarks>
+      <para>The <b>NET_ADDRESS_FORMAT</b> enumeration is defined on Windows Vista and later.</para>
+      <para>The <see cref="NET_ADDRESS_INFO" /> structure returned by the <see cref="ParseNetworkString" /> function.</para>
+    </remarks>
+    <seealso cref="NET_ADDRESS_INFO" />
+    <seealso cref="ParseNetworkString" />
+  </member>
+  <member name="NET_ADDRESS_FORMAT.NET_ADDRESS_FORMAT_UNSPECIFIED">
+    <summary>
+      <para>The format of the network address is unspecified.</para>
+    </summary>
+  </member>
+  <member name="NET_ADDRESS_FORMAT.NET_ADDRESS_DNS_NAME">
+    <summary>
+      <para>The format of the network address is a DNS name.</para>
+    </summary>
+  </member>
+  <member name="NET_ADDRESS_FORMAT.NET_ADDRESS_IPV4">
+    <summary>
+      <para>The format of the network address is a string in Internet standard dotted-decimal notation for IPv4.</para>
+    </summary>
+  </member>
+  <member name="NET_ADDRESS_FORMAT.NET_ADDRESS_IPV6">
+    <summary>
+      <para>The format of the network address is a string in Internet standard hexadecimal encoding for IPv6.</para>
+    </summary>
+  </member>
+</doc>

@@ -5,13 +5,17 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CRYPT_CSP_PROVIDER.xml' path='doc/member[@name="CRYPT_CSP_PROVIDER"]/*' />
 public unsafe partial struct CRYPT_CSP_PROVIDER
 {
+    /// <include file='CRYPT_CSP_PROVIDER.xml' path='doc/member[@name="CRYPT_CSP_PROVIDER.dwKeySpec"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwKeySpec;
 
+    /// <include file='CRYPT_CSP_PROVIDER.xml' path='doc/member[@name="CRYPT_CSP_PROVIDER.pwszProviderName"]/*' />
     [NativeTypeName("LPWSTR")]
     public ushort* pwszProviderName;
 
+    /// <include file='CRYPT_CSP_PROVIDER.xml' path='doc/member[@name="CRYPT_CSP_PROVIDER.Signature"]/*' />
     public CRYPT_BIT_BLOB Signature;
 }

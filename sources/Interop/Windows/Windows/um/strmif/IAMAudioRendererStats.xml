@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IAMAudioRendererStats.GetStatParam">
+    <summary>
+      <para>The <code>GetStatParam</code> method retrieves performance information from the audio renderer.</para>
+    </summary>
+    <param name="dwParam">
+      <para>Specifies a member of the <see cref="_AM_AUDIO_RENDERER_STAT_PARAM" /> enumeration, indicating which information to retrieve.</para>
+    </param>
+    <param name="pdwParam1">
+      <para>Pointer to a variable that receives performance information. The meaning of the returned value depends on the value of <i>dwParam</i>.</para>
+    </param>
+    <param name="pdwParam2">
+      <para>Pointer to a variable that receives performance information. The meaning of the returned value depends on the value of <i>dwParam</i>.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>Failure.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>Invalid argument.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_NOTIMPL</b>
+            </para>
+          </description>
+          <description>
+            <para>The renderer does not track the specified information.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer argument.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IAMAudioRendererStats Interface" />
+  </member>
+  <member name="IAMAudioRendererStats">
+    <summary>
+      <para>The <code>IAMAudioRendererStats</code> interface retrieves statistical performance information from an audio renderer filter.</para>
+      <para>This interface is intended for use during development, to log performance data from the audio renderer. There is probably no reason for an application to use it in a retail build. The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/audio-renderer--waveout--filter">Audio Renderer (WaveOut)</a> filter and the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/directsound-renderer-filter">DirectSound Renderer</a> filter both expose this interface.</para>
+      <para>
+        <b>Filter Developers</b>: It is not expected that other filters will implement this interface.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/interfaces">Interfaces</seealso>
+  </member>
+</doc>

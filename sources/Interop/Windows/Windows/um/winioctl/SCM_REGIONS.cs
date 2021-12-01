@@ -9,20 +9,26 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SCM_REGIONS.xml' path='doc/member[@name="SCM_REGIONS"]/*' />
 public partial struct SCM_REGIONS
 {
+    /// <include file='SCM_REGIONS.xml' path='doc/member[@name="SCM_REGIONS.Version"]/*' />
     [NativeTypeName("DWORD")]
     public uint Version;
 
+    /// <include file='SCM_REGIONS.xml' path='doc/member[@name="SCM_REGIONS.Size"]/*' />
     [NativeTypeName("DWORD")]
     public uint Size;
 
+    /// <include file='SCM_REGIONS.xml' path='doc/member[@name="SCM_REGIONS.RegionCount"]/*' />
     [NativeTypeName("DWORD")]
     public uint RegionCount;
 
+    /// <include file='SCM_REGIONS.xml' path='doc/member[@name="SCM_REGIONS.Regions"]/*' />
     [NativeTypeName("SCM_REGION [1]")]
     public _Regions_e__FixedBuffer Regions;
 
+    /// <include file='_Regions_e__FixedBuffer.xml' path='doc/member[@name="_Regions_e__FixedBuffer"]/*' />
     public partial struct _Regions_e__FixedBuffer
     {
         public SCM_REGION e0;

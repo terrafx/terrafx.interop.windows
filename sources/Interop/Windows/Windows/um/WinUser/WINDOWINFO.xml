@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WINDOWINFO">
+    <summary>
+      <para>Contains window information.</para>
+    </summary>
+    <seealso cref="CreateWindowEx" />
+    <seealso cref="GetWindowInfo" />
+    <seealso cref="RegisterClass" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/winmsg/windows">Windows</seealso>
+  </member>
+  <member name="WINDOWINFO.cbSize">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The size of the structure, in bytes. The caller must set this member to <code>sizeof(WINDOWINFO)</code>.</para>
+    </summary>
+  </member>
+  <member name="WINDOWINFO.rcWindow">
+    <summary>
+      <para>Type: <b><see cref="RECT" /></b></para>
+      <para>The coordinates of the window.</para>
+    </summary>
+  </member>
+  <member name="WINDOWINFO.rcClient">
+    <summary>
+      <para>Type: <b><see cref="RECT" /></b></para>
+      <para>The coordinates of the client area.</para>
+    </summary>
+  </member>
+  <member name="WINDOWINFO.dwStyle">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The window styles. For a table of window styles, see <a href="https://docs.microsoft.com//windows/desktop/winmsg/window-styles">Window Styles</a>.</para>
+    </summary>
+  </member>
+  <member name="WINDOWINFO.dwExStyle">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The extended window styles. For a table of extended window styles, see <a href="https://docs.microsoft.com//windows/desktop/winmsg/extended-window-styles">Extended Window Styles</a>.</para>
+    </summary>
+  </member>
+  <member name="WINDOWINFO.dwWindowStatus">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The window status. If this member is <b>WS_ACTIVECAPTION</b> (0x0001), the window is active. Otherwise, this member is zero.</para>
+    </summary>
+  </member>
+  <member name="WINDOWINFO.cxWindowBorders">
+    <summary>
+      <para>Type: <b>UINT</b></para>
+      <para>The width of the window border, in pixels.</para>
+    </summary>
+  </member>
+  <member name="WINDOWINFO.cyWindowBorders">
+    <summary>
+      <para>Type: <b>UINT</b></para>
+      <para>The height of the window border, in pixels.</para>
+    </summary>
+  </member>
+  <member name="WINDOWINFO.atomWindowType">
+    <summary>
+      <para>Type: <b>ATOM</b></para>
+      <para>The window class atom (see <see cref="RegisterClass" />).</para>
+    </summary>
+  </member>
+  <member name="WINDOWINFO.wCreatorVersion">
+    <summary>
+      <para>Type: <b>WORD</b></para>
+      <para>The Windows version of the application that created the window.</para>
+    </summary>
+  </member>
+</doc>

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMF2DBuffer.xml' path='doc/member[@name="IMF2DBuffer"]/*' />
 [Guid("7DC9D5F9-9ED9-44EC-9BBF-0600BB589FBB")]
 [NativeTypeName("struct IMF2DBuffer : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMF2DBuffer : IMF2DBuffer.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMF2DBuffer : IMF2DBuffer.Interface
         return ((delegate* unmanaged<IMF2DBuffer*, Guid*, void**, int>)(lpVtbl[0]))((IMF2DBuffer*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMF2DBuffer : IMF2DBuffer.Interface
         return ((delegate* unmanaged<IMF2DBuffer*, uint>)(lpVtbl[1]))((IMF2DBuffer*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMF2DBuffer : IMF2DBuffer.Interface
         return ((delegate* unmanaged<IMF2DBuffer*, uint>)(lpVtbl[2]))((IMF2DBuffer*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMF2DBuffer.xml' path='doc/member[@name="IMF2DBuffer.Lock2D"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Lock2D(byte** ppbScanline0, [NativeTypeName("LONG *")] int* plPitch)
@@ -46,6 +51,7 @@ public unsafe partial struct IMF2DBuffer : IMF2DBuffer.Interface
         return ((delegate* unmanaged<IMF2DBuffer*, byte**, int*, int>)(lpVtbl[3]))((IMF2DBuffer*)Unsafe.AsPointer(ref this), ppbScanline0, plPitch);
     }
 
+    /// <include file='IMF2DBuffer.xml' path='doc/member[@name="IMF2DBuffer.Unlock2D"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Unlock2D()
@@ -53,6 +59,7 @@ public unsafe partial struct IMF2DBuffer : IMF2DBuffer.Interface
         return ((delegate* unmanaged<IMF2DBuffer*, int>)(lpVtbl[4]))((IMF2DBuffer*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMF2DBuffer.xml' path='doc/member[@name="IMF2DBuffer.GetScanline0AndPitch"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetScanline0AndPitch(byte** pbScanline0, [NativeTypeName("LONG *")] int* plPitch)
@@ -60,6 +67,7 @@ public unsafe partial struct IMF2DBuffer : IMF2DBuffer.Interface
         return ((delegate* unmanaged<IMF2DBuffer*, byte**, int*, int>)(lpVtbl[5]))((IMF2DBuffer*)Unsafe.AsPointer(ref this), pbScanline0, plPitch);
     }
 
+    /// <include file='IMF2DBuffer.xml' path='doc/member[@name="IMF2DBuffer.IsContiguousFormat"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT IsContiguousFormat(BOOL* pfIsContiguous)
@@ -67,6 +75,7 @@ public unsafe partial struct IMF2DBuffer : IMF2DBuffer.Interface
         return ((delegate* unmanaged<IMF2DBuffer*, BOOL*, int>)(lpVtbl[6]))((IMF2DBuffer*)Unsafe.AsPointer(ref this), pfIsContiguous);
     }
 
+    /// <include file='IMF2DBuffer.xml' path='doc/member[@name="IMF2DBuffer.GetContiguousLength"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetContiguousLength([NativeTypeName("DWORD *")] uint* pcbLength)
@@ -74,6 +83,7 @@ public unsafe partial struct IMF2DBuffer : IMF2DBuffer.Interface
         return ((delegate* unmanaged<IMF2DBuffer*, uint*, int>)(lpVtbl[7]))((IMF2DBuffer*)Unsafe.AsPointer(ref this), pcbLength);
     }
 
+    /// <include file='IMF2DBuffer.xml' path='doc/member[@name="IMF2DBuffer.ContiguousCopyTo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT ContiguousCopyTo(byte* pbDestBuffer, [NativeTypeName("DWORD")] uint cbDestBuffer)
@@ -81,6 +91,7 @@ public unsafe partial struct IMF2DBuffer : IMF2DBuffer.Interface
         return ((delegate* unmanaged<IMF2DBuffer*, byte*, uint, int>)(lpVtbl[8]))((IMF2DBuffer*)Unsafe.AsPointer(ref this), pbDestBuffer, cbDestBuffer);
     }
 
+    /// <include file='IMF2DBuffer.xml' path='doc/member[@name="IMF2DBuffer.ContiguousCopyFrom"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT ContiguousCopyFrom([NativeTypeName("const BYTE *")] byte* pbSrcBuffer, [NativeTypeName("DWORD")] uint cbSrcBuffer)

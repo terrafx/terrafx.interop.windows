@@ -9,22 +9,29 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='AUTO_SCROLL_DATA.xml' path='doc/member[@name="AUTO_SCROLL_DATA"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public unsafe partial struct AUTO_SCROLL_DATA
 {
+    /// <include file='AUTO_SCROLL_DATA.xml' path='doc/member[@name="AUTO_SCROLL_DATA.iNextSample"]/*' />
     public int iNextSample;
 
+    /// <include file='AUTO_SCROLL_DATA.xml' path='doc/member[@name="AUTO_SCROLL_DATA.dwLastScroll"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwLastScroll;
 
+    /// <include file='AUTO_SCROLL_DATA.xml' path='doc/member[@name="AUTO_SCROLL_DATA.bFull"]/*' />
     public BOOL bFull;
 
+    /// <include file='AUTO_SCROLL_DATA.xml' path='doc/member[@name="AUTO_SCROLL_DATA.pts"]/*' />
     [NativeTypeName("POINT [3]")]
     public _pts_e__FixedBuffer pts;
 
+    /// <include file='AUTO_SCROLL_DATA.xml' path='doc/member[@name="AUTO_SCROLL_DATA.dwTimes"]/*' />
     [NativeTypeName("DWORD [3]")]
     public fixed uint dwTimes[3];
 
+    /// <include file='_pts_e__FixedBuffer.xml' path='doc/member[@name="_pts_e__FixedBuffer"]/*' />
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public partial struct _pts_e__FixedBuffer
     {

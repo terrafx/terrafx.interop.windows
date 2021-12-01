@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CV_CoroutineKind_e.xml' path='doc/member[@name="CV_CoroutineKind_e"]/*' />
 public enum CV_CoroutineKind_e
 {
+    /// <include file='CV_CoroutineKind_e.xml' path='doc/member[@name="CV_CoroutineKind_e.CV_COROUTINEKIND_NONE"]/*' />
     CV_COROUTINEKIND_NONE,
+
+    /// <include file='CV_CoroutineKind_e.xml' path='doc/member[@name="CV_CoroutineKind_e.CV_COROUTINEKIND_PRIMARY"]/*' />
     CV_COROUTINEKIND_PRIMARY,
+
+    /// <include file='CV_CoroutineKind_e.xml' path='doc/member[@name="CV_CoroutineKind_e.CV_COROUTINEKIND_INIT"]/*' />
     CV_COROUTINEKIND_INIT,
+
+    /// <include file='CV_CoroutineKind_e.xml' path='doc/member[@name="CV_CoroutineKind_e.CV_COROUTINEKIND_RESUME"]/*' />
     CV_COROUTINEKIND_RESUME,
+
+    /// <include file='CV_CoroutineKind_e.xml' path='doc/member[@name="CV_CoroutineKind_e.CV_COROUTINEKIND_DESTROY"]/*' />
     CV_COROUTINEKIND_DESTROY,
 }

@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CSFV">
+    <summary>
+      <para>Used with the <see cref="SHCreateShellFolderViewEx" /> function.</para>
+    </summary>
+  </member>
+  <member name="CSFV.cbSize">
+    <summary>
+      <para>Type: <b>UINT</b></para>
+      <para>The size of the <b>CSFV</b> structure, in bytes.</para>
+    </summary>
+  </member>
+  <member name="CSFV.pshf">
+    <summary>
+      <para>Type: <b><see cref="IShellFolder" />*</b></para>
+      <para>A pointer to the <see cref="IShellFolder" /> object for which to create the view.</para>
+    </summary>
+  </member>
+  <member name="CSFV.psvOuter">
+    <summary>
+      <para>Type: <b><see cref="IShellView" />*</b></para>
+      <para>A pointer to the parent <see cref="IShellView" /> interface. This parameter can be <b>NULL</b>.</para>
+    </summary>
+  </member>
+  <member name="CSFV.pidl">
+    <summary>
+      <para>Type: <b>PCIDLIST_ABSOLUTE</b></para>
+      <para>Ignored.</para>
+    </summary>
+  </member>
+  <member name="CSFV.lEvents">
+    <summary>
+      <para>Type: <b>LONG</b></para>
+    </summary>
+  </member>
+  <member name="CSFV.pfnCallback">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/api/shlobj_core/nc-shlobj_core-lpfnviewcallback">LPFNVIEWCALLBACK</a></b></para>
+      <para>A pointer to the <a href="https://docs.microsoft.com//windows/desktop/api/shlobj_core/nc-shlobj_core-lpfnviewcallback">LPFNVIEWCALLBACK</a> function used by this folder view to handle callback messages. This parameter can be <b>NULL</b>.</para>
+    </summary>
+  </member>
+  <member name="CSFV.fvm">
+    <summary>
+      <para>Type: <b><see cref="FOLDERVIEWMODE" /></b></para>
+    </summary>
+  </member>
+</doc>

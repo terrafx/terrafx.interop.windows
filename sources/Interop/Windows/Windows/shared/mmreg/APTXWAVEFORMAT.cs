@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='APTXWAVEFORMAT.xml' path='doc/member[@name="APTXWAVEFORMAT"]/*' />
 public partial struct APTXWAVEFORMAT
 {
+    /// <include file='APTXWAVEFORMAT.xml' path='doc/member[@name="APTXWAVEFORMAT.wfx"]/*' />
     public WAVEFORMATEX wfx;
 }

@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HTMLWindow2.xml' path='doc/member[@name="HTMLWindow2"]/*' />
 [Guid("D48A6EC6-6A4A-11CF-94A7-444553540000")]
 public partial struct HTMLWindow2
 {

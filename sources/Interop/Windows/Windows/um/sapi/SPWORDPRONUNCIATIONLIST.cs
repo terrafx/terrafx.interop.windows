@@ -5,12 +5,16 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SPWORDPRONUNCIATIONLIST.xml' path='doc/member[@name="SPWORDPRONUNCIATIONLIST"]/*' />
 public unsafe partial struct SPWORDPRONUNCIATIONLIST
 {
+    /// <include file='SPWORDPRONUNCIATIONLIST.xml' path='doc/member[@name="SPWORDPRONUNCIATIONLIST.ulSize"]/*' />
     [NativeTypeName("ULONG")]
     public uint ulSize;
 
+    /// <include file='SPWORDPRONUNCIATIONLIST.xml' path='doc/member[@name="SPWORDPRONUNCIATIONLIST.pvBuffer"]/*' />
     public byte* pvBuffer;
 
+    /// <include file='SPWORDPRONUNCIATIONLIST.xml' path='doc/member[@name="SPWORDPRONUNCIATIONLIST.pFirstWordPronunciation"]/*' />
     public SPWORDPRONUNCIATION* pFirstWordPronunciation;
 }

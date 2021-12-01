@@ -7,17 +7,22 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='FILE_ATTRIBUTES_ARRAY.xml' path='doc/member[@name="FILE_ATTRIBUTES_ARRAY"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public unsafe partial struct FILE_ATTRIBUTES_ARRAY
 {
+    /// <include file='FILE_ATTRIBUTES_ARRAY.xml' path='doc/member[@name="FILE_ATTRIBUTES_ARRAY.cItems"]/*' />
     public uint cItems;
 
+    /// <include file='FILE_ATTRIBUTES_ARRAY.xml' path='doc/member[@name="FILE_ATTRIBUTES_ARRAY.dwSumFileAttributes"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwSumFileAttributes;
 
+    /// <include file='FILE_ATTRIBUTES_ARRAY.xml' path='doc/member[@name="FILE_ATTRIBUTES_ARRAY.dwProductFileAttributes"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwProductFileAttributes;
 
+    /// <include file='FILE_ATTRIBUTES_ARRAY.xml' path='doc/member[@name="FILE_ATTRIBUTES_ARRAY.rgdwFileAttributes"]/*' />
     [NativeTypeName("DWORD [1]")]
     public fixed uint rgdwFileAttributes[1];
 }

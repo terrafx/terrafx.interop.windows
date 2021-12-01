@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITfTextLayoutSink.xml' path='doc/member[@name="ITfTextLayoutSink"]/*' />
 [Guid("2AF2D06A-DD5B-4927-A0B4-54F19C91FADE")]
 [NativeTypeName("struct ITfTextLayoutSink : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITfTextLayoutSink : ITfTextLayoutSink.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITfTextLayoutSink : ITfTextLayoutSink.Interface
         return ((delegate* unmanaged<ITfTextLayoutSink*, Guid*, void**, int>)(lpVtbl[0]))((ITfTextLayoutSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITfTextLayoutSink : ITfTextLayoutSink.Interface
         return ((delegate* unmanaged<ITfTextLayoutSink*, uint>)(lpVtbl[1]))((ITfTextLayoutSink*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITfTextLayoutSink : ITfTextLayoutSink.Interface
         return ((delegate* unmanaged<ITfTextLayoutSink*, uint>)(lpVtbl[2]))((ITfTextLayoutSink*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITfTextLayoutSink.xml' path='doc/member[@name="ITfTextLayoutSink.OnLayoutChange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT OnLayoutChange(ITfContext* pic, TfLayoutCode lcode, ITfContextView* pView)

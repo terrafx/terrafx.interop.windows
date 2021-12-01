@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CWMO_FLAGS">
+    <summary>
+      <para>Provides flags for the <see cref="CoWaitForMultipleObjects" /> function.</para>
+    </summary>
+  </member>
+  <member name="CWMO_FLAGS.CWMO_DEFAULT">
+    <summary>
+      <para>No call dispatch.</para>
+    </summary>
+  </member>
+  <member name="CWMO_FLAGS.CWMO_DISPATCH_CALLS">
+    <summary>
+      <para>Dispatch calls from <see cref="CoWaitForMultipleObjects" /> (default is no call dispatch).</para>
+    </summary>
+  </member>
+  <member name="CWMO_FLAGS.CWMO_DISPATCH_WINDOW_MESSAGES">
+    <summary>
+      <para>Enable dispatch of window messages from <see cref="CoWaitForMultipleObjects" /> in a ASTA or STA (default in ASTA is no window messages dispatched, default in STA is only a small set of special-cased messages dispatched). The value has no meaning in MTA and is ignored.</para>
+    </summary>
+  </member>
+</doc>

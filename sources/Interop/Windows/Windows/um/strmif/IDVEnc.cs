@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IDVEnc.xml' path='doc/member[@name="IDVEnc"]/*' />
 [Guid("D18E17A0-AACB-11D0-AFB0-00AA00B67A42")]
 [NativeTypeName("struct IDVEnc : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IDVEnc : IDVEnc.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IDVEnc : IDVEnc.Interface
         return ((delegate* unmanaged<IDVEnc*, Guid*, void**, int>)(lpVtbl[0]))((IDVEnc*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IDVEnc : IDVEnc.Interface
         return ((delegate* unmanaged<IDVEnc*, uint>)(lpVtbl[1]))((IDVEnc*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IDVEnc : IDVEnc.Interface
         return ((delegate* unmanaged<IDVEnc*, uint>)(lpVtbl[2]))((IDVEnc*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDVEnc.xml' path='doc/member[@name="IDVEnc.get_IFormatResolution"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT get_IFormatResolution(int* VideoFormat, int* DVFormat, int* Resolution, byte fDVInfo, DVINFO* sDVInfo)
@@ -46,6 +51,7 @@ public unsafe partial struct IDVEnc : IDVEnc.Interface
         return ((delegate* unmanaged<IDVEnc*, int*, int*, int*, byte, DVINFO*, int>)(lpVtbl[3]))((IDVEnc*)Unsafe.AsPointer(ref this), VideoFormat, DVFormat, Resolution, fDVInfo, sDVInfo);
     }
 
+    /// <include file='IDVEnc.xml' path='doc/member[@name="IDVEnc.put_IFormatResolution"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT put_IFormatResolution(int VideoFormat, int DVFormat, int Resolution, byte fDVInfo, DVINFO* sDVInfo)

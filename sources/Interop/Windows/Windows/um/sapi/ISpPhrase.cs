@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ISpPhrase.xml' path='doc/member[@name="ISpPhrase"]/*' />
 [Guid("1A5C0354-B621-4B5A-8791-D306ED379E53")]
 [NativeTypeName("struct ISpPhrase : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ISpPhrase : ISpPhrase.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ISpPhrase : ISpPhrase.Interface
         return ((delegate* unmanaged<ISpPhrase*, Guid*, void**, int>)(lpVtbl[0]))((ISpPhrase*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ISpPhrase : ISpPhrase.Interface
         return ((delegate* unmanaged<ISpPhrase*, uint>)(lpVtbl[1]))((ISpPhrase*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ISpPhrase : ISpPhrase.Interface
         return ((delegate* unmanaged<ISpPhrase*, uint>)(lpVtbl[2]))((ISpPhrase*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ISpPhrase.xml' path='doc/member[@name="ISpPhrase.GetPhrase"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetPhrase(SPPHRASE** ppCoMemPhrase)
@@ -46,6 +51,7 @@ public unsafe partial struct ISpPhrase : ISpPhrase.Interface
         return ((delegate* unmanaged<ISpPhrase*, SPPHRASE**, int>)(lpVtbl[3]))((ISpPhrase*)Unsafe.AsPointer(ref this), ppCoMemPhrase);
     }
 
+    /// <include file='ISpPhrase.xml' path='doc/member[@name="ISpPhrase.GetSerializedPhrase"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetSerializedPhrase(SPSERIALIZEDPHRASE** ppCoMemPhrase)
@@ -53,6 +59,7 @@ public unsafe partial struct ISpPhrase : ISpPhrase.Interface
         return ((delegate* unmanaged<ISpPhrase*, SPSERIALIZEDPHRASE**, int>)(lpVtbl[4]))((ISpPhrase*)Unsafe.AsPointer(ref this), ppCoMemPhrase);
     }
 
+    /// <include file='ISpPhrase.xml' path='doc/member[@name="ISpPhrase.GetText"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetText([NativeTypeName("ULONG")] uint ulStart, [NativeTypeName("ULONG")] uint ulCount, BOOL fUseTextReplacements, [NativeTypeName("LPWSTR *")] ushort** ppszCoMemText, byte* pbDisplayAttributes)
@@ -60,6 +67,7 @@ public unsafe partial struct ISpPhrase : ISpPhrase.Interface
         return ((delegate* unmanaged<ISpPhrase*, uint, uint, BOOL, ushort**, byte*, int>)(lpVtbl[5]))((ISpPhrase*)Unsafe.AsPointer(ref this), ulStart, ulCount, fUseTextReplacements, ppszCoMemText, pbDisplayAttributes);
     }
 
+    /// <include file='ISpPhrase.xml' path='doc/member[@name="ISpPhrase.Discard"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Discard([NativeTypeName("DWORD")] uint dwValueTypes)

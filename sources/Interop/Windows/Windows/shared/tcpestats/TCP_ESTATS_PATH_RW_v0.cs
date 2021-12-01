@@ -5,8 +5,10 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TCP_ESTATS_PATH_RW_v0.xml' path='doc/member[@name="TCP_ESTATS_PATH_RW_v0"]/*' />
 public partial struct TCP_ESTATS_PATH_RW_v0
 {
+    /// <include file='TCP_ESTATS_PATH_RW_v0.xml' path='doc/member[@name="TCP_ESTATS_PATH_RW_v0.EnableCollection"]/*' />
     [NativeTypeName("BOOLEAN")]
     public byte EnableCollection;
 }

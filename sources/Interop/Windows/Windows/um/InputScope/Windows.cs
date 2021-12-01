@@ -9,15 +9,19 @@ namespace TerraFX.Interop.Windows;
 
 public static unsafe partial class Windows
 {
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetInputScope"]/*' />
     [DllImport("msctf", ExactSpelling = true)]
     public static extern HRESULT SetInputScope(HWND hwnd, InputScope inputscope);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetInputScopes"]/*' />
     [DllImport("msctf", ExactSpelling = true)]
     public static extern HRESULT SetInputScopes(HWND hwnd, [NativeTypeName("const InputScope *")] InputScope* pInputScopes, uint cInputScopes, [NativeTypeName("PWSTR *")] ushort** ppszPhraseList, uint cPhrases, [NativeTypeName("PWSTR")] ushort* pszRegExp, [NativeTypeName("PWSTR")] ushort* pszSRGS);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetInputScopeXML"]/*' />
     [DllImport("msctf", ExactSpelling = true)]
     public static extern HRESULT SetInputScopeXML(HWND hwnd, [NativeTypeName("PWSTR")] ushort* pszXML);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetInputScopes2"]/*' />
     [DllImport("msctf", ExactSpelling = true)]
     public static extern HRESULT SetInputScopes2(HWND hwnd, [NativeTypeName("const InputScope *")] InputScope* pInputScopes, uint cInputScopes, IEnumString* pEnumString, [NativeTypeName("PWSTR")] ushort* pszRegExp, [NativeTypeName("PWSTR")] ushort* pszSRGS);
 }

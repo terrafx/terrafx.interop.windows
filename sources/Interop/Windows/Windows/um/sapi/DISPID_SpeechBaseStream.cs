@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DISPID_SpeechBaseStream.xml' path='doc/member[@name="DISPID_SpeechBaseStream"]/*' />
 public enum DISPID_SpeechBaseStream
 {
+    /// <include file='DISPID_SpeechBaseStream.xml' path='doc/member[@name="DISPID_SpeechBaseStream.DISPID_SBSFormat"]/*' />
     DISPID_SBSFormat = 1,
+
+    /// <include file='DISPID_SpeechBaseStream.xml' path='doc/member[@name="DISPID_SpeechBaseStream.DISPID_SBSRead"]/*' />
     DISPID_SBSRead = (DISPID_SBSFormat + 1),
+
+    /// <include file='DISPID_SpeechBaseStream.xml' path='doc/member[@name="DISPID_SpeechBaseStream.DISPID_SBSWrite"]/*' />
     DISPID_SBSWrite = (DISPID_SBSRead + 1),
+
+    /// <include file='DISPID_SpeechBaseStream.xml' path='doc/member[@name="DISPID_SpeechBaseStream.DISPID_SBSSeek"]/*' />
     DISPID_SBSSeek = (DISPID_SBSWrite + 1),
 }

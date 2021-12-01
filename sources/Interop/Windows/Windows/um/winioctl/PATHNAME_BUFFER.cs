@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PATHNAME_BUFFER.xml' path='doc/member[@name="PATHNAME_BUFFER"]/*' />
 public unsafe partial struct PATHNAME_BUFFER
 {
+    /// <include file='PATHNAME_BUFFER.xml' path='doc/member[@name="PATHNAME_BUFFER.PathNameLength"]/*' />
     [NativeTypeName("DWORD")]
     public uint PathNameLength;
 
+    /// <include file='PATHNAME_BUFFER.xml' path='doc/member[@name="PATHNAME_BUFFER.Name"]/*' />
     [NativeTypeName("WCHAR [1]")]
     public fixed ushort Name[1];
 }

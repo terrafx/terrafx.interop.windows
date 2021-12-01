@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DISPLAYCONFIG_SCANLINE_ORDERING">
+    <summary>
+      <para>The DISPLAYCONFIG_SCANLINE_ORDERING enumeration specifies the method that the display uses to create an image on a screen.</para>
+    </summary>
+  </member>
+  <member name="DISPLAYCONFIG_SCANLINE_ORDERING.DISPLAYCONFIG_SCANLINE_ORDERING_UNSPECIFIED">
+    <summary>
+      <para>Indicates that scan-line ordering of the output is unspecified. The caller can only set the <b>scanLineOrdering</b> member of the <see cref="DISPLAYCONFIG_PATH_TARGET_INFO" /> structure in a call to the <see cref="SetDisplayConfig" /> function to DISPLAYCONFIG_SCANLINE_ORDERING_UNSPECIFIED if the caller also set the refresh rate denominator and numerator of the <b>refreshRate</b> member both to zero. In this case, <b>SetDisplayConfig</b> uses the best refresh rate it can find.</para>
+    </summary>
+  </member>
+  <member name="DISPLAYCONFIG_SCANLINE_ORDERING.DISPLAYCONFIG_SCANLINE_ORDERING_PROGRESSIVE">
+    <summary>
+      <para>Indicates that the output is a progressive image.</para>
+    </summary>
+  </member>
+  <member name="DISPLAYCONFIG_SCANLINE_ORDERING.DISPLAYCONFIG_SCANLINE_ORDERING_INTERLACED">
+    <summary>
+      <para>Indicates that the output is an interlaced image that is created beginning with the upper field.</para>
+    </summary>
+  </member>
+  <member name="DISPLAYCONFIG_SCANLINE_ORDERING.DISPLAYCONFIG_SCANLINE_ORDERING_INTERLACED_UPPERFIELDFIRST">
+    <summary>
+      <para>Indicates that the output is an interlaced image that is created beginning with the upper field.</para>
+    </summary>
+  </member>
+  <member name="DISPLAYCONFIG_SCANLINE_ORDERING.DISPLAYCONFIG_SCANLINE_ORDERING_INTERLACED_LOWERFIELDFIRST">
+    <summary>
+      <para>Indicates that the output is an interlaced image that is created beginning with the lower field.</para>
+    </summary>
+  </member>
+  <member name="DISPLAYCONFIG_SCANLINE_ORDERING.DISPLAYCONFIG_SCANLINE_ORDERING_FORCE_UINT32">
+    <summary>
+      <para>Forces this enumeration to compile to 32 bits in size. Without this value, some compilers would allow this enumeration to compile to a size other than 32 bits. You should not use this value.</para>
+    </summary>
+  </member>
+</doc>

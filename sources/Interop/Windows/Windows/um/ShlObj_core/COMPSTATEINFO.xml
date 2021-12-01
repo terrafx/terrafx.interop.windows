@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="COMPSTATEINFO">
+    <summary>
+      <para>Used by Windows 2000 to hold information about a component's state.</para>
+    </summary>
+  </member>
+  <member name="COMPSTATEINFO.dwSize">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The size of the structure.</para>
+    </summary>
+  </member>
+  <member name="COMPSTATEINFO.iLeft">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>The left edge of the top-left corner in screen coordinates.</para>
+    </summary>
+  </member>
+  <member name="COMPSTATEINFO.iTop">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>The top of the top-left corner in screen coordinates.</para>
+    </summary>
+  </member>
+  <member name="COMPSTATEINFO.dwWidth">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The width, in pixels.</para>
+    </summary>
+  </member>
+  <member name="COMPSTATEINFO.dwHeight">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The height, in pixels.</para>
+    </summary>
+  </member>
+  <member name="COMPSTATEINFO.dwItemState">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The state of the component.</para>
+      <h4>IS_NORMAL</h4>
+      <para>Normal screen.</para>
+      <h4>IS_FULLSCREEN</h4>
+      <para>Full screen.</para>
+      <h4>IS_SPLIT</h4>
+      <para>Split screen.</para>
+    </summary>
+  </member>
+</doc>

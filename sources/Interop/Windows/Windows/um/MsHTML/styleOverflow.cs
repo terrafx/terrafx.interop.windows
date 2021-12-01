@@ -5,12 +5,24 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='styleOverflow.xml' path='doc/member[@name="styleOverflow"]/*' />
 public enum styleOverflow
 {
+    /// <include file='styleOverflow.xml' path='doc/member[@name="styleOverflow.styleOverflowNotSet"]/*' />
     styleOverflowNotSet = 0,
+
+    /// <include file='styleOverflow.xml' path='doc/member[@name="styleOverflow.styleOverflowAuto"]/*' />
     styleOverflowAuto = 1,
+
+    /// <include file='styleOverflow.xml' path='doc/member[@name="styleOverflow.styleOverflowHidden"]/*' />
     styleOverflowHidden = 2,
+
+    /// <include file='styleOverflow.xml' path='doc/member[@name="styleOverflow.styleOverflowVisible"]/*' />
     styleOverflowVisible = 3,
+
+    /// <include file='styleOverflow.xml' path='doc/member[@name="styleOverflow.styleOverflowScroll"]/*' />
     styleOverflowScroll = 4,
+
+    /// <include file='styleOverflow.xml' path='doc/member[@name="styleOverflow.styleOverflow_Max"]/*' />
     styleOverflow_Max = 2147483647,
 }

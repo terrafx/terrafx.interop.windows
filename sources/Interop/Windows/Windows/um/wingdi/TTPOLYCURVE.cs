@@ -9,17 +9,22 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TTPOLYCURVE.xml' path='doc/member[@name="TTPOLYCURVE"]/*' />
 public partial struct TTPOLYCURVE
 {
+    /// <include file='TTPOLYCURVE.xml' path='doc/member[@name="TTPOLYCURVE.wType"]/*' />
     [NativeTypeName("WORD")]
     public ushort wType;
 
+    /// <include file='TTPOLYCURVE.xml' path='doc/member[@name="TTPOLYCURVE.cpfx"]/*' />
     [NativeTypeName("WORD")]
     public ushort cpfx;
 
+    /// <include file='TTPOLYCURVE.xml' path='doc/member[@name="TTPOLYCURVE.apfx"]/*' />
     [NativeTypeName("POINTFX [1]")]
     public _apfx_e__FixedBuffer apfx;
 
+    /// <include file='_apfx_e__FixedBuffer.xml' path='doc/member[@name="_apfx_e__FixedBuffer"]/*' />
     public partial struct _apfx_e__FixedBuffer
     {
         public POINTFX e0;

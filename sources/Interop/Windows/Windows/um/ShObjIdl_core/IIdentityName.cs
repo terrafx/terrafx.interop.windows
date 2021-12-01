@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IIdentityName.xml' path='doc/member[@name="IIdentityName"]/*' />
 [Guid("7D903FCA-D6F9-4810-8332-946C0177E247")]
 [NativeTypeName("struct IIdentityName : IRelatedItem")]
 [NativeInheritance("IRelatedItem")]
@@ -16,6 +17,7 @@ public unsafe partial struct IIdentityName : IIdentityName.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IIdentityName : IIdentityName.Interface
         return ((delegate* unmanaged<IIdentityName*, Guid*, void**, int>)(lpVtbl[0]))((IIdentityName*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IIdentityName : IIdentityName.Interface
         return ((delegate* unmanaged<IIdentityName*, uint>)(lpVtbl[1]))((IIdentityName*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IIdentityName : IIdentityName.Interface
         return ((delegate* unmanaged<IIdentityName*, uint>)(lpVtbl[2]))((IIdentityName*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IRelatedItem.GetItemIDList" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetItemIDList([NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidl)
@@ -46,6 +51,7 @@ public unsafe partial struct IIdentityName : IIdentityName.Interface
         return ((delegate* unmanaged<IIdentityName*, ITEMIDLIST**, int>)(lpVtbl[3]))((IIdentityName*)Unsafe.AsPointer(ref this), ppidl);
     }
 
+    /// <inheritdoc cref="IRelatedItem.GetItem" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetItem(IShellItem** ppsi)

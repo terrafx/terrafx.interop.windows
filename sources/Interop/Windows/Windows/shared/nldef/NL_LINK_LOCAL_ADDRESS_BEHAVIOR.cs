@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NL_LINK_LOCAL_ADDRESS_BEHAVIOR.xml' path='doc/member[@name="NL_LINK_LOCAL_ADDRESS_BEHAVIOR"]/*' />
 public enum NL_LINK_LOCAL_ADDRESS_BEHAVIOR
 {
+    /// <include file='NL_LINK_LOCAL_ADDRESS_BEHAVIOR.xml' path='doc/member[@name="NL_LINK_LOCAL_ADDRESS_BEHAVIOR.LinkLocalAlwaysOff"]/*' />
     LinkLocalAlwaysOff = 0,
+
+    /// <include file='NL_LINK_LOCAL_ADDRESS_BEHAVIOR.xml' path='doc/member[@name="NL_LINK_LOCAL_ADDRESS_BEHAVIOR.LinkLocalDelayed"]/*' />
     LinkLocalDelayed,
+
+    /// <include file='NL_LINK_LOCAL_ADDRESS_BEHAVIOR.xml' path='doc/member[@name="NL_LINK_LOCAL_ADDRESS_BEHAVIOR.LinkLocalAlwaysOn"]/*' />
     LinkLocalAlwaysOn,
+
+    /// <include file='NL_LINK_LOCAL_ADDRESS_BEHAVIOR.xml' path='doc/member[@name="NL_LINK_LOCAL_ADDRESS_BEHAVIOR.LinkLocalUnchanged"]/*' />
     LinkLocalUnchanged = -1,
 }

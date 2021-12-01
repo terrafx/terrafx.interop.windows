@@ -8,12 +8,14 @@ using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CIE4ConnectionPoint.xml' path='doc/member[@name="CIE4ConnectionPoint"]/*' />
 [NativeTypeName("struct CIE4ConnectionPoint : IConnectionPoint")]
 [NativeInheritance("IConnectionPoint")]
 public unsafe partial struct CIE4ConnectionPoint : CIE4ConnectionPoint.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -21,6 +23,7 @@ public unsafe partial struct CIE4ConnectionPoint : CIE4ConnectionPoint.Interface
         return ((delegate* unmanaged<CIE4ConnectionPoint*, Guid*, void**, int>)(lpVtbl[0]))((CIE4ConnectionPoint*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -29,6 +32,7 @@ public unsafe partial struct CIE4ConnectionPoint : CIE4ConnectionPoint.Interface
         return ((delegate* unmanaged<CIE4ConnectionPoint*, uint>)(lpVtbl[1]))((CIE4ConnectionPoint*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -37,6 +41,7 @@ public unsafe partial struct CIE4ConnectionPoint : CIE4ConnectionPoint.Interface
         return ((delegate* unmanaged<CIE4ConnectionPoint*, uint>)(lpVtbl[2]))((CIE4ConnectionPoint*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IConnectionPoint.GetConnectionInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetConnectionInterface([NativeTypeName("IID *")] Guid* pIID)
@@ -44,6 +49,7 @@ public unsafe partial struct CIE4ConnectionPoint : CIE4ConnectionPoint.Interface
         return ((delegate* unmanaged<CIE4ConnectionPoint*, Guid*, int>)(lpVtbl[3]))((CIE4ConnectionPoint*)Unsafe.AsPointer(ref this), pIID);
     }
 
+    /// <inheritdoc cref="IConnectionPoint.GetConnectionPointContainer" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetConnectionPointContainer(IConnectionPointContainer** ppCPC)
@@ -51,6 +57,7 @@ public unsafe partial struct CIE4ConnectionPoint : CIE4ConnectionPoint.Interface
         return ((delegate* unmanaged<CIE4ConnectionPoint*, IConnectionPointContainer**, int>)(lpVtbl[4]))((CIE4ConnectionPoint*)Unsafe.AsPointer(ref this), ppCPC);
     }
 
+    /// <inheritdoc cref="IConnectionPoint.Advise" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT Advise(IUnknown* pUnkSink, [NativeTypeName("DWORD *")] uint* pdwCookie)
@@ -58,6 +65,7 @@ public unsafe partial struct CIE4ConnectionPoint : CIE4ConnectionPoint.Interface
         return ((delegate* unmanaged<CIE4ConnectionPoint*, IUnknown*, uint*, int>)(lpVtbl[5]))((CIE4ConnectionPoint*)Unsafe.AsPointer(ref this), pUnkSink, pdwCookie);
     }
 
+    /// <inheritdoc cref="IConnectionPoint.Unadvise" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Unadvise([NativeTypeName("DWORD")] uint dwCookie)
@@ -65,6 +73,7 @@ public unsafe partial struct CIE4ConnectionPoint : CIE4ConnectionPoint.Interface
         return ((delegate* unmanaged<CIE4ConnectionPoint*, uint, int>)(lpVtbl[6]))((CIE4ConnectionPoint*)Unsafe.AsPointer(ref this), dwCookie);
     }
 
+    /// <inheritdoc cref="IConnectionPoint.EnumConnections" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT EnumConnections(IEnumConnections** ppEnum)
@@ -72,6 +81,7 @@ public unsafe partial struct CIE4ConnectionPoint : CIE4ConnectionPoint.Interface
         return ((delegate* unmanaged<CIE4ConnectionPoint*, IEnumConnections**, int>)(lpVtbl[7]))((CIE4ConnectionPoint*)Unsafe.AsPointer(ref this), ppEnum);
     }
 
+    /// <include file='CIE4ConnectionPoint.xml' path='doc/member[@name="CIE4ConnectionPoint.DoInvokeIE4"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT DoInvokeIE4(BOOL* pf, void** ppv, [NativeTypeName("DISPID")] int dispid, DISPPARAMS* pdispparams)
@@ -79,6 +89,7 @@ public unsafe partial struct CIE4ConnectionPoint : CIE4ConnectionPoint.Interface
         return ((delegate* unmanaged<CIE4ConnectionPoint*, BOOL*, void**, int, DISPPARAMS*, int>)(lpVtbl[8]))((CIE4ConnectionPoint*)Unsafe.AsPointer(ref this), pf, ppv, dispid, pdispparams);
     }
 
+    /// <include file='CIE4ConnectionPoint.xml' path='doc/member[@name="CIE4ConnectionPoint.DoInvokePIDLIE4"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT DoInvokePIDLIE4([NativeTypeName("DISPID")] int dispid, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, BOOL fCanCancel)

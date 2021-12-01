@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PSS_VA_SPACE_ENTRY">
+    <summary>
+      <para>Holds the <see cref="MEMORY_BASIC_INFORMATION" /> returned by <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/processsnapshot/nf-processsnapshot-psswalksnapshot">PssWalkSnapshot</a> for a virtual address (VA) region.</para>
+    </summary>
+    <remarks>
+      <para>
+        <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/processsnapshot/nf-processsnapshot-psswalksnapshot">PssWalkSnapshot</a> returns a <b>PSS_VA_SPACE_ENTRY</b> structure when the  <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/processsnapshot/ne-processsnapshot-pss_walk_information_class">PSS_WALK_INFORMATION_CLASS</a> member that the caller provides it is <b>PSS_WALK_VA_SPACE</b>.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/proc_snap/process-snapshotting-portal">Process Snapshotting</seealso>
+  </member>
+  <member name="PSS_VA_SPACE_ENTRY.BaseAddress">
+    <summary>
+      <para>Information about the VA region. For more information, see <see cref="MEMORY_BASIC_INFORMATION" />.</para>
+    </summary>
+  </member>
+  <member name="PSS_VA_SPACE_ENTRY.AllocationBase">
+    <summary>
+      <para>Information about the VA region. For more information, see <see cref="MEMORY_BASIC_INFORMATION" />.</para>
+    </summary>
+  </member>
+  <member name="PSS_VA_SPACE_ENTRY.AllocationProtect">
+    <summary>
+      <para>Information about the VA region. For more information, see <see cref="MEMORY_BASIC_INFORMATION" />.</para>
+    </summary>
+  </member>
+  <member name="PSS_VA_SPACE_ENTRY.RegionSize">
+    <summary>
+      <para>Information about the VA region. For more information, see <see cref="MEMORY_BASIC_INFORMATION" />.</para>
+    </summary>
+  </member>
+  <member name="PSS_VA_SPACE_ENTRY.State">
+    <summary>
+      <para>Information about the VA region. For more information, see <see cref="MEMORY_BASIC_INFORMATION" />.</para>
+    </summary>
+  </member>
+  <member name="PSS_VA_SPACE_ENTRY.Protect">
+    <summary>
+      <para>Information about the VA region. For more information, see <see cref="MEMORY_BASIC_INFORMATION" />.</para>
+    </summary>
+  </member>
+  <member name="PSS_VA_SPACE_ENTRY.Type">
+    <summary>
+      <para>Information about the VA region. For more information, see <see cref="MEMORY_BASIC_INFORMATION" />.</para>
+    </summary>
+  </member>
+  <member name="PSS_VA_SPACE_ENTRY.TimeDateStamp">
+    <summary>
+      <para>If section information was captured and the region is an executable image (<b>MEM_IMAGE</b>), this is the <b>TimeDateStamp</b> value from the Portable Executable (PE) header which describes the image. It is the low 32 bits of the number of seconds since 00:00 January 1, 1970 (a C run-time time_t value), that indicates when the file was created.</para>
+    </summary>
+  </member>
+  <member name="PSS_VA_SPACE_ENTRY.SizeOfImage">
+    <summary>
+      <para>If section information was captured and the region is an executable image (<b>MEM_IMAGE</b>), this is the <b>SizeOfImage</b> value from the Portable Executable (PE) header which describes the image. It is the size (in bytes) of the image, including all headers, as the image is loaded in memory.</para>
+    </summary>
+  </member>
+  <member name="PSS_VA_SPACE_ENTRY.ImageBase">
+    <summary>
+      <para>If section information was captured and the region is an executable image (<b>MEM_IMAGE</b>), this is the <b>ImageBase</b> value from the Portable Executable (PE) header which describes the image. It is the  preferred address of the first byte of the image when loaded into memory.</para>
+    </summary>
+  </member>
+  <member name="PSS_VA_SPACE_ENTRY.CheckSum">
+    <summary>
+      <para>If section information was captured and the region is an executable image (<b>MEM_IMAGE</b>), this is the <b>CheckSum</b> value from the Portable Executable (PE) header which describes the image. It is the image file checksum.</para>
+    </summary>
+  </member>
+  <member name="PSS_VA_SPACE_ENTRY.MappedFileNameLength">
+    <summary>
+      <para>The length of the mapped file name buffer, in bytes.</para>
+    </summary>
+  </member>
+  <member name="PSS_VA_SPACE_ENTRY.MappedFileName">
+    <summary>
+      <para>If section information was captured, this is the file path backing the section (if any). The path may be in NT namespace. The string may not be terminated by a <b>NULL</b> character. The pointer is valid for the lifetime of the walk marker passed to <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/processsnapshot/nf-processsnapshot-psswalksnapshot">PssWalkSnapshot</a>.</para>
+    </summary>
+  </member>
+</doc>

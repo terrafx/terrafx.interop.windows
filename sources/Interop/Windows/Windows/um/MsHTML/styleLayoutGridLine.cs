@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='styleLayoutGridLine.xml' path='doc/member[@name="styleLayoutGridLine"]/*' />
 public enum styleLayoutGridLine
 {
+    /// <include file='styleLayoutGridLine.xml' path='doc/member[@name="styleLayoutGridLine.styleLayoutGridLineNotSet"]/*' />
     styleLayoutGridLineNotSet = 0,
+
+    /// <include file='styleLayoutGridLine.xml' path='doc/member[@name="styleLayoutGridLine.styleLayoutGridLineAuto"]/*' />
     styleLayoutGridLineAuto = 1,
+
+    /// <include file='styleLayoutGridLine.xml' path='doc/member[@name="styleLayoutGridLine.styleLayoutGridLineNone"]/*' />
     styleLayoutGridLineNone = 2,
+
+    /// <include file='styleLayoutGridLine.xml' path='doc/member[@name="styleLayoutGridLine.styleLayoutGridLine_Max"]/*' />
     styleLayoutGridLine_Max = 2147483647,
 }

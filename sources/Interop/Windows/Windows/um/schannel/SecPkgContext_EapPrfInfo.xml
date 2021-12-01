@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SecPkgContext_EapPrfInfo">
+    <summary>
+      <para>The <b>SecPkgContext_EapPrfInfo</b> structure specifies the pseudorandom function (PRF) and extracts key data used by the Extensible Authentication Protocol (EAP) <a href="https://docs.microsoft.com//windows/desktop/SecGloss/t-gly">Transport Layer Security protocol</a> (TLS) Authentication Protocol. For information about the EAP TLS Authentication Protocol, see <a href="https://www.ietf.org/rfc/rfc2716.txt">http://www.ietf.org/rfc/rfc2716.txt</a>.</para>
+    </summary>
+  </member>
+  <member name="SecPkgContext_EapPrfInfo.dwVersion">
+    <summary>
+      <para>Reserved. Must be set to zero.</para>
+    </summary>
+  </member>
+  <member name="SecPkgContext_EapPrfInfo.cbPrfData">
+    <summary>
+      <para>The size, in bytes, of the <i>pbPrfData</i> array.</para>
+      <h4>pbPrfData</h4>
+      <para>A <b>DWORD</b> value that specifies the pseudorandom function and key data used by the EAP protocol. The following are possible values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>PPP EAP TLS Key Data</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>PRF(master secret, "client EAP encryption", client_random + server_random)</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>EAP-TTLSv0 Keying Material</b>
+                </description>
+              </item>
+              <item>
+                <description>0x01</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>PRF(master_secret, "ttls keying material", server_random + client_random)</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>EAP-TTLSv0 Challenge Data</b>
+                </description>
+              </item>
+              <item>
+                <description>0x02</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>PRF(master_secret, "ttls challenge", server_random + client_random)</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>EAP-FAST Keying Material</b>
+                </description>
+              </item>
+              <item>
+                <description>0x03</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>PRF(master_secret, "key expansion", server_random + client_random)</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="SecPkgContext_EapPrfInfo.pbPrfData">
+    <summary></summary>
+  </member>
+</doc>

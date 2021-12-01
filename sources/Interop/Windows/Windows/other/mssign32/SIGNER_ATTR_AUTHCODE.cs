@@ -5,18 +5,24 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SIGNER_ATTR_AUTHCODE.xml' path='doc/member[@name="SIGNER_ATTR_AUTHCODE"]/*' />
 public unsafe partial struct SIGNER_ATTR_AUTHCODE
 {
+    /// <include file='SIGNER_ATTR_AUTHCODE.xml' path='doc/member[@name="SIGNER_ATTR_AUTHCODE.cbSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbSize;
 
+    /// <include file='SIGNER_ATTR_AUTHCODE.xml' path='doc/member[@name="SIGNER_ATTR_AUTHCODE.fCommercial"]/*' />
     public BOOL fCommercial;
 
+    /// <include file='SIGNER_ATTR_AUTHCODE.xml' path='doc/member[@name="SIGNER_ATTR_AUTHCODE.fIndividual"]/*' />
     public BOOL fIndividual;
 
+    /// <include file='SIGNER_ATTR_AUTHCODE.xml' path='doc/member[@name="SIGNER_ATTR_AUTHCODE.pwszName"]/*' />
     [NativeTypeName("LPCWSTR")]
     public ushort* pwszName;
 
+    /// <include file='SIGNER_ATTR_AUTHCODE.xml' path='doc/member[@name="SIGNER_ATTR_AUTHCODE.pwszInfo"]/*' />
     [NativeTypeName("LPCWSTR")]
     public ushort* pwszInfo;
 }

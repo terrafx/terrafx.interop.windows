@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IPrint.xml' path='doc/member[@name="IPrint"]/*' />
 [Guid("B722BCC9-4E68-101B-A2BC-00AA00404770")]
 [NativeTypeName("struct IPrint : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IPrint : IPrint.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IPrint : IPrint.Interface
         return ((delegate* unmanaged<IPrint*, Guid*, void**, int>)(lpVtbl[0]))((IPrint*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IPrint : IPrint.Interface
         return ((delegate* unmanaged<IPrint*, uint>)(lpVtbl[1]))((IPrint*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IPrint : IPrint.Interface
         return ((delegate* unmanaged<IPrint*, uint>)(lpVtbl[2]))((IPrint*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IPrint.xml' path='doc/member[@name="IPrint.SetInitialPageNum"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetInitialPageNum([NativeTypeName("LONG")] int nFirstPage)
@@ -46,6 +51,7 @@ public unsafe partial struct IPrint : IPrint.Interface
         return ((delegate* unmanaged<IPrint*, int, int>)(lpVtbl[3]))((IPrint*)Unsafe.AsPointer(ref this), nFirstPage);
     }
 
+    /// <include file='IPrint.xml' path='doc/member[@name="IPrint.GetPageInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetPageInfo([NativeTypeName("LONG *")] int* pnFirstPage, [NativeTypeName("LONG *")] int* pcPages)
@@ -53,6 +59,7 @@ public unsafe partial struct IPrint : IPrint.Interface
         return ((delegate* unmanaged<IPrint*, int*, int*, int>)(lpVtbl[4]))((IPrint*)Unsafe.AsPointer(ref this), pnFirstPage, pcPages);
     }
 
+    /// <include file='IPrint.xml' path='doc/member[@name="IPrint.Print"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT Print([NativeTypeName("DWORD")] uint grfFlags, DVTARGETDEVICE** pptd, PAGESET** ppPageSet, STGMEDIUM* pstgmOptions, IContinueCallback* pcallback, [NativeTypeName("LONG")] int nFirstPage, [NativeTypeName("LONG *")] int* pcPagesPrinted, [NativeTypeName("LONG *")] int* pnLastPage)

@@ -7,19 +7,26 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DWM_THUMBNAIL_PROPERTIES.xml' path='doc/member[@name="DWM_THUMBNAIL_PROPERTIES"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct DWM_THUMBNAIL_PROPERTIES
 {
+    /// <include file='DWM_THUMBNAIL_PROPERTIES.xml' path='doc/member[@name="DWM_THUMBNAIL_PROPERTIES.dwFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFlags;
 
+    /// <include file='DWM_THUMBNAIL_PROPERTIES.xml' path='doc/member[@name="DWM_THUMBNAIL_PROPERTIES.rcDestination"]/*' />
     public RECT rcDestination;
 
+    /// <include file='DWM_THUMBNAIL_PROPERTIES.xml' path='doc/member[@name="DWM_THUMBNAIL_PROPERTIES.rcSource"]/*' />
     public RECT rcSource;
 
+    /// <include file='DWM_THUMBNAIL_PROPERTIES.xml' path='doc/member[@name="DWM_THUMBNAIL_PROPERTIES.opacity"]/*' />
     public byte opacity;
 
+    /// <include file='DWM_THUMBNAIL_PROPERTIES.xml' path='doc/member[@name="DWM_THUMBNAIL_PROPERTIES.fVisible"]/*' />
     public BOOL fVisible;
 
+    /// <include file='DWM_THUMBNAIL_PROPERTIES.xml' path='doc/member[@name="DWM_THUMBNAIL_PROPERTIES.fSourceClientAreaOnly"]/*' />
     public BOOL fSourceClientAreaOnly;
 }

@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='KNOWNDESTCATEGORY.xml' path='doc/member[@name="KNOWNDESTCATEGORY"]/*' />
 public enum KNOWNDESTCATEGORY
 {
+    /// <include file='KNOWNDESTCATEGORY.xml' path='doc/member[@name="KNOWNDESTCATEGORY.KDC_FREQUENT"]/*' />
     KDC_FREQUENT = 1,
+
+    /// <include file='KNOWNDESTCATEGORY.xml' path='doc/member[@name="KNOWNDESTCATEGORY.KDC_RECENT"]/*' />
     KDC_RECENT = (KDC_FREQUENT + 1),
 }

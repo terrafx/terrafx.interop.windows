@@ -1,0 +1,287 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ITfUIElementMgr.BeginUIElement">
+    <summary>
+      <para>The <b>ITfUIElementMgr.BeginUIElement</b> method is called by a text service before showing UI. The value returned determines whether the UI for the text service should be shown or not.</para>
+    </summary>
+    <param name="pElement">
+      <para>[in] A pointer to the <see cref="ITfUIElement" /> interface of the UIElement object.</para>
+    </param>
+    <param name="pbShow">
+      <para>[in, out] If false is returned, the application may draw the UI by itself and a text service does not show its own UI for this UI element.</para>
+    </param>
+    <param name="pdwUIElementId">
+      <para>[out] A pointer to receive the ID of this UI element.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>An unspecified error occurred.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>One or more parameters are invalid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_UNEXPECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>Recursion call of <see cref="ITfUIElementMgr" /> interface happened.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+  </member>
+  <member name="ITfUIElementMgr.EndUIElement">
+    <summary>
+      <para>The <b>ITfUIElementMgr.EndUIElement</b> method is called by a text service when the element of UI is hidden.</para>
+    </summary>
+    <param name="dwUIElementId">
+      <para>[in] The element id to hide the UI element.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>An unspecified error occurred.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>One or more parameters are invalid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_UNEXPECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>Recursion call of <see cref="ITfUIElementMgr" /> interface happened.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+  </member>
+  <member name="ITfUIElementMgr.EnumUIElements">
+    <summary>
+      <para>The <b>ITfUIElementMgr.EnumUIElements</b> method returns <see cref="IEnumTfUIElements" /> interface pointer to enumerate the <see cref="ITfUIElement" />.</para>
+    </summary>
+    <param name="ppEnum">
+      <para>[in] A pointer to receive the <see cref="IEnumTfUIElements" /> interface.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>An unspecified error occurred.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>One or more parameters are invalid.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+  </member>
+  <member name="ITfUIElementMgr.GetUIElement">
+    <summary>
+      <para>The <b>ITfUIElementMgr.GetUIElement</b> method gets the <see cref="ITfUIElement" /> interface of the element id.</para>
+    </summary>
+    <param name="dwUIELementId">
+      <para>[in] The element id to get the <see cref="ITfUIElement" /> interface.</para>
+    </param>
+    <param name="ppElement">
+      <para>[out] A pointer to receive <see cref="ITfUIElement" /> interface.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>An unspecified error occurred.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>One or more parameters are invalid.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+  </member>
+  <member name="ITfUIElementMgr.UpdateUIElement">
+    <summary>
+      <para>The <b>ITfUIElementMgr.UpdateUIElement</b> method is called by a text service when the UI element must be updated.</para>
+    </summary>
+    <param name="dwUIElementId">
+      <para>[in] The element id to update the UI element.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>An unspecified error occurred.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>One or more parameters are invalid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_UNEXPECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>Recursion call of <see cref="ITfUIElementMgr" /> interface happened.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+  </member>
+  <member name="ITfUIElementMgr">
+    <summary>
+      <para>The <b>ITfUIElementMgr</b> interface is implemented by TSF manager and used by an application or a text service. An application and a text service can obtain this interface by ITfThreadMgr.QueryInterface with IID_ITfUIElementMgr.</para>
+    </summary>
+    <remarks>
+      <para>A text service that supports UIElement must call <b>ITfUIElementMgr</b> whenever the UI is shown, updated or hidden. Then the application can control the visibility of the UI.</para>
+    </remarks>
+  </member>
+</doc>

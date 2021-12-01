@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MF_FILE_FLAGS">
+    <summary>
+      <para>Specifies the behavior when opening a file.</para>
+    </summary>
+    <seealso cref="MFBeginCreateFile" />
+    <seealso cref="MFCreateFile" />
+    <seealso cref="MFCreateTempFile" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+  </member>
+  <member name="MF_FILE_FLAGS.MF_FILEFLAGS_NONE">
+    <summary>
+      <para>Use the default behavior.</para>
+    </summary>
+  </member>
+  <member name="MF_FILE_FLAGS.MF_FILEFLAGS_NOBUFFERING">
+    <summary>
+      <para>Open the file with no system caching.</para>
+    </summary>
+  </member>
+  <member name="MF_FILE_FLAGS.MF_FILEFLAGS_ALLOW_WRITE_SHARING">
+    <summary>
+      <para>Subsequent open operations can have write access to the file.</para>
+      <para>
+        <b>Note</b>  Requires Windows 7 or later.</para>
+    </summary>
+  </member>
+</doc>

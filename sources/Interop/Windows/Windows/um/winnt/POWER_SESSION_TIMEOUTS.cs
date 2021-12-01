@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='POWER_SESSION_TIMEOUTS.xml' path='doc/member[@name="POWER_SESSION_TIMEOUTS"]/*' />
 public partial struct POWER_SESSION_TIMEOUTS
 {
+    /// <include file='POWER_SESSION_TIMEOUTS.xml' path='doc/member[@name="POWER_SESSION_TIMEOUTS.InputTimeout"]/*' />
     [NativeTypeName("DWORD")]
     public uint InputTimeout;
 
+    /// <include file='POWER_SESSION_TIMEOUTS.xml' path='doc/member[@name="POWER_SESSION_TIMEOUTS.DisplayTimeout"]/*' />
     [NativeTypeName("DWORD")]
     public uint DisplayTimeout;
 }

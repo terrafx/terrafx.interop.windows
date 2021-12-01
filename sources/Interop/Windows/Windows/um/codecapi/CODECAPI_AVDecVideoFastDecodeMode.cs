@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVDecVideoFastDecodeMode.xml' path='doc/member[@name="CODECAPI_AVDecVideoFastDecodeMode"]/*' />
 [Guid("6B529F7D-D3B1-49C6-A999-9EC6911BEDBF")]
 public partial struct CODECAPI_AVDecVideoFastDecodeMode
 {

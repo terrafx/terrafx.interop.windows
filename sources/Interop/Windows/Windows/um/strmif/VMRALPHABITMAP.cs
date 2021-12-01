@@ -7,21 +7,29 @@ using TerraFX.Interop.DirectX;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='VMRALPHABITMAP.xml' path='doc/member[@name="VMRALPHABITMAP"]/*' />
 public unsafe partial struct VMRALPHABITMAP
 {
+    /// <include file='VMRALPHABITMAP.xml' path='doc/member[@name="VMRALPHABITMAP.dwFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFlags;
 
+    /// <include file='VMRALPHABITMAP.xml' path='doc/member[@name="VMRALPHABITMAP.hdc"]/*' />
     public HDC hdc;
 
+    /// <include file='VMRALPHABITMAP.xml' path='doc/member[@name="VMRALPHABITMAP.pDDS"]/*' />
     [NativeTypeName("LPDIRECTDRAWSURFACE7")]
     public IDirectDrawSurface7* pDDS;
 
+    /// <include file='VMRALPHABITMAP.xml' path='doc/member[@name="VMRALPHABITMAP.rSrc"]/*' />
     public RECT rSrc;
 
+    /// <include file='VMRALPHABITMAP.xml' path='doc/member[@name="VMRALPHABITMAP.rDest"]/*' />
     public NORMALIZEDRECT rDest;
 
+    /// <include file='VMRALPHABITMAP.xml' path='doc/member[@name="VMRALPHABITMAP.fAlpha"]/*' />
     public float fAlpha;
 
+    /// <include file='VMRALPHABITMAP.xml' path='doc/member[@name="VMRALPHABITMAP.clrSrcKey"]/*' />
     public COLORREF clrSrcKey;
 }

@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_XML_READER_ENCODING.xml' path='doc/member[@name="WS_XML_READER_ENCODING"]/*' />
 public partial struct WS_XML_READER_ENCODING
 {
+    /// <include file='WS_XML_READER_ENCODING.xml' path='doc/member[@name="WS_XML_READER_ENCODING.encodingType"]/*' />
     public WS_XML_READER_ENCODING_TYPE encodingType;
 }

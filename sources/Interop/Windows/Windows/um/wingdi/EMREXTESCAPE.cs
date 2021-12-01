@@ -5,14 +5,19 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='EMREXTESCAPE.xml' path='doc/member[@name="EMREXTESCAPE"]/*' />
 public unsafe partial struct EMREXTESCAPE
 {
+    /// <include file='EMREXTESCAPE.xml' path='doc/member[@name="EMREXTESCAPE.emr"]/*' />
     public EMR emr;
 
+    /// <include file='EMREXTESCAPE.xml' path='doc/member[@name="EMREXTESCAPE.iEscape"]/*' />
     public int iEscape;
 
+    /// <include file='EMREXTESCAPE.xml' path='doc/member[@name="EMREXTESCAPE.cbEscData"]/*' />
     public int cbEscData;
 
+    /// <include file='EMREXTESCAPE.xml' path='doc/member[@name="EMREXTESCAPE.EscData"]/*' />
     [NativeTypeName("BYTE [1]")]
     public fixed byte EscData[1];
 }

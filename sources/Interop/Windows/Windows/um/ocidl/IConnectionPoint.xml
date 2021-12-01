@@ -1,0 +1,285 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IConnectionPoint.Advise">
+    <summary>
+      <para>Establishes a connection between a connection point object and the client's sink.</para>
+    </summary>
+    <param name="pUnkSink">
+      <para>A pointer to the <see cref="IUnknown" /> interface on the client's advise sink. The client's sink receives outgoing calls from the connection point.</para>
+    </param>
+    <param name="pdwCookie">
+      <para>A pointer to a returned token that uniquely identifies this connection. The caller uses this token later to delete the connection by passing it to the <see cref="IConnectionPoint.Unadvise" /> method. If the connection was not successfully established, this value is zero.</para>
+    </param>
+    <returns>
+      <para>This method can return the standard return values E_OUTOFMEMORY and E_UNEXPECTED, as well as the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The connection has been established and *<i>pdwCookie</i> has the connection token.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>The value in <i>pUnkSink</i> or <i>pdwCookie</i> is not valid. For example, either pointer may be <b>NULL</b>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>CONNECT_E_ADVISELIMIT</b>
+            </para>
+          </description>
+          <description>
+            <para>The connection point has already reached its limit of connections and cannot accept any more.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>CONNECT_E_CANNOTCONNECT</b>
+            </para>
+          </description>
+          <description>
+            <para>The sink does not support the interface required by this connection point.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>
+        <b>Advise</b> establishes a connection between the connection point and the caller's sink identified with <i>pUnkSink</i>.</para>
+      <para>The connection point must call <see cref="QueryInterface" /> to obtain the correct outgoing interface pointer to call when events occur, with the IID for the outgoing interface managed by the connection point. When the IID is passed to the <see cref="IConnectionPointContainer.FindConnectionPoint" /> method, an interface pointer to this same connection point is returned.</para>
+      <h3>Notes to Implementers</h3>
+      <para>The connection point must query the <i>pUnkSink</i> pointer for the correct outgoing interface. If this query fails, this method must return CONNECT_E_CANNOTCONNECT.</para>
+      <para>The <i>pdwCookie</i> value must be unique for each connection to any given instance of a connection point.</para>
+    </remarks>
+    <seealso cref="IConnectionPoint" />
+  </member>
+  <member name="IConnectionPoint.EnumConnections">
+    <summary>
+      <para>Creates an enumerator object to iterate through the current connections for this connection point.</para>
+    </summary>
+    <param name="ppEnum">
+      <para>A pointer to an <see cref="IEnumConnections" /> interface pointer that receives the newly created enumerator.</para>
+    </param>
+    <returns>
+      <para>This method can return the standard return values E_OUTOFMEMORY and E_UNEXPECTED, as well as the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The enumerator object was created successfully.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>The address in <i>ppEnum</i> is not valid. For example, it may be <b>NULL</b>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_NOTIMPL</b>
+            </para>
+          </description>
+          <description>
+            <para>The connection point does not support enumeration.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The caller is responsible for calling <see cref="Release" /> when the enumerator is no longer needed.</para>
+    </remarks>
+    <seealso cref="IConnectionPoint" />
+    <seealso cref="IEnumConnections" />
+  </member>
+  <member name="IConnectionPoint.GetConnectionInterface">
+    <summary>
+      <para>Retrieves the IID of the outgoing interface managed by this connection point.</para>
+    </summary>
+    <param name="pIID">
+      <para>A pointer to the identifier of the outgoing interface managed by this connection point.</para>
+    </param>
+    <returns>
+      <para>This method can return the standard return value E_UNEXPECTED, as well as the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The caller's variable <i>pIID</i> contains the identifier of the outgoing interface managed by this connection point.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>The address in <i>pIID</i> is not valid. For example, it may be <b>NULL</b>.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Using the <see cref="IEnumConnectionPoints" /> interface, a client can obtain a pointer to the <see cref="IConnectionPoint" /> interface. Using that pointer and the <b>GetConnectionInterface</b> method, the client can determine the IID of each connection point enumerated. The IID returned from this method must enable the caller to access this same connection point through <see cref="IConnectionPointContainer.FindConnectionPoint" />.</para>
+      <h3>Notes to Implementers</h3>
+      <para>This method must be implemented in any connection point; E_NOTIMPL is not an acceptable return value.</para>
+    </remarks>
+    <seealso cref="IConnectionPoint" />
+  </member>
+  <member name="IConnectionPoint.GetConnectionPointContainer">
+    <summary>
+      <para>Retrieves the <see cref="IConnectionPointContainer" /> interface pointer for the parent connectable object.</para>
+    </summary>
+    <param name="ppCPC">
+      <para>A pointer to an <see cref="IConnectionPointContainer" /> interface pointer.</para>
+    </param>
+    <returns>
+      <para>This method can return the standard return value E_UNEXPECTED, as well as the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The <see cref="IConnectionPointContainer" /> pointer was successfully returned.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>The value in <i>ppCPC</i> is not a valid interface pointer. For example, it may be <b>NULL</b>.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <h3>Notes to Callers</h3>
+      <para>This method calls <see cref="AddRef" />. The caller is responsible for calling <see cref="Release" /> to release this pointer when done.</para>
+      <h3>Notes to Implementers</h3>
+      <para>This method must call <see cref="AddRef" /> before returning.</para>
+      <para>This method must be implemented in any connection point; E_NOTIMPL is not an acceptable return value.</para>
+    </remarks>
+    <seealso cref="IConnectionPoint" />
+    <seealso cref="IConnectionPointContainer" />
+  </member>
+  <member name="IConnectionPoint.Unadvise">
+    <summary>
+      <para>Terminates an advisory connection previously established between a connection point object and a client's sink.</para>
+    </summary>
+    <param name="dwCookie">
+      <para>A connection token previously returned from <see cref="IConnectionPoint.Advise" />.</para>
+    </param>
+    <returns>
+      <para>This method can return the standard return values E_UNEXPECTED, as well as the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The connection was terminated successfully.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>The value in <i>dwCookie</i> does not represent a valid connection.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>When an advisory connection is terminated, the connection point calls the <see cref="Release" /> method on the pointer that was saved for the connection during the <see cref="IConnectionPoint.Advise" /> method. This <b>Release</b> reverses the <see cref="AddRef" /> that was performed during the <b>Advise</b> when the connection point calls the advisory sink's <see cref="QueryInterface" />.</para>
+    </remarks>
+    <seealso cref="IConnectionPoint" />
+  </member>
+  <member name="IConnectionPoint">
+    <summary>
+      <para>Supports connection points for connectable objects.</para>
+    </summary>
+    <remarks>
+      <para>Connectable objects support the following features:</para>
+      <list type="bullet">
+        <item>
+          <description>Outgoing interfaces, such as event sets
+</description>
+        </item>
+        <item>
+          <description>The ability to enumerate the IIDs of the outgoing interfaces
+</description>
+        </item>
+        <item>
+          <description>The ability to connect and disconnect sinks to the object for those outgoing IIDs
+</description>
+        </item>
+        <item>
+          <description>The ability to enumerate the connections that exist to a particular outgoing interface
+</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="IConnectionPointContainer" />
+    <seealso cref="IEnumConnectionPoints" />
+    <seealso cref="IEnumConnections" />
+  </member>
+</doc>

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DVASPECTINFO">
+    <summary>
+      <para>Contains information that is used by the <see cref="IViewObject.Draw" /> method to optimize rendering of an inactive object by making more efficient use of the GDI.</para>
+    </summary>
+    <seealso cref="DVASPECTINFOFLAG" />
+    <seealso cref="IViewObject.Draw" />
+  </member>
+  <member name="DVASPECTINFO.cb">
+    <summary>
+      <para>The size of the structure, in bytes.</para>
+    </summary>
+  </member>
+  <member name="DVASPECTINFO.dwFlags">
+    <summary>
+      <para>A value taken from the <see cref="DVASPECTINFOFLAG" /> enumeration.</para>
+    </summary>
+  </member>
+</doc>

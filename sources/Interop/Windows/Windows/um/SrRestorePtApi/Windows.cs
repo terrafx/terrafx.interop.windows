@@ -9,15 +9,19 @@ namespace TerraFX.Interop.Windows;
 
 public static unsafe partial class Windows
 {
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SRSetRestorePointA"]/*' />
     [DllImport("srclient", ExactSpelling = true)]
     public static extern BOOL SRSetRestorePointA([NativeTypeName("PRESTOREPOINTINFOA")] RESTOREPOINTINFOA* pRestorePtSpec, [NativeTypeName("PSTATEMGRSTATUS")] STATEMGRSTATUS* pSMgrStatus);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SRSetRestorePointW"]/*' />
     [DllImport("srclient", ExactSpelling = true)]
     public static extern BOOL SRSetRestorePointW([NativeTypeName("PRESTOREPOINTINFOW")] RESTOREPOINTINFOW* pRestorePtSpec, [NativeTypeName("PSTATEMGRSTATUS")] STATEMGRSTATUS* pSMgrStatus);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SRSetRestorePointInternal"]/*' />
     [DllImport("srclient", ExactSpelling = true)]
     public static extern BOOL SRSetRestorePointInternal([NativeTypeName("PRESTOREPOINTINFOW")] RESTOREPOINTINFOW* pRestorePtSpec, [NativeTypeName("PSTATEMGRSTATUS")] STATEMGRSTATUS* pSMgrStatus, BOOL fForceSurrogate);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SRRemoveRestorePoint"]/*' />
     [DllImport("srclient", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint SRRemoveRestorePoint([NativeTypeName("DWORD")] uint dwRPNum);

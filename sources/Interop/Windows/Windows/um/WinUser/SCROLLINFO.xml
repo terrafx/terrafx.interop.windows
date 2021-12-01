@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SCROLLINFO">
+    <summary>
+      <para>The <b>SCROLLINFO</b> structure contains scroll bar parameters to be set by the <see cref="SetScrollInfo" /> function (or <a href="https://docs.microsoft.com//windows/desktop/Controls/sbm-setscrollinfo">SBM_SETSCROLLINFO</a> message), or retrieved by the <see cref="GetScrollInfo" /> function (or <a href="https://docs.microsoft.com//windows/desktop/Controls/sbm-getscrollinfo">SBM_GETSCROLLINFO</a> message).</para>
+    </summary>
+    <seealso cref="GetScrollInfo" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/Controls/sbm-getscrollinfo">SBM_GETSCROLLINFO</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Controls/sbm-setscrollinfo">SBM_SETSCROLLINFO</seealso>
+    <seealso cref="SetScrollInfo" />
+  </member>
+  <member name="SCROLLINFO.cbSize">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Specifies the size, in bytes, of this structure. The caller must set this to sizeof(<b>SCROLLINFO</b>).</para>
+    </summary>
+  </member>
+  <member name="SCROLLINFO.fMask">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Specifies the scroll bar parameters to set or retrieve. This member can be a combination of the following values:</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>SIF_ALL</b>
+          </description>
+          <description>
+            <para>Combination of SIF_PAGE, SIF_POS, SIF_RANGE, and SIF_TRACKPOS.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>SIF_DISABLENOSCROLL</b>
+          </description>
+          <description>
+            <para>This value is used only when setting a scroll bar's parameters. If the scroll bar's new parameters make the scroll bar unnecessary, disable the scroll bar instead of removing it.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>SIF_PAGE</b>
+          </description>
+          <description>
+            <para>The <b>nPage</b> member contains the page size for a proportional scroll bar.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>SIF_POS</b>
+          </description>
+          <description>
+            <para>The <b>nPos</b> member contains the scroll box position, which is not updated while the user drags the scroll box.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>SIF_RANGE</b>
+          </description>
+          <description>
+            <para>The <b>nMin</b> and
+<b>nMax</b> members contain the minimum and maximum values for the scrolling range.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>SIF_TRACKPOS</b>
+          </description>
+          <description>
+            <para>The <b>nTrackPos</b> member contains the current position of the scroll box while the user is dragging it.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="SCROLLINFO.nMin">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>Specifies the minimum scrolling position.</para>
+    </summary>
+  </member>
+  <member name="SCROLLINFO.nMax">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>Specifies the maximum scrolling position.</para>
+    </summary>
+  </member>
+  <member name="SCROLLINFO.nPage">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Specifies the page size, in device units. A scroll bar uses this value to determine the appropriate size of the proportional scroll box.</para>
+    </summary>
+  </member>
+  <member name="SCROLLINFO.nPos">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>Specifies the position of the scroll box.</para>
+    </summary>
+  </member>
+  <member name="SCROLLINFO.nTrackPos">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>Specifies the immediate position of a scroll box that the user is dragging. An application can retrieve this value while processing the SB_THUMBTRACK request code. An application cannot set the immediate scroll position; the <see cref="SetScrollInfo" /> function ignores this member.</para>
+    </summary>
+  </member>
+</doc>

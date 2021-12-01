@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PRJ_CALLBACKS">
+    <summary>
+      <para>A set of callback routines to where the provider stores its implementation of the callback.</para>
+    </summary>
+    <remarks>
+      <para>The provider must supply implementations for StartDirectoryEnumerationCallback, EndDirectoryEnumerationCallback, GetDirectoryEnumerationCallback, GetPlaceholderInformationCallback, and GetFileDataCallback.</para>
+      <para>The QueryFileNameCallback, NotifyOperationCallback, and CancelCommandCallback callbacks are optional.</para>
+      <list type="bullet">
+        <item>
+          <description>If the provider does not supply an implementation of QueryFileNameCallback, ProjFS will invoke the directory enumeration callbacks to determine the existence of a file path in the provider's store.</description>
+        </item>
+        <item>
+          <description>If the provider does not supply an implementation of NotifyOperationCallback, it will not get any notifications from ProjFS.</description>
+        </item>
+        <item>
+          <description>If the provider does not supply an implementation of CancelCommandCallback, none of the other callbacks will be cancellable. The provider will process all callbacks synchronously.</description>
+        </item>
+      </list>
+    </remarks>
+  </member>
+  <member name="PRJ_CALLBACKS.StartDirectoryEnumerationCallback">
+    <summary>
+      <para>A pointer to the StartDirectoryEnumerationCallback.</para>
+    </summary>
+  </member>
+  <member name="PRJ_CALLBACKS.EndDirectoryEnumerationCallback">
+    <summary>
+      <para>A pointer to the EndDirectoryEnumerationCallback.</para>
+    </summary>
+  </member>
+  <member name="PRJ_CALLBACKS.GetDirectoryEnumerationCallback">
+    <summary>
+      <para>A pointer to the GetDirectoryEnumerationCallback.</para>
+    </summary>
+  </member>
+  <member name="PRJ_CALLBACKS.GetPlaceholderInfoCallback">
+    <summary>
+      <para>A pointer to the GetPlaceholderInformationCallback.</para>
+    </summary>
+  </member>
+  <member name="PRJ_CALLBACKS.GetFileDataCallback">
+    <summary>
+      <para>A pointer to the GetFileDataCallback.</para>
+    </summary>
+  </member>
+  <member name="PRJ_CALLBACKS.QueryFileNameCallback">
+    <summary>
+      <para>A pointer to the QueryFileNameCallback.</para>
+    </summary>
+  </member>
+  <member name="PRJ_CALLBACKS.NotificationCallback">
+    <summary>
+      <para>A pointer to the NotifyOperationCallback.</para>
+    </summary>
+  </member>
+  <member name="PRJ_CALLBACKS.CancelCommandCallback">
+    <summary>
+      <para>A pointer to the CancelCommandCallback.</para>
+    </summary>
+  </member>
+</doc>

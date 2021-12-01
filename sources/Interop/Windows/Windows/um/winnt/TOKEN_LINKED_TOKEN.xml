@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="TOKEN_LINKED_TOKEN">
+    <summary>
+      <para>The <b>TOKEN_LINKED_TOKEN</b> structure contains a handle to a token. This token is linked to the token being queried by the <see cref="GetTokenInformation" /> function or set by the  <see cref="SetTokenInformation" /> function.</para>
+    </summary>
+  </member>
+  <member name="TOKEN_LINKED_TOKEN.LinkedToken">
+    <summary>
+      <para>A handle to the linked token.</para>
+      <para>When you have finished using the handle, close it by calling the <see cref="CloseHandle" /> function.</para>
+    </summary>
+  </member>
+</doc>

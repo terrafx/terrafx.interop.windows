@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WICPngIccpProperties.xml' path='doc/member[@name="WICPngIccpProperties"]/*' />
 public enum WICPngIccpProperties : uint
 {
+    /// <include file='WICPngIccpProperties.xml' path='doc/member[@name="WICPngIccpProperties.WICPngIccpProfileName"]/*' />
     WICPngIccpProfileName = 0x1,
+
+    /// <include file='WICPngIccpProperties.xml' path='doc/member[@name="WICPngIccpProperties.WICPngIccpProfileData"]/*' />
     WICPngIccpProfileData = 0x2,
+
+    /// <include file='WICPngIccpProperties.xml' path='doc/member[@name="WICPngIccpProperties.WICPngIccpProperties_FORCE_DWORD"]/*' />
     WICPngIccpProperties_FORCE_DWORD = 0x7fffffff,
 }

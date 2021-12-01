@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IWbemObjectSink.xml' path='doc/member[@name="IWbemObjectSink"]/*' />
 [Guid("7C857801-7381-11CF-884D-00AA004B2E24")]
 [NativeTypeName("struct IWbemObjectSink : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IWbemObjectSink : IWbemObjectSink.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IWbemObjectSink : IWbemObjectSink.Interface
         return ((delegate* unmanaged<IWbemObjectSink*, Guid*, void**, int>)(lpVtbl[0]))((IWbemObjectSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IWbemObjectSink : IWbemObjectSink.Interface
         return ((delegate* unmanaged<IWbemObjectSink*, uint>)(lpVtbl[1]))((IWbemObjectSink*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IWbemObjectSink : IWbemObjectSink.Interface
         return ((delegate* unmanaged<IWbemObjectSink*, uint>)(lpVtbl[2]))((IWbemObjectSink*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IWbemObjectSink.xml' path='doc/member[@name="IWbemObjectSink.Indicate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Indicate([NativeTypeName("long")] int lObjectCount, IWbemClassObject** apObjArray)
@@ -46,6 +51,7 @@ public unsafe partial struct IWbemObjectSink : IWbemObjectSink.Interface
         return ((delegate* unmanaged<IWbemObjectSink*, int, IWbemClassObject**, int>)(lpVtbl[3]))((IWbemObjectSink*)Unsafe.AsPointer(ref this), lObjectCount, apObjArray);
     }
 
+    /// <include file='IWbemObjectSink.xml' path='doc/member[@name="IWbemObjectSink.SetStatus"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetStatus([NativeTypeName("long")] int lFlags, HRESULT hResult, [NativeTypeName("BSTR")] ushort* strParam, IWbemClassObject* pObjParam)

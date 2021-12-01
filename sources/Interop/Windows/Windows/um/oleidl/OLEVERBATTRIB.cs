@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='OLEVERBATTRIB.xml' path='doc/member[@name="OLEVERBATTRIB"]/*' />
 public enum OLEVERBATTRIB
 {
+    /// <include file='OLEVERBATTRIB.xml' path='doc/member[@name="OLEVERBATTRIB.OLEVERBATTRIB_NEVERDIRTIES"]/*' />
     OLEVERBATTRIB_NEVERDIRTIES = 1,
+
+    /// <include file='OLEVERBATTRIB.xml' path='doc/member[@name="OLEVERBATTRIB.OLEVERBATTRIB_ONCONTAINERMENU"]/*' />
     OLEVERBATTRIB_ONCONTAINERMENU = 2,
 }

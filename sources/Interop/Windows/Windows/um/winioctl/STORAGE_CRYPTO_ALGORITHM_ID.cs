@@ -5,12 +5,24 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STORAGE_CRYPTO_ALGORITHM_ID.xml' path='doc/member[@name="STORAGE_CRYPTO_ALGORITHM_ID"]/*' />
 public enum STORAGE_CRYPTO_ALGORITHM_ID
 {
+    /// <include file='STORAGE_CRYPTO_ALGORITHM_ID.xml' path='doc/member[@name="STORAGE_CRYPTO_ALGORITHM_ID.StorageCryptoAlgorithmUnknown"]/*' />
     StorageCryptoAlgorithmUnknown = 0,
+
+    /// <include file='STORAGE_CRYPTO_ALGORITHM_ID.xml' path='doc/member[@name="STORAGE_CRYPTO_ALGORITHM_ID.StorageCryptoAlgorithmXTSAES"]/*' />
     StorageCryptoAlgorithmXTSAES = 1,
+
+    /// <include file='STORAGE_CRYPTO_ALGORITHM_ID.xml' path='doc/member[@name="STORAGE_CRYPTO_ALGORITHM_ID.StorageCryptoAlgorithmBitlockerAESCBC"]/*' />
     StorageCryptoAlgorithmBitlockerAESCBC,
+
+    /// <include file='STORAGE_CRYPTO_ALGORITHM_ID.xml' path='doc/member[@name="STORAGE_CRYPTO_ALGORITHM_ID.StorageCryptoAlgorithmAESECB"]/*' />
     StorageCryptoAlgorithmAESECB,
+
+    /// <include file='STORAGE_CRYPTO_ALGORITHM_ID.xml' path='doc/member[@name="STORAGE_CRYPTO_ALGORITHM_ID.StorageCryptoAlgorithmESSIVAESCBC"]/*' />
     StorageCryptoAlgorithmESSIVAESCBC,
+
+    /// <include file='STORAGE_CRYPTO_ALGORITHM_ID.xml' path='doc/member[@name="STORAGE_CRYPTO_ALGORITHM_ID.StorageCryptoAlgorithmMax"]/*' />
     StorageCryptoAlgorithmMax,
 }

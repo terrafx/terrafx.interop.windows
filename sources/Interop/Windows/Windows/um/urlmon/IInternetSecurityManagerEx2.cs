@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IInternetSecurityManagerEx2.xml' path='doc/member[@name="IInternetSecurityManagerEx2"]/*' />
 [Guid("F1E50292-A795-4117-8E09-2B560A72AC60")]
 [NativeTypeName("struct IInternetSecurityManagerEx2 : IInternetSecurityManagerEx")]
 [NativeInheritance("IInternetSecurityManagerEx")]
@@ -16,6 +17,7 @@ public unsafe partial struct IInternetSecurityManagerEx2 : IInternetSecurityMana
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IInternetSecurityManagerEx2 : IInternetSecurityMana
         return ((delegate* unmanaged<IInternetSecurityManagerEx2*, Guid*, void**, int>)(lpVtbl[0]))((IInternetSecurityManagerEx2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IInternetSecurityManagerEx2 : IInternetSecurityMana
         return ((delegate* unmanaged<IInternetSecurityManagerEx2*, uint>)(lpVtbl[1]))((IInternetSecurityManagerEx2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IInternetSecurityManagerEx2 : IInternetSecurityMana
         return ((delegate* unmanaged<IInternetSecurityManagerEx2*, uint>)(lpVtbl[2]))((IInternetSecurityManagerEx2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IInternetSecurityManager.SetSecuritySite" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetSecuritySite(IInternetSecurityMgrSite* pSite)
@@ -46,6 +51,7 @@ public unsafe partial struct IInternetSecurityManagerEx2 : IInternetSecurityMana
         return ((delegate* unmanaged<IInternetSecurityManagerEx2*, IInternetSecurityMgrSite*, int>)(lpVtbl[3]))((IInternetSecurityManagerEx2*)Unsafe.AsPointer(ref this), pSite);
     }
 
+    /// <inheritdoc cref="IInternetSecurityManager.GetSecuritySite" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetSecuritySite(IInternetSecurityMgrSite** ppSite)
@@ -53,6 +59,7 @@ public unsafe partial struct IInternetSecurityManagerEx2 : IInternetSecurityMana
         return ((delegate* unmanaged<IInternetSecurityManagerEx2*, IInternetSecurityMgrSite**, int>)(lpVtbl[4]))((IInternetSecurityManagerEx2*)Unsafe.AsPointer(ref this), ppSite);
     }
 
+    /// <inheritdoc cref="IInternetSecurityManager.MapUrlToZone" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT MapUrlToZone([NativeTypeName("LPCWSTR")] ushort* pwszUrl, [NativeTypeName("DWORD *")] uint* pdwZone, [NativeTypeName("DWORD")] uint dwFlags)
@@ -60,6 +67,7 @@ public unsafe partial struct IInternetSecurityManagerEx2 : IInternetSecurityMana
         return ((delegate* unmanaged<IInternetSecurityManagerEx2*, ushort*, uint*, uint, int>)(lpVtbl[5]))((IInternetSecurityManagerEx2*)Unsafe.AsPointer(ref this), pwszUrl, pdwZone, dwFlags);
     }
 
+    /// <inheritdoc cref="IInternetSecurityManager.GetSecurityId" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetSecurityId([NativeTypeName("LPCWSTR")] ushort* pwszUrl, byte* pbSecurityId, [NativeTypeName("DWORD *")] uint* pcbSecurityId, [NativeTypeName("DWORD_PTR")] nuint dwReserved)
@@ -67,6 +75,7 @@ public unsafe partial struct IInternetSecurityManagerEx2 : IInternetSecurityMana
         return ((delegate* unmanaged<IInternetSecurityManagerEx2*, ushort*, byte*, uint*, nuint, int>)(lpVtbl[6]))((IInternetSecurityManagerEx2*)Unsafe.AsPointer(ref this), pwszUrl, pbSecurityId, pcbSecurityId, dwReserved);
     }
 
+    /// <inheritdoc cref="IInternetSecurityManager.ProcessUrlAction" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT ProcessUrlAction([NativeTypeName("LPCWSTR")] ushort* pwszUrl, [NativeTypeName("DWORD")] uint dwAction, byte* pPolicy, [NativeTypeName("DWORD")] uint cbPolicy, byte* pContext, [NativeTypeName("DWORD")] uint cbContext, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD")] uint dwReserved)
@@ -74,6 +83,7 @@ public unsafe partial struct IInternetSecurityManagerEx2 : IInternetSecurityMana
         return ((delegate* unmanaged<IInternetSecurityManagerEx2*, ushort*, uint, byte*, uint, byte*, uint, uint, uint, int>)(lpVtbl[7]))((IInternetSecurityManagerEx2*)Unsafe.AsPointer(ref this), pwszUrl, dwAction, pPolicy, cbPolicy, pContext, cbContext, dwFlags, dwReserved);
     }
 
+    /// <inheritdoc cref="IInternetSecurityManager.QueryCustomPolicy" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT QueryCustomPolicy([NativeTypeName("LPCWSTR")] ushort* pwszUrl, [NativeTypeName("const GUID &")] Guid* guidKey, byte** ppPolicy, [NativeTypeName("DWORD *")] uint* pcbPolicy, byte* pContext, [NativeTypeName("DWORD")] uint cbContext, [NativeTypeName("DWORD")] uint dwReserved)
@@ -81,6 +91,7 @@ public unsafe partial struct IInternetSecurityManagerEx2 : IInternetSecurityMana
         return ((delegate* unmanaged<IInternetSecurityManagerEx2*, ushort*, Guid*, byte**, uint*, byte*, uint, uint, int>)(lpVtbl[8]))((IInternetSecurityManagerEx2*)Unsafe.AsPointer(ref this), pwszUrl, guidKey, ppPolicy, pcbPolicy, pContext, cbContext, dwReserved);
     }
 
+    /// <inheritdoc cref="IInternetSecurityManager.SetZoneMapping" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT SetZoneMapping([NativeTypeName("DWORD")] uint dwZone, [NativeTypeName("LPCWSTR")] ushort* lpszPattern, [NativeTypeName("DWORD")] uint dwFlags)
@@ -88,6 +99,7 @@ public unsafe partial struct IInternetSecurityManagerEx2 : IInternetSecurityMana
         return ((delegate* unmanaged<IInternetSecurityManagerEx2*, uint, ushort*, uint, int>)(lpVtbl[9]))((IInternetSecurityManagerEx2*)Unsafe.AsPointer(ref this), dwZone, lpszPattern, dwFlags);
     }
 
+    /// <inheritdoc cref="IInternetSecurityManager.GetZoneMappings" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT GetZoneMappings([NativeTypeName("DWORD")] uint dwZone, IEnumString** ppenumString, [NativeTypeName("DWORD")] uint dwFlags)
@@ -95,6 +107,7 @@ public unsafe partial struct IInternetSecurityManagerEx2 : IInternetSecurityMana
         return ((delegate* unmanaged<IInternetSecurityManagerEx2*, uint, IEnumString**, uint, int>)(lpVtbl[10]))((IInternetSecurityManagerEx2*)Unsafe.AsPointer(ref this), dwZone, ppenumString, dwFlags);
     }
 
+    /// <inheritdoc cref="IInternetSecurityManagerEx.ProcessUrlActionEx" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT ProcessUrlActionEx([NativeTypeName("LPCWSTR")] ushort* pwszUrl, [NativeTypeName("DWORD")] uint dwAction, byte* pPolicy, [NativeTypeName("DWORD")] uint cbPolicy, byte* pContext, [NativeTypeName("DWORD")] uint cbContext, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD")] uint dwReserved, [NativeTypeName("DWORD *")] uint* pdwOutFlags)
@@ -102,6 +115,7 @@ public unsafe partial struct IInternetSecurityManagerEx2 : IInternetSecurityMana
         return ((delegate* unmanaged<IInternetSecurityManagerEx2*, ushort*, uint, byte*, uint, byte*, uint, uint, uint, uint*, int>)(lpVtbl[11]))((IInternetSecurityManagerEx2*)Unsafe.AsPointer(ref this), pwszUrl, dwAction, pPolicy, cbPolicy, pContext, cbContext, dwFlags, dwReserved, pdwOutFlags);
     }
 
+    /// <include file='IInternetSecurityManagerEx2.xml' path='doc/member[@name="IInternetSecurityManagerEx2.MapUrlToZoneEx2"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT MapUrlToZoneEx2(IUri* pUri, [NativeTypeName("DWORD *")] uint* pdwZone, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPWSTR *")] ushort** ppwszMappedUrl, [NativeTypeName("DWORD *")] uint* pdwOutFlags)
@@ -109,6 +123,7 @@ public unsafe partial struct IInternetSecurityManagerEx2 : IInternetSecurityMana
         return ((delegate* unmanaged<IInternetSecurityManagerEx2*, IUri*, uint*, uint, ushort**, uint*, int>)(lpVtbl[12]))((IInternetSecurityManagerEx2*)Unsafe.AsPointer(ref this), pUri, pdwZone, dwFlags, ppwszMappedUrl, pdwOutFlags);
     }
 
+    /// <include file='IInternetSecurityManagerEx2.xml' path='doc/member[@name="IInternetSecurityManagerEx2.ProcessUrlActionEx2"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT ProcessUrlActionEx2(IUri* pUri, [NativeTypeName("DWORD")] uint dwAction, byte* pPolicy, [NativeTypeName("DWORD")] uint cbPolicy, byte* pContext, [NativeTypeName("DWORD")] uint cbContext, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD_PTR")] nuint dwReserved, [NativeTypeName("DWORD *")] uint* pdwOutFlags)
@@ -116,6 +131,7 @@ public unsafe partial struct IInternetSecurityManagerEx2 : IInternetSecurityMana
         return ((delegate* unmanaged<IInternetSecurityManagerEx2*, IUri*, uint, byte*, uint, byte*, uint, uint, nuint, uint*, int>)(lpVtbl[13]))((IInternetSecurityManagerEx2*)Unsafe.AsPointer(ref this), pUri, dwAction, pPolicy, cbPolicy, pContext, cbContext, dwFlags, dwReserved, pdwOutFlags);
     }
 
+    /// <include file='IInternetSecurityManagerEx2.xml' path='doc/member[@name="IInternetSecurityManagerEx2.GetSecurityIdEx2"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT GetSecurityIdEx2(IUri* pUri, byte* pbSecurityId, [NativeTypeName("DWORD *")] uint* pcbSecurityId, [NativeTypeName("DWORD_PTR")] nuint dwReserved)
@@ -123,6 +139,7 @@ public unsafe partial struct IInternetSecurityManagerEx2 : IInternetSecurityMana
         return ((delegate* unmanaged<IInternetSecurityManagerEx2*, IUri*, byte*, uint*, nuint, int>)(lpVtbl[14]))((IInternetSecurityManagerEx2*)Unsafe.AsPointer(ref this), pUri, pbSecurityId, pcbSecurityId, dwReserved);
     }
 
+    /// <include file='IInternetSecurityManagerEx2.xml' path='doc/member[@name="IInternetSecurityManagerEx2.QueryCustomPolicyEx2"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT QueryCustomPolicyEx2(IUri* pUri, [NativeTypeName("const GUID &")] Guid* guidKey, byte** ppPolicy, [NativeTypeName("DWORD *")] uint* pcbPolicy, byte* pContext, [NativeTypeName("DWORD")] uint cbContext, [NativeTypeName("DWORD_PTR")] nuint dwReserved)

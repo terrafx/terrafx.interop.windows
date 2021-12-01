@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ImageList.xml' path='doc/member[@name="ImageList"]/*' />
 [Guid("7C476BA2-02B1-48F4-8048-B24619DDC058")]
 public partial struct ImageList
 {

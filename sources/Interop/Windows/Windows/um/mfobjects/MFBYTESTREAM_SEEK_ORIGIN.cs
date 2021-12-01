@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MFBYTESTREAM_SEEK_ORIGIN.xml' path='doc/member[@name="MFBYTESTREAM_SEEK_ORIGIN"]/*' />
 public enum MFBYTESTREAM_SEEK_ORIGIN
 {
+    /// <include file='MFBYTESTREAM_SEEK_ORIGIN.xml' path='doc/member[@name="MFBYTESTREAM_SEEK_ORIGIN.msoBegin"]/*' />
     msoBegin = 0,
+
+    /// <include file='MFBYTESTREAM_SEEK_ORIGIN.xml' path='doc/member[@name="MFBYTESTREAM_SEEK_ORIGIN.msoCurrent"]/*' />
     msoCurrent = (msoBegin + 1),
 }

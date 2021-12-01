@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='INameSpaceTreeControlFolderCapabilities.xml' path='doc/member[@name="INameSpaceTreeControlFolderCapabilities"]/*' />
 [Guid("E9701183-E6B3-4FF2-8568-813615FEC7BE")]
 [NativeTypeName("struct INameSpaceTreeControlFolderCapabilities : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct INameSpaceTreeControlFolderCapabilities : INameSpac
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct INameSpaceTreeControlFolderCapabilities : INameSpac
         return ((delegate* unmanaged<INameSpaceTreeControlFolderCapabilities*, Guid*, void**, int>)(lpVtbl[0]))((INameSpaceTreeControlFolderCapabilities*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct INameSpaceTreeControlFolderCapabilities : INameSpac
         return ((delegate* unmanaged<INameSpaceTreeControlFolderCapabilities*, uint>)(lpVtbl[1]))((INameSpaceTreeControlFolderCapabilities*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct INameSpaceTreeControlFolderCapabilities : INameSpac
         return ((delegate* unmanaged<INameSpaceTreeControlFolderCapabilities*, uint>)(lpVtbl[2]))((INameSpaceTreeControlFolderCapabilities*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='INameSpaceTreeControlFolderCapabilities.xml' path='doc/member[@name="INameSpaceTreeControlFolderCapabilities.GetFolderCapabilities"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetFolderCapabilities(NSTCFOLDERCAPABILITIES nfcMask, NSTCFOLDERCAPABILITIES* pnfcValue)

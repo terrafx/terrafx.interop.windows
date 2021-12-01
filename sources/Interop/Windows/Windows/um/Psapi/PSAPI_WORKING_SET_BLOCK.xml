@@ -1,0 +1,305 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PSAPI_WORKING_SET_BLOCK">
+    <summary>
+      <para>Contains working set information for a page.</para>
+    </summary>
+    <seealso cref="PSAPI_WORKING_SET_INFORMATION" />
+  </member>
+  <member name="PSAPI_WORKING_SET_BLOCK.Flags">
+    <summary>
+      <para>The working set information. See the description of the structure  members for information about the layout of this variable.</para>
+    </summary>
+  </member>
+  <member name="PSAPI_WORKING_SET_BLOCK.Protection">
+    <summary>
+      <para>The protection attributes of the page. This member can be one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <para>0</para>
+          </description>
+          <description>
+            <para>The page is not accessed.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>1</para>
+          </description>
+          <description>
+            <para>Read-only.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>2</para>
+          </description>
+          <description>
+            <para>Executable.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>3</para>
+          </description>
+          <description>
+            <para>Executable and read-only.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>4</para>
+          </description>
+          <description>
+            <para>Read/write.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>5</para>
+          </description>
+          <description>
+            <para>Copy-on-write.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>6</para>
+          </description>
+          <description>
+            <para>Executable and read/write.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>7</para>
+          </description>
+          <description>
+            <para>Executable and copy-on-write.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>8</para>
+          </description>
+          <description>
+            <para>The page is not accessed.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>9</para>
+          </description>
+          <description>
+            <para>Non-cacheable and read-only.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>10</para>
+          </description>
+          <description>
+            <para>Non-cacheable and executable.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>11</para>
+          </description>
+          <description>
+            <para>Non-cacheable, executable, and read-only.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>12</para>
+          </description>
+          <description>
+            <para>Non-cacheable and read/write.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>13</para>
+          </description>
+          <description>
+            <para>Non-cacheable and copy-on-write.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>14</para>
+          </description>
+          <description>
+            <para>Non-cacheable, executable, and read/write.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>15</para>
+          </description>
+          <description>
+            <para>Non-cacheable, executable, and copy-on-write.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>16</para>
+          </description>
+          <description>
+            <para>The page is not accessed.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>17</para>
+          </description>
+          <description>
+            <para>Guard page and read-only.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>18</para>
+          </description>
+          <description>
+            <para>Guard page and executable.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>19</para>
+          </description>
+          <description>
+            <para>Guard page, executable, and read-only.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>20</para>
+          </description>
+          <description>
+            <para>Guard page and read/write.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>21</para>
+          </description>
+          <description>
+            <para>Guard page and copy-on-write.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>22</para>
+          </description>
+          <description>
+            <para>Guard page, executable, and read/write.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>23</para>
+          </description>
+          <description>
+            <para>Guard page, executable, and copy-on-write.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>24</para>
+          </description>
+          <description>
+            <para>The page is not accessed.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>25</para>
+          </description>
+          <description>
+            <para>Non-cacheable, guard page, and read-only.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>26</para>
+          </description>
+          <description>
+            <para>Non-cacheable, guard page, and executable.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>27</para>
+          </description>
+          <description>
+            <para>Non-cacheable, guard page, executable, and read-only.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>28</para>
+          </description>
+          <description>
+            <para>Non-cacheable, guard page, and read/write.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>29</para>
+          </description>
+          <description>
+            <para>Non-cacheable, guard page, and copy-on-write.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>30</para>
+          </description>
+          <description>
+            <para>Non-cacheable, guard page, executable, and read/write.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>31</para>
+          </description>
+          <description>
+            <para>Non-cacheable, guard page, executable, and copy-on-write.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="PSAPI_WORKING_SET_BLOCK.ShareCount">
+    <summary>
+      <para>The number of processes that share this page. The maximum value of this member is 7.</para>
+    </summary>
+  </member>
+  <member name="PSAPI_WORKING_SET_BLOCK.Shared">
+    <summary>
+      <para>If this bit is 1, the page is sharable; otherwise, the page is not sharable.</para>
+    </summary>
+  </member>
+  <member name="PSAPI_WORKING_SET_BLOCK.Reserved">
+    <summary>
+      <para>This member is reserved.</para>
+    </summary>
+  </member>
+  <member name="PSAPI_WORKING_SET_BLOCK.VirtualPage">
+    <summary>
+      <para>The address of the page in the virtual address space.</para>
+      <para>
+        <b>64-bit Windows:  </b>This member is 52 bits in length.</para>
+    </summary>
+  </member>
+</doc>

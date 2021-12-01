@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CERT_OR_CRL_BUNDLE.xml' path='doc/member[@name="CERT_OR_CRL_BUNDLE"]/*' />
 public unsafe partial struct CERT_OR_CRL_BUNDLE
 {
+    /// <include file='CERT_OR_CRL_BUNDLE.xml' path='doc/member[@name="CERT_OR_CRL_BUNDLE.cItem"]/*' />
     [NativeTypeName("DWORD")]
     public uint cItem;
 
+    /// <include file='CERT_OR_CRL_BUNDLE.xml' path='doc/member[@name="CERT_OR_CRL_BUNDLE.rgItem"]/*' />
     [NativeTypeName("PCERT_OR_CRL_BLOB")]
     public CERT_OR_CRL_BLOB* rgItem;
 }

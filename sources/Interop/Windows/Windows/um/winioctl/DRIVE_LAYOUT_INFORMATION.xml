@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DRIVE_LAYOUT_INFORMATION">
+    <summary>
+      <para>Contains information about the partitions of a drive.</para>
+      <blockquote>
+        <para>[!NOTE]
+<b>DRIVE_LAYOUT_INFORMATION</b> is superseded <see cref="DRIVE_LAYOUT_INFORMATION_EX" /> structure.</para>
+      </blockquote>
+    </summary>
+    <seealso cref="DRIVE_LAYOUT_INFORMATION_EX" />
+    <seealso href="https://docs.microsoft.com/ni-winioctl-ioctl_disk_get_drive_layout.md">IOCTL_DISK_GET_DRIVE_LAYOUT</seealso>
+    <seealso href="https://docs.microsoft.com/ni-winioctl-ioctl_disk_set_drive_layout.md">IOCTL_DISK_SET_DRIVE_LAYOUT</seealso>
+  </member>
+  <member name="DRIVE_LAYOUT_INFORMATION.PartitionCount">
+    <summary>
+      <para>The number of partitions on a drive.</para>
+      <para>On disks with the MBR layout, this value is always a multiple of 4. Any partitions that are unused have a partition type of <b>PARTITION_ENTRY_UNUSED</b> (0).</para>
+    </summary>
+  </member>
+  <member name="DRIVE_LAYOUT_INFORMATION.Signature">
+    <summary>
+      <para>The drive signature value.</para>
+    </summary>
+  </member>
+  <member name="DRIVE_LAYOUT_INFORMATION.PartitionEntry">
+    <summary>
+      <para>A variable-sized array of <see cref="PARTITION_INFORMATION" /> structures, one structure for each partition on a drive.</para>
+    </summary>
+  </member>
+</doc>

@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STORAGE_SANITIZE_METHOD.xml' path='doc/member[@name="STORAGE_SANITIZE_METHOD"]/*' />
 public enum STORAGE_SANITIZE_METHOD
 {
+    /// <include file='STORAGE_SANITIZE_METHOD.xml' path='doc/member[@name="STORAGE_SANITIZE_METHOD.StorageSanitizeMethodDefault"]/*' />
     StorageSanitizeMethodDefault = 0,
+
+    /// <include file='STORAGE_SANITIZE_METHOD.xml' path='doc/member[@name="STORAGE_SANITIZE_METHOD.StorageSanitizeMethodBlockErase"]/*' />
     StorageSanitizeMethodBlockErase,
+
+    /// <include file='STORAGE_SANITIZE_METHOD.xml' path='doc/member[@name="STORAGE_SANITIZE_METHOD.StorageSanitizeMethodCryptoErase"]/*' />
     StorageSanitizeMethodCryptoErase,
 }

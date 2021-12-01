@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IFsiDirectoryItem2.AddTreeWithNamedStreams">
+    <summary>
+      <para>Adds the contents of a directory tree along with named streams associated with all files to the file system image.</para>
+    </summary>
+    <param name="sourceDirectory">
+      <para>String that contains the relative path of the directory tree to create. The path should contain only valid characters as per file system naming conventions.
+This parameter cannot be <b>NULL</b>.</para>
+      <para>
+        <b>Note</b>  You must specify the full path when calling this method from the root directory item.</para>
+    </param>
+    <param name="includeBaseDirectory">
+      <para>Set to <b>VARIANT_TRUE</b> to include the directory in <i>sourceDirectory</i> as a subdirectory in the file system image. Otherwise, <b>VARIANT_FALSE</b>.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code/value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAPI_S_IMAGE_FEATURE_NOT_SUPPORTED</b>
+                </description>
+              </item>
+              <item>
+                <description>Value: 0x00AAB15FL</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Feature is not supported for the current file system revision, and as a result, will be created without this feature.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAPI_E_INVALID_PARAM</b>
+                </description>
+              </item>
+              <item>
+                <description>Value: 0xC0AAB101</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The value specified for parameter '<i>%1!ls!</i>' is invalid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAPI_E_NOT_IN_FILE_SYSTEM</b>
+                </description>
+              </item>
+              <item>
+                <description>Value: 0xC0AAB10B</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <i>ls!'</i> is not part of the file system. It must be added to complete this operation.
+</description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAPI_E_DATA_STREAM_CREATE_FAILURE</b>
+                </description>
+              </item>
+              <item>
+                <description>Value: Value: 0xC0AAB12AL</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Error occurred while creating data stream for <i>'%1!ls!'</i>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAPI_E_DATA_STREAM_READ_FAILURE</b>
+                </description>
+              </item>
+              <item>
+                <description>Value: 0xC0AAB129L</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Cannot read data from stream supplied for file <i>'%1!ls!'</i>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAPI_E_READONLY</b>
+                </description>
+              </item>
+              <item>
+                <description>Value: 0xC0AAB102</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The referenced <see cref="IFileSystemImage" /> object is in read only mode.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAPI_E_DUP_NAME</b>
+                </description>
+              </item>
+              <item>
+                <description>Value: 0xC0AAB112L</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <i>'%1!ls!'</i> name already exists.
+</description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAPI_E_IMAGE_SIZE_LIMIT</b>
+                </description>
+              </item>
+              <item>
+                <description>Value: 0xC0AAB120L</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Adding <i>'%1!ls!'</i> would result in a result image having a size larger than the current configured limit.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAPI_E_DATA_STREAM_INCONSISTENCY</b>
+                </description>
+              </item>
+              <item>
+                <description>Value: 0xC0AAB128L</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The data stream supplied for the file <i>'%1!ls!'</i> is inconsistent; expected <i>%2!I64d!</i> bytes, found <i>%3!I64d!</i></para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_OUTOFMEMORY</b>
+                </description>
+              </item>
+              <item>
+                <description>Value: 0x8007000EL</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Failed to allocate required memory.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The parent directory for the new sub-directory must already exist within the file system image.</para>
+      <para>The sub-directory structure within specified <i>sourceDirectory</i> is implicitly mirrored in the file system image.
+If file or directory collisions occur, the content of the specified source directory prevails.</para>
+      <para>The file system image is overwritten with the appropriate directories and files from the source directory.
+If an exception occurs during processing, the file system image reverts to its previous state.</para>
+      <para>If this method is invoked for a file system object that does not contain UDF in the list of file systems enabled for creation in the resultant image or if the UDF revision is below 2.00, this method returns success code <b>IMAPI_S_IMAGE_FEATURE_NOT_SUPPORTED</b>. This indicates that the named streams have been added but will not appear in the resultant file system image unless UDF revision 2.00 or higher is enabled in the file system object.</para>
+      <para>When utilizing alternate data streams (ADS) it is important to note that the file system image has a limitation of  1000 streams. Exceeding this number will result in lost data.</para>
+      <para>This method is supported in Windows Server 2003 with Service Pack 1 (SP1), Windows XP with Service Pack 2 (SP2),  and Windows Vista  via the Windows Feature Pack for Storage. All  features provided by this  update package are supported natively in Windows 7 and Windows Server 2008 R2.</para>
+    </remarks>
+    <seealso cref="IFsiDirectoryItem2" />
+  </member>
+  <member name="IFsiDirectoryItem2">
+    <summary>
+      <para>Use this interface to add a directory tree, which includes all sub-directories, files, and associated named streams to a file system image.</para>
+    </summary>
+    <remarks>
+      <para>All sub-directories, files, and associated named streams can only be added after the directory item has been  added to the file system image.</para>
+      <para>UDF must be enabled and set to UDF revision 2.00 or later in order to enable named stream support during the creation of the file system image.</para>
+      <para>This interface is supported in Windows Server 2003 with Service Pack 1 (SP1), Windows XP with Service Pack 2 (SP2),  and Windows Vista  via the Windows Feature Pack for Storage. All  features provided by this  update package are supported natively in Windows 7 and Windows Server 2008 R2.</para>
+    </remarks>
+    <seealso cref="IFsiDirectoryItem" />
+  </member>
+</doc>

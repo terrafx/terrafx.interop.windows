@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CHEVRONVERTSTATES.xml' path='doc/member[@name="CHEVRONVERTSTATES"]/*' />
 public enum CHEVRONVERTSTATES
 {
+    /// <include file='CHEVRONVERTSTATES.xml' path='doc/member[@name="CHEVRONVERTSTATES.CHEVSV_NORMAL"]/*' />
     CHEVSV_NORMAL = 1,
+
+    /// <include file='CHEVRONVERTSTATES.xml' path='doc/member[@name="CHEVRONVERTSTATES.CHEVSV_HOT"]/*' />
     CHEVSV_HOT = 2,
+
+    /// <include file='CHEVRONVERTSTATES.xml' path='doc/member[@name="CHEVRONVERTSTATES.CHEVSV_PRESSED"]/*' />
     CHEVSV_PRESSED = 3,
 }

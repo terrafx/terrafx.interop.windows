@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ISpTranscript.xml' path='doc/member[@name="ISpTranscript"]/*' />
 [Guid("10F63BCE-201A-11D3-AC70-00C04F8EE6C0")]
 [NativeTypeName("struct ISpTranscript : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ISpTranscript : ISpTranscript.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ISpTranscript : ISpTranscript.Interface
         return ((delegate* unmanaged<ISpTranscript*, Guid*, void**, int>)(lpVtbl[0]))((ISpTranscript*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ISpTranscript : ISpTranscript.Interface
         return ((delegate* unmanaged<ISpTranscript*, uint>)(lpVtbl[1]))((ISpTranscript*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ISpTranscript : ISpTranscript.Interface
         return ((delegate* unmanaged<ISpTranscript*, uint>)(lpVtbl[2]))((ISpTranscript*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ISpTranscript.xml' path='doc/member[@name="ISpTranscript.GetTranscript"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTranscript([NativeTypeName("LPWSTR *")] ushort** ppszTranscript)
@@ -46,6 +51,7 @@ public unsafe partial struct ISpTranscript : ISpTranscript.Interface
         return ((delegate* unmanaged<ISpTranscript*, ushort**, int>)(lpVtbl[3]))((ISpTranscript*)Unsafe.AsPointer(ref this), ppszTranscript);
     }
 
+    /// <include file='ISpTranscript.xml' path='doc/member[@name="ISpTranscript.AppendTranscript"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT AppendTranscript([NativeTypeName("LPCWSTR")] ushort* pszTranscript)

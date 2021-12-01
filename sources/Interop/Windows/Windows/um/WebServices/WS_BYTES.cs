@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_BYTES.xml' path='doc/member[@name="WS_BYTES"]/*' />
 public unsafe partial struct WS_BYTES
 {
+    /// <include file='WS_BYTES.xml' path='doc/member[@name="WS_BYTES.length"]/*' />
     [NativeTypeName("ULONG")]
     public uint length;
 
+    /// <include file='WS_BYTES.xml' path='doc/member[@name="WS_BYTES.bytes"]/*' />
     public byte* bytes;
 }

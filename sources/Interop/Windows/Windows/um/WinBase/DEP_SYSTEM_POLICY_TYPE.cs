@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DEP_SYSTEM_POLICY_TYPE.xml' path='doc/member[@name="DEP_SYSTEM_POLICY_TYPE"]/*' />
 public enum DEP_SYSTEM_POLICY_TYPE
 {
+    /// <include file='DEP_SYSTEM_POLICY_TYPE.xml' path='doc/member[@name="DEP_SYSTEM_POLICY_TYPE.DEPPolicyAlwaysOff"]/*' />
     DEPPolicyAlwaysOff = 0,
+
+    /// <include file='DEP_SYSTEM_POLICY_TYPE.xml' path='doc/member[@name="DEP_SYSTEM_POLICY_TYPE.DEPPolicyAlwaysOn"]/*' />
     DEPPolicyAlwaysOn,
+
+    /// <include file='DEP_SYSTEM_POLICY_TYPE.xml' path='doc/member[@name="DEP_SYSTEM_POLICY_TYPE.DEPPolicyOptIn"]/*' />
     DEPPolicyOptIn,
+
+    /// <include file='DEP_SYSTEM_POLICY_TYPE.xml' path='doc/member[@name="DEP_SYSTEM_POLICY_TYPE.DEPPolicyOptOut"]/*' />
     DEPPolicyOptOut,
+
+    /// <include file='DEP_SYSTEM_POLICY_TYPE.xml' path='doc/member[@name="DEP_SYSTEM_POLICY_TYPE.DEPTotalPolicyCount"]/*' />
     DEPTotalPolicyCount,
 }

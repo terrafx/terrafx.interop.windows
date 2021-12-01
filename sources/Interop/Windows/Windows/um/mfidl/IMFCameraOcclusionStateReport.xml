@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFCameraOcclusionStateReport.GetOcclusionState">
+    <summary>
+      <para>Gets the camera occlusion state associated with the occlusion state report.</para>
+    </summary>
+    <param name="occlusionState">
+      <para>A <b>DWORD</b> output parameter containing a value from the <see cref="MFCameraOcclusionState" /> enumeration.</para>
+    </param>
+    <returns>
+      <para>| Error code | Description |
+|------------|-------------|
+| S_OK    | Succeeded |
+| E_INVALIDARG | <i>occlusionState</i> is nullptr. |</para>
+    </returns>
+    <seealso cref="MFCameraOcclusionState" />
+  </member>
+  <member name="IMFCameraOcclusionStateReport">
+    <summary>
+      <para>Provides the camera occlusion state associated with a state change detected by an <see cref="IMFCameraOcclusionStateMonitor" />.</para>
+    </summary>
+    <remarks>
+      <para>An instance of this class is passed into <see cref="IMFCameraOcclusionStateReportCallback.OnOcclusionStateReport" /> callback. Register the callback interface when you create the camera occlusion state monitor with a call to <see cref="MFCreateCameraOcclusionStateMonitor" />.</para>
+    </remarks>
+    <seealso cref="IMFCameraOcclusionStateMonitor" />
+    <seealso cref="IMFCameraOcclusionStateReportCallback.OnOcclusionStateReport" />
+    <seealso cref="MFCreateCameraOcclusionStateMonitor" />
+  </member>
+</doc>

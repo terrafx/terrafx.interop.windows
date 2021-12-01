@@ -5,16 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='URLINVOKECOMMANDINFOW.xml' path='doc/member[@name="URLINVOKECOMMANDINFOW"]/*' />
 public unsafe partial struct URLINVOKECOMMANDINFOW
 {
+    /// <include file='URLINVOKECOMMANDINFOW.xml' path='doc/member[@name="URLINVOKECOMMANDINFOW.dwcbSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwcbSize;
 
+    /// <include file='URLINVOKECOMMANDINFOW.xml' path='doc/member[@name="URLINVOKECOMMANDINFOW.dwFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFlags;
 
+    /// <include file='URLINVOKECOMMANDINFOW.xml' path='doc/member[@name="URLINVOKECOMMANDINFOW.hwndParent"]/*' />
     public HWND hwndParent;
 
+    /// <include file='URLINVOKECOMMANDINFOW.xml' path='doc/member[@name="URLINVOKECOMMANDINFOW.pcszVerb"]/*' />
     [NativeTypeName("LPCWSTR")]
     public ushort* pcszVerb;
 }

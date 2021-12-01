@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SCM_PD_SET_TYPE.xml' path='doc/member[@name="SCM_PD_SET_TYPE"]/*' />
 public enum SCM_PD_SET_TYPE
 {
+    /// <include file='SCM_PD_SET_TYPE.xml' path='doc/member[@name="SCM_PD_SET_TYPE.ScmPhysicalDeviceSet_Descriptor"]/*' />
     ScmPhysicalDeviceSet_Descriptor = 0,
+
+    /// <include file='SCM_PD_SET_TYPE.xml' path='doc/member[@name="SCM_PD_SET_TYPE.ScmPhysicalDeviceSet_IsSupported"]/*' />
     ScmPhysicalDeviceSet_IsSupported,
+
+    /// <include file='SCM_PD_SET_TYPE.xml' path='doc/member[@name="SCM_PD_SET_TYPE.ScmPhysicalDeviceSet_Max"]/*' />
     ScmPhysicalDeviceSet_Max,
 }

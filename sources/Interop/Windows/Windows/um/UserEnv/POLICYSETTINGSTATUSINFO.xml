@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="POLICYSETTINGSTATUSINFO">
+    <summary>
+      <para>The
+<b>POLICYSETTINGSTATUSINFO</b> structure provides information about a policy-setting event.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/Policy/about-group-policy">Group Policy Overview</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/Policy/group-policy-structures">Group Policy Structures</seealso>
+    <seealso cref="RSoPSetPolicySettingStatus" />
+  </member>
+  <member name="POLICYSETTINGSTATUSINFO.szKey">
+    <summary>
+      <para>This member is optional. If it is <b>NULL</b>, the system generates a value.</para>
+    </summary>
+  </member>
+  <member name="POLICYSETTINGSTATUSINFO.szEventSource">
+    <summary>
+      <para>Pointer to a string specifying the name of the source (application, service, driver, subsystem) that generated the log entry.</para>
+    </summary>
+  </member>
+  <member name="POLICYSETTINGSTATUSINFO.szEventLogName">
+    <summary>
+      <para>Pointer to a string specifying the name of the event log.</para>
+    </summary>
+  </member>
+  <member name="POLICYSETTINGSTATUSINFO.dwEventID">
+    <summary>
+      <para>Specifies the event log message ID.</para>
+    </summary>
+  </member>
+  <member name="POLICYSETTINGSTATUSINFO.dwErrorCode">
+    <summary>
+      <para>A
+<a href="https://docs.microsoft.com//windows/desktop/Debug/system-error-codes">system error code</a> that indicates an error that occurred during the application of the policy setting.</para>
+    </summary>
+  </member>
+  <member name="POLICYSETTINGSTATUSINFO.status">
+    <summary>
+      <para>Specifies the status of the policy setting. This member can be one of the following values.</para>
+      <h4>RSOPUnspecified</h4>
+      <para>The client-side extension does not define a status for this policy setting.</para>
+      <h4>RSOPApplied</h4>
+      <para>The policy setting was applied successfully.</para>
+      <h4>RSOPIgnored</h4>
+      <para>The policy setting was ignored; the system made no attempt to apply it.</para>
+      <h4>RSOPFailed</h4>
+      <para>Application of the policy setting failed. Details about the failure are indicated by the other members of the structure.</para>
+      <h4>RSOPSubsettingFailed</h4>
+      <para>The policy setting was applied successfully, but an error occurred while attempting to apply the child setting.</para>
+    </summary>
+  </member>
+  <member name="POLICYSETTINGSTATUSINFO.timeLogged">
+    <summary>
+      <para>Specifies a
+<see cref="SYSTEMTIME" /> structure that indicates the time at which the source generated the event.</para>
+    </summary>
+  </member>
+</doc>

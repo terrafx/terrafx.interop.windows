@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IPersistSerializedPropStorage2.GetPropertyStorageBuffer">
+    <summary>
+      <para>Gets the serialized property storage buffer from the property store instance.</para>
+    </summary>
+    <param name="psps">
+      <para>Type: <b>SERIALIZEDPROPSTORAGE*</b></para>
+      <para>When this method returns successfully, contains the contents of the property storage buffer.</para>
+    </param>
+    <param name="cb">
+      <para>Type: <b>DWORD</b></para>
+      <para>The initial size, in bytes, of the buffer pointed to by <i>psps</i></para>
+    </param>
+    <param name="pcbWritten">
+      <para>Type: <b>DWORD*</b></para>
+      <para>The count of bytes contained in the serialized property storage buffer pointed to by <i>psps</i>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This methods returns an error if <i>cb</i> is smaller than the total size of the serialized data.</para>
+      <para>The <b>SERIALIZEDPROPSTORAGE</b> type is defined in Propsys.h as an incomplete type. It should be treated as an array of <b>BYTE</b> values; the format of the returned data is not specified. The contents of the <b>SERIALIZEDPROPSTORAGE</b> structure are suitable for persisting to disk or other storage and can be used to initialize another property store through <see cref="IPersistSerializedPropStorage.SetPropertyStorage" />.</para>
+    </remarks>
+  </member>
+  <member name="IPersistSerializedPropStorage2.GetPropertyStorageSize">
+    <summary>
+      <para>Gets the size of serialized property storage data from the property store instance.</para>
+    </summary>
+    <param name="pcb">
+      <para>Type: <b>DWORD*</b></para>
+      <para>The count of bytes contained in the serialized property storage data.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IPersistSerializedPropStorage2">
+    <summary>
+      <para>Exposes methods to persist serialized property storage data for later use and to restore persisted data to a new property store instance.</para>
+    </summary>
+    <remarks>
+      <para>This interface also provides the methods of the <see cref="IPersistSerializedPropStorage" /> interface, from which it inherits.</para>
+      <h3>When to Implement</h3>
+      <b>IPersistSerializedPropStorage2</b> is not intended for custom implementation. Use the system-provided implementation associated with the in-memory property store.
+<h3>When to Use</h3><para>The in-memory property store, created by calling <see cref="PSCreateMemoryPropertyStore" />, provides an implementation of this interface. Use this implementation when you want to persist or restore serialized property storage data.</para></remarks>
+  </member>
+</doc>

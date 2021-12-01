@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DriveTypeCategorizer.xml' path='doc/member[@name="DriveTypeCategorizer"]/*' />
 [Guid("B0A8F3CF-4333-4BAB-8873-1CCB1CADA48B")]
 public partial struct DriveTypeCategorizer
 {

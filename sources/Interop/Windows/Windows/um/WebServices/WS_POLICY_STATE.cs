@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_POLICY_STATE.xml' path='doc/member[@name="WS_POLICY_STATE"]/*' />
 public enum WS_POLICY_STATE
 {
+    /// <include file='WS_POLICY_STATE.xml' path='doc/member[@name="WS_POLICY_STATE.WS_POLICY_STATE_CREATED"]/*' />
     WS_POLICY_STATE_CREATED = 1,
+
+    /// <include file='WS_POLICY_STATE.xml' path='doc/member[@name="WS_POLICY_STATE.WS_POLICY_STATE_FAULTED"]/*' />
     WS_POLICY_STATE_FAULTED = 2,
 }

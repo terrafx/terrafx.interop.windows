@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IAppxEncryptedPackageWriter.AddPayloadFileEncrypted">
+    <summary>
+      <para>Adds a new encrypted payload file to the appx package.</para>
+    </summary>
+    <param name="fileName">
+      <para>The name of the payload file. The file name path must be relative to the root of the package.</para>
+    </param>
+    <param name="compressionOption">
+      <para>The type of compression to use  to store <i>fileName</i> in the package.</para>
+    </param>
+    <param name="inputStream">
+      <para>An <see cref="IStream" /> providing the contents of <i>fileName</i>.
+The stream must support <see cref="Read" />, <see cref="Seek" />, and <see cref="Stat" />.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an error code.</para>
+    </returns>
+    <seealso cref="IAppxEncryptedPackageWriter" />
+  </member>
+  <member name="IAppxEncryptedPackageWriter.Close">
+    <summary>
+      <para>Closes and finalizes the written package stream.</para>
+    </summary>
+    <returns>
+      <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an error code.</para>
+    </returns>
+    <seealso cref="IAppxEncryptedPackageWriter" />
+  </member>
+  <member name="IAppxEncryptedPackageWriter">
+    <summary>
+      <para>Provides a write-only object model for encrypted app packages.</para>
+    </summary>
+  </member>
+</doc>

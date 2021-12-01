@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IDiaLoadCallback2.xml' path='doc/member[@name="IDiaLoadCallback2"]/*' />
 [Guid("4688A074-5A4D-4486-AEA8-7B90711D9F7C")]
 [NativeTypeName("struct IDiaLoadCallback2 : IDiaLoadCallback")]
 [NativeInheritance("IDiaLoadCallback")]
@@ -16,6 +17,7 @@ public unsafe partial struct IDiaLoadCallback2 : IDiaLoadCallback2.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IDiaLoadCallback2 : IDiaLoadCallback2.Interface
         return ((delegate* unmanaged<IDiaLoadCallback2*, Guid*, void**, int>)(lpVtbl[0]))((IDiaLoadCallback2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IDiaLoadCallback2 : IDiaLoadCallback2.Interface
         return ((delegate* unmanaged<IDiaLoadCallback2*, uint>)(lpVtbl[1]))((IDiaLoadCallback2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IDiaLoadCallback2 : IDiaLoadCallback2.Interface
         return ((delegate* unmanaged<IDiaLoadCallback2*, uint>)(lpVtbl[2]))((IDiaLoadCallback2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDiaLoadCallback.NotifyDebugDir" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT NotifyDebugDir(BOOL fExecutable, [NativeTypeName("DWORD")] uint cbData, byte* pbData)
@@ -46,6 +51,7 @@ public unsafe partial struct IDiaLoadCallback2 : IDiaLoadCallback2.Interface
         return ((delegate* unmanaged<IDiaLoadCallback2*, BOOL, uint, byte*, int>)(lpVtbl[3]))((IDiaLoadCallback2*)Unsafe.AsPointer(ref this), fExecutable, cbData, pbData);
     }
 
+    /// <inheritdoc cref="IDiaLoadCallback.NotifyOpenDBG" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT NotifyOpenDBG([NativeTypeName("LPCOLESTR")] ushort* dbgPath, HRESULT resultCode)
@@ -53,6 +59,7 @@ public unsafe partial struct IDiaLoadCallback2 : IDiaLoadCallback2.Interface
         return ((delegate* unmanaged<IDiaLoadCallback2*, ushort*, HRESULT, int>)(lpVtbl[4]))((IDiaLoadCallback2*)Unsafe.AsPointer(ref this), dbgPath, resultCode);
     }
 
+    /// <inheritdoc cref="IDiaLoadCallback.NotifyOpenPDB" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT NotifyOpenPDB([NativeTypeName("LPCOLESTR")] ushort* pdbPath, HRESULT resultCode)
@@ -60,6 +67,7 @@ public unsafe partial struct IDiaLoadCallback2 : IDiaLoadCallback2.Interface
         return ((delegate* unmanaged<IDiaLoadCallback2*, ushort*, HRESULT, int>)(lpVtbl[5]))((IDiaLoadCallback2*)Unsafe.AsPointer(ref this), pdbPath, resultCode);
     }
 
+    /// <inheritdoc cref="IDiaLoadCallback.RestrictRegistryAccess" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT RestrictRegistryAccess()
@@ -67,6 +75,7 @@ public unsafe partial struct IDiaLoadCallback2 : IDiaLoadCallback2.Interface
         return ((delegate* unmanaged<IDiaLoadCallback2*, int>)(lpVtbl[6]))((IDiaLoadCallback2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDiaLoadCallback.RestrictSymbolServerAccess" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT RestrictSymbolServerAccess()
@@ -74,6 +83,7 @@ public unsafe partial struct IDiaLoadCallback2 : IDiaLoadCallback2.Interface
         return ((delegate* unmanaged<IDiaLoadCallback2*, int>)(lpVtbl[7]))((IDiaLoadCallback2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDiaLoadCallback2.xml' path='doc/member[@name="IDiaLoadCallback2.RestrictOriginalPathAccess"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT RestrictOriginalPathAccess()
@@ -81,6 +91,7 @@ public unsafe partial struct IDiaLoadCallback2 : IDiaLoadCallback2.Interface
         return ((delegate* unmanaged<IDiaLoadCallback2*, int>)(lpVtbl[8]))((IDiaLoadCallback2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDiaLoadCallback2.xml' path='doc/member[@name="IDiaLoadCallback2.RestrictReferencePathAccess"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT RestrictReferencePathAccess()
@@ -88,6 +99,7 @@ public unsafe partial struct IDiaLoadCallback2 : IDiaLoadCallback2.Interface
         return ((delegate* unmanaged<IDiaLoadCallback2*, int>)(lpVtbl[9]))((IDiaLoadCallback2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDiaLoadCallback2.xml' path='doc/member[@name="IDiaLoadCallback2.RestrictDBGAccess"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT RestrictDBGAccess()
@@ -95,6 +107,7 @@ public unsafe partial struct IDiaLoadCallback2 : IDiaLoadCallback2.Interface
         return ((delegate* unmanaged<IDiaLoadCallback2*, int>)(lpVtbl[10]))((IDiaLoadCallback2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDiaLoadCallback2.xml' path='doc/member[@name="IDiaLoadCallback2.RestrictSystemRootAccess"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT RestrictSystemRootAccess()

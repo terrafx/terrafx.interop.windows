@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IWbemShutdown.xml' path='doc/member[@name="IWbemShutdown"]/*' />
 [Guid("B7B31DF9-D515-11D3-A11C-00105A1F515A")]
 [NativeTypeName("struct IWbemShutdown : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IWbemShutdown : IWbemShutdown.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IWbemShutdown : IWbemShutdown.Interface
         return ((delegate* unmanaged<IWbemShutdown*, Guid*, void**, int>)(lpVtbl[0]))((IWbemShutdown*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IWbemShutdown : IWbemShutdown.Interface
         return ((delegate* unmanaged<IWbemShutdown*, uint>)(lpVtbl[1]))((IWbemShutdown*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IWbemShutdown : IWbemShutdown.Interface
         return ((delegate* unmanaged<IWbemShutdown*, uint>)(lpVtbl[2]))((IWbemShutdown*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IWbemShutdown.xml' path='doc/member[@name="IWbemShutdown.Shutdown"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Shutdown([NativeTypeName("LONG")] int uReason, [NativeTypeName("ULONG")] uint uMaxMilliseconds, IWbemContext* pCtx)

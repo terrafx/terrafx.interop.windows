@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="APTTYPE">
+    <summary>
+      <para>Specifies different types of apartments.</para>
+    </summary>
+    <seealso cref="CoGetApartmentType" />
+    <seealso cref="IComThreadingInfo.GetCurrentApartmentType" />
+  </member>
+  <member name="APTTYPE.APTTYPE_CURRENT">
+    <summary>
+      <para>The current thread.</para>
+    </summary>
+  </member>
+  <member name="APTTYPE.APTTYPE_STA">
+    <summary>
+      <para>A single-threaded apartment.</para>
+    </summary>
+  </member>
+  <member name="APTTYPE.APTTYPE_MTA">
+    <summary>
+      <para>A multithreaded apartment.</para>
+    </summary>
+  </member>
+  <member name="APTTYPE.APTTYPE_NA">
+    <summary>
+      <para>A neutral apartment.</para>
+    </summary>
+  </member>
+  <member name="APTTYPE.APTTYPE_MAINSTA">
+    <summary>
+      <para>The main single-threaded apartment.</para>
+    </summary>
+  </member>
+</doc>

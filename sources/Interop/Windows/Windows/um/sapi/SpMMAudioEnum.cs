@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SpMMAudioEnum.xml' path='doc/member[@name="SpMMAudioEnum"]/*' />
 [Guid("AB1890A0-E91F-11D2-BB91-00C04F8EE6C0")]
 public partial struct SpMMAudioEnum
 {

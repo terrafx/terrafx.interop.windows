@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='AM_DVD_ChangeRate.xml' path='doc/member[@name="AM_DVD_ChangeRate"]/*' />
 public partial struct AM_DVD_ChangeRate
 {
+    /// <include file='AM_DVD_ChangeRate.xml' path='doc/member[@name="AM_DVD_ChangeRate.StartInTime"]/*' />
     [NativeTypeName("REFERENCE_TIME")]
     public long StartInTime;
 
+    /// <include file='AM_DVD_ChangeRate.xml' path='doc/member[@name="AM_DVD_ChangeRate.StartOutTime"]/*' />
     [NativeTypeName("REFERENCE_TIME")]
     public long StartOutTime;
 
+    /// <include file='AM_DVD_ChangeRate.xml' path='doc/member[@name="AM_DVD_ChangeRate.Rate"]/*' />
     [NativeTypeName("LONG")]
     public int Rate;
 }

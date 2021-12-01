@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='styleMsContentZoomSnapType.xml' path='doc/member[@name="styleMsContentZoomSnapType"]/*' />
 public enum styleMsContentZoomSnapType
 {
+    /// <include file='styleMsContentZoomSnapType.xml' path='doc/member[@name="styleMsContentZoomSnapType.styleMsContentZoomSnapTypeNotSet"]/*' />
     styleMsContentZoomSnapTypeNotSet = 0,
+
+    /// <include file='styleMsContentZoomSnapType.xml' path='doc/member[@name="styleMsContentZoomSnapType.styleMsContentZoomSnapTypeNone"]/*' />
     styleMsContentZoomSnapTypeNone = 1,
+
+    /// <include file='styleMsContentZoomSnapType.xml' path='doc/member[@name="styleMsContentZoomSnapType.styleMsContentZoomSnapTypeMandatory"]/*' />
     styleMsContentZoomSnapTypeMandatory = 2,
+
+    /// <include file='styleMsContentZoomSnapType.xml' path='doc/member[@name="styleMsContentZoomSnapType.styleMsContentZoomSnapTypeProximity"]/*' />
     styleMsContentZoomSnapTypeProximity = 3,
+
+    /// <include file='styleMsContentZoomSnapType.xml' path='doc/member[@name="styleMsContentZoomSnapType.styleMsContentZoomSnapType_Max"]/*' />
     styleMsContentZoomSnapType_Max = 2147483647,
 }

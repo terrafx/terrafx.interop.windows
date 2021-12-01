@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MF_SINK_WRITER_STATISTICS">
+    <summary>
+      <para>Contains statistics about the performance of the sink writer.</para>
+    </summary>
+    <seealso cref="IMFSinkWriter.GetStatistics" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-structures">Media Foundation Structures</seealso>
+  </member>
+  <member name="MF_SINK_WRITER_STATISTICS.cb">
+    <summary>
+      <para>The size of the structure, in bytes.</para>
+    </summary>
+  </member>
+  <member name="MF_SINK_WRITER_STATISTICS.llLastTimestampReceived">
+    <summary>
+      <para>The time stamp of the most recent sample given to the sink writer. The sink writer updates this value each time the application calls <see cref="IMFSinkWriter.WriteSample" />.</para>
+    </summary>
+  </member>
+  <member name="MF_SINK_WRITER_STATISTICS.llLastTimestampEncoded">
+    <summary>
+      <para>The time stamp of the most recent sample to be encoded. The sink writer updates this value whenever it calls <see cref="IMFTransform.ProcessOutput" /> on the encoder.</para>
+    </summary>
+  </member>
+  <member name="MF_SINK_WRITER_STATISTICS.llLastTimestampProcessed">
+    <summary>
+      <para>The time stamp of the most recent sample given to the media sink. The sink writer updates this value whenever it calls <see cref="IMFStreamSink.ProcessSample" /> on the media sink.</para>
+    </summary>
+  </member>
+  <member name="MF_SINK_WRITER_STATISTICS.llLastStreamTickReceived">
+    <summary>
+      <para>The time stamp of the most recent stream tick. The sink writer updates this value whenever the application calls <see cref="IMFSinkWriter.SendStreamTick" />.</para>
+    </summary>
+  </member>
+  <member name="MF_SINK_WRITER_STATISTICS.llLastSinkSampleRequest">
+    <summary>
+      <para>The system time of the most recent sample request from the media sink. The sink writer updates this value whenever it receives an <a href="https://docs.microsoft.com//windows/desktop/medfound/mestreamsinkrequestsample">MEStreamSinkRequestSample</a> event from the media sink. The value is the current system time.</para>
+    </summary>
+  </member>
+  <member name="MF_SINK_WRITER_STATISTICS.qwNumSamplesReceived">
+    <summary>
+      <para>The number of samples received.</para>
+    </summary>
+  </member>
+  <member name="MF_SINK_WRITER_STATISTICS.qwNumSamplesEncoded">
+    <summary>
+      <para>The number of samples encoded.</para>
+    </summary>
+  </member>
+  <member name="MF_SINK_WRITER_STATISTICS.qwNumSamplesProcessed">
+    <summary>
+      <para>The number of samples given to the media sink.</para>
+    </summary>
+  </member>
+  <member name="MF_SINK_WRITER_STATISTICS.qwNumStreamTicksReceived">
+    <summary>
+      <para>The number of stream ticks received.</para>
+    </summary>
+  </member>
+  <member name="MF_SINK_WRITER_STATISTICS.dwByteCountQueued">
+    <summary>
+      <para>The amount of data, in bytes, currently waiting to be processed.</para>
+    </summary>
+  </member>
+  <member name="MF_SINK_WRITER_STATISTICS.qwByteCountProcessed">
+    <summary>
+      <para>The total amount of data, in bytes, that has been sent to the media sink.</para>
+    </summary>
+  </member>
+  <member name="MF_SINK_WRITER_STATISTICS.dwNumOutstandingSinkSampleRequests">
+    <summary>
+      <para>The number of pending sample requests.</para>
+    </summary>
+  </member>
+  <member name="MF_SINK_WRITER_STATISTICS.dwAverageSampleRateReceived">
+    <summary>
+      <para>The average rate, in media samples per 100-nanoseconds, at which the application sent samples to the sink writer.</para>
+    </summary>
+  </member>
+  <member name="MF_SINK_WRITER_STATISTICS.dwAverageSampleRateEncoded">
+    <summary>
+      <para>The average rate, in media samples per 100-nanoseconds, at which the sink writer sent samples to the encoder.</para>
+    </summary>
+  </member>
+  <member name="MF_SINK_WRITER_STATISTICS.dwAverageSampleRateProcessed">
+    <summary>
+      <para>The average rate, in media samples per 100-nanoseconds, at which the sink writer sent samples to the media sink.</para>
+    </summary>
+  </member>
+</doc>

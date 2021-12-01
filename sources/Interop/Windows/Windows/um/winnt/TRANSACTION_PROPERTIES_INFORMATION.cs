@@ -5,22 +5,29 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TRANSACTION_PROPERTIES_INFORMATION.xml' path='doc/member[@name="TRANSACTION_PROPERTIES_INFORMATION"]/*' />
 public unsafe partial struct TRANSACTION_PROPERTIES_INFORMATION
 {
+    /// <include file='TRANSACTION_PROPERTIES_INFORMATION.xml' path='doc/member[@name="TRANSACTION_PROPERTIES_INFORMATION.IsolationLevel"]/*' />
     [NativeTypeName("DWORD")]
     public uint IsolationLevel;
 
+    /// <include file='TRANSACTION_PROPERTIES_INFORMATION.xml' path='doc/member[@name="TRANSACTION_PROPERTIES_INFORMATION.IsolationFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint IsolationFlags;
 
+    /// <include file='TRANSACTION_PROPERTIES_INFORMATION.xml' path='doc/member[@name="TRANSACTION_PROPERTIES_INFORMATION.Timeout"]/*' />
     public LARGE_INTEGER Timeout;
 
+    /// <include file='TRANSACTION_PROPERTIES_INFORMATION.xml' path='doc/member[@name="TRANSACTION_PROPERTIES_INFORMATION.Outcome"]/*' />
     [NativeTypeName("DWORD")]
     public uint Outcome;
 
+    /// <include file='TRANSACTION_PROPERTIES_INFORMATION.xml' path='doc/member[@name="TRANSACTION_PROPERTIES_INFORMATION.DescriptionLength"]/*' />
     [NativeTypeName("DWORD")]
     public uint DescriptionLength;
 
+    /// <include file='TRANSACTION_PROPERTIES_INFORMATION.xml' path='doc/member[@name="TRANSACTION_PROPERTIES_INFORMATION.Description"]/*' />
     [NativeTypeName("WCHAR [1]")]
     public fixed ushort Description[1];
 }

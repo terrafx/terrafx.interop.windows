@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DPI_AWARENESS.xml' path='doc/member[@name="DPI_AWARENESS"]/*' />
 public enum DPI_AWARENESS
 {
+    /// <include file='DPI_AWARENESS.xml' path='doc/member[@name="DPI_AWARENESS.DPI_AWARENESS_INVALID"]/*' />
     DPI_AWARENESS_INVALID = -1,
+
+    /// <include file='DPI_AWARENESS.xml' path='doc/member[@name="DPI_AWARENESS.DPI_AWARENESS_UNAWARE"]/*' />
     DPI_AWARENESS_UNAWARE = 0,
+
+    /// <include file='DPI_AWARENESS.xml' path='doc/member[@name="DPI_AWARENESS.DPI_AWARENESS_SYSTEM_AWARE"]/*' />
     DPI_AWARENESS_SYSTEM_AWARE = 1,
+
+    /// <include file='DPI_AWARENESS.xml' path='doc/member[@name="DPI_AWARENESS.DPI_AWARENESS_PER_MONITOR_AWARE"]/*' />
     DPI_AWARENESS_PER_MONITOR_AWARE = 2,
 }

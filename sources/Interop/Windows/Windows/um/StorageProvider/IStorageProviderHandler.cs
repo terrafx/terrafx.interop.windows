@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IStorageProviderHandler.xml' path='doc/member[@name="IStorageProviderHandler"]/*' />
 [Guid("162C6FB5-44D3-435B-903D-E613FA093FB5")]
 [NativeTypeName("struct IStorageProviderHandler : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IStorageProviderHandler : IStorageProviderHandler.I
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IStorageProviderHandler : IStorageProviderHandler.I
         return ((delegate* unmanaged<IStorageProviderHandler*, Guid*, void**, int>)(lpVtbl[0]))((IStorageProviderHandler*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IStorageProviderHandler : IStorageProviderHandler.I
         return ((delegate* unmanaged<IStorageProviderHandler*, uint>)(lpVtbl[1]))((IStorageProviderHandler*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IStorageProviderHandler : IStorageProviderHandler.I
         return ((delegate* unmanaged<IStorageProviderHandler*, uint>)(lpVtbl[2]))((IStorageProviderHandler*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IStorageProviderHandler.xml' path='doc/member[@name="IStorageProviderHandler.GetPropertyHandlerFromPath"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetPropertyHandlerFromPath([NativeTypeName("LPCWSTR")] ushort* path, IStorageProviderPropertyHandler** propertyHandler)
@@ -46,6 +51,7 @@ public unsafe partial struct IStorageProviderHandler : IStorageProviderHandler.I
         return ((delegate* unmanaged<IStorageProviderHandler*, ushort*, IStorageProviderPropertyHandler**, int>)(lpVtbl[3]))((IStorageProviderHandler*)Unsafe.AsPointer(ref this), path, propertyHandler);
     }
 
+    /// <include file='IStorageProviderHandler.xml' path='doc/member[@name="IStorageProviderHandler.GetPropertyHandlerFromUri"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetPropertyHandlerFromUri([NativeTypeName("LPCWSTR")] ushort* uri, IStorageProviderPropertyHandler** propertyHandler)
@@ -53,6 +59,7 @@ public unsafe partial struct IStorageProviderHandler : IStorageProviderHandler.I
         return ((delegate* unmanaged<IStorageProviderHandler*, ushort*, IStorageProviderPropertyHandler**, int>)(lpVtbl[4]))((IStorageProviderHandler*)Unsafe.AsPointer(ref this), uri, propertyHandler);
     }
 
+    /// <include file='IStorageProviderHandler.xml' path='doc/member[@name="IStorageProviderHandler.GetPropertyHandlerFromFileId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetPropertyHandlerFromFileId([NativeTypeName("LPCWSTR")] ushort* fileId, IStorageProviderPropertyHandler** propertyHandler)

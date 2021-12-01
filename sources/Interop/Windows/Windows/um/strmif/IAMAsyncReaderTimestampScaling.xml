@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IAMAsyncReaderTimestampScaling.GetTimestampMode">
+    <summary>
+      <para>Gets the filter's time-stamping mode.</para>
+    </summary>
+    <param name="pfRaw">
+      <para>Receives a Boolean value.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>
+              <b>TRUE</b>
+            </b>
+          </description>
+          <description>
+            <para>Time stamps are in units of bytes.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>
+              <b>FALSE</b>
+            </b>
+          </description>
+          <description>
+            <para>Time stamps are in units of bytes × 10000000. To get the offset in bytes, divide the sample time by 10000000.</para>
+          </description>
+        </item>
+      </list>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IAMAsyncReaderTimestampScaling" />
+  </member>
+  <member name="IAMAsyncReaderTimestampScaling.SetTimestampMode">
+    <summary>
+      <para>Sets the filter's time-stamping mode.</para>
+    </summary>
+    <param name="fRaw">
+      <para>Specifies the units for the source filter's time stamps.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>
+              <b>TRUE</b>
+            </b>
+          </description>
+          <description>
+            <para>Time stamps are in units of bytes.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>
+              <b>FALSE</b>
+            </b>
+          </description>
+          <description>
+            <para>Time stamps are in units of bytes × 10000000. To get the offset in bytes, divide the sample time by 10000000.</para>
+          </description>
+        </item>
+      </list>
+      <para>The default value is <b>FALSE</b>.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>To support large files (greater than 850 GB), the downstream parser filter can call this method with the value <b>TRUE</b>. For backward compatibility, the default setting is <b>FALSE</b>. Call the method when the pins connect.</para>
+      <para>Applications should never call this method; doing so will cause the parser filter to misinterpret the time stamps.</para>
+    </remarks>
+    <seealso cref="IAMAsyncReaderTimestampScaling" />
+  </member>
+  <member name="IAMAsyncReaderTimestampScaling">
+    <summary>
+      <para>Enables a pull-mode source filter to support larger file sizes.</para>
+    </summary>
+    <remarks>
+      <para>In the pull model, the parser filter requests data from the source filter by calling <see cref="IAsyncReader.Request" />. The input to this method is a media sample. The time stamp on the sample specifies the location to read in the stream, as a byte offset.</para>
+      <para>By default, the time stamp uses the following formula: Time = byte offset × 10000000. This scaling factor limits the effective file size to about 860 GB. To support larger file sizes, call <see cref="SetTimestampMode" /> with the value <b>TRUE</b>. This call sets the scaling factor to 1, so the formula becomes: Time = byte offset.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/pull-model">Pull Model</seealso>
+  </member>
+</doc>

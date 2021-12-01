@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="_DMO_VIDEO_OUTPUT_STREAM_FLAGS">
+    <summary>
+      <para>The <code>DMO_VIDEO_OUTPUT_STREAM_FLAGS</code> enumeration defines flags that describe requested features, for video optimizations.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dmo-enumerated-types">DMO Enumerated Types</seealso>
+    <seealso cref="IDMOVideoOutputOptimizations" />
+  </member>
+  <member name="_DMO_VIDEO_OUTPUT_STREAM_FLAGS.DMO_VOSF_NEEDS_PREVIOUS_SAMPLE">
+    <summary>
+      <para>Requests that every output buffer passed to the DMO contain the previous data that was generated.</para>
+    </summary>
+  </member>
+</doc>

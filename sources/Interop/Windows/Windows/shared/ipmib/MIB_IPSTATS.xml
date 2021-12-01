@@ -1,0 +1,450 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MIB_IPSTATS">
+    <summary>
+      <para>The
+<b>MIB_IPSTATS</b> structure stores information about the IP protocol running on a particular computer.</para>
+    </summary>
+    <remarks>
+      <para>The
+<b>MIB_IPSTATS</b> structure stores information per protocol (IPv4 or IPv6).</para>
+      <para>The <b>dwForwarding</b> member specifies the per-protocol forwarding state for IPv4 or IPv6, not  the forwarding state for an interface. The forwarding state of each interface state is the state that is in affect for that interface. The per-protocol state returned by the <b>GetIpStatistics</b> or the <b>GetIpStatisticsEx</b> function is not the forwarding state in affect. The <b>dwForwarding</b> member exists to serve two purposes:</para>
+      <list type="bullet">
+        <item>
+          <description>Provides a default value for the forwarding state when a new interface is created with no specific forwarding state (neither disabled nor enabled) . This value is inherited per-protocol state.</description>
+        </item>
+        <item>
+          <description>Provides a value set by  by  a domain administrator to enable or disable a per-protocol forwarding state. The forwarding states of all interfaces using that protocol are also enabled or disabled.
+</description>
+        </item>
+      </list>
+      <para>On the Microsoft Windows Software Development Kit (SDK) released for Windows Vista and later, the organization of header files has changed and the <b>MIB_IPSTATS</b> structure is defined in the <i>Ipmib.h</i> header file not in the <i>Iprtrmib.h</i> header file. Note that the <i>Ipmib.h</i> header file is automatically included in <i>Iprtrmib.h</i> which is automatically included in the <i>Iphlpapi.h</i> header file. The  <i>Ipmib.h</i> and <i>Iprtrmib.h</i> header files should never be used directly.</para>
+    </remarks>
+    <seealso cref="SetIpStatisticsEx" />
+  </member>
+  <member name="MIB_IPSTATS.dwForwarding">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>Specifies whether IP forwarding is enabled or disabled for a protocol (IPv4 or IPv6).</para>
+      <para>On Windows Vista and later, this member is defined as a union containing a <b>DWORD dwForwarding</b> member and a <b>MIB_IPSTATS_FORWARDING Forwarding</b> member where <b>MIB_IPSTATS_FORWARDING</b> is an enumeration defined in the <i>Ipmib.h</i> header file.</para>
+      <para>
+        <b>Note</b>   This member applies to the entire system per protocol (IPv4 or IPv6) and doesn’t return per interface configuration for IP forwarding.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>MIB_IP_FORWARDING</b>
+                </description>
+              </item>
+              <item>
+                <description>1</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>IP forwarding is enabled.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>MIB_IP_NOT_FORWARDING</b>
+                </description>
+              </item>
+              <item>
+                <description>2</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>IP forwarding is not enabled.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>MIB_USE_CURRENT_FORWARDING</b>
+                </description>
+              </item>
+              <item>
+                <description>0xffff</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Use the current IP forwarding setting. This value is only applicable when setting the forwarding and time-to-live (TTL) options using the <b>SetIpStatistics</b> and <see cref="SetIpStatisticsEx" /> functions.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="MIB_IPSTATS.Forwarding">
+    <summary></summary>
+  </member>
+  <member name="MIB_IPSTATS.dwDefaultTTL">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The default initial time-to-live (TTL) for datagrams originating on a particular computer.</para>
+      <para>This member can be set to <b>MIB_USE_CURRENT_TTL</b> to use the current default TTL value when setting the forwarding and time-to-live (TTL) options using the <b>SetIpStatistics</b> and <see cref="SetIpStatisticsEx" /> functions.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPSTATS.dwInReceives">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The number of datagrams received.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPSTATS.dwInHdrErrors">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The number of datagrams received that have header errors.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPSTATS.dwInAddrErrors">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The number of datagrams received that have address errors.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPSTATS.dwForwDatagrams">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The number of datagrams forwarded.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPSTATS.dwInUnknownProtos">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The number of datagrams received that have an unknown protocol.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPSTATS.dwInDiscards">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The number of received datagrams discarded.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPSTATS.dwInDelivers">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The number of received datagrams delivered.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPSTATS.dwOutRequests">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The number of outgoing datagrams that IP is requested to transmit. This number does not include forwarded datagrams.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPSTATS.dwRoutingDiscards">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The number of outgoing datagrams discarded.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPSTATS.dwOutDiscards">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The number of transmitted datagrams discarded.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPSTATS.dwOutNoRoutes">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The number of datagrams for which this computer did not have a route to the destination IP address. These datagrams were discarded.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPSTATS.dwReasmTimeout">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The amount of time allowed for all pieces of a fragmented datagram to arrive. If all pieces do not arrive within this time, the datagram is discarded.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPSTATS.dwReasmReqds">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The number of datagrams that require re-assembly.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPSTATS.dwReasmOks">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The number of datagrams that were successfully reassembled.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPSTATS.dwReasmFails">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The number of datagrams that cannot be reassembled.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPSTATS.dwFragOks">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The number of datagrams that were fragmented successfully.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPSTATS.dwFragFails">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The number of datagrams that have not been fragmented because the IP header specifies no fragmentation. These datagrams are discarded.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPSTATS.dwFragCreates">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The number of fragments created.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPSTATS.dwNumIf">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The number of interfaces.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPSTATS.dwNumAddr">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The number of IP addresses associated with this computer.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPSTATS.dwNumRoutes">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The number of routes in the IP routing table.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPSTATS">
+    <summary>
+      <para>The
+<b>MIB_IPSTATS</b> structure stores information about the IP protocol running on a particular computer.</para>
+    </summary>
+    <remarks>
+      <para>The
+<b>MIB_IPSTATS</b> structure stores information per protocol (IPv4 or IPv6).</para>
+      <para>The <b>dwForwarding</b> member specifies the per-protocol forwarding state for IPv4 or IPv6, not  the forwarding state for an interface. The forwarding state of each interface state is the state that is in affect for that interface. The per-protocol state returned by the <b>GetIpStatistics</b> or the <b>GetIpStatisticsEx</b> function is not the forwarding state in affect. The <b>dwForwarding</b> member exists to serve two purposes:</para>
+      <list type="bullet">
+        <item>
+          <description>Provides a default value for the forwarding state when a new interface is created with no specific forwarding state (neither disabled nor enabled) . This value is inherited per-protocol state.</description>
+        </item>
+        <item>
+          <description>Provides a value set by  by  a domain administrator to enable or disable a per-protocol forwarding state. The forwarding states of all interfaces using that protocol are also enabled or disabled.
+</description>
+        </item>
+      </list>
+      <para>On the Microsoft Windows Software Development Kit (SDK) released for Windows Vista and later, the organization of header files has changed and the <b>MIB_IPSTATS</b> structure is defined in the <i>Ipmib.h</i> header file not in the <i>Iprtrmib.h</i> header file. Note that the <i>Ipmib.h</i> header file is automatically included in <i>Iprtrmib.h</i> which is automatically included in the <i>Iphlpapi.h</i> header file. The  <i>Ipmib.h</i> and <i>Iprtrmib.h</i> header files should never be used directly.</para>
+    </remarks>
+    <seealso cref="SetIpStatisticsEx" />
+  </member>
+  <member name="MIB_IPSTATS.dwForwarding">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>Specifies whether IP forwarding is enabled or disabled for a protocol (IPv4 or IPv6).</para>
+      <para>On Windows Vista and later, this member is defined as a union containing a <b>DWORD dwForwarding</b> member and a <b>MIB_IPSTATS_FORWARDING Forwarding</b> member where <b>MIB_IPSTATS_FORWARDING</b> is an enumeration defined in the <i>Ipmib.h</i> header file.</para>
+      <para>
+        <b>Note</b>   This member applies to the entire system per protocol (IPv4 or IPv6) and doesn’t return per interface configuration for IP forwarding.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>MIB_IP_FORWARDING</b>
+                </description>
+              </item>
+              <item>
+                <description>1</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>IP forwarding is enabled.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>MIB_IP_NOT_FORWARDING</b>
+                </description>
+              </item>
+              <item>
+                <description>2</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>IP forwarding is not enabled.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>MIB_USE_CURRENT_FORWARDING</b>
+                </description>
+              </item>
+              <item>
+                <description>0xffff</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Use the current IP forwarding setting. This value is only applicable when setting the forwarding and time-to-live (TTL) options using the <b>SetIpStatistics</b> and <see cref="SetIpStatisticsEx" /> functions.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="MIB_IPSTATS.dwDefaultTTL">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The default initial time-to-live (TTL) for datagrams originating on a particular computer.</para>
+      <para>This member can be set to <b>MIB_USE_CURRENT_TTL</b> to use the current default TTL value when setting the forwarding and time-to-live (TTL) options using the <b>SetIpStatistics</b> and <see cref="SetIpStatisticsEx" /> functions.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPSTATS.dwInReceives">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The number of datagrams received.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPSTATS.dwInHdrErrors">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The number of datagrams received that have header errors.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPSTATS.dwInAddrErrors">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The number of datagrams received that have address errors.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPSTATS.dwForwDatagrams">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The number of datagrams forwarded.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPSTATS.dwInUnknownProtos">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The number of datagrams received that have an unknown protocol.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPSTATS.dwInDiscards">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The number of received datagrams discarded.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPSTATS.dwInDelivers">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The number of received datagrams delivered.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPSTATS.dwOutRequests">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The number of outgoing datagrams that IP is requested to transmit. This number does not include forwarded datagrams.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPSTATS.dwRoutingDiscards">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The number of outgoing datagrams discarded.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPSTATS.dwOutDiscards">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The number of transmitted datagrams discarded.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPSTATS.dwOutNoRoutes">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The number of datagrams for which this computer did not have a route to the destination IP address. These datagrams were discarded.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPSTATS.dwReasmTimeout">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The amount of time allowed for all pieces of a fragmented datagram to arrive. If all pieces do not arrive within this time, the datagram is discarded.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPSTATS.dwReasmReqds">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The number of datagrams that require re-assembly.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPSTATS.dwReasmOks">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The number of datagrams that were successfully reassembled.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPSTATS.dwReasmFails">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The number of datagrams that cannot be reassembled.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPSTATS.dwFragOks">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The number of datagrams that were fragmented successfully.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPSTATS.dwFragFails">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The number of datagrams that have not been fragmented because the IP header specifies no fragmentation. These datagrams are discarded.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPSTATS.dwFragCreates">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The number of fragments created.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPSTATS.dwNumIf">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The number of interfaces.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPSTATS.dwNumAddr">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The number of IP addresses associated with this computer.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPSTATS.dwNumRoutes">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The number of routes in the IP routing table.</para>
+    </summary>
+  </member>
+</doc>

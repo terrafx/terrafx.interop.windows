@@ -5,12 +5,16 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SPWORDLIST.xml' path='doc/member[@name="SPWORDLIST"]/*' />
 public unsafe partial struct SPWORDLIST
 {
+    /// <include file='SPWORDLIST.xml' path='doc/member[@name="SPWORDLIST.ulSize"]/*' />
     [NativeTypeName("ULONG")]
     public uint ulSize;
 
+    /// <include file='SPWORDLIST.xml' path='doc/member[@name="SPWORDLIST.pvBuffer"]/*' />
     public byte* pvBuffer;
 
+    /// <include file='SPWORDLIST.xml' path='doc/member[@name="SPWORDLIST.pFirstWord"]/*' />
     public SPWORD* pFirstWord;
 }

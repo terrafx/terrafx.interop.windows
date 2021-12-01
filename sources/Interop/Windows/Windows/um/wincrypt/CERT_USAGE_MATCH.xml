@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CERT_USAGE_MATCH">
+    <summary>
+      <para>The <b>CERT_USAGE_MATCH</b> structure provides criteria for identifying issuer certificates to be used to build a certificate chain.</para>
+    </summary>
+    <remarks>
+      <para>If the <i>dwType</i> member is set to <b>USAGE_MATCH_TYPE_OR</b>, the <i>Usage</i> member cannot be empty.</para>
+      <para>If the <i>dwType</i> member is set to <b>USAGE_MATCH_TYPE_AND</b>, an empty <i>Usage</i> member means that any nested usage in the chain will work.</para>
+      <para>The following describes the behavior given two enhanced key usage (EKU) extensions EKU A and EKU B.</para>
+      <h3>AND Logic</h3>
+      <para>If the caller specifies EKU A AND EKU B then the target certificate is valid if EKU A and EKU B are supported by every certificate in the path (either by an explicit EKU setting or through an absent EKU extension in CA certificates.)</para>
+      <h3>OR Logic</h3>
+      <para>If the caller specifies EKU A OR EKU B then the target certificate is valid if either EKU A or EKU B is supported in the path.</para>
+      <para>Besides the simple case where the certificates in the path contain EKU A or EKU B, the <b>OR</b> clause has the following special evaluation.</para>
+      <para>Given the following path, the <b>OR</b> test is deemed valid:</para>
+      <para>Although the intersection of the EKUs in the chain is an empty set, the use of the EE certificate is valid for EKU A because the request to the cryptography API specifies that the certificate is valid if each certificate of the path supports either EKU A OR EKU B.</para>
+    </remarks>
+  </member>
+  <member name="CERT_USAGE_MATCH.dwType">
+    <summary>
+      <para>Determines the kind of issuer matching to be done. In <b>AND</b> logic, the certificate must meet all criteria. In <b>OR</b> logic, the certificate must meet at least one of the criteria. The following codes are defined to determine the logic used in the match. For more information about how this applied, see Remarks.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>USAGE_MATCH_TYPE_AND</b>
+          </description>
+          <description>
+            <b>AND</b> logic
+</description>
+        </item>
+        <item>
+          <description>
+            <b>USAGE_MATCH_TYPE_OR</b>
+          </description>
+          <description>
+            <b>OR</b> logic
+</description>
+        </item>
+      </list>
+      <para>Default usage match logic is USAGE_MATCH_TYPE_AND.</para>
+    </summary>
+  </member>
+  <member name="CERT_USAGE_MATCH.Usage">
+    <summary>
+      <para>
+        <see cref="CERT_ENHKEY_USAGE" /> structure (<b>CERT_ENHKEY_USAGE</b> is an alternate typedef name for the <b>CTL_USAGE</b> structure) that includes an array of certificate <a href="https://docs.microsoft.com//windows/desktop/SecGloss/o-gly">object identifiers</a> (OIDs) that a certificate must match in order to be valid.</para>
+    </summary>
+  </member>
+</doc>

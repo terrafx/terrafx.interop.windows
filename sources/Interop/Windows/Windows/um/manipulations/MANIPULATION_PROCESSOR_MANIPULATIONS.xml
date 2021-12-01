@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MANIPULATION_PROCESSOR_MANIPULATIONS">
+    <summary>
+      <para>The <b>MANIPULATION_PROCESSOR_MANIPULATIONS</b> enumeration different kinds of manipulation which can be applied on a target object.</para>
+    </summary>
+    <remarks>
+      <para>Use this enumeration with the <see cref="SupportedManipulations" /> property to get and
+set the kind of manipulation data you want to receive from the <see cref="IManipulationProcessor" /> interface.
+You can combine different kinds of manipulations by a bitwise OR.</para>
+      <h4>Examples</h4>
+      <code>
+        CoInitialize(0);
+
+        hr = spIManipProc.CoCreateInstance(CLSID_ManipulationProcessor, NULL, CLSCTX_ALL);
+
+        MANIPULATION_PROCESSOR_MANIPULATIONS mpm;
+        spIManipProc-&gt;get_SupportedManipulations(&amp;amp;amp;amp;amp;amp;mpm);
+
+</code>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/rts-functions">Enumerations</seealso>
+  </member>
+  <member name="MANIPULATION_PROCESSOR_MANIPULATIONS.MANIPULATION_NONE">
+    <summary>
+      <para>Indicates that no manipulations are performed.</para>
+    </summary>
+  </member>
+  <member name="MANIPULATION_PROCESSOR_MANIPULATIONS.MANIPULATION_TRANSLATE_X">
+    <summary>
+      <para>Indicates manipulation by moving the target across the horizontal axis.</para>
+    </summary>
+  </member>
+  <member name="MANIPULATION_PROCESSOR_MANIPULATIONS.MANIPULATION_TRANSLATE_Y">
+    <summary>
+      <para>Indicates manipulation by moving the target across the vertical axis.</para>
+    </summary>
+  </member>
+  <member name="MANIPULATION_PROCESSOR_MANIPULATIONS.MANIPULATION_SCALE">
+    <summary>
+      <para>Indicates manipulation by making the target larger or smaller.</para>
+    </summary>
+  </member>
+  <member name="MANIPULATION_PROCESSOR_MANIPULATIONS.MANIPULATION_ROTATE">
+    <summary>
+      <para>Indicates manipulation by rotating the target.</para>
+    </summary>
+  </member>
+  <member name="MANIPULATION_PROCESSOR_MANIPULATIONS.MANIPULATION_ALL">
+    <summary>
+      <para>Indicates all manipulations are enabled.</para>
+    </summary>
+  </member>
+</doc>

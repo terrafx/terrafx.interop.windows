@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="TBS_CONTEXT_PARAMS2">
+    <summary>
+      <para>Specifies the version of the TBS context implementation. You must use this structure if your application works with both versions of TPM.</para>
+      <para>Applications interacting with just TPM 2.0 should pass a pointer to a <b>TBS_CONTEXT_PARAMS2</b> structure, with  <b>version</b> set to TPM_VERSION_20, and <b>includeTpm20</b> set to 1.</para>
+      <para>Applications interacting with both TPM 1.2 and TPM 2.0 should pass a pointer to a <b>TBS_CONTEXT_PARAMS2</b> structure, with  <b>version</b> set to TPM_VERSION_20, <b>includeTpm20</b> set to 1, and <b>includeTpm12</b> set to 1.</para>
+    </summary>
+  </member>
+  <member name="TBS_CONTEXT_PARAMS2.version">
+    <summary>
+      <para>The version of the TBS context implementation. This must be set to     TPM_VERSION_20.</para>
+    </summary>
+  </member>
+  <member name="TBS_CONTEXT_PARAMS2.requestRaw">
+    <summary></summary>
+  </member>
+  <member name="TBS_CONTEXT_PARAMS2.includeTpm12">
+    <summary></summary>
+  </member>
+  <member name="TBS_CONTEXT_PARAMS2.includeTpm20">
+    <summary></summary>
+  </member>
+  <member name="TBS_CONTEXT_PARAMS2.asUINT32">
+    <summary>
+      <para>Used to access all of the  bits in one variable.</para>
+    </summary>
+  </member>
+  <member name="TBS_CONTEXT_PARAMS2.includeTpm12:1">
+    <summary>
+      <para>Set to 1 if the TBS commands are to work on TPM 1.2.</para>
+    </summary>
+  </member>
+  <member name="TBS_CONTEXT_PARAMS2.includeTpm20:1">
+    <summary>
+      <para>Set to 1 if the TBS commands are to work on TPM 2.0.</para>
+    </summary>
+  </member>
+  <member name="TBS_CONTEXT_PARAMS2.requestRaw:1">
+    <summary>
+      <para>Set to 1 to request raw content.</para>
+    </summary>
+  </member>
+</doc>

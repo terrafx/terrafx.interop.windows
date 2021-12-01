@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DISPID_SpeechMemoryStream.xml' path='doc/member[@name="DISPID_SpeechMemoryStream"]/*' />
 public enum DISPID_SpeechMemoryStream
 {
+    /// <include file='DISPID_SpeechMemoryStream.xml' path='doc/member[@name="DISPID_SpeechMemoryStream.DISPID_SMSSetData"]/*' />
     DISPID_SMSSetData = 100,
+
+    /// <include file='DISPID_SpeechMemoryStream.xml' path='doc/member[@name="DISPID_SpeechMemoryStream.DISPID_SMSGetData"]/*' />
     DISPID_SMSGetData = (DISPID_SMSSetData + 1),
 }

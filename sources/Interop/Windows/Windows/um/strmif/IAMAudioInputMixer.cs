@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAMAudioInputMixer.xml' path='doc/member[@name="IAMAudioInputMixer"]/*' />
 [Guid("54C39221-8380-11D0-B3F0-00AA003761C5")]
 [NativeTypeName("struct IAMAudioInputMixer : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IAMAudioInputMixer : IAMAudioInputMixer.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IAMAudioInputMixer : IAMAudioInputMixer.Interface
         return ((delegate* unmanaged<IAMAudioInputMixer*, Guid*, void**, int>)(lpVtbl[0]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IAMAudioInputMixer : IAMAudioInputMixer.Interface
         return ((delegate* unmanaged<IAMAudioInputMixer*, uint>)(lpVtbl[1]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IAMAudioInputMixer : IAMAudioInputMixer.Interface
         return ((delegate* unmanaged<IAMAudioInputMixer*, uint>)(lpVtbl[2]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAMAudioInputMixer.xml' path='doc/member[@name="IAMAudioInputMixer.put_Enable"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT put_Enable(BOOL fEnable)
@@ -46,6 +51,7 @@ public unsafe partial struct IAMAudioInputMixer : IAMAudioInputMixer.Interface
         return ((delegate* unmanaged<IAMAudioInputMixer*, BOOL, int>)(lpVtbl[3]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), fEnable);
     }
 
+    /// <include file='IAMAudioInputMixer.xml' path='doc/member[@name="IAMAudioInputMixer.get_Enable"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT get_Enable(BOOL* pfEnable)
@@ -53,6 +59,7 @@ public unsafe partial struct IAMAudioInputMixer : IAMAudioInputMixer.Interface
         return ((delegate* unmanaged<IAMAudioInputMixer*, BOOL*, int>)(lpVtbl[4]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), pfEnable);
     }
 
+    /// <include file='IAMAudioInputMixer.xml' path='doc/member[@name="IAMAudioInputMixer.put_Mono"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT put_Mono(BOOL fMono)
@@ -60,6 +67,7 @@ public unsafe partial struct IAMAudioInputMixer : IAMAudioInputMixer.Interface
         return ((delegate* unmanaged<IAMAudioInputMixer*, BOOL, int>)(lpVtbl[5]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), fMono);
     }
 
+    /// <include file='IAMAudioInputMixer.xml' path='doc/member[@name="IAMAudioInputMixer.get_Mono"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT get_Mono(BOOL* pfMono)
@@ -67,6 +75,7 @@ public unsafe partial struct IAMAudioInputMixer : IAMAudioInputMixer.Interface
         return ((delegate* unmanaged<IAMAudioInputMixer*, BOOL*, int>)(lpVtbl[6]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), pfMono);
     }
 
+    /// <include file='IAMAudioInputMixer.xml' path='doc/member[@name="IAMAudioInputMixer.put_MixLevel"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT put_MixLevel(double Level)
@@ -74,6 +83,7 @@ public unsafe partial struct IAMAudioInputMixer : IAMAudioInputMixer.Interface
         return ((delegate* unmanaged<IAMAudioInputMixer*, double, int>)(lpVtbl[7]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), Level);
     }
 
+    /// <include file='IAMAudioInputMixer.xml' path='doc/member[@name="IAMAudioInputMixer.get_MixLevel"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT get_MixLevel(double* pLevel)
@@ -81,6 +91,7 @@ public unsafe partial struct IAMAudioInputMixer : IAMAudioInputMixer.Interface
         return ((delegate* unmanaged<IAMAudioInputMixer*, double*, int>)(lpVtbl[8]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), pLevel);
     }
 
+    /// <include file='IAMAudioInputMixer.xml' path='doc/member[@name="IAMAudioInputMixer.put_Pan"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT put_Pan(double Pan)
@@ -88,6 +99,7 @@ public unsafe partial struct IAMAudioInputMixer : IAMAudioInputMixer.Interface
         return ((delegate* unmanaged<IAMAudioInputMixer*, double, int>)(lpVtbl[9]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), Pan);
     }
 
+    /// <include file='IAMAudioInputMixer.xml' path='doc/member[@name="IAMAudioInputMixer.get_Pan"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT get_Pan(double* pPan)
@@ -95,6 +107,7 @@ public unsafe partial struct IAMAudioInputMixer : IAMAudioInputMixer.Interface
         return ((delegate* unmanaged<IAMAudioInputMixer*, double*, int>)(lpVtbl[10]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), pPan);
     }
 
+    /// <include file='IAMAudioInputMixer.xml' path='doc/member[@name="IAMAudioInputMixer.put_Loudness"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT put_Loudness(BOOL fLoudness)
@@ -102,6 +115,7 @@ public unsafe partial struct IAMAudioInputMixer : IAMAudioInputMixer.Interface
         return ((delegate* unmanaged<IAMAudioInputMixer*, BOOL, int>)(lpVtbl[11]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), fLoudness);
     }
 
+    /// <include file='IAMAudioInputMixer.xml' path='doc/member[@name="IAMAudioInputMixer.get_Loudness"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT get_Loudness(BOOL* pfLoudness)
@@ -109,6 +123,7 @@ public unsafe partial struct IAMAudioInputMixer : IAMAudioInputMixer.Interface
         return ((delegate* unmanaged<IAMAudioInputMixer*, BOOL*, int>)(lpVtbl[12]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), pfLoudness);
     }
 
+    /// <include file='IAMAudioInputMixer.xml' path='doc/member[@name="IAMAudioInputMixer.put_Treble"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT put_Treble(double Treble)
@@ -116,6 +131,7 @@ public unsafe partial struct IAMAudioInputMixer : IAMAudioInputMixer.Interface
         return ((delegate* unmanaged<IAMAudioInputMixer*, double, int>)(lpVtbl[13]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), Treble);
     }
 
+    /// <include file='IAMAudioInputMixer.xml' path='doc/member[@name="IAMAudioInputMixer.get_Treble"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT get_Treble(double* pTreble)
@@ -123,6 +139,7 @@ public unsafe partial struct IAMAudioInputMixer : IAMAudioInputMixer.Interface
         return ((delegate* unmanaged<IAMAudioInputMixer*, double*, int>)(lpVtbl[14]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), pTreble);
     }
 
+    /// <include file='IAMAudioInputMixer.xml' path='doc/member[@name="IAMAudioInputMixer.get_TrebleRange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT get_TrebleRange(double* pRange)
@@ -130,6 +147,7 @@ public unsafe partial struct IAMAudioInputMixer : IAMAudioInputMixer.Interface
         return ((delegate* unmanaged<IAMAudioInputMixer*, double*, int>)(lpVtbl[15]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), pRange);
     }
 
+    /// <include file='IAMAudioInputMixer.xml' path='doc/member[@name="IAMAudioInputMixer.put_Bass"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT put_Bass(double Bass)
@@ -137,6 +155,7 @@ public unsafe partial struct IAMAudioInputMixer : IAMAudioInputMixer.Interface
         return ((delegate* unmanaged<IAMAudioInputMixer*, double, int>)(lpVtbl[16]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), Bass);
     }
 
+    /// <include file='IAMAudioInputMixer.xml' path='doc/member[@name="IAMAudioInputMixer.get_Bass"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT get_Bass(double* pBass)
@@ -144,6 +163,7 @@ public unsafe partial struct IAMAudioInputMixer : IAMAudioInputMixer.Interface
         return ((delegate* unmanaged<IAMAudioInputMixer*, double*, int>)(lpVtbl[17]))((IAMAudioInputMixer*)Unsafe.AsPointer(ref this), pBass);
     }
 
+    /// <include file='IAMAudioInputMixer.xml' path='doc/member[@name="IAMAudioInputMixer.get_BassRange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT get_BassRange(double* pRange)

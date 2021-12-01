@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IDecimateVideoImage.xml' path='doc/member[@name="IDecimateVideoImage"]/*' />
 [Guid("2E5EA3E0-E924-11D2-B6DA-00A0C995E8DF")]
 [NativeTypeName("struct IDecimateVideoImage : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IDecimateVideoImage : IDecimateVideoImage.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IDecimateVideoImage : IDecimateVideoImage.Interface
         return ((delegate* unmanaged<IDecimateVideoImage*, Guid*, void**, int>)(lpVtbl[0]))((IDecimateVideoImage*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IDecimateVideoImage : IDecimateVideoImage.Interface
         return ((delegate* unmanaged<IDecimateVideoImage*, uint>)(lpVtbl[1]))((IDecimateVideoImage*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IDecimateVideoImage : IDecimateVideoImage.Interface
         return ((delegate* unmanaged<IDecimateVideoImage*, uint>)(lpVtbl[2]))((IDecimateVideoImage*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDecimateVideoImage.xml' path='doc/member[@name="IDecimateVideoImage.SetDecimationImageSize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetDecimationImageSize([NativeTypeName("long")] int lWidth, [NativeTypeName("long")] int lHeight)
@@ -46,6 +51,7 @@ public unsafe partial struct IDecimateVideoImage : IDecimateVideoImage.Interface
         return ((delegate* unmanaged<IDecimateVideoImage*, int, int, int>)(lpVtbl[3]))((IDecimateVideoImage*)Unsafe.AsPointer(ref this), lWidth, lHeight);
     }
 
+    /// <include file='IDecimateVideoImage.xml' path='doc/member[@name="IDecimateVideoImage.ResetDecimationImageSize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT ResetDecimationImageSize()

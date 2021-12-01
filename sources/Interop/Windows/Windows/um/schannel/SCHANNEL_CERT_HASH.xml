@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SCHANNEL_CERT_HASH">
+    <summary>
+      <para>Contains the hash store data for the certificate that Schannel uses.</para>
+    </summary>
+  </member>
+  <member name="SCHANNEL_CERT_HASH.dwLength">
+    <summary>
+      <para>The size, in bytes, of this structure.</para>
+    </summary>
+  </member>
+  <member name="SCHANNEL_CERT_HASH.dwFlags">
+    <summary>
+      <para>Contains bit flags that control the behavior of Schannel. This member can be zero or the following value.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>SCH_MACHINE_CERT_HASH</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000001</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The certificate hash of the computer.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="SCHANNEL_CERT_HASH.hProv">
+    <summary>
+      <para>Handle to the cryptography provider.</para>
+    </summary>
+  </member>
+  <member name="SCHANNEL_CERT_HASH.ShaHash">
+    <summary>
+      <para>The secure hash algorithm.</para>
+    </summary>
+  </member>
+</doc>

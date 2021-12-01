@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='svgFocusable.xml' path='doc/member[@name="svgFocusable"]/*' />
 public enum svgFocusable
 {
+    /// <include file='svgFocusable.xml' path='doc/member[@name="svgFocusable.svgFocusableNotSet"]/*' />
     svgFocusableNotSet = 0,
+
+    /// <include file='svgFocusable.xml' path='doc/member[@name="svgFocusable.svgFocusableAuto"]/*' />
     svgFocusableAuto = 1,
+
+    /// <include file='svgFocusable.xml' path='doc/member[@name="svgFocusable.svgFocusableTrue"]/*' />
     svgFocusableTrue = 2,
+
+    /// <include file='svgFocusable.xml' path='doc/member[@name="svgFocusable.svgFocusableFalse"]/*' />
     svgFocusableFalse = 3,
+
+    /// <include file='svgFocusable.xml' path='doc/member[@name="svgFocusable.svgFocusable_Max"]/*' />
     svgFocusable_Max = 2147483647,
 }

@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WICBitmapAlphaChannelOption.xml' path='doc/member[@name="WICBitmapAlphaChannelOption"]/*' />
 public enum WICBitmapAlphaChannelOption
 {
+    /// <include file='WICBitmapAlphaChannelOption.xml' path='doc/member[@name="WICBitmapAlphaChannelOption.WICBitmapUseAlpha"]/*' />
     WICBitmapUseAlpha = 0,
+
+    /// <include file='WICBitmapAlphaChannelOption.xml' path='doc/member[@name="WICBitmapAlphaChannelOption.WICBitmapUsePremultipliedAlpha"]/*' />
     WICBitmapUsePremultipliedAlpha = 0x1,
+
+    /// <include file='WICBitmapAlphaChannelOption.xml' path='doc/member[@name="WICBitmapAlphaChannelOption.WICBitmapIgnoreAlpha"]/*' />
     WICBitmapIgnoreAlpha = 0x2,
+
+    /// <include file='WICBitmapAlphaChannelOption.xml' path='doc/member[@name="WICBitmapAlphaChannelOption.WICBITMAPALPHACHANNELOPTIONS_FORCE_DWORD"]/*' />
     WICBITMAPALPHACHANNELOPTIONS_FORCE_DWORD = 0x7fffffff,
 }

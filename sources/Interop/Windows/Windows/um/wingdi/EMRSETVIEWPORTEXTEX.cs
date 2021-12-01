@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='EMRSETVIEWPORTEXTEX.xml' path='doc/member[@name="EMRSETVIEWPORTEXTEX"]/*' />
 public partial struct EMRSETVIEWPORTEXTEX
 {
+    /// <include file='EMRSETVIEWPORTEXTEX.xml' path='doc/member[@name="EMRSETVIEWPORTEXTEX.emr"]/*' />
     public EMR emr;
 
+    /// <include file='EMRSETVIEWPORTEXTEX.xml' path='doc/member[@name="EMRSETVIEWPORTEXTEX.szlExtent"]/*' />
     [NativeTypeName("SIZEL")]
     public SIZE szlExtent;
 }

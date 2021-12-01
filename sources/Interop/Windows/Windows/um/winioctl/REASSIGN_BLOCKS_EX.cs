@@ -9,18 +9,23 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='REASSIGN_BLOCKS_EX.xml' path='doc/member[@name="REASSIGN_BLOCKS_EX"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct REASSIGN_BLOCKS_EX
 {
+    /// <include file='REASSIGN_BLOCKS_EX.xml' path='doc/member[@name="REASSIGN_BLOCKS_EX.Reserved"]/*' />
     [NativeTypeName("WORD")]
     public ushort Reserved;
 
+    /// <include file='REASSIGN_BLOCKS_EX.xml' path='doc/member[@name="REASSIGN_BLOCKS_EX.Count"]/*' />
     [NativeTypeName("WORD")]
     public ushort Count;
 
+    /// <include file='REASSIGN_BLOCKS_EX.xml' path='doc/member[@name="REASSIGN_BLOCKS_EX.BlockNumber"]/*' />
     [NativeTypeName("LARGE_INTEGER [1]")]
     public _BlockNumber_e__FixedBuffer BlockNumber;
 
+    /// <include file='_BlockNumber_e__FixedBuffer.xml' path='doc/member[@name="_BlockNumber_e__FixedBuffer"]/*' />
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public partial struct _BlockNumber_e__FixedBuffer
     {

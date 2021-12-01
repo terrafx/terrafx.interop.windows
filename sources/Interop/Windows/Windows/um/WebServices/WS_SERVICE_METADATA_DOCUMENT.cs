@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_SERVICE_METADATA_DOCUMENT.xml' path='doc/member[@name="WS_SERVICE_METADATA_DOCUMENT"]/*' />
 public unsafe partial struct WS_SERVICE_METADATA_DOCUMENT
 {
+    /// <include file='WS_SERVICE_METADATA_DOCUMENT.xml' path='doc/member[@name="WS_SERVICE_METADATA_DOCUMENT.content"]/*' />
     public WS_XML_STRING* content;
 
+    /// <include file='WS_SERVICE_METADATA_DOCUMENT.xml' path='doc/member[@name="WS_SERVICE_METADATA_DOCUMENT.name"]/*' />
     public WS_STRING* name;
 }

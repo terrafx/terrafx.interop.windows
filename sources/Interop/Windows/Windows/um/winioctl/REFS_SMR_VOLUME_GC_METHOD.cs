@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='REFS_SMR_VOLUME_GC_METHOD.xml' path='doc/member[@name="REFS_SMR_VOLUME_GC_METHOD"]/*' />
 public enum REFS_SMR_VOLUME_GC_METHOD
 {
+    /// <include file='REFS_SMR_VOLUME_GC_METHOD.xml' path='doc/member[@name="REFS_SMR_VOLUME_GC_METHOD.SmrGcMethodCompaction"]/*' />
     SmrGcMethodCompaction = 1,
+
+    /// <include file='REFS_SMR_VOLUME_GC_METHOD.xml' path='doc/member[@name="REFS_SMR_VOLUME_GC_METHOD.SmrGcMethodCompression"]/*' />
     SmrGcMethodCompression = 2,
+
+    /// <include file='REFS_SMR_VOLUME_GC_METHOD.xml' path='doc/member[@name="REFS_SMR_VOLUME_GC_METHOD.SmrGcMethodRotation"]/*' />
     SmrGcMethodRotation = 3,
 }

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IAppxEncryptedPackageWriter2.AddPayloadFilesEncrypted">
+    <summary>
+      <para>Adds one or more payload files to an encrypted app package.</para>
+    </summary>
+    <param name="fileCount">
+      <para>The number of payload files to be added to the encrypted app package.</para>
+    </param>
+    <param name="payloadFiles">
+      <para>The payload files to be added.</para>
+    </param>
+    <param name="memoryLimit">
+      <para>The memory limit in bytes.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an error code.</para>
+    </returns>
+    <seealso cref="IAppxEncryptedPackageWriter2" />
+  </member>
+  <member name="IAppxEncryptedPackageWriter2">
+    <summary>
+      <para>Provides a write-only object model for encrypted app packages.</para>
+    </summary>
+  </member>
+</doc>

@@ -5,12 +5,16 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMAGE_NT_HEADERS64.xml' path='doc/member[@name="IMAGE_NT_HEADERS64"]/*' />
 public partial struct IMAGE_NT_HEADERS64
 {
+    /// <include file='IMAGE_NT_HEADERS64.xml' path='doc/member[@name="IMAGE_NT_HEADERS64.Signature"]/*' />
     [NativeTypeName("DWORD")]
     public uint Signature;
 
+    /// <include file='IMAGE_NT_HEADERS64.xml' path='doc/member[@name="IMAGE_NT_HEADERS64.FileHeader"]/*' />
     public IMAGE_FILE_HEADER FileHeader;
 
+    /// <include file='IMAGE_NT_HEADERS64.xml' path='doc/member[@name="IMAGE_NT_HEADERS64.OptionalHeader"]/*' />
     public IMAGE_OPTIONAL_HEADER64 OptionalHeader;
 }

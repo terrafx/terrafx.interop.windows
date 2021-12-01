@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFTimedTextBouten.xml' path='doc/member[@name="IMFTimedTextBouten"]/*' />
 [Guid("3C5F3E8A-90C0-464E-8136-898D2975F847")]
 [NativeTypeName("struct IMFTimedTextBouten : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMFTimedTextBouten : IMFTimedTextBouten.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMFTimedTextBouten : IMFTimedTextBouten.Interface
         return ((delegate* unmanaged<IMFTimedTextBouten*, Guid*, void**, int>)(lpVtbl[0]))((IMFTimedTextBouten*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMFTimedTextBouten : IMFTimedTextBouten.Interface
         return ((delegate* unmanaged<IMFTimedTextBouten*, uint>)(lpVtbl[1]))((IMFTimedTextBouten*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMFTimedTextBouten : IMFTimedTextBouten.Interface
         return ((delegate* unmanaged<IMFTimedTextBouten*, uint>)(lpVtbl[2]))((IMFTimedTextBouten*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFTimedTextBouten.xml' path='doc/member[@name="IMFTimedTextBouten.GetBoutenType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetBoutenType(MF_TIMED_TEXT_BOUTEN_TYPE* value)
@@ -46,6 +51,7 @@ public unsafe partial struct IMFTimedTextBouten : IMFTimedTextBouten.Interface
         return ((delegate* unmanaged<IMFTimedTextBouten*, MF_TIMED_TEXT_BOUTEN_TYPE*, int>)(lpVtbl[3]))((IMFTimedTextBouten*)Unsafe.AsPointer(ref this), value);
     }
 
+    /// <include file='IMFTimedTextBouten.xml' path='doc/member[@name="IMFTimedTextBouten.GetBoutenColor"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetBoutenColor(MFARGB* value)
@@ -53,6 +59,7 @@ public unsafe partial struct IMFTimedTextBouten : IMFTimedTextBouten.Interface
         return ((delegate* unmanaged<IMFTimedTextBouten*, MFARGB*, int>)(lpVtbl[4]))((IMFTimedTextBouten*)Unsafe.AsPointer(ref this), value);
     }
 
+    /// <include file='IMFTimedTextBouten.xml' path='doc/member[@name="IMFTimedTextBouten.GetBoutenPosition"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetBoutenPosition(MF_TIMED_TEXT_BOUTEN_POSITION* value)

@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SP_PROPCHANGE_PARAMS">
+    <summary>
+      <para>An SP_PROPCHANGE_PARAMS structure corresponds to a <a href="https://docs.microsoft.com//windows-hardware/drivers/install/dif-propertychange">DIF_PROPERTYCHANGE</a> installation request.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows-hardware/drivers/install/dif-propertychange">DIF_PROPERTYCHANGE</seealso>
+    <seealso cref="SP_CLASSINSTALL_HEADER" />
+    <seealso cref="SetupDiCallClassInstaller" />
+    <seealso cref="SetupDiChangeState" />
+  </member>
+  <member name="SP_PROPCHANGE_PARAMS.ClassInstallHeader">
+    <summary>
+      <para>An install request header that contains the header size and the DIF code for the request. See <see cref="SP_CLASSINSTALL_HEADER" />.</para>
+    </summary>
+  </member>
+  <member name="SP_PROPCHANGE_PARAMS.StateChange">
+    <summary>
+      <para>State change action. Can be one of the following values:</para>
+      <h4>DICS_ENABLE</h4>
+      <para>The device is being enabled.</para>
+      <para>For this state change, Windows enables the device if the <b>DICS_FLAG_GLOBAL</b> flag is specified.</para>
+      <para>If the <b>DICS_FLAG_CONFIGSPECIFIC</b> flag is specified and the current hardware profile is specified then Windows enables the device. If the <b>DICS_FLAG_CONFIGSPECIFIC</b> is specified and not the current hardware profile then Windows sets some flags in the registry and does not change the device's state. Windows will change the device state when the specified profile becomes the current profile.</para>
+      <h4>DICS_DISABLE</h4>
+      <para>The device is being disabled.</para>
+      <para>For this state change, Windows disables the device if the <b>DICS_FLAG_GLOBAL</b> flag is specified.</para>
+      <para>If the <b>DICS_FLAG_CONFIGSPECIFIC</b> flag is specified and the current hardware profile is specified then Windows disables the device. If the <b>DICS_FLAG_CONFIGSPECIFIC</b> is specified and not the current hardware profile then Windows sets some flags in the registry and does not change the device's state.</para>
+      <h4>DICS_PROPCHANGE</h4>
+      <para>The properties of the device have changed.</para>
+      <para>For this state change, Windows ignores the <b>Scope</b> information as long it is a valid value, and stops and restarts the device.</para>
+      <h4>DICS_START</h4>
+      <para>The device is being started (if the request is for the currently active hardware profile).</para>
+      <para>
+        <b>DICS_START</b> must be <b>DICS_FLAG_CONFIGSPECIFIC</b>. You cannot perform that change globally.</para>
+      <para>Windows only starts the device if the current hardware profile is specified. Otherwise, Windows sets a registry flag and does not change the state of the device.</para>
+      <h4>DICS_STOP</h4>
+      <para>The device is being stopped. The driver stack will be unloaded and the CSCONFIGFLAG_DO_NOT_START flag will be set for the device.</para>
+      <para>
+        <b>DICS_STOP</b> must be <b>DICS_FLAG_CONFIGSPECIFIC</b>. You cannot perform that change globally.</para>
+      <para>Windows only stops the device if the current hardware profile is specified. Otherwise, Windows sets a registry flag and does not change the state of the device.</para>
+      <para>Components should not specify DICS_STOP or DICS_START. Instead, they should use DICS_PROPCHANGE to stop and restart a device to cause changes in the device's configuration to take effect.</para>
+    </summary>
+  </member>
+  <member name="SP_PROPCHANGE_PARAMS.Scope">
+    <summary>
+      <para>Flags that specify the scope of a device property change. Can be one of the following:</para>
+      <h4>DICS_FLAG_GLOBAL</h4>
+      <para>Make the change in all hardware profiles.</para>
+      <h4>DICS_FLAG_CONFIGSPECIFIC</h4>
+      <para>Make the change in the specified profile only.</para>
+      <para>The following flag is obsolete:</para>
+      <h4>DICS_FLAG_CONFIGGENERAL</h4>
+    </summary>
+  </member>
+  <member name="SP_PROPCHANGE_PARAMS.HwProfile">
+    <summary>
+      <para>Supplies the hardware profile ID for profile-specific changes. Zero specifies the current hardware profile.</para>
+    </summary>
+  </member>
+</doc>

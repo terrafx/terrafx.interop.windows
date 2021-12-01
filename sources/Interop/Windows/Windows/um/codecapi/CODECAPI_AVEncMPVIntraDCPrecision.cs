@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVEncMPVIntraDCPrecision.xml' path='doc/member[@name="CODECAPI_AVEncMPVIntraDCPrecision"]/*' />
 [Guid("A0116151-CBC8-4AF3-97DC-D00CCEB82D79")]
 public partial struct CODECAPI_AVEncMPVIntraDCPrecision
 {

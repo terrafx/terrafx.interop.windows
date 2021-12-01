@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IShellIcon.GetIconOf">
+    <summary>
+      <para>Gets an icon for an object inside a specific folder.</para>
+    </summary>
+    <param name="pidl">
+      <para>Type: <b>LPCITEMIDLIST</b></para>
+      <para>The address of the <see cref="ITEMIDLIST" /> structure that specifies the relative location of the folder.</para>
+    </param>
+    <param name="flags">
+      <para>Type: <b>UINT</b></para>
+      <para>Flags specifying how the icon is to display. This parameter can be zero or one of the following values.</para>
+      <h4>GIL_FORSHELL</h4>
+      <para>The icon is to be displayed in a Shell folder.</para>
+      <h4>GIL_OPENICON</h4>
+      <para>The icon should be in the open state if both open-state and closed-state images are available. If this flag is not specified, the icon should be in the closed state. This flag is typically used for folder objects.</para>
+    </param>
+    <param name="pIconIndex">
+      <para>Type: <b>LPINT</b></para>
+      <para>The address of the index of the icon in the system image list. The following standard image list indexes can be returned.</para>
+      <h4>0</h4>
+      <para>Document (blank page, not associated)</para>
+      <h4>1</h4>
+      <para>Document (with data on the page)</para>
+      <h4>2</h4>
+      <para>Application (file name extension must be .exe, .com, or .bat)</para>
+      <h4>3</h4>
+      <para>Folder (plain)</para>
+      <h4>4</h4>
+      <para>Folder (open)</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_OK if <i>lpIconIndex</i> contains the correct system image list index, or S_FALSE if an icon can't be obtained for this object.</para>
+    </returns>
+    <remarks>
+      <para>If you are unable to retrieve an icon for this object using <b>GetIconOf</b>, use the <see cref="GetUIObjectOf" /> method to retrieve an object that supports the <see cref="Extract" /> method.</para>
+      <para>
+        <b>IShellIcon.GetIconOf</b> fails if <see cref="CoInitialize" /> is not called first.</para>
+      <h3>Note to Calling Applications</h3>
+      <para>The index returned is from the system image list.</para>
+      <h3>Note to Implementers</h3>
+      <para>If the icon index used is not one of the standard images listed, it is the implementer's responsibility to add the image to the system image list and then place the index into the <i>lpIconIndex</i> parameter. To prevent the system image list from growing too large, each image should only be added once.</para>
+    </remarks>
+    <seealso cref="IShellIcon" />
+  </member>
+  <member name="IShellIcon">
+    <summary>
+      <para>Exposes a method that obtains an icon index for an <see cref="IShellFolder" /> object.</para>
+    </summary>
+    <remarks>
+      <para>Implement <b>IShellIcon</b> when creating an <see cref="IShellFolder" /> implementation to provide a quick way to obtain the icon for an object in the folder.</para>
+      <para>If <b>IShellIcon</b> is not implemented by an <see cref="IShellFolder" /> object, <see cref="IShellFolder.GetUIObjectOf" /> is used to retrieve an icon for all objects.</para>
+      <para>Use <b>IShellIcon</b> when retrieving the icon index for an item in a Shell folder.</para>
+      <para>
+        <b>IShellIcon</b> allows an application to obtain the icon for any object within a folder by using only one instance of the interface. <see cref="IExtractIcon" />, on the other hand, requires that a separate instance of the interface be created for each object.</para>
+    </remarks>
+  </member>
+</doc>

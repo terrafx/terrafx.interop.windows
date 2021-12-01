@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MFTOPONODE_ATTRIBUTE_UPDATE">
+    <summary>
+      <para>Specifies a new attribute value for a topology node.</para>
+    </summary>
+    <remarks>
+      <para>Due to an error in the structure declaration, the <b>u64</b> member is declared as a 32-bit integer, not a 64-bit integer. Therefore, any 64-bit value passed to the <see cref="IMFTopologyNodeAttributeEditor.UpdateNodeAttributes" /> method is truncated to 32 bits.</para>
+    </remarks>
+    <seealso cref="IMFTopologyNodeAttributeEditor.UpdateNodeAttributes" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-structures">Media Foundation Structures</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/topoid">TOPOID</seealso>
+  </member>
+  <member name="MFTOPONODE_ATTRIBUTE_UPDATE.NodeId">
+    <summary>
+      <para>The identifier of the topology node to update. To get the identifier of a topology node, call <see cref="IMFTopologyNode.GetTopoNodeID" />.</para>
+    </summary>
+  </member>
+  <member name="MFTOPONODE_ATTRIBUTE_UPDATE.guidAttributeKey">
+    <summary>
+      <para>GUID that specifies the attribute to update.</para>
+    </summary>
+  </member>
+  <member name="MFTOPONODE_ATTRIBUTE_UPDATE.attrType">
+    <summary>
+      <para>Attribute type, specified as a member of the <see cref="MF_ATTRIBUTE_TYPE" /> enumeration.</para>
+    </summary>
+  </member>
+  <member name="MFTOPONODE_ATTRIBUTE_UPDATE.u32">
+    <summary>
+      <para>Attribute value (unsigned 32-bit integer). This member is used when <b>attrType</b> equals <b>MF_ATTRIBUTE_UINT32</b>.</para>
+    </summary>
+  </member>
+  <member name="MFTOPONODE_ATTRIBUTE_UPDATE.u64">
+    <summary>
+      <para>Attribute value (unsigned 32-bit integer). This member is used when <b>attrType</b> equals <b>MF_ATTRIBUTE_UINT64</b>. See Remarks.</para>
+    </summary>
+  </member>
+  <member name="MFTOPONODE_ATTRIBUTE_UPDATE.d">
+    <summary>
+      <para>Attribute value (floating point). This member is used when <b>attrType</b> equals <b>MF_ATTRIBUTE_DOUBLE</b>.</para>
+    </summary>
+  </member>
+</doc>

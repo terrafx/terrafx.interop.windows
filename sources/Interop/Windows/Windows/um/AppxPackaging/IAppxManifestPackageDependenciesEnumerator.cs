@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAppxManifestPackageDependenciesEnumerator.xml' path='doc/member[@name="IAppxManifestPackageDependenciesEnumerator"]/*' />
 [Guid("B43BBCF9-65A6-42DD-BAC0-8C6741E7F5A4")]
 [NativeTypeName("struct IAppxManifestPackageDependenciesEnumerator : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IAppxManifestPackageDependenciesEnumerator : IAppxM
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IAppxManifestPackageDependenciesEnumerator : IAppxM
         return ((delegate* unmanaged<IAppxManifestPackageDependenciesEnumerator*, Guid*, void**, int>)(lpVtbl[0]))((IAppxManifestPackageDependenciesEnumerator*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IAppxManifestPackageDependenciesEnumerator : IAppxM
         return ((delegate* unmanaged<IAppxManifestPackageDependenciesEnumerator*, uint>)(lpVtbl[1]))((IAppxManifestPackageDependenciesEnumerator*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IAppxManifestPackageDependenciesEnumerator : IAppxM
         return ((delegate* unmanaged<IAppxManifestPackageDependenciesEnumerator*, uint>)(lpVtbl[2]))((IAppxManifestPackageDependenciesEnumerator*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAppxManifestPackageDependenciesEnumerator.xml' path='doc/member[@name="IAppxManifestPackageDependenciesEnumerator.GetCurrent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetCurrent(IAppxManifestPackageDependency** dependency)
@@ -48,6 +53,7 @@ public unsafe partial struct IAppxManifestPackageDependenciesEnumerator : IAppxM
         return ((delegate* unmanaged<IAppxManifestPackageDependenciesEnumerator*, IAppxManifestPackageDependency**, int>)(lpVtbl[3]))((IAppxManifestPackageDependenciesEnumerator*)Unsafe.AsPointer(ref this), dependency);
     }
 
+    /// <include file='IAppxManifestPackageDependenciesEnumerator.xml' path='doc/member[@name="IAppxManifestPackageDependenciesEnumerator.GetHasCurrent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetHasCurrent(BOOL* hasCurrent)
@@ -55,6 +61,7 @@ public unsafe partial struct IAppxManifestPackageDependenciesEnumerator : IAppxM
         return ((delegate* unmanaged<IAppxManifestPackageDependenciesEnumerator*, BOOL*, int>)(lpVtbl[4]))((IAppxManifestPackageDependenciesEnumerator*)Unsafe.AsPointer(ref this), hasCurrent);
     }
 
+    /// <include file='IAppxManifestPackageDependenciesEnumerator.xml' path='doc/member[@name="IAppxManifestPackageDependenciesEnumerator.MoveNext"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT MoveNext(BOOL* hasNext)

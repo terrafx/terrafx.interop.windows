@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TRANSACTIONMANAGER_LOGPATH_INFORMATION.xml' path='doc/member[@name="TRANSACTIONMANAGER_LOGPATH_INFORMATION"]/*' />
 public unsafe partial struct TRANSACTIONMANAGER_LOGPATH_INFORMATION
 {
+    /// <include file='TRANSACTIONMANAGER_LOGPATH_INFORMATION.xml' path='doc/member[@name="TRANSACTIONMANAGER_LOGPATH_INFORMATION.LogPathLength"]/*' />
     [NativeTypeName("DWORD")]
     public uint LogPathLength;
 
+    /// <include file='TRANSACTIONMANAGER_LOGPATH_INFORMATION.xml' path='doc/member[@name="TRANSACTIONMANAGER_LOGPATH_INFORMATION.LogPath"]/*' />
     [NativeTypeName("WCHAR [1]")]
     public fixed ushort LogPath[1];
 }

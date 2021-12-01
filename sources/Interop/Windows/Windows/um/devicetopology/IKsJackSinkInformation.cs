@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IKsJackSinkInformation.xml' path='doc/member[@name="IKsJackSinkInformation"]/*' />
 [Guid("D9BD72ED-290F-4581-9FF3-61027A8FE532")]
 [NativeTypeName("struct IKsJackSinkInformation : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IKsJackSinkInformation : IKsJackSinkInformation.Int
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IKsJackSinkInformation : IKsJackSinkInformation.Int
         return ((delegate* unmanaged<IKsJackSinkInformation*, Guid*, void**, int>)(lpVtbl[0]))((IKsJackSinkInformation*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IKsJackSinkInformation : IKsJackSinkInformation.Int
         return ((delegate* unmanaged<IKsJackSinkInformation*, uint>)(lpVtbl[1]))((IKsJackSinkInformation*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IKsJackSinkInformation : IKsJackSinkInformation.Int
         return ((delegate* unmanaged<IKsJackSinkInformation*, uint>)(lpVtbl[2]))((IKsJackSinkInformation*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IKsJackSinkInformation.xml' path='doc/member[@name="IKsJackSinkInformation.GetJackSinkInformation"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetJackSinkInformation(KSJACK_SINK_INFORMATION* pJackSinkInformation)

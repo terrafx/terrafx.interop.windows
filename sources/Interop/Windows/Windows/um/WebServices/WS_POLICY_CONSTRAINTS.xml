@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_POLICY_CONSTRAINTS">
+    <summary>
+      <para>Specifies policy constraints for a channel.</para>
+    </summary>
+  </member>
+  <member name="WS_POLICY_CONSTRAINTS.channelBinding">
+    <summary>
+      <para>Which channel binding is required.  The
+following values are supported:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <see cref="WS_HTTP_CHANNEL_BINDING" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="WS_TCP_CHANNEL_BINDING" />
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="WS_POLICY_CONSTRAINTS.channelPropertyConstraints">
+    <summary>
+      <para>An array of channel property constraints which override the default
+set of constraints.  The constraints specified here, combined
+with the default set of constraints limits the set of policies
+that will be matched.</para>
+      <para>If a channel property constraint is not specified for a given property,
+then a default constraint value will be used.
+See <see cref="WS_CHANNEL_PROPERTY_CONSTRAINT" /> for the
+supported set of properties and their default values.</para>
+    </summary>
+  </member>
+  <member name="WS_POLICY_CONSTRAINTS.channelPropertyConstraintCount">
+    <summary>
+      <para>The number of elements specified in the <b>channelPropertyConstraints</b> array.</para>
+      <para>If this value is 0, then the channelPropertyConstraints array may be <b>NULL</b>.</para>
+    </summary>
+  </member>
+  <member name="WS_POLICY_CONSTRAINTS.securityConstraints">
+    <summary>
+      <para>Constraints on the type of security that may be used.</para>
+      <para>Setting this field to <b>NULL</b> indicates a constraint of no security.</para>
+    </summary>
+  </member>
+  <member name="WS_POLICY_CONSTRAINTS.policyExtensions">
+    <summary></summary>
+  </member>
+  <member name="WS_POLICY_CONSTRAINTS.policyExtensionCount">
+    <summary></summary>
+  </member>
+</doc>

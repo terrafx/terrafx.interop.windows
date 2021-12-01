@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ISpShortcut.xml' path='doc/member[@name="ISpShortcut"]/*' />
 [Guid("3DF681E2-EA56-11D9-8BDE-F66BAD1E3F3A")]
 [NativeTypeName("struct ISpShortcut : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ISpShortcut : ISpShortcut.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ISpShortcut : ISpShortcut.Interface
         return ((delegate* unmanaged<ISpShortcut*, Guid*, void**, int>)(lpVtbl[0]))((ISpShortcut*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ISpShortcut : ISpShortcut.Interface
         return ((delegate* unmanaged<ISpShortcut*, uint>)(lpVtbl[1]))((ISpShortcut*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ISpShortcut : ISpShortcut.Interface
         return ((delegate* unmanaged<ISpShortcut*, uint>)(lpVtbl[2]))((ISpShortcut*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ISpShortcut.xml' path='doc/member[@name="ISpShortcut.AddShortcut"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT AddShortcut([NativeTypeName("LPCWSTR")] ushort* pszDisplay, [NativeTypeName("WORD")] ushort LangID, [NativeTypeName("LPCWSTR")] ushort* pszSpoken, SPSHORTCUTTYPE shType)
@@ -46,6 +51,7 @@ public unsafe partial struct ISpShortcut : ISpShortcut.Interface
         return ((delegate* unmanaged<ISpShortcut*, ushort*, ushort, ushort*, SPSHORTCUTTYPE, int>)(lpVtbl[3]))((ISpShortcut*)Unsafe.AsPointer(ref this), pszDisplay, LangID, pszSpoken, shType);
     }
 
+    /// <include file='ISpShortcut.xml' path='doc/member[@name="ISpShortcut.RemoveShortcut"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT RemoveShortcut([NativeTypeName("LPCWSTR")] ushort* pszDisplay, [NativeTypeName("WORD")] ushort LangID, [NativeTypeName("LPCWSTR")] ushort* pszSpoken, SPSHORTCUTTYPE shType)
@@ -53,6 +59,7 @@ public unsafe partial struct ISpShortcut : ISpShortcut.Interface
         return ((delegate* unmanaged<ISpShortcut*, ushort*, ushort, ushort*, SPSHORTCUTTYPE, int>)(lpVtbl[4]))((ISpShortcut*)Unsafe.AsPointer(ref this), pszDisplay, LangID, pszSpoken, shType);
     }
 
+    /// <include file='ISpShortcut.xml' path='doc/member[@name="ISpShortcut.GetShortcuts"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetShortcuts([NativeTypeName("WORD")] ushort LangID, SPSHORTCUTPAIRLIST* pShortcutpairList)
@@ -60,6 +67,7 @@ public unsafe partial struct ISpShortcut : ISpShortcut.Interface
         return ((delegate* unmanaged<ISpShortcut*, ushort, SPSHORTCUTPAIRLIST*, int>)(lpVtbl[5]))((ISpShortcut*)Unsafe.AsPointer(ref this), LangID, pShortcutpairList);
     }
 
+    /// <include file='ISpShortcut.xml' path='doc/member[@name="ISpShortcut.GetGeneration"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetGeneration([NativeTypeName("DWORD *")] uint* pdwGeneration)
@@ -67,6 +75,7 @@ public unsafe partial struct ISpShortcut : ISpShortcut.Interface
         return ((delegate* unmanaged<ISpShortcut*, uint*, int>)(lpVtbl[6]))((ISpShortcut*)Unsafe.AsPointer(ref this), pdwGeneration);
     }
 
+    /// <include file='ISpShortcut.xml' path='doc/member[@name="ISpShortcut.GetWordsFromGenerationChange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetWordsFromGenerationChange([NativeTypeName("DWORD *")] uint* pdwGeneration, SPWORDLIST* pWordList)
@@ -74,6 +83,7 @@ public unsafe partial struct ISpShortcut : ISpShortcut.Interface
         return ((delegate* unmanaged<ISpShortcut*, uint*, SPWORDLIST*, int>)(lpVtbl[7]))((ISpShortcut*)Unsafe.AsPointer(ref this), pdwGeneration, pWordList);
     }
 
+    /// <include file='ISpShortcut.xml' path='doc/member[@name="ISpShortcut.GetWords"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetWords([NativeTypeName("DWORD *")] uint* pdwGeneration, [NativeTypeName("DWORD *")] uint* pdwCookie, SPWORDLIST* pWordList)
@@ -81,6 +91,7 @@ public unsafe partial struct ISpShortcut : ISpShortcut.Interface
         return ((delegate* unmanaged<ISpShortcut*, uint*, uint*, SPWORDLIST*, int>)(lpVtbl[8]))((ISpShortcut*)Unsafe.AsPointer(ref this), pdwGeneration, pdwCookie, pWordList);
     }
 
+    /// <include file='ISpShortcut.xml' path='doc/member[@name="ISpShortcut.GetShortcutsForGeneration"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT GetShortcutsForGeneration([NativeTypeName("DWORD *")] uint* pdwGeneration, [NativeTypeName("DWORD *")] uint* pdwCookie, SPSHORTCUTPAIRLIST* pShortcutpairList)
@@ -88,6 +99,7 @@ public unsafe partial struct ISpShortcut : ISpShortcut.Interface
         return ((delegate* unmanaged<ISpShortcut*, uint*, uint*, SPSHORTCUTPAIRLIST*, int>)(lpVtbl[9]))((ISpShortcut*)Unsafe.AsPointer(ref this), pdwGeneration, pdwCookie, pShortcutpairList);
     }
 
+    /// <include file='ISpShortcut.xml' path='doc/member[@name="ISpShortcut.GetGenerationChange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT GetGenerationChange([NativeTypeName("DWORD *")] uint* pdwGeneration, SPSHORTCUTPAIRLIST* pShortcutpairList)

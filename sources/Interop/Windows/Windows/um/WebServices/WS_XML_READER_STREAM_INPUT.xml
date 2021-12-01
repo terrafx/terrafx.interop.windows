@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_XML_READER_STREAM_INPUT">
+    <summary>
+      <para>Specifies that the source of the xml should be obtained from a callback.</para>
+    </summary>
+  </member>
+  <member name="WS_XML_READER_STREAM_INPUT.input">
+    <summary>
+      <para>The base type for all types that derive from <see cref="WS_XML_READER_INPUT" />.</para>
+    </summary>
+  </member>
+  <member name="WS_XML_READER_STREAM_INPUT.readCallback">
+    <summary>
+      <para>A callback that is invoked when <see cref="WsFillReader" /> is called.</para>
+    </summary>
+  </member>
+  <member name="WS_XML_READER_STREAM_INPUT.readCallbackState">
+    <summary>
+      <para>A user-defined value that will be passed back to readCallback.</para>
+    </summary>
+  </member>
+</doc>

@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PICTUREATTRIBUTES.xml' path='doc/member[@name="PICTUREATTRIBUTES"]/*' />
 public enum PICTUREATTRIBUTES
 {
+    /// <include file='PICTUREATTRIBUTES.xml' path='doc/member[@name="PICTUREATTRIBUTES.PICTURE_SCALABLE"]/*' />
     PICTURE_SCALABLE = 0x1,
+
+    /// <include file='PICTUREATTRIBUTES.xml' path='doc/member[@name="PICTUREATTRIBUTES.PICTURE_TRANSPARENT"]/*' />
     PICTURE_TRANSPARENT = 0x2,
 }

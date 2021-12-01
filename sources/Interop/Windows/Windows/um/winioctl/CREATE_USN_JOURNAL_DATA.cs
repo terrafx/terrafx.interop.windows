@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CREATE_USN_JOURNAL_DATA.xml' path='doc/member[@name="CREATE_USN_JOURNAL_DATA"]/*' />
 public partial struct CREATE_USN_JOURNAL_DATA
 {
+    /// <include file='CREATE_USN_JOURNAL_DATA.xml' path='doc/member[@name="CREATE_USN_JOURNAL_DATA.MaximumSize"]/*' />
     [NativeTypeName("DWORDLONG")]
     public ulong MaximumSize;
 
+    /// <include file='CREATE_USN_JOURNAL_DATA.xml' path='doc/member[@name="CREATE_USN_JOURNAL_DATA.AllocationDelta"]/*' />
     [NativeTypeName("DWORDLONG")]
     public ulong AllocationDelta;
 }

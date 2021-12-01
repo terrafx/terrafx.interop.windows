@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MFPMPSESSION_CREATION_FLAGS.xml' path='doc/member[@name="MFPMPSESSION_CREATION_FLAGS"]/*' />
 public enum MFPMPSESSION_CREATION_FLAGS
 {
+    /// <include file='MFPMPSESSION_CREATION_FLAGS.xml' path='doc/member[@name="MFPMPSESSION_CREATION_FLAGS.MFPMPSESSION_UNPROTECTED_PROCESS"]/*' />
     MFPMPSESSION_UNPROTECTED_PROCESS = 0x1,
+
+    /// <include file='MFPMPSESSION_CREATION_FLAGS.xml' path='doc/member[@name="MFPMPSESSION_CREATION_FLAGS.MFPMPSESSION_IN_PROCESS"]/*' />
     MFPMPSESSION_IN_PROCESS = 0x2,
 }

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IWICBitmapFlipRotator.xml' path='doc/member[@name="IWICBitmapFlipRotator"]/*' />
 [Guid("5009834F-2D6A-41CE-9E1B-17C5AFF7A782")]
 [NativeTypeName("struct IWICBitmapFlipRotator : IWICBitmapSource")]
 [NativeInheritance("IWICBitmapSource")]
@@ -16,6 +17,7 @@ public unsafe partial struct IWICBitmapFlipRotator : IWICBitmapFlipRotator.Inter
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IWICBitmapFlipRotator : IWICBitmapFlipRotator.Inter
         return ((delegate* unmanaged<IWICBitmapFlipRotator*, Guid*, void**, int>)(lpVtbl[0]))((IWICBitmapFlipRotator*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IWICBitmapFlipRotator : IWICBitmapFlipRotator.Inter
         return ((delegate* unmanaged<IWICBitmapFlipRotator*, uint>)(lpVtbl[1]))((IWICBitmapFlipRotator*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IWICBitmapFlipRotator : IWICBitmapFlipRotator.Inter
         return ((delegate* unmanaged<IWICBitmapFlipRotator*, uint>)(lpVtbl[2]))((IWICBitmapFlipRotator*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IWICBitmapSource.GetSize" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetSize(uint* puiWidth, uint* puiHeight)
@@ -46,6 +51,7 @@ public unsafe partial struct IWICBitmapFlipRotator : IWICBitmapFlipRotator.Inter
         return ((delegate* unmanaged<IWICBitmapFlipRotator*, uint*, uint*, int>)(lpVtbl[3]))((IWICBitmapFlipRotator*)Unsafe.AsPointer(ref this), puiWidth, puiHeight);
     }
 
+    /// <inheritdoc cref="IWICBitmapSource.GetPixelFormat" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetPixelFormat([NativeTypeName("WICPixelFormatGUID *")] Guid* pPixelFormat)
@@ -53,6 +59,7 @@ public unsafe partial struct IWICBitmapFlipRotator : IWICBitmapFlipRotator.Inter
         return ((delegate* unmanaged<IWICBitmapFlipRotator*, Guid*, int>)(lpVtbl[4]))((IWICBitmapFlipRotator*)Unsafe.AsPointer(ref this), pPixelFormat);
     }
 
+    /// <inheritdoc cref="IWICBitmapSource.GetResolution" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetResolution(double* pDpiX, double* pDpiY)
@@ -60,6 +67,7 @@ public unsafe partial struct IWICBitmapFlipRotator : IWICBitmapFlipRotator.Inter
         return ((delegate* unmanaged<IWICBitmapFlipRotator*, double*, double*, int>)(lpVtbl[5]))((IWICBitmapFlipRotator*)Unsafe.AsPointer(ref this), pDpiX, pDpiY);
     }
 
+    /// <inheritdoc cref="IWICBitmapSource.CopyPalette" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT CopyPalette(IWICPalette* pIPalette)
@@ -67,6 +75,7 @@ public unsafe partial struct IWICBitmapFlipRotator : IWICBitmapFlipRotator.Inter
         return ((delegate* unmanaged<IWICBitmapFlipRotator*, IWICPalette*, int>)(lpVtbl[6]))((IWICBitmapFlipRotator*)Unsafe.AsPointer(ref this), pIPalette);
     }
 
+    /// <inheritdoc cref="IWICBitmapSource.CopyPixels" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT CopyPixels([NativeTypeName("const WICRect *")] WICRect* prc, uint cbStride, uint cbBufferSize, byte* pbBuffer)
@@ -74,6 +83,7 @@ public unsafe partial struct IWICBitmapFlipRotator : IWICBitmapFlipRotator.Inter
         return ((delegate* unmanaged<IWICBitmapFlipRotator*, WICRect*, uint, uint, byte*, int>)(lpVtbl[7]))((IWICBitmapFlipRotator*)Unsafe.AsPointer(ref this), prc, cbStride, cbBufferSize, pbBuffer);
     }
 
+    /// <include file='IWICBitmapFlipRotator.xml' path='doc/member[@name="IWICBitmapFlipRotator.Initialize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT Initialize(IWICBitmapSource* pISource, WICBitmapTransformOptions options)

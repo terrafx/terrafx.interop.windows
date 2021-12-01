@@ -9,23 +9,30 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='FILE_REGION_OUTPUT.xml' path='doc/member[@name="FILE_REGION_OUTPUT"]/*' />
 public partial struct FILE_REGION_OUTPUT
 {
+    /// <include file='FILE_REGION_OUTPUT.xml' path='doc/member[@name="FILE_REGION_OUTPUT.Flags"]/*' />
     [NativeTypeName("DWORD")]
     public uint Flags;
 
+    /// <include file='FILE_REGION_OUTPUT.xml' path='doc/member[@name="FILE_REGION_OUTPUT.TotalRegionEntryCount"]/*' />
     [NativeTypeName("DWORD")]
     public uint TotalRegionEntryCount;
 
+    /// <include file='FILE_REGION_OUTPUT.xml' path='doc/member[@name="FILE_REGION_OUTPUT.RegionEntryCount"]/*' />
     [NativeTypeName("DWORD")]
     public uint RegionEntryCount;
 
+    /// <include file='FILE_REGION_OUTPUT.xml' path='doc/member[@name="FILE_REGION_OUTPUT.Reserved"]/*' />
     [NativeTypeName("DWORD")]
     public uint Reserved;
 
+    /// <include file='FILE_REGION_OUTPUT.xml' path='doc/member[@name="FILE_REGION_OUTPUT.Region"]/*' />
     [NativeTypeName("FILE_REGION_INFO [1]")]
     public _Region_e__FixedBuffer Region;
 
+    /// <include file='_Region_e__FixedBuffer.xml' path='doc/member[@name="_Region_e__FixedBuffer"]/*' />
     public partial struct _Region_e__FixedBuffer
     {
         public FILE_REGION_INFO e0;

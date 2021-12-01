@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TCP_ESTATS_SYN_OPTS_ROS_v0.xml' path='doc/member[@name="TCP_ESTATS_SYN_OPTS_ROS_v0"]/*' />
 public partial struct TCP_ESTATS_SYN_OPTS_ROS_v0
 {
+    /// <include file='TCP_ESTATS_SYN_OPTS_ROS_v0.xml' path='doc/member[@name="TCP_ESTATS_SYN_OPTS_ROS_v0.ActiveOpen"]/*' />
     [NativeTypeName("BOOLEAN")]
     public byte ActiveOpen;
 
+    /// <include file='TCP_ESTATS_SYN_OPTS_ROS_v0.xml' path='doc/member[@name="TCP_ESTATS_SYN_OPTS_ROS_v0.MssRcvd"]/*' />
     [NativeTypeName("ULONG")]
     public uint MssRcvd;
 
+    /// <include file='TCP_ESTATS_SYN_OPTS_ROS_v0.xml' path='doc/member[@name="TCP_ESTATS_SYN_OPTS_ROS_v0.MssSent"]/*' />
     [NativeTypeName("ULONG")]
     public uint MssSent;
 }

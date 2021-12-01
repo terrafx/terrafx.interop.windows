@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IAppxManifestReader5.GetMainPackageDependencies">
+    <summary>
+      <para>Gets a main package dependencies enumerator.</para>
+    </summary>
+    <param name="mainPackageDependencies">
+      <para>The main package dependencies enumerator.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IAppxManifestReader5" />
+  </member>
+  <member name="IAppxManifestReader5">
+    <summary>
+      <para>Represents an object model of the package manifest that provides methods to access manifest elements and attributes.</para>
+    </summary>
+  </member>
+</doc>

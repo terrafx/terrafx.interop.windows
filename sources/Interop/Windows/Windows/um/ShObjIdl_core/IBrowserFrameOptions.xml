@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IBrowserFrameOptions.GetFrameOptions">
+    <summary>
+      <para>Retrieves the available browser frame view options.</para>
+    </summary>
+    <param name="dwMask">
+      <para>Type: <b><see cref="BROWSERFRAMEOPTIONS" /></b></para>
+      <para>Specifies the options requested as a bitwise combination of one or more of the constants of enumeration type <see cref="BROWSERFRAMEOPTIONS" />.</para>
+    </param>
+    <param name="pdwOptions">
+      <para>Type: <b><see cref="BROWSERFRAMEOPTIONS" />*</b></para>
+      <para>When this method returns, contains the options that the view  can enable (for example, <see cref="IShellView" /> ). This value is not optional and is always equal to, or a subset of, the options specified by <i>dwMask</i>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>If the method succeeds, the return value is S_OK and <i>pdwOptions</i> contains the subset of available view options.  If the method fails, <i>pdwOptions</i> is set to BFO_NONE.</para>
+    </remarks>
+  </member>
+  <member name="IBrowserFrameOptions">
+    <summary>
+      <para>Allows a browser or host to ask <see cref="IShellView" /> what kind of view behavior is supported.</para>
+    </summary>
+  </member>
+</doc>

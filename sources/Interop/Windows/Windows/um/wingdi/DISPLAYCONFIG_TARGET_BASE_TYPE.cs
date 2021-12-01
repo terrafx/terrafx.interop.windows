@@ -7,10 +7,13 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DISPLAYCONFIG_TARGET_BASE_TYPE.xml' path='doc/member[@name="DISPLAYCONFIG_TARGET_BASE_TYPE"]/*' />
 [SupportedOSPlatform("windows8.1")]
 public partial struct DISPLAYCONFIG_TARGET_BASE_TYPE
 {
+    /// <include file='DISPLAYCONFIG_TARGET_BASE_TYPE.xml' path='doc/member[@name="DISPLAYCONFIG_TARGET_BASE_TYPE.header"]/*' />
     public DISPLAYCONFIG_DEVICE_INFO_HEADER header;
 
+    /// <include file='DISPLAYCONFIG_TARGET_BASE_TYPE.xml' path='doc/member[@name="DISPLAYCONFIG_TARGET_BASE_TYPE.baseOutputTechnology"]/*' />
     public DISPLAYCONFIG_VIDEO_OUTPUT_TECHNOLOGY baseOutputTechnology;
 }

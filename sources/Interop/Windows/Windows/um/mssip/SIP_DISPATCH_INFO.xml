@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SIP_DISPATCH_INFO">
+    <summary>
+      <para>The <b>SIP_DISPATCH_INFO</b> structure contains a set of function pointers assigned by the <see cref="CryptSIPLoad" /> function that your application uses to perform <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">subject interface package</a> (SIP) operations.</para>
+    </summary>
+    <remarks>
+      <para>Your application must initialize this structure to binary zeros and set <b>cbSize</b> to <code>sizeof(SIP_DISPATCH_INFO)</code> by calling the <a href="https://docs.microsoft.com//cpp/c-runtime-library/reference/memset-wmemset">memset</a> function before calling the <see cref="CryptSIPLoad" /> function. Your application can use the function pointers in the returned <b>SIP_DISPATCH_INFO</b> structure to perform the necessary SIP operations.   The function pointers can point to functions exported by third party SIPs.</para>
+    </remarks>
+    <seealso cref="CryptSIPCreateIndirectData" />
+    <seealso cref="CryptSIPGetSignedDataMsg" />
+    <seealso cref="CryptSIPPutSignedDataMsg" />
+    <seealso cref="CryptSIPRemoveSignedDataMsg" />
+    <seealso cref="CryptSIPVerifyIndirectData" />
+  </member>
+  <member name="SIP_DISPATCH_INFO.cbSize">
+    <summary>
+      <para>The size, in bytes, of this structure.</para>
+    </summary>
+  </member>
+  <member name="SIP_DISPATCH_INFO.hSIP">
+    <summary>
+      <para>This member is reserved and must be set to <b>NULL</b>.</para>
+    </summary>
+  </member>
+  <member name="SIP_DISPATCH_INFO.pfGet">
+    <summary>
+      <para>A pointer to the function that retrieves the signed data for the subject. The signature for this function pointer is described in <see cref="CryptSIPGetSignedDataMsg" />.</para>
+    </summary>
+  </member>
+  <member name="SIP_DISPATCH_INFO.pfPut">
+    <summary>
+      <para>A pointer to the function that stores the signed data for the subject. The signature for this function pointer is described in <see cref="CryptSIPPutSignedDataMsg" />.</para>
+    </summary>
+  </member>
+  <member name="SIP_DISPATCH_INFO.pfCreate">
+    <summary>
+      <para>A pointer to the function that returns a <see cref="SIP_INDIRECT_DATA" />  structure that contains the subject data. This structure contains the hash of the target. The signature for this function pointer is described in <see cref="CryptSIPCreateIndirectData" />.</para>
+    </summary>
+  </member>
+  <member name="SIP_DISPATCH_INFO.pfVerify">
+    <summary>
+      <para>A pointer to the function that verifies the <see cref="SIP_INDIRECT_DATA" />  structure that contains the subject data. This structure contains the hash of the target. The signature for this function pointer is described in <see cref="CryptSIPVerifyIndirectData" />.</para>
+    </summary>
+  </member>
+  <member name="SIP_DISPATCH_INFO.pfRemove">
+    <summary>
+      <para>A pointer to the function that removes the signed data for the subject. The signature for this function pointer is described in <see cref="CryptSIPRemoveSignedDataMsg" />.</para>
+    </summary>
+  </member>
+</doc>

@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MetadataTimeStamps.xml' path='doc/member[@name="MetadataTimeStamps"]/*' />
 public partial struct MetadataTimeStamps
 {
+    /// <include file='MetadataTimeStamps.xml' path='doc/member[@name="MetadataTimeStamps.Flags"]/*' />
     [NativeTypeName("ULONG")]
     public uint Flags;
 
+    /// <include file='MetadataTimeStamps.xml' path='doc/member[@name="MetadataTimeStamps.Device"]/*' />
     [NativeTypeName("LONGLONG")]
     public long Device;
 
+    /// <include file='MetadataTimeStamps.xml' path='doc/member[@name="MetadataTimeStamps.Presentation"]/*' />
     [NativeTypeName("LONGLONG")]
     public long Presentation;
 }

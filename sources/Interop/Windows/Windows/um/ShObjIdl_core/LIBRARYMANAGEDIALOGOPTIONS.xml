@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="LIBRARYMANAGEDIALOGOPTIONS">
+    <summary>
+      <para>Used by <see cref="SHShowManageLibraryUI" /> to define options for handling a name collision when saving a library.</para>
+    </summary>
+  </member>
+  <member name="LIBRARYMANAGEDIALOGOPTIONS.LMD_DEFAULT">
+    <summary>
+      <para>Show default warning UI to the user.</para>
+    </summary>
+  </member>
+  <member name="LIBRARYMANAGEDIALOGOPTIONS.LMD_ALLOWUNINDEXABLENETWORKLOCATIONS">
+    <summary>
+      <para>Do not display a warning dialog to the user in collisions that concern network locations that cannot be indexed.</para>
+    </summary>
+  </member>
+</doc>

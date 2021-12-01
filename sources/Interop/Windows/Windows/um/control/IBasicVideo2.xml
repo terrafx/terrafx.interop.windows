@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IBasicVideo2.GetPreferredAspectRatio">
+    <summary>
+      <para>The <code>GetPreferredAspectRatio</code> method retrieves the preferred aspect ratio.</para>
+    </summary>
+    <param name="plAspectX">
+      <para>Pointer to a value that indicates the x-axis aspect ratio.</para>
+    </param>
+    <param name="plAspectY">
+      <para>Pointer to a value that indicates the y-axis aspect ratio.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>One or both of the parameters are invalid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_NOINTERFACE</b>
+            </para>
+          </description>
+          <description>
+            <para>The renderer does not implement <b>IBasicVideo2</b>.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IBasicVideo2 Interface" />
+  </member>
+  <member name="IBasicVideo2">
+    <summary>
+      <para>The <code>IBasicVideo2</code> interface extends the <see cref="IBasicVideo" /> interface. The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/video-renderer-filter">Video Renderer</a> filter and Video Mixing Renderer filters implement this interface, but the interface is exposed to applications through the Filter Graph Manager. Applications should always retrieve this interface from the Filter Graph Manager.</para>
+    </summary>
+    <seealso cref="IBasicVideo" />
+  </member>
+</doc>

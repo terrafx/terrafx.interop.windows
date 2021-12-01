@@ -5,13 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SHDRAGIMAGE.xml' path='doc/member[@name="SHDRAGIMAGE"]/*' />
 public partial struct SHDRAGIMAGE
 {
+    /// <include file='SHDRAGIMAGE.xml' path='doc/member[@name="SHDRAGIMAGE.sizeDragImage"]/*' />
     public SIZE sizeDragImage;
 
+    /// <include file='SHDRAGIMAGE.xml' path='doc/member[@name="SHDRAGIMAGE.ptOffset"]/*' />
     public POINT ptOffset;
 
+    /// <include file='SHDRAGIMAGE.xml' path='doc/member[@name="SHDRAGIMAGE.hbmpDragImage"]/*' />
     public HBITMAP hbmpDragImage;
 
+    /// <include file='SHDRAGIMAGE.xml' path='doc/member[@name="SHDRAGIMAGE.crColorKey"]/*' />
     public COLORREF crColorKey;
 }

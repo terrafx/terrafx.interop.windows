@@ -5,13 +5,17 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ACCESSTIMEOUT.xml' path='doc/member[@name="ACCESSTIMEOUT"]/*' />
 public partial struct ACCESSTIMEOUT
 {
+    /// <include file='ACCESSTIMEOUT.xml' path='doc/member[@name="ACCESSTIMEOUT.cbSize"]/*' />
     public uint cbSize;
 
+    /// <include file='ACCESSTIMEOUT.xml' path='doc/member[@name="ACCESSTIMEOUT.dwFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFlags;
 
+    /// <include file='ACCESSTIMEOUT.xml' path='doc/member[@name="ACCESSTIMEOUT.iTimeOutMSec"]/*' />
     [NativeTypeName("DWORD")]
     public uint iTimeOutMSec;
 }

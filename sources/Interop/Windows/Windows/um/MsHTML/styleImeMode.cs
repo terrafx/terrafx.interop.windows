@@ -5,12 +5,24 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='styleImeMode.xml' path='doc/member[@name="styleImeMode"]/*' />
 public enum styleImeMode
 {
+    /// <include file='styleImeMode.xml' path='doc/member[@name="styleImeMode.styleImeModeAuto"]/*' />
     styleImeModeAuto = 0,
+
+    /// <include file='styleImeMode.xml' path='doc/member[@name="styleImeMode.styleImeModeActive"]/*' />
     styleImeModeActive = 1,
+
+    /// <include file='styleImeMode.xml' path='doc/member[@name="styleImeMode.styleImeModeInactive"]/*' />
     styleImeModeInactive = 2,
+
+    /// <include file='styleImeMode.xml' path='doc/member[@name="styleImeMode.styleImeModeDisabled"]/*' />
     styleImeModeDisabled = 3,
+
+    /// <include file='styleImeMode.xml' path='doc/member[@name="styleImeMode.styleImeModeNotSet"]/*' />
     styleImeModeNotSet = 4,
+
+    /// <include file='styleImeMode.xml' path='doc/member[@name="styleImeMode.styleImeMode_Max"]/*' />
     styleImeMode_Max = 2147483647,
 }

@@ -5,12 +5,16 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='EMRCREATECOLORSPACE.xml' path='doc/member[@name="EMRCREATECOLORSPACE"]/*' />
 public partial struct EMRCREATECOLORSPACE
 {
+    /// <include file='EMRCREATECOLORSPACE.xml' path='doc/member[@name="EMRCREATECOLORSPACE.emr"]/*' />
     public EMR emr;
 
+    /// <include file='EMRCREATECOLORSPACE.xml' path='doc/member[@name="EMRCREATECOLORSPACE.ihCS"]/*' />
     [NativeTypeName("DWORD")]
     public uint ihCS;
 
+    /// <include file='EMRCREATECOLORSPACE.xml' path='doc/member[@name="EMRCREATECOLORSPACE.lcs"]/*' />
     public LOGCOLORSPACEA lcs;
 }

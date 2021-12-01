@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITfFnReconversion.xml' path='doc/member[@name="ITfFnReconversion"]/*' />
 [Guid("4CEA93C0-0A58-11D3-8DF0-00105A2799B5")]
 [NativeTypeName("struct ITfFnReconversion : ITfFunction")]
 [NativeInheritance("ITfFunction")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITfFnReconversion : ITfFnReconversion.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITfFnReconversion : ITfFnReconversion.Interface
         return ((delegate* unmanaged<ITfFnReconversion*, Guid*, void**, int>)(lpVtbl[0]))((ITfFnReconversion*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITfFnReconversion : ITfFnReconversion.Interface
         return ((delegate* unmanaged<ITfFnReconversion*, uint>)(lpVtbl[1]))((ITfFnReconversion*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITfFnReconversion : ITfFnReconversion.Interface
         return ((delegate* unmanaged<ITfFnReconversion*, uint>)(lpVtbl[2]))((ITfFnReconversion*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ITfFunction.GetDisplayName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetDisplayName([NativeTypeName("BSTR *")] ushort** pbstrName)
@@ -46,6 +51,7 @@ public unsafe partial struct ITfFnReconversion : ITfFnReconversion.Interface
         return ((delegate* unmanaged<ITfFnReconversion*, ushort**, int>)(lpVtbl[3]))((ITfFnReconversion*)Unsafe.AsPointer(ref this), pbstrName);
     }
 
+    /// <include file='ITfFnReconversion.xml' path='doc/member[@name="ITfFnReconversion.QueryRange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT QueryRange(ITfRange* pRange, ITfRange** ppNewRange, BOOL* pfConvertable)
@@ -53,6 +59,7 @@ public unsafe partial struct ITfFnReconversion : ITfFnReconversion.Interface
         return ((delegate* unmanaged<ITfFnReconversion*, ITfRange*, ITfRange**, BOOL*, int>)(lpVtbl[4]))((ITfFnReconversion*)Unsafe.AsPointer(ref this), pRange, ppNewRange, pfConvertable);
     }
 
+    /// <include file='ITfFnReconversion.xml' path='doc/member[@name="ITfFnReconversion.GetReconversion"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetReconversion(ITfRange* pRange, ITfCandidateList** ppCandList)
@@ -60,6 +67,7 @@ public unsafe partial struct ITfFnReconversion : ITfFnReconversion.Interface
         return ((delegate* unmanaged<ITfFnReconversion*, ITfRange*, ITfCandidateList**, int>)(lpVtbl[5]))((ITfFnReconversion*)Unsafe.AsPointer(ref this), pRange, ppCandList);
     }
 
+    /// <include file='ITfFnReconversion.xml' path='doc/member[@name="ITfFnReconversion.Reconvert"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Reconvert(ITfRange* pRange)

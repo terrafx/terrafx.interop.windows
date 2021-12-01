@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='msidbMoveFileOptions.xml' path='doc/member[@name="msidbMoveFileOptions"]/*' />
 public enum msidbMoveFileOptions
 {
+    /// <include file='msidbMoveFileOptions.xml' path='doc/member[@name="msidbMoveFileOptions.msidbMoveFileOptionsMove"]/*' />
     msidbMoveFileOptionsMove = 0x00000001,
 }

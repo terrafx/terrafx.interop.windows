@@ -5,11 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NMLVSCROLL.xml' path='doc/member[@name="NMLVSCROLL"]/*' />
 public partial struct NMLVSCROLL
 {
+    /// <include file='NMLVSCROLL.xml' path='doc/member[@name="NMLVSCROLL.hdr"]/*' />
     public NMHDR hdr;
 
+    /// <include file='NMLVSCROLL.xml' path='doc/member[@name="NMLVSCROLL.dx"]/*' />
     public int dx;
 
+    /// <include file='NMLVSCROLL.xml' path='doc/member[@name="NMLVSCROLL.dy"]/*' />
     public int dy;
 }

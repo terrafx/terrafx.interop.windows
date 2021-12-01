@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IBandSite.xml' path='doc/member[@name="IBandSite"]/*' />
 [Guid("4CF504B0-DE96-11D0-8B3F-00A0C911E8E5")]
 [NativeTypeName("struct IBandSite : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IBandSite : IBandSite.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IBandSite : IBandSite.Interface
         return ((delegate* unmanaged<IBandSite*, Guid*, void**, int>)(lpVtbl[0]))((IBandSite*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IBandSite : IBandSite.Interface
         return ((delegate* unmanaged<IBandSite*, uint>)(lpVtbl[1]))((IBandSite*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IBandSite : IBandSite.Interface
         return ((delegate* unmanaged<IBandSite*, uint>)(lpVtbl[2]))((IBandSite*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IBandSite.xml' path='doc/member[@name="IBandSite.AddBand"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT AddBand(IUnknown* punk)
@@ -46,6 +51,7 @@ public unsafe partial struct IBandSite : IBandSite.Interface
         return ((delegate* unmanaged<IBandSite*, IUnknown*, int>)(lpVtbl[3]))((IBandSite*)Unsafe.AsPointer(ref this), punk);
     }
 
+    /// <include file='IBandSite.xml' path='doc/member[@name="IBandSite.EnumBands"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT EnumBands(uint uBand, [NativeTypeName("DWORD *")] uint* pdwBandID)
@@ -53,6 +59,7 @@ public unsafe partial struct IBandSite : IBandSite.Interface
         return ((delegate* unmanaged<IBandSite*, uint, uint*, int>)(lpVtbl[4]))((IBandSite*)Unsafe.AsPointer(ref this), uBand, pdwBandID);
     }
 
+    /// <include file='IBandSite.xml' path='doc/member[@name="IBandSite.QueryBand"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT QueryBand([NativeTypeName("DWORD")] uint dwBandID, IDeskBand** ppstb, [NativeTypeName("DWORD *")] uint* pdwState, [NativeTypeName("LPWSTR")] ushort* pszName, int cchName)
@@ -60,6 +67,7 @@ public unsafe partial struct IBandSite : IBandSite.Interface
         return ((delegate* unmanaged<IBandSite*, uint, IDeskBand**, uint*, ushort*, int, int>)(lpVtbl[5]))((IBandSite*)Unsafe.AsPointer(ref this), dwBandID, ppstb, pdwState, pszName, cchName);
     }
 
+    /// <include file='IBandSite.xml' path='doc/member[@name="IBandSite.SetBandState"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT SetBandState([NativeTypeName("DWORD")] uint dwBandID, [NativeTypeName("DWORD")] uint dwMask, [NativeTypeName("DWORD")] uint dwState)
@@ -67,6 +75,7 @@ public unsafe partial struct IBandSite : IBandSite.Interface
         return ((delegate* unmanaged<IBandSite*, uint, uint, uint, int>)(lpVtbl[6]))((IBandSite*)Unsafe.AsPointer(ref this), dwBandID, dwMask, dwState);
     }
 
+    /// <include file='IBandSite.xml' path='doc/member[@name="IBandSite.RemoveBand"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT RemoveBand([NativeTypeName("DWORD")] uint dwBandID)
@@ -74,6 +83,7 @@ public unsafe partial struct IBandSite : IBandSite.Interface
         return ((delegate* unmanaged<IBandSite*, uint, int>)(lpVtbl[7]))((IBandSite*)Unsafe.AsPointer(ref this), dwBandID);
     }
 
+    /// <include file='IBandSite.xml' path='doc/member[@name="IBandSite.GetBandObject"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetBandObject([NativeTypeName("DWORD")] uint dwBandID, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
@@ -81,6 +91,7 @@ public unsafe partial struct IBandSite : IBandSite.Interface
         return ((delegate* unmanaged<IBandSite*, uint, Guid*, void**, int>)(lpVtbl[8]))((IBandSite*)Unsafe.AsPointer(ref this), dwBandID, riid, ppv);
     }
 
+    /// <include file='IBandSite.xml' path='doc/member[@name="IBandSite.SetBandSiteInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT SetBandSiteInfo([NativeTypeName("const BANDSITEINFO *")] BANDSITEINFO* pbsinfo)
@@ -88,6 +99,7 @@ public unsafe partial struct IBandSite : IBandSite.Interface
         return ((delegate* unmanaged<IBandSite*, BANDSITEINFO*, int>)(lpVtbl[9]))((IBandSite*)Unsafe.AsPointer(ref this), pbsinfo);
     }
 
+    /// <include file='IBandSite.xml' path='doc/member[@name="IBandSite.GetBandSiteInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT GetBandSiteInfo(BANDSITEINFO* pbsinfo)

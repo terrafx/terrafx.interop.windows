@@ -7,10 +7,16 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TKBLayoutType.xml' path='doc/member[@name="TKBLayoutType"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public enum TKBLayoutType
 {
+    /// <include file='TKBLayoutType.xml' path='doc/member[@name="TKBLayoutType.TKBLT_UNDEFINED"]/*' />
     TKBLT_UNDEFINED = 0,
+
+    /// <include file='TKBLayoutType.xml' path='doc/member[@name="TKBLayoutType.TKBLT_CLASSIC"]/*' />
     TKBLT_CLASSIC = 1,
+
+    /// <include file='TKBLayoutType.xml' path='doc/member[@name="TKBLayoutType.TKBLT_OPTIMIZED"]/*' />
     TKBLT_OPTIMIZED = 2,
 }

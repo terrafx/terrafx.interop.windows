@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ACTIVATION_CONTEXT_COMPATIBILITY_INFORMATION.xml' path='doc/member[@name="ACTIVATION_CONTEXT_COMPATIBILITY_INFORMATION"]/*' />
 public partial struct ACTIVATION_CONTEXT_COMPATIBILITY_INFORMATION
 {
+    /// <include file='ACTIVATION_CONTEXT_COMPATIBILITY_INFORMATION.xml' path='doc/member[@name="ACTIVATION_CONTEXT_COMPATIBILITY_INFORMATION.ElementCount"]/*' />
     [NativeTypeName("DWORD")]
     public uint ElementCount;
 
+    /// <include file='ACTIVATION_CONTEXT_COMPATIBILITY_INFORMATION.xml' path='doc/member[@name="ACTIVATION_CONTEXT_COMPATIBILITY_INFORMATION.Elements"]/*' />
     [NativeTypeName("COMPATIBILITY_CONTEXT_ELEMENT []")]
     public COMPATIBILITY_CONTEXT_ELEMENT Elements;
 }

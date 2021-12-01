@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAudioSessionManager2.xml' path='doc/member[@name="IAudioSessionManager2"]/*' />
 [Guid("77AA99A0-1BD6-484F-8BC7-2C654C9A9B6F")]
 [NativeTypeName("struct IAudioSessionManager2 : IAudioSessionManager")]
 [NativeInheritance("IAudioSessionManager")]
@@ -16,6 +17,7 @@ public unsafe partial struct IAudioSessionManager2 : IAudioSessionManager2.Inter
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IAudioSessionManager2 : IAudioSessionManager2.Inter
         return ((delegate* unmanaged<IAudioSessionManager2*, Guid*, void**, int>)(lpVtbl[0]))((IAudioSessionManager2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IAudioSessionManager2 : IAudioSessionManager2.Inter
         return ((delegate* unmanaged<IAudioSessionManager2*, uint>)(lpVtbl[1]))((IAudioSessionManager2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IAudioSessionManager2 : IAudioSessionManager2.Inter
         return ((delegate* unmanaged<IAudioSessionManager2*, uint>)(lpVtbl[2]))((IAudioSessionManager2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IAudioSessionManager.GetAudioSessionControl" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetAudioSessionControl([NativeTypeName("LPCGUID")] Guid* AudioSessionGuid, [NativeTypeName("DWORD")] uint StreamFlags, IAudioSessionControl** SessionControl)
@@ -46,6 +51,7 @@ public unsafe partial struct IAudioSessionManager2 : IAudioSessionManager2.Inter
         return ((delegate* unmanaged<IAudioSessionManager2*, Guid*, uint, IAudioSessionControl**, int>)(lpVtbl[3]))((IAudioSessionManager2*)Unsafe.AsPointer(ref this), AudioSessionGuid, StreamFlags, SessionControl);
     }
 
+    /// <inheritdoc cref="IAudioSessionManager.GetSimpleAudioVolume" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetSimpleAudioVolume([NativeTypeName("LPCGUID")] Guid* AudioSessionGuid, [NativeTypeName("DWORD")] uint StreamFlags, ISimpleAudioVolume** AudioVolume)
@@ -53,6 +59,7 @@ public unsafe partial struct IAudioSessionManager2 : IAudioSessionManager2.Inter
         return ((delegate* unmanaged<IAudioSessionManager2*, Guid*, uint, ISimpleAudioVolume**, int>)(lpVtbl[4]))((IAudioSessionManager2*)Unsafe.AsPointer(ref this), AudioSessionGuid, StreamFlags, AudioVolume);
     }
 
+    /// <include file='IAudioSessionManager2.xml' path='doc/member[@name="IAudioSessionManager2.GetSessionEnumerator"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetSessionEnumerator(IAudioSessionEnumerator** SessionEnum)
@@ -60,6 +67,7 @@ public unsafe partial struct IAudioSessionManager2 : IAudioSessionManager2.Inter
         return ((delegate* unmanaged<IAudioSessionManager2*, IAudioSessionEnumerator**, int>)(lpVtbl[5]))((IAudioSessionManager2*)Unsafe.AsPointer(ref this), SessionEnum);
     }
 
+    /// <include file='IAudioSessionManager2.xml' path='doc/member[@name="IAudioSessionManager2.RegisterSessionNotification"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT RegisterSessionNotification(IAudioSessionNotification* SessionNotification)
@@ -67,6 +75,7 @@ public unsafe partial struct IAudioSessionManager2 : IAudioSessionManager2.Inter
         return ((delegate* unmanaged<IAudioSessionManager2*, IAudioSessionNotification*, int>)(lpVtbl[6]))((IAudioSessionManager2*)Unsafe.AsPointer(ref this), SessionNotification);
     }
 
+    /// <include file='IAudioSessionManager2.xml' path='doc/member[@name="IAudioSessionManager2.UnregisterSessionNotification"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT UnregisterSessionNotification(IAudioSessionNotification* SessionNotification)
@@ -74,6 +83,7 @@ public unsafe partial struct IAudioSessionManager2 : IAudioSessionManager2.Inter
         return ((delegate* unmanaged<IAudioSessionManager2*, IAudioSessionNotification*, int>)(lpVtbl[7]))((IAudioSessionManager2*)Unsafe.AsPointer(ref this), SessionNotification);
     }
 
+    /// <include file='IAudioSessionManager2.xml' path='doc/member[@name="IAudioSessionManager2.RegisterDuckNotification"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT RegisterDuckNotification([NativeTypeName("LPCWSTR")] ushort* sessionID, IAudioVolumeDuckNotification* duckNotification)
@@ -81,6 +91,7 @@ public unsafe partial struct IAudioSessionManager2 : IAudioSessionManager2.Inter
         return ((delegate* unmanaged<IAudioSessionManager2*, ushort*, IAudioVolumeDuckNotification*, int>)(lpVtbl[8]))((IAudioSessionManager2*)Unsafe.AsPointer(ref this), sessionID, duckNotification);
     }
 
+    /// <include file='IAudioSessionManager2.xml' path='doc/member[@name="IAudioSessionManager2.UnregisterDuckNotification"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT UnregisterDuckNotification(IAudioVolumeDuckNotification* duckNotification)

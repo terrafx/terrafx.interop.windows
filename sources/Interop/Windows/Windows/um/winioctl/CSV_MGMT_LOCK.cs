@@ -5,8 +5,10 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CSV_MGMT_LOCK.xml' path='doc/member[@name="CSV_MGMT_LOCK"]/*' />
 public partial struct CSV_MGMT_LOCK
 {
+    /// <include file='CSV_MGMT_LOCK.xml' path='doc/member[@name="CSV_MGMT_LOCK.Flags"]/*' />
     [NativeTypeName("DWORD")]
     public uint Flags;
 }

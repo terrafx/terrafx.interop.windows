@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFCollection.xml' path='doc/member[@name="IMFCollection"]/*' />
 [Guid("5BC8A76B-869A-46A3-9B03-FA218A66AEBE")]
 [NativeTypeName("struct IMFCollection : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMFCollection : IMFCollection.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMFCollection : IMFCollection.Interface
         return ((delegate* unmanaged<IMFCollection*, Guid*, void**, int>)(lpVtbl[0]))((IMFCollection*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMFCollection : IMFCollection.Interface
         return ((delegate* unmanaged<IMFCollection*, uint>)(lpVtbl[1]))((IMFCollection*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMFCollection : IMFCollection.Interface
         return ((delegate* unmanaged<IMFCollection*, uint>)(lpVtbl[2]))((IMFCollection*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFCollection.xml' path='doc/member[@name="IMFCollection.GetElementCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetElementCount([NativeTypeName("DWORD *")] uint* pcElements)
@@ -46,6 +51,7 @@ public unsafe partial struct IMFCollection : IMFCollection.Interface
         return ((delegate* unmanaged<IMFCollection*, uint*, int>)(lpVtbl[3]))((IMFCollection*)Unsafe.AsPointer(ref this), pcElements);
     }
 
+    /// <include file='IMFCollection.xml' path='doc/member[@name="IMFCollection.GetElement"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetElement([NativeTypeName("DWORD")] uint dwElementIndex, IUnknown** ppUnkElement)
@@ -53,6 +59,7 @@ public unsafe partial struct IMFCollection : IMFCollection.Interface
         return ((delegate* unmanaged<IMFCollection*, uint, IUnknown**, int>)(lpVtbl[4]))((IMFCollection*)Unsafe.AsPointer(ref this), dwElementIndex, ppUnkElement);
     }
 
+    /// <include file='IMFCollection.xml' path='doc/member[@name="IMFCollection.AddElement"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT AddElement(IUnknown* pUnkElement)
@@ -60,6 +67,7 @@ public unsafe partial struct IMFCollection : IMFCollection.Interface
         return ((delegate* unmanaged<IMFCollection*, IUnknown*, int>)(lpVtbl[5]))((IMFCollection*)Unsafe.AsPointer(ref this), pUnkElement);
     }
 
+    /// <include file='IMFCollection.xml' path='doc/member[@name="IMFCollection.RemoveElement"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT RemoveElement([NativeTypeName("DWORD")] uint dwElementIndex, IUnknown** ppUnkElement)
@@ -67,6 +75,7 @@ public unsafe partial struct IMFCollection : IMFCollection.Interface
         return ((delegate* unmanaged<IMFCollection*, uint, IUnknown**, int>)(lpVtbl[6]))((IMFCollection*)Unsafe.AsPointer(ref this), dwElementIndex, ppUnkElement);
     }
 
+    /// <include file='IMFCollection.xml' path='doc/member[@name="IMFCollection.InsertElementAt"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT InsertElementAt([NativeTypeName("DWORD")] uint dwIndex, IUnknown* pUnknown)
@@ -74,6 +83,7 @@ public unsafe partial struct IMFCollection : IMFCollection.Interface
         return ((delegate* unmanaged<IMFCollection*, uint, IUnknown*, int>)(lpVtbl[7]))((IMFCollection*)Unsafe.AsPointer(ref this), dwIndex, pUnknown);
     }
 
+    /// <include file='IMFCollection.xml' path='doc/member[@name="IMFCollection.RemoveAllElements"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT RemoveAllElements()

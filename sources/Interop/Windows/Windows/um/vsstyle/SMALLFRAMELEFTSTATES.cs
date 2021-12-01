@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SMALLFRAMELEFTSTATES.xml' path='doc/member[@name="SMALLFRAMELEFTSTATES"]/*' />
 public enum SMALLFRAMELEFTSTATES
 {
+    /// <include file='SMALLFRAMELEFTSTATES.xml' path='doc/member[@name="SMALLFRAMELEFTSTATES.SFRL_ACTIVE"]/*' />
     SFRL_ACTIVE = 1,
+
+    /// <include file='SMALLFRAMELEFTSTATES.xml' path='doc/member[@name="SMALLFRAMELEFTSTATES.SFRL_INACTIVE"]/*' />
     SFRL_INACTIVE = 2,
 }

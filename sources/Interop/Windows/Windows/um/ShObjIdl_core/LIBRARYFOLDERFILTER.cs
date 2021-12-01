@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='LIBRARYFOLDERFILTER.xml' path='doc/member[@name="LIBRARYFOLDERFILTER"]/*' />
 public enum LIBRARYFOLDERFILTER
 {
+    /// <include file='LIBRARYFOLDERFILTER.xml' path='doc/member[@name="LIBRARYFOLDERFILTER.LFF_FORCEFILESYSTEM"]/*' />
     LFF_FORCEFILESYSTEM = 1,
+
+    /// <include file='LIBRARYFOLDERFILTER.xml' path='doc/member[@name="LIBRARYFOLDERFILTER.LFF_STORAGEITEMS"]/*' />
     LFF_STORAGEITEMS = 2,
+
+    /// <include file='LIBRARYFOLDERFILTER.xml' path='doc/member[@name="LIBRARYFOLDERFILTER.LFF_ALLITEMS"]/*' />
     LFF_ALLITEMS = 3,
 }

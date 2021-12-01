@@ -7,27 +7,35 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DEVICE_DATA_SET_LB_PROVISIONING_STATE.xml' path='doc/member[@name="DEVICE_DATA_SET_LB_PROVISIONING_STATE"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public unsafe partial struct DEVICE_DATA_SET_LB_PROVISIONING_STATE
 {
+    /// <include file='DEVICE_DATA_SET_LB_PROVISIONING_STATE.xml' path='doc/member[@name="DEVICE_DATA_SET_LB_PROVISIONING_STATE.Size"]/*' />
     [NativeTypeName("DWORD")]
     public uint Size;
 
+    /// <include file='DEVICE_DATA_SET_LB_PROVISIONING_STATE.xml' path='doc/member[@name="DEVICE_DATA_SET_LB_PROVISIONING_STATE.Version"]/*' />
     [NativeTypeName("DWORD")]
     public uint Version;
 
+    /// <include file='DEVICE_DATA_SET_LB_PROVISIONING_STATE.xml' path='doc/member[@name="DEVICE_DATA_SET_LB_PROVISIONING_STATE.SlabSizeInBytes"]/*' />
     [NativeTypeName("DWORDLONG")]
     public ulong SlabSizeInBytes;
 
+    /// <include file='DEVICE_DATA_SET_LB_PROVISIONING_STATE.xml' path='doc/member[@name="DEVICE_DATA_SET_LB_PROVISIONING_STATE.SlabOffsetDeltaInBytes"]/*' />
     [NativeTypeName("DWORD")]
     public uint SlabOffsetDeltaInBytes;
 
+    /// <include file='DEVICE_DATA_SET_LB_PROVISIONING_STATE.xml' path='doc/member[@name="DEVICE_DATA_SET_LB_PROVISIONING_STATE.SlabAllocationBitMapBitCount"]/*' />
     [NativeTypeName("DWORD")]
     public uint SlabAllocationBitMapBitCount;
 
+    /// <include file='DEVICE_DATA_SET_LB_PROVISIONING_STATE.xml' path='doc/member[@name="DEVICE_DATA_SET_LB_PROVISIONING_STATE.SlabAllocationBitMapLength"]/*' />
     [NativeTypeName("DWORD")]
     public uint SlabAllocationBitMapLength;
 
+    /// <include file='DEVICE_DATA_SET_LB_PROVISIONING_STATE.xml' path='doc/member[@name="DEVICE_DATA_SET_LB_PROVISIONING_STATE.SlabAllocationBitMap"]/*' />
     [NativeTypeName("DWORD [1]")]
     public fixed uint SlabAllocationBitMap[1];
 }

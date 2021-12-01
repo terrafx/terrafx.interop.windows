@@ -1,0 +1,289 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ICatRegister.RegisterCategories">
+    <summary>
+      <para>Registers one or more component categories. Each component category consists of a CATID and a list of locale-dependent description strings.</para>
+    </summary>
+    <param name="cCategories">
+      <para>The number of component categories to be registered.</para>
+    </param>
+    <param name="rgCategoryInfo">
+      <para>An array of <see cref="CATEGORYINFO" /> structures, one for each category to be registered. By providing the same CATID for multiple <b>CATEGORYINFO</b> structures, multiple locales can be registered for the same component category.</para>
+    </param>
+    <returns>
+      <para>This method can return the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method completed successfully.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>One or more arguments are incorrect.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method can only be called by the owner of a category, usually as part of the installation or de-installation of the operating system or application.</para>
+    </remarks>
+    <seealso cref="ICatRegister" />
+  </member>
+  <member name="ICatRegister.RegisterClassImplCategories">
+    <summary>
+      <para>Registers the class as implementing one or more component categories.</para>
+    </summary>
+    <param name="rclsid">
+      <para>The class identifier.</para>
+    </param>
+    <param name="cCategories">
+      <para>The number of categories to be associated as category identifiers for the class.</para>
+    </param>
+    <param name="rgcatid">
+      <para>An array of CATIDs to associate as category identifiers for the class.</para>
+    </param>
+    <returns>
+      <para>This method can return the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method completed successfully.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>One or more arguments are incorrect.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>In case of an error, this method does not ensure that the registry is restored to the state prior to the call. This method can only be called by the owner of a class, usually as part of the installation of the component.</para>
+    </remarks>
+    <seealso cref="ICatRegister" />
+  </member>
+  <member name="ICatRegister.RegisterClassReqCategories">
+    <summary>
+      <para>Registers the class as requiring one or more component categories.</para>
+    </summary>
+    <param name="rclsid">
+      <para>The class identifier.</para>
+    </param>
+    <param name="cCategories">
+      <para>The number of category CATIDs to be associated as category identifiers for the class.</para>
+    </param>
+    <param name="rgcatid">
+      <para>An array of CATIDs to be associated as category identifiers for the class.</para>
+    </param>
+    <returns>
+      <para>This method can return the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method completed successfully.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>One or more arguments are incorrect.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>In case of an error, this method does not ensure that the registry is restored to the state prior to the call. This method can only be called by the owner of a class, usually as part of the installation of the component.</para>
+    </remarks>
+    <seealso cref="ICatRegister" />
+  </member>
+  <member name="ICatRegister.UnRegisterCategories">
+    <summary>
+      <para>Removes the registration of one or more component categories. Each component category consists of a CATID and a list of locale-dependent description strings.</para>
+    </summary>
+    <param name="cCategories">
+      <para>The number of categories to be removed.</para>
+    </param>
+    <param name="rgcatid">
+      <para>The CATIDs of the categories to be removed.</para>
+    </param>
+    <returns>
+      <para>This method can return the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method completed successfully.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>One or more arguments are incorrect.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method will be successful even if one or more of the category IDs specified are not registered. This method can only be called by the owner of a category, usually as part of the installation or de-installation of the operating system or application.</para>
+      <para>This method does not remove the component category tags from individual classes. To do this, use the <see cref="ICatRegister.UnRegisterClassReqCategories" /> method.</para>
+    </remarks>
+    <seealso cref="ICatRegister" />
+  </member>
+  <member name="ICatRegister.UnRegisterClassImplCategories">
+    <summary>
+      <para>Removes one or more implemented category identifiers from a class.</para>
+    </summary>
+    <param name="rclsid">
+      <para>The class identifier.</para>
+    </param>
+    <param name="cCategories">
+      <para>The number of category CATIDs to be removed.</para>
+    </param>
+    <param name="rgcatid">
+      <para>An array of CATIDs that are to be removed. Only the category IDs specified in this array are removed.</para>
+    </param>
+    <returns>
+      <para>This method can return the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method completed successfully.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>One or more arguments are incorrect.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>In case of an error, this method does not ensure that the registry is restored to the state prior to the call. This method will be successful even if one or more of the category IDs specified are not registered for the class. This method can only be called by the owner of a class, usually as part of the de-installation of the component.</para>
+    </remarks>
+    <seealso cref="ICatRegister" />
+  </member>
+  <member name="ICatRegister.UnRegisterClassReqCategories">
+    <summary>
+      <para>Removes one or more required category identifiers from a class.</para>
+    </summary>
+    <param name="rclsid">
+      <para>The class identifier.</para>
+    </param>
+    <param name="cCategories">
+      <para>The number of category CATIDs to be removed.</para>
+    </param>
+    <param name="rgcatid">
+      <para>An array of CATIDs that are to be removed. Only the category IDs specified in this array are removed.</para>
+    </param>
+    <returns>
+      <para>This method can return the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method completed successfully.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>One or more arguments are incorrect.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>In case of an error, this method does not ensure that the registry is restored to the state prior to the call. This method will be successful even if one or more of the category IDs specified are not registered for the class.</para>
+    </remarks>
+    <seealso cref="ICatRegister" />
+  </member>
+  <member name="ICatRegister">
+    <summary>
+      <para>Provides methods for registering and unregistering component category information in the registry. This includes both the human-readable names of categories and the categories implemented/required by a given component or class.</para>
+    </summary>
+    <seealso cref="CATEGORYINFO" />
+    <seealso cref="ICatInformation" />
+  </member>
+</doc>

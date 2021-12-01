@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WORD_BLOB.xml' path='doc/member[@name="WORD_BLOB"]/*' />
 public unsafe partial struct WORD_BLOB
 {
+    /// <include file='WORD_BLOB.xml' path='doc/member[@name="WORD_BLOB.clSize"]/*' />
     [NativeTypeName("ULONG")]
     public uint clSize;
 
+    /// <include file='WORD_BLOB.xml' path='doc/member[@name="WORD_BLOB.asData"]/*' />
     [NativeTypeName("unsigned short [1]")]
     public fixed ushort asData[1];
 }

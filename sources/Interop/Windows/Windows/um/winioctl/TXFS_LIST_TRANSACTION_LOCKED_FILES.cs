@@ -7,16 +7,21 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TXFS_LIST_TRANSACTION_LOCKED_FILES.xml' path='doc/member[@name="TXFS_LIST_TRANSACTION_LOCKED_FILES"]/*' />
 public partial struct TXFS_LIST_TRANSACTION_LOCKED_FILES
 {
+    /// <include file='TXFS_LIST_TRANSACTION_LOCKED_FILES.xml' path='doc/member[@name="TXFS_LIST_TRANSACTION_LOCKED_FILES.KtmTransaction"]/*' />
     public Guid KtmTransaction;
 
+    /// <include file='TXFS_LIST_TRANSACTION_LOCKED_FILES.xml' path='doc/member[@name="TXFS_LIST_TRANSACTION_LOCKED_FILES.NumberOfFiles"]/*' />
     [NativeTypeName("DWORDLONG")]
     public ulong NumberOfFiles;
 
+    /// <include file='TXFS_LIST_TRANSACTION_LOCKED_FILES.xml' path='doc/member[@name="TXFS_LIST_TRANSACTION_LOCKED_FILES.BufferSizeRequired"]/*' />
     [NativeTypeName("DWORDLONG")]
     public ulong BufferSizeRequired;
 
+    /// <include file='TXFS_LIST_TRANSACTION_LOCKED_FILES.xml' path='doc/member[@name="TXFS_LIST_TRANSACTION_LOCKED_FILES.Offset"]/*' />
     [NativeTypeName("DWORDLONG")]
     public ulong Offset;
 }

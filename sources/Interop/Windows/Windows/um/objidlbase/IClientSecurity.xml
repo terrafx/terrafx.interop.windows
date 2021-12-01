@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IClientSecurity.CopyProxy">
+    <summary>
+      <para>Makes a private copy of the proxy for the specified interface.</para>
+    </summary>
+    <param name="pProxy">
+      <para>A pointer to the interface whose proxy is to be copied. This parameter cannot be <b>NULL</b>.</para>
+    </param>
+    <param name="ppCopy">
+      <para>A pointer to the <see cref="IUnknown" /> interface pointer that receives the copy of the proxy. This parameter cannot be <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>This method can return the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method completed successfully.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>One or more arguments are not valid.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>
+        <b>CopyProxy</b> is called by the client to make a private copy of the proxy for the specified interface. The proxy copy has default values for the authentication information. Its authentication information can be changed through a call to <see cref="IClientSecurity.SetBlanket" /> without affecting any other clients of the original proxy. The copy has one reference, and the caller of <b>CopyProxy</b> must ensure that the proxy copy gets freed.</para>
+      <para>Local interfaces, such as <see cref="IUnknown" /> and <see cref="IClientSecurity" />, cannot be copied. You cannot duplicate a proxy manager using <b>CopyProxy</b>.</para>
+      <para>Copies of the same proxy have a special relationship with respect to <see cref="QueryInterface" />. Given a proxy, a, of the IA interface of a remote object, suppose a copy of a is created, called b. In this case, calling <b>QueryInterface</b> from the b proxy for IID_IA will not retrieve the IA interface on b, but the one on a, the original proxy.</para>
+      <para>Notice that anyone can query for a proxy and change security on it using <see cref="SetBlanket" />. However, when you have made a copy of a proxy, no one can get the copy unless you give it to them. Only people who have the copy can set security on it.</para>
+      <para>The helper function <see cref="CoCopyProxy" /> encapsulates a <see cref="QueryInterface" /> call for a pointer to IClientSecurity, a call to <b>CopyProxy</b> with the <see cref="IClientSecurity" /> pointer, and the release of the <b>IClientSecurity</b> pointer.</para>
+    </remarks>
+    <seealso cref="CoCopyProxy" />
+    <seealso cref="IClientSecurity" />
+  </member>
+  <member name="IClientSecurity.QueryBlanket">
+    <summary>
+      <para>Retrieves authentication information the client uses to make calls on the specified proxy.</para>
+    </summary>
+    <param name="pProxy">
+      <para>A pointer to the proxy. This parameter cannot be <b>NULL</b>. For more information, see the Remarks section.</para>
+    </param>
+    <param name="pAuthnSvc">
+      <para>The current authentication service. This will be a single value taken from the list of <a href="https://docs.microsoft.com//windows/desktop/com/com-authentication-service-constants">authentication service constants</a>. This parameter cannot be <b>NULL</b>.</para>
+    </param>
+    <param name="pAuthzSvc">
+      <para>The current authorization service. This will be a single value taken from the list of <a href="https://docs.microsoft.com//windows/desktop/com/com-authorization-constants">authorization constants</a>. This parameter cannot be <b>NULL</b>.</para>
+    </param>
+    <param name="pServerPrincName">
+      <para>The current principal name. The string will be allocated by the callee using the <see cref="CoTaskMemAlloc" /> function and must be freed by the caller using the <see cref="CoTaskMemFree" /> function. Note that the actual principal name is returned. The EOAC_MAKE_FULLSIC flag is not accepted to convert the prinicpal name. If the caller specifies <b>NULL</b>, the current principal name is not retrieved.</para>
+    </param>
+    <param name="pAuthnLevel">
+      <para>The current authentication level. This will be a single value taken from the list of <a href="https://docs.microsoft.com//windows/desktop/com/com-authentication-level-constants">authentication level constants</a>. If this parameter is <b>NULL</b>, the current authentication level is not retrieved.</para>
+    </param>
+    <param name="pImpLevel">
+      <para>The current impersonation level. This will be a single value taken from the list of <a href="https://docs.microsoft.com//windows/desktop/com/com-impersonation-level-constants">impersonation level constants</a>. If this parameter is <b>NULL</b>, the current impersonation level is not retrieved.</para>
+    </param>
+    <param name="pAuthInfo">
+      <para>A pointer to a handle indicating the identity of the client that was passed to the last <see cref="IClientSecurity.SetBlanket" /> call (or the default value). Default values are only valid until the proxy is released. If the caller specifies <b>NULL</b>, the client identity is not retrieved.</para>
+      <para>The format of the structure that the returned handle refers to depends on the authentication service. For NTLMSSP and Kerberos, if the client specified a structure in the <i>pAuthInfo</i> parameter to <see cref="CoInitializeSecurity" />, that value is returned. For Schannel, if a certificate for the client could be retrieved from the certificate manager, that value is returned here. Otherwise, <b>NULL</b> is returned. Because this points to the value itself and is not a copy, it should not be manipulated or freed.</para>
+    </param>
+    <param name="pCapabilites">
+      <para>The capabilities of the proxy. These flags are defined in the <see cref="EOLE_AUTHENTICATION_CAPABILITIES" /> enumeration. If this parameter is <b>NULL</b>, the current capability flags are not retrieved.</para>
+    </param>
+    <returns>
+      <para>This method can return the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method completed successfully.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>One or more arguments are not valid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>There is insufficient memory to create the <i>pServerPrincName</i> buffer.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>
+        <b>QueryBlanket</b> is called by the client to retrieve the authentication information COM will use on calls made from the specified interface proxy. With a pointer to an interface on the proxy, the client would first call <see cref="QueryInterface" /> for a pointer to <see cref="IClientSecurity" />; then, with this pointer, the client would call <b>QueryBlanket</b>, followed by releasing the pointer. This sequence of calls is encapsulated in the helper function <see cref="CoQueryProxyBlanket" />.</para>
+      <para>In <i>pProxy</i>, you pass an interface pointer. However, you cannot pass a pointer to an interface that does not use a proxy. Thus you cannot pass a pointer to an interface that has the local keyword in its interface definition since no proxy is created for such an interface. <see cref="IUnknown" /> is the exception to this rule.</para>
+    </remarks>
+    <seealso cref="CoQueryProxyBlanket" />
+    <seealso cref="CoSetProxyBlanket" />
+    <seealso cref="IClientSecurity" />
+  </member>
+  <member name="IClientSecurity.SetBlanket">
+    <summary>
+      <para>Sets the authentication information (the security blanket) that will be used to make calls on the specified proxy.</para>
+      <para>This setting overrides the process default settings for the specified proxy. Calling this method changes the security values for all other users of the specified proxy.</para>
+    </summary>
+    <param name="pProxy">
+      <para>A pointer to the proxy.</para>
+    </param>
+    <param name="dwAuthnSvc">
+      <para>The authentication service. This will be a single value taken from the list of <a href="https://docs.microsoft.com//windows/desktop/com/com-authentication-service-constants">authentication service constants</a>. If no authentication is required, use RPC_C_AUTHN_NONE. If RPC_C_AUTHN_DEFAULT is specified, COM will pick an authentication service following its normal security blanket negotiation algorithm.</para>
+    </param>
+    <param name="dwAuthzSvc">
+      <para>The authorization service. This will be a single value taken from the list of <a href="https://docs.microsoft.com//windows/desktop/com/com-authorization-constants">authorization constants</a>. If RPC_C_AUTHZ_DEFAULT is specified, COM will pick an authorization service following its normal security blanket negotiation algorithm. If NTLMSSP, Kerberos, or Schannel is used as the authentication service, RPC_C_AUTHZ_NONE should be used as the authorization service.</para>
+    </param>
+    <param name="pServerPrincName">
+      <para>The server principal name. If COLE_DEFAULT_PRINCIPAL is specified, DCOM will pick a principal name using its security blanket negotiation algorithm. If Kerberos is used as the authentication service, this parameter must be the correct principal name of the server or the call will fail.</para>
+      <para>If Schannel is used as the authentication service, this value must be one of the msstd or fullsic forms described in <a href="https://docs.microsoft.com//windows/desktop/Rpc/principal-names">Principal Names</a>, or <b>NULL</b> if you do not want mutual authentication.</para>
+      <para>Generally, specifying <b>NULL</b> will not reset server principal name on the proxy, rather, the previous setting will be retained. You must exercise care when using <b>NULL</b> as <i>pServerPrincName</i> when selecting a different authentication service for the proxy, because there is no guarantee that the previously set principal name would be valid for the newly selected authentication service.</para>
+    </param>
+    <param name="dwAuthnLevel">
+      <para>The authentication level. This will be a single value taken from the list of <a href="https://docs.microsoft.com//windows/desktop/com/com-authentication-level-constants">authentication level constants</a>. If RPC_C_AUTHN_LEVEL_DEFAULT is specified, COM will pick an authentication level following its normal security blanket negotiation algorithm. If this value is set to RPC_C_AUTHN_LEVEL_NONE, the authentication service must be RPC_C_AUTHN_NONE. Each authentication service may choose to use a higher security authentication level than the one specified.</para>
+    </param>
+    <param name="dwImpLevel">
+      <para>The impersonation level. This will be a single value taken from the list of <a href="https://docs.microsoft.com//windows/desktop/com/com-impersonation-level-constants">impersonation level constants</a>. If RPC_C_IMP_LEVEL_DEFAULT is specified, COM will pick an impersonation level following its normal security blanket negotiation algorithm. If you are using NTLMSSP remotely, this value must be RPC_C_IMP_LEVEL_IMPERSONATE or RPC_C_IMP_LEVEL_IDENTIFY. When using NTLMSSP on the same computer, RPC_C_IMP_LEVEL_DELEGATE is also supported. For Kerberos, this value can be RPC_C_IMP_LEVEL_IDENTIFY, RPC_C_IMP_LEVEL_IMPERSONATE, or RPC_C_IMP_LEVEL_DELEGATE. For Schannel, this value must be RPC_C_IMP_LEVEL_IMPERSONATE.</para>
+    </param>
+    <param name="pAuthInfo">
+      <para>An RPC_AUTH_IDENTITY_HANDLE value that indicates the identity of the client. This parameter is not used for calls on the same computer. If <i>pAuthInfo</i> is <b>NULL</b>, COM uses the current proxy identity, which is either the process token, the impersonation token, or the authentication identity from the <see cref="CoInitializeSecurity" /> function. If the handle is not <b>NULL</b>, that identity is used. The format of the structure referred to by the handle depends on the provider of the authentication service.</para>
+      <para>For NTLMSSP or Kerberos, the structure is a <see cref="SEC_WINNT_AUTH_IDENTITY" /> or <see cref="SEC_WINNT_AUTH_IDENTITY_EX" /> structure. If the client obtains the credentials set on the proxy by calling <see cref="CoQueryProxyBlanket" />, it must ensure that the memory remains valid and unchanged until a different identity is set on the proxy or all proxies on the object are released.</para>
+      <para>If this parameter is <b>NULL</b>, COM uses the current proxy identity (which is either the process token or the impersonation token). If the handle refers to a structure, that identity is used.</para>
+      <para>For Schannel, this parameter must either be a pointer to a <see cref="CERT_CONTEXT" /> structure that contains the client's X.509 certificate, or <b>NULL</b> if the client wishes to make an anonymous connection to the server. If a certificate is specified, the caller must not free it as long as any proxy to the object exists in the current apartment.</para>
+      <para>For Snego, this member is either <b>NULL</b>, points to a <see cref="SEC_WINNT_AUTH_IDENTITY" /> structure, or points to a <see cref="SEC_WINNT_AUTH_IDENTITY_EX" /> structure. If it is <b>NULL</b>, Snego will pick a list of authentication services based on those available on the client computer. If it points to a <b>SEC_WINNT_AUTH_IDENTITY_EX</b> structure, the structure's <b>PackageList</b> member must point to a string containing a comma-separated list of authentication service names and the <b>PackageListLength</b> member must give the number of bytes in the <b>PackageList</b> string. If <b>PackageList</b> is <b>NULL</b>, all calls using Snego will fail.</para>
+      <para>If COLE_DEFAULT_AUTHINFO is specified, COM will pick the authentication information following its normal security blanket negotiation algorithm.</para>
+      <para>
+        <b>SetBlanket</b> will return an error if both <i>pAuthInfo</i> is set and one of the cloaking flags is set in <i>dwCapabilities</i>.</para>
+    </param>
+    <param name="dwCapabilities">
+      <para>The capabilities of this proxy. Capability flags are defined in the <see cref="EOLE_AUTHENTICATION_CAPABILITIES" /> enumeration. The only flags that can be set through this method are EOAC_MUTUAL_AUTH, EOAC_STATIC_CLOAKING, EOAC_DYNAMIC_CLOAKING, EOAC_ANY_AUTHORITY (this flag is deprecated), EOAC_MAKE_FULLSIC, and EOAC_DEFAULT. Either EOAC_STATIC_CLOAKING or EOAC_DYNAMIC_CLOAKING can be set if <i>pAuthInfo</i> is not set and Schannel is not the authentication service. (See <a href="https://docs.microsoft.com//windows/desktop/com/cloaking">Cloaking</a> for more information.) If any capability flags other than those mentioned here are indicated, <b>SetBlanket</b> will return an error.</para>
+    </param>
+    <returns>
+      <para>This method can return the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method completed successfully.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>One or more arguments are not valid.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>
+        <b>SetBlanket</b> sets the authentication information that will be used to make calls on the specified interface proxy. The values specified here override the values chosen by automatic security. Calling this method changes the security values for all other users of the specified proxy. If you want the changes to apply only to a particular instance of a proxy, call <see cref="IClientSecurity.CopyProxy" /> to make a private copy of the proxy and then call <b>SetBlanket</b> on the copy.</para>
+      <para>Whenever this method is called, DCOM will set the identity on the proxy, and future calls made using this proxy will use this identity. Calls in progress when <b>SetBlanket</b> is called will use the authentication information on the proxy at the time the call was started. If <i>pAuthInfo</i> is <b>NULL</b>, the proxy identity defaults to the current process token (unless an authentication identity was specified on a call to <see cref="CoInitializeSecurity" />). See <a href="https://docs.microsoft.com//windows/desktop/com/cloaking">Cloaking</a> to learn how the cloaking flags affect the proxy when <i>pAuthInfo</i> is <b>NULL</b>.</para>
+      <para>By default, COM will choose the first available authentication service and authorization service available on both the client and server computers and the principal name that the server registered for that authentication service. Currently, COM will not try another authentication service if the first fails.</para>
+      <para>When the default constant for <i>dwImpLevel</i> is specified in <b>SetBlanket</b>, the parameter defaults to the value specified to <see cref="CoInitializeSecurity" />. If <b>CoInitializeSecurity</b> is not called, it defaults to RPC_C_IMP_LEVEL_IDENTIFY.</para>
+      <para>The initial value for dwAuthnLevel on a proxy will be the higher of the value set on the client's call to <see cref="CoInitializeSecurity" /> and the server's call to <b>CoInitializeSecurity</b>. For any process that did not call <b>CoInitializeSecurity</b>, the default authentication level is RPC_C_AUTHN_CONNECT.</para>
+      <para>The default authentication and impersonation level for processes that do not call <see cref="CoInitializeSecurity" /> can be set with DCOMCNFG.</para>
+      <para>If EOAC_DEFAULT is specified for <i>dwCapabilities</i>, the valid capabilities from <see cref="CoInitializeSecurity" /> will be used. If <b>CoInitializeSecurity</b> was not called, EOAC_NONE will be used for the capabilities flag.</para>
+      <para>If <b>SetBlanket</b> is called simultaneously on two threads on the same proxy, only one set of changes will be applied. If <b>SetBlanket</b> and <b>CRpcOptions.Set</b> are called simultaneously on two threads on the same proxy, both changes may be applied or only one may be applied.</para>
+      <para>Security information cannot be set on local interfaces such as the <see cref="IClientSecurity" /> interface. However, since that interface is only supported locally, there is no need for security. <see cref="IUnknown" /> and <see cref="IMultiQI" /> are special cases. The location implementation makes remote calls to support these interfaces. <b>SetBlanket</b> can be used for <b>IUnknown</b>. <b>IMultiQI</b> will use the security settings on <b>IUnknown</b>.</para>
+      <para>To change one <b>SetBlanket</b> parameter without having to deal with the others, one can specify the default constants for the other parameters. Applications can change a parameter (such as the authentication level) and ignore the other parameters, including the authentication service, by setting all other parameters to the default constants.</para>
+      <para>Note that it is important to set all unused parameters to the default constants because the default value is often not obvious. In particular, if you set the authentication service to the default, you should set the authentication information and principal name to the default. The reasons for this are twofold: First, the type of the authentication information depends on the authentication service DCOM chooses. Second, because DCOM needs to pass some complex authentication information for certain authentication services, if you set the authentication service to default and the authentication information to <b>NULL</b>, you might get a security setting that will not work.</para>
+    </remarks>
+    <seealso cref="CoQueryProxyBlanket" />
+    <seealso cref="CoSetProxyBlanket" />
+    <seealso cref="IClientSecurity" />
+  </member>
+</doc>

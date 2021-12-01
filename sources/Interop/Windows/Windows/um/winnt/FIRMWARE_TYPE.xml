@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="FIRMWARE_TYPE">
+    <summary>
+      <para>Specifies a firmware type.</para>
+    </summary>
+    <seealso cref="GetFirmwareType" />
+  </member>
+  <member name="FIRMWARE_TYPE.FirmwareTypeUnknown">
+    <summary>
+      <para>The firmware type is unknown.</para>
+    </summary>
+  </member>
+  <member name="FIRMWARE_TYPE.FirmwareTypeBios">
+    <summary>
+      <para>The computer booted in legacy BIOS mode.</para>
+    </summary>
+  </member>
+  <member name="FIRMWARE_TYPE.FirmwareTypeUefi">
+    <summary>
+      <para>The computer booted in UEFI mode.</para>
+    </summary>
+  </member>
+  <member name="FIRMWARE_TYPE.FirmwareTypeMax">
+    <summary>
+      <para>Not implemented.</para>
+    </summary>
+  </member>
+</doc>

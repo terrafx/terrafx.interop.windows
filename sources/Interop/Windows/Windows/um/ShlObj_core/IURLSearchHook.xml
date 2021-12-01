@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IURLSearchHook.Translate">
+    <summary>
+      <para>Called by the browser when the browser cannot determine the protocol of a URL address.</para>
+    </summary>
+    <param name="pwszSearchURL">
+      <para>Type: <b>PWSTR</b></para>
+      <para>The address of a wide character buffer that, on entry, contains the URL address for which the browser is trying to determine the protocol. On exit, this buffer contains the modified URL address if the method was successful. See the return value for more information.</para>
+    </param>
+    <param name="cchBufferSize">
+      <para>Type: <b>DWORD</b></para>
+      <para>The size, in characters, of the buffer at <i>pwszSearchURL</i>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>This method must return one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The URL address was completely translated. The <i>lpwszSearchURL</i> parameter contains the full URL address. The browser will not call any other URL Search Hooks and will attempt to browse to the modified address.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>The URL address has been partially processed, but further translation is still required. The <i>lpwszSearchURL</i> parameter contains the result of the processing. The browser will continue executing the rest of the URL Search Hooks.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>The URL address was not translated. The <i>lpwszSearchURL</i> parameter has not been modified. The browser will continue executing the rest of the URL Search Hooks.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+  </member>
+  <member name="IURLSearchHook">
+    <summary>
+      <para>Exposes a method that is used by the browser to translate the address of an unknown URL protocol.</para>
+    </summary>
+    <remarks>
+      <para>When attempting to browse to a URL address that does not contain a protocol, the browser will first attempt to determine the correct protocol from the address. If this is not successful, the browser will create URL Search Hook objects and call each object's <see cref="Translate" /> method until the address is translated or all of the hooks have been queried.</para>
+      <para>URL Search Hooks are registered by adding a value that contains the object's class identifier (CLSID) string under the following key in the registry:</para>
+      <code>
+        <b>HKEY_LOCAL_MACHINE</b>
+        <b>Software</b>
+        <b>Microsoft</b>
+        <b>Internet Explorer</b>
+        <b>UrlSearchHooks</b>
+      </code>
+      <para>Implement this interface if your application defines a custom URL protocol and if address translation for this protocol is required.</para>
+      <para>You do not typically use this interface; it is called by the browser.</para>
+    </remarks>
+  </member>
+</doc>

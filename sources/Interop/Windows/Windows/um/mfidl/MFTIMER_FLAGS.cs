@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MFTIMER_FLAGS.xml' path='doc/member[@name="MFTIMER_FLAGS"]/*' />
 public enum MFTIMER_FLAGS
 {
+    /// <include file='MFTIMER_FLAGS.xml' path='doc/member[@name="MFTIMER_FLAGS.MFTIMER_RELATIVE"]/*' />
     MFTIMER_RELATIVE = 0x1,
 }

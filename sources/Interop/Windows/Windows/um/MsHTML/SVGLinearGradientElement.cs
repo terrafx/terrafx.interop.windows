@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SVGLinearGradientElement.xml' path='doc/member[@name="SVGLinearGradientElement"]/*' />
 [Guid("305105D2-98B5-11CF-BB82-00AA00BDCE0B")]
 public partial struct SVGLinearGradientElement
 {

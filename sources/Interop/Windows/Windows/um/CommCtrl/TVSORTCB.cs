@@ -5,12 +5,16 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TVSORTCB.xml' path='doc/member[@name="TVSORTCB"]/*' />
 public unsafe partial struct TVSORTCB
 {
+    /// <include file='TVSORTCB.xml' path='doc/member[@name="TVSORTCB.hParent"]/*' />
     public HTREEITEM hParent;
 
+    /// <include file='TVSORTCB.xml' path='doc/member[@name="TVSORTCB.lpfnCompare"]/*' />
     [NativeTypeName("PFNTVCOMPARE")]
     public delegate* unmanaged<LPARAM, LPARAM, LPARAM, int> lpfnCompare;
 
+    /// <include file='TVSORTCB.xml' path='doc/member[@name="TVSORTCB.lParam"]/*' />
     public LPARAM lParam;
 }

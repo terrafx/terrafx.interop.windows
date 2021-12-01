@@ -5,20 +5,27 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DUPLICATE_EXTENTS_DATA_EX32.xml' path='doc/member[@name="DUPLICATE_EXTENTS_DATA_EX32"]/*' />
 public partial struct DUPLICATE_EXTENTS_DATA_EX32
 {
+    /// <include file='DUPLICATE_EXTENTS_DATA_EX32.xml' path='doc/member[@name="DUPLICATE_EXTENTS_DATA_EX32.Size"]/*' />
     [NativeTypeName("DWORD32")]
     public uint Size;
 
+    /// <include file='DUPLICATE_EXTENTS_DATA_EX32.xml' path='doc/member[@name="DUPLICATE_EXTENTS_DATA_EX32.FileHandle"]/*' />
     [NativeTypeName("DWORD32")]
     public uint FileHandle;
 
+    /// <include file='DUPLICATE_EXTENTS_DATA_EX32.xml' path='doc/member[@name="DUPLICATE_EXTENTS_DATA_EX32.SourceFileOffset"]/*' />
     public LARGE_INTEGER SourceFileOffset;
 
+    /// <include file='DUPLICATE_EXTENTS_DATA_EX32.xml' path='doc/member[@name="DUPLICATE_EXTENTS_DATA_EX32.TargetFileOffset"]/*' />
     public LARGE_INTEGER TargetFileOffset;
 
+    /// <include file='DUPLICATE_EXTENTS_DATA_EX32.xml' path='doc/member[@name="DUPLICATE_EXTENTS_DATA_EX32.ByteCount"]/*' />
     public LARGE_INTEGER ByteCount;
 
+    /// <include file='DUPLICATE_EXTENTS_DATA_EX32.xml' path='doc/member[@name="DUPLICATE_EXTENTS_DATA_EX32.Flags"]/*' />
     [NativeTypeName("DWORD")]
     public uint Flags;
 }

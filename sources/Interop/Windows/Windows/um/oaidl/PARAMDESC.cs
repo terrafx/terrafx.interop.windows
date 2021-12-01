@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PARAMDESC.xml' path='doc/member[@name="PARAMDESC"]/*' />
 public unsafe partial struct PARAMDESC
 {
+    /// <include file='PARAMDESC.xml' path='doc/member[@name="PARAMDESC.pparamdescex"]/*' />
     [NativeTypeName("LPPARAMDESCEX")]
     public PARAMDESCEX* pparamdescex;
 
+    /// <include file='PARAMDESC.xml' path='doc/member[@name="PARAMDESC.wParamFlags"]/*' />
     public ushort wParamFlags;
 }

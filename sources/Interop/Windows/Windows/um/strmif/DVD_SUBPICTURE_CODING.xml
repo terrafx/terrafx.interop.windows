@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DVD_SUBPICTURE_CODING">
+    <summary>
+      <para>Indicates what kind of content the subpicture stream contains.</para>
+    </summary>
+    <remarks>
+      <para>Most subpicture streams contain language-related content such as movie subtitles, but subpictures can also be used for the bouncing ball in karaoke or other non-language-related purposes.</para>
+    </remarks>
+    <seealso cref="DVD_SubpictureAttributes" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-enumerated-types">DirectShow Enumerated Types</seealso>
+  </member>
+  <member name="DVD_SUBPICTURE_CODING.DVD_SPCoding_RunLength">
+    <summary>
+      <para>Indicates that the subpicture uses run length encoding.</para>
+    </summary>
+  </member>
+  <member name="DVD_SUBPICTURE_CODING.DVD_SPCoding_Extended">
+    <summary>
+      <para>Indicates that subpicture uses extended encoding.</para>
+    </summary>
+  </member>
+  <member name="DVD_SUBPICTURE_CODING.DVD_SPCoding_Other">
+    <summary>
+      <para>Indicates that the subpicture uses some other encoding scheme.</para>
+    </summary>
+  </member>
+</doc>

@@ -5,12 +5,24 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TRANSACTION_INFORMATION_CLASS.xml' path='doc/member[@name="TRANSACTION_INFORMATION_CLASS"]/*' />
 public enum TRANSACTION_INFORMATION_CLASS
 {
+    /// <include file='TRANSACTION_INFORMATION_CLASS.xml' path='doc/member[@name="TRANSACTION_INFORMATION_CLASS.TransactionBasicInformation"]/*' />
     TransactionBasicInformation,
+
+    /// <include file='TRANSACTION_INFORMATION_CLASS.xml' path='doc/member[@name="TRANSACTION_INFORMATION_CLASS.TransactionPropertiesInformation"]/*' />
     TransactionPropertiesInformation,
+
+    /// <include file='TRANSACTION_INFORMATION_CLASS.xml' path='doc/member[@name="TRANSACTION_INFORMATION_CLASS.TransactionEnlistmentInformation"]/*' />
     TransactionEnlistmentInformation,
+
+    /// <include file='TRANSACTION_INFORMATION_CLASS.xml' path='doc/member[@name="TRANSACTION_INFORMATION_CLASS.TransactionSuperiorEnlistmentInformation"]/*' />
     TransactionSuperiorEnlistmentInformation,
+
+    /// <include file='TRANSACTION_INFORMATION_CLASS.xml' path='doc/member[@name="TRANSACTION_INFORMATION_CLASS.TransactionBindInformation"]/*' />
     TransactionBindInformation,
+
+    /// <include file='TRANSACTION_INFORMATION_CLASS.xml' path='doc/member[@name="TRANSACTION_INFORMATION_CLASS.TransactionDTCPrivateInformation"]/*' />
     TransactionDTCPrivateInformation,
 }

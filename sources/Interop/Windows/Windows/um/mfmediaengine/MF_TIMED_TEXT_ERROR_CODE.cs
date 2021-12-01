@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MF_TIMED_TEXT_ERROR_CODE.xml' path='doc/member[@name="MF_TIMED_TEXT_ERROR_CODE"]/*' />
 public enum MF_TIMED_TEXT_ERROR_CODE
 {
+    /// <include file='MF_TIMED_TEXT_ERROR_CODE.xml' path='doc/member[@name="MF_TIMED_TEXT_ERROR_CODE.MF_TIMED_TEXT_ERROR_CODE_NOERROR"]/*' />
     MF_TIMED_TEXT_ERROR_CODE_NOERROR = 0,
+
+    /// <include file='MF_TIMED_TEXT_ERROR_CODE.xml' path='doc/member[@name="MF_TIMED_TEXT_ERROR_CODE.MF_TIMED_TEXT_ERROR_CODE_FATAL"]/*' />
     MF_TIMED_TEXT_ERROR_CODE_FATAL = 1,
+
+    /// <include file='MF_TIMED_TEXT_ERROR_CODE.xml' path='doc/member[@name="MF_TIMED_TEXT_ERROR_CODE.MF_TIMED_TEXT_ERROR_CODE_DATA_FORMAT"]/*' />
     MF_TIMED_TEXT_ERROR_CODE_DATA_FORMAT = 2,
+
+    /// <include file='MF_TIMED_TEXT_ERROR_CODE.xml' path='doc/member[@name="MF_TIMED_TEXT_ERROR_CODE.MF_TIMED_TEXT_ERROR_CODE_NETWORK"]/*' />
     MF_TIMED_TEXT_ERROR_CODE_NETWORK = 3,
+
+    /// <include file='MF_TIMED_TEXT_ERROR_CODE.xml' path='doc/member[@name="MF_TIMED_TEXT_ERROR_CODE.MF_TIMED_TEXT_ERROR_CODE_INTERNAL"]/*' />
     MF_TIMED_TEXT_ERROR_CODE_INTERNAL = 4,
 }

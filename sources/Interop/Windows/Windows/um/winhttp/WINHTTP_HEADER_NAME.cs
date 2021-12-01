@@ -7,13 +7,16 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WINHTTP_HEADER_NAME.xml' path='doc/member[@name="WINHTTP_HEADER_NAME"]/*' />
 [StructLayout(LayoutKind.Explicit)]
 public unsafe partial struct WINHTTP_HEADER_NAME
 {
+    /// <include file='WINHTTP_HEADER_NAME.xml' path='doc/member[@name="WINHTTP_HEADER_NAME.pwszName"]/*' />
     [FieldOffset(0)]
     [NativeTypeName("PCWSTR")]
     public ushort* pwszName;
 
+    /// <include file='WINHTTP_HEADER_NAME.xml' path='doc/member[@name="WINHTTP_HEADER_NAME.pszName"]/*' />
     [FieldOffset(0)]
     [NativeTypeName("PCSTR")]
     public sbyte* pszName;

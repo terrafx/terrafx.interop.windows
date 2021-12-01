@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IGetBindHandle.xml' path='doc/member[@name="IGetBindHandle"]/*' />
 [Guid("AF0FF408-129D-4B20-91F0-02BD23D88352")]
 [NativeTypeName("struct IGetBindHandle : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IGetBindHandle : IGetBindHandle.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IGetBindHandle : IGetBindHandle.Interface
         return ((delegate* unmanaged<IGetBindHandle*, Guid*, void**, int>)(lpVtbl[0]))((IGetBindHandle*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IGetBindHandle : IGetBindHandle.Interface
         return ((delegate* unmanaged<IGetBindHandle*, uint>)(lpVtbl[1]))((IGetBindHandle*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IGetBindHandle : IGetBindHandle.Interface
         return ((delegate* unmanaged<IGetBindHandle*, uint>)(lpVtbl[2]))((IGetBindHandle*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IGetBindHandle.xml' path='doc/member[@name="IGetBindHandle.GetBindHandle"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetBindHandle(BINDHANDLETYPES enumRequestedHandle, HANDLE* pRetHandle)

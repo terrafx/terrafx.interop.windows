@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WICPersistOptions">
+    <summary>
+      <para>Specifies Windows Imaging Component (WIC) options that are used when initializing a component with a stream.</para>
+    </summary>
+    <seealso cref="GetPersistOptions" />
+  </member>
+  <member name="WICPersistOptions.WICPersistOptionDefault">
+    <summary>
+      <para>The default persist options. The default is <b>WICPersistOptionLittleEndian</b>.</para>
+    </summary>
+  </member>
+  <member name="WICPersistOptions.WICPersistOptionLittleEndian">
+    <summary>
+      <para>The data byte order is little endian.</para>
+    </summary>
+  </member>
+  <member name="WICPersistOptions.WICPersistOptionBigEndian">
+    <summary>
+      <para>The data byte order is big endian.</para>
+    </summary>
+  </member>
+  <member name="WICPersistOptions.WICPersistOptionStrictFormat">
+    <summary>
+      <para>The data format must strictly conform to the specification.</para>
+      <para>
+        <b>Warning</b>  This option is inconsistently implement and should not be relied on.</para>
+    </summary>
+  </member>
+  <member name="WICPersistOptions.WICPersistOptionNoCacheStream">
+    <summary>
+      <para>No cache for the metadata stream.</para>
+      <para>Certain operations, such as <see cref="IWICComponentFactory.CreateMetadataWriterFromReader" /> require that the reader have a stream. Therefore, these operations will be unavailable if the reader is initialized with <b>WICPersistOptionNoCacheStream</b>.</para>
+    </summary>
+  </member>
+  <member name="WICPersistOptions.WICPersistOptionPreferUTF8">
+    <summary>
+      <para>Use UTF8 instead of the default UTF16.</para>
+      <para>
+        <b>Note</b>  This option is currently unused by WIC.</para>
+    </summary>
+  </member>
+  <member name="WICPersistOptions.WICPersistOptionMask">
+    <summary>
+      <para>The <see cref="WICPersistOptions" /> mask.</para>
+    </summary>
+  </member>
+</doc>

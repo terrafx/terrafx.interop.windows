@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PSFEATURE_CUSTPAPER">
+    <summary>
+      <para>The <b>PSFEATURE_CUSTPAPER</b> structure contains information about a custom paper size for a PostScript driver. This structure is used with the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd144954(v=vs.85)">GET_PS_FEATURESETTING</a> printer escape function.</para>
+    </summary>
+    <remarks>
+      <para>For the semantics of the <b>lOrientation</b>, <b>lWidth</b>, <b>lHeight</b>, <b>lWidthOffset</b>, and <b>lHeightOffset</b> members, please refer to "Custom Page Size Parameters" in "PostScript Printer Description File Format Specification" v.4.3.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd144954(v=vs.85)">GET_PS_FEATURESETTING</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/printdocs/printing-and-print-spooler-structures">Print Spooler API Structures</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/printdocs/printdocs-printing">Printing</seealso>
+  </member>
+  <member name="PSFEATURE_CUSTPAPER.lOrientation">
+    <summary>
+      <para>Indicates the custom paper orientation. This member can be 0 to 3 if custom page size is selected. Otherwise, it is 1 and all other structure members are zero</para>
+    </summary>
+  </member>
+  <member name="PSFEATURE_CUSTPAPER.lWidth">
+    <summary>
+      <para>Custom page width, in points.</para>
+    </summary>
+  </member>
+  <member name="PSFEATURE_CUSTPAPER.lHeight">
+    <summary>
+      <para>Custom page height, in points.</para>
+    </summary>
+  </member>
+  <member name="PSFEATURE_CUSTPAPER.lWidthOffset">
+    <summary>
+      <para>Custom page width offset, in points.</para>
+    </summary>
+  </member>
+  <member name="PSFEATURE_CUSTPAPER.lHeightOffset">
+    <summary>
+      <para>Custom page height offset, in points.</para>
+    </summary>
+  </member>
+</doc>

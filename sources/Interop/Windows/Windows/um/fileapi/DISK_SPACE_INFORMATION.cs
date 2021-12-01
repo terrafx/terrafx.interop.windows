@@ -5,44 +5,58 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DISK_SPACE_INFORMATION.xml' path='doc/member[@name="DISK_SPACE_INFORMATION"]/*' />
 public partial struct DISK_SPACE_INFORMATION
 {
+    /// <include file='DISK_SPACE_INFORMATION.xml' path='doc/member[@name="DISK_SPACE_INFORMATION.ActualTotalAllocationUnits"]/*' />
     [NativeTypeName("ULONGLONG")]
     public ulong ActualTotalAllocationUnits;
 
+    /// <include file='DISK_SPACE_INFORMATION.xml' path='doc/member[@name="DISK_SPACE_INFORMATION.ActualAvailableAllocationUnits"]/*' />
     [NativeTypeName("ULONGLONG")]
     public ulong ActualAvailableAllocationUnits;
 
+    /// <include file='DISK_SPACE_INFORMATION.xml' path='doc/member[@name="DISK_SPACE_INFORMATION.ActualPoolUnavailableAllocationUnits"]/*' />
     [NativeTypeName("ULONGLONG")]
     public ulong ActualPoolUnavailableAllocationUnits;
 
+    /// <include file='DISK_SPACE_INFORMATION.xml' path='doc/member[@name="DISK_SPACE_INFORMATION.CallerTotalAllocationUnits"]/*' />
     [NativeTypeName("ULONGLONG")]
     public ulong CallerTotalAllocationUnits;
 
+    /// <include file='DISK_SPACE_INFORMATION.xml' path='doc/member[@name="DISK_SPACE_INFORMATION.CallerAvailableAllocationUnits"]/*' />
     [NativeTypeName("ULONGLONG")]
     public ulong CallerAvailableAllocationUnits;
 
+    /// <include file='DISK_SPACE_INFORMATION.xml' path='doc/member[@name="DISK_SPACE_INFORMATION.CallerPoolUnavailableAllocationUnits"]/*' />
     [NativeTypeName("ULONGLONG")]
     public ulong CallerPoolUnavailableAllocationUnits;
 
+    /// <include file='DISK_SPACE_INFORMATION.xml' path='doc/member[@name="DISK_SPACE_INFORMATION.UsedAllocationUnits"]/*' />
     [NativeTypeName("ULONGLONG")]
     public ulong UsedAllocationUnits;
 
+    /// <include file='DISK_SPACE_INFORMATION.xml' path='doc/member[@name="DISK_SPACE_INFORMATION.TotalReservedAllocationUnits"]/*' />
     [NativeTypeName("ULONGLONG")]
     public ulong TotalReservedAllocationUnits;
 
+    /// <include file='DISK_SPACE_INFORMATION.xml' path='doc/member[@name="DISK_SPACE_INFORMATION.VolumeStorageReserveAllocationUnits"]/*' />
     [NativeTypeName("ULONGLONG")]
     public ulong VolumeStorageReserveAllocationUnits;
 
+    /// <include file='DISK_SPACE_INFORMATION.xml' path='doc/member[@name="DISK_SPACE_INFORMATION.AvailableCommittedAllocationUnits"]/*' />
     [NativeTypeName("ULONGLONG")]
     public ulong AvailableCommittedAllocationUnits;
 
+    /// <include file='DISK_SPACE_INFORMATION.xml' path='doc/member[@name="DISK_SPACE_INFORMATION.PoolAvailableAllocationUnits"]/*' />
     [NativeTypeName("ULONGLONG")]
     public ulong PoolAvailableAllocationUnits;
 
+    /// <include file='DISK_SPACE_INFORMATION.xml' path='doc/member[@name="DISK_SPACE_INFORMATION.SectorsPerAllocationUnit"]/*' />
     [NativeTypeName("DWORD")]
     public uint SectorsPerAllocationUnit;
 
+    /// <include file='DISK_SPACE_INFORMATION.xml' path='doc/member[@name="DISK_SPACE_INFORMATION.BytesPerSector"]/*' />
     [NativeTypeName("DWORD")]
     public uint BytesPerSector;
 }

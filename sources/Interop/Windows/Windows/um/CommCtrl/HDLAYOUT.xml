@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="HDLAYOUT">
+    <summary>
+      <para>Contains information used to set the size and position of a header control. <b>HDLAYOUT</b> is used with the <a href="https://docs.microsoft.com//windows/desktop/Controls/hdm-layout">HDM_LAYOUT</a> message. This structure supersedes the
+<b>HD_LAYOUT</b> structure.</para>
+    </summary>
+  </member>
+  <member name="HDLAYOUT.prc">
+    <summary>
+      <para>Type: <b><see cref="RECT" />*</b></para>
+      <para>Structure that contains the coordinates of a rectangle that the header control will occupy.</para>
+    </summary>
+  </member>
+  <member name="HDLAYOUT.pwpos">
+    <summary>
+      <para>Type: <b><see cref="WINDOWPOS" />*</b></para>
+      <para>Structure that receives information about the appropriate size and position of the header control.</para>
+    </summary>
+  </member>
+</doc>

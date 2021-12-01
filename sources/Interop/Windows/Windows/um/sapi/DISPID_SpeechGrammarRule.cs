@@ -5,13 +5,27 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DISPID_SpeechGrammarRule.xml' path='doc/member[@name="DISPID_SpeechGrammarRule"]/*' />
 public enum DISPID_SpeechGrammarRule
 {
+    /// <include file='DISPID_SpeechGrammarRule.xml' path='doc/member[@name="DISPID_SpeechGrammarRule.DISPID_SGRAttributes"]/*' />
     DISPID_SGRAttributes = 1,
+
+    /// <include file='DISPID_SpeechGrammarRule.xml' path='doc/member[@name="DISPID_SpeechGrammarRule.DISPID_SGRInitialState"]/*' />
     DISPID_SGRInitialState = (DISPID_SGRAttributes + 1),
+
+    /// <include file='DISPID_SpeechGrammarRule.xml' path='doc/member[@name="DISPID_SpeechGrammarRule.DISPID_SGRName"]/*' />
     DISPID_SGRName = (DISPID_SGRInitialState + 1),
+
+    /// <include file='DISPID_SpeechGrammarRule.xml' path='doc/member[@name="DISPID_SpeechGrammarRule.DISPID_SGRId"]/*' />
     DISPID_SGRId = (DISPID_SGRName + 1),
+
+    /// <include file='DISPID_SpeechGrammarRule.xml' path='doc/member[@name="DISPID_SpeechGrammarRule.DISPID_SGRClear"]/*' />
     DISPID_SGRClear = (DISPID_SGRId + 1),
+
+    /// <include file='DISPID_SpeechGrammarRule.xml' path='doc/member[@name="DISPID_SpeechGrammarRule.DISPID_SGRAddResource"]/*' />
     DISPID_SGRAddResource = (DISPID_SGRClear + 1),
+
+    /// <include file='DISPID_SpeechGrammarRule.xml' path='doc/member[@name="DISPID_SpeechGrammarRule.DISPID_SGRAddState"]/*' />
     DISPID_SGRAddState = (DISPID_SGRAddResource + 1),
 }

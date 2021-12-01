@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STORAGE_DISK_HEALTH_STATUS.xml' path='doc/member[@name="STORAGE_DISK_HEALTH_STATUS"]/*' />
 public enum STORAGE_DISK_HEALTH_STATUS
 {
+    /// <include file='STORAGE_DISK_HEALTH_STATUS.xml' path='doc/member[@name="STORAGE_DISK_HEALTH_STATUS.DiskHealthUnknown"]/*' />
     DiskHealthUnknown = 0,
+
+    /// <include file='STORAGE_DISK_HEALTH_STATUS.xml' path='doc/member[@name="STORAGE_DISK_HEALTH_STATUS.DiskHealthUnhealthy"]/*' />
     DiskHealthUnhealthy,
+
+    /// <include file='STORAGE_DISK_HEALTH_STATUS.xml' path='doc/member[@name="STORAGE_DISK_HEALTH_STATUS.DiskHealthWarning"]/*' />
     DiskHealthWarning,
+
+    /// <include file='STORAGE_DISK_HEALTH_STATUS.xml' path='doc/member[@name="STORAGE_DISK_HEALTH_STATUS.DiskHealthHealthy"]/*' />
     DiskHealthHealthy,
+
+    /// <include file='STORAGE_DISK_HEALTH_STATUS.xml' path='doc/member[@name="STORAGE_DISK_HEALTH_STATUS.DiskHealthMax"]/*' />
     DiskHealthMax,
 }

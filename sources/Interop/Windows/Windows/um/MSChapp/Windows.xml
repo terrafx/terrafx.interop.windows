@@ -1,0 +1,351 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="Windows.MSChapSrvChangePassword">
+    <summary>
+      <para>The
+<b>MSChapSrvChangePassword</b> function changes the password of a user account.</para>
+    </summary>
+    <param name="ServerName">
+      <para>A pointer to a null-terminated Unicode string that specifies the Universal Naming Convention (UNC) name of the server on which to operate. If this parameter is <b>NULL</b>, the function operates on the local computer.</para>
+    </param>
+    <param name="UserName">
+      <para>A pointer to a null-terminated Unicode string that specifies the name of the user whose password is being changed.</para>
+    </param>
+    <param name="LmOldPresent">
+      <para>A <b>BOOLEAN</b> that specifies whether the password designated by <i>LmOldOwfPassword</i> is valid. <i>LmOldPresent</i> is <b>FALSE</b> if the <i>LmOldOwfPassword</i> password is greater than 128-bits in length, and therefore cannot be represented by a Lan Manager (LM) one-way function (OWF) password. Otherwise, it is <b>TRUE</b>.</para>
+    </param>
+    <param name="LmOldOwfPassword">
+      <para>A pointer to a <see cref="LM_OWF_PASSWORD" /> structure that contains the OWF of the user's current LM  password. This parameter is ignored if <i>LmOldPresent</i> is <b>FALSE</b>.</para>
+    </param>
+    <param name="LmNewOwfPassword">
+      <para>A pointer to a <see cref="LM_OWF_PASSWORD" /> structure that contains the OWF of the user's new LM password.</para>
+    </param>
+    <param name="NtOldOwfPassword">
+      <para>A pointer to a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/cc325731(v=vs.85)">NT_OWF_PASSWORD</a> structure that contains the OWF of the user's current NT password.</para>
+    </param>
+    <param name="NtNewOwfPassword">
+      <para>A pointer to a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/cc325731(v=vs.85)">NT_OWF_PASSWORD</a> structure that contains the OWF of the user's new NT password.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the return value is <b>STATUS_SUCCESS (0x00000000)</b>.</para>
+      <para>If the function fails, the return value is one of the following error codes from ntstatus.h.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code/value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>STATUS_ACCESS_DENIED</b>
+                </description>
+              </item>
+              <item>
+                <description>0xC0000022</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The calling application does not have the appropriate privilege to complete the operation.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>STATUS_INVALID_HANDLE</b>
+                </description>
+              </item>
+              <item>
+                <description>0xC0000008</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The specified server or user name was not valid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>STATUS_ILL_FORMED_PASSWORD</b>
+                </description>
+              </item>
+              <item>
+                <description>0xC000006B</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>New password is poorly formed, for example, it contains characters that cannot be entered from the keyboard.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>STATUS_PASSWORD_RESTRICTION</b>
+                </description>
+              </item>
+              <item>
+                <description>0xC000006C</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>A restriction prevents the password from being changed. Possible restrictions include time restrictions on how often a password is allowed to be changed or length restrictions on the provided password. This error is also returned if the new password matched a password in the recent history log for the account. Security administrators specify how many of the most recently used passwords are not available for re-use. These are kept in the password recent history log.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>STATUS_WRONG_PASSWORD</b>
+                </description>
+              </item>
+              <item>
+                <description>0xC000006A</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The old password parameter does not match the user's current password.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>STATUS_INVALID_DOMAIN_STATE</b>
+                </description>
+              </item>
+              <item>
+                <description>0xC00000DD</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The domain controller is not in an enabled state. The domain controller must be enabled for this operation.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>STATUS_INVALID_DOMAIN_ROLE</b>
+                </description>
+              </item>
+              <item>
+                <description>0xC00000DE</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The domain controller is serving in the incorrect role to perform the requested operation. The operation can only be performed by the primary domain controller.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>STATUS_INVALID_PARAMETER_MIX</b>
+                </description>
+              </item>
+              <item>
+                <description>0xC0000030</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The value of the <i>LmOldPresent</i> parameter is not correct for the contents of the old and new  parameter pairs.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The value specified by <i>LmNewOwfPassword</i> must always contain a valid OWF. If the new password is greater than 128-bits long, and therefore cannot be represented by a LAN Manager (LM) password, then <i>LmNewOwfPassword</i> should be the LM OWF of a <b>NULL</b> password.</para>
+      <para>This function allows users to change their own passwords only if they have the access: <a href="https://docs.microsoft.com//windows/win32/adschema/r-user-change-password">USER_CHANGE_PASSWORD</a>.</para>
+      <para>This function fails with <b>STATUS_PASSWORD_RESTRICTION</b> if the attempt to change the password conflicts with an administrative password restriction.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/mschap/ms-chap-password-management-functions">MS-CHAP Password Management Functions</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/mschapp/nf-mschapp-mschapsrvchangepassword2">MSChapSrvChangePassword2</seealso>
+  </member>
+  <member name="Windows.MSChapSrvChangePassword2">
+    <summary>
+      <para>The
+<b>MSChapSrvChangePassword2</b> function changes the password of a user account while supporting mutual encryption.</para>
+    </summary>
+    <param name="ServerName">
+      <para>A pointer to a null-terminated Unicode string that specifies the Universal Naming Convention (UNC) name of the server on which to operate. If this parameter is <b>NULL</b>, the function operates on the local computer.</para>
+    </param>
+    <param name="UserName">
+      <para>A pointer to a null-terminated Unicode string that specifies the name of the user whose password is being changed.</para>
+    </param>
+    <param name="NewPasswordEncryptedWithOldNt">
+      <para>A pointer to a <see cref="SAMPR_ENCRYPTED_USER_PASSWORD" /> structure that contains the new clear text password encrypted using the current NT one-way function (OWF) password hash as the encryption key.</para>
+      <para>
+        <b>Note</b>  Use  the <b>NewPasswordEncryptedWithOldNtPasswordHash()</b> function as defined in <a href="https://www.ietf.org/rfc/rfc2433.txt">RFC 2433</a>, section A.11 to calculate the cipher for <i>NewPasswordEncryptedWithOldNt</i>.</para>
+    </param>
+    <param name="OldNtOwfPasswordEncryptedWithNewNt">
+      <para>A pointer to an <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/cc325729(v=vs.85)">ENCRYPTED_NT_OWF_PASSWORD</a> structure that contains the old NT OWF password hash encrypted using the new NT OWF password hash as the encryption key.</para>
+    </param>
+    <param name="LmPresent">
+      <para>A <b>BOOLEAN</b> that specifies if the current Lan Manager (LM) or NT OWF password hashes are used as the encryption keys to generate the <i>NewPasswordEncryptedWithOldNt</i> and <i>OldNtOwfPasswordEncryptedWithNewNt</i> ciphers. If <b>TRUE</b>, the  LM OWF password hashes are used rather than the NT OWF password hashes.</para>
+    </param>
+    <param name="NewPasswordEncryptedWithOldLm">
+      <para>A pointer to a <see cref="SAMPR_ENCRYPTED_USER_PASSWORD" /> structure that contains the new clear text password encrypted using the current LM OWF password hash.</para>
+      <para>
+        <b>Note</b>  Use  the <b>NewPasswordEncryptedWithOldLmPasswordHash()</b> function as defined in <a href="https://www.ietf.org/rfc/rfc2433.txt">RFC 2433</a>, section A.15 to calculate the cipher for <i>NewPasswordEncryptedWithOldLm</i>.</para>
+    </param>
+    <param name="OldLmOwfPasswordEncryptedWithNewLmOrNt">
+      <para>A pointer to a <see cref="ENCRYPTED_LM_OWF_PASSWORD" /> structure that contains the current LM OWF password hash encrypted using the new LM OWF password hash.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the return value is <b>STATUS_SUCCESS (0x00000000)</b>.</para>
+      <para>If the function fails, the return value is one of the following error codes from ntstatus.h.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code/value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>STATUS_ACCESS_DENIED</b>
+                </description>
+              </item>
+              <item>
+                <description>0xC0000022</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The calling application does not have the appropriate privilege to complete the operation.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>STATUS_INVALID_HANDLE</b>
+                </description>
+              </item>
+              <item>
+                <description>0xC0000008</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The specified server or user name was not valid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>STATUS_ILL_FORMED_PASSWORD</b>
+                </description>
+              </item>
+              <item>
+                <description>0xC000006B</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>New password is poorly formed, for example, it contains characters that cannot be entered from the keyboard.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>STATUS_PASSWORD_RESTRICTION</b>
+                </description>
+              </item>
+              <item>
+                <description>0xC000006C</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>A restriction prevents the password from being changed. Possible restrictions include time restrictions on how often a password is allowed to be changed or length restrictions on the provided password. This error is also returned if the new password matched a password in the recent history log for the account. Security administrators specify how many of the most recently used passwords are not available for re-use. These are kept in the password recent history log.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>STATUS_WRONG_PASSWORD</b>
+                </description>
+              </item>
+              <item>
+                <description>0xC000006A</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The old password parameter does not match the user's current password.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>STATUS_INVALID_DOMAIN_STATE</b>
+                </description>
+              </item>
+              <item>
+                <description>0xC00000DD</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The domain controller is not in an enabled state. The domain controller must be enabled for this operation.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>STATUS_INVALID_DOMAIN_ROLE</b>
+                </description>
+              </item>
+              <item>
+                <description>0xC00000DE</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The domain controller is serving in the incorrect role to perform the requested operation. The operation can only be performed by the primary domain controller.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This function allows users to change their own passwords only if they have the access: <a href="https://docs.microsoft.com//windows/win32/adschema/r-user-change-password">USER_CHANGE_PASSWORD</a>.</para>
+      <para>This function fails with <b>STATUS_PASSWORD_RESTRICTION</b> if the attempt to change the password conflicts with an administrative password restriction.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/mschap/ms-chap-password-management-functions">MS-CHAP Password Management Functions</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/mschapp/nf-mschapp-mschapsrvchangepassword">MSChapSrvChangePassword</seealso>
+  </member>
+</doc>

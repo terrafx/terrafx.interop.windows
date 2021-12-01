@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="APPACTIONFLAGS">
+    <summary>
+      <para>Specifies application management actions supported by an application publisher. These flags are bitmasks passed to <see cref="IShellApp.GetPossibleActions" />.</para>
+    </summary>
+    <remarks>
+      <para>The Add or Remove Programs application in Control Panel uses only <b><b>APPACTION_INSTALL</b></b> and <b><b>APPACTION_ADDLATER</b></b> for published applications.</para>
+    </remarks>
+  </member>
+  <member name="APPACTIONFLAGS.APPACTION_INSTALL">
+    <summary>
+      <para>Indicates that the application can be installed. Published applications always set this bit.</para>
+    </summary>
+  </member>
+  <member name="APPACTIONFLAGS.APPACTION_UNINSTALL">
+    <summary>
+      <para>Not applicable to published applications.</para>
+    </summary>
+  </member>
+  <member name="APPACTIONFLAGS.APPACTION_MODIFY">
+    <summary>
+      <para>Not applicable to published applications.</para>
+    </summary>
+  </member>
+  <member name="APPACTIONFLAGS.APPACTION_REPAIR">
+    <summary>
+      <para>Not applicable to published applications.</para>
+    </summary>
+  </member>
+  <member name="APPACTIONFLAGS.APPACTION_UPGRADE">
+    <summary>
+      <para>Not applicable to published applications.</para>
+    </summary>
+  </member>
+  <member name="APPACTIONFLAGS.APPACTION_CANGETSIZE">
+    <summary>
+      <para>Not applicable to published applications.</para>
+    </summary>
+  </member>
+  <member name="APPACTIONFLAGS.APPACTION_MODIFYREMOVE">
+    <summary>
+      <para>Not applicable to published applications.</para>
+    </summary>
+  </member>
+  <member name="APPACTIONFLAGS.APPACTION_ADDLATER">
+    <summary>
+      <para>Indicates that the application supports scheduled installation.  If this bit is set, then the Control Panel's Add or Remove Programs application presents the user an <b>Add Later</b> button. If you select <b>Add Later</b>, you are prompted to select the desired time of installation. The <see cref="IPublishedApp.Install" /> method is then called with the installation time.</para>
+    </summary>
+  </member>
+  <member name="APPACTIONFLAGS.APPACTION_UNSCHEDULE">
+    <summary>
+      <para>Obsolete.</para>
+    </summary>
+  </member>
+</doc>

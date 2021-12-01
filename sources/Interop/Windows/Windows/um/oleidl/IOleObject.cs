@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IOleObject.xml' path='doc/member[@name="IOleObject"]/*' />
 [Guid("00000112-0000-0000-C000-000000000046")]
 [NativeTypeName("struct IOleObject : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IOleObject : IOleObject.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IOleObject : IOleObject.Interface
         return ((delegate* unmanaged<IOleObject*, Guid*, void**, int>)(lpVtbl[0]))((IOleObject*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IOleObject : IOleObject.Interface
         return ((delegate* unmanaged<IOleObject*, uint>)(lpVtbl[1]))((IOleObject*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IOleObject : IOleObject.Interface
         return ((delegate* unmanaged<IOleObject*, uint>)(lpVtbl[2]))((IOleObject*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IOleObject.xml' path='doc/member[@name="IOleObject.SetClientSite"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetClientSite(IOleClientSite* pClientSite)
@@ -46,6 +51,7 @@ public unsafe partial struct IOleObject : IOleObject.Interface
         return ((delegate* unmanaged<IOleObject*, IOleClientSite*, int>)(lpVtbl[3]))((IOleObject*)Unsafe.AsPointer(ref this), pClientSite);
     }
 
+    /// <include file='IOleObject.xml' path='doc/member[@name="IOleObject.GetClientSite"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetClientSite(IOleClientSite** ppClientSite)
@@ -53,6 +59,7 @@ public unsafe partial struct IOleObject : IOleObject.Interface
         return ((delegate* unmanaged<IOleObject*, IOleClientSite**, int>)(lpVtbl[4]))((IOleObject*)Unsafe.AsPointer(ref this), ppClientSite);
     }
 
+    /// <include file='IOleObject.xml' path='doc/member[@name="IOleObject.SetHostNames"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetHostNames([NativeTypeName("LPCOLESTR")] ushort* szContainerApp, [NativeTypeName("LPCOLESTR")] ushort* szContainerObj)
@@ -60,6 +67,7 @@ public unsafe partial struct IOleObject : IOleObject.Interface
         return ((delegate* unmanaged<IOleObject*, ushort*, ushort*, int>)(lpVtbl[5]))((IOleObject*)Unsafe.AsPointer(ref this), szContainerApp, szContainerObj);
     }
 
+    /// <include file='IOleObject.xml' path='doc/member[@name="IOleObject.Close"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Close([NativeTypeName("DWORD")] uint dwSaveOption)
@@ -67,6 +75,7 @@ public unsafe partial struct IOleObject : IOleObject.Interface
         return ((delegate* unmanaged<IOleObject*, uint, int>)(lpVtbl[6]))((IOleObject*)Unsafe.AsPointer(ref this), dwSaveOption);
     }
 
+    /// <include file='IOleObject.xml' path='doc/member[@name="IOleObject.SetMoniker"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT SetMoniker([NativeTypeName("DWORD")] uint dwWhichMoniker, IMoniker* pmk)
@@ -74,6 +83,7 @@ public unsafe partial struct IOleObject : IOleObject.Interface
         return ((delegate* unmanaged<IOleObject*, uint, IMoniker*, int>)(lpVtbl[7]))((IOleObject*)Unsafe.AsPointer(ref this), dwWhichMoniker, pmk);
     }
 
+    /// <include file='IOleObject.xml' path='doc/member[@name="IOleObject.GetMoniker"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetMoniker([NativeTypeName("DWORD")] uint dwAssign, [NativeTypeName("DWORD")] uint dwWhichMoniker, IMoniker** ppmk)
@@ -81,6 +91,7 @@ public unsafe partial struct IOleObject : IOleObject.Interface
         return ((delegate* unmanaged<IOleObject*, uint, uint, IMoniker**, int>)(lpVtbl[8]))((IOleObject*)Unsafe.AsPointer(ref this), dwAssign, dwWhichMoniker, ppmk);
     }
 
+    /// <include file='IOleObject.xml' path='doc/member[@name="IOleObject.InitFromData"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT InitFromData(IDataObject* pDataObject, BOOL fCreation, [NativeTypeName("DWORD")] uint dwReserved)
@@ -88,6 +99,7 @@ public unsafe partial struct IOleObject : IOleObject.Interface
         return ((delegate* unmanaged<IOleObject*, IDataObject*, BOOL, uint, int>)(lpVtbl[9]))((IOleObject*)Unsafe.AsPointer(ref this), pDataObject, fCreation, dwReserved);
     }
 
+    /// <include file='IOleObject.xml' path='doc/member[@name="IOleObject.GetClipboardData"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT GetClipboardData([NativeTypeName("DWORD")] uint dwReserved, IDataObject** ppDataObject)
@@ -95,6 +107,7 @@ public unsafe partial struct IOleObject : IOleObject.Interface
         return ((delegate* unmanaged<IOleObject*, uint, IDataObject**, int>)(lpVtbl[10]))((IOleObject*)Unsafe.AsPointer(ref this), dwReserved, ppDataObject);
     }
 
+    /// <include file='IOleObject.xml' path='doc/member[@name="IOleObject.DoVerb"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT DoVerb([NativeTypeName("LONG")] int iVerb, [NativeTypeName("LPMSG")] MSG* lpmsg, IOleClientSite* pActiveSite, [NativeTypeName("LONG")] int lindex, HWND hwndParent, [NativeTypeName("LPCRECT")] RECT* lprcPosRect)
@@ -102,6 +115,7 @@ public unsafe partial struct IOleObject : IOleObject.Interface
         return ((delegate* unmanaged<IOleObject*, int, MSG*, IOleClientSite*, int, HWND, RECT*, int>)(lpVtbl[11]))((IOleObject*)Unsafe.AsPointer(ref this), iVerb, lpmsg, pActiveSite, lindex, hwndParent, lprcPosRect);
     }
 
+    /// <include file='IOleObject.xml' path='doc/member[@name="IOleObject.EnumVerbs"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT EnumVerbs(IEnumOLEVERB** ppEnumOleVerb)
@@ -109,6 +123,7 @@ public unsafe partial struct IOleObject : IOleObject.Interface
         return ((delegate* unmanaged<IOleObject*, IEnumOLEVERB**, int>)(lpVtbl[12]))((IOleObject*)Unsafe.AsPointer(ref this), ppEnumOleVerb);
     }
 
+    /// <include file='IOleObject.xml' path='doc/member[@name="IOleObject.Update"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT Update()
@@ -116,6 +131,7 @@ public unsafe partial struct IOleObject : IOleObject.Interface
         return ((delegate* unmanaged<IOleObject*, int>)(lpVtbl[13]))((IOleObject*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IOleObject.xml' path='doc/member[@name="IOleObject.IsUpToDate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT IsUpToDate()
@@ -123,6 +139,7 @@ public unsafe partial struct IOleObject : IOleObject.Interface
         return ((delegate* unmanaged<IOleObject*, int>)(lpVtbl[14]))((IOleObject*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IOleObject.xml' path='doc/member[@name="IOleObject.GetUserClassID"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT GetUserClassID([NativeTypeName("CLSID *")] Guid* pClsid)
@@ -130,6 +147,7 @@ public unsafe partial struct IOleObject : IOleObject.Interface
         return ((delegate* unmanaged<IOleObject*, Guid*, int>)(lpVtbl[15]))((IOleObject*)Unsafe.AsPointer(ref this), pClsid);
     }
 
+    /// <include file='IOleObject.xml' path='doc/member[@name="IOleObject.GetUserType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT GetUserType([NativeTypeName("DWORD")] uint dwFormOfType, [NativeTypeName("LPOLESTR *")] ushort** pszUserType)
@@ -137,6 +155,7 @@ public unsafe partial struct IOleObject : IOleObject.Interface
         return ((delegate* unmanaged<IOleObject*, uint, ushort**, int>)(lpVtbl[16]))((IOleObject*)Unsafe.AsPointer(ref this), dwFormOfType, pszUserType);
     }
 
+    /// <include file='IOleObject.xml' path='doc/member[@name="IOleObject.SetExtent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT SetExtent([NativeTypeName("DWORD")] uint dwDrawAspect, [NativeTypeName("SIZEL *")] SIZE* psizel)
@@ -144,6 +163,7 @@ public unsafe partial struct IOleObject : IOleObject.Interface
         return ((delegate* unmanaged<IOleObject*, uint, SIZE*, int>)(lpVtbl[17]))((IOleObject*)Unsafe.AsPointer(ref this), dwDrawAspect, psizel);
     }
 
+    /// <include file='IOleObject.xml' path='doc/member[@name="IOleObject.GetExtent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT GetExtent([NativeTypeName("DWORD")] uint dwDrawAspect, [NativeTypeName("SIZEL *")] SIZE* psizel)
@@ -151,6 +171,7 @@ public unsafe partial struct IOleObject : IOleObject.Interface
         return ((delegate* unmanaged<IOleObject*, uint, SIZE*, int>)(lpVtbl[18]))((IOleObject*)Unsafe.AsPointer(ref this), dwDrawAspect, psizel);
     }
 
+    /// <include file='IOleObject.xml' path='doc/member[@name="IOleObject.Advise"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT Advise(IAdviseSink* pAdvSink, [NativeTypeName("DWORD *")] uint* pdwConnection)
@@ -158,6 +179,7 @@ public unsafe partial struct IOleObject : IOleObject.Interface
         return ((delegate* unmanaged<IOleObject*, IAdviseSink*, uint*, int>)(lpVtbl[19]))((IOleObject*)Unsafe.AsPointer(ref this), pAdvSink, pdwConnection);
     }
 
+    /// <include file='IOleObject.xml' path='doc/member[@name="IOleObject.Unadvise"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public HRESULT Unadvise([NativeTypeName("DWORD")] uint dwConnection)
@@ -165,6 +187,7 @@ public unsafe partial struct IOleObject : IOleObject.Interface
         return ((delegate* unmanaged<IOleObject*, uint, int>)(lpVtbl[20]))((IOleObject*)Unsafe.AsPointer(ref this), dwConnection);
     }
 
+    /// <include file='IOleObject.xml' path='doc/member[@name="IOleObject.EnumAdvise"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
     public HRESULT EnumAdvise(IEnumSTATDATA** ppenumAdvise)
@@ -172,6 +195,7 @@ public unsafe partial struct IOleObject : IOleObject.Interface
         return ((delegate* unmanaged<IOleObject*, IEnumSTATDATA**, int>)(lpVtbl[21]))((IOleObject*)Unsafe.AsPointer(ref this), ppenumAdvise);
     }
 
+    /// <include file='IOleObject.xml' path='doc/member[@name="IOleObject.GetMiscStatus"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
     public HRESULT GetMiscStatus([NativeTypeName("DWORD")] uint dwAspect, [NativeTypeName("DWORD *")] uint* pdwStatus)
@@ -179,6 +203,7 @@ public unsafe partial struct IOleObject : IOleObject.Interface
         return ((delegate* unmanaged<IOleObject*, uint, uint*, int>)(lpVtbl[22]))((IOleObject*)Unsafe.AsPointer(ref this), dwAspect, pdwStatus);
     }
 
+    /// <include file='IOleObject.xml' path='doc/member[@name="IOleObject.SetColorScheme"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
     public HRESULT SetColorScheme(LOGPALETTE* pLogpal)

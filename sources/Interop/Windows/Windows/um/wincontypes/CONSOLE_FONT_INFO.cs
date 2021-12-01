@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CONSOLE_FONT_INFO.xml' path='doc/member[@name="CONSOLE_FONT_INFO"]/*' />
 public partial struct CONSOLE_FONT_INFO
 {
+    /// <include file='CONSOLE_FONT_INFO.xml' path='doc/member[@name="CONSOLE_FONT_INFO.nFont"]/*' />
     [NativeTypeName("DWORD")]
     public uint nFont;
 
+    /// <include file='CONSOLE_FONT_INFO.xml' path='doc/member[@name="CONSOLE_FONT_INFO.dwFontSize"]/*' />
     public COORD dwFontSize;
 }

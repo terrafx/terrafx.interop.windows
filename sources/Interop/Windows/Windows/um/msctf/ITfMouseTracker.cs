@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITfMouseTracker.xml' path='doc/member[@name="ITfMouseTracker"]/*' />
 [Guid("09D146CD-A544-4132-925B-7AFA8EF322D0")]
 [NativeTypeName("struct ITfMouseTracker : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITfMouseTracker : ITfMouseTracker.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITfMouseTracker : ITfMouseTracker.Interface
         return ((delegate* unmanaged<ITfMouseTracker*, Guid*, void**, int>)(lpVtbl[0]))((ITfMouseTracker*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITfMouseTracker : ITfMouseTracker.Interface
         return ((delegate* unmanaged<ITfMouseTracker*, uint>)(lpVtbl[1]))((ITfMouseTracker*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITfMouseTracker : ITfMouseTracker.Interface
         return ((delegate* unmanaged<ITfMouseTracker*, uint>)(lpVtbl[2]))((ITfMouseTracker*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITfMouseTracker.xml' path='doc/member[@name="ITfMouseTracker.AdviseMouseSink"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT AdviseMouseSink(ITfRange* range, ITfMouseSink* pSink, [NativeTypeName("DWORD *")] uint* pdwCookie)
@@ -46,6 +51,7 @@ public unsafe partial struct ITfMouseTracker : ITfMouseTracker.Interface
         return ((delegate* unmanaged<ITfMouseTracker*, ITfRange*, ITfMouseSink*, uint*, int>)(lpVtbl[3]))((ITfMouseTracker*)Unsafe.AsPointer(ref this), range, pSink, pdwCookie);
     }
 
+    /// <include file='ITfMouseTracker.xml' path='doc/member[@name="ITfMouseTracker.UnadviseMouseSink"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT UnadviseMouseSink([NativeTypeName("DWORD")] uint dwCookie)

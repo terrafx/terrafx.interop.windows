@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IHTMLChangeLog.xml' path='doc/member[@name="IHTMLChangeLog"]/*' />
 [Guid("3050F649-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IHTMLChangeLog : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IHTMLChangeLog : IHTMLChangeLog.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IHTMLChangeLog : IHTMLChangeLog.Interface
         return ((delegate* unmanaged<IHTMLChangeLog*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLChangeLog*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IHTMLChangeLog : IHTMLChangeLog.Interface
         return ((delegate* unmanaged<IHTMLChangeLog*, uint>)(lpVtbl[1]))((IHTMLChangeLog*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IHTMLChangeLog : IHTMLChangeLog.Interface
         return ((delegate* unmanaged<IHTMLChangeLog*, uint>)(lpVtbl[2]))((IHTMLChangeLog*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IHTMLChangeLog.xml' path='doc/member[@name="IHTMLChangeLog.GetNextChange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetNextChange(byte* pbBuffer, [NativeTypeName("long")] int nBufferSize, [NativeTypeName("long *")] int* pnRecordLength)

@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CERT_OTHER_LOGOTYPE_INFO.xml' path='doc/member[@name="CERT_OTHER_LOGOTYPE_INFO"]/*' />
 public unsafe partial struct CERT_OTHER_LOGOTYPE_INFO
 {
+    /// <include file='CERT_OTHER_LOGOTYPE_INFO.xml' path='doc/member[@name="CERT_OTHER_LOGOTYPE_INFO.pszObjId"]/*' />
     [NativeTypeName("LPSTR")]
     public sbyte* pszObjId;
 
+    /// <include file='CERT_OTHER_LOGOTYPE_INFO.xml' path='doc/member[@name="CERT_OTHER_LOGOTYPE_INFO.LogotypeInfo"]/*' />
     public CERT_LOGOTYPE_INFO LogotypeInfo;
 }

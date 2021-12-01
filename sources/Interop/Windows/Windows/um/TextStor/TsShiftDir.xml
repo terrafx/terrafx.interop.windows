@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="TsShiftDir">
+    <summary>
+      <para>Elements of the <b>TsShiftDir</b> enumeration specify which direction an anchor is moved.</para>
+    </summary>
+    <seealso cref="IAnchor.ShiftRegion " />
+  </member>
+  <member name="TsShiftDir.TS_SD_BACKWARD">
+    <summary>
+      <para>Specifies that the anchor will be moved to the region immediately preceding a range of text.</para>
+    </summary>
+  </member>
+  <member name="TsShiftDir.TS_SD_FORWARD">
+    <summary>
+      <para>Specifies that the anchor will be moved to the region immediately following a range of text.</para>
+    </summary>
+  </member>
+</doc>

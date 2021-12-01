@@ -5,8 +5,10 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SYSTEM_PROCESSOR_CYCLE_TIME_INFORMATION.xml' path='doc/member[@name="SYSTEM_PROCESSOR_CYCLE_TIME_INFORMATION"]/*' />
 public partial struct SYSTEM_PROCESSOR_CYCLE_TIME_INFORMATION
 {
+    /// <include file='SYSTEM_PROCESSOR_CYCLE_TIME_INFORMATION.xml' path='doc/member[@name="SYSTEM_PROCESSOR_CYCLE_TIME_INFORMATION.CycleTime"]/*' />
     [NativeTypeName("DWORD64")]
     public ulong CycleTime;
 }

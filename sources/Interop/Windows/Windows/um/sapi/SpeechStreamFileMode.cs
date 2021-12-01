@@ -7,10 +7,18 @@ using static TerraFX.Interop.Windows.SPFILEMODE;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SpeechStreamFileMode.xml' path='doc/member[@name="SpeechStreamFileMode"]/*' />
 public enum SpeechStreamFileMode
 {
+    /// <include file='SpeechStreamFileMode.xml' path='doc/member[@name="SpeechStreamFileMode.SSFMOpenForRead"]/*' />
     SSFMOpenForRead = SPFM_OPEN_READONLY,
+
+    /// <include file='SpeechStreamFileMode.xml' path='doc/member[@name="SpeechStreamFileMode.SSFMOpenReadWrite"]/*' />
     SSFMOpenReadWrite = SPFM_OPEN_READWRITE,
+
+    /// <include file='SpeechStreamFileMode.xml' path='doc/member[@name="SpeechStreamFileMode.SSFMCreate"]/*' />
     SSFMCreate = SPFM_CREATE,
+
+    /// <include file='SpeechStreamFileMode.xml' path='doc/member[@name="SpeechStreamFileMode.SSFMCreateForWrite"]/*' />
     SSFMCreateForWrite = SPFM_CREATE_ALWAYS,
 }

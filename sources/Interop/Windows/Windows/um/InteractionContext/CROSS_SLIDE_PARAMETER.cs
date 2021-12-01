@@ -7,10 +7,13 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CROSS_SLIDE_PARAMETER.xml' path='doc/member[@name="CROSS_SLIDE_PARAMETER"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public partial struct CROSS_SLIDE_PARAMETER
 {
+    /// <include file='CROSS_SLIDE_PARAMETER.xml' path='doc/member[@name="CROSS_SLIDE_PARAMETER.threshold"]/*' />
     public CROSS_SLIDE_THRESHOLD threshold;
 
+    /// <include file='CROSS_SLIDE_PARAMETER.xml' path='doc/member[@name="CROSS_SLIDE_PARAMETER.distance"]/*' />
     public float distance;
 }

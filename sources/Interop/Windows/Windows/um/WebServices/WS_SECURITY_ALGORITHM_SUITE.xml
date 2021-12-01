@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_SECURITY_ALGORITHM_SUITE">
+    <summary>
+      <para>Defines the security algorithms and key lengths to be used with
+WS-Security.  This setting is relevant to message security bindings
+and mixed-mode security bindings.</para>
+    </summary>
+    <remarks>
+      <para>When key derivation is used, the key length restrictions apply to the
+source security token from which the signing or encryption derived
+token are derived.</para>
+    </remarks>
+  </member>
+  <member name="WS_SECURITY_ALGORITHM_SUITE.canonicalizationAlgorithm">
+    <summary>
+      <para>Algorithm to use for XML canonicalization, such as the exclusive XML
+canonicalization algorithm.
+Setting this value to <see cref="WS_SECURITY_ALGORITHM_DEFAULT" /> will default to
+<b>WS_SECURITY_ALGORITHM_CANONICALIZATION_EXCLUSIVE</b>.</para>
+    </summary>
+  </member>
+  <member name="WS_SECURITY_ALGORITHM_SUITE.digestAlgorithm">
+    <summary>
+      <para>Algorithm to use for message part digests, such as SHA-1, SHA-256,
+SHA-384, or SHA-512.
+Setting this value to <see cref="WS_SECURITY_ALGORITHM_DEFAULT" /> will default to
+<b>WS_SECURITY_ALGORITHM_DIGEST_SHA1</b>.</para>
+    </summary>
+  </member>
+  <member name="WS_SECURITY_ALGORITHM_SUITE.symmetricSignatureAlgorithm">
+    <summary>
+      <para>Algorithm to use for message authentication codes (also known as MACs
+or symmetric signatures) such as HMAC-SHA1, HMAC-SHA256, HMAC-SHA384, or HMAC-SHA512.
+Setting this value to <see cref="WS_SECURITY_ALGORITHM_DEFAULT" /> will default to
+<b>WS_SECURITY_ALGORITHM_SYMMETRIC_SIGNATURE_HMAC_SHA1</b>.</para>
+    </summary>
+  </member>
+  <member name="WS_SECURITY_ALGORITHM_SUITE.asymmetricSignatureAlgorithm">
+    <summary>
+      <para>Algorithm to use for asymmetric signatures.
+Setting this value to <see cref="WS_SECURITY_ALGORITHM_DEFAULT" /> will default to
+<b>WS_SECURITY_ALGORITHM_ASYMMETRIC_SIGNATURE_RSA_SHA1</b>.</para>
+    </summary>
+  </member>
+  <member name="WS_SECURITY_ALGORITHM_SUITE.encryptionAlgorithm">
+    <summary>
+      <para>Algorithm to use for message part encryption. Reserved for future use. Should be set to <see cref="WS_SECURITY_ALGORITHM_DEFAULT" />.</para>
+    </summary>
+  </member>
+  <member name="WS_SECURITY_ALGORITHM_SUITE.keyDerivationAlgorithm">
+    <summary>
+      <para>Algorithm to use for deriving keys from other symmetric keys.
+Setting this value to <see cref="WS_SECURITY_ALGORITHM_DEFAULT" /> will default to
+<b>WS_SECURITY_ALGORITHM_KEY_DERIVATION_P_SHA1</b>.</para>
+    </summary>
+  </member>
+  <member name="WS_SECURITY_ALGORITHM_SUITE.symmetricKeyWrapAlgorithm">
+    <summary>
+      <para>Algorithm to use for encrypting symmetric keys with other symmetric
+keys. Reserved for future use. Should be set to <see cref="WS_SECURITY_ALGORITHM_DEFAULT" />.</para>
+    </summary>
+  </member>
+  <member name="WS_SECURITY_ALGORITHM_SUITE.asymmetricKeyWrapAlgorithm">
+    <summary>
+      <para>Algorithm to use for encrypting symmetric keys with asymmetric
+keys. Setting this value to <see cref="WS_SECURITY_ALGORITHM_DEFAULT" /> will default to
+<b>WS_SECURITY_ALGORITHM_ASYMMETRIC_KEYWRAP_RSA_OAEP</b>.</para>
+    </summary>
+  </member>
+  <member name="WS_SECURITY_ALGORITHM_SUITE.minSymmetricKeyLength">
+    <summary>
+      <para>The minimum key length (in bits) of symmetric key security tokens.
+Setting this value to 0 will default to 128 bits.</para>
+    </summary>
+  </member>
+  <member name="WS_SECURITY_ALGORITHM_SUITE.maxSymmetricKeyLength">
+    <summary>
+      <para>The maximum key length (in bits) of symmetric key security tokens.
+Setting this value to 0 will default to 512 bits.</para>
+    </summary>
+  </member>
+  <member name="WS_SECURITY_ALGORITHM_SUITE.minAsymmetricKeyLength">
+    <summary>
+      <para>The minimum key length (in bits) of asymmetric key security tokens.
+Setting this value to 0 will default to 1024 bits.</para>
+    </summary>
+  </member>
+  <member name="WS_SECURITY_ALGORITHM_SUITE.maxAsymmetricKeyLength">
+    <summary>
+      <para>The maximum key length (in bits) of asymmetric key security tokens.
+Setting this value to 0 will default to 16384 bits.</para>
+    </summary>
+  </member>
+  <member name="WS_SECURITY_ALGORITHM_SUITE.properties">
+    <summary>
+      <para>Algorithm properties. Reserved for future use. Should be set to <b>NULL</b>.</para>
+    </summary>
+  </member>
+  <member name="WS_SECURITY_ALGORITHM_SUITE.propertyCount">
+    <summary>
+      <para>Number of entries in properties array. Reserved for future use. Should be set to 0.</para>
+    </summary>
+  </member>
+</doc>

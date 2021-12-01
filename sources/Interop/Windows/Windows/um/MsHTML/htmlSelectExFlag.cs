@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='htmlSelectExFlag.xml' path='doc/member[@name="htmlSelectExFlag"]/*' />
 public enum htmlSelectExFlag
 {
+    /// <include file='htmlSelectExFlag.xml' path='doc/member[@name="htmlSelectExFlag.htmlSelectExFlagNone"]/*' />
     htmlSelectExFlagNone = 0,
+
+    /// <include file='htmlSelectExFlag.xml' path='doc/member[@name="htmlSelectExFlag.htmlSelectExFlagHideSelectionInDesign"]/*' />
     htmlSelectExFlagHideSelectionInDesign = 0x1,
+
+    /// <include file='htmlSelectExFlag.xml' path='doc/member[@name="htmlSelectExFlag.htmlSelectExFlag_Max"]/*' />
     htmlSelectExFlag_Max = 2147483647,
 }

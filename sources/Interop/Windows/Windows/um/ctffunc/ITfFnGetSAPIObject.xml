@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ITfFnGetSAPIObject.Get">
+    <summary>
+      <para>Obtains a specified SAPI object.</para>
+    </summary>
+    <param name="sObj">
+      <para>Contains a <see cref="TfSapiObject" /> value that specifies the SAPI object to obtain.</para>
+    </param>
+    <param name="ppunk">
+      <para>Pointer to an <b>IUnknown</b> interface pointer that receives the requested SAPI object. The caller must release this interface when it is no longer required.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>The requested object cannot be obtained.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_NOTIMPL</b>
+            </para>
+          </description>
+          <description>
+            <para>The requested object is not implemented.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="ITfFnGetSAPIObject" />
+    <seealso cref="TfSapiObject " />
+  </member>
+  <member name="ITfFnGetSAPIObject">
+    <summary>
+      <para>The <b>ITfFnGetSAPIObject</b> interface is implemented by the Speech API (SAPI) text service. This interface is used by the TSF manager or a client (application or other text service) to obtain various SAPI objects.</para>
+      <para>A client obtains an instance of this interface by obtaining the <see cref="ITfFunctionProvider" /> for the SAPI text service and calling <see cref="ITfFunctionProvider.GetFunction" /> with IID_ITfFnGetSAPIObject.</para>
+    </summary>
+  </member>
+</doc>

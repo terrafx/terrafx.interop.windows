@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MFBYTESTREAM_BUFFERING_PARAMS">
+    <summary>
+      <para>Specifies the buffering parameters for a network byte stream.</para>
+    </summary>
+    <seealso cref="IMFByteStreamBuffering" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-structures">Media Foundation Structures</seealso>
+  </member>
+  <member name="MFBYTESTREAM_BUFFERING_PARAMS.cbTotalFileSize">
+    <summary>
+      <para>Size of the file, in bytes. If the total size is unknown, set this member to -1.</para>
+    </summary>
+  </member>
+  <member name="MFBYTESTREAM_BUFFERING_PARAMS.cbPlayableDataSize">
+    <summary>
+      <para>Size of the playable media data in the file, excluding any trailing data that is not useful for playback. If this value is unknown, set this member to -1.</para>
+    </summary>
+  </member>
+  <member name="MFBYTESTREAM_BUFFERING_PARAMS.prgBuckets">
+    <summary>
+      <para>Pointer to an array of <see cref="MF_LEAKY_BUCKET_PAIR" /> structures. Each member of the array gives the buffer window for a particular bit rate.</para>
+    </summary>
+  </member>
+  <member name="MFBYTESTREAM_BUFFERING_PARAMS.cBuckets">
+    <summary>
+      <para>The number of elements in the <b>prgBuckets</b> array.</para>
+    </summary>
+  </member>
+  <member name="MFBYTESTREAM_BUFFERING_PARAMS.qwNetBufferingTime">
+    <summary>
+      <para>Amount of data to buffer from the network, in 100-nanosecond units. This value is in addition to the buffer windows defined in the <b>prgBuckets</b> member.</para>
+    </summary>
+  </member>
+  <member name="MFBYTESTREAM_BUFFERING_PARAMS.qwExtraBufferingTimeDuringSeek">
+    <summary>
+      <para>Amount of additional data to buffer when seeking, in 100-nanosecond units. This value reflects the fact that downloading must start from the previous key frame before the seek point. If the value is unknown, set this member to zero.</para>
+    </summary>
+  </member>
+  <member name="MFBYTESTREAM_BUFFERING_PARAMS.qwPlayDuration">
+    <summary>
+      <para>The playback duration of the file, in 100-nanosecond units. If the duration is unknown, set this member to zero.</para>
+    </summary>
+  </member>
+  <member name="MFBYTESTREAM_BUFFERING_PARAMS.dRate">
+    <summary>
+      <para>Playback rate.</para>
+    </summary>
+  </member>
+</doc>

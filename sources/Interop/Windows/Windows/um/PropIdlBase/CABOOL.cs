@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CABOOL.xml' path='doc/member[@name="CABOOL"]/*' />
 public unsafe partial struct CABOOL
 {
+    /// <include file='CABOOL.xml' path='doc/member[@name="CABOOL.cElems"]/*' />
     [NativeTypeName("ULONG")]
     public uint cElems;
 
+    /// <include file='CABOOL.xml' path='doc/member[@name="CABOOL.pElems"]/*' />
     [NativeTypeName("VARIANT_BOOL *")]
     public short* pElems;
 }

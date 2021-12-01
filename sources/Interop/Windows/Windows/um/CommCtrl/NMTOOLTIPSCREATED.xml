@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="NMTOOLTIPSCREATED">
+    <summary>
+      <para>Contains information used with <a href="https://docs.microsoft.com//windows/desktop/Controls/nm-tooltipscreated">NM_TOOLTIPSCREATED</a> notification codes.</para>
+    </summary>
+  </member>
+  <member name="NMTOOLTIPSCREATED.hdr">
+    <summary>
+      <para>Type: <b><see cref="NMHDR" /></b></para>
+      <para>An <see cref="NMHDR" /> structure that contains additional information about this notification.</para>
+    </summary>
+  </member>
+  <member name="NMTOOLTIPSCREATED.hwndToolTips">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>The window handle to the tooltip control created.</para>
+    </summary>
+  </member>
+</doc>

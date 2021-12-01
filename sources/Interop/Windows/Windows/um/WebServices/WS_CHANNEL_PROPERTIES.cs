@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_CHANNEL_PROPERTIES.xml' path='doc/member[@name="WS_CHANNEL_PROPERTIES"]/*' />
 public unsafe partial struct WS_CHANNEL_PROPERTIES
 {
+    /// <include file='WS_CHANNEL_PROPERTIES.xml' path='doc/member[@name="WS_CHANNEL_PROPERTIES.properties"]/*' />
     public WS_CHANNEL_PROPERTY* properties;
 
+    /// <include file='WS_CHANNEL_PROPERTIES.xml' path='doc/member[@name="WS_CHANNEL_PROPERTIES.propertyCount"]/*' />
     [NativeTypeName("ULONG")]
     public uint propertyCount;
 }

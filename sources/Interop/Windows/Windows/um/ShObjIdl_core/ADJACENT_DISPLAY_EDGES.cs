@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ADJACENT_DISPLAY_EDGES.xml' path='doc/member[@name="ADJACENT_DISPLAY_EDGES"]/*' />
 public enum ADJACENT_DISPLAY_EDGES
 {
+    /// <include file='ADJACENT_DISPLAY_EDGES.xml' path='doc/member[@name="ADJACENT_DISPLAY_EDGES.ADE_NONE"]/*' />
     ADE_NONE = 0,
+
+    /// <include file='ADJACENT_DISPLAY_EDGES.xml' path='doc/member[@name="ADJACENT_DISPLAY_EDGES.ADE_LEFT"]/*' />
     ADE_LEFT = 0x1,
+
+    /// <include file='ADJACENT_DISPLAY_EDGES.xml' path='doc/member[@name="ADJACENT_DISPLAY_EDGES.ADE_RIGHT"]/*' />
     ADE_RIGHT = 0x2,
 }

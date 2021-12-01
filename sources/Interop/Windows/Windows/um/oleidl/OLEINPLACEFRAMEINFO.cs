@@ -5,15 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='OLEINPLACEFRAMEINFO.xml' path='doc/member[@name="OLEINPLACEFRAMEINFO"]/*' />
 public partial struct OLEINPLACEFRAMEINFO
 {
+    /// <include file='OLEINPLACEFRAMEINFO.xml' path='doc/member[@name="OLEINPLACEFRAMEINFO.cb"]/*' />
     public uint cb;
 
+    /// <include file='OLEINPLACEFRAMEINFO.xml' path='doc/member[@name="OLEINPLACEFRAMEINFO.fMDIApp"]/*' />
     public BOOL fMDIApp;
 
+    /// <include file='OLEINPLACEFRAMEINFO.xml' path='doc/member[@name="OLEINPLACEFRAMEINFO.hwndFrame"]/*' />
     public HWND hwndFrame;
 
+    /// <include file='OLEINPLACEFRAMEINFO.xml' path='doc/member[@name="OLEINPLACEFRAMEINFO.haccel"]/*' />
     public HACCEL haccel;
 
+    /// <include file='OLEINPLACEFRAMEINFO.xml' path='doc/member[@name="OLEINPLACEFRAMEINFO.cAccelEntries"]/*' />
     public uint cAccelEntries;
 }

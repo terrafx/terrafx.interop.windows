@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MF_MEDIA_ENGINE_ERR">
+    <summary>
+      <para>Defines error status codes for the Media Engine.</para>
+    </summary>
+    <remarks>
+      <para>The values greater than zero correspond to error codes defined for the <b>MediaError</b> object  in HTML5.</para>
+    </remarks>
+    <seealso cref="IMFMediaError.GetErrorCode" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+  </member>
+  <member name="MF_MEDIA_ENGINE_ERR.MF_MEDIA_ENGINE_ERR_NOERROR">
+    <summary>
+      <para>No error.</para>
+    </summary>
+  </member>
+  <member name="MF_MEDIA_ENGINE_ERR.MF_MEDIA_ENGINE_ERR_ABORTED">
+    <summary>
+      <para>The process of fetching the media resource was stopped at the user's request.</para>
+    </summary>
+  </member>
+  <member name="MF_MEDIA_ENGINE_ERR.MF_MEDIA_ENGINE_ERR_NETWORK">
+    <summary>
+      <para>A network error occurred while fetching the media resource.</para>
+    </summary>
+  </member>
+  <member name="MF_MEDIA_ENGINE_ERR.MF_MEDIA_ENGINE_ERR_DECODE">
+    <summary>
+      <para>An error occurred while decoding the media resource.</para>
+    </summary>
+  </member>
+  <member name="MF_MEDIA_ENGINE_ERR.MF_MEDIA_ENGINE_ERR_SRC_NOT_SUPPORTED">
+    <summary>
+      <para>The media resource is not supported.</para>
+    </summary>
+  </member>
+  <member name="MF_MEDIA_ENGINE_ERR.MF_MEDIA_ENGINE_ERR_ENCRYPTED">
+    <summary>
+      <para>An error occurred while encrypting the media resource.</para>
+      <para>Supported in Windows 8.1 and later.</para>
+    </summary>
+  </member>
+</doc>

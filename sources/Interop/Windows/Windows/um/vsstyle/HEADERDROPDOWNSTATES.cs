@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HEADERDROPDOWNSTATES.xml' path='doc/member[@name="HEADERDROPDOWNSTATES"]/*' />
 public enum HEADERDROPDOWNSTATES
 {
+    /// <include file='HEADERDROPDOWNSTATES.xml' path='doc/member[@name="HEADERDROPDOWNSTATES.HDDS_NORMAL"]/*' />
     HDDS_NORMAL = 1,
+
+    /// <include file='HEADERDROPDOWNSTATES.xml' path='doc/member[@name="HEADERDROPDOWNSTATES.HDDS_SOFTHOT"]/*' />
     HDDS_SOFTHOT = 2,
+
+    /// <include file='HEADERDROPDOWNSTATES.xml' path='doc/member[@name="HEADERDROPDOWNSTATES.HDDS_HOT"]/*' />
     HDDS_HOT = 3,
 }

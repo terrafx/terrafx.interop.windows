@@ -5,12 +5,24 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NL_ADDRESS_TYPE.xml' path='doc/member[@name="NL_ADDRESS_TYPE"]/*' />
 public enum NL_ADDRESS_TYPE
 {
+    /// <include file='NL_ADDRESS_TYPE.xml' path='doc/member[@name="NL_ADDRESS_TYPE.NlatUnspecified"]/*' />
     NlatUnspecified,
+
+    /// <include file='NL_ADDRESS_TYPE.xml' path='doc/member[@name="NL_ADDRESS_TYPE.NlatUnicast"]/*' />
     NlatUnicast,
+
+    /// <include file='NL_ADDRESS_TYPE.xml' path='doc/member[@name="NL_ADDRESS_TYPE.NlatAnycast"]/*' />
     NlatAnycast,
+
+    /// <include file='NL_ADDRESS_TYPE.xml' path='doc/member[@name="NL_ADDRESS_TYPE.NlatMulticast"]/*' />
     NlatMulticast,
+
+    /// <include file='NL_ADDRESS_TYPE.xml' path='doc/member[@name="NL_ADDRESS_TYPE.NlatBroadcast"]/*' />
     NlatBroadcast,
+
+    /// <include file='NL_ADDRESS_TYPE.xml' path='doc/member[@name="NL_ADDRESS_TYPE.NlatInvalid"]/*' />
     NlatInvalid,
 }

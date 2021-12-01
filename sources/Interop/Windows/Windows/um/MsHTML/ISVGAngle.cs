@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ISVGAngle.xml' path='doc/member[@name="ISVGAngle"]/*' />
 [Guid("305104D3-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct ISVGAngle : IDispatch")]
 [NativeInheritance("IDispatch")]
@@ -16,6 +17,7 @@ public unsafe partial struct ISVGAngle : ISVGAngle.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ISVGAngle : ISVGAngle.Interface
         return ((delegate* unmanaged<ISVGAngle*, Guid*, void**, int>)(lpVtbl[0]))((ISVGAngle*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ISVGAngle : ISVGAngle.Interface
         return ((delegate* unmanaged<ISVGAngle*, uint>)(lpVtbl[1]))((ISVGAngle*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ISVGAngle : ISVGAngle.Interface
         return ((delegate* unmanaged<ISVGAngle*, uint>)(lpVtbl[2]))((ISVGAngle*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct ISVGAngle : ISVGAngle.Interface
         return ((delegate* unmanaged<ISVGAngle*, uint*, int>)(lpVtbl[3]))((ISVGAngle*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct ISVGAngle : ISVGAngle.Interface
         return ((delegate* unmanaged<ISVGAngle*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((ISVGAngle*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
@@ -60,6 +67,7 @@ public unsafe partial struct ISVGAngle : ISVGAngle.Interface
         return ((delegate* unmanaged<ISVGAngle*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((ISVGAngle*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
+    /// <inheritdoc cref="IDispatch.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
@@ -67,6 +75,7 @@ public unsafe partial struct ISVGAngle : ISVGAngle.Interface
         return ((delegate* unmanaged<ISVGAngle*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((ISVGAngle*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
+    /// <include file='ISVGAngle.xml' path='doc/member[@name="ISVGAngle.put_unitType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT put_unitType(short v)
@@ -74,6 +83,7 @@ public unsafe partial struct ISVGAngle : ISVGAngle.Interface
         return ((delegate* unmanaged<ISVGAngle*, short, int>)(lpVtbl[7]))((ISVGAngle*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='ISVGAngle.xml' path='doc/member[@name="ISVGAngle.get_unitType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT get_unitType(short* p)
@@ -81,6 +91,7 @@ public unsafe partial struct ISVGAngle : ISVGAngle.Interface
         return ((delegate* unmanaged<ISVGAngle*, short*, int>)(lpVtbl[8]))((ISVGAngle*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='ISVGAngle.xml' path='doc/member[@name="ISVGAngle.put_value"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT put_value(float v)
@@ -88,6 +99,7 @@ public unsafe partial struct ISVGAngle : ISVGAngle.Interface
         return ((delegate* unmanaged<ISVGAngle*, float, int>)(lpVtbl[9]))((ISVGAngle*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='ISVGAngle.xml' path='doc/member[@name="ISVGAngle.get_value"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT get_value(float* p)
@@ -95,6 +107,7 @@ public unsafe partial struct ISVGAngle : ISVGAngle.Interface
         return ((delegate* unmanaged<ISVGAngle*, float*, int>)(lpVtbl[10]))((ISVGAngle*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='ISVGAngle.xml' path='doc/member[@name="ISVGAngle.put_valueInSpecifiedUnits"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT put_valueInSpecifiedUnits(float v)
@@ -102,6 +115,7 @@ public unsafe partial struct ISVGAngle : ISVGAngle.Interface
         return ((delegate* unmanaged<ISVGAngle*, float, int>)(lpVtbl[11]))((ISVGAngle*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='ISVGAngle.xml' path='doc/member[@name="ISVGAngle.get_valueInSpecifiedUnits"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT get_valueInSpecifiedUnits(float* p)
@@ -109,6 +123,7 @@ public unsafe partial struct ISVGAngle : ISVGAngle.Interface
         return ((delegate* unmanaged<ISVGAngle*, float*, int>)(lpVtbl[12]))((ISVGAngle*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='ISVGAngle.xml' path='doc/member[@name="ISVGAngle.put_valueAsString"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT put_valueAsString([NativeTypeName("BSTR")] ushort* v)
@@ -116,6 +131,7 @@ public unsafe partial struct ISVGAngle : ISVGAngle.Interface
         return ((delegate* unmanaged<ISVGAngle*, ushort*, int>)(lpVtbl[13]))((ISVGAngle*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='ISVGAngle.xml' path='doc/member[@name="ISVGAngle.get_valueAsString"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT get_valueAsString([NativeTypeName("BSTR *")] ushort** p)
@@ -123,6 +139,7 @@ public unsafe partial struct ISVGAngle : ISVGAngle.Interface
         return ((delegate* unmanaged<ISVGAngle*, ushort**, int>)(lpVtbl[14]))((ISVGAngle*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='ISVGAngle.xml' path='doc/member[@name="ISVGAngle.newValueSpecifiedUnits"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT newValueSpecifiedUnits(short unitType, float valueInSpecifiedUnits)
@@ -130,6 +147,7 @@ public unsafe partial struct ISVGAngle : ISVGAngle.Interface
         return ((delegate* unmanaged<ISVGAngle*, short, float, int>)(lpVtbl[15]))((ISVGAngle*)Unsafe.AsPointer(ref this), unitType, valueInSpecifiedUnits);
     }
 
+    /// <include file='ISVGAngle.xml' path='doc/member[@name="ISVGAngle.convertToSpecifiedUnits"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT convertToSpecifiedUnits(short unitType)

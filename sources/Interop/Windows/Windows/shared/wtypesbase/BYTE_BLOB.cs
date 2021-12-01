@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='BYTE_BLOB.xml' path='doc/member[@name="BYTE_BLOB"]/*' />
 public unsafe partial struct BYTE_BLOB
 {
+    /// <include file='BYTE_BLOB.xml' path='doc/member[@name="BYTE_BLOB.clSize"]/*' />
     [NativeTypeName("ULONG")]
     public uint clSize;
 
+    /// <include file='BYTE_BLOB.xml' path='doc/member[@name="BYTE_BLOB.abData"]/*' />
     [NativeTypeName("byte [1]")]
     public fixed byte abData[1];
 }

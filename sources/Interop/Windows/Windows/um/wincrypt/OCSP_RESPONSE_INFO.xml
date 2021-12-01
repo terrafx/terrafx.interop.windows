@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="OCSP_RESPONSE_INFO">
+    <summary>
+      <para>The <b>OCSP_RESPONSE_INFO</b> structure indicates the success or failure of the corresponding <a href="https://docs.microsoft.com//windows/desktop/SecGloss/o-gly">online certificate status protocol</a> (OCSP) request. For successful requests, it contains the type and value of response information.</para>
+    </summary>
+    <remarks>
+      <para>OCSP applications can encode or decode this structure by using <b>X509_ASN_ENCODING</b> or <b>PKCS_7_ASN_ENCODING</b>.</para>
+    </remarks>
+    <seealso cref="OCSP_BASIC_SIGNED_RESPONSE_INFO" />
+    <seealso href="https://www.ietf.org/rfc/rfc2560.txt">RFC 2560  Online Certificate Status Protocol</seealso>
+  </member>
+  <member name="OCSP_RESPONSE_INFO.dwStatus">
+    <summary>
+      <para>A value that indicates the processing status of the corresponding request. If the status is anything other than <b>OCSP_SUCCESSFUL_RESPONSE</b>, <b>pszObjId</b> and <b>Value</b> are not set.</para>
+      <para>This member can be one of the following possible values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>OCSP_SUCCESSFUL_RESPONSE</b>
+                </description>
+              </item>
+              <item>
+                <description>0</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The response has valid confirmations.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>OCSP_MALFORMED_REQUEST_RESPONSE</b>
+                </description>
+              </item>
+              <item>
+                <description>1</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The request received does not conform to OCSP syntax.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>OCSP_INTERNAL_ERROR_RESPONSE</b>
+                </description>
+              </item>
+              <item>
+                <description>2</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The responder encountered an internal error. The request should be resent to a different responder.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>OCSP_TRY_LATER_RESPONSE</b>
+                </description>
+              </item>
+              <item>
+                <description>3</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The responder service is operational but temporarily unable to respond.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b></b>
+                </description>
+              </item>
+              <item>
+                <description>4</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>This value is not used.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>OCSP_SIG_REQUIRED_RESPONSE</b>
+                </description>
+              </item>
+              <item>
+                <description>5</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Before the responder service can respond, it requires that the client sign the request.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>OCSP_UNAUTHORIZED_RESPONSE</b>
+                </description>
+              </item>
+              <item>
+                <description>6</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The client is not authorized to request a response from this responder service.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="OCSP_RESPONSE_INFO.pszObjId">
+    <summary>
+      <para>A pointer to a string that identifies the type of data in <b>Value</b>.</para>
+      <para>The following table lists possible values for <b>pszObjId</b>.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>szOID_PKIX_OCSP_BASIC_SIGNED_RESPONSE</b>
+          </description>
+          <description>
+            <para>1.3.6.1.5.5.7.48.1.1</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="OCSP_RESPONSE_INFO.Value">
+    <summary>
+      <para>An array of bytes that contain data encoded by using <a href="https://docs.microsoft.com//windows/desktop/SecGloss/d-gly">Distinguished Encoding Rules</a> (DER), as specified by <b>pszObjId</b>.</para>
+    </summary>
+  </member>
+</doc>

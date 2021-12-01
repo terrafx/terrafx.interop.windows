@@ -5,21 +5,28 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='EMRTEXT.xml' path='doc/member[@name="EMRTEXT"]/*' />
 public partial struct EMRTEXT
 {
+    /// <include file='EMRTEXT.xml' path='doc/member[@name="EMRTEXT.ptlReference"]/*' />
     public POINTL ptlReference;
 
+    /// <include file='EMRTEXT.xml' path='doc/member[@name="EMRTEXT.nChars"]/*' />
     [NativeTypeName("DWORD")]
     public uint nChars;
 
+    /// <include file='EMRTEXT.xml' path='doc/member[@name="EMRTEXT.offString"]/*' />
     [NativeTypeName("DWORD")]
     public uint offString;
 
+    /// <include file='EMRTEXT.xml' path='doc/member[@name="EMRTEXT.fOptions"]/*' />
     [NativeTypeName("DWORD")]
     public uint fOptions;
 
+    /// <include file='EMRTEXT.xml' path='doc/member[@name="EMRTEXT.rcl"]/*' />
     public RECTL rcl;
 
+    /// <include file='EMRTEXT.xml' path='doc/member[@name="EMRTEXT.offDx"]/*' />
     [NativeTypeName("DWORD")]
     public uint offDx;
 }

@@ -5,14 +5,19 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NMDATETIMEWMKEYDOWNW.xml' path='doc/member[@name="NMDATETIMEWMKEYDOWNW"]/*' />
 public unsafe partial struct NMDATETIMEWMKEYDOWNW
 {
+    /// <include file='NMDATETIMEWMKEYDOWNW.xml' path='doc/member[@name="NMDATETIMEWMKEYDOWNW.nmhdr"]/*' />
     public NMHDR nmhdr;
 
+    /// <include file='NMDATETIMEWMKEYDOWNW.xml' path='doc/member[@name="NMDATETIMEWMKEYDOWNW.nVirtKey"]/*' />
     public int nVirtKey;
 
+    /// <include file='NMDATETIMEWMKEYDOWNW.xml' path='doc/member[@name="NMDATETIMEWMKEYDOWNW.pszFormat"]/*' />
     [NativeTypeName("LPCWSTR")]
     public ushort* pszFormat;
 
+    /// <include file='NMDATETIMEWMKEYDOWNW.xml' path='doc/member[@name="NMDATETIMEWMKEYDOWNW.st"]/*' />
     public SYSTEMTIME st;
 }

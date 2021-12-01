@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITravelLogStg.xml' path='doc/member[@name="ITravelLogStg"]/*' />
 [Guid("7EBFDD80-AD18-11D3-A4C5-00C04F72D6B8")]
 [NativeTypeName("struct ITravelLogStg : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITravelLogStg : ITravelLogStg.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITravelLogStg : ITravelLogStg.Interface
         return ((delegate* unmanaged<ITravelLogStg*, Guid*, void**, int>)(lpVtbl[0]))((ITravelLogStg*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITravelLogStg : ITravelLogStg.Interface
         return ((delegate* unmanaged<ITravelLogStg*, uint>)(lpVtbl[1]))((ITravelLogStg*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITravelLogStg : ITravelLogStg.Interface
         return ((delegate* unmanaged<ITravelLogStg*, uint>)(lpVtbl[2]))((ITravelLogStg*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITravelLogStg.xml' path='doc/member[@name="ITravelLogStg.CreateEntry"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT CreateEntry([NativeTypeName("LPCWSTR")] ushort* pszUrl, [NativeTypeName("LPCWSTR")] ushort* pszTitle, ITravelLogEntry* ptleRelativeTo, BOOL fPrepend, ITravelLogEntry** pptle)
@@ -46,6 +51,7 @@ public unsafe partial struct ITravelLogStg : ITravelLogStg.Interface
         return ((delegate* unmanaged<ITravelLogStg*, ushort*, ushort*, ITravelLogEntry*, BOOL, ITravelLogEntry**, int>)(lpVtbl[3]))((ITravelLogStg*)Unsafe.AsPointer(ref this), pszUrl, pszTitle, ptleRelativeTo, fPrepend, pptle);
     }
 
+    /// <include file='ITravelLogStg.xml' path='doc/member[@name="ITravelLogStg.TravelTo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT TravelTo(ITravelLogEntry* ptle)
@@ -53,6 +59,7 @@ public unsafe partial struct ITravelLogStg : ITravelLogStg.Interface
         return ((delegate* unmanaged<ITravelLogStg*, ITravelLogEntry*, int>)(lpVtbl[4]))((ITravelLogStg*)Unsafe.AsPointer(ref this), ptle);
     }
 
+    /// <include file='ITravelLogStg.xml' path='doc/member[@name="ITravelLogStg.EnumEntries"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT EnumEntries([NativeTypeName("TLENUMF")] uint flags, IEnumTravelLogEntry** ppenum)
@@ -60,6 +67,7 @@ public unsafe partial struct ITravelLogStg : ITravelLogStg.Interface
         return ((delegate* unmanaged<ITravelLogStg*, uint, IEnumTravelLogEntry**, int>)(lpVtbl[5]))((ITravelLogStg*)Unsafe.AsPointer(ref this), flags, ppenum);
     }
 
+    /// <include file='ITravelLogStg.xml' path='doc/member[@name="ITravelLogStg.FindEntries"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT FindEntries([NativeTypeName("TLENUMF")] uint flags, [NativeTypeName("LPCWSTR")] ushort* pszUrl, IEnumTravelLogEntry** ppenum)
@@ -67,6 +75,7 @@ public unsafe partial struct ITravelLogStg : ITravelLogStg.Interface
         return ((delegate* unmanaged<ITravelLogStg*, uint, ushort*, IEnumTravelLogEntry**, int>)(lpVtbl[6]))((ITravelLogStg*)Unsafe.AsPointer(ref this), flags, pszUrl, ppenum);
     }
 
+    /// <include file='ITravelLogStg.xml' path='doc/member[@name="ITravelLogStg.GetCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetCount([NativeTypeName("TLENUMF")] uint flags, [NativeTypeName("DWORD *")] uint* pcEntries)
@@ -74,6 +83,7 @@ public unsafe partial struct ITravelLogStg : ITravelLogStg.Interface
         return ((delegate* unmanaged<ITravelLogStg*, uint, uint*, int>)(lpVtbl[7]))((ITravelLogStg*)Unsafe.AsPointer(ref this), flags, pcEntries);
     }
 
+    /// <include file='ITravelLogStg.xml' path='doc/member[@name="ITravelLogStg.RemoveEntry"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT RemoveEntry(ITravelLogEntry* ptle)
@@ -81,6 +91,7 @@ public unsafe partial struct ITravelLogStg : ITravelLogStg.Interface
         return ((delegate* unmanaged<ITravelLogStg*, ITravelLogEntry*, int>)(lpVtbl[8]))((ITravelLogStg*)Unsafe.AsPointer(ref this), ptle);
     }
 
+    /// <include file='ITravelLogStg.xml' path='doc/member[@name="ITravelLogStg.GetRelativeEntry"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT GetRelativeEntry(int iOffset, ITravelLogEntry** ptle)

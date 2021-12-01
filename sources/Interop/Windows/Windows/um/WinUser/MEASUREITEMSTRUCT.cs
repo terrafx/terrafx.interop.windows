@@ -5,18 +5,25 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MEASUREITEMSTRUCT.xml' path='doc/member[@name="MEASUREITEMSTRUCT"]/*' />
 public partial struct MEASUREITEMSTRUCT
 {
+    /// <include file='MEASUREITEMSTRUCT.xml' path='doc/member[@name="MEASUREITEMSTRUCT.CtlType"]/*' />
     public uint CtlType;
 
+    /// <include file='MEASUREITEMSTRUCT.xml' path='doc/member[@name="MEASUREITEMSTRUCT.CtlID"]/*' />
     public uint CtlID;
 
+    /// <include file='MEASUREITEMSTRUCT.xml' path='doc/member[@name="MEASUREITEMSTRUCT.itemID"]/*' />
     public uint itemID;
 
+    /// <include file='MEASUREITEMSTRUCT.xml' path='doc/member[@name="MEASUREITEMSTRUCT.itemWidth"]/*' />
     public uint itemWidth;
 
+    /// <include file='MEASUREITEMSTRUCT.xml' path='doc/member[@name="MEASUREITEMSTRUCT.itemHeight"]/*' />
     public uint itemHeight;
 
+    /// <include file='MEASUREITEMSTRUCT.xml' path='doc/member[@name="MEASUREITEMSTRUCT.itemData"]/*' />
     [NativeTypeName("ULONG_PTR")]
     public nuint itemData;
 }

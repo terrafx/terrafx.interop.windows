@@ -7,9 +7,11 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PSS_VA_SPACE_INFORMATION.xml' path='doc/member[@name="PSS_VA_SPACE_INFORMATION"]/*' />
 [SupportedOSPlatform("windows8.1")]
 public partial struct PSS_VA_SPACE_INFORMATION
 {
+    /// <include file='PSS_VA_SPACE_INFORMATION.xml' path='doc/member[@name="PSS_VA_SPACE_INFORMATION.RegionCount"]/*' />
     [NativeTypeName("DWORD")]
     public uint RegionCount;
 }

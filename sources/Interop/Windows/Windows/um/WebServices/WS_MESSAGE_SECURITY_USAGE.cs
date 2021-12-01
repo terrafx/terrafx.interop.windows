@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_MESSAGE_SECURITY_USAGE.xml' path='doc/member[@name="WS_MESSAGE_SECURITY_USAGE"]/*' />
 public enum WS_MESSAGE_SECURITY_USAGE
 {
+    /// <include file='WS_MESSAGE_SECURITY_USAGE.xml' path='doc/member[@name="WS_MESSAGE_SECURITY_USAGE.WS_SUPPORTING_MESSAGE_SECURITY_USAGE"]/*' />
     WS_SUPPORTING_MESSAGE_SECURITY_USAGE = 1,
 }

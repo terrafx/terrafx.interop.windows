@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IXMLError.xml' path='doc/member[@name="IXMLError"]/*' />
 [Guid("948C5AD3-C58D-11D0-9C0B-00C04FC99C8E")]
 [NativeTypeName("struct IXMLError : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IXMLError : IXMLError.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IXMLError : IXMLError.Interface
         return ((delegate* unmanaged<IXMLError*, Guid*, void**, int>)(lpVtbl[0]))((IXMLError*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IXMLError : IXMLError.Interface
         return ((delegate* unmanaged<IXMLError*, uint>)(lpVtbl[1]))((IXMLError*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IXMLError : IXMLError.Interface
         return ((delegate* unmanaged<IXMLError*, uint>)(lpVtbl[2]))((IXMLError*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IXMLError.xml' path='doc/member[@name="IXMLError.GetErrorInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetErrorInfo(XML_ERROR* pErrorReturn)

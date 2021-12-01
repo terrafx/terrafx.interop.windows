@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IServerSecurity.xml' path='doc/member[@name="IServerSecurity"]/*' />
 [Guid("0000013E-0000-0000-C000-000000000046")]
 [NativeTypeName("struct IServerSecurity : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IServerSecurity : IServerSecurity.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IServerSecurity : IServerSecurity.Interface
         return ((delegate* unmanaged<IServerSecurity*, Guid*, void**, int>)(lpVtbl[0]))((IServerSecurity*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IServerSecurity : IServerSecurity.Interface
         return ((delegate* unmanaged<IServerSecurity*, uint>)(lpVtbl[1]))((IServerSecurity*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IServerSecurity : IServerSecurity.Interface
         return ((delegate* unmanaged<IServerSecurity*, uint>)(lpVtbl[2]))((IServerSecurity*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IServerSecurity.xml' path='doc/member[@name="IServerSecurity.QueryBlanket"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT QueryBlanket([NativeTypeName("DWORD *")] uint* pAuthnSvc, [NativeTypeName("DWORD *")] uint* pAuthzSvc, [NativeTypeName("OLECHAR **")] ushort** pServerPrincName, [NativeTypeName("DWORD *")] uint* pAuthnLevel, [NativeTypeName("DWORD *")] uint* pImpLevel, void** pPrivs, [NativeTypeName("DWORD *")] uint* pCapabilities)
@@ -46,6 +51,7 @@ public unsafe partial struct IServerSecurity : IServerSecurity.Interface
         return ((delegate* unmanaged<IServerSecurity*, uint*, uint*, ushort**, uint*, uint*, void**, uint*, int>)(lpVtbl[3]))((IServerSecurity*)Unsafe.AsPointer(ref this), pAuthnSvc, pAuthzSvc, pServerPrincName, pAuthnLevel, pImpLevel, pPrivs, pCapabilities);
     }
 
+    /// <include file='IServerSecurity.xml' path='doc/member[@name="IServerSecurity.ImpersonateClient"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT ImpersonateClient()
@@ -53,6 +59,7 @@ public unsafe partial struct IServerSecurity : IServerSecurity.Interface
         return ((delegate* unmanaged<IServerSecurity*, int>)(lpVtbl[4]))((IServerSecurity*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IServerSecurity.xml' path='doc/member[@name="IServerSecurity.RevertToSelf"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT RevertToSelf()
@@ -60,6 +67,7 @@ public unsafe partial struct IServerSecurity : IServerSecurity.Interface
         return ((delegate* unmanaged<IServerSecurity*, int>)(lpVtbl[5]))((IServerSecurity*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IServerSecurity.xml' path='doc/member[@name="IServerSecurity.IsImpersonating"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public BOOL IsImpersonating()

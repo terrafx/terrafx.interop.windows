@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MF_TRANSCODE_TOPOLOGYMODE_FLAGS">
+    <summary>
+      <para>Defines flags for the <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-transcode-topologymode">MF_TRANSCODE_TOPOLOGYMODE</a> attribute.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+  </member>
+  <member name="MF_TRANSCODE_TOPOLOGYMODE_FLAGS.MF_TRANSCODE_TOPOLOGYMODE_SOFTWARE_ONLY">
+    <summary>
+      <para>The topology loader will exclude hardware-based transforms (such as codecs and color converters) from the topology. It will use only software transforms.</para>
+    </summary>
+  </member>
+  <member name="MF_TRANSCODE_TOPOLOGYMODE_FLAGS.MF_TRANSCODE_TOPOLOGYMODE_HARDWARE_ALLOWED">
+    <summary>
+      <para>The topology loader may insert hardware-based transforms into the transcode topology.</para>
+    </summary>
+  </member>
+</doc>

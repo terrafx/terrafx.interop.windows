@@ -1,0 +1,656 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IAnchor.ClearChangeHistory">
+    <summary>
+      <para>The <b>IAnchor.ClearChangeHistory</b> method clears the anchor change history flags.</para>
+    </summary>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Applications should clear the anchor change history flags after receiving this call. The change history flags were set by <see cref="IAnchor.GetChangeHistory" />.</para>
+    </remarks>
+    <seealso cref="IAnchor" />
+    <seealso cref="IAnchor.GetChangeHistory " />
+  </member>
+  <member name="IAnchor.Clone">
+    <summary>
+      <para>The <b>IAnchor.Clone</b> method produces a new anchor object positioned at the same location, and with the same gravity, as the current anchor.</para>
+    </summary>
+    <param name="ppaClone">
+      <para>A new anchor object, identical to the current anchor.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>The method failed.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <i>ppaClone</i> is invalid.
+</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The change history and change history masks are both cleared in the cloned anchor.</para>
+    </remarks>
+  </member>
+  <member name="IAnchor.Compare">
+    <summary>
+      <para>The <b>IAnchor.Compare</b> method compares the relative position of two anchors within a text stream.</para>
+    </summary>
+    <param name="paWith">
+      <para>An anchor object to compare to the primary anchor. Used to determine the relative position of the two anchors.</para>
+    </param>
+    <param name="plResult">
+      <para>Result of the comparison of the positions of the two anchors.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>-1</b>
+          </description>
+          <description>
+            <para>The primary anchor is positioned earlier in the text stream than <i>paWith.</i></para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>0</b>
+          </description>
+          <description>
+            <para>The primary anchor is positioned at the same location as <i>paWith.</i></para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>+1</b>
+          </description>
+          <description>
+            <para>The primary anchor is positioned later in the text stream than <i>paWith.</i></para>
+          </description>
+        </item>
+      </list>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <i>paWith</i> is invalid.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <i>plResult</i> is invalid.
+</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The value 0 is returned for <i>*plResult</i> only when the two anchors are in a single region. Anchor positions include the spaces between regions. If you only need to determine if the two anchors are positioned at the same location, <see cref="IAnchor.IsEqual" /> is more efficient.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/ranges">Anchors</seealso>
+    <seealso cref="IAnchor" />
+    <seealso cref="IAnchor.IsEqual " />
+    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/ranges">Regions</seealso>
+  </member>
+  <member name="IAnchor.GetChangeHistory">
+    <summary>
+      <para>The <b>IAnchor.GetChangeHistory</b> method gets the history of deletions that have occurred immediately preceding or following the anchor.</para>
+    </summary>
+    <param name="pdwHistory">
+      <para>Bit field flags that specify that deletions have occurred immediately preceding or following the anchor. One or both of the following values can be set.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>TS_CH_PRECEDING_DEL</b>
+          </description>
+          <description>
+            <para>Text preceding the anchor has been deleted.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>TS_CH_FOLLOWING_DEL</b>
+          </description>
+          <description>
+            <para>Text following the anchor has been deleted.</para>
+          </description>
+        </item>
+      </list>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>The value of <i>pdwHistory</i> is invalid.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The <i>pdwHistory</i> change flags must be set when deletions adjacent to the anchor have occurred.</para>
+      <para>The change flags remain set until they are cleared with a call to <see cref="IAnchor.ClearChangeHistory" />.</para>
+    </remarks>
+    <seealso cref="IAnchor" />
+    <seealso cref="IAnchor.ClearChangeHistory " />
+  </member>
+  <member name="IAnchor.GetGravity">
+    <summary>
+      <para>The <b>IAnchor.GetGravity</b> method retrieves the gravity of the anchor in an <see cref="IAnchor" /> object.</para>
+    </summary>
+    <param name="pgravity">
+      <para>Pointer that receives a <see cref="TsGravity" /> value that specifies the anchor gravity.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>The <i>pgravity</i> pointer is invalid.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/ranges">Anchor Gravity</seealso>
+    <seealso cref="IAnchor" />
+    <seealso cref="IAnchor.SetGravity" />
+    <seealso cref="TsGravity" />
+  </member>
+  <member name="IAnchor.IsEqual">
+    <summary>
+      <para>The <b>IAnchor.IsEqual</b> method evaluates two anchors within a text stream and returns a Boolean value that specifies the equality or inequality of the anchor positions.</para>
+    </summary>
+    <param name="paWith">
+      <para>Specifies an anchor to compare to the primary anchor. Used to determine the equality of the two anchor positions.</para>
+    </param>
+    <param name="pfEqual">
+      <para>A Boolean value that specifies whether the two anchors are positioned at the same location. If set to <b>TRUE</b>, the two anchors occupy the same location. If set to <b>FALSE</b>, the two anchors do not occupy the same location.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <i>pfEqual</i> is invalid.
+</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Anchors are always positioned between characters or regions. When two anchors are between the same characters, being at the same offset within the text stream, and within the same region, <b>IAnchor.IsEqual</b> returns <b>TRUE</b>. Otherwise it returns <b>FALSE</b>.</para>
+      <para>
+        <see cref="IAnchor.Compare " /> incorporates the same functionality as <b>IAnchor.IsEqual</b>. However, because <b>IAnchor.IsEqual</b> is more specific, it can have a more efficient implementation on the server.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/ranges">Anchors</seealso>
+    <seealso cref="IAnchor" />
+    <seealso cref="IAnchor.Compare " />
+  </member>
+  <member name="IAnchor.SetChangeHistoryMask">
+    <summary>
+      <para>This method has not been implemented.</para>
+    </summary>
+    <param name="dwMask">
+      <para>Not used.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_NOTIMPL</b>
+            </para>
+          </description>
+          <description>
+            <para>The method is not implemented.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+  </member>
+  <member name="IAnchor.SetGravity">
+    <summary>
+      <para>Sets the gravity of the anchor.</para>
+    </summary>
+    <param name="gravity">
+      <para>Contains a value from the <see cref="TsGravity" /> enumeration that specifies a new forward or backward gravity for the anchor.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/ranges">Anchor Gravity</seealso>
+    <seealso cref="IAnchor" />
+    <seealso cref="IAnchor.GetGravity" />
+    <seealso cref="TsGravity" />
+  </member>
+  <member name="IAnchor.Shift">
+    <summary>
+      <para>The <b>IAnchor.Shift</b> method shifts the anchor forward or backward within a text stream.</para>
+    </summary>
+    <param name="dwFlags">
+      <para>Bit fields that are used to avoid anchor positioning.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>TS_SHIFT_COUNT_ONLY</b>
+          </description>
+          <description>
+            <para>The anchor is not shifted. If the flag is not set (<i>dwFlags</i> = 0), the anchor will be shifted as specified by the other parameter settings.</para>
+          </description>
+        </item>
+      </list>
+    </param>
+    <param name="cchReq">
+      <para>The number of characters to move the anchor within the text stream.</para>
+    </param>
+    <param name="pcch">
+      <para>The actual number of characters moved within the text stream. The method will set <i>pcch</i> to zero if it fails.</para>
+    </param>
+    <param name="paHaltAnchor">
+      <para>Reference to an anchor that blocks the shift. Set to <b>NULL</b> to avoid blocking the shift.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>The shift failed.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>An input parameter value is invalid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_NOTIMPL</b>
+            </para>
+          </description>
+          <description>
+            <para>The <i>dwFlags</i> parameter value is not implemented in this method.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>
+        <i>cchReq</i> and <i>pcch</i> parameters can be negative, meaning a shift backward in the text stream, or positive, meaning a shift forward. The actual number of characters shifted can be less than <i>cchReq</i> if the beginning or end of the document is encountered, a region boundary is encountered, or if <i>paHaltAnchor</i> receives an anchor that blocks the shift.</para>
+      <para>If <i>paHaltAnchor</i> receives an anchor that blocks the shift, the application will truncate the shift at the position occupied by <i>paHaltAnchor.</i> If <i>paHaltAnchor</i> is not within the span of text covered by the shift, it has no relevance to the shift and is ignored.</para>
+      <para>For example, if the anchor referenced by <i>paHaltAnchor</i> lies 8 characters ahead of the anchor in the stream, and a client calls <b>Shift</b> (0, 10, pcch, paHaltAnchor), then on exit the anchor will have moved only 8 characters. If the anchor referenced by <i>paHaltAnchor</i> is equal to the current anchor to be moved, then <b>Shift</b> will return successfully without moving the anchor at all. In this case <i>pcch</i> will be 0.</para>
+      <para>The anchor shift is always blocked by region boundaries, as if the beginning or end of the document were encountered. This will be indicated on exit by the actual shift <i>pcch</i> being smaller in absolute value than the requested shift <i>cchReq</i>. In this case, clients can use <see cref="IAnchor.ShiftRegion" /> to shift the anchor into an adjacent region.</para>
+    </remarks>
+    <seealso cref="IAnchor" />
+    <seealso cref="IAnchor.ShiftRegion " />
+  </member>
+  <member name="IAnchor.ShiftRegion">
+    <summary>
+      <para>Shifts the anchor into an adjacent region in the text stream.</para>
+    </summary>
+    <param name="dwFlags">
+      <para>Bitfields that are used to control anchor repositioning around hidden text, or to avoid actual repositioning of the anchor.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>TS_SHIFT_COUNT_HIDDEN</b>
+          </description>
+          <description>
+            <para>Specifies that the anchor will be shifted to the next region boundary, including the boundary of a hidden text region. If not set, the anchor will be shifted past any adjacent hidden text until a region of visible text is found.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>TS_SHIFT_COUNT_ONLY</b>
+          </description>
+          <description>
+            <para>The anchor is not shifted.</para>
+          </description>
+        </item>
+      </list>
+    </param>
+    <param name="dir">
+      <para>Contains one of the <see cref="TsShiftDir" /> values that specifies which adjacent region the anchor is moved to.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>TS_SD_BACKWARD</b>
+          </description>
+          <description>
+            <para>Specifies that the anchor will be moved to the region immediately preceding a range of text.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>TS_SD_FORWARD</b>
+          </description>
+          <description>
+            <para>Specifies that the anchor will be moved to the region immediately following a range of text.</para>
+          </description>
+        </item>
+      </list>
+    </param>
+    <param name="pfNoRegion">
+      <para>Boolean value that specifies whether a shift of the anchor occurred.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>TRUE</b>
+          </description>
+          <description>
+            <para>The shift failed, and the anchor was not repositioned.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>FALSE</b>
+          </description>
+          <description>
+            <para>The shift succeeded.</para>
+          </description>
+        </item>
+      </list>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>The shift failed.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>An input parameter value is invalid.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IAnchor" />
+    <seealso cref="IAnchor.Shift " />
+    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/ts-shift--constants">TS_SHIFT_* Constants
+</seealso>
+    <seealso cref="TsShiftDir " />
+  </member>
+  <member name="IAnchor.ShiftTo">
+    <summary>
+      <para>The <b>IAnchor.ShiftTo</b> method shifts the current anchor to the same position as another anchor.</para>
+    </summary>
+    <param name="paSite">
+      <para>Anchor occupying a position that the current anchor will be moved to.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>An <see cref="IAnchor" /> interface pointer to the <i>paSite</i> anchor could not be obtained, or memory is too low to safely complete the operation.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <i>paSite</i> is invalid.
+</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Implementing this method is usually more efficient than an equivalent <see cref="IAnchor.Shift" /> operation.</para>
+    </remarks>
+    <seealso cref="IAnchor" />
+    <seealso cref="IAnchor.Shift " />
+  </member>
+  <member name="IAnchor">
+    <summary>
+      <para>The <b>IAnchor</b> interface is implemented by the TSF manager. Clients of <a href="https://docs.microsoft.com//previous-versions/ms971350(v=msdn.10)">Microsoft Active Accessibility</a> use <b>IAnchor</b> anchor objects to delimit a range of text within a text stream.</para>
+      <para>The interface ID is IID_IAnchor.</para>
+    </summary>
+    <seealso cref="IUnknown" />
+    <seealso href="https://docs.microsoft.com//previous-versions/ms971350(v=msdn.10)">Microsoft Active Accessibility</seealso>
+  </member>
+</doc>

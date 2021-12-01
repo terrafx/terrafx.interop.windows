@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SPBEGINF">
+    <summary>
+      <para>Used by <see cref="IActionProgress.Begin" />, these constants specify certain UI operations that are to be enabled or disabled.</para>
+    </summary>
+    <seealso cref="IActionProgress" />
+    <seealso cref="IActionProgress.Begin" />
+  </member>
+  <member name="SPBEGINF.SPBEGINF_NORMAL">
+    <summary>
+      <para>Indicates default progress behavior.</para>
+    </summary>
+  </member>
+  <member name="SPBEGINF.SPBEGINF_AUTOTIME">
+    <summary>
+      <para>Indicates that the progress UI should automatically update a text field with the amount of time remaining until the action completes.</para>
+    </summary>
+  </member>
+  <member name="SPBEGINF.SPBEGINF_NOPROGRESSBAR">
+    <summary>
+      <para>Indicates that the UI should not display a progress bar.</para>
+    </summary>
+  </member>
+  <member name="SPBEGINF.SPBEGINF_MARQUEEPROGRESS">
+    <summary>
+      <para>Indicates that the UI should use a marquee-style progress bar.</para>
+    </summary>
+  </member>
+  <member name="SPBEGINF.SPBEGINF_NOCANCELBUTTON">
+    <summary>
+      <para>Indicates that the UI should not include a <b>Cancel</b> button.</para>
+    </summary>
+  </member>
+</doc>

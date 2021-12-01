@@ -5,13 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NMSEARCHWEB.xml' path='doc/member[@name="NMSEARCHWEB"]/*' />
 public partial struct NMSEARCHWEB
 {
+    /// <include file='NMSEARCHWEB.xml' path='doc/member[@name="NMSEARCHWEB.hdr"]/*' />
     public NMHDR hdr;
 
+    /// <include file='NMSEARCHWEB.xml' path='doc/member[@name="NMSEARCHWEB.entrypoint"]/*' />
     public EC_SEARCHWEB_ENTRYPOINT entrypoint;
 
+    /// <include file='NMSEARCHWEB.xml' path='doc/member[@name="NMSEARCHWEB.hasQueryText"]/*' />
     public BOOL hasQueryText;
 
+    /// <include file='NMSEARCHWEB.xml' path='doc/member[@name="NMSEARCHWEB.invokeSucceeded"]/*' />
     public BOOL invokeSucceeded;
 }

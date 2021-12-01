@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HANDEDNESS.xml' path='doc/member[@name="HANDEDNESS"]/*' />
 public enum HANDEDNESS
 {
+    /// <include file='HANDEDNESS.xml' path='doc/member[@name="HANDEDNESS.HANDEDNESS_LEFT"]/*' />
     HANDEDNESS_LEFT = 0,
+
+    /// <include file='HANDEDNESS.xml' path='doc/member[@name="HANDEDNESS.HANDEDNESS_RIGHT"]/*' />
     HANDEDNESS_RIGHT,
 }

@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='htmlApplyLocation.xml' path='doc/member[@name="htmlApplyLocation"]/*' />
 public enum htmlApplyLocation
 {
+    /// <include file='htmlApplyLocation.xml' path='doc/member[@name="htmlApplyLocation.htmlApplyLocationInside"]/*' />
     htmlApplyLocationInside = 0,
+
+    /// <include file='htmlApplyLocation.xml' path='doc/member[@name="htmlApplyLocation.htmlApplyLocationOutside"]/*' />
     htmlApplyLocationOutside = 1,
+
+    /// <include file='htmlApplyLocation.xml' path='doc/member[@name="htmlApplyLocation.htmlApplyLocation_Max"]/*' />
     htmlApplyLocation_Max = 2147483647,
 }

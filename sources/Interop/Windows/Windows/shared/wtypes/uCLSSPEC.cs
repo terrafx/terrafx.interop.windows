@@ -8,57 +8,74 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='uCLSSPEC.xml' path='doc/member[@name="uCLSSPEC"]/*' />
 public partial struct uCLSSPEC
 {
+    /// <include file='uCLSSPEC.xml' path='doc/member[@name="uCLSSPEC.tyspec"]/*' />
     [NativeTypeName("DWORD")]
     public uint tyspec;
 
+    /// <include file='uCLSSPEC.xml' path='doc/member[@name="uCLSSPEC.tagged_union"]/*' />
     [NativeTypeName("union __MIDL___MIDL_itf_wtypes_0000_0001_0005")]
     public _tagged_union_e__Union tagged_union;
 
+    /// <include file='_tagged_union_e__Union.xml' path='doc/member[@name="_tagged_union_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public unsafe partial struct _tagged_union_e__Union
     {
+        /// <include file='_tagged_union_e__Union.xml' path='doc/member[@name="_tagged_union_e__Union.clsid"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("CLSID")]
         public Guid clsid;
 
+        /// <include file='_tagged_union_e__Union.xml' path='doc/member[@name="_tagged_union_e__Union.pFileExt"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("LPOLESTR")]
         public ushort* pFileExt;
 
+        /// <include file='_tagged_union_e__Union.xml' path='doc/member[@name="_tagged_union_e__Union.pMimeType"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("LPOLESTR")]
         public ushort* pMimeType;
 
+        /// <include file='_tagged_union_e__Union.xml' path='doc/member[@name="_tagged_union_e__Union.pProgId"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("LPOLESTR")]
         public ushort* pProgId;
 
+        /// <include file='_tagged_union_e__Union.xml' path='doc/member[@name="_tagged_union_e__Union.pFileName"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("LPOLESTR")]
         public ushort* pFileName;
 
+        /// <include file='_tagged_union_e__Union.xml' path='doc/member[@name="_tagged_union_e__Union.ByName"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/wtypes.h:938:24)")]
         public _ByName_e__Struct ByName;
 
+        /// <include file='_tagged_union_e__Union.xml' path='doc/member[@name="_tagged_union_e__Union.ByObjectId"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/wtypes.h:943:24)")]
         public _ByObjectId_e__Struct ByObjectId;
 
+        /// <include file='_ByName_e__Struct.xml' path='doc/member[@name="_ByName_e__Struct"]/*' />
         public unsafe partial struct _ByName_e__Struct
         {
+            /// <include file='_ByName_e__Struct.xml' path='doc/member[@name="_ByName_e__Struct.pPackageName"]/*' />
             [NativeTypeName("LPOLESTR")]
             public ushort* pPackageName;
 
+            /// <include file='_ByName_e__Struct.xml' path='doc/member[@name="_ByName_e__Struct.PolicyId"]/*' />
             public Guid PolicyId;
         }
 
+        /// <include file='_ByObjectId_e__Struct.xml' path='doc/member[@name="_ByObjectId_e__Struct"]/*' />
         public partial struct _ByObjectId_e__Struct
         {
+            /// <include file='_ByObjectId_e__Struct.xml' path='doc/member[@name="_ByObjectId_e__Struct.ObjectId"]/*' />
             public Guid ObjectId;
 
+            /// <include file='_ByObjectId_e__Struct.xml' path='doc/member[@name="_ByObjectId_e__Struct.PolicyId"]/*' />
             public Guid PolicyId;
         }
     }

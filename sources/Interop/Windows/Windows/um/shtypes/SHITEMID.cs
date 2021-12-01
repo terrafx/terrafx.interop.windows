@@ -7,11 +7,14 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SHITEMID.xml' path='doc/member[@name="SHITEMID"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public unsafe partial struct SHITEMID
 {
+    /// <include file='SHITEMID.xml' path='doc/member[@name="SHITEMID.cb"]/*' />
     public ushort cb;
 
+    /// <include file='SHITEMID.xml' path='doc/member[@name="SHITEMID.abID"]/*' />
     [NativeTypeName("BYTE [1]")]
     public fixed byte abID[1];
 }

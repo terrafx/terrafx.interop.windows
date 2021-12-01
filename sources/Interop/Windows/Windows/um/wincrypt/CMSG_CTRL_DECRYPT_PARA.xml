@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CMSG_CTRL_DECRYPT_PARA">
+    <summary>
+      <para>The <b>CMSG_CTRL_DECRYPT_PARA</b> structure contains information used to decrypt an enveloped message for a key transport recipient. This structure is passed to
+<see cref="CryptMsgControl" /> if the <i>dwCtrlType</i> parameter is CMSG_CTRL_DECRYPT.</para>
+      <para>For information about how CryptoAPI supports <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">Secure/Multipurpose Internet Mail Extensions</a> (S/MIME) email interoperability, see the Remarks section of
+<see cref="CryptMsgOpenToEncode" />.</para>
+    </summary>
+    <seealso cref="CryptMsgControl" />
+  </member>
+  <member name="CMSG_CTRL_DECRYPT_PARA.cbSize">
+    <summary>
+      <para>The size, in bytes, of this structure.</para>
+    </summary>
+  </member>
+  <member name="CMSG_CTRL_DECRYPT_PARA.DUMMYUNIONNAME">
+    <summary></summary>
+  </member>
+  <member name="CMSG_CTRL_DECRYPT_PARA.DUMMYUNIONNAME.hCryptProv">
+    <summary>
+      <para>
+        <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">Cryptographic service provider</a> (CSP) handle. The CNG function <see cref="NCryptIsKeyHandle" /> is called to determine the union choice.</para>
+    </summary>
+  </member>
+  <member name="CMSG_CTRL_DECRYPT_PARA.DUMMYUNIONNAME.hNCryptKey">
+    <summary>
+      <para>A handle to the CNG <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">Cryptographic service provider</a> (CSP). The CNG function, <see cref="NCryptIsKeyHandle" />, is called to determine the union choice. New encrypt algorithms are only supported in CNG functions. The CNG function, <see cref="NCryptTranslateHandle" />, will be called to convert the CryptoAPI <i>hCryptProv</i> choice where necessary. We recommend that applications pass, to the <i>hNCryptKey</i> member, the CNG CSP handle that is returned from the <see cref="NCryptOpenKey" /> function.</para>
+    </summary>
+  </member>
+  <member name="CMSG_CTRL_DECRYPT_PARA.dwKeySpec">
+    <summary>
+      <para>The private key to be used. This member is not used when the <i>hNCryptKey</i> member is used.</para>
+      <para>The following <b>dwKeySpec</b> values are defined for the default provider.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>AT_KEYEXCHANGE</b>
+          </description>
+          <description>
+            <para>Keys used to encrypt and decrypt session keys.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>AT_SIGNATURE</b>
+          </description>
+          <description>
+            <para>Keys used to create and verify digital signatures.</para>
+          </description>
+        </item>
+      </list>
+      <para>If <b>dwKeySpec</b> is zero, the default AT_KEYEXCHANGE is used.</para>
+    </summary>
+  </member>
+  <member name="CMSG_CTRL_DECRYPT_PARA.dwRecipientIndex">
+    <summary>
+      <para>Index of the recipient in the message associated with the <b>hCryptProv</b> private key.</para>
+    </summary>
+  </member>
+</doc>

@@ -5,20 +5,26 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='REARRANGE_FILE_DATA32.xml' path='doc/member[@name="REARRANGE_FILE_DATA32"]/*' />
 public partial struct REARRANGE_FILE_DATA32
 {
+    /// <include file='REARRANGE_FILE_DATA32.xml' path='doc/member[@name="REARRANGE_FILE_DATA32.SourceStartingOffset"]/*' />
     [NativeTypeName("ULONGLONG")]
     public ulong SourceStartingOffset;
 
+    /// <include file='REARRANGE_FILE_DATA32.xml' path='doc/member[@name="REARRANGE_FILE_DATA32.TargetOffset"]/*' />
     [NativeTypeName("ULONGLONG")]
     public ulong TargetOffset;
 
+    /// <include file='REARRANGE_FILE_DATA32.xml' path='doc/member[@name="REARRANGE_FILE_DATA32.SourceFileHandle"]/*' />
     [NativeTypeName("UINT32")]
     public uint SourceFileHandle;
 
+    /// <include file='REARRANGE_FILE_DATA32.xml' path='doc/member[@name="REARRANGE_FILE_DATA32.Length"]/*' />
     [NativeTypeName("DWORD")]
     public uint Length;
 
+    /// <include file='REARRANGE_FILE_DATA32.xml' path='doc/member[@name="REARRANGE_FILE_DATA32.Flags"]/*' />
     [NativeTypeName("DWORD")]
     public uint Flags;
 }

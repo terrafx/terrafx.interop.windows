@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IUIAnimationManager2.xml' path='doc/member[@name="IUIAnimationManager2"]/*' />
 [Guid("D8B6F7D4-4109-4D3F-ACEE-879926968CB1")]
 [NativeTypeName("struct IUIAnimationManager2 : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IUIAnimationManager2 : IUIAnimationManager2.Interfa
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IUIAnimationManager2 : IUIAnimationManager2.Interfa
         return ((delegate* unmanaged<IUIAnimationManager2*, Guid*, void**, int>)(lpVtbl[0]))((IUIAnimationManager2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IUIAnimationManager2 : IUIAnimationManager2.Interfa
         return ((delegate* unmanaged<IUIAnimationManager2*, uint>)(lpVtbl[1]))((IUIAnimationManager2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IUIAnimationManager2 : IUIAnimationManager2.Interfa
         return ((delegate* unmanaged<IUIAnimationManager2*, uint>)(lpVtbl[2]))((IUIAnimationManager2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IUIAnimationManager2.xml' path='doc/member[@name="IUIAnimationManager2.CreateAnimationVectorVariable"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT CreateAnimationVectorVariable([NativeTypeName("const DOUBLE *")] double* initialValue, uint cDimension, IUIAnimationVariable2** variable)
@@ -46,6 +51,7 @@ public unsafe partial struct IUIAnimationManager2 : IUIAnimationManager2.Interfa
         return ((delegate* unmanaged<IUIAnimationManager2*, double*, uint, IUIAnimationVariable2**, int>)(lpVtbl[3]))((IUIAnimationManager2*)Unsafe.AsPointer(ref this), initialValue, cDimension, variable);
     }
 
+    /// <include file='IUIAnimationManager2.xml' path='doc/member[@name="IUIAnimationManager2.CreateAnimationVariable"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT CreateAnimationVariable(double initialValue, IUIAnimationVariable2** variable)
@@ -53,6 +59,7 @@ public unsafe partial struct IUIAnimationManager2 : IUIAnimationManager2.Interfa
         return ((delegate* unmanaged<IUIAnimationManager2*, double, IUIAnimationVariable2**, int>)(lpVtbl[4]))((IUIAnimationManager2*)Unsafe.AsPointer(ref this), initialValue, variable);
     }
 
+    /// <include file='IUIAnimationManager2.xml' path='doc/member[@name="IUIAnimationManager2.ScheduleTransition"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT ScheduleTransition(IUIAnimationVariable2* variable, IUIAnimationTransition2* transition, [NativeTypeName("UI_ANIMATION_SECONDS")] double timeNow)
@@ -60,6 +67,7 @@ public unsafe partial struct IUIAnimationManager2 : IUIAnimationManager2.Interfa
         return ((delegate* unmanaged<IUIAnimationManager2*, IUIAnimationVariable2*, IUIAnimationTransition2*, double, int>)(lpVtbl[5]))((IUIAnimationManager2*)Unsafe.AsPointer(ref this), variable, transition, timeNow);
     }
 
+    /// <include file='IUIAnimationManager2.xml' path='doc/member[@name="IUIAnimationManager2.CreateStoryboard"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT CreateStoryboard(IUIAnimationStoryboard2** storyboard)
@@ -67,6 +75,7 @@ public unsafe partial struct IUIAnimationManager2 : IUIAnimationManager2.Interfa
         return ((delegate* unmanaged<IUIAnimationManager2*, IUIAnimationStoryboard2**, int>)(lpVtbl[6]))((IUIAnimationManager2*)Unsafe.AsPointer(ref this), storyboard);
     }
 
+    /// <include file='IUIAnimationManager2.xml' path='doc/member[@name="IUIAnimationManager2.FinishAllStoryboards"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT FinishAllStoryboards([NativeTypeName("UI_ANIMATION_SECONDS")] double completionDeadline)
@@ -74,6 +83,7 @@ public unsafe partial struct IUIAnimationManager2 : IUIAnimationManager2.Interfa
         return ((delegate* unmanaged<IUIAnimationManager2*, double, int>)(lpVtbl[7]))((IUIAnimationManager2*)Unsafe.AsPointer(ref this), completionDeadline);
     }
 
+    /// <include file='IUIAnimationManager2.xml' path='doc/member[@name="IUIAnimationManager2.AbandonAllStoryboards"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT AbandonAllStoryboards()
@@ -81,6 +91,7 @@ public unsafe partial struct IUIAnimationManager2 : IUIAnimationManager2.Interfa
         return ((delegate* unmanaged<IUIAnimationManager2*, int>)(lpVtbl[8]))((IUIAnimationManager2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IUIAnimationManager2.xml' path='doc/member[@name="IUIAnimationManager2.Update"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT Update([NativeTypeName("UI_ANIMATION_SECONDS")] double timeNow, UI_ANIMATION_UPDATE_RESULT* updateResult = null)
@@ -88,6 +99,7 @@ public unsafe partial struct IUIAnimationManager2 : IUIAnimationManager2.Interfa
         return ((delegate* unmanaged<IUIAnimationManager2*, double, UI_ANIMATION_UPDATE_RESULT*, int>)(lpVtbl[9]))((IUIAnimationManager2*)Unsafe.AsPointer(ref this), timeNow, updateResult);
     }
 
+    /// <include file='IUIAnimationManager2.xml' path='doc/member[@name="IUIAnimationManager2.GetVariableFromTag"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT GetVariableFromTag(IUnknown* @object, [NativeTypeName("UINT32")] uint id, IUIAnimationVariable2** variable)
@@ -95,6 +107,7 @@ public unsafe partial struct IUIAnimationManager2 : IUIAnimationManager2.Interfa
         return ((delegate* unmanaged<IUIAnimationManager2*, IUnknown*, uint, IUIAnimationVariable2**, int>)(lpVtbl[10]))((IUIAnimationManager2*)Unsafe.AsPointer(ref this), @object, id, variable);
     }
 
+    /// <include file='IUIAnimationManager2.xml' path='doc/member[@name="IUIAnimationManager2.GetStoryboardFromTag"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT GetStoryboardFromTag(IUnknown* @object, [NativeTypeName("UINT32")] uint id, IUIAnimationStoryboard2** storyboard)
@@ -102,6 +115,7 @@ public unsafe partial struct IUIAnimationManager2 : IUIAnimationManager2.Interfa
         return ((delegate* unmanaged<IUIAnimationManager2*, IUnknown*, uint, IUIAnimationStoryboard2**, int>)(lpVtbl[11]))((IUIAnimationManager2*)Unsafe.AsPointer(ref this), @object, id, storyboard);
     }
 
+    /// <include file='IUIAnimationManager2.xml' path='doc/member[@name="IUIAnimationManager2.EstimateNextEventTime"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT EstimateNextEventTime([NativeTypeName("UI_ANIMATION_SECONDS *")] double* seconds)
@@ -109,6 +123,7 @@ public unsafe partial struct IUIAnimationManager2 : IUIAnimationManager2.Interfa
         return ((delegate* unmanaged<IUIAnimationManager2*, double*, int>)(lpVtbl[12]))((IUIAnimationManager2*)Unsafe.AsPointer(ref this), seconds);
     }
 
+    /// <include file='IUIAnimationManager2.xml' path='doc/member[@name="IUIAnimationManager2.GetStatus"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT GetStatus(UI_ANIMATION_MANAGER_STATUS* status)
@@ -116,6 +131,7 @@ public unsafe partial struct IUIAnimationManager2 : IUIAnimationManager2.Interfa
         return ((delegate* unmanaged<IUIAnimationManager2*, UI_ANIMATION_MANAGER_STATUS*, int>)(lpVtbl[13]))((IUIAnimationManager2*)Unsafe.AsPointer(ref this), status);
     }
 
+    /// <include file='IUIAnimationManager2.xml' path='doc/member[@name="IUIAnimationManager2.SetAnimationMode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT SetAnimationMode(UI_ANIMATION_MODE mode)
@@ -123,6 +139,7 @@ public unsafe partial struct IUIAnimationManager2 : IUIAnimationManager2.Interfa
         return ((delegate* unmanaged<IUIAnimationManager2*, UI_ANIMATION_MODE, int>)(lpVtbl[14]))((IUIAnimationManager2*)Unsafe.AsPointer(ref this), mode);
     }
 
+    /// <include file='IUIAnimationManager2.xml' path='doc/member[@name="IUIAnimationManager2.Pause"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT Pause()
@@ -130,6 +147,7 @@ public unsafe partial struct IUIAnimationManager2 : IUIAnimationManager2.Interfa
         return ((delegate* unmanaged<IUIAnimationManager2*, int>)(lpVtbl[15]))((IUIAnimationManager2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IUIAnimationManager2.xml' path='doc/member[@name="IUIAnimationManager2.Resume"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT Resume()
@@ -137,6 +155,7 @@ public unsafe partial struct IUIAnimationManager2 : IUIAnimationManager2.Interfa
         return ((delegate* unmanaged<IUIAnimationManager2*, int>)(lpVtbl[16]))((IUIAnimationManager2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IUIAnimationManager2.xml' path='doc/member[@name="IUIAnimationManager2.SetManagerEventHandler"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT SetManagerEventHandler(IUIAnimationManagerEventHandler2* handler, [Optional] BOOL fRegisterForNextAnimationEvent)
@@ -144,6 +163,7 @@ public unsafe partial struct IUIAnimationManager2 : IUIAnimationManager2.Interfa
         return ((delegate* unmanaged<IUIAnimationManager2*, IUIAnimationManagerEventHandler2*, BOOL, int>)(lpVtbl[17]))((IUIAnimationManager2*)Unsafe.AsPointer(ref this), handler, fRegisterForNextAnimationEvent);
     }
 
+    /// <include file='IUIAnimationManager2.xml' path='doc/member[@name="IUIAnimationManager2.SetCancelPriorityComparison"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT SetCancelPriorityComparison(IUIAnimationPriorityComparison2* comparison)
@@ -151,6 +171,7 @@ public unsafe partial struct IUIAnimationManager2 : IUIAnimationManager2.Interfa
         return ((delegate* unmanaged<IUIAnimationManager2*, IUIAnimationPriorityComparison2*, int>)(lpVtbl[18]))((IUIAnimationManager2*)Unsafe.AsPointer(ref this), comparison);
     }
 
+    /// <include file='IUIAnimationManager2.xml' path='doc/member[@name="IUIAnimationManager2.SetTrimPriorityComparison"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT SetTrimPriorityComparison(IUIAnimationPriorityComparison2* comparison)
@@ -158,6 +179,7 @@ public unsafe partial struct IUIAnimationManager2 : IUIAnimationManager2.Interfa
         return ((delegate* unmanaged<IUIAnimationManager2*, IUIAnimationPriorityComparison2*, int>)(lpVtbl[19]))((IUIAnimationManager2*)Unsafe.AsPointer(ref this), comparison);
     }
 
+    /// <include file='IUIAnimationManager2.xml' path='doc/member[@name="IUIAnimationManager2.SetCompressPriorityComparison"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public HRESULT SetCompressPriorityComparison(IUIAnimationPriorityComparison2* comparison)
@@ -165,6 +187,7 @@ public unsafe partial struct IUIAnimationManager2 : IUIAnimationManager2.Interfa
         return ((delegate* unmanaged<IUIAnimationManager2*, IUIAnimationPriorityComparison2*, int>)(lpVtbl[20]))((IUIAnimationManager2*)Unsafe.AsPointer(ref this), comparison);
     }
 
+    /// <include file='IUIAnimationManager2.xml' path='doc/member[@name="IUIAnimationManager2.SetConcludePriorityComparison"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
     public HRESULT SetConcludePriorityComparison(IUIAnimationPriorityComparison2* comparison)
@@ -172,6 +195,7 @@ public unsafe partial struct IUIAnimationManager2 : IUIAnimationManager2.Interfa
         return ((delegate* unmanaged<IUIAnimationManager2*, IUIAnimationPriorityComparison2*, int>)(lpVtbl[21]))((IUIAnimationManager2*)Unsafe.AsPointer(ref this), comparison);
     }
 
+    /// <include file='IUIAnimationManager2.xml' path='doc/member[@name="IUIAnimationManager2.SetDefaultLongestAcceptableDelay"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
     public HRESULT SetDefaultLongestAcceptableDelay([NativeTypeName("UI_ANIMATION_SECONDS")] double delay)
@@ -179,6 +203,7 @@ public unsafe partial struct IUIAnimationManager2 : IUIAnimationManager2.Interfa
         return ((delegate* unmanaged<IUIAnimationManager2*, double, int>)(lpVtbl[22]))((IUIAnimationManager2*)Unsafe.AsPointer(ref this), delay);
     }
 
+    /// <include file='IUIAnimationManager2.xml' path='doc/member[@name="IUIAnimationManager2.Shutdown"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
     public HRESULT Shutdown()

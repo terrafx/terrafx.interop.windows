@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DVEXTENTMODE">
+    <summary>
+      <para>Indicates whether the sizing mode is content or integral sizing.</para>
+    </summary>
+    <seealso cref="DVEXTENTINFO" />
+    <seealso cref="IViewObjectEx.GetNaturalExtent" />
+  </member>
+  <member name="DVEXTENTMODE.DVEXTENT_CONTENT">
+    <summary>
+      <para>Indicates that the container will ask the object how big it wants to be to exactly fit its content, for example, in snap-to-size operations.</para>
+    </summary>
+  </member>
+  <member name="DVEXTENTMODE.DVEXTENT_INTEGRAL">
+    <summary>
+      <para>Indicates that the container will provide a proposed size to the object for its use in resizing.</para>
+    </summary>
+  </member>
+</doc>

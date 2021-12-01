@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='REASSIGN_BLOCKS.xml' path='doc/member[@name="REASSIGN_BLOCKS"]/*' />
 public unsafe partial struct REASSIGN_BLOCKS
 {
+    /// <include file='REASSIGN_BLOCKS.xml' path='doc/member[@name="REASSIGN_BLOCKS.Reserved"]/*' />
     [NativeTypeName("WORD")]
     public ushort Reserved;
 
+    /// <include file='REASSIGN_BLOCKS.xml' path='doc/member[@name="REASSIGN_BLOCKS.Count"]/*' />
     [NativeTypeName("WORD")]
     public ushort Count;
 
+    /// <include file='REASSIGN_BLOCKS.xml' path='doc/member[@name="REASSIGN_BLOCKS.BlockNumber"]/*' />
     [NativeTypeName("DWORD [1]")]
     public fixed uint BlockNumber[1];
 }

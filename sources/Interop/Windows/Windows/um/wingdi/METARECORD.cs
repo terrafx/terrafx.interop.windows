@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='METARECORD.xml' path='doc/member[@name="METARECORD"]/*' />
 public unsafe partial struct METARECORD
 {
+    /// <include file='METARECORD.xml' path='doc/member[@name="METARECORD.rdSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint rdSize;
 
+    /// <include file='METARECORD.xml' path='doc/member[@name="METARECORD.rdFunction"]/*' />
     [NativeTypeName("WORD")]
     public ushort rdFunction;
 
+    /// <include file='METARECORD.xml' path='doc/member[@name="METARECORD.rdParm"]/*' />
     [NativeTypeName("WORD [1]")]
     public fixed ushort rdParm[1];
 }

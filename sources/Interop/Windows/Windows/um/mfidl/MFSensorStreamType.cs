@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MFSensorStreamType.xml' path='doc/member[@name="MFSensorStreamType"]/*' />
 public enum MFSensorStreamType
 {
+    /// <include file='MFSensorStreamType.xml' path='doc/member[@name="MFSensorStreamType.MFSensorStreamType_Unknown"]/*' />
     MFSensorStreamType_Unknown = 0,
+
+    /// <include file='MFSensorStreamType.xml' path='doc/member[@name="MFSensorStreamType.MFSensorStreamType_Input"]/*' />
     MFSensorStreamType_Input = (MFSensorStreamType_Unknown + 1),
+
+    /// <include file='MFSensorStreamType.xml' path='doc/member[@name="MFSensorStreamType.MFSensorStreamType_Output"]/*' />
     MFSensorStreamType_Output = (MFSensorStreamType_Input + 1),
 }

@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IExecuteCommandHost.GetUIMode">
+    <summary>
+      <para>Enables an <see cref="IExplorerCommand" />-based Shell verb handler to query the UI mode of the host component from which the application was invoked.</para>
+    </summary>
+    <param name="pUIMode">
+      <para>Type: <b>EC_HOST_UI_MODE*</b></para>
+      <h4>ECHUIM_DESKTOP (0)</h4>
+      <para>The application is running in the desktop environment.</para>
+      <h4>ECHUIM_IMMERSIVE (1)</h4>
+      <para>The application is running in the immersive environment.</para>
+      <h4>ECHUIM_SYSTEM_LAUNCHER (2)</h4>
+      <para>The application is running in the system launcher environment.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IExecuteCommandHost" />
+  </member>
+  <member name="IExecuteCommandHost">
+    <summary>
+      <para>Provides a method that enables an <see cref="IExplorerCommand" />-based Shell verb handler to query the UI mode of the host component from which the application was invoked.</para>
+    </summary>
+    <remarks>
+      <h3>When to implement</h3>
+      <para>A software component (either an OS component or an application) taat can launch a dual-mode application such as a browser should implement this interface. The interface should be implemented on an object that can be reached through the site chain provided to <see cref="ShellExecuteEx" /> or the context menu and retrieved through the <a href="https://docs.microsoft.com//previous-versions/windows/internet-explorer/ie-developer/platform-apis/cc678966(v=vs.85)">IServiceProvider.QueryService</a> method.</para>
+      <h3>When to use</h3>
+      <para>Typically, an application that is capable of launching as both a desktop application and a Windows Store app app will use this interface to query which mode the host is currently in. The application can then launch in the UI mode that is compatible with the host.</para>
+    </remarks>
+  </member>
+</doc>

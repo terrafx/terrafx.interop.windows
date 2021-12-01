@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="TPM_DEVICE_INFO">
+    <summary>
+      <para>Provides information about the version of the TPM.</para>
+    </summary>
+  </member>
+  <member name="TPM_DEVICE_INFO.structVersion">
+    <summary>
+      <para>The version of the TBS context implementation. This parameter must be set to     TPM_VERSION_20.</para>
+    </summary>
+  </member>
+  <member name="TPM_DEVICE_INFO.tpmVersion">
+    <summary>
+      <para>TPM version. Will be set to TPM_VERSION_12 or TPM_VERSION_20.</para>
+    </summary>
+  </member>
+  <member name="TPM_DEVICE_INFO.tpmInterfaceType">
+    <summary>
+      <para>Reserved</para>
+    </summary>
+  </member>
+  <member name="TPM_DEVICE_INFO.tpmImpRevision">
+    <summary>
+      <para>Reserved</para>
+    </summary>
+  </member>
+</doc>

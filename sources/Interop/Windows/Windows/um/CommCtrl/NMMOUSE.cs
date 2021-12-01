@@ -5,17 +5,23 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NMMOUSE.xml' path='doc/member[@name="NMMOUSE"]/*' />
 public partial struct NMMOUSE
 {
+    /// <include file='NMMOUSE.xml' path='doc/member[@name="NMMOUSE.hdr"]/*' />
     public NMHDR hdr;
 
+    /// <include file='NMMOUSE.xml' path='doc/member[@name="NMMOUSE.dwItemSpec"]/*' />
     [NativeTypeName("DWORD_PTR")]
     public nuint dwItemSpec;
 
+    /// <include file='NMMOUSE.xml' path='doc/member[@name="NMMOUSE.dwItemData"]/*' />
     [NativeTypeName("DWORD_PTR")]
     public nuint dwItemData;
 
+    /// <include file='NMMOUSE.xml' path='doc/member[@name="NMMOUSE.pt"]/*' />
     public POINT pt;
 
+    /// <include file='NMMOUSE.xml' path='doc/member[@name="NMMOUSE.dwHitInfo"]/*' />
     public LPARAM dwHitInfo;
 }

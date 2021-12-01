@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='RM_FILTER_ACTION.xml' path='doc/member[@name="RM_FILTER_ACTION"]/*' />
 public enum RM_FILTER_ACTION
 {
+    /// <include file='RM_FILTER_ACTION.xml' path='doc/member[@name="RM_FILTER_ACTION.RmInvalidFilterAction"]/*' />
     RmInvalidFilterAction = 0,
+
+    /// <include file='RM_FILTER_ACTION.xml' path='doc/member[@name="RM_FILTER_ACTION.RmNoRestart"]/*' />
     RmNoRestart = 1,
+
+    /// <include file='RM_FILTER_ACTION.xml' path='doc/member[@name="RM_FILTER_ACTION.RmNoShutdown"]/*' />
     RmNoShutdown = 2,
 }

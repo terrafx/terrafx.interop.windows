@@ -7,9 +7,12 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_UNKNOWN_ENDPOINT_IDENTITY.xml' path='doc/member[@name="WS_UNKNOWN_ENDPOINT_IDENTITY"]/*' />
 public partial struct WS_UNKNOWN_ENDPOINT_IDENTITY
 {
+    /// <include file='WS_UNKNOWN_ENDPOINT_IDENTITY.xml' path='doc/member[@name="WS_UNKNOWN_ENDPOINT_IDENTITY.identity"]/*' />
     public WS_ENDPOINT_IDENTITY identity;
 
+    /// <include file='WS_UNKNOWN_ENDPOINT_IDENTITY.xml' path='doc/member[@name="WS_UNKNOWN_ENDPOINT_IDENTITY.element"]/*' />
     public IntPtr element;
 }

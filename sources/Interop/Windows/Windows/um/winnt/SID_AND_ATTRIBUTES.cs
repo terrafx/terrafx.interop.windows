@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SID_AND_ATTRIBUTES.xml' path='doc/member[@name="SID_AND_ATTRIBUTES"]/*' />
 public unsafe partial struct SID_AND_ATTRIBUTES
 {
+    /// <include file='SID_AND_ATTRIBUTES.xml' path='doc/member[@name="SID_AND_ATTRIBUTES.Sid"]/*' />
     [NativeTypeName("PSID")]
     public void* Sid;
 
+    /// <include file='SID_AND_ATTRIBUTES.xml' path='doc/member[@name="SID_AND_ATTRIBUTES.Attributes"]/*' />
     [NativeTypeName("DWORD")]
     public uint Attributes;
 }

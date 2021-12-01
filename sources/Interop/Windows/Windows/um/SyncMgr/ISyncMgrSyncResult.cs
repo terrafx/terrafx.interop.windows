@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ISyncMgrSyncResult.xml' path='doc/member[@name="ISyncMgrSyncResult"]/*' />
 [Guid("2B90F17E-5A3E-4B33-BB7F-1BC48056B94D")]
 [NativeTypeName("struct ISyncMgrSyncResult : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ISyncMgrSyncResult : ISyncMgrSyncResult.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ISyncMgrSyncResult : ISyncMgrSyncResult.Interface
         return ((delegate* unmanaged<ISyncMgrSyncResult*, Guid*, void**, int>)(lpVtbl[0]))((ISyncMgrSyncResult*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ISyncMgrSyncResult : ISyncMgrSyncResult.Interface
         return ((delegate* unmanaged<ISyncMgrSyncResult*, uint>)(lpVtbl[1]))((ISyncMgrSyncResult*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ISyncMgrSyncResult : ISyncMgrSyncResult.Interface
         return ((delegate* unmanaged<ISyncMgrSyncResult*, uint>)(lpVtbl[2]))((ISyncMgrSyncResult*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ISyncMgrSyncResult.xml' path='doc/member[@name="ISyncMgrSyncResult.Result"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Result(SYNCMGR_PROGRESS_STATUS nStatus, uint cError, uint cConflicts)

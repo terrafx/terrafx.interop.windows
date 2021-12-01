@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="FILESYSTEM_STATISTICS">
+    <summary>
+      <para>Contains statistical information from the file system.
+<b>Tip</b>  Applications targeting Windows 10 can access additional statistics through <see cref="FILESYSTEM_STATISTICS_EX" />.</para>
+    </summary>
+    <remarks>
+      <para>There are two types of files: user and metadata. User files are available for the user. Metadata files are
+system files that contain information, which the file system uses for its internal organization.</para>
+      <para>The number of read and write operations measured is the number of paging operations.</para>
+    </remarks>
+    <seealso cref="EXFAT_STATISTICS" />
+    <seealso cref="FAT_STATISTICS" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_filesystem_get_statistics">FSCTL_FILESYSTEM_GET_STATISTICS</seealso>
+    <seealso cref="NTFS_STATISTICS" />
+  </member>
+  <member name="FILESYSTEM_STATISTICS.FileSystemType">
+    <summary>
+      <para>The type of file system.</para>
+      <para>This member can be one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>FILESYSTEM_STATISTICS_TYPE_EXFAT</b>
+                </description>
+              </item>
+              <item>
+                <description>3</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The file system is an exFAT file system.</para>
+            <para>If this value is set, this structure is followed by an
+<see cref="EXFAT_STATISTICS" /> structure.</para>
+            <para>
+              <b>Windows Vista, Windows Server 2003 and Windows XP:  </b>This value is not supported until Windows Vista with SP1.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>FILESYSTEM_STATISTICS_TYPE_FAT</b>
+                </description>
+              </item>
+              <item>
+                <description>2</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The file system is a FAT file system.</para>
+            <para>If this value is set, this structure is followed by a
+<see cref="FAT_STATISTICS" /> structure.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>FILESYSTEM_STATISTICS_TYPE_NTFS</b>
+                </description>
+              </item>
+              <item>
+                <description>1</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The file system is the NTFS file system.</para>
+            <para>If this value is set, this structure is followed by an
+<see cref="NTFS_STATISTICS" /> structure.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="FILESYSTEM_STATISTICS.Version">
+    <summary>
+      <para>This member is set to 1 (one).</para>
+    </summary>
+  </member>
+  <member name="FILESYSTEM_STATISTICS.SizeOfCompleteStructure">
+    <summary>
+      <para>The size of this structure plus the size of the file system-specific structure that follows this
+structure, multiplied by the number of processors.</para>
+      <para>This value must be a multiple of 64. For example, if the size of
+<b>FILESYSTEM_STATISTICS</b> is 0x38, the size of
+<see cref="NTFS_STATISTICS" /> is 0xD8, and if there are 2
+processors, the buffer allocated must be 0x280.</para>
+      <para>sizeof(<b>FILESYSTEM_STATISTICS</b>) =
+0x38</para>
+      <para>sizeof(<see cref="NTFS_STATISTICS" />) = 0xD8</para>
+      <para>Total Size = 0x110</para>
+      <para>size of the complete structure = 0x140 (which is the aligned length, a multiple of 64)</para>
+      <para>multiplied by 2 (the number of processors) = 0x280</para>
+    </summary>
+  </member>
+  <member name="FILESYSTEM_STATISTICS.UserFileReads">
+    <summary>
+      <para>The number of read operations on user files.</para>
+    </summary>
+  </member>
+  <member name="FILESYSTEM_STATISTICS.UserFileReadBytes">
+    <summary>
+      <para>The number of bytes read from user files.</para>
+    </summary>
+  </member>
+  <member name="FILESYSTEM_STATISTICS.UserDiskReads">
+    <summary>
+      <para>The number of read operations on user files.</para>
+      <para>This value includes sub-read operations.</para>
+    </summary>
+  </member>
+  <member name="FILESYSTEM_STATISTICS.UserFileWrites">
+    <summary>
+      <para>The number of write operations on user files.</para>
+    </summary>
+  </member>
+  <member name="FILESYSTEM_STATISTICS.UserFileWriteBytes">
+    <summary>
+      <para>The number of bytes written to user files.</para>
+    </summary>
+  </member>
+  <member name="FILESYSTEM_STATISTICS.UserDiskWrites">
+    <summary>
+      <para>The number of write operations on user files.</para>
+      <para>This value includes sub-write operations.</para>
+    </summary>
+  </member>
+  <member name="FILESYSTEM_STATISTICS.MetaDataReads">
+    <summary>
+      <para>The number of read operations on metadata files.</para>
+    </summary>
+  </member>
+  <member name="FILESYSTEM_STATISTICS.MetaDataReadBytes">
+    <summary>
+      <para>The number of bytes read from metadata files.</para>
+    </summary>
+  </member>
+  <member name="FILESYSTEM_STATISTICS.MetaDataDiskReads">
+    <summary>
+      <para>The number of read operations on metadata files.</para>
+      <para>This value includes sub-read operations.</para>
+    </summary>
+  </member>
+  <member name="FILESYSTEM_STATISTICS.MetaDataWrites">
+    <summary>
+      <para>The number of write operations on metadata files.</para>
+    </summary>
+  </member>
+  <member name="FILESYSTEM_STATISTICS.MetaDataWriteBytes">
+    <summary>
+      <para>The number of bytes written to metadata files.</para>
+    </summary>
+  </member>
+  <member name="FILESYSTEM_STATISTICS.MetaDataDiskWrites">
+    <summary>
+      <para>The number of write operations on metadata files.</para>
+      <para>This value includes sub-write operations.</para>
+    </summary>
+  </member>
+</doc>

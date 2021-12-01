@@ -8,15 +8,20 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TVINSERTSTRUCTW.xml' path='doc/member[@name="TVINSERTSTRUCTW"]/*' />
 public partial struct TVINSERTSTRUCTW
 {
+    /// <include file='TVINSERTSTRUCTW.xml' path='doc/member[@name="TVINSERTSTRUCTW.hParent"]/*' />
     public HTREEITEM hParent;
 
+    /// <include file='TVINSERTSTRUCTW.xml' path='doc/member[@name="TVINSERTSTRUCTW.hInsertAfter"]/*' />
     public HTREEITEM hInsertAfter;
 
+    /// <include file='TVINSERTSTRUCTW.xml' path='doc/member[@name="TVINSERTSTRUCTW.Anonymous"]/*' />
     [NativeTypeName("tagTVINSERTSTRUCTW::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/CommCtrl.h:5011:5)")]
     public _Anonymous_e__Union Anonymous;
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.itemex"]/*' />
     public ref TVITEMEXW itemex
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -26,6 +31,7 @@ public partial struct TVINSERTSTRUCTW
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.item"]/*' />
     public ref TVITEMW item
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -35,12 +41,15 @@ public partial struct TVINSERTSTRUCTW
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public partial struct _Anonymous_e__Union
     {
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.itemex"]/*' />
         [FieldOffset(0)]
         public TVITEMEXW itemex;
 
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.item"]/*' />
         [FieldOffset(0)]
         public TVITEMW item;
     }

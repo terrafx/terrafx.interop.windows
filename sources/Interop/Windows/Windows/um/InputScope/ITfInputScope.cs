@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITfInputScope.xml' path='doc/member[@name="ITfInputScope"]/*' />
 [Guid("FDE1EAEE-6924-4CDF-91E7-DA38CFF5559D")]
 [NativeTypeName("struct ITfInputScope : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITfInputScope : ITfInputScope.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITfInputScope : ITfInputScope.Interface
         return ((delegate* unmanaged<ITfInputScope*, Guid*, void**, int>)(lpVtbl[0]))((ITfInputScope*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITfInputScope : ITfInputScope.Interface
         return ((delegate* unmanaged<ITfInputScope*, uint>)(lpVtbl[1]))((ITfInputScope*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITfInputScope : ITfInputScope.Interface
         return ((delegate* unmanaged<ITfInputScope*, uint>)(lpVtbl[2]))((ITfInputScope*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITfInputScope.xml' path='doc/member[@name="ITfInputScope.GetInputScopes"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetInputScopes(InputScope** pprgInputScopes, uint* pcCount)
@@ -46,6 +51,7 @@ public unsafe partial struct ITfInputScope : ITfInputScope.Interface
         return ((delegate* unmanaged<ITfInputScope*, InputScope**, uint*, int>)(lpVtbl[3]))((ITfInputScope*)Unsafe.AsPointer(ref this), pprgInputScopes, pcCount);
     }
 
+    /// <include file='ITfInputScope.xml' path='doc/member[@name="ITfInputScope.GetPhrase"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetPhrase([NativeTypeName("BSTR **")] ushort*** ppbstrPhrases, uint* pcCount)
@@ -53,6 +59,7 @@ public unsafe partial struct ITfInputScope : ITfInputScope.Interface
         return ((delegate* unmanaged<ITfInputScope*, ushort***, uint*, int>)(lpVtbl[4]))((ITfInputScope*)Unsafe.AsPointer(ref this), ppbstrPhrases, pcCount);
     }
 
+    /// <include file='ITfInputScope.xml' path='doc/member[@name="ITfInputScope.GetRegularExpression"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetRegularExpression([NativeTypeName("BSTR *")] ushort** pbstrRegExp)
@@ -60,6 +67,7 @@ public unsafe partial struct ITfInputScope : ITfInputScope.Interface
         return ((delegate* unmanaged<ITfInputScope*, ushort**, int>)(lpVtbl[5]))((ITfInputScope*)Unsafe.AsPointer(ref this), pbstrRegExp);
     }
 
+    /// <include file='ITfInputScope.xml' path='doc/member[@name="ITfInputScope.GetSRGS"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetSRGS([NativeTypeName("BSTR *")] ushort** pbstrSRGS)
@@ -67,6 +75,7 @@ public unsafe partial struct ITfInputScope : ITfInputScope.Interface
         return ((delegate* unmanaged<ITfInputScope*, ushort**, int>)(lpVtbl[6]))((ITfInputScope*)Unsafe.AsPointer(ref this), pbstrSRGS);
     }
 
+    /// <include file='ITfInputScope.xml' path='doc/member[@name="ITfInputScope.GetXML"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetXML([NativeTypeName("BSTR *")] ushort** pbstrXML)

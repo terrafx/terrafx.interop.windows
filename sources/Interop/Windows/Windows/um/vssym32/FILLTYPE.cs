@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='FILLTYPE.xml' path='doc/member[@name="FILLTYPE"]/*' />
 public enum FILLTYPE
 {
+    /// <include file='FILLTYPE.xml' path='doc/member[@name="FILLTYPE.FT_SOLID"]/*' />
     FT_SOLID = 0,
+
+    /// <include file='FILLTYPE.xml' path='doc/member[@name="FILLTYPE.FT_VERTGRADIENT"]/*' />
     FT_VERTGRADIENT = 1,
+
+    /// <include file='FILLTYPE.xml' path='doc/member[@name="FILLTYPE.FT_HORZGRADIENT"]/*' />
     FT_HORZGRADIENT = 2,
+
+    /// <include file='FILLTYPE.xml' path='doc/member[@name="FILLTYPE.FT_RADIALGRADIENT"]/*' />
     FT_RADIALGRADIENT = 3,
+
+    /// <include file='FILLTYPE.xml' path='doc/member[@name="FILLTYPE.FT_TILEIMAGE"]/*' />
     FT_TILEIMAGE = 4,
 }

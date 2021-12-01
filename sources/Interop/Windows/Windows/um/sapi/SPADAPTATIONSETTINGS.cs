@@ -5,12 +5,24 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SPADAPTATIONSETTINGS.xml' path='doc/member[@name="SPADAPTATIONSETTINGS"]/*' />
 public enum SPADAPTATIONSETTINGS
 {
+    /// <include file='SPADAPTATIONSETTINGS.xml' path='doc/member[@name="SPADAPTATIONSETTINGS.SPADS_Default"]/*' />
     SPADS_Default = 0,
+
+    /// <include file='SPADAPTATIONSETTINGS.xml' path='doc/member[@name="SPADAPTATIONSETTINGS.SPADS_CurrentRecognizer"]/*' />
     SPADS_CurrentRecognizer = 0x1,
+
+    /// <include file='SPADAPTATIONSETTINGS.xml' path='doc/member[@name="SPADAPTATIONSETTINGS.SPADS_RecoProfile"]/*' />
     SPADS_RecoProfile = 0x2,
+
+    /// <include file='SPADAPTATIONSETTINGS.xml' path='doc/member[@name="SPADAPTATIONSETTINGS.SPADS_Immediate"]/*' />
     SPADS_Immediate = 0x4,
+
+    /// <include file='SPADAPTATIONSETTINGS.xml' path='doc/member[@name="SPADAPTATIONSETTINGS.SPADS_Reset"]/*' />
     SPADS_Reset = 0x8,
+
+    /// <include file='SPADAPTATIONSETTINGS.xml' path='doc/member[@name="SPADAPTATIONSETTINGS.SPADS_HighVolumeDataSource"]/*' />
     SPADS_HighVolumeDataSource = 0x10,
 }

@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ICredentialProviderUserArray.xml' path='doc/member[@name="ICredentialProviderUserArray"]/*' />
 [Guid("90C119AE-0F18-4520-A1F1-114366A40FE8")]
 [NativeTypeName("struct ICredentialProviderUserArray : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct ICredentialProviderUserArray : ICredentialProviderU
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct ICredentialProviderUserArray : ICredentialProviderU
         return ((delegate* unmanaged<ICredentialProviderUserArray*, Guid*, void**, int>)(lpVtbl[0]))((ICredentialProviderUserArray*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct ICredentialProviderUserArray : ICredentialProviderU
         return ((delegate* unmanaged<ICredentialProviderUserArray*, uint>)(lpVtbl[1]))((ICredentialProviderUserArray*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct ICredentialProviderUserArray : ICredentialProviderU
         return ((delegate* unmanaged<ICredentialProviderUserArray*, uint>)(lpVtbl[2]))((ICredentialProviderUserArray*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ICredentialProviderUserArray.xml' path='doc/member[@name="ICredentialProviderUserArray.SetProviderFilter"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetProviderFilter([NativeTypeName("const GUID &")] Guid* guidProviderToFilterTo)
@@ -48,6 +53,7 @@ public unsafe partial struct ICredentialProviderUserArray : ICredentialProviderU
         return ((delegate* unmanaged<ICredentialProviderUserArray*, Guid*, int>)(lpVtbl[3]))((ICredentialProviderUserArray*)Unsafe.AsPointer(ref this), guidProviderToFilterTo);
     }
 
+    /// <include file='ICredentialProviderUserArray.xml' path='doc/member[@name="ICredentialProviderUserArray.GetAccountOptions"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetAccountOptions(CREDENTIAL_PROVIDER_ACCOUNT_OPTIONS* credentialProviderAccountOptions)
@@ -55,6 +61,7 @@ public unsafe partial struct ICredentialProviderUserArray : ICredentialProviderU
         return ((delegate* unmanaged<ICredentialProviderUserArray*, CREDENTIAL_PROVIDER_ACCOUNT_OPTIONS*, int>)(lpVtbl[4]))((ICredentialProviderUserArray*)Unsafe.AsPointer(ref this), credentialProviderAccountOptions);
     }
 
+    /// <include file='ICredentialProviderUserArray.xml' path='doc/member[@name="ICredentialProviderUserArray.GetCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetCount([NativeTypeName("DWORD *")] uint* userCount)
@@ -62,6 +69,7 @@ public unsafe partial struct ICredentialProviderUserArray : ICredentialProviderU
         return ((delegate* unmanaged<ICredentialProviderUserArray*, uint*, int>)(lpVtbl[5]))((ICredentialProviderUserArray*)Unsafe.AsPointer(ref this), userCount);
     }
 
+    /// <include file='ICredentialProviderUserArray.xml' path='doc/member[@name="ICredentialProviderUserArray.GetAt"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetAt([NativeTypeName("DWORD")] uint userIndex, ICredentialProviderUser** user)

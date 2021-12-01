@@ -5,11 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TRANSMSG.xml' path='doc/member[@name="TRANSMSG"]/*' />
 public partial struct TRANSMSG
 {
+    /// <include file='TRANSMSG.xml' path='doc/member[@name="TRANSMSG.message"]/*' />
     public uint message;
 
+    /// <include file='TRANSMSG.xml' path='doc/member[@name="TRANSMSG.wParam"]/*' />
     public WPARAM wParam;
 
+    /// <include file='TRANSMSG.xml' path='doc/member[@name="TRANSMSG.lParam"]/*' />
     public LPARAM lParam;
 }

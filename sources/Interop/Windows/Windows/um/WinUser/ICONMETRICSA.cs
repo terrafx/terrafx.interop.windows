@@ -5,15 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ICONMETRICSA.xml' path='doc/member[@name="ICONMETRICSA"]/*' />
 public partial struct ICONMETRICSA
 {
+    /// <include file='ICONMETRICSA.xml' path='doc/member[@name="ICONMETRICSA.cbSize"]/*' />
     public uint cbSize;
 
+    /// <include file='ICONMETRICSA.xml' path='doc/member[@name="ICONMETRICSA.iHorzSpacing"]/*' />
     public int iHorzSpacing;
 
+    /// <include file='ICONMETRICSA.xml' path='doc/member[@name="ICONMETRICSA.iVertSpacing"]/*' />
     public int iVertSpacing;
 
+    /// <include file='ICONMETRICSA.xml' path='doc/member[@name="ICONMETRICSA.iTitleWrap"]/*' />
     public int iTitleWrap;
 
+    /// <include file='ICONMETRICSA.xml' path='doc/member[@name="ICONMETRICSA.lfFont"]/*' />
     public LOGFONTA lfFont;
 }

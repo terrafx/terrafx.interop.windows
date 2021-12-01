@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='LINKPARTS.xml' path='doc/member[@name="LINKPARTS"]/*' />
 public enum LINKPARTS
 {
+    /// <include file='LINKPARTS.xml' path='doc/member[@name="LINKPARTS.LP_HYPERLINK"]/*' />
     LP_HYPERLINK = 1,
 }

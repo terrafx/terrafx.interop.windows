@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFMediaSourceExtensionNotify.xml' path='doc/member[@name="IMFMediaSourceExtensionNotify"]/*' />
 [Guid("A7901327-05DD-4469-A7B7-0E01979E361D")]
 [NativeTypeName("struct IMFMediaSourceExtensionNotify : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IMFMediaSourceExtensionNotify : IMFMediaSourceExten
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IMFMediaSourceExtensionNotify : IMFMediaSourceExten
         return ((delegate* unmanaged<IMFMediaSourceExtensionNotify*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaSourceExtensionNotify*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IMFMediaSourceExtensionNotify : IMFMediaSourceExten
         return ((delegate* unmanaged<IMFMediaSourceExtensionNotify*, uint>)(lpVtbl[1]))((IMFMediaSourceExtensionNotify*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IMFMediaSourceExtensionNotify : IMFMediaSourceExten
         return ((delegate* unmanaged<IMFMediaSourceExtensionNotify*, uint>)(lpVtbl[2]))((IMFMediaSourceExtensionNotify*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFMediaSourceExtensionNotify.xml' path='doc/member[@name="IMFMediaSourceExtensionNotify.OnSourceOpen"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public void OnSourceOpen()
@@ -48,6 +53,7 @@ public unsafe partial struct IMFMediaSourceExtensionNotify : IMFMediaSourceExten
         ((delegate* unmanaged<IMFMediaSourceExtensionNotify*, void>)(lpVtbl[3]))((IMFMediaSourceExtensionNotify*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFMediaSourceExtensionNotify.xml' path='doc/member[@name="IMFMediaSourceExtensionNotify.OnSourceEnded"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public void OnSourceEnded()
@@ -55,6 +61,7 @@ public unsafe partial struct IMFMediaSourceExtensionNotify : IMFMediaSourceExten
         ((delegate* unmanaged<IMFMediaSourceExtensionNotify*, void>)(lpVtbl[4]))((IMFMediaSourceExtensionNotify*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFMediaSourceExtensionNotify.xml' path='doc/member[@name="IMFMediaSourceExtensionNotify.OnSourceClose"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public void OnSourceClose()

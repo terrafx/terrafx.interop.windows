@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_XML_WRITER_PROPERTIES.xml' path='doc/member[@name="WS_XML_WRITER_PROPERTIES"]/*' />
 public unsafe partial struct WS_XML_WRITER_PROPERTIES
 {
+    /// <include file='WS_XML_WRITER_PROPERTIES.xml' path='doc/member[@name="WS_XML_WRITER_PROPERTIES.properties"]/*' />
     public WS_XML_WRITER_PROPERTY* properties;
 
+    /// <include file='WS_XML_WRITER_PROPERTIES.xml' path='doc/member[@name="WS_XML_WRITER_PROPERTIES.propertyCount"]/*' />
     [NativeTypeName("ULONG")]
     public uint propertyCount;
 }

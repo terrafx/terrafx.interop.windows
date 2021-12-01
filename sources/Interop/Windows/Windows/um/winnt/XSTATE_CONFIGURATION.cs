@@ -9,47 +9,62 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='XSTATE_CONFIGURATION.xml' path='doc/member[@name="XSTATE_CONFIGURATION"]/*' />
 public unsafe partial struct XSTATE_CONFIGURATION
 {
+    /// <include file='XSTATE_CONFIGURATION.xml' path='doc/member[@name="XSTATE_CONFIGURATION.EnabledFeatures"]/*' />
     [NativeTypeName("DWORD64")]
     public ulong EnabledFeatures;
 
+    /// <include file='XSTATE_CONFIGURATION.xml' path='doc/member[@name="XSTATE_CONFIGURATION.EnabledVolatileFeatures"]/*' />
     [NativeTypeName("DWORD64")]
     public ulong EnabledVolatileFeatures;
 
+    /// <include file='XSTATE_CONFIGURATION.xml' path='doc/member[@name="XSTATE_CONFIGURATION.Size"]/*' />
     [NativeTypeName("DWORD")]
     public uint Size;
 
+    /// <include file='XSTATE_CONFIGURATION.xml' path='doc/member[@name="XSTATE_CONFIGURATION.Anonymous"]/*' />
     [NativeTypeName("_XSTATE_CONFIGURATION::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:13952:5)")]
     public _Anonymous_e__Union Anonymous;
 
+    /// <include file='XSTATE_CONFIGURATION.xml' path='doc/member[@name="XSTATE_CONFIGURATION.Features"]/*' />
     [NativeTypeName("XSTATE_FEATURE [64]")]
     public _Features_e__FixedBuffer Features;
 
+    /// <include file='XSTATE_CONFIGURATION.xml' path='doc/member[@name="XSTATE_CONFIGURATION.EnabledSupervisorFeatures"]/*' />
     [NativeTypeName("DWORD64")]
     public ulong EnabledSupervisorFeatures;
 
+    /// <include file='XSTATE_CONFIGURATION.xml' path='doc/member[@name="XSTATE_CONFIGURATION.AlignedFeatures"]/*' />
     [NativeTypeName("DWORD64")]
     public ulong AlignedFeatures;
 
+    /// <include file='XSTATE_CONFIGURATION.xml' path='doc/member[@name="XSTATE_CONFIGURATION.AllFeatureSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint AllFeatureSize;
 
+    /// <include file='XSTATE_CONFIGURATION.xml' path='doc/member[@name="XSTATE_CONFIGURATION.AllFeatures"]/*' />
     [NativeTypeName("DWORD [64]")]
     public fixed uint AllFeatures[64];
 
+    /// <include file='XSTATE_CONFIGURATION.xml' path='doc/member[@name="XSTATE_CONFIGURATION.EnabledUserVisibleSupervisorFeatures"]/*' />
     [NativeTypeName("DWORD64")]
     public ulong EnabledUserVisibleSupervisorFeatures;
 
+    /// <include file='XSTATE_CONFIGURATION.xml' path='doc/member[@name="XSTATE_CONFIGURATION.ExtendedFeatureDisableFeatures"]/*' />
     [NativeTypeName("DWORD64")]
     public ulong ExtendedFeatureDisableFeatures;
 
+    /// <include file='XSTATE_CONFIGURATION.xml' path='doc/member[@name="XSTATE_CONFIGURATION.AllNonLargeFeatureSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint AllNonLargeFeatureSize;
 
+    /// <include file='XSTATE_CONFIGURATION.xml' path='doc/member[@name="XSTATE_CONFIGURATION.Spare"]/*' />
     [NativeTypeName("DWORD")]
     public uint Spare;
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ControlFlags"]/*' />
     public ref uint ControlFlags
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -59,6 +74,7 @@ public unsafe partial struct XSTATE_CONFIGURATION
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.OptimizedSave"]/*' />
     public uint OptimizedSave
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -74,6 +90,7 @@ public unsafe partial struct XSTATE_CONFIGURATION
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.CompactionEnabled"]/*' />
     public uint CompactionEnabled
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -89,6 +106,7 @@ public unsafe partial struct XSTATE_CONFIGURATION
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.ExtendedFeatureDisable"]/*' />
     public uint ExtendedFeatureDisable
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -104,21 +122,26 @@ public unsafe partial struct XSTATE_CONFIGURATION
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public partial struct _Anonymous_e__Union
     {
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ControlFlags"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("DWORD")]
         public uint ControlFlags;
 
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("_XSTATE_CONFIGURATION::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:13954:9)")]
         public _Anonymous_e__Struct Anonymous;
 
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />
         public partial struct _Anonymous_e__Struct
         {
             public uint _bitfield;
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.OptimizedSave"]/*' />
             [NativeTypeName("DWORD : 1")]
             public uint OptimizedSave
             {
@@ -135,6 +158,7 @@ public unsafe partial struct XSTATE_CONFIGURATION
                 }
             }
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.CompactionEnabled"]/*' />
             [NativeTypeName("DWORD : 1")]
             public uint CompactionEnabled
             {
@@ -151,6 +175,7 @@ public unsafe partial struct XSTATE_CONFIGURATION
                 }
             }
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.ExtendedFeatureDisable"]/*' />
             [NativeTypeName("DWORD : 1")]
             public uint ExtendedFeatureDisable
             {
@@ -169,6 +194,7 @@ public unsafe partial struct XSTATE_CONFIGURATION
         }
     }
 
+    /// <include file='_Features_e__FixedBuffer.xml' path='doc/member[@name="_Features_e__FixedBuffer"]/*' />
     public partial struct _Features_e__FixedBuffer
     {
         public XSTATE_FEATURE e0;

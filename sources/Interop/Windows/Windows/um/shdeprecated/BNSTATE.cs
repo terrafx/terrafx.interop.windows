@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='BNSTATE.xml' path='doc/member[@name="BNSTATE"]/*' />
 public enum BNSTATE
 {
+    /// <include file='BNSTATE.xml' path='doc/member[@name="BNSTATE.BNS_NORMAL"]/*' />
     BNS_NORMAL = 0,
+
+    /// <include file='BNSTATE.xml' path='doc/member[@name="BNSTATE.BNS_BEGIN_NAVIGATE"]/*' />
     BNS_BEGIN_NAVIGATE = 1,
+
+    /// <include file='BNSTATE.xml' path='doc/member[@name="BNSTATE.BNS_NAVIGATE"]/*' />
     BNS_NAVIGATE = 2,
 }

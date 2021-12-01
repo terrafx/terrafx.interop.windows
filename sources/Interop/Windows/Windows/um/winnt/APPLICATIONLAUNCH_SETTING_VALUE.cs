@@ -5,13 +5,17 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='APPLICATIONLAUNCH_SETTING_VALUE.xml' path='doc/member[@name="APPLICATIONLAUNCH_SETTING_VALUE"]/*' />
 public partial struct APPLICATIONLAUNCH_SETTING_VALUE
 {
+    /// <include file='APPLICATIONLAUNCH_SETTING_VALUE.xml' path='doc/member[@name="APPLICATIONLAUNCH_SETTING_VALUE.ActivationTime"]/*' />
     public LARGE_INTEGER ActivationTime;
 
+    /// <include file='APPLICATIONLAUNCH_SETTING_VALUE.xml' path='doc/member[@name="APPLICATIONLAUNCH_SETTING_VALUE.Flags"]/*' />
     [NativeTypeName("DWORD")]
     public uint Flags;
 
+    /// <include file='APPLICATIONLAUNCH_SETTING_VALUE.xml' path='doc/member[@name="APPLICATIONLAUNCH_SETTING_VALUE.ButtonInstanceID"]/*' />
     [NativeTypeName("DWORD")]
     public uint ButtonInstanceID;
 }

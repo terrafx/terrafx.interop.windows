@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IP_MREQ.xml' path='doc/member[@name="IP_MREQ"]/*' />
 public partial struct IP_MREQ
 {
+    /// <include file='IP_MREQ.xml' path='doc/member[@name="IP_MREQ.imr_multiaddr"]/*' />
     public IN_ADDR imr_multiaddr;
 
+    /// <include file='IP_MREQ.xml' path='doc/member[@name="IP_MREQ.imr_interface"]/*' />
     public IN_ADDR imr_interface;
 }

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DVD_DISC_SIDE">
+    <summary>
+      <para>Indicates the sides of a DVD disc.</para>
+    </summary>
+    <remarks>
+      <para>This enumeration is used in the <see cref="IDvdInfo2.GetDVDVolumeInfo" /> method.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-enumerated-types">DirectShow Enumerated Types</seealso>
+    <seealso cref="IDvdInfo2.GetDVDVolumeInfo" />
+  </member>
+  <member name="DVD_DISC_SIDE.DVD_SIDE_A">
+    <summary>
+      <para>Side A.</para>
+    </summary>
+  </member>
+  <member name="DVD_DISC_SIDE.DVD_SIDE_B">
+    <summary>
+      <para>Side B.</para>
+    </summary>
+  </member>
+</doc>

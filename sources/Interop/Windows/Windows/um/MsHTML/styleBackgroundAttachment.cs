@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='styleBackgroundAttachment.xml' path='doc/member[@name="styleBackgroundAttachment"]/*' />
 public enum styleBackgroundAttachment
 {
+    /// <include file='styleBackgroundAttachment.xml' path='doc/member[@name="styleBackgroundAttachment.styleBackgroundAttachmentFixed"]/*' />
     styleBackgroundAttachmentFixed = 0,
+
+    /// <include file='styleBackgroundAttachment.xml' path='doc/member[@name="styleBackgroundAttachment.styleBackgroundAttachmentScroll"]/*' />
     styleBackgroundAttachmentScroll = 1,
+
+    /// <include file='styleBackgroundAttachment.xml' path='doc/member[@name="styleBackgroundAttachment.styleBackgroundAttachmentNotSet"]/*' />
     styleBackgroundAttachmentNotSet = 2,
+
+    /// <include file='styleBackgroundAttachment.xml' path='doc/member[@name="styleBackgroundAttachment.styleBackgroundAttachment_Max"]/*' />
     styleBackgroundAttachment_Max = 2147483647,
 }

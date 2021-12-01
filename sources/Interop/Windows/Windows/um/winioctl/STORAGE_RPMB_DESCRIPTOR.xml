@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="STORAGE_RPMB_DESCRIPTOR">
+    <summary>
+      <para>To interface with the Replay Protected Memory Block (RPMB), applications first need to query whether the device contains an RPMB and the max payload size the RPMB supports. To do this, the application sends <a href="https://docs.microsoft.com/ni-winioctl-ioctl_storage_query_property.md">IOCTL_STORAGE_QUERY_PROPERTY IOCTL</a> with <see cref="STORAGE_PROPERTY_ID enumeration" /> set to StorageAdapterRpmbProperty (defined in STORAGE_PROPERTY_QUERY in ntddstor.h). Storport then responds with the following payload (defined in ntddstor.h) when <see cref="STORAGE_QUERY_TYPE enumeration" /> is set to PropertyStandardQuery.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_RPMB_DESCRIPTOR.Version">
+    <summary>
+      <para>Shall be set to STORAGE_RPMB_DESCRIPTOR_VERSION_1</para>
+    </summary>
+  </member>
+  <member name="STORAGE_RPMB_DESCRIPTOR.Size">
+    <summary>
+      <para>Shall be set to sizeof(STORAGE_RPMB_DESCRIPTOR)</para>
+    </summary>
+  </member>
+  <member name="STORAGE_RPMB_DESCRIPTOR.SizeInBytes">
+    <summary>
+      <para>The size of the RPMB, in bytes. 0 if not supported, RPMB size in bytes otherwise.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_RPMB_DESCRIPTOR.MaxReliableWriteSizeInBytes">
+    <summary>
+      <para>The maximum amount of data supported in one transaction in bytes. 0 if not supported, minimum 512 bytes.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_RPMB_DESCRIPTOR.FrameFormat">
+    <summary>
+      <para>To support different RPMB frame formats, specifies which frame format the payload will be in so the port driver can take the appropriate action.</para>
+    </summary>
+  </member>
+</doc>

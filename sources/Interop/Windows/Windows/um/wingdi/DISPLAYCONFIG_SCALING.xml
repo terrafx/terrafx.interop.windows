@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DISPLAYCONFIG_SCALING">
+    <summary>
+      <para>The DISPLAYCONFIG_SCALING enumeration specifies the scaling transformation applied to content displayed on a video present network (VidPN) present path.</para>
+    </summary>
+    <remarks>
+      <para>For more information about scaling, see <a href="https://docs.microsoft.com//windows-hardware/drivers/display/scaling-the-desktop-image">Scaling the Desktop Image</a>.</para>
+    </remarks>
+  </member>
+  <member name="DISPLAYCONFIG_SCALING.DISPLAYCONFIG_SCALING_IDENTITY">
+    <summary>
+      <para>Indicates the identity transformation; the source content is presented with no change. This transformation is available only if the path's source mode has the same spatial resolution as the path's target mode.</para>
+    </summary>
+  </member>
+  <member name="DISPLAYCONFIG_SCALING.DISPLAYCONFIG_SCALING_CENTERED">
+    <summary>
+      <para>Indicates the centering transformation; the source content is presented unscaled, centered with respect to the spatial resolution of the target mode.</para>
+    </summary>
+  </member>
+  <member name="DISPLAYCONFIG_SCALING.DISPLAYCONFIG_SCALING_STRETCHED">
+    <summary>
+      <para>Indicates the content is scaled to fit the path's target.</para>
+    </summary>
+  </member>
+  <member name="DISPLAYCONFIG_SCALING.DISPLAYCONFIG_SCALING_ASPECTRATIOCENTEREDMAX">
+    <summary>
+      <para>Indicates the aspect-ratio centering transformation.</para>
+    </summary>
+  </member>
+  <member name="DISPLAYCONFIG_SCALING.DISPLAYCONFIG_SCALING_CUSTOM">
+    <summary>
+      <para>Indicates that the caller requests a custom scaling that the caller cannot describe with any of the other DISPLAYCONFIG_SCALING_XXX values. Only a hardware vendor's value-add application should use DISPLAYCONFIG_SCALING_CUSTOM, because the value-add application might require a private interface to the driver. The application can then use DISPLAYCONFIG_SCALING_CUSTOM to indicate additional context for the driver for the custom value on the specified path.</para>
+    </summary>
+  </member>
+  <member name="DISPLAYCONFIG_SCALING.DISPLAYCONFIG_SCALING_PREFERRED">
+    <summary>
+      <para>Indicates that the caller does not have any preference for the scaling. The <see cref="SetDisplayConfig" /> function will use the scaling value that was last saved in the database for the path. If such a scaling value does not exist, <b>SetDisplayConfig</b> will use the default scaling for the computer. For example, stretched (DISPLAYCONFIG_SCALING_STRETCHED) for tablet computers and aspect-ratio centered (DISPLAYCONFIG_SCALING_ASPECTRATIOCENTEREDMAX) for non-tablet computers.</para>
+    </summary>
+  </member>
+  <member name="DISPLAYCONFIG_SCALING.DISPLAYCONFIG_SCALING_FORCE_UINT32">
+    <summary>
+      <para>Forces this enumeration to compile to 32 bits in size. Without this value, some compilers would allow this enumeration to compile to a size other than 32 bits. You should not use this value.</para>
+    </summary>
+  </member>
+</doc>

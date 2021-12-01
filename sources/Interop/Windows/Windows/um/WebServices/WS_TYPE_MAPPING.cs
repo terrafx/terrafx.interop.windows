@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_TYPE_MAPPING.xml' path='doc/member[@name="WS_TYPE_MAPPING"]/*' />
 public enum WS_TYPE_MAPPING
 {
+    /// <include file='WS_TYPE_MAPPING.xml' path='doc/member[@name="WS_TYPE_MAPPING.WS_ELEMENT_TYPE_MAPPING"]/*' />
     WS_ELEMENT_TYPE_MAPPING = 1,
+
+    /// <include file='WS_TYPE_MAPPING.xml' path='doc/member[@name="WS_TYPE_MAPPING.WS_ATTRIBUTE_TYPE_MAPPING"]/*' />
     WS_ATTRIBUTE_TYPE_MAPPING = 2,
+
+    /// <include file='WS_TYPE_MAPPING.xml' path='doc/member[@name="WS_TYPE_MAPPING.WS_ELEMENT_CONTENT_TYPE_MAPPING"]/*' />
     WS_ELEMENT_CONTENT_TYPE_MAPPING = 3,
+
+    /// <include file='WS_TYPE_MAPPING.xml' path='doc/member[@name="WS_TYPE_MAPPING.WS_ANY_ELEMENT_TYPE_MAPPING"]/*' />
     WS_ANY_ELEMENT_TYPE_MAPPING = 4,
 }

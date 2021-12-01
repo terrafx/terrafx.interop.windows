@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DtdProcessing.xml' path='doc/member[@name="DtdProcessing"]/*' />
 public enum DtdProcessing
 {
+    /// <include file='DtdProcessing.xml' path='doc/member[@name="DtdProcessing.DtdProcessing_Prohibit"]/*' />
     DtdProcessing_Prohibit = 0,
+
+    /// <include file='DtdProcessing.xml' path='doc/member[@name="DtdProcessing.DtdProcessing_Parse"]/*' />
     DtdProcessing_Parse = (DtdProcessing_Prohibit + 1),
+
+    /// <include file='DtdProcessing.xml' path='doc/member[@name="DtdProcessing._DtdProcessing_Last"]/*' />
     _DtdProcessing_Last = DtdProcessing_Parse,
 }

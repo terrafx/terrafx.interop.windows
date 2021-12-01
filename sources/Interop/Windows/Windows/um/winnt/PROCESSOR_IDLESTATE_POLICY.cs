@@ -9,31 +9,40 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PROCESSOR_IDLESTATE_POLICY.xml' path='doc/member[@name="PROCESSOR_IDLESTATE_POLICY"]/*' />
 public partial struct PROCESSOR_IDLESTATE_POLICY
 {
+    /// <include file='PROCESSOR_IDLESTATE_POLICY.xml' path='doc/member[@name="PROCESSOR_IDLESTATE_POLICY.Revision"]/*' />
     [NativeTypeName("WORD")]
     public ushort Revision;
 
+    /// <include file='PROCESSOR_IDLESTATE_POLICY.xml' path='doc/member[@name="PROCESSOR_IDLESTATE_POLICY.Flags"]/*' />
     [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:17900:5)")]
     public _Flags_e__Union Flags;
 
+    /// <include file='PROCESSOR_IDLESTATE_POLICY.xml' path='doc/member[@name="PROCESSOR_IDLESTATE_POLICY.PolicyCount"]/*' />
     [NativeTypeName("DWORD")]
     public uint PolicyCount;
 
+    /// <include file='PROCESSOR_IDLESTATE_POLICY.xml' path='doc/member[@name="PROCESSOR_IDLESTATE_POLICY.Policy"]/*' />
     [NativeTypeName("PROCESSOR_IDLESTATE_INFO [3]")]
     public _Policy_e__FixedBuffer Policy;
 
+    /// <include file='_Flags_e__Union.xml' path='doc/member[@name="_Flags_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public partial struct _Flags_e__Union
     {
+        /// <include file='_Flags_e__Union.xml' path='doc/member[@name="_Flags_e__Union.AsWORD"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("WORD")]
         public ushort AsWORD;
 
+        /// <include file='_Flags_e__Union.xml' path='doc/member[@name="_Flags_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("PROCESSOR_IDLESTATE_POLICY::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:17902:9)")]
         public _Anonymous_e__Struct Anonymous;
 
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.AllowScaling"]/*' />
         public ushort AllowScaling
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -49,6 +58,7 @@ public partial struct PROCESSOR_IDLESTATE_POLICY
             }
         }
 
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Disabled"]/*' />
         public ushort Disabled
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -64,6 +74,7 @@ public partial struct PROCESSOR_IDLESTATE_POLICY
             }
         }
 
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Reserved"]/*' />
         public ushort Reserved
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -79,10 +90,12 @@ public partial struct PROCESSOR_IDLESTATE_POLICY
             }
         }
 
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />
         public partial struct _Anonymous_e__Struct
         {
             public ushort _bitfield;
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.AllowScaling"]/*' />
             [NativeTypeName("WORD : 1")]
             public ushort AllowScaling
             {
@@ -99,6 +112,7 @@ public partial struct PROCESSOR_IDLESTATE_POLICY
                 }
             }
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Disabled"]/*' />
             [NativeTypeName("WORD : 1")]
             public ushort Disabled
             {
@@ -115,6 +129,7 @@ public partial struct PROCESSOR_IDLESTATE_POLICY
                 }
             }
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Reserved"]/*' />
             [NativeTypeName("WORD : 14")]
             public ushort Reserved
             {
@@ -133,6 +148,7 @@ public partial struct PROCESSOR_IDLESTATE_POLICY
         }
     }
 
+    /// <include file='_Policy_e__FixedBuffer.xml' path='doc/member[@name="_Policy_e__FixedBuffer"]/*' />
     public partial struct _Policy_e__FixedBuffer
     {
         public PROCESSOR_IDLESTATE_INFO e0;

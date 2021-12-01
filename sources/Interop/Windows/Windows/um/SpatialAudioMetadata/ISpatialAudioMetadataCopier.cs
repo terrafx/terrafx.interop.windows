@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ISpatialAudioMetadataCopier.xml' path='doc/member[@name="ISpatialAudioMetadataCopier"]/*' />
 [Guid("D224B233-E251-4FD0-9CA2-D5ECF9A68404")]
 [NativeTypeName("struct ISpatialAudioMetadataCopier : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct ISpatialAudioMetadataCopier : ISpatialAudioMetadata
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct ISpatialAudioMetadataCopier : ISpatialAudioMetadata
         return ((delegate* unmanaged<ISpatialAudioMetadataCopier*, Guid*, void**, int>)(lpVtbl[0]))((ISpatialAudioMetadataCopier*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct ISpatialAudioMetadataCopier : ISpatialAudioMetadata
         return ((delegate* unmanaged<ISpatialAudioMetadataCopier*, uint>)(lpVtbl[1]))((ISpatialAudioMetadataCopier*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct ISpatialAudioMetadataCopier : ISpatialAudioMetadata
         return ((delegate* unmanaged<ISpatialAudioMetadataCopier*, uint>)(lpVtbl[2]))((ISpatialAudioMetadataCopier*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ISpatialAudioMetadataCopier.xml' path='doc/member[@name="ISpatialAudioMetadataCopier.Open"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Open(ISpatialAudioMetadataItems* metadataItems)
@@ -48,6 +53,7 @@ public unsafe partial struct ISpatialAudioMetadataCopier : ISpatialAudioMetadata
         return ((delegate* unmanaged<ISpatialAudioMetadataCopier*, ISpatialAudioMetadataItems*, int>)(lpVtbl[3]))((ISpatialAudioMetadataCopier*)Unsafe.AsPointer(ref this), metadataItems);
     }
 
+    /// <include file='ISpatialAudioMetadataCopier.xml' path='doc/member[@name="ISpatialAudioMetadataCopier.CopyMetadataForFrames"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT CopyMetadataForFrames([NativeTypeName("UINT16")] ushort copyFrameCount, SpatialAudioMetadataCopyMode copyMode, ISpatialAudioMetadataItems* dstMetadataItems, [NativeTypeName("UINT16 *")] ushort* itemsCopied)
@@ -55,6 +61,7 @@ public unsafe partial struct ISpatialAudioMetadataCopier : ISpatialAudioMetadata
         return ((delegate* unmanaged<ISpatialAudioMetadataCopier*, ushort, SpatialAudioMetadataCopyMode, ISpatialAudioMetadataItems*, ushort*, int>)(lpVtbl[4]))((ISpatialAudioMetadataCopier*)Unsafe.AsPointer(ref this), copyFrameCount, copyMode, dstMetadataItems, itemsCopied);
     }
 
+    /// <include file='ISpatialAudioMetadataCopier.xml' path='doc/member[@name="ISpatialAudioMetadataCopier.Close"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT Close()

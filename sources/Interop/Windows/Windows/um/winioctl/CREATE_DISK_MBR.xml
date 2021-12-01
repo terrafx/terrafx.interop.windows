@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CREATE_DISK_MBR">
+    <summary>
+      <para>Contains information that the
+<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_disk_create_disk">IOCTL_DISK_CREATE_DISK</a> control code uses to initialize master boot record (MBR) disks.</para>
+    </summary>
+    <remarks>
+      <para>The
+<b>CREATE_DISK_MBR</b> structure is part of the
+<see cref="CREATE_DISK" /> structure.</para>
+    </remarks>
+    <seealso cref="CREATE_DISK" />
+    <seealso cref="CREATE_DISK_GPT" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_disk_create_disk">IOCTL_DISK_CREATE_DISK</seealso>
+  </member>
+  <member name="CREATE_DISK_MBR.Signature">
+    <summary>
+      <para>The disk signature of the MBR disk to be initialized.</para>
+    </summary>
+  </member>
+</doc>

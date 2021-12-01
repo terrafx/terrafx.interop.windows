@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IAudioFormatEnumerator.GetCount">
+    <summary>
+      <para>Gets the number of supported audio formats in the list</para>
+    </summary>
+    <param name="count">
+      <para>The number of supported audio formats in the list.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK.</para>
+    </returns>
+    <seealso cref="IAudioFormatEnumerator" />
+  </member>
+  <member name="IAudioFormatEnumerator.GetFormat">
+    <summary>
+      <para>Gets the format with the specified index in the list. The formats are listed in order of importance. The most preferable format is first in the list.</para>
+    </summary>
+    <param name="index">
+      <para>The index of the item in the list to retrieve.</para>
+    </param>
+    <param name="format">
+      <para>Pointer to a pointer to a <b>WAVEFORMATEX</b> structure describing a supported audio format.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK.</para>
+    </returns>
+    <seealso cref="IAudioFormatEnumerator" />
+  </member>
+  <member name="IAudioFormatEnumerator">
+    <summary>
+      <para>Provides a list of supported audio formats. The most preferred format is first in the list. Get a reference to this interface by calling <see cref="ISpatialAudioClient.GetSupportedAudioObjectFormatEnumerator" />.</para>
+    </summary>
+  </member>
+</doc>

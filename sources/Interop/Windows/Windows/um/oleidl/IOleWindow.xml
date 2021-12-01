@@ -1,0 +1,277 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IOleWindow.ContextSensitiveHelp">
+    <summary>
+      <para>Determines whether context-sensitive help mode should be entered during an in-place activation session.</para>
+    </summary>
+    <param name="fEnterMode">
+      <para>
+        <b>TRUE</b> if help mode should be entered; <b>FALSE</b> if it should be exited.</para>
+    </param>
+    <returns>
+      <para>This method returns S_OK if the help mode was entered or exited successfully, depending on the value passed in <i>fEnterMode</i>. Other possible return values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>The specified <i>fEnterMode</i> value is not valid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>There is insufficient memory available for this operation.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_UNEXPECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>An unexpected error has occurred.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Applications can invoke context-sensitive help when the user:</para>
+      <list type="bullet">
+        <item>
+          <description>presses SHIFT+F1, then clicks a topic</description>
+        </item>
+        <item>
+          <description>presses F1 when a menu item is selected</description>
+        </item>
+      </list>
+      <para>When SHIFT+F1 is pressed, either the frame or active object can receive the keystrokes. If the container's frame receives the keystrokes, it calls its containing document's <b>IOleWindow.ContextSensitiveHelp</b> method with <i>fEnterMode</i> set to <b>TRUE</b>. This propagates the help state to all of its in-place objects so they can correctly handle the mouse click or WM_COMMAND.</para>
+      <para>If an active object receives the SHIFT+F1 keystrokes, it calls the container's <b>IOleWindow.ContextSensitiveHelp</b> method with <i>fEnterMode</i><b>TRUE</b>, which then recursively calls each of its in-place sites until there are no more to be notified. The container then calls its document's or frame's <b>IOleWindow.ContextSensitiveHelp</b> method with <i>fEnterMode</i><b>TRUE</b>.</para>
+      <para>When in context-sensitive help mode, an object that receives the mouse click can either:</para>
+      <list type="bullet">
+        <item>
+          <description>Ignore the click if it does not support context-sensitive help.</description>
+        </item>
+        <item>
+          <description>Tell all the other objects to exit context-sensitive help mode with <b>ContextSensitiveHelp</b> set to <b>FALSE</b> and then provide help for that context.</description>
+        </item>
+      </list>
+      <para>An object in context-sensitive help mode that receives a WM_COMMAND should tell all the other in-place objects to exit context-sensitive help mode and then provide help for the command.</para>
+      <para>If a container application is to support context-sensitive help on menu items, it must either provide its own message filter so that it can intercept the F1 key or ask the OLE library to add a message filter by calling <see cref="OleSetMenuDescriptor" />, passing valid, non-<b>NULL</b> values for the <i>lpFrame</i> and <i>lpActiveObj</i> parameters.</para>
+    </remarks>
+    <seealso cref="IOleWindow" />
+    <seealso cref="OleSetMenuDescriptor" />
+  </member>
+  <member name="IOleWindow.GetWindow">
+    <summary>
+      <para>Retrieves a handle to one of the windows participating in in-place activation (frame, document, parent, or in-place object window).</para>
+    </summary>
+    <param name="phwnd">
+      <para>A pointer to a variable that receives the window handle.</para>
+    </param>
+    <returns>
+      <para>This method returns S_OK on success. Other possible return values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>The object is windowless.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>The specified <i>fEnterMode</i> value is not valid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>There is insufficient memory available for this operation.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_UNEXPECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>An unexpected error has occurred.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Five types of windows comprise the windows hierarchy. When a object is active in place, it has access to some or all of these windows.</para>
+      <list type="table">
+        <listheader>
+          <description>Window</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>Frame</para>
+          </description>
+          <description>
+            <para>The outermost main window where the container application's main menu resides.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>Document</para>
+          </description>
+          <description>
+            <para>The window that displays the compound document containing the embedded object to the user.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>Pane</para>
+          </description>
+          <description>
+            <para>The subwindow of the document window that contains the object's view. Applicable only for applications with split-pane windows.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>Parent</para>
+          </description>
+          <description>
+            <para>The container window that contains that object's view. The object application installs its window as a child of this window.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>In-place</para>
+          </description>
+          <description>
+            <para>The window containing the active in-place object. The object application creates this window and installs it as a child of its hatch window, which is a child of the container's parent window.</para>
+          </description>
+        </item>
+      </list>
+      <para>Each type of window has a different role in the in-place activation architecture. However, it is not necessary to employ a separate physical window for each type. Many container applications use the same window for their frame, document, pane, and parent windows.</para>
+    </remarks>
+    <seealso cref="IOleWindow" />
+  </member>
+  <member name="IOleWindow">
+    <summary>
+      <para>The <b>IOleWindow</b> interface provides methods that allow an application to obtain the handle to the various windows that participate in in-place activation, and also to enter and exit context-sensitive help mode.</para>
+    </summary>
+    <remarks>
+      <para>Several other in-place activation interfaces are derived from the <b>IOleWindow</b> interface. Containers and objects must implement and use these interfaces in order to support in-place activation. The following table briefly summarizes each of these interfaces.</para>
+      <list type="table">
+        <listheader>
+          <description>Interface</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <b>IOleWindow</b>
+          </description>
+          <description>
+            <para>The base interface. Implemented and used by containers and objects to obtain window handles and manage context-sensitive help. This interface is not supported for use across machine boundaries.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IOleInPlaceObject" />
+          </description>
+          <description>
+            <para>Implemented by objects and used by an object's immediate container to activate and deactivate the object.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IOleInPlaceActiveObject" />
+          </description>
+          <description>
+            <para>Implemented by objects and used by the top-level container to manipulate the object while it is active. Provides a direct channel of communication between an active object and its frame and document windows.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IOleInPlaceUIWindow" />
+          </description>
+          <description>
+            <para>Implemented by containers and used by objects to manipulate the container's document window.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IOleInPlaceFrame" />
+          </description>
+          <description>
+            <para>Implemented by containers and used by objects to control the container's frame window.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IOleInPlaceSite" />
+          </description>
+          <description>
+            <para>Implemented by containers and used by objects to interact with the in-place client site.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IOleInPlaceSiteEx" />
+          </description>
+          <description>
+            <para>Implemented by containers and called by objects to optimize activation and deactivation.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IOleInPlaceSiteWindowless" />
+          </description>
+          <description>
+            <para>Implemented by containers and called by windowless object to obtain services from its container.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IOleInPlaceObjectWindowless" />
+          </description>
+          <description>
+            <para>Implemented by windowless objects called by containers to support window message processing and drag and drop operations for windowless objects.</para>
+          </description>
+        </item>
+      </list>
+      <para>These interfaces can be arranged in three hierarchical levels with various interfaces implemented at each level. Calls that install user-interface menus commands and frame adornments, activate and switch between windows, and dispatch menu and keystrokes take place between the top-level container and the active object. Calls that support activating, deactivating, scrolling, or clipping span the containment hierarchy, with each level performing the correct actions.</para>
+    </remarks>
+    <seealso cref="OleCreateMenuDescriptor" />
+    <seealso cref="OleDestroyMenuDescriptor" />
+    <seealso cref="OleTranslateAccelerator" />
+  </member>
+</doc>

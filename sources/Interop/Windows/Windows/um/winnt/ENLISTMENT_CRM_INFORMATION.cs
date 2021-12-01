@@ -7,11 +7,15 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ENLISTMENT_CRM_INFORMATION.xml' path='doc/member[@name="ENLISTMENT_CRM_INFORMATION"]/*' />
 public partial struct ENLISTMENT_CRM_INFORMATION
 {
+    /// <include file='ENLISTMENT_CRM_INFORMATION.xml' path='doc/member[@name="ENLISTMENT_CRM_INFORMATION.CrmTransactionManagerId"]/*' />
     public Guid CrmTransactionManagerId;
 
+    /// <include file='ENLISTMENT_CRM_INFORMATION.xml' path='doc/member[@name="ENLISTMENT_CRM_INFORMATION.CrmResourceManagerId"]/*' />
     public Guid CrmResourceManagerId;
 
+    /// <include file='ENLISTMENT_CRM_INFORMATION.xml' path='doc/member[@name="ENLISTMENT_CRM_INFORMATION.CrmEnlistmentId"]/*' />
     public Guid CrmEnlistmentId;
 }

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_SPN_ENDPOINT_IDENTITY">
+    <summary>
+      <para>Type for specifying an endpoint identity represented by an SPN (service principal name).</para>
+    </summary>
+  </member>
+  <member name="WS_SPN_ENDPOINT_IDENTITY.identity">
+    <summary>
+      <para>The base type from which this type and all other endpoint identity types derive.</para>
+    </summary>
+  </member>
+  <member name="WS_SPN_ENDPOINT_IDENTITY.spn">
+    <summary>
+      <para>The SPN (service principal name) of the endpoint that is represented by this endpoint identity.</para>
+    </summary>
+  </member>
+</doc>

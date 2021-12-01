@@ -5,8 +5,10 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CERT_SYSTEM_STORE_INFO.xml' path='doc/member[@name="CERT_SYSTEM_STORE_INFO"]/*' />
 public partial struct CERT_SYSTEM_STORE_INFO
 {
+    /// <include file='CERT_SYSTEM_STORE_INFO.xml' path='doc/member[@name="CERT_SYSTEM_STORE_INFO.cbSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbSize;
 }

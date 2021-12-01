@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFClockConsumer.xml' path='doc/member[@name="IMFClockConsumer"]/*' />
 [Guid("6EF2A662-47C0-4666-B13D-CBB717F2FA2C")]
 [NativeTypeName("struct IMFClockConsumer : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IMFClockConsumer : IMFClockConsumer.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IMFClockConsumer : IMFClockConsumer.Interface
         return ((delegate* unmanaged<IMFClockConsumer*, Guid*, void**, int>)(lpVtbl[0]))((IMFClockConsumer*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IMFClockConsumer : IMFClockConsumer.Interface
         return ((delegate* unmanaged<IMFClockConsumer*, uint>)(lpVtbl[1]))((IMFClockConsumer*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IMFClockConsumer : IMFClockConsumer.Interface
         return ((delegate* unmanaged<IMFClockConsumer*, uint>)(lpVtbl[2]))((IMFClockConsumer*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFClockConsumer.xml' path='doc/member[@name="IMFClockConsumer.SetPresentationClock"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetPresentationClock(IMFPresentationClock* pPresentationClock)
@@ -48,6 +53,7 @@ public unsafe partial struct IMFClockConsumer : IMFClockConsumer.Interface
         return ((delegate* unmanaged<IMFClockConsumer*, IMFPresentationClock*, int>)(lpVtbl[3]))((IMFClockConsumer*)Unsafe.AsPointer(ref this), pPresentationClock);
     }
 
+    /// <include file='IMFClockConsumer.xml' path='doc/member[@name="IMFClockConsumer.GetPresentationClock"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetPresentationClock(IMFPresentationClock** ppPresentationClock)

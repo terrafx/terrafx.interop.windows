@@ -7,7 +7,9 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TRANSACTIONMANAGER_LOG_INFORMATION.xml' path='doc/member[@name="TRANSACTIONMANAGER_LOG_INFORMATION"]/*' />
 public partial struct TRANSACTIONMANAGER_LOG_INFORMATION
 {
+    /// <include file='TRANSACTIONMANAGER_LOG_INFORMATION.xml' path='doc/member[@name="TRANSACTIONMANAGER_LOG_INFORMATION.LogIdentity"]/*' />
     public Guid LogIdentity;
 }

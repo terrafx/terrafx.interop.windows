@@ -7,12 +7,16 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SOCKET_PROCESSOR_AFFINITY.xml' path='doc/member[@name="SOCKET_PROCESSOR_AFFINITY"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public partial struct SOCKET_PROCESSOR_AFFINITY
 {
+    /// <include file='SOCKET_PROCESSOR_AFFINITY.xml' path='doc/member[@name="SOCKET_PROCESSOR_AFFINITY.Processor"]/*' />
     public PROCESSOR_NUMBER Processor;
 
+    /// <include file='SOCKET_PROCESSOR_AFFINITY.xml' path='doc/member[@name="SOCKET_PROCESSOR_AFFINITY.NumaNodeId"]/*' />
     public ushort NumaNodeId;
 
+    /// <include file='SOCKET_PROCESSOR_AFFINITY.xml' path='doc/member[@name="SOCKET_PROCESSOR_AFFINITY.Reserved"]/*' />
     public ushort Reserved;
 }

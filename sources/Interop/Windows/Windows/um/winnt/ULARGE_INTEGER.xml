@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ULARGE_INTEGER">
+    <summary>
+      <para>Represents a 64-bit unsigned integer value.
+<b>Note</b>  Your C compiler may support 64-bit integers natively. For example, Microsoft Visual C++ supports the <a href="https://docs.microsoft.com//windows/desktop/Midl/--int64">__int64</a> sized integer type. For more information, see the documentation included with your C compiler.</para>
+    </summary>
+    <remarks>
+      <para>The <b>ULARGE_INTEGER</b> structure is actually a union. If your compiler has built-in support for 64-bit integers, use the <b>QuadPart</b> member to store the 64-bit integer. Otherwise, use the <b>LowPart</b> and <b>HighPart</b> members to store the 64-bit integer.</para>
+    </remarks>
+    <seealso cref="FILETIME" />
+    <seealso cref="LARGE_INTEGER" />
+    <seealso cref="SYSTEMTIME" />
+  </member>
+  <member name="ULARGE_INTEGER.DUMMYSTRUCTNAME">
+    <summary></summary>
+  </member>
+  <member name="ULARGE_INTEGER.LowPart">
+    <summary>
+      <para>The low-order 32 bits.</para>
+    </summary>
+  </member>
+  <member name="ULARGE_INTEGER.HighPart">
+    <summary>
+      <para>The high-order 32 bits.</para>
+    </summary>
+  </member>
+  <member name="ULARGE_INTEGER.u">
+    <summary></summary>
+  </member>
+  <member name="ULARGE_INTEGER.QuadPart">
+    <summary>
+      <para>An unsigned 64-bit integer.</para>
+    </summary>
+  </member>
+</doc>

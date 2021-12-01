@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ITfFnSearchCandidateProvider.GetSearchCandidates">
+    <summary>
+      <para>Gets a list of conversion candidates for a given string without generating any IME-related messages or events.</para>
+    </summary>
+    <param name="bstrQuery">
+      <para>A string that specifies the reading string that the text service attempts to convert.</para>
+    </param>
+    <param name="bstrApplicationId">
+      <para>App-specified string that enables a text service to optionally provide different candidates to different apps or contexts based on input history. You can pass an empty <b>BSTR</b>, L””, for a generic context.</para>
+    </param>
+    <param name="pplist">
+      <para>An <see cref="ITfCandidateList" /> that receives the requested candidate data.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>No candidates could be returned for the input string, <i>pplist</i> may be <b>NULL</b>.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="ITfFnSearchCandidateProvider" />
+    <seealso href="https://docs.microsoft.com//uwp/api/windows.applicationmodel.search.searchpanequerylinguisticdetails">SearchPaneQueryLinguisticDetails</seealso>
+    <seealso cref="SetResult" />
+  </member>
+  <member name="ITfFnSearchCandidateProvider.SetResult">
+    <summary>
+      <para>Provides a text Service or IME with history data when a candidate is chosen by the user.</para>
+    </summary>
+    <param name="bstrQuery">
+      <para>The reading string for the text service or IME to convert.</para>
+    </param>
+    <param name="bstrApplicationID">
+      <para>App-specified string that enables a text service or IME to optionally provide different candidates to different apps or contexts based on input history. You can pass an empty <b>BSTR</b>, L””, for a generic context.</para>
+    </param>
+    <param name="bstrResult">
+      <para>A string that represents the candidate string chosen by the user.  It should be one of the candidate string values returned by the <see cref="GetSearchCandidates" /> method.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Implementing and calling the <see cref="SetResult" /> method is optional.</para>
+      <para>A text service or IME can return <b>E_PENDING</b> if no corresponding call to <see cref="GetSearchCandidates" /> has been made yet for the value of <i>bstrQuery</i>.</para>
+    </remarks>
+    <seealso cref="GetSearchCandidates" />
+    <seealso cref="ITfFnSearchCandidateProvider" />
+  </member>
+  <member name="ITfFnSearchCandidateProvider">
+    <summary>
+      <para>Enables an integrated search experience in an Input Method Editor (IME).</para>
+    </summary>
+    <remarks>
+      <para>Implement the <b>ITfFnSearchCandidateProvider</b> interface in your Input Method Editor (IME) to enable an integrated search experience. Implementing this interface enables searches with meaningful results to begin before IME input has been completed, by providing a set of possible IME conversion candidates for a given input string.  Apps can use this interface to obtain IME conversions for a string, so the <b>ITfFnSearchCandidateProvider</b> interface, along with <see cref="ITfFnGetLinguisticAlternates" />, provides a TSF-based replacement for the <see cref="ImmGetConversionList" /> function.  Typically IMEs implement either <b>ITfFnGetLinguisticAlternates</b> or <b>ITfFnSearchCandidateProvider</b> (or neither).</para>
+      <para>Call <see cref="GetFunctionProvider" /> with the CLSID of a text service to get an <see cref="ITfFunctionProvider" /> instance.  Use the following call to the <see cref="ITfFunctionProvider.GetFunction" /> method to get the <b>ITfFnSearchCandidateProvider</b> interface pointer.</para>
+      <para>
+        <code>ITfFunctionProvider.GetFunction(GUID_NULL, IID_ITfFnSearchCandidateProvider, &amp;pSearchCandidate)</code>
+      </para>
+    </remarks>
+    <seealso cref="GetFunction" />
+    <seealso cref="GetFunctionProvider" />
+    <seealso cref="IUnknown" />
+    <seealso href="https://docs.microsoft.com//uwp/api/windows.applicationmodel.search.searchpanequerylinguisticdetails">SearchPaneQueryLinguisticDetails</seealso>
+  </member>
+</doc>

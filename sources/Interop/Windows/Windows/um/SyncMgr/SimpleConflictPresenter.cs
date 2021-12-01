@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SimpleConflictPresenter.xml' path='doc/member[@name="SimpleConflictPresenter"]/*' />
 [Guid("7A0F6AB7-ED84-46B6-B47E-02AA159A152B")]
 public partial struct SimpleConflictPresenter
 {

@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IShellChangeNotify.OnChange">
+    <summary>
+      <para>Informs a namespace extension that an event has taken place that affects its items.</para>
+    </summary>
+    <param name="lEvent">
+      <para>Type: <b>LONG</b></para>
+      <para>A value that describes the event that has occurred. Typically, only one event is specified at a time. If more than one event is specified, the values contained in the <i>pidl1</i> and <i>pidl2</i> parameters must be the same, respectively, for all specified events.The <i>lEvent</i> parameter may contain one or more of the following flags.</para>
+      <h4>SHCNE_ALLEVENTS (0x7FFFFFFFL)</h4>
+      <para>All events have occurred.</para>
+      <h4>SHCNE_ASSOCCHANGED (0x08000000L)</h4>
+      <para>A file type association has changed. The <i>pidl1</i> and <i>pidl2</i> parameters are not used and must be <b>NULL</b>.</para>
+      <h4>SHCNE_ATTRIBUTES (0x00000800L)</h4>
+      <para>The attributes of an item or folder have changed. The <i>pidl1</i> parameter contains the item or folder that has changed. The <i>pidl2</i> parameter is not used and should be <b>NULL</b>.</para>
+      <h4>SHCNE_CREATE (0x00000002L)</h4>
+      <para>A nonfolder item has been created. The <i>pidl1</i> parameter contains the item that was created. The <i>pidl2</i> parameter is not used and should be <b>NULL</b>.</para>
+      <h4>SHCNE_DELETE (0x00000004L)</h4>
+      <para>A nonfolder item has been deleted. The <i>pidl1</i> parameter contains the item that was deleted. The <i>pidl2</i> parameter is not used and should be <b>NULL</b>.</para>
+      <h4>SHCNE_DRIVEADD (0x00000100L)</h4>
+      <para>A drive has been added. The <i>pidl1</i> parameter contains the root of the drive that was added. The <i>pidl2</i> parameter is not used and should be <b>NULL</b>.</para>
+      <h4>SHCNE_DRIVEADDGUI (0x00010000L)</h4>
+      <para>
+        <b>Windows XP and later</b>: Not used.</para>
+      <h4>SHCNE_DRIVEREMOVED (0x00000080L)</h4>
+      <para>A drive has been removed. The <i>pidl1</i> parameter contains the root of the drive that was removed. The <i>pidl2</i> parameter is not used and should be <b>NULL</b>.</para>
+      <h4>SHCNE_FREESPACE (0x00040000L)</h4>
+      <para>The amount of free space on a drive has changed. The <i>pidl1</i> parameter contains the root of the drive on which the free space changed. The <i>pidl2</i> parameter is not used and should be <b>NULL</b>.</para>
+      <h4>SHCNE_MEDIAINSERTED (0x00000020L)</h4>
+      <para>Storage media has been inserted into a drive. The <i>pidl1</i> parameter contains the root of the drive that contains the new media. The <i>pidl2</i> parameter is not used and should be <b>NULL</b>.</para>
+      <h4>SHCNE_MEDIAREMOVED (0x00000040L)</h4>
+      <para>Storage media has been removed from a drive. The <i>pidl1</i> parameter contains the root of the drive from which the media was removed. The <i>pidl2</i> parameter is not used and should be <b>NULL</b>.</para>
+      <h4>SHCNE_MKDIR (0x00000008L)</h4>
+      <para>A folder has been created. The <i>pidl1</i> parameter contains the folder that was created. The <i>pidl2</i> parameter is not used and should be <b>NULL</b>.</para>
+      <h4>SHCNE_NETSHARE (0x00000200L)</h4>
+      <para>A folder on the local computer is being shared through the network. The <i>pidl1</i> parameter contains the folder that is being shared. The <i>pidl2</i> parameter is not used and should be <b>NULL</b>.</para>
+      <h4>SHCNE_NETUNSHARE (0x00000400L)</h4>
+      <para>A folder on the local computer is no longer being shared through the network. The <i>pidl1</i> parameter contains the folder that is no longer being shared. The <i>pidl2</i> parameter is not used and should be <b>NULL</b>.</para>
+      <h4>SHCNE_RENAMEFOLDER (0x00020000L)</h4>
+      <para>The name of a folder has changed. The <i>pidl1</i> parameter contains the previous PIDL or name of the folder. The <i>pidl2</i> parameter contains the new PIDL or name of the folder.</para>
+      <h4>SHCNE_RENAMEITEM (0x00000001L)</h4>
+      <para>The name of a nonfolder item has changed. The <i>pidl1</i> parameter contains the previous PIDL or name of the item. The <i>pidl2</i> parameter contains the new PIDL or name of the item.</para>
+      <h4>SHCNE_RMDIR (0x00000010L)</h4>
+      <para>A folder has been removed. The <i>pidl1</i> parameter contains the folder that was removed. The <i>pidl2</i> parameter is not used and should be <b>NULL</b>.</para>
+      <h4>SHCNE_SERVERDISCONNECT (0x00004000L)</h4>
+      <para>The computer has disconnected from a server. The <i>pidl1</i> parameter contains the server from which the computer was disconnected. The <i>pidl2</i> parameter is not used and should be <b>NULL</b>.</para>
+      <h4>SHCNE_UPDATEDIR (0x00001000L)</h4>
+      <para>The contents of an existing folder have changed, but the folder still exists and has not been renamed. The <i>pidl1</i> parameter contains the folder that has changed. The <i>pidl2</i> parameter is not used and should be <b>NULL</b>. If a folder has been created, deleted, or renamed, use <b>SHCNE_MKDIR</b>, <b>SHCNE_RMDIR</b>, or <b>SHCNE_RENAMEFOLDER</b>, respectively, instead.</para>
+      <h4>SHCNE_UPDATEIMAGE (0x00008000L)</h4>
+      <para>An image in the system image list has changed. The <i>pidl2</i> parameter contains the index in the system image list that has changed.</para>
+      <h4>SHCNE_UPDATEITEM (0x00002000L)</h4>
+      <para>An existing item (a folder or a nonfolder) has changed, but the item still exists and has not been renamed. The <i>pidl1</i> parameter contains the item that has changed. The <i>pidl2</i> parameter is not used and should be <b>NULL</b>. If a nonfolder item has been created, deleted, or renamed, use <b>SHCNE_CREATE</b>, <b>SHCNE_DELETE</b>, or <b>SHCNE_RENAMEITEM</b>, respectively, instead.</para>
+      <para>The following values specify combinations of other events.</para>
+      <h4>SHCNE_DISKEVENTS (0x0002381FL)</h4>
+      <para>Specifies a combination of all of the disk event identifiers.</para>
+      <h4>SHCNE_GLOBALEVENTS (0x0C0581E0L)</h4>
+      <para>Specifies a combination of all of the global event identifiers.</para>
+      <para>The following value modifies other event values and cannot be used alone.</para>
+      <h4>SHCNE_INTERRUPT (0x80000000L)</h4>
+      <para>The specified event occurred as a result of a system interrupt.</para>
+    </param>
+    <param name="pidl1">
+      <para>Type: <b>PCIDLIST_ABSOLUTE</b></para>
+      <para>The first event-dependent item identifier.</para>
+    </param>
+    <param name="pidl2">
+      <para>Type: <b>PCIDLIST_ABSOLUTE</b></para>
+      <para>The second event-dependent item identifier.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This method is similar in function and usage to <see cref="SHChangeNotify" />.</para>
+    </remarks>
+  </member>
+  <member name="IShellChangeNotify">
+    <summary>
+      <para>Exposes a method that notifies a Shell namespace extension when the ID of an item has changed.</para>
+    </summary>
+    <remarks>
+      <para>
+        <b>IShellChangeNotify</b> is used to let a host of a component communicate the change notifications that it receives to the objects that it hosts. This is used in Windows Explorer to communicate change notifications to band objects.</para>
+      <para>This interface is implemented by all namespace extensions.</para>
+      <para>You do not call this interface directly. <b>IShellChangeNotify</b> is used by the operating system only when it has confirmed that your application is aware of this interface.</para>
+      <para>
+        <b>IShellChangeNotify</b> implements <see cref="IUnknown" /> as well as the listed method.</para>
+    </remarks>
+  </member>
+</doc>

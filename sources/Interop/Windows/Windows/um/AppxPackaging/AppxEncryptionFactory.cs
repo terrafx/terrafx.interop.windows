@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='AppxEncryptionFactory.xml' path='doc/member[@name="AppxEncryptionFactory"]/*' />
 [Guid("DC664FDD-D868-46EE-8780-8D196CB739F7")]
 public partial struct AppxEncryptionFactory
 {

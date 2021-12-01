@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFMediaKeySession.Close">
+    <summary>
+      <para>Closes the media key session and must be called before the key session is released.</para>
+    </summary>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFMediaKeySession" />
+  </member>
+  <member name="IMFMediaKeySession.GetError">
+    <summary>
+      <para>Gets the error state associated with the media key session.</para>
+    </summary>
+    <param name="code">
+      <para>The error code.</para>
+    </param>
+    <param name="systemCode">
+      <para>Platform specific error information.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFMediaKeySession" />
+  </member>
+  <member name="IMFMediaKeySession.get_KeySystem">
+    <summary>
+      <para>Gets the name of the  key system name the media keys object was created with.</para>
+    </summary>
+    <param name="keySystem">
+      <para>The name of the key system.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFMediaKeySession" />
+  </member>
+  <member name="IMFMediaKeySession.get_SessionId">
+    <summary>
+      <para>Gets a unique session id created for this session.</para>
+    </summary>
+    <param name="sessionId">
+      <para>The media key session id.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFMediaKeySession" />
+  </member>
+  <member name="IMFMediaKeySession.Update">
+    <summary>
+      <para>Passes in a key value with any associated data required by the Content Decryption Module for the given key system.</para>
+    </summary>
+    <param name="key"></param>
+    <param name="cb">
+      <para>The count in bytes of <i>key</i>.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFMediaKeySession" />
+  </member>
+  <member name="IMFMediaKeySession">
+    <summary>
+      <para>Represents a session with the Digital Rights Management (DRM) key system.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+  </member>
+</doc>

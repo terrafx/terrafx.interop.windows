@@ -9,30 +9,40 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CM_POWER_DATA.xml' path='doc/member[@name="CM_POWER_DATA"]/*' />
 public partial struct CM_POWER_DATA
 {
+    /// <include file='CM_POWER_DATA.xml' path='doc/member[@name="CM_POWER_DATA.PD_Size"]/*' />
     [NativeTypeName("DWORD")]
     public uint PD_Size;
 
+    /// <include file='CM_POWER_DATA.xml' path='doc/member[@name="CM_POWER_DATA.PD_MostRecentPowerState"]/*' />
     public DEVICE_POWER_STATE PD_MostRecentPowerState;
 
+    /// <include file='CM_POWER_DATA.xml' path='doc/member[@name="CM_POWER_DATA.PD_Capabilities"]/*' />
     [NativeTypeName("DWORD")]
     public uint PD_Capabilities;
 
+    /// <include file='CM_POWER_DATA.xml' path='doc/member[@name="CM_POWER_DATA.PD_D1Latency"]/*' />
     [NativeTypeName("DWORD")]
     public uint PD_D1Latency;
 
+    /// <include file='CM_POWER_DATA.xml' path='doc/member[@name="CM_POWER_DATA.PD_D2Latency"]/*' />
     [NativeTypeName("DWORD")]
     public uint PD_D2Latency;
 
+    /// <include file='CM_POWER_DATA.xml' path='doc/member[@name="CM_POWER_DATA.PD_D3Latency"]/*' />
     [NativeTypeName("DWORD")]
     public uint PD_D3Latency;
 
+    /// <include file='CM_POWER_DATA.xml' path='doc/member[@name="CM_POWER_DATA.PD_PowerStateMapping"]/*' />
     [NativeTypeName("DEVICE_POWER_STATE [7]")]
     public _PD_PowerStateMapping_e__FixedBuffer PD_PowerStateMapping;
 
+    /// <include file='CM_POWER_DATA.xml' path='doc/member[@name="CM_POWER_DATA.PD_DeepestSystemWake"]/*' />
     public SYSTEM_POWER_STATE PD_DeepestSystemWake;
 
+    /// <include file='_PD_PowerStateMapping_e__FixedBuffer.xml' path='doc/member[@name="_PD_PowerStateMapping_e__FixedBuffer"]/*' />
     public partial struct _PD_PowerStateMapping_e__FixedBuffer
     {
         public DEVICE_POWER_STATE e0;

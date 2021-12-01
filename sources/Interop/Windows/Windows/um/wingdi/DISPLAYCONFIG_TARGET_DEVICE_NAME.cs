@@ -5,26 +5,35 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DISPLAYCONFIG_TARGET_DEVICE_NAME.xml' path='doc/member[@name="DISPLAYCONFIG_TARGET_DEVICE_NAME"]/*' />
 public unsafe partial struct DISPLAYCONFIG_TARGET_DEVICE_NAME
 {
+    /// <include file='DISPLAYCONFIG_TARGET_DEVICE_NAME.xml' path='doc/member[@name="DISPLAYCONFIG_TARGET_DEVICE_NAME.header"]/*' />
     public DISPLAYCONFIG_DEVICE_INFO_HEADER header;
 
+    /// <include file='DISPLAYCONFIG_TARGET_DEVICE_NAME.xml' path='doc/member[@name="DISPLAYCONFIG_TARGET_DEVICE_NAME.flags"]/*' />
     public DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS flags;
 
+    /// <include file='DISPLAYCONFIG_TARGET_DEVICE_NAME.xml' path='doc/member[@name="DISPLAYCONFIG_TARGET_DEVICE_NAME.outputTechnology"]/*' />
     public DISPLAYCONFIG_VIDEO_OUTPUT_TECHNOLOGY outputTechnology;
 
+    /// <include file='DISPLAYCONFIG_TARGET_DEVICE_NAME.xml' path='doc/member[@name="DISPLAYCONFIG_TARGET_DEVICE_NAME.edidManufactureId"]/*' />
     [NativeTypeName("UINT16")]
     public ushort edidManufactureId;
 
+    /// <include file='DISPLAYCONFIG_TARGET_DEVICE_NAME.xml' path='doc/member[@name="DISPLAYCONFIG_TARGET_DEVICE_NAME.edidProductCodeId"]/*' />
     [NativeTypeName("UINT16")]
     public ushort edidProductCodeId;
 
+    /// <include file='DISPLAYCONFIG_TARGET_DEVICE_NAME.xml' path='doc/member[@name="DISPLAYCONFIG_TARGET_DEVICE_NAME.connectorInstance"]/*' />
     [NativeTypeName("UINT32")]
     public uint connectorInstance;
 
+    /// <include file='DISPLAYCONFIG_TARGET_DEVICE_NAME.xml' path='doc/member[@name="DISPLAYCONFIG_TARGET_DEVICE_NAME.monitorFriendlyDeviceName"]/*' />
     [NativeTypeName("WCHAR [64]")]
     public fixed ushort monitorFriendlyDeviceName[64];
 
+    /// <include file='DISPLAYCONFIG_TARGET_DEVICE_NAME.xml' path='doc/member[@name="DISPLAYCONFIG_TARGET_DEVICE_NAME.monitorDevicePath"]/*' />
     [NativeTypeName("WCHAR [128]")]
     public fixed ushort monitorDevicePath[128];
 }

@@ -7,23 +7,30 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HEAACWAVEINFO.xml' path='doc/member[@name="HEAACWAVEINFO"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct HEAACWAVEINFO
 {
+    /// <include file='HEAACWAVEINFO.xml' path='doc/member[@name="HEAACWAVEINFO.wfx"]/*' />
     public WAVEFORMATEX wfx;
 
+    /// <include file='HEAACWAVEINFO.xml' path='doc/member[@name="HEAACWAVEINFO.wPayloadType"]/*' />
     [NativeTypeName("WORD")]
     public ushort wPayloadType;
 
+    /// <include file='HEAACWAVEINFO.xml' path='doc/member[@name="HEAACWAVEINFO.wAudioProfileLevelIndication"]/*' />
     [NativeTypeName("WORD")]
     public ushort wAudioProfileLevelIndication;
 
+    /// <include file='HEAACWAVEINFO.xml' path='doc/member[@name="HEAACWAVEINFO.wStructType"]/*' />
     [NativeTypeName("WORD")]
     public ushort wStructType;
 
+    /// <include file='HEAACWAVEINFO.xml' path='doc/member[@name="HEAACWAVEINFO.wReserved1"]/*' />
     [NativeTypeName("WORD")]
     public ushort wReserved1;
 
+    /// <include file='HEAACWAVEINFO.xml' path='doc/member[@name="HEAACWAVEINFO.dwReserved2"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwReserved2;
 }

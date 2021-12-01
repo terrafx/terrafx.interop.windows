@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ISpatialAudioObjectForHrtf.xml' path='doc/member[@name="ISpatialAudioObjectForHrtf"]/*' />
 [Guid("D7436ADE-1978-4E14-ABA0-555BD8EB83B4")]
 [NativeTypeName("struct ISpatialAudioObjectForHrtf : ISpatialAudioObjectBase")]
 [NativeInheritance("ISpatialAudioObjectBase")]
@@ -18,6 +19,7 @@ public unsafe partial struct ISpatialAudioObjectForHrtf : ISpatialAudioObjectFor
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct ISpatialAudioObjectForHrtf : ISpatialAudioObjectFor
         return ((delegate* unmanaged<ISpatialAudioObjectForHrtf*, Guid*, void**, int>)(lpVtbl[0]))((ISpatialAudioObjectForHrtf*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct ISpatialAudioObjectForHrtf : ISpatialAudioObjectFor
         return ((delegate* unmanaged<ISpatialAudioObjectForHrtf*, uint>)(lpVtbl[1]))((ISpatialAudioObjectForHrtf*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct ISpatialAudioObjectForHrtf : ISpatialAudioObjectFor
         return ((delegate* unmanaged<ISpatialAudioObjectForHrtf*, uint>)(lpVtbl[2]))((ISpatialAudioObjectForHrtf*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ISpatialAudioObjectBase.GetBuffer" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetBuffer(byte** buffer, [NativeTypeName("UINT32 *")] uint* bufferLength)
@@ -48,6 +53,7 @@ public unsafe partial struct ISpatialAudioObjectForHrtf : ISpatialAudioObjectFor
         return ((delegate* unmanaged<ISpatialAudioObjectForHrtf*, byte**, uint*, int>)(lpVtbl[3]))((ISpatialAudioObjectForHrtf*)Unsafe.AsPointer(ref this), buffer, bufferLength);
     }
 
+    /// <inheritdoc cref="ISpatialAudioObjectBase.SetEndOfStream" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetEndOfStream([NativeTypeName("UINT32")] uint frameCount)
@@ -55,6 +61,7 @@ public unsafe partial struct ISpatialAudioObjectForHrtf : ISpatialAudioObjectFor
         return ((delegate* unmanaged<ISpatialAudioObjectForHrtf*, uint, int>)(lpVtbl[4]))((ISpatialAudioObjectForHrtf*)Unsafe.AsPointer(ref this), frameCount);
     }
 
+    /// <inheritdoc cref="ISpatialAudioObjectBase.IsActive" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT IsActive(BOOL* isActive)
@@ -62,6 +69,7 @@ public unsafe partial struct ISpatialAudioObjectForHrtf : ISpatialAudioObjectFor
         return ((delegate* unmanaged<ISpatialAudioObjectForHrtf*, BOOL*, int>)(lpVtbl[5]))((ISpatialAudioObjectForHrtf*)Unsafe.AsPointer(ref this), isActive);
     }
 
+    /// <inheritdoc cref="ISpatialAudioObjectBase.GetAudioObjectType" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetAudioObjectType(AudioObjectType* audioObjectType)
@@ -69,6 +77,7 @@ public unsafe partial struct ISpatialAudioObjectForHrtf : ISpatialAudioObjectFor
         return ((delegate* unmanaged<ISpatialAudioObjectForHrtf*, AudioObjectType*, int>)(lpVtbl[6]))((ISpatialAudioObjectForHrtf*)Unsafe.AsPointer(ref this), audioObjectType);
     }
 
+    /// <include file='ISpatialAudioObjectForHrtf.xml' path='doc/member[@name="ISpatialAudioObjectForHrtf.SetPosition"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT SetPosition(float x, float y, float z)
@@ -76,6 +85,7 @@ public unsafe partial struct ISpatialAudioObjectForHrtf : ISpatialAudioObjectFor
         return ((delegate* unmanaged<ISpatialAudioObjectForHrtf*, float, float, float, int>)(lpVtbl[7]))((ISpatialAudioObjectForHrtf*)Unsafe.AsPointer(ref this), x, y, z);
     }
 
+    /// <include file='ISpatialAudioObjectForHrtf.xml' path='doc/member[@name="ISpatialAudioObjectForHrtf.SetGain"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT SetGain(float gain)
@@ -83,6 +93,7 @@ public unsafe partial struct ISpatialAudioObjectForHrtf : ISpatialAudioObjectFor
         return ((delegate* unmanaged<ISpatialAudioObjectForHrtf*, float, int>)(lpVtbl[8]))((ISpatialAudioObjectForHrtf*)Unsafe.AsPointer(ref this), gain);
     }
 
+    /// <include file='ISpatialAudioObjectForHrtf.xml' path='doc/member[@name="ISpatialAudioObjectForHrtf.SetOrientation"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT SetOrientation([NativeTypeName("const SpatialAudioHrtfOrientation *")] float** orientation)
@@ -90,6 +101,7 @@ public unsafe partial struct ISpatialAudioObjectForHrtf : ISpatialAudioObjectFor
         return ((delegate* unmanaged<ISpatialAudioObjectForHrtf*, float**, int>)(lpVtbl[9]))((ISpatialAudioObjectForHrtf*)Unsafe.AsPointer(ref this), orientation);
     }
 
+    /// <include file='ISpatialAudioObjectForHrtf.xml' path='doc/member[@name="ISpatialAudioObjectForHrtf.SetEnvironment"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT SetEnvironment(SpatialAudioHrtfEnvironmentType environment)
@@ -97,6 +109,7 @@ public unsafe partial struct ISpatialAudioObjectForHrtf : ISpatialAudioObjectFor
         return ((delegate* unmanaged<ISpatialAudioObjectForHrtf*, SpatialAudioHrtfEnvironmentType, int>)(lpVtbl[10]))((ISpatialAudioObjectForHrtf*)Unsafe.AsPointer(ref this), environment);
     }
 
+    /// <include file='ISpatialAudioObjectForHrtf.xml' path='doc/member[@name="ISpatialAudioObjectForHrtf.SetDistanceDecay"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT SetDistanceDecay(SpatialAudioHrtfDistanceDecay* distanceDecay)
@@ -104,6 +117,7 @@ public unsafe partial struct ISpatialAudioObjectForHrtf : ISpatialAudioObjectFor
         return ((delegate* unmanaged<ISpatialAudioObjectForHrtf*, SpatialAudioHrtfDistanceDecay*, int>)(lpVtbl[11]))((ISpatialAudioObjectForHrtf*)Unsafe.AsPointer(ref this), distanceDecay);
     }
 
+    /// <include file='ISpatialAudioObjectForHrtf.xml' path='doc/member[@name="ISpatialAudioObjectForHrtf.SetDirectivity"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT SetDirectivity(SpatialAudioHrtfDirectivityUnion* directivity)

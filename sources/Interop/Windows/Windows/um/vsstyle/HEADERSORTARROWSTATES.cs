@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HEADERSORTARROWSTATES.xml' path='doc/member[@name="HEADERSORTARROWSTATES"]/*' />
 public enum HEADERSORTARROWSTATES
 {
+    /// <include file='HEADERSORTARROWSTATES.xml' path='doc/member[@name="HEADERSORTARROWSTATES.HSAS_SORTEDUP"]/*' />
     HSAS_SORTEDUP = 1,
+
+    /// <include file='HEADERSORTARROWSTATES.xml' path='doc/member[@name="HEADERSORTARROWSTATES.HSAS_SORTEDDOWN"]/*' />
     HSAS_SORTEDDOWN = 2,
 }

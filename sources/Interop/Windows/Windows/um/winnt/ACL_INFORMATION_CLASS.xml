@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ACL_INFORMATION_CLASS">
+    <summary>
+      <para>The <b>ACL_INFORMATION_CLASS</b> enumeration contains values that specify the type of information being assigned to or retrieved from an <a href="https://docs.microsoft.com//windows/desktop/SecGloss/a-gly">access control list</a> (ACL).</para>
+    </summary>
+    <seealso cref="ACL" />
+    <seealso cref="ACL_REVISION_INFORMATION" />
+    <seealso cref="ACL_SIZE_INFORMATION" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/SecAuthZ/access-control">Access Control Overview</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/SecAuthZ/authorization-enumerations">Authorization Enumerations</seealso>
+    <seealso cref="GetAclInformation" />
+    <seealso cref="SetAclInformation" />
+  </member>
+  <member name="ACL_INFORMATION_CLASS.AclRevisionInformation">
+    <summary>
+      <para>Indicates ACL revision information.</para>
+    </summary>
+  </member>
+  <member name="ACL_INFORMATION_CLASS.AclSizeInformation">
+    <summary>
+      <para>Indicates ACL size information.</para>
+    </summary>
+  </member>
+</doc>

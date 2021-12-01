@@ -5,14 +5,19 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='RAWINPUTDEVICE.xml' path='doc/member[@name="RAWINPUTDEVICE"]/*' />
 public partial struct RAWINPUTDEVICE
 {
+    /// <include file='RAWINPUTDEVICE.xml' path='doc/member[@name="RAWINPUTDEVICE.usUsagePage"]/*' />
     public ushort usUsagePage;
 
+    /// <include file='RAWINPUTDEVICE.xml' path='doc/member[@name="RAWINPUTDEVICE.usUsage"]/*' />
     public ushort usUsage;
 
+    /// <include file='RAWINPUTDEVICE.xml' path='doc/member[@name="RAWINPUTDEVICE.dwFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFlags;
 
+    /// <include file='RAWINPUTDEVICE.xml' path='doc/member[@name="RAWINPUTDEVICE.hwndTarget"]/*' />
     public HWND hwndTarget;
 }

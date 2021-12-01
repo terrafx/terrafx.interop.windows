@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CERT_INFO">
+    <summary>
+      <para>The <b>CERT_INFO</b> structure contains the information of a certificate.</para>
+    </summary>
+    <seealso cref="CERT_EXTENSION" />
+    <seealso cref="CERT_PUBLIC_KEY_INFO" />
+    <seealso cref="CMSG_ENVELOPED_ENCODE_INFO" />
+    <seealso cref="CMSG_SIGNER_ENCODE_INFO" />
+    <seealso cref="CRYPT_ALGORITHM_IDENTIFIER" />
+    <seealso cref="CRYPT_BIT_BLOB" />
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_INTEGER_BLOB</seealso>
+    <seealso cref="CRYPT_VERIFY_MESSAGE_PARA" />
+    <seealso cref="CertCompareCertificate" />
+    <seealso cref="CertGetSubjectCertificateFromStore" />
+    <seealso cref="CryptMsgControl" />
+    <seealso cref="CryptMsgGetParam" />
+    <seealso cref="CryptSignAndEncodeCertificate" />
+  </member>
+  <member name="CERT_INFO.dwVersion">
+    <summary>
+      <para>The version number of a certificate. This member can be one of the following version numbers.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>CERT_V1</b>
+          </description>
+          <description>
+            <para>Version 1</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>CERT_V2</b>
+          </description>
+          <description>
+            <para>Version 2</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>CERT_V3</b>
+          </description>
+          <description>
+            <para>Version 3</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="CERT_INFO.SerialNumber">
+    <summary>
+      <para>A <a href="https://docs.microsoft.com//windows/desktop/SecGloss/b-gly">BLOB</a> that contains the serial number of a certificate. The least significant byte is the zero byte of the <b>pbData</b> member of <i>SerialNumber</i>. The index for the last byte of <b>pbData</b>, is one less than the value of the <b>cbData</b> member of <i>SerialNumber</i>. The most significant byte is the last byte of <b>pbData</b>. Leading 0x00 or 0xFF bytes are removed. For more information, see <see cref="CertCompareIntegerBlob" />.</para>
+    </summary>
+  </member>
+  <member name="CERT_INFO.SignatureAlgorithm">
+    <summary>
+      <para>A <see cref="CRYPT_ALGORITHM_IDENTIFIER" /> structure that contains the signature algorithm type and encoded additional encryption parameters.</para>
+    </summary>
+  </member>
+  <member name="CERT_INFO.Issuer">
+    <summary>
+      <para>The name, in encoded form, of the issuer of the certificate.</para>
+    </summary>
+  </member>
+  <member name="CERT_INFO.NotBefore">
+    <summary>
+      <para>Date and time before which the certificate is not valid. For dates between 1950 and 2049 inclusive, the date and time is encoded Coordinated Universal Time (Greenwich Mean Time) format in the form YYMMDDHHMMSS. This member uses a two-digit year and is precise to seconds. For dates before 1950 or after 2049, encoded generalized time is used. Encoded generalized time is in the form YYYYMMDDHHMMSSMMM, using a four-digit year, and is precise to milliseconds. Even though generalized time supports millisecond resolution, the <b>NotBefore</b> time is only precise to seconds.</para>
+    </summary>
+  </member>
+  <member name="CERT_INFO.NotAfter">
+    <summary>
+      <para>Date and time after which the certificate is not valid. For dates between 1950 and 2049 inclusive, the date and time is encoded Coordinated Universal Time format in the form YYMMDDHHMMSS. This member uses a two-digit year and is precise to seconds. For dates before 1950 or after 2049, encoded generalized time is used. Encoded generalized time is in the form YYYYMMDDHHMMSSMMM, using a four-digit year, and is precise to milliseconds. Even though generalized time supports millisecond resolution, the <b>NotAfter</b> time is only precise to seconds.</para>
+    </summary>
+  </member>
+  <member name="CERT_INFO.Subject">
+    <summary>
+      <para>The encoded name of the subject of the certificate.</para>
+    </summary>
+  </member>
+  <member name="CERT_INFO.SubjectPublicKeyInfo">
+    <summary>
+      <para>A <see cref="CERT_PUBLIC_KEY_INFO" /> structure that contains the encoded public key and its algorithm. The <b>PublicKey</b> member of the <b>CERT_PUBLIC_KEY_INFO</b> structure contains the encoded public key as a <see cref="CRYPT_BIT_BLOB" />, and the <b>Algorithm</b> member contains the encoded algorithm as a <see cref="CRYPT_ALGORITHM_IDENTIFIER" />.</para>
+    </summary>
+  </member>
+  <member name="CERT_INFO.IssuerUniqueId">
+    <summary>
+      <para>A BLOB that contains a unique identifier of the issuer.</para>
+    </summary>
+  </member>
+  <member name="CERT_INFO.SubjectUniqueId">
+    <summary>
+      <para>A BLOB that contains a unique identifier of the subject.</para>
+    </summary>
+  </member>
+  <member name="CERT_INFO.cExtension">
+    <summary>
+      <para>The number of elements in the <b>rgExtension</b> array.</para>
+    </summary>
+  </member>
+  <member name="CERT_INFO.rgExtension">
+    <summary>
+      <para>An array of pointers to
+<see cref="CERT_EXTENSION" /> structures, each of which contains extension information about the certificate.</para>
+    </summary>
+  </member>
+</doc>

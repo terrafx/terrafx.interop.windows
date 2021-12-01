@@ -1,0 +1,337 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFContentEnabler.AutomaticEnable">
+    <summary>
+      <para>Performs a content enabling action without any user interaction.</para>
+    </summary>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method is asynchronous. When the operation is complete, the content enabler sends an <a href="https://docs.microsoft.com//windows/desktop/medfound/meenablercompleted">MEEnablerCompleted</a> event. While the operation is in progress, the content enabler might send <a href="https://docs.microsoft.com//windows/desktop/medfound/meenablerprogress">MEEnablerProgress</a> events.</para>
+      <para>To find out whether the content enabler supports this method, call <see cref="IMFContentEnabler.IsAutomaticSupported" />.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/how-to-play-protected-media-files">How to Play Protected Media Files</seealso>
+    <seealso cref="IMFContentEnabler" />
+  </member>
+  <member name="IMFContentEnabler.Cancel">
+    <summary>
+      <para>Cancels a pending content enabling action.</para>
+    </summary>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The content enabler sends an <a href="https://docs.microsoft.com//windows/desktop/medfound/meenablercompleted">MEEnablerCompleted</a> event with a status code of E_CANCEL.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/how-to-play-protected-media-files">How to Play Protected Media Files</seealso>
+    <seealso cref="IMFContentEnabler" />
+  </member>
+  <member name="IMFContentEnabler.GetEnableData">
+    <summary>
+      <para>Retrieves the data for a manual content enabling action.</para>
+    </summary>
+    <param name="ppbData">
+      <para>Receives a pointer to a buffer that contains the data. The caller must free the buffer by calling <see cref="CoTaskMemFree" />.</para>
+    </param>
+    <param name="pcbData">
+      <para>Receives the size of the <i>ppbData</i> buffer.</para>
+    </param>
+    <returns>
+      <para>The method returns an HRESULT. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_NOT_AVAILABLE</b>
+            </para>
+          </description>
+          <description>
+            <para>No data is available.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The purpose of the data depends on the content enabler type, which is obtained by calling <see cref="IMFContentEnabler.GetEnableType" />.</para>
+      <list type="table">
+        <listheader>
+          <description>Enable type</description>
+          <description>Purpose of data</description>
+        </listheader>
+        <item>
+          <description>Individualization</description>
+          <description>Not applicable.</description>
+        </item>
+        <item>
+          <description>License acquisition</description>
+          <description>HTTP POST data.</description>
+        </item>
+        <item>
+          <description>Revocation</description>
+          <description>
+            <see cref="MFRR_COMPONENTS" /> structure.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/how-to-play-protected-media-files">How to Play Protected Media Files</seealso>
+    <seealso cref="IMFContentEnabler" />
+  </member>
+  <member name="IMFContentEnabler.GetEnableType">
+    <summary>
+      <para>Retrieves the type of operation that this content enabler performs.</para>
+    </summary>
+    <param name="pType">
+      <para>Receives a GUID that identifies the type of operation. An application can tailor its user interface (UI) strings for known operation types. See Remarks.</para>
+    </param>
+    <returns>
+      <para>The method returns an HRESULT. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The following GUIDs are defined for the <i>pType</i> parameter.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>MFENABLETYPE_MF_RebootRequired</description>
+          <description>The user must reboot his or her computer.</description>
+        </item>
+        <item>
+          <description>MFENABLETYPE_MF_UpdateRevocationInformation</description>
+          <description>Update revocation information.</description>
+        </item>
+        <item>
+          <description>MFENABLETYPE_MF_UpdateUntrustedComponent</description>
+          <description>Update untrusted components.</description>
+        </item>
+        <item>
+          <description>MFENABLETYPE_WMDRMV1_LicenseAcquisition</description>
+          <description>License acquisition for Windows Media Digital Rights Management (DRM) version 1.</description>
+        </item>
+        <item>
+          <description>MFENABLETYPE_WMDRMV7_Individualization</description>
+          <description>Individualization.</description>
+        </item>
+        <item>
+          <description>MFENABLETYPE_WMDRMV7_LicenseAcquisition</description>
+          <description>License acquisition for Windows Media DRM version 7 or later.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/how-to-play-protected-media-files">How to Play Protected Media Files</seealso>
+    <seealso cref="IMFContentEnabler" />
+  </member>
+  <member name="IMFContentEnabler.GetEnableURL">
+    <summary>
+      <para>Retrieves a URL for performing a manual content enabling action.</para>
+    </summary>
+    <param name="ppwszURL">
+      <para>Receives a pointer to a buffer that contains the URL. The caller must release the memory for the buffer by calling <see cref="CoTaskMemFree" />.</para>
+    </param>
+    <param name="pcchURL">
+      <para>Receives the number of characters returned in <i>ppwszURL</i>, including the terminating NULL character.</para>
+    </param>
+    <param name="pTrustStatus">
+      <para>Receives a member of the <see cref="MF_URL_TRUST_STATUS" /> enumeration indicating whether the URL is trusted.</para>
+    </param>
+    <returns>
+      <para>The method returns an HRESULT. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_NOT_AVAILABLE</b>
+            </para>
+          </description>
+          <description>
+            <para>No URL is available.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>If the enabling action can be performed by navigating to a URL, this method returns the URL. If no such URL exists, the method returns a failure code.</para>
+      <para>The purpose of the URL depends on the content enabler type, which is obtained by calling <see cref="IMFContentEnabler.GetEnableType" />.</para>
+      <list type="table">
+        <listheader>
+          <description>Enable type</description>
+          <description>Purpose of URL</description>
+        </listheader>
+        <item>
+          <description>Individualization</description>
+          <description>Not applicable.</description>
+        </item>
+        <item>
+          <description>License acquisition</description>
+          <description>URL to obtain the license. Call <see cref="IMFContentEnabler.GetEnableData" /> and submit the data to the URL as an HTTP POST request. To receive notification when the license is acquired, call <see cref="IMFContentEnabler.MonitorEnable" />.</description>
+        </item>
+        <item>
+          <description>Revocation</description>
+          <description>URL to a webpage where the user can download and install an updated component.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/how-to-play-protected-media-files">How to Play Protected Media Files</seealso>
+    <seealso cref="IMFContentEnabler" />
+  </member>
+  <member name="IMFContentEnabler.IsAutomaticSupported">
+    <summary>
+      <para>Queries whether the content enabler can perform all of its actions automatically.</para>
+    </summary>
+    <param name="pfAutomatic">
+      <para>Receives a Boolean value. If <b>TRUE</b>, the content enabler can perform the enabling action automatically.</para>
+    </param>
+    <returns>
+      <para>The method returns an HRESULT. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>If this method returns <b>TRUE</b> in the <i>pfAutomatic</i> parameter, call the <see cref="IMFContentEnabler.AutomaticEnable" /> method to perform the enabling action.</para>
+      <para>If this method returns <b>FALSE</b> in the <i>pfAutomatic</i> parameter, the application must use manual enabling. To do so, call <see cref="IMFContentEnabler.GetEnableURL" /> and <see cref="IMFContentEnabler.GetEnableData" /> to get the URL and data needed for manual enabling.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/how-to-play-protected-media-files">How to Play Protected Media Files</seealso>
+    <seealso cref="IMFContentEnabler" />
+  </member>
+  <member name="IMFContentEnabler.MonitorEnable">
+    <summary>
+      <para>Requests notification when the enabling action is completed.</para>
+    </summary>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded and no action was required.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>If you use a manual enabling action, call this method to be notified when the operation completes. If this method returns S_OK, the content enabler will send an <a href="https://docs.microsoft.com//windows/desktop/medfound/meenablercompleted">MEEnablerCompleted</a> event when the operation is completed. If the application cancels the operation before completing it, call <see cref="IMFContentEnabler.Cancel" />.</para>
+      <para>You do not have to call <b>MonitorEnable</b> when you use automatic enabling by calling <see cref="IMFContentEnabler.AutomaticEnable" />.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/how-to-play-protected-media-files">How to Play Protected Media Files</seealso>
+    <seealso cref="IMFContentEnabler" />
+  </member>
+  <member name="IMFContentEnabler">
+    <summary>
+      <para>Implements one step that must be performed for the user to access media content. For example, the steps might be individualization followed by license acquisition. Each of these steps would be encapsulated by a content enabler object that exposes the <b>IMFContentEnabler</b> interface.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/how-to-play-protected-media-files">How to Play Protected Media Files</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+  </member>
+</doc>

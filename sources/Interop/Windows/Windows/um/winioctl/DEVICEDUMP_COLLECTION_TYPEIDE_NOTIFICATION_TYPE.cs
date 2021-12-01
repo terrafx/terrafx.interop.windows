@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DEVICEDUMP_COLLECTION_TYPEIDE_NOTIFICATION_TYPE.xml' path='doc/member[@name="DEVICEDUMP_COLLECTION_TYPEIDE_NOTIFICATION_TYPE"]/*' />
 public enum DEVICEDUMP_COLLECTION_TYPEIDE_NOTIFICATION_TYPE
 {
+    /// <include file='DEVICEDUMP_COLLECTION_TYPEIDE_NOTIFICATION_TYPE.xml' path='doc/member[@name="DEVICEDUMP_COLLECTION_TYPEIDE_NOTIFICATION_TYPE.TCCollectionBugCheck"]/*' />
     TCCollectionBugCheck = 1,
+
+    /// <include file='DEVICEDUMP_COLLECTION_TYPEIDE_NOTIFICATION_TYPE.xml' path='doc/member[@name="DEVICEDUMP_COLLECTION_TYPEIDE_NOTIFICATION_TYPE.TCCollectionApplicationRequested"]/*' />
     TCCollectionApplicationRequested,
+
+    /// <include file='DEVICEDUMP_COLLECTION_TYPEIDE_NOTIFICATION_TYPE.xml' path='doc/member[@name="DEVICEDUMP_COLLECTION_TYPEIDE_NOTIFICATION_TYPE.TCCollectionDeviceRequested"]/*' />
     TCCollectionDeviceRequested,
 }

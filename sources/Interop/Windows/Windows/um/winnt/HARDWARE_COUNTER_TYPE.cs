@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HARDWARE_COUNTER_TYPE.xml' path='doc/member[@name="HARDWARE_COUNTER_TYPE"]/*' />
 public enum HARDWARE_COUNTER_TYPE
 {
+    /// <include file='HARDWARE_COUNTER_TYPE.xml' path='doc/member[@name="HARDWARE_COUNTER_TYPE.PMCCounter"]/*' />
     PMCCounter,
+
+    /// <include file='HARDWARE_COUNTER_TYPE.xml' path='doc/member[@name="HARDWARE_COUNTER_TYPE.MaxHardwareCounterType"]/*' />
     MaxHardwareCounterType,
 }

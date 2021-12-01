@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFSinkWriterEncoderConfig.PlaceEncodingParameters">
+    <summary>
+      <para>Dynamically updates the encoder configuration with a collection of new encoder settings.</para>
+    </summary>
+    <param name="dwStreamIndex">
+      <para>Specifies the stream index.</para>
+    </param>
+    <param name="pEncodingParameters">
+      <para>A set of encoding parameters to configure the encoder with.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The encoder will be configured with these settings after all previously queued input media samples have been sent to it through <see cref="IMFTransform.ProcessInput" />.</para>
+    </remarks>
+    <seealso cref="IMFSinkWriter" />
+    <seealso cref="IMFSinkWriterEncoderConfig" />
+    <seealso cref="IMFSinkWriterEx" />
+  </member>
+  <member name="IMFSinkWriterEncoderConfig.SetTargetMediaType">
+    <summary>
+      <para>Dynamically changes the target media type that Sink Writer is encoding to.</para>
+    </summary>
+    <param name="dwStreamIndex">
+      <para>Specifies the stream index.</para>
+    </param>
+    <param name="pTargetMediaType">
+      <para>The new media format to encode to.</para>
+    </param>
+    <param name="pEncodingParameters">
+      <para>The new set of encoding parameters to configure the encoder with.
+If not specified, previously provided parameters will be used.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The new media type must be supported by the media sink being used and by     the encoder MFTs installed on the system.</para>
+    </remarks>
+    <seealso cref="IMFSinkWriter" />
+    <seealso cref="IMFSinkWriterEncoderConfig" />
+    <seealso cref="IMFSinkWriterEx" />
+  </member>
+  <member name="IMFSinkWriterEncoderConfig">
+    <summary>
+      <para>Provides additional functionality on the sink writer for dynamically changing the media type and encoder configuration.</para>
+    </summary>
+    <remarks>
+      <para>The <a href="https://docs.microsoft.com//windows/desktop/medfound/sink-writer">Sink Writer</a> implements this interface in Windows 8.1. To get a pointer to this interface, call <see cref="QueryInterface" /> on the <see cref="IMFSinkWriter" />.</para>
+    </remarks>
+    <seealso cref="IMFSinkWriter" />
+    <seealso cref="IMFSinkWriterEx" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+  </member>
+</doc>

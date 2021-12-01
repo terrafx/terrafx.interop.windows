@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFCaptureSink2.SetOutputMediaType">
+    <summary>
+      <para>Dynamically sets the output media type of the record sink or preview sink.</para>
+    </summary>
+    <param name="dwStreamIndex">
+      <para>The stream index to change the output media type on.</para>
+    </param>
+    <param name="pMediaType">
+      <para>The new output media type.</para>
+    </param>
+    <param name="pEncodingAttributes">
+      <para>The new encoder attributes. This can be  <b>null</b>.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_INVALID_MEDIATYPE</b>
+            </para>
+          </description>
+          <description>
+            <para>The sink does not support the media type.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This is an asynchronous call.  Listen to the <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-capture-engine-output-media-type-set">MF_CAPTURE_ENGINE_OUTPUT_MEDIA_TYPE_SET</a> event
+to be notified when the output media type has been set.</para>
+    </remarks>
+    <seealso cref="IMFCaptureSink2" />
+  </member>
+  <member name="IMFCaptureSink2">
+    <summary>
+      <para>Extends the <see cref="IMFCaptureSink" /> interface to provide  functionality for dynamically setting the output media type of the record sink or preview sink.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+  </member>
+</doc>

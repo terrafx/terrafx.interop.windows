@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HTMLMinimizeFlag.xml' path='doc/member[@name="HTMLMinimizeFlag"]/*' />
 public enum HTMLMinimizeFlag
 {
+    /// <include file='HTMLMinimizeFlag.xml' path='doc/member[@name="HTMLMinimizeFlag.HTMLMinimizeFlagNo"]/*' />
     HTMLMinimizeFlagNo = 0,
+
+    /// <include file='HTMLMinimizeFlag.xml' path='doc/member[@name="HTMLMinimizeFlag.HTMLMinimizeFlagYes"]/*' />
     HTMLMinimizeFlagYes = 0x20000,
+
+    /// <include file='HTMLMinimizeFlag.xml' path='doc/member[@name="HTMLMinimizeFlag.HTMLMinimizeFlag_Max"]/*' />
     HTMLMinimizeFlag_Max = 2147483647,
 }

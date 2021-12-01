@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IThumbnailProvider.GetThumbnail">
+    <summary>
+      <para>Gets a thumbnail image and alpha type.</para>
+    </summary>
+    <param name="cx">
+      <para>Type: <b>UINT</b></para>
+      <para>The maximum thumbnail size, in pixels. The Shell draws the returned bitmap at this size or smaller. The returned bitmap should fit into a square of width and height <i>cx</i>, though it does not need to be a square image. The Shell  scales the bitmap to render at lower sizes. For example, if the image has a 6:4 aspect ratio, then the returned bitmap should also have a 6:4 aspect ratio.</para>
+    </param>
+    <param name="phbmp">
+      <para>Type: <b>HBITMAP*</b></para>
+      <para>When this method returns, contains a pointer to the thumbnail image handle. The image must be a DIB section and 32 bits per pixel. The Shell scales down the bitmap if its width or height is larger than the size specified by <i>cx</i>. The Shell always respects the aspect ratio and never scales a bitmap larger than its original size.</para>
+    </param>
+    <param name="pdwAlpha">
+      <para>Type: <b>WTS_ALPHATYPE*</b></para>
+      <para>When this method returns, contains a pointer to one of the following values from the WTS_ALPHATYPE enumeration:</para>
+      <h4>WTSAT_UNKNOWN (0x0)</h4>
+      <para>0x0. The bitmap is an unknown format. The Shell tries nonetheless to detect whether the image has an alpha channel.</para>
+      <h4>WTSAT_RGB (0x1)</h4>
+      <para>0x1. The bitmap is an RGB image without alpha. The alpha channel is invalid and the Shell ignores it.</para>
+      <h4>WTSAT_ARGB (0x2)</h4>
+      <para>0x2. The bitmap is an ARGB image with a valid alpha channel.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IThumbnailProvider">
+    <summary>
+      <para>Exposes a method for getting a thumbnail image and is intended to be implemented for thumbnail handlers. The object that implements this interface must also implement <see cref="IInitializeWithStream" />.</para>
+    </summary>
+    <remarks>
+      <para>The Shell calls <see cref="IThumbnailProvider.GetThumbnail" /> to obtain an image to use as a representation of the item.</para>
+      <para>An implementation of this interface for photo thumbnails is supplied in Microsoft Windows as CLSID_PhotoThumbnailProvider. Applications that use the supplied implementation must define a constant CLSID identifier using the GUID {C7657C4A-9F68-40fa-A4DF-96BC08EB3551}.</para>
+      <code>// {C7657C4A-9F68-40fa-A4DF-96BC08EB3551}
+const CLSID CLSID_PhotoThumbnailProvider = {0xC7657C4A, 0x9F68, 0x40fa, {0xA4, 0xDF, 0x96, 0xBC, 0x08, 0xEB, 0x35, 0x51}} ;
+</code>
+      <para>
+        <b>Initializing</b> The object that implements this interface must also implement <see cref="IInitializeWithStream" />. The Shell calls <see cref="IInitializeWithStream.Initialize" /> with the stream of the item, and  <b>IInitializeWithStream</b> is the only initialization interface used when IThumbnailProvider instances are loaded out-of-proc (for isolation purposes).  This is the primary code path for Windows  for all IThumbnailCache code paths.</para>
+      <para>It is possible for a thumbnail implementation to be initialized with <see cref="IInitializeWithItem" /> or <see cref="IInitializeWithFile" /> when the handler is request by a 3rd party without using the IThumbnailCache API, but this is uncommon.  If you implement <b>IInitializeWithItem</b>, the Shell calls <see cref="IInitializeWithItem.Initialize" /> with the <see cref="IShellItem" /> representation of the item. If you implement <b>IInitializeWithFile</b>, the Shell calls <see cref="IInitializeWithFile.Initialize" /> with the path of the file.</para>
+      <para>If none of these interfaces is present, <b>IThumbnailProvider</b> is not called.</para>
+      <para>
+        <b>Client apps</b> If you're developing a client app, you should use <see cref="IShellItemImageFactory" /> instead.</para>
+      <para>
+        <b>Windows Vista</b> IThumbnailProivder is new for Vista and replaces <see cref="IExtractImage" />. Vista still supports IExtractImage but lacks the ability to return the image type (alpha or not).</para>
+    </remarks>
+  </member>
+</doc>

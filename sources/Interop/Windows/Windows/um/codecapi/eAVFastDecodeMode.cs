@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='eAVFastDecodeMode.xml' path='doc/member[@name="eAVFastDecodeMode"]/*' />
 public enum eAVFastDecodeMode
 {
+    /// <include file='eAVFastDecodeMode.xml' path='doc/member[@name="eAVFastDecodeMode.eVideoDecodeCompliant"]/*' />
     eVideoDecodeCompliant = 0,
+
+    /// <include file='eAVFastDecodeMode.xml' path='doc/member[@name="eAVFastDecodeMode.eVideoDecodeOptimalLF"]/*' />
     eVideoDecodeOptimalLF = 1,
+
+    /// <include file='eAVFastDecodeMode.xml' path='doc/member[@name="eAVFastDecodeMode.eVideoDecodeDisableLF"]/*' />
     eVideoDecodeDisableLF = 2,
+
+    /// <include file='eAVFastDecodeMode.xml' path='doc/member[@name="eAVFastDecodeMode.eVideoDecodeFastest"]/*' />
     eVideoDecodeFastest = 32,
 }

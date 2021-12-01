@@ -1,0 +1,287 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFInputTrustAuthority.BindAccess">
+    <summary>
+      <para>Notifies the input trust authority (ITA) that a requested action is about to be performed.</para>
+    </summary>
+    <param name="pParam">
+      <para>Pointer to an <see cref="MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS" /> structure that contains parameters for the <b>BindAccess</b> action.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Before calling this method, the Media Session calls <see cref="IMFInputTrustAuthority.RequestAccess" /> to request an action. The <b>BindAccess</b> method notifies the ITA that the action is definitely about to occur, so that the ITA can update its internal state as needed. If the method returns a failure code, the Media Session cancels the action.</para>
+    </remarks>
+    <seealso cref="IMFInputTrustAuthority" />
+  </member>
+  <member name="IMFInputTrustAuthority.GetDecrypter">
+    <summary>
+      <para>Retrieves a decrypter transform.</para>
+    </summary>
+    <param name="riid">
+      <para>Interface identifier (IID) of the interface being requested. Currently this value must be IID_IMFTransform, which requests the <see cref="IMFTransform" /> interface.</para>
+    </param>
+    <param name="ppv">
+      <para>Receives a pointer to the interface. The caller must release the interface.</para>
+    </param>
+    <returns>
+      <para>The method returns an HRESULT. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_NOINTERFACE</b>
+            </para>
+          </description>
+          <description>
+            <para>The decrypter does not support the requested interface.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_NOT_PROTECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>This input trust authority (ITA) does not provide a decrypter.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The decrypter should be created in a disabled state, where any calls to <see cref="IMFTransform.ProcessOutput" /> automatically fail. After the input trust authority (ITA) has verified that it is running inside the protected media path (PMP), the ITA should enable the decrypter.</para>
+      <para>An ITA is not required to provide a decrypter. If the source content is not encrypted, the method should return MF_E_NOT_PROTECTED. The PMP will then proceed without using a decrypter for that stream.</para>
+      <para>The ITA must create a new instance of its decrypter for each call to <b>GetDecrypter</b>. Do not return multiple references to the same decrypter. They must be separate instances because the Media Session might place them in two different branches of the topology.</para>
+    </remarks>
+    <seealso cref="IMFInputTrustAuthority" />
+  </member>
+  <member name="IMFInputTrustAuthority.GetPolicy">
+    <summary>
+      <para>Retrieves the policy that defines which output protection systems are allowed for this stream, and the configuration data for each protection system.</para>
+    </summary>
+    <param name="Action">
+      <para>The action that will be performed on this stream, specified as a member of the <see cref="MFPOLICYMANAGER_ACTION" /> enumeration.</para>
+    </param>
+    <param name="ppPolicy">
+      <para>Receives a pointer to the <see cref="IMFOutputPolicy" /> interface. The caller must release the interface.</para>
+    </param>
+    <returns>
+      <para>The method returns an HRESULT. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IMFInputTrustAuthority" />
+  </member>
+  <member name="IMFInputTrustAuthority.RequestAccess">
+    <summary>
+      <para>Requests permission to perform a specified action on the stream.</para>
+    </summary>
+    <param name="Action">
+      <para>The requested action, specified as a member of the <see cref="MFPOLICYMANAGER_ACTION" /> enumeration.</para>
+    </param>
+    <param name="ppContentEnablerActivate">
+      <para>Receives the value <b>NULL</b> or a pointer to the <see cref="IMFActivate" /> interface. The <b>IMFActivate</b> interface is used to create a content enabler object. The caller must release the interface. For more information, see Remarks.</para>
+    </param>
+    <returns>
+      <para>The method returns an HRESULT. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The user has permission to perform this action.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>NS_E_DRM_NEEDS_INDIVIDUALIZATION</b>
+            </para>
+          </description>
+          <description>
+            <para>The user must individualize the application.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>NS_E_LICENSE_REQUIRED</b>
+            </para>
+          </description>
+          <description>
+            <para>The user must obtain a license.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method verifies whether the user has permission to perform a specified action on the stream. The ITA does any work needed to verify the user's right to perform the action, such as checking licenses.</para>
+      <para>To verify the user's rights, the ITA might need to perform additional steps that require interaction with the user or consent from the user. For example, it might need to acquire a new license or individualize a DRM component. In that case, the ITA creates an activation object for a content enabler and returns the activation object's <see cref="IMFActivate" /> interface in the <i>ppContentEnablerActivate</i> parameter. The activation object is responsible for creating a content enabler that exposes the <see cref="IMFContentEnabler" /> interface. The content enabler is used as follows:</para>
+      <list type="number">
+        <item>
+          <description>
+            <para>The Media Session returns the <see cref="IMFActivate" /> pointer to the application.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>The application calls <see cref="IMFActivate.ActivateObject" /> to activate the content enabler.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>The application calls <see cref="IMFContentEnabler" /> methods to perform whatever actions are needed, such as individualization or obtaining a license. The content enabler object must encapsulate this functionality through the <b>IMFContentEnabler</b> interface.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>The Media Session calls <b>RequestAccess</b> again.</para>
+          </description>
+        </item>
+      </list>
+      <para>The return value signals whether the user has permission to perform the action:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <para>If the user already has permission to perform the action, the method returns S_OK and sets *<i>ppContentEnablerActivate</i> to <b>NULL</b>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>If the user does not have permission, the method returns a failure code and sets *<i>ppContentEnablerActivate</i> to <b>NULL</b>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>If the ITA must perform additional steps that require interaction with the user, the method returns a failure code and returns the content enabler's <see cref="IMFActivate" /> pointer in <i>ppContentEnablerActivate</i>.</para>
+          </description>
+        </item>
+      </list>
+      <para>The Media Session will not allow the action unless this method returns S_OK. However, a return value of S_OK does not guarantee that the action will be performed, because some other failure might occur after this method is called. When the action is definitely about to happen, the Media Session calls <see cref="IMFInputTrustAuthority.BindAccess" />.</para>
+      <para>A stream can go to multiple outputs, so this method might be called multiple times with different actions, once for every output.</para>
+    </remarks>
+    <seealso cref="IMFInputTrustAuthority" />
+  </member>
+  <member name="IMFInputTrustAuthority.Reset">
+    <summary>
+      <para>Resets the input trust authority (ITA) to its initial state.</para>
+    </summary>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>When this method is called, the ITA should disable any decrypter that was returned in the <see cref="IMFInputTrustAuthority.GetDecrypter" /> method.</para>
+    </remarks>
+    <seealso cref="IMFInputTrustAuthority" />
+  </member>
+  <member name="IMFInputTrustAuthority.UpdateAccess">
+    <summary>
+      <para>Notifies the input trust authority (ITA) when the number of output trust authorities (OTAs) that will perform a specified action has changed.</para>
+    </summary>
+    <param name="pParam">
+      <para>Pointer to an <see cref="MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS" /> structure that contains parameters for the <b>UpdateAccess</b> action.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The ITA can update its internal state if needed. If the method returns a failure code, the Media Session cancels the action.</para>
+    </remarks>
+    <seealso cref="IMFInputTrustAuthority" />
+  </member>
+  <member name="IMFInputTrustAuthority">
+    <summary>
+      <para>Enables other components in the protected media path (PMP) to use the input protection system provided by an input trust authorities (ITA). An ITA is a component that implements an input protection system for media content. ITAs expose the <b>IMFInputTrustAuthority</b> interface.</para>
+      <para>An ITA translates policy from the content's native format into a common format that is used by other PMP components. It also provides a decrypter, if one is needed to decrypt the stream.</para>
+      <para>The topology contains one ITA instance for every protected stream in the media source. The ITA is obtained from the media source by calling <see cref="IMFTrustedInput.GetInputTrustAuthority" />.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+  </member>
+</doc>

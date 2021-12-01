@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="COMPPOS">
+    <summary>
+      <para>Holds information about a component's position and size.</para>
+    </summary>
+  </member>
+  <member name="COMPPOS.dwSize">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The size of the structure.</para>
+    </summary>
+  </member>
+  <member name="COMPPOS.iLeft">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>The left edge of the top-left corner in screen coordinates. Set to COMPONENT_DEFAULT_LEFT to let the Shell decide the position.</para>
+    </summary>
+  </member>
+  <member name="COMPPOS.iTop">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>The top of the top-left corner in screen coordinates. Set to COMPONENT_DEFAULT_TOP to let the Shell decide the position.</para>
+    </summary>
+  </member>
+  <member name="COMPPOS.dwWidth">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The width, in pixels.</para>
+    </summary>
+  </member>
+  <member name="COMPPOS.dwHeight">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The height, in pixels.</para>
+    </summary>
+  </member>
+  <member name="COMPPOS.izIndex">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>The z-order of the component.</para>
+    </summary>
+  </member>
+  <member name="COMPPOS.fCanResize">
+    <summary>
+      <para>Type: <b>BOOL</b></para>
+      <para>Set to <b>TRUE</b> if the component is resizable, <b>FALSE</b> if not.</para>
+    </summary>
+  </member>
+  <member name="COMPPOS.fCanResizeX">
+    <summary>
+      <para>Type: <b>BOOL</b></para>
+      <para>Set to <b>TRUE</b> if the component is resizable in the x direction, <b>FALSE</b> if not.</para>
+    </summary>
+  </member>
+  <member name="COMPPOS.fCanResizeY">
+    <summary>
+      <para>Type: <b>BOOL</b></para>
+      <para>Set to <b>TRUE</b> if the component is resizable in the y direction, <b>FALSE</b> if not.</para>
+    </summary>
+  </member>
+  <member name="COMPPOS.iPreferredLeftPercent">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>The left edge of the upper-left corner as a percentage of screen width.</para>
+    </summary>
+  </member>
+  <member name="COMPPOS.iPreferredTopPercent">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>The top of the upper-left corner as a percentage of screen width.</para>
+    </summary>
+  </member>
+</doc>

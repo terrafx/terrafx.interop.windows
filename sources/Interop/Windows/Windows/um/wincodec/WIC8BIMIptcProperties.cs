@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WIC8BIMIptcProperties.xml' path='doc/member[@name="WIC8BIMIptcProperties"]/*' />
 public enum WIC8BIMIptcProperties : uint
 {
+    /// <include file='WIC8BIMIptcProperties.xml' path='doc/member[@name="WIC8BIMIptcProperties.WIC8BIMIptcPString"]/*' />
     WIC8BIMIptcPString = 0,
+
+    /// <include file='WIC8BIMIptcProperties.xml' path='doc/member[@name="WIC8BIMIptcProperties.WIC8BIMIptcEmbeddedIPTC"]/*' />
     WIC8BIMIptcEmbeddedIPTC = 0x1,
+
+    /// <include file='WIC8BIMIptcProperties.xml' path='doc/member[@name="WIC8BIMIptcProperties.WIC8BIMIptcProperties_FORCE_DWORD"]/*' />
     WIC8BIMIptcProperties_FORCE_DWORD = 0x7fffffff,
 }

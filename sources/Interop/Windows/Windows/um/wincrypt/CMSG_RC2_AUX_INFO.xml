@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CMSG_RC2_AUX_INFO">
+    <summary>
+      <para>The <b>CMSG_RC2_AUX_INFO</b> structure contains the bit length of the key for RC2 encryption algorithms. The <b>pvEncryptionAuxInfo</b> member in <see cref="CMSG_ENVELOPED_ENCODE_INFO" /> can be set to point to an instance of this structure.
+<b>Note</b>  This structure is only used when the other members of a <see cref="CMSG_ENVELOPED_ENCODE_INFO" /> structure indicate that a default key length of 40 bits is to be used with an RC2 encryption algorithm. For more information, see
+<b>CMSG_ENVELOPED_ENCODE_INFO</b>.</para>
+    </summary>
+    <seealso cref="CMSG_ENVELOPED_ENCODE_INFO" />
+    <seealso cref="CRYPT_ALGORITHM_IDENTIFIER" />
+  </member>
+  <member name="CMSG_RC2_AUX_INFO.cbSize">
+    <summary>
+      <para>Size of this structure in bytes.</para>
+    </summary>
+  </member>
+  <member name="CMSG_RC2_AUX_INFO.dwBitLen">
+    <summary>
+      <para>Specifies the RC2 effective key length. Currently 40-, 64-, and 128-bit lengths are supported.</para>
+      <para>
+        <b>Note</b>  This value is the actual key bit length to be used. The values of the <b>dwVersion</b> member of a
+<see cref="CRYPT_RC2_CBC_PARAMETERS" /> structure to indicate the use of a specific key length is not that specific key length. For example, the <b>dwVersion</b> value that indicates the use of a 128-bit key length is CRYPT_RC2_128BIT_VERSION, which is defined as 58, not 128 bits.</para>
+      <para>
+        <b>Note</b>  If <b>dwBitLen</b> is set to CMSG_SP3_COMPATIBLE_ENCRYPT_FLAG, SP3 compatible encryption is done and the 40-bit default length is ignored.</para>
+    </summary>
+  </member>
+</doc>

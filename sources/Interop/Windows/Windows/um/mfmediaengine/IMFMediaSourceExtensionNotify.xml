@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFMediaSourceExtensionNotify.OnSourceClose">
+    <summary>
+      <para>Used to indicate that the media source has closed.</para>
+    </summary>
+    <seealso cref="IMFMediaSourceExtensionNotify" />
+  </member>
+  <member name="IMFMediaSourceExtensionNotify.OnSourceEnded">
+    <summary>
+      <para>Used to indicate that the media source has ended.</para>
+    </summary>
+    <seealso cref="IMFMediaSourceExtensionNotify" />
+  </member>
+  <member name="IMFMediaSourceExtensionNotify.OnSourceOpen">
+    <summary>
+      <para>Used to indicate that the  media source has opened.</para>
+    </summary>
+    <seealso cref="IMFMediaSourceExtensionNotify" />
+  </member>
+  <member name="IMFMediaSourceExtensionNotify">
+    <summary>
+      <para>Provides functionality for raising events associated with <see cref="IMFMediaSourceExtension" />.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+  </member>
+</doc>

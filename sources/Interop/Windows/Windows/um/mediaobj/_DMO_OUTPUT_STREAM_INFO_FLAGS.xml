@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="_DMO_OUTPUT_STREAM_INFO_FLAGS">
+    <summary>
+      <para>The <code>DMO_OUTPUT_STREAM_INFO_FLAGS</code> enumeration defines flags that describe an output stream.</para>
+    </summary>
+    <remarks>
+      <para>The DMO_OUTPUT_STREAMF_DISCARDABLE and DMO_OUTPUT_STREAMF_OPTIONAL flags are mutually exclusive. The DMO can set one of these flags (or neither), but not both.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dmo-enumerated-types">DMO Enumerated Types</seealso>
+    <seealso cref="IMediaObject.GetOutputStreamInfo" />
+  </member>
+  <member name="_DMO_OUTPUT_STREAM_INFO_FLAGS.DMO_OUTPUT_STREAMF_WHOLE_SAMPLES">
+    <summary>
+      <para>The stream contains whole samples. Samples do not span multiple buffers, and buffers do not contain partial samples.</para>
+    </summary>
+  </member>
+  <member name="_DMO_OUTPUT_STREAM_INFO_FLAGS.DMO_OUTPUT_STREAMF_SINGLE_SAMPLE_PER_BUFFER">
+    <summary>
+      <para>Each buffer contains exactly one sample.</para>
+    </summary>
+  </member>
+  <member name="_DMO_OUTPUT_STREAM_INFO_FLAGS.DMO_OUTPUT_STREAMF_FIXED_SAMPLE_SIZE">
+    <summary>
+      <para>All the samples in this stream are the same size.</para>
+    </summary>
+  </member>
+  <member name="_DMO_OUTPUT_STREAM_INFO_FLAGS.DMO_OUTPUT_STREAMF_DISCARDABLE">
+    <summary>
+      <para>The stream is discardable. Within calls to <see cref="IMediaObject.ProcessOutput" />, the DMO can discard data for this stream without copying it to an output buffer.</para>
+    </summary>
+  </member>
+  <member name="_DMO_OUTPUT_STREAM_INFO_FLAGS.DMO_OUTPUT_STREAMF_OPTIONAL">
+    <summary>
+      <para>The stream is optional. An optional stream is discardable. Also, the application can ignore this stream entirely; it does not have to set the media type for the stream. Optional streams generally contain additional information, or data not needed by all applications.</para>
+    </summary>
+  </member>
+</doc>

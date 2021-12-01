@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DOMDragEvent.xml' path='doc/member[@name="DOMDragEvent"]/*' />
 [Guid("30510762-98B5-11CF-BB82-00AA00BDCE0B")]
 public partial struct DOMDragEvent
 {

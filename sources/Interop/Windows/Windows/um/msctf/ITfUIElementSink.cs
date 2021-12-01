@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITfUIElementSink.xml' path='doc/member[@name="ITfUIElementSink"]/*' />
 [Guid("EA1EA136-19DF-11D7-A6D2-00065B84435C")]
 [NativeTypeName("struct ITfUIElementSink : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITfUIElementSink : ITfUIElementSink.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITfUIElementSink : ITfUIElementSink.Interface
         return ((delegate* unmanaged<ITfUIElementSink*, Guid*, void**, int>)(lpVtbl[0]))((ITfUIElementSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITfUIElementSink : ITfUIElementSink.Interface
         return ((delegate* unmanaged<ITfUIElementSink*, uint>)(lpVtbl[1]))((ITfUIElementSink*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITfUIElementSink : ITfUIElementSink.Interface
         return ((delegate* unmanaged<ITfUIElementSink*, uint>)(lpVtbl[2]))((ITfUIElementSink*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITfUIElementSink.xml' path='doc/member[@name="ITfUIElementSink.BeginUIElement"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT BeginUIElement([NativeTypeName("DWORD")] uint dwUIElementId, BOOL* pbShow)
@@ -46,6 +51,7 @@ public unsafe partial struct ITfUIElementSink : ITfUIElementSink.Interface
         return ((delegate* unmanaged<ITfUIElementSink*, uint, BOOL*, int>)(lpVtbl[3]))((ITfUIElementSink*)Unsafe.AsPointer(ref this), dwUIElementId, pbShow);
     }
 
+    /// <include file='ITfUIElementSink.xml' path='doc/member[@name="ITfUIElementSink.UpdateUIElement"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT UpdateUIElement([NativeTypeName("DWORD")] uint dwUIElementId)
@@ -53,6 +59,7 @@ public unsafe partial struct ITfUIElementSink : ITfUIElementSink.Interface
         return ((delegate* unmanaged<ITfUIElementSink*, uint, int>)(lpVtbl[4]))((ITfUIElementSink*)Unsafe.AsPointer(ref this), dwUIElementId);
     }
 
+    /// <include file='ITfUIElementSink.xml' path='doc/member[@name="ITfUIElementSink.EndUIElement"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT EndUIElement([NativeTypeName("DWORD")] uint dwUIElementId)

@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='eAVEncMPALayer.xml' path='doc/member[@name="eAVEncMPALayer"]/*' />
 public enum eAVEncMPALayer
 {
+    /// <include file='eAVEncMPALayer.xml' path='doc/member[@name="eAVEncMPALayer.eAVEncMPALayer_1"]/*' />
     eAVEncMPALayer_1 = 1,
+
+    /// <include file='eAVEncMPALayer.xml' path='doc/member[@name="eAVEncMPALayer.eAVEncMPALayer_2"]/*' />
     eAVEncMPALayer_2 = 2,
+
+    /// <include file='eAVEncMPALayer.xml' path='doc/member[@name="eAVEncMPALayer.eAVEncMPALayer_3"]/*' />
     eAVEncMPALayer_3 = 3,
 }

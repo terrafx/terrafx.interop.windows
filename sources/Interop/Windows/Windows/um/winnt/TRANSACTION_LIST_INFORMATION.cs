@@ -9,14 +9,18 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TRANSACTION_LIST_INFORMATION.xml' path='doc/member[@name="TRANSACTION_LIST_INFORMATION"]/*' />
 public partial struct TRANSACTION_LIST_INFORMATION
 {
+    /// <include file='TRANSACTION_LIST_INFORMATION.xml' path='doc/member[@name="TRANSACTION_LIST_INFORMATION.NumberOfTransactions"]/*' />
     [NativeTypeName("DWORD")]
     public uint NumberOfTransactions;
 
+    /// <include file='TRANSACTION_LIST_INFORMATION.xml' path='doc/member[@name="TRANSACTION_LIST_INFORMATION.TransactionInformation"]/*' />
     [NativeTypeName("TRANSACTION_LIST_ENTRY [1]")]
     public _TransactionInformation_e__FixedBuffer TransactionInformation;
 
+    /// <include file='_TransactionInformation_e__FixedBuffer.xml' path='doc/member[@name="_TransactionInformation_e__FixedBuffer"]/*' />
     public partial struct _TransactionInformation_e__FixedBuffer
     {
         public TRANSACTION_LIST_ENTRY e0;

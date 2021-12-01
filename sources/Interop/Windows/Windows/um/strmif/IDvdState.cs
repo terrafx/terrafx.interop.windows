@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IDvdState.xml' path='doc/member[@name="IDvdState"]/*' />
 [Guid("86303D6D-1C4A-4087-AB42-F711167048EF")]
 [NativeTypeName("struct IDvdState : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IDvdState : IDvdState.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IDvdState : IDvdState.Interface
         return ((delegate* unmanaged<IDvdState*, Guid*, void**, int>)(lpVtbl[0]))((IDvdState*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IDvdState : IDvdState.Interface
         return ((delegate* unmanaged<IDvdState*, uint>)(lpVtbl[1]))((IDvdState*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IDvdState : IDvdState.Interface
         return ((delegate* unmanaged<IDvdState*, uint>)(lpVtbl[2]))((IDvdState*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDvdState.xml' path='doc/member[@name="IDvdState.GetDiscID"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetDiscID([NativeTypeName("ULONGLONG *")] ulong* pullUniqueID)
@@ -46,6 +51,7 @@ public unsafe partial struct IDvdState : IDvdState.Interface
         return ((delegate* unmanaged<IDvdState*, ulong*, int>)(lpVtbl[3]))((IDvdState*)Unsafe.AsPointer(ref this), pullUniqueID);
     }
 
+    /// <include file='IDvdState.xml' path='doc/member[@name="IDvdState.GetParentalLevel"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetParentalLevel([NativeTypeName("ULONG *")] uint* pulParentalLevel)

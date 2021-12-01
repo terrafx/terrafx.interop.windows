@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IAMovieSetup.Register">
+    <summary>
+      <para>
+        <b>Note</b>  The <b>IAMovieSetup</b> interface is deprecated. Use the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/amoviedllregisterserver2">AMovieDllRegisterServer2</a> function instead.</para>
+      <para>Adds the filter to the registry.</para>
+    </summary>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value.</para>
+    </returns>
+    <remarks>
+      <para>This method registers the filter, its pins, and the media type associated with the pins. It should be implemented to use <see cref="IFilterMapper" /> methods to accomplish this. See the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/cbasefilter-register">CBaseFilter.Register</a> member function for a description of its implementation.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMovieSetup Interface" />
+  </member>
+  <member name="IAMovieSetup.Unregister">
+    <summary>
+      <para>
+        <b>Note</b>  The <b>IAMovieSetup</b> interface is deprecated. Use the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/amoviedllregisterserver2">AMovieDllRegisterServer2</a> function instead.</para>
+      <para>Removes the filter from the registry.</para>
+    </summary>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value.</para>
+    </returns>
+    <remarks>
+      <para>This method should be implemented to use the <see cref="IFilterMapper.UnregisterFilter" /> method to remove the filter from the registry. This effectively removes the pins and media types as well.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMovieSetup Interface" />
+  </member>
+  <member name="IAMovieSetup">
+    <summary>
+      <para>
+        <b>Note</b>  This interface has been deprecated. It is used by two obsolete functions, <a href="https://docs.microsoft.com//windows/desktop/DirectShow/amoviedllregisterserver">AMovieDllRegisterServer</a> and <a href="https://docs.microsoft.com//windows/desktop/DirectShow/amoviedllunregisterserver">AMovieDllUnregisterServer</a>. These functions are now replaced by <a href="https://docs.microsoft.com//windows/desktop/DirectShow/amoviedllregisterserver2">AMovieDllRegisterServer2</a>, which does not require <b>IAMovieSetup</b>. However, <b>IAMovieSetup</b> will continue to be supported for backward compatibility with existing applications.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/deprecated-interfaces">Deprecated Interfaces</seealso>
+  </member>
+</doc>

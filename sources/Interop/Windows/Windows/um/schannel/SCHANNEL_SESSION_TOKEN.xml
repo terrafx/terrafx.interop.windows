@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SCHANNEL_SESSION_TOKEN">
+    <summary>
+      <para>Specifies whether reconnections are enabled for an authentication session created by calling either the <see cref="InitializeSecurityContext (Schannel)" /> function or the <see cref="AcceptSecurityContext (Schannel)" />  function.</para>
+    </summary>
+    <remarks>
+      <para>Add a session token to a client context by using this structure as the value of the <i>pInput</i> parameter in a call to the <see cref="ApplyControlToken" /> function.</para>
+      <para>This API only applies to Session ID-based reconnects.</para>
+    </remarks>
+  </member>
+  <member name="SCHANNEL_SESSION_TOKEN.dwTokenType">
+    <summary>
+      <para>Specifies the type of this structure. Set the value of this member to <b>SCHANNEL_SESSION</b>.</para>
+    </summary>
+  </member>
+  <member name="SCHANNEL_SESSION_TOKEN.dwFlags">
+    <summary>
+      <para>Specifies whether reconnections are to be enabled or disabled. This member must be one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>SSL_SESSION_ENABLE_RECONNECTS</b>
+                </description>
+              </item>
+              <item>
+                <description>1</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Reconnections are enabled.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>SSL_SESSION_DISABLE_RECONNECTS</b>
+                </description>
+              </item>
+              <item>
+                <description>2</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Reconnections are disabled.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+</doc>

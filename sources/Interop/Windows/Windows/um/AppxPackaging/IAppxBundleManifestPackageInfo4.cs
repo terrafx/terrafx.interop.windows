@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAppxBundleManifestPackageInfo4.xml' path='doc/member[@name="IAppxBundleManifestPackageInfo4"]/*' />
 [Guid("5DA6F13D-A8A7-4532-857C-1393D659371D")]
 [NativeTypeName("struct IAppxBundleManifestPackageInfo4 : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IAppxBundleManifestPackageInfo4 : IAppxBundleManife
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IAppxBundleManifestPackageInfo4 : IAppxBundleManife
         return ((delegate* unmanaged<IAppxBundleManifestPackageInfo4*, Guid*, void**, int>)(lpVtbl[0]))((IAppxBundleManifestPackageInfo4*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IAppxBundleManifestPackageInfo4 : IAppxBundleManife
         return ((delegate* unmanaged<IAppxBundleManifestPackageInfo4*, uint>)(lpVtbl[1]))((IAppxBundleManifestPackageInfo4*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IAppxBundleManifestPackageInfo4 : IAppxBundleManife
         return ((delegate* unmanaged<IAppxBundleManifestPackageInfo4*, uint>)(lpVtbl[2]))((IAppxBundleManifestPackageInfo4*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAppxBundleManifestPackageInfo4.xml' path='doc/member[@name="IAppxBundleManifestPackageInfo4.GetIsStub"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetIsStub(BOOL* isStub)

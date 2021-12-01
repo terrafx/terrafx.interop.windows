@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IOleCache.xml' path='doc/member[@name="IOleCache"]/*' />
 [Guid("0000011E-0000-0000-C000-000000000046")]
 [NativeTypeName("struct IOleCache : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IOleCache : IOleCache.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IOleCache : IOleCache.Interface
         return ((delegate* unmanaged<IOleCache*, Guid*, void**, int>)(lpVtbl[0]))((IOleCache*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IOleCache : IOleCache.Interface
         return ((delegate* unmanaged<IOleCache*, uint>)(lpVtbl[1]))((IOleCache*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IOleCache : IOleCache.Interface
         return ((delegate* unmanaged<IOleCache*, uint>)(lpVtbl[2]))((IOleCache*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IOleCache.xml' path='doc/member[@name="IOleCache.Cache"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Cache(FORMATETC* pformatetc, [NativeTypeName("DWORD")] uint advf, [NativeTypeName("DWORD *")] uint* pdwConnection)
@@ -46,6 +51,7 @@ public unsafe partial struct IOleCache : IOleCache.Interface
         return ((delegate* unmanaged<IOleCache*, FORMATETC*, uint, uint*, int>)(lpVtbl[3]))((IOleCache*)Unsafe.AsPointer(ref this), pformatetc, advf, pdwConnection);
     }
 
+    /// <include file='IOleCache.xml' path='doc/member[@name="IOleCache.Uncache"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Uncache([NativeTypeName("DWORD")] uint dwConnection)
@@ -53,6 +59,7 @@ public unsafe partial struct IOleCache : IOleCache.Interface
         return ((delegate* unmanaged<IOleCache*, uint, int>)(lpVtbl[4]))((IOleCache*)Unsafe.AsPointer(ref this), dwConnection);
     }
 
+    /// <include file='IOleCache.xml' path='doc/member[@name="IOleCache.EnumCache"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT EnumCache(IEnumSTATDATA** ppenumSTATDATA)
@@ -60,6 +67,7 @@ public unsafe partial struct IOleCache : IOleCache.Interface
         return ((delegate* unmanaged<IOleCache*, IEnumSTATDATA**, int>)(lpVtbl[5]))((IOleCache*)Unsafe.AsPointer(ref this), ppenumSTATDATA);
     }
 
+    /// <include file='IOleCache.xml' path='doc/member[@name="IOleCache.InitCache"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT InitCache(IDataObject* pDataObject)
@@ -67,6 +75,7 @@ public unsafe partial struct IOleCache : IOleCache.Interface
         return ((delegate* unmanaged<IOleCache*, IDataObject*, int>)(lpVtbl[6]))((IOleCache*)Unsafe.AsPointer(ref this), pDataObject);
     }
 
+    /// <include file='IOleCache.xml' path='doc/member[@name="IOleCache.SetData"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT SetData(FORMATETC* pformatetc, STGMEDIUM* pmedium, BOOL fRelease)

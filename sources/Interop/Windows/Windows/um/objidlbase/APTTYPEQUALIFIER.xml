@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="APTTYPEQUALIFIER">
+    <summary>
+      <para>Specifies the set of possible COM apartment type qualifiers.</para>
+    </summary>
+    <seealso cref="CoGetApartmentType" />
+  </member>
+  <member name="APTTYPEQUALIFIER.APTTYPEQUALIFIER_NONE">
+    <summary>
+      <para>No qualifier information for the current COM apartment type is available.</para>
+    </summary>
+  </member>
+  <member name="APTTYPEQUALIFIER.APTTYPEQUALIFIER_IMPLICIT_MTA">
+    <summary>
+      <para>This qualifier is only valid when the <i>pAptType</i> parameter of the <see cref="CoGetApartmentType" /> function specifies APTTYPE_MTA on return. A thread has an implicit MTA apartment type if it does not initialize the COM apartment itself, and if another thread has already initialized the MTA in the process. This qualifier informs the API caller that the MTA of the thread is implicitly inherited from other threads and is not initialized directly.</para>
+    </summary>
+  </member>
+  <member name="APTTYPEQUALIFIER.APTTYPEQUALIFIER_NA_ON_MTA">
+    <summary>
+      <para>This qualifier is only valid when the <i>pAptType</i> parameter of the <see cref="CoGetApartmentType" /> function contains APTTYPE_NA on return. When an MTA thread creates or invokes a COM in-process object using the "Neutral" threading model, the COM apartment type of the thread switches from MTA to a Neutral apartment type. This qualifier informs the API caller that the thread has switched from the MTA apartment type to the NA type.</para>
+    </summary>
+  </member>
+  <member name="APTTYPEQUALIFIER.APTTYPEQUALIFIER_NA_ON_STA">
+    <summary>
+      <para>This qualifier is only valid when the <i>pAptType</i> parameter of the <see cref="CoGetApartmentType" /> function contains APTTYPE_NA on return. When an STA thread creates or invokes a COM in-process object using the "Neutral" threading model, the COM apartment type of the thread switches from STA to a Neutral apartment type. This qualifier informs the API caller that the thread has switched from the STA apartment type to the NA type.</para>
+    </summary>
+  </member>
+  <member name="APTTYPEQUALIFIER.APTTYPEQUALIFIER_NA_ON_IMPLICIT_MTA">
+    <summary>
+      <para>This qualifier is only valid when the <i>pAptType</i> parameter of the <see cref="CoGetApartmentType" /> function contains APTTYPE_NA on return. When an implicit MTA thread creates or invokes a COM in-process object using the "Neutral" threading model, the COM apartment type of the thread switches from the implicit MTA type to a Neutral apartment type. This qualifier informs the API caller that the thread has switched from the implicit MTA apartment type to the NA type.</para>
+    </summary>
+  </member>
+  <member name="APTTYPEQUALIFIER.APTTYPEQUALIFIER_NA_ON_MAINSTA">
+    <summary>
+      <para>This qualifier is only valid when the <i>pAptType</i> parameter of the <see cref="CoGetApartmentType" /> function contains APTTYPE_NA on return. When the main STA thread creates or invokes a COM in-process object using the "Neutral" threading model, the COM apartment type of the thread switches from the main STA type to a Neutral apartment type. This qualifier informs the API caller that the thread has switched from the main STA apartment type to the NA type.</para>
+    </summary>
+  </member>
+  <member name="APTTYPEQUALIFIER.APTTYPEQUALIFIER_APPLICATION_STA">
+    <summary></summary>
+  </member>
+  <member name="APTTYPEQUALIFIER.APTTYPEQUALIFIER_RESERVED_1">
+    <summary></summary>
+  </member>
+</doc>

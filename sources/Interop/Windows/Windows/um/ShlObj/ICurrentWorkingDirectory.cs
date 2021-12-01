@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ICurrentWorkingDirectory.xml' path='doc/member[@name="ICurrentWorkingDirectory"]/*' />
 [Guid("91956D21-9276-11D1-921A-006097DF5BD4")]
 [NativeTypeName("struct ICurrentWorkingDirectory : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ICurrentWorkingDirectory : ICurrentWorkingDirectory
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ICurrentWorkingDirectory : ICurrentWorkingDirectory
         return ((delegate* unmanaged<ICurrentWorkingDirectory*, Guid*, void**, int>)(lpVtbl[0]))((ICurrentWorkingDirectory*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ICurrentWorkingDirectory : ICurrentWorkingDirectory
         return ((delegate* unmanaged<ICurrentWorkingDirectory*, uint>)(lpVtbl[1]))((ICurrentWorkingDirectory*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ICurrentWorkingDirectory : ICurrentWorkingDirectory
         return ((delegate* unmanaged<ICurrentWorkingDirectory*, uint>)(lpVtbl[2]))((ICurrentWorkingDirectory*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ICurrentWorkingDirectory.xml' path='doc/member[@name="ICurrentWorkingDirectory.GetDirectory"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetDirectory([NativeTypeName("PWSTR")] ushort* pwzPath, [NativeTypeName("DWORD")] uint cchSize)
@@ -46,6 +51,7 @@ public unsafe partial struct ICurrentWorkingDirectory : ICurrentWorkingDirectory
         return ((delegate* unmanaged<ICurrentWorkingDirectory*, ushort*, uint, int>)(lpVtbl[3]))((ICurrentWorkingDirectory*)Unsafe.AsPointer(ref this), pwzPath, cchSize);
     }
 
+    /// <include file='ICurrentWorkingDirectory.xml' path='doc/member[@name="ICurrentWorkingDirectory.SetDirectory"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetDirectory([NativeTypeName("PCWSTR")] ushort* pwzPath)

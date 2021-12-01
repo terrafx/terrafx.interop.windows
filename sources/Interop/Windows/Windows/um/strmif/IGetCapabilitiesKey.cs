@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IGetCapabilitiesKey.xml' path='doc/member[@name="IGetCapabilitiesKey"]/*' />
 [Guid("A8809222-07BB-48EA-951C-33158100625B")]
 [NativeTypeName("struct IGetCapabilitiesKey : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IGetCapabilitiesKey : IGetCapabilitiesKey.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IGetCapabilitiesKey : IGetCapabilitiesKey.Interface
         return ((delegate* unmanaged<IGetCapabilitiesKey*, Guid*, void**, int>)(lpVtbl[0]))((IGetCapabilitiesKey*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IGetCapabilitiesKey : IGetCapabilitiesKey.Interface
         return ((delegate* unmanaged<IGetCapabilitiesKey*, uint>)(lpVtbl[1]))((IGetCapabilitiesKey*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IGetCapabilitiesKey : IGetCapabilitiesKey.Interface
         return ((delegate* unmanaged<IGetCapabilitiesKey*, uint>)(lpVtbl[2]))((IGetCapabilitiesKey*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IGetCapabilitiesKey.xml' path='doc/member[@name="IGetCapabilitiesKey.GetCapabilitiesKey"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetCapabilitiesKey(HKEY* pHKey)

@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDockingWindowFrame.AddToolbar">
+    <summary>
+      <para>Adds the specified <see cref="IDockingWindow" /> object to the frame.</para>
+    </summary>
+    <param name="punkSrc">
+      <para>Type: <b><see cref="IUnknown" />*</b></para>
+      <para>A pointer to the <see cref="IDockingWindow" /> object to be added.</para>
+    </param>
+    <param name="pwszItem">
+      <para>Type: <b>PCWSTR</b></para>
+      <para>A pointer to a null-terminated, Unicode, application-defined string that is used to identify the docking window object.</para>
+    </param>
+    <param name="dwAddFlags">
+      <para>Type: <b>DWORD</b></para>
+      <para>Flags that apply to the docking window object that is being added. One or more of the following values.</para>
+      <h4>0</h4>
+      <para>The docking window is a regular, visible docking window.</para>
+      <h4>DWFAF_HIDDEN (0x0001)</h4>
+      <para>The docking window is added but is not shown. To show it at a later time, call its <see cref="IDockingWindow.ShowDW" /> method.</para>
+      <h4>DWFAF_GROUP1 (0x0002)</h4>
+      <para>Reserved. Do not use.</para>
+      <h4>DWFAF_GROUP2 (0x0004)</h4>
+      <para>Reserved. Do not use.</para>
+      <h4>DWFAF_AUTOHIDE (0x0010)</h4>
+      <para>Reserved. Do not use.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDockingWindowFrame" />
+    <seealso cref="IDockingWindowSite" />
+  </member>
+  <member name="IDockingWindowFrame.FindToolbar">
+    <summary>
+      <para>Finds the specified <see cref="IDockingWindow" /> object in the toolbar frame and returns an interface pointer to it.</para>
+    </summary>
+    <param name="pwszItem">
+      <para>Type: <b>PCWSTR</b></para>
+      <para>A pointer to a null-terminated, Unicode, application-defined string used to identify the object. This is the same string that was passed to the <see cref="AddToolbar" /> method.</para>
+    </param>
+    <param name="riid">
+      <para>Type: <b>REFIID</b></para>
+      <para>A reference to the desired interface ID. This is typically IID_IDockingWindow.</para>
+    </param>
+    <param name="ppv">
+      <para>Type: <b>void**</b></para>
+      <para>When this method returns, contains the interface pointer requested in <i>riid</i>. This is typically <see cref="IDockingWindow" />. If an error occurs, this value receives a null pointer.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDockingWindowFrame" />
+    <seealso cref="IDockingWindowSite" />
+  </member>
+  <member name="IDockingWindowFrame.RemoveToolbar">
+    <summary>
+      <para>Removes the specified <see cref="IDockingWindow" /> from the toolbar frame.</para>
+    </summary>
+    <param name="punkSrc">
+      <para>Type: <b><see cref="IUnknown" />*</b></para>
+      <para>Pointer to the <see cref="IDockingWindow" /> object to be removed. The <see cref="IDockingWindowFrame" /> implementation calls the <see cref="IDockingWindow.CloseDW" /> and <see cref="IDockingWindow.Release" /> methods.</para>
+    </param>
+    <param name="dwRemoveFlags">
+      <para>Type: <b>DWORD</b></para>
+      <para>Option flags for removing the docking window object. This parameter can be one or more of the following values:</para>
+      <h4>DWFRF_NORMAL (0x0000)</h4>
+      <para>The default delete processing is performed.</para>
+      <h4>DWFRF_DELETECONFIGDATA (0x0001)</h4>
+      <para>In addition to deleting the toolbar, any configuration data is removed as well.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDockingWindowFrame" />
+    <seealso cref="IDockingWindowSite" />
+  </member>
+  <member name="IDockingWindowFrame">
+    <summary>
+      <para>Exposes methods that support the addition of <see cref="IDockingWindow" /> objects to a frame. Implemented by the browser.</para>
+    </summary>
+    <remarks>
+      <para>
+        <b>IDockingWindowFrame</b> is derived from <see cref="IOleWindow" />. See the following topics for details on these methods also available to <b>IDockingWindowFrame</b> through that inheritance.</para>
+      <list type="table">
+        <listheader>
+          <description>Additional IDockingWindowFrame Methods</description>
+        </listheader>
+        <item>
+          <description>
+            <see cref="IOleWindow.GetWindow" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IOleWindow.ContextSensitiveHelp" />
+          </description>
+        </item>
+      </list>
+      <h3>When to Implement</h3>
+      <para>You do not typically implement the <b>IDockingWindowFrame</b> interface. The Shell browser implements this interface to support docked windows inside the browser frame.</para>
+      <h3>When to Use</h3>
+      <para>You use <b>IDockingWindowFrame</b> to add, find, and remove docking window objects in a browser frame.</para>
+    </remarks>
+  </member>
+</doc>

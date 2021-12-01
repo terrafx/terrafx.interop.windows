@@ -7,15 +7,19 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CERT_STRONG_SIGN_SERIALIZED_INFO.xml' path='doc/member[@name="CERT_STRONG_SIGN_SERIALIZED_INFO"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public unsafe partial struct CERT_STRONG_SIGN_SERIALIZED_INFO
 {
+    /// <include file='CERT_STRONG_SIGN_SERIALIZED_INFO.xml' path='doc/member[@name="CERT_STRONG_SIGN_SERIALIZED_INFO.dwFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFlags;
 
+    /// <include file='CERT_STRONG_SIGN_SERIALIZED_INFO.xml' path='doc/member[@name="CERT_STRONG_SIGN_SERIALIZED_INFO.pwszCNGSignHashAlgids"]/*' />
     [NativeTypeName("LPWSTR")]
     public ushort* pwszCNGSignHashAlgids;
 
+    /// <include file='CERT_STRONG_SIGN_SERIALIZED_INFO.xml' path='doc/member[@name="CERT_STRONG_SIGN_SERIALIZED_INFO.pwszCNGPubKeyMinBitLengths"]/*' />
     [NativeTypeName("LPWSTR")]
     public ushort* pwszCNGPubKeyMinBitLengths;
 }

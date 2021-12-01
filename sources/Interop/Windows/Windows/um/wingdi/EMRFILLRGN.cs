@@ -5,18 +5,24 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='EMRFILLRGN.xml' path='doc/member[@name="EMRFILLRGN"]/*' />
 public unsafe partial struct EMRFILLRGN
 {
+    /// <include file='EMRFILLRGN.xml' path='doc/member[@name="EMRFILLRGN.emr"]/*' />
     public EMR emr;
 
+    /// <include file='EMRFILLRGN.xml' path='doc/member[@name="EMRFILLRGN.rclBounds"]/*' />
     public RECTL rclBounds;
 
+    /// <include file='EMRFILLRGN.xml' path='doc/member[@name="EMRFILLRGN.cbRgnData"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbRgnData;
 
+    /// <include file='EMRFILLRGN.xml' path='doc/member[@name="EMRFILLRGN.ihBrush"]/*' />
     [NativeTypeName("DWORD")]
     public uint ihBrush;
 
+    /// <include file='EMRFILLRGN.xml' path='doc/member[@name="EMRFILLRGN.RgnData"]/*' />
     [NativeTypeName("BYTE [1]")]
     public fixed byte RgnData[1];
 }

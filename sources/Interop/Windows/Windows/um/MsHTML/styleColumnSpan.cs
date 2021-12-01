@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='styleColumnSpan.xml' path='doc/member[@name="styleColumnSpan"]/*' />
 public enum styleColumnSpan
 {
+    /// <include file='styleColumnSpan.xml' path='doc/member[@name="styleColumnSpan.styleColumnSpanNone"]/*' />
     styleColumnSpanNone = 0,
+
+    /// <include file='styleColumnSpan.xml' path='doc/member[@name="styleColumnSpan.styleColumnSpanAll"]/*' />
     styleColumnSpanAll = 1,
+
+    /// <include file='styleColumnSpan.xml' path='doc/member[@name="styleColumnSpan.styleColumnSpanOne"]/*' />
     styleColumnSpanOne = 2,
+
+    /// <include file='styleColumnSpan.xml' path='doc/member[@name="styleColumnSpan.styleColumnSpanNotSet"]/*' />
     styleColumnSpanNotSet = 3,
+
+    /// <include file='styleColumnSpan.xml' path='doc/member[@name="styleColumnSpan.styleColumnSpan_Max"]/*' />
     styleColumnSpan_Max = 2147483647,
 }

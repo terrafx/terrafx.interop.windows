@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="EXTRASEARCH">
+    <summary>
+      <para>Used by an <see cref="IEnumExtraSearch" /> enumerator object to return information on the search objects supported by a Shell Folder object.</para>
+    </summary>
+  </member>
+  <member name="EXTRASEARCH.guidSearch">
+    <summary>
+      <para>Type: <b>GUID</b></para>
+      <para>A search object's GUID.</para>
+    </summary>
+  </member>
+  <member name="EXTRASEARCH.wszFriendlyName">
+    <summary>
+      <para>Type: <b>WCHAR[80]</b></para>
+      <para>A Unicode string containing the search object's friendly name. It will be used to identify the search engine on the Search Assistant menu.</para>
+    </summary>
+  </member>
+  <member name="EXTRASEARCH.wszUrl">
+    <summary>
+      <para>Type: <b>WCHAR[2084]</b></para>
+      <para>The URL that will be displayed in the search pane.</para>
+    </summary>
+  </member>
+</doc>

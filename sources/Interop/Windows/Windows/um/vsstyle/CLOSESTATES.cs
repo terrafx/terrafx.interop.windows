@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CLOSESTATES.xml' path='doc/member[@name="CLOSESTATES"]/*' />
 public enum CLOSESTATES
 {
+    /// <include file='CLOSESTATES.xml' path='doc/member[@name="CLOSESTATES.TTCS_NORMAL"]/*' />
     TTCS_NORMAL = 1,
+
+    /// <include file='CLOSESTATES.xml' path='doc/member[@name="CLOSESTATES.TTCS_HOT"]/*' />
     TTCS_HOT = 2,
+
+    /// <include file='CLOSESTATES.xml' path='doc/member[@name="CLOSESTATES.TTCS_PRESSED"]/*' />
     TTCS_PRESSED = 3,
 }

@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVEncVideoMaxKeyframeDistance.xml' path='doc/member[@name="CODECAPI_AVEncVideoMaxKeyframeDistance"]/*' />
 [Guid("2987123A-BA93-4704-B489-EC1E5F25292C")]
 public partial struct CODECAPI_AVEncVideoMaxKeyframeDistance
 {

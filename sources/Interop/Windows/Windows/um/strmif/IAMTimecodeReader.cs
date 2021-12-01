@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAMTimecodeReader.xml' path='doc/member[@name="IAMTimecodeReader"]/*' />
 [Guid("9B496CE1-811B-11CF-8C77-00AA006B6814")]
 [NativeTypeName("struct IAMTimecodeReader : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IAMTimecodeReader : IAMTimecodeReader.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IAMTimecodeReader : IAMTimecodeReader.Interface
         return ((delegate* unmanaged<IAMTimecodeReader*, Guid*, void**, int>)(lpVtbl[0]))((IAMTimecodeReader*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IAMTimecodeReader : IAMTimecodeReader.Interface
         return ((delegate* unmanaged<IAMTimecodeReader*, uint>)(lpVtbl[1]))((IAMTimecodeReader*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IAMTimecodeReader : IAMTimecodeReader.Interface
         return ((delegate* unmanaged<IAMTimecodeReader*, uint>)(lpVtbl[2]))((IAMTimecodeReader*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAMTimecodeReader.xml' path='doc/member[@name="IAMTimecodeReader.GetTCRMode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTCRMode([NativeTypeName("long")] int Param, [NativeTypeName("long *")] int* pValue)
@@ -46,6 +51,7 @@ public unsafe partial struct IAMTimecodeReader : IAMTimecodeReader.Interface
         return ((delegate* unmanaged<IAMTimecodeReader*, int, int*, int>)(lpVtbl[3]))((IAMTimecodeReader*)Unsafe.AsPointer(ref this), Param, pValue);
     }
 
+    /// <include file='IAMTimecodeReader.xml' path='doc/member[@name="IAMTimecodeReader.SetTCRMode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetTCRMode([NativeTypeName("long")] int Param, [NativeTypeName("long")] int Value)
@@ -53,6 +59,7 @@ public unsafe partial struct IAMTimecodeReader : IAMTimecodeReader.Interface
         return ((delegate* unmanaged<IAMTimecodeReader*, int, int, int>)(lpVtbl[4]))((IAMTimecodeReader*)Unsafe.AsPointer(ref this), Param, Value);
     }
 
+    /// <include file='IAMTimecodeReader.xml' path='doc/member[@name="IAMTimecodeReader.put_VITCLine"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT put_VITCLine([NativeTypeName("long")] int Line)
@@ -60,6 +67,7 @@ public unsafe partial struct IAMTimecodeReader : IAMTimecodeReader.Interface
         return ((delegate* unmanaged<IAMTimecodeReader*, int, int>)(lpVtbl[5]))((IAMTimecodeReader*)Unsafe.AsPointer(ref this), Line);
     }
 
+    /// <include file='IAMTimecodeReader.xml' path='doc/member[@name="IAMTimecodeReader.get_VITCLine"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT get_VITCLine([NativeTypeName("long *")] int* pLine)
@@ -67,6 +75,7 @@ public unsafe partial struct IAMTimecodeReader : IAMTimecodeReader.Interface
         return ((delegate* unmanaged<IAMTimecodeReader*, int*, int>)(lpVtbl[6]))((IAMTimecodeReader*)Unsafe.AsPointer(ref this), pLine);
     }
 
+    /// <include file='IAMTimecodeReader.xml' path='doc/member[@name="IAMTimecodeReader.GetTimecode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetTimecode([NativeTypeName("PTIMECODE_SAMPLE")] TIMECODE_SAMPLE* pTimecodeSample)

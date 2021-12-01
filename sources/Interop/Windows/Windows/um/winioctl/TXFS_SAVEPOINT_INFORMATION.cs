@@ -5,13 +5,17 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TXFS_SAVEPOINT_INFORMATION.xml' path='doc/member[@name="TXFS_SAVEPOINT_INFORMATION"]/*' />
 public partial struct TXFS_SAVEPOINT_INFORMATION
 {
+    /// <include file='TXFS_SAVEPOINT_INFORMATION.xml' path='doc/member[@name="TXFS_SAVEPOINT_INFORMATION.KtmTransaction"]/*' />
     public HANDLE KtmTransaction;
 
+    /// <include file='TXFS_SAVEPOINT_INFORMATION.xml' path='doc/member[@name="TXFS_SAVEPOINT_INFORMATION.ActionCode"]/*' />
     [NativeTypeName("DWORD")]
     public uint ActionCode;
 
+    /// <include file='TXFS_SAVEPOINT_INFORMATION.xml' path='doc/member[@name="TXFS_SAVEPOINT_INFORMATION.SavepointId"]/*' />
     [NativeTypeName("DWORD")]
     public uint SavepointId;
 }

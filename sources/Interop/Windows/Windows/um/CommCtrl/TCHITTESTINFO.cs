@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TCHITTESTINFO.xml' path='doc/member[@name="TCHITTESTINFO"]/*' />
 public partial struct TCHITTESTINFO
 {
+    /// <include file='TCHITTESTINFO.xml' path='doc/member[@name="TCHITTESTINFO.pt"]/*' />
     public POINT pt;
 
+    /// <include file='TCHITTESTINFO.xml' path='doc/member[@name="TCHITTESTINFO.flags"]/*' />
     public uint flags;
 }

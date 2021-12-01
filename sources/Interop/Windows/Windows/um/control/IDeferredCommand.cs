@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IDeferredCommand.xml' path='doc/member[@name="IDeferredCommand"]/*' />
 [Guid("56A868B8-0AD4-11CE-B03A-0020AF0BA770")]
 [NativeTypeName("struct IDeferredCommand : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IDeferredCommand : IDeferredCommand.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IDeferredCommand : IDeferredCommand.Interface
         return ((delegate* unmanaged<IDeferredCommand*, Guid*, void**, int>)(lpVtbl[0]))((IDeferredCommand*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IDeferredCommand : IDeferredCommand.Interface
         return ((delegate* unmanaged<IDeferredCommand*, uint>)(lpVtbl[1]))((IDeferredCommand*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IDeferredCommand : IDeferredCommand.Interface
         return ((delegate* unmanaged<IDeferredCommand*, uint>)(lpVtbl[2]))((IDeferredCommand*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDeferredCommand.xml' path='doc/member[@name="IDeferredCommand.Cancel"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Cancel()
@@ -46,6 +51,7 @@ public unsafe partial struct IDeferredCommand : IDeferredCommand.Interface
         return ((delegate* unmanaged<IDeferredCommand*, int>)(lpVtbl[3]))((IDeferredCommand*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDeferredCommand.xml' path='doc/member[@name="IDeferredCommand.Confidence"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Confidence([NativeTypeName("LONG *")] int* pConfidence)
@@ -53,6 +59,7 @@ public unsafe partial struct IDeferredCommand : IDeferredCommand.Interface
         return ((delegate* unmanaged<IDeferredCommand*, int*, int>)(lpVtbl[4]))((IDeferredCommand*)Unsafe.AsPointer(ref this), pConfidence);
     }
 
+    /// <include file='IDeferredCommand.xml' path='doc/member[@name="IDeferredCommand.Postpone"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT Postpone([NativeTypeName("REFTIME")] double newtime)
@@ -60,6 +67,7 @@ public unsafe partial struct IDeferredCommand : IDeferredCommand.Interface
         return ((delegate* unmanaged<IDeferredCommand*, double, int>)(lpVtbl[5]))((IDeferredCommand*)Unsafe.AsPointer(ref this), newtime);
     }
 
+    /// <include file='IDeferredCommand.xml' path='doc/member[@name="IDeferredCommand.GetHResult"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetHResult(HRESULT* phrResult)

@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='UI_ANIMATION_TIMER_CLIENT_STATUS.xml' path='doc/member[@name="UI_ANIMATION_TIMER_CLIENT_STATUS"]/*' />
 public enum UI_ANIMATION_TIMER_CLIENT_STATUS
 {
+    /// <include file='UI_ANIMATION_TIMER_CLIENT_STATUS.xml' path='doc/member[@name="UI_ANIMATION_TIMER_CLIENT_STATUS.UI_ANIMATION_TIMER_CLIENT_IDLE"]/*' />
     UI_ANIMATION_TIMER_CLIENT_IDLE = 0,
+
+    /// <include file='UI_ANIMATION_TIMER_CLIENT_STATUS.xml' path='doc/member[@name="UI_ANIMATION_TIMER_CLIENT_STATUS.UI_ANIMATION_TIMER_CLIENT_BUSY"]/*' />
     UI_ANIMATION_TIMER_CLIENT_BUSY = 1,
 }

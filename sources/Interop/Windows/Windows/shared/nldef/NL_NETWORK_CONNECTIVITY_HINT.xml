@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="NL_NETWORK_CONNECTIVITY_HINT">
+    <summary>
+      <para>Describes a level of network connectivity, the usage charge for a network connection, and other members reflecting cost factors.</para>
+      <para>The last four members of <b>NL_NETWORK_CONNECTIVITY_HINT</b> collectively work together to allow you to resolve the cost of using a connection. See the guidelines in
+<a href="https://docs.microsoft.com//previous-versions/windows/apps/jj835821(v=win.10)">How to manage metered network cost constraints</a>.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/apps/jj835821(v=win.10)">How to manage metered network cost constraints</seealso>
+  </member>
+  <member name="NL_NETWORK_CONNECTIVITY_HINT.ConnectivityLevel">
+    <summary>
+      <para>Type: <b><see cref="NL_NETWORK_CONNECTIVITY_LEVEL_HINT" /></b></para>
+      <para>The level of network connectivity.</para>
+    </summary>
+  </member>
+  <member name="NL_NETWORK_CONNECTIVITY_HINT.ConnectivityCost">
+    <summary>
+      <para>Type: <b><see cref="NL_NETWORK_CONNECTIVITY_COST_HINT" /></b></para>
+      <para>The usage charge for the network connection.</para>
+    </summary>
+  </member>
+  <member name="NL_NETWORK_CONNECTIVITY_HINT.ApproachingDataLimit">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">BOOLEAN</a></b></para>
+      <para>
+        <code>TRUE</code> if the connection is approaching its data limit, otherwise <code>FALSE</code>.</para>
+    </summary>
+  </member>
+  <member name="NL_NETWORK_CONNECTIVITY_HINT.OverDataLimit">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">BOOLEAN</a></b></para>
+      <para>
+        <code>TRUE</code> if the connection has exceeded its data limit, otherwise <code>FALSE</code>.</para>
+    </summary>
+  </member>
+  <member name="NL_NETWORK_CONNECTIVITY_HINT.Roaming">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">BOOLEAN</a></b></para>
+      <para>
+        <code>TRUE</code> if the connection is roaming, otherwise <code>FALSE</code>.</para>
+    </summary>
+  </member>
+</doc>

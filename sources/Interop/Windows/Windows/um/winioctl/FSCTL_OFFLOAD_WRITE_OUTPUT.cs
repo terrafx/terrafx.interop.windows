@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='FSCTL_OFFLOAD_WRITE_OUTPUT.xml' path='doc/member[@name="FSCTL_OFFLOAD_WRITE_OUTPUT"]/*' />
 public partial struct FSCTL_OFFLOAD_WRITE_OUTPUT
 {
+    /// <include file='FSCTL_OFFLOAD_WRITE_OUTPUT.xml' path='doc/member[@name="FSCTL_OFFLOAD_WRITE_OUTPUT.Size"]/*' />
     [NativeTypeName("DWORD")]
     public uint Size;
 
+    /// <include file='FSCTL_OFFLOAD_WRITE_OUTPUT.xml' path='doc/member[@name="FSCTL_OFFLOAD_WRITE_OUTPUT.Flags"]/*' />
     [NativeTypeName("DWORD")]
     public uint Flags;
 
+    /// <include file='FSCTL_OFFLOAD_WRITE_OUTPUT.xml' path='doc/member[@name="FSCTL_OFFLOAD_WRITE_OUTPUT.LengthWritten"]/*' />
     [NativeTypeName("DWORDLONG")]
     public ulong LengthWritten;
 }

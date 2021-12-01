@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ISecureUrlHost.xml' path='doc/member[@name="ISecureUrlHost"]/*' />
 [Guid("C81984C4-74C8-11D2-BAA9-00C04FC2040E")]
 [NativeTypeName("struct ISecureUrlHost : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ISecureUrlHost : ISecureUrlHost.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ISecureUrlHost : ISecureUrlHost.Interface
         return ((delegate* unmanaged<ISecureUrlHost*, Guid*, void**, int>)(lpVtbl[0]))((ISecureUrlHost*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ISecureUrlHost : ISecureUrlHost.Interface
         return ((delegate* unmanaged<ISecureUrlHost*, uint>)(lpVtbl[1]))((ISecureUrlHost*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ISecureUrlHost : ISecureUrlHost.Interface
         return ((delegate* unmanaged<ISecureUrlHost*, uint>)(lpVtbl[2]))((ISecureUrlHost*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ISecureUrlHost.xml' path='doc/member[@name="ISecureUrlHost.ValidateSecureUrl"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT ValidateSecureUrl(BOOL* pfAllow, [NativeTypeName("OLECHAR *")] ushort* pchUrlInQuestion, [NativeTypeName("DWORD")] uint dwFlags)

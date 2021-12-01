@@ -1,0 +1,813 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="InputScope">
+    <summary>
+      <para>The <see cref="InputScope" /> enumeration contains values that specify which input scopes are applied to a given field.</para>
+    </summary>
+    <remarks>
+      <para>Whether a given input scope value is supported can vary across technologies.</para>
+    </remarks>
+    <seealso cref="ITfInputScope" />
+    <seealso cref="SetInputScope" />
+    <seealso cref="SetInputScopeXML" />
+    <seealso cref="SetInputScopes" />
+  </member>
+  <member name="InputScope.IS_DEFAULT">
+    <summary>
+      <para>Indicates the standard recognition bias. Treated as default and uses the default lexicon. If combined with another input scope, it does not force coercion on the other input scope.</para>
+    </summary>
+  </member>
+  <member name="InputScope.IS_URL">
+    <summary>
+      <para>Indicates a URL, File, or FTP format. Examples include the following.</para>
+      <list type="bullet">
+        <item>
+          <description>http://www.humongousinsurance.com/</description>
+        </item>
+        <item>
+          <description>ftp://ftp.microsoft.com</description>
+        </item>
+        <item>
+          <description>www.microsoft.com</description>
+        </item>
+        <item>
+          <description>file:///C:\templ.txt</description>
+        </item>
+        <item>
+          <description>$</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="InputScope.IS_FILE_FULLFILEPATH">
+    <summary>
+      <para>Indicates a file path. The following conditions are enforced.</para>
+      <list type="bullet">
+        <item>
+          <description>For server name and share name, allows all IS_ONECHAR characters except: * ? : &lt; &gt; |</description>
+        </item>
+        <item>
+          <description>For file name, allows all IS_ONECHAR characters except: \ / : &lt; &gt; |</description>
+        </item>
+        <item>
+          <description>Input must start with \\ or drive name or \ or ..\ or .\ or /</description>
+        </item>
+        <item>
+          <description>Spaces are allowed.</description>
+        </item>
+      </list>
+      <para>Examples include the following.</para>
+      <list type="bullet">
+        <item>
+          <description>\\servername\sharename\filename.txt</description>
+        </item>
+        <item>
+          <description>C:\temp\current work.doc</description>
+        </item>
+        <item>
+          <description>../images/hank.jpg</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="InputScope.IS_FILE_FILENAME">
+    <summary>
+      <para>Indicates a file name. The following conditions are enforced.</para>
+      <list type="bullet">
+        <item>
+          <description>Accepts either extension or no extension.</description>
+        </item>
+        <item>
+          <description>Allows all IS_ONECHAR characters except: \ / : &lt; &gt; |</description>
+        </item>
+        <item>
+          <description>Spaces are allowed.</description>
+        </item>
+      </list>
+      <para>Examples include the following:</para>
+      <list type="bullet">
+        <item>
+          <description>filename.txt</description>
+        </item>
+        <item>
+          <description>filename</description>
+        </item>
+        <item>
+          <description>file name.txt</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="InputScope.IS_EMAIL_USERNAME">
+    <summary>
+      <para>Indicates email user names. Examples include the following.</para>
+      <list type="bullet">
+        <item>
+          <description>jeffsm</description>
+        </item>
+        <item>
+          <description>JeffSm</description>
+        </item>
+        <item>
+          <description>Jsmith</description>
+        </item>
+        <item>
+          <description>JSmith</description>
+        </item>
+        <item>
+          <description>jeffsmith</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="InputScope.IS_EMAIL_SMTPEMAILADDRESS">
+    <summary>
+      <para>Indicates a complete SMTP email address, for example, someone@example.com.</para>
+    </summary>
+  </member>
+  <member name="InputScope.IS_LOGINNAME">
+    <summary>
+      <para>Indicates a log-in name and domain. The following conditions are enforced.</para>
+      <list type="bullet">
+        <item>
+          <description>Allows all IS_ONECHAR characters.</description>
+        </item>
+        <item>
+          <description>Does not allow domain or username to start or end in a non-alphanumeric character.</description>
+        </item>
+        <item>
+          <description>Spaces are not allowed.</description>
+        </item>
+      </list>
+      <para>Examples include the following.</para>
+      <list type="bullet">
+        <item>
+          <description>CHICAGO\JSMITH</description>
+        </item>
+        <item>
+          <description>JSMITH</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="InputScope.IS_PERSONALNAME_FULLNAME">
+    <summary>
+      <para>Indicates a combination of first, middle, and last names. Examples include the following, formatted for English (United States).</para>
+      <list type="bullet">
+        <item>
+          <description>Mr. Jeff A. Smith, Jr.</description>
+        </item>
+        <item>
+          <description>Jeff Smith</description>
+        </item>
+        <item>
+          <description>Smith, Jeff</description>
+        </item>
+        <item>
+          <description>Smith, Jeff A</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="InputScope.IS_PERSONALNAME_PREFIX">
+    <summary>
+      <para>Indicates a honorific or title preceding a name. Examples include the following, formatted for English (United States).</para>
+      <list type="bullet">
+        <item>
+          <description>Mr.</description>
+        </item>
+        <item>
+          <description>Dr.</description>
+        </item>
+        <item>
+          <description>Miss</description>
+        </item>
+        <item>
+          <description>Sir</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="InputScope.IS_PERSONALNAME_GIVENNAME">
+    <summary>
+      <para>Indicates a first name or initial. Examples include the following, formatted for English (United States).</para>
+      <list type="bullet">
+        <item>
+          <description>Jeff</description>
+        </item>
+        <item>
+          <description>J.</description>
+        </item>
+        <item>
+          <description>J.A.</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="InputScope.IS_PERSONALNAME_MIDDLENAME">
+    <summary>
+      <para>Indicates a middle name or initial. Examples include the following.</para>
+      <list type="bullet">
+        <item>
+          <description>Albert</description>
+        </item>
+        <item>
+          <description>A.</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="InputScope.IS_PERSONALNAME_SURNAME">
+    <summary>
+      <para>Indicates a last name. Examples include the following, formatted for English (United States).</para>
+      <list type="bullet">
+        <item>
+          <description>Smith</description>
+        </item>
+        <item>
+          <description>Smith Jones</description>
+        </item>
+        <item>
+          <description>Smith-Jones</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="InputScope.IS_PERSONALNAME_SUFFIX">
+    <summary>
+      <para>Indicates a name suffix abbreviation or Roman numerals. Examples include the following.</para>
+      <list type="bullet">
+        <item>
+          <description>Jr.</description>
+        </item>
+        <item>
+          <description>III</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="InputScope.IS_ADDRESS_FULLPOSTALADDRESS">
+    <summary>
+      <para>Indicates a full address, including numbers. Examples include the following, formatted for English (United States).</para>
+      <list type="bullet">
+        <item>
+          <description>123 Main Street, Anytown, WA 98989</description>
+        </item>
+        <item>
+          <description>PO Box 123 Anytown, WA 98989</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="InputScope.IS_ADDRESS_POSTALCODE">
+    <summary>
+      <para>Indicates an alphanumeric postal code. The value is alphanumeric to support international zip codes. Examples include the following, formatted for English (United States).</para>
+      <list type="bullet">
+        <item>
+          <description>98989</description>
+        </item>
+        <item>
+          <description>98989-1234</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="InputScope.IS_ADDRESS_STREET">
+    <summary>
+      <para>Indicates a house number, street number, apartment name and number, and/or postal box. Examples include the following.</para>
+      <list type="bullet">
+        <item>
+          <description>123 Main Street</description>
+        </item>
+        <item>
+          <description>P.O. Box 1234</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="InputScope.IS_ADDRESS_STATEORPROVINCE">
+    <summary>
+      <para>Indicates a full name or abbreviation of state or province. Examples include the following, formatted for English (United States).</para>
+      <list type="bullet">
+        <item>
+          <description>WA</description>
+        </item>
+        <item>
+          <description>Washington</description>
+        </item>
+        <item>
+          <description>Wa</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="InputScope.IS_ADDRESS_CITY">
+    <summary>
+      <para>Indicates the name or abbreviation of a city. Examples include the following, formatted for English (United States).</para>
+      <list type="bullet">
+        <item>
+          <description>New York</description>
+        </item>
+        <item>
+          <description>NYC</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="InputScope.IS_ADDRESS_COUNTRYNAME">
+    <summary>
+      <para>Indicates the name of a country/region. Examples include the following, formatted for English (United States).</para>
+      <list type="bullet">
+        <item>
+          <description>Italy</description>
+        </item>
+        <item>
+          <description>Japan</description>
+        </item>
+        <item>
+          <description>United States of America</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="InputScope.IS_ADDRESS_COUNTRYSHORTNAME">
+    <summary>
+      <para>Indicates the abbreviation of the name of a country/region. Examples include the following, formatted for English (United States).</para>
+      <list type="bullet">
+        <item>
+          <description>USA</description>
+        </item>
+        <item>
+          <description>U.S.A.</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="InputScope.IS_CURRENCY_AMOUNTANDSYMBOL">
+    <summary>
+      <para>Indicates currency symbols and numbers. Examples include the following, formatted for English (United States).</para>
+      <list type="bullet">
+        <item>
+          <description>$ 2,100.25</description>
+        </item>
+        <item>
+          <description>$.35</description>
+        </item>
+        <item>
+          <description>$1,234.50 USD</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="InputScope.IS_CURRENCY_AMOUNT">
+    <summary>
+      <para>Indicates a numeric value for currency, excluding currency symbols. For example, 2,100.25.</para>
+    </summary>
+  </member>
+  <member name="InputScope.IS_DATE_FULLDATE">
+    <summary>
+      <para>Indicates a full date, in a variety of formats. Examples include the following, formatted for English (United States).</para>
+      <list type="bullet">
+        <item>
+          <description>07-17-2001</description>
+        </item>
+        <item>
+          <description>7/17/01</description>
+        </item>
+        <item>
+          <description>7/17</description>
+        </item>
+        <item>
+          <description>Dec. 12</description>
+        </item>
+        <item>
+          <description>July 17</description>
+        </item>
+        <item>
+          <description>July 17, 2001</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="InputScope.IS_DATE_MONTH">
+    <summary>
+      <para>Indicates a numeric representation of months, constrained to 1-12. Examples include the following.</para>
+      <list type="bullet">
+        <item>
+          <description>7</description>
+        </item>
+        <item>
+          <description>07</description>
+        </item>
+        <item>
+          <description>11</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="InputScope.IS_DATE_DAY">
+    <summary>
+      <para>Indicates a numeric representation of days, constrained to 1-31. Examples include the following.</para>
+      <list type="bullet">
+        <item>
+          <description>1</description>
+        </item>
+        <item>
+          <description>04</description>
+        </item>
+        <item>
+          <description>17</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="InputScope.IS_DATE_YEAR">
+    <summary>
+      <para>Indicates a numeric representation of years. Examples include the following.</para>
+      <list type="bullet">
+        <item>
+          <description>1988</description>
+        </item>
+        <item>
+          <description>2004</description>
+        </item>
+        <item>
+          <description>88</description>
+        </item>
+        <item>
+          <description>04</description>
+        </item>
+        <item>
+          <description>'88</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="InputScope.IS_DATE_MONTHNAME">
+    <summary>
+      <para>Indicates a character representation of months. Examples include the following, formatted for English (United States).</para>
+      <list type="bullet">
+        <item>
+          <description>December</description>
+        </item>
+        <item>
+          <description>Dec</description>
+        </item>
+        <item>
+          <description>Dec.</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="InputScope.IS_DATE_DAYNAME">
+    <summary>
+      <para>Indicates a character representation of days. Examples include the following, formatted for English (United States).</para>
+      <list type="bullet">
+        <item>
+          <description>Wednesday</description>
+        </item>
+        <item>
+          <description>Weds</description>
+        </item>
+        <item>
+          <description>Weds.</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="InputScope.IS_DIGITS">
+    <summary>
+      <para>Indicates positive whole numbers, constrained to 0-9.</para>
+    </summary>
+  </member>
+  <member name="InputScope.IS_NUMBER">
+    <summary>
+      <para>Indicates numbers, including commas, negative sign, and decimal. For United States locations, the following conditions are enforced.</para>
+      <list type="bullet">
+        <item>
+          <description>The thousand separator is a comma.</description>
+        </item>
+        <item>
+          <description>The decimal separator is a period.</description>
+        </item>
+        <item>
+          <description>Negative numbers are represented with a hyphen without a space, not with parentheses.</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="InputScope.IS_ONECHAR">
+    <summary>
+      <para>Indicates a single ANSI character, codepage 1252. For United States locations, this includes the following characters.</para>
+      <para>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdEfghijklmnopqrstuvwxyz0123456789!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[]^_`{|}~</para>
+    </summary>
+  </member>
+  <member name="InputScope.IS_PASSWORD">
+    <summary>
+      <para>Indicates a password. <b>IS_PASSWORD</b> is not supported and may be altered or unavailable in the future.</para>
+      <para>
+        <b>Note</b>  <b>IS_PASSWORD</b> only indicates the password; it doesn't provide any security around the password. All passwords fields should have text services disabled to maintain password secrecy, and therefore it is not valid to have a password field with an <b>IS_PASSWORD</b> input scope.</para>
+    </summary>
+  </member>
+  <member name="InputScope.IS_TELEPHONE_FULLTELEPHONENUMBER">
+    <summary>
+      <para>Indicates a telephone number. Alphabetical input is not allowed. Examples include the following, formatted for English (United States).</para>
+      <list type="bullet">
+        <item>
+          <description>(206) 555-0123</description>
+        </item>
+        <item>
+          <description>555-0123</description>
+        </item>
+        <item>
+          <description>555.0123</description>
+        </item>
+        <item>
+          <description>206-555-0123</description>
+        </item>
+        <item>
+          <description>1-206-555-0123x1234</description>
+        </item>
+        <item>
+          <description>+1 (206) 555-1234</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="InputScope.IS_TELEPHONE_COUNTRYCODE">
+    <summary>
+      <para>Indicates telephone country codes. Examples include the following, formatted for English (United States).</para>
+      <list type="bullet">
+        <item>
+          <description>+1</description>
+        </item>
+        <item>
+          <description>+44</description>
+        </item>
+        <item>
+          <description>001</description>
+        </item>
+        <item>
+          <description>00 44</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="InputScope.IS_TELEPHONE_AREACODE">
+    <summary>
+      <para>Indicates telephone area codes. Examples include the following, formatted for English (United States).</para>
+      <list type="bullet">
+        <item>
+          <description>(206)</description>
+        </item>
+        <item>
+          <description>206</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="InputScope.IS_TELEPHONE_LOCALNUMBER">
+    <summary>
+      <para>Indicates a telephone number, excluding country or area code. Examples include the following, formatted for English (United States).</para>
+      <list type="bullet">
+        <item>
+          <description>555-0123</description>
+        </item>
+        <item>
+          <description>555 0123</description>
+        </item>
+        <item>
+          <description>555.0123</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="InputScope.IS_TIME_FULLTIME">
+    <summary>
+      <para>Indicates hours, minutes, seconds, and alphabetical time abbreviations. US English uses the 12 hour clock. Leading zeros are optional for hours but required for minutes and seconds. Hours are constrained to 0-24; minutes and seconds are constrained to 0-59. Examples include the following, formatted for English (United States).</para>
+      <list type="bullet">
+        <item>
+          <description>3:20</description>
+        </item>
+        <item>
+          <description>04:30</description>
+        </item>
+        <item>
+          <description>11:20:55</description>
+        </item>
+        <item>
+          <description>11:15 am</description>
+        </item>
+        <item>
+          <description>4:30 AM</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="InputScope.IS_TIME_HOUR">
+    <summary>
+      <para>Indicates a numeric representation of hours, constrained to 0-24.</para>
+    </summary>
+  </member>
+  <member name="InputScope.IS_TIME_MINORSEC">
+    <summary>
+      <para>Indicates a numeric representation of minutes or seconds, constrained to 0-59.</para>
+    </summary>
+  </member>
+  <member name="InputScope.IS_NUMBER_FULLWIDTH">
+    <summary>
+      <para>Indicates full-width number, used for Japanese only. Constrained to full-width numbers and Kanji numbers.</para>
+    </summary>
+  </member>
+  <member name="InputScope.IS_ALPHANUMERIC_HALFWIDTH">
+    <summary>
+      <para>Indicates half-width alphanumeric characters for East-Asian languages, constrained to half-width alphabetical characters and numbers.</para>
+    </summary>
+  </member>
+  <member name="InputScope.IS_ALPHANUMERIC_FULLWIDTH">
+    <summary>
+      <para>Indicates full-width alphanumeric characters for East-Asian languages, constrained to full-width alphabet characters and numbers.</para>
+    </summary>
+  </member>
+  <member name="InputScope.IS_CURRENCY_CHINESE">
+    <summary>
+      <para>Indicates Chinese currency.</para>
+    </summary>
+  </member>
+  <member name="InputScope.IS_BOPOMOFO">
+    <summary>
+      <para>Indicates Bopomofo characters.</para>
+    </summary>
+  </member>
+  <member name="InputScope.IS_HIRAGANA">
+    <summary>
+      <para>Indicates Hiragana characters.</para>
+    </summary>
+  </member>
+  <member name="InputScope.IS_KATAKANA_HALFWIDTH">
+    <summary>
+      <para>Indicates half-width Katakana characters.</para>
+    </summary>
+  </member>
+  <member name="InputScope.IS_KATAKANA_FULLWIDTH">
+    <summary>
+      <para>Indicates full-width Katakana characters.</para>
+    </summary>
+  </member>
+  <member name="InputScope.IS_HANJA">
+    <summary>
+      <para>Indicates Hanja characters.</para>
+    </summary>
+  </member>
+  <member name="InputScope.IS_HANGUL_HALFWIDTH">
+    <summary>
+      <para>Indicates half-width Hangul characters.</para>
+    </summary>
+  </member>
+  <member name="InputScope.IS_HANGUL_FULLWIDTH">
+    <summary>
+      <para>Indicates full-width Hangul characters.</para>
+    </summary>
+  </member>
+  <member name="InputScope.IS_SEARCH">
+    <summary>
+      <para>
+        <b>Starting with Windows 8:</b> Indicates a search string.</para>
+    </summary>
+  </member>
+  <member name="InputScope.IS_FORMULA">
+    <summary>
+      <para>
+        <b>Starting with Windows 8:</b> Indicates a formula control, for example, a spreadsheet field.</para>
+    </summary>
+  </member>
+  <member name="InputScope.IS_SEARCH_INCREMENTAL">
+    <summary>
+      <para>
+        <b>Starting with Windows 10:</b> Indicates input scope is intended for search boxes where incremental results are displayed as the user types.</para>
+    </summary>
+  </member>
+  <member name="InputScope.IS_CHINESE_HALFWIDTH">
+    <summary>
+      <para>
+        <b>Starting with Windows 10:</b> Indicates input scope is intended for Chinese half-width characters.</para>
+    </summary>
+  </member>
+  <member name="InputScope.IS_CHINESE_FULLWIDTH">
+    <summary>
+      <para>
+        <b>Starting with Windows 10:</b> Indicates input scope is intended for Chinese full-width characters.</para>
+    </summary>
+  </member>
+  <member name="InputScope.IS_NATIVE_SCRIPT">
+    <summary>
+      <para>
+        <b>Starting with Windows 10:</b> Indicates input scope is intended for native script.</para>
+    </summary>
+  </member>
+  <member name="InputScope.IS_YOMI">
+    <summary>
+      <para>
+        <b>Starting with Windows 10:</b> Indicates input scope is intended for Japanese names.</para>
+    </summary>
+  </member>
+  <member name="InputScope.IS_TEXT">
+    <summary>
+      <para>
+        <b>Starting with Windows 10:</b> Indicates input scope is intended for working with text.</para>
+    </summary>
+  </member>
+  <member name="InputScope.IS_CHAT">
+    <summary>
+      <para>
+        <b>Starting with Windows 10:</b> Indicates input scope is intended for chat strings.</para>
+    </summary>
+  </member>
+  <member name="InputScope.IS_NAME_OR_PHONENUMBER">
+    <summary>
+      <para>
+        <b>Starting with Windows 10:</b> Indicates input scope is intended for working with a name or telephone number.</para>
+    </summary>
+  </member>
+  <member name="InputScope.IS_EMAILNAME_OR_ADDRESS">
+    <summary>
+      <para>
+        <b>Starting with Windows 10:</b> Indicates input scope is intended for working with an email name or full email address.</para>
+    </summary>
+  </member>
+  <member name="InputScope.IS_PRIVATE">
+    <summary>
+      <para>
+        <b>Starting with Windows 10:</b> Indicates input scope is intended for working with private data.</para>
+    </summary>
+  </member>
+  <member name="InputScope.IS_MAPS">
+    <summary>
+      <para>
+        <b>Starting with Windows 10:</b> Indicates input scope is intended for working with a map location.</para>
+    </summary>
+  </member>
+  <member name="InputScope.IS_NUMERIC_PASSWORD">
+    <summary>
+      <para>
+        <b>Starting with Windows 10:</b> Indicates expected input is a numeric password, or PIN.</para>
+    </summary>
+  </member>
+  <member name="InputScope.IS_NUMERIC_PIN">
+    <summary>
+      <para>
+        <b>Starting with Windows 10:</b> Indicates expected input is a numeric PIN.</para>
+    </summary>
+  </member>
+  <member name="InputScope.IS_ALPHANUMERIC_PIN">
+    <summary>
+      <para>
+        <b>Starting with Windows 10:</b> Indicates expected input is an alphanumeric PIN.</para>
+    </summary>
+  </member>
+  <member name="InputScope.IS_ALPHANUMERIC_PIN_SET">
+    <summary>
+      <para>
+        <b>Starting with Windows 10:</b> Indicates expected input is an alphanumeric PIN for lock screen.</para>
+    </summary>
+  </member>
+  <member name="InputScope.IS_FORMULA_NUMBER">
+    <summary>
+      <para>
+        <b>Starting with Windows 10:</b> Indicates expected input is a mathematical formula.</para>
+    </summary>
+  </member>
+  <member name="InputScope.IS_CHAT_WITHOUT_EMOJI">
+    <summary>
+      <para>
+        <b>Starting with Windows 10:</b> Indicates expected input does not include emoji.</para>
+    </summary>
+  </member>
+  <member name="InputScope.IS_PHRASELIST">
+    <summary>
+      <para>Indicates a phrase list.</para>
+    </summary>
+  </member>
+  <member name="InputScope.IS_REGULAREXPRESSION">
+    <summary>
+      <para>Indicates a regular expression.</para>
+    </summary>
+  </member>
+  <member name="InputScope.IS_SRGS">
+    <summary>
+      <para>Indicates an XML string that conforms to the Speech Recognition Grammar Specification (SRGS) standard. Information on SRGS can be found at <a href="https://www.w3.org/tr/speech-grammar">http://www.w3.org/TR/speech-grammar</a>.</para>
+    </summary>
+  </member>
+  <member name="InputScope.IS_XML">
+    <summary>
+      <para>Indicates a custom xml string.</para>
+    </summary>
+  </member>
+  <member name="InputScope.IS_ENUMSTRING">
+    <summary>
+      <para>The scope contains the IEnumString interface pointer. The Text Input Processor (TIP) can call <see cref="ITfInputScope2.EnumWordList" /> to retrieve it.</para>
+    </summary>
+  </member>
+</doc>

@@ -9,61 +9,80 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STORAGE_ZONED_DEVICE_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_ZONED_DEVICE_DESCRIPTOR"]/*' />
 public partial struct STORAGE_ZONED_DEVICE_DESCRIPTOR
 {
+    /// <include file='STORAGE_ZONED_DEVICE_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_ZONED_DEVICE_DESCRIPTOR.Version"]/*' />
     [NativeTypeName("DWORD")]
     public uint Version;
 
+    /// <include file='STORAGE_ZONED_DEVICE_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_ZONED_DEVICE_DESCRIPTOR.Size"]/*' />
     [NativeTypeName("DWORD")]
     public uint Size;
 
+    /// <include file='STORAGE_ZONED_DEVICE_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_ZONED_DEVICE_DESCRIPTOR.DeviceType"]/*' />
     public STORAGE_ZONED_DEVICE_TYPES DeviceType;
 
+    /// <include file='STORAGE_ZONED_DEVICE_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_ZONED_DEVICE_DESCRIPTOR.ZoneCount"]/*' />
     [NativeTypeName("DWORD")]
     public uint ZoneCount;
 
+    /// <include file='STORAGE_ZONED_DEVICE_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_ZONED_DEVICE_DESCRIPTOR.ZoneAttributes"]/*' />
     [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:2909:5)")]
     public _ZoneAttributes_e__Union ZoneAttributes;
 
+    /// <include file='STORAGE_ZONED_DEVICE_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_ZONED_DEVICE_DESCRIPTOR.ZoneGroupCount"]/*' />
     [NativeTypeName("DWORD")]
     public uint ZoneGroupCount;
 
+    /// <include file='STORAGE_ZONED_DEVICE_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_ZONED_DEVICE_DESCRIPTOR.ZoneGroup"]/*' />
     [NativeTypeName("STORAGE_ZONE_GROUP [1]")]
     public _ZoneGroup_e__FixedBuffer ZoneGroup;
 
+    /// <include file='_ZoneAttributes_e__Union.xml' path='doc/member[@name="_ZoneAttributes_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public partial struct _ZoneAttributes_e__Union
     {
+        /// <include file='_ZoneAttributes_e__Union.xml' path='doc/member[@name="_ZoneAttributes_e__Union.SequentialRequiredZone"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:2910:9)")]
         public _SequentialRequiredZone_e__Struct SequentialRequiredZone;
 
+        /// <include file='_ZoneAttributes_e__Union.xml' path='doc/member[@name="_ZoneAttributes_e__Union.SequentialPreferredZone"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:2920:9)")]
         public _SequentialPreferredZone_e__Struct SequentialPreferredZone;
 
+        /// <include file='_SequentialRequiredZone_e__Struct.xml' path='doc/member[@name="_SequentialRequiredZone_e__Struct"]/*' />
         public unsafe partial struct _SequentialRequiredZone_e__Struct
         {
+            /// <include file='_SequentialRequiredZone_e__Struct.xml' path='doc/member[@name="_SequentialRequiredZone_e__Struct.MaxOpenZoneCount"]/*' />
             [NativeTypeName("DWORD")]
             public uint MaxOpenZoneCount;
 
+            /// <include file='_SequentialRequiredZone_e__Struct.xml' path='doc/member[@name="_SequentialRequiredZone_e__Struct.UnrestrictedRead"]/*' />
             [NativeTypeName("BOOLEAN")]
             public byte UnrestrictedRead;
 
+            /// <include file='_SequentialRequiredZone_e__Struct.xml' path='doc/member[@name="_SequentialRequiredZone_e__Struct.Reserved"]/*' />
             [NativeTypeName("BYTE [3]")]
             public fixed byte Reserved[3];
         }
 
+        /// <include file='_SequentialPreferredZone_e__Struct.xml' path='doc/member[@name="_SequentialPreferredZone_e__Struct"]/*' />
         public partial struct _SequentialPreferredZone_e__Struct
         {
+            /// <include file='_SequentialPreferredZone_e__Struct.xml' path='doc/member[@name="_SequentialPreferredZone_e__Struct.OptimalOpenZoneCount"]/*' />
             [NativeTypeName("DWORD")]
             public uint OptimalOpenZoneCount;
 
+            /// <include file='_SequentialPreferredZone_e__Struct.xml' path='doc/member[@name="_SequentialPreferredZone_e__Struct.Reserved"]/*' />
             [NativeTypeName("DWORD")]
             public uint Reserved;
         }
     }
 
+    /// <include file='_ZoneGroup_e__FixedBuffer.xml' path='doc/member[@name="_ZoneGroup_e__FixedBuffer"]/*' />
     public partial struct _ZoneGroup_e__FixedBuffer
     {
         public STORAGE_ZONE_GROUP e0;

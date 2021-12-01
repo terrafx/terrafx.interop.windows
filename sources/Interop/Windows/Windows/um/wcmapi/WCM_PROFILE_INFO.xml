@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WCM_PROFILE_INFO">
+    <summary>
+      <para>The <b>WCM_PROFILE_INFO</b> structure contains information about a specific profile.</para>
+    </summary>
+    <seealso cref="WCM_MEDIA_TYPE" />
+  </member>
+  <member name="WCM_PROFILE_INFO.strProfileName">
+    <summary>
+      <para>Type: <b>WCHAR[WCM_MAX_PROFILE_NAME]</b></para>
+      <para>The profile name.</para>
+    </summary>
+  </member>
+  <member name="WCM_PROFILE_INFO.AdapterGUID">
+    <summary>
+      <para>Type: <b>GUID</b></para>
+      <para>The GUID of the adapter.</para>
+    </summary>
+  </member>
+  <member name="WCM_PROFILE_INFO.Media">
+    <summary>
+      <para>Type: <b><see cref="WCM_MEDIA_TYPE" /></b></para>
+      <para>The media type for the profile.</para>
+    </summary>
+  </member>
+</doc>

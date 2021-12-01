@@ -5,13 +5,17 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HIGHCONTRASTW.xml' path='doc/member[@name="HIGHCONTRASTW"]/*' />
 public unsafe partial struct HIGHCONTRASTW
 {
+    /// <include file='HIGHCONTRASTW.xml' path='doc/member[@name="HIGHCONTRASTW.cbSize"]/*' />
     public uint cbSize;
 
+    /// <include file='HIGHCONTRASTW.xml' path='doc/member[@name="HIGHCONTRASTW.dwFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFlags;
 
+    /// <include file='HIGHCONTRASTW.xml' path='doc/member[@name="HIGHCONTRASTW.lpszDefaultScheme"]/*' />
     [NativeTypeName("LPWSTR")]
     public ushort* lpszDefaultScheme;
 }

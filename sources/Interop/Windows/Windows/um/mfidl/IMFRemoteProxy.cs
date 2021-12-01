@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFRemoteProxy.xml' path='doc/member[@name="IMFRemoteProxy"]/*' />
 [Guid("994E23AD-1CC2-493C-B9FA-46F1CB040FA4")]
 [NativeTypeName("struct IMFRemoteProxy : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMFRemoteProxy : IMFRemoteProxy.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMFRemoteProxy : IMFRemoteProxy.Interface
         return ((delegate* unmanaged<IMFRemoteProxy*, Guid*, void**, int>)(lpVtbl[0]))((IMFRemoteProxy*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMFRemoteProxy : IMFRemoteProxy.Interface
         return ((delegate* unmanaged<IMFRemoteProxy*, uint>)(lpVtbl[1]))((IMFRemoteProxy*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMFRemoteProxy : IMFRemoteProxy.Interface
         return ((delegate* unmanaged<IMFRemoteProxy*, uint>)(lpVtbl[2]))((IMFRemoteProxy*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFRemoteProxy.xml' path='doc/member[@name="IMFRemoteProxy.GetRemoteObject"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetRemoteObject([NativeTypeName("const IID &")] Guid* riid, void** ppv)
@@ -46,6 +51,7 @@ public unsafe partial struct IMFRemoteProxy : IMFRemoteProxy.Interface
         return ((delegate* unmanaged<IMFRemoteProxy*, Guid*, void**, int>)(lpVtbl[3]))((IMFRemoteProxy*)Unsafe.AsPointer(ref this), riid, ppv);
     }
 
+    /// <include file='IMFRemoteProxy.xml' path='doc/member[@name="IMFRemoteProxy.GetRemoteHost"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetRemoteHost([NativeTypeName("const IID &")] Guid* riid, void** ppv)

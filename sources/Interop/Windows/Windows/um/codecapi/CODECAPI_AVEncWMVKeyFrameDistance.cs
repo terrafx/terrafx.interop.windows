@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVEncWMVKeyFrameDistance.xml' path='doc/member[@name="CODECAPI_AVEncWMVKeyFrameDistance"]/*' />
 [Guid("5569055E-E268-4771-B83E-9555EA28AED3")]
 public partial struct CODECAPI_AVEncWMVKeyFrameDistance
 {

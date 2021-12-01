@@ -7,14 +7,18 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CATEGORYINFO.xml' path='doc/member[@name="CATEGORYINFO"]/*' />
 public unsafe partial struct CATEGORYINFO
 {
+    /// <include file='CATEGORYINFO.xml' path='doc/member[@name="CATEGORYINFO.catid"]/*' />
     [NativeTypeName("CATID")]
     public Guid catid;
 
+    /// <include file='CATEGORYINFO.xml' path='doc/member[@name="CATEGORYINFO.lcid"]/*' />
     [NativeTypeName("LCID")]
     public uint lcid;
 
+    /// <include file='CATEGORYINFO.xml' path='doc/member[@name="CATEGORYINFO.szDescription"]/*' />
     [NativeTypeName("OLECHAR [128]")]
     public fixed ushort szDescription[128];
 }

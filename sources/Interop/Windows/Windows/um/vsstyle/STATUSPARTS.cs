@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STATUSPARTS.xml' path='doc/member[@name="STATUSPARTS"]/*' />
 public enum STATUSPARTS
 {
+    /// <include file='STATUSPARTS.xml' path='doc/member[@name="STATUSPARTS.SP_PANE"]/*' />
     SP_PANE = 1,
+
+    /// <include file='STATUSPARTS.xml' path='doc/member[@name="STATUSPARTS.SP_GRIPPERPANE"]/*' />
     SP_GRIPPERPANE = 2,
+
+    /// <include file='STATUSPARTS.xml' path='doc/member[@name="STATUSPARTS.SP_GRIPPER"]/*' />
     SP_GRIPPER = 3,
 }

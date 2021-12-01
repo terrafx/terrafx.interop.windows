@@ -5,8 +5,10 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='AM_DVDCOPY_SET_COPY_STATE.xml' path='doc/member[@name="AM_DVDCOPY_SET_COPY_STATE"]/*' />
 public partial struct AM_DVDCOPY_SET_COPY_STATE
 {
+    /// <include file='AM_DVDCOPY_SET_COPY_STATE.xml' path='doc/member[@name="AM_DVDCOPY_SET_COPY_STATE.DVDCopyState"]/*' />
     [NativeTypeName("ULONG")]
     public uint DVDCopyState;
 }

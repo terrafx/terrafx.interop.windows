@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="TfLBBalloonStyle">
+    <summary>
+      <para>Elements of the <b>TfLBBalloonStyle</b> enumeration are used to specify a language bar balloon style.</para>
+    </summary>
+    <remarks>
+      <para>The following image shows an example of a balloon with the TF_LB_BALLOON_RECO style.</para>
+      <para>
+        <img alt="TF_LB_BALLOON_RECO balloon" src="https://docs.microsoft.com/windows/win32/api/ctfutb/images/Balloon_RECO.gif" />
+      </para>
+      <para>The following image shows an example of a balloon with the TF_LB_BALLOON_SHOW style.</para>
+      <para>
+        <img alt="TF_LB_BALLOON_SHOW balloon" src="https://docs.microsoft.com/windows/win32/api/ctfutb/images/Balloon_SHOW.gif" />
+      </para>
+      <para>The following image shows an example of a balloon with the TF_LB_BALLOON_MISS style.</para>
+      <para>
+        <img alt="TF_LB_BALLOON_MISS balloon" src="https://docs.microsoft.com/windows/win32/api/ctfutb/images/Balloon_MISS.gif" />
+      </para>
+    </remarks>
+    <seealso cref="ITfFnBalloon.UpdateBalloon " />
+    <seealso cref="TF_LBBALLOONINFO " />
+  </member>
+  <member name="TfLBBalloonStyle.TF_LB_BALLOON_RECO">
+    <summary>
+      <para>This balloon style is used to represent a reconversion operation.</para>
+    </summary>
+  </member>
+  <member name="TfLBBalloonStyle.TF_LB_BALLOON_SHOW">
+    <summary>
+      <para>This is a normal balloon style.</para>
+    </summary>
+  </member>
+  <member name="TfLBBalloonStyle.TF_LB_BALLOON_MISS">
+    <summary>
+      <para>This balloon style is used to indicate that a command was not recognized.</para>
+    </summary>
+  </member>
+</doc>

@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WICJpegCommentProperties.xml' path='doc/member[@name="WICJpegCommentProperties"]/*' />
 public enum WICJpegCommentProperties : uint
 {
+    /// <include file='WICJpegCommentProperties.xml' path='doc/member[@name="WICJpegCommentProperties.WICJpegCommentText"]/*' />
     WICJpegCommentText = 0x1,
+
+    /// <include file='WICJpegCommentProperties.xml' path='doc/member[@name="WICJpegCommentProperties.WICJpegCommentProperties_FORCE_DWORD"]/*' />
     WICJpegCommentProperties_FORCE_DWORD = 0x7fffffff,
 }

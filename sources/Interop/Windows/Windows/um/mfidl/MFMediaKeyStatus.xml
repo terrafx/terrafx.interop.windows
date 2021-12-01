@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MFMediaKeyStatus">
+    <summary>
+      <para>Represents the status of a Content Decryption Module (CDM) session key.</para>
+    </summary>
+    <remarks>
+      <para>This structure is used as the output parameter for the <see cref="IMFContentDecryptionModuleSession.GetKeyStatuses" /> method.</para>
+      <para>
+        <b>MFMediaKeyStatus</b> is based on the Encrypted Media Extension specification's <a href="https://www.w3.org/tr/2017/rec-encrypted-media-20170918/#dom-mediakeysession-sessionid">MediaKeyStatusMap</a>.</para>
+    </remarks>
+  </member>
+  <member name="MFMediaKeyStatus.pbKeyId">
+    <summary>
+      <para>A byte array representing the identifier of a session key.</para>
+    </summary>
+  </member>
+  <member name="MFMediaKeyStatus.cbKeyId">
+    <summary>
+      <para>The number of bytes in the <i>pbKeyId</i> parameter.</para>
+    </summary>
+  </member>
+  <member name="MFMediaKeyStatus.eMediaKeyStatus">
+    <summary>
+      <para>A value from the <see cref="MF_MEDIAKEY_STATUS" /> enumeration specifying the status of the associated session key.</para>
+    </summary>
+  </member>
+</doc>

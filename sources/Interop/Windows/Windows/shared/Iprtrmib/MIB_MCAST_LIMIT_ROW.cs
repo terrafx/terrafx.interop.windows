@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MIB_MCAST_LIMIT_ROW.xml' path='doc/member[@name="MIB_MCAST_LIMIT_ROW"]/*' />
 public partial struct MIB_MCAST_LIMIT_ROW
 {
+    /// <include file='MIB_MCAST_LIMIT_ROW.xml' path='doc/member[@name="MIB_MCAST_LIMIT_ROW.dwTtl"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwTtl;
 
+    /// <include file='MIB_MCAST_LIMIT_ROW.xml' path='doc/member[@name="MIB_MCAST_LIMIT_ROW.dwRateLimit"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwRateLimit;
 }

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITfSystemLangBarItemText.xml' path='doc/member[@name="ITfSystemLangBarItemText"]/*' />
 [Guid("5C4CE0E5-BA49-4B52-AC6B-3B397B4F701F")]
 [NativeTypeName("struct ITfSystemLangBarItemText : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITfSystemLangBarItemText : ITfSystemLangBarItemText
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITfSystemLangBarItemText : ITfSystemLangBarItemText
         return ((delegate* unmanaged<ITfSystemLangBarItemText*, Guid*, void**, int>)(lpVtbl[0]))((ITfSystemLangBarItemText*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITfSystemLangBarItemText : ITfSystemLangBarItemText
         return ((delegate* unmanaged<ITfSystemLangBarItemText*, uint>)(lpVtbl[1]))((ITfSystemLangBarItemText*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITfSystemLangBarItemText : ITfSystemLangBarItemText
         return ((delegate* unmanaged<ITfSystemLangBarItemText*, uint>)(lpVtbl[2]))((ITfSystemLangBarItemText*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITfSystemLangBarItemText.xml' path='doc/member[@name="ITfSystemLangBarItemText.SetItemText"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetItemText([NativeTypeName("const WCHAR *")] ushort* pch, [NativeTypeName("ULONG")] uint cch)
@@ -46,6 +51,7 @@ public unsafe partial struct ITfSystemLangBarItemText : ITfSystemLangBarItemText
         return ((delegate* unmanaged<ITfSystemLangBarItemText*, ushort*, uint, int>)(lpVtbl[3]))((ITfSystemLangBarItemText*)Unsafe.AsPointer(ref this), pch, cch);
     }
 
+    /// <include file='ITfSystemLangBarItemText.xml' path='doc/member[@name="ITfSystemLangBarItemText.GetItemText"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetItemText([NativeTypeName("BSTR *")] ushort** pbstrText)

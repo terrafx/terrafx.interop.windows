@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CERT_PUBLIC_KEY_INFO.xml' path='doc/member[@name="CERT_PUBLIC_KEY_INFO"]/*' />
 public partial struct CERT_PUBLIC_KEY_INFO
 {
+    /// <include file='CERT_PUBLIC_KEY_INFO.xml' path='doc/member[@name="CERT_PUBLIC_KEY_INFO.Algorithm"]/*' />
     public CRYPT_ALGORITHM_IDENTIFIER Algorithm;
 
+    /// <include file='CERT_PUBLIC_KEY_INFO.xml' path='doc/member[@name="CERT_PUBLIC_KEY_INFO.PublicKey"]/*' />
     public CRYPT_BIT_BLOB PublicKey;
 }

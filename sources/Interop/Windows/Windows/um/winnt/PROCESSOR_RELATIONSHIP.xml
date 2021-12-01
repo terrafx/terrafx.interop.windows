@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PROCESSOR_RELATIONSHIP">
+    <summary>
+      <para>Represents information about affinity within a processor group. This structure is used with the <see cref="GetLogicalProcessorInformationEx" /> function.</para>
+    </summary>
+    <remarks>
+      <para>The <b>PROCESSOR_RELATIONSHIP</b> structure describes the logical processors associated with either a processor core or a processor package.</para>
+      <para>If the <b>PROCESSOR_RELATIONSHIP</b> structure represents a processor core, the <b>GroupCount</b> member is always 1.</para>
+      <para>If the <b>PROCESSOR_RELATIONSHIP</b> structure represents a processor package, the  <b>GroupCount</b> member is 1 only if all processors are in the same processor group. If the package contains more than one NUMA node, the system might assign different NUMA nodes to different processor groups. In this case, the <b>GroupCount</b> member is the number of groups to which NUMA nodes in the package are assigned.</para>
+    </remarks>
+    <seealso cref="GROUP_AFFINITY" />
+    <seealso cref="GetLogicalProcessorInformationEx" />
+    <seealso cref="SYSTEM_LOGICAL_PROCESSOR_INFORMATION_EX" />
+  </member>
+  <member name="PROCESSOR_RELATIONSHIP.Flags">
+    <summary>
+      <para>If the <b>Relationship</b> member of the <see cref="SYSTEM_LOGICAL_PROCESSOR_INFORMATION_EX" /> structure is <b>RelationProcessorCore</b>, this member is LTP_PC_SMT if the core has more than one logical processor, or 0 if the core has one logical processor.</para>
+      <para>If the <b>Relationship</b> member of the <see cref="SYSTEM_LOGICAL_PROCESSOR_INFORMATION_EX" /> structure is <b>RelationProcessorPackage</b>, this member is always 0.</para>
+    </summary>
+  </member>
+  <member name="PROCESSOR_RELATIONSHIP.EfficiencyClass">
+    <summary>
+      <para>If the <b>Relationship</b> member of the <see cref="SYSTEM_LOGICAL_PROCESSOR_INFORMATION_EX" /> structure is <b>RelationProcessorCore</b>, <b>EfficiencyClass</b> specifies the intrinsic tradeoff between performance and power for the applicable core. A core  with a higher value for the efficiency class has intrinsically greater performance and less efficiency than a core with a lower value for the efficiency class. <b>EfficiencyClass</b> is only nonzero on systems with a heterogeneous set of cores.</para>
+      <para>If the <b>Relationship</b> member of the <see cref="SYSTEM_LOGICAL_PROCESSOR_INFORMATION_EX" /> structure is <b>RelationProcessorPackage</b>, <b>EfficiencyClass</b> is always 0.</para>
+      <para>The minimum operating system version that supports this member is Windows 10.</para>
+    </summary>
+  </member>
+  <member name="PROCESSOR_RELATIONSHIP.Reserved">
+    <summary>
+      <para>This member is reserved.</para>
+    </summary>
+  </member>
+  <member name="PROCESSOR_RELATIONSHIP.GroupCount">
+    <summary>
+      <para>This member specifies the number of entries in the <b>GroupMask</b> array. For more information, see Remarks.</para>
+    </summary>
+  </member>
+  <member name="PROCESSOR_RELATIONSHIP.GroupMask">
+    <summary>
+      <para>An array of <see cref="GROUP_AFFINITY" /> structures. The <b>GroupCount</b> member specifies the number of structures in the array. Each structure in the array specifies a  group number and processor affinity within the group.</para>
+    </summary>
+  </member>
+</doc>

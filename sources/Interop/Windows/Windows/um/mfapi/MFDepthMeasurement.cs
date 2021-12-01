@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MFDepthMeasurement.xml' path='doc/member[@name="MFDepthMeasurement"]/*' />
 public enum MFDepthMeasurement
 {
+    /// <include file='MFDepthMeasurement.xml' path='doc/member[@name="MFDepthMeasurement.DistanceToFocalPlane"]/*' />
     DistanceToFocalPlane = 0,
+
+    /// <include file='MFDepthMeasurement.xml' path='doc/member[@name="MFDepthMeasurement.DistanceToOpticalCenter"]/*' />
     DistanceToOpticalCenter = 1,
 }

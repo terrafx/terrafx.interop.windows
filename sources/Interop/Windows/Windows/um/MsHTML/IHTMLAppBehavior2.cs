@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IHTMLAppBehavior2.xml' path='doc/member[@name="IHTMLAppBehavior2"]/*' />
 [Guid("3050F5C9-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IHTMLAppBehavior2 : IDispatch")]
 [NativeInheritance("IDispatch")]
@@ -16,6 +17,7 @@ public unsafe partial struct IHTMLAppBehavior2 : IHTMLAppBehavior2.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IHTMLAppBehavior2 : IHTMLAppBehavior2.Interface
         return ((delegate* unmanaged<IHTMLAppBehavior2*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLAppBehavior2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IHTMLAppBehavior2 : IHTMLAppBehavior2.Interface
         return ((delegate* unmanaged<IHTMLAppBehavior2*, uint>)(lpVtbl[1]))((IHTMLAppBehavior2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IHTMLAppBehavior2 : IHTMLAppBehavior2.Interface
         return ((delegate* unmanaged<IHTMLAppBehavior2*, uint>)(lpVtbl[2]))((IHTMLAppBehavior2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct IHTMLAppBehavior2 : IHTMLAppBehavior2.Interface
         return ((delegate* unmanaged<IHTMLAppBehavior2*, uint*, int>)(lpVtbl[3]))((IHTMLAppBehavior2*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct IHTMLAppBehavior2 : IHTMLAppBehavior2.Interface
         return ((delegate* unmanaged<IHTMLAppBehavior2*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IHTMLAppBehavior2*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
@@ -60,6 +67,7 @@ public unsafe partial struct IHTMLAppBehavior2 : IHTMLAppBehavior2.Interface
         return ((delegate* unmanaged<IHTMLAppBehavior2*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLAppBehavior2*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
+    /// <inheritdoc cref="IDispatch.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
@@ -67,6 +75,7 @@ public unsafe partial struct IHTMLAppBehavior2 : IHTMLAppBehavior2.Interface
         return ((delegate* unmanaged<IHTMLAppBehavior2*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IHTMLAppBehavior2*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
+    /// <include file='IHTMLAppBehavior2.xml' path='doc/member[@name="IHTMLAppBehavior2.put_contextMenu"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT put_contextMenu([NativeTypeName("BSTR")] ushort* v)
@@ -74,6 +83,7 @@ public unsafe partial struct IHTMLAppBehavior2 : IHTMLAppBehavior2.Interface
         return ((delegate* unmanaged<IHTMLAppBehavior2*, ushort*, int>)(lpVtbl[7]))((IHTMLAppBehavior2*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLAppBehavior2.xml' path='doc/member[@name="IHTMLAppBehavior2.get_contextMenu"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT get_contextMenu([NativeTypeName("BSTR *")] ushort** p)
@@ -81,6 +91,7 @@ public unsafe partial struct IHTMLAppBehavior2 : IHTMLAppBehavior2.Interface
         return ((delegate* unmanaged<IHTMLAppBehavior2*, ushort**, int>)(lpVtbl[8]))((IHTMLAppBehavior2*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLAppBehavior2.xml' path='doc/member[@name="IHTMLAppBehavior2.put_innerBorder"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT put_innerBorder([NativeTypeName("BSTR")] ushort* v)
@@ -88,6 +99,7 @@ public unsafe partial struct IHTMLAppBehavior2 : IHTMLAppBehavior2.Interface
         return ((delegate* unmanaged<IHTMLAppBehavior2*, ushort*, int>)(lpVtbl[9]))((IHTMLAppBehavior2*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLAppBehavior2.xml' path='doc/member[@name="IHTMLAppBehavior2.get_innerBorder"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT get_innerBorder([NativeTypeName("BSTR *")] ushort** p)
@@ -95,6 +107,7 @@ public unsafe partial struct IHTMLAppBehavior2 : IHTMLAppBehavior2.Interface
         return ((delegate* unmanaged<IHTMLAppBehavior2*, ushort**, int>)(lpVtbl[10]))((IHTMLAppBehavior2*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLAppBehavior2.xml' path='doc/member[@name="IHTMLAppBehavior2.put_scroll"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT put_scroll([NativeTypeName("BSTR")] ushort* v)
@@ -102,6 +115,7 @@ public unsafe partial struct IHTMLAppBehavior2 : IHTMLAppBehavior2.Interface
         return ((delegate* unmanaged<IHTMLAppBehavior2*, ushort*, int>)(lpVtbl[11]))((IHTMLAppBehavior2*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLAppBehavior2.xml' path='doc/member[@name="IHTMLAppBehavior2.get_scroll"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT get_scroll([NativeTypeName("BSTR *")] ushort** p)
@@ -109,6 +123,7 @@ public unsafe partial struct IHTMLAppBehavior2 : IHTMLAppBehavior2.Interface
         return ((delegate* unmanaged<IHTMLAppBehavior2*, ushort**, int>)(lpVtbl[12]))((IHTMLAppBehavior2*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLAppBehavior2.xml' path='doc/member[@name="IHTMLAppBehavior2.put_scrollFlat"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT put_scrollFlat([NativeTypeName("BSTR")] ushort* v)
@@ -116,6 +131,7 @@ public unsafe partial struct IHTMLAppBehavior2 : IHTMLAppBehavior2.Interface
         return ((delegate* unmanaged<IHTMLAppBehavior2*, ushort*, int>)(lpVtbl[13]))((IHTMLAppBehavior2*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLAppBehavior2.xml' path='doc/member[@name="IHTMLAppBehavior2.get_scrollFlat"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT get_scrollFlat([NativeTypeName("BSTR *")] ushort** p)
@@ -123,6 +139,7 @@ public unsafe partial struct IHTMLAppBehavior2 : IHTMLAppBehavior2.Interface
         return ((delegate* unmanaged<IHTMLAppBehavior2*, ushort**, int>)(lpVtbl[14]))((IHTMLAppBehavior2*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLAppBehavior2.xml' path='doc/member[@name="IHTMLAppBehavior2.put_selection"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT put_selection([NativeTypeName("BSTR")] ushort* v)
@@ -130,6 +147,7 @@ public unsafe partial struct IHTMLAppBehavior2 : IHTMLAppBehavior2.Interface
         return ((delegate* unmanaged<IHTMLAppBehavior2*, ushort*, int>)(lpVtbl[15]))((IHTMLAppBehavior2*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLAppBehavior2.xml' path='doc/member[@name="IHTMLAppBehavior2.get_selection"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT get_selection([NativeTypeName("BSTR *")] ushort** p)

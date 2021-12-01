@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IHighlightRenderingServices.xml' path='doc/member[@name="IHighlightRenderingServices"]/*' />
 [Guid("3050F606-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IHighlightRenderingServices : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IHighlightRenderingServices : IHighlightRenderingSe
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IHighlightRenderingServices : IHighlightRenderingSe
         return ((delegate* unmanaged<IHighlightRenderingServices*, Guid*, void**, int>)(lpVtbl[0]))((IHighlightRenderingServices*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IHighlightRenderingServices : IHighlightRenderingSe
         return ((delegate* unmanaged<IHighlightRenderingServices*, uint>)(lpVtbl[1]))((IHighlightRenderingServices*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IHighlightRenderingServices : IHighlightRenderingSe
         return ((delegate* unmanaged<IHighlightRenderingServices*, uint>)(lpVtbl[2]))((IHighlightRenderingServices*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IHighlightRenderingServices.xml' path='doc/member[@name="IHighlightRenderingServices.AddSegment"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT AddSegment(IDisplayPointer* pDispPointerStart, IDisplayPointer* pDispPointerEnd, IHTMLRenderStyle* pIRenderStyle, IHighlightSegment** ppISegment)
@@ -46,6 +51,7 @@ public unsafe partial struct IHighlightRenderingServices : IHighlightRenderingSe
         return ((delegate* unmanaged<IHighlightRenderingServices*, IDisplayPointer*, IDisplayPointer*, IHTMLRenderStyle*, IHighlightSegment**, int>)(lpVtbl[3]))((IHighlightRenderingServices*)Unsafe.AsPointer(ref this), pDispPointerStart, pDispPointerEnd, pIRenderStyle, ppISegment);
     }
 
+    /// <include file='IHighlightRenderingServices.xml' path='doc/member[@name="IHighlightRenderingServices.MoveSegmentToPointers"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT MoveSegmentToPointers(IHighlightSegment* pISegment, IDisplayPointer* pDispPointerStart, IDisplayPointer* pDispPointerEnd)
@@ -53,6 +59,7 @@ public unsafe partial struct IHighlightRenderingServices : IHighlightRenderingSe
         return ((delegate* unmanaged<IHighlightRenderingServices*, IHighlightSegment*, IDisplayPointer*, IDisplayPointer*, int>)(lpVtbl[4]))((IHighlightRenderingServices*)Unsafe.AsPointer(ref this), pISegment, pDispPointerStart, pDispPointerEnd);
     }
 
+    /// <include file='IHighlightRenderingServices.xml' path='doc/member[@name="IHighlightRenderingServices.RemoveSegment"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT RemoveSegment(IHighlightSegment* pISegment)

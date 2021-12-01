@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="eAVEncVideoFilmContent">
+    <summary>
+      <para>Specifies whether the original source of the input video was film or video. This enumeration is used with the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avencvideosourcefilmcontent-property">AVEncVideoSourceFilmContent</a> property.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-enumerations">Codec API Enumerations</seealso>
+    <seealso cref="ICodecAPI Interface" />
+  </member>
+  <member name="eAVEncVideoFilmContent.eAVEncVideoFilmContent_VideoOnly">
+    <summary>
+      <para>The original source was video.</para>
+    </summary>
+  </member>
+  <member name="eAVEncVideoFilmContent.eAVEncVideoFilmContent_FilmOnly">
+    <summary>
+      <para>The original source was film.</para>
+    </summary>
+  </member>
+  <member name="eAVEncVideoFilmContent.eAVEncVideoFilmContent_Mixed">
+    <summary>
+      <para>The original source contains a mix of video and film.</para>
+    </summary>
+  </member>
+</doc>

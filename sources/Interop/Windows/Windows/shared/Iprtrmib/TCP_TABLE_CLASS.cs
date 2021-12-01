@@ -5,15 +5,33 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TCP_TABLE_CLASS.xml' path='doc/member[@name="TCP_TABLE_CLASS"]/*' />
 public enum TCP_TABLE_CLASS
 {
+    /// <include file='TCP_TABLE_CLASS.xml' path='doc/member[@name="TCP_TABLE_CLASS.TCP_TABLE_BASIC_LISTENER"]/*' />
     TCP_TABLE_BASIC_LISTENER,
+
+    /// <include file='TCP_TABLE_CLASS.xml' path='doc/member[@name="TCP_TABLE_CLASS.TCP_TABLE_BASIC_CONNECTIONS"]/*' />
     TCP_TABLE_BASIC_CONNECTIONS,
+
+    /// <include file='TCP_TABLE_CLASS.xml' path='doc/member[@name="TCP_TABLE_CLASS.TCP_TABLE_BASIC_ALL"]/*' />
     TCP_TABLE_BASIC_ALL,
+
+    /// <include file='TCP_TABLE_CLASS.xml' path='doc/member[@name="TCP_TABLE_CLASS.TCP_TABLE_OWNER_PID_LISTENER"]/*' />
     TCP_TABLE_OWNER_PID_LISTENER,
+
+    /// <include file='TCP_TABLE_CLASS.xml' path='doc/member[@name="TCP_TABLE_CLASS.TCP_TABLE_OWNER_PID_CONNECTIONS"]/*' />
     TCP_TABLE_OWNER_PID_CONNECTIONS,
+
+    /// <include file='TCP_TABLE_CLASS.xml' path='doc/member[@name="TCP_TABLE_CLASS.TCP_TABLE_OWNER_PID_ALL"]/*' />
     TCP_TABLE_OWNER_PID_ALL,
+
+    /// <include file='TCP_TABLE_CLASS.xml' path='doc/member[@name="TCP_TABLE_CLASS.TCP_TABLE_OWNER_MODULE_LISTENER"]/*' />
     TCP_TABLE_OWNER_MODULE_LISTENER,
+
+    /// <include file='TCP_TABLE_CLASS.xml' path='doc/member[@name="TCP_TABLE_CLASS.TCP_TABLE_OWNER_MODULE_CONNECTIONS"]/*' />
     TCP_TABLE_OWNER_MODULE_CONNECTIONS,
+
+    /// <include file='TCP_TABLE_CLASS.xml' path='doc/member[@name="TCP_TABLE_CLASS.TCP_TABLE_OWNER_MODULE_ALL"]/*' />
     TCP_TABLE_OWNER_MODULE_ALL,
 }

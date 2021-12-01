@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MIB_IPFORWARD_TYPE.xml' path='doc/member[@name="MIB_IPFORWARD_TYPE"]/*' />
 public enum MIB_IPFORWARD_TYPE
 {
+    /// <include file='MIB_IPFORWARD_TYPE.xml' path='doc/member[@name="MIB_IPFORWARD_TYPE.MIB_IPROUTE_TYPE_OTHER"]/*' />
     MIB_IPROUTE_TYPE_OTHER = 1,
+
+    /// <include file='MIB_IPFORWARD_TYPE.xml' path='doc/member[@name="MIB_IPFORWARD_TYPE.MIB_IPROUTE_TYPE_INVALID"]/*' />
     MIB_IPROUTE_TYPE_INVALID = 2,
+
+    /// <include file='MIB_IPFORWARD_TYPE.xml' path='doc/member[@name="MIB_IPFORWARD_TYPE.MIB_IPROUTE_TYPE_DIRECT"]/*' />
     MIB_IPROUTE_TYPE_DIRECT = 3,
+
+    /// <include file='MIB_IPFORWARD_TYPE.xml' path='doc/member[@name="MIB_IPFORWARD_TYPE.MIB_IPROUTE_TYPE_INDIRECT"]/*' />
     MIB_IPROUTE_TYPE_INDIRECT = 4,
 }

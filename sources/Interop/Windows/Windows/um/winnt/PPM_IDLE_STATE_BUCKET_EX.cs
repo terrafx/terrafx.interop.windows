@@ -5,17 +5,22 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PPM_IDLE_STATE_BUCKET_EX.xml' path='doc/member[@name="PPM_IDLE_STATE_BUCKET_EX"]/*' />
 public partial struct PPM_IDLE_STATE_BUCKET_EX
 {
+    /// <include file='PPM_IDLE_STATE_BUCKET_EX.xml' path='doc/member[@name="PPM_IDLE_STATE_BUCKET_EX.TotalTimeUs"]/*' />
     [NativeTypeName("DWORD64")]
     public ulong TotalTimeUs;
 
+    /// <include file='PPM_IDLE_STATE_BUCKET_EX.xml' path='doc/member[@name="PPM_IDLE_STATE_BUCKET_EX.MinTimeUs"]/*' />
     [NativeTypeName("DWORD")]
     public uint MinTimeUs;
 
+    /// <include file='PPM_IDLE_STATE_BUCKET_EX.xml' path='doc/member[@name="PPM_IDLE_STATE_BUCKET_EX.MaxTimeUs"]/*' />
     [NativeTypeName("DWORD")]
     public uint MaxTimeUs;
 
+    /// <include file='PPM_IDLE_STATE_BUCKET_EX.xml' path='doc/member[@name="PPM_IDLE_STATE_BUCKET_EX.Count"]/*' />
     [NativeTypeName("DWORD")]
     public uint Count;
 }

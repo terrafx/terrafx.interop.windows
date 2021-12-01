@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IApplicationActivationManager.ActivateApplication">
+    <summary>
+      <para>Activates the specified Windows Store app for the generic launch contract (Windows.Launch) in the current session.</para>
+    </summary>
+    <param name="appUserModelId">
+      <para>The application user model ID of the Windows Store app.</para>
+    </param>
+    <param name="arguments">
+      <para>A pointer to an optional, app-specific, argument string.</para>
+    </param>
+    <param name="options">
+      <para>One or more of the following flags used to support design mode, debugging, and testing scenarios.</para>
+      <h4>AO_NONE (0x00000000)</h4>
+      <para>No flags are set.</para>
+      <h4>AO_DESIGNMODE (0x00000001)</h4>
+      <para>The app is being activated for design mode, so it can't create its normal window. The creation of the app's window must be done by design tools that load the necessary components by communicating with a designer-specified service on the site chain established through the activation manager. Note that this means that the splash screen seen during regular activations won't be seen.</para>
+      <para>Note that you must <see cref="enable debug mode" /> on the app's package to successfully use design mode.</para>
+      <h4>AO_NOERRORUI (0x00000002)</h4>
+      <para>Do not display an error dialog if the app fails to activate.</para>
+      <h4>AO_NOSPLASHSCREEN (0x00000004)</h4>
+      <para>Do not display the app's splash screen when the app is activated. You must <see cref="enable debug mode" /> on the app's package when you use this flag; otherwise, the PLM will terminate the app after a few seconds.</para>
+      <h4>AO_PRELAUNCH (0x2000000)</h4>
+      <para>The application is being activated in prelaunch mode. This value is supported starting in Windows 10.</para>
+    </param>
+    <param name="processId">
+      <para>A pointer to a value that, when this method returns successfully, receives the process ID of the app instance that fulfills this contract.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IApplicationActivationManager" />
+    <seealso cref="IPackageDebugSettings.EnableDebugging" />
+  </member>
+  <member name="IApplicationActivationManager.ActivateForFile">
+    <summary>
+      <para>Activates the specified Windows Store app for the file contract (Windows.File).</para>
+    </summary>
+    <param name="appUserModelId">
+      <para>The application user model ID of the Windows Store app.</para>
+    </param>
+    <param name="itemArray">
+      <para>A pointer to an array of Shell items, each representing a file. This value is converted to a <a href="https://docs.microsoft.com//cpp/cppcx/platform-collections-vectorview-class?view=vs-2019">VectorView</a> of <a href="https://docs.microsoft.com//uwp/api/windows.storage.istorageitem">StorageItem</a> objects that is passed to the app through <a href="https://docs.microsoft.com//uwp/api/windows.applicationmodel.activation.fileactivatedeventargs">FileActivatedEventArgs</a>.</para>
+    </param>
+    <param name="verb">
+      <para>The verb being applied to the file or files specified by <i>itemArray</i>.</para>
+    </param>
+    <param name="processId">
+      <para>A pointer to a value that, when this method returns successfully, receives the process ID of the app instance that fulfills this contract.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IApplicationActivationManager" />
+  </member>
+  <member name="IApplicationActivationManager.ActivateForProtocol">
+    <summary>
+      <para>Activates the specified Windows Store app for the protocol contract (Windows.Protocol).</para>
+    </summary>
+    <param name="appUserModelId">
+      <para>The application user model ID of the Windows Store app.</para>
+    </param>
+    <param name="itemArray">
+      <para>A pointer to an array of a single Shell item. The first item in the array is converted into a Uri object that is passed to the app through <a href="https://docs.microsoft.com//uwp/api/windows.applicationmodel.activation.protocolactivatedeventargs">ProtocolActivatedEventArgs</a>. Any items in the array except for the first element are ignored.</para>
+    </param>
+    <param name="processId">
+      <para>A pointer to a value that, when this method returns successfully, receives the process ID of the app instance that fulfills this contract.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IApplicationActivationManager" />
+  </member>
+  <member name="IApplicationActivationManager">
+    <summary>
+      <para>Provides methods which activate Windows Store apps for the Launch, File, and Protocol <a href="https://docs.microsoft.com//previous-versions/windows/apps/hh464906(v=win.10)">extensions</a>. You will normally use this interface in debuggers and design tools.</para>
+    </summary>
+    <remarks>
+      <h3>When to Implement</h3>
+      <para>Do not implement this interface yourself. Windows provides an implementation as part of the CApplicationActivationManager class. To get an instance of this class, call <see cref="CoCreateInstance" /> with the CLSID_ApplicationActivationManager class ID.</para>
+      <h3>Usage notes</h3>
+      <para>An <b>IApplicationActivationManager</b> object creates a thread in its host process to serve any activated event arguments objects (<a href="https://docs.microsoft.com//uwp/api/windows.applicationmodel.activation.launchactivatedeventargs">LaunchActivatedEventArgs</a>, <a href="https://docs.microsoft.com//uwp/api/windows.applicationmodel.activation.fileactivatedeventargs">FileActivatedEventArgs</a>, and <a href="https://docs.microsoft.com//uwp/api/windows.applicationmodel.activation.protocolactivatedeventargs">ProtocolActivatedEventArgs</a>) that are passed to the app. If the calling process is long-lived, you can create this object in-proc, based on the assumption that the event arguments will exist long enough for the target app to use them. However, if the calling process is spawned only to launch the target app, it should create the <b>IApplicationActivationManager</b> object out-of-process, by using CLSCTX_LOCAL_SERVER. This causes the object to be created in a Dllhost.exe instance that automatically manages the object's lifetime based on outstanding references to the activated event argument objects.</para>
+    </remarks>
+    <seealso cref="IUnknown" />
+  </member>
+</doc>

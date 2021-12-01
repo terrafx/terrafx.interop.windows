@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TsRunType.xml' path='doc/member[@name="TsRunType"]/*' />
 public enum TsRunType
 {
+    /// <include file='TsRunType.xml' path='doc/member[@name="TsRunType.TS_RT_PLAIN"]/*' />
     TS_RT_PLAIN = 0,
+
+    /// <include file='TsRunType.xml' path='doc/member[@name="TsRunType.TS_RT_HIDDEN"]/*' />
     TS_RT_HIDDEN = (TS_RT_PLAIN + 1),
+
+    /// <include file='TsRunType.xml' path='doc/member[@name="TsRunType.TS_RT_OPAQUE"]/*' />
     TS_RT_OPAQUE = (TS_RT_HIDDEN + 1),
 }

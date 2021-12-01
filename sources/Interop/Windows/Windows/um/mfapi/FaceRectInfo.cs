@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='FaceRectInfo.xml' path='doc/member[@name="FaceRectInfo"]/*' />
 public partial struct FaceRectInfo
 {
+    /// <include file='FaceRectInfo.xml' path='doc/member[@name="FaceRectInfo.Region"]/*' />
     public RECT Region;
 
+    /// <include file='FaceRectInfo.xml' path='doc/member[@name="FaceRectInfo.confidenceLevel"]/*' />
     [NativeTypeName("LONG")]
     public int confidenceLevel;
 }

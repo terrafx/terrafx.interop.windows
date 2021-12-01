@@ -7,9 +7,13 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PUAFOUT.xml' path='doc/member[@name="PUAFOUT"]/*' />
 [Flags]
 public enum PUAFOUT
 {
+    /// <include file='PUAFOUT.xml' path='doc/member[@name="PUAFOUT.PUAFOUT_DEFAULT"]/*' />
     PUAFOUT_DEFAULT = 0,
+
+    /// <include file='PUAFOUT.xml' path='doc/member[@name="PUAFOUT.PUAFOUT_ISLOCKZONEPOLICY"]/*' />
     PUAFOUT_ISLOCKZONEPOLICY = 0x1,
 }

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IHandlerActivationHost.xml' path='doc/member[@name="IHandlerActivationHost"]/*' />
 [Guid("35094A87-8BB1-4237-96C6-C417EEBDB078")]
 [NativeTypeName("struct IHandlerActivationHost : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IHandlerActivationHost : IHandlerActivationHost.Int
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IHandlerActivationHost : IHandlerActivationHost.Int
         return ((delegate* unmanaged<IHandlerActivationHost*, Guid*, void**, int>)(lpVtbl[0]))((IHandlerActivationHost*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IHandlerActivationHost : IHandlerActivationHost.Int
         return ((delegate* unmanaged<IHandlerActivationHost*, uint>)(lpVtbl[1]))((IHandlerActivationHost*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IHandlerActivationHost : IHandlerActivationHost.Int
         return ((delegate* unmanaged<IHandlerActivationHost*, uint>)(lpVtbl[2]))((IHandlerActivationHost*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IHandlerActivationHost.xml' path='doc/member[@name="IHandlerActivationHost.BeforeCoCreateInstance"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT BeforeCoCreateInstance([NativeTypeName("const IID &")] Guid* clsidHandler, IShellItemArray* itemsBeingActivated, IHandlerInfo* handlerInfo)
@@ -46,6 +51,7 @@ public unsafe partial struct IHandlerActivationHost : IHandlerActivationHost.Int
         return ((delegate* unmanaged<IHandlerActivationHost*, Guid*, IShellItemArray*, IHandlerInfo*, int>)(lpVtbl[3]))((IHandlerActivationHost*)Unsafe.AsPointer(ref this), clsidHandler, itemsBeingActivated, handlerInfo);
     }
 
+    /// <include file='IHandlerActivationHost.xml' path='doc/member[@name="IHandlerActivationHost.BeforeCreateProcess"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT BeforeCreateProcess([NativeTypeName("LPCWSTR")] ushort* applicationPath, [NativeTypeName("LPCWSTR")] ushort* commandLine, IHandlerInfo* handlerInfo)

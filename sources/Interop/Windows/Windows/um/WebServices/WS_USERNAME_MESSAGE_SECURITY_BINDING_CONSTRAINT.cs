@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_USERNAME_MESSAGE_SECURITY_BINDING_CONSTRAINT.xml' path='doc/member[@name="WS_USERNAME_MESSAGE_SECURITY_BINDING_CONSTRAINT"]/*' />
 public partial struct WS_USERNAME_MESSAGE_SECURITY_BINDING_CONSTRAINT
 {
+    /// <include file='WS_USERNAME_MESSAGE_SECURITY_BINDING_CONSTRAINT.xml' path='doc/member[@name="WS_USERNAME_MESSAGE_SECURITY_BINDING_CONSTRAINT.bindingConstraint"]/*' />
     public WS_SECURITY_BINDING_CONSTRAINT bindingConstraint;
 
+    /// <include file='WS_USERNAME_MESSAGE_SECURITY_BINDING_CONSTRAINT.xml' path='doc/member[@name="WS_USERNAME_MESSAGE_SECURITY_BINDING_CONSTRAINT.bindingUsage"]/*' />
     public WS_MESSAGE_SECURITY_USAGE bindingUsage;
 }

@@ -5,19 +5,25 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STORAGE_RPMB_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_RPMB_DESCRIPTOR"]/*' />
 public partial struct STORAGE_RPMB_DESCRIPTOR
 {
+    /// <include file='STORAGE_RPMB_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_RPMB_DESCRIPTOR.Version"]/*' />
     [NativeTypeName("DWORD")]
     public uint Version;
 
+    /// <include file='STORAGE_RPMB_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_RPMB_DESCRIPTOR.Size"]/*' />
     [NativeTypeName("DWORD")]
     public uint Size;
 
+    /// <include file='STORAGE_RPMB_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_RPMB_DESCRIPTOR.SizeInBytes"]/*' />
     [NativeTypeName("DWORD")]
     public uint SizeInBytes;
 
+    /// <include file='STORAGE_RPMB_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_RPMB_DESCRIPTOR.MaxReliableWriteSizeInBytes"]/*' />
     [NativeTypeName("DWORD")]
     public uint MaxReliableWriteSizeInBytes;
 
+    /// <include file='STORAGE_RPMB_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_RPMB_DESCRIPTOR.FrameFormat"]/*' />
     public STORAGE_RPMB_FRAME_TYPE FrameFormat;
 }

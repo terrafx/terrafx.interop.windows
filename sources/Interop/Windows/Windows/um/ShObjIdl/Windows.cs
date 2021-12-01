@@ -10,12 +10,15 @@ namespace TerraFX.Interop.Windows;
 
 public static unsafe partial class Windows
 {
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHAddDefaultPropertiesByExt"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
     public static extern HRESULT SHAddDefaultPropertiesByExt([NativeTypeName("PCWSTR")] ushort* pszExt, IPropertyStore* pPropStore);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHCreateDefaultPropertiesOp"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
     public static extern HRESULT SHCreateDefaultPropertiesOp(IShellItem* psi, IFileOperation** ppFileOp);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHSetDefaultProperties"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
     public static extern HRESULT SHSetDefaultProperties(HWND hwnd, IShellItem* psi, [NativeTypeName("DWORD")] uint dwFileOpFlags, IFileOperationProgressSink* pfops);
 

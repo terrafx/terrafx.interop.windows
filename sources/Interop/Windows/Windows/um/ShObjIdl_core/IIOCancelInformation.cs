@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IIOCancelInformation.xml' path='doc/member[@name="IIOCancelInformation"]/*' />
 [Guid("F5B0BF81-8CB5-4B1B-9449-1A159E0C733C")]
 [NativeTypeName("struct IIOCancelInformation : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IIOCancelInformation : IIOCancelInformation.Interfa
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IIOCancelInformation : IIOCancelInformation.Interfa
         return ((delegate* unmanaged<IIOCancelInformation*, Guid*, void**, int>)(lpVtbl[0]))((IIOCancelInformation*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IIOCancelInformation : IIOCancelInformation.Interfa
         return ((delegate* unmanaged<IIOCancelInformation*, uint>)(lpVtbl[1]))((IIOCancelInformation*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IIOCancelInformation : IIOCancelInformation.Interfa
         return ((delegate* unmanaged<IIOCancelInformation*, uint>)(lpVtbl[2]))((IIOCancelInformation*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IIOCancelInformation.xml' path='doc/member[@name="IIOCancelInformation.SetCancelInformation"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetCancelInformation([NativeTypeName("DWORD")] uint dwThreadID, uint uMsgCancel)
@@ -46,6 +51,7 @@ public unsafe partial struct IIOCancelInformation : IIOCancelInformation.Interfa
         return ((delegate* unmanaged<IIOCancelInformation*, uint, uint, int>)(lpVtbl[3]))((IIOCancelInformation*)Unsafe.AsPointer(ref this), dwThreadID, uMsgCancel);
     }
 
+    /// <include file='IIOCancelInformation.xml' path='doc/member[@name="IIOCancelInformation.GetCancelInformation"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetCancelInformation([NativeTypeName("DWORD *")] uint* pdwThreadID, uint* puMsgCancel)

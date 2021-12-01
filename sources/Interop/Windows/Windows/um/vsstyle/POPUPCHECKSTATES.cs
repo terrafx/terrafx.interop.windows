@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='POPUPCHECKSTATES.xml' path='doc/member[@name="POPUPCHECKSTATES"]/*' />
 public enum POPUPCHECKSTATES
 {
+    /// <include file='POPUPCHECKSTATES.xml' path='doc/member[@name="POPUPCHECKSTATES.MC_CHECKMARKNORMAL"]/*' />
     MC_CHECKMARKNORMAL = 1,
+
+    /// <include file='POPUPCHECKSTATES.xml' path='doc/member[@name="POPUPCHECKSTATES.MC_CHECKMARKDISABLED"]/*' />
     MC_CHECKMARKDISABLED = 2,
+
+    /// <include file='POPUPCHECKSTATES.xml' path='doc/member[@name="POPUPCHECKSTATES.MC_BULLETNORMAL"]/*' />
     MC_BULLETNORMAL = 3,
+
+    /// <include file='POPUPCHECKSTATES.xml' path='doc/member[@name="POPUPCHECKSTATES.MC_BULLETDISABLED"]/*' />
     MC_BULLETDISABLED = 4,
 }

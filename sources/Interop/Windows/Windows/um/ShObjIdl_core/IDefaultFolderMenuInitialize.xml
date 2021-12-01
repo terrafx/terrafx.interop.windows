@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDefaultFolderMenuInitialize.GetMenuRestrictions">
+    <summary>
+      <para>Gets shortcut menu restrictions that are currently set for the <see cref="IDefaultFolderMenuInitialize" /> object.</para>
+    </summary>
+    <param name="dfmrMask">
+      <para>A bitwise combination of the <see cref="DEFAULT_FOLDER_MENU_RESTRICTIONS" /> values that specify the mask of the restrictions to get.</para>
+    </param>
+    <param name="pdfmrValues">
+      <para>A bitwise combination of the <see cref="DEFAULT_FOLDER_MENU_RESTRICTIONS" /> values that specify the restrictions.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDefaultFolderMenuInitialize" />
+    <seealso cref="IDefaultFolderMenuInitialize.SetMenuRestrictions" />
+  </member>
+  <member name="IDefaultFolderMenuInitialize.Initialize">
+    <summary>
+      <para>Sets context menu info for the <see cref="IDefaultFolderMenuInitialize" /> object.</para>
+    </summary>
+    <param name="hwnd">
+      <para>A handle to the shortcut menu.</para>
+    </param>
+    <param name="pcmcb">
+      <para>Type: <b><see cref="IContextMenuCB" />*</b></para>
+      <para>The address of the object that defines the callback for the shortcut menu.</para>
+    </param>
+    <param name="pidlFolder">
+      <para>Type: <b>PCIDLIST_ABSOLUTE</b></para>
+      <para>The address of an item identifier list that specifies the folder of the items. If NULL, this is computed from the <i>psf</i> parameter.</para>
+    </param>
+    <param name="psf">
+      <para>Type: <b><see cref="IShellFolder" />*</b></para>
+      <para>The folder of the items.</para>
+    </param>
+    <param name="cidl">
+      <para>Type: <b>UINT</b></para>
+      <para>The count of items in the <i>apidl</i> parameter.</para>
+    </param>
+    <param name="apidl">
+      <para>Type: <b>PCUITEMID_CHILD_ARRAY</b></para>
+      <para>A pointer to an array of PIDL structures, each of which is an item to be operated on.</para>
+    </param>
+    <param name="punkAssociation">
+      <para>Type: <b>IUnknown*</b></para>
+      <para>The address of an <see cref="IQueryAssociations" /> object that specifies where to load extensions from.</para>
+    </param>
+    <param name="cKeys">
+      <para>Type: <b>UINT</b></para>
+      <para>The count of items in the <i>aKeys</i> parameter. May be zero.</para>
+    </param>
+    <param name="aKeys">
+      <para>Type: <b>const HKEY*</b></para>
+      <para>Specifies where to load extensions from.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDefaultFolderMenuInitialize" />
+  </member>
+  <member name="IDefaultFolderMenuInitialize.SetHandlerClsid">
+    <summary>
+      <para>Sets the shortcut menu handler for the <see cref="IDefaultFolderMenuInitialize" /> object.</para>
+    </summary>
+    <param name="rclsid">
+      <para>Type: <b>REFCLSID</b></para>
+      <para>The CLSID for the object defines the shortcut menu handler.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDefaultFolderMenuInitialize" />
+  </member>
+  <member name="IDefaultFolderMenuInitialize.SetMenuRestrictions">
+    <summary>
+      <para>Sets shortcut menu restrictions for the <see cref="IDefaultFolderMenuInitialize" /> object.</para>
+    </summary>
+    <param name="dfmrValues">
+      <para>A bitwise combination of the <see cref="DEFAULT_FOLDER_MENU_RESTRICTIONS" /> values that specify the restrictions to set.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDefaultFolderMenuInitialize" />
+    <seealso cref="IDefaultFolderMenuInitialize.GetMenuRestrictions" />
+  </member>
+  <member name="IDefaultFolderMenuInitialize">
+    <summary>
+      <para>Provides methods used to get and set shortcut menu information. This information is the same as that provided to <see cref="SHCreateDefaultContextMenu" /> through the <see cref="DEFCONTEXTMENU" /> structure.
+<b>Note</b>  Do not use this method to reinitialize a shortcut menu; use <see cref="IShellExtInit.Initialize" /> instead.</para>
+    </summary>
+    <seealso cref="IUnknown" />
+  </member>
+</doc>

@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DVD_SUBPICTURE_CODING.xml' path='doc/member[@name="DVD_SUBPICTURE_CODING"]/*' />
 public enum DVD_SUBPICTURE_CODING
 {
+    /// <include file='DVD_SUBPICTURE_CODING.xml' path='doc/member[@name="DVD_SUBPICTURE_CODING.DVD_SPCoding_RunLength"]/*' />
     DVD_SPCoding_RunLength = 0,
+
+    /// <include file='DVD_SUBPICTURE_CODING.xml' path='doc/member[@name="DVD_SUBPICTURE_CODING.DVD_SPCoding_Extended"]/*' />
     DVD_SPCoding_Extended = 1,
+
+    /// <include file='DVD_SUBPICTURE_CODING.xml' path='doc/member[@name="DVD_SUBPICTURE_CODING.DVD_SPCoding_Other"]/*' />
     DVD_SPCoding_Other = 2,
 }

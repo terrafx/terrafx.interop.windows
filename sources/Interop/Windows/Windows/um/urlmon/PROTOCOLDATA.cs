@@ -5,17 +5,22 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PROTOCOLDATA.xml' path='doc/member[@name="PROTOCOLDATA"]/*' />
 public unsafe partial struct PROTOCOLDATA
 {
+    /// <include file='PROTOCOLDATA.xml' path='doc/member[@name="PROTOCOLDATA.grfFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint grfFlags;
 
+    /// <include file='PROTOCOLDATA.xml' path='doc/member[@name="PROTOCOLDATA.dwState"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwState;
 
+    /// <include file='PROTOCOLDATA.xml' path='doc/member[@name="PROTOCOLDATA.pData"]/*' />
     [NativeTypeName("LPVOID")]
     public void* pData;
 
+    /// <include file='PROTOCOLDATA.xml' path='doc/member[@name="PROTOCOLDATA.cbData"]/*' />
     [NativeTypeName("ULONG")]
     public uint cbData;
 }

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMachineGlobalObjectTable.xml' path='doc/member[@name="IMachineGlobalObjectTable"]/*' />
 [Guid("26D709AC-F70B-4421-A96F-D2878FAFB00D")]
 [NativeTypeName("struct IMachineGlobalObjectTable : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMachineGlobalObjectTable : IMachineGlobalObjectTab
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMachineGlobalObjectTable : IMachineGlobalObjectTab
         return ((delegate* unmanaged<IMachineGlobalObjectTable*, Guid*, void**, int>)(lpVtbl[0]))((IMachineGlobalObjectTable*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMachineGlobalObjectTable : IMachineGlobalObjectTab
         return ((delegate* unmanaged<IMachineGlobalObjectTable*, uint>)(lpVtbl[1]))((IMachineGlobalObjectTable*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMachineGlobalObjectTable : IMachineGlobalObjectTab
         return ((delegate* unmanaged<IMachineGlobalObjectTable*, uint>)(lpVtbl[2]))((IMachineGlobalObjectTable*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMachineGlobalObjectTable.xml' path='doc/member[@name="IMachineGlobalObjectTable.RegisterObject"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT RegisterObject([NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("LPCWSTR")] ushort* identifier, IUnknown* @object, MachineGlobalObjectTableRegistrationToken* token)
@@ -46,6 +51,7 @@ public unsafe partial struct IMachineGlobalObjectTable : IMachineGlobalObjectTab
         return ((delegate* unmanaged<IMachineGlobalObjectTable*, Guid*, ushort*, IUnknown*, MachineGlobalObjectTableRegistrationToken*, int>)(lpVtbl[3]))((IMachineGlobalObjectTable*)Unsafe.AsPointer(ref this), clsid, identifier, @object, token);
     }
 
+    /// <include file='IMachineGlobalObjectTable.xml' path='doc/member[@name="IMachineGlobalObjectTable.GetObjectW"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetObjectW([NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("LPCWSTR")] ushort* identifier, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
@@ -53,6 +59,7 @@ public unsafe partial struct IMachineGlobalObjectTable : IMachineGlobalObjectTab
         return ((delegate* unmanaged<IMachineGlobalObjectTable*, Guid*, ushort*, Guid*, void**, int>)(lpVtbl[4]))((IMachineGlobalObjectTable*)Unsafe.AsPointer(ref this), clsid, identifier, riid, ppv);
     }
 
+    /// <include file='IMachineGlobalObjectTable.xml' path='doc/member[@name="IMachineGlobalObjectTable.RevokeObject"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT RevokeObject(MachineGlobalObjectTableRegistrationToken token)

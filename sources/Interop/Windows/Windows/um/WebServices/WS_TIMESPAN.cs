@@ -5,8 +5,10 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_TIMESPAN.xml' path='doc/member[@name="WS_TIMESPAN"]/*' />
 public partial struct WS_TIMESPAN
 {
+    /// <include file='WS_TIMESPAN.xml' path='doc/member[@name="WS_TIMESPAN.ticks"]/*' />
     [NativeTypeName("long long")]
     public long ticks;
 }

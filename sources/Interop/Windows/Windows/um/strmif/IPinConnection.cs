@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IPinConnection.xml' path='doc/member[@name="IPinConnection"]/*' />
 [Guid("4A9A62D3-27D4-403D-91E9-89F540E55534")]
 [NativeTypeName("struct IPinConnection : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IPinConnection : IPinConnection.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IPinConnection : IPinConnection.Interface
         return ((delegate* unmanaged<IPinConnection*, Guid*, void**, int>)(lpVtbl[0]))((IPinConnection*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IPinConnection : IPinConnection.Interface
         return ((delegate* unmanaged<IPinConnection*, uint>)(lpVtbl[1]))((IPinConnection*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IPinConnection : IPinConnection.Interface
         return ((delegate* unmanaged<IPinConnection*, uint>)(lpVtbl[2]))((IPinConnection*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IPinConnection.xml' path='doc/member[@name="IPinConnection.DynamicQueryAccept"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT DynamicQueryAccept([NativeTypeName("const AM_MEDIA_TYPE *")] AM_MEDIA_TYPE* pmt)
@@ -46,6 +51,7 @@ public unsafe partial struct IPinConnection : IPinConnection.Interface
         return ((delegate* unmanaged<IPinConnection*, AM_MEDIA_TYPE*, int>)(lpVtbl[3]))((IPinConnection*)Unsafe.AsPointer(ref this), pmt);
     }
 
+    /// <include file='IPinConnection.xml' path='doc/member[@name="IPinConnection.NotifyEndOfStream"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT NotifyEndOfStream(HANDLE hNotifyEvent)
@@ -53,6 +59,7 @@ public unsafe partial struct IPinConnection : IPinConnection.Interface
         return ((delegate* unmanaged<IPinConnection*, HANDLE, int>)(lpVtbl[4]))((IPinConnection*)Unsafe.AsPointer(ref this), hNotifyEvent);
     }
 
+    /// <include file='IPinConnection.xml' path='doc/member[@name="IPinConnection.IsEndPin"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT IsEndPin()
@@ -60,6 +67,7 @@ public unsafe partial struct IPinConnection : IPinConnection.Interface
         return ((delegate* unmanaged<IPinConnection*, int>)(lpVtbl[5]))((IPinConnection*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IPinConnection.xml' path='doc/member[@name="IPinConnection.DynamicDisconnect"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT DynamicDisconnect()

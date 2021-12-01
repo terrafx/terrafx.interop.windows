@@ -5,13 +5,17 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SecPkgContext_SrtpParameters.xml' path='doc/member[@name="SecPkgContext_SrtpParameters"]/*' />
 public unsafe partial struct SecPkgContext_SrtpParameters
 {
+    /// <include file='SecPkgContext_SrtpParameters.xml' path='doc/member[@name="SecPkgContext_SrtpParameters.ProtectionProfile"]/*' />
     [NativeTypeName("WORD")]
     public ushort ProtectionProfile;
 
+    /// <include file='SecPkgContext_SrtpParameters.xml' path='doc/member[@name="SecPkgContext_SrtpParameters.MasterKeyIdentifierSize"]/*' />
     public byte MasterKeyIdentifierSize;
 
+    /// <include file='SecPkgContext_SrtpParameters.xml' path='doc/member[@name="SecPkgContext_SrtpParameters.MasterKeyIdentifier"]/*' />
     [NativeTypeName("PBYTE")]
     public byte* MasterKeyIdentifier;
 }

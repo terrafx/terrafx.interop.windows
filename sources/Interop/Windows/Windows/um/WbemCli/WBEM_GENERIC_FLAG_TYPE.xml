@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WBEM_GENERIC_FLAG_TYPE">
+    <summary>
+      <para>Contains general-purpose method parameter flags.</para>
+    </summary>
+  </member>
+  <member name="WBEM_GENERIC_FLAG_TYPE.WBEM_FLAG_RETURN_IMMEDIATELY">
+    <summary></summary>
+  </member>
+  <member name="WBEM_GENERIC_FLAG_TYPE.WBEM_FLAG_RETURN_WBEM_COMPLETE">
+    <summary></summary>
+  </member>
+  <member name="WBEM_GENERIC_FLAG_TYPE.WBEM_FLAG_BIDIRECTIONAL">
+    <summary></summary>
+  </member>
+  <member name="WBEM_GENERIC_FLAG_TYPE.WBEM_FLAG_FORWARD_ONLY">
+    <summary></summary>
+  </member>
+  <member name="WBEM_GENERIC_FLAG_TYPE.WBEM_FLAG_NO_ERROR_OBJECT">
+    <summary></summary>
+  </member>
+  <member name="WBEM_GENERIC_FLAG_TYPE.WBEM_FLAG_RETURN_ERROR_OBJECT">
+    <summary></summary>
+  </member>
+  <member name="WBEM_GENERIC_FLAG_TYPE.WBEM_FLAG_SEND_STATUS">
+    <summary></summary>
+  </member>
+  <member name="WBEM_GENERIC_FLAG_TYPE.WBEM_FLAG_DONT_SEND_STATUS">
+    <summary></summary>
+  </member>
+  <member name="WBEM_GENERIC_FLAG_TYPE.WBEM_FLAG_ENSURE_LOCATABLE">
+    <summary></summary>
+  </member>
+  <member name="WBEM_GENERIC_FLAG_TYPE.WBEM_FLAG_DIRECT_READ">
+    <summary></summary>
+  </member>
+  <member name="WBEM_GENERIC_FLAG_TYPE.WBEM_FLAG_SEND_ONLY_SELECTED">
+    <summary></summary>
+  </member>
+  <member name="WBEM_GENERIC_FLAG_TYPE.WBEM_RETURN_WHEN_COMPLETE">
+    <summary></summary>
+  </member>
+  <member name="WBEM_GENERIC_FLAG_TYPE.WBEM_RETURN_IMMEDIATELY">
+    <summary></summary>
+  </member>
+  <member name="WBEM_GENERIC_FLAG_TYPE.WBEM_MASK_RESERVED_FLAGS">
+    <summary></summary>
+  </member>
+  <member name="WBEM_GENERIC_FLAG_TYPE.WBEM_FLAG_USE_AMENDED_QUALIFIERS">
+    <summary></summary>
+  </member>
+  <member name="WBEM_GENERIC_FLAG_TYPE.WBEM_FLAG_STRONG_VALIDATION">
+    <summary></summary>
+  </member>
+</doc>

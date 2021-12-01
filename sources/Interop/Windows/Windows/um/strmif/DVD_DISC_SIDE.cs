@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DVD_DISC_SIDE.xml' path='doc/member[@name="DVD_DISC_SIDE"]/*' />
 public enum DVD_DISC_SIDE
 {
+    /// <include file='DVD_DISC_SIDE.xml' path='doc/member[@name="DVD_DISC_SIDE.DVD_SIDE_A"]/*' />
     DVD_SIDE_A = 1,
+
+    /// <include file='DVD_DISC_SIDE.xml' path='doc/member[@name="DVD_DISC_SIDE.DVD_SIDE_B"]/*' />
     DVD_SIDE_B = 2,
 }

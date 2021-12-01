@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFSensorActivitiesReportCallback.xml' path='doc/member[@name="IMFSensorActivitiesReportCallback"]/*' />
 [Guid("DE5072EE-DBE3-46DC-8A87-B6F631194751")]
 [NativeTypeName("struct IMFSensorActivitiesReportCallback : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IMFSensorActivitiesReportCallback : IMFSensorActivi
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IMFSensorActivitiesReportCallback : IMFSensorActivi
         return ((delegate* unmanaged<IMFSensorActivitiesReportCallback*, Guid*, void**, int>)(lpVtbl[0]))((IMFSensorActivitiesReportCallback*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IMFSensorActivitiesReportCallback : IMFSensorActivi
         return ((delegate* unmanaged<IMFSensorActivitiesReportCallback*, uint>)(lpVtbl[1]))((IMFSensorActivitiesReportCallback*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IMFSensorActivitiesReportCallback : IMFSensorActivi
         return ((delegate* unmanaged<IMFSensorActivitiesReportCallback*, uint>)(lpVtbl[2]))((IMFSensorActivitiesReportCallback*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFSensorActivitiesReportCallback.xml' path='doc/member[@name="IMFSensorActivitiesReportCallback.OnActivitiesReport"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT OnActivitiesReport(IMFSensorActivitiesReport* sensorActivitiesReport)

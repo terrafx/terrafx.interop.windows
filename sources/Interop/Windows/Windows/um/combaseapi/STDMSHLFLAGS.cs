@@ -7,9 +7,13 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STDMSHLFLAGS.xml' path='doc/member[@name="STDMSHLFLAGS"]/*' />
 [Flags]
 public enum STDMSHLFLAGS
 {
+    /// <include file='STDMSHLFLAGS.xml' path='doc/member[@name="STDMSHLFLAGS.SMEXF_SERVER"]/*' />
     SMEXF_SERVER = 0x01,
+
+    /// <include file='STDMSHLFLAGS.xml' path='doc/member[@name="STDMSHLFLAGS.SMEXF_HANDLER"]/*' />
     SMEXF_HANDLER = 0x02,
 }

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_OPERATION_STYLE">
+    <summary>
+      <para>An enumeration of the different operation styles.</para>
+    </summary>
+  </member>
+  <member name="WS_OPERATION_STYLE.WS_NON_RPC_LITERAL_OPERATION">
+    <summary>
+      <para>document/literal style operation or encoding operations.</para>
+    </summary>
+  </member>
+  <member name="WS_OPERATION_STYLE.WS_RPC_LITERAL_OPERATION">
+    <summary>
+      <para>rpc/literal style operation.</para>
+    </summary>
+  </member>
+</doc>

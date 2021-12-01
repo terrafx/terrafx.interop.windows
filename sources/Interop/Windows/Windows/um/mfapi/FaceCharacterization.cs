@@ -5,17 +5,22 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='FaceCharacterization.xml' path='doc/member[@name="FaceCharacterization"]/*' />
 public partial struct FaceCharacterization
 {
+    /// <include file='FaceCharacterization.xml' path='doc/member[@name="FaceCharacterization.BlinkScoreLeft"]/*' />
     [NativeTypeName("ULONG")]
     public uint BlinkScoreLeft;
 
+    /// <include file='FaceCharacterization.xml' path='doc/member[@name="FaceCharacterization.BlinkScoreRight"]/*' />
     [NativeTypeName("ULONG")]
     public uint BlinkScoreRight;
 
+    /// <include file='FaceCharacterization.xml' path='doc/member[@name="FaceCharacterization.FacialExpression"]/*' />
     [NativeTypeName("ULONG")]
     public uint FacialExpression;
 
+    /// <include file='FaceCharacterization.xml' path='doc/member[@name="FaceCharacterization.FacialExpressionScore"]/*' />
     [NativeTypeName("ULONG")]
     public uint FacialExpressionScore;
 }

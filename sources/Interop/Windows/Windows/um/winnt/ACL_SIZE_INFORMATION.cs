@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ACL_SIZE_INFORMATION.xml' path='doc/member[@name="ACL_SIZE_INFORMATION"]/*' />
 public partial struct ACL_SIZE_INFORMATION
 {
+    /// <include file='ACL_SIZE_INFORMATION.xml' path='doc/member[@name="ACL_SIZE_INFORMATION.AceCount"]/*' />
     [NativeTypeName("DWORD")]
     public uint AceCount;
 
+    /// <include file='ACL_SIZE_INFORMATION.xml' path='doc/member[@name="ACL_SIZE_INFORMATION.AclBytesInUse"]/*' />
     [NativeTypeName("DWORD")]
     public uint AclBytesInUse;
 
+    /// <include file='ACL_SIZE_INFORMATION.xml' path='doc/member[@name="ACL_SIZE_INFORMATION.AclBytesFree"]/*' />
     [NativeTypeName("DWORD")]
     public uint AclBytesFree;
 }

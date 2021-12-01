@@ -5,13 +5,27 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='eAVEncCommonRateControlMode.xml' path='doc/member[@name="eAVEncCommonRateControlMode"]/*' />
 public enum eAVEncCommonRateControlMode
 {
+    /// <include file='eAVEncCommonRateControlMode.xml' path='doc/member[@name="eAVEncCommonRateControlMode.eAVEncCommonRateControlMode_CBR"]/*' />
     eAVEncCommonRateControlMode_CBR = 0,
+
+    /// <include file='eAVEncCommonRateControlMode.xml' path='doc/member[@name="eAVEncCommonRateControlMode.eAVEncCommonRateControlMode_PeakConstrainedVBR"]/*' />
     eAVEncCommonRateControlMode_PeakConstrainedVBR = 1,
+
+    /// <include file='eAVEncCommonRateControlMode.xml' path='doc/member[@name="eAVEncCommonRateControlMode.eAVEncCommonRateControlMode_UnconstrainedVBR"]/*' />
     eAVEncCommonRateControlMode_UnconstrainedVBR = 2,
+
+    /// <include file='eAVEncCommonRateControlMode.xml' path='doc/member[@name="eAVEncCommonRateControlMode.eAVEncCommonRateControlMode_Quality"]/*' />
     eAVEncCommonRateControlMode_Quality = 3,
+
+    /// <include file='eAVEncCommonRateControlMode.xml' path='doc/member[@name="eAVEncCommonRateControlMode.eAVEncCommonRateControlMode_LowDelayVBR"]/*' />
     eAVEncCommonRateControlMode_LowDelayVBR = 4,
+
+    /// <include file='eAVEncCommonRateControlMode.xml' path='doc/member[@name="eAVEncCommonRateControlMode.eAVEncCommonRateControlMode_GlobalVBR"]/*' />
     eAVEncCommonRateControlMode_GlobalVBR = 5,
+
+    /// <include file='eAVEncCommonRateControlMode.xml' path='doc/member[@name="eAVEncCommonRateControlMode.eAVEncCommonRateControlMode_GlobalLowDelayVBR"]/*' />
     eAVEncCommonRateControlMode_GlobalLowDelayVBR = 6,
 }

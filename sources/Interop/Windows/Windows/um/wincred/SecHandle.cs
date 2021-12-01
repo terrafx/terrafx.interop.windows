@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SecHandle.xml' path='doc/member[@name="SecHandle"]/*' />
 public partial struct SecHandle
 {
+    /// <include file='SecHandle.xml' path='doc/member[@name="SecHandle.dwLower"]/*' />
     [NativeTypeName("ULONG_PTR")]
     public nuint dwLower;
 
+    /// <include file='SecHandle.xml' path='doc/member[@name="SecHandle.dwUpper"]/*' />
     [NativeTypeName("ULONG_PTR")]
     public nuint dwUpper;
 }

@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="EMRCREATEMONOBRUSH">
+    <summary>
+      <para>The <b>EMRCREATEMONOBRUSH</b> structure contains members for the <see cref="CreatePatternBrush" /> (when passed a monochrome bitmap) or <see cref="CreateDIBPatternBrush" /> (when passed a monochrome DIB) enhanced metafile records.</para>
+    </summary>
+    <seealso cref="BITMAPINFO" />
+    <seealso cref="CreateDIBPatternBrush" />
+    <seealso cref="CreatePatternBrush" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafile-structures">Metafile Structures</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafiles">Metafiles Overview</seealso>
+    <seealso cref="RGB" />
+  </member>
+  <member name="EMRCREATEMONOBRUSH.emr">
+    <summary>
+      <para>The base structure for all record types.</para>
+    </summary>
+  </member>
+  <member name="EMRCREATEMONOBRUSH.ihBrush">
+    <summary>
+      <para>Index of brush in handle table.</para>
+    </summary>
+  </member>
+  <member name="EMRCREATEMONOBRUSH.iUsage">
+    <summary>
+      <para>Value specifying whether the <b>bmiColors</b> member of the <see cref="BITMAPINFO" /> structure was provided and, if so, whether <b>bmiColors</b> contains explicit red, green, blue (RGB) values or indices. The <b>iUsage</b> member must be either the DIB_PAL_COLORS or DIB_RGB_COLORS value.</para>
+    </summary>
+  </member>
+  <member name="EMRCREATEMONOBRUSH.offBmi">
+    <summary>
+      <para>Offset to <see cref="BITMAPINFO" /> structure.</para>
+    </summary>
+  </member>
+  <member name="EMRCREATEMONOBRUSH.cbBmi">
+    <summary>
+      <para>Size of <see cref="BITMAPINFO" /> structure.</para>
+    </summary>
+  </member>
+  <member name="EMRCREATEMONOBRUSH.offBits">
+    <summary>
+      <para>Offset to bitmap bits.</para>
+    </summary>
+  </member>
+  <member name="EMRCREATEMONOBRUSH.cbBits">
+    <summary>
+      <para>Size of bitmap bits.</para>
+    </summary>
+  </member>
+</doc>

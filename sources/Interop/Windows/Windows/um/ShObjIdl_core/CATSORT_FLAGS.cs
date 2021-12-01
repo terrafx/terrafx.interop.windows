@@ -7,9 +7,13 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CATSORT_FLAGS.xml' path='doc/member[@name="CATSORT_FLAGS"]/*' />
 [Flags]
 public enum CATSORT_FLAGS
 {
+    /// <include file='CATSORT_FLAGS.xml' path='doc/member[@name="CATSORT_FLAGS.CATSORT_DEFAULT"]/*' />
     CATSORT_DEFAULT = 0,
+
+    /// <include file='CATSORT_FLAGS.xml' path='doc/member[@name="CATSORT_FLAGS.CATSORT_NAME"]/*' />
     CATSORT_NAME = 0x1,
 }

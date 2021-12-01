@@ -5,13 +5,17 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ADDRESS.xml' path='doc/member[@name="ADDRESS"]/*' />
 public partial struct ADDRESS
 {
+    /// <include file='ADDRESS.xml' path='doc/member[@name="ADDRESS.Offset"]/*' />
     [NativeTypeName("DWORD")]
     public uint Offset;
 
+    /// <include file='ADDRESS.xml' path='doc/member[@name="ADDRESS.Segment"]/*' />
     [NativeTypeName("WORD")]
     public ushort Segment;
 
+    /// <include file='ADDRESS.xml' path='doc/member[@name="ADDRESS.Mode"]/*' />
     public ADDRESS_MODE Mode;
 }

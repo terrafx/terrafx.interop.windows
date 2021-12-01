@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CROSS_CERT_DIST_POINTS_INFO.xml' path='doc/member[@name="CROSS_CERT_DIST_POINTS_INFO"]/*' />
 public unsafe partial struct CROSS_CERT_DIST_POINTS_INFO
 {
+    /// <include file='CROSS_CERT_DIST_POINTS_INFO.xml' path='doc/member[@name="CROSS_CERT_DIST_POINTS_INFO.dwSyncDeltaTime"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwSyncDeltaTime;
 
+    /// <include file='CROSS_CERT_DIST_POINTS_INFO.xml' path='doc/member[@name="CROSS_CERT_DIST_POINTS_INFO.cDistPoint"]/*' />
     [NativeTypeName("DWORD")]
     public uint cDistPoint;
 
+    /// <include file='CROSS_CERT_DIST_POINTS_INFO.xml' path='doc/member[@name="CROSS_CERT_DIST_POINTS_INFO.rgDistPoint"]/*' />
     [NativeTypeName("PCERT_ALT_NAME_INFO")]
     public CERT_ALT_NAME_INFO* rgDistPoint;
 }

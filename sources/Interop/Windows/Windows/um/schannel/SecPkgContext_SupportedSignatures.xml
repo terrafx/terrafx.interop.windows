@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SecPkgContext_SupportedSignatures">
+    <summary>
+      <para>Specifies the signature algorithms supported by an Schannel connection.</para>
+    </summary>
+    <seealso cref="QueryContextAttributes (Schannel)" />
+  </member>
+  <member name="SecPkgContext_SupportedSignatures.cSignatureAndHashAlgorithms">
+    <summary>
+      <para>The number of elements in the <i>pSignatureAndHashAlgorithms</i> array.</para>
+    </summary>
+  </member>
+  <member name="SecPkgContext_SupportedSignatures.pSignatureAndHashAlgorithms">
+    <summary>
+      <para>An array of values that specify supported algorithms. These values are in the following format.</para>
+      <para>The upper byte can be one of the following values that specifies a signature algorithm.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <para>0</para>
+          </description>
+          <description>
+            <para>Anonymous signature algorithm.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>1</para>
+          </description>
+          <description>
+            <para>The RSA signature algorithm.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>2</para>
+          </description>
+          <description>
+            <para>The DSA signature algorithm.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>3</para>
+          </description>
+          <description>
+            <para>The ECDSA signature algorithm.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>255</para>
+          </description>
+          <description>
+            <para>Reserved.</para>
+          </description>
+        </item>
+      </list>
+      <para>The lower byte can be one of the following values that specifies a hash algorithm.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <para>0</para>
+          </description>
+          <description>
+            <para>None.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>1</para>
+          </description>
+          <description>
+            <para>The MD5 hash algorithm.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>2</para>
+          </description>
+          <description>
+            <para>The SHA1 hash algorithm.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>3</para>
+          </description>
+          <description>
+            <para>The SHA-224 hash algorithm.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>4</para>
+          </description>
+          <description>
+            <para>The SHA-256 hash algorithm.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>5</para>
+          </description>
+          <description>
+            <para>The SHA-384 hash algorithm.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>6</para>
+          </description>
+          <description>
+            <para>The SHA-512 hash algorithm.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>255</para>
+          </description>
+          <description>
+            <para>Reserved.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+</doc>

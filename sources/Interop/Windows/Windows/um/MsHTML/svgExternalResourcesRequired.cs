@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='svgExternalResourcesRequired.xml' path='doc/member[@name="svgExternalResourcesRequired"]/*' />
 public enum svgExternalResourcesRequired
 {
+    /// <include file='svgExternalResourcesRequired.xml' path='doc/member[@name="svgExternalResourcesRequired.svgExternalResourcesRequiredFalse"]/*' />
     svgExternalResourcesRequiredFalse = 0,
+
+    /// <include file='svgExternalResourcesRequired.xml' path='doc/member[@name="svgExternalResourcesRequired.svgExternalResourcesRequiredTrue"]/*' />
     svgExternalResourcesRequiredTrue = 1,
+
+    /// <include file='svgExternalResourcesRequired.xml' path='doc/member[@name="svgExternalResourcesRequired.svgExternalResourcesRequired_Max"]/*' />
     svgExternalResourcesRequired_Max = 2147483647,
 }

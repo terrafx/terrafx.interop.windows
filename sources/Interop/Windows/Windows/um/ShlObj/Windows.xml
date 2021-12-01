@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="Windows.PathProcessCommand">
+    <summary>
+      <para>Deprecated. Processes a string that contains a command line and generates a suitably quoted string, with arguments attached if required.</para>
+    </summary>
+    <param name="pszSrc">
+      <para>Type: <b>PCWSTR</b></para>
+      <para>A pointer to a null-terminated string that contains the command line to process.</para>
+    </param>
+    <param name="pszDest">
+      <para>Type: <b>PWSTR</b></para>
+      <para>Pointer to a buffer that receives a null-terminated Unicode string with the appropriate quotation marks. To determine how large this buffer must be, set this parameter to <b>NULL</b>. The function returns the required buffer size.</para>
+    </param>
+    <param name="cchDest">
+      <para>Type: <b>int</b></para>
+      <para>The maximum number of characters that can be put in <i>pszDest</i>, not including the terminating null character. If this value is too small, the function fails.</para>
+    </param>
+    <param name="dwFlags">
+      <para>Type: <b>DWORD</b></para>
+      <para>Flags that control the procedure. One or more of the following values:</para>
+      <h4>PPCF_ADDQUOTES (0x00000001)</h4>
+      <para>Add quotes if the path requires them.</para>
+      <h4>PPCF_ADDARGUMENTS (0x00000003)</h4>
+      <para>Append trailing arguments to the output string. This value includes <b>PPCF_ADDQUOTES</b>.</para>
+      <h4>PPCF_NODIRECTORIES (0x00000010)</h4>
+      <para>Do not match the input string against folders, only against file objects.</para>
+      <h4>PPCF_FORCEQUALIFY (0x00000040)</h4>
+      <para>Qualify even non-relative file names.</para>
+      <h4>PPCF_LONGESTPOSSIBLE (0x00000080)</h4>
+      <para>Always choose the longest possible executable name.</para>
+    </param>
+    <returns>
+      <para>Type: <b>LONG</b></para>
+      <para>Returns a positive value if successful. If <i>lpDest</i> is set to <b>NULL</b>, the function returns the required buffer size in characters, including the terminating null character. If the call fails, the function returns a negative value.</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>Note</b>  This function is available through Windows XP Service Pack 2 (SP2) and Windows Server 2003. It is not supported in Windows Vista and later versions of Windows.</para>
+    </remarks>
+  </member>
+  <member name="Windows.SHChangeNotifyRegisterThread">
+    <summary>
+      <para>Enables asynchronous register and deregister of a thread.</para>
+    </summary>
+    <param name="status">
+      <para>Type: <b><see cref="SCNRT_STATUS" /></b></para>
+      <para>Indicates whether the function is being used to register or deregister the thread. One of the values of <see cref="SCNRT_STATUS" />.</para>
+    </param>
+  </member>
+  <member name="Windows.SHMultiFileProperties">
+    <summary>
+      <para>Displays a merged property sheet for a set of files. Property values common to all the files are shown while those that differ display the string <b>(multiple values)</b>.</para>
+    </summary>
+    <param name="pdtobj">
+      <para>Type: <b><see cref="IDataObject" />*</b></para>
+      <para>A pointer to a data object that supplies the PIDLs of all of the files for which to display the merged property sheet. The data object must use the <a href="https://docs.microsoft.com//windows/desktop/shell/clipboard">CFSTR_SHELLIDLIST</a> clipboard format. The parent folder's implementation of <see cref="IShellFolder.GetDisplayNameOf" /> must return a fully qualified file system path for each item in response to the <see cref="SHGDN_FORPARSING" /> flag.</para>
+    </param>
+    <param name="dwFlags">
+      <para>Type: <b>DWORD</b></para>
+      <para>Reserved. Must be set to 0.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/shell/clipboard">Shell Clipboard Formats</seealso>
+  </member>
+  <member name="Windows.SHRunControlPanel">
+    <summary>
+      <para>Opens a Control Panel item.</para>
+      <para>
+        <b>Note</b>  This function is not supported as of Windows Vista</para>
+    </summary>
+    <param name="lpcszCmdLine">
+      <para>Type: <b>PCWSTR</b></para>
+      <para>Pointer to a string that contains the command line that opens the Control Panel item. This command line includes at least the name of the .cpl file. It can also contain any other necessary information such as the property sheet page within the item (either by ordinal or by name). For more information, see <a href="https://docs.microsoft.com//windows/desktop/shell/executing-control-panel-items">Executing Control Panel Items</a>.</para>
+    </param>
+    <param name="hwndMsgParent">
+      <para>Type: <b>HWND</b></para>
+      <para>The handle of the parent window, used to display error messages about the opening of the item. This value can be <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>BOOL</b></para>
+      <para>
+        <b>TRUE</b> if the Control Panel item was opened successfully; otherwise, <b>FALSE</b>.</para>
+      <para>As of Windows Vista, this function always returns <b>FALSE</b>.</para>
+    </returns>
+    <remarks>
+      <para>If the specified Control Panel item is already running, <b>SHRunControlPanel</b> attempts to switch to that instance rather than opening a new instance.</para>
+      <h4>Examples</h4>
+      <para>Example calls to <b>SHRunControlPanel</b> are shown here.</para>
+      <code>SHRunControlPanel(TEXT("timedate.cpl"), hwnd);
+SHRunControlPanel(L"appwiz.cpl", NULL);
+SHRunControlPanel(L"appwiz.cpl,2", NULL);
+SHRunControlPanel("desk.cpl,Settings", hwnd
+</code>
+    </remarks>
+  </member>
+  <member name="Windows.SoftwareUpdateMessageBox">
+    <summary>
+      <para>Displays a standard message box that can be used to notify a user that an application has been updated.</para>
+    </summary>
+    <param name="hWnd">
+      <para>Type: <b>HWND</b></para>
+      <para>A handle to the parent window.</para>
+    </param>
+    <param name="pszDistUnit">
+      <para>Type: <b>PCWSTR</b></para>
+      <para>The string value containing the identifier for the code distribution unit. For ActiveX controls, <i>pszDistUnit</i> is typically a GUID.</para>
+    </param>
+    <param name="dwFlags">
+      <para>Type: <b>DWORD</b></para>
+      <para>Reserved. Must be set to zero.</para>
+    </param>
+    <param name="psdi">
+      <para>Type: <b>LPSOFTDISTINFO</b></para>
+      <para>A pointer to a <see cref="SOFTDISTINFO" /> structure that, when this method returns successfully, receives the update information. The <b>cbSize</b> member must be initialized to the <code>sizeof(SOFTDISTINFO)</code>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>DWORD</b></para>
+      <para>Returns one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>IDNO</b>
+            </para>
+          </description>
+          <description>
+            <para>The user clicked the <b>Do Not Update</b> button on the dialog box.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>IDYES</b>
+            </para>
+          </description>
+          <description>
+            <para>The user clicked the <b>Update Now</b> or <b>About Update</b> button. The application should navigate to the HTML page referred to by the <b>szHREF</b> member of the structure pointed to by <i>psdi</i>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>IDIGNORE</b>
+            </para>
+          </description>
+          <description>
+            <para>There is no pending software update.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>IDABORT</b>
+            </para>
+          </description>
+          <description>
+            <para>An error occurred.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The preferred way to handle updates is to author a Channel Definition Format (CDF) with an Open Software Description (OSD) vocabulary and make the shortcut OSD-aware. Refer to the <a href="https://docs.microsoft.com//previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa768023(v=vs.85)">Channel Definition Format</a> documentation for details.</para>
+      <para>The <b>SoftwareUpdateMessageBox</b> function is intended to be used in the case where Shell shortcut hooks do not work. One example is an application that was not installed on the start menu. If that application needs to do its own software update check, it should use this function.</para>
+    </remarks>
+  </member>
+</doc>

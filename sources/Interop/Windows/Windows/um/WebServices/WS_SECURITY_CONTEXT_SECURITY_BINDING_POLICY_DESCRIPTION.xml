@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_SECURITY_CONTEXT_SECURITY_BINDING_POLICY_DESCRIPTION">
+    <summary>
+      <para>This type description is used with template APIs to describe
+the security context related templates generated accordingly to input policy setting.</para>
+    </summary>
+  </member>
+  <member name="WS_SECURITY_CONTEXT_SECURITY_BINDING_POLICY_DESCRIPTION.securityContextMessageSecurityBinding">
+    <summary>
+      <para>Specifies the message security binding usage.</para>
+    </summary>
+  </member>
+  <member name="WS_SECURITY_CONTEXT_SECURITY_BINDING_POLICY_DESCRIPTION.securityProperties">
+    <summary>
+      <para>Specifies the security properties for the service channel according to the specific policy.</para>
+    </summary>
+  </member>
+</doc>

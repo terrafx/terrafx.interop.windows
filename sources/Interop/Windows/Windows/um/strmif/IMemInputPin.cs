@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMemInputPin.xml' path='doc/member[@name="IMemInputPin"]/*' />
 [Guid("56A8689D-0AD4-11CE-B03A-0020AF0BA770")]
 [NativeTypeName("struct IMemInputPin : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMemInputPin : IMemInputPin.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMemInputPin : IMemInputPin.Interface
         return ((delegate* unmanaged<IMemInputPin*, Guid*, void**, int>)(lpVtbl[0]))((IMemInputPin*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMemInputPin : IMemInputPin.Interface
         return ((delegate* unmanaged<IMemInputPin*, uint>)(lpVtbl[1]))((IMemInputPin*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMemInputPin : IMemInputPin.Interface
         return ((delegate* unmanaged<IMemInputPin*, uint>)(lpVtbl[2]))((IMemInputPin*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMemInputPin.xml' path='doc/member[@name="IMemInputPin.GetAllocator"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetAllocator(IMemAllocator** ppAllocator)
@@ -46,6 +51,7 @@ public unsafe partial struct IMemInputPin : IMemInputPin.Interface
         return ((delegate* unmanaged<IMemInputPin*, IMemAllocator**, int>)(lpVtbl[3]))((IMemInputPin*)Unsafe.AsPointer(ref this), ppAllocator);
     }
 
+    /// <include file='IMemInputPin.xml' path='doc/member[@name="IMemInputPin.NotifyAllocator"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT NotifyAllocator(IMemAllocator* pAllocator, BOOL bReadOnly)
@@ -53,6 +59,7 @@ public unsafe partial struct IMemInputPin : IMemInputPin.Interface
         return ((delegate* unmanaged<IMemInputPin*, IMemAllocator*, BOOL, int>)(lpVtbl[4]))((IMemInputPin*)Unsafe.AsPointer(ref this), pAllocator, bReadOnly);
     }
 
+    /// <include file='IMemInputPin.xml' path='doc/member[@name="IMemInputPin.GetAllocatorRequirements"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetAllocatorRequirements(ALLOCATOR_PROPERTIES* pProps)
@@ -60,6 +67,7 @@ public unsafe partial struct IMemInputPin : IMemInputPin.Interface
         return ((delegate* unmanaged<IMemInputPin*, ALLOCATOR_PROPERTIES*, int>)(lpVtbl[5]))((IMemInputPin*)Unsafe.AsPointer(ref this), pProps);
     }
 
+    /// <include file='IMemInputPin.xml' path='doc/member[@name="IMemInputPin.Receive"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Receive(IMediaSample* pSample)
@@ -67,6 +75,7 @@ public unsafe partial struct IMemInputPin : IMemInputPin.Interface
         return ((delegate* unmanaged<IMemInputPin*, IMediaSample*, int>)(lpVtbl[6]))((IMemInputPin*)Unsafe.AsPointer(ref this), pSample);
     }
 
+    /// <include file='IMemInputPin.xml' path='doc/member[@name="IMemInputPin.ReceiveMultiple"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT ReceiveMultiple(IMediaSample** pSamples, [NativeTypeName("long")] int nSamples, [NativeTypeName("long *")] int* nSamplesProcessed)
@@ -74,6 +83,7 @@ public unsafe partial struct IMemInputPin : IMemInputPin.Interface
         return ((delegate* unmanaged<IMemInputPin*, IMediaSample**, int, int*, int>)(lpVtbl[7]))((IMemInputPin*)Unsafe.AsPointer(ref this), pSamples, nSamples, nSamplesProcessed);
     }
 
+    /// <include file='IMemInputPin.xml' path='doc/member[@name="IMemInputPin.ReceiveCanBlock"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT ReceiveCanBlock()

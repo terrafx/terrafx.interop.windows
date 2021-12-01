@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IShellService.SetOwner">
+    <summary>
+      <para>Deprecated. Declares an owner reference to the service object.</para>
+    </summary>
+    <param name="punkOwner">
+      <para>Type: <b><see cref="IUnknown" />*</b></para>
+      <para>The address of an interface pointer to the owner object. If <b>NULL</b>, the object should call <see cref="IUnknown.Release" /> to release the existing reference.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The client calls <see cref="CoCreateInstance" /> for <see cref="IShellService" />, then calls <b>SetOwner(this)</b> to declare ownership. When the client is dismissed, typically when the window is closed, it calls <b>SetOwner(NULL)</b> to instruct the service object to release the reference to the owner object.</para>
+    </remarks>
+  </member>
+  <member name="IShellService">
+    <summary>
+      <para>Deprecated. <b>IShellService</b> Exposes one method that declares ownership when a service component implementing a certain interface is shared among multiple clients, such as Windows Internet Explorer and Windows Explorer.</para>
+    </summary>
+  </member>
+</doc>

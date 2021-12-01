@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="INPUT">
+    <summary>
+      <para>Used by <see cref="SendInput" /> to store information for synthesizing input events such as keystrokes, mouse movement, and mouse clicks.</para>
+    </summary>
+    <remarks>
+      <para>
+        <b> INPUT_KEYBOARD</b> supports nonkeyboard input methods, such as handwriting recognition or voice recognition, as if it were text input by using the <b>KEYEVENTF_UNICODE</b> flag. For more information, see the remarks section of <see cref="KEYBDINPUT" />.</para>
+    </remarks>
+    <seealso cref="GetMessageExtraInfo" />
+    <seealso cref="HARDWAREINPUT" />
+    <seealso cref="KEYBDINPUT" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/inputdev/keyboard-input">Keyboard Input</seealso>
+    <seealso cref="MOUSEINPUT" />
+    <seealso cref="SendInput" />
+    <seealso cref="keybd_event" />
+    <seealso cref="mouse_event" />
+  </member>
+  <member name="INPUT.type">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The type of the input event. This member can be one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>INPUT_MOUSE</b>
+                </description>
+              </item>
+              <item>
+                <description>0</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The event is a mouse event. Use the <b>mi</b> structure of the union.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>INPUT_KEYBOARD</b>
+                </description>
+              </item>
+              <item>
+                <description>1</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The event is a keyboard event. Use the <b>ki</b> structure of the union.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>INPUT_HARDWARE</b>
+                </description>
+              </item>
+              <item>
+                <description>2</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The event is a hardware event. Use the <b>hi</b> structure of the union.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="INPUT.DUMMYUNIONNAME">
+    <summary></summary>
+  </member>
+  <member name="INPUT.DUMMYUNIONNAME.mi">
+    <summary>
+      <para>Type: <b><see cref="MOUSEINPUT" /></b></para>
+      <para>The information about a simulated mouse event.</para>
+    </summary>
+  </member>
+  <member name="INPUT.DUMMYUNIONNAME.ki">
+    <summary>
+      <para>Type: <b><see cref="KEYBDINPUT" /></b></para>
+      <para>The information about a simulated keyboard event.</para>
+    </summary>
+  </member>
+  <member name="INPUT.DUMMYUNIONNAME.hi">
+    <summary>
+      <para>Type: <b><see cref="HARDWAREINPUT" /></b></para>
+      <para>The information about a simulated hardware event.</para>
+    </summary>
+  </member>
+</doc>

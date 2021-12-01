@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ITfLangBarItemButton.GetIcon">
+    <summary>
+      <para>Obtains the icon to be displayed for the language bar button.</para>
+    </summary>
+    <param name="phIcon">
+      <para>Pointer to an <b>HICON</b> value that receives the icon handle. Receives <b>NULL</b> if the button has no icon. The caller must free this icon when it is no longer required by calling <b>DestroyIcon</b>.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <i>phIcon</i> is invalid.
+</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The ideal size of the icon can be obtained by calling GetSystemMetrics(SM_CXSMICON) for the icon width and GetSystemMetrics(SM_CYSMICON) for the icon height.</para>
+      <para>If the button has the TF_LBI_STYLE_TEXTCOLORICON style, the icon obtained by this method should be a monochrome icon.</para>
+    </remarks>
+  </member>
+  <member name="ITfLangBarItemButton.GetText">
+    <summary>
+      <para>Obtains the text to be displayed for the button in the language bar.</para>
+    </summary>
+    <param name="pbstrText">
+      <para>Pointer to a <b>BSTR</b> that receives the string for the language bar item. This string must be allocated using the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oleauto/nf-oleauto-sysallocstring">SysAllocString</a> function. The caller must free this buffer when it is no longer required by calling <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oleauto/nf-oleauto-sysfreestring">SysFreeString</a>.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <i>pbstrText</i> is invalid.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>A memory allocation failure occurred.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="ITfLangBarItemButton" />
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oleauto/nf-oleauto-sysallocstring">SysAllocString</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oleauto/nf-oleauto-sysfreestring">SysFreeString</seealso>
+  </member>
+  <member name="ITfLangBarItemButton.InitMenu">
+    <summary>
+      <para>This method is not used if the button item does not have the TF_LBI_STYLE_BTN_MENU style.</para>
+    </summary>
+    <param name="pMenu">
+      <para>Pointer to an <see cref="ITfMenu" /> interface that the language bar button uses to add items to the menu that the language bar displays for the button.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>An unspecified error occurred.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="ITfLangBarItemButton" />
+    <seealso cref="ITfMenu " />
+  </member>
+  <member name="ITfLangBarItemButton.OnClick">
+    <summary>
+      <para>This method is not used if the button item does not have the TF_LBI_STYLE_BTN_BUTTON style.</para>
+    </summary>
+    <param name="click">
+      <para>Contains one of the <see cref="TfLBIClick" /> values that indicate which mouse button was used to click the button.</para>
+    </param>
+    <param name="pt">
+      <para>Pointer to a <a href="https://docs.microsoft.com//previous-versions/dd162805(v=vs.85)">POINT</a> structure that contains the position of the mouse cursor, in screen coordinates, at the time of the click event.</para>
+    </param>
+    <param name="prcArea">
+      <para>Pointer to a <see cref="RECT" /> structure that contains the bounding rectangle, in screen coordinates, of the button.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>One or more parameters are invalid.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="ITfLangBarItemButton" />
+    <seealso href="https://docs.microsoft.com//previous-versions/dd162805(v=vs.85)">POINT</seealso>
+    <seealso cref="RECT" />
+    <seealso cref="TfLBIClick " />
+  </member>
+  <member name="ITfLangBarItemButton.OnMenuSelect">
+    <summary>
+      <para>This method is not used if the button item does not have the TF_LBI_STYLE_BTN_MENU style.</para>
+    </summary>
+    <param name="wID">
+      <para>Specifies the identifier of the menu item selected. This is the value passed for the <i>uId</i> parameter in <see cref="ITfMenu.AddMenuItem" />.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>An unspecified error occurred.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="ITfLangBarItemButton" />
+    <seealso cref="ITfMenu.AddMenuItem " />
+  </member>
+  <member name="ITfLangBarItemButton">
+    <summary>
+      <para>The <b>ITfLangBarItemButton</b> interface is implemented by a language bar button provider and used by the language bar manager to obtain information about a button item on the language bar.</para>
+      <para>The language bar manager obtains an instance of this interface by calling QueryInterface on the <see cref="ITfLangBarItem" /> passed to <see cref="ITfLangBarItemMgr.AddItem" />.</para>
+    </summary>
+    <remarks>
+      <para>A language bar button functions as a pushbutton, toggle button, or a menu on the language bar.</para>
+      <para>If the button has the TF_LBI_STYLE_BTN_BUTTON style, the button acts as a pushbutton that the user can click with the mouse. When the user clicks the button, <see cref="ITfLangBarItemButton.OnClick" /> is called. <see cref="ITfLangBarItemButton.InitMenu" /> and <see cref="ITfLangBarItemButton.OnMenuSelect" /> are not used.</para>
+      <para>If the button has the TF_LBI_STYLE_BTN_TOGGLE style, the button functions similar to a check box that the user can select or deselect with the mouse. When the user clicks the button, <b>ITfLangBarItemButton.OnClick</b> is called. <b>ITfLangBarItemButton.InitMenu</b> and <b>ITfLangBarItemButton.OnMenuSelect</b> are not used.</para>
+      <para>If the button has the TF_LBI_STYLE_BTN_MENU style, the button acts like a top-level menu item. When the user clicks the button, <b>ITfLangBarItemButton.InitMenu</b> is called. If the user selects an item in the menu, <b>ITfLangBarItemButton.OnMenuSelect</b> is called. <b>ITfLangBarItemButton.OnClick</b> is not used.</para>
+    </remarks>
+  </member>
+</doc>

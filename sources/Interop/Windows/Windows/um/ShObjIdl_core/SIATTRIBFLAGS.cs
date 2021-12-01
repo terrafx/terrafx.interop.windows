@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SIATTRIBFLAGS.xml' path='doc/member[@name="SIATTRIBFLAGS"]/*' />
 public enum SIATTRIBFLAGS
 {
+    /// <include file='SIATTRIBFLAGS.xml' path='doc/member[@name="SIATTRIBFLAGS.SIATTRIBFLAGS_AND"]/*' />
     SIATTRIBFLAGS_AND = 0x1,
+
+    /// <include file='SIATTRIBFLAGS.xml' path='doc/member[@name="SIATTRIBFLAGS.SIATTRIBFLAGS_OR"]/*' />
     SIATTRIBFLAGS_OR = 0x2,
+
+    /// <include file='SIATTRIBFLAGS.xml' path='doc/member[@name="SIATTRIBFLAGS.SIATTRIBFLAGS_APPCOMPAT"]/*' />
     SIATTRIBFLAGS_APPCOMPAT = 0x3,
+
+    /// <include file='SIATTRIBFLAGS.xml' path='doc/member[@name="SIATTRIBFLAGS.SIATTRIBFLAGS_MASK"]/*' />
     SIATTRIBFLAGS_MASK = 0x3,
+
+    /// <include file='SIATTRIBFLAGS.xml' path='doc/member[@name="SIATTRIBFLAGS.SIATTRIBFLAGS_ALLITEMS"]/*' />
     SIATTRIBFLAGS_ALLITEMS = 0x4000,
 }

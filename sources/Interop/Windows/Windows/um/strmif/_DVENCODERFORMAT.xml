@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="_DVENCODERFORMAT">
+    <summary>
+      <para>Indicates the digital video (DV) format.</para>
+    </summary>
+    <remarks>
+      <para>This enumeration specifies the <b>fccType</b> member of the AVI stream header. For more information, see <a href="https://docs.microsoft.com//windows/desktop/DirectShow/dv-data-in-the-avi-file-format">DV Data in the AVI File Format</a>.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-enumerated-types">DirectShow Enumerated Types</seealso>
+    <seealso cref="IDVEnc Interface" />
+  </member>
+  <member name="_DVENCODERFORMAT.DVENCODERFORMAT_DVSD">
+    <summary>
+      <para>Use the 'dvsd' stream handler.</para>
+    </summary>
+  </member>
+  <member name="_DVENCODERFORMAT.DVENCODERFORMAT_DVHD">
+    <summary>
+      <para>Use the 'dvhd' stream handler.</para>
+    </summary>
+  </member>
+  <member name="_DVENCODERFORMAT.DVENCODERFORMAT_DVSL">
+    <summary>
+      <para>Use the 'dvsl' stream handler.</para>
+    </summary>
+  </member>
+</doc>

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="UDACCEL">
+    <summary>
+      <para>Contains acceleration information for an up-down control.</para>
+    </summary>
+  </member>
+  <member name="UDACCEL.nSec">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Amount of elapsed time, in seconds, before the position change increment specified by
+<b>nInc</b> is used.</para>
+    </summary>
+  </member>
+  <member name="UDACCEL.nInc">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Position change increment to use after the time specified by
+<b>nSec</b> elapses.</para>
+    </summary>
+  </member>
+</doc>

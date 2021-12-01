@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DVD_VIDEO_COMPRESSION">
+    <summary>
+      <para>Defines the possible DVD video compression types.</para>
+    </summary>
+    <remarks>
+      <para>This enumeration is a member of the <see cref="DVD_VideoAttributes" /> structure, which is filled by a call to the <see cref="IDvdInfo2.GetCurrentVideoAttributes" /> method.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-enumerated-types">DirectShow Enumerated Types</seealso>
+  </member>
+  <member name="DVD_VIDEO_COMPRESSION.DVD_VideoCompression_Other">
+    <summary>
+      <para>Unrecognized compression type.</para>
+    </summary>
+  </member>
+  <member name="DVD_VIDEO_COMPRESSION.DVD_VideoCompression_MPEG1">
+    <summary>
+      <para>MPEG-1 compression type.</para>
+    </summary>
+  </member>
+  <member name="DVD_VIDEO_COMPRESSION.DVD_VideoCompression_MPEG2">
+    <summary>
+      <para>MPEG-2 compression type.</para>
+    </summary>
+  </member>
+</doc>

@@ -7,10 +7,13 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NETWORK_APP_INSTANCE_EA.xml' path='doc/member[@name="NETWORK_APP_INSTANCE_EA"]/*' />
 public partial struct NETWORK_APP_INSTANCE_EA
 {
+    /// <include file='NETWORK_APP_INSTANCE_EA.xml' path='doc/member[@name="NETWORK_APP_INSTANCE_EA.AppInstanceID"]/*' />
     public Guid AppInstanceID;
 
+    /// <include file='NETWORK_APP_INSTANCE_EA.xml' path='doc/member[@name="NETWORK_APP_INSTANCE_EA.CsvFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint CsvFlags;
 }

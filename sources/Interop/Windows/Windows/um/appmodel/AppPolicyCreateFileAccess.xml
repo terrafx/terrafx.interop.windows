@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="AppPolicyCreateFileAccess">
+    <summary>
+      <para>The AppPolicyCreateFileAccess enumeration indicates whether a process has full or restricted access to the IO devices (file, file stream, directory, physical disk, volume, console buffer, tape drive, communications resource, mailslot, and pipe).</para>
+    </summary>
+  </member>
+  <member name="AppPolicyCreateFileAccess.AppPolicyCreateFileAccess_Full">
+    <summary>
+      <para>Indicates that the process has full access to the IO devices. This value is expected for a desktop application, or for a Desktop Bridge application.</para>
+    </summary>
+  </member>
+  <member name="AppPolicyCreateFileAccess.AppPolicyCreateFileAccess_Limited">
+    <summary>
+      <para>Indicates that the process has limited access to the IO devices. This value is expected for a UWP app.</para>
+    </summary>
+  </member>
+</doc>

@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STORAGE_CRYPTO_KEY_SIZE.xml' path='doc/member[@name="STORAGE_CRYPTO_KEY_SIZE"]/*' />
 public enum STORAGE_CRYPTO_KEY_SIZE
 {
+    /// <include file='STORAGE_CRYPTO_KEY_SIZE.xml' path='doc/member[@name="STORAGE_CRYPTO_KEY_SIZE.StorageCryptoKeySizeUnknown"]/*' />
     StorageCryptoKeySizeUnknown = 0,
+
+    /// <include file='STORAGE_CRYPTO_KEY_SIZE.xml' path='doc/member[@name="STORAGE_CRYPTO_KEY_SIZE.StorageCryptoKeySize128Bits"]/*' />
     StorageCryptoKeySize128Bits = 1,
+
+    /// <include file='STORAGE_CRYPTO_KEY_SIZE.xml' path='doc/member[@name="STORAGE_CRYPTO_KEY_SIZE.StorageCryptoKeySize192Bits"]/*' />
     StorageCryptoKeySize192Bits,
+
+    /// <include file='STORAGE_CRYPTO_KEY_SIZE.xml' path='doc/member[@name="STORAGE_CRYPTO_KEY_SIZE.StorageCryptoKeySize256Bits"]/*' />
     StorageCryptoKeySize256Bits,
+
+    /// <include file='STORAGE_CRYPTO_KEY_SIZE.xml' path='doc/member[@name="STORAGE_CRYPTO_KEY_SIZE.StorageCryptoKeySize512Bits"]/*' />
     StorageCryptoKeySize512Bits,
 }

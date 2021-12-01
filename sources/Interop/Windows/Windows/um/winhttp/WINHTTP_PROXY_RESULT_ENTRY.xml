@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WINHTTP_PROXY_RESULT_ENTRY">
+    <summary>
+      <para>The <b>WINHTTP_PROXY_RESULT_ENTRY</b> structure contains a result entry from a call to <see cref="WinHttpGetProxyResult" />.</para>
+    </summary>
+    <remarks>
+      <para>This structure is stored in an array inside of a <see cref="WINHTTP_PROXY_RESULT" /> structure.</para>
+    </remarks>
+    <seealso cref="WINHTTP_PROXY_RESULT" />
+    <seealso cref="WinHttpFreeProxyResult" />
+    <seealso cref="WinHttpGetProxyResult" />
+  </member>
+  <member name="WINHTTP_PROXY_RESULT_ENTRY.fProxy">
+    <summary>
+      <para>A <b>BOOL</b> that whether a result is from a proxy. It is set to <b>TRUE</b>   if the result contains a proxy or <b>FALSE</b> if the result does not contain a proxy.</para>
+    </summary>
+  </member>
+  <member name="WINHTTP_PROXY_RESULT_ENTRY.fBypass">
+    <summary>
+      <para>A BOOL that indicates if the result is bypassing a proxy (on an intranet). It is set to  <b>TRUE</b> if the result is bypassing a proxy or <b>FALSE</b> if all traffic is direct. This parameter applies only if <i>fProxy</i> is <b>FALSE</b>.</para>
+    </summary>
+  </member>
+  <member name="WINHTTP_PROXY_RESULT_ENTRY.ProxyScheme">
+    <summary>
+      <para>An <a href="https://docs.microsoft.com//windows/desktop/WinHttp/internet-scheme">INTERNET_SCHEME</a> value that specifies the scheme of the proxy.</para>
+    </summary>
+  </member>
+  <member name="WINHTTP_PROXY_RESULT_ENTRY.pwszProxy">
+    <summary>
+      <para>A string that contains the hostname of the proxy.</para>
+    </summary>
+  </member>
+  <member name="WINHTTP_PROXY_RESULT_ENTRY.ProxyPort">
+    <summary>
+      <para>An <a href="https://docs.microsoft.com//windows/desktop/WinHttp/internet-port">INTERNET_PORT</a> value that specifies the port of the proxy.</para>
+    </summary>
+  </member>
+</doc>

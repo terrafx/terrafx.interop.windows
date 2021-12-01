@@ -5,17 +5,23 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CMSG_RECIPIENT_ENCRYPTED_KEY_ENCODE_INFO.xml' path='doc/member[@name="CMSG_RECIPIENT_ENCRYPTED_KEY_ENCODE_INFO"]/*' />
 public unsafe partial struct CMSG_RECIPIENT_ENCRYPTED_KEY_ENCODE_INFO
 {
+    /// <include file='CMSG_RECIPIENT_ENCRYPTED_KEY_ENCODE_INFO.xml' path='doc/member[@name="CMSG_RECIPIENT_ENCRYPTED_KEY_ENCODE_INFO.cbSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbSize;
 
+    /// <include file='CMSG_RECIPIENT_ENCRYPTED_KEY_ENCODE_INFO.xml' path='doc/member[@name="CMSG_RECIPIENT_ENCRYPTED_KEY_ENCODE_INFO.RecipientPublicKey"]/*' />
     public CRYPT_BIT_BLOB RecipientPublicKey;
 
+    /// <include file='CMSG_RECIPIENT_ENCRYPTED_KEY_ENCODE_INFO.xml' path='doc/member[@name="CMSG_RECIPIENT_ENCRYPTED_KEY_ENCODE_INFO.RecipientId"]/*' />
     public CERT_ID RecipientId;
 
+    /// <include file='CMSG_RECIPIENT_ENCRYPTED_KEY_ENCODE_INFO.xml' path='doc/member[@name="CMSG_RECIPIENT_ENCRYPTED_KEY_ENCODE_INFO.Date"]/*' />
     public FILETIME Date;
 
+    /// <include file='CMSG_RECIPIENT_ENCRYPTED_KEY_ENCODE_INFO.xml' path='doc/member[@name="CMSG_RECIPIENT_ENCRYPTED_KEY_ENCODE_INFO.pOtherAttr"]/*' />
     [NativeTypeName("PCRYPT_ATTRIBUTE_TYPE_VALUE")]
     public CRYPT_ATTRIBUTE_TYPE_VALUE* pOtherAttr;
 }

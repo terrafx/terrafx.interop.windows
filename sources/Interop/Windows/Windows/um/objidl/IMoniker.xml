@@ -1,0 +1,1847 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMoniker.BindToObject">
+    <summary>
+      <para>Binds to the specified object. The binding process involves finding the object, putting it into the running state if necessary, and providing the caller with a pointer to a specified interface on the identified object.</para>
+    </summary>
+    <param name="pbc">
+      <para>A pointer to the <see cref="IBindCtx" /> interface on the bind context object, which is used in this binding operation. The bind context caches objects bound during the binding process, contains parameters that apply to all operations using the bind context, and provides the means by which the moniker implementation should retrieve information about its environment.</para>
+    </param>
+    <param name="pmkToLeft">
+      <para>If the moniker is part of a composite moniker, pointer to the moniker to the left of this moniker. This parameter is primarily used by moniker implementers to enable cooperation between the various components of a composite moniker. Moniker clients should use <b>NULL</b>.</para>
+    </param>
+    <param name="riidResult">
+      <para>The IID of the interface the client wishes to use to communicate with the object that the moniker identifies.</para>
+    </param>
+    <param name="ppvResult">
+      <para>The address of pointer variable that receives the interface pointer requested in <i>riid</i>. Upon successful return, *<i>ppvResult</i> contains the requested interface pointer to the object the moniker identifies. When successful, the implementation must call <see cref="AddRef" /> on the moniker. It is the caller's responsibility to call <see cref="Release" />. If an error occurs, *<i>ppvResult</i> should be <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>This method can return the standard return values E_OUTOFMEMORY and E_UNEXPECTED, as well as the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The binding operation was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MK_E_NOOBJECT</b>
+            </para>
+          </description>
+          <description>
+            <para>The object identified by this moniker, or some object identified by the composite moniker of which this moniker is a part, could not be found.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MK_E_EXCEEDEDDEADLINE</b>
+            </para>
+          </description>
+          <description>
+            <para>The binding operation could not be completed within the time limit specified by the bind context's <see cref="BIND_OPTS" /> structure.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MK_E_CONNECTMANUALLY</b>
+            </para>
+          </description>
+          <description>
+            <para>The binding operation requires assistance from the end user. The most common reason for returning this value is that a password is needed or that a floppy needs to be mounted. When this value is returned, retrieve the moniker that caused the error with a call to <see cref="IBindCtx.GetObjectParam" /> with the key "ConnectManually". You can then call <see cref="IMoniker.GetDisplayName" /> to get the display name, display a dialog box that communicates the desired information, such as instructions to mount a floppy or a request for a password, and then retry the binding operation.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MK_E_INTERMEDIATEINTERFACENOTSUPPORTED</b>
+            </para>
+          </description>
+          <description>
+            <para>An intermediate object was found but it did not support an interface required to complete the binding operation. For example, an item moniker returns this value if its container does not support the <see cref="IOleItemContainer" /> interface.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>STG_E_ACCESSDENIED</b>
+            </para>
+          </description>
+          <description>
+            <para>Unable to access the storage object.</para>
+          </description>
+        </item>
+      </list>
+      <para>This method can also return the errors associated with the <see cref="IOleItemContainer.GetObject" /> method.</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>BindToObject</b> implements the primary function of a moniker, which is to locate the object identified by the moniker and return a pointer to one of its interfaces.</para>
+      <h3>Notes to Callers</h3>
+      <para>If you are using a moniker as a persistent connection between two objects, you activate the connection by calling <b>BindToObject</b>.</para>
+      <para>You typically call <b>BindToObject</b> during the following process:</para>
+      <list type="number">
+        <item>
+          <description>Create a bind context object with a call to the <see cref="CreateBindCtx" /> function.</description>
+        </item>
+        <item>
+          <description>Call <b>BindToObject</b> using the moniker, retrieving a pointer to a desired interface on the identified object.</description>
+        </item>
+        <item>
+          <description>Release the bind context.</description>
+        </item>
+        <item>
+          <description>Through the acquired interface pointer, perform the desired operations on the object.</description>
+        </item>
+        <item>
+          <description>When finished with the object, release the object's interface pointer. </description>
+        </item>
+      </list>
+      <para>The following code fragment illustrates these steps.</para>
+      <code>HRESULT hr;       // An error code
+IMoniker * pMnk;  // A previously acquired interface moniker
+
+// Obtain an IBindCtx interface.
+IBindCtx * pbc;
+hr = CreateBindCtx(NULL, &amp;amp;amp;amp;amp;amp;amp;pbc);
+if (FAILED(hr)) exit(0);  // Handle errors here.
+
+// Obtain an implementation of pCellRange.
+ICellRange * pCellRange;
+hr = pMnk-&gt;BindToObject(pbc, NULL, IID_ICellRange, &amp;amp;amp;amp;amp;amp;amp;pCellRange);
+if (FAILED(hr)) exit(0);  // Handle errors here.
+
+// Use pCellRange here.
+
+// Release interfaces after use.
+pbc-&gt;Release();
+pCellRange-&gt;Release();
+
+</code>
+      <para>You can also use the <see cref="BindMoniker" /> function when you intend only one binding operation and don't need to retain the bind context object. This helper function encapsulates the creation of the bind context, calling <b>BindToObject</b> and releasing the bind context.</para>
+      <para>COM containers that support links to objects use monikers to locate and get access to the linked object but typically do not call <b>BindToObject</b> directly. Instead, when a user activates a link in a container, the link container usually calls <see cref="IOleObject.DoVerb" />, using the link handler's implementation, which calls <b>BindToObject</b> on the moniker stored in the linked object (if it cannot handle the verb).</para>
+      <h3>Notes to Implementers</h3>
+      <para>What your implementation does depends on whether you expect your moniker to have a prefix; that is, whether you expect the <i>pmkToLeft</i> parameter to be <b>NULL</b> or not. For example, an item moniker, which identifies an object within a container, expects that <i>pmkToLeft</i> identifies the container. An item moniker consequently uses <i>pmkToLeft</i> to request services from that container. If you expect your moniker to have a prefix, you should use the <i>pmkToLeft</i> parameter (for example, calling <b>BindToObject</b> on it) to request services from the object it identifies.</para>
+      <para>If you expect your moniker to have no prefix, your <b>BindToObject</b> implementation should first check the running object table (ROT) to see whether the object is already running. To acquire a pointer to the ROT, your implementation should call <see cref="IBindCtx.GetRunningObjectTable" /> on the <i>pbc</i> parameter. You can then call the <see cref="IRunningObjectTable.GetObject" /> method to see if the current moniker has been registered in the ROT. If so, you can immediately call <see cref="QueryInterface" /> to get a pointer to the interface requested by the caller.</para>
+      <para>When your <b>BindToObject</b> implementation binds to some object, it should use the <i>pbc</i> parameter to call <see cref="IBindCtx.RegisterObjectBound" /> to store a reference to the bound object in the bind context. This ensures that the bound object remains running until the bind context is released, which can avoid the expense of having a subsequent binding operation load it again later.</para>
+      <para>If the bind context's <see cref="BIND_OPTS" /> structure specifies the BINDFLAGS_JUSTTESTEXISTENCE flag, your implementation has the option of returning <b>NULL</b> in <i>ppvResult</i> (although you can also ignore the flag and perform the complete binding operation).</para>
+      <h3>Implementation-specific Notes</h3>
+      <list type="table">
+        <listheader>
+          <description>Implementation</description>
+          <description>Notes</description>
+        </listheader>
+        <item>
+          <description>Anti-moniker</description>
+          <description>
+            <para>This method is not implemented. It returns E_NOTIMPL.</para>
+          </description>
+        </item>
+        <item>
+          <description>Class moniker</description>
+          <description>
+            <para>If <i>pmkLeft</i> is <b>NULL</b>, calls <see cref="CoGetClassObject" />, using the CLSID the class moniker was initialized with (in <see cref="CreateClassMoniker" /> or through <see cref="MkParseDisplayName" />) and the <see cref="CLSCTX" /> of the current <i>pbc</i> (<see cref="IBindCtx" />).</para>
+            <para>If <i>pmkLeft</i> is non-<b>NULL</b>, calls pmkLeft-&gt;BindToObject for <see cref="IClassActivator" /> and calls <see cref="IClassActivator.GetClassObject" /> with the CLSID it was initialized with and the <see cref="CLSCTX" /> and locale parameters of the current <i>pbc</i> (<see cref="IBindCtx" />).</para>
+          </description>
+        </item>
+        <item>
+          <description>File moniker</description>
+          <description>
+            <para>When <i>pmkToLeft</i> is <b>NULL</b>, the method looks for the moniker in the ROT and, if found, queries the retrieved object for the requested interface pointer. If the moniker is not found in the ROT, the method loads the object from the file system and retrieves the requested interface pointer.</para>
+            <para>If <i>pmkLeft</i> is not <b>NULL</b>, instead of determining the class to instantiate and initialize with the contents of the file referred to by the file moniker using <see cref="GetClassFile" /> (or other means), call pmkLeft-&gt;BindToObject for <see cref="IClassFactory" /> and <see cref="IClassActivator" />, retrieve this pointer in <i>pcf</i>. If this fails with E_NOINTERFACE, return MK_E_INTERMEDIATEINTERFACENOTSUPPORTED.</para>
+            <para>If the <see cref="IClassFactory" /> pointer is successfully retrieved, call pcf-&gt;CreateInstance(IID_IPersistFile, (void**)&amp;ppf) to get a fresh instance of the class to be initialized and initialize it by using <see cref="IPersistFile" /> or other appropriate means per the existing initialization paths of file moniker.</para>
+          </description>
+        </item>
+        <item>
+          <description>Generic composite moniker</description>
+          <description>
+            <para>If <i>pmkToLeft</i> is <b>NULL</b>, this method looks for the moniker in the ROT and, if found, queries the retrieved object for the requested interface pointer. If <i>pmkToLeft</i> is not <b>NULL</b>, the method recursively calls <b>BindToObject</b> on the rightmost component of the composite, passing the rest of the composite as the <i>pmkToLeft</i> parameter for that call.</para>
+          </description>
+        </item>
+        <item>
+          <description>Item moniker</description>
+          <description>
+            <para>If <i>pmkToLeft</i> is <b>NULL</b>, this method returns E_INVALIDARG. Otherwise, the method calls <b>BindToObject</b> on the <i>pmkToLeft</i> parameter, requesting an <see cref="IOleItemContainer" /> interface pointer. The method then calls <see cref="IOleItemContainer.GetObject" />, passing the string contained within the moniker, and returns the requested interface pointer.</para>
+          </description>
+        </item>
+        <item>
+          <description>OBJREF moniker</description>
+          <description>
+            <para>The <i>pmkToLeft</i> parameter must be <b>NULL</b>. Because the OBJREF moniker represents a running object, no activation takes place. If the represented object is no longer running, <b>BindToObject</b> fails with E_UNEXPECTED.</para>
+          </description>
+        </item>
+        <item>
+          <description>Pointer moniker</description>
+          <description>
+            <para>This method queries the wrapped pointer for the requested interface.</para>
+          </description>
+        </item>
+        <item>
+          <description>URL moniker</description>
+          <description>
+            <para>Because the URL Moniker supports asynchronous binding, the actual return value of its <b>BindToObject</b> may vary depending on the object parameters established in the bind context. For more information, see below.</para>
+          </description>
+        </item>
+      </list>
+      <para>The semantics of the bind operation for a URL moniker are identical regardless of synchronous or asynchronous usage, and are as follows:</para>
+      <list type="number">
+        <item>
+          <description>The URL moniker pulls further information for the bind operation from the bind context. For example, the moniker can obtain pointers to the <a href="https://docs.microsoft.com//previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms775060(v=vs.85)">IBindStatusCallback</a> and <see cref="IEnumFORMATETC" /> interfaces that are registered in the bind context. Further information can include additional bind options specified on the bind context through <see cref="IBindCtx.SetBindOptions" />, such as the <i>dwTickCountDeadline</i> parameter or the <i>grfFlags</i> value of BIND_MAYBOTHERUSER.</description>
+        </item>
+        <item>
+          <description>
+            <para>Next the moniker checks the ROT of the bind context to determine whether the referenced object is already running. The moniker can obtain this information with the following calls:</para>
+            <code>IBindCtx.GetRunningObjectTable(&amp;amp;amp;amp;amp;amp;amp;prot)
+prot-&gt;IsRunning(this)
+
+</code>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>If the object is already running, the moniker retrieves the running object with the following call:</para>
+            <code>prot-&gt;GetObject(this, &amp;amp;amp;amp;amp;amp;amp;punk)
+
+</code>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>Then the moniker calls <see cref="QueryInterface" /> for the requested interface.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>Otherwise, the moniker queries the client by calling <a href="https://docs.microsoft.com//previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms775058(v=vs.85)">IBindStatusCallback.GetBindInfo</a> to obtain additional bind information. The moniker then initiates the bind operation and passes the resulting IBinding interface back to the client by calling <a href="https://docs.microsoft.com//previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms775065(v=vs.85)">IBindStatusCallback.OnStartBinding</a>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>If in step 1 it was determined that this was an asynchronous bind, <b>BindToObject</b> returns MK_S_ASYNCHRONOUS at this point with <b>NULL</b> in <i>ppv</i>. The caller will receive the actual object pointer during the <a href="https://docs.microsoft.com//previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms775063(v=vs.85)">IBindStatusCallback.OnObjectAvailable</a> method at some later point. The following steps then occur asynchronously to the caller, typically on another thread of execution.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>The class of the resource designated by the URL Moniker is determined in one of the following ways:</para>
+            <list type="bullet">
+              <item>
+                <description>
+                  <para>The URL moniker examines the media type of the data. If the media type is application/x-oleobject, the first 16-bytes of the actual data (Content-Body) contain the CLSID of the resource and subsequent data is to be interpreted by the class itself. For all other media types, URL Moniker looks in the system registry for the HKEY_CLASSES_ROOT\MIME\Database\Content-Type&lt;media-type&gt;\CLSID key. Note that application/x-oleobject will be used until application/oleobject is approved.</para>
+                </description>
+              </item>
+              <item>
+                <description>
+                  <para>The URL moniker matches portions of arriving data to patterns registered in the system registry under HKEY_CLASSES_ROOT\FileTypes.</para>
+                </description>
+              </item>
+              <item>
+                <description>
+                  <para>Finally, if all else fails, the URL Moniker correlates the trailing extension of the resource, if any, to a CLSID using the HKEY_CLASSES_ROOT.??? keys in the system registry, as is done by GetClassFile and the shell.</para>
+                </description>
+              </item>
+            </list>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>Having determined the class, the URL moniker creates an instance using <see cref="CoCreateInstance" /> of CLSCTX_SERVER asking for the <see cref="IUnknown" /> interface.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>The URL moniker next calls the <see cref="QueryInterface" /> method of the newly created object for the <a href="https://docs.microsoft.com//previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms775042(v=vs.85)">IPersistMoniker</a> interface. If <b>QueryInterface</b> is successful, the URL moniker calls <a href="https://docs.microsoft.com//previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms775044(v=vs.85)">IPersistMoniker.Load</a> passing itself (this) as the moniker parameter. The object typically calls <see cref="BindToStorage" /> asking for the storage interface that they are interested in.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>Otherwise, the URL moniker calls <see cref="QueryInterface" /> for <see cref="IPersistStream" /> and, if successful, calls <see cref="IPersistStream.Load" />, passing the object an <see cref="IStream" /> pointer for a stream object that is being filled asynchronously by the transport.</para>
+            <para>If the class being called is not marked with the category CATID_AsyncAware, calls to <see cref="ISequentialStream.Read" /> or <see cref="ISequentialStream.Write" /> that reference data not yet available block until the data becomes available. These calls block in the traditional COM sense. A message loop is entered which allows certain messages to be processed, and the <see cref="IMessageFilter" /> of the thread is called appropriately.</para>
+            <para>If the class is marked with the category CATID_AsyncAware, calls to <see cref="ISequentialStream.Read" /> or <see cref="ISequentialStream.Write" /> that reference data not yet available return E_PENDING.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>Otherwise, the URL moniker calls <see cref="QueryInterface" /> for <see cref="IPersistFile" /> and, if successful, completes the download into a temporary file. On completion, the URL moniker calls <see cref="IPersistFile.Load" />. The created file is cached along with other Internet downloaded data. The client must be sure not to delete this file.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>When the object returns from one of the various <b>Load</b> calls described in the previous steps, the URL moniker calls the <a href="https://docs.microsoft.com//previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms775063(v=vs.85)">IBindStatusCallback.OnObjectAvailable</a> method to return the interface pointer that the client originally requested when the client called <b>BindToObject</b>.</para>
+          </description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="BindMoniker" />
+    <seealso cref="IMoniker" />
+  </member>
+  <member name="IMoniker.BindToStorage">
+    <summary>
+      <para>Binds to the storage for the specified object. Unlike the <see cref="IMoniker.BindToObject" /> method, this method does not activate the object identified by the moniker.</para>
+    </summary>
+    <param name="pbc">
+      <para>A pointer to the <see cref="IBindCtx" /> interface on the bind context object, which is used in this binding operation. The bind context caches objects bound during the binding process, contains parameters that apply to all operations using the bind context, and provides the means by which the moniker implementation should retrieve information about its environment.</para>
+    </param>
+    <param name="pmkToLeft">
+      <para>If the moniker is part of a composite moniker, pointer to the moniker to the left of this moniker. This parameter is primarily used by moniker implementers to enable cooperation between the various components of a composite moniker. Moniker clients should use <b>NULL</b>.</para>
+    </param>
+    <param name="riid">
+      <para>A reference to the identifier of the storage interface requested, whose pointer will be returned in <i>ppvObj</i>. Storage interfaces commonly requested include <see cref="IStorage" />, <see cref="IStream" />, and <see cref="ILockBytes" />.</para>
+    </param>
+    <param name="ppvObj">
+      <para>The address of pointer variable that receives the interface pointer requested in <i>riid</i>. Upon successful return, *<i>ppvObj</i> contains the requested interface pointer to the storage of the object the moniker identifies. When successful, the implementation must call <see cref="AddRef" /> on the storage. It is the caller's responsibility to call <see cref="Release" />. If an error occurs, *<i>ppvObj</i> should be <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>This method can return the standard return values E_UNEXPECTED, as well as the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The binding operation was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MK_E_NOSTORAGE</b>
+            </para>
+          </description>
+          <description>
+            <para>The object identified by this moniker does not have its own storage.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MK_E_EXCEEDEDDEADLINE</b>
+            </para>
+          </description>
+          <description>
+            <para>The binding operation could not be completed within the time limit specified by the bind context's <see cref="BIND_OPTS" /> structure.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MK_E_CONNECTMANUALLY</b>
+            </para>
+          </description>
+          <description>
+            <para>The operation was unable to connect to the storage, possibly because a network device could not be connected to. For more information, see <see cref="IMoniker.BindToObject" />.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MK_E_INTERMEDIATEINTERFACENOTSUPPORTED</b>
+            </para>
+          </description>
+          <description>
+            <para>An intermediate object was found but it did not support an interface required to complete the binding operation. For example, an item moniker returns this value if its container does not support the <see cref="IOleItemContainer" /> interface.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>STG_E_ACCESSDENIED</b>
+            </para>
+          </description>
+          <description>
+            <para>Unable to access the storage object.</para>
+          </description>
+        </item>
+      </list>
+      <para>This method can also return the errors associated with the <see cref="IOleItemContainer.GetObject" /> method.</para>
+    </returns>
+    <remarks>
+      <para>There is an important difference between the <see cref="BindToObject" /> and <b>BindToStorage</b> methods. If, for example, you have a moniker that identifies a spreadsheet object, calling <b>BindToObject</b> provides access to the spreadsheet object itself, while calling <b>BindToStorage</b> provides access to the storage object in which the spreadsheet resides.</para>
+      <h3>Notes to Callers</h3>
+      <para>Although none of the COM moniker classes call this method in their binding operations, it might be appropriate to call it in the implementation of a new moniker class. You could call this method in an implementation of <see cref="BindToObject" /> that requires information from the object identified by the <i>pmkToLeft</i> parameter and can get it from the persistent storage of the object without activation. For example, if your monikers are used to identify objects that can be activated without activating their containers, you may find this method useful.</para>
+      <para>A client that can read the storage of the object its moniker identifies could also call this method.</para>
+      <h3>Notes to Implementers</h3>
+      <para>Your implementation should locate the persistent storage for the object identified by the current moniker and return the desired interface pointer. Some types of monikers represent pseudo-objects, which are objects that do not have their own persistent storage. Such objects comprise some portion of the internal state of its container, for example, a range of cells in a spreadsheet. If your moniker class identifies this type of object, your implementation of <b>BindToStorage</b> should return the error MK_E_NOSTORAGE.</para>
+      <para>If the bind context's <see cref="BIND_OPTS" /> structure specifies the BINDFLAGS_JUSTTESTEXISTENCE flag, your implementation has the option of returning <b>NULL</b> in <i>ppvObj</i> (although you can also ignore the flag and perform the complete binding operation).</para>
+      <h3>Implementation-specific Notes</h3>
+      <list type="table">
+        <listheader>
+          <description>Implementation</description>
+          <description>Notes</description>
+        </listheader>
+        <item>
+          <description>Anti-moniker</description>
+          <description>
+            <para>This method returns E_NOTIMPL.</para>
+          </description>
+        </item>
+        <item>
+          <description>Class moniker</description>
+          <description>
+            <para>This method forwards to the class moniker's <see cref="BindToObject" />.</para>
+          </description>
+        </item>
+        <item>
+          <description>File moniker</description>
+          <description>
+            <para>This method opens the file specified by the path represented by the moniker and returns an <see cref="IStorage" /> pointer to that file. The method supports binding to the <b>IStorage</b> interface only; if <see cref="IStream" /> or <see cref="ILockBytes" /> is requested in <i>riid</i>, the method returns E_UNSPEC, and if other interfaces are requested, this method returns E_NOINTERFACE. Unless <i>pmkToLeft</i> is a class moniker, <i>pmkToLeft</i> should be <b>NULL</b>, as in the implementation of <see cref="IMoniker.BindToObject" />.</para>
+          </description>
+        </item>
+        <item>
+          <description>Generic composite moniker</description>
+          <description>
+            <para>This method recursively calls <b>BindToStorage</b> on the rightmost component of the composite, passing the rest of the composite as the <i>pmkToLeft</i> parameter for that call.</para>
+          </description>
+        </item>
+        <item>
+          <description>Item moniker</description>
+          <description>
+            <para>If <i>pmkToLeft</i> is <b>NULL</b>, this method returns E_INVALIDARG. Otherwise, the method calls <see cref="IMoniker.BindToObject" /> on the <i>pmkToLeft</i> parameter, requesting an <see cref="IOleItemContainer" /> interface pointer. The method then calls <see cref="IOleItemContainer.GetObjectStorage" /> for the requested interface.</para>
+          </description>
+        </item>
+        <item>
+          <description>OBJREF moniker</description>
+          <description>
+            <para>This method obtains a marshaled pointer to the requested interface on the storage that contains the running object. Because the OBJREF moniker represents a running object, no activation takes place. If the represented object is no longer running, <b>BindToStorage</b> fails with E_UNEXPECTED.</para>
+          </description>
+        </item>
+        <item>
+          <description>Pointer moniker</description>
+          <description>
+            <para>This method queries the wrapped pointer for the requested interface.</para>
+          </description>
+        </item>
+        <item>
+          <description>URL moniker</description>
+          <description>
+            <para>The system implementation of URL monikers supports <b>BindToStorage</b> for stream objects on all URLs and for storage objects in the case where the designated resource is a compound file.</para>
+            <para>Because the URL moniker supports asynchronous binding, the actual return value of its <b>BindToStorage</b> may vary depending on the object parameters established in the bind context. However, the semantics of the bind operation are identical regardless of synchronous or asynchronous usage, as follows:</para>
+            <list type="bullet">
+              <item>
+                <description>
+                  <para>The URL moniker pulls further information for the bind operation from the bind context. For example, the moniker can obtain pointers to the <a href="https://docs.microsoft.com//previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms775060(v=vs.85)">IBindStatusCallback</a> and <see cref="IEnumFORMATETC" /> interfaces that are registered in the bind context. Further information can include additional bind options specified on the bind context through <see cref="IBindCtx.SetBindOptions" />, such as the <i>dwTickCountDeadline</i> parameter or the <i>grfFlags</i> value of BIND_MAYBOTHERUSER. The moniker then queries the client by calling <a href="https://docs.microsoft.com//previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms775058(v=vs.85)">IBindStatusCallback.GetBindInfo</a> and initiates the bind operation with the transport and passes the resulting IBinding to the client by calling <a href="https://docs.microsoft.com//previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms775065(v=vs.85)">IBindStatusCallback.OnStartBinding</a>.</para>
+                </description>
+              </item>
+              <item>
+                <description>
+                  <para>If the caller requested an asynchronous <see cref="IStream" /> or <see cref="IStorage" /> by specifying the BINDF_ASYNCSTORAGE flag in the <a href="https://docs.microsoft.com//previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms774966(v=vs.85)">BINDINFO</a> structure retrieved from the <a href="https://docs.microsoft.com//previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms775058(v=vs.85)">IBindStatusCallback.GetBindInfo</a>, method the URL moniker returns the object as soon as possible. Calls to these <b>IStorage</b> or <b>IStream</b> objects that reference data not yet available return E_PENDING.</para>
+                </description>
+              </item>
+              <item>
+                <description>
+                  <para>If the caller does not specify asynchronous <see cref="IStream" /> or <see cref="IStorage" /> as described above, the URL moniker will still return an object through the <a href="https://docs.microsoft.com//previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms775061(v=vs.85)">IBindStatusCallback.OnDataAvailable</a> method as soon as possible. However, calls to these objects that reference data not yet available will block until the data becomes available. For some applications, this will require the least modification of their existing I/O code yet may still result in improved performance depending on their access patterns.</para>
+                </description>
+              </item>
+            </list>
+          </description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="IMoniker" />
+  </member>
+  <member name="IMoniker.CommonPrefixWith">
+    <summary>
+      <para>Creates a new moniker based on the prefix that this moniker has in common with the specified moniker.</para>
+    </summary>
+    <param name="pmkOther">
+      <para>A pointer to the <see cref="IMoniker" /> interface on another moniker to be compared with this one to determine whether there is a common prefix.</para>
+    </param>
+    <param name="ppmkPrefix">
+      <para>The address of an <see cref="IMoniker" />* pointer variable that receives the interface pointer to the moniker that is the common prefix of this moniker and pmkOther. When successful, the implementation must call <see cref="AddRef" /> on the resulting moniker; it is the caller's responsibility to call <see cref="Release" />. If an error occurs or if there is no common prefix, the implementation should set *<i>ppmkPrefix</i> to <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>This method can return the standard return values E_OUTOFMEMORY, as well as the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>A common prefix exists that is neither this moniker nor <i>pmkOther</i>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MK_S_NOPREFIX</b>
+            </para>
+          </description>
+          <description>
+            <para>No common prefix exists.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MK_S_HIM</b>
+            </para>
+          </description>
+          <description>
+            <para>The entire <i>pmkOther</i> is a prefix of this moniker.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MK_S_US</b>
+            </para>
+          </description>
+          <description>
+            <para>The two monikers are identical.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MK_S_ME</b>
+            </para>
+          </description>
+          <description>
+            <para>This moniker is a prefix of the <i>pmkOther</i> moniker.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MK_S_NOTBINDABLE</b>
+            </para>
+          </description>
+          <description>
+            <para>This method was called on a relative moniker. It is not meaningful to take the common prefix on a relative moniker.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>
+        <b>CommonPrefixWith</b> creates a new moniker that consists of the common prefixes of the moniker on this moniker object and another moniker. For example, if one moniker represents the path "c:\projects\secret\art\pict1.bmp" and another moniker represents the path "c:\projects\secret\docs\chap1.txt", the common prefix of these two monikers would be a moniker representing the path "c:\projects\secret".</para>
+      <h3>Notes to Callers</h3>
+      <para>The <b>CommonPrefixWith</b> method is primarily called in the implementation of the <see cref="IMoniker.RelativePathTo" /> method. Clients using a moniker to locate an object rarely need to call this method.</para>
+      <para>Call this method only if <i>pmkOther</i> and this moniker are both absolute monikers. An absolute moniker is either a file moniker or a generic composite whose leftmost component is a file moniker that represents an absolute path. Do not call this method on relative monikers because it would not produce meaningful results.</para>
+      <h3>Notes to Implementers</h3>
+      <para>Your implementation should first determine whether <i>pmkOther</i> is a moniker of a class that you recognize and for which you can provide special handling (for example, if it is of the same class as this moniker). If so, your implementation should determine the common prefix of the two monikers. Otherwise, it should pass both monikers in a call to the <see cref="MonikerCommonPrefixWith" /> function, which correctly handles the generic case.</para>
+      <h3>Implementation-specific Notes</h3>
+      <list type="table">
+        <listheader>
+          <description>Implementation</description>
+          <description>Notes</description>
+        </listheader>
+        <item>
+          <description>Anti-moniker</description>
+          <description>
+            <para>If the other moniker is also an anti-moniker, the method returns MK_S_US and sets ppmkPrefix to this moniker. Otherwise, the method calls the <see cref="MonikerCommonPrefixWith" /> function. This function correctly handles the case where the other moniker is a generic composite.</para>
+          </description>
+        </item>
+        <item>
+          <description>Class moniker</description>
+          <description>
+            <para>If <i>pmkOther</i> is equal to this moniker, retrieves a pointer to this moniker and returns MK_S_US. If <i>pmkOther</i> is a class moniker but is not equal to this moniker, returns MK_E_NOPREFIX. Otherwise, returns the result of calling <see cref="MonikerCommonPrefixWith" /> with itself as <i>pmkThis</i>, <i>pmkOther</i>, and <i>ppmkPrefix</i>, which handles the case where <i>pmkOther</i> is a generic composite moniker.</para>
+          </description>
+        </item>
+        <item>
+          <description>File moniker</description>
+          <description>
+            <para>If both monikers are file monikers, this method returns a file moniker that is based on the common components at the beginning of two file monikers. Components of a file moniker can be of the following types:</para>
+            <list type="bullet">
+              <item>
+                <description>A computer name of the form \\server\share. A computer name is treated as a single component, so two monikers representing the paths "\\myserver\public\work" and "\\myserver\private\games" do not have "\\myserver" as a common prefix.</description>
+              </item>
+              <item>
+                <description>A drive designation (for example, "C:").</description>
+              </item>
+              <item>
+                <description>A directory or file name.</description>
+              </item>
+            </list>
+            <para>If the other moniker is not a file moniker, this method passes both monikers in a call to the <see cref="MonikerCommonPrefixWith" /> function. This function correctly handles the case where the other moniker is a generic composite.</para>
+            <para>This method returns MK_E_NOPREFIX if there is no common prefix.</para>
+          </description>
+        </item>
+        <item>
+          <description>Generic composite moniker</description>
+          <description>
+            <para>If the other moniker is a composite, this method compares the components of each composite from left to right. The returned common prefix moniker might also be a composite moniker, depending on how many of the leftmost components were common to both monikers. If the other moniker is not a composite, the method simply compares it to the leftmost component of this moniker.</para>
+            <para>If the monikers are equal, the method returns MK_S_US and sets <i>ppmkPrefix</i> to this moniker. If the other moniker is a prefix of this moniker, the method returns MK_S_HIM and sets <i>ppmkPrefix</i> to the other moniker. If this moniker is a prefix of the other, this method returns MK_S_ME and sets <i>ppmkPrefix</i> to this moniker.</para>
+            <para>If there is no common prefix, this method returns MK_E_NOPREFIX and sets <i>ppmkPrefix</i> to <b>NULL</b>.</para>
+          </description>
+        </item>
+        <item>
+          <description>Item moniker</description>
+          <description>
+            <para>If the other moniker is an item moniker that is equal to this moniker, this method sets *<i>ppmkPrefix</i> to this moniker and returns MK_S_US; otherwise, the method calls the <see cref="MonikerCommonPrefixWith" /> function. This function correctly handles the case where the other moniker is a generic composite.</para>
+          </description>
+        </item>
+        <item>
+          <description>OBJREF moniker</description>
+          <description>
+            <para>If the two monikers are equal, this method returns MK_S_US and sets *<i>ppmkPrefix</i> to <b>NULL</b>. If the other moniker is not an OBJREF moniker, this method passes both monikers to the <see cref="MonikerCommonPrefixWith" /> function. This function correctly handles the case where the other moniker is a generic composite.</para>
+            <para>If there is no common prefix, this method returns MK_E_NOPREFIX.</para>
+          </description>
+        </item>
+        <item>
+          <description>Pointer moniker</description>
+          <description>
+            <para>If the two monikers are equal, this method returns MK_S_US and sets *<i>ppmkPrefix</i> to this moniker. Otherwise, the method returns MK_E_NOPREFIX and sets *<i>ppmkPrefix</i> to <b>NULL</b>.</para>
+          </description>
+        </item>
+        <item>
+          <description>URL moniker</description>
+          <description>
+            <para>This method returns E_NOTIMPL.</para>
+          </description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="IMoniker" />
+    <seealso cref="MonikerCommonPrefixWith" />
+  </member>
+  <member name="IMoniker.ComposeWith">
+    <summary>
+      <para>Creates a new composite moniker by combining the current moniker with the specified moniker.</para>
+    </summary>
+    <param name="pmkRight">
+      <para>A pointer to the <see cref="IMoniker" /> interface on the moniker to compose onto the end of this moniker.</para>
+    </param>
+    <param name="fOnlyIfNotGeneric">
+      <para>If <b>TRUE</b>, the caller requires a nongeneric composition, so the operation should proceed only if <i>pmkRight</i> is a moniker class that this moniker can compose with in some way other than forming a generic composite. If <b>FALSE</b>, the method can create a generic composite if necessary. Most callers should set this parameter to <b>FALSE</b>.</para>
+    </param>
+    <param name="ppmkComposite">
+      <para>A pointer to an <see cref="IMoniker" /> pointer variable that receives the composite moniker pointer. When successful, the implementation must call <see cref="AddRef" /> on the resulting moniker; it is the caller's responsibility to call <see cref="Release" />. If an error occurs or if the monikers compose to nothing (for example, composing an anti-moniker with an item moniker or a file moniker), *<i>ppmkComposite</i> should be set to <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>This method can return the standard return values E_OUTOFMEMORY and E_UNEXPECTED, as well as the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The monikers were successfully combined.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MK_E_NEEDGENERIC</b>
+            </para>
+          </description>
+          <description>
+            <para>Indicates that <i>fOnlyIfNotGeneric</i> was <b>TRUE</b>, but the monikers could not be composed together without creating a generic composite moniker.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Joining two monikers together is called <i>composition</i>. Sometimes two monikers of the same class can be combined in what is called nongeneric composition. For example, a file moniker representing an incomplete path and another file moniker representing a relative path can be combined to form a single file moniker representing the complete path. Nongeneric composition for a given moniker class can be handled only in the implementation of <b>ComposeWith</b> for that moniker class.</para>
+      <para>Combining two monikers of any class is called <i>generic composition</i>, which can be accomplished through a call to the <see cref="CreateGenericComposite" /> function.</para>
+      <para>Composition of monikers is an associative operation. That is, if A, B, and C are monikers, then, where Comp() represents the composition operation, Comp( Comp( A, B ), C )</para>
+      <para>is always equal to Comp( A, Comp( B, C ) ).</para>
+      <h3>Notes to Callers</h3>
+      <para>To combine two monikers, you should call <b>ComposeWith</b> rather than calling the <see cref="CreateGenericComposite" /> function to give the first moniker a chance to perform a nongeneric composition.</para>
+      <para>An object that provides item monikers to identify its objects would call <b>ComposeWith</b> to provide a moniker that completely identifies the location of the object. This would apply, for example, to a server that supports linking to portions of a document, or to a container that supports linking to embedded objects within its documents. In such a situation, you would do the following:</para>
+      <list type="number">
+        <item>
+          <description>Create an item moniker that identifies the object.</description>
+        </item>
+        <item>
+          <description>Get a moniker that identifies the object's container.</description>
+        </item>
+        <item>
+          <description>Call <b>ComposeWith</b> on the moniker identifying the container, passing the item moniker as the <i>pmkRight</i> parameter.</description>
+        </item>
+      </list>
+      <h3>Notes to Implementers</h3>
+      <para>You can use either nongeneric or generic composition to compose the current moniker with the moniker that pmkRight points to. If the class of the moniker indicated by <i>pmkRight</i> is the same as that of the current moniker, it is possible to use the contents of <i>pmkRight</i> to perform a more intelligent nongeneric composition.</para>
+      <para>In writing a new moniker class, you must decide if there are any kinds of monikers, whether of your own class or another class, to which you want to give special treatment. If so, implement <b>ComposeWith</b> to check whether <i>pmkRight</i> is a moniker of the type that should have this treatment. To do this, you can call the moniker's <see cref="IPersist.GetClassID" /> method, or if you have defined a moniker object that supports a custom interface, you can call <see cref="QueryInterface" /> on the moniker for that interface. An example of special treatment would be the nongeneric composition of an absolute file moniker with a relative file moniker. The most common case of a special moniker is the inverse for your moniker class (whatever you return from your implementation of <see cref="IMoniker.Inverse" />).</para>
+      <para>If <i>pmkRight</i> completely negates the receiver so that the resulting composite is empty, you should pass back <b>NULL</b> in <i>ppmkComposite</i> and return the status code S_OK.</para>
+      <para>If the <i>pmkRight</i> parameter is not of a class to which you give special treatment, examine <i>fOnlyIfNotGeneric</i> to determine what to do next. If <i>fOnlyIfNotGeneric</i> is <b>TRUE</b>, pass back <b>NULL</b> through <i>ppmkComposite</i> and return the status code MK_E_NEEDGENERIC. If <i>fOnlyIfNotGeneric</i> is <b>FALSE</b>, call the <see cref="CreateGenericComposite" /> function to perform the composition generically.</para>
+      <h3>Implementation-specific Notes</h3>
+      <list type="table">
+        <listheader>
+          <description>Implementation</description>
+          <description>Notes</description>
+        </listheader>
+        <item>
+          <description>Anti-moniker</description>
+          <description>If <i>fOnlyIfNotGeneric</i> is <b>TRUE</b>, this method sets <i>ppmkComposite</i> to <b>NULL</b> moniker and returns MK_E_NEEDGENERIC; otherwise, the method returns the result of combining the two monikers into a generic composite. Note that composing a file, item, or pointer moniker to the right of an anti-moniker produces a generic composite rather than composing to nothing, as would be the case if the order of composition were reversed. </description>
+        </item>
+        <item>
+          <description>Class moniker</description>
+          <description>Follows the contract and behaves like an item moniker in that it can return E_INVALIDARG and MK_E_NEEDGENERIC, and so forth.</description>
+        </item>
+        <item>
+          <description>File moniker</description>
+          <description>If <i>pmkRight</i> is an anti-moniker, the returned moniker is <b>NULL</b>. If <i>pmkRight</i> is a composite whose leftmost component is an anti-moniker, the returned moniker is the composite with the leftmost anti-moniker removed. If <i>pmkRight</i> is a file moniker, this method collapses the two monikers into a single file moniker, if possible. If not possible (for example, if both file monikers represent absolute paths, as in d:\work and e:\reports), the returned moniker is <b>NULL</b> and the return value is MK_E_SYNTAX. If <i>pmkRight</i> is neither an anti-moniker nor a file moniker, the method checks the <i>fOnlyIfNotGeneric</i> parameter; if it is <b>FALSE</b>, the method combines the two monikers into a generic composite; if it is <b>TRUE</b>, the method sets *<i>ppmkComposite</i> to <b>NULL</b> and returns MK_E_NEEDGENERIC.</description>
+        </item>
+        <item>
+          <description>Generic composite moniker</description>
+          <description>If <i>fOnlyIfNotGeneric</i> is <b>TRUE</b>, this method sets *<i>pmkComposite</i> to <b>NULL</b> and returns MK_E_NEEDGENERIC; otherwise, the method returns the result of combining the two monikers by calling the <see cref="CreateGenericComposite" /> function.</description>
+        </item>
+        <item>
+          <description>Item moniker</description>
+          <description>If <i>pmkRight</i> is an anti-moniker, the returned moniker is <b>NULL</b>. If <i>pmkRight</i> is a composite whose leftmost component is an anti-moniker, the returned moniker is the composite after the leftmost anti-moniker is removed. If <i>pmkRight</i> is not an anti-moniker, the method combines the two monikers into a generic composite if <i>fOnlyIfNotGeneric</i> is <b>FALSE</b>; if <i>fOnlyIfNotGeneric</i> is <b>TRUE</b>, the method returns a <b>NULL</b> moniker and a return value of MK_E_NEEDGENERIC.</description>
+        </item>
+        <item>
+          <description>OBJREF moniker</description>
+          <description>If <i>pmkRight</i> is an anti-moniker, the returned moniker is <b>NULL</b>. If <i>pmkRight</i> is a composite whose leftmost component is an anti-moniker, the returned moniker is the composite with the leftmost anti-moniker removed. If <i>pmkRight</i> is neither an anti-moniker nor a composite moniker whose leftmost component is an anti-moniker, the method checks the <i>fOnlyIfNotGeneric</i> parameter. If it is <b>FALSE</b>, the method combines the two monikers into a generic composite; if it is <b>TRUE</b>, the method sets *<i>ppmkComposite</i> to <b>NULL</b> and returns MK_E_NEEDGENERIC.</description>
+        </item>
+        <item>
+          <description>Pointer moniker</description>
+          <description>If <i>pmkRight</i> is an anti-moniker, the returned moniker is <b>NULL</b>. If <i>pmkRight</i> is a composite whose leftmost component is an anti-moniker, the returned moniker is the composite after the leftmost anti-moniker is removed. If <i>fOnlyIfNotGeneric</i> is <b>FALSE</b>, the returned moniker is a generic composite of the two monikers; otherwise, the method sets *<i>ppmkComposite</i> to <b>NULL</b> and returns MK_E_NEEDGENERIC.</description>
+        </item>
+        <item>
+          <description>URL moniker</description>
+          <description>URL monikers support composition of two URLs: a base URL composed with a relative URL. This composition is done according to the RFC on relative URLs. If <i>fOnlyIfNotGeneric</i> is <b>TRUE</b>, the method returns MK_E_NEEDGENERIC. Otherwise, this method simply returns <see cref="CreateGenericComposite" />(this, pmkRight, ppmkComposite). </description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="CreateGenericComposite" />
+    <seealso cref="IMoniker" />
+  </member>
+  <member name="IMoniker.Enum">
+    <summary>
+      <para>Retrieves a pointer to an enumerator for the components of a composite moniker.</para>
+    </summary>
+    <param name="fForward">
+      <para>If <b>TRUE</b>, enumerates the monikers from left to right. If <b>FALSE</b>, enumerates from right to left.</para>
+    </param>
+    <param name="ppenumMoniker">
+      <para>A pointer to an <see cref="IEnumMoniker" /> pointer variable that receives the interface pointer to the enumerator object for the moniker. When successful, the implementation must call <see cref="AddRef" /> on the enumerator object. It is the caller's responsibility to call <see cref="Release" />. If an error occurs or if the moniker has no enumerable components, the implementation sets *<i>ppenumMoniker</i> to <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>This method can return the standard return values E_OUTOFMEMORY, E_UNEXPECTED, and S_OK.</para>
+    </returns>
+    <remarks>
+      <para>This method must supply an <see cref="IEnumMoniker" /> pointer to an enumerator that can enumerate the components of a moniker. For example, the implementation of the <b>IMoniker.Enum</b> method for a generic composite moniker creates an enumerator that can determine the individual monikers that make up the composite, while the <b>IMoniker.Enum</b> method for a file moniker creates an enumerator that returns monikers representing each of the components in the path.</para>
+      <h3>Notes to Callers</h3>
+      <para>Call this method to examine the components that make up a composite moniker.</para>
+      <h3>Notes to Implementers</h3>
+      <para>If the new moniker class has no discernible internal structure, your implementation of this method can simply return S_OK and set <i>ppenumMoniker</i> to <b>NULL</b>.</para>
+      <h3>Implementation-specific Notes</h3>
+      <list type="table">
+        <listheader>
+          <description>Implementation</description>
+          <description>Notes</description>
+        </listheader>
+        <item>
+          <description>Anti-moniker</description>
+          <description>This method returns S_OK and sets <i>ppenumMoniker</i> to <b>NULL</b>.</description>
+        </item>
+        <item>
+          <description>Class moniker</description>
+          <description>This method returns S_OK and sets <i>ppenumMoniker</i> to <b>NULL</b>.</description>
+        </item>
+        <item>
+          <description>File moniker</description>
+          <description>This method returns S_OK and sets <i>ppenumMoniker</i> to <b>NULL</b>.</description>
+        </item>
+        <item>
+          <description>Generic composite moniker</description>
+          <description>If successful, this method returns S_OK and passes back an enumerator that enumerates the component monikers that make up the composite; otherwise, the method returns E_OUTOFMEMORY. </description>
+        </item>
+        <item>
+          <description>Item moniker</description>
+          <description>This method returns S_OK and sets <i>ppenumMoniker</i> to <b>NULL</b>.</description>
+        </item>
+        <item>
+          <description>OBJREF moniker</description>
+          <description>This method returns S_OK and sets <i>ppenumMoniker</i> to <b>NULL</b>.</description>
+        </item>
+        <item>
+          <description>Pointer moniker</description>
+          <description>This method returns E_NOTIMPL.</description>
+        </item>
+        <item>
+          <description>URL moniker</description>
+          <description>This method returns S_OK and sets <i>ppenumMoniker</i> to <b>NULL</b>.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="IEnumMoniker" />
+    <seealso cref="IMoniker" />
+  </member>
+  <member name="IMoniker.GetDisplayName">
+    <summary>
+      <para>Retrieves the display name for the moniker.</para>
+    </summary>
+    <param name="pbc">
+      <para>A pointer to the <see cref="IBindCtx" /> interface on the bind context to be used in this operation. The bind context caches objects bound during the binding process, contains parameters that apply to all operations using the bind context, and provides the means by which the moniker implementation should retrieve information about its environment.</para>
+    </param>
+    <param name="pmkToLeft">
+      <para>If the moniker is part of a composite moniker, pointer to the moniker to the left of this moniker. This parameter is used primarily by moniker implementers to enable cooperation between the various components of a composite moniker. Moniker clients should pass <b>NULL</b>.</para>
+    </param>
+    <param name="ppszDisplayName">
+      <para>The address of a pointer variable that receives a pointer to the display name string for the moniker. The implementation must use <see cref="IMalloc.Alloc" /> to allocate the string returned in <i>ppszDisplayName</i>, and the caller is responsible for calling <see cref="IMalloc.Free" /> to free it. Both the caller and the implementation of this method use the COM task allocator returned by <see cref="CoGetMalloc" />. If an error occurs, the implementation must set *<i>ppszDisplayName</i> should be set to <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>This method can return the standard return values E_OUTOFMEMORY, as well as the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method completed successfully.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MK_E_EXCEEDEDDEADLINE</b>
+            </para>
+          </description>
+          <description>
+            <para>The binding operation could not be completed within the time limit specified by the bind context's <see cref="BIND_OPTS" /> structure.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_NOTIMPL</b>
+            </para>
+          </description>
+          <description>
+            <para>There is no display name.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>
+        <b>GetDisplayName</b> provides a string that is a displayable representation of the moniker. A display name is not a complete representation of a moniker's internal state; it is simply a form that can be read by users. As a result, it is possible (though rare) for two different monikers to have the same display name. While there is no guarantee that the display name of a moniker can be parsed back into that moniker when calling the <see cref="MkParseDisplayName" /> function with it, failure to do so is rare.</para>
+      <h3>Notes to Callers</h3>
+      <para>It is possible that retrieving a moniker's display name may be an expensive operation. For efficiency, you may want to cache the results of the first successful call to <b>GetDisplayName</b>, rather than making repeated calls.</para>
+      <h3>Notes to Implementers</h3>
+      <para>If you are writing a moniker class in which the display name does not change, simply cache the display name and supply the cached name when requested. If the display name can change over time, getting the current display name might mean that the moniker has to access the object's storage or bind to the object, either of which can be expensive operations. If this is the case, your implementation of <b>GetDisplayName</b> should return MK_E_EXCEEDEDDEADLINE if the name cannot be retrieved by the time specified in the bind context's <see cref="BIND_OPTS" /> structure.</para>
+      <para>A moniker that is intended to be part of a generic composite moniker should include any preceding delimiter (such as '') as part of its display name. For example, the display name returned by an item moniker includes the delimiter specified when it was created with the <see cref="CreateItemMoniker" /> function. The display name for a file moniker does not include a delimiter because file monikers are always expected to be the leftmost component of a composite.</para>
+      <h3>Implementation-specific Notes</h3>
+      <list type="table">
+        <listheader>
+          <description>Implementation</description>
+          <description>Notes</description>
+        </listheader>
+        <item>
+          <description>Anti-moniker</description>
+          <description>For each anti-moniker contained in this moniker, this method return one instance of "\..".</description>
+        </item>
+        <item>
+          <description>Class moniker</description>
+          <description>The display name for class monikers is of the following form: clsid:<i>string-clsid-no-curly-braces</i> *[";" <i>clsid-param</i>=<i>value</i>]:. For example, clsid:a7b90590-36fd-11cf-857d-00aa006d2ea4:.</description>
+        </item>
+        <item>
+          <description>File moniker</description>
+          <description>This method returns the path that the moniker represents.</description>
+        </item>
+        <item>
+          <description>Generic composite moniker</description>
+          <description>This method returns the concatenation of the display names returned by each component moniker of the composite.</description>
+        </item>
+        <item>
+          <description>Item moniker</description>
+          <description>This method returns the concatenation of the delimiter and the item name that were specified when the item moniker was created.</description>
+        </item>
+        <item>
+          <description>OBJREF moniker</description>
+          <description>This method obtains the display name for the OBJREF moniker. The display name is a 64-bit encoding that encapsulates the machine location, process endpoint, and interface pointer ID (IPID) of the running object. For future compatibility, the display name is restricted to characters that can be specified as part of a URL.</description>
+        </item>
+        <item>
+          <description>Pointer moniker</description>
+          <description>This method returns E_NOTIMPL.</description>
+        </item>
+        <item>
+          <description>URL moniker</description>
+          <description>The URL moniker attempts to return its full URL string. If the moniker was created with a partial URL string (see <a href="https://docs.microsoft.com//previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms775103(v=vs.85)">CreateURLMonikerEx</a>), it will first attempt to find an URL moniker in the bind context under SZ_URLCONTEXT and will next look to the moniker to its left for contextual information. If it cannot return its full URL string, it will return its partial URL string.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="IMoniker" />
+    <seealso cref="MkParseDisplayName" />
+  </member>
+  <member name="IMoniker.GetTimeOfLastChange">
+    <summary>
+      <para>Retrieves the time at which the object identified by this moniker was last changed.</para>
+    </summary>
+    <param name="pbc">
+      <para>A pointer to the bind context to be used in this binding operation. The bind context caches objects bound during the binding process, contains parameters that apply to all operations using the bind context, and provides the means by which the moniker implementation should retrieve information about its environment. For more information, see <see cref="IBindCtx" />.</para>
+    </param>
+    <param name="pmkToLeft">
+      <para>If the moniker is part of a composite moniker, pointer to the moniker to the left of this moniker. This parameter is primarily used by moniker implementers to enable cooperation between the various components of a composite moniker. Moniker clients should pass <b>NULL</b>.</para>
+    </param>
+    <param name="pFileTime">
+      <para>A pointer to the <see cref="FILETIME" /> structure that receives the time of last change. A value of {0xFFFFFFFF,0x7FFFFFFF} indicates an error (for example, exceeded time limit, information not available).</para>
+    </param>
+    <returns>
+      <para>This method can return the standard return values E_OUTOFMEMORY, as well as the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method completed successfully.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MK_E_EXCEEDEDDEADLINE</b>
+            </para>
+          </description>
+          <description>
+            <para>The binding operation could not be completed within the time limit specified by the bind context's <see cref="BIND_OPTS" /> structure.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MK_E_CONNECTMANUALLY</b>
+            </para>
+          </description>
+          <description>
+            <para>The operation was unable to connect to the storage for this object, possibly because a network device could not be connected to. For more information, see <see cref="IMoniker.BindToObject" />.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MK_E_UNAVAILABLE</b>
+            </para>
+          </description>
+          <description>
+            <para>The time of the change is unavailable and will not be available regardless of the deadline that is used.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>To be precise, the time returned is the earliest time COM can identify after which no change has occurred, so this time may be later than the time of the last change to the object.</para>
+      <h3>Notes to Callers</h3>
+      <para>If you're caching information returned by the object identified by the moniker, you may want to ensure that your information is up-to-date. To do so, you would call <b>GetTimeOfLastChange</b> and compare the time returned with the time you last retrieved information from the object.</para>
+      <para>For the monikers stored within linked objects, <b>GetTimeOfLastChange</b> is primarily called by the default handler's implementation of <see cref="IOleObject.IsUpToDate" />. Container applications call <b>IOleObject.IsUpToDate</b> to determine if a linked object (or an embedded object containing linked objects) is up-to-date without actually binding to the object. This enables an application to determine quickly which linked objects require updating when the end user opens a document. The application can then bind only those linked objects that need updating (after prompting the end user to determine whether they should be updated) instead of binding every linked object in the document.</para>
+      <h3>Notes to Implementers</h3>
+      <para>It is important to perform this operation quickly because, for linked objects, this method is called when a user first opens a compound document. Consequently, your <b>GetTimeOfLastChange</b> implementation should not bind to any objects. In addition, your implementation should check the deadline parameter in the bind context and return MK_E_EXCEEDEDDEADLINE if the operation cannot be completed by the specified time.</para>
+      <para>Following are some strategies you can use in your implementations:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <para>For many types of monikers, the pmkToLeft parameter identifies the container of the object identified by this moniker. If this is true of your moniker class, you can simply call <b>GetTimeOfLastChange</b> on the <i>pmkToLeft</i> parameter, because an object cannot have changed at a date later than its container.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>You can get a pointer to the running object table (ROT) by calling <see cref="IBindCtx.GetRunningObjectTable" /> on the <i>pbc</i> parameter and then calling <see cref="IRunningObjectTable.GetTimeOfLastChange" />, because the ROT generally records the time of last change.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>You can get the storage associated with this moniker (or the <i>pmkToLeft</i> moniker) and return the storage's last modification time with a call to <see cref="IStorage.Stat" />.</para>
+          </description>
+        </item>
+      </list>
+      <h3>Implementation-specific Notes</h3>
+      <list type="table">
+        <listheader>
+          <description>Implementation</description>
+          <description>Notes</description>
+        </listheader>
+        <item>
+          <description>Anti-moniker</description>
+          <description>This method returns E_NOTIMPL.</description>
+        </item>
+        <item>
+          <description>Class moniker</description>
+          <description>This method returns MK_E_UNAVAILABLE.</description>
+        </item>
+        <item>
+          <description>File moniker</description>
+          <description>If this moniker is in the ROT, this method returns the last change time registered there; otherwise, it returns the last write time for the file. If the file cannot be found, this method returns MK_E_NOOBJECT.</description>
+        </item>
+        <item>
+          <description>Generic composite moniker</description>
+          <description>This method creates a composite of <i>pmkToLeft</i> (if non-<b>NULL</b>) and this moniker and uses the ROT to retrieve the time of last change. If the object is not in the ROT, the method recursively calls <b>GetTimeOfLastChange</b> on the rightmost component of the composite, passing the remainder of the composite as the <i>pmkToLeft</i> parameter for that call.</description>
+        </item>
+        <item>
+          <description>Item moniker</description>
+          <description>If <i>pmkToLeft</i> is <b>NULL</b>, this method returns MK_E_NOTBINDABLE. Otherwise, the method creates a composite of <i>pmkToLeft</i> and this moniker and uses the ROT to access the time of last change. If the object is not in the ROT, the method calls <b>GetTimeOfLastChange</b> on the <i>pmkToLeft</i> parameter.</description>
+        </item>
+        <item>
+          <description>OBJREF moniker</description>
+          <description>This method returns E_NOTIMPL.</description>
+        </item>
+        <item>
+          <description>Pointer moniker</description>
+          <description>This method returns E_NOTIMPL.</description>
+        </item>
+        <item>
+          <description>URL moniker</description>
+          <description>This method returns the time of last change of an object that is registered in the ROT.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="IMoniker" />
+    <seealso cref="IRunningObjectTable.GetTimeOfLastChange" />
+  </member>
+  <member name="IMoniker.Hash">
+    <summary>
+      <para>Creates a hash value using the internal state of the moniker.</para>
+    </summary>
+    <param name="pdwHash">
+      <para>A pointer to a variable that receives the hash value.</para>
+    </param>
+    <returns>
+      <para>This method returns S_OK to indicate that the hash value was retrieved successfully.</para>
+    </returns>
+    <remarks>
+      <h3>Notes to Callers</h3>
+      <para>You can use the value returned by this method to maintain a hash table of monikers. The hash value determines a hash bucket in the table. To search such a table for a specified moniker, calculate its hash value and then compare it to the monikers in that hash bucket using <see cref="IMoniker.IsEqual" />.</para>
+      <h3>Notes to Implementers</h3>
+      <para>The hash value must be constant for the lifetime of the moniker. Two monikers that compare as equal using <see cref="IMoniker.IsEqual" /> must hash to the same value.</para>
+      <para>Marshaling and then unmarshaling a moniker should have no effect on its hash value. Consequently, your implementation of <b>IMoniker.Hash</b> should rely only on the internal state of the moniker, not on its memory address.</para>
+      <h3>Implementation-specific Notes</h3>
+      <list type="table">
+        <listheader>
+          <description>Implementation</description>
+          <description>Notes</description>
+        </listheader>
+        <item>
+          <description>Anti-moniker</description>
+          <description>This method calculates a hash value for the moniker.</description>
+        </item>
+        <item>
+          <description>Class moniker</description>
+          <description>This method calculates a hash value for the moniker and returns S_OK. May return E_INVALIDARG if <i>pdwHash</i> is an invalid pointer.</description>
+        </item>
+        <item>
+          <description>File moniker</description>
+          <description>This method calculates a hash value for the moniker.</description>
+        </item>
+        <item>
+          <description>Generic composite moniker</description>
+          <description>This method calculates a hash value for the moniker.</description>
+        </item>
+        <item>
+          <description>Item moniker</description>
+          <description>This method calculates a hash value for the moniker.</description>
+        </item>
+        <item>
+          <description>OBJREF moniker</description>
+          <description>This method calculates a hash value for the moniker.</description>
+        </item>
+        <item>
+          <description>Pointer moniker</description>
+          <description>This method calculates a hash value for the moniker.</description>
+        </item>
+        <item>
+          <description>URL moniker</description>
+          <description>Creates a hash value based on the URL string of the moniker. This hash value is identical when URL strings are identical, although it may also be identical for different URL strings. This method is used to speed up comparisons by reducing the amount of time that it is necessary to call <see cref="IMoniker.IsEqual" />.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="IMoniker" />
+  </member>
+  <member name="IMoniker.Inverse">
+    <summary>
+      <para>Creates a moniker that is the inverse of this moniker. When composed to the right of this moniker or one of similar structure, the moniker will compose to nothing.</para>
+    </summary>
+    <param name="ppmk">
+      <para>The address of an <see cref="IMoniker" /> pointer variable that receives the interface pointer to a moniker that is the inverse of this moniker. When successful, the implementation must call <see cref="AddRef" /> on the new inverse moniker. It is the caller's responsibility to call <see cref="Release" />. If an error occurs, the implementation should set *<i>ppmk</i> to <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>This method can return the standard return values E_OUTOFMEMORY, as well as the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The inverse moniker has been returned successfully.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MK_E_NOINVERSE</b>
+            </para>
+          </description>
+          <description>
+            <para>The moniker class does not have an inverse.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The inverse of a moniker is analogous to the ".." directory in MS-DOS file systems; the ".." directory acts as the inverse to any other directory name, because appending ".." to a directory name results in an empty path. In the same way, the inverse of a moniker typically is also the inverse of all monikers in the same class. However, it is not necessarily the inverse of a moniker of a different class.</para>
+      <para>The inverse of a composite moniker is a composite consisting of the inverses of the components of the original moniker, arranged in reverse order. For example, if the inverse of A is Inv( A ) and the composite of A, B, and C is Comp( A, B, C ), then</para>
+      <para>Inv( Comp( A, B, C ) ) is equal to Comp( Inv( C ), Inv( B ), Inv( A ) ).</para>
+      <para>Not all monikers have inverses. Most monikers that are themselves inverses, such as anti-monikers, do not have inverses. Monikers that have no inverse cannot have relative monikers formed from inside the objects they identify to other objects outside.</para>
+      <h3>Notes to Callers</h3>
+      <para>An object that is using a moniker to locate another object usually does not know the class of the moniker it is using. To get the inverse of a moniker, you should always call <b>IMoniker.Inverse</b> rather than the <see cref="CreateAntiMoniker" /> function, because you cannot be certain that the moniker you're using considers an anti-moniker to be its inverse.</para>
+      <para>The <b>Inverse</b> method is also called by the implementation of the <see cref="IMoniker.RelativePathTo" /> method, to assist in constructing a relative moniker.</para>
+      <h3>Notes to Implementers</h3>
+      <para>If your monikers have no internal structure, you can call the <see cref="CreateAntiMoniker" /> function in to get an anti-moniker in your implementation of <b>IMoniker.Inverse</b>. In your implementation of <see cref="IMoniker.ComposeWith" />, you need to check for the inverse you supply in the implementation of <b>Inverse</b>.</para>
+      <h3>Implementation-specific Notes</h3>
+      <list type="table">
+        <listheader>
+          <description>Implementation</description>
+          <description>Notes</description>
+        </listheader>
+        <item>
+          <description>Anti-moniker</description>
+          <description>This method returns MK_E_NOINVERSE and sets *<i>ppmk</i> to <b>NULL</b>.</description>
+        </item>
+        <item>
+          <description>Class moniker</description>
+          <description>This method returns an anti-moniker (that is, the results of calling <see cref="CreateAntiMoniker" />).</description>
+        </item>
+        <item>
+          <description>File moniker</description>
+          <description>This method returns an anti-moniker (that is, the results of calling <see cref="CreateAntiMoniker" />).</description>
+        </item>
+        <item>
+          <description>Generic composite moniker</description>
+          <description>This method returns a composite moniker that consists of the inverses of each of the components of the original composite, stored in reverse order. For example, if the inverse of A is Inv( A ), the inverse of the composite of A, B, and C is Comp(Inv( C ), Inv( B ), Inv( A ) ).</description>
+        </item>
+        <item>
+          <description>Item moniker</description>
+          <description>This method returns an anti-moniker (that is, the results of calling <see cref="CreateAntiMoniker" />).</description>
+        </item>
+        <item>
+          <description>OBJREF moniker</description>
+          <description>This method returns an anti-moniker (that is, the results of calling <see cref="CreateAntiMoniker" />).</description>
+        </item>
+        <item>
+          <description>Pointer moniker</description>
+          <description>This method returns an anti-moniker (that is, the results of calling <see cref="CreateAntiMoniker" />).</description>
+        </item>
+        <item>
+          <description>URL moniker</description>
+          <description>This method returns MK_E_NOINVERSE and sets *<i>ppmk</i> to <b>NULL</b>.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="CreateAntiMoniker" />
+    <seealso cref="IMoniker" />
+  </member>
+  <member name="IMoniker.IsEqual">
+    <summary>
+      <para>Determines whether this moniker is identical to the specified moniker.</para>
+    </summary>
+    <param name="pmkOtherMoniker">
+      <para>A  pointer to the <see cref="IMoniker" /> interface on the moniker to be used for comparison with this one (the one from which this method is called).</para>
+    </param>
+    <returns>
+      <para>This method returns S_OK to indicate that the two monikers are identical, and S_FALSE otherwise.</para>
+    </returns>
+    <remarks>
+      <para>Previous implementations of the running object table (ROT) called this method. The current implementation of the ROT uses the <see cref="IROTData" /> interface instead.</para>
+      <h3>Notes to Callers</h3>
+      <para>Call this method to determine whether two monikers are identical. The reduced form of a moniker is considered different from the unreduced form. You should call the <see cref="IMoniker.Reduce" /> method before calling <b>IsEqual</b>, because a reduced moniker is in its most specific form. <b>IsEqual</b> may return S_FALSE on two monikers before they are reduced, and S_OK after they are reduced.</para>
+      <h3>Notes to Implementers</h3>
+      <para>Your implementation should not reduce the current moniker before performing the comparison. It is the caller's responsibility to call <see cref="IMoniker.Reduce" /> to compare reduced monikers.</para>
+      <para>Two monikers that compare as equal must hash to the same value using <see cref="IMoniker.Hash" />.</para>
+      <h3>Implementation-specific Notes</h3>
+      <list type="table">
+        <listheader>
+          <description>Implementation</description>
+          <description>Notes</description>
+        </listheader>
+        <item>
+          <description>Anti-moniker</description>
+          <description>This method returns S_OK if both are anti-monikers; otherwise, it returns S_FALSE.</description>
+        </item>
+        <item>
+          <description>Class moniker</description>
+          <description>This method returns S_OK if <i>pmkOther</i> is a class moniker constructed with the same CLSID information as itself. Otherwise, the method returns S_FALSE. May return E_INVALIDARG if <i>pmkOther</i> is an invalid pointer.</description>
+        </item>
+        <item>
+          <description>File moniker</description>
+          <description>This method returns S_OK if *<i>pmkOther</i> is a file moniker and the paths for both monikers are identical (using a case-insensitive comparison). Otherwise, the method returns S_FALSE.</description>
+        </item>
+        <item>
+          <description>Generic composite moniker</description>
+          <description>This method returns S_OK if the components of both monikers are equal when compared in the left-to-right order.</description>
+        </item>
+        <item>
+          <description>Item moniker</description>
+          <description>This method returns S_OK if both monikers are item monikers and their display names are identical (using a case-insensitive comparison); otherwise, the method returns S_FALSE.</description>
+        </item>
+        <item>
+          <description>OBJREF moniker</description>
+          <description>This method returns S_OK if *pmkOther is an OBJREF moniker and the paths for both monikers are identical (using a case-insensitive comparison). Otherwise, the method returns S_FALSE.</description>
+        </item>
+        <item>
+          <description>Pointer moniker</description>
+          <description>This method returns S_OK only if both are pointer monikers and the interface pointers that they wrap are identical.</description>
+        </item>
+        <item>
+          <description>URL moniker</description>
+          <description>Returns S_FALSE if the other moniker (<i>pmkOtherMoniker</i>) is not an URL moniker, which it checks using <see cref="IPersist.GetClassID" /> to see whether the CLSID is CLSID_URLMoniker. If the other moniker is an URL moniker, it compares the display names of the monikers for equality, returning S_OK if they are identical or S_FALSE otherwise.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="IMoniker" />
+    <seealso cref="IROTData" />
+  </member>
+  <member name="IMoniker.IsRunning">
+    <summary>
+      <para>Determines whether the object identified by this moniker is currently loaded and running.</para>
+    </summary>
+    <param name="pbc">
+      <para>A pointer to the <see cref="IBindCtx" /> interface on the bind context to be used in this binding operation. The bind context caches objects bound during the binding process, contains parameters that apply to all operations using the bind context, and provides the means by which the moniker implementation should retrieve information about its environment.</para>
+    </param>
+    <param name="pmkToLeft">
+      <para>A pointer to the <see cref="IMoniker" /> interface on the moniker to the left of this moniker if this moniker is part of a composite. This parameter is used primarily by moniker implementers to enable cooperation between the various components of a composite moniker; moniker clients can usually pass <b>NULL</b>.</para>
+    </param>
+    <param name="pmkNewlyRunning">
+      <para>A pointer to the <see cref="IMoniker" /> interface on the moniker most recently added to the running object table (ROT). This can be <b>NULL</b>. If non-<b>NULL</b>, the implementation can return the results of calling <see cref="IMoniker.IsEqual" /> on the <i>pmkNewlyRunning</i> parameter, passing the current moniker. This parameter is intended to enable <b>IsRunning</b> implementations that are more efficient than just searching the ROT, but the implementation can choose to ignore <i>pmkNewlyRunning</i> without causing any harm.</para>
+    </param>
+    <returns>
+      <para>This method can return the standard return values E_UNEXPECTED, as well as the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The moniker is running.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>The moniker is not running.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <h3>Notes to Callers</h3>
+      <para>If speed is important when you're requesting services from the object identified by the moniker, you may want those services only if the object is already running (because loading an object into the running state may be time-consuming). In such a situation, you should call <b>IsRunning</b> to determine whether the object is running.</para>
+      <para>For the monikers stored within linked objects, <b>IsRunning</b> is primarily called by the default handler's implementation of <see cref="IOleLink.BindIfRunning" />.</para>
+      <h3>Notes to Implementers</h3>
+      <para>To get a pointer to the ROT, your implementation should call <see cref="IBindCtx.GetRunningObjectTable" /> on the <i>pbc</i> parameter. Your implementation can then call <see cref="IRunningObjectTable.IsRunning" /> to determine whether the object identified by the moniker is running. The object identified by the moniker must have registered itself with the ROT when it first began running.</para>
+      <h3>Implementation-specific Notes</h3>
+      <list type="table">
+        <listheader>
+          <description>Implementation</description>
+          <description>Notes</description>
+        </listheader>
+        <item>
+          <description>Anti-moniker</description>
+          <description>
+            <para>This method checks the ROT to see whether the object is running.</para>
+          </description>
+        </item>
+        <item>
+          <description>Class moniker</description>
+          <description>
+            <para>This method returns E_NOTIMPL.</para>
+          </description>
+        </item>
+        <item>
+          <description>File moniker</description>
+          <description>
+            <para>If <i>pmkNewlyRunning</i> is non-<b>NULL</b>, this method returns <b>TRUE</b> if that moniker is equal to this moniker. Otherwise, the method asks the ROT whether this moniker is running. The method ignores <i>pmkToLeft</i>.</para>
+          </description>
+        </item>
+        <item>
+          <description>Generic composite moniker</description>
+          <description>
+            <para>If <i>pmkToLeft</i> is non-<b>NULL</b>, this method composes <i>pmkToLeft</i> with this moniker and calls <b>IsRunning</b> on the result.</para>
+            <para>If <i>pmkToLeft</i> is <b>NULL</b>, this method returns <b>TRUE</b> if pmkNewlyRunning is non-<b>NULL</b> and is equal to this moniker.</para>
+            <para>If <i>pmkToLeft</i> and <i>pmkNewlyRunning</i> are both <b>NULL</b>, this method checks the ROT to see whether the moniker is running. If so, the method returns S_OK; otherwise, it recursively calls <b>IsRunning</b> on the rightmost component of the composite, passing the remainder of the composite as the <i>pmkToLeft</i> parameter for that call. This handles the case where the moniker identifies a pseudo-object that is not registered as running; see the item moniker implementation for more details.</para>
+          </description>
+        </item>
+        <item>
+          <description>Item moniker</description>
+          <description>
+            <para>If pmkToLeft is <b>NULL</b>, this method returns <b>TRUE</b> if <i>pmkNewlyRunning</i> is non-<b>NULL</b> and is equal to this moniker. Otherwise, the method checks the ROT to see whether this moniker is running.</para>
+            <para>If pmkToLeft is non-<b>NULL</b>, the method calls <see cref="IMoniker.BindToObject" /> on the <i>pmkToLeft</i> parameter, requesting an <see cref="IOleItemContainer" /> interface pointer. The method then calls <see cref="IOleItemContainer.IsRunning" />, passing the string contained within this moniker.</para>
+          </description>
+        </item>
+        <item>
+          <description>OBJREF moniker</description>
+          <description>
+            <para>Because OBJREF monikers represent a running object instance, this method returns <b>TRUE</b> unless the object is known to be no longer running because a recent call failed. The method ignores <i>pmkToLeft</i>.</para>
+          </description>
+        </item>
+        <item>
+          <description>Pointer moniker</description>
+          <description>
+            <para>This method always returns S_OK, because the object identified by a pointer moniker must always be running.</para>
+          </description>
+        </item>
+        <item>
+          <description>URL moniker</description>
+          <description>
+            <para>Returns S_OK if this moniker is currently running. Otherwise, it returns S_FALSE. The URL moniker determines whether it is running by first checking whether it is equal to the newly running moniker, by making the following call: pmkNewlyRunning-&gt;IsEqual. Typically, this call is an inexpensive operation. If this does not succeed, the moniker next checks to see whether it is registered with the ROT of the passed-in bind context.</para>
+          </description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="IMoniker" />
+    <seealso cref="IOleLink.BindIfRunning" />
+    <seealso cref="IRunningObjectTable.IsRunning" />
+  </member>
+  <member name="IMoniker.IsSystemMoniker">
+    <summary>
+      <para>Determines whether this moniker is one of the system-provided moniker classes.</para>
+    </summary>
+    <param name="pdwMksys">
+      <para>A pointer to a variables that receives one of the values from the <see cref="MKSYS" /> enumeration and refers to one of the COM moniker classes. This parameter cannot be <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>This method returns S_OK to indicate that the moniker is a system moniker, and S_FALSE otherwise.</para>
+    </returns>
+    <remarks>
+      <h3>Notes to Callers</h3>
+      <para>New values of the <see cref="MKSYS" /> enumeration may be defined in the future; therefore, you should explicitly test for each value you are interested in.</para>
+      <h3>Notes to Implementers</h3>
+      <para>Your implementation of this method must return MKSYS_NONE. You cannot use this function to identify your own monikers (for example, in your implementation of <see cref="IMoniker.ComposeWith" />). Instead, you should use your moniker's implementation of <see cref="IPersist.GetClassID" /> or use <see cref="QueryInterface" /> to test for your own private interface.</para>
+      <h3>Implementation-specific Notes</h3>
+      <list type="table">
+        <listheader>
+          <description>Implementation</description>
+          <description>Notes</description>
+        </listheader>
+        <item>
+          <description>Anti-moniker</description>
+          <description>This method returns S_OK and passes back MKSYS_ANTIMONIKER.
+</description>
+        </item>
+        <item>
+          <description>Class moniker</description>
+          <description>This method returns S_OK and passes back MKSYS_CLASSMONIKER.
+</description>
+        </item>
+        <item>
+          <description>File moniker</description>
+          <description>This method returns S_OK and passes back MKSYS_CLASSMONIKER.
+</description>
+        </item>
+        <item>
+          <description>Generic composite moniker</description>
+          <description>This method returns S_OK and passes back MKSYS_GENERICCOMPOSITE.
+</description>
+        </item>
+        <item>
+          <description>Item moniker</description>
+          <description>This method returns S_OK and passes back MKSYS_ITEMMONIKER.</description>
+        </item>
+        <item>
+          <description>OBJREF moniker</description>
+          <description>This method returns S_OK and passes back MKSYS_OBJREFMONIKER.
+</description>
+        </item>
+        <item>
+          <description>Pointer moniker</description>
+          <description>This method returns S_OK and passes back MKSYS_POINTERMONIKER.
+</description>
+        </item>
+        <item>
+          <description>URL moniker</description>
+          <description>This method returns S_OK and passes back MKSYS_URLMONIKER.
+</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="IMoniker" />
+  </member>
+  <member name="IMoniker.ParseDisplayName">
+    <summary>
+      <para>Converts a display name into a moniker.</para>
+    </summary>
+    <param name="pbc">
+      <para>A pointer to the <see cref="IBindCtx" /> interface on the bind context to be used in this binding operation. The bind context caches objects bound during the binding process, contains parameters that apply to all operations using the bind context, and provides the means by which the moniker implementation should retrieve information about its environment.</para>
+    </param>
+    <param name="pmkToLeft">
+      <para>A pointer to the <see cref="IMoniker" /> interface on the moniker that has been built out of the display name up to this point.</para>
+    </param>
+    <param name="pszDisplayName">
+      <para>The remaining display name to be parsed.</para>
+    </param>
+    <param name="pchEaten">
+      <para>A pointer to a variable that receives the number of characters in <i>pszDisplayName</i> that were consumed in this step.</para>
+    </param>
+    <param name="ppmkOut">
+      <para>A pointer to an <see cref="IMoniker" /> pointer variable that receives the interface pointer to the moniker that was built from <i>pszDisplayName</i>. When successful, the implementation must call <see cref="AddRef" /> on the new moniker; it is the caller's responsibility to call <see cref="Release" />. If an error occurs, the implementation sets *<i>ppmkOut</i> to <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>This method can return the standard return valuesE_OUTOFMEMORY and E_UNEXPECTED, as well as the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The parsing operation was completed successfully.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MK_E_SYNTAX</b>
+            </para>
+          </description>
+          <description>
+            <para>An error in the syntax of the input components (<i>pmkToLeft</i>, this moniker, and <i>pszDisplayName</i>). For example, a file moniker returns this error if <i>pmkToLeft</i> is non-<b>NULL</b>, and an item moniker returns it if <i>pmkToLeft</i> is <b>NULL</b>.</para>
+          </description>
+        </item>
+      </list>
+      <para>This method can also return the errors associated with the <see cref="IMoniker.BindToObject" /> method.</para>
+    </returns>
+    <remarks>
+      <h3>Notes to Callers</h3>
+      <para>Moniker clients do not typically call <b>ParseDisplayName</b> directly. Instead, they call the <see cref="MkParseDisplayName" /> function when they want to convert a display name into a moniker (for example, in implementing the <b>Links</b> dialog box for a container application, or for implementing a macro language that supports references to objects outside the document). That function first parses the initial portion of the display name itself.</para>
+      <para>It then calls <b>ParseDisplayName</b> on the moniker it has just created, passing the remainder of the display name and getting a new moniker in return; this step is repeated until the entire display name has been parsed.</para>
+      <h3>Notes to Implementers</h3>
+      <para>Your implementation may be able to perform this parsing by itself if your moniker class is designed to designate only certain kinds of objects. Otherwise, you must get an <see cref="IParseDisplayName" /> interface pointer for the object identified by the moniker-so-far (that is, the composition of <i>pmkToLeft</i> and this moniker) and then return the results of calling <see cref="IParseDisplayName.ParseDisplayName" />.</para>
+      <para>There are different strategies for getting an <see cref="IParseDisplayName" /> pointer, as follows:</para>
+      <list type="bullet">
+        <item>
+          <description>You can try to get the object's CLSID (by calling <see cref="IPersist.GetClassID" /> on the object) and then call the <see cref="CoGetClassObject" /> function, requesting the <see cref="IParseDisplayName" /> interface on the class factory associated with that CLSID.</description>
+        </item>
+        <item>
+          <description>You can try to bind to the object itself to get an <see cref="IParseDisplayName" /> pointer.</description>
+        </item>
+        <item>
+          <description>You can try binding to the object identified by <i>pmkToLeft</i> to get an <see cref="IOleItemContainer" /> pointer and then call <see cref="IOleItemContainer.GetObject" /> to get an <see cref="IParseDisplayName" /> pointer for the item.</description>
+        </item>
+      </list>
+      <para>Any objects that are bound should be registered with the bind context (see <see cref="IBindCtx.RegisterObjectBound" />) to ensure that they remain running for the duration of the parsing operation.</para>
+      <h3>Implementation-specific Notes</h3>
+      <list type="table">
+        <listheader>
+          <description>Implementation</description>
+          <description>Notes</description>
+        </listheader>
+        <item>
+          <description>Anti-moniker</description>
+          <description>
+            <para>This method returns E_NOTIMPL.</para>
+          </description>
+        </item>
+        <item>
+          <description>Class moniker</description>
+          <description>
+            <para>This method parses the display name by binding to itself for <see cref="IParseDisplayName" /> and asking the bound object to parse the display name into a moniker, as follows.</para>
+            <code>  hr = BindToObject(pbc, pmkToLeft, IID_IParseDisplayName, (void**)&amp;amp;amp;amp;amp;amp;amp;ppdn);
+  if (SUCCEEDED(hr)) {
+    hr = ppdn-&gt;ParseDisplayName(pbc, lpszDisplayName, pchEaten, ppmkOut);
+    ppdn-&gt;Release();
+  }
+  return hr;
+</code>
+            <para>This method tries to acquire an <see cref="IParseDisplayName" /> pointer, first by binding to the class factory for the object identified by the moniker and then by binding to the object itself. If either of these binding operations is successful, the file moniker passes the unparsed portion of the display name to the <see cref="IParseDisplayName.ParseDisplayName" /> method.</para>
+            <para>This method returns MK_E_SYNTAX if <i>pmkToLeft</i> is non-<b>NULL</b>.</para>
+          </description>
+        </item>
+        <item>
+          <description>File moniker</description>
+          <description>
+            <para>This method tries to acquire an <see cref="IParseDisplayName" /> pointer, first by binding to the class factory for the object identified by the moniker and then by binding to the object itself. If either of these binding operations is successful, the file moniker passes the unparsed portion of the display name to the <see cref="IParseDisplayName.ParseDisplayName" /> method.</para>
+          </description>
+        </item>
+        <item>
+          <description>Generic composite moniker</description>
+          <description>
+            <para>This method recursively calls <b>IMoniker.ParseDisplayName</b> on the rightmost component of the composite, passing everything else as the <i>pmkToLeft</i> parameter for that call.</para>
+          </description>
+        </item>
+        <item>
+          <description>Item moniker</description>
+          <description>
+            <para>If <i>pmkToLeft</i> is <b>NULL</b>, this method returns MK_E_SYNTAX. Otherwise, the method calls <see cref="IMoniker.BindToObject" /> on the <i>pmkToLeft</i> parameter, requesting an <see cref="IOleItemContainer" /> interface pointer. The method then calls <see cref="IOleItemContainer.GetObject" />, requesting an <see cref="IParseDisplayName" /> interface pointer to the object identified by the moniker, and passes the display name to <see cref="IParseDisplayName.ParseDisplayName" />.</para>
+          </description>
+        </item>
+        <item>
+          <description>OBJREF moniker</description>
+          <description>
+            <para>If <i>pmkToLeft</i> is not <b>NULL</b>, this method returns MK_E_SYNTAX.</para>
+          </description>
+        </item>
+        <item>
+          <description>Pointer moniker</description>
+          <description>
+            <para>This method queries the wrapped pointer for the <see cref="IParseDisplayName" /> interface and passes the display name to <see cref="IParseDisplayName.ParseDisplayName" />.</para>
+          </description>
+        </item>
+        <item>
+          <description>URL moniker</description>
+          <description>
+            <para>Parses a full or partial URL string into a result moniker (ppmkOut). If <i>szDisplayName</i> represents a full URL string (for example, "http://foo.com/default.html"), the result is a new full URL moniker. If <i>szDisplayName</i> represents a partial URL string (for example, "..\default.html"), the result is a full URL that takes its context from either the bind context's SZ_URLCONTEXT object-parameter or from this URL moniker. For example, if the context moniker was "http://foo.com/pub/list.html" and <i>szDisplayName</i> was "..\default.html", the resulting URL moniker would represent "http://foo.com/default.html".</para>
+          </description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="IMoniker" />
+    <seealso cref="IParseDisplayName" />
+    <seealso cref="MkParseDisplayName" />
+  </member>
+  <member name="IMoniker.Reduce">
+    <summary>
+      <para>Reduces a moniker to its simplest form.</para>
+    </summary>
+    <param name="pbc">
+      <para>A pointer to the <see cref="IBindCtx" /> interface on the bind context to be used in this binding operation. The bind context caches objects bound during the binding process, contains parameters that apply to all operations using the bind context, and provides the means by which the moniker implementation should retrieve information about its environment.</para>
+    </param>
+    <param name="dwReduceHowFar">
+      <para>Specifies how far this moniker should be reduced. This parameter must be one of the values from the <see cref="MKRREDUCE" /> enumeration.</para>
+    </param>
+    <param name="ppmkToLeft">
+      <para>On entry, a pointer to an <see cref="IMoniker" /> pointer variable that contains the interface pointer to moniker to the left of this moniker. This parameter is used primarily by moniker implementers to enable cooperation between the various components of a composite moniker; moniker clients can usually pass <b>NULL</b>.</para>
+      <para>On return, *<i>ppmkToLeft</i> is usually set to <b>NULL</b>, indicating no change in the original moniker to the left. In rare situations, *<i>ppmkToLeft</i> indicates a moniker, indicating that the previous moniker to the left should be disregarded and the moniker returned through *<i>ppmkToLeft</i> is the replacement. In such a situation, the implementation must call <see cref="Release" /> on the old moniker to the left of this moniker and must call <see cref="AddRef" /> on the new returned moniker; the caller must release it later. If an error occurs, the implementation can either leave the interface pointer unchanged or set it to <b>NULL</b>.</para>
+    </param>
+    <param name="ppmkReduced">
+      <para>A pointer to an <see cref="IMoniker" /> pointer variable that receives the interface pointer to the reduced form of this moniker, which can be <b>NULL</b> if an error occurs or if this moniker is reduced to nothing. If this moniker cannot be reduced, *<i>ppmkReduced</i> is simply set to this moniker and the return value is MK_S_REDUCED_TO_SELF. If *<i>ppmkReduced</i> is non-<b>NULL</b>, the implementation must call <see cref="AddRef" /> on the new moniker; it is the caller's responsibility to call <see cref="Release" />. (This is true even if *<i>ppmkReduced</i> is set to this moniker.)</para>
+    </param>
+    <returns>
+      <para>This method can return the standard return values E_OUTOFMEMORY and E_UNEXPECTED, as well as the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method completed successfully.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MK_S_REDUCED_TO_SELF</b>
+            </para>
+          </description>
+          <description>
+            <para>This moniker could not be reduced any further, so <i>ppmkReduced</i> indicates this moniker.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MK_E_EXCEEDEDDEADLINE</b>
+            </para>
+          </description>
+          <description>
+            <para>The operation could not be completed within the time limit specified by the bind context's <see cref="BIND_OPTS" /> structure.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method is intended for the following uses:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <para>Enable the construction of user-defined macros or aliases as new kinds of moniker classes. When reduced, the moniker to which the macro evaluates is returned.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>Enable the construction of a kind of moniker that tracks data as it moves about. When reduced, the moniker of the data in its current location is returned.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>On file systems that support an identifier-based method of accessing files that is independent of filenames; a file moniker could be reduced to a moniker which contains one of these identifiers.</para>
+          </description>
+        </item>
+      </list>
+      <para>The intent of the <see cref="MKRREDUCE" /> flags passed in the <i>dwReduceHowFar</i> parameter is to provide the ability to programmatically reduce a moniker to a form whose display name is recognizable to the user. For example, paths in the file system, bookmarks in word-processing documents, and range names in spreadsheets are all recognizable to users. In contrast, a macro or an alias encapsulated in a moniker are not recognizable to users.</para>
+      <h3>Notes to Callers</h3>
+      <para>The scenarios described above are not currently implemented by the system-supplied moniker classes.</para>
+      <para>You should call <b>Reduce</b> before comparing two monikers using the <see cref="IMoniker.IsEqual" /> method because a reduced moniker is in its most specific form. <b>IsEqual</b> may return S_FALSE on two monikers before they are reduced and return S_OK after they are reduced.</para>
+      <h3>Notes to Implementers</h3>
+      <para>If the current moniker can be reduced, your implementation must not reduce the moniker in-place. Instead, it must return a new moniker that represents the reduced state of the current one. This way, the caller still has the option of using the nonreduced moniker (for example, enumerating its components). Your implementation should reduce the moniker at least as far as is requested.</para>
+      <h3>Implementation-specific Notes</h3>
+      <list type="table">
+        <listheader>
+          <description>Implementation</description>
+          <description>Notes</description>
+        </listheader>
+        <item>
+          <description>Anti-moniker</description>
+          <description>This method returns MK_S_REDUCED_TO_SELF and passes back the same moniker.</description>
+        </item>
+        <item>
+          <description>Class moniker</description>
+          <description>This method returns MK_S_REDUCED_TO_SELF and passes back the same moniker.</description>
+        </item>
+        <item>
+          <description>File moniker</description>
+          <description>This method returns MK_S_REDUCED_TO_SELF and passes back the same moniker.</description>
+        </item>
+        <item>
+          <description>Generic composite moniker</description>
+          <description>This method recursively calls <b>Reduce</b> for each of its component monikers. If any of the components reduces itself, the method returns S_OK and passes back a composite of the reduced components. If no reduction occurred, the method passes back the same moniker and returns MK_S_REDUCED_TO_SELF.</description>
+        </item>
+        <item>
+          <description>Item moniker</description>
+          <description>This method returns MK_S_REDUCED_TO_SELF and passes back the same moniker.</description>
+        </item>
+        <item>
+          <description>OBJREF moniker</description>
+          <description>This method returns MK_S_REDUCED_TO_SELF and passes back the same moniker.</description>
+        </item>
+        <item>
+          <description>Pointer moniker</description>
+          <description>This method returns MK_S_REDUCED_TO_SELF and passes back the same moniker.</description>
+        </item>
+        <item>
+          <description>URL moniker</description>
+          <description>This method returns MK_S_REDUCED_TO_SELF and passes back the same moniker.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="IMoniker" />
+  </member>
+  <member name="IMoniker.RelativePathTo">
+    <summary>
+      <para>Creates a relative moniker between this moniker and the specified moniker.</para>
+    </summary>
+    <param name="pmkOther">
+      <para>A pointer to the <see cref="IMoniker" /> interface on the moniker to which a relative path should be taken.</para>
+    </param>
+    <param name="ppmkRelPath">
+      <para>A pointer to an  <see cref="IMoniker" /> pointer variable that receives the interface pointer to the relative moniker. When successful, the implementation must call <see cref="AddRef" /> on the new moniker; it is the caller's responsibility to call <see cref="Release" />. If an error occurs, the implementation sets *<i>ppmkRelPath</i> to <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>This method can return the standard return values E_OUTOFMEMORY and E_UNEXPECTED, as well as the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method completed successfully.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MK_S_HIM</b>
+            </para>
+          </description>
+          <description>
+            <para>No common prefix is shared by the two monikers and the moniker returned in <i>ppmkRelPath</i> is <i>pmkOther</i>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MK_E_NOTBINDABLE</b>
+            </para>
+          </description>
+          <description>
+            <para>This moniker is a relative moniker, such as an item moniker. This moniker must be composed with the moniker of its container before a relative path can be determined.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>A relative moniker is analogous to a relative path (such as "..\backup"). For example, suppose you have one moniker that represents the path "c:\projects\secret\art\pict1.bmp" and another moniker that represents the path "c:\projects\secret\docs\chap1.txt". Calling <b>RelativePathTo</b> on the first moniker, passing the second one as the <i>pmkOther</i> parameter, would create a relative moniker representing the path "..\docs\chap1.txt".</para>
+      <h3>Notes to Callers</h3>
+      <para>Moniker clients typically do not need to call <b>RelativePathTo</b>. This method is called primarily by the default handler for linked objects. Linked objects contain both an absolute and a relative moniker to identify the link source. (This enables link tracking if the user moves a directory tree containing both the container and source files.) The default handler calls this method to create a relative moniker from the container document to the link source. (That is, it calls <b>RelativePathTo</b> on the moniker identifying the container document, passing the moniker identifying the link source as the <i>pmkOther</i> parameter.)</para>
+      <para>If you do call <b>RelativePathTo</b>, call it only on absolute monikers, for example, a file moniker or a composite moniker whose leftmost component is a file moniker, where the file moniker represents an absolute path. Do not call this method on relative monikers.</para>
+      <h3>Notes to Implementers</h3>
+      <para>Your implementation of <b>RelativePathTo</b> should first determine whether <i>pmkOther</i> is a moniker of a class that you recognize and for which you can provide special handling (for example, if it is of the same class as this moniker). If so, your implementation should determine the relative path. Otherwise, it should pass both monikers in a call to the <see cref="MonikerRelativePathTo" /> function, which correctly handles the generic case.</para>
+      <para>The first step in determining a relative path is determining the common prefix of this moniker and <i>pmkOther</i>. The next step is to break this moniker and <i>pmkOther</i> into two parts each, say (P, myTail) and (P, otherTail) respectively, where P is the common prefix. The correct relative path is then the inverse of myTail composed with otherTail:</para>
+      <para>Comp( Inv( myTail ), otherTail )</para>
+      <para>where Comp() represents the composition operation and Inv() represents the inverse operation.</para>
+      <para>For certain types of monikers, you cannot use your <see cref="IMoniker.Inverse" /> method to construct the inverse of myTail. For example, a file moniker returns an anti-moniker as an inverse, while its <b>RelativePathTo</b> method must use one or more file monikers that each represent the path ".." to construct the inverse of myTail.</para>
+      <h3>Implementation-specific Notes</h3>
+      <list type="table">
+        <listheader>
+          <description>Implementation</description>
+          <description>Notes</description>
+        </listheader>
+        <item>
+          <description>Anti-moniker</description>
+          <description>This method returns MK_S_HIM and sets *<i>ppmkRelPath</i> to the other moniker.</description>
+        </item>
+        <item>
+          <description>Class moniker</description>
+          <description>This method returns the result of calling <see cref="MonikerRelativePathTo" /> with <i>pmkSrc</i> equal to this moniker, <i>pmkOther</i>, <i>ppmkRelPath</i>, and <b>TRUE</b> as <i>dwReserved</i>.</description>
+        </item>
+        <item>
+          <description>File moniker</description>
+          <description>This method computes a moniker which when composed to the right of this moniker yields the other moniker. For example, if the path of this moniker is "C:\work\docs\report.doc" and if the other moniker is "C:\work\art\picture.bmp", the path of the computed moniker would be "..\..\art\picture.bmp". </description>
+        </item>
+        <item>
+          <description>Generic composite moniker</description>
+          <description>This method finds the common prefix of the two monikers and creates two monikers that consist of the remainder when the common prefix is removed. Then it creates the inverse for the remainder of this moniker and composes the remainder of the other moniker on the right of it.</description>
+        </item>
+        <item>
+          <description>Item moniker</description>
+          <description>This method returns MK_E_NOTBINDABLE and sets *<i>ppmkRelPath</i> to <b>NULL</b>.</description>
+        </item>
+        <item>
+          <description>OBJREF moniker</description>
+          <description>This method returns E_NOTIMPL.</description>
+        </item>
+        <item>
+          <description>Pointer moniker</description>
+          <description>This method returns E_NOTIMPL.</description>
+        </item>
+        <item>
+          <description>URL moniker</description>
+          <description>This method returns E_NOTIMPL.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="IMoniker" />
+    <seealso cref="MonikerRelativePathTo" />
+  </member>
+  <member name="IMoniker">
+    <summary>
+      <para>Enables you to use a moniker object, which contains information that uniquely identifies a COM object. An object that has a pointer to the moniker object's <b>IMoniker</b> interface can locate, activate, and get access to the identified object without having any other specific information on where the object is actually located in a distributed system.</para>
+      <para>Monikers are used as the basis for linking in COM. A linked object contains a moniker that identifies its source. When the user activates the linked object to edit it, the moniker is bound; this loads the link source into memory.</para>
+    </summary>
+    <remarks>
+      <para>Like a path to a file in a file system, a moniker contains information that allows a COM object to be located and activated. Monikers can identify any type of COM object, from a document object stored in a file to a selection within an embedded object. COM provides a set of moniker classes that allow you to create moniker objects identifying the objects most commonly found in the system. For example, there might be an object representing a range of cells in a spreadsheet that is itself embedded in a text document stored in a file. In a distributed system, this object's moniker would identify the location of the object's system, the file's physical location on that system, the storage of the embedded object within that file, and, finally, the location of the range of cells within the embedded object.</para>
+      <para>A moniker object supports the <b>IMoniker</b> interface, which is derived from the <see cref="IPersistStream" /> interface and uniquely identifies a single object in the system. After an object providing a moniker has created the moniker object, this information cannot be changed within that object. If the moniker provider changes the information, it can do so only by creating a new moniker object, which would then uniquely identify the object in question.</para>
+      <para>Monikers have the following two important capabilities:</para>
+      <list type="bullet">
+        <item>
+          <description>Monikers can be saved to a persistent storage. When a moniker is loaded back into memory, it still identifies the same object.</description>
+        </item>
+        <item>
+          <description>Monikers support an operation called binding, which is the process of locating the object named by the moniker, activating it (loading it into memory) if it is not already active, and returning a pointer to a requested interface on that object.</description>
+        </item>
+      </list>
+      <h3>Anti-Moniker Implementation</h3>
+      <para>Anti-monikers are the inverse of the COM implementations of file, item, and pointer monikers. That is, an anti-moniker composed to the right of a file moniker, item moniker, or pointer moniker composes to nothing.</para>
+      <para>If you're a moniker client, you typically do not need to use anti-monikers. When you need the inverse of a moniker, you should call <see cref="IMoniker.Inverse" />. For example, if you need an inverse to remove the last piece of a composite moniker, use <see cref="IMoniker.Enum" /> to enumerate the pieces of the moniker and call <b>Inverse</b> on the rightmost piece. You should not use an anti-moniker for this purpose because you cannot be sure that the right-most piece of a composite considers an anti-moniker to be its inverse.</para>
+      <para>The only situation in which you should explicitly use an anti-moniker is when you are writing a new moniker class and you have no special requirements for constructing inverses to your monikers. In that situation, you can return anti-monikers from your implementation of <see cref="Inverse" />. In your implementation of <see cref="IMoniker.ComposeWith" />, you should then annihilate one of your monikers for every anti-moniker you encounter.</para>
+      <para>Use the <see cref="CreateAntiMoniker" /> function to create these monikers.</para>
+      <h3>Class Moniker Implementation</h3>
+      <para>Class monikers are monikers that represent an object class. Class monikers bind to the class object of the class for which they are created.</para>
+      <para>Class monikers are most useful in composition with other types of monikers, such as file monikers or item monikers. Class monikers may also be composed to the right of monikers supporting binding to the <see cref="IClassActivator" /> interface. This allows <b>IClassActivator</b> to provide access to the class object and instances of the class.</para>
+      <para>To use class monikers, you must use the <see cref="CreateClassMoniker" /> function to create these monikers.</para>
+      <h3>File Moniker Implementation</h3>
+      <para>File monikers are monikers that represent a path in the file system; a file moniker can identify any object that is saved in its own file. To identify objects contained within a file, you can compose monikers of other classes (for example, item monikers) to the right of a file moniker. However, the moniker to the left of a file moniker within a composite must be another file moniker, an anti-moniker, or a class moniker. It is illegal, for example, for an item moniker to appear to the left of a file moniker in a composite.</para>
+      <para>Note that an anti-moniker is the inverse of an entire file moniker, not the inverse of a component of the path that the moniker represents; that is, when you compose an anti-moniker to the right of a file moniker, the entire file moniker is removed. If you want to remove just the rightmost component of the path represented by a file moniker, you must create a separate file moniker based on the ".." path and then compose that to the end of the file moniker.</para>
+      <para>A moniker client (using a moniker to get an interface pointer to an object) does not typically need to know the class of the moniker; it can simply call methods using an <b>IMoniker</b> interface pointer.</para>
+      <para>A moniker provider (handing out monikers that identify its objects to make them accessible to moniker clients) must use file monikers if the objects they are identifying are stored in files. If each object resides in its own file, file monikers are the only type needed. If the objects identified are smaller than a file, you need to use another type of moniker (for example, item monikers) in addition to file monikers.</para>
+      <para>To use file monikers, you must use the <see cref="CreateFileMoniker" /> function to create the monikers. To allow your objects to be loaded when a file moniker is bound, your objects must implement the <see cref="IPersistFile" /> interface.</para>
+      <para>The most common example of moniker providers are COM server applications that support linking. If your COM server application supports linking only to file-based documents in their entirety, file monikers are the only type of moniker you need. If your COM server application supports linking to objects smaller than a document (such as sections of a document or embedded objects), you must use item monikers as well as file monikers.</para>
+      <h3>Generic Composite Moniker Implementation</h3>
+      <para>A generic composite moniker is a composite moniker whose components have no special knowledge of each other.</para>
+      <para>Composition is the process of joining two monikers together. Sometimes two monikers of specific classes can be combined in a special manner; for example, a file moniker representing an incomplete path and another file moniker representing a relative path can be combined to form a single file moniker representing the complete path. This is an example of nongeneric composition. Generic composition, on the other hand, can connect any two monikers, no matter what their classes. Because a nongeneric composition depends on the class of the monikers involved, it can be performed only by a particular class's implementation of the <see cref="IMoniker.ComposeWith" /> method. You can define new types of nongeneric compositions if you write a new moniker class. By contrast, generic compositions are performed by the <see cref="CreateGenericComposite" /> function.</para>
+      <para>A moniker client (using a moniker to get an interface pointer to an object) does not typically need to know the class of the moniker, or whether it is a generic composite or a nongeneric composite; it can simply call methods using an <b>IMoniker</b> interface pointer.</para>
+      <para>A moniker provider (handing out monikers that identify its objects to make them accessible to moniker clients) may need to compose two monikers together. (For example, if you are using an item moniker to identify an object, you must compose it with the moniker identifying the object's container before you hand it out.) Use the <see cref="IMoniker.ComposeWith" /> method to do this, calling the method on the first moniker and passing the second moniker as a parameter; this method may produce either a generic or a nongeneric composite.</para>
+      <para>The only time you should explicitly create a generic composite moniker is when you are writing your own moniker class. In your implementation of <see cref="IMoniker.ComposeWith" />, you should attempt to perform a nongeneric composition whenever possible; if you cannot perform a nongeneric composition and generic composition is acceptable, you can call the <see cref="CreateGenericComposite" /> function to create a generic composite moniker.</para>
+      <h3>Item Moniker Implementation</h3>
+      <para>Item monikers are used to identify objects within containers, such as a portion of a document, an embedded object within a compound document, or a range of cells within a spreadsheet. Item monikers are often used in combination with file monikers; a file moniker is used to identify the container while an item moniker is used to identify the item within the container.</para>
+      <para>An item moniker contains a text string; this string is used by the container object to distinguish the contained item from the others. The container object must implement the <see cref="IOleItemContainer" /> interface; this interface enables the item moniker code to acquire a pointer to an object, given only the string that identifies the object.</para>
+      <para>A moniker client (using a moniker to get an interface pointer to an object) does not typically need to know the class of the moniker; it simply call methods using an <b>IMoniker</b> interface pointer.</para>
+      <para>A moniker provider (handing out monikers that identify its objects to make them accessible to moniker clients) must use item monikers if the objects identified are contained within another object and can be individually identified using a string. Use another type of moniker (for example, file monikers) to identify the container object.</para>
+      <para>To use item monikers, you must use the <see cref="CreateItemMoniker" /> function to create the monikers. To allow your objects to be loaded when an item moniker is bound, the container of your objects must implement the <see cref="IOleItemContainer" /> interface.</para>
+      <para>The most common example of moniker providers are COM applications that support linking. If your COM application supports linking to objects smaller than a file-based document, you need to use item monikers. For a server application that allows linking to a selection within a document, you use the item monikers to identify those objects. For a container application that allows linking to embedded objects, you use the item monikers to identify the embedded objects.</para>
+      <h3>OBJREF Moniker Implementation</h3>
+      <para>OBJREF monikers represent a reference to an object instance that is running on an out-of-process server, either locally or remotely. The moniker identifies the object instance and the computer the object is running on.</para>
+      <para>An OBJREF moniker is similar in many ways to a pointer moniker, except that the running object is out-of-process. A client can call <see cref="IMoniker.BindToObject" /> on an OBJREF moniker and use the pointer it obtains to access the running object, regardless of its location.</para>
+      <para>An important distinction from a pointer moniker is that the display name of an OBJREF moniker can be embedded in an HTML page, and the running object represented by the moniker can be bound by a client script, applet, or ActiveX control.</para>
+      <para>The primary use for an OBJREF moniker is to obtain access to a running object instance over the Internet. An active server page or some other means of generating dynamic HTML content places the display name of an OBJREF moniker in a parameter to an applet or an ActiveX control. The code of the applet or control calls the <see cref="CreateObjrefMoniker" /> function to create an OBJREF moniker based on the display name, and it then calls <see cref="IMoniker.BindToObject" /> on the resulting OBJREF moniker to get access to the
+running object instance. The active server page then marshals a pointer to the running object back to the page's client.</para>
+      <h3>Pointer Moniker Implementation</h3>
+      <para>A pointer moniker essentially wraps an interface pointer so that it looks like a moniker and can be passed to those interfaces that require monikers. Binding a pointer moniker is done by calling the pointer's <see cref="QueryInterface" /> method.</para>
+      <para>Instances of pointer monikers refuse to be serialized; that is, <see cref="IPersistStream.Save" /> will return an error. These monikers can, however, be marshaled to a different process in an RPC call; internally, the system marshals and unmarshals the pointer by using the standard paradigm for marshaling interface pointers.</para>
+      <para>Pointer monikers are rarely needed. Use pointer monikers only if you need monikers to identify objects that have no persistent representation. Pointer monikers allow such objects to participate in a moniker-binding operation.</para>
+      <h3>URL Moniker Implementation</h3>
+      <para>The URL moniker implementation of <b>IMoniker</b> is found on a URL moniker object, which also supports <see cref="IUnknown" /> and the <a href="https://docs.microsoft.com//previous-versions/ms775081(v=vs.85)">IAsyncMoniker</a> interface. The <b>IMoniker</b> interface inherits its definition from <see cref="IPersistStream" /> as well as <b>IUnknown</b>, and <b>IPersistStream</b> inherits from <see cref="IPersist" />. Therefore, the <b>IMoniker</b> implementation includes support for <b>IPersistStream</b> and <b>IPersist</b>.</para>
+      <para>The <a href="https://docs.microsoft.com//previous-versions/ms775081(v=vs.85)">IAsyncMoniker</a> interface is simply <see cref="IUnknown" />. (There are no additional methods.) It is is used to allow clients to determine whether a moniker supports asynchronous binding.</para>
+      <para>To get a pointer to the <b>IMoniker</b> interface on this object, call the <b>CreateURLMonikerEx</b> function.</para>
+      <para>A moniker client (using a moniker to get an interface pointer to an object) does not typically need to know the class of the moniker it is using; it simply calls methods using an <b>IMoniker</b> interface pointer.</para>
+      <para>A moniker provider (handing out monikers that identify its objects to make them accessible to moniker clients) must use item monikers if the objects it identifies are contained within another object and can be individually identified using a string. It will also need to use another type of moniker (for example, file monikers) to identify the container object.</para>
+      <para>To use item monikers, you must use the <see cref="CreateItemMoniker" /> function to create the monikers. To allow your objects to be loaded when an item moniker is bound, the container of
+your objects must implement the <see cref="IOleItemContainer" /> interface.</para>
+      <para>The most common example of moniker providers are COM applications that support linking. If your COM application supports linking to objects smaller than a file-based documents, you need to use item monikers. For a server application that allows linking to a selection within a document, you use the item monikers to identify those objects. For a container application that allows linking to embedded objects, you use the item monikers to identify the embedded objects.</para>
+    </remarks>
+    <seealso cref="CreateAntiMoniker" />
+    <seealso cref="CreateClassMoniker" />
+    <seealso cref="CreateFileMoniker" />
+    <seealso cref="CreateGenericComposite" />
+    <seealso cref="CreateItemMoniker" />
+    <seealso cref="CreateObjrefMoniker" />
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms775103(v=vs.85)">CreateURLMonikerEx</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/com/monikers">Monikers</seealso>
+  </member>
+</doc>

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="STORAGE_COMPONENT_HEALTH_STATUS">
+    <summary>
+      <para>Specifies  the health status of a storage component.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_COMPONENT_HEALTH_STATUS.HealthStatusUnknown">
+    <summary></summary>
+  </member>
+  <member name="STORAGE_COMPONENT_HEALTH_STATUS.HealthStatusNormal">
+    <summary></summary>
+  </member>
+  <member name="STORAGE_COMPONENT_HEALTH_STATUS.HealthStatusThrottled">
+    <summary></summary>
+  </member>
+  <member name="STORAGE_COMPONENT_HEALTH_STATUS.HealthStatusWarning">
+    <summary></summary>
+  </member>
+  <member name="STORAGE_COMPONENT_HEALTH_STATUS.HealthStatusDisabled">
+    <summary></summary>
+  </member>
+  <member name="STORAGE_COMPONENT_HEALTH_STATUS.HealthStatusFailed">
+    <summary></summary>
+  </member>
+</doc>

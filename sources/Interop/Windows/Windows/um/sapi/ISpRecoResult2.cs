@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ISpRecoResult2.xml' path='doc/member[@name="ISpRecoResult2"]/*' />
 [Guid("27CAC6C4-88F2-41F2-8817-0C95E59F1E6E")]
 [NativeTypeName("struct ISpRecoResult2 : ISpRecoResult")]
 [NativeInheritance("ISpRecoResult")]
@@ -16,6 +17,7 @@ public unsafe partial struct ISpRecoResult2 : ISpRecoResult2.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ISpRecoResult2 : ISpRecoResult2.Interface
         return ((delegate* unmanaged<ISpRecoResult2*, Guid*, void**, int>)(lpVtbl[0]))((ISpRecoResult2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ISpRecoResult2 : ISpRecoResult2.Interface
         return ((delegate* unmanaged<ISpRecoResult2*, uint>)(lpVtbl[1]))((ISpRecoResult2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ISpRecoResult2 : ISpRecoResult2.Interface
         return ((delegate* unmanaged<ISpRecoResult2*, uint>)(lpVtbl[2]))((ISpRecoResult2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ISpPhrase.GetPhrase" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetPhrase(SPPHRASE** ppCoMemPhrase)
@@ -46,6 +51,7 @@ public unsafe partial struct ISpRecoResult2 : ISpRecoResult2.Interface
         return ((delegate* unmanaged<ISpRecoResult2*, SPPHRASE**, int>)(lpVtbl[3]))((ISpRecoResult2*)Unsafe.AsPointer(ref this), ppCoMemPhrase);
     }
 
+    /// <inheritdoc cref="ISpPhrase.GetSerializedPhrase" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetSerializedPhrase(SPSERIALIZEDPHRASE** ppCoMemPhrase)
@@ -53,6 +59,7 @@ public unsafe partial struct ISpRecoResult2 : ISpRecoResult2.Interface
         return ((delegate* unmanaged<ISpRecoResult2*, SPSERIALIZEDPHRASE**, int>)(lpVtbl[4]))((ISpRecoResult2*)Unsafe.AsPointer(ref this), ppCoMemPhrase);
     }
 
+    /// <inheritdoc cref="ISpPhrase.GetText" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetText([NativeTypeName("ULONG")] uint ulStart, [NativeTypeName("ULONG")] uint ulCount, BOOL fUseTextReplacements, [NativeTypeName("LPWSTR *")] ushort** ppszCoMemText, byte* pbDisplayAttributes)
@@ -60,6 +67,7 @@ public unsafe partial struct ISpRecoResult2 : ISpRecoResult2.Interface
         return ((delegate* unmanaged<ISpRecoResult2*, uint, uint, BOOL, ushort**, byte*, int>)(lpVtbl[5]))((ISpRecoResult2*)Unsafe.AsPointer(ref this), ulStart, ulCount, fUseTextReplacements, ppszCoMemText, pbDisplayAttributes);
     }
 
+    /// <inheritdoc cref="ISpPhrase.Discard" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Discard([NativeTypeName("DWORD")] uint dwValueTypes)
@@ -67,6 +75,7 @@ public unsafe partial struct ISpRecoResult2 : ISpRecoResult2.Interface
         return ((delegate* unmanaged<ISpRecoResult2*, uint, int>)(lpVtbl[6]))((ISpRecoResult2*)Unsafe.AsPointer(ref this), dwValueTypes);
     }
 
+    /// <inheritdoc cref="ISpRecoResult.GetResultTimes" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetResultTimes(SPRECORESULTTIMES* pTimes)
@@ -74,6 +83,7 @@ public unsafe partial struct ISpRecoResult2 : ISpRecoResult2.Interface
         return ((delegate* unmanaged<ISpRecoResult2*, SPRECORESULTTIMES*, int>)(lpVtbl[7]))((ISpRecoResult2*)Unsafe.AsPointer(ref this), pTimes);
     }
 
+    /// <inheritdoc cref="ISpRecoResult.GetAlternates" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetAlternates([NativeTypeName("ULONG")] uint ulStartElement, [NativeTypeName("ULONG")] uint cElements, [NativeTypeName("ULONG")] uint ulRequestCount, ISpPhraseAlt** ppPhrases, [NativeTypeName("ULONG *")] uint* pcPhrasesReturned)
@@ -81,6 +91,7 @@ public unsafe partial struct ISpRecoResult2 : ISpRecoResult2.Interface
         return ((delegate* unmanaged<ISpRecoResult2*, uint, uint, uint, ISpPhraseAlt**, uint*, int>)(lpVtbl[8]))((ISpRecoResult2*)Unsafe.AsPointer(ref this), ulStartElement, cElements, ulRequestCount, ppPhrases, pcPhrasesReturned);
     }
 
+    /// <inheritdoc cref="ISpRecoResult.GetAudio" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT GetAudio([NativeTypeName("ULONG")] uint ulStartElement, [NativeTypeName("ULONG")] uint cElements, ISpStreamFormat** ppStream)
@@ -88,6 +99,7 @@ public unsafe partial struct ISpRecoResult2 : ISpRecoResult2.Interface
         return ((delegate* unmanaged<ISpRecoResult2*, uint, uint, ISpStreamFormat**, int>)(lpVtbl[9]))((ISpRecoResult2*)Unsafe.AsPointer(ref this), ulStartElement, cElements, ppStream);
     }
 
+    /// <inheritdoc cref="ISpRecoResult.SpeakAudio" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT SpeakAudio([NativeTypeName("ULONG")] uint ulStartElement, [NativeTypeName("ULONG")] uint cElements, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("ULONG *")] uint* pulStreamNumber)
@@ -95,6 +107,7 @@ public unsafe partial struct ISpRecoResult2 : ISpRecoResult2.Interface
         return ((delegate* unmanaged<ISpRecoResult2*, uint, uint, uint, uint*, int>)(lpVtbl[10]))((ISpRecoResult2*)Unsafe.AsPointer(ref this), ulStartElement, cElements, dwFlags, pulStreamNumber);
     }
 
+    /// <inheritdoc cref="ISpRecoResult.Serialize" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT Serialize(SPSERIALIZEDRESULT** ppCoMemSerializedResult)
@@ -102,6 +115,7 @@ public unsafe partial struct ISpRecoResult2 : ISpRecoResult2.Interface
         return ((delegate* unmanaged<ISpRecoResult2*, SPSERIALIZEDRESULT**, int>)(lpVtbl[11]))((ISpRecoResult2*)Unsafe.AsPointer(ref this), ppCoMemSerializedResult);
     }
 
+    /// <inheritdoc cref="ISpRecoResult.ScaleAudio" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT ScaleAudio([NativeTypeName("const GUID *")] Guid* pAudioFormatId, [NativeTypeName("const WAVEFORMATEX *")] WAVEFORMATEX* pWaveFormatEx)
@@ -109,6 +123,7 @@ public unsafe partial struct ISpRecoResult2 : ISpRecoResult2.Interface
         return ((delegate* unmanaged<ISpRecoResult2*, Guid*, WAVEFORMATEX*, int>)(lpVtbl[12]))((ISpRecoResult2*)Unsafe.AsPointer(ref this), pAudioFormatId, pWaveFormatEx);
     }
 
+    /// <inheritdoc cref="ISpRecoResult.GetRecoContext" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT GetRecoContext(ISpRecoContext** ppRecoContext)
@@ -116,6 +131,7 @@ public unsafe partial struct ISpRecoResult2 : ISpRecoResult2.Interface
         return ((delegate* unmanaged<ISpRecoResult2*, ISpRecoContext**, int>)(lpVtbl[13]))((ISpRecoResult2*)Unsafe.AsPointer(ref this), ppRecoContext);
     }
 
+    /// <include file='ISpRecoResult2.xml' path='doc/member[@name="ISpRecoResult2.CommitAlternate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT CommitAlternate(ISpPhraseAlt* pPhraseAlt, ISpRecoResult** ppNewResult)
@@ -123,6 +139,7 @@ public unsafe partial struct ISpRecoResult2 : ISpRecoResult2.Interface
         return ((delegate* unmanaged<ISpRecoResult2*, ISpPhraseAlt*, ISpRecoResult**, int>)(lpVtbl[14]))((ISpRecoResult2*)Unsafe.AsPointer(ref this), pPhraseAlt, ppNewResult);
     }
 
+    /// <include file='ISpRecoResult2.xml' path='doc/member[@name="ISpRecoResult2.CommitText"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT CommitText([NativeTypeName("ULONG")] uint ulStartElement, [NativeTypeName("ULONG")] uint cElements, [NativeTypeName("LPCWSTR")] ushort* pszCorrectedData, [NativeTypeName("DWORD")] uint eCommitFlags)
@@ -130,6 +147,7 @@ public unsafe partial struct ISpRecoResult2 : ISpRecoResult2.Interface
         return ((delegate* unmanaged<ISpRecoResult2*, uint, uint, ushort*, uint, int>)(lpVtbl[15]))((ISpRecoResult2*)Unsafe.AsPointer(ref this), ulStartElement, cElements, pszCorrectedData, eCommitFlags);
     }
 
+    /// <include file='ISpRecoResult2.xml' path='doc/member[@name="ISpRecoResult2.SetTextFeedback"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT SetTextFeedback([NativeTypeName("LPCWSTR")] ushort* pszFeedback, BOOL fSuccessful)

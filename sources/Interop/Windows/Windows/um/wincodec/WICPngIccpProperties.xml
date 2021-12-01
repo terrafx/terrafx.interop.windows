@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WICPngIccpProperties">
+    <summary>
+      <para>Specifies the Portable Network Graphics (PNG) iCCP chunk metadata properties.</para>
+    </summary>
+  </member>
+  <member name="WICPngIccpProperties.WICPngIccpProfileName">
+    <summary>
+      <para>[VT_LPSTR] Indicates the International Color Consortium (ICC) profile name.</para>
+    </summary>
+  </member>
+  <member name="WICPngIccpProperties.WICPngIccpProfileData">
+    <summary>
+      <para>[VT_VECTOR | VT_UI1] Indicates the embedded ICC profile.</para>
+    </summary>
+  </member>
+  <member name="WICPngIccpProperties.WICPngIccpProperties_FORCE_DWORD">
+    <summary></summary>
+  </member>
+</doc>

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAccStore.xml' path='doc/member[@name="IAccStore"]/*' />
 [Guid("E2CD4A63-2B72-4D48-B739-95E4765195BA")]
 [NativeTypeName("struct IAccStore : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IAccStore : IAccStore.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IAccStore : IAccStore.Interface
         return ((delegate* unmanaged<IAccStore*, Guid*, void**, int>)(lpVtbl[0]))((IAccStore*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IAccStore : IAccStore.Interface
         return ((delegate* unmanaged<IAccStore*, uint>)(lpVtbl[1]))((IAccStore*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IAccStore : IAccStore.Interface
         return ((delegate* unmanaged<IAccStore*, uint>)(lpVtbl[2]))((IAccStore*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAccStore.xml' path='doc/member[@name="IAccStore.Register"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Register([NativeTypeName("const IID &")] Guid* riid, IUnknown* punk)
@@ -46,6 +51,7 @@ public unsafe partial struct IAccStore : IAccStore.Interface
         return ((delegate* unmanaged<IAccStore*, Guid*, IUnknown*, int>)(lpVtbl[3]))((IAccStore*)Unsafe.AsPointer(ref this), riid, punk);
     }
 
+    /// <include file='IAccStore.xml' path='doc/member[@name="IAccStore.Unregister"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Unregister(IUnknown* punk)
@@ -53,6 +59,7 @@ public unsafe partial struct IAccStore : IAccStore.Interface
         return ((delegate* unmanaged<IAccStore*, IUnknown*, int>)(lpVtbl[4]))((IAccStore*)Unsafe.AsPointer(ref this), punk);
     }
 
+    /// <include file='IAccStore.xml' path='doc/member[@name="IAccStore.GetDocuments"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetDocuments(IEnumUnknown** enumUnknown)
@@ -60,6 +67,7 @@ public unsafe partial struct IAccStore : IAccStore.Interface
         return ((delegate* unmanaged<IAccStore*, IEnumUnknown**, int>)(lpVtbl[5]))((IAccStore*)Unsafe.AsPointer(ref this), enumUnknown);
     }
 
+    /// <include file='IAccStore.xml' path='doc/member[@name="IAccStore.LookupByHWND"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT LookupByHWND(HWND hWnd, [NativeTypeName("const IID &")] Guid* riid, IUnknown** ppunk)
@@ -67,6 +75,7 @@ public unsafe partial struct IAccStore : IAccStore.Interface
         return ((delegate* unmanaged<IAccStore*, HWND, Guid*, IUnknown**, int>)(lpVtbl[6]))((IAccStore*)Unsafe.AsPointer(ref this), hWnd, riid, ppunk);
     }
 
+    /// <include file='IAccStore.xml' path='doc/member[@name="IAccStore.LookupByPoint"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT LookupByPoint(POINT pt, [NativeTypeName("const IID &")] Guid* riid, IUnknown** ppunk)
@@ -74,6 +83,7 @@ public unsafe partial struct IAccStore : IAccStore.Interface
         return ((delegate* unmanaged<IAccStore*, POINT, Guid*, IUnknown**, int>)(lpVtbl[7]))((IAccStore*)Unsafe.AsPointer(ref this), pt, riid, ppunk);
     }
 
+    /// <include file='IAccStore.xml' path='doc/member[@name="IAccStore.OnDocumentFocus"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT OnDocumentFocus(IUnknown* punk)
@@ -81,6 +91,7 @@ public unsafe partial struct IAccStore : IAccStore.Interface
         return ((delegate* unmanaged<IAccStore*, IUnknown*, int>)(lpVtbl[8]))((IAccStore*)Unsafe.AsPointer(ref this), punk);
     }
 
+    /// <include file='IAccStore.xml' path='doc/member[@name="IAccStore.GetFocused"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT GetFocused([NativeTypeName("const IID &")] Guid* riid, IUnknown** ppunk)

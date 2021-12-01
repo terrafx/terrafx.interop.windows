@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SPECIALGROUPCOLLAPSESTATES.xml' path='doc/member[@name="SPECIALGROUPCOLLAPSESTATES"]/*' />
 public enum SPECIALGROUPCOLLAPSESTATES
 {
+    /// <include file='SPECIALGROUPCOLLAPSESTATES.xml' path='doc/member[@name="SPECIALGROUPCOLLAPSESTATES.EBSGC_NORMAL"]/*' />
     EBSGC_NORMAL = 1,
+
+    /// <include file='SPECIALGROUPCOLLAPSESTATES.xml' path='doc/member[@name="SPECIALGROUPCOLLAPSESTATES.EBSGC_HOT"]/*' />
     EBSGC_HOT = 2,
+
+    /// <include file='SPECIALGROUPCOLLAPSESTATES.xml' path='doc/member[@name="SPECIALGROUPCOLLAPSESTATES.EBSGC_PRESSED"]/*' />
     EBSGC_PRESSED = 3,
 }

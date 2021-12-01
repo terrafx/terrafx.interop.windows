@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IApplicationAssociationRegistrationUI.LaunchAdvancedAssociationUI">
+    <summary>
+      <para>Launches an advanced association dialog box through which the user can customize the associations for the application specified in <i>pszAppRegName</i>.</para>
+    </summary>
+    <param name="pszAppRegistryName">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>A pointer to a null-terminated Unicode string that specifies the registered name of the application. This value is only valid if it matches one of the application strings registered under <b>HKCU\Software\RegisteredApplications</b> or under <b>HKLM\Software\RegisteredApplications</b>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Starting in Windows 10, this does not launch the association dialog box. It displays a dialog to the user informing them that they can change the default programs used to open file extensions in their <b>Settings</b></para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/shell/default-programs">Default Programs</seealso>
+    <seealso cref="IApplicationAssociationRegistrationUI" />
+  </member>
+  <member name="IApplicationAssociationRegistrationUI">
+    <summary>
+      <para>Exposes a method that launches an advanced association dialog box through which the user can customize their associations.</para>
+    </summary>
+    <remarks>
+      <para>Because <b>IApplicationAssociationRegistrationUI</b> is only supported for Windows Vista and later, applications that support earlier operating systems must use their preexisting code when running under those operating systems. Those applications should include a check for the operating system version to account for this.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/shell/default-programs">Default Programs</seealso>
+  </member>
+</doc>

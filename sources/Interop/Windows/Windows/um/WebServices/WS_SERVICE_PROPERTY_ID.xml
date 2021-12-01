@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_SERVICE_PROPERTY_ID">
+    <summary>
+      <para>The optional parameters for configuring the service host.
+This enumeration is used within the <see cref="WS_SERVICE_PROPERTY" /> structure when calling <see cref="WsCreateServiceHost" /> or by itself when calling <see cref="WsGetServiceHostProperty" />.</para>
+    </summary>
+  </member>
+  <member name="WS_SERVICE_PROPERTY_ID.WS_SERVICE_PROPERTY_HOST_USER_STATE">
+    <summary>
+      <para>A void pointer
+used with <see cref="WsCreateServiceHost" />. This property
+is made available to different callbacks and service operations as part of the  <a href="https://docs.microsoft.com//windows/desktop/wsw/ws-operation-context">WS_OPERATION_CONTEXT</a> structure</para>
+    </summary>
+  </member>
+  <member name="WS_SERVICE_PROPERTY_ID.WS_SERVICE_PROPERTY_FAULT_DISCLOSURE">
+    <summary>
+      <para>A <see cref="WS_FAULT_DISCLOSURE" /> value used with <see cref="WsCreateServiceHost" />.
+This property is used to specify the disclosure level of the error object when its converted into a fault. The default is <b>WS_MINIMAL_FAULT_DISCLOSURE</b>.</para>
+    </summary>
+  </member>
+  <member name="WS_SERVICE_PROPERTY_ID.WS_SERVICE_PROPERTY_FAULT_LANGID">
+    <summary>
+      <para>A LANGID used with <see cref="WsGetServiceHostProperty" /> to create a fault. If none is specified, the default user locale will be used.</para>
+    </summary>
+  </member>
+  <member name="WS_SERVICE_PROPERTY_ID.WS_SERVICE_PROPERTY_HOST_STATE">
+    <summary>
+      <para>A <see cref="WS_SERVICE_HOST_STATE" /> value  used with <see cref="WsGetServiceHostProperty" /> that specifies the current state of the service host.</para>
+      <para>The returned value is a snapshot of the current state, so it is
+possible that the state may have changed before the caller has
+had a chance to examine the value.</para>
+    </summary>
+  </member>
+  <member name="WS_SERVICE_PROPERTY_ID.WS_SERVICE_PROPERTY_METADATA">
+    <summary>
+      <para>A <see cref="WS_SERVICE_METADATA" /> structure used with <see cref="WsCreateServiceHost" /> that contains the collection of metadata documents used for WS-MetadataExchange by the <a href="https://docs.microsoft.com//windows/desktop/wsw/ws-service-host">WS_SERVICE_HOST</a>.</para>
+      <para>The service name and namespace are used to create a service element inside the WSDL document. The document is identified by means of the service namespace provided as part of <see cref="WS_SERVICE_METADATA" /> structure.</para>
+      <para>Note that if a service section is already defined in any of the provided WSDL documents, a service element will not be added on behalf of the application by the runtime.</para>
+    </summary>
+  </member>
+  <member name="WS_SERVICE_PROPERTY_ID.WS_SERVICE_PROPERTY_CLOSE_TIMEOUT">
+    <summary>
+      <para>A <b>ULONG</b> used with <see cref="WsCreateServiceHost" /> that specifies the maximum amount of time a service model will wait after <see cref="WsCloseServiceHost" /> is called. Once the timeout expires service host will abort itself.
+The default is 5 seconds specified in milliseconds as 5000.</para>
+    </summary>
+  </member>
+</doc>

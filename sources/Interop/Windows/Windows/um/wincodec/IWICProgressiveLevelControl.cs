@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IWICProgressiveLevelControl.xml' path='doc/member[@name="IWICProgressiveLevelControl"]/*' />
 [Guid("DAAC296F-7AA5-4DBF-8D15-225C5976F891")]
 [NativeTypeName("struct IWICProgressiveLevelControl : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IWICProgressiveLevelControl : IWICProgressiveLevelC
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IWICProgressiveLevelControl : IWICProgressiveLevelC
         return ((delegate* unmanaged<IWICProgressiveLevelControl*, Guid*, void**, int>)(lpVtbl[0]))((IWICProgressiveLevelControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IWICProgressiveLevelControl : IWICProgressiveLevelC
         return ((delegate* unmanaged<IWICProgressiveLevelControl*, uint>)(lpVtbl[1]))((IWICProgressiveLevelControl*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IWICProgressiveLevelControl : IWICProgressiveLevelC
         return ((delegate* unmanaged<IWICProgressiveLevelControl*, uint>)(lpVtbl[2]))((IWICProgressiveLevelControl*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IWICProgressiveLevelControl.xml' path='doc/member[@name="IWICProgressiveLevelControl.GetLevelCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetLevelCount(uint* pcLevels)
@@ -46,6 +51,7 @@ public unsafe partial struct IWICProgressiveLevelControl : IWICProgressiveLevelC
         return ((delegate* unmanaged<IWICProgressiveLevelControl*, uint*, int>)(lpVtbl[3]))((IWICProgressiveLevelControl*)Unsafe.AsPointer(ref this), pcLevels);
     }
 
+    /// <include file='IWICProgressiveLevelControl.xml' path='doc/member[@name="IWICProgressiveLevelControl.GetCurrentLevel"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetCurrentLevel(uint* pnLevel)
@@ -53,6 +59,7 @@ public unsafe partial struct IWICProgressiveLevelControl : IWICProgressiveLevelC
         return ((delegate* unmanaged<IWICProgressiveLevelControl*, uint*, int>)(lpVtbl[4]))((IWICProgressiveLevelControl*)Unsafe.AsPointer(ref this), pnLevel);
     }
 
+    /// <include file='IWICProgressiveLevelControl.xml' path='doc/member[@name="IWICProgressiveLevelControl.SetCurrentLevel"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetCurrentLevel(uint nLevel)

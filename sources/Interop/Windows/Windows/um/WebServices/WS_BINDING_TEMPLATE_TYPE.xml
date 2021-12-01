@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_BINDING_TEMPLATE_TYPE">
+    <summary>
+      <para>An enumeration of the different security binding combinations that
+are supported.</para>
+    </summary>
+  </member>
+  <member name="WS_BINDING_TEMPLATE_TYPE.WS_HTTP_BINDING_TEMPLATE_TYPE">
+    <summary>
+      <para>The policy specifies HTTP channel binding.</para>
+    </summary>
+  </member>
+  <member name="WS_BINDING_TEMPLATE_TYPE.WS_HTTP_SSL_BINDING_TEMPLATE_TYPE">
+    <summary>
+      <para>The policy specifies HTTP channel binding with <see cref="WS_SSL_TRANSPORT_SECURITY_BINDING" />.</para>
+    </summary>
+  </member>
+  <member name="WS_BINDING_TEMPLATE_TYPE.WS_HTTP_HEADER_AUTH_BINDING_TEMPLATE_TYPE">
+    <summary>
+      <para>The policy specifies HTTP channel binding with <see cref="WS_HTTP_HEADER_AUTH_SECURITY_BINDING" /></para>
+    </summary>
+  </member>
+  <member name="WS_BINDING_TEMPLATE_TYPE.WS_HTTP_SSL_HEADER_AUTH_BINDING_TEMPLATE_TYPE">
+    <summary>
+      <para>The policy specifies HTTP channel binding with <see cref="WS_SSL_TRANSPORT_SECURITY_BINDING" /> and
+<see cref="WS_HTTP_HEADER_AUTH_SECURITY_BINDING" />.</para>
+    </summary>
+  </member>
+  <member name="WS_BINDING_TEMPLATE_TYPE.WS_HTTP_SSL_USERNAME_BINDING_TEMPLATE_TYPE">
+    <summary>
+      <para>The policy specifies HTTP channel binding with <see cref="WS_SSL_TRANSPORT_SECURITY_BINDING" /></para>
+      <para>and <see cref="WS_USERNAME_MESSAGE_SECURITY_BINDING" />.</para>
+    </summary>
+  </member>
+  <member name="WS_BINDING_TEMPLATE_TYPE.WS_HTTP_SSL_KERBEROS_APREQ_BINDING_TEMPLATE_TYPE">
+    <summary>
+      <para>The policy specifies HTTP channel binding with <see cref="WS_SSL_TRANSPORT_SECURITY_BINDING" /> and <see cref="WS_KERBEROS_APREQ_MESSAGE_SECURITY_BINDING" />.</para>
+    </summary>
+  </member>
+  <member name="WS_BINDING_TEMPLATE_TYPE.WS_TCP_BINDING_TEMPLATE_TYPE">
+    <summary>
+      <para>The policy specifies TCP channel binding.</para>
+    </summary>
+  </member>
+  <member name="WS_BINDING_TEMPLATE_TYPE.WS_TCP_SSPI_BINDING_TEMPLATE_TYPE">
+    <summary>
+      <para>The policy specifies TCP channel binding with <see cref="WS_TCP_SSPI_TRANSPORT_SECURITY_BINDING" />.</para>
+    </summary>
+  </member>
+  <member name="WS_BINDING_TEMPLATE_TYPE.WS_TCP_SSPI_USERNAME_BINDING_TEMPLATE_TYPE">
+    <summary>
+      <para>The policy specifies TCP channel binding with <see cref="WS_TCP_SSPI_TRANSPORT_SECURITY_BINDING" /> and
+<see cref="WS_USERNAME_MESSAGE_SECURITY_BINDING" />.</para>
+    </summary>
+  </member>
+  <member name="WS_BINDING_TEMPLATE_TYPE.WS_TCP_SSPI_KERBEROS_APREQ_BINDING_TEMPLATE_TYPE">
+    <summary>
+      <para>The policy specifies TCP channel binding with <see cref="WS_TCP_SSPI_TRANSPORT_SECURITY_BINDING" /> and
+<see cref="WS_KERBEROS_APREQ_MESSAGE_SECURITY_BINDING" />.</para>
+    </summary>
+  </member>
+  <member name="WS_BINDING_TEMPLATE_TYPE.WS_HTTP_SSL_USERNAME_SECURITY_CONTEXT_BINDING_TEMPLATE_TYPE">
+    <summary>
+      <para>The policy specifies HTTP channel binding with <see cref="WS_SSL_TRANSPORT_SECURITY_BINDING" /> and
+<see cref="WS_SECURITY_CONTEXT_MESSAGE_SECURITY_BINDING" />,  using bootstrap channel
+with HTTP channel binding, <b>WS_SSL_TRANSPORT_SECURITY_BINDING</b> and
+<see cref="WS_USERNAME_MESSAGE_SECURITY_BINDING" />.</para>
+    </summary>
+  </member>
+  <member name="WS_BINDING_TEMPLATE_TYPE.WS_HTTP_SSL_KERBEROS_APREQ_SECURITY_CONTEXT_BINDING_TEMPLATE_TYPE">
+    <summary>
+      <para>The policy specifies HTTP channel binding with <see cref="WS_SSL_TRANSPORT_SECURITY_BINDING" /> and
+<see cref="WS_SECURITY_CONTEXT_MESSAGE_SECURITY_BINDING" />,  using bootstrap channel
+with HTTP channel binding, <b>WS_SSL_TRANSPORT_SECURITY_BINDING</b> and
+<see cref="WS_KERBEROS_APREQ_MESSAGE_SECURITY_BINDING" />.</para>
+    </summary>
+  </member>
+  <member name="WS_BINDING_TEMPLATE_TYPE.WS_TCP_SSPI_USERNAME_SECURITY_CONTEXT_BINDING_TEMPLATE_TYPE">
+    <summary>
+      <para>The policy specifies TCP channel binding with <see cref="WS_SSL_TRANSPORT_SECURITY_BINDING" /> and
+<see cref="WS_SECURITY_CONTEXT_MESSAGE_SECURITY_BINDING" />,  using bootstrap channel
+with TCP channel binding, <b>WS_SSL_TRANSPORT_SECURITY_BINDING</b> and
+<see cref="WS_USERNAME_MESSAGE_SECURITY_BINDING" />.</para>
+    </summary>
+  </member>
+  <member name="WS_BINDING_TEMPLATE_TYPE.WS_TCP_SSPI_KERBEROS_APREQ_SECURITY_CONTEXT_BINDING_TEMPLATE_TYPE">
+    <summary>
+      <para>The policy specifies TCP channel binding with <see cref="WS_SSL_TRANSPORT_SECURITY_BINDING" /> and
+<see cref="WS_SECURITY_CONTEXT_MESSAGE_SECURITY_BINDING" />,  using bootstrap channel
+with TCP channel binding, <b>WS_SSL_TRANSPORT_SECURITY_BINDING</b> and
+<see cref="WS_KERBEROS_APREQ_MESSAGE_SECURITY_BINDING" />.</para>
+    </summary>
+  </member>
+</doc>

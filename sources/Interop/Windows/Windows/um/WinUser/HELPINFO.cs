@@ -5,18 +5,25 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HELPINFO.xml' path='doc/member[@name="HELPINFO"]/*' />
 public partial struct HELPINFO
 {
+    /// <include file='HELPINFO.xml' path='doc/member[@name="HELPINFO.cbSize"]/*' />
     public uint cbSize;
 
+    /// <include file='HELPINFO.xml' path='doc/member[@name="HELPINFO.iContextType"]/*' />
     public int iContextType;
 
+    /// <include file='HELPINFO.xml' path='doc/member[@name="HELPINFO.iCtrlId"]/*' />
     public int iCtrlId;
 
+    /// <include file='HELPINFO.xml' path='doc/member[@name="HELPINFO.hItemHandle"]/*' />
     public HANDLE hItemHandle;
 
+    /// <include file='HELPINFO.xml' path='doc/member[@name="HELPINFO.dwContextId"]/*' />
     [NativeTypeName("DWORD_PTR")]
     public nuint dwContextId;
 
+    /// <include file='HELPINFO.xml' path='doc/member[@name="HELPINFO.MousePos"]/*' />
     public POINT MousePos;
 }

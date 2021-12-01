@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ISpEventSink.xml' path='doc/member[@name="ISpEventSink"]/*' />
 [Guid("BE7A9CC9-5F9E-11D2-960F-00C04F8EE628")]
 [NativeTypeName("struct ISpEventSink : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ISpEventSink : ISpEventSink.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ISpEventSink : ISpEventSink.Interface
         return ((delegate* unmanaged<ISpEventSink*, Guid*, void**, int>)(lpVtbl[0]))((ISpEventSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ISpEventSink : ISpEventSink.Interface
         return ((delegate* unmanaged<ISpEventSink*, uint>)(lpVtbl[1]))((ISpEventSink*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ISpEventSink : ISpEventSink.Interface
         return ((delegate* unmanaged<ISpEventSink*, uint>)(lpVtbl[2]))((ISpEventSink*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ISpEventSink.xml' path='doc/member[@name="ISpEventSink.AddEvents"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT AddEvents([NativeTypeName("const SPEVENT *")] SPEVENT* pEventArray, [NativeTypeName("ULONG")] uint ulCount)
@@ -46,6 +51,7 @@ public unsafe partial struct ISpEventSink : ISpEventSink.Interface
         return ((delegate* unmanaged<ISpEventSink*, SPEVENT*, uint, int>)(lpVtbl[3]))((ISpEventSink*)Unsafe.AsPointer(ref this), pEventArray, ulCount);
     }
 
+    /// <include file='ISpEventSink.xml' path='doc/member[@name="ISpEventSink.GetEventInterest"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetEventInterest([NativeTypeName("ULONGLONG *")] ulong* pullEventInterest)

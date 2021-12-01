@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PSC_STATE.xml' path='doc/member[@name="PSC_STATE"]/*' />
 public enum PSC_STATE
 {
+    /// <include file='PSC_STATE.xml' path='doc/member[@name="PSC_STATE.PSC_NORMAL"]/*' />
     PSC_NORMAL = 0,
+
+    /// <include file='PSC_STATE.xml' path='doc/member[@name="PSC_STATE.PSC_NOTINSOURCE"]/*' />
     PSC_NOTINSOURCE = 1,
+
+    /// <include file='PSC_STATE.xml' path='doc/member[@name="PSC_STATE.PSC_DIRTY"]/*' />
     PSC_DIRTY = 2,
+
+    /// <include file='PSC_STATE.xml' path='doc/member[@name="PSC_STATE.PSC_READONLY"]/*' />
     PSC_READONLY = 3,
 }

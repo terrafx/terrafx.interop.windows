@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="AMTunerModeType">
+    <summary>
+      <para>Specifies the frequency of a TV tuner (cable or antenna).</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-enumerated-types">DirectShow Enumerated Types</seealso>
+  </member>
+  <member name="AMTunerModeType.AMTUNER_MODE_DEFAULT">
+    <summary>
+      <para>Indicates default tuner mode.</para>
+    </summary>
+  </member>
+  <member name="AMTunerModeType.AMTUNER_MODE_TV">
+    <summary>
+      <para>Indicates TV tuner mode.</para>
+    </summary>
+  </member>
+  <member name="AMTunerModeType.AMTUNER_MODE_FM_RADIO">
+    <summary>
+      <para>Indicates FM radio tuner mode.</para>
+    </summary>
+  </member>
+  <member name="AMTunerModeType.AMTUNER_MODE_AM_RADIO">
+    <summary>
+      <para>Indicates AM radio tuner mode.</para>
+    </summary>
+  </member>
+  <member name="AMTunerModeType.AMTUNER_MODE_DSS">
+    <summary>
+      <para>Indicates Digital Satellite Service (DSS) tuner mode.</para>
+    </summary>
+  </member>
+</doc>

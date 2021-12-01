@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IHTMLRect.xml' path='doc/member[@name="IHTMLRect"]/*' />
 [Guid("3050F4A3-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IHTMLRect : IDispatch")]
 [NativeInheritance("IDispatch")]
@@ -16,6 +17,7 @@ public unsafe partial struct IHTMLRect : IHTMLRect.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IHTMLRect : IHTMLRect.Interface
         return ((delegate* unmanaged<IHTMLRect*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLRect*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IHTMLRect : IHTMLRect.Interface
         return ((delegate* unmanaged<IHTMLRect*, uint>)(lpVtbl[1]))((IHTMLRect*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IHTMLRect : IHTMLRect.Interface
         return ((delegate* unmanaged<IHTMLRect*, uint>)(lpVtbl[2]))((IHTMLRect*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct IHTMLRect : IHTMLRect.Interface
         return ((delegate* unmanaged<IHTMLRect*, uint*, int>)(lpVtbl[3]))((IHTMLRect*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct IHTMLRect : IHTMLRect.Interface
         return ((delegate* unmanaged<IHTMLRect*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IHTMLRect*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
@@ -60,6 +67,7 @@ public unsafe partial struct IHTMLRect : IHTMLRect.Interface
         return ((delegate* unmanaged<IHTMLRect*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLRect*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
+    /// <inheritdoc cref="IDispatch.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
@@ -67,6 +75,7 @@ public unsafe partial struct IHTMLRect : IHTMLRect.Interface
         return ((delegate* unmanaged<IHTMLRect*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IHTMLRect*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
+    /// <include file='IHTMLRect.xml' path='doc/member[@name="IHTMLRect.put_left"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT put_left([NativeTypeName("long")] int v)
@@ -74,6 +83,7 @@ public unsafe partial struct IHTMLRect : IHTMLRect.Interface
         return ((delegate* unmanaged<IHTMLRect*, int, int>)(lpVtbl[7]))((IHTMLRect*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLRect.xml' path='doc/member[@name="IHTMLRect.get_left"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT get_left([NativeTypeName("long *")] int* p)
@@ -81,6 +91,7 @@ public unsafe partial struct IHTMLRect : IHTMLRect.Interface
         return ((delegate* unmanaged<IHTMLRect*, int*, int>)(lpVtbl[8]))((IHTMLRect*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLRect.xml' path='doc/member[@name="IHTMLRect.put_top"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT put_top([NativeTypeName("long")] int v)
@@ -88,6 +99,7 @@ public unsafe partial struct IHTMLRect : IHTMLRect.Interface
         return ((delegate* unmanaged<IHTMLRect*, int, int>)(lpVtbl[9]))((IHTMLRect*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLRect.xml' path='doc/member[@name="IHTMLRect.get_top"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT get_top([NativeTypeName("long *")] int* p)
@@ -95,6 +107,7 @@ public unsafe partial struct IHTMLRect : IHTMLRect.Interface
         return ((delegate* unmanaged<IHTMLRect*, int*, int>)(lpVtbl[10]))((IHTMLRect*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLRect.xml' path='doc/member[@name="IHTMLRect.put_right"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT put_right([NativeTypeName("long")] int v)
@@ -102,6 +115,7 @@ public unsafe partial struct IHTMLRect : IHTMLRect.Interface
         return ((delegate* unmanaged<IHTMLRect*, int, int>)(lpVtbl[11]))((IHTMLRect*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLRect.xml' path='doc/member[@name="IHTMLRect.get_right"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT get_right([NativeTypeName("long *")] int* p)
@@ -109,6 +123,7 @@ public unsafe partial struct IHTMLRect : IHTMLRect.Interface
         return ((delegate* unmanaged<IHTMLRect*, int*, int>)(lpVtbl[12]))((IHTMLRect*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLRect.xml' path='doc/member[@name="IHTMLRect.put_bottom"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT put_bottom([NativeTypeName("long")] int v)
@@ -116,6 +131,7 @@ public unsafe partial struct IHTMLRect : IHTMLRect.Interface
         return ((delegate* unmanaged<IHTMLRect*, int, int>)(lpVtbl[13]))((IHTMLRect*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLRect.xml' path='doc/member[@name="IHTMLRect.get_bottom"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT get_bottom([NativeTypeName("long *")] int* p)

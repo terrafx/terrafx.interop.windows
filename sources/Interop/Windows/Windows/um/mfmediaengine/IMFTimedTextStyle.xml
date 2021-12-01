@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFTimedTextStyle.GetBackgroundColor">
+    <summary>
+      <para>Gets the background color of the timed-text style.</para>
+    </summary>
+    <param name="bgColor">
+      <para>Type: <b><see cref="MFARGB" />*</b></para>
+      <para>A pointer to a variable that receives a <see cref="MFARGB" /> structure that describes the background color.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFTimedTextStyle" />
+  </member>
+  <member name="IMFTimedTextStyle.GetBold">
+    <summary>
+      <para>Determines whether the style  of timed text is bold.</para>
+    </summary>
+    <param name="bold">
+      <para>Type: <b>BOOL*</b></para>
+      <para>A pointer to a variable that receives a value that specifies whether the style  of timed text is bold. The variable specifies <b>TRUE</b> if the style is bold; otherwise, <b>FALSE</b>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFTimedTextStyle" />
+  </member>
+  <member name="IMFTimedTextStyle.GetColor">
+    <summary>
+      <para>Gets the color of the timed-text style.</para>
+    </summary>
+    <param name="color">
+      <para>Type: <b><see cref="MFARGB" />*</b></para>
+      <para>A pointer to a variable that receives a <see cref="MFARGB" /> structure that describes the color.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFTimedTextStyle" />
+  </member>
+  <member name="IMFTimedTextStyle.GetFontFamily">
+    <summary>
+      <para>Gets the font family of the timed-text style.</para>
+    </summary>
+    <param name="fontFamily">
+      <para>Type: <b>LPCWSTR*</b></para>
+      <para>A pointer to a variable that receives the null-terminated wide-character string that contains the font family of the style.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFTimedTextStyle" />
+  </member>
+  <member name="IMFTimedTextStyle.GetFontSize">
+    <summary>
+      <para>Gets the font size  of the timed-text style.</para>
+    </summary>
+    <param name="fontSize">
+      <para>Type: <b>double*</b></para>
+      <para>A pointer to a variable that receives the font size  of the timed-text style.</para>
+    </param>
+    <param name="unitType">
+      <para>Type: <b><see cref="MF_TIMED_TEXT_UNIT_TYPE" />*</b></para>
+      <para>A pointer to a variable that receives a <see cref="MF_TIMED_TEXT_UNIT_TYPE" />-typed value that specifies the units in which the timed-text style is measured.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFTimedTextStyle" />
+  </member>
+  <member name="IMFTimedTextStyle.GetFontStyle">
+    <summary>
+      <para>Gets the font style of the timed-text style.</para>
+    </summary>
+    <param name="fontStyle">
+      <para>Type: <b><see cref="MF_TIMED_TEXT_FONT_STYLE" />*</b></para>
+      <para>A pointer to a variable that receives a <see cref="MF_TIMED_TEXT_FONT_STYLE" />-typed value that specifies the font style.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFTimedTextStyle" />
+  </member>
+  <member name="IMFTimedTextStyle.GetName">
+    <summary>
+      <para>Gets the name of the timed-text style.</para>
+    </summary>
+    <param name="name">
+      <para>Type: <b>LPCWSTR*</b></para>
+      <para>A pointer to a variable that receives the null-terminated wide-character string that contains the name of the style.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFTimedTextStyle" />
+  </member>
+  <member name="IMFTimedTextStyle.GetRightToLeft">
+    <summary>
+      <para>Determines whether the right to left writing mode of the timed-text style  is enabled.</para>
+    </summary>
+    <param name="rightToLeft">
+      <para>Type: <b>BOOL*</b></para>
+      <para>A pointer to a variable that receives a value that specifies whether the right to left writing mode is enabled. The variable specifies <b>TRUE</b> if the right to left writing mode is enabled; otherwise, <b>FALSE</b>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFTimedTextStyle" />
+  </member>
+  <member name="IMFTimedTextStyle.GetShowBackgroundAlways">
+    <summary>
+      <para>Determines whether the style  of timed text always shows the background.</para>
+    </summary>
+    <param name="showBackgroundAlways">
+      <para>Type: <b>BOOL*</b></para>
+      <para>A pointer to a variable that receives a value that specifies whether the style  of timed text always shows the background. The variable specifies <b>TRUE</b> if the background is always shown; otherwise, <b>FALSE</b>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFTimedTextStyle" />
+  </member>
+  <member name="IMFTimedTextStyle.GetTextAlignment">
+    <summary>
+      <para>Gets the text alignment of the timed-text style.</para>
+    </summary>
+    <param name="textAlign">
+      <para>Type: <b><see cref="MF_TIMED_TEXT_ALIGNMENT" />*</b></para>
+      <para>A pointer to a variable that receives a <see cref="MF_TIMED_TEXT_ALIGNMENT" />-typed value that specifies the text alignment.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFTimedTextStyle" />
+  </member>
+  <member name="IMFTimedTextStyle.GetTextDecoration">
+    <summary>
+      <para>Gets how text is decorated for the timed-text style.</para>
+    </summary>
+    <param name="textDecoration">
+      <para>Type: <b>DWORD*</b></para>
+      <para>A pointer to a variable that receives a combination of <see cref="MF_TIMED_TEXT_DECORATION" />-typed values that are combined by using a bitwise OR operation. The resulting value specifies how text is decorated.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFTimedTextStyle" />
+  </member>
+  <member name="IMFTimedTextStyle.GetTextOutline">
+    <summary>
+      <para>Gets the text outline for the timed-text style.</para>
+    </summary>
+    <param name="color">
+      <para>Type: <b><see cref="MFARGB" />*</b></para>
+      <para>A pointer to a variable that receives a <see cref="MFARGB" /> structure that describes the color.</para>
+    </param>
+    <param name="thickness">
+      <para>Type: <b>double*</b></para>
+      <para>A pointer to a variable that receives the thickness.</para>
+    </param>
+    <param name="blurRadius">
+      <para>Type: <b>double*</b></para>
+      <para>A pointer to a variable that receives the blur radius.</para>
+    </param>
+    <param name="unitType">
+      <para>Type: <b><see cref="MF_TIMED_TEXT_UNIT_TYPE" />*</b></para>
+      <para>A pointer to a variable that receives a <see cref="MF_TIMED_TEXT_UNIT_TYPE" />-typed value that specifies the units in which the timed-text is measured.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFTimedTextStyle" />
+  </member>
+  <member name="IMFTimedTextStyle.IsExternal">
+    <summary>
+      <para>Determines whether the timed-text style is external.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>BOOL</b></para>
+      <para>Returns whether the timed-text style is external. If <b>TRUE</b>, the timed-text style is external; otherwise, <b>FALSE</b>.</para>
+    </returns>
+    <seealso cref="IMFTimedTextStyle" />
+  </member>
+  <member name="IMFTimedTextStyle">
+    <summary>
+      <para>Represents the style for timed text.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+  </member>
+</doc>

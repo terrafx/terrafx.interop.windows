@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TF_SELECTION.xml' path='doc/member[@name="TF_SELECTION"]/*' />
 public unsafe partial struct TF_SELECTION
 {
+    /// <include file='TF_SELECTION.xml' path='doc/member[@name="TF_SELECTION.range"]/*' />
     public ITfRange* range;
 
+    /// <include file='TF_SELECTION.xml' path='doc/member[@name="TF_SELECTION.style"]/*' />
     public TF_SELECTIONSTYLE style;
 }

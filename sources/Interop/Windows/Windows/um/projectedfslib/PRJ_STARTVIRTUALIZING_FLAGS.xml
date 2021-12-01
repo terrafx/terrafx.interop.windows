@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PRJ_STARTVIRTUALIZING_FLAGS">
+    <summary>
+      <para>Flags to provide when starting a virtualization instance.</para>
+    </summary>
+  </member>
+  <member name="PRJ_STARTVIRTUALIZING_FLAGS.PRJ_FLAG_NONE">
+    <summary>
+      <para>No flags.</para>
+    </summary>
+  </member>
+  <member name="PRJ_STARTVIRTUALIZING_FLAGS.PRJ_FLAG_USE_NEGATIVE_PATH_CACHE">
+    <summary>
+      <para>Specifies that ProjFS should maintain a "negative path cache" for the virtualization instance. If the negative path cache is active, then if the provider indicates that a file path does not exist by returning HRESULT_FROM_WIN32(ERROR_FILE_NOT_FOUND) from its <a href="https://docs.microsoft.com//windows/desktop/api/projectedfslib/nc-projectedfslib-prj_get_placeholder_info_cb">PRJ_GET_PLACEHOLDER_INFO_CB</a> callback, ProjFS will fail subsequent opens of that path without calling the <a href="https://docs.microsoft.com//windows/desktop/api/projectedfslib/nc-projectedfslib-prj_get_placeholder_info_cb">PRJ_GET_PLACEHOLDER_INFO_CB</a> callback again.</para>
+      <para>To resume receiving the <a href="https://docs.microsoft.com//windows/desktop/api/projectedfslib/nc-projectedfslib-prj_get_placeholder_info_cb">PRJ_GET_PLACEHOLDER_INFO_CB</a> for paths the provider has indicated do not exist, the provider must call <see cref="PrjClearNegativePathCache" />.</para>
+    </summary>
+  </member>
+</doc>

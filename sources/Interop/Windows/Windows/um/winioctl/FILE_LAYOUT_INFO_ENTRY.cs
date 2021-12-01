@@ -5,32 +5,44 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='FILE_LAYOUT_INFO_ENTRY.xml' path='doc/member[@name="FILE_LAYOUT_INFO_ENTRY"]/*' />
 public partial struct FILE_LAYOUT_INFO_ENTRY
 {
+    /// <include file='FILE_LAYOUT_INFO_ENTRY.xml' path='doc/member[@name="FILE_LAYOUT_INFO_ENTRY.BasicInformation"]/*' />
     [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:15218:5)")]
     public _BasicInformation_e__Struct BasicInformation;
 
+    /// <include file='FILE_LAYOUT_INFO_ENTRY.xml' path='doc/member[@name="FILE_LAYOUT_INFO_ENTRY.OwnerId"]/*' />
     [NativeTypeName("DWORD")]
     public uint OwnerId;
 
+    /// <include file='FILE_LAYOUT_INFO_ENTRY.xml' path='doc/member[@name="FILE_LAYOUT_INFO_ENTRY.SecurityId"]/*' />
     [NativeTypeName("DWORD")]
     public uint SecurityId;
 
+    /// <include file='FILE_LAYOUT_INFO_ENTRY.xml' path='doc/member[@name="FILE_LAYOUT_INFO_ENTRY.Usn"]/*' />
     [NativeTypeName("USN")]
     public long Usn;
 
+    /// <include file='FILE_LAYOUT_INFO_ENTRY.xml' path='doc/member[@name="FILE_LAYOUT_INFO_ENTRY.StorageReserveId"]/*' />
     public STORAGE_RESERVE_ID StorageReserveId;
 
+    /// <include file='_BasicInformation_e__Struct.xml' path='doc/member[@name="_BasicInformation_e__Struct"]/*' />
     public partial struct _BasicInformation_e__Struct
     {
+        /// <include file='_BasicInformation_e__Struct.xml' path='doc/member[@name="_BasicInformation_e__Struct.CreationTime"]/*' />
         public LARGE_INTEGER CreationTime;
 
+        /// <include file='_BasicInformation_e__Struct.xml' path='doc/member[@name="_BasicInformation_e__Struct.LastAccessTime"]/*' />
         public LARGE_INTEGER LastAccessTime;
 
+        /// <include file='_BasicInformation_e__Struct.xml' path='doc/member[@name="_BasicInformation_e__Struct.LastWriteTime"]/*' />
         public LARGE_INTEGER LastWriteTime;
 
+        /// <include file='_BasicInformation_e__Struct.xml' path='doc/member[@name="_BasicInformation_e__Struct.ChangeTime"]/*' />
         public LARGE_INTEGER ChangeTime;
 
+        /// <include file='_BasicInformation_e__Struct.xml' path='doc/member[@name="_BasicInformation_e__Struct.FileAttributes"]/*' />
         [NativeTypeName("DWORD")]
         public uint FileAttributes;
     }

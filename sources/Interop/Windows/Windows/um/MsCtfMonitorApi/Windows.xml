@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="Windows.InitLocalMsCtfMonitor">
+    <summary>
+      <para>The <b>InitLocalMsCtfMonitor</b> function initializes TextServicesFramework on the current desktop and prepares the floating language bar, if necessary. This function must be called on the app's desktop.</para>
+    </summary>
+    <param name="dwFlags">
+      <para>This is a combination of the following flags:</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>ILMCM_CHECKLAYOUTANDTIPENABLED</b>
+          </description>
+          <description>
+            <b>InitLocalMsCtfMonitor</b> forcefully checks the available keyboard layout or text service. If there is no secondary keyboard layout or text services, it does not initialize TextServicesFramework on the desktop.
+</description>
+        </item>
+        <item>
+          <description>
+            <b>ILMCM_LANGUAGEBAROFF</b>
+          </description>
+          <description>
+            <b>Starting with Windows 8:</b> A local language bar is not started for the current desktop.
+</description>
+        </item>
+      </list>
+    </param>
+    <returns>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>S_OK</description>
+          <description>The function was successful.</description>
+        </item>
+        <item>
+          <description>E_FAIL</description>
+          <description>An unspecified error occurred.</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>If this function was successful, <see cref="UninitLocalMsCtfMonitor" /> needs to be called before the caller thread is terminated or the desktop is switched.</para>
+    </remarks>
+  </member>
+  <member name="Windows.UninitLocalMsCtfMonitor">
+    <summary>
+      <para>The UninitLocalMsCtfMonitor function uninitializes TextServicesFramework on the current desktop.</para>
+    </summary>
+    <returns>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>S_OK</description>
+          <description>The function was successful.</description>
+        </item>
+      </list>
+    </returns>
+  </member>
+</doc>

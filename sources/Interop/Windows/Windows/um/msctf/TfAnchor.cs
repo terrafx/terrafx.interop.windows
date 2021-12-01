@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TfAnchor.xml' path='doc/member[@name="TfAnchor"]/*' />
 public enum TfAnchor
 {
+    /// <include file='TfAnchor.xml' path='doc/member[@name="TfAnchor.TF_ANCHOR_START"]/*' />
     TF_ANCHOR_START = 0,
+
+    /// <include file='TfAnchor.xml' path='doc/member[@name="TfAnchor.TF_ANCHOR_END"]/*' />
     TF_ANCHOR_END = 1,
 }

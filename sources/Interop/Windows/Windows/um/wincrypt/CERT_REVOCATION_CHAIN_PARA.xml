@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CERT_REVOCATION_CHAIN_PARA">
+    <summary>
+      <para>The <b>CERT_REVOCATION_CHAIN_PARA</b> structure contains parameters used for building a chain for an independent <see cref="online certificate status protocol" /> (OCSP) response signer certificate. The <see cref="CERT_REVOCATION_PARA" /> and <see cref="CRYPT_GET_TIME_VALID_OBJECT_EXTRA_INFO" /> structure definitions include optional pointers to this structure.</para>
+    </summary>
+  </member>
+  <member name="CERT_REVOCATION_CHAIN_PARA.cbSize">
+    <summary>
+      <para>The size, in bytes, of this structure.</para>
+    </summary>
+  </member>
+  <member name="CERT_REVOCATION_CHAIN_PARA.hChainEngine">
+    <summary>
+      <para>A handle to the chain engine used by the caller.</para>
+    </summary>
+  </member>
+  <member name="CERT_REVOCATION_CHAIN_PARA.hAdditionalStore">
+    <summary>
+      <para>A handle to a store that contains the certificates used to build the original chain. The handle can be <b>NULL</b>.</para>
+    </summary>
+  </member>
+  <member name="CERT_REVOCATION_CHAIN_PARA.dwChainFlags">
+    <summary>
+      <para>A value for the <i>dwFlags</i> parameter passed to the <see cref="CertGetCertificateChain" /> function.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CERT_CHAIN_REVOCATION_CHECK_OCSP_CERT</b>
+                </description>
+              </item>
+              <item>
+                <description>0x04000000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>This flag will be set by the <see cref="CertVerifyRevocation" /> provider when it
+calls <see cref="CertGetCertificateChain" /> with an independent OCSP signer certificate.
+When set, <b>CertGetCertificateChain</b> will call <b>CertVerifyRevocation</b> without
+setting the pointer to the above <b>CERT_REVOCATION_CHAIN_PARA</b> data structure; this helps to prevent circular revocation checking.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="CERT_REVOCATION_CHAIN_PARA.dwUrlRetrievalTimeout">
+    <summary>
+      <para>A value that contains the time-out limit, in milliseconds. If zero, the revocation handler's default time-out is used.</para>
+    </summary>
+  </member>
+  <member name="CERT_REVOCATION_CHAIN_PARA.pftCurrentTime">
+    <summary>
+      <para>A pointer to a <see cref="FILETIME" /> structure used in the freshness time check. If this pointer is <b>NULL</b>, the revocation handler uses the current time.</para>
+    </summary>
+  </member>
+  <member name="CERT_REVOCATION_CHAIN_PARA.pftCacheResync">
+    <summary>
+      <para>A pointer to a <see cref="FILETIME" /> structure that governs the use of cached information. Any information cached  before this time is considered invalid and new information is retrieved. When set, this value overrides
+the registry configuration CacheResync time.</para>
+    </summary>
+  </member>
+  <member name="CERT_REVOCATION_CHAIN_PARA.cbMaxUrlRetrievalByteCount">
+    <summary>
+      <para>A <b>DWORD</b> value that specifies the maximum number of bytes to download from the URL object. A value of 0 specifies no limit.</para>
+      <para>
+        <b>Windows Server 2008, Windows Vista, Windows Server 2003 and Windows XP:  </b>This member is not supported.</para>
+    </summary>
+  </member>
+</doc>

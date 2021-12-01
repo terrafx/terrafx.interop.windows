@@ -7,29 +7,38 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='INPUT_RECORD.xml' path='doc/member[@name="INPUT_RECORD"]/*' />
 public partial struct INPUT_RECORD
 {
+    /// <include file='INPUT_RECORD.xml' path='doc/member[@name="INPUT_RECORD.EventType"]/*' />
     [NativeTypeName("WORD")]
     public ushort EventType;
 
+    /// <include file='INPUT_RECORD.xml' path='doc/member[@name="INPUT_RECORD.Event"]/*' />
     [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/wincontypes.h:124:5)")]
     public _Event_e__Union Event;
 
+    /// <include file='_Event_e__Union.xml' path='doc/member[@name="_Event_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public partial struct _Event_e__Union
     {
+        /// <include file='_Event_e__Union.xml' path='doc/member[@name="_Event_e__Union.KeyEvent"]/*' />
         [FieldOffset(0)]
         public KEY_EVENT_RECORD KeyEvent;
 
+        /// <include file='_Event_e__Union.xml' path='doc/member[@name="_Event_e__Union.MouseEvent"]/*' />
         [FieldOffset(0)]
         public MOUSE_EVENT_RECORD MouseEvent;
 
+        /// <include file='_Event_e__Union.xml' path='doc/member[@name="_Event_e__Union.WindowBufferSizeEvent"]/*' />
         [FieldOffset(0)]
         public WINDOW_BUFFER_SIZE_RECORD WindowBufferSizeEvent;
 
+        /// <include file='_Event_e__Union.xml' path='doc/member[@name="_Event_e__Union.MenuEvent"]/*' />
         [FieldOffset(0)]
         public MENU_EVENT_RECORD MenuEvent;
 
+        /// <include file='_Event_e__Union.xml' path='doc/member[@name="_Event_e__Union.FocusEvent"]/*' />
         [FieldOffset(0)]
         public FOCUS_EVENT_RECORD FocusEvent;
     }

@@ -1,0 +1,946 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="TAPE_GET_DRIVE_PARAMETERS">
+    <summary>
+      <para>The
+<b>TAPE_GET_DRIVE_PARAMETERS</b> structure describes the tape drive. It is used by the <see cref="GetTapeParameters" /> function.</para>
+    </summary>
+    <seealso cref="GetTapeParameters" />
+  </member>
+  <member name="TAPE_GET_DRIVE_PARAMETERS.ECC">
+    <summary>
+      <para>If this member is <b>TRUE</b>, the device supports hardware error correction. Otherwise, it does not.</para>
+    </summary>
+  </member>
+  <member name="TAPE_GET_DRIVE_PARAMETERS.Compression">
+    <summary>
+      <para>If this member is <b>TRUE</b>, hardware data compression is enabled. Otherwise, it is disabled.</para>
+    </summary>
+  </member>
+  <member name="TAPE_GET_DRIVE_PARAMETERS.DataPadding">
+    <summary>
+      <para>If this member is <b>TRUE</b>, data padding is enabled. Otherwise, it is disabled. Data padding keeps the tape streaming at a constant speed.</para>
+    </summary>
+  </member>
+  <member name="TAPE_GET_DRIVE_PARAMETERS.ReportSetmarks">
+    <summary>
+      <para>If this member is <b>TRUE</b>, setmark reporting is enabled. Otherwise, it is disabled.</para>
+    </summary>
+  </member>
+  <member name="TAPE_GET_DRIVE_PARAMETERS.DefaultBlockSize">
+    <summary>
+      <para>Device's default fixed block size, in bytes.</para>
+    </summary>
+  </member>
+  <member name="TAPE_GET_DRIVE_PARAMETERS.MaximumBlockSize">
+    <summary>
+      <para>Device's maximum block size, in bytes.</para>
+    </summary>
+  </member>
+  <member name="TAPE_GET_DRIVE_PARAMETERS.MinimumBlockSize">
+    <summary>
+      <para>Device's minimum block size, in bytes.</para>
+    </summary>
+  </member>
+  <member name="TAPE_GET_DRIVE_PARAMETERS.MaximumPartitionCount">
+    <summary>
+      <para>Maximum number of partitions that can be created on the device.</para>
+    </summary>
+  </member>
+  <member name="TAPE_GET_DRIVE_PARAMETERS.FeaturesLow">
+    <summary>
+      <para>Low-order bits of the device features flag. This member can be one or more of following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TAPE_DRIVE_COMPRESSION</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00020000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The device supports hardware data compression.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TAPE_DRIVE_CLEAN_REQUESTS</b>
+                </description>
+              </item>
+              <item>
+                <description>0x02000000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The device can report if cleaning is required.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TAPE_DRIVE_ECC</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00010000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The device supports hardware error correction.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TAPE_DRIVE_EJECT_MEDIA</b>
+                </description>
+              </item>
+              <item>
+                <description>0x01000000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The device physically ejects the tape on a software eject.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TAPE_DRIVE_ERASE_BOP_ONLY</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000040</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The device performs the erase operation from the beginning-of-partition marker only.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TAPE_DRIVE_ERASE_LONG</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000020</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The device performs a long erase operation.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TAPE_DRIVE_ERASE_IMMEDIATE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000080</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The device performs an immediate erase operation — that is, it returns when the erase operation begins.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TAPE_DRIVE_ERASE_SHORT</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000010</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The device performs a short erase operation.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TAPE_DRIVE_FIXED</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000001</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The device creates fixed data partitions.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TAPE_DRIVE_FIXED_BLOCK</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000400</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The device supports fixed-length block mode.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TAPE_DRIVE_GET_ABSOLUTE_BLK</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00100000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The device provides the current device-specific block address.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TAPE_DRIVE_GET_LOGICAL_BLK</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00200000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The device provides the current logical block address (and logical tape partition).</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TAPE_DRIVE_INITIATOR</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000004</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The device creates initiator-defined partitions.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TAPE_DRIVE_PADDING</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00040000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The device supports data padding.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TAPE_DRIVE_REPORT_SMKS</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00080000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The device supports setmark reporting.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TAPE_DRIVE_SELECT</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000002</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The device creates select data partitions.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TAPE_DRIVE_SET_CMP_BOP_ONLY</b>
+                </description>
+              </item>
+              <item>
+                <description>0x04000000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The device must be at the beginning of a partition before it can set compression on.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TAPE_DRIVE_SET_EOT_WZ_SIZE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00400000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The device supports setting the end-of-medium warning size.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TAPE_DRIVE_TAPE_CAPACITY</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000100</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The device returns the maximum capacity of the tape.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TAPE_DRIVE_TAPE_REMAINING</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000200</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The device returns the remaining capacity of the tape.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TAPE_DRIVE_VARIABLE_BLOCK</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000800</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The device supports variable-length block mode.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TAPE_DRIVE_WRITE_PROTECT</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00001000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The device returns an error if the tape is write-enabled or write-protected.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="TAPE_GET_DRIVE_PARAMETERS.FeaturesHigh">
+    <summary>
+      <para>High-order bits of the device features flag. This member can be one or more of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TAPE_DRIVE_ABS_BLK_IMMED</b>
+                </description>
+              </item>
+              <item>
+                <description>0x80002000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The device moves the tape to a device-specific block address and returns as soon as the move begins.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TAPE_DRIVE_ABSOLUTE_BLK</b>
+                </description>
+              </item>
+              <item>
+                <description>0x80001000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The device moves the tape to a device specific block address.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TAPE_DRIVE_END_OF_DATA</b>
+                </description>
+              </item>
+              <item>
+                <description>0x80010000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The device moves the tape to the end-of-data marker in a partition.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TAPE_DRIVE_FILEMARKS</b>
+                </description>
+              </item>
+              <item>
+                <description>0x80040000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The device moves the tape forward (or backward) a specified number of filemarks.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TAPE_DRIVE_LOAD_UNLOAD</b>
+                </description>
+              </item>
+              <item>
+                <description>0x80000001</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The device enables and disables the device for further operations.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TAPE_DRIVE_LOAD_UNLD_IMMED</b>
+                </description>
+              </item>
+              <item>
+                <description>0x80000020</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The device supports immediate load and unload operations.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TAPE_DRIVE_LOCK_UNLOCK</b>
+                </description>
+              </item>
+              <item>
+                <description>0x80000004</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The device enables and disables the tape ejection mechanism.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TAPE_DRIVE_LOCK_UNLK_IMMED</b>
+                </description>
+              </item>
+              <item>
+                <description>0x80000080</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The device supports immediate lock and unlock operations.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TAPE_DRIVE_LOG_BLK_IMMED</b>
+                </description>
+              </item>
+              <item>
+                <description>0x80008000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The device moves the tape to a logical block address in a partition and returns as soon as the move begins.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TAPE_DRIVE_LOGICAL_BLK</b>
+                </description>
+              </item>
+              <item>
+                <description>0x80004000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The device moves the tape to a logical block address in a partition.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TAPE_DRIVE_RELATIVE_BLKS</b>
+                </description>
+              </item>
+              <item>
+                <description>0x80020000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The device moves the tape forward (or backward) a specified number of blocks.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TAPE_DRIVE_REVERSE_POSITION</b>
+                </description>
+              </item>
+              <item>
+                <description>0x80400000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The device moves the tape backward over blocks, filemarks, or setmarks.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TAPE_DRIVE_REWIND_IMMEDIATE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x80000008</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The device supports immediate rewind operation.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TAPE_DRIVE_SEQUENTIAL_FMKS</b>
+                </description>
+              </item>
+              <item>
+                <description>0x80080000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The device moves the tape forward (or backward) to the first occurrence of a specified number of consecutive filemarks.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TAPE_DRIVE_SEQUENTIAL_SMKS</b>
+                </description>
+              </item>
+              <item>
+                <description>0x80200000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The device moves the tape forward (or backward) to the first occurrence of a specified number of consecutive setmarks.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TAPE_DRIVE_SET_BLOCK_SIZE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x80000010</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The device supports setting the size of a fixed-length logical block or setting the variable-length block mode.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TAPE_DRIVE_SET_COMPRESSION</b>
+                </description>
+              </item>
+              <item>
+                <description>0x80000200</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The device enables and disables hardware data compression.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TAPE_DRIVE_SET_ECC</b>
+                </description>
+              </item>
+              <item>
+                <description>0x80000100</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The device enables and disables hardware error correction.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TAPE_DRIVE_SET_PADDING</b>
+                </description>
+              </item>
+              <item>
+                <description>0x80000400</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The device enables and disables data padding.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TAPE_DRIVE_SET_REPORT_SMKS</b>
+                </description>
+              </item>
+              <item>
+                <description>0x80000800</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The device enables and disables the reporting of setmarks.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TAPE_DRIVE_SETMARKS</b>
+                </description>
+              </item>
+              <item>
+                <description>0x80100000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The device moves the tape forward (or reverse) a specified number of setmarks.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TAPE_DRIVE_SPACE_IMMEDIATE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x80800000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The device supports immediate spacing.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TAPE_DRIVE_TENSION</b>
+                </description>
+              </item>
+              <item>
+                <description>0x80000002</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The device supports tape tensioning.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TAPE_DRIVE_TENSION_IMMED</b>
+                </description>
+              </item>
+              <item>
+                <description>0x80000040</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The device supports immediate tape tensioning.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TAPE_DRIVE_WRITE_FILEMARKS</b>
+                </description>
+              </item>
+              <item>
+                <description>0x82000000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The device writes filemarks.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TAPE_DRIVE_WRITE_LONG_FMKS</b>
+                </description>
+              </item>
+              <item>
+                <description>0x88000000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The device writes long filemarks.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TAPE_DRIVE_WRITE_MARK_IMMED</b>
+                </description>
+              </item>
+              <item>
+                <description>0x90000000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The device supports immediate writing of short and long filemarks.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TAPE_DRIVE_WRITE_SETMARKS</b>
+                </description>
+              </item>
+              <item>
+                <description>0x81000000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The device writes setmarks.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TAPE_DRIVE_WRITE_SHORT_FMKS</b>
+                </description>
+              </item>
+              <item>
+                <description>0x84000000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The device writes short filemarks.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="TAPE_GET_DRIVE_PARAMETERS.EOTWarningZoneSize">
+    <summary>
+      <para>Indicates the number of bytes between the end-of-tape warning and the physical end of the tape.</para>
+    </summary>
+  </member>
+</doc>

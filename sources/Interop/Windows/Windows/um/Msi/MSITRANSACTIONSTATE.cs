@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MSITRANSACTIONSTATE.xml' path='doc/member[@name="MSITRANSACTIONSTATE"]/*' />
 public enum MSITRANSACTIONSTATE
 {
+    /// <include file='MSITRANSACTIONSTATE.xml' path='doc/member[@name="MSITRANSACTIONSTATE.MSITRANSACTIONSTATE_ROLLBACK"]/*' />
     MSITRANSACTIONSTATE_ROLLBACK = 0x00000000,
+
+    /// <include file='MSITRANSACTIONSTATE.xml' path='doc/member[@name="MSITRANSACTIONSTATE.MSITRANSACTIONSTATE_COMMIT"]/*' />
     MSITRANSACTIONSTATE_COMMIT = 0x00000001,
 }

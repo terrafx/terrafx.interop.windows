@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_SAML_AUTHENTICATOR.xml' path='doc/member[@name="WS_SAML_AUTHENTICATOR"]/*' />
 public partial struct WS_SAML_AUTHENTICATOR
 {
+    /// <include file='WS_SAML_AUTHENTICATOR.xml' path='doc/member[@name="WS_SAML_AUTHENTICATOR.authenticatorType"]/*' />
     public WS_SAML_AUTHENTICATOR_TYPE authenticatorType;
 }

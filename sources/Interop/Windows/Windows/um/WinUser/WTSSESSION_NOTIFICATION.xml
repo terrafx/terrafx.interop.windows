@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WTSSESSION_NOTIFICATION">
+    <summary>
+      <para>Provides information about the session change notification. A service receives this structure in its
+<a href="https://docs.microsoft.com//windows/desktop/api/winsvc/nc-winsvc-lphandler_function_ex">HandlerEx</a> function in response to a session change event.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/winsvc/nc-winsvc-lphandler_function_ex">HandlerEx</seealso>
+  </member>
+  <member name="WTSSESSION_NOTIFICATION.cbSize">
+    <summary>
+      <para>Size, in bytes, of this structure.</para>
+    </summary>
+  </member>
+  <member name="WTSSESSION_NOTIFICATION.dwSessionId">
+    <summary>
+      <para>Session identifier that triggered the session change event.</para>
+    </summary>
+  </member>
+</doc>

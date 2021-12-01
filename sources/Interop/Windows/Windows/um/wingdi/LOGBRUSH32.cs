@@ -5,12 +5,16 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='LOGBRUSH32.xml' path='doc/member[@name="LOGBRUSH32"]/*' />
 public partial struct LOGBRUSH32
 {
+    /// <include file='LOGBRUSH32.xml' path='doc/member[@name="LOGBRUSH32.lbStyle"]/*' />
     public uint lbStyle;
 
+    /// <include file='LOGBRUSH32.xml' path='doc/member[@name="LOGBRUSH32.lbColor"]/*' />
     public COLORREF lbColor;
 
+    /// <include file='LOGBRUSH32.xml' path='doc/member[@name="LOGBRUSH32.lbHatch"]/*' />
     [NativeTypeName("ULONG")]
     public uint lbHatch;
 }

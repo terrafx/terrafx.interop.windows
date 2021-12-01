@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IOleUndoUnit.Do">
+    <summary>
+      <para>Instructs the undo unit to carry out its action. Note that if it contains child undo units, it must call their Do methods as well.</para>
+    </summary>
+    <param name="pUndoManager">
+      <para>A pointer to the undo manager. See <see cref="IOleUndoManager" />.</para>
+    </param>
+    <returns>
+      <para>This method returns S_OK on success.</para>
+    </returns>
+    <remarks>
+      <para>The undo unit is responsible for carrying out its action. Performing its own undo action results in another action that can potentially be reversed. However, if <i>pUndoManager</i> is <b>NULL</b>, the undo unit should perform its undo action but should not attempt to put anything on the redo or undo stack.</para>
+      <para>If <i>pUndoManager</i> is not <b>NULL</b>, then the unit is required to put a corresponding unit on the redo or undo stack. As a result, this method either moves itself to the redo or undo stack, or it creates a new undo unit and adds it to the appropriate stack. After creating a new undo unit, this undo unit calls <see cref="IOleUndoManager.Open" /> or <see cref="IOleUndoManager.Add" />. The undo manager will put the new undo unit on the undo or redo stack depending on its current state.</para>
+      <para>A parent unit must pass to its children the same undo manager, possibly <b>NULL</b>, that was given to the parent. It is permissible, but not necessary, when <i>pUndoManager</i> is <b>NULL</b> to open a parent unit on the redo or undo stack as long as it is not committed. A blocked parent unit ensures that nothing is added to the stack by child units.</para>
+      <para>If this undo unit is a parent unit, it should put itself on the redo or undo stack before calling the <b>Do</b> method on its children.</para>
+      <para>After calling this method, the undo manager must release the undo unit.</para>
+      <h3>Notes to Implementers</h3>
+      <para>See the <see cref="IOleUndoManager" /> interface for error handling strategies for undo units. The error handling strategy affects the implementation of this method, particularly for parent units.</para>
+    </remarks>
+    <seealso cref="IOleUndoManager.Add" />
+    <seealso cref="IOleUndoManager.Open" />
+    <seealso cref="IOleUndoUnit" />
+  </member>
+  <member name="IOleUndoUnit.GetDescription">
+    <summary>
+      <para>Retrieves a description of the undo unit that can be used in the undo or redo user interface.</para>
+    </summary>
+    <param name="pBstr">
+      <para>A pointer to string that describes this undo unit.</para>
+    </param>
+    <returns>
+      <para>This method returns S_OK on success.</para>
+    </returns>
+    <remarks>
+      <para>All units are required to provide a user-readable description of themselves.</para>
+      <h3>Notes to Callers</h3>
+      <para>The <i>pbstr</i> parameter is allocated with the standard string allocator. The caller is responsible for freeing this string.</para>
+    </remarks>
+    <seealso cref="IOleUndoUnit" />
+  </member>
+  <member name="IOleUndoUnit.GetUnitType">
+    <summary>
+      <para>Retrieves the CLSID and a type identifier for the undo unit.</para>
+    </summary>
+    <param name="pClsid">
+      <para>A pointer to CLSID for the undo unit.</para>
+    </param>
+    <param name="plID">
+      <para>A pointer to the type identifier for the undo unit.</para>
+    </param>
+    <returns>
+      <para>This method returns S_OK on success.</para>
+    </returns>
+    <remarks>
+      <para>A parent undo unit can call this method on its child units to determine whether it can apply special handling to them. The CLSID returned can be the CLSID of the undo unit itself, of its creating object, or an arbitrary GUID. The undo unit has the option of returning CLSID_NULL, in which case the caller can make no assumptions about the type of this unit. The only requirement is that the CLSID and type identifier together uniquely identify this type of undo unit.</para>
+      <para>Note that the undo manager and parent undo units do not have the option of accepting or rejecting child units based on their type.</para>
+    </remarks>
+    <seealso cref="IOleUndoUnit" />
+  </member>
+  <member name="IOleUndoUnit.OnNextAdd">
+    <summary>
+      <para>Notifies the last undo unit in the collection that a new unit has been added.</para>
+    </summary>
+    <returns>
+      <para>Implementations of this method always return S_OK. The <b>HRESULT</b> return type is used only for remotability.</para>
+    </returns>
+    <remarks>
+      <para>An object can create an undo unit for an action and add it to the undo manager but can continue inserting data into it through private interfaces. When the undo unit receives a call to this method, it communicates back to the creating object that the context has changed. Then, the creating object stops inserting data into the undo unit.</para>
+      <para>The parent undo unit calls this method on its most recently added child undo unit to notify the child unit that the context has changed and a new undo unit has been added.</para>
+      <para>For example, this method is used for supporting fuzzy actions, like typing, which do not have a clear point of termination but instead are terminated only when something else happens.</para>
+      <para>This method may not always be called if the undo manager or an open parent unit chooses to discard the unit by calling <see cref="IUnknown.Release" /> instead. Any connection which feeds data to the undo unit behind the scenes through private interfaces should not <see cref="IUnknown.AddRef" /> the undo unit.</para>
+      <h3>Notes to Implementers</h3>
+      <para>Note that parent units merely delegate this method to their most recently added child unit. A parent unit should terminate communication through any private interfaces when it is closed. A parent unit knows it is being closed when it receives S_FALSE from calling <see cref="IOleParentUndoUnit.Close" />.</para>
+    </remarks>
+    <seealso cref="IOleParentUndoUnit.Close" />
+    <seealso cref="IOleUndoUnit" />
+  </member>
+  <member name="IOleUndoUnit">
+    <summary>
+      <para>Serves as the main interface on an undo unit. An undo unit encapsulates the information necessary to undo or redo a single action.</para>
+      <para>When an object's state changes and it needs to create an undo unit, it first needs to know what parent units are open. It calls the <see cref="IOleUndoManager.GetOpenParentState" /> method to determine this. If the call returns S_FALSE, then there is no enabling parent. If the call returns S_OK but the UAS_NOPARENTENABLE flag is set, then the open parent is a disabling parent. In either of these cases, the object calls <see cref="IOleUndoManager.DiscardFrom" />(NULL) on the undo manager and skips creating the undo unit.</para>
+      <para>If the method returns S_OK, but the UAS_BLOCKED flag is set, then the open parent is a blocking parent. The object does not need to create an undo unit, since it would be immediately discarded. If the return value is S_OK and neither of the bit flags are set, then the object creates the undo unit and calls <see cref="IOleUndoManager.Add" /> on the undo manager.</para>
+      <para>The object should retain a pointer to the undo manager.</para>
+    </summary>
+    <seealso cref="IOleParentUndoUnit" />
+    <seealso cref="IOleUndoManager" />
+  </member>
+</doc>

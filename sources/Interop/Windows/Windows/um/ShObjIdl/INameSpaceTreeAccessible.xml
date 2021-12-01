@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="INameSpaceTreeAccessible.OnDoDefaultAccessibilityAction">
+    <summary>
+      <para>Invokes the default accessibility action on a Shell item.</para>
+    </summary>
+    <param name="psi">
+      <para>Type: <b><see cref="IShellItem" />*</b></para>
+      <para>Pointer to the <see cref="IShellItem" />.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="INameSpaceTreeAccessible.OnGetAccessibilityRole">
+    <summary>
+      <para>Gets the accessibility role for a Shell item.</para>
+    </summary>
+    <param name="psi">
+      <para>Type: <b><see cref="IShellItem" />*</b></para>
+      <para>Pointer to the <see cref="IShellItem" />.</para>
+    </param>
+    <param name="pvarRole">
+      <para>Type: <b>VARIANT*</b></para>
+      <para>When this method returns, contains a <see cref="VARIANT" /> that specifies the role.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This method is called when the accessibility role for a Shell item is retrieved.</para>
+    </remarks>
+  </member>
+  <member name="INameSpaceTreeAccessible.OnGetDefaultAccessibilityAction">
+    <summary>
+      <para>Gets the default accessibility action for a Shell item.</para>
+    </summary>
+    <param name="psi">
+      <para>Type: <b><see cref="IShellItem" />*</b></para>
+      <para>Pointer to the <see cref="IShellItem" />.</para>
+    </param>
+    <param name="pbstrDefaultAction">
+      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/windows/desktop/automat/bstr">BSTR</a>*</b></para>
+      <para>When this method returns, contains a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/automat/bstr">BSTR</a> that specifies the default, accessibility action.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_OK if successful, or E_OUTOFMEMORY otherwise.</para>
+    </returns>
+    <remarks>
+      <para>This method is called when the default accessibility action for a Shell item is retrieved.</para>
+    </remarks>
+  </member>
+  <member name="INameSpaceTreeAccessible">
+    <summary>
+      <para>Exposes methods that perform accessibility actions on a Shell item from a namespace tree control.</para>
+    </summary>
+    <remarks>
+      <para>This interface is used only by <see cref="INameSpaceTreeControl" /> (CLSID_NameSpaceTreeControl).</para>
+    </remarks>
+    <seealso cref="INameSpaceTreeControl" />
+  </member>
+</doc>

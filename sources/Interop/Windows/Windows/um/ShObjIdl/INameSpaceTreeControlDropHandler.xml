@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="INameSpaceTreeControlDropHandler.OnDragEnter">
+    <summary>
+      <para>Called on drag enter to set drag effect, as specified.</para>
+    </summary>
+    <param name="psiOver">
+      <para>Type: <b><see cref="IShellItem" />*</b></para>
+      <para>A pointer to an <see cref="IShellItem" /> interface representing the item underneath the mouse cursor. Optional.</para>
+    </param>
+    <param name="psiaData">
+      <para>Type: <b><see cref="IShellItemArray" />*</b></para>
+      <para>A pointer to an <see cref="IShellItem" /> array containing the items being dragged.</para>
+    </param>
+    <param name="fOutsideSource">
+      <para>Type: <b>BOOL</b></para>
+      <para>Specifies whether drag started outside target area.</para>
+    </param>
+    <param name="grfKeyState">
+      <para>Type: <b>DWORD</b></para>
+      <para>The current state of keyboard modifier keys.</para>
+    </param>
+    <param name="pdwEffect">
+      <para>Type: <b>DWORD*</b></para>
+      <para>On success, contains a pointer to the drag effect value.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Failing this method blocks the drag operation in the namespace tree control (NSTC).</para>
+    </remarks>
+    <seealso cref="IDropTarget.DragEnter" />
+    <seealso cref="INameSpaceTreeControlDropHandler" />
+  </member>
+  <member name="INameSpaceTreeControlDropHandler.OnDragLeave">
+    <summary>
+      <para>Called on drag leave for a specified item.</para>
+    </summary>
+    <param name="psiOver">
+      <para>Type: <b><see cref="IShellItem" />*</b></para>
+      <para>A pointer to an <see cref="IShellItem" /> interface representing the item underneath the mouse cursor. Optional.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IDropTarget.DragLeave" />
+    <seealso cref="INameSpaceTreeControlDropHandler" />
+  </member>
+  <member name="INameSpaceTreeControlDropHandler.OnDragOver">
+    <summary>
+      <para>Called on drag over to set drag effect, as specified.</para>
+    </summary>
+    <param name="psiOver">
+      <para>Type: <b><see cref="IShellItem" />*</b></para>
+      <para>A pointer to an <see cref="IShellItem" /> interface representing the item underneath the mouse cursor. Optional.</para>
+    </param>
+    <param name="psiaData">
+      <para>Type: <b><see cref="IShellItemArray" />*</b></para>
+      <para>A pointer to an <see cref="IShellItem" /> array containing the items being dragged.</para>
+    </param>
+    <param name="grfKeyState">
+      <para>Type: <b>DWORD</b></para>
+      <para>The current state of keyboard modifier keys.</para>
+    </param>
+    <param name="pdwEffect">
+      <para>Type: <b>DWORD*</b></para>
+      <para>On success, contains a pointer to the drag effect value.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Failing this method blocks the drag operation in the namespace tree control (NSTC).</para>
+    </remarks>
+    <seealso cref="IDropTarget.DragOver" />
+    <seealso cref="INameSpaceTreeControlDropHandler" />
+  </member>
+  <member name="INameSpaceTreeControlDropHandler.OnDragPosition">
+    <summary>
+      <para>Called when the item is being dragged within the same level (within the same parent folder) in the tree.</para>
+    </summary>
+    <param name="psiOver">
+      <para>Type: <b><see cref="IShellItem" />*</b></para>
+      <para>A pointer to an <see cref="IShellItem" /> interface representing the item underneath the mouse cursor. Optional.</para>
+    </param>
+    <param name="psiaData">
+      <para>Type: <b><see cref="IShellItemArray" />*</b></para>
+      <para>A pointer to an <see cref="IShellItem" /> array containing the items being dragged.</para>
+    </param>
+    <param name="iNewPosition">
+      <para>Type: <b>int</b></para>
+      <para>The index if the item being dragged is between items; otherwise, NSTCDHPOS_ONTOP (-1).</para>
+    </param>
+    <param name="iOldPosition">
+      <para>Type: <b>int</b></para>
+      <para>The old position.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Failing this method prevents the item rearrangement.</para>
+    </remarks>
+  </member>
+  <member name="INameSpaceTreeControlDropHandler.OnDrop">
+    <summary>
+      <para>Called on drop to set drop effect, as specified.</para>
+    </summary>
+    <param name="psiOver">
+      <para>Type: <b><see cref="IShellItem" />*</b></para>
+      <para>A pointer to an <see cref="IShellItem" /> interface representing the item underneath the mouse cursor. Optional.</para>
+    </param>
+    <param name="psiaData">
+      <para>Type: <b><see cref="IShellItemArray" />*</b></para>
+      <para>A pointer to an <see cref="IShellItem" /> array representing a data object.</para>
+    </param>
+    <param name="iPosition">
+      <para>Type: <b>int</b></para>
+      <para>Specifies drop position.</para>
+    </param>
+    <param name="grfKeyState">
+      <para>Type: <b>DWORD</b></para>
+      <para>The current state of keyboard modifier keys.</para>
+    </param>
+    <param name="pdwEffect">
+      <para>Type: <b>DWORD*</b></para>
+      <para>A pointer to the drop effect value.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>Note</b>  To overwrite the default drop behavior, a client should fail this method; success proceeds with the default drop operation.</para>
+    </remarks>
+    <seealso cref="IDropTarget.Drop" />
+    <seealso cref="INameSpaceTreeControlDropHandler" />
+  </member>
+  <member name="INameSpaceTreeControlDropHandler.OnDropPosition">
+    <summary>
+      <para>Called when the item is being dropped within the same level (within the same parent folder) in the tree.</para>
+    </summary>
+    <param name="psiOver">
+      <para>Type: <b><see cref="IShellItem" />*</b></para>
+      <para>A pointer to an <see cref="IShellItem" /> interface representing the item underneath the mouse cursor. Optional.</para>
+    </param>
+    <param name="psiaData">
+      <para>Type: <b><see cref="IShellItemArray" />*</b></para>
+      <para>A pointer to an <see cref="IShellItem" /> array representing a data object.</para>
+    </param>
+    <param name="iNewPosition">
+      <para>Type: <b>int</b></para>
+      <para>The index if the item being dropped is between items; otherwise, NSTCDHPOS_ONTOP (-1).</para>
+    </param>
+    <param name="iOldPosition">
+      <para>Type: <b>int</b></para>
+      <para>Specifies old position.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Failing this method prevents the item rearrangement from happening.</para>
+    </remarks>
+  </member>
+  <member name="INameSpaceTreeControlDropHandler">
+    <summary>
+      <para>Exposes handler methods for drag-and-drop. Used by the namespace tree control to notify the client of any drag-and-drop operation happening within the control. Provides a way for a client to intercept a drop operation and perform its own action, or to return the desired drop effect.</para>
+    </summary>
+    <seealso cref="IDataObject" />
+    <seealso cref="IDropTarget" />
+    <seealso cref="INameSpaceTreeControl" />
+  </member>
+</doc>

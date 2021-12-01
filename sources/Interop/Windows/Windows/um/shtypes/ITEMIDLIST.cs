@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITEMIDLIST.xml' path='doc/member[@name="ITEMIDLIST"]/*' />
 public partial struct ITEMIDLIST
 {
+    /// <include file='ITEMIDLIST.xml' path='doc/member[@name="ITEMIDLIST.mkid"]/*' />
     public SHITEMID mkid;
 }

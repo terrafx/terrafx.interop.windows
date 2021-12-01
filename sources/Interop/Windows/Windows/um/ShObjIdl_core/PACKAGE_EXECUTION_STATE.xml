@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PACKAGE_EXECUTION_STATE">
+    <summary>
+      <para>Represents the state of a Windows app package.</para>
+    </summary>
+    <seealso cref="IPackageIPackageDebugSettings.GetPackageExecutionState" />
+    <seealso cref="IPackageExecutionStateChangeNotification.OnStateChanged" />
+  </member>
+  <member name="PACKAGE_EXECUTION_STATE.PES_UNKNOWN">
+    <summary>
+      <para>The package is in an unknown state.</para>
+    </summary>
+  </member>
+  <member name="PACKAGE_EXECUTION_STATE.PES_RUNNING">
+    <summary>
+      <para>The package is running.</para>
+    </summary>
+  </member>
+  <member name="PACKAGE_EXECUTION_STATE.PES_SUSPENDING">
+    <summary>
+      <para>The package is being suspended.</para>
+    </summary>
+  </member>
+  <member name="PACKAGE_EXECUTION_STATE.PES_SUSPENDED">
+    <summary>
+      <para>The package is suspended.</para>
+    </summary>
+  </member>
+  <member name="PACKAGE_EXECUTION_STATE.PES_TERMINATED">
+    <summary>
+      <para>The package was terminated.</para>
+    </summary>
+  </member>
+</doc>

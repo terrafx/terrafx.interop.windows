@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IBaseFilter.xml' path='doc/member[@name="IBaseFilter"]/*' />
 [Guid("56A86895-0AD4-11CE-B03A-0020AF0BA770")]
 [NativeTypeName("struct IBaseFilter : IMediaFilter")]
 [NativeInheritance("IMediaFilter")]
@@ -16,6 +17,7 @@ public unsafe partial struct IBaseFilter : IBaseFilter.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IBaseFilter : IBaseFilter.Interface
         return ((delegate* unmanaged<IBaseFilter*, Guid*, void**, int>)(lpVtbl[0]))((IBaseFilter*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IBaseFilter : IBaseFilter.Interface
         return ((delegate* unmanaged<IBaseFilter*, uint>)(lpVtbl[1]))((IBaseFilter*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IBaseFilter : IBaseFilter.Interface
         return ((delegate* unmanaged<IBaseFilter*, uint>)(lpVtbl[2]))((IBaseFilter*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IPersist.GetClassID" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetClassID([NativeTypeName("CLSID *")] Guid* pClassID)
@@ -46,6 +51,7 @@ public unsafe partial struct IBaseFilter : IBaseFilter.Interface
         return ((delegate* unmanaged<IBaseFilter*, Guid*, int>)(lpVtbl[3]))((IBaseFilter*)Unsafe.AsPointer(ref this), pClassID);
     }
 
+    /// <inheritdoc cref="IMediaFilter.Stop" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Stop()
@@ -53,6 +59,7 @@ public unsafe partial struct IBaseFilter : IBaseFilter.Interface
         return ((delegate* unmanaged<IBaseFilter*, int>)(lpVtbl[4]))((IBaseFilter*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IMediaFilter.Pause" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT Pause()
@@ -60,6 +67,7 @@ public unsafe partial struct IBaseFilter : IBaseFilter.Interface
         return ((delegate* unmanaged<IBaseFilter*, int>)(lpVtbl[5]))((IBaseFilter*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IMediaFilter.Run" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Run([NativeTypeName("REFERENCE_TIME")] long tStart)
@@ -67,6 +75,7 @@ public unsafe partial struct IBaseFilter : IBaseFilter.Interface
         return ((delegate* unmanaged<IBaseFilter*, long, int>)(lpVtbl[6]))((IBaseFilter*)Unsafe.AsPointer(ref this), tStart);
     }
 
+    /// <inheritdoc cref="IMediaFilter.GetState" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetState([NativeTypeName("DWORD")] uint dwMilliSecsTimeout, FILTER_STATE* State)
@@ -74,6 +83,7 @@ public unsafe partial struct IBaseFilter : IBaseFilter.Interface
         return ((delegate* unmanaged<IBaseFilter*, uint, FILTER_STATE*, int>)(lpVtbl[7]))((IBaseFilter*)Unsafe.AsPointer(ref this), dwMilliSecsTimeout, State);
     }
 
+    /// <inheritdoc cref="IMediaFilter.SetSyncSource" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT SetSyncSource(IReferenceClock* pClock)
@@ -81,6 +91,7 @@ public unsafe partial struct IBaseFilter : IBaseFilter.Interface
         return ((delegate* unmanaged<IBaseFilter*, IReferenceClock*, int>)(lpVtbl[8]))((IBaseFilter*)Unsafe.AsPointer(ref this), pClock);
     }
 
+    /// <inheritdoc cref="IMediaFilter.GetSyncSource" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT GetSyncSource(IReferenceClock** pClock)
@@ -88,6 +99,7 @@ public unsafe partial struct IBaseFilter : IBaseFilter.Interface
         return ((delegate* unmanaged<IBaseFilter*, IReferenceClock**, int>)(lpVtbl[9]))((IBaseFilter*)Unsafe.AsPointer(ref this), pClock);
     }
 
+    /// <include file='IBaseFilter.xml' path='doc/member[@name="IBaseFilter.EnumPins"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT EnumPins(IEnumPins** ppEnum)
@@ -95,6 +107,7 @@ public unsafe partial struct IBaseFilter : IBaseFilter.Interface
         return ((delegate* unmanaged<IBaseFilter*, IEnumPins**, int>)(lpVtbl[10]))((IBaseFilter*)Unsafe.AsPointer(ref this), ppEnum);
     }
 
+    /// <include file='IBaseFilter.xml' path='doc/member[@name="IBaseFilter.FindPin"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT FindPin([NativeTypeName("LPCWSTR")] ushort* Id, IPin** ppPin)
@@ -102,6 +115,7 @@ public unsafe partial struct IBaseFilter : IBaseFilter.Interface
         return ((delegate* unmanaged<IBaseFilter*, ushort*, IPin**, int>)(lpVtbl[11]))((IBaseFilter*)Unsafe.AsPointer(ref this), Id, ppPin);
     }
 
+    /// <include file='IBaseFilter.xml' path='doc/member[@name="IBaseFilter.QueryFilterInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT QueryFilterInfo(FILTER_INFO* pInfo)
@@ -109,6 +123,7 @@ public unsafe partial struct IBaseFilter : IBaseFilter.Interface
         return ((delegate* unmanaged<IBaseFilter*, FILTER_INFO*, int>)(lpVtbl[12]))((IBaseFilter*)Unsafe.AsPointer(ref this), pInfo);
     }
 
+    /// <include file='IBaseFilter.xml' path='doc/member[@name="IBaseFilter.JoinFilterGraph"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT JoinFilterGraph(IFilterGraph* pGraph, [NativeTypeName("LPCWSTR")] ushort* pName)
@@ -116,6 +131,7 @@ public unsafe partial struct IBaseFilter : IBaseFilter.Interface
         return ((delegate* unmanaged<IBaseFilter*, IFilterGraph*, ushort*, int>)(lpVtbl[13]))((IBaseFilter*)Unsafe.AsPointer(ref this), pGraph, pName);
     }
 
+    /// <include file='IBaseFilter.xml' path='doc/member[@name="IBaseFilter.QueryVendorInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT QueryVendorInfo([NativeTypeName("LPWSTR *")] ushort** pVendorInfo)

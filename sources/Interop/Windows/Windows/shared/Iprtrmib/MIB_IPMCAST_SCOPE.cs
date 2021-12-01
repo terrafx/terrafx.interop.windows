@@ -5,17 +5,22 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MIB_IPMCAST_SCOPE.xml' path='doc/member[@name="MIB_IPMCAST_SCOPE"]/*' />
 public unsafe partial struct MIB_IPMCAST_SCOPE
 {
+    /// <include file='MIB_IPMCAST_SCOPE.xml' path='doc/member[@name="MIB_IPMCAST_SCOPE.dwGroupAddress"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwGroupAddress;
 
+    /// <include file='MIB_IPMCAST_SCOPE.xml' path='doc/member[@name="MIB_IPMCAST_SCOPE.dwGroupMask"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwGroupMask;
 
+    /// <include file='MIB_IPMCAST_SCOPE.xml' path='doc/member[@name="MIB_IPMCAST_SCOPE.snNameBuffer"]/*' />
     [NativeTypeName("SCOPE_NAME_BUFFER")]
     public fixed ushort snNameBuffer[256];
 
+    /// <include file='MIB_IPMCAST_SCOPE.xml' path='doc/member[@name="MIB_IPMCAST_SCOPE.dwStatus"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwStatus;
 }

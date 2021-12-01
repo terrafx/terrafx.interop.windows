@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MF_TRANSFER_VIDEO_FRAME_FLAGS.xml' path='doc/member[@name="MF_TRANSFER_VIDEO_FRAME_FLAGS"]/*' />
 public enum MF_TRANSFER_VIDEO_FRAME_FLAGS
 {
+    /// <include file='MF_TRANSFER_VIDEO_FRAME_FLAGS.xml' path='doc/member[@name="MF_TRANSFER_VIDEO_FRAME_FLAGS.MF_TRANSFER_VIDEO_FRAME_DEFAULT"]/*' />
     MF_TRANSFER_VIDEO_FRAME_DEFAULT = 0,
+
+    /// <include file='MF_TRANSFER_VIDEO_FRAME_FLAGS.xml' path='doc/member[@name="MF_TRANSFER_VIDEO_FRAME_FLAGS.MF_TRANSFER_VIDEO_FRAME_STRETCH"]/*' />
     MF_TRANSFER_VIDEO_FRAME_STRETCH = 1,
+
+    /// <include file='MF_TRANSFER_VIDEO_FRAME_FLAGS.xml' path='doc/member[@name="MF_TRANSFER_VIDEO_FRAME_FLAGS.MF_TRANSFER_VIDEO_FRAME_IGNORE_PAR"]/*' />
     MF_TRANSFER_VIDEO_FRAME_IGNORE_PAR = 2,
 }

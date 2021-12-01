@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="TF_INPUTPROCESSORPROFILE">
+    <summary>
+      <para>This structure contains data for the input processor profile.</para>
+    </summary>
+  </member>
+  <member name="TF_INPUTPROCESSORPROFILE.dwProfileType">
+    <summary>
+      <para>The type of this profile. This is one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>TF_PROFILETYPE_INPUTPROCESSOR</description>
+          <description>This is a text service.</description>
+        </item>
+        <item>
+          <description>TF_PROFILETYPE_KEYBOARDLAYOUT</description>
+          <description>This is a keyboard layout.</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="TF_INPUTPROCESSORPROFILE.langid">
+    <summary>
+      <para>The language id for this profile.</para>
+    </summary>
+  </member>
+  <member name="TF_INPUTPROCESSORPROFILE.clsid">
+    <summary>
+      <para>The CLSID of the text service. This is CLSID_NULL if this profile is a keyboard layout.</para>
+    </summary>
+  </member>
+  <member name="TF_INPUTPROCESSORPROFILE.guidProfile">
+    <summary>
+      <para>The guidProfile of the text services. This is GUID_NULL if this profile is a keyboard layout.</para>
+    </summary>
+  </member>
+  <member name="TF_INPUTPROCESSORPROFILE.catid">
+    <summary>
+      <para>The category of this text service. This category is GUID_TFCAT_TIP_KEYBOARD, GUID_TFCAT_TIP_SPEECH, GUID_TFCAT_TIP_HANDWRITING or something in GUID_TFCAT_CATEGORY_OF_TIP.</para>
+    </summary>
+  </member>
+  <member name="TF_INPUTPROCESSORPROFILE.hklSubstitute">
+    <summary>
+      <para>The keyboard layout handle of the substitute for this text service. This can be <b>NULL</b> if the text service does not have a substitute or this profile is a keyboard layout.</para>
+    </summary>
+  </member>
+  <member name="TF_INPUTPROCESSORPROFILE.dwCaps">
+    <summary>
+      <para>The flag to specify the capability of text service. This is the combination of the following flags:</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>TF_IPP_CAPS_DISABLEONTRANSITORY</description>
+          <description>This text service profile is disabled on transitory context.</description>
+        </item>
+        <item>
+          <description>TF_IPP_CAPS_SECUREMODESUPPORT</description>
+          <description>This text service supports the secure mode. This is categorized in GUID_TFCAT_TIPCAP_SECUREMODE.</description>
+        </item>
+        <item>
+          <description>TF_IPP_CAPS_UIELEMENTENABLED</description>
+          <description>This text service supports the UIElement. This is categorized in GUID_TFCAT_TIPCAP_UIELEMENTENABLED.</description>
+        </item>
+        <item>
+          <description>TF_IPP_CAPS_COMLESSSUPPORT</description>
+          <description>This text service can be activated without COM. This is categorized in GUID_TFCAT_TIPCAP_COMLESS.</description>
+        </item>
+        <item>
+          <description>TF_IPP_CAPS_WOW16SUPPORT</description>
+          <description>This text service can be activated on 16bit task. This is categorized in GUID_TFCAT_TIPCAP_WOW16.</description>
+        </item>
+        <item>
+          <description>TF_IPP_CAPS_IMMERSIVESUPPORT</description>
+          <description>
+            <b>Starting with Windows 8:</b> This text service has been tested to run properly in a Windows Store app.</description>
+        </item>
+        <item>
+          <description>TF_IPP_CAPS_SYSTRAYSUPPORT</description>
+          <description>
+            <b>Starting with Windows 8:</b> This text service supports inclusion in the System Tray.  This is used for text services that do not set the TF_IPP_CAPS_IMMERSIVESUPPORT flag but  are still compatible with the System Tray.</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="TF_INPUTPROCESSORPROFILE.hkl">
+    <summary>
+      <para>The keyboard layout handle. This is <b>NULL</b> if this profile is a text service.</para>
+    </summary>
+  </member>
+  <member name="TF_INPUTPROCESSORPROFILE.dwFlags">
+    <summary>
+      <para>The flag for this profile. This is a combination of the following flags:</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>TF_IPP_FLAG_ACTIVE</description>
+          <description>This profile is now active.</description>
+        </item>
+        <item>
+          <description>TF_IPP_FLAG_ENABLED</description>
+          <description>This profile is enabled.</description>
+        </item>
+        <item>
+          <description>TF_IPP_FLAG_SUBSTITUTEDBYINPUTPROCESSOR</description>
+          <description>This profile is substituted by a text service.</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+</doc>

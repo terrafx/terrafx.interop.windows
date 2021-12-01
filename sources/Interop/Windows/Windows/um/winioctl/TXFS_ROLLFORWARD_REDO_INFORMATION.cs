@@ -5,16 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TXFS_ROLLFORWARD_REDO_INFORMATION.xml' path='doc/member[@name="TXFS_ROLLFORWARD_REDO_INFORMATION"]/*' />
 public partial struct TXFS_ROLLFORWARD_REDO_INFORMATION
 {
+    /// <include file='TXFS_ROLLFORWARD_REDO_INFORMATION.xml' path='doc/member[@name="TXFS_ROLLFORWARD_REDO_INFORMATION.LastVirtualClock"]/*' />
     public LARGE_INTEGER LastVirtualClock;
 
+    /// <include file='TXFS_ROLLFORWARD_REDO_INFORMATION.xml' path='doc/member[@name="TXFS_ROLLFORWARD_REDO_INFORMATION.LastRedoLsn"]/*' />
     [NativeTypeName("DWORDLONG")]
     public ulong LastRedoLsn;
 
+    /// <include file='TXFS_ROLLFORWARD_REDO_INFORMATION.xml' path='doc/member[@name="TXFS_ROLLFORWARD_REDO_INFORMATION.HighestRecoveryLsn"]/*' />
     [NativeTypeName("DWORDLONG")]
     public ulong HighestRecoveryLsn;
 
+    /// <include file='TXFS_ROLLFORWARD_REDO_INFORMATION.xml' path='doc/member[@name="TXFS_ROLLFORWARD_REDO_INFORMATION.Flags"]/*' />
     [NativeTypeName("DWORD")]
     public uint Flags;
 }

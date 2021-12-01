@@ -5,14 +5,30 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='RENDEZVOUS_SESSION_STATE.xml' path='doc/member[@name="RENDEZVOUS_SESSION_STATE"]/*' />
 public enum RENDEZVOUS_SESSION_STATE
 {
+    /// <include file='RENDEZVOUS_SESSION_STATE.xml' path='doc/member[@name="RENDEZVOUS_SESSION_STATE.RSS_UNKNOWN"]/*' />
     RSS_UNKNOWN = 0,
+
+    /// <include file='RENDEZVOUS_SESSION_STATE.xml' path='doc/member[@name="RENDEZVOUS_SESSION_STATE.RSS_READY"]/*' />
     RSS_READY = (RSS_UNKNOWN + 1),
+
+    /// <include file='RENDEZVOUS_SESSION_STATE.xml' path='doc/member[@name="RENDEZVOUS_SESSION_STATE.RSS_INVITATION"]/*' />
     RSS_INVITATION = (RSS_READY + 1),
+
+    /// <include file='RENDEZVOUS_SESSION_STATE.xml' path='doc/member[@name="RENDEZVOUS_SESSION_STATE.RSS_ACCEPTED"]/*' />
     RSS_ACCEPTED = (RSS_INVITATION + 1),
+
+    /// <include file='RENDEZVOUS_SESSION_STATE.xml' path='doc/member[@name="RENDEZVOUS_SESSION_STATE.RSS_CONNECTED"]/*' />
     RSS_CONNECTED = (RSS_ACCEPTED + 1),
+
+    /// <include file='RENDEZVOUS_SESSION_STATE.xml' path='doc/member[@name="RENDEZVOUS_SESSION_STATE.RSS_CANCELLED"]/*' />
     RSS_CANCELLED = (RSS_CONNECTED + 1),
+
+    /// <include file='RENDEZVOUS_SESSION_STATE.xml' path='doc/member[@name="RENDEZVOUS_SESSION_STATE.RSS_DECLINED"]/*' />
     RSS_DECLINED = (RSS_CANCELLED + 1),
+
+    /// <include file='RENDEZVOUS_SESSION_STATE.xml' path='doc/member[@name="RENDEZVOUS_SESSION_STATE.RSS_TERMINATED"]/*' />
     RSS_TERMINATED = (RSS_DECLINED + 1),
 }

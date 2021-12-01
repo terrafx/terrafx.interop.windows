@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DISPID_SpeechGrammarRuleStateTransitions.xml' path='doc/member[@name="DISPID_SpeechGrammarRuleStateTransitions"]/*' />
 public enum DISPID_SpeechGrammarRuleStateTransitions
 {
+    /// <include file='DISPID_SpeechGrammarRuleStateTransitions.xml' path='doc/member[@name="DISPID_SpeechGrammarRuleStateTransitions.DISPID_SGRSTsCount"]/*' />
     DISPID_SGRSTsCount = 1,
+
+    /// <include file='DISPID_SpeechGrammarRuleStateTransitions.xml' path='doc/member[@name="DISPID_SpeechGrammarRuleStateTransitions.DISPID_SGRSTsItem"]/*' />
     DISPID_SGRSTsItem = (0),
+
+    /// <include file='DISPID_SpeechGrammarRuleStateTransitions.xml' path='doc/member[@name="DISPID_SpeechGrammarRuleStateTransitions.DISPID_SGRSTs_NewEnum"]/*' />
     DISPID_SGRSTs_NewEnum = (-4),
 }

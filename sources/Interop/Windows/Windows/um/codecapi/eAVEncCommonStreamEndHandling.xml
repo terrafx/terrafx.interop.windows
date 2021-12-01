@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="eAVEncCommonStreamEndHandling">
+    <summary>
+      <para>Specifies whether the encoder discards partial groups of pictures (GOPs) at the end of the stream. This enumeration is used with the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avenccommonstreamendhandling-property">AVEncCommonStreamEndHandling</a> codec property.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-enumerations">Codec API Enumerations</seealso>
+    <seealso cref="ICodecAPI Interface" />
+  </member>
+  <member name="eAVEncCommonStreamEndHandling.eAVEncCommonStreamEndHandling_DiscardPartial">
+    <summary>
+      <para>If there is a partial GOP at the end of the stream, the encoder will discard it.</para>
+    </summary>
+  </member>
+  <member name="eAVEncCommonStreamEndHandling.eAVEncCommonStreamEndHandling_EnsureComplete">
+    <summary>
+      <para>If there is a partial GOP at the end of the stream, the encoder will adjust the GOP and encode all of the stream data.</para>
+    </summary>
+  </member>
+</doc>

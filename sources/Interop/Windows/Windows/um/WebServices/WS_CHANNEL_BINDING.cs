@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_CHANNEL_BINDING.xml' path='doc/member[@name="WS_CHANNEL_BINDING"]/*' />
 public enum WS_CHANNEL_BINDING
 {
+    /// <include file='WS_CHANNEL_BINDING.xml' path='doc/member[@name="WS_CHANNEL_BINDING.WS_HTTP_CHANNEL_BINDING"]/*' />
     WS_HTTP_CHANNEL_BINDING = 0,
+
+    /// <include file='WS_CHANNEL_BINDING.xml' path='doc/member[@name="WS_CHANNEL_BINDING.WS_TCP_CHANNEL_BINDING"]/*' />
     WS_TCP_CHANNEL_BINDING = 1,
+
+    /// <include file='WS_CHANNEL_BINDING.xml' path='doc/member[@name="WS_CHANNEL_BINDING.WS_UDP_CHANNEL_BINDING"]/*' />
     WS_UDP_CHANNEL_BINDING = 2,
+
+    /// <include file='WS_CHANNEL_BINDING.xml' path='doc/member[@name="WS_CHANNEL_BINDING.WS_CUSTOM_CHANNEL_BINDING"]/*' />
     WS_CUSTOM_CHANNEL_BINDING = 3,
+
+    /// <include file='WS_CHANNEL_BINDING.xml' path='doc/member[@name="WS_CHANNEL_BINDING.WS_NAMEDPIPE_CHANNEL_BINDING"]/*' />
     WS_NAMEDPIPE_CHANNEL_BINDING = 4,
 }

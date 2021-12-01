@@ -1,0 +1,1596 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="Windows.PathAllocCanonicalize">
+    <summary>
+      <para>Converts a path string into a canonical form.</para>
+      <para>This function differs from <see cref="PathCchCanonicalize" /> and <see cref="PathCchCanonicalizeEx" /> in that it returns the result on the heap. This means that the caller does not have to declare the size of the returned string and reduces stack use.</para>
+      <para>This function differs from <see cref="PathCanonicalize" /> in that it accepts paths with "\", "\?" and "\?\UNC" prefixes.</para>
+      <para>
+        <b>Note</b> This function, <see cref="PathCchCanonicalize" />, or <see cref="PathCchCanonicalizeEx" />, should be used in place of <see cref="PathCanonicalize" />.</para>
+    </summary>
+    <param name="pszPathIn">
+      <para>A pointer to a buffer that contains the original string. This value cannot be <b>NULL</b>.</para>
+    </param>
+    <param name="dwFlags">
+      <para>One or more of the following flags:</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>PATHCCH_NONE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0000000</description>
+              </item>
+            </list>
+          </description>
+          <description>Do not allow for the construction of \\?\ paths (ie, long paths) longer than <b>MAX_PATH</b> .
+</description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>PATHCCH_ALLOW_LONG_PATHS</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000001</description>
+              </item>
+            </list>
+          </description>
+          <description>Allow the building of \\?\ paths longer than <b>MAX_PATH</b> .
+</description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>PATHCCH_FORCE_ENABLE_LONG_NAME_PROCESS</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000002</description>
+              </item>
+            </list>
+          </description>
+          <description>Forces the API to treat the caller as long path enabled, independent of the process's long name enabled state. This option can be used only when <b>PATHCCH_ALLOW_LONG_PATHS</b> is specified, and cannot be used with <b>PATHCCH_FORCE_DISABLE_LONG_NAME_PROCESS</b>.
+<para><b>Note</b> This value is available starting in Windows 10, version 1703.</para></description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>PATHCCH_FORCE_DISABLE_LONG_NAME_PROCESS</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000004</description>
+              </item>
+            </list>
+          </description>
+          <description>Forces the API to treat the caller as long path disabled, independent of the process's long name enabled state. This option can be used only when <b>PATHCCH_ALLOW_LONG_PATHS</b> is specified, and cannot be used with <b>PATHCCH_FORCE_ENABLE_LONG_NAME_PROCESS</b>.
+<para><b>Note</b> This value is available starting in Windows 10, version 1703.</para></description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>PATHCCH_DO_NOT_NORMALIZE_SEGMENTS</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000008</description>
+              </item>
+            </list>
+          </description>
+          <description>Disables the normalization of path segments that includes removing trailing dots and spaces. This enables access to paths that win32 path normalization will block.
+<para><b>Note</b>  This value is available starting in Windows 10, version 1703.</para></description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>PATHCCH_ENSURE_IS_EXTENDED_LENGTH_PATH</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000010</description>
+              </item>
+            </list>
+          </description>
+          <description>Converts the input path into the extended length DOS device path form (with the \\?\ prefix) if not already in that form. This enables access to paths that are otherwise not addressable due to Win32 normalization rules (that can strip trailing dots and spaces) and path length limitations. This option implies the same behavior of <b>PATHCCH_DO_NOT_NORMALIZE_SEGMENTS</b>.
+<para><b>Note</b> This value is available starting in Windows 10, version 1703.</para></description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>PATHCCH_ENSURE_TRAILING_SLASH</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000020</description>
+              </item>
+            </list>
+          </description>
+          <description>When combining or normalizing a path, ensure there is a trailing backslash.
+<para><b>Note</b> This value is available starting in Windows 10, version 1703.</para></description>
+        </item>
+      </list>
+    </param>
+    <param name="ppszPathOut">
+      <para>The address of a pointer to a buffer that, when this function returns successfully, receives the canonicalized path string. It is the responsibility of the caller to free this resource, when it is no longer needed, by calling the <see cref="LocalFree" /> function. This value cannot be <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This function supports these alternate path forms:</para>
+      <list type="bullet">
+        <item>
+          <description>\\?\</description>
+        </item>
+        <item>
+          <description>\\?\\UNC\</description>
+        </item>
+        <item>
+          <description>\\?\Volume{guid}\</description>
+        </item>
+      </list>
+      <para>This function does not convert forward slashes (<code>/</code>) into back slashes (<code>\</code>). With untrusted input, this function by itself, cannot be used to convert paths into a form that can be compared with other paths for sub-path or identity. Callers that need that ability should convert forward to back slashes before using this function.</para>
+    </remarks>
+  </member>
+  <member name="Windows.PathAllocCombine">
+    <summary>
+      <para>Concatenates two path fragments into a single path. This function also canonicalizes any relative path elements, replacing path elements such as "." and "..".</para>
+      <para>This function differs from <see cref="PathCchCombine" /> and <see cref="PathCchCombineEx" /> in that it returns the result on the heap. This means that the caller does not have to declare the size of the returned string and reduces stack use.</para>
+      <para>This function differs from <see cref="PathCombine" /> in that it accepts paths with "\", "\?" and "\?\UNC" prefixes.</para>
+      <para>
+        <b>Note</b> This function, <see cref="PathCchCombine" />, or <see cref="PathCchCombineEx" />, should be used in place of <see cref="PathCombine" />.&lt;</para>
+    </summary>
+    <param name="pszPathIn">
+      <para>A pointer to the first path string.</para>
+    </param>
+    <param name="pszMore">
+      <para>A pointer to the second path string. If this path begins with a single backslash, it is combined with only the root of the path pointed to by <i>pszPathIn</i>. If this path is fully qualified, it is copied directly to the output buffer without being combined with the other path.</para>
+    </param>
+    <param name="dwFlags">
+      <para>One or more of the following flags:</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>PATHCCH_NONE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0000000</description>
+              </item>
+            </list>
+          </description>
+          <description>Do not allow for the construction of \\?\ paths (ie, long paths) longer than <b>MAX_PATH</b> .
+</description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>PATHCCH_ALLOW_LONG_PATHS</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000001</description>
+              </item>
+            </list>
+          </description>
+          <description>Allow the construction of \\?\ paths longer than <b>MAX_PATH</b> .
+</description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>PATHCCH_FORCE_ENABLE_LONG_NAME_PROCESS</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000002</description>
+              </item>
+            </list>
+          </description>
+          <description>Forces the API to treat the caller as long path enabled, independent of the process's long name enabled state. This option can be used only when <b>PATHCCH_ALLOW_LONG_PATHS</b> is specified, and cannot be used with <b>PATHCCH_FORCE_DISABLE_LONG_NAME_PROCESS</b>.
+<para><b>Note</b> This value is available starting in Windows 10, version 1703.</para></description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>PATHCCH_FORCE_DISABLE_LONG_NAME_PROCESS</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000004</description>
+              </item>
+            </list>
+          </description>
+          <description>Forces the API to treat the caller as long path disabled, independent of the process's long name enabled state. This option can be used only when <b>PATHCCH_ALLOW_LONG_PATHS</b> is specified, and cannot be used with <b>PATHCCH_FORCE_ENABLE_LONG_NAME_PROCESS</b>.
+<para><b>Note</b> This value is available starting in Windows 10, version 1703.</para></description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>PATHCCH_DO_NOT_NORMALIZE_SEGMENTS</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000008</description>
+              </item>
+            </list>
+          </description>
+          <description>Disables the normalization of path segments that includes removing trailing dots and spaces. This enables access to paths that win32 path normalization will block.
+<para><b>Note</b> This value is available starting in Windows 10, version 1703.</para></description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>PATHCCH_ENSURE_IS_EXTENDED_LENGTH_PATH</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000010</description>
+              </item>
+            </list>
+          </description>
+          <description>Converts the input path into the extended length DOS device path form (with the \\?\ prefix) if not already in that form. This enables access to paths that are otherwise not addressable due to Win32 normalization rules (that can strip trailing dots and spaces) and path length limitations. This option implies the same behavior of <b>PATHCCH_DO_NOT_NORMALIZE_SEGMENTS</b>.
+<para><b>Note</b> This value is available starting in Windows 10, version 1703.</para></description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>PATHCCH_ENSURE_TRAILING_SLASH</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000020</description>
+              </item>
+            </list>
+          </description>
+          <description>When combining or normalizing a path, ensure there is a trailing backslash.
+<para><b>Note</b> This value is available starting in Windows 10, version 1703.</para></description>
+        </item>
+      </list>
+    </param>
+    <param name="ppszPathOut">
+      <para>The address of a pointer to a buffer that, when this function returns successfully, receives the combined path string. It is the responsibility of the caller to free this resource, when it is no longer needed, by calling the <see cref="LocalFree" /> function. This value cannot be <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>While either <i>pszPathIn</i> or <i>pszMore</i> can <b>NULL</b>, they cannot both be <b>NULL</b>.</para>
+      <para>This function supports these alternate path forms:</para>
+      <list type="bullet">
+        <item>
+          <description>\\?\</description>
+        </item>
+        <item>
+          <description>\\?\\UNC\</description>
+        </item>
+        <item>
+          <description>\\?\Volume{guid}\</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="PathCchCombine" />
+    <seealso cref="PathCchCombineEx" />
+  </member>
+  <member name="Windows.PathCchAddBackslash">
+    <summary>
+      <para>Adds a backslash to the end of a string to create the correct syntax for a path. If the source path already has a trailing backslash, no backslash will be added.</para>
+      <para>This function differs from <b>PathCchAddBackslash</b> in that you are restricted to a final path of length MAX_PATH.</para>
+      <para>This function differs from <see cref="PathAddBackslash" /> in that it accepts paths with "\", "\?" and "\?\UNC" prefixes.</para>
+      <para>
+        <b>Note</b>  This function, or <see cref="PathCchAddBackslashEx" />, should be used in place of <see cref="PathAddBackslash" /> to prevent the possibility of a buffer overrun.</para>
+    </summary>
+    <param name="pszPath">
+      <para>A pointer to the path string. When this function returns successfully, the buffer contains the string with the appended backslash. This value should not be <b>NULL</b>.</para>
+    </param>
+    <param name="cchPath">
+      <para>The size of the buffer pointed to by <i>pszPath</i>, in characters.</para>
+    </param>
+    <returns>
+      <para>This function returns <b>S_OK</b> if the function was successful, <b>S_FALSE</b> if the path string already ends in a backslash, or an error code otherwise.</para>
+    </returns>
+    <seealso cref="PathCchAddBackslashEx" />
+  </member>
+  <member name="Windows.PathCchAddBackslashEx">
+    <summary>
+      <para>Adds a backslash to the end of a string to create the correct syntax for a path. If the source path already has a trailing backslash, no backslash will be added.</para>
+      <para>This function differs from <see cref="PathCchAddBackslash" /> in that it can return a pointer to the new end of the string and report the number of unused characters remaining in the buffer.</para>
+      <para>This function differs from <see cref="PathAddBackslash" /> in that it accepts paths with "\", "\?" and "\?\UNC" prefixes.</para>
+      <para>
+        <b>Note</b>  This function, or <b>PathCchAddBackslashEx</b>, should be used in place of <see cref="PathAddBackslash" /> to prevent the possibility of a buffer overrun.</para>
+    </summary>
+    <param name="pszPath">
+      <para>A pointer to the path string. When this function returns successfully, the buffer contains the string with the appended backslash. This value should not be <b>NULL</b>.</para>
+    </param>
+    <param name="cchPath">
+      <para>The size of the buffer pointed to by <i>pszPath</i>, in characters.</para>
+    </param>
+    <param name="ppszEnd">
+      <para>A value that, when this function returns successfully, receives the address of a pointer to the terminating null character at the end of the string.</para>
+    </param>
+    <param name="pcchRemaining">
+      <para>A pointer to a value that, when this function returns successfully, is set to the number of unused characters in the destination buffer, including the terminating null character.</para>
+    </param>
+    <returns>
+      <para>This function returns <b>S_OK</b> if the function was successful, <b>S_FALSE</b> if the path string already ends in a backslash, or an error code otherwise.</para>
+    </returns>
+    <seealso cref="PathCchAddBackslash" />
+  </member>
+  <member name="Windows.PathCchAddExtension">
+    <summary>
+      <para>Adds a file name extension to a path string.</para>
+      <para>This function differs from <see cref="PathAddExtension" /> in that it accepts paths with "\", "\?" and "\?\UNC" prefixes.</para>
+      <para>
+        <b>Note</b>  This function should be used in place of <see cref="PathAddExtension" /> to prevent the possibility of a buffer overrun.</para>
+    </summary>
+    <param name="pszPath">
+      <para>A pointer to the path string. When this function returns successfully, the buffer contains the string with the appended extension. This value should not be <b>NULL</b>.</para>
+      <para>
+        <b>Note</b>  If the original string already has a file name extension present, no new extension will be added and the original string will be unchanged.</para>
+    </param>
+    <param name="cchPath">
+      <para>The size of the buffer pointed to by <i>pszPath</i>, in characters.</para>
+    </param>
+    <param name="pszExt">
+      <para>A pointer to the file name extension string. This string can be given either with or without a preceding period (".ext" or "ext").</para>
+    </param>
+    <returns>
+      <para>This function returns an <b>HRESULT</b> code, including the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The function succeeded. Note that this also includes the case of an empty extension, such as a period with no characters following it. In that case, the original string is returned unaltered.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>This value can be caused by several things, such as the <i>pszPath</i> param being set to <b>NULL</b>, the <i>cchPath</i> being set to 0 or a value greater than <b>PATHCCH_MAX_CCH</b>, or the extension string containing illegal characters or otherwise not being a valid extension.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>The original string already has an extension.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>PATHCCH_E_FILENAME_TOO_LONG</b>
+            </para>
+          </description>
+          <description>
+            <para>The buffer is too small to hold the returned string.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.PathCchAppend">
+    <summary>
+      <para>Appends one path to the end of another.</para>
+      <para>This function differs from <see cref="PathCchAppendEx" /> in that you are restricted to a final path of length MAX_PATH.</para>
+      <para>This function differs from <see cref="PathAppend" /> in that it accepts paths with "\", "\?" and "\?\UNC" prefixes.</para>
+      <para>
+        <b>Note</b>  This function, or <see cref="PathCchAppendEx" />, should be used in place of <see cref="PathAppend" /> to prevent the possibility of a buffer overrun.</para>
+    </summary>
+    <param name="pszPath">
+      <para>A pointer to a buffer that, on entry, contains the original path. When this function returns successfully, the buffer contains the original path plus the appended path.</para>
+    </param>
+    <param name="cchPath">
+      <para>The size of the buffer pointed to by <i>pszPath</i>, in characters.</para>
+    </param>
+    <param name="pszMore">
+      <para>A pointer to the path to append to the end of the path pointed to by <i>pszPath</i>. UNC paths and paths beginning with the "\?" sequence are accepted and recognized as fully-qualified paths. These paths replace the string pointed to by <i>pszPath</i> instead of being appended to it.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> code, including the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>Either <i>pszPath</i> or <i>pszMore</i> is <b>NULL</b>, <i>cchPath</i> is 0, or <i>cchPath</i> is greater than <b>PATHCCH_MAX_CCH</b>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>PATHCCH_E_FILENAME_TOO_LONG</b>
+            </para>
+          </description>
+          <description>
+            <para>The resulting string would exceed <b>PATHCCH_MAX_CCH</b>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>The function could not allocate a buffer of the necessary size.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This function inserts a backslash between the two strings, if one is not already present.</para>
+    </remarks>
+    <seealso cref="PathCchAppendEx" />
+  </member>
+  <member name="Windows.PathCchAppendEx">
+    <summary>
+      <para>Appends one path to the end of another.</para>
+      <para>This function differs from <see cref="PathCchAppend" /> in that it allows for a longer final path to be constructed.</para>
+      <para>This function differs from <see cref="PathAppend" /> in that it accepts paths with "\", "\?" and "\?\UNC" prefixes.</para>
+      <para>
+        <b>Note</b> This function, or <see cref="PathCchAppend" />, should be used in place of <see cref="PathAppend" /> to prevent the possibility of a buffer overrun.</para>
+    </summary>
+    <param name="pszPath">
+      <para>A pointer to a buffer that, on entry, contains the original path. When this function returns successfully, the buffer contains the original path plus the appended path.</para>
+    </param>
+    <param name="cchPath">
+      <para>The size of the buffer pointed to by <i>pszPath</i>, in characters.</para>
+    </param>
+    <param name="pszMore">
+      <para>A pointer the path to append to the end of the path pointed to by <i>pszPath</i>. UNC paths and paths that begin with the sequence \?\ are accepted and recognized as fully-qualified paths. These paths replace the string pointed to by <i>pszPath</i> instead of being appended to it.</para>
+    </param>
+    <param name="dwFlags">
+      <para>One or more of the following flags:</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>PATHCCH_NONE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0000000</description>
+              </item>
+            </list>
+          </description>
+          <description>Do not allow for the construction of \\?\ paths (ie, long paths) longer than <b>MAX_PATH</b>.
+</description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>PATHCCH_ALLOW_LONG_PATHS</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000001</description>
+              </item>
+            </list>
+          </description>
+          <description>Allow the building of \\?\ paths longer than <b>MAX_PATH</b>.
+</description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>PATHCCH_FORCE_ENABLE_LONG_NAME_PROCESS</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000002</description>
+              </item>
+            </list>
+          </description>
+          <description>Forces the API to treat the caller as long path enabled, independent of the process's long name enabled state. This option can be used only when <b>PATHCCH_ALLOW_LONG_PATHS</b> is specified, and cannot be used with <b>PATHCCH_FORCE_DISABLE_LONG_NAME_PROCESS</b>.
+<para><b>Note</b> This value is available starting in Windows 10, version 1703.</para></description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>PATHCCH_FORCE_DISABLE_LONG_NAME_PROCESS</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000004</description>
+              </item>
+            </list>
+          </description>
+          <description>Forces the API to treat the caller as long path disabled, independent of the process's long name enabled state. This option can be used only when <b>PATHCCH_ALLOW_LONG_PATHS</b> is specified, and cannot be used with <b>PATHCCH_FORCE_ENABLE_LONG_NAME_PROCESS</b>.
+<para><b>Note</b> This value is available starting in Windows 10, version 1703.</para></description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>PATHCCH_DO_NOT_NORMALIZE_SEGMENTS</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000008</description>
+              </item>
+            </list>
+          </description>
+          <description>Disables the normalization of path segments that includes removing trailing dots and spaces. This enables access to paths that win32 path normalization will block.
+<para><b>Note</b> This value is available starting in Windows 10, version 1703.</para></description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>PATHCCH_ENSURE_IS_EXTENDED_LENGTH_PATH</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000010</description>
+              </item>
+            </list>
+          </description>
+          <description>Converts the input path into the extended length DOS device path form (with the \\?\ prefix) if not already in that form. This enables access to paths that are otherwise not addressable due to Win32 normalization rules (that can strip trailing dots and spaces) and path length limitations. This option implies the same behavior of <b>PATHCCH_DO_NOT_NORMALIZE_SEGMENTS</b>.
+<para><b>Note</b> This value is available starting in Windows 10, version 1703.</para></description>
+        </item>
+      </list>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> code, including the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>Either <i>pszPath</i> or <i>pszMore</i> is <b>NULL</b>, <i>cchPath</i> is 0, or <i>cchPath</i> is greater than <b>PATHCCH_MAX_CCH</b>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>PATHCCH_E_FILENAME_TOO_LONG</b>
+            </para>
+          </description>
+          <description>
+            <para>The resulting string would exceed <b>PATHCCH_MAX_CCH</b>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>The function could not allocate a buffer of the necessary size.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This function inserts a backslash between the two strings, if one is not already present.</para>
+    </remarks>
+    <seealso cref="PathCchAppend" />
+  </member>
+  <member name="Windows.PathCchCanonicalize">
+    <summary>
+      <para>Converts a path string into a canonical form.</para>
+      <para>This function differs from <see cref="PathCchCanonicalizeEx" /> in that you are restricted to a final path of length MAX_PATH.</para>
+      <para>This function differs from <see cref="PathAllocCanonicalize" /> in that the caller must declare the size of the returned string, which is stored on the stack.</para>
+      <para>This function differs from <see cref="PathCanonicalize" /> in that it accepts paths with "\", "\?" and "\?\UNC" prefixes.</para>
+      <para>
+        <b>Note</b>  This function, <see cref="PathCchCanonicalizeEx" />, or <see cref="PathAllocCanonicalize" /> should be used in place of <see cref="PathCanonicalize" /> to prevent the possibility of a buffer overrun.</para>
+    </summary>
+    <param name="pszPathOut">
+      <para>A pointer to a buffer that, when this function returns successfully, receives the canonicalized path string.</para>
+    </param>
+    <param name="cchPathOut">
+      <para>The size of the buffer pointed to by <i>pszPathOut</i>, in characters.</para>
+    </param>
+    <param name="pszPathIn">
+      <para>A pointer to the original path string. If this value points to an empty string, or results in an empty string once the "." and ".." elements are removed, a single backslash is copied to the buffer pointed to by <i>pszPathOut</i>.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> code, including the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>The <i>cchPathOut</i> value is greater than <b>PATHCCH_MAX_CCH</b>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>PATHCCH_E_FILENAME_TOO_LONG</b>
+            </para>
+          </description>
+          <description>
+            <para>A path segment exceeds the standard path segment length limit of 256 characters.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>The function could not allocate a buffer of the necessary size.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This function responds to the strings "." and ".." embedded in a path. The ".." string indicates to remove the immediately preceding path segment. The "." string indicates to skip over the next path segment. Note that the root segment of the path cannot be removed. If there are more ".." strings than there are path segments, the function returns S_OK and the buffer pointed to by <i>pszPathOut</i> contains a single backslash, "".</para>
+      <para>All trailing periods are removed from the path, except when preceded by the "<i>" wild card character. In that case, a single period is retained after the '</i>' character, but all other trailing periods are removed.</para>
+      <para>If the resulting path is a root drive ("x:"), a backslash is appended ("x:").</para>
+      <para>This function does not convert forward slashes (<code>/</code>) into back slashes (<code>\</code>). With untrusted input, this function by itself, cannot be used to convert paths into a form that can be compared with other paths for sub-path or identity. Callers that need that ability should convert forward to back slashes before using this function.</para>
+      <para>The following examples show the effect of these strings.</para>
+      <list type="table">
+        <listheader>
+          <description>Original string</description>
+          <description>Canonicalized string</description>
+        </listheader>
+        <item>
+          <description>C:\name_1\.\name_2\..\name_3</description>
+          <description>C:\name_1\name_3</description>
+        </item>
+        <item>
+          <description>C:\name_1\..\name_2\.\name_3</description>
+          <description>C:\name_2\name_3</description>
+        </item>
+        <item>
+          <description>C:\name_1\name_2\.\name_3\..\name_4</description>
+          <description>C:\name_1\name_2\name_4</description>
+        </item>
+        <item>
+          <description>C:\name_1\.\name_2\.\name_3\..\name_4\..</description>
+          <description>C:\name_1\name_2</description>
+        </item>
+        <item>
+          <description>C:\name_1\*...</description>
+          <description>C:\name_1\*.</description>
+        </item>
+        <item>
+          <description>C:\..</description>
+          <description>C:\</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="PathCchCanonicalizeEx" />
+  </member>
+  <member name="Windows.PathCchCanonicalizeEx">
+    <summary>
+      <para>Simplifies a path by removing navigation elements such as "." and ".." to produce a direct, well-formed path.</para>
+      <para>This function differs from <see cref="PathCchCanonicalize" /> in that it allows for a longer final path to be constructed.</para>
+      <para>This function differs from <see cref="PathAllocCanonicalize" /> in that the caller must declare the size of the returned string, which is stored on the stack.</para>
+      <para>This function differs from <see cref="PathCanonicalize" /> in that it accepts paths with "\", "\?" and "\?\UNC" prefixes.</para>
+      <para>
+        <b>Note</b> This function, <see cref="PathCchCanonicalize" />, or <see cref="PathAllocCanonicalize" /> should be used in place of <see cref="PathCanonicalize" /> to prevent the possibility of a buffer overrun.</para>
+    </summary>
+    <param name="pszPathOut">
+      <para>A pointer to a buffer that, when this function returns successfully, receives the edited path string.</para>
+    </param>
+    <param name="cchPathOut">
+      <para>The size of the buffer pointed to by <i>pszPathOut</i>, in characters.</para>
+    </param>
+    <param name="pszPathIn">
+      <para>A pointer to the original path string. If this value is <b>NULL</b>, points to an empty string, or results in an empty string once the "." and ".." elements are removed, a single backslash is copied to the buffer pointed to by <i>pszPathOut</i>.</para>
+    </param>
+    <param name="dwFlags">
+      <para>One or more of the following flags:</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>PATHCCH_NONE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0000000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Do not allow for the construction of \?\ paths (ie, long paths) longer than <b>MAX_PATH</b> .</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>PATHCCH_ALLOW_LONG_PATHS</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000001</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Allow the building of \?\ paths longer than <b>MAX_PATH</b> . Note that <i>cchPathOut</i> must be greater than <b>MAX_PATH</b> . If it is not, this flag is ignored.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>PATHCCH_FORCE_ENABLE_LONG_NAME_PROCESS</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000002</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Forces the API to treat the caller as long path enabled, independent of the process's long name enabled state. This option can be used only when <b>PATHCCH_ALLOW_LONG_PATHS</b> is specified, and cannot be used with <b>PATHCCH_FORCE_DISABLE_LONG_NAME_PROCESS</b>.</para>
+            <para>
+              <b>Note</b> This value is available starting in Windows 10, version 1703.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>PATHCCH_FORCE_DISABLE_LONG_NAME_PROCESS</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000004</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Forces the API to treat the caller as long path disabled, independent of the process's long name enabled state. This option can be used only when <b>PATHCCH_ALLOW_LONG_PATHS</b> is specified, and cannot be used with <b>PATHCCH_FORCE_ENABLE_LONG_NAME_PROCESS</b>.</para>
+            <para>
+              <b>Note</b> This value is available starting in Windows 10, version 1703.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>PATHCCH_DO_NOT_NORMALIZE_SEGMENTS</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000008</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Disables the normalization of path segments that includes removing trailing dots and spaces. This enables access to paths that win32 path normalization will block.</para>
+            <para>
+              <b>Note</b> This value is available starting in Windows 10, version 1703.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>PATHCCH_ENSURE_IS_EXTENDED_LENGTH_PATH</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000010</description>
+              </item>
+            </list>
+          </description>
+          <description>Converts the input path into the extended length DOS device path form (with the \\?\ prefix) if not already in that form. This enables access to paths that are otherwise not addressable due to Win32 normalization rules (that can strip trailing dots and spaces) and path length limitations. This option implies the same behavior of <b>PATHCCH_DO_NOT_NORMALIZE_SEGMENTS</b>.
+<para><b>Note</b> This value is available starting in Windows 10, version 1703.</para></description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>PATHCCH_ENSURE_TRAILING_SLASH</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000020</description>
+              </item>
+            </list>
+          </description>
+          <description>When combining or normalizing a path, ensure there is a trailing backslash.
+<para><b>Note</b> This value is available starting in Windows 10, version 1703.</para></description>
+        </item>
+      </list>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> code, including but not limited to the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>The <i>cchPathOut</i> value is greater than <b>PATHCCH_MAX_CCH</b>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>PATHCCH_E_FILENAME_TOO_LONG</b>
+            </para>
+          </description>
+          <description>
+            <para>A path segment has more than <b>PATHCCH_MAX_CCH</b> characters, or, if the <b>PATHCCH_ALLOW_LONG_PATHS</b> flag is not set, exceeds the standard path segment length limit of 256 characters.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>The function could not allocate a buffer of the necessary size.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This function responds to the strings "." and ".." embedded in a path. The ".." string indicates to remove the immediately preceding path segment. The "." string indicates to skip over the next path segment. Note that the root segment of the path cannot be removed. If there are more ".." strings than there are path segments, the function returns <b>S_OK</b> and the buffer pointed to by <i>pszPathOut</i> contains a single backslash, "".</para>
+      <para>All trailing periods are removed from the path, except when preceded by the "<i>" wild card character. In that case, a single period is retained after the '</i>' character, but all other trailing periods are removed.</para>
+      <para>If the resulting path is a root drive ("x:"), a backslash is appended ("x:").</para>
+      <para>This function does not convert forward slashes (<code>/</code>) into back slashes (<code>\</code>). With untrusted input, this function by itself, cannot be used to convert paths into a form that can be compared with other paths for sub-path or identity. Callers that need that ability should convert forward to back slashes before using this function.</para>
+      <para>The following examples show the effect of these strings.</para>
+      <list type="table">
+        <listheader>
+          <description>Original string</description>
+          <description>Canonicalized string</description>
+        </listheader>
+        <item>
+          <description>C:\name_1\.\name_2\..\name_3</description>
+          <description>C:\name_1\name_3</description>
+        </item>
+        <item>
+          <description>C:\name_1\..\name_2\.\name_3</description>
+          <description>C:\name_2\name_3</description>
+        </item>
+        <item>
+          <description>C:\name_1\name_2\.\name_3\..\name_4</description>
+          <description>C:\name_1\name_2\name_4</description>
+        </item>
+        <item>
+          <description>C:\name_1\.\name_2\.\name_3\..\name_4\..</description>
+          <description>C:\name_1\name_2</description>
+        </item>
+        <item>
+          <description>C:\name_1\*...</description>
+          <description>C:\name_1\*.</description>
+        </item>
+        <item>
+          <description>C:\..</description>
+          <description>C:\</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="PathCchCanonicalize" />
+  </member>
+  <member name="Windows.PathCchCombine">
+    <summary>
+      <para>Combines two path fragments into a single path. This function also canonicalizes any relative path elements, removing "." and ".." elements to simplify the final path.</para>
+      <para>This function differs from <see cref="PathCchCombineEx" /> in that you are restricted to a final path of length MAX_PATH.</para>
+      <para>This function differs from <see cref="PathAllocCombine" /> in that the caller must declare the size of the returned string, which is stored on the stack.</para>
+      <para>This function differs from <see cref="PathCombine" /> in that it accepts paths with "\", "\?" and "\?\UNC" prefixes.</para>
+      <para>
+        <b>Note</b>  This function, <see cref="PathCchCombineEx" />, or <see cref="PathAllocCombine" /> should be used in place of <see cref="PathCombine" /> to prevent the possibility of a buffer overrun.</para>
+    </summary>
+    <param name="pszPathOut">
+      <para>A pointer to a buffer that, when this function returns successfully, receives the combined path string. This parameter can point to the same buffer as <i>pszPathIn</i> or <i>pszMore</i>.</para>
+    </param>
+    <param name="cchPathOut">
+      <para>The size of the buffer pointed to by <i>pszPathOut</i>, in characters.</para>
+    </param>
+    <param name="pszPathIn">
+      <para>A pointer to the first path string. This value can be <b>NULL</b>.</para>
+    </param>
+    <param name="pszMore">
+      <para>A pointer to the second path string. If this path begins with a single backslash, it is combined with only the root of the path pointed to by <i>pszPathIn</i>. If this path is fully qualified, it is copied directly to the output buffer without being combined with the other path. This value can be <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>This function returns an <b>HRESULT</b> code, including the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The function succeeded. Note that this also includes the case of an empty extension, such as a period with no characters following it. In that case, the original string is returned unaltered.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>This value can be caused by several things, such as the <i>pszPathOut</i> param being set to <b>NULL</b>, or the <i>cchPathOut</i> value being set to 0 or a value greater than <b>PATHCCH_MAX_CCH</b>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>The function could not allocate enough memory to perform the operation.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>PATHCCH_E_FILENAME_TOO_LONG</b>
+            </para>
+          </description>
+          <description>
+            <para>The size of one or both of the original paths exceeded <b>PATHCCH_MAX_CCH</b>.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>If both <i>pszPathIn</i> and <i>pszMore</i> are <b>NULL</b> or point to empty strings, a single backslash is copied to the buffer pointed to by <i>pszPathOut</i>.</para>
+    </remarks>
+    <seealso cref="PathCchCanonicalize" />
+    <seealso cref="PathCchCanonicalizeEx" />
+    <seealso cref="PathCchCombineEx" />
+  </member>
+  <member name="Windows.PathCchCombineEx">
+    <summary>
+      <para>Combines two path fragments into a single path. This function also canonicalizes any relative path elements, removing "." and ".." elements to simplify the final path.</para>
+      <para>This function differs from <see cref="PathCchCombine" /> in that it allows for a longer final path to be constructed.</para>
+      <para>This function differs from <see cref="PathAllocCombine" /> in that the caller must declare the size of the returned string, which is stored on the stack.</para>
+      <para>This function differs from <see cref="PathCombine" /> in that it accepts paths with "\", "\?" and "\?\UNC" prefixes.</para>
+      <para>
+        <b>Note</b> This function, <see cref="PathCchCombine" />, or <see cref="PathAllocCombine" /> should be used in place of <see cref="PathCombine" /> to prevent the possibility of a buffer overrun.</para>
+    </summary>
+    <param name="pszPathOut">
+      <para>A pointer to a buffer that, when this function returns successfully, receives the combined path string. This parameter can point to the same buffer as <i>pszPathIn</i> or <i>pszMore</i>.</para>
+    </param>
+    <param name="cchPathOut">
+      <para>The size of the buffer pointed to by <i>pszPathOut</i>, in characters.</para>
+    </param>
+    <param name="pszPathIn">
+      <para>A pointer to the first path string. This value can be <b>NULL</b>.</para>
+    </param>
+    <param name="pszMore">
+      <para>A pointer to the second path string. If this path begins with a single backslash, it is combined with only the root of the path pointed to by <i>pszPathIn</i>. If this path is fully qualified, it is copied directly to the output buffer without being combined with the other path. This value can be <b>NULL</b>.</para>
+    </param>
+    <param name="dwFlags">
+      <para>One or more of the following flags:</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>PATHCCH_NONE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0000000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Do not allow for the construction of \?\ paths (ie, long paths) longer than <b>MAX_PATH</b> .</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>PATHCCH_ALLOW_LONG_PATHS</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000001</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Allow the construction of \?\ paths longer than <b>MAX_PATH</b>. Note that <i>cchPathOut</i> must be greater than <b>MAX_PATH</b>. Note that <i>cchPathOut</i> must be greater than <b>MAX_PATH</b>. If it is not, this flag is ignored.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>PATHCCH_FORCE_ENABLE_LONG_NAME_PROCESS</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000002</description>
+              </item>
+            </list>
+          </description>
+          <description>Forces the API to treat the caller as long path enabled, independent of the process's long name enabled state. This option can be used only when <b>PATHCCH_ALLOW_LONG_PATHS</b> is specified, and cannot be used with <b>PATHCCH_FORCE_DISABLE_LONG_NAME_PROCESS</b>.
+<para><b>Note</b> This value is available starting in Windows 10, version 1703.</para></description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>PATHCCH_FORCE_DISABLE_LONG_NAME_PROCESS</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000004</description>
+              </item>
+            </list>
+          </description>
+          <description>Forces the API to treat the caller as long path disabled, independent of the process's long name enabled state. This option can be used only when <b>PATHCCH_ALLOW_LONG_PATHS</b> is specified, and cannot be used with <b>PATHCCH_FORCE_ENABLE_LONG_NAME_PROCESS</b>.
+<para><b>Note</b> This value is available starting in Windows 10, version 1703.</para></description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>PATHCCH_DO_NOT_NORMALIZE_SEGMENTS</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000008</description>
+              </item>
+            </list>
+          </description>
+          <description>Disables the normalization of path segments that includes removing trailing dots and spaces. This enables access to paths that win32 path normalization will block.
+<para><b>Note</b> This value is available starting in Windows 10, version 1703.</para></description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>PATHCCH_ENSURE_IS_EXTENDED_LENGTH_PATH</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000010</description>
+              </item>
+            </list>
+          </description>
+          <description>Converts the input path into the extended length DOS device path form (with the \\?\ prefix) if not already in that form. This enables access to paths that are otherwise not addressable due to Win32 normalization rules (that can strip trailing dots and spaces) and path length limitations. This option implies the same behavior of <b>PATHCCH_DO_NOT_NORMALIZE_SEGMENTS</b>.
+<para><b>Note</b> This value is available starting in Windows 10, version 1703.</para></description>
+        </item>
+      </list>
+    </param>
+    <returns>
+      <para>This function returns an <b>HRESULT</b> code, including the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The function succeeded. Note that this also includes the case of an empty extension, such as a period with no characters following it. In that case, the original string is returned unaltered.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>This value can be caused by several things, such as the <i>pszPathOut</i> param being set to <b>NULL</b>, or the <i>cchPathOut</i> value being set to 0 or a value greater than <b>PATHCCH_MAX_CCH</b> .</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>The function could not allocate enough memory to perform the operation.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>PATHCCH_E_FILENAME_TOO_LONG</b>
+            </para>
+          </description>
+          <description>
+            <para>The size of one or both of the original paths exceeded <b>PATHCCH_MAX_CCH</b> .</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>If both <i>pszPathIn</i> and <i>pszMore</i> are <b>NULL</b> or point to empty strings, a single backslash is copied to the buffer pointed to by <i>pszPathOut</i>.</para>
+    </remarks>
+    <seealso cref="PathCchCanonicalize" />
+    <seealso cref="PathCchCanonicalizeEx" />
+    <seealso cref="PathCchCombine" />
+  </member>
+  <member name="Windows.PathCchFindExtension">
+    <summary>
+      <para>Searches a path to find its file name extension, such as ".exe" or ".ini". This function does not search for a specific extension; it searches for the presence of any extension.</para>
+      <para>This function differs from <see cref="PathFindExtension" /> in that it accepts paths with "\", "\?" and "\?\UNC" prefixes.</para>
+      <para>
+        <b>Note</b>  This function should be used in place of <see cref="PathFindExtension" /> to prevent the possibility of a buffer overrun.</para>
+    </summary>
+    <param name="pszPath">
+      <para>A pointer to the path to search.</para>
+    </param>
+    <param name="cchPath">
+      <para>The size of the buffer pointed to by <i>pszPath</i>, in characters.</para>
+    </param>
+    <param name="ppszExt">
+      <para>The address of a pointer that, when this function returns successfully, points to the "." character that precedes the extension within <i>pszPath</i>. If no extension is found, it points to the string's terminating null character.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.PathCchIsRoot">
+    <summary>
+      <para>Determines whether a path string refers to the root of a volume.</para>
+      <para>This function differs from <see cref="PathIsRoot" /> in that it accepts paths with "\", "\?" and "\?\UNC" prefixes.</para>
+    </summary>
+    <param name="pszPath">
+      <para>A pointer to the path string.</para>
+    </param>
+    <returns>
+      <para>Returns <b>TRUE</b> if the specified path is a root, or <b>FALSE</b> otherwise.</para>
+    </returns>
+    <remarks>
+      <para>The following table shows the <b>PathCchIsRoot</b> return value for various paths.</para>
+      <list type="table">
+        <listheader>
+          <description>Path</description>
+          <description>PathCchIsRoot</description>
+        </listheader>
+        <item>
+          <description>"c:\"</description>
+          <description>TRUE</description>
+        </item>
+        <item>
+          <description>"c:"</description>
+          <description>FALSE</description>
+        </item>
+        <item>
+          <description>"c:\path1"</description>
+          <description>FALSE</description>
+        </item>
+        <item>
+          <description>"\path1"</description>
+          <description>TRUE</description>
+        </item>
+        <item>
+          <description>"path1"</description>
+          <description>FALSE</description>
+        </item>
+        <item>
+          <description>"\\path1\path2"</description>
+          <description>TRUE</description>
+        </item>
+        <item>
+          <description>"\\path1\path2\"</description>
+          <description>FALSE</description>
+        </item>
+        <item>
+          <description>"\\path1\path2\path3"</description>
+          <description>FALSE</description>
+        </item>
+        <item>
+          <description>"\\path1"</description>
+          <description>TRUE</description>
+        </item>
+        <item>
+          <description>"\\path1\"</description>
+          <description>FALSE</description>
+        </item>
+        <item>
+          <description>"\\"</description>
+          <description>TRUE</description>
+        </item>
+        <item>
+          <description>"\\?\UNC\"</description>
+          <description>TRUE</description>
+        </item>
+        <item>
+          <description>"\\?\UNC\path1\path2"</description>
+          <description>TRUE</description>
+        </item>
+        <item>
+          <description>"\\?\UNC\path1\path2\"</description>
+          <description>FALSE</description>
+        </item>
+        <item>
+          <description>"\\?\UNC\path1\path2\path3"</description>
+          <description>FALSE</description>
+        </item>
+        <item>
+          <description>"\\?\UNC\path1"</description>
+          <description>TRUE</description>
+        </item>
+        <item>
+          <description>"\\?\UNC\path1\"</description>
+          <description>FALSE</description>
+        </item>
+        <item>
+          <description>"\\?\c:\"</description>
+          <description>TRUE</description>
+        </item>
+        <item>
+          <description>"\\?\c:"</description>
+          <description>FALSE</description>
+        </item>
+        <item>
+          <description>"\\?\c:\path1"</description>
+          <description>FALSE</description>
+        </item>
+        <item>
+          <description>"\\?\Volume{guid}\"</description>
+          <description>TRUE</description>
+        </item>
+        <item>
+          <description>"\\?\Volume{guid}"</description>
+          <description>FALSE</description>
+        </item>
+        <item>
+          <description>"\\?\Volume{guid}\path1"</description>
+          <description>FALSE</description>
+        </item>
+        <item>
+          <description>NULL</description>
+          <description>FALSE</description>
+        </item>
+        <item>
+          <description>""</description>
+          <description>FALSE</description>
+        </item>
+      </list>
+      <para>This function returns <b>TRUE</b> for paths such as "", "<i>X</i>:" or "\\<i>server</i>\<i>share</i>". Paths such as "..\path2" or "\\<i>server</i>" return <b>FALSE</b>.</para>
+    </remarks>
+  </member>
+  <member name="Windows.PathCchRemoveBackslash">
+    <summary>
+      <para>Removes the trailing backslash from the end of a path string.</para>
+      <para>This function differs from <see cref="PathRemoveBackslash" /> in that it accepts paths with "\", "\?" and "\?\UNC" prefixes.</para>
+      <para>
+        <b>Note</b>  This function, or <see cref="PathCchRemoveBackslashEx" />, should be used in place of <see cref="PathRemoveBackslash" /> to prevent the possibility of a buffer overrun.</para>
+    </summary>
+    <param name="pszPath">
+      <para>A pointer to the path string. When this function returns successfully, the string contains the path with any trailing backslash removed. If no trailing backslash was found, the string is unchanged.</para>
+    </param>
+    <param name="cchPath">
+      <para>The size of the buffer pointed to by <i>pszPath</i>, in characters.</para>
+    </param>
+    <returns>
+      <para>This function returns <b>S_OK</b> if the function was successful, <b>S_FALSE</b> if the string was a root path or if no backslash was found, or an error code otherwise.</para>
+    </returns>
+    <remarks>
+      <para>This function will not remove the backslash from a root path string, such as "C:".</para>
+    </remarks>
+  </member>
+  <member name="Windows.PathCchRemoveBackslashEx">
+    <summary>
+      <para>Removes the trailing backslash from the end of a path string.</para>
+      <para>This function differs from <see cref="PathCchRemoveBackslash" /> in that it can return a pointer to the new end of the string and report the number of unused characters remaining in the buffer.</para>
+      <para>This function differs from <see cref="PathRemoveBackslash" /> in that it accepts paths with "\", "\?" and "\?\UNC" prefixes.</para>
+      <para>
+        <b>Note</b>  This function, or <see cref="PathCchRemoveBackslash" />, should be used in place of <see cref="PathRemoveBackslash" /> to prevent the possibility of a buffer overrun.</para>
+    </summary>
+    <param name="pszPath">
+      <para>A pointer to the path string. When this function returns successfully, the string contains the path with any trailing backslash removed. If no trailing backslash was found, the string is unchanged.</para>
+    </param>
+    <param name="cchPath">
+      <para>The size of the buffer pointed to by <i>pszPath</i>, in characters.</para>
+    </param>
+    <param name="ppszEnd">
+      <para>A value that, when this function returns successfully, receives the address of a pointer to end of the new string. If the string is a root path such as "C:", the pointer points to the backslash; otherwise the pointer points to the string's terminating null character.</para>
+    </param>
+    <param name="pcchRemaining">
+      <para>A pointer to a value that, when this function returns successfully, receives the number of unused characters in the destination buffer, including the terminating null character. If the string is a root path such as "C:", this count includes the backslash in that string.</para>
+    </param>
+    <returns>
+      <para>This function returns <b>S_OK</b> if the function was successful, <b>S_FALSE</b> if the string was a root path or if no backslash was found, or an error code otherwise.</para>
+    </returns>
+    <remarks>
+      <para>This function will not remove the backslash from a root path string, such as "C:".</para>
+    </remarks>
+  </member>
+  <member name="Windows.PathCchRemoveExtension">
+    <summary>
+      <para>Removes the file name extension from a path, if one is present.</para>
+      <para>This function differs from <see cref="PathRemoveExtension" /> in that it accepts paths with "\", "\?" and "\?\UNC" prefixes.</para>
+      <para>
+        <b>Note</b>This function, should be used in place of <see cref="PathRemoveExtension" /> to prevent the possibility of a buffer overrun.</para>
+    </summary>
+    <param name="pszPath">
+      <para>A pointer to the path string. When this function returns successfully, the string contains the path with any extension removed. If no extension was found, the string is unchanged.</para>
+    </param>
+    <param name="cchPath">
+      <para>The size of the buffer pointed to by <i>pszPath</i>, in characters.</para>
+    </param>
+    <returns>
+      <para>This function returns <b>S_OK</b> if the function was successful, <b>S_FALSE</b> if no extension was found, or an error code otherwise.</para>
+    </returns>
+  </member>
+  <member name="Windows.PathCchRemoveFileSpec">
+    <summary>
+      <para>Removes the last element in a path string, whether that element is a file name or a directory name. The element's leading backslash is also removed.</para>
+      <para>This function differs from <see cref="PathRemoveFileSpec" /> in that it accepts paths with "\", "\?" and "\?\UNC" prefixes.</para>
+      <para>
+        <b>Note</b>This function should be used in place of <see cref="PathRemoveFileSpec" /> to prevent the possibility of a buffer overrun.</para>
+    </summary>
+    <param name="pszPath">
+      <para>A pointer to the fully-qualified path string. When this function returns successfully, the string will have had its last element and its leading backslash removed. This function does not affect root paths such as "C:". In the case of a root path, the path string is returned unaltered. If a path string ends with a trailing backslash, only that backslash is removed.</para>
+    </param>
+    <param name="cchPath">
+      <para>The size of the buffer pointed to by <i>pszPath</i>, in characters.</para>
+    </param>
+    <returns>
+      <para>This function returns <b>S_OK</b> if the function was successful, <b>S_FALSE</b> if there was nothing to remove, or an error code otherwise.</para>
+    </returns>
+    <remarks>
+      <para>The following table shows the effect of this function on a selection of path strings.</para>
+      <list type="table">
+        <listheader>
+          <description>Original String</description>
+          <description>Returned String</description>
+        </listheader>
+        <item>
+          <description>"C:\path1"</description>
+          <description>"C:\"</description>
+        </item>
+        <item>
+          <description>"C:\path1\path2"</description>
+          <description>"C:\path1"</description>
+        </item>
+        <item>
+          <description>"C:\path1\"</description>
+          <description>"C:\path1"</description>
+        </item>
+        <item>
+          <description>"\\path1\path2\path3"</description>
+          <description>"\\path1\path2"</description>
+        </item>
+        <item>
+          <description>"\path1"</description>
+          <description>"\"</description>
+        </item>
+      </list>
+    </remarks>
+  </member>
+  <member name="Windows.PathCchRenameExtension">
+    <summary>
+      <para>Replaces a file name's extension at the end of a path string with a new extension. If the path string does not end with an extension, the new extension is added.</para>
+      <para>This function differs from <see cref="PathRenameExtension" /> in that it accepts paths with "\", "\?" and "\?\UNC" prefixes.</para>
+      <para>
+        <b>Note</b>  This function should be used in place of <see cref="PathRenameExtension" /> to prevent the possibility of a buffer overrun.</para>
+    </summary>
+    <param name="pszPath">
+      <para>A pointer to the path string. When this function returns successfully, this value points to the same string, but with the renamed or added extension.</para>
+    </param>
+    <param name="cchPath">
+      <para>The size of the buffer pointed to by <i>pszPath</i>, in characters.</para>
+    </param>
+    <param name="pszExt">
+      <para>A pointer to the new extension string. The leading '.' character is optional. In the case of an empty string (""), any existing extension in the path string is removed.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.PathCchSkipRoot">
+    <summary>
+      <para>Retrieves a pointer to the first character in a path following the drive letter or Universal Naming Convention (UNC) server/share path elements.</para>
+      <para>This function differs from <see cref="PathSkipRoot" /> in that it accepts paths with "\", "\?" and "\?\UNC" prefixes.</para>
+    </summary>
+    <param name="pszPath">
+      <para>A pointer to the path string.</para>
+    </param>
+    <param name="ppszRootEnd">
+      <para>The address of a pointer that, when this function returns successfully, points to the first character in a path following the drive letter or UNC server/share path elements. If the path consists of only a root, this value will point to the string's terminating null character.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="Windows.PathCchStripPrefix">
+    <summary>
+      <para>Removes the "\?" prefix, if present, from a file path.</para>
+    </summary>
+    <param name="pszPath">
+      <para>A pointer to the path string. When this function returns successfully, the same path string will have had the prefix removed, if the prefix was present. If no prefix was present, the string will be unchanged.</para>
+    </param>
+    <param name="cchPath">
+      <para>The size of the buffer pointed to by <i>pszPath</i>, in characters.</para>
+    </param>
+    <returns>
+      <para>This function returns <b>S_OK</b> if the prefix was removed, <b>S_FALSE</b> if the path did not have a prefix to remove, or an <b>HRESULT</b> failure code.</para>
+    </returns>
+  </member>
+  <member name="Windows.PathCchStripToRoot">
+    <summary>
+      <para>Removes all file and directory elements in a path except for the root information.</para>
+      <para>This function differs from <see cref="PathStripToRoot" /> in that it accepts paths with "\", "\?" and "\?\UNC" prefixes.</para>
+      <para>
+        <b>Note</b>  This function should be used in place of <see cref="PathStripToRoot" /> to prevent the possibility of a buffer overrun.</para>
+    </summary>
+    <param name="pszPath">
+      <para>A pointer to the path string. When this function returns successfully, this string contains only the root information taken from that path.</para>
+    </param>
+    <param name="cchPath">
+      <para>The size of the buffer pointed to by <i>pszPath</i>, in characters.</para>
+    </param>
+    <returns>
+      <para>This function returns <b>S_OK</b> if the path was truncated, <b>S_FALSE</b> if the path was already just a root, or an <b>HRESULT</b> failure code.</para>
+    </returns>
+    <remarks>
+      <para>Some examples of the effect of this function:</para>
+      <list type="table">
+        <listheader>
+          <description>Initial string</description>
+          <description>Final string</description>
+        </listheader>
+        <item>
+          <description>"C:\path1\path2\file"</description>
+          <description>"C:\"</description>
+        </item>
+        <item>
+          <description>"\\path1\path2\path3"</description>
+          <description>"\\path1\path2"</description>
+        </item>
+        <item>
+          <description>"\path1"</description>
+          <description>"\"</description>
+        </item>
+      </list>
+    </remarks>
+  </member>
+  <member name="Windows.PathIsUNCEx">
+    <summary>
+      <para>Determines if a path string is a valid Universal Naming Convention (UNC) path, as opposed to a path based on a drive letter.</para>
+      <para>This function differs from <see cref="PathIsUNC" /> in that it also allows you to extract the name of the server from the path.</para>
+    </summary>
+    <param name="pszPath">
+      <para>A pointer to the path string.</para>
+    </param>
+    <param name="ppszServer">
+      <para>A pointer to a string that, when this function returns successfully, receives the server portion of the UNC path. This value can be <b>NULL</b> if you don't need this information.</para>
+    </param>
+    <returns>
+      <para>Returns <b>TRUE</b> if the string is a valid UNC path; otherwise, <b>FALSE</b>.</para>
+    </returns>
+  </member>
+</doc>

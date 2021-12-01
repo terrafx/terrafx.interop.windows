@@ -8,13 +8,17 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ELEMDESC.xml' path='doc/member[@name="ELEMDESC"]/*' />
 public partial struct ELEMDESC
 {
+    /// <include file='ELEMDESC.xml' path='doc/member[@name="ELEMDESC.tdesc"]/*' />
     public TYPEDESC tdesc;
 
+    /// <include file='ELEMDESC.xml' path='doc/member[@name="ELEMDESC.Anonymous"]/*' />
     [NativeTypeName("tagELEMDESC::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/oaidl.h:733:5)")]
     public _Anonymous_e__Union Anonymous;
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.idldesc"]/*' />
     public ref IDLDESC idldesc
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -24,6 +28,7 @@ public partial struct ELEMDESC
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.paramdesc"]/*' />
     public ref PARAMDESC paramdesc
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -33,12 +38,15 @@ public partial struct ELEMDESC
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public partial struct _Anonymous_e__Union
     {
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.idldesc"]/*' />
         [FieldOffset(0)]
         public IDLDESC idldesc;
 
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.paramdesc"]/*' />
         [FieldOffset(0)]
         public PARAMDESC paramdesc;
     }

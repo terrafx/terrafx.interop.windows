@@ -7,13 +7,25 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MF_MEDIA_ENGINE_OPM_STATUS.xml' path='doc/member[@name="MF_MEDIA_ENGINE_OPM_STATUS"]/*' />
 [SupportedOSPlatform("windows8.1")]
 public enum MF_MEDIA_ENGINE_OPM_STATUS
 {
+    /// <include file='MF_MEDIA_ENGINE_OPM_STATUS.xml' path='doc/member[@name="MF_MEDIA_ENGINE_OPM_STATUS.MF_MEDIA_ENGINE_OPM_NOT_REQUESTED"]/*' />
     MF_MEDIA_ENGINE_OPM_NOT_REQUESTED = 0,
+
+    /// <include file='MF_MEDIA_ENGINE_OPM_STATUS.xml' path='doc/member[@name="MF_MEDIA_ENGINE_OPM_STATUS.MF_MEDIA_ENGINE_OPM_ESTABLISHED"]/*' />
     MF_MEDIA_ENGINE_OPM_ESTABLISHED = 1,
+
+    /// <include file='MF_MEDIA_ENGINE_OPM_STATUS.xml' path='doc/member[@name="MF_MEDIA_ENGINE_OPM_STATUS.MF_MEDIA_ENGINE_OPM_FAILED_VM"]/*' />
     MF_MEDIA_ENGINE_OPM_FAILED_VM = 2,
+
+    /// <include file='MF_MEDIA_ENGINE_OPM_STATUS.xml' path='doc/member[@name="MF_MEDIA_ENGINE_OPM_STATUS.MF_MEDIA_ENGINE_OPM_FAILED_BDA"]/*' />
     MF_MEDIA_ENGINE_OPM_FAILED_BDA = 3,
+
+    /// <include file='MF_MEDIA_ENGINE_OPM_STATUS.xml' path='doc/member[@name="MF_MEDIA_ENGINE_OPM_STATUS.MF_MEDIA_ENGINE_OPM_FAILED_UNSIGNED_DRIVER"]/*' />
     MF_MEDIA_ENGINE_OPM_FAILED_UNSIGNED_DRIVER = 4,
+
+    /// <include file='MF_MEDIA_ENGINE_OPM_STATUS.xml' path='doc/member[@name="MF_MEDIA_ENGINE_OPM_STATUS.MF_MEDIA_ENGINE_OPM_FAILED"]/*' />
     MF_MEDIA_ENGINE_OPM_FAILED = 5,
 }

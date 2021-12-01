@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ISyncMgrHandlerCollection.xml' path='doc/member[@name="ISyncMgrHandlerCollection"]/*' />
 [Guid("A7F337A3-D20B-45CB-9ED7-87D094CA5045")]
 [NativeTypeName("struct ISyncMgrHandlerCollection : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ISyncMgrHandlerCollection : ISyncMgrHandlerCollecti
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ISyncMgrHandlerCollection : ISyncMgrHandlerCollecti
         return ((delegate* unmanaged<ISyncMgrHandlerCollection*, Guid*, void**, int>)(lpVtbl[0]))((ISyncMgrHandlerCollection*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ISyncMgrHandlerCollection : ISyncMgrHandlerCollecti
         return ((delegate* unmanaged<ISyncMgrHandlerCollection*, uint>)(lpVtbl[1]))((ISyncMgrHandlerCollection*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ISyncMgrHandlerCollection : ISyncMgrHandlerCollecti
         return ((delegate* unmanaged<ISyncMgrHandlerCollection*, uint>)(lpVtbl[2]))((ISyncMgrHandlerCollection*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ISyncMgrHandlerCollection.xml' path='doc/member[@name="ISyncMgrHandlerCollection.GetHandlerEnumerator"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetHandlerEnumerator(IEnumString** ppenum)
@@ -46,6 +51,7 @@ public unsafe partial struct ISyncMgrHandlerCollection : ISyncMgrHandlerCollecti
         return ((delegate* unmanaged<ISyncMgrHandlerCollection*, IEnumString**, int>)(lpVtbl[3]))((ISyncMgrHandlerCollection*)Unsafe.AsPointer(ref this), ppenum);
     }
 
+    /// <include file='ISyncMgrHandlerCollection.xml' path='doc/member[@name="ISyncMgrHandlerCollection.BindToHandler"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT BindToHandler([NativeTypeName("LPCWSTR")] ushort* pszHandlerID, [NativeTypeName("const IID &")] Guid* riid, void** ppv)

@@ -5,20 +5,27 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CTL_VERIFY_USAGE_PARA.xml' path='doc/member[@name="CTL_VERIFY_USAGE_PARA"]/*' />
 public unsafe partial struct CTL_VERIFY_USAGE_PARA
 {
+    /// <include file='CTL_VERIFY_USAGE_PARA.xml' path='doc/member[@name="CTL_VERIFY_USAGE_PARA.cbSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbSize;
 
+    /// <include file='CTL_VERIFY_USAGE_PARA.xml' path='doc/member[@name="CTL_VERIFY_USAGE_PARA.ListIdentifier"]/*' />
     public CRYPT_DATA_BLOB ListIdentifier;
 
+    /// <include file='CTL_VERIFY_USAGE_PARA.xml' path='doc/member[@name="CTL_VERIFY_USAGE_PARA.cCtlStore"]/*' />
     [NativeTypeName("DWORD")]
     public uint cCtlStore;
 
+    /// <include file='CTL_VERIFY_USAGE_PARA.xml' path='doc/member[@name="CTL_VERIFY_USAGE_PARA.rghCtlStore"]/*' />
     public HCERTSTORE* rghCtlStore;
 
+    /// <include file='CTL_VERIFY_USAGE_PARA.xml' path='doc/member[@name="CTL_VERIFY_USAGE_PARA.cSignerStore"]/*' />
     [NativeTypeName("DWORD")]
     public uint cSignerStore;
 
+    /// <include file='CTL_VERIFY_USAGE_PARA.xml' path='doc/member[@name="CTL_VERIFY_USAGE_PARA.rghSignerStore"]/*' />
     public HCERTSTORE* rghSignerStore;
 }

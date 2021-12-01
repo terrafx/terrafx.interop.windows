@@ -7,21 +7,27 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMAGE_LINENUMBER.xml' path='doc/member[@name="IMAGE_LINENUMBER"]/*' />
 public partial struct IMAGE_LINENUMBER
 {
+    /// <include file='IMAGE_LINENUMBER.xml' path='doc/member[@name="IMAGE_LINENUMBER.Type"]/*' />
     [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:19349:5)")]
     public _Type_e__Union Type;
 
+    /// <include file='IMAGE_LINENUMBER.xml' path='doc/member[@name="IMAGE_LINENUMBER.Linenumber"]/*' />
     [NativeTypeName("WORD")]
     public ushort Linenumber;
 
+    /// <include file='_Type_e__Union.xml' path='doc/member[@name="_Type_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit, Pack = 2)]
     public partial struct _Type_e__Union
     {
+        /// <include file='_Type_e__Union.xml' path='doc/member[@name="_Type_e__Union.SymbolTableIndex"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("DWORD")]
         public uint SymbolTableIndex;
 
+        /// <include file='_Type_e__Union.xml' path='doc/member[@name="_Type_e__Union.VirtualAddress"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("DWORD")]
         public uint VirtualAddress;

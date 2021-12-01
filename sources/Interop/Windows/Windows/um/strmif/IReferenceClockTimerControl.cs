@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IReferenceClockTimerControl.xml' path='doc/member[@name="IReferenceClockTimerControl"]/*' />
 [Guid("EBEC459C-2ECA-4D42-A8AF-30DF557614B8")]
 [NativeTypeName("struct IReferenceClockTimerControl : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IReferenceClockTimerControl : IReferenceClockTimerC
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IReferenceClockTimerControl : IReferenceClockTimerC
         return ((delegate* unmanaged<IReferenceClockTimerControl*, Guid*, void**, int>)(lpVtbl[0]))((IReferenceClockTimerControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IReferenceClockTimerControl : IReferenceClockTimerC
         return ((delegate* unmanaged<IReferenceClockTimerControl*, uint>)(lpVtbl[1]))((IReferenceClockTimerControl*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IReferenceClockTimerControl : IReferenceClockTimerC
         return ((delegate* unmanaged<IReferenceClockTimerControl*, uint>)(lpVtbl[2]))((IReferenceClockTimerControl*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IReferenceClockTimerControl.xml' path='doc/member[@name="IReferenceClockTimerControl.SetDefaultTimerResolution"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetDefaultTimerResolution([NativeTypeName("REFERENCE_TIME")] long timerResolution)
@@ -46,6 +51,7 @@ public unsafe partial struct IReferenceClockTimerControl : IReferenceClockTimerC
         return ((delegate* unmanaged<IReferenceClockTimerControl*, long, int>)(lpVtbl[3]))((IReferenceClockTimerControl*)Unsafe.AsPointer(ref this), timerResolution);
     }
 
+    /// <include file='IReferenceClockTimerControl.xml' path='doc/member[@name="IReferenceClockTimerControl.GetDefaultTimerResolution"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetDefaultTimerResolution([NativeTypeName("REFERENCE_TIME *")] long* pTimerResolution)

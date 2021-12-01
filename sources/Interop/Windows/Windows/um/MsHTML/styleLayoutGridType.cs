@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='styleLayoutGridType.xml' path='doc/member[@name="styleLayoutGridType"]/*' />
 public enum styleLayoutGridType
 {
+    /// <include file='styleLayoutGridType.xml' path='doc/member[@name="styleLayoutGridType.styleLayoutGridTypeNotSet"]/*' />
     styleLayoutGridTypeNotSet = 0,
+
+    /// <include file='styleLayoutGridType.xml' path='doc/member[@name="styleLayoutGridType.styleLayoutGridTypeLoose"]/*' />
     styleLayoutGridTypeLoose = 1,
+
+    /// <include file='styleLayoutGridType.xml' path='doc/member[@name="styleLayoutGridType.styleLayoutGridTypeStrict"]/*' />
     styleLayoutGridTypeStrict = 2,
+
+    /// <include file='styleLayoutGridType.xml' path='doc/member[@name="styleLayoutGridType.styleLayoutGridTypeFixed"]/*' />
     styleLayoutGridTypeFixed = 3,
+
+    /// <include file='styleLayoutGridType.xml' path='doc/member[@name="styleLayoutGridType.styleLayoutGridType_Max"]/*' />
     styleLayoutGridType_Max = 2147483647,
 }

@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WICPngHistProperties.xml' path='doc/member[@name="WICPngHistProperties"]/*' />
 public enum WICPngHistProperties : uint
 {
+    /// <include file='WICPngHistProperties.xml' path='doc/member[@name="WICPngHistProperties.WICPngHistFrequencies"]/*' />
     WICPngHistFrequencies = 0x1,
+
+    /// <include file='WICPngHistProperties.xml' path='doc/member[@name="WICPngHistProperties.WICPngHistProperties_FORCE_DWORD"]/*' />
     WICPngHistProperties_FORCE_DWORD = 0x7fffffff,
 }

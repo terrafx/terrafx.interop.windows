@@ -5,8 +5,10 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MAXVERSIONTESTED_INFO.xml' path='doc/member[@name="MAXVERSIONTESTED_INFO"]/*' />
 public partial struct MAXVERSIONTESTED_INFO
 {
+    /// <include file='MAXVERSIONTESTED_INFO.xml' path='doc/member[@name="MAXVERSIONTESTED_INFO.MaxVersionTested"]/*' />
     [NativeTypeName("ULONGLONG")]
     public ulong MaxVersionTested;
 }

@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IFileSystemImageResult2.get_ModifiedBlocks">
+    <summary>
+      <para>Retrieves the list of modified blocks in the result image.</para>
+    </summary>
+    <param name="pVal">
+      <para>Pointer to an <see cref="IBlockRangeList" /> interface representing the modified block ranges in the result image.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>Pointer is not valid.</para>
+            <para>Value: 0x80004003</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_NOTIMPL</b>
+            </para>
+          </description>
+          <description>
+            <para>Not implemented.</para>
+            <para>Value: 0x80004001</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method returns <b>E_NOTIMPL</b> if the entire result image must be recorded. If this method returns a successful return code, it is sufficient to record only the sectors described by <see cref="IBlockRangeList" /> returned in <i>pVal</i>. It is highly recommended to record the sector ranges in exactly the same order as they are listed in <b>IBlockRangeList</b>.</para>
+    </remarks>
+    <seealso cref="IFileSystemImageResult2" />
+  </member>
+  <member name="IFileSystemImageResult2">
+    <summary>
+      <para>The <b>IFileSystemImageResult2</b> interface allows the data recorder object to retrieve information about modified blocks in images created for rewritable discs. Alternatively, <b>IUnknown.QueryInterface</b> can be called on the object returned by <see cref="IFileSystemImageResult.get_ImageStream" /> to get the <see cref="IBlockRangeList" /> interface providing this information.</para>
+    </summary>
+    <remarks>
+      <para>When the file system image object is used to append data to a rewritable disc, the result image contains both the previous logical session and the new additions. The result image represents the binary data that must be recorded to disc starting from sector 0 to get a disc containing both old and new files. However, the previous logical session remains mostly intact during addition of new files, so the burn time can be substantially optimized by recording only the sectors that are new or have been modified.</para>
+    </remarks>
+    <seealso cref="IFileSystemImageResult" />
+  </member>
+</doc>

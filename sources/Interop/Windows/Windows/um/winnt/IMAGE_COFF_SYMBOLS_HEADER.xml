@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMAGE_COFF_SYMBOLS_HEADER">
+    <summary>
+      <para>Represents the COFF symbols header.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Debug/imagehlp-structures">ImageHlp Structures</seealso>
+  </member>
+  <member name="IMAGE_COFF_SYMBOLS_HEADER.NumberOfSymbols">
+    <summary>
+      <para>The number of symbols.</para>
+    </summary>
+  </member>
+  <member name="IMAGE_COFF_SYMBOLS_HEADER.LvaToFirstSymbol">
+    <summary>
+      <para>The virtual address of the first symbol.</para>
+    </summary>
+  </member>
+  <member name="IMAGE_COFF_SYMBOLS_HEADER.NumberOfLinenumbers">
+    <summary>
+      <para>The number of line-number entries.</para>
+    </summary>
+  </member>
+  <member name="IMAGE_COFF_SYMBOLS_HEADER.LvaToFirstLinenumber">
+    <summary>
+      <para>The virtual address of the first line-number entry.</para>
+    </summary>
+  </member>
+  <member name="IMAGE_COFF_SYMBOLS_HEADER.RvaToFirstByteOfCode">
+    <summary>
+      <para>The relative virtual address of the first byte of code.</para>
+    </summary>
+  </member>
+  <member name="IMAGE_COFF_SYMBOLS_HEADER.RvaToLastByteOfCode">
+    <summary>
+      <para>The relative virtual address of the last byte of code.</para>
+    </summary>
+  </member>
+  <member name="IMAGE_COFF_SYMBOLS_HEADER.RvaToFirstByteOfData">
+    <summary>
+      <para>The relative virtual address of the first byte of data.</para>
+    </summary>
+  </member>
+  <member name="IMAGE_COFF_SYMBOLS_HEADER.RvaToLastByteOfData">
+    <summary>
+      <para>The relative virtual address of the last byte of data.</para>
+    </summary>
+  </member>
+</doc>

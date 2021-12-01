@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='tagAM_MEDIAEVENT_FLAGS.xml' path='doc/member[@name="tagAM_MEDIAEVENT_FLAGS"]/*' />
 public enum tagAM_MEDIAEVENT_FLAGS
 {
+    /// <include file='tagAM_MEDIAEVENT_FLAGS.xml' path='doc/member[@name="tagAM_MEDIAEVENT_FLAGS.AM_MEDIAEVENT_NONOTIFY"]/*' />
     AM_MEDIAEVENT_NONOTIFY = 0x01,
 }

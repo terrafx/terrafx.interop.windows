@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HTMLStyleFontFace.xml' path='doc/member[@name="HTMLStyleFontFace"]/*' />
 [Guid("3050F3D4-98B5-11CF-BB82-00AA00BDCE0B")]
 public partial struct HTMLStyleFontFace
 {

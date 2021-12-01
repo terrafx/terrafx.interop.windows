@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SERVICE_ERROR_TYPE.xml' path='doc/member[@name="SERVICE_ERROR_TYPE"]/*' />
 public enum SERVICE_ERROR_TYPE
 {
+    /// <include file='SERVICE_ERROR_TYPE.xml' path='doc/member[@name="SERVICE_ERROR_TYPE.IgnoreError"]/*' />
     IgnoreError = 0x00000000,
+
+    /// <include file='SERVICE_ERROR_TYPE.xml' path='doc/member[@name="SERVICE_ERROR_TYPE.NormalError"]/*' />
     NormalError = 0x00000001,
+
+    /// <include file='SERVICE_ERROR_TYPE.xml' path='doc/member[@name="SERVICE_ERROR_TYPE.SevereError"]/*' />
     SevereError = 0x00000002,
+
+    /// <include file='SERVICE_ERROR_TYPE.xml' path='doc/member[@name="SERVICE_ERROR_TYPE.CriticalError"]/*' />
     CriticalError = 0x00000003,
 }

@@ -1,0 +1,712 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IImageList.Add">
+    <summary>
+      <para>Adds an image or images to an image list.</para>
+    </summary>
+    <param name="hbmImage">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HBITMAP</a></b></para>
+      <para>A handle to the bitmap that contains the image or images. The number of images is inferred from the width of the bitmap.</para>
+    </param>
+    <param name="hbmMask">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HBITMAP</a></b></para>
+      <para>A handle to the bitmap that contains the mask. If no mask is used with the image list, this parameter is ignored.</para>
+    </param>
+    <param name="pi">
+      <para>Type: <b>int*</b></para>
+      <para>When this method returns, contains a pointer to the index of the first new image. If the method fails to successfully add the new image, this value is -1.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>IImageList.Add</b> copies the bitmap to an internal data structure. You must use the <see cref="DeleteObject" /> function to delete <i>hbmImage</i> and <i>hbmMask</i> after the method returns.</para>
+      <para>To use <b>IImageList.Add</b>, specify Comctl32.dll version 6 in the manifest. For more information on manifests, see <a href="https://docs.microsoft.com//windows/desktop/Controls/cookbook-overview">Enabling Visual Styles</a>.</para>
+    </remarks>
+  </member>
+  <member name="IImageList.AddMasked">
+    <summary>
+      <para>Adds an image or images to an image list, generating a mask from the specified bitmap.</para>
+    </summary>
+    <param name="hbmImage">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HBITMAP</a></b></para>
+      <para>A handle to the bitmap that contains one or more images. The number of images is inferred from the width of the bitmap.</para>
+    </param>
+    <param name="crMask">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">COLORREF</a></b></para>
+      <para>The color used to generate the mask. Each pixel of this color in the specified bitmap is changed to black, and the corresponding bit in the mask is set to 1. If this parameter is CLR_DEFAULT, then the color of the pixel at (0,0) is used as the mask.</para>
+    </param>
+    <param name="pi">
+      <para>Type: <b>int*</b></para>
+      <para>A pointer to an <b>int</b> that contains the index of the first new image when it returns, if successful, or -1 otherwise.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>Note</b>  The bitmap passed in <i>hbmImage</i> will be modified.</para>
+      <para>
+        <b>IImageList.AddMasked</b> copies the bitmap to an internal data structure. Bitmaps with color depth greater than 8bpp are not supported. You must use the <see cref="DeleteObject" /> function to delete <i>hbmImage</i> and <i>crMask</i> after the method returns.</para>
+      <para>To use <b>IImageList.AddMasked</b>, specify Comctl32.dll version 6 in the manifest. For more information on manifests, see <a href="https://docs.microsoft.com//windows/desktop/Controls/cookbook-overview">Enabling Visual Styles</a>.</para>
+    </remarks>
+  </member>
+  <member name="IImageList.BeginDrag">
+    <summary>
+      <para>Begins dragging an image.</para>
+    </summary>
+    <param name="iTrack">
+      <para>Type: <b>int</b></para>
+      <para>A value of type <b>int</b> that contains the index of the image to drag.</para>
+    </param>
+    <param name="dxHotspot">
+      <para>Type: <b>int</b></para>
+      <para>A value of type <b>int</b> that contains the x-component of the drag position relative to the upper-left corner of the image.</para>
+    </param>
+    <param name="dyHotspot">
+      <para>Type: <b>int</b></para>
+      <para>A value of type <b>int</b> that contains the y-component of the drag position relative to the upper-left corner of the image.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>IImageList.BeginDrag</b> creates a temporary image list that is used for dragging. In response to subsequent <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-mousemove">WM_MOUSEMOVE</a> messages, you can move the drag image by using <see cref="IImageList.DragMove" />. To end the drag operation, you can use <see cref="IImageList.EndDrag" />.</para>
+      <para>To use <b>IImageList.BeginDrag</b>, specify Comctl32.dll version 6 in the manifest. For more information on manifests, see <a href="https://docs.microsoft.com//windows/desktop/Controls/cookbook-overview">Enabling Visual Styles</a>.</para>
+    </remarks>
+  </member>
+  <member name="IImageList.Clone">
+    <summary>
+      <para>Clones an existing image list.</para>
+    </summary>
+    <param name="riid">
+      <para>Type: <b>REFIID</b></para>
+      <para>An IID for the new image list.</para>
+    </param>
+    <param name="ppv">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">PVOID</a>*</b></para>
+      <para>The address of a  pointer to the interface for the new image list.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>To use <b>IImageList.Clone</b>, specify Comctl32.dll version 6 in the manifest. For more information on manifests, see <a href="https://docs.microsoft.com//windows/desktop/Controls/cookbook-overview">Enabling Visual Styles</a>.</para>
+    </remarks>
+  </member>
+  <member name="IImageList.Copy">
+    <summary>
+      <para>Copies images from a given image list.</para>
+    </summary>
+    <param name="iDst">
+      <para>Type: <b>int</b></para>
+      <para>A value of type <b>int</b> that contains the zero-based index of the destination image for the copy operation.</para>
+    </param>
+    <param name="punkSrc">
+      <para>Type: <b><see cref="IUnknown" />*</b></para>
+      <para>A pointer to the <see cref="IUnknown" /> interface for the source image list.</para>
+    </param>
+    <param name="iSrc">
+      <para>Type: <b>int</b></para>
+      <para>A value of type <b>int</b> that contains the zero-based index of the source image for the copy operation.</para>
+    </param>
+    <param name="uFlags">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>A value that specifies the type of copy operation to be made.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The <i>uFlags</i> parameter can have the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <b>ILCF_MOVE</b>
+          </description>
+          <description>The source image is copied to the destination image's index. This operation results in multiple instances of a given image.
+</description>
+        </item>
+        <item>
+          <description>
+            <b>ILCF_SWAP</b>
+          </description>
+          <description>The source and destination images exchange positions within the image list.
+</description>
+        </item>
+      </list>
+      <para>To use <b>IImageList.Copy</b>, specify Comctl32.dll version 6 in the manifest. For more information on manifests, see <a href="https://docs.microsoft.com//windows/desktop/Controls/cookbook-overview">Enabling Visual Styles</a>.</para>
+    </remarks>
+  </member>
+  <member name="IImageList.DragEnter">
+    <summary>
+      <para>Locks updates to the specified window during a drag operation and displays the drag image at the specified position within the window.</para>
+    </summary>
+    <param name="hwndLock">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the window that owns the drag image.</para>
+    </param>
+    <param name="x">
+      <para>Type: <b>int</b></para>
+      <para>The x-coordinate at which to display the drag image. The coordinate is relative to the upper-left corner of the window, not the client area.</para>
+    </param>
+    <param name="y">
+      <para>Type: <b>int</b></para>
+      <para>The y-coordinate at which to display the drag image. The coordinate is relative to the upper-left corner of the window, not the client area.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>To begin a drag operation, use <see cref="IImageList.BeginDrag" />.</para>
+      <para>To use <b>IImageList.DragEnter</b>, specify Comctl32.dll version 6 in the manifest. For more information on manifests, see <a href="https://docs.microsoft.com//windows/desktop/Controls/cookbook-overview">Enabling Visual Styles</a>.</para>
+    </remarks>
+  </member>
+  <member name="IImageList.DragLeave">
+    <summary>
+      <para>Unlocks the specified window and hides the drag image, which enables the window to update.</para>
+    </summary>
+    <param name="hwndLock">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>A handle to the window that contains the drag image.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>To use <b>IImageList.DragLeave</b>, specify Comctl32.dll version 6 in the manifest. For more information on manifests, see <a href="https://docs.microsoft.com//windows/desktop/Controls/cookbook-overview">Enabling Visual Styles</a>.</para>
+    </remarks>
+  </member>
+  <member name="IImageList.DragMove">
+    <summary>
+      <para>Moves the image that is being dragged during a drag-and-drop operation. This function is typically called in response to a <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-mousemove">WM_MOUSEMOVE</a> message.</para>
+    </summary>
+    <param name="x">
+      <para>Type: <b>int</b></para>
+      <para>A value of type <b>int</b> that contains the x-coordinate where the drag image appears. The coordinate is relative to the upper-left corner of the window, not the client area.</para>
+    </param>
+    <param name="y">
+      <para>Type: <b>int</b></para>
+      <para>A value of type <b>int</b> that contains the y-coordinate where the drag image appears. The coordinate is relative to the upper-left corner of the window, not the client area.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>To begin a drag operation, use the <see cref="IImageList.BeginDrag" /> method.</para>
+      <para>To use <b>IImageList.DragMove</b>, specify Comctl32.dll version 6 in the manifest. For more information on manifests, see <a href="https://docs.microsoft.com//windows/desktop/Controls/cookbook-overview">Enabling Visual Styles</a>.</para>
+    </remarks>
+  </member>
+  <member name="IImageList.DragShowNolock">
+    <summary>
+      <para>Shows or hides the image being dragged.</para>
+    </summary>
+    <param name="fShow">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BOOL</a></b></para>
+      <para>A value that specifies whether to show or hide the image being dragged. Specify <b>TRUE</b> to show the image or <b>FALSE</b> to hide the image.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>To use <b>IImageList.DragShowNolock</b>, specify Comctl32.dll version 6 in the manifest. For more information on manifests, see <a href="https://docs.microsoft.com//windows/desktop/Controls/cookbook-overview">Enabling Visual Styles</a>.</para>
+    </remarks>
+  </member>
+  <member name="IImageList.Draw">
+    <summary>
+      <para>Draws an image list item in the specified device context.</para>
+    </summary>
+    <param name="pimldp">
+      <para>Type: <b><see cref="IMAGELISTDRAWPARAMS" />*</b></para>
+      <para>A pointer to an  <see cref="IMAGELISTDRAWPARAMS" /> structure that contains the  drawing parameters.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Overlay images draw transparently over the primary image specified in the <b>i</b> parameter of <see cref="IMAGELISTDRAWPARAMS" />. You specify an overlay image in the <b>fStyle</b>, parameter of <b>IMAGELISTDRAWPARAMS</b> using the <see cref="INDEXTOOVERLAYMASK" /> macro to shift the one-based index of the overlay image. Use the OR operator to combine the macro's return value with the drawing style flags specified in <b>fStyle</b>. You must first specify this image as an overlay image by using <see cref="IImageList.SetOverlayImage" />.</para>
+      <para>To use <b>IImageList.Draw</b>, specify Comctl32.dll version 6 in the manifest. For more information on manifests, see <a href="https://docs.microsoft.com//windows/desktop/Controls/cookbook-overview">Enabling Visual Styles</a>.</para>
+    </remarks>
+  </member>
+  <member name="IImageList.EndDrag">
+    <summary>
+      <para>Ends a drag operation.</para>
+    </summary>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>To use <b>IImageList.EndDrag</b>, specify Comctl32.dll version 6 in the manifest. For more information on manifests, see <a href="https://docs.microsoft.com//windows/desktop/Controls/cookbook-overview">Enabling Visual Styles</a>.</para>
+    </remarks>
+  </member>
+  <member name="IImageList.GetBkColor">
+    <summary>
+      <para>Gets the current background color for an image list.</para>
+    </summary>
+    <param name="pclr">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">COLORREF</a>*</b></para>
+      <para>A pointer to a <a href="https://docs.microsoft.com//windows/desktop/gdi/colorref">COLORREF</a> that contains the background color when the method returns.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>To use <b>IImageList.GetBkColor</b>, specify Comctl32.dll version 6 in the manifest. For more information on manifests, see <a href="https://docs.microsoft.com//windows/desktop/Controls/cookbook-overview">Enabling Visual Styles</a>.</para>
+    </remarks>
+  </member>
+  <member name="IImageList.GetDragImage">
+    <summary>
+      <para>Gets the temporary image list that is used for the drag image. The function also retrieves the current drag position and the offset of the drag image relative to the drag position.</para>
+    </summary>
+    <param name="ppt">
+      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/dd162805(v=vs.85)">POINT</a>*</b></para>
+      <para>A pointer to a <a href="https://docs.microsoft.com//previous-versions/dd162805(v=vs.85)">POINT</a> structure that receives the current drag position. Can be <b>NULL</b>.</para>
+    </param>
+    <param name="pptHotspot">
+      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/dd162805(v=vs.85)">POINT</a>*</b></para>
+      <para>A pointer to a <a href="https://docs.microsoft.com//previous-versions/dd162805(v=vs.85)">POINT</a> structure that receives the offset of the drag image relative to the drag position. Can be <b>NULL</b>.</para>
+    </param>
+    <param name="riid">
+      <para>Type: <b>REFIID</b></para>
+      <para>An IID for the image list.</para>
+    </param>
+    <param name="ppv">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">PVOID</a>*</b></para>
+      <para>The address of a pointer to the interface for the image list if successful, <b>NULL</b> otherwise.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The temporary image list is destroyed when <see cref="IImageList.EndDrag" /> is called. To begin a drag operation, use <see cref="IImageList.BeginDrag" />.</para>
+      <para>To use <b>IImageList.GetDragImage</b>, specify Comctl32.dll version 6 in the manifest. For more information on manifests, see <a href="https://docs.microsoft.com//windows/desktop/Controls/cookbook-overview">Enabling Visual Styles</a>.</para>
+    </remarks>
+  </member>
+  <member name="IImageList.GetIcon">
+    <summary>
+      <para>Creates an icon from an image and a mask in an image list.</para>
+    </summary>
+    <param name="i">
+      <para>Type: <b>int</b></para>
+      <para>A value of type <b>int</b> that contains the index of the image.</para>
+    </param>
+    <param name="flags">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>A combination of flags that specify the drawing style. For a list of values, see <see cref="IImageList.Draw" />.</para>
+    </param>
+    <param name="picon">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HICON</a>*</b></para>
+      <para>A pointer to an <b>int</b> that contains the handle to the icon if successful, or <b>NULL</b> if otherwise.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The calling application must destroy the icon returned from this method using <see cref="DestroyIcon" />.</para>
+      <para>To use <b>IImageList.GetIcon</b>, specify Comctl32.dll version 6 in the manifest. For more information on manifests, see <a href="https://docs.microsoft.com//windows/desktop/Controls/cookbook-overview">Enabling Visual Styles</a>.</para>
+    </remarks>
+  </member>
+  <member name="IImageList.GetIconSize">
+    <summary>
+      <para>Gets the dimensions of images in an image list. All images in an image list have the same dimensions.</para>
+    </summary>
+    <param name="cx">
+      <para>Type: <b>int*</b></para>
+      <para>A pointer to an <b>int</b> that receives the width, in pixels, of each image.</para>
+    </param>
+    <param name="cy">
+      <para>Type: <b>int*</b></para>
+      <para>A pointer to an <b>int</b> that receives the height, in pixels, of each image.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>To use <b>IImageList.GetIconSize</b>, specify Comctl32.dll version 6 in the manifest. For more information on manifests, see <a href="https://docs.microsoft.com//windows/desktop/Controls/cookbook-overview">Enabling Visual Styles</a>.</para>
+    </remarks>
+  </member>
+  <member name="IImageList.GetImageCount">
+    <summary>
+      <para>Gets the number of images in an image list.</para>
+    </summary>
+    <param name="pi">
+      <para>Type: <b>int*</b></para>
+      <para>A pointer to an <b>int</b> that contains the number of images when the method returns.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>To use <b>IImageList.GetImageCount</b>, specify Comctl32.dll version 6 in the manifest. For more information on manifests, see <a href="https://docs.microsoft.com//windows/desktop/Controls/cookbook-overview">Enabling Visual Styles</a>.</para>
+    </remarks>
+  </member>
+  <member name="IImageList.GetImageInfo">
+    <summary>
+      <para>Gets information about an image.</para>
+    </summary>
+    <param name="i">
+      <para>Type: <b>int</b></para>
+      <para>A value of type <b>int</b> that contains the index of the image.</para>
+    </param>
+    <param name="pImageInfo">
+      <para>Type: <b><see cref="IMAGEINFO" />*</b></para>
+      <para>A pointer to an <see cref="IMAGEINFO" /> structure that receives information about the image. The information in this structure can directly manipulate the bitmaps of the image.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>To use <b>IImageList.GetImageInfo</b>, specify Comctl32.dll version 6 in the manifest. For more information on manifests, see <a href="https://docs.microsoft.com//windows/desktop/Controls/cookbook-overview">Enabling Visual Styles</a>.</para>
+    </remarks>
+  </member>
+  <member name="IImageList.GetImageRect">
+    <summary>
+      <para>Gets an image's bounding rectangle.</para>
+    </summary>
+    <param name="i">
+      <para>Type: <b>int</b></para>
+      <para>A value of type <b>int</b> that contains the index of the image.</para>
+    </param>
+    <param name="prc">
+      <para>Type: <b><see cref="RECT" />*</b></para>
+      <para>A pointer to a <b> RECT</b> that contains the bounding rectangle when the method returns.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>To use <b>IImageList.GetImageRect</b>, specify Comctl32.dll version 6 in the manifest. For more information on manifests, see <a href="https://docs.microsoft.com//windows/desktop/Controls/cookbook-overview">Enabling Visual Styles</a>.</para>
+    </remarks>
+  </member>
+  <member name="IImageList.GetItemFlags">
+    <summary>
+      <para>Gets the flags of an image.</para>
+    </summary>
+    <param name="i">
+      <para>Type: <b>int</b></para>
+      <para>A value of type <b>int</b> that contains the index of the images whose flags need to be retrieved.</para>
+    </param>
+    <param name="dwFlags">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">DWORD</a>*</b></para>
+      <para>A pointer to a <b>DWORD</b> that contains the flags when the method returns. One of the following values:</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>ILIF_ALPHA</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000001</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Indicates that the item in the imagelist has an alpha channel.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>ILIF_LOWQUALITY</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000002</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <b>Windows Vista and later.</b> Indicates that the item in the imagelist was generated via a StretchBlt function, consequently image quality may have degraded.
+</description>
+        </item>
+      </list>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>To use <b>IImageList.GetItemFlags</b>, specify Comctl32.dll version 6 in the manifest. For more information on manifests, see <a href="https://docs.microsoft.com//windows/desktop/Controls/cookbook-overview">Enabling Visual Styles</a>.</para>
+    </remarks>
+  </member>
+  <member name="IImageList.GetOverlayImage">
+    <summary>
+      <para>Retrieves a specified image from the list of images used as overlay masks.</para>
+    </summary>
+    <param name="iOverlay">
+      <para>Type: <b>int</b></para>
+      <para>A value of type <b>int</b> that contains the one-based index of the overlay mask.</para>
+    </param>
+    <param name="piIndex">
+      <para>Type: <b>int*</b></para>
+      <para>A pointer to an <b>int</b> that receives the zero-based index of
+an image in the image list. This index identifies the image that is used as an overlay mask.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>To use <b>IImageList.GetOverlayImage</b>, specify Comctl32.dll version 6 in the manifest. For more information on manifests, see <a href="https://docs.microsoft.com//windows/desktop/Controls/cookbook-overview">Enabling Visual Styles</a>.</para>
+    </remarks>
+  </member>
+  <member name="IImageList.Merge">
+    <summary>
+      <para>Creates a new image by combining two existing images. This method also creates a new image list in which to store the image.</para>
+    </summary>
+    <param name="i1">
+      <para>Type: <b>int</b></para>
+      <para>A value of type <b>int</b> that contains the index of the first existing image.</para>
+    </param>
+    <param name="punk2">
+      <para>Type: <b><see cref="IUnknown" />*</b></para>
+      <para>A pointer to the <see cref="IUnknown" /> interface of the image list that contains the second image.</para>
+    </param>
+    <param name="i2">
+      <para>Type: <b>int</b></para>
+      <para>A value of type <b>int</b> that contains the index of the second existing image.</para>
+    </param>
+    <param name="dx">
+      <para>Type: <b>int</b></para>
+      <para>A value of type <b>int</b>  that contains the x-component of the offset of the second image relative to the first image.</para>
+    </param>
+    <param name="dy">
+      <para>Type: <b>int</b></para>
+      <para>A value of type <b>int</b>  that contains the y-component of the offset of the second image relative to the first image.</para>
+    </param>
+    <param name="riid">
+      <para>Type: <b>REFIID</b></para>
+      <para>An IID of the interface for the new image list.</para>
+    </param>
+    <param name="ppv">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">PVOID</a>*</b></para>
+      <para>A raw pointer to the interface for the new image list.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The new image consists of the second image drawn transparently over the first.     The mask for the new image is obtained by combining the masks of the two existing images with the bitwise OR operator.</para>
+      <para>To use <b>IImageList.Merge</b>, specify Comctl32.dll version 6 in the manifest. For more information on manifests, see <a href="https://docs.microsoft.com//windows/desktop/Controls/cookbook-overview">Enabling Visual Styles</a>.</para>
+    </remarks>
+  </member>
+  <member name="IImageList.Remove">
+    <summary>
+      <para>Removes an image from an image list.</para>
+    </summary>
+    <param name="i">
+      <para>Type: <b>int</b></para>
+      <para>A value of type <b>int</b>  that contains the index of the image to remove. If this parameter is -1, the method removes all images.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>When an image is removed, the indexes of the remaining images adjust so that they  always range from zero to one less than the number of images in the image list. For example, if you remove the image at index 0, then image 1 becomes image 0, image 2 becomes image 1, and so on.</para>
+      <para>To use <b>IImageList.Remove</b>, specify Comctl32.dll version 6 in the manifest. For more information on manifests, see <a href="https://docs.microsoft.com//windows/desktop/Controls/cookbook-overview">Enabling Visual Styles</a>.</para>
+    </remarks>
+  </member>
+  <member name="IImageList.Replace">
+    <summary>
+      <para>Replaces an image in an image list with a new image.</para>
+    </summary>
+    <param name="i">
+      <para>Type: <b>int</b></para>
+      <para>A value of type <b>int</b> that contains the index of the image to replace.</para>
+    </param>
+    <param name="hbmImage">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HBITMAP</a></b></para>
+      <para>A handle to the bitmap that contains the image.</para>
+    </param>
+    <param name="hbmMask">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HBITMAP</a></b></para>
+      <para>A handle to the bitmap that contains the mask. If no mask is used with the image list, this parameter is ignored.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>IImageList.Replace</b> copies the bitmap to an internal data structure. You must use <see cref="DeleteObject" /> to delete <i>hbmImage</i> and <i>hbmMask</i> after the method returns.</para>
+      <para>To use <b>IImageList.Replace</b>, specify Comctl32.dll version 6 in the manifest. For more information on manifests, see <a href="https://docs.microsoft.com//windows/desktop/Controls/cookbook-overview">Enabling Visual Styles</a>.</para>
+    </remarks>
+  </member>
+  <member name="IImageList.ReplaceIcon">
+    <summary>
+      <para>Replaces an image with an icon or cursor.</para>
+    </summary>
+    <param name="i">
+      <para>Type: <b>int</b></para>
+      <para>A value of type <b>int</b> that contains the index of the image to replace. If i is -1, the function adds the image to the end of the list.</para>
+    </param>
+    <param name="hicon">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HICON</a></b></para>
+      <para>A handle to the icon or cursor that contains the bitmap and mask for the new image.</para>
+    </param>
+    <param name="pi">
+      <para>Type: <b>int*</b></para>
+      <para>A pointer to an <b>int</b> that will contain the index of the image on return if     successful, or -1 otherwise.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Because the system does not save <i>hicon</i>, you can destroy it after the function returns if the icon or cursor was created by <see cref="CreateIcon" />. You do not need to destroy <i>hicon</i> if it was loaded by the <see cref="LoadIcon" /> function; the system automatically frees an icon resource when it is no longer needed.</para>
+      <para>To use <b>IImageList.ReplaceIcon</b>, specify Comctl32.dll version 6 in the manifest. For more information on manifests, see <a href="https://docs.microsoft.com//windows/desktop/Controls/cookbook-overview">Enabling Visual Styles</a>.</para>
+    </remarks>
+  </member>
+  <member name="IImageList.SetBkColor">
+    <summary>
+      <para>Sets the background color for an image list. This method only functions if you add an icon to the image list or use the <see cref="IImageList.AddMasked" /> method to add a black and white bitmap. Without a mask, the entire image draws, and the background color is not visible.</para>
+    </summary>
+    <param name="clrBk">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">COLORREF</a></b></para>
+      <para>The background color to set. If this parameter is set to CLR_NONE, then images draw transparently using the <see cref="mask" />.</para>
+    </param>
+    <param name="pclr">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">COLORREF</a>*</b></para>
+      <para>A pointer to a <b>COLORREF</b> that contains the previous background color on return if successful, or CLR_NONE otherwise.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>To use <b>IImageList.SetBkColor</b>, specify Comctl32.dll version 6 in the manifest. For more information on manifests, see <a href="https://docs.microsoft.com//windows/desktop/Controls/cookbook-overview">Enabling Visual Styles</a>.</para>
+    </remarks>
+  </member>
+  <member name="IImageList.SetDragCursorImage">
+    <summary>
+      <para>Creates a new drag image by combining the specified image, which is typically a mouse cursor image, with the current drag image.</para>
+    </summary>
+    <param name="punk">
+      <para>Type: <b><see cref="IUnknown" />*</b></para>
+      <para>A pointer to the <see cref="IUnknown" /> interface that accesses the image list interface, which contains the new image to combine with the drag image.</para>
+    </param>
+    <param name="iDrag">
+      <para>Type: <b>int</b></para>
+      <para>A value of type <b>int</b> that contains the index of the new image to combine with the drag image.</para>
+    </param>
+    <param name="dxHotspot">
+      <para>Type: <b>int</b></para>
+      <para>A value of type <b>int</b> that contains the x-component of the hot spot within the new image.</para>
+    </param>
+    <param name="dyHotspot">
+      <para>Type: <b>int</b></para>
+      <para>A value of type <b>int</b> that contains the x-component of the hot spot within the new image.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>To use <b>IImageList.SetDragCursorImage</b>, specify Comctl32.dll version 6 in the manifest. For more information on manifests, see <a href="https://docs.microsoft.com//windows/desktop/Controls/cookbook-overview">Enabling Visual Styles</a>.</para>
+    </remarks>
+  </member>
+  <member name="IImageList.SetIconSize">
+    <summary>
+      <para>Sets the dimensions of images in an image list and removes all images from the list.</para>
+    </summary>
+    <param name="cx">
+      <para>Type: <b>int</b></para>
+      <para>A value of type <b>int</b> that contains the width, in pixels, of the images in the image list. All images in an image list have the same dimensions.</para>
+    </param>
+    <param name="cy">
+      <para>Type: <b>int</b></para>
+      <para>A value of type <b>int</b> that contains the height, in pixels, of the images in the image list. All images in an image list have the same dimensions.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>To use <b>IImageList.SetIconSize</b>, specify Comctl32.dll version 6 in the manifest. For more information on manifests, see <a href="https://docs.microsoft.com//windows/desktop/Controls/cookbook-overview">Enabling Visual Styles</a>.</para>
+    </remarks>
+  </member>
+  <member name="IImageList.SetImageCount">
+    <summary>
+      <para>Resizes an existing image list.</para>
+    </summary>
+    <param name="uNewCount">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>A value that specifies the new size of the image list.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>If an application expands an image list using this method, it must add new images by using <see cref="IImageList.Replace" />. If the application does not add valid images to the new indexes, draw operations that use the new indexes are unpredictable.</para>
+      <para>If you decrease the size of an image list using this method, images at the end of the list for which there is no longer room are truncated from the list.  Images truncated in this manner are automatically deallocated.</para>
+      <para>To use <b>IImageList.SetImageCount</b>, specify Comctl32.dll version 6 in the manifest. For more information on manifests, see <a href="https://docs.microsoft.com//windows/desktop/Controls/cookbook-overview">Enabling Visual Styles</a>.</para>
+    </remarks>
+  </member>
+  <member name="IImageList.SetOverlayImage">
+    <summary>
+      <para>Adds a specified image to the list of images used as overlay masks. An image list can have up to four overlay masks in Common Controls <a href="https://docs.microsoft.com//windows/desktop/Controls/common-control-versions">version 4.70</a> and earlier, and up to 15 in version 4.71 or later. The method assigns an overlay mask index to the specified image.</para>
+    </summary>
+    <param name="iImage">
+      <para>Type: <b>int</b></para>
+      <para>A value of type <b>int</b> that contains the zero-based index of an image in the image list. This index identifies the image to use as an overlay mask.</para>
+    </param>
+    <param name="iOverlay">
+      <para>Type: <b>int</b></para>
+      <para>A value of type <b>int</b> that contains the one-based index of the overlay mask.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>An overlay mask is an image drawn transparently over another image. To draw an overlay mask over an image, call <see cref="IImageList.Draw" />. The <b>fStyle</b> parameter of these functions can use the <see cref="INDEXTOOVERLAYMASK" /> macro to specify an overlay mask index.</para>
+      <para>A call to this method fails and returns E_INVALIDARG unless the image list is created using a mask.</para>
+      <para>To use <b>IImageList.SetOverlayImage</b>, specify Comctl32.dll version 6 in the manifest. For more information on manifests, see <a href="https://docs.microsoft.com//windows/desktop/Controls/cookbook-overview">Enabling Visual Styles</a>.</para>
+    </remarks>
+  </member>
+  <member name="IImageList">
+    <summary>
+      <para>Exposes methods that manipulate and interact with image lists.</para>
+      <para>To use <b>IImageList</b>, specify Comctl32.dll version 6 in the manifest. If you do not do this, Comctl32.dll version 5 will be used by default, with which <b>IImageList</b> could display unpredictable behavior. For more information on manifests, see <a href="https://docs.microsoft.com//windows/desktop/Controls/cookbook-overview">Enabling Visual Styles</a>.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Controls/image-lists">Image Lists</seealso>
+  </member>
+</doc>

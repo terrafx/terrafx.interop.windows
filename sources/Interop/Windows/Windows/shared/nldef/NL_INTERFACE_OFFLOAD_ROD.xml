@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="NL_INTERFACE_OFFLOAD_ROD">
+    <summary>
+      <para>The <b>NL_INTERFACE_OFFLOAD_ROD</b> structure  specifies a set of flags that indicate the offload capabilities for an IP interface.</para>
+    </summary>
+    <remarks>
+      <para>The <b>NL_INTERFACE_OFFLOAD_ROD</b> structure is defined on Windows Vista and later.</para>
+    </remarks>
+    <seealso cref="MIB_IPINTERFACE_ROW" />
+  </member>
+  <member name="NL_INTERFACE_OFFLOAD_ROD.NlChecksumSupported">
+    <summary>
+      <para>Type: <b>BOOLEAN</b></para>
+      <para>The network adapter for this network interface supports the offload of IP checksum calculations.</para>
+    </summary>
+  </member>
+  <member name="NL_INTERFACE_OFFLOAD_ROD.NlOptionsSupported">
+    <summary>
+      <para>Type: <b>BOOLEAN</b></para>
+      <para>The network adapter for this network interface supports the offload of IP checksum calculations for IPv4 packets with IP options.</para>
+    </summary>
+  </member>
+  <member name="NL_INTERFACE_OFFLOAD_ROD.TlDatagramChecksumSupported">
+    <summary>
+      <para>Type: <b>BOOLEAN</b></para>
+      <para>The network adapter for this network interface supports the offload of UDP checksum calculations.</para>
+    </summary>
+  </member>
+  <member name="NL_INTERFACE_OFFLOAD_ROD.TlStreamChecksumSupported">
+    <summary>
+      <para>Type: <b>BOOLEAN</b></para>
+      <para>The network adapter for this network interface supports the offload of TCP checksum calculations.</para>
+    </summary>
+  </member>
+  <member name="NL_INTERFACE_OFFLOAD_ROD.TlStreamOptionsSupported">
+    <summary>
+      <para>Type: <b>BOOLEAN</b></para>
+      <para>The network adapter for this network interface supports the offload of TCP checksum calculations for IPv4 packets containing IP options.</para>
+    </summary>
+  </member>
+  <member name="NL_INTERFACE_OFFLOAD_ROD.FastPathCompatible">
+    <summary>
+      <para>Type: <b>BOOLEAN</b></para>
+      <para>Reserved for internal use.</para>
+    </summary>
+  </member>
+  <member name="NL_INTERFACE_OFFLOAD_ROD.TlLargeSendOffloadSupported">
+    <summary>
+      <para>Type: <b>BOOLEAN</b></para>
+      <para>The network adapter for this network interface supports TCP Large Send Offload Version 1. With this capability, TCP can pass a buffer to be transmitted that is bigger than the maximum transmission unit (MTU) supported by the medium.  Version 1 allows TCP to pass a buffer up to 64K to be transmitted.</para>
+    </summary>
+  </member>
+  <member name="NL_INTERFACE_OFFLOAD_ROD.TlGiantSendOffloadSupported">
+    <summary>
+      <para>Type: <b>BOOLEAN</b></para>
+      <para>The network adapter for this network interface supports TCP Large Send Offload Version 2. With this capability, TCP can pass a buffer to be transmitted that is bigger than the maximum transmission unit (MTU) supported by the medium.  Version 2 allows TCP to pass a buffer up to 256K to be transmitted.</para>
+    </summary>
+  </member>
+</doc>

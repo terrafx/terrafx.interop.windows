@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITfInputProcessorProfileMgr.xml' path='doc/member[@name="ITfInputProcessorProfileMgr"]/*' />
 [Guid("71C6E74C-0F28-11D8-A82A-00065B84435C")]
 [NativeTypeName("struct ITfInputProcessorProfileMgr : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITfInputProcessorProfileMgr : ITfInputProcessorProf
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITfInputProcessorProfileMgr : ITfInputProcessorProf
         return ((delegate* unmanaged<ITfInputProcessorProfileMgr*, Guid*, void**, int>)(lpVtbl[0]))((ITfInputProcessorProfileMgr*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITfInputProcessorProfileMgr : ITfInputProcessorProf
         return ((delegate* unmanaged<ITfInputProcessorProfileMgr*, uint>)(lpVtbl[1]))((ITfInputProcessorProfileMgr*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITfInputProcessorProfileMgr : ITfInputProcessorProf
         return ((delegate* unmanaged<ITfInputProcessorProfileMgr*, uint>)(lpVtbl[2]))((ITfInputProcessorProfileMgr*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITfInputProcessorProfileMgr.xml' path='doc/member[@name="ITfInputProcessorProfileMgr.ActivateProfile"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT ActivateProfile([NativeTypeName("DWORD")] uint dwProfileType, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("const GUID &")] Guid* guidProfile, HKL hkl, [NativeTypeName("DWORD")] uint dwFlags)
@@ -46,6 +51,7 @@ public unsafe partial struct ITfInputProcessorProfileMgr : ITfInputProcessorProf
         return ((delegate* unmanaged<ITfInputProcessorProfileMgr*, uint, ushort, Guid*, Guid*, HKL, uint, int>)(lpVtbl[3]))((ITfInputProcessorProfileMgr*)Unsafe.AsPointer(ref this), dwProfileType, langid, clsid, guidProfile, hkl, dwFlags);
     }
 
+    /// <include file='ITfInputProcessorProfileMgr.xml' path='doc/member[@name="ITfInputProcessorProfileMgr.DeactivateProfile"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT DeactivateProfile([NativeTypeName("DWORD")] uint dwProfileType, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("const GUID &")] Guid* guidProfile, HKL hkl, [NativeTypeName("DWORD")] uint dwFlags)
@@ -53,6 +59,7 @@ public unsafe partial struct ITfInputProcessorProfileMgr : ITfInputProcessorProf
         return ((delegate* unmanaged<ITfInputProcessorProfileMgr*, uint, ushort, Guid*, Guid*, HKL, uint, int>)(lpVtbl[4]))((ITfInputProcessorProfileMgr*)Unsafe.AsPointer(ref this), dwProfileType, langid, clsid, guidProfile, hkl, dwFlags);
     }
 
+    /// <include file='ITfInputProcessorProfileMgr.xml' path='doc/member[@name="ITfInputProcessorProfileMgr.GetProfile"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetProfile([NativeTypeName("DWORD")] uint dwProfileType, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("const GUID &")] Guid* guidProfile, HKL hkl, TF_INPUTPROCESSORPROFILE* pProfile)
@@ -60,6 +67,7 @@ public unsafe partial struct ITfInputProcessorProfileMgr : ITfInputProcessorProf
         return ((delegate* unmanaged<ITfInputProcessorProfileMgr*, uint, ushort, Guid*, Guid*, HKL, TF_INPUTPROCESSORPROFILE*, int>)(lpVtbl[5]))((ITfInputProcessorProfileMgr*)Unsafe.AsPointer(ref this), dwProfileType, langid, clsid, guidProfile, hkl, pProfile);
     }
 
+    /// <include file='ITfInputProcessorProfileMgr.xml' path='doc/member[@name="ITfInputProcessorProfileMgr.EnumProfiles"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT EnumProfiles([NativeTypeName("LANGID")] ushort langid, IEnumTfInputProcessorProfiles** ppEnum)
@@ -67,6 +75,7 @@ public unsafe partial struct ITfInputProcessorProfileMgr : ITfInputProcessorProf
         return ((delegate* unmanaged<ITfInputProcessorProfileMgr*, ushort, IEnumTfInputProcessorProfiles**, int>)(lpVtbl[6]))((ITfInputProcessorProfileMgr*)Unsafe.AsPointer(ref this), langid, ppEnum);
     }
 
+    /// <include file='ITfInputProcessorProfileMgr.xml' path='doc/member[@name="ITfInputProcessorProfileMgr.ReleaseInputProcessor"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT ReleaseInputProcessor([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("DWORD")] uint dwFlags)
@@ -74,6 +83,7 @@ public unsafe partial struct ITfInputProcessorProfileMgr : ITfInputProcessorProf
         return ((delegate* unmanaged<ITfInputProcessorProfileMgr*, Guid*, uint, int>)(lpVtbl[7]))((ITfInputProcessorProfileMgr*)Unsafe.AsPointer(ref this), rclsid, dwFlags);
     }
 
+    /// <include file='ITfInputProcessorProfileMgr.xml' path='doc/member[@name="ITfInputProcessorProfileMgr.RegisterProfile"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT RegisterProfile([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const GUID &")] Guid* guidProfile, [NativeTypeName("const WCHAR *")] ushort* pchDesc, [NativeTypeName("ULONG")] uint cchDesc, [NativeTypeName("const WCHAR *")] ushort* pchIconFile, [NativeTypeName("ULONG")] uint cchFile, [NativeTypeName("ULONG")] uint uIconIndex, HKL hklsubstitute, [NativeTypeName("DWORD")] uint dwPreferredLayout, BOOL bEnabledByDefault, [NativeTypeName("DWORD")] uint dwFlags)
@@ -81,6 +91,7 @@ public unsafe partial struct ITfInputProcessorProfileMgr : ITfInputProcessorProf
         return ((delegate* unmanaged<ITfInputProcessorProfileMgr*, Guid*, ushort, Guid*, ushort*, uint, ushort*, uint, uint, HKL, uint, BOOL, uint, int>)(lpVtbl[8]))((ITfInputProcessorProfileMgr*)Unsafe.AsPointer(ref this), rclsid, langid, guidProfile, pchDesc, cchDesc, pchIconFile, cchFile, uIconIndex, hklsubstitute, dwPreferredLayout, bEnabledByDefault, dwFlags);
     }
 
+    /// <include file='ITfInputProcessorProfileMgr.xml' path='doc/member[@name="ITfInputProcessorProfileMgr.UnregisterProfile"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT UnregisterProfile([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("LANGID")] ushort langid, [NativeTypeName("const GUID &")] Guid* guidProfile, [NativeTypeName("DWORD")] uint dwFlags)
@@ -88,6 +99,7 @@ public unsafe partial struct ITfInputProcessorProfileMgr : ITfInputProcessorProf
         return ((delegate* unmanaged<ITfInputProcessorProfileMgr*, Guid*, ushort, Guid*, uint, int>)(lpVtbl[9]))((ITfInputProcessorProfileMgr*)Unsafe.AsPointer(ref this), rclsid, langid, guidProfile, dwFlags);
     }
 
+    /// <include file='ITfInputProcessorProfileMgr.xml' path='doc/member[@name="ITfInputProcessorProfileMgr.GetActiveProfile"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT GetActiveProfile([NativeTypeName("const GUID &")] Guid* catid, TF_INPUTPROCESSORPROFILE* pProfile)

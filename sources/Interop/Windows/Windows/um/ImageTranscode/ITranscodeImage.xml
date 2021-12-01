@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ITranscodeImage.TranscodeImage">
+    <summary>
+      <para>Converts an image to JPEG or bitmap (BMP) image format.</para>
+    </summary>
+    <param name="pShellItem">
+      <para>Type: <b><see cref="IShellItem" />*</b></para>
+      <para>The Shell Item for the image to convert.</para>
+    </param>
+    <param name="uiMaxWidth">
+      <para>Type: <b>UINT</b></para>
+      <para>The requested height in pixels. Should be less than or equal to the actual height of the original image. See Remarks.</para>
+    </param>
+    <param name="uiMaxHeight">
+      <para>Type: <b>UINT</b></para>
+      <para>The requested width in pixels. Should be less than or equal to the actual width of the original image. See Remarks.</para>
+    </param>
+    <param name="flags">
+      <para>Type: <b>TI_FLAGS</b></para>
+      <para>One of the following flags.</para>
+      <h4>TI_BITMAP</h4>
+      <para>Convert the image to BMP format.</para>
+      <h4>TI_JPEG</h4>
+      <para>Convert the image to JPEG format.</para>
+    </param>
+    <param name="pvImage">
+      <para>Type: <b><see cref="IStream" />*</b></para>
+      <para>A stream to receive the converted image. The stream must be created by the calling code prior to calling <b>TranscodeImage</b>.</para>
+    </param>
+    <param name="puiWidth">
+      <para>Type: <b>UINT*</b></para>
+      <para>The actual width of the converted image.</para>
+    </param>
+    <param name="puiHeight">
+      <para>Type: <b>UINT*</b></para>
+      <para>The actual height of the converted image.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The aspect ratio of the original image is preserved.
+The new image is resized so that it will fit into a box of width <i>uiMaxWidth</i> and height <i>uiMaxHeight</i>.</para>
+      <para>The image size will not be changed if the original image already fits in this bounding box.</para>
+      <para>If both uiMaxWidth and uiMaxHeight are zero, the returned image will be the same size as the original.</para>
+    </remarks>
+  </member>
+  <member name="ITranscodeImage">
+    <summary>
+      <para>Exposes a method that allows conversion to JPEG or bitmap (BMP) image formats from any image type supported by Windows.</para>
+    </summary>
+  </member>
+</doc>

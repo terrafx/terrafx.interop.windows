@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="STORAGE_PROTOCOL_ATA_DATA_TYPE">
+    <summary>
+      <para>The ATA protocol data type.</para>
+    </summary>
+    <remarks>
+      <para>When using <a href="https://docs.microsoft.com/ni-winioctl-ioctl_storage_query_property.md">IOCTL_STORAGE_QUERY_PROPERTY</a> to retrieve protocol-specific information in the <see cref="STORAGE_PROTOCOL_DATA_DESCRIPTOR" />, configure the <see cref="STORAGE_PROPERTY_QUERY" /> structure as follows:</para>
+      <list type="bullet">
+        <item>
+          <description>Allocate a buffer that can contains both a <see cref="STORAGE_PROPERTY_QUERY" /> and a <see cref="STORAGE_PROTOCOL_SPECIFIC_DATA" /> structure.</description>
+        </item>
+        <item>
+          <description>Set the <b>PropertyID</b> field to <b>StorageAdapterProtocolSpecificProperty</b> or <b>StorageDeviceProtocolSpecificProperty</b> for a controller or device/namespace request, respectively.</description>
+        </item>
+        <item>
+          <description>Set the <b>QueryType</b> field to <b>PropertyStandardQuery</b>.</description>
+        </item>
+        <item>
+          <description>Fill the <see cref="STORAGE_PROTOCOL_SPECIFIC_DATA" /> structure with the desired values. The start of the <b>STORAGE_PROTOCOL_SPECIFIC_DATA</b> is the <b>AdditionalParameters</b> field of <see cref="STORAGE_PROPERTY_QUERY" />.</description>
+        </item>
+      </list>
+      <para>To specify a type of ATA protocol-specific information,  configure the <see cref="STORAGE_PROTOCOL_SPECIFIC_DATA" /> structure as follows:</para>
+      <list type="bullet">
+        <item>
+          <description>Set the <b>ProtocolType</b> field to <b>ProtocolTypeAta</b>.</description>
+        </item>
+        <item>
+          <description>Set the <b>DataType</b> field to an enumeration value defined by <b>STORAGE_PROTOCOL_ATA_DATA_TYPE</b>:</description>
+        </item>
+        <item>
+          <description>Use <b>AtaDataTypeIdentify</b> to identify the ATA drive.</description>
+        </item>
+        <item>
+          <description>Use <b>AtaDataTypeLogPage</b> to get log pages from the ATA drive.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso href="https://docs.microsoft.com/ni-winioctl-ioctl_storage_query_property.md">IOCTL_STORAGE_QUERY_PROPERTY</seealso>
+    <seealso cref="STORAGE_PROPERTY_QUERY" />
+    <seealso cref="STORAGE_PROTOCOL_SPECIFIC_DATA" />
+  </member>
+  <member name="STORAGE_PROTOCOL_ATA_DATA_TYPE.AtaDataTypeUnknown">
+    <summary>
+      <para>Unknown data type.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_PROTOCOL_ATA_DATA_TYPE.AtaDataTypeIdentify">
+    <summary>
+      <para>Identify device data type.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_PROTOCOL_ATA_DATA_TYPE.AtaDataTypeLogPage">
+    <summary>
+      <para>Log page data type.</para>
+    </summary>
+  </member>
+</doc>

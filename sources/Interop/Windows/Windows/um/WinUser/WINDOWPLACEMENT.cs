@@ -5,17 +5,24 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WINDOWPLACEMENT.xml' path='doc/member[@name="WINDOWPLACEMENT"]/*' />
 public partial struct WINDOWPLACEMENT
 {
+    /// <include file='WINDOWPLACEMENT.xml' path='doc/member[@name="WINDOWPLACEMENT.length"]/*' />
     public uint length;
 
+    /// <include file='WINDOWPLACEMENT.xml' path='doc/member[@name="WINDOWPLACEMENT.flags"]/*' />
     public uint flags;
 
+    /// <include file='WINDOWPLACEMENT.xml' path='doc/member[@name="WINDOWPLACEMENT.showCmd"]/*' />
     public uint showCmd;
 
+    /// <include file='WINDOWPLACEMENT.xml' path='doc/member[@name="WINDOWPLACEMENT.ptMinPosition"]/*' />
     public POINT ptMinPosition;
 
+    /// <include file='WINDOWPLACEMENT.xml' path='doc/member[@name="WINDOWPLACEMENT.ptMaxPosition"]/*' />
     public POINT ptMaxPosition;
 
+    /// <include file='WINDOWPLACEMENT.xml' path='doc/member[@name="WINDOWPLACEMENT.rcNormalPosition"]/*' />
     public RECT rcNormalPosition;
 }

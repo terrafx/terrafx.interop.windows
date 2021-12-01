@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STANDARDSTATES.xml' path='doc/member[@name="STANDARDSTATES"]/*' />
 public enum STANDARDSTATES
 {
+    /// <include file='STANDARDSTATES.xml' path='doc/member[@name="STANDARDSTATES.TTSS_NORMAL"]/*' />
     TTSS_NORMAL = 1,
+
+    /// <include file='STANDARDSTATES.xml' path='doc/member[@name="STANDARDSTATES.TTSS_LINK"]/*' />
     TTSS_LINK = 2,
 }

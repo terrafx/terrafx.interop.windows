@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="AppPolicyLifecycleManagement">
+    <summary>
+      <para>The AppPolicyLifecycleManagement enumeration indicates whether a process is lifecycle-managed or not.</para>
+    </summary>
+  </member>
+  <member name="AppPolicyLifecycleManagement.AppPolicyLifecycleManagement_Unmanaged">
+    <summary>
+      <para>Indicates that the process's lifecycle is not managed.</para>
+    </summary>
+  </member>
+  <member name="AppPolicyLifecycleManagement.AppPolicyLifecycleManagement_Managed">
+    <summary>
+      <para>Indicates that the process's  lifecycle is managed by Process Lifecycle Manager (PLM).</para>
+    </summary>
+  </member>
+</doc>

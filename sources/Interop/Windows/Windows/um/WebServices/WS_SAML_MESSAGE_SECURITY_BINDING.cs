@@ -5,11 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_SAML_MESSAGE_SECURITY_BINDING.xml' path='doc/member[@name="WS_SAML_MESSAGE_SECURITY_BINDING"]/*' />
 public unsafe partial struct WS_SAML_MESSAGE_SECURITY_BINDING
 {
+    /// <include file='WS_SAML_MESSAGE_SECURITY_BINDING.xml' path='doc/member[@name="WS_SAML_MESSAGE_SECURITY_BINDING.binding"]/*' />
     public WS_SECURITY_BINDING binding;
 
+    /// <include file='WS_SAML_MESSAGE_SECURITY_BINDING.xml' path='doc/member[@name="WS_SAML_MESSAGE_SECURITY_BINDING.bindingUsage"]/*' />
     public WS_MESSAGE_SECURITY_USAGE bindingUsage;
 
+    /// <include file='WS_SAML_MESSAGE_SECURITY_BINDING.xml' path='doc/member[@name="WS_SAML_MESSAGE_SECURITY_BINDING.authenticator"]/*' />
     public WS_SAML_AUTHENTICATOR* authenticator;
 }

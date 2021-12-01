@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_SECURITY_CONTEXT_MESSAGE_SECURITY_BINDING_CONSTRAINT">
+    <summary>
+      <para>A security binding constraint that corresponds to
+the <see cref="WS_SECURITY_CONTEXT_MESSAGE_SECURITY_BINDING" />.</para>
+    </summary>
+  </member>
+  <member name="WS_SECURITY_CONTEXT_MESSAGE_SECURITY_BINDING_CONSTRAINT.bindingConstraint">
+    <summary>
+      <para>The base binding constraint that this binding constraint derives from.</para>
+      <para>The following binding constraints are supported at this point: <see cref="WS_SECURITY_BINDING_PROPERTY_SECURE_CONVERSATION_VERSION" /></para>
+      <para>and <b>WS_SECURITY_BINDING_PROPERTY_SECURITY_CONTEXT_KEY_ENTROPY_MODE</b>.
+Currently only <see cref="WS_SECURE_CONVERSATION_VERSION_FEBRUARY_2005" /> is supported in policy, so a binding constraint containing the
+value <b>WS_SECURE_CONVERSATION_VERSION_FEBRUARY_2005</b> must be specified in
+order for the policy to match.</para>
+    </summary>
+  </member>
+  <member name="WS_SECURITY_CONTEXT_MESSAGE_SECURITY_BINDING_CONSTRAINT.bindingUsage">
+    <summary>
+      <para>This specifies how the security context token should be attached to a message.</para>
+    </summary>
+  </member>
+  <member name="WS_SECURITY_CONTEXT_MESSAGE_SECURITY_BINDING_CONSTRAINT.bootstrapSecurityConstraint">
+    <summary>
+      <para>This specifies the bootstrap security used to establish the secure conversation context.</para>
+    </summary>
+  </member>
+</doc>

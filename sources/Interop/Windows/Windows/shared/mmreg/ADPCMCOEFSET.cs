@@ -7,10 +7,13 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ADPCMCOEFSET.xml' path='doc/member[@name="ADPCMCOEFSET"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct ADPCMCOEFSET
 {
+    /// <include file='ADPCMCOEFSET.xml' path='doc/member[@name="ADPCMCOEFSET.iCoef1"]/*' />
     public short iCoef1;
 
+    /// <include file='ADPCMCOEFSET.xml' path='doc/member[@name="ADPCMCOEFSET.iCoef2"]/*' />
     public short iCoef2;
 }

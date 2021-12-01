@@ -1,0 +1,465 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFSensorDevice.GetDeviceAttributes">
+    <summary>
+      <para>Gets the <see cref="IMFAttributes" /> for the sensor group.</para>
+    </summary>
+    <param name="ppAttributes">
+      <para>The <see cref="IMFAttributes" /> interface representing the internal attribute store of the sensor device.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>The <i>ppAttributes</i> parameter is null.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_NOT_INITIALIZED</b>
+            </para>
+          </description>
+          <description>
+            <para>The sensor device has not been initialized.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The object returned is a copy of the internal attribute store and so changes made to the returned attributes have no effect on the <see cref="IMFSensorDevice" />.</para>
+    </remarks>
+    <seealso cref="IMFSensorDevice" />
+  </member>
+  <member name="IMFSensorDevice.GetDeviceId">
+    <summary>
+      <para>Gets the unique identifier for the device. This value is currently unused.</para>
+    </summary>
+    <param name="pDeviceId">
+      <para>The unique identifier for the device.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>The <i>pDeviceId</i> parameter is null.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_NOT_INITIALIZED</b>
+            </para>
+          </description>
+          <description>
+            <para>The sensor group has not been initialized.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IMFSensorDevice" />
+  </member>
+  <member name="IMFSensorDevice.GetDeviceType">
+    <summary>
+      <para>Gets a value that specifies the type of sensor device represented by the object.</para>
+    </summary>
+    <param name="pType">
+      <para>A value that specifies the type of sensor device represented by the object.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>The <i>pType</i> parameter is null.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_NOT_INITIALIZED</b>
+            </para>
+          </description>
+          <description>
+            <para>The sensor group has not been initialized.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IMFSensorDevice" />
+  </member>
+  <member name="IMFSensorDevice.GetFlags">
+    <summary>
+      <para>Gets the flags set for the sensor device. This method is reserved for future use.</para>
+    </summary>
+    <param name="pFlags">
+      <para>The flags set for the sensor device.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>The <i>pDeviceId</i> parameter is null.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_NOT_INITIALIZED</b>
+            </para>
+          </description>
+          <description>
+            <para>The sensor group has not been initialized.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method is reserved for future use and should not be called.</para>
+    </remarks>
+    <seealso cref="IMFSensorDevice" />
+  </member>
+  <member name="IMFSensorDevice.GetSensorDeviceMode">
+    <summary>
+      <para>Gets a value that specifies the current sharing mode of the sensor device, which is either controller or shared.</para>
+    </summary>
+    <param name="peMode">
+      <para>If the call succeeds, receives a member of the <see cref="MFSensorDeviceMode" />, specifying the current mode of the sendsor device.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>The <i>pDeviceId</i> parameter is null.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_NOT_INITIALIZED</b>
+            </para>
+          </description>
+          <description>
+            <para>The sensor group has not been initialized.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IMFSensorDevice" />
+  </member>
+  <member name="IMFSensorDevice.GetStreamAttributes">
+    <summary>
+      <para>Gets the stream attribute store with the specified index.</para>
+    </summary>
+    <param name="eType">
+      <para>A member of the <see cref="MFSensorStreamType" /> enumeration specifying whether the attribute store is being requested for an input or output stream.</para>
+    </param>
+    <param name="dwIndex">
+      <para>The 0-based index of the stream to be retrieved.  The index must be between 0 and the value returned by <see cref="GetStreamAttributesCount" /> - 1.</para>
+    </param>
+    <param name="ppAttributes">
+      <para>The <see cref="IMFAttributes" /> interface representing a copy internal attribute store of the stream.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>The <i>pDeviceId</i> parameter is null.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_NOT_INITIALIZED</b>
+            </para>
+          </description>
+          <description>
+            <para>The sensor group has not been initialized.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The object returned is a copy of the internal attribute store and so changes made to the returned attributes have no effect on the <see cref="IMFSensorDevice" />.</para>
+    </remarks>
+    <seealso cref="IMFSensorDevice" />
+  </member>
+  <member name="IMFSensorDevice.GetStreamAttributesCount">
+    <summary>
+      <para>Gets the count of stream attribute stores for the sensor device. This number represents the number of total streams available for the device because every valid stream must have an attribute store that contains at least the stream ID and stream category.</para>
+    </summary>
+    <param name="eType">
+      <para>A member of the <see cref="MFSensorStreamType" /> enumeration specifying whether the attribute store count is being requested for an input or output stream.</para>
+    </param>
+    <param name="pdwCount">
+      <para>The number of stream attributes available for this sensor device.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>The <i>pdwCount</i> parameter is null.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_NOT_INITIALIZED</b>
+            </para>
+          </description>
+          <description>
+            <para>The sensor group has not been initialized.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The caller can use the number of stream attributes to indicate the number of streams provided by the sensor device.</para>
+      <para>
+        <b>Note</b>  Depending on the sharing mode in which the sensor device was activated, not all streams may be present during runtime.  Streams marked as shared, i.e. with the <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-devicestream-frameserver-shared">MF_DEVICESTREAM_FRAMESERVER_SHARED</a> attribute set to non-zero value, and streams with pins with the category <b>PINNAME_VIDEO_PREVIEW</b> will be present in devices that are set to used shared mode. Put a device in shared mode by passing <see cref="MFSensorDeviceMode_Shared" /> into <see cref="SetSensorDeviceMode" />.
+If no streams are marked as shared and no preview stream is available, the first capture stream, with the category <b>PINNAME_VIDEO_CAPTURE</b>,  will be shared.</para>
+    </remarks>
+    <seealso cref="IMFSensorDevice" />
+  </member>
+  <member name="IMFSensorDevice.GetSymbolicLink">
+    <summary>
+      <para>Gets the symbolic link name of the sensor device.</para>
+    </summary>
+    <param name="SymbolicLink">
+      <para>Buffer of <i>cchSymbolicLink</i> characters where the symbolic link name will be written.  The buffer must be large enough to account for the null terminator.</para>
+    </param>
+    <param name="cchSymbolicLink">
+      <para>Number of characters available in <i>SymbolicLink</i> buffer.</para>
+    </param>
+    <param name="pcchWritten">
+      <para>Output parameter containing the number of characters written to <i>SymbolicLink</i>.  This includes the null terminator.  If <i>SymbolicLink</i> is null and <i>cchSymbolicLink</i> is 0, <i>pcchWritten</i> will contain the number of characters needed (including the null terminator) to store the symbolic link name.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>ERROR_INSUFFICIENT_BUFFER</b>
+            </para>
+          </description>
+          <description>
+            <para>The buffer provided in the <i>SymbolicLink</i> parameter is not large enough to contain the symbolic link name, including the null terminator.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_NOT_INITIALIZED</b>
+            </para>
+          </description>
+          <description>
+            <para>The sensor device has not been initialized.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Depending on the type of device, which is defined by a member of the <see cref="MFSensorDeviceType" /> enumeration and can be obtained by calling <see cref="GetDeviceType" />, the resulting symbolic name may be a valid device symbolic name or a provider URL.  The caller should not attempt to parse the name and should treat it as opaque data.</para>
+    </remarks>
+    <seealso cref="IMFSensorDevice" />
+  </member>
+  <member name="IMFSensorDevice.SetSensorDeviceMode">
+    <summary>
+      <para>Sets a value that specifies the sharing mode of the sensor device to either controller or shared.</para>
+    </summary>
+    <param name="eMode">
+      <para>A member of the <see cref="MFSensorDeviceMode" /> enumeration specifying whether the device is in shared or controller mode.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_NOT_INITIALIZED</b>
+            </para>
+          </description>
+          <description>
+            <para>The sensor group has not been initialized.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IMFSensorDevice" />
+  </member>
+  <member name="IMFSensorDevice">
+    <summary>
+      <para>Represents a sensor device that can belong to a sensor group, which is represented by the <see cref="IMFSensorGroup" /> interface. The term "device" in this context could refer to a physical device, a custom media source, or a frame provider.</para>
+    </summary>
+  </member>
+</doc>

@@ -7,12 +7,22 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='COPYFILE2_MESSAGE_ACTION.xml' path='doc/member[@name="COPYFILE2_MESSAGE_ACTION"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public enum COPYFILE2_MESSAGE_ACTION
 {
+    /// <include file='COPYFILE2_MESSAGE_ACTION.xml' path='doc/member[@name="COPYFILE2_MESSAGE_ACTION.COPYFILE2_PROGRESS_CONTINUE"]/*' />
     COPYFILE2_PROGRESS_CONTINUE = 0,
+
+    /// <include file='COPYFILE2_MESSAGE_ACTION.xml' path='doc/member[@name="COPYFILE2_MESSAGE_ACTION.COPYFILE2_PROGRESS_CANCEL"]/*' />
     COPYFILE2_PROGRESS_CANCEL,
+
+    /// <include file='COPYFILE2_MESSAGE_ACTION.xml' path='doc/member[@name="COPYFILE2_MESSAGE_ACTION.COPYFILE2_PROGRESS_STOP"]/*' />
     COPYFILE2_PROGRESS_STOP,
+
+    /// <include file='COPYFILE2_MESSAGE_ACTION.xml' path='doc/member[@name="COPYFILE2_MESSAGE_ACTION.COPYFILE2_PROGRESS_QUIET"]/*' />
     COPYFILE2_PROGRESS_QUIET,
+
+    /// <include file='COPYFILE2_MESSAGE_ACTION.xml' path='doc/member[@name="COPYFILE2_MESSAGE_ACTION.COPYFILE2_PROGRESS_PAUSE"]/*' />
     COPYFILE2_PROGRESS_PAUSE,
 }

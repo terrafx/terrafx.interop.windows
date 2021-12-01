@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IIPDVDec.xml' path='doc/member[@name="IIPDVDec"]/*' />
 [Guid("B8E8BD60-0BFE-11D0-AF91-00AA00B67A42")]
 [NativeTypeName("struct IIPDVDec : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IIPDVDec : IIPDVDec.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IIPDVDec : IIPDVDec.Interface
         return ((delegate* unmanaged<IIPDVDec*, Guid*, void**, int>)(lpVtbl[0]))((IIPDVDec*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IIPDVDec : IIPDVDec.Interface
         return ((delegate* unmanaged<IIPDVDec*, uint>)(lpVtbl[1]))((IIPDVDec*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IIPDVDec : IIPDVDec.Interface
         return ((delegate* unmanaged<IIPDVDec*, uint>)(lpVtbl[2]))((IIPDVDec*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IIPDVDec.xml' path='doc/member[@name="IIPDVDec.get_IPDisplay"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT get_IPDisplay(int* displayPix)
@@ -46,6 +51,7 @@ public unsafe partial struct IIPDVDec : IIPDVDec.Interface
         return ((delegate* unmanaged<IIPDVDec*, int*, int>)(lpVtbl[3]))((IIPDVDec*)Unsafe.AsPointer(ref this), displayPix);
     }
 
+    /// <include file='IIPDVDec.xml' path='doc/member[@name="IIPDVDec.put_IPDisplay"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT put_IPDisplay(int displayPix)

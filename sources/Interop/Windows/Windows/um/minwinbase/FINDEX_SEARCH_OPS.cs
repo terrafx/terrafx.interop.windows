@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='FINDEX_SEARCH_OPS.xml' path='doc/member[@name="FINDEX_SEARCH_OPS"]/*' />
 public enum FINDEX_SEARCH_OPS
 {
+    /// <include file='FINDEX_SEARCH_OPS.xml' path='doc/member[@name="FINDEX_SEARCH_OPS.FindExSearchNameMatch"]/*' />
     FindExSearchNameMatch,
+
+    /// <include file='FINDEX_SEARCH_OPS.xml' path='doc/member[@name="FINDEX_SEARCH_OPS.FindExSearchLimitToDirectories"]/*' />
     FindExSearchLimitToDirectories,
+
+    /// <include file='FINDEX_SEARCH_OPS.xml' path='doc/member[@name="FINDEX_SEARCH_OPS.FindExSearchLimitToDevices"]/*' />
     FindExSearchLimitToDevices,
+
+    /// <include file='FINDEX_SEARCH_OPS.xml' path='doc/member[@name="FINDEX_SEARCH_OPS.FindExSearchMaxSearchOp"]/*' />
     FindExSearchMaxSearchOp,
 }

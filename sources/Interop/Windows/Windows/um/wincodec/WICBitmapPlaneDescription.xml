@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WICBitmapPlaneDescription">
+    <summary>
+      <para>Specifies the pixel format and size of a component plane.</para>
+    </summary>
+    <seealso cref="IWICPlanarBitmapSourceTransform.CopyPixels" />
+    <seealso cref="IWICPlanarBitmapSourceTransform.DoesSupportTransform" />
+  </member>
+  <member name="WICBitmapPlaneDescription.Format">
+    <summary>
+      <para>Describes the pixel format of the plane.</para>
+    </summary>
+  </member>
+  <member name="WICBitmapPlaneDescription.Width">
+    <summary>
+      <para>Component width of the plane.</para>
+    </summary>
+  </member>
+  <member name="WICBitmapPlaneDescription.Height">
+    <summary>
+      <para>Component height of the plane.</para>
+    </summary>
+  </member>
+</doc>

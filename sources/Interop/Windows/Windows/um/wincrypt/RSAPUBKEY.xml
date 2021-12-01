@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="RSAPUBKEY">
+    <summary>
+      <para>The <b>RSAPUBKEY</b> structure contains information specific to the particular public key contained in the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/k-gly">key BLOB</a>.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381982(v=vs.85)">DSSPUBKEY</seealso>
+    <seealso cref="DSSSEED" />
+    <seealso cref="PUBLICKEYSTRUC" />
+  </member>
+  <member name="RSAPUBKEY.magic">
+    <summary>
+      <para>Set to RSA1 (0x31415352) for public keys and to RSA2 (0x32415352) for private keys.</para>
+      <para>
+        <b>Note</b>  The hexadecimal values are the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/a-gly">ASCII</a> encoding of RSA1 and RSA2.</para>
+    </summary>
+  </member>
+  <member name="RSAPUBKEY.bitlen">
+    <summary>
+      <para>Number of bits in the modulus. In practice, this must always be a multiple of eight.</para>
+    </summary>
+  </member>
+  <member name="RSAPUBKEY.pubexp">
+    <summary>
+      <para>The public exponent.</para>
+    </summary>
+  </member>
+</doc>

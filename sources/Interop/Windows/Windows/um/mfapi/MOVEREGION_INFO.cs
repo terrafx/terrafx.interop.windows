@@ -9,15 +9,20 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MOVEREGION_INFO.xml' path='doc/member[@name="MOVEREGION_INFO"]/*' />
 public partial struct MOVEREGION_INFO
 {
+    /// <include file='MOVEREGION_INFO.xml' path='doc/member[@name="MOVEREGION_INFO.FrameNumber"]/*' />
     public uint FrameNumber;
 
+    /// <include file='MOVEREGION_INFO.xml' path='doc/member[@name="MOVEREGION_INFO.NumMoveRegions"]/*' />
     public uint NumMoveRegions;
 
+    /// <include file='MOVEREGION_INFO.xml' path='doc/member[@name="MOVEREGION_INFO.MoveRegions"]/*' />
     [NativeTypeName("MOVE_RECT [1]")]
     public _MoveRegions_e__FixedBuffer MoveRegions;
 
+    /// <include file='_MoveRegions_e__FixedBuffer.xml' path='doc/member[@name="_MoveRegions_e__FixedBuffer"]/*' />
     public partial struct _MoveRegions_e__FixedBuffer
     {
         public MOVE_RECT e0;

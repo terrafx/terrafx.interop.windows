@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITfMessagePump.xml' path='doc/member[@name="ITfMessagePump"]/*' />
 [Guid("8F1B8AD8-0B6B-4874-90C5-BD76011E8F7C")]
 [NativeTypeName("struct ITfMessagePump : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITfMessagePump : ITfMessagePump.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITfMessagePump : ITfMessagePump.Interface
         return ((delegate* unmanaged<ITfMessagePump*, Guid*, void**, int>)(lpVtbl[0]))((ITfMessagePump*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITfMessagePump : ITfMessagePump.Interface
         return ((delegate* unmanaged<ITfMessagePump*, uint>)(lpVtbl[1]))((ITfMessagePump*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITfMessagePump : ITfMessagePump.Interface
         return ((delegate* unmanaged<ITfMessagePump*, uint>)(lpVtbl[2]))((ITfMessagePump*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITfMessagePump.xml' path='doc/member[@name="ITfMessagePump.PeekMessageA"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT PeekMessageA([NativeTypeName("LPMSG")] MSG* pMsg, HWND hwnd, uint wMsgFilterMin, uint wMsgFilterMax, uint wRemoveMsg, BOOL* pfResult)
@@ -46,6 +51,7 @@ public unsafe partial struct ITfMessagePump : ITfMessagePump.Interface
         return ((delegate* unmanaged<ITfMessagePump*, MSG*, HWND, uint, uint, uint, BOOL*, int>)(lpVtbl[3]))((ITfMessagePump*)Unsafe.AsPointer(ref this), pMsg, hwnd, wMsgFilterMin, wMsgFilterMax, wRemoveMsg, pfResult);
     }
 
+    /// <include file='ITfMessagePump.xml' path='doc/member[@name="ITfMessagePump.GetMessageA"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetMessageA([NativeTypeName("LPMSG")] MSG* pMsg, HWND hwnd, uint wMsgFilterMin, uint wMsgFilterMax, BOOL* pfResult)
@@ -53,6 +59,7 @@ public unsafe partial struct ITfMessagePump : ITfMessagePump.Interface
         return ((delegate* unmanaged<ITfMessagePump*, MSG*, HWND, uint, uint, BOOL*, int>)(lpVtbl[4]))((ITfMessagePump*)Unsafe.AsPointer(ref this), pMsg, hwnd, wMsgFilterMin, wMsgFilterMax, pfResult);
     }
 
+    /// <include file='ITfMessagePump.xml' path='doc/member[@name="ITfMessagePump.PeekMessageW"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT PeekMessageW([NativeTypeName("LPMSG")] MSG* pMsg, HWND hwnd, uint wMsgFilterMin, uint wMsgFilterMax, uint wRemoveMsg, BOOL* pfResult)
@@ -60,6 +67,7 @@ public unsafe partial struct ITfMessagePump : ITfMessagePump.Interface
         return ((delegate* unmanaged<ITfMessagePump*, MSG*, HWND, uint, uint, uint, BOOL*, int>)(lpVtbl[5]))((ITfMessagePump*)Unsafe.AsPointer(ref this), pMsg, hwnd, wMsgFilterMin, wMsgFilterMax, wRemoveMsg, pfResult);
     }
 
+    /// <include file='ITfMessagePump.xml' path='doc/member[@name="ITfMessagePump.GetMessageW"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetMessageW([NativeTypeName("LPMSG")] MSG* pMsg, HWND hwnd, uint wMsgFilterMin, uint wMsgFilterMax, BOOL* pfResult)

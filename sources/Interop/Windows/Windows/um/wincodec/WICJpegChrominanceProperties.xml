@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WICJpegChrominanceProperties">
+    <summary>
+      <para>Specifies the JPEG chrominance table property.</para>
+    </summary>
+  </member>
+  <member name="WICJpegChrominanceProperties.WICJpegChrominanceTable">
+    <summary>
+      <para>[VT_UI2|VT_VECTOR] Indicates the metadata property is a chrominance table.</para>
+    </summary>
+  </member>
+  <member name="WICJpegChrominanceProperties.WICJpegChrominanceProperties_FORCE_DWORD">
+    <summary></summary>
+  </member>
+</doc>

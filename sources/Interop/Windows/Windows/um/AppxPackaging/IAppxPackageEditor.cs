@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAppxPackageEditor.xml' path='doc/member[@name="IAppxPackageEditor"]/*' />
 [Guid("E2ADB6DC-5E71-4416-86B6-86E5F5291A6B")]
 [NativeTypeName("struct IAppxPackageEditor : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IAppxPackageEditor : IAppxPackageEditor.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IAppxPackageEditor : IAppxPackageEditor.Interface
         return ((delegate* unmanaged<IAppxPackageEditor*, Guid*, void**, int>)(lpVtbl[0]))((IAppxPackageEditor*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IAppxPackageEditor : IAppxPackageEditor.Interface
         return ((delegate* unmanaged<IAppxPackageEditor*, uint>)(lpVtbl[1]))((IAppxPackageEditor*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IAppxPackageEditor : IAppxPackageEditor.Interface
         return ((delegate* unmanaged<IAppxPackageEditor*, uint>)(lpVtbl[2]))((IAppxPackageEditor*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAppxPackageEditor.xml' path='doc/member[@name="IAppxPackageEditor.SetWorkingDirectory"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetWorkingDirectory([NativeTypeName("LPCWSTR")] ushort* workingDirectory)
@@ -48,6 +53,7 @@ public unsafe partial struct IAppxPackageEditor : IAppxPackageEditor.Interface
         return ((delegate* unmanaged<IAppxPackageEditor*, ushort*, int>)(lpVtbl[3]))((IAppxPackageEditor*)Unsafe.AsPointer(ref this), workingDirectory);
     }
 
+    /// <include file='IAppxPackageEditor.xml' path='doc/member[@name="IAppxPackageEditor.CreateDeltaPackage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT CreateDeltaPackage(IStream* updatedPackageStream, IStream* baselinePackageStream, IStream* deltaPackageStream)
@@ -55,6 +61,7 @@ public unsafe partial struct IAppxPackageEditor : IAppxPackageEditor.Interface
         return ((delegate* unmanaged<IAppxPackageEditor*, IStream*, IStream*, IStream*, int>)(lpVtbl[4]))((IAppxPackageEditor*)Unsafe.AsPointer(ref this), updatedPackageStream, baselinePackageStream, deltaPackageStream);
     }
 
+    /// <include file='IAppxPackageEditor.xml' path='doc/member[@name="IAppxPackageEditor.CreateDeltaPackageUsingBaselineBlockMap"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT CreateDeltaPackageUsingBaselineBlockMap(IStream* updatedPackageStream, IStream* baselineBlockMapStream, [NativeTypeName("LPCWSTR")] ushort* baselinePackageFullName, IStream* deltaPackageStream)
@@ -62,6 +69,7 @@ public unsafe partial struct IAppxPackageEditor : IAppxPackageEditor.Interface
         return ((delegate* unmanaged<IAppxPackageEditor*, IStream*, IStream*, ushort*, IStream*, int>)(lpVtbl[5]))((IAppxPackageEditor*)Unsafe.AsPointer(ref this), updatedPackageStream, baselineBlockMapStream, baselinePackageFullName, deltaPackageStream);
     }
 
+    /// <include file='IAppxPackageEditor.xml' path='doc/member[@name="IAppxPackageEditor.UpdatePackage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT UpdatePackage(IStream* baselinePackageStream, IStream* deltaPackageStream, APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_OPTION updateOption)
@@ -69,6 +77,7 @@ public unsafe partial struct IAppxPackageEditor : IAppxPackageEditor.Interface
         return ((delegate* unmanaged<IAppxPackageEditor*, IStream*, IStream*, APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_OPTION, int>)(lpVtbl[6]))((IAppxPackageEditor*)Unsafe.AsPointer(ref this), baselinePackageStream, deltaPackageStream, updateOption);
     }
 
+    /// <include file='IAppxPackageEditor.xml' path='doc/member[@name="IAppxPackageEditor.UpdateEncryptedPackage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT UpdateEncryptedPackage(IStream* baselineEncryptedPackageStream, IStream* deltaPackageStream, APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_OPTION updateOption, [NativeTypeName("const APPX_ENCRYPTED_PACKAGE_SETTINGS2 *")] APPX_ENCRYPTED_PACKAGE_SETTINGS2* settings, [NativeTypeName("const APPX_KEY_INFO *")] APPX_KEY_INFO* keyInfo)
@@ -76,6 +85,7 @@ public unsafe partial struct IAppxPackageEditor : IAppxPackageEditor.Interface
         return ((delegate* unmanaged<IAppxPackageEditor*, IStream*, IStream*, APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_OPTION, APPX_ENCRYPTED_PACKAGE_SETTINGS2*, APPX_KEY_INFO*, int>)(lpVtbl[7]))((IAppxPackageEditor*)Unsafe.AsPointer(ref this), baselineEncryptedPackageStream, deltaPackageStream, updateOption, settings, keyInfo);
     }
 
+    /// <include file='IAppxPackageEditor.xml' path='doc/member[@name="IAppxPackageEditor.UpdatePackageManifest"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT UpdatePackageManifest(IStream* packageStream, IStream* updatedManifestStream, BOOL isPackageEncrypted, APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_MANIFEST_OPTIONS options)

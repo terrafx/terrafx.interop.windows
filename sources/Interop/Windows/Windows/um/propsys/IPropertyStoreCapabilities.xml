@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IPropertyStoreCapabilities.IsPropertyWritable">
+    <summary>
+      <para>Queries whether the property handler allows a specific property to be edited in the UI by the user.</para>
+    </summary>
+    <param name="key">
+      <para>Type: <b>REFPROPERTYKEY</b></para>
+      <para>A reference to <see cref="PROPERTYKEY" /> structure that represents the property being queried.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The property can be edited and stored by the handler.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>The property cannot be edited.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The Shell disables the editing of controls by the user as appropriate through this method. A handler that does not support <see cref="IPropertyStoreCapabilities" /> is assumed to support writing of any property.</para>
+    </remarks>
+  </member>
+  <member name="IPropertyStoreCapabilities">
+    <summary>
+      <para>Exposes a method that determines whether a property can be edited in the UI by the user.</para>
+    </summary>
+    <remarks>
+      <h3>When to Implement</h3>
+      <para>Property handlers implement this interface to disable a user's ability to edit specific properties. These properties are typically editable in the UI, but are not supported for writing by the property handler. For example, the property System.Author is typically editable. If a property handler author created a file type that exposed <a href="https://docs.microsoft.com//windows/desktop/properties/props-system-author">System.Author</a> for reading, but could not support writing this property back, the handler author could return S_FALSE from <see cref="IPropertyStoreCapabilities.IsPropertyWritable" /> for System.Author.</para>
+      <para>The Shell user interfaces that allow property editing, such as the <b>Details Pane</b> and <b>Details Tab</b> of the Properties dialog, call this method as part of determining whether to allow editing of a specific property. This allows the Shell property editing UI to disable controls rather than showing errors when the property handler fails to set or commit the property value.</para>
+    </remarks>
+  </member>
+</doc>

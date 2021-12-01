@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFMediaSourceExtensionLiveSeekableRange.xml' path='doc/member[@name="IMFMediaSourceExtensionLiveSeekableRange"]/*' />
 [Guid("5D1ABFD6-450A-4D92-9EFC-D6B6CBC1F4DA")]
 [NativeTypeName("struct IMFMediaSourceExtensionLiveSeekableRange : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMFMediaSourceExtensionLiveSeekableRange : IMFMedia
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMFMediaSourceExtensionLiveSeekableRange : IMFMedia
         return ((delegate* unmanaged<IMFMediaSourceExtensionLiveSeekableRange*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaSourceExtensionLiveSeekableRange*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMFMediaSourceExtensionLiveSeekableRange : IMFMedia
         return ((delegate* unmanaged<IMFMediaSourceExtensionLiveSeekableRange*, uint>)(lpVtbl[1]))((IMFMediaSourceExtensionLiveSeekableRange*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMFMediaSourceExtensionLiveSeekableRange : IMFMedia
         return ((delegate* unmanaged<IMFMediaSourceExtensionLiveSeekableRange*, uint>)(lpVtbl[2]))((IMFMediaSourceExtensionLiveSeekableRange*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFMediaSourceExtensionLiveSeekableRange.xml' path='doc/member[@name="IMFMediaSourceExtensionLiveSeekableRange.SetLiveSeekableRange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetLiveSeekableRange(double start, double end)
@@ -46,6 +51,7 @@ public unsafe partial struct IMFMediaSourceExtensionLiveSeekableRange : IMFMedia
         return ((delegate* unmanaged<IMFMediaSourceExtensionLiveSeekableRange*, double, double, int>)(lpVtbl[3]))((IMFMediaSourceExtensionLiveSeekableRange*)Unsafe.AsPointer(ref this), start, end);
     }
 
+    /// <include file='IMFMediaSourceExtensionLiveSeekableRange.xml' path='doc/member[@name="IMFMediaSourceExtensionLiveSeekableRange.ClearLiveSeekableRange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT ClearLiveSeekableRange()

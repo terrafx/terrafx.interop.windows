@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITfUIElementMgr.xml' path='doc/member[@name="ITfUIElementMgr"]/*' />
 [Guid("EA1EA135-19DF-11D7-A6D2-00065B84435C")]
 [NativeTypeName("struct ITfUIElementMgr : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITfUIElementMgr : ITfUIElementMgr.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITfUIElementMgr : ITfUIElementMgr.Interface
         return ((delegate* unmanaged<ITfUIElementMgr*, Guid*, void**, int>)(lpVtbl[0]))((ITfUIElementMgr*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITfUIElementMgr : ITfUIElementMgr.Interface
         return ((delegate* unmanaged<ITfUIElementMgr*, uint>)(lpVtbl[1]))((ITfUIElementMgr*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITfUIElementMgr : ITfUIElementMgr.Interface
         return ((delegate* unmanaged<ITfUIElementMgr*, uint>)(lpVtbl[2]))((ITfUIElementMgr*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITfUIElementMgr.xml' path='doc/member[@name="ITfUIElementMgr.BeginUIElement"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT BeginUIElement(ITfUIElement* pElement, BOOL* pbShow, [NativeTypeName("DWORD *")] uint* pdwUIElementId)
@@ -46,6 +51,7 @@ public unsafe partial struct ITfUIElementMgr : ITfUIElementMgr.Interface
         return ((delegate* unmanaged<ITfUIElementMgr*, ITfUIElement*, BOOL*, uint*, int>)(lpVtbl[3]))((ITfUIElementMgr*)Unsafe.AsPointer(ref this), pElement, pbShow, pdwUIElementId);
     }
 
+    /// <include file='ITfUIElementMgr.xml' path='doc/member[@name="ITfUIElementMgr.UpdateUIElement"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT UpdateUIElement([NativeTypeName("DWORD")] uint dwUIElementId)
@@ -53,6 +59,7 @@ public unsafe partial struct ITfUIElementMgr : ITfUIElementMgr.Interface
         return ((delegate* unmanaged<ITfUIElementMgr*, uint, int>)(lpVtbl[4]))((ITfUIElementMgr*)Unsafe.AsPointer(ref this), dwUIElementId);
     }
 
+    /// <include file='ITfUIElementMgr.xml' path='doc/member[@name="ITfUIElementMgr.EndUIElement"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT EndUIElement([NativeTypeName("DWORD")] uint dwUIElementId)
@@ -60,6 +67,7 @@ public unsafe partial struct ITfUIElementMgr : ITfUIElementMgr.Interface
         return ((delegate* unmanaged<ITfUIElementMgr*, uint, int>)(lpVtbl[5]))((ITfUIElementMgr*)Unsafe.AsPointer(ref this), dwUIElementId);
     }
 
+    /// <include file='ITfUIElementMgr.xml' path='doc/member[@name="ITfUIElementMgr.GetUIElement"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetUIElement([NativeTypeName("DWORD")] uint dwUIELementId, ITfUIElement** ppElement)
@@ -67,6 +75,7 @@ public unsafe partial struct ITfUIElementMgr : ITfUIElementMgr.Interface
         return ((delegate* unmanaged<ITfUIElementMgr*, uint, ITfUIElement**, int>)(lpVtbl[6]))((ITfUIElementMgr*)Unsafe.AsPointer(ref this), dwUIELementId, ppElement);
     }
 
+    /// <include file='ITfUIElementMgr.xml' path='doc/member[@name="ITfUIElementMgr.EnumUIElements"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT EnumUIElements(IEnumTfUIElements** ppEnum)

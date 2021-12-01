@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IFileOpenDialog.GetResults">
+    <summary>
+      <para>Gets the user's choices in a dialog that allows multiple selection.</para>
+    </summary>
+    <param name="ppenum">
+      <para>Type: <b><see cref="IShellItemArray" />**</b></para>
+      <para>The address of a pointer to an <b>IShellItemArray</b> through which the items selected in the dialog can be accessed.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This method can be used whether the selection consists of a single item or multiple items.</para>
+      <para>
+        <b>IFileOpenDialog.GetResult</b> can be called after the dialog has closed or during the handling of an IFileDialogEvents.OnFileOk event. Calling this method at any other time will fail.</para>
+      <para>
+        <see cref="Show" /> must return a success code for a result to be available to <b>IFileOpenDialog.GetResult</b>.</para>
+    </remarks>
+  </member>
+  <member name="IFileOpenDialog.GetSelectedItems">
+    <summary>
+      <para>Gets the currently selected items in the dialog. These items may be items selected in the view, or text selected in the file name edit box.</para>
+    </summary>
+    <param name="ppsai">
+      <para>Type: <b><see cref="IShellItemArray" />**</b></para>
+      <para>The address of a pointer to an <see cref="IShellItemArray" /> through which the selected items can be accessed.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This method can be used for single item or multiple item selections. If the user has entered new text in the file name field, this can be a time-consuming operation. When the application calls this method, the application parses the text in the <code>filename</code> field. For example, if this is a network share, the operation could take some time. However, this operation will not block the UI, since the user should able to stop the operation, which will result in <b>IFileOpenDialog.GetSelectedItems</b> returning a failure code).</para>
+    </remarks>
+  </member>
+  <member name="IFileOpenDialog">
+    <summary>
+      <para>Extends the <see cref="IFileDialog" /> interface by adding methods specific to the open dialog.</para>
+    </summary>
+    <remarks>
+      <h3>When to Implement</h3>
+      <b>IFileOpenDialog</b> is implemented by the common file open dialog (CLSID_FileOpenDialog).
+<para>This interface also provides the methods of the <see cref="IFileDialog" /> interface, from which it inherits.</para></remarks>
+    <seealso cref="IFileDialog" />
+    <seealso cref="IFileSaveDialog" />
+  </member>
+</doc>

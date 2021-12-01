@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="METARECORD">
+    <summary>
+      <para>The <b>METARECORD</b> structure contains a Windows-format metafile record.</para>
+    </summary>
+    <seealso cref="METAHEADER" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafile-structures">Metafile Structures</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafiles">Metafiles Overview</seealso>
+  </member>
+  <member name="METARECORD.rdSize">
+    <summary>
+      <para>The size, in words, of the record.</para>
+    </summary>
+  </member>
+  <member name="METARECORD.rdFunction">
+    <summary>
+      <para>The function number.</para>
+    </summary>
+  </member>
+  <member name="METARECORD.rdParm">
+    <summary>
+      <para>An array of words containing the function parameters, in reverse of the order they are passed to the function.</para>
+    </summary>
+  </member>
+</doc>

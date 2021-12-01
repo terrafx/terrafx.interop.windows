@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IExplorerCommand.xml' path='doc/member[@name="IExplorerCommand"]/*' />
 [Guid("A08CE4D0-FA25-44AB-B57C-C7B1C323E0B9")]
 [NativeTypeName("struct IExplorerCommand : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IExplorerCommand : IExplorerCommand.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IExplorerCommand : IExplorerCommand.Interface
         return ((delegate* unmanaged<IExplorerCommand*, Guid*, void**, int>)(lpVtbl[0]))((IExplorerCommand*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IExplorerCommand : IExplorerCommand.Interface
         return ((delegate* unmanaged<IExplorerCommand*, uint>)(lpVtbl[1]))((IExplorerCommand*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IExplorerCommand : IExplorerCommand.Interface
         return ((delegate* unmanaged<IExplorerCommand*, uint>)(lpVtbl[2]))((IExplorerCommand*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IExplorerCommand.xml' path='doc/member[@name="IExplorerCommand.GetTitle"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTitle(IShellItemArray* psiItemArray, [NativeTypeName("LPWSTR *")] ushort** ppszName)
@@ -46,6 +51,7 @@ public unsafe partial struct IExplorerCommand : IExplorerCommand.Interface
         return ((delegate* unmanaged<IExplorerCommand*, IShellItemArray*, ushort**, int>)(lpVtbl[3]))((IExplorerCommand*)Unsafe.AsPointer(ref this), psiItemArray, ppszName);
     }
 
+    /// <include file='IExplorerCommand.xml' path='doc/member[@name="IExplorerCommand.GetIcon"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetIcon(IShellItemArray* psiItemArray, [NativeTypeName("LPWSTR *")] ushort** ppszIcon)
@@ -53,6 +59,7 @@ public unsafe partial struct IExplorerCommand : IExplorerCommand.Interface
         return ((delegate* unmanaged<IExplorerCommand*, IShellItemArray*, ushort**, int>)(lpVtbl[4]))((IExplorerCommand*)Unsafe.AsPointer(ref this), psiItemArray, ppszIcon);
     }
 
+    /// <include file='IExplorerCommand.xml' path='doc/member[@name="IExplorerCommand.GetToolTip"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetToolTip(IShellItemArray* psiItemArray, [NativeTypeName("LPWSTR *")] ushort** ppszInfotip)
@@ -60,6 +67,7 @@ public unsafe partial struct IExplorerCommand : IExplorerCommand.Interface
         return ((delegate* unmanaged<IExplorerCommand*, IShellItemArray*, ushort**, int>)(lpVtbl[5]))((IExplorerCommand*)Unsafe.AsPointer(ref this), psiItemArray, ppszInfotip);
     }
 
+    /// <include file='IExplorerCommand.xml' path='doc/member[@name="IExplorerCommand.GetCanonicalName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetCanonicalName(Guid* pguidCommandName)
@@ -67,6 +75,7 @@ public unsafe partial struct IExplorerCommand : IExplorerCommand.Interface
         return ((delegate* unmanaged<IExplorerCommand*, Guid*, int>)(lpVtbl[6]))((IExplorerCommand*)Unsafe.AsPointer(ref this), pguidCommandName);
     }
 
+    /// <include file='IExplorerCommand.xml' path='doc/member[@name="IExplorerCommand.GetState"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetState(IShellItemArray* psiItemArray, BOOL fOkToBeSlow, [NativeTypeName("EXPCMDSTATE *")] uint* pCmdState)
@@ -74,6 +83,7 @@ public unsafe partial struct IExplorerCommand : IExplorerCommand.Interface
         return ((delegate* unmanaged<IExplorerCommand*, IShellItemArray*, BOOL, uint*, int>)(lpVtbl[7]))((IExplorerCommand*)Unsafe.AsPointer(ref this), psiItemArray, fOkToBeSlow, pCmdState);
     }
 
+    /// <include file='IExplorerCommand.xml' path='doc/member[@name="IExplorerCommand.Invoke"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT Invoke(IShellItemArray* psiItemArray, IBindCtx* pbc)
@@ -81,6 +91,7 @@ public unsafe partial struct IExplorerCommand : IExplorerCommand.Interface
         return ((delegate* unmanaged<IExplorerCommand*, IShellItemArray*, IBindCtx*, int>)(lpVtbl[8]))((IExplorerCommand*)Unsafe.AsPointer(ref this), psiItemArray, pbc);
     }
 
+    /// <include file='IExplorerCommand.xml' path='doc/member[@name="IExplorerCommand.GetFlags"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT GetFlags([NativeTypeName("EXPCMDFLAGS *")] uint* pFlags)
@@ -88,6 +99,7 @@ public unsafe partial struct IExplorerCommand : IExplorerCommand.Interface
         return ((delegate* unmanaged<IExplorerCommand*, uint*, int>)(lpVtbl[9]))((IExplorerCommand*)Unsafe.AsPointer(ref this), pFlags);
     }
 
+    /// <include file='IExplorerCommand.xml' path='doc/member[@name="IExplorerCommand.EnumSubCommands"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT EnumSubCommands(IEnumExplorerCommand** ppEnum)

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PENDINGMSG">
+    <summary>
+      <para>Specifies the return values for the <see cref="IMessageFilter.MessagePending" /> method.</para>
+    </summary>
+    <seealso cref="IMessageFilter.MessagePending" />
+  </member>
+  <member name="PENDINGMSG.PENDINGMSG_CANCELCALL">
+    <summary>
+      <para>Cancel the outgoing call.</para>
+    </summary>
+  </member>
+  <member name="PENDINGMSG.PENDINGMSG_WAITNOPROCESS">
+    <summary>
+      <para>Wait for the return and don't dispatch the message.</para>
+    </summary>
+  </member>
+  <member name="PENDINGMSG.PENDINGMSG_WAITDEFPROCESS">
+    <summary>
+      <para>Wait and dispatch the message.</para>
+    </summary>
+  </member>
+</doc>

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IACList2.xml' path='doc/member[@name="IACList2"]/*' />
 [Guid("470141A0-5186-11D2-BBB6-0060977B464C")]
 [NativeTypeName("struct IACList2 : IACList")]
 [NativeInheritance("IACList")]
@@ -16,6 +17,7 @@ public unsafe partial struct IACList2 : IACList2.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IACList2 : IACList2.Interface
         return ((delegate* unmanaged<IACList2*, Guid*, void**, int>)(lpVtbl[0]))((IACList2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IACList2 : IACList2.Interface
         return ((delegate* unmanaged<IACList2*, uint>)(lpVtbl[1]))((IACList2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IACList2 : IACList2.Interface
         return ((delegate* unmanaged<IACList2*, uint>)(lpVtbl[2]))((IACList2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IACList.Expand" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Expand([NativeTypeName("PCWSTR")] ushort* pszExpand)
@@ -46,6 +51,7 @@ public unsafe partial struct IACList2 : IACList2.Interface
         return ((delegate* unmanaged<IACList2*, ushort*, int>)(lpVtbl[3]))((IACList2*)Unsafe.AsPointer(ref this), pszExpand);
     }
 
+    /// <include file='IACList2.xml' path='doc/member[@name="IACList2.SetOptions"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetOptions([NativeTypeName("DWORD")] uint dwFlag)
@@ -53,6 +59,7 @@ public unsafe partial struct IACList2 : IACList2.Interface
         return ((delegate* unmanaged<IACList2*, uint, int>)(lpVtbl[4]))((IACList2*)Unsafe.AsPointer(ref this), dwFlag);
     }
 
+    /// <include file='IACList2.xml' path='doc/member[@name="IACList2.GetOptions"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetOptions([NativeTypeName("DWORD *")] uint* pdwFlag)

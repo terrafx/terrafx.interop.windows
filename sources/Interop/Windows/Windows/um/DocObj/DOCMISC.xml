@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DOCMISC">
+    <summary>
+      <para>Provides miscellaneous property information about a document object.</para>
+    </summary>
+    <remarks>
+      <para>Objects that have a limited user interface for activation purposes should set DOCMISC_CANTOPENEDIT. Those that support <see cref="IPersistStorage" /> only as a persistence mechanism should specify DOCMISC_NOFILESUPPORT. Otherwise, an object must also implement <see cref="IPersistFile" />.</para>
+      <para>A combination of values from <b>DOCMISC</b> is returned at the location specified by the <i>pdwStatus</i> parameter in <see cref="IOleDocument.GetDocMiscStatus" />.</para>
+      <para>If an object requires none of these flags, it must write a zero to the <i>pdwStatus</i> parameter.</para>
+    </remarks>
+    <seealso cref="IOleDocument.GetDocMiscStatus" />
+    <seealso cref="IOleDocumentView.Open" />
+    <seealso cref="IOleDocumentView.SetRectComplex" />
+    <seealso cref="IPersistFile" />
+    <seealso cref="IPersistStorage" />
+  </member>
+  <member name="DOCMISC.DOCMISC_CANCREATEMULTIPLEVIEWS">
+    <summary>
+      <para>Object supports multiple views.</para>
+    </summary>
+  </member>
+  <member name="DOCMISC.DOCMISC_SUPPORTCOMPLEXRECTANGLES">
+    <summary>
+      <para>Object supports complex rectangles and therefore implements <see cref="IOleDocumentView.SetRectComplex" />.</para>
+    </summary>
+  </member>
+  <member name="DOCMISC.DOCMISC_CANTOPENEDIT">
+    <summary>
+      <para>Object supports activation in a separate window and therefore implements <see cref="IOleDocumentView.Open" />.</para>
+    </summary>
+  </member>
+  <member name="DOCMISC.DOCMISC_NOFILESUPPORT">
+    <summary>
+      <para>Object does not support file read/write.</para>
+    </summary>
+  </member>
+</doc>

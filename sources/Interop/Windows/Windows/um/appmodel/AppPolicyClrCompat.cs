@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='AppPolicyClrCompat.xml' path='doc/member[@name="AppPolicyClrCompat"]/*' />
 public enum AppPolicyClrCompat
 {
+    /// <include file='AppPolicyClrCompat.xml' path='doc/member[@name="AppPolicyClrCompat.AppPolicyClrCompat_Other"]/*' />
     AppPolicyClrCompat_Other = 0,
+
+    /// <include file='AppPolicyClrCompat.xml' path='doc/member[@name="AppPolicyClrCompat.AppPolicyClrCompat_ClassicDesktop"]/*' />
     AppPolicyClrCompat_ClassicDesktop = 1,
+
+    /// <include file='AppPolicyClrCompat.xml' path='doc/member[@name="AppPolicyClrCompat.AppPolicyClrCompat_Universal"]/*' />
     AppPolicyClrCompat_Universal = 2,
+
+    /// <include file='AppPolicyClrCompat.xml' path='doc/member[@name="AppPolicyClrCompat.AppPolicyClrCompat_PackagedDesktop"]/*' />
     AppPolicyClrCompat_PackagedDesktop = 3,
 }

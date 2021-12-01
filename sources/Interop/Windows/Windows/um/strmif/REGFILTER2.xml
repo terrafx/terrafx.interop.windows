@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="REGFILTER2">
+    <summary>
+      <para>The <code>REGFILTER2</code> structure contains information for registering a filter.</para>
+    </summary>
+    <remarks>
+      <para>This structure is passed to the <see cref="IFilterMapper2.RegisterFilter" /> method.</para>
+      <para>If you need to register pin mediums or pin categories, set <b>dwVersion</b> to 2 and use the <see cref="REGFILTERPINS2" /> structure.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-structures">DirectShow Structures</seealso>
+  </member>
+  <member name="REGFILTER2.dwVersion">
+    <summary>
+      <para>Filter registration format. If the value is 1, the union contains the first unnamed structure. If the value is 2, the union contains the second unnamed structure.</para>
+    </summary>
+  </member>
+  <member name="REGFILTER2.dwMerit">
+    <summary>
+      <para>Filter merit. Filters with higher merit are enumerated first. See <a href="https://docs.microsoft.com//windows/desktop/DirectShow/merit">Merit</a>.</para>
+    </summary>
+  </member>
+  <member name="REGFILTER2.cPins">
+    <summary>
+      <para>Number of pins. (Defined only if <b>dwVersion</b> is 1.)</para>
+    </summary>
+  </member>
+  <member name="REGFILTER2.rgPins">
+    <summary>
+      <para>Pointer to an array of <see cref="REGFILTERPINS" /> structures, of size <b>cPins</b>. (Defined only if <b>dwVersion</b> is 1.)</para>
+    </summary>
+  </member>
+  <member name="REGFILTER2.cPins2">
+    <summary>
+      <para>Number of pins. (Defined only if <b>dwVersion</b> is 2.)</para>
+    </summary>
+  </member>
+  <member name="REGFILTER2.rgPins2">
+    <summary>
+      <para>Pointer to an array of <see cref="REGFILTERPINS2" /> structures, of size <b>cPins2</b>. (Defined only if <b>dwVersion</b> is 2.)</para>
+    </summary>
+  </member>
+</doc>

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IUserNotificationCallback.xml' path='doc/member[@name="IUserNotificationCallback"]/*' />
 [Guid("19108294-0441-4AFF-8013-FA0A730B0BEA")]
 [NativeTypeName("struct IUserNotificationCallback : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IUserNotificationCallback : IUserNotificationCallba
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IUserNotificationCallback : IUserNotificationCallba
         return ((delegate* unmanaged<IUserNotificationCallback*, Guid*, void**, int>)(lpVtbl[0]))((IUserNotificationCallback*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IUserNotificationCallback : IUserNotificationCallba
         return ((delegate* unmanaged<IUserNotificationCallback*, uint>)(lpVtbl[1]))((IUserNotificationCallback*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IUserNotificationCallback : IUserNotificationCallba
         return ((delegate* unmanaged<IUserNotificationCallback*, uint>)(lpVtbl[2]))((IUserNotificationCallback*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IUserNotificationCallback.xml' path='doc/member[@name="IUserNotificationCallback.OnBalloonUserClick"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT OnBalloonUserClick(POINT* pt)
@@ -46,6 +51,7 @@ public unsafe partial struct IUserNotificationCallback : IUserNotificationCallba
         return ((delegate* unmanaged<IUserNotificationCallback*, POINT*, int>)(lpVtbl[3]))((IUserNotificationCallback*)Unsafe.AsPointer(ref this), pt);
     }
 
+    /// <include file='IUserNotificationCallback.xml' path='doc/member[@name="IUserNotificationCallback.OnLeftClick"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT OnLeftClick(POINT* pt)
@@ -53,6 +59,7 @@ public unsafe partial struct IUserNotificationCallback : IUserNotificationCallba
         return ((delegate* unmanaged<IUserNotificationCallback*, POINT*, int>)(lpVtbl[4]))((IUserNotificationCallback*)Unsafe.AsPointer(ref this), pt);
     }
 
+    /// <include file='IUserNotificationCallback.xml' path='doc/member[@name="IUserNotificationCallback.OnContextMenu"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT OnContextMenu(POINT* pt)

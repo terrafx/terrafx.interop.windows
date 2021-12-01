@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITaskbarList.xml' path='doc/member[@name="ITaskbarList"]/*' />
 [Guid("56FDF342-FD6D-11D0-958A-006097C9A090")]
 [NativeTypeName("struct ITaskbarList : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITaskbarList : ITaskbarList.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITaskbarList : ITaskbarList.Interface
         return ((delegate* unmanaged<ITaskbarList*, Guid*, void**, int>)(lpVtbl[0]))((ITaskbarList*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITaskbarList : ITaskbarList.Interface
         return ((delegate* unmanaged<ITaskbarList*, uint>)(lpVtbl[1]))((ITaskbarList*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITaskbarList : ITaskbarList.Interface
         return ((delegate* unmanaged<ITaskbarList*, uint>)(lpVtbl[2]))((ITaskbarList*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITaskbarList.xml' path='doc/member[@name="ITaskbarList.HrInit"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT HrInit()
@@ -46,6 +51,7 @@ public unsafe partial struct ITaskbarList : ITaskbarList.Interface
         return ((delegate* unmanaged<ITaskbarList*, int>)(lpVtbl[3]))((ITaskbarList*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITaskbarList.xml' path='doc/member[@name="ITaskbarList.AddTab"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT AddTab(HWND hwnd)
@@ -53,6 +59,7 @@ public unsafe partial struct ITaskbarList : ITaskbarList.Interface
         return ((delegate* unmanaged<ITaskbarList*, HWND, int>)(lpVtbl[4]))((ITaskbarList*)Unsafe.AsPointer(ref this), hwnd);
     }
 
+    /// <include file='ITaskbarList.xml' path='doc/member[@name="ITaskbarList.DeleteTab"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT DeleteTab(HWND hwnd)
@@ -60,6 +67,7 @@ public unsafe partial struct ITaskbarList : ITaskbarList.Interface
         return ((delegate* unmanaged<ITaskbarList*, HWND, int>)(lpVtbl[5]))((ITaskbarList*)Unsafe.AsPointer(ref this), hwnd);
     }
 
+    /// <include file='ITaskbarList.xml' path='doc/member[@name="ITaskbarList.ActivateTab"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT ActivateTab(HWND hwnd)
@@ -67,6 +75,7 @@ public unsafe partial struct ITaskbarList : ITaskbarList.Interface
         return ((delegate* unmanaged<ITaskbarList*, HWND, int>)(lpVtbl[6]))((ITaskbarList*)Unsafe.AsPointer(ref this), hwnd);
     }
 
+    /// <include file='ITaskbarList.xml' path='doc/member[@name="ITaskbarList.SetActiveAlt"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT SetActiveAlt(HWND hwnd)

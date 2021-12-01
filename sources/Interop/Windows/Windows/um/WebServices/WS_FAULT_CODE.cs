@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_FAULT_CODE.xml' path='doc/member[@name="WS_FAULT_CODE"]/*' />
 public unsafe partial struct WS_FAULT_CODE
 {
+    /// <include file='WS_FAULT_CODE.xml' path='doc/member[@name="WS_FAULT_CODE.value"]/*' />
     public WS_XML_QNAME value;
 
+    /// <include file='WS_FAULT_CODE.xml' path='doc/member[@name="WS_FAULT_CODE.subCode"]/*' />
     [NativeTypeName("struct _WS_FAULT_CODE *")]
     public WS_FAULT_CODE* subCode;
 }

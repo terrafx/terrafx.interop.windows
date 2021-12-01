@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IShellMenuCallback.xml' path='doc/member[@name="IShellMenuCallback"]/*' />
 [Guid("4CA300A1-9B8D-11D1-8B22-00C04FD918D0")]
 [NativeTypeName("struct IShellMenuCallback : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IShellMenuCallback : IShellMenuCallback.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IShellMenuCallback : IShellMenuCallback.Interface
         return ((delegate* unmanaged<IShellMenuCallback*, Guid*, void**, int>)(lpVtbl[0]))((IShellMenuCallback*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IShellMenuCallback : IShellMenuCallback.Interface
         return ((delegate* unmanaged<IShellMenuCallback*, uint>)(lpVtbl[1]))((IShellMenuCallback*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IShellMenuCallback : IShellMenuCallback.Interface
         return ((delegate* unmanaged<IShellMenuCallback*, uint>)(lpVtbl[2]))((IShellMenuCallback*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IShellMenuCallback.xml' path='doc/member[@name="IShellMenuCallback.CallbackSM"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT CallbackSM([NativeTypeName("LPSMDATA")] SMDATA* psmd, uint uMsg, WPARAM wParam, LPARAM lParam)

@@ -1,0 +1,306 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SOCKADDR_IN6">
+    <summary>
+      <para>The SOCKADDR_IN6 structure specifies a transport address and port for the
+<a href="https://docs.microsoft.com//windows-hardware/drivers/network/af-inet6">AF_INET6</a> address family.</para>
+    </summary>
+    <remarks>
+      <para>All of the data in the SOCKADDR_IN6 structure, except for the address family, must be specified in
+network-byte-order (big-endian).</para>
+      <para>The size of the SOCKADDR_IN6 structure is too large to fit in the memory space that is provided by a
+<see cref="SOCKADDR" /> structure. For a structure that is
+guaranteed to be large enough to contain a transport address for all possible address families, see
+<see cref="SOCKADDR_STORAGE" />.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows-hardware/drivers/network/af-inet6">AF_INET6</seealso>
+    <seealso cref="IN6_ADDR" />
+    <seealso cref="SOCKADDR" />
+    <seealso cref="SOCKADDR_STORAGE" />
+  </member>
+  <member name="SOCKADDR_IN6.sin6_family">
+    <summary>
+      <para>The address family for the transport address. This member should always be set to AF_INET6.</para>
+    </summary>
+  </member>
+  <member name="SOCKADDR_IN6.sin6_port">
+    <summary>
+      <para>A transport protocol port number.</para>
+    </summary>
+  </member>
+  <member name="SOCKADDR_IN6.sin6_flowinfo">
+    <summary>
+      <para>The IPv6 flow information.</para>
+    </summary>
+  </member>
+  <member name="SOCKADDR_IN6.sin6_addr">
+    <summary>
+      <para>An
+<see cref="IN6_ADDR" /> structure that contains an IPv6 transport
+address.</para>
+    </summary>
+  </member>
+  <member name="SOCKADDR_IN6.sin6_scope_id">
+    <summary>
+      <para>A ULONG representation of the IPv6 scope identifier that is defined in the
+<b>sin6_scope_struct</b> member.</para>
+    </summary>
+  </member>
+  <member name="SOCKADDR_IN6.sin6_scope_struct">
+    <summary>
+      <para>A SCOPE_ID structure that contains the scope identifier for the IPv6 transport address. The
+SCOPE_ID structure is defined as follows:</para>
+      <code>typedef struct {
+  union {
+    struct {
+      ULONG  Zone : 28;
+      ULONG  Level : 4;
+    };
+    ULONG  Value;
+  };
+} SCOPE_ID, *PSCOPE_ID;
+</code>
+      <h4>Zone</h4>
+      <para>The zone index that identifies the zone to which the transport address pertains. Zones of the
+different scopes are instantiated as follows:</para>
+      <list type="bullet">
+        <item>
+          <description>Each interface on a node comprises a single zone of interface-local scope.</description>
+        </item>
+      </list>
+      <list type="bullet">
+        <item>
+          <description>Each link, and the interfaces attached to that link, comprise a single zone of link-local
+scope.</description>
+        </item>
+      </list>
+      <list type="bullet">
+        <item>
+          <description>There is a single zone of global scope that comprises all of the links and interfaces in the
+Internet.</description>
+        </item>
+      </list>
+      <list type="bullet">
+        <item>
+          <description>The boundaries of zones of scope other than interface-local, link-local, and global are
+defined by network administrators.</description>
+        </item>
+      </list>
+      <para>A value of zero specifies the default zone.</para>
+      <h4>Level</h4>
+      <para>The scope of the IPv6 transport address. This scope must be the same as the IPv6 scope value
+that is embedded in the IPv6 transport address. This member can be one of the following:</para>
+      <para>
+        <b>ScopeLevelInterface</b>
+      </para>
+      <para>The transport address has interface-local scope.</para>
+      <para>
+        <b>ScopeLevelLink</b>
+      </para>
+      <para>The transport address has link-local scope.</para>
+      <para>
+        <b>ScopeLevelSubnet</b>
+      </para>
+      <para>The transport address has subnet-local scope.</para>
+      <para>
+        <b>ScopeLevelAdmin</b>
+      </para>
+      <para>The transport address has admin-local scope.</para>
+      <para>
+        <b>ScopeLevelSite</b>
+      </para>
+      <para>The transport address has site-local scope.</para>
+      <para>
+        <b>ScopeLevelOrganization</b>
+      </para>
+      <para>The transport address has organization-local scope.</para>
+      <para>
+        <b>ScopeLevelGlobal</b>
+      </para>
+      <para>The transport address has global scope.</para>
+      <h4>Value</h4>
+      <para>A ULONG representation of the IPv6 scope identifier.</para>
+    </summary>
+  </member>
+  <member name="SOCKADDR_IN6">
+    <summary>
+      <para>The SOCKADDR_IN6 structure specifies a transport address and port for the
+<a href="https://docs.microsoft.com//windows-hardware/drivers/network/af-inet6">AF_INET6</a> address family.</para>
+    </summary>
+    <remarks>
+      <para>All of the data in the SOCKADDR_IN6 structure, except for the address family, must be specified in
+network-byte-order (big-endian).</para>
+      <para>The size of the SOCKADDR_IN6 structure is too large to fit in the memory space that is provided by a
+<see cref="SOCKADDR" /> structure. For a structure that is
+guaranteed to be large enough to contain a transport address for all possible address families, see
+<see cref="SOCKADDR_STORAGE" />.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows-hardware/drivers/network/af-inet6">AF_INET6</seealso>
+    <seealso cref="IN6_ADDR" />
+    <seealso cref="SOCKADDR" />
+    <seealso cref="SOCKADDR_STORAGE" />
+  </member>
+  <member name="SOCKADDR_IN6.sin6_family">
+    <summary>
+      <para>The address family for the transport address. This member should always be set to AF_INET6.</para>
+    </summary>
+  </member>
+  <member name="SOCKADDR_IN6.sin6_port">
+    <summary>
+      <para>A transport protocol port number.</para>
+    </summary>
+  </member>
+  <member name="SOCKADDR_IN6.sin6_flowinfo">
+    <summary>
+      <para>The IPv6 flow information.</para>
+    </summary>
+  </member>
+  <member name="SOCKADDR_IN6.sin6_addr">
+    <summary>
+      <para>An
+<see cref="IN6_ADDR" /> structure that contains an IPv6 transport
+address.</para>
+    </summary>
+  </member>
+  <member name="SOCKADDR_IN6.sin6_scope_id">
+    <summary>
+      <para>A ULONG representation of the IPv6 scope identifier that is defined in the
+<b>sin6_scope_struct</b> member.</para>
+      <h4>- sin6_scope_struct</h4>
+      <para>A SCOPE_ID structure that contains the scope identifier for the IPv6 transport address. The
+SCOPE_ID structure is defined as follows:</para>
+      <code>typedef struct {
+  union {
+    struct {
+      ULONG  Zone : 28;
+      ULONG  Level : 4;
+    };
+    ULONG  Value;
+  };
+} SCOPE_ID, *PSCOPE_ID;
+</code>
+      <h4>Zone</h4>
+      <para>The zone index that identifies the zone to which the transport address pertains. Zones of the
+different scopes are instantiated as follows:</para>
+      <list type="bullet">
+        <item>
+          <description>Each interface on a node comprises a single zone of interface-local scope.</description>
+        </item>
+      </list>
+      <list type="bullet">
+        <item>
+          <description>Each link, and the interfaces attached to that link, comprise a single zone of link-local
+scope.</description>
+        </item>
+      </list>
+      <list type="bullet">
+        <item>
+          <description>There is a single zone of global scope that comprises all of the links and interfaces in the
+Internet.</description>
+        </item>
+      </list>
+      <list type="bullet">
+        <item>
+          <description>The boundaries of zones of scope other than interface-local, link-local, and global are
+defined by network administrators.</description>
+        </item>
+      </list>
+      <para>A value of zero specifies the default zone.</para>
+      <h4>Level</h4>
+      <para>The scope of the IPv6 transport address. This scope must be the same as the IPv6 scope value
+that is embedded in the IPv6 transport address. This member can be one of the following:</para>
+      <para>
+        <b>ScopeLevelInterface</b>
+      </para>
+      <para>The transport address has interface-local scope.</para>
+      <para>
+        <b>ScopeLevelLink</b>
+      </para>
+      <para>The transport address has link-local scope.</para>
+      <para>
+        <b>ScopeLevelSubnet</b>
+      </para>
+      <para>The transport address has subnet-local scope.</para>
+      <para>
+        <b>ScopeLevelAdmin</b>
+      </para>
+      <para>The transport address has admin-local scope.</para>
+      <para>
+        <b>ScopeLevelSite</b>
+      </para>
+      <para>The transport address has site-local scope.</para>
+      <para>
+        <b>ScopeLevelOrganization</b>
+      </para>
+      <para>The transport address has organization-local scope.</para>
+      <para>
+        <b>ScopeLevelGlobal</b>
+      </para>
+      <para>The transport address has global scope.</para>
+      <h4>Value</h4>
+      <para>A ULONG representation of the IPv6 scope identifier.</para>
+      <h5>- sin6_scope_struct.Level</h5>
+      <para>The scope of the IPv6 transport address. This scope must be the same as the IPv6 scope value
+that is embedded in the IPv6 transport address. This member can be one of the following:</para>
+      <para>
+        <b>ScopeLevelInterface</b>
+      </para>
+      <para>The transport address has interface-local scope.</para>
+      <para>
+        <b>ScopeLevelLink</b>
+      </para>
+      <para>The transport address has link-local scope.</para>
+      <para>
+        <b>ScopeLevelSubnet</b>
+      </para>
+      <para>The transport address has subnet-local scope.</para>
+      <para>
+        <b>ScopeLevelAdmin</b>
+      </para>
+      <para>The transport address has admin-local scope.</para>
+      <para>
+        <b>ScopeLevelSite</b>
+      </para>
+      <para>The transport address has site-local scope.</para>
+      <para>
+        <b>ScopeLevelOrganization</b>
+      </para>
+      <para>The transport address has organization-local scope.</para>
+      <para>
+        <b>ScopeLevelGlobal</b>
+      </para>
+      <para>The transport address has global scope.</para>
+      <h5>- sin6_scope_struct.Value</h5>
+      <para>A ULONG representation of the IPv6 scope identifier.</para>
+      <h5>- sin6_scope_struct.Zone</h5>
+      <para>The zone index that identifies the zone to which the transport address pertains. Zones of the
+different scopes are instantiated as follows:</para>
+      <list type="bullet">
+        <item>
+          <description>Each interface on a node comprises a single zone of interface-local scope.</description>
+        </item>
+      </list>
+      <list type="bullet">
+        <item>
+          <description>Each link, and the interfaces attached to that link, comprise a single zone of link-local
+scope.</description>
+        </item>
+      </list>
+      <list type="bullet">
+        <item>
+          <description>There is a single zone of global scope that comprises all of the links and interfaces in the
+Internet.</description>
+        </item>
+      </list>
+      <list type="bullet">
+        <item>
+          <description>The boundaries of zones of scope other than interface-local, link-local, and global are
+defined by network administrators.</description>
+        </item>
+      </list>
+      <para>A value of zero specifies the default zone.</para>
+    </summary>
+  </member>
+</doc>

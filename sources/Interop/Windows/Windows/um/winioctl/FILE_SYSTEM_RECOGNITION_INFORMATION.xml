@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="FILE_SYSTEM_RECOGNITION_INFORMATION">
+    <summary>
+      <para>Contains file system recognition information retrieved by the <a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_query_file_system_recognition">FSCTL_QUERY_FILE_SYSTEM_RECOGNITION</a> control code.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/FileIO/file-system-recognition-structure">FILE_SYSTEM_RECOGNITION_STRUCTURE</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_query_file_system_recognition">FSCTL_QUERY_FILE_SYSTEM_RECOGNITION</seealso>
+  </member>
+  <member name="FILE_SYSTEM_RECOGNITION_INFORMATION.FileSystem">
+    <summary>
+      <para>The file system name stored on the disk. This is a null-terminated string of 8 ASCII characters that represents the nonlocalizable human-readable name of the
+file system the volume is formatted with.</para>
+    </summary>
+  </member>
+</doc>

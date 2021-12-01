@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='INewWindowManager.xml' path='doc/member[@name="INewWindowManager"]/*' />
 [Guid("D2BC4C84-3F72-4A52-A604-7BCBF3982CBB")]
 [NativeTypeName("struct INewWindowManager : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct INewWindowManager : INewWindowManager.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct INewWindowManager : INewWindowManager.Interface
         return ((delegate* unmanaged<INewWindowManager*, Guid*, void**, int>)(lpVtbl[0]))((INewWindowManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct INewWindowManager : INewWindowManager.Interface
         return ((delegate* unmanaged<INewWindowManager*, uint>)(lpVtbl[1]))((INewWindowManager*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct INewWindowManager : INewWindowManager.Interface
         return ((delegate* unmanaged<INewWindowManager*, uint>)(lpVtbl[2]))((INewWindowManager*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='INewWindowManager.xml' path='doc/member[@name="INewWindowManager.EvaluateNewWindow"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT EvaluateNewWindow([NativeTypeName("LPCWSTR")] ushort* pszUrl, [NativeTypeName("LPCWSTR")] ushort* pszName, [NativeTypeName("LPCWSTR")] ushort* pszUrlContext, [NativeTypeName("LPCWSTR")] ushort* pszFeatures, BOOL fReplace, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD")] uint dwUserActionTime)

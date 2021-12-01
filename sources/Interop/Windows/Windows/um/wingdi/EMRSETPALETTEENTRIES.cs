@@ -9,22 +9,29 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='EMRSETPALETTEENTRIES.xml' path='doc/member[@name="EMRSETPALETTEENTRIES"]/*' />
 public partial struct EMRSETPALETTEENTRIES
 {
+    /// <include file='EMRSETPALETTEENTRIES.xml' path='doc/member[@name="EMRSETPALETTEENTRIES.emr"]/*' />
     public EMR emr;
 
+    /// <include file='EMRSETPALETTEENTRIES.xml' path='doc/member[@name="EMRSETPALETTEENTRIES.ihPal"]/*' />
     [NativeTypeName("DWORD")]
     public uint ihPal;
 
+    /// <include file='EMRSETPALETTEENTRIES.xml' path='doc/member[@name="EMRSETPALETTEENTRIES.iStart"]/*' />
     [NativeTypeName("DWORD")]
     public uint iStart;
 
+    /// <include file='EMRSETPALETTEENTRIES.xml' path='doc/member[@name="EMRSETPALETTEENTRIES.cEntries"]/*' />
     [NativeTypeName("DWORD")]
     public uint cEntries;
 
+    /// <include file='EMRSETPALETTEENTRIES.xml' path='doc/member[@name="EMRSETPALETTEENTRIES.aPalEntries"]/*' />
     [NativeTypeName("PALETTEENTRY [1]")]
     public _aPalEntries_e__FixedBuffer aPalEntries;
 
+    /// <include file='_aPalEntries_e__FixedBuffer.xml' path='doc/member[@name="_aPalEntries_e__FixedBuffer"]/*' />
     public partial struct _aPalEntries_e__FixedBuffer
     {
         public PALETTEENTRY e0;

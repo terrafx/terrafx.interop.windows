@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMAPI_FORMAT2_RAW_CD_WRITE_ACTION">
+    <summary>
+      <para>Defines values that indicate the current state of the write operation when using the <see cref="IDiscFormat2RawCDEventArgs" /> interface.</para>
+    </summary>
+    <seealso cref="DDiscFormat2RawCDEvents.Update" />
+  </member>
+  <member name="IMAPI_FORMAT2_RAW_CD_WRITE_ACTION.IMAPI_FORMAT2_RAW_CD_WRITE_ACTION_UNKNOWN">
+    <summary>
+      <para>Indicates an unknown state.</para>
+    </summary>
+  </member>
+  <member name="IMAPI_FORMAT2_RAW_CD_WRITE_ACTION.IMAPI_FORMAT2_RAW_CD_WRITE_ACTION_PREPARING">
+    <summary>
+      <para>Preparing to write the session.</para>
+    </summary>
+  </member>
+  <member name="IMAPI_FORMAT2_RAW_CD_WRITE_ACTION.IMAPI_FORMAT2_RAW_CD_WRITE_ACTION_WRITING">
+    <summary>
+      <para>Writing session data.</para>
+    </summary>
+  </member>
+  <member name="IMAPI_FORMAT2_RAW_CD_WRITE_ACTION.IMAPI_FORMAT2_RAW_CD_WRITE_ACTION_FINISHING">
+    <summary>
+      <para>Synchronizing the drive's cache with the end of the data written to disc.</para>
+    </summary>
+  </member>
+</doc>

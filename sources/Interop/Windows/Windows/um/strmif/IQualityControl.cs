@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IQualityControl.xml' path='doc/member[@name="IQualityControl"]/*' />
 [Guid("56A868A5-0AD4-11CE-B03A-0020AF0BA770")]
 [NativeTypeName("struct IQualityControl : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IQualityControl : IQualityControl.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IQualityControl : IQualityControl.Interface
         return ((delegate* unmanaged<IQualityControl*, Guid*, void**, int>)(lpVtbl[0]))((IQualityControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IQualityControl : IQualityControl.Interface
         return ((delegate* unmanaged<IQualityControl*, uint>)(lpVtbl[1]))((IQualityControl*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IQualityControl : IQualityControl.Interface
         return ((delegate* unmanaged<IQualityControl*, uint>)(lpVtbl[2]))((IQualityControl*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IQualityControl.xml' path='doc/member[@name="IQualityControl.Notify"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Notify(IBaseFilter* pSelf, Quality q)
@@ -46,6 +51,7 @@ public unsafe partial struct IQualityControl : IQualityControl.Interface
         return ((delegate* unmanaged<IQualityControl*, IBaseFilter*, Quality, int>)(lpVtbl[3]))((IQualityControl*)Unsafe.AsPointer(ref this), pSelf, q);
     }
 
+    /// <include file='IQualityControl.xml' path='doc/member[@name="IQualityControl.SetSink"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetSink(IQualityControl* piqc)

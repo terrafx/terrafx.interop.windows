@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IFilterChain.xml' path='doc/member[@name="IFilterChain"]/*' />
 [Guid("DCFBDCF6-0DC2-45F5-9AB2-7C330EA09C29")]
 [NativeTypeName("struct IFilterChain : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IFilterChain : IFilterChain.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IFilterChain : IFilterChain.Interface
         return ((delegate* unmanaged<IFilterChain*, Guid*, void**, int>)(lpVtbl[0]))((IFilterChain*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IFilterChain : IFilterChain.Interface
         return ((delegate* unmanaged<IFilterChain*, uint>)(lpVtbl[1]))((IFilterChain*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IFilterChain : IFilterChain.Interface
         return ((delegate* unmanaged<IFilterChain*, uint>)(lpVtbl[2]))((IFilterChain*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IFilterChain.xml' path='doc/member[@name="IFilterChain.StartChain"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT StartChain(IBaseFilter* pStartFilter, IBaseFilter* pEndFilter)
@@ -46,6 +51,7 @@ public unsafe partial struct IFilterChain : IFilterChain.Interface
         return ((delegate* unmanaged<IFilterChain*, IBaseFilter*, IBaseFilter*, int>)(lpVtbl[3]))((IFilterChain*)Unsafe.AsPointer(ref this), pStartFilter, pEndFilter);
     }
 
+    /// <include file='IFilterChain.xml' path='doc/member[@name="IFilterChain.PauseChain"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT PauseChain(IBaseFilter* pStartFilter, IBaseFilter* pEndFilter)
@@ -53,6 +59,7 @@ public unsafe partial struct IFilterChain : IFilterChain.Interface
         return ((delegate* unmanaged<IFilterChain*, IBaseFilter*, IBaseFilter*, int>)(lpVtbl[4]))((IFilterChain*)Unsafe.AsPointer(ref this), pStartFilter, pEndFilter);
     }
 
+    /// <include file='IFilterChain.xml' path='doc/member[@name="IFilterChain.StopChain"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT StopChain(IBaseFilter* pStartFilter, IBaseFilter* pEndFilter)
@@ -60,6 +67,7 @@ public unsafe partial struct IFilterChain : IFilterChain.Interface
         return ((delegate* unmanaged<IFilterChain*, IBaseFilter*, IBaseFilter*, int>)(lpVtbl[5]))((IFilterChain*)Unsafe.AsPointer(ref this), pStartFilter, pEndFilter);
     }
 
+    /// <include file='IFilterChain.xml' path='doc/member[@name="IFilterChain.RemoveChain"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT RemoveChain(IBaseFilter* pStartFilter, IBaseFilter* pEndFilter)

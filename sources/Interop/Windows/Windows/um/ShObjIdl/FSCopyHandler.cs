@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='FSCopyHandler.xml' path='doc/member[@name="FSCopyHandler"]/*' />
 [Guid("D197380A-0A79-4DC8-A033-ED882C2FA14B")]
 public partial struct FSCopyHandler
 {

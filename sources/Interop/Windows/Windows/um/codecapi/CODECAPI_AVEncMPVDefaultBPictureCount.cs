@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVEncMPVDefaultBPictureCount.xml' path='doc/member[@name="CODECAPI_AVEncMPVDefaultBPictureCount"]/*' />
 [Guid("8D390AAC-DC5C-4200-B57F-814D04BABAB2")]
 public partial struct CODECAPI_AVEncMPVDefaultBPictureCount
 {

@@ -1,0 +1,327 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ACE_HEADER">
+    <summary>
+      <para>The <b>ACE_HEADER</b> structure defines the type and size of an <a href="https://docs.microsoft.com//windows/desktop/SecGloss/a-gly">access control entry</a> (ACE).</para>
+    </summary>
+    <remarks>
+      <para>The <b>ACE_HEADER</b> structure is the first member of the various types of ACE structures, such as <see cref="ACCESS_ALLOWED_ACE" />.</para>
+      <para>System-alarm ACEs are not currently supported. The <b>AceType</b> member cannot specify the SYSTEM_ALARM_ACE_TYPE or SYSTEM_ALARM_OBJECT_ACE_TYPE values. Do not use the <see cref="SYSTEM_ALARM_ACE" /> or <see cref="SYSTEM_ALARM_OBJECT_ACE" /> structures.</para>
+    </remarks>
+    <seealso cref="ACCESS_ALLOWED_ACE" />
+    <seealso cref="ACCESS_ALLOWED_OBJECT_ACE" />
+    <seealso cref="ACCESS_DENIED_ACE" />
+    <seealso cref="ACCESS_DENIED_OBJECT_ACE" />
+    <seealso cref="ACL" />
+    <seealso cref="SYSTEM_AUDIT_ACE" />
+    <seealso cref="SYSTEM_AUDIT_OBJECT_ACE" />
+  </member>
+  <member name="ACE_HEADER.AceType">
+    <summary>
+      <para>Specifies the ACE type. This member can be one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>ACCESS_ALLOWED_ACE_TYPE</b>
+          </description>
+          <description>
+            <para>Access-allowed ACE that uses the
+<see cref="ACCESS_ALLOWED_ACE" /> structure.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>ACCESS_ALLOWED_CALLBACK_ACE_TYPE</b>
+          </description>
+          <description>
+            <para>Access-allowed callback ACE that uses the
+<see cref="ACCESS_ALLOWED_CALLBACK_ACE" /> structure.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>ACCESS_ALLOWED_CALLBACK_OBJECT_ACE_TYPE</b>
+          </description>
+          <description>
+            <para>Object-specific access-allowed callback ACE that uses the
+<see cref="ACCESS_ALLOWED_CALLBACK_OBJECT_ACE" /> structure.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>ACCESS_ALLOWED_COMPOUND_ACE_TYPE</b>
+          </description>
+          <description>
+            <para>Reserved.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>ACCESS_ALLOWED_OBJECT_ACE_TYPE</b>
+          </description>
+          <description>
+            <para>Object-specific access-allowed ACE that uses the
+<see cref="ACCESS_ALLOWED_OBJECT_ACE" /> structure.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>ACCESS_DENIED_ACE_TYPE</b>
+          </description>
+          <description>
+            <para>Access-denied ACE that uses the
+<see cref="ACCESS_DENIED_ACE" /> structure.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>ACCESS_DENIED_CALLBACK_ACE_TYPE</b>
+          </description>
+          <description>
+            <para>Access-denied callback ACE that uses the
+<see cref="ACCESS_DENIED_CALLBACK_ACE" /> structure.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>ACCESS_DENIED_CALLBACK_OBJECT_ACE_TYPE</b>
+          </description>
+          <description>
+            <para>Object-specific access-denied callback ACE that uses the
+<see cref="ACCESS_DENIED_CALLBACK_OBJECT_ACE" /> structure.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>ACCESS_DENIED_OBJECT_ACE_TYPE</b>
+          </description>
+          <description>
+            <para>Object-specific access-denied ACE that uses the
+<see cref="ACCESS_DENIED_OBJECT_ACE" /> structure.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>ACCESS_MAX_MS_ACE_TYPE</b>
+          </description>
+          <description>
+            <para>Same as SYSTEM_ALARM_OBJECT_ACE_TYPE.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>ACCESS_MAX_MS_V2_ACE_TYPE</b>
+          </description>
+          <description>
+            <para>Same as SYSTEM_ALARM_ACE_TYPE.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>ACCESS_MAX_MS_V3_ACE_TYPE</b>
+          </description>
+          <description>
+            <para>Reserved.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>ACCESS_MAX_MS_V4_ACE_TYPE</b>
+          </description>
+          <description>
+            <para>Same as SYSTEM_ALARM_OBJECT_ACE_TYPE.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>ACCESS_MAX_MS_OBJECT_ACE_TYPE</b>
+          </description>
+          <description>
+            <para>Same as SYSTEM_ALARM_OBJECT_ACE_TYPE.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>ACCESS_MIN_MS_ACE_TYPE</b>
+          </description>
+          <description>
+            <para>Same as ACCESS_ALLOWED_ACE_TYPE.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>ACCESS_MIN_MS_OBJECT_ACE_TYPE</b>
+          </description>
+          <description>
+            <para>Same as ACCESS_ALLOWED_OBJECT_ACE_TYPE.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>SYSTEM_ALARM_ACE_TYPE</b>
+          </description>
+          <description>
+            <para>Reserved for future use. System-alarm ACE that uses the <see cref="SYSTEM_ALARM_ACE" /> structure.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>SYSTEM_ALARM_CALLBACK_ACE_TYPE</b>
+          </description>
+          <description>
+            <para>Reserved for future use. System-alarm callback ACE that uses the <see cref="SYSTEM_ALARM_CALLBACK_ACE" /> structure.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>SYSTEM_ALARM_CALLBACK_OBJECT_ACE_TYPE</b>
+          </description>
+          <description>
+            <para>Reserved for future use. Object-specific system-alarm callback ACE that uses the <see cref="SYSTEM_ALARM_CALLBACK_OBJECT_ACE" /> structure.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>SYSTEM_ALARM_OBJECT_ACE_TYPE</b>
+          </description>
+          <description>
+            <para>Reserved for future use. Object-specific system-alarm ACE that uses the <see cref="SYSTEM_ALARM_OBJECT_ACE" /> structure.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>SYSTEM_AUDIT_ACE_TYPE</b>
+          </description>
+          <description>
+            <para>System-audit ACE that uses the
+<see cref="SYSTEM_AUDIT_ACE" /> structure.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>SYSTEM_AUDIT_CALLBACK_ACE_TYPE</b>
+          </description>
+          <description>
+            <para>System-audit callback ACE that uses the
+<see cref="SYSTEM_AUDIT_CALLBACK_ACE" /> structure.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>SYSTEM_AUDIT_CALLBACK_OBJECT_ACE_TYPE</b>
+          </description>
+          <description>
+            <para>Object-specific system-audit callback ACE that uses the
+<see cref="SYSTEM_AUDIT_CALLBACK_OBJECT_ACE" /> structure.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>SYSTEM_AUDIT_OBJECT_ACE_TYPE</b>
+          </description>
+          <description>
+            <para>Object-specific system-audit ACE that uses the
+<see cref="SYSTEM_AUDIT_OBJECT_ACE" /> structure.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>SYSTEM_MANDATORY_LABEL_ACE_TYPE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x11</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Mandatory label ACE that uses the <see cref="SYSTEM_MANDATORY_LABEL_ACE" /> structure.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="ACE_HEADER.AceFlags">
+    <summary>
+      <para>Specifies a set of ACE type-specific control flags. This member can be a combination of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>CONTAINER_INHERIT_ACE</b>
+          </description>
+          <description>
+            <para>Child objects that are containers, such as directories, inherit the ACE as an effective ACE. The inherited ACE is inheritable unless the NO_PROPAGATE_INHERIT_ACE bit flag is also set.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>FAILED_ACCESS_ACE_FLAG</b>
+          </description>
+          <description>
+            <para>Used with system-audit ACEs in a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">system access control list</a> (SACL) to generate audit messages for failed access attempts.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>INHERIT_ONLY_ACE</b>
+          </description>
+          <description>
+            <para>Indicates an inherit-only ACE, which does not control access to the object to which it is attached. If this flag is not set, the ACE is an effective ACE which controls access to the object to which it is attached.</para>
+            <para>Both effective and inherit-only ACEs can be inherited depending on the state of the other inheritance flags.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>INHERITED_ACE</b>
+          </description>
+          <description>
+            <para>Indicates that the ACE was inherited. The system sets this bit when it propagates an inherited ACE to a child object.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>NO_PROPAGATE_INHERIT_ACE</b>
+          </description>
+          <description>
+            <para>If the ACE is inherited by a child object, the system clears the OBJECT_INHERIT_ACE and CONTAINER_INHERIT_ACE flags in the inherited ACE. This prevents the ACE from being inherited by subsequent generations of objects.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>OBJECT_INHERIT_ACE</b>
+          </description>
+          <description>
+            <para>Noncontainer child objects inherit the ACE as an effective ACE.</para>
+            <para>For child objects that are containers, the ACE is inherited as an inherit-only ACE unless the NO_PROPAGATE_INHERIT_ACE bit flag is also set.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>SUCCESSFUL_ACCESS_ACE_FLAG</b>
+          </description>
+          <description>
+            <para>Used with system-audit ACEs in a SACL to generate audit messages for successful access attempts.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="ACE_HEADER.AceSize">
+    <summary>
+      <para>Specifies the size, in bytes, of the ACE.</para>
+    </summary>
+  </member>
+</doc>

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ICreateTypeLib.xml' path='doc/member[@name="ICreateTypeLib"]/*' />
 [Guid("00020406-0000-0000-C000-000000000046")]
 [NativeTypeName("struct ICreateTypeLib : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ICreateTypeLib : ICreateTypeLib.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ICreateTypeLib : ICreateTypeLib.Interface
         return ((delegate* unmanaged<ICreateTypeLib*, Guid*, void**, int>)(lpVtbl[0]))((ICreateTypeLib*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ICreateTypeLib : ICreateTypeLib.Interface
         return ((delegate* unmanaged<ICreateTypeLib*, uint>)(lpVtbl[1]))((ICreateTypeLib*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ICreateTypeLib : ICreateTypeLib.Interface
         return ((delegate* unmanaged<ICreateTypeLib*, uint>)(lpVtbl[2]))((ICreateTypeLib*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ICreateTypeLib.xml' path='doc/member[@name="ICreateTypeLib.CreateTypeInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT CreateTypeInfo([NativeTypeName("LPOLESTR")] ushort* szName, TYPEKIND tkind, ICreateTypeInfo** ppCTInfo)
@@ -46,6 +51,7 @@ public unsafe partial struct ICreateTypeLib : ICreateTypeLib.Interface
         return ((delegate* unmanaged<ICreateTypeLib*, ushort*, TYPEKIND, ICreateTypeInfo**, int>)(lpVtbl[3]))((ICreateTypeLib*)Unsafe.AsPointer(ref this), szName, tkind, ppCTInfo);
     }
 
+    /// <include file='ICreateTypeLib.xml' path='doc/member[@name="ICreateTypeLib.SetName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetName([NativeTypeName("LPOLESTR")] ushort* szName)
@@ -53,6 +59,7 @@ public unsafe partial struct ICreateTypeLib : ICreateTypeLib.Interface
         return ((delegate* unmanaged<ICreateTypeLib*, ushort*, int>)(lpVtbl[4]))((ICreateTypeLib*)Unsafe.AsPointer(ref this), szName);
     }
 
+    /// <include file='ICreateTypeLib.xml' path='doc/member[@name="ICreateTypeLib.SetVersion"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetVersion([NativeTypeName("WORD")] ushort wMajorVerNum, [NativeTypeName("WORD")] ushort wMinorVerNum)
@@ -60,6 +67,7 @@ public unsafe partial struct ICreateTypeLib : ICreateTypeLib.Interface
         return ((delegate* unmanaged<ICreateTypeLib*, ushort, ushort, int>)(lpVtbl[5]))((ICreateTypeLib*)Unsafe.AsPointer(ref this), wMajorVerNum, wMinorVerNum);
     }
 
+    /// <include file='ICreateTypeLib.xml' path='doc/member[@name="ICreateTypeLib.SetGuid"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT SetGuid([NativeTypeName("const GUID &")] Guid* guid)
@@ -67,6 +75,7 @@ public unsafe partial struct ICreateTypeLib : ICreateTypeLib.Interface
         return ((delegate* unmanaged<ICreateTypeLib*, Guid*, int>)(lpVtbl[6]))((ICreateTypeLib*)Unsafe.AsPointer(ref this), guid);
     }
 
+    /// <include file='ICreateTypeLib.xml' path='doc/member[@name="ICreateTypeLib.SetDocString"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT SetDocString([NativeTypeName("LPOLESTR")] ushort* szDoc)
@@ -74,6 +83,7 @@ public unsafe partial struct ICreateTypeLib : ICreateTypeLib.Interface
         return ((delegate* unmanaged<ICreateTypeLib*, ushort*, int>)(lpVtbl[7]))((ICreateTypeLib*)Unsafe.AsPointer(ref this), szDoc);
     }
 
+    /// <include file='ICreateTypeLib.xml' path='doc/member[@name="ICreateTypeLib.SetHelpFileName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT SetHelpFileName([NativeTypeName("LPOLESTR")] ushort* szHelpFileName)
@@ -81,6 +91,7 @@ public unsafe partial struct ICreateTypeLib : ICreateTypeLib.Interface
         return ((delegate* unmanaged<ICreateTypeLib*, ushort*, int>)(lpVtbl[8]))((ICreateTypeLib*)Unsafe.AsPointer(ref this), szHelpFileName);
     }
 
+    /// <include file='ICreateTypeLib.xml' path='doc/member[@name="ICreateTypeLib.SetHelpContext"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT SetHelpContext([NativeTypeName("DWORD")] uint dwHelpContext)
@@ -88,6 +99,7 @@ public unsafe partial struct ICreateTypeLib : ICreateTypeLib.Interface
         return ((delegate* unmanaged<ICreateTypeLib*, uint, int>)(lpVtbl[9]))((ICreateTypeLib*)Unsafe.AsPointer(ref this), dwHelpContext);
     }
 
+    /// <include file='ICreateTypeLib.xml' path='doc/member[@name="ICreateTypeLib.SetLcid"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT SetLcid([NativeTypeName("LCID")] uint lcid)
@@ -95,6 +107,7 @@ public unsafe partial struct ICreateTypeLib : ICreateTypeLib.Interface
         return ((delegate* unmanaged<ICreateTypeLib*, uint, int>)(lpVtbl[10]))((ICreateTypeLib*)Unsafe.AsPointer(ref this), lcid);
     }
 
+    /// <include file='ICreateTypeLib.xml' path='doc/member[@name="ICreateTypeLib.SetLibFlags"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT SetLibFlags(uint uLibFlags)
@@ -102,6 +115,7 @@ public unsafe partial struct ICreateTypeLib : ICreateTypeLib.Interface
         return ((delegate* unmanaged<ICreateTypeLib*, uint, int>)(lpVtbl[11]))((ICreateTypeLib*)Unsafe.AsPointer(ref this), uLibFlags);
     }
 
+    /// <include file='ICreateTypeLib.xml' path='doc/member[@name="ICreateTypeLib.SaveAllChanges"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT SaveAllChanges()

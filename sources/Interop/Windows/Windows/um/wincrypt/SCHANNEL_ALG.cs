@@ -5,20 +5,26 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SCHANNEL_ALG.xml' path='doc/member[@name="SCHANNEL_ALG"]/*' />
 public partial struct SCHANNEL_ALG
 {
+    /// <include file='SCHANNEL_ALG.xml' path='doc/member[@name="SCHANNEL_ALG.dwUse"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwUse;
 
+    /// <include file='SCHANNEL_ALG.xml' path='doc/member[@name="SCHANNEL_ALG.Algid"]/*' />
     [NativeTypeName("ALG_ID")]
     public uint Algid;
 
+    /// <include file='SCHANNEL_ALG.xml' path='doc/member[@name="SCHANNEL_ALG.cBits"]/*' />
     [NativeTypeName("DWORD")]
     public uint cBits;
 
+    /// <include file='SCHANNEL_ALG.xml' path='doc/member[@name="SCHANNEL_ALG.dwFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFlags;
 
+    /// <include file='SCHANNEL_ALG.xml' path='doc/member[@name="SCHANNEL_ALG.dwReserved"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwReserved;
 }

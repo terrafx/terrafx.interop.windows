@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MFFOLDDOWN_MATRIX">
+    <summary>
+      <para>Contains coefficients used to transform multichannel audio into a smaller number of audio channels. This process is called <i>fold-down</i>.</para>
+    </summary>
+    <remarks>
+      <para>To specify this information in the media type, set the <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-mt-audio-folddown-matrix-attribute">MF_MT_AUDIO_FOLDDOWN_MATRIX</a> attribute.</para>
+      <para>The ASF media source supports fold-down from six channels (5.1 audio) to two channels (stereo). It gets the information from the g_wszFold6To2Channels3 attribute in the ASF header. This attribute is documented in the Windows Media Format SDK documentation.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-structures">Media Foundation Structures</seealso>
+  </member>
+  <member name="MFFOLDDOWN_MATRIX.cbSize">
+    <summary>
+      <para>Size of the structure, in bytes.</para>
+    </summary>
+  </member>
+  <member name="MFFOLDDOWN_MATRIX.cSrcChannels">
+    <summary>
+      <para>Number of source channels.</para>
+    </summary>
+  </member>
+  <member name="MFFOLDDOWN_MATRIX.cDstChannels">
+    <summary>
+      <para>Number of destination channels.</para>
+    </summary>
+  </member>
+  <member name="MFFOLDDOWN_MATRIX.dwChannelMask">
+    <summary>
+      <para>Specifies the assignment of audio channels to speaker positions in the transformed audio. This member is a bitwise <b>OR</b> of flags that define the speaker positions. For a list of valid flags, see <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-mt-audio-channel-mask-attribute">MF_MT_AUDIO_CHANNEL_MASK</a> attribute.</para>
+    </summary>
+  </member>
+  <member name="MFFOLDDOWN_MATRIX.Coeff">
+    <summary>
+      <para>Array that contains the fold-down coefficients. The number of coefficients is <b>cSrcChannels</b>×<b>cDstChannels</b>. If the number of coefficients is less than the size of the array, the remaining elements in the array are ignored. For more information about how the coefficients are applied, see <a href="https://docs.microsoft.com//previous-versions/ms867218(v=msdn.10)">Windows Media Audio Professional Codec Features</a>.</para>
+    </summary>
+  </member>
+</doc>

@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_XML_INT32_TEXT.xml' path='doc/member[@name="WS_XML_INT32_TEXT"]/*' />
 public partial struct WS_XML_INT32_TEXT
 {
+    /// <include file='WS_XML_INT32_TEXT.xml' path='doc/member[@name="WS_XML_INT32_TEXT.text"]/*' />
     public WS_XML_TEXT text;
 
+    /// <include file='WS_XML_INT32_TEXT.xml' path='doc/member[@name="WS_XML_INT32_TEXT.value"]/*' />
     public int value;
 }

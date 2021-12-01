@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MIB_MFE_STATS_TABLE_EX">
+    <summary>
+      <para>The <b>MIB_MFE_STATS_TABLE_EX</b> structure contains a table of extended statistics for Multicast Forwarding Entries (MFEs).</para>
+    </summary>
+    <remarks>
+      <para>On the Microsoft Windows Software Development Kit (SDK) released for Windows Server 2008and later, the organization of header files has changed. This  structure is defined in the <i>Ipmib.h</i> header file, not in the <i>Iprtrmib.h</i> header file. Note that the <i>Ipmib.h</i> header file is automatically included in <i>Iprtrmib.h</i>, which is automatically included in the <i>Iphlpapi.h</i> header file. The  <i>Ipmib.h</i> and <i>Iprtrmib.h</i> header files should never be used directly.</para>
+    </remarks>
+  </member>
+  <member name="MIB_MFE_STATS_TABLE_EX.dwNumEntries">
+    <summary>
+      <para>The number of MFEs  in the array.</para>
+    </summary>
+  </member>
+  <member name="MIB_MFE_STATS_TABLE_EX.table">
+    <summary>
+      <para>A pointer to a table of MFEs that are implemented as an array of
+<see cref="MIB_IPMCAST_MFE_STATS_EX" /> structures.</para>
+    </summary>
+  </member>
+</doc>

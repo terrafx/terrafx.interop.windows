@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SECURITY_IMPERSONATION_LEVEL.xml' path='doc/member[@name="SECURITY_IMPERSONATION_LEVEL"]/*' />
 public enum SECURITY_IMPERSONATION_LEVEL
 {
+    /// <include file='SECURITY_IMPERSONATION_LEVEL.xml' path='doc/member[@name="SECURITY_IMPERSONATION_LEVEL.SecurityAnonymous"]/*' />
     SecurityAnonymous,
+
+    /// <include file='SECURITY_IMPERSONATION_LEVEL.xml' path='doc/member[@name="SECURITY_IMPERSONATION_LEVEL.SecurityIdentification"]/*' />
     SecurityIdentification,
+
+    /// <include file='SECURITY_IMPERSONATION_LEVEL.xml' path='doc/member[@name="SECURITY_IMPERSONATION_LEVEL.SecurityImpersonation"]/*' />
     SecurityImpersonation,
+
+    /// <include file='SECURITY_IMPERSONATION_LEVEL.xml' path='doc/member[@name="SECURITY_IMPERSONATION_LEVEL.SecurityDelegation"]/*' />
     SecurityDelegation,
 }

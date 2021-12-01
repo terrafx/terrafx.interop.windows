@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MF_ATTRIBUTE_SERIALIZE_OPTIONS.xml' path='doc/member[@name="MF_ATTRIBUTE_SERIALIZE_OPTIONS"]/*' />
 public enum MF_ATTRIBUTE_SERIALIZE_OPTIONS
 {
+    /// <include file='MF_ATTRIBUTE_SERIALIZE_OPTIONS.xml' path='doc/member[@name="MF_ATTRIBUTE_SERIALIZE_OPTIONS.MF_ATTRIBUTE_SERIALIZE_UNKNOWN_BYREF"]/*' />
     MF_ATTRIBUTE_SERIALIZE_UNKNOWN_BYREF = 0x1,
 }

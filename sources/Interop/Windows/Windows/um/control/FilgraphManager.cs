@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='FilgraphManager.xml' path='doc/member[@name="FilgraphManager"]/*' />
 [Guid("E436EBB3-524F-11CE-9F53-0020AF0BA770")]
 public partial struct FilgraphManager
 {

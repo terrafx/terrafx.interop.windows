@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WINTRUST_SIGNATURE_SETTINGS">
+    <summary>
+      <para>The <b>WINTRUST_SIGNATURE_SETTINGS</b> structure can be used to specify the signatures on a file.</para>
+    </summary>
+    <seealso cref="CERT_STRONG_SIGN_PARA" />
+    <seealso cref="WinVerifyTrust" />
+  </member>
+  <member name="WINTRUST_SIGNATURE_SETTINGS.cbStruct">
+    <summary>
+      <para>Size, in bytes, of this structure.</para>
+    </summary>
+  </member>
+  <member name="WINTRUST_SIGNATURE_SETTINGS.dwIndex">
+    <summary>
+      <para>Contains the index of the signature to be validated if the <b>dwFlags</b> member is set to <b>WSS_VERIFY_SPECIFIC</b>.</para>
+    </summary>
+  </member>
+  <member name="WINTRUST_SIGNATURE_SETTINGS.dwFlags">
+    <summary>
+      <para>Flags that can be used to refine behavior. This can be one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>WSS_VERIFY_SPECIFIC</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000001</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Set this value if you set the <b>dwIndex</b> parameter.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>WSS_GET_SECONDARY_SIG_COUNT</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000002</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Set this value to return the number of secondary signatures found in the <b>cSecondarySigs</b> member.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="WINTRUST_SIGNATURE_SETTINGS.cSecondarySigs">
+    <summary>
+      <para>Contains the number of secondary signatures found if the <b>dwFlags</b> member is set to <b>WSS_GET_SECONDARY_SIG_COUNT</b>.</para>
+    </summary>
+  </member>
+  <member name="WINTRUST_SIGNATURE_SETTINGS.dwVerifiedSigIndex">
+    <summary>
+      <para>The index used for verification. This member is set on return from Wintrust.</para>
+    </summary>
+  </member>
+  <member name="WINTRUST_SIGNATURE_SETTINGS.pCryptoPolicy">
+    <summary>
+      <para>Pointer to a <see cref="CERT_STRONG_SIGN_PARA" /> structure that contains the policy that a signature must pass to be considered valid.</para>
+    </summary>
+  </member>
+</doc>

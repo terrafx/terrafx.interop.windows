@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ISpatialAudioMetadataClient.xml' path='doc/member[@name="ISpatialAudioMetadataClient"]/*' />
 [Guid("777D4A3B-F6FF-4A26-85DC-68D7CDEDA1D4")]
 [NativeTypeName("struct ISpatialAudioMetadataClient : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct ISpatialAudioMetadataClient : ISpatialAudioMetadata
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct ISpatialAudioMetadataClient : ISpatialAudioMetadata
         return ((delegate* unmanaged<ISpatialAudioMetadataClient*, Guid*, void**, int>)(lpVtbl[0]))((ISpatialAudioMetadataClient*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct ISpatialAudioMetadataClient : ISpatialAudioMetadata
         return ((delegate* unmanaged<ISpatialAudioMetadataClient*, uint>)(lpVtbl[1]))((ISpatialAudioMetadataClient*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct ISpatialAudioMetadataClient : ISpatialAudioMetadata
         return ((delegate* unmanaged<ISpatialAudioMetadataClient*, uint>)(lpVtbl[2]))((ISpatialAudioMetadataClient*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ISpatialAudioMetadataClient.xml' path='doc/member[@name="ISpatialAudioMetadataClient.ActivateSpatialAudioMetadataItems"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT ActivateSpatialAudioMetadataItems([NativeTypeName("UINT16")] ushort maxItemCount, [NativeTypeName("UINT16")] ushort frameCount, ISpatialAudioMetadataItemsBuffer** metadataItemsBuffer, ISpatialAudioMetadataItems** metadataItems)
@@ -48,6 +53,7 @@ public unsafe partial struct ISpatialAudioMetadataClient : ISpatialAudioMetadata
         return ((delegate* unmanaged<ISpatialAudioMetadataClient*, ushort, ushort, ISpatialAudioMetadataItemsBuffer**, ISpatialAudioMetadataItems**, int>)(lpVtbl[3]))((ISpatialAudioMetadataClient*)Unsafe.AsPointer(ref this), maxItemCount, frameCount, metadataItemsBuffer, metadataItems);
     }
 
+    /// <include file='ISpatialAudioMetadataClient.xml' path='doc/member[@name="ISpatialAudioMetadataClient.GetSpatialAudioMetadataItemsBufferLength"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetSpatialAudioMetadataItemsBufferLength([NativeTypeName("UINT16")] ushort maxItemCount, [NativeTypeName("UINT32 *")] uint* bufferLength)
@@ -55,6 +61,7 @@ public unsafe partial struct ISpatialAudioMetadataClient : ISpatialAudioMetadata
         return ((delegate* unmanaged<ISpatialAudioMetadataClient*, ushort, uint*, int>)(lpVtbl[4]))((ISpatialAudioMetadataClient*)Unsafe.AsPointer(ref this), maxItemCount, bufferLength);
     }
 
+    /// <include file='ISpatialAudioMetadataClient.xml' path='doc/member[@name="ISpatialAudioMetadataClient.ActivateSpatialAudioMetadataWriter"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT ActivateSpatialAudioMetadataWriter(SpatialAudioMetadataWriterOverflowMode overflowMode, ISpatialAudioMetadataWriter** metadataWriter)
@@ -62,6 +69,7 @@ public unsafe partial struct ISpatialAudioMetadataClient : ISpatialAudioMetadata
         return ((delegate* unmanaged<ISpatialAudioMetadataClient*, SpatialAudioMetadataWriterOverflowMode, ISpatialAudioMetadataWriter**, int>)(lpVtbl[5]))((ISpatialAudioMetadataClient*)Unsafe.AsPointer(ref this), overflowMode, metadataWriter);
     }
 
+    /// <include file='ISpatialAudioMetadataClient.xml' path='doc/member[@name="ISpatialAudioMetadataClient.ActivateSpatialAudioMetadataCopier"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT ActivateSpatialAudioMetadataCopier(ISpatialAudioMetadataCopier** metadataCopier)
@@ -69,6 +77,7 @@ public unsafe partial struct ISpatialAudioMetadataClient : ISpatialAudioMetadata
         return ((delegate* unmanaged<ISpatialAudioMetadataClient*, ISpatialAudioMetadataCopier**, int>)(lpVtbl[6]))((ISpatialAudioMetadataClient*)Unsafe.AsPointer(ref this), metadataCopier);
     }
 
+    /// <include file='ISpatialAudioMetadataClient.xml' path='doc/member[@name="ISpatialAudioMetadataClient.ActivateSpatialAudioMetadataReader"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT ActivateSpatialAudioMetadataReader(ISpatialAudioMetadataReader** metadataReader)

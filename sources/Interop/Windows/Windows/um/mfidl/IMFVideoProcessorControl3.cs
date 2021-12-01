@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFVideoProcessorControl3.xml' path='doc/member[@name="IMFVideoProcessorControl3"]/*' />
 [Guid("2424B3F2-EB23-40F1-91AA-74BDDEEA0883")]
 [NativeTypeName("struct IMFVideoProcessorControl3 : IMFVideoProcessorControl2")]
 [NativeInheritance("IMFVideoProcessorControl2")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMFVideoProcessorControl3 : IMFVideoProcessorContro
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMFVideoProcessorControl3 : IMFVideoProcessorContro
         return ((delegate* unmanaged<IMFVideoProcessorControl3*, Guid*, void**, int>)(lpVtbl[0]))((IMFVideoProcessorControl3*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMFVideoProcessorControl3 : IMFVideoProcessorContro
         return ((delegate* unmanaged<IMFVideoProcessorControl3*, uint>)(lpVtbl[1]))((IMFVideoProcessorControl3*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMFVideoProcessorControl3 : IMFVideoProcessorContro
         return ((delegate* unmanaged<IMFVideoProcessorControl3*, uint>)(lpVtbl[2]))((IMFVideoProcessorControl3*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IMFVideoProcessorControl.SetBorderColor" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetBorderColor(MFARGB* pBorderColor)
@@ -46,6 +51,7 @@ public unsafe partial struct IMFVideoProcessorControl3 : IMFVideoProcessorContro
         return ((delegate* unmanaged<IMFVideoProcessorControl3*, MFARGB*, int>)(lpVtbl[3]))((IMFVideoProcessorControl3*)Unsafe.AsPointer(ref this), pBorderColor);
     }
 
+    /// <inheritdoc cref="IMFVideoProcessorControl.SetSourceRectangle" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetSourceRectangle(RECT* pSrcRect)
@@ -53,6 +59,7 @@ public unsafe partial struct IMFVideoProcessorControl3 : IMFVideoProcessorContro
         return ((delegate* unmanaged<IMFVideoProcessorControl3*, RECT*, int>)(lpVtbl[4]))((IMFVideoProcessorControl3*)Unsafe.AsPointer(ref this), pSrcRect);
     }
 
+    /// <inheritdoc cref="IMFVideoProcessorControl.SetDestinationRectangle" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetDestinationRectangle(RECT* pDstRect)
@@ -60,6 +67,7 @@ public unsafe partial struct IMFVideoProcessorControl3 : IMFVideoProcessorContro
         return ((delegate* unmanaged<IMFVideoProcessorControl3*, RECT*, int>)(lpVtbl[5]))((IMFVideoProcessorControl3*)Unsafe.AsPointer(ref this), pDstRect);
     }
 
+    /// <inheritdoc cref="IMFVideoProcessorControl.SetMirror" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT SetMirror(MF_VIDEO_PROCESSOR_MIRROR eMirror)
@@ -67,6 +75,7 @@ public unsafe partial struct IMFVideoProcessorControl3 : IMFVideoProcessorContro
         return ((delegate* unmanaged<IMFVideoProcessorControl3*, MF_VIDEO_PROCESSOR_MIRROR, int>)(lpVtbl[6]))((IMFVideoProcessorControl3*)Unsafe.AsPointer(ref this), eMirror);
     }
 
+    /// <inheritdoc cref="IMFVideoProcessorControl.SetRotation" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT SetRotation(MF_VIDEO_PROCESSOR_ROTATION eRotation)
@@ -74,6 +83,7 @@ public unsafe partial struct IMFVideoProcessorControl3 : IMFVideoProcessorContro
         return ((delegate* unmanaged<IMFVideoProcessorControl3*, MF_VIDEO_PROCESSOR_ROTATION, int>)(lpVtbl[7]))((IMFVideoProcessorControl3*)Unsafe.AsPointer(ref this), eRotation);
     }
 
+    /// <inheritdoc cref="IMFVideoProcessorControl.SetConstrictionSize" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT SetConstrictionSize(SIZE* pConstrictionSize)
@@ -81,6 +91,7 @@ public unsafe partial struct IMFVideoProcessorControl3 : IMFVideoProcessorContro
         return ((delegate* unmanaged<IMFVideoProcessorControl3*, SIZE*, int>)(lpVtbl[8]))((IMFVideoProcessorControl3*)Unsafe.AsPointer(ref this), pConstrictionSize);
     }
 
+    /// <inheritdoc cref="IMFVideoProcessorControl2.SetRotationOverride" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT SetRotationOverride(uint uiRotation)
@@ -88,6 +99,7 @@ public unsafe partial struct IMFVideoProcessorControl3 : IMFVideoProcessorContro
         return ((delegate* unmanaged<IMFVideoProcessorControl3*, uint, int>)(lpVtbl[9]))((IMFVideoProcessorControl3*)Unsafe.AsPointer(ref this), uiRotation);
     }
 
+    /// <inheritdoc cref="IMFVideoProcessorControl2.EnableHardwareEffects" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT EnableHardwareEffects(BOOL fEnabled)
@@ -95,6 +107,7 @@ public unsafe partial struct IMFVideoProcessorControl3 : IMFVideoProcessorContro
         return ((delegate* unmanaged<IMFVideoProcessorControl3*, BOOL, int>)(lpVtbl[10]))((IMFVideoProcessorControl3*)Unsafe.AsPointer(ref this), fEnabled);
     }
 
+    /// <inheritdoc cref="IMFVideoProcessorControl2.GetSupportedHardwareEffects" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT GetSupportedHardwareEffects(uint* puiSupport)
@@ -102,6 +115,7 @@ public unsafe partial struct IMFVideoProcessorControl3 : IMFVideoProcessorContro
         return ((delegate* unmanaged<IMFVideoProcessorControl3*, uint*, int>)(lpVtbl[11]))((IMFVideoProcessorControl3*)Unsafe.AsPointer(ref this), puiSupport);
     }
 
+    /// <include file='IMFVideoProcessorControl3.xml' path='doc/member[@name="IMFVideoProcessorControl3.GetNaturalOutputType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT GetNaturalOutputType(IMFMediaType** ppType)
@@ -109,6 +123,7 @@ public unsafe partial struct IMFVideoProcessorControl3 : IMFVideoProcessorContro
         return ((delegate* unmanaged<IMFVideoProcessorControl3*, IMFMediaType**, int>)(lpVtbl[12]))((IMFVideoProcessorControl3*)Unsafe.AsPointer(ref this), ppType);
     }
 
+    /// <include file='IMFVideoProcessorControl3.xml' path='doc/member[@name="IMFVideoProcessorControl3.EnableSphericalVideoProcessing"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT EnableSphericalVideoProcessing(BOOL fEnable, MFVideoSphericalFormat eFormat, MFVideoSphericalProjectionMode eProjectionMode)
@@ -116,6 +131,7 @@ public unsafe partial struct IMFVideoProcessorControl3 : IMFVideoProcessorContro
         return ((delegate* unmanaged<IMFVideoProcessorControl3*, BOOL, MFVideoSphericalFormat, MFVideoSphericalProjectionMode, int>)(lpVtbl[13]))((IMFVideoProcessorControl3*)Unsafe.AsPointer(ref this), fEnable, eFormat, eProjectionMode);
     }
 
+    /// <include file='IMFVideoProcessorControl3.xml' path='doc/member[@name="IMFVideoProcessorControl3.SetSphericalVideoProperties"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT SetSphericalVideoProperties(float X, float Y, float Z, float W, float fieldOfView)
@@ -123,6 +139,7 @@ public unsafe partial struct IMFVideoProcessorControl3 : IMFVideoProcessorContro
         return ((delegate* unmanaged<IMFVideoProcessorControl3*, float, float, float, float, float, int>)(lpVtbl[14]))((IMFVideoProcessorControl3*)Unsafe.AsPointer(ref this), X, Y, Z, W, fieldOfView);
     }
 
+    /// <include file='IMFVideoProcessorControl3.xml' path='doc/member[@name="IMFVideoProcessorControl3.SetOutputDevice"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT SetOutputDevice(IUnknown* pOutputDevice)

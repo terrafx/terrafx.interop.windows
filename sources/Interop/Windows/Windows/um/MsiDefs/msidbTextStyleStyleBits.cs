@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='msidbTextStyleStyleBits.xml' path='doc/member[@name="msidbTextStyleStyleBits"]/*' />
 public enum msidbTextStyleStyleBits
 {
+    /// <include file='msidbTextStyleStyleBits.xml' path='doc/member[@name="msidbTextStyleStyleBits.msidbTextStyleStyleBitsBold"]/*' />
     msidbTextStyleStyleBitsBold = 0x00000001,
+
+    /// <include file='msidbTextStyleStyleBits.xml' path='doc/member[@name="msidbTextStyleStyleBits.msidbTextStyleStyleBitsItalic"]/*' />
     msidbTextStyleStyleBitsItalic = 0x00000002,
+
+    /// <include file='msidbTextStyleStyleBits.xml' path='doc/member[@name="msidbTextStyleStyleBits.msidbTextStyleStyleBitsUnderline"]/*' />
     msidbTextStyleStyleBitsUnderline = 0x00000004,
+
+    /// <include file='msidbTextStyleStyleBits.xml' path='doc/member[@name="msidbTextStyleStyleBits.msidbTextStyleStyleBitsStrike"]/*' />
     msidbTextStyleStyleBitsStrike = 0x00000008,
 }

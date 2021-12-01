@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IDeviceTopology.xml' path='doc/member[@name="IDeviceTopology"]/*' />
 [Guid("2A07407E-6497-4A18-9787-32F79BD0D98F")]
 [NativeTypeName("struct IDeviceTopology : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IDeviceTopology : IDeviceTopology.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IDeviceTopology : IDeviceTopology.Interface
         return ((delegate* unmanaged<IDeviceTopology*, Guid*, void**, int>)(lpVtbl[0]))((IDeviceTopology*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IDeviceTopology : IDeviceTopology.Interface
         return ((delegate* unmanaged<IDeviceTopology*, uint>)(lpVtbl[1]))((IDeviceTopology*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IDeviceTopology : IDeviceTopology.Interface
         return ((delegate* unmanaged<IDeviceTopology*, uint>)(lpVtbl[2]))((IDeviceTopology*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDeviceTopology.xml' path='doc/member[@name="IDeviceTopology.GetConnectorCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetConnectorCount(uint* pCount)
@@ -46,6 +51,7 @@ public unsafe partial struct IDeviceTopology : IDeviceTopology.Interface
         return ((delegate* unmanaged<IDeviceTopology*, uint*, int>)(lpVtbl[3]))((IDeviceTopology*)Unsafe.AsPointer(ref this), pCount);
     }
 
+    /// <include file='IDeviceTopology.xml' path='doc/member[@name="IDeviceTopology.GetConnector"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetConnector(uint nIndex, IConnector** ppConnector)
@@ -53,6 +59,7 @@ public unsafe partial struct IDeviceTopology : IDeviceTopology.Interface
         return ((delegate* unmanaged<IDeviceTopology*, uint, IConnector**, int>)(lpVtbl[4]))((IDeviceTopology*)Unsafe.AsPointer(ref this), nIndex, ppConnector);
     }
 
+    /// <include file='IDeviceTopology.xml' path='doc/member[@name="IDeviceTopology.GetSubunitCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetSubunitCount(uint* pCount)
@@ -60,6 +67,7 @@ public unsafe partial struct IDeviceTopology : IDeviceTopology.Interface
         return ((delegate* unmanaged<IDeviceTopology*, uint*, int>)(lpVtbl[5]))((IDeviceTopology*)Unsafe.AsPointer(ref this), pCount);
     }
 
+    /// <include file='IDeviceTopology.xml' path='doc/member[@name="IDeviceTopology.GetSubunit"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetSubunit(uint nIndex, ISubunit** ppSubunit)
@@ -67,6 +75,7 @@ public unsafe partial struct IDeviceTopology : IDeviceTopology.Interface
         return ((delegate* unmanaged<IDeviceTopology*, uint, ISubunit**, int>)(lpVtbl[6]))((IDeviceTopology*)Unsafe.AsPointer(ref this), nIndex, ppSubunit);
     }
 
+    /// <include file='IDeviceTopology.xml' path='doc/member[@name="IDeviceTopology.GetPartById"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetPartById(uint nId, IPart** ppPart)
@@ -74,6 +83,7 @@ public unsafe partial struct IDeviceTopology : IDeviceTopology.Interface
         return ((delegate* unmanaged<IDeviceTopology*, uint, IPart**, int>)(lpVtbl[7]))((IDeviceTopology*)Unsafe.AsPointer(ref this), nId, ppPart);
     }
 
+    /// <include file='IDeviceTopology.xml' path='doc/member[@name="IDeviceTopology.GetDeviceId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetDeviceId([NativeTypeName("LPWSTR *")] ushort** ppwstrDeviceId)
@@ -81,6 +91,7 @@ public unsafe partial struct IDeviceTopology : IDeviceTopology.Interface
         return ((delegate* unmanaged<IDeviceTopology*, ushort**, int>)(lpVtbl[8]))((IDeviceTopology*)Unsafe.AsPointer(ref this), ppwstrDeviceId);
     }
 
+    /// <include file='IDeviceTopology.xml' path='doc/member[@name="IDeviceTopology.GetSignalPath"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT GetSignalPath(IPart* pIPartFrom, IPart* pIPartTo, BOOL bRejectMixedPaths, IPartsList** ppParts)

@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SPC_FINANCIAL_CRITERIA.xml' path='doc/member[@name="SPC_FINANCIAL_CRITERIA"]/*' />
 public partial struct SPC_FINANCIAL_CRITERIA
 {
+    /// <include file='SPC_FINANCIAL_CRITERIA.xml' path='doc/member[@name="SPC_FINANCIAL_CRITERIA.fFinancialInfoAvailable"]/*' />
     public BOOL fFinancialInfoAvailable;
 
+    /// <include file='SPC_FINANCIAL_CRITERIA.xml' path='doc/member[@name="SPC_FINANCIAL_CRITERIA.fMeetsCriteria"]/*' />
     public BOOL fMeetsCriteria;
 }

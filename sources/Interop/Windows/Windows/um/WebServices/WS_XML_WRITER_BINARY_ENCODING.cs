@@ -7,14 +7,19 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_XML_WRITER_BINARY_ENCODING.xml' path='doc/member[@name="WS_XML_WRITER_BINARY_ENCODING"]/*' />
 public unsafe partial struct WS_XML_WRITER_BINARY_ENCODING
 {
+    /// <include file='WS_XML_WRITER_BINARY_ENCODING.xml' path='doc/member[@name="WS_XML_WRITER_BINARY_ENCODING.encoding"]/*' />
     public WS_XML_WRITER_ENCODING encoding;
 
+    /// <include file='WS_XML_WRITER_BINARY_ENCODING.xml' path='doc/member[@name="WS_XML_WRITER_BINARY_ENCODING.staticDictionary"]/*' />
     public WS_XML_DICTIONARY* staticDictionary;
 
+    /// <include file='WS_XML_WRITER_BINARY_ENCODING.xml' path='doc/member[@name="WS_XML_WRITER_BINARY_ENCODING.dynamicStringCallback"]/*' />
     [NativeTypeName("WS_DYNAMIC_STRING_CALLBACK")]
     public delegate* unmanaged<void*, WS_XML_STRING*, BOOL*, uint*, IntPtr, HRESULT> dynamicStringCallback;
 
+    /// <include file='WS_XML_WRITER_BINARY_ENCODING.xml' path='doc/member[@name="WS_XML_WRITER_BINARY_ENCODING.dynamicStringCallbackState"]/*' />
     public void* dynamicStringCallbackState;
 }

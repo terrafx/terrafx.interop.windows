@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HLINKMISC.xml' path='doc/member[@name="HLINKMISC"]/*' />
 public enum HLINKMISC
 {
+    /// <include file='HLINKMISC.xml' path='doc/member[@name="HLINKMISC.HLINKMISC_RELATIVE"]/*' />
     HLINKMISC_RELATIVE = 0x1,
 }

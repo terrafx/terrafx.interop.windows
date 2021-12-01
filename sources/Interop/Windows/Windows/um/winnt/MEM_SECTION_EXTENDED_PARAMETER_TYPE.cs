@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MEM_SECTION_EXTENDED_PARAMETER_TYPE.xml' path='doc/member[@name="MEM_SECTION_EXTENDED_PARAMETER_TYPE"]/*' />
 public enum MEM_SECTION_EXTENDED_PARAMETER_TYPE
 {
+    /// <include file='MEM_SECTION_EXTENDED_PARAMETER_TYPE.xml' path='doc/member[@name="MEM_SECTION_EXTENDED_PARAMETER_TYPE.MemSectionExtendedParameterInvalidType"]/*' />
     MemSectionExtendedParameterInvalidType = 0,
+
+    /// <include file='MEM_SECTION_EXTENDED_PARAMETER_TYPE.xml' path='doc/member[@name="MEM_SECTION_EXTENDED_PARAMETER_TYPE.MemSectionExtendedParameterUserPhysicalFlags"]/*' />
     MemSectionExtendedParameterUserPhysicalFlags,
+
+    /// <include file='MEM_SECTION_EXTENDED_PARAMETER_TYPE.xml' path='doc/member[@name="MEM_SECTION_EXTENDED_PARAMETER_TYPE.MemSectionExtendedParameterNumaNode"]/*' />
     MemSectionExtendedParameterNumaNode,
+
+    /// <include file='MEM_SECTION_EXTENDED_PARAMETER_TYPE.xml' path='doc/member[@name="MEM_SECTION_EXTENDED_PARAMETER_TYPE.MemSectionExtendedParameterMax"]/*' />
     MemSectionExtendedParameterMax,
 }

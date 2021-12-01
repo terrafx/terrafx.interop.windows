@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAMAsyncReaderTimestampScaling.xml' path='doc/member[@name="IAMAsyncReaderTimestampScaling"]/*' />
 [Guid("CF7B26FC-9A00-485B-8147-3E789D5E8F67")]
 [NativeTypeName("struct IAMAsyncReaderTimestampScaling : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IAMAsyncReaderTimestampScaling : IAMAsyncReaderTime
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IAMAsyncReaderTimestampScaling : IAMAsyncReaderTime
         return ((delegate* unmanaged<IAMAsyncReaderTimestampScaling*, Guid*, void**, int>)(lpVtbl[0]))((IAMAsyncReaderTimestampScaling*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IAMAsyncReaderTimestampScaling : IAMAsyncReaderTime
         return ((delegate* unmanaged<IAMAsyncReaderTimestampScaling*, uint>)(lpVtbl[1]))((IAMAsyncReaderTimestampScaling*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IAMAsyncReaderTimestampScaling : IAMAsyncReaderTime
         return ((delegate* unmanaged<IAMAsyncReaderTimestampScaling*, uint>)(lpVtbl[2]))((IAMAsyncReaderTimestampScaling*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAMAsyncReaderTimestampScaling.xml' path='doc/member[@name="IAMAsyncReaderTimestampScaling.GetTimestampMode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTimestampMode(BOOL* pfRaw)
@@ -46,6 +51,7 @@ public unsafe partial struct IAMAsyncReaderTimestampScaling : IAMAsyncReaderTime
         return ((delegate* unmanaged<IAMAsyncReaderTimestampScaling*, BOOL*, int>)(lpVtbl[3]))((IAMAsyncReaderTimestampScaling*)Unsafe.AsPointer(ref this), pfRaw);
     }
 
+    /// <include file='IAMAsyncReaderTimestampScaling.xml' path='doc/member[@name="IAMAsyncReaderTimestampScaling.SetTimestampMode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetTimestampMode(BOOL fRaw)

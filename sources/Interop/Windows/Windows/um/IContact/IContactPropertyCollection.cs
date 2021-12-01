@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IContactPropertyCollection.xml' path='doc/member[@name="IContactPropertyCollection"]/*' />
 [Guid("FFD3ADF8-FA64-4328-B1B6-2E0DB509CB3C")]
 [NativeTypeName("struct IContactPropertyCollection : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IContactPropertyCollection : IContactPropertyCollec
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IContactPropertyCollection : IContactPropertyCollec
         return ((delegate* unmanaged<IContactPropertyCollection*, Guid*, void**, int>)(lpVtbl[0]))((IContactPropertyCollection*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IContactPropertyCollection : IContactPropertyCollec
         return ((delegate* unmanaged<IContactPropertyCollection*, uint>)(lpVtbl[1]))((IContactPropertyCollection*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IContactPropertyCollection : IContactPropertyCollec
         return ((delegate* unmanaged<IContactPropertyCollection*, uint>)(lpVtbl[2]))((IContactPropertyCollection*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IContactPropertyCollection.xml' path='doc/member[@name="IContactPropertyCollection.Reset"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Reset()
@@ -46,6 +51,7 @@ public unsafe partial struct IContactPropertyCollection : IContactPropertyCollec
         return ((delegate* unmanaged<IContactPropertyCollection*, int>)(lpVtbl[3]))((IContactPropertyCollection*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IContactPropertyCollection.xml' path='doc/member[@name="IContactPropertyCollection.Next"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Next()
@@ -53,6 +59,7 @@ public unsafe partial struct IContactPropertyCollection : IContactPropertyCollec
         return ((delegate* unmanaged<IContactPropertyCollection*, int>)(lpVtbl[4]))((IContactPropertyCollection*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IContactPropertyCollection.xml' path='doc/member[@name="IContactPropertyCollection.GetPropertyName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetPropertyName([NativeTypeName("LPWSTR")] ushort* pszPropertyName, [NativeTypeName("DWORD")] uint cchPropertyName, [NativeTypeName("DWORD *")] uint* pdwcchPropertyNameRequired)
@@ -60,6 +67,7 @@ public unsafe partial struct IContactPropertyCollection : IContactPropertyCollec
         return ((delegate* unmanaged<IContactPropertyCollection*, ushort*, uint, uint*, int>)(lpVtbl[5]))((IContactPropertyCollection*)Unsafe.AsPointer(ref this), pszPropertyName, cchPropertyName, pdwcchPropertyNameRequired);
     }
 
+    /// <include file='IContactPropertyCollection.xml' path='doc/member[@name="IContactPropertyCollection.GetPropertyType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetPropertyType([NativeTypeName("DWORD *")] uint* pdwType)
@@ -67,6 +75,7 @@ public unsafe partial struct IContactPropertyCollection : IContactPropertyCollec
         return ((delegate* unmanaged<IContactPropertyCollection*, uint*, int>)(lpVtbl[6]))((IContactPropertyCollection*)Unsafe.AsPointer(ref this), pdwType);
     }
 
+    /// <include file='IContactPropertyCollection.xml' path='doc/member[@name="IContactPropertyCollection.GetPropertyVersion"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetPropertyVersion([NativeTypeName("DWORD *")] uint* pdwVersion)
@@ -74,6 +83,7 @@ public unsafe partial struct IContactPropertyCollection : IContactPropertyCollec
         return ((delegate* unmanaged<IContactPropertyCollection*, uint*, int>)(lpVtbl[7]))((IContactPropertyCollection*)Unsafe.AsPointer(ref this), pdwVersion);
     }
 
+    /// <include file='IContactPropertyCollection.xml' path='doc/member[@name="IContactPropertyCollection.GetPropertyModificationDate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetPropertyModificationDate(FILETIME* pftModificationDate)
@@ -81,6 +91,7 @@ public unsafe partial struct IContactPropertyCollection : IContactPropertyCollec
         return ((delegate* unmanaged<IContactPropertyCollection*, FILETIME*, int>)(lpVtbl[8]))((IContactPropertyCollection*)Unsafe.AsPointer(ref this), pftModificationDate);
     }
 
+    /// <include file='IContactPropertyCollection.xml' path='doc/member[@name="IContactPropertyCollection.GetPropertyArrayElementID"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT GetPropertyArrayElementID([NativeTypeName("LPWSTR")] ushort* pszArrayElementID, [NativeTypeName("DWORD")] uint cchArrayElementID, [NativeTypeName("DWORD *")] uint* pdwcchArrayElementIDRequired)

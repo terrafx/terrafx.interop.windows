@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="FEEDBACK_TYPE">
+    <summary>
+      <para>Specifies  the visual feedback associated with an event.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/input_feedback/enumerations">Enumerations</seealso>
+  </member>
+  <member name="FEEDBACK_TYPE.FEEDBACK_TOUCH_CONTACTVISUALIZATION">
+    <summary>
+      <para>Feedback for a touch contact event.</para>
+    </summary>
+  </member>
+  <member name="FEEDBACK_TYPE.FEEDBACK_PEN_BARRELVISUALIZATION">
+    <summary>
+      <para>Feedback for a pen barrel-button event.</para>
+    </summary>
+  </member>
+  <member name="FEEDBACK_TYPE.FEEDBACK_PEN_TAP">
+    <summary>
+      <para>Feedback for a pen tap event.</para>
+    </summary>
+  </member>
+  <member name="FEEDBACK_TYPE.FEEDBACK_PEN_DOUBLETAP">
+    <summary>
+      <para>Feedback for a pen double-tap event.</para>
+    </summary>
+  </member>
+  <member name="FEEDBACK_TYPE.FEEDBACK_PEN_PRESSANDHOLD">
+    <summary>
+      <para>Feedback for a pen press-and-hold event.</para>
+    </summary>
+  </member>
+  <member name="FEEDBACK_TYPE.FEEDBACK_PEN_RIGHTTAP">
+    <summary>
+      <para>Feedback for a pen right-tap event.</para>
+    </summary>
+  </member>
+  <member name="FEEDBACK_TYPE.FEEDBACK_TOUCH_TAP">
+    <summary>
+      <para>Feedback for a touch tap event.</para>
+    </summary>
+  </member>
+  <member name="FEEDBACK_TYPE.FEEDBACK_TOUCH_DOUBLETAP">
+    <summary>
+      <para>Feedback for a touch double-tap event.</para>
+    </summary>
+  </member>
+  <member name="FEEDBACK_TYPE.FEEDBACK_TOUCH_PRESSANDHOLD">
+    <summary>
+      <para>Feedback for a touch press-and-hold event.</para>
+    </summary>
+  </member>
+  <member name="FEEDBACK_TYPE.FEEDBACK_TOUCH_RIGHTTAP">
+    <summary>
+      <para>Feedback for a touch right-tap event.</para>
+    </summary>
+  </member>
+  <member name="FEEDBACK_TYPE.FEEDBACK_GESTURE_PRESSANDTAP">
+    <summary>
+      <para>Feedback for a press-and-tap gesture.</para>
+    </summary>
+  </member>
+  <member name="FEEDBACK_TYPE.FEEDBACK_MAX">
+    <summary>
+      <para>Do not use.</para>
+    </summary>
+  </member>
+</doc>

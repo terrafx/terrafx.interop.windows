@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DVD_TIMECODE_FLAGS.xml' path='doc/member[@name="DVD_TIMECODE_FLAGS"]/*' />
 public enum DVD_TIMECODE_FLAGS
 {
+    /// <include file='DVD_TIMECODE_FLAGS.xml' path='doc/member[@name="DVD_TIMECODE_FLAGS.DVD_TC_FLAG_25fps"]/*' />
     DVD_TC_FLAG_25fps = 0x1,
+
+    /// <include file='DVD_TIMECODE_FLAGS.xml' path='doc/member[@name="DVD_TIMECODE_FLAGS.DVD_TC_FLAG_30fps"]/*' />
     DVD_TC_FLAG_30fps = 0x2,
+
+    /// <include file='DVD_TIMECODE_FLAGS.xml' path='doc/member[@name="DVD_TIMECODE_FLAGS.DVD_TC_FLAG_DropFrame"]/*' />
     DVD_TC_FLAG_DropFrame = 0x4,
+
+    /// <include file='DVD_TIMECODE_FLAGS.xml' path='doc/member[@name="DVD_TIMECODE_FLAGS.DVD_TC_FLAG_Interpolated"]/*' />
     DVD_TC_FLAG_Interpolated = 0x8,
 }

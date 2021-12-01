@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DETECTION_TYPE.xml' path='doc/member[@name="DETECTION_TYPE"]/*' />
 public enum DETECTION_TYPE
 {
+    /// <include file='DETECTION_TYPE.xml' path='doc/member[@name="DETECTION_TYPE.DetectNone"]/*' />
     DetectNone,
+
+    /// <include file='DETECTION_TYPE.xml' path='doc/member[@name="DETECTION_TYPE.DetectInt13"]/*' />
     DetectInt13,
+
+    /// <include file='DETECTION_TYPE.xml' path='doc/member[@name="DETECTION_TYPE.DetectExInt13"]/*' />
     DetectExInt13,
 }

@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CAC.xml' path='doc/member[@name="CAC"]/*' />
 public unsafe partial struct CAC
 {
+    /// <include file='CAC.xml' path='doc/member[@name="CAC.cElems"]/*' />
     [NativeTypeName("ULONG")]
     public uint cElems;
 
+    /// <include file='CAC.xml' path='doc/member[@name="CAC.pElems"]/*' />
     [NativeTypeName("CHAR *")]
     public sbyte* pElems;
 }

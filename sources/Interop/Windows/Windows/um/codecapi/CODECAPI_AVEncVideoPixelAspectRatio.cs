@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVEncVideoPixelAspectRatio.xml' path='doc/member[@name="CODECAPI_AVEncVideoPixelAspectRatio"]/*' />
 [Guid("3CDC718F-B3E9-4EB6-A57F-CF1F1B321B87")]
 public partial struct CODECAPI_AVEncVideoPixelAspectRatio
 {

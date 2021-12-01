@@ -5,11 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NET_IF_RCV_ADDRESS_LH.xml' path='doc/member[@name="NET_IF_RCV_ADDRESS_LH"]/*' />
 public partial struct NET_IF_RCV_ADDRESS_LH
 {
+    /// <include file='NET_IF_RCV_ADDRESS_LH.xml' path='doc/member[@name="NET_IF_RCV_ADDRESS_LH.ifRcvAddressType"]/*' />
     public NET_IF_RCV_ADDRESS_TYPE ifRcvAddressType;
 
+    /// <include file='NET_IF_RCV_ADDRESS_LH.xml' path='doc/member[@name="NET_IF_RCV_ADDRESS_LH.ifRcvAddressLength"]/*' />
     public ushort ifRcvAddressLength;
 
+    /// <include file='NET_IF_RCV_ADDRESS_LH.xml' path='doc/member[@name="NET_IF_RCV_ADDRESS_LH.ifRcvAddressOffset"]/*' />
     public ushort ifRcvAddressOffset;
 }

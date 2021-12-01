@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CHANGER_SET_POSITION">
+    <summary>
+      <para>Contains information needed by the
+<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_changer_set_position">IOCTL_CHANGER_SET_POSITION</a> control code to set the changer's robotic transport mechanism to the specified element address.</para>
+    </summary>
+    <seealso cref="CHANGER_ELEMENT" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_changer_set_position">IOCTL_CHANGER_SET_POSITION</seealso>
+  </member>
+  <member name="CHANGER_SET_POSITION.Transport">
+    <summary>
+      <para>A
+<see cref="CHANGER_ELEMENT" /> structure that indicates the transport to be moved. The <b>ElementType</b> member must be ChangerTransport.</para>
+    </summary>
+  </member>
+  <member name="CHANGER_SET_POSITION.Destination">
+    <summary>
+      <para>A
+<see cref="CHANGER_ELEMENT" /> structure that indicates the final destination of the transport. The <b>ElementType</b> member must be one of the following values: ChangerSlot, ChangerDrive, or ChangerIEPort.</para>
+    </summary>
+  </member>
+  <member name="CHANGER_SET_POSITION.Flip">
+    <summary>
+      <para>If this member is <b>TRUE</b>, the media currently carried by <b>Transport</b> should be flipped. Otherwise, it should not. This member is valid only if the <b>Features0</b> member of the
+<see cref="GET_CHANGER_PARAMETERS" /> structure is CHANGER_MEDIUM_FLIP.</para>
+    </summary>
+  </member>
+</doc>

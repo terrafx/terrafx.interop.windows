@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IVisualProperties.xml' path='doc/member[@name="IVisualProperties"]/*' />
 [Guid("E693CF68-D967-4112-8763-99172AEE5E5A")]
 [NativeTypeName("struct IVisualProperties : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IVisualProperties : IVisualProperties.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IVisualProperties : IVisualProperties.Interface
         return ((delegate* unmanaged<IVisualProperties*, Guid*, void**, int>)(lpVtbl[0]))((IVisualProperties*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IVisualProperties : IVisualProperties.Interface
         return ((delegate* unmanaged<IVisualProperties*, uint>)(lpVtbl[1]))((IVisualProperties*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IVisualProperties : IVisualProperties.Interface
         return ((delegate* unmanaged<IVisualProperties*, uint>)(lpVtbl[2]))((IVisualProperties*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IVisualProperties.xml' path='doc/member[@name="IVisualProperties.SetWatermark"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetWatermark(HBITMAP hbmp, VPWATERMARKFLAGS vpwf)
@@ -46,6 +51,7 @@ public unsafe partial struct IVisualProperties : IVisualProperties.Interface
         return ((delegate* unmanaged<IVisualProperties*, HBITMAP, VPWATERMARKFLAGS, int>)(lpVtbl[3]))((IVisualProperties*)Unsafe.AsPointer(ref this), hbmp, vpwf);
     }
 
+    /// <include file='IVisualProperties.xml' path='doc/member[@name="IVisualProperties.SetColor"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetColor(VPCOLORFLAGS vpcf, COLORREF cr)
@@ -53,6 +59,7 @@ public unsafe partial struct IVisualProperties : IVisualProperties.Interface
         return ((delegate* unmanaged<IVisualProperties*, VPCOLORFLAGS, COLORREF, int>)(lpVtbl[4]))((IVisualProperties*)Unsafe.AsPointer(ref this), vpcf, cr);
     }
 
+    /// <include file='IVisualProperties.xml' path='doc/member[@name="IVisualProperties.GetColor"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetColor(VPCOLORFLAGS vpcf, COLORREF* pcr)
@@ -60,6 +67,7 @@ public unsafe partial struct IVisualProperties : IVisualProperties.Interface
         return ((delegate* unmanaged<IVisualProperties*, VPCOLORFLAGS, COLORREF*, int>)(lpVtbl[5]))((IVisualProperties*)Unsafe.AsPointer(ref this), vpcf, pcr);
     }
 
+    /// <include file='IVisualProperties.xml' path='doc/member[@name="IVisualProperties.SetItemHeight"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT SetItemHeight(int cyItemInPixels)
@@ -67,6 +75,7 @@ public unsafe partial struct IVisualProperties : IVisualProperties.Interface
         return ((delegate* unmanaged<IVisualProperties*, int, int>)(lpVtbl[6]))((IVisualProperties*)Unsafe.AsPointer(ref this), cyItemInPixels);
     }
 
+    /// <include file='IVisualProperties.xml' path='doc/member[@name="IVisualProperties.GetItemHeight"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetItemHeight(int* cyItemInPixels)
@@ -74,6 +83,7 @@ public unsafe partial struct IVisualProperties : IVisualProperties.Interface
         return ((delegate* unmanaged<IVisualProperties*, int*, int>)(lpVtbl[7]))((IVisualProperties*)Unsafe.AsPointer(ref this), cyItemInPixels);
     }
 
+    /// <include file='IVisualProperties.xml' path='doc/member[@name="IVisualProperties.SetFont"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT SetFont([NativeTypeName("const LOGFONTW *")] LOGFONTW* plf, BOOL bRedraw)
@@ -81,6 +91,7 @@ public unsafe partial struct IVisualProperties : IVisualProperties.Interface
         return ((delegate* unmanaged<IVisualProperties*, LOGFONTW*, BOOL, int>)(lpVtbl[8]))((IVisualProperties*)Unsafe.AsPointer(ref this), plf, bRedraw);
     }
 
+    /// <include file='IVisualProperties.xml' path='doc/member[@name="IVisualProperties.GetFont"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT GetFont(LOGFONTW* plf)
@@ -88,6 +99,7 @@ public unsafe partial struct IVisualProperties : IVisualProperties.Interface
         return ((delegate* unmanaged<IVisualProperties*, LOGFONTW*, int>)(lpVtbl[9]))((IVisualProperties*)Unsafe.AsPointer(ref this), plf);
     }
 
+    /// <include file='IVisualProperties.xml' path='doc/member[@name="IVisualProperties.SetTheme"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT SetTheme([NativeTypeName("LPCWSTR")] ushort* pszSubAppName, [NativeTypeName("LPCWSTR")] ushort* pszSubIdList)

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WINHTTP_SECURITY_INFO">
+    <summary>
+      <para>The <b>WINHTTP_SECURITY_INFO</b> structure contains the SChannel connection and cipher information for a request.</para>
+    </summary>
+    <remarks>
+      <para>This structure is used with <see cref="WinHttpQueryOption" /> to retrieve security information for a request by specifying the <b>WINHTTP_OPTION_SECURITY_INFO</b> flag.</para>
+    </remarks>
+    <seealso cref="WinHttpQueryOption" />
+  </member>
+  <member name="WINHTTP_SECURITY_INFO.ConnectionInfo">
+    <summary>
+      <para>
+        <see cref="SecPkgContext_ConnectionInfo" /> containing the SChannel connection information for the request.</para>
+    </summary>
+  </member>
+  <member name="WINHTTP_SECURITY_INFO.CipherInfo">
+    <summary>
+      <para>
+        <see cref="SecPkgContext_CipherInfo" /> containing the SChannel cipher information for the request.</para>
+    </summary>
+  </member>
+</doc>

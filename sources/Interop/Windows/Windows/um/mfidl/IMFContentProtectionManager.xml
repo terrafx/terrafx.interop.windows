@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFContentProtectionManager.BeginEnableContent">
+    <summary>
+      <para>Begins an asynchronous request to perform a content enabling action.</para>
+      <para>This method requests the application to perform a specific step needed to acquire rights to the content, using a content enabler object.</para>
+    </summary>
+    <param name="pEnablerActivate">
+      <para>Pointer to the <see cref="IMFActivate" /> interface of a content enabler object. To create the content enabler, call <see cref="IMFActivate.ActivateObject" /> and request the <see cref="IMFContentEnabler" /> interface. The application should use the methods in <b>IMFContentEnabler</b> to complete the content enabling action.</para>
+    </param>
+    <param name="pTopo">
+      <para>Pointer to the <see cref="IMFTopology" /> interface of the pending topology.</para>
+    </param>
+    <param name="pCallback">
+      <para>Pointer to the <see cref="IMFAsyncCallback" /> interface of a callback object. When the operation is complete, the application should call <see cref="IMFAsyncCallback.Invoke" /> on the callback.</para>
+    </param>
+    <param name="punkState">
+      <para>Reserved. Currently this parameter is always <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>
+                <b>S_OK</b>
+              </b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Do not block within this callback method. Instead, perform the content enabling action asynchronously on another thread. When the operation is finished, notify the protected media path (PMP) through the <i>pCallback</i> parameter.</para>
+      <para>If you return a success code from this method, you must call <see cref="Invoke" /> on the callback. Conversely, if you return an error code from this method, you must not call <b>Invoke</b>. If the operation fails after the method returns a success code, use status code on the <see cref="IMFAsyncResult" /> object to report the error.</para>
+      <para>After the callback is invoked, the PMP will call the application's <see cref="IMFContentProtectionManager.EndEnableContent" /> method to complete the asynchronous call.</para>
+      <para>This method is not necessarily called every time the application plays protected content. Generally, the method will not be called if the user has a valid, up-to-date license for the content. Internally, the input trust authority (ITA) determines whether <b>BeginEnableContent</b> is called, based on the content provider's DRM policy. For more information, see <a href="https://docs.microsoft.com//windows/desktop/medfound/protected-media-path">Protected Media Path</a>.</para>
+    </remarks>
+    <seealso cref="IMFActivate" />
+    <seealso cref="IMFContentProtectionManager" />
+  </member>
+  <member name="IMFContentProtectionManager.EndEnableContent">
+    <summary>
+      <para>Ends an asynchronous request to perform a content enabling action. This method is called by the protected media path (PMP) to complete an asynchronous call to <see cref="IMFContentProtectionManager.BeginEnableContent" />.</para>
+    </summary>
+    <param name="pResult">
+      <para>Pointer to the <see cref="IMFAsyncResult" /> interface. This pointer is the same value that the application passed to the caller's <see cref="IMFAsyncCallback.Invoke" /> method.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>When the <see cref="BeginEnableContent" /> method completes asynchronously, the application notifies the PMP by invoking the asynchronous callback. The PMP calls <b>EndEnableContent</b> on the application to get the result code. This method is called on the application's thread from inside the callback method. Therefore, it must not block the thread that invoked the callback.</para>
+      <para>The application must return the success or failure code of the asynchronous processing that followed the call to <see cref="BeginEnableContent" />.</para>
+    </remarks>
+    <seealso cref="IMFContentProtectionManager" />
+  </member>
+  <member name="IMFContentProtectionManager">
+    <summary>
+      <para>Enables playback of protected content by providing the application with a pointer to a content enabler object.</para>
+      <para>Applications that play protected content should implement this interface.</para>
+    </summary>
+    <remarks>
+      <para>A <i>content enabler</i> is an object that performs some action that is required to play a piece of protected content. For example, the action might be obtaining a DRM license. Content enablers expose the <see cref="IMFContentEnabler" /> interface, which defines a generic mechanism for content enabler. Content enablers are created inside the protected media path (PMP) process. However, they must be invoked from the application process. Therefore, the <b>IMFContentProtectionManager</b> interface provides a way for the PMP Media Session to notify the application.</para>
+      <para>To use this interface, do the following:</para>
+      <list type="number">
+        <item>
+          <description>
+            <para>Implement the interface in your application.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>Create an attribute store by calling <see cref="MFCreateAttributes" />.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>Set the <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-session-content-protection-manager-attribute">MF_SESSION_CONTENT_PROTECTION_MANAGER</a> attribute on the attribute store. The attribute value is a pointer to your <b>IMFContentProtectionManager</b> implementation.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>Call <see cref="MFCreatePMPMediaSession" /> and pass the attribute store in the <i>pConfiguration</i> parameter.</para>
+          </description>
+        </item>
+      </list>
+      <para>If the content requires a content enabler, the application's <see cref="BeginEnableContent" /> method is called. Usually this method called during the <see cref="IMFMediaSession.SetTopology" /> operation, before the Media Session raises the <a href="https://docs.microsoft.com//windows/desktop/medfound/mesessiontopologyset">MESessionTopologySet</a> event. The application might receive multiple <b>BeginEnableContent</b> calls for a single piece of content. The MESessionTopologySet event signals that the content-enabling process is complete for the current topology. The <b>BeginEnableContent</b> method can also be called outside of the <b>SetTopology</b> operation, but less commonly.</para>
+      <para>Many content enablers send machine-specific data to the network, which can have privacy implications. One of the purposes of the <b>IMFContentProtectionManager</b> interface is to give applications an opportunity to display information to the user and enable users to opt in or out of the process.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+  </member>
+</doc>

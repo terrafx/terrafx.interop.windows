@@ -7,11 +7,19 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='EC_ENDOFLINE.xml' path='doc/member[@name="EC_ENDOFLINE"]/*' />
 [SupportedOSPlatform("windows10.0.17763.0")]
 public enum EC_ENDOFLINE
 {
+    /// <include file='EC_ENDOFLINE.xml' path='doc/member[@name="EC_ENDOFLINE.EC_ENDOFLINE_DETECTFROMCONTENT"]/*' />
     EC_ENDOFLINE_DETECTFROMCONTENT = 0,
+
+    /// <include file='EC_ENDOFLINE.xml' path='doc/member[@name="EC_ENDOFLINE.EC_ENDOFLINE_CRLF"]/*' />
     EC_ENDOFLINE_CRLF = 1,
+
+    /// <include file='EC_ENDOFLINE.xml' path='doc/member[@name="EC_ENDOFLINE.EC_ENDOFLINE_CR"]/*' />
     EC_ENDOFLINE_CR = 2,
+
+    /// <include file='EC_ENDOFLINE.xml' path='doc/member[@name="EC_ENDOFLINE.EC_ENDOFLINE_LF"]/*' />
     EC_ENDOFLINE_LF = 3,
 }

@@ -7,9 +7,12 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='VERSIONEDSTREAM.xml' path='doc/member[@name="VERSIONEDSTREAM"]/*' />
 public unsafe partial struct VERSIONEDSTREAM
 {
+    /// <include file='VERSIONEDSTREAM.xml' path='doc/member[@name="VERSIONEDSTREAM.guidVersion"]/*' />
     public Guid guidVersion;
 
+    /// <include file='VERSIONEDSTREAM.xml' path='doc/member[@name="VERSIONEDSTREAM.pStream"]/*' />
     public IStream* pStream;
 }

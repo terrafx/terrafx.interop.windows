@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_XML_READER_MTOM_ENCODING">
+    <summary>
+      <para>Used to indicate that the reader should interpret the bytes it reads as in MTOM format.</para>
+    </summary>
+    <remarks>
+      <para>When used with <see cref="WS_XML_READER_BUFFER_INPUT" /> the MIME parts may appear in any order.</para>
+      <para>When used with <see cref="WS_XML_READER_STREAM_INPUT" /> the root MIME part must be first, and
+subsequent MIME parts must appear in the order that they are referenced from xop:Include elements.</para>
+      <para>See http://www.w3.org/TR/2005/REC-xop10-20050125/ for the MTOM specification.</para>
+    </remarks>
+  </member>
+  <member name="WS_XML_READER_MTOM_ENCODING.encoding">
+    <summary>
+      <para>The base type for all types that derive from <see cref="WS_XML_READER_ENCODING" />.</para>
+    </summary>
+  </member>
+  <member name="WS_XML_READER_MTOM_ENCODING.textEncoding">
+    <summary>
+      <para>The encoding of the xml document carried by MTOM.</para>
+    </summary>
+  </member>
+  <member name="WS_XML_READER_MTOM_ENCODING.readMimeHeader">
+    <summary>
+      <para>Specifies whether or not the reader should read the MIME header.</para>
+    </summary>
+  </member>
+  <member name="WS_XML_READER_MTOM_ENCODING.startInfo">
+    <summary>
+      <para>The type used by the mime part that contains the xml.  This corresponds to the "start-info" parameter in the of the MIME Content-Type.
+If readMimeHeader is specified as <b>TRUE</b>, then this must be empty as the startInfo will be read from the mime header.</para>
+    </summary>
+  </member>
+  <member name="WS_XML_READER_MTOM_ENCODING.boundary">
+    <summary>
+      <para>The character sequence that should be used to delimit the mime parts.  This corresponds to the "boundary" parameter of the MIME Content-Type.
+If readMimeHeader is specified as <b>TRUE</b>, then this must be empty as the boundary will be read from the mime header.</para>
+    </summary>
+  </member>
+  <member name="WS_XML_READER_MTOM_ENCODING.startUri">
+    <summary>
+      <para>The mime part that contains the xml.  This corresponds to the "start" parameter of the MIME Content-Type.
+If readMimeHeader is specified as <b>TRUE</b>, then this must be empty as the startUri will be read from the mime header.</para>
+    </summary>
+  </member>
+</doc>

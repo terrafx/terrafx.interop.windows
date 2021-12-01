@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CERT_DSS_PARAMETERS">
+    <summary>
+      <para>The <b>CERT_DSS_PARAMETERS</b> structure contains parameters associated with a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/d-gly">Digital Signature Standard</a> (DSS) <a href="https://docs.microsoft.com//windows/desktop/SecGloss/p-gly">public key</a> algorithm.</para>
+    </summary>
+  </member>
+  <member name="CERT_DSS_PARAMETERS.p">
+    <summary>
+      <para>Prime modulus P. The most significant bit of the most significant byte must always be set to 1.</para>
+    </summary>
+  </member>
+  <member name="CERT_DSS_PARAMETERS.q">
+    <summary>
+      <para>Prime Q. It is 20 bytes in length. The most significant bit of the most significant byte must be set to 1.</para>
+    </summary>
+  </member>
+  <member name="CERT_DSS_PARAMETERS.g">
+    <summary>
+      <para>Generator G. Must be the same length as <b>p</b> (must be padded with 0x00 bytes if it is less).</para>
+    </summary>
+  </member>
+</doc>

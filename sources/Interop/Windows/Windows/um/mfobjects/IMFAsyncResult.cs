@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFAsyncResult.xml' path='doc/member[@name="IMFAsyncResult"]/*' />
 [Guid("AC6B7889-0740-4D51-8619-905994A55CC6")]
 [NativeTypeName("struct IMFAsyncResult : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMFAsyncResult : IMFAsyncResult.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMFAsyncResult : IMFAsyncResult.Interface
         return ((delegate* unmanaged<IMFAsyncResult*, Guid*, void**, int>)(lpVtbl[0]))((IMFAsyncResult*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMFAsyncResult : IMFAsyncResult.Interface
         return ((delegate* unmanaged<IMFAsyncResult*, uint>)(lpVtbl[1]))((IMFAsyncResult*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMFAsyncResult : IMFAsyncResult.Interface
         return ((delegate* unmanaged<IMFAsyncResult*, uint>)(lpVtbl[2]))((IMFAsyncResult*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFAsyncResult.xml' path='doc/member[@name="IMFAsyncResult.GetState"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetState(IUnknown** ppunkState)
@@ -46,6 +51,7 @@ public unsafe partial struct IMFAsyncResult : IMFAsyncResult.Interface
         return ((delegate* unmanaged<IMFAsyncResult*, IUnknown**, int>)(lpVtbl[3]))((IMFAsyncResult*)Unsafe.AsPointer(ref this), ppunkState);
     }
 
+    /// <include file='IMFAsyncResult.xml' path='doc/member[@name="IMFAsyncResult.GetStatus"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetStatus()
@@ -53,6 +59,7 @@ public unsafe partial struct IMFAsyncResult : IMFAsyncResult.Interface
         return ((delegate* unmanaged<IMFAsyncResult*, int>)(lpVtbl[4]))((IMFAsyncResult*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFAsyncResult.xml' path='doc/member[@name="IMFAsyncResult.SetStatus"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetStatus(HRESULT hrStatus)
@@ -60,6 +67,7 @@ public unsafe partial struct IMFAsyncResult : IMFAsyncResult.Interface
         return ((delegate* unmanaged<IMFAsyncResult*, HRESULT, int>)(lpVtbl[5]))((IMFAsyncResult*)Unsafe.AsPointer(ref this), hrStatus);
     }
 
+    /// <include file='IMFAsyncResult.xml' path='doc/member[@name="IMFAsyncResult.GetObject"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetObject(IUnknown** ppObject)
@@ -67,6 +75,7 @@ public unsafe partial struct IMFAsyncResult : IMFAsyncResult.Interface
         return ((delegate* unmanaged<IMFAsyncResult*, IUnknown**, int>)(lpVtbl[6]))((IMFAsyncResult*)Unsafe.AsPointer(ref this), ppObject);
     }
 
+    /// <include file='IMFAsyncResult.xml' path='doc/member[@name="IMFAsyncResult.GetStateNoAddRef"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public IUnknown* GetStateNoAddRef()

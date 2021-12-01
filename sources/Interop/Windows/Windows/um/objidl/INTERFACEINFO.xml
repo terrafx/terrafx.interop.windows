@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="INTERFACEINFO">
+    <summary>
+      <para>Contains information about incoming calls.</para>
+    </summary>
+    <seealso cref="IMessageFilter.HandleInComingCall" />
+  </member>
+  <member name="INTERFACEINFO.pUnk">
+    <summary>
+      <para>A pointer to the <see cref="IUnknown" /> interface on the object.</para>
+    </summary>
+  </member>
+  <member name="INTERFACEINFO.iid">
+    <summary>
+      <para>The identifier of the requested interface.</para>
+    </summary>
+  </member>
+  <member name="INTERFACEINFO.wMethod">
+    <summary>
+      <para>The interface method.</para>
+    </summary>
+  </member>
+</doc>

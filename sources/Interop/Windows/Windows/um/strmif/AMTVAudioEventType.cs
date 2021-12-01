@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='AMTVAudioEventType.xml' path='doc/member[@name="AMTVAudioEventType"]/*' />
 public enum AMTVAudioEventType
 {
+    /// <include file='AMTVAudioEventType.xml' path='doc/member[@name="AMTVAudioEventType.AMTVAUDIO_EVENT_CHANGED"]/*' />
     AMTVAUDIO_EVENT_CHANGED = 0x1,
 }

@@ -5,16 +5,34 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CertKeyType.xml' path='doc/member[@name="CertKeyType"]/*' />
 [NativeTypeName("DWORD")]
 public enum CertKeyType : uint
 {
+    /// <include file='CertKeyType.xml' path='doc/member[@name="CertKeyType.KeyTypeOther"]/*' />
     KeyTypeOther = 0,
+
+    /// <include file='CertKeyType.xml' path='doc/member[@name="CertKeyType.KeyTypeVirtualSmartCard"]/*' />
     KeyTypeVirtualSmartCard = 1,
+
+    /// <include file='CertKeyType.xml' path='doc/member[@name="CertKeyType.KeyTypePhysicalSmartCard"]/*' />
     KeyTypePhysicalSmartCard = 2,
+
+    /// <include file='CertKeyType.xml' path='doc/member[@name="CertKeyType.KeyTypePassport"]/*' />
     KeyTypePassport = 3,
+
+    /// <include file='CertKeyType.xml' path='doc/member[@name="CertKeyType.KeyTypePassportRemote"]/*' />
     KeyTypePassportRemote = 4,
+
+    /// <include file='CertKeyType.xml' path='doc/member[@name="CertKeyType.KeyTypePassportSmartCard"]/*' />
     KeyTypePassportSmartCard = 5,
+
+    /// <include file='CertKeyType.xml' path='doc/member[@name="CertKeyType.KeyTypeHardware"]/*' />
     KeyTypeHardware = 6,
+
+    /// <include file='CertKeyType.xml' path='doc/member[@name="CertKeyType.KeyTypeSoftware"]/*' />
     KeyTypeSoftware = 7,
+
+    /// <include file='CertKeyType.xml' path='doc/member[@name="CertKeyType.KeyTypeSelfSigned"]/*' />
     KeyTypeSelfSigned = 8,
 }

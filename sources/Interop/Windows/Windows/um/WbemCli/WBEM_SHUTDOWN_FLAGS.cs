@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WBEM_SHUTDOWN_FLAGS.xml' path='doc/member[@name="WBEM_SHUTDOWN_FLAGS"]/*' />
 public enum WBEM_SHUTDOWN_FLAGS
 {
+    /// <include file='WBEM_SHUTDOWN_FLAGS.xml' path='doc/member[@name="WBEM_SHUTDOWN_FLAGS.WBEM_SHUTDOWN_UNLOAD_COMPONENT"]/*' />
     WBEM_SHUTDOWN_UNLOAD_COMPONENT = 1,
+
+    /// <include file='WBEM_SHUTDOWN_FLAGS.xml' path='doc/member[@name="WBEM_SHUTDOWN_FLAGS.WBEM_SHUTDOWN_WMI"]/*' />
     WBEM_SHUTDOWN_WMI = 2,
+
+    /// <include file='WBEM_SHUTDOWN_FLAGS.xml' path='doc/member[@name="WBEM_SHUTDOWN_FLAGS.WBEM_SHUTDOWN_OS"]/*' />
     WBEM_SHUTDOWN_OS = 3,
 }

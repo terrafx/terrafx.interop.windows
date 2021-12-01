@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='BYTE_SIZEDARR.xml' path='doc/member[@name="BYTE_SIZEDARR"]/*' />
 public unsafe partial struct BYTE_SIZEDARR
 {
+    /// <include file='BYTE_SIZEDARR.xml' path='doc/member[@name="BYTE_SIZEDARR.clSize"]/*' />
     [NativeTypeName("ULONG")]
     public uint clSize;
 
+    /// <include file='BYTE_SIZEDARR.xml' path='doc/member[@name="BYTE_SIZEDARR.pData"]/*' />
     public byte* pData;
 }

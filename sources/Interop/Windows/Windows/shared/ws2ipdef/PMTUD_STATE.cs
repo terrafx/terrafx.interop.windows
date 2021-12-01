@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PMTUD_STATE.xml' path='doc/member[@name="PMTUD_STATE"]/*' />
 public enum PMTUD_STATE
 {
+    /// <include file='PMTUD_STATE.xml' path='doc/member[@name="PMTUD_STATE.IP_PMTUDISC_NOT_SET"]/*' />
     IP_PMTUDISC_NOT_SET,
+
+    /// <include file='PMTUD_STATE.xml' path='doc/member[@name="PMTUD_STATE.IP_PMTUDISC_DO"]/*' />
     IP_PMTUDISC_DO,
+
+    /// <include file='PMTUD_STATE.xml' path='doc/member[@name="PMTUD_STATE.IP_PMTUDISC_DONT"]/*' />
     IP_PMTUDISC_DONT,
+
+    /// <include file='PMTUD_STATE.xml' path='doc/member[@name="PMTUD_STATE.IP_PMTUDISC_PROBE"]/*' />
     IP_PMTUDISC_PROBE,
+
+    /// <include file='PMTUD_STATE.xml' path='doc/member[@name="PMTUD_STATE.IP_PMTUDISC_MAX"]/*' />
     IP_PMTUDISC_MAX,
 }

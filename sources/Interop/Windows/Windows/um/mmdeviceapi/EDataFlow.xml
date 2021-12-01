@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="EDataFlow">
+    <summary>
+      <para>The <b>EDataFlow</b> enumeration defines constants that indicate the direction in which audio data flows between an audio endpoint device and an application.</para>
+    </summary>
+    <remarks>
+      <para>The <see cref="IMMDeviceEnumerator.GetDefaultAudioEndpoint" />, <see cref="IMMDeviceEnumerator.EnumAudioEndpoints" />, <see cref="IMMEndpoint.GetDataFlow" />, and <see cref="IMMNotificationClient.OnDefaultDeviceChanged" /> methods use the constants defined in the <b>EDataFlow</b> enumeration.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/CoreAudio/core-audio-enumerations">Core Audio Enumerations</seealso>
+    <seealso cref="IMMDeviceEnumerator.EnumAudioEndpoints" />
+    <seealso cref="IMMDeviceEnumerator.GetDefaultAudioEndpoint" />
+    <seealso cref="IMMEndpoint.GetDataFlow" />
+    <seealso cref="IMMNotificationClient.OnDefaultDeviceChanged" />
+  </member>
+  <member name="EDataFlow.eRender">
+    <summary>
+      <para>Audio rendering stream. Audio data flows from the application to the audio endpoint device, which renders the stream.</para>
+    </summary>
+  </member>
+  <member name="EDataFlow.eCapture">
+    <summary>
+      <para>Audio capture stream. Audio data flows from the audio endpoint device that captures the stream, to the application.</para>
+    </summary>
+  </member>
+  <member name="EDataFlow.eAll">
+    <summary>
+      <para>Audio rendering or capture stream. Audio data can flow either from the application to the audio endpoint device, or from the audio endpoint device to the application.</para>
+    </summary>
+  </member>
+  <member name="EDataFlow.EDataFlow_enum_count">
+    <summary>
+      <para>The number of members in the <see cref="EDataFlow" /> enumeration (not counting the EDataFlow_enum_count member).</para>
+    </summary>
+  </member>
+</doc>

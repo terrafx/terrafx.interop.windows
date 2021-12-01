@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PRJ_UPDATE_FAILURE_CAUSES">
+    <summary>
+      <para>Descriptions for the reason an update failed.</para>
+    </summary>
+  </member>
+  <member name="PRJ_UPDATE_FAILURE_CAUSES.PRJ_UPDATE_FAILURE_CAUSE_NONE">
+    <summary>
+      <para>The update did not fail.</para>
+    </summary>
+  </member>
+  <member name="PRJ_UPDATE_FAILURE_CAUSES.PRJ_UPDATE_FAILURE_CAUSE_DIRTY_METADATA">
+    <summary>
+      <para>The item was a dirty placeholder (hydrated or not), and the provider did not specify PRJ_UPDATE_ALLOW_DIRTY_METADATA in <see cref="PRJ_UPDATE_TYPES" />.</para>
+    </summary>
+  </member>
+  <member name="PRJ_UPDATE_FAILURE_CAUSES.PRJ_UPDATE_FAILURE_CAUSE_DIRTY_DATA">
+    <summary>
+      <para>The item was a full file and the provider did not specify PRJ_UPDATE_ALLOW_DIRTY_DATA in <see cref="PRJ_UPDATE_TYPES" />.</para>
+    </summary>
+  </member>
+  <member name="PRJ_UPDATE_FAILURE_CAUSES.PRJ_UPDATE_FAILURE_CAUSE_TOMBSTONE">
+    <summary>
+      <para>The item was a tombstone and the provider did not specify PRJ_UPDATE_ALLOW_TOMBSTONE in <see cref="PRJ_UPDATE_TYPES" />.</para>
+    </summary>
+  </member>
+  <member name="PRJ_UPDATE_FAILURE_CAUSES.PRJ_UPDATE_FAILURE_CAUSE_READ_ONLY">
+    <summary>
+      <para>The item had the DOS read-only bit set and the provider did not specify PRJ_UPDATE_ALLOW_READ_ONLY in <see cref="PRJ_UPDATE_TYPES" />.</para>
+    </summary>
+  </member>
+</doc>

@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ACTCTX_SECTION_KEYED_DATA">
+    <summary>
+      <para>The
+<b>ACTCTX_SECTION_KEYED_DATA</b> structure is used by the
+<see cref="FindActCtxSectionString" /> and
+<see cref="FindActCtxSectionGuid" /> functions to return the activation context information along with either the GUID or 32-bit integer-tagged activation context section.</para>
+    </summary>
+    <remarks>
+      <para>Callers should initialize the
+<b>ACTCTX_SECTION_KEYED_DATA</b> structure as such:</para>
+      <para>"ACTCTX_SECTION_KEYED_DATA askd = { sizeof(askd) };"</para>
+      <para>which  initializes all members to zero/null except the size field which is set correctly.</para>
+    </remarks>
+    <seealso cref="ACTCTX" />
+    <seealso cref="FindActCtxSectionGuid" />
+    <seealso cref="FindActCtxSectionString" />
+  </member>
+  <member name="ACTCTX_SECTION_KEYED_DATA.cbSize">
+    <summary>
+      <para>The size, in bytes, of the activation context keyed data structure.</para>
+    </summary>
+  </member>
+  <member name="ACTCTX_SECTION_KEYED_DATA.ulDataFormatVersion">
+    <summary>
+      <para>Number that indicates the format of the data in the section where the key was found. Clients should verify that the data format version is as expected rather than trying to interpret the values of unfamiliar data formats. This number is only changed when major non-backward-compatible changes to the section data formats need to be made. The current format version is 1.</para>
+    </summary>
+  </member>
+  <member name="ACTCTX_SECTION_KEYED_DATA.lpData">
+    <summary>
+      <para>Pointer to the redirection data found associated with the section identifier and key.</para>
+    </summary>
+  </member>
+  <member name="ACTCTX_SECTION_KEYED_DATA.ulLength">
+    <summary>
+      <para>Number of bytes in the structure referred to by <b>lpData</b>. Note that the data structures  grow over time; do not access members in the instance data that extend beyond <b>ulLength</b>.</para>
+    </summary>
+  </member>
+  <member name="ACTCTX_SECTION_KEYED_DATA.lpSectionGlobalData">
+    <summary>
+      <para>Returned pointer to a section-specific data structure which is global to the activation context section where the key was found. Its interpretation depends on the section identifier requested.</para>
+    </summary>
+  </member>
+  <member name="ACTCTX_SECTION_KEYED_DATA.ulSectionGlobalDataLength">
+    <summary>
+      <para>Number of bytes in the section global data block referred to by <b>lpSectionGlobalData</b>.</para>
+      <para>Note that the data structures  grow over time and you may receive an old format activation context data block; do not access members in the section global data that extend beyond <b>ulSectionGlobalDataLength</b>.</para>
+    </summary>
+  </member>
+  <member name="ACTCTX_SECTION_KEYED_DATA.lpSectionBase">
+    <summary>
+      <para>Pointer to the base of the section where the key was found. Some instance data contains offsets relative to the section base address, in which case this pointer value is used.</para>
+    </summary>
+  </member>
+  <member name="ACTCTX_SECTION_KEYED_DATA.ulSectionTotalLength">
+    <summary>
+      <para>Number of bytes for the entire section starting at <b>lpSectionBase</b>. May be used to verify that offset/length pairs, which are specified as relative to the section base are wholly contained in the section.</para>
+    </summary>
+  </member>
+  <member name="ACTCTX_SECTION_KEYED_DATA.hActCtx">
+    <summary>
+      <para>Handle to the activation context where the key was found. First, the active activation context for the thread is searched, followed by the process-default activation context and then the system-compatible-default-activation context. This member indicates which activation context contained the section and key requested. This is only returned if the FIND_ACTCTX_SECTION_KEY_RETURN_HACTCTX flag is passed.</para>
+      <para>Note that when this is returned, the caller must call
+<see cref="ReleaseActCtx" />() on the activation context handle returned to release system resources when all other references to the activation context have been released.</para>
+    </summary>
+  </member>
+  <member name="ACTCTX_SECTION_KEYED_DATA.ulAssemblyRosterIndex">
+    <summary>
+      <para>Cardinal number of the assembly in the activation context that provided the redirection information found. This value can be presented to <see cref="QueryActCtxW" /> for more information about the contributing assembly.</para>
+    </summary>
+  </member>
+  <member name="ACTCTX_SECTION_KEYED_DATA.ulFlags">
+    <summary></summary>
+  </member>
+  <member name="ACTCTX_SECTION_KEYED_DATA.AssemblyMetadata">
+    <summary></summary>
+  </member>
+</doc>

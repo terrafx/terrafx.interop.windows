@@ -5,17 +5,23 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMECHARPOSITION.xml' path='doc/member[@name="IMECHARPOSITION"]/*' />
 public partial struct IMECHARPOSITION
 {
+    /// <include file='IMECHARPOSITION.xml' path='doc/member[@name="IMECHARPOSITION.dwSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwSize;
 
+    /// <include file='IMECHARPOSITION.xml' path='doc/member[@name="IMECHARPOSITION.dwCharPos"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwCharPos;
 
+    /// <include file='IMECHARPOSITION.xml' path='doc/member[@name="IMECHARPOSITION.pt"]/*' />
     public POINT pt;
 
+    /// <include file='IMECHARPOSITION.xml' path='doc/member[@name="IMECHARPOSITION.cLineHeight"]/*' />
     public uint cLineHeight;
 
+    /// <include file='IMECHARPOSITION.xml' path='doc/member[@name="IMECHARPOSITION.rcDocument"]/*' />
     public RECT rcDocument;
 }

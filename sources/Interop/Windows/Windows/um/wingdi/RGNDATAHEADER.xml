@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="RGNDATAHEADER">
+    <summary>
+      <para>The <b>RGNDATAHEADER</b> structure describes the data returned by the <see cref="GetRegionData" /> function.</para>
+    </summary>
+    <seealso cref="GetRegionData" />
+    <seealso cref="RECT" />
+    <seealso cref="RGNDATA" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/region-structures">Region Structures</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/regions">Regions Overview</seealso>
+  </member>
+  <member name="RGNDATAHEADER.dwSize">
+    <summary>
+      <para>The size, in bytes, of the header.</para>
+    </summary>
+  </member>
+  <member name="RGNDATAHEADER.iType">
+    <summary>
+      <para>The type of region. This value must be RDH_RECTANGLES.</para>
+    </summary>
+  </member>
+  <member name="RGNDATAHEADER.nCount">
+    <summary>
+      <para>The number of rectangles that make up the region.</para>
+    </summary>
+  </member>
+  <member name="RGNDATAHEADER.nRgnSize">
+    <summary>
+      <para>The size of the <see cref="RGNDATA" /> buffer required to receive the <see cref="RECT" /> structures that make up the region. If the size is not known, this member can be zero.</para>
+    </summary>
+  </member>
+  <member name="RGNDATAHEADER.rcBound">
+    <summary>
+      <para>A bounding rectangle for the region in logical units.</para>
+    </summary>
+  </member>
+</doc>

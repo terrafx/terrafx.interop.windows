@@ -5,26 +5,34 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SD_CHANGE_MACHINE_SID_OUTPUT.xml' path='doc/member[@name="SD_CHANGE_MACHINE_SID_OUTPUT"]/*' />
 public partial struct SD_CHANGE_MACHINE_SID_OUTPUT
 {
+    /// <include file='SD_CHANGE_MACHINE_SID_OUTPUT.xml' path='doc/member[@name="SD_CHANGE_MACHINE_SID_OUTPUT.NumSDChangedSuccess"]/*' />
     [NativeTypeName("DWORDLONG")]
     public ulong NumSDChangedSuccess;
 
+    /// <include file='SD_CHANGE_MACHINE_SID_OUTPUT.xml' path='doc/member[@name="SD_CHANGE_MACHINE_SID_OUTPUT.NumSDChangedFail"]/*' />
     [NativeTypeName("DWORDLONG")]
     public ulong NumSDChangedFail;
 
+    /// <include file='SD_CHANGE_MACHINE_SID_OUTPUT.xml' path='doc/member[@name="SD_CHANGE_MACHINE_SID_OUTPUT.NumSDUnused"]/*' />
     [NativeTypeName("DWORDLONG")]
     public ulong NumSDUnused;
 
+    /// <include file='SD_CHANGE_MACHINE_SID_OUTPUT.xml' path='doc/member[@name="SD_CHANGE_MACHINE_SID_OUTPUT.NumSDTotal"]/*' />
     [NativeTypeName("DWORDLONG")]
     public ulong NumSDTotal;
 
+    /// <include file='SD_CHANGE_MACHINE_SID_OUTPUT.xml' path='doc/member[@name="SD_CHANGE_MACHINE_SID_OUTPUT.NumMftSDChangedSuccess"]/*' />
     [NativeTypeName("DWORDLONG")]
     public ulong NumMftSDChangedSuccess;
 
+    /// <include file='SD_CHANGE_MACHINE_SID_OUTPUT.xml' path='doc/member[@name="SD_CHANGE_MACHINE_SID_OUTPUT.NumMftSDChangedFail"]/*' />
     [NativeTypeName("DWORDLONG")]
     public ulong NumMftSDChangedFail;
 
+    /// <include file='SD_CHANGE_MACHINE_SID_OUTPUT.xml' path='doc/member[@name="SD_CHANGE_MACHINE_SID_OUTPUT.NumMftSDTotal"]/*' />
     [NativeTypeName("DWORDLONG")]
     public ulong NumMftSDTotal;
 }

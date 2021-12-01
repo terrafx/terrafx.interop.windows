@@ -5,13 +5,17 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='POWER_ACTION_POLICY.xml' path='doc/member[@name="POWER_ACTION_POLICY"]/*' />
 public partial struct POWER_ACTION_POLICY
 {
+    /// <include file='POWER_ACTION_POLICY.xml' path='doc/member[@name="POWER_ACTION_POLICY.Action"]/*' />
     public POWER_ACTION Action;
 
+    /// <include file='POWER_ACTION_POLICY.xml' path='doc/member[@name="POWER_ACTION_POLICY.Flags"]/*' />
     [NativeTypeName("DWORD")]
     public uint Flags;
 
+    /// <include file='POWER_ACTION_POLICY.xml' path='doc/member[@name="POWER_ACTION_POLICY.EventCode"]/*' />
     [NativeTypeName("DWORD")]
     public uint EventCode;
 }

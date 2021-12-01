@@ -9,23 +9,30 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DEVICE_DSM_PHYSICAL_ADDRESSES_OUTPUT.xml' path='doc/member[@name="DEVICE_DSM_PHYSICAL_ADDRESSES_OUTPUT"]/*' />
 public partial struct DEVICE_DSM_PHYSICAL_ADDRESSES_OUTPUT
 {
+    /// <include file='DEVICE_DSM_PHYSICAL_ADDRESSES_OUTPUT.xml' path='doc/member[@name="DEVICE_DSM_PHYSICAL_ADDRESSES_OUTPUT.Version"]/*' />
     [NativeTypeName("DWORD")]
     public uint Version;
 
+    /// <include file='DEVICE_DSM_PHYSICAL_ADDRESSES_OUTPUT.xml' path='doc/member[@name="DEVICE_DSM_PHYSICAL_ADDRESSES_OUTPUT.Flags"]/*' />
     [NativeTypeName("DWORD")]
     public uint Flags;
 
+    /// <include file='DEVICE_DSM_PHYSICAL_ADDRESSES_OUTPUT.xml' path='doc/member[@name="DEVICE_DSM_PHYSICAL_ADDRESSES_OUTPUT.TotalNumberOfRanges"]/*' />
     [NativeTypeName("DWORD")]
     public uint TotalNumberOfRanges;
 
+    /// <include file='DEVICE_DSM_PHYSICAL_ADDRESSES_OUTPUT.xml' path='doc/member[@name="DEVICE_DSM_PHYSICAL_ADDRESSES_OUTPUT.NumberOfRangesReturned"]/*' />
     [NativeTypeName("DWORD")]
     public uint NumberOfRangesReturned;
 
+    /// <include file='DEVICE_DSM_PHYSICAL_ADDRESSES_OUTPUT.xml' path='doc/member[@name="DEVICE_DSM_PHYSICAL_ADDRESSES_OUTPUT.Ranges"]/*' />
     [NativeTypeName("DEVICE_STORAGE_ADDRESS_RANGE [1]")]
     public _Ranges_e__FixedBuffer Ranges;
 
+    /// <include file='_Ranges_e__FixedBuffer.xml' path='doc/member[@name="_Ranges_e__FixedBuffer"]/*' />
     public partial struct _Ranges_e__FixedBuffer
     {
         public DEVICE_STORAGE_ADDRESS_RANGE e0;

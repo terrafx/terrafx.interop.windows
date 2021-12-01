@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CERT_TPM_SPECIFICATION_INFO.xml' path='doc/member[@name="CERT_TPM_SPECIFICATION_INFO"]/*' />
 public unsafe partial struct CERT_TPM_SPECIFICATION_INFO
 {
+    /// <include file='CERT_TPM_SPECIFICATION_INFO.xml' path='doc/member[@name="CERT_TPM_SPECIFICATION_INFO.pwszFamily"]/*' />
     [NativeTypeName("LPWSTR")]
     public ushort* pwszFamily;
 
+    /// <include file='CERT_TPM_SPECIFICATION_INFO.xml' path='doc/member[@name="CERT_TPM_SPECIFICATION_INFO.dwLevel"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwLevel;
 
+    /// <include file='CERT_TPM_SPECIFICATION_INFO.xml' path='doc/member[@name="CERT_TPM_SPECIFICATION_INFO.dwRevision"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwRevision;
 }

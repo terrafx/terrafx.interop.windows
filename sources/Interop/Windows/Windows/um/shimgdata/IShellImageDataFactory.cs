@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IShellImageDataFactory.xml' path='doc/member[@name="IShellImageDataFactory"]/*' />
 [Guid("9BE8ED5C-EDAB-4D75-90F3-BD5BDBB21C82")]
 [NativeTypeName("struct IShellImageDataFactory : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IShellImageDataFactory : IShellImageDataFactory.Int
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IShellImageDataFactory : IShellImageDataFactory.Int
         return ((delegate* unmanaged<IShellImageDataFactory*, Guid*, void**, int>)(lpVtbl[0]))((IShellImageDataFactory*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IShellImageDataFactory : IShellImageDataFactory.Int
         return ((delegate* unmanaged<IShellImageDataFactory*, uint>)(lpVtbl[1]))((IShellImageDataFactory*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IShellImageDataFactory : IShellImageDataFactory.Int
         return ((delegate* unmanaged<IShellImageDataFactory*, uint>)(lpVtbl[2]))((IShellImageDataFactory*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IShellImageDataFactory.xml' path='doc/member[@name="IShellImageDataFactory.CreateIShellImageData"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT CreateIShellImageData(IShellImageData** ppshimg)
@@ -46,6 +51,7 @@ public unsafe partial struct IShellImageDataFactory : IShellImageDataFactory.Int
         return ((delegate* unmanaged<IShellImageDataFactory*, IShellImageData**, int>)(lpVtbl[3]))((IShellImageDataFactory*)Unsafe.AsPointer(ref this), ppshimg);
     }
 
+    /// <include file='IShellImageDataFactory.xml' path='doc/member[@name="IShellImageDataFactory.CreateImageFromFile"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT CreateImageFromFile([NativeTypeName("LPCWSTR")] ushort* pszPath, IShellImageData** ppshimg)
@@ -53,6 +59,7 @@ public unsafe partial struct IShellImageDataFactory : IShellImageDataFactory.Int
         return ((delegate* unmanaged<IShellImageDataFactory*, ushort*, IShellImageData**, int>)(lpVtbl[4]))((IShellImageDataFactory*)Unsafe.AsPointer(ref this), pszPath, ppshimg);
     }
 
+    /// <include file='IShellImageDataFactory.xml' path='doc/member[@name="IShellImageDataFactory.CreateImageFromStream"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT CreateImageFromStream(IStream* pStream, IShellImageData** ppshimg)
@@ -60,6 +67,7 @@ public unsafe partial struct IShellImageDataFactory : IShellImageDataFactory.Int
         return ((delegate* unmanaged<IShellImageDataFactory*, IStream*, IShellImageData**, int>)(lpVtbl[5]))((IShellImageDataFactory*)Unsafe.AsPointer(ref this), pStream, ppshimg);
     }
 
+    /// <include file='IShellImageDataFactory.xml' path='doc/member[@name="IShellImageDataFactory.GetDataFormatFromPath"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetDataFormatFromPath([NativeTypeName("LPCWSTR")] ushort* pszPath, Guid* pDataFormat)

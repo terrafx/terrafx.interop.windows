@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFSourceReaderCallback2.xml' path='doc/member[@name="IMFSourceReaderCallback2"]/*' />
 [Guid("CF839FE6-8C2A-4DD2-B6EA-C22D6961AF05")]
 [NativeTypeName("struct IMFSourceReaderCallback2 : IMFSourceReaderCallback")]
 [NativeInheritance("IMFSourceReaderCallback")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMFSourceReaderCallback2 : IMFSourceReaderCallback2
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMFSourceReaderCallback2 : IMFSourceReaderCallback2
         return ((delegate* unmanaged<IMFSourceReaderCallback2*, Guid*, void**, int>)(lpVtbl[0]))((IMFSourceReaderCallback2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMFSourceReaderCallback2 : IMFSourceReaderCallback2
         return ((delegate* unmanaged<IMFSourceReaderCallback2*, uint>)(lpVtbl[1]))((IMFSourceReaderCallback2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMFSourceReaderCallback2 : IMFSourceReaderCallback2
         return ((delegate* unmanaged<IMFSourceReaderCallback2*, uint>)(lpVtbl[2]))((IMFSourceReaderCallback2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IMFSourceReaderCallback.OnReadSample" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT OnReadSample(HRESULT hrStatus, [NativeTypeName("DWORD")] uint dwStreamIndex, [NativeTypeName("DWORD")] uint dwStreamFlags, [NativeTypeName("LONGLONG")] long llTimestamp, IMFSample* pSample)
@@ -46,6 +51,7 @@ public unsafe partial struct IMFSourceReaderCallback2 : IMFSourceReaderCallback2
         return ((delegate* unmanaged<IMFSourceReaderCallback2*, HRESULT, uint, uint, long, IMFSample*, int>)(lpVtbl[3]))((IMFSourceReaderCallback2*)Unsafe.AsPointer(ref this), hrStatus, dwStreamIndex, dwStreamFlags, llTimestamp, pSample);
     }
 
+    /// <inheritdoc cref="IMFSourceReaderCallback.OnFlush" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT OnFlush([NativeTypeName("DWORD")] uint dwStreamIndex)
@@ -53,6 +59,7 @@ public unsafe partial struct IMFSourceReaderCallback2 : IMFSourceReaderCallback2
         return ((delegate* unmanaged<IMFSourceReaderCallback2*, uint, int>)(lpVtbl[4]))((IMFSourceReaderCallback2*)Unsafe.AsPointer(ref this), dwStreamIndex);
     }
 
+    /// <inheritdoc cref="IMFSourceReaderCallback.OnEvent" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT OnEvent([NativeTypeName("DWORD")] uint dwStreamIndex, IMFMediaEvent* pEvent)
@@ -60,6 +67,7 @@ public unsafe partial struct IMFSourceReaderCallback2 : IMFSourceReaderCallback2
         return ((delegate* unmanaged<IMFSourceReaderCallback2*, uint, IMFMediaEvent*, int>)(lpVtbl[5]))((IMFSourceReaderCallback2*)Unsafe.AsPointer(ref this), dwStreamIndex, pEvent);
     }
 
+    /// <include file='IMFSourceReaderCallback2.xml' path='doc/member[@name="IMFSourceReaderCallback2.OnTransformChange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT OnTransformChange()
@@ -67,6 +75,7 @@ public unsafe partial struct IMFSourceReaderCallback2 : IMFSourceReaderCallback2
         return ((delegate* unmanaged<IMFSourceReaderCallback2*, int>)(lpVtbl[6]))((IMFSourceReaderCallback2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFSourceReaderCallback2.xml' path='doc/member[@name="IMFSourceReaderCallback2.OnStreamError"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT OnStreamError([NativeTypeName("DWORD")] uint dwStreamIndex, HRESULT hrStatus)

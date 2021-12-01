@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_STRING.xml' path='doc/member[@name="WS_STRING"]/*' />
 public unsafe partial struct WS_STRING
 {
+    /// <include file='WS_STRING.xml' path='doc/member[@name="WS_STRING.length"]/*' />
     [NativeTypeName("ULONG")]
     public uint length;
 
+    /// <include file='WS_STRING.xml' path='doc/member[@name="WS_STRING.chars"]/*' />
     [NativeTypeName("WCHAR *")]
     public ushort* chars;
 }

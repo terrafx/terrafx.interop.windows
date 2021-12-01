@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="AppPolicyShowDeveloperDiagnostic">
+    <summary>
+      <para>The AppPolicyShowDeveloperDiagnostic enumeration indicates the method used for a process to surface developer information, such as asserts, to the user.</para>
+    </summary>
+  </member>
+  <member name="AppPolicyShowDeveloperDiagnostic.AppPolicyShowDeveloperDiagnostic_None">
+    <summary>
+      <para>Indicates that the process does not show developer diagnostics. This value is expected for a UWP app.</para>
+    </summary>
+  </member>
+  <member name="AppPolicyShowDeveloperDiagnostic.AppPolicyShowDeveloperDiagnostic_ShowUI">
+    <summary>
+      <para>Indicates that the process shows developer diagnostics UI. This value is expected for a desktop application, or for a Desktop Bridge application.</para>
+    </summary>
+  </member>
+</doc>

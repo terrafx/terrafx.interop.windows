@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IWbemUnsecuredApartment.CreateSinkStub">
+    <summary>
+      <para>The <see cref="CreateSinkStub" /> method is
+similar to the
+<b>IUnsecuredApartment.CreateObjectStub</b></para>
+      <para>and creates an object forwarder sink and performs access checks for receiving asynchronous calls from Windows
+Management. <b>CreateSinkStub</b> differs from
+<b>CreateObjectStub</b> because it can
+specify that callbacks to the sink should be authenticated.</para>
+      <para>WMI provides the Unsecapp.exe process to function as the separate process. You can host
+Unsecapp.exe with a call to the
+<see cref="IWbemUnsecuredApartment" /> interface or
+<see cref="IUnsecuredApartment" /> interface in other versions of
+Windows. <b>IUnsecuredApartment</b> does not have any methods
+that perform  access checking.</para>
+      <para>An access check means that Unsecapp.exe only allows the  account of the computer that
+originally obtained the sink to invoke callbacks. When the registry key
+<b>UnsecAppAccessControlDefault</b> is set to zero then Unsecapp.exe
+does not perform access control on callbacks unless
+<see cref="CreateSinkStub" /> is called by an
+application with the <i>dwFlag</i> parameter set to
+<b>WBEM_FLAG_UNSECAPP_CHECK_ACCESS</b>. If the parameter is not present, which is the default,
+then Unsecapp.exe reads the registry key value to determine whether to authenticate
+callbacks.</para>
+    </summary>
+    <param name="pSink">
+      <para>Pointer to the client's in-process implementation of
+<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/iwbemobjectsink">IWbemObjectSink</a>.</para>
+    </param>
+    <param name="dwFlags">
+      <para>You can set one of the following values from
+<see cref="WBEM_UNSECAPP_FLAG_TYPE" /> enumeration. This
+parameter determines how Unsecapp.exe uses the registry key checks this registry key:</para>
+      <para>
+        <b>HKEY_LOCAL_MACHINE</b>\<b>SOFTWARE</b>\<b>Microsoft</b>\<b>WBEM</b>\<b>CIMOM</b>\<b>UnsecAppAccessControlDefault</b></para>
+      <h4>WBEM_FLAG_UNSECAPP_DEFAULT_CHECK_ACCESS</h4>
+      <para>Unsecapp.exe reads the registry key
+<b>UnsecAppAccessControlDefault</b> to determine if it should authenticate
+callbacks.</para>
+      <h4>WBEM_FLAG_UNSECAPP_CHECK_ACCESS</h4>
+      <para>Unsecapp.exe authenticates callbacks regardless of the setting of the registry key
+<b>UnsecAppAccessControlDefault</b>.</para>
+      <h4>WBEM_FLAG_UNSECAPP_DONT_CHECK_ACCESS</h4>
+      <para>Unsecapp.exe does not authenticate callbacks regardless of the setting of the
+registry key <b>UnsecAppAccessControlDefault</b>.</para>
+    </param>
+    <param name="wszReserved">
+      <para>Reserved.</para>
+    </param>
+    <param name="ppStub">
+      <para>Receives a pointer to a substitute object to be used in asynchronous
+<see cref="IWbemServices" /> calls. The user receives an
+<see cref="IUnknown" /> pointer and must call
+<see cref="QueryInterface" /> for
+<b>IID_WbemObjectSink</b> before using this object in asynchronous
+<b>IWbemServices</b> calls.</para>
+    </param>
+    <returns>
+      <para>This method returns standard COM error codes for
+<see cref="QueryInterface" />. It returns
+<b>S_OK</b> if the call succeeds. If the call fails because the requested interface was not
+supported, the method returns <b>E_NOINTERFACE</b>.</para>
+      <para>COM-specific error codes also may be returned if network problems cause you to lose the remote connection to
+Windows Management.</para>
+    </returns>
+    <remarks>
+      <para>This method is provided to improve the security of asynchronous calls
+from client applications. For more information, see
+<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/setting-security-on-an-asynchronous-call">Setting Security on an Asynchronous Call</a>.</para>
+    </remarks>
+    <seealso cref="IUnsecuredApartment.CreateObjectStub" />
+    <seealso cref="IWbemUnsecuredApartment" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/lowering-the-security-for-a-sink-in-a-separate-process">Lowering the Security for a Sink in a Separate Process</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/performing-access-checks">Performing Access Checks</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/setting-security-on-an-asynchronous-call">Setting Security on an Asynchronous Call</seealso>
+  </member>
+  <member name="IWbemUnsecuredApartment">
+    <summary>
+      <para>The <b>IWbemUnsecuredApartment</b> interface
+allows client applications to determine whether Unsecapp.exe performs access
+checks on asynchronous callbacks. Unsecapp.exe supports both
+<see cref="IUnsecuredApartment" /> and
+<b>IWbemUnsecuredApartment</b> interfaces.</para>
+    </summary>
+    <remarks>
+      <para>
+        <b>IWbemUnsecuredApartment</b> is similar to
+<see cref="IUnsecuredApartment" />, which also creates a sink in a
+separate process. For more information, see
+<a href="https://docs.microsoft.com//windows/desktop/WmiSdk/performing-access-checks">Performing Access Checks</a>.</para>
+      <para>
+        <b>HKEY_LOCAL_MACHINE</b>\<b>SOFTWARE</b>\<b>Microsoft</b>\<b>WBEM</b>\<b>CIMOM</b>\<b>UnsecAppAccessControlDefault</b></para>
+    </remarks>
+    <seealso cref="IUnsecuredApartment" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/lowering-the-security-for-a-sink-in-a-separate-process">Lowering the Security for a Sink in a Separate Process</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/performing-access-checks">Performing Access Checks</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/setting-security-on-an-asynchronous-call">Setting Security on an Asynchronous Call</seealso>
+  </member>
+</doc>

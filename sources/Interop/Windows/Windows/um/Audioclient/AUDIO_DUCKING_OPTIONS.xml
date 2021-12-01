@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="AUDIO_DUCKING_OPTIONS">
+    <summary>
+      <para>Specifies audio ducking options. Use values from this enumeration when calling <see cref="IAudioClientDuckingControl.SetDuckingOptionsForCurrentStream" /></para>
+    </summary>
+  </member>
+  <member name="AUDIO_DUCKING_OPTIONS.AUDIO_DUCKING_OPTIONS_DEFAULT">
+    <summary>
+      <para>The associated audio stream should use the default audio ducking behavior.</para>
+    </summary>
+  </member>
+  <member name="AUDIO_DUCKING_OPTIONS.AUDIO_DUCKING_OPTIONS_DO_NOT_DUCK_OTHER_STREAMS">
+    <summary>
+      <para>The associated audio stream should not cause other streams to be ducked.</para>
+    </summary>
+  </member>
+</doc>

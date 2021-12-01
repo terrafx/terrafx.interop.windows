@@ -9,14 +9,18 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='AUDIOCLIENT_ACTIVATION_PARAMS.xml' path='doc/member[@name="AUDIOCLIENT_ACTIVATION_PARAMS"]/*' />
 [SupportedOSPlatform("windows10.0.19043.0")]
 public partial struct AUDIOCLIENT_ACTIVATION_PARAMS
 {
+    /// <include file='AUDIOCLIENT_ACTIVATION_PARAMS.xml' path='doc/member[@name="AUDIOCLIENT_ACTIVATION_PARAMS.ActivationType"]/*' />
     public AUDIOCLIENT_ACTIVATION_TYPE ActivationType;
 
+    /// <include file='AUDIOCLIENT_ACTIVATION_PARAMS.xml' path='doc/member[@name="AUDIOCLIENT_ACTIVATION_PARAMS.Anonymous"]/*' />
     [NativeTypeName("AUDIOCLIENT_ACTIVATION_PARAMS::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/audioclientactivationparams.h:94:5)")]
     public _Anonymous_e__Union Anonymous;
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ProcessLoopbackParams"]/*' />
     public ref AUDIOCLIENT_PROCESS_LOOPBACK_PARAMS ProcessLoopbackParams
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -26,9 +30,11 @@ public partial struct AUDIOCLIENT_ACTIVATION_PARAMS
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public partial struct _Anonymous_e__Union
     {
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ProcessLoopbackParams"]/*' />
         [FieldOffset(0)]
         public AUDIOCLIENT_PROCESS_LOOPBACK_PARAMS ProcessLoopbackParams;
     }

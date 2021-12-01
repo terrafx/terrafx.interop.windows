@@ -5,15 +5,20 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MF_TRANSCODE_SINK_INFO.xml' path='doc/member[@name="MF_TRANSCODE_SINK_INFO"]/*' />
 public unsafe partial struct MF_TRANSCODE_SINK_INFO
 {
+    /// <include file='MF_TRANSCODE_SINK_INFO.xml' path='doc/member[@name="MF_TRANSCODE_SINK_INFO.dwVideoStreamID"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwVideoStreamID;
 
+    /// <include file='MF_TRANSCODE_SINK_INFO.xml' path='doc/member[@name="MF_TRANSCODE_SINK_INFO.pVideoMediaType"]/*' />
     public IMFMediaType* pVideoMediaType;
 
+    /// <include file='MF_TRANSCODE_SINK_INFO.xml' path='doc/member[@name="MF_TRANSCODE_SINK_INFO.dwAudioStreamID"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwAudioStreamID;
 
+    /// <include file='MF_TRANSCODE_SINK_INFO.xml' path='doc/member[@name="MF_TRANSCODE_SINK_INFO.pAudioMediaType"]/*' />
     public IMFMediaType* pAudioMediaType;
 }

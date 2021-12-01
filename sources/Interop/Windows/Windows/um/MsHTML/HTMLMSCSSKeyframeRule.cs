@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HTMLMSCSSKeyframeRule.xml' path='doc/member[@name="HTMLMSCSSKeyframeRule"]/*' />
 [Guid("3051080E-98B5-11CF-BB82-00AA00BDCE0B")]
 public partial struct HTMLMSCSSKeyframeRule
 {

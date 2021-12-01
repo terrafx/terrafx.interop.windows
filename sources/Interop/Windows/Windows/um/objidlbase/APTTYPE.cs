@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='APTTYPE.xml' path='doc/member[@name="APTTYPE"]/*' />
 public enum APTTYPE
 {
+    /// <include file='APTTYPE.xml' path='doc/member[@name="APTTYPE.APTTYPE_CURRENT"]/*' />
     APTTYPE_CURRENT = -1,
+
+    /// <include file='APTTYPE.xml' path='doc/member[@name="APTTYPE.APTTYPE_STA"]/*' />
     APTTYPE_STA = 0,
+
+    /// <include file='APTTYPE.xml' path='doc/member[@name="APTTYPE.APTTYPE_MTA"]/*' />
     APTTYPE_MTA = 1,
+
+    /// <include file='APTTYPE.xml' path='doc/member[@name="APTTYPE.APTTYPE_NA"]/*' />
     APTTYPE_NA = 2,
+
+    /// <include file='APTTYPE.xml' path='doc/member[@name="APTTYPE.APTTYPE_MAINSTA"]/*' />
     APTTYPE_MAINSTA = 3,
 }

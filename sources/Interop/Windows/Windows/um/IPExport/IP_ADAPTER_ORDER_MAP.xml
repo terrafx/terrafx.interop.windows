@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IP_ADAPTER_ORDER_MAP">
+    <summary>
+      <para>The <b>IP_ADAPTER_ORDER_MAP</b> structure stores an array of information about adapters and their relative priority on the local computer.</para>
+    </summary>
+    <remarks>
+      <para>This structure is returned by the GetAdapterOrderMap function, and is used as a tie breaker for otherwise equal interfaces during network operations. The GetAdapterOrderMap function should not be called directly; use the GetAdaptersInfo function instead.</para>
+      <para>The <b>IP_ADAPTER_ORDER_MAP</b> structure contains at least one <b>AdapterOrder</b> member even if the <b>NumAdapters</b> member of the <b>IP_ADAPTER_ORDER_MAP</b> structure indicates no network adapters. When the <b>NumAdapters</b> member of the <b>IP_ADAPTER_ORDER_MAP</b> structure is zero, the value of the single  <b>AdapterOrder</b> member is undefined.</para>
+      <para>This structure is defined in the <i>Ipexport.h</i> header file which is automatically included in the <i>Iphlpapi.h</i> header file. The <i>Ipexport.h</i> header file should never be used directly.</para>
+    </remarks>
+  </member>
+  <member name="IP_ADAPTER_ORDER_MAP.NumAdapters">
+    <summary>
+      <para>The number of network adapters in the <b>AdapterOrder</b> member.</para>
+    </summary>
+  </member>
+  <member name="IP_ADAPTER_ORDER_MAP.AdapterOrder">
+    <summary>
+      <para>An array of adapter indexes  on the local computer, provided in the order specified in the <b>Adapters and Bindings</b> dialog box for <b>Network Connections</b>.</para>
+    </summary>
+  </member>
+</doc>

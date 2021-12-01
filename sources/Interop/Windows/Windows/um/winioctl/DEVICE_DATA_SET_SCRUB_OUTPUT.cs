@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DEVICE_DATA_SET_SCRUB_OUTPUT.xml' path='doc/member[@name="DEVICE_DATA_SET_SCRUB_OUTPUT"]/*' />
 public partial struct DEVICE_DATA_SET_SCRUB_OUTPUT
 {
+    /// <include file='DEVICE_DATA_SET_SCRUB_OUTPUT.xml' path='doc/member[@name="DEVICE_DATA_SET_SCRUB_OUTPUT.BytesProcessed"]/*' />
     [NativeTypeName("DWORDLONG")]
     public ulong BytesProcessed;
 
+    /// <include file='DEVICE_DATA_SET_SCRUB_OUTPUT.xml' path='doc/member[@name="DEVICE_DATA_SET_SCRUB_OUTPUT.BytesRepaired"]/*' />
     [NativeTypeName("DWORDLONG")]
     public ulong BytesRepaired;
 
+    /// <include file='DEVICE_DATA_SET_SCRUB_OUTPUT.xml' path='doc/member[@name="DEVICE_DATA_SET_SCRUB_OUTPUT.BytesFailed"]/*' />
     [NativeTypeName("DWORDLONG")]
     public ulong BytesFailed;
 }

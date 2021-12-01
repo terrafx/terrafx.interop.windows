@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='APPDOCLISTTYPE.xml' path='doc/member[@name="APPDOCLISTTYPE"]/*' />
 public enum APPDOCLISTTYPE
 {
+    /// <include file='APPDOCLISTTYPE.xml' path='doc/member[@name="APPDOCLISTTYPE.ADLT_RECENT"]/*' />
     ADLT_RECENT = 0,
+
+    /// <include file='APPDOCLISTTYPE.xml' path='doc/member[@name="APPDOCLISTTYPE.ADLT_FREQUENT"]/*' />
     ADLT_FREQUENT = (ADLT_RECENT + 1),
 }

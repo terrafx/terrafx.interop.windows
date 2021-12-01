@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MFASYNCRESULT">
+    <summary>
+      <para>Contains data that is needed to implement the <see cref="IMFAsyncResult" /> interface.</para>
+    </summary>
+    <remarks>
+      <para>Any custom implementation of the <see cref="IMFAsyncResult" /> interface must inherit this structure. For more information, see <a href="https://docs.microsoft.com//windows/desktop/medfound/custom-asynchronous-result-objects">Custom Asynchronous Result Objects</a>.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/custom-asynchronous-result-objects">Custom Asynchronous Result Objects</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-structures">Media Foundation Structures</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/work-queues">Work Queues</seealso>
+  </member>
+  <member name="MFASYNCRESULT.overlapped">
+    <summary>
+      <para>An <b>OVERLAPPED</b> structure. This structure is used internally to queue the work item. Fill this member with zeros.</para>
+    </summary>
+  </member>
+  <member name="MFASYNCRESULT.pCallback">
+    <summary>
+      <para>Pointer to the <see cref="IMFAsyncCallback" /> interface. This interface is implemented by the caller of the asynchronous method. This member can be <b>NULL</b>. If this member is <b>NULL</b>, the <b>hEvent</b> member must be a valid event handle.</para>
+    </summary>
+  </member>
+  <member name="MFASYNCRESULT.hrStatusResult">
+    <summary>
+      <para>The status code returned when this structure is used with an I/O completion port. You can also use this member to hold the status code for the asynchronous operation, returned by <see cref="IMFAsyncResult.GetStatus" />.</para>
+    </summary>
+  </member>
+  <member name="MFASYNCRESULT.dwBytesTransferred">
+    <summary>
+      <para>The number of bytes transferred when this structure is used with an I/O completion port. This member is used internally by the work queue. Set this member to zero.</para>
+    </summary>
+  </member>
+  <member name="MFASYNCRESULT.hEvent">
+    <summary>
+      <para>Event handle. If <b>pCallback</b> is <b>NULL</b>, set this member to a valid event handle. The event is signaled when the work item is dispatched. Otherwise, set this member to <b>NULL</b>.</para>
+    </summary>
+  </member>
+  <member name="MFASYNCRESULT.IMFAsyncResult">
+    <summary></summary>
+  </member>
+</doc>

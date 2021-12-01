@@ -5,16 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MOUSE_EVENT_RECORD.xml' path='doc/member[@name="MOUSE_EVENT_RECORD"]/*' />
 public partial struct MOUSE_EVENT_RECORD
 {
+    /// <include file='MOUSE_EVENT_RECORD.xml' path='doc/member[@name="MOUSE_EVENT_RECORD.dwMousePosition"]/*' />
     public COORD dwMousePosition;
 
+    /// <include file='MOUSE_EVENT_RECORD.xml' path='doc/member[@name="MOUSE_EVENT_RECORD.dwButtonState"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwButtonState;
 
+    /// <include file='MOUSE_EVENT_RECORD.xml' path='doc/member[@name="MOUSE_EVENT_RECORD.dwControlKeyState"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwControlKeyState;
 
+    /// <include file='MOUSE_EVENT_RECORD.xml' path='doc/member[@name="MOUSE_EVENT_RECORD.dwEventFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwEventFlags;
 }

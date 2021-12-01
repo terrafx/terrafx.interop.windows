@@ -7,8 +7,10 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DESKTOP_SLIDESHOW_OPTIONS.xml' path='doc/member[@name="DESKTOP_SLIDESHOW_OPTIONS"]/*' />
 [Flags]
 public enum DESKTOP_SLIDESHOW_OPTIONS
 {
+    /// <include file='DESKTOP_SLIDESHOW_OPTIONS.xml' path='doc/member[@name="DESKTOP_SLIDESHOW_OPTIONS.DSO_SHUFFLEIMAGES"]/*' />
     DSO_SHUFFLEIMAGES = 0x1,
 }

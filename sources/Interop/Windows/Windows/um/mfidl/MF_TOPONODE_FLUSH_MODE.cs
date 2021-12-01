@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MF_TOPONODE_FLUSH_MODE.xml' path='doc/member[@name="MF_TOPONODE_FLUSH_MODE"]/*' />
 public enum MF_TOPONODE_FLUSH_MODE
 {
+    /// <include file='MF_TOPONODE_FLUSH_MODE.xml' path='doc/member[@name="MF_TOPONODE_FLUSH_MODE.MF_TOPONODE_FLUSH_ALWAYS"]/*' />
     MF_TOPONODE_FLUSH_ALWAYS = 0,
+
+    /// <include file='MF_TOPONODE_FLUSH_MODE.xml' path='doc/member[@name="MF_TOPONODE_FLUSH_MODE.MF_TOPONODE_FLUSH_SEEK"]/*' />
     MF_TOPONODE_FLUSH_SEEK = (MF_TOPONODE_FLUSH_ALWAYS + 1),
+
+    /// <include file='MF_TOPONODE_FLUSH_MODE.xml' path='doc/member[@name="MF_TOPONODE_FLUSH_MODE.MF_TOPONODE_FLUSH_NEVER"]/*' />
     MF_TOPONODE_FLUSH_NEVER = (MF_TOPONODE_FLUSH_SEEK + 1),
 }

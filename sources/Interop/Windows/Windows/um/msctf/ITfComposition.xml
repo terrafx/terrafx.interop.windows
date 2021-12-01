@@ -1,0 +1,302 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ITfComposition.EndComposition">
+    <summary>
+      <para>Terminates a composition.</para>
+    </summary>
+    <param name="ecWrite">
+      <para>Contains an edit cookie that identifies the edit context obtained from <see cref="ITfEditSession.DoEditSession" />.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_UNEXPECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>This value results when:</para>
+            <list type="bullet">
+              <item>
+                <description>The composition terminated.</description>
+              </item>
+              <item>
+                <description>The caller is inside another composition write operation.</description>
+              </item>
+              <item>
+                <description>The caller does not own the composition.</description>
+              </item>
+            </list>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>TF_E_NOLOCK</b>
+            </para>
+          </description>
+          <description>
+            <para>The edit context identified by <i>ecWrite</i> does not have a read/write lock.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method does not release the composition object, but the <see cref="ITfComposition" /> methods will fail with E_UNEXPECTED after this method is called.</para>
+      <para>Context owners should use the <see cref="ITFContextOwnerCompositionServices.TerminateComposition" /> method to terminate a composition.</para>
+      <para>This method causes the GUID_PROP_COMPOSING property to be removed from the text covered by the composition.</para>
+    </remarks>
+    <seealso cref="ITfContextOwnerCompositionServices.TerminateComposition" />
+    <seealso cref="ITfComposition interface" />
+    <seealso cref="ITfEditSession.DoEditSession" />
+  </member>
+  <member name="ITfComposition.GetRange">
+    <summary>
+      <para>Obtains a range object that contains the text covered by the composition.</para>
+    </summary>
+    <param name="ppRange">
+      <para>Pointer to an <see cref="ITfRange" /> interface pointer that receives the range object. It is possible that the range will have zero length.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>An unspecified error occurred.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <i>ppRange</i> is invalid.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>A memory allocation failure occurred.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_UNEXPECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The composition has already terminated.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="ITfComposition interface" />
+    <seealso cref="ITfRange interface" />
+  </member>
+  <member name="ITfComposition.ShiftEnd">
+    <summary>
+      <para>Moves the end anchor of a composition.</para>
+    </summary>
+    <param name="ecWrite">
+      <para>Contains an edit cookie that identifies the edit context obtained from <see cref="ITfEditSession.DoEditSession" />.</para>
+    </param>
+    <param name="pNewEnd">
+      <para>Pointer to an <see cref="ITfRange" /> object that contains the new end anchor position. The end anchor of the context will be moved to the end anchor of this range. This method fails if the end anchor of this range is positioned prior to the start anchor of the composition.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>An unspecified error occurred.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>The end anchor of <i>pNewEnd</i> is positioned prior to the start anchor of the composition or <i>pNewStart</i> is invalid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_UNEXPECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The composition has already terminated.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>TF_E_NOLOCK</b>
+            </para>
+          </description>
+          <description>
+            <para>The edit context identified by <i>ecWrite</i> does not have a read/write lock.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method causes the GUID_PROP_COMPOSING property to be removed from any text removed from the composition. Likewise, the GUID_PROP_COMPOSING property is also added to any text added to the composition.</para>
+    </remarks>
+    <seealso cref="ITfComposition interface" />
+    <seealso cref="ITfEditSession.DoEditSession" />
+    <seealso cref="ITfRange interface" />
+    <seealso cref="ITfComposition.ShiftStart" />
+  </member>
+  <member name="ITfComposition.ShiftStart">
+    <summary>
+      <para>Moves the start anchor of a composition.</para>
+    </summary>
+    <param name="ecWrite">
+      <para>Contains an edit cookie that identifies the edit context obtained from <see cref="ITfEditSession.DoEditSession" />.</para>
+    </param>
+    <param name="pNewStart">
+      <para>Pointer to an <see cref="ITfRange" /> object that contains the new start anchor position. The start anchor of the context will be moved to the start anchor of this range. This method fails if the start anchor of this range is positioned beyond the end anchor of the composition.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>An unspecified error occurred.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>The start anchor of <i>pNewStart</i> is positioned past the end anchor of the composition or <i>pNewStart</i> is invalid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_UNEXPECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The composition has already terminated.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>TF_E_NOLOCK</b>
+            </para>
+          </description>
+          <description>
+            <para>The edit context identified by <i>ecWrite</i> does not have a read/write lock.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method causes the GUID_PROP_COMPOSING property to be removed from any text removed from the composition. Likewise, the GUID_PROP_COMPOSING property will also be added to any text added to the composition.</para>
+    </remarks>
+    <seealso cref="ITfComposition interface" />
+    <seealso cref="ITfEditSession.DoEditSession" />
+    <seealso cref="ITfRange interface" />
+    <seealso cref="ITfComposition.ShiftEnd" />
+  </member>
+  <member name="ITfComposition">
+    <summary>
+      <para>The <b>ITfComposition</b> interface is implemented by the TSF manager and is used by a text service to obtain data about and terminate a <a href="https://docs.microsoft.com//windows/desktop/TSF/compositions">composition</a>. An instance of this interface is provided by the <see cref="ITfContextComposition.StartComposition" /> method.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/compositions">Compositions</seealso>
+    <seealso cref="ITfContextComposition.StartComposition " />
+    <seealso cref="IUnknown" />
+  </member>
+</doc>

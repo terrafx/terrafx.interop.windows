@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='InternetPrintOrdering.xml' path='doc/member[@name="InternetPrintOrdering"]/*' />
 [Guid("ADD36AA8-751A-4579-A266-D66F5202CCBB")]
 public partial struct InternetPrintOrdering
 {

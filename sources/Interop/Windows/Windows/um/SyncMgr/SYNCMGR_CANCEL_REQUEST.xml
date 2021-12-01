@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SYNCMGR_CANCEL_REQUEST">
+    <summary>
+      <para>Describes a request by the user to cancel a synchronization.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGR_CANCEL_REQUEST.SYNCMGR_CR_NONE">
+    <summary>
+      <para>No cancelation request has been made.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGR_CANCEL_REQUEST.SYNCMGR_CR_CANCEL_ITEM">
+    <summary>
+      <para>Stop the synchronization of the current item, but continue the synchronization of other items.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGR_CANCEL_REQUEST.SYNCMGR_CR_CANCEL_ALL">
+    <summary>
+      <para>Stop the synchronization entirely.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGR_CANCEL_REQUEST.SYNCMGR_CR_MAX">
+    <summary>
+      <para>The maximum valid <see cref="SYNCMGR_CANCEL_REQUEST" /> value.</para>
+    </summary>
+  </member>
+</doc>

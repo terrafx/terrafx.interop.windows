@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DVD_KaraokeAttributes">
+    <summary>
+      <para>The <code>DVD_KaraokeAttributes</code> structure contains information about a karaoke audio stream. The <see cref="IDvdInfo2.GetKaraokeAttributes" /> method fills in a <code>DVD_KaraokeAttributes</code> structure for a specified stream.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-structures">DirectShow Structures</seealso>
+  </member>
+  <member name="DVD_KaraokeAttributes.bVersion">
+    <summary>
+      <para>Version number. The current karaoke version is 1.0.</para>
+    </summary>
+  </member>
+  <member name="DVD_KaraokeAttributes.fMasterOfCeremoniesInGuideVocal1">
+    <summary>
+      <para>If <b>TRUE</b>, the "Guide Vocal 1" channel contains the "Master of Ceremonies" content.</para>
+    </summary>
+  </member>
+  <member name="DVD_KaraokeAttributes.fDuet">
+    <summary>
+      <para>A Boolean value indicating whether the song is intended to be sung as a duet.</para>
+    </summary>
+  </member>
+  <member name="DVD_KaraokeAttributes.ChannelAssignment">
+    <summary>
+      <para>A <see cref="DVD_KARAOKE_ASSIGNMENT" /> value indicating the speaker configuration into which all the channels will be mixed.</para>
+    </summary>
+  </member>
+  <member name="DVD_KaraokeAttributes.wChannelContents">
+    <summary>
+      <para>An array of valid <see cref="DVD_KARAOKE_CONTENTS" /> values that identifies the content on each channel.</para>
+    </summary>
+  </member>
+</doc>

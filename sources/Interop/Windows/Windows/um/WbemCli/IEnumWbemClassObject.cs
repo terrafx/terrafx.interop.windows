@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IEnumWbemClassObject.xml' path='doc/member[@name="IEnumWbemClassObject"]/*' />
 [Guid("027947E1-D731-11CE-A357-000000000001")]
 [NativeTypeName("struct IEnumWbemClassObject : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IEnumWbemClassObject : IEnumWbemClassObject.Interfa
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IEnumWbemClassObject : IEnumWbemClassObject.Interfa
         return ((delegate* unmanaged<IEnumWbemClassObject*, Guid*, void**, int>)(lpVtbl[0]))((IEnumWbemClassObject*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IEnumWbemClassObject : IEnumWbemClassObject.Interfa
         return ((delegate* unmanaged<IEnumWbemClassObject*, uint>)(lpVtbl[1]))((IEnumWbemClassObject*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IEnumWbemClassObject : IEnumWbemClassObject.Interfa
         return ((delegate* unmanaged<IEnumWbemClassObject*, uint>)(lpVtbl[2]))((IEnumWbemClassObject*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IEnumWbemClassObject.xml' path='doc/member[@name="IEnumWbemClassObject.Reset"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Reset()
@@ -46,6 +51,7 @@ public unsafe partial struct IEnumWbemClassObject : IEnumWbemClassObject.Interfa
         return ((delegate* unmanaged<IEnumWbemClassObject*, int>)(lpVtbl[3]))((IEnumWbemClassObject*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IEnumWbemClassObject.xml' path='doc/member[@name="IEnumWbemClassObject.Next"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Next([NativeTypeName("long")] int lTimeout, [NativeTypeName("ULONG")] uint uCount, IWbemClassObject** apObjects, [NativeTypeName("ULONG *")] uint* puReturned)
@@ -53,6 +59,7 @@ public unsafe partial struct IEnumWbemClassObject : IEnumWbemClassObject.Interfa
         return ((delegate* unmanaged<IEnumWbemClassObject*, int, uint, IWbemClassObject**, uint*, int>)(lpVtbl[4]))((IEnumWbemClassObject*)Unsafe.AsPointer(ref this), lTimeout, uCount, apObjects, puReturned);
     }
 
+    /// <include file='IEnumWbemClassObject.xml' path='doc/member[@name="IEnumWbemClassObject.NextAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT NextAsync([NativeTypeName("ULONG")] uint uCount, IWbemObjectSink* pSink)
@@ -60,6 +67,7 @@ public unsafe partial struct IEnumWbemClassObject : IEnumWbemClassObject.Interfa
         return ((delegate* unmanaged<IEnumWbemClassObject*, uint, IWbemObjectSink*, int>)(lpVtbl[5]))((IEnumWbemClassObject*)Unsafe.AsPointer(ref this), uCount, pSink);
     }
 
+    /// <include file='IEnumWbemClassObject.xml' path='doc/member[@name="IEnumWbemClassObject.Clone"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Clone(IEnumWbemClassObject** ppEnum)
@@ -67,6 +75,7 @@ public unsafe partial struct IEnumWbemClassObject : IEnumWbemClassObject.Interfa
         return ((delegate* unmanaged<IEnumWbemClassObject*, IEnumWbemClassObject**, int>)(lpVtbl[6]))((IEnumWbemClassObject*)Unsafe.AsPointer(ref this), ppEnum);
     }
 
+    /// <include file='IEnumWbemClassObject.xml' path='doc/member[@name="IEnumWbemClassObject.Skip"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT Skip([NativeTypeName("long")] int lTimeout, [NativeTypeName("ULONG")] uint nCount)

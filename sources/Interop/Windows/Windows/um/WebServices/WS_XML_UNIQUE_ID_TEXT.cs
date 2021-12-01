@@ -7,9 +7,12 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_XML_UNIQUE_ID_TEXT.xml' path='doc/member[@name="WS_XML_UNIQUE_ID_TEXT"]/*' />
 public partial struct WS_XML_UNIQUE_ID_TEXT
 {
+    /// <include file='WS_XML_UNIQUE_ID_TEXT.xml' path='doc/member[@name="WS_XML_UNIQUE_ID_TEXT.text"]/*' />
     public WS_XML_TEXT text;
 
+    /// <include file='WS_XML_UNIQUE_ID_TEXT.xml' path='doc/member[@name="WS_XML_UNIQUE_ID_TEXT.value"]/*' />
     public Guid value;
 }

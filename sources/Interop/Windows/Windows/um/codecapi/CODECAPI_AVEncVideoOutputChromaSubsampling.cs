@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVEncVideoOutputChromaSubsampling.xml' path='doc/member[@name="CODECAPI_AVEncVideoOutputChromaSubsampling"]/*' />
 [Guid("FA561C6C-7D17-44F0-83C9-32ED12E96343")]
 public partial struct CODECAPI_AVEncVideoOutputChromaSubsampling
 {

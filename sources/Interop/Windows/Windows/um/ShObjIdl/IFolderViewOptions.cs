@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IFolderViewOptions.xml' path='doc/member[@name="IFolderViewOptions"]/*' />
 [Guid("3CC974D2-B302-4D36-AD3E-06D93F695D3F")]
 [NativeTypeName("struct IFolderViewOptions : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IFolderViewOptions : IFolderViewOptions.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IFolderViewOptions : IFolderViewOptions.Interface
         return ((delegate* unmanaged<IFolderViewOptions*, Guid*, void**, int>)(lpVtbl[0]))((IFolderViewOptions*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IFolderViewOptions : IFolderViewOptions.Interface
         return ((delegate* unmanaged<IFolderViewOptions*, uint>)(lpVtbl[1]))((IFolderViewOptions*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IFolderViewOptions : IFolderViewOptions.Interface
         return ((delegate* unmanaged<IFolderViewOptions*, uint>)(lpVtbl[2]))((IFolderViewOptions*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IFolderViewOptions.xml' path='doc/member[@name="IFolderViewOptions.SetFolderViewOptions"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetFolderViewOptions(FOLDERVIEWOPTIONS fvoMask, FOLDERVIEWOPTIONS fvoFlags)
@@ -46,6 +51,7 @@ public unsafe partial struct IFolderViewOptions : IFolderViewOptions.Interface
         return ((delegate* unmanaged<IFolderViewOptions*, FOLDERVIEWOPTIONS, FOLDERVIEWOPTIONS, int>)(lpVtbl[3]))((IFolderViewOptions*)Unsafe.AsPointer(ref this), fvoMask, fvoFlags);
     }
 
+    /// <include file='IFolderViewOptions.xml' path='doc/member[@name="IFolderViewOptions.GetFolderViewOptions"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetFolderViewOptions(FOLDERVIEWOPTIONS* pfvoFlags)

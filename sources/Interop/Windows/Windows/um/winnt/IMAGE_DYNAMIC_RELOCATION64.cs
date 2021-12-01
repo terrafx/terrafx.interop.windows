@@ -7,12 +7,15 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMAGE_DYNAMIC_RELOCATION64.xml' path='doc/member[@name="IMAGE_DYNAMIC_RELOCATION64"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct IMAGE_DYNAMIC_RELOCATION64
 {
+    /// <include file='IMAGE_DYNAMIC_RELOCATION64.xml' path='doc/member[@name="IMAGE_DYNAMIC_RELOCATION64.Symbol"]/*' />
     [NativeTypeName("ULONGLONG")]
     public ulong Symbol;
 
+    /// <include file='IMAGE_DYNAMIC_RELOCATION64.xml' path='doc/member[@name="IMAGE_DYNAMIC_RELOCATION64.BaseRelocSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint BaseRelocSize;
 }

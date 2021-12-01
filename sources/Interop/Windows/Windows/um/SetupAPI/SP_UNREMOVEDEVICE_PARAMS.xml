@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SP_UNREMOVEDEVICE_PARAMS">
+    <summary>
+      <para>An SP_UNREMOVEDEVICE_PARAMS structure corresponds to a DIF_UNREMOVE installation request.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows-hardware/drivers/install/dif-unremove">DIF_UNREMOVE</seealso>
+    <seealso cref="SP_CLASSINSTALL_HEADER" />
+    <seealso cref="SetupDiCallClassInstaller" />
+    <seealso cref="SetupDiUnremoveDevice" />
+  </member>
+  <member name="SP_UNREMOVEDEVICE_PARAMS.ClassInstallHeader">
+    <summary>
+      <para>An install request header that contains the header size and the DIF code for the request. See <see cref="SP_CLASSINSTALL_HEADER" />.</para>
+    </summary>
+  </member>
+  <member name="SP_UNREMOVEDEVICE_PARAMS.Scope">
+    <summary>
+      <para>A flag that indicates the scope of the unremove operation. This flag must always be set to DI_UNREMOVEDEVICE_CONFIGSPECIFIC.</para>
+    </summary>
+  </member>
+  <member name="SP_UNREMOVEDEVICE_PARAMS.HwProfile">
+    <summary>
+      <para>The hardware profile ID for profile-specific changes. Zero specifies the current hardware profile.</para>
+    </summary>
+  </member>
+</doc>

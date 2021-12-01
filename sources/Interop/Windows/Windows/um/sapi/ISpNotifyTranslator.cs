@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ISpNotifyTranslator.xml' path='doc/member[@name="ISpNotifyTranslator"]/*' />
 [Guid("ACA16614-5D3D-11D2-960E-00C04F8EE628")]
 [NativeTypeName("struct ISpNotifyTranslator : ISpNotifySink")]
 [NativeInheritance("ISpNotifySink")]
@@ -16,6 +17,7 @@ public unsafe partial struct ISpNotifyTranslator : ISpNotifyTranslator.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ISpNotifyTranslator : ISpNotifyTranslator.Interface
         return ((delegate* unmanaged<ISpNotifyTranslator*, Guid*, void**, int>)(lpVtbl[0]))((ISpNotifyTranslator*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ISpNotifyTranslator : ISpNotifyTranslator.Interface
         return ((delegate* unmanaged<ISpNotifyTranslator*, uint>)(lpVtbl[1]))((ISpNotifyTranslator*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ISpNotifyTranslator : ISpNotifyTranslator.Interface
         return ((delegate* unmanaged<ISpNotifyTranslator*, uint>)(lpVtbl[2]))((ISpNotifyTranslator*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ISpNotifySink.Notify" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Notify()
@@ -46,6 +51,7 @@ public unsafe partial struct ISpNotifyTranslator : ISpNotifyTranslator.Interface
         return ((delegate* unmanaged<ISpNotifyTranslator*, int>)(lpVtbl[3]))((ISpNotifyTranslator*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ISpNotifyTranslator.xml' path='doc/member[@name="ISpNotifyTranslator.InitWindowMessage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT InitWindowMessage(HWND hWnd, uint Msg, WPARAM wParam, LPARAM lParam)
@@ -53,6 +59,7 @@ public unsafe partial struct ISpNotifyTranslator : ISpNotifyTranslator.Interface
         return ((delegate* unmanaged<ISpNotifyTranslator*, HWND, uint, WPARAM, LPARAM, int>)(lpVtbl[4]))((ISpNotifyTranslator*)Unsafe.AsPointer(ref this), hWnd, Msg, wParam, lParam);
     }
 
+    /// <include file='ISpNotifyTranslator.xml' path='doc/member[@name="ISpNotifyTranslator.InitCallback"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT InitCallback([NativeTypeName("SPNOTIFYCALLBACK *")] delegate* unmanaged<WPARAM, LPARAM, void> pfnCallback, WPARAM wParam, LPARAM lParam)
@@ -60,6 +67,7 @@ public unsafe partial struct ISpNotifyTranslator : ISpNotifyTranslator.Interface
         return ((delegate* unmanaged<ISpNotifyTranslator*, delegate* unmanaged<WPARAM, LPARAM, void>, WPARAM, LPARAM, int>)(lpVtbl[5]))((ISpNotifyTranslator*)Unsafe.AsPointer(ref this), pfnCallback, wParam, lParam);
     }
 
+    /// <include file='ISpNotifyTranslator.xml' path='doc/member[@name="ISpNotifyTranslator.InitSpNotifyCallback"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT InitSpNotifyCallback(ISpNotifyCallback* pSpCallback, WPARAM wParam, LPARAM lParam)
@@ -67,6 +75,7 @@ public unsafe partial struct ISpNotifyTranslator : ISpNotifyTranslator.Interface
         return ((delegate* unmanaged<ISpNotifyTranslator*, ISpNotifyCallback*, WPARAM, LPARAM, int>)(lpVtbl[6]))((ISpNotifyTranslator*)Unsafe.AsPointer(ref this), pSpCallback, wParam, lParam);
     }
 
+    /// <include file='ISpNotifyTranslator.xml' path='doc/member[@name="ISpNotifyTranslator.InitWin32Event"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT InitWin32Event(HANDLE hEvent, BOOL fCloseHandleOnRelease)
@@ -74,6 +83,7 @@ public unsafe partial struct ISpNotifyTranslator : ISpNotifyTranslator.Interface
         return ((delegate* unmanaged<ISpNotifyTranslator*, HANDLE, BOOL, int>)(lpVtbl[7]))((ISpNotifyTranslator*)Unsafe.AsPointer(ref this), hEvent, fCloseHandleOnRelease);
     }
 
+    /// <include file='ISpNotifyTranslator.xml' path='doc/member[@name="ISpNotifyTranslator.Wait"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT Wait([NativeTypeName("DWORD")] uint dwMilliseconds)
@@ -81,6 +91,7 @@ public unsafe partial struct ISpNotifyTranslator : ISpNotifyTranslator.Interface
         return ((delegate* unmanaged<ISpNotifyTranslator*, uint, int>)(lpVtbl[8]))((ISpNotifyTranslator*)Unsafe.AsPointer(ref this), dwMilliseconds);
     }
 
+    /// <include file='ISpNotifyTranslator.xml' path='doc/member[@name="ISpNotifyTranslator.GetEventHandle"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HANDLE GetEventHandle()

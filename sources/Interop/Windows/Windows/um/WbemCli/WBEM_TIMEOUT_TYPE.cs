@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WBEM_TIMEOUT_TYPE.xml' path='doc/member[@name="WBEM_TIMEOUT_TYPE"]/*' />
 public enum WBEM_TIMEOUT_TYPE
 {
+    /// <include file='WBEM_TIMEOUT_TYPE.xml' path='doc/member[@name="WBEM_TIMEOUT_TYPE.WBEM_NO_WAIT"]/*' />
     WBEM_NO_WAIT = 0,
+
+    /// <include file='WBEM_TIMEOUT_TYPE.xml' path='doc/member[@name="WBEM_TIMEOUT_TYPE.WBEM_INFINITE"]/*' />
     WBEM_INFINITE = unchecked((int)(0xffffffff)),
 }

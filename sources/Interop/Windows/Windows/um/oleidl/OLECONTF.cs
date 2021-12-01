@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='OLECONTF.xml' path='doc/member[@name="OLECONTF"]/*' />
 public enum OLECONTF
 {
+    /// <include file='OLECONTF.xml' path='doc/member[@name="OLECONTF.OLECONTF_EMBEDDINGS"]/*' />
     OLECONTF_EMBEDDINGS = 1,
+
+    /// <include file='OLECONTF.xml' path='doc/member[@name="OLECONTF.OLECONTF_LINKS"]/*' />
     OLECONTF_LINKS = 2,
+
+    /// <include file='OLECONTF.xml' path='doc/member[@name="OLECONTF.OLECONTF_OTHERS"]/*' />
     OLECONTF_OTHERS = 4,
+
+    /// <include file='OLECONTF.xml' path='doc/member[@name="OLECONTF.OLECONTF_ONLYUSER"]/*' />
     OLECONTF_ONLYUSER = 8,
+
+    /// <include file='OLECONTF.xml' path='doc/member[@name="OLECONTF.OLECONTF_ONLYIFRUNNING"]/*' />
     OLECONTF_ONLYIFRUNNING = 16,
 }

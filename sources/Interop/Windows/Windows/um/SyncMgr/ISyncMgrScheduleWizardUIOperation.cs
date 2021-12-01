@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ISyncMgrScheduleWizardUIOperation.xml' path='doc/member[@name="ISyncMgrScheduleWizardUIOperation"]/*' />
 [Guid("459A6C84-21D2-4DDC-8A53-F023A46066F2")]
 [NativeTypeName("struct ISyncMgrScheduleWizardUIOperation : ISyncMgrUIOperation")]
 [NativeInheritance("ISyncMgrUIOperation")]
@@ -16,6 +17,7 @@ public unsafe partial struct ISyncMgrScheduleWizardUIOperation : ISyncMgrSchedul
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ISyncMgrScheduleWizardUIOperation : ISyncMgrSchedul
         return ((delegate* unmanaged<ISyncMgrScheduleWizardUIOperation*, Guid*, void**, int>)(lpVtbl[0]))((ISyncMgrScheduleWizardUIOperation*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ISyncMgrScheduleWizardUIOperation : ISyncMgrSchedul
         return ((delegate* unmanaged<ISyncMgrScheduleWizardUIOperation*, uint>)(lpVtbl[1]))((ISyncMgrScheduleWizardUIOperation*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ISyncMgrScheduleWizardUIOperation : ISyncMgrSchedul
         return ((delegate* unmanaged<ISyncMgrScheduleWizardUIOperation*, uint>)(lpVtbl[2]))((ISyncMgrScheduleWizardUIOperation*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ISyncMgrUIOperation.Run" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Run(HWND hwndOwner)
@@ -46,6 +51,7 @@ public unsafe partial struct ISyncMgrScheduleWizardUIOperation : ISyncMgrSchedul
         return ((delegate* unmanaged<ISyncMgrScheduleWizardUIOperation*, HWND, int>)(lpVtbl[3]))((ISyncMgrScheduleWizardUIOperation*)Unsafe.AsPointer(ref this), hwndOwner);
     }
 
+    /// <include file='ISyncMgrScheduleWizardUIOperation.xml' path='doc/member[@name="ISyncMgrScheduleWizardUIOperation.InitWizard"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT InitWizard([NativeTypeName("LPCWSTR")] ushort* pszHandlerID)

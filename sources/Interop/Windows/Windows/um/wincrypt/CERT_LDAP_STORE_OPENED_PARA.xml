@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CERT_LDAP_STORE_OPENED_PARA">
+    <summary>
+      <para>The <b>CERT_LDAP_STORE_OPENED_PARA</b> structure is used with the <see cref="CertOpenStore" /> function when the <b>CERT_STORE_PROV_LDAP</b> provider is specified by using the <b>CERT_LDAP_STORE_OPENED_FLAG</b> flag to specify both the existing LDAP session to use to perform the query as well as the LDAP query string.</para>
+    </summary>
+    <seealso cref="CertOpenStore" />
+  </member>
+  <member name="CERT_LDAP_STORE_OPENED_PARA.pvLdapSessionHandle">
+    <summary>
+      <para>The handle of the existing LDAP session. This is the handle that is returned by the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/winldap/nf-winldap-ldap_init">ldap_init</a> function.</para>
+    </summary>
+  </member>
+  <member name="CERT_LDAP_STORE_OPENED_PARA.pwszLdapUrl">
+    <summary>
+      <para>The address of a null-terminated Unicode string that contains the LDAP query string. For more information about LDAP query strings, see <a href="https://docs.microsoft.com//windows/desktop/ADSI/ldap-dialect">LDAP Dialect</a>.</para>
+    </summary>
+  </member>
+</doc>

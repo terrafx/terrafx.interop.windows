@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CMSG_SIGNER_INFO">
+    <summary>
+      <para>The <b>CMSG_SIGNER_INFO</b> structure contains the content of the PKCS #7 defined SignerInfo in signed messages. In decoding a received message,
+<see cref="CryptMsgGetParam" /> is called for each signer to get a <b>CMSG_SIGNER_INFO</b> structure.</para>
+    </summary>
+    <seealso cref="CRYPT_ALGORITHM_IDENTIFIER" />
+    <seealso cref="CRYPT_ATTRIBUTES" />
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_INTEGER_BLOB</seealso>
+  </member>
+  <member name="CMSG_SIGNER_INFO.dwVersion">
+    <summary>
+      <para>The version of this structure.</para>
+    </summary>
+  </member>
+  <member name="CMSG_SIGNER_INFO.Issuer">
+    <summary>
+      <para>A <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CERT_NAME_BLOB</a> structure that contains the issuer of a certificate with the public key needed to verify a signature.</para>
+    </summary>
+  </member>
+  <member name="CMSG_SIGNER_INFO.SerialNumber">
+    <summary>
+      <para>A <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_INTEGER_BLOB</a> structure that contains the serial number of the certificate that contains the public key needed to verify a signature. For more information, see
+<see cref="CERT_INFO" />.</para>
+    </summary>
+  </member>
+  <member name="CMSG_SIGNER_INFO.HashAlgorithm">
+    <summary>
+      <para>
+        <see cref="CRYPT_ALGORITHM_IDENTIFIER" /> structure specifying the algorithm used in generating the hash of a message.</para>
+    </summary>
+  </member>
+  <member name="CMSG_SIGNER_INFO.HashEncryptionAlgorithm">
+    <summary>
+      <para>
+        <see cref="CRYPT_ALGORITHM_IDENTIFIER" /> structure specifying the algorithm used to encrypt the hash.</para>
+    </summary>
+  </member>
+  <member name="CMSG_SIGNER_INFO.EncryptedHash">
+    <summary>
+      <para>A
+<a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_DATA_BLOB</a> that contains the encrypted hash of the message, the signature.</para>
+    </summary>
+  </member>
+  <member name="CMSG_SIGNER_INFO.AuthAttrs">
+    <summary>
+      <para>
+        <see cref="CRYPT_ATTRIBUTES" /> structure containing authenticated attributes of the signer.</para>
+    </summary>
+  </member>
+  <member name="CMSG_SIGNER_INFO.UnauthAttrs">
+    <summary>
+      <para>
+        <see cref="CRYPT_ATTRIBUTES" /> structure containing unauthenticated attributes of the signer.</para>
+    </summary>
+  </member>
+</doc>

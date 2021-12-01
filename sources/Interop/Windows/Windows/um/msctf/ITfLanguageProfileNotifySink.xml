@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ITfLanguageProfileNotifySink.OnLanguageChange">
+    <summary>
+      <para>Called when the language profile is about to change.</para>
+    </summary>
+    <param name="langid">
+      <para>Contains a <b>LANGID</b> value the identifies the new language profile.</para>
+    </param>
+    <param name="pfAccept">
+      <para>Pointer to a <b>BOOL</b> value that receives a flag that permits or prevents the language profile change. Receives zero to prevent the language profile change or nonzero to permit the language profile change.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+  </member>
+  <member name="ITfLanguageProfileNotifySink.OnLanguageChanged">
+    <summary>
+      <para>Called after the language profile has changed.</para>
+    </summary>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="ITfLanguageProfileNotifySink">
+    <summary>
+      <para>The <b>ITfLanguageProfileNotifySink</b> interface is implemented by an application to receive notifications when the language profile changes.</para>
+      <para>To install this advise sink, obtain an <see cref="ITfSource" /> object from an <see cref="ITfInputProcessorProfiles" /> object by calling <b>ITfInputProcessorProfiles.QueryInterface</b> with <b>IID_ITfSource</b>. Then call <see cref="ITfSource.AdviseSink" /> with <b>IID_ITfLanguageProfileNotifySink</b>.</para>
+    </summary>
+    <seealso cref="ITfInputProcessorProfiles " />
+    <seealso cref="ITfSource " />
+    <seealso cref="ITfSource.AdviseSink " />
+    <seealso cref="IUnknown" />
+  </member>
+</doc>

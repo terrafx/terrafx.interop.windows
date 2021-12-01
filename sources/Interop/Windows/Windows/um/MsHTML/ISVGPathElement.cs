@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ISVGPathElement.xml' path='doc/member[@name="ISVGPathElement"]/*' />
 [Guid("30510512-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct ISVGPathElement : IDispatch")]
 [NativeInheritance("IDispatch")]
@@ -16,6 +17,7 @@ public unsafe partial struct ISVGPathElement : ISVGPathElement.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ISVGPathElement : ISVGPathElement.Interface
         return ((delegate* unmanaged<ISVGPathElement*, Guid*, void**, int>)(lpVtbl[0]))((ISVGPathElement*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ISVGPathElement : ISVGPathElement.Interface
         return ((delegate* unmanaged<ISVGPathElement*, uint>)(lpVtbl[1]))((ISVGPathElement*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ISVGPathElement : ISVGPathElement.Interface
         return ((delegate* unmanaged<ISVGPathElement*, uint>)(lpVtbl[2]))((ISVGPathElement*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct ISVGPathElement : ISVGPathElement.Interface
         return ((delegate* unmanaged<ISVGPathElement*, uint*, int>)(lpVtbl[3]))((ISVGPathElement*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct ISVGPathElement : ISVGPathElement.Interface
         return ((delegate* unmanaged<ISVGPathElement*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((ISVGPathElement*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
@@ -60,6 +67,7 @@ public unsafe partial struct ISVGPathElement : ISVGPathElement.Interface
         return ((delegate* unmanaged<ISVGPathElement*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((ISVGPathElement*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
+    /// <inheritdoc cref="IDispatch.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
@@ -67,6 +75,7 @@ public unsafe partial struct ISVGPathElement : ISVGPathElement.Interface
         return ((delegate* unmanaged<ISVGPathElement*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((ISVGPathElement*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
+    /// <include file='ISVGPathElement.xml' path='doc/member[@name="ISVGPathElement.putref_pathLength"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT putref_pathLength(ISVGAnimatedNumber* v)
@@ -74,6 +83,7 @@ public unsafe partial struct ISVGPathElement : ISVGPathElement.Interface
         return ((delegate* unmanaged<ISVGPathElement*, ISVGAnimatedNumber*, int>)(lpVtbl[7]))((ISVGPathElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='ISVGPathElement.xml' path='doc/member[@name="ISVGPathElement.get_pathLength"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT get_pathLength(ISVGAnimatedNumber** p)
@@ -81,6 +91,7 @@ public unsafe partial struct ISVGPathElement : ISVGPathElement.Interface
         return ((delegate* unmanaged<ISVGPathElement*, ISVGAnimatedNumber**, int>)(lpVtbl[8]))((ISVGPathElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='ISVGPathElement.xml' path='doc/member[@name="ISVGPathElement.getTotalLength"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT getTotalLength(float* pfltResult)
@@ -88,6 +99,7 @@ public unsafe partial struct ISVGPathElement : ISVGPathElement.Interface
         return ((delegate* unmanaged<ISVGPathElement*, float*, int>)(lpVtbl[9]))((ISVGPathElement*)Unsafe.AsPointer(ref this), pfltResult);
     }
 
+    /// <include file='ISVGPathElement.xml' path='doc/member[@name="ISVGPathElement.getPointAtLength"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT getPointAtLength(float fltdistance, ISVGPoint** ppPointResult)
@@ -95,6 +107,7 @@ public unsafe partial struct ISVGPathElement : ISVGPathElement.Interface
         return ((delegate* unmanaged<ISVGPathElement*, float, ISVGPoint**, int>)(lpVtbl[10]))((ISVGPathElement*)Unsafe.AsPointer(ref this), fltdistance, ppPointResult);
     }
 
+    /// <include file='ISVGPathElement.xml' path='doc/member[@name="ISVGPathElement.getPathSegAtLength"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT getPathSegAtLength(float fltdistance, [NativeTypeName("long *")] int* plResult)
@@ -102,6 +115,7 @@ public unsafe partial struct ISVGPathElement : ISVGPathElement.Interface
         return ((delegate* unmanaged<ISVGPathElement*, float, int*, int>)(lpVtbl[11]))((ISVGPathElement*)Unsafe.AsPointer(ref this), fltdistance, plResult);
     }
 
+    /// <include file='ISVGPathElement.xml' path='doc/member[@name="ISVGPathElement.createSVGPathSegClosePath"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT createSVGPathSegClosePath(ISVGPathSegClosePath** ppResult)
@@ -109,6 +123,7 @@ public unsafe partial struct ISVGPathElement : ISVGPathElement.Interface
         return ((delegate* unmanaged<ISVGPathElement*, ISVGPathSegClosePath**, int>)(lpVtbl[12]))((ISVGPathElement*)Unsafe.AsPointer(ref this), ppResult);
     }
 
+    /// <include file='ISVGPathElement.xml' path='doc/member[@name="ISVGPathElement.createSVGPathSegMovetoAbs"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT createSVGPathSegMovetoAbs(float x, float y, ISVGPathSegMovetoAbs** ppResult)
@@ -116,6 +131,7 @@ public unsafe partial struct ISVGPathElement : ISVGPathElement.Interface
         return ((delegate* unmanaged<ISVGPathElement*, float, float, ISVGPathSegMovetoAbs**, int>)(lpVtbl[13]))((ISVGPathElement*)Unsafe.AsPointer(ref this), x, y, ppResult);
     }
 
+    /// <include file='ISVGPathElement.xml' path='doc/member[@name="ISVGPathElement.createSVGPathSegMovetoRel"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT createSVGPathSegMovetoRel(float x, float y, ISVGPathSegMovetoRel** ppResult)
@@ -123,6 +139,7 @@ public unsafe partial struct ISVGPathElement : ISVGPathElement.Interface
         return ((delegate* unmanaged<ISVGPathElement*, float, float, ISVGPathSegMovetoRel**, int>)(lpVtbl[14]))((ISVGPathElement*)Unsafe.AsPointer(ref this), x, y, ppResult);
     }
 
+    /// <include file='ISVGPathElement.xml' path='doc/member[@name="ISVGPathElement.createSVGPathSegLinetoAbs"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT createSVGPathSegLinetoAbs(float x, float y, ISVGPathSegLinetoAbs** ppResult)
@@ -130,6 +147,7 @@ public unsafe partial struct ISVGPathElement : ISVGPathElement.Interface
         return ((delegate* unmanaged<ISVGPathElement*, float, float, ISVGPathSegLinetoAbs**, int>)(lpVtbl[15]))((ISVGPathElement*)Unsafe.AsPointer(ref this), x, y, ppResult);
     }
 
+    /// <include file='ISVGPathElement.xml' path='doc/member[@name="ISVGPathElement.createSVGPathSegLinetoRel"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT createSVGPathSegLinetoRel(float x, float y, ISVGPathSegLinetoRel** ppResult)
@@ -137,6 +155,7 @@ public unsafe partial struct ISVGPathElement : ISVGPathElement.Interface
         return ((delegate* unmanaged<ISVGPathElement*, float, float, ISVGPathSegLinetoRel**, int>)(lpVtbl[16]))((ISVGPathElement*)Unsafe.AsPointer(ref this), x, y, ppResult);
     }
 
+    /// <include file='ISVGPathElement.xml' path='doc/member[@name="ISVGPathElement.createSVGPathSegCurvetoCubicAbs"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT createSVGPathSegCurvetoCubicAbs(float x, float y, float x1, float y1, float x2, float y2, ISVGPathSegCurvetoCubicAbs** ppResult)
@@ -144,6 +163,7 @@ public unsafe partial struct ISVGPathElement : ISVGPathElement.Interface
         return ((delegate* unmanaged<ISVGPathElement*, float, float, float, float, float, float, ISVGPathSegCurvetoCubicAbs**, int>)(lpVtbl[17]))((ISVGPathElement*)Unsafe.AsPointer(ref this), x, y, x1, y1, x2, y2, ppResult);
     }
 
+    /// <include file='ISVGPathElement.xml' path='doc/member[@name="ISVGPathElement.createSVGPathSegCurvetoCubicRel"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT createSVGPathSegCurvetoCubicRel(float x, float y, float x1, float y1, float x2, float y2, ISVGPathSegCurvetoCubicRel** ppResult)
@@ -151,6 +171,7 @@ public unsafe partial struct ISVGPathElement : ISVGPathElement.Interface
         return ((delegate* unmanaged<ISVGPathElement*, float, float, float, float, float, float, ISVGPathSegCurvetoCubicRel**, int>)(lpVtbl[18]))((ISVGPathElement*)Unsafe.AsPointer(ref this), x, y, x1, y1, x2, y2, ppResult);
     }
 
+    /// <include file='ISVGPathElement.xml' path='doc/member[@name="ISVGPathElement.createSVGPathSegCurvetoQuadraticAbs"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT createSVGPathSegCurvetoQuadraticAbs(float x, float y, float x1, float y1, ISVGPathSegCurvetoQuadraticAbs** ppResult)
@@ -158,6 +179,7 @@ public unsafe partial struct ISVGPathElement : ISVGPathElement.Interface
         return ((delegate* unmanaged<ISVGPathElement*, float, float, float, float, ISVGPathSegCurvetoQuadraticAbs**, int>)(lpVtbl[19]))((ISVGPathElement*)Unsafe.AsPointer(ref this), x, y, x1, y1, ppResult);
     }
 
+    /// <include file='ISVGPathElement.xml' path='doc/member[@name="ISVGPathElement.createSVGPathSegCurvetoQuadraticRel"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public HRESULT createSVGPathSegCurvetoQuadraticRel(float x, float y, float x1, float y1, ISVGPathSegCurvetoQuadraticRel** ppResult)
@@ -165,6 +187,7 @@ public unsafe partial struct ISVGPathElement : ISVGPathElement.Interface
         return ((delegate* unmanaged<ISVGPathElement*, float, float, float, float, ISVGPathSegCurvetoQuadraticRel**, int>)(lpVtbl[20]))((ISVGPathElement*)Unsafe.AsPointer(ref this), x, y, x1, y1, ppResult);
     }
 
+    /// <include file='ISVGPathElement.xml' path='doc/member[@name="ISVGPathElement.createSVGPathSegArcAbs"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
     public HRESULT createSVGPathSegArcAbs(float x, float y, float r1, float r2, float angle, [NativeTypeName("VARIANT_BOOL")] short largeArcFlag, [NativeTypeName("VARIANT_BOOL")] short sweepFlag, ISVGPathSegArcAbs** ppResult)
@@ -172,6 +195,7 @@ public unsafe partial struct ISVGPathElement : ISVGPathElement.Interface
         return ((delegate* unmanaged<ISVGPathElement*, float, float, float, float, float, short, short, ISVGPathSegArcAbs**, int>)(lpVtbl[21]))((ISVGPathElement*)Unsafe.AsPointer(ref this), x, y, r1, r2, angle, largeArcFlag, sweepFlag, ppResult);
     }
 
+    /// <include file='ISVGPathElement.xml' path='doc/member[@name="ISVGPathElement.createSVGPathSegArcRel"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
     public HRESULT createSVGPathSegArcRel(float x, float y, float r1, float r2, float angle, [NativeTypeName("VARIANT_BOOL")] short largeArcFlag, [NativeTypeName("VARIANT_BOOL")] short sweepFlag, ISVGPathSegArcRel** ppResult)
@@ -179,6 +203,7 @@ public unsafe partial struct ISVGPathElement : ISVGPathElement.Interface
         return ((delegate* unmanaged<ISVGPathElement*, float, float, float, float, float, short, short, ISVGPathSegArcRel**, int>)(lpVtbl[22]))((ISVGPathElement*)Unsafe.AsPointer(ref this), x, y, r1, r2, angle, largeArcFlag, sweepFlag, ppResult);
     }
 
+    /// <include file='ISVGPathElement.xml' path='doc/member[@name="ISVGPathElement.createSVGPathSegLinetoHorizontalAbs"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
     public HRESULT createSVGPathSegLinetoHorizontalAbs(float x, ISVGPathSegLinetoHorizontalAbs** ppResult)
@@ -186,6 +211,7 @@ public unsafe partial struct ISVGPathElement : ISVGPathElement.Interface
         return ((delegate* unmanaged<ISVGPathElement*, float, ISVGPathSegLinetoHorizontalAbs**, int>)(lpVtbl[23]))((ISVGPathElement*)Unsafe.AsPointer(ref this), x, ppResult);
     }
 
+    /// <include file='ISVGPathElement.xml' path='doc/member[@name="ISVGPathElement.createSVGPathSegLinetoHorizontalRel"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(24)]
     public HRESULT createSVGPathSegLinetoHorizontalRel(float x, ISVGPathSegLinetoHorizontalRel** ppResult)
@@ -193,6 +219,7 @@ public unsafe partial struct ISVGPathElement : ISVGPathElement.Interface
         return ((delegate* unmanaged<ISVGPathElement*, float, ISVGPathSegLinetoHorizontalRel**, int>)(lpVtbl[24]))((ISVGPathElement*)Unsafe.AsPointer(ref this), x, ppResult);
     }
 
+    /// <include file='ISVGPathElement.xml' path='doc/member[@name="ISVGPathElement.createSVGPathSegLinetoVerticalAbs"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(25)]
     public HRESULT createSVGPathSegLinetoVerticalAbs(float y, ISVGPathSegLinetoVerticalAbs** ppResult)
@@ -200,6 +227,7 @@ public unsafe partial struct ISVGPathElement : ISVGPathElement.Interface
         return ((delegate* unmanaged<ISVGPathElement*, float, ISVGPathSegLinetoVerticalAbs**, int>)(lpVtbl[25]))((ISVGPathElement*)Unsafe.AsPointer(ref this), y, ppResult);
     }
 
+    /// <include file='ISVGPathElement.xml' path='doc/member[@name="ISVGPathElement.createSVGPathSegLinetoVerticalRel"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(26)]
     public HRESULT createSVGPathSegLinetoVerticalRel(float y, ISVGPathSegLinetoVerticalRel** ppResult)
@@ -207,6 +235,7 @@ public unsafe partial struct ISVGPathElement : ISVGPathElement.Interface
         return ((delegate* unmanaged<ISVGPathElement*, float, ISVGPathSegLinetoVerticalRel**, int>)(lpVtbl[26]))((ISVGPathElement*)Unsafe.AsPointer(ref this), y, ppResult);
     }
 
+    /// <include file='ISVGPathElement.xml' path='doc/member[@name="ISVGPathElement.createSVGPathSegCurvetoCubicSmoothAbs"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(27)]
     public HRESULT createSVGPathSegCurvetoCubicSmoothAbs(float x, float y, float x2, float y2, ISVGPathSegCurvetoCubicSmoothAbs** ppResult)
@@ -214,6 +243,7 @@ public unsafe partial struct ISVGPathElement : ISVGPathElement.Interface
         return ((delegate* unmanaged<ISVGPathElement*, float, float, float, float, ISVGPathSegCurvetoCubicSmoothAbs**, int>)(lpVtbl[27]))((ISVGPathElement*)Unsafe.AsPointer(ref this), x, y, x2, y2, ppResult);
     }
 
+    /// <include file='ISVGPathElement.xml' path='doc/member[@name="ISVGPathElement.createSVGPathSegCurvetoCubicSmoothRel"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(28)]
     public HRESULT createSVGPathSegCurvetoCubicSmoothRel(float x, float y, float x2, float y2, ISVGPathSegCurvetoCubicSmoothRel** ppResult)
@@ -221,6 +251,7 @@ public unsafe partial struct ISVGPathElement : ISVGPathElement.Interface
         return ((delegate* unmanaged<ISVGPathElement*, float, float, float, float, ISVGPathSegCurvetoCubicSmoothRel**, int>)(lpVtbl[28]))((ISVGPathElement*)Unsafe.AsPointer(ref this), x, y, x2, y2, ppResult);
     }
 
+    /// <include file='ISVGPathElement.xml' path='doc/member[@name="ISVGPathElement.createSVGPathSegCurvetoQuadraticSmoothAbs"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(29)]
     public HRESULT createSVGPathSegCurvetoQuadraticSmoothAbs(float x, float y, ISVGPathSegCurvetoQuadraticSmoothAbs** ppResult)
@@ -228,6 +259,7 @@ public unsafe partial struct ISVGPathElement : ISVGPathElement.Interface
         return ((delegate* unmanaged<ISVGPathElement*, float, float, ISVGPathSegCurvetoQuadraticSmoothAbs**, int>)(lpVtbl[29]))((ISVGPathElement*)Unsafe.AsPointer(ref this), x, y, ppResult);
     }
 
+    /// <include file='ISVGPathElement.xml' path='doc/member[@name="ISVGPathElement.createSVGPathSegCurvetoQuadraticSmoothRel"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(30)]
     public HRESULT createSVGPathSegCurvetoQuadraticSmoothRel(float x, float y, ISVGPathSegCurvetoQuadraticSmoothRel** ppResult)

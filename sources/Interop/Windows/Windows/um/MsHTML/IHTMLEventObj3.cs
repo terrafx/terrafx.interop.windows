@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IHTMLEventObj3.xml' path='doc/member[@name="IHTMLEventObj3"]/*' />
 [Guid("3050F680-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IHTMLEventObj3 : IDispatch")]
 [NativeInheritance("IDispatch")]
@@ -16,6 +17,7 @@ public unsafe partial struct IHTMLEventObj3 : IHTMLEventObj3.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IHTMLEventObj3 : IHTMLEventObj3.Interface
         return ((delegate* unmanaged<IHTMLEventObj3*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLEventObj3*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IHTMLEventObj3 : IHTMLEventObj3.Interface
         return ((delegate* unmanaged<IHTMLEventObj3*, uint>)(lpVtbl[1]))((IHTMLEventObj3*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IHTMLEventObj3 : IHTMLEventObj3.Interface
         return ((delegate* unmanaged<IHTMLEventObj3*, uint>)(lpVtbl[2]))((IHTMLEventObj3*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct IHTMLEventObj3 : IHTMLEventObj3.Interface
         return ((delegate* unmanaged<IHTMLEventObj3*, uint*, int>)(lpVtbl[3]))((IHTMLEventObj3*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct IHTMLEventObj3 : IHTMLEventObj3.Interface
         return ((delegate* unmanaged<IHTMLEventObj3*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IHTMLEventObj3*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
@@ -60,6 +67,7 @@ public unsafe partial struct IHTMLEventObj3 : IHTMLEventObj3.Interface
         return ((delegate* unmanaged<IHTMLEventObj3*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLEventObj3*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
+    /// <inheritdoc cref="IDispatch.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
@@ -67,6 +75,7 @@ public unsafe partial struct IHTMLEventObj3 : IHTMLEventObj3.Interface
         return ((delegate* unmanaged<IHTMLEventObj3*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IHTMLEventObj3*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
+    /// <include file='IHTMLEventObj3.xml' path='doc/member[@name="IHTMLEventObj3.get_contentOverflow"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT get_contentOverflow([NativeTypeName("VARIANT_BOOL *")] short* p)
@@ -74,6 +83,7 @@ public unsafe partial struct IHTMLEventObj3 : IHTMLEventObj3.Interface
         return ((delegate* unmanaged<IHTMLEventObj3*, short*, int>)(lpVtbl[7]))((IHTMLEventObj3*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLEventObj3.xml' path='doc/member[@name="IHTMLEventObj3.put_shiftLeft"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT put_shiftLeft([NativeTypeName("VARIANT_BOOL")] short v)
@@ -81,6 +91,7 @@ public unsafe partial struct IHTMLEventObj3 : IHTMLEventObj3.Interface
         return ((delegate* unmanaged<IHTMLEventObj3*, short, int>)(lpVtbl[8]))((IHTMLEventObj3*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLEventObj3.xml' path='doc/member[@name="IHTMLEventObj3.get_shiftLeft"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT get_shiftLeft([NativeTypeName("VARIANT_BOOL *")] short* p)
@@ -88,6 +99,7 @@ public unsafe partial struct IHTMLEventObj3 : IHTMLEventObj3.Interface
         return ((delegate* unmanaged<IHTMLEventObj3*, short*, int>)(lpVtbl[9]))((IHTMLEventObj3*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLEventObj3.xml' path='doc/member[@name="IHTMLEventObj3.put_altLeft"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT put_altLeft([NativeTypeName("VARIANT_BOOL")] short v)
@@ -95,6 +107,7 @@ public unsafe partial struct IHTMLEventObj3 : IHTMLEventObj3.Interface
         return ((delegate* unmanaged<IHTMLEventObj3*, short, int>)(lpVtbl[10]))((IHTMLEventObj3*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLEventObj3.xml' path='doc/member[@name="IHTMLEventObj3.get_altLeft"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT get_altLeft([NativeTypeName("VARIANT_BOOL *")] short* p)
@@ -102,6 +115,7 @@ public unsafe partial struct IHTMLEventObj3 : IHTMLEventObj3.Interface
         return ((delegate* unmanaged<IHTMLEventObj3*, short*, int>)(lpVtbl[11]))((IHTMLEventObj3*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLEventObj3.xml' path='doc/member[@name="IHTMLEventObj3.put_ctrlLeft"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT put_ctrlLeft([NativeTypeName("VARIANT_BOOL")] short v)
@@ -109,6 +123,7 @@ public unsafe partial struct IHTMLEventObj3 : IHTMLEventObj3.Interface
         return ((delegate* unmanaged<IHTMLEventObj3*, short, int>)(lpVtbl[12]))((IHTMLEventObj3*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLEventObj3.xml' path='doc/member[@name="IHTMLEventObj3.get_ctrlLeft"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT get_ctrlLeft([NativeTypeName("VARIANT_BOOL *")] short* p)
@@ -116,6 +131,7 @@ public unsafe partial struct IHTMLEventObj3 : IHTMLEventObj3.Interface
         return ((delegate* unmanaged<IHTMLEventObj3*, short*, int>)(lpVtbl[13]))((IHTMLEventObj3*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLEventObj3.xml' path='doc/member[@name="IHTMLEventObj3.get_imeCompositionChange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT get_imeCompositionChange([NativeTypeName("LONG_PTR *")] nint* p)
@@ -123,6 +139,7 @@ public unsafe partial struct IHTMLEventObj3 : IHTMLEventObj3.Interface
         return ((delegate* unmanaged<IHTMLEventObj3*, nint*, int>)(lpVtbl[14]))((IHTMLEventObj3*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLEventObj3.xml' path='doc/member[@name="IHTMLEventObj3.get_imeNotifyCommand"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT get_imeNotifyCommand([NativeTypeName("LONG_PTR *")] nint* p)
@@ -130,6 +147,7 @@ public unsafe partial struct IHTMLEventObj3 : IHTMLEventObj3.Interface
         return ((delegate* unmanaged<IHTMLEventObj3*, nint*, int>)(lpVtbl[15]))((IHTMLEventObj3*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLEventObj3.xml' path='doc/member[@name="IHTMLEventObj3.get_imeNotifyData"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT get_imeNotifyData([NativeTypeName("LONG_PTR *")] nint* p)
@@ -137,6 +155,7 @@ public unsafe partial struct IHTMLEventObj3 : IHTMLEventObj3.Interface
         return ((delegate* unmanaged<IHTMLEventObj3*, nint*, int>)(lpVtbl[16]))((IHTMLEventObj3*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLEventObj3.xml' path='doc/member[@name="IHTMLEventObj3.get_imeRequest"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT get_imeRequest([NativeTypeName("LONG_PTR *")] nint* p)
@@ -144,6 +163,7 @@ public unsafe partial struct IHTMLEventObj3 : IHTMLEventObj3.Interface
         return ((delegate* unmanaged<IHTMLEventObj3*, nint*, int>)(lpVtbl[17]))((IHTMLEventObj3*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLEventObj3.xml' path='doc/member[@name="IHTMLEventObj3.get_imeRequestData"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT get_imeRequestData([NativeTypeName("LONG_PTR *")] nint* p)
@@ -151,6 +171,7 @@ public unsafe partial struct IHTMLEventObj3 : IHTMLEventObj3.Interface
         return ((delegate* unmanaged<IHTMLEventObj3*, nint*, int>)(lpVtbl[18]))((IHTMLEventObj3*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLEventObj3.xml' path='doc/member[@name="IHTMLEventObj3.get_keyboardLayout"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT get_keyboardLayout([NativeTypeName("LONG_PTR *")] nint* p)
@@ -158,6 +179,7 @@ public unsafe partial struct IHTMLEventObj3 : IHTMLEventObj3.Interface
         return ((delegate* unmanaged<IHTMLEventObj3*, nint*, int>)(lpVtbl[19]))((IHTMLEventObj3*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLEventObj3.xml' path='doc/member[@name="IHTMLEventObj3.get_behaviorCookie"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public HRESULT get_behaviorCookie([NativeTypeName("long *")] int* p)
@@ -165,6 +187,7 @@ public unsafe partial struct IHTMLEventObj3 : IHTMLEventObj3.Interface
         return ((delegate* unmanaged<IHTMLEventObj3*, int*, int>)(lpVtbl[20]))((IHTMLEventObj3*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLEventObj3.xml' path='doc/member[@name="IHTMLEventObj3.get_behaviorPart"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
     public HRESULT get_behaviorPart([NativeTypeName("long *")] int* p)
@@ -172,6 +195,7 @@ public unsafe partial struct IHTMLEventObj3 : IHTMLEventObj3.Interface
         return ((delegate* unmanaged<IHTMLEventObj3*, int*, int>)(lpVtbl[21]))((IHTMLEventObj3*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLEventObj3.xml' path='doc/member[@name="IHTMLEventObj3.get_nextPage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
     public HRESULT get_nextPage([NativeTypeName("BSTR *")] ushort** p)

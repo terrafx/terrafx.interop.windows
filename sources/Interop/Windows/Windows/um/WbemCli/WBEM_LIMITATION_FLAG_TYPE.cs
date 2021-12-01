@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WBEM_LIMITATION_FLAG_TYPE.xml' path='doc/member[@name="WBEM_LIMITATION_FLAG_TYPE"]/*' />
 public enum WBEM_LIMITATION_FLAG_TYPE
 {
+    /// <include file='WBEM_LIMITATION_FLAG_TYPE.xml' path='doc/member[@name="WBEM_LIMITATION_FLAG_TYPE.WBEM_FLAG_EXCLUDE_OBJECT_QUALIFIERS"]/*' />
     WBEM_FLAG_EXCLUDE_OBJECT_QUALIFIERS = 0x10,
+
+    /// <include file='WBEM_LIMITATION_FLAG_TYPE.xml' path='doc/member[@name="WBEM_LIMITATION_FLAG_TYPE.WBEM_FLAG_EXCLUDE_PROPERTY_QUALIFIERS"]/*' />
     WBEM_FLAG_EXCLUDE_PROPERTY_QUALIFIERS = 0x20,
 }

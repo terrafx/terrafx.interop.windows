@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IENamespaceTreeControl.xml' path='doc/member[@name="IENamespaceTreeControl"]/*' />
 [Guid("ACE52D03-E5CD-4B20-82FF-E71B11BEAE1D")]
 public partial struct IENamespaceTreeControl
 {

@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='LATENCY_TIME.xml' path='doc/member[@name="LATENCY_TIME"]/*' />
 public enum LATENCY_TIME
 {
+    /// <include file='LATENCY_TIME.xml' path='doc/member[@name="LATENCY_TIME.LT_DONT_CARE"]/*' />
     LT_DONT_CARE,
+
+    /// <include file='LATENCY_TIME.xml' path='doc/member[@name="LATENCY_TIME.LT_LOWEST_LATENCY"]/*' />
     LT_LOWEST_LATENCY,
 }

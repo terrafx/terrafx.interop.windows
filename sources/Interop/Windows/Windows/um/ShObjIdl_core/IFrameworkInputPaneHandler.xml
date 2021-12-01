@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IFrameworkInputPaneHandler.Hiding">
+    <summary>
+      <para>Called when the input pane is about to leave the display.</para>
+    </summary>
+    <param name="fEnsureFocusedElementInView">
+      <para>Type: <b>BOOL*</b></para>
+      <para>A pointer to a value that is set to <b>true</b> if the app should attempt to keep its currently focused element (such as a text box) in view, which could require the app to rearrange its UI or move the element, usually back to its layout before the input pane was shown.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IFrameworkInputPaneHandler" />
+  </member>
+  <member name="IFrameworkInputPaneHandler.Showing">
+    <summary>
+      <para>Called before the input pane is shown, to allow the app window to make any necessary adjustments to its UI in response to the reduced screen space available to it. This is particularly important for input elements, such as text boxes, that are used in conjunction with the input pane.</para>
+    </summary>
+    <param name="prcInputPaneScreenLocation">
+      <para>Type: <b><see cref="RECT" />*</b></para>
+      <para>A pointer to a <see cref="RECT" /> structure that supplies the screen coordinates that the input pane will occupy.</para>
+    </param>
+    <param name="fEnsureFocusedElementInView">
+      <para>Type: <b>BOOL*</b></para>
+      <para>A pointer to a value that is set to <b>true</b> if the app should attempt to keep its currently focused element (such as a text box) in view, which could require the app to move the element or rearrange its UI.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IFrameworkInputPaneHandler" />
+  </member>
+  <member name="IFrameworkInputPaneHandler">
+    <summary>
+      <para>Enables an app to be notified when the input pane (the on-screen keyboard or handwriting panel) is being shown or hidden. This allows the app window to adjust its display so that no input areas (such as a text box) are obscured by the input pane.</para>
+    </summary>
+    <remarks>
+      <h3>When to implement</h3>
+      <para>Implement this interface if your app needs to be informed when the input pane is shown or hidden, or its screen coordinates.</para>
+    </remarks>
+    <seealso cref="IUnknown" />
+  </member>
+</doc>

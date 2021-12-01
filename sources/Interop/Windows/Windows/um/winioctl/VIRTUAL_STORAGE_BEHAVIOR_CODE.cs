@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='VIRTUAL_STORAGE_BEHAVIOR_CODE.xml' path='doc/member[@name="VIRTUAL_STORAGE_BEHAVIOR_CODE"]/*' />
 public enum VIRTUAL_STORAGE_BEHAVIOR_CODE
 {
+    /// <include file='VIRTUAL_STORAGE_BEHAVIOR_CODE.xml' path='doc/member[@name="VIRTUAL_STORAGE_BEHAVIOR_CODE.VirtualStorageBehaviorUndefined"]/*' />
     VirtualStorageBehaviorUndefined = 0,
+
+    /// <include file='VIRTUAL_STORAGE_BEHAVIOR_CODE.xml' path='doc/member[@name="VIRTUAL_STORAGE_BEHAVIOR_CODE.VirtualStorageBehaviorCacheWriteThrough"]/*' />
     VirtualStorageBehaviorCacheWriteThrough = 1,
+
+    /// <include file='VIRTUAL_STORAGE_BEHAVIOR_CODE.xml' path='doc/member[@name="VIRTUAL_STORAGE_BEHAVIOR_CODE.VirtualStorageBehaviorCacheWriteBack"]/*' />
     VirtualStorageBehaviorCacheWriteBack = 2,
+
+    /// <include file='VIRTUAL_STORAGE_BEHAVIOR_CODE.xml' path='doc/member[@name="VIRTUAL_STORAGE_BEHAVIOR_CODE.VirtualStorageBehaviorStopIoProcessing"]/*' />
     VirtualStorageBehaviorStopIoProcessing = 3,
+
+    /// <include file='VIRTUAL_STORAGE_BEHAVIOR_CODE.xml' path='doc/member[@name="VIRTUAL_STORAGE_BEHAVIOR_CODE.VirtualStorageBehaviorRestartIoProcessing"]/*' />
     VirtualStorageBehaviorRestartIoProcessing = 4,
 }

@@ -1,0 +1,221 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="NET_LUID">
+    <summary>
+      <para>The <b>NET_LUID</b> union is the locally unique identifier (LUID) for a network interface.</para>
+    </summary>
+    <remarks>
+      <para>The <b>NET_LUID</b> structure is protocol independent and works with network interfaces for both the IPv6 and IPv4 protocol. The <b>NET_LUID</b> structure is defined on Windows Vista and later.</para>
+      <para>The <b>IF_LUID</b> and <b>NET_LUID_LH</b> structures are other names that can be used for the <b>NET_LUID</b> union.</para>
+      <para>The values for the <b>IfType</b> bitfield are defined in the <i>Ipifcons.h</i> include file. Only the possible values listed in the description of the <b>IfType</b> member are currently supported.</para>
+    </remarks>
+    <seealso cref="ConvertInterfaceAliasToLuid" />
+    <seealso cref="ConvertInterfaceGuidToLuid" />
+    <seealso cref="ConvertInterfaceIndexToLuid" />
+    <seealso cref="ConvertInterfaceLuidToGuid" />
+    <seealso cref="ConvertInterfaceLuidToIndex" />
+    <seealso cref="ConvertInterfaceLuidToNameA" />
+    <seealso cref="ConvertInterfaceLuidToNameW" />
+    <seealso cref="ConvertInterfaceNameToLuidA" />
+    <seealso cref="ConvertInterfaceNameToLuidW" />
+    <seealso cref="MIB_IF_ROW2" />
+    <seealso cref="MIB_IPINTERFACE_ROW" />
+  </member>
+  <member name="NET_LUID.Value">
+    <summary>
+      <para>Type: <b>ULONG64</b></para>
+      <para>A 64-bit value that represents the LUID.</para>
+    </summary>
+  </member>
+  <member name="NET_LUID.Info">
+    <summary>
+      <para>A named union containing the component fields in the 64-bit LUID  <b>Value</b> member.</para>
+    </summary>
+  </member>
+  <member name="NET_LUID.Info.Reserved">
+    <summary>
+      <para>
+        <b>Type: <b>ULONG64</b></b>
+      </para>
+      <para>This field is reserved.</para>
+    </summary>
+  </member>
+  <member name="NET_LUID.Info.NetLuidIndex">
+    <summary>
+      <para>
+        <b>Type: <b>ULONG64</b></b>
+      </para>
+      <para>The network interface LUID index.</para>
+    </summary>
+  </member>
+  <member name="NET_LUID.Info.IfType">
+    <summary>
+      <para>
+        <b>Type: <b>ULONG64</b></b>
+      </para>
+      <para>The interface type as defined by the Internet Assigned Names Authority (IANA). Possible values for the interface type are listed in the <i>Ipifcons.h</i> include file.</para>
+      <para>The table below lists common values for the interface type although many other values are possible.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IF_TYPE_OTHER</b>
+                </description>
+              </item>
+              <item>
+                <description>1</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Some other type of network interface.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IF_TYPE_ETHERNET_CSMACD</b>
+                </description>
+              </item>
+              <item>
+                <description>6</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>An Ethernet network interface.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IF_TYPE_ISO88025_TOKENRING</b>
+                </description>
+              </item>
+              <item>
+                <description>9</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>A token ring network interface.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IF_TYPE_PPP</b>
+                </description>
+              </item>
+              <item>
+                <description>23</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>A PPP network interface.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IF_TYPE_SOFTWARE_LOOPBACK</b>
+                </description>
+              </item>
+              <item>
+                <description>24</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>A software loopback network interface.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IF_TYPE_ATM</b>
+                </description>
+              </item>
+              <item>
+                <description>37</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>An ATM network interface.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IF_TYPE_IEEE80211</b>
+                </description>
+              </item>
+              <item>
+                <description>71</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>An IEEE 802.11 wireless network interface.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IF_TYPE_TUNNEL</b>
+                </description>
+              </item>
+              <item>
+                <description>131</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>A tunnel type encapsulation network interface.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IF_TYPE_IEEE1394</b>
+                </description>
+              </item>
+              <item>
+                <description>144</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>An IEEE 1394 (Firewire) high performance serial bus network interface.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+</doc>

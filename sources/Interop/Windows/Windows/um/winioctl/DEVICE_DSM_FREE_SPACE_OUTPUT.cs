@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DEVICE_DSM_FREE_SPACE_OUTPUT.xml' path='doc/member[@name="DEVICE_DSM_FREE_SPACE_OUTPUT"]/*' />
 public partial struct DEVICE_DSM_FREE_SPACE_OUTPUT
 {
+    /// <include file='DEVICE_DSM_FREE_SPACE_OUTPUT.xml' path='doc/member[@name="DEVICE_DSM_FREE_SPACE_OUTPUT.Version"]/*' />
     [NativeTypeName("DWORD")]
     public uint Version;
 
+    /// <include file='DEVICE_DSM_FREE_SPACE_OUTPUT.xml' path='doc/member[@name="DEVICE_DSM_FREE_SPACE_OUTPUT.FreeSpace"]/*' />
     [NativeTypeName("DWORDLONG")]
     public ulong FreeSpace;
 }

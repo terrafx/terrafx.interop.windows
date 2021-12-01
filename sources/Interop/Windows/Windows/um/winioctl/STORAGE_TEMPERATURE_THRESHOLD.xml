@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="STORAGE_TEMPERATURE_THRESHOLD">
+    <summary>
+      <para>This structure is used to set the over or under temperature threshold of a storage device (via <a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_set_temperature_threshold">IOCTL_STORAGE_SET_TEMPERATURE_THRESHOLD</a>).</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_query_property">IOCTL_STORAGE_QUERY_PROPERTY</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_set_temperature_threshold">IOCTL_STORAGE_SET_TEMPERATURE_THRESHOLD</seealso>
+    <seealso cref="STORAGE_PROPERTY_ID" />
+    <seealso cref="STORAGE_PROPERTY_QUERY" />
+    <seealso cref="STORAGE_TEMPERATURE_INFO" />
+  </member>
+  <member name="STORAGE_TEMPERATURE_THRESHOLD.Version">
+    <summary>
+      <para>The version of the structure.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_TEMPERATURE_THRESHOLD.Size">
+    <summary>
+      <para>The size of this structure. This should be set to sizeof(<b>STORAGE_TEMPERATURE_THRESHOLD</b>).</para>
+    </summary>
+  </member>
+  <member name="STORAGE_TEMPERATURE_THRESHOLD.Flags">
+    <summary>
+      <para>Flags set for this request. The following are valid flags.</para>
+      <list type="table">
+        <listheader>
+          <description>Flag</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <b>STORAGE_PROTOCOL_COMMAND_FLAG_ADAPTER_REQUEST</b>
+          </description>
+          <description>This flag indicates the request to target an adapter instead of device.</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="STORAGE_TEMPERATURE_THRESHOLD.Index">
+    <summary>
+      <para>Identifies the instance of temperature information. Starts from 0. Index 0 may indicate a composite value.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_TEMPERATURE_THRESHOLD.Threshold">
+    <summary>
+      <para>A signed value that indicates the temperature of the threshold, in degrees Celsius.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_TEMPERATURE_THRESHOLD.OverThreshold">
+    <summary>
+      <para>Indicates if the <i>Threshold</i> specifies the over or under temperature threshold. If <b>true</b>, set the <b>OverThreshold</b> temperature value of the device; otherwise, set the <b>UnderThreshold</b> temperature value.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_TEMPERATURE_THRESHOLD.Reserved">
+    <summary>
+      <para>Reserved for future use.</para>
+    </summary>
+  </member>
+</doc>

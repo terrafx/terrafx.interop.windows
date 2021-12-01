@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVEncVideoDirtyRectEnabled.xml' path='doc/member[@name="CODECAPI_AVEncVideoDirtyRectEnabled"]/*' />
 [Guid("8ACB8FDD-5E0C-4C66-8729-B8F629AB04FB")]
 public partial struct CODECAPI_AVEncVideoDirtyRectEnabled
 {

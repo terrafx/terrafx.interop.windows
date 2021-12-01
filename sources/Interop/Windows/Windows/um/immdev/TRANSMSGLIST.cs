@@ -9,13 +9,17 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TRANSMSGLIST.xml' path='doc/member[@name="TRANSMSGLIST"]/*' />
 public partial struct TRANSMSGLIST
 {
+    /// <include file='TRANSMSGLIST.xml' path='doc/member[@name="TRANSMSGLIST.uMsgCount"]/*' />
     public uint uMsgCount;
 
+    /// <include file='TRANSMSGLIST.xml' path='doc/member[@name="TRANSMSGLIST.TransMsg"]/*' />
     [NativeTypeName("TRANSMSG [1]")]
     public _TransMsg_e__FixedBuffer TransMsg;
 
+    /// <include file='_TransMsg_e__FixedBuffer.xml' path='doc/member[@name="_TransMsg_e__FixedBuffer"]/*' />
     public partial struct _TransMsg_e__FixedBuffer
     {
         public TRANSMSG e0;

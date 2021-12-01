@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="VMRPRESENTATIONINFO">
+    <summary>
+      <para>The <code>VMRPRESENTATIONINFO</code> structure is used in the <see cref="IVMRImagePresenter.PresentImage" /> method (VMR-7 only).</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-structures">DirectShow Structures</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/dvdmedia/ns-dvdmedia-videoinfoheader2">VIDEOINFOHEADER2</seealso>
+  </member>
+  <member name="VMRPRESENTATIONINFO.dwFlags">
+    <summary>
+      <para>A bitwise combination of flags from the <see cref="VMRPresentationFlags" /> enumeration, which describe the status of the video sample with respect to its presentation time.</para>
+    </summary>
+  </member>
+  <member name="VMRPRESENTATIONINFO.lpSurf">
+    <summary>
+      <para>Pointer to the DirectDraw surface that contains the video frame to be presented.</para>
+    </summary>
+  </member>
+  <member name="VMRPRESENTATIONINFO.rtStart">
+    <summary>
+      <para>The start time for the current frame, in 100-nanosecond units.</para>
+    </summary>
+  </member>
+  <member name="VMRPRESENTATIONINFO.rtEnd">
+    <summary>
+      <para>The end time for the current frame, in 100-nanosecond units.</para>
+    </summary>
+  </member>
+  <member name="VMRPRESENTATIONINFO.szAspectRatio">
+    <summary>
+      <para>The aspect ratio of the rectangle.</para>
+    </summary>
+  </member>
+  <member name="VMRPRESENTATIONINFO.rcSrc">
+    <summary>
+      <para>The source rectangle.</para>
+    </summary>
+  </member>
+  <member name="VMRPRESENTATIONINFO.rcDst">
+    <summary>
+      <para>The destination rectangle.</para>
+    </summary>
+  </member>
+  <member name="VMRPRESENTATIONINFO.dwTypeSpecificFlags">
+    <summary>
+      <para>Bitwise combination of flags, as defined for the <see cref="AM_SAMPLE2_PROPERTIES" /> structure.</para>
+    </summary>
+  </member>
+  <member name="VMRPRESENTATIONINFO.dwInterlaceFlags">
+    <summary>
+      <para>Bitwise combination of flags, as defined for the <b>dwInterlaceFlags</b> member of the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/dvdmedia/ns-dvdmedia-videoinfoheader2">VIDEOINFOHEADER2</a> structure.</para>
+    </summary>
+  </member>
+</doc>

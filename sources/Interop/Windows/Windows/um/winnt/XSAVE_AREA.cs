@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='XSAVE_AREA.xml' path='doc/member[@name="XSAVE_AREA"]/*' />
 public partial struct XSAVE_AREA
 {
+    /// <include file='XSAVE_AREA.xml' path='doc/member[@name="XSAVE_AREA.LegacyState"]/*' />
     public XSAVE_FORMAT LegacyState;
 
+    /// <include file='XSAVE_AREA.xml' path='doc/member[@name="XSAVE_AREA.Header"]/*' />
     public XSAVE_AREA_HEADER Header;
 }

@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CERT_EXTENSION">
+    <summary>
+      <para>The <b>CERT_EXTENSION</b> structure contains the extension information for a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certificate</a>, <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">Certificate Revocation List</a> (CRL) or <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">Certificate Trust List</a> (CTL).</para>
+    </summary>
+    <seealso cref="CERT_EXTENSIONS" />
+    <seealso cref="CERT_INFO" />
+    <seealso cref="CRL_ENTRY" />
+    <seealso cref="CRL_INFO" />
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_INTEGER_BLOB</seealso>
+    <seealso cref="CTL_ENTRY" />
+    <seealso cref="CTL_INFO" />
+    <seealso cref="CertFindExtension" />
+  </member>
+  <member name="CERT_EXTENSION.pszObjId">
+    <summary>
+      <para>
+        <a href="https://docs.microsoft.com//windows/desktop/SecGloss/o-gly">Object identifier</a> (OID) that specifies the structure of the extension data contained in the <b>Value</b> member. For specifics on extension OIDs and their related structures, see
+<a href="https://docs.microsoft.com//windows/desktop/SecCrypto/cryptography-structures">X.509 Certificate Extension Structures</a>.</para>
+    </summary>
+  </member>
+  <member name="CERT_EXTENSION.fCritical">
+    <summary>
+      <para>If <b>TRUE</b>, any limitations specified by the extension in the <b>Value</b> member of this structure are imperative. If <b>FALSE</b>, limitations set by this extension can be ignored.</para>
+    </summary>
+  </member>
+  <member name="CERT_EXTENSION.Value">
+    <summary>
+      <para>A
+<a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_OBJID_BLOB</a> structure that contains the encoded extension data. The <b>cbData</b> member of <b>Value</b> indicates the length in bytes of the <b>pbData</b> member. The <b>pbData</b> member byte string is the encoded extension.</para>
+    </summary>
+  </member>
+</doc>

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ICoCreatedLocally.LocalInit">
+    <summary>
+      <para>Implemented by clients to return information about the local object.<b>Note</b>  Active Accessibility Text Services is deprecated. Please see
+<a href="https://docs.microsoft.com//windows/win32/tsf/text-services-framework">Microsoft Windows Text Services Framework</a> for more information on advanced text input and natural language technologies.</para>
+    </summary>
+    <param name="punkLocalObject">
+      <para>Type: <b>IUnknown*</b></para>
+      <para>A pointer to the server object.</para>
+    </param>
+    <param name="riidParam">
+      <para>Type: <b>REFIID</b></para>
+      <para>An optional interface parameter that is passed to the new helper object. This parameter specifies an interface identifier.</para>
+    </param>
+    <param name="punkParam">
+      <para>Type: <b>IUnknown*</b></para>
+      <para>An optional interface parameter that is passed to the new helper object. This parameter specifies the interface pointer.</para>
+    </param>
+    <param name="varParam">
+      <para>Type: <b>VARIANT</b></para>
+      <para>An optional interface parameter that is passed to the new helper object.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
+      <para>If successful, returns S_OK. If not successful, returns a standard <a href="https://docs.microsoft.com//windows/desktop/WinAuto/return-values">COM error code</a>.</para>
+    </returns>
+  </member>
+</doc>

@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CERT_PAIR.xml' path='doc/member[@name="CERT_PAIR"]/*' />
 public partial struct CERT_PAIR
 {
+    /// <include file='CERT_PAIR.xml' path='doc/member[@name="CERT_PAIR.Forward"]/*' />
     [NativeTypeName("CERT_BLOB")]
     public CRYPT_DATA_BLOB Forward;
 
+    /// <include file='CERT_PAIR.xml' path='doc/member[@name="CERT_PAIR.Reverse"]/*' />
     [NativeTypeName("CERT_BLOB")]
     public CRYPT_DATA_BLOB Reverse;
 }

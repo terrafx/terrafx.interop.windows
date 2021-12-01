@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TOKEN_ELEVATION_TYPE.xml' path='doc/member[@name="TOKEN_ELEVATION_TYPE"]/*' />
 public enum TOKEN_ELEVATION_TYPE
 {
+    /// <include file='TOKEN_ELEVATION_TYPE.xml' path='doc/member[@name="TOKEN_ELEVATION_TYPE.TokenElevationTypeDefault"]/*' />
     TokenElevationTypeDefault = 1,
+
+    /// <include file='TOKEN_ELEVATION_TYPE.xml' path='doc/member[@name="TOKEN_ELEVATION_TYPE.TokenElevationTypeFull"]/*' />
     TokenElevationTypeFull,
+
+    /// <include file='TOKEN_ELEVATION_TYPE.xml' path='doc/member[@name="TOKEN_ELEVATION_TYPE.TokenElevationTypeLimited"]/*' />
     TokenElevationTypeLimited,
 }

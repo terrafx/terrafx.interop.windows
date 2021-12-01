@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MENUBARINFO">
+    <summary>
+      <para>Contains menu bar information.</para>
+    </summary>
+    <seealso cref="GetMenuBarInfo" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/menurc/menus">Menus</seealso>
+    <seealso cref="RECT" />
+  </member>
+  <member name="MENUBARINFO.cbSize">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The size of the structure, in bytes. The caller must set this to <code>sizeof(MENUBARINFO)</code>.</para>
+    </summary>
+  </member>
+  <member name="MENUBARINFO.rcBar">
+    <summary>
+      <para>Type: <b><see cref="RECT" /></b></para>
+      <para>The coordinates of the menu bar, popup menu, or menu item.</para>
+    </summary>
+  </member>
+  <member name="MENUBARINFO.hMenu">
+    <summary>
+      <para>Type: <b>HMENU</b></para>
+      <para>A handle to the menu bar or popup menu.</para>
+    </summary>
+  </member>
+  <member name="MENUBARINFO.hwndMenu">
+    <summary>
+      <para>Type: <b>HWND</b></para>
+      <para>A handle to the submenu.</para>
+    </summary>
+  </member>
+  <member name="MENUBARINFO.fBarFocused">
+    <summary>
+      <para>Type: <b>BOOL</b></para>
+      <para>If the menu bar or popup menu has the focus, this member is <b>TRUE</b>. Otherwise, the member is <b>FALSE</b>.</para>
+    </summary>
+  </member>
+  <member name="MENUBARINFO.fFocused">
+    <summary>
+      <para>Type: <b>BOOL</b></para>
+      <para>If the menu item has the focus, this member is <b>TRUE</b>. Otherwise, the member is <b>FALSE</b>.</para>
+    </summary>
+  </member>
+</doc>

@@ -5,18 +5,24 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MENUGETOBJECTINFO.xml' path='doc/member[@name="MENUGETOBJECTINFO"]/*' />
 public unsafe partial struct MENUGETOBJECTINFO
 {
+    /// <include file='MENUGETOBJECTINFO.xml' path='doc/member[@name="MENUGETOBJECTINFO.dwFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFlags;
 
+    /// <include file='MENUGETOBJECTINFO.xml' path='doc/member[@name="MENUGETOBJECTINFO.uPos"]/*' />
     public uint uPos;
 
+    /// <include file='MENUGETOBJECTINFO.xml' path='doc/member[@name="MENUGETOBJECTINFO.hmenu"]/*' />
     public HMENU hmenu;
 
+    /// <include file='MENUGETOBJECTINFO.xml' path='doc/member[@name="MENUGETOBJECTINFO.riid"]/*' />
     [NativeTypeName("PVOID")]
     public void* riid;
 
+    /// <include file='MENUGETOBJECTINFO.xml' path='doc/member[@name="MENUGETOBJECTINFO.pvObj"]/*' />
     [NativeTypeName("PVOID")]
     public void* pvObj;
 }

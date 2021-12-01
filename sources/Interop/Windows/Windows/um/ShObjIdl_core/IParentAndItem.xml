@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IParentAndItem.GetParentAndItem">
+    <summary>
+      <para>Gets the parent of an item and the parent's child ID.</para>
+    </summary>
+    <param name="ppidlParent">
+      <para>Type: <b>PIDLIST_ABSOLUTE*</b></para>
+      <para>When this method returns, contains the address of a PIDL that specifies the parent.</para>
+    </param>
+    <param name="ppsf">
+      <para>Type: <b><see cref="IShellFolder" />**</b></para>
+      <para>When this method returns, contains the address of a pointer to the <see cref="IShellFolder" /> that is the parent.</para>
+    </param>
+    <param name="ppidlChild">
+      <para>Type: <b>PITEMID_CHILD*</b></para>
+      <para>When this method returns, contains the address of a child PIDL that identifies the <see cref="IParentAndItem" /> object relative to that specified by <i>ppsf</i>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>While <see cref="IParentAndItem" /> is typically implemented on IShellItems, it is not specific to <see cref="IShellItem" />.</para>
+    </remarks>
+  </member>
+  <member name="IParentAndItem.SetParentAndItem">
+    <summary>
+      <para>Sets the parent of an item and the parent's child ID.</para>
+    </summary>
+    <param name="pidlParent">
+      <para>Type: <b>PCIDLIST_ABSOLUTE</b></para>
+      <para>A pointer of the parent.</para>
+    </param>
+    <param name="psf">
+      <para>Type: <b><see cref="IShellFolder" />*</b></para>
+      <para>A pointer to the <see cref="IShellFolder" /> that is the parent.</para>
+    </param>
+    <param name="pidlChild">
+      <para>Type: <b>PCUITEMID_CHILD</b></para>
+      <para>A PIDL that is a child relative to <i>psf</i>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>While <see cref="IParentAndItem" /> is typically implemented on IShellItems, it is not specific to <see cref="IShellItem" />.</para>
+    </remarks>
+  </member>
+  <member name="IParentAndItem">
+    <summary>
+      <para>Exposes methods that get and set the parent and the parent's child ID. While <b>IParentAndItem</b> is typically implemented on IShellItems, it is not specific to <see cref="IShellItem" />.</para>
+    </summary>
+    <remarks>
+      <para>The performance improvement using this interface can be noted in comparison with <see cref="IPersistIDList" />, an interface that uses absolute item identifier lists. Subsequent operations on objects that implement <b>IPersistIDList</b> may require <see cref="IShellFolder.BindToObject" /> calls, and these calls may impact performance.  In the case of IShellItems and participating IShellFolders that implement <b>IParentAndItem</b>, the parent <see cref="IShellFolder" /> may already be cached. By implementing <b>IParentAndItem</b> and then getting/setting the parent <b>IShellFolder</b> directly, the call to <b>IShellFolder.BindToObject</b> on the item identifier list to retrieve the <b>IShellFolder</b> interface is eliminated.</para>
+    </remarks>
+  </member>
+</doc>

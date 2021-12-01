@@ -5,26 +5,34 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMAGE_FILE_HEADER.xml' path='doc/member[@name="IMAGE_FILE_HEADER"]/*' />
 public partial struct IMAGE_FILE_HEADER
 {
+    /// <include file='IMAGE_FILE_HEADER.xml' path='doc/member[@name="IMAGE_FILE_HEADER.Machine"]/*' />
     [NativeTypeName("WORD")]
     public ushort Machine;
 
+    /// <include file='IMAGE_FILE_HEADER.xml' path='doc/member[@name="IMAGE_FILE_HEADER.NumberOfSections"]/*' />
     [NativeTypeName("WORD")]
     public ushort NumberOfSections;
 
+    /// <include file='IMAGE_FILE_HEADER.xml' path='doc/member[@name="IMAGE_FILE_HEADER.TimeDateStamp"]/*' />
     [NativeTypeName("DWORD")]
     public uint TimeDateStamp;
 
+    /// <include file='IMAGE_FILE_HEADER.xml' path='doc/member[@name="IMAGE_FILE_HEADER.PointerToSymbolTable"]/*' />
     [NativeTypeName("DWORD")]
     public uint PointerToSymbolTable;
 
+    /// <include file='IMAGE_FILE_HEADER.xml' path='doc/member[@name="IMAGE_FILE_HEADER.NumberOfSymbols"]/*' />
     [NativeTypeName("DWORD")]
     public uint NumberOfSymbols;
 
+    /// <include file='IMAGE_FILE_HEADER.xml' path='doc/member[@name="IMAGE_FILE_HEADER.SizeOfOptionalHeader"]/*' />
     [NativeTypeName("WORD")]
     public ushort SizeOfOptionalHeader;
 
+    /// <include file='IMAGE_FILE_HEADER.xml' path='doc/member[@name="IMAGE_FILE_HEADER.Characteristics"]/*' />
     [NativeTypeName("WORD")]
     public ushort Characteristics;
 }

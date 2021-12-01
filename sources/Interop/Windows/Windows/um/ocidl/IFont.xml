@@ -1,0 +1,1188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IFont.AddRefHfont">
+    <summary>
+      <para>Notifies the font object that the previously realized font identified with <i>hFont</i> should remain valid until <see cref="ReleaseHfont" /> is called or the font object itself is released completely.</para>
+    </summary>
+    <param name="hFont">
+      <para>Font handle previously realized through <see cref="get_hFont" /> to be locked in the font object's cache.</para>
+    </param>
+    <returns>
+      <para>The method supports the standard return values <b>E_UNEXPECTED</b> and <b>E_INVALIDARG</b>, as well as the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The font was successfully locked in the cache.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IFont" />
+    <seealso cref="ReleaseHfont" />
+    <seealso cref="get_hFont" />
+  </member>
+  <member name="IFont.Clone">
+    <summary>
+      <para>Creates a duplicate font object with a state identical to the current font.</para>
+    </summary>
+    <param name="ppFont">
+      <para>Address of <see cref="IFont" /> pointer variable that receives the interface
+pointer to the new font object. The caller must call
+<see cref="IFont.Release" /> when this new font object is no longer
+needed.</para>
+    </param>
+    <returns>
+      <para>The method supports the standard return values <b>E_UNEXPECTED</b> and
+<b>E_OUTOFMEMORY</b>, as well as the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The new font object was successfully created.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_NOTIMPL</b>
+            </para>
+          </description>
+          <description>
+            <para>This font object does not support cloning.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>The address in <i>ppfont</i> is not valid. For example, it may be
+<b>NULL</b>.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <h3>Notes to Callers</h3>
+      <para>The new font object is entirely independent of the first. The caller is responsible for releasing this new
+object when it is no longer needed. This method does not affect the reference count of the font being cloned.</para>
+    </remarks>
+    <seealso cref="IFont" />
+  </member>
+  <member name="IFont.get_Bold">
+    <summary>
+      <para>Gets the font's current Bold property.</para>
+    </summary>
+    <param name="pBold">
+      <para>A pointer to a caller-allocated
+variable that receives the current Bold property for the font.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK </b>
+            </para>
+          </description>
+          <description>
+            <para>The state was retrieved successfully. If the state is indeterminate, a font object should set *<i>pBold</i> to <b>FALSE</b> and return <b>S_OK</b>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>The address in pBold is not valid. For example, it may be <b>NULL</b>.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IFont" />
+    <seealso cref="IFont.put_Bold" />
+  </member>
+  <member name="IFont.get_Charset">
+    <summary>
+      <para>Retrieves the character set used in the font. The character set can be any of those defined
+for Windows fonts.</para>
+    </summary>
+    <param name="pCharset">
+      <para>A pointer to the caller-allocated variable that receives the character set
+value.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The character set was retrieved successfully.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>The address in the <i>pCharset</i> parameter is not valid. For example, it may be
+<b>NULL</b>.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IFont" />
+    <seealso cref="IFont.put_Charset" />
+  </member>
+  <member name="IFont.get_hFont">
+    <summary>
+      <para>Retrieves a handle to the font described by this font object.</para>
+    </summary>
+    <param name="phFont">
+      <para>A pointer to the caller-allocated variable that receives the font handle.
+The caller does not own this resource and must not attempt to destroy the font.</para>
+    </param>
+    <returns>
+      <para>The method supports the standard return values <b>E_UNEXPECTED</b> and
+<b>E_OUTOFMEMORY</b>, as well as the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The font handle was retrieved successfully.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>The address in the <i>phFont</i> parameter is not valid. For example, it may be
+<b>NULL</b>.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <h3>Notes to Callers</h3>
+      <para>The font object maintains ownership of the <b>HFONT</b> and can destroy it
+at any time without prior notification. If the caller needs to secure this font for a limited period of time, it
+can call <see cref="IFont.AddRefHfont" /> and
+<see cref="IFont.ReleaseHfont" />.</para>
+    </remarks>
+    <seealso cref="IFont" />
+    <seealso cref="IFont.AddRefHfont" />
+    <seealso cref="IFont.ReleaseHfont" />
+  </member>
+  <member name="IFont.get_Italic">
+    <summary>
+      <para>Gets the font's current Italic property.</para>
+    </summary>
+    <param name="pItalic">
+      <para>A pointer to the caller-allocated variable that receives the current Italic property for the font.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The state was retrieved successfully. If the state is indeterminate, a font object should set
+*<i>pItalic</i> to <b>FALSE</b> and return
+<b>S_OK</b>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>The address in pitalic is not valid. For example, it may be <b>NULL</b>.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IFont" />
+    <seealso cref="IFont.put_Italic" />
+  </member>
+  <member name="IFont.get_Name">
+    <summary>
+      <para>Retrieves the name of the font family.</para>
+    </summary>
+    <param name="pName">
+      <para>A pointer to the caller-allocated variable that receives the name. This string must be freed with <b>SysFreeString</b> when it is no longer needed.</para>
+    </param>
+    <returns>
+      <para>The method supports the standard return value <b>E_UNEXPECTED</b>, as well as the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The name was returned successfully.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>The address in the <i>pname</i> parameter is not valid. For example, it may be <b>NULL</b>.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IFont" />
+    <seealso cref="IFont.put_Name" />
+  </member>
+  <member name="IFont.get_Size">
+    <summary>
+      <para>Retrieves the point size of the font.</para>
+    </summary>
+    <param name="pSize">
+      <para>A pointer to the caller-allocated variable that receives the size,  in <b>HIMETRIC</b></para>
+      <para>units.</para>
+    </param>
+    <returns>
+      <para>The method supports the standard return value <b>E_UNEXPECTED</b>, as well as the
+following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The size was retrieved successfully.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>The address in the <i>pSize</i> parameter is not valid. For example, it may be
+<b>NULL</b>.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IFont" />
+    <seealso cref="IFont.put_Size" />
+  </member>
+  <member name="IFont.get_Strikethrough">
+    <summary>
+      <para>Gets the font's current  Strikethrough property.</para>
+    </summary>
+    <param name="pStrikethrough">
+      <para>A pointer to the caller-allocated variable that receives the current Strikethrough property for the font.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The state was retrieved successfully. If the state is indeterminate, a font object should set
+*<i>pStrikethrough</i> to <b>FALSE</b> and return
+<b>S_OK</b>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>The address in the <i>pStrikethrough</i> parameter is not valid. For example, it may
+be <b>NULL</b>.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IFont" />
+    <seealso cref="IFont.put_Strikethrough" />
+  </member>
+  <member name="IFont.get_Underline">
+    <summary>
+      <para>Gets the font's current Underline property..</para>
+    </summary>
+    <param name="pUnderline">
+      <para>A pointer to the caller-allocated variable that receives the current Underline property for the font.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The state was retrieved successfully. If the state is indeterminate, a font object should set
+*<i>pUnderline</i> to <b>FALSE</b> and return
+<b>S_OK</b>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>The address in the <i>pUnderline</i> parameter is not valid. For example, it may be
+<b>NULL</b>.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IFont" />
+    <seealso cref="IFont.put_Underline" />
+  </member>
+  <member name="IFont.get_Weight">
+    <summary>
+      <para>Gets  the font's current Weight property.</para>
+    </summary>
+    <param name="pWeight">
+      <para>A pointer to the caller-allocated variable that receives the current Weight property for the font. For a list of possible values, see the <b>lfWeight</b> member of the <see cref="LOGFONT" /> structure.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b></b>
+            </para>
+          </description>
+          <description>
+            <para>The weight was retrieved successfully. If the weight is indeterminate, a font object should store <b>FW_NORMAL</b> in *<i>pWeight</i> and return <b>S_OK</b>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b></b>
+            </para>
+          </description>
+          <description>
+            <para>The address in the <i>pWeight</i> parameter is not valid. For example, it may be <b>NULL</b>.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IFont" />
+    <seealso cref="IFont.put_Weight" />
+  </member>
+  <member name="IFont.IsEqual">
+    <summary>
+      <para>Compares this font object to another for equivalence.</para>
+    </summary>
+    <param name="pFontOther">
+      <para>A pointer to the <see cref="IFont" /> interface on the font object to be compared to this font. The reference count of the object referred to by this pointer is not affected by the comparison operation.</para>
+    </param>
+    <returns>
+      <para>The method supports the standard return value <b>E_UNEXPECTED</b>, as well as the
+following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The two fonts are equivalent.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>The two fonts are not equivalent.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>The address in the <i>pFontOther</i> parameter is not valid. For example, it may be
+<b>NULL</b>.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IFont" />
+  </member>
+  <member name="IFont.put_Bold">
+    <summary>
+      <para>Sets the font's Bold property.</para>
+    </summary>
+    <param name="bold">
+      <para>The new Bold property for the font.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The bold state was changed successfully.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>The font does not support a bold state. Note that this is not an error condition.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Changing the
+Bold property may also change the Weight
+property. Setting the Bold property to <b>TRUE</b> sets the
+Weight property to <b>FW_BOLD</b> (700); setting the
+Bold property to <b>FALSE</b> sets the
+Weight property to <b>FW_NORMAL</b> (400).</para>
+    </remarks>
+    <seealso cref="IFont" />
+    <seealso cref="IFont.get_Bold" />
+  </member>
+  <member name="IFont.put_Charset">
+    <summary>
+      <para>Sets the font's character set.</para>
+    </summary>
+    <param name="charset">
+      <para>The new character set for the font.</para>
+    </param>
+    <returns>
+      <para>The method supports the standard return value <b>E_INVALIDARG</b> and S_OK.</para>
+    </returns>
+    <seealso cref="IFont" />
+    <seealso cref="IFont.get_Charset" />
+  </member>
+  <member name="IFont.put_Italic">
+    <summary>
+      <para>Sets the font's Italic property.</para>
+    </summary>
+    <param name="italic">
+      <para>The new Italic property for the font.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The italic state was changed successfully.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>The font does not support an italic state. This value is not an error condition.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IFont" />
+    <seealso cref="IFont.get_Italic" />
+  </member>
+  <member name="IFont.put_Name">
+    <summary>
+      <para>Specifies a new name for the font family.</para>
+    </summary>
+    <param name="name">
+      <para>The new name of the font family. This value is both allocated and freed by
+the caller.</para>
+    </param>
+    <returns>
+      <para>The method supports the standard return value <b>E_UNEXPECTED</b>, as well as the
+following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The name was changed successfully.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>The address in the <i>name</i> parameter is not valid. For example, it may be
+<b>NULL</b>.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <h3>Notes to Callers</h3>
+      <para>The string value is caller allocated and the caller is responsible for freeing it after this call
+returns.</para>
+    </remarks>
+    <seealso cref="IFont" />
+    <seealso cref="IFont.get_Name" />
+  </member>
+  <member name="IFont.put_Size">
+    <summary>
+      <para>Sets the point size of the font.</para>
+    </summary>
+    <param name="size">
+      <para>The new size of the font, in <b>HIMETRIC</b> units.</para>
+    </param>
+    <returns>
+      <para>The method supports the standard return value <b>E_UNEXPECTED</b>, as well as the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The font was resized successfully.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>The value of the <i>size</i> parameter is not valid. For example, it does not contain a usable font size.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IFont" />
+    <seealso cref="IFont.get_Size" />
+  </member>
+  <member name="IFont.put_Strikethrough">
+    <summary>
+      <para>Sets the font's Strikethrough property.</para>
+    </summary>
+    <param name="strikethrough">
+      <para>The new Strikethrough property for the font.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The Strikethrough property was changed successfully.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>The font does not support a strikethrough state. This value is not an error condition.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IFont" />
+    <seealso cref="IFont.get_Strikethrough" />
+  </member>
+  <member name="IFont.put_Underline">
+    <summary>
+      <para>Sets the font's Underline property.</para>
+    </summary>
+    <param name="underline">
+      <para>The new Underline property for the font.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The underline state was changed successfully.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>The font does not support an underline state. This value is not an error condition.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IFont" />
+    <seealso cref="IFont.get_Underline" />
+  </member>
+  <member name="IFont.put_Weight">
+    <summary>
+      <para>Sets the font's Weight property.</para>
+    </summary>
+    <param name="weight">
+      <para>The new Weight for the font. For a list of available font weights, see the description of the <b>lfWeight</b> member of
+the <see cref="LOGFONT" /> structure.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The Weight property was changed successfully.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>This font does not support different weights. This value is not an error condition.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This property may
+affect the Bold property as well. The Bold
+property is set to <b>TRUE</b> if the Weight property is
+greater than the average of <b>FW_NORMAL</b> (400) and <b>FW_BOLD</b> (700),
+that is 550.</para>
+    </remarks>
+    <seealso cref="IFont" />
+    <seealso cref="IFont.get_Weight" />
+  </member>
+  <member name="IFont.QueryTextMetrics">
+    <summary>
+      <para>Fills a caller-allocated structure with information about the font.</para>
+    </summary>
+    <param name="pTM">
+      <para>Pointer to the caller-allocated structure that receives the font information. The
+<b>TEXTMETRICOLE</b> structure is defined as a
+<see cref="TEXTMETRICW" /> structure.</para>
+    </param>
+    <returns>
+      <para>The method supports the standard return value <b>E_UNEXPECTED</b>, as well as the
+following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The text metrics were returned successfully.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>The address in the <i>ptm</i> parameter is not valid. For example, it may be
+<b>NULL</b>.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <h3>Notes to Implementers</h3>
+      <b>E_NOTIMPL</b> is not a valid return value. Font objects must always provide their font
+information through this call unless other errors occur.
+</remarks>
+    <seealso cref="IFont" />
+  </member>
+  <member name="IFont.ReleaseHfont">
+    <summary>
+      <para>Notifies the font object that the caller that previously locked this font in the cache with
+<see cref="IFont.AddRefHfont" /> no longer requires the lock.</para>
+    </summary>
+    <param name="hFont">
+      <para>A font handle previously realized through
+<see cref="IFont.get_hFont" />. This value was passed to a previous
+call to <see cref="IFont.AddRefHfont" /> to lock the font, and the
+caller would now like to unlock the font in the cache.</para>
+    </param>
+    <returns>
+      <para>The method supports the standard return values <b>E_UNEXPECTED</b> and
+<b>E_INVALIDARG</b>, as well as the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The font was unlocked successfully.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>The font was not locked in the cache. This return value is a benign notification to the caller that it
+may have a font reference counting problem.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IFont" />
+    <seealso cref="IFont.AddRefHfont" />
+  </member>
+  <member name="IFont.SetHdc">
+    <summary>
+      <para>Provides a device context to the font that describes the logical mapping mode.</para>
+    </summary>
+    <param name="hDC">
+      <para>A handle to the device context in which to select the font.</para>
+    </param>
+    <returns>
+      <para>The method supports the standard return value <b>E_INVALIDARG</b>, as well as the
+following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The font was selected successfully.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_NOTIMPL</b>
+            </para>
+          </description>
+          <description>
+            <para>The font selection is not supported through this font object.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The logical mapping mode affects the font's internal computation of its point size so that when the caller
+asks for a font handle by calling <see cref="IFont.get_hFont" />, the
+font is already properly scaled to the device context.</para>
+      <h3>Notes to Callers</h3>
+      <para>The caller retains ownership of this device context which must remain valid for the lifetime of
+the font object. Thus, the device context passed should be a memory device context (from the function
+<see cref="CreateCompatibleDC" />) and not a screen device context
+(from <see cref="CreateDC" />,
+<see cref="GetDC" />, or
+<see cref="BeginPaint" />) because screen device contexts are a limited system
+resource.</para>
+    </remarks>
+    <seealso cref="IFont" />
+  </member>
+  <member name="IFont.SetRatio">
+    <summary>
+      <para>Converts the scaling factor for this font between logical units and <b>HIMETRIC</b> units.
+<b>HIMETRIC</b> units are used to express the point size in the
+<see cref="IFont.get_Size" /> and
+<see cref="IFont.put_Size" /> methods. The values passed to
+<b>IFont.SetRatio</b> are used to compute the display size of
+the font in logical units from the value in the <b>Size</b> property:</para>
+      <para>
+        <code>Display Size = ( cyLogical / cyHimetric ) * Size</code>
+      </para>
+    </summary>
+    <param name="cyLogical">
+      <para>The font size, in logical units.</para>
+    </param>
+    <param name="cyHimetric">
+      <para>The font size, in <b>HIMETRIC</b> units.</para>
+    </param>
+    <returns>
+      <para>The method supports the standard return values E_UNEXPECTED, E_INVALIDARG, and S_OK.</para>
+    </returns>
+    <seealso cref="IFont" />
+    <seealso cref="IFont.get_Size" />
+    <seealso cref="IFont.put_Size" />
+  </member>
+  <member name="IFont">
+    <summary>
+      <para>Provides a wrapper around a Windows font object. The COM font object supports a number of
+read/write properties as well as a set of methods through its <b>IFont</b></para>
+      <para>interface. It supports the same set of properties (but not the methods) through the dispatch interface
+<see cref="IFontDisp" />, which is derived from
+<b>IDispatch</b> to provide access to the font's properties through Automation. The system
+provides a standard implementation of the font object with both interfaces.</para>
+      <para>The font object also supports the outgoing interface
+<see cref="IPropertyNotifySink" /> so a client can determine when
+font properties change. Because the font object supports at least one outgoing interface, it also implements
+<see cref="IConnectionPointContainer" /> and related interfaces
+for this purpose.</para>
+      <para>The font object provides an hFont property, which is a Windows font handle that
+conforms to the other attributes specified for the font. The font object delays realizing this
+hFont object when possible, so consecutively setting two properties on a font
+will not cause an intermediate font to be realized. In addition, as an optimization, the system-implemented font
+object maintains a cache of font handles. Two font objects in the same process that have identical properties will
+return the same font handle. The font object can remove font handles from this cache at will, which introduces
+special considerations for clients using the hFont property.</para>
+      <para>The font object also supports <see cref="IPersistStream" /> so that it
+can save and load itself from an instance of <see cref="IStream" />. An object
+that uses a font object internally would normally save and load the font as part of the object's own persistence
+handling.</para>
+      <para>In addition, the font object supports <see cref="IDataObject" />, which can
+render a property set containing the font's attributes, allowing a client to save these properties as text.</para>
+    </summary>
+    <remarks>
+      <para>Each property in the <b>IFont</b> interface includes a
+<b>get_<i>PropertyName</i></b> method if the property supports read
+access and a <b>put_<i>PropertyName</i></b> method if the property
+supports write access. Most of these properties support both read and write access.</para>
+      <list type="table">
+        <listheader>
+          <description>Property</description>
+          <description>Type</description>
+          <description>Read Access Method</description>
+          <description>Write Access Method</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <b>Name</b>
+          </description>
+          <description>
+            <b>BSTR</b>
+          </description>
+          <description>
+            <see cref="get_Name" />
+          </description>
+          <description>
+            <see cref="put_Name" />
+          </description>
+          <description>The facename of the font, e.g. Arial.</description>
+        </item>
+        <item>
+          <description>
+            <b>Size</b>
+          </description>
+          <description>
+            <b>CY</b>
+          </description>
+          <description>
+            <see cref="get_Size" />
+          </description>
+          <description>
+            <see cref="put_Size" />
+          </description>
+          <description>The point size of the font, expressed in a <b>CY</b> type to allow for fractional
+point sizes.</description>
+        </item>
+        <item>
+          <description>
+            <b>Bold</b>
+          </description>
+          <description>
+            <b>BOOL</b>
+          </description>
+          <description>
+            <see cref="get_Bold" />
+          </description>
+          <description>
+            <see cref="put_Bold" />
+          </description>
+          <description>Indicates whether the font is boldfaced.</description>
+        </item>
+        <item>
+          <description>
+            <b>Italic</b>
+          </description>
+          <description>
+            <b>BOOL</b>
+          </description>
+          <description>
+            <see cref="get_Italic" />
+          </description>
+          <description>
+            <see cref="put_Italic" />
+          </description>
+          <description>Indicates whether the font is italicized.</description>
+        </item>
+        <item>
+          <description>
+            <b>Underline</b>
+          </description>
+          <description>
+            <b>BOOL</b>
+          </description>
+          <description>
+            <see cref="get_Underline" />
+          </description>
+          <description>
+            <see cref="put_Underline" />
+          </description>
+          <description>Indicates whether the font is underlined.</description>
+        </item>
+        <item>
+          <description>
+            <b>Strikethrough</b>
+          </description>
+          <description>
+            <b>BOOL</b>
+          </description>
+          <description>
+            <see cref="get_Strikethrough" />
+          </description>
+          <description>
+            <see cref="put_Strikethrough" />
+          </description>
+          <description>Indicates whether the font is strikethrough.</description>
+        </item>
+        <item>
+          <description>
+            <b>Weight</b>
+          </description>
+          <description>
+            <b>short</b>
+          </description>
+          <description>
+            <see cref="get_Weight" />
+          </description>
+          <description>
+            <see cref="put_Weight" />
+          </description>
+          <description>The boldness of the font.</description>
+        </item>
+        <item>
+          <description>
+            <b>Charset</b>
+          </description>
+          <description>
+            <b>short</b>
+          </description>
+          <description>
+            <see cref="get_Charset" />
+          </description>
+          <description>
+            <see cref="put_Charset" />
+          </description>
+          <description>The character set used in the font, such as <b>ANSI_CHARSET</b>,
+<b>DEFAULT_CHARSET</b>, or <b>SYMBOL_CHARSET</b>.</description>
+        </item>
+        <item>
+          <description>
+            <b>hFont</b>
+          </description>
+          <description>
+            <b>HFONT</b>
+          </description>
+          <description>
+            <see cref="get_hFont" />
+          </description>
+          <description></description>
+          <description>The Windows font handle that can be selected into a device context for rendering.</description>
+        </item>
+      </list>
+      <h3>OLE Implementation</h3>
+      <para>The system provides a standard implementation of a font object with the
+<b>IFont</b> interface on top of the underlying system font support. A
+font object is created through the function
+<see cref="OleCreateFontIndirect" />. A font object supports a
+number of read/write properties as well as a set of methods through its
+<b>IFont</b> interface and supports the same set of properties (but not
+the methods) through a dispatch interface <see cref="IFontDisp" /> which is
+derived from <b>IDispatch</b> to provide access to the font's properties through
+Automation. The system implementation of the font object supplies both interfaces.</para>
+    </remarks>
+    <seealso cref="IFontDisp" />
+  </member>
+</doc>

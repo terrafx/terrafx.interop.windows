@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFByteStreamProxyClassFactory.CreateByteStreamProxy">
+    <summary>
+      <para>Creates a proxy to a byte stream. The proxy enables a media source to read from a byte stream in another process.</para>
+    </summary>
+    <param name="pByteStream">
+      <para>A pointer to the <see cref="IMFByteStream" /> interface of the byte stream to proxy.</para>
+    </param>
+    <param name="pAttributes">
+      <para>Reserved. Set to <b>NULL</b>.</para>
+    </param>
+    <param name="riid">
+      <para>The interface identifier (IID) of the interface being requested.</para>
+    </param>
+    <param name="ppvObject">
+      <para>Receives a pointer to the interface. The caller must release the interface.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFByteStreamProxyClassFactory" />
+  </member>
+  <member name="IMFByteStreamProxyClassFactory">
+    <summary>
+      <para>Creates a proxy to a byte stream.</para>
+    </summary>
+    <remarks>
+      <para>This interface provides a factory object for creating a proxy to an existing Microsoft Media Foundation byte stream. The CLSID of the factory object is <b>CLSID_MFByteStreamProxyClassFactory</b>.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+  </member>
+</doc>

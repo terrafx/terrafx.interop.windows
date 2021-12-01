@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ANIMATIONINFO">
+    <summary>
+      <para>Describes the animation effects associated with user actions. This structure is used with the
+<see cref="SystemParametersInfo" /> function when the SPI_GETANIMATION or SPI_SETANIMATION action value is specified.</para>
+    </summary>
+    <seealso cref="SystemParametersInfo" />
+  </member>
+  <member name="ANIMATIONINFO.cbSize">
+    <summary>
+      <para>The size of the structure, in bytes. The caller must set this to <code>sizeof(ANIMATIONINFO)</code>.</para>
+    </summary>
+  </member>
+  <member name="ANIMATIONINFO.iMinAnimate">
+    <summary>
+      <para>If this member is nonzero, minimize and restore animation is enabled; otherwise it is disabled.</para>
+    </summary>
+  </member>
+</doc>

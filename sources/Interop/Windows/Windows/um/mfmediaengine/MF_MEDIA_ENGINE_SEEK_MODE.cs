@@ -7,9 +7,13 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MF_MEDIA_ENGINE_SEEK_MODE.xml' path='doc/member[@name="MF_MEDIA_ENGINE_SEEK_MODE"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public enum MF_MEDIA_ENGINE_SEEK_MODE
 {
+    /// <include file='MF_MEDIA_ENGINE_SEEK_MODE.xml' path='doc/member[@name="MF_MEDIA_ENGINE_SEEK_MODE.MF_MEDIA_ENGINE_SEEK_MODE_NORMAL"]/*' />
     MF_MEDIA_ENGINE_SEEK_MODE_NORMAL = 0,
+
+    /// <include file='MF_MEDIA_ENGINE_SEEK_MODE.xml' path='doc/member[@name="MF_MEDIA_ENGINE_SEEK_MODE.MF_MEDIA_ENGINE_SEEK_MODE_APPROXIMATE"]/*' />
     MF_MEDIA_ENGINE_SEEK_MODE_APPROXIMATE = 1,
 }

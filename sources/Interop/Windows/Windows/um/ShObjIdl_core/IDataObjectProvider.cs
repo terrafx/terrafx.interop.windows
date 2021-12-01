@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IDataObjectProvider.xml' path='doc/member[@name="IDataObjectProvider"]/*' />
 [Guid("3D25F6D6-4B2A-433C-9184-7C33AD35D001")]
 [NativeTypeName("struct IDataObjectProvider : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IDataObjectProvider : IDataObjectProvider.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IDataObjectProvider : IDataObjectProvider.Interface
         return ((delegate* unmanaged<IDataObjectProvider*, Guid*, void**, int>)(lpVtbl[0]))((IDataObjectProvider*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IDataObjectProvider : IDataObjectProvider.Interface
         return ((delegate* unmanaged<IDataObjectProvider*, uint>)(lpVtbl[1]))((IDataObjectProvider*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IDataObjectProvider : IDataObjectProvider.Interface
         return ((delegate* unmanaged<IDataObjectProvider*, uint>)(lpVtbl[2]))((IDataObjectProvider*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDataObjectProvider.xml' path='doc/member[@name="IDataObjectProvider.GetDataObject"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetDataObject(IDataObject** dataObject)
@@ -46,6 +51,7 @@ public unsafe partial struct IDataObjectProvider : IDataObjectProvider.Interface
         return ((delegate* unmanaged<IDataObjectProvider*, IDataObject**, int>)(lpVtbl[3]))((IDataObjectProvider*)Unsafe.AsPointer(ref this), dataObject);
     }
 
+    /// <include file='IDataObjectProvider.xml' path='doc/member[@name="IDataObjectProvider.SetDataObject"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetDataObject(IDataObject* dataObject)

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DROPDESCRIPTION">
+    <summary>
+      <para>Describes the image and accompanying text for a drop object.</para>
+    </summary>
+    <remarks>
+      <para>Some UI coloring is applied to the text in <b>szInsert</b> if used by specifying %1 in <b>szMessage</b>. The characters %% and %1 are the subset of <see cref="FormatMessage" /> markers that are processed here.</para>
+    </remarks>
+  </member>
+  <member name="DROPDESCRIPTION.type">
+    <summary>
+      <para>Type: <b><see cref="DROPIMAGETYPE" /></b></para>
+      <para>A <see cref="DROPIMAGETYPE" /> indicating the stock image to use.</para>
+    </summary>
+  </member>
+  <member name="DROPDESCRIPTION.szMessage">
+    <summary>
+      <para>Type: <b>WCHAR[MAX_PATH]</b></para>
+      <para>Text such as "Move to %1".</para>
+    </summary>
+  </member>
+  <member name="DROPDESCRIPTION.szInsert">
+    <summary>
+      <para>Type: <b>WCHAR[MAX_PATH]</b></para>
+      <para>Text such as "Documents", inserted as specified by <b>szMessage</b>.</para>
+    </summary>
+  </member>
+</doc>

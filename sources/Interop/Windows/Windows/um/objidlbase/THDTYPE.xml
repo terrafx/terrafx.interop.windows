@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="THDTYPE">
+    <summary>
+      <para>Indicates whether a particular thread supports a message loop.</para>
+    </summary>
+    <seealso cref="IComThreadingInfo.GetCurrentThreadType" />
+  </member>
+  <member name="THDTYPE.THDTYPE_BLOCKMESSAGES">
+    <summary>
+      <para>The thread does not support a message loop. This behavior is associated with multithreaded apartments.</para>
+    </summary>
+  </member>
+  <member name="THDTYPE.THDTYPE_PROCESSMESSAGES">
+    <summary>
+      <para>The thread supports a message loop. This behavior is associated with single-threaded apartments.</para>
+    </summary>
+  </member>
+</doc>

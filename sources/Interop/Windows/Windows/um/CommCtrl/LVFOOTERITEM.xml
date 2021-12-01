@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="LVFOOTERITEM">
+    <summary>
+      <para>Contains information on a footer item.</para>
+    </summary>
+    <remarks>
+      <para>This structure is used with the <see cref="ListView_GetFooterItem" /> macro and the <a href="https://docs.microsoft.com//windows/desktop/Controls/lvm-getfooteritem">LVM_GETFOOTERITEM</a> message.</para>
+    </remarks>
+  </member>
+  <member name="LVFOOTERITEM.mask">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Set of flags that specify which members of this structure contain data to be set or which members are being requested. This parameter must be one of the following values:</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>LVFIF_TEXT</b>
+          </description>
+          <description>
+            <para>The <b>pszText</b> member is valid input from the caller or is requested and thus should be set by the receiver.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>LVFIF_STATE</b>
+          </description>
+          <description>
+            <para>The <b>state</b> member is valid input from the caller or is requested and thus should be set by the receiver.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="LVFOOTERITEM.iItem">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>The index of the item.</para>
+    </summary>
+  </member>
+  <member name="LVFOOTERITEM.pszText">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPWSTR</a></b></para>
+      <para>A pointer to a null-terminated, Unicode buffer. The calling process is responsible for allocating the buffer.</para>
+    </summary>
+  </member>
+  <member name="LVFOOTERITEM.cchTextMax">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>The number of <b>WCHAR</b><b>s</b> in the buffer pointed to by <b>pszText</b>,  including the terminating <b>NULL</b>.</para>
+    </summary>
+  </member>
+  <member name="LVFOOTERITEM.state">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Indicates the item's state. The <b>stateMask</b> member indicates the valid bits of this member. Currently, <b>state</b> must be set to the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>LVFIS_FOCUSED</b>
+          </description>
+          <description>
+            <para>Bit indicating focus state. Set if the item is in focus, otherwise cleared.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="LVFOOTERITEM.stateMask">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Value specifying which bits of the <b>state</b> member will be retrieved or modified. Currently, this value must be the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>LVFIS_FOCUSED</b>
+          </description>
+          <description>
+            <para>The LVFIS_FOCUSED bit of member <b>state</b> is valid. For example, setting this member to LVFIS_FOCUSED will cause the focus state to be retrieved to member <b>state</b>.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+</doc>

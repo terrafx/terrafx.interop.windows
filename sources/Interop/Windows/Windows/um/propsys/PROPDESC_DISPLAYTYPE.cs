@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PROPDESC_DISPLAYTYPE.xml' path='doc/member[@name="PROPDESC_DISPLAYTYPE"]/*' />
 public enum PROPDESC_DISPLAYTYPE
 {
+    /// <include file='PROPDESC_DISPLAYTYPE.xml' path='doc/member[@name="PROPDESC_DISPLAYTYPE.PDDT_STRING"]/*' />
     PDDT_STRING = 0,
+
+    /// <include file='PROPDESC_DISPLAYTYPE.xml' path='doc/member[@name="PROPDESC_DISPLAYTYPE.PDDT_NUMBER"]/*' />
     PDDT_NUMBER = 1,
+
+    /// <include file='PROPDESC_DISPLAYTYPE.xml' path='doc/member[@name="PROPDESC_DISPLAYTYPE.PDDT_BOOLEAN"]/*' />
     PDDT_BOOLEAN = 2,
+
+    /// <include file='PROPDESC_DISPLAYTYPE.xml' path='doc/member[@name="PROPDESC_DISPLAYTYPE.PDDT_DATETIME"]/*' />
     PDDT_DATETIME = 3,
+
+    /// <include file='PROPDESC_DISPLAYTYPE.xml' path='doc/member[@name="PROPDESC_DISPLAYTYPE.PDDT_ENUMERATED"]/*' />
     PDDT_ENUMERATED = 4,
 }

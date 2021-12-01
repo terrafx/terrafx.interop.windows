@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WICMetadataHeader">
+    <summary>
+      <para>Represents metadata header.</para>
+    </summary>
+  </member>
+  <member name="WICMetadataHeader.Position">
+    <summary>
+      <para>Type: <b>ULARGE_INTEGER</b></para>
+      <para>The position of the header.</para>
+    </summary>
+  </member>
+  <member name="WICMetadataHeader.Length">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The length of the header.</para>
+    </summary>
+  </member>
+  <member name="WICMetadataHeader.Header">
+    <summary>
+      <para>Type: <b>BYTE*</b></para>
+      <para>Pointer to the header.</para>
+    </summary>
+  </member>
+  <member name="WICMetadataHeader.DataOffset">
+    <summary>
+      <para>Type: <b>ULARGE_INTEGER</b></para>
+      <para>The offset of the header.</para>
+    </summary>
+  </member>
+</doc>

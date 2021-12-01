@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='EMROFFSETCLIPRGN.xml' path='doc/member[@name="EMROFFSETCLIPRGN"]/*' />
 public partial struct EMROFFSETCLIPRGN
 {
+    /// <include file='EMROFFSETCLIPRGN.xml' path='doc/member[@name="EMROFFSETCLIPRGN.emr"]/*' />
     public EMR emr;
 
+    /// <include file='EMROFFSETCLIPRGN.xml' path='doc/member[@name="EMROFFSETCLIPRGN.ptlOffset"]/*' />
     public POINTL ptlOffset;
 }

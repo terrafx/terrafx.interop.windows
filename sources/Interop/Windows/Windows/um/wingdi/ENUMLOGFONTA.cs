@@ -5,13 +5,17 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ENUMLOGFONTA.xml' path='doc/member[@name="ENUMLOGFONTA"]/*' />
 public unsafe partial struct ENUMLOGFONTA
 {
+    /// <include file='ENUMLOGFONTA.xml' path='doc/member[@name="ENUMLOGFONTA.elfLogFont"]/*' />
     public LOGFONTA elfLogFont;
 
+    /// <include file='ENUMLOGFONTA.xml' path='doc/member[@name="ENUMLOGFONTA.elfFullName"]/*' />
     [NativeTypeName("BYTE [64]")]
     public fixed byte elfFullName[64];
 
+    /// <include file='ENUMLOGFONTA.xml' path='doc/member[@name="ENUMLOGFONTA.elfStyle"]/*' />
     [NativeTypeName("BYTE [32]")]
     public fixed byte elfStyle[32];
 }

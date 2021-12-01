@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IAppxManifestOptionalPackageInfo.GetIsOptionalPackage">
+    <summary>
+      <para>Determines whether the package is optional.</para>
+    </summary>
+    <param name="isOptionalPackage">
+      <para>True if the package is optional, false otherwise.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IAppxManifestOptionalPackageInfo" />
+  </member>
+  <member name="IAppxManifestOptionalPackageInfo.GetMainPackageName">
+    <summary>
+      <para>Gets the main package name from the optional package.</para>
+    </summary>
+    <param name="mainPackageName">
+      <para>The main package name.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IAppxManifestOptionalPackageInfo" />
+  </member>
+  <member name="IAppxManifestOptionalPackageInfo">
+    <summary>
+      <para>Provides access to attribute values of the optional package information.</para>
+    </summary>
+  </member>
+</doc>

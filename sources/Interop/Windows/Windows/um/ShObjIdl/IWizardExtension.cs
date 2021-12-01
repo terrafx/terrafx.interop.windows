@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IWizardExtension.xml' path='doc/member[@name="IWizardExtension"]/*' />
 [Guid("C02EA696-86CC-491E-9B23-74394A0444A8")]
 [NativeTypeName("struct IWizardExtension : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IWizardExtension : IWizardExtension.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IWizardExtension : IWizardExtension.Interface
         return ((delegate* unmanaged<IWizardExtension*, Guid*, void**, int>)(lpVtbl[0]))((IWizardExtension*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IWizardExtension : IWizardExtension.Interface
         return ((delegate* unmanaged<IWizardExtension*, uint>)(lpVtbl[1]))((IWizardExtension*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IWizardExtension : IWizardExtension.Interface
         return ((delegate* unmanaged<IWizardExtension*, uint>)(lpVtbl[2]))((IWizardExtension*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IWizardExtension.xml' path='doc/member[@name="IWizardExtension.AddPages"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT AddPages(HPROPSHEETPAGE* aPages, uint cPages, uint* pnPagesAdded)
@@ -46,6 +51,7 @@ public unsafe partial struct IWizardExtension : IWizardExtension.Interface
         return ((delegate* unmanaged<IWizardExtension*, HPROPSHEETPAGE*, uint, uint*, int>)(lpVtbl[3]))((IWizardExtension*)Unsafe.AsPointer(ref this), aPages, cPages, pnPagesAdded);
     }
 
+    /// <include file='IWizardExtension.xml' path='doc/member[@name="IWizardExtension.GetFirstPage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetFirstPage(HPROPSHEETPAGE* phpage)
@@ -53,6 +59,7 @@ public unsafe partial struct IWizardExtension : IWizardExtension.Interface
         return ((delegate* unmanaged<IWizardExtension*, HPROPSHEETPAGE*, int>)(lpVtbl[4]))((IWizardExtension*)Unsafe.AsPointer(ref this), phpage);
     }
 
+    /// <include file='IWizardExtension.xml' path='doc/member[@name="IWizardExtension.GetLastPage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetLastPage(HPROPSHEETPAGE* phpage)

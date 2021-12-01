@@ -5,14 +5,19 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='EMREXTFLOODFILL.xml' path='doc/member[@name="EMREXTFLOODFILL"]/*' />
 public partial struct EMREXTFLOODFILL
 {
+    /// <include file='EMREXTFLOODFILL.xml' path='doc/member[@name="EMREXTFLOODFILL.emr"]/*' />
     public EMR emr;
 
+    /// <include file='EMREXTFLOODFILL.xml' path='doc/member[@name="EMREXTFLOODFILL.ptlStart"]/*' />
     public POINTL ptlStart;
 
+    /// <include file='EMREXTFLOODFILL.xml' path='doc/member[@name="EMREXTFLOODFILL.crColor"]/*' />
     public COLORREF crColor;
 
+    /// <include file='EMREXTFLOODFILL.xml' path='doc/member[@name="EMREXTFLOODFILL.iMode"]/*' />
     [NativeTypeName("DWORD")]
     public uint iMode;
 }

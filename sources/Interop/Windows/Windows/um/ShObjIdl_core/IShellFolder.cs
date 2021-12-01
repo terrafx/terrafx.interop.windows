@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IShellFolder.xml' path='doc/member[@name="IShellFolder"]/*' />
 [Guid("000214E6-0000-0000-C000-000000000046")]
 [NativeTypeName("struct IShellFolder : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IShellFolder : IShellFolder.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IShellFolder : IShellFolder.Interface
         return ((delegate* unmanaged<IShellFolder*, Guid*, void**, int>)(lpVtbl[0]))((IShellFolder*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IShellFolder : IShellFolder.Interface
         return ((delegate* unmanaged<IShellFolder*, uint>)(lpVtbl[1]))((IShellFolder*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IShellFolder : IShellFolder.Interface
         return ((delegate* unmanaged<IShellFolder*, uint>)(lpVtbl[2]))((IShellFolder*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IShellFolder.xml' path='doc/member[@name="IShellFolder.ParseDisplayName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT ParseDisplayName(HWND hwnd, IBindCtx* pbc, [NativeTypeName("LPWSTR")] ushort* pszDisplayName, [NativeTypeName("ULONG *")] uint* pchEaten, [NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidl, [NativeTypeName("ULONG *")] uint* pdwAttributes)
@@ -46,6 +51,7 @@ public unsafe partial struct IShellFolder : IShellFolder.Interface
         return ((delegate* unmanaged<IShellFolder*, HWND, IBindCtx*, ushort*, uint*, ITEMIDLIST**, uint*, int>)(lpVtbl[3]))((IShellFolder*)Unsafe.AsPointer(ref this), hwnd, pbc, pszDisplayName, pchEaten, ppidl, pdwAttributes);
     }
 
+    /// <include file='IShellFolder.xml' path='doc/member[@name="IShellFolder.EnumObjects"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT EnumObjects(HWND hwnd, [NativeTypeName("SHCONTF")] uint grfFlags, IEnumIDList** ppenumIDList)
@@ -53,6 +59,7 @@ public unsafe partial struct IShellFolder : IShellFolder.Interface
         return ((delegate* unmanaged<IShellFolder*, HWND, uint, IEnumIDList**, int>)(lpVtbl[4]))((IShellFolder*)Unsafe.AsPointer(ref this), hwnd, grfFlags, ppenumIDList);
     }
 
+    /// <include file='IShellFolder.xml' path='doc/member[@name="IShellFolder.BindToObject"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT BindToObject([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, IBindCtx* pbc, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
@@ -60,6 +67,7 @@ public unsafe partial struct IShellFolder : IShellFolder.Interface
         return ((delegate* unmanaged<IShellFolder*, ITEMIDLIST*, IBindCtx*, Guid*, void**, int>)(lpVtbl[5]))((IShellFolder*)Unsafe.AsPointer(ref this), pidl, pbc, riid, ppv);
     }
 
+    /// <include file='IShellFolder.xml' path='doc/member[@name="IShellFolder.BindToStorage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT BindToStorage([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, IBindCtx* pbc, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
@@ -67,6 +75,7 @@ public unsafe partial struct IShellFolder : IShellFolder.Interface
         return ((delegate* unmanaged<IShellFolder*, ITEMIDLIST*, IBindCtx*, Guid*, void**, int>)(lpVtbl[6]))((IShellFolder*)Unsafe.AsPointer(ref this), pidl, pbc, riid, ppv);
     }
 
+    /// <include file='IShellFolder.xml' path='doc/member[@name="IShellFolder.CompareIDs"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT CompareIDs(LPARAM lParam, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl1, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl2)
@@ -74,6 +83,7 @@ public unsafe partial struct IShellFolder : IShellFolder.Interface
         return ((delegate* unmanaged<IShellFolder*, LPARAM, ITEMIDLIST*, ITEMIDLIST*, int>)(lpVtbl[7]))((IShellFolder*)Unsafe.AsPointer(ref this), lParam, pidl1, pidl2);
     }
 
+    /// <include file='IShellFolder.xml' path='doc/member[@name="IShellFolder.CreateViewObject"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT CreateViewObject(HWND hwndOwner, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
@@ -81,6 +91,7 @@ public unsafe partial struct IShellFolder : IShellFolder.Interface
         return ((delegate* unmanaged<IShellFolder*, HWND, Guid*, void**, int>)(lpVtbl[8]))((IShellFolder*)Unsafe.AsPointer(ref this), hwndOwner, riid, ppv);
     }
 
+    /// <include file='IShellFolder.xml' path='doc/member[@name="IShellFolder.GetAttributesOf"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT GetAttributesOf(uint cidl, [NativeTypeName("LPCITEMIDLIST *")] ITEMIDLIST** apidl, [NativeTypeName("SFGAOF *")] uint* rgfInOut)
@@ -88,6 +99,7 @@ public unsafe partial struct IShellFolder : IShellFolder.Interface
         return ((delegate* unmanaged<IShellFolder*, uint, ITEMIDLIST**, uint*, int>)(lpVtbl[9]))((IShellFolder*)Unsafe.AsPointer(ref this), cidl, apidl, rgfInOut);
     }
 
+    /// <include file='IShellFolder.xml' path='doc/member[@name="IShellFolder.GetUIObjectOf"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT GetUIObjectOf(HWND hwndOwner, uint cidl, [NativeTypeName("LPCITEMIDLIST *")] ITEMIDLIST** apidl, [NativeTypeName("const IID &")] Guid* riid, uint* rgfReserved, void** ppv)
@@ -95,6 +107,7 @@ public unsafe partial struct IShellFolder : IShellFolder.Interface
         return ((delegate* unmanaged<IShellFolder*, HWND, uint, ITEMIDLIST**, Guid*, uint*, void**, int>)(lpVtbl[10]))((IShellFolder*)Unsafe.AsPointer(ref this), hwndOwner, cidl, apidl, riid, rgfReserved, ppv);
     }
 
+    /// <include file='IShellFolder.xml' path='doc/member[@name="IShellFolder.GetDisplayNameOf"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT GetDisplayNameOf([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("SHGDNF")] uint uFlags, STRRET* pName)
@@ -102,6 +115,7 @@ public unsafe partial struct IShellFolder : IShellFolder.Interface
         return ((delegate* unmanaged<IShellFolder*, ITEMIDLIST*, uint, STRRET*, int>)(lpVtbl[11]))((IShellFolder*)Unsafe.AsPointer(ref this), pidl, uFlags, pName);
     }
 
+    /// <include file='IShellFolder.xml' path='doc/member[@name="IShellFolder.SetNameOf"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT SetNameOf(HWND hwnd, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("LPCWSTR")] ushort* pszName, [NativeTypeName("SHGDNF")] uint uFlags, [NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidlOut)

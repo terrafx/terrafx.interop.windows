@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IElementBehaviorSiteOM.xml' path='doc/member[@name="IElementBehaviorSiteOM"]/*' />
 [Guid("3050F489-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IElementBehaviorSiteOM : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IElementBehaviorSiteOM : IElementBehaviorSiteOM.Int
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IElementBehaviorSiteOM : IElementBehaviorSiteOM.Int
         return ((delegate* unmanaged<IElementBehaviorSiteOM*, Guid*, void**, int>)(lpVtbl[0]))((IElementBehaviorSiteOM*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IElementBehaviorSiteOM : IElementBehaviorSiteOM.Int
         return ((delegate* unmanaged<IElementBehaviorSiteOM*, uint>)(lpVtbl[1]))((IElementBehaviorSiteOM*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IElementBehaviorSiteOM : IElementBehaviorSiteOM.Int
         return ((delegate* unmanaged<IElementBehaviorSiteOM*, uint>)(lpVtbl[2]))((IElementBehaviorSiteOM*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IElementBehaviorSiteOM.xml' path='doc/member[@name="IElementBehaviorSiteOM.RegisterEvent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT RegisterEvent([NativeTypeName("LPOLESTR")] ushort* pchEvent, [NativeTypeName("LONG")] int lFlags, [NativeTypeName("LONG *")] int* plCookie)
@@ -46,6 +51,7 @@ public unsafe partial struct IElementBehaviorSiteOM : IElementBehaviorSiteOM.Int
         return ((delegate* unmanaged<IElementBehaviorSiteOM*, ushort*, int, int*, int>)(lpVtbl[3]))((IElementBehaviorSiteOM*)Unsafe.AsPointer(ref this), pchEvent, lFlags, plCookie);
     }
 
+    /// <include file='IElementBehaviorSiteOM.xml' path='doc/member[@name="IElementBehaviorSiteOM.GetEventCookie"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetEventCookie([NativeTypeName("LPOLESTR")] ushort* pchEvent, [NativeTypeName("LONG *")] int* plCookie)
@@ -53,6 +59,7 @@ public unsafe partial struct IElementBehaviorSiteOM : IElementBehaviorSiteOM.Int
         return ((delegate* unmanaged<IElementBehaviorSiteOM*, ushort*, int*, int>)(lpVtbl[4]))((IElementBehaviorSiteOM*)Unsafe.AsPointer(ref this), pchEvent, plCookie);
     }
 
+    /// <include file='IElementBehaviorSiteOM.xml' path='doc/member[@name="IElementBehaviorSiteOM.FireEvent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT FireEvent([NativeTypeName("LONG")] int lCookie, IHTMLEventObj* pEventObject)
@@ -60,6 +67,7 @@ public unsafe partial struct IElementBehaviorSiteOM : IElementBehaviorSiteOM.Int
         return ((delegate* unmanaged<IElementBehaviorSiteOM*, int, IHTMLEventObj*, int>)(lpVtbl[5]))((IElementBehaviorSiteOM*)Unsafe.AsPointer(ref this), lCookie, pEventObject);
     }
 
+    /// <include file='IElementBehaviorSiteOM.xml' path='doc/member[@name="IElementBehaviorSiteOM.CreateEventObject"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT CreateEventObject(IHTMLEventObj** ppEventObject)
@@ -67,6 +75,7 @@ public unsafe partial struct IElementBehaviorSiteOM : IElementBehaviorSiteOM.Int
         return ((delegate* unmanaged<IElementBehaviorSiteOM*, IHTMLEventObj**, int>)(lpVtbl[6]))((IElementBehaviorSiteOM*)Unsafe.AsPointer(ref this), ppEventObject);
     }
 
+    /// <include file='IElementBehaviorSiteOM.xml' path='doc/member[@name="IElementBehaviorSiteOM.RegisterName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT RegisterName([NativeTypeName("LPOLESTR")] ushort* pchName)
@@ -74,6 +83,7 @@ public unsafe partial struct IElementBehaviorSiteOM : IElementBehaviorSiteOM.Int
         return ((delegate* unmanaged<IElementBehaviorSiteOM*, ushort*, int>)(lpVtbl[7]))((IElementBehaviorSiteOM*)Unsafe.AsPointer(ref this), pchName);
     }
 
+    /// <include file='IElementBehaviorSiteOM.xml' path='doc/member[@name="IElementBehaviorSiteOM.RegisterUrn"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT RegisterUrn([NativeTypeName("LPOLESTR")] ushort* pchUrn)

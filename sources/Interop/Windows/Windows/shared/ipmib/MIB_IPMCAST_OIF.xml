@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MIB_IPMCAST_OIF">
+    <summary>
+      <para>The
+<b>MIB_IPMCAST_OIF</b> structure stores the information required to send an outgoing IP multicast packet.</para>
+    </summary>
+    <remarks>
+      <para>The <b>MIB_IPMCAST_MFE</b> structure is used by the <a href="https://docs.microsoft.com//windows/desktop/RRAS/multicast-group-manager-functions">Multicast Group Manager functions</a>. The <b>MIB_IPMCAST_OIF</b> structure is retrieved as a member of the <b>MIB_IPMCAST_MFE</b> structure  using the <see cref="MgmGetMfe" /> function.</para>
+      <para>On the Microsoft Windows Software Development Kit (SDK) released for Windows Server 2008and later, the organization of header files has changed. This  structure is defined in the <i>Ipmib.h</i> header file, not in the <i>Iprtrmib.h</i> header file. Note that the <i>Ipmib.h</i> header file is automatically included in <i>Iprtrmib.h</i>, which is automatically included in the <i>Iphlpapi.h</i> header file. The  <i>Ipmib.h</i> and <i>Iprtrmib.h</i> header files should never be used directly.</para>
+    </remarks>
+    <seealso cref="MIB_IPMCAST_MFE" />
+    <seealso cref="MIB_IPMCAST_OIF_STATS" />
+    <seealso cref="MgmGetMfe" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/RRAS/multicast-group-manager-functions">Multicast Group Manager functions</seealso>
+  </member>
+  <member name="MIB_IPMCAST_OIF.dwOutIfIndex">
+    <summary>
+      <para>The index of the interface on which to send the outgoing IP multicast packet.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPMCAST_OIF.dwNextHopAddr">
+    <summary>
+      <para>The destination address for the outgoing IPv4 multicast packet.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPMCAST_OIF.pvReserved">
+    <summary>
+      <para>Reserved. This member should be <b>NULL</b>.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPMCAST_OIF.dwReserved">
+    <summary>
+      <para>Reserved. This member should be zero.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPMCAST_OIF">
+    <summary>
+      <para>The
+<b>MIB_IPMCAST_OIF</b> structure stores the information required to send an outgoing IP multicast packet.</para>
+    </summary>
+    <remarks>
+      <para>The <b>MIB_IPMCAST_MFE</b> structure is used by the <a href="https://docs.microsoft.com//windows/desktop/RRAS/multicast-group-manager-functions">Multicast Group Manager functions</a>. The <b>MIB_IPMCAST_OIF</b> structure is retrieved as a member of the <b>MIB_IPMCAST_MFE</b> structure  using the <see cref="MgmGetMfe" /> function.</para>
+      <para>On the Microsoft Windows Software Development Kit (SDK) released for Windows Server 2008and later, the organization of header files has changed. This  structure is defined in the <i>Ipmib.h</i> header file, not in the <i>Iprtrmib.h</i> header file. Note that the <i>Ipmib.h</i> header file is automatically included in <i>Iprtrmib.h</i>, which is automatically included in the <i>Iphlpapi.h</i> header file. The  <i>Ipmib.h</i> and <i>Iprtrmib.h</i> header files should never be used directly.</para>
+    </remarks>
+    <seealso cref="MIB_IPMCAST_MFE" />
+    <seealso cref="MIB_IPMCAST_OIF_STATS" />
+    <seealso cref="MgmGetMfe" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/RRAS/multicast-group-manager-functions">Multicast Group Manager functions</seealso>
+  </member>
+  <member name="MIB_IPMCAST_OIF.dwOutIfIndex">
+    <summary>
+      <para>The index of the interface on which to send the outgoing IP multicast packet.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPMCAST_OIF.dwNextHopAddr">
+    <summary>
+      <para>The destination address for the outgoing IPv4 multicast packet.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPMCAST_OIF.dwReserved">
+    <summary>
+      <para>Reserved. This member should be zero.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPMCAST_OIF.dwReserved1">
+    <summary>
+      <para>Reserved. This member should be zero.</para>
+    </summary>
+  </member>
+</doc>

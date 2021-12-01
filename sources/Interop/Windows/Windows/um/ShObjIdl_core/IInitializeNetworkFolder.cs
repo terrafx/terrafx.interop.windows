@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IInitializeNetworkFolder.xml' path='doc/member[@name="IInitializeNetworkFolder"]/*' />
 [Guid("6E0F9881-42A8-4F2A-97F8-8AF4E026D92D")]
 [NativeTypeName("struct IInitializeNetworkFolder : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IInitializeNetworkFolder : IInitializeNetworkFolder
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IInitializeNetworkFolder : IInitializeNetworkFolder
         return ((delegate* unmanaged<IInitializeNetworkFolder*, Guid*, void**, int>)(lpVtbl[0]))((IInitializeNetworkFolder*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IInitializeNetworkFolder : IInitializeNetworkFolder
         return ((delegate* unmanaged<IInitializeNetworkFolder*, uint>)(lpVtbl[1]))((IInitializeNetworkFolder*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IInitializeNetworkFolder : IInitializeNetworkFolder
         return ((delegate* unmanaged<IInitializeNetworkFolder*, uint>)(lpVtbl[2]))((IInitializeNetworkFolder*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IInitializeNetworkFolder.xml' path='doc/member[@name="IInitializeNetworkFolder.Initialize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Initialize([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlTarget, uint uDisplayType, [NativeTypeName("LPCWSTR")] ushort* pszResName, [NativeTypeName("LPCWSTR")] ushort* pszProvider)

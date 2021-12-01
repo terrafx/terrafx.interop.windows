@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PackageDependencyProcessorArchitectures">
+    <summary>
+      <para>Defines the processor architectures for a framework package dependency that you create by using the <see cref="TryCreatePackageDependency" /> function.</para>
+    </summary>
+    <seealso cref="TryCreatePackageDependency" />
+  </member>
+  <member name="PackageDependencyProcessorArchitectures.PackageDependencyProcessorArchitectures_None">
+    <summary>
+      <para>No processor architecture is specified.</para>
+    </summary>
+  </member>
+  <member name="PackageDependencyProcessorArchitectures.PackageDependencyProcessorArchitectures_Neutral">
+    <summary>
+      <para>Specifies the neutral architecture.</para>
+    </summary>
+  </member>
+  <member name="PackageDependencyProcessorArchitectures.PackageDependencyProcessorArchitectures_X86">
+    <summary>
+      <para>Specifies the x86 architecture.</para>
+    </summary>
+  </member>
+  <member name="PackageDependencyProcessorArchitectures.PackageDependencyProcessorArchitectures_X64">
+    <summary>
+      <para>Specifies the x64 architecture.</para>
+    </summary>
+  </member>
+  <member name="PackageDependencyProcessorArchitectures.PackageDependencyProcessorArchitectures_Arm">
+    <summary>
+      <para>Specifies the ARM architecture.</para>
+    </summary>
+  </member>
+  <member name="PackageDependencyProcessorArchitectures.PackageDependencyProcessorArchitectures_Arm64">
+    <summary>
+      <para>Specifies the ARM64 architecture.</para>
+    </summary>
+  </member>
+  <member name="PackageDependencyProcessorArchitectures.PackageDependencyProcessorArchitectures_X86A64">
+    <summary>
+      <para>Specifies the x86/A64 architecture.</para>
+    </summary>
+  </member>
+</doc>

@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HELPBUTTONSTATES.xml' path='doc/member[@name="HELPBUTTONSTATES"]/*' />
 public enum HELPBUTTONSTATES
 {
+    /// <include file='HELPBUTTONSTATES.xml' path='doc/member[@name="HELPBUTTONSTATES.HBS_NORMAL"]/*' />
     HBS_NORMAL = 1,
+
+    /// <include file='HELPBUTTONSTATES.xml' path='doc/member[@name="HELPBUTTONSTATES.HBS_HOT"]/*' />
     HBS_HOT = 2,
+
+    /// <include file='HELPBUTTONSTATES.xml' path='doc/member[@name="HELPBUTTONSTATES.HBS_PUSHED"]/*' />
     HBS_PUSHED = 3,
+
+    /// <include file='HELPBUTTONSTATES.xml' path='doc/member[@name="HELPBUTTONSTATES.HBS_DISABLED"]/*' />
     HBS_DISABLED = 4,
 }

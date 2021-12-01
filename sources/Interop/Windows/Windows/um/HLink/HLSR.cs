@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HLSR.xml' path='doc/member[@name="HLSR"]/*' />
 public enum HLSR
 {
+    /// <include file='HLSR.xml' path='doc/member[@name="HLSR.HLSR_HOME"]/*' />
     HLSR_HOME = 0,
+
+    /// <include file='HLSR.xml' path='doc/member[@name="HLSR.HLSR_SEARCHPAGE"]/*' />
     HLSR_SEARCHPAGE = 1,
+
+    /// <include file='HLSR.xml' path='doc/member[@name="HLSR.HLSR_HISTORYFOLDER"]/*' />
     HLSR_HISTORYFOLDER = 2,
 }

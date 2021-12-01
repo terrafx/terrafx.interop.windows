@@ -1,0 +1,350 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IBaseFilter.EnumPins">
+    <summary>
+      <para>The <code>EnumPins</code> method enumerates the pins on this filter.</para>
+    </summary>
+    <param name="ppEnum">
+      <para>Address of a variable that receives a pointer to the <see cref="IEnumPins" /> interface.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>Insufficient memory</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer argument
+</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method returns an enumerator that supports the <b>IEnumPins</b> interface, which works like a standard COM enumerator. For more information, see <a href="https://docs.microsoft.com//windows/desktop/DirectShow/enumerating-pins">Enumerating Pins</a>.</para>
+      <para>If the method succeeds, the <b>IEnumPins</b> interface has an outstanding reference count. Be sure to release the interface when you are done.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IBaseFilter Interface" />
+  </member>
+  <member name="IBaseFilter.FindPin">
+    <summary>
+      <para>The <code>FindPin</code> method retrieves the pin with the specified identifier.</para>
+    </summary>
+    <param name="Id">
+      <para>Pointer to a constant wide-character string that identifies the pin. Call the <see cref="IPin.QueryId" /> method to retrieve a pin's identifier.</para>
+    </param>
+    <param name="ppPin">
+      <para>Address of a variable that receives a pointer to the pin's <see cref="IPin" /> interface. If the method fails, <i>*ppPin</i> is set to <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer argument.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_NOT_FOUND</b>
+            </para>
+          </description>
+          <description>
+            <para>Could not find a pin with this identifier.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method supports graph persistence. Use the <see cref="IPin.QueryId" /> method to save a pin's state, and use this method to restore the state. The pin's identifier string is defined by the filter implementation. The identifier must be unique within the filter.</para>
+      <para>If the method succeeds, the <b>IPin</b> interface that it returns has an outstanding reference count. Be sure to release the interface when you are done.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IBaseFilter Interface" />
+  </member>
+  <member name="IBaseFilter.JoinFilterGraph">
+    <summary>
+      <para>The <code>JoinFilterGraph</code> method notifies the filter that it has joined or left the filter graph.</para>
+    </summary>
+    <param name="pGraph">
+      <para>Pointer to the Filter Graph Manager's <see cref="IFilterGraph" /> interface, or <b>NULL</b> if the filter is leaving the graph.</para>
+    </param>
+    <param name="pName">
+      <para>Pointer to a wide-character string that specifies a name for the filter.</para>
+    </param>
+    <returns>
+      <para>Returns S_OK if successful, or an <b>HRESULT</b> value indicating the cause of the error.</para>
+    </returns>
+    <remarks>
+      <para>When the Filter Graph Manager adds a filter to the filter graph, it calls this method with a pointer to itself. It assigns a name for this instance of the filter through the <i>pName</i> parameter. The name can be retrieved by calling the <see cref="IBaseFilter.QueryFilterInfo" /> method.</para>
+      <para>When the Filter Graph Manager removes the filter from the graph, it calls this method with a <b>NULL</b> pointer.</para>
+      <para>Applications should never call this method. To add a filter to the graph, call the <see cref="IFilterGraph.AddFilter" /> method on the filter graph manager.</para>
+      <para>
+        <b>Filter developers</b>: The filter can store the <b>IFilterGraph</b> interface pointer and query it for other Filter Graph Manager interfaces. However, it must never hold a reference count on the Filter Graph Manager. Doing so creates a circular reference count, because the Filter Graph Manager keeps a reference count on the filter. A circular reference count prevents the interface from being released properly, which can lead to a deadlock. The <b>IFilterGraph</b> interface is guaranteed to be valid until the Filter Graph Manager calls this method again with the value <b>NULL</b>. For an implementation of this method, see the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/cbasefilter-joinfiltergraph">CBaseFilter.JoinFilterGraph</a> method.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IBaseFilter Interface" />
+  </member>
+  <member name="IBaseFilter.QueryFilterInfo">
+    <summary>
+      <para>The <code>QueryFilterInfo</code> method retrieves information about the filter.</para>
+    </summary>
+    <param name="pInfo">
+      <para>Pointer to a <see cref="FILTER_INFO" /> structure.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer argument
+</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method fills the <b>FILTER_INFO</b> structure with the filter information. On return, if the <b>pGraph</b> member of the <b>FILTER_INFO</b> structure is non-<b>NULL</b>, the <see cref="IFilterGraph" /> interface has an outstanding reference count. Be sure to release the interface when you are done.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IBaseFilter Interface" />
+  </member>
+  <member name="IBaseFilter.QueryVendorInfo">
+    <summary>
+      <para>The <code>QueryVendorInfo</code> method retrieves a string containing vendor information.</para>
+    </summary>
+    <param name="pVendorInfo">
+      <para>Address of a variable that receives a pointer to a wide-character string containing the vendor information.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_NOTIMPL</b>
+            </para>
+          </description>
+          <description>
+            <para>Method is not supported.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer argument.
+</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method is optional; filters are not required to support it.</para>
+      <para>If the method is supported, it uses the <b>CoTaskMemAlloc</b> function to allocate memory for the string. Call the <b>CoTaskMemFree</b> function to free the memory.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IBaseFilter Interface" />
+  </member>
+  <member name="IBaseFilter.GetState">
+    <summary>
+      <para>The <b>GetState</b> method retrieves the filter's state (running, stopped, or paused).</para>
+    </summary>
+    <param name="dwMilliSecsTimeout">
+      <para>Time-out interval, in milliseconds. To block indefinitely, use the value <b>INFINITE</b>.</para>
+    </param>
+    <param name="State">
+      <para>Receives a member of the <see cref="FILTER_STATE" /> enumerated type, indicating the filter's state.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include those shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer argument.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_S_STATE_INTERMEDIATE</b>
+            </para>
+          </description>
+          <description>
+            <para>Intermediate state.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_S_CANT_CUE</b>
+            </para>
+          </description>
+          <description>
+            <para>The filter is active, but cannot deliver data.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>State transitions can be asynchronous. If the filter is transitioning to a new state, and the method times out before the transition completes, the method returns <b>VFW_S_STATE_INTERMEDIATE</b>.</para>
+      <para>If a filter cannot deliver data for some reason, it returns <b>VFW_S_CANT_CUE</b>. Live capture filters return this value while paused, because they do not deliver data in the paused state.</para>
+      <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/DirectShow/data-flow-in-the-filter-graph">Data Flow in the Filter Graph</a>.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IBaseFilter" />
+    <seealso cref="IMediaFilter Interface" />
+  </member>
+  <member name="IBaseFilter.Pause">
+    <summary>
+      <para>The <b>Pause</b> method pauses the filter.</para>
+    </summary>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include those shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>Transition is not complete.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success. Transition is complete.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>When a filter is paused, it can receive, process, and deliver samples. However, a renderer filter will only accept one sample while paused. Therefore, when the filter graph is paused, samples move through the graph until the first sample reaches the renderer. At that point, streaming is paused until the <see cref="IMediaFilter.Run" /> method is called. Video renderers display the first sample as a still frame.</para>
+      <para>Live capture filters do not deliver any samples while paused, only while running.</para>
+      <para>The state transition might be asynchronous. If the method returns before the transition completes, the return value is <b>S_FALSE</b>. A renderer filter does not complete the transition to paused until either (1) it receives one sample, or (2) it receives an end-of-stream notification. While the state transition is pending, <see cref="IMediaFilter.GetState" /> returns <b>VFW_S_STATE_INTERMEDIATE</b>.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IBaseFilter" />
+    <seealso cref="IMediaFilter Interface" />
+  </member>
+  <member name="IBaseFilter">
+    <summary>
+      <para>The <code>IBaseFilter</code> interface is the primary interface for DirectShow filters. All DirectShow filters must expose this interface. The Filter Graph Manager uses this interface to control filters. Applications can use this interface to enumerate pins and query for filter information, but should not use it to change the state of a filter. Instead, use the <see cref="IMediaControl" /> interface on the Filter Graph Manager.</para>
+      <para>
+        <b>Filter developers</b>: Implement this interface on every DirectShow filter. The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/cbasefilter">CBaseFilter</a> base class implements this interface.</para>
+    </summary>
+    <seealso cref="IMediaFilter" />
+  </member>
+</doc>

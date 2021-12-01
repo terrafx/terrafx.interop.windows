@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MERGE_UPDATE_STATUS.xml' path='doc/member[@name="MERGE_UPDATE_STATUS"]/*' />
 public enum MERGE_UPDATE_STATUS
 {
+    /// <include file='MERGE_UPDATE_STATUS.xml' path='doc/member[@name="MERGE_UPDATE_STATUS.MUS_COMPLETE"]/*' />
     MUS_COMPLETE = 0,
+
+    /// <include file='MERGE_UPDATE_STATUS.xml' path='doc/member[@name="MERGE_UPDATE_STATUS.MUS_USERINPUTNEEDED"]/*' />
     MUS_USERINPUTNEEDED = (MUS_COMPLETE + 1),
+
+    /// <include file='MERGE_UPDATE_STATUS.xml' path='doc/member[@name="MERGE_UPDATE_STATUS.MUS_FAILED"]/*' />
     MUS_FAILED = (MUS_USERINPUTNEEDED + 1),
 }

@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='FLOAT128.xml' path='doc/member[@name="FLOAT128"]/*' />
 public partial struct FLOAT128
 {
+    /// <include file='FLOAT128.xml' path='doc/member[@name="FLOAT128.LowPart"]/*' />
     [NativeTypeName("long long")]
     public long LowPart;
 
+    /// <include file='FLOAT128.xml' path='doc/member[@name="FLOAT128.HighPart"]/*' />
     [NativeTypeName("long long")]
     public long HighPart;
 }

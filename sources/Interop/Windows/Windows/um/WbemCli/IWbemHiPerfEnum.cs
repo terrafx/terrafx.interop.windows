@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IWbemHiPerfEnum.xml' path='doc/member[@name="IWbemHiPerfEnum"]/*' />
 [Guid("2705C288-79AE-11D2-B348-00105A1F8177")]
 [NativeTypeName("struct IWbemHiPerfEnum : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IWbemHiPerfEnum : IWbemHiPerfEnum.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IWbemHiPerfEnum : IWbemHiPerfEnum.Interface
         return ((delegate* unmanaged<IWbemHiPerfEnum*, Guid*, void**, int>)(lpVtbl[0]))((IWbemHiPerfEnum*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IWbemHiPerfEnum : IWbemHiPerfEnum.Interface
         return ((delegate* unmanaged<IWbemHiPerfEnum*, uint>)(lpVtbl[1]))((IWbemHiPerfEnum*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IWbemHiPerfEnum : IWbemHiPerfEnum.Interface
         return ((delegate* unmanaged<IWbemHiPerfEnum*, uint>)(lpVtbl[2]))((IWbemHiPerfEnum*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IWbemHiPerfEnum.xml' path='doc/member[@name="IWbemHiPerfEnum.AddObjects"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT AddObjects([NativeTypeName("long")] int lFlags, [NativeTypeName("ULONG")] uint uNumObjects, [NativeTypeName("long *")] int* apIds, IWbemObjectAccess** apObj)
@@ -46,6 +51,7 @@ public unsafe partial struct IWbemHiPerfEnum : IWbemHiPerfEnum.Interface
         return ((delegate* unmanaged<IWbemHiPerfEnum*, int, uint, int*, IWbemObjectAccess**, int>)(lpVtbl[3]))((IWbemHiPerfEnum*)Unsafe.AsPointer(ref this), lFlags, uNumObjects, apIds, apObj);
     }
 
+    /// <include file='IWbemHiPerfEnum.xml' path='doc/member[@name="IWbemHiPerfEnum.RemoveObjects"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT RemoveObjects([NativeTypeName("long")] int lFlags, [NativeTypeName("ULONG")] uint uNumObjects, [NativeTypeName("long *")] int* apIds)
@@ -53,6 +59,7 @@ public unsafe partial struct IWbemHiPerfEnum : IWbemHiPerfEnum.Interface
         return ((delegate* unmanaged<IWbemHiPerfEnum*, int, uint, int*, int>)(lpVtbl[4]))((IWbemHiPerfEnum*)Unsafe.AsPointer(ref this), lFlags, uNumObjects, apIds);
     }
 
+    /// <include file='IWbemHiPerfEnum.xml' path='doc/member[@name="IWbemHiPerfEnum.GetObjects"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetObjects([NativeTypeName("long")] int lFlags, [NativeTypeName("ULONG")] uint uNumObjects, IWbemObjectAccess** apObj, [NativeTypeName("ULONG *")] uint* puReturned)
@@ -60,6 +67,7 @@ public unsafe partial struct IWbemHiPerfEnum : IWbemHiPerfEnum.Interface
         return ((delegate* unmanaged<IWbemHiPerfEnum*, int, uint, IWbemObjectAccess**, uint*, int>)(lpVtbl[5]))((IWbemHiPerfEnum*)Unsafe.AsPointer(ref this), lFlags, uNumObjects, apObj, puReturned);
     }
 
+    /// <include file='IWbemHiPerfEnum.xml' path='doc/member[@name="IWbemHiPerfEnum.RemoveAll"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT RemoveAll([NativeTypeName("long")] int lFlags)

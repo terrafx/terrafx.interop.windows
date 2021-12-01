@@ -7,9 +7,11 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='INTERACTION_ARGUMENTS_TAP.xml' path='doc/member[@name="INTERACTION_ARGUMENTS_TAP"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public partial struct INTERACTION_ARGUMENTS_TAP
 {
+    /// <include file='INTERACTION_ARGUMENTS_TAP.xml' path='doc/member[@name="INTERACTION_ARGUMENTS_TAP.count"]/*' />
     [NativeTypeName("UINT32")]
     public uint count;
 }

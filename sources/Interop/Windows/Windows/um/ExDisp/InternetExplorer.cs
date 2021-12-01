@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='InternetExplorer.xml' path='doc/member[@name="InternetExplorer"]/*' />
 [Guid("0002DF01-0000-0000-C000-000000000046")]
 public partial struct InternetExplorer
 {

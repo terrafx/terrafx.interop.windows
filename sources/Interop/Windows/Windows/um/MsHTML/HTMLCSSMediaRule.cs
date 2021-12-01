@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HTMLCSSMediaRule.xml' path='doc/member[@name="HTMLCSSMediaRule"]/*' />
 [Guid("305106F1-98B5-11CF-BB82-00AA00BDCE0B")]
 public partial struct HTMLCSSMediaRule
 {

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAppxManifestReader7.xml' path='doc/member[@name="IAppxManifestReader7"]/*' />
 [Guid("8EFE6F27-0CE0-4988-B32D-738EB63DB3B7")]
 [NativeTypeName("struct IAppxManifestReader7 : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IAppxManifestReader7 : IAppxManifestReader7.Interfa
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IAppxManifestReader7 : IAppxManifestReader7.Interfa
         return ((delegate* unmanaged<IAppxManifestReader7*, Guid*, void**, int>)(lpVtbl[0]))((IAppxManifestReader7*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IAppxManifestReader7 : IAppxManifestReader7.Interfa
         return ((delegate* unmanaged<IAppxManifestReader7*, uint>)(lpVtbl[1]))((IAppxManifestReader7*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IAppxManifestReader7 : IAppxManifestReader7.Interfa
         return ((delegate* unmanaged<IAppxManifestReader7*, uint>)(lpVtbl[2]))((IAppxManifestReader7*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAppxManifestReader7.xml' path='doc/member[@name="IAppxManifestReader7.GetDriverDependencies"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetDriverDependencies(IAppxManifestDriverDependenciesEnumerator** driverDependencies)
@@ -46,6 +51,7 @@ public unsafe partial struct IAppxManifestReader7 : IAppxManifestReader7.Interfa
         return ((delegate* unmanaged<IAppxManifestReader7*, IAppxManifestDriverDependenciesEnumerator**, int>)(lpVtbl[3]))((IAppxManifestReader7*)Unsafe.AsPointer(ref this), driverDependencies);
     }
 
+    /// <include file='IAppxManifestReader7.xml' path='doc/member[@name="IAppxManifestReader7.GetOSPackageDependencies"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetOSPackageDependencies(IAppxManifestOSPackageDependenciesEnumerator** osPackageDependencies)
@@ -53,6 +59,7 @@ public unsafe partial struct IAppxManifestReader7 : IAppxManifestReader7.Interfa
         return ((delegate* unmanaged<IAppxManifestReader7*, IAppxManifestOSPackageDependenciesEnumerator**, int>)(lpVtbl[4]))((IAppxManifestReader7*)Unsafe.AsPointer(ref this), osPackageDependencies);
     }
 
+    /// <include file='IAppxManifestReader7.xml' path='doc/member[@name="IAppxManifestReader7.GetHostRuntimeDependencies"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetHostRuntimeDependencies(IAppxManifestHostRuntimeDependenciesEnumerator** hostRuntimeDependencies)

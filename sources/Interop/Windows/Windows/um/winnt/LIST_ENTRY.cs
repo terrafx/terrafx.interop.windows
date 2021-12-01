@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='LIST_ENTRY.xml' path='doc/member[@name="LIST_ENTRY"]/*' />
 public unsafe partial struct LIST_ENTRY
 {
+    /// <include file='LIST_ENTRY.xml' path='doc/member[@name="LIST_ENTRY.Flink"]/*' />
     [NativeTypeName("struct _LIST_ENTRY *")]
     public LIST_ENTRY* Flink;
 
+    /// <include file='LIST_ENTRY.xml' path='doc/member[@name="LIST_ENTRY.Blink"]/*' />
     [NativeTypeName("struct _LIST_ENTRY *")]
     public LIST_ENTRY* Blink;
 }

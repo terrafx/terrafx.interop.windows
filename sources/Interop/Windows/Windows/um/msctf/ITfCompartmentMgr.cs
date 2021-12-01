@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITfCompartmentMgr.xml' path='doc/member[@name="ITfCompartmentMgr"]/*' />
 [Guid("7DCF57AC-18AD-438B-824D-979BFFB74B7C")]
 [NativeTypeName("struct ITfCompartmentMgr : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITfCompartmentMgr : ITfCompartmentMgr.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITfCompartmentMgr : ITfCompartmentMgr.Interface
         return ((delegate* unmanaged<ITfCompartmentMgr*, Guid*, void**, int>)(lpVtbl[0]))((ITfCompartmentMgr*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITfCompartmentMgr : ITfCompartmentMgr.Interface
         return ((delegate* unmanaged<ITfCompartmentMgr*, uint>)(lpVtbl[1]))((ITfCompartmentMgr*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITfCompartmentMgr : ITfCompartmentMgr.Interface
         return ((delegate* unmanaged<ITfCompartmentMgr*, uint>)(lpVtbl[2]))((ITfCompartmentMgr*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITfCompartmentMgr.xml' path='doc/member[@name="ITfCompartmentMgr.GetCompartment"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetCompartment([NativeTypeName("const GUID &")] Guid* rguid, ITfCompartment** ppcomp)
@@ -46,6 +51,7 @@ public unsafe partial struct ITfCompartmentMgr : ITfCompartmentMgr.Interface
         return ((delegate* unmanaged<ITfCompartmentMgr*, Guid*, ITfCompartment**, int>)(lpVtbl[3]))((ITfCompartmentMgr*)Unsafe.AsPointer(ref this), rguid, ppcomp);
     }
 
+    /// <include file='ITfCompartmentMgr.xml' path='doc/member[@name="ITfCompartmentMgr.ClearCompartment"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT ClearCompartment([NativeTypeName("TfClientId")] uint tid, [NativeTypeName("const GUID &")] Guid* rguid)
@@ -53,6 +59,7 @@ public unsafe partial struct ITfCompartmentMgr : ITfCompartmentMgr.Interface
         return ((delegate* unmanaged<ITfCompartmentMgr*, uint, Guid*, int>)(lpVtbl[4]))((ITfCompartmentMgr*)Unsafe.AsPointer(ref this), tid, rguid);
     }
 
+    /// <include file='ITfCompartmentMgr.xml' path='doc/member[@name="ITfCompartmentMgr.EnumCompartments"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT EnumCompartments(IEnumGUID** ppEnum)

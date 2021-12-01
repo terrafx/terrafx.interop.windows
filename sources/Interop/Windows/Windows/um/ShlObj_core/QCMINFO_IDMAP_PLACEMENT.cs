@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='QCMINFO_IDMAP_PLACEMENT.xml' path='doc/member[@name="QCMINFO_IDMAP_PLACEMENT"]/*' />
 public partial struct QCMINFO_IDMAP_PLACEMENT
 {
+    /// <include file='QCMINFO_IDMAP_PLACEMENT.xml' path='doc/member[@name="QCMINFO_IDMAP_PLACEMENT.id"]/*' />
     public uint id;
 
+    /// <include file='QCMINFO_IDMAP_PLACEMENT.xml' path='doc/member[@name="QCMINFO_IDMAP_PLACEMENT.fFlags"]/*' />
     public uint fFlags;
 }

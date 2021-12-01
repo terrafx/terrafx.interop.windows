@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ISpRegDataKey.xml' path='doc/member[@name="ISpRegDataKey"]/*' />
 [Guid("92A66E2B-C830-4149-83DF-6FC2BA1E7A5B")]
 [NativeTypeName("struct ISpRegDataKey : ISpDataKey")]
 [NativeInheritance("ISpDataKey")]
@@ -16,6 +17,7 @@ public unsafe partial struct ISpRegDataKey : ISpRegDataKey.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ISpRegDataKey : ISpRegDataKey.Interface
         return ((delegate* unmanaged<ISpRegDataKey*, Guid*, void**, int>)(lpVtbl[0]))((ISpRegDataKey*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ISpRegDataKey : ISpRegDataKey.Interface
         return ((delegate* unmanaged<ISpRegDataKey*, uint>)(lpVtbl[1]))((ISpRegDataKey*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ISpRegDataKey : ISpRegDataKey.Interface
         return ((delegate* unmanaged<ISpRegDataKey*, uint>)(lpVtbl[2]))((ISpRegDataKey*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ISpDataKey.SetData" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetData([NativeTypeName("LPCWSTR")] ushort* pszValueName, [NativeTypeName("ULONG")] uint cbData, [NativeTypeName("const BYTE *")] byte* pData)
@@ -46,6 +51,7 @@ public unsafe partial struct ISpRegDataKey : ISpRegDataKey.Interface
         return ((delegate* unmanaged<ISpRegDataKey*, ushort*, uint, byte*, int>)(lpVtbl[3]))((ISpRegDataKey*)Unsafe.AsPointer(ref this), pszValueName, cbData, pData);
     }
 
+    /// <inheritdoc cref="ISpDataKey.GetData" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetData([NativeTypeName("LPCWSTR")] ushort* pszValueName, [NativeTypeName("ULONG *")] uint* pcbData, byte* pData)
@@ -53,6 +59,7 @@ public unsafe partial struct ISpRegDataKey : ISpRegDataKey.Interface
         return ((delegate* unmanaged<ISpRegDataKey*, ushort*, uint*, byte*, int>)(lpVtbl[4]))((ISpRegDataKey*)Unsafe.AsPointer(ref this), pszValueName, pcbData, pData);
     }
 
+    /// <inheritdoc cref="ISpDataKey.SetStringValue" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetStringValue([NativeTypeName("LPCWSTR")] ushort* pszValueName, [NativeTypeName("LPCWSTR")] ushort* pszValue)
@@ -60,6 +67,7 @@ public unsafe partial struct ISpRegDataKey : ISpRegDataKey.Interface
         return ((delegate* unmanaged<ISpRegDataKey*, ushort*, ushort*, int>)(lpVtbl[5]))((ISpRegDataKey*)Unsafe.AsPointer(ref this), pszValueName, pszValue);
     }
 
+    /// <inheritdoc cref="ISpDataKey.GetStringValue" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetStringValue([NativeTypeName("LPCWSTR")] ushort* pszValueName, [NativeTypeName("LPWSTR *")] ushort** ppszValue)
@@ -67,6 +75,7 @@ public unsafe partial struct ISpRegDataKey : ISpRegDataKey.Interface
         return ((delegate* unmanaged<ISpRegDataKey*, ushort*, ushort**, int>)(lpVtbl[6]))((ISpRegDataKey*)Unsafe.AsPointer(ref this), pszValueName, ppszValue);
     }
 
+    /// <inheritdoc cref="ISpDataKey.SetDWORD" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT SetDWORD([NativeTypeName("LPCWSTR")] ushort* pszValueName, [NativeTypeName("DWORD")] uint dwValue)
@@ -74,6 +83,7 @@ public unsafe partial struct ISpRegDataKey : ISpRegDataKey.Interface
         return ((delegate* unmanaged<ISpRegDataKey*, ushort*, uint, int>)(lpVtbl[7]))((ISpRegDataKey*)Unsafe.AsPointer(ref this), pszValueName, dwValue);
     }
 
+    /// <inheritdoc cref="ISpDataKey.GetDWORD" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetDWORD([NativeTypeName("LPCWSTR")] ushort* pszValueName, [NativeTypeName("DWORD *")] uint* pdwValue)
@@ -81,6 +91,7 @@ public unsafe partial struct ISpRegDataKey : ISpRegDataKey.Interface
         return ((delegate* unmanaged<ISpRegDataKey*, ushort*, uint*, int>)(lpVtbl[8]))((ISpRegDataKey*)Unsafe.AsPointer(ref this), pszValueName, pdwValue);
     }
 
+    /// <inheritdoc cref="ISpDataKey.OpenKey" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT OpenKey([NativeTypeName("LPCWSTR")] ushort* pszSubKeyName, ISpDataKey** ppSubKey)
@@ -88,6 +99,7 @@ public unsafe partial struct ISpRegDataKey : ISpRegDataKey.Interface
         return ((delegate* unmanaged<ISpRegDataKey*, ushort*, ISpDataKey**, int>)(lpVtbl[9]))((ISpRegDataKey*)Unsafe.AsPointer(ref this), pszSubKeyName, ppSubKey);
     }
 
+    /// <inheritdoc cref="ISpDataKey.CreateKey" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT CreateKey([NativeTypeName("LPCWSTR")] ushort* pszSubKey, ISpDataKey** ppSubKey)
@@ -95,6 +107,7 @@ public unsafe partial struct ISpRegDataKey : ISpRegDataKey.Interface
         return ((delegate* unmanaged<ISpRegDataKey*, ushort*, ISpDataKey**, int>)(lpVtbl[10]))((ISpRegDataKey*)Unsafe.AsPointer(ref this), pszSubKey, ppSubKey);
     }
 
+    /// <inheritdoc cref="ISpDataKey.DeleteKey" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT DeleteKey([NativeTypeName("LPCWSTR")] ushort* pszSubKey)
@@ -102,6 +115,7 @@ public unsafe partial struct ISpRegDataKey : ISpRegDataKey.Interface
         return ((delegate* unmanaged<ISpRegDataKey*, ushort*, int>)(lpVtbl[11]))((ISpRegDataKey*)Unsafe.AsPointer(ref this), pszSubKey);
     }
 
+    /// <inheritdoc cref="ISpDataKey.DeleteValue" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT DeleteValue([NativeTypeName("LPCWSTR")] ushort* pszValueName)
@@ -109,6 +123,7 @@ public unsafe partial struct ISpRegDataKey : ISpRegDataKey.Interface
         return ((delegate* unmanaged<ISpRegDataKey*, ushort*, int>)(lpVtbl[12]))((ISpRegDataKey*)Unsafe.AsPointer(ref this), pszValueName);
     }
 
+    /// <inheritdoc cref="ISpDataKey.EnumKeys" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT EnumKeys([NativeTypeName("ULONG")] uint Index, [NativeTypeName("LPWSTR *")] ushort** ppszSubKeyName)
@@ -116,6 +131,7 @@ public unsafe partial struct ISpRegDataKey : ISpRegDataKey.Interface
         return ((delegate* unmanaged<ISpRegDataKey*, uint, ushort**, int>)(lpVtbl[13]))((ISpRegDataKey*)Unsafe.AsPointer(ref this), Index, ppszSubKeyName);
     }
 
+    /// <inheritdoc cref="ISpDataKey.EnumValues" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT EnumValues([NativeTypeName("ULONG")] uint Index, [NativeTypeName("LPWSTR *")] ushort** ppszValueName)
@@ -123,6 +139,7 @@ public unsafe partial struct ISpRegDataKey : ISpRegDataKey.Interface
         return ((delegate* unmanaged<ISpRegDataKey*, uint, ushort**, int>)(lpVtbl[14]))((ISpRegDataKey*)Unsafe.AsPointer(ref this), Index, ppszValueName);
     }
 
+    /// <include file='ISpRegDataKey.xml' path='doc/member[@name="ISpRegDataKey.SetKey"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT SetKey(HKEY hkey, BOOL fReadOnly)

@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="STORAGE_DEVICE_ID_DESCRIPTOR">
+    <summary>
+      <para>Used with the
+<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_query_property">IOCTL_STORAGE_QUERY_PROPERTY</a> control code
+request to retrieve the device ID descriptor data for a device.</para>
+    </summary>
+    <remarks>
+      <para>The device ID descriptor consists of an array of device IDs taken from the SCSI-3 vital product data (VPD)
+page 0x83 that was retrieved during discovery.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/FileIO/disk-management-structures">Disk Management Structures</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_query_property">IOCTL_STORAGE_QUERY_PROPERTY</seealso>
+    <seealso cref="STORAGE_ADAPTER_DESCRIPTOR" />
+    <seealso cref="STORAGE_DESCRIPTOR_HEADER" />
+    <seealso cref="STORAGE_DEVICE_DESCRIPTOR" />
+  </member>
+  <member name="STORAGE_DEVICE_ID_DESCRIPTOR.Version">
+    <summary>
+      <para>Contains the size of this structure, in bytes. The value of this member will change as members are added to
+the structure.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_DEVICE_ID_DESCRIPTOR.Size">
+    <summary>
+      <para>Specifies the total size of the data returned, in bytes. This may include data that follows this
+structure.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_DEVICE_ID_DESCRIPTOR.NumberOfIdentifiers">
+    <summary>
+      <para>Contains the number of identifiers reported by the device in the <b>Identifiers</b> array.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_DEVICE_ID_DESCRIPTOR.Identifiers">
+    <summary>
+      <para>Contains a variable-length array of identification descriptors.</para>
+    </summary>
+  </member>
+</doc>

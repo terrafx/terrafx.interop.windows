@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WINHTTP_CURRENT_USER_IE_PROXY_CONFIG">
+    <summary>
+      <para>The <b>WINHTTP_CURRENT_USER_IE_PROXY_CONFIG</b> structure contains the Internet Explorer proxy configuration information.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/WinHttp/winhttp-versions">WinHTTP
+Versions</seealso>
+  </member>
+  <member name="WINHTTP_CURRENT_USER_IE_PROXY_CONFIG.fAutoDetect">
+    <summary>
+      <para>If TRUE, indicates that the Internet Explorer proxy configuration for the current user specifies "automatically detect settings".</para>
+    </summary>
+  </member>
+  <member name="WINHTTP_CURRENT_USER_IE_PROXY_CONFIG.lpszAutoConfigUrl">
+    <summary>
+      <para>Pointer to a null-terminated Unicode string that contains the auto-configuration URL if the Internet Explorer proxy configuration for the current user specifies "Use automatic proxy configuration".</para>
+    </summary>
+  </member>
+  <member name="WINHTTP_CURRENT_USER_IE_PROXY_CONFIG.lpszProxy">
+    <summary>
+      <para>Pointer to a null-terminated Unicode string that contains the proxy URL if the Internet Explorer proxy configuration for the current user specifies "use a proxy server".</para>
+    </summary>
+  </member>
+  <member name="WINHTTP_CURRENT_USER_IE_PROXY_CONFIG.lpszProxyBypass">
+    <summary>
+      <para>Pointer to a null-terminated Unicode string that contains the optional proxy by-pass server list.</para>
+    </summary>
+  </member>
+</doc>

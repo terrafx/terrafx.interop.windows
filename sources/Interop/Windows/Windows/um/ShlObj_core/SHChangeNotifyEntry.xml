@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SHChangeNotifyEntry">
+    <summary>
+      <para>Contains and receives information for change notifications. This structure is used with the <see cref="SHChangeNotifyRegister" /> function and the <a href="https://docs.microsoft.com//windows/desktop/shell/sfvm-queryfsnotify">SFVM_QUERYFSNOTIFY</a> notification.</para>
+    </summary>
+  </member>
+  <member name="SHChangeNotifyEntry.pidl">
+    <summary>
+      <para>Type: <b>PCIDLIST_ABSOLUTE</b></para>
+      <para>PIDL for which to receive notifications.</para>
+    </summary>
+  </member>
+  <member name="SHChangeNotifyEntry.fRecursive">
+    <summary>
+      <para>Type: <b>BOOL</b></para>
+      <para>A flag indicating whether to post notifications for children of this PIDL. For example, if the PIDL points to a folder, then file notifications would come from the folder's children if this flag was <b>TRUE</b>.</para>
+    </summary>
+  </member>
+</doc>

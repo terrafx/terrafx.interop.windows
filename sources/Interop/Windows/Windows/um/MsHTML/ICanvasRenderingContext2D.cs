@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D"]/*' />
 [Guid("305106FF-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct ICanvasRenderingContext2D : IDispatch")]
 [NativeInheritance("IDispatch")]
@@ -16,6 +17,7 @@ public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext
         return ((delegate* unmanaged<ICanvasRenderingContext2D*, Guid*, void**, int>)(lpVtbl[0]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext
         return ((delegate* unmanaged<ICanvasRenderingContext2D*, uint>)(lpVtbl[1]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext
         return ((delegate* unmanaged<ICanvasRenderingContext2D*, uint>)(lpVtbl[2]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext
         return ((delegate* unmanaged<ICanvasRenderingContext2D*, uint*, int>)(lpVtbl[3]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext
         return ((delegate* unmanaged<ICanvasRenderingContext2D*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
@@ -60,6 +67,7 @@ public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext
         return ((delegate* unmanaged<ICanvasRenderingContext2D*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
+    /// <inheritdoc cref="IDispatch.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
@@ -67,6 +75,7 @@ public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext
         return ((delegate* unmanaged<ICanvasRenderingContext2D*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
+    /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.get_canvas"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT get_canvas(IHTMLCanvasElement** p)
@@ -74,6 +83,7 @@ public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext
         return ((delegate* unmanaged<ICanvasRenderingContext2D*, IHTMLCanvasElement**, int>)(lpVtbl[7]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.restore"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT restore()
@@ -81,6 +91,7 @@ public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext
         return ((delegate* unmanaged<ICanvasRenderingContext2D*, int>)(lpVtbl[8]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.save"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT save()
@@ -88,6 +99,7 @@ public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext
         return ((delegate* unmanaged<ICanvasRenderingContext2D*, int>)(lpVtbl[9]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.rotate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT rotate(float angle)
@@ -95,6 +107,7 @@ public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext
         return ((delegate* unmanaged<ICanvasRenderingContext2D*, float, int>)(lpVtbl[10]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), angle);
     }
 
+    /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.scale"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT scale(float x, float y)
@@ -102,6 +115,7 @@ public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext
         return ((delegate* unmanaged<ICanvasRenderingContext2D*, float, float, int>)(lpVtbl[11]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), x, y);
     }
 
+    /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.setTransform"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT setTransform(float m11, float m12, float m21, float m22, float dx, float dy)
@@ -109,6 +123,7 @@ public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext
         return ((delegate* unmanaged<ICanvasRenderingContext2D*, float, float, float, float, float, float, int>)(lpVtbl[12]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), m11, m12, m21, m22, dx, dy);
     }
 
+    /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.transform"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT transform(float m11, float m12, float m21, float m22, float dx, float dy)
@@ -116,6 +131,7 @@ public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext
         return ((delegate* unmanaged<ICanvasRenderingContext2D*, float, float, float, float, float, float, int>)(lpVtbl[13]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), m11, m12, m21, m22, dx, dy);
     }
 
+    /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.translate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT translate(float x, float y)
@@ -123,6 +139,7 @@ public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext
         return ((delegate* unmanaged<ICanvasRenderingContext2D*, float, float, int>)(lpVtbl[14]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), x, y);
     }
 
+    /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.put_globalAlpha"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT put_globalAlpha(float v)
@@ -130,6 +147,7 @@ public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext
         return ((delegate* unmanaged<ICanvasRenderingContext2D*, float, int>)(lpVtbl[15]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.get_globalAlpha"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT get_globalAlpha(float* p)
@@ -137,6 +155,7 @@ public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext
         return ((delegate* unmanaged<ICanvasRenderingContext2D*, float*, int>)(lpVtbl[16]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.put_globalCompositeOperation"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT put_globalCompositeOperation([NativeTypeName("BSTR")] ushort* v)
@@ -144,6 +163,7 @@ public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext
         return ((delegate* unmanaged<ICanvasRenderingContext2D*, ushort*, int>)(lpVtbl[17]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.get_globalCompositeOperation"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT get_globalCompositeOperation([NativeTypeName("BSTR *")] ushort** p)
@@ -151,6 +171,7 @@ public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext
         return ((delegate* unmanaged<ICanvasRenderingContext2D*, ushort**, int>)(lpVtbl[18]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.put_fillStyle"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT put_fillStyle(VARIANT v)
@@ -158,6 +179,7 @@ public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext
         return ((delegate* unmanaged<ICanvasRenderingContext2D*, VARIANT, int>)(lpVtbl[19]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.get_fillStyle"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public HRESULT get_fillStyle(VARIANT* p)
@@ -165,6 +187,7 @@ public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext
         return ((delegate* unmanaged<ICanvasRenderingContext2D*, VARIANT*, int>)(lpVtbl[20]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.put_strokeStyle"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
     public HRESULT put_strokeStyle(VARIANT v)
@@ -172,6 +195,7 @@ public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext
         return ((delegate* unmanaged<ICanvasRenderingContext2D*, VARIANT, int>)(lpVtbl[21]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.get_strokeStyle"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
     public HRESULT get_strokeStyle(VARIANT* p)
@@ -179,6 +203,7 @@ public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext
         return ((delegate* unmanaged<ICanvasRenderingContext2D*, VARIANT*, int>)(lpVtbl[22]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.createLinearGradient"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
     public HRESULT createLinearGradient(float x0, float y0, float x1, float y1, ICanvasGradient** ppCanvasGradient)
@@ -186,6 +211,7 @@ public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext
         return ((delegate* unmanaged<ICanvasRenderingContext2D*, float, float, float, float, ICanvasGradient**, int>)(lpVtbl[23]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), x0, y0, x1, y1, ppCanvasGradient);
     }
 
+    /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.createRadialGradient"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(24)]
     public HRESULT createRadialGradient(float x0, float y0, float r0, float x1, float y1, float r1, ICanvasGradient** ppCanvasGradient)
@@ -193,6 +219,7 @@ public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext
         return ((delegate* unmanaged<ICanvasRenderingContext2D*, float, float, float, float, float, float, ICanvasGradient**, int>)(lpVtbl[24]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), x0, y0, r0, x1, y1, r1, ppCanvasGradient);
     }
 
+    /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.createPattern"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(25)]
     public HRESULT createPattern(IDispatch* image, VARIANT repetition, ICanvasPattern** ppCanvasPattern)
@@ -200,6 +227,7 @@ public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext
         return ((delegate* unmanaged<ICanvasRenderingContext2D*, IDispatch*, VARIANT, ICanvasPattern**, int>)(lpVtbl[25]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), image, repetition, ppCanvasPattern);
     }
 
+    /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.put_lineCap"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(26)]
     public HRESULT put_lineCap([NativeTypeName("BSTR")] ushort* v)
@@ -207,6 +235,7 @@ public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext
         return ((delegate* unmanaged<ICanvasRenderingContext2D*, ushort*, int>)(lpVtbl[26]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.get_lineCap"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(27)]
     public HRESULT get_lineCap([NativeTypeName("BSTR *")] ushort** p)
@@ -214,6 +243,7 @@ public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext
         return ((delegate* unmanaged<ICanvasRenderingContext2D*, ushort**, int>)(lpVtbl[27]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.put_lineJoin"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(28)]
     public HRESULT put_lineJoin([NativeTypeName("BSTR")] ushort* v)
@@ -221,6 +251,7 @@ public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext
         return ((delegate* unmanaged<ICanvasRenderingContext2D*, ushort*, int>)(lpVtbl[28]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.get_lineJoin"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(29)]
     public HRESULT get_lineJoin([NativeTypeName("BSTR *")] ushort** p)
@@ -228,6 +259,7 @@ public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext
         return ((delegate* unmanaged<ICanvasRenderingContext2D*, ushort**, int>)(lpVtbl[29]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.put_lineWidth"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(30)]
     public HRESULT put_lineWidth(float v)
@@ -235,6 +267,7 @@ public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext
         return ((delegate* unmanaged<ICanvasRenderingContext2D*, float, int>)(lpVtbl[30]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.get_lineWidth"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(31)]
     public HRESULT get_lineWidth(float* p)
@@ -242,6 +275,7 @@ public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext
         return ((delegate* unmanaged<ICanvasRenderingContext2D*, float*, int>)(lpVtbl[31]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.put_miterLimit"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(32)]
     public HRESULT put_miterLimit(float v)
@@ -249,6 +283,7 @@ public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext
         return ((delegate* unmanaged<ICanvasRenderingContext2D*, float, int>)(lpVtbl[32]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.get_miterLimit"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(33)]
     public HRESULT get_miterLimit(float* p)
@@ -256,6 +291,7 @@ public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext
         return ((delegate* unmanaged<ICanvasRenderingContext2D*, float*, int>)(lpVtbl[33]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.put_shadowBlur"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(34)]
     public HRESULT put_shadowBlur(float v)
@@ -263,6 +299,7 @@ public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext
         return ((delegate* unmanaged<ICanvasRenderingContext2D*, float, int>)(lpVtbl[34]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.get_shadowBlur"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(35)]
     public HRESULT get_shadowBlur(float* p)
@@ -270,6 +307,7 @@ public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext
         return ((delegate* unmanaged<ICanvasRenderingContext2D*, float*, int>)(lpVtbl[35]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.put_shadowColor"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(36)]
     public HRESULT put_shadowColor([NativeTypeName("BSTR")] ushort* v)
@@ -277,6 +315,7 @@ public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext
         return ((delegate* unmanaged<ICanvasRenderingContext2D*, ushort*, int>)(lpVtbl[36]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.get_shadowColor"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(37)]
     public HRESULT get_shadowColor([NativeTypeName("BSTR *")] ushort** p)
@@ -284,6 +323,7 @@ public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext
         return ((delegate* unmanaged<ICanvasRenderingContext2D*, ushort**, int>)(lpVtbl[37]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.put_shadowOffsetX"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(38)]
     public HRESULT put_shadowOffsetX(float v)
@@ -291,6 +331,7 @@ public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext
         return ((delegate* unmanaged<ICanvasRenderingContext2D*, float, int>)(lpVtbl[38]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.get_shadowOffsetX"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(39)]
     public HRESULT get_shadowOffsetX(float* p)
@@ -298,6 +339,7 @@ public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext
         return ((delegate* unmanaged<ICanvasRenderingContext2D*, float*, int>)(lpVtbl[39]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.put_shadowOffsetY"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(40)]
     public HRESULT put_shadowOffsetY(float v)
@@ -305,6 +347,7 @@ public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext
         return ((delegate* unmanaged<ICanvasRenderingContext2D*, float, int>)(lpVtbl[40]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.get_shadowOffsetY"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(41)]
     public HRESULT get_shadowOffsetY(float* p)
@@ -312,6 +355,7 @@ public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext
         return ((delegate* unmanaged<ICanvasRenderingContext2D*, float*, int>)(lpVtbl[41]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.clearRect"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(42)]
     public HRESULT clearRect(float x, float y, float w, float h)
@@ -319,6 +363,7 @@ public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext
         return ((delegate* unmanaged<ICanvasRenderingContext2D*, float, float, float, float, int>)(lpVtbl[42]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), x, y, w, h);
     }
 
+    /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.fillRect"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(43)]
     public HRESULT fillRect(float x, float y, float w, float h)
@@ -326,6 +371,7 @@ public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext
         return ((delegate* unmanaged<ICanvasRenderingContext2D*, float, float, float, float, int>)(lpVtbl[43]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), x, y, w, h);
     }
 
+    /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.strokeRect"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(44)]
     public HRESULT strokeRect(float x, float y, float w, float h)
@@ -333,6 +379,7 @@ public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext
         return ((delegate* unmanaged<ICanvasRenderingContext2D*, float, float, float, float, int>)(lpVtbl[44]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), x, y, w, h);
     }
 
+    /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.arc"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(45)]
     public HRESULT arc(float x, float y, float radius, float startAngle, float endAngle, BOOL anticlockwise)
@@ -340,6 +387,7 @@ public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext
         return ((delegate* unmanaged<ICanvasRenderingContext2D*, float, float, float, float, float, BOOL, int>)(lpVtbl[45]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), x, y, radius, startAngle, endAngle, anticlockwise);
     }
 
+    /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.arcTo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(46)]
     public HRESULT arcTo(float x1, float y1, float x2, float y2, float radius)
@@ -347,6 +395,7 @@ public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext
         return ((delegate* unmanaged<ICanvasRenderingContext2D*, float, float, float, float, float, int>)(lpVtbl[46]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), x1, y1, x2, y2, radius);
     }
 
+    /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.beginPath"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(47)]
     public HRESULT beginPath()
@@ -354,6 +403,7 @@ public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext
         return ((delegate* unmanaged<ICanvasRenderingContext2D*, int>)(lpVtbl[47]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.bezierCurveTo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(48)]
     public HRESULT bezierCurveTo(float cp1x, float cp1y, float cp2x, float cp2y, float x, float y)
@@ -361,6 +411,7 @@ public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext
         return ((delegate* unmanaged<ICanvasRenderingContext2D*, float, float, float, float, float, float, int>)(lpVtbl[48]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), cp1x, cp1y, cp2x, cp2y, x, y);
     }
 
+    /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.clip"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(49)]
     public HRESULT clip()
@@ -368,6 +419,7 @@ public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext
         return ((delegate* unmanaged<ICanvasRenderingContext2D*, int>)(lpVtbl[49]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.closePath"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(50)]
     public HRESULT closePath()
@@ -375,6 +427,7 @@ public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext
         return ((delegate* unmanaged<ICanvasRenderingContext2D*, int>)(lpVtbl[50]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.fill"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(51)]
     public HRESULT fill()
@@ -382,6 +435,7 @@ public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext
         return ((delegate* unmanaged<ICanvasRenderingContext2D*, int>)(lpVtbl[51]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.lineTo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(52)]
     public HRESULT lineTo(float x, float y)
@@ -389,6 +443,7 @@ public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext
         return ((delegate* unmanaged<ICanvasRenderingContext2D*, float, float, int>)(lpVtbl[52]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), x, y);
     }
 
+    /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.moveTo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(53)]
     public HRESULT moveTo(float x, float y)
@@ -396,6 +451,7 @@ public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext
         return ((delegate* unmanaged<ICanvasRenderingContext2D*, float, float, int>)(lpVtbl[53]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), x, y);
     }
 
+    /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.quadraticCurveTo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(54)]
     public HRESULT quadraticCurveTo(float cpx, float cpy, float x, float y)
@@ -403,6 +459,7 @@ public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext
         return ((delegate* unmanaged<ICanvasRenderingContext2D*, float, float, float, float, int>)(lpVtbl[54]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), cpx, cpy, x, y);
     }
 
+    /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.rect"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(55)]
     public HRESULT rect(float x, float y, float w, float h)
@@ -410,6 +467,7 @@ public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext
         return ((delegate* unmanaged<ICanvasRenderingContext2D*, float, float, float, float, int>)(lpVtbl[55]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), x, y, w, h);
     }
 
+    /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.stroke"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(56)]
     public HRESULT stroke()
@@ -417,6 +475,7 @@ public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext
         return ((delegate* unmanaged<ICanvasRenderingContext2D*, int>)(lpVtbl[56]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.isPointInPath"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(57)]
     public HRESULT isPointInPath(float x, float y, [NativeTypeName("VARIANT_BOOL *")] short* pResult)
@@ -424,6 +483,7 @@ public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext
         return ((delegate* unmanaged<ICanvasRenderingContext2D*, float, float, short*, int>)(lpVtbl[57]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), x, y, pResult);
     }
 
+    /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.put_font"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(58)]
     public HRESULT put_font([NativeTypeName("BSTR")] ushort* v)
@@ -431,6 +491,7 @@ public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext
         return ((delegate* unmanaged<ICanvasRenderingContext2D*, ushort*, int>)(lpVtbl[58]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.get_font"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(59)]
     public HRESULT get_font([NativeTypeName("BSTR *")] ushort** p)
@@ -438,6 +499,7 @@ public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext
         return ((delegate* unmanaged<ICanvasRenderingContext2D*, ushort**, int>)(lpVtbl[59]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.put_textAlign"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(60)]
     public HRESULT put_textAlign([NativeTypeName("BSTR")] ushort* v)
@@ -445,6 +507,7 @@ public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext
         return ((delegate* unmanaged<ICanvasRenderingContext2D*, ushort*, int>)(lpVtbl[60]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.get_textAlign"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(61)]
     public HRESULT get_textAlign([NativeTypeName("BSTR *")] ushort** p)
@@ -452,6 +515,7 @@ public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext
         return ((delegate* unmanaged<ICanvasRenderingContext2D*, ushort**, int>)(lpVtbl[61]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.put_textBaseline"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(62)]
     public HRESULT put_textBaseline([NativeTypeName("BSTR")] ushort* v)
@@ -459,6 +523,7 @@ public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext
         return ((delegate* unmanaged<ICanvasRenderingContext2D*, ushort*, int>)(lpVtbl[62]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.get_textBaseline"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(63)]
     public HRESULT get_textBaseline([NativeTypeName("BSTR *")] ushort** p)
@@ -466,6 +531,7 @@ public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext
         return ((delegate* unmanaged<ICanvasRenderingContext2D*, ushort**, int>)(lpVtbl[63]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.fillText"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(64)]
     public HRESULT fillText([NativeTypeName("BSTR")] ushort* text, float x, float y, VARIANT maxWidth)
@@ -473,6 +539,7 @@ public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext
         return ((delegate* unmanaged<ICanvasRenderingContext2D*, ushort*, float, float, VARIANT, int>)(lpVtbl[64]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), text, x, y, maxWidth);
     }
 
+    /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.measureText"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(65)]
     public HRESULT measureText([NativeTypeName("BSTR")] ushort* text, ICanvasTextMetrics** ppCanvasTextMetrics)
@@ -480,6 +547,7 @@ public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext
         return ((delegate* unmanaged<ICanvasRenderingContext2D*, ushort*, ICanvasTextMetrics**, int>)(lpVtbl[65]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), text, ppCanvasTextMetrics);
     }
 
+    /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.strokeText"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(66)]
     public HRESULT strokeText([NativeTypeName("BSTR")] ushort* text, float x, float y, VARIANT maxWidth)
@@ -487,6 +555,7 @@ public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext
         return ((delegate* unmanaged<ICanvasRenderingContext2D*, ushort*, float, float, VARIANT, int>)(lpVtbl[66]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), text, x, y, maxWidth);
     }
 
+    /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.drawImage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(67)]
     public HRESULT drawImage(IDispatch* pSrc, VARIANT a1, VARIANT a2, VARIANT a3, VARIANT a4, VARIANT a5, VARIANT a6, VARIANT a7, VARIANT a8)
@@ -494,6 +563,7 @@ public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext
         return ((delegate* unmanaged<ICanvasRenderingContext2D*, IDispatch*, VARIANT, VARIANT, VARIANT, VARIANT, VARIANT, VARIANT, VARIANT, VARIANT, int>)(lpVtbl[67]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), pSrc, a1, a2, a3, a4, a5, a6, a7, a8);
     }
 
+    /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.createImageData"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(68)]
     public HRESULT createImageData(VARIANT a1, VARIANT a2, ICanvasImageData** ppCanvasImageData)
@@ -501,6 +571,7 @@ public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext
         return ((delegate* unmanaged<ICanvasRenderingContext2D*, VARIANT, VARIANT, ICanvasImageData**, int>)(lpVtbl[68]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), a1, a2, ppCanvasImageData);
     }
 
+    /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.getImageData"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(69)]
     public HRESULT getImageData(float sx, float sy, float sw, float sh, ICanvasImageData** ppCanvasImageData)
@@ -508,6 +579,7 @@ public unsafe partial struct ICanvasRenderingContext2D : ICanvasRenderingContext
         return ((delegate* unmanaged<ICanvasRenderingContext2D*, float, float, float, float, ICanvasImageData**, int>)(lpVtbl[69]))((ICanvasRenderingContext2D*)Unsafe.AsPointer(ref this), sx, sy, sw, sh, ppCanvasImageData);
     }
 
+    /// <include file='ICanvasRenderingContext2D.xml' path='doc/member[@name="ICanvasRenderingContext2D.putImageData"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(70)]
     public HRESULT putImageData(ICanvasImageData* imagedata, float dx, float dy, VARIANT dirtyX, VARIANT dirtyY, VARIANT dirtyWidth, VARIANT dirtyHeight)

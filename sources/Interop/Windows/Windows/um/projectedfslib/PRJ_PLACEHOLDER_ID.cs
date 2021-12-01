@@ -7,8 +7,10 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PRJ_PLACEHOLDER_ID.xml' path='doc/member[@name="PRJ_PLACEHOLDER_ID"]/*' />
 [SupportedOSPlatform("windows10.0.17763.0")]
 public enum PRJ_PLACEHOLDER_ID
 {
+    /// <include file='PRJ_PLACEHOLDER_ID.xml' path='doc/member[@name="PRJ_PLACEHOLDER_ID.PRJ_PLACEHOLDER_ID_LENGTH"]/*' />
     PRJ_PLACEHOLDER_ID_LENGTH = 128,
 }

@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CFG_CALL_TARGET_INFO.xml' path='doc/member[@name="CFG_CALL_TARGET_INFO"]/*' />
 public partial struct CFG_CALL_TARGET_INFO
 {
+    /// <include file='CFG_CALL_TARGET_INFO.xml' path='doc/member[@name="CFG_CALL_TARGET_INFO.Offset"]/*' />
     [NativeTypeName("ULONG_PTR")]
     public nuint Offset;
 
+    /// <include file='CFG_CALL_TARGET_INFO.xml' path='doc/member[@name="CFG_CALL_TARGET_INFO.Flags"]/*' />
     [NativeTypeName("ULONG_PTR")]
     public nuint Flags;
 }

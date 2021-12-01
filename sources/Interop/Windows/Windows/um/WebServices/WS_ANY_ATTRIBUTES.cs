@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_ANY_ATTRIBUTES.xml' path='doc/member[@name="WS_ANY_ATTRIBUTES"]/*' />
 public unsafe partial struct WS_ANY_ATTRIBUTES
 {
+    /// <include file='WS_ANY_ATTRIBUTES.xml' path='doc/member[@name="WS_ANY_ATTRIBUTES.attributes"]/*' />
     public WS_ANY_ATTRIBUTE* attributes;
 
+    /// <include file='WS_ANY_ATTRIBUTES.xml' path='doc/member[@name="WS_ANY_ATTRIBUTES.attributeCount"]/*' />
     [NativeTypeName("ULONG")]
     public uint attributeCount;
 }

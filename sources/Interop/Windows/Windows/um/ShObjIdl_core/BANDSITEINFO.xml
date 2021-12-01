@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="BANDSITEINFO">
+    <summary>
+      <para>Contains information about a band site. This structure is used with the <see cref="IBandSite.GetBandSiteInfo" /> and <see cref="IBandSite.SetBandSiteInfo" /> methods.</para>
+    </summary>
+  </member>
+  <member name="BANDSITEINFO.dwMask">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The mask values that determine the other fields in this structure that are being requested or set.</para>
+      <h4>BSIM_STATE</h4>
+      <para>The <b>dwState</b> value is being requested or set.</para>
+      <h4>BSIM_STYLE</h4>
+      <para>The <b>dwStyle</b> value is being requested or set.</para>
+    </summary>
+  </member>
+  <member name="BANDSITEINFO.dwState">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>Bits that specify the state of the band.</para>
+      <h4>BSSF_VISIBLE</h4>
+      <para>The band is visible.</para>
+      <h4>BSSF_NOTITLE</h4>
+      <para>The band's title is not shown.</para>
+      <h4>BSSF_UNDELETEABLE</h4>
+      <para>The band cannot be deleted.</para>
+    </summary>
+  </member>
+  <member name="BANDSITEINFO.dwStyle">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>Bit flags that specify the style of the band.</para>
+      <h4>BSIS_AUTOGRIPPER</h4>
+      <para>Show the gripper if the band is neither fixed in size nor floating.</para>
+      <h4>BSIS_NOGRIPPER</h4>
+      <para>Equivalent to RBBS_NOGRIPPER.</para>
+      <h4>BSIS_ALWAYSGRIPPER</h4>
+      <para>Equivalent to RBBS_GRIPPERALWAYS.</para>
+      <h4>BSIS_LEFTALIGN</h4>
+      <para>Equivalent to RBBS_VERTICALGRIPPER.</para>
+      <h4>BSIS_SINGLECLICK</h4>
+      <para>Opposite to RBBS_DBLCLKTOGGLE.</para>
+      <h4>BSIS_NOCONTEXTMENU</h4>
+      <para>Disables the band-specific context menu (typically "Close Toolbar").</para>
+      <h4>BSIS_NODROPTARGET</h4>
+      <para>Prevents wrapping of the <see cref="IDropTarget" /> interface provided by the band.</para>
+      <h4>BSIS_NOCAPTION</h4>
+      <para>Hides the band caption text.</para>
+      <h4>BSIS_PREFERNOLINEBREAK</h4>
+      <para>Sets the fAutoBreak member of NMREBARAUTOBREAK to specify the preference of no line break.</para>
+      <h4>BSIS_LOCKED</h4>
+      <para>Removes the "Close Toolbar" and "Show Title" choices from the menu.</para>
+      <h4>BSIS_PRESERVEORDERDURINGLAYOUT (0x00000200)</h4>
+      <para>
+        <b>Internet Explorer 7 and later</b>. Preserves the order of items during layout.</para>
+      <h4>BSIS_FIXEDORDER (0x00000400)</h4>
+      <para>
+        <b>Internet Explorer 7 and later</b>. Prevents items from being reordered.</para>
+    </summary>
+  </member>
+</doc>

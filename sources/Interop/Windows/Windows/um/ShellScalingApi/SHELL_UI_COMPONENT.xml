@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SHELL_UI_COMPONENT">
+    <summary>
+      <para>Identifies the type of UI component that is needed in the shell.</para>
+    </summary>
+  </member>
+  <member name="SHELL_UI_COMPONENT.SHELL_UI_COMPONENT_TASKBARS">
+    <summary>
+      <para>This UI component is a taskbar icon.</para>
+    </summary>
+  </member>
+  <member name="SHELL_UI_COMPONENT.SHELL_UI_COMPONENT_NOTIFICATIONAREA">
+    <summary>
+      <para>This UI component is an icon in the notification area.</para>
+    </summary>
+  </member>
+  <member name="SHELL_UI_COMPONENT.SHELL_UI_COMPONENT_DESKBAND">
+    <summary>
+      <para>This UI component is a deskband icon.</para>
+    </summary>
+  </member>
+</doc>

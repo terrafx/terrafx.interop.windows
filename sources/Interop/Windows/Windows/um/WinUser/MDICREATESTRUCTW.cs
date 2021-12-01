@@ -5,26 +5,36 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MDICREATESTRUCTW.xml' path='doc/member[@name="MDICREATESTRUCTW"]/*' />
 public unsafe partial struct MDICREATESTRUCTW
 {
+    /// <include file='MDICREATESTRUCTW.xml' path='doc/member[@name="MDICREATESTRUCTW.szClass"]/*' />
     [NativeTypeName("LPCWSTR")]
     public ushort* szClass;
 
+    /// <include file='MDICREATESTRUCTW.xml' path='doc/member[@name="MDICREATESTRUCTW.szTitle"]/*' />
     [NativeTypeName("LPCWSTR")]
     public ushort* szTitle;
 
+    /// <include file='MDICREATESTRUCTW.xml' path='doc/member[@name="MDICREATESTRUCTW.hOwner"]/*' />
     public HANDLE hOwner;
 
+    /// <include file='MDICREATESTRUCTW.xml' path='doc/member[@name="MDICREATESTRUCTW.x"]/*' />
     public int x;
 
+    /// <include file='MDICREATESTRUCTW.xml' path='doc/member[@name="MDICREATESTRUCTW.y"]/*' />
     public int y;
 
+    /// <include file='MDICREATESTRUCTW.xml' path='doc/member[@name="MDICREATESTRUCTW.cx"]/*' />
     public int cx;
 
+    /// <include file='MDICREATESTRUCTW.xml' path='doc/member[@name="MDICREATESTRUCTW.cy"]/*' />
     public int cy;
 
+    /// <include file='MDICREATESTRUCTW.xml' path='doc/member[@name="MDICREATESTRUCTW.style"]/*' />
     [NativeTypeName("DWORD")]
     public uint style;
 
+    /// <include file='MDICREATESTRUCTW.xml' path='doc/member[@name="MDICREATESTRUCTW.lParam"]/*' />
     public LPARAM lParam;
 }

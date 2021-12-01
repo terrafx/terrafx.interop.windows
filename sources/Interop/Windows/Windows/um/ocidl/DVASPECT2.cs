@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DVASPECT2.xml' path='doc/member[@name="DVASPECT2"]/*' />
 public enum DVASPECT2
 {
+    /// <include file='DVASPECT2.xml' path='doc/member[@name="DVASPECT2.DVASPECT_OPAQUE"]/*' />
     DVASPECT_OPAQUE = 16,
+
+    /// <include file='DVASPECT2.xml' path='doc/member[@name="DVASPECT2.DVASPECT_TRANSPARENT"]/*' />
     DVASPECT_TRANSPARENT = 32,
 }

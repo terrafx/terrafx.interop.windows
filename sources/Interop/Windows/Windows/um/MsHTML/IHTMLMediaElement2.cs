@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IHTMLMediaElement2.xml' path='doc/member[@name="IHTMLMediaElement2"]/*' />
 [Guid("30510809-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IHTMLMediaElement2 : IDispatch")]
 [NativeInheritance("IDispatch")]
@@ -16,6 +17,7 @@ public unsafe partial struct IHTMLMediaElement2 : IHTMLMediaElement2.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IHTMLMediaElement2 : IHTMLMediaElement2.Interface
         return ((delegate* unmanaged<IHTMLMediaElement2*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLMediaElement2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IHTMLMediaElement2 : IHTMLMediaElement2.Interface
         return ((delegate* unmanaged<IHTMLMediaElement2*, uint>)(lpVtbl[1]))((IHTMLMediaElement2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IHTMLMediaElement2 : IHTMLMediaElement2.Interface
         return ((delegate* unmanaged<IHTMLMediaElement2*, uint>)(lpVtbl[2]))((IHTMLMediaElement2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct IHTMLMediaElement2 : IHTMLMediaElement2.Interface
         return ((delegate* unmanaged<IHTMLMediaElement2*, uint*, int>)(lpVtbl[3]))((IHTMLMediaElement2*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct IHTMLMediaElement2 : IHTMLMediaElement2.Interface
         return ((delegate* unmanaged<IHTMLMediaElement2*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IHTMLMediaElement2*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
@@ -60,6 +67,7 @@ public unsafe partial struct IHTMLMediaElement2 : IHTMLMediaElement2.Interface
         return ((delegate* unmanaged<IHTMLMediaElement2*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLMediaElement2*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
+    /// <inheritdoc cref="IDispatch.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
@@ -67,6 +75,7 @@ public unsafe partial struct IHTMLMediaElement2 : IHTMLMediaElement2.Interface
         return ((delegate* unmanaged<IHTMLMediaElement2*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IHTMLMediaElement2*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
+    /// <include file='IHTMLMediaElement2.xml' path='doc/member[@name="IHTMLMediaElement2.put_currentTimeDouble"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT put_currentTimeDouble(double v)
@@ -74,6 +83,7 @@ public unsafe partial struct IHTMLMediaElement2 : IHTMLMediaElement2.Interface
         return ((delegate* unmanaged<IHTMLMediaElement2*, double, int>)(lpVtbl[7]))((IHTMLMediaElement2*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLMediaElement2.xml' path='doc/member[@name="IHTMLMediaElement2.get_currentTimeDouble"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT get_currentTimeDouble(double* p)
@@ -81,6 +91,7 @@ public unsafe partial struct IHTMLMediaElement2 : IHTMLMediaElement2.Interface
         return ((delegate* unmanaged<IHTMLMediaElement2*, double*, int>)(lpVtbl[8]))((IHTMLMediaElement2*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLMediaElement2.xml' path='doc/member[@name="IHTMLMediaElement2.get_initialTimeDouble"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT get_initialTimeDouble(double* p)
@@ -88,6 +99,7 @@ public unsafe partial struct IHTMLMediaElement2 : IHTMLMediaElement2.Interface
         return ((delegate* unmanaged<IHTMLMediaElement2*, double*, int>)(lpVtbl[9]))((IHTMLMediaElement2*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLMediaElement2.xml' path='doc/member[@name="IHTMLMediaElement2.get_durationDouble"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT get_durationDouble(double* p)
@@ -95,6 +107,7 @@ public unsafe partial struct IHTMLMediaElement2 : IHTMLMediaElement2.Interface
         return ((delegate* unmanaged<IHTMLMediaElement2*, double*, int>)(lpVtbl[10]))((IHTMLMediaElement2*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLMediaElement2.xml' path='doc/member[@name="IHTMLMediaElement2.put_defaultPlaybackRateDouble"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT put_defaultPlaybackRateDouble(double v)
@@ -102,6 +115,7 @@ public unsafe partial struct IHTMLMediaElement2 : IHTMLMediaElement2.Interface
         return ((delegate* unmanaged<IHTMLMediaElement2*, double, int>)(lpVtbl[11]))((IHTMLMediaElement2*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLMediaElement2.xml' path='doc/member[@name="IHTMLMediaElement2.get_defaultPlaybackRateDouble"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT get_defaultPlaybackRateDouble(double* p)
@@ -109,6 +123,7 @@ public unsafe partial struct IHTMLMediaElement2 : IHTMLMediaElement2.Interface
         return ((delegate* unmanaged<IHTMLMediaElement2*, double*, int>)(lpVtbl[12]))((IHTMLMediaElement2*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLMediaElement2.xml' path='doc/member[@name="IHTMLMediaElement2.put_playbackRateDouble"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT put_playbackRateDouble(double v)
@@ -116,6 +131,7 @@ public unsafe partial struct IHTMLMediaElement2 : IHTMLMediaElement2.Interface
         return ((delegate* unmanaged<IHTMLMediaElement2*, double, int>)(lpVtbl[13]))((IHTMLMediaElement2*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLMediaElement2.xml' path='doc/member[@name="IHTMLMediaElement2.get_playbackRateDouble"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT get_playbackRateDouble(double* p)
@@ -123,6 +139,7 @@ public unsafe partial struct IHTMLMediaElement2 : IHTMLMediaElement2.Interface
         return ((delegate* unmanaged<IHTMLMediaElement2*, double*, int>)(lpVtbl[14]))((IHTMLMediaElement2*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLMediaElement2.xml' path='doc/member[@name="IHTMLMediaElement2.put_volumeDouble"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT put_volumeDouble(double v)
@@ -130,6 +147,7 @@ public unsafe partial struct IHTMLMediaElement2 : IHTMLMediaElement2.Interface
         return ((delegate* unmanaged<IHTMLMediaElement2*, double, int>)(lpVtbl[15]))((IHTMLMediaElement2*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLMediaElement2.xml' path='doc/member[@name="IHTMLMediaElement2.get_volumeDouble"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT get_volumeDouble(double* p)

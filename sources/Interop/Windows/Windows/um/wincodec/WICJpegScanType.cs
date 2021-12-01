@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WICJpegScanType.xml' path='doc/member[@name="WICJpegScanType"]/*' />
 public enum WICJpegScanType : uint
 {
+    /// <include file='WICJpegScanType.xml' path='doc/member[@name="WICJpegScanType.WICJpegScanTypeInterleaved"]/*' />
     WICJpegScanTypeInterleaved = 0,
+
+    /// <include file='WICJpegScanType.xml' path='doc/member[@name="WICJpegScanType.WICJpegScanTypePlanarComponents"]/*' />
     WICJpegScanTypePlanarComponents = 0x1,
+
+    /// <include file='WICJpegScanType.xml' path='doc/member[@name="WICJpegScanType.WICJpegScanTypeProgressive"]/*' />
     WICJpegScanTypeProgressive = 0x2,
+
+    /// <include file='WICJpegScanType.xml' path='doc/member[@name="WICJpegScanType.WICJpegScanType_FORCE_DWORD"]/*' />
     WICJpegScanType_FORCE_DWORD = 0x7fffffff,
 }

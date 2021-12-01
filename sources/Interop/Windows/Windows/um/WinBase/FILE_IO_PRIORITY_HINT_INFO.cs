@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='FILE_IO_PRIORITY_HINT_INFO.xml' path='doc/member[@name="FILE_IO_PRIORITY_HINT_INFO"]/*' />
 public partial struct FILE_IO_PRIORITY_HINT_INFO
 {
+    /// <include file='FILE_IO_PRIORITY_HINT_INFO.xml' path='doc/member[@name="FILE_IO_PRIORITY_HINT_INFO.PriorityHint"]/*' />
     public PRIORITY_HINT PriorityHint;
 }

@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IBPCSatelliteTuner.get_DefaultSubChannelTypes">
+    <summary>
+      <para>
+        <b>Note</b>  The <b>IBPCSatelliteTuner</b> interface is deprecated.</para>
+      <para>Gets the default sub-channel types.</para>
+    </summary>
+    <param name="plDefaultVideoType">
+      <para>Receives a provider-specific service type for video.</para>
+    </param>
+    <param name="plDefaultAudioType">
+      <para>Receives a provider-specific service type for audio.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value.</para>
+    </returns>
+    <seealso cref="IBPCSatelliteTuner Interface" />
+  </member>
+  <member name="IBPCSatelliteTuner.IsTapingPermitted">
+    <summary>
+      <para>
+        <b>Note</b>  The <b>IBPCSatelliteTuner</b> interface is deprecated.</para>
+      <para>Queries whether taping is permitted.</para>
+    </summary>
+    <returns>
+      <para>Returns S_OK if taping is permitted or S_FALSE if taping is not permitted.</para>
+    </returns>
+    <seealso cref="IBPCSatelliteTuner Interface" />
+  </member>
+  <member name="IBPCSatelliteTuner.put_DefaultSubChannelTypes">
+    <summary>
+      <para>
+        <b>Note</b>  The <code>IBPCSatelliteTuner</code> interface is deprecated.</para>
+      <para>Sets the default sub-channel types.</para>
+    </summary>
+    <param name="lDefaultVideoType">
+      <para>Provider-specific service type for video.</para>
+    </param>
+    <param name="lDefaultAudioType">
+      <para>Provider-specific service type for audio.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value.</para>
+    </returns>
+    <seealso cref="IBPCSatelliteTuner Interface" />
+  </member>
+  <member name="IBPCSatelliteTuner">
+    <summary>
+      <para>
+        <b>Note</b>  This interface is not implemented and has been deprecated.</para>
+      <para>The <code>IBPCSatelliteTuner</code> interface supports satellite television tuning.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/deprecated-interfaces">Deprecated Interfaces</seealso>
+    <seealso cref="IAMTuner" />
+  </member>
+</doc>

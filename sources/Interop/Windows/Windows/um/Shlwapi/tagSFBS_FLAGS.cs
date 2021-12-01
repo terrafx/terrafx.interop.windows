@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='tagSFBS_FLAGS.xml' path='doc/member[@name="tagSFBS_FLAGS"]/*' />
 public enum tagSFBS_FLAGS
 {
+    /// <include file='tagSFBS_FLAGS.xml' path='doc/member[@name="tagSFBS_FLAGS.SFBS_FLAGS_ROUND_TO_NEAREST_DISPLAYED_DIGIT"]/*' />
     SFBS_FLAGS_ROUND_TO_NEAREST_DISPLAYED_DIGIT = 0x0001,
+
+    /// <include file='tagSFBS_FLAGS.xml' path='doc/member[@name="tagSFBS_FLAGS.SFBS_FLAGS_TRUNCATE_UNDISPLAYED_DECIMAL_DIGITS"]/*' />
     SFBS_FLAGS_TRUNCATE_UNDISPLAYED_DECIMAL_DIGITS = 0x0002,
 }

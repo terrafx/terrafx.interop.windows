@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IAMLatency.GetLatency">
+    <summary>
+      <para>The <code>GetLatency</code> method retrieves the expected latency associated with this filter.</para>
+    </summary>
+    <param name="prtLatency">
+      <para>Pointer to a variable that receives the latency in 100-nanosecond units.</para>
+    </param>
+    <returns>
+      <para>Returns S_OK if successful, or an error code otherwise.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMLatency Interface" />
+  </member>
+  <member name="IAMLatency">
+    <summary>
+      <para>The <code>IAMLatency</code> interface reports the amount of latency that a filter introduces into the graph. Latency is defined as the time that it takes the filter to process a sample. For a source filter, latency is the filter's maximum buffer size, measured in time. For example, a video capture filter that buffers one frame at 30 frames per second introduces a latency of about 33 milliseconds.</para>
+      <para>Currently, there is no support for using this interface by itself. A source filter that streams live or real-time data should implement the <see cref="IAMPushSource" /> interface, which inherits from this interface.</para>
+    </summary>
+  </member>
+</doc>

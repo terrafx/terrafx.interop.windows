@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFSaveJob.xml' path='doc/member[@name="IMFSaveJob"]/*' />
 [Guid("E9931663-80BF-4C6E-98AF-5DCF58747D1F")]
 [NativeTypeName("struct IMFSaveJob : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMFSaveJob : IMFSaveJob.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMFSaveJob : IMFSaveJob.Interface
         return ((delegate* unmanaged<IMFSaveJob*, Guid*, void**, int>)(lpVtbl[0]))((IMFSaveJob*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMFSaveJob : IMFSaveJob.Interface
         return ((delegate* unmanaged<IMFSaveJob*, uint>)(lpVtbl[1]))((IMFSaveJob*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMFSaveJob : IMFSaveJob.Interface
         return ((delegate* unmanaged<IMFSaveJob*, uint>)(lpVtbl[2]))((IMFSaveJob*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFSaveJob.xml' path='doc/member[@name="IMFSaveJob.BeginSave"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT BeginSave(IMFByteStream* pStream, IMFAsyncCallback* pCallback, IUnknown* pState)
@@ -46,6 +51,7 @@ public unsafe partial struct IMFSaveJob : IMFSaveJob.Interface
         return ((delegate* unmanaged<IMFSaveJob*, IMFByteStream*, IMFAsyncCallback*, IUnknown*, int>)(lpVtbl[3]))((IMFSaveJob*)Unsafe.AsPointer(ref this), pStream, pCallback, pState);
     }
 
+    /// <include file='IMFSaveJob.xml' path='doc/member[@name="IMFSaveJob.EndSave"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT EndSave(IMFAsyncResult* pResult)
@@ -53,6 +59,7 @@ public unsafe partial struct IMFSaveJob : IMFSaveJob.Interface
         return ((delegate* unmanaged<IMFSaveJob*, IMFAsyncResult*, int>)(lpVtbl[4]))((IMFSaveJob*)Unsafe.AsPointer(ref this), pResult);
     }
 
+    /// <include file='IMFSaveJob.xml' path='doc/member[@name="IMFSaveJob.CancelSave"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT CancelSave()
@@ -60,6 +67,7 @@ public unsafe partial struct IMFSaveJob : IMFSaveJob.Interface
         return ((delegate* unmanaged<IMFSaveJob*, int>)(lpVtbl[5]))((IMFSaveJob*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFSaveJob.xml' path='doc/member[@name="IMFSaveJob.GetProgress"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetProgress([NativeTypeName("DWORD *")] uint* pdwPercentComplete)

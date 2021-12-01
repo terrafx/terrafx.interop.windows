@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="eAVEncMPVLevel">
+    <summary>
+      <para>Specifies the MPEG-2 profile. This enumeration is used with the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avencmpvlevel-property">AVEncMPVLevel</a> property.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-enumerations">Codec API Enumerations</seealso>
+    <seealso cref="ICodecAPI Interface" />
+  </member>
+  <member name="eAVEncMPVLevel.eAVEncMPVLevel_Low">
+    <summary>
+      <para>Low Level.</para>
+    </summary>
+  </member>
+  <member name="eAVEncMPVLevel.eAVEncMPVLevel_Main">
+    <summary>
+      <para>Main Level.</para>
+    </summary>
+  </member>
+  <member name="eAVEncMPVLevel.eAVEncMPVLevel_High1440">
+    <summary>
+      <para>High 1440 Level.</para>
+    </summary>
+  </member>
+  <member name="eAVEncMPVLevel.eAVEncMPVLevel_High">
+    <summary>
+      <para>High Level.</para>
+    </summary>
+  </member>
+</doc>

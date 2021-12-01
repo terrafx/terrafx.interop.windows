@@ -5,19 +5,25 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DISCDLGSTRUCTA.xml' path='doc/member[@name="DISCDLGSTRUCTA"]/*' />
 public unsafe partial struct DISCDLGSTRUCTA
 {
+    /// <include file='DISCDLGSTRUCTA.xml' path='doc/member[@name="DISCDLGSTRUCTA.cbStructure"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbStructure;
 
+    /// <include file='DISCDLGSTRUCTA.xml' path='doc/member[@name="DISCDLGSTRUCTA.hwndOwner"]/*' />
     public HWND hwndOwner;
 
+    /// <include file='DISCDLGSTRUCTA.xml' path='doc/member[@name="DISCDLGSTRUCTA.lpLocalName"]/*' />
     [NativeTypeName("LPSTR")]
     public sbyte* lpLocalName;
 
+    /// <include file='DISCDLGSTRUCTA.xml' path='doc/member[@name="DISCDLGSTRUCTA.lpRemoteName"]/*' />
     [NativeTypeName("LPSTR")]
     public sbyte* lpRemoteName;
 
+    /// <include file='DISCDLGSTRUCTA.xml' path='doc/member[@name="DISCDLGSTRUCTA.dwFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFlags;
 }

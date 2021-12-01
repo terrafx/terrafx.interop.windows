@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFAsyncCallbackLogging.xml' path='doc/member[@name="IMFAsyncCallbackLogging"]/*' />
 [Guid("C7A4DCA1-F5F0-47B6-B92B-BF0106D25791")]
 [NativeTypeName("struct IMFAsyncCallbackLogging : IMFAsyncCallback")]
 [NativeInheritance("IMFAsyncCallback")]
@@ -18,6 +19,7 @@ public unsafe partial struct IMFAsyncCallbackLogging : IMFAsyncCallbackLogging.I
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IMFAsyncCallbackLogging : IMFAsyncCallbackLogging.I
         return ((delegate* unmanaged<IMFAsyncCallbackLogging*, Guid*, void**, int>)(lpVtbl[0]))((IMFAsyncCallbackLogging*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IMFAsyncCallbackLogging : IMFAsyncCallbackLogging.I
         return ((delegate* unmanaged<IMFAsyncCallbackLogging*, uint>)(lpVtbl[1]))((IMFAsyncCallbackLogging*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IMFAsyncCallbackLogging : IMFAsyncCallbackLogging.I
         return ((delegate* unmanaged<IMFAsyncCallbackLogging*, uint>)(lpVtbl[2]))((IMFAsyncCallbackLogging*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IMFAsyncCallback.GetParameters" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetParameters([NativeTypeName("DWORD *")] uint* pdwFlags, [NativeTypeName("DWORD *")] uint* pdwQueue)
@@ -48,6 +53,7 @@ public unsafe partial struct IMFAsyncCallbackLogging : IMFAsyncCallbackLogging.I
         return ((delegate* unmanaged<IMFAsyncCallbackLogging*, uint*, uint*, int>)(lpVtbl[3]))((IMFAsyncCallbackLogging*)Unsafe.AsPointer(ref this), pdwFlags, pdwQueue);
     }
 
+    /// <inheritdoc cref="IMFAsyncCallback.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Invoke(IMFAsyncResult* pAsyncResult)
@@ -55,6 +61,7 @@ public unsafe partial struct IMFAsyncCallbackLogging : IMFAsyncCallbackLogging.I
         return ((delegate* unmanaged<IMFAsyncCallbackLogging*, IMFAsyncResult*, int>)(lpVtbl[4]))((IMFAsyncCallbackLogging*)Unsafe.AsPointer(ref this), pAsyncResult);
     }
 
+    /// <include file='IMFAsyncCallbackLogging.xml' path='doc/member[@name="IMFAsyncCallbackLogging.GetObjectPointer"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public void* GetObjectPointer()
@@ -62,6 +69,7 @@ public unsafe partial struct IMFAsyncCallbackLogging : IMFAsyncCallbackLogging.I
         return ((delegate* unmanaged<IMFAsyncCallbackLogging*, void*>)(lpVtbl[5]))((IMFAsyncCallbackLogging*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFAsyncCallbackLogging.xml' path='doc/member[@name="IMFAsyncCallbackLogging.GetObjectTag"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     [return: NativeTypeName("DWORD")]

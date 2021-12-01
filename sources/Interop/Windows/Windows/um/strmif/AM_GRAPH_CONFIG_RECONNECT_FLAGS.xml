@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="AM_GRAPH_CONFIG_RECONNECT_FLAGS">
+    <summary>
+      <para>Specifies how to reconnect filters when dynamically rebuilding the filter graph.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-enumerated-types">DirectShow Enumerated Types</seealso>
+    <seealso cref="IGraphConfig.Reconnect" />
+    <seealso cref="IPinFlowControl.Block" />
+  </member>
+  <member name="AM_GRAPH_CONFIG_RECONNECT_FLAGS.AM_GRAPH_CONFIG_RECONNECT_DIRECTCONNECT">
+    <summary>
+      <para>Do not insert additional filters into the graph while reconnecting, aside from any filter explicitly requested.</para>
+    </summary>
+  </member>
+  <member name="AM_GRAPH_CONFIG_RECONNECT_FLAGS.AM_GRAPH_CONFIG_RECONNECT_CACHE_REMOVED_FILTERS">
+    <summary>
+      <para>Place filters removed from the graph into the filter cache.</para>
+    </summary>
+  </member>
+  <member name="AM_GRAPH_CONFIG_RECONNECT_FLAGS.AM_GRAPH_CONFIG_RECONNECT_USE_ONLY_CACHED_FILTERS">
+    <summary>
+      <para>When inserting additional filters into the graph, use only filters currently in the filter cache.</para>
+    </summary>
+  </member>
+</doc>

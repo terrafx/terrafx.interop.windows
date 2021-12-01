@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CONTENTALIGNMENT.xml' path='doc/member[@name="CONTENTALIGNMENT"]/*' />
 public enum CONTENTALIGNMENT
 {
+    /// <include file='CONTENTALIGNMENT.xml' path='doc/member[@name="CONTENTALIGNMENT.CA_LEFT"]/*' />
     CA_LEFT = 0,
+
+    /// <include file='CONTENTALIGNMENT.xml' path='doc/member[@name="CONTENTALIGNMENT.CA_CENTER"]/*' />
     CA_CENTER = 1,
+
+    /// <include file='CONTENTALIGNMENT.xml' path='doc/member[@name="CONTENTALIGNMENT.CA_RIGHT"]/*' />
     CA_RIGHT = 2,
 }

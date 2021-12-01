@@ -1,0 +1,366 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFPluginControl.GetDisabledByIndex">
+    <summary>
+      <para>Gets a class identifier (CLSID) from the blocked list.</para>
+    </summary>
+    <param name="pluginType">
+      <para>Member of the <see cref="MF_Plugin_Type" /> enumeration, specifying the type of object to enumerate.</para>
+    </param>
+    <param name="index">
+      <para>The zero-based index of the CLSID to retrieve.</para>
+    </param>
+    <param name="clsid">
+      <para>Receives the CLSID at the specified index.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>
+                <b>S_OK</b>
+              </b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>
+                <b>E_INVALIDARG</b>
+              </b>
+            </para>
+          </description>
+          <description>
+            <para>Invalid argument.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>
+                <b>HRESULT_FROM_WIN32(ERROR_NO_MORE_ITEMS)</b>
+              </b>
+            </para>
+          </description>
+          <description>
+            <para>The <i>index</i> parameter is out of range.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IMFPluginControl" />
+  </member>
+  <member name="IMFPluginControl.GetPreferredClsid">
+    <summary>
+      <para>Searches the preferred list for a class identifier (CLSID) that matches a specified key name.</para>
+    </summary>
+    <param name="pluginType">
+      <para>Member of the <see cref="MF_Plugin_Type" /> enumeration, specifying the type of object.</para>
+    </param>
+    <param name="selector">
+      <para>The key name to match. For more information about the format of key names, see the Remarks section of <see cref="IMFPluginControl" />.</para>
+    </param>
+    <param name="clsid">
+      <para>Receives a CLSID from the preferred list.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>
+                <b>S_OK</b>
+              </b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>
+                <b>E_INVALIDARG</b>
+              </b>
+            </para>
+          </description>
+          <description>
+            <para>Invalid argument.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>
+                <b>HRESULT_FROM_WIN32(ERROR_NOT_FOUND)</b>
+              </b>
+            </para>
+          </description>
+          <description>
+            <para>No CLSID matching this key was found.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IMFPluginControl" />
+  </member>
+  <member name="IMFPluginControl.GetPreferredClsidByIndex">
+    <summary>
+      <para>Gets a class identifier (CLSID) from the preferred list, specified by index value.</para>
+    </summary>
+    <param name="pluginType">
+      <para>Member of the <see cref="MF_Plugin_Type" /> enumeration, specifying the type of object to enumerate.</para>
+    </param>
+    <param name="index">
+      <para>The zero-based index of the CLSID to retrieve.</para>
+    </param>
+    <param name="selector">
+      <para>Receives the key name associated with the CLSID. The caller must free the memory for the returned string by calling the <see cref="CoTaskMemFree" /> function. For more information about the format of key names, see the Remarks section of <see cref="IMFPluginControl" />.</para>
+    </param>
+    <param name="clsid">
+      <para>Receives the CLSID at the specified index.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>
+                <b>S_OK</b>
+              </b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>
+                <b>E_INVALIDARG</b>
+              </b>
+            </para>
+          </description>
+          <description>
+            <para>Invalid argument.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>
+                <b>HRESULT_FROM_WIN32(ERROR_NO_MORE_ITEMS)</b>
+              </b>
+            </para>
+          </description>
+          <description>
+            <para>The <i>index</i> parameter is out of range.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IMFPluginControl" />
+  </member>
+  <member name="IMFPluginControl.IsDisabled">
+    <summary>
+      <para>Queries whether a class identifier (CLSID) appears in the blocked list.</para>
+    </summary>
+    <param name="pluginType">
+      <para>Member of the <see cref="MF_Plugin_Type" /> enumeration, specifying the type of object for the query.</para>
+    </param>
+    <param name="clsid">
+      <para>The CLSID to search for.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>
+                <b>S_OK</b>
+              </b>
+            </para>
+          </description>
+          <description>
+            <para>The specified CLSID appears in the blocked list.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>
+                <b>E_INVALIDARG</b>
+              </b>
+            </para>
+          </description>
+          <description>
+            <para>Invalid argument.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>
+                <b>HRESULT_FROM_WIN32(ERROR_NOT_FOUND)</b>
+              </b>
+            </para>
+          </description>
+          <description>
+            <para>The specified CLSID is not in the blocked list.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IMFPluginControl" />
+  </member>
+  <member name="IMFPluginControl.SetDisabled">
+    <summary>
+      <para>Adds a class identifier (CLSID) to the blocked list, or removes a CLSID from the list.</para>
+    </summary>
+    <param name="pluginType">
+      <para>Member of the <see cref="MF_Plugin_Type" /> enumeration, specifying the type of object.</para>
+    </param>
+    <param name="clsid">
+      <para>The CLSID to add or remove.</para>
+    </param>
+    <param name="disabled">
+      <para>Specifies whether to add or remove the CSLID. If the value is <b>TRUE</b>, the method adds the CLSID to the blocked list. Otherwise, the method removes it from the list.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>
+                <b>S_OK</b>
+              </b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>
+                <b>E_INVALIDARG</b>
+              </b>
+            </para>
+          </description>
+          <description>
+            <para>Invalid argument.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The blocked list is global to the caller's process. Calling this method does not affect the list in other processes.</para>
+    </remarks>
+    <seealso cref="IMFPluginControl" />
+  </member>
+  <member name="IMFPluginControl.SetPreferredClsid">
+    <summary>
+      <para>Adds a class identifier (CLSID) to the preferred list or removes a CLSID from the list.</para>
+    </summary>
+    <param name="pluginType">
+      <para>Member of the <see cref="MF_Plugin_Type" /> enumeration, specifying the type of object.</para>
+    </param>
+    <param name="selector">
+      <para>The key name for the CLSID. For more information about the format of key names, see the Remarks section of <see cref="IMFPluginControl" />.</para>
+    </param>
+    <param name="clsid">
+      <para>The CLSID to add to the list. If this parameter is <b>NULL</b>, the key/value entry specified by the <i>selector</i> parameter is removed from the list.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The preferred list is global to the caller's process. Calling this method does not affect the list in other process.</para>
+    </remarks>
+    <seealso cref="IMFPluginControl" />
+  </member>
+  <member name="IMFPluginControl">
+    <summary>
+      <para>Controls how media sources and transforms are enumerated in Microsoft Media Foundation.</para>
+      <para>To get a pointer to this interface, call <see cref="MFGetPluginControl" />.</para>
+    </summary>
+    <remarks>
+      <para>Media Foundation provides a set of built-in media sources and decoders. Applications can enumerate them as follows:</para>
+      <list type="bullet">
+        <item>
+          <description>Media sources are enumerated through the <a href="https://docs.microsoft.com//windows/desktop/medfound/source-resolver">Source Resolver</a>.</description>
+        </item>
+        <item>
+          <description>Transforms, such as decoders, are enumerated through the <see cref="MFTEnum" /> and <see cref="MFTEnumEx" /> functions.</description>
+        </item>
+      </list>
+      <para>Applications might also enumerate these objects indirectly. For example, if an application   uses the topology loader to resolve a partial topology, the topology loader calls <see cref="MFTEnumEx" /> to find the required decoders.</para>
+      <para>Third parties can implement their own custom media sources and decoders, and register them for enumeration so that other applications can use them.</para>
+      <para>To control the enumeration order, Media Foundation maintains two process-wide lists of CLSIDs: a preferred list and a blocked list.  An object whose CLSID appears in the preferred list appears first in the enumeration order. An object whose CLSID appears on the blocked list is not enumerated.</para>
+      <para>The lists are initially populated from the registry. Applications can use the <b>IMFPluginControl</b> interface to modify the lists for the current process.</para>
+      <para>The preferred list contains a set of key/value pairs, where the keys are strings and the values are CLSIDs. These key/value pairs are defined as follows:</para>
+      <list type="bullet">
+        <item>
+          <description>For media sources, the key name is a file name extension, protocol scheme, or MIME type. The value is the CLSID of a scheme handler or byte-stream handler for that media source.</description>
+        </item>
+        <item>
+          <description>For decoders, the key name is a media subtype GUID in canonical string form. (For more information about media subtypes, see <a href="https://docs.microsoft.com//windows/desktop/medfound/media-types">Media Types</a>.) The value is the CLSID of the Media Foundation transform (MFT) that implements the decoder. </description>
+        </item>
+      </list>
+      <para>The following examples show the various types of key:</para>
+      <list type="bullet">
+        <item>
+          <description>File extension: ".wmv"</description>
+        </item>
+        <item>
+          <description>Scheme: "http:"</description>
+        </item>
+        <item>
+          <description>MIME type: "video/mp4"</description>
+        </item>
+        <item>
+          <description>Media subtype: "{47504A4D-0000-0010-8000-00AA00389B71}"</description>
+        </item>
+      </list>
+      <para>To search the preferred list by key name, call the <see cref="IMFPluginControl.GetPreferredClsid" /> method. To enumerate the entire list, call the <see cref="IMFPluginControl.GetPreferredClsidByIndex" /> method in a loop.</para>
+      <para>The blocked list contains a list of CLSIDs. To enumerate the entire list, call the <see cref="IMFPluginControl.GetDisabledByIndex" /> method in a loop. To check whether a specific CLSID appears on the list, call the <see cref="IMFPluginControl.IsDisabled" /> method.</para>
+    </remarks>
+    <seealso cref="MFGetPluginControl" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+  </member>
+</doc>

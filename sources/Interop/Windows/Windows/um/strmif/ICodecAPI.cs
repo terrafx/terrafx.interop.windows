@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ICodecAPI.xml' path='doc/member[@name="ICodecAPI"]/*' />
 [Guid("901DB4C7-31CE-41A2-85DC-8FA0BF41B8DA")]
 [NativeTypeName("struct ICodecAPI : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ICodecAPI : ICodecAPI.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ICodecAPI : ICodecAPI.Interface
         return ((delegate* unmanaged<ICodecAPI*, Guid*, void**, int>)(lpVtbl[0]))((ICodecAPI*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ICodecAPI : ICodecAPI.Interface
         return ((delegate* unmanaged<ICodecAPI*, uint>)(lpVtbl[1]))((ICodecAPI*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ICodecAPI : ICodecAPI.Interface
         return ((delegate* unmanaged<ICodecAPI*, uint>)(lpVtbl[2]))((ICodecAPI*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ICodecAPI.xml' path='doc/member[@name="ICodecAPI.IsSupported"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT IsSupported([NativeTypeName("const GUID *")] Guid* Api)
@@ -46,6 +51,7 @@ public unsafe partial struct ICodecAPI : ICodecAPI.Interface
         return ((delegate* unmanaged<ICodecAPI*, Guid*, int>)(lpVtbl[3]))((ICodecAPI*)Unsafe.AsPointer(ref this), Api);
     }
 
+    /// <include file='ICodecAPI.xml' path='doc/member[@name="ICodecAPI.IsModifiable"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT IsModifiable([NativeTypeName("const GUID *")] Guid* Api)
@@ -53,6 +59,7 @@ public unsafe partial struct ICodecAPI : ICodecAPI.Interface
         return ((delegate* unmanaged<ICodecAPI*, Guid*, int>)(lpVtbl[4]))((ICodecAPI*)Unsafe.AsPointer(ref this), Api);
     }
 
+    /// <include file='ICodecAPI.xml' path='doc/member[@name="ICodecAPI.GetParameterRange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetParameterRange([NativeTypeName("const GUID *")] Guid* Api, VARIANT* ValueMin, VARIANT* ValueMax, VARIANT* SteppingDelta)
@@ -60,6 +67,7 @@ public unsafe partial struct ICodecAPI : ICodecAPI.Interface
         return ((delegate* unmanaged<ICodecAPI*, Guid*, VARIANT*, VARIANT*, VARIANT*, int>)(lpVtbl[5]))((ICodecAPI*)Unsafe.AsPointer(ref this), Api, ValueMin, ValueMax, SteppingDelta);
     }
 
+    /// <include file='ICodecAPI.xml' path='doc/member[@name="ICodecAPI.GetParameterValues"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetParameterValues([NativeTypeName("const GUID *")] Guid* Api, VARIANT** Values, [NativeTypeName("ULONG *")] uint* ValuesCount)
@@ -67,6 +75,7 @@ public unsafe partial struct ICodecAPI : ICodecAPI.Interface
         return ((delegate* unmanaged<ICodecAPI*, Guid*, VARIANT**, uint*, int>)(lpVtbl[6]))((ICodecAPI*)Unsafe.AsPointer(ref this), Api, Values, ValuesCount);
     }
 
+    /// <include file='ICodecAPI.xml' path='doc/member[@name="ICodecAPI.GetDefaultValue"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetDefaultValue([NativeTypeName("const GUID *")] Guid* Api, VARIANT* Value)
@@ -74,6 +83,7 @@ public unsafe partial struct ICodecAPI : ICodecAPI.Interface
         return ((delegate* unmanaged<ICodecAPI*, Guid*, VARIANT*, int>)(lpVtbl[7]))((ICodecAPI*)Unsafe.AsPointer(ref this), Api, Value);
     }
 
+    /// <include file='ICodecAPI.xml' path='doc/member[@name="ICodecAPI.GetValue"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetValue([NativeTypeName("const GUID *")] Guid* Api, VARIANT* Value)
@@ -81,6 +91,7 @@ public unsafe partial struct ICodecAPI : ICodecAPI.Interface
         return ((delegate* unmanaged<ICodecAPI*, Guid*, VARIANT*, int>)(lpVtbl[8]))((ICodecAPI*)Unsafe.AsPointer(ref this), Api, Value);
     }
 
+    /// <include file='ICodecAPI.xml' path='doc/member[@name="ICodecAPI.SetValue"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT SetValue([NativeTypeName("const GUID *")] Guid* Api, VARIANT* Value)
@@ -88,6 +99,7 @@ public unsafe partial struct ICodecAPI : ICodecAPI.Interface
         return ((delegate* unmanaged<ICodecAPI*, Guid*, VARIANT*, int>)(lpVtbl[9]))((ICodecAPI*)Unsafe.AsPointer(ref this), Api, Value);
     }
 
+    /// <include file='ICodecAPI.xml' path='doc/member[@name="ICodecAPI.RegisterForEvent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT RegisterForEvent([NativeTypeName("const GUID *")] Guid* Api, [NativeTypeName("LONG_PTR")] nint userData)
@@ -95,6 +107,7 @@ public unsafe partial struct ICodecAPI : ICodecAPI.Interface
         return ((delegate* unmanaged<ICodecAPI*, Guid*, nint, int>)(lpVtbl[10]))((ICodecAPI*)Unsafe.AsPointer(ref this), Api, userData);
     }
 
+    /// <include file='ICodecAPI.xml' path='doc/member[@name="ICodecAPI.UnregisterForEvent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT UnregisterForEvent([NativeTypeName("const GUID *")] Guid* Api)
@@ -102,6 +115,7 @@ public unsafe partial struct ICodecAPI : ICodecAPI.Interface
         return ((delegate* unmanaged<ICodecAPI*, Guid*, int>)(lpVtbl[11]))((ICodecAPI*)Unsafe.AsPointer(ref this), Api);
     }
 
+    /// <include file='ICodecAPI.xml' path='doc/member[@name="ICodecAPI.SetAllDefaults"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT SetAllDefaults()
@@ -109,6 +123,7 @@ public unsafe partial struct ICodecAPI : ICodecAPI.Interface
         return ((delegate* unmanaged<ICodecAPI*, int>)(lpVtbl[12]))((ICodecAPI*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ICodecAPI.xml' path='doc/member[@name="ICodecAPI.SetValueWithNotify"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT SetValueWithNotify([NativeTypeName("const GUID *")] Guid* Api, VARIANT* Value, Guid** ChangedParam, [NativeTypeName("ULONG *")] uint* ChangedParamCount)
@@ -116,6 +131,7 @@ public unsafe partial struct ICodecAPI : ICodecAPI.Interface
         return ((delegate* unmanaged<ICodecAPI*, Guid*, VARIANT*, Guid**, uint*, int>)(lpVtbl[13]))((ICodecAPI*)Unsafe.AsPointer(ref this), Api, Value, ChangedParam, ChangedParamCount);
     }
 
+    /// <include file='ICodecAPI.xml' path='doc/member[@name="ICodecAPI.SetAllDefaultsWithNotify"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT SetAllDefaultsWithNotify(Guid** ChangedParam, [NativeTypeName("ULONG *")] uint* ChangedParamCount)
@@ -123,6 +139,7 @@ public unsafe partial struct ICodecAPI : ICodecAPI.Interface
         return ((delegate* unmanaged<ICodecAPI*, Guid**, uint*, int>)(lpVtbl[14]))((ICodecAPI*)Unsafe.AsPointer(ref this), ChangedParam, ChangedParamCount);
     }
 
+    /// <include file='ICodecAPI.xml' path='doc/member[@name="ICodecAPI.GetAllSettings"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT GetAllSettings(IStream* __MIDL__ICodecAPI0000)
@@ -130,6 +147,7 @@ public unsafe partial struct ICodecAPI : ICodecAPI.Interface
         return ((delegate* unmanaged<ICodecAPI*, IStream*, int>)(lpVtbl[15]))((ICodecAPI*)Unsafe.AsPointer(ref this), __MIDL__ICodecAPI0000);
     }
 
+    /// <include file='ICodecAPI.xml' path='doc/member[@name="ICodecAPI.SetAllSettings"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT SetAllSettings(IStream* __MIDL__ICodecAPI0001)
@@ -137,6 +155,7 @@ public unsafe partial struct ICodecAPI : ICodecAPI.Interface
         return ((delegate* unmanaged<ICodecAPI*, IStream*, int>)(lpVtbl[16]))((ICodecAPI*)Unsafe.AsPointer(ref this), __MIDL__ICodecAPI0001);
     }
 
+    /// <include file='ICodecAPI.xml' path='doc/member[@name="ICodecAPI.SetAllSettingsWithNotify"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT SetAllSettingsWithNotify(IStream* __MIDL__ICodecAPI0002, Guid** ChangedParam, [NativeTypeName("ULONG *")] uint* ChangedParamCount)

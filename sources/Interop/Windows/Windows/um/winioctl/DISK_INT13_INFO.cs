@@ -5,20 +5,26 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DISK_INT13_INFO.xml' path='doc/member[@name="DISK_INT13_INFO"]/*' />
 public partial struct DISK_INT13_INFO
 {
+    /// <include file='DISK_INT13_INFO.xml' path='doc/member[@name="DISK_INT13_INFO.DriveSelect"]/*' />
     [NativeTypeName("WORD")]
     public ushort DriveSelect;
 
+    /// <include file='DISK_INT13_INFO.xml' path='doc/member[@name="DISK_INT13_INFO.MaxCylinders"]/*' />
     [NativeTypeName("DWORD")]
     public uint MaxCylinders;
 
+    /// <include file='DISK_INT13_INFO.xml' path='doc/member[@name="DISK_INT13_INFO.SectorsPerTrack"]/*' />
     [NativeTypeName("WORD")]
     public ushort SectorsPerTrack;
 
+    /// <include file='DISK_INT13_INFO.xml' path='doc/member[@name="DISK_INT13_INFO.MaxHeads"]/*' />
     [NativeTypeName("WORD")]
     public ushort MaxHeads;
 
+    /// <include file='DISK_INT13_INFO.xml' path='doc/member[@name="DISK_INT13_INFO.NumberDrives"]/*' />
     [NativeTypeName("WORD")]
     public ushort NumberDrives;
 }

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITypeLib2.xml' path='doc/member[@name="ITypeLib2"]/*' />
 [Guid("00020411-0000-0000-C000-000000000046")]
 [NativeTypeName("struct ITypeLib2 : ITypeLib")]
 [NativeInheritance("ITypeLib")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITypeLib2 : ITypeLib2.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITypeLib2 : ITypeLib2.Interface
         return ((delegate* unmanaged<ITypeLib2*, Guid*, void**, int>)(lpVtbl[0]))((ITypeLib2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITypeLib2 : ITypeLib2.Interface
         return ((delegate* unmanaged<ITypeLib2*, uint>)(lpVtbl[1]))((ITypeLib2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITypeLib2 : ITypeLib2.Interface
         return ((delegate* unmanaged<ITypeLib2*, uint>)(lpVtbl[2]))((ITypeLib2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ITypeLib.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public uint GetTypeInfoCount()
@@ -46,6 +51,7 @@ public unsafe partial struct ITypeLib2 : ITypeLib2.Interface
         return ((delegate* unmanaged<ITypeLib2*, uint>)(lpVtbl[3]))((ITypeLib2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ITypeLib.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint index, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct ITypeLib2 : ITypeLib2.Interface
         return ((delegate* unmanaged<ITypeLib2*, uint, ITypeInfo**, int>)(lpVtbl[4]))((ITypeLib2*)Unsafe.AsPointer(ref this), index, ppTInfo);
     }
 
+    /// <inheritdoc cref="ITypeLib.GetTypeInfoType" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetTypeInfoType(uint index, TYPEKIND* pTKind)
@@ -60,6 +67,7 @@ public unsafe partial struct ITypeLib2 : ITypeLib2.Interface
         return ((delegate* unmanaged<ITypeLib2*, uint, TYPEKIND*, int>)(lpVtbl[5]))((ITypeLib2*)Unsafe.AsPointer(ref this), index, pTKind);
     }
 
+    /// <inheritdoc cref="ITypeLib.GetTypeInfoOfGuid" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetTypeInfoOfGuid([NativeTypeName("const GUID &")] Guid* guid, ITypeInfo** ppTinfo)
@@ -67,6 +75,7 @@ public unsafe partial struct ITypeLib2 : ITypeLib2.Interface
         return ((delegate* unmanaged<ITypeLib2*, Guid*, ITypeInfo**, int>)(lpVtbl[6]))((ITypeLib2*)Unsafe.AsPointer(ref this), guid, ppTinfo);
     }
 
+    /// <inheritdoc cref="ITypeLib.GetLibAttr" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetLibAttr(TLIBATTR** ppTLibAttr)
@@ -74,6 +83,7 @@ public unsafe partial struct ITypeLib2 : ITypeLib2.Interface
         return ((delegate* unmanaged<ITypeLib2*, TLIBATTR**, int>)(lpVtbl[7]))((ITypeLib2*)Unsafe.AsPointer(ref this), ppTLibAttr);
     }
 
+    /// <inheritdoc cref="ITypeLib.GetTypeComp" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetTypeComp(ITypeComp** ppTComp)
@@ -81,6 +91,7 @@ public unsafe partial struct ITypeLib2 : ITypeLib2.Interface
         return ((delegate* unmanaged<ITypeLib2*, ITypeComp**, int>)(lpVtbl[8]))((ITypeLib2*)Unsafe.AsPointer(ref this), ppTComp);
     }
 
+    /// <inheritdoc cref="ITypeLib.GetDocumentation" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT GetDocumentation(int index, [NativeTypeName("BSTR *")] ushort** pBstrName, [NativeTypeName("BSTR *")] ushort** pBstrDocString, [NativeTypeName("DWORD *")] uint* pdwHelpContext, [NativeTypeName("BSTR *")] ushort** pBstrHelpFile)
@@ -88,6 +99,7 @@ public unsafe partial struct ITypeLib2 : ITypeLib2.Interface
         return ((delegate* unmanaged<ITypeLib2*, int, ushort**, ushort**, uint*, ushort**, int>)(lpVtbl[9]))((ITypeLib2*)Unsafe.AsPointer(ref this), index, pBstrName, pBstrDocString, pdwHelpContext, pBstrHelpFile);
     }
 
+    /// <inheritdoc cref="ITypeLib.IsName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT IsName([NativeTypeName("LPOLESTR")] ushort* szNameBuf, [NativeTypeName("ULONG")] uint lHashVal, BOOL* pfName)
@@ -95,6 +107,7 @@ public unsafe partial struct ITypeLib2 : ITypeLib2.Interface
         return ((delegate* unmanaged<ITypeLib2*, ushort*, uint, BOOL*, int>)(lpVtbl[10]))((ITypeLib2*)Unsafe.AsPointer(ref this), szNameBuf, lHashVal, pfName);
     }
 
+    /// <inheritdoc cref="ITypeLib.FindName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT FindName([NativeTypeName("LPOLESTR")] ushort* szNameBuf, [NativeTypeName("ULONG")] uint lHashVal, ITypeInfo** ppTInfo, [NativeTypeName("MEMBERID *")] int* rgMemId, ushort* pcFound)
@@ -102,6 +115,7 @@ public unsafe partial struct ITypeLib2 : ITypeLib2.Interface
         return ((delegate* unmanaged<ITypeLib2*, ushort*, uint, ITypeInfo**, int*, ushort*, int>)(lpVtbl[11]))((ITypeLib2*)Unsafe.AsPointer(ref this), szNameBuf, lHashVal, ppTInfo, rgMemId, pcFound);
     }
 
+    /// <inheritdoc cref="ITypeLib.ReleaseTLibAttr" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public void ReleaseTLibAttr(TLIBATTR* pTLibAttr)
@@ -109,6 +123,7 @@ public unsafe partial struct ITypeLib2 : ITypeLib2.Interface
         ((delegate* unmanaged<ITypeLib2*, TLIBATTR*, void>)(lpVtbl[12]))((ITypeLib2*)Unsafe.AsPointer(ref this), pTLibAttr);
     }
 
+    /// <include file='ITypeLib2.xml' path='doc/member[@name="ITypeLib2.GetCustData"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT GetCustData([NativeTypeName("const GUID &")] Guid* guid, VARIANT* pVarVal)
@@ -116,6 +131,7 @@ public unsafe partial struct ITypeLib2 : ITypeLib2.Interface
         return ((delegate* unmanaged<ITypeLib2*, Guid*, VARIANT*, int>)(lpVtbl[13]))((ITypeLib2*)Unsafe.AsPointer(ref this), guid, pVarVal);
     }
 
+    /// <include file='ITypeLib2.xml' path='doc/member[@name="ITypeLib2.GetLibStatistics"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT GetLibStatistics([NativeTypeName("ULONG *")] uint* pcUniqueNames, [NativeTypeName("ULONG *")] uint* pcchUniqueNames)
@@ -123,6 +139,7 @@ public unsafe partial struct ITypeLib2 : ITypeLib2.Interface
         return ((delegate* unmanaged<ITypeLib2*, uint*, uint*, int>)(lpVtbl[14]))((ITypeLib2*)Unsafe.AsPointer(ref this), pcUniqueNames, pcchUniqueNames);
     }
 
+    /// <include file='ITypeLib2.xml' path='doc/member[@name="ITypeLib2.GetDocumentation2"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT GetDocumentation2(int index, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("BSTR *")] ushort** pbstrHelpString, [NativeTypeName("DWORD *")] uint* pdwHelpStringContext, [NativeTypeName("BSTR *")] ushort** pbstrHelpStringDll)
@@ -130,6 +147,7 @@ public unsafe partial struct ITypeLib2 : ITypeLib2.Interface
         return ((delegate* unmanaged<ITypeLib2*, int, uint, ushort**, uint*, ushort**, int>)(lpVtbl[15]))((ITypeLib2*)Unsafe.AsPointer(ref this), index, lcid, pbstrHelpString, pdwHelpStringContext, pbstrHelpStringDll);
     }
 
+    /// <include file='ITypeLib2.xml' path='doc/member[@name="ITypeLib2.GetAllCustData"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT GetAllCustData(CUSTDATA* pCustData)

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFQualityAdvise.xml' path='doc/member[@name="IMFQualityAdvise"]/*' />
 [Guid("EC15E2E9-E36B-4F7C-8758-77D452EF4CE7")]
 [NativeTypeName("struct IMFQualityAdvise : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMFQualityAdvise : IMFQualityAdvise.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMFQualityAdvise : IMFQualityAdvise.Interface
         return ((delegate* unmanaged<IMFQualityAdvise*, Guid*, void**, int>)(lpVtbl[0]))((IMFQualityAdvise*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMFQualityAdvise : IMFQualityAdvise.Interface
         return ((delegate* unmanaged<IMFQualityAdvise*, uint>)(lpVtbl[1]))((IMFQualityAdvise*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMFQualityAdvise : IMFQualityAdvise.Interface
         return ((delegate* unmanaged<IMFQualityAdvise*, uint>)(lpVtbl[2]))((IMFQualityAdvise*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFQualityAdvise.xml' path='doc/member[@name="IMFQualityAdvise.SetDropMode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetDropMode(MF_QUALITY_DROP_MODE eDropMode)
@@ -46,6 +51,7 @@ public unsafe partial struct IMFQualityAdvise : IMFQualityAdvise.Interface
         return ((delegate* unmanaged<IMFQualityAdvise*, MF_QUALITY_DROP_MODE, int>)(lpVtbl[3]))((IMFQualityAdvise*)Unsafe.AsPointer(ref this), eDropMode);
     }
 
+    /// <include file='IMFQualityAdvise.xml' path='doc/member[@name="IMFQualityAdvise.SetQualityLevel"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetQualityLevel(MF_QUALITY_LEVEL eQualityLevel)
@@ -53,6 +59,7 @@ public unsafe partial struct IMFQualityAdvise : IMFQualityAdvise.Interface
         return ((delegate* unmanaged<IMFQualityAdvise*, MF_QUALITY_LEVEL, int>)(lpVtbl[4]))((IMFQualityAdvise*)Unsafe.AsPointer(ref this), eQualityLevel);
     }
 
+    /// <include file='IMFQualityAdvise.xml' path='doc/member[@name="IMFQualityAdvise.GetDropMode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetDropMode(MF_QUALITY_DROP_MODE* peDropMode)
@@ -60,6 +67,7 @@ public unsafe partial struct IMFQualityAdvise : IMFQualityAdvise.Interface
         return ((delegate* unmanaged<IMFQualityAdvise*, MF_QUALITY_DROP_MODE*, int>)(lpVtbl[5]))((IMFQualityAdvise*)Unsafe.AsPointer(ref this), peDropMode);
     }
 
+    /// <include file='IMFQualityAdvise.xml' path='doc/member[@name="IMFQualityAdvise.GetQualityLevel"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetQualityLevel(MF_QUALITY_LEVEL* peQualityLevel)
@@ -67,6 +75,7 @@ public unsafe partial struct IMFQualityAdvise : IMFQualityAdvise.Interface
         return ((delegate* unmanaged<IMFQualityAdvise*, MF_QUALITY_LEVEL*, int>)(lpVtbl[6]))((IMFQualityAdvise*)Unsafe.AsPointer(ref this), peQualityLevel);
     }
 
+    /// <include file='IMFQualityAdvise.xml' path='doc/member[@name="IMFQualityAdvise.DropTime"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT DropTime([NativeTypeName("LONGLONG")] long hnsAmountToDrop)

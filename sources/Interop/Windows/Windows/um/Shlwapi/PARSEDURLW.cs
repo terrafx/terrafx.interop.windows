@@ -5,20 +5,27 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PARSEDURLW.xml' path='doc/member[@name="PARSEDURLW"]/*' />
 public unsafe partial struct PARSEDURLW
 {
+    /// <include file='PARSEDURLW.xml' path='doc/member[@name="PARSEDURLW.cbSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbSize;
 
+    /// <include file='PARSEDURLW.xml' path='doc/member[@name="PARSEDURLW.pszProtocol"]/*' />
     [NativeTypeName("LPCWSTR")]
     public ushort* pszProtocol;
 
+    /// <include file='PARSEDURLW.xml' path='doc/member[@name="PARSEDURLW.cchProtocol"]/*' />
     public uint cchProtocol;
 
+    /// <include file='PARSEDURLW.xml' path='doc/member[@name="PARSEDURLW.pszSuffix"]/*' />
     [NativeTypeName("LPCWSTR")]
     public ushort* pszSuffix;
 
+    /// <include file='PARSEDURLW.xml' path='doc/member[@name="PARSEDURLW.cchSuffix"]/*' />
     public uint cchSuffix;
 
+    /// <include file='PARSEDURLW.xml' path='doc/member[@name="PARSEDURLW.nScheme"]/*' />
     public uint nScheme;
 }

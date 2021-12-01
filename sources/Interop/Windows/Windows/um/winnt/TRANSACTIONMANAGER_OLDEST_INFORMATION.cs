@@ -7,7 +7,9 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TRANSACTIONMANAGER_OLDEST_INFORMATION.xml' path='doc/member[@name="TRANSACTIONMANAGER_OLDEST_INFORMATION"]/*' />
 public partial struct TRANSACTIONMANAGER_OLDEST_INFORMATION
 {
+    /// <include file='TRANSACTIONMANAGER_OLDEST_INFORMATION.xml' path='doc/member[@name="TRANSACTIONMANAGER_OLDEST_INFORMATION.OldestTransactionGuid"]/*' />
     public Guid OldestTransactionGuid;
 }

@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SORT_ORDER_TYPE.xml' path='doc/member[@name="SORT_ORDER_TYPE"]/*' />
 public enum SORT_ORDER_TYPE
 {
+    /// <include file='SORT_ORDER_TYPE.xml' path='doc/member[@name="SORT_ORDER_TYPE.SOT_DEFAULT"]/*' />
     SOT_DEFAULT = 0,
+
+    /// <include file='SORT_ORDER_TYPE.xml' path='doc/member[@name="SORT_ORDER_TYPE.SOT_IGNORE_FOLDERNESS"]/*' />
     SOT_IGNORE_FOLDERNESS = 1,
 }

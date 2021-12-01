@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CERT_RDN.xml' path='doc/member[@name="CERT_RDN"]/*' />
 public unsafe partial struct CERT_RDN
 {
+    /// <include file='CERT_RDN.xml' path='doc/member[@name="CERT_RDN.cRDNAttr"]/*' />
     [NativeTypeName("DWORD")]
     public uint cRDNAttr;
 
+    /// <include file='CERT_RDN.xml' path='doc/member[@name="CERT_RDN.rgRDNAttr"]/*' />
     [NativeTypeName("PCERT_RDN_ATTR")]
     public CERT_RDN_ATTR* rgRDNAttr;
 }

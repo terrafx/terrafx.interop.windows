@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PREVIEWHANDLERFRAMEINFO.xml' path='doc/member[@name="PREVIEWHANDLERFRAMEINFO"]/*' />
 public partial struct PREVIEWHANDLERFRAMEINFO
 {
+    /// <include file='PREVIEWHANDLERFRAMEINFO.xml' path='doc/member[@name="PREVIEWHANDLERFRAMEINFO.haccel"]/*' />
     public HACCEL haccel;
 
+    /// <include file='PREVIEWHANDLERFRAMEINFO.xml' path='doc/member[@name="PREVIEWHANDLERFRAMEINFO.cAccelEntries"]/*' />
     public uint cAccelEntries;
 }

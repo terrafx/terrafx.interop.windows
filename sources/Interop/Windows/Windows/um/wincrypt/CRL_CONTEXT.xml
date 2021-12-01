@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CRL_CONTEXT">
+    <summary>
+      <para>The <b>CRL_CONTEXT</b> structure contains both the encoded and decoded representations of a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certificate revocation list</a> (CRL). CRL contexts returned by any CryptoAPI function must be freed by calling the
+<see cref="CertFreeCRLContext" /> function.</para>
+    </summary>
+    <seealso cref="CRL_INFO" />
+    <seealso cref="CRYPT_SIGN_MESSAGE_PARA" />
+    <seealso cref="CertAddCRLContextToStore" />
+    <seealso cref="CertAddEncodedCRLToStore" />
+    <seealso cref="CertCreateCRLContext" />
+    <seealso cref="CertFreeCRLContext" />
+    <seealso cref="CertGetCRLFromStore" />
+  </member>
+  <member name="CRL_CONTEXT.dwCertEncodingType">
+    <summary>
+      <para>Type of encoding used. It is always acceptable to specify both the certificate and <a href="https://docs.microsoft.com//windows/desktop/SecGloss/m-gly">message encoding types</a> by combining them with a bitwise-<b>OR</b> operation as shown in the following example:</para>
+      <para>X509_ASN_ENCODING | PKCS_7_ASN_ENCODING</para>
+      <para>Currently defined encoding types are:</para>
+      <list type="bullet">
+        <item>
+          <description>X509_ASN_ENCODING</description>
+        </item>
+        <item>
+          <description>PKCS_7_ASN_ENCODING</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="CRL_CONTEXT.pbCrlEncoded">
+    <summary>
+      <para>A pointer to the encoded CRL information.</para>
+    </summary>
+  </member>
+  <member name="CRL_CONTEXT.cbCrlEncoded">
+    <summary>
+      <para>The size, in bytes, of the encoded CRL information.</para>
+    </summary>
+  </member>
+  <member name="CRL_CONTEXT.pCrlInfo">
+    <summary>
+      <para>A pointer to
+<see cref="CRL_INFO" /> structure containing the CRL information.</para>
+    </summary>
+  </member>
+  <member name="CRL_CONTEXT.hCertStore">
+    <summary>
+      <para>A handle to the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certificate store</a>.</para>
+    </summary>
+  </member>
+</doc>

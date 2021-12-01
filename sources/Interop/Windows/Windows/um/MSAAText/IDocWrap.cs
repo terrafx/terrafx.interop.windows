@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IDocWrap.xml' path='doc/member[@name="IDocWrap"]/*' />
 [Guid("DCD285FE-0BE0-43BD-99C9-AAAEC513C555")]
 [NativeTypeName("struct IDocWrap : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IDocWrap : IDocWrap.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IDocWrap : IDocWrap.Interface
         return ((delegate* unmanaged<IDocWrap*, Guid*, void**, int>)(lpVtbl[0]))((IDocWrap*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IDocWrap : IDocWrap.Interface
         return ((delegate* unmanaged<IDocWrap*, uint>)(lpVtbl[1]))((IDocWrap*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IDocWrap : IDocWrap.Interface
         return ((delegate* unmanaged<IDocWrap*, uint>)(lpVtbl[2]))((IDocWrap*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDocWrap.xml' path='doc/member[@name="IDocWrap.SetDoc"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetDoc([NativeTypeName("const IID &")] Guid* riid, IUnknown* punk)
@@ -46,6 +51,7 @@ public unsafe partial struct IDocWrap : IDocWrap.Interface
         return ((delegate* unmanaged<IDocWrap*, Guid*, IUnknown*, int>)(lpVtbl[3]))((IDocWrap*)Unsafe.AsPointer(ref this), riid, punk);
     }
 
+    /// <include file='IDocWrap.xml' path='doc/member[@name="IDocWrap.GetWrappedDoc"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetWrappedDoc([NativeTypeName("const IID &")] Guid* riid, IUnknown** ppunk)

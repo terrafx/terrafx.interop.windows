@@ -1,0 +1,362 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFCaptureEngine.GetSink">
+    <summary>
+      <para>Gets a pointer to one of the capture sink objects. You can use the capture sinks to configure preview, recording, or still-image capture.</para>
+    </summary>
+    <param name="mfCaptureEngineSinkType">
+      <para>An <see cref="MF_CAPTURE_ENGINE_SINK_TYPE" /> value that specifies the capture sink to retrieve.</para>
+    </param>
+    <param name="ppSink">
+      <para>Receives a pointer to the <see cref="IMFCaptureSink" /> interface. The caller must release the interface.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>Invalid argument.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IMFCaptureEngine" />
+  </member>
+  <member name="IMFCaptureEngine.GetSource">
+    <summary>
+      <para>Gets a pointer to the capture source object. Use the capture source to configure the capture devices.</para>
+    </summary>
+    <param name="ppSource">
+      <para>Receives a pointer to the <see cref="IMFCaptureSource" /> interface. The caller must release the interface.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFCaptureEngine" />
+  </member>
+  <member name="IMFCaptureEngine.Initialize">
+    <summary>
+      <para>Initializes the capture engine.</para>
+    </summary>
+    <param name="pEventCallback">
+      <para>A pointer to the <see cref="IMFCaptureEngineOnEventCallback" /> interface. The caller must implement this interface. The capture engine uses this interface to send asynchronous events to the caller.</para>
+    </param>
+    <param name="pAttributes">
+      <para>A pointer to the <see cref="IMFAttributes" /> interface. This parameter can be <b>NULL</b>.</para>
+      <para>You can use this parameter to configure the capture engine. Call <see cref="MFCreateAttributes" /> to create an attribute store, and then set any of the following attributes.</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-capture-engine-d3d-manager">MF_CAPTURE_ENGINE_D3D_MANAGER</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-capture-engine-disable-dxva">MF_CAPTURE_ENGINE_DISABLE_DXVA</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-capture-engine-disable-hardware-transforms">MF_CAPTURE_ENGINE_DISABLE_HARDWARE_TRANSFORMS</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-capture-engine-encoder-mft-fieldofuse-unlock-attribute">MF_CAPTURE_ENGINE_ENCODER_MFT_FIELDOFUSE_UNLOCK_Attribute</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-capture-engine-event-generator-guid">MF_CAPTURE_ENGINE_EVENT_GENERATOR_GUID</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/hh162817(v=vs.85)">MF_CAPTURE_ENGINE_EVENT_STREAM_INDEX</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-capture-engine-mediasource-config">MF_CAPTURE_ENGINE_MEDIASOURCE_CONFIG</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-capture-engine-record-sink-audio-max-processed-samples">MF_CAPTURE_ENGINE_RECORD_SINK_AUDIO_MAX_PROCESSED_SAMPLES</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-capture-engine-record-sink-audio-max-unprocessed-samples">MF_CAPTURE_ENGINE_RECORD_SINK_AUDIO_MAX_UNPROCESSED_SAMPLES</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-capture-engine-record-sink-video-max-processed-samples">MF_CAPTURE_ENGINE_RECORD_SINK_VIDEO_MAX_PROCESSED_SAMPLES</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-capture-engine-record-sink-video-max-unprocessed-samples">MF_CAPTURE_ENGINE_RECORD_SINK_VIDEO_MAX_UNPROCESSED_SAMPLES</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-capture-engine-use-audio-device-only">MF_CAPTURE_ENGINE_USE_AUDIO_DEVICE_ONLY</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-capture-engine-use-video-device-only">MF_CAPTURE_ENGINE_USE_VIDEO_DEVICE_ONLY</a>
+          </description>
+        </item>
+      </list>
+    </param>
+    <param name="pAudioSource">
+      <para>An <see cref="IUnknown" /> pointer that specifies an audio-capture device. This parameter can be <b>NULL</b>.</para>
+      <para>If you set the <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-capture-engine-use-video-device-only">MF_CAPTURE_ENGINE_USE_VIDEO_DEVICE_ONLY</a> attribute to <b>TRUE</b> in <i>pAttributes</i>, the capture engine does not use an audio device, and the <i>pAudioSource</i> parameter is ignored.</para>
+      <para>Otherwise, if <i>pAudioSource</i> is <b>NULL</b>, the capture engine selects the microphone that is built into the video camera specified by <i>pVideoSource</i>. If the video camera does not have a microphone, the capture engine enumerates the audio-capture devices on the system and selects the first one.</para>
+      <para>To override the default audio device, set <i>pAudioSource</i> to an <see cref="IMFMediaSource" /> or <see cref="IMFActivate" /> pointer for the device. For more information, see <a href="https://docs.microsoft.com//windows/desktop/medfound/audio-video-capture-in-media-foundation">Audio/Video Capture in Media Foundation</a>.</para>
+    </param>
+    <param name="pVideoSource">
+      <para>An <see cref="IUnknown" /> pointer that specifies a video-capture device. This parameter can be <b>NULL</b>.</para>
+      <para>If you set the <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-capture-engine-use-audio-device-only">MF_CAPTURE_ENGINE_USE_AUDIO_DEVICE_ONLY</a> attribute to <b>TRUE</b> in <i>pAttributes</i>, the capture engine does not use a video device, and the <i>pVideoSource</i> parameter is ignored.</para>
+      <para>Otherwise, if <i>pVideoSource</i> is <b>NULL</b>, the capture engine enumerates the video-capture devices on the system and selects the first one.</para>
+      <para>To override the default video device, set <i>pVideoSource</i> to an <see cref="IMFMediaSource" /> or <see cref="IMFActivate" /> pointer for the device. For more information, see <a href="https://docs.microsoft.com//windows/desktop/medfound/enumerating-video-capture-devices">Enumerating Video Capture Devices</a>.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_INVALIDREQUEST</b>
+            </para>
+          </description>
+          <description>
+            <para>The <see cref="Initialize" /> method was already called.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_NO_CAPTURE_DEVICES_AVAILABLE</b>
+            </para>
+          </description>
+          <description>
+            <para>No capture devices are available.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_UNSUPPORTED_CAPTURE_DEVICE_PRESENT</b>
+            </para>
+          </description>
+          <description>
+            <para>An unsupported capture device is present on the system. This error will only be returned if NULL is specified for the <i>pVideoSource</i> parameter, indicating that the system should pick the capture device, and if no supported capture device has already been attached. It is recommended that apps show users a specific unsupported capture device message if this error is returned, rather than a general failure message.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>You must call this method once before using the capture engine. Calling the method a second time returns <b>MF_E_INVALIDREQUEST</b>.</para>
+      <para>This method is asynchronous. If the method returns a success code, the caller will receive an <b>MF_CAPTURE_ENGINE_INITIALIZED</b> event through the <see cref="IMFCaptureEngineOnEventCallback.OnEvent" /> method. The operation can fail asynchronously after the method succeeds. If so, the error code is conveyed through the <b>OnEvent</b> method.</para>
+    </remarks>
+    <seealso cref="IMFCaptureEngine" />
+  </member>
+  <member name="IMFCaptureEngine.StartPreview">
+    <summary>
+      <para>Starts preview.</para>
+    </summary>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_INVALIDREQUEST</b>
+            </para>
+          </description>
+          <description>
+            <para>The preview sink was not initialized.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Before calling this method, configure the preview sink by calling <see cref="IMFCaptureSink.AddStream" />. To get a pointer to the preview sink, call <see cref="IMFCaptureEngine.GetSink" />.</para>
+      <para>This method is asynchronous. If the method returns a success code, the caller will receive an <b>MF_CAPTURE_ENGINE_PREVIEW_STARTED</b> event through the <see cref="IMFCaptureEngineOnEventCallback.OnEvent" /> method. The operation can fail asynchronously after the method succeeds. If so, the error code is conveyed through the <b>OnEvent</b> method.</para>
+      <para>After the preview sink is configured, you can stop and start preview by calling <see cref="IMFCaptureEngine.StopPreview" /> and <b>IMFCaptureEngine.StartPreview</b>.</para>
+    </remarks>
+    <seealso cref="IMFCaptureEngine" />
+  </member>
+  <member name="IMFCaptureEngine.StartRecord">
+    <summary>
+      <para>Starts recording audio and/or video to a file.</para>
+    </summary>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_INVALIDREQUEST</b>
+            </para>
+          </description>
+          <description>
+            <para>The recording sink was not initialized.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Before calling this method, configure the recording sink by calling <see cref="IMFCaptureSink.AddStream" />. To get a pointer to the recording sink, call <see cref="IMFCaptureEngine.GetSink" />.</para>
+      <para>This method is asynchronous. If the method returns a success code, the caller will receive an <b>MF_CAPTURE_ENGINE_RECORD_STARTED</b> event through the <see cref="IMFCaptureEngineOnEventCallback.OnEvent" /> method. The operation can fail asynchronously after the method succeeds. If so, the error code is conveyed through the <b>OnEvent</b> method.</para>
+      <para>To stop recording, call <see cref="IMFCaptureEngine.StopRecord" />.</para>
+    </remarks>
+    <seealso cref="IMFCaptureEngine" />
+  </member>
+  <member name="IMFCaptureEngine.StopPreview">
+    <summary>
+      <para>Stops preview.</para>
+    </summary>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_INVALIDREQUEST</b>
+            </para>
+          </description>
+          <description>
+            <para>The capture engine is not currently previewing.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method is asynchronous. If the method returns a success code, the caller will receive an <b>MF_CAPTURE_ENGINE_PREVIEW_STOPPED</b> event through the <see cref="IMFCaptureEngineOnEventCallback.OnEvent" /> method. The operation can fail asynchronously after the method succeeds. If so, the error code is conveyed through the <b>OnEvent</b> method.</para>
+    </remarks>
+    <seealso cref="IMFCaptureEngine" />
+  </member>
+  <member name="IMFCaptureEngine.StopRecord">
+    <summary>
+      <para>Stops recording.</para>
+    </summary>
+    <param name="bFinalize">
+      <para>A Boolean value that specifies whether to finalize the output file. To create a valid output file, specify <b>TRUE</b>. Specify <b>FALSE</b> only if you want to interrupt the recording and discard the output file. If the value is <b>FALSE</b>, the operation completes more quickly, but the file will not be playable.</para>
+    </param>
+    <param name="bFlushUnprocessedSamples">
+      <para>A Boolean value that specifies if the unprocessed samples waiting to be encoded should be flushed.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This method is asynchronous. If the method returns a success code, the caller will receive an <b>MF_CAPTURE_ENGINE_RECORD_STOPPED</b> event through the <see cref="IMFCaptureEngineOnEventCallback.OnEvent" /> method. The operation can fail asynchronously after the method succeeds. If so, the error code is conveyed through the <b>OnEvent</b> method.</para>
+    </remarks>
+    <seealso cref="IMFCaptureEngine" />
+  </member>
+  <member name="IMFCaptureEngine.TakePhoto">
+    <summary>
+      <para>Captures a still image from the video stream.</para>
+    </summary>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Before calling this method, configure the photo sink by calling <see cref="IMFCaptureSink.AddStream" />. To get a pointer to the photo sink, call <see cref="IMFCaptureEngine.GetSink" />.</para>
+      <para>This method is asynchronous. If the method returns a success code, the caller will receive an <b>MF_CAPTURE_ENGINE_PHOTO_TAKEN</b> event through the <see cref="IMFCaptureEngineOnEventCallback.OnEvent" /> method. The operation can fail asynchronously after the method succeeds. If so, the error code is conveyed through the <b>OnEvent</b> method.</para>
+    </remarks>
+    <seealso cref="IMFCaptureEngine" />
+  </member>
+  <member name="IMFCaptureEngine">
+    <summary>
+      <para>Controls one or more capture devices. The capture engine implements this interface. To get a pointer to this interface, call either <a href="https://docs.microsoft.com//windows/desktop/medfound/mfcreatecaptureengine">MFCreateCaptureEngine</a> or <see cref="IMFCaptureEngineClassFactory.CreateInstance" />.</para>
+    </summary>
+    <remarks>
+      <para>
+        <b>IMFCaptureEngine</b> only supports one pass CBR encoding.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+  </member>
+</doc>

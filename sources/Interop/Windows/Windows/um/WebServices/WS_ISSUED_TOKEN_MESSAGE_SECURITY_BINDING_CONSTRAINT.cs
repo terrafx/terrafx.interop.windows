@@ -7,29 +7,40 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_ISSUED_TOKEN_MESSAGE_SECURITY_BINDING_CONSTRAINT.xml' path='doc/member[@name="WS_ISSUED_TOKEN_MESSAGE_SECURITY_BINDING_CONSTRAINT"]/*' />
 public unsafe partial struct WS_ISSUED_TOKEN_MESSAGE_SECURITY_BINDING_CONSTRAINT
 {
+    /// <include file='WS_ISSUED_TOKEN_MESSAGE_SECURITY_BINDING_CONSTRAINT.xml' path='doc/member[@name="WS_ISSUED_TOKEN_MESSAGE_SECURITY_BINDING_CONSTRAINT.bindingConstraint"]/*' />
     public WS_SECURITY_BINDING_CONSTRAINT bindingConstraint;
 
+    /// <include file='WS_ISSUED_TOKEN_MESSAGE_SECURITY_BINDING_CONSTRAINT.xml' path='doc/member[@name="WS_ISSUED_TOKEN_MESSAGE_SECURITY_BINDING_CONSTRAINT.bindingUsage"]/*' />
     public WS_MESSAGE_SECURITY_USAGE bindingUsage;
 
+    /// <include file='WS_ISSUED_TOKEN_MESSAGE_SECURITY_BINDING_CONSTRAINT.xml' path='doc/member[@name="WS_ISSUED_TOKEN_MESSAGE_SECURITY_BINDING_CONSTRAINT.claimConstraints"]/*' />
     public WS_XML_STRING* claimConstraints;
 
+    /// <include file='WS_ISSUED_TOKEN_MESSAGE_SECURITY_BINDING_CONSTRAINT.xml' path='doc/member[@name="WS_ISSUED_TOKEN_MESSAGE_SECURITY_BINDING_CONSTRAINT.claimConstraintCount"]/*' />
     [NativeTypeName("ULONG")]
     public uint claimConstraintCount;
 
+    /// <include file='WS_ISSUED_TOKEN_MESSAGE_SECURITY_BINDING_CONSTRAINT.xml' path='doc/member[@name="WS_ISSUED_TOKEN_MESSAGE_SECURITY_BINDING_CONSTRAINT.requestSecurityTokenPropertyConstraints"]/*' />
     public WS_REQUEST_SECURITY_TOKEN_PROPERTY_CONSTRAINT* requestSecurityTokenPropertyConstraints;
 
+    /// <include file='WS_ISSUED_TOKEN_MESSAGE_SECURITY_BINDING_CONSTRAINT.xml' path='doc/member[@name="WS_ISSUED_TOKEN_MESSAGE_SECURITY_BINDING_CONSTRAINT.requestSecurityTokenPropertyConstraintCount"]/*' />
     [NativeTypeName("ULONG")]
     public uint requestSecurityTokenPropertyConstraintCount;
 
+    /// <include file='WS_ISSUED_TOKEN_MESSAGE_SECURITY_BINDING_CONSTRAINT.xml' path='doc/member[@name="WS_ISSUED_TOKEN_MESSAGE_SECURITY_BINDING_CONSTRAINT.@out"]/*' />
     [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/WebServices.h:6262:5)")]
     public _out_e__Struct @out;
 
+    /// <include file='_out_e__Struct.xml' path='doc/member[@name="_out_e__Struct"]/*' />
     public unsafe partial struct _out_e__Struct
     {
+        /// <include file='_out_e__Struct.xml' path='doc/member[@name="_out_e__Struct.issuerAddress"]/*' />
         public WS_ENDPOINT_ADDRESS* issuerAddress;
 
+        /// <include file='_out_e__Struct.xml' path='doc/member[@name="_out_e__Struct.requestSecurityTokenTemplate"]/*' />
         public IntPtr requestSecurityTokenTemplate;
     }
 }

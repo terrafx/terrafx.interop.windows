@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="AddPackageDependencyOptions">
+    <summary>
+      <para>Defines options that can be applied when adding a run-time reference to a framework package by using the <see cref="AddPackageDependency" /> function.</para>
+    </summary>
+    <seealso cref="AddPackageDependency" />
+  </member>
+  <member name="AddPackageDependencyOptions.AddPackageDependencyOptions_None">
+    <summary>
+      <para>No options are applied.</para>
+    </summary>
+  </member>
+  <member name="AddPackageDependencyOptions.AddPackageDependencyOptions_PrependIfRankCollision">
+    <summary>
+      <para>If multiple packages are present in the package graph with the same rank as the call to <b>AddPackageDependency</b>, the resolved package is added before others of the same rank. For more information, see <see cref="AddPackageDependency" />.</para>
+    </summary>
+  </member>
+</doc>

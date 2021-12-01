@@ -7,21 +7,27 @@ using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SCM_PD_REINITIALIZE_MEDIA_INPUT.xml' path='doc/member[@name="SCM_PD_REINITIALIZE_MEDIA_INPUT"]/*' />
 public partial struct SCM_PD_REINITIALIZE_MEDIA_INPUT
 {
+    /// <include file='SCM_PD_REINITIALIZE_MEDIA_INPUT.xml' path='doc/member[@name="SCM_PD_REINITIALIZE_MEDIA_INPUT.Version"]/*' />
     [NativeTypeName("DWORD")]
     public uint Version;
 
+    /// <include file='SCM_PD_REINITIALIZE_MEDIA_INPUT.xml' path='doc/member[@name="SCM_PD_REINITIALIZE_MEDIA_INPUT.Size"]/*' />
     [NativeTypeName("DWORD")]
     public uint Size;
 
+    /// <include file='SCM_PD_REINITIALIZE_MEDIA_INPUT.xml' path='doc/member[@name="SCM_PD_REINITIALIZE_MEDIA_INPUT.Options"]/*' />
     [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:8431:5)")]
     public _Options_e__Struct Options;
 
+    /// <include file='_Options_e__Struct.xml' path='doc/member[@name="_Options_e__Struct"]/*' />
     public partial struct _Options_e__Struct
     {
         public uint _bitfield;
 
+        /// <include file='_Options_e__Struct.xml' path='doc/member[@name="_Options_e__Struct.Overwrite"]/*' />
         [NativeTypeName("DWORD : 1")]
         public uint Overwrite
         {

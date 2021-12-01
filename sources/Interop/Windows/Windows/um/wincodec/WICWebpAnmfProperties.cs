@@ -7,9 +7,13 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WICWebpAnmfProperties.xml' path='doc/member[@name="WICWebpAnmfProperties"]/*' />
 [SupportedOSPlatform("windows10.0.17763.0")]
 public enum WICWebpAnmfProperties : uint
 {
+    /// <include file='WICWebpAnmfProperties.xml' path='doc/member[@name="WICWebpAnmfProperties.WICWebpAnmfFrameDuration"]/*' />
     WICWebpAnmfFrameDuration = 0x1,
+
+    /// <include file='WICWebpAnmfProperties.xml' path='doc/member[@name="WICWebpAnmfProperties.WICWebpAnmfProperties_FORCE_DWORD"]/*' />
     WICWebpAnmfProperties_FORCE_DWORD = 0x7fffffff,
 }

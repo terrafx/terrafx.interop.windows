@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NMBCHOTITEM.xml' path='doc/member[@name="NMBCHOTITEM"]/*' />
 public partial struct NMBCHOTITEM
 {
+    /// <include file='NMBCHOTITEM.xml' path='doc/member[@name="NMBCHOTITEM.hdr"]/*' />
     public NMHDR hdr;
 
+    /// <include file='NMBCHOTITEM.xml' path='doc/member[@name="NMBCHOTITEM.dwFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFlags;
 }

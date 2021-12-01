@@ -1,0 +1,589 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="USN_RECORD_V4">
+    <summary>
+      <para>Contains the information for an update sequence number (USN) change journal version 4.0 record. The version 2.0 and 3.0 records are defined by the <see cref="USN_RECORD_V2" /> (also called <b>USN_RECORD</b>) and <see cref="USN_RECORD_V3" /> structures  respectively.</para>
+    </summary>
+    <remarks>
+      <para>A <b>USN_RECORD_V4</b> record is only output when range tracking is turned on and the file size is equal or larger than the value of the <b>RangeTrackFileSizeThreshold</b> member. The user always receives one or more <b>USN_RECORD_V4</b> records followed by one <see cref="USN_RECORD_V3" /> record.</para>
+      <para>To provide a path forward compatibility in change journal clients, Microsoft provides a major and minor version number of the change journal software in the <b>USN_RECORD_V4</b> structure. Your code should examine these values, examine its own compatibility with the change journal software, and gracefully handle any incompatibility if necessary.</para>
+      <para>A change in the minor version number indicates that the existing <b>USN_RECORD_V4</b> structure members are still valid, but that new members may have been added between the penultimate member and the last, which is a variable-length string.</para>
+      <para>To handle such a change gracefully, your code should not do any compile-time pointer arithmetic that relies on the location of the last member. For example, a change in the minor version number makes the <code>sizeof(USN_RECORD)</code> call unreliable. Instead, rely on run-time calculations that use the <b>RecordLength</b> member.</para>
+      <para>An increase in the major version number of the change journal software indicates that the <b>USN_RECORD_V4</b> structure may have undergone major changes, and that the current definition may not be reliable. If your code detects a change in the major version number of the change journal software, the code should not work with the change journal.</para>
+      <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/FileIO/creating-modifying-and-deleting-a-change-journal">Creating, Modifying, and Deleting a Change Journal</a>.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_mark_handle">FSCTL_MARK_HANDLE</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_read_usn_journal">FSCTL_READ_USN_JOURNAL</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_usn_track_modified_ranges">FSCTL_USN_TRACK_MODIFIED_RANGES</seealso>
+    <seealso cref="GetFileAttributes" />
+    <seealso cref="GetVolumeInformation" />
+    <seealso cref="READ_USN_JOURNAL_DATA" />
+    <seealso cref="USN_RECORD_COMMON_HEADER" />
+    <seealso cref="USN_RECORD_EXTENT" />
+    <seealso cref="USN_RECORD_V2" />
+    <seealso cref="USN_RECORD_V3" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/FileIO/volume-management-structures">Volume Management Structures</seealso>
+  </member>
+  <member name="USN_RECORD_V4.Header">
+    <summary>
+      <para>A <see cref="USN_RECORD_COMMON_HEADER" /> structure that describes the record length, major version, and minor  version for the record.</para>
+    </summary>
+  </member>
+  <member name="USN_RECORD_V4.FileReferenceNumber">
+    <summary>
+      <para>The 128-bit ordinal number of the file or directory for which this record notes changes.</para>
+      <para>This value  is an arbitrarily assigned value that associates a journal record with a file.</para>
+    </summary>
+  </member>
+  <member name="USN_RECORD_V4.ParentFileReferenceNumber">
+    <summary>
+      <para>The 128-bit ordinal number of the directory where the file or directory that is associated with this record
+is located.</para>
+      <para>This value  is an arbitrarily assigned value that associates a journal record with a parent directory.</para>
+    </summary>
+  </member>
+  <member name="USN_RECORD_V4.Usn">
+    <summary>
+      <para>The USN of this record.</para>
+    </summary>
+  </member>
+  <member name="USN_RECORD_V4.Reason">
+    <summary>
+      <para>The flags that identify reasons for changes that have accumulated in this file or directory journal record
+since the file or directory opened.</para>
+      <para>When a file or directory closes, then a final USN record is generated with the
+<b>USN_REASON_CLOSE</b> flag set. The next change (for example, after the next open
+operation or deletion) starts a new record with a new set of reason flags.</para>
+      <para>A rename or move operation generates two USN records, one that records the old parent directory for the item,
+and one that records a new parent.</para>
+      <para>The following  table identifies the possible flags.</para>
+      <para>
+        <b>Note</b>  Unused bits are reserved.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>USN_REASON_BASIC_INFO_CHANGE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00008000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>A user has either changed one or more file or directory attributes (for example,  the read-only, hidden,
+system, archive, or sparse attribute), or one or more time stamps.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>USN_REASON_CLOSE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x80000000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The file or directory is closed.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>USN_REASON_COMPRESSION_CHANGE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00020000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The compression state of the file or directory is changed from or to compressed.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>USN_REASON_DATA_EXTEND</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000002</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The file or directory is extended (added to).</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>USN_REASON_DATA_OVERWRITE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000001</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The data in the file or directory is overwritten.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>USN_REASON_DATA_TRUNCATION</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000004</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The file or directory is truncated.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>USN_REASON_EA_CHANGE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000400</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The user made a change to the extended attributes of a file or directory.</para>
+            <para>These NTFS file system attributes are not accessible to Windows-based applications.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>USN_REASON_ENCRYPTION_CHANGE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00040000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The file or directory is encrypted or decrypted.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>USN_REASON_FILE_CREATE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000100</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The file or directory is created for the first time.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>USN_REASON_FILE_DELETE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000200</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The file or directory is deleted.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>USN_REASON_HARD_LINK_CHANGE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00010000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>An NTFS file system hard link is added to or removed from the file or directory.</para>
+            <para>An NTFS file system hard link, similar to a POSIX hard link, is one of several directory entries that see
+the same file or directory.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>USN_REASON_INDEXABLE_CHANGE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00004000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>A user changes the <b>FILE_ATTRIBUTE_NOT_CONTENT_INDEXED</b> attribute.</para>
+            <para>That is, the user changes the file or directory from one where content can be indexed to one where content
+cannot be indexed, or vice versa. Content indexing permits rapid searching of data by building a database of
+selected content.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>USN_REASON_INTEGRITY_CHANGE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00800000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>A user changed the state of the <b>FILE_ATTRIBUTE_INTEGRITY_STREAM</b> attribute for the given stream.</para>
+            <para>On the ReFS file system, integrity streams maintain a checksum of all data for that stream, so that the contents of the file can be validated during read or write operations.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>USN_REASON_NAMED_DATA_EXTEND</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000020</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The one or more named data streams for a file are extended (added to).</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>USN_REASON_NAMED_DATA_OVERWRITE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000010</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The data in one or more named data streams for a file is overwritten.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>USN_REASON_NAMED_DATA_TRUNCATION</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000040</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The one or more named data streams for a file is truncated.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>USN_REASON_OBJECT_ID_CHANGE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00080000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The object identifier of a file or directory is changed.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>USN_REASON_RENAME_NEW_NAME</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00002000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>A file or directory is renamed, and the file name in the
+<b>USN_RECORD_V4</b> structure is the new name.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>USN_REASON_RENAME_OLD_NAME</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00001000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The file or directory is renamed, and the file name in the
+<b>USN_RECORD_V4</b> structure is the previous name.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>USN_REASON_REPARSE_POINT_CHANGE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00100000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The reparse point that is contained in a file or directory is changed, or a reparse point is added to or
+deleted from a file or directory.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>USN_REASON_SECURITY_CHANGE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000800</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>A change is made in the access rights to a file or directory.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>USN_REASON_STREAM_CHANGE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00200000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>A named stream is added to or removed from a file, or a named stream is renamed.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>USN_REASON_TRANSACTED_CHANGE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00400000 </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The given stream is modified through a committed TxF transaction.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="USN_RECORD_V4.SourceInfo">
+    <summary>
+      <para>Additional information about the source of the change, set by the
+<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_mark_handle">FSCTL_MARK_HANDLE</a> of the
+<see cref="DeviceIoControl" /> operation.</para>
+      <para>When a thread writes a new USN record, the source information flags in the prior record continue to be
+present only if the thread also sets those flags.  Therefore, the source information structure allows
+applications to filter out USN records that are set only by a known source, for example, an antivirus filter.</para>
+      <para>One of the following values can be set.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>USN_SOURCE_AUXILIARY_DATA</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000002</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The operation adds a private data stream to a file or directory.</para>
+            <para>One example is a virus detector adding checksum information. As the virus detector modifies the item,
+the system generates USN records. <b>USN_SOURCE_AUXILIARY_DATA</b> indicates that the
+modifications did not change the application data.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>USN_SOURCE_DATA_MANAGEMENT</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000001</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The operation provides information about a change to the file or directory made by the operating system.</para>
+            <para>A typical use is when the Remote Storage system moves data from external to local storage. Remote Storage
+is the hierarchical storage management software. Such a move usually at a minimum adds the
+<b>USN_REASON_DATA_OVERWRITE</b> flag to a USN record. However, the data has not changed
+from the user's point of view. By noting <b>USN_SOURCE_DATA_MANAGEMENT</b> in the
+<b>SourceInfo</b> member, you can determine that although a write operation is performed
+on the item, data has not changed.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>USN_SOURCE_REPLICATION_MANAGEMENT</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000004</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The operation is modifying a file to match the contents of the same file which exists in another member
+of the replica set.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>USN_SOURCE_CLIENT_REPLICATION_MANAGEMENT</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000008</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The operation is modifying a file on client systems to match the contents of the same file that exists in the cloud.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="USN_RECORD_V4.RemainingExtents">
+    <summary>
+      <para>The number of extents that remain after the current <b>USN_RECORD_V4</b> record.  Multiple version 4.0  records may be required to describe all of the modified extents for a given file.  When the <b>RemainingExtents</b> member is  0,  the current <b>USN_RECORD_V4</b> record is the last <b>USN_RECORD_V4</b> record for the file.  The last <b>USN_RECORD_V4</b> entry for a given file is always  followed by a <see cref="USN_RECORD_V3" /> record with at least the <b>USN_REASON_CLOSE</b> flag set.</para>
+    </summary>
+  </member>
+  <member name="USN_RECORD_V4.NumberOfExtents">
+    <summary>
+      <para>The number of extents in current <b>USN_RECORD_V4</b> entry.</para>
+    </summary>
+  </member>
+  <member name="USN_RECORD_V4.ExtentSize">
+    <summary>
+      <para>The size of each <see cref="USN_RECORD_EXTENT" /> structure in the <b>Extents</b> member, in bytes.</para>
+    </summary>
+  </member>
+  <member name="USN_RECORD_V4.Extents">
+    <summary>
+      <para>An array of <see cref="USN_RECORD_EXTENT" /> structures that represent the extents in the <b>USN_RECORD_V4</b> entry.</para>
+    </summary>
+  </member>
+</doc>

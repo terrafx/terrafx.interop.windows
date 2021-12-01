@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFMediaEngineSrcElements.xml' path='doc/member[@name="IMFMediaEngineSrcElements"]/*' />
 [Guid("7A5E5354-B114-4C72-B991-3131D75032EA")]
 [NativeTypeName("struct IMFMediaEngineSrcElements : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IMFMediaEngineSrcElements : IMFMediaEngineSrcElemen
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IMFMediaEngineSrcElements : IMFMediaEngineSrcElemen
         return ((delegate* unmanaged<IMFMediaEngineSrcElements*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaEngineSrcElements*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IMFMediaEngineSrcElements : IMFMediaEngineSrcElemen
         return ((delegate* unmanaged<IMFMediaEngineSrcElements*, uint>)(lpVtbl[1]))((IMFMediaEngineSrcElements*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IMFMediaEngineSrcElements : IMFMediaEngineSrcElemen
         return ((delegate* unmanaged<IMFMediaEngineSrcElements*, uint>)(lpVtbl[2]))((IMFMediaEngineSrcElements*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFMediaEngineSrcElements.xml' path='doc/member[@name="IMFMediaEngineSrcElements.GetLength"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     [return: NativeTypeName("DWORD")]
@@ -49,6 +54,7 @@ public unsafe partial struct IMFMediaEngineSrcElements : IMFMediaEngineSrcElemen
         return ((delegate* unmanaged<IMFMediaEngineSrcElements*, uint>)(lpVtbl[3]))((IMFMediaEngineSrcElements*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFMediaEngineSrcElements.xml' path='doc/member[@name="IMFMediaEngineSrcElements.GetURL"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetURL([NativeTypeName("DWORD")] uint index, [NativeTypeName("BSTR *")] ushort** pURL)
@@ -56,6 +62,7 @@ public unsafe partial struct IMFMediaEngineSrcElements : IMFMediaEngineSrcElemen
         return ((delegate* unmanaged<IMFMediaEngineSrcElements*, uint, ushort**, int>)(lpVtbl[4]))((IMFMediaEngineSrcElements*)Unsafe.AsPointer(ref this), index, pURL);
     }
 
+    /// <include file='IMFMediaEngineSrcElements.xml' path='doc/member[@name="IMFMediaEngineSrcElements.GetType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetType([NativeTypeName("DWORD")] uint index, [NativeTypeName("BSTR *")] ushort** pType)
@@ -63,6 +70,7 @@ public unsafe partial struct IMFMediaEngineSrcElements : IMFMediaEngineSrcElemen
         return ((delegate* unmanaged<IMFMediaEngineSrcElements*, uint, ushort**, int>)(lpVtbl[5]))((IMFMediaEngineSrcElements*)Unsafe.AsPointer(ref this), index, pType);
     }
 
+    /// <include file='IMFMediaEngineSrcElements.xml' path='doc/member[@name="IMFMediaEngineSrcElements.GetMedia"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetMedia([NativeTypeName("DWORD")] uint index, [NativeTypeName("BSTR *")] ushort** pMedia)
@@ -70,6 +78,7 @@ public unsafe partial struct IMFMediaEngineSrcElements : IMFMediaEngineSrcElemen
         return ((delegate* unmanaged<IMFMediaEngineSrcElements*, uint, ushort**, int>)(lpVtbl[6]))((IMFMediaEngineSrcElements*)Unsafe.AsPointer(ref this), index, pMedia);
     }
 
+    /// <include file='IMFMediaEngineSrcElements.xml' path='doc/member[@name="IMFMediaEngineSrcElements.AddElement"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT AddElement([NativeTypeName("BSTR")] ushort* pURL, [NativeTypeName("BSTR")] ushort* pType, [NativeTypeName("BSTR")] ushort* pMedia)
@@ -77,6 +86,7 @@ public unsafe partial struct IMFMediaEngineSrcElements : IMFMediaEngineSrcElemen
         return ((delegate* unmanaged<IMFMediaEngineSrcElements*, ushort*, ushort*, ushort*, int>)(lpVtbl[7]))((IMFMediaEngineSrcElements*)Unsafe.AsPointer(ref this), pURL, pType, pMedia);
     }
 
+    /// <include file='IMFMediaEngineSrcElements.xml' path='doc/member[@name="IMFMediaEngineSrcElements.RemoveAllElements"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT RemoveAllElements()

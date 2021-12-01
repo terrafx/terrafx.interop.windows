@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IViewObject2.GetExtent">
+    <summary>
+      <para>Retrieves the size that the specified view object will be drawn on the specified target device.</para>
+    </summary>
+    <param name="dwDrawAspect">
+      <para>Requested view of the object whose size is of interest. Possible values are taken from the <see cref="DVASPECT" /> and <see cref="DVASPECT2" /> enumerations. Note that newer objects and containers that support optimized drawing interfaces support the <b>DVASPECT2</b> enumeration values. Older objects and containers that do not support optimized drawing interfaces may not support <b>DVASPECT2</b>.</para>
+    </param>
+    <param name="lindex">
+      <para>The portion of the object that is of interest. Currently, the only possible value is -1.</para>
+    </param>
+    <param name="ptd">
+      <para>A pointer to the <see cref="DVTARGETDEVICE" /> structure defining the target device for which the object's size should be returned.</para>
+    </param>
+    <param name="lpsizel">
+      <para>A pointer to where the object's size is returned.</para>
+    </param>
+    <returns>
+      <para>This method returns S_OK on success. Other possible return values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>OLE_E_BLANK</b>
+            </para>
+          </description>
+          <description>
+            <para>An appropriate cache is not available.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The OLE-provided implementation of <b>IViewObject2.GetExtent</b> searches the cache for the size of the view object.</para>
+      <para>The <see cref="IOleObject.GetExtent" /> method in the <see cref="IOleObject" /> interface provides some of the same information as <b>IViewObject2.GetExtent</b>.</para>
+      <para>This method must return the same size as DVASPECT_CONTENT for all the new aspects in <see cref="DVASPECT2" />. <see cref="IOleObject.GetExtent" /> must do the same thing.</para>
+      <para>If one of the new aspects is requested in <i>dwAspect</i>, this method can either fail or return the same rectangle as for the DVASPECT_CONTENT aspect.</para>
+      <h3>Notes to Callers</h3>
+      <para>To prevent the object from being run if it isn't already running, you can call <b>IViewObject2.GetExtent</b> rather than <see cref="IOleObject.GetExtent" /> to determine the size of the presentation to be drawn.</para>
+    </remarks>
+    <seealso cref="DVASPECT" />
+    <seealso cref="DVASPECT2" />
+    <seealso cref="IOleObject.GetExtent" />
+    <seealso cref="IViewObject" />
+    <seealso cref="IViewObject2" />
+  </member>
+  <member name="IViewObject2">
+    <summary>
+      <para>An extension to the <see cref="IViewObject" /> interface which returns the size of the drawing for a given view of an object. You can prevent the object from being run if it isn't already running by calling this method instead of <see cref="IOleObject.GetExtent" />.</para>
+      <para>Like the <see cref="IViewObject" /> interface, <b>IViewObject2</b> cannot be marshaled to another process. This is because device contexts are only effective in the context of one process.</para>
+      <para>The OLE-provided default implementation provides the size of the object in the cache.</para>
+    </summary>
+    <seealso cref="IViewObject" />
+  </member>
+</doc>

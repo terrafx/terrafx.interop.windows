@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ISharedBitmap.Detach">
+    <summary>
+      <para>Retrieves the bitmap contained in an <see cref="ISharedBitmap" /> object, and returns a copy if the contained bitmap resides in shared memory. After calling this method the bitmap is no longer associated with this <b>ISharedBitmap</b> and you cannot call <see cref="ISharedBitmap.GetSharedBitmap" /> or <b>ISharedBitmap.Detach</b> on it again.</para>
+    </summary>
+    <param name="phbm">
+      <para>Type: <b>HBITMAP*</b></para>
+      <para>When this method returns, contains a pointer to a handle to the bitmap to retrieve.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>If the bitmap being retrieved resides in shared memory, a copy of the bitmap is returned.  The <b>Detach</b> method does not release any references to the underlying shared memory.</para>
+      <para>If the bitmap being retrieved does not reside in shared memory, the bitmap itself is returned and no copy is made.</para>
+    </remarks>
+  </member>
+  <member name="ISharedBitmap.GetFormat">
+    <summary>
+      <para>Retrieves the alpha type of the bitmap image.</para>
+    </summary>
+    <param name="pat">
+      <para>Type: <b>WTS_ALPHATYPE*</b></para>
+      <para>When this method returns, contains a pointer to the alpha type of the bitmap image. One of the following values.</para>
+      <h4>WTSAT_RGB</h4>
+      <para>The bitmap does not contain an alpha channel for transparency.</para>
+      <h4>WTSAT_ARGB</h4>
+      <para>The bitmap contains an alpha channel for transparency.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="ISharedBitmap.GetSharedBitmap">
+    <summary>
+      <para>Retrieves the bitmap contained in an <see cref="ISharedBitmap" /> object.</para>
+    </summary>
+    <param name="phbm">
+      <para>Type: <b>HBITMAP*</b></para>
+      <para>A pointer to a handle to the bitmap.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The bitmap retrieved might reside in shared memory.</para>
+    </remarks>
+  </member>
+  <member name="ISharedBitmap.GetSize">
+    <summary>
+      <para>Retrieves the size of the bitmap contained in an <see cref="ISharedBitmap" /> object.</para>
+    </summary>
+    <param name="pSize">
+      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/dd145106(v=vs.85)">SIZE</a>*</b></para>
+      <para>When this method returns, contains a pointer to a value that specifies the size, in pixels, of the contained bitmap.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="ISharedBitmap.InitializeBitmap">
+    <summary>
+      <para>Initializes a new <see cref="ISharedBitmap" /> object with a given bitmap.</para>
+    </summary>
+    <param name="hbm">
+      <para>Type: <b>HBITMAP</b></para>
+      <para>A handle to the bitmap with which to initialize a new <see cref="ISharedBitmap" /> object. The bitmap must be a DIB.</para>
+    </param>
+    <param name="wtsAT">
+      <para>Type: <b>WTS_ALPHATYPE</b></para>
+      <para>The alpha type of the bitmap image.  May be one of the following values.</para>
+      <h4>WTSAT_UNKNOWN</h4>
+      <para>Cannot determine whether the bitmap has an alpha channel.</para>
+      <h4>WTSAT_RGB</h4>
+      <para>The bitmap does not contain an alpha channel for transparency.</para>
+      <h4>WTSAT_ARGB</h4>
+      <para>The bitmap contains an alpha channel for transparency.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>When an <see cref="ISharedBitmap" /> object is instantiated by the client (as opposed to being returned by the <see cref="IThumbnailCache.GetThumbnailByID" /> or <see cref="IThumbnailCache.GetThumbnail" /> methods), the underlying bitmap will not reside in shared memory.</para>
+    </remarks>
+  </member>
+  <member name="ISharedBitmap">
+    <summary>
+      <para>Exposes memory-efficient methods for accessing bitmaps. This interface is used as a thin wrapper around HBITMAP objects, allowing those objects to be reference counted and protected from having their underlying data changed.</para>
+    </summary>
+    <remarks>
+      <para>This interface is used in conjunction with the methods of <see cref="IThumbnailCache" />. Bitmaps returned by <see cref="IThumbnailCache.GetThumbnail" /> and <see cref="IThumbnailCache.GetThumbnailByID" /> are of type <b>ISharedBitmap</b>.</para>
+      <para>When an <b>ISharedBitmap</b> object is retrieved from the thumbnail cache, the underlying bitmap may reside in shared memory to provide improved performance.</para>
+      <para>The underlying data of the memory-mapped bitmap is protected while the client is accessing it.</para>
+    </remarks>
+  </member>
+</doc>

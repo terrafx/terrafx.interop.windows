@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='INSTALLMODE.xml' path='doc/member[@name="INSTALLMODE"]/*' />
 public enum INSTALLMODE
 {
+    /// <include file='INSTALLMODE.xml' path='doc/member[@name="INSTALLMODE.INSTALLMODE_NODETECTION_ANY"]/*' />
     INSTALLMODE_NODETECTION_ANY = -4,
+
+    /// <include file='INSTALLMODE.xml' path='doc/member[@name="INSTALLMODE.INSTALLMODE_NOSOURCERESOLUTION"]/*' />
     INSTALLMODE_NOSOURCERESOLUTION = -3,
+
+    /// <include file='INSTALLMODE.xml' path='doc/member[@name="INSTALLMODE.INSTALLMODE_NODETECTION"]/*' />
     INSTALLMODE_NODETECTION = -2,
+
+    /// <include file='INSTALLMODE.xml' path='doc/member[@name="INSTALLMODE.INSTALLMODE_EXISTING"]/*' />
     INSTALLMODE_EXISTING = -1,
+
+    /// <include file='INSTALLMODE.xml' path='doc/member[@name="INSTALLMODE.INSTALLMODE_DEFAULT"]/*' />
     INSTALLMODE_DEFAULT = 0,
 }

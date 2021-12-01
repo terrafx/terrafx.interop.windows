@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CM_MASK">
+    <summary>
+      <para>Indicates which values in the <see cref="CM_COLUMNINFO" /> structure should be set during calls to <see cref="IColumnManager.SetColumnInfo" />.</para>
+    </summary>
+  </member>
+  <member name="CM_MASK.CM_MASK_WIDTH">
+    <summary>
+      <para>The <b>uWidth</b> member is specified.</para>
+    </summary>
+  </member>
+  <member name="CM_MASK.CM_MASK_DEFAULTWIDTH">
+    <summary>
+      <para>The <b>uDefaultWidth</b> member is specified.</para>
+    </summary>
+  </member>
+  <member name="CM_MASK.CM_MASK_IDEALWIDTH">
+    <summary>
+      <para>The <b>uIdealWidth</b> member is specified.</para>
+    </summary>
+  </member>
+  <member name="CM_MASK.CM_MASK_NAME">
+    <summary>
+      <para>The <b>wszName</b> member is specified.</para>
+    </summary>
+  </member>
+  <member name="CM_MASK.CM_MASK_STATE">
+    <summary>
+      <para>The <b>dwState</b> member is specified.</para>
+    </summary>
+  </member>
+</doc>

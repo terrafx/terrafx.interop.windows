@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SYNCMGRSTATUS">
+    <summary>
+      <para>Used in the <see cref="ISyncMgrSynchronize.SetItemStatus" /> method to specify the updated status for the item.</para>
+    </summary>
+    <seealso cref="ISyncMgrSynchronize.SetItemStatus" />
+  </member>
+  <member name="SYNCMGRSTATUS.SYNCMGRSTATUS_STOPPED">
+    <summary>
+      <para>Synchronization has been stopped.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGRSTATUS.SYNCMGRSTATUS_SKIPPED">
+    <summary>
+      <para>Indicates that this item should be skipped.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGRSTATUS.SYNCMGRSTATUS_PENDING">
+    <summary>
+      <para>Synchronization for the item is pending.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGRSTATUS.SYNCMGRSTATUS_UPDATING">
+    <summary>
+      <para>The item is currently being synchronized.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGRSTATUS.SYNCMGRSTATUS_SUCCEEDED">
+    <summary>
+      <para>The synchronization for the item succeeded.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGRSTATUS.SYNCMGRSTATUS_FAILED">
+    <summary>
+      <para>Synchronization for the item failed.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGRSTATUS.SYNCMGRSTATUS_PAUSED">
+    <summary>
+      <para>Synchronization for the item paused.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGRSTATUS.SYNCMGRSTATUS_RESUMING">
+    <summary>
+      <para>Synchronization for the item is resuming.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGRSTATUS.SYNCMGRSTATUS_UPDATING_INDETERMINATE">
+    <summary>
+      <para>
+        <b>Windows Vista and later</b>. Shows marquee progress for the synchronized item. Sets the progress bar in the folder to marquee the synchronization progress.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGRSTATUS.SYNCMGRSTATUS_DELETED">
+    <summary>
+      <para>The item has been deleted. This value has been deprecated for Windows Vista and later.</para>
+    </summary>
+  </member>
+</doc>

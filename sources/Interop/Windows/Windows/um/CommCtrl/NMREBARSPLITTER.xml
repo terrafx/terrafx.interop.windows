@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="NMREBARSPLITTER">
+    <summary>
+      <para>Contains information used to handle an <a href="https://docs.microsoft.com//windows/desktop/Controls/rbn-splitterdrag">RBN_SPLITTERDRAG</a> notification code.</para>
+    </summary>
+  </member>
+  <member name="NMREBARSPLITTER.hdr">
+    <summary>
+      <para>Type: <b><see cref="NMHDR" /></b></para>
+      <para>An <see cref="NMHDR" /> structure that contains additional information about this notification.</para>
+    </summary>
+  </member>
+  <member name="NMREBARSPLITTER.rcSizing">
+    <summary>
+      <para>Type: <b><see cref="RECT" /></b></para>
+      <para>An <see cref="RECT" /> structure that indicates the size the rebar will be after the drag operation completes.</para>
+    </summary>
+  </member>
+</doc>

@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SCH_CRED_PUBLIC_CERTCHAIN.xml' path='doc/member[@name="SCH_CRED_PUBLIC_CERTCHAIN"]/*' />
 public unsafe partial struct SCH_CRED_PUBLIC_CERTCHAIN
 {
+    /// <include file='SCH_CRED_PUBLIC_CERTCHAIN.xml' path='doc/member[@name="SCH_CRED_PUBLIC_CERTCHAIN.dwType"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwType;
 
+    /// <include file='SCH_CRED_PUBLIC_CERTCHAIN.xml' path='doc/member[@name="SCH_CRED_PUBLIC_CERTCHAIN.cbCertChain"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbCertChain;
 
+    /// <include file='SCH_CRED_PUBLIC_CERTCHAIN.xml' path='doc/member[@name="SCH_CRED_PUBLIC_CERTCHAIN.pCertChain"]/*' />
     [NativeTypeName("PBYTE")]
     public byte* pCertChain;
 }

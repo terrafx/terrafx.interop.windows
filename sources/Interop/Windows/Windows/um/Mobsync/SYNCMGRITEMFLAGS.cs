@@ -5,12 +5,24 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SYNCMGRITEMFLAGS.xml' path='doc/member[@name="SYNCMGRITEMFLAGS"]/*' />
 public enum SYNCMGRITEMFLAGS
 {
+    /// <include file='SYNCMGRITEMFLAGS.xml' path='doc/member[@name="SYNCMGRITEMFLAGS.SYNCMGRITEM_HASPROPERTIES"]/*' />
     SYNCMGRITEM_HASPROPERTIES = 0x1,
+
+    /// <include file='SYNCMGRITEMFLAGS.xml' path='doc/member[@name="SYNCMGRITEMFLAGS.SYNCMGRITEM_TEMPORARY"]/*' />
     SYNCMGRITEM_TEMPORARY = 0x2,
+
+    /// <include file='SYNCMGRITEMFLAGS.xml' path='doc/member[@name="SYNCMGRITEMFLAGS.SYNCMGRITEM_ROAMINGUSER"]/*' />
     SYNCMGRITEM_ROAMINGUSER = 0x4,
+
+    /// <include file='SYNCMGRITEMFLAGS.xml' path='doc/member[@name="SYNCMGRITEMFLAGS.SYNCMGRITEM_LASTUPDATETIME"]/*' />
     SYNCMGRITEM_LASTUPDATETIME = 0x8,
+
+    /// <include file='SYNCMGRITEMFLAGS.xml' path='doc/member[@name="SYNCMGRITEMFLAGS.SYNCMGRITEM_MAYDELETEITEM"]/*' />
     SYNCMGRITEM_MAYDELETEITEM = 0x10,
+
+    /// <include file='SYNCMGRITEMFLAGS.xml' path='doc/member[@name="SYNCMGRITEMFLAGS.SYNCMGRITEM_HIDDEN"]/*' />
     SYNCMGRITEM_HIDDEN = 0x20,
 }

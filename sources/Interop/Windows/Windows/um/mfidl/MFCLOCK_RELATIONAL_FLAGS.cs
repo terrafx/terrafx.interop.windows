@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MFCLOCK_RELATIONAL_FLAGS.xml' path='doc/member[@name="MFCLOCK_RELATIONAL_FLAGS"]/*' />
 public enum MFCLOCK_RELATIONAL_FLAGS
 {
+    /// <include file='MFCLOCK_RELATIONAL_FLAGS.xml' path='doc/member[@name="MFCLOCK_RELATIONAL_FLAGS.MFCLOCK_RELATIONAL_FLAG_JITTER_NEVER_AHEAD"]/*' />
     MFCLOCK_RELATIONAL_FLAG_JITTER_NEVER_AHEAD = 0x1,
 }

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="eAVEncMPVIntraVLCTable">
+    <summary>
+      <para>Specifies which variable-length coding (VLC) table to use for entropy coding. This enumeration is used with the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avencmpvintravlctable-property">AVEncMPVIntraVLCTable</a> property.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-enumerations">Codec API Enumerations</seealso>
+    <seealso cref="ICodecAPI Interface" />
+  </member>
+  <member name="eAVEncMPVIntraVLCTable.eAVEncMPVIntraVLCTable_Auto">
+    <summary>
+      <para>The encoder selects the VLC table.</para>
+    </summary>
+  </member>
+  <member name="eAVEncMPVIntraVLCTable.eAVEncMPVIntraVLCTable_MPEG1">
+    <summary>
+      <para>The encoder uses the MPEG-1 VLC table.</para>
+    </summary>
+  </member>
+  <member name="eAVEncMPVIntraVLCTable.eAVEncMPVIntraVLCTable_Alternate">
+    <summary>
+      <para>The encoder uses the alternate "intra" VLC table for MPEG-2.</para>
+    </summary>
+  </member>
+</doc>

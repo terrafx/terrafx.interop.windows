@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STATICPARTS.xml' path='doc/member[@name="STATICPARTS"]/*' />
 public enum STATICPARTS
 {
+    /// <include file='STATICPARTS.xml' path='doc/member[@name="STATICPARTS.STAT_TEXT"]/*' />
     STAT_TEXT = 1,
 }

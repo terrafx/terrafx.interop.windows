@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IImageList.xml' path='doc/member[@name="IImageList"]/*' />
 [Guid("46EB5926-582E-4017-9FDF-E8998DAA0950")]
 [NativeTypeName("struct IImageList : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IImageList : IImageList.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IImageList : IImageList.Interface
         return ((delegate* unmanaged<IImageList*, Guid*, void**, int>)(lpVtbl[0]))((IImageList*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IImageList : IImageList.Interface
         return ((delegate* unmanaged<IImageList*, uint>)(lpVtbl[1]))((IImageList*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IImageList : IImageList.Interface
         return ((delegate* unmanaged<IImageList*, uint>)(lpVtbl[2]))((IImageList*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IImageList.xml' path='doc/member[@name="IImageList.Add"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Add(HBITMAP hbmImage, HBITMAP hbmMask, int* pi)
@@ -46,6 +51,7 @@ public unsafe partial struct IImageList : IImageList.Interface
         return ((delegate* unmanaged<IImageList*, HBITMAP, HBITMAP, int*, int>)(lpVtbl[3]))((IImageList*)Unsafe.AsPointer(ref this), hbmImage, hbmMask, pi);
     }
 
+    /// <include file='IImageList.xml' path='doc/member[@name="IImageList.ReplaceIcon"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT ReplaceIcon(int i, HICON hicon, int* pi)
@@ -53,6 +59,7 @@ public unsafe partial struct IImageList : IImageList.Interface
         return ((delegate* unmanaged<IImageList*, int, HICON, int*, int>)(lpVtbl[4]))((IImageList*)Unsafe.AsPointer(ref this), i, hicon, pi);
     }
 
+    /// <include file='IImageList.xml' path='doc/member[@name="IImageList.SetOverlayImage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetOverlayImage(int iImage, int iOverlay)
@@ -60,6 +67,7 @@ public unsafe partial struct IImageList : IImageList.Interface
         return ((delegate* unmanaged<IImageList*, int, int, int>)(lpVtbl[5]))((IImageList*)Unsafe.AsPointer(ref this), iImage, iOverlay);
     }
 
+    /// <include file='IImageList.xml' path='doc/member[@name="IImageList.Replace"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Replace(int i, HBITMAP hbmImage, HBITMAP hbmMask)
@@ -67,6 +75,7 @@ public unsafe partial struct IImageList : IImageList.Interface
         return ((delegate* unmanaged<IImageList*, int, HBITMAP, HBITMAP, int>)(lpVtbl[6]))((IImageList*)Unsafe.AsPointer(ref this), i, hbmImage, hbmMask);
     }
 
+    /// <include file='IImageList.xml' path='doc/member[@name="IImageList.AddMasked"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT AddMasked(HBITMAP hbmImage, COLORREF crMask, int* pi)
@@ -74,6 +83,7 @@ public unsafe partial struct IImageList : IImageList.Interface
         return ((delegate* unmanaged<IImageList*, HBITMAP, COLORREF, int*, int>)(lpVtbl[7]))((IImageList*)Unsafe.AsPointer(ref this), hbmImage, crMask, pi);
     }
 
+    /// <include file='IImageList.xml' path='doc/member[@name="IImageList.Draw"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT Draw(IMAGELISTDRAWPARAMS* pimldp)
@@ -81,6 +91,7 @@ public unsafe partial struct IImageList : IImageList.Interface
         return ((delegate* unmanaged<IImageList*, IMAGELISTDRAWPARAMS*, int>)(lpVtbl[8]))((IImageList*)Unsafe.AsPointer(ref this), pimldp);
     }
 
+    /// <include file='IImageList.xml' path='doc/member[@name="IImageList.Remove"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT Remove(int i)
@@ -88,6 +99,7 @@ public unsafe partial struct IImageList : IImageList.Interface
         return ((delegate* unmanaged<IImageList*, int, int>)(lpVtbl[9]))((IImageList*)Unsafe.AsPointer(ref this), i);
     }
 
+    /// <include file='IImageList.xml' path='doc/member[@name="IImageList.GetIcon"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT GetIcon(int i, uint flags, HICON* picon)
@@ -95,6 +107,7 @@ public unsafe partial struct IImageList : IImageList.Interface
         return ((delegate* unmanaged<IImageList*, int, uint, HICON*, int>)(lpVtbl[10]))((IImageList*)Unsafe.AsPointer(ref this), i, flags, picon);
     }
 
+    /// <include file='IImageList.xml' path='doc/member[@name="IImageList.GetImageInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT GetImageInfo(int i, IMAGEINFO* pImageInfo)
@@ -102,6 +115,7 @@ public unsafe partial struct IImageList : IImageList.Interface
         return ((delegate* unmanaged<IImageList*, int, IMAGEINFO*, int>)(lpVtbl[11]))((IImageList*)Unsafe.AsPointer(ref this), i, pImageInfo);
     }
 
+    /// <include file='IImageList.xml' path='doc/member[@name="IImageList.Copy"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT Copy(int iDst, IUnknown* punkSrc, int iSrc, uint uFlags)
@@ -109,6 +123,7 @@ public unsafe partial struct IImageList : IImageList.Interface
         return ((delegate* unmanaged<IImageList*, int, IUnknown*, int, uint, int>)(lpVtbl[12]))((IImageList*)Unsafe.AsPointer(ref this), iDst, punkSrc, iSrc, uFlags);
     }
 
+    /// <include file='IImageList.xml' path='doc/member[@name="IImageList.Merge"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT Merge(int i1, IUnknown* punk2, int i2, int dx, int dy, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
@@ -116,6 +131,7 @@ public unsafe partial struct IImageList : IImageList.Interface
         return ((delegate* unmanaged<IImageList*, int, IUnknown*, int, int, int, Guid*, void**, int>)(lpVtbl[13]))((IImageList*)Unsafe.AsPointer(ref this), i1, punk2, i2, dx, dy, riid, ppv);
     }
 
+    /// <include file='IImageList.xml' path='doc/member[@name="IImageList.Clone"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT Clone([NativeTypeName("const IID &")] Guid* riid, void** ppv)
@@ -123,6 +139,7 @@ public unsafe partial struct IImageList : IImageList.Interface
         return ((delegate* unmanaged<IImageList*, Guid*, void**, int>)(lpVtbl[14]))((IImageList*)Unsafe.AsPointer(ref this), riid, ppv);
     }
 
+    /// <include file='IImageList.xml' path='doc/member[@name="IImageList.GetImageRect"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT GetImageRect(int i, RECT* prc)
@@ -130,6 +147,7 @@ public unsafe partial struct IImageList : IImageList.Interface
         return ((delegate* unmanaged<IImageList*, int, RECT*, int>)(lpVtbl[15]))((IImageList*)Unsafe.AsPointer(ref this), i, prc);
     }
 
+    /// <include file='IImageList.xml' path='doc/member[@name="IImageList.GetIconSize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT GetIconSize(int* cx, int* cy)
@@ -137,6 +155,7 @@ public unsafe partial struct IImageList : IImageList.Interface
         return ((delegate* unmanaged<IImageList*, int*, int*, int>)(lpVtbl[16]))((IImageList*)Unsafe.AsPointer(ref this), cx, cy);
     }
 
+    /// <include file='IImageList.xml' path='doc/member[@name="IImageList.SetIconSize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT SetIconSize(int cx, int cy)
@@ -144,6 +163,7 @@ public unsafe partial struct IImageList : IImageList.Interface
         return ((delegate* unmanaged<IImageList*, int, int, int>)(lpVtbl[17]))((IImageList*)Unsafe.AsPointer(ref this), cx, cy);
     }
 
+    /// <include file='IImageList.xml' path='doc/member[@name="IImageList.GetImageCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT GetImageCount(int* pi)
@@ -151,6 +171,7 @@ public unsafe partial struct IImageList : IImageList.Interface
         return ((delegate* unmanaged<IImageList*, int*, int>)(lpVtbl[18]))((IImageList*)Unsafe.AsPointer(ref this), pi);
     }
 
+    /// <include file='IImageList.xml' path='doc/member[@name="IImageList.SetImageCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT SetImageCount(uint uNewCount)
@@ -158,6 +179,7 @@ public unsafe partial struct IImageList : IImageList.Interface
         return ((delegate* unmanaged<IImageList*, uint, int>)(lpVtbl[19]))((IImageList*)Unsafe.AsPointer(ref this), uNewCount);
     }
 
+    /// <include file='IImageList.xml' path='doc/member[@name="IImageList.SetBkColor"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public HRESULT SetBkColor(COLORREF clrBk, COLORREF* pclr)
@@ -165,6 +187,7 @@ public unsafe partial struct IImageList : IImageList.Interface
         return ((delegate* unmanaged<IImageList*, COLORREF, COLORREF*, int>)(lpVtbl[20]))((IImageList*)Unsafe.AsPointer(ref this), clrBk, pclr);
     }
 
+    /// <include file='IImageList.xml' path='doc/member[@name="IImageList.GetBkColor"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
     public HRESULT GetBkColor(COLORREF* pclr)
@@ -172,6 +195,7 @@ public unsafe partial struct IImageList : IImageList.Interface
         return ((delegate* unmanaged<IImageList*, COLORREF*, int>)(lpVtbl[21]))((IImageList*)Unsafe.AsPointer(ref this), pclr);
     }
 
+    /// <include file='IImageList.xml' path='doc/member[@name="IImageList.BeginDrag"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
     public HRESULT BeginDrag(int iTrack, int dxHotspot, int dyHotspot)
@@ -179,6 +203,7 @@ public unsafe partial struct IImageList : IImageList.Interface
         return ((delegate* unmanaged<IImageList*, int, int, int, int>)(lpVtbl[22]))((IImageList*)Unsafe.AsPointer(ref this), iTrack, dxHotspot, dyHotspot);
     }
 
+    /// <include file='IImageList.xml' path='doc/member[@name="IImageList.EndDrag"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
     public HRESULT EndDrag()
@@ -186,6 +211,7 @@ public unsafe partial struct IImageList : IImageList.Interface
         return ((delegate* unmanaged<IImageList*, int>)(lpVtbl[23]))((IImageList*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IImageList.xml' path='doc/member[@name="IImageList.DragEnter"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(24)]
     public HRESULT DragEnter(HWND hwndLock, int x, int y)
@@ -193,6 +219,7 @@ public unsafe partial struct IImageList : IImageList.Interface
         return ((delegate* unmanaged<IImageList*, HWND, int, int, int>)(lpVtbl[24]))((IImageList*)Unsafe.AsPointer(ref this), hwndLock, x, y);
     }
 
+    /// <include file='IImageList.xml' path='doc/member[@name="IImageList.DragLeave"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(25)]
     public HRESULT DragLeave(HWND hwndLock)
@@ -200,6 +227,7 @@ public unsafe partial struct IImageList : IImageList.Interface
         return ((delegate* unmanaged<IImageList*, HWND, int>)(lpVtbl[25]))((IImageList*)Unsafe.AsPointer(ref this), hwndLock);
     }
 
+    /// <include file='IImageList.xml' path='doc/member[@name="IImageList.DragMove"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(26)]
     public HRESULT DragMove(int x, int y)
@@ -207,6 +235,7 @@ public unsafe partial struct IImageList : IImageList.Interface
         return ((delegate* unmanaged<IImageList*, int, int, int>)(lpVtbl[26]))((IImageList*)Unsafe.AsPointer(ref this), x, y);
     }
 
+    /// <include file='IImageList.xml' path='doc/member[@name="IImageList.SetDragCursorImage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(27)]
     public HRESULT SetDragCursorImage(IUnknown* punk, int iDrag, int dxHotspot, int dyHotspot)
@@ -214,6 +243,7 @@ public unsafe partial struct IImageList : IImageList.Interface
         return ((delegate* unmanaged<IImageList*, IUnknown*, int, int, int, int>)(lpVtbl[27]))((IImageList*)Unsafe.AsPointer(ref this), punk, iDrag, dxHotspot, dyHotspot);
     }
 
+    /// <include file='IImageList.xml' path='doc/member[@name="IImageList.DragShowNolock"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(28)]
     public HRESULT DragShowNolock(BOOL fShow)
@@ -221,6 +251,7 @@ public unsafe partial struct IImageList : IImageList.Interface
         return ((delegate* unmanaged<IImageList*, BOOL, int>)(lpVtbl[28]))((IImageList*)Unsafe.AsPointer(ref this), fShow);
     }
 
+    /// <include file='IImageList.xml' path='doc/member[@name="IImageList.GetDragImage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(29)]
     public HRESULT GetDragImage(POINT* ppt, POINT* pptHotspot, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
@@ -228,6 +259,7 @@ public unsafe partial struct IImageList : IImageList.Interface
         return ((delegate* unmanaged<IImageList*, POINT*, POINT*, Guid*, void**, int>)(lpVtbl[29]))((IImageList*)Unsafe.AsPointer(ref this), ppt, pptHotspot, riid, ppv);
     }
 
+    /// <include file='IImageList.xml' path='doc/member[@name="IImageList.GetItemFlags"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(30)]
     public HRESULT GetItemFlags(int i, [NativeTypeName("DWORD *")] uint* dwFlags)
@@ -235,6 +267,7 @@ public unsafe partial struct IImageList : IImageList.Interface
         return ((delegate* unmanaged<IImageList*, int, uint*, int>)(lpVtbl[30]))((IImageList*)Unsafe.AsPointer(ref this), i, dwFlags);
     }
 
+    /// <include file='IImageList.xml' path='doc/member[@name="IImageList.GetOverlayImage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(31)]
     public HRESULT GetOverlayImage(int iOverlay, int* piIndex)

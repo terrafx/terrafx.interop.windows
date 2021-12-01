@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MARK_HANDLE_INFO32">
+    <summary>
+      <para>Contains information that is used to mark a specified file or directory, and its update sequence
+number (USN) change journal record with data about changes. This is only defined for 64-bit code and exists to
+interpret <see cref="MARK_HANDLE_INFO" /> structures sent by 32-bit
+code. It is used by the <a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_mark_handle">FSCTL_MARK_HANDLE</a></para>
+      <para>control code.</para>
+    </summary>
+  </member>
+  <member name="MARK_HANDLE_INFO32.DUMMYUNIONNAME">
+    <summary></summary>
+  </member>
+  <member name="MARK_HANDLE_INFO32.UsnSourceInfo">
+    <summary>
+      <para>The type of changes being made.</para>
+      <para>The operation does not modify the file or directory externally from the point of view of the application that
+created it.</para>
+      <para>When a thread writes a new USN record, the source information flags in the prior record continues to be
+present only if the thread also sets those flags. Therefore, the source information structure allows
+applications to filter out USN records that are set only by a known source, such as an antivirus filter.</para>
+      <para>The following values are defined.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>USN_SOURCE_DATA_MANAGEMENT</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000001</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The operation provides information about a change to the file or directory made by the operating system.</para>
+            <para>A typical use is when Remote Storage moves data from external to local storage. Remote Storage is the
+hierarchical storage management software. Such a move usually at a minimum adds the
+<b>USN_REASON_DATA_OVERWRITE</b> flag to a USN record. However, the data has not changed
+from the user point of view. By noting <b>USN_SOURCE_DATA_MANAGEMENT</b> in the
+<b>SourceInfo</b> member of the
+<see cref="USN_RECORD" /> structure that holds the record, you can
+determine that although a write operation is performed on the item, data has not changed.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>USN_SOURCE_AUXILIARY_DATA</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000002</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The operation adds a private data stream to a file or directory.</para>
+            <para>An example might be a virus detector adding checksum information. As the virus detector modifies the item,
+the system generates USN records. <b>USN_SOURCE_AUXILIARY_DATA</b> indicates that the
+modifications did not change the application data.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>USN_SOURCE_REPLICATION_MANAGEMENT</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000004</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The operation creates or updates the contents of a replicated file.</para>
+            <para>For example, the file replication service sets this flag when it creates or updates a file in a replicated
+directory.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="MARK_HANDLE_INFO32.CopyNumber">
+    <summary></summary>
+  </member>
+  <member name="MARK_HANDLE_INFO32.VolumeHandle">
+    <summary>
+      <para>The volume handle to the volume where the file or directory resides. For more information on obtaining a
+volume handle, see the Remarks section.</para>
+      <para>This handle is required to check the privileges for this operation.</para>
+      <para>The caller must have the <b>SE_MANAGE_VOLUME_NAME</b> privilege. For more information,
+see <a href="https://docs.microsoft.com//windows/desktop/SecAuthZ/privileges">Privileges</a>.</para>
+    </summary>
+  </member>
+  <member name="MARK_HANDLE_INFO32.HandleInfo">
+    <summary>
+      <para>The flag that specifies additional information about the file or directory identified by the handle value
+in the <b>VolumeHandle</b> member.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>MARK_HANDLE_PROTECT_CLUSTERS</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000001</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The file is marked as unable to be defragmented until the handle is closed.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>MARK_HANDLE_TXF_SYSTEM_LOG</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000004</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The file is marked as unable to be defragmented until the handle is closed.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>MARK_HANDLE_NOT_TXF_SYSTEM_LOG</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000008</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The file is marked as unable to be defragmented until the handle is closed.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>MARK_HANDLE_REALTIME</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000020</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The file is marked for real-time read behavior regardless of the actual file type. Files marked with
+this flag must be opened for <a href="https://docs.microsoft.com//windows/desktop/FileIO/file-buffering">unbuffered I/O</a>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>MARK_HANDLE_NOT_REALTIME</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000040</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The file previously marked for real-time read behavior using the
+<b>MARK_HANDLE_REALTIME</b> flag can be unmarked using this flag, removing the real-time
+behavior. Files marked with this flag must be opened for
+<a href="https://docs.microsoft.com//windows/desktop/FileIO/file-buffering">unbuffered I/O</a>.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+</doc>

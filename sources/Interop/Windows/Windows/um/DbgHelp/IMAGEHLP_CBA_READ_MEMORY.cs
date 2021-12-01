@@ -5,17 +5,22 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMAGEHLP_CBA_READ_MEMORY.xml' path='doc/member[@name="IMAGEHLP_CBA_READ_MEMORY"]/*' />
 public unsafe partial struct IMAGEHLP_CBA_READ_MEMORY
 {
+    /// <include file='IMAGEHLP_CBA_READ_MEMORY.xml' path='doc/member[@name="IMAGEHLP_CBA_READ_MEMORY.addr"]/*' />
     [NativeTypeName("DWORD64")]
     public ulong addr;
 
+    /// <include file='IMAGEHLP_CBA_READ_MEMORY.xml' path='doc/member[@name="IMAGEHLP_CBA_READ_MEMORY.buf"]/*' />
     [NativeTypeName("PVOID")]
     public void* buf;
 
+    /// <include file='IMAGEHLP_CBA_READ_MEMORY.xml' path='doc/member[@name="IMAGEHLP_CBA_READ_MEMORY.bytes"]/*' />
     [NativeTypeName("DWORD")]
     public uint bytes;
 
+    /// <include file='IMAGEHLP_CBA_READ_MEMORY.xml' path='doc/member[@name="IMAGEHLP_CBA_READ_MEMORY.bytesread"]/*' />
     [NativeTypeName("DWORD *")]
     public uint* bytesread;
 }

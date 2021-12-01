@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IShellItemImageFactory.GetImage">
+    <summary>
+      <para>Gets an <b>HBITMAP</b> that represents an <see cref="IShellItem" />. The default behavior is to load a thumbnail. If there is no thumbnail for the current <b>IShellItem</b>, it retrieves an <b>HBITMAP</b> for the icon of the item. The thumbnail or icon is extracted if it is not currently cached.</para>
+    </summary>
+    <param name="size">
+      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/dd145106(v=vs.85)">SIZE</a></b></para>
+      <para>A structure that specifies the size of the image to be received.</para>
+    </param>
+    <param name="flags">
+      <para>Type: <b>SIIGBF</b></para>
+      <para>One or more of the following:</para>
+      <h4>SIIGBF_RESIZETOFIT (0x00000000)</h4>
+      <para>Shrink the bitmap as necessary to fit, preserving its aspect ratio.</para>
+      <h4>SIIGBF_BIGGERSIZEOK (0x00000001)</h4>
+      <para>Passed by callers if they want to stretch the returned image themselves. For example, if the caller passes an icon size of 80x80, a 96x96 thumbnail could be returned. This action can be used as a performance optimization if the caller expects that they will need to stretch the image. Note that the Shell implementation of <see cref="IShellItemImageFactory" /> performs a GDI stretch blit. If the caller wants a higher quality image stretch than provided through that mechanism, they should pass this flag and perform the stretch themselves.</para>
+      <h4>SIIGBF_MEMORYONLY (0x00000002)</h4>
+      <para>Return the item only if it is already in memory. Do not access the disk even if the item is cached. Note that this only returns an already-cached icon and can fall back to a per-class icon if an item has a per-instance icon that has not been cached. Retrieving a thumbnail, even if it is cached, always requires the disk to be accessed, so <b>GetImage</b> should not be called from the UI thread without passing <b>SIIGBF_MEMORYONLY</b>.</para>
+      <h4>SIIGBF_ICONONLY (0x00000004)</h4>
+      <para>Return only the icon, never the thumbnail.</para>
+      <h4>SIIGBF_THUMBNAILONLY (0x00000008)</h4>
+      <para>Return only the thumbnail, never the icon. Note that not all items have thumbnails, so <b>SIIGBF_THUMBNAILONLY</b> will cause the method to fail in these cases.</para>
+      <h4>SIIGBF_INCACHEONLY (0x00000010)</h4>
+      <para>Allows access to the disk, but only to retrieve a cached item. This returns a cached thumbnail if it is available. If no cached thumbnail is available, it returns a cached per-instance icon but does not extract a thumbnail or icon.</para>
+      <h4>SIIGBF_CROPTOSQUARE (0x00000020)</h4>
+      <para>
+        <b>Introduced in Windows 8</b>. If necessary, crop the bitmap to a square.</para>
+      <h4>SIIGBF_WIDETHUMBNAILS (0x00000040)</h4>
+      <para>
+        <b>Introduced in Windows 8</b>. Stretch and crop the bitmap to a 0.7 aspect ratio.</para>
+      <h4>SIIGBF_ICONBACKGROUND (0x00000080)</h4>
+      <para>
+        <b>Introduced in Windows 8</b>. If returning an icon, paint a background using the associated app's registered background color.</para>
+      <h4>SIIGBF_SCALEUP (0x00000100)</h4>
+      <para>
+        <b>Introduced in Windows 8</b>. If necessary, stretch the bitmap so that the height and width fit the given size.</para>
+    </param>
+    <param name="phbm">
+      <para>Type: <b>HBITMAP*</b></para>
+      <para>Pointer to a value that, when this method returns successfully, receives the handle of the retrieved bitmap. It is the responsibility of the caller to free this retrieved resource through <see cref="DeleteObject" /> when it is no longer needed.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Icon extraction can be time consuming. This method generally should not be called from a UI thread to avoid causing that thread to become unresponsive. You can call <b>IShellItemImageFactory.GetImage</b> on a UI thread if you set the <b>SIIGBF_INCACHEONLY</b> flag. However, if the image is not found in the cache, the calling application should be prepared to launch a background thread to extract the image. An extraction should never be done on a UI thread.</para>
+      <para>See the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd940383(v=vs.85)">Using Image Factory</a> sample for a full example of how to use this method.</para>
+    </remarks>
+  </member>
+  <member name="IShellItemImageFactory">
+    <summary>
+      <para>Exposes a method to return either icons or thumbnails for Shell items. If no thumbnail or icon is available for the requested item, a per-class icon may be provided from the Shell.</para>
+    </summary>
+    <remarks>
+      <para>A pointer to this interface is commonly obtained through one of the following functions:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <see cref="SHCreateItemFromIDList" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="SHCreateItemFromParsingName" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="SHCreateItemFromRelativeName" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="SHCreateItemInKnownFolder" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="SHCreateItemWithParent" />
+          </description>
+        </item>
+      </list>
+      <para>See the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd940383(v=vs.85)">Using Image Factory</a> sample for a full example of how to use this interface.</para>
+    </remarks>
+  </member>
+</doc>

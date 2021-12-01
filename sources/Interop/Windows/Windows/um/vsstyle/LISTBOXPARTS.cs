@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='LISTBOXPARTS.xml' path='doc/member[@name="LISTBOXPARTS"]/*' />
 public enum LISTBOXPARTS
 {
+    /// <include file='LISTBOXPARTS.xml' path='doc/member[@name="LISTBOXPARTS.LBCP_BORDER_HSCROLL"]/*' />
     LBCP_BORDER_HSCROLL = 1,
+
+    /// <include file='LISTBOXPARTS.xml' path='doc/member[@name="LISTBOXPARTS.LBCP_BORDER_HVSCROLL"]/*' />
     LBCP_BORDER_HVSCROLL = 2,
+
+    /// <include file='LISTBOXPARTS.xml' path='doc/member[@name="LISTBOXPARTS.LBCP_BORDER_NOSCROLL"]/*' />
     LBCP_BORDER_NOSCROLL = 3,
+
+    /// <include file='LISTBOXPARTS.xml' path='doc/member[@name="LISTBOXPARTS.LBCP_BORDER_VSCROLL"]/*' />
     LBCP_BORDER_VSCROLL = 4,
+
+    /// <include file='LISTBOXPARTS.xml' path='doc/member[@name="LISTBOXPARTS.LBCP_ITEM"]/*' />
     LBCP_ITEM = 5,
 }

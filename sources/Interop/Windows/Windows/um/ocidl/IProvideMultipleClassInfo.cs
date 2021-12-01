@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IProvideMultipleClassInfo.xml' path='doc/member[@name="IProvideMultipleClassInfo"]/*' />
 [Guid("A7ABA9C1-8983-11CF-8F20-00805F2CD064")]
 [NativeTypeName("struct IProvideMultipleClassInfo : IProvideClassInfo2")]
 [NativeInheritance("IProvideClassInfo2")]
@@ -16,6 +17,7 @@ public unsafe partial struct IProvideMultipleClassInfo : IProvideMultipleClassIn
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IProvideMultipleClassInfo : IProvideMultipleClassIn
         return ((delegate* unmanaged<IProvideMultipleClassInfo*, Guid*, void**, int>)(lpVtbl[0]))((IProvideMultipleClassInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IProvideMultipleClassInfo : IProvideMultipleClassIn
         return ((delegate* unmanaged<IProvideMultipleClassInfo*, uint>)(lpVtbl[1]))((IProvideMultipleClassInfo*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IProvideMultipleClassInfo : IProvideMultipleClassIn
         return ((delegate* unmanaged<IProvideMultipleClassInfo*, uint>)(lpVtbl[2]))((IProvideMultipleClassInfo*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IProvideClassInfo.GetClassInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetClassInfo(ITypeInfo** ppTI)
@@ -46,6 +51,7 @@ public unsafe partial struct IProvideMultipleClassInfo : IProvideMultipleClassIn
         return ((delegate* unmanaged<IProvideMultipleClassInfo*, ITypeInfo**, int>)(lpVtbl[3]))((IProvideMultipleClassInfo*)Unsafe.AsPointer(ref this), ppTI);
     }
 
+    /// <inheritdoc cref="IProvideClassInfo2.GetGUID" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetGUID([NativeTypeName("DWORD")] uint dwGuidKind, Guid* pGUID)
@@ -53,6 +59,7 @@ public unsafe partial struct IProvideMultipleClassInfo : IProvideMultipleClassIn
         return ((delegate* unmanaged<IProvideMultipleClassInfo*, uint, Guid*, int>)(lpVtbl[4]))((IProvideMultipleClassInfo*)Unsafe.AsPointer(ref this), dwGuidKind, pGUID);
     }
 
+    /// <include file='IProvideMultipleClassInfo.xml' path='doc/member[@name="IProvideMultipleClassInfo.GetMultiTypeInfoCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetMultiTypeInfoCount([NativeTypeName("ULONG *")] uint* pcti)
@@ -60,6 +67,7 @@ public unsafe partial struct IProvideMultipleClassInfo : IProvideMultipleClassIn
         return ((delegate* unmanaged<IProvideMultipleClassInfo*, uint*, int>)(lpVtbl[5]))((IProvideMultipleClassInfo*)Unsafe.AsPointer(ref this), pcti);
     }
 
+    /// <include file='IProvideMultipleClassInfo.xml' path='doc/member[@name="IProvideMultipleClassInfo.GetInfoOfIndex"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetInfoOfIndex([NativeTypeName("ULONG")] uint iti, [NativeTypeName("DWORD")] uint dwFlags, ITypeInfo** pptiCoClass, [NativeTypeName("DWORD *")] uint* pdwTIFlags, [NativeTypeName("ULONG *")] uint* pcdispidReserved, [NativeTypeName("IID *")] Guid* piidPrimary, [NativeTypeName("IID *")] Guid* piidSource)

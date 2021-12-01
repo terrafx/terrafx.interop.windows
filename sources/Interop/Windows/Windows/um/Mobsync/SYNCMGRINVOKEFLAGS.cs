@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SYNCMGRINVOKEFLAGS.xml' path='doc/member[@name="SYNCMGRINVOKEFLAGS"]/*' />
 public enum SYNCMGRINVOKEFLAGS
 {
+    /// <include file='SYNCMGRINVOKEFLAGS.xml' path='doc/member[@name="SYNCMGRINVOKEFLAGS.SYNCMGRINVOKE_STARTSYNC"]/*' />
     SYNCMGRINVOKE_STARTSYNC = 0x2,
+
+    /// <include file='SYNCMGRINVOKEFLAGS.xml' path='doc/member[@name="SYNCMGRINVOKEFLAGS.SYNCMGRINVOKE_MINIMIZED"]/*' />
     SYNCMGRINVOKE_MINIMIZED = 0x4,
 }

@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IServerSecurity.ImpersonateClient">
+    <summary>
+      <para>Enables a server to impersonate a client for the duration of a call.</para>
+    </summary>
+    <returns>
+      <para>If the method succeeds, the return value is S_OK. Otherwise, it is E_FAIL.</para>
+    </returns>
+    <remarks>
+      <para>Usually, a method executes on a thread that uses the access token of the process. However, when impersonating a client, the server runs in the client's security context so that the server has access to the resources that the client has access to. When impersonation is necessary, the server calls the <b>ImpersonateClient</b> method to cause an access token representing the client's credentials to be assigned to the current thread. This thread token is used for access checks. <see cref="RevertToSelf" /> restores the current thread's access token.</para>
+      <para>What the server can do on behalf of the client depends on the impersonation level set by the client, which is specified using one of the <a href="https://docs.microsoft.com//windows/desktop/com/com-impersonation-level-constants">impersonation level constants</a>. The server may impersonate the client on an encrypted call at identify, impersonate, or delegate level. For information about these levels of impersonation, see <a href="https://docs.microsoft.com//windows/desktop/com/impersonation-levels">Impersonation Levels</a>.</para>
+      <para>The identity presented to a server called during impersonation depends on the type of cloaking value, if any, that is set by the client. For more information, see <a href="https://docs.microsoft.com//windows/desktop/com/cloaking">Cloaking</a>.</para>
+      <para>At the end of each method call, COM will call <see cref="RevertToSelf" /> if the application does not.</para>
+      <para>Traditionally, impersonation information is not nested: The last call to any impersonation mechanism overrides any previous impersonation. However, in the apartment model, impersonation is maintained during nested calls. Thus if the server A receives a call from B, impersonates, calls C, receives a call from D, impersonates, reverts, and receives the reply from C, the impersonation token will be set back to B, not A.</para>
+      <para>For information on using impersonation with asynchronous calls, see <a href="https://docs.microsoft.com//windows/desktop/com/impersonation-and-asynchronous-calls">Impersonation and Asynchronous Calls</a>.</para>
+    </remarks>
+    <seealso cref="CoImpersonateClient" />
+    <seealso cref="IServerSecurity" />
+  </member>
+  <member name="IServerSecurity.IsImpersonating">
+    <summary>
+      <para>Indicates whether the server is currently impersonating the client.</para>
+    </summary>
+    <returns>
+      <para>If the thread is currently impersonating, the return value is <b>TRUE</b>. Otherwise, it is <b>FALSE</b>.</para>
+    </returns>
+    <seealso cref="IServerSecurity" />
+  </member>
+  <member name="IServerSecurity.QueryBlanket">
+    <summary>
+      <para>Retrieves information about the client that invoked one of the server's methods.</para>
+    </summary>
+    <param name="pAuthnSvc">
+      <para>A pointer to the current authentication service. This will be a single value taken from the list of <a href="https://docs.microsoft.com//windows/desktop/com/com-authentication-service-constants">authentication service constants</a>. If the caller specifies <b>NULL</b>, the current authentication service is not retrieved.</para>
+    </param>
+    <param name="pAuthzSvc">
+      <para>A pointer to a variable that receives the current authorization service. This will be a single value from the list of <a href="https://docs.microsoft.com//windows/desktop/com/com-authorization-constants">authorization constants</a>. If the caller specifies <b>NULL</b>, the current authorization service is not retrieved.</para>
+    </param>
+    <param name="pServerPrincName">
+      <para>The current principal name. The string will be allocated by the callee using <see cref="CoTaskMemAlloc" />, and must be freed by the caller using <see cref="CoTaskMemFree" />. By default, Schannel principal names will be in the msstd form. The fullsic form will be returned if EOAC_MAKE_FULLSIC is specified in the <i>pCapabilities</i> parameter. For more information on the msstd and fullsic forms, see <a href="https://docs.microsoft.com//windows/desktop/Rpc/principal-names">Principal Names</a>. If the caller specifies <b>NULL</b>, the current principal name is not retrieved.</para>
+    </param>
+    <param name="pAuthnLevel">
+      <para>A pointer to a variable that receives the current authentication level. This will be a single value taken from the list of <a href="https://docs.microsoft.com//windows/desktop/com/com-authentication-level-constants">authentication level constants</a>. If the caller specifies <b>NULL</b>, the current authentication level is not retrieved.</para>
+    </param>
+    <param name="pImpLevel">
+      <para>This parameter must be <b>NULL</b>.</para>
+    </param>
+    <param name="pPrivs">
+      <para>The privilege information for the client application. The format of the structure that the handle refers to depends on the authentication service. The application should not write or free the memory. The information is only valid for the duration of the current call. For NTLMSSP, and Kerberos, this is a <see cref="SEC_WINNT_AUTH_IDENTITY" /> or <see cref="SEC_WINNT_AUTH_IDENTITY_EX" /> structure. For Schannel, this is a <see cref="CERT_CONTEXT" /> structure that represents the client's certificate. If the client has no certificate, <b>NULL</b> is returned. If the caller specifies <b>NULL</b>, the current privilege information is not retrieved.</para>
+    </param>
+    <param name="pCapabilities">
+      <para>The capabilities of the call. To request that the principal name be returned in fullsic form if Schannel is the authentication service, the caller can set the EOAC_MAKE_FULLSIC flag in this parameter. If the caller specifies <b>NULL</b>, the current capabilities are not retrieved.</para>
+    </param>
+    <returns>
+      <para>This method can return the standard return values E_INVALIDARG, E_OUTOFMEMORY, and S_OK.</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>QueryBlanket</b> is used by the server to find out about the client that invoked one of its methods. To get a pointer to <see cref="IServerSecurity" /> for the current call on the current thread, call <see cref="CoGetCallContext" />, specifying IID_IServerSecurity. This interface pointer may only be used in the same apartment as the call for the duration of the call.</para>
+    </remarks>
+    <seealso cref="CoQueryClientBlanket" />
+    <seealso cref="CoQueryProxyBlanket" />
+    <seealso cref="IServerSecurity" />
+  </member>
+  <member name="IServerSecurity.RevertToSelf">
+    <summary>
+      <para>Restores the authentication information of a thread to what it was before impersonation began.</para>
+    </summary>
+    <returns>
+      <para>If the method succeeds, the return value is S_OK. Otherwise, it is E_FAIL.</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>RevertToSelf</b> restores the authentication information on a thread to the authentication information on the thread before impersonation began. If the server does not call <b>RevertToSelf</b> before the end of the current call, it will be called automatically by COM.</para>
+      <para>When <see cref="ImpersonateClient" /> is called on a thread that is not currently impersonating, COM saves the token currently on the thread. A subsequent call to <b>RevertToSelf</b> restores the saved token, and <see cref="IsImpersonating" /> will then return <b>FALSE</b>. This means that if a series of impersonation calls are made using different <see cref="IServerSecurity" /> objects, <b>RevertToSelf</b> will restore the token that was on the thread when the first call to <b>ImpersonateClient</b> was made. Also, only one <b>RevertToSelf</b> call is needed to undo any number of <b>ImpersonateClient</b> calls.</para>
+      <para>This method will only revert impersonation changes made by <see cref="ImpersonateClient" />. If the thread token is modified by other means (through the <see cref="SetThreadToken" /> or <see cref="RpcImpersonateClient" /> functions) the result of this function is undefined.</para>
+      <para>
+        <b>RevertToSelf</b> affects only the current method invocation. If there are nested method invocations, each invocation can have its own impersonation token and DCOM will correctly restore the impersonation token before returning to them (regardless of whether <see cref="CoRevertToSelf" /> or <b>RevertToSelf</b> was called).</para>
+      <para>It is important to understand that an instance of <see cref="IServerSecurity" /> is valid on any thread in the apartment until the call represented by <b>IServerSecurity</b> completes. However, impersonation is local to a particular thread for the duration of the current call on that thread. Therefore, if two threads in the same apartment use the same <b>IServerSecurity</b> instance to call <see cref="ImpersonateClient" />, one thread can call <b>RevertToSelf</b> without affecting the other.</para>
+    </remarks>
+    <seealso cref="CoRevertToSelf" />
+    <seealso cref="IServerSecurity" />
+  </member>
+  <member name="IServerSecurity">
+    <summary>
+      <para>Used by a server to help authenticate the client and to manage impersonation of the client.</para>
+    </summary>
+    <seealso cref="CoGetCallContext" />
+    <seealso cref="CoSwitchCallContext" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/com/security-in-com">Security in COM</seealso>
+  </member>
+</doc>

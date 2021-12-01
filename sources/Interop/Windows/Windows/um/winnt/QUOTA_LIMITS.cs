@@ -5,22 +5,29 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='QUOTA_LIMITS.xml' path='doc/member[@name="QUOTA_LIMITS"]/*' />
 public partial struct QUOTA_LIMITS
 {
+    /// <include file='QUOTA_LIMITS.xml' path='doc/member[@name="QUOTA_LIMITS.PagedPoolLimit"]/*' />
     [NativeTypeName("SIZE_T")]
     public nuint PagedPoolLimit;
 
+    /// <include file='QUOTA_LIMITS.xml' path='doc/member[@name="QUOTA_LIMITS.NonPagedPoolLimit"]/*' />
     [NativeTypeName("SIZE_T")]
     public nuint NonPagedPoolLimit;
 
+    /// <include file='QUOTA_LIMITS.xml' path='doc/member[@name="QUOTA_LIMITS.MinimumWorkingSetSize"]/*' />
     [NativeTypeName("SIZE_T")]
     public nuint MinimumWorkingSetSize;
 
+    /// <include file='QUOTA_LIMITS.xml' path='doc/member[@name="QUOTA_LIMITS.MaximumWorkingSetSize"]/*' />
     [NativeTypeName("SIZE_T")]
     public nuint MaximumWorkingSetSize;
 
+    /// <include file='QUOTA_LIMITS.xml' path='doc/member[@name="QUOTA_LIMITS.PagefileLimit"]/*' />
     [NativeTypeName("SIZE_T")]
     public nuint PagefileLimit;
 
+    /// <include file='QUOTA_LIMITS.xml' path='doc/member[@name="QUOTA_LIMITS.TimeLimit"]/*' />
     public LARGE_INTEGER TimeLimit;
 }

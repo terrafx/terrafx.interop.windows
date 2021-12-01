@@ -5,11 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TVHITTESTINFO.xml' path='doc/member[@name="TVHITTESTINFO"]/*' />
 public partial struct TVHITTESTINFO
 {
+    /// <include file='TVHITTESTINFO.xml' path='doc/member[@name="TVHITTESTINFO.pt"]/*' />
     public POINT pt;
 
+    /// <include file='TVHITTESTINFO.xml' path='doc/member[@name="TVHITTESTINFO.flags"]/*' />
     public uint flags;
 
+    /// <include file='TVHITTESTINFO.xml' path='doc/member[@name="TVHITTESTINFO.hItem"]/*' />
     public HTREEITEM hItem;
 }

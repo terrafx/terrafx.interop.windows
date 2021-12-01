@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HLITEM.xml' path='doc/member[@name="HLITEM"]/*' />
 public unsafe partial struct HLITEM
 {
+    /// <include file='HLITEM.xml' path='doc/member[@name="HLITEM.uHLID"]/*' />
     [NativeTypeName("ULONG")]
     public uint uHLID;
 
+    /// <include file='HLITEM.xml' path='doc/member[@name="HLITEM.pwzFriendlyName"]/*' />
     [NativeTypeName("LPWSTR")]
     public ushort* pwzFriendlyName;
 }

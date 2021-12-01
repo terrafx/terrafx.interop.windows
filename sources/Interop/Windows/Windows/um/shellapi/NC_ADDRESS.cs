@@ -5,12 +5,16 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NC_ADDRESS.xml' path='doc/member[@name="NC_ADDRESS"]/*' />
 public unsafe partial struct NC_ADDRESS
 {
+    /// <include file='NC_ADDRESS.xml' path='doc/member[@name="NC_ADDRESS.pAddrInfo"]/*' />
     [NativeTypeName("struct NET_ADDRESS_INFO_ *")]
     public NET_ADDRESS_INFO* pAddrInfo;
 
+    /// <include file='NC_ADDRESS.xml' path='doc/member[@name="NC_ADDRESS.PortNumber"]/*' />
     public ushort PortNumber;
 
+    /// <include file='NC_ADDRESS.xml' path='doc/member[@name="NC_ADDRESS.PrefixLength"]/*' />
     public byte PrefixLength;
 }

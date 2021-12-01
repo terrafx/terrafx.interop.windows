@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="FOLDERVIEWMODE">
+    <summary>
+      <para>Specifies the folder view type.</para>
+    </summary>
+  </member>
+  <member name="FOLDERVIEWMODE.FVM_AUTO">
+    <summary>
+      <para>The view should determine the best option.</para>
+    </summary>
+  </member>
+  <member name="FOLDERVIEWMODE.FVM_FIRST">
+    <summary>
+      <para>The minimum constant value in <see cref="FOLDERVIEWMODE" />, for validation purposes.</para>
+    </summary>
+  </member>
+  <member name="FOLDERVIEWMODE.FVM_ICON">
+    <summary>
+      <para>The view should display medium-size icons.</para>
+    </summary>
+  </member>
+  <member name="FOLDERVIEWMODE.FVM_SMALLICON">
+    <summary>
+      <para>The view should display small icons.</para>
+    </summary>
+  </member>
+  <member name="FOLDERVIEWMODE.FVM_LIST">
+    <summary>
+      <para>Object names are displayed in a list view.</para>
+    </summary>
+  </member>
+  <member name="FOLDERVIEWMODE.FVM_DETAILS">
+    <summary>
+      <para>Object names and other selected information, such as the size or date last updated, are shown.</para>
+    </summary>
+  </member>
+  <member name="FOLDERVIEWMODE.FVM_THUMBNAIL">
+    <summary>
+      <para>The view should display thumbnail icons.</para>
+    </summary>
+  </member>
+  <member name="FOLDERVIEWMODE.FVM_TILE">
+    <summary>
+      <para>The view should display large icons.</para>
+    </summary>
+  </member>
+  <member name="FOLDERVIEWMODE.FVM_THUMBSTRIP">
+    <summary>
+      <para>The view should display icons in a filmstrip format.</para>
+    </summary>
+  </member>
+  <member name="FOLDERVIEWMODE.FVM_CONTENT">
+    <summary>
+      <para>
+        <b>Windows 7 and later</b>. The view should display content mode.</para>
+    </summary>
+  </member>
+  <member name="FOLDERVIEWMODE.FVM_LAST">
+    <summary>
+      <para>The maximum constant value in <see cref="FOLDERVIEWMODE" />, for validation purposes.</para>
+    </summary>
+  </member>
+</doc>

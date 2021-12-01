@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMAGE_DYNAMIC_RELOCATION_TABLE.xml' path='doc/member[@name="IMAGE_DYNAMIC_RELOCATION_TABLE"]/*' />
 public partial struct IMAGE_DYNAMIC_RELOCATION_TABLE
 {
+    /// <include file='IMAGE_DYNAMIC_RELOCATION_TABLE.xml' path='doc/member[@name="IMAGE_DYNAMIC_RELOCATION_TABLE.Version"]/*' />
     [NativeTypeName("DWORD")]
     public uint Version;
 
+    /// <include file='IMAGE_DYNAMIC_RELOCATION_TABLE.xml' path='doc/member[@name="IMAGE_DYNAMIC_RELOCATION_TABLE.Size"]/*' />
     [NativeTypeName("DWORD")]
     public uint Size;
 }

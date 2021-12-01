@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CALPSTR.xml' path='doc/member[@name="CALPSTR"]/*' />
 public unsafe partial struct CALPSTR
 {
+    /// <include file='CALPSTR.xml' path='doc/member[@name="CALPSTR.cElems"]/*' />
     [NativeTypeName("ULONG")]
     public uint cElems;
 
+    /// <include file='CALPSTR.xml' path='doc/member[@name="CALPSTR.pElems"]/*' />
     [NativeTypeName("LPSTR *")]
     public sbyte** pElems;
 }

@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SE_SECURITY_DESCRIPTOR.xml' path='doc/member[@name="SE_SECURITY_DESCRIPTOR"]/*' />
 public unsafe partial struct SE_SECURITY_DESCRIPTOR
 {
+    /// <include file='SE_SECURITY_DESCRIPTOR.xml' path='doc/member[@name="SE_SECURITY_DESCRIPTOR.Size"]/*' />
     [NativeTypeName("DWORD")]
     public uint Size;
 
+    /// <include file='SE_SECURITY_DESCRIPTOR.xml' path='doc/member[@name="SE_SECURITY_DESCRIPTOR.Flags"]/*' />
     [NativeTypeName("DWORD")]
     public uint Flags;
 
+    /// <include file='SE_SECURITY_DESCRIPTOR.xml' path='doc/member[@name="SE_SECURITY_DESCRIPTOR.SecurityDescriptor"]/*' />
     [NativeTypeName("PSECURITY_DESCRIPTOR")]
     public void* SecurityDescriptor;
 }

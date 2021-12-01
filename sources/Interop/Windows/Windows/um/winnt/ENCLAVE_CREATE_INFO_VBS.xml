@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ENCLAVE_CREATE_INFO_VBS">
+    <summary>
+      <para>Contains architecture-specific information to use to create an enclave when the enclave type is <b>ENCLAVE_TYPE_VBS</b>, which specifies a virtualization-based security (VBS) enclave.</para>
+    </summary>
+    <seealso cref="CreateEnclave" />
+  </member>
+  <member name="ENCLAVE_CREATE_INFO_VBS.Flags">
+    <summary>
+      <para>A flag that indicates whether the enclave permits debugging.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>ENCLAVE_VBS_FLAG_DEBUG</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000001</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The enclave permits debugging.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>0x00000000</para>
+          </description>
+          <description>
+            <para>The enclave does not permit debugging.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="ENCLAVE_CREATE_INFO_VBS.OwnerID">
+    <summary>
+      <para>The identifier of the owner of the enclave.</para>
+    </summary>
+  </member>
+</doc>

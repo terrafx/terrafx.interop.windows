@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MFP_EVENT_HEADER">
+    <summary>
+      <para>
+        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</para>
+      <para>Contains information that is common to  every type of MFPlay event.</para>
+    </summary>
+    <seealso cref="IMFPMediaPlayerCallback" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-structures">Media Foundation Structures</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/using-mfplay-for-audio-video-playback">Using MFPlay for Audio/Video Playback</seealso>
+  </member>
+  <member name="MFP_EVENT_HEADER.eEventType">
+    <summary>
+      <para>The type of event, specified as a member of the <see cref="MFP_EVENT_TYPE" /> enumeration.</para>
+    </summary>
+  </member>
+  <member name="MFP_EVENT_HEADER.hrEvent">
+    <summary>
+      <para>Error or success code for the operation that caused the event.</para>
+    </summary>
+  </member>
+  <member name="MFP_EVENT_HEADER.pMediaPlayer">
+    <summary>
+      <para>Pointer to the <see cref="IMFPMediaPlayer" /> interface of the MFPlay player object that sent the event.</para>
+    </summary>
+  </member>
+  <member name="MFP_EVENT_HEADER.eState">
+    <summary>
+      <para>The new state of the MFPlay player object, specified as a member of the <see cref="MFP_MEDIAPLAYER_STATE" /> enumeration.</para>
+    </summary>
+  </member>
+  <member name="MFP_EVENT_HEADER.pPropertyStore">
+    <summary>
+      <para>A pointer to the <b>IPropertyStore</b> interface of  a property store object. The property store is used to hold additional event data for some event types. This member might be <b>NULL</b>.</para>
+    </summary>
+  </member>
+</doc>

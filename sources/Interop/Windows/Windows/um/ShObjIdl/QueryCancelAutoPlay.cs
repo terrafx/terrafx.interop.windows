@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='QueryCancelAutoPlay.xml' path='doc/member[@name="QueryCancelAutoPlay"]/*' />
 [Guid("331F1768-05A9-4DDD-B86E-DAE34DDC998A")]
 public partial struct QueryCancelAutoPlay
 {

@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IEnumSyncMgrConflict.Clone">
+    <summary>
+      <para>Not used. Clones an <see cref="IEnumSyncMgrConflict" /> object.</para>
+    </summary>
+    <param name="ppenum">
+      <para>Type: <b><see cref="IEnumSyncMgrConflict" />**</b></para>
+      <para>The address of the cloned <see cref="IEnumSyncMgrConflict" /> interface pointer.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IEnumSyncMgrConflict.Next">
+    <summary>
+      <para>Gets the next batch of conflicts from the conflicts store.</para>
+    </summary>
+    <param name="celt">
+      <para>Type: <b>ULONG</b></para>
+      <para>The value must be 1.</para>
+    </param>
+    <param name="rgelt">
+      <para>Type: <b><see cref="ISyncMgrConflict" />**</b></para>
+      <para>The address of an <see cref="ISyncMgrConflict" /> interface pointer.</para>
+    </param>
+    <param name="pceltFetched">
+      <para>Type: <b>ULONG*</b></para>
+      <para>A pointer to the number of conflicts fetched.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IEnumSyncMgrConflict.Reset">
+    <summary>
+      <para>Resets the current position in the enumeration to zero.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IEnumSyncMgrConflict.Skip">
+    <summary>
+      <para>Skips forward the specified number of conflicts in the enumeration.</para>
+    </summary>
+    <param name="celt">
+      <para>Type: <b>ULONG</b></para>
+      <para>The number of conflicts to skip.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IEnumSyncMgrConflict">
+    <summary>
+      <para>Exposes conflict enumeration methods.</para>
+    </summary>
+    <remarks>
+      <para>A conflict store returns a pointer to an <b>IEnumSyncMgrConflict</b> interface from <see cref="ISyncMgrConflictStore.EnumConflicts" />.</para>
+    </remarks>
+  </member>
+</doc>

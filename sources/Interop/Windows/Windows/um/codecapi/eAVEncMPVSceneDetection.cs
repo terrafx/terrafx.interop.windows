@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='eAVEncMPVSceneDetection.xml' path='doc/member[@name="eAVEncMPVSceneDetection"]/*' />
 public enum eAVEncMPVSceneDetection
 {
+    /// <include file='eAVEncMPVSceneDetection.xml' path='doc/member[@name="eAVEncMPVSceneDetection.eAVEncMPVSceneDetection_None"]/*' />
     eAVEncMPVSceneDetection_None = 0,
+
+    /// <include file='eAVEncMPVSceneDetection.xml' path='doc/member[@name="eAVEncMPVSceneDetection.eAVEncMPVSceneDetection_InsertIPicture"]/*' />
     eAVEncMPVSceneDetection_InsertIPicture = 1,
+
+    /// <include file='eAVEncMPVSceneDetection.xml' path='doc/member[@name="eAVEncMPVSceneDetection.eAVEncMPVSceneDetection_StartNewGOP"]/*' />
     eAVEncMPVSceneDetection_StartNewGOP = 2,
+
+    /// <include file='eAVEncMPVSceneDetection.xml' path='doc/member[@name="eAVEncMPVSceneDetection.eAVEncMPVSceneDetection_StartNewLocatableGOP"]/*' />
     eAVEncMPVSceneDetection_StartNewLocatableGOP = 3,
 }

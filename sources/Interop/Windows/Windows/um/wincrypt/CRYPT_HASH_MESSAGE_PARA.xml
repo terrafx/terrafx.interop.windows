@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CRYPT_HASH_MESSAGE_PARA">
+    <summary>
+      <para>The <b>CRYPT_HASH_MESSAGE_PARA</b> structure contains data for <a href="https://docs.microsoft.com//windows/desktop/SecGloss/h-gly">hashing</a> messages.</para>
+    </summary>
+    <seealso cref="CRYPT_ALGORITHM_IDENTIFIER" />
+    <seealso cref="CryptHashMessage" />
+    <seealso cref="CryptVerifyDetachedMessageHash" />
+    <seealso cref="CryptVerifyMessageHash" />
+  </member>
+  <member name="CRYPT_HASH_MESSAGE_PARA.cbSize">
+    <summary>
+      <para>Size of this structure in bytes.</para>
+    </summary>
+  </member>
+  <member name="CRYPT_HASH_MESSAGE_PARA.dwMsgEncodingType">
+    <summary>
+      <para>Type of encoding used. It is always acceptable to specify both the certificate and <a href="https://docs.microsoft.com//windows/desktop/SecGloss/m-gly">message encoding types</a> by combining them with a bitwise-<b>OR</b> operation as shown in the following example:</para>
+      <para>X509_ASN_ENCODING | PKCS_7_ASN_ENCODING</para>
+      <para>Currently defined encoding types are:</para>
+      <list type="bullet">
+        <item>
+          <description>X509_ASN_ENCODING</description>
+        </item>
+        <item>
+          <description>PKCS_7_ASN_ENCODING</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="CRYPT_HASH_MESSAGE_PARA.hCryptProv">
+    <summary>
+      <para>This member is not used and should be set to <b>NULL</b>.</para>
+      <para>
+        <b>Windows Server 2003 and Windows XP:  </b>A handle to the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">cryptographic service provider</a> (CSP) to be used.Unless there is a strong reason for passing in a specific cryptographic provider in <b>hCryptProv</b>, pass zero to use the default RSA or DSS provider.</para>
+      <para>This member's data type is <b>HCRYPTPROV</b>.</para>
+    </summary>
+  </member>
+  <member name="CRYPT_HASH_MESSAGE_PARA.HashAlgorithm">
+    <summary>
+      <para>
+        <see cref="CRYPT_ALGORITHM_IDENTIFIER" /> containing the algorithm for generating the hash of the message.</para>
+    </summary>
+  </member>
+  <member name="CRYPT_HASH_MESSAGE_PARA.pvHashAuxInfo">
+    <summary>
+      <para>Not currently used, and must be set to <b>NULL</b>.</para>
+    </summary>
+  </member>
+</doc>

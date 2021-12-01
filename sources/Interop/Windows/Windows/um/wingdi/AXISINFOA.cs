@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='AXISINFOA.xml' path='doc/member[@name="AXISINFOA"]/*' />
 public unsafe partial struct AXISINFOA
 {
+    /// <include file='AXISINFOA.xml' path='doc/member[@name="AXISINFOA.axMinValue"]/*' />
     [NativeTypeName("LONG")]
     public int axMinValue;
 
+    /// <include file='AXISINFOA.xml' path='doc/member[@name="AXISINFOA.axMaxValue"]/*' />
     [NativeTypeName("LONG")]
     public int axMaxValue;
 
+    /// <include file='AXISINFOA.xml' path='doc/member[@name="AXISINFOA.axAxisName"]/*' />
     [NativeTypeName("BYTE [16]")]
     public fixed byte axAxisName[16];
 }

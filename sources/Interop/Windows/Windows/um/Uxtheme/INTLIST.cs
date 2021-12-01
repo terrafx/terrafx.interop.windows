@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='INTLIST.xml' path='doc/member[@name="INTLIST"]/*' />
 public unsafe partial struct INTLIST
 {
+    /// <include file='INTLIST.xml' path='doc/member[@name="INTLIST.iValueCount"]/*' />
     public int iValueCount;
 
+    /// <include file='INTLIST.xml' path='doc/member[@name="INTLIST.iValues"]/*' />
     [NativeTypeName("int [402]")]
     public fixed int iValues[402];
 }

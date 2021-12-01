@@ -8,17 +8,21 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CABINETSTATE.xml' path='doc/member[@name="CABINETSTATE"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct CABINETSTATE
 {
+    /// <include file='CABINETSTATE.xml' path='doc/member[@name="CABINETSTATE.cLength"]/*' />
     [NativeTypeName("WORD")]
     public ushort cLength;
 
+    /// <include file='CABINETSTATE.xml' path='doc/member[@name="CABINETSTATE.nVersion"]/*' />
     [NativeTypeName("WORD")]
     public ushort nVersion;
 
     public BOOL _bitfield;
 
+    /// <include file='CABINETSTATE.xml' path='doc/member[@name="CABINETSTATE.fFullPathTitle"]/*' />
     [NativeTypeName("BOOL : 1")]
     public BOOL fFullPathTitle
     {
@@ -35,6 +39,7 @@ public partial struct CABINETSTATE
         }
     }
 
+    /// <include file='CABINETSTATE.xml' path='doc/member[@name="CABINETSTATE.fSaveLocalView"]/*' />
     [NativeTypeName("BOOL : 1")]
     public BOOL fSaveLocalView
     {
@@ -51,6 +56,7 @@ public partial struct CABINETSTATE
         }
     }
 
+    /// <include file='CABINETSTATE.xml' path='doc/member[@name="CABINETSTATE.fNotShell"]/*' />
     [NativeTypeName("BOOL : 1")]
     public BOOL fNotShell
     {
@@ -67,6 +73,7 @@ public partial struct CABINETSTATE
         }
     }
 
+    /// <include file='CABINETSTATE.xml' path='doc/member[@name="CABINETSTATE.fSimpleDefault"]/*' />
     [NativeTypeName("BOOL : 1")]
     public BOOL fSimpleDefault
     {
@@ -83,6 +90,7 @@ public partial struct CABINETSTATE
         }
     }
 
+    /// <include file='CABINETSTATE.xml' path='doc/member[@name="CABINETSTATE.fDontShowDescBar"]/*' />
     [NativeTypeName("BOOL : 1")]
     public BOOL fDontShowDescBar
     {
@@ -99,6 +107,7 @@ public partial struct CABINETSTATE
         }
     }
 
+    /// <include file='CABINETSTATE.xml' path='doc/member[@name="CABINETSTATE.fNewWindowMode"]/*' />
     [NativeTypeName("BOOL : 1")]
     public BOOL fNewWindowMode
     {
@@ -115,6 +124,7 @@ public partial struct CABINETSTATE
         }
     }
 
+    /// <include file='CABINETSTATE.xml' path='doc/member[@name="CABINETSTATE.fShowCompColor"]/*' />
     [NativeTypeName("BOOL : 1")]
     public BOOL fShowCompColor
     {
@@ -131,6 +141,7 @@ public partial struct CABINETSTATE
         }
     }
 
+    /// <include file='CABINETSTATE.xml' path='doc/member[@name="CABINETSTATE.fDontPrettyNames"]/*' />
     [NativeTypeName("BOOL : 1")]
     public BOOL fDontPrettyNames
     {
@@ -147,6 +158,7 @@ public partial struct CABINETSTATE
         }
     }
 
+    /// <include file='CABINETSTATE.xml' path='doc/member[@name="CABINETSTATE.fAdminsCreateCommonGroups"]/*' />
     [NativeTypeName("BOOL : 1")]
     public BOOL fAdminsCreateCommonGroups
     {
@@ -163,6 +175,7 @@ public partial struct CABINETSTATE
         }
     }
 
+    /// <include file='CABINETSTATE.xml' path='doc/member[@name="CABINETSTATE.fUnusedFlags"]/*' />
     [NativeTypeName("uint : 7")]
     public uint fUnusedFlags
     {
@@ -179,5 +192,6 @@ public partial struct CABINETSTATE
         }
     }
 
+    /// <include file='CABINETSTATE.xml' path='doc/member[@name="CABINETSTATE.fMenuEnumFilter"]/*' />
     public uint fMenuEnumFilter;
 }

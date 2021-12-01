@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='eAVEncAudioInputContent.xml' path='doc/member[@name="eAVEncAudioInputContent"]/*' />
 public enum eAVEncAudioInputContent
 {
+    /// <include file='eAVEncAudioInputContent.xml' path='doc/member[@name="eAVEncAudioInputContent.AVEncAudioInputContent_Unknown"]/*' />
     AVEncAudioInputContent_Unknown = 0,
+
+    /// <include file='eAVEncAudioInputContent.xml' path='doc/member[@name="eAVEncAudioInputContent.AVEncAudioInputContent_Voice"]/*' />
     AVEncAudioInputContent_Voice = 1,
+
+    /// <include file='eAVEncAudioInputContent.xml' path='doc/member[@name="eAVEncAudioInputContent.AVEncAudioInputContent_Music"]/*' />
     AVEncAudioInputContent_Music = 2,
 }

@@ -7,11 +7,14 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WINHTTP_PROXY_RESULT.xml' path='doc/member[@name="WINHTTP_PROXY_RESULT"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public unsafe partial struct WINHTTP_PROXY_RESULT
 {
+    /// <include file='WINHTTP_PROXY_RESULT.xml' path='doc/member[@name="WINHTTP_PROXY_RESULT.cEntries"]/*' />
     [NativeTypeName("DWORD")]
     public uint cEntries;
 
+    /// <include file='WINHTTP_PROXY_RESULT.xml' path='doc/member[@name="WINHTTP_PROXY_RESULT.pEntries"]/*' />
     public WINHTTP_PROXY_RESULT_ENTRY* pEntries;
 }

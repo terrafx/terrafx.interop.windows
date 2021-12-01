@@ -1,0 +1,677 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFMediaSession.ClearTopologies">
+    <summary>
+      <para>Clears all of the presentations that are queued for playback in the Media Session.</para>
+    </summary>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_INVALIDREQUEST</b>
+            </para>
+          </description>
+          <description>
+            <para>The operation cannot be performed in the Media Session's current state.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_SHUTDOWN</b>
+            </para>
+          </description>
+          <description>
+            <para>The Media Session has been shut down.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method is asynchronous. When the operation completes, the Media Session sends an <a href="https://docs.microsoft.com//windows/desktop/medfound/mesessiontopologiescleared">MESessionTopologiesCleared</a> event.</para>
+      <para>This method does not clear the current topology; it only removes topologies that are placed in the queue, waiting for playback. To remove the current topology, call <see cref="IMFMediaSession.SetTopology" /> with the <b>MFSESSION_SETTOPOLOGY_CLEAR_CURRENT</b> flag.</para>
+    </remarks>
+    <seealso cref="IMFMediaSession" />
+  </member>
+  <member name="IMFMediaSession.Close">
+    <summary>
+      <para>Closes the Media Session and releases all of the resources it is using.</para>
+    </summary>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_SHUTDOWN</b>
+            </para>
+          </description>
+          <description>
+            <para>The Media Session has been shut down.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method is asynchronous. When the operation completes, the Media Session sends an <a href="https://docs.microsoft.com//windows/desktop/medfound/mesessionclosed">MESessionClosed</a> event.</para>
+      <para>After the <b>Close</b> method is called, the only valid methods on the Media Session are the following:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <para>
+              <see cref="IMFMediaSession.GetClock" />
+            </para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <see cref="IMFMediaSession.GetFullTopology" />
+            </para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <see cref="IMFMediaSession.GetSessionCapabilities" />
+            </para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <see cref="IMFMediaSession.Shutdown" />
+            </para>
+          </description>
+        </item>
+      </list>
+      <para>All other methods return MF_E_INVALIDREQUEST, or else queue an event with that error code.</para>
+    </remarks>
+    <seealso cref="IMFMediaSession" />
+  </member>
+  <member name="IMFMediaSession.GetClock">
+    <summary>
+      <para>Retrieves the Media Session's presentation clock.</para>
+    </summary>
+    <param name="ppClock">
+      <para>Receives a pointer to the presentation clock's <see cref="IMFClock" /> interface. The caller must release the interface.</para>
+    </param>
+    <returns>
+      <para>The method returns an HRESULT. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_UNEXPECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The Media Session does not have a presentation clock.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_SHUTDOWN</b>
+            </para>
+          </description>
+          <description>
+            <para>The Media Session has been shut down.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The application can query the returned <see cref="IMFClock" /> pointer for the <see cref="IMFPresentationClock" /> interface. However, the application should not use this interface to control the state of the presentation clock. Instead, the application should always call the transport control methods on the Media Session's <see cref="IMFMediaSession" /> interface, such as <see cref="Start" />, <see cref="Stop" />, and <see cref="Pause" />.</para>
+    </remarks>
+    <seealso cref="IMFMediaSession" />
+  </member>
+  <member name="IMFMediaSession.GetFullTopology">
+    <summary>
+      <para>Gets a topology from the Media Session.</para>
+      <para>This method can get the current topology or a queued topology.</para>
+    </summary>
+    <param name="dwGetFullTopologyFlags">
+      <para>Bitwise <b>OR</b> of zero or more flags from the <see cref="MFSESSION_GETFULLTOPOLOGY_FLAGS" /> enumeration.</para>
+    </param>
+    <param name="TopoId">
+      <para>The identifier of the topology. This parameter is ignored if the <i>dwGetFullTopologyFlags</i> parameter contains the <b>MFSESSION_GETFULLTOPOLOGY_CURRENT</b> flag. To get the identifier of a topology, call <see cref="IMFTopology.GetTopologyID" />.</para>
+    </param>
+    <param name="ppFullTopology">
+      <para>Receives a pointer to the <see cref="IMFTopology" /> interface of the topology. The caller must release the interface.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_SHUTDOWN</b>
+            </para>
+          </description>
+          <description>
+            <para>The Media Session has been shut down.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>If the <b>MFSESSION_GETFULLTOPOLOGY_CURRENT</b> flag is specified in the <i>dwGetFullTopologyFlags</i> parameter, the method returns the topology for the current presentation. Otherwise, the method searches all of the queued topologies for one that matches the identifier given in the <i>TopoId</i> parameter.</para>
+      <para>This method can be used to retrieve the topology for the current presentation or any pending presentations. It cannot be used to retrieve a topology that has already ended.</para>
+      <para>The topology returned in <i>ppFullTopo</i> is a full topology, not a partial topology.</para>
+    </remarks>
+    <seealso cref="IMFMediaSession" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/topoid">TOPOID</seealso>
+  </member>
+  <member name="IMFMediaSession.GetSessionCapabilities">
+    <summary>
+      <para>Retrieves the capabilities of the Media Session, based on the current presentation.</para>
+    </summary>
+    <param name="pdwCaps">
+      <para>Receives a bitwise <b>OR</b> of zero or more of the following flags.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>MFSESSIONCAP_PAUSE</b>
+          </description>
+          <description>
+            <para>The Media Session can be paused.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>MFSESSIONCAP_RATE_FORWARD</b>
+          </description>
+          <description>
+            <para>The Media Session supports forward playback at rates faster than 1.0.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>MFSESSIONCAP_RATE_REVERSE</b>
+          </description>
+          <description>
+            <para>The Media Session supports reverse playback.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>MFSESSIONCAP_SEEK</b>
+          </description>
+          <description>
+            <para>The Media Session can be seeked.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>MFSESSIONCAP_START</b>
+          </description>
+          <description>
+            <para>The Media Session can be started.</para>
+          </description>
+        </item>
+      </list>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>NULL pointer argument.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_SHUTDOWN</b>
+            </para>
+          </description>
+          <description>
+            <para>The Media Session has been shut down.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IMFMediaSession" />
+  </member>
+  <member name="IMFMediaSession.Pause">
+    <summary>
+      <para>Pauses the Media Session.</para>
+    </summary>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_INVALIDREQUEST</b>
+            </para>
+          </description>
+          <description>
+            <para>The operation cannot be performed in the Media Session's current state.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_SHUTDOWN</b>
+            </para>
+          </description>
+          <description>
+            <para>The Media Session has been shut down.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_SESSION_PAUSEWHILESTOPPED</b>
+            </para>
+          </description>
+          <description>
+            <para>The Media Session cannot pause while stopped.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method pauses the presentation clock.</para>
+      <para>This method is asynchronous. When the operation completes, the Media Session sends an <a href="https://docs.microsoft.com//windows/desktop/medfound/mesessionpaused">MESessionPaused</a> event.</para>
+      <para>This method fails if the Media Session is stopped.</para>
+    </remarks>
+    <seealso cref="IMFMediaSession" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/mesessionpaused">MESessionPaused</seealso>
+  </member>
+  <member name="IMFMediaSession.SetTopology">
+    <summary>
+      <para>Sets a topology on the Media Session.</para>
+    </summary>
+    <param name="dwSetTopologyFlags">
+      <para>Bitwise <b>OR</b> of zero or more flags from the <see cref="MFSESSION_SETTOPOLOGY_FLAGS" /> enumeration.</para>
+    </param>
+    <param name="pTopology">
+      <para>Pointer to the topology object's <see cref="IMFTopology" /> interface.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_INVALIDREQUEST</b>
+            </para>
+          </description>
+          <description>
+            <para>The operation cannot be performed in the Media Session's current state.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_SHUTDOWN</b>
+            </para>
+          </description>
+          <description>
+            <para>The Media Session has been shut down.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_TOPO_INVALID_TIME_ATTRIBUTES</b>
+            </para>
+          </description>
+          <description>
+            <para>The topology has invalid values for one or more of the following attributes:</para>
+            <list type="bullet">
+              <item>
+                <description>
+                  <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-toponode-mediastart-attribute">MF_TOPONODE_MEDIASTART</a>
+                </description>
+              </item>
+              <item>
+                <description>
+                  <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-toponode-mediastop-attribute">MF_TOPONODE_MEDIASTOP</a>
+                </description>
+              </item>
+              <item>
+                <description>
+                  <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-topology-projectstart-attribute">MF_TOPOLOGY_PROJECTSTART</a>
+                </description>
+              </item>
+              <item>
+                <description>
+                  <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-topology-projectstop-attribute">MF_TOPOLOGY_PROJECTSTOP</a>
+                </description>
+              </item>
+            </list>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>NS_E_DRM_DEBUGGING_NOT_ALLOWED</b>
+            </para>
+          </description>
+          <description>
+            <para>Protected content cannot be played while debugging.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>If <i>pTopology</i> is a full topology, set the <b>MFSESSION_SETTOPOLOGY_NORESOLUTION</b> flag in the <i>dwSetTopologyFlags</i> parameter. Otherwise, the topology is assumed to be a partial topology. The Media Session uses the topology loader to resolve a partial topology into a full topology.</para>
+      <para>If the Media Session is currently paused or stopped, the <b>SetTopology</b> method does not take effect until the next call to <see cref="IMFMediaSession.Start" />.</para>
+      <para>If the Media Session is currently running, or on the next call to <see cref="Start" />, the <b>SetTopology</b> method does the following:</para>
+      <list type="bullet">
+        <item>
+          <description>If the <b>MFSESSION_SETTOPOLOGY_IMMEDIATE</b> flag is set in <i>dwSetTopologyFlags</i>, the Media Session ends the current presentation immediately, clears all pending topologies, and uses <i>pTopology</i> to start a new presentation.</description>
+        </item>
+        <item>
+          <description>Otherwise, the Media Session queues <i>pTopology</i> and starts the new presentation when the current presentation has completed. If there is no current presentation, the new presentation starts immediately.</description>
+        </item>
+        <item>
+          <description>Starting in Windows 7, you can also specify the <b>MFSESSION_SETTOPOLOGY_CLEAR_CURRENT</b>  flag to clear the current topology but leave any other pending topologies on the queue.</description>
+        </item>
+      </list>
+      <para>This method is asynchronous. If the method returns S_OK, the Media Session sends an <a href="https://docs.microsoft.com//windows/desktop/medfound/mesessiontopologyset">MESessionTopologySet</a> event when the operation completes.
+If the Media Session is currently paused to stopped, the Media Session does not send the MESessionTopologySet event until the next call to <see cref="IMFMediaSession.Start" /></para>
+    </remarks>
+    <seealso cref="IMFMediaSession" />
+  </member>
+  <member name="IMFMediaSession.Shutdown">
+    <summary>
+      <para>Shuts down the Media Session and releases all the resources used by the Media Session.</para>
+    </summary>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Call this method when you are done using the Media Session, before the final call to <b>IUnknown.Release</b>. Otherwise, your application will leak memory.</para>
+      <para>After this method is called, other <see cref="IMFMediaSession" /> methods return MF_E_SHUTDOWN.</para>
+    </remarks>
+    <seealso cref="IMFMediaSession" />
+  </member>
+  <member name="IMFMediaSession.Start">
+    <summary>
+      <para>Starts the Media Session.</para>
+    </summary>
+    <param name="pguidTimeFormat">
+      <para>Pointer to a GUID that specifies the time format for the <i>pvarStartPosition</i> parameter. This parameter can be <b>NULL</b>. The value <b>NULL</b> is equivalent to passing in <b>GUID_NULL</b>.</para>
+      <para>The following time format GUIDs are defined:</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>GUID_NULL</b>
+          </description>
+          <description>
+            <para>Presentation time. The <i>pvarStartPosition</i> parameter must have one of the following <b>PROPVARIANT</b> types.</para>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>VT_I8</b>: The <i>pvarStartPosition</i> parameter contains the starting position in 100-nanosecond units, relative to the start of the presentation.</description>
+              </item>
+              <item>
+                <description>
+                  <b>VT_EMPTY</b>: Playback starts from the current position.</description>
+              </item>
+            </list>
+            <para>All media sources support this time format.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>MF_TIME_FORMAT_SEGMENT_OFFSET</b>
+          </description>
+          <description>
+            <para>Segment offset. This time format is supported by the <a href="https://docs.microsoft.com//windows/desktop/medfound/sequencer-source">Sequencer Source</a>. The starting time is an offset within a segment.</para>
+            <para>Call the <see cref="MFCreateSequencerSegmentOffset" /> function to create the <b>PROPVARIANT</b> value for the
+<i>pvarStartPosition</i> parameter.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>MF_TIME_FORMAT_ENTRY_RELATIVE</b>
+          </description>
+          <description>
+            <b>Note</b>  Requires Windows 7 or later.
+<para>Skip to a playlist entry. The <i>pvarStartPosition</i> parameter specifies the index of the playlist entry, relative to the current entry. For example, the value 2 skips forward two entries. To skip backward, pass a negative value. The <b>PROPVARIANT</b> type is <b>VT_I4</b>.</para><para>If a media source supports this time format, the <see cref="IMFMediaSource.GetCharacteristics" /> method returns one or both of the following flags:</para><list type="bullet"><item><description><b>MFMEDIASOURCE_CAN_SKIPFORWARD</b></description></item><item><description><b>MFMEDIASOURCE_CAN_SKIPBACKWARD</b></description></item></list></description>
+        </item>
+      </list>
+    </param>
+    <param name="pvarStartPosition">
+      <para>Pointer to a <b>PROPVARIANT</b> that specifies the starting position for playback. The meaning and data type of this parameter are indicated by the <i>pguidTimeFormat</i> parameter.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_INVALIDREQUEST</b>
+            </para>
+          </description>
+          <description>
+            <para>The operation cannot be performed in the Media Session's current state.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_SHUTDOWN</b>
+            </para>
+          </description>
+          <description>
+            <para>The Media Session has been shut down.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>When this method is called, the Media Session starts the presentation clock and begins to process media samples.</para>
+      <para>This method is asynchronous. When the method completes, the Media Session sends an <a href="https://docs.microsoft.com//windows/desktop/medfound/mesessionstarted">MESessionStarted</a> event.</para>
+    </remarks>
+    <seealso cref="IMFMediaSession" />
+  </member>
+  <member name="IMFMediaSession.Stop">
+    <summary>
+      <para>Stops the Media Session.</para>
+    </summary>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_INVALIDREQUEST</b>
+            </para>
+          </description>
+          <description>
+            <para>The operation cannot be performed in the Media Session's current state.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_SHUTDOWN</b>
+            </para>
+          </description>
+          <description>
+            <para>The Media Session has been shut down.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method is asynchronous. When the operation completes, the Media Session sends an <a href="https://docs.microsoft.com//windows/desktop/medfound/mesessionstopped">MESessionStopped</a> event.</para>
+    </remarks>
+    <seealso cref="IMFMediaSession" />
+  </member>
+  <member name="IMFMediaSession">
+    <summary>
+      <para>Provides playback controls for protected and unprotected content. The Media Session and the protected media path (PMP) session objects expose this interface. This interface is the primary interface that applications use to control the Media Foundation pipeline.</para>
+      <para>To obtain a pointer to this interface, call <see cref="MFCreateMediaSession" /> or <see cref="MFCreatePMPMediaSession" />.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/how-to-play-unprotected-media-files">How to Play Media Files with Media Foundation</seealso>
+    <seealso cref="IMFMediaEventGenerator" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+  </member>
+</doc>

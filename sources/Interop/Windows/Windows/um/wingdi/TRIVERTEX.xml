@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="TRIVERTEX">
+    <summary>
+      <para>The <b>TRIVERTEX</b> structure contains color information and position information.</para>
+    </summary>
+    <remarks>
+      <para>In the <b>TRIVERTEX</b> structure, x and y indicate position in the same manner as in the <a href="https://docs.microsoft.com//previous-versions/dd162807(v=vs.85)">POINTL</a> structure contained in the wtypes.h header file. <b>Red</b>, <b>Green</b>, <b>Blue</b>, and <b>Alpha</b> members indicate color information at the point x, y. The color information of each channel is specified as a value from 0x0000 to 0xff00. This allows higher color resolution for an object that has been split into small triangles for display. The <b>TRIVERTEX</b> structure contains information needed by the <i>pVertex</i> parameter of <see cref="GradientFill" />.</para>
+      <h4>Examples</h4>
+      <para>For an example of the use of this structure, see <a href="https://docs.microsoft.com//windows/desktop/gdi/drawing-a-shaded-triangle">Drawing a Shaded Triangle</a> or <a href="https://docs.microsoft.com//windows/desktop/gdi/drawing-a-shaded-rectangle">Drawing a Shaded Rectangle</a>.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/bitmap-structures">Bitmap Structures</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/bitmaps">Bitmaps Overview</seealso>
+    <seealso cref="GradientFill" />
+    <seealso href="https://docs.microsoft.com//previous-versions/dd162807(v=vs.85)">POINTL</seealso>
+  </member>
+  <member name="TRIVERTEX.x">
+    <summary>
+      <para>The x-coordinate, in logical units, of the upper-left corner of the rectangle.</para>
+    </summary>
+  </member>
+  <member name="TRIVERTEX.y">
+    <summary>
+      <para>The y-coordinate, in logical units, of the upper-left corner of the rectangle.</para>
+    </summary>
+  </member>
+  <member name="TRIVERTEX.Red">
+    <summary>
+      <para>The color information at the point of x, y.</para>
+    </summary>
+  </member>
+  <member name="TRIVERTEX.Green">
+    <summary>
+      <para>The color information at the point of x, y.</para>
+    </summary>
+  </member>
+  <member name="TRIVERTEX.Blue">
+    <summary>
+      <para>The color information at the point of x, y.</para>
+    </summary>
+  </member>
+  <member name="TRIVERTEX.Alpha">
+    <summary>
+      <para>The color information at the point of x, y.</para>
+    </summary>
+  </member>
+</doc>

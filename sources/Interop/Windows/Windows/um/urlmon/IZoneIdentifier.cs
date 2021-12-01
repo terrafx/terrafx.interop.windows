@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IZoneIdentifier.xml' path='doc/member[@name="IZoneIdentifier"]/*' />
 [Guid("CD45F185-1B21-48E2-967B-EAD743A8914E")]
 [NativeTypeName("struct IZoneIdentifier : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IZoneIdentifier : IZoneIdentifier.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IZoneIdentifier : IZoneIdentifier.Interface
         return ((delegate* unmanaged<IZoneIdentifier*, Guid*, void**, int>)(lpVtbl[0]))((IZoneIdentifier*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IZoneIdentifier : IZoneIdentifier.Interface
         return ((delegate* unmanaged<IZoneIdentifier*, uint>)(lpVtbl[1]))((IZoneIdentifier*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IZoneIdentifier : IZoneIdentifier.Interface
         return ((delegate* unmanaged<IZoneIdentifier*, uint>)(lpVtbl[2]))((IZoneIdentifier*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IZoneIdentifier.xml' path='doc/member[@name="IZoneIdentifier.GetId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetId([NativeTypeName("DWORD *")] uint* pdwZone)
@@ -46,6 +51,7 @@ public unsafe partial struct IZoneIdentifier : IZoneIdentifier.Interface
         return ((delegate* unmanaged<IZoneIdentifier*, uint*, int>)(lpVtbl[3]))((IZoneIdentifier*)Unsafe.AsPointer(ref this), pdwZone);
     }
 
+    /// <include file='IZoneIdentifier.xml' path='doc/member[@name="IZoneIdentifier.SetId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetId([NativeTypeName("DWORD")] uint dwZone)
@@ -53,6 +59,7 @@ public unsafe partial struct IZoneIdentifier : IZoneIdentifier.Interface
         return ((delegate* unmanaged<IZoneIdentifier*, uint, int>)(lpVtbl[4]))((IZoneIdentifier*)Unsafe.AsPointer(ref this), dwZone);
     }
 
+    /// <include file='IZoneIdentifier.xml' path='doc/member[@name="IZoneIdentifier.Remove"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT Remove()

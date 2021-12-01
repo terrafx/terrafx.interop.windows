@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SCALE_CHANGE_FLAGS">
+    <summary>
+      <para>Flags that are used to indicate the scaling change that occurred.</para>
+    </summary>
+  </member>
+  <member name="SCALE_CHANGE_FLAGS.SCF_VALUE_NONE">
+    <summary>
+      <para>No change.</para>
+    </summary>
+  </member>
+  <member name="SCALE_CHANGE_FLAGS.SCF_SCALE">
+    <summary>
+      <para>The scale factor has changed.</para>
+    </summary>
+  </member>
+  <member name="SCALE_CHANGE_FLAGS.SCF_PHYSICAL">
+    <summary>
+      <para>The physical dpi of the device has changed. A change in the physical dpi is generally caused either by switching display devices or switching display resolutions.</para>
+    </summary>
+  </member>
+</doc>

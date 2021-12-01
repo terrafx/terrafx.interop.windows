@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="GLOBALOPT_UNMARSHALING_POLICY_VALUES">
+    <summary>
+      <para>Provides values for the COM unmarshaling policy global option.</para>
+    </summary>
+    <seealso cref="IGlobalOptions" />
+    <seealso cref="IMarshalingStream" />
+  </member>
+  <member name="GLOBALOPT_UNMARSHALING_POLICY_VALUES.COMGLB_UNMARSHALING_POLICY_NORMAL">
+    <summary>
+      <para>Unmarshaling behavior is the same as versions older than Windows 8. <b>EOAC_NO_CUSTOM_MARSHAL</b> restrictions apply if this flag is set in <see cref="CoInitializeSecurity" />. Otherwise, there are no restrictions. This is the default for processes that aren't in the app container.</para>
+    </summary>
+  </member>
+  <member name="GLOBALOPT_UNMARSHALING_POLICY_VALUES.COMGLB_UNMARSHALING_POLICY_STRONG">
+    <summary>
+      <para>Unmarshaling allows only a system-trusted list of hardened unmarshalers and unmarshalers allowed per-process by the <see cref="CoAllowUnmarshalerCLSID" /> function. This is the default for processes in the app container.</para>
+    </summary>
+  </member>
+  <member name="GLOBALOPT_UNMARSHALING_POLICY_VALUES.COMGLB_UNMARSHALING_POLICY_HYBRID">
+    <summary>
+      <para>Unmarshaling data whose source is app container allows only a system-trusted list of hardened unmarshalers and unmarshalers allowed per-process by the <see cref="CoAllowUnmarshalerCLSID" /> function. Unmarshaling behavior for data with a source that's not app container is unchanged from previous versions.</para>
+    </summary>
+  </member>
+</doc>

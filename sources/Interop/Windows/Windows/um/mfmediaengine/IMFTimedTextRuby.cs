@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFTimedTextRuby.xml' path='doc/member[@name="IMFTimedTextRuby"]/*' />
 [Guid("76C6A6F5-4955-4DE5-B27B-14B734CC14B4")]
 [NativeTypeName("struct IMFTimedTextRuby : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMFTimedTextRuby : IMFTimedTextRuby.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMFTimedTextRuby : IMFTimedTextRuby.Interface
         return ((delegate* unmanaged<IMFTimedTextRuby*, Guid*, void**, int>)(lpVtbl[0]))((IMFTimedTextRuby*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMFTimedTextRuby : IMFTimedTextRuby.Interface
         return ((delegate* unmanaged<IMFTimedTextRuby*, uint>)(lpVtbl[1]))((IMFTimedTextRuby*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMFTimedTextRuby : IMFTimedTextRuby.Interface
         return ((delegate* unmanaged<IMFTimedTextRuby*, uint>)(lpVtbl[2]))((IMFTimedTextRuby*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFTimedTextRuby.xml' path='doc/member[@name="IMFTimedTextRuby.GetRubyText"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetRubyText([NativeTypeName("LPWSTR *")] ushort** rubyText)
@@ -46,6 +51,7 @@ public unsafe partial struct IMFTimedTextRuby : IMFTimedTextRuby.Interface
         return ((delegate* unmanaged<IMFTimedTextRuby*, ushort**, int>)(lpVtbl[3]))((IMFTimedTextRuby*)Unsafe.AsPointer(ref this), rubyText);
     }
 
+    /// <include file='IMFTimedTextRuby.xml' path='doc/member[@name="IMFTimedTextRuby.GetRubyPosition"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetRubyPosition(MF_TIMED_TEXT_RUBY_POSITION* value)
@@ -53,6 +59,7 @@ public unsafe partial struct IMFTimedTextRuby : IMFTimedTextRuby.Interface
         return ((delegate* unmanaged<IMFTimedTextRuby*, MF_TIMED_TEXT_RUBY_POSITION*, int>)(lpVtbl[4]))((IMFTimedTextRuby*)Unsafe.AsPointer(ref this), value);
     }
 
+    /// <include file='IMFTimedTextRuby.xml' path='doc/member[@name="IMFTimedTextRuby.GetRubyAlign"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetRubyAlign(MF_TIMED_TEXT_RUBY_ALIGN* value)
@@ -60,6 +67,7 @@ public unsafe partial struct IMFTimedTextRuby : IMFTimedTextRuby.Interface
         return ((delegate* unmanaged<IMFTimedTextRuby*, MF_TIMED_TEXT_RUBY_ALIGN*, int>)(lpVtbl[5]))((IMFTimedTextRuby*)Unsafe.AsPointer(ref this), value);
     }
 
+    /// <include file='IMFTimedTextRuby.xml' path='doc/member[@name="IMFTimedTextRuby.GetRubyReserve"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetRubyReserve(MF_TIMED_TEXT_RUBY_RESERVE* value)

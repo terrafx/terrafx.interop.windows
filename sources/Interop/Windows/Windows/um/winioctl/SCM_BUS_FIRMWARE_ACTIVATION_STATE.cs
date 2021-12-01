@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SCM_BUS_FIRMWARE_ACTIVATION_STATE.xml' path='doc/member[@name="SCM_BUS_FIRMWARE_ACTIVATION_STATE"]/*' />
 public enum SCM_BUS_FIRMWARE_ACTIVATION_STATE
 {
+    /// <include file='SCM_BUS_FIRMWARE_ACTIVATION_STATE.xml' path='doc/member[@name="SCM_BUS_FIRMWARE_ACTIVATION_STATE.ScmBusFirmwareActivationState_Idle"]/*' />
     ScmBusFirmwareActivationState_Idle = 0,
+
+    /// <include file='SCM_BUS_FIRMWARE_ACTIVATION_STATE.xml' path='doc/member[@name="SCM_BUS_FIRMWARE_ACTIVATION_STATE.ScmBusFirmwareActivationState_Armed"]/*' />
     ScmBusFirmwareActivationState_Armed = 1,
+
+    /// <include file='SCM_BUS_FIRMWARE_ACTIVATION_STATE.xml' path='doc/member[@name="SCM_BUS_FIRMWARE_ACTIVATION_STATE.ScmBusFirmwareActivationState_Busy"]/*' />
     ScmBusFirmwareActivationState_Busy = 2,
 }

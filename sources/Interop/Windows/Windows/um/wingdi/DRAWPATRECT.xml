@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DRAWPATRECT">
+    <summary>
+      <para>The <b>DRAWPATRECT</b> structure defines a rectangle to be created.</para>
+    </summary>
+    <remarks>
+      <para>This structure is used with the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd162495(v=vs.85)">DRAWPATTERNRECT</a> printer escape.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd162495(v=vs.85)">DRAWPATTERNRECT</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/printdocs/printing-and-print-spooler-structures">Print Spooler API Structures</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/printdocs/printdocs-printing">Printing</seealso>
+  </member>
+  <member name="DRAWPATRECT.ptPosition">
+    <summary>
+      <para>The upper-left corner of the rectangle, in logical units.</para>
+    </summary>
+  </member>
+  <member name="DRAWPATRECT.ptSize">
+    <summary>
+      <para>The lower-right corner of the rectangle, in logical units.</para>
+    </summary>
+  </member>
+  <member name="DRAWPATRECT.wStyle">
+    <summary>
+      <para>The style of the rectangle. It can be one of the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>0</description>
+          <description>Black rectangle.</description>
+        </item>
+        <item>
+          <description>1</description>
+          <description>White rectangle.</description>
+        </item>
+        <item>
+          <description>2</description>
+          <description>Gray rectangle. Used with <b>wPattern</b>.</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="DRAWPATRECT.wPattern">
+    <summary>
+      <para>Amount of grayness of the rectangle, as a percentage (0-100). A value of 0 means a white rectangle and 100 means a black rectangle. This is only used when <b>wStyle</b> is 2.</para>
+    </summary>
+  </member>
+</doc>

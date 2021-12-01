@@ -9,6 +9,7 @@ namespace TerraFX.Interop.Windows;
 
 public static unsafe partial class Windows
 {
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FreeConfirmConflictItem"]/*' />
     public static void FreeConfirmConflictItem(CONFIRM_CONFLICT_ITEM* pcci)
     {
         if ((pcci->pShellItem) != null)

@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IWICMetadataQueryReader.GetContainerFormat">
+    <summary>
+      <para>Gets the metadata query readers container format.</para>
+    </summary>
+    <param name="pguidContainerFormat">
+      <para>Type: <b>GUID*</b></para>
+      <para>Pointer that receives the cointainer format GUID.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IWICMetadataQueryReader" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-codec-readingwritingmetadata">Overview of Reading and Writing Image Metadata</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-about-metadata">WIC Metadata Overview</seealso>
+  </member>
+  <member name="IWICMetadataQueryReader.GetEnumerator">
+    <summary>
+      <para>Gets an enumerator of all metadata items at the current relative location within the metadata hierarchy.</para>
+    </summary>
+    <param name="ppIEnumString">
+      <para>Type: <b><see cref="IEnumString" />**</b></para>
+      <para>A pointer to a variable that receives a pointer to the <see cref="IEnumString" /> interface for the enumerator that contains query strings that can be used in the current <see cref="IWICMetadataQueryReader" />.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The retrieved enumerator only contains query strings for the metadata blocks and items in the current level of the hierarchy.</para>
+    </remarks>
+    <seealso cref="IWICMetadataQueryReader" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-codec-readingwritingmetadata">Overview of Reading and Writing Image Metadata</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-about-metadata">WIC Metadata Overview</seealso>
+  </member>
+  <member name="IWICMetadataQueryReader.GetLocation">
+    <summary>
+      <para>Retrieves the current path relative to the root metadata block.</para>
+    </summary>
+    <param name="cchMaxLength">
+      <para>Type: <b>UINT</b></para>
+      <para>The length of the <i>wzNamespace</i> buffer.</para>
+    </param>
+    <param name="wzNamespace">
+      <para>Type: <b>WCHAR*</b></para>
+      <para>Pointer that receives the current namespace location.</para>
+    </param>
+    <param name="pcchActualLength">
+      <para>Type: <b>UINT*</b></para>
+      <para>The actual buffer length that was needed to retrieve the current namespace location.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>If you pass <b>NULL</b> to <i>wzNamespace</i>, <b>GetLocation</b> ignores <i>cchMaxLength</i> and returns the required buffer length to store the path in the variable that <i>pcchActualLength</i> points to.</para>
+      <para>If the query reader is relative to the top of the metadata hierarchy, it will return a single-char string.</para>
+      <para>If the query reader is relative to a nested metadata block, this method will return the path to the current query reader.</para>
+    </remarks>
+    <seealso cref="IWICMetadataQueryReader" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-codec-readingwritingmetadata">Overview of Reading and Writing Image Metadata</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-about-metadata">WIC Metadata Overview</seealso>
+  </member>
+  <member name="IWICMetadataQueryReader.GetMetadataByName">
+    <summary>
+      <para>Retrieves the metadata block or item identified by a metadata query expression.</para>
+    </summary>
+    <param name="wzName">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>The query expression to the requested metadata block or item.</para>
+    </param>
+    <param name="pvarValue">
+      <para>Type: <b><see cref="PROPVARIANT" />*</b></para>
+      <para>When this method returns, contains the metadata block or item requested.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>GetMetadataByName</b> uses metadata query expressions to access embedded metadata. For more information on the metadata query language, see the <a href="https://docs.microsoft.com//windows/desktop/wic/-wic-codec-metadataquerylanguage">Metadata Query Language Overview</a>.</para>
+      <para>If multiple blocks or items exist that are expressed by the same query expression, the first metadata block or item found will be returned.</para>
+    </remarks>
+    <seealso cref="IWICMetadataQueryReader" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-codec-metadataquerylanguage">Metadata Query Language Overview</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-codec-readingwritingmetadata">Overview of Reading and Writing Image Metadata</seealso>
+    <seealso cref="PROPVARIANT" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-about-metadata">WIC Metadata Overview</seealso>
+  </member>
+  <member name="IWICMetadataQueryReader">
+    <summary>
+      <para>Exposes methods for retrieving metadata blocks and items from a decoder or its image frames using a metadata query expression.</para>
+    </summary>
+    <remarks>
+      <para>A metadata query reader uses metadata query expressions to access embedded metadata. For more information on the metadata query language, see the <a href="https://docs.microsoft.com//windows/desktop/wic/-wic-codec-metadataquerylanguage">Metadata Query Language Overview</a>.</para>
+      <para>The benefit of the query reader is the ability to access a metadata item in a single step.</para>
+      <para>The query reader also provides the way to traverse the whole set of metadata hierarchy with the help of the <see cref="GetEnumerator" /> method.
+However, it is not recommended to use this method since <see cref="IWICMetadataBlockReader" /> and <see cref="IWICMetadataReader" /> provide a more convenient and cheaper way.</para>
+      <h4>Examples</h4>
+      <para>The following code demonstrates how to obtain a query reader and use it to retrieve a metadata item.</para>
+      <code>// Get the query reader
+if (SUCCEEDED(hr))
+{
+    hr = pFrameDecode-&gt;GetMetadataQueryReader(&amp;amp;amp;amp;amp;amp;pQueryReader);
+}
+
+if (SUCCEEDED(hr))
+{
+    hr = pQueryReader-&gt;GetMetadataByName(L"/app1/ifd/{ushort=18249}", &amp;amp;amp;amp;amp;amp;value);
+    PropVariantClear(&amp;amp;amp;amp;amp;amp;value);
+}
+</code>
+      <para>The following code demonstrates how to obtain query reader and use it to retrieve a nested metadata block.</para>
+      <code>// Get the query reader
+if (SUCCEEDED(hr))
+{
+    hr = pFrameDecode-&gt;GetMetadataQueryReader(&amp;amp;amp;amp;amp;amp;pQueryReader);
+}
+
+if (SUCCEEDED(hr))
+{
+    // Get the embedded IFD reader
+    hr = pQueryReader-&gt;GetMetadataByName(L"/app1/ifd", &amp;amp;amp;amp;amp;amp;value);
+    if (value.vt == VT_UNKNOWN)
+    {
+        hr = value.punkVal-&gt;QueryInterface(IID_IWICMetadataQueryReader, (void **)&amp;amp;amp;amp;amp;amp;pEmbedReader);
+    }
+    PropVariantClear(&amp;amp;amp;amp;amp;amp;value); // Clear value for new query
+}
+</code>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-codec-metadataquerylanguage">Metadata Query Language Overview</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-codec-readingwritingmetadata">Overview of Reading and Writing Image Metadata</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-about-metadata">WIC Metadata Overview</seealso>
+  </member>
+</doc>

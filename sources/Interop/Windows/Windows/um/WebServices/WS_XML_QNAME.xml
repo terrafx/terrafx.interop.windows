@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_XML_QNAME">
+    <summary>
+      <para>A structure used to specify an XML name (of an element or an attribute) as
+a local name, namespace pair.</para>
+    </summary>
+  </member>
+  <member name="WS_XML_QNAME.localName">
+    <summary>
+      <para>The local name.</para>
+    </summary>
+  </member>
+  <member name="WS_XML_QNAME.ns">
+    <summary>
+      <para>The namespace URI.</para>
+    </summary>
+  </member>
+</doc>

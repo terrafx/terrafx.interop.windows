@@ -9,186 +9,232 @@ namespace TerraFX.Interop.Windows;
 
 public static unsafe partial class Windows
 {
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WNetAddConnectionA"]/*' />
     [DllImport("mpr", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint WNetAddConnectionA([NativeTypeName("LPCSTR")] sbyte* lpRemoteName, [NativeTypeName("LPCSTR")] sbyte* lpPassword, [NativeTypeName("LPCSTR")] sbyte* lpLocalName);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WNetAddConnectionW"]/*' />
     [DllImport("mpr", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint WNetAddConnectionW([NativeTypeName("LPCWSTR")] ushort* lpRemoteName, [NativeTypeName("LPCWSTR")] ushort* lpPassword, [NativeTypeName("LPCWSTR")] ushort* lpLocalName);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WNetAddConnection2A"]/*' />
     [DllImport("mpr", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint WNetAddConnection2A([NativeTypeName("LPNETRESOURCEA")] NETRESOURCEA* lpNetResource, [NativeTypeName("LPCSTR")] sbyte* lpPassword, [NativeTypeName("LPCSTR")] sbyte* lpUserName, [NativeTypeName("DWORD")] uint dwFlags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WNetAddConnection2W"]/*' />
     [DllImport("mpr", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint WNetAddConnection2W([NativeTypeName("LPNETRESOURCEW")] NETRESOURCEW* lpNetResource, [NativeTypeName("LPCWSTR")] ushort* lpPassword, [NativeTypeName("LPCWSTR")] ushort* lpUserName, [NativeTypeName("DWORD")] uint dwFlags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WNetAddConnection3A"]/*' />
     [DllImport("mpr", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint WNetAddConnection3A(HWND hwndOwner, [NativeTypeName("LPNETRESOURCEA")] NETRESOURCEA* lpNetResource, [NativeTypeName("LPCSTR")] sbyte* lpPassword, [NativeTypeName("LPCSTR")] sbyte* lpUserName, [NativeTypeName("DWORD")] uint dwFlags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WNetAddConnection3W"]/*' />
     [DllImport("mpr", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint WNetAddConnection3W(HWND hwndOwner, [NativeTypeName("LPNETRESOURCEW")] NETRESOURCEW* lpNetResource, [NativeTypeName("LPCWSTR")] ushort* lpPassword, [NativeTypeName("LPCWSTR")] ushort* lpUserName, [NativeTypeName("DWORD")] uint dwFlags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WNetAddConnection4A"]/*' />
     [DllImport("mpr", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint WNetAddConnection4A(HWND hwndOwner, [NativeTypeName("LPNETRESOURCEA")] NETRESOURCEA* lpNetResource, [NativeTypeName("PVOID")] void* pAuthBuffer, [NativeTypeName("DWORD")] uint cbAuthBuffer, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PBYTE")] byte* lpUseOptions, [NativeTypeName("DWORD")] uint cbUseOptions);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WNetAddConnection4W"]/*' />
     [DllImport("mpr", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint WNetAddConnection4W(HWND hwndOwner, [NativeTypeName("LPNETRESOURCEW")] NETRESOURCEW* lpNetResource, [NativeTypeName("PVOID")] void* pAuthBuffer, [NativeTypeName("DWORD")] uint cbAuthBuffer, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PBYTE")] byte* lpUseOptions, [NativeTypeName("DWORD")] uint cbUseOptions);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WNetCancelConnectionA"]/*' />
     [DllImport("mpr", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint WNetCancelConnectionA([NativeTypeName("LPCSTR")] sbyte* lpName, BOOL fForce);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WNetCancelConnectionW"]/*' />
     [DllImport("mpr", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint WNetCancelConnectionW([NativeTypeName("LPCWSTR")] ushort* lpName, BOOL fForce);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WNetCancelConnection2A"]/*' />
     [DllImport("mpr", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint WNetCancelConnection2A([NativeTypeName("LPCSTR")] sbyte* lpName, [NativeTypeName("DWORD")] uint dwFlags, BOOL fForce);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WNetCancelConnection2W"]/*' />
     [DllImport("mpr", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint WNetCancelConnection2W([NativeTypeName("LPCWSTR")] ushort* lpName, [NativeTypeName("DWORD")] uint dwFlags, BOOL fForce);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WNetGetConnectionA"]/*' />
     [DllImport("mpr", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint WNetGetConnectionA([NativeTypeName("LPCSTR")] sbyte* lpLocalName, [NativeTypeName("LPSTR")] sbyte* lpRemoteName, [NativeTypeName("LPDWORD")] uint* lpnLength);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WNetGetConnectionW"]/*' />
     [DllImport("mpr", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint WNetGetConnectionW([NativeTypeName("LPCWSTR")] ushort* lpLocalName, [NativeTypeName("LPWSTR")] ushort* lpRemoteName, [NativeTypeName("LPDWORD")] uint* lpnLength);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WNetRestoreSingleConnectionW"]/*' />
     [DllImport("mpr", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint WNetRestoreSingleConnectionW(HWND hwndParent, [NativeTypeName("LPCWSTR")] ushort* lpDevice, BOOL fUseUI);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WNetUseConnectionA"]/*' />
     [DllImport("mpr", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint WNetUseConnectionA(HWND hwndOwner, [NativeTypeName("LPNETRESOURCEA")] NETRESOURCEA* lpNetResource, [NativeTypeName("LPCSTR")] sbyte* lpPassword, [NativeTypeName("LPCSTR")] sbyte* lpUserId, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPSTR")] sbyte* lpAccessName, [NativeTypeName("LPDWORD")] uint* lpBufferSize, [NativeTypeName("LPDWORD")] uint* lpResult);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WNetUseConnectionW"]/*' />
     [DllImport("mpr", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint WNetUseConnectionW(HWND hwndOwner, [NativeTypeName("LPNETRESOURCEW")] NETRESOURCEW* lpNetResource, [NativeTypeName("LPCWSTR")] ushort* lpPassword, [NativeTypeName("LPCWSTR")] ushort* lpUserId, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPWSTR")] ushort* lpAccessName, [NativeTypeName("LPDWORD")] uint* lpBufferSize, [NativeTypeName("LPDWORD")] uint* lpResult);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WNetUseConnection4A"]/*' />
     [DllImport("mpr", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint WNetUseConnection4A(HWND hwndOwner, [NativeTypeName("LPNETRESOURCEA")] NETRESOURCEA* lpNetResource, [NativeTypeName("PVOID")] void* pAuthBuffer, [NativeTypeName("DWORD")] uint cbAuthBuffer, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PBYTE")] byte* lpUseOptions, [NativeTypeName("DWORD")] uint cbUseOptions, [NativeTypeName("LPSTR")] sbyte* lpAccessName, [NativeTypeName("LPDWORD")] uint* lpBufferSize, [NativeTypeName("LPDWORD")] uint* lpResult);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WNetUseConnection4W"]/*' />
     [DllImport("mpr", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint WNetUseConnection4W(HWND hwndOwner, [NativeTypeName("LPNETRESOURCEW")] NETRESOURCEW* lpNetResource, [NativeTypeName("PVOID")] void* pAuthBuffer, [NativeTypeName("DWORD")] uint cbAuthBuffer, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PBYTE")] byte* lpUseOptions, [NativeTypeName("DWORD")] uint cbUseOptions, [NativeTypeName("LPWSTR")] ushort* lpAccessName, [NativeTypeName("LPDWORD")] uint* lpBufferSize, [NativeTypeName("LPDWORD")] uint* lpResult);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WNetConnectionDialog"]/*' />
     [DllImport("mpr", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint WNetConnectionDialog(HWND hwnd, [NativeTypeName("DWORD")] uint dwType);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WNetDisconnectDialog"]/*' />
     [DllImport("mpr", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint WNetDisconnectDialog(HWND hwnd, [NativeTypeName("DWORD")] uint dwType);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WNetConnectionDialog1A"]/*' />
     [DllImport("mpr", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint WNetConnectionDialog1A([NativeTypeName("LPCONNECTDLGSTRUCTA")] CONNECTDLGSTRUCTA* lpConnDlgStruct);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WNetConnectionDialog1W"]/*' />
     [DllImport("mpr", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint WNetConnectionDialog1W([NativeTypeName("LPCONNECTDLGSTRUCTW")] CONNECTDLGSTRUCTW* lpConnDlgStruct);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WNetDisconnectDialog1A"]/*' />
     [DllImport("mpr", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint WNetDisconnectDialog1A([NativeTypeName("LPDISCDLGSTRUCTA")] DISCDLGSTRUCTA* lpConnDlgStruct);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WNetDisconnectDialog1W"]/*' />
     [DllImport("mpr", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint WNetDisconnectDialog1W([NativeTypeName("LPDISCDLGSTRUCTW")] DISCDLGSTRUCTW* lpConnDlgStruct);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WNetOpenEnumA"]/*' />
     [DllImport("mpr", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint WNetOpenEnumA([NativeTypeName("DWORD")] uint dwScope, [NativeTypeName("DWORD")] uint dwType, [NativeTypeName("DWORD")] uint dwUsage, [NativeTypeName("LPNETRESOURCEA")] NETRESOURCEA* lpNetResource, [NativeTypeName("LPHANDLE")] HANDLE* lphEnum);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WNetOpenEnumW"]/*' />
     [DllImport("mpr", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint WNetOpenEnumW([NativeTypeName("DWORD")] uint dwScope, [NativeTypeName("DWORD")] uint dwType, [NativeTypeName("DWORD")] uint dwUsage, [NativeTypeName("LPNETRESOURCEW")] NETRESOURCEW* lpNetResource, [NativeTypeName("LPHANDLE")] HANDLE* lphEnum);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WNetEnumResourceA"]/*' />
     [DllImport("mpr", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint WNetEnumResourceA(HANDLE hEnum, [NativeTypeName("LPDWORD")] uint* lpcCount, [NativeTypeName("LPVOID")] void* lpBuffer, [NativeTypeName("LPDWORD")] uint* lpBufferSize);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WNetEnumResourceW"]/*' />
     [DllImport("mpr", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint WNetEnumResourceW(HANDLE hEnum, [NativeTypeName("LPDWORD")] uint* lpcCount, [NativeTypeName("LPVOID")] void* lpBuffer, [NativeTypeName("LPDWORD")] uint* lpBufferSize);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WNetCloseEnum"]/*' />
     [DllImport("mpr", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint WNetCloseEnum(HANDLE hEnum);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WNetGetResourceParentA"]/*' />
     [DllImport("mpr", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint WNetGetResourceParentA([NativeTypeName("LPNETRESOURCEA")] NETRESOURCEA* lpNetResource, [NativeTypeName("LPVOID")] void* lpBuffer, [NativeTypeName("LPDWORD")] uint* lpcbBuffer);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WNetGetResourceParentW"]/*' />
     [DllImport("mpr", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint WNetGetResourceParentW([NativeTypeName("LPNETRESOURCEW")] NETRESOURCEW* lpNetResource, [NativeTypeName("LPVOID")] void* lpBuffer, [NativeTypeName("LPDWORD")] uint* lpcbBuffer);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WNetGetResourceInformationA"]/*' />
     [DllImport("mpr", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint WNetGetResourceInformationA([NativeTypeName("LPNETRESOURCEA")] NETRESOURCEA* lpNetResource, [NativeTypeName("LPVOID")] void* lpBuffer, [NativeTypeName("LPDWORD")] uint* lpcbBuffer, [NativeTypeName("LPSTR *")] sbyte** lplpSystem);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WNetGetResourceInformationW"]/*' />
     [DllImport("mpr", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint WNetGetResourceInformationW([NativeTypeName("LPNETRESOURCEW")] NETRESOURCEW* lpNetResource, [NativeTypeName("LPVOID")] void* lpBuffer, [NativeTypeName("LPDWORD")] uint* lpcbBuffer, [NativeTypeName("LPWSTR *")] ushort** lplpSystem);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WNetGetUniversalNameA"]/*' />
     [DllImport("mpr", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint WNetGetUniversalNameA([NativeTypeName("LPCSTR")] sbyte* lpLocalPath, [NativeTypeName("DWORD")] uint dwInfoLevel, [NativeTypeName("LPVOID")] void* lpBuffer, [NativeTypeName("LPDWORD")] uint* lpBufferSize);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WNetGetUniversalNameW"]/*' />
     [DllImport("mpr", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint WNetGetUniversalNameW([NativeTypeName("LPCWSTR")] ushort* lpLocalPath, [NativeTypeName("DWORD")] uint dwInfoLevel, [NativeTypeName("LPVOID")] void* lpBuffer, [NativeTypeName("LPDWORD")] uint* lpBufferSize);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WNetGetUserA"]/*' />
     [DllImport("mpr", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint WNetGetUserA([NativeTypeName("LPCSTR")] sbyte* lpName, [NativeTypeName("LPSTR")] sbyte* lpUserName, [NativeTypeName("LPDWORD")] uint* lpnLength);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WNetGetUserW"]/*' />
     [DllImport("mpr", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint WNetGetUserW([NativeTypeName("LPCWSTR")] ushort* lpName, [NativeTypeName("LPWSTR")] ushort* lpUserName, [NativeTypeName("LPDWORD")] uint* lpnLength);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WNetGetProviderNameA"]/*' />
     [DllImport("mpr", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint WNetGetProviderNameA([NativeTypeName("DWORD")] uint dwNetType, [NativeTypeName("LPSTR")] sbyte* lpProviderName, [NativeTypeName("LPDWORD")] uint* lpBufferSize);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WNetGetProviderNameW"]/*' />
     [DllImport("mpr", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint WNetGetProviderNameW([NativeTypeName("DWORD")] uint dwNetType, [NativeTypeName("LPWSTR")] ushort* lpProviderName, [NativeTypeName("LPDWORD")] uint* lpBufferSize);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WNetGetNetworkInformationA"]/*' />
     [DllImport("mpr", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint WNetGetNetworkInformationA([NativeTypeName("LPCSTR")] sbyte* lpProvider, [NativeTypeName("LPNETINFOSTRUCT")] NETINFOSTRUCT* lpNetInfoStruct);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WNetGetNetworkInformationW"]/*' />
     [DllImport("mpr", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint WNetGetNetworkInformationW([NativeTypeName("LPCWSTR")] ushort* lpProvider, [NativeTypeName("LPNETINFOSTRUCT")] NETINFOSTRUCT* lpNetInfoStruct);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WNetGetLastErrorA"]/*' />
     [DllImport("mpr", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint WNetGetLastErrorA([NativeTypeName("LPDWORD")] uint* lpError, [NativeTypeName("LPSTR")] sbyte* lpErrorBuf, [NativeTypeName("DWORD")] uint nErrorBufSize, [NativeTypeName("LPSTR")] sbyte* lpNameBuf, [NativeTypeName("DWORD")] uint nNameBufSize);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WNetGetLastErrorW"]/*' />
     [DllImport("mpr", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint WNetGetLastErrorW([NativeTypeName("LPDWORD")] uint* lpError, [NativeTypeName("LPWSTR")] ushort* lpErrorBuf, [NativeTypeName("DWORD")] uint nErrorBufSize, [NativeTypeName("LPWSTR")] ushort* lpNameBuf, [NativeTypeName("DWORD")] uint nNameBufSize);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MultinetGetConnectionPerformanceA"]/*' />
     [DllImport("mpr", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint MultinetGetConnectionPerformanceA([NativeTypeName("LPNETRESOURCEA")] NETRESOURCEA* lpNetResource, [NativeTypeName("LPNETCONNECTINFOSTRUCT")] NETCONNECTINFOSTRUCT* lpNetConnectInfoStruct);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MultinetGetConnectionPerformanceW"]/*' />
     [DllImport("mpr", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint MultinetGetConnectionPerformanceW([NativeTypeName("LPNETRESOURCEW")] NETRESOURCEW* lpNetResource, [NativeTypeName("LPNETCONNECTINFOSTRUCT")] NETCONNECTINFOSTRUCT* lpNetConnectInfoStruct);

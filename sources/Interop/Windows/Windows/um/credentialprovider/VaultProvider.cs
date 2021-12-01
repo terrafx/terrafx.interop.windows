@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='VaultProvider.xml' path='doc/member[@name="VaultProvider"]/*' />
 [Guid("503739D0-4C5E-4CFD-B3BA-D881334F0DF2")]
 public partial struct VaultProvider
 {

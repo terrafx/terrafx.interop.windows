@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAMCameraControl.xml' path='doc/member[@name="IAMCameraControl"]/*' />
 [Guid("C6E13370-30AC-11D0-A18C-00A0C9118956")]
 [NativeTypeName("struct IAMCameraControl : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IAMCameraControl : IAMCameraControl.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IAMCameraControl : IAMCameraControl.Interface
         return ((delegate* unmanaged<IAMCameraControl*, Guid*, void**, int>)(lpVtbl[0]))((IAMCameraControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IAMCameraControl : IAMCameraControl.Interface
         return ((delegate* unmanaged<IAMCameraControl*, uint>)(lpVtbl[1]))((IAMCameraControl*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IAMCameraControl : IAMCameraControl.Interface
         return ((delegate* unmanaged<IAMCameraControl*, uint>)(lpVtbl[2]))((IAMCameraControl*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAMCameraControl.xml' path='doc/member[@name="IAMCameraControl.GetRange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetRange([NativeTypeName("long")] int Property, [NativeTypeName("long *")] int* pMin, [NativeTypeName("long *")] int* pMax, [NativeTypeName("long *")] int* pSteppingDelta, [NativeTypeName("long *")] int* pDefault, [NativeTypeName("long *")] int* pCapsFlags)
@@ -46,6 +51,7 @@ public unsafe partial struct IAMCameraControl : IAMCameraControl.Interface
         return ((delegate* unmanaged<IAMCameraControl*, int, int*, int*, int*, int*, int*, int>)(lpVtbl[3]))((IAMCameraControl*)Unsafe.AsPointer(ref this), Property, pMin, pMax, pSteppingDelta, pDefault, pCapsFlags);
     }
 
+    /// <include file='IAMCameraControl.xml' path='doc/member[@name="IAMCameraControl.Set"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Set([NativeTypeName("long")] int Property, [NativeTypeName("long")] int lValue, [NativeTypeName("long")] int Flags)
@@ -53,6 +59,7 @@ public unsafe partial struct IAMCameraControl : IAMCameraControl.Interface
         return ((delegate* unmanaged<IAMCameraControl*, int, int, int, int>)(lpVtbl[4]))((IAMCameraControl*)Unsafe.AsPointer(ref this), Property, lValue, Flags);
     }
 
+    /// <include file='IAMCameraControl.xml' path='doc/member[@name="IAMCameraControl.Get"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT Get([NativeTypeName("long")] int Property, [NativeTypeName("long *")] int* lValue, [NativeTypeName("long *")] int* Flags)

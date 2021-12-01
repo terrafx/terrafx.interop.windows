@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ISpeechPhraseInfo.xml' path='doc/member[@name="ISpeechPhraseInfo"]/*' />
 [Guid("961559CF-4E67-4662-8BF0-D93F1FCD61B3")]
 [NativeTypeName("struct ISpeechPhraseInfo : IDispatch")]
 [NativeInheritance("IDispatch")]
@@ -16,6 +17,7 @@ public unsafe partial struct ISpeechPhraseInfo : ISpeechPhraseInfo.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ISpeechPhraseInfo : ISpeechPhraseInfo.Interface
         return ((delegate* unmanaged<ISpeechPhraseInfo*, Guid*, void**, int>)(lpVtbl[0]))((ISpeechPhraseInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ISpeechPhraseInfo : ISpeechPhraseInfo.Interface
         return ((delegate* unmanaged<ISpeechPhraseInfo*, uint>)(lpVtbl[1]))((ISpeechPhraseInfo*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ISpeechPhraseInfo : ISpeechPhraseInfo.Interface
         return ((delegate* unmanaged<ISpeechPhraseInfo*, uint>)(lpVtbl[2]))((ISpeechPhraseInfo*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct ISpeechPhraseInfo : ISpeechPhraseInfo.Interface
         return ((delegate* unmanaged<ISpeechPhraseInfo*, uint*, int>)(lpVtbl[3]))((ISpeechPhraseInfo*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct ISpeechPhraseInfo : ISpeechPhraseInfo.Interface
         return ((delegate* unmanaged<ISpeechPhraseInfo*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((ISpeechPhraseInfo*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
@@ -60,6 +67,7 @@ public unsafe partial struct ISpeechPhraseInfo : ISpeechPhraseInfo.Interface
         return ((delegate* unmanaged<ISpeechPhraseInfo*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((ISpeechPhraseInfo*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
+    /// <inheritdoc cref="IDispatch.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
@@ -67,6 +75,7 @@ public unsafe partial struct ISpeechPhraseInfo : ISpeechPhraseInfo.Interface
         return ((delegate* unmanaged<ISpeechPhraseInfo*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((ISpeechPhraseInfo*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
+    /// <include file='ISpeechPhraseInfo.xml' path='doc/member[@name="ISpeechPhraseInfo.get_LanguageId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT get_LanguageId([NativeTypeName("long *")] int* LanguageId)
@@ -74,6 +83,7 @@ public unsafe partial struct ISpeechPhraseInfo : ISpeechPhraseInfo.Interface
         return ((delegate* unmanaged<ISpeechPhraseInfo*, int*, int>)(lpVtbl[7]))((ISpeechPhraseInfo*)Unsafe.AsPointer(ref this), LanguageId);
     }
 
+    /// <include file='ISpeechPhraseInfo.xml' path='doc/member[@name="ISpeechPhraseInfo.get_GrammarId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT get_GrammarId(VARIANT* GrammarId)
@@ -81,6 +91,7 @@ public unsafe partial struct ISpeechPhraseInfo : ISpeechPhraseInfo.Interface
         return ((delegate* unmanaged<ISpeechPhraseInfo*, VARIANT*, int>)(lpVtbl[8]))((ISpeechPhraseInfo*)Unsafe.AsPointer(ref this), GrammarId);
     }
 
+    /// <include file='ISpeechPhraseInfo.xml' path='doc/member[@name="ISpeechPhraseInfo.get_StartTime"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT get_StartTime(VARIANT* StartTime)
@@ -88,6 +99,7 @@ public unsafe partial struct ISpeechPhraseInfo : ISpeechPhraseInfo.Interface
         return ((delegate* unmanaged<ISpeechPhraseInfo*, VARIANT*, int>)(lpVtbl[9]))((ISpeechPhraseInfo*)Unsafe.AsPointer(ref this), StartTime);
     }
 
+    /// <include file='ISpeechPhraseInfo.xml' path='doc/member[@name="ISpeechPhraseInfo.get_AudioStreamPosition"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT get_AudioStreamPosition(VARIANT* AudioStreamPosition)
@@ -95,6 +107,7 @@ public unsafe partial struct ISpeechPhraseInfo : ISpeechPhraseInfo.Interface
         return ((delegate* unmanaged<ISpeechPhraseInfo*, VARIANT*, int>)(lpVtbl[10]))((ISpeechPhraseInfo*)Unsafe.AsPointer(ref this), AudioStreamPosition);
     }
 
+    /// <include file='ISpeechPhraseInfo.xml' path='doc/member[@name="ISpeechPhraseInfo.get_AudioSizeBytes"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT get_AudioSizeBytes([NativeTypeName("long *")] int* pAudioSizeBytes)
@@ -102,6 +115,7 @@ public unsafe partial struct ISpeechPhraseInfo : ISpeechPhraseInfo.Interface
         return ((delegate* unmanaged<ISpeechPhraseInfo*, int*, int>)(lpVtbl[11]))((ISpeechPhraseInfo*)Unsafe.AsPointer(ref this), pAudioSizeBytes);
     }
 
+    /// <include file='ISpeechPhraseInfo.xml' path='doc/member[@name="ISpeechPhraseInfo.get_RetainedSizeBytes"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT get_RetainedSizeBytes([NativeTypeName("long *")] int* RetainedSizeBytes)
@@ -109,6 +123,7 @@ public unsafe partial struct ISpeechPhraseInfo : ISpeechPhraseInfo.Interface
         return ((delegate* unmanaged<ISpeechPhraseInfo*, int*, int>)(lpVtbl[12]))((ISpeechPhraseInfo*)Unsafe.AsPointer(ref this), RetainedSizeBytes);
     }
 
+    /// <include file='ISpeechPhraseInfo.xml' path='doc/member[@name="ISpeechPhraseInfo.get_AudioSizeTime"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT get_AudioSizeTime([NativeTypeName("long *")] int* AudioSizeTime)
@@ -116,6 +131,7 @@ public unsafe partial struct ISpeechPhraseInfo : ISpeechPhraseInfo.Interface
         return ((delegate* unmanaged<ISpeechPhraseInfo*, int*, int>)(lpVtbl[13]))((ISpeechPhraseInfo*)Unsafe.AsPointer(ref this), AudioSizeTime);
     }
 
+    /// <include file='ISpeechPhraseInfo.xml' path='doc/member[@name="ISpeechPhraseInfo.get_Rule"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT get_Rule(ISpeechPhraseRule** Rule)
@@ -123,6 +139,7 @@ public unsafe partial struct ISpeechPhraseInfo : ISpeechPhraseInfo.Interface
         return ((delegate* unmanaged<ISpeechPhraseInfo*, ISpeechPhraseRule**, int>)(lpVtbl[14]))((ISpeechPhraseInfo*)Unsafe.AsPointer(ref this), Rule);
     }
 
+    /// <include file='ISpeechPhraseInfo.xml' path='doc/member[@name="ISpeechPhraseInfo.get_Properties"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT get_Properties(ISpeechPhraseProperties** Properties)
@@ -130,6 +147,7 @@ public unsafe partial struct ISpeechPhraseInfo : ISpeechPhraseInfo.Interface
         return ((delegate* unmanaged<ISpeechPhraseInfo*, ISpeechPhraseProperties**, int>)(lpVtbl[15]))((ISpeechPhraseInfo*)Unsafe.AsPointer(ref this), Properties);
     }
 
+    /// <include file='ISpeechPhraseInfo.xml' path='doc/member[@name="ISpeechPhraseInfo.get_Elements"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT get_Elements(ISpeechPhraseElements** Elements)
@@ -137,6 +155,7 @@ public unsafe partial struct ISpeechPhraseInfo : ISpeechPhraseInfo.Interface
         return ((delegate* unmanaged<ISpeechPhraseInfo*, ISpeechPhraseElements**, int>)(lpVtbl[16]))((ISpeechPhraseInfo*)Unsafe.AsPointer(ref this), Elements);
     }
 
+    /// <include file='ISpeechPhraseInfo.xml' path='doc/member[@name="ISpeechPhraseInfo.get_Replacements"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT get_Replacements(ISpeechPhraseReplacements** Replacements)
@@ -144,6 +163,7 @@ public unsafe partial struct ISpeechPhraseInfo : ISpeechPhraseInfo.Interface
         return ((delegate* unmanaged<ISpeechPhraseInfo*, ISpeechPhraseReplacements**, int>)(lpVtbl[17]))((ISpeechPhraseInfo*)Unsafe.AsPointer(ref this), Replacements);
     }
 
+    /// <include file='ISpeechPhraseInfo.xml' path='doc/member[@name="ISpeechPhraseInfo.get_EngineId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT get_EngineId([NativeTypeName("BSTR *")] ushort** EngineIdGuid)
@@ -151,6 +171,7 @@ public unsafe partial struct ISpeechPhraseInfo : ISpeechPhraseInfo.Interface
         return ((delegate* unmanaged<ISpeechPhraseInfo*, ushort**, int>)(lpVtbl[18]))((ISpeechPhraseInfo*)Unsafe.AsPointer(ref this), EngineIdGuid);
     }
 
+    /// <include file='ISpeechPhraseInfo.xml' path='doc/member[@name="ISpeechPhraseInfo.get_EnginePrivateData"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT get_EnginePrivateData(VARIANT* PrivateData)
@@ -158,6 +179,7 @@ public unsafe partial struct ISpeechPhraseInfo : ISpeechPhraseInfo.Interface
         return ((delegate* unmanaged<ISpeechPhraseInfo*, VARIANT*, int>)(lpVtbl[19]))((ISpeechPhraseInfo*)Unsafe.AsPointer(ref this), PrivateData);
     }
 
+    /// <include file='ISpeechPhraseInfo.xml' path='doc/member[@name="ISpeechPhraseInfo.SaveToMemory"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public HRESULT SaveToMemory(VARIANT* PhraseBlock)
@@ -165,6 +187,7 @@ public unsafe partial struct ISpeechPhraseInfo : ISpeechPhraseInfo.Interface
         return ((delegate* unmanaged<ISpeechPhraseInfo*, VARIANT*, int>)(lpVtbl[20]))((ISpeechPhraseInfo*)Unsafe.AsPointer(ref this), PhraseBlock);
     }
 
+    /// <include file='ISpeechPhraseInfo.xml' path='doc/member[@name="ISpeechPhraseInfo.GetText"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
     public HRESULT GetText([NativeTypeName("long")] int StartElement, [NativeTypeName("long")] int Elements, [NativeTypeName("VARIANT_BOOL")] short UseReplacements, [NativeTypeName("BSTR *")] ushort** Text)
@@ -172,6 +195,7 @@ public unsafe partial struct ISpeechPhraseInfo : ISpeechPhraseInfo.Interface
         return ((delegate* unmanaged<ISpeechPhraseInfo*, int, int, short, ushort**, int>)(lpVtbl[21]))((ISpeechPhraseInfo*)Unsafe.AsPointer(ref this), StartElement, Elements, UseReplacements, Text);
     }
 
+    /// <include file='ISpeechPhraseInfo.xml' path='doc/member[@name="ISpeechPhraseInfo.GetDisplayAttributes"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
     public HRESULT GetDisplayAttributes([NativeTypeName("long")] int StartElement, [NativeTypeName("long")] int Elements, [NativeTypeName("VARIANT_BOOL")] short UseReplacements, SpeechDisplayAttributes* DisplayAttributes)

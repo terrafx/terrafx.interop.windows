@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MEM_DEDICATED_ATTRIBUTE_TYPE.xml' path='doc/member[@name="MEM_DEDICATED_ATTRIBUTE_TYPE"]/*' />
 public enum MEM_DEDICATED_ATTRIBUTE_TYPE
 {
+    /// <include file='MEM_DEDICATED_ATTRIBUTE_TYPE.xml' path='doc/member[@name="MEM_DEDICATED_ATTRIBUTE_TYPE.MemDedicatedAttributeReadBandwidth"]/*' />
     MemDedicatedAttributeReadBandwidth = 0,
+
+    /// <include file='MEM_DEDICATED_ATTRIBUTE_TYPE.xml' path='doc/member[@name="MEM_DEDICATED_ATTRIBUTE_TYPE.MemDedicatedAttributeReadLatency"]/*' />
     MemDedicatedAttributeReadLatency,
+
+    /// <include file='MEM_DEDICATED_ATTRIBUTE_TYPE.xml' path='doc/member[@name="MEM_DEDICATED_ATTRIBUTE_TYPE.MemDedicatedAttributeWriteBandwidth"]/*' />
     MemDedicatedAttributeWriteBandwidth,
+
+    /// <include file='MEM_DEDICATED_ATTRIBUTE_TYPE.xml' path='doc/member[@name="MEM_DEDICATED_ATTRIBUTE_TYPE.MemDedicatedAttributeWriteLatency"]/*' />
     MemDedicatedAttributeWriteLatency,
+
+    /// <include file='MEM_DEDICATED_ATTRIBUTE_TYPE.xml' path='doc/member[@name="MEM_DEDICATED_ATTRIBUTE_TYPE.MemDedicatedAttributeMax"]/*' />
     MemDedicatedAttributeMax,
 }

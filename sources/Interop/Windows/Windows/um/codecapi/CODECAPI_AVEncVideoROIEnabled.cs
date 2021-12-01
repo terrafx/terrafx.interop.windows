@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVEncVideoROIEnabled.xml' path='doc/member[@name="CODECAPI_AVEncVideoROIEnabled"]/*' />
 [Guid("D74F7F18-44DD-4B85-ABA3-05D9F42A8280")]
 public partial struct CODECAPI_AVEncVideoROIEnabled
 {

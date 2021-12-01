@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IFileSyncMergeHandler.Merge">
+    <summary>
+      <para>Merges changes between the local copy and server copy of a file.</para>
+    </summary>
+    <param name="localFilePath">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>A pointer to a string containing the path to the local copy of the file.</para>
+    </param>
+    <param name="serverFilePath">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>A pointer to a string containing the network path to the server copy of the file.</para>
+    </param>
+    <param name="updateStatus">
+      <para>Type: <b>MERGE_UPDATE_STATUS*</b></para>
+      <para>When this method returns, contains a pointer to one of the following values indicating status of the merge process.</para>
+      <h4>MUS_COMPLETE</h4>
+      <para>Indicates that the process has completed successfully.</para>
+      <h4>MUS_USERINPUTNEEDED</h4>
+      <para>Indicates that additional input is required by the user for the process to complete.</para>
+      <h4>MUS_FAILED</h4>
+      <para>Indicates that the process has failed.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IFileSyncMergeHandler" />
+  </member>
+  <member name="IFileSyncMergeHandler.ShowResolveConflictUIAsync">
+    <summary>
+      <para>Displays a UI to resolve conflicts between the local copy and server copy of a file.</para>
+    </summary>
+    <param name="localFilePath">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>The path of the file with the merge conflict.</para>
+    </param>
+    <param name="monitorToDisplayOn">
+      <para>Type: <b>HMONITOR</b></para>
+      <para>Indicates the monitor on which to display the UI.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IFileSyncMergeHandler" />
+  </member>
+  <member name="IFileSyncMergeHandler">
+    <summary>
+      <para>Exposed methods to handle file sync operations between a local copy and a server copy of a file.</para>
+    </summary>
+  </member>
+</doc>

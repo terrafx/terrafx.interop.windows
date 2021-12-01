@@ -5,13 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SFV_CREATE.xml' path='doc/member[@name="SFV_CREATE"]/*' />
 public unsafe partial struct SFV_CREATE
 {
+    /// <include file='SFV_CREATE.xml' path='doc/member[@name="SFV_CREATE.cbSize"]/*' />
     public uint cbSize;
 
+    /// <include file='SFV_CREATE.xml' path='doc/member[@name="SFV_CREATE.pshf"]/*' />
     public IShellFolder* pshf;
 
+    /// <include file='SFV_CREATE.xml' path='doc/member[@name="SFV_CREATE.psvOuter"]/*' />
     public IShellView* psvOuter;
 
+    /// <include file='SFV_CREATE.xml' path='doc/member[@name="SFV_CREATE.psfvcb"]/*' />
     public IShellFolderViewCB* psfvcb;
 }

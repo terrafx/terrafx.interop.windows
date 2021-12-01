@@ -1,0 +1,931 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IShellLibrary.AddFolder">
+    <summary>
+      <para>Adds a folder to the library.</para>
+    </summary>
+    <param name="psiLocation">
+      <para>Type: <b><see cref="IShellItem" />*</b></para>
+      <para>An <see cref="IShellItem" /> object that represents the folder to be added to the library.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>When a folder is added to a library it is also added to the <a href="https://docs.microsoft.com//windows/desktop/search/-search-3x-wds-overview">Windows Search</a> index.</para>
+      <para>For convenience, <see cref="SHAddFolderPathToLibrary" /> can be used in place of this method.</para>
+      <h4>Examples</h4>
+      <para>The following code example shows the helper function <see cref="SHAddFolderPathToLibrary" />, which wraps this method.</para>
+      <code>//
+// From Shobjidl.h
+//
+__inline HRESULT SHAddFolderPathToLibrary (
+    __in IShellLibrary *plib,
+    __in PCWSTR pszFolderPath
+)
+{
+    IShellItem *psiFolder;
+
+    HRESULT hr = SHCreateItemFromParsingName (
+      pszFolderPath,
+      NULL,
+      IID_PPV_ARGS(&amp;amp;amp;amp;amp;amp;psiFolder));
+
+    if (SUCCEEDED(hr))
+    {
+        hr = plib-&gt;AddFolder (psiFolder);
+        psiFolder-&gt;Release ();
+    }
+    return hr;
+}
+</code>
+    </remarks>
+    <seealso cref="IShellLibrary" />
+    <seealso cref="IShellLibrary.LoadLibraryFromItem" />
+    <seealso cref="IShellLibrary.LoadLibraryFromKnownFolder" />
+    <seealso cref="IShellLibrary.RemoveFolder" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/shell/library-schema-entry">Library Description Schema</seealso>
+    <seealso cref="SHAddFolderPathToLibrary" />
+    <seealso cref="SHLoadLibraryFromItem" />
+    <seealso cref="SHLoadLibraryFromKnownFolder" />
+    <seealso cref="SHLoadLibraryFromParsingName" />
+    <seealso cref="SHRemoveFolderPathFromLibrary" />
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd758096(v=vs.85)">Windows Libraries</seealso>
+  </member>
+  <member name="IShellLibrary.Commit">
+    <summary>
+      <para>Commits library updates to an existing Library Description file.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>IShellLibrary.Commit</b>  can only be called to save library updates to an existing file.  A call to <b>IShellLibrary.Commit</b> for a library that does not have a backing file will fail.</para>
+      <para>To create and save a new file, call  <see cref="IShellLibrary.Save" /> or <see cref="SHSaveLibraryInFolderPath" />.</para>
+      <para>If the library is saved in the Libraries known folder (FOLDERID_Libraries), the folders in the library are automatically added to the search index.</para>
+    </remarks>
+    <seealso cref="IShellLibrary" />
+    <seealso cref="IShellLibrary.Save" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/shell/library-schema-entry">Library Description Schema</seealso>
+    <seealso cref="SHSaveLibraryInFolderPath" />
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd758096(v=vs.85)">Windows Libraries</seealso>
+  </member>
+  <member name="IShellLibrary.GetDefaultSaveFolder">
+    <summary>
+      <para>Retrieves the default target folder that the library uses  for save operations.</para>
+    </summary>
+    <param name="dsft">
+      <para>Type: <b><see cref="DEFAULTSAVEFOLDERTYPE" /></b></para>
+      <para>The <see cref="DEFAULTSAVEFOLDERTYPE" />  value that specifies the save folder to get.</para>
+    </param>
+    <param name="riid">
+      <para>Type: <b>REFIID</b></para>
+      <para>A reference to the IID of the interface to get in <i>ppv</i> that will represent the save location.   This value is typically IID_IShellItem,  but it can also be IID_IShellItem2 or the IID of any other interface that is implemented by CShellItem.</para>
+    </param>
+    <param name="ppv">
+      <para>Type: <b>void**</b></para>
+      <para>A  pointer  to the interface requested in <i>riid</i>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>For best results, use the <b>IID_PPV_ARGS</b> macro, defined in Objbase.h,  for  the <i>riid</i> and <i>ppv</i> parameters. This macro provides the correct IID based on the interface pointed to by the value in <i>ppv</i>, which eliminates the possibility of a coding error.</para>
+    </remarks>
+    <seealso cref="IShellItem" />
+    <seealso cref="IShellItem2" />
+    <seealso cref="IShellLibrary" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/shell/library-schema-entry">Library Description Schema</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd758096(v=vs.85)">Windows Libraries</seealso>
+  </member>
+  <member name="IShellLibrary.GetFolders">
+    <summary>
+      <para>Gets the set of child folders that are contained in the library.</para>
+    </summary>
+    <param name="lff">
+      <para>Type: <b><see cref="LIBRARYFOLDERFILTER" /></b></para>
+      <para>One of the following <see cref="LIBRARYFOLDERFILTER" />   values that determines the folders to get. These flags cannot be combined.</para>
+      <h4>LFF_FORCEFILESYSTEM (1)</h4>
+      <para>Get only file-system folders. File-system folders  are  folders that have the  <see cref="SFGAO_FILESYSTEM" />  attribute set.</para>
+      <h4>LFF_STORAGEITEMS (2)</h4>
+      <para>Get all folders that can be bound to <see cref="IStorage" /> objects.  These folders  are   folders that have the  <see cref="SFGAO_STORAGE" />  or  <see cref="SFGAO_FILESYSTEM" /> attribute set.</para>
+      <h4>LFF_ALLITEMS (3)</h4>
+      <para>Get all folders in the library.</para>
+    </param>
+    <param name="riid">
+      <para>Type: <b>REFIID</b></para>
+      <para>A reference to the IID of the interface to  get in  <i>ppv</i>. This value is typically IID_IShellItemArray,  but it can also be IID_IObjectCollection, IID_IObjectArray, or the IID of any other interface that is implemented by CShellItemArray.</para>
+    </param>
+    <param name="ppv">
+      <para>Type: <b>void**</b></para>
+      <para>A pointer to the interface  requested in <i>riid</i>. If this  call fails, this value is <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The call was successful and the specified folders were returned in <i>ppv</i>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>The call was successful but not all specified folders were returned in <i>ppv</i>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_</b>
+            </para>
+          </description>
+          <description>
+            <para>This method can return other error values.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method gets   an ordered list of folders. By default, this method only returns storage locations.</para>
+      <para>For best results, use the <b>IID_PPV_ARGS</b> macro, defined in Objbase.h,  for  the <i>riid</i> and <i>ppv</i> parameters. This macro provides the correct IID based on the interface pointed to by the value in <i>ppv</i>, which eliminates the possibility of a coding error.</para>
+    </remarks>
+    <seealso cref="IObjectArray" />
+    <seealso cref="IObjectCollection" />
+    <seealso cref="IShellItemArray" />
+    <seealso cref="IShellLibrary" />
+    <seealso cref="IShellLibrary.AddFolder" />
+    <seealso cref="IShellLibrary.LoadLibraryFromItem" />
+    <seealso cref="IShellLibrary.LoadLibraryFromKnownFolder" />
+    <seealso cref="LIBRARYFOLDERFILTER" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/shell/library-schema-entry">Library Description Schema</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/shell/sfgao">SFGAO</seealso>
+    <seealso cref="SHAddFolderPathToLibrary" />
+    <seealso cref="SHLoadLibraryFromItem" />
+    <seealso cref="SHLoadLibraryFromKnownFolder" />
+    <seealso cref="SHLoadLibraryFromParsingName" />
+    <seealso cref="SHRemoveFolderPathFromLibrary" />
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd758096(v=vs.85)">Windows Libraries</seealso>
+  </member>
+  <member name="IShellLibrary.GetFolderType">
+    <summary>
+      <para>Gets the library's folder type.</para>
+    </summary>
+    <param name="pftid">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/shell/foldertypeid">FOLDERTYPEID</a>*</b></para>
+      <para>The  view template that is applied to a folder, usually based on its intended use and contents.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The folder type determines the default view template that is used by the folder. A view template specifies the columns and details that appear by default in the Windows Explorer view of the folder.</para>
+      <para>
+        <a href="https://docs.microsoft.com//windows/desktop/shell/foldertypeid">FOLDERTYPEID</a> values are GUID  values that are defined in shlguid.h.</para>
+    </remarks>
+    <seealso cref="IShellLibrary" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/shell/library-schema-entry">Library Description Schema</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd758096(v=vs.85)">Windows Libraries</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd798386(v=vs.85)">folderType Element (Library Schema)</seealso>
+  </member>
+  <member name="IShellLibrary.GetIcon">
+    <summary>
+      <para>Gets the default icon for the library.</para>
+    </summary>
+    <param name="ppszIcon">
+      <para>Type: <b>LPWSTR*</b></para>
+      <para>A null-terminated Unicode string that describes the location of the default icon. The  string is returned as <code>ModuleFileName,ResourceIndex</code> or <code>ModuleFileName,-ResourceID</code>.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>ModuleFileName</description>
+          <description>The file name of the module file that contains the icon resource.</description>
+        </item>
+        <item>
+          <description>ResourceIndex</description>
+          <description>If the number that follows the comma is positive, the index of the resource in the module file.</description>
+        </item>
+        <item>
+          <description>-ResourceID</description>
+          <description>If the number that follows the comma is negative, the absolute value of the number is the resource ID of the icon in the module file.</description>
+        </item>
+      </list>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>For additional information on parsing the string returned in <i>ppszIcon</i>, see <see cref="PathParseIconLocation" />.</para>
+    </remarks>
+    <seealso cref="IShellLibrary" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/shell/library-schema-entry">Library Description Schema</seealso>
+    <seealso cref="PathParseIconLocation" />
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd758096(v=vs.85)">Windows Libraries</seealso>
+  </member>
+  <member name="IShellLibrary.GetOptions">
+    <summary>
+      <para>Gets the library's options.</para>
+    </summary>
+    <param name="plofOptions">
+      <para>Type: <b><see cref="LIBRARYOPTIONFLAGS" />*</b></para>
+      <para>The library options for this library. <see cref="LIBRARYOPTIONFLAGS" /> is a bitwise enumerator, which means that more than one flag could be set.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IShellLibrary" />
+    <seealso cref="LIBRARYOPTIONFLAGS" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/shell/library-schema-entry">Library Description Schema</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd758096(v=vs.85)">Windows Libraries</seealso>
+  </member>
+  <member name="IShellLibrary.LoadLibraryFromItem">
+    <summary>
+      <para>Loads the library from a specified library definition file.</para>
+    </summary>
+    <param name="psiLibrary">
+      <para>Type: <b><see cref="IShellItem" />*</b></para>
+      <para>An <see cref="IShellItem" /> object for the library definition file to load. An error is returned if this object is not a library.</para>
+    </param>
+    <param name="grfMode">
+      <para>Type: <b>DWORD</b></para>
+      <para>One or more <a href="https://docs.microsoft.com//windows/desktop/Stg/stgm-constants">STGM</a> storage medium flags that specify access and sharing modes for the library object.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>If this method is called on an <see cref="IShellLibrary" /> object that is already loaded, the contents of that object are overwritten in memory with the new information.</para>
+      <para>If there is no existing library object, <see cref="SHLoadLibraryFromItem" /> can be called in place of this method.</para>
+      <h4>Examples</h4>
+      <para>The following code example shows the helper function <see cref="SHLoadLibraryFromItem" />, which wraps this method.</para>
+      <code>//
+// from shobjidl.h
+//
+__inline HRESULT SHLoadLibraryFromItem(
+    __in IShellItem *psiLibrary,
+    __in DWORD grfMode,
+    __in REFIID riid,
+    __deref_out void **ppv
+)
+{
+    *ppv = NULL;
+    IShellLibrary *plib;
+
+    HRESULT hr = CoCreateInstance(
+      CLSID_ShellLibrary,
+      NULL,
+      CLSCTX_INPROC_SERVER,
+      IID_PPV_ARGS(&amp;amp;amp;amp;amp;amp;plib));
+
+    if (SUCCEEDED(hr))
+    {
+        hr = plib-&gt;LoadLibraryFromItem (psiLibrary, grfMode);
+        if (SUCCEEDED(hr))
+        {
+            hr = plib-&gt;QueryInterface (riid, ppv);
+        }
+        plib-&gt;Release();
+    }
+    return hr;
+}
+
+</code>
+      <para>The following code example shows the helper function <see cref="SHLoadLibraryFromParsingName" />, which wraps this method.</para>
+      <code>//
+// from shobjidl.h
+//
+__inline HRESULT SHLoadLibraryFromParsingName(
+    __in PCWSTR pszParsingName,
+    __in DWORD grfMode,
+    __in REFIID riid,
+    __deref_out void **ppv
+)
+{
+    *ppv = NULL;
+    IShellItem *psiLibrary;
+    HRESULT hr = SHCreateItemFromParsingName (
+      pszParsingName,
+      NULL,
+      IID_PPV_ARGS(&amp;amp;amp;amp;amp;amp;psiLibrary));
+
+    if (SUCCEEDED(hr))
+    {
+        hr = SHLoadLibraryFromItem (psiLibrary, grfMode, riid, ppv);
+        psiLibrary-&gt;Release();
+    }
+    return hr;
+}
+
+</code>
+    </remarks>
+    <seealso cref="IShellLibrary" />
+    <seealso cref="IShellLibrary.LoadLibraryFromKnownFolder" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/shell/library-schema-entry">Library Description Schema</seealso>
+    <seealso cref="SHLoadLibraryFromItem" />
+    <seealso cref="SHLoadLibraryFromParsingName" />
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd758096(v=vs.85)">Windows Libraries</seealso>
+  </member>
+  <member name="IShellLibrary.LoadLibraryFromKnownFolder">
+    <summary>
+      <para>Loads  the  library  that is referenced by a  KNOWNFOLDERID.</para>
+    </summary>
+    <param name="kfidLibrary">
+      <para>Type: <b>REFKNOWNFOLDERID</b></para>
+      <para>The  <a href="https://docs.microsoft.com//windows/desktop/shell/knownfolderid">KNOWNFOLDERID</a> value that identifies the library to load.</para>
+    </param>
+    <param name="grfMode">
+      <para>Type: <b>DWORD</b></para>
+      <para>One or more <a href="https://docs.microsoft.com//windows/desktop/Stg/stgm-constants">STGM</a> storage medium flags that specify access and sharing modes for the library object.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>If  the  <see cref="IShellLibrary" /> object  contains a library when this method is called,  that library is overwritten in memory with the new library.</para>
+      <para>If there is no existing <see cref="IShellLibrary" /> object for this library, <see cref="SHLoadLibraryFromItem" /> can be  called  in place of this method.</para>
+      <h4>Examples</h4>
+      <para>The following code example shows the helper function <see cref="SHLoadLibraryFromKnownFolder" />, which wraps this method.</para>
+      <code>//
+// from shobjidl.h
+//
+__inline HRESULT SHLoadLibraryFromKnownFolder(
+    __in REFKNOWNFOLDERID kfidLibrary,
+    __in DWORD grfMode,
+    __in REFIID riid,
+    __deref_out void **ppv)
+{
+    *ppv = NULL;
+    IShellLibrary *plib;
+    HRESULT hr = CoCreateInstance(
+        CLSID_ShellLibrary,
+        NULL,
+        CLSCTX_INPROC_SERVER,
+        IID_PPV_ARGS(&amp;amp;amp;amp;amp;amp;plib));
+    if (SUCCEEDED(hr))
+    {
+        hr = plib-&gt;LoadLibraryFromKnownFolder(kfidLibrary, grfMode);
+        if (SUCCEEDED(hr))
+        {
+            hr = plib-&gt;QueryInterface(riid, ppv);
+        }
+        plib-&gt;Release();
+    }
+    return hr;}
+</code>
+    </remarks>
+    <seealso cref="IShellLibrary" />
+    <seealso cref="IShellLibrary.LoadLibraryFromItem" />
+    <seealso cref="SHCreateLibrary" />
+    <seealso cref="SHLoadLibraryFromItem" />
+    <seealso cref="SHLoadLibraryFromKnownFolder" />
+    <seealso cref="SHLoadLibraryFromParsingName" />
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd758096(v=vs.85)">Windows Libraries</seealso>
+  </member>
+  <member name="IShellLibrary.RemoveFolder">
+    <summary>
+      <para>Removes a folder from the library.</para>
+    </summary>
+    <param name="psiLocation">
+      <para>Type: <b><see cref="IShellItem" />*</b></para>
+      <para>An <see cref="IShellItem" /> object that represents the folder to remove.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>For convenience, <see cref="SHRemoveFolderPathFromLibrary" /> can be used in place of this method.</para>
+      <h4>Examples</h4>
+      <para>The following code example shows the helper function <see cref="SHRemoveFolderPathFromLibrary" />, which wraps this method.</para>
+      <code>//
+// from shobjidl.h
+//
+__inline HRESULT SHRemoveFolderPathFromLibrary(
+    __in IShellLibrary *plib,
+    __in PCWSTR pszFolderPath)
+{
+    PIDLIST_ABSOLUTE pidlFolder =
+      SHSimpleIDListFromPath (pszFolderPath);
+    HRESULT hr = pidlFolder ? S_OK : E_INVALIDARG;
+
+    if (SUCCEEDED(hr))
+    {
+        IShellItem *psiFolder;
+        hr = SHCreateItemFromIDList (
+          pidlFolder,
+          IID_PPV_ARGS(&amp;amp;amp;amp;amp;amp;psiFolder));
+
+        if (SUCCEEDED(hr))
+        {
+            hr = plib-&gt;RemoveFolder(psiFolder);
+            psiFolder-&gt;Release();
+        }
+        CoTaskMemFree(pidlFolder);
+    }
+    return hr;
+}
+</code>
+    </remarks>
+    <seealso cref="IShellLibrary" />
+    <seealso cref="IShellLibrary.AddFolder" />
+    <seealso cref="IShellLibrary.LoadLibraryFromItem" />
+    <seealso cref="IShellLibrary.LoadLibraryFromKnownFolder" />
+    <seealso cref="SHAddFolderPathToLibrary" />
+    <seealso cref="SHLoadLibraryFromItem" />
+    <seealso cref="SHLoadLibraryFromKnownFolder" />
+    <seealso cref="SHLoadLibraryFromParsingName" />
+    <seealso cref="SHRemoveFolderPathFromLibrary" />
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd758096(v=vs.85)">Windows Libraries</seealso>
+  </member>
+  <member name="IShellLibrary.ResolveFolder">
+    <summary>
+      <para>Resolves the target location of a library folder, even if the folder has been moved or renamed.</para>
+    </summary>
+    <param name="psiFolderToResolve">
+      <para>Type: <b><see cref="IShellItem" />*</b></para>
+      <para>An <see cref="IShellItem" /> object that represents the library folder to locate.</para>
+    </param>
+    <param name="dwTimeout">
+      <para>Type: <b>DWORD</b></para>
+      <para>The maximum time, in milliseconds, the method will  attempt to locate the folder before returning. If the folder could not be located before the specified time elapses, an error is returned.</para>
+    </param>
+    <param name="riid">
+      <para>Type: <b>REFIID</b></para>
+      <para>A reference to the IID of the interface to get in <i>ppv</i> that will represent the resolved  target location. This value is typically IID_IShellItem,  but it can also be IID_IShellItem2 or the IID of any other interface that is implemented by CShellItem.</para>
+    </param>
+    <param name="ppv">
+      <para>Type: <b>void**</b></para>
+      <para>A pointer  to the interface requested in <i>riid</i>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The target folder was located and returned in <i>ppv</i>; however, the library has been updated so <see cref="IShellLibrary.Commit" /> or <see cref="IShellLibrary.Save" /> should be called to persist these changes.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>The target folder was located and returned in <i>ppv</i>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_</b>
+            </para>
+          </description>
+          <description>
+            <para>This method can return other error values.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method is a blocking call that can block the calling thread as long as the time specified in the <i>dwTimeout</i> parameter before returning. Because it blocks the thread from which it is called, it should not be called from a thread that also handles user interface interactions.</para>
+      <para>This method will not prompt the user to manually locate the folder if it cannot resolve the location.</para>
+      <para>For convenience, <see cref="SHResolveFolderPathInLibrary" /> can be used in place of this method.</para>
+      <para>It is recommended that you use the <b>IID_PPV_ARGS</b> macro, defined in Objbase.h, to package the <i>riid</i> and <i>ppv</i> parameters. This macro provides the correct IID based on the interface pointed to by the value in <i>ppv</i>, which eliminates the possibility of a coding error.</para>
+      <h4>Examples</h4>
+      <para>The following code example shows the helper function <see cref="SHResolveFolderPathInLibrary" />, which wraps this method.</para>
+      <code>//
+// from shobjidl.h
+//
+__inline HRESULT SHResolveFolderPathInLibrary(
+    __in IShellLibrary *plib,
+    __in PCWSTR pszFolderPath,
+    __in DWORD dwTimeout,
+    __deref_out PWSTR *ppszResolvedPath
+)
+{
+    *ppszResolvedPath = NULL;
+    PIDLIST_ABSOLUTE pidlFolder =
+      SHSimpleIDListFromPath(pszFolderPath);
+    HRESULT hr = pidlFolder ? S_OK : E_INVALIDARG;
+    if (SUCCEEDED(hr))
+    {
+        IShellItem *psiFolder;
+        hr = SHCreateItemFromIDList(
+          pidlFolder,
+          IID_PPV_ARGS(&amp;amp;amp;amp;amp;amp;psiFolder));
+
+        if (SUCCEEDED(hr))
+        {
+            IShellItem *psiResolved;
+            hr = plib-&gt;ResolveFolder(
+              psiFolder,
+              dwTimeout,
+              IID_PPV_ARGS(&amp;amp;amp;amp;amp;amp;psiResolved));
+
+            if (SUCCEEDED(hr))
+            {
+                hr = psiResolved-&gt;GetDisplayName(
+                  SIGDN_DESKTOPABSOLUTEPARSING,
+                  ppszResolvedPath);
+                psiResolved-&gt;Release();
+            }
+            psiFolder-&gt;Release();
+        }
+        CoTaskMemFree(pidlFolder);
+    }
+    return hr;
+}
+</code>
+    </remarks>
+    <seealso cref="IShellLibrary" />
+    <seealso cref="IShellLibrary.Commit" />
+    <seealso cref="IShellLibrary.Save" />
+    <seealso cref="SHResolveFolderPathInLibrary" />
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd758096(v=vs.85)">Windows Libraries</seealso>
+  </member>
+  <member name="IShellLibrary.Save">
+    <summary>
+      <para>Saves the library to a new Library Description (*.library-ms) file.</para>
+    </summary>
+    <param name="psiFolderToSaveIn">
+      <para>Type: <b><see cref="IShellItem" />*</b></para>
+      <para>The  <see cref="IShellItem" /> object  that specifies the folder in which to save the library, or <b>NULL</b> to save the library  with the user's default libraries in the FOLDERID_Libraries known folder.</para>
+    </param>
+    <param name="pszLibraryName">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>The file name under which to save the library. The file name must not include the file name extension; the file name extension is added automatically.</para>
+    </param>
+    <param name="lsf">
+      <para>Type: <b><see cref="LIBRARYSAVEFLAGS" /></b></para>
+      <para>The <see cref="LIBRARYSAVEFLAGS" />  value that specifies how to handle a library name collision.</para>
+    </param>
+    <param name="ppsiSavedTo">
+      <para>Type: <b><see cref="IShellItem" />**</b></para>
+      <para>The  <see cref="IShellItem" /> object  that represents the library description file into   which the library was saved.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>IShellLibrary.Save</b> and <see cref="SHSaveLibraryInFolderPath" /> create a new library file, and save the file to disk. To save changes made to a library that has an existing library file, call  <see cref="IShellLibrary.Commit" />.</para>
+      <para>If the library is saved in the Libraries known folder (FOLDERID_Libraries), the library's location is automatically added to the system index.</para>
+      <para>For convenience, <see cref="SHSaveLibraryInFolderPath" /> can be used in place of this method.</para>
+      <h4>Examples</h4>
+      <para>The following code example shows the helper function <see cref="SHSaveLibraryInFolderPath" />, which wraps this method.</para>
+      <code>//
+// from shobjidl.h
+//
+__inline HRESULT SHSaveLibraryInFolderPath(
+    __in IShellLibrary *plib,
+    __in PCWSTR pszFolderPath,
+    __in PCWSTR pszLibraryName,
+    __in LIBRARYSAVEFLAGS lsf,
+    __deref_opt_out PWSTR *ppszSavedToPath
+)
+{
+    if (ppszSavedToPath)
+    {
+        *ppszSavedToPath = NULL;
+    }
+
+    IShellItem *psiFolder;
+    HRESULT hr = SHCreateItemFromParsingName(
+      pszFolderPath,
+      NULL,
+      IID_PPV_ARGS(&amp;amp;amp;amp;amp;amp;psiFolder));
+
+    if (SUCCEEDED(hr))
+    {
+        IShellItem *psiSavedTo;
+        hr = plib-&gt;Save(psiFolder, pszLibraryName, lsf, &amp;amp;amp;amp;amp;amp;psiSavedTo);
+
+        if (SUCCEEDED(hr))
+        {
+            if (ppszSavedToPath)
+            {
+                hr = psiSavedTo-&gt;GetDisplayName(
+                  SIGDN_DESKTOPABSOLUTEPARSING,
+                  ppszSavedToPath);
+            }
+            psiSavedTo-&gt;Release();
+        }
+        psiFolder-&gt;Release();
+    }
+    return hr;
+}
+</code>
+    </remarks>
+    <seealso cref="IShellLibrary" />
+    <seealso cref="SHSaveLibraryInFolderPath" />
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd758096(v=vs.85)">Windows Libraries</seealso>
+  </member>
+  <member name="IShellLibrary.SaveInKnownFolder">
+    <summary>
+      <para>Saves the library to a new file in a specified known folder.</para>
+    </summary>
+    <param name="kfidToSaveIn">
+      <para>Type: <b>REFKNOWNFOLDERID</b></para>
+      <para>The ID of the known folder in which to save the <see cref="IShellLibrary" /> object.</para>
+      <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/shell/knownfolderid">KNOWNFOLDERID</a>.</para>
+    </param>
+    <param name="pszLibraryName">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>The file name under which to save the library. The file name must not include the file name extension; the file name extension is added automatically.</para>
+    </param>
+    <param name="lsf">
+      <para>Type: <b><see cref="LIBRARYSAVEFLAGS" /></b></para>
+      <para>The <see cref="LIBRARYSAVEFLAGS" />  value that specifies how to handle a library name collision.</para>
+    </param>
+    <param name="ppsiSavedTo">
+      <para>Type: <b><see cref="IShellItem" />**</b></para>
+      <para>The <see cref="IShellItem" /> object  that represents the library description file into    which the library was saved.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>
+        <see cref="IShellLibrary.Save" /> and <see cref="SHSaveLibraryInFolderPath" /> create a new library file, and save the file to disk.</para>
+      <para>To save changes made to a library that has an existing library file, call  <see cref="IShellLibrary.Commit" />.</para>
+      <para>If the library is saved in the Libraries known folder (FOLDERID_Libraries), the library's location is automatically added to the system index.</para>
+    </remarks>
+    <seealso cref="IShellLibrary" />
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd940364(v=vs.85)">Known Folders Sample</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/shell/library-schema-entry">Library Description Schema</seealso>
+    <seealso cref="SHSaveLibraryInFolderPath" />
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd758096(v=vs.85)">Windows Libraries</seealso>
+  </member>
+  <member name="IShellLibrary.SetDefaultSaveFolder">
+    <summary>
+      <para>Sets the default target folder that the library will use for save operations.</para>
+    </summary>
+    <param name="dsft">
+      <para>Type: <b><see cref="DEFAULTSAVEFOLDERTYPE" /></b></para>
+      <para>The <see cref="DEFAULTSAVEFOLDERTYPE" />  value  that specifies the default save location to set.</para>
+    </param>
+    <param name="psi">
+      <para>Type: <b><see cref="IShellItem" />*</b></para>
+      <para>An  <see cref="IShellItem" /> object that represents the folder that to use as the default save location. The folder that this object represents must be a folder that is already in the library.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The default save location must be valid, have read/write access, and with either the <see cref="SFGAO_STREAM" /> or <see cref="SFGAO_FILESYSTEM" /> attribute set.</para>
+      <para>If <i>psi</i> is not in the library, this method returns an error.</para>
+    </remarks>
+    <seealso cref="IShellLibrary" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/shell/library-schema-entry">Library Description Schema</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd758096(v=vs.85)">Windows Libraries</seealso>
+  </member>
+  <member name="IShellLibrary.SetFolderType">
+    <summary>
+      <para>Sets the library's folder type.</para>
+    </summary>
+    <param name="ftid">
+      <para>Type: <b>REFFOLDERTYPEID</b></para>
+      <para>The <b>GUID</b> or <a href="https://docs.microsoft.com//windows/desktop/shell/foldertypeid">FOLDERTYPEID</a> that represents  the  view template that is applied to a folder, usually based on its intended use and contents.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The folder type determines the default view template that is used by the folder. A view template specifies the  columns and details that appear by default in Windows Explorer by default view of the folder.  <a href="https://docs.microsoft.com//windows/desktop/shell/foldertypeid">FOLDERTYPEID</a> values are GUID  values that are defined in shlguid.h.</para>
+    </remarks>
+    <seealso cref="IShellLibrary" />
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd758096(v=vs.85)">Windows Libraries</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd798386(v=vs.85)">folderType Element (Library Schema)</seealso>
+  </member>
+  <member name="IShellLibrary.SetIcon">
+    <summary>
+      <para>Sets the default icon for the library.</para>
+    </summary>
+    <param name="pszIcon">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>A null-terminated Unicode string that describes the location of the default icon. The string must be formatted as <code>ModuleFileName,ResourceIndex</code> or <code>ModuleFileName,-ResourceID</code>.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>ModuleFileName</description>
+          <description>The file name of the module file that contains the icon resource.</description>
+        </item>
+        <item>
+          <description>ResourceIndex</description>
+          <description>A positive decimal number that specifies the index of the icon resource in the module file.</description>
+        </item>
+        <item>
+          <description>-ResourceID</description>
+          <description>A negative decimal number whose absolute value is the resource ID of the icon resource in the module file.</description>
+        </item>
+      </list>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>For more information on the format of the <i>pszIcon</i> parameter, see <see cref="PathParseIconLocation" />.</para>
+    </remarks>
+    <seealso cref="IShellLibrary" />
+    <seealso cref="PathParseIconLocation" />
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd758096(v=vs.85)">Windows Libraries</seealso>
+  </member>
+  <member name="IShellLibrary.SetOptions">
+    <summary>
+      <para>Sets the library options.</para>
+    </summary>
+    <param name="lofMask">
+      <para>Type: <b><see cref="LIBRARYOPTIONFLAGS" /></b></para>
+      <para>A bitmask  that specifies   the   <see cref="LIBRARYOPTIONFLAGS" /> values  to change in  this call.</para>
+    </param>
+    <param name="lofOptions">
+      <para>Type: <b><see cref="LIBRARYOPTIONFLAGS" /></b></para>
+      <para>A bitmask that specifies the new value of each  <see cref="LIBRARYOPTIONFLAGS" />  value to change. <b>LIBRARYOPTIONFLAGS</b>  values that are not set in <i>lofMask</i> are not changed by this call.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>
+        <see cref="LIBRARYOPTIONFLAGS" /> is a bitwise enumerator, which means that more than one option flag can be set.</para>
+      <para>To change an option value, you must set the option value that you want to change in <i>lofMask</i> and then set or clear the value of the option in <i>lofOptions</i>.</para>
+      <h4>Examples</h4>
+      <para>The following example clears the LOF_PINNEDTONAVPANE library option.</para>
+      <code>
+LIBRARYOPTIONFLAGS    maskValue;
+LIBRARYOPTIONFLAGS optionValue;
+HRESULT    hr = E_FAIL;
+
+// set the maskValue variable to indicate
+// which option value to change
+maskValue = LOF_PINNEDTONAVPANE;
+
+// set the optionValue variable to indicate
+// the new value of the option
+optionValue = ~LOF_PINNEDTONAVPANE;
+
+// call the method
+hr = library-&gt;SetOptions (maskValue, optionValue);
+</code>
+    </remarks>
+    <seealso cref="IShellLibrary" />
+    <seealso cref="LIBRARYOPTIONFLAGS" />
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd758096(v=vs.85)">Windows Libraries</seealso>
+  </member>
+  <member name="IShellLibrary">
+    <summary>
+      <para>Exposes methods for creating and managing libraries.</para>
+    </summary>
+    <remarks>
+      <h3>When to Implement</h3>
+      <para>Custom implementations of <b>IShellLibrary</b> are not supported; client applications use the implementation provided by Shell32.dll.</para>
+      <h3>When to Use</h3>
+      <para>Use <b>IShellLibrary</b> to create a new library, query or update the attributes of an existing library.</para>
+      <h3>Library Helper Functions</h3>
+      <para>The following library helper functions are provided by Shobjidl.h.</para>
+      <list type="table">
+        <listheader>
+          <description>Name</description>
+          <description>Summary</description>
+        </listheader>
+        <item>
+          <description>
+            <see cref="SHAddFolderPathToLibrary" />
+          </description>
+          <description>Adds a folder to a library.</description>
+        </item>
+        <item>
+          <description>
+            <see cref="SHCreateLibrary" />
+          </description>
+          <description>Creates an <b>IShellLibrary</b> object.</description>
+        </item>
+        <item>
+          <description>
+            <see cref="SHLoadLibraryFromItem" />
+          </description>
+          <description>Creates and loads an <b>IShellLibrary</b> object from a specified library definition file.</description>
+        </item>
+        <item>
+          <description>
+            <see cref="SHLoadLibraryFromKnownFolder" />
+          </description>
+          <description>Creates and loads an <b>IShellLibrary</b> object for a specified <a href="https://docs.microsoft.com//windows/desktop/shell/knownfolderid">KNOWNFOLDERID</a>.</description>
+        </item>
+        <item>
+          <description>
+            <see cref="SHLoadLibraryFromParsingName" />
+          </description>
+          <description>Creates and loads an <b>IShellLibrary</b> object for a specified path.</description>
+        </item>
+        <item>
+          <description>
+            <see cref="SHRemoveFolderPathFromLibrary" />
+          </description>
+          <description>Removes a folder from a library.</description>
+        </item>
+        <item>
+          <description>
+            <see cref="SHResolveFolderPathInLibrary" />
+          </description>
+          <description>Attempts to resolve the target location of a library folder that has been moved or renamed.</description>
+        </item>
+        <item>
+          <description>
+            <see cref="SHResolveLibrary" />
+          </description>
+          <description>Attempts to find the location of a library.</description>
+        </item>
+        <item>
+          <description>
+            <see cref="SHSaveLibraryInFolderPath" />
+          </description>
+          <description>Saves an <b>IShellLibrary</b> object to disk.</description>
+        </item>
+        <item>
+          <description>
+            <see cref="SHShowManageLibraryUI" />
+          </description>
+          <description>Shows the library management dialog, which enables users to manage the library folders and default save location.</description>
+        </item>
+      </list>
+      <h3>Library Enumerations</h3>
+      <para>The following enumerations support libraries.</para>
+      <list type="table">
+        <listheader>
+          <description>Name</description>
+          <description>Summary</description>
+        </listheader>
+        <item>
+          <description>
+            <see cref="DEFAULTSAVEFOLDERTYPE" />
+          </description>
+          <description>Specifies whether the default save location is public or private.</description>
+        </item>
+        <item>
+          <description>
+            <see cref="LIBRARYOPTIONFLAGS" />
+          </description>
+          <description>Specifies the library options.</description>
+        </item>
+        <item>
+          <description>
+            <see cref="LIBRARYSAVEFLAGS" />
+          </description>
+          <description>Defines options for handling a name collision when saving a library.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd758089(v=vs.85)">Guidance for Implementing In-Process Extensions</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/shell/library-schema-entry">Library Description Schema</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd758096(v=vs.85)">Windows Libraries</seealso>
+  </member>
+</doc>

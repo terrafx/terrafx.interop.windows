@@ -7,10 +7,16 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STORAGE_PROTOCOL_ATA_DATA_TYPE.xml' path='doc/member[@name="STORAGE_PROTOCOL_ATA_DATA_TYPE"]/*' />
 [SupportedOSPlatform("windows10.0")]
 public enum STORAGE_PROTOCOL_ATA_DATA_TYPE
 {
+    /// <include file='STORAGE_PROTOCOL_ATA_DATA_TYPE.xml' path='doc/member[@name="STORAGE_PROTOCOL_ATA_DATA_TYPE.AtaDataTypeUnknown"]/*' />
     AtaDataTypeUnknown = 0,
+
+    /// <include file='STORAGE_PROTOCOL_ATA_DATA_TYPE.xml' path='doc/member[@name="STORAGE_PROTOCOL_ATA_DATA_TYPE.AtaDataTypeIdentify"]/*' />
     AtaDataTypeIdentify,
+
+    /// <include file='STORAGE_PROTOCOL_ATA_DATA_TYPE.xml' path='doc/member[@name="STORAGE_PROTOCOL_ATA_DATA_TYPE.AtaDataTypeLogPage"]/*' />
     AtaDataTypeLogPage,
 }

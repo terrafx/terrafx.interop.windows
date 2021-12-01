@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WICJpegIndexingOptions">
+    <summary>
+      <para>Specifies the options for indexing a JPEG image.</para>
+    </summary>
+    <seealso cref="IWICJpegFrameDecode.SetIndexing" />
+  </member>
+  <member name="WICJpegIndexingOptions.WICJpegIndexingOptionsGenerateOnDemand">
+    <summary>
+      <para>Index generation is deferred until <see cref="IWICBitmapSource.CopyPixels" /> is called on the image.</para>
+    </summary>
+  </member>
+  <member name="WICJpegIndexingOptions.WICJpegIndexingOptionsGenerateOnLoad">
+    <summary>
+      <para>Index generation is performed when the when the image is initially loaded.</para>
+    </summary>
+  </member>
+  <member name="WICJpegIndexingOptions.WICJpegIndexingOptions_FORCE_DWORD">
+    <summary>
+      <para>Forces this enumeration to compile to 32 bits in size. Without this value, some compilers would allow this enumeration to compile to a size other than 32 bits. This value is not used.</para>
+    </summary>
+  </member>
+</doc>

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="VMRGUID">
+    <summary>
+      <para>The <see cref="VMRMONITORINFO" /> structure and is used to identify a monitor on the system (VMR-7 only).</para>
+    </summary>
+    <remarks>
+      <para>In DirectX 9.0 and later, the monitor is identified by an integer index, not by a GUID.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-structures">DirectShow Structures</seealso>
+  </member>
+  <member name="VMRGUID.pGUID">
+    <summary>
+      <para>Pointer to the GUID member of the structure. <b>pGUID</b> is <b>NULL</b> if the monitor is the default DirectDraw device.</para>
+    </summary>
+  </member>
+  <member name="VMRGUID.GUID">
+    <summary>
+      <para>Specifies the GUID for the monitor.</para>
+    </summary>
+  </member>
+</doc>

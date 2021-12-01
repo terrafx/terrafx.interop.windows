@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="_DPI_HOSTING_BEHAVIOR">
+    <summary>
+      <para>Identifies the DPI hosting behavior for a window. This behavior allows windows created in the thread to host child windows with a different <b>DPI_AWARENESS_CONTEXT</b></para>
+    </summary>
+    <remarks>
+      <para>
+        <b>DPI_HOSTING_BEHAVIOR</b> enables a mixed content hosting behavior, which allows parent windows created in the thread to host child windows with a different <a href="https://docs.microsoft.com//windows/desktop/hidpi/dpi-awareness-context">DPI_AWARENESS_CONTEXT</a> value. This property only effects new windows created within this thread while the mixed hosting behavior is active. A parent window with this hosting behavior is able to host child windows with different <b>DPI_AWARENESS_CONTEXT</b> values, regardless of whether the child windows have mixed hosting behavior enabled.</para>
+      <para>This hosting behavior does not allow for windows with per-monitor <b>DPI_AWARENESS_CONTEXT</b> values to be hosted by windows with <b>DPI_AWARENESS_CONTEXT</b> values of system or unaware.</para>
+      <para>To avoid unexpected outcomes, a thread's <b>DPI_HOSTING_BEHAVIOR</b> should be changed to support mixed hosting behaviors only when creating a new window which needs to support those behaviors. Once that window is created, the hosting behavior should be switched back to its default value.</para>
+      <para>Enabling mixed hosting behavior will not automatically adjust the thread's <b>DPI_AWARENESS_CONTEXT</b> to be compatible with legacy content. The thread's awareness context must still be manually changed before new windows are created to host such content.</para>
+    </remarks>
+    <seealso cref="GetThreadDpiHostingBehavior" />
+    <seealso cref="GetWindowDpiHostingBehavior" />
+    <seealso cref="SetThreadDpiHostingBehavior" />
+  </member>
+  <member name="_DPI_HOSTING_BEHAVIOR.DPI_HOSTING_BEHAVIOR_INVALID">
+    <summary>
+      <para>Invalid DPI hosting behavior. This usually occurs if the previous <see cref="SetThreadDpiHostingBehavior" /> call used an invalid parameter.</para>
+    </summary>
+  </member>
+  <member name="_DPI_HOSTING_BEHAVIOR.DPI_HOSTING_BEHAVIOR_DEFAULT">
+    <summary>
+      <para>Default DPI hosting behavior. The associated window behaves as normal, and cannot create or re-parent child windows with a different <b>DPI_AWARENESS_CONTEXT</b>.</para>
+    </summary>
+  </member>
+  <member name="_DPI_HOSTING_BEHAVIOR.DPI_HOSTING_BEHAVIOR_MIXED">
+    <summary>
+      <para>Mixed DPI hosting behavior. This enables the creation and re-parenting of child windows with different <b>DPI_AWARENESS_CONTEXT</b>. These child windows will be independently scaled by the OS.</para>
+    </summary>
+  </member>
+</doc>

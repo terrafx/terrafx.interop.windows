@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMpeg2Demultiplexer.xml' path='doc/member[@name="IMpeg2Demultiplexer"]/*' />
 [Guid("436EEE9C-264F-4242-90E1-4E330C107512")]
 [NativeTypeName("struct IMpeg2Demultiplexer : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMpeg2Demultiplexer : IMpeg2Demultiplexer.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMpeg2Demultiplexer : IMpeg2Demultiplexer.Interface
         return ((delegate* unmanaged<IMpeg2Demultiplexer*, Guid*, void**, int>)(lpVtbl[0]))((IMpeg2Demultiplexer*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMpeg2Demultiplexer : IMpeg2Demultiplexer.Interface
         return ((delegate* unmanaged<IMpeg2Demultiplexer*, uint>)(lpVtbl[1]))((IMpeg2Demultiplexer*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMpeg2Demultiplexer : IMpeg2Demultiplexer.Interface
         return ((delegate* unmanaged<IMpeg2Demultiplexer*, uint>)(lpVtbl[2]))((IMpeg2Demultiplexer*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMpeg2Demultiplexer.xml' path='doc/member[@name="IMpeg2Demultiplexer.CreateOutputPin"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT CreateOutputPin(AM_MEDIA_TYPE* pMediaType, [NativeTypeName("LPWSTR")] ushort* pszPinName, IPin** ppIPin)
@@ -46,6 +51,7 @@ public unsafe partial struct IMpeg2Demultiplexer : IMpeg2Demultiplexer.Interface
         return ((delegate* unmanaged<IMpeg2Demultiplexer*, AM_MEDIA_TYPE*, ushort*, IPin**, int>)(lpVtbl[3]))((IMpeg2Demultiplexer*)Unsafe.AsPointer(ref this), pMediaType, pszPinName, ppIPin);
     }
 
+    /// <include file='IMpeg2Demultiplexer.xml' path='doc/member[@name="IMpeg2Demultiplexer.SetOutputPinMediaType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetOutputPinMediaType([NativeTypeName("LPWSTR")] ushort* pszPinName, AM_MEDIA_TYPE* pMediaType)
@@ -53,6 +59,7 @@ public unsafe partial struct IMpeg2Demultiplexer : IMpeg2Demultiplexer.Interface
         return ((delegate* unmanaged<IMpeg2Demultiplexer*, ushort*, AM_MEDIA_TYPE*, int>)(lpVtbl[4]))((IMpeg2Demultiplexer*)Unsafe.AsPointer(ref this), pszPinName, pMediaType);
     }
 
+    /// <include file='IMpeg2Demultiplexer.xml' path='doc/member[@name="IMpeg2Demultiplexer.DeleteOutputPin"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT DeleteOutputPin([NativeTypeName("LPWSTR")] ushort* pszPinName)

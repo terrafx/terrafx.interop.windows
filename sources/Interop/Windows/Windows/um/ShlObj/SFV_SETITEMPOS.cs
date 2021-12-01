@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SFV_SETITEMPOS.xml' path='doc/member[@name="SFV_SETITEMPOS"]/*' />
 public unsafe partial struct SFV_SETITEMPOS
 {
+    /// <include file='SFV_SETITEMPOS.xml' path='doc/member[@name="SFV_SETITEMPOS.pidl"]/*' />
     [NativeTypeName("LPCITEMIDLIST")]
     public ITEMIDLIST* pidl;
 
+    /// <include file='SFV_SETITEMPOS.xml' path='doc/member[@name="SFV_SETITEMPOS.pt"]/*' />
     public POINT pt;
 }

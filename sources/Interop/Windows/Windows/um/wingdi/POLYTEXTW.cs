@@ -5,20 +5,28 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='POLYTEXTW.xml' path='doc/member[@name="POLYTEXTW"]/*' />
 public unsafe partial struct POLYTEXTW
 {
+    /// <include file='POLYTEXTW.xml' path='doc/member[@name="POLYTEXTW.x"]/*' />
     public int x;
 
+    /// <include file='POLYTEXTW.xml' path='doc/member[@name="POLYTEXTW.y"]/*' />
     public int y;
 
+    /// <include file='POLYTEXTW.xml' path='doc/member[@name="POLYTEXTW.n"]/*' />
     public uint n;
 
+    /// <include file='POLYTEXTW.xml' path='doc/member[@name="POLYTEXTW.lpstr"]/*' />
     [NativeTypeName("LPCWSTR")]
     public ushort* lpstr;
 
+    /// <include file='POLYTEXTW.xml' path='doc/member[@name="POLYTEXTW.uiFlags"]/*' />
     public uint uiFlags;
 
+    /// <include file='POLYTEXTW.xml' path='doc/member[@name="POLYTEXTW.rcl"]/*' />
     public RECT rcl;
 
+    /// <include file='POLYTEXTW.xml' path='doc/member[@name="POLYTEXTW.pdx"]/*' />
     public int* pdx;
 }

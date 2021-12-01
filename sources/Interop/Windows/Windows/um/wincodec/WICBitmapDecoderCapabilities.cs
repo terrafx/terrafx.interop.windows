@@ -5,12 +5,24 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WICBitmapDecoderCapabilities.xml' path='doc/member[@name="WICBitmapDecoderCapabilities"]/*' />
 public enum WICBitmapDecoderCapabilities
 {
+    /// <include file='WICBitmapDecoderCapabilities.xml' path='doc/member[@name="WICBitmapDecoderCapabilities.WICBitmapDecoderCapabilitySameEncoder"]/*' />
     WICBitmapDecoderCapabilitySameEncoder = 0x1,
+
+    /// <include file='WICBitmapDecoderCapabilities.xml' path='doc/member[@name="WICBitmapDecoderCapabilities.WICBitmapDecoderCapabilityCanDecodeAllImages"]/*' />
     WICBitmapDecoderCapabilityCanDecodeAllImages = 0x2,
+
+    /// <include file='WICBitmapDecoderCapabilities.xml' path='doc/member[@name="WICBitmapDecoderCapabilities.WICBitmapDecoderCapabilityCanDecodeSomeImages"]/*' />
     WICBitmapDecoderCapabilityCanDecodeSomeImages = 0x4,
+
+    /// <include file='WICBitmapDecoderCapabilities.xml' path='doc/member[@name="WICBitmapDecoderCapabilities.WICBitmapDecoderCapabilityCanEnumerateMetadata"]/*' />
     WICBitmapDecoderCapabilityCanEnumerateMetadata = 0x8,
+
+    /// <include file='WICBitmapDecoderCapabilities.xml' path='doc/member[@name="WICBitmapDecoderCapabilities.WICBitmapDecoderCapabilityCanDecodeThumbnail"]/*' />
     WICBitmapDecoderCapabilityCanDecodeThumbnail = 0x10,
+
+    /// <include file='WICBitmapDecoderCapabilities.xml' path='doc/member[@name="WICBitmapDecoderCapabilities.WICBITMAPDECODERCAPABILITIES_FORCE_DWORD"]/*' />
     WICBITMAPDECODERCAPABILITIES_FORCE_DWORD = 0x7fffffff,
 }

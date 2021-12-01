@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVDecVideoImageSize.xml' path='doc/member[@name="CODECAPI_AVDecVideoImageSize"]/*' />
 [Guid("5EE5747C-6801-4CAB-AAF1-6248FA841BA4")]
 public partial struct CODECAPI_AVDecVideoImageSize
 {

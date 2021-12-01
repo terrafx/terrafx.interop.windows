@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMenuPopup.OnSelect">
+    <summary>
+      <para>Handles selection notifications.</para>
+    </summary>
+    <param name="dwSelectType">
+      <para>Type: <b>DWORD</b></para>
+      <para>This parameter can be any of the following values.</para>
+      <h4>MPOS_EXECUTE</h4>
+      <para>Execute the selected menu item.</para>
+      <h4>MPOS_FULLCANCEL</h4>
+      <para>Cancel the entire menu.</para>
+      <h4>MPOS_CANCELLEVEL</h4>
+      <para>Cancel the current cascaded menu.</para>
+      <h4>MPOS_SELECTLEFT</h4>
+      <para>Select the item to the left of the current selection.</para>
+      <h4>MPOS_SELECTRIGHT</h4>
+      <para>Select the item to the right of the current selection.</para>
+      <h4>MPOS_CHILDTRACKING</h4>
+      <para>The child of the current selection receives a tracking selection. In other words, the mouse moves over the child of the current selection.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Always returns S_OK.</para>
+    </returns>
+  </member>
+  <member name="IMenuPopup.Popup">
+    <summary>
+      <para>Invokes the shortcut menu at a specified onscreen location.</para>
+    </summary>
+    <param name="ppt">
+      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/dd162807(v=vs.85)">POINTL</a>*</b></para>
+      <para>A pointer to a <a href="https://docs.microsoft.com//previous-versions/dd162807(v=vs.85)">POINTL</a> structure that specifies the location of the pop-up menu in screen coordinates. The pop-up menu is displayed in relation to this point as determined by the position flags set in <i>dwFlags</i>.</para>
+    </param>
+    <param name="prcExclude">
+      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/dd162907(v=vs.85)">RECTL</a>*</b></para>
+      <para>A pointer to a <a href="https://docs.microsoft.com//previous-versions/dd162907(v=vs.85)">RECTL</a> structure that specifies the rectangle to exclude when positioning the menu. In Windows Vista, the alignment of the menu in relation to this area is determined by the alignment flags set in <i>dwFlags</i>. This parameter can be <b>NULL</b> to include the entire screen.</para>
+    </param>
+    <param name="dwFlags">
+      <para>Type: <b>MP_POPUPFLAGS</b></para>
+      <para>One or more of the following constants that control the display of the pop-up menu.</para>
+      <h4>MPPF_SETFOCUS (0x00000001)</h4>
+      <para>The menu should have focus when it appears.</para>
+      <h4>MPPF_INITIALSELECT (0x00000002)</h4>
+      <para>The first item in the menu should be selected.</para>
+      <h4>MPPF_NOANIMATE (0x00000004)</h4>
+      <para>Do not animate this show.</para>
+      <h4>MPPF_KEYBOARD (0x00000010)</h4>
+      <para>The menu is activated by the keyboard.</para>
+      <h4>MPPF_REPOSITION (0x00000020)</h4>
+      <para>Reposition the displayed bar.</para>
+      <h4>MPPF_FORCEZORDER (0x00000040)</h4>
+      <para>The menu bar should ignore submenu positions.</para>
+      <h4>MPPF_FINALSELECT (0x00000080)</h4>
+      <para>The last item in the menu should be selected.</para>
+      <h4>MPPF_TOP (0x20000000)</h4>
+      <para>Display the pop-up menu above the point specified in <i>ppt</i>.</para>
+      <h4>MPPF_LEFT (0x40000000)</h4>
+      <para>Display the pop-up menu to the left of the point specified in <i>ppt</i>.</para>
+      <h4>MPPF_RIGHT (0x60000000)</h4>
+      <para>Display the pop-up menu to the right of the point specified in <i>ppt</i>.</para>
+      <h4>MPPF_BOTTOM (0x80000000)</h4>
+      <para>Display the pop-up menu below the point specified in <i>ppt</i>.</para>
+      <h4>MPPF_POS_MASK (0xE0000000)</h4>
+      <para>Mask for position values <b>MPPF_TOP</b>, <b>MPPF_LEFT</b>, and <b>MPPF_RIGHT</b>.</para>
+      <h4>MPPF_ALIGN_LEFT (0x02000000)</h4>
+      <para>Default alignment.</para>
+      <h4>MPPF_ALIGN_RIGHT (0x04000000)</h4>
+      <para>The pop-up menu should be aligned to the right of the excluded rectangle specified by <i>prcExclude</i>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns <b>S_OK</b> if the object implements the pop-up menu as a modeless menu. Otherwise, returns <b>S_FALSE</b>, which indicates the end of the implementation for the menu.</para>
+    </returns>
+  </member>
+  <member name="IMenuPopup.SetSubMenu">
+    <summary>
+      <para>Sets the given menu bar interface to be the submenu of the calling application object's interface.</para>
+    </summary>
+    <param name="pmp">
+      <para>Type: <b><see cref="IMenuPopup" />*</b></para>
+      <para>A pointer to an <see cref="IMenuPopup" /> interface that specifies the menu bar of interest.</para>
+    </param>
+    <param name="fSet">
+      <para>Type: <b>BOOL</b></para>
+      <para>Removes the submenu if <i>fSet</i> is set to <b>FALSE</b>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Always returns S_OK.</para>
+    </returns>
+  </member>
+</doc>

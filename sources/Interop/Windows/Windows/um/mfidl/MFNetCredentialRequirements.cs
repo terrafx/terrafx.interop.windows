@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MFNetCredentialRequirements.xml' path='doc/member[@name="MFNetCredentialRequirements"]/*' />
 public enum MFNetCredentialRequirements
 {
+    /// <include file='MFNetCredentialRequirements.xml' path='doc/member[@name="MFNetCredentialRequirements.REQUIRE_PROMPT"]/*' />
     REQUIRE_PROMPT = 0x1,
+
+    /// <include file='MFNetCredentialRequirements.xml' path='doc/member[@name="MFNetCredentialRequirements.REQUIRE_SAVE_SELECTED"]/*' />
     REQUIRE_SAVE_SELECTED = 0x2,
 }

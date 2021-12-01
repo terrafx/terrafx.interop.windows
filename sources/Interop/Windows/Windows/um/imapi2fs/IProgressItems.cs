@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IProgressItems.xml' path='doc/member[@name="IProgressItems"]/*' />
 [Guid("2C941FD7-975B-59BE-A960-9A2A262853A5")]
 [NativeTypeName("struct IProgressItems : IDispatch")]
 [NativeInheritance("IDispatch")]
@@ -16,6 +17,7 @@ public unsafe partial struct IProgressItems : IProgressItems.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IProgressItems : IProgressItems.Interface
         return ((delegate* unmanaged<IProgressItems*, Guid*, void**, int>)(lpVtbl[0]))((IProgressItems*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IProgressItems : IProgressItems.Interface
         return ((delegate* unmanaged<IProgressItems*, uint>)(lpVtbl[1]))((IProgressItems*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IProgressItems : IProgressItems.Interface
         return ((delegate* unmanaged<IProgressItems*, uint>)(lpVtbl[2]))((IProgressItems*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct IProgressItems : IProgressItems.Interface
         return ((delegate* unmanaged<IProgressItems*, uint*, int>)(lpVtbl[3]))((IProgressItems*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct IProgressItems : IProgressItems.Interface
         return ((delegate* unmanaged<IProgressItems*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IProgressItems*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
@@ -60,6 +67,7 @@ public unsafe partial struct IProgressItems : IProgressItems.Interface
         return ((delegate* unmanaged<IProgressItems*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IProgressItems*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
+    /// <inheritdoc cref="IDispatch.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
@@ -67,6 +75,7 @@ public unsafe partial struct IProgressItems : IProgressItems.Interface
         return ((delegate* unmanaged<IProgressItems*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IProgressItems*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
+    /// <include file='IProgressItems.xml' path='doc/member[@name="IProgressItems.get__NewEnum"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT get__NewEnum(IEnumVARIANT** NewEnum)
@@ -74,6 +83,7 @@ public unsafe partial struct IProgressItems : IProgressItems.Interface
         return ((delegate* unmanaged<IProgressItems*, IEnumVARIANT**, int>)(lpVtbl[7]))((IProgressItems*)Unsafe.AsPointer(ref this), NewEnum);
     }
 
+    /// <include file='IProgressItems.xml' path='doc/member[@name="IProgressItems.get_Item"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT get_Item([NativeTypeName("long")] int Index, IProgressItem** item)
@@ -81,6 +91,7 @@ public unsafe partial struct IProgressItems : IProgressItems.Interface
         return ((delegate* unmanaged<IProgressItems*, int, IProgressItem**, int>)(lpVtbl[8]))((IProgressItems*)Unsafe.AsPointer(ref this), Index, item);
     }
 
+    /// <include file='IProgressItems.xml' path='doc/member[@name="IProgressItems.get_Count"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT get_Count([NativeTypeName("long *")] int* Count)
@@ -88,6 +99,7 @@ public unsafe partial struct IProgressItems : IProgressItems.Interface
         return ((delegate* unmanaged<IProgressItems*, int*, int>)(lpVtbl[9]))((IProgressItems*)Unsafe.AsPointer(ref this), Count);
     }
 
+    /// <include file='IProgressItems.xml' path='doc/member[@name="IProgressItems.ProgressItemFromBlock"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT ProgressItemFromBlock([NativeTypeName("ULONG")] uint block, IProgressItem** item)
@@ -95,6 +107,7 @@ public unsafe partial struct IProgressItems : IProgressItems.Interface
         return ((delegate* unmanaged<IProgressItems*, uint, IProgressItem**, int>)(lpVtbl[10]))((IProgressItems*)Unsafe.AsPointer(ref this), block, item);
     }
 
+    /// <include file='IProgressItems.xml' path='doc/member[@name="IProgressItems.ProgressItemFromDescription"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT ProgressItemFromDescription([NativeTypeName("BSTR")] ushort* description, IProgressItem** item)
@@ -102,6 +115,7 @@ public unsafe partial struct IProgressItems : IProgressItems.Interface
         return ((delegate* unmanaged<IProgressItems*, ushort*, IProgressItem**, int>)(lpVtbl[11]))((IProgressItems*)Unsafe.AsPointer(ref this), description, item);
     }
 
+    /// <include file='IProgressItems.xml' path='doc/member[@name="IProgressItems.get_EnumProgressItems"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT get_EnumProgressItems(IEnumProgressItems** NewEnum)

@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IVisualProperties.GetColor">
+    <summary>
+      <para>Gets the color, as specified.</para>
+    </summary>
+    <param name="vpcf">
+      <para>Type: <b><see cref="VPCOLORFLAGS" /></b></para>
+      <para>The color flags. See <see cref="VPCOLORFLAGS" /></para>
+    </param>
+    <param name="pcr">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/gdi/colorref">COLORREF</a>*</b></para>
+      <para>A pointer to a value of type <a href="https://docs.microsoft.com//windows/desktop/gdi/colorref">COLORREF</a>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IVisualProperties.GetFont">
+    <summary>
+      <para>Gets the current attributes set on the font.</para>
+    </summary>
+    <param name="plf">
+      <para>Type: <b>LOGFONTW*</b></para>
+      <para>A pointer to a <see cref="LOGFONT" /> structure that, when this method returns successfully, receives the current attributes of the font.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IVisualProperties.GetItemHeight">
+    <summary>
+      <para>Gets the item height.</para>
+    </summary>
+    <param name="cyItemInPixels">
+      <para>Type: <b>int*</b></para>
+      <para>A pointer to the item height, in pixels.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IVisualProperties.SetColor">
+    <summary>
+      <para>Sets the color, as specified.</para>
+    </summary>
+    <param name="vpcf">
+      <para>Type: <b><see cref="VPCOLORFLAGS" /></b></para>
+      <para>The color flags. See <see cref="VPCOLORFLAGS" />.</para>
+    </param>
+    <param name="cr">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/gdi/colorref">COLORREF</a></b></para>
+      <para>A value of type <a href="https://docs.microsoft.com//windows/desktop/gdi/colorref">COLORREF</a></para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IVisualProperties.SetFont">
+    <summary>
+      <para>Sets attributes of the font.</para>
+    </summary>
+    <param name="plf">
+      <para>Type: <b>const LOGFONTW*</b></para>
+      <para>A pointer to a <see cref="LOGFONT" /> structure that contains the attributes to set.</para>
+    </param>
+    <param name="bRedraw">
+      <para>Type: <b>BOOL</b></para>
+      <para>
+        <b>TRUE</b> if the item should be redrawn after the new attributes are set; otherwise <b>FALSE</b>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IVisualProperties.SetItemHeight">
+    <summary>
+      <para>Sets the specified item height.</para>
+    </summary>
+    <param name="cyItemInPixels">
+      <para>Type: <b>int</b></para>
+      <para>The item height, in pixels.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IVisualProperties.SetTheme">
+    <summary>
+      <para>Sets the specified theme.</para>
+    </summary>
+    <param name="pszSubAppName">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>A pointer to a Unicode string that contains the application name to use in place of the calling application's name. If this parameter is <b>NULL</b>, the calling application's name is used.</para>
+    </param>
+    <param name="pszSubIdList">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>A pointer to a Unicode string that contains a semicolon-separated list of CLSID names for use in place of the actual list passed by the window's class. If this parameter is <b>NULL</b>, the ID list from the calling class is used.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IVisualProperties.SetWatermark">
+    <summary>
+      <para>Provides a bitmap to use as a watermark.</para>
+    </summary>
+    <param name="hbmp">
+      <para>Type: <b>HBITMAP</b></para>
+      <para>A handle to the bitmap.</para>
+    </param>
+    <param name="vpwf">
+      <para>Type: <b><see cref="VPWATERMARKFLAGS" /></b></para>
+      <para>
+        <see cref="VPWATERMARKFLAGS" /> flags that customize the watermark.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IVisualProperties">
+    <summary>
+      <para>Exposes methods that set and get visual properties.</para>
+    </summary>
+  </member>
+</doc>

@@ -7,13 +7,17 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NMTCKEYDOWN.xml' path='doc/member[@name="NMTCKEYDOWN"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct NMTCKEYDOWN
 {
+    /// <include file='NMTCKEYDOWN.xml' path='doc/member[@name="NMTCKEYDOWN.hdr"]/*' />
     public NMHDR hdr;
 
+    /// <include file='NMTCKEYDOWN.xml' path='doc/member[@name="NMTCKEYDOWN.wVKey"]/*' />
     [NativeTypeName("WORD")]
     public ushort wVKey;
 
+    /// <include file='NMTCKEYDOWN.xml' path='doc/member[@name="NMTCKEYDOWN.flags"]/*' />
     public uint flags;
 }

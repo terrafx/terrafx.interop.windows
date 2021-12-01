@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HistogramDataHeader.xml' path='doc/member[@name="HistogramDataHeader"]/*' />
 public partial struct HistogramDataHeader
 {
+    /// <include file='HistogramDataHeader.xml' path='doc/member[@name="HistogramDataHeader.Size"]/*' />
     [NativeTypeName("ULONG")]
     public uint Size;
 
+    /// <include file='HistogramDataHeader.xml' path='doc/member[@name="HistogramDataHeader.ChannelMask"]/*' />
     [NativeTypeName("ULONG")]
     public uint ChannelMask;
 
+    /// <include file='HistogramDataHeader.xml' path='doc/member[@name="HistogramDataHeader.Linear"]/*' />
     [NativeTypeName("ULONG")]
     public uint Linear;
 }

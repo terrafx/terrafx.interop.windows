@@ -5,12 +5,24 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='svgChannel.xml' path='doc/member[@name="svgChannel"]/*' />
 public enum svgChannel
 {
+    /// <include file='svgChannel.xml' path='doc/member[@name="svgChannel.SVG_CHANNEL_UNKNOWN"]/*' />
     SVG_CHANNEL_UNKNOWN = 0,
+
+    /// <include file='svgChannel.xml' path='doc/member[@name="svgChannel.SVG_CHANNEL_R"]/*' />
     SVG_CHANNEL_R = 1,
+
+    /// <include file='svgChannel.xml' path='doc/member[@name="svgChannel.SVG_CHANNEL_G"]/*' />
     SVG_CHANNEL_G = 2,
+
+    /// <include file='svgChannel.xml' path='doc/member[@name="svgChannel.SVG_CHANNEL_B"]/*' />
     SVG_CHANNEL_B = 3,
+
+    /// <include file='svgChannel.xml' path='doc/member[@name="svgChannel.SVG_CHANNEL_A"]/*' />
     SVG_CHANNEL_A = 4,
+
+    /// <include file='svgChannel.xml' path='doc/member[@name="svgChannel.svgChannel_Max"]/*' />
     svgChannel_Max = 2147483647,
 }

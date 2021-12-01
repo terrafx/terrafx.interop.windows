@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MF_TOPOLOGY_TYPE.xml' path='doc/member[@name="MF_TOPOLOGY_TYPE"]/*' />
 public enum MF_TOPOLOGY_TYPE
 {
+    /// <include file='MF_TOPOLOGY_TYPE.xml' path='doc/member[@name="MF_TOPOLOGY_TYPE.MF_TOPOLOGY_OUTPUT_NODE"]/*' />
     MF_TOPOLOGY_OUTPUT_NODE = 0,
+
+    /// <include file='MF_TOPOLOGY_TYPE.xml' path='doc/member[@name="MF_TOPOLOGY_TYPE.MF_TOPOLOGY_SOURCESTREAM_NODE"]/*' />
     MF_TOPOLOGY_SOURCESTREAM_NODE = (MF_TOPOLOGY_OUTPUT_NODE + 1),
+
+    /// <include file='MF_TOPOLOGY_TYPE.xml' path='doc/member[@name="MF_TOPOLOGY_TYPE.MF_TOPOLOGY_TRANSFORM_NODE"]/*' />
     MF_TOPOLOGY_TRANSFORM_NODE = (MF_TOPOLOGY_SOURCESTREAM_NODE + 1),
+
+    /// <include file='MF_TOPOLOGY_TYPE.xml' path='doc/member[@name="MF_TOPOLOGY_TYPE.MF_TOPOLOGY_TEE_NODE"]/*' />
     MF_TOPOLOGY_TEE_NODE = (MF_TOPOLOGY_TRANSFORM_NODE + 1),
+
+    /// <include file='MF_TOPOLOGY_TYPE.xml' path='doc/member[@name="MF_TOPOLOGY_TYPE.MF_TOPOLOGY_MAX"]/*' />
     MF_TOPOLOGY_MAX = unchecked((int)(0xffffffff)),
 }

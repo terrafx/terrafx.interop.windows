@@ -8,18 +8,24 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='RM_FILTER_INFO.xml' path='doc/member[@name="RM_FILTER_INFO"]/*' />
 public unsafe partial struct RM_FILTER_INFO
 {
+    /// <include file='RM_FILTER_INFO.xml' path='doc/member[@name="RM_FILTER_INFO.FilterAction"]/*' />
     public RM_FILTER_ACTION FilterAction;
 
+    /// <include file='RM_FILTER_INFO.xml' path='doc/member[@name="RM_FILTER_INFO.FilterTrigger"]/*' />
     public RM_FILTER_TRIGGER FilterTrigger;
 
+    /// <include file='RM_FILTER_INFO.xml' path='doc/member[@name="RM_FILTER_INFO.cbNextOffset"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbNextOffset;
 
+    /// <include file='RM_FILTER_INFO.xml' path='doc/member[@name="RM_FILTER_INFO.Anonymous"]/*' />
     [NativeTypeName("_RM_FILTER_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/RestartManager.h:124:5)")]
     public _Anonymous_e__Union Anonymous;
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.strFilename"]/*' />
     public ref ushort* strFilename
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -29,6 +35,7 @@ public unsafe partial struct RM_FILTER_INFO
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Process"]/*' />
     public ref RM_UNIQUE_PROCESS Process
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -38,6 +45,7 @@ public unsafe partial struct RM_FILTER_INFO
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.strServiceShortName"]/*' />
     public ref ushort* strServiceShortName
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -47,16 +55,20 @@ public unsafe partial struct RM_FILTER_INFO
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public unsafe partial struct _Anonymous_e__Union
     {
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.strFilename"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("LPWSTR")]
         public ushort* strFilename;
 
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Process"]/*' />
         [FieldOffset(0)]
         public RM_UNIQUE_PROCESS Process;
 
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.strServiceShortName"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("LPWSTR")]
         public ushort* strServiceShortName;

@@ -7,10 +7,16 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MF_TIMED_TEXT_ALIGNMENT.xml' path='doc/member[@name="MF_TIMED_TEXT_ALIGNMENT"]/*' />
 [SupportedOSPlatform("windows10.0")]
 public enum MF_TIMED_TEXT_ALIGNMENT
 {
+    /// <include file='MF_TIMED_TEXT_ALIGNMENT.xml' path='doc/member[@name="MF_TIMED_TEXT_ALIGNMENT.MF_TIMED_TEXT_ALIGNMENT_START"]/*' />
     MF_TIMED_TEXT_ALIGNMENT_START = 0,
+
+    /// <include file='MF_TIMED_TEXT_ALIGNMENT.xml' path='doc/member[@name="MF_TIMED_TEXT_ALIGNMENT.MF_TIMED_TEXT_ALIGNMENT_END"]/*' />
     MF_TIMED_TEXT_ALIGNMENT_END = 1,
+
+    /// <include file='MF_TIMED_TEXT_ALIGNMENT.xml' path='doc/member[@name="MF_TIMED_TEXT_ALIGNMENT.MF_TIMED_TEXT_ALIGNMENT_CENTER"]/*' />
     MF_TIMED_TEXT_ALIGNMENT_CENTER = 2,
 }

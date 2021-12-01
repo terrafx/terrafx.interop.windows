@@ -7,16 +7,20 @@ using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STORAGE_LB_PROVISIONING_MAP_RESOURCES.xml' path='doc/member[@name="STORAGE_LB_PROVISIONING_MAP_RESOURCES"]/*' />
 public unsafe partial struct STORAGE_LB_PROVISIONING_MAP_RESOURCES
 {
+    /// <include file='STORAGE_LB_PROVISIONING_MAP_RESOURCES.xml' path='doc/member[@name="STORAGE_LB_PROVISIONING_MAP_RESOURCES.Size"]/*' />
     [NativeTypeName("DWORD")]
     public uint Size;
 
+    /// <include file='STORAGE_LB_PROVISIONING_MAP_RESOURCES.xml' path='doc/member[@name="STORAGE_LB_PROVISIONING_MAP_RESOURCES.Version"]/*' />
     [NativeTypeName("DWORD")]
     public uint Version;
 
     public byte _bitfield1;
 
+    /// <include file='STORAGE_LB_PROVISIONING_MAP_RESOURCES.xml' path='doc/member[@name="STORAGE_LB_PROVISIONING_MAP_RESOURCES.AvailableMappingResourcesValid"]/*' />
     [NativeTypeName("byte : 1")]
     public byte AvailableMappingResourcesValid
     {
@@ -33,6 +37,7 @@ public unsafe partial struct STORAGE_LB_PROVISIONING_MAP_RESOURCES
         }
     }
 
+    /// <include file='STORAGE_LB_PROVISIONING_MAP_RESOURCES.xml' path='doc/member[@name="STORAGE_LB_PROVISIONING_MAP_RESOURCES.UsedMappingResourcesValid"]/*' />
     [NativeTypeName("byte : 1")]
     public byte UsedMappingResourcesValid
     {
@@ -49,6 +54,7 @@ public unsafe partial struct STORAGE_LB_PROVISIONING_MAP_RESOURCES
         }
     }
 
+    /// <include file='STORAGE_LB_PROVISIONING_MAP_RESOURCES.xml' path='doc/member[@name="STORAGE_LB_PROVISIONING_MAP_RESOURCES.Reserved0"]/*' />
     [NativeTypeName("byte : 6")]
     public byte Reserved0
     {
@@ -65,11 +71,13 @@ public unsafe partial struct STORAGE_LB_PROVISIONING_MAP_RESOURCES
         }
     }
 
+    /// <include file='STORAGE_LB_PROVISIONING_MAP_RESOURCES.xml' path='doc/member[@name="STORAGE_LB_PROVISIONING_MAP_RESOURCES.Reserved1"]/*' />
     [NativeTypeName("BYTE [3]")]
     public fixed byte Reserved1[3];
 
     public byte _bitfield2;
 
+    /// <include file='STORAGE_LB_PROVISIONING_MAP_RESOURCES.xml' path='doc/member[@name="STORAGE_LB_PROVISIONING_MAP_RESOURCES.AvailableMappingResourcesScope"]/*' />
     [NativeTypeName("byte : 2")]
     public byte AvailableMappingResourcesScope
     {
@@ -86,6 +94,7 @@ public unsafe partial struct STORAGE_LB_PROVISIONING_MAP_RESOURCES
         }
     }
 
+    /// <include file='STORAGE_LB_PROVISIONING_MAP_RESOURCES.xml' path='doc/member[@name="STORAGE_LB_PROVISIONING_MAP_RESOURCES.UsedMappingResourcesScope"]/*' />
     [NativeTypeName("byte : 2")]
     public byte UsedMappingResourcesScope
     {
@@ -102,6 +111,7 @@ public unsafe partial struct STORAGE_LB_PROVISIONING_MAP_RESOURCES
         }
     }
 
+    /// <include file='STORAGE_LB_PROVISIONING_MAP_RESOURCES.xml' path='doc/member[@name="STORAGE_LB_PROVISIONING_MAP_RESOURCES.Reserved2"]/*' />
     [NativeTypeName("byte : 4")]
     public byte Reserved2
     {
@@ -118,12 +128,15 @@ public unsafe partial struct STORAGE_LB_PROVISIONING_MAP_RESOURCES
         }
     }
 
+    /// <include file='STORAGE_LB_PROVISIONING_MAP_RESOURCES.xml' path='doc/member[@name="STORAGE_LB_PROVISIONING_MAP_RESOURCES.Reserved3"]/*' />
     [NativeTypeName("BYTE [3]")]
     public fixed byte Reserved3[3];
 
+    /// <include file='STORAGE_LB_PROVISIONING_MAP_RESOURCES.xml' path='doc/member[@name="STORAGE_LB_PROVISIONING_MAP_RESOURCES.AvailableMappingResources"]/*' />
     [NativeTypeName("DWORDLONG")]
     public ulong AvailableMappingResources;
 
+    /// <include file='STORAGE_LB_PROVISIONING_MAP_RESOURCES.xml' path='doc/member[@name="STORAGE_LB_PROVISIONING_MAP_RESOURCES.UsedMappingResources"]/*' />
     [NativeTypeName("DWORDLONG")]
     public ulong UsedMappingResources;
 }

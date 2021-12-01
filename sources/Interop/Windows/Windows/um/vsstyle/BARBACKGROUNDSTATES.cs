@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='BARBACKGROUNDSTATES.xml' path='doc/member[@name="BARBACKGROUNDSTATES"]/*' />
 public enum BARBACKGROUNDSTATES
 {
+    /// <include file='BARBACKGROUNDSTATES.xml' path='doc/member[@name="BARBACKGROUNDSTATES.MB_ACTIVE"]/*' />
     MB_ACTIVE = 1,
+
+    /// <include file='BARBACKGROUNDSTATES.xml' path='doc/member[@name="BARBACKGROUNDSTATES.MB_INACTIVE"]/*' />
     MB_INACTIVE = 2,
 }

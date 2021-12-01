@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DEVICE_TRIM_DESCRIPTOR.xml' path='doc/member[@name="DEVICE_TRIM_DESCRIPTOR"]/*' />
 public partial struct DEVICE_TRIM_DESCRIPTOR
 {
+    /// <include file='DEVICE_TRIM_DESCRIPTOR.xml' path='doc/member[@name="DEVICE_TRIM_DESCRIPTOR.Version"]/*' />
     [NativeTypeName("DWORD")]
     public uint Version;
 
+    /// <include file='DEVICE_TRIM_DESCRIPTOR.xml' path='doc/member[@name="DEVICE_TRIM_DESCRIPTOR.Size"]/*' />
     [NativeTypeName("DWORD")]
     public uint Size;
 
+    /// <include file='DEVICE_TRIM_DESCRIPTOR.xml' path='doc/member[@name="DEVICE_TRIM_DESCRIPTOR.TrimEnabled"]/*' />
     [NativeTypeName("BOOLEAN")]
     public byte TrimEnabled;
 }

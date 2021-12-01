@@ -1,0 +1,359 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMemInputPin.GetAllocator">
+    <summary>
+      <para>The <code>GetAllocator</code> method retrieves the memory allocator proposed by this pin. After the allocator has been selected, this method returns a pointer to the selected allocator.</para>
+    </summary>
+    <param name="ppAllocator">
+      <para>Receives a pointer to the allocator's <see cref="IMemAllocator" /> interface. The caller must release the interface.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include those shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_NO_ALLOCATOR</b>
+            </para>
+          </description>
+          <description>
+            <para>No allocator is available.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>When an output pin connects to an input pin, it negotiates with the input pin to decide on a memory allocator. The output pin calls this method to retrieve the input pin's proposed allocator. It calls the <see cref="IMemInputPin.NotifyAllocator" /> method to specify which allocator it selected.</para>
+      <para>If this method succeeds, the <b>IMemAllocator</b> interface has an outstanding reference count. Be sure to release it when you are done.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IMemInputPin Interface" />
+  </member>
+  <member name="IMemInputPin.GetAllocatorRequirements">
+    <summary>
+      <para>The <code>GetAllocatorRequirements</code> method retrieves the allocator properties requested by the input pin.</para>
+    </summary>
+    <param name="pProps">
+      <para>Pointer to an <see cref="ALLOCATOR_PROPERTIES" />, structure which is filled in with the requirements.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include those shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_NOTIMPL</b>
+            </para>
+          </description>
+          <description>
+            <para>Not implemented</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer argument
+</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>When an output pin initializes a memory allocator, it can call this method to determine whether the input pin has any buffer requirements. The input pin is not required to implement this method. If the filter has specific alignment or prefix requirements, it should implement this method.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IMemInputPin Interface" />
+  </member>
+  <member name="IMemInputPin.NotifyAllocator">
+    <summary>
+      <para>The <code>NotifyAllocator</code> method specifies an allocator for the connection.</para>
+    </summary>
+    <param name="pAllocator">
+      <para>Pointer to the allocator's <see cref="IMemAllocator" /> interface.</para>
+    </param>
+    <param name="bReadOnly">
+      <para>Flag that specifies whether samples from this allocator are read-only. If <b>TRUE</b>, samples are read-only.</para>
+    </param>
+    <returns>
+      <para>Returns S_OK if successful, or an <b>HRESULT</b> value indicating the cause of the error.</para>
+    </returns>
+    <remarks>
+      <para>During the pin connection, the output pin chooses an allocator and calls this method to notify the input pin. The output pin might use the allocator that the input pin proposed in the <see cref="IMemInputPin.GetAllocator" /> method, or it might provide its own allocator.</para>
+      <para>If the <i>bReadOnly</i> parameter is <b>TRUE</b>, all samples in the allocator are read-only. The filter must copy them to modify the data.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IMemInputPin Interface" />
+  </member>
+  <member name="IMemInputPin.Receive">
+    <summary>
+      <para>The <code>Receive</code> method receives the next media sample in the stream.</para>
+    </summary>
+    <param name="pSample">
+      <para>Pointer to the sample's <see cref="IMediaSample" /> interface.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include those shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>The sample was rejected.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer argument.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_INVALIDMEDIATYPE</b>
+            </para>
+          </description>
+          <description>
+            <para>Invalid media type.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_RUNTIME_ERROR</b>
+            </para>
+          </description>
+          <description>
+            <para>A run-time error occurred.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_WRONG_STATE</b>
+            </para>
+          </description>
+          <description>
+            <para>The pin is stopped.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method is synchronous and possibly blocking. The pin does one of the following:</para>
+      <list type="bullet">
+        <item>
+          <description>Rejects the sample.</description>
+        </item>
+        <item>
+          <description>Returns immediately and processes the sample in a worker thread.</description>
+        </item>
+        <item>
+          <description>Processes the sample before returning.</description>
+        </item>
+      </list>
+      <para>In the last case, the method might block indefinitely. If this might happen, the <see cref="IMemInputPin.ReceiveCanBlock" /> method returns S_OK.</para>
+      <para>If the pin uses a worker thread to process the sample, it holds a reference count on the sample. In any case, the output pin cannot directly re-use this sample. It must call the <see cref="IMemAllocator.GetBuffer" /> method to obtain a new sample.</para>
+      <para>If this method returns S_FALSE or an error code, the upstream filter should stop sending samples until the graph stops or completes a flush operation. Typical reasons for an S_FALSE return value include:</para>
+      <list type="bullet">
+        <item>
+          <description>The downstream pin is flushing; that is, it received a <b>BeginFlush</b> call and has not yet received an <b>EndFlush</b> call.</description>
+        </item>
+        <item>
+          <description>The downstream filter detected the end of the stream. (See <a href="https://docs.microsoft.com//windows/desktop/DirectShow/end-of-stream-notifications">End-of-Stream Notifications</a>.)</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IMemInputPin Interface" />
+  </member>
+  <member name="IMemInputPin.ReceiveCanBlock">
+    <summary>
+      <para>The <code>ReceiveCanBlock</code> method determines whether calls to the <see cref="IMemInputPin.Receive" /> method might block.</para>
+    </summary>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include those shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>The pin will not block on a call to <b>Receive</b></para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The pin might block on a call to <b>Receive</b>.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>If this method returns S_FALSE, calls to the <b>Receive</b> method are guaranteed not to block. Otherwise, they might block. An upstream filter can use this method to determine its threading strategy. If calls to <b>Receive</b> can block, the upstream filter might decide to use a worker thread that buffers data.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IMemInputPin Interface" />
+  </member>
+  <member name="IMemInputPin.ReceiveMultiple">
+    <summary>
+      <para>The <code>ReceiveMultiple</code> method receives multiple samples in the stream.</para>
+    </summary>
+    <param name="pSamples">
+      <para>Address of an array of <see cref="IMediaSample" /> interface pointers, of size <i>nSamples</i>.</para>
+    </param>
+    <param name="nSamples">
+      <para>Number of samples to process.</para>
+    </param>
+    <param name="nSamplesProcessed">
+      <para>Pointer to a variable that receives the number of samples that were processed.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include those shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>Pin is currently flushing; sample was rejected.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer argument.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_INVALIDMEDIATYPE</b>
+            </para>
+          </description>
+          <description>
+            <para>Invalid media type.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_RUNTIME_ERROR</b>
+            </para>
+          </description>
+          <description>
+            <para>A run-time error occurred.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_WRONG_STATE</b>
+            </para>
+          </description>
+          <description>
+            <para>The pin is stopped.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method behaves like the <see cref="IMemInputPin.Receive" /> method, but receives an array of samples.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IMemInputPin Interface" />
+  </member>
+  <member name="IMemInputPin">
+    <summary>
+      <para>The <code>IMemInputPin</code> interface delivers media data to an input pin. Input pins expose this interface if they use the <see cref="IMemAllocator" /> interface to allocate buffers. When an output pin connects to an input pin, the output pin uses this interface to negotiate allocator requirements and deliver samples to the input pin.</para>
+      <para>Applications typically do not use this interface.</para>
+      <para>
+        <b>Filter developers: </b>The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/cbaseinputpin">CBaseInputPin</a> class implements this interface.</para>
+    </summary>
+  </member>
+</doc>

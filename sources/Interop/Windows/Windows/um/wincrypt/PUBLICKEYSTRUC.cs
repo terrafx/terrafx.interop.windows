@@ -5,15 +5,20 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PUBLICKEYSTRUC.xml' path='doc/member[@name="PUBLICKEYSTRUC"]/*' />
 public partial struct PUBLICKEYSTRUC
 {
+    /// <include file='PUBLICKEYSTRUC.xml' path='doc/member[@name="PUBLICKEYSTRUC.bType"]/*' />
     public byte bType;
 
+    /// <include file='PUBLICKEYSTRUC.xml' path='doc/member[@name="PUBLICKEYSTRUC.bVersion"]/*' />
     public byte bVersion;
 
+    /// <include file='PUBLICKEYSTRUC.xml' path='doc/member[@name="PUBLICKEYSTRUC.reserved"]/*' />
     [NativeTypeName("WORD")]
     public ushort reserved;
 
+    /// <include file='PUBLICKEYSTRUC.xml' path='doc/member[@name="PUBLICKEYSTRUC.aiKeyAlg"]/*' />
     [NativeTypeName("ALG_ID")]
     public uint aiKeyAlg;
 }

@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ISpatialAudioMetadataWriter.xml' path='doc/member[@name="ISpatialAudioMetadataWriter"]/*' />
 [Guid("1B17CA01-2955-444D-A430-537DC589A844")]
 [NativeTypeName("struct ISpatialAudioMetadataWriter : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct ISpatialAudioMetadataWriter : ISpatialAudioMetadata
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct ISpatialAudioMetadataWriter : ISpatialAudioMetadata
         return ((delegate* unmanaged<ISpatialAudioMetadataWriter*, Guid*, void**, int>)(lpVtbl[0]))((ISpatialAudioMetadataWriter*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct ISpatialAudioMetadataWriter : ISpatialAudioMetadata
         return ((delegate* unmanaged<ISpatialAudioMetadataWriter*, uint>)(lpVtbl[1]))((ISpatialAudioMetadataWriter*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct ISpatialAudioMetadataWriter : ISpatialAudioMetadata
         return ((delegate* unmanaged<ISpatialAudioMetadataWriter*, uint>)(lpVtbl[2]))((ISpatialAudioMetadataWriter*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ISpatialAudioMetadataWriter.xml' path='doc/member[@name="ISpatialAudioMetadataWriter.Open"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Open(ISpatialAudioMetadataItems* metadataItems)
@@ -48,6 +53,7 @@ public unsafe partial struct ISpatialAudioMetadataWriter : ISpatialAudioMetadata
         return ((delegate* unmanaged<ISpatialAudioMetadataWriter*, ISpatialAudioMetadataItems*, int>)(lpVtbl[3]))((ISpatialAudioMetadataWriter*)Unsafe.AsPointer(ref this), metadataItems);
     }
 
+    /// <include file='ISpatialAudioMetadataWriter.xml' path='doc/member[@name="ISpatialAudioMetadataWriter.WriteNextItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT WriteNextItem([NativeTypeName("UINT16")] ushort frameOffset)
@@ -55,6 +61,7 @@ public unsafe partial struct ISpatialAudioMetadataWriter : ISpatialAudioMetadata
         return ((delegate* unmanaged<ISpatialAudioMetadataWriter*, ushort, int>)(lpVtbl[4]))((ISpatialAudioMetadataWriter*)Unsafe.AsPointer(ref this), frameOffset);
     }
 
+    /// <include file='ISpatialAudioMetadataWriter.xml' path='doc/member[@name="ISpatialAudioMetadataWriter.WriteNextItemCommand"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT WriteNextItemCommand(byte commandID, [NativeTypeName("const void *")] void* valueBuffer, [NativeTypeName("UINT32")] uint valueBufferLength)
@@ -62,6 +69,7 @@ public unsafe partial struct ISpatialAudioMetadataWriter : ISpatialAudioMetadata
         return ((delegate* unmanaged<ISpatialAudioMetadataWriter*, byte, void*, uint, int>)(lpVtbl[5]))((ISpatialAudioMetadataWriter*)Unsafe.AsPointer(ref this), commandID, valueBuffer, valueBufferLength);
     }
 
+    /// <include file='ISpatialAudioMetadataWriter.xml' path='doc/member[@name="ISpatialAudioMetadataWriter.Close"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Close()

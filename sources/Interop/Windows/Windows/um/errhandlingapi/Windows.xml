@@ -1,0 +1,854 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="Windows.AddVectoredContinueHandler">
+    <summary>
+      <para>Registers a vectored continue handler.</para>
+    </summary>
+    <param name="First">
+      <para>The order in which the handler should be called. If the parameter is nonzero, the handler is the first handler to be called. If the parameter is zero, the handler is the last handler to be called.</para>
+    </param>
+    <param name="Handler">
+      <para>A pointer to the handler to be called. For more information, see <a href="https://docs.microsoft.com//windows/desktop/api/winnt/nc-winnt-pvectored_exception_handler">VectoredHandler</a>.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the return value is a pointer to the exception handler.</para>
+      <para>If the function fails, the return value is <b>NULL</b>.</para>
+    </returns>
+    <remarks>
+      <para>If the <i>First</i> parameter is nonzero, the handler is the first handler to be called until a subsequent call to <b>AddVectoredContinueHandler</b> is used to specify a different handler as the first handler.</para>
+      <para>If the <i>VectoredHandler</i> parameter points to a function in a DLL and that DLL is unloaded, the handler is still registered. This can lead to application errors.</para>
+      <para>To unregister the handler, use the <see cref="RemoveVectoredContinueHandler function" />.</para>
+      <para>To compile an application that uses this function, define the _WIN32_WINNT macro as 0x0500 or later. For more information, see <a href="https://docs.microsoft.com//windows/desktop/WinProg/using-the-windows-headers">Using the Windows Headers</a>.</para>
+    </remarks>
+    <seealso cref="AddVectoredExceptionHandler function" />
+    <seealso cref="RemoveVectoredExceptionHandler function" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/Debug/vectored-exception-handling">Vectored Exception Handling</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/winnt/nc-winnt-pvectored_exception_handler">VectoredHandler</seealso>
+  </member>
+  <member name="Windows.AddVectoredExceptionHandler">
+    <summary>
+      <para>Registers a vectored exception handler.</para>
+    </summary>
+    <param name="First">
+      <para>The order in which the handler should be called. If the parameter is nonzero, the handler is the first handler to be called. If the parameter is zero, the handler is the last handler to be called.</para>
+    </param>
+    <param name="Handler">
+      <para>A pointer to the handler to be called. For more information, see <a href="https://docs.microsoft.com//windows/desktop/api/winnt/nc-winnt-pvectored_exception_handler">VectoredHandler</a>.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the return value is a handle to the exception handler.</para>
+      <para>If the function fails, the return value is <b>NULL</b>.</para>
+    </returns>
+    <remarks>
+      <para>If the <i>First</i> parameter is nonzero, the handler is the first handler to be called until a subsequent call to <b>AddVectoredExceptionHandler</b> is used to specify a different handler as the first handler.</para>
+      <para>If the <i>VectoredHandler</i> parameter points to a function in a DLL and that DLL is unloaded, the handler is still registered. This can lead to application errors.</para>
+      <para>To unregister the handler, use the <see cref="RemoveVectoredExceptionHandler function" /> function.</para>
+      <para>To compile an application that uses this function, define the _WIN32_WINNT macro as 0x0500 or later. For more information, see <a href="https://docs.microsoft.com//windows/desktop/WinProg/using-the-windows-headers">Using the Windows Headers</a>.</para>
+      <h3>Examples</h3>
+      <para>For an example, see <a href="https://docs.microsoft.com//windows/desktop/Debug/using-a-vectored-exception-handler">Using a Vectored Exception Handler</a>.</para>
+    </remarks>
+    <seealso cref="AddVectoredContinueHandler function" />
+    <seealso cref="RemoveVectoredExceptionHandler function" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/Debug/vectored-exception-handling">Vectored Exception Handling</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/winnt/nc-winnt-pvectored_exception_handler">VectoredHandler</seealso>
+  </member>
+  <member name="Windows.FatalAppExit">
+    <summary>
+      <para>Displays a message box and terminates the application when the message box is closed. If the system is running with a debug version of Kernel32.dll, the message box gives the user the opportunity to terminate the application or to cancel the message box and return to the application that called
+<b>FatalAppExit</b>.</para>
+    </summary>
+    <param name="uAction">
+      <para>This parameter must be zero.</para>
+    </param>
+    <param name="lpMessageText">
+      <para>The null-terminated string that is displayed in the message box.</para>
+    </param>
+    <remarks>
+      <para>An application calls
+<b>FatalAppExit</b> only when it is not capable of terminating any other way.</para>
+      <blockquote>
+        <para>[!NOTE]
+The errhandlingapi.h header defines FatalAppExit as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Debug/error-handling-functions">Error Handling Functions</seealso>
+    <seealso cref="FatalExit" />
+  </member>
+  <member name="Windows.FatalAppExitA">
+    <summary>
+      <para>Displays a message box and terminates the application when the message box is closed. If the system is running with a debug version of Kernel32.dll, the message box gives the user the opportunity to terminate the application or to cancel the message box and return to the application that called
+<b>FatalAppExit</b>.</para>
+    </summary>
+    <param name="uAction">
+      <para>This parameter must be zero.</para>
+    </param>
+    <param name="lpMessageText">
+      <para>The null-terminated string that is displayed in the message box.</para>
+    </param>
+    <remarks>
+      <para>An application calls
+<b>FatalAppExit</b> only when it is not capable of terminating any other way.</para>
+      <blockquote>
+        <para>[!NOTE]
+The errhandlingapi.h header defines FatalAppExit as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Debug/error-handling-functions">Error Handling Functions</seealso>
+    <seealso cref="FatalExit" />
+  </member>
+  <member name="Windows.FatalAppExitW">
+    <summary>
+      <para>Displays a message box and terminates the application when the message box is closed. If the system is running with a debug version of Kernel32.dll, the message box gives the user the opportunity to terminate the application or to cancel the message box and return to the application that called
+<b>FatalAppExit</b>.</para>
+    </summary>
+    <param name="uAction">
+      <para>This parameter must be zero.</para>
+    </param>
+    <param name="lpMessageText">
+      <para>The null-terminated string that is displayed in the message box.</para>
+    </param>
+    <remarks>
+      <para>An application calls
+<b>FatalAppExit</b> only when it is not capable of terminating any other way.</para>
+      <blockquote>
+        <para>[!NOTE]
+The errhandlingapi.h header defines FatalAppExit as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Debug/error-handling-functions">Error Handling Functions</seealso>
+    <seealso cref="FatalExit" />
+  </member>
+  <member name="Windows.FatalAppExit">
+    <summary>
+      <para>Displays a message box and terminates the application when the message box is closed. If the system is running with a debug version of Kernel32.dll, the message box gives the user the opportunity to terminate the application or to cancel the message box and return to the application that called
+<b>FatalAppExit</b>.</para>
+    </summary>
+    <param name="uAction">
+      <para>This parameter must be zero.</para>
+    </param>
+    <param name="lpMessageText">
+      <para>The null-terminated string that is displayed in the message box.</para>
+    </param>
+    <remarks>
+      <para>An application calls
+<b>FatalAppExit</b> only when it is not capable of terminating any other way.</para>
+      <blockquote>
+        <para>[!NOTE]
+The errhandlingapi.h header defines FatalAppExit as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Debug/error-handling-functions">Error Handling Functions</seealso>
+    <seealso cref="FatalExit" />
+  </member>
+  <member name="Windows.FatalAppExitA">
+    <summary>
+      <para>Displays a message box and terminates the application when the message box is closed. If the system is running with a debug version of Kernel32.dll, the message box gives the user the opportunity to terminate the application or to cancel the message box and return to the application that called
+<b>FatalAppExit</b>.</para>
+    </summary>
+    <param name="uAction">
+      <para>This parameter must be zero.</para>
+    </param>
+    <param name="lpMessageText">
+      <para>The null-terminated string that is displayed in the message box.</para>
+    </param>
+    <remarks>
+      <para>An application calls
+<b>FatalAppExit</b> only when it is not capable of terminating any other way.</para>
+      <blockquote>
+        <para>[!NOTE]
+The errhandlingapi.h header defines FatalAppExit as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Debug/error-handling-functions">Error Handling Functions</seealso>
+    <seealso cref="FatalExit" />
+  </member>
+  <member name="Windows.FatalAppExitW">
+    <summary>
+      <para>Displays a message box and terminates the application when the message box is closed. If the system is running with a debug version of Kernel32.dll, the message box gives the user the opportunity to terminate the application or to cancel the message box and return to the application that called
+<b>FatalAppExit</b>.</para>
+    </summary>
+    <param name="uAction">
+      <para>This parameter must be zero.</para>
+    </param>
+    <param name="lpMessageText">
+      <para>The null-terminated string that is displayed in the message box.</para>
+    </param>
+    <remarks>
+      <para>An application calls
+<b>FatalAppExit</b> only when it is not capable of terminating any other way.</para>
+      <blockquote>
+        <para>[!NOTE]
+The errhandlingapi.h header defines FatalAppExit as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Debug/error-handling-functions">Error Handling Functions</seealso>
+    <seealso cref="FatalExit" />
+  </member>
+  <member name="Windows.GetErrorMode">
+    <summary>
+      <para>Retrieves the error mode for the current process.</para>
+    </summary>
+    <returns>
+      <para>The process error mode. This function returns one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code/value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>SEM_FAILCRITICALERRORS</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0001</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The system does not display the critical-error-handler message box. Instead, the system sends the error
+to the calling process.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>SEM_NOALIGNMENTFAULTEXCEPT</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0004</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The system automatically fixes memory alignment faults and makes them invisible to the application. It
+does this for the calling process and any descendant processes. This feature is only supported by certain
+processor architectures. For more information, see
+<see cref="SetErrorMode" />.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>SEM_NOGPFAULTERRORBOX</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0002</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The system does not display the Windows Error Reporting dialog.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>SEM_NOOPENFILEERRORBOX</b>
+                </description>
+              </item>
+              <item>
+                <description>0x8000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The system does not display a message box when it fails to find a file. Instead, the error is returned to
+the calling process.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Each process has an associated error mode that indicates to the system how the application is going to respond
+to serious errors. A child process inherits the error mode of its parent process.</para>
+      <para>To change the error mode for the process, use the
+<see cref="SetErrorMode" /> function.</para>
+      <para>
+        <b>Windows 7:  </b>Callers should favor <see cref="SetThreadErrorMode" /> over
+<see cref="SetErrorMode" /> since it is less disruptive to the normal
+behavior of the system. <see cref="GetThreadErrorMode" /> is the
+call function that corresponds to <b>GetErrorMode</b>.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Debug/error-handling-functions">Error Handling Functions</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Debug/error-mode">Error Mode</seealso>
+    <seealso cref="GetThreadErrorMode" />
+    <seealso cref="SetErrorMode" />
+  </member>
+  <member name="Windows.GetLastError">
+    <summary>
+      <para>Retrieves the calling thread's last-error code value. The last-error code is maintained on a per-thread basis. Multiple threads do not overwrite each other's last-error code.</para>
+      <para>
+        <b>Visual Basic:  </b>Applications should call <b>err.LastDllError</b> instead of
+<b>GetLastError</b>.</para>
+    </summary>
+    <returns>
+      <para>The return value is the calling thread's last-error code.</para>
+      <para>The Return Value section of the documentation for each function that sets the last-error code notes the conditions under which the function sets the last-error code. Most functions that set the thread's last-error code set it when they fail. However, some functions also set the last-error code when they succeed. If the function is not documented to set the last-error code, the value returned by this function is simply the most recent last-error code to have been set; some functions set the last-error code to 0 on success and others do not.</para>
+    </returns>
+    <remarks>
+      <para>Functions executed by the calling thread set this value by calling the
+<see cref="SetLastError" /> function. You should call the
+<b>GetLastError</b> function immediately when a function's return value indicates that such a call will return useful data. That is because some functions call
+<b>SetLastError</b> with a zero when they succeed, wiping out the error code set by the most recently failed function.</para>
+      <para>To obtain an error string for system error codes, use the
+<see cref="FormatMessage" /> function. For a complete list of error codes provided by the operating system, see
+<a href="https://docs.microsoft.com//windows/desktop/Debug/system-error-codes">System Error Codes</a>.</para>
+      <para>The error codes returned by a function are not part of the Windows API specification and can vary by operating system or device driver. For this reason, we cannot provide the complete list of error codes that can be returned by each function. There are also many functions whose documentation does not include even a partial list of error codes that can be returned.</para>
+      <para>Error codes are 32-bit values (bit 31 is the most significant bit). Bit 29 is reserved for application-defined error codes; no system error code has this bit set. If you are defining an error code for your application, set this bit to one. That indicates that the error code has been defined by an application, and ensures that your error code does not conflict with any error codes defined by the system.</para>
+      <para>To convert a system error into an <b>HRESULT</b> value, use the
+<see cref="HRESULT_FROM_WIN32" /> macro.</para>
+      <h4>Examples</h4>
+      <para>For an example, see
+<a href="https://docs.microsoft.com//windows/desktop/Debug/retrieving-the-last-error-code">Retrieving the Last-Error Code</a>.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Debug/error-handling-functions">Error Handling Functions</seealso>
+    <seealso cref="FormatMessage" />
+    <seealso cref="HRESULT_FROM_WIN32" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/Debug/last-error-code">Last-Error Code</seealso>
+    <seealso cref="SetLastError" />
+    <seealso cref="SetLastErrorEx" />
+  </member>
+  <member name="Windows.GetThreadErrorMode">
+    <summary>
+      <para>Retrieves the error mode for the calling thread.</para>
+    </summary>
+    <returns>
+      <para>The process error mode. This function returns one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code/value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>SEM_FAILCRITICALERRORS</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0001</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The system does not display the critical-error-handler message box. Instead, the system sends the error to the calling thread.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>SEM_NOGPFAULTERRORBOX</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0002</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The system does not display the Windows Error Reporting dialog.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>SEM_NOOPENFILEERRORBOX</b>
+                </description>
+              </item>
+              <item>
+                <description>0x8000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The system does not display a message box when it fails to find a file. Instead, the error is returned to the calling thread.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>A thread inherits the error mode of the process in which it is running. To change the error mode for the thread, use the <see cref="SetThreadErrorMode" /> function.</para>
+    </remarks>
+    <seealso cref="GetErrorMode" />
+    <seealso cref="SetThreadErrorMode" />
+  </member>
+  <member name="Windows.RaiseException">
+    <summary>
+      <para>Raises an exception in the calling thread.</para>
+    </summary>
+    <param name="dwExceptionCode">
+      <para>An application-defined exception code of the exception being raised. The filter expression and exception-handler block of an exception handler can use the
+<a href="https://docs.microsoft.com//windows/desktop/Debug/getexceptioncode">GetExceptionCode</a> function to retrieve this value.</para>
+      <para>Note that the system will clear bit 28 of <i>dwExceptionCode</i> before displaying a message This bit is a reserved exception bit, used by the system for its own purposes.</para>
+    </param>
+    <param name="dwExceptionFlags">
+      <para>The exception flags. This can be either zero to indicate a continuable exception, or EXCEPTION_NONCONTINUABLE to indicate a noncontinuable exception. Any attempt to continue execution after a noncontinuable exception causes the EXCEPTION_NONCONTINUABLE_EXCEPTION exception.</para>
+    </param>
+    <param name="nNumberOfArguments">
+      <para>The number of arguments in the <i>lpArguments</i> array. This value must not exceed EXCEPTION_MAXIMUM_PARAMETERS. This parameter is ignored if <i>lpArguments</i> is <b>NULL</b>.</para>
+    </param>
+    <param name="lpArguments">
+      <para>An array of arguments. This parameter can be <b>NULL</b>. These arguments can contain any application-defined data that needs to be passed to the filter expression of the exception handler.</para>
+    </param>
+    <returns>
+      <para>This function does not return a value.</para>
+    </returns>
+    <remarks>
+      <para>The
+<b>RaiseException</b> function enables a process to use structured exception handling to handle private, software-generated, application-defined exceptions.</para>
+      <para>Raising an exception causes the exception dispatcher to go through the following search for an exception handler:</para>
+      <list type="number">
+        <item>
+          <description>The system first attempts to notify the process's debugger, if any.</description>
+        </item>
+        <item>
+          <description>If the process is not being debugged, or if the associated debugger does not handle the exception, the system attempts to locate a frame-based exception handler by searching the stack frames of the thread in which the exception occurred. The system searches the current stack frame first, then proceeds backward through preceding stack frames.</description>
+        </item>
+        <item>
+          <description>If no frame-based handler can be found, or no frame-based handler handles the exception, the system makes a second attempt to notify the process's debugger.</description>
+        </item>
+        <item>
+          <description>If the process is not being debugged, or if the associated debugger does not handle the exception, the system provides default handling based on the exception type. For most exceptions, the default action is to call the
+<see cref="ExitProcess" /> function.</description>
+        </item>
+      </list>
+      <para>The values specified in the <i>dwExceptionCode</i>, <i>dwExceptionFlags</i>, <i>nNumberOfArguments</i>, and <i>lpArguments</i> parameters can be retrieved in the filter expression of a frame-based exception handler by calling the
+<a href="https://docs.microsoft.com//windows/desktop/Debug/getexceptioninformation">GetExceptionInformation</a> function. A debugger can retrieve these values by calling the
+<see cref="WaitForDebugEvent" /> function.</para>
+      <h4>Examples</h4>
+      <para>For an example, see
+<a href="https://docs.microsoft.com//windows/desktop/Debug/using-an-exception-handler">Using an Exception Handler</a>.</para>
+    </remarks>
+    <seealso cref="ExitProcess" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/Debug/getexceptioncode">GetExceptionCode</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Debug/getexceptioninformation">GetExceptionInformation</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Debug/structured-exception-handling-functions">Structured Exception Handling Functions</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Debug/structured-exception-handling">Structured Exception Handling Overview</seealso>
+    <seealso cref="WaitForDebugEvent" />
+  </member>
+  <member name="Windows.RaiseFailFastException">
+    <summary>
+      <para>Raises an exception that bypasses all exception handlers (frame or vector based). Raising this exception terminates the application and invokes Windows Error Reporting, if Windows Error Reporting is enabled.</para>
+    </summary>
+    <param name="pExceptionRecord">
+      <para>A pointer to an <see cref="EXCEPTION_RECORD" /> structure that contains the exception information. You must specify the <b>ExceptionAddress</b> and <b>ExceptionCode</b> members.</para>
+      <para>If this parameter is <b>NULL</b>, the function creates an exception record and sets the <b>ExceptionCode</b> member to STATUS_FAIL_FAST_EXCEPTION. The function will also set the <b>ExceptionAddress</b> member if the <i>dwFlags</i> parameter contains the FAIL_FAST_GENERATE_EXCEPTION_ADDRESS flag.</para>
+    </param>
+    <param name="pContextRecord">
+      <para>A pointer to a <see cref="CONTEXT" /> structure that contains the context information. If <b>NULL</b>, this function generates the context (however, the context will not exactly match the context of the caller).</para>
+    </param>
+    <param name="dwFlags">
+      <para>You can specify zero or the following flag that control this function's behavior:</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>FAIL_FAST_GENERATE_EXCEPTION_ADDRESS</b>
+                </description>
+              </item>
+              <item>
+                <description>0x1</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Causes <b>RaiseFailFastException</b> to set the <b>ExceptionAddress</b> of <see cref="EXCEPTION_RECORD" /> to the return address of this function (the next instruction in the caller after the call to <b>RaiseFailFastException</b>). This function will set the exception address only if <b>ExceptionAddress</b> is not <b>NULL</b>.</para>
+          </description>
+        </item>
+      </list>
+    </param>
+    <remarks>
+      <para>Typically, you call this function if your application is in a bad state and you want to terminate the application  immediately and have a Windows Error Report created.</para>
+      <para>If the WER service is disabled or cannot be started or there is no debugger attached to the process, the process will be terminated.</para>
+      <para>This function raises a second chance exception. If JIT debugging is enabled, a debugger will attach to the process.</para>
+    </remarks>
+  </member>
+  <member name="Windows.RemoveVectoredContinueHandler">
+    <summary>
+      <para>Unregisters a vectored continue handler.</para>
+    </summary>
+    <param name="Handle">
+      <para>A pointer to a vectored exception handler previously registered using the <see cref="AddVectoredContinueHandler function" />.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the return value is nonzero.</para>
+      <para>If the function fails, the return value is zero.</para>
+    </returns>
+    <remarks>
+      <para>To compile an application that uses this function, define the _WIN32_WINNT macro as 0x0500 or later. For more information, see [/windows/desktop/WinProg/using-the-windows-headers](Using the Windows Headers).</para>
+    </remarks>
+    <seealso cref="AddVectoredContinueHandler function" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/Debug/vectored-exception-handling">Vectored Exception Handling</seealso>
+  </member>
+  <member name="Windows.RemoveVectoredExceptionHandler">
+    <summary>
+      <para>Unregisters a vectored exception handler.</para>
+    </summary>
+    <param name="Handle">
+      <para>A handle to the vectored exception handler previously registered using the <see cref="AddVectoredExceptionHandler function" />.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the return value is nonzero.</para>
+      <para>If the function fails, the return value is zero.</para>
+    </returns>
+    <remarks>
+      <para>To compile an application that uses this function, define the _WIN32_WINNT macro as 0x0500 or later. For more information, see [/windows/desktop/WinProg/using-the-windows-headers](Using the Windows Headers).</para>
+      <h3>Examples</h3>
+      <para>For an example, see <a href="https://docs.microsoft.com//windows/desktop/Debug/using-a-vectored-exception-handler">Using a Vectored Exception Handler</a>.</para>
+    </remarks>
+    <seealso cref="AddVectoredExceptionHandler function" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/Debug/vectored-exception-handling">Vectored Exception Handling</seealso>
+  </member>
+  <member name="Windows.SetLastError">
+    <summary>
+      <para>Sets the last-error code for the calling thread.</para>
+    </summary>
+    <param name="dwErrCode">
+      <para>The last-error code for the thread.</para>
+    </param>
+    <remarks>
+      <para>The last-error code is kept in thread local storage so that multiple threads do not overwrite each other's values.</para>
+      <para>Most functions call
+<b>SetLastError</b> or <see cref="SetLastErrorEx" /> only when they fail. However, some system functions call
+<b>SetLastError</b> or <b>SetLastErrorEx</b> under conditions of success; those cases are noted in each function's documentation.</para>
+      <para>Applications can optionally retrieve the value set by this function by using the
+<see cref="GetLastError" /> function immediately after a function fails.</para>
+      <para>Error codes are 32-bit values (bit 31 is the most significant bit). Bit 29 is reserved for application-defined error codes; no system error code has this bit set. If you are defining an error code for your application, set this bit to indicate that the error code has been defined by your application and to ensure that your error code does not conflict with any system-defined error codes.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Debug/error-handling-functions">Error Handling Functions</seealso>
+    <seealso cref="GetLastError" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/Debug/last-error-code">Last-Error Code</seealso>
+    <seealso cref="SetLastErrorEx" />
+  </member>
+  <member name="Windows.SetThreadErrorMode">
+    <summary>
+      <para>Controls whether the system will handle the specified types of serious errors or whether the calling thread will handle them.</para>
+    </summary>
+    <param name="dwNewMode">
+      <para>The thread error mode. This parameter can be one or more of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <para>0</para>
+          </description>
+          <description>
+            <para>Use the system default, which is to display all error dialog boxes.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>SEM_FAILCRITICALERRORS</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0001</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The system does not display the critical-error-handler message box. Instead, the system sends the error to the calling thread.</para>
+            <para>Best practice is  that all applications call the process-wide <see cref="SetErrorMode" /> function with a parameter of <b>SEM_FAILCRITICALERRORS</b> at startup.  This is to prevent error mode dialogs from hanging the application.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>SEM_NOGPFAULTERRORBOX</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0002</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The system does not display the Windows Error Reporting dialog.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>SEM_NOOPENFILEERRORBOX</b>
+                </description>
+              </item>
+              <item>
+                <description>0x8000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The <see cref="OpenFile" /> function does not display a message box when it fails to find a file. Instead, the error is returned to the caller. This error mode overrides the <b>OF_PROMPT</b> flag.</para>
+          </description>
+        </item>
+      </list>
+    </param>
+    <param name="lpOldMode">
+      <para>If the function succeeds, this parameter is set to the thread's previous error mode. This parameter can be <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the return value is nonzero.</para>
+      <para>If the function fails, the return value is zero. To get extended error information, call
+<see cref="GetLastError" />.</para>
+    </returns>
+    <remarks>
+      <para>Each process has an associated error mode that indicates to the system how the application is going to respond to serious errors. A thread inherits the error mode of the process in which it is running. To retrieve the process error mode, use the <see cref="GetErrorMode" /> function. To retrieve the error mode of the calling thread, use the <see cref="GetThreadErrorMode" /> function.</para>
+    </remarks>
+    <seealso cref="GetThreadErrorMode" />
+    <seealso cref="SetErrorMode" />
+  </member>
+  <member name="Windows.SetUnhandledExceptionFilter">
+    <summary>
+      <para>Enables an application to supersede the top-level exception handler of each thread of a process.</para>
+      <para>After calling this function, if an exception occurs in a process that is not being debugged, and the exception makes it to the unhandled exception filter, that filter will call the exception filter function specified by the <i>lpTopLevelExceptionFilter</i> parameter.</para>
+    </summary>
+    <param name="lpTopLevelExceptionFilter">
+      <para>A pointer to a top-level exception filter function that will be called whenever the
+<see cref="UnhandledExceptionFilter" /> function gets control, and the process is not being debugged. A value of <b>NULL</b> for this parameter specifies default handling within
+<b>UnhandledExceptionFilter</b>.</para>
+      <para>The filter function has syntax similar to that of
+<see cref="UnhandledExceptionFilter" />: It takes a single parameter of type <b>LPEXCEPTION_POINTERS</b>, has a WINAPI calling convention, and returns a value of type <b>LONG</b>. The filter function should return one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>EXCEPTION_EXECUTE_HANDLER</b>
+                </description>
+              </item>
+              <item>
+                <description>0x1</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Return from
+<see cref="UnhandledExceptionFilter" /> and execute the associated exception handler. This usually results in process termination.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>EXCEPTION_CONTINUE_EXECUTION</b>
+                </description>
+              </item>
+              <item>
+                <description>0xffffffff</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Return from
+<see cref="UnhandledExceptionFilter" /> and continue execution from the point of the exception. Note that the filter function is free to modify the continuation state by modifying the exception information supplied through its <b>LPEXCEPTION_POINTERS</b> parameter.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>EXCEPTION_CONTINUE_SEARCH</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Proceed with normal execution of
+<see cref="UnhandledExceptionFilter" />. That means obeying the
+<see cref="SetErrorMode" /> flags, or invoking the Application Error pop-up message box.</para>
+          </description>
+        </item>
+      </list>
+    </param>
+    <returns>
+      <para>The
+<b>SetUnhandledExceptionFilter</b> function returns the address of the previous exception filter established with the function. A <b>NULL</b> return value means that there is no current top-level exception handler.</para>
+    </returns>
+    <remarks>
+      <para>Issuing
+<b>SetUnhandledExceptionFilter</b> replaces the existing top-level exception filter for all existing and all future threads in the calling process.</para>
+      <para>The exception handler specified by <i>lpTopLevelExceptionFilter</i> is executed in the context of the thread that caused the fault. This can affect the exception handler's ability to recover from certain exceptions, such as an invalid stack.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Debug/structured-exception-handling-functions">Structured Exception Handling Functions</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Debug/structured-exception-handling">Structured Exception Handling Overview</seealso>
+    <seealso cref="UnhandledExceptionFilter" />
+  </member>
+  <member name="Windows.RtlUnhandledExceptionFilter">
+    <summary>
+      <para>An application-defined function that passes unhandled exceptions to the debugger, if the process is being debugged. Otherwise, it optionally displays an <b>Application Error</b> message box and causes the exception handler to be executed. This function can be called only from within the filter expression of an exception handler.</para>
+    </summary>
+    <param name="ExceptionInfo">
+      <para>A pointer to an
+<see cref="EXCEPTION_POINTERS" /> structure that specifies a description of the exception and the processor context at the time of the exception. This pointer is the return value of a call to the
+<a href="https://docs.microsoft.com//windows/desktop/Debug/getexceptioninformation">GetExceptionInformation</a> function.</para>
+    </param>
+    <returns>
+      <para>The function returns one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code/value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>EXCEPTION_CONTINUE_SEARCH</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The process is being debugged, so the exception should be passed (as second chance) to the application's debugger.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>EXCEPTION_EXECUTE_HANDLER</b>
+                </description>
+              </item>
+              <item>
+                <description>0x1</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>If the SEM_NOGPFAULTERRORBOX flag was specified in a previous call to
+<see cref="SetErrorMode" />, no Application Error message box is displayed. The function returns control to the exception handler, which is free to take any appropriate action.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>If the process is not being debugged, the function displays an <b>Application Error</b> message box, depending on the current error mode. The default behavior is to display the dialog box, but this can be disabled by specifying SEM_NOGPFAULTERRORBOX in a call to the
+<see cref="SetErrorMode" /> function.</para>
+      <para>The system uses
+<b>UnhandledExceptionFilter</b> internally to handle exceptions that occur during process and thread creation.</para>
+    </remarks>
+    <seealso cref="EXCEPTION_POINTERS" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/Debug/getexceptioninformation">GetExceptionInformation</seealso>
+    <seealso cref="SetErrorMode" />
+    <seealso cref="SetUnhandledExceptionFilter" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/Debug/structured-exception-handling-functions">Structured Exception Handling Functions</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Debug/structured-exception-handling">Structured Exception Handling Overview</seealso>
+  </member>
+  <member name="Windows.UnhandledExceptionFilter">
+    <summary>
+      <para>An application-defined function that passes unhandled exceptions to the debugger, if the process is being debugged. Otherwise, it optionally displays an <b>Application Error</b> message box and causes the exception handler to be executed. This function can be called only from within the filter expression of an exception handler.</para>
+    </summary>
+    <param name="ExceptionInfo">
+      <para>A pointer to an
+<see cref="EXCEPTION_POINTERS" /> structure that specifies a description of the exception and the processor context at the time of the exception. This pointer is the return value of a call to the
+<a href="https://docs.microsoft.com//windows/desktop/Debug/getexceptioninformation">GetExceptionInformation</a> function.</para>
+    </param>
+    <returns>
+      <para>The function returns one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code/value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>EXCEPTION_CONTINUE_SEARCH</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The process is being debugged, so the exception should be passed (as second chance) to the application's debugger.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>EXCEPTION_EXECUTE_HANDLER</b>
+                </description>
+              </item>
+              <item>
+                <description>0x1</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>If the SEM_NOGPFAULTERRORBOX flag was specified in a previous call to
+<see cref="SetErrorMode" />, no Application Error message box is displayed. The function returns control to the exception handler, which is free to take any appropriate action.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>If the process is not being debugged, the function displays an <b>Application Error</b> message box, depending on the current error mode. The default behavior is to display the dialog box, but this can be disabled by specifying SEM_NOGPFAULTERRORBOX in a call to the
+<see cref="SetErrorMode" /> function.</para>
+      <para>The system uses
+<b>UnhandledExceptionFilter</b> internally to handle exceptions that occur during process and thread creation.</para>
+    </remarks>
+    <seealso cref="EXCEPTION_POINTERS" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/Debug/getexceptioninformation">GetExceptionInformation</seealso>
+    <seealso cref="SetErrorMode" />
+    <seealso cref="SetUnhandledExceptionFilter" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/Debug/structured-exception-handling-functions">Structured Exception Handling Functions</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Debug/structured-exception-handling">Structured Exception Handling Overview</seealso>
+  </member>
+</doc>

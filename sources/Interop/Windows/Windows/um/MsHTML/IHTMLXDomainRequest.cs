@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IHTMLXDomainRequest.xml' path='doc/member[@name="IHTMLXDomainRequest"]/*' />
 [Guid("30510454-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IHTMLXDomainRequest : IDispatch")]
 [NativeInheritance("IDispatch")]
@@ -16,6 +17,7 @@ public unsafe partial struct IHTMLXDomainRequest : IHTMLXDomainRequest.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IHTMLXDomainRequest : IHTMLXDomainRequest.Interface
         return ((delegate* unmanaged<IHTMLXDomainRequest*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLXDomainRequest*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IHTMLXDomainRequest : IHTMLXDomainRequest.Interface
         return ((delegate* unmanaged<IHTMLXDomainRequest*, uint>)(lpVtbl[1]))((IHTMLXDomainRequest*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IHTMLXDomainRequest : IHTMLXDomainRequest.Interface
         return ((delegate* unmanaged<IHTMLXDomainRequest*, uint>)(lpVtbl[2]))((IHTMLXDomainRequest*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct IHTMLXDomainRequest : IHTMLXDomainRequest.Interface
         return ((delegate* unmanaged<IHTMLXDomainRequest*, uint*, int>)(lpVtbl[3]))((IHTMLXDomainRequest*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct IHTMLXDomainRequest : IHTMLXDomainRequest.Interface
         return ((delegate* unmanaged<IHTMLXDomainRequest*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IHTMLXDomainRequest*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
@@ -60,6 +67,7 @@ public unsafe partial struct IHTMLXDomainRequest : IHTMLXDomainRequest.Interface
         return ((delegate* unmanaged<IHTMLXDomainRequest*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLXDomainRequest*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
+    /// <inheritdoc cref="IDispatch.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
@@ -67,6 +75,7 @@ public unsafe partial struct IHTMLXDomainRequest : IHTMLXDomainRequest.Interface
         return ((delegate* unmanaged<IHTMLXDomainRequest*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IHTMLXDomainRequest*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
+    /// <include file='IHTMLXDomainRequest.xml' path='doc/member[@name="IHTMLXDomainRequest.get_responseText"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT get_responseText([NativeTypeName("BSTR *")] ushort** p)
@@ -74,6 +83,7 @@ public unsafe partial struct IHTMLXDomainRequest : IHTMLXDomainRequest.Interface
         return ((delegate* unmanaged<IHTMLXDomainRequest*, ushort**, int>)(lpVtbl[7]))((IHTMLXDomainRequest*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLXDomainRequest.xml' path='doc/member[@name="IHTMLXDomainRequest.put_timeout"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT put_timeout([NativeTypeName("long")] int v)
@@ -81,6 +91,7 @@ public unsafe partial struct IHTMLXDomainRequest : IHTMLXDomainRequest.Interface
         return ((delegate* unmanaged<IHTMLXDomainRequest*, int, int>)(lpVtbl[8]))((IHTMLXDomainRequest*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLXDomainRequest.xml' path='doc/member[@name="IHTMLXDomainRequest.get_timeout"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT get_timeout([NativeTypeName("long *")] int* p)
@@ -88,6 +99,7 @@ public unsafe partial struct IHTMLXDomainRequest : IHTMLXDomainRequest.Interface
         return ((delegate* unmanaged<IHTMLXDomainRequest*, int*, int>)(lpVtbl[9]))((IHTMLXDomainRequest*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLXDomainRequest.xml' path='doc/member[@name="IHTMLXDomainRequest.get_contentType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT get_contentType([NativeTypeName("BSTR *")] ushort** p)
@@ -95,6 +107,7 @@ public unsafe partial struct IHTMLXDomainRequest : IHTMLXDomainRequest.Interface
         return ((delegate* unmanaged<IHTMLXDomainRequest*, ushort**, int>)(lpVtbl[10]))((IHTMLXDomainRequest*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLXDomainRequest.xml' path='doc/member[@name="IHTMLXDomainRequest.put_onprogress"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT put_onprogress(VARIANT v)
@@ -102,6 +115,7 @@ public unsafe partial struct IHTMLXDomainRequest : IHTMLXDomainRequest.Interface
         return ((delegate* unmanaged<IHTMLXDomainRequest*, VARIANT, int>)(lpVtbl[11]))((IHTMLXDomainRequest*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLXDomainRequest.xml' path='doc/member[@name="IHTMLXDomainRequest.get_onprogress"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT get_onprogress(VARIANT* p)
@@ -109,6 +123,7 @@ public unsafe partial struct IHTMLXDomainRequest : IHTMLXDomainRequest.Interface
         return ((delegate* unmanaged<IHTMLXDomainRequest*, VARIANT*, int>)(lpVtbl[12]))((IHTMLXDomainRequest*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLXDomainRequest.xml' path='doc/member[@name="IHTMLXDomainRequest.put_onerror"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT put_onerror(VARIANT v)
@@ -116,6 +131,7 @@ public unsafe partial struct IHTMLXDomainRequest : IHTMLXDomainRequest.Interface
         return ((delegate* unmanaged<IHTMLXDomainRequest*, VARIANT, int>)(lpVtbl[13]))((IHTMLXDomainRequest*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLXDomainRequest.xml' path='doc/member[@name="IHTMLXDomainRequest.get_onerror"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT get_onerror(VARIANT* p)
@@ -123,6 +139,7 @@ public unsafe partial struct IHTMLXDomainRequest : IHTMLXDomainRequest.Interface
         return ((delegate* unmanaged<IHTMLXDomainRequest*, VARIANT*, int>)(lpVtbl[14]))((IHTMLXDomainRequest*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLXDomainRequest.xml' path='doc/member[@name="IHTMLXDomainRequest.put_ontimeout"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT put_ontimeout(VARIANT v)
@@ -130,6 +147,7 @@ public unsafe partial struct IHTMLXDomainRequest : IHTMLXDomainRequest.Interface
         return ((delegate* unmanaged<IHTMLXDomainRequest*, VARIANT, int>)(lpVtbl[15]))((IHTMLXDomainRequest*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLXDomainRequest.xml' path='doc/member[@name="IHTMLXDomainRequest.get_ontimeout"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT get_ontimeout(VARIANT* p)
@@ -137,6 +155,7 @@ public unsafe partial struct IHTMLXDomainRequest : IHTMLXDomainRequest.Interface
         return ((delegate* unmanaged<IHTMLXDomainRequest*, VARIANT*, int>)(lpVtbl[16]))((IHTMLXDomainRequest*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLXDomainRequest.xml' path='doc/member[@name="IHTMLXDomainRequest.put_onload"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT put_onload(VARIANT v)
@@ -144,6 +163,7 @@ public unsafe partial struct IHTMLXDomainRequest : IHTMLXDomainRequest.Interface
         return ((delegate* unmanaged<IHTMLXDomainRequest*, VARIANT, int>)(lpVtbl[17]))((IHTMLXDomainRequest*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLXDomainRequest.xml' path='doc/member[@name="IHTMLXDomainRequest.get_onload"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT get_onload(VARIANT* p)
@@ -151,6 +171,7 @@ public unsafe partial struct IHTMLXDomainRequest : IHTMLXDomainRequest.Interface
         return ((delegate* unmanaged<IHTMLXDomainRequest*, VARIANT*, int>)(lpVtbl[18]))((IHTMLXDomainRequest*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLXDomainRequest.xml' path='doc/member[@name="IHTMLXDomainRequest.abort"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT abort()
@@ -158,6 +179,7 @@ public unsafe partial struct IHTMLXDomainRequest : IHTMLXDomainRequest.Interface
         return ((delegate* unmanaged<IHTMLXDomainRequest*, int>)(lpVtbl[19]))((IHTMLXDomainRequest*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IHTMLXDomainRequest.xml' path='doc/member[@name="IHTMLXDomainRequest.open"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public HRESULT open([NativeTypeName("BSTR")] ushort* bstrMethod, [NativeTypeName("BSTR")] ushort* bstrUrl)
@@ -165,6 +187,7 @@ public unsafe partial struct IHTMLXDomainRequest : IHTMLXDomainRequest.Interface
         return ((delegate* unmanaged<IHTMLXDomainRequest*, ushort*, ushort*, int>)(lpVtbl[20]))((IHTMLXDomainRequest*)Unsafe.AsPointer(ref this), bstrMethod, bstrUrl);
     }
 
+    /// <include file='IHTMLXDomainRequest.xml' path='doc/member[@name="IHTMLXDomainRequest.send"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
     public HRESULT send(VARIANT varBody)

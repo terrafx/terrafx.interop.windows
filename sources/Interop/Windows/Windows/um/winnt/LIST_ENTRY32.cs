@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='LIST_ENTRY32.xml' path='doc/member[@name="LIST_ENTRY32"]/*' />
 public partial struct LIST_ENTRY32
 {
+    /// <include file='LIST_ENTRY32.xml' path='doc/member[@name="LIST_ENTRY32.Flink"]/*' />
     [NativeTypeName("DWORD")]
     public uint Flink;
 
+    /// <include file='LIST_ENTRY32.xml' path='doc/member[@name="LIST_ENTRY32.Blink"]/*' />
     [NativeTypeName("DWORD")]
     public uint Blink;
 }

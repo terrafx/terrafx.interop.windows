@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='POINTFLOAT.xml' path='doc/member[@name="POINTFLOAT"]/*' />
 public partial struct POINTFLOAT
 {
+    /// <include file='POINTFLOAT.xml' path='doc/member[@name="POINTFLOAT.x"]/*' />
     public float x;
 
+    /// <include file='POINTFLOAT.xml' path='doc/member[@name="POINTFLOAT.y"]/*' />
     public float y;
 }

@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SPBOOKMARKOPTIONS.xml' path='doc/member[@name="SPBOOKMARKOPTIONS"]/*' />
 public enum SPBOOKMARKOPTIONS
 {
+    /// <include file='SPBOOKMARKOPTIONS.xml' path='doc/member[@name="SPBOOKMARKOPTIONS.SPBO_NONE"]/*' />
     SPBO_NONE = 0,
+
+    /// <include file='SPBOOKMARKOPTIONS.xml' path='doc/member[@name="SPBOOKMARKOPTIONS.SPBO_PAUSE"]/*' />
     SPBO_PAUSE = (1 << 0),
+
+    /// <include file='SPBOOKMARKOPTIONS.xml' path='doc/member[@name="SPBOOKMARKOPTIONS.SPBO_AHEAD"]/*' />
     SPBO_AHEAD = (1 << 1),
+
+    /// <include file='SPBOOKMARKOPTIONS.xml' path='doc/member[@name="SPBOOKMARKOPTIONS.SPBO_TIME_UNITS"]/*' />
     SPBO_TIME_UNITS = (1 << 2),
 }

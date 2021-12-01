@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STORAGE_TIER_CLASS.xml' path='doc/member[@name="STORAGE_TIER_CLASS"]/*' />
 public enum STORAGE_TIER_CLASS
 {
+    /// <include file='STORAGE_TIER_CLASS.xml' path='doc/member[@name="STORAGE_TIER_CLASS.StorageTierClassUnspecified"]/*' />
     StorageTierClassUnspecified = 0,
+
+    /// <include file='STORAGE_TIER_CLASS.xml' path='doc/member[@name="STORAGE_TIER_CLASS.StorageTierClassCapacity"]/*' />
     StorageTierClassCapacity,
+
+    /// <include file='STORAGE_TIER_CLASS.xml' path='doc/member[@name="STORAGE_TIER_CLASS.StorageTierClassPerformance"]/*' />
     StorageTierClassPerformance,
+
+    /// <include file='STORAGE_TIER_CLASS.xml' path='doc/member[@name="STORAGE_TIER_CLASS.StorageTierClassMax"]/*' />
     StorageTierClassMax,
 }

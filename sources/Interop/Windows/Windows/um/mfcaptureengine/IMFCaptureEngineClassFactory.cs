@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFCaptureEngineClassFactory.xml' path='doc/member[@name="IMFCaptureEngineClassFactory"]/*' />
 [Guid("8F02D140-56FC-4302-A705-3A97C78BE779")]
 [NativeTypeName("struct IMFCaptureEngineClassFactory : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IMFCaptureEngineClassFactory : IMFCaptureEngineClas
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IMFCaptureEngineClassFactory : IMFCaptureEngineClas
         return ((delegate* unmanaged<IMFCaptureEngineClassFactory*, Guid*, void**, int>)(lpVtbl[0]))((IMFCaptureEngineClassFactory*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IMFCaptureEngineClassFactory : IMFCaptureEngineClas
         return ((delegate* unmanaged<IMFCaptureEngineClassFactory*, uint>)(lpVtbl[1]))((IMFCaptureEngineClassFactory*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IMFCaptureEngineClassFactory : IMFCaptureEngineClas
         return ((delegate* unmanaged<IMFCaptureEngineClassFactory*, uint>)(lpVtbl[2]))((IMFCaptureEngineClassFactory*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFCaptureEngineClassFactory.xml' path='doc/member[@name="IMFCaptureEngineClassFactory.CreateInstance"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT CreateInstance([NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppvObject)

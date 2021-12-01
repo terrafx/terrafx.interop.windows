@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DVD_REGION">
+    <summary>
+      <para>Identifies the DVD region as reported by the local system components.</para>
+    </summary>
+    <remarks>
+      <para>The AM_PROPERTY_DVDCOPY_REGION property uses this structure.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-copy-protection-property-set">DVD Copy Protection Property Set</seealso>
+  </member>
+  <member name="DVD_REGION.CopySystem">
+    <summary>
+      <para>Specifies whether the disk is copy protected.</para>
+    </summary>
+  </member>
+  <member name="DVD_REGION.RegionData">
+    <summary>
+      <para>Contains information about the region from the decoder.</para>
+    </summary>
+  </member>
+  <member name="DVD_REGION.SystemRegion">
+    <summary>
+      <para>Contains information about region from DVD drive.</para>
+    </summary>
+  </member>
+  <member name="DVD_REGION.ResetCount">
+    <summary>
+      <para>Reserved.</para>
+    </summary>
+  </member>
+</doc>

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CM_STATE">
+    <summary>
+      <para>Specifies column state values. Used by members of the <see cref="IColumnManager" /> interface through the <see cref="CM_COLUMNINFO" /> structure.</para>
+    </summary>
+  </member>
+  <member name="CM_STATE.CM_STATE_NONE">
+    <summary>
+      <para>The column is not currently displayed.</para>
+    </summary>
+  </member>
+  <member name="CM_STATE.CM_STATE_VISIBLE">
+    <summary>
+      <para>The column is currently displayed.</para>
+    </summary>
+  </member>
+  <member name="CM_STATE.CM_STATE_FIXEDWIDTH">
+    <summary>
+      <para>The column cannot be resized.</para>
+    </summary>
+  </member>
+  <member name="CM_STATE.CM_STATE_NOSORTBYFOLDERNESS">
+    <summary>
+      <para>Do not sort folders separately.</para>
+    </summary>
+  </member>
+  <member name="CM_STATE.CM_STATE_ALWAYSVISIBLE">
+    <summary>
+      <para>The column cannot be hidden.</para>
+    </summary>
+  </member>
+</doc>

@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IBurnVerification.get_BurnVerificationLevel">
+    <summary>
+      <para>Retrieves  the current Burn Verification Level.</para>
+    </summary>
+    <param name="value">
+      <para>Pointer to an <see cref="IMAPI_BURN_VERIFICATION_LEVEL" /> enumeration that specifies the current the Burn Verification Level.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation.</para>
+    </returns>
+    <remarks>
+      <para>This method is supported in Windows Server 2003 with Service Pack 1 (SP1), Windows XP with Service Pack 2 (SP2),  and Windows Vista  via the Windows Feature Pack for Storage. All  features provided by this  update package are supported natively in Windows 7 and Windows Server 2008 R2.</para>
+    </remarks>
+    <seealso cref="IBurnVerification" />
+    <seealso cref="IMAPI_BURN_VERIFICATION_LEVEL" />
+  </member>
+  <member name="IBurnVerification.put_BurnVerificationLevel">
+    <summary>
+      <para>Sets the   Burn Verification Level.</para>
+    </summary>
+    <param name="value">
+      <para>Value that defines the Burn Verification Level. For possible values, see <see cref="IMAPI_BURN_VERIFICATION_LEVEL" />.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation.</para>
+    </returns>
+    <remarks>
+      <para>This method is supported in Windows Server 2003 with Service Pack 1 (SP1), Windows XP with Service Pack 2 (SP2),  and Windows Vista  via the Windows Feature Pack for Storage. All  features provided by this  update package are supported natively in Windows 7 and Windows Server 2008 R2.</para>
+    </remarks>
+    <seealso cref="IBurnVerification" />
+    <seealso cref="IMAPI_BURN_VERIFICATION_LEVEL" />
+  </member>
+  <member name="IBurnVerification">
+    <summary>
+      <para>Use  this interface with  <see cref="IDiscFormat2Data" /> or <see cref="IDiscFormat2TrackAtOnce" /> to get or set the Burn Verification Level property which dictates how burned media is verified for integrity after the write operation.</para>
+    </summary>
+    <remarks>
+      <para>The following example function demonstrates how the burn verification level defined by <see cref="IMAPI_BURN_VERIFICATION_LEVEL" />, can be implemented. Burn verification level should be set prior to a burn operation.</para>
+      <code>#include &lt;imapi2.h&gt;
+
+HRESULT setBurnVerification(
+    IDiscFormat2Data                *DataWriter,
+    IMAPI_BURN_VERIFICATION_LEVEL   VerificationLevel
+    )
+
+{
+    HRESULT hr = S_OK;
+    IBurnVerification *burnVerifier = NULL;
+
+    hr = DataWriter-&gt;QueryInterface(IID_PPV_ARGS(&amp;amp;amp;amp;amp;amp;burnVerifier));
+
+    if (SUCCEEDED(hr))
+    {
+        hr = burnVerifier-&gt;put_BurnVerificationLevel(VerificationLevel);
+    }
+
+    if (burnVerifier != NULL)
+    {
+        burnVerifier-&gt;Release();
+        burnVerifier = NULL;
+    }
+
+    return hr;
+}
+
+</code>
+      <para>This interface is supported in Windows Server 2003 with Service Pack 1 (SP1), Windows XP with Service Pack 2 (SP2),  and Windows Vista  via the Windows Feature Pack for Storage. All  features provided by this  update package are supported natively in Windows 7 and Windows Server 2008 R2.</para>
+    </remarks>
+    <seealso cref="IDiscFormat2Data" />
+    <seealso cref="IDiscFormat2TrackAtOnce" />
+    <seealso cref="IMAPI_BURN_VERIFICATION_LEVEL" />
+  </member>
+</doc>

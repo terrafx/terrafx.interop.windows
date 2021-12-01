@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMAGEHLP_JIT_SYMBOLMAP.xml' path='doc/member[@name="IMAGEHLP_JIT_SYMBOLMAP"]/*' />
 public partial struct IMAGEHLP_JIT_SYMBOLMAP
 {
+    /// <include file='IMAGEHLP_JIT_SYMBOLMAP.xml' path='doc/member[@name="IMAGEHLP_JIT_SYMBOLMAP.SizeOfStruct"]/*' />
     [NativeTypeName("DWORD")]
     public uint SizeOfStruct;
 
+    /// <include file='IMAGEHLP_JIT_SYMBOLMAP.xml' path='doc/member[@name="IMAGEHLP_JIT_SYMBOLMAP.Address"]/*' />
     [NativeTypeName("DWORD64")]
     public ulong Address;
 
+    /// <include file='IMAGEHLP_JIT_SYMBOLMAP.xml' path='doc/member[@name="IMAGEHLP_JIT_SYMBOLMAP.BaseOfImage"]/*' />
     [NativeTypeName("DWORD64")]
     public ulong BaseOfImage;
 }

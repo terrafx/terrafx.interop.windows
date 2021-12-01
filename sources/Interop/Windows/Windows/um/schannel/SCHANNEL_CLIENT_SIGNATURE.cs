@@ -5,20 +5,26 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SCHANNEL_CLIENT_SIGNATURE.xml' path='doc/member[@name="SCHANNEL_CLIENT_SIGNATURE"]/*' />
 public unsafe partial struct SCHANNEL_CLIENT_SIGNATURE
 {
+    /// <include file='SCHANNEL_CLIENT_SIGNATURE.xml' path='doc/member[@name="SCHANNEL_CLIENT_SIGNATURE.cbLength"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbLength;
 
+    /// <include file='SCHANNEL_CLIENT_SIGNATURE.xml' path='doc/member[@name="SCHANNEL_CLIENT_SIGNATURE.aiHash"]/*' />
     [NativeTypeName("ALG_ID")]
     public uint aiHash;
 
+    /// <include file='SCHANNEL_CLIENT_SIGNATURE.xml' path='doc/member[@name="SCHANNEL_CLIENT_SIGNATURE.cbHash"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbHash;
 
+    /// <include file='SCHANNEL_CLIENT_SIGNATURE.xml' path='doc/member[@name="SCHANNEL_CLIENT_SIGNATURE.HashValue"]/*' />
     [NativeTypeName("BYTE [36]")]
     public fixed byte HashValue[36];
 
+    /// <include file='SCHANNEL_CLIENT_SIGNATURE.xml' path='doc/member[@name="SCHANNEL_CLIENT_SIGNATURE.CertThumbprint"]/*' />
     [NativeTypeName("BYTE [20]")]
     public fixed byte CertThumbprint[20];
 }

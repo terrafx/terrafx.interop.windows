@@ -8,46 +8,61 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WINTRUST_DATA.xml' path='doc/member[@name="WINTRUST_DATA"]/*' />
 public unsafe partial struct WINTRUST_DATA
 {
+    /// <include file='WINTRUST_DATA.xml' path='doc/member[@name="WINTRUST_DATA.cbStruct"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbStruct;
 
+    /// <include file='WINTRUST_DATA.xml' path='doc/member[@name="WINTRUST_DATA.pPolicyCallbackData"]/*' />
     [NativeTypeName("LPVOID")]
     public void* pPolicyCallbackData;
 
+    /// <include file='WINTRUST_DATA.xml' path='doc/member[@name="WINTRUST_DATA.pSIPClientData"]/*' />
     [NativeTypeName("LPVOID")]
     public void* pSIPClientData;
 
+    /// <include file='WINTRUST_DATA.xml' path='doc/member[@name="WINTRUST_DATA.dwUIChoice"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwUIChoice;
 
+    /// <include file='WINTRUST_DATA.xml' path='doc/member[@name="WINTRUST_DATA.fdwRevocationChecks"]/*' />
     [NativeTypeName("DWORD")]
     public uint fdwRevocationChecks;
 
+    /// <include file='WINTRUST_DATA.xml' path='doc/member[@name="WINTRUST_DATA.dwUnionChoice"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwUnionChoice;
 
+    /// <include file='WINTRUST_DATA.xml' path='doc/member[@name="WINTRUST_DATA.Anonymous"]/*' />
     [NativeTypeName("_WINTRUST_DATA::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/WinTrust.h:116:5)")]
     public _Anonymous_e__Union Anonymous;
 
+    /// <include file='WINTRUST_DATA.xml' path='doc/member[@name="WINTRUST_DATA.dwStateAction"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwStateAction;
 
+    /// <include file='WINTRUST_DATA.xml' path='doc/member[@name="WINTRUST_DATA.hWVTStateData"]/*' />
     public HANDLE hWVTStateData;
 
+    /// <include file='WINTRUST_DATA.xml' path='doc/member[@name="WINTRUST_DATA.pwszURLReference"]/*' />
     [NativeTypeName("WCHAR *")]
     public ushort* pwszURLReference;
 
+    /// <include file='WINTRUST_DATA.xml' path='doc/member[@name="WINTRUST_DATA.dwProvFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwProvFlags;
 
+    /// <include file='WINTRUST_DATA.xml' path='doc/member[@name="WINTRUST_DATA.dwUIContext"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwUIContext;
 
+    /// <include file='WINTRUST_DATA.xml' path='doc/member[@name="WINTRUST_DATA.pSignatureSettings"]/*' />
     [NativeTypeName("struct WINTRUST_SIGNATURE_SETTINGS_ *")]
     public WINTRUST_SIGNATURE_SETTINGS* pSignatureSettings;
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pFile"]/*' />
     public ref WINTRUST_FILE_INFO* pFile
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -57,6 +72,7 @@ public unsafe partial struct WINTRUST_DATA
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pCatalog"]/*' />
     public ref WINTRUST_CATALOG_INFO* pCatalog
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -66,6 +82,7 @@ public unsafe partial struct WINTRUST_DATA
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pBlob"]/*' />
     public ref WINTRUST_BLOB_INFO* pBlob
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -75,6 +92,7 @@ public unsafe partial struct WINTRUST_DATA
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pSgnr"]/*' />
     public ref WINTRUST_SGNR_INFO* pSgnr
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -84,6 +102,7 @@ public unsafe partial struct WINTRUST_DATA
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pCert"]/*' />
     public ref WINTRUST_CERT_INFO* pCert
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -93,25 +112,31 @@ public unsafe partial struct WINTRUST_DATA
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public unsafe partial struct _Anonymous_e__Union
     {
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pFile"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("struct WINTRUST_FILE_INFO_ *")]
         public WINTRUST_FILE_INFO* pFile;
 
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pCatalog"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("struct WINTRUST_CATALOG_INFO_ *")]
         public WINTRUST_CATALOG_INFO* pCatalog;
 
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pBlob"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("struct WINTRUST_BLOB_INFO_ *")]
         public WINTRUST_BLOB_INFO* pBlob;
 
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pSgnr"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("struct WINTRUST_SGNR_INFO_ *")]
         public WINTRUST_SGNR_INFO* pSgnr;
 
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pCert"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("struct WINTRUST_CERT_INFO_ *")]
         public WINTRUST_CERT_INFO* pCert;

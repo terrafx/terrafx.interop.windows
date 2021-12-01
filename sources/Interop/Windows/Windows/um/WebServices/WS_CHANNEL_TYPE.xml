@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_CHANNEL_TYPE">
+    <summary>
+      <para>Indicates the basic characteristics of the channel, such as whether it is
+sessionful, and what directions of communication are supported.</para>
+    </summary>
+  </member>
+  <member name="WS_CHANNEL_TYPE.WS_CHANNEL_TYPE_INPUT">
+    <summary>
+      <para>Input channels support Receive operations.  They are used on the sender side.</para>
+      <para>The <see cref="WS_UDP_CHANNEL_BINDING" /> supports this channel type
+when used with <see cref="WsCreateChannelForListener" />.</para>
+    </summary>
+  </member>
+  <member name="WS_CHANNEL_TYPE.WS_CHANNEL_TYPE_OUTPUT">
+    <summary>
+      <para>Output channels support Send operations.</para>
+      <para>This channel type is not currently supported by any channel bindings.</para>
+    </summary>
+  </member>
+  <member name="WS_CHANNEL_TYPE.WS_CHANNEL_TYPE_SESSION">
+    <summary>
+      <para>Sessionful channels provide channel-level correlation of all messages sent or received.</para>
+      <para>This is a flag used to build <see cref="WS_CHANNEL_TYPE_INPUT_SESSION" />,
+<b>WS_CHANNEL_TYPE_OUTPUT_SESSION</b>, and <b>WS_CHANNEL_TYPE_DUPLEX_SESSION</b>,
+but cannot be used alone.</para>
+    </summary>
+  </member>
+  <member name="WS_CHANNEL_TYPE.WS_CHANNEL_TYPE_INPUT_SESSION">
+    <summary>
+      <para>An input channel that supports a session.</para>
+      <para>This channel type is not currently supported by any channel bindings.</para>
+    </summary>
+  </member>
+  <member name="WS_CHANNEL_TYPE.WS_CHANNEL_TYPE_OUTPUT_SESSION">
+    <summary>
+      <para>An output channel that supports a session.</para>
+      <para>This channel type is not currently supported by any channel bindings.</para>
+    </summary>
+  </member>
+  <member name="WS_CHANNEL_TYPE.WS_CHANNEL_TYPE_DUPLEX">
+    <summary>
+      <para>An input/output channel.</para>
+      <para>The <see cref="WS_UDP_CHANNEL_BINDING" /> supports this channel type
+when used with <see cref="WsCreateChannel" />.</para>
+    </summary>
+  </member>
+  <member name="WS_CHANNEL_TYPE.WS_CHANNEL_TYPE_DUPLEX_SESSION">
+    <summary>
+      <para>An input/output channel that supports a session.</para>
+      <para>The <see cref="WS_TCP_CHANNEL_BINDING" /> supports this channel type when
+used with <see cref="WsCreateChannel" /> or <see cref="WsCreateChannelForListener" />.</para>
+    </summary>
+  </member>
+  <member name="WS_CHANNEL_TYPE.WS_CHANNEL_TYPE_REQUEST">
+    <summary>
+      <para>Request channels support Send followed by Receive.  They are used on the client
+side for channels that support request-reply operations.</para>
+      <para>The <see cref="WS_HTTP_CHANNEL_BINDING" /> supports this channel type when
+used with <see cref="WsCreateChannel" />.</para>
+      <para>Note that request channels provide built-in correlation of request replies.
+It is possible to do request-reply correlation on other channel types using the
+addressing headers (RelatesTo and MessageID).</para>
+    </summary>
+  </member>
+  <member name="WS_CHANNEL_TYPE.WS_CHANNEL_TYPE_REPLY">
+    <summary>
+      <para>Reply channels support Receive followed by Send.  They are used on the service
+side for channels that support request-reply operations (for example, HTTP).</para>
+      <para>The <see cref="WS_HTTP_CHANNEL_BINDING" /> supports this channel type when
+used with <see cref="WsCreateChannelForListener" />.</para>
+      <para>Note that reply channels provide built-in correlation of request replies.
+It is possible to do request-reply correlation on other channel types using the
+addressing headers (RelatesTo and MessageID).</para>
+    </summary>
+  </member>
+</doc>

@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SVGPathSegList.xml' path='doc/member[@name="SVGPathSegList"]/*' />
 [Guid("305105B4-98B5-11CF-BB82-00AA00BDCE0B")]
 public partial struct SVGPathSegList
 {

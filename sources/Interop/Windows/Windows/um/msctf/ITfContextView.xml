@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ITfContextView.GetRangeFromPoint">
+    <summary>
+      <para>The <b>ITfContextView.GetRangeFromPoint</b> method converts a point, in screen coordinates, to an empty range of text positioned at a corresponding location.</para>
+    </summary>
+    <param name="ec">
+      <para>Specifies the edit cookie with read-only access.</para>
+    </param>
+    <param name="ppt">
+      <para>Specifies the point in screen coordinates.</para>
+    </param>
+    <param name="dwFlags">
+      <para>Specifies the range position to return based upon the screen coordinates of the point to a character bounding box. By default, the range position returned is the character bounding box containing the screen coordinates of the point. If the point is outside a character bounding box, the method returns <b>NULL</b> or <a href="https://docs.microsoft.com//windows/desktop/TSF/manager-return-values">TF_E_INVALIDPOINT</a>. Other bit flags for this parameter are as follows.</para>
+      <para>The bit flags can be combined.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>GXFPF_ROUND_NEAREST</b>
+          </description>
+          <description>
+            <para>If the screen coordinates of the point are contained in a character bounding box, the range position returned is the bounding edge closest to the screen coordinates of the point.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>GXFPF_NEAREST</b>
+          </description>
+          <description>
+            <para>If the screen coordinates of the point are not contained in a character bounding box, the closest range position is returned.</para>
+          </description>
+        </item>
+      </list>
+    </param>
+    <param name="ppRange">
+      <para>Receives a pointer to the ITfRange interface.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>TF_E_INVALIDPOINT</b>
+            </para>
+          </description>
+          <description>
+            <para>The <i>pptScreen</i> parameter does not cover any document text.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>TF_E_NOLAYOUT</b>
+            </para>
+          </description>
+          <description>
+            <para>The application has not calculated a text layout.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>TF_E_NOLOCK</b>
+            </para>
+          </description>
+          <description>
+            <para>The specified edit cookie is invalid.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>
+        <img alt="Point 1 is in character bounding box and point 2 is outside the character bounding box." src="https://docs.microsoft.com/windows/win32/api/msctf/images/RngFig01.gif" />
+      </para>
+      <para>By default, the method will return a range positioned at 0 for point 1 and TF_E_INVALIDPOINT for point 2. If the <i>dwFlags</i> parameter is set to <a href="https://docs.microsoft.com//windows/desktop/TSF/gxfpf--constants">GXFPF_ROUND_NEAREST</a>, the method returns range position 1 for point 1. If the <i>dwFlags</i> parameter is set to GXFPF_NEAREST then the method returns range position 2 for point 2.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/gxfpf--constants">GXFPF_NEAREST
+</seealso>
+    <seealso cref="ITfContextView" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/manager-return-values">TF_E_INVALIDPOINT</seealso>
+  </member>
+  <member name="ITfContextView.GetScreenExt">
+    <summary>
+      <para>The <b>ITfContextView.GetScreenExt</b> method returns the bounding box, in screen coordinates, of the document display.</para>
+    </summary>
+    <param name="prc">
+      <para>Receives the bounding box, in screen coordinates, of the display surface.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The <i>prc</i> parameter is cleared to {0,0,0,0} if the document is not currently displayed.</para>
+    </remarks>
+    <seealso cref="ITextStoreACP.GetScreenExt " />
+    <seealso cref="ITfContextOwner.GetScreenExt " />
+    <seealso cref="ITfContextView" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/tsviewcookie">TsViewCookie
+</seealso>
+  </member>
+  <member name="ITfContextView.GetTextExt">
+    <summary>
+      <para>The <b>ITfContextView.GetTextExt</b> method returns the bounding box, in screen coordinates, of a range of text.</para>
+    </summary>
+    <param name="ec">
+      <para>Specifies an edit cookie with read-only access.</para>
+    </param>
+    <param name="pRange">
+      <para>Specifies the range to query</para>
+    </param>
+    <param name="prc">
+      <para>Receives the bounding box, in screen coordinates, of the range.</para>
+    </param>
+    <param name="pfClipped">
+      <para>Receives the Boolean value that specifies if the text in the bounding box has been clipped. If this parameter is <b>TRUE</b>, the bounding box contains clipped text and does not include the entire requested range. The bounding box is clipped because of the requested range is not visible.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>TS_E_NOLAYOUT</b>
+            </para>
+          </description>
+          <description>
+            <para>The text is not rendered or the context has not calculated the text layout.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>TF_E_NOLOCK</b>
+            </para>
+          </description>
+          <description>
+            <para>The edit cookie parameter is invalid.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>If the document window is minimized, or if the specified text is not currently visible, the method returns S_OK with the <i>prc</i> parameter set to {0,0,0,0}.</para>
+    </remarks>
+    <seealso cref="ITfContextOwner.GetTextExt " />
+    <seealso cref="ITfContextView" />
+  </member>
+  <member name="ITfContextView.GetWnd">
+    <summary>
+      <para>The <b>ITfContextView.GetWnd</b> method returns the handle to a window that corresponds to the current document.</para>
+    </summary>
+    <param name="phwnd">
+      <para>Receives a pointer to the handle of the window that corresponds to the current document.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>A document might not have a corresponding window handle if the document is in memory but not displayed on the screen or if the document is a windowless control and the control does not have the window handle of the owner of the windowless controls. Callers cannot assume that the <i>phwnd</i> parameter will receive a non-<b>NULL</b> value even if the method is successful. Callers can also receive a <b>NULL</b> value for the <i>phwnd</i> parameter.</para>
+    </remarks>
+  </member>
+  <member name="ITfContextView">
+    <summary>
+      <para>The <b>ITfContextView</b> interface is implemented by the TSF manager and used by a client (application or text service) to obtain information about a context view. Clients obtain this interface by calling the <see cref="ITfContext.GetActiveView" /> method which returns a pointer to the <b>ITfContextView</b> object.</para>
+    </summary>
+    <seealso cref="ITfContext" />
+    <seealso cref="IUnknown" />
+  </member>
+</doc>

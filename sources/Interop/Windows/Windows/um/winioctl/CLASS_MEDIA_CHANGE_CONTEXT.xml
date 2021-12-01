@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CLASS_MEDIA_CHANGE_CONTEXT">
+    <summary>
+      <para>Contains information associated with a media change event.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DevIO/dbt-customevent">DBT_CUSTOMEVENT</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DevIO/dbt-deviceremovecomplete">DBT_DEVICEREMOVECOMPLETE</seealso>
+  </member>
+  <member name="CLASS_MEDIA_CHANGE_CONTEXT.MediaChangeCount">
+    <summary>
+      <para>The number of times that media has been changed since system startup.</para>
+    </summary>
+  </member>
+  <member name="CLASS_MEDIA_CHANGE_CONTEXT.NewState">
+    <summary>
+      <para>The state information. This member can be one of the following values from the
+<b>MEDIA_CHANGE_DETECTION_STATE</b> enumeration type.</para>
+      <h4>MediaUnknown (0)</h4>
+      <h4>MediaPresent (1)</h4>
+      <h4>MediaNotPresent (2)</h4>
+      <h4>MediaUnavailable (3)</h4>
+    </summary>
+  </member>
+</doc>

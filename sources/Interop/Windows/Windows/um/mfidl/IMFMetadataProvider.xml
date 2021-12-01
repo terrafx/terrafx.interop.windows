@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFMetadataProvider.GetMFMetadata">
+    <summary>
+      <para>Gets a collection of metadata, either for an entire presentation, or for one stream in the presentation.</para>
+    </summary>
+    <param name="pPresentationDescriptor">
+      <para>Pointer to the <see cref="IMFPresentationDescriptor" /> interface of the media source's presentation descriptor.</para>
+    </param>
+    <param name="dwStreamIdentifier">
+      <para>If this parameter is zero, the method retrieves metadata that applies to the entire presentation. Otherwise, this <i></i> parameter specifies a stream identifier, and the method retrieves metadata for that stream. To get the stream identifier for a stream, call <see cref="IMFStreamDescriptor.GetStreamIdentifier" />.</para>
+    </param>
+    <param name="dwFlags">
+      <para>Reserved. Must be zero.</para>
+    </param>
+    <param name="ppMFMetadata">
+      <para>Receives a pointer to the <see cref="IMFMetadata" /> interface. Use this interface to access the metadata. The caller must release the interface.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_PROPERTY_NOT_FOUND</b>
+            </para>
+          </description>
+          <description>
+            <para>No metadata is available for the requested stream or presentation.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IMFMetadataProvider" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-metadata">Media Metadata</seealso>
+  </member>
+  <member name="IMFMetadataProvider">
+    <summary>
+      <para>Gets metadata from a media source or other object.</para>
+      <para>If a media source supports this interface, it must expose the interface as a service. To get a pointer to this interface from a media source, call <see cref="IMFGetService.GetService" />. The service identifier is <b>MF_METADATA_PROVIDER_SERVICE</b>. Other types of object can expose this interface through <b>QueryInterface</b>.</para>
+      <para>Use this interface to get a pointer to the <see cref="IMFMetadata" /> interface.</para>
+    </summary>
+    <seealso cref="IMFMetadata" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-metadata">Media Metadata</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/service-interfaces">Service Interfaces</seealso>
+  </member>
+</doc>

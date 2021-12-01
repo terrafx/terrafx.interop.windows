@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IExtractImage.xml' path='doc/member[@name="IExtractImage"]/*' />
 [Guid("BB2E617C-0920-11D1-9A0B-00C04FC2D6C1")]
 [NativeTypeName("struct IExtractImage : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IExtractImage : IExtractImage.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IExtractImage : IExtractImage.Interface
         return ((delegate* unmanaged<IExtractImage*, Guid*, void**, int>)(lpVtbl[0]))((IExtractImage*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IExtractImage : IExtractImage.Interface
         return ((delegate* unmanaged<IExtractImage*, uint>)(lpVtbl[1]))((IExtractImage*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IExtractImage : IExtractImage.Interface
         return ((delegate* unmanaged<IExtractImage*, uint>)(lpVtbl[2]))((IExtractImage*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IExtractImage.xml' path='doc/member[@name="IExtractImage.GetLocation"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetLocation([NativeTypeName("LPWSTR")] ushort* pszPathBuffer, [NativeTypeName("DWORD")] uint cch, [NativeTypeName("DWORD *")] uint* pdwPriority, [NativeTypeName("const SIZE *")] SIZE* prgSize, [NativeTypeName("DWORD")] uint dwRecClrDepth, [NativeTypeName("DWORD *")] uint* pdwFlags)
@@ -46,6 +51,7 @@ public unsafe partial struct IExtractImage : IExtractImage.Interface
         return ((delegate* unmanaged<IExtractImage*, ushort*, uint, uint*, SIZE*, uint, uint*, int>)(lpVtbl[3]))((IExtractImage*)Unsafe.AsPointer(ref this), pszPathBuffer, cch, pdwPriority, prgSize, dwRecClrDepth, pdwFlags);
     }
 
+    /// <include file='IExtractImage.xml' path='doc/member[@name="IExtractImage.Extract"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Extract(HBITMAP* phBmpThumbnail)

@@ -5,13 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DUPLICATE_EXTENTS_DATA.xml' path='doc/member[@name="DUPLICATE_EXTENTS_DATA"]/*' />
 public partial struct DUPLICATE_EXTENTS_DATA
 {
+    /// <include file='DUPLICATE_EXTENTS_DATA.xml' path='doc/member[@name="DUPLICATE_EXTENTS_DATA.FileHandle"]/*' />
     public HANDLE FileHandle;
 
+    /// <include file='DUPLICATE_EXTENTS_DATA.xml' path='doc/member[@name="DUPLICATE_EXTENTS_DATA.SourceFileOffset"]/*' />
     public LARGE_INTEGER SourceFileOffset;
 
+    /// <include file='DUPLICATE_EXTENTS_DATA.xml' path='doc/member[@name="DUPLICATE_EXTENTS_DATA.TargetFileOffset"]/*' />
     public LARGE_INTEGER TargetFileOffset;
 
+    /// <include file='DUPLICATE_EXTENTS_DATA.xml' path='doc/member[@name="DUPLICATE_EXTENTS_DATA.ByteCount"]/*' />
     public LARGE_INTEGER ByteCount;
 }

@@ -5,13 +5,27 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MFVideoLighting.xml' path='doc/member[@name="MFVideoLighting"]/*' />
 public enum MFVideoLighting
 {
+    /// <include file='MFVideoLighting.xml' path='doc/member[@name="MFVideoLighting.MFVideoLighting_Unknown"]/*' />
     MFVideoLighting_Unknown = 0,
+
+    /// <include file='MFVideoLighting.xml' path='doc/member[@name="MFVideoLighting.MFVideoLighting_bright"]/*' />
     MFVideoLighting_bright = 1,
+
+    /// <include file='MFVideoLighting.xml' path='doc/member[@name="MFVideoLighting.MFVideoLighting_office"]/*' />
     MFVideoLighting_office = 2,
+
+    /// <include file='MFVideoLighting.xml' path='doc/member[@name="MFVideoLighting.MFVideoLighting_dim"]/*' />
     MFVideoLighting_dim = 3,
+
+    /// <include file='MFVideoLighting.xml' path='doc/member[@name="MFVideoLighting.MFVideoLighting_dark"]/*' />
     MFVideoLighting_dark = 4,
+
+    /// <include file='MFVideoLighting.xml' path='doc/member[@name="MFVideoLighting.MFVideoLighting_Last"]/*' />
     MFVideoLighting_Last = (MFVideoLighting_dark + 1),
+
+    /// <include file='MFVideoLighting.xml' path='doc/member[@name="MFVideoLighting.MFVideoLighting_ForceDWORD"]/*' />
     MFVideoLighting_ForceDWORD = 0x7fffffff,
 }

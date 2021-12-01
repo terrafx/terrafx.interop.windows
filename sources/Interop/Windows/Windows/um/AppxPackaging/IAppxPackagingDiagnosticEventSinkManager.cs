@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAppxPackagingDiagnosticEventSinkManager.xml' path='doc/member[@name="IAppxPackagingDiagnosticEventSinkManager"]/*' />
 [Guid("369648FA-A7EB-4909-A15D-6954A078F18A")]
 [NativeTypeName("struct IAppxPackagingDiagnosticEventSinkManager : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IAppxPackagingDiagnosticEventSinkManager : IAppxPac
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IAppxPackagingDiagnosticEventSinkManager : IAppxPac
         return ((delegate* unmanaged<IAppxPackagingDiagnosticEventSinkManager*, Guid*, void**, int>)(lpVtbl[0]))((IAppxPackagingDiagnosticEventSinkManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IAppxPackagingDiagnosticEventSinkManager : IAppxPac
         return ((delegate* unmanaged<IAppxPackagingDiagnosticEventSinkManager*, uint>)(lpVtbl[1]))((IAppxPackagingDiagnosticEventSinkManager*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IAppxPackagingDiagnosticEventSinkManager : IAppxPac
         return ((delegate* unmanaged<IAppxPackagingDiagnosticEventSinkManager*, uint>)(lpVtbl[2]))((IAppxPackagingDiagnosticEventSinkManager*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAppxPackagingDiagnosticEventSinkManager.xml' path='doc/member[@name="IAppxPackagingDiagnosticEventSinkManager.SetSinkForProcess"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetSinkForProcess(IAppxPackagingDiagnosticEventSink* sink)

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IUIAnimationTimerClientEventHandler.OnTimerClientStatusChanged">
+    <summary>
+      <para>Handles events that occur when the status of the timer's  client changes.</para>
+    </summary>
+    <param name="newStatus">
+      <para>The new status of the timer's client.</para>
+    </param>
+    <param name="previousStatus">
+      <para>The previous status of the timer's client.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
+    </returns>
+    <seealso cref="IUIAnimationTimerClientEventHandler" />
+    <seealso cref="IUIAnimationTimerUpdateHandler.ClearTimerClientEventHandler" />
+    <seealso cref="IUIAnimationTimerUpdateHandler.SetTimerClientEventHandler" />
+    <seealso cref="UI_ANIMATION_TIMER_CLIENT_STATUS" />
+  </member>
+  <member name="IUIAnimationTimerClientEventHandler">
+    <summary>
+      <para>Defines a method for handling events related to changes in timer client status.</para>
+    </summary>
+    <seealso cref="IUIAnimationTimer" />
+    <seealso cref="IUIAnimationTimerUpdateHandler.ClearTimerClientEventHandler" />
+    <seealso cref="IUIAnimationTimerUpdateHandler.SetTimerClientEventHandler" />
+    <seealso cref="IUnknown" />
+  </member>
+</doc>

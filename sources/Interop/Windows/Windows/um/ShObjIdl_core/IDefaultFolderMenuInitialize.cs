@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IDefaultFolderMenuInitialize.xml' path='doc/member[@name="IDefaultFolderMenuInitialize"]/*' />
 [Guid("7690AA79-F8FC-4615-A327-36F7D18F5D91")]
 [NativeTypeName("struct IDefaultFolderMenuInitialize : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IDefaultFolderMenuInitialize : IDefaultFolderMenuIn
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IDefaultFolderMenuInitialize : IDefaultFolderMenuIn
         return ((delegate* unmanaged<IDefaultFolderMenuInitialize*, Guid*, void**, int>)(lpVtbl[0]))((IDefaultFolderMenuInitialize*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IDefaultFolderMenuInitialize : IDefaultFolderMenuIn
         return ((delegate* unmanaged<IDefaultFolderMenuInitialize*, uint>)(lpVtbl[1]))((IDefaultFolderMenuInitialize*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IDefaultFolderMenuInitialize : IDefaultFolderMenuIn
         return ((delegate* unmanaged<IDefaultFolderMenuInitialize*, uint>)(lpVtbl[2]))((IDefaultFolderMenuInitialize*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDefaultFolderMenuInitialize.xml' path='doc/member[@name="IDefaultFolderMenuInitialize.Initialize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Initialize(HWND hwnd, IContextMenuCB* pcmcb, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlFolder, IShellFolder* psf, uint cidl, [NativeTypeName("LPCITEMIDLIST *")] ITEMIDLIST** apidl, IUnknown* punkAssociation, uint cKeys, [NativeTypeName("const HKEY *")] HKEY* aKeys)
@@ -46,6 +51,7 @@ public unsafe partial struct IDefaultFolderMenuInitialize : IDefaultFolderMenuIn
         return ((delegate* unmanaged<IDefaultFolderMenuInitialize*, HWND, IContextMenuCB*, ITEMIDLIST*, IShellFolder*, uint, ITEMIDLIST**, IUnknown*, uint, HKEY*, int>)(lpVtbl[3]))((IDefaultFolderMenuInitialize*)Unsafe.AsPointer(ref this), hwnd, pcmcb, pidlFolder, psf, cidl, apidl, punkAssociation, cKeys, aKeys);
     }
 
+    /// <include file='IDefaultFolderMenuInitialize.xml' path='doc/member[@name="IDefaultFolderMenuInitialize.SetMenuRestrictions"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetMenuRestrictions(DEFAULT_FOLDER_MENU_RESTRICTIONS dfmrValues)
@@ -53,6 +59,7 @@ public unsafe partial struct IDefaultFolderMenuInitialize : IDefaultFolderMenuIn
         return ((delegate* unmanaged<IDefaultFolderMenuInitialize*, DEFAULT_FOLDER_MENU_RESTRICTIONS, int>)(lpVtbl[4]))((IDefaultFolderMenuInitialize*)Unsafe.AsPointer(ref this), dfmrValues);
     }
 
+    /// <include file='IDefaultFolderMenuInitialize.xml' path='doc/member[@name="IDefaultFolderMenuInitialize.GetMenuRestrictions"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetMenuRestrictions(DEFAULT_FOLDER_MENU_RESTRICTIONS dfmrMask, DEFAULT_FOLDER_MENU_RESTRICTIONS* pdfmrValues)
@@ -60,6 +67,7 @@ public unsafe partial struct IDefaultFolderMenuInitialize : IDefaultFolderMenuIn
         return ((delegate* unmanaged<IDefaultFolderMenuInitialize*, DEFAULT_FOLDER_MENU_RESTRICTIONS, DEFAULT_FOLDER_MENU_RESTRICTIONS*, int>)(lpVtbl[5]))((IDefaultFolderMenuInitialize*)Unsafe.AsPointer(ref this), dfmrMask, pdfmrValues);
     }
 
+    /// <include file='IDefaultFolderMenuInitialize.xml' path='doc/member[@name="IDefaultFolderMenuInitialize.SetHandlerClsid"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT SetHandlerClsid([NativeTypeName("const IID &")] Guid* rclsid)

@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CRYPT_TIME_STAMP_REQUEST_INFO">
+    <summary>
+      <para>The <b>CRYPT_TIME_STAMP_REQUEST_INFO</b> structure is used for time stamping. To add an authenticated attribute when signing an executable file to verify the date and time of the signature, a signed time stamp is requested from a time stamp server. The <b>CRYPT_TIME_STAMP_REQUEST_INFO</b> structure is used to get a time stamp. It contains the signature bits of the material being time stamped in the <b>Content</b> field.</para>
+    </summary>
+    <seealso cref="CRYPT_ATTRIBUTE" />
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_INTEGER_BLOB</seealso>
+  </member>
+  <member name="CRYPT_TIME_STAMP_REQUEST_INFO.pszTimeStampAlgorithm">
+    <summary>
+      <para>The <a href="https://docs.microsoft.com//windows/desktop/SecGloss/o-gly">object identifier</a> (OID) that specifies the desired format of the time stamp, usually UTC.</para>
+    </summary>
+  </member>
+  <member name="CRYPT_TIME_STAMP_REQUEST_INFO.pszContentType">
+    <summary>
+      <para>The OID of the Content Type of the content, usually DATA.</para>
+    </summary>
+  </member>
+  <member name="CRYPT_TIME_STAMP_REQUEST_INFO.Content">
+    <summary>
+      <para>A <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_OBJID_BLOB</a> structure that contains the encoded signature bits of the material being time stamped.</para>
+    </summary>
+  </member>
+  <member name="CRYPT_TIME_STAMP_REQUEST_INFO.cAttribute">
+    <summary>
+      <para>The number of elements in the <b>rgAttribute</b> array.</para>
+    </summary>
+  </member>
+  <member name="CRYPT_TIME_STAMP_REQUEST_INFO.rgAttribute">
+    <summary>
+      <para>Array of pointers to
+<see cref="CRYPT_ATTRIBUTE" /> structures, each holding an encoded attribute.</para>
+    </summary>
+  </member>
+</doc>

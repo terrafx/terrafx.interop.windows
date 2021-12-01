@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='svgMorphologyOperator.xml' path='doc/member[@name="svgMorphologyOperator"]/*' />
 public enum svgMorphologyOperator
 {
+    /// <include file='svgMorphologyOperator.xml' path='doc/member[@name="svgMorphologyOperator.SVG_MORPHOLOGY_OPERATOR_UNKNOWN"]/*' />
     SVG_MORPHOLOGY_OPERATOR_UNKNOWN = 0,
+
+    /// <include file='svgMorphologyOperator.xml' path='doc/member[@name="svgMorphologyOperator.SVG_MORPHOLOGY_OPERATOR_ERODE"]/*' />
     SVG_MORPHOLOGY_OPERATOR_ERODE = 1,
+
+    /// <include file='svgMorphologyOperator.xml' path='doc/member[@name="svgMorphologyOperator.SVG_MORPHOLOGY_OPERATOR_DILATE"]/*' />
     SVG_MORPHOLOGY_OPERATOR_DILATE = 2,
+
+    /// <include file='svgMorphologyOperator.xml' path='doc/member[@name="svgMorphologyOperator.svgMorphologyOperator_Max"]/*' />
     svgMorphologyOperator_Max = 2147483647,
 }

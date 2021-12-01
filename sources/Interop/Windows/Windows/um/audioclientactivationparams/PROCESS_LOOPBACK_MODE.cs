@@ -7,9 +7,13 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PROCESS_LOOPBACK_MODE.xml' path='doc/member[@name="PROCESS_LOOPBACK_MODE"]/*' />
 [SupportedOSPlatform("windows10.0.19043.0")]
 public enum PROCESS_LOOPBACK_MODE
 {
+    /// <include file='PROCESS_LOOPBACK_MODE.xml' path='doc/member[@name="PROCESS_LOOPBACK_MODE.PROCESS_LOOPBACK_MODE_INCLUDE_TARGET_PROCESS_TREE"]/*' />
     PROCESS_LOOPBACK_MODE_INCLUDE_TARGET_PROCESS_TREE = 0,
+
+    /// <include file='PROCESS_LOOPBACK_MODE.xml' path='doc/member[@name="PROCESS_LOOPBACK_MODE.PROCESS_LOOPBACK_MODE_EXCLUDE_TARGET_PROCESS_TREE"]/*' />
     PROCESS_LOOPBACK_MODE_EXCLUDE_TARGET_PROCESS_TREE = 1,
 }

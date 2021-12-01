@@ -5,14 +5,30 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SPSHORTCUTTYPE.xml' path='doc/member[@name="SPSHORTCUTTYPE"]/*' />
 public enum SPSHORTCUTTYPE
 {
+    /// <include file='SPSHORTCUTTYPE.xml' path='doc/member[@name="SPSHORTCUTTYPE.SPSHT_NotOverriden"]/*' />
     SPSHT_NotOverriden = -1,
+
+    /// <include file='SPSHORTCUTTYPE.xml' path='doc/member[@name="SPSHORTCUTTYPE.SPSHT_Unknown"]/*' />
     SPSHT_Unknown = 0,
+
+    /// <include file='SPSHORTCUTTYPE.xml' path='doc/member[@name="SPSHORTCUTTYPE.SPSHT_EMAIL"]/*' />
     SPSHT_EMAIL = 0x1000,
+
+    /// <include file='SPSHORTCUTTYPE.xml' path='doc/member[@name="SPSHORTCUTTYPE.SPSHT_OTHER"]/*' />
     SPSHT_OTHER = 0x2000,
+
+    /// <include file='SPSHORTCUTTYPE.xml' path='doc/member[@name="SPSHORTCUTTYPE.SPPS_RESERVED1"]/*' />
     SPPS_RESERVED1 = 0x3000,
+
+    /// <include file='SPSHORTCUTTYPE.xml' path='doc/member[@name="SPSHORTCUTTYPE.SPPS_RESERVED2"]/*' />
     SPPS_RESERVED2 = 0x4000,
+
+    /// <include file='SPSHORTCUTTYPE.xml' path='doc/member[@name="SPSHORTCUTTYPE.SPPS_RESERVED3"]/*' />
     SPPS_RESERVED3 = 0x5000,
+
+    /// <include file='SPSHORTCUTTYPE.xml' path='doc/member[@name="SPSHORTCUTTYPE.SPPS_RESERVED4"]/*' />
     SPPS_RESERVED4 = 0xf000,
 }

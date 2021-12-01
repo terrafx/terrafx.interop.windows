@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ISpPhoneticAlphabetSelection.xml' path='doc/member[@name="ISpPhoneticAlphabetSelection"]/*' />
 [Guid("B2745EFD-42CE-48CA-81F1-A96E02538A90")]
 [NativeTypeName("struct ISpPhoneticAlphabetSelection : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ISpPhoneticAlphabetSelection : ISpPhoneticAlphabetS
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ISpPhoneticAlphabetSelection : ISpPhoneticAlphabetS
         return ((delegate* unmanaged<ISpPhoneticAlphabetSelection*, Guid*, void**, int>)(lpVtbl[0]))((ISpPhoneticAlphabetSelection*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ISpPhoneticAlphabetSelection : ISpPhoneticAlphabetS
         return ((delegate* unmanaged<ISpPhoneticAlphabetSelection*, uint>)(lpVtbl[1]))((ISpPhoneticAlphabetSelection*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ISpPhoneticAlphabetSelection : ISpPhoneticAlphabetS
         return ((delegate* unmanaged<ISpPhoneticAlphabetSelection*, uint>)(lpVtbl[2]))((ISpPhoneticAlphabetSelection*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ISpPhoneticAlphabetSelection.xml' path='doc/member[@name="ISpPhoneticAlphabetSelection.IsAlphabetUPS"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT IsAlphabetUPS(BOOL* pfIsUPS)
@@ -46,6 +51,7 @@ public unsafe partial struct ISpPhoneticAlphabetSelection : ISpPhoneticAlphabetS
         return ((delegate* unmanaged<ISpPhoneticAlphabetSelection*, BOOL*, int>)(lpVtbl[3]))((ISpPhoneticAlphabetSelection*)Unsafe.AsPointer(ref this), pfIsUPS);
     }
 
+    /// <include file='ISpPhoneticAlphabetSelection.xml' path='doc/member[@name="ISpPhoneticAlphabetSelection.SetAlphabetToUPS"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetAlphabetToUPS(BOOL fForceUPS)

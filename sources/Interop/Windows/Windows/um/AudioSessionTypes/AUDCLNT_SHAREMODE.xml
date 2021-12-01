@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="AUDCLNT_SHAREMODE">
+    <summary>
+      <para>The <b>AUDCLNT_SHAREMODE</b> enumeration defines constants that indicate whether an audio stream will run in shared mode or in exclusive mode.</para>
+    </summary>
+    <remarks>
+      <para>The <see cref="IAudioClient.Initialize" /> and <see cref="IAudioClient.IsFormatSupported" /> methods use the constants defined in the <b>AUDCLNT_SHAREMODE</b> enumeration.</para>
+      <para>In shared mode, the client can share the audio endpoint device with clients that run in other user-mode processes. The audio engine always supports formats for client streams that match the engine's mix format. In addition, the audio engine might support another format if the Windows audio service can insert system effects into the client stream to convert the client format to the mix format.</para>
+      <para>In exclusive mode, the Windows audio service attempts to establish a connection in which the client has exclusive access to the audio endpoint device. In this mode, the audio engine inserts no system effects into the local stream to aid in the creation of the connection point. Either the audio device can handle the specified format directly or the method fails.</para>
+      <para>For more information about shared-mode and exclusive-mode streams, see <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/user-mode-audio-components">User-Mode Audio Components</a>.</para>
+      <para>Starting with Xbox May 2021 Update, you can open an audio client in exclusive mode on Xbox.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/CoreAudio/core-audio-constants">Core Audio Constants</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/CoreAudio/core-audio-enumerations">Core Audio Enumerations</seealso>
+    <seealso cref="IAudioClient.Initialize" />
+    <seealso cref="IAudioClient.IsFormatSupported" />
+  </member>
+  <member name="AUDCLNT_SHAREMODE.AUDCLNT_SHAREMODE_SHARED">
+    <summary>
+      <para>The audio stream will run in shared mode. For more information, see Remarks.</para>
+    </summary>
+  </member>
+  <member name="AUDCLNT_SHAREMODE.AUDCLNT_SHAREMODE_EXCLUSIVE">
+    <summary>
+      <para>The audio stream will run in exclusive mode. For more information, see Remarks.</para>
+    </summary>
+  </member>
+</doc>

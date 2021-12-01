@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='AMBISONICS_TYPE.xml' path='doc/member[@name="AMBISONICS_TYPE"]/*' />
 public enum AMBISONICS_TYPE
 {
+    /// <include file='AMBISONICS_TYPE.xml' path='doc/member[@name="AMBISONICS_TYPE.AMBISONICS_TYPE_FULL3D"]/*' />
     AMBISONICS_TYPE_FULL3D = 0,
 }

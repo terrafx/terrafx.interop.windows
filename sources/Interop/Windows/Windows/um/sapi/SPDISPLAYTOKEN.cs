@@ -5,13 +5,17 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SPDISPLAYTOKEN.xml' path='doc/member[@name="SPDISPLAYTOKEN"]/*' />
 public unsafe partial struct SPDISPLAYTOKEN
 {
+    /// <include file='SPDISPLAYTOKEN.xml' path='doc/member[@name="SPDISPLAYTOKEN.pszLexical"]/*' />
     [NativeTypeName("const WCHAR *")]
     public ushort* pszLexical;
 
+    /// <include file='SPDISPLAYTOKEN.xml' path='doc/member[@name="SPDISPLAYTOKEN.pszDisplay"]/*' />
     [NativeTypeName("const WCHAR *")]
     public ushort* pszDisplay;
 
+    /// <include file='SPDISPLAYTOKEN.xml' path='doc/member[@name="SPDISPLAYTOKEN.bDisplayAttributes"]/*' />
     public byte bDisplayAttributes;
 }

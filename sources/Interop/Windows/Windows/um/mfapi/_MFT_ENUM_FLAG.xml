@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="_MFT_ENUM_FLAG">
+    <summary>
+      <para>Contains flags for registering and enumeration Media Foundation transforms (MFTs).</para>
+      <para>These flags are used in the following functions:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <see cref="MFTEnumEx" />: These flags control which Media Foundation transforms (MFTs) are enumerated, as well as the enumeration order.</description>
+        </item>
+        <item>
+          <description>
+            <see cref="MFTRegister" />: A subset of these flags are used when registering an MFT.</description>
+        </item>
+      </list>
+    </summary>
+    <remarks>
+      <para>For registration, these flags describe the MFT that is being registered. Some flags do not apply in that context. For enumeration, these flags control which MFTs are selected in the enumeration. For more details about the precise meaning of these flags, see the reference topics for <see cref="MFTRegister" /> and <see cref="MFTEnumEx" /></para>
+      <para>For registration, the <b>MFT_ENUM_FLAG_SYNCMFT</b>,  <b>MFT_ENUM_FLAG_ASYNCMFT</b>, and <b>MFT_ENUM_FLAG_HARDWARE</b> flags are mutually exclusive. For enumeration, these three flags can be combined.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/field-of-use-restrictions">Field of Use Restrictions</seealso>
+    <seealso cref="MFTEnumEx" />
+    <seealso cref="MFTRegister" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+  </member>
+  <member name="_MFT_ENUM_FLAG.MFT_ENUM_FLAG_SYNCMFT">
+    <summary>
+      <para>The MFT performs synchronous data processing in software.</para>
+      <para>This flag does not apply to hardware transforms.</para>
+    </summary>
+  </member>
+  <member name="_MFT_ENUM_FLAG.MFT_ENUM_FLAG_ASYNCMFT">
+    <summary>
+      <para>The MFT performs asynchronous data processing in software. See <a href="https://docs.microsoft.com//windows/desktop/medfound/asynchronous-mfts">Asynchronous MFTs</a>.</para>
+      <para>This flag does not apply to hardware transforms.</para>
+    </summary>
+  </member>
+  <member name="_MFT_ENUM_FLAG.MFT_ENUM_FLAG_HARDWARE">
+    <summary>
+      <para>The MFT performs hardware-based data processing, using either the AVStream driver or a GPU-based proxy MFT. MFTs in this category always process data asynchronously. See <a href="https://docs.microsoft.com//windows/desktop/medfound/hardware-mfts">Hardware MFTs</a>.</para>
+      <para>
+        <b>Note</b>  This flag applies to video codecs and video processors that perform their work entirely in hardware. It does not apply to software decoders that use DirectX Video Acceleration to assist decoding.</para>
+    </summary>
+  </member>
+  <member name="_MFT_ENUM_FLAG.MFT_ENUM_FLAG_FIELDOFUSE">
+    <summary>
+      <para>The MFT that must be unlocked by the application before use. Unlocking is performed using the <see cref="IMFFieldOfUseMFTUnlock" /> interface. For more information, see <a href="https://docs.microsoft.com//windows/desktop/medfound/field-of-use-restrictions">Field of Use Restrictions</a>.</para>
+      <para>This flag does not apply to hardware transforms.</para>
+    </summary>
+  </member>
+  <member name="_MFT_ENUM_FLAG.MFT_ENUM_FLAG_LOCALMFT">
+    <summary>
+      <para>For enumeration, include MFTs that were registered in the caller's process. To register an MFT in the caller's process, call the either the <see cref="MFTRegisterLocal" /> or <see cref="MFTRegisterLocalByCLSID" /> function.</para>
+      <para>This flag does not apply to hardware transforms.</para>
+      <para>Do not set this flag in the <see cref="MFTRegister" /> function.</para>
+    </summary>
+  </member>
+  <member name="_MFT_ENUM_FLAG.MFT_ENUM_FLAG_TRANSCODE_ONLY">
+    <summary>
+      <para>The MFT is optimized for transcoding rather than playback.</para>
+    </summary>
+  </member>
+  <member name="_MFT_ENUM_FLAG.MFT_ENUM_FLAG_SORTANDFILTER">
+    <summary>
+      <para>For enumeration, sort and filter the results. For more information, see the Remarks section of <see cref="MFTEnumEx" />.</para>
+      <para>Do not set this flag in the <see cref="MFTRegister" /> function.</para>
+    </summary>
+  </member>
+  <member name="_MFT_ENUM_FLAG.MFT_ENUM_FLAG_SORTANDFILTER_APPROVED_ONLY">
+    <summary></summary>
+  </member>
+  <member name="_MFT_ENUM_FLAG.MFT_ENUM_FLAG_SORTANDFILTER_WEB_ONLY">
+    <summary></summary>
+  </member>
+  <member name="_MFT_ENUM_FLAG.MFT_ENUM_FLAG_SORTANDFILTER_WEB_ONLY_EDGEMODE">
+    <summary></summary>
+  </member>
+  <member name="_MFT_ENUM_FLAG.MFT_ENUM_FLAG_UNTRUSTED_STOREMFT">
+    <summary></summary>
+  </member>
+  <member name="_MFT_ENUM_FLAG.MFT_ENUM_FLAG_ALL">
+    <summary>
+      <para>Bitwise <b>OR</b> of all the flags, excluding <b>MFT_ENUM_FLAG_SORTANDFILTER</b>.</para>
+      <para>Do not set this flag in the <see cref="MFTRegister" /> function.</para>
+    </summary>
+  </member>
+</doc>

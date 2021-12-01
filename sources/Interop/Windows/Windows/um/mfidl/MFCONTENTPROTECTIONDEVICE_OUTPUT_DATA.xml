@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MFCONTENTPROTECTIONDEVICE_OUTPUT_DATA">
+    <summary>
+      <para>Contains information about the data you received as output from a protection system function.</para>
+    </summary>
+    <seealso cref="IMFContentProtectionDevice.GetPrivateDataByteCount" />
+    <seealso cref="IMFContentProtectionDevice.InvokeFunction" />
+    <seealso cref="MFCONTENTPROTECTIONDEVICE_INPUT_DATA" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-structures">Media Foundation Structures</seealso>
+  </member>
+  <member name="MFCONTENTPROTECTIONDEVICE_OUTPUT_DATA.PrivateDataByteCount">
+    <summary>
+      <para>The size of the private data that the implementation of the security processor reserves, in bytes. You can determine this value  by calling the <see cref="IMFContentProtectionDevice.GetPrivateDataByteCount" /> method.</para>
+    </summary>
+  </member>
+  <member name="MFCONTENTPROTECTIONDEVICE_OUTPUT_DATA.MaxHWProtectionDataByteCount">
+    <summary>
+      <para>The maximum size of data that the independent hardware vendor (IHV) can return in the output buffer, in bytes.</para>
+    </summary>
+  </member>
+  <member name="MFCONTENTPROTECTIONDEVICE_OUTPUT_DATA.HWProtectionDataByteCount">
+    <summary>
+      <para>The size of the data that the  IHV wrote to the output buffer, in bytes.</para>
+    </summary>
+  </member>
+  <member name="MFCONTENTPROTECTIONDEVICE_OUTPUT_DATA.Status">
+    <summary>
+      <para>The result of the protection system function.</para>
+    </summary>
+  </member>
+  <member name="MFCONTENTPROTECTIONDEVICE_OUTPUT_DATA.TransportTimeInHundredsOfNanoseconds">
+    <summary>
+      <para>The number of 100 nanosecond units spent transporting the data.</para>
+    </summary>
+  </member>
+  <member name="MFCONTENTPROTECTIONDEVICE_OUTPUT_DATA.ExecutionTimeInHundredsOfNanoseconds">
+    <summary>
+      <para>The number of 100 nanosecond units spent running the protection system function.</para>
+    </summary>
+  </member>
+  <member name="MFCONTENTPROTECTIONDEVICE_OUTPUT_DATA.OutputData">
+    <summary>
+      <para>The output of the protection system function.</para>
+      <para>If the value of the <b>PrivateDataByteCount</b> member is greater than 0, bytes 0 through <b>PrivateDataByteCount</b> - 1 are reserved for IHV use.
+Bytes <b>PrivateDataByteCount</b> through <b>MaxHWProtectionDataByteCount</b> + <b>PrivateDataByteCount</b> - 1 contain the region
+of the array into which the driver should return the output data from the protection system function.</para>
+      <para>The protection system specification defines the format and size of the
+function.</para>
+    </summary>
+  </member>
+</doc>

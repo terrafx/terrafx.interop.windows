@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='INamespaceWalk.xml' path='doc/member[@name="INamespaceWalk"]/*' />
 [Guid("57CED8A7-3F4A-432C-9350-30F24483F74F")]
 [NativeTypeName("struct INamespaceWalk : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct INamespaceWalk : INamespaceWalk.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct INamespaceWalk : INamespaceWalk.Interface
         return ((delegate* unmanaged<INamespaceWalk*, Guid*, void**, int>)(lpVtbl[0]))((INamespaceWalk*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct INamespaceWalk : INamespaceWalk.Interface
         return ((delegate* unmanaged<INamespaceWalk*, uint>)(lpVtbl[1]))((INamespaceWalk*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct INamespaceWalk : INamespaceWalk.Interface
         return ((delegate* unmanaged<INamespaceWalk*, uint>)(lpVtbl[2]))((INamespaceWalk*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='INamespaceWalk.xml' path='doc/member[@name="INamespaceWalk.Walk"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Walk(IUnknown* punkToWalk, [NativeTypeName("DWORD")] uint dwFlags, int cDepth, INamespaceWalkCB* pnswcb)
@@ -46,6 +51,7 @@ public unsafe partial struct INamespaceWalk : INamespaceWalk.Interface
         return ((delegate* unmanaged<INamespaceWalk*, IUnknown*, uint, int, INamespaceWalkCB*, int>)(lpVtbl[3]))((INamespaceWalk*)Unsafe.AsPointer(ref this), punkToWalk, dwFlags, cDepth, pnswcb);
     }
 
+    /// <include file='INamespaceWalk.xml' path='doc/member[@name="INamespaceWalk.GetIDArrayResult"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetIDArrayResult(uint* pcItems, [NativeTypeName("LPITEMIDLIST **")] ITEMIDLIST*** prgpidl)

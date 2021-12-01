@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STORAGE_IDENTIFIER_CODE_SET.xml' path='doc/member[@name="STORAGE_IDENTIFIER_CODE_SET"]/*' />
 public enum STORAGE_IDENTIFIER_CODE_SET
 {
+    /// <include file='STORAGE_IDENTIFIER_CODE_SET.xml' path='doc/member[@name="STORAGE_IDENTIFIER_CODE_SET.StorageIdCodeSetReserved"]/*' />
     StorageIdCodeSetReserved = 0,
+
+    /// <include file='STORAGE_IDENTIFIER_CODE_SET.xml' path='doc/member[@name="STORAGE_IDENTIFIER_CODE_SET.StorageIdCodeSetBinary"]/*' />
     StorageIdCodeSetBinary = 1,
+
+    /// <include file='STORAGE_IDENTIFIER_CODE_SET.xml' path='doc/member[@name="STORAGE_IDENTIFIER_CODE_SET.StorageIdCodeSetAscii"]/*' />
     StorageIdCodeSetAscii = 2,
+
+    /// <include file='STORAGE_IDENTIFIER_CODE_SET.xml' path='doc/member[@name="STORAGE_IDENTIFIER_CODE_SET.StorageIdCodeSetUtf8"]/*' />
     StorageIdCodeSetUtf8 = 3,
 }

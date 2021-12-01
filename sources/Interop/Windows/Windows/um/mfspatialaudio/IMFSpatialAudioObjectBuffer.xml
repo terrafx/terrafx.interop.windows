@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFSpatialAudioObjectBuffer.GetID">
+    <summary>
+      <para>Returns the unique, unsigned 32-bit ID of the spatial audio object represented by the buffer.
+If <see cref="SetID" /> method was not previously called, this method returns the invalid object ID, -1
+(0xffffffff).  The invalid ID indicates that the object buffer is unused and
+contains invalid data.</para>
+    </summary>
+    <param name="pu32ID">
+      <para>Pointer to a 32-bit variable where the object ID will be stored.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>The supplied pointer is invalid.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IMFSpatialAudioObjectBuffer" />
+  </member>
+  <member name="IMFSpatialAudioObjectBuffer.GetMetadataItems">
+    <summary>
+      <para>Retrieves a pointer to a buffer that may
+contain spatial audio metadata.</para>
+    </summary>
+    <param name="ppMetadataItems">
+      <para>A pointer to an <see cref="ISpatialAudioMetadataItems" /> object in which the collection
+of metadata items will be stored.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>The supplied pointer is invalid.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The metadata is written to the <see cref="ISpatialAudioMetadataItems" /> collection in a format identified by the <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-mt-spatial-audio-object-metadata-format-id">MF_MT_SPATIAL_AUDIO_OBJECT_METADATA_FORMAT_ID</a>     media type attribute specified during media type negotiation phase of Media Foundation     topology construction.</para>
+    </remarks>
+    <seealso cref="IMFSpatialAudioObjectBuffer" />
+  </member>
+  <member name="IMFSpatialAudioObjectBuffer.GetType">
+    <summary>
+      <para>Gets the type of the spatial audio object represented by the buffer. If <see cref="SetType" /> has not been called previously, this method returns the default value of <b>AudioObjectType_None</b>.</para>
+    </summary>
+    <param name="pType">
+      <para>A pointer to an <see cref="AudioObjectType" /> variable where the audio object type will be stored.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>The supplied pointer is invalid.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IMFSpatialAudioObjectBuffer" />
+  </member>
+  <member name="IMFSpatialAudioObjectBuffer.SetID">
+    <summary>
+      <para>Sets the ID of the spatial audio object represented by the buffer.</para>
+    </summary>
+    <param name="u32ID">
+      <para>A 32-bit unsigned unique ID of the audio object.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The object ID must be unique for each spatial audio sample.  Subsequent samples can
+contain spatial audio objects with the same IDs to represent moving dynamic objects or constant
+static objects.</para>
+    </remarks>
+    <seealso cref="IMFSpatialAudioObjectBuffer" />
+  </member>
+  <member name="IMFSpatialAudioObjectBuffer.SetType">
+    <summary>
+      <para>Sets the type of the spatial audio object represented by the buffer.</para>
+    </summary>
+    <param name="type">
+      <para>A value from the <see cref="AudioObjectType" /> enumeration specifying the type of audio object.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>A spatial audio object can be of type <b>AudioObjectType_Dynamic</b>, which means that it can change position and orientation in 3D space over time, or it can have a value such as <b>AudioObjectType_FrontLeft</b> which represents the static position of a real or virtual speaker that does not change position over time.</para>
+    </remarks>
+    <seealso cref="IMFSpatialAudioObjectBuffer" />
+  </member>
+  <member name="IMFSpatialAudioObjectBuffer">
+    <summary>
+      <para>Represents a section of audio data with
+associated positional and rendering metadata.  Spatial audio objects are stored in <see cref="IMFSpatialAudioSample" /> instances, and allow passing of
+spatial audio information between Media Foundation components.</para>
+    </summary>
+    <remarks>
+      <para>To get the audio data contained in the spatial audio object, use the    <see cref="IMFMediaBuffer.Lock" /> and <see cref="IMFMediaBuffer.Unlock" /> methods.</para>
+    </remarks>
+    <seealso cref="IMFMediaBuffer" />
+  </member>
+</doc>

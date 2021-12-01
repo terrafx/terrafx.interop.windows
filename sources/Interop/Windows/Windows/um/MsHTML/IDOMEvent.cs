@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IDOMEvent.xml' path='doc/member[@name="IDOMEvent"]/*' />
 [Guid("305104BA-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IDOMEvent : IDispatch")]
 [NativeInheritance("IDispatch")]
@@ -16,6 +17,7 @@ public unsafe partial struct IDOMEvent : IDOMEvent.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IDOMEvent : IDOMEvent.Interface
         return ((delegate* unmanaged<IDOMEvent*, Guid*, void**, int>)(lpVtbl[0]))((IDOMEvent*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IDOMEvent : IDOMEvent.Interface
         return ((delegate* unmanaged<IDOMEvent*, uint>)(lpVtbl[1]))((IDOMEvent*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IDOMEvent : IDOMEvent.Interface
         return ((delegate* unmanaged<IDOMEvent*, uint>)(lpVtbl[2]))((IDOMEvent*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct IDOMEvent : IDOMEvent.Interface
         return ((delegate* unmanaged<IDOMEvent*, uint*, int>)(lpVtbl[3]))((IDOMEvent*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct IDOMEvent : IDOMEvent.Interface
         return ((delegate* unmanaged<IDOMEvent*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IDOMEvent*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
@@ -60,6 +67,7 @@ public unsafe partial struct IDOMEvent : IDOMEvent.Interface
         return ((delegate* unmanaged<IDOMEvent*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IDOMEvent*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
+    /// <inheritdoc cref="IDispatch.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
@@ -67,6 +75,7 @@ public unsafe partial struct IDOMEvent : IDOMEvent.Interface
         return ((delegate* unmanaged<IDOMEvent*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IDOMEvent*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
+    /// <include file='IDOMEvent.xml' path='doc/member[@name="IDOMEvent.get_bubbles"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT get_bubbles([NativeTypeName("VARIANT_BOOL *")] short* p)
@@ -74,6 +83,7 @@ public unsafe partial struct IDOMEvent : IDOMEvent.Interface
         return ((delegate* unmanaged<IDOMEvent*, short*, int>)(lpVtbl[7]))((IDOMEvent*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IDOMEvent.xml' path='doc/member[@name="IDOMEvent.get_cancelable"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT get_cancelable([NativeTypeName("VARIANT_BOOL *")] short* p)
@@ -81,6 +91,7 @@ public unsafe partial struct IDOMEvent : IDOMEvent.Interface
         return ((delegate* unmanaged<IDOMEvent*, short*, int>)(lpVtbl[8]))((IDOMEvent*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IDOMEvent.xml' path='doc/member[@name="IDOMEvent.get_currentTarget"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT get_currentTarget(IEventTarget** p)
@@ -88,6 +99,7 @@ public unsafe partial struct IDOMEvent : IDOMEvent.Interface
         return ((delegate* unmanaged<IDOMEvent*, IEventTarget**, int>)(lpVtbl[9]))((IDOMEvent*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IDOMEvent.xml' path='doc/member[@name="IDOMEvent.get_defaultPrevented"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT get_defaultPrevented([NativeTypeName("VARIANT_BOOL *")] short* p)
@@ -95,6 +107,7 @@ public unsafe partial struct IDOMEvent : IDOMEvent.Interface
         return ((delegate* unmanaged<IDOMEvent*, short*, int>)(lpVtbl[10]))((IDOMEvent*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IDOMEvent.xml' path='doc/member[@name="IDOMEvent.get_eventPhase"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT get_eventPhase(ushort* p)
@@ -102,6 +115,7 @@ public unsafe partial struct IDOMEvent : IDOMEvent.Interface
         return ((delegate* unmanaged<IDOMEvent*, ushort*, int>)(lpVtbl[11]))((IDOMEvent*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IDOMEvent.xml' path='doc/member[@name="IDOMEvent.get_target"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT get_target(IEventTarget** p)
@@ -109,6 +123,7 @@ public unsafe partial struct IDOMEvent : IDOMEvent.Interface
         return ((delegate* unmanaged<IDOMEvent*, IEventTarget**, int>)(lpVtbl[12]))((IDOMEvent*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IDOMEvent.xml' path='doc/member[@name="IDOMEvent.get_timeStamp"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT get_timeStamp([NativeTypeName("ULONGLONG *")] ulong* p)
@@ -116,6 +131,7 @@ public unsafe partial struct IDOMEvent : IDOMEvent.Interface
         return ((delegate* unmanaged<IDOMEvent*, ulong*, int>)(lpVtbl[13]))((IDOMEvent*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IDOMEvent.xml' path='doc/member[@name="IDOMEvent.get_type"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT get_type([NativeTypeName("BSTR *")] ushort** p)
@@ -123,6 +139,7 @@ public unsafe partial struct IDOMEvent : IDOMEvent.Interface
         return ((delegate* unmanaged<IDOMEvent*, ushort**, int>)(lpVtbl[14]))((IDOMEvent*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IDOMEvent.xml' path='doc/member[@name="IDOMEvent.initEvent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT initEvent([NativeTypeName("BSTR")] ushort* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable)
@@ -130,6 +147,7 @@ public unsafe partial struct IDOMEvent : IDOMEvent.Interface
         return ((delegate* unmanaged<IDOMEvent*, ushort*, short, short, int>)(lpVtbl[15]))((IDOMEvent*)Unsafe.AsPointer(ref this), eventType, canBubble, cancelable);
     }
 
+    /// <include file='IDOMEvent.xml' path='doc/member[@name="IDOMEvent.preventDefault"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT preventDefault()
@@ -137,6 +155,7 @@ public unsafe partial struct IDOMEvent : IDOMEvent.Interface
         return ((delegate* unmanaged<IDOMEvent*, int>)(lpVtbl[16]))((IDOMEvent*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDOMEvent.xml' path='doc/member[@name="IDOMEvent.stopPropagation"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT stopPropagation()
@@ -144,6 +163,7 @@ public unsafe partial struct IDOMEvent : IDOMEvent.Interface
         return ((delegate* unmanaged<IDOMEvent*, int>)(lpVtbl[17]))((IDOMEvent*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDOMEvent.xml' path='doc/member[@name="IDOMEvent.stopImmediatePropagation"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT stopImmediatePropagation()
@@ -151,6 +171,7 @@ public unsafe partial struct IDOMEvent : IDOMEvent.Interface
         return ((delegate* unmanaged<IDOMEvent*, int>)(lpVtbl[18]))((IDOMEvent*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDOMEvent.xml' path='doc/member[@name="IDOMEvent.get_isTrusted"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT get_isTrusted([NativeTypeName("VARIANT_BOOL *")] short* p)
@@ -158,6 +179,7 @@ public unsafe partial struct IDOMEvent : IDOMEvent.Interface
         return ((delegate* unmanaged<IDOMEvent*, short*, int>)(lpVtbl[19]))((IDOMEvent*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IDOMEvent.xml' path='doc/member[@name="IDOMEvent.put_cancelBubble"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public HRESULT put_cancelBubble([NativeTypeName("VARIANT_BOOL")] short v)
@@ -165,6 +187,7 @@ public unsafe partial struct IDOMEvent : IDOMEvent.Interface
         return ((delegate* unmanaged<IDOMEvent*, short, int>)(lpVtbl[20]))((IDOMEvent*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IDOMEvent.xml' path='doc/member[@name="IDOMEvent.get_cancelBubble"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
     public HRESULT get_cancelBubble([NativeTypeName("VARIANT_BOOL *")] short* p)
@@ -172,6 +195,7 @@ public unsafe partial struct IDOMEvent : IDOMEvent.Interface
         return ((delegate* unmanaged<IDOMEvent*, short*, int>)(lpVtbl[21]))((IDOMEvent*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IDOMEvent.xml' path='doc/member[@name="IDOMEvent.get_srcElement"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
     public HRESULT get_srcElement(IHTMLElement** p)

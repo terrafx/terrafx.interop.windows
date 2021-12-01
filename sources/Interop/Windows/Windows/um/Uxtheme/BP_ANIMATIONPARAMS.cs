@@ -5,16 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='BP_ANIMATIONPARAMS.xml' path='doc/member[@name="BP_ANIMATIONPARAMS"]/*' />
 public partial struct BP_ANIMATIONPARAMS
 {
+    /// <include file='BP_ANIMATIONPARAMS.xml' path='doc/member[@name="BP_ANIMATIONPARAMS.cbSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbSize;
 
+    /// <include file='BP_ANIMATIONPARAMS.xml' path='doc/member[@name="BP_ANIMATIONPARAMS.dwFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFlags;
 
+    /// <include file='BP_ANIMATIONPARAMS.xml' path='doc/member[@name="BP_ANIMATIONPARAMS.style"]/*' />
     public BP_ANIMATIONSTYLE style;
 
+    /// <include file='BP_ANIMATIONPARAMS.xml' path='doc/member[@name="BP_ANIMATIONPARAMS.dwDuration"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwDuration;
 }

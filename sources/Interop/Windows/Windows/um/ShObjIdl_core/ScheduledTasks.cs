@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ScheduledTasks.xml' path='doc/member[@name="ScheduledTasks"]/*' />
 [Guid("D6277990-4C6A-11CF-8D87-00AA0060F5BF")]
 public partial struct ScheduledTasks
 {

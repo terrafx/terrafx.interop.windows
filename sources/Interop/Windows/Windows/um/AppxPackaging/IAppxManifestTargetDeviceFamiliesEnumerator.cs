@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAppxManifestTargetDeviceFamiliesEnumerator.xml' path='doc/member[@name="IAppxManifestTargetDeviceFamiliesEnumerator"]/*' />
 [Guid("36537F36-27A4-4788-88C0-733819575017")]
 [NativeTypeName("struct IAppxManifestTargetDeviceFamiliesEnumerator : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IAppxManifestTargetDeviceFamiliesEnumerator : IAppx
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IAppxManifestTargetDeviceFamiliesEnumerator : IAppx
         return ((delegate* unmanaged<IAppxManifestTargetDeviceFamiliesEnumerator*, Guid*, void**, int>)(lpVtbl[0]))((IAppxManifestTargetDeviceFamiliesEnumerator*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IAppxManifestTargetDeviceFamiliesEnumerator : IAppx
         return ((delegate* unmanaged<IAppxManifestTargetDeviceFamiliesEnumerator*, uint>)(lpVtbl[1]))((IAppxManifestTargetDeviceFamiliesEnumerator*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IAppxManifestTargetDeviceFamiliesEnumerator : IAppx
         return ((delegate* unmanaged<IAppxManifestTargetDeviceFamiliesEnumerator*, uint>)(lpVtbl[2]))((IAppxManifestTargetDeviceFamiliesEnumerator*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAppxManifestTargetDeviceFamiliesEnumerator.xml' path='doc/member[@name="IAppxManifestTargetDeviceFamiliesEnumerator.GetCurrent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetCurrent(IAppxManifestTargetDeviceFamily** targetDeviceFamily)
@@ -46,6 +51,7 @@ public unsafe partial struct IAppxManifestTargetDeviceFamiliesEnumerator : IAppx
         return ((delegate* unmanaged<IAppxManifestTargetDeviceFamiliesEnumerator*, IAppxManifestTargetDeviceFamily**, int>)(lpVtbl[3]))((IAppxManifestTargetDeviceFamiliesEnumerator*)Unsafe.AsPointer(ref this), targetDeviceFamily);
     }
 
+    /// <include file='IAppxManifestTargetDeviceFamiliesEnumerator.xml' path='doc/member[@name="IAppxManifestTargetDeviceFamiliesEnumerator.GetHasCurrent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetHasCurrent(BOOL* hasCurrent)
@@ -53,6 +59,7 @@ public unsafe partial struct IAppxManifestTargetDeviceFamiliesEnumerator : IAppx
         return ((delegate* unmanaged<IAppxManifestTargetDeviceFamiliesEnumerator*, BOOL*, int>)(lpVtbl[4]))((IAppxManifestTargetDeviceFamiliesEnumerator*)Unsafe.AsPointer(ref this), hasCurrent);
     }
 
+    /// <include file='IAppxManifestTargetDeviceFamiliesEnumerator.xml' path='doc/member[@name="IAppxManifestTargetDeviceFamiliesEnumerator.MoveNext"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT MoveNext(BOOL* hasNext)

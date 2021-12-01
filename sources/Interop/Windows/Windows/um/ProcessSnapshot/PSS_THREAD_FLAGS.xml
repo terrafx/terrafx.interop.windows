@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PSS_THREAD_FLAGS">
+    <summary>
+      <para>Flags that describe a thread.</para>
+    </summary>
+    <remarks>
+      <para>There is a <b>PSS_THREAD_FLAGS</b> member in the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/processsnapshot/ns-processsnapshot-pss_thread_entry">PSS_THREAD_ENTRY</a> structure that <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/processsnapshot/nf-processsnapshot-psswalksnapshot">PssWalkSnapshot</a> returns.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/proc_snap/process-snapshotting-portal">Process Snapshotting</seealso>
+  </member>
+  <member name="PSS_THREAD_FLAGS.PSS_THREAD_FLAGS_NONE">
+    <summary>
+      <para>No flag.</para>
+    </summary>
+  </member>
+  <member name="PSS_THREAD_FLAGS.PSS_THREAD_FLAGS_TERMINATED">
+    <summary>
+      <para>The thread terminated.</para>
+    </summary>
+  </member>
+</doc>

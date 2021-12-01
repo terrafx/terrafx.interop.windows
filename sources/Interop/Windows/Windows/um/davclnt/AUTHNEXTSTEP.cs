@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='AUTHNEXTSTEP.xml' path='doc/member[@name="AUTHNEXTSTEP"]/*' />
 public enum AUTHNEXTSTEP
 {
+    /// <include file='AUTHNEXTSTEP.xml' path='doc/member[@name="AUTHNEXTSTEP.DefaultBehavior"]/*' />
     DefaultBehavior,
+
+    /// <include file='AUTHNEXTSTEP.xml' path='doc/member[@name="AUTHNEXTSTEP.RetryRequest"]/*' />
     RetryRequest,
+
+    /// <include file='AUTHNEXTSTEP.xml' path='doc/member[@name="AUTHNEXTSTEP.CancelRequest"]/*' />
     CancelRequest,
 }

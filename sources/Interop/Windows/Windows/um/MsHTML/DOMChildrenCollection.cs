@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DOMChildrenCollection.xml' path='doc/member[@name="DOMChildrenCollection"]/*' />
 [Guid("3050F5AA-98B5-11CF-BB82-00AA00BDCE0B")]
 public partial struct DOMChildrenCollection
 {

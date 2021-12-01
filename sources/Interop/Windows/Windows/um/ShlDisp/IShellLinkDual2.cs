@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IShellLinkDual2.xml' path='doc/member[@name="IShellLinkDual2"]/*' />
 [Guid("317EE249-F12E-11D2-B1E4-00C04F8EEB3E")]
 [NativeTypeName("struct IShellLinkDual2 : IShellLinkDual")]
 [NativeInheritance("IShellLinkDual")]
@@ -16,6 +17,7 @@ public unsafe partial struct IShellLinkDual2 : IShellLinkDual2.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IShellLinkDual2 : IShellLinkDual2.Interface
         return ((delegate* unmanaged<IShellLinkDual2*, Guid*, void**, int>)(lpVtbl[0]))((IShellLinkDual2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IShellLinkDual2 : IShellLinkDual2.Interface
         return ((delegate* unmanaged<IShellLinkDual2*, uint>)(lpVtbl[1]))((IShellLinkDual2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IShellLinkDual2 : IShellLinkDual2.Interface
         return ((delegate* unmanaged<IShellLinkDual2*, uint>)(lpVtbl[2]))((IShellLinkDual2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct IShellLinkDual2 : IShellLinkDual2.Interface
         return ((delegate* unmanaged<IShellLinkDual2*, uint*, int>)(lpVtbl[3]))((IShellLinkDual2*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct IShellLinkDual2 : IShellLinkDual2.Interface
         return ((delegate* unmanaged<IShellLinkDual2*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IShellLinkDual2*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
@@ -60,6 +67,7 @@ public unsafe partial struct IShellLinkDual2 : IShellLinkDual2.Interface
         return ((delegate* unmanaged<IShellLinkDual2*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IShellLinkDual2*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
+    /// <inheritdoc cref="IDispatch.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
@@ -67,6 +75,7 @@ public unsafe partial struct IShellLinkDual2 : IShellLinkDual2.Interface
         return ((delegate* unmanaged<IShellLinkDual2*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IShellLinkDual2*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
+    /// <inheritdoc cref="IShellLinkDual.get_Path" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT get_Path([NativeTypeName("BSTR *")] ushort** pbs)
@@ -74,6 +83,7 @@ public unsafe partial struct IShellLinkDual2 : IShellLinkDual2.Interface
         return ((delegate* unmanaged<IShellLinkDual2*, ushort**, int>)(lpVtbl[7]))((IShellLinkDual2*)Unsafe.AsPointer(ref this), pbs);
     }
 
+    /// <inheritdoc cref="IShellLinkDual.put_Path" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT put_Path([NativeTypeName("BSTR")] ushort* bs)
@@ -81,6 +91,7 @@ public unsafe partial struct IShellLinkDual2 : IShellLinkDual2.Interface
         return ((delegate* unmanaged<IShellLinkDual2*, ushort*, int>)(lpVtbl[8]))((IShellLinkDual2*)Unsafe.AsPointer(ref this), bs);
     }
 
+    /// <inheritdoc cref="IShellLinkDual.get_Description" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT get_Description([NativeTypeName("BSTR *")] ushort** pbs)
@@ -88,6 +99,7 @@ public unsafe partial struct IShellLinkDual2 : IShellLinkDual2.Interface
         return ((delegate* unmanaged<IShellLinkDual2*, ushort**, int>)(lpVtbl[9]))((IShellLinkDual2*)Unsafe.AsPointer(ref this), pbs);
     }
 
+    /// <inheritdoc cref="IShellLinkDual.put_Description" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT put_Description([NativeTypeName("BSTR")] ushort* bs)
@@ -95,6 +107,7 @@ public unsafe partial struct IShellLinkDual2 : IShellLinkDual2.Interface
         return ((delegate* unmanaged<IShellLinkDual2*, ushort*, int>)(lpVtbl[10]))((IShellLinkDual2*)Unsafe.AsPointer(ref this), bs);
     }
 
+    /// <inheritdoc cref="IShellLinkDual.get_WorkingDirectory" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT get_WorkingDirectory([NativeTypeName("BSTR *")] ushort** pbs)
@@ -102,6 +115,7 @@ public unsafe partial struct IShellLinkDual2 : IShellLinkDual2.Interface
         return ((delegate* unmanaged<IShellLinkDual2*, ushort**, int>)(lpVtbl[11]))((IShellLinkDual2*)Unsafe.AsPointer(ref this), pbs);
     }
 
+    /// <inheritdoc cref="IShellLinkDual.put_WorkingDirectory" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT put_WorkingDirectory([NativeTypeName("BSTR")] ushort* bs)
@@ -109,6 +123,7 @@ public unsafe partial struct IShellLinkDual2 : IShellLinkDual2.Interface
         return ((delegate* unmanaged<IShellLinkDual2*, ushort*, int>)(lpVtbl[12]))((IShellLinkDual2*)Unsafe.AsPointer(ref this), bs);
     }
 
+    /// <inheritdoc cref="IShellLinkDual.get_Arguments" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT get_Arguments([NativeTypeName("BSTR *")] ushort** pbs)
@@ -116,6 +131,7 @@ public unsafe partial struct IShellLinkDual2 : IShellLinkDual2.Interface
         return ((delegate* unmanaged<IShellLinkDual2*, ushort**, int>)(lpVtbl[13]))((IShellLinkDual2*)Unsafe.AsPointer(ref this), pbs);
     }
 
+    /// <inheritdoc cref="IShellLinkDual.put_Arguments" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT put_Arguments([NativeTypeName("BSTR")] ushort* bs)
@@ -123,6 +139,7 @@ public unsafe partial struct IShellLinkDual2 : IShellLinkDual2.Interface
         return ((delegate* unmanaged<IShellLinkDual2*, ushort*, int>)(lpVtbl[14]))((IShellLinkDual2*)Unsafe.AsPointer(ref this), bs);
     }
 
+    /// <inheritdoc cref="IShellLinkDual.get_Hotkey" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT get_Hotkey(int* piHK)
@@ -130,6 +147,7 @@ public unsafe partial struct IShellLinkDual2 : IShellLinkDual2.Interface
         return ((delegate* unmanaged<IShellLinkDual2*, int*, int>)(lpVtbl[15]))((IShellLinkDual2*)Unsafe.AsPointer(ref this), piHK);
     }
 
+    /// <inheritdoc cref="IShellLinkDual.put_Hotkey" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT put_Hotkey(int iHK)
@@ -137,6 +155,7 @@ public unsafe partial struct IShellLinkDual2 : IShellLinkDual2.Interface
         return ((delegate* unmanaged<IShellLinkDual2*, int, int>)(lpVtbl[16]))((IShellLinkDual2*)Unsafe.AsPointer(ref this), iHK);
     }
 
+    /// <inheritdoc cref="IShellLinkDual.get_ShowCommand" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT get_ShowCommand(int* piShowCommand)
@@ -144,6 +163,7 @@ public unsafe partial struct IShellLinkDual2 : IShellLinkDual2.Interface
         return ((delegate* unmanaged<IShellLinkDual2*, int*, int>)(lpVtbl[17]))((IShellLinkDual2*)Unsafe.AsPointer(ref this), piShowCommand);
     }
 
+    /// <inheritdoc cref="IShellLinkDual.put_ShowCommand" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT put_ShowCommand(int iShowCommand)
@@ -151,6 +171,7 @@ public unsafe partial struct IShellLinkDual2 : IShellLinkDual2.Interface
         return ((delegate* unmanaged<IShellLinkDual2*, int, int>)(lpVtbl[18]))((IShellLinkDual2*)Unsafe.AsPointer(ref this), iShowCommand);
     }
 
+    /// <inheritdoc cref="IShellLinkDual.Resolve" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT Resolve(int fFlags)
@@ -158,6 +179,7 @@ public unsafe partial struct IShellLinkDual2 : IShellLinkDual2.Interface
         return ((delegate* unmanaged<IShellLinkDual2*, int, int>)(lpVtbl[19]))((IShellLinkDual2*)Unsafe.AsPointer(ref this), fFlags);
     }
 
+    /// <inheritdoc cref="IShellLinkDual.GetIconLocation" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public HRESULT GetIconLocation([NativeTypeName("BSTR *")] ushort** pbs, int* piIcon)
@@ -165,6 +187,7 @@ public unsafe partial struct IShellLinkDual2 : IShellLinkDual2.Interface
         return ((delegate* unmanaged<IShellLinkDual2*, ushort**, int*, int>)(lpVtbl[20]))((IShellLinkDual2*)Unsafe.AsPointer(ref this), pbs, piIcon);
     }
 
+    /// <inheritdoc cref="IShellLinkDual.SetIconLocation" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
     public HRESULT SetIconLocation([NativeTypeName("BSTR")] ushort* bs, int iIcon)
@@ -172,6 +195,7 @@ public unsafe partial struct IShellLinkDual2 : IShellLinkDual2.Interface
         return ((delegate* unmanaged<IShellLinkDual2*, ushort*, int, int>)(lpVtbl[21]))((IShellLinkDual2*)Unsafe.AsPointer(ref this), bs, iIcon);
     }
 
+    /// <inheritdoc cref="IShellLinkDual.Save" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
     public HRESULT Save(VARIANT vWhere)
@@ -179,6 +203,7 @@ public unsafe partial struct IShellLinkDual2 : IShellLinkDual2.Interface
         return ((delegate* unmanaged<IShellLinkDual2*, VARIANT, int>)(lpVtbl[22]))((IShellLinkDual2*)Unsafe.AsPointer(ref this), vWhere);
     }
 
+    /// <include file='IShellLinkDual2.xml' path='doc/member[@name="IShellLinkDual2.get_Target"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
     public HRESULT get_Target(FolderItem** ppfi)

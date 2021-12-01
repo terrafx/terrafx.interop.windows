@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IShellRunDll.xml' path='doc/member[@name="IShellRunDll"]/*' />
 [Guid("FCE4BDE0-4B68-4B80-8E9C-7426315A7388")]
 [NativeTypeName("struct IShellRunDll : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IShellRunDll : IShellRunDll.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IShellRunDll : IShellRunDll.Interface
         return ((delegate* unmanaged<IShellRunDll*, Guid*, void**, int>)(lpVtbl[0]))((IShellRunDll*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IShellRunDll : IShellRunDll.Interface
         return ((delegate* unmanaged<IShellRunDll*, uint>)(lpVtbl[1]))((IShellRunDll*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IShellRunDll : IShellRunDll.Interface
         return ((delegate* unmanaged<IShellRunDll*, uint>)(lpVtbl[2]))((IShellRunDll*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IShellRunDll.xml' path='doc/member[@name="IShellRunDll.Run"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Run([NativeTypeName("LPCWSTR")] ushort* pszArgs)

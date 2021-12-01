@@ -7,9 +7,13 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PROCESS_MEMORY_EXHAUSTION_TYPE.xml' path='doc/member[@name="PROCESS_MEMORY_EXHAUSTION_TYPE"]/*' />
 [SupportedOSPlatform("windows10.0.10586.0")]
 public enum PROCESS_MEMORY_EXHAUSTION_TYPE
 {
+    /// <include file='PROCESS_MEMORY_EXHAUSTION_TYPE.xml' path='doc/member[@name="PROCESS_MEMORY_EXHAUSTION_TYPE.PMETypeFailFastOnCommitFailure"]/*' />
     PMETypeFailFastOnCommitFailure,
+
+    /// <include file='PROCESS_MEMORY_EXHAUSTION_TYPE.xml' path='doc/member[@name="PROCESS_MEMORY_EXHAUSTION_TYPE.PMETypeMax"]/*' />
     PMETypeMax,
 }

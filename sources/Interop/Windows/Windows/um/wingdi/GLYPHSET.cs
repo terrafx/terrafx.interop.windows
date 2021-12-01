@@ -9,23 +9,30 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='GLYPHSET.xml' path='doc/member[@name="GLYPHSET"]/*' />
 public partial struct GLYPHSET
 {
+    /// <include file='GLYPHSET.xml' path='doc/member[@name="GLYPHSET.cbThis"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbThis;
 
+    /// <include file='GLYPHSET.xml' path='doc/member[@name="GLYPHSET.flAccel"]/*' />
     [NativeTypeName("DWORD")]
     public uint flAccel;
 
+    /// <include file='GLYPHSET.xml' path='doc/member[@name="GLYPHSET.cGlyphsSupported"]/*' />
     [NativeTypeName("DWORD")]
     public uint cGlyphsSupported;
 
+    /// <include file='GLYPHSET.xml' path='doc/member[@name="GLYPHSET.cRanges"]/*' />
     [NativeTypeName("DWORD")]
     public uint cRanges;
 
+    /// <include file='GLYPHSET.xml' path='doc/member[@name="GLYPHSET.ranges"]/*' />
     [NativeTypeName("WCRANGE [1]")]
     public _ranges_e__FixedBuffer ranges;
 
+    /// <include file='_ranges_e__FixedBuffer.xml' path='doc/member[@name="_ranges_e__FixedBuffer"]/*' />
     public partial struct _ranges_e__FixedBuffer
     {
         public WCRANGE e0;

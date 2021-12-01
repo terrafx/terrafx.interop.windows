@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DISCARDCACHE.xml' path='doc/member[@name="DISCARDCACHE"]/*' />
 public enum DISCARDCACHE
 {
+    /// <include file='DISCARDCACHE.xml' path='doc/member[@name="DISCARDCACHE.DISCARDCACHE_SAVEIFDIRTY"]/*' />
     DISCARDCACHE_SAVEIFDIRTY = 0,
+
+    /// <include file='DISCARDCACHE.xml' path='doc/member[@name="DISCARDCACHE.DISCARDCACHE_NOSAVE"]/*' />
     DISCARDCACHE_NOSAVE = 1,
 }

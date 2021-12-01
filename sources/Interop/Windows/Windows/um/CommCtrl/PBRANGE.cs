@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PBRANGE.xml' path='doc/member[@name="PBRANGE"]/*' />
 public partial struct PBRANGE
 {
+    /// <include file='PBRANGE.xml' path='doc/member[@name="PBRANGE.iLow"]/*' />
     public int iLow;
 
+    /// <include file='PBRANGE.xml' path='doc/member[@name="PBRANGE.iHigh"]/*' />
     public int iHigh;
 }

@@ -7,21 +7,27 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MIDIINCAPSA.xml' path='doc/member[@name="MIDIINCAPSA"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public unsafe partial struct MIDIINCAPSA
 {
+    /// <include file='MIDIINCAPSA.xml' path='doc/member[@name="MIDIINCAPSA.wMid"]/*' />
     [NativeTypeName("WORD")]
     public ushort wMid;
 
+    /// <include file='MIDIINCAPSA.xml' path='doc/member[@name="MIDIINCAPSA.wPid"]/*' />
     [NativeTypeName("WORD")]
     public ushort wPid;
 
+    /// <include file='MIDIINCAPSA.xml' path='doc/member[@name="MIDIINCAPSA.vDriverVersion"]/*' />
     [NativeTypeName("MMVERSION")]
     public uint vDriverVersion;
 
+    /// <include file='MIDIINCAPSA.xml' path='doc/member[@name="MIDIINCAPSA.szPname"]/*' />
     [NativeTypeName("CHAR [32]")]
     public fixed sbyte szPname[32];
 
+    /// <include file='MIDIINCAPSA.xml' path='doc/member[@name="MIDIINCAPSA.dwSupport"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwSupport;
 }

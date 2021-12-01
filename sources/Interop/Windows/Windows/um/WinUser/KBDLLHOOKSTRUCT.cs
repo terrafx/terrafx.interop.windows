@@ -5,20 +5,26 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='KBDLLHOOKSTRUCT.xml' path='doc/member[@name="KBDLLHOOKSTRUCT"]/*' />
 public partial struct KBDLLHOOKSTRUCT
 {
+    /// <include file='KBDLLHOOKSTRUCT.xml' path='doc/member[@name="KBDLLHOOKSTRUCT.vkCode"]/*' />
     [NativeTypeName("DWORD")]
     public uint vkCode;
 
+    /// <include file='KBDLLHOOKSTRUCT.xml' path='doc/member[@name="KBDLLHOOKSTRUCT.scanCode"]/*' />
     [NativeTypeName("DWORD")]
     public uint scanCode;
 
+    /// <include file='KBDLLHOOKSTRUCT.xml' path='doc/member[@name="KBDLLHOOKSTRUCT.flags"]/*' />
     [NativeTypeName("DWORD")]
     public uint flags;
 
+    /// <include file='KBDLLHOOKSTRUCT.xml' path='doc/member[@name="KBDLLHOOKSTRUCT.time"]/*' />
     [NativeTypeName("DWORD")]
     public uint time;
 
+    /// <include file='KBDLLHOOKSTRUCT.xml' path='doc/member[@name="KBDLLHOOKSTRUCT.dwExtraInfo"]/*' />
     [NativeTypeName("ULONG_PTR")]
     public nuint dwExtraInfo;
 }

@@ -5,15 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMAGEINFO.xml' path='doc/member[@name="IMAGEINFO"]/*' />
 public partial struct IMAGEINFO
 {
+    /// <include file='IMAGEINFO.xml' path='doc/member[@name="IMAGEINFO.hbmImage"]/*' />
     public HBITMAP hbmImage;
 
+    /// <include file='IMAGEINFO.xml' path='doc/member[@name="IMAGEINFO.hbmMask"]/*' />
     public HBITMAP hbmMask;
 
+    /// <include file='IMAGEINFO.xml' path='doc/member[@name="IMAGEINFO.Unused1"]/*' />
     public int Unused1;
 
+    /// <include file='IMAGEINFO.xml' path='doc/member[@name="IMAGEINFO.Unused2"]/*' />
     public int Unused2;
 
+    /// <include file='IMAGEINFO.xml' path='doc/member[@name="IMAGEINFO.rcImage"]/*' />
     public RECT rcImage;
 }

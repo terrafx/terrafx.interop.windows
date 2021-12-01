@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='FOCUS_EVENT_RECORD.xml' path='doc/member[@name="FOCUS_EVENT_RECORD"]/*' />
 public partial struct FOCUS_EVENT_RECORD
 {
+    /// <include file='FOCUS_EVENT_RECORD.xml' path='doc/member[@name="FOCUS_EVENT_RECORD.bSetFocus"]/*' />
     public BOOL bSetFocus;
 }

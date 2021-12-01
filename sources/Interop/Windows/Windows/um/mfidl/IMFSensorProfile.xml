@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFSensorProfile.AddBlockedControl">
+    <summary>
+      <para>Adds the specified blocked control .</para>
+    </summary>
+    <param name="wzBlockedControl">
+      <para>The blocked control to add.</para>
+    </param>
+    <returns>
+      <para>This method does not return a value.</para>
+    </returns>
+    <seealso cref="IMFSensorProfile" />
+  </member>
+  <member name="IMFSensorProfile.AddProfileFilter">
+    <summary>
+      <para>Adds a profile filter to the specified media stream.</para>
+    </summary>
+    <param name="StreamId">
+      <para>The ID of the stream to add to.</para>
+    </param>
+    <param name="wzFilterSetString">
+      <para>The filter to add.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFSensorProfile" />
+  </member>
+  <member name="IMFSensorProfile.GetProfileId">
+    <summary>
+      <para>Retrieves the sensor profile ID.</para>
+    </summary>
+    <param name="pId">
+      <para>Pointer to a <see cref="SENSORPROFILEID" /> containing the profile ID.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFSensorProfile" />
+  </member>
+  <member name="IMFSensorProfile.IsMediaTypeSupported">
+    <summary>
+      <para>Determines if a media stream supports the specified media type.</para>
+    </summary>
+    <param name="StreamId">
+      <para>The ID of the stream to check.</para>
+    </param>
+    <param name="pMediaType">
+      <para>Pointer to an <see cref="IMFMediaType" /> describing the media type to check.</para>
+    </param>
+    <param name="pfSupported">
+      <para>Returns <b>true</b> if the media type is supported; otherwise, <b>false</b>.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFSensorProfile" />
+  </member>
+  <member name="IMFSensorProfile">
+    <summary>
+      <para>Describes a media foundation sensor profile.</para>
+    </summary>
+  </member>
+</doc>

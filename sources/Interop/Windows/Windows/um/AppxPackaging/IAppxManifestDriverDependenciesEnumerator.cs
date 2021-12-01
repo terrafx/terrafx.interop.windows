@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAppxManifestDriverDependenciesEnumerator.xml' path='doc/member[@name="IAppxManifestDriverDependenciesEnumerator"]/*' />
 [Guid("FE039DB2-467F-4755-8404-8F5EB6865B33")]
 [NativeTypeName("struct IAppxManifestDriverDependenciesEnumerator : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IAppxManifestDriverDependenciesEnumerator : IAppxMa
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IAppxManifestDriverDependenciesEnumerator : IAppxMa
         return ((delegate* unmanaged<IAppxManifestDriverDependenciesEnumerator*, Guid*, void**, int>)(lpVtbl[0]))((IAppxManifestDriverDependenciesEnumerator*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IAppxManifestDriverDependenciesEnumerator : IAppxMa
         return ((delegate* unmanaged<IAppxManifestDriverDependenciesEnumerator*, uint>)(lpVtbl[1]))((IAppxManifestDriverDependenciesEnumerator*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IAppxManifestDriverDependenciesEnumerator : IAppxMa
         return ((delegate* unmanaged<IAppxManifestDriverDependenciesEnumerator*, uint>)(lpVtbl[2]))((IAppxManifestDriverDependenciesEnumerator*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAppxManifestDriverDependenciesEnumerator.xml' path='doc/member[@name="IAppxManifestDriverDependenciesEnumerator.GetCurrent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetCurrent(IAppxManifestDriverDependency** driverDependency)
@@ -46,6 +51,7 @@ public unsafe partial struct IAppxManifestDriverDependenciesEnumerator : IAppxMa
         return ((delegate* unmanaged<IAppxManifestDriverDependenciesEnumerator*, IAppxManifestDriverDependency**, int>)(lpVtbl[3]))((IAppxManifestDriverDependenciesEnumerator*)Unsafe.AsPointer(ref this), driverDependency);
     }
 
+    /// <include file='IAppxManifestDriverDependenciesEnumerator.xml' path='doc/member[@name="IAppxManifestDriverDependenciesEnumerator.GetHasCurrent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetHasCurrent(BOOL* hasCurrent)
@@ -53,6 +59,7 @@ public unsafe partial struct IAppxManifestDriverDependenciesEnumerator : IAppxMa
         return ((delegate* unmanaged<IAppxManifestDriverDependenciesEnumerator*, BOOL*, int>)(lpVtbl[4]))((IAppxManifestDriverDependenciesEnumerator*)Unsafe.AsPointer(ref this), hasCurrent);
     }
 
+    /// <include file='IAppxManifestDriverDependenciesEnumerator.xml' path='doc/member[@name="IAppxManifestDriverDependenciesEnumerator.MoveNext"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT MoveNext(BOOL* hasNext)

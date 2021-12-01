@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='COPYDATASTRUCT.xml' path='doc/member[@name="COPYDATASTRUCT"]/*' />
 public unsafe partial struct COPYDATASTRUCT
 {
+    /// <include file='COPYDATASTRUCT.xml' path='doc/member[@name="COPYDATASTRUCT.dwData"]/*' />
     [NativeTypeName("ULONG_PTR")]
     public nuint dwData;
 
+    /// <include file='COPYDATASTRUCT.xml' path='doc/member[@name="COPYDATASTRUCT.cbData"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbData;
 
+    /// <include file='COPYDATASTRUCT.xml' path='doc/member[@name="COPYDATASTRUCT.lpData"]/*' />
     [NativeTypeName("PVOID")]
     public void* lpData;
 }

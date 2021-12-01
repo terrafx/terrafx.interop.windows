@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IWICPlanarBitmapFrameEncode.xml' path='doc/member[@name="IWICPlanarBitmapFrameEncode"]/*' />
 [Guid("F928B7B8-2221-40C1-B72E-7E82F1974D1A")]
 [NativeTypeName("struct IWICPlanarBitmapFrameEncode : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IWICPlanarBitmapFrameEncode : IWICPlanarBitmapFrame
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IWICPlanarBitmapFrameEncode : IWICPlanarBitmapFrame
         return ((delegate* unmanaged<IWICPlanarBitmapFrameEncode*, Guid*, void**, int>)(lpVtbl[0]))((IWICPlanarBitmapFrameEncode*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IWICPlanarBitmapFrameEncode : IWICPlanarBitmapFrame
         return ((delegate* unmanaged<IWICPlanarBitmapFrameEncode*, uint>)(lpVtbl[1]))((IWICPlanarBitmapFrameEncode*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IWICPlanarBitmapFrameEncode : IWICPlanarBitmapFrame
         return ((delegate* unmanaged<IWICPlanarBitmapFrameEncode*, uint>)(lpVtbl[2]))((IWICPlanarBitmapFrameEncode*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IWICPlanarBitmapFrameEncode.xml' path='doc/member[@name="IWICPlanarBitmapFrameEncode.WritePixels"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT WritePixels(uint lineCount, WICBitmapPlane* pPlanes, uint cPlanes)
@@ -48,6 +53,7 @@ public unsafe partial struct IWICPlanarBitmapFrameEncode : IWICPlanarBitmapFrame
         return ((delegate* unmanaged<IWICPlanarBitmapFrameEncode*, uint, WICBitmapPlane*, uint, int>)(lpVtbl[3]))((IWICPlanarBitmapFrameEncode*)Unsafe.AsPointer(ref this), lineCount, pPlanes, cPlanes);
     }
 
+    /// <include file='IWICPlanarBitmapFrameEncode.xml' path='doc/member[@name="IWICPlanarBitmapFrameEncode.WriteSource"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT WriteSource(IWICBitmapSource** ppPlanes, uint cPlanes, WICRect* prcSource)

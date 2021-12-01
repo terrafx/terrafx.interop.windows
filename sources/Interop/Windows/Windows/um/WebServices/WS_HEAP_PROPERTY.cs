@@ -5,12 +5,16 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_HEAP_PROPERTY.xml' path='doc/member[@name="WS_HEAP_PROPERTY"]/*' />
 public unsafe partial struct WS_HEAP_PROPERTY
 {
+    /// <include file='WS_HEAP_PROPERTY.xml' path='doc/member[@name="WS_HEAP_PROPERTY.id"]/*' />
     public WS_HEAP_PROPERTY_ID id;
 
+    /// <include file='WS_HEAP_PROPERTY.xml' path='doc/member[@name="WS_HEAP_PROPERTY.value"]/*' />
     public void* value;
 
+    /// <include file='WS_HEAP_PROPERTY.xml' path='doc/member[@name="WS_HEAP_PROPERTY.valueSize"]/*' />
     [NativeTypeName("ULONG")]
     public uint valueSize;
 }

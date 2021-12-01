@@ -9,15 +9,19 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PROCESS_MITIGATION_DEP_POLICY.xml' path='doc/member[@name="PROCESS_MITIGATION_DEP_POLICY"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public partial struct PROCESS_MITIGATION_DEP_POLICY
 {
+    /// <include file='PROCESS_MITIGATION_DEP_POLICY.xml' path='doc/member[@name="PROCESS_MITIGATION_DEP_POLICY.Anonymous"]/*' />
     [NativeTypeName("_PROCESS_MITIGATION_DEP_POLICY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:12737:5)")]
     public _Anonymous_e__Union Anonymous;
 
+    /// <include file='PROCESS_MITIGATION_DEP_POLICY.xml' path='doc/member[@name="PROCESS_MITIGATION_DEP_POLICY.Permanent"]/*' />
     [NativeTypeName("BOOLEAN")]
     public byte Permanent;
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Flags"]/*' />
     public ref uint Flags
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -27,6 +31,7 @@ public partial struct PROCESS_MITIGATION_DEP_POLICY
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Enable"]/*' />
     public uint Enable
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -42,6 +47,7 @@ public partial struct PROCESS_MITIGATION_DEP_POLICY
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.DisableAtlThunkEmulation"]/*' />
     public uint DisableAtlThunkEmulation
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -57,6 +63,7 @@ public partial struct PROCESS_MITIGATION_DEP_POLICY
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.ReservedFlags"]/*' />
     public uint ReservedFlags
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -72,21 +79,26 @@ public partial struct PROCESS_MITIGATION_DEP_POLICY
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public partial struct _Anonymous_e__Union
     {
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Flags"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("DWORD")]
         public uint Flags;
 
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("_PROCESS_MITIGATION_DEP_POLICY::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:12739:9)")]
         public _Anonymous_e__Struct Anonymous;
 
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />
         public partial struct _Anonymous_e__Struct
         {
             public uint _bitfield;
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Enable"]/*' />
             [NativeTypeName("DWORD : 1")]
             public uint Enable
             {
@@ -103,6 +115,7 @@ public partial struct PROCESS_MITIGATION_DEP_POLICY
                 }
             }
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.DisableAtlThunkEmulation"]/*' />
             [NativeTypeName("DWORD : 1")]
             public uint DisableAtlThunkEmulation
             {
@@ -119,6 +132,7 @@ public partial struct PROCESS_MITIGATION_DEP_POLICY
                 }
             }
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.ReservedFlags"]/*' />
             [NativeTypeName("DWORD : 30")]
             public uint ReservedFlags
             {

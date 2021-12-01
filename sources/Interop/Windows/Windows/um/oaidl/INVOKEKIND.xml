@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="INVOKEKIND">
+    <summary>
+      <para>Specifies the way a function is invoked.</para>
+    </summary>
+    <remarks>
+      <para>In C, value assignment is written as *pobj1 = *pobj2, while reference assignment is written as pobj1 = pobj2. Other languages have other syntactic conventions. A property or data member can support only a value assignment, a reference assignment, or both. The INVOKEKIND enumeration constants are the same constants that are passed to <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nf-oaidl-idispatch-invoke">IDispatch.Invoke</a> to specify the way in which a function is invoked.</para>
+    </remarks>
+  </member>
+  <member name="INVOKEKIND.INVOKE_FUNC">
+    <summary>
+      <para>The member is called using a normal function invocation syntax.</para>
+    </summary>
+  </member>
+  <member name="INVOKEKIND.INVOKE_PROPERTYGET">
+    <summary>
+      <para>The function is invoked using a normal property-access syntax.</para>
+    </summary>
+  </member>
+  <member name="INVOKEKIND.INVOKE_PROPERTYPUT">
+    <summary>
+      <para>The function is invoked using a property value assignment syntax. Syntactically, a typical programming language might represent changing a property in the same way as assignment. For example: object.property : = value.</para>
+    </summary>
+  </member>
+  <member name="INVOKEKIND.INVOKE_PROPERTYPUTREF">
+    <summary>
+      <para>The function is invoked using a property reference assignment syntax.</para>
+    </summary>
+  </member>
+</doc>

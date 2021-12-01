@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="Windows.timeBeginPeriod">
+    <summary>
+      <para>The <b>timeBeginPeriod</b> function requests a minimum resolution for periodic timers.</para>
+    </summary>
+    <param name="uPeriod">
+      <para>Minimum timer resolution, in milliseconds, for the application or device driver. A lower value specifies a higher (more accurate) resolution.</para>
+    </param>
+    <returns>
+      <para>Returns <b>TIMERR_NOERROR</b> if successful or <b>TIMERR_NOCANDO</b> if the resolution specified in <i>uPeriod</i> is out of range.</para>
+    </returns>
+    <remarks>
+      <para>Call this function immediately before using timer services, and call the <see cref="timeEndPeriod" /> function immediately after you are finished using the timer services.</para>
+      <para>You must match each call to <b>timeBeginPeriod</b> with a call to <see cref="timeEndPeriod" />, specifying the same minimum resolution in both calls. An application can make multiple <b>timeBeginPeriod</b> calls as long as each call is matched with a call to <b>timeEndPeriod</b>.</para>
+      <para>Prior to Windows 10, version 2004, this function affects a global Windows setting. For all processes Windows uses the lowest value (that is, highest resolution) requested by any process. Starting with Windows 10, version 2004, this function no longer affects global timer resolution. For processes which call this function, Windows uses the lowest value (that is, highest resolution) requested by any process. For processes which have not called this function, Windows does not guarantee a higher resolution than the default system resolution.</para>
+      <para>Starting with Windows 11, if a window-owning process becomes fully occluded, minimized, or otherwise invisible or inaudible to the end user, Windows does not guarantee a higher resolution than the default system resolution. See <see cref="SetProcessInformation" /> for more information on this behavior.</para>
+      <para>Setting a higher resolution can improve the accuracy of time-out intervals in wait functions. However, it can also reduce overall system performance, because the thread scheduler switches tasks more often. High resolutions can also prevent the CPU power management system from entering power-saving modes. Setting a higher resolution does not improve the accuracy of the high-resolution performance counter.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Multimedia/multimedia-timer-functions">Multimedia Timer Functions</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Multimedia/multimedia-timers">Multimedia Timers</seealso>
+  </member>
+  <member name="Windows.timeEndPeriod">
+    <summary>
+      <para>The <b>timeEndPeriod</b> function clears a previously set minimum timer resolution.</para>
+    </summary>
+    <param name="uPeriod">
+      <para>Minimum timer resolution specified in the previous call to the <see cref="timeBeginPeriod" /> function.</para>
+    </param>
+    <returns>
+      <para>Returns <b>TIMERR_NOERROR</b> if successful or <b>TIMERR_NOCANDO</b> if the resolution specified in uPeriod is out of range.</para>
+    </returns>
+    <remarks>
+      <para>Call this function immediately after you are finished using timer services.</para>
+      <para>You must match each call to <see cref="timeBeginPeriod" /> with a call to <b>timeEndPeriod</b>, specifying the same minimum resolution in both calls. An application can make multiple <b>timeBeginPeriod</b> calls as long as each call is matched with a call to <b>timeEndPeriod</b>.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Multimedia/multimedia-timer-functions">Multimedia Timer Functions</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Multimedia/multimedia-timers">Multimedia Timers</seealso>
+  </member>
+  <member name="Windows.timeGetDevCaps">
+    <summary>
+      <para>The <b>timeGetDevCaps</b> function queries the timer device to determine its resolution.</para>
+    </summary>
+    <param name="ptc">
+      <para>A pointer to a <see cref="TIMECAPS" /> structure. This structure is filled with information about the resolution of the timer device.</para>
+    </param>
+    <param name="cbtc">
+      <para>The size, in bytes, of the <see cref="TIMECAPS" /> structure.</para>
+    </param>
+    <returns>
+      <para>Returns <b>MMSYSERR_NOERROR</b> if successful or an error code otherwise. Possible error codes include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>MMSYSERR_ERROR</b>
+            </para>
+          </description>
+          <description>
+            <para>General error code.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>TIMERR_NOCANDO</b>
+            </para>
+          </description>
+          <description>
+            <para>The <i>ptc</i> parameter is <b>NULL</b>, or the <i>cbtc</i> parameter is invalid, or some other error occurred.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Multimedia/multimedia-timer-functions">Multimedia Timer Functions</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Multimedia/multimedia-timers">Multimedia Timers</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Multimedia/timer-resolution">Timer Resolution</seealso>
+  </member>
+  <member name="Windows.timeGetSystemTime">
+    <summary>
+      <para>The <b>timeGetSystemTime</b> function retrieves the system time, in milliseconds. The system time is the time elapsed since Windows was started. This function works very much like the <see cref="timeGetTime" /> function. See <b>timeGetTime</b> for details of these functions' operation.</para>
+    </summary>
+    <param name="pmmt">
+      <para>Pointer to an <a href="https://docs.microsoft.com//previous-versions/dd757347(v=vs.85)">MMTIME</a> structure.</para>
+    </param>
+    <param name="cbmmt">
+      <para>Size, in bytes, of the <a href="https://docs.microsoft.com//previous-versions/dd757347(v=vs.85)">MMTIME</a> structure.</para>
+    </param>
+    <returns>
+      <para>If successful, returns <b>TIMERR_NOERROR</b>. Otherwise, returns an error code.</para>
+    </returns>
+    <remarks>
+      <para>The system time is returned in the <b>ms</b> member of the <a href="https://docs.microsoft.com//previous-versions/dd757347(v=vs.85)">MMTIME</a> structure.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Multimedia/multimedia-timer-functions">Multimedia Timer Functions</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Multimedia/multimedia-timers">Multimedia Timers</seealso>
+  </member>
+  <member name="Windows.timeGetTime">
+    <summary>
+      <para>The <b>timeGetTime</b> function retrieves the system time, in milliseconds. The system time is the time elapsed since Windows was started.</para>
+    </summary>
+    <returns>
+      <para>Returns the system time, in milliseconds.</para>
+    </returns>
+    <remarks>
+      <para>The only difference between this function and the <see cref="timeGetSystemTime" /> function is that <b>timeGetSystemTime</b> uses the <a href="https://docs.microsoft.com//previous-versions/dd757347(v=vs.85)">MMTIME</a> structure to return the system time. The <b>timeGetTime</b> function has less overhead than <b>timeGetSystemTime</b>.</para>
+      <para>Note that the value returned by the <b>timeGetTime</b> function is a <b>DWORD</b> value. The return value wraps around to 0 every 2^32 milliseconds, which is about 49.71 days. This can cause problems in code that directly uses the <b>timeGetTime</b> return value in computations, particularly where the value is used to control code execution. You should always use the difference between two <b>timeGetTime</b> return values in computations.</para>
+      <para>The default precision of the <b>timeGetTime</b> function can be five milliseconds or more, depending on the machine. You can use the <see cref="timeBeginPeriod" /> and <see cref="timeEndPeriod" /> functions to increase the precision of <b>timeGetTime</b>. If you do so, the minimum difference between successive values returned by <b>timeGetTime</b> can be as large as the minimum period value set using <b>timeBeginPeriod</b> and <b>timeEndPeriod</b>. Use the <see cref="QueryPerformanceCounter" /> and <see cref="QueryPerformanceFrequency" /> functions to measure short time intervals at a high resolution.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Multimedia/multimedia-timer-functions">Multimedia Timer Functions</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Multimedia/multimedia-timers">Multimedia Timers</seealso>
+  </member>
+</doc>

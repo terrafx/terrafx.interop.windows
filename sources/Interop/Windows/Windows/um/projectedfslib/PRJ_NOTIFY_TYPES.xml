@@ -1,0 +1,261 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PRJ_NOTIFY_TYPES">
+    <summary>
+      <para>Types of notifications describing a change to the file or folder.</para>
+    </summary>
+    <remarks>
+      <para>ProjFS can send notifications of file system activity to a provider. When the provider starts a virtualization instance it specifies which notifications it wishes to receive. It may also specify a new set of notifications for a file when it is created or renamed. The provider must register a PRJ_NOTIFICATION_CB notification callback routine in the callbacks parameter of PrjStartVirtualizing in order to receive notifications.</para>
+      <para>ProjFS sends notifications for files and directories within an active virtualization root. That is, ProjFS will send notifications for the virtualization root and its descendants. Symbolic links and junctions within the virtualization root are not traversed when determining what constitutes a descendant of the virtualization root.</para>
+      <para>ProjFS sends notifications only for the primary data stream of a file. ProjFS does not send notifications for operations on alternate data streams.</para>
+      <para>ProjFS does not send notifications for an inactive virtualization instance. A virtualization instance is inactive if any one of the following is true:</para>
+      <list type="bullet">
+        <item>
+          <description>The provider has not yet started it by calling <see cref="PrjStartVirtualizing" />.</description>
+        </item>
+        <item>
+          <description>The provider has stopped the instance by calling <see cref="PrjStopVirtualizing" />.</description>
+        </item>
+        <item>
+          <description>The provider process has exited</description>
+        </item>
+      </list>
+      <para>The provider may specify which notifications it wishes to receive when starting a virtualization instance, or in response to a notification that allows a new notification mask to be set.</para>
+      <para>The provider specifies a default set of notifications that it wants ProjFS to send for the virtualization instance when it starts the instance. This set of notifications is provided in the NotificationMappings member of the options parameter of <see cref="PrjStartVirtualizing" />, which may specify different notification masks for different subtrees of the virtualization instance.</para>
+      <para>The provider may choose to supply a different notification mask in response to a notification of file open, create, supersede/overwrite, or rename. ProjFS will continue to send these notifications for the given file until all handles to the file are closed. After that it will revert to the default set of notifications. Naturally if the default set of notifications does not specify that ProjFS should notify for open, create, etc., the provider will not get the opportunity to specify a different mask for those operations.</para>
+    </remarks>
+  </member>
+  <member name="PRJ_NOTIFY_TYPES.PRJ_NOTIFY_NONE">
+    <summary>
+      <para>No notification.</para>
+    </summary>
+  </member>
+  <member name="PRJ_NOTIFY_TYPES.PRJ_NOTIFY_SUPPRESS_NOTIFICATIONS">
+    <summary>
+      <para>If specified on virtualization instance start:</para>
+      <list type="bullet">
+        <item>
+          <description>This indicates that notifications should not be sent for the virtualization instance, or a specified subtree of the instance.</description>
+        </item>
+      </list>
+      <para>If specified in response to a notification:</para>
+      <list type="bullet">
+        <item>
+          <description>This indicates that notifications should not be sent for the specified file or folder until all handles to it are closed.</description>
+        </item>
+      </list>
+      <para>
+        <b>Note</b>  If this bit appears in a notification mask, it overrides all other bits in the mask. For example, a valid mask with this bit is treated as containing only PRJ_NOTIFY_SUPPRESS_NOTIFICATIONS.</para>
+    </summary>
+  </member>
+  <member name="PRJ_NOTIFY_TYPES.PRJ_NOTIFY_FILE_OPENED">
+    <summary>
+      <para>If specified on virtualization instance start:</para>
+      <list type="bullet">
+        <item>
+          <description>This indicates that the provider should be notified when a handle is created to an existing file or folder.</description>
+        </item>
+      </list>
+      <para>If specified in response to a notification:</para>
+      <list type="bullet">
+        <item>
+          <description>This indicates that the provider should be notified if any further handles are created to the file or folder.</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="PRJ_NOTIFY_TYPES.PRJ_NOTIFY_NEW_FILE_CREATED">
+    <summary>
+      <para>If specified on virtualization instance start:</para>
+      <list type="bullet">
+        <item>
+          <description>The provider should be notified when a new file or folder is created.</description>
+        </item>
+      </list>
+      <para>If specified in response to a notification:</para>
+      <list type="bullet">
+        <item>
+          <description>No effect.</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="PRJ_NOTIFY_TYPES.PRJ_NOTIFY_FILE_OVERWRITTEN">
+    <summary>
+      <para>If specified on virtualization instance start:</para>
+      <list type="bullet">
+        <item>
+          <description>Indicates that the provider should be notified when an existing when an existing file is overwritten or superceded.</description>
+        </item>
+      </list>
+      <para>If specified in response to a notification:</para>
+      <list type="bullet">
+        <item>
+          <description>Indicates that the provider should be notified when the file or folder is overwritten or superceded.</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="PRJ_NOTIFY_TYPES.PRJ_NOTIFY_PRE_DELETE">
+    <summary>
+      <para>If specified on virtualization instance start:</para>
+      <list type="bullet">
+        <item>
+          <description>Indicates that the provider should be notified when a file or folder is about to be deleted.</description>
+        </item>
+      </list>
+      <para>If specified in response to a notification:</para>
+      <list type="bullet">
+        <item>
+          <description>Indicates that the provider should be notified when a file or folder is about to be deleted.</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="PRJ_NOTIFY_TYPES.PRJ_NOTIFY_PRE_RENAME">
+    <summary>
+      <para>If specified on virtualization instance start:</para>
+      <list type="bullet">
+        <item>
+          <description>Indicates that the provider should be notified when a file or folder is about to be renamed.</description>
+        </item>
+      </list>
+      <para>If specified in response to a notification:</para>
+      <list type="bullet">
+        <item>
+          <description>Indicates that the provider should be notified when a file or folder is about to be renamed.</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="PRJ_NOTIFY_TYPES.PRJ_NOTIFY_PRE_SET_HARDLINK">
+    <summary>
+      <para>If specified on virtualization instance start:</para>
+      <list type="bullet">
+        <item>
+          <description>Indicates that the provider should be notified when a hard link is about to be created for a file.</description>
+        </item>
+      </list>
+      <para>If specified in response to a notification:</para>
+      <list type="bullet">
+        <item>
+          <description>Indicates that the provider should be notified when a hard link is about to be created for a file.</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="PRJ_NOTIFY_TYPES.PRJ_NOTIFY_FILE_RENAMED">
+    <summary>
+      <para>If specified on virtualization instance start:</para>
+      <list type="bullet">
+        <item>
+          <description>Indicates that the provider should be notified that a file or folder has been renamed.</description>
+        </item>
+      </list>
+      <para>If specified in response to a notification:</para>
+      <list type="bullet">
+        <item>
+          <description>Indicates that the provider should be notified when a file or folder has been renamed.</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="PRJ_NOTIFY_TYPES.PRJ_NOTIFY_HARDLINK_CREATED">
+    <summary>
+      <para>If specified on virtualization instance start:</para>
+      <list type="bullet">
+        <item>
+          <description>Indicates that the provider should be notified that a hard link has been created for a file.</description>
+        </item>
+      </list>
+      <para>If specified in response to a notification:</para>
+      <list type="bullet">
+        <item>
+          <description>Indicates that the provider should be notified that a hard link has been created for the file.</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="PRJ_NOTIFY_TYPES.PRJ_NOTIFY_FILE_HANDLE_CLOSED_NO_MODIFICATION">
+    <summary>
+      <para>If specified on virtualization instance start:</para>
+      <list type="bullet">
+        <item>
+          <description>The provider should be notified when a handle is closed on a file/folder and the closing handle neither modified nor deleted it.</description>
+        </item>
+      </list>
+      <para>If specified in response to a notification:</para>
+      <list type="bullet">
+        <item>
+          <description>The provider should be notified when handles are closed for the file/folder and there were no modifications or deletions associated with the closing handle.</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="PRJ_NOTIFY_TYPES.PRJ_NOTIFY_FILE_HANDLE_CLOSED_FILE_MODIFIED">
+    <summary>
+      <para>If specified on virtualization instance start:</para>
+      <list type="bullet">
+        <item>
+          <description>The provider should be notified when a handle is closed on a file/folder and the closing handle was used to modify it.</description>
+        </item>
+      </list>
+      <para>If specified in response to a notification:</para>
+      <list type="bullet">
+        <item>
+          <description>The provider should be notified when a handle is closed on the file/folder and the closing handle was used to modify it.</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="PRJ_NOTIFY_TYPES.PRJ_NOTIFY_FILE_HANDLE_CLOSED_FILE_DELETED">
+    <summary>
+      <para>If specified on virtualization instance start:</para>
+      <list type="bullet">
+        <item>
+          <description>The provider should be notified when a handle is closed on a file/folder and it is deleted as part of closing the handle.</description>
+        </item>
+      </list>
+      <para>If specified in response to a notification:</para>
+      <list type="bullet">
+        <item>
+          <description>The provider should be notified when a handle is closed on the file/folder and it is deleted as part of closing the handle.</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="PRJ_NOTIFY_TYPES.PRJ_NOTIFY_FILE_PRE_CONVERT_TO_FULL">
+    <summary>
+      <para>If specified on virtualization instance start:</para>
+      <list type="bullet">
+        <item>
+          <description>The provider should be notified when it is about to convert a placeholder to a full file.</description>
+        </item>
+      </list>
+      <para>If specified in response to a notification:</para>
+      <list type="bullet">
+        <item>
+          <description>The provider should be notified when it is about to convert the placeholder to a full file, assuming it is a placeholder and not already a full file.</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="PRJ_NOTIFY_TYPES.PRJ_NOTIFY_USE_EXISTING_MASK">
+    <summary>
+      <para>If specified on virtualization instance start:</para>
+      <list type="bullet">
+        <item>
+          <description>This value is not valid on virtualization instance start.</description>
+        </item>
+      </list>
+      <para>If specified in response to a notification:</para>
+      <list type="bullet">
+        <item>
+          <description>Continue to use the existing set of notifications for this file/folder.</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+</doc>

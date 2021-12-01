@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IFileViewerSite.GetPinnedWindow">
+    <summary>
+      <para>Gets the handle to the current pinned window, if one exists.</para>
+    </summary>
+    <param name="phwnd">
+      <para>Type: <b>HWND*</b></para>
+      <para>A pointer to the handle of the current pinned window or <b>NULL</b> if no pinned window exists.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IFileViewerSite" />
+  </member>
+  <member name="IFileViewerSite.SetPinnedWindow">
+    <summary>
+      <para>Sets the pinned window. When the user selects a new file to view, the Shell directs the file viewer to display the new file in the pinned window instead of creating a new window.</para>
+    </summary>
+    <param name="hwnd">
+      <para>Type: <b>HWND</b></para>
+      <para>A handle to the new pinned window or <b>NULL</b> if there is to be no pinned window.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IFileViewerSite" />
+  </member>
+  <member name="IFileViewerSite">
+    <summary>
+      <para>Exposes methods that designate an interface that allows a file viewer to retrieve the handle to the current pinned window, or to set a new pinned window. The pinned window is the window in which the current file viewer displays a file. When the user selects a new file to view, the Shell directs the file viewer to display the new file in the pinned window rather than create a new window.</para>
+    </summary>
+    <remarks>
+      <para>
+        <b>Note</b>  File viewers are not supported by Windows 2000 and later systems.</para>
+      <para>You do not typically implement this interface. The Shell implements this interface to provide a pinned window for the file viewer.</para>
+      <para>You use this interface to obtain or set the window for a file viewer.</para>
+    </remarks>
+  </member>
+</doc>

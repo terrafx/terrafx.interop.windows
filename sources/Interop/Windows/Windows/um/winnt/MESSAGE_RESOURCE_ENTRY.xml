@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MESSAGE_RESOURCE_ENTRY">
+    <summary>
+      <para>Contains the error message or message box display text for a message table resource.</para>
+    </summary>
+    <seealso cref="MESSAGE_RESOURCE_BLOCK" />
+    <seealso cref="MESSAGE_RESOURCE_DATA" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/menurc/resources">Resources</seealso>
+  </member>
+  <member name="MESSAGE_RESOURCE_ENTRY.Length">
+    <summary>
+      <para>Type: <b>WORD</b></para>
+      <para>The length, in bytes, of the <b>MESSAGE_RESOURCE_ENTRY</b> structure.</para>
+    </summary>
+  </member>
+  <member name="MESSAGE_RESOURCE_ENTRY.Flags">
+    <summary>
+      <para>Type: <b>WORD</b></para>
+      <para>Indicates that the string is encoded in Unicode, if equal to the value 0x0001. Indicates that the string is encoded in ANSI, if equal to the value 0x0000.</para>
+    </summary>
+  </member>
+  <member name="MESSAGE_RESOURCE_ENTRY.Text">
+    <summary>
+      <para>Type: <b>BYTE[1]</b></para>
+      <para>Pointer to an array that contains the error message or message box display text.</para>
+    </summary>
+  </member>
+</doc>

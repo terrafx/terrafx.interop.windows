@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IPreviewHandler.xml' path='doc/member[@name="IPreviewHandler"]/*' />
 [Guid("8895B1C6-B41F-4C1C-A562-0D564250836F")]
 [NativeTypeName("struct IPreviewHandler : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IPreviewHandler : IPreviewHandler.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IPreviewHandler : IPreviewHandler.Interface
         return ((delegate* unmanaged<IPreviewHandler*, Guid*, void**, int>)(lpVtbl[0]))((IPreviewHandler*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IPreviewHandler : IPreviewHandler.Interface
         return ((delegate* unmanaged<IPreviewHandler*, uint>)(lpVtbl[1]))((IPreviewHandler*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IPreviewHandler : IPreviewHandler.Interface
         return ((delegate* unmanaged<IPreviewHandler*, uint>)(lpVtbl[2]))((IPreviewHandler*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IPreviewHandler.xml' path='doc/member[@name="IPreviewHandler.SetWindow"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetWindow(HWND hwnd, [NativeTypeName("const RECT *")] RECT* prc)
@@ -46,6 +51,7 @@ public unsafe partial struct IPreviewHandler : IPreviewHandler.Interface
         return ((delegate* unmanaged<IPreviewHandler*, HWND, RECT*, int>)(lpVtbl[3]))((IPreviewHandler*)Unsafe.AsPointer(ref this), hwnd, prc);
     }
 
+    /// <include file='IPreviewHandler.xml' path='doc/member[@name="IPreviewHandler.SetRect"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetRect([NativeTypeName("const RECT *")] RECT* prc)
@@ -53,6 +59,7 @@ public unsafe partial struct IPreviewHandler : IPreviewHandler.Interface
         return ((delegate* unmanaged<IPreviewHandler*, RECT*, int>)(lpVtbl[4]))((IPreviewHandler*)Unsafe.AsPointer(ref this), prc);
     }
 
+    /// <include file='IPreviewHandler.xml' path='doc/member[@name="IPreviewHandler.DoPreview"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT DoPreview()
@@ -60,6 +67,7 @@ public unsafe partial struct IPreviewHandler : IPreviewHandler.Interface
         return ((delegate* unmanaged<IPreviewHandler*, int>)(lpVtbl[5]))((IPreviewHandler*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IPreviewHandler.xml' path='doc/member[@name="IPreviewHandler.Unload"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Unload()
@@ -67,6 +75,7 @@ public unsafe partial struct IPreviewHandler : IPreviewHandler.Interface
         return ((delegate* unmanaged<IPreviewHandler*, int>)(lpVtbl[6]))((IPreviewHandler*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IPreviewHandler.xml' path='doc/member[@name="IPreviewHandler.SetFocus"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT SetFocus()
@@ -74,6 +83,7 @@ public unsafe partial struct IPreviewHandler : IPreviewHandler.Interface
         return ((delegate* unmanaged<IPreviewHandler*, int>)(lpVtbl[7]))((IPreviewHandler*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IPreviewHandler.xml' path='doc/member[@name="IPreviewHandler.QueryFocus"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT QueryFocus(HWND* phwnd)
@@ -81,6 +91,7 @@ public unsafe partial struct IPreviewHandler : IPreviewHandler.Interface
         return ((delegate* unmanaged<IPreviewHandler*, HWND*, int>)(lpVtbl[8]))((IPreviewHandler*)Unsafe.AsPointer(ref this), phwnd);
     }
 
+    /// <include file='IPreviewHandler.xml' path='doc/member[@name="IPreviewHandler.TranslateAcceleratorW"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT TranslateAcceleratorW(MSG* pmsg)

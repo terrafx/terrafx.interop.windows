@@ -9,17 +9,20 @@ namespace TerraFX.Interop.Windows;
 
 public static unsafe partial class Windows
 {
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IN6_SET_ADDR_UNSPECIFIED"]/*' />
     public static void IN6_SET_ADDR_UNSPECIFIED([NativeTypeName("PIN6_ADDR")] IN6_ADDR* a)
     {
         Unsafe.InitBlockUnaligned(a->u.Byte, 0, (uint)(sizeof(IN6_ADDR)));
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IN6_SET_ADDR_LOOPBACK"]/*' />
     public static void IN6_SET_ADDR_LOOPBACK([NativeTypeName("PIN6_ADDR")] IN6_ADDR* a)
     {
         Unsafe.InitBlockUnaligned(a->u.Byte, 0, (uint)(sizeof(IN6_ADDR)));
         a->u.Byte[15] = 1;
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IN6ADDR_SETANY"]/*' />
     public static void IN6ADDR_SETANY([NativeTypeName("PSOCKADDR_IN6")] SOCKADDR_IN6* a)
     {
         a->sin6_family = 23;
@@ -29,6 +32,7 @@ public static unsafe partial class Windows
         a->Anonymous.sin6_scope_id = 0;
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IN6ADDR_SETLOOPBACK"]/*' />
     public static void IN6ADDR_SETLOOPBACK([NativeTypeName("PSOCKADDR_IN6")] SOCKADDR_IN6* a)
     {
         a->sin6_family = 23;

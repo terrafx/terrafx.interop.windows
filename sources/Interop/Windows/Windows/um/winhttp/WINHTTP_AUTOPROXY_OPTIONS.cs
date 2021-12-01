@@ -5,22 +5,29 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WINHTTP_AUTOPROXY_OPTIONS.xml' path='doc/member[@name="WINHTTP_AUTOPROXY_OPTIONS"]/*' />
 public unsafe partial struct WINHTTP_AUTOPROXY_OPTIONS
 {
+    /// <include file='WINHTTP_AUTOPROXY_OPTIONS.xml' path='doc/member[@name="WINHTTP_AUTOPROXY_OPTIONS.dwFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFlags;
 
+    /// <include file='WINHTTP_AUTOPROXY_OPTIONS.xml' path='doc/member[@name="WINHTTP_AUTOPROXY_OPTIONS.dwAutoDetectFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwAutoDetectFlags;
 
+    /// <include file='WINHTTP_AUTOPROXY_OPTIONS.xml' path='doc/member[@name="WINHTTP_AUTOPROXY_OPTIONS.lpszAutoConfigUrl"]/*' />
     [NativeTypeName("LPCWSTR")]
     public ushort* lpszAutoConfigUrl;
 
+    /// <include file='WINHTTP_AUTOPROXY_OPTIONS.xml' path='doc/member[@name="WINHTTP_AUTOPROXY_OPTIONS.lpvReserved"]/*' />
     [NativeTypeName("LPVOID")]
     public void* lpvReserved;
 
+    /// <include file='WINHTTP_AUTOPROXY_OPTIONS.xml' path='doc/member[@name="WINHTTP_AUTOPROXY_OPTIONS.dwReserved"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwReserved;
 
+    /// <include file='WINHTTP_AUTOPROXY_OPTIONS.xml' path='doc/member[@name="WINHTTP_AUTOPROXY_OPTIONS.fAutoLogonIfChallenged"]/*' />
     public BOOL fAutoLogonIfChallenged;
 }

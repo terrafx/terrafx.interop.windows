@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="NMREBARAUTOBREAK">
+    <summary>
+      <para>Contains information used with the <a href="https://docs.microsoft.com//windows/desktop/Controls/rbn-autobreak">RBN_AUTOBREAK</a> notification code.</para>
+    </summary>
+  </member>
+  <member name="NMREBARAUTOBREAK.hdr">
+    <summary>
+      <para>Type: <b><see cref="NMHDR" /></b></para>
+      <para>
+        <see cref="NMHDR" /> structure that provides additional information about this notification code.</para>
+    </summary>
+  </member>
+  <member name="NMREBARAUTOBREAK.uBand">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Zero-based index of the band affected by the notification. This is -1 if no band is affected.</para>
+    </summary>
+  </member>
+  <member name="NMREBARAUTOBREAK.wID">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Application-defined ID of the band.</para>
+    </summary>
+  </member>
+  <member name="NMREBARAUTOBREAK.lParam">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPARAM</a></b></para>
+      <para>Application-defined value from the <b>lParam</b> member of the <see cref="REBARBANDINFO" /> structure that defines the rebar band.</para>
+    </summary>
+  </member>
+  <member name="NMREBARAUTOBREAK.uMsg">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>ID of the message.</para>
+    </summary>
+  </member>
+  <member name="NMREBARAUTOBREAK.fStyleCurrent">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Style of the specified band.</para>
+    </summary>
+  </member>
+  <member name="NMREBARAUTOBREAK.fAutoBreak">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BOOL</a></b></para>
+      <para>
+        <b>BOOL</b> that indicates whether a break should occur.</para>
+    </summary>
+  </member>
+</doc>

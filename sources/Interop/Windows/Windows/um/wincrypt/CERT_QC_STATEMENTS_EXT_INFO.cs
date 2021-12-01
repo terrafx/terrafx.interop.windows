@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CERT_QC_STATEMENTS_EXT_INFO.xml' path='doc/member[@name="CERT_QC_STATEMENTS_EXT_INFO"]/*' />
 public unsafe partial struct CERT_QC_STATEMENTS_EXT_INFO
 {
+    /// <include file='CERT_QC_STATEMENTS_EXT_INFO.xml' path='doc/member[@name="CERT_QC_STATEMENTS_EXT_INFO.cStatement"]/*' />
     [NativeTypeName("DWORD")]
     public uint cStatement;
 
+    /// <include file='CERT_QC_STATEMENTS_EXT_INFO.xml' path='doc/member[@name="CERT_QC_STATEMENTS_EXT_INFO.rgStatement"]/*' />
     [NativeTypeName("PCERT_QC_STATEMENT")]
     public CERT_QC_STATEMENT* rgStatement;
 }

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IHTMLStyle3.xml' path='doc/member[@name="IHTMLStyle3"]/*' />
 [Guid("3050F656-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IHTMLStyle3 : IDispatch")]
 [NativeInheritance("IDispatch")]
@@ -16,6 +17,7 @@ public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface
         return ((delegate* unmanaged<IHTMLStyle3*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface
         return ((delegate* unmanaged<IHTMLStyle3*, uint>)(lpVtbl[1]))((IHTMLStyle3*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface
         return ((delegate* unmanaged<IHTMLStyle3*, uint>)(lpVtbl[2]))((IHTMLStyle3*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface
         return ((delegate* unmanaged<IHTMLStyle3*, uint*, int>)(lpVtbl[3]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface
         return ((delegate* unmanaged<IHTMLStyle3*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
@@ -60,6 +67,7 @@ public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface
         return ((delegate* unmanaged<IHTMLStyle3*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
+    /// <inheritdoc cref="IDispatch.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
@@ -67,6 +75,7 @@ public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface
         return ((delegate* unmanaged<IHTMLStyle3*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
+    /// <include file='IHTMLStyle3.xml' path='doc/member[@name="IHTMLStyle3.put_layoutFlow"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT put_layoutFlow([NativeTypeName("BSTR")] ushort* v)
@@ -74,6 +83,7 @@ public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface
         return ((delegate* unmanaged<IHTMLStyle3*, ushort*, int>)(lpVtbl[7]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLStyle3.xml' path='doc/member[@name="IHTMLStyle3.get_layoutFlow"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT get_layoutFlow([NativeTypeName("BSTR *")] ushort** p)
@@ -81,6 +91,7 @@ public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface
         return ((delegate* unmanaged<IHTMLStyle3*, ushort**, int>)(lpVtbl[8]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLStyle3.xml' path='doc/member[@name="IHTMLStyle3.put_zoom"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT put_zoom(VARIANT v)
@@ -88,6 +99,7 @@ public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface
         return ((delegate* unmanaged<IHTMLStyle3*, VARIANT, int>)(lpVtbl[9]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLStyle3.xml' path='doc/member[@name="IHTMLStyle3.get_zoom"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT get_zoom(VARIANT* p)
@@ -95,6 +107,7 @@ public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface
         return ((delegate* unmanaged<IHTMLStyle3*, VARIANT*, int>)(lpVtbl[10]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLStyle3.xml' path='doc/member[@name="IHTMLStyle3.put_wordWrap"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT put_wordWrap([NativeTypeName("BSTR")] ushort* v)
@@ -102,6 +115,7 @@ public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface
         return ((delegate* unmanaged<IHTMLStyle3*, ushort*, int>)(lpVtbl[11]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLStyle3.xml' path='doc/member[@name="IHTMLStyle3.get_wordWrap"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT get_wordWrap([NativeTypeName("BSTR *")] ushort** p)
@@ -109,6 +123,7 @@ public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface
         return ((delegate* unmanaged<IHTMLStyle3*, ushort**, int>)(lpVtbl[12]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLStyle3.xml' path='doc/member[@name="IHTMLStyle3.put_textUnderlinePosition"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT put_textUnderlinePosition([NativeTypeName("BSTR")] ushort* v)
@@ -116,6 +131,7 @@ public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface
         return ((delegate* unmanaged<IHTMLStyle3*, ushort*, int>)(lpVtbl[13]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLStyle3.xml' path='doc/member[@name="IHTMLStyle3.get_textUnderlinePosition"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT get_textUnderlinePosition([NativeTypeName("BSTR *")] ushort** p)
@@ -123,6 +139,7 @@ public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface
         return ((delegate* unmanaged<IHTMLStyle3*, ushort**, int>)(lpVtbl[14]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLStyle3.xml' path='doc/member[@name="IHTMLStyle3.put_scrollbarBaseColor"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT put_scrollbarBaseColor(VARIANT v)
@@ -130,6 +147,7 @@ public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface
         return ((delegate* unmanaged<IHTMLStyle3*, VARIANT, int>)(lpVtbl[15]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLStyle3.xml' path='doc/member[@name="IHTMLStyle3.get_scrollbarBaseColor"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT get_scrollbarBaseColor(VARIANT* p)
@@ -137,6 +155,7 @@ public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface
         return ((delegate* unmanaged<IHTMLStyle3*, VARIANT*, int>)(lpVtbl[16]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLStyle3.xml' path='doc/member[@name="IHTMLStyle3.put_scrollbarFaceColor"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT put_scrollbarFaceColor(VARIANT v)
@@ -144,6 +163,7 @@ public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface
         return ((delegate* unmanaged<IHTMLStyle3*, VARIANT, int>)(lpVtbl[17]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLStyle3.xml' path='doc/member[@name="IHTMLStyle3.get_scrollbarFaceColor"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT get_scrollbarFaceColor(VARIANT* p)
@@ -151,6 +171,7 @@ public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface
         return ((delegate* unmanaged<IHTMLStyle3*, VARIANT*, int>)(lpVtbl[18]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLStyle3.xml' path='doc/member[@name="IHTMLStyle3.put_scrollbar3dLightColor"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT put_scrollbar3dLightColor(VARIANT v)
@@ -158,6 +179,7 @@ public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface
         return ((delegate* unmanaged<IHTMLStyle3*, VARIANT, int>)(lpVtbl[19]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLStyle3.xml' path='doc/member[@name="IHTMLStyle3.get_scrollbar3dLightColor"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public HRESULT get_scrollbar3dLightColor(VARIANT* p)
@@ -165,6 +187,7 @@ public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface
         return ((delegate* unmanaged<IHTMLStyle3*, VARIANT*, int>)(lpVtbl[20]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLStyle3.xml' path='doc/member[@name="IHTMLStyle3.put_scrollbarShadowColor"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
     public HRESULT put_scrollbarShadowColor(VARIANT v)
@@ -172,6 +195,7 @@ public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface
         return ((delegate* unmanaged<IHTMLStyle3*, VARIANT, int>)(lpVtbl[21]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLStyle3.xml' path='doc/member[@name="IHTMLStyle3.get_scrollbarShadowColor"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
     public HRESULT get_scrollbarShadowColor(VARIANT* p)
@@ -179,6 +203,7 @@ public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface
         return ((delegate* unmanaged<IHTMLStyle3*, VARIANT*, int>)(lpVtbl[22]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLStyle3.xml' path='doc/member[@name="IHTMLStyle3.put_scrollbarHighlightColor"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
     public HRESULT put_scrollbarHighlightColor(VARIANT v)
@@ -186,6 +211,7 @@ public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface
         return ((delegate* unmanaged<IHTMLStyle3*, VARIANT, int>)(lpVtbl[23]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLStyle3.xml' path='doc/member[@name="IHTMLStyle3.get_scrollbarHighlightColor"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(24)]
     public HRESULT get_scrollbarHighlightColor(VARIANT* p)
@@ -193,6 +219,7 @@ public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface
         return ((delegate* unmanaged<IHTMLStyle3*, VARIANT*, int>)(lpVtbl[24]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLStyle3.xml' path='doc/member[@name="IHTMLStyle3.put_scrollbarDarkShadowColor"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(25)]
     public HRESULT put_scrollbarDarkShadowColor(VARIANT v)
@@ -200,6 +227,7 @@ public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface
         return ((delegate* unmanaged<IHTMLStyle3*, VARIANT, int>)(lpVtbl[25]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLStyle3.xml' path='doc/member[@name="IHTMLStyle3.get_scrollbarDarkShadowColor"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(26)]
     public HRESULT get_scrollbarDarkShadowColor(VARIANT* p)
@@ -207,6 +235,7 @@ public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface
         return ((delegate* unmanaged<IHTMLStyle3*, VARIANT*, int>)(lpVtbl[26]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLStyle3.xml' path='doc/member[@name="IHTMLStyle3.put_scrollbarArrowColor"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(27)]
     public HRESULT put_scrollbarArrowColor(VARIANT v)
@@ -214,6 +243,7 @@ public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface
         return ((delegate* unmanaged<IHTMLStyle3*, VARIANT, int>)(lpVtbl[27]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLStyle3.xml' path='doc/member[@name="IHTMLStyle3.get_scrollbarArrowColor"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(28)]
     public HRESULT get_scrollbarArrowColor(VARIANT* p)
@@ -221,6 +251,7 @@ public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface
         return ((delegate* unmanaged<IHTMLStyle3*, VARIANT*, int>)(lpVtbl[28]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLStyle3.xml' path='doc/member[@name="IHTMLStyle3.put_scrollbarTrackColor"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(29)]
     public HRESULT put_scrollbarTrackColor(VARIANT v)
@@ -228,6 +259,7 @@ public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface
         return ((delegate* unmanaged<IHTMLStyle3*, VARIANT, int>)(lpVtbl[29]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLStyle3.xml' path='doc/member[@name="IHTMLStyle3.get_scrollbarTrackColor"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(30)]
     public HRESULT get_scrollbarTrackColor(VARIANT* p)
@@ -235,6 +267,7 @@ public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface
         return ((delegate* unmanaged<IHTMLStyle3*, VARIANT*, int>)(lpVtbl[30]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLStyle3.xml' path='doc/member[@name="IHTMLStyle3.put_writingMode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(31)]
     public HRESULT put_writingMode([NativeTypeName("BSTR")] ushort* v)
@@ -242,6 +275,7 @@ public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface
         return ((delegate* unmanaged<IHTMLStyle3*, ushort*, int>)(lpVtbl[31]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLStyle3.xml' path='doc/member[@name="IHTMLStyle3.get_writingMode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(32)]
     public HRESULT get_writingMode([NativeTypeName("BSTR *")] ushort** p)
@@ -249,6 +283,7 @@ public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface
         return ((delegate* unmanaged<IHTMLStyle3*, ushort**, int>)(lpVtbl[32]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLStyle3.xml' path='doc/member[@name="IHTMLStyle3.put_textAlignLast"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(33)]
     public HRESULT put_textAlignLast([NativeTypeName("BSTR")] ushort* v)
@@ -256,6 +291,7 @@ public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface
         return ((delegate* unmanaged<IHTMLStyle3*, ushort*, int>)(lpVtbl[33]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLStyle3.xml' path='doc/member[@name="IHTMLStyle3.get_textAlignLast"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(34)]
     public HRESULT get_textAlignLast([NativeTypeName("BSTR *")] ushort** p)
@@ -263,6 +299,7 @@ public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface
         return ((delegate* unmanaged<IHTMLStyle3*, ushort**, int>)(lpVtbl[34]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLStyle3.xml' path='doc/member[@name="IHTMLStyle3.put_textKashidaSpace"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(35)]
     public HRESULT put_textKashidaSpace(VARIANT v)
@@ -270,6 +307,7 @@ public unsafe partial struct IHTMLStyle3 : IHTMLStyle3.Interface
         return ((delegate* unmanaged<IHTMLStyle3*, VARIANT, int>)(lpVtbl[35]))((IHTMLStyle3*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLStyle3.xml' path='doc/member[@name="IHTMLStyle3.get_textKashidaSpace"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(36)]
     public HRESULT get_textKashidaSpace(VARIANT* p)

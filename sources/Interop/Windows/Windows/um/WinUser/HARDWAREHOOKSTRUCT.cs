@@ -5,13 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HARDWAREHOOKSTRUCT.xml' path='doc/member[@name="HARDWAREHOOKSTRUCT"]/*' />
 public partial struct HARDWAREHOOKSTRUCT
 {
+    /// <include file='HARDWAREHOOKSTRUCT.xml' path='doc/member[@name="HARDWAREHOOKSTRUCT.hwnd"]/*' />
     public HWND hwnd;
 
+    /// <include file='HARDWAREHOOKSTRUCT.xml' path='doc/member[@name="HARDWAREHOOKSTRUCT.message"]/*' />
     public uint message;
 
+    /// <include file='HARDWAREHOOKSTRUCT.xml' path='doc/member[@name="HARDWAREHOOKSTRUCT.wParam"]/*' />
     public WPARAM wParam;
 
+    /// <include file='HARDWAREHOOKSTRUCT.xml' path='doc/member[@name="HARDWAREHOOKSTRUCT.lParam"]/*' />
     public LPARAM lParam;
 }

@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IShellItemResources.CreateResource">
+    <summary>
+      <para>Creates a specified resource.</para>
+    </summary>
+    <param name="pcsir">
+      <para>Type: <b>const <see cref="SHELL_ITEM_RESOURCE" />*</b></para>
+      <para>A pointer to an <see cref="SHELL_ITEM_RESOURCE" /> resource.</para>
+    </param>
+    <param name="riid">
+      <para>Type: <b>REFIID</b></para>
+      <para>A reference to a desired IID.</para>
+    </param>
+    <param name="ppv">
+      <para>Type: <b>void**</b></para>
+      <para>The address of a pointer to the resource.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IShellItemResources.EnumResources">
+    <summary>
+      <para>Gets a resource enumerator object.</para>
+    </summary>
+    <param name="ppenumr">
+      <para>Type: <b><see cref="IEnumResources" />**</b></para>
+      <para>The address of an <see cref="IEnumResources" /> interface pointer.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IShellItemResources.GetAttributes">
+    <summary>
+      <para>Gets resource attributes.</para>
+    </summary>
+    <param name="pdwAttributes">
+      <para>Type: <b>DWORD*</b></para>
+      <para>A pointer to resource attributes. The following are attribute values.</para>
+      <h4>FILE_ATTRIBUTE_READONLY</h4>
+      <para>Value is 0x00000001.</para>
+      <h4>FILE_ATTRIBUTE_HIDDEN</h4>
+      <para>Value is 0x00000002.</para>
+      <h4>FILE_ATTRIBUTE_SYSTEM</h4>
+      <para>Value is 0x00000004.</para>
+      <h4>FILE_ATTRIBUTE_DIRECTORY</h4>
+      <para>Value is 0x00000010.</para>
+      <h4>FILE_ATTRIBUTE_ARCHIVE</h4>
+      <para>Value is 0x00000020.</para>
+      <h4>FILE_ATTRIBUTE_ENCRYPTED</h4>
+      <para>Value is 0x00000040.</para>
+      <h4>FILE_ATTRIBUTE_NORMAL</h4>
+      <para>Value is 0x00000080.</para>
+      <h4>FILE_ATTRIBUTE_TEMPORARY</h4>
+      <para>Value is 0x00000100.</para>
+      <h4>FILE_ATTRIBUTE_SPARSE_FILE</h4>
+      <para>Value is 0x00000200.</para>
+      <h4>FILE_ATTRIBUTE_REPARSE_POINT</h4>
+      <para>Value is 0x00000400.</para>
+      <h4>FILE_ATTRIBUTE_COMPRESSED</h4>
+      <para>Value is 0x00000800.</para>
+      <h4>FILE_ATTRIBUTE_OFFLINE</h4>
+      <para>Value is 0x00001000.</para>
+      <h4>FILE_ATTRIBUTE_CONTENT_INDEXED</h4>
+      <para>Value is 0x00002000.</para>
+      <h4>FILE_ATTRIBUTE_VALID_FLAGS</h4>
+      <para>Value is 0x00001ff7.</para>
+      <h4>FILE_ATTRIBUTE_VALID_SET_FLAGS</h4>
+      <para>Value is 0x000011a7.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IShellItemResources.GetResourceDescription">
+    <summary>
+      <para>Gets a resource description.</para>
+    </summary>
+    <param name="pcsir">
+      <para>Type: <b>const <see cref="SHELL_ITEM_RESOURCE" />*</b></para>
+      <para>A pointer to a <see cref="SHELL_ITEM_RESOURCE" /> resource.</para>
+    </param>
+    <param name="ppszDescription">
+      <para>Type: <b>LPWSTR*</b></para>
+      <para>A pointer to a resource description as a Unicode string.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IShellItemResources.GetSize">
+    <summary>
+      <para>Gets the source size.</para>
+    </summary>
+    <param name="pullSize">
+      <para>Type: <b>ULONGLONG*</b></para>
+      <para>A pointer to the source size.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IShellItemResources.GetTimes">
+    <summary>
+      <para>Gets file times.</para>
+    </summary>
+    <param name="pftCreation">
+      <para>Type: <b>FILETIME*</b></para>
+      <para>A pointer to the creation date and time as a <see cref="FILETIME" /> structure.</para>
+    </param>
+    <param name="pftWrite">
+      <para>Type: <b>FILETIME*</b></para>
+      <para>A pointer to write date and time as a <see cref="FILETIME" /> structure.</para>
+    </param>
+    <param name="pftAccess">
+      <para>Type: <b>FILETIME*</b></para>
+      <para>A pointer to access date and time as a <see cref="FILETIME" /> structure.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IShellItemResources.MarkForDelete">
+    <summary>
+      <para>Marks for delete.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IShellItemResources.OpenResource">
+    <summary>
+      <para>Opens a specified resource.</para>
+    </summary>
+    <param name="pcsir">
+      <para>Type: <b>const <see cref="SHELL_ITEM_RESOURCE" />*</b></para>
+      <para>A pointer to a <see cref="SHELL_ITEM_RESOURCE" /> resource.</para>
+    </param>
+    <param name="riid">
+      <para>Type: <b>REFIID</b></para>
+      <para>A reference to a desired IID.</para>
+    </param>
+    <param name="ppv">
+      <para>Type: <b>void**</b></para>
+      <para>The address of a pointer to a resource.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IShellItemResources.SetTimes">
+    <summary>
+      <para>Sets file times.</para>
+    </summary>
+    <param name="pftCreation">
+      <para>Type: <b>const FILETIME*</b></para>
+      <para>A pointer to a creation date and time as a <see cref="FILETIME" /> structure.</para>
+    </param>
+    <param name="pftWrite">
+      <para>Type: <b>const FILETIME*</b></para>
+      <para>A pointer to a write date and time as a <see cref="FILETIME" /> structure.</para>
+    </param>
+    <param name="pftAccess">
+      <para>Type: <b>const FILETIME*</b></para>
+      <para>A pointer to an access date and time as a <see cref="FILETIME" /> structure.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IShellItemResources.SupportsResource">
+    <summary>
+      <para>Retrieves whether an item supports a specified resource.</para>
+    </summary>
+    <param name="pcsir">
+      <para>Type: <b>const <see cref="SHELL_ITEM_RESOURCE" />*</b></para>
+      <para>A pointer to a <see cref="SHELL_ITEM_RESOURCE" /> resource.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IShellItemResources">
+    <summary>
+      <para>Exposes methods to manipulate and query Shell item resources.</para>
+    </summary>
+  </member>
+</doc>

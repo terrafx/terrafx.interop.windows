@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine"]/*' />
 [Guid("98A1B0BB-03EB-4935-AE7C-93C1FA0E1C93")]
 [NativeTypeName("struct IMFMediaEngine : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface
         return ((delegate* unmanaged<IMFMediaEngine*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface
         return ((delegate* unmanaged<IMFMediaEngine*, uint>)(lpVtbl[1]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface
         return ((delegate* unmanaged<IMFMediaEngine*, uint>)(lpVtbl[2]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.GetError"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetError(IMFMediaError** ppError)
@@ -48,6 +53,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface
         return ((delegate* unmanaged<IMFMediaEngine*, IMFMediaError**, int>)(lpVtbl[3]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), ppError);
     }
 
+    /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.SetErrorCode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetErrorCode(MF_MEDIA_ENGINE_ERR error)
@@ -55,6 +61,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface
         return ((delegate* unmanaged<IMFMediaEngine*, MF_MEDIA_ENGINE_ERR, int>)(lpVtbl[4]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), error);
     }
 
+    /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.SetSourceElements"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetSourceElements(IMFMediaEngineSrcElements* pSrcElements)
@@ -62,6 +69,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface
         return ((delegate* unmanaged<IMFMediaEngine*, IMFMediaEngineSrcElements*, int>)(lpVtbl[5]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), pSrcElements);
     }
 
+    /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.SetSource"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT SetSource([NativeTypeName("BSTR")] ushort* pUrl)
@@ -69,6 +77,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface
         return ((delegate* unmanaged<IMFMediaEngine*, ushort*, int>)(lpVtbl[6]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), pUrl);
     }
 
+    /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.GetCurrentSource"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetCurrentSource([NativeTypeName("BSTR *")] ushort** ppUrl)
@@ -76,6 +85,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface
         return ((delegate* unmanaged<IMFMediaEngine*, ushort**, int>)(lpVtbl[7]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), ppUrl);
     }
 
+    /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.GetNetworkState"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public ushort GetNetworkState()
@@ -83,6 +93,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface
         return ((delegate* unmanaged<IMFMediaEngine*, ushort>)(lpVtbl[8]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.GetPreload"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public MF_MEDIA_ENGINE_PRELOAD GetPreload()
@@ -90,6 +101,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface
         return ((delegate* unmanaged<IMFMediaEngine*, MF_MEDIA_ENGINE_PRELOAD>)(lpVtbl[9]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.SetPreload"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT SetPreload(MF_MEDIA_ENGINE_PRELOAD Preload)
@@ -97,6 +109,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface
         return ((delegate* unmanaged<IMFMediaEngine*, MF_MEDIA_ENGINE_PRELOAD, int>)(lpVtbl[10]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), Preload);
     }
 
+    /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.GetBuffered"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT GetBuffered(IMFMediaTimeRange** ppBuffered)
@@ -104,6 +117,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface
         return ((delegate* unmanaged<IMFMediaEngine*, IMFMediaTimeRange**, int>)(lpVtbl[11]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), ppBuffered);
     }
 
+    /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.Load"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT Load()
@@ -111,6 +125,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface
         return ((delegate* unmanaged<IMFMediaEngine*, int>)(lpVtbl[12]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.CanPlayType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT CanPlayType([NativeTypeName("BSTR")] ushort* type, MF_MEDIA_ENGINE_CANPLAY* pAnswer)
@@ -118,6 +133,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface
         return ((delegate* unmanaged<IMFMediaEngine*, ushort*, MF_MEDIA_ENGINE_CANPLAY*, int>)(lpVtbl[13]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), type, pAnswer);
     }
 
+    /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.GetReadyState"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public ushort GetReadyState()
@@ -125,6 +141,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface
         return ((delegate* unmanaged<IMFMediaEngine*, ushort>)(lpVtbl[14]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.IsSeeking"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public BOOL IsSeeking()
@@ -132,6 +149,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface
         return ((delegate* unmanaged<IMFMediaEngine*, int>)(lpVtbl[15]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.GetCurrentTime"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public double GetCurrentTime()
@@ -139,6 +157,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface
         return ((delegate* unmanaged<IMFMediaEngine*, double>)(lpVtbl[16]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.SetCurrentTime"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT SetCurrentTime(double seekTime)
@@ -146,6 +165,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface
         return ((delegate* unmanaged<IMFMediaEngine*, double, int>)(lpVtbl[17]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), seekTime);
     }
 
+    /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.GetStartTime"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public double GetStartTime()
@@ -153,6 +173,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface
         return ((delegate* unmanaged<IMFMediaEngine*, double>)(lpVtbl[18]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.GetDuration"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public double GetDuration()
@@ -160,6 +181,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface
         return ((delegate* unmanaged<IMFMediaEngine*, double>)(lpVtbl[19]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.IsPaused"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public BOOL IsPaused()
@@ -167,6 +189,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface
         return ((delegate* unmanaged<IMFMediaEngine*, int>)(lpVtbl[20]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.GetDefaultPlaybackRate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
     public double GetDefaultPlaybackRate()
@@ -174,6 +197,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface
         return ((delegate* unmanaged<IMFMediaEngine*, double>)(lpVtbl[21]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.SetDefaultPlaybackRate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
     public HRESULT SetDefaultPlaybackRate(double Rate)
@@ -181,6 +205,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface
         return ((delegate* unmanaged<IMFMediaEngine*, double, int>)(lpVtbl[22]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), Rate);
     }
 
+    /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.GetPlaybackRate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
     public double GetPlaybackRate()
@@ -188,6 +213,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface
         return ((delegate* unmanaged<IMFMediaEngine*, double>)(lpVtbl[23]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.SetPlaybackRate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(24)]
     public HRESULT SetPlaybackRate(double Rate)
@@ -195,6 +221,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface
         return ((delegate* unmanaged<IMFMediaEngine*, double, int>)(lpVtbl[24]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), Rate);
     }
 
+    /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.GetPlayed"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(25)]
     public HRESULT GetPlayed(IMFMediaTimeRange** ppPlayed)
@@ -202,6 +229,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface
         return ((delegate* unmanaged<IMFMediaEngine*, IMFMediaTimeRange**, int>)(lpVtbl[25]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), ppPlayed);
     }
 
+    /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.GetSeekable"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(26)]
     public HRESULT GetSeekable(IMFMediaTimeRange** ppSeekable)
@@ -209,6 +237,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface
         return ((delegate* unmanaged<IMFMediaEngine*, IMFMediaTimeRange**, int>)(lpVtbl[26]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), ppSeekable);
     }
 
+    /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.IsEnded"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(27)]
     public BOOL IsEnded()
@@ -216,6 +245,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface
         return ((delegate* unmanaged<IMFMediaEngine*, int>)(lpVtbl[27]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.GetAutoPlay"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(28)]
     public BOOL GetAutoPlay()
@@ -223,6 +253,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface
         return ((delegate* unmanaged<IMFMediaEngine*, int>)(lpVtbl[28]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.SetAutoPlay"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(29)]
     public HRESULT SetAutoPlay(BOOL AutoPlay)
@@ -230,6 +261,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface
         return ((delegate* unmanaged<IMFMediaEngine*, BOOL, int>)(lpVtbl[29]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), AutoPlay);
     }
 
+    /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.GetLoop"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(30)]
     public BOOL GetLoop()
@@ -237,6 +269,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface
         return ((delegate* unmanaged<IMFMediaEngine*, int>)(lpVtbl[30]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.SetLoop"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(31)]
     public HRESULT SetLoop(BOOL Loop)
@@ -244,6 +277,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface
         return ((delegate* unmanaged<IMFMediaEngine*, BOOL, int>)(lpVtbl[31]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), Loop);
     }
 
+    /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.Play"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(32)]
     public HRESULT Play()
@@ -251,6 +285,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface
         return ((delegate* unmanaged<IMFMediaEngine*, int>)(lpVtbl[32]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.Pause"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(33)]
     public HRESULT Pause()
@@ -258,6 +293,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface
         return ((delegate* unmanaged<IMFMediaEngine*, int>)(lpVtbl[33]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.GetMuted"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(34)]
     public BOOL GetMuted()
@@ -265,6 +301,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface
         return ((delegate* unmanaged<IMFMediaEngine*, int>)(lpVtbl[34]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.SetMuted"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(35)]
     public HRESULT SetMuted(BOOL Muted)
@@ -272,6 +309,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface
         return ((delegate* unmanaged<IMFMediaEngine*, BOOL, int>)(lpVtbl[35]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), Muted);
     }
 
+    /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.GetVolume"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(36)]
     public double GetVolume()
@@ -279,6 +317,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface
         return ((delegate* unmanaged<IMFMediaEngine*, double>)(lpVtbl[36]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.SetVolume"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(37)]
     public HRESULT SetVolume(double Volume)
@@ -286,6 +325,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface
         return ((delegate* unmanaged<IMFMediaEngine*, double, int>)(lpVtbl[37]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), Volume);
     }
 
+    /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.HasVideo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(38)]
     public BOOL HasVideo()
@@ -293,6 +333,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface
         return ((delegate* unmanaged<IMFMediaEngine*, int>)(lpVtbl[38]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.HasAudio"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(39)]
     public BOOL HasAudio()
@@ -300,6 +341,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface
         return ((delegate* unmanaged<IMFMediaEngine*, int>)(lpVtbl[39]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.GetNativeVideoSize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(40)]
     public HRESULT GetNativeVideoSize([NativeTypeName("DWORD *")] uint* cx, [NativeTypeName("DWORD *")] uint* cy)
@@ -307,6 +349,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface
         return ((delegate* unmanaged<IMFMediaEngine*, uint*, uint*, int>)(lpVtbl[40]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), cx, cy);
     }
 
+    /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.GetVideoAspectRatio"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(41)]
     public HRESULT GetVideoAspectRatio([NativeTypeName("DWORD *")] uint* cx, [NativeTypeName("DWORD *")] uint* cy)
@@ -314,6 +357,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface
         return ((delegate* unmanaged<IMFMediaEngine*, uint*, uint*, int>)(lpVtbl[41]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), cx, cy);
     }
 
+    /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.Shutdown"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(42)]
     public HRESULT Shutdown()
@@ -321,6 +365,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface
         return ((delegate* unmanaged<IMFMediaEngine*, int>)(lpVtbl[42]))((IMFMediaEngine*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.TransferVideoFrame"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(43)]
     public HRESULT TransferVideoFrame(IUnknown* pDstSurf, [NativeTypeName("const MFVideoNormalizedRect *")] MFVideoNormalizedRect* pSrc, [NativeTypeName("const RECT *")] RECT* pDst, [NativeTypeName("const MFARGB *")] MFARGB* pBorderClr)
@@ -328,6 +373,7 @@ public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface
         return ((delegate* unmanaged<IMFMediaEngine*, IUnknown*, MFVideoNormalizedRect*, RECT*, MFARGB*, int>)(lpVtbl[43]))((IMFMediaEngine*)Unsafe.AsPointer(ref this), pDstSurf, pSrc, pDst, pBorderClr);
     }
 
+    /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.OnVideoStreamTick"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(44)]
     public HRESULT OnVideoStreamTick([NativeTypeName("LONGLONG *")] long* pPts)

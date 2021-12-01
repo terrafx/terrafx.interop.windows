@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ITfFnGetLinguisticAlternates.GetAlternates">
+    <summary>
+      <para>Returns a list of alternate strings for a given text range.</para>
+    </summary>
+    <param name="pRange">
+      <para>Pointer to an <see cref="ITfRange" /> object that covers the text to return alternates for.</para>
+    </param>
+    <param name="ppCandidateList">
+      <para>Pointer to an <see cref="ITfCandidateList" /> pointer that receives the list object containing alternate strings.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>An unspecified error occurred or no alternates could be generated for the range. *<i>ppCandidateList</i> is returned as null.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>A memory allocation failure occurred.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>One or more parameters are invalid.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="ITfFnGetLinguisticAlternates" />
+  </member>
+  <member name="ITfFnGetLinguisticAlternates">
+    <summary>
+      <para>The <b>ITfFnGetLinguisticAlternates</b> interface is implemented by a text service and/or by the TSF manager to provide linguistic alternates for the text within a given range passed as a parameter.</para>
+      <para>Apps can use this interface to obtain IME alternates for a text range; therefore the interface <b>ITfFnGetLinguisticAlternates</b>, along with <see cref="ITfFnSearchCandidateProvider" />, provides a TSF-based replacement for the <see cref="ImmGetConversionList" /> function.  Typically IMEs implement either <b>ITfFnGetLinguisticAlternates</b> or <b>ITfFnSearchCandidateProvider</b> (or neither).</para>
+      <para>An app obtains a pointer to this interface by calling TSF manager <see cref="ITfFunctionProvider.GetFunction" /> method with <b>IID_ITfFnGetLinguisticAlternates</b>.</para>
+      <para>
+        <b>Note</b>  This interface may not be supported for all IMEs. There may be differences in support between IMEs on the Desktop and IMEs in the new Windows UI on Windows 8.1.  Some IMEs instead implement the related interface <see cref="ITfFnSearchCandidateProvider" /> that can be used as a substitute for this API.  Suggested app usage is to check for this interface first, and if it's not available then check if <b>ITfFnSearchCandidateProvider</b> is supported instead.  IMEs that wish to maintain compatibility with Windows 8 should implement <b>ITfFnSearchCandidateProvider</b> instead.</para>
+    </summary>
+    <seealso cref="ITfFunction" />
+  </member>
+</doc>

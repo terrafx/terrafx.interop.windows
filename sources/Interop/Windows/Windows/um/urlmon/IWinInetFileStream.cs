@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IWinInetFileStream.xml' path='doc/member[@name="IWinInetFileStream"]/*' />
 [Guid("F134C4B7-B1F8-4E75-B886-74B90943BECB")]
 [NativeTypeName("struct IWinInetFileStream : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IWinInetFileStream : IWinInetFileStream.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IWinInetFileStream : IWinInetFileStream.Interface
         return ((delegate* unmanaged<IWinInetFileStream*, Guid*, void**, int>)(lpVtbl[0]))((IWinInetFileStream*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IWinInetFileStream : IWinInetFileStream.Interface
         return ((delegate* unmanaged<IWinInetFileStream*, uint>)(lpVtbl[1]))((IWinInetFileStream*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IWinInetFileStream : IWinInetFileStream.Interface
         return ((delegate* unmanaged<IWinInetFileStream*, uint>)(lpVtbl[2]))((IWinInetFileStream*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IWinInetFileStream.xml' path='doc/member[@name="IWinInetFileStream.SetHandleForUnlock"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetHandleForUnlock([NativeTypeName("DWORD_PTR")] nuint hWinInetLockHandle, [NativeTypeName("DWORD_PTR")] nuint dwReserved)
@@ -46,6 +51,7 @@ public unsafe partial struct IWinInetFileStream : IWinInetFileStream.Interface
         return ((delegate* unmanaged<IWinInetFileStream*, nuint, nuint, int>)(lpVtbl[3]))((IWinInetFileStream*)Unsafe.AsPointer(ref this), hWinInetLockHandle, dwReserved);
     }
 
+    /// <include file='IWinInetFileStream.xml' path='doc/member[@name="IWinInetFileStream.SetDeleteFile"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetDeleteFile([NativeTypeName("DWORD_PTR")] nuint dwReserved)

@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="OLECONTF">
+    <summary>
+      <para>Indicates the type of objects
+to be enumerated.</para>
+    </summary>
+    <seealso cref="IEnumUnknown" />
+    <seealso cref="IOleContainer.EnumObjects" />
+    <seealso cref="IVBGetControl.EnumControls" />
+  </member>
+  <member name="OLECONTF.OLECONTF_EMBEDDINGS">
+    <summary>
+      <para>Enumerates the embedded objects in the container.</para>
+    </summary>
+  </member>
+  <member name="OLECONTF.OLECONTF_LINKS">
+    <summary>
+      <para>Enumerates the linked objects in the container.</para>
+    </summary>
+  </member>
+  <member name="OLECONTF.OLECONTF_OTHERS">
+    <summary>
+      <para>Enumerates all objects in the container that are not OLE compound document objects (i.e., objects other than
+linked or embedded objects). Use this flag to enumerate the container's pseudo-objects.</para>
+    </summary>
+  </member>
+  <member name="OLECONTF.OLECONTF_ONLYUSER">
+    <summary>
+      <para>Enumerates only those objects the user is aware of. For example, hidden named-ranges in Microsoft Excel would
+not be enumerated using this value.</para>
+    </summary>
+  </member>
+  <member name="OLECONTF.OLECONTF_ONLYIFRUNNING">
+    <summary>
+      <para>Enumerates only those linked or embedded objects that are currently in the running state for this
+container.</para>
+    </summary>
+  </member>
+</doc>

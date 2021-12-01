@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IInternalUnknown.QueryInternalInterface">
+    <summary>
+      <para>Retrieves pointers to the supported internal interfaces on an object.</para>
+    </summary>
+    <param name="riid">
+      <para>The identifier of the internal interface being requested.</para>
+    </param>
+    <param name="ppv">
+      <para>The address of a pointer variable that receives the interface pointer requested in the <i>riid</i> parameter. Upon successful return, *<i>ppv</i> contains the requested interface pointer to the object. If the object does not support the interface, *<i>ppv</i> is set to <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>This method returns S_OK if the interface is supported, and E_NOINTERFACE otherwise.</para>
+    </returns>
+    <remarks>
+      <para>This method is similar to the <see cref="IUnknown.QueryInterface" /> method, except that the COM proxy manager, when aggregated, will not expose some interfaces through <b>QueryInterface</b>. Instead, those internal interfaces must be exposed through <b>QueryInternalInterface</b>.</para>
+    </remarks>
+    <seealso cref="IInternalUnknown" />
+    <seealso cref="IUnknown.QueryInterface" />
+  </member>
+  <member name="IInternalUnknown">
+    <summary>
+      <para>Used exclusively in lightweight client-side handlers that require access to some of the internal interfaces on the proxy.</para>
+    </summary>
+    <remarks>
+      <para>Handlers that need access to some of the internal interfaces on the proxy manager have to go through the <b>IInternalUnknown</b> interface. This prevents the handlers from blindly delegating and exposing the aggregatee's internal interfaces outside of the aggregate. These interfaces include <see cref="IClientSecurity" /> and <see cref="IMultiQI" />. If the handler wants to expose <b>IClientSecurity</b> or <b>IMultiQI</b>, the handler should implement these interfaces itself and delegate to the proxy manager's implementation of these interfaces when appropriate.</para>
+      <para>For the <see cref="IClientSecurity" /> interface, if the client tries to set the security on an interface that the handler has exposed, the handler should set the security on the underlying network interface proxy.</para>
+      <para>For the <see cref="IMultiQI" /> interface, the handler should fill in the interfaces it knows about and then forward the call to the proxy manager to fill in the rest of the interfaces.</para>
+    </remarks>
+    <seealso cref="IClientSecurity" />
+    <seealso cref="IMultiQI" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/com/the-lightweight-client-side-handler">Lightweight Client-Side Handler</seealso>
+  </member>
+</doc>

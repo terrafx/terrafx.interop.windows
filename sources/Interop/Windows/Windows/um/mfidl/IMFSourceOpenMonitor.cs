@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFSourceOpenMonitor.xml' path='doc/member[@name="IMFSourceOpenMonitor"]/*' />
 [Guid("059054B3-027C-494C-A27D-9113291CF87F")]
 [NativeTypeName("struct IMFSourceOpenMonitor : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMFSourceOpenMonitor : IMFSourceOpenMonitor.Interfa
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMFSourceOpenMonitor : IMFSourceOpenMonitor.Interfa
         return ((delegate* unmanaged<IMFSourceOpenMonitor*, Guid*, void**, int>)(lpVtbl[0]))((IMFSourceOpenMonitor*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMFSourceOpenMonitor : IMFSourceOpenMonitor.Interfa
         return ((delegate* unmanaged<IMFSourceOpenMonitor*, uint>)(lpVtbl[1]))((IMFSourceOpenMonitor*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMFSourceOpenMonitor : IMFSourceOpenMonitor.Interfa
         return ((delegate* unmanaged<IMFSourceOpenMonitor*, uint>)(lpVtbl[2]))((IMFSourceOpenMonitor*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFSourceOpenMonitor.xml' path='doc/member[@name="IMFSourceOpenMonitor.OnSourceEvent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT OnSourceEvent(IMFMediaEvent* pEvent)

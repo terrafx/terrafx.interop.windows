@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMAPI_MODE_PAGE_REQUEST_TYPE">
+    <summary>
+      <para>Defines values that indicate requests sent to a device using the MODE_SENSE10 MMC command.</para>
+    </summary>
+  </member>
+  <member name="IMAPI_MODE_PAGE_REQUEST_TYPE.IMAPI_MODE_PAGE_REQUEST_TYPE_CURRENT_VALUES">
+    <summary>
+      <para>Requests current settings of the mode page.  This is the most common request type, and the most commonly supported type of this command.</para>
+    </summary>
+  </member>
+  <member name="IMAPI_MODE_PAGE_REQUEST_TYPE.IMAPI_MODE_PAGE_REQUEST_TYPE_CHANGEABLE_VALUES">
+    <summary>
+      <para>Requests a mask that indicates settings that are write enabled. A write-enabled setting has a corresponding bit that is set to one in the mask. A read-only setting has a corresponding bit that is set to zero in the mask .</para>
+    </summary>
+  </member>
+  <member name="IMAPI_MODE_PAGE_REQUEST_TYPE.IMAPI_MODE_PAGE_REQUEST_TYPE_DEFAULT_VALUES">
+    <summary>
+      <para>Requests the power-on settings of the drive.</para>
+    </summary>
+  </member>
+  <member name="IMAPI_MODE_PAGE_REQUEST_TYPE.IMAPI_MODE_PAGE_REQUEST_TYPE_SAVED_VALUES">
+    <summary>
+      <para>Requests a saved configuration for a drive. This functionality might not be supported on all devices.</para>
+    </summary>
+  </member>
+</doc>

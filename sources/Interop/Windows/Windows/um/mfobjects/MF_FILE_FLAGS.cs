@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MF_FILE_FLAGS.xml' path='doc/member[@name="MF_FILE_FLAGS"]/*' />
 public enum MF_FILE_FLAGS
 {
+    /// <include file='MF_FILE_FLAGS.xml' path='doc/member[@name="MF_FILE_FLAGS.MF_FILEFLAGS_NONE"]/*' />
     MF_FILEFLAGS_NONE = 0,
+
+    /// <include file='MF_FILE_FLAGS.xml' path='doc/member[@name="MF_FILE_FLAGS.MF_FILEFLAGS_NOBUFFERING"]/*' />
     MF_FILEFLAGS_NOBUFFERING = 0x1,
+
+    /// <include file='MF_FILE_FLAGS.xml' path='doc/member[@name="MF_FILE_FLAGS.MF_FILEFLAGS_ALLOW_WRITE_SHARING"]/*' />
     MF_FILEFLAGS_ALLOW_WRITE_SHARING = 0x2,
 }

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IStartMenuPinnedList.xml' path='doc/member[@name="IStartMenuPinnedList"]/*' />
 [Guid("4CD19ADA-25A5-4A32-B3B7-347BEE5BE36B")]
 [NativeTypeName("struct IStartMenuPinnedList : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IStartMenuPinnedList : IStartMenuPinnedList.Interfa
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IStartMenuPinnedList : IStartMenuPinnedList.Interfa
         return ((delegate* unmanaged<IStartMenuPinnedList*, Guid*, void**, int>)(lpVtbl[0]))((IStartMenuPinnedList*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IStartMenuPinnedList : IStartMenuPinnedList.Interfa
         return ((delegate* unmanaged<IStartMenuPinnedList*, uint>)(lpVtbl[1]))((IStartMenuPinnedList*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IStartMenuPinnedList : IStartMenuPinnedList.Interfa
         return ((delegate* unmanaged<IStartMenuPinnedList*, uint>)(lpVtbl[2]))((IStartMenuPinnedList*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IStartMenuPinnedList.xml' path='doc/member[@name="IStartMenuPinnedList.RemoveFromList"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT RemoveFromList(IShellItem* pitem)

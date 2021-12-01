@@ -5,16 +5,22 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='EMRNAMEDESCAPE.xml' path='doc/member[@name="EMRNAMEDESCAPE"]/*' />
 public unsafe partial struct EMRNAMEDESCAPE
 {
+    /// <include file='EMRNAMEDESCAPE.xml' path='doc/member[@name="EMRNAMEDESCAPE.emr"]/*' />
     public EMR emr;
 
+    /// <include file='EMRNAMEDESCAPE.xml' path='doc/member[@name="EMRNAMEDESCAPE.iEscape"]/*' />
     public int iEscape;
 
+    /// <include file='EMRNAMEDESCAPE.xml' path='doc/member[@name="EMRNAMEDESCAPE.cbDriver"]/*' />
     public int cbDriver;
 
+    /// <include file='EMRNAMEDESCAPE.xml' path='doc/member[@name="EMRNAMEDESCAPE.cbEscData"]/*' />
     public int cbEscData;
 
+    /// <include file='EMRNAMEDESCAPE.xml' path='doc/member[@name="EMRNAMEDESCAPE.EscData"]/*' />
     [NativeTypeName("BYTE [1]")]
     public fixed byte EscData[1];
 }

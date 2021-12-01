@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SyncMgrScheduleWizard.xml' path='doc/member[@name="SyncMgrScheduleWizard"]/*' />
 [Guid("8D8B8E30-C451-421B-8553-D2976AFA648C")]
 public partial struct SyncMgrScheduleWizard
 {

@@ -5,16 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IN_RECVERR.xml' path='doc/member[@name="IN_RECVERR"]/*' />
 public partial struct IN_RECVERR
 {
+    /// <include file='IN_RECVERR.xml' path='doc/member[@name="IN_RECVERR.protocol"]/*' />
     public IPPROTO protocol;
 
+    /// <include file='IN_RECVERR.xml' path='doc/member[@name="IN_RECVERR.info"]/*' />
     [NativeTypeName("ULONG")]
     public uint info;
 
+    /// <include file='IN_RECVERR.xml' path='doc/member[@name="IN_RECVERR.type"]/*' />
     [NativeTypeName("UINT8")]
     public byte type;
 
+    /// <include file='IN_RECVERR.xml' path='doc/member[@name="IN_RECVERR.code"]/*' />
     [NativeTypeName("UINT8")]
     public byte code;
 }

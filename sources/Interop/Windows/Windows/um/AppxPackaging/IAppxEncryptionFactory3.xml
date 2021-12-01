@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IAppxEncryptionFactory3.CreateEncryptedBundleWriter">
+    <summary>
+      <para>Creates a write-only bundle object to which encrypted Windows app packages can be added.</para>
+    </summary>
+    <param name="outputStream">
+      <para>A writable stream for writing the resulting encrypted app bundle.</para>
+    </param>
+    <param name="bundleVersion">
+      <para>The version number of the bundle. If the bundle version is 0, a default version based on the current system time will be generated.</para>
+    </param>
+    <param name="settings">
+      <para>Settings for creating the package.</para>
+    </param>
+    <param name="keyInfo">
+      <para>Key info containing the base encryption key and key ID for decrypting the bundle. The base key is used to derive the per file encryption keys. If this parameter is null, the global test key and key ID are used.</para>
+    </param>
+    <param name="exemptedFiles">
+      <para>Files exempted from the bundle writer.</para>
+    </param>
+    <param name="bundleWriter">
+      <para>The bundle writer object created.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IAppxEncryptionFactory3" />
+  </member>
+  <member name="IAppxEncryptionFactory3.CreateEncryptedPackageWriter">
+    <summary>
+      <para>Creates a new instance of an <see cref="IAppxEncryptedPackageWriter" />.</para>
+    </summary>
+    <param name="outputStream">
+      <para>A writable stream for sending bytes produced by the app package.</para>
+    </param>
+    <param name="manifestStream">
+      <para>A readable stream that defines the package for the  AppxManifest.xml.</para>
+    </param>
+    <param name="contentGroupMapStream">
+      <para>A stream that defines the content group map.</para>
+    </param>
+    <param name="settings">
+      <para>Settings for creating the package.</para>
+    </param>
+    <param name="keyInfo">
+      <para>Key info containing the base encryption key and key ID for encrypting the package. The base encryption key is used to derive the per file encryption keys. If this parameter is null, the global test key and key ID are used.</para>
+    </param>
+    <param name="exemptedFiles">
+      <para>Files exempted from the package writer.</para>
+    </param>
+    <param name="packageWriter">
+      <para>The package writer object created.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IAppxEncryptionFactory3" />
+  </member>
+  <member name="IAppxEncryptionFactory3.EncryptBundle">
+    <summary>
+      <para>Creates an encrypted Windows app bundle from an unencrypted one.</para>
+    </summary>
+    <param name="inputStream">
+      <para>A readable stream from the app bundle to encrypt.</para>
+    </param>
+    <param name="outputStream">
+      <para>A writable stream for writing the resulting encrypted app bundle.</para>
+    </param>
+    <param name="settings">
+      <para>Settings for creating the bundle.</para>
+    </param>
+    <param name="keyInfo">
+      <para>Key info containing the base encryption key and key ID for encrypting the bundle. The base encryption key is used to derive the per file encryption keys. If this parameter is null, the global test key and key ID are used.</para>
+    </param>
+    <param name="exemptedFiles">
+      <para>Files exempted from the bundle writer.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IAppxEncryptionFactory3" />
+  </member>
+  <member name="IAppxEncryptionFactory3.EncryptPackage">
+    <summary>
+      <para>Creates an encrypted Windows app package from an unencrypted one.</para>
+    </summary>
+    <param name="inputStream">
+      <para>A readable stream from the app bundle to encrypt.</para>
+    </param>
+    <param name="outputStream">
+      <para>A writable stream for writing the resulting encrypted app bundle.</para>
+    </param>
+    <param name="settings">
+      <para>Settings for creating the bundle.</para>
+    </param>
+    <param name="keyInfo">
+      <para>Key info containing the base encryption key and key ID for encrypting the bundle. The base encryption key is used to derive the per file encryption keys. If this parameter is null, the global test key and key ID are used.</para>
+    </param>
+    <param name="exemptedFiles">
+      <para>Files exempted from the package writer.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IAppxEncryptionFactory3" />
+  </member>
+  <member name="IAppxEncryptionFactory3">
+    <summary>
+      <para>Creates objects for encrypting, decrypting,  reading, and writing Windows app packages and bundles.</para>
+    </summary>
+  </member>
+</doc>

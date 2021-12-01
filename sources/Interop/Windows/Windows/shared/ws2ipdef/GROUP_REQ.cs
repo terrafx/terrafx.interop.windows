@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='GROUP_REQ.xml' path='doc/member[@name="GROUP_REQ"]/*' />
 public partial struct GROUP_REQ
 {
+    /// <include file='GROUP_REQ.xml' path='doc/member[@name="GROUP_REQ.gr_interface"]/*' />
     [NativeTypeName("ULONG")]
     public uint gr_interface;
 
+    /// <include file='GROUP_REQ.xml' path='doc/member[@name="GROUP_REQ.gr_group"]/*' />
     public SOCKADDR_STORAGE gr_group;
 }

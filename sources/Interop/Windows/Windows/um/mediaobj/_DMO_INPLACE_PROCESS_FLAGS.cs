@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='_DMO_INPLACE_PROCESS_FLAGS.xml' path='doc/member[@name="_DMO_INPLACE_PROCESS_FLAGS"]/*' />
 public enum _DMO_INPLACE_PROCESS_FLAGS
 {
+    /// <include file='_DMO_INPLACE_PROCESS_FLAGS.xml' path='doc/member[@name="_DMO_INPLACE_PROCESS_FLAGS.DMO_INPLACE_NORMAL"]/*' />
     DMO_INPLACE_NORMAL = 0,
+
+    /// <include file='_DMO_INPLACE_PROCESS_FLAGS.xml' path='doc/member[@name="_DMO_INPLACE_PROCESS_FLAGS.DMO_INPLACE_ZERO"]/*' />
     DMO_INPLACE_ZERO = 0x1,
 }

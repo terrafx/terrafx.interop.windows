@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_XML_NODE">
+    <summary>
+      <para>The base type
+for all the different kinds of XML nodes. An XML node is unit of data in XML.</para>
+    </summary>
+  </member>
+  <member name="WS_XML_NODE.nodeType">
+    <summary>
+      <para>Indicates the type of node this structure refers to.</para>
+    </summary>
+  </member>
+</doc>

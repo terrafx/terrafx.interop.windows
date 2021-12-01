@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='FIXED.xml' path='doc/member[@name="FIXED"]/*' />
 public partial struct FIXED
 {
+    /// <include file='FIXED.xml' path='doc/member[@name="FIXED.fract"]/*' />
     [NativeTypeName("WORD")]
     public ushort fract;
 
+    /// <include file='FIXED.xml' path='doc/member[@name="FIXED.value"]/*' />
     public short value;
 }

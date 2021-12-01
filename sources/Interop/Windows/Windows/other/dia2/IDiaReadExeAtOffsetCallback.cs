@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IDiaReadExeAtOffsetCallback.xml' path='doc/member[@name="IDiaReadExeAtOffsetCallback"]/*' />
 [Guid("587A461C-B80B-4F54-9194-5032589A6319")]
 [NativeTypeName("struct IDiaReadExeAtOffsetCallback : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IDiaReadExeAtOffsetCallback : IDiaReadExeAtOffsetCa
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IDiaReadExeAtOffsetCallback : IDiaReadExeAtOffsetCa
         return ((delegate* unmanaged<IDiaReadExeAtOffsetCallback*, Guid*, void**, int>)(lpVtbl[0]))((IDiaReadExeAtOffsetCallback*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IDiaReadExeAtOffsetCallback : IDiaReadExeAtOffsetCa
         return ((delegate* unmanaged<IDiaReadExeAtOffsetCallback*, uint>)(lpVtbl[1]))((IDiaReadExeAtOffsetCallback*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IDiaReadExeAtOffsetCallback : IDiaReadExeAtOffsetCa
         return ((delegate* unmanaged<IDiaReadExeAtOffsetCallback*, uint>)(lpVtbl[2]))((IDiaReadExeAtOffsetCallback*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDiaReadExeAtOffsetCallback.xml' path='doc/member[@name="IDiaReadExeAtOffsetCallback.ReadExecutableAt"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT ReadExecutableAt([NativeTypeName("DWORDLONG")] ulong fileOffset, [NativeTypeName("DWORD")] uint cbData, [NativeTypeName("DWORD *")] uint* pcbData, byte* pbData)

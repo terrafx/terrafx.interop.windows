@@ -10,6 +10,7 @@ using TerraFX.Interop.DirectX;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IVMRSurface.xml' path='doc/member[@name="IVMRSurface"]/*' />
 [Guid("A9849BBE-9EC8-4263-B764-62730F0D15D0")]
 [NativeTypeName("struct IVMRSurface : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -17,6 +18,7 @@ public unsafe partial struct IVMRSurface : IVMRSurface.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct IVMRSurface : IVMRSurface.Interface
         return ((delegate* unmanaged<IVMRSurface*, Guid*, void**, int>)(lpVtbl[0]))((IVMRSurface*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct IVMRSurface : IVMRSurface.Interface
         return ((delegate* unmanaged<IVMRSurface*, uint>)(lpVtbl[1]))((IVMRSurface*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct IVMRSurface : IVMRSurface.Interface
         return ((delegate* unmanaged<IVMRSurface*, uint>)(lpVtbl[2]))((IVMRSurface*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IVMRSurface.xml' path='doc/member[@name="IVMRSurface.IsSurfaceLocked"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT IsSurfaceLocked()
@@ -47,6 +52,7 @@ public unsafe partial struct IVMRSurface : IVMRSurface.Interface
         return ((delegate* unmanaged<IVMRSurface*, int>)(lpVtbl[3]))((IVMRSurface*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IVMRSurface.xml' path='doc/member[@name="IVMRSurface.LockSurface"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT LockSurface(byte** lpSurface)
@@ -54,6 +60,7 @@ public unsafe partial struct IVMRSurface : IVMRSurface.Interface
         return ((delegate* unmanaged<IVMRSurface*, byte**, int>)(lpVtbl[4]))((IVMRSurface*)Unsafe.AsPointer(ref this), lpSurface);
     }
 
+    /// <include file='IVMRSurface.xml' path='doc/member[@name="IVMRSurface.UnlockSurface"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT UnlockSurface()
@@ -61,6 +68,7 @@ public unsafe partial struct IVMRSurface : IVMRSurface.Interface
         return ((delegate* unmanaged<IVMRSurface*, int>)(lpVtbl[5]))((IVMRSurface*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IVMRSurface.xml' path='doc/member[@name="IVMRSurface.GetSurface"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetSurface([NativeTypeName("LPDIRECTDRAWSURFACE7 *")] IDirectDrawSurface7** lplpSurface)

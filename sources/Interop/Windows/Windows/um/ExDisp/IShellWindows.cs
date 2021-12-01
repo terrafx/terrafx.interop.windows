@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IShellWindows.xml' path='doc/member[@name="IShellWindows"]/*' />
 [Guid("85CB6900-4D95-11CF-960C-0080C7F4EE85")]
 [NativeTypeName("struct IShellWindows : IDispatch")]
 [NativeInheritance("IDispatch")]
@@ -16,6 +17,7 @@ public unsafe partial struct IShellWindows : IShellWindows.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IShellWindows : IShellWindows.Interface
         return ((delegate* unmanaged<IShellWindows*, Guid*, void**, int>)(lpVtbl[0]))((IShellWindows*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IShellWindows : IShellWindows.Interface
         return ((delegate* unmanaged<IShellWindows*, uint>)(lpVtbl[1]))((IShellWindows*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IShellWindows : IShellWindows.Interface
         return ((delegate* unmanaged<IShellWindows*, uint>)(lpVtbl[2]))((IShellWindows*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct IShellWindows : IShellWindows.Interface
         return ((delegate* unmanaged<IShellWindows*, uint*, int>)(lpVtbl[3]))((IShellWindows*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct IShellWindows : IShellWindows.Interface
         return ((delegate* unmanaged<IShellWindows*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IShellWindows*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
@@ -60,6 +67,7 @@ public unsafe partial struct IShellWindows : IShellWindows.Interface
         return ((delegate* unmanaged<IShellWindows*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IShellWindows*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
+    /// <inheritdoc cref="IDispatch.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
@@ -67,6 +75,7 @@ public unsafe partial struct IShellWindows : IShellWindows.Interface
         return ((delegate* unmanaged<IShellWindows*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IShellWindows*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
+    /// <include file='IShellWindows.xml' path='doc/member[@name="IShellWindows.get_Count"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT get_Count([NativeTypeName("long *")] int* Count)
@@ -74,6 +83,7 @@ public unsafe partial struct IShellWindows : IShellWindows.Interface
         return ((delegate* unmanaged<IShellWindows*, int*, int>)(lpVtbl[7]))((IShellWindows*)Unsafe.AsPointer(ref this), Count);
     }
 
+    /// <include file='IShellWindows.xml' path='doc/member[@name="IShellWindows.Item"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT Item(VARIANT index, IDispatch** Folder)
@@ -81,6 +91,7 @@ public unsafe partial struct IShellWindows : IShellWindows.Interface
         return ((delegate* unmanaged<IShellWindows*, VARIANT, IDispatch**, int>)(lpVtbl[8]))((IShellWindows*)Unsafe.AsPointer(ref this), index, Folder);
     }
 
+    /// <include file='IShellWindows.xml' path='doc/member[@name="IShellWindows._NewEnum"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT _NewEnum(IUnknown** ppunk)
@@ -88,6 +99,7 @@ public unsafe partial struct IShellWindows : IShellWindows.Interface
         return ((delegate* unmanaged<IShellWindows*, IUnknown**, int>)(lpVtbl[9]))((IShellWindows*)Unsafe.AsPointer(ref this), ppunk);
     }
 
+    /// <include file='IShellWindows.xml' path='doc/member[@name="IShellWindows.Register"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT Register(IDispatch* pid, [NativeTypeName("long")] int hwnd, int swClass, [NativeTypeName("long *")] int* plCookie)
@@ -95,6 +107,7 @@ public unsafe partial struct IShellWindows : IShellWindows.Interface
         return ((delegate* unmanaged<IShellWindows*, IDispatch*, int, int, int*, int>)(lpVtbl[10]))((IShellWindows*)Unsafe.AsPointer(ref this), pid, hwnd, swClass, plCookie);
     }
 
+    /// <include file='IShellWindows.xml' path='doc/member[@name="IShellWindows.RegisterPending"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT RegisterPending([NativeTypeName("long")] int lThreadId, VARIANT* pvarloc, VARIANT* pvarlocRoot, int swClass, [NativeTypeName("long *")] int* plCookie)
@@ -102,6 +115,7 @@ public unsafe partial struct IShellWindows : IShellWindows.Interface
         return ((delegate* unmanaged<IShellWindows*, int, VARIANT*, VARIANT*, int, int*, int>)(lpVtbl[11]))((IShellWindows*)Unsafe.AsPointer(ref this), lThreadId, pvarloc, pvarlocRoot, swClass, plCookie);
     }
 
+    /// <include file='IShellWindows.xml' path='doc/member[@name="IShellWindows.Revoke"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT Revoke([NativeTypeName("long")] int lCookie)
@@ -109,6 +123,7 @@ public unsafe partial struct IShellWindows : IShellWindows.Interface
         return ((delegate* unmanaged<IShellWindows*, int, int>)(lpVtbl[12]))((IShellWindows*)Unsafe.AsPointer(ref this), lCookie);
     }
 
+    /// <include file='IShellWindows.xml' path='doc/member[@name="IShellWindows.OnNavigate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT OnNavigate([NativeTypeName("long")] int lCookie, VARIANT* pvarLoc)
@@ -116,6 +131,7 @@ public unsafe partial struct IShellWindows : IShellWindows.Interface
         return ((delegate* unmanaged<IShellWindows*, int, VARIANT*, int>)(lpVtbl[13]))((IShellWindows*)Unsafe.AsPointer(ref this), lCookie, pvarLoc);
     }
 
+    /// <include file='IShellWindows.xml' path='doc/member[@name="IShellWindows.OnActivated"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT OnActivated([NativeTypeName("long")] int lCookie, [NativeTypeName("VARIANT_BOOL")] short fActive)
@@ -123,6 +139,7 @@ public unsafe partial struct IShellWindows : IShellWindows.Interface
         return ((delegate* unmanaged<IShellWindows*, int, short, int>)(lpVtbl[14]))((IShellWindows*)Unsafe.AsPointer(ref this), lCookie, fActive);
     }
 
+    /// <include file='IShellWindows.xml' path='doc/member[@name="IShellWindows.FindWindowSW"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT FindWindowSW(VARIANT* pvarLoc, VARIANT* pvarLocRoot, int swClass, [NativeTypeName("long *")] int* phwnd, int swfwOptions, IDispatch** ppdispOut)
@@ -130,6 +147,7 @@ public unsafe partial struct IShellWindows : IShellWindows.Interface
         return ((delegate* unmanaged<IShellWindows*, VARIANT*, VARIANT*, int, int*, int, IDispatch**, int>)(lpVtbl[15]))((IShellWindows*)Unsafe.AsPointer(ref this), pvarLoc, pvarLocRoot, swClass, phwnd, swfwOptions, ppdispOut);
     }
 
+    /// <include file='IShellWindows.xml' path='doc/member[@name="IShellWindows.OnCreated"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT OnCreated([NativeTypeName("long")] int lCookie, IUnknown* punk)
@@ -137,6 +155,7 @@ public unsafe partial struct IShellWindows : IShellWindows.Interface
         return ((delegate* unmanaged<IShellWindows*, int, IUnknown*, int>)(lpVtbl[16]))((IShellWindows*)Unsafe.AsPointer(ref this), lCookie, punk);
     }
 
+    /// <include file='IShellWindows.xml' path='doc/member[@name="IShellWindows.ProcessAttachDetach"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT ProcessAttachDetach([NativeTypeName("VARIANT_BOOL")] short fAttach)

@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='GUIDKIND.xml' path='doc/member[@name="GUIDKIND"]/*' />
 public enum GUIDKIND
 {
+    /// <include file='GUIDKIND.xml' path='doc/member[@name="GUIDKIND.GUIDKIND_DEFAULT_SOURCE_DISP_IID"]/*' />
     GUIDKIND_DEFAULT_SOURCE_DISP_IID = 1,
 }

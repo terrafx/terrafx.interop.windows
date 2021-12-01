@@ -5,8 +5,10 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='COMPONENT_FILTER.xml' path='doc/member[@name="COMPONENT_FILTER"]/*' />
 public partial struct COMPONENT_FILTER
 {
+    /// <include file='COMPONENT_FILTER.xml' path='doc/member[@name="COMPONENT_FILTER.ComponentFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint ComponentFlags;
 }

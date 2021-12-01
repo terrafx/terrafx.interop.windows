@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="AR_STATE">
+    <summary>
+      <para>Indicates the state of screen auto-rotation for the system. For example, whether auto-rotation is supported, and whether it is enabled by the user. This enum is a bitwise OR of one or more of the following values.</para>
+    </summary>
+  </member>
+  <member name="AR_STATE.AR_ENABLED">
+    <summary>
+      <para>Auto-rotation is enabled by the user.</para>
+    </summary>
+  </member>
+  <member name="AR_STATE.AR_DISABLED">
+    <summary>
+      <para>Auto-rotation is disabled by the user.</para>
+    </summary>
+  </member>
+  <member name="AR_STATE.AR_SUPPRESSED">
+    <summary>
+      <para>Auto-rotation is currently suppressed by one or more process auto-rotation preferences.</para>
+    </summary>
+  </member>
+  <member name="AR_STATE.AR_REMOTESESSION">
+    <summary>
+      <para>The session is remote, and auto-rotation is temporarily disabled as a result.</para>
+    </summary>
+  </member>
+  <member name="AR_STATE.AR_MULTIMON">
+    <summary>
+      <para>The system has multiple monitors attached, and auto-rotation is temporarily disabled as a result.</para>
+    </summary>
+  </member>
+  <member name="AR_STATE.AR_NOSENSOR">
+    <summary>
+      <para>The system does not have an auto-rotation sensor.</para>
+    </summary>
+  </member>
+  <member name="AR_STATE.AR_NOT_SUPPORTED">
+    <summary>
+      <para>Auto-rotation is not supported with the current system configuration.</para>
+    </summary>
+  </member>
+  <member name="AR_STATE.AR_DOCKED">
+    <summary>
+      <para>The device is docked, and auto-rotation is temporarily disabled as a result.</para>
+    </summary>
+  </member>
+  <member name="AR_STATE.AR_LAPTOP">
+    <summary>
+      <para>The device is in laptop mode, and auto-rotation is temporarily disabled as a result.</para>
+    </summary>
+  </member>
+</doc>

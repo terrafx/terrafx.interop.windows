@@ -1,0 +1,292 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IWICPalette.GetColorCount">
+    <summary>
+      <para>Retrieves the number of colors in the color table.</para>
+    </summary>
+    <param name="pcCount">
+      <para>Type: <b>UINT*</b></para>
+      <para>Pointer that receives the number of colors in the color table.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IWICPalette.GetColors">
+    <summary>
+      <para>Fills out the supplied color array with the colors from the internal color table. The color array should be sized according to the return results from <see cref="GetColorCount" />.</para>
+    </summary>
+    <param name="cCount">
+      <para>Type: <b>UINT</b></para>
+      <para>The size of the <i>pColors</i> array.</para>
+    </param>
+    <param name="pColors">
+      <para>Type: <b>WICColor*</b></para>
+      <para>Pointer that receives the colors of the palette.</para>
+    </param>
+    <param name="pcActualColors">
+      <para>Type: <b>UINT*</b></para>
+      <para>The actual size needed to obtain the palette colors.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IWICPalette.GetType">
+    <summary>
+      <para>Retrieves the <see cref="WICBitmapPaletteType" /> that describes the palette.</para>
+    </summary>
+    <param name="pePaletteType">
+      <para>Type: <b><see cref="WICBitmapPaletteType" />*</b></para>
+      <para>Pointer that receives the palette type of the bimtap.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>WICBitmapPaletteCustom</b> is used for palettes initialized from both <see cref="InitializeCustom" /> and <see cref="InitializeFromBitmap" />. There is no distinction is made between optimized and custom palettes.</para>
+    </remarks>
+  </member>
+  <member name="IWICPalette.HasAlpha">
+    <summary>
+      <para>Indicates whether the palette contains an entry that is non-opaque (that is, an entry with an alpha that is less than 1).</para>
+    </summary>
+    <param name="pfHasAlpha">
+      <para>Type: <b>BOOL*</b></para>
+      <para>Pointer that receives <code>TRUE</code> if the palette contains a transparent color; otherwise, <code>FALSE</code>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Various image formats support alpha in different ways. PNG has full alpha support by supporting partially transparent palette entries. GIF stores colors as 24bpp, without alpha, but allows one palette entry to be specified as fully transparent. If a palette has multiple fully transparent entries (0x00RRGGBB), GIF will use the last one as its transparent index.</para>
+    </remarks>
+  </member>
+  <member name="IWICPalette.InitializeCustom">
+    <summary>
+      <para>Initializes a palette to the custom color entries provided.</para>
+    </summary>
+    <param name="pColors">
+      <para>Type: <b>WICColor*</b></para>
+      <para>Pointer to the color array.</para>
+    </param>
+    <param name="cCount">
+      <para>Type: <b>UINT</b></para>
+      <para>The number of colors in <i>pColors</i>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>If a transparent color is required, provide it as part of the custom entries. To add a transparent value to the palette, its alpha value must be 0 (0x00RRGGBB).</para>
+      <para>The entry count is limited to 256.</para>
+    </remarks>
+  </member>
+  <member name="IWICPalette.InitializeFromBitmap">
+    <summary>
+      <para>Initializes a palette using a computed optimized values based on the reference bitmap.</para>
+    </summary>
+    <param name="pISurface">
+      <para>Type: <b><see cref="IWICBitmapSource" />*</b></para>
+      <para>Pointer to the source bitmap.</para>
+    </param>
+    <param name="cCount">
+      <para>Type: <b>UINT</b></para>
+      <para>The number of colors to initialize the palette with.</para>
+    </param>
+    <param name="fAddTransparentColor">
+      <para>Type: <b>BOOL</b></para>
+      <para>A value to indicate whether to add a transparent color.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The resulting palette contains the specified number of colors which best represent the colors present in the bitmap. The algorithm operates on the opaque RGB color value of each pixel in the reference bitmap and hence ignores any alpha values. If a transparent color is required, set the fAddTransparentColor parameter to <b>TRUE</b> and one fewer optimized color will be computed, reducing the <i>colorCount</i>, and a fully transparent color entry will be added.</para>
+    </remarks>
+  </member>
+  <member name="IWICPalette.InitializeFromPalette">
+    <summary>
+      <para>Initialize the palette based on a given palette.</para>
+    </summary>
+    <param name="pIPalette">
+      <para>Type: <b><see cref="IWICPalette" />*</b></para>
+      <para>Pointer to the source palette.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IWICPalette.InitializePredefined">
+    <summary>
+      <para>Initializes the palette to one of the pre-defined palettes specified by <see cref="WICBitmapPaletteType" /> and optionally adds a transparent color.</para>
+    </summary>
+    <param name="ePaletteType">
+      <para>Type: <b><see cref="WICBitmapPaletteType" /></b></para>
+      <para>The desired pre-defined palette type.</para>
+    </param>
+    <param name="fAddTransparentColor">
+      <para>Type: <b>BOOL</b></para>
+      <para>The optional transparent color to add to the palette. If no transparent color is needed, use 0. When initializing to a grayscale or black and white palette, set this parameter to <b>FALSE</b>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>If a transparent color is added to a palette, the palette is no longer predefined and is returned as <see cref="WICBitmapPaletteTypeCustom" />. For palettes with less than 256 entries, the transparent entry is added to the end of the palette (that is, a 16-color palette becomes a 17-color palette). For palettes with 256 colors, the transparent palette entry will replace the last entry in the pre-defined palette.</para>
+    </remarks>
+  </member>
+  <member name="IWICPalette.IsBlackWhite">
+    <summary>
+      <para>Retrieves a value that describes whether the palette is black and white.</para>
+    </summary>
+    <param name="pfIsBlackWhite">
+      <para>Type: <b>BOOL*</b></para>
+      <para>A pointer to a variable  that receives a boolean value that indicates whether the palette is black and white. <b>TRUE</b> indicates that the palette is black and white; otherwise, <b>FALSE</b>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>A palette is considered to be black and white only if it contains exactly two entries, one full black (0xFF000000) and one full white (0xFFFFFFF).</para>
+    </remarks>
+  </member>
+  <member name="IWICPalette.IsGrayscale">
+    <summary>
+      <para>Retrieves a value that describes whether a palette is grayscale.</para>
+    </summary>
+    <param name="pfIsGrayscale">
+      <para>Type: <b>BOOL*</b></para>
+      <para>A pointer to a variable that receives a boolean value that indicates whether the palette is grayscale. <b>TRUE</b> indicates that the palette is grayscale; otherwise <b>FALSE</b>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>A palette is considered grayscale only if, for every entry, the alpha value is 0xFF and the red, green and blue values match.</para>
+    </remarks>
+  </member>
+  <member name="IWICPalette">
+    <summary>
+      <para>Exposes methods for accessing and building a color table, primarily for indexed pixel formats.</para>
+    </summary>
+    <remarks>
+      <para>If the <see cref="WICBitmapPaletteType" /> is not <b>WICBitmapPaletteCustom</b>, then the colors are automatically generated based on the table above.  If the user subsequently changes a color palette entry the WICBitmapPalette is set to Custom by that action.</para>
+      <para>
+        <see cref="InitializeFromBitmap" />'s <i>fAddTransparentColor</i> parameter will add a transparent color to the end of the color collection if its size if less than 256, otherwise index 255 will be replaced with the transparent color.  If a pre-defined palette type is used, it will change to BitmapPaletteTypeCustom since it no longer matches the predefined palette.</para>
+      <para>The palette interface is an auxiliary imaging interface in that it does not directly concern bitmaps and pixels; rather it provides indexed color translation for indexed bitmaps. For an indexed pixel format with M bits per pixels: (The number of colors in the palette) greater than 2^M.</para>
+      <para>Traditionally the basic operation of the palette is to provide a translation from a byte (or smaller) index into a 32bpp color value. This is often accomplished by a 256 entry table of color values.</para>
+      <h4>Examples</h4>
+      <code>    IWICImagingFactory *pFactory = NULL;
+    IWICBitmapDecoder *pDecoder = NULL;
+    IWICBitmapFrameDecode *pBitmapFrameDecode = NULL;
+    IWICPalette *pPalette = NULL;
+
+    UINT uiFrameCount = 0;
+
+    HRESULT hr = CoCreateInstance(
+        CLSID_WICImagingFactory,
+        NULL,
+        CLSCTX_INPROC_SERVER,
+        IID_IWICImagingFactory,
+        (LPVOID*)&amp;amp;amp;amp;amp;amp;pFactory
+        );
+
+    if (SUCCEEDED(hr))
+    {
+        hr = pFactory-&gt;CreateDecoderFromFilename(
+                           L"test.gif",
+                           NULL,
+                           GENERIC_READ,
+                           &amp;amp;amp;amp;amp;amp;pDecoder);
+    }
+
+    if (SUCCEEDED(hr))
+    {
+        hr = pDecoder-&gt;GetFrameCount(&amp;amp;amp;amp;amp;amp;uiFrameCount);
+    }
+
+    if (SUCCEEDED(hr) &amp;amp;amp;amp;amp;amp;&amp;amp;amp;amp;amp;amp; (uiFrameCount &gt; 0))
+    {
+        hr = pDecoder-&gt;GetFrame(0, &amp;amp;amp;amp;amp;amp;pBitmapFrameDecode);
+
+        if (SUCCEEDED(hr))
+        {
+            hr = pFactory-&gt;CreatePalette(&amp;amp;amp;amp;amp;amp;pPalette);
+        }
+
+        if (SUCCEEDED(hr))
+        {
+            hr = pBitmapFrameDecode-&gt;CopyPalette(pPalette);
+        }
+
+        if (SUCCEEDED(hr))
+        {
+            UINT uiColorCount = 0;
+            UINT uiActualColorCount = 0;
+            WICColor *pColors = NULL;
+
+            hr = pPalette-&gt;GetColorCount(&amp;amp;amp;amp;amp;amp;uiColorCount);
+
+            if (SUCCEEDED(hr) &amp;amp;amp;amp;amp;amp;&amp;amp;amp;amp;amp;amp; (uiColorCount &gt; 0))
+            {
+                pColors = new WICColor[uiColorCount];
+
+                if (pColors)
+                {
+                    hr = pPalette-&gt;GetColors(uiColorCount, pColors, &amp;amp;amp;amp;amp;amp;uiActualColorCount);
+
+                    // Do something with the colors here...
+
+                    delete[] pColors;
+                }
+                else
+                {
+                    hr = E_OUTOFMEMORY;
+                }
+            }
+        }
+    }
+
+    if (pPalette)
+    {
+        pPalette-&gt;Release();
+    }
+
+    if (pBitmapFrameDecode)
+    {
+        pBitmapFrameDecode-&gt;Release();
+    }
+
+    if (pDecoder)
+    {
+        pDecoder-&gt;Release();
+    }
+
+    if (pFactory)
+    {
+        pFactory-&gt;Release();
+    }
+
+    return hr;
+</code>
+      <para>In this example code, <b>WICColor</b> is defined as a <b>UINT32</b> value with this layout:</para>
+      <code>0xAARRGGBB
+</code>
+      <para>The wincodec.h header type-defines <b>WICColor</b> as <b>UINT32</b>.</para>
+    </remarks>
+  </member>
+</doc>

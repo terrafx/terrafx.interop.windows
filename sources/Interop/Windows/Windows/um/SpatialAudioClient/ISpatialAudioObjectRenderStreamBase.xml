@@ -1,0 +1,479 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ISpatialAudioObjectRenderStreamBase.BeginUpdatingAudioObjects">
+    <summary>
+      <para>Puts the system into the state where audio object data can be submitted for processing and the <see cref="ISpatialAudioObject" /> state can be modified.</para>
+    </summary>
+    <param name="availableDynamicObjectCount">
+      <para>The number of dynamic audio objects that are available to be rendered for the current processing pass. All allocated static audio objects can be rendered in every pass. For information on audio object types, see <see cref="AudioObjectType" />.</para>
+    </param>
+    <param name="frameCountPerBuffer">
+      <para>The size, in audio frames, of the buffer returned by <see cref="GetBuffer" />.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>SPTLAUDCLNT_E_OUT_OF_ORDER</b>
+            </para>
+          </description>
+          <description>
+            <b>BeginUpdatingAudioObjects</b> was called twice without a matching call to <see cref="EndUpdatingAudioObjects" /> between the two calls.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>SPTLAUDCLNT_E_DESTROYED</b>
+            </para>
+          </description>
+          <description>
+            <para>The <see cref="ISpatialAudioClient" /> associated with the spatial audio stream has been destroyed.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>AUDCLNT_E_DEVICE_INVALIDATED</b>
+            </para>
+          </description>
+          <description>
+            <para>The audio endpoint device has been unplugged, or the audio hardware or associated hardware resources have been reconfigured, disabled, removed, or otherwise made unavailable for use.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>AUDCLNT_E_RESOURCES_INVALIDATED</b>
+            </para>
+          </description>
+          <description>
+            <para>A resource associated with the spatial audio stream is no longer valid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>SPTLAUDCLNT_E_INTERNAL</b>
+            </para>
+          </description>
+          <description>
+            <para>An internal error has occurred.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>AUDCLNT_E_UNSUPPORTED_FORMAT</b>
+            </para>
+          </description>
+          <description>
+            <para>The media associated with the spatial audio stream uses an unsupported format.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method must be called each time the event passed in the <see cref="SpatialAudioObjectRenderStreamActivationParams" /> to <see cref="ISpatialAudioClient.ActivateSpatialAudioStream" /> is signaled,
+even if there no audio object data to submit.</para>
+      <para>For each <b>BeginUpdatingAudioObjects</b> call, there should be a corresponding call to <see cref="EndUpdatingAudioObjects" /> call.
+If <b>BeginUpdatingAudioObjects</b> is called twice without a call <b>EndUpdatingAudioObjects</b> between them, the second call to
+<b>BeginUpdatingAudioObjects</b> will return SPTLAUDCLNT_E_OUT_OF_ORDER.</para>
+    </remarks>
+    <seealso cref="ISpatialAudioObjectRenderStream" />
+    <seealso cref="ISpatialAudioObjectRenderStreamBase" />
+  </member>
+  <member name="ISpatialAudioObjectRenderStreamBase.EndUpdatingAudioObjects">
+    <summary>
+      <para>Notifies the system that the app has finished supplying audio data for the spatial audio objects activated with <see cref="ActivateSpatialAudioObject" />.</para>
+    </summary>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>SPTLAUDCLNT_E_OUT_OF_ORDER</b>
+            </para>
+          </description>
+          <description>
+            <b>EndUpdatingAudioObjects</b> was called before <see cref="BeginUpdatingAudioObjects" />.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>SPTLAUDCLNT_E_DESTROYED</b>
+            </para>
+          </description>
+          <description>
+            <para>The <see cref="ISpatialAudioClient" /> associated with the spatial audio stream has been destroyed.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>AUDCLNT_E_DEVICE_INVALIDATED</b>
+            </para>
+          </description>
+          <description>
+            <para>The audio endpoint device has been unplugged, or the audio hardware or associated hardware resources have been reconfigured, disabled, removed, or otherwise made unavailable for use.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>AUDCLNT_E_RESOURCES_INVALIDATED</b>
+            </para>
+          </description>
+          <description>
+            <para>A resource associated with the spatial audio stream is no longer valid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>SPTLAUDCLNT_E_INTERNAL</b>
+            </para>
+          </description>
+          <description>
+            <para>An internal error has occurred.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>AUDCLNT_E_UNSUPPORTED_FORMAT</b>
+            </para>
+          </description>
+          <description>
+            <para>The media associated with the spatial audio stream uses an unsupported format.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The pointers retrieved with <see cref="ISpatialAudioObjectBase.GetBuffer" /> can no longer be used after this method is called.</para>
+    </remarks>
+    <seealso cref="ISpatialAudioObjectRenderStream" />
+    <seealso cref="ISpatialAudioObjectRenderStreamBase" />
+  </member>
+  <member name="ISpatialAudioObjectRenderStreamBase.GetService">
+    <summary>
+      <para>Gets additional services from the <b>ISpatialAudioObjectRenderStream</b>.</para>
+    </summary>
+    <param name="riid">
+      <para>The interface ID for the requested service. The client should set this parameter to one of the following REFIID values:</para>
+      <para>IID_IAudioClock</para>
+      <para>IID_IAudioClock2</para>
+      <para>IID_IAudioStreamVolume</para>
+    </param>
+    <param name="service">
+      <para>Pointer to a pointer variable into which the method writes the address of an instance of the requested interface. Through this method, the caller obtains a counted reference to the interface. The caller is responsible for releasing the interface, when it is no longer needed, by calling the interface's <see cref="Release" /> method. If the <b>GetService</b> call fails, <i>*ppv </i> is NULL.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>Parameter <i>ppv</i> is NULL.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>SPTLAUDCLNT_E_DESTROYED</b>
+            </para>
+          </description>
+          <description>
+            <para>The <see cref="ISpatialAudioClient" /> associated with the spatial audio stream has been destroyed.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>AUDCLNT_E_DEVICE_INVALIDATED</b>
+            </para>
+          </description>
+          <description>
+            <para>The audio endpoint device has been unplugged, or the audio hardware or associated hardware resources have been reconfigured, disabled, removed, or otherwise made unavailable for use.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>SPTLAUDCLNT_E_INTERNAL</b>
+            </para>
+          </description>
+          <description>
+            <para>An internal error has occurred.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>AUDCLNT_E_UNSUPPORTED_FORMAT</b>
+            </para>
+          </description>
+          <description>
+            <para>The media associated with the spatial audio stream uses an unsupported format.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The <b>GetService</b> method supports the following service interfaces:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <see cref="IAudioClock" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IAudioClock2" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IAudioStreamVolume" />
+          </description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="ISpatialAudioObjectRenderStream" />
+    <seealso cref="ISpatialAudioObjectRenderStreamBase" />
+  </member>
+  <member name="ISpatialAudioObjectRenderStreamBase.Reset">
+    <summary>
+      <para>Reset a stopped audio stream.</para>
+    </summary>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>SPTLAUDCLNT_E_STREAM_NOT_STOPPED</b>
+            </para>
+          </description>
+          <description>
+            <para>The audio stream has not been stopped. Stop the stream by calling <see cref="Stop" />.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>SPTLAUDCLNT_E_DESTROYED</b>
+            </para>
+          </description>
+          <description>
+            <para>The <see cref="ISpatialAudioClient" /> associated with the spatial audio stream has been destroyed.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>AUDCLNT_E_DEVICE_INVALIDATED</b>
+            </para>
+          </description>
+          <description>
+            <para>The audio endpoint device has been unplugged, or the audio hardware or associated hardware resources have been reconfigured, disabled, removed, or otherwise made unavailable for use.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>SPTLAUDCLNT_E_INTERNAL</b>
+            </para>
+          </description>
+          <description>
+            <para>An internal error has occurred.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>AUDCLNT_E_UNSUPPORTED_FORMAT</b>
+            </para>
+          </description>
+          <description>
+            <para>The media associated with the spatial audio stream uses an unsupported format.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Resetting the audio stream flushes all pending data and resets the audio clock stream position to 0. Resetting the stream also causes all active <see cref="ISpatialAudioObject" /> instances to be revoked.
+A subsequent call to <see cref="Start" /> causes the stream to start from 0 position.</para>
+      <para>The stream must have been previously stopped with a call to <see cref="Stop" /> or the method will fail and return SPTLAUDCLNT_E_STREAM_NOT_STOPPED.</para>
+    </remarks>
+    <seealso cref="ISpatialAudioObjectRenderStream" />
+    <seealso cref="ISpatialAudioObjectRenderStreamBase" />
+  </member>
+  <member name="ISpatialAudioObjectRenderStreamBase.Start">
+    <summary>
+      <para>Starts the spatial audio stream.</para>
+    </summary>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>SPTLAUDCLNT_E_STREAM_NOT_STOPPED</b>
+            </para>
+          </description>
+          <description>
+            <para>The audio stream has not been stopped. Stop the stream by calling <see cref="Stop" />.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>SPTLAUDCLNT_E_DESTROYED</b>
+            </para>
+          </description>
+          <description>
+            <para>The <see cref="ISpatialAudioClient" /> associated with the spatial audio stream has been destroyed.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>AUDCLNT_E_DEVICE_INVALIDATED</b>
+            </para>
+          </description>
+          <description>
+            <para>The audio endpoint device has been unplugged, or the audio hardware or associated hardware resources have been reconfigured, disabled, removed, or otherwise made unavailable for use.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>SPTLAUDCLNT_E_INTERNAL</b>
+            </para>
+          </description>
+          <description>
+            <para>An internal error has occurred.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>AUDCLNT_E_UNSUPPORTED_FORMAT</b>
+            </para>
+          </description>
+          <description>
+            <para>The media associated with the spatial audio stream uses an unsupported format.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Starting the stream causes data flow between the endpoint buffer and the audio engine.
+The first time this method is called, the stream's audio clock position will be at 0.
+Otherwise, the clock resumes from its position at the time that the stream was last paused with a call to <see cref="Stop" />.
+Call <see cref="Reset" /> to  reset the clock position to 0 and cause all active <see cref="ISpatialAudioObject" /> instances to be revoked.</para>
+      <para>The stream must have been previously stopped with a call to <see cref="Stop" /> or the method will fail and return SPTLAUDCLNT_E_STREAM_NOT_STOPPED.</para>
+    </remarks>
+    <seealso cref="ISpatialAudioObjectRenderStream" />
+    <seealso cref="ISpatialAudioObjectRenderStreamBase" />
+  </member>
+  <member name="ISpatialAudioObjectRenderStreamBase.Stop">
+    <summary>
+      <para>Stops a running audio stream.</para>
+    </summary>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>SPTLAUDCLNT_E_DESTROYED</b>
+            </para>
+          </description>
+          <description>
+            <para>The <see cref="ISpatialAudioClient" /> associated with the spatial audio stream has been destroyed.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>AUDCLNT_E_DEVICE_INVALIDATED</b>
+            </para>
+          </description>
+          <description>
+            <para>The audio endpoint device has been unplugged, or the audio hardware or associated hardware resources have been reconfigured, disabled, removed, or otherwise made unavailable for use.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>SPTLAUDCLNT_E_INTERNAL</b>
+            </para>
+          </description>
+          <description>
+            <para>An internal error has occurred.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>AUDCLNT_E_UNSUPPORTED_FORMAT</b>
+            </para>
+          </description>
+          <description>
+            <para>The media associated with the spatial audio stream uses an unsupported format.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Stopping stream causes data to stop flowing between the endpoint buffer and the audio engine.
+You can consider this operation to pause the stream because it leaves the stream's audio clock at its current stream position and does not reset it to 0. A subsequent call to <see cref="Start" /> causes the stream to resume running from the current position.
+Call <see cref="Reset" /> to  reset the clock position to 0 and cause all active <see cref="ISpatialAudioObject" /> instances to be revoked.</para>
+    </remarks>
+    <seealso cref="ISpatialAudioObjectRenderStream" />
+    <seealso cref="ISpatialAudioObjectRenderStreamBase" />
+  </member>
+  <member name="ISpatialAudioObjectRenderStreamBase">
+    <summary>
+      <para>Base interface that provides methods for controlling a spatial audio object render stream, including starting, stopping, and resetting the stream. Also provides methods for activating new <see cref="ISpatialAudioObject" /> instances and notifying the system when you are beginning and ending the process of updating activated spatial audio objects and data.</para>
+      <para>This interface is a part of  Windows Sonic, Microsoft’s audio platform for more immersive audio which includes integrated spatial sound on Xbox and Windows.</para>
+    </summary>
+  </member>
+</doc>

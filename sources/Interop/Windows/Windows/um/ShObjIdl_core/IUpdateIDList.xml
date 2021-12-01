@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IUpdateIDList.Update">
+    <summary>
+      <para>Updates the provided child <see cref="ITEMIDLIST" /> based on the parameters specified by the provided <see cref="IBindCtx" />.</para>
+    </summary>
+    <param name="pbc">
+      <para>Type: <b><see cref="IBindCtx" />*</b></para>
+      <para>An <see cref="IBindCtx" /> interface on a bind context object. Used to specify parameters for updating the child <see cref="ITEMIDLIST" />. This value can be <b>NULL</b>.</para>
+    </param>
+    <param name="pidlIn">
+      <para>Type: <b>PCUITEMID_CHILD</b></para>
+      <para>The child <see cref="ITEMIDLIST" />.</para>
+    </param>
+    <param name="ppidlOut">
+      <para>Type: <b>PITEMID_CHILD*</b></para>
+      <para>A pointer to the child <see cref="ITEMIDLIST" /> relative to the parent folder.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>If <i>pbc</i> is <b>NULL</b> or does not contain any parameters that apply to the current Shell folder, <i>ppidlOut</i> points to the same <see cref="ITEMIDLIST" />  as <i>pidlIn</i>.</para>
+    </remarks>
+    <seealso cref="ITEMIDLIST" />
+    <seealso cref="IUpdateIDList" />
+  </member>
+  <member name="IUpdateIDList">
+    <summary>
+      <para>Provides a method to update the <see cref="ITEMIDLIST" /> of the child of a folder object.</para>
+    </summary>
+    <remarks>
+      <h3>When to Implement</h3>
+      <para>Implement this interface for an <see cref="IShellFolder" /> implementation to update the provided child <see cref="ITEMIDLIST" />.</para>
+    </remarks>
+  </member>
+</doc>

@@ -1,0 +1,341 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IAMStats.AddValue">
+    <summary>
+      <para>The <code>AddValue</code> method records a new value.</para>
+    </summary>
+    <param name="lIndex">
+      <para>Specifies the index of the statistic.</para>
+    </param>
+    <param name="dValue">
+      <para>Specifies the value to record.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>Index out of range.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMStats Interface" />
+  </member>
+  <member name="IAMStats.GetIndex">
+    <summary>
+      <para>The <code>GetIndex</code> method retrieves the index for a named statistic, or creates a new statistic.</para>
+    </summary>
+    <param name="szName">
+      <para>Specifies the name of the statistic.</para>
+    </param>
+    <param name="lCreate">
+      <para>Specifies whether to create the statistic, if it is not defined already. If the value is <b>TRUE</b>, the method creates a new index for the statistic when it cannot find an existing entry with that name. If the value is <b>FALSE</b>, the method fails when the statistic does not already exist.</para>
+    </param>
+    <param name="plIndex">
+      <para>Receives the index.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>HRESULT_FROM_WIN32(ERROR_NOT_FOUND)</b>
+            </para>
+          </description>
+          <description>
+            <para>No match for this name.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer argument.
+</description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMStats Interface" />
+  </member>
+  <member name="IAMStats.GetValueByIndex">
+    <summary>
+      <para>The <code>GetValueByIndex</code> method retrieves a statistic, by index.</para>
+    </summary>
+    <param name="lIndex">
+      <para>Zero-based index of the statistic.</para>
+    </param>
+    <param name="szName">
+      <para>Pointer to a variable that receives the name of the statistic.</para>
+    </param>
+    <param name="lCount">
+      <para>Pointer to a variable that receives the number of values that were recorded.</para>
+    </param>
+    <param name="dLast">
+      <para>Pointer to a variable that receives the most recent value that was recorded.</para>
+    </param>
+    <param name="dAverage">
+      <para>Pointer to a variable that receives the average value.</para>
+    </param>
+    <param name="dStdDev">
+      <para>Pointer to a variable that receives the standard deviation of the values. If the count is less than two, the standard deviation is zero.</para>
+    </param>
+    <param name="dMin">
+      <para>Pointer to a variable that receives the minimum value that was recorded.</para>
+    </param>
+    <param name="dMax">
+      <para>Pointer to a variable that receives the maximum value that was recorded.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>Index out of range.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>Insufficient memory.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer argument.
+</description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The caller must free the string returned in <i>szName</i>, by calling the <b>SysFreeString</b> function.</para>
+      <para>To get the number of statistics, call <see cref="IAMStats.GetIndex" />.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMStats Interface" />
+  </member>
+  <member name="IAMStats.GetValueByName">
+    <summary>
+      <para>The <code>GetValueByName</code> method retrieves a statistic, by name.</para>
+    </summary>
+    <param name="szName">
+      <para>Specifies the name of the statistic.</para>
+    </param>
+    <param name="lIndex">
+      <para>Pointer to a variable that receives the index of this statistic.</para>
+    </param>
+    <param name="lCount">
+      <para>Pointer to a variable that receives the number of values that were recorded.</para>
+    </param>
+    <param name="dLast">
+      <para>Pointer to a variable that receives the most recent value that was recorded.</para>
+    </param>
+    <param name="dAverage">
+      <para>Pointer to a variable that receives the average value.</para>
+    </param>
+    <param name="dStdDev">
+      <para>Pointer to a variable that receives the standard deviation of the values. If the count is less than two, the standard deviation is zero.</para>
+    </param>
+    <param name="dMin">
+      <para>Pointer to a variable that receives the minimum value that was recorded.</para>
+    </param>
+    <param name="dMax">
+      <para>Pointer to a variable that receives the maximum value that was recorded.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>No match for this name.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer argument.
+</description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMStats Interface" />
+  </member>
+  <member name="IAMStats.get_Count">
+    <summary>
+      <para>The <code>get_Count</code> method retrieves the number of statistics.</para>
+    </summary>
+    <param name="plCount">
+      <para>Receives the number of statistics.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer argument.
+</description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMStats Interface" />
+  </member>
+  <member name="IAMStats.Reset">
+    <summary>
+      <para>The <code>Reset</code> method resets all statistics to zero.</para>
+    </summary>
+    <returns>
+      <para>Returns S_OK if successful, or an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMStats Interface" />
+  </member>
+  <member name="IAMStats">
+    <summary>
+      <para>The <code>IAMStats</code> interface retrieves performance data from the Filter Graph Manager. Filters can use this interface to record performance data.</para>
+      <para>
+        <b>Filter developers</b>: As with all Filter Graph Manager interfaces, a filter must not hold a reference count on this interface, or it will cause a circular reference count. For more information, see <see cref="IBaseFilter.JoinFilterGraph" />.</para>
+    </summary>
+    <remarks>
+      <para>Each statistic is defined by a name and an index. Use the <b>GetIndex</b> method to find the index from the name. Values are always <b>double</b> types. The following statistics are predefined.</para>
+      <list type="table">
+        <listheader>
+          <description>Name
+</description>
+          <description>Description
+</description>
+        </listheader>
+        <item>
+          <description>RenderFile</description>
+          <description>Measures the time taken by each call to <see cref="IGraphBuilder.RenderFile" />.</description>
+        </item>
+        <item>
+          <description>ConnectDirectInternal</description>
+          <description>Measures the time taken to connect two filters.</description>
+        </item>
+        <item>
+          <description>Build Mapper Cache</description>
+          <description>Measures the time taken to cache information about registered filters (used by the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/filter-mapper">Filter Mapper</a> object).</description>
+        </item>
+        <item>
+          <description>Process Category <i>CategoryName</i></description>
+          <description>Measures the time taken to cache information about filters in a particular category, where <i>CategoryName</i> is the friendly name of the filter category. (See <a href="https://docs.microsoft.com//windows/desktop/DirectShow/filter-categories">Filter Categories</a>.)</description>
+        </item>
+      </list>
+      <para>For each of these statistics, the values represent time in milliseconds.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-idispatch">IDispatch</seealso>
+  </member>
+</doc>

@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PSINJECTDATA.xml' path='doc/member[@name="PSINJECTDATA"]/*' />
 public partial struct PSINJECTDATA
 {
+    /// <include file='PSINJECTDATA.xml' path='doc/member[@name="PSINJECTDATA.DataBytes"]/*' />
     [NativeTypeName("DWORD")]
     public uint DataBytes;
 
+    /// <include file='PSINJECTDATA.xml' path='doc/member[@name="PSINJECTDATA.InjectionPoint"]/*' />
     [NativeTypeName("WORD")]
     public ushort InjectionPoint;
 
+    /// <include file='PSINJECTDATA.xml' path='doc/member[@name="PSINJECTDATA.PageNumber"]/*' />
     [NativeTypeName("WORD")]
     public ushort PageNumber;
 }

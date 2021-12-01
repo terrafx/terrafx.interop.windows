@@ -5,12 +5,24 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SVGIO.xml' path='doc/member[@name="SVGIO"]/*' />
 public enum SVGIO
 {
+    /// <include file='SVGIO.xml' path='doc/member[@name="SVGIO.SVGIO_BACKGROUND"]/*' />
     SVGIO_BACKGROUND = 0,
+
+    /// <include file='SVGIO.xml' path='doc/member[@name="SVGIO.SVGIO_SELECTION"]/*' />
     SVGIO_SELECTION = 0x1,
+
+    /// <include file='SVGIO.xml' path='doc/member[@name="SVGIO.SVGIO_ALLVIEW"]/*' />
     SVGIO_ALLVIEW = 0x2,
+
+    /// <include file='SVGIO.xml' path='doc/member[@name="SVGIO.SVGIO_CHECKED"]/*' />
     SVGIO_CHECKED = 0x3,
+
+    /// <include file='SVGIO.xml' path='doc/member[@name="SVGIO.SVGIO_TYPE_MASK"]/*' />
     SVGIO_TYPE_MASK = 0xf,
+
+    /// <include file='SVGIO.xml' path='doc/member[@name="SVGIO.SVGIO_FLAG_VIEWORDER"]/*' />
     SVGIO_FLAG_VIEWORDER = unchecked((int)(0x80000000)),
 }

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IVMRWindowlessControl.xml' path='doc/member[@name="IVMRWindowlessControl"]/*' />
 [Guid("0EB1088C-4DCD-46F0-878F-39DAE86A51B7")]
 [NativeTypeName("struct IVMRWindowlessControl : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IVMRWindowlessControl : IVMRWindowlessControl.Inter
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IVMRWindowlessControl : IVMRWindowlessControl.Inter
         return ((delegate* unmanaged<IVMRWindowlessControl*, Guid*, void**, int>)(lpVtbl[0]))((IVMRWindowlessControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IVMRWindowlessControl : IVMRWindowlessControl.Inter
         return ((delegate* unmanaged<IVMRWindowlessControl*, uint>)(lpVtbl[1]))((IVMRWindowlessControl*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IVMRWindowlessControl : IVMRWindowlessControl.Inter
         return ((delegate* unmanaged<IVMRWindowlessControl*, uint>)(lpVtbl[2]))((IVMRWindowlessControl*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IVMRWindowlessControl.xml' path='doc/member[@name="IVMRWindowlessControl.GetNativeVideoSize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetNativeVideoSize([NativeTypeName("LONG *")] int* lpWidth, [NativeTypeName("LONG *")] int* lpHeight, [NativeTypeName("LONG *")] int* lpARWidth, [NativeTypeName("LONG *")] int* lpARHeight)
@@ -46,6 +51,7 @@ public unsafe partial struct IVMRWindowlessControl : IVMRWindowlessControl.Inter
         return ((delegate* unmanaged<IVMRWindowlessControl*, int*, int*, int*, int*, int>)(lpVtbl[3]))((IVMRWindowlessControl*)Unsafe.AsPointer(ref this), lpWidth, lpHeight, lpARWidth, lpARHeight);
     }
 
+    /// <include file='IVMRWindowlessControl.xml' path='doc/member[@name="IVMRWindowlessControl.GetMinIdealVideoSize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetMinIdealVideoSize([NativeTypeName("LONG *")] int* lpWidth, [NativeTypeName("LONG *")] int* lpHeight)
@@ -53,6 +59,7 @@ public unsafe partial struct IVMRWindowlessControl : IVMRWindowlessControl.Inter
         return ((delegate* unmanaged<IVMRWindowlessControl*, int*, int*, int>)(lpVtbl[4]))((IVMRWindowlessControl*)Unsafe.AsPointer(ref this), lpWidth, lpHeight);
     }
 
+    /// <include file='IVMRWindowlessControl.xml' path='doc/member[@name="IVMRWindowlessControl.GetMaxIdealVideoSize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetMaxIdealVideoSize([NativeTypeName("LONG *")] int* lpWidth, [NativeTypeName("LONG *")] int* lpHeight)
@@ -60,6 +67,7 @@ public unsafe partial struct IVMRWindowlessControl : IVMRWindowlessControl.Inter
         return ((delegate* unmanaged<IVMRWindowlessControl*, int*, int*, int>)(lpVtbl[5]))((IVMRWindowlessControl*)Unsafe.AsPointer(ref this), lpWidth, lpHeight);
     }
 
+    /// <include file='IVMRWindowlessControl.xml' path='doc/member[@name="IVMRWindowlessControl.SetVideoPosition"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT SetVideoPosition([NativeTypeName("const LPRECT")] RECT* lpSRCRect, [NativeTypeName("const LPRECT")] RECT* lpDSTRect)
@@ -67,6 +75,7 @@ public unsafe partial struct IVMRWindowlessControl : IVMRWindowlessControl.Inter
         return ((delegate* unmanaged<IVMRWindowlessControl*, RECT*, RECT*, int>)(lpVtbl[6]))((IVMRWindowlessControl*)Unsafe.AsPointer(ref this), lpSRCRect, lpDSTRect);
     }
 
+    /// <include file='IVMRWindowlessControl.xml' path='doc/member[@name="IVMRWindowlessControl.GetVideoPosition"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetVideoPosition([NativeTypeName("LPRECT")] RECT* lpSRCRect, [NativeTypeName("LPRECT")] RECT* lpDSTRect)
@@ -74,6 +83,7 @@ public unsafe partial struct IVMRWindowlessControl : IVMRWindowlessControl.Inter
         return ((delegate* unmanaged<IVMRWindowlessControl*, RECT*, RECT*, int>)(lpVtbl[7]))((IVMRWindowlessControl*)Unsafe.AsPointer(ref this), lpSRCRect, lpDSTRect);
     }
 
+    /// <include file='IVMRWindowlessControl.xml' path='doc/member[@name="IVMRWindowlessControl.GetAspectRatioMode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetAspectRatioMode([NativeTypeName("DWORD *")] uint* lpAspectRatioMode)
@@ -81,6 +91,7 @@ public unsafe partial struct IVMRWindowlessControl : IVMRWindowlessControl.Inter
         return ((delegate* unmanaged<IVMRWindowlessControl*, uint*, int>)(lpVtbl[8]))((IVMRWindowlessControl*)Unsafe.AsPointer(ref this), lpAspectRatioMode);
     }
 
+    /// <include file='IVMRWindowlessControl.xml' path='doc/member[@name="IVMRWindowlessControl.SetAspectRatioMode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT SetAspectRatioMode([NativeTypeName("DWORD")] uint AspectRatioMode)
@@ -88,6 +99,7 @@ public unsafe partial struct IVMRWindowlessControl : IVMRWindowlessControl.Inter
         return ((delegate* unmanaged<IVMRWindowlessControl*, uint, int>)(lpVtbl[9]))((IVMRWindowlessControl*)Unsafe.AsPointer(ref this), AspectRatioMode);
     }
 
+    /// <include file='IVMRWindowlessControl.xml' path='doc/member[@name="IVMRWindowlessControl.SetVideoClippingWindow"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT SetVideoClippingWindow(HWND hwnd)
@@ -95,6 +107,7 @@ public unsafe partial struct IVMRWindowlessControl : IVMRWindowlessControl.Inter
         return ((delegate* unmanaged<IVMRWindowlessControl*, HWND, int>)(lpVtbl[10]))((IVMRWindowlessControl*)Unsafe.AsPointer(ref this), hwnd);
     }
 
+    /// <include file='IVMRWindowlessControl.xml' path='doc/member[@name="IVMRWindowlessControl.RepaintVideo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT RepaintVideo(HWND hwnd, HDC hdc)
@@ -102,6 +115,7 @@ public unsafe partial struct IVMRWindowlessControl : IVMRWindowlessControl.Inter
         return ((delegate* unmanaged<IVMRWindowlessControl*, HWND, HDC, int>)(lpVtbl[11]))((IVMRWindowlessControl*)Unsafe.AsPointer(ref this), hwnd, hdc);
     }
 
+    /// <include file='IVMRWindowlessControl.xml' path='doc/member[@name="IVMRWindowlessControl.DisplayModeChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT DisplayModeChanged()
@@ -109,6 +123,7 @@ public unsafe partial struct IVMRWindowlessControl : IVMRWindowlessControl.Inter
         return ((delegate* unmanaged<IVMRWindowlessControl*, int>)(lpVtbl[12]))((IVMRWindowlessControl*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IVMRWindowlessControl.xml' path='doc/member[@name="IVMRWindowlessControl.GetCurrentImage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT GetCurrentImage(byte** lpDib)
@@ -116,6 +131,7 @@ public unsafe partial struct IVMRWindowlessControl : IVMRWindowlessControl.Inter
         return ((delegate* unmanaged<IVMRWindowlessControl*, byte**, int>)(lpVtbl[13]))((IVMRWindowlessControl*)Unsafe.AsPointer(ref this), lpDib);
     }
 
+    /// <include file='IVMRWindowlessControl.xml' path='doc/member[@name="IVMRWindowlessControl.SetBorderColor"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT SetBorderColor(COLORREF Clr)
@@ -123,6 +139,7 @@ public unsafe partial struct IVMRWindowlessControl : IVMRWindowlessControl.Inter
         return ((delegate* unmanaged<IVMRWindowlessControl*, COLORREF, int>)(lpVtbl[14]))((IVMRWindowlessControl*)Unsafe.AsPointer(ref this), Clr);
     }
 
+    /// <include file='IVMRWindowlessControl.xml' path='doc/member[@name="IVMRWindowlessControl.GetBorderColor"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT GetBorderColor(COLORREF* lpClr)
@@ -130,6 +147,7 @@ public unsafe partial struct IVMRWindowlessControl : IVMRWindowlessControl.Inter
         return ((delegate* unmanaged<IVMRWindowlessControl*, COLORREF*, int>)(lpVtbl[15]))((IVMRWindowlessControl*)Unsafe.AsPointer(ref this), lpClr);
     }
 
+    /// <include file='IVMRWindowlessControl.xml' path='doc/member[@name="IVMRWindowlessControl.SetColorKey"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT SetColorKey(COLORREF Clr)
@@ -137,6 +155,7 @@ public unsafe partial struct IVMRWindowlessControl : IVMRWindowlessControl.Inter
         return ((delegate* unmanaged<IVMRWindowlessControl*, COLORREF, int>)(lpVtbl[16]))((IVMRWindowlessControl*)Unsafe.AsPointer(ref this), Clr);
     }
 
+    /// <include file='IVMRWindowlessControl.xml' path='doc/member[@name="IVMRWindowlessControl.GetColorKey"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT GetColorKey(COLORREF* lpClr)

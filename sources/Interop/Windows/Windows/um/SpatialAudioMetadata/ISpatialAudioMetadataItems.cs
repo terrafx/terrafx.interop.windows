@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ISpatialAudioMetadataItems.xml' path='doc/member[@name="ISpatialAudioMetadataItems"]/*' />
 [Guid("BCD7C78F-3098-4F22-B547-A2F25A381269")]
 [NativeTypeName("struct ISpatialAudioMetadataItems : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct ISpatialAudioMetadataItems : ISpatialAudioMetadataI
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct ISpatialAudioMetadataItems : ISpatialAudioMetadataI
         return ((delegate* unmanaged<ISpatialAudioMetadataItems*, Guid*, void**, int>)(lpVtbl[0]))((ISpatialAudioMetadataItems*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct ISpatialAudioMetadataItems : ISpatialAudioMetadataI
         return ((delegate* unmanaged<ISpatialAudioMetadataItems*, uint>)(lpVtbl[1]))((ISpatialAudioMetadataItems*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct ISpatialAudioMetadataItems : ISpatialAudioMetadataI
         return ((delegate* unmanaged<ISpatialAudioMetadataItems*, uint>)(lpVtbl[2]))((ISpatialAudioMetadataItems*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ISpatialAudioMetadataItems.xml' path='doc/member[@name="ISpatialAudioMetadataItems.GetFrameCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetFrameCount([NativeTypeName("UINT16 *")] ushort* frameCount)
@@ -48,6 +53,7 @@ public unsafe partial struct ISpatialAudioMetadataItems : ISpatialAudioMetadataI
         return ((delegate* unmanaged<ISpatialAudioMetadataItems*, ushort*, int>)(lpVtbl[3]))((ISpatialAudioMetadataItems*)Unsafe.AsPointer(ref this), frameCount);
     }
 
+    /// <include file='ISpatialAudioMetadataItems.xml' path='doc/member[@name="ISpatialAudioMetadataItems.GetItemCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetItemCount([NativeTypeName("UINT16 *")] ushort* itemCount)
@@ -55,6 +61,7 @@ public unsafe partial struct ISpatialAudioMetadataItems : ISpatialAudioMetadataI
         return ((delegate* unmanaged<ISpatialAudioMetadataItems*, ushort*, int>)(lpVtbl[4]))((ISpatialAudioMetadataItems*)Unsafe.AsPointer(ref this), itemCount);
     }
 
+    /// <include file='ISpatialAudioMetadataItems.xml' path='doc/member[@name="ISpatialAudioMetadataItems.GetMaxItemCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetMaxItemCount([NativeTypeName("UINT16 *")] ushort* maxItemCount)
@@ -62,6 +69,7 @@ public unsafe partial struct ISpatialAudioMetadataItems : ISpatialAudioMetadataI
         return ((delegate* unmanaged<ISpatialAudioMetadataItems*, ushort*, int>)(lpVtbl[5]))((ISpatialAudioMetadataItems*)Unsafe.AsPointer(ref this), maxItemCount);
     }
 
+    /// <include file='ISpatialAudioMetadataItems.xml' path='doc/member[@name="ISpatialAudioMetadataItems.GetMaxValueBufferLength"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetMaxValueBufferLength([NativeTypeName("UINT32 *")] uint* maxValueBufferLength)
@@ -69,6 +77,7 @@ public unsafe partial struct ISpatialAudioMetadataItems : ISpatialAudioMetadataI
         return ((delegate* unmanaged<ISpatialAudioMetadataItems*, uint*, int>)(lpVtbl[6]))((ISpatialAudioMetadataItems*)Unsafe.AsPointer(ref this), maxValueBufferLength);
     }
 
+    /// <include file='ISpatialAudioMetadataItems.xml' path='doc/member[@name="ISpatialAudioMetadataItems.GetInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetInfo(SpatialAudioMetadataItemsInfo* info)

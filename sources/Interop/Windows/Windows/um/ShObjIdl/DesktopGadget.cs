@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DesktopGadget.xml' path='doc/member[@name="DesktopGadget"]/*' />
 [Guid("924CCC1B-6562-4C85-8657-D177925222B6")]
 public partial struct DesktopGadget
 {

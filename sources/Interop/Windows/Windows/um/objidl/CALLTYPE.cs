@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CALLTYPE.xml' path='doc/member[@name="CALLTYPE"]/*' />
 public enum CALLTYPE
 {
+    /// <include file='CALLTYPE.xml' path='doc/member[@name="CALLTYPE.CALLTYPE_TOPLEVEL"]/*' />
     CALLTYPE_TOPLEVEL = 1,
+
+    /// <include file='CALLTYPE.xml' path='doc/member[@name="CALLTYPE.CALLTYPE_NESTED"]/*' />
     CALLTYPE_NESTED = 2,
+
+    /// <include file='CALLTYPE.xml' path='doc/member[@name="CALLTYPE.CALLTYPE_ASYNC"]/*' />
     CALLTYPE_ASYNC = 3,
+
+    /// <include file='CALLTYPE.xml' path='doc/member[@name="CALLTYPE.CALLTYPE_TOPLEVEL_CALLPENDING"]/*' />
     CALLTYPE_TOPLEVEL_CALLPENDING = 4,
+
+    /// <include file='CALLTYPE.xml' path='doc/member[@name="CALLTYPE.CALLTYPE_ASYNC_CALLPENDING"]/*' />
     CALLTYPE_ASYNC_CALLPENDING = 5,
 }

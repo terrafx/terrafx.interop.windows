@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='eAVDecVideoDXVAMode.xml' path='doc/member[@name="eAVDecVideoDXVAMode"]/*' />
 public enum eAVDecVideoDXVAMode
 {
+    /// <include file='eAVDecVideoDXVAMode.xml' path='doc/member[@name="eAVDecVideoDXVAMode.eAVDecVideoDXVAMode_NOTPLAYING"]/*' />
     eAVDecVideoDXVAMode_NOTPLAYING = 0,
+
+    /// <include file='eAVDecVideoDXVAMode.xml' path='doc/member[@name="eAVDecVideoDXVAMode.eAVDecVideoDXVAMode_SW"]/*' />
     eAVDecVideoDXVAMode_SW = 1,
+
+    /// <include file='eAVDecVideoDXVAMode.xml' path='doc/member[@name="eAVDecVideoDXVAMode.eAVDecVideoDXVAMode_MC"]/*' />
     eAVDecVideoDXVAMode_MC = 2,
+
+    /// <include file='eAVDecVideoDXVAMode.xml' path='doc/member[@name="eAVDecVideoDXVAMode.eAVDecVideoDXVAMode_IDCT"]/*' />
     eAVDecVideoDXVAMode_IDCT = 3,
+
+    /// <include file='eAVDecVideoDXVAMode.xml' path='doc/member[@name="eAVDecVideoDXVAMode.eAVDecVideoDXVAMode_VLD"]/*' />
     eAVDecVideoDXVAMode_VLD = 4,
 }

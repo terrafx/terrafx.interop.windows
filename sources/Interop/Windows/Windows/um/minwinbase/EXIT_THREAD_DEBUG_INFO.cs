@@ -5,8 +5,10 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='EXIT_THREAD_DEBUG_INFO.xml' path='doc/member[@name="EXIT_THREAD_DEBUG_INFO"]/*' />
 public partial struct EXIT_THREAD_DEBUG_INFO
 {
+    /// <include file='EXIT_THREAD_DEBUG_INFO.xml' path='doc/member[@name="EXIT_THREAD_DEBUG_INFO.dwExitCode"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwExitCode;
 }

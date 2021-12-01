@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IDeskBar.xml' path='doc/member[@name="IDeskBar"]/*' />
 [Guid("EB0FE173-1A3A-11D0-89B3-00A0C90A90AC")]
 [NativeTypeName("struct IDeskBar : IOleWindow")]
 [NativeInheritance("IOleWindow")]
@@ -16,6 +17,7 @@ public unsafe partial struct IDeskBar : IDeskBar.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IDeskBar : IDeskBar.Interface
         return ((delegate* unmanaged<IDeskBar*, Guid*, void**, int>)(lpVtbl[0]))((IDeskBar*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IDeskBar : IDeskBar.Interface
         return ((delegate* unmanaged<IDeskBar*, uint>)(lpVtbl[1]))((IDeskBar*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IDeskBar : IDeskBar.Interface
         return ((delegate* unmanaged<IDeskBar*, uint>)(lpVtbl[2]))((IDeskBar*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IOleWindow.GetWindow" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetWindow(HWND* phwnd)
@@ -46,6 +51,7 @@ public unsafe partial struct IDeskBar : IDeskBar.Interface
         return ((delegate* unmanaged<IDeskBar*, HWND*, int>)(lpVtbl[3]))((IDeskBar*)Unsafe.AsPointer(ref this), phwnd);
     }
 
+    /// <inheritdoc cref="IOleWindow.ContextSensitiveHelp" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT ContextSensitiveHelp(BOOL fEnterMode)
@@ -53,6 +59,7 @@ public unsafe partial struct IDeskBar : IDeskBar.Interface
         return ((delegate* unmanaged<IDeskBar*, BOOL, int>)(lpVtbl[4]))((IDeskBar*)Unsafe.AsPointer(ref this), fEnterMode);
     }
 
+    /// <include file='IDeskBar.xml' path='doc/member[@name="IDeskBar.SetClient"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetClient(IUnknown* punkClient)
@@ -60,6 +67,7 @@ public unsafe partial struct IDeskBar : IDeskBar.Interface
         return ((delegate* unmanaged<IDeskBar*, IUnknown*, int>)(lpVtbl[5]))((IDeskBar*)Unsafe.AsPointer(ref this), punkClient);
     }
 
+    /// <include file='IDeskBar.xml' path='doc/member[@name="IDeskBar.GetClient"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetClient(IUnknown** ppunkClient)
@@ -67,6 +75,7 @@ public unsafe partial struct IDeskBar : IDeskBar.Interface
         return ((delegate* unmanaged<IDeskBar*, IUnknown**, int>)(lpVtbl[6]))((IDeskBar*)Unsafe.AsPointer(ref this), ppunkClient);
     }
 
+    /// <include file='IDeskBar.xml' path='doc/member[@name="IDeskBar.OnPosRectChangeDB"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT OnPosRectChangeDB(RECT* prc)

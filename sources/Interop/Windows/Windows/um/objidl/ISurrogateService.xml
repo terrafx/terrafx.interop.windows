@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ISurrogateService.ApplicationFree">
+    <summary>
+      <para>Releases the application.</para>
+    </summary>
+    <param name="rguidApplID">
+      <para>The application identifier.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, the return value is S_OK. Otherwise, it is E_UNEXPECTED.</para>
+    </returns>
+    <seealso cref="CoGetInterceptor" />
+    <seealso cref="ICallFrame" />
+    <seealso cref="ICallFrameEvents" />
+    <seealso cref="ICallInterceptor" />
+    <seealso cref="ICallUnmarshal" />
+    <seealso cref="ISurrogateService" />
+  </member>
+  <member name="ISurrogateService.ApplicationLaunch">
+    <summary>
+      <para>Launches the application.</para>
+    </summary>
+    <param name="rguidApplID">
+      <para>The application identifier.</para>
+    </param>
+    <param name="appType">
+      <para>The application type, as described in Remarks.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, the return value is S_OK. Otherwise, it is E_UNEXPECTED.</para>
+    </returns>
+    <remarks>
+      <para>The application type is defined by the following enum.</para>
+      <code>typedef enum tagApplicationType {
+    ServerApplication,
+    LibraryApplication
+} ApplicationType;
+
+</code>
+    </remarks>
+    <seealso cref="CoGetInterceptor" />
+    <seealso cref="ICallFrame" />
+    <seealso cref="ICallFrameEvents" />
+    <seealso cref="ICallInterceptor" />
+    <seealso cref="ICallUnmarshal" />
+    <seealso cref="ISurrogateService" />
+  </member>
+  <member name="ISurrogateService.CatalogRefresh">
+    <summary>
+      <para>Refreshes the catalog.</para>
+    </summary>
+    <param name="ulReserved">
+      <para>This parameter is reserved.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, the return value is S_OK. Otherwise, it is E_UNEXPECTED.</para>
+    </returns>
+    <seealso cref="CoGetInterceptor" />
+    <seealso cref="ICallFrame" />
+    <seealso cref="ICallFrameEvents" />
+    <seealso cref="ICallInterceptor" />
+    <seealso cref="ICallUnmarshal" />
+    <seealso cref="ISurrogateService" />
+  </member>
+  <member name="ISurrogateService.Init">
+    <summary>
+      <para>Initializes the process server.</para>
+    </summary>
+    <param name="rguidProcessID">
+      <para>The process ID of the server application.</para>
+    </param>
+    <param name="pProcessLock">
+      <para>A pointer to an instance of the <see cref="IProcessLock" /> interface.</para>
+    </param>
+    <param name="pfApplicationAware">
+      <para>Indicates whether the application is aware of the initialization.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, the return value is S_OK. Otherwise, it is E_UNEXPECTED.</para>
+    </returns>
+    <seealso cref="CoGetInterceptor" />
+    <seealso cref="ICallFrame" />
+    <seealso cref="ICallFrameEvents" />
+    <seealso cref="ICallInterceptor" />
+    <seealso cref="ICallUnmarshal" />
+    <seealso cref="ISurrogateService" />
+  </member>
+  <member name="ISurrogateService.ProcessShutdown">
+    <summary>
+      <para>Shuts down the process.</para>
+    </summary>
+    <param name="shutdownType">
+      <para>The shutdown type, as described in Remarks.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, the return value is S_OK. Otherwise, it is E_UNEXPECTED.</para>
+    </returns>
+    <remarks>
+      <para>The shutdown type is defined by the following enum.</para>
+      <code>typedef enum tagShutdownType {
+    IdleShutdown,
+    ForcedShutdown
+} ShutdownType;
+
+</code>
+    </remarks>
+    <seealso cref="CoGetInterceptor" />
+    <seealso cref="ICallFrame" />
+    <seealso cref="ICallFrameEvents" />
+    <seealso cref="ICallInterceptor" />
+    <seealso cref="ICallUnmarshal" />
+    <seealso cref="ISurrogateService" />
+  </member>
+</doc>

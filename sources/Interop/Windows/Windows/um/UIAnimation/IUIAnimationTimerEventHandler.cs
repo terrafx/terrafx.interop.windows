@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IUIAnimationTimerEventHandler.xml' path='doc/member[@name="IUIAnimationTimerEventHandler"]/*' />
 [Guid("274A7DEA-D771-4095-ABBD-8DF7ABD23CE3")]
 [NativeTypeName("struct IUIAnimationTimerEventHandler : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IUIAnimationTimerEventHandler : IUIAnimationTimerEv
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IUIAnimationTimerEventHandler : IUIAnimationTimerEv
         return ((delegate* unmanaged<IUIAnimationTimerEventHandler*, Guid*, void**, int>)(lpVtbl[0]))((IUIAnimationTimerEventHandler*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IUIAnimationTimerEventHandler : IUIAnimationTimerEv
         return ((delegate* unmanaged<IUIAnimationTimerEventHandler*, uint>)(lpVtbl[1]))((IUIAnimationTimerEventHandler*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IUIAnimationTimerEventHandler : IUIAnimationTimerEv
         return ((delegate* unmanaged<IUIAnimationTimerEventHandler*, uint>)(lpVtbl[2]))((IUIAnimationTimerEventHandler*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IUIAnimationTimerEventHandler.xml' path='doc/member[@name="IUIAnimationTimerEventHandler.OnPreUpdate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT OnPreUpdate()
@@ -46,6 +51,7 @@ public unsafe partial struct IUIAnimationTimerEventHandler : IUIAnimationTimerEv
         return ((delegate* unmanaged<IUIAnimationTimerEventHandler*, int>)(lpVtbl[3]))((IUIAnimationTimerEventHandler*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IUIAnimationTimerEventHandler.xml' path='doc/member[@name="IUIAnimationTimerEventHandler.OnPostUpdate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT OnPostUpdate()
@@ -53,6 +59,7 @@ public unsafe partial struct IUIAnimationTimerEventHandler : IUIAnimationTimerEv
         return ((delegate* unmanaged<IUIAnimationTimerEventHandler*, int>)(lpVtbl[4]))((IUIAnimationTimerEventHandler*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IUIAnimationTimerEventHandler.xml' path='doc/member[@name="IUIAnimationTimerEventHandler.OnRenderingTooSlow"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT OnRenderingTooSlow([NativeTypeName("UINT32")] uint framesPerSecond)

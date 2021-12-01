@@ -5,16 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SIP_CAP_SET_V2.xml' path='doc/member[@name="SIP_CAP_SET_V2"]/*' />
 public partial struct SIP_CAP_SET_V2
 {
+    /// <include file='SIP_CAP_SET_V2.xml' path='doc/member[@name="SIP_CAP_SET_V2.cbSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbSize;
 
+    /// <include file='SIP_CAP_SET_V2.xml' path='doc/member[@name="SIP_CAP_SET_V2.dwVersion"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwVersion;
 
+    /// <include file='SIP_CAP_SET_V2.xml' path='doc/member[@name="SIP_CAP_SET_V2.isMultiSign"]/*' />
     public BOOL isMultiSign;
 
+    /// <include file='SIP_CAP_SET_V2.xml' path='doc/member[@name="SIP_CAP_SET_V2.dwReserved"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwReserved;
 }

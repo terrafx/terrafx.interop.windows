@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="_AM_PUSHSOURCE_FLAGS">
+    <summary>
+      <para>Indicates the behavior of a live source filter.</para>
+    </summary>
+    <remarks>
+      <para>If no flags are set (the default case), the source filter is assumed to be live and not to perform any rate matching on its own.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-enumerated-types">DirectShow Enumerated Types</seealso>
+  </member>
+  <member name="_AM_PUSHSOURCE_FLAGS.AM_PUSHSOURCECAPS_INTERNAL_RM">
+    <summary>
+      <para>The filter uses its own rate-matching mechanism; the renderer should therefore not attempt to match rates with this filter.</para>
+    </summary>
+  </member>
+  <member name="_AM_PUSHSOURCE_FLAGS.AM_PUSHSOURCECAPS_NOT_LIVE">
+    <summary>
+      <para>The filter is not live. Do not treat it as a live source, even though it exposes the <see cref="IAMPushSource" /> interface.</para>
+    </summary>
+  </member>
+  <member name="_AM_PUSHSOURCE_FLAGS.AM_PUSHSOURCECAPS_PRIVATE_CLOCK">
+    <summary>
+      <para>The filter time stamps the samples using a private clock. The clock is not available to the rest of the graph through <see cref="IReferenceClock" />.</para>
+    </summary>
+  </member>
+  <member name="_AM_PUSHSOURCE_FLAGS.AM_PUSHSOURCEREQS_USE_STREAM_CLOCK">
+    <summary>
+      <para>Reserved; do not use.</para>
+    </summary>
+  </member>
+  <member name="_AM_PUSHSOURCE_FLAGS.AM_PUSHSOURCEREQS_USE_CLOCK_CHAIN">
+    <summary></summary>
+  </member>
+</doc>

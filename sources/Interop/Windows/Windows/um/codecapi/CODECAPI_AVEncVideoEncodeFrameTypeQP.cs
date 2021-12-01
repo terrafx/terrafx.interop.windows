@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVEncVideoEncodeFrameTypeQP.xml' path='doc/member[@name="CODECAPI_AVEncVideoEncodeFrameTypeQP"]/*' />
 [Guid("AA70B610-E03F-450C-AD07-07314E639CE7")]
 public partial struct CODECAPI_AVEncVideoEncodeFrameTypeQP
 {

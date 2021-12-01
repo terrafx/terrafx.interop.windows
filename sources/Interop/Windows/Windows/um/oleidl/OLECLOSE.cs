@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='OLECLOSE.xml' path='doc/member[@name="OLECLOSE"]/*' />
 public enum OLECLOSE
 {
+    /// <include file='OLECLOSE.xml' path='doc/member[@name="OLECLOSE.OLECLOSE_SAVEIFDIRTY"]/*' />
     OLECLOSE_SAVEIFDIRTY = 0,
+
+    /// <include file='OLECLOSE.xml' path='doc/member[@name="OLECLOSE.OLECLOSE_NOSAVE"]/*' />
     OLECLOSE_NOSAVE = 1,
+
+    /// <include file='OLECLOSE.xml' path='doc/member[@name="OLECLOSE.OLECLOSE_PROMPTSAVE"]/*' />
     OLECLOSE_PROMPTSAVE = 2,
 }

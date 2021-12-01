@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVEncVideoForceSourceScanType.xml' path='doc/member[@name="CODECAPI_AVEncVideoForceSourceScanType"]/*' />
 [Guid("1EF2065F-058A-4765-A4FC-8A864C103012")]
 public partial struct CODECAPI_AVEncVideoForceSourceScanType
 {

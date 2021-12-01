@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMAGEHLP_SF_TYPE.xml' path='doc/member[@name="IMAGEHLP_SF_TYPE"]/*' />
 public enum IMAGEHLP_SF_TYPE
 {
+    /// <include file='IMAGEHLP_SF_TYPE.xml' path='doc/member[@name="IMAGEHLP_SF_TYPE.sfImage"]/*' />
     sfImage = 0,
+
+    /// <include file='IMAGEHLP_SF_TYPE.xml' path='doc/member[@name="IMAGEHLP_SF_TYPE.sfDbg"]/*' />
     sfDbg,
+
+    /// <include file='IMAGEHLP_SF_TYPE.xml' path='doc/member[@name="IMAGEHLP_SF_TYPE.sfPdb"]/*' />
     sfPdb,
+
+    /// <include file='IMAGEHLP_SF_TYPE.xml' path='doc/member[@name="IMAGEHLP_SF_TYPE.sfMpd"]/*' />
     sfMpd,
+
+    /// <include file='IMAGEHLP_SF_TYPE.xml' path='doc/member[@name="IMAGEHLP_SF_TYPE.sfMax"]/*' />
     sfMax,
 }

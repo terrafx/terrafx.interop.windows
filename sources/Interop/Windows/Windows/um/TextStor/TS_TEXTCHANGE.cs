@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TS_TEXTCHANGE.xml' path='doc/member[@name="TS_TEXTCHANGE"]/*' />
 public partial struct TS_TEXTCHANGE
 {
+    /// <include file='TS_TEXTCHANGE.xml' path='doc/member[@name="TS_TEXTCHANGE.acpStart"]/*' />
     [NativeTypeName("LONG")]
     public int acpStart;
 
+    /// <include file='TS_TEXTCHANGE.xml' path='doc/member[@name="TS_TEXTCHANGE.acpOldEnd"]/*' />
     [NativeTypeName("LONG")]
     public int acpOldEnd;
 
+    /// <include file='TS_TEXTCHANGE.xml' path='doc/member[@name="TS_TEXTCHANGE.acpNewEnd"]/*' />
     [NativeTypeName("LONG")]
     public int acpNewEnd;
 }

@@ -5,25 +5,33 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='COAUTHINFO.xml' path='doc/member[@name="COAUTHINFO"]/*' />
 public unsafe partial struct COAUTHINFO
 {
+    /// <include file='COAUTHINFO.xml' path='doc/member[@name="COAUTHINFO.dwAuthnSvc"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwAuthnSvc;
 
+    /// <include file='COAUTHINFO.xml' path='doc/member[@name="COAUTHINFO.dwAuthzSvc"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwAuthzSvc;
 
+    /// <include file='COAUTHINFO.xml' path='doc/member[@name="COAUTHINFO.pwszServerPrincName"]/*' />
     [NativeTypeName("LPWSTR")]
     public ushort* pwszServerPrincName;
 
+    /// <include file='COAUTHINFO.xml' path='doc/member[@name="COAUTHINFO.dwAuthnLevel"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwAuthnLevel;
 
+    /// <include file='COAUTHINFO.xml' path='doc/member[@name="COAUTHINFO.dwImpersonationLevel"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwImpersonationLevel;
 
+    /// <include file='COAUTHINFO.xml' path='doc/member[@name="COAUTHINFO.pAuthIdentityData"]/*' />
     public COAUTHIDENTITY* pAuthIdentityData;
 
+    /// <include file='COAUTHINFO.xml' path='doc/member[@name="COAUTHINFO.dwCapabilities"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwCapabilities;
 }

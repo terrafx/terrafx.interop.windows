@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IImageRecompress.xml' path='doc/member[@name="IImageRecompress"]/*' />
 [Guid("505F1513-6B3E-4892-A272-59F8889A4D3E")]
 [NativeTypeName("struct IImageRecompress : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IImageRecompress : IImageRecompress.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IImageRecompress : IImageRecompress.Interface
         return ((delegate* unmanaged<IImageRecompress*, Guid*, void**, int>)(lpVtbl[0]))((IImageRecompress*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IImageRecompress : IImageRecompress.Interface
         return ((delegate* unmanaged<IImageRecompress*, uint>)(lpVtbl[1]))((IImageRecompress*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IImageRecompress : IImageRecompress.Interface
         return ((delegate* unmanaged<IImageRecompress*, uint>)(lpVtbl[2]))((IImageRecompress*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IImageRecompress.xml' path='doc/member[@name="IImageRecompress.RecompressImage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT RecompressImage(IShellItem* psi, int cx, int cy, int iQuality, IStorage* pstg, IStream** ppstrmOut)

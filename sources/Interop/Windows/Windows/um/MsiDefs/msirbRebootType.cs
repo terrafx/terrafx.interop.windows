@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='msirbRebootType.xml' path='doc/member[@name="msirbRebootType"]/*' />
 public enum msirbRebootType
 {
+    /// <include file='msirbRebootType.xml' path='doc/member[@name="msirbRebootType.msirbRebootImmediate"]/*' />
     msirbRebootImmediate = 1,
+
+    /// <include file='msirbRebootType.xml' path='doc/member[@name="msirbRebootType.msirbRebootDeferred"]/*' />
     msirbRebootDeferred = 2,
 }

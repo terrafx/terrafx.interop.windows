@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SPRULE.xml' path='doc/member[@name="SPRULE"]/*' />
 public unsafe partial struct SPRULE
 {
+    /// <include file='SPRULE.xml' path='doc/member[@name="SPRULE.pszRuleName"]/*' />
     [NativeTypeName("LPCWSTR")]
     public ushort* pszRuleName;
 
+    /// <include file='SPRULE.xml' path='doc/member[@name="SPRULE.ulRuleId"]/*' />
     [NativeTypeName("ULONG")]
     public uint ulRuleId;
 
+    /// <include file='SPRULE.xml' path='doc/member[@name="SPRULE.dwAttributes"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwAttributes;
 }

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMessageFilter.xml' path='doc/member[@name="IMessageFilter"]/*' />
 [Guid("00000016-0000-0000-C000-000000000046")]
 [NativeTypeName("struct IMessageFilter : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMessageFilter : IMessageFilter.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMessageFilter : IMessageFilter.Interface
         return ((delegate* unmanaged<IMessageFilter*, Guid*, void**, int>)(lpVtbl[0]))((IMessageFilter*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMessageFilter : IMessageFilter.Interface
         return ((delegate* unmanaged<IMessageFilter*, uint>)(lpVtbl[1]))((IMessageFilter*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMessageFilter : IMessageFilter.Interface
         return ((delegate* unmanaged<IMessageFilter*, uint>)(lpVtbl[2]))((IMessageFilter*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMessageFilter.xml' path='doc/member[@name="IMessageFilter.HandleInComingCall"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     [return: NativeTypeName("DWORD")]
@@ -47,6 +52,7 @@ public unsafe partial struct IMessageFilter : IMessageFilter.Interface
         return ((delegate* unmanaged<IMessageFilter*, uint, HTASK, uint, INTERFACEINFO*, uint>)(lpVtbl[3]))((IMessageFilter*)Unsafe.AsPointer(ref this), dwCallType, htaskCaller, dwTickCount, lpInterfaceInfo);
     }
 
+    /// <include file='IMessageFilter.xml' path='doc/member[@name="IMessageFilter.RetryRejectedCall"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     [return: NativeTypeName("DWORD")]
@@ -55,6 +61,7 @@ public unsafe partial struct IMessageFilter : IMessageFilter.Interface
         return ((delegate* unmanaged<IMessageFilter*, HTASK, uint, uint, uint>)(lpVtbl[4]))((IMessageFilter*)Unsafe.AsPointer(ref this), htaskCallee, dwTickCount, dwRejectType);
     }
 
+    /// <include file='IMessageFilter.xml' path='doc/member[@name="IMessageFilter.MessagePending"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     [return: NativeTypeName("DWORD")]

@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CPU_SET_INFORMATION_TYPE.xml' path='doc/member[@name="CPU_SET_INFORMATION_TYPE"]/*' />
 public enum CPU_SET_INFORMATION_TYPE
 {
+    /// <include file='CPU_SET_INFORMATION_TYPE.xml' path='doc/member[@name="CPU_SET_INFORMATION_TYPE.CpuSetInformation"]/*' />
     CpuSetInformation,
 }

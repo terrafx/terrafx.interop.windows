@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ISpObjectTokenCategory.xml' path='doc/member[@name="ISpObjectTokenCategory"]/*' />
 [Guid("2D3D3845-39AF-4850-BBF9-40B49780011D")]
 [NativeTypeName("struct ISpObjectTokenCategory : ISpDataKey")]
 [NativeInheritance("ISpDataKey")]
@@ -16,6 +17,7 @@ public unsafe partial struct ISpObjectTokenCategory : ISpObjectTokenCategory.Int
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ISpObjectTokenCategory : ISpObjectTokenCategory.Int
         return ((delegate* unmanaged<ISpObjectTokenCategory*, Guid*, void**, int>)(lpVtbl[0]))((ISpObjectTokenCategory*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ISpObjectTokenCategory : ISpObjectTokenCategory.Int
         return ((delegate* unmanaged<ISpObjectTokenCategory*, uint>)(lpVtbl[1]))((ISpObjectTokenCategory*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ISpObjectTokenCategory : ISpObjectTokenCategory.Int
         return ((delegate* unmanaged<ISpObjectTokenCategory*, uint>)(lpVtbl[2]))((ISpObjectTokenCategory*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ISpDataKey.SetData" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetData([NativeTypeName("LPCWSTR")] ushort* pszValueName, [NativeTypeName("ULONG")] uint cbData, [NativeTypeName("const BYTE *")] byte* pData)
@@ -46,6 +51,7 @@ public unsafe partial struct ISpObjectTokenCategory : ISpObjectTokenCategory.Int
         return ((delegate* unmanaged<ISpObjectTokenCategory*, ushort*, uint, byte*, int>)(lpVtbl[3]))((ISpObjectTokenCategory*)Unsafe.AsPointer(ref this), pszValueName, cbData, pData);
     }
 
+    /// <inheritdoc cref="ISpDataKey.GetData" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetData([NativeTypeName("LPCWSTR")] ushort* pszValueName, [NativeTypeName("ULONG *")] uint* pcbData, byte* pData)
@@ -53,6 +59,7 @@ public unsafe partial struct ISpObjectTokenCategory : ISpObjectTokenCategory.Int
         return ((delegate* unmanaged<ISpObjectTokenCategory*, ushort*, uint*, byte*, int>)(lpVtbl[4]))((ISpObjectTokenCategory*)Unsafe.AsPointer(ref this), pszValueName, pcbData, pData);
     }
 
+    /// <inheritdoc cref="ISpDataKey.SetStringValue" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetStringValue([NativeTypeName("LPCWSTR")] ushort* pszValueName, [NativeTypeName("LPCWSTR")] ushort* pszValue)
@@ -60,6 +67,7 @@ public unsafe partial struct ISpObjectTokenCategory : ISpObjectTokenCategory.Int
         return ((delegate* unmanaged<ISpObjectTokenCategory*, ushort*, ushort*, int>)(lpVtbl[5]))((ISpObjectTokenCategory*)Unsafe.AsPointer(ref this), pszValueName, pszValue);
     }
 
+    /// <inheritdoc cref="ISpDataKey.GetStringValue" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetStringValue([NativeTypeName("LPCWSTR")] ushort* pszValueName, [NativeTypeName("LPWSTR *")] ushort** ppszValue)
@@ -67,6 +75,7 @@ public unsafe partial struct ISpObjectTokenCategory : ISpObjectTokenCategory.Int
         return ((delegate* unmanaged<ISpObjectTokenCategory*, ushort*, ushort**, int>)(lpVtbl[6]))((ISpObjectTokenCategory*)Unsafe.AsPointer(ref this), pszValueName, ppszValue);
     }
 
+    /// <inheritdoc cref="ISpDataKey.SetDWORD" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT SetDWORD([NativeTypeName("LPCWSTR")] ushort* pszValueName, [NativeTypeName("DWORD")] uint dwValue)
@@ -74,6 +83,7 @@ public unsafe partial struct ISpObjectTokenCategory : ISpObjectTokenCategory.Int
         return ((delegate* unmanaged<ISpObjectTokenCategory*, ushort*, uint, int>)(lpVtbl[7]))((ISpObjectTokenCategory*)Unsafe.AsPointer(ref this), pszValueName, dwValue);
     }
 
+    /// <inheritdoc cref="ISpDataKey.GetDWORD" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetDWORD([NativeTypeName("LPCWSTR")] ushort* pszValueName, [NativeTypeName("DWORD *")] uint* pdwValue)
@@ -81,6 +91,7 @@ public unsafe partial struct ISpObjectTokenCategory : ISpObjectTokenCategory.Int
         return ((delegate* unmanaged<ISpObjectTokenCategory*, ushort*, uint*, int>)(lpVtbl[8]))((ISpObjectTokenCategory*)Unsafe.AsPointer(ref this), pszValueName, pdwValue);
     }
 
+    /// <inheritdoc cref="ISpDataKey.OpenKey" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT OpenKey([NativeTypeName("LPCWSTR")] ushort* pszSubKeyName, ISpDataKey** ppSubKey)
@@ -88,6 +99,7 @@ public unsafe partial struct ISpObjectTokenCategory : ISpObjectTokenCategory.Int
         return ((delegate* unmanaged<ISpObjectTokenCategory*, ushort*, ISpDataKey**, int>)(lpVtbl[9]))((ISpObjectTokenCategory*)Unsafe.AsPointer(ref this), pszSubKeyName, ppSubKey);
     }
 
+    /// <inheritdoc cref="ISpDataKey.CreateKey" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT CreateKey([NativeTypeName("LPCWSTR")] ushort* pszSubKey, ISpDataKey** ppSubKey)
@@ -95,6 +107,7 @@ public unsafe partial struct ISpObjectTokenCategory : ISpObjectTokenCategory.Int
         return ((delegate* unmanaged<ISpObjectTokenCategory*, ushort*, ISpDataKey**, int>)(lpVtbl[10]))((ISpObjectTokenCategory*)Unsafe.AsPointer(ref this), pszSubKey, ppSubKey);
     }
 
+    /// <inheritdoc cref="ISpDataKey.DeleteKey" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT DeleteKey([NativeTypeName("LPCWSTR")] ushort* pszSubKey)
@@ -102,6 +115,7 @@ public unsafe partial struct ISpObjectTokenCategory : ISpObjectTokenCategory.Int
         return ((delegate* unmanaged<ISpObjectTokenCategory*, ushort*, int>)(lpVtbl[11]))((ISpObjectTokenCategory*)Unsafe.AsPointer(ref this), pszSubKey);
     }
 
+    /// <inheritdoc cref="ISpDataKey.DeleteValue" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT DeleteValue([NativeTypeName("LPCWSTR")] ushort* pszValueName)
@@ -109,6 +123,7 @@ public unsafe partial struct ISpObjectTokenCategory : ISpObjectTokenCategory.Int
         return ((delegate* unmanaged<ISpObjectTokenCategory*, ushort*, int>)(lpVtbl[12]))((ISpObjectTokenCategory*)Unsafe.AsPointer(ref this), pszValueName);
     }
 
+    /// <inheritdoc cref="ISpDataKey.EnumKeys" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT EnumKeys([NativeTypeName("ULONG")] uint Index, [NativeTypeName("LPWSTR *")] ushort** ppszSubKeyName)
@@ -116,6 +131,7 @@ public unsafe partial struct ISpObjectTokenCategory : ISpObjectTokenCategory.Int
         return ((delegate* unmanaged<ISpObjectTokenCategory*, uint, ushort**, int>)(lpVtbl[13]))((ISpObjectTokenCategory*)Unsafe.AsPointer(ref this), Index, ppszSubKeyName);
     }
 
+    /// <inheritdoc cref="ISpDataKey.EnumValues" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT EnumValues([NativeTypeName("ULONG")] uint Index, [NativeTypeName("LPWSTR *")] ushort** ppszValueName)
@@ -123,6 +139,7 @@ public unsafe partial struct ISpObjectTokenCategory : ISpObjectTokenCategory.Int
         return ((delegate* unmanaged<ISpObjectTokenCategory*, uint, ushort**, int>)(lpVtbl[14]))((ISpObjectTokenCategory*)Unsafe.AsPointer(ref this), Index, ppszValueName);
     }
 
+    /// <include file='ISpObjectTokenCategory.xml' path='doc/member[@name="ISpObjectTokenCategory.SetId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT SetId([NativeTypeName("LPCWSTR")] ushort* pszCategoryId, BOOL fCreateIfNotExist)
@@ -130,6 +147,7 @@ public unsafe partial struct ISpObjectTokenCategory : ISpObjectTokenCategory.Int
         return ((delegate* unmanaged<ISpObjectTokenCategory*, ushort*, BOOL, int>)(lpVtbl[15]))((ISpObjectTokenCategory*)Unsafe.AsPointer(ref this), pszCategoryId, fCreateIfNotExist);
     }
 
+    /// <include file='ISpObjectTokenCategory.xml' path='doc/member[@name="ISpObjectTokenCategory.GetId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT GetId([NativeTypeName("LPWSTR *")] ushort** ppszCoMemCategoryId)
@@ -137,6 +155,7 @@ public unsafe partial struct ISpObjectTokenCategory : ISpObjectTokenCategory.Int
         return ((delegate* unmanaged<ISpObjectTokenCategory*, ushort**, int>)(lpVtbl[16]))((ISpObjectTokenCategory*)Unsafe.AsPointer(ref this), ppszCoMemCategoryId);
     }
 
+    /// <include file='ISpObjectTokenCategory.xml' path='doc/member[@name="ISpObjectTokenCategory.GetDataKey"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT GetDataKey(SPDATAKEYLOCATION spdkl, ISpDataKey** ppDataKey)
@@ -144,6 +163,7 @@ public unsafe partial struct ISpObjectTokenCategory : ISpObjectTokenCategory.Int
         return ((delegate* unmanaged<ISpObjectTokenCategory*, SPDATAKEYLOCATION, ISpDataKey**, int>)(lpVtbl[17]))((ISpObjectTokenCategory*)Unsafe.AsPointer(ref this), spdkl, ppDataKey);
     }
 
+    /// <include file='ISpObjectTokenCategory.xml' path='doc/member[@name="ISpObjectTokenCategory.EnumTokens"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT EnumTokens([NativeTypeName("LPCWSTR")] ushort* pzsReqAttribs, [NativeTypeName("LPCWSTR")] ushort* pszOptAttribs, IEnumSpObjectTokens** ppEnum)
@@ -151,6 +171,7 @@ public unsafe partial struct ISpObjectTokenCategory : ISpObjectTokenCategory.Int
         return ((delegate* unmanaged<ISpObjectTokenCategory*, ushort*, ushort*, IEnumSpObjectTokens**, int>)(lpVtbl[18]))((ISpObjectTokenCategory*)Unsafe.AsPointer(ref this), pzsReqAttribs, pszOptAttribs, ppEnum);
     }
 
+    /// <include file='ISpObjectTokenCategory.xml' path='doc/member[@name="ISpObjectTokenCategory.SetDefaultTokenId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT SetDefaultTokenId([NativeTypeName("LPCWSTR")] ushort* pszTokenId)
@@ -158,6 +179,7 @@ public unsafe partial struct ISpObjectTokenCategory : ISpObjectTokenCategory.Int
         return ((delegate* unmanaged<ISpObjectTokenCategory*, ushort*, int>)(lpVtbl[19]))((ISpObjectTokenCategory*)Unsafe.AsPointer(ref this), pszTokenId);
     }
 
+    /// <include file='ISpObjectTokenCategory.xml' path='doc/member[@name="ISpObjectTokenCategory.GetDefaultTokenId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public HRESULT GetDefaultTokenId([NativeTypeName("LPWSTR *")] ushort** ppszCoMemTokenId)

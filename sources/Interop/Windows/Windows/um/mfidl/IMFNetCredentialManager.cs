@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFNetCredentialManager.xml' path='doc/member[@name="IMFNetCredentialManager"]/*' />
 [Guid("5B87EF6B-7ED8-434F-BA0E-184FAC1628D1")]
 [NativeTypeName("struct IMFNetCredentialManager : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMFNetCredentialManager : IMFNetCredentialManager.I
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMFNetCredentialManager : IMFNetCredentialManager.I
         return ((delegate* unmanaged<IMFNetCredentialManager*, Guid*, void**, int>)(lpVtbl[0]))((IMFNetCredentialManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMFNetCredentialManager : IMFNetCredentialManager.I
         return ((delegate* unmanaged<IMFNetCredentialManager*, uint>)(lpVtbl[1]))((IMFNetCredentialManager*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMFNetCredentialManager : IMFNetCredentialManager.I
         return ((delegate* unmanaged<IMFNetCredentialManager*, uint>)(lpVtbl[2]))((IMFNetCredentialManager*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFNetCredentialManager.xml' path='doc/member[@name="IMFNetCredentialManager.BeginGetCredentials"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT BeginGetCredentials(MFNetCredentialManagerGetParam* pParam, IMFAsyncCallback* pCallback, IUnknown* pState)
@@ -46,6 +51,7 @@ public unsafe partial struct IMFNetCredentialManager : IMFNetCredentialManager.I
         return ((delegate* unmanaged<IMFNetCredentialManager*, MFNetCredentialManagerGetParam*, IMFAsyncCallback*, IUnknown*, int>)(lpVtbl[3]))((IMFNetCredentialManager*)Unsafe.AsPointer(ref this), pParam, pCallback, pState);
     }
 
+    /// <include file='IMFNetCredentialManager.xml' path='doc/member[@name="IMFNetCredentialManager.EndGetCredentials"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT EndGetCredentials(IMFAsyncResult* pResult, IMFNetCredential** ppCred)
@@ -53,6 +59,7 @@ public unsafe partial struct IMFNetCredentialManager : IMFNetCredentialManager.I
         return ((delegate* unmanaged<IMFNetCredentialManager*, IMFAsyncResult*, IMFNetCredential**, int>)(lpVtbl[4]))((IMFNetCredentialManager*)Unsafe.AsPointer(ref this), pResult, ppCred);
     }
 
+    /// <include file='IMFNetCredentialManager.xml' path='doc/member[@name="IMFNetCredentialManager.SetGood"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetGood(IMFNetCredential* pCred, BOOL fGood)

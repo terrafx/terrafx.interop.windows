@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVEncCommonBufferInLevel.xml' path='doc/member[@name="CODECAPI_AVEncCommonBufferInLevel"]/*' />
 [Guid("D9C5C8DB-FC74-4064-94E9-CD19F947ED45")]
 public partial struct CODECAPI_AVEncCommonBufferInLevel
 {

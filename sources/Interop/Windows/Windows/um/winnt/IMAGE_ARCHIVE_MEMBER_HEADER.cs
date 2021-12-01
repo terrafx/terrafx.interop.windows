@@ -5,26 +5,34 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMAGE_ARCHIVE_MEMBER_HEADER.xml' path='doc/member[@name="IMAGE_ARCHIVE_MEMBER_HEADER"]/*' />
 public unsafe partial struct IMAGE_ARCHIVE_MEMBER_HEADER
 {
+    /// <include file='IMAGE_ARCHIVE_MEMBER_HEADER.xml' path='doc/member[@name="IMAGE_ARCHIVE_MEMBER_HEADER.Name"]/*' />
     [NativeTypeName("BYTE [16]")]
     public fixed byte Name[16];
 
+    /// <include file='IMAGE_ARCHIVE_MEMBER_HEADER.xml' path='doc/member[@name="IMAGE_ARCHIVE_MEMBER_HEADER.Date"]/*' />
     [NativeTypeName("BYTE [12]")]
     public fixed byte Date[12];
 
+    /// <include file='IMAGE_ARCHIVE_MEMBER_HEADER.xml' path='doc/member[@name="IMAGE_ARCHIVE_MEMBER_HEADER.UserID"]/*' />
     [NativeTypeName("BYTE [6]")]
     public fixed byte UserID[6];
 
+    /// <include file='IMAGE_ARCHIVE_MEMBER_HEADER.xml' path='doc/member[@name="IMAGE_ARCHIVE_MEMBER_HEADER.GroupID"]/*' />
     [NativeTypeName("BYTE [6]")]
     public fixed byte GroupID[6];
 
+    /// <include file='IMAGE_ARCHIVE_MEMBER_HEADER.xml' path='doc/member[@name="IMAGE_ARCHIVE_MEMBER_HEADER.Mode"]/*' />
     [NativeTypeName("BYTE [8]")]
     public fixed byte Mode[8];
 
+    /// <include file='IMAGE_ARCHIVE_MEMBER_HEADER.xml' path='doc/member[@name="IMAGE_ARCHIVE_MEMBER_HEADER.Size"]/*' />
     [NativeTypeName("BYTE [10]")]
     public fixed byte Size[10];
 
+    /// <include file='IMAGE_ARCHIVE_MEMBER_HEADER.xml' path='doc/member[@name="IMAGE_ARCHIVE_MEMBER_HEADER.EndHeader"]/*' />
     [NativeTypeName("BYTE [2]")]
     public fixed byte EndHeader[2];
 }

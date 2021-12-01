@@ -5,12 +5,24 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='styleMsAnimationFillMode.xml' path='doc/member[@name="styleMsAnimationFillMode"]/*' />
 public enum styleMsAnimationFillMode
 {
+    /// <include file='styleMsAnimationFillMode.xml' path='doc/member[@name="styleMsAnimationFillMode.styleMsAnimationFillModeNone"]/*' />
     styleMsAnimationFillModeNone = 0,
+
+    /// <include file='styleMsAnimationFillMode.xml' path='doc/member[@name="styleMsAnimationFillMode.styleMsAnimationFillModeForwards"]/*' />
     styleMsAnimationFillModeForwards = 1,
+
+    /// <include file='styleMsAnimationFillMode.xml' path='doc/member[@name="styleMsAnimationFillMode.styleMsAnimationFillModeBackwards"]/*' />
     styleMsAnimationFillModeBackwards = 2,
+
+    /// <include file='styleMsAnimationFillMode.xml' path='doc/member[@name="styleMsAnimationFillMode.styleMsAnimationFillModeBoth"]/*' />
     styleMsAnimationFillModeBoth = 3,
+
+    /// <include file='styleMsAnimationFillMode.xml' path='doc/member[@name="styleMsAnimationFillMode.styleMsAnimationFillModeNotSet"]/*' />
     styleMsAnimationFillModeNotSet = 4,
+
+    /// <include file='styleMsAnimationFillMode.xml' path='doc/member[@name="styleMsAnimationFillMode.styleMsAnimationFillMode_Max"]/*' />
     styleMsAnimationFillMode_Max = 2147483647,
 }

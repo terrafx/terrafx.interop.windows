@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TAPE_CREATE_PARTITION.xml' path='doc/member[@name="TAPE_CREATE_PARTITION"]/*' />
 public partial struct TAPE_CREATE_PARTITION
 {
+    /// <include file='TAPE_CREATE_PARTITION.xml' path='doc/member[@name="TAPE_CREATE_PARTITION.Method"]/*' />
     [NativeTypeName("DWORD")]
     public uint Method;
 
+    /// <include file='TAPE_CREATE_PARTITION.xml' path='doc/member[@name="TAPE_CREATE_PARTITION.Count"]/*' />
     [NativeTypeName("DWORD")]
     public uint Count;
 
+    /// <include file='TAPE_CREATE_PARTITION.xml' path='doc/member[@name="TAPE_CREATE_PARTITION.Size"]/*' />
     [NativeTypeName("DWORD")]
     public uint Size;
 }

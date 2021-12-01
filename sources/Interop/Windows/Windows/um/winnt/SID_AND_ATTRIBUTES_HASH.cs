@@ -9,17 +9,22 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SID_AND_ATTRIBUTES_HASH.xml' path='doc/member[@name="SID_AND_ATTRIBUTES_HASH"]/*' />
 public unsafe partial struct SID_AND_ATTRIBUTES_HASH
 {
+    /// <include file='SID_AND_ATTRIBUTES_HASH.xml' path='doc/member[@name="SID_AND_ATTRIBUTES_HASH.SidCount"]/*' />
     [NativeTypeName("DWORD")]
     public uint SidCount;
 
+    /// <include file='SID_AND_ATTRIBUTES_HASH.xml' path='doc/member[@name="SID_AND_ATTRIBUTES_HASH.SidAttr"]/*' />
     [NativeTypeName("PSID_AND_ATTRIBUTES")]
     public SID_AND_ATTRIBUTES* SidAttr;
 
+    /// <include file='SID_AND_ATTRIBUTES_HASH.xml' path='doc/member[@name="SID_AND_ATTRIBUTES_HASH.Hash"]/*' />
     [NativeTypeName("SID_HASH_ENTRY [32]")]
     public _Hash_e__FixedBuffer Hash;
 
+    /// <include file='_Hash_e__FixedBuffer.xml' path='doc/member[@name="_Hash_e__FixedBuffer"]/*' />
     public partial struct _Hash_e__FixedBuffer
     {
         public nuint e0;

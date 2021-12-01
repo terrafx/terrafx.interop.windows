@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='XblIdpAuthManager.xml' path='doc/member[@name="XblIdpAuthManager"]/*' />
 [Guid("CE23534B-56D8-4978-86A2-7EE570640468")]
 public partial struct XblIdpAuthManager
 {

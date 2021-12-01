@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IObjectWithCancelEvent.xml' path='doc/member[@name="IObjectWithCancelEvent"]/*' />
 [Guid("F279B885-0AE9-4B85-AC06-DDECF9408941")]
 [NativeTypeName("struct IObjectWithCancelEvent : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IObjectWithCancelEvent : IObjectWithCancelEvent.Int
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IObjectWithCancelEvent : IObjectWithCancelEvent.Int
         return ((delegate* unmanaged<IObjectWithCancelEvent*, Guid*, void**, int>)(lpVtbl[0]))((IObjectWithCancelEvent*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IObjectWithCancelEvent : IObjectWithCancelEvent.Int
         return ((delegate* unmanaged<IObjectWithCancelEvent*, uint>)(lpVtbl[1]))((IObjectWithCancelEvent*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IObjectWithCancelEvent : IObjectWithCancelEvent.Int
         return ((delegate* unmanaged<IObjectWithCancelEvent*, uint>)(lpVtbl[2]))((IObjectWithCancelEvent*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IObjectWithCancelEvent.xml' path='doc/member[@name="IObjectWithCancelEvent.GetCancelEvent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetCancelEvent(HANDLE* phEvent)

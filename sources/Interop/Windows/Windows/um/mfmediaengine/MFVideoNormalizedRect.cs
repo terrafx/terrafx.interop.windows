@@ -5,13 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MFVideoNormalizedRect.xml' path='doc/member[@name="MFVideoNormalizedRect"]/*' />
 public partial struct MFVideoNormalizedRect
 {
+    /// <include file='MFVideoNormalizedRect.xml' path='doc/member[@name="MFVideoNormalizedRect.left"]/*' />
     public float left;
 
+    /// <include file='MFVideoNormalizedRect.xml' path='doc/member[@name="MFVideoNormalizedRect.top"]/*' />
     public float top;
 
+    /// <include file='MFVideoNormalizedRect.xml' path='doc/member[@name="MFVideoNormalizedRect.right"]/*' />
     public float right;
 
+    /// <include file='MFVideoNormalizedRect.xml' path='doc/member[@name="MFVideoNormalizedRect.bottom"]/*' />
     public float bottom;
 }

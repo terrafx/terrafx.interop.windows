@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="NMTRBTHUMBPOSCHANGING">
+    <summary>
+      <para>Contains information about a trackbar change notification. This message is sent with the <a href="https://docs.microsoft.com//windows/desktop/Controls/trbn-thumbposchanging">TRBN_THUMBPOSCHANGING</a> notification.</para>
+    </summary>
+  </member>
+  <member name="NMTRBTHUMBPOSCHANGING.hdr">
+    <summary>
+      <para>Type: <b><see cref="NMHDR" /></b></para>
+      <para>A <see cref="NMHDR" /> structure that describes the notification.</para>
+    </summary>
+  </member>
+  <member name="NMTRBTHUMBPOSCHANGING.dwPos">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>Position on trackbar.</para>
+    </summary>
+  </member>
+  <member name="NMTRBTHUMBPOSCHANGING.nReason">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>Type of movement as one of the following values: TB_LINEUP, TB_LINEDOWN, TB_PAGEUP, TB_PAGEDOWN, TB_THUMBPOSITION, TB_THUMBTRACK,
+TB_TOP, TB_BOTTOM, or TB_ENDTRACK.</para>
+    </summary>
+  </member>
+</doc>

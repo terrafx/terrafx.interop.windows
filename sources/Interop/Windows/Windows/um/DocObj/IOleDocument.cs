@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IOleDocument.xml' path='doc/member[@name="IOleDocument"]/*' />
 [Guid("B722BCC5-4E68-101B-A2BC-00AA00404770")]
 [NativeTypeName("struct IOleDocument : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IOleDocument : IOleDocument.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IOleDocument : IOleDocument.Interface
         return ((delegate* unmanaged<IOleDocument*, Guid*, void**, int>)(lpVtbl[0]))((IOleDocument*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IOleDocument : IOleDocument.Interface
         return ((delegate* unmanaged<IOleDocument*, uint>)(lpVtbl[1]))((IOleDocument*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IOleDocument : IOleDocument.Interface
         return ((delegate* unmanaged<IOleDocument*, uint>)(lpVtbl[2]))((IOleDocument*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IOleDocument.xml' path='doc/member[@name="IOleDocument.CreateView"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT CreateView(IOleInPlaceSite* pIPSite, IStream* pstm, [NativeTypeName("DWORD")] uint dwReserved, IOleDocumentView** ppView)
@@ -46,6 +51,7 @@ public unsafe partial struct IOleDocument : IOleDocument.Interface
         return ((delegate* unmanaged<IOleDocument*, IOleInPlaceSite*, IStream*, uint, IOleDocumentView**, int>)(lpVtbl[3]))((IOleDocument*)Unsafe.AsPointer(ref this), pIPSite, pstm, dwReserved, ppView);
     }
 
+    /// <include file='IOleDocument.xml' path='doc/member[@name="IOleDocument.GetDocMiscStatus"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetDocMiscStatus([NativeTypeName("DWORD *")] uint* pdwStatus)
@@ -53,6 +59,7 @@ public unsafe partial struct IOleDocument : IOleDocument.Interface
         return ((delegate* unmanaged<IOleDocument*, uint*, int>)(lpVtbl[4]))((IOleDocument*)Unsafe.AsPointer(ref this), pdwStatus);
     }
 
+    /// <include file='IOleDocument.xml' path='doc/member[@name="IOleDocument.EnumViews"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT EnumViews(IEnumOleDocumentViews** ppEnum, IOleDocumentView** ppView)

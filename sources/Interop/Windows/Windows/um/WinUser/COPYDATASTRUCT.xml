@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="COPYDATASTRUCT">
+    <summary>
+      <para>Contains data to be passed to another application by the <a href="https://docs.microsoft.com//windows/desktop/dataxchg/wm-copydata">WM_COPYDATA</a> message.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/dataxchg/wm-copydata">WM_COPYDATA</seealso>
+  </member>
+  <member name="COPYDATASTRUCT.dwData">
+    <summary>
+      <para>Type: <b>ULONG_PTR</b></para>
+      <para>The type of the data to be passed to the receiving application. The receiving application defines the valid types.</para>
+    </summary>
+  </member>
+  <member name="COPYDATASTRUCT.cbData">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The size, in bytes, of the data pointed to by the <b>lpData</b> member.</para>
+    </summary>
+  </member>
+  <member name="COPYDATASTRUCT.lpData">
+    <summary>
+      <para>Type: <b>PVOID</b></para>
+      <para>The data to be passed to the receiving application. This member can be <b>NULL</b>.</para>
+    </summary>
+  </member>
+</doc>

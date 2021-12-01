@@ -5,20 +5,28 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_XML_WRITER_MTOM_ENCODING.xml' path='doc/member[@name="WS_XML_WRITER_MTOM_ENCODING"]/*' />
 public unsafe partial struct WS_XML_WRITER_MTOM_ENCODING
 {
+    /// <include file='WS_XML_WRITER_MTOM_ENCODING.xml' path='doc/member[@name="WS_XML_WRITER_MTOM_ENCODING.encoding"]/*' />
     public WS_XML_WRITER_ENCODING encoding;
 
+    /// <include file='WS_XML_WRITER_MTOM_ENCODING.xml' path='doc/member[@name="WS_XML_WRITER_MTOM_ENCODING.textEncoding"]/*' />
     public WS_XML_WRITER_ENCODING* textEncoding;
 
+    /// <include file='WS_XML_WRITER_MTOM_ENCODING.xml' path='doc/member[@name="WS_XML_WRITER_MTOM_ENCODING.writeMimeHeader"]/*' />
     public BOOL writeMimeHeader;
 
+    /// <include file='WS_XML_WRITER_MTOM_ENCODING.xml' path='doc/member[@name="WS_XML_WRITER_MTOM_ENCODING.boundary"]/*' />
     public WS_STRING boundary;
 
+    /// <include file='WS_XML_WRITER_MTOM_ENCODING.xml' path='doc/member[@name="WS_XML_WRITER_MTOM_ENCODING.startInfo"]/*' />
     public WS_STRING startInfo;
 
+    /// <include file='WS_XML_WRITER_MTOM_ENCODING.xml' path='doc/member[@name="WS_XML_WRITER_MTOM_ENCODING.startUri"]/*' />
     public WS_STRING startUri;
 
+    /// <include file='WS_XML_WRITER_MTOM_ENCODING.xml' path='doc/member[@name="WS_XML_WRITER_MTOM_ENCODING.maxInlineByteCount"]/*' />
     [NativeTypeName("ULONG")]
     public uint maxInlineByteCount;
 }

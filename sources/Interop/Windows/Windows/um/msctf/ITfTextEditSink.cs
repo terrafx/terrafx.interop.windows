@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITfTextEditSink.xml' path='doc/member[@name="ITfTextEditSink"]/*' />
 [Guid("8127D409-CCD3-4683-967A-B43D5B482BF7")]
 [NativeTypeName("struct ITfTextEditSink : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITfTextEditSink : ITfTextEditSink.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITfTextEditSink : ITfTextEditSink.Interface
         return ((delegate* unmanaged<ITfTextEditSink*, Guid*, void**, int>)(lpVtbl[0]))((ITfTextEditSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITfTextEditSink : ITfTextEditSink.Interface
         return ((delegate* unmanaged<ITfTextEditSink*, uint>)(lpVtbl[1]))((ITfTextEditSink*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITfTextEditSink : ITfTextEditSink.Interface
         return ((delegate* unmanaged<ITfTextEditSink*, uint>)(lpVtbl[2]))((ITfTextEditSink*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITfTextEditSink.xml' path='doc/member[@name="ITfTextEditSink.OnEndEdit"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT OnEndEdit(ITfContext* pic, [NativeTypeName("TfEditCookie")] uint ecReadOnly, ITfEditRecord* pEditRecord)

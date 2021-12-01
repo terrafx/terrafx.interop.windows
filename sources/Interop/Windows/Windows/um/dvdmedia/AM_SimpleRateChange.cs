@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='AM_SimpleRateChange.xml' path='doc/member[@name="AM_SimpleRateChange"]/*' />
 public partial struct AM_SimpleRateChange
 {
+    /// <include file='AM_SimpleRateChange.xml' path='doc/member[@name="AM_SimpleRateChange.StartTime"]/*' />
     [NativeTypeName("REFERENCE_TIME")]
     public long StartTime;
 
+    /// <include file='AM_SimpleRateChange.xml' path='doc/member[@name="AM_SimpleRateChange.Rate"]/*' />
     [NativeTypeName("LONG")]
     public int Rate;
 }

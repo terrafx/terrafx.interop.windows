@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IUIAnimationTransitionFactory2.xml' path='doc/member[@name="IUIAnimationTransitionFactory2"]/*' />
 [Guid("937D4916-C1A6-42D5-88D8-30344D6EFE31")]
 [NativeTypeName("struct IUIAnimationTransitionFactory2 : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IUIAnimationTransitionFactory2 : IUIAnimationTransi
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IUIAnimationTransitionFactory2 : IUIAnimationTransi
         return ((delegate* unmanaged<IUIAnimationTransitionFactory2*, Guid*, void**, int>)(lpVtbl[0]))((IUIAnimationTransitionFactory2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IUIAnimationTransitionFactory2 : IUIAnimationTransi
         return ((delegate* unmanaged<IUIAnimationTransitionFactory2*, uint>)(lpVtbl[1]))((IUIAnimationTransitionFactory2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IUIAnimationTransitionFactory2 : IUIAnimationTransi
         return ((delegate* unmanaged<IUIAnimationTransitionFactory2*, uint>)(lpVtbl[2]))((IUIAnimationTransitionFactory2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IUIAnimationTransitionFactory2.xml' path='doc/member[@name="IUIAnimationTransitionFactory2.CreateTransition"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT CreateTransition(IUIAnimationInterpolator2* interpolator, IUIAnimationTransition2** transition)

@@ -9,17 +9,22 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MFVideoSurfaceInfo.xml' path='doc/member[@name="MFVideoSurfaceInfo"]/*' />
 public partial struct MFVideoSurfaceInfo
 {
+    /// <include file='MFVideoSurfaceInfo.xml' path='doc/member[@name="MFVideoSurfaceInfo.Format"]/*' />
     [NativeTypeName("DWORD")]
     public uint Format;
 
+    /// <include file='MFVideoSurfaceInfo.xml' path='doc/member[@name="MFVideoSurfaceInfo.PaletteEntries"]/*' />
     [NativeTypeName("DWORD")]
     public uint PaletteEntries;
 
+    /// <include file='MFVideoSurfaceInfo.xml' path='doc/member[@name="MFVideoSurfaceInfo.Palette"]/*' />
     [NativeTypeName("MFPaletteEntry [1]")]
     public _Palette_e__FixedBuffer Palette;
 
+    /// <include file='_Palette_e__FixedBuffer.xml' path='doc/member[@name="_Palette_e__FixedBuffer"]/*' />
     public partial struct _Palette_e__FixedBuffer
     {
         public MFPaletteEntry e0;

@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="TYSPEC">
+    <summary>
+      <para>Specifies a mapping for a class ID.</para>
+    </summary>
+    <remarks>
+      <para>The TYSPEC enumeration and uCLSSPEC union provide mappings to a class ID. Note that TYSPEC_CLSID is the only supported value.</para>
+      <code>    typedef union switch(DWORD tyspec)
+        {
+        case TYSPEC_CLSID:
+            CLSID   clsid;
+        case TYSPEC_FILEEXT:
+            LPOLESTR pFileExt;
+        case TYSPEC_MIMETYPE:
+            LPOLESTR pMimeType;
+        case TYSPEC_PROGID:
+            LPOLESTR pProgId;
+        case TYSPEC_FILENAME:
+            LPOLESTR pFileName;
+        case TYSPEC_PACKAGENAME:
+            struct {
+            LPOLESTR pPackageName;
+            GUID     PolicyId;
+            } ByName;
+        case TYSPEC_OBJECTID:
+            struct {
+            GUID     ObjectId;
+            GUID     PolicyId;
+            } ByObjectId;
+    } uCLSSPEC;
+</code>
+    </remarks>
+    <seealso cref="CoInstall" />
+  </member>
+  <member name="TYSPEC.TYSPEC_CLSID">
+    <summary>
+      <para>A CLSID.</para>
+    </summary>
+  </member>
+  <member name="TYSPEC.TYSPEC_FILEEXT">
+    <summary>
+      <para>A file name extension.</para>
+    </summary>
+  </member>
+  <member name="TYSPEC.TYSPEC_MIMETYPE">
+    <summary>
+      <para>A MIME type.</para>
+    </summary>
+  </member>
+  <member name="TYSPEC.TYSPEC_FILENAME">
+    <summary>
+      <para>A file name.</para>
+    </summary>
+  </member>
+  <member name="TYSPEC.TYSPEC_PROGID">
+    <summary>
+      <para>A PROGID.</para>
+    </summary>
+  </member>
+  <member name="TYSPEC.TYSPEC_PACKAGENAME">
+    <summary>
+      <para>A package name.</para>
+    </summary>
+  </member>
+  <member name="TYSPEC.TYSPEC_OBJECTID">
+    <summary>
+      <para>An object ID.</para>
+    </summary>
+  </member>
+</doc>

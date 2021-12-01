@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMemAllocatorNotifyCallbackTemp.NotifyRelease">
+    <summary>
+      <para>The <code>NotifyRelease</code> method is called whenever the allocator's <see cref="IMemAllocator.ReleaseBuffer" /> method is called. The <b>ReleaseBuffer</b> method returns a media sample to the allocator's free list. Samples call this method when their reference counts reach zero.</para>
+    </summary>
+    <returns>
+      <para>Return S_OK or an error code.</para>
+    </returns>
+    <remarks>
+      <para>In general, this call can occur on any thread, and the caller may be holding critical sections. Therefore, this method should not do anything that could cause a deadlock. Instead, the method should set an event or post a message to another thread, and the other thread should take any required actions.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IMemAllocatorNotifyCallbackTemp Interface" />
+  </member>
+</doc>

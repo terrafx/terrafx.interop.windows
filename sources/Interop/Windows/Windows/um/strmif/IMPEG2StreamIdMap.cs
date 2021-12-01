@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMPEG2StreamIdMap.xml' path='doc/member[@name="IMPEG2StreamIdMap"]/*' />
 [Guid("D0E04C47-25B8-4369-925A-362A01D95444")]
 [NativeTypeName("struct IMPEG2StreamIdMap : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMPEG2StreamIdMap : IMPEG2StreamIdMap.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMPEG2StreamIdMap : IMPEG2StreamIdMap.Interface
         return ((delegate* unmanaged<IMPEG2StreamIdMap*, Guid*, void**, int>)(lpVtbl[0]))((IMPEG2StreamIdMap*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMPEG2StreamIdMap : IMPEG2StreamIdMap.Interface
         return ((delegate* unmanaged<IMPEG2StreamIdMap*, uint>)(lpVtbl[1]))((IMPEG2StreamIdMap*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMPEG2StreamIdMap : IMPEG2StreamIdMap.Interface
         return ((delegate* unmanaged<IMPEG2StreamIdMap*, uint>)(lpVtbl[2]))((IMPEG2StreamIdMap*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMPEG2StreamIdMap.xml' path='doc/member[@name="IMPEG2StreamIdMap.MapStreamId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT MapStreamId([NativeTypeName("ULONG")] uint ulStreamId, [NativeTypeName("DWORD")] uint MediaSampleContent, [NativeTypeName("ULONG")] uint ulSubstreamFilterValue, int iDataOffset)
@@ -46,6 +51,7 @@ public unsafe partial struct IMPEG2StreamIdMap : IMPEG2StreamIdMap.Interface
         return ((delegate* unmanaged<IMPEG2StreamIdMap*, uint, uint, uint, int, int>)(lpVtbl[3]))((IMPEG2StreamIdMap*)Unsafe.AsPointer(ref this), ulStreamId, MediaSampleContent, ulSubstreamFilterValue, iDataOffset);
     }
 
+    /// <include file='IMPEG2StreamIdMap.xml' path='doc/member[@name="IMPEG2StreamIdMap.UnmapStreamId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT UnmapStreamId([NativeTypeName("ULONG")] uint culStreamId, [NativeTypeName("ULONG *")] uint* pulStreamId)
@@ -53,6 +59,7 @@ public unsafe partial struct IMPEG2StreamIdMap : IMPEG2StreamIdMap.Interface
         return ((delegate* unmanaged<IMPEG2StreamIdMap*, uint, uint*, int>)(lpVtbl[4]))((IMPEG2StreamIdMap*)Unsafe.AsPointer(ref this), culStreamId, pulStreamId);
     }
 
+    /// <include file='IMPEG2StreamIdMap.xml' path='doc/member[@name="IMPEG2StreamIdMap.EnumStreamIdMap"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT EnumStreamIdMap(IEnumStreamIdMap** ppIEnumStreamIdMap)

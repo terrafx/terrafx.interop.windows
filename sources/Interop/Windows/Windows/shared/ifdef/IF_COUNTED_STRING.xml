@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IF_COUNTED_STRING">
+    <summary>
+      <para>The <b>IF_COUNTED_STRING</b> structure specifies a counted string for NDIS interfaces.</para>
+    </summary>
+    <remarks>
+      <para>The <b>IF_COUNTED_STRING</b> structure is the data type for various NDIS string structures, such as <b>NDIS_IF_COUNTED_STRING</b>.</para>
+      <para>If the string is NULL-terminated, the <b>Length</b> member must not include the terminating NULL character.</para>
+    </remarks>
+  </member>
+  <member name="IF_COUNTED_STRING.Length">
+    <summary>
+      <para>A USHORT value that contains the length, in bytes, of the string.</para>
+    </summary>
+  </member>
+  <member name="IF_COUNTED_STRING.String">
+    <summary>
+      <para>A WCHAR buffer that contains the string. The string does not need to be null-terminated.</para>
+    </summary>
+  </member>
+</doc>

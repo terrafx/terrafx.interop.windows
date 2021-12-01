@@ -5,13 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='API_VERSION.xml' path='doc/member[@name="API_VERSION"]/*' />
 public partial struct API_VERSION
 {
+    /// <include file='API_VERSION.xml' path='doc/member[@name="API_VERSION.MajorVersion"]/*' />
     public ushort MajorVersion;
 
+    /// <include file='API_VERSION.xml' path='doc/member[@name="API_VERSION.MinorVersion"]/*' />
     public ushort MinorVersion;
 
+    /// <include file='API_VERSION.xml' path='doc/member[@name="API_VERSION.Revision"]/*' />
     public ushort Revision;
 
+    /// <include file='API_VERSION.xml' path='doc/member[@name="API_VERSION.Reserved"]/*' />
     public ushort Reserved;
 }

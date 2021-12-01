@@ -5,17 +5,23 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TBREPLACEBITMAP.xml' path='doc/member[@name="TBREPLACEBITMAP"]/*' />
 public partial struct TBREPLACEBITMAP
 {
+    /// <include file='TBREPLACEBITMAP.xml' path='doc/member[@name="TBREPLACEBITMAP.hInstOld"]/*' />
     public HINSTANCE hInstOld;
 
+    /// <include file='TBREPLACEBITMAP.xml' path='doc/member[@name="TBREPLACEBITMAP.nIDOld"]/*' />
     [NativeTypeName("UINT_PTR")]
     public nuint nIDOld;
 
+    /// <include file='TBREPLACEBITMAP.xml' path='doc/member[@name="TBREPLACEBITMAP.hInstNew"]/*' />
     public HINSTANCE hInstNew;
 
+    /// <include file='TBREPLACEBITMAP.xml' path='doc/member[@name="TBREPLACEBITMAP.nIDNew"]/*' />
     [NativeTypeName("UINT_PTR")]
     public nuint nIDNew;
 
+    /// <include file='TBREPLACEBITMAP.xml' path='doc/member[@name="TBREPLACEBITMAP.nButtons"]/*' />
     public int nButtons;
 }

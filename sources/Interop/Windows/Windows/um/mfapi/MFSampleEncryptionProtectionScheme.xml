@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MFSampleEncryptionProtectionScheme">
+    <summary>
+      <para>Specifies the supported protection schemes for encrypted samples.</para>
+    </summary>
+    <remarks>
+      <para>The encryption scheme for a sample is specified using the <a href="https://docs.microsoft.com//windows/desktop/medfound/mfsampleextension-encryption-protectionscheme">MFSampleExtension_Encryption_ProtectionScheme</a> attribute.</para>
+    </remarks>
+  </member>
+  <member name="MFSampleEncryptionProtectionScheme.MF_SAMPLE_ENCRYPTION_PROTECTION_SCHEME_NONE">
+    <summary>
+      <para>No encryption scheme.</para>
+    </summary>
+  </member>
+  <member name="MFSampleEncryptionProtectionScheme.MF_SAMPLE_ENCRYPTION_PROTECTION_SCHEME_AES_CTR">
+    <summary>
+      <para>The encryption scheme is AES counter mode (CTR).</para>
+    </summary>
+  </member>
+  <member name="MFSampleEncryptionProtectionScheme.MF_SAMPLE_ENCRYPTION_PROTECTION_SCHEME_AES_CBC">
+    <summary>
+      <para>The encryption scheme is Cipher Block Chaining (CBC).</para>
+    </summary>
+  </member>
+</doc>

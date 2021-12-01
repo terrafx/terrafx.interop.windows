@@ -9,56 +9,74 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MIB_IPMCAST_MFE.xml' path='doc/member[@name="MIB_IPMCAST_MFE"]/*' />
 public partial struct MIB_IPMCAST_MFE
 {
+    /// <include file='MIB_IPMCAST_MFE.xml' path='doc/member[@name="MIB_IPMCAST_MFE.dwGroup"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwGroup;
 
+    /// <include file='MIB_IPMCAST_MFE.xml' path='doc/member[@name="MIB_IPMCAST_MFE.dwSource"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwSource;
 
+    /// <include file='MIB_IPMCAST_MFE.xml' path='doc/member[@name="MIB_IPMCAST_MFE.dwSrcMask"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwSrcMask;
 
+    /// <include file='MIB_IPMCAST_MFE.xml' path='doc/member[@name="MIB_IPMCAST_MFE.dwUpStrmNgbr"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwUpStrmNgbr;
 
+    /// <include file='MIB_IPMCAST_MFE.xml' path='doc/member[@name="MIB_IPMCAST_MFE.dwInIfIndex"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwInIfIndex;
 
+    /// <include file='MIB_IPMCAST_MFE.xml' path='doc/member[@name="MIB_IPMCAST_MFE.dwInIfProtocol"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwInIfProtocol;
 
+    /// <include file='MIB_IPMCAST_MFE.xml' path='doc/member[@name="MIB_IPMCAST_MFE.dwRouteProtocol"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwRouteProtocol;
 
+    /// <include file='MIB_IPMCAST_MFE.xml' path='doc/member[@name="MIB_IPMCAST_MFE.dwRouteNetwork"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwRouteNetwork;
 
+    /// <include file='MIB_IPMCAST_MFE.xml' path='doc/member[@name="MIB_IPMCAST_MFE.dwRouteMask"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwRouteMask;
 
+    /// <include file='MIB_IPMCAST_MFE.xml' path='doc/member[@name="MIB_IPMCAST_MFE.ulUpTime"]/*' />
     [NativeTypeName("ULONG")]
     public uint ulUpTime;
 
+    /// <include file='MIB_IPMCAST_MFE.xml' path='doc/member[@name="MIB_IPMCAST_MFE.ulExpiryTime"]/*' />
     [NativeTypeName("ULONG")]
     public uint ulExpiryTime;
 
+    /// <include file='MIB_IPMCAST_MFE.xml' path='doc/member[@name="MIB_IPMCAST_MFE.ulTimeOut"]/*' />
     [NativeTypeName("ULONG")]
     public uint ulTimeOut;
 
+    /// <include file='MIB_IPMCAST_MFE.xml' path='doc/member[@name="MIB_IPMCAST_MFE.ulNumOutIf"]/*' />
     [NativeTypeName("ULONG")]
     public uint ulNumOutIf;
 
+    /// <include file='MIB_IPMCAST_MFE.xml' path='doc/member[@name="MIB_IPMCAST_MFE.fFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint fFlags;
 
+    /// <include file='MIB_IPMCAST_MFE.xml' path='doc/member[@name="MIB_IPMCAST_MFE.dwReserved"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwReserved;
 
+    /// <include file='MIB_IPMCAST_MFE.xml' path='doc/member[@name="MIB_IPMCAST_MFE.rgmioOutInfo"]/*' />
     [NativeTypeName("MIB_IPMCAST_OIF [1]")]
     public _rgmioOutInfo_e__FixedBuffer rgmioOutInfo;
 
+    /// <include file='_rgmioOutInfo_e__FixedBuffer.xml' path='doc/member[@name="_rgmioOutInfo_e__FixedBuffer"]/*' />
     public partial struct _rgmioOutInfo_e__FixedBuffer
     {
         public MIB_IPMCAST_OIF_XP e0;

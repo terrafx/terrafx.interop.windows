@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAppxBundleManifestReader2.xml' path='doc/member[@name="IAppxBundleManifestReader2"]/*' />
 [Guid("5517DF70-033F-4AF2-8213-87D766805C02")]
 [NativeTypeName("struct IAppxBundleManifestReader2 : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IAppxBundleManifestReader2 : IAppxBundleManifestRea
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IAppxBundleManifestReader2 : IAppxBundleManifestRea
         return ((delegate* unmanaged<IAppxBundleManifestReader2*, Guid*, void**, int>)(lpVtbl[0]))((IAppxBundleManifestReader2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IAppxBundleManifestReader2 : IAppxBundleManifestRea
         return ((delegate* unmanaged<IAppxBundleManifestReader2*, uint>)(lpVtbl[1]))((IAppxBundleManifestReader2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IAppxBundleManifestReader2 : IAppxBundleManifestRea
         return ((delegate* unmanaged<IAppxBundleManifestReader2*, uint>)(lpVtbl[2]))((IAppxBundleManifestReader2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAppxBundleManifestReader2.xml' path='doc/member[@name="IAppxBundleManifestReader2.GetOptionalBundles"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetOptionalBundles(IAppxBundleManifestOptionalBundleInfoEnumerator** optionalBundles)

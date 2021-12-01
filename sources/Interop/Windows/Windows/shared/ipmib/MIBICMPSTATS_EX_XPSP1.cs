@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MIBICMPSTATS_EX_XPSP1.xml' path='doc/member[@name="MIBICMPSTATS_EX_XPSP1"]/*' />
 public unsafe partial struct MIBICMPSTATS_EX_XPSP1
 {
+    /// <include file='MIBICMPSTATS_EX_XPSP1.xml' path='doc/member[@name="MIBICMPSTATS_EX_XPSP1.dwMsgs"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwMsgs;
 
+    /// <include file='MIBICMPSTATS_EX_XPSP1.xml' path='doc/member[@name="MIBICMPSTATS_EX_XPSP1.dwErrors"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwErrors;
 
+    /// <include file='MIBICMPSTATS_EX_XPSP1.xml' path='doc/member[@name="MIBICMPSTATS_EX_XPSP1.rgdwTypeCount"]/*' />
     [NativeTypeName("DWORD [256]")]
     public fixed uint rgdwTypeCount[256];
 }

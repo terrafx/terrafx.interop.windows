@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IShellFolderBand.xml' path='doc/member[@name="IShellFolderBand"]/*' />
 [Guid("7FE80CC8-C247-11D0-B93A-00A0C90312E1")]
 [NativeTypeName("struct IShellFolderBand : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IShellFolderBand : IShellFolderBand.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IShellFolderBand : IShellFolderBand.Interface
         return ((delegate* unmanaged<IShellFolderBand*, Guid*, void**, int>)(lpVtbl[0]))((IShellFolderBand*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IShellFolderBand : IShellFolderBand.Interface
         return ((delegate* unmanaged<IShellFolderBand*, uint>)(lpVtbl[1]))((IShellFolderBand*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IShellFolderBand : IShellFolderBand.Interface
         return ((delegate* unmanaged<IShellFolderBand*, uint>)(lpVtbl[2]))((IShellFolderBand*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IShellFolderBand.xml' path='doc/member[@name="IShellFolderBand.InitializeSFB"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT InitializeSFB(IShellFolder* psf, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl)
@@ -46,6 +51,7 @@ public unsafe partial struct IShellFolderBand : IShellFolderBand.Interface
         return ((delegate* unmanaged<IShellFolderBand*, IShellFolder*, ITEMIDLIST*, int>)(lpVtbl[3]))((IShellFolderBand*)Unsafe.AsPointer(ref this), psf, pidl);
     }
 
+    /// <include file='IShellFolderBand.xml' path='doc/member[@name="IShellFolderBand.SetBandInfoSFB"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetBandInfoSFB([NativeTypeName("PBANDINFOSFB")] BANDINFOSFB* pbi)
@@ -53,6 +59,7 @@ public unsafe partial struct IShellFolderBand : IShellFolderBand.Interface
         return ((delegate* unmanaged<IShellFolderBand*, BANDINFOSFB*, int>)(lpVtbl[4]))((IShellFolderBand*)Unsafe.AsPointer(ref this), pbi);
     }
 
+    /// <include file='IShellFolderBand.xml' path='doc/member[@name="IShellFolderBand.GetBandInfoSFB"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetBandInfoSFB([NativeTypeName("PBANDINFOSFB")] BANDINFOSFB* pbi)

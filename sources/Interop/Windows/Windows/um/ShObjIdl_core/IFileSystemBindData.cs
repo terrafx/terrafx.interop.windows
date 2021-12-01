@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IFileSystemBindData.xml' path='doc/member[@name="IFileSystemBindData"]/*' />
 [Guid("01E18D10-4D8B-11D2-855D-006008059367")]
 [NativeTypeName("struct IFileSystemBindData : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IFileSystemBindData : IFileSystemBindData.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IFileSystemBindData : IFileSystemBindData.Interface
         return ((delegate* unmanaged<IFileSystemBindData*, Guid*, void**, int>)(lpVtbl[0]))((IFileSystemBindData*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IFileSystemBindData : IFileSystemBindData.Interface
         return ((delegate* unmanaged<IFileSystemBindData*, uint>)(lpVtbl[1]))((IFileSystemBindData*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IFileSystemBindData : IFileSystemBindData.Interface
         return ((delegate* unmanaged<IFileSystemBindData*, uint>)(lpVtbl[2]))((IFileSystemBindData*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IFileSystemBindData.xml' path='doc/member[@name="IFileSystemBindData.SetFindData"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetFindData([NativeTypeName("const WIN32_FIND_DATAW *")] WIN32_FIND_DATAW* pfd)
@@ -46,6 +51,7 @@ public unsafe partial struct IFileSystemBindData : IFileSystemBindData.Interface
         return ((delegate* unmanaged<IFileSystemBindData*, WIN32_FIND_DATAW*, int>)(lpVtbl[3]))((IFileSystemBindData*)Unsafe.AsPointer(ref this), pfd);
     }
 
+    /// <include file='IFileSystemBindData.xml' path='doc/member[@name="IFileSystemBindData.GetFindData"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetFindData(WIN32_FIND_DATAW* pfd)

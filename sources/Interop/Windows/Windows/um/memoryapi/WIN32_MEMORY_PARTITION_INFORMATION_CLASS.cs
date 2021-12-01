@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WIN32_MEMORY_PARTITION_INFORMATION_CLASS.xml' path='doc/member[@name="WIN32_MEMORY_PARTITION_INFORMATION_CLASS"]/*' />
 public enum WIN32_MEMORY_PARTITION_INFORMATION_CLASS
 {
+    /// <include file='WIN32_MEMORY_PARTITION_INFORMATION_CLASS.xml' path='doc/member[@name="WIN32_MEMORY_PARTITION_INFORMATION_CLASS.MemoryPartitionInfo"]/*' />
     MemoryPartitionInfo,
+
+    /// <include file='WIN32_MEMORY_PARTITION_INFORMATION_CLASS.xml' path='doc/member[@name="WIN32_MEMORY_PARTITION_INFORMATION_CLASS.MemoryPartitionDedicatedMemoryInfo"]/*' />
     MemoryPartitionDedicatedMemoryInfo,
 }

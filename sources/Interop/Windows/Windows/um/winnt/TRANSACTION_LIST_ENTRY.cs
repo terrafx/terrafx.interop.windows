@@ -7,8 +7,10 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TRANSACTION_LIST_ENTRY.xml' path='doc/member[@name="TRANSACTION_LIST_ENTRY"]/*' />
 public partial struct TRANSACTION_LIST_ENTRY
 {
+    /// <include file='TRANSACTION_LIST_ENTRY.xml' path='doc/member[@name="TRANSACTION_LIST_ENTRY.UOW"]/*' />
     [NativeTypeName("UOW")]
     public Guid UOW;
 }

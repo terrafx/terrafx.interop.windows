@@ -5,17 +5,22 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SD_CHANGE_MACHINE_SID_INPUT.xml' path='doc/member[@name="SD_CHANGE_MACHINE_SID_INPUT"]/*' />
 public partial struct SD_CHANGE_MACHINE_SID_INPUT
 {
+    /// <include file='SD_CHANGE_MACHINE_SID_INPUT.xml' path='doc/member[@name="SD_CHANGE_MACHINE_SID_INPUT.CurrentMachineSIDOffset"]/*' />
     [NativeTypeName("WORD")]
     public ushort CurrentMachineSIDOffset;
 
+    /// <include file='SD_CHANGE_MACHINE_SID_INPUT.xml' path='doc/member[@name="SD_CHANGE_MACHINE_SID_INPUT.CurrentMachineSIDLength"]/*' />
     [NativeTypeName("WORD")]
     public ushort CurrentMachineSIDLength;
 
+    /// <include file='SD_CHANGE_MACHINE_SID_INPUT.xml' path='doc/member[@name="SD_CHANGE_MACHINE_SID_INPUT.NewMachineSIDOffset"]/*' />
     [NativeTypeName("WORD")]
     public ushort NewMachineSIDOffset;
 
+    /// <include file='SD_CHANGE_MACHINE_SID_INPUT.xml' path='doc/member[@name="SD_CHANGE_MACHINE_SID_INPUT.NewMachineSIDLength"]/*' />
     [NativeTypeName("WORD")]
     public ushort NewMachineSIDLength;
 }

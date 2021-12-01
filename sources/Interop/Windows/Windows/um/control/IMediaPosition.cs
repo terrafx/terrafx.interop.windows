@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMediaPosition.xml' path='doc/member[@name="IMediaPosition"]/*' />
 [Guid("56A868B2-0AD4-11CE-B03A-0020AF0BA770")]
 [NativeTypeName("struct IMediaPosition : IDispatch")]
 [NativeInheritance("IDispatch")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMediaPosition : IMediaPosition.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMediaPosition : IMediaPosition.Interface
         return ((delegate* unmanaged<IMediaPosition*, Guid*, void**, int>)(lpVtbl[0]))((IMediaPosition*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMediaPosition : IMediaPosition.Interface
         return ((delegate* unmanaged<IMediaPosition*, uint>)(lpVtbl[1]))((IMediaPosition*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMediaPosition : IMediaPosition.Interface
         return ((delegate* unmanaged<IMediaPosition*, uint>)(lpVtbl[2]))((IMediaPosition*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct IMediaPosition : IMediaPosition.Interface
         return ((delegate* unmanaged<IMediaPosition*, uint*, int>)(lpVtbl[3]))((IMediaPosition*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct IMediaPosition : IMediaPosition.Interface
         return ((delegate* unmanaged<IMediaPosition*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IMediaPosition*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
@@ -60,6 +67,7 @@ public unsafe partial struct IMediaPosition : IMediaPosition.Interface
         return ((delegate* unmanaged<IMediaPosition*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IMediaPosition*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
+    /// <inheritdoc cref="IDispatch.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
@@ -67,6 +75,7 @@ public unsafe partial struct IMediaPosition : IMediaPosition.Interface
         return ((delegate* unmanaged<IMediaPosition*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IMediaPosition*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
+    /// <include file='IMediaPosition.xml' path='doc/member[@name="IMediaPosition.get_Duration"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT get_Duration([NativeTypeName("REFTIME *")] double* plength)
@@ -74,6 +83,7 @@ public unsafe partial struct IMediaPosition : IMediaPosition.Interface
         return ((delegate* unmanaged<IMediaPosition*, double*, int>)(lpVtbl[7]))((IMediaPosition*)Unsafe.AsPointer(ref this), plength);
     }
 
+    /// <include file='IMediaPosition.xml' path='doc/member[@name="IMediaPosition.put_CurrentPosition"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT put_CurrentPosition([NativeTypeName("REFTIME")] double llTime)
@@ -81,6 +91,7 @@ public unsafe partial struct IMediaPosition : IMediaPosition.Interface
         return ((delegate* unmanaged<IMediaPosition*, double, int>)(lpVtbl[8]))((IMediaPosition*)Unsafe.AsPointer(ref this), llTime);
     }
 
+    /// <include file='IMediaPosition.xml' path='doc/member[@name="IMediaPosition.get_CurrentPosition"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT get_CurrentPosition([NativeTypeName("REFTIME *")] double* pllTime)
@@ -88,6 +99,7 @@ public unsafe partial struct IMediaPosition : IMediaPosition.Interface
         return ((delegate* unmanaged<IMediaPosition*, double*, int>)(lpVtbl[9]))((IMediaPosition*)Unsafe.AsPointer(ref this), pllTime);
     }
 
+    /// <include file='IMediaPosition.xml' path='doc/member[@name="IMediaPosition.get_StopTime"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT get_StopTime([NativeTypeName("REFTIME *")] double* pllTime)
@@ -95,6 +107,7 @@ public unsafe partial struct IMediaPosition : IMediaPosition.Interface
         return ((delegate* unmanaged<IMediaPosition*, double*, int>)(lpVtbl[10]))((IMediaPosition*)Unsafe.AsPointer(ref this), pllTime);
     }
 
+    /// <include file='IMediaPosition.xml' path='doc/member[@name="IMediaPosition.put_StopTime"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT put_StopTime([NativeTypeName("REFTIME")] double llTime)
@@ -102,6 +115,7 @@ public unsafe partial struct IMediaPosition : IMediaPosition.Interface
         return ((delegate* unmanaged<IMediaPosition*, double, int>)(lpVtbl[11]))((IMediaPosition*)Unsafe.AsPointer(ref this), llTime);
     }
 
+    /// <include file='IMediaPosition.xml' path='doc/member[@name="IMediaPosition.get_PrerollTime"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT get_PrerollTime([NativeTypeName("REFTIME *")] double* pllTime)
@@ -109,6 +123,7 @@ public unsafe partial struct IMediaPosition : IMediaPosition.Interface
         return ((delegate* unmanaged<IMediaPosition*, double*, int>)(lpVtbl[12]))((IMediaPosition*)Unsafe.AsPointer(ref this), pllTime);
     }
 
+    /// <include file='IMediaPosition.xml' path='doc/member[@name="IMediaPosition.put_PrerollTime"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT put_PrerollTime([NativeTypeName("REFTIME")] double llTime)
@@ -116,6 +131,7 @@ public unsafe partial struct IMediaPosition : IMediaPosition.Interface
         return ((delegate* unmanaged<IMediaPosition*, double, int>)(lpVtbl[13]))((IMediaPosition*)Unsafe.AsPointer(ref this), llTime);
     }
 
+    /// <include file='IMediaPosition.xml' path='doc/member[@name="IMediaPosition.put_Rate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT put_Rate(double dRate)
@@ -123,6 +139,7 @@ public unsafe partial struct IMediaPosition : IMediaPosition.Interface
         return ((delegate* unmanaged<IMediaPosition*, double, int>)(lpVtbl[14]))((IMediaPosition*)Unsafe.AsPointer(ref this), dRate);
     }
 
+    /// <include file='IMediaPosition.xml' path='doc/member[@name="IMediaPosition.get_Rate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT get_Rate(double* pdRate)
@@ -130,6 +147,7 @@ public unsafe partial struct IMediaPosition : IMediaPosition.Interface
         return ((delegate* unmanaged<IMediaPosition*, double*, int>)(lpVtbl[15]))((IMediaPosition*)Unsafe.AsPointer(ref this), pdRate);
     }
 
+    /// <include file='IMediaPosition.xml' path='doc/member[@name="IMediaPosition.CanSeekForward"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT CanSeekForward([NativeTypeName("LONG *")] int* pCanSeekForward)
@@ -137,6 +155,7 @@ public unsafe partial struct IMediaPosition : IMediaPosition.Interface
         return ((delegate* unmanaged<IMediaPosition*, int*, int>)(lpVtbl[16]))((IMediaPosition*)Unsafe.AsPointer(ref this), pCanSeekForward);
     }
 
+    /// <include file='IMediaPosition.xml' path='doc/member[@name="IMediaPosition.CanSeekBackward"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT CanSeekBackward([NativeTypeName("LONG *")] int* pCanSeekBackward)

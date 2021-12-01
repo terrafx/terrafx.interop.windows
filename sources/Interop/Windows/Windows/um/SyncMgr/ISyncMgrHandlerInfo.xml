@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ISyncMgrHandlerInfo.GetComment">
+    <summary>
+      <para>Gets a string that contains commentary regarding the handler.</para>
+    </summary>
+    <param name="ppszComment">
+      <para>Type: <b>LPWSTR*</b></para>
+      <para>When this method returns, contains a pointer to a buffer containing the comment string. This string is of maximum length MAX_SYNCMGR_NAME including the terminating null character.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_OK if successful, or an error value otherwise. If the method fails, <i>ppszComment</i> contains an empty string.</para>
+    </returns>
+    <remarks>
+      <para>This string could be provided by a handler to display a summary of contents of the partnership, for instance "32 contacts" or "13 songs". The string can have a maximum length of MAX_SYNCMGR_NAME including the terminating null character.</para>
+      <para>The comment value is displayed as the System.Sync.Comments (PKEY_Sync_Comments) property in the folder UI when a synchronization is not being performed.</para>
+      <para>Sync Center calls this method whenever the <see cref="UpdateHandler" /> method is called.</para>
+      <para>The handler is responsible for allocating the string buffer pointed to by <i>ppszComment</i> through <see cref="CoTaskMemAlloc" />. Sync Center deallocates the string buffer through <see cref="CoTaskMemFree" />.</para>
+    </remarks>
+  </member>
+  <member name="ISyncMgrHandlerInfo.GetLastSyncTime">
+    <summary>
+      <para>Gets the date and time when the handler was last synchronized.</para>
+    </summary>
+    <param name="pftLastSync">
+      <para>Type: <b>FILETIME*</b></para>
+      <para>When this method returns, contains a pointer to a <see cref="FILETIME" /> structure containing the date and time information.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_OK if successful, or an error value otherwise. If the method fails, <i>pftLastSync</i> points to the value from the previous synchronization.</para>
+    </returns>
+    <remarks>
+      <para>This value is not displayed in the folder UI by default, but is available as the System.Sync.DateSynchronized (PKEY_Sync_DateSynchronized) property.</para>
+      <para>Sync Center calls this method whenever the <see cref="UpdateHandler" /> method is called.</para>
+      <h4>Examples</h4>
+      <para>The following example shows an implementation of this method that calls a private class function to retrieve the time and date.</para>
+      <code>STDMETHODIMP CMyDeviceHandler.GetLastSyncTime(__out FILETIME *pftLastSync)
+{
+    *pftLastSync = _ftLastSync;
+    return S_OK;
+}
+
+</code>
+    </remarks>
+  </member>
+  <member name="ISyncMgrHandlerInfo.GetType">
+    <summary>
+      <para>Gets the handler type for Sync Center.</para>
+    </summary>
+    <param name="pnType">
+      <para>Type: <b><see cref="SYNCMGR_HANDLER_TYPE" />*</b></para>
+      <para>When this method returns, points to a value from the <see cref="SYNCMGR_HANDLER_TYPE" /> enumeration that specifies the handler type. If the method fails, this parameter points to <see cref="SYNCMGR_HT_UNSPECIFIED" />.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_OK if successful, or an error value otherwise. If the method fails, <i>pnType</i> is set to <see cref="SYNCMGR_HT_UNSPECIFIED" />.</para>
+    </returns>
+    <remarks>
+      <para>Typically, this value does not change. However, Sync Center calls this method whenever the <see cref="UpdateHandler" /> method is called.</para>
+      <h4>Examples</h4>
+      <para>The following example shows an implementation of this method.</para>
+      <code>STDMETHODIMP CMyDeviceHandler.GetType(__out SYNCMGR_HANDLER_TYPE *pnType)
+{
+    *pnType = SYNCMGR_HT_DEVICE;
+    return S_OK;
+
+</code>
+    </remarks>
+  </member>
+  <member name="ISyncMgrHandlerInfo.GetTypeLabel">
+    <summary>
+      <para>Gets a label for the handler type. This typically provides the model of the device or an equivalent handler-specific identity string.</para>
+    </summary>
+    <param name="ppszTypeLabel">
+      <para>Type: <b>LPWSTR*</b></para>
+      <para>When this method returns, contains a pointer to a buffer containing the label string.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_OK if successful, or an error value otherwise. If the method fails, <i>ppszTypeLabel</i> contains an empty string.</para>
+    </returns>
+    <remarks>
+      <para>The label value is displayed as the System.Sync.HandlerTypeLabel (PKEY_Sync_HandlerTypeLabel) property in the folder UI. Sync Center calls this method whenever the <see cref="UpdateHandler" /> method is called.</para>
+      <para>The handler is responsible for allocating the string buffer pointed to by <i>ppszTypeLabel</i> through <see cref="CoTaskMemAlloc" />. Sync Center deallocates the string buffer through <see cref="CoTaskMemFree" />.</para>
+      <h4>Examples</h4>
+      <para>The following example shows an implementation of this method.</para>
+      <code>STDMETHODIMP CMyDeviceHandler.GetTypeLabel(__out LPWSTR *ppszTypeLabel)
+{
+    LPWSTR pszTypeLabel = NULL;
+
+    HRESULT hr = LoadStringAlloc(g_hmodThisDll,
+                                 IDS_HANDLER_TYPE_LABEL,
+                                 &amp;amp;amp;amp;amp;amp;pszTypeLabel);
+    if (SUCCEEDED(hr))
+    {
+        // Duplicate for the caller.
+        hr = SHCoAllocString(pszTypeLabel, ppszTypeLabel);
+        LocalFree(pszTypeLabel);
+    }
+
+    return hr;
+}
+
+</code>
+    </remarks>
+  </member>
+  <member name="ISyncMgrHandlerInfo.IsActive">
+    <summary>
+      <para>Gets a value that indicates whether the handler can be synchronized.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_OK if the handler is active; otherwise, S_FALSE.</para>
+      <para>If the handler wants Sync Center to maintain the current state, it can return E_NOTIMPL. If any other value is returned, Sync Center sets the handler's state to the last known value. If the handler's last known value in that situation was inactive, Sync Center disables the <b>Setup</b> task. If the handler's last known value was active, the <b>Delete</b> task is not disabled.</para>
+      <para>If either the SYNCMGR_HCM_QUERY_BEFORE_ACTIVATE or SYNCMGR_HCM_QUERY_BEFORE_DEACTIVE flag is set in the mask returned from <see cref="GetCapabilities" />, the handler must manage its own activation state and therefore must return either S_OK or S_FALSE. Any other return value will be considered an error.</para>
+    </returns>
+    <remarks>
+      <para>If a handler is not active, it appears in the Sync Setup folder. Handlers in that folder cannot be synchronized. To move a handler to the Sync Center folder, the user selects the <b>Setup</b> task on the handler's shortcut menu or from the command module.</para>
+      <para>If a handler is active it appears in the main Sync Center folder. A handler that is active can be synchronized either by the user or through the <see cref="ISyncMgrControl" /> interface. To move a handler to the Sync Setup folder, the user selects the <b>Delete</b> task on the handler's shortcut menu or on the command module.</para>
+      <para>Sync Center calls this method whenever the <see cref="UpdateHandler" /> method is called.</para>
+      <h4>Examples</h4>
+      <para>The following example shows an implementation of this method that calls a private class function to retrieve the active state.</para>
+      <code>STDMETHODIMP CMyDeviceHandler.IsActive()
+{
+    // Return a previously-calculated value.
+    return (_fIsActive ? S_OK : S_FALSE);
+}
+
+</code>
+    </remarks>
+    <seealso cref="Activate" />
+    <seealso cref="ISyncMgrHandlerInfo" />
+  </member>
+  <member name="ISyncMgrHandlerInfo.IsConnected">
+    <summary>
+      <para>Gets a value that indicates whether the handler—typically some type of external device—is connected.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_OK if the handler is connected; otherwise, S_FALSE. An error returned by this method will be interpreted as S_OK.</para>
+    </returns>
+    <remarks>
+      <para>If a handler is disconnected, neither it nor any of its items will be synchronized by Sync Center. Also, many of the possible actions available to a handler—such as Sync—are removed or disabled in the Sync Center folder UI.</para>
+      <para>This value is available in the folder UI as the System.Sync.Connected (PKEY_Sync_Connected) property.</para>
+      <para>Sync Center calls this method whenever the <see cref="UpdateHandler" /> method is called.</para>
+      <h4>Examples</h4>
+      <para>The following example shows an implementation of this method that calls a private class function to retrieve the connected state.</para>
+      <code>STDMETHODIMP CMyDeviceHandler.IsConnected()
+{
+    return (_IsConnected() ? S_OK : S_FALSE);
+}
+
+</code>
+    </remarks>
+  </member>
+  <member name="ISyncMgrHandlerInfo.IsEnabled">
+    <summary>
+      <para>Gets a value that indicates whether the handler is enabled.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_OK if the handler is enabled; otherwise, S_FALSE.</para>
+      <para>If the handler wants Sync Center to maintain the current state, it can return E_NOTIMPL. If any other value is returned, Sync Center sets the handler's enabled state to the last known value and enables or disables the associated tasks as appropriate.</para>
+      <para>If either the SYNCMGR_HCM_QUERY_BEFORE_ENABLE or SYNCMGR_HCM_QUERY_BEFORE_DISABLE flag is set in the mask returned from <see cref="GetCapabilities" />, the handler must manage its own enabled state and therefore must return either S_OK or S_FALSE. Any other return value will be considered an error.</para>
+    </returns>
+    <remarks>
+      <para>If a handler is disabled, neither it nor any of its items will be synchronized by Sync Center. Also, many of the possible actions available to a handler—such as Sync—are removed or disabled in the Sync Center folder UI.</para>
+      <para>This value is available in the folder UI as the System.Sync.Enabled (PKEY_Sync_Enabled) property.</para>
+      <para>Sync Center calls this method whenever the <see cref="UpdateHandler" /> method is called.</para>
+      <h4>Examples</h4>
+      <para>The following example shows an implementation of this method that calls a private class function to retrieve the enabled state.</para>
+      <code>STDMETHODIMP CMyDeviceHandler.IsEnabled()
+{
+    // Return a previously-calculated value.
+    return (_fIsEnabled ? S_OK : S_FALSE);
+}
+
+</code>
+    </remarks>
+    <seealso cref="Enable" />
+    <seealso cref="ISyncMgrHandlerInfo" />
+  </member>
+  <member name="ISyncMgrHandlerInfo">
+    <summary>
+      <para>Exposes methods that allow a handler to provide property and state information to Sync Center.</para>
+    </summary>
+    <remarks>
+      <para>Handlers should always implement this interface, generally on the same object that implements <see cref="ISyncMgrHandler" />. By implementing <b>ISyncMgrHandlerInfo</b>, the set of properties can be changed without requiring the handler to be recompiled. It also provides type-safe access to the properties.</para>
+    </remarks>
+  </member>
+</doc>

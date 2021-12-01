@@ -5,13 +5,17 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SCM_PD_REINITIALIZE_MEDIA_OUTPUT.xml' path='doc/member[@name="SCM_PD_REINITIALIZE_MEDIA_OUTPUT"]/*' />
 public partial struct SCM_PD_REINITIALIZE_MEDIA_OUTPUT
 {
+    /// <include file='SCM_PD_REINITIALIZE_MEDIA_OUTPUT.xml' path='doc/member[@name="SCM_PD_REINITIALIZE_MEDIA_OUTPUT.Version"]/*' />
     [NativeTypeName("DWORD")]
     public uint Version;
 
+    /// <include file='SCM_PD_REINITIALIZE_MEDIA_OUTPUT.xml' path='doc/member[@name="SCM_PD_REINITIALIZE_MEDIA_OUTPUT.Size"]/*' />
     [NativeTypeName("DWORD")]
     public uint Size;
 
+    /// <include file='SCM_PD_REINITIALIZE_MEDIA_OUTPUT.xml' path='doc/member[@name="SCM_PD_REINITIALIZE_MEDIA_OUTPUT.Status"]/*' />
     public SCM_PD_MEDIA_REINITIALIZATION_STATUS Status;
 }

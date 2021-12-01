@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PAGEPARTS.xml' path='doc/member[@name="PAGEPARTS"]/*' />
 public enum PAGEPARTS
 {
+    /// <include file='PAGEPARTS.xml' path='doc/member[@name="PAGEPARTS.PGRP_UP"]/*' />
     PGRP_UP = 1,
+
+    /// <include file='PAGEPARTS.xml' path='doc/member[@name="PAGEPARTS.PGRP_DOWN"]/*' />
     PGRP_DOWN = 2,
+
+    /// <include file='PAGEPARTS.xml' path='doc/member[@name="PAGEPARTS.PGRP_UPHORZ"]/*' />
     PGRP_UPHORZ = 3,
+
+    /// <include file='PAGEPARTS.xml' path='doc/member[@name="PAGEPARTS.PGRP_DOWNHORZ"]/*' />
     PGRP_DOWNHORZ = 4,
 }

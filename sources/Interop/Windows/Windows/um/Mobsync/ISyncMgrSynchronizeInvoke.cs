@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ISyncMgrSynchronizeInvoke.xml' path='doc/member[@name="ISyncMgrSynchronizeInvoke"]/*' />
 [Guid("6295DF2C-35EE-11D1-8707-00C04FD93327")]
 [NativeTypeName("struct ISyncMgrSynchronizeInvoke : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ISyncMgrSynchronizeInvoke : ISyncMgrSynchronizeInvo
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ISyncMgrSynchronizeInvoke : ISyncMgrSynchronizeInvo
         return ((delegate* unmanaged<ISyncMgrSynchronizeInvoke*, Guid*, void**, int>)(lpVtbl[0]))((ISyncMgrSynchronizeInvoke*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ISyncMgrSynchronizeInvoke : ISyncMgrSynchronizeInvo
         return ((delegate* unmanaged<ISyncMgrSynchronizeInvoke*, uint>)(lpVtbl[1]))((ISyncMgrSynchronizeInvoke*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ISyncMgrSynchronizeInvoke : ISyncMgrSynchronizeInvo
         return ((delegate* unmanaged<ISyncMgrSynchronizeInvoke*, uint>)(lpVtbl[2]))((ISyncMgrSynchronizeInvoke*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ISyncMgrSynchronizeInvoke.xml' path='doc/member[@name="ISyncMgrSynchronizeInvoke.UpdateItems"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT UpdateItems([NativeTypeName("DWORD")] uint dwInvokeFlags, [NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("DWORD")] uint cbCookie, [NativeTypeName("const BYTE *")] byte* pCookie)
@@ -46,6 +51,7 @@ public unsafe partial struct ISyncMgrSynchronizeInvoke : ISyncMgrSynchronizeInvo
         return ((delegate* unmanaged<ISyncMgrSynchronizeInvoke*, uint, Guid*, uint, byte*, int>)(lpVtbl[3]))((ISyncMgrSynchronizeInvoke*)Unsafe.AsPointer(ref this), dwInvokeFlags, clsid, cbCookie, pCookie);
     }
 
+    /// <include file='ISyncMgrSynchronizeInvoke.xml' path='doc/member[@name="ISyncMgrSynchronizeInvoke.UpdateAll"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT UpdateAll()

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IElementBehaviorRender.xml' path='doc/member[@name="IElementBehaviorRender"]/*' />
 [Guid("3050F4AA-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IElementBehaviorRender : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IElementBehaviorRender : IElementBehaviorRender.Int
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IElementBehaviorRender : IElementBehaviorRender.Int
         return ((delegate* unmanaged<IElementBehaviorRender*, Guid*, void**, int>)(lpVtbl[0]))((IElementBehaviorRender*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IElementBehaviorRender : IElementBehaviorRender.Int
         return ((delegate* unmanaged<IElementBehaviorRender*, uint>)(lpVtbl[1]))((IElementBehaviorRender*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IElementBehaviorRender : IElementBehaviorRender.Int
         return ((delegate* unmanaged<IElementBehaviorRender*, uint>)(lpVtbl[2]))((IElementBehaviorRender*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IElementBehaviorRender.xml' path='doc/member[@name="IElementBehaviorRender.Draw"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Draw(HDC hdc, [NativeTypeName("LONG")] int lLayer, RECT* pRect, IUnknown* pReserved)
@@ -46,6 +51,7 @@ public unsafe partial struct IElementBehaviorRender : IElementBehaviorRender.Int
         return ((delegate* unmanaged<IElementBehaviorRender*, HDC, int, RECT*, IUnknown*, int>)(lpVtbl[3]))((IElementBehaviorRender*)Unsafe.AsPointer(ref this), hdc, lLayer, pRect, pReserved);
     }
 
+    /// <include file='IElementBehaviorRender.xml' path='doc/member[@name="IElementBehaviorRender.GetRenderInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetRenderInfo([NativeTypeName("LONG *")] int* plRenderInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct IElementBehaviorRender : IElementBehaviorRender.Int
         return ((delegate* unmanaged<IElementBehaviorRender*, int*, int>)(lpVtbl[4]))((IElementBehaviorRender*)Unsafe.AsPointer(ref this), plRenderInfo);
     }
 
+    /// <include file='IElementBehaviorRender.xml' path='doc/member[@name="IElementBehaviorRender.HitTestPoint"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT HitTestPoint(POINT* pPoint, IUnknown* pReserved, BOOL* pbHit)

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAudioInputSelector.xml' path='doc/member[@name="IAudioInputSelector"]/*' />
 [Guid("4F03DC02-5E6E-4653-8F72-A030C123D598")]
 [NativeTypeName("struct IAudioInputSelector : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IAudioInputSelector : IAudioInputSelector.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IAudioInputSelector : IAudioInputSelector.Interface
         return ((delegate* unmanaged<IAudioInputSelector*, Guid*, void**, int>)(lpVtbl[0]))((IAudioInputSelector*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IAudioInputSelector : IAudioInputSelector.Interface
         return ((delegate* unmanaged<IAudioInputSelector*, uint>)(lpVtbl[1]))((IAudioInputSelector*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IAudioInputSelector : IAudioInputSelector.Interface
         return ((delegate* unmanaged<IAudioInputSelector*, uint>)(lpVtbl[2]))((IAudioInputSelector*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAudioInputSelector.xml' path='doc/member[@name="IAudioInputSelector.GetSelection"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetSelection(uint* pnIdSelected)
@@ -46,6 +51,7 @@ public unsafe partial struct IAudioInputSelector : IAudioInputSelector.Interface
         return ((delegate* unmanaged<IAudioInputSelector*, uint*, int>)(lpVtbl[3]))((IAudioInputSelector*)Unsafe.AsPointer(ref this), pnIdSelected);
     }
 
+    /// <include file='IAudioInputSelector.xml' path='doc/member[@name="IAudioInputSelector.SetSelection"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetSelection(uint nIdSelect, [NativeTypeName("LPCGUID")] Guid* pguidEventContext)

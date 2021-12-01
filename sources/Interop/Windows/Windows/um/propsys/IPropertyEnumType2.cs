@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IPropertyEnumType2.xml' path='doc/member[@name="IPropertyEnumType2"]/*' />
 [Guid("9B6E051C-5DDD-4321-9070-FE2ACB55E794")]
 [NativeTypeName("struct IPropertyEnumType2 : IPropertyEnumType")]
 [NativeInheritance("IPropertyEnumType")]
@@ -16,6 +17,7 @@ public unsafe partial struct IPropertyEnumType2 : IPropertyEnumType2.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IPropertyEnumType2 : IPropertyEnumType2.Interface
         return ((delegate* unmanaged<IPropertyEnumType2*, Guid*, void**, int>)(lpVtbl[0]))((IPropertyEnumType2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IPropertyEnumType2 : IPropertyEnumType2.Interface
         return ((delegate* unmanaged<IPropertyEnumType2*, uint>)(lpVtbl[1]))((IPropertyEnumType2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IPropertyEnumType2 : IPropertyEnumType2.Interface
         return ((delegate* unmanaged<IPropertyEnumType2*, uint>)(lpVtbl[2]))((IPropertyEnumType2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IPropertyEnumType.GetEnumType" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetEnumType(PROPENUMTYPE* penumtype)
@@ -46,6 +51,7 @@ public unsafe partial struct IPropertyEnumType2 : IPropertyEnumType2.Interface
         return ((delegate* unmanaged<IPropertyEnumType2*, PROPENUMTYPE*, int>)(lpVtbl[3]))((IPropertyEnumType2*)Unsafe.AsPointer(ref this), penumtype);
     }
 
+    /// <inheritdoc cref="IPropertyEnumType.GetValue" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetValue(PROPVARIANT* ppropvar)
@@ -53,6 +59,7 @@ public unsafe partial struct IPropertyEnumType2 : IPropertyEnumType2.Interface
         return ((delegate* unmanaged<IPropertyEnumType2*, PROPVARIANT*, int>)(lpVtbl[4]))((IPropertyEnumType2*)Unsafe.AsPointer(ref this), ppropvar);
     }
 
+    /// <inheritdoc cref="IPropertyEnumType.GetRangeMinValue" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetRangeMinValue(PROPVARIANT* ppropvarMin)
@@ -60,6 +67,7 @@ public unsafe partial struct IPropertyEnumType2 : IPropertyEnumType2.Interface
         return ((delegate* unmanaged<IPropertyEnumType2*, PROPVARIANT*, int>)(lpVtbl[5]))((IPropertyEnumType2*)Unsafe.AsPointer(ref this), ppropvarMin);
     }
 
+    /// <inheritdoc cref="IPropertyEnumType.GetRangeSetValue" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetRangeSetValue(PROPVARIANT* ppropvarSet)
@@ -67,6 +75,7 @@ public unsafe partial struct IPropertyEnumType2 : IPropertyEnumType2.Interface
         return ((delegate* unmanaged<IPropertyEnumType2*, PROPVARIANT*, int>)(lpVtbl[6]))((IPropertyEnumType2*)Unsafe.AsPointer(ref this), ppropvarSet);
     }
 
+    /// <inheritdoc cref="IPropertyEnumType.GetDisplayText" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetDisplayText([NativeTypeName("LPWSTR *")] ushort** ppszDisplay)
@@ -74,6 +83,7 @@ public unsafe partial struct IPropertyEnumType2 : IPropertyEnumType2.Interface
         return ((delegate* unmanaged<IPropertyEnumType2*, ushort**, int>)(lpVtbl[7]))((IPropertyEnumType2*)Unsafe.AsPointer(ref this), ppszDisplay);
     }
 
+    /// <include file='IPropertyEnumType2.xml' path='doc/member[@name="IPropertyEnumType2.GetImageReference"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetImageReference([NativeTypeName("LPWSTR *")] ushort** ppszImageRes)

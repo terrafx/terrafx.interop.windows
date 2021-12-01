@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DISPID_SpeechAudioStatus.xml' path='doc/member[@name="DISPID_SpeechAudioStatus"]/*' />
 public enum DISPID_SpeechAudioStatus
 {
+    /// <include file='DISPID_SpeechAudioStatus.xml' path='doc/member[@name="DISPID_SpeechAudioStatus.DISPID_SASFreeBufferSpace"]/*' />
     DISPID_SASFreeBufferSpace = 1,
+
+    /// <include file='DISPID_SpeechAudioStatus.xml' path='doc/member[@name="DISPID_SpeechAudioStatus.DISPID_SASNonBlockingIO"]/*' />
     DISPID_SASNonBlockingIO = (DISPID_SASFreeBufferSpace + 1),
+
+    /// <include file='DISPID_SpeechAudioStatus.xml' path='doc/member[@name="DISPID_SpeechAudioStatus.DISPID_SASState"]/*' />
     DISPID_SASState = (DISPID_SASNonBlockingIO + 1),
+
+    /// <include file='DISPID_SpeechAudioStatus.xml' path='doc/member[@name="DISPID_SpeechAudioStatus.DISPID_SASCurrentSeekPosition"]/*' />
     DISPID_SASCurrentSeekPosition = (DISPID_SASState + 1),
+
+    /// <include file='DISPID_SpeechAudioStatus.xml' path='doc/member[@name="DISPID_SpeechAudioStatus.DISPID_SASCurrentDevicePosition"]/*' />
     DISPID_SASCurrentDevicePosition = (DISPID_SASCurrentSeekPosition + 1),
 }

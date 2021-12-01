@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MF_MSE_OPUS_SUPPORT_TYPE.xml' path='doc/member[@name="MF_MSE_OPUS_SUPPORT_TYPE"]/*' />
 public enum MF_MSE_OPUS_SUPPORT_TYPE
 {
+    /// <include file='MF_MSE_OPUS_SUPPORT_TYPE.xml' path='doc/member[@name="MF_MSE_OPUS_SUPPORT_TYPE.MF_MSE_OPUS_SUPPORT_ON"]/*' />
     MF_MSE_OPUS_SUPPORT_ON = 0,
+
+    /// <include file='MF_MSE_OPUS_SUPPORT_TYPE.xml' path='doc/member[@name="MF_MSE_OPUS_SUPPORT_TYPE.MF_MSE_OPUS_SUPPORT_OFF"]/*' />
     MF_MSE_OPUS_SUPPORT_OFF = 1,
 }

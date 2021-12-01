@@ -5,8 +5,10 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='FILE_CASE_SENSITIVE_INFO.xml' path='doc/member[@name="FILE_CASE_SENSITIVE_INFO"]/*' />
 public partial struct FILE_CASE_SENSITIVE_INFO
 {
+    /// <include file='FILE_CASE_SENSITIVE_INFO.xml' path='doc/member[@name="FILE_CASE_SENSITIVE_INFO.Flags"]/*' />
     [NativeTypeName("ULONG")]
     public uint Flags;
 }

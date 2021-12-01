@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DVD_FRAMERATE">
+    <summary>
+      <para>Indicates whether the DVD is authored to play at 25 or 30 frames per second.</para>
+    </summary>
+    <remarks>
+      <para>You must know the frame rate to interpret the frame count as time.</para>
+    </remarks>
+    <seealso cref="DVD_TIMECODE" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-enumerated-types">DirectShow Enumerated Types</seealso>
+  </member>
+  <member name="DVD_FRAMERATE.DVD_FPS_25">
+    <summary>
+      <para>Twenty-five frames per second.</para>
+    </summary>
+  </member>
+  <member name="DVD_FRAMERATE.DVD_FPS_30NonDrop">
+    <summary>
+      <para>Exactly 30 frames per second.</para>
+    </summary>
+  </member>
+</doc>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="LVINSERTGROUPSORTED">
+    <summary>
+      <para>Used to sort groups. It is used with <a href="https://docs.microsoft.com//windows/desktop/Controls/lvm-insertgroupsorted">LVM_INSERTGROUPSORTED</a>.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/commctrl/nc-commctrl-pfnlvgroupcompare">LVGroupCompare</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Controls/lvm-insertgroupsorted">LVM_INSERTGROUPSORTED</seealso>
+  </member>
+  <member name="LVINSERTGROUPSORTED.pfnGroupCompare">
+    <summary>
+      <para>Type: <b>PFNLVGROUPCOMPARE</b></para>
+      <para>Pointer to application-defined function <a href="https://docs.microsoft.com//windows/desktop/api/commctrl/nc-commctrl-pfnlvgroupcompare">LVGroupCompare</a> that is used to sort the groups.</para>
+    </summary>
+  </member>
+  <member name="LVINSERTGROUPSORTED.pvData">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPVOID</a>*</b></para>
+      <para>Data to sort; this is application-defined.</para>
+    </summary>
+  </member>
+  <member name="LVINSERTGROUPSORTED.lvGroup">
+    <summary>
+      <para>Type: <b><see cref="LVGROUP" /></b></para>
+      <para>Group to sort; this is application-defined.</para>
+    </summary>
+  </member>
+</doc>

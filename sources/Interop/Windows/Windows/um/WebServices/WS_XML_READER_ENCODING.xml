@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_XML_READER_ENCODING">
+    <summary>
+      <para>This structure is the base type for all the different kinds of reader encodings.</para>
+    </summary>
+  </member>
+  <member name="WS_XML_READER_ENCODING.encodingType">
+    <summary>
+      <para>Indicates the type of encoding this structure refers to.</para>
+    </summary>
+  </member>
+</doc>

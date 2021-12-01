@@ -5,13 +5,17 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SHRINK_VOLUME_INFORMATION.xml' path='doc/member[@name="SHRINK_VOLUME_INFORMATION"]/*' />
 public partial struct SHRINK_VOLUME_INFORMATION
 {
+    /// <include file='SHRINK_VOLUME_INFORMATION.xml' path='doc/member[@name="SHRINK_VOLUME_INFORMATION.ShrinkRequestType"]/*' />
     public SHRINK_VOLUME_REQUEST_TYPES ShrinkRequestType;
 
+    /// <include file='SHRINK_VOLUME_INFORMATION.xml' path='doc/member[@name="SHRINK_VOLUME_INFORMATION.Flags"]/*' />
     [NativeTypeName("DWORDLONG")]
     public ulong Flags;
 
+    /// <include file='SHRINK_VOLUME_INFORMATION.xml' path='doc/member[@name="SHRINK_VOLUME_INFORMATION.NewNumberOfSectors"]/*' />
     [NativeTypeName("LONGLONG")]
     public long NewNumberOfSectors;
 }

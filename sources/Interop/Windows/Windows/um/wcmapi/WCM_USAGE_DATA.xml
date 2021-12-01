@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WCM_USAGE_DATA">
+    <summary>
+      <para>The <b>WCM_USAGE_DATA</b> structure contains information related to connection  usage.</para>
+    </summary>
+  </member>
+  <member name="WCM_USAGE_DATA.UsageInMegabytes">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The connection usage, in megabytes.</para>
+    </summary>
+  </member>
+  <member name="WCM_USAGE_DATA.LastSyncTime">
+    <summary>
+      <para>Type: <b>FILETIME</b></para>
+      <para>Specifies the last time that usage information was reconciled with the carrier's billing system.</para>
+    </summary>
+  </member>
+</doc>

@@ -1,0 +1,683 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IFsiFileItem2.AddStream">
+    <summary>
+      <para>Associates a named stream with a specific file in the file system image.</para>
+    </summary>
+    <param name="name">
+      <para>A string represents the name of the named stream. This should not include the path and should only contain valid characters as per file system naming conventions.</para>
+    </param>
+    <param name="streamData">
+      <para>An <b>IStream</b> interface of the named stream used to write to the resultant file system image.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code/value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAPI_S_IMAGE_FEATURE_NOT_SUPPORTED</b>
+                </description>
+              </item>
+              <item>
+                <description>Value: 0x00AAB15FL</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Feature is not supported for the current file system revision, and as a result, will be created without this feature.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_POINTER</b>
+                </description>
+              </item>
+              <item>
+                <description>Value: 0x80004003</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Pointer is not valid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAPI_E_INVALID_PARAM</b>
+                </description>
+              </item>
+              <item>
+                <description>Value: 0xC0AAB101</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The value specified for parameter '<i>%1!ls!</i>' is invalid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAPI_E_NOT_IN_FILE_SYSTEM</b>
+                </description>
+              </item>
+              <item>
+                <description>Value: 0xC0AAB10B</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <i>ls!'</i> is not part of the file system. It must be added to complete this operation.
+</description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAPI_E_READONLY</b>
+                </description>
+              </item>
+              <item>
+                <description>Value: 0xC0AAB102</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The referenced <see cref="IFileSystemImage" /> object is in read only mode.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAPI_E_FSI_INTERNAL_ERROR</b>
+                </description>
+              </item>
+              <item>
+                <description>Value: 0xC0AAB100L</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Internal file system error has occurred.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAPI_E_DUP_NAME</b>
+                </description>
+              </item>
+              <item>
+                <description>Value: 0xC0AAB112L</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <i>'%1!ls!'</i> name already exists.
+</description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAPI_E_DATA_STREAM_READ_FAILURE</b>
+                </description>
+              </item>
+              <item>
+                <description>Value: 0xC0AAB129L</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Cannot read data from stream supplied for file <i>'%1!ls!'</i>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAPI_E_IMAGE_SIZE_LIMIT</b>
+                </description>
+              </item>
+              <item>
+                <description>Value: 0xC0AAB120L</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Adding <i>'%1!ls!'</i> would result in a result image having a size larger than the current configured limit.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAPI_E_DATA_STREAM_INCONSISTENCY</b>
+                </description>
+              </item>
+              <item>
+                <description>Value: 0xC0AAB128L</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The data stream supplied for the file <i>'%1!ls!'</i> is inconsistent; expected <i>%2!I64d!</i> bytes, found <i>%3!I64d!</i></para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_OUTOFMEMORY</b>
+                </description>
+              </item>
+              <item>
+                <description>Value: 0x8007000EL</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Failed to allocate required memory.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The file to which the named stream will be added must already exist within the file system image. If this method is called with a <i>name</i> that already exists for a named stream, it will return an error and will not replace the existing named stream.</para>
+      <para>If this method is invoked for a file system object that does not contain UDF in the list of file systems enabled for creation in the resultant image or if the UDF revision is below 2.00, this method returns success code <b>IMAPI_S_IMAGE_FEATURE_NOT_SUPPORTED</b>. This success code indicates that the named stream has been added but will not appear in the resultant file system image unless UDF revision 2.00 or higher is enabled in the file system object.</para>
+      <para>Currently, <b>IMAPI_E_READONLY</b> is returned when this method is called on an imported file system image, regardless of the read only status of the image.</para>
+      <para>This method is supported in Windows Server 2003 with Service Pack 1 (SP1), Windows XP with Service Pack 2 (SP2),  and Windows Vista  via the Windows Feature Pack for Storage. All  features provided by this  update package are supported natively in Windows 7 and Windows Server 2008 R2.</para>
+    </remarks>
+    <seealso cref="IFsiFileItem2" />
+  </member>
+  <member name="IFsiFileItem2.get_FsiNamedStreams">
+    <summary>
+      <para>Retrieves a collection of named streams associated with a file in the file system image.</para>
+    </summary>
+    <param name="streams">
+      <para>Pointer to an <see cref="IFsiNamedStreams" /> object that represents a collection of named streams associated with the file.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code/value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_POINTER</b>
+                </description>
+              </item>
+              <item>
+                <description>Value: 0x80004003</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Invalid pointer.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAPI_E_PROPERTY_NOT_ACCESSIBLE</b>
+                </description>
+              </item>
+              <item>
+                <description>Value: 0xC0AAB160L</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Property '<i>%1!ls!</i>' is not accessible.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_OUTOFMEMORY</b>
+                </description>
+              </item>
+              <item>
+                <description>Value: 0x8007000E</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Failed to allocate necessary memory.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>If this method is invoked for a file item which itself represents a named stream, the <b>IMAPI_E_PROPERTY_NOT_ACCESSIBLE</b> error code is returned, as a named streams cannot contain additional named streams.</para>
+      <para>The user must enable UDF and set the UDF revision to 2.00 or higher to support named streams.</para>
+      <para>This method is supported in Windows Server 2003 with Service Pack 1 (SP1), Windows XP with Service Pack 2 (SP2),  and Windows Vista  via the Windows Feature Pack for Storage. All  features provided by this  update package are supported natively in Windows 7 and Windows Server 2008 R2.</para>
+    </remarks>
+    <seealso cref="IFsiFileItem2" />
+  </member>
+  <member name="IFsiFileItem2.get_IsNamedStream">
+    <summary>
+      <para>Determines if the item is a named stream. Data streams for named streams contained within the file system image are read-only. Stream data can only be replaced by overwriting the existing named stream.</para>
+    </summary>
+    <param name="pVal">
+      <para>Pointer to a value that indicates if the item is a named stream. to <b>VARIANT_TRUE</b> if an ; otherwise, <b>VARIANT_FALSE</b>.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>Pointer is not valid.</para>
+            <para>Value: 0x80004003</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The user must enable UDF and set the UDF revision to 2.00 or higher to support named streams.</para>
+      <para>This method is supported in Windows Server 2003 with Service Pack 1 (SP1), Windows XP with Service Pack 2 (SP2),  and Windows Vista  via the Windows Feature Pack for Storage. All  features provided by this  update package are supported natively in Windows 7 and Windows Server 2008 R2.</para>
+    </remarks>
+    <seealso cref="IFsiFileItem2" />
+  </member>
+  <member name="IFsiFileItem2.get_IsRealTime">
+    <summary>
+      <para>Retrieves the property value that specifies if a file item in the file system image is a 'Real-Time' or standard file.</para>
+    </summary>
+    <param name="pVal">
+      <para>Pointer to a value that indicates if the Real-Time attribute of the file is set in the file system image.  A value of <b>VARIANT_TRUE</b> indicates the attribute is set; otherwise, <b>VARIANT_FALSE</b>.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code/value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_POINTER</b>
+                </description>
+              </item>
+              <item>
+                <description>Value: 0x80004003</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Pointer is not valid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAPI_E_PROPERTY_NOT_ACCESSIBLE</b>
+                </description>
+              </item>
+              <item>
+                <description>Value: 0xC0AAB160L</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Property '<i>%1!ls!</i>' is not accessible.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>If this method is invoked for a file item representing a named stream, this method returns error code <b>IMAPI_E_PROPERTY_NOT_ACCESSIBLE</b> as
+named streams do not have the Real-Time attribute.</para>
+      <para>The user must enable UDF and set the UDF revision to 2.01 or higher to support Real-Time files.</para>
+      <para>This method is supported in Windows Server 2003 with Service Pack 1 (SP1), Windows XP with Service Pack 2 (SP2),  and Windows Vista  via the Windows Feature Pack for Storage. All  features provided by this  update package are supported natively in Windows 7 and Windows Server 2008 R2.</para>
+    </remarks>
+    <seealso cref="IFsiFileItem2" />
+  </member>
+  <member name="IFsiFileItem2.put_IsRealTime">
+    <summary>
+      <para>Sets the 'Real-Time' attribute of a file in a file system. This attribute specifies whether or not the content requires a minimum data-transfer rate when writing or reading, for example, audio and video data.</para>
+    </summary>
+    <param name="newVal">
+      <para>Specify <b>VARIANT_TRUE</b> to set the Real-Time attribute of a file in the file system image; otherwise, <b>VARIANT_FALSE</b>. The default is <b>VARIANT_FALSE</b>.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code/value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAPI_S_IMAGE_FEATURE_NOT_SUPPORTED</b>
+                </description>
+              </item>
+              <item>
+                <description>Value: 0x00AAB15FL</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Feature is not supported for the current file system revision, and as a result, the file has been marked as Real-Time but will not appear as such in the resultant file system image unless UDF revision 2.01 or higher is enabled in the file system object.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAPI_E_PROPERTY_NOT_ACCESSIBLE</b>
+                </description>
+              </item>
+              <item>
+                <description>Value: 0xC0AAB160L</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Property '<i>%1!ls!</i>' is not accessible.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAPI_E_INVALID_PARAM</b>
+                </description>
+              </item>
+              <item>
+                <description>Value: 0xC0AAB101</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The value specified for parameter '<i>%1!ls!</i>' is invalid.</para>
+          </description>
+        </item>
+      </list>
+      <para>
+        <b>Note</b>  Currently, S_OK is returned when using this method to set a  Real-Time attribute   value of a file that is 'Read Only' as a result of a successful  <see cref="CreateResultImage" /> operation.</para>
+    </returns>
+    <remarks>
+      <para>The <see cref="IFsiDirectoryItem.AddTree" /> and <see cref="IFsiDirectoryItem2.AddTreeWithNamedStreams" /> methods do not set the Real-Time attribute while adding files to a file system image. To mark files  as Real-time files, they must be enumerated after they have been added to the file system image and have the Real-Time attribute set individually.</para>
+      <para>If this method is invoked for a file item representing a named stream, this method returns error code <b>IMAPI_E_PROPERTY_NOT_ACCESSIBLE</b> as
+named streams do not have the Real-Time attribute.</para>
+      <para>This method is supported in Windows Server 2003 with Service Pack 1 (SP1), Windows XP with Service Pack 2 (SP2),  and Windows Vista  via the Windows Feature Pack for Storage. All  features provided by this  update package are supported natively in Windows 7 and Windows Server 2008 R2.</para>
+    </remarks>
+    <seealso cref="IFsiFileItem2" />
+  </member>
+  <member name="IFsiFileItem2.RemoveStream">
+    <summary>
+      <para>Removes a named stream association with a file.</para>
+    </summary>
+    <param name="name">
+      <para>String that specifies the name of the named stream association to remove. This should not include the path and should only contain valid characters as per file system naming conventions.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code/value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAPI_S_IMAGE_FEATURE_NOT_SUPPORTED</b>
+                </description>
+              </item>
+              <item>
+                <description>Value: 0x00AAB15FL</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Feature is not supported for the current file system revision, and as a result, will be created without this feature.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_POINTER</b>
+                </description>
+              </item>
+              <item>
+                <description>Value: 0x80004003</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Pointer is not valid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAPI_E_INVALID_PARAM</b>
+                </description>
+              </item>
+              <item>
+                <description>Value: 0xC0AAB101</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The value specified for parameter '<i>%1!ls!</i>' is invalid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAPI_E_NOT_IN_FILE_SYSTEM</b>
+                </description>
+              </item>
+              <item>
+                <description>Value: 0xC0AAB10B</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <i>ls!'</i> is not part of the file system. It must be added to complete this operation.
+</description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAPI_E_READONLY</b>
+                </description>
+              </item>
+              <item>
+                <description>Value: 0xC0AAB102</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The referenced <see cref="IFileSystemImage" /> object is in read only mode.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAPI_E_FSI_INTERNAL_ERROR</b>
+                </description>
+              </item>
+              <item>
+                <description>Value: 0xC0AAB100L</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Internal file system error has occurred.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAPI_E_DUP_NAME</b>
+                </description>
+              </item>
+              <item>
+                <description>Value: 0xC0AAB112L</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <i>'%1!ls!'</i> name already exists.
+</description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAPI_E_DATA_STREAM_READ_FAILURE</b>
+                </description>
+              </item>
+              <item>
+                <description>Value: 0xC0AAB129L</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Cannot read data from stream supplied for file <i>'%1!ls!'</i>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAPI_E_IMAGE_SIZE_LIMIT</b>
+                </description>
+              </item>
+              <item>
+                <description>Value: 0xC0AAB120L</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Adding <i>'%1!ls!'</i> would result in a result image having a size larger than the current configured limit.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>IMAPI_E_DATA_STREAM_INCONSISTENCY</b>
+                </description>
+              </item>
+              <item>
+                <description>Value: 0xC0AAB128L</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The data stream supplied for the file <i>'%1!ls!'</i> is inconsistent; expected <i>%2!I64d!</i> bytes, found <i>%3!I64d!</i></para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_OUTOFMEMORY</b>
+                </description>
+              </item>
+              <item>
+                <description>Value: 0x8007000EL</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Failed to allocate required memory.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method can be called only for file items present in the file system image.</para>
+      <para>The user must enable UDF and set the UDF revision to 2.00 or higher to support named streams.</para>
+      <para>This method is supported in Windows Server 2003 with Service Pack 1 (SP1), Windows XP with Service Pack 2 (SP2),  and Windows Vista  via the Windows Feature Pack for Storage. All  features provided by this  update package are supported natively in Windows 7 and Windows Server 2008 R2.</para>
+    </remarks>
+    <seealso cref="IFsiFileItem2" />
+    <seealso cref="IFsiFileItem2.AddStream" />
+  </member>
+  <member name="IFsiFileItem2">
+    <summary>
+      <para>Use this interface to add, remove and enumerate named streams associated with a file. This interface also provides  access to the 'Real-Time' attribute of a file.</para>
+    </summary>
+    <remarks>
+      <para>While UDF 2.0 is the lowest required revision for named stream support, the user must enable UDF  2.01 or higher to enable the use of both named streams and   real-time file attributes.</para>
+      <para>The recipients of a storage medium containing such files are required to read them using special MMC commands reducing read latency and increasing the worst-case read speed.</para>
+      <para>This interface is supported in Windows Server 2003 with Service Pack 1 (SP1), Windows XP with Service Pack 2 (SP2),  and Windows Vista  via the Windows Feature Pack for Storage. All  features provided by this  update package are supported natively in Windows 7 and Windows Server 2008 R2.</para>
+    </remarks>
+    <seealso cref="IFsiFileItem" />
+  </member>
+</doc>

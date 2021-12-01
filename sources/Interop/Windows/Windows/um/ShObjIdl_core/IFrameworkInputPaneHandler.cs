@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IFrameworkInputPaneHandler.xml' path='doc/member[@name="IFrameworkInputPaneHandler"]/*' />
 [Guid("226C537B-1E76-4D9E-A760-33DB29922F18")]
 [NativeTypeName("struct IFrameworkInputPaneHandler : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IFrameworkInputPaneHandler : IFrameworkInputPaneHan
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IFrameworkInputPaneHandler : IFrameworkInputPaneHan
         return ((delegate* unmanaged<IFrameworkInputPaneHandler*, Guid*, void**, int>)(lpVtbl[0]))((IFrameworkInputPaneHandler*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IFrameworkInputPaneHandler : IFrameworkInputPaneHan
         return ((delegate* unmanaged<IFrameworkInputPaneHandler*, uint>)(lpVtbl[1]))((IFrameworkInputPaneHandler*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IFrameworkInputPaneHandler : IFrameworkInputPaneHan
         return ((delegate* unmanaged<IFrameworkInputPaneHandler*, uint>)(lpVtbl[2]))((IFrameworkInputPaneHandler*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IFrameworkInputPaneHandler.xml' path='doc/member[@name="IFrameworkInputPaneHandler.Showing"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Showing(RECT* prcInputPaneScreenLocation, BOOL fEnsureFocusedElementInView)
@@ -46,6 +51,7 @@ public unsafe partial struct IFrameworkInputPaneHandler : IFrameworkInputPaneHan
         return ((delegate* unmanaged<IFrameworkInputPaneHandler*, RECT*, BOOL, int>)(lpVtbl[3]))((IFrameworkInputPaneHandler*)Unsafe.AsPointer(ref this), prcInputPaneScreenLocation, fEnsureFocusedElementInView);
     }
 
+    /// <include file='IFrameworkInputPaneHandler.xml' path='doc/member[@name="IFrameworkInputPaneHandler.Hiding"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Hiding(BOOL fEnsureFocusedElementInView)

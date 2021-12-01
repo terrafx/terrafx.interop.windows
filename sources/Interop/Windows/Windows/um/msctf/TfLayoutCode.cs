@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TfLayoutCode.xml' path='doc/member[@name="TfLayoutCode"]/*' />
 public enum TfLayoutCode
 {
+    /// <include file='TfLayoutCode.xml' path='doc/member[@name="TfLayoutCode.TF_LC_CREATE"]/*' />
     TF_LC_CREATE = 0,
+
+    /// <include file='TfLayoutCode.xml' path='doc/member[@name="TfLayoutCode.TF_LC_CHANGE"]/*' />
     TF_LC_CHANGE = 1,
+
+    /// <include file='TfLayoutCode.xml' path='doc/member[@name="TfLayoutCode.TF_LC_DESTROY"]/*' />
     TF_LC_DESTROY = 2,
 }

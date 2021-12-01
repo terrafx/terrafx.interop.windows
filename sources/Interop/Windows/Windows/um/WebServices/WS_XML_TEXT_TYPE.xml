@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_XML_TEXT_TYPE">
+    <summary>
+      <para>The type of <see cref="WS_XML_TEXT" /> structure.</para>
+    </summary>
+  </member>
+  <member name="WS_XML_TEXT_TYPE.WS_XML_TEXT_TYPE_UTF8">
+    <summary>
+      <para>Characters encoded as UTF-8 bytes.</para>
+    </summary>
+  </member>
+  <member name="WS_XML_TEXT_TYPE.WS_XML_TEXT_TYPE_UTF16">
+    <summary>
+      <para>Characters encoded as UTF-16 bytes.</para>
+    </summary>
+  </member>
+  <member name="WS_XML_TEXT_TYPE.WS_XML_TEXT_TYPE_BASE64">
+    <summary>
+      <para>Bytes that represent base64 encoded text.</para>
+    </summary>
+  </member>
+  <member name="WS_XML_TEXT_TYPE.WS_XML_TEXT_TYPE_BOOL">
+    <summary>
+      <para>A Boolean value that represents the text "true" or "false"</para>
+    </summary>
+  </member>
+  <member name="WS_XML_TEXT_TYPE.WS_XML_TEXT_TYPE_INT32">
+    <summary>
+      <para>A signed 32 bit integer value that represents the text of the value as base 10 characters.</para>
+    </summary>
+  </member>
+  <member name="WS_XML_TEXT_TYPE.WS_XML_TEXT_TYPE_INT64">
+    <summary>
+      <para>A signed 64 bit integer value that represents the text of the value as base 10 characters.</para>
+    </summary>
+  </member>
+  <member name="WS_XML_TEXT_TYPE.WS_XML_TEXT_TYPE_UINT64">
+    <summary>
+      <para>An unsigned 64 bit integer value that represents the text of the value as base 10 characters.</para>
+    </summary>
+  </member>
+  <member name="WS_XML_TEXT_TYPE.WS_XML_TEXT_TYPE_FLOAT">
+    <summary>
+      <para>An 4 byte floating point value that represents the text of the value as base 10 characters.</para>
+    </summary>
+  </member>
+  <member name="WS_XML_TEXT_TYPE.WS_XML_TEXT_TYPE_DOUBLE">
+    <summary>
+      <para>An 8 byte floating point value that represents the text of the value as base 10 characters.</para>
+    </summary>
+  </member>
+  <member name="WS_XML_TEXT_TYPE.WS_XML_TEXT_TYPE_DECIMAL">
+    <summary>
+      <para>A 12 byte fixed point value that represents the text of the value as base 10 characters.</para>
+    </summary>
+  </member>
+  <member name="WS_XML_TEXT_TYPE.WS_XML_TEXT_TYPE_GUID">
+    <summary>
+      <para>A GUID that represents the text "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx".</para>
+    </summary>
+  </member>
+  <member name="WS_XML_TEXT_TYPE.WS_XML_TEXT_TYPE_UNIQUE_ID">
+    <summary>
+      <para>A GUID that represents the text "urn:uuid:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx".</para>
+    </summary>
+  </member>
+  <member name="WS_XML_TEXT_TYPE.WS_XML_TEXT_TYPE_DATETIME">
+    <summary>
+      <para>A datetime.</para>
+    </summary>
+  </member>
+  <member name="WS_XML_TEXT_TYPE.WS_XML_TEXT_TYPE_TIMESPAN">
+    <summary>
+      <para>A timespan.</para>
+    </summary>
+  </member>
+  <member name="WS_XML_TEXT_TYPE.WS_XML_TEXT_TYPE_QNAME">
+    <summary>
+      <para>A qualified name.</para>
+    </summary>
+  </member>
+  <member name="WS_XML_TEXT_TYPE.WS_XML_TEXT_TYPE_LIST">
+    <summary>
+      <para>A list of values that represent their text forms separated by a single whitespace character.</para>
+    </summary>
+  </member>
+</doc>

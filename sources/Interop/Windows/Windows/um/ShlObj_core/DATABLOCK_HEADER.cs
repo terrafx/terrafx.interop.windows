@@ -7,12 +7,15 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DATABLOCK_HEADER.xml' path='doc/member[@name="DATABLOCK_HEADER"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct DATABLOCK_HEADER
 {
+    /// <include file='DATABLOCK_HEADER.xml' path='doc/member[@name="DATABLOCK_HEADER.cbSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbSize;
 
+    /// <include file='DATABLOCK_HEADER.xml' path='doc/member[@name="DATABLOCK_HEADER.dwSignature"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwSignature;
 }

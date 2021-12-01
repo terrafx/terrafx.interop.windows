@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ISimpleFrameSite.PostMessageFilter">
+    <summary>
+      <para>Sends the simple frame site a message that is received by a control's own window after the control has processed the message.</para>
+    </summary>
+    <param name="hWnd">
+      <para>A handle of the control window receiving the message.</para>
+    </param>
+    <param name="msg">
+      <para>The message received by the simple frame site.</para>
+    </param>
+    <param name="wp">
+      <para>The <b>WPARAM</b> of the message.</para>
+    </param>
+    <param name="lp">
+      <para>The <b>LPARAM</b> of the message.</para>
+    </param>
+    <param name="plResult">
+      <para>A pointer to the variable that receives the result of the message processing.</para>
+    </param>
+    <param name="dwCookie">
+      <para>The value that was returned by <see cref="ISimpleFrameSite.PreMessageFilter" /> through its <i>pdwCookie</i> parameter.</para>
+    </param>
+    <returns>
+      <para>This method can return the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The site processed the message.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>The site did not process the message.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_NOTIMPL</b>
+            </para>
+          </description>
+          <description>
+            <para>The site does not filter any messages.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="ISimpleFrameSite" />
+  </member>
+  <member name="ISimpleFrameSite.PreMessageFilter">
+    <summary>
+      <para>Provides a site with the opportunity to process a message that is received by a control's own window before the control itself does any processing.</para>
+    </summary>
+    <param name="hWnd">
+      <para>A handle of the control window receiving the message.</para>
+    </param>
+    <param name="msg">
+      <para>The message received by the simple frame site.</para>
+    </param>
+    <param name="wp">
+      <para>The <b>WPARAM</b> of the message.</para>
+    </param>
+    <param name="lp">
+      <para>The <b>LPARAM</b> of the message.</para>
+    </param>
+    <param name="plResult">
+      <para>A pointer to the variable that receives the result of the message processing.</para>
+    </param>
+    <param name="pdwCookie">
+      <para>A pointer to the variable that will be passed to <see cref="ISimpleFrameSite.PostMessageFilter" /> if it is called later. This parameter should only contain allocated data if this method returns S_OK so it will also receive a call to <b>PostMessageFilter</b> which can free the allocation. The caller is not in any way responsible for anything returned in this parameter.</para>
+    </param>
+    <returns>
+      <para>This method can return the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The simple frame site will not use the message in this filter so more processing can take place.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>The site has processed the message and no further processing should occur.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_NOTIMPL</b>
+            </para>
+          </description>
+          <description>
+            <para>The site does not do any message filtering, indicating that PostMessageFilter need not be called later.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>The address in <i>plResult</i> or <i>pdwCookie</i> is not valid.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Successful return values indicate whether the site wishes to allow further processing. S_OK indicates further processing, whereas S_FALSE means do not process further. S_OK also indicates that the control must later call <see cref="PostMessageFilter" />.</para>
+    </remarks>
+    <seealso cref="ISimpleFrameSite" />
+  </member>
+  <member name="ISimpleFrameSite">
+    <summary>
+      <para>Provides simple frame controls that act as simple containers for other nested controls. Some controls merely contain other controls. In such cases, the simple control container, called a simple frame, need not implement all container requirements. It can delegate most of the interface calls from its contained controls to the outer container that manages the simple frame. To support what are called simple frame controls, a container implements this interface as well as other site interfaces such as <see cref="IOleControlSite" />.</para>
+      <para>An example of a simple frame control is a group box that only needs to capture a few keystrokes for its contained controls to implement the correct tab or arrow key behavior, but does not want to handle every other message. Through the two methods of this interface, the simple frame control passes messages to its control site both before and after its own processing. If that site is itself a simple frame, it can continue to pass messages up the chain.</para>
+    </summary>
+    <seealso cref="IOleControl" />
+    <seealso cref="IOleControlSite" />
+  </member>
+</doc>

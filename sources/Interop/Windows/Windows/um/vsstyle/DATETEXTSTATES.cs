@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DATETEXTSTATES.xml' path='doc/member[@name="DATETEXTSTATES"]/*' />
 public enum DATETEXTSTATES
 {
+    /// <include file='DATETEXTSTATES.xml' path='doc/member[@name="DATETEXTSTATES.DPDT_NORMAL"]/*' />
     DPDT_NORMAL = 1,
+
+    /// <include file='DATETEXTSTATES.xml' path='doc/member[@name="DATETEXTSTATES.DPDT_DISABLED"]/*' />
     DPDT_DISABLED = 2,
+
+    /// <include file='DATETEXTSTATES.xml' path='doc/member[@name="DATETEXTSTATES.DPDT_SELECTED"]/*' />
     DPDT_SELECTED = 3,
 }

@@ -5,11 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TVGETITEMPARTRECTINFO.xml' path='doc/member[@name="TVGETITEMPARTRECTINFO"]/*' />
 public unsafe partial struct TVGETITEMPARTRECTINFO
 {
+    /// <include file='TVGETITEMPARTRECTINFO.xml' path='doc/member[@name="TVGETITEMPARTRECTINFO.hti"]/*' />
     public HTREEITEM hti;
 
+    /// <include file='TVGETITEMPARTRECTINFO.xml' path='doc/member[@name="TVGETITEMPARTRECTINFO.prc"]/*' />
     public RECT* prc;
 
+    /// <include file='TVGETITEMPARTRECTINFO.xml' path='doc/member[@name="TVGETITEMPARTRECTINFO.partID"]/*' />
     public TVITEMPART partID;
 }

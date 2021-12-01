@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IInternetZoneManager.xml' path='doc/member[@name="IInternetZoneManager"]/*' />
 [Guid("79EAC9EF-BAF9-11CE-8C82-00AA004BA90B")]
 [NativeTypeName("struct IInternetZoneManager : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IInternetZoneManager : IInternetZoneManager.Interfa
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IInternetZoneManager : IInternetZoneManager.Interfa
         return ((delegate* unmanaged<IInternetZoneManager*, Guid*, void**, int>)(lpVtbl[0]))((IInternetZoneManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IInternetZoneManager : IInternetZoneManager.Interfa
         return ((delegate* unmanaged<IInternetZoneManager*, uint>)(lpVtbl[1]))((IInternetZoneManager*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IInternetZoneManager : IInternetZoneManager.Interfa
         return ((delegate* unmanaged<IInternetZoneManager*, uint>)(lpVtbl[2]))((IInternetZoneManager*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IInternetZoneManager.xml' path='doc/member[@name="IInternetZoneManager.GetZoneAttributes"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetZoneAttributes([NativeTypeName("DWORD")] uint dwZone, ZONEATTRIBUTES* pZoneAttributes)
@@ -46,6 +51,7 @@ public unsafe partial struct IInternetZoneManager : IInternetZoneManager.Interfa
         return ((delegate* unmanaged<IInternetZoneManager*, uint, ZONEATTRIBUTES*, int>)(lpVtbl[3]))((IInternetZoneManager*)Unsafe.AsPointer(ref this), dwZone, pZoneAttributes);
     }
 
+    /// <include file='IInternetZoneManager.xml' path='doc/member[@name="IInternetZoneManager.SetZoneAttributes"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetZoneAttributes([NativeTypeName("DWORD")] uint dwZone, ZONEATTRIBUTES* pZoneAttributes)
@@ -53,6 +59,7 @@ public unsafe partial struct IInternetZoneManager : IInternetZoneManager.Interfa
         return ((delegate* unmanaged<IInternetZoneManager*, uint, ZONEATTRIBUTES*, int>)(lpVtbl[4]))((IInternetZoneManager*)Unsafe.AsPointer(ref this), dwZone, pZoneAttributes);
     }
 
+    /// <include file='IInternetZoneManager.xml' path='doc/member[@name="IInternetZoneManager.GetZoneCustomPolicy"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetZoneCustomPolicy([NativeTypeName("DWORD")] uint dwZone, [NativeTypeName("const GUID &")] Guid* guidKey, byte** ppPolicy, [NativeTypeName("DWORD *")] uint* pcbPolicy, URLZONEREG urlZoneReg)
@@ -60,6 +67,7 @@ public unsafe partial struct IInternetZoneManager : IInternetZoneManager.Interfa
         return ((delegate* unmanaged<IInternetZoneManager*, uint, Guid*, byte**, uint*, URLZONEREG, int>)(lpVtbl[5]))((IInternetZoneManager*)Unsafe.AsPointer(ref this), dwZone, guidKey, ppPolicy, pcbPolicy, urlZoneReg);
     }
 
+    /// <include file='IInternetZoneManager.xml' path='doc/member[@name="IInternetZoneManager.SetZoneCustomPolicy"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT SetZoneCustomPolicy([NativeTypeName("DWORD")] uint dwZone, [NativeTypeName("const GUID &")] Guid* guidKey, byte* pPolicy, [NativeTypeName("DWORD")] uint cbPolicy, URLZONEREG urlZoneReg)
@@ -67,6 +75,7 @@ public unsafe partial struct IInternetZoneManager : IInternetZoneManager.Interfa
         return ((delegate* unmanaged<IInternetZoneManager*, uint, Guid*, byte*, uint, URLZONEREG, int>)(lpVtbl[6]))((IInternetZoneManager*)Unsafe.AsPointer(ref this), dwZone, guidKey, pPolicy, cbPolicy, urlZoneReg);
     }
 
+    /// <include file='IInternetZoneManager.xml' path='doc/member[@name="IInternetZoneManager.GetZoneActionPolicy"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetZoneActionPolicy([NativeTypeName("DWORD")] uint dwZone, [NativeTypeName("DWORD")] uint dwAction, byte* pPolicy, [NativeTypeName("DWORD")] uint cbPolicy, URLZONEREG urlZoneReg)
@@ -74,6 +83,7 @@ public unsafe partial struct IInternetZoneManager : IInternetZoneManager.Interfa
         return ((delegate* unmanaged<IInternetZoneManager*, uint, uint, byte*, uint, URLZONEREG, int>)(lpVtbl[7]))((IInternetZoneManager*)Unsafe.AsPointer(ref this), dwZone, dwAction, pPolicy, cbPolicy, urlZoneReg);
     }
 
+    /// <include file='IInternetZoneManager.xml' path='doc/member[@name="IInternetZoneManager.SetZoneActionPolicy"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT SetZoneActionPolicy([NativeTypeName("DWORD")] uint dwZone, [NativeTypeName("DWORD")] uint dwAction, byte* pPolicy, [NativeTypeName("DWORD")] uint cbPolicy, URLZONEREG urlZoneReg)
@@ -81,6 +91,7 @@ public unsafe partial struct IInternetZoneManager : IInternetZoneManager.Interfa
         return ((delegate* unmanaged<IInternetZoneManager*, uint, uint, byte*, uint, URLZONEREG, int>)(lpVtbl[8]))((IInternetZoneManager*)Unsafe.AsPointer(ref this), dwZone, dwAction, pPolicy, cbPolicy, urlZoneReg);
     }
 
+    /// <include file='IInternetZoneManager.xml' path='doc/member[@name="IInternetZoneManager.PromptAction"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT PromptAction([NativeTypeName("DWORD")] uint dwAction, HWND hwndParent, [NativeTypeName("LPCWSTR")] ushort* pwszUrl, [NativeTypeName("LPCWSTR")] ushort* pwszText, [NativeTypeName("DWORD")] uint dwPromptFlags)
@@ -88,6 +99,7 @@ public unsafe partial struct IInternetZoneManager : IInternetZoneManager.Interfa
         return ((delegate* unmanaged<IInternetZoneManager*, uint, HWND, ushort*, ushort*, uint, int>)(lpVtbl[9]))((IInternetZoneManager*)Unsafe.AsPointer(ref this), dwAction, hwndParent, pwszUrl, pwszText, dwPromptFlags);
     }
 
+    /// <include file='IInternetZoneManager.xml' path='doc/member[@name="IInternetZoneManager.LogAction"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT LogAction([NativeTypeName("DWORD")] uint dwAction, [NativeTypeName("LPCWSTR")] ushort* pwszUrl, [NativeTypeName("LPCWSTR")] ushort* pwszText, [NativeTypeName("DWORD")] uint dwLogFlags)
@@ -95,6 +107,7 @@ public unsafe partial struct IInternetZoneManager : IInternetZoneManager.Interfa
         return ((delegate* unmanaged<IInternetZoneManager*, uint, ushort*, ushort*, uint, int>)(lpVtbl[10]))((IInternetZoneManager*)Unsafe.AsPointer(ref this), dwAction, pwszUrl, pwszText, dwLogFlags);
     }
 
+    /// <include file='IInternetZoneManager.xml' path='doc/member[@name="IInternetZoneManager.CreateZoneEnumerator"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT CreateZoneEnumerator([NativeTypeName("DWORD *")] uint* pdwEnum, [NativeTypeName("DWORD *")] uint* pdwCount, [NativeTypeName("DWORD")] uint dwFlags)
@@ -102,6 +115,7 @@ public unsafe partial struct IInternetZoneManager : IInternetZoneManager.Interfa
         return ((delegate* unmanaged<IInternetZoneManager*, uint*, uint*, uint, int>)(lpVtbl[11]))((IInternetZoneManager*)Unsafe.AsPointer(ref this), pdwEnum, pdwCount, dwFlags);
     }
 
+    /// <include file='IInternetZoneManager.xml' path='doc/member[@name="IInternetZoneManager.GetZoneAt"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT GetZoneAt([NativeTypeName("DWORD")] uint dwEnum, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("DWORD *")] uint* pdwZone)
@@ -109,6 +123,7 @@ public unsafe partial struct IInternetZoneManager : IInternetZoneManager.Interfa
         return ((delegate* unmanaged<IInternetZoneManager*, uint, uint, uint*, int>)(lpVtbl[12]))((IInternetZoneManager*)Unsafe.AsPointer(ref this), dwEnum, dwIndex, pdwZone);
     }
 
+    /// <include file='IInternetZoneManager.xml' path='doc/member[@name="IInternetZoneManager.DestroyZoneEnumerator"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT DestroyZoneEnumerator([NativeTypeName("DWORD")] uint dwEnum)
@@ -116,6 +131,7 @@ public unsafe partial struct IInternetZoneManager : IInternetZoneManager.Interfa
         return ((delegate* unmanaged<IInternetZoneManager*, uint, int>)(lpVtbl[13]))((IInternetZoneManager*)Unsafe.AsPointer(ref this), dwEnum);
     }
 
+    /// <include file='IInternetZoneManager.xml' path='doc/member[@name="IInternetZoneManager.CopyTemplatePoliciesToZone"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT CopyTemplatePoliciesToZone([NativeTypeName("DWORD")] uint dwTemplate, [NativeTypeName("DWORD")] uint dwZone, [NativeTypeName("DWORD")] uint dwReserved)

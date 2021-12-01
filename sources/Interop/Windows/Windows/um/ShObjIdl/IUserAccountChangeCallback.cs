@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IUserAccountChangeCallback.xml' path='doc/member[@name="IUserAccountChangeCallback"]/*' />
 [Guid("A561E69A-B4B8-4113-91A5-64C6BCCA3430")]
 [NativeTypeName("struct IUserAccountChangeCallback : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IUserAccountChangeCallback : IUserAccountChangeCall
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IUserAccountChangeCallback : IUserAccountChangeCall
         return ((delegate* unmanaged<IUserAccountChangeCallback*, Guid*, void**, int>)(lpVtbl[0]))((IUserAccountChangeCallback*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IUserAccountChangeCallback : IUserAccountChangeCall
         return ((delegate* unmanaged<IUserAccountChangeCallback*, uint>)(lpVtbl[1]))((IUserAccountChangeCallback*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IUserAccountChangeCallback : IUserAccountChangeCall
         return ((delegate* unmanaged<IUserAccountChangeCallback*, uint>)(lpVtbl[2]))((IUserAccountChangeCallback*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IUserAccountChangeCallback.xml' path='doc/member[@name="IUserAccountChangeCallback.OnPictureChange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT OnPictureChange([NativeTypeName("LPCWSTR")] ushort* pszUserName)

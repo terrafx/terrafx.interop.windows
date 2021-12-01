@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CAPTIONSTATES.xml' path='doc/member[@name="CAPTIONSTATES"]/*' />
 public enum CAPTIONSTATES
 {
+    /// <include file='CAPTIONSTATES.xml' path='doc/member[@name="CAPTIONSTATES.CS_ACTIVE"]/*' />
     CS_ACTIVE = 1,
+
+    /// <include file='CAPTIONSTATES.xml' path='doc/member[@name="CAPTIONSTATES.CS_INACTIVE"]/*' />
     CS_INACTIVE = 2,
+
+    /// <include file='CAPTIONSTATES.xml' path='doc/member[@name="CAPTIONSTATES.CS_DISABLED"]/*' />
     CS_DISABLED = 3,
 }

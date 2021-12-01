@@ -5,12 +5,16 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CPS_URLS.xml' path='doc/member[@name="CPS_URLS"]/*' />
 public unsafe partial struct CPS_URLS
 {
+    /// <include file='CPS_URLS.xml' path='doc/member[@name="CPS_URLS.pszURL"]/*' />
     [NativeTypeName("LPWSTR")]
     public ushort* pszURL;
 
+    /// <include file='CPS_URLS.xml' path='doc/member[@name="CPS_URLS.pAlgorithm"]/*' />
     public CRYPT_ALGORITHM_IDENTIFIER* pAlgorithm;
 
+    /// <include file='CPS_URLS.xml' path='doc/member[@name="CPS_URLS.pDigest"]/*' />
     public CRYPT_DATA_BLOB* pDigest;
 }

@@ -5,16 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TAPE_SET_POSITION.xml' path='doc/member[@name="TAPE_SET_POSITION"]/*' />
 public partial struct TAPE_SET_POSITION
 {
+    /// <include file='TAPE_SET_POSITION.xml' path='doc/member[@name="TAPE_SET_POSITION.Method"]/*' />
     [NativeTypeName("DWORD")]
     public uint Method;
 
+    /// <include file='TAPE_SET_POSITION.xml' path='doc/member[@name="TAPE_SET_POSITION.Partition"]/*' />
     [NativeTypeName("DWORD")]
     public uint Partition;
 
+    /// <include file='TAPE_SET_POSITION.xml' path='doc/member[@name="TAPE_SET_POSITION.Offset"]/*' />
     public LARGE_INTEGER Offset;
 
+    /// <include file='TAPE_SET_POSITION.xml' path='doc/member[@name="TAPE_SET_POSITION.Immediate"]/*' />
     [NativeTypeName("BOOLEAN")]
     public byte Immediate;
 }

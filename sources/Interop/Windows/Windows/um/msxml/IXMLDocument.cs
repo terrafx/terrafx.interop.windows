@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IXMLDocument.xml' path='doc/member[@name="IXMLDocument"]/*' />
 [Guid("F52E2B61-18A1-11D1-B105-00805F49916B")]
 [NativeTypeName("struct IXMLDocument : IDispatch")]
 [NativeInheritance("IDispatch")]
@@ -16,6 +17,7 @@ public unsafe partial struct IXMLDocument : IXMLDocument.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IXMLDocument : IXMLDocument.Interface
         return ((delegate* unmanaged<IXMLDocument*, Guid*, void**, int>)(lpVtbl[0]))((IXMLDocument*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IXMLDocument : IXMLDocument.Interface
         return ((delegate* unmanaged<IXMLDocument*, uint>)(lpVtbl[1]))((IXMLDocument*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IXMLDocument : IXMLDocument.Interface
         return ((delegate* unmanaged<IXMLDocument*, uint>)(lpVtbl[2]))((IXMLDocument*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct IXMLDocument : IXMLDocument.Interface
         return ((delegate* unmanaged<IXMLDocument*, uint*, int>)(lpVtbl[3]))((IXMLDocument*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct IXMLDocument : IXMLDocument.Interface
         return ((delegate* unmanaged<IXMLDocument*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IXMLDocument*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
@@ -60,6 +67,7 @@ public unsafe partial struct IXMLDocument : IXMLDocument.Interface
         return ((delegate* unmanaged<IXMLDocument*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IXMLDocument*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
+    /// <inheritdoc cref="IDispatch.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
@@ -67,6 +75,7 @@ public unsafe partial struct IXMLDocument : IXMLDocument.Interface
         return ((delegate* unmanaged<IXMLDocument*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IXMLDocument*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
+    /// <include file='IXMLDocument.xml' path='doc/member[@name="IXMLDocument.get_root"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT get_root(IXMLElement** p)
@@ -74,6 +83,7 @@ public unsafe partial struct IXMLDocument : IXMLDocument.Interface
         return ((delegate* unmanaged<IXMLDocument*, IXMLElement**, int>)(lpVtbl[7]))((IXMLDocument*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IXMLDocument.xml' path='doc/member[@name="IXMLDocument.get_fileSize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT get_fileSize([NativeTypeName("BSTR *")] ushort** p)
@@ -81,6 +91,7 @@ public unsafe partial struct IXMLDocument : IXMLDocument.Interface
         return ((delegate* unmanaged<IXMLDocument*, ushort**, int>)(lpVtbl[8]))((IXMLDocument*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IXMLDocument.xml' path='doc/member[@name="IXMLDocument.get_fileModifiedDate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT get_fileModifiedDate([NativeTypeName("BSTR *")] ushort** p)
@@ -88,6 +99,7 @@ public unsafe partial struct IXMLDocument : IXMLDocument.Interface
         return ((delegate* unmanaged<IXMLDocument*, ushort**, int>)(lpVtbl[9]))((IXMLDocument*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IXMLDocument.xml' path='doc/member[@name="IXMLDocument.get_fileUpdatedDate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT get_fileUpdatedDate([NativeTypeName("BSTR *")] ushort** p)
@@ -95,6 +107,7 @@ public unsafe partial struct IXMLDocument : IXMLDocument.Interface
         return ((delegate* unmanaged<IXMLDocument*, ushort**, int>)(lpVtbl[10]))((IXMLDocument*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IXMLDocument.xml' path='doc/member[@name="IXMLDocument.get_URL"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT get_URL([NativeTypeName("BSTR *")] ushort** p)
@@ -102,6 +115,7 @@ public unsafe partial struct IXMLDocument : IXMLDocument.Interface
         return ((delegate* unmanaged<IXMLDocument*, ushort**, int>)(lpVtbl[11]))((IXMLDocument*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IXMLDocument.xml' path='doc/member[@name="IXMLDocument.put_URL"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT put_URL([NativeTypeName("BSTR")] ushort* p)
@@ -109,6 +123,7 @@ public unsafe partial struct IXMLDocument : IXMLDocument.Interface
         return ((delegate* unmanaged<IXMLDocument*, ushort*, int>)(lpVtbl[12]))((IXMLDocument*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IXMLDocument.xml' path='doc/member[@name="IXMLDocument.get_mimeType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT get_mimeType([NativeTypeName("BSTR *")] ushort** p)
@@ -116,6 +131,7 @@ public unsafe partial struct IXMLDocument : IXMLDocument.Interface
         return ((delegate* unmanaged<IXMLDocument*, ushort**, int>)(lpVtbl[13]))((IXMLDocument*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IXMLDocument.xml' path='doc/member[@name="IXMLDocument.get_readyState"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT get_readyState([NativeTypeName("long *")] int* pl)
@@ -123,6 +139,7 @@ public unsafe partial struct IXMLDocument : IXMLDocument.Interface
         return ((delegate* unmanaged<IXMLDocument*, int*, int>)(lpVtbl[14]))((IXMLDocument*)Unsafe.AsPointer(ref this), pl);
     }
 
+    /// <include file='IXMLDocument.xml' path='doc/member[@name="IXMLDocument.get_charset"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT get_charset([NativeTypeName("BSTR *")] ushort** p)
@@ -130,6 +147,7 @@ public unsafe partial struct IXMLDocument : IXMLDocument.Interface
         return ((delegate* unmanaged<IXMLDocument*, ushort**, int>)(lpVtbl[15]))((IXMLDocument*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IXMLDocument.xml' path='doc/member[@name="IXMLDocument.put_charset"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT put_charset([NativeTypeName("BSTR")] ushort* p)
@@ -137,6 +155,7 @@ public unsafe partial struct IXMLDocument : IXMLDocument.Interface
         return ((delegate* unmanaged<IXMLDocument*, ushort*, int>)(lpVtbl[16]))((IXMLDocument*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IXMLDocument.xml' path='doc/member[@name="IXMLDocument.get_version"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT get_version([NativeTypeName("BSTR *")] ushort** p)
@@ -144,6 +163,7 @@ public unsafe partial struct IXMLDocument : IXMLDocument.Interface
         return ((delegate* unmanaged<IXMLDocument*, ushort**, int>)(lpVtbl[17]))((IXMLDocument*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IXMLDocument.xml' path='doc/member[@name="IXMLDocument.get_doctype"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT get_doctype([NativeTypeName("BSTR *")] ushort** p)
@@ -151,6 +171,7 @@ public unsafe partial struct IXMLDocument : IXMLDocument.Interface
         return ((delegate* unmanaged<IXMLDocument*, ushort**, int>)(lpVtbl[18]))((IXMLDocument*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IXMLDocument.xml' path='doc/member[@name="IXMLDocument.get_dtdURL"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT get_dtdURL([NativeTypeName("BSTR *")] ushort** p)
@@ -158,6 +179,7 @@ public unsafe partial struct IXMLDocument : IXMLDocument.Interface
         return ((delegate* unmanaged<IXMLDocument*, ushort**, int>)(lpVtbl[19]))((IXMLDocument*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IXMLDocument.xml' path='doc/member[@name="IXMLDocument.createElement"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public HRESULT createElement(VARIANT vType, VARIANT var1, IXMLElement** ppElem)

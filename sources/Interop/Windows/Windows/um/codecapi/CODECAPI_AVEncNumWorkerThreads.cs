@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVEncNumWorkerThreads.xml' path='doc/member[@name="CODECAPI_AVEncNumWorkerThreads"]/*' />
 [Guid("B0C8BF60-16F7-4951-A30B-1DB1609293D6")]
 public partial struct CODECAPI_AVEncNumWorkerThreads
 {

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="OLECMDEXECOPT">
+    <summary>
+      <para>Specifies command execution options.</para>
+    </summary>
+    <seealso cref="IOleCommandTarget.Exec" />
+  </member>
+  <member name="OLECMDEXECOPT.OLECMDEXECOPT_DODEFAULT">
+    <summary>
+      <para>Prompt the user for input or not, whichever is the default behavior.</para>
+    </summary>
+  </member>
+  <member name="OLECMDEXECOPT.OLECMDEXECOPT_PROMPTUSER">
+    <summary>
+      <para>Execute the command after obtaining user input.</para>
+    </summary>
+  </member>
+  <member name="OLECMDEXECOPT.OLECMDEXECOPT_DONTPROMPTUSER">
+    <summary>
+      <para>Execute the command without prompting the user. For example, clicking the Print toolbar button causes a document to be immediately printed without user input.</para>
+    </summary>
+  </member>
+  <member name="OLECMDEXECOPT.OLECMDEXECOPT_SHOWHELP">
+    <summary>
+      <para>Show help for the corresponding command, but do not execute.</para>
+    </summary>
+  </member>
+</doc>

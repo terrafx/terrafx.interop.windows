@@ -5,15 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NMREBARCHILDSIZE.xml' path='doc/member[@name="NMREBARCHILDSIZE"]/*' />
 public partial struct NMREBARCHILDSIZE
 {
+    /// <include file='NMREBARCHILDSIZE.xml' path='doc/member[@name="NMREBARCHILDSIZE.hdr"]/*' />
     public NMHDR hdr;
 
+    /// <include file='NMREBARCHILDSIZE.xml' path='doc/member[@name="NMREBARCHILDSIZE.uBand"]/*' />
     public uint uBand;
 
+    /// <include file='NMREBARCHILDSIZE.xml' path='doc/member[@name="NMREBARCHILDSIZE.wID"]/*' />
     public uint wID;
 
+    /// <include file='NMREBARCHILDSIZE.xml' path='doc/member[@name="NMREBARCHILDSIZE.rcChild"]/*' />
     public RECT rcChild;
 
+    /// <include file='NMREBARCHILDSIZE.xml' path='doc/member[@name="NMREBARCHILDSIZE.rcBand"]/*' />
     public RECT rcBand;
 }

@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SHRINK_VOLUME_INFORMATION">
+    <summary>
+      <para>Specifies the volume shrink operation to perform.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_shrink_volume">FSCTL_SHRINK_VOLUME</seealso>
+  </member>
+  <member name="SHRINK_VOLUME_INFORMATION.ShrinkRequestType">
+    <summary>
+      <para>Indicates the operation to perform. The valid values are as follows.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>ShrinkPrepare</b>
+          </description>
+          <description>
+            <para>Volume should perform any steps necessary to prepare for a shrink operation.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>ShrinkCommit</b>
+          </description>
+          <description>
+            <para>Volume should commit the shrink operation changes.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>ShrinkAbort</b>
+          </description>
+          <description>
+            <para>Volume should terminate the shrink operation.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="SHRINK_VOLUME_INFORMATION.Flags">
+    <summary>
+      <para>This member must be zero.</para>
+    </summary>
+  </member>
+  <member name="SHRINK_VOLUME_INFORMATION.NewNumberOfSectors">
+    <summary>
+      <para>The number of sectors that should be in the shrunken volume. Used only when the <b>ShrinkRequestType</b> member is <b>ShrinkPrepare</b>, otherwise this member should be initialized to zero.</para>
+    </summary>
+  </member>
+</doc>

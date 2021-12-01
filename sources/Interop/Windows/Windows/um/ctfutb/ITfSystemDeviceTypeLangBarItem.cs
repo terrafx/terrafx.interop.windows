@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITfSystemDeviceTypeLangBarItem.xml' path='doc/member[@name="ITfSystemDeviceTypeLangBarItem"]/*' />
 [Guid("45672EB9-9059-46A2-838D-4530355F6A77")]
 [NativeTypeName("struct ITfSystemDeviceTypeLangBarItem : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITfSystemDeviceTypeLangBarItem : ITfSystemDeviceTyp
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITfSystemDeviceTypeLangBarItem : ITfSystemDeviceTyp
         return ((delegate* unmanaged<ITfSystemDeviceTypeLangBarItem*, Guid*, void**, int>)(lpVtbl[0]))((ITfSystemDeviceTypeLangBarItem*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITfSystemDeviceTypeLangBarItem : ITfSystemDeviceTyp
         return ((delegate* unmanaged<ITfSystemDeviceTypeLangBarItem*, uint>)(lpVtbl[1]))((ITfSystemDeviceTypeLangBarItem*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITfSystemDeviceTypeLangBarItem : ITfSystemDeviceTyp
         return ((delegate* unmanaged<ITfSystemDeviceTypeLangBarItem*, uint>)(lpVtbl[2]))((ITfSystemDeviceTypeLangBarItem*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITfSystemDeviceTypeLangBarItem.xml' path='doc/member[@name="ITfSystemDeviceTypeLangBarItem.SetIconMode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetIconMode([NativeTypeName("DWORD")] uint dwFlags)
@@ -46,6 +51,7 @@ public unsafe partial struct ITfSystemDeviceTypeLangBarItem : ITfSystemDeviceTyp
         return ((delegate* unmanaged<ITfSystemDeviceTypeLangBarItem*, uint, int>)(lpVtbl[3]))((ITfSystemDeviceTypeLangBarItem*)Unsafe.AsPointer(ref this), dwFlags);
     }
 
+    /// <include file='ITfSystemDeviceTypeLangBarItem.xml' path='doc/member[@name="ITfSystemDeviceTypeLangBarItem.GetIconMode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetIconMode([NativeTypeName("DWORD *")] uint* pdwFlags)

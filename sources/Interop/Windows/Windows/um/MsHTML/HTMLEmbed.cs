@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HTMLEmbed.xml' path='doc/member[@name="HTMLEmbed"]/*' />
 [Guid("3050F25D-98B5-11CF-BB82-00AA00BDCE0B")]
 public partial struct HTMLEmbed
 {

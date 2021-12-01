@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_FAULT_DESCRIPTION.xml' path='doc/member[@name="WS_FAULT_DESCRIPTION"]/*' />
 public partial struct WS_FAULT_DESCRIPTION
 {
+    /// <include file='WS_FAULT_DESCRIPTION.xml' path='doc/member[@name="WS_FAULT_DESCRIPTION.envelopeVersion"]/*' />
     public WS_ENVELOPE_VERSION envelopeVersion;
 }

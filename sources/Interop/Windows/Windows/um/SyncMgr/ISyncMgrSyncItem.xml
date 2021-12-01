@@ -1,0 +1,289 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ISyncMgrSyncItem.Delete">
+    <summary>
+      <para>Deletes a sync item.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Sync Center calls this method when the user selects the item in the handler's folder and launches its <b>Delete</b> task, but only if the item has set the <see cref="SYNCMGR_ICM_CAN_DELETE" /> flag. If the handler supports the <see cref="SYNCMGR_OBJECTID_QueryBeforeDeactivate" /> object, this method is only called if the UI operation was successful.</para>
+      <para>If the handler does not need to perform any actions when it is activated, it can return either S_OK or E_NOTIMPL.</para>
+    </remarks>
+  </member>
+  <member name="ISyncMgrSyncItem.Enable">
+    <summary>
+      <para>Enables or disables the sync item.</para>
+    </summary>
+    <param name="fEnable">
+      <para>Type: <b>BOOL</b></para>
+      <para>
+        <b>TRUE</b> to enable; <b>FALSE</b> to disable.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Sync Center calls this method in the following scenarios.</para>
+      <list type="bullet">
+        <item>
+          <description>When the user selects the item in the handler's folder and launches its <b>Enable</b> task, but only if the item has not set the <see cref="SYNCMGR_IPM_PREVENT_ENABLE" /> flag. If the handler supports the <see cref="SYNCMGR_OBJECTID_QueryBeforeEnable" /> object, this method is only called if the UI operation was successful.</description>
+        </item>
+        <item>
+          <description>When the user selects the item in the handler's folder and launches its <b>Disable</b> task, but only if the item has not set the <see cref="SYNCMGR_IPM_PREVENT_DISABLE" /> flag. If the handler supports the <see cref="SYNCMGR_OBJECTID_QueryBeforeDisable" /> object, this method is only called if the UI operation was successful.</description>
+        </item>
+      </list>
+      <para>If the handler does not need to perform any actions when it is activated, it can return either S_OK or E_NOTIMPL as shown in the example below.</para>
+      <h4>Examples</h4>
+      <para>The following example shows a simple implementation of this method.</para>
+      <code>STDMETHODIMP CMyDeviceSyncItem.Enable(__in BOOL fEnable)
+{
+    return E_NOTIMPL;
+}
+
+</code>
+    </remarks>
+  </member>
+  <member name="ISyncMgrSyncItem.GetCapabilities">
+    <summary>
+      <para>Gets a set of flags describing the item's defined capabilities.</para>
+    </summary>
+    <param name="pmCapabilities">
+      <para>Type: <b><see cref="SYNCMGR_ITEM_CAPABILITIES" />*</b></para>
+      <para>When this method returns, contains a pointer to a bitwise combination of values from the <see cref="SYNCMGR_ITEM_CAPABILITIES" /> enumeration that defines the capabilities of the item.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This method is called by Sync Center in response to a call to <see cref="UpdateItem" />.</para>
+      <h4>Examples</h4>
+      <para>The following example shows an implementation of this method.</para>
+      <code>STDMETHODIMP CMyDeviceSyncItem.GetCapabilities(
+                              __out SYNCMGR_ITEM_CAPABILITIES *pmCapabilities)
+{
+    *pmCapabilities = SYNCMGR_ICM_EVENT_STORE
+                    | SYNCMGR_ICM_CAN_DELETE
+                    | SYNCMGR_ICM_QUERY_BEFORE_DELETE;
+
+    return S_OK;
+}
+
+</code>
+    </remarks>
+  </member>
+  <member name="ISyncMgrSyncItem.GetItemID">
+    <summary>
+      <para>Gets the unique ID of a sync item.</para>
+    </summary>
+    <param name="ppszItemID">
+      <para>Type: <b>LPWSTR*</b></para>
+      <para>When this method returns, contains a pointer to a buffer containing the item's ID. This string is of maximum length MAX_SYNCMGR_ID including the terminating <b>null</b> character.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The ID retrieved by this method cannot change. Typically, the ID is in the form of a GUID string. However, this is not a requirement. The ID can be any string that is unique in the context of the handler.</para>
+      <para>If <b>GetItemID</b> fails or an empty string is returned in <i>ppszItemID</i>, the sync item is not shown in the handler's folder and Sync Center will not attempt to synchronize it.</para>
+      <para>The ID retrieved by this method is available in the folder UI as the System.Sync.ItemID (PKEY_Sync_HandlerID) property.</para>
+      <para>The item is responsible for allocating the string buffer pointed to by <i>ppszComment</i> through <see cref="CoTaskMemAlloc" />. Sync Center deallocates the string buffer through <see cref="CoTaskMemFree" />.</para>
+      <para>In older Sync Manager implementations, this data was retrieved through the <see cref="SYNCMGRITEM" /> structure.</para>
+      <h4>Examples</h4>
+      <para>The following example shows an implementation of this method.</para>
+      <code>STDMETHODIMP CMyDeviceSyncItem.GetItemID(__out LPWSTR *ppszItemID)
+{
+    HRESULT hr = S_OK;
+    *ppszName = NULL;
+
+    // Generate the string version of the ID.
+    if (_pszItemID == NULL)
+    {
+        LPOLESTR pszItemID = NULL;
+        hr = StringFromCLSID(_guidItemID, &amp;amp;amp;amp;amp;amp;_pszItemID);
+    }
+
+    if (SUCCEEDED(hr))
+    {
+        // Duplicate the item ID string for the caller.
+        hr = SHCoAllocString(_pszItemID, ppszItemID);
+    }
+
+    return hr;
+}
+
+</code>
+    </remarks>
+  </member>
+  <member name="ISyncMgrSyncItem.GetItemInfo">
+    <summary>
+      <para>Gets the properties of a sync item.</para>
+    </summary>
+    <param name="ppItemInfo">
+      <para>Type: <b><see cref="ISyncMgrSyncItemInfo" />*</b></para>
+      <para>When this method returns, contains the address of a pointer to an instance of the <see cref="ISyncMgrSyncItemInfo" /> interface, representing the item.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>If <b>GetItemInfo</b> fails, the sync item is still shown in the handler's folder and Sync Center continues to synchronize it, but default values are used for all properties.</para>
+      <h4>Examples</h4>
+      <para>The following example shows an implementation of this method.</para>
+      <code>STDMETHODIMP CMyDeviceSyncItem.GetItemInfo(
+                              __out ISyncMgrSyncItemInfo **ppItemInfo)
+{
+    *ppItemInfo = NULL;
+
+    HRESULT hr = QueryInterface(IID_ISyncMgrSyncItemInfo, (void**)ppItemInfo);
+    return hr;
+}
+
+</code>
+    </remarks>
+  </member>
+  <member name="ISyncMgrSyncItem.GetName">
+    <summary>
+      <para>Gets the UI display name of the sync item.</para>
+    </summary>
+    <param name="ppszName">
+      <para>Type: <b>LPWSTR*</b></para>
+      <para>When this method returns, contains a pointer to a buffer containing the item's display name. This string is of maximum length MAX_SYNCMGR_NAME including the terminating <b>null</b> character. Longer strings are truncated.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>If <b>GetName</b> fails or an empty string is returned in <i>ppszItemID</i>, the sync item is not shown in the handler's folder and Sync Center will not attempt to synchronize it.</para>
+      <para>The ID retrieved by this method is available in the handler's folder UI as the System.DisplayName (PKEY_DisplayName) property.</para>
+      <para>The item is responsible for allocating the string buffer pointed to by <i>ppszComment</i> through <see cref="CoTaskMemAlloc" />. Sync Center deallocates the string buffer through <see cref="CoTaskMemFree" />.</para>
+      <para>Sync Center calls this method whenever the <see cref="UpdateItem" /> method is called.</para>
+      <para>In older Sync Manager implementations, this information was retrieved through the <see cref="SYNCMGRHANDLERINFO" /> structure.</para>
+      <h4>Examples</h4>
+      <para>The following example shows an implementation of this method.</para>
+      <code>STDMETHODIMP CMyDeviceSyncItem.GetName(__out LPWSTR *ppszName)
+{
+    *ppszName = NULL;
+    HRESULT hr = SHCoAllocString(_pszItemName, ppszName);
+    return hr;
+}
+
+</code>
+    </remarks>
+  </member>
+  <member name="ISyncMgrSyncItem.GetObject">
+    <summary>
+      <para>Creates a specific type of object related to the item.</para>
+    </summary>
+    <param name="rguidObjectID">
+      <para>Type: <b>REFGUID</b></para>
+      <para>A GUID identifying the type of object to create. One of the following values as defined in shlguid.h.</para>
+      <h4>SYNCMGR_OBJECTID_BrowseContent</h4>
+      <para>An object implementing the <see cref="ISyncMgrUIOperation" /> interface that shows UI that allows the user to browse the contents of the item.</para>
+      <para>Sync Center only requests this object if the <see cref="SYNCMGR_ICM_CAN_BROWSE_CONTENT" /> capability flag is set in the mask retrieved by <see cref="GetCapabilities" />.</para>
+      <h4>SYNCMGR_OBJECTID_ConflictStore</h4>
+      <para>An object implementing the <see cref="ISyncMgrConflictStore" /> interface that allows an item to provide conflicts. These conflicts are shown in the Sync Center Conflicts folder. The conflict store should include conflicts only for the item. To include conflicts for all of a handler's items, Sync Center calls <see cref="GetObject" />.</para>
+      <para>Sync Center only requests this object if the <see cref="SYNCMGR_ICM_CONFLICT_STORE" /> capability flag is set in the mask retrieved by <see cref="GetCapabilities" />.</para>
+      <h4>SYNCMGR_OBJECTID_EventStore</h4>
+      <para>An object implementing the <see cref="ISyncMgrEventStore" /> interface that allows an item to provide its own source of events. These events are shown in the Sync Results folder. The event store should include only events for the item. To include events for all of a handler's items, Sync Center calls <see cref="GetObject" />.</para>
+      <para>Sync Center only requests this object if the <see cref="SYNCMGR_ICM_EVENT_STORE" /> capability flag is set in the mask retrieved by <see cref="GetCapabilities" />.</para>
+      <para>An item is not required to provide an event store. The default event store provided by Sync Center can be used if it meets the item's requirements.</para>
+      <h4>SYNCMGR_OBJECTID_Icon</h4>
+      <para>An icon extraction object that implements the <see cref="IExtractIcon" /> interface used to display an icon for the item. This object should only be provided if the item obtains its icon dynamically at run time. The preferred mechanism for providing the icon is to register the icon as the DefaultIcon in the registry.</para>
+      <para>Sync Center only requests this object if the <see cref="SYNCMGR_ICM_PROVIDES_ICON" /> capability flag is set in the mask retrieved by <see cref="GetCapabilities" />.</para>
+      <h4>SYNCMGR_OBJECTID_QueryBeforeDelete</h4>
+      <para>An object implementing the <see cref="ISyncMgrUIOperation" /> interface that displays UI when the user selects the item in the handler's folder then selects the <b>Delete</b> task. Before requesting this object, Sync Center creates both a separate thread for this operation and a new instance of the item.</para>
+      <para>Sync Center only requests this object if the <see cref="SYNCMGR_ICM_CAN_DELETE" /> and <see cref="SYNCMGR_ICM_QUERY_BEFORE_DELETE" /> capability flags are set in the mask retrieved by <see cref="GetCapabilities" />.</para>
+      <h4>SYNCMGR_OBJECTID_QueryBeforeEnable</h4>
+      <para>An object implementing the <see cref="ISyncMgrUIOperation" /> interface that displays UI when the user selects the item in the Sync Center folder then selects the <b>Enable</b> task. Before requesting this object, Sync Center creates both a separate thread for this operation and a new instance of the item.</para>
+      <para>Sync Center only requests this object if the <see cref="SYNCMGR_ICM_QUERY_BEFORE_ENABLE" /> capability flag is set and the <see cref="SYNCMGR_IPM_PREVENT_ENABLE" /> policy flag is not.</para>
+      <h4>SYNCMGR_OBJECTID_QueryBeforeDisable</h4>
+      <para>An object implementing the <see cref="ISyncMgrUIOperation" /> interface that displays UI when the user selects the item in the handler's folder then selects the <b>Disable</b> task. Before requesting this object, Sync Center creates both a separate thread for this operation and a new instance of the item.</para>
+      <para>Sync Center only requests this object if the <see cref="SYNCMGR_ICM_QUERY_BEFORE_DELETE" /> capability flag is set and the <see cref="SYNCMGR_IPM_PREVENT_DISABLE" /> policy flag is not.</para>
+    </param>
+    <param name="riid">
+      <para>Type: <b>REFIID</b></para>
+      <para>The IID of the requested interface. This is dependent on the object type named in <i>rguidObjectID</i>.</para>
+    </param>
+    <param name="ppv">
+      <para>Type: <b>void**</b></para>
+      <para>When this method returns, contains the address of a pointer to the requested interface.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_OK if successful, or an error value otherwise. Returns E_INVALIDARG if the item does not support the requested type of object.</para>
+    </returns>
+    <remarks>
+      <para>The item can implement the requested interface on its handler or it can implement it on a different object.</para>
+      <h4>Examples</h4>
+      <para>The following example shows an implementation of this method.</para>
+      <code>STDMETHODIMP CMyDeviceSyncItem.GetObject(__in REFGUID   rguidObjectID,
+                                          __in REFIID    riid,
+                                          __out void   **ppv)
+{
+    HRESULT hr = E_INVALIDARG;
+    *ppv = NULL;
+
+    if (rguidObjectID == SYNCMGR_OBJECTID_QueryBeforeDelete)
+    {
+        hr = _CreateQueryBeforeDeleteObject(riid, ppv);
+    }
+    else if (rguidObjectID == SYNCMGR_OBJECTID_EventStore)
+    {
+        hr = _CreateEventStore(_pszItemID, riid, ppv);
+    }
+
+    return hr;
+}
+
+</code>
+    </remarks>
+  </member>
+  <member name="ISyncMgrSyncItem.GetPolicies">
+    <summary>
+      <para>Gets a set of flags describing the policies set by the item.</para>
+    </summary>
+    <param name="pmPolicies">
+      <para>Type: <b><see cref="SYNCMGR_ITEM_POLICIES" />*</b></para>
+      <para>When this method returns, contains a pointer to a bitwise combination of values from the <see cref="SYNCMGR_ITEM_POLICIES" /> enumeration that defines the item's policies.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>A policy is an action that is typically supported but can be disabled by a group policy.</para>
+      <para>This method is called by Sync Center in response to a call to <see cref="UpdateItem" />.</para>
+      <h4>Examples</h4>
+      <para>The following example shows an implementation of this method.</para>
+      <code>STDMETHODIMP CMyDeviceSyncItem.GetPolicies(
+                              __out SYNCMGR_ITEM_POLICIES *pmPolicies)
+{
+    *pmPolicies = SYNCMGR_IPM_PREVENT_DISABLE
+                | SYNCMGR_IPM_HIDDEN_BY_DEFAULT;
+
+    return S_OK;
+}
+
+</code>
+    </remarks>
+  </member>
+  <member name="ISyncMgrSyncItem">
+    <summary>
+      <para>Exposes methods that act on and retrieve information from a single sync item, allowing handlers to manage sync items as independent objects.</para>
+    </summary>
+    <remarks>
+      <para>A sync item typically represents a group of data, for example, a folder that contains several files. By representing this sync item as an interface, the item can be easily managed and implemented as an object. That object maintains the state of the item when the item is accessed.</para>
+      <para>Representing a sync item as <b>ISyncMgrSyncItem</b> also allows support for a sync item that contains other sync items.</para>
+    </remarks>
+  </member>
+</doc>

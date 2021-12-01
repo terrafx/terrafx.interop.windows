@@ -5,20 +5,26 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PSFEATURE_CUSTPAPER.xml' path='doc/member[@name="PSFEATURE_CUSTPAPER"]/*' />
 public partial struct PSFEATURE_CUSTPAPER
 {
+    /// <include file='PSFEATURE_CUSTPAPER.xml' path='doc/member[@name="PSFEATURE_CUSTPAPER.lOrientation"]/*' />
     [NativeTypeName("LONG")]
     public int lOrientation;
 
+    /// <include file='PSFEATURE_CUSTPAPER.xml' path='doc/member[@name="PSFEATURE_CUSTPAPER.lWidth"]/*' />
     [NativeTypeName("LONG")]
     public int lWidth;
 
+    /// <include file='PSFEATURE_CUSTPAPER.xml' path='doc/member[@name="PSFEATURE_CUSTPAPER.lHeight"]/*' />
     [NativeTypeName("LONG")]
     public int lHeight;
 
+    /// <include file='PSFEATURE_CUSTPAPER.xml' path='doc/member[@name="PSFEATURE_CUSTPAPER.lWidthOffset"]/*' />
     [NativeTypeName("LONG")]
     public int lWidthOffset;
 
+    /// <include file='PSFEATURE_CUSTPAPER.xml' path='doc/member[@name="PSFEATURE_CUSTPAPER.lHeightOffset"]/*' />
     [NativeTypeName("LONG")]
     public int lHeightOffset;
 }

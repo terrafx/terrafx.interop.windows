@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='AHE_TYPE.xml' path='doc/member[@name="AHE_TYPE"]/*' />
 public enum AHE_TYPE
 {
+    /// <include file='AHE_TYPE.xml' path='doc/member[@name="AHE_TYPE.AHE_DESKTOP"]/*' />
     AHE_DESKTOP = 0,
+
+    /// <include file='AHE_TYPE.xml' path='doc/member[@name="AHE_TYPE.AHE_IMMERSIVE"]/*' />
     AHE_IMMERSIVE = 1,
 }

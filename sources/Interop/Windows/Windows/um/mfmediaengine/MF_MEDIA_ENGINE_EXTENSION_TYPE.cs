@@ -7,9 +7,13 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MF_MEDIA_ENGINE_EXTENSION_TYPE.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EXTENSION_TYPE"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public enum MF_MEDIA_ENGINE_EXTENSION_TYPE
 {
+    /// <include file='MF_MEDIA_ENGINE_EXTENSION_TYPE.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EXTENSION_TYPE.MF_MEDIA_ENGINE_EXTENSION_TYPE_MEDIASOURCE"]/*' />
     MF_MEDIA_ENGINE_EXTENSION_TYPE_MEDIASOURCE = 0,
+
+    /// <include file='MF_MEDIA_ENGINE_EXTENSION_TYPE.xml' path='doc/member[@name="MF_MEDIA_ENGINE_EXTENSION_TYPE.MF_MEDIA_ENGINE_EXTENSION_TYPE_BYTESTREAM"]/*' />
     MF_MEDIA_ENGINE_EXTENSION_TYPE_BYTESTREAM = 1,
 }

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IApartmentShutdown.OnUninitialize">
+    <summary>
+      <para>Called when a registered apartment is shut down.</para>
+    </summary>
+    <param name="ui64ApartmentIdentifier">
+      <para>The apartment Identifier of the apartment that is shutting down</para>
+    </param>
+    <seealso cref="IApartmentShutdown" />
+    <seealso cref="RoRegisterForApartmentShutdown" />
+  </member>
+  <member name="IApartmentShutdown">
+    <summary>
+      <para>Enables registration of  an apartment shutdown notification handler.</para>
+    </summary>
+    <remarks>
+      <para>Implement the <b>IApartmentShutdown</b> interface to use the <see cref="RoRegisterForApartmentShutdown" /> function.</para>
+    </remarks>
+    <seealso cref="RoRegisterForApartmentShutdown" />
+  </member>
+</doc>

@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CSV_QUERY_FILE_REVISION.xml' path='doc/member[@name="CSV_QUERY_FILE_REVISION"]/*' />
 public unsafe partial struct CSV_QUERY_FILE_REVISION
 {
+    /// <include file='CSV_QUERY_FILE_REVISION.xml' path='doc/member[@name="CSV_QUERY_FILE_REVISION.FileId"]/*' />
     [NativeTypeName("LONGLONG")]
     public long FileId;
 
+    /// <include file='CSV_QUERY_FILE_REVISION.xml' path='doc/member[@name="CSV_QUERY_FILE_REVISION.FileRevision"]/*' />
     [NativeTypeName("LONGLONG [3]")]
     public fixed long FileRevision[3];
 }

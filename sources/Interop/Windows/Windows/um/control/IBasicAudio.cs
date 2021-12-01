@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IBasicAudio.xml' path='doc/member[@name="IBasicAudio"]/*' />
 [Guid("56A868B3-0AD4-11CE-B03A-0020AF0BA770")]
 [NativeTypeName("struct IBasicAudio : IDispatch")]
 [NativeInheritance("IDispatch")]
@@ -16,6 +17,7 @@ public unsafe partial struct IBasicAudio : IBasicAudio.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IBasicAudio : IBasicAudio.Interface
         return ((delegate* unmanaged<IBasicAudio*, Guid*, void**, int>)(lpVtbl[0]))((IBasicAudio*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IBasicAudio : IBasicAudio.Interface
         return ((delegate* unmanaged<IBasicAudio*, uint>)(lpVtbl[1]))((IBasicAudio*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IBasicAudio : IBasicAudio.Interface
         return ((delegate* unmanaged<IBasicAudio*, uint>)(lpVtbl[2]))((IBasicAudio*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct IBasicAudio : IBasicAudio.Interface
         return ((delegate* unmanaged<IBasicAudio*, uint*, int>)(lpVtbl[3]))((IBasicAudio*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct IBasicAudio : IBasicAudio.Interface
         return ((delegate* unmanaged<IBasicAudio*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IBasicAudio*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
@@ -60,6 +67,7 @@ public unsafe partial struct IBasicAudio : IBasicAudio.Interface
         return ((delegate* unmanaged<IBasicAudio*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IBasicAudio*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
+    /// <inheritdoc cref="IDispatch.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
@@ -67,6 +75,7 @@ public unsafe partial struct IBasicAudio : IBasicAudio.Interface
         return ((delegate* unmanaged<IBasicAudio*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IBasicAudio*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
+    /// <include file='IBasicAudio.xml' path='doc/member[@name="IBasicAudio.put_Volume"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT put_Volume([NativeTypeName("long")] int lVolume)
@@ -74,6 +83,7 @@ public unsafe partial struct IBasicAudio : IBasicAudio.Interface
         return ((delegate* unmanaged<IBasicAudio*, int, int>)(lpVtbl[7]))((IBasicAudio*)Unsafe.AsPointer(ref this), lVolume);
     }
 
+    /// <include file='IBasicAudio.xml' path='doc/member[@name="IBasicAudio.get_Volume"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT get_Volume([NativeTypeName("long *")] int* plVolume)
@@ -81,6 +91,7 @@ public unsafe partial struct IBasicAudio : IBasicAudio.Interface
         return ((delegate* unmanaged<IBasicAudio*, int*, int>)(lpVtbl[8]))((IBasicAudio*)Unsafe.AsPointer(ref this), plVolume);
     }
 
+    /// <include file='IBasicAudio.xml' path='doc/member[@name="IBasicAudio.put_Balance"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT put_Balance([NativeTypeName("long")] int lBalance)
@@ -88,6 +99,7 @@ public unsafe partial struct IBasicAudio : IBasicAudio.Interface
         return ((delegate* unmanaged<IBasicAudio*, int, int>)(lpVtbl[9]))((IBasicAudio*)Unsafe.AsPointer(ref this), lBalance);
     }
 
+    /// <include file='IBasicAudio.xml' path='doc/member[@name="IBasicAudio.get_Balance"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT get_Balance([NativeTypeName("long *")] int* plBalance)

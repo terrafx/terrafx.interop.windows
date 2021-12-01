@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SpPhoneConverter.xml' path='doc/member[@name="SpPhoneConverter"]/*' />
 [Guid("9185F743-1143-4C28-86B5-BFF14F20E5C8")]
 public partial struct SpPhoneConverter
 {

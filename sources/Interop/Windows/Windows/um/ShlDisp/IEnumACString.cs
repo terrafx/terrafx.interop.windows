@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IEnumACString.xml' path='doc/member[@name="IEnumACString"]/*' />
 [Guid("8E74C210-CF9D-4EAF-A403-7356428F0A5A")]
 [NativeTypeName("struct IEnumACString : IEnumString")]
 [NativeInheritance("IEnumString")]
@@ -16,6 +17,7 @@ public unsafe partial struct IEnumACString : IEnumACString.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IEnumACString : IEnumACString.Interface
         return ((delegate* unmanaged<IEnumACString*, Guid*, void**, int>)(lpVtbl[0]))((IEnumACString*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IEnumACString : IEnumACString.Interface
         return ((delegate* unmanaged<IEnumACString*, uint>)(lpVtbl[1]))((IEnumACString*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IEnumACString : IEnumACString.Interface
         return ((delegate* unmanaged<IEnumACString*, uint>)(lpVtbl[2]))((IEnumACString*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IEnumString.Next" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Next([NativeTypeName("ULONG")] uint celt, [NativeTypeName("LPOLESTR *")] ushort** rgelt, [NativeTypeName("ULONG *")] uint* pceltFetched)
@@ -46,6 +51,7 @@ public unsafe partial struct IEnumACString : IEnumACString.Interface
         return ((delegate* unmanaged<IEnumACString*, uint, ushort**, uint*, int>)(lpVtbl[3]))((IEnumACString*)Unsafe.AsPointer(ref this), celt, rgelt, pceltFetched);
     }
 
+    /// <inheritdoc cref="IEnumString.Skip" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Skip([NativeTypeName("ULONG")] uint celt)
@@ -53,6 +59,7 @@ public unsafe partial struct IEnumACString : IEnumACString.Interface
         return ((delegate* unmanaged<IEnumACString*, uint, int>)(lpVtbl[4]))((IEnumACString*)Unsafe.AsPointer(ref this), celt);
     }
 
+    /// <inheritdoc cref="IEnumString.Reset" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT Reset()
@@ -60,6 +67,7 @@ public unsafe partial struct IEnumACString : IEnumACString.Interface
         return ((delegate* unmanaged<IEnumACString*, int>)(lpVtbl[5]))((IEnumACString*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IEnumString.Clone" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Clone(IEnumString** ppenum)
@@ -67,6 +75,7 @@ public unsafe partial struct IEnumACString : IEnumACString.Interface
         return ((delegate* unmanaged<IEnumACString*, IEnumString**, int>)(lpVtbl[6]))((IEnumACString*)Unsafe.AsPointer(ref this), ppenum);
     }
 
+    /// <include file='IEnumACString.xml' path='doc/member[@name="IEnumACString.NextItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT NextItem([NativeTypeName("LPWSTR")] ushort* pszUrl, [NativeTypeName("ULONG")] uint cchMax, [NativeTypeName("ULONG *")] uint* pulSortIndex)
@@ -74,6 +83,7 @@ public unsafe partial struct IEnumACString : IEnumACString.Interface
         return ((delegate* unmanaged<IEnumACString*, ushort*, uint, uint*, int>)(lpVtbl[7]))((IEnumACString*)Unsafe.AsPointer(ref this), pszUrl, cchMax, pulSortIndex);
     }
 
+    /// <include file='IEnumACString.xml' path='doc/member[@name="IEnumACString.SetEnumOptions"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT SetEnumOptions([NativeTypeName("DWORD")] uint dwOptions)
@@ -81,6 +91,7 @@ public unsafe partial struct IEnumACString : IEnumACString.Interface
         return ((delegate* unmanaged<IEnumACString*, uint, int>)(lpVtbl[8]))((IEnumACString*)Unsafe.AsPointer(ref this), dwOptions);
     }
 
+    /// <include file='IEnumACString.xml' path='doc/member[@name="IEnumACString.GetEnumOptions"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT GetEnumOptions([NativeTypeName("DWORD *")] uint* pdwOptions)

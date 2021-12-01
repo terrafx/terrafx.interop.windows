@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IObjectWithFolderEnumMode.xml' path='doc/member[@name="IObjectWithFolderEnumMode"]/*' />
 [Guid("6A9D9026-0E6E-464C-B000-42ECC07DE673")]
 [NativeTypeName("struct IObjectWithFolderEnumMode : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IObjectWithFolderEnumMode : IObjectWithFolderEnumMo
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IObjectWithFolderEnumMode : IObjectWithFolderEnumMo
         return ((delegate* unmanaged<IObjectWithFolderEnumMode*, Guid*, void**, int>)(lpVtbl[0]))((IObjectWithFolderEnumMode*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IObjectWithFolderEnumMode : IObjectWithFolderEnumMo
         return ((delegate* unmanaged<IObjectWithFolderEnumMode*, uint>)(lpVtbl[1]))((IObjectWithFolderEnumMode*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IObjectWithFolderEnumMode : IObjectWithFolderEnumMo
         return ((delegate* unmanaged<IObjectWithFolderEnumMode*, uint>)(lpVtbl[2]))((IObjectWithFolderEnumMode*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IObjectWithFolderEnumMode.xml' path='doc/member[@name="IObjectWithFolderEnumMode.SetMode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetMode(FOLDER_ENUM_MODE feMode)
@@ -46,6 +51,7 @@ public unsafe partial struct IObjectWithFolderEnumMode : IObjectWithFolderEnumMo
         return ((delegate* unmanaged<IObjectWithFolderEnumMode*, FOLDER_ENUM_MODE, int>)(lpVtbl[3]))((IObjectWithFolderEnumMode*)Unsafe.AsPointer(ref this), feMode);
     }
 
+    /// <include file='IObjectWithFolderEnumMode.xml' path='doc/member[@name="IObjectWithFolderEnumMode.GetMode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetMode(FOLDER_ENUM_MODE* pfeMode)

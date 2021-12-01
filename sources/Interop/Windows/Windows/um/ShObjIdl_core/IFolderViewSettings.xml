@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IFolderViewSettings.GetColumnPropertyList">
+    <summary>
+      <para>Gets an ordered list of columns that corresponds to the column enumerated.</para>
+    </summary>
+    <param name="riid">
+      <para>A reference to the interface identifier (IID) of the IPropertyDescriptionList.</para>
+    </param>
+    <param name="ppv">
+      <para>Type: <b><see cref="IPropertyDescriptionList" />**</b></para>
+      <para>The address of an <see cref="IPropertyDescriptionList" /> interface pointer.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IFolderViewSettings.GetFolderFlags">
+    <summary>
+      <para>Gets folder view options flags.</para>
+    </summary>
+    <param name="pfolderMask">
+      <para>Type: <b><see cref="FOLDERFLAGS" />*</b></para>
+      <para>A pointer to a mask for folder view options.</para>
+    </param>
+    <param name="pfolderFlags">
+      <para>Type: <b><see cref="FOLDERFLAGS" />*</b></para>
+      <para>A pointer to a flag for folder view options.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IFolderViewSettings.GetGroupByProperty">
+    <summary>
+      <para>Gets a grouping property.</para>
+    </summary>
+    <param name="pkey">
+      <para>Type: <b><see cref="PROPERTYKEY" />*</b></para>
+      <para>A pointer to a <see cref="PROPERTYKEY" /> structure indicating the key by which content is grouped.</para>
+    </param>
+    <param name="pfGroupAscending">
+      <para>Type: <b>BOOL*</b></para>
+      <para>A pointer to a value indicating whether grouping order is ascending.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IFolderViewSettings.GetGroupSubsetCount">
+    <summary>
+      <para>Gets group count for visible rows.</para>
+    </summary>
+    <param name="pcVisibleRows">
+      <para>Type: <b>UINT*</b></para>
+      <para>A pointer to group count.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IFolderViewSettings.GetIconSize">
+    <summary>
+      <para>Gets the folder icon size.</para>
+    </summary>
+    <param name="puIconSize">
+      <para>Type: <b>UINT*</b></para>
+      <para>A pointer to the icon size.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IFolderViewSettings.GetSortColumns">
+    <summary>
+      <para>Gets sort column information.</para>
+    </summary>
+    <param name="rgSortColumns">
+      <para>Type: <b><see cref="SORTCOLUMN" />*</b></para>
+      <para>A pointer to an array of <see cref="SORTCOLUMN" /> structures.</para>
+    </param>
+    <param name="cColumnsIn">
+      <para>Type: <b>UINT</b></para>
+      <para>The source column count.</para>
+    </param>
+    <param name="pcColumnsOut">
+      <para>Type: <b>UINT*</b></para>
+      <para>A pointer to the <i>rgSortColumns</i> array length.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IFolderViewSettings.GetViewMode">
+    <summary>
+      <para>Gets a folder's logical view mode.</para>
+    </summary>
+    <param name="plvm">
+      <para>Type: <b><see cref="FOLDERLOGICALVIEWMODE" />*</b></para>
+      <para>A pointer to a <see cref="FOLDERLOGICALVIEWMODE" /> value.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IFolderViewSettings">
+    <summary>
+      <para>Exposes methods to obtain folder view settings.</para>
+    </summary>
+  </member>
+</doc>

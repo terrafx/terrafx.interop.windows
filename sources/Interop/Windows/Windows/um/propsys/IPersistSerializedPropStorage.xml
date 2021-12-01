@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IPersistSerializedPropStorage.GetPropertyStorage">
+    <summary>
+      <para>Gets the serialized property storage data from the property store instance.</para>
+    </summary>
+    <param name="ppsps">
+      <para>Type: <b>SERIALIZEDPROPSTORAGE**</b></para>
+      <para>When this method returns, contains the address of a pointer to the serialized property storage data.</para>
+    </param>
+    <param name="pcb">
+      <para>Type: <b>DWORD*</b></para>
+      <para>When this method returns, contains the count of bytes contained in the serialized property storage data pointed to by <i>ppsps</i>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The <b>SERIALIZEDPROPSTORAGE</b> type is defined in Propsys.h as an incomplete type. It should be treated as an array of <b>BYTE</b> values; the format of the returned data is not specified. The contents of the <b>SERIALIZEDPROPSTORAGE</b> structure are suitable for persisting to disk or other storage and can be used to initialize another property store through <see cref="IPersistSerializedPropStorage.SetPropertyStorage" />.</para>
+      <para>
+        <b>Note</b>  It is the responsibility of the application that calls <b>IPersistSerializedPropStorage.GetPropertyStorage</b> to later call <see cref="CoTaskMemFree" /> to release the memory referred to by <i>ppsps</i> when it is no longer needed.</para>
+    </remarks>
+  </member>
+  <member name="IPersistSerializedPropStorage.SetFlags">
+    <summary>
+      <para>Toggles the property store object between the read-only and read/write state.</para>
+    </summary>
+    <param name="flags">
+      <para>Type: <b>PERSIST_SPROPSTORE_FLAGS</b></para>
+      <para>The <i>flags</i> parameter takes one of the following values to set options for the behavior of the property storage:</para>
+      <h4>FPSPS_DEFAULT (0x00000000)</h4>
+      <para>
+        <b>Windows 7 and later</b>. The property store object is read/write.</para>
+      <h4>FPSPS_READONLY (0x00000001)</h4>
+      <para>The property store object is read-only.</para>
+      <h4>FPSPS_TREAT_NEW_VALUES_AS_DIRTY (0x00000002)</h4>
+      <para>
+        <b>Introduced in Windows 8</b>. New property values that are added to the property store through the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/bb761475(v=vs.85)">IPropertyStore.SetValue</a> method will cause the <see cref="IPersistStream.IsDirty" /> method to return S_OK. If this flag is not set, the addition of new property values to the property store does not affect the value returned by <b>IPersistStream.IsDirty</b>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Read/write is the default setting. <b>IPersistSerializedPropStorage.SetFlags</b> can be called at any time to toggle the read-only and read/write state of the property store.</para>
+      <para>In versions of Windows before Windows 7, callers can assign a literal zero value directly into the <i>flags</i> parameter to set the read/write state. As of Windows 7, the FPSPS_DEFAULT flag value should be used instead.</para>
+    </remarks>
+  </member>
+  <member name="IPersistSerializedPropStorage.SetPropertyStorage">
+    <summary>
+      <para>Initializes the property store instance from the specified serialized property storage data.</para>
+    </summary>
+    <param name="psps">
+      <para>Type: <b>PCUSERIALIZEDPROPSTORAGE</b></para>
+      <para>A pointer to the serialized property store data that will be used to initialize the property store.</para>
+    </param>
+    <param name="cb">
+      <para>Type: <b>DWORD</b></para>
+      <para>The count of bytes contained in the serialized property storage data pointed to by <i>psps</i>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The <b>SERIALIZEDPROPSTORAGE</b> type is defined in Propsys.h as an incomplete type. It should be treated as an array of <b>BYTE</b> values; the format of the data returned is not specified. The data stored as a <b>SERIALIZEDPROPSTORAGE</b> structure must have been obtained through a call to <see cref="IPersistSerializedPropStorage.GetPropertyStorage" />, either directly or through persisted data that was generated by a call to that method.</para>
+    </remarks>
+  </member>
+  <member name="IPersistSerializedPropStorage">
+    <summary>
+      <para>Exposes methods to persist serialized property storage data for later use and to restore persisted data to a new property store instance.</para>
+    </summary>
+    <remarks>
+      <para>Use the <see cref="IPropertyStore" /> interface to read and write values from and to the property store.</para>
+      <h3>When to Use</h3>
+      <para>The in-memory property store, created by calling <see cref="PSCreateMemoryPropertyStore" />, provides an implementation of this interface. Use this implementation when you want to persist or restore serialized property storage data.</para>
+      <h3>When to Implement</h3>
+      <b>IPersistSerializedPropStorage</b> is not intended for custom implementation. Use the system-provided implementation associated with the in-memory property store.
+</remarks>
+  </member>
+</doc>

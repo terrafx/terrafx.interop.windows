@@ -5,25 +5,33 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MIB_TCPROW2.xml' path='doc/member[@name="MIB_TCPROW2"]/*' />
 public partial struct MIB_TCPROW2
 {
+    /// <include file='MIB_TCPROW2.xml' path='doc/member[@name="MIB_TCPROW2.dwState"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwState;
 
+    /// <include file='MIB_TCPROW2.xml' path='doc/member[@name="MIB_TCPROW2.dwLocalAddr"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwLocalAddr;
 
+    /// <include file='MIB_TCPROW2.xml' path='doc/member[@name="MIB_TCPROW2.dwLocalPort"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwLocalPort;
 
+    /// <include file='MIB_TCPROW2.xml' path='doc/member[@name="MIB_TCPROW2.dwRemoteAddr"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwRemoteAddr;
 
+    /// <include file='MIB_TCPROW2.xml' path='doc/member[@name="MIB_TCPROW2.dwRemotePort"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwRemotePort;
 
+    /// <include file='MIB_TCPROW2.xml' path='doc/member[@name="MIB_TCPROW2.dwOwningPid"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwOwningPid;
 
+    /// <include file='MIB_TCPROW2.xml' path='doc/member[@name="MIB_TCPROW2.dwOffloadState"]/*' />
     public TCP_CONNECTION_OFFLOAD_STATE dwOffloadState;
 }

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IElementBehaviorSiteLayout2.xml' path='doc/member[@name="IElementBehaviorSiteLayout2"]/*' />
 [Guid("3050F847-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IElementBehaviorSiteLayout2 : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IElementBehaviorSiteLayout2 : IElementBehaviorSiteL
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IElementBehaviorSiteLayout2 : IElementBehaviorSiteL
         return ((delegate* unmanaged<IElementBehaviorSiteLayout2*, Guid*, void**, int>)(lpVtbl[0]))((IElementBehaviorSiteLayout2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IElementBehaviorSiteLayout2 : IElementBehaviorSiteL
         return ((delegate* unmanaged<IElementBehaviorSiteLayout2*, uint>)(lpVtbl[1]))((IElementBehaviorSiteLayout2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IElementBehaviorSiteLayout2 : IElementBehaviorSiteL
         return ((delegate* unmanaged<IElementBehaviorSiteLayout2*, uint>)(lpVtbl[2]))((IElementBehaviorSiteLayout2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IElementBehaviorSiteLayout2.xml' path='doc/member[@name="IElementBehaviorSiteLayout2.GetFontInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetFontInfo(LOGFONTW* plf)

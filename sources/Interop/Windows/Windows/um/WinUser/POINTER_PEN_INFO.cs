@@ -7,26 +7,34 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='POINTER_PEN_INFO.xml' path='doc/member[@name="POINTER_PEN_INFO"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public partial struct POINTER_PEN_INFO
 {
+    /// <include file='POINTER_PEN_INFO.xml' path='doc/member[@name="POINTER_PEN_INFO.pointerInfo"]/*' />
     public POINTER_INFO pointerInfo;
 
+    /// <include file='POINTER_PEN_INFO.xml' path='doc/member[@name="POINTER_PEN_INFO.penFlags"]/*' />
     [NativeTypeName("PEN_FLAGS")]
     public uint penFlags;
 
+    /// <include file='POINTER_PEN_INFO.xml' path='doc/member[@name="POINTER_PEN_INFO.penMask"]/*' />
     [NativeTypeName("PEN_MASK")]
     public uint penMask;
 
+    /// <include file='POINTER_PEN_INFO.xml' path='doc/member[@name="POINTER_PEN_INFO.pressure"]/*' />
     [NativeTypeName("UINT32")]
     public uint pressure;
 
+    /// <include file='POINTER_PEN_INFO.xml' path='doc/member[@name="POINTER_PEN_INFO.rotation"]/*' />
     [NativeTypeName("UINT32")]
     public uint rotation;
 
+    /// <include file='POINTER_PEN_INFO.xml' path='doc/member[@name="POINTER_PEN_INFO.tiltX"]/*' />
     [NativeTypeName("INT32")]
     public int tiltX;
 
+    /// <include file='POINTER_PEN_INFO.xml' path='doc/member[@name="POINTER_PEN_INFO.tiltY"]/*' />
     [NativeTypeName("INT32")]
     public int tiltY;
 }

@@ -7,8 +7,12 @@ using static TerraFX.Interop.Windows.SPSTREAMFORMATTYPE;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SpeechFormatType.xml' path='doc/member[@name="SpeechFormatType"]/*' />
 public enum SpeechFormatType
 {
+    /// <include file='SpeechFormatType.xml' path='doc/member[@name="SpeechFormatType.SFTInput"]/*' />
     SFTInput = SPWF_INPUT,
+
+    /// <include file='SpeechFormatType.xml' path='doc/member[@name="SpeechFormatType.SFTSREngine"]/*' />
     SFTSREngine = SPWF_SRENGINE,
 }

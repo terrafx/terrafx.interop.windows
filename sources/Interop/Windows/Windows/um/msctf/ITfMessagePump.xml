@@ -1,0 +1,257 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ITfMessagePump.GetMessageA">
+    <summary>
+      <para>Obtains a message from the message queue and does not return until a message is obtained. This is the ANSI version of this method.</para>
+    </summary>
+    <param name="pMsg">
+      <para>Pointer to a <see cref="MSG" /> structure that receives message data.</para>
+    </param>
+    <param name="hwnd">
+      <para>Handle to the window whose messages are obtained. The window must belong to the current thread. If this value is <b>NULL</b>, this method obtains messages for any window that belongs to the calling thread.</para>
+    </param>
+    <param name="wMsgFilterMin">
+      <para>Specifies the lowest message value obtained.</para>
+    </param>
+    <param name="wMsgFilterMax">
+      <para>Specifies the highest message value obtained.</para>
+    </param>
+    <param name="pfResult">
+      <para>Pointer to a BOOL value that receives the return value from the <b>GetMessage</b> function.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>One or more parameters are invalid.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>If <i>wMsgFilterMin</i> and <i>wMsgFilterMax</i> are both zero, this method returns all available messages; that is, no range filtering is performed.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/fax/-mfax-faxaccountincomingarchive-getmessage-vb">GetMessage</seealso>
+    <seealso cref="ITfMessagePump" />
+    <seealso cref="MSG" />
+  </member>
+  <member name="ITfMessagePump.GetMessageW">
+    <summary>
+      <para>Obtains a message from the message queue and does not return until a message is obtained. This is the Unicode version of this method.</para>
+    </summary>
+    <param name="pMsg">
+      <para>Pointer to a <see cref="MSG" /> structure that receives message data.</para>
+    </param>
+    <param name="hwnd">
+      <para>Handle to the window whose messages are obtained. The window must belong to the current thread. If this value is <b>NULL</b>, this method obtains messages for any window owned by the calling thread.</para>
+    </param>
+    <param name="wMsgFilterMin">
+      <para>Specifies the lowest message value to obtain.</para>
+    </param>
+    <param name="wMsgFilterMax">
+      <para>Specifies the highest message value to obtain.</para>
+    </param>
+    <param name="pfResult">
+      <para>Pointer to a BOOL that receives the return value from the <b>GetMessage</b> function.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>One or more parameters are invalid.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>If <i>wMsgFilterMin</i> and <i>wMsgFilterMax</i> are both zero, this method returns all available messages; that is, no range filtering is performed.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/fax/-mfax-faxaccountincomingarchive-getmessage-vb">GetMessage</seealso>
+    <seealso cref="ITfMessagePump" />
+    <seealso cref="MSG" />
+  </member>
+  <member name="ITfMessagePump.PeekMessageA">
+    <summary>
+      <para>Obtains a message from the message queue and returns if no message is obtained. This is the ANSI version of this method.</para>
+    </summary>
+    <param name="pMsg">
+      <para>Pointer to a <see cref="MSG" /> structure that receives message data.</para>
+    </param>
+    <param name="hwnd">
+      <para>Handle to the window whose messages are obtained. The window must belong to the current thread. If this value is <b>NULL</b>, this method obtains messages for any window owned by the calling thread.</para>
+    </param>
+    <param name="wMsgFilterMin">
+      <para>Specifies the lowest message value to obtain.</para>
+    </param>
+    <param name="wMsgFilterMax">
+      <para>Specifies the highest message value to obtain.</para>
+    </param>
+    <param name="wRemoveMsg">
+      <para>Specifies how messages are handled. For more information, see the <b>PeekMessage</b> function.</para>
+    </param>
+    <param name="pfResult">
+      <para>Pointer to a BOOL that receives the return value from the <b>PeekMessage</b> function.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>One or more parameters are invalid.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>If <i>wMsgFilterMin</i> and <i>wMsgFilterMax</i> are both zero, this method returns all available messages; that is, no range filtering is performed.</para>
+    </remarks>
+    <seealso cref="ITfMessagePump" />
+    <seealso cref="MSG" />
+    <seealso cref="PeekMessage" />
+  </member>
+  <member name="ITfMessagePump.PeekMessageW">
+    <summary>
+      <para>Obtains a message from the message queue and returns if no message is obtained. This is the Unicode version of this method.</para>
+    </summary>
+    <param name="pMsg">
+      <para>Pointer to a <see cref="MSG" /> structure that receives message data.</para>
+    </param>
+    <param name="hwnd">
+      <para>Handle to the window whose messages are obtained. The window must belong to the current thread. If this value is <b>NULL</b>, this method obtains messages for any window that belongs to the calling thread.</para>
+    </param>
+    <param name="wMsgFilterMin">
+      <para>Specifies the lowest message value to obtain.</para>
+    </param>
+    <param name="wMsgFilterMax">
+      <para>Specifies the highest message value to obtain.</para>
+    </param>
+    <param name="wRemoveMsg">
+      <para>Specifies how messages are handled. For more information, see the <b>PeekMessage</b> function.</para>
+    </param>
+    <param name="pfResult">
+      <para>Pointer to a BOOL that receives the return value from the <b>PeekMessage</b> function.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>One or more parameters are invalid.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>If <i>wMsgFilterMin</i> and <i>wMsgFilterMax</i> are both zero, this method returns all available messages; that is, no range filtering is performed.</para>
+    </remarks>
+    <seealso cref="ITfMessagePump" />
+    <seealso cref="MSG" />
+    <seealso cref="PeekMessage" />
+  </member>
+  <member name="ITfMessagePump">
+    <summary>
+      <para>The <b>ITfMessagePump</b> interface is implemented by the TSF manager and is used by an application to obtain messages from the application message queue. The methods of this interface are wrappers for the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/fax/-mfax-faxaccountincomingarchive-getmessage-vb">GetMessage</a> and <see cref="PeekMessage" /> functions. This interface enables the TSF manager to perform any necessary pre-message or post-message processing.</para>
+    </summary>
+    <remarks>
+      <para>If the application is Unicode, it should use the PeekMessageW and GetMessageW methods. Otherwise, the application should use the PeekMessageA and GetMessageA methods.</para>
+      <h4>Examples</h4>
+      <para>
+        <see cref="ITfThreadMgr " />
+      </para>
+      <code>
+HRESULT hr;
+ITfMessagePump *pMessagePump;
+
+hr = pThreadManager-&gt;QueryInterface(IID_ITfMessagePump, (LPVOID*)&amp;amp;amp;amp;amp;amp;pMessagePump);
+if(SUCCEEDED(hr))
+{
+    //Use the ITfMessagePump interface.
+
+    //Release the ITfMessagePump interface.
+    pMessagePump-&gt;Release();
+}
+
+</code>
+    </remarks>
+  </member>
+</doc>

@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAppxBundleWriter3.xml' path='doc/member[@name="IAppxBundleWriter3"]/*' />
 [Guid("AD711152-F969-4193-82D5-9DDF2786D21A")]
 [NativeTypeName("struct IAppxBundleWriter3 : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IAppxBundleWriter3 : IAppxBundleWriter3.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IAppxBundleWriter3 : IAppxBundleWriter3.Interface
         return ((delegate* unmanaged<IAppxBundleWriter3*, Guid*, void**, int>)(lpVtbl[0]))((IAppxBundleWriter3*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IAppxBundleWriter3 : IAppxBundleWriter3.Interface
         return ((delegate* unmanaged<IAppxBundleWriter3*, uint>)(lpVtbl[1]))((IAppxBundleWriter3*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IAppxBundleWriter3 : IAppxBundleWriter3.Interface
         return ((delegate* unmanaged<IAppxBundleWriter3*, uint>)(lpVtbl[2]))((IAppxBundleWriter3*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAppxBundleWriter3.xml' path='doc/member[@name="IAppxBundleWriter3.AddPackageReference"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT AddPackageReference([NativeTypeName("LPCWSTR")] ushort* fileName, IStream* inputStream)
@@ -48,6 +53,7 @@ public unsafe partial struct IAppxBundleWriter3 : IAppxBundleWriter3.Interface
         return ((delegate* unmanaged<IAppxBundleWriter3*, ushort*, IStream*, int>)(lpVtbl[3]))((IAppxBundleWriter3*)Unsafe.AsPointer(ref this), fileName, inputStream);
     }
 
+    /// <include file='IAppxBundleWriter3.xml' path='doc/member[@name="IAppxBundleWriter3.Close"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Close([NativeTypeName("LPCWSTR")] ushort* hashMethodString)

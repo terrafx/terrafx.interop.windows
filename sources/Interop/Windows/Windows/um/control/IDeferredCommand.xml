@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDeferredCommand.Cancel">
+    <summary>
+      <para>The <code>Cancel</code> method cancels a command that the application previously queued.</para>
+    </summary>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_ALREADY_CANCELLED</b>
+            </para>
+          </description>
+          <description>
+            <para>The request was already canceled.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IDeferredCommand Interface" />
+  </member>
+  <member name="IDeferredCommand.Confidence">
+    <summary>
+      <para>The <code>Confidence</code> method retrieves a confidence value that indicates how likely it is for the command to be invoked at the requested time.</para>
+      <para>This method is not implemented and returns E_NOTIMPL.</para>
+    </summary>
+    <param name="pConfidence">
+      <para>Receives the confidence level, on a scale of 0 to 100.</para>
+    </param>
+    <returns>
+      <para>Returns E_NOTIMPL.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IDeferredCommand Interface" />
+  </member>
+  <member name="IDeferredCommand.GetHResult">
+    <summary>
+      <para>The <code>GetHResult</code> method retrieves the return value from the invoked command.</para>
+    </summary>
+    <param name="phrResult">
+      <para>Receives the <b>HRESULT</b> value.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_ABORT</b>
+            </para>
+          </description>
+          <description>
+            <para>Command has not yet been invoked.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer argument.
+</description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IDeferredCommand Interface" />
+  </member>
+  <member name="IDeferredCommand.Postpone">
+    <summary>
+      <para>The <code>Postpone</code> method specifies a new invocation time for the command.</para>
+    </summary>
+    <param name="newtime">
+      <para>New time at which to invoke the command.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_TIME_ALREADY_PASSED</b>
+            </para>
+          </description>
+          <description>
+            <para>The specified time has already passed.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IDeferredCommand Interface" />
+  </member>
+  <member name="IDeferredCommand">
+    <summary>
+      <para>The <code>IDeferredCommand</code> interface cancels or modify graph-control commands that were queued using the <see cref="IQueueCommand" /> interface.</para>
+      <para>When an application calls an <b>IQueueCommand</b> method on the Filter Graph Manager, it receives a pointer to the <code>IDeferredCommand</code> interface. The application can use the interface to cancel or postpone the command, or retrieve the return value from the command.</para>
+    </summary>
+  </member>
+</doc>

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IHandlerInfo2.xml' path='doc/member[@name="IHandlerInfo2"]/*' />
 [Guid("31CCA04C-04D3-4EA9-90DE-97B15E87A532")]
 [NativeTypeName("struct IHandlerInfo2 : IHandlerInfo")]
 [NativeInheritance("IHandlerInfo")]
@@ -16,6 +17,7 @@ public unsafe partial struct IHandlerInfo2 : IHandlerInfo2.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IHandlerInfo2 : IHandlerInfo2.Interface
         return ((delegate* unmanaged<IHandlerInfo2*, Guid*, void**, int>)(lpVtbl[0]))((IHandlerInfo2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IHandlerInfo2 : IHandlerInfo2.Interface
         return ((delegate* unmanaged<IHandlerInfo2*, uint>)(lpVtbl[1]))((IHandlerInfo2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IHandlerInfo2 : IHandlerInfo2.Interface
         return ((delegate* unmanaged<IHandlerInfo2*, uint>)(lpVtbl[2]))((IHandlerInfo2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IHandlerInfo.GetApplicationDisplayName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetApplicationDisplayName([NativeTypeName("LPWSTR *")] ushort** value)
@@ -46,6 +51,7 @@ public unsafe partial struct IHandlerInfo2 : IHandlerInfo2.Interface
         return ((delegate* unmanaged<IHandlerInfo2*, ushort**, int>)(lpVtbl[3]))((IHandlerInfo2*)Unsafe.AsPointer(ref this), value);
     }
 
+    /// <inheritdoc cref="IHandlerInfo.GetApplicationPublisher" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetApplicationPublisher([NativeTypeName("LPWSTR *")] ushort** value)
@@ -53,6 +59,7 @@ public unsafe partial struct IHandlerInfo2 : IHandlerInfo2.Interface
         return ((delegate* unmanaged<IHandlerInfo2*, ushort**, int>)(lpVtbl[4]))((IHandlerInfo2*)Unsafe.AsPointer(ref this), value);
     }
 
+    /// <inheritdoc cref="IHandlerInfo.GetApplicationIconReference" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetApplicationIconReference([NativeTypeName("LPWSTR *")] ushort** value)
@@ -60,6 +67,7 @@ public unsafe partial struct IHandlerInfo2 : IHandlerInfo2.Interface
         return ((delegate* unmanaged<IHandlerInfo2*, ushort**, int>)(lpVtbl[5]))((IHandlerInfo2*)Unsafe.AsPointer(ref this), value);
     }
 
+    /// <include file='IHandlerInfo2.xml' path='doc/member[@name="IHandlerInfo2.GetApplicationId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetApplicationId([NativeTypeName("LPWSTR *")] ushort** value)

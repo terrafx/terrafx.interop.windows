@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IContextMenu2.xml' path='doc/member[@name="IContextMenu2"]/*' />
 [Guid("000214F4-0000-0000-C000-000000000046")]
 [NativeTypeName("struct IContextMenu2 : IContextMenu")]
 [NativeInheritance("IContextMenu")]
@@ -16,6 +17,7 @@ public unsafe partial struct IContextMenu2 : IContextMenu2.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IContextMenu2 : IContextMenu2.Interface
         return ((delegate* unmanaged<IContextMenu2*, Guid*, void**, int>)(lpVtbl[0]))((IContextMenu2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IContextMenu2 : IContextMenu2.Interface
         return ((delegate* unmanaged<IContextMenu2*, uint>)(lpVtbl[1]))((IContextMenu2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IContextMenu2 : IContextMenu2.Interface
         return ((delegate* unmanaged<IContextMenu2*, uint>)(lpVtbl[2]))((IContextMenu2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IContextMenu.QueryContextMenu" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT QueryContextMenu(HMENU hmenu, uint indexMenu, uint idCmdFirst, uint idCmdLast, uint uFlags)
@@ -46,6 +51,7 @@ public unsafe partial struct IContextMenu2 : IContextMenu2.Interface
         return ((delegate* unmanaged<IContextMenu2*, HMENU, uint, uint, uint, uint, int>)(lpVtbl[3]))((IContextMenu2*)Unsafe.AsPointer(ref this), hmenu, indexMenu, idCmdFirst, idCmdLast, uFlags);
     }
 
+    /// <inheritdoc cref="IContextMenu.InvokeCommand" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT InvokeCommand(CMINVOKECOMMANDINFO* pici)
@@ -53,6 +59,7 @@ public unsafe partial struct IContextMenu2 : IContextMenu2.Interface
         return ((delegate* unmanaged<IContextMenu2*, CMINVOKECOMMANDINFO*, int>)(lpVtbl[4]))((IContextMenu2*)Unsafe.AsPointer(ref this), pici);
     }
 
+    /// <inheritdoc cref="IContextMenu.GetCommandString" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetCommandString([NativeTypeName("UINT_PTR")] nuint idCmd, uint uType, uint* pReserved, [NativeTypeName("CHAR *")] sbyte* pszName, uint cchMax)
@@ -60,6 +67,7 @@ public unsafe partial struct IContextMenu2 : IContextMenu2.Interface
         return ((delegate* unmanaged<IContextMenu2*, nuint, uint, uint*, sbyte*, uint, int>)(lpVtbl[5]))((IContextMenu2*)Unsafe.AsPointer(ref this), idCmd, uType, pReserved, pszName, cchMax);
     }
 
+    /// <include file='IContextMenu2.xml' path='doc/member[@name="IContextMenu2.HandleMenuMsg"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT HandleMenuMsg(uint uMsg, WPARAM wParam, LPARAM lParam)

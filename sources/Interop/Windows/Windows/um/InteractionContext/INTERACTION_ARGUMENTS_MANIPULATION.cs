@@ -7,14 +7,19 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='INTERACTION_ARGUMENTS_MANIPULATION.xml' path='doc/member[@name="INTERACTION_ARGUMENTS_MANIPULATION"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public partial struct INTERACTION_ARGUMENTS_MANIPULATION
 {
+    /// <include file='INTERACTION_ARGUMENTS_MANIPULATION.xml' path='doc/member[@name="INTERACTION_ARGUMENTS_MANIPULATION.delta"]/*' />
     public MANIPULATION_TRANSFORM delta;
 
+    /// <include file='INTERACTION_ARGUMENTS_MANIPULATION.xml' path='doc/member[@name="INTERACTION_ARGUMENTS_MANIPULATION.cumulative"]/*' />
     public MANIPULATION_TRANSFORM cumulative;
 
+    /// <include file='INTERACTION_ARGUMENTS_MANIPULATION.xml' path='doc/member[@name="INTERACTION_ARGUMENTS_MANIPULATION.velocity"]/*' />
     public MANIPULATION_VELOCITY velocity;
 
+    /// <include file='INTERACTION_ARGUMENTS_MANIPULATION.xml' path='doc/member[@name="INTERACTION_ARGUMENTS_MANIPULATION.railsState"]/*' />
     public MANIPULATION_RAILS_STATE railsState;
 }

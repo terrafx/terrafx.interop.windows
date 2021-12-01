@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SCM_PD_DESCRIPTOR_HEADER.xml' path='doc/member[@name="SCM_PD_DESCRIPTOR_HEADER"]/*' />
 public partial struct SCM_PD_DESCRIPTOR_HEADER
 {
+    /// <include file='SCM_PD_DESCRIPTOR_HEADER.xml' path='doc/member[@name="SCM_PD_DESCRIPTOR_HEADER.Version"]/*' />
     [NativeTypeName("DWORD")]
     public uint Version;
 
+    /// <include file='SCM_PD_DESCRIPTOR_HEADER.xml' path='doc/member[@name="SCM_PD_DESCRIPTOR_HEADER.Size"]/*' />
     [NativeTypeName("DWORD")]
     public uint Size;
 }

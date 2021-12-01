@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="EMREXTSELECTCLIPRGN">
+    <summary>
+      <para>The <b>EMREXTSELECTCLIPRGN</b> structure contains members for the <see cref="ExtSelectClipRgn" /> enhanced metafile record.</para>
+    </summary>
+    <seealso cref="ExtSelectClipRgn" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafile-structures">Metafile Structures</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafiles">Metafiles Overview</seealso>
+  </member>
+  <member name="EMREXTSELECTCLIPRGN.emr">
+    <summary>
+      <para>The base structure for all record types.</para>
+    </summary>
+  </member>
+  <member name="EMREXTSELECTCLIPRGN.cbRgnData">
+    <summary>
+      <para>Size of region data, in bytes.</para>
+    </summary>
+  </member>
+  <member name="EMREXTSELECTCLIPRGN.iMode">
+    <summary>
+      <para>Operation to be performed. This member must be one of the following values: RGN_AND, RGN_COPY, RGN_DIFF, RGN_OR, or RGN_XOR.</para>
+    </summary>
+  </member>
+  <member name="EMREXTSELECTCLIPRGN.RgnData">
+    <summary>
+      <para>Buffer containing a <see cref="RGNDATA" /> structure.</para>
+    </summary>
+  </member>
+</doc>

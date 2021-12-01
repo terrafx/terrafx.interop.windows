@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MFAudioConstriction">
+    <summary>
+      <para>Specifies values for audio constriction.</para>
+    </summary>
+    <remarks>
+      <para>Values defined by the <b>MFAudioConstriction</b> enumeration matches the <b>EAudioConstriction</b> enumeration defined <b>audioenginebaseapo.h</b>.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+  </member>
+  <member name="MFAudioConstriction.MFaudioConstrictionOff">
+    <summary>
+      <para>Audio is not constricted.</para>
+    </summary>
+  </member>
+  <member name="MFAudioConstriction.MFaudioConstriction48_16">
+    <summary>
+      <para>Audio is down sampled to 48 kHz/16-bit.</para>
+    </summary>
+  </member>
+  <member name="MFAudioConstriction.MFaudioConstriction44_16">
+    <summary>
+      <para>Audio is down sampled to 44 kHz/16-bit.</para>
+    </summary>
+  </member>
+  <member name="MFAudioConstriction.MFaudioConstriction14_14">
+    <summary>
+      <para>Audio is down sampled to 14hKz/16-bit.</para>
+    </summary>
+  </member>
+  <member name="MFAudioConstriction.MFaudioConstrictionMute">
+    <summary>
+      <para>Audio is muted.</para>
+    </summary>
+  </member>
+</doc>

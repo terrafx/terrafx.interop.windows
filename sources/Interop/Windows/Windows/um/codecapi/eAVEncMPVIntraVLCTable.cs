@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='eAVEncMPVIntraVLCTable.xml' path='doc/member[@name="eAVEncMPVIntraVLCTable"]/*' />
 public enum eAVEncMPVIntraVLCTable
 {
+    /// <include file='eAVEncMPVIntraVLCTable.xml' path='doc/member[@name="eAVEncMPVIntraVLCTable.eAVEncMPVIntraVLCTable_Auto"]/*' />
     eAVEncMPVIntraVLCTable_Auto = 0,
+
+    /// <include file='eAVEncMPVIntraVLCTable.xml' path='doc/member[@name="eAVEncMPVIntraVLCTable.eAVEncMPVIntraVLCTable_MPEG1"]/*' />
     eAVEncMPVIntraVLCTable_MPEG1 = 1,
+
+    /// <include file='eAVEncMPVIntraVLCTable.xml' path='doc/member[@name="eAVEncMPVIntraVLCTable.eAVEncMPVIntraVLCTable_Alternate"]/*' />
     eAVEncMPVIntraVLCTable_Alternate = 2,
 }

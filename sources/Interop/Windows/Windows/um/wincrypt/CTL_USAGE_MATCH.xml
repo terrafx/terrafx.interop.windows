@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CTL_USAGE_MATCH">
+    <summary>
+      <para>The <b>CTL_USAGE_MATCH</b> structure provides parameters for finding <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certificate trust lists</a> (CTL) used to build a certificate chain.</para>
+    </summary>
+  </member>
+  <member name="CTL_USAGE_MATCH.dwType">
+    <summary>
+      <para>Determines the kind of issuer matching to be done. In <b>AND</b> logic, the certificate must meet all criteria. In <b>OR</b> logic, the certificate must meet at least one of the criteria. The following codes are defined to determine the logic used in the match.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>USAGE_MATCH_TYPE_AND</b>
+          </description>
+          <description>
+            <b>AND</b> logic
+</description>
+        </item>
+        <item>
+          <description>
+            <b>USAGE_MATCH_TYPE_OR</b>
+          </description>
+          <description>
+            <b>OR</b> logic
+</description>
+        </item>
+      </list>
+      <para>Default usage match logic is USAGE_MATCH_TYPE_AND.</para>
+    </summary>
+  </member>
+  <member name="CTL_USAGE_MATCH.Usage">
+    <summary>
+      <para>
+        <see cref="CTL_USAGE" /> structure that includes an array of <a href="https://docs.microsoft.com//windows/desktop/SecGloss/o-gly">object identifiers</a> (OIDs) a CTL must match in order to be valid.</para>
+    </summary>
+  </member>
+</doc>

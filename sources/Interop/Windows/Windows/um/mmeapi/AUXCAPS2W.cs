@@ -8,33 +8,44 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='AUXCAPS2W.xml' path='doc/member[@name="AUXCAPS2W"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public unsafe partial struct AUXCAPS2W
 {
+    /// <include file='AUXCAPS2W.xml' path='doc/member[@name="AUXCAPS2W.wMid"]/*' />
     [NativeTypeName("WORD")]
     public ushort wMid;
 
+    /// <include file='AUXCAPS2W.xml' path='doc/member[@name="AUXCAPS2W.wPid"]/*' />
     [NativeTypeName("WORD")]
     public ushort wPid;
 
+    /// <include file='AUXCAPS2W.xml' path='doc/member[@name="AUXCAPS2W.vDriverVersion"]/*' />
     [NativeTypeName("MMVERSION")]
     public uint vDriverVersion;
 
+    /// <include file='AUXCAPS2W.xml' path='doc/member[@name="AUXCAPS2W.szPname"]/*' />
     [NativeTypeName("WCHAR [32]")]
     public fixed ushort szPname[32];
 
+    /// <include file='AUXCAPS2W.xml' path='doc/member[@name="AUXCAPS2W.wTechnology"]/*' />
     [NativeTypeName("WORD")]
     public ushort wTechnology;
 
+    /// <include file='AUXCAPS2W.xml' path='doc/member[@name="AUXCAPS2W.wReserved1"]/*' />
     [NativeTypeName("WORD")]
     public ushort wReserved1;
 
+    /// <include file='AUXCAPS2W.xml' path='doc/member[@name="AUXCAPS2W.dwSupport"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwSupport;
 
+    /// <include file='AUXCAPS2W.xml' path='doc/member[@name="AUXCAPS2W.ManufacturerGuid"]/*' />
     public Guid ManufacturerGuid;
 
+    /// <include file='AUXCAPS2W.xml' path='doc/member[@name="AUXCAPS2W.ProductGuid"]/*' />
     public Guid ProductGuid;
 
+    /// <include file='AUXCAPS2W.xml' path='doc/member[@name="AUXCAPS2W.NameGuid"]/*' />
     public Guid NameGuid;
 }

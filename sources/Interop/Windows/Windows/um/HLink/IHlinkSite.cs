@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IHlinkSite.xml' path='doc/member[@name="IHlinkSite"]/*' />
 [Guid("79EAC9C2-BAF9-11CE-8C82-00AA004BA90B")]
 [NativeTypeName("struct IHlinkSite : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IHlinkSite : IHlinkSite.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IHlinkSite : IHlinkSite.Interface
         return ((delegate* unmanaged<IHlinkSite*, Guid*, void**, int>)(lpVtbl[0]))((IHlinkSite*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IHlinkSite : IHlinkSite.Interface
         return ((delegate* unmanaged<IHlinkSite*, uint>)(lpVtbl[1]))((IHlinkSite*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IHlinkSite : IHlinkSite.Interface
         return ((delegate* unmanaged<IHlinkSite*, uint>)(lpVtbl[2]))((IHlinkSite*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IHlinkSite.xml' path='doc/member[@name="IHlinkSite.QueryService"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT QueryService([NativeTypeName("DWORD")] uint dwSiteData, [NativeTypeName("const GUID &")] Guid* guidService, [NativeTypeName("const IID &")] Guid* riid, IUnknown** ppiunk)
@@ -46,6 +51,7 @@ public unsafe partial struct IHlinkSite : IHlinkSite.Interface
         return ((delegate* unmanaged<IHlinkSite*, uint, Guid*, Guid*, IUnknown**, int>)(lpVtbl[3]))((IHlinkSite*)Unsafe.AsPointer(ref this), dwSiteData, guidService, riid, ppiunk);
     }
 
+    /// <include file='IHlinkSite.xml' path='doc/member[@name="IHlinkSite.GetMoniker"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetMoniker([NativeTypeName("DWORD")] uint dwSiteData, [NativeTypeName("DWORD")] uint dwAssign, [NativeTypeName("DWORD")] uint dwWhich, IMoniker** ppimk)
@@ -53,6 +59,7 @@ public unsafe partial struct IHlinkSite : IHlinkSite.Interface
         return ((delegate* unmanaged<IHlinkSite*, uint, uint, uint, IMoniker**, int>)(lpVtbl[4]))((IHlinkSite*)Unsafe.AsPointer(ref this), dwSiteData, dwAssign, dwWhich, ppimk);
     }
 
+    /// <include file='IHlinkSite.xml' path='doc/member[@name="IHlinkSite.ReadyToNavigate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT ReadyToNavigate([NativeTypeName("DWORD")] uint dwSiteData, [NativeTypeName("DWORD")] uint dwReserved)
@@ -60,6 +67,7 @@ public unsafe partial struct IHlinkSite : IHlinkSite.Interface
         return ((delegate* unmanaged<IHlinkSite*, uint, uint, int>)(lpVtbl[5]))((IHlinkSite*)Unsafe.AsPointer(ref this), dwSiteData, dwReserved);
     }
 
+    /// <include file='IHlinkSite.xml' path='doc/member[@name="IHlinkSite.OnNavigationComplete"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT OnNavigationComplete([NativeTypeName("DWORD")] uint dwSiteData, [NativeTypeName("DWORD")] uint dwreserved, HRESULT hrError, [NativeTypeName("LPCWSTR")] ushort* pwzError)

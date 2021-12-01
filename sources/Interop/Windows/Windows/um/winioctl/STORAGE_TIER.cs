@@ -7,23 +7,31 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STORAGE_TIER.xml' path='doc/member[@name="STORAGE_TIER"]/*' />
 public unsafe partial struct STORAGE_TIER
 {
+    /// <include file='STORAGE_TIER.xml' path='doc/member[@name="STORAGE_TIER.Id"]/*' />
     public Guid Id;
 
+    /// <include file='STORAGE_TIER.xml' path='doc/member[@name="STORAGE_TIER.Name"]/*' />
     [NativeTypeName("WCHAR [256]")]
     public fixed ushort Name[256];
 
+    /// <include file='STORAGE_TIER.xml' path='doc/member[@name="STORAGE_TIER.Description"]/*' />
     [NativeTypeName("WCHAR [256]")]
     public fixed ushort Description[256];
 
+    /// <include file='STORAGE_TIER.xml' path='doc/member[@name="STORAGE_TIER.Flags"]/*' />
     [NativeTypeName("DWORDLONG")]
     public ulong Flags;
 
+    /// <include file='STORAGE_TIER.xml' path='doc/member[@name="STORAGE_TIER.ProvisionedCapacity"]/*' />
     [NativeTypeName("DWORDLONG")]
     public ulong ProvisionedCapacity;
 
+    /// <include file='STORAGE_TIER.xml' path='doc/member[@name="STORAGE_TIER.MediaType"]/*' />
     public STORAGE_TIER_MEDIA_TYPE MediaType;
 
+    /// <include file='STORAGE_TIER.xml' path='doc/member[@name="STORAGE_TIER.Class"]/*' />
     public STORAGE_TIER_CLASS Class;
 }

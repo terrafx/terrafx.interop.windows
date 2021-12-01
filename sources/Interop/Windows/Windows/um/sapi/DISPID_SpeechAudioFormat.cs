@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DISPID_SpeechAudioFormat.xml' path='doc/member[@name="DISPID_SpeechAudioFormat"]/*' />
 public enum DISPID_SpeechAudioFormat
 {
+    /// <include file='DISPID_SpeechAudioFormat.xml' path='doc/member[@name="DISPID_SpeechAudioFormat.DISPID_SAFType"]/*' />
     DISPID_SAFType = 1,
+
+    /// <include file='DISPID_SpeechAudioFormat.xml' path='doc/member[@name="DISPID_SpeechAudioFormat.DISPID_SAFGuid"]/*' />
     DISPID_SAFGuid = (DISPID_SAFType + 1),
+
+    /// <include file='DISPID_SpeechAudioFormat.xml' path='doc/member[@name="DISPID_SpeechAudioFormat.DISPID_SAFGetWaveFormatEx"]/*' />
     DISPID_SAFGetWaveFormatEx = (DISPID_SAFGuid + 1),
+
+    /// <include file='DISPID_SpeechAudioFormat.xml' path='doc/member[@name="DISPID_SpeechAudioFormat.DISPID_SAFSetWaveFormatEx"]/*' />
     DISPID_SAFSetWaveFormatEx = (DISPID_SAFGetWaveFormatEx + 1),
 }

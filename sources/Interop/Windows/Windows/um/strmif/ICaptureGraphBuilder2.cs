@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ICaptureGraphBuilder2.xml' path='doc/member[@name="ICaptureGraphBuilder2"]/*' />
 [Guid("93E5A4E0-2D50-11D2-ABFA-00A0C9C6E38D")]
 [NativeTypeName("struct ICaptureGraphBuilder2 : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ICaptureGraphBuilder2 : ICaptureGraphBuilder2.Inter
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ICaptureGraphBuilder2 : ICaptureGraphBuilder2.Inter
         return ((delegate* unmanaged<ICaptureGraphBuilder2*, Guid*, void**, int>)(lpVtbl[0]))((ICaptureGraphBuilder2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ICaptureGraphBuilder2 : ICaptureGraphBuilder2.Inter
         return ((delegate* unmanaged<ICaptureGraphBuilder2*, uint>)(lpVtbl[1]))((ICaptureGraphBuilder2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ICaptureGraphBuilder2 : ICaptureGraphBuilder2.Inter
         return ((delegate* unmanaged<ICaptureGraphBuilder2*, uint>)(lpVtbl[2]))((ICaptureGraphBuilder2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ICaptureGraphBuilder2.xml' path='doc/member[@name="ICaptureGraphBuilder2.SetFiltergraph"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetFiltergraph(IGraphBuilder* pfg)
@@ -46,6 +51,7 @@ public unsafe partial struct ICaptureGraphBuilder2 : ICaptureGraphBuilder2.Inter
         return ((delegate* unmanaged<ICaptureGraphBuilder2*, IGraphBuilder*, int>)(lpVtbl[3]))((ICaptureGraphBuilder2*)Unsafe.AsPointer(ref this), pfg);
     }
 
+    /// <include file='ICaptureGraphBuilder2.xml' path='doc/member[@name="ICaptureGraphBuilder2.GetFiltergraph"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetFiltergraph(IGraphBuilder** ppfg)
@@ -53,6 +59,7 @@ public unsafe partial struct ICaptureGraphBuilder2 : ICaptureGraphBuilder2.Inter
         return ((delegate* unmanaged<ICaptureGraphBuilder2*, IGraphBuilder**, int>)(lpVtbl[4]))((ICaptureGraphBuilder2*)Unsafe.AsPointer(ref this), ppfg);
     }
 
+    /// <include file='ICaptureGraphBuilder2.xml' path='doc/member[@name="ICaptureGraphBuilder2.SetOutputFileName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetOutputFileName([NativeTypeName("const GUID *")] Guid* pType, [NativeTypeName("LPCOLESTR")] ushort* lpstrFile, IBaseFilter** ppf, IFileSinkFilter** ppSink)
@@ -60,6 +67,7 @@ public unsafe partial struct ICaptureGraphBuilder2 : ICaptureGraphBuilder2.Inter
         return ((delegate* unmanaged<ICaptureGraphBuilder2*, Guid*, ushort*, IBaseFilter**, IFileSinkFilter**, int>)(lpVtbl[5]))((ICaptureGraphBuilder2*)Unsafe.AsPointer(ref this), pType, lpstrFile, ppf, ppSink);
     }
 
+    /// <include file='ICaptureGraphBuilder2.xml' path='doc/member[@name="ICaptureGraphBuilder2.FindInterface"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT FindInterface([NativeTypeName("const GUID *")] Guid* pCategory, [NativeTypeName("const GUID *")] Guid* pType, IBaseFilter* pf, [NativeTypeName("const IID &")] Guid* riid, void** ppint)
@@ -67,6 +75,7 @@ public unsafe partial struct ICaptureGraphBuilder2 : ICaptureGraphBuilder2.Inter
         return ((delegate* unmanaged<ICaptureGraphBuilder2*, Guid*, Guid*, IBaseFilter*, Guid*, void**, int>)(lpVtbl[6]))((ICaptureGraphBuilder2*)Unsafe.AsPointer(ref this), pCategory, pType, pf, riid, ppint);
     }
 
+    /// <include file='ICaptureGraphBuilder2.xml' path='doc/member[@name="ICaptureGraphBuilder2.RenderStream"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT RenderStream([NativeTypeName("const GUID *")] Guid* pCategory, [NativeTypeName("const GUID *")] Guid* pType, IUnknown* pSource, IBaseFilter* pfCompressor, IBaseFilter* pfRenderer)
@@ -74,6 +83,7 @@ public unsafe partial struct ICaptureGraphBuilder2 : ICaptureGraphBuilder2.Inter
         return ((delegate* unmanaged<ICaptureGraphBuilder2*, Guid*, Guid*, IUnknown*, IBaseFilter*, IBaseFilter*, int>)(lpVtbl[7]))((ICaptureGraphBuilder2*)Unsafe.AsPointer(ref this), pCategory, pType, pSource, pfCompressor, pfRenderer);
     }
 
+    /// <include file='ICaptureGraphBuilder2.xml' path='doc/member[@name="ICaptureGraphBuilder2.ControlStream"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT ControlStream([NativeTypeName("const GUID *")] Guid* pCategory, [NativeTypeName("const GUID *")] Guid* pType, IBaseFilter* pFilter, [NativeTypeName("REFERENCE_TIME *")] long* pstart, [NativeTypeName("REFERENCE_TIME *")] long* pstop, [NativeTypeName("WORD")] ushort wStartCookie, [NativeTypeName("WORD")] ushort wStopCookie)
@@ -81,6 +91,7 @@ public unsafe partial struct ICaptureGraphBuilder2 : ICaptureGraphBuilder2.Inter
         return ((delegate* unmanaged<ICaptureGraphBuilder2*, Guid*, Guid*, IBaseFilter*, long*, long*, ushort, ushort, int>)(lpVtbl[8]))((ICaptureGraphBuilder2*)Unsafe.AsPointer(ref this), pCategory, pType, pFilter, pstart, pstop, wStartCookie, wStopCookie);
     }
 
+    /// <include file='ICaptureGraphBuilder2.xml' path='doc/member[@name="ICaptureGraphBuilder2.AllocCapFile"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT AllocCapFile([NativeTypeName("LPCOLESTR")] ushort* lpstr, [NativeTypeName("DWORDLONG")] ulong dwlSize)
@@ -88,6 +99,7 @@ public unsafe partial struct ICaptureGraphBuilder2 : ICaptureGraphBuilder2.Inter
         return ((delegate* unmanaged<ICaptureGraphBuilder2*, ushort*, ulong, int>)(lpVtbl[9]))((ICaptureGraphBuilder2*)Unsafe.AsPointer(ref this), lpstr, dwlSize);
     }
 
+    /// <include file='ICaptureGraphBuilder2.xml' path='doc/member[@name="ICaptureGraphBuilder2.CopyCaptureFile"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT CopyCaptureFile([NativeTypeName("LPOLESTR")] ushort* lpwstrOld, [NativeTypeName("LPOLESTR")] ushort* lpwstrNew, int fAllowEscAbort, IAMCopyCaptureFileProgress* pCallback)
@@ -95,6 +107,7 @@ public unsafe partial struct ICaptureGraphBuilder2 : ICaptureGraphBuilder2.Inter
         return ((delegate* unmanaged<ICaptureGraphBuilder2*, ushort*, ushort*, int, IAMCopyCaptureFileProgress*, int>)(lpVtbl[10]))((ICaptureGraphBuilder2*)Unsafe.AsPointer(ref this), lpwstrOld, lpwstrNew, fAllowEscAbort, pCallback);
     }
 
+    /// <include file='ICaptureGraphBuilder2.xml' path='doc/member[@name="ICaptureGraphBuilder2.FindPin"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT FindPin(IUnknown* pSource, PIN_DIRECTION pindir, [NativeTypeName("const GUID *")] Guid* pCategory, [NativeTypeName("const GUID *")] Guid* pType, BOOL fUnconnected, int num, IPin** ppPin)

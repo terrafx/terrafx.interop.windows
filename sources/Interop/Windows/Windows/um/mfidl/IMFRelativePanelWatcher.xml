@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFRelativePanelWatcher.BeginGetReport">
+    <summary>
+      <para>Begins an asynchronous request to get an <see cref="IMFRelativePanelReport" /> interface that represents the relative panel location.</para>
+    </summary>
+    <param name="pCallback">
+      <para>Pointer to the <see cref="IMFAsyncCallback" /> interface of a callback object. The caller must implement this interface.</para>
+    </param>
+    <param name="pState">
+      <para>Pointer to the IUnknown interface of a state object, defined by the caller. This parameter can be NULL. You can use this object to hold state information. The object is returned to the caller when the callback is invoked.</para>
+    </param>
+    <returns>
+      <para>The function returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <para>| Return code | Description |
+|--------------|------------------------|
+|S_OK | The function succeeded.|</para>
+    </returns>
+  </member>
+  <member name="IMFRelativePanelWatcher.EndGetReport">
+    <summary>
+      <para>Ends an asynchronous request to get an <see cref="IMFRelativePanelReport" /> interface that represents the relative panel location.</para>
+    </summary>
+    <param name="pResult">
+      <para>Pointer to the <see cref="IMFAsyncResult" /> interface. Pass in the same pointer that your callback object received in the Invoke method.</para>
+    </param>
+    <param name="ppRelativePanelReport">
+      <para>A pointer to he <see cref="IMFRelativePanelReport" /> interface that represents the relative panel location.</para>
+    </param>
+    <returns>
+      <para>The function returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <para>| Return code | Description |
+|--------------|------------------------|
+|S_OK | The function succeeded.|</para>
+    </returns>
+  </member>
+  <member name="IMFRelativePanelWatcher.GetReport">
+    <summary>
+      <para>Gets an <see cref="IMFRelativePanelReport" /> interface that represents the relative panel location.</para>
+    </summary>
+    <param name="ppRelativePanelReport">
+      <para>A pointer to he <see cref="IMFRelativePanelReport" /> interface that represents the relative panel location.</para>
+    </param>
+    <returns>
+      <para>The function returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <para>| Return code | Description |
+|--------------|------------------------|
+|S_OK | The function succeeded.|</para>
+    </returns>
+  </member>
+  <member name="IMFRelativePanelWatcher">
+    <summary>
+      <para>Monitors the panel associated with a display, so that the app receives notifications when the relative location of the panel changes.</para>
+    </summary>
+    <remarks>
+      <para>Get an instance of this interface by calling <see cref="MFCreateRelativePanelWatcher" />.</para>
+    </remarks>
+  </member>
+</doc>

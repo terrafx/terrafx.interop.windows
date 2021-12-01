@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='msidbODBCDataSourceRegistration.xml' path='doc/member[@name="msidbODBCDataSourceRegistration"]/*' />
 public enum msidbODBCDataSourceRegistration
 {
+    /// <include file='msidbODBCDataSourceRegistration.xml' path='doc/member[@name="msidbODBCDataSourceRegistration.msidbODBCDataSourceRegistrationPerMachine"]/*' />
     msidbODBCDataSourceRegistrationPerMachine = 0x00000000,
+
+    /// <include file='msidbODBCDataSourceRegistration.xml' path='doc/member[@name="msidbODBCDataSourceRegistration.msidbODBCDataSourceRegistrationPerUser"]/*' />
     msidbODBCDataSourceRegistrationPerUser = 0x00000001,
 }

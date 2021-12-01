@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAMPushSource.xml' path='doc/member[@name="IAMPushSource"]/*' />
 [Guid("F185FE76-E64E-11D2-B76E-00C04FB6BD3D")]
 [NativeTypeName("struct IAMPushSource : IAMLatency")]
 [NativeInheritance("IAMLatency")]
@@ -16,6 +17,7 @@ public unsafe partial struct IAMPushSource : IAMPushSource.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IAMPushSource : IAMPushSource.Interface
         return ((delegate* unmanaged<IAMPushSource*, Guid*, void**, int>)(lpVtbl[0]))((IAMPushSource*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IAMPushSource : IAMPushSource.Interface
         return ((delegate* unmanaged<IAMPushSource*, uint>)(lpVtbl[1]))((IAMPushSource*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IAMPushSource : IAMPushSource.Interface
         return ((delegate* unmanaged<IAMPushSource*, uint>)(lpVtbl[2]))((IAMPushSource*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IAMLatency.GetLatency" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetLatency([NativeTypeName("REFERENCE_TIME *")] long* prtLatency)
@@ -46,6 +51,7 @@ public unsafe partial struct IAMPushSource : IAMPushSource.Interface
         return ((delegate* unmanaged<IAMPushSource*, long*, int>)(lpVtbl[3]))((IAMPushSource*)Unsafe.AsPointer(ref this), prtLatency);
     }
 
+    /// <include file='IAMPushSource.xml' path='doc/member[@name="IAMPushSource.GetPushSourceFlags"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetPushSourceFlags([NativeTypeName("ULONG *")] uint* pFlags)
@@ -53,6 +59,7 @@ public unsafe partial struct IAMPushSource : IAMPushSource.Interface
         return ((delegate* unmanaged<IAMPushSource*, uint*, int>)(lpVtbl[4]))((IAMPushSource*)Unsafe.AsPointer(ref this), pFlags);
     }
 
+    /// <include file='IAMPushSource.xml' path='doc/member[@name="IAMPushSource.SetPushSourceFlags"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetPushSourceFlags([NativeTypeName("ULONG")] uint Flags)
@@ -60,6 +67,7 @@ public unsafe partial struct IAMPushSource : IAMPushSource.Interface
         return ((delegate* unmanaged<IAMPushSource*, uint, int>)(lpVtbl[5]))((IAMPushSource*)Unsafe.AsPointer(ref this), Flags);
     }
 
+    /// <include file='IAMPushSource.xml' path='doc/member[@name="IAMPushSource.SetStreamOffset"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT SetStreamOffset([NativeTypeName("REFERENCE_TIME")] long rtOffset)
@@ -67,6 +75,7 @@ public unsafe partial struct IAMPushSource : IAMPushSource.Interface
         return ((delegate* unmanaged<IAMPushSource*, long, int>)(lpVtbl[6]))((IAMPushSource*)Unsafe.AsPointer(ref this), rtOffset);
     }
 
+    /// <include file='IAMPushSource.xml' path='doc/member[@name="IAMPushSource.GetStreamOffset"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetStreamOffset([NativeTypeName("REFERENCE_TIME *")] long* prtOffset)
@@ -74,6 +83,7 @@ public unsafe partial struct IAMPushSource : IAMPushSource.Interface
         return ((delegate* unmanaged<IAMPushSource*, long*, int>)(lpVtbl[7]))((IAMPushSource*)Unsafe.AsPointer(ref this), prtOffset);
     }
 
+    /// <include file='IAMPushSource.xml' path='doc/member[@name="IAMPushSource.GetMaxStreamOffset"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetMaxStreamOffset([NativeTypeName("REFERENCE_TIME *")] long* prtMaxOffset)
@@ -81,6 +91,7 @@ public unsafe partial struct IAMPushSource : IAMPushSource.Interface
         return ((delegate* unmanaged<IAMPushSource*, long*, int>)(lpVtbl[8]))((IAMPushSource*)Unsafe.AsPointer(ref this), prtMaxOffset);
     }
 
+    /// <include file='IAMPushSource.xml' path='doc/member[@name="IAMPushSource.SetMaxStreamOffset"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT SetMaxStreamOffset([NativeTypeName("REFERENCE_TIME")] long rtMaxOffset)

@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IAppxContentGroupMapWriter.AddAutomaticFile">
+    <summary>
+      <para>Adds files to an automatic content group in a content group map.</para>
+    </summary>
+    <param name="fileName">
+      <para>The name of the file to be added to the automatic content group.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IAppxContentGroupMapWriter" />
+  </member>
+  <member name="IAppxContentGroupMapWriter.AddAutomaticGroup">
+    <summary>
+      <para>Adds an automatic content group to the content group map.</para>
+    </summary>
+    <param name="groupName">
+      <para>The automatic content group name.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IAppxContentGroupMapWriter" />
+  </member>
+  <member name="IAppxContentGroupMapWriter">
+    <summary>
+      <para>Provides a write-only object model for a content group map.</para>
+    </summary>
+  </member>
+</doc>

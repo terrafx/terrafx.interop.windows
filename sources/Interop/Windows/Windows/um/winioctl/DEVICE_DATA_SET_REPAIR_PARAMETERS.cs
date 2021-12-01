@@ -7,15 +7,19 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DEVICE_DATA_SET_REPAIR_PARAMETERS.xml' path='doc/member[@name="DEVICE_DATA_SET_REPAIR_PARAMETERS"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public unsafe partial struct DEVICE_DATA_SET_REPAIR_PARAMETERS
 {
+    /// <include file='DEVICE_DATA_SET_REPAIR_PARAMETERS.xml' path='doc/member[@name="DEVICE_DATA_SET_REPAIR_PARAMETERS.NumberOfRepairCopies"]/*' />
     [NativeTypeName("DWORD")]
     public uint NumberOfRepairCopies;
 
+    /// <include file='DEVICE_DATA_SET_REPAIR_PARAMETERS.xml' path='doc/member[@name="DEVICE_DATA_SET_REPAIR_PARAMETERS.SourceCopy"]/*' />
     [NativeTypeName("DWORD")]
     public uint SourceCopy;
 
+    /// <include file='DEVICE_DATA_SET_REPAIR_PARAMETERS.xml' path='doc/member[@name="DEVICE_DATA_SET_REPAIR_PARAMETERS.RepairCopies"]/*' />
     [NativeTypeName("DWORD [1]")]
     public fixed uint RepairCopies[1];
 }

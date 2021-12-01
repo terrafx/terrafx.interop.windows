@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MULTI_QI">
+    <summary>
+      <para>Represents an interface in a query for multiple interfaces.</para>
+    </summary>
+    <remarks>
+      <para>To optimize network performance, most remote activation functions take an array of <b>MULTI_QI</b> structures rather than just a single IID as input and a single pointer to the requested interface on the object as output, as do local activation functions. This allows a set of pointers to interfaces to be returned from the same object in a single round-trip to the server. In network scenarios, requesting multiple interfaces at the time of object construction can save considerable time over using a number of calls to <see cref="QueryInterface" /> for unique interfaces, each of which would require a round-trip to the server.</para>
+    </remarks>
+    <seealso cref="CoCreateInstanceEx" />
+    <seealso cref="CoGetInstanceFromFile" />
+    <seealso cref="CoGetInstanceFromIStorage" />
+    <seealso cref="IMultiQI" />
+  </member>
+  <member name="MULTI_QI.pIID">
+    <summary>
+      <para>A pointer to an interface identifier.</para>
+    </summary>
+  </member>
+  <member name="MULTI_QI.pItf">
+    <summary>
+      <para>A pointer to the interface requested in <b>pIID</b>. This member must be <b>NULL</b> on input.</para>
+    </summary>
+  </member>
+  <member name="MULTI_QI.hr">
+    <summary>
+      <para>The return value of the <see cref="QueryInterface" /> call to locate the requested interface. Common return values include S_OK and E_NOINTERFACE. This member must be 0 on input.</para>
+    </summary>
+  </member>
+</doc>

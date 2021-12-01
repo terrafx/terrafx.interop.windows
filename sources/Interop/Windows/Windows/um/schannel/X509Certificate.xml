@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="X509Certificate">
+    <summary>
+      <para>The <b>X509Certificate</b> structure represents an <a href="https://docs.microsoft.com//windows/desktop/SecGloss/x-gly">X.509</a> certificate.</para>
+    </summary>
+  </member>
+  <member name="X509Certificate.Version">
+    <summary>
+      <para>The X.509 version number.</para>
+    </summary>
+  </member>
+  <member name="X509Certificate.SerialNumber">
+    <summary>
+      <para>The serial number of the certificate.</para>
+    </summary>
+  </member>
+  <member name="X509Certificate.SignatureAlgorithm">
+    <summary>
+      <para>The ID of the algorithm used to create the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/d-gly">digital signature</a> for the certificate.</para>
+    </summary>
+  </member>
+  <member name="X509Certificate.ValidFrom">
+    <summary>
+      <para>The beginning of the period of validity for the certificate.</para>
+    </summary>
+  </member>
+  <member name="X509Certificate.ValidUntil">
+    <summary>
+      <para>The end of the period of validity for the certificate.</para>
+    </summary>
+  </member>
+  <member name="X509Certificate.pszIssuer">
+    <summary>
+      <para>A pointer to a string that specifies the issuer of the certificate.</para>
+    </summary>
+  </member>
+  <member name="X509Certificate.pszSubject">
+    <summary>
+      <para>A pointer to a string that specifies the subject of the certificate.</para>
+    </summary>
+  </member>
+  <member name="X509Certificate.pPublicKey">
+    <summary>
+      <para>A pointer to the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/p-gly">public key</a> used to create the signature for the certificate.</para>
+    </summary>
+  </member>
+</doc>

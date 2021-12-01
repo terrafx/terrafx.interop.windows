@@ -7,13 +7,17 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='FILE_STORAGE_TIER_REGION.xml' path='doc/member[@name="FILE_STORAGE_TIER_REGION"]/*' />
 public partial struct FILE_STORAGE_TIER_REGION
 {
+    /// <include file='FILE_STORAGE_TIER_REGION.xml' path='doc/member[@name="FILE_STORAGE_TIER_REGION.TierId"]/*' />
     public Guid TierId;
 
+    /// <include file='FILE_STORAGE_TIER_REGION.xml' path='doc/member[@name="FILE_STORAGE_TIER_REGION.Offset"]/*' />
     [NativeTypeName("DWORDLONG")]
     public ulong Offset;
 
+    /// <include file='FILE_STORAGE_TIER_REGION.xml' path='doc/member[@name="FILE_STORAGE_TIER_REGION.Length"]/*' />
     [NativeTypeName("DWORDLONG")]
     public ulong Length;
 }

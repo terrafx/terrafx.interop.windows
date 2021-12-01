@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='UDACCEL.xml' path='doc/member[@name="UDACCEL"]/*' />
 public partial struct UDACCEL
 {
+    /// <include file='UDACCEL.xml' path='doc/member[@name="UDACCEL.nSec"]/*' />
     public uint nSec;
 
+    /// <include file='UDACCEL.xml' path='doc/member[@name="UDACCEL.nInc"]/*' />
     public uint nInc;
 }

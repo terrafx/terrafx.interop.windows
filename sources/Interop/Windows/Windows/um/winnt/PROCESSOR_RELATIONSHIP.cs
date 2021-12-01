@@ -9,21 +9,28 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PROCESSOR_RELATIONSHIP.xml' path='doc/member[@name="PROCESSOR_RELATIONSHIP"]/*' />
 public unsafe partial struct PROCESSOR_RELATIONSHIP
 {
+    /// <include file='PROCESSOR_RELATIONSHIP.xml' path='doc/member[@name="PROCESSOR_RELATIONSHIP.Flags"]/*' />
     public byte Flags;
 
+    /// <include file='PROCESSOR_RELATIONSHIP.xml' path='doc/member[@name="PROCESSOR_RELATIONSHIP.EfficiencyClass"]/*' />
     public byte EfficiencyClass;
 
+    /// <include file='PROCESSOR_RELATIONSHIP.xml' path='doc/member[@name="PROCESSOR_RELATIONSHIP.Reserved"]/*' />
     [NativeTypeName("BYTE [20]")]
     public fixed byte Reserved[20];
 
+    /// <include file='PROCESSOR_RELATIONSHIP.xml' path='doc/member[@name="PROCESSOR_RELATIONSHIP.GroupCount"]/*' />
     [NativeTypeName("WORD")]
     public ushort GroupCount;
 
+    /// <include file='PROCESSOR_RELATIONSHIP.xml' path='doc/member[@name="PROCESSOR_RELATIONSHIP.GroupMask"]/*' />
     [NativeTypeName("GROUP_AFFINITY [1]")]
     public _GroupMask_e__FixedBuffer GroupMask;
 
+    /// <include file='_GroupMask_e__FixedBuffer.xml' path='doc/member[@name="_GroupMask_e__FixedBuffer"]/*' />
     public partial struct _GroupMask_e__FixedBuffer
     {
         public GROUP_AFFINITY e0;

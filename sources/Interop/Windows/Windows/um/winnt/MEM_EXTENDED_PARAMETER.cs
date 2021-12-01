@@ -9,15 +9,19 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MEM_EXTENDED_PARAMETER.xml' path='doc/member[@name="MEM_EXTENDED_PARAMETER"]/*' />
 [SupportedOSPlatform("windows10.0")]
 public unsafe partial struct MEM_EXTENDED_PARAMETER
 {
+    /// <include file='MEM_EXTENDED_PARAMETER.xml' path='doc/member[@name="MEM_EXTENDED_PARAMETER.Anonymous1"]/*' />
     [NativeTypeName("MEM_EXTENDED_PARAMETER::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:14191:5)")]
     public _Anonymous1_e__Struct Anonymous1;
 
+    /// <include file='MEM_EXTENDED_PARAMETER.xml' path='doc/member[@name="MEM_EXTENDED_PARAMETER.Anonymous2"]/*' />
     [NativeTypeName("MEM_EXTENDED_PARAMETER::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:14196:5)")]
     public _Anonymous2_e__Union Anonymous2;
 
+    /// <include file='_Anonymous1_e__Struct.xml' path='doc/member[@name="_Anonymous1_e__Struct.Type"]/*' />
     public ulong Type
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -33,6 +37,7 @@ public unsafe partial struct MEM_EXTENDED_PARAMETER
         }
     }
 
+    /// <include file='_Anonymous1_e__Struct.xml' path='doc/member[@name="_Anonymous1_e__Struct.Reserved"]/*' />
     public ulong Reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -48,6 +53,7 @@ public unsafe partial struct MEM_EXTENDED_PARAMETER
         }
     }
 
+    /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.ULong64"]/*' />
     public ref ulong ULong64
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -57,6 +63,7 @@ public unsafe partial struct MEM_EXTENDED_PARAMETER
         }
     }
 
+    /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.Pointer"]/*' />
     public ref void* Pointer
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -66,6 +73,7 @@ public unsafe partial struct MEM_EXTENDED_PARAMETER
         }
     }
 
+    /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.Size"]/*' />
     public ref nuint Size
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -75,6 +83,7 @@ public unsafe partial struct MEM_EXTENDED_PARAMETER
         }
     }
 
+    /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.Handle"]/*' />
     public ref HANDLE Handle
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -84,6 +93,7 @@ public unsafe partial struct MEM_EXTENDED_PARAMETER
         }
     }
 
+    /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.ULong"]/*' />
     public ref uint ULong
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -93,10 +103,12 @@ public unsafe partial struct MEM_EXTENDED_PARAMETER
         }
     }
 
+    /// <include file='_Anonymous1_e__Struct.xml' path='doc/member[@name="_Anonymous1_e__Struct"]/*' />
     public partial struct _Anonymous1_e__Struct
     {
         public ulong _bitfield;
 
+        /// <include file='_Anonymous1_e__Struct.xml' path='doc/member[@name="_Anonymous1_e__Struct.Type"]/*' />
         [NativeTypeName("DWORD64 : 8")]
         public ulong Type
         {
@@ -113,6 +125,7 @@ public unsafe partial struct MEM_EXTENDED_PARAMETER
             }
         }
 
+        /// <include file='_Anonymous1_e__Struct.xml' path='doc/member[@name="_Anonymous1_e__Struct.Reserved"]/*' />
         [NativeTypeName("DWORD64 : 56")]
         public ulong Reserved
         {
@@ -130,24 +143,30 @@ public unsafe partial struct MEM_EXTENDED_PARAMETER
         }
     }
 
+    /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public unsafe partial struct _Anonymous2_e__Union
     {
+        /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.ULong64"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("DWORD64")]
         public ulong ULong64;
 
+        /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.Pointer"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("PVOID")]
         public void* Pointer;
 
+        /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.Size"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("SIZE_T")]
         public nuint Size;
 
+        /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.Handle"]/*' />
         [FieldOffset(0)]
         public HANDLE Handle;
 
+        /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.ULong"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("DWORD")]
         public uint ULong;

@@ -7,30 +7,39 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STORAGE_DEVICE_RESILIENCY_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_DEVICE_RESILIENCY_DESCRIPTOR"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public partial struct STORAGE_DEVICE_RESILIENCY_DESCRIPTOR
 {
+    /// <include file='STORAGE_DEVICE_RESILIENCY_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_DEVICE_RESILIENCY_DESCRIPTOR.Version"]/*' />
     [NativeTypeName("DWORD")]
     public uint Version;
 
+    /// <include file='STORAGE_DEVICE_RESILIENCY_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_DEVICE_RESILIENCY_DESCRIPTOR.Size"]/*' />
     [NativeTypeName("DWORD")]
     public uint Size;
 
+    /// <include file='STORAGE_DEVICE_RESILIENCY_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_DEVICE_RESILIENCY_DESCRIPTOR.NameOffset"]/*' />
     [NativeTypeName("DWORD")]
     public uint NameOffset;
 
+    /// <include file='STORAGE_DEVICE_RESILIENCY_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_DEVICE_RESILIENCY_DESCRIPTOR.NumberOfLogicalCopies"]/*' />
     [NativeTypeName("DWORD")]
     public uint NumberOfLogicalCopies;
 
+    /// <include file='STORAGE_DEVICE_RESILIENCY_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_DEVICE_RESILIENCY_DESCRIPTOR.NumberOfPhysicalCopies"]/*' />
     [NativeTypeName("DWORD")]
     public uint NumberOfPhysicalCopies;
 
+    /// <include file='STORAGE_DEVICE_RESILIENCY_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_DEVICE_RESILIENCY_DESCRIPTOR.PhysicalDiskRedundancy"]/*' />
     [NativeTypeName("DWORD")]
     public uint PhysicalDiskRedundancy;
 
+    /// <include file='STORAGE_DEVICE_RESILIENCY_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_DEVICE_RESILIENCY_DESCRIPTOR.NumberOfColumns"]/*' />
     [NativeTypeName("DWORD")]
     public uint NumberOfColumns;
 
+    /// <include file='STORAGE_DEVICE_RESILIENCY_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_DEVICE_RESILIENCY_DESCRIPTOR.Interleave"]/*' />
     [NativeTypeName("DWORD")]
     public uint Interleave;
 }

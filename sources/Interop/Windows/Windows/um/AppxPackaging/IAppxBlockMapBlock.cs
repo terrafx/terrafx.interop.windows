@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAppxBlockMapBlock.xml' path='doc/member[@name="IAppxBlockMapBlock"]/*' />
 [Guid("75CF3930-3244-4FE0-A8C8-E0BCB270B889")]
 [NativeTypeName("struct IAppxBlockMapBlock : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IAppxBlockMapBlock : IAppxBlockMapBlock.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IAppxBlockMapBlock : IAppxBlockMapBlock.Interface
         return ((delegate* unmanaged<IAppxBlockMapBlock*, Guid*, void**, int>)(lpVtbl[0]))((IAppxBlockMapBlock*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IAppxBlockMapBlock : IAppxBlockMapBlock.Interface
         return ((delegate* unmanaged<IAppxBlockMapBlock*, uint>)(lpVtbl[1]))((IAppxBlockMapBlock*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IAppxBlockMapBlock : IAppxBlockMapBlock.Interface
         return ((delegate* unmanaged<IAppxBlockMapBlock*, uint>)(lpVtbl[2]))((IAppxBlockMapBlock*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAppxBlockMapBlock.xml' path='doc/member[@name="IAppxBlockMapBlock.GetHash"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetHash([NativeTypeName("UINT32 *")] uint* bufferSize, byte** buffer)
@@ -48,6 +53,7 @@ public unsafe partial struct IAppxBlockMapBlock : IAppxBlockMapBlock.Interface
         return ((delegate* unmanaged<IAppxBlockMapBlock*, uint*, byte**, int>)(lpVtbl[3]))((IAppxBlockMapBlock*)Unsafe.AsPointer(ref this), bufferSize, buffer);
     }
 
+    /// <include file='IAppxBlockMapBlock.xml' path='doc/member[@name="IAppxBlockMapBlock.GetCompressedSize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetCompressedSize([NativeTypeName("UINT32 *")] uint* size)

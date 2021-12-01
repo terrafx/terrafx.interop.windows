@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IElementNamespaceTable.xml' path='doc/member[@name="IElementNamespaceTable"]/*' />
 [Guid("3050F670-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IElementNamespaceTable : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IElementNamespaceTable : IElementNamespaceTable.Int
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IElementNamespaceTable : IElementNamespaceTable.Int
         return ((delegate* unmanaged<IElementNamespaceTable*, Guid*, void**, int>)(lpVtbl[0]))((IElementNamespaceTable*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IElementNamespaceTable : IElementNamespaceTable.Int
         return ((delegate* unmanaged<IElementNamespaceTable*, uint>)(lpVtbl[1]))((IElementNamespaceTable*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IElementNamespaceTable : IElementNamespaceTable.Int
         return ((delegate* unmanaged<IElementNamespaceTable*, uint>)(lpVtbl[2]))((IElementNamespaceTable*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IElementNamespaceTable.xml' path='doc/member[@name="IElementNamespaceTable.AddNamespace"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT AddNamespace([NativeTypeName("BSTR")] ushort* bstrNamespace, [NativeTypeName("BSTR")] ushort* bstrUrn, [NativeTypeName("LONG")] int lFlags, VARIANT* pvarFactory)

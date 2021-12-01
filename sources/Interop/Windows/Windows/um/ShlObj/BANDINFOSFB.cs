@@ -5,31 +5,42 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='BANDINFOSFB.xml' path='doc/member[@name="BANDINFOSFB"]/*' />
 public unsafe partial struct BANDINFOSFB
 {
+    /// <include file='BANDINFOSFB.xml' path='doc/member[@name="BANDINFOSFB.dwMask"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwMask;
 
+    /// <include file='BANDINFOSFB.xml' path='doc/member[@name="BANDINFOSFB.dwStateMask"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwStateMask;
 
+    /// <include file='BANDINFOSFB.xml' path='doc/member[@name="BANDINFOSFB.dwState"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwState;
 
+    /// <include file='BANDINFOSFB.xml' path='doc/member[@name="BANDINFOSFB.crBkgnd"]/*' />
     public COLORREF crBkgnd;
 
+    /// <include file='BANDINFOSFB.xml' path='doc/member[@name="BANDINFOSFB.crBtnLt"]/*' />
     public COLORREF crBtnLt;
 
+    /// <include file='BANDINFOSFB.xml' path='doc/member[@name="BANDINFOSFB.crBtnDk"]/*' />
     public COLORREF crBtnDk;
 
+    /// <include file='BANDINFOSFB.xml' path='doc/member[@name="BANDINFOSFB.wViewMode"]/*' />
     [NativeTypeName("WORD")]
     public ushort wViewMode;
 
+    /// <include file='BANDINFOSFB.xml' path='doc/member[@name="BANDINFOSFB.wAlign"]/*' />
     [NativeTypeName("WORD")]
     public ushort wAlign;
 
+    /// <include file='BANDINFOSFB.xml' path='doc/member[@name="BANDINFOSFB.psf"]/*' />
     public IShellFolder* psf;
 
+    /// <include file='BANDINFOSFB.xml' path='doc/member[@name="BANDINFOSFB.pidl"]/*' />
     [NativeTypeName("LPITEMIDLIST")]
     public ITEMIDLIST* pidl;
 }

@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='htmlCompatMode.xml' path='doc/member[@name="htmlCompatMode"]/*' />
 public enum htmlCompatMode
 {
+    /// <include file='htmlCompatMode.xml' path='doc/member[@name="htmlCompatMode.htmlCompatModeBackCompat"]/*' />
     htmlCompatModeBackCompat = 0,
+
+    /// <include file='htmlCompatMode.xml' path='doc/member[@name="htmlCompatMode.htmlCompatModeCSS1Compat"]/*' />
     htmlCompatModeCSS1Compat = 1,
+
+    /// <include file='htmlCompatMode.xml' path='doc/member[@name="htmlCompatMode.htmlCompatMode_Max"]/*' />
     htmlCompatMode_Max = 2147483647,
 }

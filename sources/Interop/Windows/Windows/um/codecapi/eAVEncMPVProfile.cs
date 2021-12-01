@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='eAVEncMPVProfile.xml' path='doc/member[@name="eAVEncMPVProfile"]/*' />
 public enum eAVEncMPVProfile
 {
+    /// <include file='eAVEncMPVProfile.xml' path='doc/member[@name="eAVEncMPVProfile.eAVEncMPVProfile_unknown"]/*' />
     eAVEncMPVProfile_unknown = 0,
+
+    /// <include file='eAVEncMPVProfile.xml' path='doc/member[@name="eAVEncMPVProfile.eAVEncMPVProfile_Simple"]/*' />
     eAVEncMPVProfile_Simple = 1,
+
+    /// <include file='eAVEncMPVProfile.xml' path='doc/member[@name="eAVEncMPVProfile.eAVEncMPVProfile_Main"]/*' />
     eAVEncMPVProfile_Main = 2,
+
+    /// <include file='eAVEncMPVProfile.xml' path='doc/member[@name="eAVEncMPVProfile.eAVEncMPVProfile_High"]/*' />
     eAVEncMPVProfile_High = 3,
+
+    /// <include file='eAVEncMPVProfile.xml' path='doc/member[@name="eAVEncMPVProfile.eAVEncMPVProfile_422"]/*' />
     eAVEncMPVProfile_422 = 4,
 }

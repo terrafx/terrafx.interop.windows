@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MENU_EVENT_RECORD.xml' path='doc/member[@name="MENU_EVENT_RECORD"]/*' />
 public partial struct MENU_EVENT_RECORD
 {
+    /// <include file='MENU_EVENT_RECORD.xml' path='doc/member[@name="MENU_EVENT_RECORD.dwCommandId"]/*' />
     public uint dwCommandId;
 }

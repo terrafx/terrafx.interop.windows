@@ -7,16 +7,21 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMAGE_AUX_SYMBOL_TOKEN_DEF.xml' path='doc/member[@name="IMAGE_AUX_SYMBOL_TOKEN_DEF"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 2)]
 public unsafe partial struct IMAGE_AUX_SYMBOL_TOKEN_DEF
 {
+    /// <include file='IMAGE_AUX_SYMBOL_TOKEN_DEF.xml' path='doc/member[@name="IMAGE_AUX_SYMBOL_TOKEN_DEF.bAuxType"]/*' />
     public byte bAuxType;
 
+    /// <include file='IMAGE_AUX_SYMBOL_TOKEN_DEF.xml' path='doc/member[@name="IMAGE_AUX_SYMBOL_TOKEN_DEF.bReserved"]/*' />
     public byte bReserved;
 
+    /// <include file='IMAGE_AUX_SYMBOL_TOKEN_DEF.xml' path='doc/member[@name="IMAGE_AUX_SYMBOL_TOKEN_DEF.SymbolTableIndex"]/*' />
     [NativeTypeName("DWORD")]
     public uint SymbolTableIndex;
 
+    /// <include file='IMAGE_AUX_SYMBOL_TOKEN_DEF.xml' path='doc/member[@name="IMAGE_AUX_SYMBOL_TOKEN_DEF.rgbReserved"]/*' />
     [NativeTypeName("BYTE [12]")]
     public fixed byte rgbReserved[12];
 }

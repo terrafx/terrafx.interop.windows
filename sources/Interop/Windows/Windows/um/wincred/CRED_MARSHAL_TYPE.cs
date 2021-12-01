@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CRED_MARSHAL_TYPE.xml' path='doc/member[@name="CRED_MARSHAL_TYPE"]/*' />
 public enum CRED_MARSHAL_TYPE
 {
+    /// <include file='CRED_MARSHAL_TYPE.xml' path='doc/member[@name="CRED_MARSHAL_TYPE.CertCredential"]/*' />
     CertCredential = 1,
+
+    /// <include file='CRED_MARSHAL_TYPE.xml' path='doc/member[@name="CRED_MARSHAL_TYPE.UsernameTargetCredential"]/*' />
     UsernameTargetCredential,
+
+    /// <include file='CRED_MARSHAL_TYPE.xml' path='doc/member[@name="CRED_MARSHAL_TYPE.BinaryBlobCredential"]/*' />
     BinaryBlobCredential,
+
+    /// <include file='CRED_MARSHAL_TYPE.xml' path='doc/member[@name="CRED_MARSHAL_TYPE.UsernameForPackedCredentials"]/*' />
     UsernameForPackedCredentials,
+
+    /// <include file='CRED_MARSHAL_TYPE.xml' path='doc/member[@name="CRED_MARSHAL_TYPE.BinaryBlobForSystem"]/*' />
     BinaryBlobForSystem,
 }

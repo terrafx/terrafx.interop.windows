@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ICodeInstall.xml' path='doc/member[@name="ICodeInstall"]/*' />
 [Guid("79EAC9D1-BAF9-11CE-8C82-00AA004BA90B")]
 [NativeTypeName("struct ICodeInstall : IWindowForBindingUI")]
 [NativeInheritance("IWindowForBindingUI")]
@@ -16,6 +17,7 @@ public unsafe partial struct ICodeInstall : ICodeInstall.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ICodeInstall : ICodeInstall.Interface
         return ((delegate* unmanaged<ICodeInstall*, Guid*, void**, int>)(lpVtbl[0]))((ICodeInstall*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ICodeInstall : ICodeInstall.Interface
         return ((delegate* unmanaged<ICodeInstall*, uint>)(lpVtbl[1]))((ICodeInstall*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ICodeInstall : ICodeInstall.Interface
         return ((delegate* unmanaged<ICodeInstall*, uint>)(lpVtbl[2]))((ICodeInstall*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IWindowForBindingUI.GetWindow" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetWindow([NativeTypeName("const GUID &")] Guid* rguidReason, HWND* phwnd)
@@ -46,6 +51,7 @@ public unsafe partial struct ICodeInstall : ICodeInstall.Interface
         return ((delegate* unmanaged<ICodeInstall*, Guid*, HWND*, int>)(lpVtbl[3]))((ICodeInstall*)Unsafe.AsPointer(ref this), rguidReason, phwnd);
     }
 
+    /// <include file='ICodeInstall.xml' path='doc/member[@name="ICodeInstall.OnCodeInstallProblem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT OnCodeInstallProblem([NativeTypeName("ULONG")] uint ulStatusCode, [NativeTypeName("LPCWSTR")] ushort* szDestination, [NativeTypeName("LPCWSTR")] ushort* szSource, [NativeTypeName("DWORD")] uint dwReserved)

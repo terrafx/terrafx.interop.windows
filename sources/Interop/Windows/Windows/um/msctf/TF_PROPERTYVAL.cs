@@ -7,9 +7,12 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TF_PROPERTYVAL.xml' path='doc/member[@name="TF_PROPERTYVAL"]/*' />
 public partial struct TF_PROPERTYVAL
 {
+    /// <include file='TF_PROPERTYVAL.xml' path='doc/member[@name="TF_PROPERTYVAL.guidId"]/*' />
     public Guid guidId;
 
+    /// <include file='TF_PROPERTYVAL.xml' path='doc/member[@name="TF_PROPERTYVAL.varValue"]/*' />
     public VARIANT varValue;
 }

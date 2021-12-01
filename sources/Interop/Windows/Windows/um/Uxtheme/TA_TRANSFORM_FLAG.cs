@@ -7,11 +7,19 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TA_TRANSFORM_FLAG.xml' path='doc/member[@name="TA_TRANSFORM_FLAG"]/*' />
 [Flags]
 public enum TA_TRANSFORM_FLAG
 {
+    /// <include file='TA_TRANSFORM_FLAG.xml' path='doc/member[@name="TA_TRANSFORM_FLAG.TATF_NONE"]/*' />
     TATF_NONE = 0x0,
+
+    /// <include file='TA_TRANSFORM_FLAG.xml' path='doc/member[@name="TA_TRANSFORM_FLAG.TATF_TARGETVALUES_USER"]/*' />
     TATF_TARGETVALUES_USER = 0x1,
+
+    /// <include file='TA_TRANSFORM_FLAG.xml' path='doc/member[@name="TA_TRANSFORM_FLAG.TATF_HASINITIALVALUES"]/*' />
     TATF_HASINITIALVALUES = 0x2,
+
+    /// <include file='TA_TRANSFORM_FLAG.xml' path='doc/member[@name="TA_TRANSFORM_FLAG.TATF_HASORIGINVALUES"]/*' />
     TATF_HASORIGINVALUES = 0x4,
 }

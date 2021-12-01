@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='POWER_USER_PRESENCE.xml' path='doc/member[@name="POWER_USER_PRESENCE"]/*' />
 public partial struct POWER_USER_PRESENCE
 {
+    /// <include file='POWER_USER_PRESENCE.xml' path='doc/member[@name="POWER_USER_PRESENCE.UserPresence"]/*' />
     public POWER_USER_PRESENCE_TYPE UserPresence;
 }

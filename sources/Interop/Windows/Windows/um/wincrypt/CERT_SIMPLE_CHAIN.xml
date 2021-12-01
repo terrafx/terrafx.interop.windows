@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CERT_SIMPLE_CHAIN">
+    <summary>
+      <para>The <b>CERT_SIMPLE_CHAIN</b> structure contains an array of chain elements and a summary trust status for the chain that the array represents.</para>
+    </summary>
+    <seealso cref="CERT_CHAIN_CONTEXT" />
+    <seealso cref="CERT_CHAIN_ELEMENT" />
+    <seealso cref="CERT_TRUST_LIST_INFO" />
+    <seealso cref="CERT_TRUST_STATUS" />
+  </member>
+  <member name="CERT_SIMPLE_CHAIN.cbSize">
+    <summary>
+      <para>The size, in bytes, of this structure.</para>
+    </summary>
+  </member>
+  <member name="CERT_SIMPLE_CHAIN.TrustStatus">
+    <summary>
+      <para>A structure that indicates the trust status of the whole chain. The structure includes an error status code and an information status code. For information about status code values, see <see cref="CERT_TRUST_STATUS" />.</para>
+    </summary>
+  </member>
+  <member name="CERT_SIMPLE_CHAIN.cElement">
+    <summary>
+      <para>The number of <see cref="CERT_CHAIN_ELEMENT" /> structures in the array.</para>
+    </summary>
+  </member>
+  <member name="CERT_SIMPLE_CHAIN.rgpElement">
+    <summary>
+      <para>An array of pointers to <see cref="CERT_CHAIN_ELEMENT" /> structures. <b>rgpElement</b>[0] is the end certificate chain element. <b>rgpElement</b>[<b>cElement</b>–1] is the self-signed "root" certificate element.</para>
+    </summary>
+  </member>
+  <member name="CERT_SIMPLE_CHAIN.pTrustListInfo">
+    <summary>
+      <para>A pointer to a <see cref="CERT_TRUST_LIST_INFO" /> structure that contains a pointer to a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certificate trust list</a> (CTL) connecting this chain to a next certificate chain. If the current chain is the final chain, <b>pTrustListInfo</b> is <b>NULL</b>.</para>
+    </summary>
+  </member>
+  <member name="CERT_SIMPLE_CHAIN.fHasRevocationFreshnessTime">
+    <summary>
+      <para>BOOL. If <b>TRUE</b>, <b>dwRevocationFreshnessTime</b> has been calculated.</para>
+    </summary>
+  </member>
+  <member name="CERT_SIMPLE_CHAIN.dwRevocationFreshnessTime">
+    <summary>
+      <para>The age of a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certificate revocation list</a></para>
+      <para>(CRL) in seconds, calculated as the CurrentTime minus the CRL's ThisUpdate time. This values is the largest time across all elements checked.</para>
+    </summary>
+  </member>
+</doc>

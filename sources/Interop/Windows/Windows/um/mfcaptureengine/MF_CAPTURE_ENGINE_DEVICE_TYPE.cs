@@ -7,9 +7,13 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MF_CAPTURE_ENGINE_DEVICE_TYPE.xml' path='doc/member[@name="MF_CAPTURE_ENGINE_DEVICE_TYPE"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public enum MF_CAPTURE_ENGINE_DEVICE_TYPE
 {
+    /// <include file='MF_CAPTURE_ENGINE_DEVICE_TYPE.xml' path='doc/member[@name="MF_CAPTURE_ENGINE_DEVICE_TYPE.MF_CAPTURE_ENGINE_DEVICE_TYPE_AUDIO"]/*' />
     MF_CAPTURE_ENGINE_DEVICE_TYPE_AUDIO = 0,
+
+    /// <include file='MF_CAPTURE_ENGINE_DEVICE_TYPE.xml' path='doc/member[@name="MF_CAPTURE_ENGINE_DEVICE_TYPE.MF_CAPTURE_ENGINE_DEVICE_TYPE_VIDEO"]/*' />
     MF_CAPTURE_ENGINE_DEVICE_TYPE_VIDEO = 0x1,
 }

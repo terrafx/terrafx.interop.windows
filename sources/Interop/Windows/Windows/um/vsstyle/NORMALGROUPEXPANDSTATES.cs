@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NORMALGROUPEXPANDSTATES.xml' path='doc/member[@name="NORMALGROUPEXPANDSTATES"]/*' />
 public enum NORMALGROUPEXPANDSTATES
 {
+    /// <include file='NORMALGROUPEXPANDSTATES.xml' path='doc/member[@name="NORMALGROUPEXPANDSTATES.EBNGE_NORMAL"]/*' />
     EBNGE_NORMAL = 1,
+
+    /// <include file='NORMALGROUPEXPANDSTATES.xml' path='doc/member[@name="NORMALGROUPEXPANDSTATES.EBNGE_HOT"]/*' />
     EBNGE_HOT = 2,
+
+    /// <include file='NORMALGROUPEXPANDSTATES.xml' path='doc/member[@name="NORMALGROUPEXPANDSTATES.EBNGE_PRESSED"]/*' />
     EBNGE_PRESSED = 3,
 }

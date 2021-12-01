@@ -1,0 +1,399 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IUIAnimationVariable2.GetCurrentStoryboard">
+    <summary>
+      <para>Gets the active storyboard for the animation variable.</para>
+    </summary>
+    <param name="storyboard">
+      <para>The active storyboard, or NULL if the animation variable is not being animated.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns S_OK. Otherwise, it returns an  <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
+    </returns>
+    <seealso cref="IUIAnimationVariable2" />
+  </member>
+  <member name="IUIAnimationVariable2.GetCurve">
+    <summary>
+      <para>Gets the animation curve of the animation variable.</para>
+    </summary>
+    <param name="animation">
+      <para>The object that generates a sequence of animation curve primitives.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns S_OK. Otherwise, it returns an  <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>The application implements the <see cref="IDCompositionAnimation" /> object that is referenced by the <i>animation</i> parameter.</para>
+    </remarks>
+    <seealso cref="IUIAnimationVariable2" />
+  </member>
+  <member name="IUIAnimationVariable2.GetDimension">
+    <summary>
+      <para>Gets the number of dimensions that the animation variable is to be animated in.</para>
+    </summary>
+    <param name="dimension">
+      <para>The number of dimensions.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns S_OK. Otherwise, it returns an  <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
+    </returns>
+    <seealso cref="IUIAnimationVariable2" />
+  </member>
+  <member name="IUIAnimationVariable2.GetFinalIntegerValue">
+    <summary>
+      <para>Gets the final integer value of the animation variable. This is the value after all currently scheduled animations have completed.</para>
+    </summary>
+    <param name="finalValue">
+      <para>The final value of the animation variable as an integer.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns S_OK. Otherwise, it returns an  <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
+    </returns>
+    <seealso cref="IUIAnimationVariable2" />
+  </member>
+  <member name="IUIAnimationVariable2.GetFinalIntegerVectorValue">
+    <summary>
+      <para>Gets the final integer value of the animation variable for the specified dimension. This is the value after all currently scheduled animations have completed.</para>
+    </summary>
+    <param name="finalValue">
+      <para>The final value of the animation variable as an integer.</para>
+    </param>
+    <param name="cDimension">
+      <para>The dimension from which to get the value of the animation variable.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns S_OK. Otherwise, it returns an  <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
+    </returns>
+    <seealso cref="IUIAnimationVariable2" />
+  </member>
+  <member name="IUIAnimationVariable2.GetFinalValue">
+    <summary>
+      <para>Gets the final value of the animation variable. This is the value after all currently scheduled animations have completed.</para>
+    </summary>
+    <param name="finalValue">
+      <para>The final value of the animation variable.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns S_OK. Otherwise, it returns an  <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
+    </returns>
+    <seealso cref="IUIAnimationVariable2" />
+  </member>
+  <member name="IUIAnimationVariable2.GetFinalVectorValue">
+    <summary>
+      <para>Gets the final value of the animation variable for the specified dimension. This is the value after all currently scheduled animations have completed.</para>
+    </summary>
+    <param name="finalValue">
+      <para>The final value of the animation variable.</para>
+    </param>
+    <param name="cDimension">
+      <para>The dimension from which to get the value of the animation variable.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns S_OK. Otherwise, it returns an  <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
+    </returns>
+    <seealso cref="IUIAnimationVariable2" />
+  </member>
+  <member name="IUIAnimationVariable2.GetIntegerValue">
+    <summary>
+      <para>Gets the integer value of the animation variable.</para>
+    </summary>
+    <param name="value">
+      <para>The value of the animation variable as an integer.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns S_OK. Otherwise, it returns an  <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
+    </returns>
+    <seealso cref="IUIAnimationVariable2" />
+  </member>
+  <member name="IUIAnimationVariable2.GetIntegerVectorValue">
+    <summary>
+      <para>Gets the integer value of the animation variable for the specified dimension.</para>
+    </summary>
+    <param name="value">
+      <para>The value of the animation variable as an integer.</para>
+    </param>
+    <param name="cDimension">
+      <para>The dimension from which to get the value of the animation variable.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns S_OK. Otherwise, it returns an  <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
+    </returns>
+    <seealso cref="IUIAnimationVariable2" />
+  </member>
+  <member name="IUIAnimationVariable2.GetPreviousIntegerValue">
+    <summary>
+      <para>Gets the previous integer value of the animation variable in the specified dimension. This is the value of the animation variable before the most recent update.</para>
+    </summary>
+    <param name="previousValue">
+      <para>The previous value of the animation variable as an integer.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns S_OK. Otherwise, it returns an  <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
+    </returns>
+    <seealso cref="IUIAnimationVariable2" />
+  </member>
+  <member name="IUIAnimationVariable2.GetPreviousIntegerVectorValue">
+    <summary>
+      <para>Gets the previous integer value of the animation variable for the specified dimension. This is the value of the animation variable before the most recent update.</para>
+    </summary>
+    <param name="previousValue">
+      <para>The previous value of the animation variable as an integer.</para>
+    </param>
+    <param name="cDimension">
+      <para>The dimension from which to get the value of the animation variable.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns S_OK. Otherwise, it returns an  <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
+    </returns>
+    <seealso cref="IUIAnimationVariable2" />
+  </member>
+  <member name="IUIAnimationVariable2.GetPreviousValue">
+    <summary>
+      <para>Gets the previous value of the animation variable. This is the value of the animation variable before the most recent update.</para>
+    </summary>
+    <param name="previousValue">
+      <para>The previous value of the animation variable.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns S_OK. Otherwise, it returns an  <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
+    </returns>
+    <seealso cref="IUIAnimationVariable2" />
+  </member>
+  <member name="IUIAnimationVariable2.GetPreviousVectorValue">
+    <summary>
+      <para>Gets the previous value of the animation variable for the specified dimension. This is the value of the animation variable before the most recent update.</para>
+    </summary>
+    <param name="previousValue">
+      <para>The previous value of the animation variable.</para>
+    </param>
+    <param name="cDimension">
+      <para>The dimension from which to get the value of the animation variable.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns S_OK. Otherwise, it returns an  <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
+    </returns>
+    <seealso cref="IUIAnimationVariable2" />
+  </member>
+  <member name="IUIAnimationVariable2.GetTag">
+    <summary>
+      <para>Gets the tag of the animation variable.</para>
+    </summary>
+    <param name="object">
+      <para>The object portion of the tag.</para>
+    </param>
+    <param name="id">
+      <para>The identifier portion of the tag.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns S_OK. Otherwise, it returns an  <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>A tag is a pairing of an integer identifier (<i>id</i>) with a COM object (<i>object</i>); it can be used by an application to identify an animation variable.</para>
+      <para>The parameters are optional, so that the method can return both portions of the tag, or just the identifier or object portion.</para>
+    </remarks>
+    <seealso cref="IUIAnimationVariable2" />
+  </member>
+  <member name="IUIAnimationVariable2.GetValue">
+    <summary>
+      <para>Gets the value of the animation variable.</para>
+    </summary>
+    <param name="value">
+      <para>The value of the animation variable.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns S_OK. Otherwise, it returns an  <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
+    </returns>
+    <seealso cref="IUIAnimationVariable2" />
+  </member>
+  <member name="IUIAnimationVariable2.GetVectorCurve">
+    <summary>
+      <para>Gets the animation curve of the animation variable for the specified dimension.</para>
+    </summary>
+    <param name="animation">
+      <para>The object that generates a sequence of animation curve primitives.</para>
+    </param>
+    <param name="cDimension">
+      <para>The number of animation curves.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns S_OK. Otherwise, it returns an  <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>The application implements the <see cref="IDCompositionAnimation" /> object that is referenced by the <i>animation</i> parameter.</para>
+    </remarks>
+    <seealso cref="IUIAnimationVariable2" />
+  </member>
+  <member name="IUIAnimationVariable2.GetVectorValue">
+    <summary>
+      <para>Gets the value of the animation variable in the specified dimension.</para>
+    </summary>
+    <param name="value">
+      <para>The value of the animation variable.</para>
+    </param>
+    <param name="cDimension">
+      <para>The dimension from which to get the value of the animation variable.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns S_OK. Otherwise, it returns an  <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
+    </returns>
+    <seealso cref="IUIAnimationVariable2" />
+  </member>
+  <member name="IUIAnimationVariable2.SetLowerBound">
+    <summary>
+      <para>Sets the lower bound (floor) for the value of the animation variable. The value of the animation variable should not fall below the specified value.</para>
+    </summary>
+    <param name="bound">
+      <para>The lower bound for the value of the animation variable.</para>
+    </param>
+    <returns>
+      <para>Returns S_OK if successful; otherwise an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
+    </returns>
+    <seealso cref="IUIAnimationVariable2" />
+  </member>
+  <member name="IUIAnimationVariable2.SetLowerBoundVector">
+    <summary>
+      <para>Sets the lower bound (floor) value of each specified dimension for the animation variable. The value of each animation variable should not fall below its lower bound.</para>
+    </summary>
+    <param name="bound">
+      <para>A vector (of size <i>cDimension</i>) that contains  the lower bound values of each dimension.</para>
+    </param>
+    <param name="cDimension">
+      <para>The number of dimensions that require lower bound values. This parameter specifies the number of values listed in <i>bound</i>.</para>
+    </param>
+    <returns>
+      <para>Returns S_OK if successful; otherwise an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
+    </returns>
+    <seealso cref="IUIAnimationVariable2" />
+  </member>
+  <member name="IUIAnimationVariable2.SetRoundingMode">
+    <summary>
+      <para>Sets the rounding mode of the animation variable.</para>
+    </summary>
+    <param name="mode">
+      <para>The rounding mode.</para>
+    </param>
+    <returns>
+      <para>Returns S_OK if successful; otherwise an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>An animation variable's rounding mode determines how a floating-point value is converted to an integer.
+The default mode for each variable is <b>UI_ANIMATION_ROUNDING_NEAREST</b>.</para>
+    </remarks>
+    <seealso cref="IUIAnimationVariable2" />
+    <seealso cref="IUIAnimationVariable2.GetFinalIntegerValue" />
+    <seealso cref="IUIAnimationVariable2.GetIntegerValue" />
+    <seealso cref="IUIAnimationVariable2.GetPreviousIntegerValue" />
+    <seealso cref="UI_ANIMATION_ROUNDING_MODE" />
+  </member>
+  <member name="IUIAnimationVariable2.SetTag">
+    <summary>
+      <para>Sets the tag of the animation variable.</para>
+    </summary>
+    <param name="object">
+      <para>The object portion of the tag. This parameter can be <b>NULL</b>.</para>
+    </param>
+    <param name="id">
+      <para>The identifier portion of the tag.</para>
+    </param>
+    <returns>
+      <para>Returns <b>S_OK</b> if successful; otherwise an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>A tag is a pairing of an integer identifier (<i>id</i>) with a COM object (<i>object</i>), and it can be used by an application to identify an animation variable.
+Because <b>NULL</b> is a valid object component of a tag, the <i>object</i> parameter can be <b>NULL</b>.</para>
+    </remarks>
+    <seealso cref="IUIAnimationManager2.GetVariableFromTag" />
+    <seealso cref="IUIAnimationVariable2" />
+    <seealso cref="IUIAnimationVariable2.GetTag" />
+  </member>
+  <member name="IUIAnimationVariable2.SetUpperBound">
+    <summary>
+      <para>Sets the upper bound (ceiling) for the value of the animation variable. The value of the animation variable should not rise above the specified value.</para>
+    </summary>
+    <param name="bound">
+      <para>The upper bound for the value of the animation variable.</para>
+    </param>
+    <returns>
+      <para>Returns S_OK if successful; otherwise an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
+    </returns>
+    <seealso cref="IUIAnimationVariable2" />
+  </member>
+  <member name="IUIAnimationVariable2.SetUpperBoundVector">
+    <summary>
+      <para>Sets the upper bound (ceiling) value of each specified dimension for the animation variable. The value of each animation variable should not rise above its upper bound.</para>
+    </summary>
+    <param name="bound">
+      <para>A vector (of size <i>cDimension</i>) that contains  the upper bound values of each dimension.</para>
+    </param>
+    <param name="cDimension">
+      <para>The number of dimensions that require upper bound values. This parameter specifies the number of values listed in <i>bound</i>.</para>
+    </param>
+    <returns>
+      <para>Returns S_OK if successful; otherwise an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
+    </returns>
+    <seealso cref="IUIAnimationVariable2" />
+  </member>
+  <member name="IUIAnimationVariable2.SetVariableChangeHandler">
+    <summary>
+      <para>Specifies a handler for changes to the value of the animation variable.</para>
+    </summary>
+    <param name="handler">
+      <para>The handler for changes to the value of the animation variable. This parameter can be <b>NULL</b>.</para>
+    </param>
+    <param name="fRegisterForNextAnimationEvent">
+      <para>If <b>TRUE</b>, specifies that the <see cref="EstimateNextEventTime" /> method will incorporate <i>handler</i> into its estimate of the time interval until the next animation event. No default value.</para>
+    </param>
+    <returns>
+      <para>Returns <b>S_OK</b> if successful; otherwise an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>Passing <b>NULL</b> for the <i>handler</i> parameter causes Windows Animation to release its reference to any handler object that you passed in earlier. This technique can be essential for breaking reference cycles without having to call the <see cref="IUIAnimationManager2.Shutdown" /> method.</para>
+    </remarks>
+    <seealso cref="IUIAnimationVariable2" />
+    <seealso cref="IUIAnimationVariable2.SetVariableIntegerChangeHandler" />
+    <seealso cref="IUIAnimationVariableChangeHandler2" />
+  </member>
+  <member name="IUIAnimationVariable2.SetVariableCurveChangeHandler">
+    <summary>
+      <para>Specifies a handler for changes to the animation curve of the animation variable.</para>
+    </summary>
+    <param name="handler">
+      <para>A pointer to the handler for changes to the animation curve of the animation variable. This parameter can be <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>Returns S_OK if successful; otherwise an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
+    </returns>
+    <seealso cref="IUIAnimationVariable2" />
+    <seealso cref="IUIAnimationVariableCurveChangeHandler2" />
+  </member>
+  <member name="IUIAnimationVariable2.SetVariableIntegerChangeHandler">
+    <summary>
+      <para>Specifies a handler for changes to the integer value of the animation variable.</para>
+    </summary>
+    <param name="handler">
+      <para>A pointer to the handler for changes to the integer value of the animation variable. This parameter can be <b>NULL</b>.</para>
+    </param>
+    <param name="fRegisterForNextAnimationEvent">
+      <para>If <b>TRUE</b>, specifies that the <see cref="EstimateNextEventTime" /> method will incorporate <i>handler</i> into its estimate of the time interval until the next animation event. No default value.</para>
+    </param>
+    <returns>
+      <para>Returns <b>S_OK</b> if successful; otherwise an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>Passing <b>NULL</b> for the <i>handler</i> parameter causes Windows Animation to release its reference to any handler object that you passed in earlier. This technique can be essential for breaking reference cycles without having to call the <see cref="Shutdown" /> method.</para>
+      <para>
+        <see cref="IUIAnimationVariableIntegerChangeHandler2.OnIntegerValueChanged" /> is called only if the rounded value has changed since the last update.</para>
+    </remarks>
+    <seealso cref="IUIAnimationVariable2" />
+    <seealso cref="IUIAnimationVariableChangeHandler2" />
+  </member>
+  <member name="IUIAnimationVariable2">
+    <summary>
+      <para>Defines an animation variable, which represents a visual element that can be animated in multiple dimensions.</para>
+    </summary>
+    <seealso cref="IUnknown" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/UIAnimation/-interfaces-main">Interfaces</seealso>
+  </member>
+</doc>

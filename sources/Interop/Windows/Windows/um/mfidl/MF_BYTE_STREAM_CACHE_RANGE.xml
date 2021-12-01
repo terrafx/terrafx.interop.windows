@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MF_BYTE_STREAM_CACHE_RANGE">
+    <summary>
+      <para>Specifies a range of bytes.</para>
+    </summary>
+    <seealso cref="IMFByteStreamCacheControl2.GetByteRanges" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-structures">Media Foundation Structures</seealso>
+  </member>
+  <member name="MF_BYTE_STREAM_CACHE_RANGE.qwStartOffset">
+    <summary>
+      <para>The offset, in bytes, of the start of the range.</para>
+    </summary>
+  </member>
+  <member name="MF_BYTE_STREAM_CACHE_RANGE.qwEndOffset">
+    <summary>
+      <para>The offset, in bytes, of the end of the range.</para>
+    </summary>
+  </member>
+</doc>

@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DCOM_CALL_STATE.xml' path='doc/member[@name="DCOM_CALL_STATE"]/*' />
 public enum DCOM_CALL_STATE
 {
+    /// <include file='DCOM_CALL_STATE.xml' path='doc/member[@name="DCOM_CALL_STATE.DCOM_NONE"]/*' />
     DCOM_NONE = 0,
+
+    /// <include file='DCOM_CALL_STATE.xml' path='doc/member[@name="DCOM_CALL_STATE.DCOM_CALL_COMPLETE"]/*' />
     DCOM_CALL_COMPLETE = 0x1,
+
+    /// <include file='DCOM_CALL_STATE.xml' path='doc/member[@name="DCOM_CALL_STATE.DCOM_CALL_CANCELED"]/*' />
     DCOM_CALL_CANCELED = 0x2,
 }

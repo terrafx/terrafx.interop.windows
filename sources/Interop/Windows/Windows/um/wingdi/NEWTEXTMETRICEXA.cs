@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NEWTEXTMETRICEXA.xml' path='doc/member[@name="NEWTEXTMETRICEXA"]/*' />
 public partial struct NEWTEXTMETRICEXA
 {
+    /// <include file='NEWTEXTMETRICEXA.xml' path='doc/member[@name="NEWTEXTMETRICEXA.ntmTm"]/*' />
     public NEWTEXTMETRICA ntmTm;
 
+    /// <include file='NEWTEXTMETRICEXA.xml' path='doc/member[@name="NEWTEXTMETRICEXA.ntmFontSig"]/*' />
     public FONTSIGNATURE ntmFontSig;
 }

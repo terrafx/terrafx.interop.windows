@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MF_OBJECT_TYPE.xml' path='doc/member[@name="MF_OBJECT_TYPE"]/*' />
 public enum MF_OBJECT_TYPE
 {
+    /// <include file='MF_OBJECT_TYPE.xml' path='doc/member[@name="MF_OBJECT_TYPE.MF_OBJECT_MEDIASOURCE"]/*' />
     MF_OBJECT_MEDIASOURCE = 0,
+
+    /// <include file='MF_OBJECT_TYPE.xml' path='doc/member[@name="MF_OBJECT_TYPE.MF_OBJECT_BYTESTREAM"]/*' />
     MF_OBJECT_BYTESTREAM = (MF_OBJECT_MEDIASOURCE + 1),
+
+    /// <include file='MF_OBJECT_TYPE.xml' path='doc/member[@name="MF_OBJECT_TYPE.MF_OBJECT_INVALID"]/*' />
     MF_OBJECT_INVALID = (MF_OBJECT_BYTESTREAM + 1),
 }

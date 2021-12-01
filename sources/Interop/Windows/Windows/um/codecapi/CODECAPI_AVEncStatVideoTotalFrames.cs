@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVEncStatVideoTotalFrames.xml' path='doc/member[@name="CODECAPI_AVEncStatVideoTotalFrames"]/*' />
 [Guid("FDAA9916-119A-4222-9AD6-3F7CAB99CC8B")]
 public partial struct CODECAPI_AVEncStatVideoTotalFrames
 {

@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PERCEIVED">
+    <summary>
+      <para>Specifies a file's perceived type. This set of constants is used in the <see cref="AssocGetPerceivedType" /> function.</para>
+    </summary>
+    <remarks>
+      <para>Prior to Windows Vista, this enumeration was declared in Shlwapi.h.</para>
+    </remarks>
+  </member>
+  <member name="PERCEIVED.PERCEIVED_TYPE_FIRST">
+    <summary></summary>
+  </member>
+  <member name="PERCEIVED.PERCEIVED_TYPE_CUSTOM">
+    <summary>
+      <para>The file's perceived type as defined in the registry is not a known type.</para>
+    </summary>
+  </member>
+  <member name="PERCEIVED.PERCEIVED_TYPE_UNSPECIFIED">
+    <summary>
+      <para>The file does not have a perceived type.</para>
+    </summary>
+  </member>
+  <member name="PERCEIVED.PERCEIVED_TYPE_FOLDER">
+    <summary>
+      <para>Not used.</para>
+    </summary>
+  </member>
+  <member name="PERCEIVED.PERCEIVED_TYPE_UNKNOWN">
+    <summary>
+      <para>The file's perceived type hasn't yet been requested. This is the cached type of the object when it is created. This value is never returned by <see cref="AssocGetPerceivedType" />.</para>
+    </summary>
+  </member>
+  <member name="PERCEIVED.PERCEIVED_TYPE_TEXT">
+    <summary>
+      <para>The file's perceived type is "text".</para>
+    </summary>
+  </member>
+  <member name="PERCEIVED.PERCEIVED_TYPE_IMAGE">
+    <summary>
+      <para>The file's perceived type is "image".</para>
+    </summary>
+  </member>
+  <member name="PERCEIVED.PERCEIVED_TYPE_AUDIO">
+    <summary>
+      <para>The file's perceived type is "audio".</para>
+    </summary>
+  </member>
+  <member name="PERCEIVED.PERCEIVED_TYPE_VIDEO">
+    <summary>
+      <para>The file's perceived type is "video".</para>
+    </summary>
+  </member>
+  <member name="PERCEIVED.PERCEIVED_TYPE_COMPRESSED">
+    <summary>
+      <para>The file's perceived type is "compressed".</para>
+    </summary>
+  </member>
+  <member name="PERCEIVED.PERCEIVED_TYPE_DOCUMENT">
+    <summary>
+      <para>The file's perceived type is "document".</para>
+    </summary>
+  </member>
+  <member name="PERCEIVED.PERCEIVED_TYPE_SYSTEM">
+    <summary>
+      <para>The file's perceived type is "system".</para>
+    </summary>
+  </member>
+  <member name="PERCEIVED.PERCEIVED_TYPE_APPLICATION">
+    <summary>
+      <para>The file's perceived type is "application".</para>
+    </summary>
+  </member>
+  <member name="PERCEIVED.PERCEIVED_TYPE_GAMEMEDIA">
+    <summary>
+      <para>
+        <b>Windows Vista and later</b>. The file's perceived type is "gamemedia".</para>
+    </summary>
+  </member>
+  <member name="PERCEIVED.PERCEIVED_TYPE_CONTACTS">
+    <summary>
+      <para>
+        <b>Windows Vista and later</b>.The file's perceived type is "contacts"</para>
+    </summary>
+  </member>
+  <member name="PERCEIVED.PERCEIVED_TYPE_LAST">
+    <summary></summary>
+  </member>
+</doc>

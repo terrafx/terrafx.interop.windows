@@ -5,12 +5,24 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='tagMENUPOPUPSELECT.xml' path='doc/member[@name="tagMENUPOPUPSELECT"]/*' />
 public enum tagMENUPOPUPSELECT
 {
+    /// <include file='tagMENUPOPUPSELECT.xml' path='doc/member[@name="tagMENUPOPUPSELECT.MPOS_EXECUTE"]/*' />
     MPOS_EXECUTE = 0,
+
+    /// <include file='tagMENUPOPUPSELECT.xml' path='doc/member[@name="tagMENUPOPUPSELECT.MPOS_FULLCANCEL"]/*' />
     MPOS_FULLCANCEL = (MPOS_EXECUTE + 1),
+
+    /// <include file='tagMENUPOPUPSELECT.xml' path='doc/member[@name="tagMENUPOPUPSELECT.MPOS_CANCELLEVEL"]/*' />
     MPOS_CANCELLEVEL = (MPOS_FULLCANCEL + 1),
+
+    /// <include file='tagMENUPOPUPSELECT.xml' path='doc/member[@name="tagMENUPOPUPSELECT.MPOS_SELECTLEFT"]/*' />
     MPOS_SELECTLEFT = (MPOS_CANCELLEVEL + 1),
+
+    /// <include file='tagMENUPOPUPSELECT.xml' path='doc/member[@name="tagMENUPOPUPSELECT.MPOS_SELECTRIGHT"]/*' />
     MPOS_SELECTRIGHT = (MPOS_SELECTLEFT + 1),
+
+    /// <include file='tagMENUPOPUPSELECT.xml' path='doc/member[@name="tagMENUPOPUPSELECT.MPOS_CHILDTRACKING"]/*' />
     MPOS_CHILDTRACKING = (MPOS_SELECTRIGHT + 1),
 }

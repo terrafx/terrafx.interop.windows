@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NL_PATH_BANDWIDTH_ROD.xml' path='doc/member[@name="NL_PATH_BANDWIDTH_ROD"]/*' />
 public partial struct NL_PATH_BANDWIDTH_ROD
 {
+    /// <include file='NL_PATH_BANDWIDTH_ROD.xml' path='doc/member[@name="NL_PATH_BANDWIDTH_ROD.Bandwidth"]/*' />
     [NativeTypeName("ULONG64")]
     public ulong Bandwidth;
 
+    /// <include file='NL_PATH_BANDWIDTH_ROD.xml' path='doc/member[@name="NL_PATH_BANDWIDTH_ROD.Instability"]/*' />
     [NativeTypeName("ULONG64")]
     public ulong Instability;
 
+    /// <include file='NL_PATH_BANDWIDTH_ROD.xml' path='doc/member[@name="NL_PATH_BANDWIDTH_ROD.BandwidthPeaked"]/*' />
     [NativeTypeName("BOOLEAN")]
     public byte BandwidthPeaked;
 }

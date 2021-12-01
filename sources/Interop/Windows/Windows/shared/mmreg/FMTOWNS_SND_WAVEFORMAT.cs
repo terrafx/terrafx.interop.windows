@@ -7,11 +7,14 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='FMTOWNS_SND_WAVEFORMAT.xml' path='doc/member[@name="FMTOWNS_SND_WAVEFORMAT"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct FMTOWNS_SND_WAVEFORMAT
 {
+    /// <include file='FMTOWNS_SND_WAVEFORMAT.xml' path='doc/member[@name="FMTOWNS_SND_WAVEFORMAT.wfx"]/*' />
     public WAVEFORMATEX wfx;
 
+    /// <include file='FMTOWNS_SND_WAVEFORMAT.xml' path='doc/member[@name="FMTOWNS_SND_WAVEFORMAT.wRevision"]/*' />
     [NativeTypeName("WORD")]
     public ushort wRevision;
 }

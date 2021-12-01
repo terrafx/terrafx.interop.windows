@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IShellBrowser.xml' path='doc/member[@name="IShellBrowser"]/*' />
 [Guid("000214E2-0000-0000-C000-000000000046")]
 [NativeTypeName("struct IShellBrowser : IOleWindow")]
 [NativeInheritance("IOleWindow")]
@@ -16,6 +17,7 @@ public unsafe partial struct IShellBrowser : IShellBrowser.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IShellBrowser : IShellBrowser.Interface
         return ((delegate* unmanaged<IShellBrowser*, Guid*, void**, int>)(lpVtbl[0]))((IShellBrowser*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IShellBrowser : IShellBrowser.Interface
         return ((delegate* unmanaged<IShellBrowser*, uint>)(lpVtbl[1]))((IShellBrowser*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IShellBrowser : IShellBrowser.Interface
         return ((delegate* unmanaged<IShellBrowser*, uint>)(lpVtbl[2]))((IShellBrowser*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IOleWindow.GetWindow" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetWindow(HWND* phwnd)
@@ -46,6 +51,7 @@ public unsafe partial struct IShellBrowser : IShellBrowser.Interface
         return ((delegate* unmanaged<IShellBrowser*, HWND*, int>)(lpVtbl[3]))((IShellBrowser*)Unsafe.AsPointer(ref this), phwnd);
     }
 
+    /// <inheritdoc cref="IOleWindow.ContextSensitiveHelp" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT ContextSensitiveHelp(BOOL fEnterMode)
@@ -53,6 +59,7 @@ public unsafe partial struct IShellBrowser : IShellBrowser.Interface
         return ((delegate* unmanaged<IShellBrowser*, BOOL, int>)(lpVtbl[4]))((IShellBrowser*)Unsafe.AsPointer(ref this), fEnterMode);
     }
 
+    /// <include file='IShellBrowser.xml' path='doc/member[@name="IShellBrowser.InsertMenusSB"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT InsertMenusSB(HMENU hmenuShared, [NativeTypeName("LPOLEMENUGROUPWIDTHS")] OLEMENUGROUPWIDTHS* lpMenuWidths)
@@ -60,6 +67,7 @@ public unsafe partial struct IShellBrowser : IShellBrowser.Interface
         return ((delegate* unmanaged<IShellBrowser*, HMENU, OLEMENUGROUPWIDTHS*, int>)(lpVtbl[5]))((IShellBrowser*)Unsafe.AsPointer(ref this), hmenuShared, lpMenuWidths);
     }
 
+    /// <include file='IShellBrowser.xml' path='doc/member[@name="IShellBrowser.SetMenuSB"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT SetMenuSB(HMENU hmenuShared, [NativeTypeName("HOLEMENU")] HGLOBAL holemenuRes, HWND hwndActiveObject)
@@ -67,6 +75,7 @@ public unsafe partial struct IShellBrowser : IShellBrowser.Interface
         return ((delegate* unmanaged<IShellBrowser*, HMENU, HGLOBAL, HWND, int>)(lpVtbl[6]))((IShellBrowser*)Unsafe.AsPointer(ref this), hmenuShared, holemenuRes, hwndActiveObject);
     }
 
+    /// <include file='IShellBrowser.xml' path='doc/member[@name="IShellBrowser.RemoveMenusSB"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT RemoveMenusSB(HMENU hmenuShared)
@@ -74,6 +83,7 @@ public unsafe partial struct IShellBrowser : IShellBrowser.Interface
         return ((delegate* unmanaged<IShellBrowser*, HMENU, int>)(lpVtbl[7]))((IShellBrowser*)Unsafe.AsPointer(ref this), hmenuShared);
     }
 
+    /// <include file='IShellBrowser.xml' path='doc/member[@name="IShellBrowser.SetStatusTextSB"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT SetStatusTextSB([NativeTypeName("LPCWSTR")] ushort* pszStatusText)
@@ -81,6 +91,7 @@ public unsafe partial struct IShellBrowser : IShellBrowser.Interface
         return ((delegate* unmanaged<IShellBrowser*, ushort*, int>)(lpVtbl[8]))((IShellBrowser*)Unsafe.AsPointer(ref this), pszStatusText);
     }
 
+    /// <include file='IShellBrowser.xml' path='doc/member[@name="IShellBrowser.EnableModelessSB"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT EnableModelessSB(BOOL fEnable)
@@ -88,6 +99,7 @@ public unsafe partial struct IShellBrowser : IShellBrowser.Interface
         return ((delegate* unmanaged<IShellBrowser*, BOOL, int>)(lpVtbl[9]))((IShellBrowser*)Unsafe.AsPointer(ref this), fEnable);
     }
 
+    /// <include file='IShellBrowser.xml' path='doc/member[@name="IShellBrowser.TranslateAcceleratorSB"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT TranslateAcceleratorSB(MSG* pmsg, [NativeTypeName("WORD")] ushort wID)
@@ -95,6 +107,7 @@ public unsafe partial struct IShellBrowser : IShellBrowser.Interface
         return ((delegate* unmanaged<IShellBrowser*, MSG*, ushort, int>)(lpVtbl[10]))((IShellBrowser*)Unsafe.AsPointer(ref this), pmsg, wID);
     }
 
+    /// <include file='IShellBrowser.xml' path='doc/member[@name="IShellBrowser.BrowseObject"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT BrowseObject([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, uint wFlags)
@@ -102,6 +115,7 @@ public unsafe partial struct IShellBrowser : IShellBrowser.Interface
         return ((delegate* unmanaged<IShellBrowser*, ITEMIDLIST*, uint, int>)(lpVtbl[11]))((IShellBrowser*)Unsafe.AsPointer(ref this), pidl, wFlags);
     }
 
+    /// <include file='IShellBrowser.xml' path='doc/member[@name="IShellBrowser.GetViewStateStream"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT GetViewStateStream([NativeTypeName("DWORD")] uint grfMode, IStream** ppStrm)
@@ -109,6 +123,7 @@ public unsafe partial struct IShellBrowser : IShellBrowser.Interface
         return ((delegate* unmanaged<IShellBrowser*, uint, IStream**, int>)(lpVtbl[12]))((IShellBrowser*)Unsafe.AsPointer(ref this), grfMode, ppStrm);
     }
 
+    /// <include file='IShellBrowser.xml' path='doc/member[@name="IShellBrowser.GetControlWindow"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT GetControlWindow(uint id, HWND* phwnd)
@@ -116,6 +131,7 @@ public unsafe partial struct IShellBrowser : IShellBrowser.Interface
         return ((delegate* unmanaged<IShellBrowser*, uint, HWND*, int>)(lpVtbl[13]))((IShellBrowser*)Unsafe.AsPointer(ref this), id, phwnd);
     }
 
+    /// <include file='IShellBrowser.xml' path='doc/member[@name="IShellBrowser.SendControlMsg"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT SendControlMsg(uint id, uint uMsg, WPARAM wParam, LPARAM lParam, LRESULT* pret)
@@ -123,6 +139,7 @@ public unsafe partial struct IShellBrowser : IShellBrowser.Interface
         return ((delegate* unmanaged<IShellBrowser*, uint, uint, WPARAM, LPARAM, LRESULT*, int>)(lpVtbl[14]))((IShellBrowser*)Unsafe.AsPointer(ref this), id, uMsg, wParam, lParam, pret);
     }
 
+    /// <include file='IShellBrowser.xml' path='doc/member[@name="IShellBrowser.QueryActiveShellView"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT QueryActiveShellView(IShellView** ppshv)
@@ -130,6 +147,7 @@ public unsafe partial struct IShellBrowser : IShellBrowser.Interface
         return ((delegate* unmanaged<IShellBrowser*, IShellView**, int>)(lpVtbl[15]))((IShellBrowser*)Unsafe.AsPointer(ref this), ppshv);
     }
 
+    /// <include file='IShellBrowser.xml' path='doc/member[@name="IShellBrowser.OnViewWindowActive"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT OnViewWindowActive(IShellView* pshv)
@@ -137,6 +155,7 @@ public unsafe partial struct IShellBrowser : IShellBrowser.Interface
         return ((delegate* unmanaged<IShellBrowser*, IShellView*, int>)(lpVtbl[16]))((IShellBrowser*)Unsafe.AsPointer(ref this), pshv);
     }
 
+    /// <include file='IShellBrowser.xml' path='doc/member[@name="IShellBrowser.SetToolbarItems"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT SetToolbarItems([NativeTypeName("LPTBBUTTONSB")] void* lpButtons, uint nButtons, uint uFlags)

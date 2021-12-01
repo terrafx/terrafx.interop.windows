@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TRANSACTION_SUPERIOR_ENLISTMENT_INFORMATION.xml' path='doc/member[@name="TRANSACTION_SUPERIOR_ENLISTMENT_INFORMATION"]/*' />
 public partial struct TRANSACTION_SUPERIOR_ENLISTMENT_INFORMATION
 {
+    /// <include file='TRANSACTION_SUPERIOR_ENLISTMENT_INFORMATION.xml' path='doc/member[@name="TRANSACTION_SUPERIOR_ENLISTMENT_INFORMATION.SuperiorEnlistmentPair"]/*' />
     public TRANSACTION_ENLISTMENT_PAIR SuperiorEnlistmentPair;
 }

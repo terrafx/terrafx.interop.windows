@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TI_FINDCHILDREN_PARAMS.xml' path='doc/member[@name="TI_FINDCHILDREN_PARAMS"]/*' />
 public unsafe partial struct TI_FINDCHILDREN_PARAMS
 {
+    /// <include file='TI_FINDCHILDREN_PARAMS.xml' path='doc/member[@name="TI_FINDCHILDREN_PARAMS.Count"]/*' />
     [NativeTypeName("ULONG")]
     public uint Count;
 
+    /// <include file='TI_FINDCHILDREN_PARAMS.xml' path='doc/member[@name="TI_FINDCHILDREN_PARAMS.Start"]/*' />
     [NativeTypeName("ULONG")]
     public uint Start;
 
+    /// <include file='TI_FINDCHILDREN_PARAMS.xml' path='doc/member[@name="TI_FINDCHILDREN_PARAMS.ChildId"]/*' />
     [NativeTypeName("ULONG [1]")]
     public fixed uint ChildId[1];
 }

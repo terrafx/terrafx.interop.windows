@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="READ_ELEMENT_ADDRESS_INFO">
+    <summary>
+      <para>Represents the volume tag information. It is used by the
+<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_changer_query_volume_tags">IOCTL_CHANGER_QUERY_VOLUME_TAGS</a> control code.</para>
+    </summary>
+    <seealso cref="CHANGER_ELEMENT_STATUS" />
+    <seealso cref="CHANGER_SEND_VOLUME_TAG_INFORMATION" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_changer_query_volume_tags">IOCTL_CHANGER_QUERY_VOLUME_TAGS</seealso>
+  </member>
+  <member name="READ_ELEMENT_ADDRESS_INFO.NumberOfElements">
+    <summary>
+      <para>The number of elements matching criteria set forth by the <b>ActionCode</b> member of
+<see cref="CHANGER_SEND_VOLUME_TAG_INFORMATION" />.</para>
+      <para>For information on compatibility with the current device, see the <b>Features0</b> member of
+<see cref="GET_CHANGER_PARAMETERS" />.</para>
+    </summary>
+  </member>
+  <member name="READ_ELEMENT_ADDRESS_INFO.ElementStatus">
+    <summary>
+      <para>An array of
+<see cref="CHANGER_ELEMENT_STATUS" /> structures, one for each element that corresponded with the information passed in with the
+<see cref="CHANGER_SEND_VOLUME_TAG_INFORMATION" /> structure.</para>
+    </summary>
+  </member>
+</doc>

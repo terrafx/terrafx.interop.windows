@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MFCameraExtrinsics">
+    <summary>
+      <para>Describes the location of a camera relative to other cameras or an established external reference.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-structures">Media Foundation Structures</seealso>
+  </member>
+  <member name="MFCameraExtrinsics.TransformCount">
+    <summary>
+      <para>The number of transforms in the <i>CalibratedTransforms</i> array.</para>
+    </summary>
+  </member>
+  <member name="MFCameraExtrinsics.CalibratedTransforms">
+    <summary>
+      <para>The array of transforms in the extrinsic data.</para>
+    </summary>
+  </member>
+</doc>

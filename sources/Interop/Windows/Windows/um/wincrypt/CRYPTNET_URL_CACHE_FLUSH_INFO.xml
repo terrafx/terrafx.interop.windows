@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CRYPTNET_URL_CACHE_FLUSH_INFO">
+    <summary>
+      <para>The <b>CRYPTNET_URL_CACHE_FLUSH_INFO</b> structure contains expiry information used by the Cryptnet URL Cache (CUC) service to maintain a URL cache entry. This structure composes the <b>pFlushInfo</b> member of the <see cref="CRYPT_RETRIEVE_AUX_INFO" /> structure that is passed to the <see cref="CryptRetrieveObjectByUrl" /> method as the <i>pAuxInfo</i> parameter.</para>
+    </summary>
+    <remarks>
+      <para>The <b>dwExemptSeconds</b> member is added to the <b>ExpireTime</b> member to determine the flush time. If the <b>pLastSyncTime</b> member of the <see cref="CRYPT_RETRIEVE_AUX_INFO" /> structure  is after the <b>ExpireTime</b> member, the <b>pLastSyncTime</b> member  determines the flush time.</para>
+    </remarks>
+  </member>
+  <member name="CRYPTNET_URL_CACHE_FLUSH_INFO.cbSize">
+    <summary>
+      <para>The size, in bytes, of this structure.</para>
+    </summary>
+  </member>
+  <member name="CRYPTNET_URL_CACHE_FLUSH_INFO.dwExemptSeconds">
+    <summary>
+      <para>A value that specifies how long to extend the <b>ExpireTime</b> member. If prefetch is enabled, the CUC service ignores this value.</para>
+      <para>The following values have special meaning.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CRYPTNET_URL_CACHE_DEFAULT_FLUSH</b>
+                </description>
+              </item>
+              <item>
+                <description>0</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Use the default flush exempt seconds for a retrieved URL. The following <b>REG_DWORD</b> constants define the default value of dwExemptSeconds for a computer.</para>
+            <list type="bullet">
+              <item>
+                <description>CRYPTNET_URL_CACHE_DEFAULT_FLUSH_EXEMPT_SECONDS_VALUE_NAME L"CryptnetDefaultFlushExemptSeconds"</description>
+              </item>
+              <item>
+                <description>CRYPTNET_URL_CACHE_DEFAULT_FLUSH_EXEMPT_SECONDS_DEFAULT (28 * 24 * 60 * 60)</description>
+              </item>
+            </list>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CRYPTNET_URL_CACHE_DISABLE_FLUSH</b>
+                </description>
+              </item>
+              <item>
+                <description>0xFFFFFFFF</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Disable cache flushing for a retrieved URL.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="CRYPTNET_URL_CACHE_FLUSH_INFO.ExpireTime">
+    <summary>
+      <para>A <see cref="FILETIME" /> structure that contains the time the object expires.</para>
+    </summary>
+  </member>
+</doc>

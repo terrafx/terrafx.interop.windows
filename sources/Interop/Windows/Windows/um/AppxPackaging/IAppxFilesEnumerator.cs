@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAppxFilesEnumerator.xml' path='doc/member[@name="IAppxFilesEnumerator"]/*' />
 [Guid("F007EEAF-9831-411C-9847-917CDC62D1FE")]
 [NativeTypeName("struct IAppxFilesEnumerator : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IAppxFilesEnumerator : IAppxFilesEnumerator.Interfa
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IAppxFilesEnumerator : IAppxFilesEnumerator.Interfa
         return ((delegate* unmanaged<IAppxFilesEnumerator*, Guid*, void**, int>)(lpVtbl[0]))((IAppxFilesEnumerator*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IAppxFilesEnumerator : IAppxFilesEnumerator.Interfa
         return ((delegate* unmanaged<IAppxFilesEnumerator*, uint>)(lpVtbl[1]))((IAppxFilesEnumerator*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IAppxFilesEnumerator : IAppxFilesEnumerator.Interfa
         return ((delegate* unmanaged<IAppxFilesEnumerator*, uint>)(lpVtbl[2]))((IAppxFilesEnumerator*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAppxFilesEnumerator.xml' path='doc/member[@name="IAppxFilesEnumerator.GetCurrent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetCurrent(IAppxFile** file)
@@ -48,6 +53,7 @@ public unsafe partial struct IAppxFilesEnumerator : IAppxFilesEnumerator.Interfa
         return ((delegate* unmanaged<IAppxFilesEnumerator*, IAppxFile**, int>)(lpVtbl[3]))((IAppxFilesEnumerator*)Unsafe.AsPointer(ref this), file);
     }
 
+    /// <include file='IAppxFilesEnumerator.xml' path='doc/member[@name="IAppxFilesEnumerator.GetHasCurrent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetHasCurrent(BOOL* hasCurrent)
@@ -55,6 +61,7 @@ public unsafe partial struct IAppxFilesEnumerator : IAppxFilesEnumerator.Interfa
         return ((delegate* unmanaged<IAppxFilesEnumerator*, BOOL*, int>)(lpVtbl[4]))((IAppxFilesEnumerator*)Unsafe.AsPointer(ref this), hasCurrent);
     }
 
+    /// <include file='IAppxFilesEnumerator.xml' path='doc/member[@name="IAppxFilesEnumerator.MoveNext"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT MoveNext(BOOL* hasNext)

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IPersistPropertyBag.xml' path='doc/member[@name="IPersistPropertyBag"]/*' />
 [Guid("37D84F60-42CB-11CE-8135-00AA004BB851")]
 [NativeTypeName("struct IPersistPropertyBag : IPersist")]
 [NativeInheritance("IPersist")]
@@ -16,6 +17,7 @@ public unsafe partial struct IPersistPropertyBag : IPersistPropertyBag.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IPersistPropertyBag : IPersistPropertyBag.Interface
         return ((delegate* unmanaged<IPersistPropertyBag*, Guid*, void**, int>)(lpVtbl[0]))((IPersistPropertyBag*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IPersistPropertyBag : IPersistPropertyBag.Interface
         return ((delegate* unmanaged<IPersistPropertyBag*, uint>)(lpVtbl[1]))((IPersistPropertyBag*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IPersistPropertyBag : IPersistPropertyBag.Interface
         return ((delegate* unmanaged<IPersistPropertyBag*, uint>)(lpVtbl[2]))((IPersistPropertyBag*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IPersist.GetClassID" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetClassID([NativeTypeName("CLSID *")] Guid* pClassID)
@@ -46,6 +51,7 @@ public unsafe partial struct IPersistPropertyBag : IPersistPropertyBag.Interface
         return ((delegate* unmanaged<IPersistPropertyBag*, Guid*, int>)(lpVtbl[3]))((IPersistPropertyBag*)Unsafe.AsPointer(ref this), pClassID);
     }
 
+    /// <include file='IPersistPropertyBag.xml' path='doc/member[@name="IPersistPropertyBag.InitNew"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT InitNew()
@@ -53,6 +59,7 @@ public unsafe partial struct IPersistPropertyBag : IPersistPropertyBag.Interface
         return ((delegate* unmanaged<IPersistPropertyBag*, int>)(lpVtbl[4]))((IPersistPropertyBag*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IPersistPropertyBag.xml' path='doc/member[@name="IPersistPropertyBag.Load"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT Load(IPropertyBag* pPropBag, IErrorLog* pErrorLog)
@@ -60,6 +67,7 @@ public unsafe partial struct IPersistPropertyBag : IPersistPropertyBag.Interface
         return ((delegate* unmanaged<IPersistPropertyBag*, IPropertyBag*, IErrorLog*, int>)(lpVtbl[5]))((IPersistPropertyBag*)Unsafe.AsPointer(ref this), pPropBag, pErrorLog);
     }
 
+    /// <include file='IPersistPropertyBag.xml' path='doc/member[@name="IPersistPropertyBag.Save"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Save(IPropertyBag* pPropBag, BOOL fClearDirty, BOOL fSaveAllProperties)

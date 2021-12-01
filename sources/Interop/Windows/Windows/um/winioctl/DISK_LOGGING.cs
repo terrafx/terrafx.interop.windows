@@ -5,13 +5,17 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DISK_LOGGING.xml' path='doc/member[@name="DISK_LOGGING"]/*' />
 public unsafe partial struct DISK_LOGGING
 {
+    /// <include file='DISK_LOGGING.xml' path='doc/member[@name="DISK_LOGGING.Function"]/*' />
     public byte Function;
 
+    /// <include file='DISK_LOGGING.xml' path='doc/member[@name="DISK_LOGGING.BufferAddress"]/*' />
     [NativeTypeName("PVOID")]
     public void* BufferAddress;
 
+    /// <include file='DISK_LOGGING.xml' path='doc/member[@name="DISK_LOGGING.BufferSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint BufferSize;
 }

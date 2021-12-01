@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IInitializeSpy.xml' path='doc/member[@name="IInitializeSpy"]/*' />
 [Guid("00000034-0000-0000-C000-000000000046")]
 [NativeTypeName("struct IInitializeSpy : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IInitializeSpy : IInitializeSpy.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IInitializeSpy : IInitializeSpy.Interface
         return ((delegate* unmanaged<IInitializeSpy*, Guid*, void**, int>)(lpVtbl[0]))((IInitializeSpy*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IInitializeSpy : IInitializeSpy.Interface
         return ((delegate* unmanaged<IInitializeSpy*, uint>)(lpVtbl[1]))((IInitializeSpy*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IInitializeSpy : IInitializeSpy.Interface
         return ((delegate* unmanaged<IInitializeSpy*, uint>)(lpVtbl[2]))((IInitializeSpy*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IInitializeSpy.xml' path='doc/member[@name="IInitializeSpy.PreInitialize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT PreInitialize([NativeTypeName("DWORD")] uint dwCoInit, [NativeTypeName("DWORD")] uint dwCurThreadAptRefs)
@@ -46,6 +51,7 @@ public unsafe partial struct IInitializeSpy : IInitializeSpy.Interface
         return ((delegate* unmanaged<IInitializeSpy*, uint, uint, int>)(lpVtbl[3]))((IInitializeSpy*)Unsafe.AsPointer(ref this), dwCoInit, dwCurThreadAptRefs);
     }
 
+    /// <include file='IInitializeSpy.xml' path='doc/member[@name="IInitializeSpy.PostInitialize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT PostInitialize(HRESULT hrCoInit, [NativeTypeName("DWORD")] uint dwCoInit, [NativeTypeName("DWORD")] uint dwNewThreadAptRefs)
@@ -53,6 +59,7 @@ public unsafe partial struct IInitializeSpy : IInitializeSpy.Interface
         return ((delegate* unmanaged<IInitializeSpy*, HRESULT, uint, uint, int>)(lpVtbl[4]))((IInitializeSpy*)Unsafe.AsPointer(ref this), hrCoInit, dwCoInit, dwNewThreadAptRefs);
     }
 
+    /// <include file='IInitializeSpy.xml' path='doc/member[@name="IInitializeSpy.PreUninitialize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT PreUninitialize([NativeTypeName("DWORD")] uint dwCurThreadAptRefs)
@@ -60,6 +67,7 @@ public unsafe partial struct IInitializeSpy : IInitializeSpy.Interface
         return ((delegate* unmanaged<IInitializeSpy*, uint, int>)(lpVtbl[5]))((IInitializeSpy*)Unsafe.AsPointer(ref this), dwCurThreadAptRefs);
     }
 
+    /// <include file='IInitializeSpy.xml' path='doc/member[@name="IInitializeSpy.PostUninitialize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT PostUninitialize([NativeTypeName("DWORD")] uint dwNewThreadAptRefs)

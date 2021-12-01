@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TRANSACTION_BIND_INFORMATION.xml' path='doc/member[@name="TRANSACTION_BIND_INFORMATION"]/*' />
 public partial struct TRANSACTION_BIND_INFORMATION
 {
+    /// <include file='TRANSACTION_BIND_INFORMATION.xml' path='doc/member[@name="TRANSACTION_BIND_INFORMATION.TmHandle"]/*' />
     public HANDLE TmHandle;
 }

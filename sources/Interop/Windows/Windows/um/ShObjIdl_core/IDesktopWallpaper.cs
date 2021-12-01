@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IDesktopWallpaper.xml' path='doc/member[@name="IDesktopWallpaper"]/*' />
 [Guid("B92B56A9-8B55-4E14-9A89-0199BBB6F93B")]
 [NativeTypeName("struct IDesktopWallpaper : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IDesktopWallpaper : IDesktopWallpaper.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IDesktopWallpaper : IDesktopWallpaper.Interface
         return ((delegate* unmanaged<IDesktopWallpaper*, Guid*, void**, int>)(lpVtbl[0]))((IDesktopWallpaper*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IDesktopWallpaper : IDesktopWallpaper.Interface
         return ((delegate* unmanaged<IDesktopWallpaper*, uint>)(lpVtbl[1]))((IDesktopWallpaper*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IDesktopWallpaper : IDesktopWallpaper.Interface
         return ((delegate* unmanaged<IDesktopWallpaper*, uint>)(lpVtbl[2]))((IDesktopWallpaper*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDesktopWallpaper.xml' path='doc/member[@name="IDesktopWallpaper.SetWallpaper"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetWallpaper([NativeTypeName("LPCWSTR")] ushort* monitorID, [NativeTypeName("LPCWSTR")] ushort* wallpaper)
@@ -46,6 +51,7 @@ public unsafe partial struct IDesktopWallpaper : IDesktopWallpaper.Interface
         return ((delegate* unmanaged<IDesktopWallpaper*, ushort*, ushort*, int>)(lpVtbl[3]))((IDesktopWallpaper*)Unsafe.AsPointer(ref this), monitorID, wallpaper);
     }
 
+    /// <include file='IDesktopWallpaper.xml' path='doc/member[@name="IDesktopWallpaper.GetWallpaper"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetWallpaper([NativeTypeName("LPCWSTR")] ushort* monitorID, [NativeTypeName("LPWSTR *")] ushort** wallpaper)
@@ -53,6 +59,7 @@ public unsafe partial struct IDesktopWallpaper : IDesktopWallpaper.Interface
         return ((delegate* unmanaged<IDesktopWallpaper*, ushort*, ushort**, int>)(lpVtbl[4]))((IDesktopWallpaper*)Unsafe.AsPointer(ref this), monitorID, wallpaper);
     }
 
+    /// <include file='IDesktopWallpaper.xml' path='doc/member[@name="IDesktopWallpaper.GetMonitorDevicePathAt"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetMonitorDevicePathAt(uint monitorIndex, [NativeTypeName("LPWSTR *")] ushort** monitorID)
@@ -60,6 +67,7 @@ public unsafe partial struct IDesktopWallpaper : IDesktopWallpaper.Interface
         return ((delegate* unmanaged<IDesktopWallpaper*, uint, ushort**, int>)(lpVtbl[5]))((IDesktopWallpaper*)Unsafe.AsPointer(ref this), monitorIndex, monitorID);
     }
 
+    /// <include file='IDesktopWallpaper.xml' path='doc/member[@name="IDesktopWallpaper.GetMonitorDevicePathCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetMonitorDevicePathCount(uint* count)
@@ -67,6 +75,7 @@ public unsafe partial struct IDesktopWallpaper : IDesktopWallpaper.Interface
         return ((delegate* unmanaged<IDesktopWallpaper*, uint*, int>)(lpVtbl[6]))((IDesktopWallpaper*)Unsafe.AsPointer(ref this), count);
     }
 
+    /// <include file='IDesktopWallpaper.xml' path='doc/member[@name="IDesktopWallpaper.GetMonitorRECT"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetMonitorRECT([NativeTypeName("LPCWSTR")] ushort* monitorID, RECT* displayRect)
@@ -74,6 +83,7 @@ public unsafe partial struct IDesktopWallpaper : IDesktopWallpaper.Interface
         return ((delegate* unmanaged<IDesktopWallpaper*, ushort*, RECT*, int>)(lpVtbl[7]))((IDesktopWallpaper*)Unsafe.AsPointer(ref this), monitorID, displayRect);
     }
 
+    /// <include file='IDesktopWallpaper.xml' path='doc/member[@name="IDesktopWallpaper.SetBackgroundColor"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT SetBackgroundColor(COLORREF color)
@@ -81,6 +91,7 @@ public unsafe partial struct IDesktopWallpaper : IDesktopWallpaper.Interface
         return ((delegate* unmanaged<IDesktopWallpaper*, COLORREF, int>)(lpVtbl[8]))((IDesktopWallpaper*)Unsafe.AsPointer(ref this), color);
     }
 
+    /// <include file='IDesktopWallpaper.xml' path='doc/member[@name="IDesktopWallpaper.GetBackgroundColor"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT GetBackgroundColor(COLORREF* color)
@@ -88,6 +99,7 @@ public unsafe partial struct IDesktopWallpaper : IDesktopWallpaper.Interface
         return ((delegate* unmanaged<IDesktopWallpaper*, COLORREF*, int>)(lpVtbl[9]))((IDesktopWallpaper*)Unsafe.AsPointer(ref this), color);
     }
 
+    /// <include file='IDesktopWallpaper.xml' path='doc/member[@name="IDesktopWallpaper.SetPosition"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT SetPosition(DESKTOP_WALLPAPER_POSITION position)
@@ -95,6 +107,7 @@ public unsafe partial struct IDesktopWallpaper : IDesktopWallpaper.Interface
         return ((delegate* unmanaged<IDesktopWallpaper*, DESKTOP_WALLPAPER_POSITION, int>)(lpVtbl[10]))((IDesktopWallpaper*)Unsafe.AsPointer(ref this), position);
     }
 
+    /// <include file='IDesktopWallpaper.xml' path='doc/member[@name="IDesktopWallpaper.GetPosition"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT GetPosition(DESKTOP_WALLPAPER_POSITION* position)
@@ -102,6 +115,7 @@ public unsafe partial struct IDesktopWallpaper : IDesktopWallpaper.Interface
         return ((delegate* unmanaged<IDesktopWallpaper*, DESKTOP_WALLPAPER_POSITION*, int>)(lpVtbl[11]))((IDesktopWallpaper*)Unsafe.AsPointer(ref this), position);
     }
 
+    /// <include file='IDesktopWallpaper.xml' path='doc/member[@name="IDesktopWallpaper.SetSlideshow"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT SetSlideshow(IShellItemArray* items)
@@ -109,6 +123,7 @@ public unsafe partial struct IDesktopWallpaper : IDesktopWallpaper.Interface
         return ((delegate* unmanaged<IDesktopWallpaper*, IShellItemArray*, int>)(lpVtbl[12]))((IDesktopWallpaper*)Unsafe.AsPointer(ref this), items);
     }
 
+    /// <include file='IDesktopWallpaper.xml' path='doc/member[@name="IDesktopWallpaper.GetSlideshow"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT GetSlideshow(IShellItemArray** items)
@@ -116,6 +131,7 @@ public unsafe partial struct IDesktopWallpaper : IDesktopWallpaper.Interface
         return ((delegate* unmanaged<IDesktopWallpaper*, IShellItemArray**, int>)(lpVtbl[13]))((IDesktopWallpaper*)Unsafe.AsPointer(ref this), items);
     }
 
+    /// <include file='IDesktopWallpaper.xml' path='doc/member[@name="IDesktopWallpaper.SetSlideshowOptions"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT SetSlideshowOptions(DESKTOP_SLIDESHOW_OPTIONS options, uint slideshowTick)
@@ -123,6 +139,7 @@ public unsafe partial struct IDesktopWallpaper : IDesktopWallpaper.Interface
         return ((delegate* unmanaged<IDesktopWallpaper*, DESKTOP_SLIDESHOW_OPTIONS, uint, int>)(lpVtbl[14]))((IDesktopWallpaper*)Unsafe.AsPointer(ref this), options, slideshowTick);
     }
 
+    /// <include file='IDesktopWallpaper.xml' path='doc/member[@name="IDesktopWallpaper.GetSlideshowOptions"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT GetSlideshowOptions(DESKTOP_SLIDESHOW_OPTIONS* options, uint* slideshowTick)
@@ -130,6 +147,7 @@ public unsafe partial struct IDesktopWallpaper : IDesktopWallpaper.Interface
         return ((delegate* unmanaged<IDesktopWallpaper*, DESKTOP_SLIDESHOW_OPTIONS*, uint*, int>)(lpVtbl[15]))((IDesktopWallpaper*)Unsafe.AsPointer(ref this), options, slideshowTick);
     }
 
+    /// <include file='IDesktopWallpaper.xml' path='doc/member[@name="IDesktopWallpaper.AdvanceSlideshow"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT AdvanceSlideshow([NativeTypeName("LPCWSTR")] ushort* monitorID, DESKTOP_SLIDESHOW_DIRECTION direction)
@@ -137,6 +155,7 @@ public unsafe partial struct IDesktopWallpaper : IDesktopWallpaper.Interface
         return ((delegate* unmanaged<IDesktopWallpaper*, ushort*, DESKTOP_SLIDESHOW_DIRECTION, int>)(lpVtbl[16]))((IDesktopWallpaper*)Unsafe.AsPointer(ref this), monitorID, direction);
     }
 
+    /// <include file='IDesktopWallpaper.xml' path='doc/member[@name="IDesktopWallpaper.GetStatus"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT GetStatus(DESKTOP_SLIDESHOW_STATE* state)
@@ -144,6 +163,7 @@ public unsafe partial struct IDesktopWallpaper : IDesktopWallpaper.Interface
         return ((delegate* unmanaged<IDesktopWallpaper*, DESKTOP_SLIDESHOW_STATE*, int>)(lpVtbl[17]))((IDesktopWallpaper*)Unsafe.AsPointer(ref this), state);
     }
 
+    /// <include file='IDesktopWallpaper.xml' path='doc/member[@name="IDesktopWallpaper.Enable"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT Enable(BOOL enable)

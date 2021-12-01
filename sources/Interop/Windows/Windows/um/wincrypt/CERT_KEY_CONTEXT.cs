@@ -8,17 +8,22 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CERT_KEY_CONTEXT.xml' path='doc/member[@name="CERT_KEY_CONTEXT"]/*' />
 public partial struct CERT_KEY_CONTEXT
 {
+    /// <include file='CERT_KEY_CONTEXT.xml' path='doc/member[@name="CERT_KEY_CONTEXT.cbSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbSize;
 
+    /// <include file='CERT_KEY_CONTEXT.xml' path='doc/member[@name="CERT_KEY_CONTEXT.Anonymous"]/*' />
     [NativeTypeName("_CERT_KEY_CONTEXT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/wincrypt.h:9358:5)")]
     public _Anonymous_e__Union Anonymous;
 
+    /// <include file='CERT_KEY_CONTEXT.xml' path='doc/member[@name="CERT_KEY_CONTEXT.dwKeySpec"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwKeySpec;
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.hCryptProv"]/*' />
     public ref HCRYPTPROV hCryptProv
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -28,6 +33,7 @@ public partial struct CERT_KEY_CONTEXT
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.hNCryptKey"]/*' />
     public ref nuint hNCryptKey
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -37,12 +43,15 @@ public partial struct CERT_KEY_CONTEXT
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public partial struct _Anonymous_e__Union
     {
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.hCryptProv"]/*' />
         [FieldOffset(0)]
         public HCRYPTPROV hCryptProv;
 
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.hNCryptKey"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("NCRYPT_KEY_HANDLE")]
         public nuint hNCryptKey;

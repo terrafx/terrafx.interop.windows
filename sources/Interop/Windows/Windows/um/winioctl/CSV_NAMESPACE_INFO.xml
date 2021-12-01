@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CSV_NAMESPACE_INFO">
+    <summary>
+      <para>Contains the output for the <a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_is_csv_file">FSCTL_IS_CSV_FILE</a></para>
+      <para>control code that retrieves namespace information for a file.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_is_csv_file">FSCTL_IS_CSV_FILE</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/FileIO/volume-management-structures">Volume Management Structures</seealso>
+  </member>
+  <member name="CSV_NAMESPACE_INFO.Version">
+    <summary>
+      <para>The version number. This value must be set to <b>CSV_NAMESPACE_INFO_V1</b>.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>CSV_NAMESPACE_INFO_V1</b>
+          </description>
+          <description>
+            <para>Version 1.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="CSV_NAMESPACE_INFO.DeviceNumber">
+    <summary>
+      <para>The device number of the disk.</para>
+    </summary>
+  </member>
+  <member name="CSV_NAMESPACE_INFO.StartingOffset">
+    <summary>
+      <para>The starting offset of the volume.</para>
+    </summary>
+  </member>
+  <member name="CSV_NAMESPACE_INFO.SectorSize">
+    <summary>
+      <para>The sector size of the disk.</para>
+    </summary>
+  </member>
+</doc>

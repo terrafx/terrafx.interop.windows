@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ISyncMgrEvent.xml' path='doc/member[@name="ISyncMgrEvent"]/*' />
 [Guid("FEE0EF8B-46BD-4DB4-B7E6-FF2C687313BC")]
 [NativeTypeName("struct ISyncMgrEvent : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ISyncMgrEvent : ISyncMgrEvent.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ISyncMgrEvent : ISyncMgrEvent.Interface
         return ((delegate* unmanaged<ISyncMgrEvent*, Guid*, void**, int>)(lpVtbl[0]))((ISyncMgrEvent*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ISyncMgrEvent : ISyncMgrEvent.Interface
         return ((delegate* unmanaged<ISyncMgrEvent*, uint>)(lpVtbl[1]))((ISyncMgrEvent*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ISyncMgrEvent : ISyncMgrEvent.Interface
         return ((delegate* unmanaged<ISyncMgrEvent*, uint>)(lpVtbl[2]))((ISyncMgrEvent*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ISyncMgrEvent.xml' path='doc/member[@name="ISyncMgrEvent.GetEventID"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetEventID(Guid* pguidEventID)
@@ -46,6 +51,7 @@ public unsafe partial struct ISyncMgrEvent : ISyncMgrEvent.Interface
         return ((delegate* unmanaged<ISyncMgrEvent*, Guid*, int>)(lpVtbl[3]))((ISyncMgrEvent*)Unsafe.AsPointer(ref this), pguidEventID);
     }
 
+    /// <include file='ISyncMgrEvent.xml' path='doc/member[@name="ISyncMgrEvent.GetHandlerID"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetHandlerID([NativeTypeName("LPWSTR *")] ushort** ppszHandlerID)
@@ -53,6 +59,7 @@ public unsafe partial struct ISyncMgrEvent : ISyncMgrEvent.Interface
         return ((delegate* unmanaged<ISyncMgrEvent*, ushort**, int>)(lpVtbl[4]))((ISyncMgrEvent*)Unsafe.AsPointer(ref this), ppszHandlerID);
     }
 
+    /// <include file='ISyncMgrEvent.xml' path='doc/member[@name="ISyncMgrEvent.GetItemID"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetItemID([NativeTypeName("LPWSTR *")] ushort** ppszItemID)
@@ -60,6 +67,7 @@ public unsafe partial struct ISyncMgrEvent : ISyncMgrEvent.Interface
         return ((delegate* unmanaged<ISyncMgrEvent*, ushort**, int>)(lpVtbl[5]))((ISyncMgrEvent*)Unsafe.AsPointer(ref this), ppszItemID);
     }
 
+    /// <include file='ISyncMgrEvent.xml' path='doc/member[@name="ISyncMgrEvent.GetLevel"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetLevel(SYNCMGR_EVENT_LEVEL* pnLevel)
@@ -67,6 +75,7 @@ public unsafe partial struct ISyncMgrEvent : ISyncMgrEvent.Interface
         return ((delegate* unmanaged<ISyncMgrEvent*, SYNCMGR_EVENT_LEVEL*, int>)(lpVtbl[6]))((ISyncMgrEvent*)Unsafe.AsPointer(ref this), pnLevel);
     }
 
+    /// <include file='ISyncMgrEvent.xml' path='doc/member[@name="ISyncMgrEvent.GetFlags"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetFlags(SYNCMGR_EVENT_FLAGS* pnFlags)
@@ -74,6 +83,7 @@ public unsafe partial struct ISyncMgrEvent : ISyncMgrEvent.Interface
         return ((delegate* unmanaged<ISyncMgrEvent*, SYNCMGR_EVENT_FLAGS*, int>)(lpVtbl[7]))((ISyncMgrEvent*)Unsafe.AsPointer(ref this), pnFlags);
     }
 
+    /// <include file='ISyncMgrEvent.xml' path='doc/member[@name="ISyncMgrEvent.GetTime"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetTime(FILETIME* pfCreationTime)
@@ -81,6 +91,7 @@ public unsafe partial struct ISyncMgrEvent : ISyncMgrEvent.Interface
         return ((delegate* unmanaged<ISyncMgrEvent*, FILETIME*, int>)(lpVtbl[8]))((ISyncMgrEvent*)Unsafe.AsPointer(ref this), pfCreationTime);
     }
 
+    /// <include file='ISyncMgrEvent.xml' path='doc/member[@name="ISyncMgrEvent.GetName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT GetName([NativeTypeName("LPWSTR *")] ushort** ppszName)
@@ -88,6 +99,7 @@ public unsafe partial struct ISyncMgrEvent : ISyncMgrEvent.Interface
         return ((delegate* unmanaged<ISyncMgrEvent*, ushort**, int>)(lpVtbl[9]))((ISyncMgrEvent*)Unsafe.AsPointer(ref this), ppszName);
     }
 
+    /// <include file='ISyncMgrEvent.xml' path='doc/member[@name="ISyncMgrEvent.GetDescription"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT GetDescription([NativeTypeName("LPWSTR *")] ushort** ppszDescription)
@@ -95,6 +107,7 @@ public unsafe partial struct ISyncMgrEvent : ISyncMgrEvent.Interface
         return ((delegate* unmanaged<ISyncMgrEvent*, ushort**, int>)(lpVtbl[10]))((ISyncMgrEvent*)Unsafe.AsPointer(ref this), ppszDescription);
     }
 
+    /// <include file='ISyncMgrEvent.xml' path='doc/member[@name="ISyncMgrEvent.GetLinkText"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT GetLinkText([NativeTypeName("LPWSTR *")] ushort** ppszLinkText)
@@ -102,6 +115,7 @@ public unsafe partial struct ISyncMgrEvent : ISyncMgrEvent.Interface
         return ((delegate* unmanaged<ISyncMgrEvent*, ushort**, int>)(lpVtbl[11]))((ISyncMgrEvent*)Unsafe.AsPointer(ref this), ppszLinkText);
     }
 
+    /// <include file='ISyncMgrEvent.xml' path='doc/member[@name="ISyncMgrEvent.GetLinkReference"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT GetLinkReference([NativeTypeName("LPWSTR *")] ushort** ppszLinkReference)
@@ -109,6 +123,7 @@ public unsafe partial struct ISyncMgrEvent : ISyncMgrEvent.Interface
         return ((delegate* unmanaged<ISyncMgrEvent*, ushort**, int>)(lpVtbl[12]))((ISyncMgrEvent*)Unsafe.AsPointer(ref this), ppszLinkReference);
     }
 
+    /// <include file='ISyncMgrEvent.xml' path='doc/member[@name="ISyncMgrEvent.GetContext"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT GetContext([NativeTypeName("LPWSTR *")] ushort** ppszContext)

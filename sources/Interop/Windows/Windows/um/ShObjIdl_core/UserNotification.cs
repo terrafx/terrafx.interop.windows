@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='UserNotification.xml' path='doc/member[@name="UserNotification"]/*' />
 [Guid("0010890E-8789-413C-ADBC-48F5B511B3AF")]
 public partial struct UserNotification
 {

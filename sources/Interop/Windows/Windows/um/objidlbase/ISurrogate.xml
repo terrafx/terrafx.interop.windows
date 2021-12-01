@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ISurrogate.FreeSurrogate">
+    <summary>
+      <para>Unloads a DLL server.</para>
+    </summary>
+    <returns>
+      <para>This method can return the standard return values E_UNEXPECTED, E_FAIL, and S_OK.</para>
+    </returns>
+    <remarks>
+      <para>COM calls <b>FreeSurrogate</b> when there are no more DLL servers running in the surrogate process. When <b>FreeSurrogate</b> is called, the method must properly revoke all of the class factories registered in the surrogate, and then cause the surrogate process to exit.</para>
+      <para>Surrogate processes must call the <see cref="CoFreeUnusedLibraries" /> function periodically to unload DLL servers that are no longer in use. The surrogate process assumes this responsibility, which would normally be the client's responsibility. <b>CoFreeUnusedLibraries</b> calls the <see cref="DllCanUnloadNow" /> function on any loaded DLL servers. Because <b>CoFreeUnusedLibraries</b> depends on the existence and proper implementation of <b>DllCanUnloadNow</b> in DLL servers, it is not guaranteed to unload all DLL servers that should be unloaded --not every server implements <b>DllCanUnloadNow</b>, and this function is unreliable for free-threaded DLLs. Additionally, the surrogate has no way of being informed when all DLL servers are gone. COM, however, can determine when all DLL servers have been unloaded, and will then call the <b>FreeSurrogate</b> method.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/com/dllsurrogate">DllSurrogate</seealso>
+    <seealso cref="ISurrogate" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/com/writing-a-custom-surrogate">Writing a Custom Surrogate</seealso>
+  </member>
+  <member name="ISurrogate.LoadDllServer">
+    <summary>
+      <para>Loads a DLL server into the implementing surrogate. COM calls this method when there is an activation request for the DLL server's class, if the class is registered as <a href="https://docs.microsoft.com//windows/desktop/com/dllsurrogate">DllSurrogate</a>.</para>
+    </summary>
+    <param name="Clsid">
+      <para>The CLSID of the DLL server to be loaded.</para>
+    </param>
+    <returns>
+      <para>This method can return the standard return values E_INVALIDARG, E_OUTOFMEMORY, E_UNEXPECTED, and S_OK.</para>
+    </returns>
+    <remarks>
+      <para>Upon receiving a load request through <b>LoadDllServer</b>, the surrogate must perform the following steps:</para>
+      <list type="number">
+        <item>
+          <description>Create a class factory object that supports <see cref="IUnknown" />, <see cref="IClassFactory" />, and <see cref="IMarshal" />.</description>
+        </item>
+        <item>
+          <description>Call <see cref="CoRegisterClassObject" /> to register the new class factory object as the class factory for the requested CLSID.</description>
+        </item>
+      </list>
+      <para>This class factory's implementation of <see cref="IClassFactory.CreateInstance" /> will create an instance of the requested CLSID method by calling <see cref="CoGetClassObject" /> to get the class factory which creates an actual object for the given CLSID.</para>
+    </remarks>
+    <seealso cref="CoRegisterSurrogate" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/com/dllsurrogate">DllSurrogate</seealso>
+    <seealso cref="ISurrogate" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/com/writing-a-custom-surrogate">Writing a Custom Surrogate</seealso>
+  </member>
+  <member name="ISurrogate">
+    <summary>
+      <para>Used to dynamically load new DLL servers into an existing surrogate and free the surrogate when it is no longer needed.</para>
+    </summary>
+    <remarks>
+      <para>A surrogate is an EXE process into which a DLL server can be loaded to give the DLL server the advantages of an EXE server without the coding overhead. It can also allow independent DLL servers to be located together within a single process, reducing the total number of processes needed. DLL servers are easy to write using standard development tools, like Microsoft Visual Studio, and running them in a surrogate process provides the benefits of an executable implementation, including fault isolation, the ability to serve multiple clients simultaneously, and allowing the server to provide services to remote clients in a distributed environment.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/com/dll-surrogates">DLL Surrogates</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/com/writing-a-custom-surrogate">Writing a Custom Surrogate</seealso>
+  </member>
+</doc>

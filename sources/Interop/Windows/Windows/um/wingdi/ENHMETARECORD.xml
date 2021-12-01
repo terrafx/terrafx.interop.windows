@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ENHMETARECORD">
+    <summary>
+      <para>The <b>ENHMETARECORD</b> structure contains data that describes a graphics device interface (GDI) function used to create part of a picture in an enhanced-format metafile.</para>
+    </summary>
+    <seealso cref="ENHMETAHEADER" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafile-structures">Metafile Structures</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafiles">Metafiles Overview</seealso>
+  </member>
+  <member name="ENHMETARECORD.iType">
+    <summary>
+      <para>The record type.</para>
+    </summary>
+  </member>
+  <member name="ENHMETARECORD.nSize">
+    <summary>
+      <para>The size of the record, in bytes.</para>
+    </summary>
+  </member>
+  <member name="ENHMETARECORD.dParm">
+    <summary>
+      <para>An array of parameters passed to the GDI function identified by the record.</para>
+    </summary>
+  </member>
+</doc>

@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MFRATE_DIRECTION.xml' path='doc/member[@name="MFRATE_DIRECTION"]/*' />
 public enum MFRATE_DIRECTION
 {
+    /// <include file='MFRATE_DIRECTION.xml' path='doc/member[@name="MFRATE_DIRECTION.MFRATE_FORWARD"]/*' />
     MFRATE_FORWARD = 0,
+
+    /// <include file='MFRATE_DIRECTION.xml' path='doc/member[@name="MFRATE_DIRECTION.MFRATE_REVERSE"]/*' />
     MFRATE_REVERSE = (MFRATE_FORWARD + 1),
 }

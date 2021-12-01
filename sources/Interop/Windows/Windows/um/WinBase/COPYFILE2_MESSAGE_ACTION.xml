@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="COPYFILE2_MESSAGE_ACTION">
+    <summary>
+      <para>Returned by the
+<a href="https://docs.microsoft.com//windows/desktop/api/winbase/nc-winbase-pcopyfile2_progress_routine">CopyFile2ProgressRoutine</a> callback function to
+indicate what action should be taken for the pending copy operation.</para>
+    </summary>
+    <remarks>
+      <para>To compile an application that uses this enumeration, define the <b>_WIN32_WINNT</b></para>
+      <para>macro as 0x0601 or later. For more information, see
+<a href="https://docs.microsoft.com//windows/desktop/WinProg/using-the-windows-headers">Using the Windows Headers</a>.</para>
+    </remarks>
+    <seealso cref="CopyFile2" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/winbase/nc-winbase-pcopyfile2_progress_routine">CopyFile2ProgressRoutine</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/FileIO/file-management-enumerations">File Management Enumerations</seealso>
+  </member>
+  <member name="COPYFILE2_MESSAGE_ACTION.COPYFILE2_PROGRESS_CONTINUE">
+    <summary>
+      <para>Continue the copy operation.</para>
+    </summary>
+  </member>
+  <member name="COPYFILE2_MESSAGE_ACTION.COPYFILE2_PROGRESS_CANCEL">
+    <summary>
+      <para>Cancel the copy operation. The <see cref="CopyFile2" /> call will fail
+and return <code>HRESULT_FROM_WIN32(ERROR_REQUEST_ABORTED)</code> and
+any partially copied fragments will be deleted.</para>
+    </summary>
+  </member>
+  <member name="COPYFILE2_MESSAGE_ACTION.COPYFILE2_PROGRESS_STOP">
+    <summary>
+      <para>Stop the copy operation. The <see cref="CopyFile2" /> call will fail
+and return <code>HRESULT_FROM_WIN32(ERROR_REQUEST_ABORTED)</code> and
+any partially copied fragments will be left intact. The operation can be restarted using the
+<b>COPY_FILE_RESUME_FROM_PAUSE</b> flag only if the
+<b>COPY_FILE_RESTARTABLE</b> flag was set in the <b>dwCopyFlags</b></para>
+      <para>member of the
+<see cref="COPYFILE2_EXTENDED_PARAMETERS" /> structure
+passed to the <b>CopyFile2</b> function.</para>
+    </summary>
+  </member>
+  <member name="COPYFILE2_MESSAGE_ACTION.COPYFILE2_PROGRESS_QUIET">
+    <summary>
+      <para>Continue the copy operation but do not call the
+<a href="https://docs.microsoft.com//windows/desktop/api/winbase/nc-winbase-pcopyfile2_progress_routine">CopyFile2ProgressRoutine</a> callback function
+again for this operation.</para>
+    </summary>
+  </member>
+  <member name="COPYFILE2_MESSAGE_ACTION.COPYFILE2_PROGRESS_PAUSE">
+    <summary>
+      <para>Pause the copy operation and write a restart header. This value is not compatible with the
+<b>COPY_FILE_RESTARTABLE</b> flag  for the <b>dwCopyFlags</b> member of
+the <see cref="COPYFILE2_EXTENDED_PARAMETERS" /></para>
+      <para>structure. In most cases the <see cref="CopyFile2" /> call will fail and
+return <code>HRESULT_FROM_WIN32(ERROR_REQUEST_PAUSED)</code> and any
+partially copied fragments will be left intact (except for the header written that is used to resume the copy
+operation later.) In case the copy operation was complete at the time the pause request is processed the
+<b>CopyFile2</b> call will complete successfully and no resume
+header will be written. After this value is processed one more callback will be made to the
+<a href="https://docs.microsoft.com//windows/desktop/api/winbase/nc-winbase-pcopyfile2_progress_routine">CopyFile2ProgressRoutine</a> with the message
+specifying a <b>COPYFILE2_CALLBACK_STREAM_FINISHED</b> (4) value in the
+<b>Type</b> member of the
+<see cref="COPYFILE2_MESSAGE" /> structure. After the callback has
+returned CopyFile2 will fail with
+<code>HRESULT_FROM_WIN32(ERROR_REQUEST_PAUSED)</code>.</para>
+    </summary>
+  </member>
+</doc>

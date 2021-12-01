@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IExpDispSupport.FindConnectionPoint">
+    <summary>
+      <para>Deprecated. Gets connection points for browser events.</para>
+    </summary>
+    <param name="riid">
+      <para>Type: <b>REFIID</b></para>
+      <para>The IID of the interface on the connection point container whose connection point object is being requested. One of the following values.</para>
+      <h4>DIID_DWebBrowserEvents</h4>
+      <para>Value that indicates a member of the <a href="https://docs.microsoft.com//dotnet/api/shdocvw.dwebbrowserevents?view=dynamics-usd-3">DWebBrowserEvents</a> interface.</para>
+      <h4>DIID_DWebBrowserEvents2</h4>
+      <para>Value that indicates a member of the <a href="https://docs.microsoft.com//dotnet/api/shdocvw.dwebbrowserevents2?view=dynamics-usd-3">DWebBrowserEvents2</a> interface.</para>
+      <h4>IID_IPropertyNotifySink</h4>
+      <para>Value that indicates a member of the <see cref="IPropertyNotifySink" /> interface.</para>
+    </param>
+    <param name="ppccp">
+      <para>Type: <b>CIE4ConnectionPoint**</b></para>
+      <para>The address of a pointer to the browser connection point.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>IExpDispSupport.FindCIE4ConnectionPoint</b> was created specifically for use with Windows Internet Explorer 4.0.</para>
+    </remarks>
+  </member>
+  <member name="IExpDispSupport.OnInvoke">
+    <summary>
+      <para>Deprecated. Gets ambient properties.</para>
+    </summary>
+    <param name="dispidMember">
+      <para>Type: <b>DISPID</b></para>
+      <para>A dispatch ID that identifies the member being invoked.</para>
+    </param>
+    <param name="iid">
+      <para>Type: <b>REFIID</b></para>
+      <para>Reserved. Must be IID_NULL.</para>
+    </param>
+    <param name="lcid">
+      <para>Type: <b>LCID</b></para>
+      <para>A locale ID providing a locale context in which to interpret arguments. Applications that do not support multiple languages can ignore this parameter.</para>
+    </param>
+    <param name="wFlags">
+      <para>Type: <b>WORD</b></para>
+      <para>Flags describing the context of the call, including the following.</para>
+      <h4>DISPATCH_METHOD</h4>
+      <para>The member is invoked as a method. If a property has the same name, both this and the DISPATCH_PROPERTYGET flag may be set. The member is invoked as a method. If a property has the same name, both this and the DISPATCH_PROPERTYGET flag may be set.</para>
+      <h4>DISPATCH_PROPERTYGET</h4>
+      <para>The member is retrieved as a property or data member.</para>
+      <h4>DISPATCH_PROPERTYPUT</h4>
+      <para>The member is changed as a property or data member.</para>
+      <h4>DISPATCH_PROPERTYPUTREF</h4>
+      <para>The member is changed by a reference assignment, rather than a value assignment. This flag is valid only when the property accepts a reference to an object.</para>
+    </param>
+    <param name="pdispparams">
+      <para>Type: <b><see cref="DISPPARAMS" />*</b></para>
+      <para>A pointer to a <see cref="DISPPARAMS" /> structure containing an array of arguments, an array of argument DISPIDs for named arguments, and counts for the number of elements in the arrays.</para>
+    </param>
+    <param name="pVarResult">
+      <para>Type: <b>VARIANT*</b></para>
+      <para>A pointer to the location where the result is to be stored, or <b>NULL</b> if the caller expects no result. This argument is ignored if DISPATCH_PROPERTYPUT or DISPATCH_PROPERTYPUTREF is specified.</para>
+    </param>
+    <param name="pexcepinfo">
+      <para>Type: <b>EXCEPINFO*</b></para>
+      <para>A pointer to a structure that contains exception information. This structure should be filled in if DISP_E_EXCEPTION is returned. Can be <b>NULL</b>.</para>
+    </param>
+    <param name="puArgErr">
+      <para>Type: <b>UINT*</b></para>
+      <para>The index within the <b>rgvarg</b> member of the <see cref="DISPPARAMS" /> structure of the first argument that has an error. Arguments are stored in <b>rgvarg</b> in reverse order, so the first argument is the one with the highest index in the array. This parameter is returned only when the resulting return value is DISP_E_TYPEMISMATCH or DISP_E_PARAMNOTFOUND. This argument can be set to <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>For more information, see <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nf-oaidl-idispatch-invoke">IDispatch.Invoke</a>.</para>
+    </remarks>
+  </member>
+  <member name="IExpDispSupport.OnTranslateAccelerator">
+    <summary>
+      <para>Deprecated. Instructs the control site to process the keystroke described in <i>pMsg</i> and modified by the flags in <i>grfModifiers</i>.</para>
+    </summary>
+    <param name="pMsg">
+      <para>Type: <b><see cref="MSG" />*</b></para>
+      <para>A pointer to an <see cref="MSG" /> structure that describes the keystroke to be processed.</para>
+    </param>
+    <param name="grfModifiers">
+      <para>Type: <b>DWORD</b></para>
+      <para>Flags describing the state of the CTRL, ALT, and SHIFT keys. The value of the flags can be any valid <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms683763(v=vs.85)">KEYMODIFIERS</a> enumeration value or values.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns <b>S_OK</b> if the container processed the message, <b>S_FALSE</b> if the container did not process the message, or <b>E_NOTIMPL</b> if the container does not implement accelerator support.</para>
+    </returns>
+  </member>
+  <member name="IExpDispSupport">
+    <summary>
+      <para>Deprecated. Exposes methods that allow the retrieval of properties, translation of keyboard accelerators, and determination of a connection point for certain events.</para>
+    </summary>
+    <remarks>
+      <para>
+        <b>Note</b>  <b>IExpDispSupport</b> might not be supported in versions of Windows later than Windows XP.</para>
+    </remarks>
+  </member>
+</doc>

@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STATPROPSTG.xml' path='doc/member[@name="STATPROPSTG"]/*' />
 public unsafe partial struct STATPROPSTG
 {
+    /// <include file='STATPROPSTG.xml' path='doc/member[@name="STATPROPSTG.lpwstrName"]/*' />
     [NativeTypeName("LPOLESTR")]
     public ushort* lpwstrName;
 
+    /// <include file='STATPROPSTG.xml' path='doc/member[@name="STATPROPSTG.propid"]/*' />
     [NativeTypeName("PROPID")]
     public uint propid;
 
+    /// <include file='STATPROPSTG.xml' path='doc/member[@name="STATPROPSTG.vt"]/*' />
     [NativeTypeName("VARTYPE")]
     public ushort vt;
 }

@@ -7,15 +7,19 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MFCONTENTPROTECTIONDEVICE_REALTIMECLIENT_DATA.xml' path='doc/member[@name="MFCONTENTPROTECTIONDEVICE_REALTIMECLIENT_DATA"]/*' />
 [SupportedOSPlatform("windows10.0")]
 public unsafe partial struct MFCONTENTPROTECTIONDEVICE_REALTIMECLIENT_DATA
 {
+    /// <include file='MFCONTENTPROTECTIONDEVICE_REALTIMECLIENT_DATA.xml' path='doc/member[@name="MFCONTENTPROTECTIONDEVICE_REALTIMECLIENT_DATA.TaskIndex"]/*' />
     [NativeTypeName("DWORD")]
     public uint TaskIndex;
 
+    /// <include file='MFCONTENTPROTECTIONDEVICE_REALTIMECLIENT_DATA.xml' path='doc/member[@name="MFCONTENTPROTECTIONDEVICE_REALTIMECLIENT_DATA.ClassName"]/*' />
     [NativeTypeName("WCHAR [260]")]
     public fixed ushort ClassName[260];
 
+    /// <include file='MFCONTENTPROTECTIONDEVICE_REALTIMECLIENT_DATA.xml' path='doc/member[@name="MFCONTENTPROTECTIONDEVICE_REALTIMECLIENT_DATA.BasePriority"]/*' />
     [NativeTypeName("LONG")]
     public int BasePriority;
 }

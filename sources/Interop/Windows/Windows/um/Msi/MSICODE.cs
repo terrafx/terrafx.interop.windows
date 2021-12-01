@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MSICODE.xml' path='doc/member[@name="MSICODE"]/*' />
 public enum MSICODE
 {
+    /// <include file='MSICODE.xml' path='doc/member[@name="MSICODE.MSICODE_PRODUCT"]/*' />
     MSICODE_PRODUCT = 0x00000000,
+
+    /// <include file='MSICODE.xml' path='doc/member[@name="MSICODE.MSICODE_PATCH"]/*' />
     MSICODE_PATCH = 0x40000000,
 }

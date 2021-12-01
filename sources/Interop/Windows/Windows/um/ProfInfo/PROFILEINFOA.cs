@@ -5,28 +5,37 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PROFILEINFOA.xml' path='doc/member[@name="PROFILEINFOA"]/*' />
 public unsafe partial struct PROFILEINFOA
 {
+    /// <include file='PROFILEINFOA.xml' path='doc/member[@name="PROFILEINFOA.dwSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwSize;
 
+    /// <include file='PROFILEINFOA.xml' path='doc/member[@name="PROFILEINFOA.dwFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFlags;
 
+    /// <include file='PROFILEINFOA.xml' path='doc/member[@name="PROFILEINFOA.lpUserName"]/*' />
     [NativeTypeName("LPSTR")]
     public sbyte* lpUserName;
 
+    /// <include file='PROFILEINFOA.xml' path='doc/member[@name="PROFILEINFOA.lpProfilePath"]/*' />
     [NativeTypeName("LPSTR")]
     public sbyte* lpProfilePath;
 
+    /// <include file='PROFILEINFOA.xml' path='doc/member[@name="PROFILEINFOA.lpDefaultPath"]/*' />
     [NativeTypeName("LPSTR")]
     public sbyte* lpDefaultPath;
 
+    /// <include file='PROFILEINFOA.xml' path='doc/member[@name="PROFILEINFOA.lpServerName"]/*' />
     [NativeTypeName("LPSTR")]
     public sbyte* lpServerName;
 
+    /// <include file='PROFILEINFOA.xml' path='doc/member[@name="PROFILEINFOA.lpPolicyPath"]/*' />
     [NativeTypeName("LPSTR")]
     public sbyte* lpPolicyPath;
 
+    /// <include file='PROFILEINFOA.xml' path='doc/member[@name="PROFILEINFOA.hProfile"]/*' />
     public HANDLE hProfile;
 }

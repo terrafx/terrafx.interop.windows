@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IEnumString.Clone">
+    <summary>
+      <para>Creates a new enumerator that contains the same enumeration state as the current one.</para>
+      <para>This method makes it possible to record a point in the enumeration sequence in order to return to that point at a later time. The caller must release this new enumerator separately from the first enumerator.</para>
+    </summary>
+    <param name="ppenum">
+      <para>A pointer to the cloned enumerator object.</para>
+    </param>
+    <returns>
+      <para>This method can return the standard return values E_INVALIDARG, E_OUTOFMEMORY, E_UNEXPECTED, and S_OK.</para>
+    </returns>
+    <seealso cref="IEnumString" />
+  </member>
+  <member name="IEnumString.Next">
+    <summary>
+      <para>Retrieves the specified number of items in the enumeration sequence.</para>
+    </summary>
+    <param name="celt">
+      <para>The number of items to be retrieved. If there are fewer than the requested number of items left in the sequence, this method retrieves the remaining elements.</para>
+    </param>
+    <param name="rgelt">
+      <para>An array of enumerated items.</para>
+      <para>The enumerator is responsible for allocating any memory, and the caller is responsible for freeing it. If <i>celt</i> is greater than 1, the caller must also pass a non-NULL pointer passed to <i>pceltFetched</i> to know how many pointers to release.</para>
+    </param>
+    <param name="pceltFetched">
+      <para>The number of items that were retrieved. This parameter is always less than or equal to the number of items requested.</para>
+    </param>
+    <returns>
+      <para>If the method retrieves the number of items requested, the return value is S_OK. Otherwise, it is S_FALSE.</para>
+    </returns>
+    <seealso cref="IEnumString" />
+  </member>
+  <member name="IEnumString.Reset">
+    <summary>
+      <para>Resets the enumeration sequence to the beginning.</para>
+    </summary>
+    <returns>
+      <para>The return value is S_OK.</para>
+    </returns>
+    <remarks>
+      <para>There is no guarantee that the same set of objects will be enumerated after the reset operation has completed. A static collection is reset to the beginning, but it can be too expensive for some collections, such as files in a directory, to guarantee this condition.</para>
+    </remarks>
+    <seealso cref="IEnumString" />
+  </member>
+  <member name="IEnumString.Skip">
+    <summary>
+      <para>Skips over the specified number of items in the enumeration sequence.</para>
+    </summary>
+    <param name="celt">
+      <para>The number of items to be skipped.</para>
+    </param>
+    <returns>
+      <para>If the method skips the number of items requested, the return value is S_OK. Otherwise, it is S_FALSE.</para>
+    </returns>
+    <seealso cref="IEnumString" />
+  </member>
+  <member name="IEnumString">
+    <summary>
+      <para>Enumerate strings. <b>LPWSTR</b> is the type that indicates a pointer to a zero-terminated string of wide, or Unicode, characters.</para>
+    </summary>
+  </member>
+</doc>

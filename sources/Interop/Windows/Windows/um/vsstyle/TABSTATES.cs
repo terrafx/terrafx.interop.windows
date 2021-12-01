@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TABSTATES.xml' path='doc/member[@name="TABSTATES"]/*' />
 public enum TABSTATES
 {
+    /// <include file='TABSTATES.xml' path='doc/member[@name="TABSTATES.CSTB_NORMAL"]/*' />
     CSTB_NORMAL = 1,
+
+    /// <include file='TABSTATES.xml' path='doc/member[@name="TABSTATES.CSTB_HOT"]/*' />
     CSTB_HOT = 2,
+
+    /// <include file='TABSTATES.xml' path='doc/member[@name="TABSTATES.CSTB_SELECTED"]/*' />
     CSTB_SELECTED = 3,
 }

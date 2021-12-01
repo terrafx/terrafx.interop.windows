@@ -10,31 +10,41 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STORAGE_TEMPERATURE_DATA_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_TEMPERATURE_DATA_DESCRIPTOR"]/*' />
 [SupportedOSPlatform("windows10.0")]
 public unsafe partial struct STORAGE_TEMPERATURE_DATA_DESCRIPTOR
 {
+    /// <include file='STORAGE_TEMPERATURE_DATA_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_TEMPERATURE_DATA_DESCRIPTOR.Version"]/*' />
     [NativeTypeName("DWORD")]
     public uint Version;
 
+    /// <include file='STORAGE_TEMPERATURE_DATA_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_TEMPERATURE_DATA_DESCRIPTOR.Size"]/*' />
     [NativeTypeName("DWORD")]
     public uint Size;
 
+    /// <include file='STORAGE_TEMPERATURE_DATA_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_TEMPERATURE_DATA_DESCRIPTOR.CriticalTemperature"]/*' />
     public short CriticalTemperature;
 
+    /// <include file='STORAGE_TEMPERATURE_DATA_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_TEMPERATURE_DATA_DESCRIPTOR.WarningTemperature"]/*' />
     public short WarningTemperature;
 
+    /// <include file='STORAGE_TEMPERATURE_DATA_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_TEMPERATURE_DATA_DESCRIPTOR.InfoCount"]/*' />
     [NativeTypeName("WORD")]
     public ushort InfoCount;
 
+    /// <include file='STORAGE_TEMPERATURE_DATA_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_TEMPERATURE_DATA_DESCRIPTOR.Reserved0"]/*' />
     [NativeTypeName("BYTE [2]")]
     public fixed byte Reserved0[2];
 
+    /// <include file='STORAGE_TEMPERATURE_DATA_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_TEMPERATURE_DATA_DESCRIPTOR.Reserved1"]/*' />
     [NativeTypeName("DWORD [2]")]
     public fixed uint Reserved1[2];
 
+    /// <include file='STORAGE_TEMPERATURE_DATA_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_TEMPERATURE_DATA_DESCRIPTOR.TemperatureInfo"]/*' />
     [NativeTypeName("STORAGE_TEMPERATURE_INFO [1]")]
     public _TemperatureInfo_e__FixedBuffer TemperatureInfo;
 
+    /// <include file='_TemperatureInfo_e__FixedBuffer.xml' path='doc/member[@name="_TemperatureInfo_e__FixedBuffer"]/*' />
     public partial struct _TemperatureInfo_e__FixedBuffer
     {
         public STORAGE_TEMPERATURE_INFO e0;

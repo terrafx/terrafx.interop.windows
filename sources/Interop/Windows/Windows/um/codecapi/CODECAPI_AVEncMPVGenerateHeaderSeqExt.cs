@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVEncMPVGenerateHeaderSeqExt.xml' path='doc/member[@name="CODECAPI_AVEncMPVGenerateHeaderSeqExt"]/*' />
 [Guid("D5E78611-082D-4E6B-98AF-0F51AB139222")]
 public partial struct CODECAPI_AVEncMPVGenerateHeaderSeqExt
 {

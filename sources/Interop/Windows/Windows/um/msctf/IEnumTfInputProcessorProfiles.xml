@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IEnumTfInputProcessorProfiles.Clone">
+    <summary>
+      <para>The <b>IEnumTfInputProcessorProfiles.Clone</b> method creates a copy of the enumerator object.</para>
+    </summary>
+    <param name="ppEnum">
+      <para>[out] A pointer to an <see cref="IEnumTfInputProcessorProfiles" /> interface.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>An unspecified error occurred.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>One or more parameters are invalid.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+  </member>
+  <member name="IEnumTfInputProcessorProfiles.Next">
+    <summary>
+      <para>The <b>IEnumTfInputProcessorProfiles.Next</b> method obtains, from the current position, the specified number of elements in the enumeration sequence.</para>
+    </summary>
+    <param name="ulCount">
+      <para>[in] Specifies the number of elements to obtain.</para>
+    </param>
+    <param name="pProfile">
+      <para>[out] Pointer to an array of <see cref="TF_INPUTPROCESSORPROFILE" /> structures. This array must be at least <i>ulCount</i> elements in size.</para>
+    </param>
+    <param name="pcFetch">
+      <para>[out] Pointer to a ULONG value that receives the number of elements actually obtained. This value can be less than the number of items requested. This parameter can be <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>An unspecified error occurred.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>One or more parameters are invalid.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+  </member>
+  <member name="IEnumTfInputProcessorProfiles.Reset">
+    <summary>
+      <para>The <see cref="IEnumTfInputProcessorProfiles.Reset" /> method resets the enumerator object by moving the current position to the beginning of the enumeration sequence.</para>
+    </summary>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+  </member>
+  <member name="IEnumTfInputProcessorProfiles.Skip">
+    <summary>
+      <para>The <see cref="IEnumTfInputProcessorProfiles.Skip" /> method moves the current position forward in the enumeration sequence by the specified number of elements.</para>
+    </summary>
+    <param name="ulCount">
+      <para>[in] Contains the number of elements to skip.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>The method reached the end of the enumeration before the specified number of elements could be skipped.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+  </member>
+  <member name="IEnumTfInputProcessorProfiles">
+    <summary>
+      <para>The <b>IEnumTfInputProcessorProfiles</b> interface is implemented by TSF manager and used by applications or textservices. This interface can be retrieved by <see cref="ITfInputProcessorProfileMgr.EnumProfiles" /> and enumerates the registered profiles.</para>
+    </summary>
+    <seealso cref="ITfInputProcessorProfiles " />
+  </member>
+</doc>

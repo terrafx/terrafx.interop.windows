@@ -7,8 +7,12 @@ using static TerraFX.Interop.Windows.SPWORDTYPE;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SpeechWordType.xml' path='doc/member[@name="SpeechWordType"]/*' />
 public enum SpeechWordType
 {
+    /// <include file='SpeechWordType.xml' path='doc/member[@name="SpeechWordType.SWTAdded"]/*' />
     SWTAdded = eWORDTYPE_ADDED,
+
+    /// <include file='SpeechWordType.xml' path='doc/member[@name="SpeechWordType.SWTDeleted"]/*' />
     SWTDeleted = eWORDTYPE_DELETED,
 }

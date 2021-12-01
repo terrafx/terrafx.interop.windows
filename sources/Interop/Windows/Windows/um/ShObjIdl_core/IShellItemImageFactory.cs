@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IShellItemImageFactory.xml' path='doc/member[@name="IShellItemImageFactory"]/*' />
 [Guid("BCC18B79-BA16-442F-80C4-8A59C30C463B")]
 [NativeTypeName("struct IShellItemImageFactory : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IShellItemImageFactory : IShellItemImageFactory.Int
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IShellItemImageFactory : IShellItemImageFactory.Int
         return ((delegate* unmanaged<IShellItemImageFactory*, Guid*, void**, int>)(lpVtbl[0]))((IShellItemImageFactory*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IShellItemImageFactory : IShellItemImageFactory.Int
         return ((delegate* unmanaged<IShellItemImageFactory*, uint>)(lpVtbl[1]))((IShellItemImageFactory*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IShellItemImageFactory : IShellItemImageFactory.Int
         return ((delegate* unmanaged<IShellItemImageFactory*, uint>)(lpVtbl[2]))((IShellItemImageFactory*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IShellItemImageFactory.xml' path='doc/member[@name="IShellItemImageFactory.GetImage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetImage(SIZE size, [NativeTypeName("SIIGBF")] int flags, HBITMAP* phbm)

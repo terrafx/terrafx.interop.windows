@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_DEFAULT_VALUE.xml' path='doc/member[@name="WS_DEFAULT_VALUE"]/*' />
 public unsafe partial struct WS_DEFAULT_VALUE
 {
+    /// <include file='WS_DEFAULT_VALUE.xml' path='doc/member[@name="WS_DEFAULT_VALUE.value"]/*' />
     public void* value;
 
+    /// <include file='WS_DEFAULT_VALUE.xml' path='doc/member[@name="WS_DEFAULT_VALUE.valueSize"]/*' />
     [NativeTypeName("ULONG")]
     public uint valueSize;
 }

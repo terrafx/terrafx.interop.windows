@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STORAGE_DEVICE_SELF_ENCRYPTION_PROPERTY.xml' path='doc/member[@name="STORAGE_DEVICE_SELF_ENCRYPTION_PROPERTY"]/*' />
 public partial struct STORAGE_DEVICE_SELF_ENCRYPTION_PROPERTY
 {
+    /// <include file='STORAGE_DEVICE_SELF_ENCRYPTION_PROPERTY.xml' path='doc/member[@name="STORAGE_DEVICE_SELF_ENCRYPTION_PROPERTY.Version"]/*' />
     [NativeTypeName("DWORD")]
     public uint Version;
 
+    /// <include file='STORAGE_DEVICE_SELF_ENCRYPTION_PROPERTY.xml' path='doc/member[@name="STORAGE_DEVICE_SELF_ENCRYPTION_PROPERTY.Size"]/*' />
     [NativeTypeName("DWORD")]
     public uint Size;
 
+    /// <include file='STORAGE_DEVICE_SELF_ENCRYPTION_PROPERTY.xml' path='doc/member[@name="STORAGE_DEVICE_SELF_ENCRYPTION_PROPERTY.SupportsSelfEncryption"]/*' />
     [NativeTypeName("BOOLEAN")]
     public byte SupportsSelfEncryption;
 }

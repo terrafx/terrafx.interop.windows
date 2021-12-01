@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CMS_KEY_INFO">
+    <summary>
+      <para>The <b>CMS_KEY_INFO</b> structure is not used.</para>
+    </summary>
+  </member>
+  <member name="CMS_KEY_INFO.dwVersion">
+    <summary>
+      <para>The size, in bytes, of this structure.</para>
+    </summary>
+  </member>
+  <member name="CMS_KEY_INFO.Algid">
+    <summary>
+      <para>One of the <a href="https://docs.microsoft.com//windows/desktop/SecCrypto/alg-id">ALG_ID</a> values that identifies the algorithm for the key to be converted.</para>
+    </summary>
+  </member>
+  <member name="CMS_KEY_INFO.pbOID">
+    <summary>
+      <para>The address of a buffer that contains additional public information. This member is optional and can be <b>NULL</b> if this is not needed.</para>
+    </summary>
+  </member>
+  <member name="CMS_KEY_INFO.cbOID">
+    <summary>
+      <para>The size, in bytes, of the <b>pbOID</b> buffer. This member should be zero if <b>pbOID</b> is not used.</para>
+    </summary>
+  </member>
+</doc>

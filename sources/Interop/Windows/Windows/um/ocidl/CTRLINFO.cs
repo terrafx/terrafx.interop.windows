@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CTRLINFO.xml' path='doc/member[@name="CTRLINFO"]/*' />
 public enum CTRLINFO
 {
+    /// <include file='CTRLINFO.xml' path='doc/member[@name="CTRLINFO.CTRLINFO_EATS_RETURN"]/*' />
     CTRLINFO_EATS_RETURN = 1,
+
+    /// <include file='CTRLINFO.xml' path='doc/member[@name="CTRLINFO.CTRLINFO_EATS_ESCAPE"]/*' />
     CTRLINFO_EATS_ESCAPE = 2,
 }

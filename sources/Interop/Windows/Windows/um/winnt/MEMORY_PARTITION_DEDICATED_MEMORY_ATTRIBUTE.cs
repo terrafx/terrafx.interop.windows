@@ -5,13 +5,17 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MEMORY_PARTITION_DEDICATED_MEMORY_ATTRIBUTE.xml' path='doc/member[@name="MEMORY_PARTITION_DEDICATED_MEMORY_ATTRIBUTE"]/*' />
 public partial struct MEMORY_PARTITION_DEDICATED_MEMORY_ATTRIBUTE
 {
+    /// <include file='MEMORY_PARTITION_DEDICATED_MEMORY_ATTRIBUTE.xml' path='doc/member[@name="MEMORY_PARTITION_DEDICATED_MEMORY_ATTRIBUTE.Type"]/*' />
     public MEM_DEDICATED_ATTRIBUTE_TYPE Type;
 
+    /// <include file='MEMORY_PARTITION_DEDICATED_MEMORY_ATTRIBUTE.xml' path='doc/member[@name="MEMORY_PARTITION_DEDICATED_MEMORY_ATTRIBUTE.Reserved"]/*' />
     [NativeTypeName("DWORD")]
     public uint Reserved;
 
+    /// <include file='MEMORY_PARTITION_DEDICATED_MEMORY_ATTRIBUTE.xml' path='doc/member[@name="MEMORY_PARTITION_DEDICATED_MEMORY_ATTRIBUTE.Value"]/*' />
     [NativeTypeName("DWORD64")]
     public ulong Value;
 }

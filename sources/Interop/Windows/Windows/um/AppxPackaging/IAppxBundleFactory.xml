@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IAppxBundleFactory.CreateBundleManifestReader">
+    <summary>
+      <para>Creates a read-only bundle manifest object from a standalone stream to AppxBundleManifest.xml.</para>
+    </summary>
+    <param name="inputStream">
+      <para>Type: <b><see cref="IStream" />*</b></para>
+      <para>The input stream  that delivers the manifest XML for reading. The stream must support <see cref="Read" />, <see cref="Seek" />, and <see cref="Stat" />. If these methods fail, their error codes might be passed to and returned by this method.</para>
+    </param>
+    <param name="manifestReader">
+      <para>Type: <b>IAppxBundleManifestReader**</b></para>
+      <para>The manifest reader.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an error code that includes, but is not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>APPX_E_INVALID_MANIFEST</b>
+            </para>
+          </description>
+          <description>
+            <para>The <i>inputStream</i> does not contain syntactically valid XML for the manifest.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IAppxBundleFactory" />
+  </member>
+  <member name="IAppxBundleFactory.CreateBundleReader">
+    <summary>
+      <para>Creates a read-only bundle object that reads its contents from an <see cref="IStream" /> object.</para>
+    </summary>
+    <param name="inputStream">
+      <para>Type: <b><see cref="IStream" />*</b></para>
+      <para>The input stream that delivers the content of the package for reading. The stream must support <see cref="Read" />, <see cref="Seek" />, and <see cref="Stat" />. If these methods fail, their error codes might be passed to and returned by this method.</para>
+    </param>
+    <param name="bundleReader">
+      <para>Type: <b>IAppxBundleReader**</b></para>
+      <para>A  bundle  reader.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an error code that includes, but is not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>APPX_E_INTERLEAVING_NOT_ALLOWED</b>
+            </para>
+          </description>
+          <description>
+            <para>The ZIP file delivered by <i>inputStream</i> is an interleaved OPC package.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>APPX_E_RELATIONSHIPS_NOT_ALLOWED</b>
+            </para>
+          </description>
+          <description>
+            <para>The OPC package delivered by <i>inputStream</i> contains OPC package/part relationships.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>APPX_E_MISSING_REQUIRED_FILE</b>
+            </para>
+          </description>
+          <description>
+            <para>The OPC package delivered by <i>inputStream</i> does not have a manifest, or a block map, or a signature file when a CI catalog is present.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>APPX_E_INVALID_MANIFEST</b>
+            </para>
+          </description>
+          <description>
+            <para>The bundle manifest is not valid.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IAppxBundleFactory" />
+  </member>
+  <member name="IAppxBundleFactory.CreateBundleWriter">
+    <summary>
+      <para>Creates a write-only bundle object to which app packages can be added.</para>
+    </summary>
+    <param name="outputStream">
+      <para>Type: <b><see cref="IStream" />*</b></para>
+      <para>The output stream that receives the serialized package data. The stream must support at least the  <see cref="Write" /> method.</para>
+    </param>
+    <param name="bundleVersion">
+      <para>Type: <b>UINT64</b></para>
+      <para>The version number of the bundle.</para>
+      <para>If set to 0, <b>CreateBundleWriter</b> sets the version number of the bundle to a value derived from the current system time.  We recommend passing 0 so version numbers are automatically generated and each successive call generates a higher version number.</para>
+      <para>For example, if you call <b>CreateBundleWriter</b> on 2013/12/23 3:45:00 AM UTC with <i>bundleVersion</i> set to 0, the version number of the bundle becomes 2013.1223.0345.0000.</para>
+    </param>
+    <param name="bundleWriter">
+      <para>Type: <b>IAppxBundleWriter**</b></para>
+      <para>The bundle writer created by this method.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an error code that includes, but is not limited to, those in the following table.</para>
+    </returns>
+    <remarks>
+      <para>Content added to the bundle is serialized out as an Appx bundle file to <i>outputStream</i>.</para>
+    </remarks>
+    <seealso cref="IAppxBundleFactory" />
+  </member>
+  <member name="IAppxBundleFactory">
+    <summary>
+      <para>Creates objects for reading and writing bundle packages.</para>
+    </summary>
+    <remarks>
+      <para>The <b>IAppxBundleFactory</b> interface provides factory methods to create readers and writers of bundle packages as well as methods to create readers for manifests outside of a bundle.</para>
+      <para>The <b>IAppxBundleFactory</b> interface is the main entry point to the Appx Bundle APIs.</para>
+    </remarks>
+  </member>
+</doc>

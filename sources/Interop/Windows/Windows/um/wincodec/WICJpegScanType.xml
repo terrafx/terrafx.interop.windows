@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WICJpegScanType">
+    <summary>
+      <para>Specifies the memory layout of pixel data in a JPEG image scan.</para>
+    </summary>
+    <seealso cref="WICJpegScanType" />
+  </member>
+  <member name="WICJpegScanType.WICJpegScanTypeInterleaved">
+    <summary>
+      <para>The pixel data is stored in an interleaved memory layout.</para>
+    </summary>
+  </member>
+  <member name="WICJpegScanType.WICJpegScanTypePlanarComponents">
+    <summary>
+      <para>The pixel data is stored in a planar memory layout.</para>
+    </summary>
+  </member>
+  <member name="WICJpegScanType.WICJpegScanTypeProgressive">
+    <summary>
+      <para>The pixel data is stored in a progressive layout.</para>
+    </summary>
+  </member>
+  <member name="WICJpegScanType.WICJpegScanType_FORCE_DWORD">
+    <summary>
+      <para>Forces this enumeration to compile to 32 bits in size. Without this value, some compilers would allow this enumeration to compile to a size other than 32 bits. This value is not used.</para>
+    </summary>
+  </member>
+</doc>

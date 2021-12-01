@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITfPropertyStore.xml' path='doc/member[@name="ITfPropertyStore"]/*' />
 [Guid("6834B120-88CB-11D2-BF45-00105A2799B5")]
 [NativeTypeName("struct ITfPropertyStore : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITfPropertyStore : ITfPropertyStore.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITfPropertyStore : ITfPropertyStore.Interface
         return ((delegate* unmanaged<ITfPropertyStore*, Guid*, void**, int>)(lpVtbl[0]))((ITfPropertyStore*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITfPropertyStore : ITfPropertyStore.Interface
         return ((delegate* unmanaged<ITfPropertyStore*, uint>)(lpVtbl[1]))((ITfPropertyStore*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITfPropertyStore : ITfPropertyStore.Interface
         return ((delegate* unmanaged<ITfPropertyStore*, uint>)(lpVtbl[2]))((ITfPropertyStore*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITfPropertyStore.xml' path='doc/member[@name="ITfPropertyStore.GetType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetType(Guid* pguid)
@@ -46,6 +51,7 @@ public unsafe partial struct ITfPropertyStore : ITfPropertyStore.Interface
         return ((delegate* unmanaged<ITfPropertyStore*, Guid*, int>)(lpVtbl[3]))((ITfPropertyStore*)Unsafe.AsPointer(ref this), pguid);
     }
 
+    /// <include file='ITfPropertyStore.xml' path='doc/member[@name="ITfPropertyStore.GetDataType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetDataType([NativeTypeName("DWORD *")] uint* pdwReserved)
@@ -53,6 +59,7 @@ public unsafe partial struct ITfPropertyStore : ITfPropertyStore.Interface
         return ((delegate* unmanaged<ITfPropertyStore*, uint*, int>)(lpVtbl[4]))((ITfPropertyStore*)Unsafe.AsPointer(ref this), pdwReserved);
     }
 
+    /// <include file='ITfPropertyStore.xml' path='doc/member[@name="ITfPropertyStore.GetData"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetData(VARIANT* pvarValue)
@@ -60,6 +67,7 @@ public unsafe partial struct ITfPropertyStore : ITfPropertyStore.Interface
         return ((delegate* unmanaged<ITfPropertyStore*, VARIANT*, int>)(lpVtbl[5]))((ITfPropertyStore*)Unsafe.AsPointer(ref this), pvarValue);
     }
 
+    /// <include file='ITfPropertyStore.xml' path='doc/member[@name="ITfPropertyStore.OnTextUpdated"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT OnTextUpdated([NativeTypeName("DWORD")] uint dwFlags, ITfRange* pRangeNew, BOOL* pfAccept)
@@ -67,6 +75,7 @@ public unsafe partial struct ITfPropertyStore : ITfPropertyStore.Interface
         return ((delegate* unmanaged<ITfPropertyStore*, uint, ITfRange*, BOOL*, int>)(lpVtbl[6]))((ITfPropertyStore*)Unsafe.AsPointer(ref this), dwFlags, pRangeNew, pfAccept);
     }
 
+    /// <include file='ITfPropertyStore.xml' path='doc/member[@name="ITfPropertyStore.Shrink"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT Shrink(ITfRange* pRangeNew, BOOL* pfFree)
@@ -74,6 +83,7 @@ public unsafe partial struct ITfPropertyStore : ITfPropertyStore.Interface
         return ((delegate* unmanaged<ITfPropertyStore*, ITfRange*, BOOL*, int>)(lpVtbl[7]))((ITfPropertyStore*)Unsafe.AsPointer(ref this), pRangeNew, pfFree);
     }
 
+    /// <include file='ITfPropertyStore.xml' path='doc/member[@name="ITfPropertyStore.Divide"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT Divide(ITfRange* pRangeThis, ITfRange* pRangeNew, ITfPropertyStore** ppPropStore)
@@ -81,6 +91,7 @@ public unsafe partial struct ITfPropertyStore : ITfPropertyStore.Interface
         return ((delegate* unmanaged<ITfPropertyStore*, ITfRange*, ITfRange*, ITfPropertyStore**, int>)(lpVtbl[8]))((ITfPropertyStore*)Unsafe.AsPointer(ref this), pRangeThis, pRangeNew, ppPropStore);
     }
 
+    /// <include file='ITfPropertyStore.xml' path='doc/member[@name="ITfPropertyStore.Clone"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT Clone(ITfPropertyStore** pPropStore)
@@ -88,6 +99,7 @@ public unsafe partial struct ITfPropertyStore : ITfPropertyStore.Interface
         return ((delegate* unmanaged<ITfPropertyStore*, ITfPropertyStore**, int>)(lpVtbl[9]))((ITfPropertyStore*)Unsafe.AsPointer(ref this), pPropStore);
     }
 
+    /// <include file='ITfPropertyStore.xml' path='doc/member[@name="ITfPropertyStore.GetPropertyRangeCreator"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT GetPropertyRangeCreator([NativeTypeName("CLSID *")] Guid* pclsid)
@@ -95,6 +107,7 @@ public unsafe partial struct ITfPropertyStore : ITfPropertyStore.Interface
         return ((delegate* unmanaged<ITfPropertyStore*, Guid*, int>)(lpVtbl[10]))((ITfPropertyStore*)Unsafe.AsPointer(ref this), pclsid);
     }
 
+    /// <include file='ITfPropertyStore.xml' path='doc/member[@name="ITfPropertyStore.Serialize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT Serialize(IStream* pStream, [NativeTypeName("ULONG *")] uint* pcb)

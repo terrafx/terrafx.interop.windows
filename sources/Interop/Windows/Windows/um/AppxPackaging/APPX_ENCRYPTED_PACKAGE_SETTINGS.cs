@@ -7,16 +7,21 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='APPX_ENCRYPTED_PACKAGE_SETTINGS.xml' path='doc/member[@name="APPX_ENCRYPTED_PACKAGE_SETTINGS"]/*' />
 [SupportedOSPlatform("windows10.0")]
 public unsafe partial struct APPX_ENCRYPTED_PACKAGE_SETTINGS
 {
+    /// <include file='APPX_ENCRYPTED_PACKAGE_SETTINGS.xml' path='doc/member[@name="APPX_ENCRYPTED_PACKAGE_SETTINGS.keyLength"]/*' />
     [NativeTypeName("UINT32")]
     public uint keyLength;
 
+    /// <include file='APPX_ENCRYPTED_PACKAGE_SETTINGS.xml' path='doc/member[@name="APPX_ENCRYPTED_PACKAGE_SETTINGS.encryptionAlgorithm"]/*' />
     [NativeTypeName("LPCWSTR")]
     public ushort* encryptionAlgorithm;
 
+    /// <include file='APPX_ENCRYPTED_PACKAGE_SETTINGS.xml' path='doc/member[@name="APPX_ENCRYPTED_PACKAGE_SETTINGS.useDiffusion"]/*' />
     public BOOL useDiffusion;
 
+    /// <include file='APPX_ENCRYPTED_PACKAGE_SETTINGS.xml' path='doc/member[@name="APPX_ENCRYPTED_PACKAGE_SETTINGS.blockMapHashAlgorithm"]/*' />
     public IUri* blockMapHashAlgorithm;
 }

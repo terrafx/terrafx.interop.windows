@@ -7,13 +7,17 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='OBJECT_TYPE_LIST.xml' path='doc/member[@name="OBJECT_TYPE_LIST"]/*' />
 public unsafe partial struct OBJECT_TYPE_LIST
 {
+    /// <include file='OBJECT_TYPE_LIST.xml' path='doc/member[@name="OBJECT_TYPE_LIST.Level"]/*' />
     [NativeTypeName("WORD")]
     public ushort Level;
 
+    /// <include file='OBJECT_TYPE_LIST.xml' path='doc/member[@name="OBJECT_TYPE_LIST.Sbz"]/*' />
     [NativeTypeName("WORD")]
     public ushort Sbz;
 
+    /// <include file='OBJECT_TYPE_LIST.xml' path='doc/member[@name="OBJECT_TYPE_LIST.ObjectType"]/*' />
     public Guid* ObjectType;
 }

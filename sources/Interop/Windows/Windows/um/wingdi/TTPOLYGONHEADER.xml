@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="TTPOLYGONHEADER">
+    <summary>
+      <para>The <b>TTPOLYGONHEADER</b> structure specifies the starting position and type of a contour in a TrueType character outline.</para>
+    </summary>
+    <remarks>
+      <para>Each <b>TTPOLYGONHEADER</b> structure is followed by one or more <see cref="TTPOLYCURVE" /> structures.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/font-and-text-structures">Font and Text Structures</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/fonts-and-text">Fonts and Text Overview</seealso>
+    <seealso cref="POINTFX" />
+    <seealso cref="TTPOLYCURVE" />
+  </member>
+  <member name="TTPOLYGONHEADER.cb">
+    <summary>
+      <para>The number of bytes required by the <b>TTPOLYGONHEADER</b> structure and <see cref="TTPOLYCURVE" /> structure or structures required to describe the contour of the character.</para>
+    </summary>
+  </member>
+  <member name="TTPOLYGONHEADER.dwType">
+    <summary>
+      <para>The type of character outline returned. Currently, this value must be TT_POLYGON_TYPE.</para>
+    </summary>
+  </member>
+  <member name="TTPOLYGONHEADER.pfxStart">
+    <summary>
+      <para>The starting point of the contour in the character outline.</para>
+    </summary>
+  </member>
+</doc>

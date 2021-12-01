@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CO_MARSHALING_CONTEXT_ATTRIBUTES">
+    <summary>
+      <para>Identifies one of the marshaling context attributes that you can query by using the <see cref="GetMarshalingContextAttribute" /> method.</para>
+    </summary>
+    <seealso cref="GetMarshalingContextAttribute" />
+    <seealso cref="IMarshalingStream" />
+  </member>
+  <member name="CO_MARSHALING_CONTEXT_ATTRIBUTES.CO_MARSHALING_SOURCE_IS_APP_CONTAINER">
+    <summary>
+      <para>The source of the marshaling data is an app container process.</para>
+    </summary>
+  </member>
+  <member name="CO_MARSHALING_CONTEXT_ATTRIBUTES.CO_MARSHALING_CONTEXT_ATTRIBUTE_RESERVED_1">
+    <summary></summary>
+  </member>
+  <member name="CO_MARSHALING_CONTEXT_ATTRIBUTES.CO_MARSHALING_CONTEXT_ATTRIBUTE_RESERVED_2">
+    <summary></summary>
+  </member>
+  <member name="CO_MARSHALING_CONTEXT_ATTRIBUTES.CO_MARSHALING_CONTEXT_ATTRIBUTE_RESERVED_3">
+    <summary></summary>
+  </member>
+  <member name="CO_MARSHALING_CONTEXT_ATTRIBUTES.CO_MARSHALING_CONTEXT_ATTRIBUTE_RESERVED_4">
+    <summary></summary>
+  </member>
+  <member name="CO_MARSHALING_CONTEXT_ATTRIBUTES.CO_MARSHALING_CONTEXT_ATTRIBUTE_RESERVED_5">
+    <summary></summary>
+  </member>
+  <member name="CO_MARSHALING_CONTEXT_ATTRIBUTES.CO_MARSHALING_CONTEXT_ATTRIBUTE_RESERVED_6">
+    <summary></summary>
+  </member>
+  <member name="CO_MARSHALING_CONTEXT_ATTRIBUTES.CO_MARSHALING_CONTEXT_ATTRIBUTE_RESERVED_7">
+    <summary></summary>
+  </member>
+  <member name="CO_MARSHALING_CONTEXT_ATTRIBUTES.CO_MARSHALING_CONTEXT_ATTRIBUTE_RESERVED_8">
+    <summary></summary>
+  </member>
+  <member name="CO_MARSHALING_CONTEXT_ATTRIBUTES.CO_MARSHALING_CONTEXT_ATTRIBUTE_RESERVED_9">
+    <summary></summary>
+  </member>
+  <member name="CO_MARSHALING_CONTEXT_ATTRIBUTES.CO_MARSHALING_CONTEXT_ATTRIBUTE_RESERVED_10">
+    <summary></summary>
+  </member>
+  <member name="CO_MARSHALING_CONTEXT_ATTRIBUTES.CO_MARSHALING_CONTEXT_ATTRIBUTE_RESERVED_11">
+    <summary></summary>
+  </member>
+  <member name="CO_MARSHALING_CONTEXT_ATTRIBUTES.CO_MARSHALING_CONTEXT_ATTRIBUTE_RESERVED_12">
+    <summary></summary>
+  </member>
+  <member name="CO_MARSHALING_CONTEXT_ATTRIBUTES.CO_MARSHALING_CONTEXT_ATTRIBUTE_RESERVED_13">
+    <summary></summary>
+  </member>
+  <member name="CO_MARSHALING_CONTEXT_ATTRIBUTES.CO_MARSHALING_CONTEXT_ATTRIBUTE_RESERVED_14">
+    <summary></summary>
+  </member>
+</doc>

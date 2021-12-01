@@ -8,14 +8,18 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='UMS_SYSTEM_THREAD_INFORMATION.xml' path='doc/member[@name="UMS_SYSTEM_THREAD_INFORMATION"]/*' />
 public partial struct UMS_SYSTEM_THREAD_INFORMATION
 {
+    /// <include file='UMS_SYSTEM_THREAD_INFORMATION.xml' path='doc/member[@name="UMS_SYSTEM_THREAD_INFORMATION.UmsVersion"]/*' />
     [NativeTypeName("ULONG")]
     public uint UmsVersion;
 
+    /// <include file='UMS_SYSTEM_THREAD_INFORMATION.xml' path='doc/member[@name="UMS_SYSTEM_THREAD_INFORMATION.Anonymous"]/*' />
     [NativeTypeName("_UMS_SYSTEM_THREAD_INFORMATION::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/WinBase.h:1583:5)")]
     public _Anonymous_e__Union Anonymous;
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.IsUmsSchedulerThread"]/*' />
     public uint IsUmsSchedulerThread
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -31,6 +35,7 @@ public partial struct UMS_SYSTEM_THREAD_INFORMATION
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.IsUmsWorkerThread"]/*' />
     public uint IsUmsWorkerThread
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -46,6 +51,7 @@ public partial struct UMS_SYSTEM_THREAD_INFORMATION
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ThreadUmsFlags"]/*' />
     public ref uint ThreadUmsFlags
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -55,21 +61,26 @@ public partial struct UMS_SYSTEM_THREAD_INFORMATION
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public partial struct _Anonymous_e__Union
     {
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("_UMS_SYSTEM_THREAD_INFORMATION::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/WinBase.h:1584:9)")]
         public _Anonymous_e__Struct Anonymous;
 
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ThreadUmsFlags"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("ULONG")]
         public uint ThreadUmsFlags;
 
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />
         public partial struct _Anonymous_e__Struct
         {
             public uint _bitfield;
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.IsUmsSchedulerThread"]/*' />
             [NativeTypeName("ULONG : 1")]
             public uint IsUmsSchedulerThread
             {
@@ -86,6 +97,7 @@ public partial struct UMS_SYSTEM_THREAD_INFORMATION
                 }
             }
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.IsUmsWorkerThread"]/*' />
             [NativeTypeName("ULONG : 1")]
             public uint IsUmsWorkerThread
             {

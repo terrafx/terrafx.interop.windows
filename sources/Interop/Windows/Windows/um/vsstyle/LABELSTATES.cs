@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='LABELSTATES.xml' path='doc/member[@name="LABELSTATES"]/*' />
 public enum LABELSTATES
 {
+    /// <include file='LABELSTATES.xml' path='doc/member[@name="LABELSTATES.FLS_NORMAL"]/*' />
     FLS_NORMAL = 1,
+
+    /// <include file='LABELSTATES.xml' path='doc/member[@name="LABELSTATES.FLS_SELECTED"]/*' />
     FLS_SELECTED = 2,
+
+    /// <include file='LABELSTATES.xml' path='doc/member[@name="LABELSTATES.FLS_EMPHASIZED"]/*' />
     FLS_EMPHASIZED = 3,
+
+    /// <include file='LABELSTATES.xml' path='doc/member[@name="LABELSTATES.FLS_DISABLED"]/*' />
     FLS_DISABLED = 4,
 }

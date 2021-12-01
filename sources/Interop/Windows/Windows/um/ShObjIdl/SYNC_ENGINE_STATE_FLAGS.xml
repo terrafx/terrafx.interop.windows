@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SYNC_ENGINE_STATE_FLAGS">
+    <summary>
+      <para>Specifies values used by any sync engine to expose their internal engine states to the Property Store's PKEY_StorageProviderStatus value in the File Indexer</para>
+      <para>To update the property, first call <see cref="IShellItem2.GetPropertyStore" /> with the <see cref="GPS_EXTRINSICPROPERTIES" /> flag. Next, call the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/bb761475(v=vs.85)">IPropertyStore.SetValue</a> method of the returned object, specifying the PKEY_StorageProviderStatus key, to set the property's bitmask value using these SYNC_ENGINE_STATE_FLAGS.</para>
+    </summary>
+  </member>
+  <member name="SYNC_ENGINE_STATE_FLAGS.SESF_NONE">
+    <summary>
+      <para>No state.</para>
+    </summary>
+  </member>
+  <member name="SYNC_ENGINE_STATE_FLAGS.SESF_SERVICE_QUOTA_NEARING_LIMIT">
+    <summary>
+      <para>The user's cloud storage quota is nearing capacity. This is dependent on the user's total quota space.</para>
+    </summary>
+  </member>
+  <member name="SYNC_ENGINE_STATE_FLAGS.SESF_SERVICE_QUOTA_EXCEEDED_LIMIT">
+    <summary>
+      <para>The user's cloud storage quota is filled.</para>
+    </summary>
+  </member>
+  <member name="SYNC_ENGINE_STATE_FLAGS.SESF_AUTHENTICATION_ERROR">
+    <summary>
+      <para>The user's account credentials are invalid.</para>
+    </summary>
+  </member>
+  <member name="SYNC_ENGINE_STATE_FLAGS.SESF_PAUSED_DUE_TO_METERED_NETWORK">
+    <summary>
+      <para>The sync engine is paused because of metered network settings.</para>
+    </summary>
+  </member>
+  <member name="SYNC_ENGINE_STATE_FLAGS.SESF_PAUSED_DUE_TO_DISK_SPACE_FULL">
+    <summary>
+      <para>The drive that contains the sync engine's content has reached the maximum allowed space.</para>
+    </summary>
+  </member>
+  <member name="SYNC_ENGINE_STATE_FLAGS.SESF_PAUSED_DUE_TO_CLIENT_POLICY">
+    <summary>
+      <para>The user has exceeded their daily limit of requests or data transfers to the service.</para>
+    </summary>
+  </member>
+  <member name="SYNC_ENGINE_STATE_FLAGS.SESF_PAUSED_DUE_TO_SERVICE_POLICY">
+    <summary>
+      <para>The service has requested the system to throttle requests.</para>
+    </summary>
+  </member>
+  <member name="SYNC_ENGINE_STATE_FLAGS.SESF_SERVICE_UNAVAILABLE">
+    <summary>
+      <para>The service can't be reached at this time.</para>
+    </summary>
+  </member>
+  <member name="SYNC_ENGINE_STATE_FLAGS.SESF_PAUSED_DUE_TO_USER_REQUEST">
+    <summary></summary>
+  </member>
+  <member name="SYNC_ENGINE_STATE_FLAGS.SESF_ALL_FLAGS">
+    <summary>
+      <para>A bitmask value for all valid SYNC_ENGINE_STATE_FLAGS flags.</para>
+    </summary>
+  </member>
+</doc>

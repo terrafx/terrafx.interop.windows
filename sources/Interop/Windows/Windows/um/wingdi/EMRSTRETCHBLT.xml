@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="EMRSTRETCHBLT">
+    <summary>
+      <para>The <b>EMRSTRETCHBLT</b> structure contains members for the <see cref="StretchBlt" /> enhanced metafile record. Note that graphics device interface (GDI) converts the device-dependent bitmap into a device-independent bitmap (DIB) before storing it in the metafile record.</para>
+    </summary>
+    <seealso cref="BITMAPINFO" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/colorref">COLORREF</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafile-structures">Metafile Structures</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafiles">Metafiles Overview</seealso>
+    <seealso cref="RGB" />
+    <seealso cref="StretchBlt" />
+  </member>
+  <member name="EMRSTRETCHBLT.emr">
+    <summary>
+      <para>The base structure for all record types.</para>
+    </summary>
+  </member>
+  <member name="EMRSTRETCHBLT.rclBounds">
+    <summary>
+      <para>Bounding rectangle, in device units.</para>
+    </summary>
+  </member>
+  <member name="EMRSTRETCHBLT.xDest">
+    <summary>
+      <para>Logical x-coordinate of the upper-left corner of the destination rectangle.</para>
+    </summary>
+  </member>
+  <member name="EMRSTRETCHBLT.yDest">
+    <summary>
+      <para>Logical y-coordinate of the upper-left corner of the destination rectangle.</para>
+    </summary>
+  </member>
+  <member name="EMRSTRETCHBLT.cxDest">
+    <summary>
+      <para>Logical width of the destination rectangle.</para>
+    </summary>
+  </member>
+  <member name="EMRSTRETCHBLT.cyDest">
+    <summary>
+      <para>Logical height of the destination rectangle.</para>
+    </summary>
+  </member>
+  <member name="EMRSTRETCHBLT.dwRop">
+    <summary>
+      <para>Raster-operation code. These codes define how the color data of the source rectangle is to be combined with the color data of the destination rectangle to achieve the final color.</para>
+    </summary>
+  </member>
+  <member name="EMRSTRETCHBLT.xSrc">
+    <summary>
+      <para>Logical x-coordinate of the upper-left corner of the source rectangle.</para>
+    </summary>
+  </member>
+  <member name="EMRSTRETCHBLT.ySrc">
+    <summary>
+      <para>Logical y-coordinate of the upper-left corner of the source rectangle.</para>
+    </summary>
+  </member>
+  <member name="EMRSTRETCHBLT.xformSrc">
+    <summary>
+      <para>World-space to page-space transformation of the source device context.</para>
+    </summary>
+  </member>
+  <member name="EMRSTRETCHBLT.crBkColorSrc">
+    <summary>
+      <para>Background color (the RGB value) of the source device context. To make a <a href="https://docs.microsoft.com//windows/desktop/gdi/colorref">COLORREF</a> value, use the <see cref="RGB" /> macro.</para>
+    </summary>
+  </member>
+  <member name="EMRSTRETCHBLT.iUsageSrc">
+    <summary>
+      <para>Value of the <b>bmiColors</b> member of the <see cref="BITMAPINFO" /> structure. The <b>iUsageSrc</b> member can be either the DIB_PAL_COLORS or DIB_RGB_COLORS value.</para>
+    </summary>
+  </member>
+  <member name="EMRSTRETCHBLT.offBmiSrc">
+    <summary>
+      <para>Offset to the source <see cref="BITMAPINFO" /> structure.</para>
+    </summary>
+  </member>
+  <member name="EMRSTRETCHBLT.cbBmiSrc">
+    <summary>
+      <para>Size of the source <see cref="BITMAPINFO" /> structure.</para>
+    </summary>
+  </member>
+  <member name="EMRSTRETCHBLT.offBitsSrc">
+    <summary>
+      <para>Offset to source bitmap bits.</para>
+    </summary>
+  </member>
+  <member name="EMRSTRETCHBLT.cbBitsSrc">
+    <summary>
+      <para>Size of source bitmap bits.</para>
+    </summary>
+  </member>
+  <member name="EMRSTRETCHBLT.cxSrc">
+    <summary>
+      <para>Width of the source rectangle, in logical units.</para>
+    </summary>
+  </member>
+  <member name="EMRSTRETCHBLT.cySrc">
+    <summary>
+      <para>Height of the source rectangle, in logical units.</para>
+    </summary>
+  </member>
+</doc>

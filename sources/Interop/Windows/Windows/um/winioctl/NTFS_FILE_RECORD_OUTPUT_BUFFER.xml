@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="NTFS_FILE_RECORD_OUTPUT_BUFFER">
+    <summary>
+      <para>Receives output data from the
+<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_get_ntfs_file_record">FSCTL_GET_NTFS_FILE_RECORD</a> control code.</para>
+    </summary>
+    <remarks>
+      <para>To retrieve data to fill in this structure, use the
+<see cref="DeviceIoControl" /><a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_get_ntfs_file_record">FSCTL_GET_NTFS_FILE_RECORD</a> control code.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_get_ntfs_file_record">FSCTL_GET_NTFS_FILE_RECORD</seealso>
+    <seealso cref="NTFS_FILE_RECORD_INPUT_BUFFER" />
+  </member>
+  <member name="NTFS_FILE_RECORD_OUTPUT_BUFFER.FileReferenceNumber">
+    <summary>
+      <para>The file identifier of the returned file record. This is not necessarily the file identifier specified in the <b>FileReferenceNumber</b> member of the
+<see cref="NTFS_FILE_RECORD_INPUT_BUFFER" /> structure. Refer to the Remarks section of the reference page for
+<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_get_ntfs_file_record">FSCTL_GET_NTFS_FILE_RECORD</a> for more information.</para>
+    </summary>
+  </member>
+  <member name="NTFS_FILE_RECORD_OUTPUT_BUFFER.FileRecordLength">
+    <summary>
+      <para>The length of the returned file record, in bytes.</para>
+    </summary>
+  </member>
+  <member name="NTFS_FILE_RECORD_OUTPUT_BUFFER.FileRecordBuffer">
+    <summary>
+      <para>The starting location of the buffer for the returned file record.</para>
+    </summary>
+  </member>
+</doc>

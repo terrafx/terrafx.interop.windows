@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IWICComponentInfo.xml' path='doc/member[@name="IWICComponentInfo"]/*' />
 [Guid("23BC3F0A-698B-4357-886B-F24D50671334")]
 [NativeTypeName("struct IWICComponentInfo : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IWICComponentInfo : IWICComponentInfo.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IWICComponentInfo : IWICComponentInfo.Interface
         return ((delegate* unmanaged<IWICComponentInfo*, Guid*, void**, int>)(lpVtbl[0]))((IWICComponentInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IWICComponentInfo : IWICComponentInfo.Interface
         return ((delegate* unmanaged<IWICComponentInfo*, uint>)(lpVtbl[1]))((IWICComponentInfo*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IWICComponentInfo : IWICComponentInfo.Interface
         return ((delegate* unmanaged<IWICComponentInfo*, uint>)(lpVtbl[2]))((IWICComponentInfo*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IWICComponentInfo.xml' path='doc/member[@name="IWICComponentInfo.GetComponentType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetComponentType(WICComponentType* pType)
@@ -46,6 +51,7 @@ public unsafe partial struct IWICComponentInfo : IWICComponentInfo.Interface
         return ((delegate* unmanaged<IWICComponentInfo*, WICComponentType*, int>)(lpVtbl[3]))((IWICComponentInfo*)Unsafe.AsPointer(ref this), pType);
     }
 
+    /// <include file='IWICComponentInfo.xml' path='doc/member[@name="IWICComponentInfo.GetCLSID"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetCLSID([NativeTypeName("CLSID *")] Guid* pclsid)
@@ -53,6 +59,7 @@ public unsafe partial struct IWICComponentInfo : IWICComponentInfo.Interface
         return ((delegate* unmanaged<IWICComponentInfo*, Guid*, int>)(lpVtbl[4]))((IWICComponentInfo*)Unsafe.AsPointer(ref this), pclsid);
     }
 
+    /// <include file='IWICComponentInfo.xml' path='doc/member[@name="IWICComponentInfo.GetSigningStatus"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetSigningStatus([NativeTypeName("DWORD *")] uint* pStatus)
@@ -60,6 +67,7 @@ public unsafe partial struct IWICComponentInfo : IWICComponentInfo.Interface
         return ((delegate* unmanaged<IWICComponentInfo*, uint*, int>)(lpVtbl[5]))((IWICComponentInfo*)Unsafe.AsPointer(ref this), pStatus);
     }
 
+    /// <include file='IWICComponentInfo.xml' path='doc/member[@name="IWICComponentInfo.GetAuthor"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetAuthor(uint cchAuthor, [NativeTypeName("WCHAR *")] ushort* wzAuthor, uint* pcchActual)
@@ -67,6 +75,7 @@ public unsafe partial struct IWICComponentInfo : IWICComponentInfo.Interface
         return ((delegate* unmanaged<IWICComponentInfo*, uint, ushort*, uint*, int>)(lpVtbl[6]))((IWICComponentInfo*)Unsafe.AsPointer(ref this), cchAuthor, wzAuthor, pcchActual);
     }
 
+    /// <include file='IWICComponentInfo.xml' path='doc/member[@name="IWICComponentInfo.GetVendorGUID"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetVendorGUID(Guid* pguidVendor)
@@ -74,6 +83,7 @@ public unsafe partial struct IWICComponentInfo : IWICComponentInfo.Interface
         return ((delegate* unmanaged<IWICComponentInfo*, Guid*, int>)(lpVtbl[7]))((IWICComponentInfo*)Unsafe.AsPointer(ref this), pguidVendor);
     }
 
+    /// <include file='IWICComponentInfo.xml' path='doc/member[@name="IWICComponentInfo.GetVersion"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetVersion(uint cchVersion, [NativeTypeName("WCHAR *")] ushort* wzVersion, uint* pcchActual)
@@ -81,6 +91,7 @@ public unsafe partial struct IWICComponentInfo : IWICComponentInfo.Interface
         return ((delegate* unmanaged<IWICComponentInfo*, uint, ushort*, uint*, int>)(lpVtbl[8]))((IWICComponentInfo*)Unsafe.AsPointer(ref this), cchVersion, wzVersion, pcchActual);
     }
 
+    /// <include file='IWICComponentInfo.xml' path='doc/member[@name="IWICComponentInfo.GetSpecVersion"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT GetSpecVersion(uint cchSpecVersion, [NativeTypeName("WCHAR *")] ushort* wzSpecVersion, uint* pcchActual)
@@ -88,6 +99,7 @@ public unsafe partial struct IWICComponentInfo : IWICComponentInfo.Interface
         return ((delegate* unmanaged<IWICComponentInfo*, uint, ushort*, uint*, int>)(lpVtbl[9]))((IWICComponentInfo*)Unsafe.AsPointer(ref this), cchSpecVersion, wzSpecVersion, pcchActual);
     }
 
+    /// <include file='IWICComponentInfo.xml' path='doc/member[@name="IWICComponentInfo.GetFriendlyName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT GetFriendlyName(uint cchFriendlyName, [NativeTypeName("WCHAR *")] ushort* wzFriendlyName, uint* pcchActual)

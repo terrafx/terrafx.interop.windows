@@ -7,18 +7,24 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TOUCH_HIT_TESTING_INPUT.xml' path='doc/member[@name="TOUCH_HIT_TESTING_INPUT"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public partial struct TOUCH_HIT_TESTING_INPUT
 {
+    /// <include file='TOUCH_HIT_TESTING_INPUT.xml' path='doc/member[@name="TOUCH_HIT_TESTING_INPUT.pointerId"]/*' />
     [NativeTypeName("UINT32")]
     public uint pointerId;
 
+    /// <include file='TOUCH_HIT_TESTING_INPUT.xml' path='doc/member[@name="TOUCH_HIT_TESTING_INPUT.point"]/*' />
     public POINT point;
 
+    /// <include file='TOUCH_HIT_TESTING_INPUT.xml' path='doc/member[@name="TOUCH_HIT_TESTING_INPUT.boundingBox"]/*' />
     public RECT boundingBox;
 
+    /// <include file='TOUCH_HIT_TESTING_INPUT.xml' path='doc/member[@name="TOUCH_HIT_TESTING_INPUT.nonOccludedBoundingBox"]/*' />
     public RECT nonOccludedBoundingBox;
 
+    /// <include file='TOUCH_HIT_TESTING_INPUT.xml' path='doc/member[@name="TOUCH_HIT_TESTING_INPUT.orientation"]/*' />
     [NativeTypeName("UINT32")]
     public uint orientation;
 }

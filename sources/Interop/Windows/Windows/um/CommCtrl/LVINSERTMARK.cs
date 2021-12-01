@@ -5,15 +5,20 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='LVINSERTMARK.xml' path='doc/member[@name="LVINSERTMARK"]/*' />
 public partial struct LVINSERTMARK
 {
+    /// <include file='LVINSERTMARK.xml' path='doc/member[@name="LVINSERTMARK.cbSize"]/*' />
     public uint cbSize;
 
+    /// <include file='LVINSERTMARK.xml' path='doc/member[@name="LVINSERTMARK.dwFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFlags;
 
+    /// <include file='LVINSERTMARK.xml' path='doc/member[@name="LVINSERTMARK.iItem"]/*' />
     public int iItem;
 
+    /// <include file='LVINSERTMARK.xml' path='doc/member[@name="LVINSERTMARK.dwReserved"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwReserved;
 }

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SpatialAudioHrtfDirectivityUnion">
+    <summary>
+      <para>Defines a spatial audio directivity model for an <see cref="ISpatialAudioObjectForHrtf" />.</para>
+    </summary>
+  </member>
+  <member name="SpatialAudioHrtfDirectivityUnion.Cone">
+    <summary>
+      <para>A cone-shaped directivity model</para>
+    </summary>
+  </member>
+  <member name="SpatialAudioHrtfDirectivityUnion.Cardioid">
+    <summary></summary>
+  </member>
+  <member name="SpatialAudioHrtfDirectivityUnion.Omni">
+    <summary>
+      <para>And omni-direction directivity model that can be interpolated linearly with one of the other directivity models.</para>
+      <h4>- Cardioid</h4>
+      <para>A cardioid-shaped directivity model</para>
+    </summary>
+  </member>
+</doc>

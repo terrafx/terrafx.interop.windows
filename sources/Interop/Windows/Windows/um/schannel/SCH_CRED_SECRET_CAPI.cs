@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SCH_CRED_SECRET_CAPI.xml' path='doc/member[@name="SCH_CRED_SECRET_CAPI"]/*' />
 public partial struct SCH_CRED_SECRET_CAPI
 {
+    /// <include file='SCH_CRED_SECRET_CAPI.xml' path='doc/member[@name="SCH_CRED_SECRET_CAPI.dwType"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwType;
 
+    /// <include file='SCH_CRED_SECRET_CAPI.xml' path='doc/member[@name="SCH_CRED_SECRET_CAPI.hProv"]/*' />
     public HCRYPTPROV hProv;
 }

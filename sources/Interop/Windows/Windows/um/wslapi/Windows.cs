@@ -10,24 +10,31 @@ namespace TerraFX.Interop.Windows;
 
 public static unsafe partial class Windows
 {
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WslIsDistributionRegistered"]/*' />
     [DllImport("api-ms-win-wsl-api-l1-1-0", ExactSpelling = true)]
     public static extern BOOL WslIsDistributionRegistered([NativeTypeName("PCWSTR")] ushort* distributionName);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WslRegisterDistribution"]/*' />
     [DllImport("api-ms-win-wsl-api-l1-1-0", ExactSpelling = true)]
     public static extern HRESULT WslRegisterDistribution([NativeTypeName("PCWSTR")] ushort* distributionName, [NativeTypeName("PCWSTR")] ushort* tarGzFilename);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WslUnregisterDistribution"]/*' />
     [DllImport("api-ms-win-wsl-api-l1-1-0", ExactSpelling = true)]
     public static extern HRESULT WslUnregisterDistribution([NativeTypeName("PCWSTR")] ushort* distributionName);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WslConfigureDistribution"]/*' />
     [DllImport("api-ms-win-wsl-api-l1-1-0", ExactSpelling = true)]
     public static extern HRESULT WslConfigureDistribution([NativeTypeName("PCWSTR")] ushort* distributionName, [NativeTypeName("ULONG")] uint defaultUID, WSL_DISTRIBUTION_FLAGS wslDistributionFlags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WslGetDistributionConfiguration"]/*' />
     [DllImport("api-ms-win-wsl-api-l1-1-0", ExactSpelling = true)]
     public static extern HRESULT WslGetDistributionConfiguration([NativeTypeName("PCWSTR")] ushort* distributionName, [NativeTypeName("ULONG *")] uint* distributionVersion, [NativeTypeName("ULONG *")] uint* defaultUID, WSL_DISTRIBUTION_FLAGS* wslDistributionFlags, [NativeTypeName("PSTR **")] sbyte*** defaultEnvironmentVariables, [NativeTypeName("ULONG *")] uint* defaultEnvironmentVariableCount);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WslLaunchInteractive"]/*' />
     [DllImport("api-ms-win-wsl-api-l1-1-0", ExactSpelling = true)]
     public static extern HRESULT WslLaunchInteractive([NativeTypeName("PCWSTR")] ushort* distributionName, [NativeTypeName("PCWSTR")] ushort* command, BOOL useCurrentWorkingDirectory, [NativeTypeName("DWORD *")] uint* exitCode);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WslLaunch"]/*' />
     [DllImport("api-ms-win-wsl-api-l1-1-0", ExactSpelling = true)]
     public static extern HRESULT WslLaunch([NativeTypeName("PCWSTR")] ushort* distributionName, [NativeTypeName("PCWSTR")] ushort* command, BOOL useCurrentWorkingDirectory, HANDLE stdIn, HANDLE stdOut, HANDLE stdErr, HANDLE* process);
 

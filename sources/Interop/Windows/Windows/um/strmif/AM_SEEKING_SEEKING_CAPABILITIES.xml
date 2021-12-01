@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="AM_SEEKING_SEEKING_CAPABILITIES">
+    <summary>
+      <para>Specifies the seeking capabilities of a media stream.</para>
+    </summary>
+    <remarks>
+      <para>Most DirectShow filters do not report the <b>AM_SEEKING_CanGetCurrentPos</b> capability flag. However, the Filter Graph Manager's implementation of <see cref="IMediaSeeking.GetCurrentPosition" /> is based on the reference clock, so you can call this method even if the capabilities flags do not include <b>AM_SEEKING_CanGetCurrentPos</b>.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-enumerated-types">DirectShow Enumerated Types</seealso>
+    <seealso cref="IMediaSeeking.CheckCapabilities" />
+    <seealso cref="IMediaSeeking.GetCapabilities" />
+  </member>
+  <member name="AM_SEEKING_SEEKING_CAPABILITIES.AM_SEEKING_CanSeekAbsolute">
+    <summary>
+      <para>The stream can seek to an absolute position.</para>
+    </summary>
+  </member>
+  <member name="AM_SEEKING_SEEKING_CAPABILITIES.AM_SEEKING_CanSeekForwards">
+    <summary>
+      <para>The stream can seek forward.</para>
+    </summary>
+  </member>
+  <member name="AM_SEEKING_SEEKING_CAPABILITIES.AM_SEEKING_CanSeekBackwards">
+    <summary>
+      <para>The stream can seek backward.</para>
+    </summary>
+  </member>
+  <member name="AM_SEEKING_SEEKING_CAPABILITIES.AM_SEEKING_CanGetCurrentPos">
+    <summary>
+      <para>The stream can report its current position. See Remarks.</para>
+    </summary>
+  </member>
+  <member name="AM_SEEKING_SEEKING_CAPABILITIES.AM_SEEKING_CanGetStopPos">
+    <summary>
+      <para>The stream can report its stop position.</para>
+    </summary>
+  </member>
+  <member name="AM_SEEKING_SEEKING_CAPABILITIES.AM_SEEKING_CanGetDuration">
+    <summary>
+      <para>The stream can report its duration.</para>
+    </summary>
+  </member>
+  <member name="AM_SEEKING_SEEKING_CAPABILITIES.AM_SEEKING_CanPlayBackwards">
+    <summary>
+      <para>The stream can play backward.</para>
+    </summary>
+  </member>
+  <member name="AM_SEEKING_SEEKING_CAPABILITIES.AM_SEEKING_CanDoSegments">
+    <summary>
+      <para>The stream can do seamless looping (see <see cref="IMediaSeeking.SetPositions" />).</para>
+    </summary>
+  </member>
+  <member name="AM_SEEKING_SEEKING_CAPABILITIES.AM_SEEKING_Source">
+    <summary>
+      <para>Reserved.</para>
+    </summary>
+  </member>
+</doc>

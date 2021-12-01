@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='GET_LENGTH_INFORMATION.xml' path='doc/member[@name="GET_LENGTH_INFORMATION"]/*' />
 public partial struct GET_LENGTH_INFORMATION
 {
+    /// <include file='GET_LENGTH_INFORMATION.xml' path='doc/member[@name="GET_LENGTH_INFORMATION.Length"]/*' />
     public LARGE_INTEGER Length;
 }

@@ -5,8 +5,10 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='UNLOAD_DLL_DEBUG_INFO.xml' path='doc/member[@name="UNLOAD_DLL_DEBUG_INFO"]/*' />
 public unsafe partial struct UNLOAD_DLL_DEBUG_INFO
 {
+    /// <include file='UNLOAD_DLL_DEBUG_INFO.xml' path='doc/member[@name="UNLOAD_DLL_DEBUG_INFO.lpBaseOfDll"]/*' />
     [NativeTypeName("LPVOID")]
     public void* lpBaseOfDll;
 }

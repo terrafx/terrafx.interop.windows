@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WIN32_MEMORY_INFORMATION_CLASS.xml' path='doc/member[@name="WIN32_MEMORY_INFORMATION_CLASS"]/*' />
 public enum WIN32_MEMORY_INFORMATION_CLASS
 {
+    /// <include file='WIN32_MEMORY_INFORMATION_CLASS.xml' path='doc/member[@name="WIN32_MEMORY_INFORMATION_CLASS.MemoryRegionInfo"]/*' />
     MemoryRegionInfo,
 }

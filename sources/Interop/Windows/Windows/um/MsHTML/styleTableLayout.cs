@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='styleTableLayout.xml' path='doc/member[@name="styleTableLayout"]/*' />
 public enum styleTableLayout
 {
+    /// <include file='styleTableLayout.xml' path='doc/member[@name="styleTableLayout.styleTableLayoutNotSet"]/*' />
     styleTableLayoutNotSet = 0,
+
+    /// <include file='styleTableLayout.xml' path='doc/member[@name="styleTableLayout.styleTableLayoutAuto"]/*' />
     styleTableLayoutAuto = 1,
+
+    /// <include file='styleTableLayout.xml' path='doc/member[@name="styleTableLayout.styleTableLayoutFixed"]/*' />
     styleTableLayoutFixed = 2,
+
+    /// <include file='styleTableLayout.xml' path='doc/member[@name="styleTableLayout.styleTableLayout_Max"]/*' />
     styleTableLayout_Max = 2147483647,
 }

@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IJolietDiscMaster.AddData">
+    <summary>
+      <para>Adds the contents of a root storage to the staged image file. This storage will be enumerated to place all substorages and streams in the root file system of the stage image file. Substorages become folders and streams become files. Multiple calls to this method can be repeated to slowly stage an image file without wasting undue amounts of hard drive space building up a storage file.</para>
+    </summary>
+    <param name="pStorage">
+      <para>Path to the storage whose subitems are to be added to the root of the staged image file.</para>
+    </param>
+    <param name="lFileOverwrite">
+      <para>If this parameter is nonzero, overwrite existing files with the same name. Otherwise, the last file added appears in the directory.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
+    </returns>
+    <remarks>
+      <para>When you repeat an
+<b>AddData</b> operation, folders with duplicate files cause a test of  <i>lFileOverwrite</i>. If the flag is nonzero, the file is overwritten. Earlier files with conflicting names are still written to disc from the image file. If <i>lFileOverwrite</i> is zero and a file with the same name exists,
+<b>AddData</b> fails with IMAPI_E_FILEEXISTS.</para>
+      <para>While
+<b>AddData</b> can be called multiple times after calling
+<see cref="IDiscMaster.SetActiveDiscRecorder" />,
+<b>SetActiveDiscRecorder</b> must be called any time a new image is started, and immediately before the first
+<b>AddData</b> call, regardless of whether the burner is the same one used in the previous image creation.</para>
+      <para>If a call to this method would overrun the number of available data blocks, the method returns IMAPI_E_DISCFULL and ignores all data that was to be added. This ensures that the final Joliet file system is not corrupted.</para>
+    </remarks>
+    <seealso cref="IJolietDiscMaster" />
+  </member>
+  <member name="IJolietDiscMaster.GetDataBlockSize">
+    <summary>
+      <para>Retrieves the size of a data block.</para>
+    </summary>
+    <param name="pnBlockBytes">
+      <para>Total size of a single data block, in bytes.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
+    </returns>
+    <remarks>
+      <para>This method returns 2048.</para>
+    </remarks>
+    <seealso cref="IJolietDiscMaster" />
+  </member>
+  <member name="IJolietDiscMaster.GetJolietProperties">
+    <summary>
+      <para>Retrieves a pointer to an
+<see cref="IPropertyStorage" /> interface that contains the Joliet properties.</para>
+    </summary>
+    <param name="ppPropStg">
+      <para>Address of a pointer to an
+<see cref="IPropertyStorage" /> interface for the Joliet property set with all current properties defined.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
+    </returns>
+    <remarks>
+      <para>Properties are not retained after IMAPI is closed. A property set is convenient for IMAPI because it stores an ID/TYPE/VALUE combination, as well as ID/NAME associations. Each combination is a single property, and IMAPI uses these properties as values that are unique to the Joliet interface. For example, the Joliet interface supports a VolumeName property.</para>
+      <para>The caller can modify these properties by calling
+<see cref="SetJolietProperties" />. Current properties include the following.</para>
+    </remarks>
+    <seealso cref="IJolietDiscMaster" />
+    <seealso cref="IPropertyStorage" />
+    <seealso cref="IStream" />
+  </member>
+  <member name="IJolietDiscMaster.GetTotalDataBlocks">
+    <summary>
+      <para>Retrieves the total number of blocks available for staging a Joliet data disc. The data returned from this method is valid only after a
+<see cref="SetActiveDiscRecorder" /> call, especially in a multi-session burn.</para>
+    </summary>
+    <param name="pnBlocks">
+      <para>Total number of data blocks available on a disc.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
+    </returns>
+    <seealso cref="IJolietDiscMaster" />
+  </member>
+  <member name="IJolietDiscMaster.GetUsedDataBlocks">
+    <summary>
+      <para>Retrieves the total number of data blocks that are in use. The data returned from this method is valid only after a
+<see cref="SetActiveDiscRecorder" /> call, especially in a multi-session burn.</para>
+    </summary>
+    <param name="pnBlocks">
+      <para>Total number of data blocks in use in the staged image.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
+    </returns>
+    <seealso cref="IJolietDiscMaster" />
+  </member>
+  <member name="IJolietDiscMaster.SetJolietProperties">
+    <summary>
+      <para>Sets the Joliet properties.</para>
+    </summary>
+    <param name="pPropStg">
+      <para>Pointer to the
+<see cref="IPropertyStorage" /> interface that the Joliet interface can use to retrieve new settings on various properties.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
+    </returns>
+    <remarks>
+      <para>Applications should query for a property set using
+<see cref="GetJolietProperties" />, modify only those settings of interest, and then call
+<b>SetJolietProperties</b> to change all values simultaneously.</para>
+      <para>Some properties are read-only. Both read-only properties and unsupported properties are ignored without generating an error (see IMAPI_S_PROPERTIESIGNORED). For example, someone could submit a property set to this interface and attempt to change the ClearlyNeverHeardOfBefore property. Because ClearlyNeverHeardOfBefore is an unknown value, the property is ignored and the method succeeds.</para>
+      <para>After calling
+<b>SetJolietProperties</b>, an application should verify property settings by calling
+<see cref="GetJolietProperties" />.</para>
+    </remarks>
+    <seealso cref="IJolietDiscMaster" />
+  </member>
+  <member name="IJolietDiscMaster">
+    <summary>
+      <para>The
+<b>IJolietDiscMaster</b> interface enables the staging of a CD data disc. It represents one of the formats supported by <b>MSDiscMasterObj</b>, and it allows the creation of a single Track-at-Once data disc. The data is written to the disc with the Joliet and ISO-9660 file systems.</para>
+      <para>A temporary folder is constructed and added to the image. This can be repeated multiple times with the directory and file structures overlapping. The overlapping file structures appear seamlessly when read back. When the overwrite option is used, overlapping paths cause the last file added to show up in the directory, while the earlier files with conflicting names are still present on the disc but now not readable by normal means.</para>
+    </summary>
+  </member>
+</doc>

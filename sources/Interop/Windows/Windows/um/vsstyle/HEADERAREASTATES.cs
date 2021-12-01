@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HEADERAREASTATES.xml' path='doc/member[@name="HEADERAREASTATES"]/*' />
 public enum HEADERAREASTATES
 {
+    /// <include file='HEADERAREASTATES.xml' path='doc/member[@name="HEADERAREASTATES.AW_S_HEADERAREA_NOMARGIN"]/*' />
     AW_S_HEADERAREA_NOMARGIN = 1,
 }

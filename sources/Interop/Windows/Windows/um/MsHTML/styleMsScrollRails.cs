@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='styleMsScrollRails.xml' path='doc/member[@name="styleMsScrollRails"]/*' />
 public enum styleMsScrollRails
 {
+    /// <include file='styleMsScrollRails.xml' path='doc/member[@name="styleMsScrollRails.styleMsScrollRailsNotSet"]/*' />
     styleMsScrollRailsNotSet = 0,
+
+    /// <include file='styleMsScrollRails.xml' path='doc/member[@name="styleMsScrollRails.styleMsScrollRailsNone"]/*' />
     styleMsScrollRailsNone = 1,
+
+    /// <include file='styleMsScrollRails.xml' path='doc/member[@name="styleMsScrollRails.styleMsScrollRailsRailed"]/*' />
     styleMsScrollRailsRailed = 2,
+
+    /// <include file='styleMsScrollRails.xml' path='doc/member[@name="styleMsScrollRails.styleMsScrollRails_Max"]/*' />
     styleMsScrollRails_Max = 2147483647,
 }

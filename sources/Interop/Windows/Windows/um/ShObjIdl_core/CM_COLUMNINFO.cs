@@ -5,23 +5,31 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CM_COLUMNINFO.xml' path='doc/member[@name="CM_COLUMNINFO"]/*' />
 public unsafe partial struct CM_COLUMNINFO
 {
+    /// <include file='CM_COLUMNINFO.xml' path='doc/member[@name="CM_COLUMNINFO.cbSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbSize;
 
+    /// <include file='CM_COLUMNINFO.xml' path='doc/member[@name="CM_COLUMNINFO.dwMask"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwMask;
 
+    /// <include file='CM_COLUMNINFO.xml' path='doc/member[@name="CM_COLUMNINFO.dwState"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwState;
 
+    /// <include file='CM_COLUMNINFO.xml' path='doc/member[@name="CM_COLUMNINFO.uWidth"]/*' />
     public uint uWidth;
 
+    /// <include file='CM_COLUMNINFO.xml' path='doc/member[@name="CM_COLUMNINFO.uDefaultWidth"]/*' />
     public uint uDefaultWidth;
 
+    /// <include file='CM_COLUMNINFO.xml' path='doc/member[@name="CM_COLUMNINFO.uIdealWidth"]/*' />
     public uint uIdealWidth;
 
+    /// <include file='CM_COLUMNINFO.xml' path='doc/member[@name="CM_COLUMNINFO.wszName"]/*' />
     [NativeTypeName("WCHAR [80]")]
     public fixed ushort wszName[80];
 }

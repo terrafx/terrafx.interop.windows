@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CATSORT_FLAGS">
+    <summary>
+      <para>Specifies methods for sorting category data.</para>
+    </summary>
+  </member>
+  <member name="CATSORT_FLAGS.CATSORT_DEFAULT">
+    <summary>
+      <para>Use the default sort order.</para>
+    </summary>
+  </member>
+  <member name="CATSORT_FLAGS.CATSORT_NAME">
+    <summary>
+      <para>Use a method that sorts on category names.</para>
+    </summary>
+  </member>
+</doc>

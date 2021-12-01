@@ -9,23 +9,30 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DEVICE_DSM_RANGE_ERROR_INFO.xml' path='doc/member[@name="DEVICE_DSM_RANGE_ERROR_INFO"]/*' />
 public partial struct DEVICE_DSM_RANGE_ERROR_INFO
 {
+    /// <include file='DEVICE_DSM_RANGE_ERROR_INFO.xml' path='doc/member[@name="DEVICE_DSM_RANGE_ERROR_INFO.Version"]/*' />
     [NativeTypeName("DWORD")]
     public uint Version;
 
+    /// <include file='DEVICE_DSM_RANGE_ERROR_INFO.xml' path='doc/member[@name="DEVICE_DSM_RANGE_ERROR_INFO.Flags"]/*' />
     [NativeTypeName("DWORD")]
     public uint Flags;
 
+    /// <include file='DEVICE_DSM_RANGE_ERROR_INFO.xml' path='doc/member[@name="DEVICE_DSM_RANGE_ERROR_INFO.TotalNumberOfRanges"]/*' />
     [NativeTypeName("DWORD")]
     public uint TotalNumberOfRanges;
 
+    /// <include file='DEVICE_DSM_RANGE_ERROR_INFO.xml' path='doc/member[@name="DEVICE_DSM_RANGE_ERROR_INFO.NumberOfRangesReturned"]/*' />
     [NativeTypeName("DWORD")]
     public uint NumberOfRangesReturned;
 
+    /// <include file='DEVICE_DSM_RANGE_ERROR_INFO.xml' path='doc/member[@name="DEVICE_DSM_RANGE_ERROR_INFO.Ranges"]/*' />
     [NativeTypeName("DEVICE_STORAGE_RANGE_ATTRIBUTES [1]")]
     public _Ranges_e__FixedBuffer Ranges;
 
+    /// <include file='_Ranges_e__FixedBuffer.xml' path='doc/member[@name="_Ranges_e__FixedBuffer"]/*' />
     public partial struct _Ranges_e__FixedBuffer
     {
         public DEVICE_STORAGE_RANGE_ATTRIBUTES e0;

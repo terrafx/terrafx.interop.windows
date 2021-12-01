@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IUIAnimationManagerEventHandler.xml' path='doc/member[@name="IUIAnimationManagerEventHandler"]/*' />
 [Guid("783321ED-78A3-4366-B574-6AF607A64788")]
 [NativeTypeName("struct IUIAnimationManagerEventHandler : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IUIAnimationManagerEventHandler : IUIAnimationManag
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IUIAnimationManagerEventHandler : IUIAnimationManag
         return ((delegate* unmanaged<IUIAnimationManagerEventHandler*, Guid*, void**, int>)(lpVtbl[0]))((IUIAnimationManagerEventHandler*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IUIAnimationManagerEventHandler : IUIAnimationManag
         return ((delegate* unmanaged<IUIAnimationManagerEventHandler*, uint>)(lpVtbl[1]))((IUIAnimationManagerEventHandler*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IUIAnimationManagerEventHandler : IUIAnimationManag
         return ((delegate* unmanaged<IUIAnimationManagerEventHandler*, uint>)(lpVtbl[2]))((IUIAnimationManagerEventHandler*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IUIAnimationManagerEventHandler.xml' path='doc/member[@name="IUIAnimationManagerEventHandler.OnManagerStatusChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT OnManagerStatusChanged(UI_ANIMATION_MANAGER_STATUS newStatus, UI_ANIMATION_MANAGER_STATUS previousStatus)

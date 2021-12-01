@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IEnterpriseDropTarget.xml' path='doc/member[@name="IEnterpriseDropTarget"]/*' />
 [Guid("390E3878-FD55-4E18-819D-4682081C0CFD")]
 [NativeTypeName("struct IEnterpriseDropTarget : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IEnterpriseDropTarget : IEnterpriseDropTarget.Inter
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IEnterpriseDropTarget : IEnterpriseDropTarget.Inter
         return ((delegate* unmanaged<IEnterpriseDropTarget*, Guid*, void**, int>)(lpVtbl[0]))((IEnterpriseDropTarget*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IEnterpriseDropTarget : IEnterpriseDropTarget.Inter
         return ((delegate* unmanaged<IEnterpriseDropTarget*, uint>)(lpVtbl[1]))((IEnterpriseDropTarget*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IEnterpriseDropTarget : IEnterpriseDropTarget.Inter
         return ((delegate* unmanaged<IEnterpriseDropTarget*, uint>)(lpVtbl[2]))((IEnterpriseDropTarget*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IEnterpriseDropTarget.xml' path='doc/member[@name="IEnterpriseDropTarget.SetDropSourceEnterpriseId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetDropSourceEnterpriseId([NativeTypeName("LPCWSTR")] ushort* identity)
@@ -48,6 +53,7 @@ public unsafe partial struct IEnterpriseDropTarget : IEnterpriseDropTarget.Inter
         return ((delegate* unmanaged<IEnterpriseDropTarget*, ushort*, int>)(lpVtbl[3]))((IEnterpriseDropTarget*)Unsafe.AsPointer(ref this), identity);
     }
 
+    /// <include file='IEnterpriseDropTarget.xml' path='doc/member[@name="IEnterpriseDropTarget.IsEvaluatingEdpPolicy"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT IsEvaluatingEdpPolicy(BOOL* value)

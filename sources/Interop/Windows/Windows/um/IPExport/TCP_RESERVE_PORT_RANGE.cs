@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TCP_RESERVE_PORT_RANGE.xml' path='doc/member[@name="TCP_RESERVE_PORT_RANGE"]/*' />
 public partial struct TCP_RESERVE_PORT_RANGE
 {
+    /// <include file='TCP_RESERVE_PORT_RANGE.xml' path='doc/member[@name="TCP_RESERVE_PORT_RANGE.UpperRange"]/*' />
     public ushort UpperRange;
 
+    /// <include file='TCP_RESERVE_PORT_RANGE.xml' path='doc/member[@name="TCP_RESERVE_PORT_RANGE.LowerRange"]/*' />
     public ushort LowerRange;
 }

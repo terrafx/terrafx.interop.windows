@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IResourceConsumer.xml' path='doc/member[@name="IResourceConsumer"]/*' />
 [Guid("56A868AD-0AD4-11CE-B03A-0020AF0BA770")]
 [NativeTypeName("struct IResourceConsumer : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IResourceConsumer : IResourceConsumer.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IResourceConsumer : IResourceConsumer.Interface
         return ((delegate* unmanaged<IResourceConsumer*, Guid*, void**, int>)(lpVtbl[0]))((IResourceConsumer*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IResourceConsumer : IResourceConsumer.Interface
         return ((delegate* unmanaged<IResourceConsumer*, uint>)(lpVtbl[1]))((IResourceConsumer*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IResourceConsumer : IResourceConsumer.Interface
         return ((delegate* unmanaged<IResourceConsumer*, uint>)(lpVtbl[2]))((IResourceConsumer*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IResourceConsumer.xml' path='doc/member[@name="IResourceConsumer.AcquireResource"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT AcquireResource([NativeTypeName("LONG")] int idResource)
@@ -46,6 +51,7 @@ public unsafe partial struct IResourceConsumer : IResourceConsumer.Interface
         return ((delegate* unmanaged<IResourceConsumer*, int, int>)(lpVtbl[3]))((IResourceConsumer*)Unsafe.AsPointer(ref this), idResource);
     }
 
+    /// <include file='IResourceConsumer.xml' path='doc/member[@name="IResourceConsumer.ReleaseResource"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT ReleaseResource([NativeTypeName("LONG")] int idResource)

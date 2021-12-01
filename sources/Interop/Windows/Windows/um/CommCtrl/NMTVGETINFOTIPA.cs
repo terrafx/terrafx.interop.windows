@@ -5,16 +5,22 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NMTVGETINFOTIPA.xml' path='doc/member[@name="NMTVGETINFOTIPA"]/*' />
 public unsafe partial struct NMTVGETINFOTIPA
 {
+    /// <include file='NMTVGETINFOTIPA.xml' path='doc/member[@name="NMTVGETINFOTIPA.hdr"]/*' />
     public NMHDR hdr;
 
+    /// <include file='NMTVGETINFOTIPA.xml' path='doc/member[@name="NMTVGETINFOTIPA.pszText"]/*' />
     [NativeTypeName("LPSTR")]
     public sbyte* pszText;
 
+    /// <include file='NMTVGETINFOTIPA.xml' path='doc/member[@name="NMTVGETINFOTIPA.cchTextMax"]/*' />
     public int cchTextMax;
 
+    /// <include file='NMTVGETINFOTIPA.xml' path='doc/member[@name="NMTVGETINFOTIPA.hItem"]/*' />
     public HTREEITEM hItem;
 
+    /// <include file='NMTVGETINFOTIPA.xml' path='doc/member[@name="NMTVGETINFOTIPA.lParam"]/*' />
     public LPARAM lParam;
 }

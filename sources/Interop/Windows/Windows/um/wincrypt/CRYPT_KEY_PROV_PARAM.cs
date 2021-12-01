@@ -5,16 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CRYPT_KEY_PROV_PARAM.xml' path='doc/member[@name="CRYPT_KEY_PROV_PARAM"]/*' />
 public unsafe partial struct CRYPT_KEY_PROV_PARAM
 {
+    /// <include file='CRYPT_KEY_PROV_PARAM.xml' path='doc/member[@name="CRYPT_KEY_PROV_PARAM.dwParam"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwParam;
 
+    /// <include file='CRYPT_KEY_PROV_PARAM.xml' path='doc/member[@name="CRYPT_KEY_PROV_PARAM.pbData"]/*' />
     public byte* pbData;
 
+    /// <include file='CRYPT_KEY_PROV_PARAM.xml' path='doc/member[@name="CRYPT_KEY_PROV_PARAM.cbData"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbData;
 
+    /// <include file='CRYPT_KEY_PROV_PARAM.xml' path='doc/member[@name="CRYPT_KEY_PROV_PARAM.dwFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFlags;
 }

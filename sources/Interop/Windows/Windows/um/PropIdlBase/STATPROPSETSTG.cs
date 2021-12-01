@@ -7,23 +7,31 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STATPROPSETSTG.xml' path='doc/member[@name="STATPROPSETSTG"]/*' />
 public partial struct STATPROPSETSTG
 {
+    /// <include file='STATPROPSETSTG.xml' path='doc/member[@name="STATPROPSETSTG.fmtid"]/*' />
     [NativeTypeName("FMTID")]
     public Guid fmtid;
 
+    /// <include file='STATPROPSETSTG.xml' path='doc/member[@name="STATPROPSETSTG.clsid"]/*' />
     [NativeTypeName("CLSID")]
     public Guid clsid;
 
+    /// <include file='STATPROPSETSTG.xml' path='doc/member[@name="STATPROPSETSTG.grfFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint grfFlags;
 
+    /// <include file='STATPROPSETSTG.xml' path='doc/member[@name="STATPROPSETSTG.mtime"]/*' />
     public FILETIME mtime;
 
+    /// <include file='STATPROPSETSTG.xml' path='doc/member[@name="STATPROPSETSTG.ctime"]/*' />
     public FILETIME ctime;
 
+    /// <include file='STATPROPSETSTG.xml' path='doc/member[@name="STATPROPSETSTG.atime"]/*' />
     public FILETIME atime;
 
+    /// <include file='STATPROPSETSTG.xml' path='doc/member[@name="STATPROPSETSTG.dwOSVersion"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwOSVersion;
 }

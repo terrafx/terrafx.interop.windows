@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='styleBoxSizing.xml' path='doc/member[@name="styleBoxSizing"]/*' />
 public enum styleBoxSizing
 {
+    /// <include file='styleBoxSizing.xml' path='doc/member[@name="styleBoxSizing.styleBoxSizingNotSet"]/*' />
     styleBoxSizingNotSet = 0,
+
+    /// <include file='styleBoxSizing.xml' path='doc/member[@name="styleBoxSizing.styleBoxSizingContentBox"]/*' />
     styleBoxSizingContentBox = 1,
+
+    /// <include file='styleBoxSizing.xml' path='doc/member[@name="styleBoxSizing.styleBoxSizingBorderBox"]/*' />
     styleBoxSizingBorderBox = 2,
+
+    /// <include file='styleBoxSizing.xml' path='doc/member[@name="styleBoxSizing.styleBoxSizing_Max"]/*' />
     styleBoxSizing_Max = 2147483647,
 }

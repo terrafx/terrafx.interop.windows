@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TunerInputType.xml' path='doc/member[@name="TunerInputType"]/*' />
 public enum TunerInputType
 {
+    /// <include file='TunerInputType.xml' path='doc/member[@name="TunerInputType.TunerInputCable"]/*' />
     TunerInputCable = 0,
+
+    /// <include file='TunerInputType.xml' path='doc/member[@name="TunerInputType.TunerInputAntenna"]/*' />
     TunerInputAntenna = (TunerInputCable + 1),
 }

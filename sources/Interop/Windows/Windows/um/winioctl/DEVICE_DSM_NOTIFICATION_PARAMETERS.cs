@@ -9,20 +9,26 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DEVICE_DSM_NOTIFICATION_PARAMETERS.xml' path='doc/member[@name="DEVICE_DSM_NOTIFICATION_PARAMETERS"]/*' />
 public partial struct DEVICE_DSM_NOTIFICATION_PARAMETERS
 {
+    /// <include file='DEVICE_DSM_NOTIFICATION_PARAMETERS.xml' path='doc/member[@name="DEVICE_DSM_NOTIFICATION_PARAMETERS.Size"]/*' />
     [NativeTypeName("DWORD")]
     public uint Size;
 
+    /// <include file='DEVICE_DSM_NOTIFICATION_PARAMETERS.xml' path='doc/member[@name="DEVICE_DSM_NOTIFICATION_PARAMETERS.Flags"]/*' />
     [NativeTypeName("DWORD")]
     public uint Flags;
 
+    /// <include file='DEVICE_DSM_NOTIFICATION_PARAMETERS.xml' path='doc/member[@name="DEVICE_DSM_NOTIFICATION_PARAMETERS.NumFileTypeIDs"]/*' />
     [NativeTypeName("DWORD")]
     public uint NumFileTypeIDs;
 
+    /// <include file='DEVICE_DSM_NOTIFICATION_PARAMETERS.xml' path='doc/member[@name="DEVICE_DSM_NOTIFICATION_PARAMETERS.FileTypeID"]/*' />
     [NativeTypeName("GUID [1]")]
     public _FileTypeID_e__FixedBuffer FileTypeID;
 
+    /// <include file='_FileTypeID_e__FixedBuffer.xml' path='doc/member[@name="_FileTypeID_e__FixedBuffer"]/*' />
     public partial struct _FileTypeID_e__FixedBuffer
     {
         public Guid e0;

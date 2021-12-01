@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IObjectWithAppUserModelID.xml' path='doc/member[@name="IObjectWithAppUserModelID"]/*' />
 [Guid("36DB0196-9665-46D1-9BA7-D3709EECF9ED")]
 [NativeTypeName("struct IObjectWithAppUserModelID : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IObjectWithAppUserModelID : IObjectWithAppUserModel
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IObjectWithAppUserModelID : IObjectWithAppUserModel
         return ((delegate* unmanaged<IObjectWithAppUserModelID*, Guid*, void**, int>)(lpVtbl[0]))((IObjectWithAppUserModelID*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IObjectWithAppUserModelID : IObjectWithAppUserModel
         return ((delegate* unmanaged<IObjectWithAppUserModelID*, uint>)(lpVtbl[1]))((IObjectWithAppUserModelID*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IObjectWithAppUserModelID : IObjectWithAppUserModel
         return ((delegate* unmanaged<IObjectWithAppUserModelID*, uint>)(lpVtbl[2]))((IObjectWithAppUserModelID*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IObjectWithAppUserModelID.xml' path='doc/member[@name="IObjectWithAppUserModelID.SetAppID"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetAppID([NativeTypeName("LPCWSTR")] ushort* pszAppID)
@@ -46,6 +51,7 @@ public unsafe partial struct IObjectWithAppUserModelID : IObjectWithAppUserModel
         return ((delegate* unmanaged<IObjectWithAppUserModelID*, ushort*, int>)(lpVtbl[3]))((IObjectWithAppUserModelID*)Unsafe.AsPointer(ref this), pszAppID);
     }
 
+    /// <include file='IObjectWithAppUserModelID.xml' path='doc/member[@name="IObjectWithAppUserModelID.GetAppID"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetAppID([NativeTypeName("LPWSTR *")] ushort** ppszAppID)

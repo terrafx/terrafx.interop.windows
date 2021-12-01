@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CSVFS_DISK_CONNECTIVITY.xml' path='doc/member[@name="CSVFS_DISK_CONNECTIVITY"]/*' />
 public enum CSVFS_DISK_CONNECTIVITY
 {
+    /// <include file='CSVFS_DISK_CONNECTIVITY.xml' path='doc/member[@name="CSVFS_DISK_CONNECTIVITY.CsvFsDiskConnectivityNone"]/*' />
     CsvFsDiskConnectivityNone = 0,
+
+    /// <include file='CSVFS_DISK_CONNECTIVITY.xml' path='doc/member[@name="CSVFS_DISK_CONNECTIVITY.CsvFsDiskConnectivityMdsNodeOnly"]/*' />
     CsvFsDiskConnectivityMdsNodeOnly = 1,
+
+    /// <include file='CSVFS_DISK_CONNECTIVITY.xml' path='doc/member[@name="CSVFS_DISK_CONNECTIVITY.CsvFsDiskConnectivitySubsetOfNodes"]/*' />
     CsvFsDiskConnectivitySubsetOfNodes = 2,
+
+    /// <include file='CSVFS_DISK_CONNECTIVITY.xml' path='doc/member[@name="CSVFS_DISK_CONNECTIVITY.CsvFsDiskConnectivityAllNodes"]/*' />
     CsvFsDiskConnectivityAllNodes = 3,
 }

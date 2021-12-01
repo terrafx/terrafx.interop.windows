@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IP_ADDRESS_STRING">
+    <summary>
+      <para>The <b>IP_ADDRESS_STRING</b> structure stores an IPv4 address in dotted decimal notation. The <b>IP_ADDRESS_STRING</b> structure definition is also the type definition for the <b>IP_MASK_STRING</b> structure.</para>
+    </summary>
+    <remarks>
+      <para>The <b>IP_ADDRESS_STRING</b> structure is used as  a parameter in  the  <see cref="IP_ADDR_STRING" /> structure.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/IpHlp/ip-helper-start-page">IP Helper Start Page</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/IpHlp/ip-helper-structures">IP Helper Structures</seealso>
+    <seealso cref="IP_ADDR_STRING" />
+  </member>
+  <member name="IP_ADDRESS_STRING.String">
+    <summary>
+      <para>A character string that represents an IPv4 address or an IPv4 subnet mask in dotted decimal notation.</para>
+    </summary>
+  </member>
+</doc>

@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ITfTextInputProcessor.Activate">
+    <summary>
+      <para>Activates a text service when a user session starts.</para>
+    </summary>
+    <param name="ptim">
+      <para>Pointer to the <see cref="ITfThreadMgr" /> interface for the thread manager that owns the text service.</para>
+    </param>
+    <param name="tid">
+      <para>Specifies the client identifier for the text service.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>TSF calls this method after creating an instance of a text service with a call to <see cref="CoCreateInstance" />. This enables operations necessary to start the text service.</para>
+      <para>This method usually adds a reference to the thread manager for the session and advise sinks for events that involve the text service, such as change of focus, keystrokes, and window events. It also customizes the language bar for the text service.</para>
+      <para>The corresponding <see cref="ITfTextInputProcessor.Deactivate" /> method that shuts down the text service must release all references to the <i>ptim</i> parameter.</para>
+    </remarks>
+    <seealso cref="ITfTextInputProcessor " />
+    <seealso cref="ITfTextInputProcessor.Deactivate " />
+    <seealso cref="ITfThreadMgr " />
+  </member>
+  <member name="ITfTextInputProcessor.Deactivate">
+    <summary>
+      <para>Deactivates a text service when a user session ends.</para>
+    </summary>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>TSF calls this method immediately before releasing its final reference to a text service. This provides the opportunity to perform operations necessary to shut down the text service.</para>
+      <para>This method usually unadvises sinks for events that involve the text service. It can also close any user interface elements of the text service.</para>
+      <para>Before this method returns, it must release all references to the <i>ptim</i> parameter passed to the text service by the <see cref="ITfTextInputProcessor.Activate" /> method.</para>
+    </remarks>
+    <seealso cref="ITfTextInputProcessor " />
+    <seealso cref="ITfTextInputProcessor.Activate " />
+  </member>
+  <member name="ITfTextInputProcessor">
+    <summary>
+      <para>The <b>ITfTextInputProcessor</b> interface is implemented by a text service and used by the TSF manager to activate and deactivate the text service. The manager obtains a pointer to this interface when it creates an instance of the text service for a thread with a call to <see cref="CoCreateInstance" />.</para>
+    </summary>
+    <seealso cref="ITfThreadMgr " />
+    <seealso cref="IUnknown" />
+  </member>
+</doc>

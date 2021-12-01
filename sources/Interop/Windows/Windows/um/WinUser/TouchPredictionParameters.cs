@@ -5,13 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TOUCHPREDICTIONPARAMETERS.xml' path='doc/member[@name="TOUCHPREDICTIONPARAMETERS"]/*' />
 public partial struct TOUCHPREDICTIONPARAMETERS
 {
+    /// <include file='TOUCHPREDICTIONPARAMETERS.xml' path='doc/member[@name="TOUCHPREDICTIONPARAMETERS.cbSize"]/*' />
     public uint cbSize;
 
+    /// <include file='TOUCHPREDICTIONPARAMETERS.xml' path='doc/member[@name="TOUCHPREDICTIONPARAMETERS.dwLatency"]/*' />
     public uint dwLatency;
 
+    /// <include file='TOUCHPREDICTIONPARAMETERS.xml' path='doc/member[@name="TOUCHPREDICTIONPARAMETERS.dwSampleTime"]/*' />
     public uint dwSampleTime;
 
+    /// <include file='TOUCHPREDICTIONPARAMETERS.xml' path='doc/member[@name="TOUCHPREDICTIONPARAMETERS.bUseHWTimeStamp"]/*' />
     public uint bUseHWTimeStamp;
 }

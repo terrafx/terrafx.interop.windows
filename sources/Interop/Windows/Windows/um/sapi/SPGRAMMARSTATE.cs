@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SPGRAMMARSTATE.xml' path='doc/member[@name="SPGRAMMARSTATE"]/*' />
 public enum SPGRAMMARSTATE
 {
+    /// <include file='SPGRAMMARSTATE.xml' path='doc/member[@name="SPGRAMMARSTATE.SPGS_DISABLED"]/*' />
     SPGS_DISABLED = 0,
+
+    /// <include file='SPGRAMMARSTATE.xml' path='doc/member[@name="SPGRAMMARSTATE.SPGS_ENABLED"]/*' />
     SPGS_ENABLED = 1,
+
+    /// <include file='SPGRAMMARSTATE.xml' path='doc/member[@name="SPGRAMMARSTATE.SPGS_EXCLUSIVE"]/*' />
     SPGS_EXCLUSIVE = 3,
 }

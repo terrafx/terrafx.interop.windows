@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="RENDEZVOUS_SESSION_STATE">
+    <summary>
+      <para>Provides the list of possible state codes of the session invitation.</para>
+    </summary>
+  </member>
+  <member name="RENDEZVOUS_SESSION_STATE.RSS_UNKNOWN">
+    <summary>
+      <para>Unknown response.</para>
+    </summary>
+  </member>
+  <member name="RENDEZVOUS_SESSION_STATE.RSS_READY">
+    <summary>
+      <para>The session is ready.</para>
+    </summary>
+  </member>
+  <member name="RENDEZVOUS_SESSION_STATE.RSS_INVITATION">
+    <summary>
+      <para>The session is an invitation.</para>
+    </summary>
+  </member>
+  <member name="RENDEZVOUS_SESSION_STATE.RSS_ACCEPTED">
+    <summary>
+      <para>The session is accepted.</para>
+    </summary>
+  </member>
+  <member name="RENDEZVOUS_SESSION_STATE.RSS_CONNECTED">
+    <summary>
+      <para>The session is not ready.</para>
+    </summary>
+  </member>
+  <member name="RENDEZVOUS_SESSION_STATE.RSS_CANCELLED">
+    <summary>
+      <para>The local session canceled.</para>
+    </summary>
+  </member>
+  <member name="RENDEZVOUS_SESSION_STATE.RSS_DECLINED">
+    <summary>
+      <para>The session is remotely cancelled.</para>
+    </summary>
+  </member>
+  <member name="RENDEZVOUS_SESSION_STATE.RSS_TERMINATED">
+    <summary>
+      <para>Protocol error.</para>
+    </summary>
+  </member>
+</doc>

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CM_ENUM_FLAGS">
+    <summary>
+      <para>Used by members of the <see cref="IColumnManager" /> interface to specify which set of columns are being requested, either all or only those currently visible.</para>
+    </summary>
+  </member>
+  <member name="CM_ENUM_FLAGS.CM_ENUM_ALL">
+    <summary>
+      <para>Enumerate all.</para>
+    </summary>
+  </member>
+  <member name="CM_ENUM_FLAGS.CM_ENUM_VISIBLE">
+    <summary>
+      <para>Enumerate visible.</para>
+    </summary>
+  </member>
+</doc>

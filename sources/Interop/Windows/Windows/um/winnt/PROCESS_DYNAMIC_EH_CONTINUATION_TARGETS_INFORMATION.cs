@@ -5,17 +5,22 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PROCESS_DYNAMIC_EH_CONTINUATION_TARGETS_INFORMATION.xml' path='doc/member[@name="PROCESS_DYNAMIC_EH_CONTINUATION_TARGETS_INFORMATION"]/*' />
 public unsafe partial struct PROCESS_DYNAMIC_EH_CONTINUATION_TARGETS_INFORMATION
 {
+    /// <include file='PROCESS_DYNAMIC_EH_CONTINUATION_TARGETS_INFORMATION.xml' path='doc/member[@name="PROCESS_DYNAMIC_EH_CONTINUATION_TARGETS_INFORMATION.NumberOfTargets"]/*' />
     [NativeTypeName("WORD")]
     public ushort NumberOfTargets;
 
+    /// <include file='PROCESS_DYNAMIC_EH_CONTINUATION_TARGETS_INFORMATION.xml' path='doc/member[@name="PROCESS_DYNAMIC_EH_CONTINUATION_TARGETS_INFORMATION.Reserved"]/*' />
     [NativeTypeName("WORD")]
     public ushort Reserved;
 
+    /// <include file='PROCESS_DYNAMIC_EH_CONTINUATION_TARGETS_INFORMATION.xml' path='doc/member[@name="PROCESS_DYNAMIC_EH_CONTINUATION_TARGETS_INFORMATION.Reserved2"]/*' />
     [NativeTypeName("DWORD")]
     public uint Reserved2;
 
+    /// <include file='PROCESS_DYNAMIC_EH_CONTINUATION_TARGETS_INFORMATION.xml' path='doc/member[@name="PROCESS_DYNAMIC_EH_CONTINUATION_TARGETS_INFORMATION.Targets"]/*' />
     [NativeTypeName("PPROCESS_DYNAMIC_EH_CONTINUATION_TARGET")]
     public PROCESS_DYNAMIC_EH_CONTINUATION_TARGET* Targets;
 }

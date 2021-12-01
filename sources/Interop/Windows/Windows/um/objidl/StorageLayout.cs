@@ -5,15 +5,20 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='StorageLayout.xml' path='doc/member[@name="StorageLayout"]/*' />
 public unsafe partial struct StorageLayout
 {
+    /// <include file='StorageLayout.xml' path='doc/member[@name="StorageLayout.LayoutType"]/*' />
     [NativeTypeName("DWORD")]
     public uint LayoutType;
 
+    /// <include file='StorageLayout.xml' path='doc/member[@name="StorageLayout.pwcsElementName"]/*' />
     [NativeTypeName("OLECHAR *")]
     public ushort* pwcsElementName;
 
+    /// <include file='StorageLayout.xml' path='doc/member[@name="StorageLayout.cOffset"]/*' />
     public LARGE_INTEGER cOffset;
 
+    /// <include file='StorageLayout.xml' path='doc/member[@name="StorageLayout.cBytes"]/*' />
     public LARGE_INTEGER cBytes;
 }

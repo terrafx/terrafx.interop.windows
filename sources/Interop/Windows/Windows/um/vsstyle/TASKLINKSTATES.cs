@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TASKLINKSTATES.xml' path='doc/member[@name="TASKLINKSTATES"]/*' />
 public enum TASKLINKSTATES
 {
+    /// <include file='TASKLINKSTATES.xml' path='doc/member[@name="TASKLINKSTATES.CPTL_NORMAL"]/*' />
     CPTL_NORMAL = 1,
+
+    /// <include file='TASKLINKSTATES.xml' path='doc/member[@name="TASKLINKSTATES.CPTL_HOT"]/*' />
     CPTL_HOT = 2,
+
+    /// <include file='TASKLINKSTATES.xml' path='doc/member[@name="TASKLINKSTATES.CPTL_PRESSED"]/*' />
     CPTL_PRESSED = 3,
+
+    /// <include file='TASKLINKSTATES.xml' path='doc/member[@name="TASKLINKSTATES.CPTL_DISABLED"]/*' />
     CPTL_DISABLED = 4,
+
+    /// <include file='TASKLINKSTATES.xml' path='doc/member[@name="TASKLINKSTATES.CPTL_PAGE"]/*' />
     CPTL_PAGE = 5,
 }

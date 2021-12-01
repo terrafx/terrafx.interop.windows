@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PackageDependencyLifetimeKind">
+    <summary>
+      <para>Specifies values that indicate the type of artifact that is used to define the lifetime of a package dependency.</para>
+    </summary>
+    <seealso cref="TryCreatePackageDependency" />
+  </member>
+  <member name="PackageDependencyLifetimeKind.PackageDependencyLifetimeKind_Process">
+    <summary>
+      <para>The current process is the lifetime artifact. The package dependency is implicitly deleted when the process terminates.</para>
+    </summary>
+  </member>
+  <member name="PackageDependencyLifetimeKind.PackageDependencyLifetimeKind_FilePath">
+    <summary>
+      <para>The lifetime artifact is an absolute filename or path. The package dependency is implicitly deleted when this is deleted.</para>
+    </summary>
+  </member>
+  <member name="PackageDependencyLifetimeKind.PackageDependencyLifetimeKind_RegistryKey">
+    <summary>
+      <para>The lifetime artifact is a registry key in the format <i>root</i>\<i>subkey</i>, where <i>root</i> is one of the following: HKEY_LOCAL_MACHINE, HKEY_CURRENT_USER, HKEY_CLASSES_ROOT, or HKEY_USERS. The package dependency is implicitly deleted when this is deleted.</para>
+    </summary>
+  </member>
+</doc>

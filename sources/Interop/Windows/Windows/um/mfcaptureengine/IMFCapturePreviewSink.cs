@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFCapturePreviewSink.xml' path='doc/member[@name="IMFCapturePreviewSink"]/*' />
 [Guid("77346CFD-5B49-4D73-ACE0-5B52A859F2E0")]
 [NativeTypeName("struct IMFCapturePreviewSink : IMFCaptureSink")]
 [NativeInheritance("IMFCaptureSink")]
@@ -18,6 +19,7 @@ public unsafe partial struct IMFCapturePreviewSink : IMFCapturePreviewSink.Inter
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IMFCapturePreviewSink : IMFCapturePreviewSink.Inter
         return ((delegate* unmanaged<IMFCapturePreviewSink*, Guid*, void**, int>)(lpVtbl[0]))((IMFCapturePreviewSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IMFCapturePreviewSink : IMFCapturePreviewSink.Inter
         return ((delegate* unmanaged<IMFCapturePreviewSink*, uint>)(lpVtbl[1]))((IMFCapturePreviewSink*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IMFCapturePreviewSink : IMFCapturePreviewSink.Inter
         return ((delegate* unmanaged<IMFCapturePreviewSink*, uint>)(lpVtbl[2]))((IMFCapturePreviewSink*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IMFCaptureSink.GetOutputMediaType" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetOutputMediaType([NativeTypeName("DWORD")] uint dwSinkStreamIndex, IMFMediaType** ppMediaType)
@@ -48,6 +53,7 @@ public unsafe partial struct IMFCapturePreviewSink : IMFCapturePreviewSink.Inter
         return ((delegate* unmanaged<IMFCapturePreviewSink*, uint, IMFMediaType**, int>)(lpVtbl[3]))((IMFCapturePreviewSink*)Unsafe.AsPointer(ref this), dwSinkStreamIndex, ppMediaType);
     }
 
+    /// <inheritdoc cref="IMFCaptureSink.GetService" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetService([NativeTypeName("DWORD")] uint dwSinkStreamIndex, [NativeTypeName("const GUID &")] Guid* rguidService, [NativeTypeName("const IID &")] Guid* riid, IUnknown** ppUnknown)
@@ -55,6 +61,7 @@ public unsafe partial struct IMFCapturePreviewSink : IMFCapturePreviewSink.Inter
         return ((delegate* unmanaged<IMFCapturePreviewSink*, uint, Guid*, Guid*, IUnknown**, int>)(lpVtbl[4]))((IMFCapturePreviewSink*)Unsafe.AsPointer(ref this), dwSinkStreamIndex, rguidService, riid, ppUnknown);
     }
 
+    /// <inheritdoc cref="IMFCaptureSink.AddStream" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT AddStream([NativeTypeName("DWORD")] uint dwSourceStreamIndex, IMFMediaType* pMediaType, IMFAttributes* pAttributes, [NativeTypeName("DWORD *")] uint* pdwSinkStreamIndex)
@@ -62,6 +69,7 @@ public unsafe partial struct IMFCapturePreviewSink : IMFCapturePreviewSink.Inter
         return ((delegate* unmanaged<IMFCapturePreviewSink*, uint, IMFMediaType*, IMFAttributes*, uint*, int>)(lpVtbl[5]))((IMFCapturePreviewSink*)Unsafe.AsPointer(ref this), dwSourceStreamIndex, pMediaType, pAttributes, pdwSinkStreamIndex);
     }
 
+    /// <inheritdoc cref="IMFCaptureSink.Prepare" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Prepare()
@@ -69,6 +77,7 @@ public unsafe partial struct IMFCapturePreviewSink : IMFCapturePreviewSink.Inter
         return ((delegate* unmanaged<IMFCapturePreviewSink*, int>)(lpVtbl[6]))((IMFCapturePreviewSink*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IMFCaptureSink.RemoveAllStreams" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT RemoveAllStreams()
@@ -76,6 +85,7 @@ public unsafe partial struct IMFCapturePreviewSink : IMFCapturePreviewSink.Inter
         return ((delegate* unmanaged<IMFCapturePreviewSink*, int>)(lpVtbl[7]))((IMFCapturePreviewSink*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFCapturePreviewSink.xml' path='doc/member[@name="IMFCapturePreviewSink.SetRenderHandle"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT SetRenderHandle(HANDLE handle)
@@ -83,6 +93,7 @@ public unsafe partial struct IMFCapturePreviewSink : IMFCapturePreviewSink.Inter
         return ((delegate* unmanaged<IMFCapturePreviewSink*, HANDLE, int>)(lpVtbl[8]))((IMFCapturePreviewSink*)Unsafe.AsPointer(ref this), handle);
     }
 
+    /// <include file='IMFCapturePreviewSink.xml' path='doc/member[@name="IMFCapturePreviewSink.SetRenderSurface"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT SetRenderSurface(IUnknown* pSurface)
@@ -90,6 +101,7 @@ public unsafe partial struct IMFCapturePreviewSink : IMFCapturePreviewSink.Inter
         return ((delegate* unmanaged<IMFCapturePreviewSink*, IUnknown*, int>)(lpVtbl[9]))((IMFCapturePreviewSink*)Unsafe.AsPointer(ref this), pSurface);
     }
 
+    /// <include file='IMFCapturePreviewSink.xml' path='doc/member[@name="IMFCapturePreviewSink.UpdateVideo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT UpdateVideo([NativeTypeName("const MFVideoNormalizedRect *")] MFVideoNormalizedRect* pSrc, [NativeTypeName("const RECT *")] RECT* pDst, [NativeTypeName("const COLORREF *")] COLORREF* pBorderClr)
@@ -97,6 +109,7 @@ public unsafe partial struct IMFCapturePreviewSink : IMFCapturePreviewSink.Inter
         return ((delegate* unmanaged<IMFCapturePreviewSink*, MFVideoNormalizedRect*, RECT*, COLORREF*, int>)(lpVtbl[10]))((IMFCapturePreviewSink*)Unsafe.AsPointer(ref this), pSrc, pDst, pBorderClr);
     }
 
+    /// <include file='IMFCapturePreviewSink.xml' path='doc/member[@name="IMFCapturePreviewSink.SetSampleCallback"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT SetSampleCallback([NativeTypeName("DWORD")] uint dwStreamSinkIndex, IMFCaptureEngineOnSampleCallback* pCallback)
@@ -104,6 +117,7 @@ public unsafe partial struct IMFCapturePreviewSink : IMFCapturePreviewSink.Inter
         return ((delegate* unmanaged<IMFCapturePreviewSink*, uint, IMFCaptureEngineOnSampleCallback*, int>)(lpVtbl[11]))((IMFCapturePreviewSink*)Unsafe.AsPointer(ref this), dwStreamSinkIndex, pCallback);
     }
 
+    /// <include file='IMFCapturePreviewSink.xml' path='doc/member[@name="IMFCapturePreviewSink.GetMirrorState"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT GetMirrorState(BOOL* pfMirrorState)
@@ -111,6 +125,7 @@ public unsafe partial struct IMFCapturePreviewSink : IMFCapturePreviewSink.Inter
         return ((delegate* unmanaged<IMFCapturePreviewSink*, BOOL*, int>)(lpVtbl[12]))((IMFCapturePreviewSink*)Unsafe.AsPointer(ref this), pfMirrorState);
     }
 
+    /// <include file='IMFCapturePreviewSink.xml' path='doc/member[@name="IMFCapturePreviewSink.SetMirrorState"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT SetMirrorState(BOOL fMirrorState)
@@ -118,6 +133,7 @@ public unsafe partial struct IMFCapturePreviewSink : IMFCapturePreviewSink.Inter
         return ((delegate* unmanaged<IMFCapturePreviewSink*, BOOL, int>)(lpVtbl[13]))((IMFCapturePreviewSink*)Unsafe.AsPointer(ref this), fMirrorState);
     }
 
+    /// <include file='IMFCapturePreviewSink.xml' path='doc/member[@name="IMFCapturePreviewSink.GetRotation"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT GetRotation([NativeTypeName("DWORD")] uint dwStreamIndex, [NativeTypeName("DWORD *")] uint* pdwRotationValue)
@@ -125,6 +141,7 @@ public unsafe partial struct IMFCapturePreviewSink : IMFCapturePreviewSink.Inter
         return ((delegate* unmanaged<IMFCapturePreviewSink*, uint, uint*, int>)(lpVtbl[14]))((IMFCapturePreviewSink*)Unsafe.AsPointer(ref this), dwStreamIndex, pdwRotationValue);
     }
 
+    /// <include file='IMFCapturePreviewSink.xml' path='doc/member[@name="IMFCapturePreviewSink.SetRotation"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT SetRotation([NativeTypeName("DWORD")] uint dwStreamIndex, [NativeTypeName("DWORD")] uint dwRotationValue)
@@ -132,6 +149,7 @@ public unsafe partial struct IMFCapturePreviewSink : IMFCapturePreviewSink.Inter
         return ((delegate* unmanaged<IMFCapturePreviewSink*, uint, uint, int>)(lpVtbl[15]))((IMFCapturePreviewSink*)Unsafe.AsPointer(ref this), dwStreamIndex, dwRotationValue);
     }
 
+    /// <include file='IMFCapturePreviewSink.xml' path='doc/member[@name="IMFCapturePreviewSink.SetCustomSink"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT SetCustomSink(IMFMediaSink* pMediaSink)

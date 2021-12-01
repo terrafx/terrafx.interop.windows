@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CLUSTER_RANGE.xml' path='doc/member[@name="CLUSTER_RANGE"]/*' />
 public partial struct CLUSTER_RANGE
 {
+    /// <include file='CLUSTER_RANGE.xml' path='doc/member[@name="CLUSTER_RANGE.StartingCluster"]/*' />
     public LARGE_INTEGER StartingCluster;
 
+    /// <include file='CLUSTER_RANGE.xml' path='doc/member[@name="CLUSTER_RANGE.ClusterCount"]/*' />
     public LARGE_INTEGER ClusterCount;
 }

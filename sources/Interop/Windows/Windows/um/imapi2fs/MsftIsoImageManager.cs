@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MsftIsoImageManager.xml' path='doc/member[@name="MsftIsoImageManager"]/*' />
 [Guid("CEEE3B62-8F56-4056-869B-EF16917E3EFC")]
 public partial struct MsftIsoImageManager
 {

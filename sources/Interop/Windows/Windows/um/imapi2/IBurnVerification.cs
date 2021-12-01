@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IBurnVerification.xml' path='doc/member[@name="IBurnVerification"]/*' />
 [Guid("D2FFD834-958B-426D-8470-2A13879C6A91")]
 [NativeTypeName("struct IBurnVerification : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IBurnVerification : IBurnVerification.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IBurnVerification : IBurnVerification.Interface
         return ((delegate* unmanaged<IBurnVerification*, Guid*, void**, int>)(lpVtbl[0]))((IBurnVerification*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IBurnVerification : IBurnVerification.Interface
         return ((delegate* unmanaged<IBurnVerification*, uint>)(lpVtbl[1]))((IBurnVerification*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IBurnVerification : IBurnVerification.Interface
         return ((delegate* unmanaged<IBurnVerification*, uint>)(lpVtbl[2]))((IBurnVerification*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IBurnVerification.xml' path='doc/member[@name="IBurnVerification.put_BurnVerificationLevel"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT put_BurnVerificationLevel(IMAPI_BURN_VERIFICATION_LEVEL value)
@@ -46,6 +51,7 @@ public unsafe partial struct IBurnVerification : IBurnVerification.Interface
         return ((delegate* unmanaged<IBurnVerification*, IMAPI_BURN_VERIFICATION_LEVEL, int>)(lpVtbl[3]))((IBurnVerification*)Unsafe.AsPointer(ref this), value);
     }
 
+    /// <include file='IBurnVerification.xml' path='doc/member[@name="IBurnVerification.get_BurnVerificationLevel"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT get_BurnVerificationLevel(IMAPI_BURN_VERIFICATION_LEVEL* value)

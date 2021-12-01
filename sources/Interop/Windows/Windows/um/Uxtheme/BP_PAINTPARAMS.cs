@@ -5,17 +5,22 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='BP_PAINTPARAMS.xml' path='doc/member[@name="BP_PAINTPARAMS"]/*' />
 public unsafe partial struct BP_PAINTPARAMS
 {
+    /// <include file='BP_PAINTPARAMS.xml' path='doc/member[@name="BP_PAINTPARAMS.cbSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbSize;
 
+    /// <include file='BP_PAINTPARAMS.xml' path='doc/member[@name="BP_PAINTPARAMS.dwFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFlags;
 
+    /// <include file='BP_PAINTPARAMS.xml' path='doc/member[@name="BP_PAINTPARAMS.prcExclude"]/*' />
     [NativeTypeName("const RECT *")]
     public RECT* prcExclude;
 
+    /// <include file='BP_PAINTPARAMS.xml' path='doc/member[@name="BP_PAINTPARAMS.pBlendFunction"]/*' />
     [NativeTypeName("const BLENDFUNCTION *")]
     public BLENDFUNCTION* pBlendFunction;
 }

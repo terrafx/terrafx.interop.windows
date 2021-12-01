@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TLS_EXTENSION_SUBSCRIPTION.xml' path='doc/member[@name="TLS_EXTENSION_SUBSCRIPTION"]/*' />
 public partial struct TLS_EXTENSION_SUBSCRIPTION
 {
+    /// <include file='TLS_EXTENSION_SUBSCRIPTION.xml' path='doc/member[@name="TLS_EXTENSION_SUBSCRIPTION.ExtensionType"]/*' />
     [NativeTypeName("WORD")]
     public ushort ExtensionType;
 
+    /// <include file='TLS_EXTENSION_SUBSCRIPTION.xml' path='doc/member[@name="TLS_EXTENSION_SUBSCRIPTION.HandshakeType"]/*' />
     [NativeTypeName("WORD")]
     public ushort HandshakeType;
 }

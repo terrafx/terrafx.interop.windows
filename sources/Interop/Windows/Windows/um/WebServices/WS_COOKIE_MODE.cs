@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_COOKIE_MODE.xml' path='doc/member[@name="WS_COOKIE_MODE"]/*' />
 public enum WS_COOKIE_MODE
 {
+    /// <include file='WS_COOKIE_MODE.xml' path='doc/member[@name="WS_COOKIE_MODE.WS_MANUAL_COOKIE_MODE"]/*' />
     WS_MANUAL_COOKIE_MODE = 1,
+
+    /// <include file='WS_COOKIE_MODE.xml' path='doc/member[@name="WS_COOKIE_MODE.WS_AUTO_COOKIE_MODE"]/*' />
     WS_AUTO_COOKIE_MODE = 2,
 }

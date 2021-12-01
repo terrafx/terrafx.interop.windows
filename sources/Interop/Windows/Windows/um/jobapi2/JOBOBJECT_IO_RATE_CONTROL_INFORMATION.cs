@@ -7,24 +7,31 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='JOBOBJECT_IO_RATE_CONTROL_INFORMATION.xml' path='doc/member[@name="JOBOBJECT_IO_RATE_CONTROL_INFORMATION"]/*' />
 [SupportedOSPlatform("windows10.0")]
 public unsafe partial struct JOBOBJECT_IO_RATE_CONTROL_INFORMATION
 {
+    /// <include file='JOBOBJECT_IO_RATE_CONTROL_INFORMATION.xml' path='doc/member[@name="JOBOBJECT_IO_RATE_CONTROL_INFORMATION.MaxIops"]/*' />
     [NativeTypeName("LONG64")]
     public long MaxIops;
 
+    /// <include file='JOBOBJECT_IO_RATE_CONTROL_INFORMATION.xml' path='doc/member[@name="JOBOBJECT_IO_RATE_CONTROL_INFORMATION.MaxBandwidth"]/*' />
     [NativeTypeName("LONG64")]
     public long MaxBandwidth;
 
+    /// <include file='JOBOBJECT_IO_RATE_CONTROL_INFORMATION.xml' path='doc/member[@name="JOBOBJECT_IO_RATE_CONTROL_INFORMATION.ReservationIops"]/*' />
     [NativeTypeName("LONG64")]
     public long ReservationIops;
 
+    /// <include file='JOBOBJECT_IO_RATE_CONTROL_INFORMATION.xml' path='doc/member[@name="JOBOBJECT_IO_RATE_CONTROL_INFORMATION.VolumeName"]/*' />
     [NativeTypeName("PCWSTR")]
     public ushort* VolumeName;
 
+    /// <include file='JOBOBJECT_IO_RATE_CONTROL_INFORMATION.xml' path='doc/member[@name="JOBOBJECT_IO_RATE_CONTROL_INFORMATION.BaseIoSize"]/*' />
     [NativeTypeName("ULONG")]
     public uint BaseIoSize;
 
+    /// <include file='JOBOBJECT_IO_RATE_CONTROL_INFORMATION.xml' path='doc/member[@name="JOBOBJECT_IO_RATE_CONTROL_INFORMATION.ControlFlags"]/*' />
     [NativeTypeName("ULONG")]
     public uint ControlFlags;
 }

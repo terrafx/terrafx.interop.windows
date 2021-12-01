@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVEncVideoForceKeyFrame.xml' path='doc/member[@name="CODECAPI_AVEncVideoForceKeyFrame"]/*' />
 [Guid("398C1B98-8353-475A-9EF2-8F265D260345")]
 public partial struct CODECAPI_AVEncVideoForceKeyFrame
 {

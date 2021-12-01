@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CERT_SIGNED_CONTENT_INFO">
+    <summary>
+      <para>The <b>CERT_SIGNED_CONTENT_INFO</b> structure contains encoded content to be signed and a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/b-gly">BLOB</a> to hold the signature. The <b>ToBeSigned</b> member is an encoded
+<see cref="CERT_INFO" />,
+<see cref="CRL_INFO" />,
+<see cref="CTL_INFO" /> or
+<see cref="CERT_REQUEST_INFO" />.</para>
+    </summary>
+    <seealso cref="CRYPT_ALGORITHM_IDENTIFIER" />
+    <seealso cref="CRYPT_BIT_BLOB" />
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_INTEGER_BLOB</seealso>
+  </member>
+  <member name="CERT_SIGNED_CONTENT_INFO.ToBeSigned">
+    <summary>
+      <para>A BLOB that has been encoded by using <a href="https://docs.microsoft.com//windows/desktop/SecGloss/d-gly">Distinguished Encoding Rules</a> (DER) and that is to be signed.</para>
+    </summary>
+  </member>
+  <member name="CERT_SIGNED_CONTENT_INFO.SignatureAlgorithm">
+    <summary>
+      <para>A
+<see cref="CRYPT_ALGORITHM_IDENTIFIER" /> structure that contains the signature algorithm type and any associated additional parameters.</para>
+    </summary>
+  </member>
+  <member name="CERT_SIGNED_CONTENT_INFO.Signature">
+    <summary>
+      <para>BLOB containing a signed <a href="https://docs.microsoft.com//windows/desktop/SecGloss/h-gly">hash</a> of the encoded data.</para>
+    </summary>
+  </member>
+</doc>

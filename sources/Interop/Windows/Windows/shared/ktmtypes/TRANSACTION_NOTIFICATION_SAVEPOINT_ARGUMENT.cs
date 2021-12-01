@@ -5,8 +5,10 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TRANSACTION_NOTIFICATION_SAVEPOINT_ARGUMENT.xml' path='doc/member[@name="TRANSACTION_NOTIFICATION_SAVEPOINT_ARGUMENT"]/*' />
 public partial struct TRANSACTION_NOTIFICATION_SAVEPOINT_ARGUMENT
 {
+    /// <include file='TRANSACTION_NOTIFICATION_SAVEPOINT_ARGUMENT.xml' path='doc/member[@name="TRANSACTION_NOTIFICATION_SAVEPOINT_ARGUMENT.SavepointId"]/*' />
     [NativeTypeName("SAVEPOINT_ID")]
     public uint SavepointId;
 }

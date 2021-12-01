@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IKsFormatSupport.xml' path='doc/member[@name="IKsFormatSupport"]/*' />
 [Guid("3CB4A69D-BB6F-4D2B-95B7-452D2C155DB5")]
 [NativeTypeName("struct IKsFormatSupport : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IKsFormatSupport : IKsFormatSupport.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IKsFormatSupport : IKsFormatSupport.Interface
         return ((delegate* unmanaged<IKsFormatSupport*, Guid*, void**, int>)(lpVtbl[0]))((IKsFormatSupport*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IKsFormatSupport : IKsFormatSupport.Interface
         return ((delegate* unmanaged<IKsFormatSupport*, uint>)(lpVtbl[1]))((IKsFormatSupport*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IKsFormatSupport : IKsFormatSupport.Interface
         return ((delegate* unmanaged<IKsFormatSupport*, uint>)(lpVtbl[2]))((IKsFormatSupport*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IKsFormatSupport.xml' path='doc/member[@name="IKsFormatSupport.IsFormatSupported"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT IsFormatSupported([NativeTypeName("PKSDATAFORMAT")] KSDATAFORMAT* pKsFormat, [NativeTypeName("DWORD")] uint cbFormat, BOOL* pbSupported)
@@ -46,6 +51,7 @@ public unsafe partial struct IKsFormatSupport : IKsFormatSupport.Interface
         return ((delegate* unmanaged<IKsFormatSupport*, KSDATAFORMAT*, uint, BOOL*, int>)(lpVtbl[3]))((IKsFormatSupport*)Unsafe.AsPointer(ref this), pKsFormat, cbFormat, pbSupported);
     }
 
+    /// <include file='IKsFormatSupport.xml' path='doc/member[@name="IKsFormatSupport.GetDevicePreferredFormat"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetDevicePreferredFormat([NativeTypeName("PKSDATAFORMAT *")] KSDATAFORMAT** ppKsFormat)

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IPropertyKeyStore.xml' path='doc/member[@name="IPropertyKeyStore"]/*' />
 [Guid("75BD59AA-F23B-4963-ABA4-0B355752A91B")]
 [NativeTypeName("struct IPropertyKeyStore : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IPropertyKeyStore : IPropertyKeyStore.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IPropertyKeyStore : IPropertyKeyStore.Interface
         return ((delegate* unmanaged<IPropertyKeyStore*, Guid*, void**, int>)(lpVtbl[0]))((IPropertyKeyStore*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IPropertyKeyStore : IPropertyKeyStore.Interface
         return ((delegate* unmanaged<IPropertyKeyStore*, uint>)(lpVtbl[1]))((IPropertyKeyStore*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IPropertyKeyStore : IPropertyKeyStore.Interface
         return ((delegate* unmanaged<IPropertyKeyStore*, uint>)(lpVtbl[2]))((IPropertyKeyStore*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IPropertyKeyStore.xml' path='doc/member[@name="IPropertyKeyStore.GetKeyCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetKeyCount(int* keyCount)
@@ -46,6 +51,7 @@ public unsafe partial struct IPropertyKeyStore : IPropertyKeyStore.Interface
         return ((delegate* unmanaged<IPropertyKeyStore*, int*, int>)(lpVtbl[3]))((IPropertyKeyStore*)Unsafe.AsPointer(ref this), keyCount);
     }
 
+    /// <include file='IPropertyKeyStore.xml' path='doc/member[@name="IPropertyKeyStore.GetKeyAt"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetKeyAt(int index, PROPERTYKEY* pkey)
@@ -53,6 +59,7 @@ public unsafe partial struct IPropertyKeyStore : IPropertyKeyStore.Interface
         return ((delegate* unmanaged<IPropertyKeyStore*, int, PROPERTYKEY*, int>)(lpVtbl[4]))((IPropertyKeyStore*)Unsafe.AsPointer(ref this), index, pkey);
     }
 
+    /// <include file='IPropertyKeyStore.xml' path='doc/member[@name="IPropertyKeyStore.AppendKey"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT AppendKey([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key)
@@ -60,6 +67,7 @@ public unsafe partial struct IPropertyKeyStore : IPropertyKeyStore.Interface
         return ((delegate* unmanaged<IPropertyKeyStore*, PROPERTYKEY*, int>)(lpVtbl[5]))((IPropertyKeyStore*)Unsafe.AsPointer(ref this), key);
     }
 
+    /// <include file='IPropertyKeyStore.xml' path='doc/member[@name="IPropertyKeyStore.DeleteKey"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT DeleteKey(int index)
@@ -67,6 +75,7 @@ public unsafe partial struct IPropertyKeyStore : IPropertyKeyStore.Interface
         return ((delegate* unmanaged<IPropertyKeyStore*, int, int>)(lpVtbl[6]))((IPropertyKeyStore*)Unsafe.AsPointer(ref this), index);
     }
 
+    /// <include file='IPropertyKeyStore.xml' path='doc/member[@name="IPropertyKeyStore.IsKeyInStore"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT IsKeyInStore([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key)
@@ -74,6 +83,7 @@ public unsafe partial struct IPropertyKeyStore : IPropertyKeyStore.Interface
         return ((delegate* unmanaged<IPropertyKeyStore*, PROPERTYKEY*, int>)(lpVtbl[7]))((IPropertyKeyStore*)Unsafe.AsPointer(ref this), key);
     }
 
+    /// <include file='IPropertyKeyStore.xml' path='doc/member[@name="IPropertyKeyStore.RemoveKey"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT RemoveKey([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key)

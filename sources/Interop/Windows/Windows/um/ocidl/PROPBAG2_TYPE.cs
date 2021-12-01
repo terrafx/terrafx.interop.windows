@@ -5,13 +5,27 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PROPBAG2_TYPE.xml' path='doc/member[@name="PROPBAG2_TYPE"]/*' />
 public enum PROPBAG2_TYPE
 {
+    /// <include file='PROPBAG2_TYPE.xml' path='doc/member[@name="PROPBAG2_TYPE.PROPBAG2_TYPE_UNDEFINED"]/*' />
     PROPBAG2_TYPE_UNDEFINED = 0,
+
+    /// <include file='PROPBAG2_TYPE.xml' path='doc/member[@name="PROPBAG2_TYPE.PROPBAG2_TYPE_DATA"]/*' />
     PROPBAG2_TYPE_DATA = 1,
+
+    /// <include file='PROPBAG2_TYPE.xml' path='doc/member[@name="PROPBAG2_TYPE.PROPBAG2_TYPE_URL"]/*' />
     PROPBAG2_TYPE_URL = 2,
+
+    /// <include file='PROPBAG2_TYPE.xml' path='doc/member[@name="PROPBAG2_TYPE.PROPBAG2_TYPE_OBJECT"]/*' />
     PROPBAG2_TYPE_OBJECT = 3,
+
+    /// <include file='PROPBAG2_TYPE.xml' path='doc/member[@name="PROPBAG2_TYPE.PROPBAG2_TYPE_STREAM"]/*' />
     PROPBAG2_TYPE_STREAM = 4,
+
+    /// <include file='PROPBAG2_TYPE.xml' path='doc/member[@name="PROPBAG2_TYPE.PROPBAG2_TYPE_STORAGE"]/*' />
     PROPBAG2_TYPE_STORAGE = 5,
+
+    /// <include file='PROPBAG2_TYPE.xml' path='doc/member[@name="PROPBAG2_TYPE.PROPBAG2_TYPE_MONIKER"]/*' />
     PROPBAG2_TYPE_MONIKER = 6,
 }

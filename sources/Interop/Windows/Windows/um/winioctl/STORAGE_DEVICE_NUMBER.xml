@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="STORAGE_DEVICE_NUMBER">
+    <summary>
+      <para>Contains information about a device. This structure is used by the <a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_get_device_number">IOCTL_STORAGE_GET_DEVICE_NUMBER</a> control code.</para>
+    </summary>
+    <remarks>
+      <para>The values in the <b>STORAGE_DEVICE_NUMBER</b> structure are guaranteed to remain unchanged until the device is removed or the system is restarted. They are not guaranteed to be persistent across device or system restarts.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_get_device_number">IOCTL_STORAGE_GET_DEVICE_NUMBER</seealso>
+  </member>
+  <member name="STORAGE_DEVICE_NUMBER.DeviceType">
+    <summary>
+      <para>The type of device. Values from 0 through 32,767 are reserved for use by Microsoft. Values from 32,768 through 65,535 are reserved for use by other vendors. The following values are defined by Microsoft:</para>
+      <para></para>
+      <h4>FILE_DEVICE_8042_PORT</h4>
+      <para></para>
+      <h4>FILE_DEVICE_ACPI</h4>
+      <para></para>
+      <h4>FILE_DEVICE_BATTERY</h4>
+      <para></para>
+      <h4>FILE_DEVICE_BEEP</h4>
+      <para></para>
+      <h4>FILE_DEVICE_BLUETOOTH</h4>
+      <para></para>
+      <h4>FILE_DEVICE_BUS_EXTENDER</h4>
+      <para></para>
+      <h4>FILE_DEVICE_CD_ROM</h4>
+      <para></para>
+      <h4>FILE_DEVICE_CD_ROM_FILE_SYSTEM</h4>
+      <para></para>
+      <h4>FILE_DEVICE_CHANGER</h4>
+      <para></para>
+      <h4>FILE_DEVICE_CONTROLLER</h4>
+      <para></para>
+      <h4>FILE_DEVICE_CRYPT_PROVIDER</h4>
+      <para></para>
+      <h4>FILE_DEVICE_DATALINK</h4>
+      <para></para>
+      <h4>FILE_DEVICE_DFS</h4>
+      <para></para>
+      <h4>FILE_DEVICE_DFS_FILE_SYSTEM</h4>
+      <para></para>
+      <h4>FILE_DEVICE_DFS_VOLUME</h4>
+      <para></para>
+      <h4>FILE_DEVICE_DISK</h4>
+      <para></para>
+      <h4>FILE_DEVICE_DISK_FILE_SYSTEM</h4>
+      <para></para>
+      <h4>FILE_DEVICE_DVD</h4>
+      <para></para>
+      <h4>FILE_DEVICE_FILE_SYSTEM</h4>
+      <para></para>
+      <h4>FILE_DEVICE_FIPS</h4>
+      <para></para>
+      <h4>FILE_DEVICE_FULLSCREEN_VIDEO</h4>
+      <para></para>
+      <h4>FILE_DEVICE_INFINIBAND</h4>
+      <para></para>
+      <h4>FILE_DEVICE_INPORT_PORT</h4>
+      <para></para>
+      <h4>FILE_DEVICE_KEYBOARD</h4>
+      <para></para>
+      <h4>FILE_DEVICE_KS</h4>
+      <para></para>
+      <h4>FILE_DEVICE_KSEC</h4>
+      <para></para>
+      <h4>FILE_DEVICE_MAILSLOT</h4>
+      <para></para>
+      <h4>FILE_DEVICE_MASS_STORAGE</h4>
+      <para></para>
+      <h4>FILE_DEVICE_MIDI_IN</h4>
+      <para></para>
+      <h4>FILE_DEVICE_MIDI_OUT</h4>
+      <para></para>
+      <h4>FILE_DEVICE_MODEM</h4>
+      <para></para>
+      <h4>FILE_DEVICE_MOUSE</h4>
+      <para></para>
+      <h4>FILE_DEVICE_MULTI_UNC_PROVIDER</h4>
+      <para></para>
+      <h4>FILE_DEVICE_NAMED_PIPE</h4>
+      <para></para>
+      <h4>FILE_DEVICE_NETWORK</h4>
+      <para></para>
+      <h4>FILE_DEVICE_NETWORK_BROWSER</h4>
+      <para></para>
+      <h4>FILE_DEVICE_NETWORK_FILE_SYSTEM</h4>
+      <para></para>
+      <h4>FILE_DEVICE_NETWORK_REDIRECTOR</h4>
+      <para></para>
+      <h4>FILE_DEVICE_NULL</h4>
+      <para></para>
+      <h4>FILE_DEVICE_PARALLEL_PORT</h4>
+      <para></para>
+      <h4>FILE_DEVICE_PHYSICAL_NETCARD</h4>
+      <para></para>
+      <h4>FILE_DEVICE_PRINTER</h4>
+      <para></para>
+      <h4>FILE_DEVICE_SCANNER</h4>
+      <para></para>
+      <h4>FILE_DEVICE_SCREEN</h4>
+      <para></para>
+      <h4>FILE_DEVICE_SERENUM</h4>
+      <para></para>
+      <h4>FILE_DEVICE_SERIAL_MOUSE_PORT</h4>
+      <para></para>
+      <h4>FILE_DEVICE_SERIAL_PORT</h4>
+      <para></para>
+      <h4>FILE_DEVICE_SMARTCARD</h4>
+      <para></para>
+      <h4>FILE_DEVICE_SMB</h4>
+      <para></para>
+      <h4>FILE_DEVICE_SOUND</h4>
+      <para></para>
+      <h4>FILE_DEVICE_STREAMS</h4>
+      <para></para>
+      <h4>FILE_DEVICE_TAPE</h4>
+      <para></para>
+      <h4>FILE_DEVICE_TAPE_FILE_SYSTEM</h4>
+      <para></para>
+      <h4>FILE_DEVICE_TERMSRV</h4>
+      <para></para>
+      <h4>FILE_DEVICE_TRANSPORT</h4>
+      <para></para>
+      <h4>FILE_DEVICE_UNKNOWN</h4>
+      <para></para>
+      <h4>FILE_DEVICE_VDM</h4>
+      <para></para>
+      <h4>FILE_DEVICE_VIDEO</h4>
+      <para></para>
+      <h4>FILE_DEVICE_VIRTUAL_DISK</h4>
+      <para></para>
+      <h4>FILE_DEVICE_VMBUS</h4>
+      <para></para>
+      <h4>FILE_DEVICE_WAVE_IN</h4>
+      <para></para>
+      <h4>FILE_DEVICE_WAVE_OUT</h4>
+      <para></para>
+      <h4>FILE_DEVICE_WPD</h4>
+    </summary>
+  </member>
+  <member name="STORAGE_DEVICE_NUMBER.DeviceNumber">
+    <summary>
+      <para>The number of this device.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_DEVICE_NUMBER.PartitionNumber">
+    <summary>
+      <para>The partition number of the device, if the device can be partitioned. Otherwise, this member is –1.</para>
+    </summary>
+  </member>
+</doc>

@@ -5,17 +5,22 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='FSCTL_OFFLOAD_READ_OUTPUT.xml' path='doc/member[@name="FSCTL_OFFLOAD_READ_OUTPUT"]/*' />
 public unsafe partial struct FSCTL_OFFLOAD_READ_OUTPUT
 {
+    /// <include file='FSCTL_OFFLOAD_READ_OUTPUT.xml' path='doc/member[@name="FSCTL_OFFLOAD_READ_OUTPUT.Size"]/*' />
     [NativeTypeName("DWORD")]
     public uint Size;
 
+    /// <include file='FSCTL_OFFLOAD_READ_OUTPUT.xml' path='doc/member[@name="FSCTL_OFFLOAD_READ_OUTPUT.Flags"]/*' />
     [NativeTypeName("DWORD")]
     public uint Flags;
 
+    /// <include file='FSCTL_OFFLOAD_READ_OUTPUT.xml' path='doc/member[@name="FSCTL_OFFLOAD_READ_OUTPUT.TransferLength"]/*' />
     [NativeTypeName("DWORDLONG")]
     public ulong TransferLength;
 
+    /// <include file='FSCTL_OFFLOAD_READ_OUTPUT.xml' path='doc/member[@name="FSCTL_OFFLOAD_READ_OUTPUT.Token"]/*' />
     [NativeTypeName("BYTE [512]")]
     public fixed byte Token[512];
 }

@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='AM_AC3_ERROR_CONCEALMENT.xml' path='doc/member[@name="AM_AC3_ERROR_CONCEALMENT"]/*' />
 public partial struct AM_AC3_ERROR_CONCEALMENT
 {
+    /// <include file='AM_AC3_ERROR_CONCEALMENT.xml' path='doc/member[@name="AM_AC3_ERROR_CONCEALMENT.fRepeatPreviousBlock"]/*' />
     public BOOL fRepeatPreviousBlock;
 
+    /// <include file='AM_AC3_ERROR_CONCEALMENT.xml' path='doc/member[@name="AM_AC3_ERROR_CONCEALMENT.fErrorInCurrentBlock"]/*' />
     public BOOL fErrorInCurrentBlock;
 }

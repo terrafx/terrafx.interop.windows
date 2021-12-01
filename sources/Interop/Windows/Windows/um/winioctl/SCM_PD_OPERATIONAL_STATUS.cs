@@ -5,15 +5,33 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SCM_PD_OPERATIONAL_STATUS.xml' path='doc/member[@name="SCM_PD_OPERATIONAL_STATUS"]/*' />
 public enum SCM_PD_OPERATIONAL_STATUS
 {
+    /// <include file='SCM_PD_OPERATIONAL_STATUS.xml' path='doc/member[@name="SCM_PD_OPERATIONAL_STATUS.ScmPhysicalDeviceOpStatus_Unknown"]/*' />
     ScmPhysicalDeviceOpStatus_Unknown = 0,
+
+    /// <include file='SCM_PD_OPERATIONAL_STATUS.xml' path='doc/member[@name="SCM_PD_OPERATIONAL_STATUS.ScmPhysicalDeviceOpStatus_Ok"]/*' />
     ScmPhysicalDeviceOpStatus_Ok,
+
+    /// <include file='SCM_PD_OPERATIONAL_STATUS.xml' path='doc/member[@name="SCM_PD_OPERATIONAL_STATUS.ScmPhysicalDeviceOpStatus_PredictingFailure"]/*' />
     ScmPhysicalDeviceOpStatus_PredictingFailure,
+
+    /// <include file='SCM_PD_OPERATIONAL_STATUS.xml' path='doc/member[@name="SCM_PD_OPERATIONAL_STATUS.ScmPhysicalDeviceOpStatus_InService"]/*' />
     ScmPhysicalDeviceOpStatus_InService,
+
+    /// <include file='SCM_PD_OPERATIONAL_STATUS.xml' path='doc/member[@name="SCM_PD_OPERATIONAL_STATUS.ScmPhysicalDeviceOpStatus_HardwareError"]/*' />
     ScmPhysicalDeviceOpStatus_HardwareError,
+
+    /// <include file='SCM_PD_OPERATIONAL_STATUS.xml' path='doc/member[@name="SCM_PD_OPERATIONAL_STATUS.ScmPhysicalDeviceOpStatus_NotUsable"]/*' />
     ScmPhysicalDeviceOpStatus_NotUsable,
+
+    /// <include file='SCM_PD_OPERATIONAL_STATUS.xml' path='doc/member[@name="SCM_PD_OPERATIONAL_STATUS.ScmPhysicalDeviceOpStatus_TransientError"]/*' />
     ScmPhysicalDeviceOpStatus_TransientError,
+
+    /// <include file='SCM_PD_OPERATIONAL_STATUS.xml' path='doc/member[@name="SCM_PD_OPERATIONAL_STATUS.ScmPhysicalDeviceOpStatus_Missing"]/*' />
     ScmPhysicalDeviceOpStatus_Missing,
+
+    /// <include file='SCM_PD_OPERATIONAL_STATUS.xml' path='doc/member[@name="SCM_PD_OPERATIONAL_STATUS.ScmPhysicalDeviceOpStatus_Max"]/*' />
     ScmPhysicalDeviceOpStatus_Max,
 }

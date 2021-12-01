@@ -5,18 +5,24 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DISK_GEOMETRY.xml' path='doc/member[@name="DISK_GEOMETRY"]/*' />
 public partial struct DISK_GEOMETRY
 {
+    /// <include file='DISK_GEOMETRY.xml' path='doc/member[@name="DISK_GEOMETRY.Cylinders"]/*' />
     public LARGE_INTEGER Cylinders;
 
+    /// <include file='DISK_GEOMETRY.xml' path='doc/member[@name="DISK_GEOMETRY.MediaType"]/*' />
     public MEDIA_TYPE MediaType;
 
+    /// <include file='DISK_GEOMETRY.xml' path='doc/member[@name="DISK_GEOMETRY.TracksPerCylinder"]/*' />
     [NativeTypeName("DWORD")]
     public uint TracksPerCylinder;
 
+    /// <include file='DISK_GEOMETRY.xml' path='doc/member[@name="DISK_GEOMETRY.SectorsPerTrack"]/*' />
     [NativeTypeName("DWORD")]
     public uint SectorsPerTrack;
 
+    /// <include file='DISK_GEOMETRY.xml' path='doc/member[@name="DISK_GEOMETRY.BytesPerSector"]/*' />
     [NativeTypeName("DWORD")]
     public uint BytesPerSector;
 }

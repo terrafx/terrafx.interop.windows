@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='REMOTE_NAME_INFOA.xml' path='doc/member[@name="REMOTE_NAME_INFOA"]/*' />
 public unsafe partial struct REMOTE_NAME_INFOA
 {
+    /// <include file='REMOTE_NAME_INFOA.xml' path='doc/member[@name="REMOTE_NAME_INFOA.lpUniversalName"]/*' />
     [NativeTypeName("LPSTR")]
     public sbyte* lpUniversalName;
 
+    /// <include file='REMOTE_NAME_INFOA.xml' path='doc/member[@name="REMOTE_NAME_INFOA.lpConnectionName"]/*' />
     [NativeTypeName("LPSTR")]
     public sbyte* lpConnectionName;
 
+    /// <include file='REMOTE_NAME_INFOA.xml' path='doc/member[@name="REMOTE_NAME_INFOA.lpRemainingPath"]/*' />
     [NativeTypeName("LPSTR")]
     public sbyte* lpRemainingPath;
 }

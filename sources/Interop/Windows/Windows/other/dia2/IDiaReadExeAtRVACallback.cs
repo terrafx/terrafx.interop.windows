@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IDiaReadExeAtRVACallback.xml' path='doc/member[@name="IDiaReadExeAtRVACallback"]/*' />
 [Guid("8E3F80CA-7517-432A-BA07-285134AAEA8E")]
 [NativeTypeName("struct IDiaReadExeAtRVACallback : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IDiaReadExeAtRVACallback : IDiaReadExeAtRVACallback
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IDiaReadExeAtRVACallback : IDiaReadExeAtRVACallback
         return ((delegate* unmanaged<IDiaReadExeAtRVACallback*, Guid*, void**, int>)(lpVtbl[0]))((IDiaReadExeAtRVACallback*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IDiaReadExeAtRVACallback : IDiaReadExeAtRVACallback
         return ((delegate* unmanaged<IDiaReadExeAtRVACallback*, uint>)(lpVtbl[1]))((IDiaReadExeAtRVACallback*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IDiaReadExeAtRVACallback : IDiaReadExeAtRVACallback
         return ((delegate* unmanaged<IDiaReadExeAtRVACallback*, uint>)(lpVtbl[2]))((IDiaReadExeAtRVACallback*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDiaReadExeAtRVACallback.xml' path='doc/member[@name="IDiaReadExeAtRVACallback.ReadExecutableAtRVA"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT ReadExecutableAtRVA([NativeTypeName("DWORD")] uint relativeVirtualAddress, [NativeTypeName("DWORD")] uint cbData, [NativeTypeName("DWORD *")] uint* pcbData, byte* pbData)

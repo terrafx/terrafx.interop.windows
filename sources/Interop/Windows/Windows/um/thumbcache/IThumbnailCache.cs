@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IThumbnailCache.xml' path='doc/member[@name="IThumbnailCache"]/*' />
 [Guid("F676C15D-596A-4CE2-8234-33996F445DB1")]
 [NativeTypeName("struct IThumbnailCache : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IThumbnailCache : IThumbnailCache.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IThumbnailCache : IThumbnailCache.Interface
         return ((delegate* unmanaged<IThumbnailCache*, Guid*, void**, int>)(lpVtbl[0]))((IThumbnailCache*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IThumbnailCache : IThumbnailCache.Interface
         return ((delegate* unmanaged<IThumbnailCache*, uint>)(lpVtbl[1]))((IThumbnailCache*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IThumbnailCache : IThumbnailCache.Interface
         return ((delegate* unmanaged<IThumbnailCache*, uint>)(lpVtbl[2]))((IThumbnailCache*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IThumbnailCache.xml' path='doc/member[@name="IThumbnailCache.GetThumbnail"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetThumbnail(IShellItem* pShellItem, uint cxyRequestedThumbSize, WTS_FLAGS flags, ISharedBitmap** ppvThumb, WTS_CACHEFLAGS* pOutFlags, WTS_THUMBNAILID* pThumbnailID)
@@ -46,6 +51,7 @@ public unsafe partial struct IThumbnailCache : IThumbnailCache.Interface
         return ((delegate* unmanaged<IThumbnailCache*, IShellItem*, uint, WTS_FLAGS, ISharedBitmap**, WTS_CACHEFLAGS*, WTS_THUMBNAILID*, int>)(lpVtbl[3]))((IThumbnailCache*)Unsafe.AsPointer(ref this), pShellItem, cxyRequestedThumbSize, flags, ppvThumb, pOutFlags, pThumbnailID);
     }
 
+    /// <include file='IThumbnailCache.xml' path='doc/member[@name="IThumbnailCache.GetThumbnailByID"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetThumbnailByID(WTS_THUMBNAILID thumbnailID, uint cxyRequestedThumbSize, ISharedBitmap** ppvThumb, WTS_CACHEFLAGS* pOutFlags)

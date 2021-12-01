@@ -5,39 +5,54 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='LOGFONTW.xml' path='doc/member[@name="LOGFONTW"]/*' />
 public unsafe partial struct LOGFONTW
 {
+    /// <include file='LOGFONTW.xml' path='doc/member[@name="LOGFONTW.lfHeight"]/*' />
     [NativeTypeName("LONG")]
     public int lfHeight;
 
+    /// <include file='LOGFONTW.xml' path='doc/member[@name="LOGFONTW.lfWidth"]/*' />
     [NativeTypeName("LONG")]
     public int lfWidth;
 
+    /// <include file='LOGFONTW.xml' path='doc/member[@name="LOGFONTW.lfEscapement"]/*' />
     [NativeTypeName("LONG")]
     public int lfEscapement;
 
+    /// <include file='LOGFONTW.xml' path='doc/member[@name="LOGFONTW.lfOrientation"]/*' />
     [NativeTypeName("LONG")]
     public int lfOrientation;
 
+    /// <include file='LOGFONTW.xml' path='doc/member[@name="LOGFONTW.lfWeight"]/*' />
     [NativeTypeName("LONG")]
     public int lfWeight;
 
+    /// <include file='LOGFONTW.xml' path='doc/member[@name="LOGFONTW.lfItalic"]/*' />
     public byte lfItalic;
 
+    /// <include file='LOGFONTW.xml' path='doc/member[@name="LOGFONTW.lfUnderline"]/*' />
     public byte lfUnderline;
 
+    /// <include file='LOGFONTW.xml' path='doc/member[@name="LOGFONTW.lfStrikeOut"]/*' />
     public byte lfStrikeOut;
 
+    /// <include file='LOGFONTW.xml' path='doc/member[@name="LOGFONTW.lfCharSet"]/*' />
     public byte lfCharSet;
 
+    /// <include file='LOGFONTW.xml' path='doc/member[@name="LOGFONTW.lfOutPrecision"]/*' />
     public byte lfOutPrecision;
 
+    /// <include file='LOGFONTW.xml' path='doc/member[@name="LOGFONTW.lfClipPrecision"]/*' />
     public byte lfClipPrecision;
 
+    /// <include file='LOGFONTW.xml' path='doc/member[@name="LOGFONTW.lfQuality"]/*' />
     public byte lfQuality;
 
+    /// <include file='LOGFONTW.xml' path='doc/member[@name="LOGFONTW.lfPitchAndFamily"]/*' />
     public byte lfPitchAndFamily;
 
+    /// <include file='LOGFONTW.xml' path='doc/member[@name="LOGFONTW.lfFaceName"]/*' />
     [NativeTypeName("WCHAR [32]")]
     public fixed ushort lfFaceName[32];
 }

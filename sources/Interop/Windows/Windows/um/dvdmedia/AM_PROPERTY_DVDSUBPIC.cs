@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='AM_PROPERTY_DVDSUBPIC.xml' path='doc/member[@name="AM_PROPERTY_DVDSUBPIC"]/*' />
 public enum AM_PROPERTY_DVDSUBPIC
 {
+    /// <include file='AM_PROPERTY_DVDSUBPIC.xml' path='doc/member[@name="AM_PROPERTY_DVDSUBPIC.AM_PROPERTY_DVDSUBPIC_PALETTE"]/*' />
     AM_PROPERTY_DVDSUBPIC_PALETTE = 0,
+
+    /// <include file='AM_PROPERTY_DVDSUBPIC.xml' path='doc/member[@name="AM_PROPERTY_DVDSUBPIC.AM_PROPERTY_DVDSUBPIC_HLI"]/*' />
     AM_PROPERTY_DVDSUBPIC_HLI = 1,
+
+    /// <include file='AM_PROPERTY_DVDSUBPIC.xml' path='doc/member[@name="AM_PROPERTY_DVDSUBPIC.AM_PROPERTY_DVDSUBPIC_COMPOSIT_ON"]/*' />
     AM_PROPERTY_DVDSUBPIC_COMPOSIT_ON = 2,
 }

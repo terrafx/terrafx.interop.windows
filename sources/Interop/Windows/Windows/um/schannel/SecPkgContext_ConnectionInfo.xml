@@ -1,0 +1,365 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SecPkgContext_ConnectionInfo">
+    <summary>
+      <para>The <b>SecPkgContext_ConnectionInfo</b> structure contains protocol and cipher information. This structure is used by the
+<a href="https://docs.microsoft.com//windows/win32/secauthn/initializesecuritycontext--schannel">InitializeSecurityContext (Schannel)</a> function.</para>
+      <para>This attribute is supported only by the Schannel <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">security support provider</a> (SSP).</para>
+    </summary>
+  </member>
+  <member name="SecPkgContext_ConnectionInfo.dwProtocol">
+    <summary>
+      <para>Protocol used to establish this connection. The following table describes the constants valid for this member.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>SP_PROT_TLS1_CLIENT</b>
+                </description>
+              </item>
+              <item>
+                <description>128 (0x80)</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/SecGloss/t-gly">Transport Layer Security</a> 1.0 client-side.
+</description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>SP_PROT_TLS1_SERVER</b>
+                </description>
+              </item>
+              <item>
+                <description>64 (0x40)</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Transport Layer Security 1.0 server-side.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>SP_PROT_SSL3_CLIENT</b>
+                </description>
+              </item>
+              <item>
+                <description>32 (0x20)</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Secure Sockets Layer 3.0 client-side.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>SP_PROT_SSL3_SERVER</b>
+                </description>
+              </item>
+              <item>
+                <description>16 (0x10)</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Secure Sockets Layer 3.0 server-side.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>SP_PROT_TLS1_1_CLIENT</b>
+                </description>
+              </item>
+              <item>
+                <description>512 (0x200)</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Transport Layer Security 1.1 client-side.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>SP_PROT_TLS1_1_SERVER</b>
+                </description>
+              </item>
+              <item>
+                <description>256 (0x100)</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Transport Layer Security 1.1 server-side.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>SP_PROT_TLS1_2_CLIENT</b>
+                </description>
+              </item>
+              <item>
+                <description>2048 (0x800)</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Transport Layer Security 1.2 client-side.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>SP_PROT_TLS1_2_SERVER</b>
+                </description>
+              </item>
+              <item>
+                <description>1024 (0x400)</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Transport Layer Security 1.2 server-side.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>SP_PROT_PCT1_CLIENT</b>
+                </description>
+              </item>
+              <item>
+                <description>2 (0x2)</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Private Communications Technology 1.0 client-side. Obsolete.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>SP_PROT_PCT1_SERVER</b>
+                </description>
+              </item>
+              <item>
+                <description>1 (0x1)</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Private Communications Technology 1.0 server-side. Obsolete.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>SP_PROT_SSL2_CLIENT</b>
+                </description>
+              </item>
+              <item>
+                <description>8 (0x8)</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Secure Sockets Layer 2.0 client-side. Superseded by SP_PROT_TLS1_CLIENT.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>SP_PROT_SSL2_SERVER</b>
+                </description>
+              </item>
+              <item>
+                <description>4 (0x4)</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Secure Sockets Layer 2.0 server-side. Superseded by SP_PROT_TLS1_SERVER.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="SecPkgContext_ConnectionInfo.aiCipher">
+    <summary>
+      <para>Algorithm identifier (<a href="https://docs.microsoft.com//windows/desktop/SecCrypto/alg-id">ALG_ID</a>) for the bulk encryption cipher used by this connection. The following table describes the constants valid for this member.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>CALG_3DES</b>
+          </description>
+          <description>
+            <para>3DES block encryption algorithm</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>CALG_AES_128</b>
+          </description>
+          <description>
+            <para>AES 128-bit encryption algorithm</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>CALG_AES_256</b>
+          </description>
+          <description>
+            <para>AES 256-bit encryption algorithm</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>CALG_DES</b>
+          </description>
+          <description>
+            <para>DES encryption algorithm</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>CALG_RC2</b>
+          </description>
+          <description>
+            <para>RC2 block encryption algorithm</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>CALG_RC4</b>
+          </description>
+          <description>
+            <para>RC4 stream encryption algorithm</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>0 (Zero)</b>
+          </description>
+          <description>
+            <para>No encryption</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="SecPkgContext_ConnectionInfo.dwCipherStrength">
+    <summary>
+      <para>Strength of the bulk encryption cipher, in bits. Can be one of the following values: 0, 40, 56, 128, 168, or 256.</para>
+    </summary>
+  </member>
+  <member name="SecPkgContext_ConnectionInfo.aiHash">
+    <summary>
+      <para>
+        <b>ALG_ID</b> indicating the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/h-gly">hash</a> used for generating <a href="https://docs.microsoft.com//windows/desktop/SecGloss/m-gly">Message Authentication Codes</a> (MACs). The following table describes the constants valid for this member.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>CALG_MD5</b>
+          </description>
+          <description>
+            <para>MD5 hashing algorithm.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>CALG_SHA</b>
+          </description>
+          <description>
+            <para>SHA hashing algorithm.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="SecPkgContext_ConnectionInfo.dwHashStrength">
+    <summary>
+      <para>Strength of the hash, in bits: 128 or 160.</para>
+    </summary>
+  </member>
+  <member name="SecPkgContext_ConnectionInfo.aiExch">
+    <summary>
+      <para>
+        <b>ALG_ID</b> indicating the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/k-gly">key exchange algorithm</a> used to generate the shared master secret. The following table describes the constants valid for this member.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>CALG_RSA_KEYX</b>
+          </description>
+          <description>
+            <para>RSA key exchange.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>CALG_DH_EPHEM</b>
+          </description>
+          <description>
+            <para>Diffie-Hellman key exchange.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="SecPkgContext_ConnectionInfo.dwExchStrength">
+    <summary>
+      <para>Key length, in bits. For RSA key exchange, this member will typically contain one of the following values: 512, 768, 1024, or 2048.  For Diffie-Hellman key exchange, this member will typically contain one of the following values: 224, 256, 384 or 512.</para>
+    </summary>
+  </member>
+</doc>

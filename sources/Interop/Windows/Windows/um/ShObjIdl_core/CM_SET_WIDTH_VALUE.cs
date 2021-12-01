@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CM_SET_WIDTH_VALUE.xml' path='doc/member[@name="CM_SET_WIDTH_VALUE"]/*' />
 public enum CM_SET_WIDTH_VALUE
 {
+    /// <include file='CM_SET_WIDTH_VALUE.xml' path='doc/member[@name="CM_SET_WIDTH_VALUE.CM_WIDTH_USEDEFAULT"]/*' />
     CM_WIDTH_USEDEFAULT = -1,
+
+    /// <include file='CM_SET_WIDTH_VALUE.xml' path='doc/member[@name="CM_SET_WIDTH_VALUE.CM_WIDTH_AUTOSIZE"]/*' />
     CM_WIDTH_AUTOSIZE = -2,
 }

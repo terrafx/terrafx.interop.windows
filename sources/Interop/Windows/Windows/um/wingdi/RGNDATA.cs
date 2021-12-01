@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='RGNDATA.xml' path='doc/member[@name="RGNDATA"]/*' />
 public unsafe partial struct RGNDATA
 {
+    /// <include file='RGNDATA.xml' path='doc/member[@name="RGNDATA.rdh"]/*' />
     public RGNDATAHEADER rdh;
 
+    /// <include file='RGNDATA.xml' path='doc/member[@name="RGNDATA.Buffer"]/*' />
     [NativeTypeName("char [1]")]
     public fixed sbyte Buffer[1];
 }

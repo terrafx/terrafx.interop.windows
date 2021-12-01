@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFMediaEngineProtectedContent.xml' path='doc/member[@name="IMFMediaEngineProtectedContent"]/*' />
 [Guid("9F8021E8-9C8C-487E-BB5C-79AA4779938C")]
 [NativeTypeName("struct IMFMediaEngineProtectedContent : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IMFMediaEngineProtectedContent : IMFMediaEngineProt
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IMFMediaEngineProtectedContent : IMFMediaEngineProt
         return ((delegate* unmanaged<IMFMediaEngineProtectedContent*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaEngineProtectedContent*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IMFMediaEngineProtectedContent : IMFMediaEngineProt
         return ((delegate* unmanaged<IMFMediaEngineProtectedContent*, uint>)(lpVtbl[1]))((IMFMediaEngineProtectedContent*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IMFMediaEngineProtectedContent : IMFMediaEngineProt
         return ((delegate* unmanaged<IMFMediaEngineProtectedContent*, uint>)(lpVtbl[2]))((IMFMediaEngineProtectedContent*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFMediaEngineProtectedContent.xml' path='doc/member[@name="IMFMediaEngineProtectedContent.ShareResources"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT ShareResources(IUnknown* pUnkDeviceContext)
@@ -48,6 +53,7 @@ public unsafe partial struct IMFMediaEngineProtectedContent : IMFMediaEngineProt
         return ((delegate* unmanaged<IMFMediaEngineProtectedContent*, IUnknown*, int>)(lpVtbl[3]))((IMFMediaEngineProtectedContent*)Unsafe.AsPointer(ref this), pUnkDeviceContext);
     }
 
+    /// <include file='IMFMediaEngineProtectedContent.xml' path='doc/member[@name="IMFMediaEngineProtectedContent.GetRequiredProtections"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetRequiredProtections([NativeTypeName("DWORD *")] uint* pFrameProtectionFlags)
@@ -55,6 +61,7 @@ public unsafe partial struct IMFMediaEngineProtectedContent : IMFMediaEngineProt
         return ((delegate* unmanaged<IMFMediaEngineProtectedContent*, uint*, int>)(lpVtbl[4]))((IMFMediaEngineProtectedContent*)Unsafe.AsPointer(ref this), pFrameProtectionFlags);
     }
 
+    /// <include file='IMFMediaEngineProtectedContent.xml' path='doc/member[@name="IMFMediaEngineProtectedContent.SetOPMWindow"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetOPMWindow(HWND hwnd)
@@ -62,6 +69,7 @@ public unsafe partial struct IMFMediaEngineProtectedContent : IMFMediaEngineProt
         return ((delegate* unmanaged<IMFMediaEngineProtectedContent*, HWND, int>)(lpVtbl[5]))((IMFMediaEngineProtectedContent*)Unsafe.AsPointer(ref this), hwnd);
     }
 
+    /// <include file='IMFMediaEngineProtectedContent.xml' path='doc/member[@name="IMFMediaEngineProtectedContent.TransferVideoFrame"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT TransferVideoFrame(IUnknown* pDstSurf, [NativeTypeName("const MFVideoNormalizedRect *")] MFVideoNormalizedRect* pSrc, [NativeTypeName("const RECT *")] RECT* pDst, [NativeTypeName("const MFARGB *")] MFARGB* pBorderClr, [NativeTypeName("DWORD *")] uint* pFrameProtectionFlags)
@@ -69,6 +77,7 @@ public unsafe partial struct IMFMediaEngineProtectedContent : IMFMediaEngineProt
         return ((delegate* unmanaged<IMFMediaEngineProtectedContent*, IUnknown*, MFVideoNormalizedRect*, RECT*, MFARGB*, uint*, int>)(lpVtbl[6]))((IMFMediaEngineProtectedContent*)Unsafe.AsPointer(ref this), pDstSurf, pSrc, pDst, pBorderClr, pFrameProtectionFlags);
     }
 
+    /// <include file='IMFMediaEngineProtectedContent.xml' path='doc/member[@name="IMFMediaEngineProtectedContent.SetContentProtectionManager"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT SetContentProtectionManager(IMFContentProtectionManager* pCPM)
@@ -76,6 +85,7 @@ public unsafe partial struct IMFMediaEngineProtectedContent : IMFMediaEngineProt
         return ((delegate* unmanaged<IMFMediaEngineProtectedContent*, IMFContentProtectionManager*, int>)(lpVtbl[7]))((IMFMediaEngineProtectedContent*)Unsafe.AsPointer(ref this), pCPM);
     }
 
+    /// <include file='IMFMediaEngineProtectedContent.xml' path='doc/member[@name="IMFMediaEngineProtectedContent.SetApplicationCertificate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT SetApplicationCertificate([NativeTypeName("const BYTE *")] byte* pbBlob, [NativeTypeName("DWORD")] uint cbBlob)

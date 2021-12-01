@@ -7,27 +7,35 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='FILE_STORAGE_INFO.xml' path='doc/member[@name="FILE_STORAGE_INFO"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public partial struct FILE_STORAGE_INFO
 {
+    /// <include file='FILE_STORAGE_INFO.xml' path='doc/member[@name="FILE_STORAGE_INFO.LogicalBytesPerSector"]/*' />
     [NativeTypeName("ULONG")]
     public uint LogicalBytesPerSector;
 
+    /// <include file='FILE_STORAGE_INFO.xml' path='doc/member[@name="FILE_STORAGE_INFO.PhysicalBytesPerSectorForAtomicity"]/*' />
     [NativeTypeName("ULONG")]
     public uint PhysicalBytesPerSectorForAtomicity;
 
+    /// <include file='FILE_STORAGE_INFO.xml' path='doc/member[@name="FILE_STORAGE_INFO.PhysicalBytesPerSectorForPerformance"]/*' />
     [NativeTypeName("ULONG")]
     public uint PhysicalBytesPerSectorForPerformance;
 
+    /// <include file='FILE_STORAGE_INFO.xml' path='doc/member[@name="FILE_STORAGE_INFO.FileSystemEffectivePhysicalBytesPerSectorForAtomicity"]/*' />
     [NativeTypeName("ULONG")]
     public uint FileSystemEffectivePhysicalBytesPerSectorForAtomicity;
 
+    /// <include file='FILE_STORAGE_INFO.xml' path='doc/member[@name="FILE_STORAGE_INFO.Flags"]/*' />
     [NativeTypeName("ULONG")]
     public uint Flags;
 
+    /// <include file='FILE_STORAGE_INFO.xml' path='doc/member[@name="FILE_STORAGE_INFO.ByteOffsetForSectorAlignment"]/*' />
     [NativeTypeName("ULONG")]
     public uint ByteOffsetForSectorAlignment;
 
+    /// <include file='FILE_STORAGE_INFO.xml' path='doc/member[@name="FILE_STORAGE_INFO.ByteOffsetForPartitionAlignment"]/*' />
     [NativeTypeName("ULONG")]
     public uint ByteOffsetForPartitionAlignment;
 }

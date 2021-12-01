@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WIN32_MEMORY_RANGE_ENTRY">
+    <summary>
+      <para>Specifies a range of memory. This structure is used by the
+<see cref="PrefetchVirtualMemory" /> function.</para>
+    </summary>
+    <remarks>
+      <para>To compile an application that calls this function, define <b>_WIN32_WINNT</b> as
+<b>_WIN32_WINNT_WIN8</b> or higher. For more information, see
+<a href="https://docs.microsoft.com//windows/desktop/WinProg/using-the-windows-headers">Using the Windows Headers</a>.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Memory/memory-management-structures">Memory Management Structures</seealso>
+    <seealso cref="PrefetchVirtualMemory" />
+  </member>
+  <member name="WIN32_MEMORY_RANGE_ENTRY.VirtualAddress">
+    <summary></summary>
+  </member>
+  <member name="WIN32_MEMORY_RANGE_ENTRY.NumberOfBytes">
+    <summary></summary>
+  </member>
+</doc>

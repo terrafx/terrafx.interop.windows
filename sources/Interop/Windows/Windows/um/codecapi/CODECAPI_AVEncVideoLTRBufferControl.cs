@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVEncVideoLTRBufferControl.xml' path='doc/member[@name="CODECAPI_AVEncVideoLTRBufferControl"]/*' />
 [Guid("A4A0E93D-4CBC-444C-89F4-826D310E92A7")]
 public partial struct CODECAPI_AVEncVideoLTRBufferControl
 {

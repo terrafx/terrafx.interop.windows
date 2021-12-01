@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='EMRSELECTOBJECT.xml' path='doc/member[@name="EMRSELECTOBJECT"]/*' />
 public partial struct EMRSELECTOBJECT
 {
+    /// <include file='EMRSELECTOBJECT.xml' path='doc/member[@name="EMRSELECTOBJECT.emr"]/*' />
     public EMR emr;
 
+    /// <include file='EMRSELECTOBJECT.xml' path='doc/member[@name="EMRSELECTOBJECT.ihObject"]/*' />
     [NativeTypeName("DWORD")]
     public uint ihObject;
 }

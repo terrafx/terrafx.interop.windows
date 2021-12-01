@@ -1,0 +1,313 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMF2DBuffer.ContiguousCopyFrom">
+    <summary>
+      <para>Copies data to this buffer from a buffer that has a contiguous format.</para>
+    </summary>
+    <param name="pbSrcBuffer">
+      <para>Pointer to the source buffer. The caller allocates the buffer.</para>
+    </param>
+    <param name="cbSrcBuffer">
+      <para>Size of the source buffer, in bytes. To get the maximum size of the buffer, call <see cref="IMF2DBuffer.GetContiguousLength" />.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method copies the contents of the source buffer into the buffer that is managed by this <see cref="IMF2DBuffer" /> object. The source buffer must be in contiguous format. While copying, the method converts the contents into the destination buffer's native format, correcting for the buffer's pitch if necessary.</para>
+      <para>For a definition of contiguous as it applies to 2-D buffers, see the Remarks section in the <see cref="IMF2DBuffer" /> interface topic.</para>
+    </remarks>
+    <seealso cref="IMF2DBuffer" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-buffers">Media Buffers</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/uncompressed-video-buffers">Uncompressed Video Buffers</seealso>
+  </member>
+  <member name="IMF2DBuffer.ContiguousCopyTo">
+    <summary>
+      <para>Copies this buffer into the caller's buffer, converting the data to contiguous format.</para>
+    </summary>
+    <param name="pbDestBuffer">
+      <para>Pointer to the destination buffer where the data will be copied. The caller allocates the buffer.</para>
+    </param>
+    <param name="cbDestBuffer">
+      <para>Size of the destination buffer, in bytes. To get the required size, call <see cref="IMF2DBuffer.GetContiguousLength" />.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>Invalid size specified in <i>pbDestBuffer</i>.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>If the original buffer is not contiguous, this method converts the contents into contiguous format during the copy. For a definition of contiguous as it applies to 2-D buffers, see the Remarks section in <see cref="IMF2DBuffer" /> interface.</para>
+    </remarks>
+    <seealso cref="IMF2DBuffer" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-buffers">Media Buffers</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/uncompressed-video-buffers">Uncompressed Video Buffers</seealso>
+  </member>
+  <member name="IMF2DBuffer.GetContiguousLength">
+    <summary>
+      <para>Retrieves the number of bytes needed to store the contents of the buffer in contiguous format.</para>
+    </summary>
+    <param name="pcbLength">
+      <para>Receives the number of bytes needed to store the contents of the buffer in contiguous format.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>For a definition of contiguous as it applies to 2-D buffers, see the Remarks section in <see cref="IMF2DBuffer" /> interface.</para>
+    </remarks>
+    <seealso cref="IMF2DBuffer" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-buffers">Media Buffers</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/uncompressed-video-buffers">Uncompressed Video Buffers</seealso>
+  </member>
+  <member name="IMF2DBuffer.GetScanline0AndPitch">
+    <summary>
+      <para>Retrieves a pointer to the buffer memory and the surface stride.</para>
+    </summary>
+    <param name="pbScanline0">
+      <para>Receives a pointer to the first byte of the top row of pixels in the image.</para>
+    </param>
+    <param name="plPitch">
+      <para>Receives the stride, in bytes. For more information, see <a href="https://docs.microsoft.com//windows/desktop/medfound/image-stride">Image Stride</a>.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>ERROR_INVALID_FUNCTION</b>
+            </para>
+          </description>
+          <description>
+            <para>You must lock the buffer before calling this method.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Before calling this method, you must lock the buffer by calling <see cref="IMF2DBuffer.Lock2D" />. The pointer returned in <i>plPitch</i> is valid only while the buffer remains locked.</para>
+    </remarks>
+    <seealso cref="IMF2DBuffer" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-buffers">Media Buffers</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/uncompressed-video-buffers">Uncompressed Video Buffers</seealso>
+  </member>
+  <member name="IMF2DBuffer.IsContiguousFormat">
+    <summary>
+      <para>Queries whether the buffer is contiguous in its native format.</para>
+    </summary>
+    <param name="pfIsContiguous">
+      <para>Receives a Boolean value. The value is <b>TRUE</b> if the buffer is contiguous, and <b>FALSE</b> otherwise.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>For a definition of contiguous as it applies to 2-D buffers, see the Remarks section in <see cref="IMF2DBuffer" /> interface. For non-contiguous buffers, the <see cref="IMFMediaBuffer.Lock" /> method must perform an internal copy.</para>
+    </remarks>
+    <seealso cref="IMF2DBuffer" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-buffers">Media Buffers</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/uncompressed-video-buffers">Uncompressed Video Buffers</seealso>
+  </member>
+  <member name="IMF2DBuffer.Lock2D">
+    <summary>
+      <para>Gives the caller access to the memory in the buffer.</para>
+    </summary>
+    <param name="ppbScanline0">
+      <para>Receives a pointer to the first byte of the top row of pixels in the image. The top row is defined as the top row when the image is presented to the viewer, and might not be the first row in memory.</para>
+    </param>
+    <param name="plPitch">
+      <para>Receives the surface stride, in bytes. The stride might be negative, indicating that the image is oriented from the bottom up in memory.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>D3DERR_INVALIDCALL</b>
+            </para>
+          </description>
+          <description>
+            <para>Cannot lock the Direct3D surface.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_INVALIDREQUEST</b>
+            </para>
+          </description>
+          <description>
+            <para>The buffer cannot be locked at this time.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>If <i>p</i> is a pointer to the first byte in a row of pixels, <i>p</i> + (*<i>plPitch</i>) points to the first byte in the next row of pixels. A buffer might contain padding after each row of pixels, so the stride might be wider than the width of the image in bytes. Do not access the memory that is reserved for padding bytes, because it might not be read-accessible or write-accessible. For more information, see <a href="https://docs.microsoft.com//windows/desktop/medfound/image-stride">Image Stride</a>.</para>
+      <para>The pointer returned in <i>pbScanline0</i> remains valid as long as the caller holds the lock. When you are done accessing the memory, call <see cref="IMF2DBuffer.Unlock2D" /> to unlock the buffer. You must call <b>Unlock2D</b> once for each call to <b>Lock2D</b>. After you unlock the buffer, the pointer returned in <i>pbScanline0</i> is no longer valid and should not be used. Generally, it is best to call <b>Lock2D</b> only when you need to access the buffer memory, and not earlier.</para>
+      <para>The values returned by the <see cref="IMFMediaBuffer.GetCurrentLength" /> and <see cref="IMFMediaBuffer.GetMaxLength" /> methods do not apply to the buffer that is returned by the <b>Lock2D</b> method. For the same reason, you do not need to call <see cref="IMFMediaBuffer.SetCurrentLength" /> after manipulating the data in the buffer returned by the <b>Lock2D</b> method.</para>
+      <para>The <see cref="IMFMediaBuffer.Lock" /> method fails while the <b>Lock2D</b> lock is held, and vice-versa. Applications should use only one of these methods at a time.</para>
+      <para>When the underlying buffer is a Direct3D surface, the method fails if the surface is not lockable.</para>
+    </remarks>
+    <seealso cref="IMF2DBuffer" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-buffers">Media Buffers</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/uncompressed-video-buffers">Uncompressed Video Buffers</seealso>
+  </member>
+  <member name="IMF2DBuffer.Unlock2D">
+    <summary>
+      <para>Unlocks a buffer that was previously locked. Call this method once for each call to <see cref="IMF2DBuffer.Lock2D" />.</para>
+    </summary>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IMF2DBuffer" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-buffers">Media Buffers</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/uncompressed-video-buffers">Uncompressed Video Buffers</seealso>
+  </member>
+  <member name="IMF2DBuffer">
+    <summary>
+      <para>Represents a buffer that contains a two-dimensional surface, such as a video frame.</para>
+    </summary>
+    <remarks>
+      <para>To get a pointer to this interface, call <b>QueryInterface</b> on the media buffer.</para>
+      <para>To use a 2-D buffer, it is important to know the <i>stride</i>, which is the number of bytes needed to go from one row of pixels to the next. The stride may be larger than the image width, because the surface may contain padding bytes after each row of pixels. Stride can also be negative, if the pixels are oriented bottom-up in memory. For more information, see <a href="https://docs.microsoft.com//windows/desktop/medfound/image-stride">Image Stride</a>.</para>
+      <para>Every video format defines a <i>contiguous</i> or <i>packed</i> representation. This representation is compatible with the standard layout of a DirectX surface in system memory, with no additional padding. For RGB video, the contiguous representation has a pitch equal to the image width in bytes, rounded up to the nearest <b>DWORD</b> boundary. For YUV video, the layout of the contiguous representation depends on the YUV format. For planar YUV formats, the Y plane might have a different pitch than the U and V planes.</para>
+      <para>If a media buffer supports the <b>IMF2DBuffer</b> interface, the underlying buffer is not guaranteed to have a contiguous representation, because there might be additional padding bytes after each row of pixels. When a buffer is non-contiguous, the <see cref="Lock" /> and <see cref="Lock2D" /> methods have different behaviors:</para>
+      <list type="bullet">
+        <item>
+          <description>The <see cref="Lock2D" /> method returns a pointer to the underlying buffer. The buffer might not be contiguous.
+</description>
+        </item>
+        <item>
+          <description>The <see cref="Lock" /> method returns a buffer that is guaranteed to be contiguous. If the underlying buffer is not contiguous, the method copies the data into a new buffer, and the <see cref="Unlock" /> method copies it back into the original buffer.
+</description>
+        </item>
+      </list>
+      <para>Call the <see cref="Lock2D" /> method to access the 2-D buffer in its native format. The native format might not be contiguous. The buffer's <see cref="IMFMediaBuffer.Lock" /> method returns a contiguous representation of the buffer. However, this might require an internal copy from the native format. For 2-D buffers, therefore, you should use the <b>Lock2D</b> method and avoid the <b>Lock</b> method. Because the <b>Lock</b> method might cause up to two buffer copies, the <b>Lock2D</b> method is generally more efficient and should be used when possible. To find out if the underlying buffer is contiguous, call <see cref="IMF2DBuffer.IsContiguousFormat" />.</para>
+      <para>For uncompressed images, the amount of valid data in the buffer is determined by the width, height, and pixel layout of the image. For this reason, if you call <see cref="Lock2D" /> to access the buffer, do not rely on the values returned by <see cref="IMFMediaBuffer.GetCurrentLength" /> or <see cref="IMFMediaBuffer.GetMaxLength" />. Similarly, if you modify the data in the buffer, you do not have to call <see cref="IMFMediaBuffer.SetCurrentLength" /> to update the size. Generally, you should avoid mixing calls to <b>IMF2DBuffer</b> and <see cref="IMFMediaBuffer" /> methods on the same media buffer.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-buffers">Media Buffers</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/uncompressed-video-buffers">Uncompressed Video Buffers</seealso>
+  </member>
+</doc>

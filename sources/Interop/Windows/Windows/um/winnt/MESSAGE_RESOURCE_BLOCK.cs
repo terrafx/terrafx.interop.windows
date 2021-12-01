@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MESSAGE_RESOURCE_BLOCK.xml' path='doc/member[@name="MESSAGE_RESOURCE_BLOCK"]/*' />
 public partial struct MESSAGE_RESOURCE_BLOCK
 {
+    /// <include file='MESSAGE_RESOURCE_BLOCK.xml' path='doc/member[@name="MESSAGE_RESOURCE_BLOCK.LowId"]/*' />
     [NativeTypeName("DWORD")]
     public uint LowId;
 
+    /// <include file='MESSAGE_RESOURCE_BLOCK.xml' path='doc/member[@name="MESSAGE_RESOURCE_BLOCK.HighId"]/*' />
     [NativeTypeName("DWORD")]
     public uint HighId;
 
+    /// <include file='MESSAGE_RESOURCE_BLOCK.xml' path='doc/member[@name="MESSAGE_RESOURCE_BLOCK.OffsetToEntries"]/*' />
     [NativeTypeName("DWORD")]
     public uint OffsetToEntries;
 }

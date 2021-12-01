@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MF_TIMED_TEXT_FONT_STYLE">
+    <summary>
+      <para>Specifies the font style of the timed text.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+  </member>
+  <member name="MF_TIMED_TEXT_FONT_STYLE.MF_TIMED_TEXT_FONT_STYLE_NORMAL">
+    <summary>
+      <para>The font style is normal, sometimes referred to as roman.</para>
+    </summary>
+  </member>
+  <member name="MF_TIMED_TEXT_FONT_STYLE.MF_TIMED_TEXT_FONT_STYLE_OBLIQUE">
+    <summary>
+      <para>The font style is oblique.</para>
+    </summary>
+  </member>
+  <member name="MF_TIMED_TEXT_FONT_STYLE.MF_TIMED_TEXT_FONT_STYLE_ITALIC">
+    <summary>
+      <para>The font style is italic.</para>
+    </summary>
+  </member>
+</doc>

@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IFolderFilter.GetEnumFlags">
+    <summary>
+      <para>Allows a client to specify which classes of objects in a Shell folder should be enumerated. When used with <see cref="SHBrowseForFolder" />, specifies the class or classes of items that should be shown in the dialog box tree view and which class or classes should not.</para>
+    </summary>
+    <param name="psf">
+      <para>Type: <b><see cref="IShellFolder" />*</b></para>
+      <para>A pointer to the folder's <see cref="IShellFolder" /> interface.</para>
+    </param>
+    <param name="pidlFolder">
+      <para>Type: <b>PCIDLIST_ABSOLUTE </b></para>
+      <para>The PIDL of the folder.</para>
+    </param>
+    <param name="phwnd">
+      <para>Type: <b>HWND*</b></para>
+      <para>A pointer to the host's window handle.</para>
+    </param>
+    <param name="pgrfFlags">
+      <para>Type: <b>DWORD*</b></para>
+      <para>One or more <see cref="SHCONTF" /> values that specify the classes of object to enumerate.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IFolderFilter" />
+  </member>
+  <member name="IFolderFilter.ShouldShow">
+    <summary>
+      <para>Specifies whether an individual item should be allowed through the filter and which should be blocked. When used with <see cref="SHBrowseForFolder" />, specifies which items should be shown in the dialog box tree view and which should not. The determination to show or not show an item is up to the application.</para>
+    </summary>
+    <param name="psf">
+      <para>Type: <b><see cref="IShellFolder" />*</b></para>
+      <para>A pointer to the folder's <see cref="IShellFolder" /> interface.</para>
+    </param>
+    <param name="pidlFolder">
+      <para>Type: <b>PCIDLIST_ABSOLUTE</b></para>
+      <para>The PIDL of the folder.</para>
+    </param>
+    <param name="pidlItem">
+      <para>Type: <b>PCUITEMID_CHILD</b></para>
+      <para>The relative PIDL of the child item of <i>pidlFolder</i> in question.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_OK if the item should be shown, S_FALSE if it should not be shown, or a standard error code if an error is encountered. If an error is encountered, the item is not shown.</para>
+    </returns>
+    <remarks>
+      <para>The host calls this method for each item in the folder referred to by <i>psf</i> or <i>pidlFolder</i>.</para>
+      <para>It is recommended that your implementation convert the <i>psf</i> and <i>pidlItem</i> information into an <see cref="IShellItem" />, which is easier to consume. The following example shows this:</para>
+      <code>STDMETHODIMP ShouldShow(IShellFolder *psf,
+                        PCIDLIST_ABSOLUTE pidlFolder,
+                        PCUITEMID_CHILD pidlItem)
+{
+    IShellItem *psi;
+
+    HRESULT hr = SHCreateItemWithParent(NULL, psf, pidlItem, IID_PPV_ARGS(&amp;amp;amp;amp;amp;amp;psi));
+    if (SUCCEEDED(hr))
+    {
+        // Determine here whether the item should be shown. This determination
+        // is application-dependent.
+
+        psi-&gt;Release();
+    }
+
+    return hr;
+}
+</code>
+    </remarks>
+    <seealso cref="IFolderFilter" />
+  </member>
+  <member name="IFolderFilter">
+    <summary>
+      <para>Exposed by a client to specify how to filter the enumeration of a Shell folder by a server application.</para>
+    </summary>
+    <remarks>
+      <para>This interface is most often used with <see cref="SHBrowseForFolder" /> to filter the contents of the tree view displayed in a folder selection dialog box. To use <b>IFolderFilter</b> with <b>SHBrowseForFolder</b>, the <see cref="BIF_NEWDIALOGSTYLE" /> flag must be set.</para>
+      <para>When your application calls <see cref="SHBrowseForFolder" />, you become a client of the folder browser object. The folder browser object communicates with you by sending messages to a callback function, <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/bb762598(v=vs.85)">BrowseCallbackProc</a>. The <b>BFFM_IUNKNOWN</b> message handled by that callback function contains a pointer to the folder browser's <see cref="IUnknown" /> interface. To filter the display of a folder's contents, do the following:</para>
+      <list type="number">
+        <item>
+          <description>Use the folder browser's <see cref="QueryInterface" /> method to request a pointer to the <see cref="IFolderFilterSite" /> interface.</description>
+        </item>
+        <item>
+          <description>Call <see cref="IFolderFilterSite.SetFilter" />, passing it a pointer to your <b>IFolderFilter</b> interface.</description>
+        </item>
+        <item>
+          <description>The folder browser then queries <see cref="IFolderFilter.GetEnumFlags" /> and <see cref="IFolderFilter.ShouldShow" /> to determine how to filter the enumeration.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="IFolderFilterSite" />
+  </member>
+</doc>

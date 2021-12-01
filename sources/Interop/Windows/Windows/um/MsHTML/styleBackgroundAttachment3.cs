@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='styleBackgroundAttachment3.xml' path='doc/member[@name="styleBackgroundAttachment3"]/*' />
 public enum styleBackgroundAttachment3
 {
+    /// <include file='styleBackgroundAttachment3.xml' path='doc/member[@name="styleBackgroundAttachment3.styleBackgroundAttachment3Fixed"]/*' />
     styleBackgroundAttachment3Fixed = 0,
+
+    /// <include file='styleBackgroundAttachment3.xml' path='doc/member[@name="styleBackgroundAttachment3.styleBackgroundAttachment3Scroll"]/*' />
     styleBackgroundAttachment3Scroll = 1,
+
+    /// <include file='styleBackgroundAttachment3.xml' path='doc/member[@name="styleBackgroundAttachment3.styleBackgroundAttachment3Local"]/*' />
     styleBackgroundAttachment3Local = 2,
+
+    /// <include file='styleBackgroundAttachment3.xml' path='doc/member[@name="styleBackgroundAttachment3.styleBackgroundAttachment3NotSet"]/*' />
     styleBackgroundAttachment3NotSet = 3,
+
+    /// <include file='styleBackgroundAttachment3.xml' path='doc/member[@name="styleBackgroundAttachment3.styleBackgroundAttachment3_Max"]/*' />
     styleBackgroundAttachment3_Max = 2147483647,
 }

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IShellFolderViewDual.xml' path='doc/member[@name="IShellFolderViewDual"]/*' />
 [Guid("E7A1AF80-4D96-11CF-960C-0080C7F4EE85")]
 [NativeTypeName("struct IShellFolderViewDual : IDispatch")]
 [NativeInheritance("IDispatch")]
@@ -16,6 +17,7 @@ public unsafe partial struct IShellFolderViewDual : IShellFolderViewDual.Interfa
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IShellFolderViewDual : IShellFolderViewDual.Interfa
         return ((delegate* unmanaged<IShellFolderViewDual*, Guid*, void**, int>)(lpVtbl[0]))((IShellFolderViewDual*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IShellFolderViewDual : IShellFolderViewDual.Interfa
         return ((delegate* unmanaged<IShellFolderViewDual*, uint>)(lpVtbl[1]))((IShellFolderViewDual*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IShellFolderViewDual : IShellFolderViewDual.Interfa
         return ((delegate* unmanaged<IShellFolderViewDual*, uint>)(lpVtbl[2]))((IShellFolderViewDual*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct IShellFolderViewDual : IShellFolderViewDual.Interfa
         return ((delegate* unmanaged<IShellFolderViewDual*, uint*, int>)(lpVtbl[3]))((IShellFolderViewDual*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct IShellFolderViewDual : IShellFolderViewDual.Interfa
         return ((delegate* unmanaged<IShellFolderViewDual*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IShellFolderViewDual*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
@@ -60,6 +67,7 @@ public unsafe partial struct IShellFolderViewDual : IShellFolderViewDual.Interfa
         return ((delegate* unmanaged<IShellFolderViewDual*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IShellFolderViewDual*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
+    /// <inheritdoc cref="IDispatch.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
@@ -67,6 +75,7 @@ public unsafe partial struct IShellFolderViewDual : IShellFolderViewDual.Interfa
         return ((delegate* unmanaged<IShellFolderViewDual*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IShellFolderViewDual*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
+    /// <include file='IShellFolderViewDual.xml' path='doc/member[@name="IShellFolderViewDual.get_Application"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT get_Application(IDispatch** ppid)
@@ -74,6 +83,7 @@ public unsafe partial struct IShellFolderViewDual : IShellFolderViewDual.Interfa
         return ((delegate* unmanaged<IShellFolderViewDual*, IDispatch**, int>)(lpVtbl[7]))((IShellFolderViewDual*)Unsafe.AsPointer(ref this), ppid);
     }
 
+    /// <include file='IShellFolderViewDual.xml' path='doc/member[@name="IShellFolderViewDual.get_Parent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT get_Parent(IDispatch** ppid)
@@ -81,6 +91,7 @@ public unsafe partial struct IShellFolderViewDual : IShellFolderViewDual.Interfa
         return ((delegate* unmanaged<IShellFolderViewDual*, IDispatch**, int>)(lpVtbl[8]))((IShellFolderViewDual*)Unsafe.AsPointer(ref this), ppid);
     }
 
+    /// <include file='IShellFolderViewDual.xml' path='doc/member[@name="IShellFolderViewDual.get_Folder"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT get_Folder(Folder** ppid)
@@ -88,6 +99,7 @@ public unsafe partial struct IShellFolderViewDual : IShellFolderViewDual.Interfa
         return ((delegate* unmanaged<IShellFolderViewDual*, Folder**, int>)(lpVtbl[9]))((IShellFolderViewDual*)Unsafe.AsPointer(ref this), ppid);
     }
 
+    /// <include file='IShellFolderViewDual.xml' path='doc/member[@name="IShellFolderViewDual.SelectedItems"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT SelectedItems(FolderItems** ppid)
@@ -95,6 +107,7 @@ public unsafe partial struct IShellFolderViewDual : IShellFolderViewDual.Interfa
         return ((delegate* unmanaged<IShellFolderViewDual*, FolderItems**, int>)(lpVtbl[10]))((IShellFolderViewDual*)Unsafe.AsPointer(ref this), ppid);
     }
 
+    /// <include file='IShellFolderViewDual.xml' path='doc/member[@name="IShellFolderViewDual.get_FocusedItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT get_FocusedItem(FolderItem** ppid)
@@ -102,6 +115,7 @@ public unsafe partial struct IShellFolderViewDual : IShellFolderViewDual.Interfa
         return ((delegate* unmanaged<IShellFolderViewDual*, FolderItem**, int>)(lpVtbl[11]))((IShellFolderViewDual*)Unsafe.AsPointer(ref this), ppid);
     }
 
+    /// <include file='IShellFolderViewDual.xml' path='doc/member[@name="IShellFolderViewDual.SelectItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT SelectItem(VARIANT* pvfi, int dwFlags)
@@ -109,6 +123,7 @@ public unsafe partial struct IShellFolderViewDual : IShellFolderViewDual.Interfa
         return ((delegate* unmanaged<IShellFolderViewDual*, VARIANT*, int, int>)(lpVtbl[12]))((IShellFolderViewDual*)Unsafe.AsPointer(ref this), pvfi, dwFlags);
     }
 
+    /// <include file='IShellFolderViewDual.xml' path='doc/member[@name="IShellFolderViewDual.PopupItemMenu"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT PopupItemMenu(FolderItem* pfi, VARIANT vx, VARIANT vy, [NativeTypeName("BSTR *")] ushort** pbs)
@@ -116,6 +131,7 @@ public unsafe partial struct IShellFolderViewDual : IShellFolderViewDual.Interfa
         return ((delegate* unmanaged<IShellFolderViewDual*, FolderItem*, VARIANT, VARIANT, ushort**, int>)(lpVtbl[13]))((IShellFolderViewDual*)Unsafe.AsPointer(ref this), pfi, vx, vy, pbs);
     }
 
+    /// <include file='IShellFolderViewDual.xml' path='doc/member[@name="IShellFolderViewDual.get_Script"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT get_Script(IDispatch** ppDisp)
@@ -123,6 +139,7 @@ public unsafe partial struct IShellFolderViewDual : IShellFolderViewDual.Interfa
         return ((delegate* unmanaged<IShellFolderViewDual*, IDispatch**, int>)(lpVtbl[14]))((IShellFolderViewDual*)Unsafe.AsPointer(ref this), ppDisp);
     }
 
+    /// <include file='IShellFolderViewDual.xml' path='doc/member[@name="IShellFolderViewDual.get_ViewOptions"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT get_ViewOptions([NativeTypeName("long *")] int* plViewOptions)

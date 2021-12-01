@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFSSLCertificateManager.xml' path='doc/member[@name="IMFSSLCertificateManager"]/*' />
 [Guid("61F7D887-1230-4A8B-AEBA-8AD434D1A64D")]
 [NativeTypeName("struct IMFSSLCertificateManager : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMFSSLCertificateManager : IMFSSLCertificateManager
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMFSSLCertificateManager : IMFSSLCertificateManager
         return ((delegate* unmanaged<IMFSSLCertificateManager*, Guid*, void**, int>)(lpVtbl[0]))((IMFSSLCertificateManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMFSSLCertificateManager : IMFSSLCertificateManager
         return ((delegate* unmanaged<IMFSSLCertificateManager*, uint>)(lpVtbl[1]))((IMFSSLCertificateManager*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMFSSLCertificateManager : IMFSSLCertificateManager
         return ((delegate* unmanaged<IMFSSLCertificateManager*, uint>)(lpVtbl[2]))((IMFSSLCertificateManager*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFSSLCertificateManager.xml' path='doc/member[@name="IMFSSLCertificateManager.GetClientCertificate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetClientCertificate([NativeTypeName("LPCWSTR")] ushort* pszURL, byte** ppbData, [NativeTypeName("DWORD *")] uint* pcbData)
@@ -46,6 +51,7 @@ public unsafe partial struct IMFSSLCertificateManager : IMFSSLCertificateManager
         return ((delegate* unmanaged<IMFSSLCertificateManager*, ushort*, byte**, uint*, int>)(lpVtbl[3]))((IMFSSLCertificateManager*)Unsafe.AsPointer(ref this), pszURL, ppbData, pcbData);
     }
 
+    /// <include file='IMFSSLCertificateManager.xml' path='doc/member[@name="IMFSSLCertificateManager.BeginGetClientCertificate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT BeginGetClientCertificate([NativeTypeName("LPCWSTR")] ushort* pszURL, IMFAsyncCallback* pCallback, IUnknown* pState)
@@ -53,6 +59,7 @@ public unsafe partial struct IMFSSLCertificateManager : IMFSSLCertificateManager
         return ((delegate* unmanaged<IMFSSLCertificateManager*, ushort*, IMFAsyncCallback*, IUnknown*, int>)(lpVtbl[4]))((IMFSSLCertificateManager*)Unsafe.AsPointer(ref this), pszURL, pCallback, pState);
     }
 
+    /// <include file='IMFSSLCertificateManager.xml' path='doc/member[@name="IMFSSLCertificateManager.EndGetClientCertificate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT EndGetClientCertificate(IMFAsyncResult* pResult, byte** ppbData, [NativeTypeName("DWORD *")] uint* pcbData)
@@ -60,6 +67,7 @@ public unsafe partial struct IMFSSLCertificateManager : IMFSSLCertificateManager
         return ((delegate* unmanaged<IMFSSLCertificateManager*, IMFAsyncResult*, byte**, uint*, int>)(lpVtbl[5]))((IMFSSLCertificateManager*)Unsafe.AsPointer(ref this), pResult, ppbData, pcbData);
     }
 
+    /// <include file='IMFSSLCertificateManager.xml' path='doc/member[@name="IMFSSLCertificateManager.GetCertificatePolicy"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetCertificatePolicy([NativeTypeName("LPCWSTR")] ushort* pszURL, BOOL* pfOverrideAutomaticCheck, BOOL* pfClientCertificateAvailable)
@@ -67,6 +75,7 @@ public unsafe partial struct IMFSSLCertificateManager : IMFSSLCertificateManager
         return ((delegate* unmanaged<IMFSSLCertificateManager*, ushort*, BOOL*, BOOL*, int>)(lpVtbl[6]))((IMFSSLCertificateManager*)Unsafe.AsPointer(ref this), pszURL, pfOverrideAutomaticCheck, pfClientCertificateAvailable);
     }
 
+    /// <include file='IMFSSLCertificateManager.xml' path='doc/member[@name="IMFSSLCertificateManager.OnServerCertificate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT OnServerCertificate([NativeTypeName("LPCWSTR")] ushort* pszURL, byte* pbData, [NativeTypeName("DWORD")] uint cbData, BOOL* pfIsGood)

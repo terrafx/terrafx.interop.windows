@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='UNWIND_HISTORY_TABLE_ENTRY.xml' path='doc/member[@name="UNWIND_HISTORY_TABLE_ENTRY"]/*' />
 public unsafe partial struct UNWIND_HISTORY_TABLE_ENTRY
 {
+    /// <include file='UNWIND_HISTORY_TABLE_ENTRY.xml' path='doc/member[@name="UNWIND_HISTORY_TABLE_ENTRY.ImageBase"]/*' />
     [NativeTypeName("ULONG_PTR")]
     public nuint ImageBase;
 
+    /// <include file='UNWIND_HISTORY_TABLE_ENTRY.xml' path='doc/member[@name="UNWIND_HISTORY_TABLE_ENTRY.FunctionEntry"]/*' />
     [NativeTypeName("PRUNTIME_FUNCTION")]
     public void* FunctionEntry;
 }

@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="THUMBBUTTONFLAGS">
+    <summary>
+      <para>Used by <see cref="THUMBBUTTON" /> to control specific states and behaviors of the button.</para>
+    </summary>
+    <seealso cref="THUMBBUTTON" />
+    <seealso cref="THUMBBUTTONMASK" />
+  </member>
+  <member name="THUMBBUTTONFLAGS.THBF_ENABLED">
+    <summary>
+      <para>The button is active and available to the user.</para>
+    </summary>
+  </member>
+  <member name="THUMBBUTTONFLAGS.THBF_DISABLED">
+    <summary>
+      <para>The button is disabled. It is present, but has a visual state that indicates that it will not respond to user action.</para>
+    </summary>
+  </member>
+  <member name="THUMBBUTTONFLAGS.THBF_DISMISSONCLICK">
+    <summary>
+      <para>When the button is clicked, the taskbar button's flyout closes immediately.</para>
+    </summary>
+  </member>
+  <member name="THUMBBUTTONFLAGS.THBF_NOBACKGROUND">
+    <summary>
+      <para>Do not draw a button border, use only the image.</para>
+    </summary>
+  </member>
+  <member name="THUMBBUTTONFLAGS.THBF_HIDDEN">
+    <summary>
+      <para>The button is not shown to the user.</para>
+    </summary>
+  </member>
+  <member name="THUMBBUTTONFLAGS.THBF_NONINTERACTIVE">
+    <summary>
+      <para>The button is enabled but not interactive; no pressed button state is drawn. This value is intended for instances where the button is used in a notification.</para>
+    </summary>
+  </member>
+</doc>

@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='THUMBVERTSTATES.xml' path='doc/member[@name="THUMBVERTSTATES"]/*' />
 public enum THUMBVERTSTATES
 {
+    /// <include file='THUMBVERTSTATES.xml' path='doc/member[@name="THUMBVERTSTATES.TUVS_NORMAL"]/*' />
     TUVS_NORMAL = 1,
+
+    /// <include file='THUMBVERTSTATES.xml' path='doc/member[@name="THUMBVERTSTATES.TUVS_HOT"]/*' />
     TUVS_HOT = 2,
+
+    /// <include file='THUMBVERTSTATES.xml' path='doc/member[@name="THUMBVERTSTATES.TUVS_PRESSED"]/*' />
     TUVS_PRESSED = 3,
+
+    /// <include file='THUMBVERTSTATES.xml' path='doc/member[@name="THUMBVERTSTATES.TUVS_FOCUSED"]/*' />
     TUVS_FOCUSED = 4,
+
+    /// <include file='THUMBVERTSTATES.xml' path='doc/member[@name="THUMBVERTSTATES.TUVS_DISABLED"]/*' />
     TUVS_DISABLED = 5,
 }

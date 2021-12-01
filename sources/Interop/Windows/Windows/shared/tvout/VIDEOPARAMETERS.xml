@@ -1,0 +1,349 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="VIDEOPARAMETERS">
+    <summary>
+      <para>The video miniport driver receives a pointer to a VIDEOPARAMETERS structure in the <b>InputBuffer</b> member of a <a href="https://docs.microsoft.com//windows-hardware/drivers/ddi/content/video/ns-video-_video_request_packet">VIDEO_REQUEST_PACKET</a> when the IOCTL request is <a href="https://docs.microsoft.com//windows-hardware/drivers/ddi/content/ntddvdeo/ni-ntddvdeo-ioctl_video_handle_videoparameters">IOCTL_VIDEO_HANDLE_VIDEOPARAMETERS</a>. Depending on the <b>dwCommand</b> member of the VIDEOPARAMETERS structure, the miniport driver should get or set the television connector and copy protection capabilities of the device.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows-hardware/drivers/ddi/content/ntddvdeo/ni-ntddvdeo-ioctl_video_handle_videoparameters">IOCTL_VIDEO_HANDLE_VIDEOPARAMETERS</seealso>
+    <seealso href="https://docs.microsoft.com//windows-hardware/drivers/ddi/content/video/ns-video-_video_request_packet">VIDEO_REQUEST_PACKET</seealso>
+  </member>
+  <member name="VIDEOPARAMETERS.Guid">
+    <summary>
+      <para>Specifies the globally unique identifier (GUID) for this structure {02C62061-1097-11d1-920F-00A024DF156E}. A video miniport driver must verify the GUID at the start of the structure before processing the structure.</para>
+    </summary>
+  </member>
+  <member name="VIDEOPARAMETERS.dwOffset">
+    <summary>
+      <para>Is reserved and should be ignored by the video miniport driver.</para>
+    </summary>
+  </member>
+  <member name="VIDEOPARAMETERS.dwCommand">
+    <summary>
+      <para>Indicates the action to be performed by the driver. This member can be one of the following values:</para>
+      <h4>VP_COMMAND_GET</h4>
+      <para>The miniport driver should return all of the device's TV connector capabilities, current TV connector settings, copy protection capabilities, and current copy protection settings by setting the appropriate flags in <b>dwFlags</b> and setting the values of the members that correspond to those set flags.</para>
+      <h4>VP_COMMAND_SET</h4>
+      <para>The miniport driver should set the TV connector and copy protection hardware according to the members of this structure that correspond to the flags set in <b>dwFlags</b>.</para>
+    </summary>
+  </member>
+  <member name="VIDEOPARAMETERS.dwFlags">
+    <summary>
+      <para>Indicates which members of this structure contain valid data. When <b>dwCommand</b> is VP_COMMAND_GET, the driver should set the appropriate bits in this member to indicate in which corresponding members it has returned valid data. When <b>dwCommand</b> is VP_COMMAND_SET, the driver should set the functionality on the hardware according to values in the members that correspond with the bits set in this member. This member can be a bitwise OR of the values listed in the first column of the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Flag</description>
+          <description>Corresponding Members</description>
+          <description>Commands</description>
+        </listheader>
+        <item>
+          <description>
+            <para>VP_FLAGS_BRIGHTNESS</para>
+          </description>
+          <description>
+            <b>dwBrightness</b>
+          </description>
+          <description>
+            <para>get/set</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>VP_FLAGS_CONTRAST</para>
+          </description>
+          <description>
+            <b>dwContrast</b>
+          </description>
+          <description>
+            <para>get/set</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>VP_FLAGS_COPYPROTECT</para>
+          </description>
+          <description>
+            <b>dwCPType</b>
+            <para>
+              <b>dwCPCommand</b>
+            </para>
+            <para>
+              <b>dwCPStandard</b>
+            </para>
+            <para>
+              <b>dwCPKey</b>
+            </para>
+            <para>
+              <b>bCP_APSTriggerBits</b>
+            </para>
+            <para>
+              <b>bOEMCopyProtection</b>
+            </para>
+          </description>
+          <description>
+            <para>get/set</para>
+            <para>set</para>
+            <para>get</para>
+            <para>set</para>
+            <para>set</para>
+            <para>get/set</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>VP_FLAGS_FLICKER</para>
+          </description>
+          <description>
+            <b>dwFlickerFilter</b>
+          </description>
+          <description>
+            <para>get/set</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>VP_FLAGS_MAX_UNSCALED</para>
+          </description>
+          <description>
+            <b>dwMaxUnscaledX</b>
+            <para>
+              <b>dwMaxUnscaledY</b>
+            </para>
+          </description>
+          <description>
+            <para>get</para>
+            <para>get</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>VP_FLAGS_OVERSCAN</para>
+          </description>
+          <description>
+            <b>dwOverscanX</b>
+            <para>
+              <b>dwOverscanY</b>
+            </para>
+          </description>
+          <description>
+            <para>get/set</para>
+            <para>get/set</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>VP_FLAGS_POSITION</para>
+          </description>
+          <description>
+            <b>dwPositionX</b>
+            <para>
+              <b>dwPositionY</b>
+            </para>
+          </description>
+          <description>
+            <para>get/set</para>
+            <para>get/set</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>VP_FLAGS_TV_MODE</para>
+          </description>
+          <description>
+            <b>dwMode</b>
+            <para>
+              <b>dwAvailableModes</b>
+            </para>
+          </description>
+          <description>
+            <para>get/set</para>
+            <para>get</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>VP_FLAGS_TV_STANDARD</para>
+          </description>
+          <description>
+            <b>dwTVStandard</b>
+            <para>
+              <b>dwAvailableTVStandard</b>
+            </para>
+          </description>
+          <description>
+            <para>get/set</para>
+            <para>get</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="VIDEOPARAMETERS.dwMode">
+    <summary>
+      <para>Specifies the current playback mode. This member is valid for both the VP_COMMAND_SET and VP_COMMAND_GET commands, and can be one of the following values:</para>
+      <h4>VP_MODE_TV_PLAYBACK</h4>
+      <para>Describes an optimal set of fields for video playback, with the flicker filter off and overscan display on.</para>
+      <h4>VP_MODE_WIN_GRAPHICS</h4>
+      <para>Describes the display settings that are optimal for Windows display, with the maximum flicker filter on and any overscan display off.</para>
+    </summary>
+  </member>
+  <member name="VIDEOPARAMETERS.dwTVStandard">
+    <summary>
+      <para>Is the current world television standard. This member is valid for both the VP_COMMAND_SET and VP_COMMAND_GET commands, and can be one of the following values:</para>
+      <para>VP_TV_STANDARD_NTSC_M</para>
+      <para>VP_TV_STANDARD_NTSC_M_J</para>
+      <para>VP_TV_STANDARD_NTSC_433</para>
+      <para>VP_TV_STANDARD_PAL_B</para>
+      <para>VP_TV_STANDARD_PAL_D</para>
+      <para>VP_TV_STANDARD_PAL_G</para>
+      <para>VP_TV_STANDARD_PAL_H</para>
+      <para>VP_TV_STANDARD_PAL_I</para>
+      <para>VP_TV_STANDARD_PAL_M</para>
+      <para>VP_TV_STANDARD_PAL_N</para>
+      <para>VP_TV_STANDARD_PAL_60</para>
+      <para>VP_TV_STANDARD_SECAM_B</para>
+      <para>VP_TV_STANDARD_SECAM_D</para>
+      <para>VP_TV_STANDARD_SECAM_G</para>
+      <para>VP_TV_STANDARD_SECAM_H</para>
+      <para>VP_TV_STANDARD_SECAM_K</para>
+      <para>VP_TV_STANDARD_SECAM_K1</para>
+      <para>VP_TV_STANDARD_SECAM_L</para>
+      <para>VP_TV_STANDARD_SECAM_L1</para>
+      <para>VP_TV_STANDARD_WIN_VGA</para>
+    </summary>
+  </member>
+  <member name="VIDEOPARAMETERS.dwAvailableModes">
+    <summary>
+      <para>Indicates the playback modes the device is capable of. This member is only valid for the VP_COMMAND_GET command, and can be a bitwise OR of the following values:</para>
+      <para>VP_MODE_TV_PLAYBACK</para>
+      <para>VP_MODE_WIN_GRAPHICS</para>
+    </summary>
+  </member>
+  <member name="VIDEOPARAMETERS.dwAvailableTVStandard">
+    <summary>
+      <para>Specifies all available world television standards. This member is only valid for the VP_COMMAND_GET command, and can be a bitwise OR of the following values:</para>
+      <para>VP_TV_STANDARD_NTSC_M</para>
+      <para>VP_TV_STANDARD_NTSC_M_J</para>
+      <para>VP_TV_STANDARD_NTSC_433</para>
+      <para>VP_TV_STANDARD_PAL_B</para>
+      <para>VP_TV_STANDARD_PAL_D</para>
+      <para>VP_TV_STANDARD_PAL_G</para>
+      <para>VP_TV_STANDARD_PAL_H</para>
+      <para>VP_TV_STANDARD_PAL_I</para>
+      <para>VP_TV_STANDARD_PAL_M</para>
+      <para>VP_TV_STANDARD_PAL_N</para>
+      <para>VP_TV_STANDARD_PAL_60</para>
+      <para>VP_TV_STANDARD_SECAM_B</para>
+      <para>VP_TV_STANDARD_SECAM_D</para>
+      <para>VP_TV_STANDARD_SECAM_G</para>
+      <para>VP_TV_STANDARD_SECAM_H</para>
+      <para>VP_TV_STANDARD_SECAM_K</para>
+      <para>VP_TV_STANDARD_SECAM_K1</para>
+      <para>VP_TV_STANDARD_SECAM_L</para>
+      <para>VP_TV_STANDARD_SECAM_L1</para>
+      <para>VP_TV_STANDARD_WIN_VGA</para>
+    </summary>
+  </member>
+  <member name="VIDEOPARAMETERS.dwFlickerFilter">
+    <summary>
+      <para>Is a value in tenths of a percent that indicates the flicker filter state. This member can be a value between [0,1000], and is valid for both VP_COMMAND_GET and VP_COMMAND_SET.</para>
+    </summary>
+  </member>
+  <member name="VIDEOPARAMETERS.dwOverScanX">
+    <summary>
+      <para>Is a value in tenths of a percent that indicates the amount of overscan in <i>x</i>. This member can be a value between [0,1000], and is valid for both VP_COMMAND_GET and VP_COMMAND_SET.</para>
+    </summary>
+  </member>
+  <member name="VIDEOPARAMETERS.dwOverScanY">
+    <summary>
+      <para>Is a value in tenths of a percent that indicates the amount of overscan in <i>y</i>. This member can be a value between [0,1000], and is valid for both VP_COMMAND_GET and VP_COMMAND_SET.</para>
+    </summary>
+  </member>
+  <member name="VIDEOPARAMETERS.dwMaxUnscaledX">
+    <summary>
+      <para>Is the maximum <i>x</i> resolution that the TV can display without having the hardware scale the video image. The miniport driver must set a value in this member when <b>dwCommand</b> is VP_COMMAND_GET. This member is invalid for VP_COMMAND_SET.</para>
+    </summary>
+  </member>
+  <member name="VIDEOPARAMETERS.dwMaxUnscaledY">
+    <summary>
+      <para>Is the maximum <i>y</i> resolution that the TV can display without having the hardware scale the video image. The miniport driver must set a value in this member when <b>dwCommand</b> is VP_COMMAND_GET. This member is invalid for VP_COMMAND_SET.</para>
+    </summary>
+  </member>
+  <member name="VIDEOPARAMETERS.dwPositionX">
+    <summary>
+      <para>Is the value used by the hardware to determine the current <i>x</i> position of the image on the TV. This member is specified in pixels, and is valid for both VP_COMMAND_GET and VP_COMMAND_SET.</para>
+    </summary>
+  </member>
+  <member name="VIDEOPARAMETERS.dwPositionY">
+    <summary>
+      <para>Is the value used by the hardware to determine the current <i>y</i> position of the image on the TV. This member is specified in scan lines, and is valid for both VP_COMMAND_GET and VP_COMMAND_SET.</para>
+    </summary>
+  </member>
+  <member name="VIDEOPARAMETERS.dwBrightness">
+    <summary>
+      <para>Is a percentage value that indicates the brightness setting on the TV. This member can be a value between [0,100], and is valid for both VP_COMMAND_GET and VP_COMMAND_SET.</para>
+    </summary>
+  </member>
+  <member name="VIDEOPARAMETERS.dwContrast">
+    <summary>
+      <para>Is a percentage value that indicates the contrast setting on the TV. This member can be a value between [0,100], and is valid for both VP_COMMAND_GET and VP_COMMAND_SET.</para>
+    </summary>
+  </member>
+  <member name="VIDEOPARAMETERS.dwCPType">
+    <summary>
+      <para>Specifies the type of copy protection supported by the device. This member is valid for both the VP_COMMAND_SET and VP_COMMAND_GET commands, and can be CP_TYPE_APS_TRIGGER.</para>
+    </summary>
+  </member>
+  <member name="VIDEOPARAMETERS.dwCPCommand">
+    <summary>
+      <para>Is the copy protection command. This member is only valid for the VP_COMMAND_SET command, and can be one of the following values:</para>
+      <h4>VP_CP_CMD_ACTIVATE</h4>
+      <para>The miniport driver should turn on copy protection and generate and return a unique copy protection key in <b>dwCPKey</b>.</para>
+      <h4>VP_CP_CMD_CHANGE</h4>
+      <para>If the copy protection key in <b>dwCPKey</b> is valid, the miniport driver should change copy protection based on the trigger data in <b>bCP_APSTriggerBits</b>.</para>
+      <h4>VP_CP_CMD_DEACTIVATE</h4>
+      <para>If the copy protection key in <b>dwCPKey</b> is valid, the miniport driver should turn off copy protection.</para>
+    </summary>
+  </member>
+  <member name="VIDEOPARAMETERS.dwCPStandard">
+    <summary>
+      <para>Is the TV standards for which copy protection types are available. This member is only valid for the VP_COMMAND_GET command, and can be a bitwise OR of the following values:</para>
+      <para>VP_TV_STANDARD_NTSC_M</para>
+      <para>VP_TV_STANDARD_NTSC_M_J</para>
+      <para>VP_TV_STANDARD_NTSC_433</para>
+      <para>VP_TV_STANDARD_PAL_B</para>
+      <para>VP_TV_STANDARD_PAL_D</para>
+      <para>VP_TV_STANDARD_PAL_G</para>
+      <para>VP_TV_STANDARD_PAL_H</para>
+      <para>VP_TV_STANDARD_PAL_I</para>
+      <para>VP_TV_STANDARD_PAL_M</para>
+      <para>VP_TV_STANDARD_PAL_N</para>
+      <para>VP_TV_STANDARD_PAL_60</para>
+      <para>VP_TV_STANDARD_SECAM_B</para>
+      <para>VP_TV_STANDARD_SECAM_D</para>
+      <para>VP_TV_STANDARD_SECAM_G</para>
+      <para>VP_TV_STANDARD_SECAM_H</para>
+      <para>VP_TV_STANDARD_SECAM_K</para>
+      <para>VP_TV_STANDARD_SECAM_K1</para>
+      <para>VP_TV_STANDARD_SECAM_L</para>
+      <para>VP_TV_STANDARD_SECAM_L1</para>
+      <para>VP_TV_STANDARD_WIN_VGA</para>
+    </summary>
+  </member>
+  <member name="VIDEOPARAMETERS.dwCPKey">
+    <summary>
+      <para>Is a driver-generated copy protection key that is unique to this instance of the driver. This member is valid only for the VP_COMMAND_SET command. The miniport driver generates and returns this key when <b>dwCPCommand</b> is set to VP_CP_CMD_ACTIVATE. The caller must set this key when the <b>dwCPCommand</b> field is either VP_CP_CMD_DEACTIVATE or VP_CP_CMD_CHANGE. If the caller sets an incorrect key, the driver must not change the current copy protection settings.</para>
+    </summary>
+  </member>
+  <member name="VIDEOPARAMETERS.bCP_APSTriggerBits">
+    <summary>
+      <para>Specifies DVD analog protection system (APS) trigger bit data. Bits zero and 1 are valid. This member is valid only for the VP_COMMAND_SET command.</para>
+    </summary>
+  </member>
+  <member name="VIDEOPARAMETERS.bOEMCopyProtection">
+    <summary>
+      <para>OEM-specific copy protection data. This member is valid for both the VP_COMMAND_SET and VP_COMMAND_GET commands.</para>
+    </summary>
+  </member>
+</doc>

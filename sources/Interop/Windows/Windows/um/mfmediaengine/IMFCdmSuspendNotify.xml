@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFCdmSuspendNotify.Begin">
+    <summary>
+      <para>Indicates that the suspend process is starting and  resources should be brought into a consistent state.</para>
+    </summary>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFCdmSuspendNotify" />
+  </member>
+  <member name="IMFCdmSuspendNotify.End">
+    <summary>
+      <para>The actual suspend is about to occur and no more calls will be made into the Content Decryption Module (CDM).</para>
+    </summary>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFCdmSuspendNotify" />
+  </member>
+  <member name="IMFCdmSuspendNotify">
+    <summary>
+      <para>Used to enable the client to notify the Content Decryption Module (CDM) when global resources should be brought into a consistent state prior to suspending.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+  </member>
+</doc>

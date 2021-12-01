@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFMediaSourcePresentationProvider.ForceEndOfPresentation">
+    <summary>
+      <para>Notifies the source when playback has reached the end of a segment. For timelines, this corresponds to reaching a mark-out point.</para>
+    </summary>
+    <param name="pPresentationDescriptor">
+      <para>Pointer to the <see cref="IMFPresentationDescriptor" /> interface of the presentation descriptor for the segment that has ended.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IMFMediaSourcePresentationProvider" />
+  </member>
+  <member name="IMFMediaSourcePresentationProvider">
+    <summary>
+      <para>Provides notifications to the sequencer source. This interface is exposed by the sequencer source. Applications do not use this interface.</para>
+      <para>To get a pointer to this interface, call <see cref="IMFGetService.GetService" /> with the service identifier MF_SOURCE_PRESENTATION_PROVIDER_SERVICE.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+  </member>
+</doc>

@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PublishDropTarget.xml' path='doc/member[@name="PublishDropTarget"]/*' />
 [Guid("CC6EEFFB-43F6-46C5-9619-51D571967F7D")]
 public partial struct PublishDropTarget
 {

@@ -5,8 +5,10 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PROCESS_PROTECTION_LEVEL_INFORMATION.xml' path='doc/member[@name="PROCESS_PROTECTION_LEVEL_INFORMATION"]/*' />
 public partial struct PROCESS_PROTECTION_LEVEL_INFORMATION
 {
+    /// <include file='PROCESS_PROTECTION_LEVEL_INFORMATION.xml' path='doc/member[@name="PROCESS_PROTECTION_LEVEL_INFORMATION.ProtectionLevel"]/*' />
     [NativeTypeName("DWORD")]
     public uint ProtectionLevel;
 }

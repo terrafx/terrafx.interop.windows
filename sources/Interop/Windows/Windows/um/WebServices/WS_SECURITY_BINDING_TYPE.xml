@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_SECURITY_BINDING_TYPE">
+    <summary>
+      <para>The type of the security binding, used as a selector for subtypes of
+<see cref="WS_SECURITY_BINDING" />.  In general, the type name of the
+security binding (one of the values defined here) specifies how the
+security token used with that security binding is obtained and used.</para>
+    </summary>
+  </member>
+  <member name="WS_SECURITY_BINDING_TYPE.WS_SSL_TRANSPORT_SECURITY_BINDING_TYPE">
+    <summary>
+      <para>Type id for the security binding <see cref="WS_SSL_TRANSPORT_SECURITY_BINDING" />.</para>
+    </summary>
+  </member>
+  <member name="WS_SECURITY_BINDING_TYPE.WS_TCP_SSPI_TRANSPORT_SECURITY_BINDING_TYPE">
+    <summary>
+      <para>Type id for the security binding <see cref="WS_TCP_SSPI_TRANSPORT_SECURITY_BINDING" />.</para>
+    </summary>
+  </member>
+  <member name="WS_SECURITY_BINDING_TYPE.WS_HTTP_HEADER_AUTH_SECURITY_BINDING_TYPE">
+    <summary>
+      <para>Type id for the security binding <see cref="WS_HTTP_HEADER_AUTH_SECURITY_BINDING" />.</para>
+    </summary>
+  </member>
+  <member name="WS_SECURITY_BINDING_TYPE.WS_USERNAME_MESSAGE_SECURITY_BINDING_TYPE">
+    <summary>
+      <para>Type id for the security binding <see cref="WS_USERNAME_MESSAGE_SECURITY_BINDING" />.</para>
+    </summary>
+  </member>
+  <member name="WS_SECURITY_BINDING_TYPE.WS_KERBEROS_APREQ_MESSAGE_SECURITY_BINDING_TYPE">
+    <summary>
+      <para>Type id for the security binding <see cref="WS_KERBEROS_APREQ_MESSAGE_SECURITY_BINDING" />.</para>
+    </summary>
+  </member>
+  <member name="WS_SECURITY_BINDING_TYPE.WS_XML_TOKEN_MESSAGE_SECURITY_BINDING_TYPE">
+    <summary>
+      <para>Type id for the security binding <see cref="WS_XML_TOKEN_MESSAGE_SECURITY_BINDING" />.</para>
+    </summary>
+  </member>
+  <member name="WS_SECURITY_BINDING_TYPE.WS_SAML_MESSAGE_SECURITY_BINDING_TYPE">
+    <summary>
+      <para>Type id for the security binding <see cref="WS_SAML_MESSAGE_SECURITY_BINDING" />.</para>
+    </summary>
+  </member>
+  <member name="WS_SECURITY_BINDING_TYPE.WS_SECURITY_CONTEXT_MESSAGE_SECURITY_BINDING_TYPE">
+    <summary>
+      <para>Type id for the security binding <see cref="WS_SECURITY_CONTEXT_MESSAGE_SECURITY_BINDING" />.</para>
+    </summary>
+  </member>
+  <member name="WS_SECURITY_BINDING_TYPE.WS_NAMEDPIPE_SSPI_TRANSPORT_SECURITY_BINDING_TYPE">
+    <summary>
+      <para>Windows 8 or later:
+Type id for the security binding <see cref="WS_NAMEDPIPE_SSPI_TRANSPORT_SECURITY_BINDING" />.</para>
+    </summary>
+  </member>
+</doc>

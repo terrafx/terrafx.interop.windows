@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PROCESSOR_CACHE_TYPE">
+    <summary>
+      <para>Represents the type of processor cache identified in the corresponding <see cref="CACHE_DESCRIPTOR" /> structure.</para>
+    </summary>
+    <seealso cref="CACHE_DESCRIPTOR" />
+    <seealso cref="GetLogicalProcessorInformation" />
+    <seealso cref="SYSTEM_LOGICAL_PROCESSOR_INFORMATION" />
+  </member>
+  <member name="PROCESSOR_CACHE_TYPE.CacheUnified">
+    <summary>
+      <para>The cache is unified.</para>
+    </summary>
+  </member>
+  <member name="PROCESSOR_CACHE_TYPE.CacheInstruction">
+    <summary>
+      <para>The cache is for processor instructions.</para>
+    </summary>
+  </member>
+  <member name="PROCESSOR_CACHE_TYPE.CacheData">
+    <summary>
+      <para>The cache is for data.</para>
+    </summary>
+  </member>
+  <member name="PROCESSOR_CACHE_TYPE.CacheTrace">
+    <summary>
+      <para>The cache is for traces.</para>
+    </summary>
+  </member>
+</doc>

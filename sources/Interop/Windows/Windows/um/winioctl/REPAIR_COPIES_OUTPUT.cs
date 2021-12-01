@@ -7,14 +7,18 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='REPAIR_COPIES_OUTPUT.xml' path='doc/member[@name="REPAIR_COPIES_OUTPUT"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public partial struct REPAIR_COPIES_OUTPUT
 {
+    /// <include file='REPAIR_COPIES_OUTPUT.xml' path='doc/member[@name="REPAIR_COPIES_OUTPUT.Size"]/*' />
     [NativeTypeName("DWORD")]
     public uint Size;
 
+    /// <include file='REPAIR_COPIES_OUTPUT.xml' path='doc/member[@name="REPAIR_COPIES_OUTPUT.Status"]/*' />
     [NativeTypeName("DWORD")]
     public uint Status;
 
+    /// <include file='REPAIR_COPIES_OUTPUT.xml' path='doc/member[@name="REPAIR_COPIES_OUTPUT.ResumeFileOffset"]/*' />
     public LARGE_INTEGER ResumeFileOffset;
 }

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFPMediaPlayer.xml' path='doc/member[@name="IMFPMediaPlayer"]/*' />
 [Guid("A714590A-58AF-430A-85BF-44F5EC838D85")]
 [NativeTypeName("struct IMFPMediaPlayer : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface
         return ((delegate* unmanaged<IMFPMediaPlayer*, Guid*, void**, int>)(lpVtbl[0]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface
         return ((delegate* unmanaged<IMFPMediaPlayer*, uint>)(lpVtbl[1]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface
         return ((delegate* unmanaged<IMFPMediaPlayer*, uint>)(lpVtbl[2]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFPMediaPlayer.xml' path='doc/member[@name="IMFPMediaPlayer.Play"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Play()
@@ -46,6 +51,7 @@ public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface
         return ((delegate* unmanaged<IMFPMediaPlayer*, int>)(lpVtbl[3]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFPMediaPlayer.xml' path='doc/member[@name="IMFPMediaPlayer.Pause"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Pause()
@@ -53,6 +59,7 @@ public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface
         return ((delegate* unmanaged<IMFPMediaPlayer*, int>)(lpVtbl[4]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFPMediaPlayer.xml' path='doc/member[@name="IMFPMediaPlayer.Stop"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT Stop()
@@ -60,6 +67,7 @@ public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface
         return ((delegate* unmanaged<IMFPMediaPlayer*, int>)(lpVtbl[5]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFPMediaPlayer.xml' path='doc/member[@name="IMFPMediaPlayer.FrameStep"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT FrameStep()
@@ -67,6 +75,7 @@ public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface
         return ((delegate* unmanaged<IMFPMediaPlayer*, int>)(lpVtbl[6]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFPMediaPlayer.xml' path='doc/member[@name="IMFPMediaPlayer.SetPosition"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT SetPosition([NativeTypeName("const GUID &")] Guid* guidPositionType, [NativeTypeName("const PROPVARIANT *")] PROPVARIANT* pvPositionValue)
@@ -74,6 +83,7 @@ public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface
         return ((delegate* unmanaged<IMFPMediaPlayer*, Guid*, PROPVARIANT*, int>)(lpVtbl[7]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), guidPositionType, pvPositionValue);
     }
 
+    /// <include file='IMFPMediaPlayer.xml' path='doc/member[@name="IMFPMediaPlayer.GetPosition"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetPosition([NativeTypeName("const GUID &")] Guid* guidPositionType, PROPVARIANT* pvPositionValue)
@@ -81,6 +91,7 @@ public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface
         return ((delegate* unmanaged<IMFPMediaPlayer*, Guid*, PROPVARIANT*, int>)(lpVtbl[8]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), guidPositionType, pvPositionValue);
     }
 
+    /// <include file='IMFPMediaPlayer.xml' path='doc/member[@name="IMFPMediaPlayer.GetDuration"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT GetDuration([NativeTypeName("const GUID &")] Guid* guidPositionType, PROPVARIANT* pvDurationValue)
@@ -88,6 +99,7 @@ public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface
         return ((delegate* unmanaged<IMFPMediaPlayer*, Guid*, PROPVARIANT*, int>)(lpVtbl[9]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), guidPositionType, pvDurationValue);
     }
 
+    /// <include file='IMFPMediaPlayer.xml' path='doc/member[@name="IMFPMediaPlayer.SetRate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT SetRate(float flRate)
@@ -95,6 +107,7 @@ public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface
         return ((delegate* unmanaged<IMFPMediaPlayer*, float, int>)(lpVtbl[10]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), flRate);
     }
 
+    /// <include file='IMFPMediaPlayer.xml' path='doc/member[@name="IMFPMediaPlayer.GetRate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT GetRate(float* pflRate)
@@ -102,6 +115,7 @@ public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface
         return ((delegate* unmanaged<IMFPMediaPlayer*, float*, int>)(lpVtbl[11]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), pflRate);
     }
 
+    /// <include file='IMFPMediaPlayer.xml' path='doc/member[@name="IMFPMediaPlayer.GetSupportedRates"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT GetSupportedRates(BOOL fForwardDirection, float* pflSlowestRate, float* pflFastestRate)
@@ -109,6 +123,7 @@ public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface
         return ((delegate* unmanaged<IMFPMediaPlayer*, BOOL, float*, float*, int>)(lpVtbl[12]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), fForwardDirection, pflSlowestRate, pflFastestRate);
     }
 
+    /// <include file='IMFPMediaPlayer.xml' path='doc/member[@name="IMFPMediaPlayer.GetState"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT GetState(MFP_MEDIAPLAYER_STATE* peState)
@@ -116,6 +131,7 @@ public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface
         return ((delegate* unmanaged<IMFPMediaPlayer*, MFP_MEDIAPLAYER_STATE*, int>)(lpVtbl[13]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), peState);
     }
 
+    /// <include file='IMFPMediaPlayer.xml' path='doc/member[@name="IMFPMediaPlayer.CreateMediaItemFromURL"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT CreateMediaItemFromURL([NativeTypeName("LPCWSTR")] ushort* pwszURL, BOOL fSync, [NativeTypeName("DWORD_PTR")] nuint dwUserData, IMFPMediaItem** ppMediaItem)
@@ -123,6 +139,7 @@ public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface
         return ((delegate* unmanaged<IMFPMediaPlayer*, ushort*, BOOL, nuint, IMFPMediaItem**, int>)(lpVtbl[14]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), pwszURL, fSync, dwUserData, ppMediaItem);
     }
 
+    /// <include file='IMFPMediaPlayer.xml' path='doc/member[@name="IMFPMediaPlayer.CreateMediaItemFromObject"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT CreateMediaItemFromObject(IUnknown* pIUnknownObj, BOOL fSync, [NativeTypeName("DWORD_PTR")] nuint dwUserData, IMFPMediaItem** ppMediaItem)
@@ -130,6 +147,7 @@ public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface
         return ((delegate* unmanaged<IMFPMediaPlayer*, IUnknown*, BOOL, nuint, IMFPMediaItem**, int>)(lpVtbl[15]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), pIUnknownObj, fSync, dwUserData, ppMediaItem);
     }
 
+    /// <include file='IMFPMediaPlayer.xml' path='doc/member[@name="IMFPMediaPlayer.SetMediaItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT SetMediaItem(IMFPMediaItem* pIMFPMediaItem)
@@ -137,6 +155,7 @@ public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface
         return ((delegate* unmanaged<IMFPMediaPlayer*, IMFPMediaItem*, int>)(lpVtbl[16]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), pIMFPMediaItem);
     }
 
+    /// <include file='IMFPMediaPlayer.xml' path='doc/member[@name="IMFPMediaPlayer.ClearMediaItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT ClearMediaItem()
@@ -144,6 +163,7 @@ public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface
         return ((delegate* unmanaged<IMFPMediaPlayer*, int>)(lpVtbl[17]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFPMediaPlayer.xml' path='doc/member[@name="IMFPMediaPlayer.GetMediaItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT GetMediaItem(IMFPMediaItem** ppIMFPMediaItem)
@@ -151,6 +171,7 @@ public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface
         return ((delegate* unmanaged<IMFPMediaPlayer*, IMFPMediaItem**, int>)(lpVtbl[18]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), ppIMFPMediaItem);
     }
 
+    /// <include file='IMFPMediaPlayer.xml' path='doc/member[@name="IMFPMediaPlayer.GetVolume"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT GetVolume(float* pflVolume)
@@ -158,6 +179,7 @@ public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface
         return ((delegate* unmanaged<IMFPMediaPlayer*, float*, int>)(lpVtbl[19]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), pflVolume);
     }
 
+    /// <include file='IMFPMediaPlayer.xml' path='doc/member[@name="IMFPMediaPlayer.SetVolume"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public HRESULT SetVolume(float flVolume)
@@ -165,6 +187,7 @@ public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface
         return ((delegate* unmanaged<IMFPMediaPlayer*, float, int>)(lpVtbl[20]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), flVolume);
     }
 
+    /// <include file='IMFPMediaPlayer.xml' path='doc/member[@name="IMFPMediaPlayer.GetBalance"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
     public HRESULT GetBalance(float* pflBalance)
@@ -172,6 +195,7 @@ public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface
         return ((delegate* unmanaged<IMFPMediaPlayer*, float*, int>)(lpVtbl[21]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), pflBalance);
     }
 
+    /// <include file='IMFPMediaPlayer.xml' path='doc/member[@name="IMFPMediaPlayer.SetBalance"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
     public HRESULT SetBalance(float flBalance)
@@ -179,6 +203,7 @@ public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface
         return ((delegate* unmanaged<IMFPMediaPlayer*, float, int>)(lpVtbl[22]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), flBalance);
     }
 
+    /// <include file='IMFPMediaPlayer.xml' path='doc/member[@name="IMFPMediaPlayer.GetMute"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
     public HRESULT GetMute(BOOL* pfMute)
@@ -186,6 +211,7 @@ public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface
         return ((delegate* unmanaged<IMFPMediaPlayer*, BOOL*, int>)(lpVtbl[23]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), pfMute);
     }
 
+    /// <include file='IMFPMediaPlayer.xml' path='doc/member[@name="IMFPMediaPlayer.SetMute"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(24)]
     public HRESULT SetMute(BOOL fMute)
@@ -193,6 +219,7 @@ public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface
         return ((delegate* unmanaged<IMFPMediaPlayer*, BOOL, int>)(lpVtbl[24]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), fMute);
     }
 
+    /// <include file='IMFPMediaPlayer.xml' path='doc/member[@name="IMFPMediaPlayer.GetNativeVideoSize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(25)]
     public HRESULT GetNativeVideoSize(SIZE* pszVideo, SIZE* pszARVideo)
@@ -200,6 +227,7 @@ public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface
         return ((delegate* unmanaged<IMFPMediaPlayer*, SIZE*, SIZE*, int>)(lpVtbl[25]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), pszVideo, pszARVideo);
     }
 
+    /// <include file='IMFPMediaPlayer.xml' path='doc/member[@name="IMFPMediaPlayer.GetIdealVideoSize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(26)]
     public HRESULT GetIdealVideoSize(SIZE* pszMin, SIZE* pszMax)
@@ -207,6 +235,7 @@ public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface
         return ((delegate* unmanaged<IMFPMediaPlayer*, SIZE*, SIZE*, int>)(lpVtbl[26]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), pszMin, pszMax);
     }
 
+    /// <include file='IMFPMediaPlayer.xml' path='doc/member[@name="IMFPMediaPlayer.SetVideoSourceRect"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(27)]
     public HRESULT SetVideoSourceRect([NativeTypeName("const MFVideoNormalizedRect *")] MFVideoNormalizedRect* pnrcSource)
@@ -214,6 +243,7 @@ public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface
         return ((delegate* unmanaged<IMFPMediaPlayer*, MFVideoNormalizedRect*, int>)(lpVtbl[27]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), pnrcSource);
     }
 
+    /// <include file='IMFPMediaPlayer.xml' path='doc/member[@name="IMFPMediaPlayer.GetVideoSourceRect"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(28)]
     public HRESULT GetVideoSourceRect(MFVideoNormalizedRect* pnrcSource)
@@ -221,6 +251,7 @@ public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface
         return ((delegate* unmanaged<IMFPMediaPlayer*, MFVideoNormalizedRect*, int>)(lpVtbl[28]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), pnrcSource);
     }
 
+    /// <include file='IMFPMediaPlayer.xml' path='doc/member[@name="IMFPMediaPlayer.SetAspectRatioMode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(29)]
     public HRESULT SetAspectRatioMode([NativeTypeName("DWORD")] uint dwAspectRatioMode)
@@ -228,6 +259,7 @@ public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface
         return ((delegate* unmanaged<IMFPMediaPlayer*, uint, int>)(lpVtbl[29]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), dwAspectRatioMode);
     }
 
+    /// <include file='IMFPMediaPlayer.xml' path='doc/member[@name="IMFPMediaPlayer.GetAspectRatioMode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(30)]
     public HRESULT GetAspectRatioMode([NativeTypeName("DWORD *")] uint* pdwAspectRatioMode)
@@ -235,6 +267,7 @@ public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface
         return ((delegate* unmanaged<IMFPMediaPlayer*, uint*, int>)(lpVtbl[30]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), pdwAspectRatioMode);
     }
 
+    /// <include file='IMFPMediaPlayer.xml' path='doc/member[@name="IMFPMediaPlayer.GetVideoWindow"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(31)]
     public HRESULT GetVideoWindow(HWND* phwndVideo)
@@ -242,6 +275,7 @@ public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface
         return ((delegate* unmanaged<IMFPMediaPlayer*, HWND*, int>)(lpVtbl[31]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), phwndVideo);
     }
 
+    /// <include file='IMFPMediaPlayer.xml' path='doc/member[@name="IMFPMediaPlayer.UpdateVideo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(32)]
     public HRESULT UpdateVideo()
@@ -249,6 +283,7 @@ public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface
         return ((delegate* unmanaged<IMFPMediaPlayer*, int>)(lpVtbl[32]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFPMediaPlayer.xml' path='doc/member[@name="IMFPMediaPlayer.SetBorderColor"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(33)]
     public HRESULT SetBorderColor(COLORREF Clr)
@@ -256,6 +291,7 @@ public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface
         return ((delegate* unmanaged<IMFPMediaPlayer*, COLORREF, int>)(lpVtbl[33]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), Clr);
     }
 
+    /// <include file='IMFPMediaPlayer.xml' path='doc/member[@name="IMFPMediaPlayer.GetBorderColor"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(34)]
     public HRESULT GetBorderColor(COLORREF* pClr)
@@ -263,6 +299,7 @@ public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface
         return ((delegate* unmanaged<IMFPMediaPlayer*, COLORREF*, int>)(lpVtbl[34]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), pClr);
     }
 
+    /// <include file='IMFPMediaPlayer.xml' path='doc/member[@name="IMFPMediaPlayer.InsertEffect"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(35)]
     public HRESULT InsertEffect(IUnknown* pEffect, BOOL fOptional)
@@ -270,6 +307,7 @@ public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface
         return ((delegate* unmanaged<IMFPMediaPlayer*, IUnknown*, BOOL, int>)(lpVtbl[35]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), pEffect, fOptional);
     }
 
+    /// <include file='IMFPMediaPlayer.xml' path='doc/member[@name="IMFPMediaPlayer.RemoveEffect"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(36)]
     public HRESULT RemoveEffect(IUnknown* pEffect)
@@ -277,6 +315,7 @@ public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface
         return ((delegate* unmanaged<IMFPMediaPlayer*, IUnknown*, int>)(lpVtbl[36]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this), pEffect);
     }
 
+    /// <include file='IMFPMediaPlayer.xml' path='doc/member[@name="IMFPMediaPlayer.RemoveAllEffects"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(37)]
     public HRESULT RemoveAllEffects()
@@ -284,6 +323,7 @@ public unsafe partial struct IMFPMediaPlayer : IMFPMediaPlayer.Interface
         return ((delegate* unmanaged<IMFPMediaPlayer*, int>)(lpVtbl[37]))((IMFPMediaPlayer*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFPMediaPlayer.xml' path='doc/member[@name="IMFPMediaPlayer.Shutdown"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(38)]
     public HRESULT Shutdown()

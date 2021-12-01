@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='htmlTabIndex.xml' path='doc/member[@name="htmlTabIndex"]/*' />
 public enum htmlTabIndex
 {
+    /// <include file='htmlTabIndex.xml' path='doc/member[@name="htmlTabIndex.htmlTabIndexNotSet"]/*' />
     htmlTabIndexNotSet = -32768,
+
+    /// <include file='htmlTabIndex.xml' path='doc/member[@name="htmlTabIndex.htmlTabIndex_Max"]/*' />
     htmlTabIndex_Max = 2147483647,
 }

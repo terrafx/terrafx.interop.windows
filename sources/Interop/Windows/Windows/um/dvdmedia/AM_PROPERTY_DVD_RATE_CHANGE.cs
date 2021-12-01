@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='AM_PROPERTY_DVD_RATE_CHANGE.xml' path='doc/member[@name="AM_PROPERTY_DVD_RATE_CHANGE"]/*' />
 public enum AM_PROPERTY_DVD_RATE_CHANGE
 {
+    /// <include file='AM_PROPERTY_DVD_RATE_CHANGE.xml' path='doc/member[@name="AM_PROPERTY_DVD_RATE_CHANGE.AM_RATE_ChangeRate"]/*' />
     AM_RATE_ChangeRate = 1,
+
+    /// <include file='AM_PROPERTY_DVD_RATE_CHANGE.xml' path='doc/member[@name="AM_PROPERTY_DVD_RATE_CHANGE.AM_RATE_FullDataRateMax"]/*' />
     AM_RATE_FullDataRateMax = 2,
+
+    /// <include file='AM_PROPERTY_DVD_RATE_CHANGE.xml' path='doc/member[@name="AM_PROPERTY_DVD_RATE_CHANGE.AM_RATE_ReverseDecode"]/*' />
     AM_RATE_ReverseDecode = 3,
+
+    /// <include file='AM_PROPERTY_DVD_RATE_CHANGE.xml' path='doc/member[@name="AM_PROPERTY_DVD_RATE_CHANGE.AM_RATE_DecoderPosition"]/*' />
     AM_RATE_DecoderPosition = 4,
+
+    /// <include file='AM_PROPERTY_DVD_RATE_CHANGE.xml' path='doc/member[@name="AM_PROPERTY_DVD_RATE_CHANGE.AM_RATE_DecoderVersion"]/*' />
     AM_RATE_DecoderVersion = 5,
 }

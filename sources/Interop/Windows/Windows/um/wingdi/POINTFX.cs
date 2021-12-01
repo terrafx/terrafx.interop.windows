@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='POINTFX.xml' path='doc/member[@name="POINTFX"]/*' />
 public partial struct POINTFX
 {
+    /// <include file='POINTFX.xml' path='doc/member[@name="POINTFX.x"]/*' />
     public FIXED x;
 
+    /// <include file='POINTFX.xml' path='doc/member[@name="POINTFX.y"]/*' />
     public FIXED y;
 }

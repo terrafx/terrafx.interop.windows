@@ -9,12 +9,15 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PROCESS_MITIGATION_IMAGE_LOAD_POLICY.xml' path='doc/member[@name="PROCESS_MITIGATION_IMAGE_LOAD_POLICY"]/*' />
 [SupportedOSPlatform("windows10.0")]
 public partial struct PROCESS_MITIGATION_IMAGE_LOAD_POLICY
 {
+    /// <include file='PROCESS_MITIGATION_IMAGE_LOAD_POLICY.xml' path='doc/member[@name="PROCESS_MITIGATION_IMAGE_LOAD_POLICY.Anonymous"]/*' />
     [NativeTypeName("_PROCESS_MITIGATION_IMAGE_LOAD_POLICY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:12833:5)")]
     public _Anonymous_e__Union Anonymous;
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Flags"]/*' />
     public ref uint Flags
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -24,6 +27,7 @@ public partial struct PROCESS_MITIGATION_IMAGE_LOAD_POLICY
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.NoRemoteImages"]/*' />
     public uint NoRemoteImages
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -39,6 +43,7 @@ public partial struct PROCESS_MITIGATION_IMAGE_LOAD_POLICY
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.NoLowMandatoryLabelImages"]/*' />
     public uint NoLowMandatoryLabelImages
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -54,6 +59,7 @@ public partial struct PROCESS_MITIGATION_IMAGE_LOAD_POLICY
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.PreferSystem32Images"]/*' />
     public uint PreferSystem32Images
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -69,6 +75,7 @@ public partial struct PROCESS_MITIGATION_IMAGE_LOAD_POLICY
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.AuditNoRemoteImages"]/*' />
     public uint AuditNoRemoteImages
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -84,6 +91,7 @@ public partial struct PROCESS_MITIGATION_IMAGE_LOAD_POLICY
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.AuditNoLowMandatoryLabelImages"]/*' />
     public uint AuditNoLowMandatoryLabelImages
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -99,6 +107,7 @@ public partial struct PROCESS_MITIGATION_IMAGE_LOAD_POLICY
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.ReservedFlags"]/*' />
     public uint ReservedFlags
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -114,21 +123,26 @@ public partial struct PROCESS_MITIGATION_IMAGE_LOAD_POLICY
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public partial struct _Anonymous_e__Union
     {
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Flags"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("DWORD")]
         public uint Flags;
 
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("_PROCESS_MITIGATION_IMAGE_LOAD_POLICY::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:12835:9)")]
         public _Anonymous_e__Struct Anonymous;
 
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />
         public partial struct _Anonymous_e__Struct
         {
             public uint _bitfield;
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.NoRemoteImages"]/*' />
             [NativeTypeName("DWORD : 1")]
             public uint NoRemoteImages
             {
@@ -145,6 +159,7 @@ public partial struct PROCESS_MITIGATION_IMAGE_LOAD_POLICY
                 }
             }
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.NoLowMandatoryLabelImages"]/*' />
             [NativeTypeName("DWORD : 1")]
             public uint NoLowMandatoryLabelImages
             {
@@ -161,6 +176,7 @@ public partial struct PROCESS_MITIGATION_IMAGE_LOAD_POLICY
                 }
             }
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.PreferSystem32Images"]/*' />
             [NativeTypeName("DWORD : 1")]
             public uint PreferSystem32Images
             {
@@ -177,6 +193,7 @@ public partial struct PROCESS_MITIGATION_IMAGE_LOAD_POLICY
                 }
             }
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.AuditNoRemoteImages"]/*' />
             [NativeTypeName("DWORD : 1")]
             public uint AuditNoRemoteImages
             {
@@ -193,6 +210,7 @@ public partial struct PROCESS_MITIGATION_IMAGE_LOAD_POLICY
                 }
             }
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.AuditNoLowMandatoryLabelImages"]/*' />
             [NativeTypeName("DWORD : 1")]
             public uint AuditNoLowMandatoryLabelImages
             {
@@ -209,6 +227,7 @@ public partial struct PROCESS_MITIGATION_IMAGE_LOAD_POLICY
                 }
             }
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.ReservedFlags"]/*' />
             [NativeTypeName("DWORD : 27")]
             public uint ReservedFlags
             {

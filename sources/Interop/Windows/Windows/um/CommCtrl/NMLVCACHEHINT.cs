@@ -5,11 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NMLVCACHEHINT.xml' path='doc/member[@name="NMLVCACHEHINT"]/*' />
 public partial struct NMLVCACHEHINT
 {
+    /// <include file='NMLVCACHEHINT.xml' path='doc/member[@name="NMLVCACHEHINT.hdr"]/*' />
     public NMHDR hdr;
 
+    /// <include file='NMLVCACHEHINT.xml' path='doc/member[@name="NMLVCACHEHINT.iFrom"]/*' />
     public int iFrom;
 
+    /// <include file='NMLVCACHEHINT.xml' path='doc/member[@name="NMLVCACHEHINT.iTo"]/*' />
     public int iTo;
 }

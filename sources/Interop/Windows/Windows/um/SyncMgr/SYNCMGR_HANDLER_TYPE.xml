@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SYNCMGR_HANDLER_TYPE">
+    <summary>
+      <para>Specifies the type of a handler. Used by <see cref="ISyncMgrHandlerInfo.GetType" />.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGR_HANDLER_TYPE.SYNCMGR_HT_UNSPECIFIED">
+    <summary>
+      <para>The handler type is unknown. This value is also used if <see cref="ISyncMgrHandlerInfo.GetType" /> fails.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGR_HANDLER_TYPE.SYNCMGR_HT_APPLICATION">
+    <summary>
+      <para>The handler is an application.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGR_HANDLER_TYPE.SYNCMGR_HT_DEVICE">
+    <summary>
+      <para>The handler syncs with a device such as a phone or PDA.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGR_HANDLER_TYPE.SYNCMGR_HT_FOLDER">
+    <summary>
+      <para>The handler syncs with local or remote folders.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGR_HANDLER_TYPE.SYNCMGR_HT_SERVICE">
+    <summary>
+      <para>The handler syncs with a web service.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGR_HANDLER_TYPE.SYNCMGR_HT_COMPUTER">
+    <summary>
+      <para>The handler syncs with a computer.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGR_HANDLER_TYPE.SYNCMGR_HT_MIN">
+    <summary>
+      <para>Indicates the minimum <see cref="SYNCMGR_HANDLER_TYPE" /> value.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGR_HANDLER_TYPE.SYNCMGR_HT_MAX">
+    <summary>
+      <para>Indicates the maximum <see cref="SYNCMGR_HANDLER_TYPE" /> value.</para>
+    </summary>
+  </member>
+</doc>

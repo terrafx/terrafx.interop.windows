@@ -5,13 +5,27 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='styleWhiteSpace.xml' path='doc/member[@name="styleWhiteSpace"]/*' />
 public enum styleWhiteSpace
 {
+    /// <include file='styleWhiteSpace.xml' path='doc/member[@name="styleWhiteSpace.styleWhiteSpaceNotSet"]/*' />
     styleWhiteSpaceNotSet = 0,
+
+    /// <include file='styleWhiteSpace.xml' path='doc/member[@name="styleWhiteSpace.styleWhiteSpaceNormal"]/*' />
     styleWhiteSpaceNormal = 1,
+
+    /// <include file='styleWhiteSpace.xml' path='doc/member[@name="styleWhiteSpace.styleWhiteSpacePre"]/*' />
     styleWhiteSpacePre = 2,
+
+    /// <include file='styleWhiteSpace.xml' path='doc/member[@name="styleWhiteSpace.styleWhiteSpaceNowrap"]/*' />
     styleWhiteSpaceNowrap = 3,
+
+    /// <include file='styleWhiteSpace.xml' path='doc/member[@name="styleWhiteSpace.styleWhiteSpacePreline"]/*' />
     styleWhiteSpacePreline = 4,
+
+    /// <include file='styleWhiteSpace.xml' path='doc/member[@name="styleWhiteSpace.styleWhiteSpacePrewrap"]/*' />
     styleWhiteSpacePrewrap = 5,
+
+    /// <include file='styleWhiteSpace.xml' path='doc/member[@name="styleWhiteSpace.styleWhiteSpace_Max"]/*' />
     styleWhiteSpace_Max = 2147483647,
 }

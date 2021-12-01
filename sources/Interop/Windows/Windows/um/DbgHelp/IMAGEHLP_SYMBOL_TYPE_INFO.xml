@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMAGEHLP_SYMBOL_TYPE_INFO">
+    <summary>
+      <para>Identifies the type of symbol information to be retrieved.</para>
+    </summary>
+    <seealso cref="SymGetTypeInfo" />
+    <seealso cref="SymGetTypeInfoEx" />
+  </member>
+  <member name="IMAGEHLP_SYMBOL_TYPE_INFO.TI_GET_SYMTAG">
+    <summary>
+      <para>The symbol tag.</para>
+      <para>The data type is <b>DWORD*</b>.</para>
+    </summary>
+  </member>
+  <member name="IMAGEHLP_SYMBOL_TYPE_INFO.TI_GET_SYMNAME">
+    <summary>
+      <para>The symbol name.</para>
+      <para>The data type is <b>WCHAR**</b>. The caller must free the buffer.</para>
+    </summary>
+  </member>
+  <member name="IMAGEHLP_SYMBOL_TYPE_INFO.TI_GET_LENGTH">
+    <summary>
+      <para>The length of the type.</para>
+      <para>The data type is <b>ULONG64*</b>.</para>
+    </summary>
+  </member>
+  <member name="IMAGEHLP_SYMBOL_TYPE_INFO.TI_GET_TYPE">
+    <summary>
+      <para>The type.</para>
+      <para>The data type is <b>DWORD*</b>.</para>
+    </summary>
+  </member>
+  <member name="IMAGEHLP_SYMBOL_TYPE_INFO.TI_GET_TYPEID">
+    <summary>
+      <para>The type index.</para>
+      <para>The data type is <b>DWORD*</b>.</para>
+    </summary>
+  </member>
+  <member name="IMAGEHLP_SYMBOL_TYPE_INFO.TI_GET_BASETYPE">
+    <summary>
+      <para>The base type for the type index.</para>
+      <para>The data type is <b>DWORD*</b>.</para>
+    </summary>
+  </member>
+  <member name="IMAGEHLP_SYMBOL_TYPE_INFO.TI_GET_ARRAYINDEXTYPEID">
+    <summary>
+      <para>The type index for index of an array type.</para>
+      <para>The data type is <b>DWORD*</b>.</para>
+    </summary>
+  </member>
+  <member name="IMAGEHLP_SYMBOL_TYPE_INFO.TI_FINDCHILDREN">
+    <summary>
+      <para>The type index of all children.</para>
+      <para>The data type  is a pointer to a
+<see cref="TI_FINDCHILDREN_PARAMS" /> structure. The <b>Count</b> member should be initialized with the number of children.</para>
+    </summary>
+  </member>
+  <member name="IMAGEHLP_SYMBOL_TYPE_INFO.TI_GET_DATAKIND">
+    <summary>
+      <para>The data kind.</para>
+      <para>The data type is <b>DWORD*</b>.</para>
+    </summary>
+  </member>
+  <member name="IMAGEHLP_SYMBOL_TYPE_INFO.TI_GET_ADDRESSOFFSET">
+    <summary>
+      <para>The address offset.</para>
+      <para>The data type is <b>DWORD*</b>.</para>
+    </summary>
+  </member>
+  <member name="IMAGEHLP_SYMBOL_TYPE_INFO.TI_GET_OFFSET">
+    <summary>
+      <para>The offset of the type in the parent. Members can use this to get their offset in a structure.</para>
+      <para>The data type is <b>DWORD*</b>.</para>
+    </summary>
+  </member>
+  <member name="IMAGEHLP_SYMBOL_TYPE_INFO.TI_GET_VALUE">
+    <summary>
+      <para>The value of a constant or enumeration value.</para>
+      <para>The data type is <b>VARIANT*</b>.</para>
+    </summary>
+  </member>
+  <member name="IMAGEHLP_SYMBOL_TYPE_INFO.TI_GET_COUNT">
+    <summary>
+      <para>The count of array elements.</para>
+      <para>The data type is <b>DWORD*</b>.</para>
+    </summary>
+  </member>
+  <member name="IMAGEHLP_SYMBOL_TYPE_INFO.TI_GET_CHILDRENCOUNT">
+    <summary>
+      <para>The number of children.</para>
+      <para>The data type is <b>DWORD*</b>.</para>
+    </summary>
+  </member>
+  <member name="IMAGEHLP_SYMBOL_TYPE_INFO.TI_GET_BITPOSITION">
+    <summary>
+      <para>The bit position of a bitfield.</para>
+      <para>The data type is <b>DWORD*</b>.</para>
+    </summary>
+  </member>
+  <member name="IMAGEHLP_SYMBOL_TYPE_INFO.TI_GET_VIRTUALBASECLASS">
+    <summary>
+      <para>A value that indicates whether the base class is virtually inherited.</para>
+      <para>The data type is <b>BOOL</b>.</para>
+    </summary>
+  </member>
+  <member name="IMAGEHLP_SYMBOL_TYPE_INFO.TI_GET_VIRTUALTABLESHAPEID">
+    <summary>
+      <para>The symbol interface of the type of virtual table, for a user-defined type.</para>
+    </summary>
+  </member>
+  <member name="IMAGEHLP_SYMBOL_TYPE_INFO.TI_GET_VIRTUALBASEPOINTEROFFSET">
+    <summary>
+      <para>The offset of the virtual base pointer.</para>
+      <para>The data type is <b>DWORD*</b>.</para>
+    </summary>
+  </member>
+  <member name="IMAGEHLP_SYMBOL_TYPE_INFO.TI_GET_CLASSPARENTID">
+    <summary>
+      <para>The type index of the class parent.</para>
+      <para>The data type is <b>DWORD*</b>.</para>
+    </summary>
+  </member>
+  <member name="IMAGEHLP_SYMBOL_TYPE_INFO.TI_GET_NESTED">
+    <summary>
+      <para>A value that indicates whether the type index is nested.</para>
+      <para>The data type is <b>DWORD*</b>.</para>
+    </summary>
+  </member>
+  <member name="IMAGEHLP_SYMBOL_TYPE_INFO.TI_GET_SYMINDEX">
+    <summary>
+      <para>The symbol index for a type.</para>
+      <para>The data type is <b>DWORD*</b>.</para>
+    </summary>
+  </member>
+  <member name="IMAGEHLP_SYMBOL_TYPE_INFO.TI_GET_LEXICALPARENT">
+    <summary>
+      <para>The lexical parent of the type.</para>
+      <para>The data type is <b>DWORD*</b>.</para>
+    </summary>
+  </member>
+  <member name="IMAGEHLP_SYMBOL_TYPE_INFO.TI_GET_ADDRESS">
+    <summary>
+      <para>The index address.</para>
+      <para>The data type is <b>ULONG64*</b>.</para>
+    </summary>
+  </member>
+  <member name="IMAGEHLP_SYMBOL_TYPE_INFO.TI_GET_THISADJUST">
+    <summary>
+      <para>The offset from the <b>this</b> pointer to its actual value.</para>
+      <para>The data type is <b>DWORD*</b>.</para>
+    </summary>
+  </member>
+  <member name="IMAGEHLP_SYMBOL_TYPE_INFO.TI_GET_UDTKIND">
+    <summary>
+      <para>The UDT kind.</para>
+      <para>The data type is <b>DWORD*</b>.</para>
+    </summary>
+  </member>
+  <member name="IMAGEHLP_SYMBOL_TYPE_INFO.TI_IS_EQUIV_TO">
+    <summary>
+      <para>The equivalency of two types.</para>
+      <para>The data type is <b>DWORD*</b>. The value is S_OK is the two types are equivalent, and S_FALSE otherwise.</para>
+    </summary>
+  </member>
+  <member name="IMAGEHLP_SYMBOL_TYPE_INFO.TI_GET_CALLING_CONVENTION">
+    <summary>
+      <para>The calling convention.</para>
+      <para>The data type is <b>DWORD</b>. The following are the valid values:</para>
+    </summary>
+  </member>
+  <member name="IMAGEHLP_SYMBOL_TYPE_INFO.TI_IS_CLOSE_EQUIV_TO">
+    <summary>
+      <para>The equivalency of two symbols. This is not guaranteed to be accurate.</para>
+      <para>The data type is <b>DWORD*</b>. The value is S_OK is the two types are equivalent, and S_FALSE otherwise.</para>
+    </summary>
+  </member>
+  <member name="IMAGEHLP_SYMBOL_TYPE_INFO.TI_GTIEX_REQS_VALID">
+    <summary>
+      <para>The element where the valid request bitfield should be stored.</para>
+      <para>The data type is <b>ULONG64*</b>.</para>
+      <para>This value is only used with the <see cref="SymGetTypeInfoEx" /> function.</para>
+    </summary>
+  </member>
+  <member name="IMAGEHLP_SYMBOL_TYPE_INFO.TI_GET_VIRTUALBASEOFFSET">
+    <summary>
+      <para>The offset in the virtual function table of a virtual function.</para>
+      <para>The data type is <b>DWORD</b>.</para>
+    </summary>
+  </member>
+  <member name="IMAGEHLP_SYMBOL_TYPE_INFO.TI_GET_VIRTUALBASEDISPINDEX">
+    <summary>
+      <para>The index into the virtual base displacement table.</para>
+      <para>The data type is <b>DWORD</b>.</para>
+    </summary>
+  </member>
+  <member name="IMAGEHLP_SYMBOL_TYPE_INFO.TI_GET_IS_REFERENCE">
+    <summary>
+      <para>Indicates whether a pointer type is a reference.</para>
+      <para>The data type is <b>Boolean</b>.</para>
+    </summary>
+  </member>
+  <member name="IMAGEHLP_SYMBOL_TYPE_INFO.TI_GET_INDIRECTVIRTUALBASECLASS">
+    <summary>
+      <para>Indicates whether the user-defined data type is an indirect virtual base.</para>
+      <para>The data type is <b>BOOL</b>.</para>
+      <para>
+        <b>DbgHelp 6.6 and earlier:  </b>This value is not supported.</para>
+    </summary>
+  </member>
+  <member name="IMAGEHLP_SYMBOL_TYPE_INFO.TI_GET_VIRTUALBASETABLETYPE">
+    <summary></summary>
+  </member>
+  <member name="IMAGEHLP_SYMBOL_TYPE_INFO.IMAGEHLP_SYMBOL_TYPE_INFO_MAX">
+    <summary></summary>
+  </member>
+</doc>

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="AM_MPEG2Profile">
+    <summary>
+      <para>Indicates an MPEG-2 video profile as specified in the MPEG-2 video standard (ISO13818-2).</para>
+    </summary>
+    <remarks>
+      <para>DVD video decoders should support <b>AM_MPEG2Profile_Simple</b> or <b>AM_MPEG2Profile_Main</b>.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-enumerated-types">DirectShow Enumerated Types</seealso>
+  </member>
+  <member name="AM_MPEG2Profile.AM_MPEG2Profile_Simple">
+    <summary>
+      <para>Simple profile.</para>
+    </summary>
+  </member>
+  <member name="AM_MPEG2Profile.AM_MPEG2Profile_Main">
+    <summary>
+      <para>Main profile.</para>
+    </summary>
+  </member>
+  <member name="AM_MPEG2Profile.AM_MPEG2Profile_SNRScalable">
+    <summary>
+      <para>Signal to Noise Ratio (SNR) scalable profile</para>
+    </summary>
+  </member>
+  <member name="AM_MPEG2Profile.AM_MPEG2Profile_SpatiallyScalable">
+    <summary>
+      <para>Spatially scalable profile.</para>
+    </summary>
+  </member>
+  <member name="AM_MPEG2Profile.AM_MPEG2Profile_High">
+    <summary>
+      <para>High profile.</para>
+    </summary>
+  </member>
+</doc>

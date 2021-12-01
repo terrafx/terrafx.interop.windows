@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="FsiFileSystems">
+    <summary>
+      <para>Defines values for recognized file systems.</para>
+    </summary>
+    <seealso cref="IFileSystemImage.IdentifyFileSystemsOnDisc" />
+  </member>
+  <member name="FsiFileSystems.FsiFileSystemNone">
+    <summary>
+      <para>The disc does not contain a recognized file system.</para>
+    </summary>
+  </member>
+  <member name="FsiFileSystems.FsiFileSystemISO9660">
+    <summary>
+      <para>Standard CD file system.</para>
+    </summary>
+  </member>
+  <member name="FsiFileSystems.FsiFileSystemJoliet">
+    <summary>
+      <para>Joliet file system.</para>
+    </summary>
+  </member>
+  <member name="FsiFileSystems.FsiFileSystemUDF">
+    <summary>
+      <para>UDF file system.</para>
+    </summary>
+  </member>
+  <member name="FsiFileSystems.FsiFileSystemUnknown">
+    <summary>
+      <para>The disc appears to have a file system, but the layout does not match any of the recognized types.</para>
+    </summary>
+  </member>
+</doc>

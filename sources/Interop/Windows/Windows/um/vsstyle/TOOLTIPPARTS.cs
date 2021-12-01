@@ -5,13 +5,27 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TOOLTIPPARTS.xml' path='doc/member[@name="TOOLTIPPARTS"]/*' />
 public enum TOOLTIPPARTS
 {
+    /// <include file='TOOLTIPPARTS.xml' path='doc/member[@name="TOOLTIPPARTS.TTP_STANDARD"]/*' />
     TTP_STANDARD = 1,
+
+    /// <include file='TOOLTIPPARTS.xml' path='doc/member[@name="TOOLTIPPARTS.TTP_STANDARDTITLE"]/*' />
     TTP_STANDARDTITLE = 2,
+
+    /// <include file='TOOLTIPPARTS.xml' path='doc/member[@name="TOOLTIPPARTS.TTP_BALLOON"]/*' />
     TTP_BALLOON = 3,
+
+    /// <include file='TOOLTIPPARTS.xml' path='doc/member[@name="TOOLTIPPARTS.TTP_BALLOONTITLE"]/*' />
     TTP_BALLOONTITLE = 4,
+
+    /// <include file='TOOLTIPPARTS.xml' path='doc/member[@name="TOOLTIPPARTS.TTP_CLOSE"]/*' />
     TTP_CLOSE = 5,
+
+    /// <include file='TOOLTIPPARTS.xml' path='doc/member[@name="TOOLTIPPARTS.TTP_BALLOONSTEM"]/*' />
     TTP_BALLOONSTEM = 6,
+
+    /// <include file='TOOLTIPPARTS.xml' path='doc/member[@name="TOOLTIPPARTS.TTP_WRENCH"]/*' />
     TTP_WRENCH = 7,
 }

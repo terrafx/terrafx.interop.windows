@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='_DMO_QUALITY_STATUS_FLAGS.xml' path='doc/member[@name="_DMO_QUALITY_STATUS_FLAGS"]/*' />
 public enum _DMO_QUALITY_STATUS_FLAGS
 {
+    /// <include file='_DMO_QUALITY_STATUS_FLAGS.xml' path='doc/member[@name="_DMO_QUALITY_STATUS_FLAGS.DMO_QUALITY_STATUS_ENABLED"]/*' />
     DMO_QUALITY_STATUS_ENABLED = 0x1,
 }

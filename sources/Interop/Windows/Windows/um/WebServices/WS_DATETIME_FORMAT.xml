@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_DATETIME_FORMAT">
+    <summary>
+      <para>Specifies the textual format of a <see cref="WS_DATETIME" />.</para>
+    </summary>
+  </member>
+  <member name="WS_DATETIME_FORMAT.WS_DATETIME_FORMAT_UTC">
+    <summary>
+      <para>This format displays a time in the GMT timezone.  It is formatted with a "Z" following the time.
+For example, September 25, 2007 at 1:30AM in the GMT timezone would be represented as "2007-09-25T01:30:00Z".</para>
+    </summary>
+  </member>
+  <member name="WS_DATETIME_FORMAT.WS_DATETIME_FORMAT_LOCAL">
+    <summary>
+      <para>This format displays a time with a specific timezone.  The time is followed by "[+|-]hh:mm" indicating the
+relative difference between the local time and UTC in hours and minutes.
+For example, September 27, 2007 at 10:30AM in the Pacific timezone would be represented as
+"2007-09-27T10:30:00-07:00".</para>
+      <para>If the system is unable to convert the time to a local format because timezone information for the time
+specified it not available, then it will format the time as <see cref="WS_DATETIME_FORMAT_UTC" />.</para>
+    </summary>
+  </member>
+  <member name="WS_DATETIME_FORMAT.WS_DATETIME_FORMAT_NONE">
+    <summary>
+      <para>This format displays a time with no timezone.  The time is formatted with no additional information and no
+timezone is implied.  For example, September 27, 2007 at 10:30AM would be represented as "2007-09-27T10:30:00".</para>
+    </summary>
+  </member>
+</doc>

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IInputObject.xml' path='doc/member[@name="IInputObject"]/*' />
 [Guid("68284FAA-6A48-11D0-8C78-00C04FD918B4")]
 [NativeTypeName("struct IInputObject : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IInputObject : IInputObject.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IInputObject : IInputObject.Interface
         return ((delegate* unmanaged<IInputObject*, Guid*, void**, int>)(lpVtbl[0]))((IInputObject*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IInputObject : IInputObject.Interface
         return ((delegate* unmanaged<IInputObject*, uint>)(lpVtbl[1]))((IInputObject*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IInputObject : IInputObject.Interface
         return ((delegate* unmanaged<IInputObject*, uint>)(lpVtbl[2]))((IInputObject*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IInputObject.xml' path='doc/member[@name="IInputObject.UIActivateIO"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT UIActivateIO(BOOL fActivate, MSG* pMsg)
@@ -46,6 +51,7 @@ public unsafe partial struct IInputObject : IInputObject.Interface
         return ((delegate* unmanaged<IInputObject*, BOOL, MSG*, int>)(lpVtbl[3]))((IInputObject*)Unsafe.AsPointer(ref this), fActivate, pMsg);
     }
 
+    /// <include file='IInputObject.xml' path='doc/member[@name="IInputObject.HasFocusIO"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT HasFocusIO()
@@ -53,6 +59,7 @@ public unsafe partial struct IInputObject : IInputObject.Interface
         return ((delegate* unmanaged<IInputObject*, int>)(lpVtbl[4]))((IInputObject*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IInputObject.xml' path='doc/member[@name="IInputObject.TranslateAcceleratorIO"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT TranslateAcceleratorIO(MSG* pMsg)

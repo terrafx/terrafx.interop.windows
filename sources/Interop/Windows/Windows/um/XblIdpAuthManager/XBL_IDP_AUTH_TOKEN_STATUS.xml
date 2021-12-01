@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="XBL_IDP_AUTH_TOKEN_STATUS">
+    <summary>
+      <para>Reserved for Microsoft use.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/xblidp/xblidpauthmanager-portal">XblIdpAuthManager</seealso>
+  </member>
+  <member name="XBL_IDP_AUTH_TOKEN_STATUS.XBL_IDP_AUTH_TOKEN_STATUS_SUCCESS">
+    <summary>
+      <para>Reserved for Microsoft use.</para>
+    </summary>
+  </member>
+  <member name="XBL_IDP_AUTH_TOKEN_STATUS.XBL_IDP_AUTH_TOKEN_STATUS_OFFLINE_SUCCESS">
+    <summary>
+      <para>Reserved for Microsoft use.</para>
+    </summary>
+  </member>
+  <member name="XBL_IDP_AUTH_TOKEN_STATUS.XBL_IDP_AUTH_TOKEN_STATUS_NO_ACCOUNT_SET">
+    <summary>
+      <para>Reserved for Microsoft use.</para>
+    </summary>
+  </member>
+  <member name="XBL_IDP_AUTH_TOKEN_STATUS.XBL_IDP_AUTH_TOKEN_STATUS_LOAD_MSA_ACCOUNT_FAILED">
+    <summary>
+      <para>Reserved for Microsoft use.</para>
+    </summary>
+  </member>
+  <member name="XBL_IDP_AUTH_TOKEN_STATUS.XBL_IDP_AUTH_TOKEN_STATUS_XBOX_VETO">
+    <summary>
+      <para>Reserved for Microsoft use.</para>
+    </summary>
+  </member>
+  <member name="XBL_IDP_AUTH_TOKEN_STATUS.XBL_IDP_AUTH_TOKEN_STATUS_MSA_INTERRUPT">
+    <summary>
+      <para>Reserved for Microsoft use.</para>
+    </summary>
+  </member>
+  <member name="XBL_IDP_AUTH_TOKEN_STATUS.XBL_IDP_AUTH_TOKEN_STATUS_OFFLINE_NO_CONSENT">
+    <summary>
+      <para>Reserved for Microsoft use.</para>
+    </summary>
+  </member>
+  <member name="XBL_IDP_AUTH_TOKEN_STATUS.XBL_IDP_AUTH_TOKEN_STATUS_VIEW_NOT_SET">
+    <summary>
+      <para>Reserved for Microsoft use.</para>
+    </summary>
+  </member>
+  <member name="XBL_IDP_AUTH_TOKEN_STATUS.XBL_IDP_AUTH_TOKEN_STATUS_UNKNOWN">
+    <summary>
+      <para>Reserved for Microsoft use.</para>
+    </summary>
+  </member>
+</doc>

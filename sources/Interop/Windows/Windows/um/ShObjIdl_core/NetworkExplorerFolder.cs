@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NetworkExplorerFolder.xml' path='doc/member[@name="NetworkExplorerFolder"]/*' />
 [Guid("F02C1A0D-BE21-4350-88B0-7367FC96EF3C")]
 public partial struct NetworkExplorerFolder
 {

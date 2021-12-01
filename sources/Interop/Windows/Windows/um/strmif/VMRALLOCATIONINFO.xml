@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="VMRALLOCATIONINFO">
+    <summary>
+      <para>The <code>VMRALLOCATIONINFO</code> structure is used in the VMR-7 filter's <see cref="IVMRSurfaceAllocator.AllocateSurface" /> method.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-structures">DirectShow Structures</seealso>
+  </member>
+  <member name="VMRALLOCATIONINFO.dwFlags">
+    <summary>
+      <para>A bitwise <b>OR</b> of flags from the <see cref="VMRSurfaceAllocationFlags" /> enumeration.</para>
+    </summary>
+  </member>
+  <member name="VMRALLOCATIONINFO.lpHdr">
+    <summary>
+      <para>Pointer to the <b>BITMAPINFOHEADER</b> structure associated with the surface.</para>
+    </summary>
+  </member>
+  <member name="VMRALLOCATIONINFO.lpPixFmt">
+    <summary>
+      <para>Pointer to the <b>DDPIXELFORMAT</b> structure associated with the surface.</para>
+    </summary>
+  </member>
+  <member name="VMRALLOCATIONINFO.szAspectRatio">
+    <summary>
+      <para>A <a href="https://docs.microsoft.com//previous-versions/dd145106(v=vs.85)">SIZE</a> structure that specifies the aspect ratio of the new surface.</para>
+    </summary>
+  </member>
+  <member name="VMRALLOCATIONINFO.dwMinBuffers">
+    <summary>
+      <para>The minimum number of buffers to create for this surface.</para>
+    </summary>
+  </member>
+  <member name="VMRALLOCATIONINFO.dwMaxBuffers">
+    <summary>
+      <para>The maximum number of buffers to create for this surface.</para>
+    </summary>
+  </member>
+  <member name="VMRALLOCATIONINFO.dwInterlaceFlags">
+    <summary>
+      <para>A bitwise <b>OR</b> of  flags that indicate the interlacing. For a list of flags, see the <b>dwInterlaceFlags</b> member of the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/dvdmedia/ns-dvdmedia-videoinfoheader2">VIDEOINFOHEADER2</a> structure.</para>
+    </summary>
+  </member>
+  <member name="VMRALLOCATIONINFO.szNativeSize">
+    <summary>
+      <para>The size of the native video rectangle.</para>
+    </summary>
+  </member>
+</doc>

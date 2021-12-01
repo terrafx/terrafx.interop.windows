@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TfCandidateResult.xml' path='doc/member[@name="TfCandidateResult"]/*' />
 public enum TfCandidateResult
 {
+    /// <include file='TfCandidateResult.xml' path='doc/member[@name="TfCandidateResult.CAND_FINALIZED"]/*' />
     CAND_FINALIZED = 0,
+
+    /// <include file='TfCandidateResult.xml' path='doc/member[@name="TfCandidateResult.CAND_SELECTED"]/*' />
     CAND_SELECTED = 0x1,
+
+    /// <include file='TfCandidateResult.xml' path='doc/member[@name="TfCandidateResult.CAND_CANCELED"]/*' />
     CAND_CANCELED = 0x2,
 }

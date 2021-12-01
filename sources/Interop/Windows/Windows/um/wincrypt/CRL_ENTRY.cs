@@ -5,16 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CRL_ENTRY.xml' path='doc/member[@name="CRL_ENTRY"]/*' />
 public unsafe partial struct CRL_ENTRY
 {
+    /// <include file='CRL_ENTRY.xml' path='doc/member[@name="CRL_ENTRY.SerialNumber"]/*' />
     [NativeTypeName("CRYPT_INTEGER_BLOB")]
     public CRYPT_DATA_BLOB SerialNumber;
 
+    /// <include file='CRL_ENTRY.xml' path='doc/member[@name="CRL_ENTRY.RevocationDate"]/*' />
     public FILETIME RevocationDate;
 
+    /// <include file='CRL_ENTRY.xml' path='doc/member[@name="CRL_ENTRY.cExtension"]/*' />
     [NativeTypeName("DWORD")]
     public uint cExtension;
 
+    /// <include file='CRL_ENTRY.xml' path='doc/member[@name="CRL_ENTRY.rgExtension"]/*' />
     [NativeTypeName("PCERT_EXTENSION")]
     public CERT_EXTENSION* rgExtension;
 }

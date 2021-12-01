@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ILaunchTargetMonitor.xml' path='doc/member[@name="ILaunchTargetMonitor"]/*' />
 [Guid("266FBC7E-490D-46ED-A96B-2274DB252003")]
 [NativeTypeName("struct ILaunchTargetMonitor : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ILaunchTargetMonitor : ILaunchTargetMonitor.Interfa
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ILaunchTargetMonitor : ILaunchTargetMonitor.Interfa
         return ((delegate* unmanaged<ILaunchTargetMonitor*, Guid*, void**, int>)(lpVtbl[0]))((ILaunchTargetMonitor*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ILaunchTargetMonitor : ILaunchTargetMonitor.Interfa
         return ((delegate* unmanaged<ILaunchTargetMonitor*, uint>)(lpVtbl[1]))((ILaunchTargetMonitor*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ILaunchTargetMonitor : ILaunchTargetMonitor.Interfa
         return ((delegate* unmanaged<ILaunchTargetMonitor*, uint>)(lpVtbl[2]))((ILaunchTargetMonitor*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ILaunchTargetMonitor.xml' path='doc/member[@name="ILaunchTargetMonitor.GetMonitor"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetMonitor(HMONITOR* monitor)

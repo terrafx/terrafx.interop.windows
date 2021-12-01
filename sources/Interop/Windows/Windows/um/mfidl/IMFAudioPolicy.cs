@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFAudioPolicy.xml' path='doc/member[@name="IMFAudioPolicy"]/*' />
 [Guid("A0638C2B-6465-4395-9AE7-A321A9FD2856")]
 [NativeTypeName("struct IMFAudioPolicy : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMFAudioPolicy : IMFAudioPolicy.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMFAudioPolicy : IMFAudioPolicy.Interface
         return ((delegate* unmanaged<IMFAudioPolicy*, Guid*, void**, int>)(lpVtbl[0]))((IMFAudioPolicy*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMFAudioPolicy : IMFAudioPolicy.Interface
         return ((delegate* unmanaged<IMFAudioPolicy*, uint>)(lpVtbl[1]))((IMFAudioPolicy*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMFAudioPolicy : IMFAudioPolicy.Interface
         return ((delegate* unmanaged<IMFAudioPolicy*, uint>)(lpVtbl[2]))((IMFAudioPolicy*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFAudioPolicy.xml' path='doc/member[@name="IMFAudioPolicy.SetGroupingParam"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetGroupingParam([NativeTypeName("const GUID &")] Guid* rguidClass)
@@ -46,6 +51,7 @@ public unsafe partial struct IMFAudioPolicy : IMFAudioPolicy.Interface
         return ((delegate* unmanaged<IMFAudioPolicy*, Guid*, int>)(lpVtbl[3]))((IMFAudioPolicy*)Unsafe.AsPointer(ref this), rguidClass);
     }
 
+    /// <include file='IMFAudioPolicy.xml' path='doc/member[@name="IMFAudioPolicy.GetGroupingParam"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetGroupingParam(Guid* pguidClass)
@@ -53,6 +59,7 @@ public unsafe partial struct IMFAudioPolicy : IMFAudioPolicy.Interface
         return ((delegate* unmanaged<IMFAudioPolicy*, Guid*, int>)(lpVtbl[4]))((IMFAudioPolicy*)Unsafe.AsPointer(ref this), pguidClass);
     }
 
+    /// <include file='IMFAudioPolicy.xml' path='doc/member[@name="IMFAudioPolicy.SetDisplayName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetDisplayName([NativeTypeName("LPCWSTR")] ushort* pszName)
@@ -60,6 +67,7 @@ public unsafe partial struct IMFAudioPolicy : IMFAudioPolicy.Interface
         return ((delegate* unmanaged<IMFAudioPolicy*, ushort*, int>)(lpVtbl[5]))((IMFAudioPolicy*)Unsafe.AsPointer(ref this), pszName);
     }
 
+    /// <include file='IMFAudioPolicy.xml' path='doc/member[@name="IMFAudioPolicy.GetDisplayName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetDisplayName([NativeTypeName("LPWSTR *")] ushort** pszName)
@@ -67,6 +75,7 @@ public unsafe partial struct IMFAudioPolicy : IMFAudioPolicy.Interface
         return ((delegate* unmanaged<IMFAudioPolicy*, ushort**, int>)(lpVtbl[6]))((IMFAudioPolicy*)Unsafe.AsPointer(ref this), pszName);
     }
 
+    /// <include file='IMFAudioPolicy.xml' path='doc/member[@name="IMFAudioPolicy.SetIconPath"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT SetIconPath([NativeTypeName("LPCWSTR")] ushort* pszPath)
@@ -74,6 +83,7 @@ public unsafe partial struct IMFAudioPolicy : IMFAudioPolicy.Interface
         return ((delegate* unmanaged<IMFAudioPolicy*, ushort*, int>)(lpVtbl[7]))((IMFAudioPolicy*)Unsafe.AsPointer(ref this), pszPath);
     }
 
+    /// <include file='IMFAudioPolicy.xml' path='doc/member[@name="IMFAudioPolicy.GetIconPath"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetIconPath([NativeTypeName("LPWSTR *")] ushort** pszPath)

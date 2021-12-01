@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SecPkgContext_MappedCredAttr.xml' path='doc/member[@name="SecPkgContext_MappedCredAttr"]/*' />
 public unsafe partial struct SecPkgContext_MappedCredAttr
 {
+    /// <include file='SecPkgContext_MappedCredAttr.xml' path='doc/member[@name="SecPkgContext_MappedCredAttr.dwAttribute"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwAttribute;
 
+    /// <include file='SecPkgContext_MappedCredAttr.xml' path='doc/member[@name="SecPkgContext_MappedCredAttr.pvBuffer"]/*' />
     [NativeTypeName("PVOID")]
     public void* pvBuffer;
 }

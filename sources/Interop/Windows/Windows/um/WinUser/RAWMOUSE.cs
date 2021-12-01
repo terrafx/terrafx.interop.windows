@@ -8,25 +8,33 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='RAWMOUSE.xml' path='doc/member[@name="RAWMOUSE"]/*' />
 public partial struct RAWMOUSE
 {
+    /// <include file='RAWMOUSE.xml' path='doc/member[@name="RAWMOUSE.usFlags"]/*' />
     public ushort usFlags;
 
+    /// <include file='RAWMOUSE.xml' path='doc/member[@name="RAWMOUSE.Anonymous"]/*' />
     [NativeTypeName("tagRAWMOUSE::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/WinUser.h:14915:5)")]
     public _Anonymous_e__Union Anonymous;
 
+    /// <include file='RAWMOUSE.xml' path='doc/member[@name="RAWMOUSE.ulRawButtons"]/*' />
     [NativeTypeName("ULONG")]
     public uint ulRawButtons;
 
+    /// <include file='RAWMOUSE.xml' path='doc/member[@name="RAWMOUSE.lLastX"]/*' />
     [NativeTypeName("LONG")]
     public int lLastX;
 
+    /// <include file='RAWMOUSE.xml' path='doc/member[@name="RAWMOUSE.lLastY"]/*' />
     [NativeTypeName("LONG")]
     public int lLastY;
 
+    /// <include file='RAWMOUSE.xml' path='doc/member[@name="RAWMOUSE.ulExtraInformation"]/*' />
     [NativeTypeName("ULONG")]
     public uint ulExtraInformation;
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ulButtons"]/*' />
     public ref uint ulButtons
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -36,6 +44,7 @@ public partial struct RAWMOUSE
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.usButtonFlags"]/*' />
     public ref ushort usButtonFlags
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -45,6 +54,7 @@ public partial struct RAWMOUSE
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.usButtonData"]/*' />
     public ref ushort usButtonData
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -54,21 +64,27 @@ public partial struct RAWMOUSE
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public partial struct _Anonymous_e__Union
     {
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ulButtons"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("ULONG")]
         public uint ulButtons;
 
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("tagRAWMOUSE::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/WinUser.h:14917:9)")]
         public _Anonymous_e__Struct Anonymous;
 
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />
         public partial struct _Anonymous_e__Struct
         {
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.usButtonFlags"]/*' />
             public ushort usButtonFlags;
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.usButtonData"]/*' />
             public ushort usButtonData;
         }
     }

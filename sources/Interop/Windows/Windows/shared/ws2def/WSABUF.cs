@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WSABUF.xml' path='doc/member[@name="WSABUF"]/*' />
 public unsafe partial struct WSABUF
 {
+    /// <include file='WSABUF.xml' path='doc/member[@name="WSABUF.len"]/*' />
     [NativeTypeName("ULONG")]
     public uint len;
 
+    /// <include file='WSABUF.xml' path='doc/member[@name="WSABUF.buf"]/*' />
     [NativeTypeName("CHAR *")]
     public sbyte* buf;
 }

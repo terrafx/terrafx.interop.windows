@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MONITOR_APP_VISIBILITY">
+    <summary>
+      <para>Specifies whether a display is showing desktop windows instead of Windows Store apps.</para>
+    </summary>
+    <remarks>
+      <para>The <b>MONITOR_APP_VISIBILITY</b> enum is used by the <see cref="GetAppVisibilityOnMonitor" /> method.</para>
+    </remarks>
+    <seealso cref="IAppVisibility" />
+  </member>
+  <member name="MONITOR_APP_VISIBILITY.MAV_UNKNOWN">
+    <summary>
+      <para>The display state is not known.</para>
+    </summary>
+  </member>
+  <member name="MONITOR_APP_VISIBILITY.MAV_NO_APP_VISIBLE">
+    <summary>
+      <para>The display is showing desktop windows.</para>
+    </summary>
+  </member>
+  <member name="MONITOR_APP_VISIBILITY.MAV_APP_VISIBLE">
+    <summary>
+      <para>The display is not showing desktop windows.</para>
+    </summary>
+  </member>
+</doc>

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFRemoteDesktopPlugin.xml' path='doc/member[@name="IMFRemoteDesktopPlugin"]/*' />
 [Guid("1CDE6309-CAE0-4940-907E-C1EC9C3D1D4A")]
 [NativeTypeName("struct IMFRemoteDesktopPlugin : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMFRemoteDesktopPlugin : IMFRemoteDesktopPlugin.Int
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMFRemoteDesktopPlugin : IMFRemoteDesktopPlugin.Int
         return ((delegate* unmanaged<IMFRemoteDesktopPlugin*, Guid*, void**, int>)(lpVtbl[0]))((IMFRemoteDesktopPlugin*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMFRemoteDesktopPlugin : IMFRemoteDesktopPlugin.Int
         return ((delegate* unmanaged<IMFRemoteDesktopPlugin*, uint>)(lpVtbl[1]))((IMFRemoteDesktopPlugin*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMFRemoteDesktopPlugin : IMFRemoteDesktopPlugin.Int
         return ((delegate* unmanaged<IMFRemoteDesktopPlugin*, uint>)(lpVtbl[2]))((IMFRemoteDesktopPlugin*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFRemoteDesktopPlugin.xml' path='doc/member[@name="IMFRemoteDesktopPlugin.UpdateTopology"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT UpdateTopology(IMFTopology* pTopology)

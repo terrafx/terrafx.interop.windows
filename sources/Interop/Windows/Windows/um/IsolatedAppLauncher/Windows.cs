@@ -9,9 +9,11 @@ namespace TerraFX.Interop.Windows;
 
 public static unsafe partial class Windows
 {
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IsProcessInWDAGContainer"]/*' />
     [DllImport("shcore", ExactSpelling = true)]
     public static extern HRESULT IsProcessInWDAGContainer([NativeTypeName("PVOID")] void* Reserved, BOOL* isProcessInWDAGContainer);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IsProcessInIsolatedContainer"]/*' />
     [DllImport("shcore", ExactSpelling = true)]
     public static extern HRESULT IsProcessInIsolatedContainer(BOOL* isProcessInIsolatedContainer);
 }

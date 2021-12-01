@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DVD_HMSF_TIMECODE">
+    <summary>
+      <para>The <code>DVD_HMSF_TIMECODE</code> structure gives the hours, minutes, seconds, and frames in a DVD timecode.</para>
+    </summary>
+    <remarks>
+      <para>A <code>DVD_HMSF_TIMECODE</code> structure is used in various <see cref="IDvdControl2" /> and <see cref="IDvdInfo2" /> methods. A <code>DVD_HMSF_TIMECODE</code> structure can be cast to or from a <b>ULONG</b> value. This means that if you need to use the old BCD time format for backward compatibility, you can do so in place of a <code>DVD_HMSF_TIMECODE</code> structure.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-structures">DirectShow Structures</seealso>
+  </member>
+  <member name="DVD_HMSF_TIMECODE.bHours">
+    <summary>
+      <para>Hours.</para>
+    </summary>
+  </member>
+  <member name="DVD_HMSF_TIMECODE.bMinutes">
+    <summary>
+      <para>Minutes.</para>
+    </summary>
+  </member>
+  <member name="DVD_HMSF_TIMECODE.bSeconds">
+    <summary>
+      <para>Seconds.</para>
+    </summary>
+  </member>
+  <member name="DVD_HMSF_TIMECODE.bFrames">
+    <summary>
+      <para>Frames.</para>
+    </summary>
+  </member>
+</doc>

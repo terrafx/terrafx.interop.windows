@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WBEM_CONNECT_OPTIONS">
+    <summary>
+      <para>Contains flags for the <see cref="IWbemLocator.ConnectServer" /> method.</para>
+    </summary>
+  </member>
+  <member name="WBEM_CONNECT_OPTIONS.WBEM_FLAG_CONNECT_REPOSITORY_ONLY">
+    <summary>
+      <para>Reserved for internal use. Do not use.</para>
+    </summary>
+  </member>
+  <member name="WBEM_CONNECT_OPTIONS.WBEM_FLAG_CONNECT_USE_MAX_WAIT">
+    <summary>
+      <para>The call  returns in 2 minutes or less whether successful or not.</para>
+    </summary>
+  </member>
+  <member name="WBEM_CONNECT_OPTIONS.WBEM_FLAG_CONNECT_PROVIDERS">
+    <summary>
+      <para>TBD</para>
+    </summary>
+  </member>
+</doc>

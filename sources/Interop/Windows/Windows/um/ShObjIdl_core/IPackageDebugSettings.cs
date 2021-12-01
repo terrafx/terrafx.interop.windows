@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IPackageDebugSettings.xml' path='doc/member[@name="IPackageDebugSettings"]/*' />
 [Guid("F27C3930-8029-4AD1-94E3-3DBA417810C1")]
 [NativeTypeName("struct IPackageDebugSettings : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IPackageDebugSettings : IPackageDebugSettings.Inter
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IPackageDebugSettings : IPackageDebugSettings.Inter
         return ((delegate* unmanaged<IPackageDebugSettings*, Guid*, void**, int>)(lpVtbl[0]))((IPackageDebugSettings*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IPackageDebugSettings : IPackageDebugSettings.Inter
         return ((delegate* unmanaged<IPackageDebugSettings*, uint>)(lpVtbl[1]))((IPackageDebugSettings*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IPackageDebugSettings : IPackageDebugSettings.Inter
         return ((delegate* unmanaged<IPackageDebugSettings*, uint>)(lpVtbl[2]))((IPackageDebugSettings*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IPackageDebugSettings.xml' path='doc/member[@name="IPackageDebugSettings.EnableDebugging"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT EnableDebugging([NativeTypeName("LPCWSTR")] ushort* packageFullName, [NativeTypeName("LPCWSTR")] ushort* debuggerCommandLine, [NativeTypeName("PZZWSTR")] ushort* environment)
@@ -46,6 +51,7 @@ public unsafe partial struct IPackageDebugSettings : IPackageDebugSettings.Inter
         return ((delegate* unmanaged<IPackageDebugSettings*, ushort*, ushort*, ushort*, int>)(lpVtbl[3]))((IPackageDebugSettings*)Unsafe.AsPointer(ref this), packageFullName, debuggerCommandLine, environment);
     }
 
+    /// <include file='IPackageDebugSettings.xml' path='doc/member[@name="IPackageDebugSettings.DisableDebugging"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT DisableDebugging([NativeTypeName("LPCWSTR")] ushort* packageFullName)
@@ -53,6 +59,7 @@ public unsafe partial struct IPackageDebugSettings : IPackageDebugSettings.Inter
         return ((delegate* unmanaged<IPackageDebugSettings*, ushort*, int>)(lpVtbl[4]))((IPackageDebugSettings*)Unsafe.AsPointer(ref this), packageFullName);
     }
 
+    /// <include file='IPackageDebugSettings.xml' path='doc/member[@name="IPackageDebugSettings.Suspend"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT Suspend([NativeTypeName("LPCWSTR")] ushort* packageFullName)
@@ -60,6 +67,7 @@ public unsafe partial struct IPackageDebugSettings : IPackageDebugSettings.Inter
         return ((delegate* unmanaged<IPackageDebugSettings*, ushort*, int>)(lpVtbl[5]))((IPackageDebugSettings*)Unsafe.AsPointer(ref this), packageFullName);
     }
 
+    /// <include file='IPackageDebugSettings.xml' path='doc/member[@name="IPackageDebugSettings.Resume"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Resume([NativeTypeName("LPCWSTR")] ushort* packageFullName)
@@ -67,6 +75,7 @@ public unsafe partial struct IPackageDebugSettings : IPackageDebugSettings.Inter
         return ((delegate* unmanaged<IPackageDebugSettings*, ushort*, int>)(lpVtbl[6]))((IPackageDebugSettings*)Unsafe.AsPointer(ref this), packageFullName);
     }
 
+    /// <include file='IPackageDebugSettings.xml' path='doc/member[@name="IPackageDebugSettings.TerminateAllProcesses"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT TerminateAllProcesses([NativeTypeName("LPCWSTR")] ushort* packageFullName)
@@ -74,6 +83,7 @@ public unsafe partial struct IPackageDebugSettings : IPackageDebugSettings.Inter
         return ((delegate* unmanaged<IPackageDebugSettings*, ushort*, int>)(lpVtbl[7]))((IPackageDebugSettings*)Unsafe.AsPointer(ref this), packageFullName);
     }
 
+    /// <include file='IPackageDebugSettings.xml' path='doc/member[@name="IPackageDebugSettings.SetTargetSessionId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT SetTargetSessionId([NativeTypeName("ULONG")] uint sessionId)
@@ -81,6 +91,7 @@ public unsafe partial struct IPackageDebugSettings : IPackageDebugSettings.Inter
         return ((delegate* unmanaged<IPackageDebugSettings*, uint, int>)(lpVtbl[8]))((IPackageDebugSettings*)Unsafe.AsPointer(ref this), sessionId);
     }
 
+    /// <include file='IPackageDebugSettings.xml' path='doc/member[@name="IPackageDebugSettings.EnumerateBackgroundTasks"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT EnumerateBackgroundTasks([NativeTypeName("LPCWSTR")] ushort* packageFullName, [NativeTypeName("ULONG *")] uint* taskCount, [NativeTypeName("LPCGUID *")] Guid** taskIds, [NativeTypeName("LPCWSTR **")] ushort*** taskNames)
@@ -88,6 +99,7 @@ public unsafe partial struct IPackageDebugSettings : IPackageDebugSettings.Inter
         return ((delegate* unmanaged<IPackageDebugSettings*, ushort*, uint*, Guid**, ushort***, int>)(lpVtbl[9]))((IPackageDebugSettings*)Unsafe.AsPointer(ref this), packageFullName, taskCount, taskIds, taskNames);
     }
 
+    /// <include file='IPackageDebugSettings.xml' path='doc/member[@name="IPackageDebugSettings.ActivateBackgroundTask"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT ActivateBackgroundTask([NativeTypeName("LPCGUID")] Guid* taskId)
@@ -95,6 +107,7 @@ public unsafe partial struct IPackageDebugSettings : IPackageDebugSettings.Inter
         return ((delegate* unmanaged<IPackageDebugSettings*, Guid*, int>)(lpVtbl[10]))((IPackageDebugSettings*)Unsafe.AsPointer(ref this), taskId);
     }
 
+    /// <include file='IPackageDebugSettings.xml' path='doc/member[@name="IPackageDebugSettings.StartServicing"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT StartServicing([NativeTypeName("LPCWSTR")] ushort* packageFullName)
@@ -102,6 +115,7 @@ public unsafe partial struct IPackageDebugSettings : IPackageDebugSettings.Inter
         return ((delegate* unmanaged<IPackageDebugSettings*, ushort*, int>)(lpVtbl[11]))((IPackageDebugSettings*)Unsafe.AsPointer(ref this), packageFullName);
     }
 
+    /// <include file='IPackageDebugSettings.xml' path='doc/member[@name="IPackageDebugSettings.StopServicing"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT StopServicing([NativeTypeName("LPCWSTR")] ushort* packageFullName)
@@ -109,6 +123,7 @@ public unsafe partial struct IPackageDebugSettings : IPackageDebugSettings.Inter
         return ((delegate* unmanaged<IPackageDebugSettings*, ushort*, int>)(lpVtbl[12]))((IPackageDebugSettings*)Unsafe.AsPointer(ref this), packageFullName);
     }
 
+    /// <include file='IPackageDebugSettings.xml' path='doc/member[@name="IPackageDebugSettings.StartSessionRedirection"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT StartSessionRedirection([NativeTypeName("LPCWSTR")] ushort* packageFullName, [NativeTypeName("ULONG")] uint sessionId)
@@ -116,6 +131,7 @@ public unsafe partial struct IPackageDebugSettings : IPackageDebugSettings.Inter
         return ((delegate* unmanaged<IPackageDebugSettings*, ushort*, uint, int>)(lpVtbl[13]))((IPackageDebugSettings*)Unsafe.AsPointer(ref this), packageFullName, sessionId);
     }
 
+    /// <include file='IPackageDebugSettings.xml' path='doc/member[@name="IPackageDebugSettings.StopSessionRedirection"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT StopSessionRedirection([NativeTypeName("LPCWSTR")] ushort* packageFullName)
@@ -123,6 +139,7 @@ public unsafe partial struct IPackageDebugSettings : IPackageDebugSettings.Inter
         return ((delegate* unmanaged<IPackageDebugSettings*, ushort*, int>)(lpVtbl[14]))((IPackageDebugSettings*)Unsafe.AsPointer(ref this), packageFullName);
     }
 
+    /// <include file='IPackageDebugSettings.xml' path='doc/member[@name="IPackageDebugSettings.GetPackageExecutionState"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT GetPackageExecutionState([NativeTypeName("LPCWSTR")] ushort* packageFullName, PACKAGE_EXECUTION_STATE* packageExecutionState)
@@ -130,6 +147,7 @@ public unsafe partial struct IPackageDebugSettings : IPackageDebugSettings.Inter
         return ((delegate* unmanaged<IPackageDebugSettings*, ushort*, PACKAGE_EXECUTION_STATE*, int>)(lpVtbl[15]))((IPackageDebugSettings*)Unsafe.AsPointer(ref this), packageFullName, packageExecutionState);
     }
 
+    /// <include file='IPackageDebugSettings.xml' path='doc/member[@name="IPackageDebugSettings.RegisterForPackageStateChanges"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT RegisterForPackageStateChanges([NativeTypeName("LPCWSTR")] ushort* packageFullName, IPackageExecutionStateChangeNotification* pPackageExecutionStateChangeNotification, [NativeTypeName("DWORD *")] uint* pdwCookie)
@@ -137,6 +155,7 @@ public unsafe partial struct IPackageDebugSettings : IPackageDebugSettings.Inter
         return ((delegate* unmanaged<IPackageDebugSettings*, ushort*, IPackageExecutionStateChangeNotification*, uint*, int>)(lpVtbl[16]))((IPackageDebugSettings*)Unsafe.AsPointer(ref this), packageFullName, pPackageExecutionStateChangeNotification, pdwCookie);
     }
 
+    /// <include file='IPackageDebugSettings.xml' path='doc/member[@name="IPackageDebugSettings.UnregisterForPackageStateChanges"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT UnregisterForPackageStateChanges([NativeTypeName("DWORD")] uint dwCookie)

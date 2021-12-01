@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MFDepthMeasurement">
+    <summary>
+      <para>Specifies the measurement system for a depth value in a video frame.</para>
+    </summary>
+    <remarks>
+      <para>Use a value from this enumeration with the <a href="https://docs.microsoft.com//windows/win32/medfound/mf-mt-depth-measurement">MF_MT_DEPTH_MEASUREMENT</a> attribute.</para>
+      <para>The distance to focal plane is typically easier to consume in a 3D Euclidian coordinate system.</para>
+      <para>
+        <img alt="Illustration of DistanceToFocalPlane" src="https://docs.microsoft.com/windows/win32/api/mfapi/images/distance_to_focal_plane.png" />
+      </para>
+      <para>The distance to focal center format is typically raw data from sensor such as time of flight cameras.</para>
+      <para>
+        <img alt="Illustration of DistanceToOpticalCenter" src="https://docs.microsoft.com/windows/win32/api/mfapi/images/distance_to_optical_center.png" />
+      </para>
+    </remarks>
+  </member>
+  <member name="MFDepthMeasurement.DistanceToFocalPlane">
+    <summary>
+      <para>The measurement is the distance to the focal plane.</para>
+    </summary>
+  </member>
+  <member name="MFDepthMeasurement.DistanceToOpticalCenter">
+    <summary>
+      <para>The measurement is the distance to the optical center.</para>
+    </summary>
+  </member>
+</doc>

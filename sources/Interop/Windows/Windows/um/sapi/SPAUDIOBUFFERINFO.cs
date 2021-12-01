@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SPAUDIOBUFFERINFO.xml' path='doc/member[@name="SPAUDIOBUFFERINFO"]/*' />
 public partial struct SPAUDIOBUFFERINFO
 {
+    /// <include file='SPAUDIOBUFFERINFO.xml' path='doc/member[@name="SPAUDIOBUFFERINFO.ulMsMinNotification"]/*' />
     [NativeTypeName("ULONG")]
     public uint ulMsMinNotification;
 
+    /// <include file='SPAUDIOBUFFERINFO.xml' path='doc/member[@name="SPAUDIOBUFFERINFO.ulMsBufferSize"]/*' />
     [NativeTypeName("ULONG")]
     public uint ulMsBufferSize;
 
+    /// <include file='SPAUDIOBUFFERINFO.xml' path='doc/member[@name="SPAUDIOBUFFERINFO.ulMsEventBias"]/*' />
     [NativeTypeName("ULONG")]
     public uint ulMsEventBias;
 }

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DVD_MultichannelAudioAttributes">
+    <summary>
+      <para>The <code>DVD_MultichannelAudioAttributes</code> structure describes the multichannel attributes of one audio stream within a specified title.</para>
+    </summary>
+    <remarks>
+      <para>The <see cref="DVD_TitleAttributes" /> structure contains an array of up to eight <b>DVD_MultichannelAudioAttributes</b> structures. When <code>DVD_TitleAttributes</code> is filled by a call to the <see cref="IDvdInfo2.GetTitleAttributes" /> method, the array will be populated with one <b>DVD_MultichannelAudioAttributes</b> structure for each available audio stream in the title.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-structures">DirectShow Structures</seealso>
+  </member>
+  <member name="DVD_MultichannelAudioAttributes.Info">
+    <summary>
+      <para>Array of eight <see cref="DVD_MUA_MixingInfo" /> structures, which contain the mixing information for each channel in the audio stream.</para>
+    </summary>
+  </member>
+  <member name="DVD_MultichannelAudioAttributes.Coeff">
+    <summary>
+      <para>Array of eight <see cref="DVD_MUA_Coeff" /> structures, which contain the mixing coefficients for each channel in the audio stream.</para>
+    </summary>
+  </member>
+</doc>

@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_XML_READER_ENCODING_TYPE.xml' path='doc/member[@name="WS_XML_READER_ENCODING_TYPE"]/*' />
 public enum WS_XML_READER_ENCODING_TYPE
 {
+    /// <include file='WS_XML_READER_ENCODING_TYPE.xml' path='doc/member[@name="WS_XML_READER_ENCODING_TYPE.WS_XML_READER_ENCODING_TYPE_TEXT"]/*' />
     WS_XML_READER_ENCODING_TYPE_TEXT = 1,
+
+    /// <include file='WS_XML_READER_ENCODING_TYPE.xml' path='doc/member[@name="WS_XML_READER_ENCODING_TYPE.WS_XML_READER_ENCODING_TYPE_BINARY"]/*' />
     WS_XML_READER_ENCODING_TYPE_BINARY = 2,
+
+    /// <include file='WS_XML_READER_ENCODING_TYPE.xml' path='doc/member[@name="WS_XML_READER_ENCODING_TYPE.WS_XML_READER_ENCODING_TYPE_MTOM"]/*' />
     WS_XML_READER_ENCODING_TYPE_MTOM = 3,
+
+    /// <include file='WS_XML_READER_ENCODING_TYPE.xml' path='doc/member[@name="WS_XML_READER_ENCODING_TYPE.WS_XML_READER_ENCODING_TYPE_RAW"]/*' />
     WS_XML_READER_ENCODING_TYPE_RAW = 4,
 }

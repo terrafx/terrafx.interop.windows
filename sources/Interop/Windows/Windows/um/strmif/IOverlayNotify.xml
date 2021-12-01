@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IOverlayNotify.OnClipChange">
+    <summary>
+      <para>The <code>OnClipChange</code> method provides notification that the window's visible region has changed. It is essential that any overlay hardware be updated to reflect the change to the visible region before returning from this method.</para>
+    </summary>
+    <param name="pSourceRect">
+      <para>Pointer to the region of the video to use.</para>
+    </param>
+    <param name="pDestinationRect">
+      <para>Pointer to the video destination.</para>
+    </param>
+    <param name="pRgnData">
+      <para>Pointer to the clipping information.</para>
+    </param>
+    <returns>
+      <para>Returns S_OK if successful. If the method fails, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The calls to <code>OnClipChange</code> happen in synchronization with the window. It is called with an empty clip list to freeze the video before the window moves, and then called again when the window has stabilized with the new clip list.</para>
+      <para>If the window rectangle is all zeros, the window is invisible. As is the case for AVI decoders, the decoder should save the image if it relies on the current image to decode the next one.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IOverlayNotify Interface" />
+  </member>
+  <member name="IOverlayNotify.OnColorKeyChange">
+    <summary>
+      <para>The <code>OnColorKeyChange</code> method provides notification that the window's color key has changed.</para>
+    </summary>
+    <param name="pColorKey">
+      <para>Pointer to the new chroma key.</para>
+    </param>
+    <returns>
+      <para>Returns S_OK if successful. If the method fails, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IOverlayNotify Interface" />
+  </member>
+  <member name="IOverlayNotify.OnPaletteChange">
+    <summary>
+      <para>The <code>OnPaletteChange</code> method provides notification that the palette of the window has changed.</para>
+    </summary>
+    <param name="dwColors">
+      <para>Number of colors present.</para>
+    </param>
+    <param name="pPalette">
+      <para>Pointer to the array of palette colors.</para>
+    </param>
+    <returns>
+      <para>Returns S_OK if successful. If the method fails, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Before returning, the filter should copy the array of <b>RGBQUAD</b> values, if necessary.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IOverlayNotify Interface" />
+  </member>
+  <member name="IOverlayNotify.OnPositionChange">
+    <summary>
+      <para>The <code>OnPositionChange</code> method provides notification that the position has changed.</para>
+    </summary>
+    <param name="pSourceRect">
+      <para>Pointer to the source video rectangle.</para>
+    </param>
+    <param name="pDestinationRect">
+      <para>Pointer to the destination video rectangle. Note that this is not clipped to the visible display area.</para>
+    </param>
+    <returns>
+      <para>Returns S_OK if successful. If the method fails, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This method is a callback intended for use by hardware overlay cards that do not want the expense of synchronous clipping updates, and just want to know when the source or destination video positions change.</para>
+      <para>Unlike the <see cref="IOverlayNotify.OnClipChange" /> method, this method is not called in synchronization with the window changing but, rather, at some point after the window has changed (basically in time with WM_SIZE messages received). This is therefore suitable for overlay cards that do not inlay their data to the frame buffer.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IOverlayNotify Interface" />
+  </member>
+  <member name="IOverlayNotify">
+    <summary>
+      <para>The <code>IOverlayNotify</code> interface provides an upstream filter, such as a decoder, with notifications of changes to the rendering window. This includes notifications of changes to the palette, color key, and window position, and visible region (clipping) changes.</para>
+      <para>Most software video decoders let the video renderer draw the decompressed images they produce by passing the media samples to the <see cref="IMemInputPin" /> interface on the renderer's input pin.</para>
+      <para>However, some video decoding filters (typically hardware decompression boards) handle the drawing of the images themselves, perhaps by using a VGA connector. These filters do not need to use <see cref="IMemInputPin" />, but can instead use the <see cref="IOverlay" /> interface provided by the renderer input pin. Through this interface, the decoder can be notified when the window position or size changes, or when the current system palette changes in order to install and change color keys and palettes.</para>
+      <para>Decoders that do their own drawing should implement the <code>IOverlayNotify</code> and <see cref="IOverlayNotify2" /> interfaces. The renderer uses this interface to notify the decoder whenever the window size or position changes, the system palette changes, or a different color key is used. The decoder should call the <see cref="IOverlay.Advise" /> method on the renderer's input pin, to set up the callback. Once the callback is established, the renderer calls the decoder's <code>IOverlayNotify</code> methods when the appropriate events occur. To cancel the callback, use the <see cref="IOverlay.Unadvise" /> method.</para>
+      <para>The video renderer is the only filter that calls the methods on this interface. This is done automatically by the default video renderer. If you are writing a replacement video renderer, you will need to use the methods on this interface if your filter supports <b>IOverlay</b> and this interface is passed to your filter in an <see cref="IOverlay.Advise" /> call.</para>
+    </summary>
+  </member>
+</doc>

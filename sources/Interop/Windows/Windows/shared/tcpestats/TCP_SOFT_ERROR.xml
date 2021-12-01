@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="TCP_SOFT_ERROR">
+    <summary>
+      <para>The <b>TCP_SOFT_ERROR</b> enumeration defines the reason for non-fatal or soft errors recorded on a TCP connection.</para>
+    </summary>
+    <remarks>
+      <para>The <b>TCP_SOFT_ERROR</b> enumeration is defined on Windows Vista and later.</para>
+      <para>The values in this enumeration are defined in the IETF draft RFC on the TCP Extended Statistics MIB. For more information, see <a href="http://tools.ietf.org/html/rfc4898">http://www.ietf.org/rfc/rfc4898.txt</a>.</para>
+    </remarks>
+    <seealso cref="GetPerTcp6ConnectionEStats" />
+    <seealso cref="GetPerTcpConnectionEStats" />
+    <seealso cref="TCP_ESTATS_TYPE" />
+  </member>
+  <member name="TCP_SOFT_ERROR.TcpErrorNone">
+    <summary>
+      <para>No soft errors have occurred.</para>
+    </summary>
+  </member>
+  <member name="TCP_SOFT_ERROR.TcpErrorBelowDataWindow">
+    <summary>
+      <para>All data in the segment is below
+the send unacknowledged (SND.UNA) sequence number. This soft error is normal for keep-alives and zero window probes.</para>
+    </summary>
+  </member>
+  <member name="TCP_SOFT_ERROR.TcpErrorAboveDataWindow">
+    <summary>
+      <para>Some data in the segment is above
+send window (SND.WND) size. This soft error indicates an implementation bug or possible
+attack.</para>
+    </summary>
+  </member>
+  <member name="TCP_SOFT_ERROR.TcpErrorBelowAckWindow">
+    <summary>
+      <para>An ACK was received below the SND.UNA sequence number. This soft error indicates that the
+return path is reordering ACKs.</para>
+    </summary>
+  </member>
+  <member name="TCP_SOFT_ERROR.TcpErrorAboveAckWindow">
+    <summary>
+      <para>An ACK was received for data that we have not sent.
+This soft error indicates an implementation bug or possible attack.</para>
+    </summary>
+  </member>
+  <member name="TCP_SOFT_ERROR.TcpErrorBelowTsWindow">
+    <summary>
+      <para>The Timestamp Echo Reply (TSecr) on the segment is older than the
+current TS.Recent (a timestamp to be echoed in TSecr whenever a
+segment is sent).  This error is applicable to TCP connections that use the TCP Timestamps option (TSopt) defined by the IETF in RFC 1323. For more information, see <a href="https://www.ietf.org/rfc/rfc1323.txt">http://www.ietf.org/rfc/rfc1323.txt</a>. This soft error is normal for the rare case where the Protect Against Wrapped
+Sequences numbers (PAWS)
+mechanism detects data reordered by the network.</para>
+    </summary>
+  </member>
+  <member name="TCP_SOFT_ERROR.TcpErrorAboveTsWindow">
+    <summary>
+      <para>The TSecr on the segment is newer than the
+current TS.Recent. This soft error indicates an implementation bug or
+possible attack.</para>
+    </summary>
+  </member>
+  <member name="TCP_SOFT_ERROR.TcpErrorDataChecksumError">
+    <summary>
+      <para>An incorrect TCP checksum was received. Note that this value
+is intrinsically fragile, because the header fields used to
+identify the connection may have been corrupted.</para>
+    </summary>
+  </member>
+  <member name="TCP_SOFT_ERROR.TcpErrorDataLengthError">
+    <summary>
+      <para>A data length error occurred.</para>
+      <para>This value is not defined in the IETF draft RFC on the TCP Extended Statistics MIB.</para>
+    </summary>
+  </member>
+  <member name="TCP_SOFT_ERROR.TcpErrorMaxSoftError">
+    <summary>
+      <para>The maximum possible value for the <see cref="TCP_SOFT_ERROR" />_STATE enumeration type. This is not a legal value for the reason for a soft error for a TCP connection.</para>
+    </summary>
+  </member>
+</doc>

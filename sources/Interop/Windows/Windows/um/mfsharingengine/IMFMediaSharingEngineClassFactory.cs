@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFMediaSharingEngineClassFactory.xml' path='doc/member[@name="IMFMediaSharingEngineClassFactory"]/*' />
 [Guid("524D2BC4-B2B1-4FE5-8FAC-FA4E4512B4E0")]
 [NativeTypeName("struct IMFMediaSharingEngineClassFactory : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IMFMediaSharingEngineClassFactory : IMFMediaSharing
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IMFMediaSharingEngineClassFactory : IMFMediaSharing
         return ((delegate* unmanaged<IMFMediaSharingEngineClassFactory*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaSharingEngineClassFactory*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IMFMediaSharingEngineClassFactory : IMFMediaSharing
         return ((delegate* unmanaged<IMFMediaSharingEngineClassFactory*, uint>)(lpVtbl[1]))((IMFMediaSharingEngineClassFactory*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IMFMediaSharingEngineClassFactory : IMFMediaSharing
         return ((delegate* unmanaged<IMFMediaSharingEngineClassFactory*, uint>)(lpVtbl[2]))((IMFMediaSharingEngineClassFactory*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFMediaSharingEngineClassFactory.xml' path='doc/member[@name="IMFMediaSharingEngineClassFactory.CreateInstance"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT CreateInstance([NativeTypeName("DWORD")] uint dwFlags, IMFAttributes* pAttr, IMFMediaSharingEngine** ppEngine)

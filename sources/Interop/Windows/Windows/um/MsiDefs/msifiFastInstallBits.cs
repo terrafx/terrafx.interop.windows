@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='msifiFastInstallBits.xml' path='doc/member[@name="msifiFastInstallBits"]/*' />
 public enum msifiFastInstallBits
 {
+    /// <include file='msifiFastInstallBits.xml' path='doc/member[@name="msifiFastInstallBits.msifiFastInstallNoSR"]/*' />
     msifiFastInstallNoSR = 0x00000001,
+
+    /// <include file='msifiFastInstallBits.xml' path='doc/member[@name="msifiFastInstallBits.msifiFastInstallQuickCosting"]/*' />
     msifiFastInstallQuickCosting = 0x00000002,
+
+    /// <include file='msifiFastInstallBits.xml' path='doc/member[@name="msifiFastInstallBits.msifiFastInstallLessPrgMsg"]/*' />
     msifiFastInstallLessPrgMsg = 0x00000004,
 }

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ICredentialProvider.xml' path='doc/member[@name="ICredentialProvider"]/*' />
 [Guid("D27C3481-5A1C-45B2-8AAA-C20EBBE8229E")]
 [NativeTypeName("struct ICredentialProvider : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ICredentialProvider : ICredentialProvider.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ICredentialProvider : ICredentialProvider.Interface
         return ((delegate* unmanaged<ICredentialProvider*, Guid*, void**, int>)(lpVtbl[0]))((ICredentialProvider*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ICredentialProvider : ICredentialProvider.Interface
         return ((delegate* unmanaged<ICredentialProvider*, uint>)(lpVtbl[1]))((ICredentialProvider*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ICredentialProvider : ICredentialProvider.Interface
         return ((delegate* unmanaged<ICredentialProvider*, uint>)(lpVtbl[2]))((ICredentialProvider*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ICredentialProvider.xml' path='doc/member[@name="ICredentialProvider.SetUsageScenario"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetUsageScenario(CREDENTIAL_PROVIDER_USAGE_SCENARIO cpus, [NativeTypeName("DWORD")] uint dwFlags)
@@ -46,6 +51,7 @@ public unsafe partial struct ICredentialProvider : ICredentialProvider.Interface
         return ((delegate* unmanaged<ICredentialProvider*, CREDENTIAL_PROVIDER_USAGE_SCENARIO, uint, int>)(lpVtbl[3]))((ICredentialProvider*)Unsafe.AsPointer(ref this), cpus, dwFlags);
     }
 
+    /// <include file='ICredentialProvider.xml' path='doc/member[@name="ICredentialProvider.SetSerialization"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetSerialization([NativeTypeName("const CREDENTIAL_PROVIDER_CREDENTIAL_SERIALIZATION *")] CREDENTIAL_PROVIDER_CREDENTIAL_SERIALIZATION* pcpcs)
@@ -53,6 +59,7 @@ public unsafe partial struct ICredentialProvider : ICredentialProvider.Interface
         return ((delegate* unmanaged<ICredentialProvider*, CREDENTIAL_PROVIDER_CREDENTIAL_SERIALIZATION*, int>)(lpVtbl[4]))((ICredentialProvider*)Unsafe.AsPointer(ref this), pcpcs);
     }
 
+    /// <include file='ICredentialProvider.xml' path='doc/member[@name="ICredentialProvider.Advise"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT Advise(ICredentialProviderEvents* pcpe, [NativeTypeName("UINT_PTR")] nuint upAdviseContext)
@@ -60,6 +67,7 @@ public unsafe partial struct ICredentialProvider : ICredentialProvider.Interface
         return ((delegate* unmanaged<ICredentialProvider*, ICredentialProviderEvents*, nuint, int>)(lpVtbl[5]))((ICredentialProvider*)Unsafe.AsPointer(ref this), pcpe, upAdviseContext);
     }
 
+    /// <include file='ICredentialProvider.xml' path='doc/member[@name="ICredentialProvider.UnAdvise"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT UnAdvise()
@@ -67,6 +75,7 @@ public unsafe partial struct ICredentialProvider : ICredentialProvider.Interface
         return ((delegate* unmanaged<ICredentialProvider*, int>)(lpVtbl[6]))((ICredentialProvider*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ICredentialProvider.xml' path='doc/member[@name="ICredentialProvider.GetFieldDescriptorCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetFieldDescriptorCount([NativeTypeName("DWORD *")] uint* pdwCount)
@@ -74,6 +83,7 @@ public unsafe partial struct ICredentialProvider : ICredentialProvider.Interface
         return ((delegate* unmanaged<ICredentialProvider*, uint*, int>)(lpVtbl[7]))((ICredentialProvider*)Unsafe.AsPointer(ref this), pdwCount);
     }
 
+    /// <include file='ICredentialProvider.xml' path='doc/member[@name="ICredentialProvider.GetFieldDescriptorAt"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetFieldDescriptorAt([NativeTypeName("DWORD")] uint dwIndex, CREDENTIAL_PROVIDER_FIELD_DESCRIPTOR** ppcpfd)
@@ -81,6 +91,7 @@ public unsafe partial struct ICredentialProvider : ICredentialProvider.Interface
         return ((delegate* unmanaged<ICredentialProvider*, uint, CREDENTIAL_PROVIDER_FIELD_DESCRIPTOR**, int>)(lpVtbl[8]))((ICredentialProvider*)Unsafe.AsPointer(ref this), dwIndex, ppcpfd);
     }
 
+    /// <include file='ICredentialProvider.xml' path='doc/member[@name="ICredentialProvider.GetCredentialCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT GetCredentialCount([NativeTypeName("DWORD *")] uint* pdwCount, [NativeTypeName("DWORD *")] uint* pdwDefault, BOOL* pbAutoLogonWithDefault)
@@ -88,6 +99,7 @@ public unsafe partial struct ICredentialProvider : ICredentialProvider.Interface
         return ((delegate* unmanaged<ICredentialProvider*, uint*, uint*, BOOL*, int>)(lpVtbl[9]))((ICredentialProvider*)Unsafe.AsPointer(ref this), pdwCount, pdwDefault, pbAutoLogonWithDefault);
     }
 
+    /// <include file='ICredentialProvider.xml' path='doc/member[@name="ICredentialProvider.GetCredentialAt"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT GetCredentialAt([NativeTypeName("DWORD")] uint dwIndex, ICredentialProviderCredential** ppcpc)

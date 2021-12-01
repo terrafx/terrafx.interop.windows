@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_MESSAGE_STATE.xml' path='doc/member[@name="WS_MESSAGE_STATE"]/*' />
 public enum WS_MESSAGE_STATE
 {
+    /// <include file='WS_MESSAGE_STATE.xml' path='doc/member[@name="WS_MESSAGE_STATE.WS_MESSAGE_STATE_EMPTY"]/*' />
     WS_MESSAGE_STATE_EMPTY = 1,
+
+    /// <include file='WS_MESSAGE_STATE.xml' path='doc/member[@name="WS_MESSAGE_STATE.WS_MESSAGE_STATE_INITIALIZED"]/*' />
     WS_MESSAGE_STATE_INITIALIZED = 2,
+
+    /// <include file='WS_MESSAGE_STATE.xml' path='doc/member[@name="WS_MESSAGE_STATE.WS_MESSAGE_STATE_READING"]/*' />
     WS_MESSAGE_STATE_READING = 3,
+
+    /// <include file='WS_MESSAGE_STATE.xml' path='doc/member[@name="WS_MESSAGE_STATE.WS_MESSAGE_STATE_WRITING"]/*' />
     WS_MESSAGE_STATE_WRITING = 4,
+
+    /// <include file='WS_MESSAGE_STATE.xml' path='doc/member[@name="WS_MESSAGE_STATE.WS_MESSAGE_STATE_DONE"]/*' />
     WS_MESSAGE_STATE_DONE = 5,
 }

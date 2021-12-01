@@ -7,14 +7,28 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WCM_PROPERTY.xml' path='doc/member[@name="WCM_PROPERTY"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public enum WCM_PROPERTY
 {
+    /// <include file='WCM_PROPERTY.xml' path='doc/member[@name="WCM_PROPERTY.wcm_global_property_domain_policy"]/*' />
     wcm_global_property_domain_policy,
+
+    /// <include file='WCM_PROPERTY.xml' path='doc/member[@name="WCM_PROPERTY.wcm_global_property_minimize_policy"]/*' />
     wcm_global_property_minimize_policy,
+
+    /// <include file='WCM_PROPERTY.xml' path='doc/member[@name="WCM_PROPERTY.wcm_global_property_roaming_policy"]/*' />
     wcm_global_property_roaming_policy,
+
+    /// <include file='WCM_PROPERTY.xml' path='doc/member[@name="WCM_PROPERTY.wcm_global_property_powermanagement_policy"]/*' />
     wcm_global_property_powermanagement_policy,
+
+    /// <include file='WCM_PROPERTY.xml' path='doc/member[@name="WCM_PROPERTY.wcm_intf_property_connection_cost"]/*' />
     wcm_intf_property_connection_cost,
+
+    /// <include file='WCM_PROPERTY.xml' path='doc/member[@name="WCM_PROPERTY.wcm_intf_property_dataplan_status"]/*' />
     wcm_intf_property_dataplan_status,
+
+    /// <include file='WCM_PROPERTY.xml' path='doc/member[@name="WCM_PROPERTY.wcm_intf_property_hotspot_profile"]/*' />
     wcm_intf_property_hotspot_profile,
 }

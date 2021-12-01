@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SecPkgContext_CipherInfo">
+    <summary>
+      <para>Cipher info structure. This is returned by SECPKG_ATTR_CIPHER_INFO ulAttribute from the <see cref="QueryContextAttributes" /> (Schannel) function.</para>
+    </summary>
+  </member>
+  <member name="SecPkgContext_CipherInfo.dwVersion">
+    <summary>
+      <para>The dw version.</para>
+    </summary>
+  </member>
+  <member name="SecPkgContext_CipherInfo.dwProtocol">
+    <summary>
+      <para>The dw protocol.</para>
+    </summary>
+  </member>
+  <member name="SecPkgContext_CipherInfo.dwCipherSuite">
+    <summary>
+      <para>The dw cipher suite.</para>
+    </summary>
+  </member>
+  <member name="SecPkgContext_CipherInfo.dwBaseCipherSuite">
+    <summary>
+      <para>The dw base cipher suite.</para>
+    </summary>
+  </member>
+  <member name="SecPkgContext_CipherInfo.dwCipherLen">
+    <summary>
+      <para>The dw cipher length.</para>
+    </summary>
+  </member>
+  <member name="SecPkgContext_CipherInfo.dwCipherBlockLen">
+    <summary>
+      <para>The dw cipher block length in bytes.</para>
+    </summary>
+  </member>
+  <member name="SecPkgContext_CipherInfo.dwHashLen">
+    <summary>
+      <para>The dw hash length.</para>
+    </summary>
+  </member>
+  <member name="SecPkgContext_CipherInfo.dwMinExchangeLen">
+    <summary>
+      <para>The dw min exchange length.</para>
+    </summary>
+  </member>
+  <member name="SecPkgContext_CipherInfo.dwMaxExchangeLen">
+    <summary>
+      <para>The dw max exchange length.</para>
+    </summary>
+  </member>
+  <member name="SecPkgContext_CipherInfo.dwKeyType">
+    <summary>
+      <para>The dw key type.</para>
+    </summary>
+  </member>
+  <member name="SecPkgContext_CipherInfo.szCertificate [SZ_ALG_MAX_SIZE]">
+    <summary>
+      <para>The sz certificate.</para>
+    </summary>
+  </member>
+  <member name="SecPkgContext_CipherInfo.szCipherSuite [SZ_ALG_MAX_SIZE]">
+    <summary>
+      <para>The sz cipher suite.</para>
+    </summary>
+  </member>
+  <member name="SecPkgContext_CipherInfo.szCipher [SZ_ALG_MAX_SIZE]">
+    <summary>
+      <para>The sz cipher.</para>
+    </summary>
+  </member>
+  <member name="SecPkgContext_CipherInfo.szExchange [SZ_ALG_MAX_SIZE]">
+    <summary>
+      <para>The sz exchange.</para>
+    </summary>
+  </member>
+  <member name="SecPkgContext_CipherInfo.szHash [SZ_ALG_MAX_SIZE]">
+    <summary>
+      <para>The sz hash.</para>
+    </summary>
+  </member>
+</doc>

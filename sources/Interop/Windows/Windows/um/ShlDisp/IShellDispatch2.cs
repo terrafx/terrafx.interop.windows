@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IShellDispatch2.xml' path='doc/member[@name="IShellDispatch2"]/*' />
 [Guid("A4C6892C-3BA9-11D2-9DEA-00C04FB16162")]
 [NativeTypeName("struct IShellDispatch2 : IShellDispatch")]
 [NativeInheritance("IShellDispatch")]
@@ -16,6 +17,7 @@ public unsafe partial struct IShellDispatch2 : IShellDispatch2.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IShellDispatch2 : IShellDispatch2.Interface
         return ((delegate* unmanaged<IShellDispatch2*, Guid*, void**, int>)(lpVtbl[0]))((IShellDispatch2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IShellDispatch2 : IShellDispatch2.Interface
         return ((delegate* unmanaged<IShellDispatch2*, uint>)(lpVtbl[1]))((IShellDispatch2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IShellDispatch2 : IShellDispatch2.Interface
         return ((delegate* unmanaged<IShellDispatch2*, uint>)(lpVtbl[2]))((IShellDispatch2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct IShellDispatch2 : IShellDispatch2.Interface
         return ((delegate* unmanaged<IShellDispatch2*, uint*, int>)(lpVtbl[3]))((IShellDispatch2*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct IShellDispatch2 : IShellDispatch2.Interface
         return ((delegate* unmanaged<IShellDispatch2*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IShellDispatch2*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
@@ -60,6 +67,7 @@ public unsafe partial struct IShellDispatch2 : IShellDispatch2.Interface
         return ((delegate* unmanaged<IShellDispatch2*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IShellDispatch2*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
+    /// <inheritdoc cref="IDispatch.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
@@ -67,6 +75,7 @@ public unsafe partial struct IShellDispatch2 : IShellDispatch2.Interface
         return ((delegate* unmanaged<IShellDispatch2*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IShellDispatch2*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
+    /// <inheritdoc cref="IShellDispatch.get_Application" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT get_Application(IDispatch** ppid)
@@ -74,6 +83,7 @@ public unsafe partial struct IShellDispatch2 : IShellDispatch2.Interface
         return ((delegate* unmanaged<IShellDispatch2*, IDispatch**, int>)(lpVtbl[7]))((IShellDispatch2*)Unsafe.AsPointer(ref this), ppid);
     }
 
+    /// <inheritdoc cref="IShellDispatch.get_Parent" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT get_Parent(IDispatch** ppid)
@@ -81,6 +91,7 @@ public unsafe partial struct IShellDispatch2 : IShellDispatch2.Interface
         return ((delegate* unmanaged<IShellDispatch2*, IDispatch**, int>)(lpVtbl[8]))((IShellDispatch2*)Unsafe.AsPointer(ref this), ppid);
     }
 
+    /// <inheritdoc cref="IShellDispatch.NameSpace" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT NameSpace(VARIANT vDir, Folder** ppsdf)
@@ -88,6 +99,7 @@ public unsafe partial struct IShellDispatch2 : IShellDispatch2.Interface
         return ((delegate* unmanaged<IShellDispatch2*, VARIANT, Folder**, int>)(lpVtbl[9]))((IShellDispatch2*)Unsafe.AsPointer(ref this), vDir, ppsdf);
     }
 
+    /// <inheritdoc cref="IShellDispatch.BrowseForFolder" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT BrowseForFolder([NativeTypeName("long")] int Hwnd, [NativeTypeName("BSTR")] ushort* Title, [NativeTypeName("long")] int Options, VARIANT RootFolder, Folder** ppsdf)
@@ -95,6 +107,7 @@ public unsafe partial struct IShellDispatch2 : IShellDispatch2.Interface
         return ((delegate* unmanaged<IShellDispatch2*, int, ushort*, int, VARIANT, Folder**, int>)(lpVtbl[10]))((IShellDispatch2*)Unsafe.AsPointer(ref this), Hwnd, Title, Options, RootFolder, ppsdf);
     }
 
+    /// <inheritdoc cref="IShellDispatch.Windows" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT Windows(IDispatch** ppid)
@@ -102,6 +115,7 @@ public unsafe partial struct IShellDispatch2 : IShellDispatch2.Interface
         return ((delegate* unmanaged<IShellDispatch2*, IDispatch**, int>)(lpVtbl[11]))((IShellDispatch2*)Unsafe.AsPointer(ref this), ppid);
     }
 
+    /// <inheritdoc cref="IShellDispatch.Open" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT Open(VARIANT vDir)
@@ -109,6 +123,7 @@ public unsafe partial struct IShellDispatch2 : IShellDispatch2.Interface
         return ((delegate* unmanaged<IShellDispatch2*, VARIANT, int>)(lpVtbl[12]))((IShellDispatch2*)Unsafe.AsPointer(ref this), vDir);
     }
 
+    /// <inheritdoc cref="IShellDispatch.Explore" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT Explore(VARIANT vDir)
@@ -116,6 +131,7 @@ public unsafe partial struct IShellDispatch2 : IShellDispatch2.Interface
         return ((delegate* unmanaged<IShellDispatch2*, VARIANT, int>)(lpVtbl[13]))((IShellDispatch2*)Unsafe.AsPointer(ref this), vDir);
     }
 
+    /// <inheritdoc cref="IShellDispatch.MinimizeAll" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT MinimizeAll()
@@ -123,6 +139,7 @@ public unsafe partial struct IShellDispatch2 : IShellDispatch2.Interface
         return ((delegate* unmanaged<IShellDispatch2*, int>)(lpVtbl[14]))((IShellDispatch2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IShellDispatch.UndoMinimizeALL" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT UndoMinimizeALL()
@@ -130,6 +147,7 @@ public unsafe partial struct IShellDispatch2 : IShellDispatch2.Interface
         return ((delegate* unmanaged<IShellDispatch2*, int>)(lpVtbl[15]))((IShellDispatch2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IShellDispatch.FileRun" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT FileRun()
@@ -137,6 +155,7 @@ public unsafe partial struct IShellDispatch2 : IShellDispatch2.Interface
         return ((delegate* unmanaged<IShellDispatch2*, int>)(lpVtbl[16]))((IShellDispatch2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IShellDispatch.CascadeWindows" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT CascadeWindows()
@@ -144,6 +163,7 @@ public unsafe partial struct IShellDispatch2 : IShellDispatch2.Interface
         return ((delegate* unmanaged<IShellDispatch2*, int>)(lpVtbl[17]))((IShellDispatch2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IShellDispatch.TileVertically" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT TileVertically()
@@ -151,6 +171,7 @@ public unsafe partial struct IShellDispatch2 : IShellDispatch2.Interface
         return ((delegate* unmanaged<IShellDispatch2*, int>)(lpVtbl[18]))((IShellDispatch2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IShellDispatch.TileHorizontally" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT TileHorizontally()
@@ -158,6 +179,7 @@ public unsafe partial struct IShellDispatch2 : IShellDispatch2.Interface
         return ((delegate* unmanaged<IShellDispatch2*, int>)(lpVtbl[19]))((IShellDispatch2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IShellDispatch.ShutdownWindows" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public HRESULT ShutdownWindows()
@@ -165,6 +187,7 @@ public unsafe partial struct IShellDispatch2 : IShellDispatch2.Interface
         return ((delegate* unmanaged<IShellDispatch2*, int>)(lpVtbl[20]))((IShellDispatch2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IShellDispatch.Suspend" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
     public HRESULT Suspend()
@@ -172,6 +195,7 @@ public unsafe partial struct IShellDispatch2 : IShellDispatch2.Interface
         return ((delegate* unmanaged<IShellDispatch2*, int>)(lpVtbl[21]))((IShellDispatch2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IShellDispatch.EjectPC" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
     public HRESULT EjectPC()
@@ -179,6 +203,7 @@ public unsafe partial struct IShellDispatch2 : IShellDispatch2.Interface
         return ((delegate* unmanaged<IShellDispatch2*, int>)(lpVtbl[22]))((IShellDispatch2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IShellDispatch.SetTime" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
     public HRESULT SetTime()
@@ -186,6 +211,7 @@ public unsafe partial struct IShellDispatch2 : IShellDispatch2.Interface
         return ((delegate* unmanaged<IShellDispatch2*, int>)(lpVtbl[23]))((IShellDispatch2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IShellDispatch.TrayProperties" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(24)]
     public HRESULT TrayProperties()
@@ -193,6 +219,7 @@ public unsafe partial struct IShellDispatch2 : IShellDispatch2.Interface
         return ((delegate* unmanaged<IShellDispatch2*, int>)(lpVtbl[24]))((IShellDispatch2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IShellDispatch.Help" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(25)]
     public HRESULT Help()
@@ -200,6 +227,7 @@ public unsafe partial struct IShellDispatch2 : IShellDispatch2.Interface
         return ((delegate* unmanaged<IShellDispatch2*, int>)(lpVtbl[25]))((IShellDispatch2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IShellDispatch.FindFiles" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(26)]
     public HRESULT FindFiles()
@@ -207,6 +235,7 @@ public unsafe partial struct IShellDispatch2 : IShellDispatch2.Interface
         return ((delegate* unmanaged<IShellDispatch2*, int>)(lpVtbl[26]))((IShellDispatch2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IShellDispatch.FindComputer" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(27)]
     public HRESULT FindComputer()
@@ -214,6 +243,7 @@ public unsafe partial struct IShellDispatch2 : IShellDispatch2.Interface
         return ((delegate* unmanaged<IShellDispatch2*, int>)(lpVtbl[27]))((IShellDispatch2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IShellDispatch.RefreshMenu" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(28)]
     public HRESULT RefreshMenu()
@@ -221,6 +251,7 @@ public unsafe partial struct IShellDispatch2 : IShellDispatch2.Interface
         return ((delegate* unmanaged<IShellDispatch2*, int>)(lpVtbl[28]))((IShellDispatch2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IShellDispatch.ControlPanelItem" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(29)]
     public HRESULT ControlPanelItem([NativeTypeName("BSTR")] ushort* bstrDir)
@@ -228,6 +259,7 @@ public unsafe partial struct IShellDispatch2 : IShellDispatch2.Interface
         return ((delegate* unmanaged<IShellDispatch2*, ushort*, int>)(lpVtbl[29]))((IShellDispatch2*)Unsafe.AsPointer(ref this), bstrDir);
     }
 
+    /// <include file='IShellDispatch2.xml' path='doc/member[@name="IShellDispatch2.IsRestricted"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(30)]
     public HRESULT IsRestricted([NativeTypeName("BSTR")] ushort* Group, [NativeTypeName("BSTR")] ushort* Restriction, [NativeTypeName("long *")] int* plRestrictValue)
@@ -235,6 +267,7 @@ public unsafe partial struct IShellDispatch2 : IShellDispatch2.Interface
         return ((delegate* unmanaged<IShellDispatch2*, ushort*, ushort*, int*, int>)(lpVtbl[30]))((IShellDispatch2*)Unsafe.AsPointer(ref this), Group, Restriction, plRestrictValue);
     }
 
+    /// <include file='IShellDispatch2.xml' path='doc/member[@name="IShellDispatch2.ShellExecuteW"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(31)]
     public HRESULT ShellExecuteW([NativeTypeName("BSTR")] ushort* File, VARIANT vArgs, VARIANT vDir, VARIANT vOperation, VARIANT vShow)
@@ -242,6 +275,7 @@ public unsafe partial struct IShellDispatch2 : IShellDispatch2.Interface
         return ((delegate* unmanaged<IShellDispatch2*, ushort*, VARIANT, VARIANT, VARIANT, VARIANT, int>)(lpVtbl[31]))((IShellDispatch2*)Unsafe.AsPointer(ref this), File, vArgs, vDir, vOperation, vShow);
     }
 
+    /// <include file='IShellDispatch2.xml' path='doc/member[@name="IShellDispatch2.FindPrinter"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(32)]
     public HRESULT FindPrinter([NativeTypeName("BSTR")] ushort* name, [NativeTypeName("BSTR")] ushort* location, [NativeTypeName("BSTR")] ushort* model)
@@ -249,6 +283,7 @@ public unsafe partial struct IShellDispatch2 : IShellDispatch2.Interface
         return ((delegate* unmanaged<IShellDispatch2*, ushort*, ushort*, ushort*, int>)(lpVtbl[32]))((IShellDispatch2*)Unsafe.AsPointer(ref this), name, location, model);
     }
 
+    /// <include file='IShellDispatch2.xml' path='doc/member[@name="IShellDispatch2.GetSystemInformation"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(33)]
     public HRESULT GetSystemInformation([NativeTypeName("BSTR")] ushort* name, VARIANT* pv)
@@ -256,6 +291,7 @@ public unsafe partial struct IShellDispatch2 : IShellDispatch2.Interface
         return ((delegate* unmanaged<IShellDispatch2*, ushort*, VARIANT*, int>)(lpVtbl[33]))((IShellDispatch2*)Unsafe.AsPointer(ref this), name, pv);
     }
 
+    /// <include file='IShellDispatch2.xml' path='doc/member[@name="IShellDispatch2.ServiceStart"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(34)]
     public HRESULT ServiceStart([NativeTypeName("BSTR")] ushort* ServiceName, VARIANT Persistent, VARIANT* pSuccess)
@@ -263,6 +299,7 @@ public unsafe partial struct IShellDispatch2 : IShellDispatch2.Interface
         return ((delegate* unmanaged<IShellDispatch2*, ushort*, VARIANT, VARIANT*, int>)(lpVtbl[34]))((IShellDispatch2*)Unsafe.AsPointer(ref this), ServiceName, Persistent, pSuccess);
     }
 
+    /// <include file='IShellDispatch2.xml' path='doc/member[@name="IShellDispatch2.ServiceStop"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(35)]
     public HRESULT ServiceStop([NativeTypeName("BSTR")] ushort* ServiceName, VARIANT Persistent, VARIANT* pSuccess)
@@ -270,6 +307,7 @@ public unsafe partial struct IShellDispatch2 : IShellDispatch2.Interface
         return ((delegate* unmanaged<IShellDispatch2*, ushort*, VARIANT, VARIANT*, int>)(lpVtbl[35]))((IShellDispatch2*)Unsafe.AsPointer(ref this), ServiceName, Persistent, pSuccess);
     }
 
+    /// <include file='IShellDispatch2.xml' path='doc/member[@name="IShellDispatch2.IsServiceRunning"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(36)]
     public HRESULT IsServiceRunning([NativeTypeName("BSTR")] ushort* ServiceName, VARIANT* pRunning)
@@ -277,6 +315,7 @@ public unsafe partial struct IShellDispatch2 : IShellDispatch2.Interface
         return ((delegate* unmanaged<IShellDispatch2*, ushort*, VARIANT*, int>)(lpVtbl[36]))((IShellDispatch2*)Unsafe.AsPointer(ref this), ServiceName, pRunning);
     }
 
+    /// <include file='IShellDispatch2.xml' path='doc/member[@name="IShellDispatch2.CanStartStopService"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(37)]
     public HRESULT CanStartStopService([NativeTypeName("BSTR")] ushort* ServiceName, VARIANT* pCanStartStop)
@@ -284,6 +323,7 @@ public unsafe partial struct IShellDispatch2 : IShellDispatch2.Interface
         return ((delegate* unmanaged<IShellDispatch2*, ushort*, VARIANT*, int>)(lpVtbl[37]))((IShellDispatch2*)Unsafe.AsPointer(ref this), ServiceName, pCanStartStop);
     }
 
+    /// <include file='IShellDispatch2.xml' path='doc/member[@name="IShellDispatch2.ShowBrowserBar"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(38)]
     public HRESULT ShowBrowserBar([NativeTypeName("BSTR")] ushort* bstrClsid, VARIANT bShow, VARIANT* pSuccess)

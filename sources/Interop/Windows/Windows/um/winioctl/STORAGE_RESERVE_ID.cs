@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STORAGE_RESERVE_ID.xml' path='doc/member[@name="STORAGE_RESERVE_ID"]/*' />
 public enum STORAGE_RESERVE_ID
 {
+    /// <include file='STORAGE_RESERVE_ID.xml' path='doc/member[@name="STORAGE_RESERVE_ID.StorageReserveIdNone"]/*' />
     StorageReserveIdNone = 0,
+
+    /// <include file='STORAGE_RESERVE_ID.xml' path='doc/member[@name="STORAGE_RESERVE_ID.StorageReserveIdHard"]/*' />
     StorageReserveIdHard,
+
+    /// <include file='STORAGE_RESERVE_ID.xml' path='doc/member[@name="STORAGE_RESERVE_ID.StorageReserveIdSoft"]/*' />
     StorageReserveIdSoft,
+
+    /// <include file='STORAGE_RESERVE_ID.xml' path='doc/member[@name="STORAGE_RESERVE_ID.StorageReserveIdUpdateScratch"]/*' />
     StorageReserveIdUpdateScratch,
+
+    /// <include file='STORAGE_RESERVE_ID.xml' path='doc/member[@name="STORAGE_RESERVE_ID.StorageReserveIdMax"]/*' />
     StorageReserveIdMax,
 }

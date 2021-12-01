@@ -7,13 +7,27 @@ using static TerraFX.Interop.Windows.VARENUM;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MF_ATTRIBUTE_TYPE.xml' path='doc/member[@name="MF_ATTRIBUTE_TYPE"]/*' />
 public enum MF_ATTRIBUTE_TYPE
 {
+    /// <include file='MF_ATTRIBUTE_TYPE.xml' path='doc/member[@name="MF_ATTRIBUTE_TYPE.MF_ATTRIBUTE_UINT32"]/*' />
     MF_ATTRIBUTE_UINT32 = VT_UI4,
+
+    /// <include file='MF_ATTRIBUTE_TYPE.xml' path='doc/member[@name="MF_ATTRIBUTE_TYPE.MF_ATTRIBUTE_UINT64"]/*' />
     MF_ATTRIBUTE_UINT64 = VT_UI8,
+
+    /// <include file='MF_ATTRIBUTE_TYPE.xml' path='doc/member[@name="MF_ATTRIBUTE_TYPE.MF_ATTRIBUTE_DOUBLE"]/*' />
     MF_ATTRIBUTE_DOUBLE = VT_R8,
+
+    /// <include file='MF_ATTRIBUTE_TYPE.xml' path='doc/member[@name="MF_ATTRIBUTE_TYPE.MF_ATTRIBUTE_GUID"]/*' />
     MF_ATTRIBUTE_GUID = VT_CLSID,
+
+    /// <include file='MF_ATTRIBUTE_TYPE.xml' path='doc/member[@name="MF_ATTRIBUTE_TYPE.MF_ATTRIBUTE_STRING"]/*' />
     MF_ATTRIBUTE_STRING = VT_LPWSTR,
+
+    /// <include file='MF_ATTRIBUTE_TYPE.xml' path='doc/member[@name="MF_ATTRIBUTE_TYPE.MF_ATTRIBUTE_BLOB"]/*' />
     MF_ATTRIBUTE_BLOB = (VT_VECTOR | VT_UI1),
+
+    /// <include file='MF_ATTRIBUTE_TYPE.xml' path='doc/member[@name="MF_ATTRIBUTE_TYPE.MF_ATTRIBUTE_IUNKNOWN"]/*' />
     MF_ATTRIBUTE_IUNKNOWN = VT_UNKNOWN,
 }

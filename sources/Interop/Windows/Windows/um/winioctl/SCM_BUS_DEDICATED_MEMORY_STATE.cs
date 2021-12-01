@@ -5,8 +5,10 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SCM_BUS_DEDICATED_MEMORY_STATE.xml' path='doc/member[@name="SCM_BUS_DEDICATED_MEMORY_STATE"]/*' />
 public partial struct SCM_BUS_DEDICATED_MEMORY_STATE
 {
+    /// <include file='SCM_BUS_DEDICATED_MEMORY_STATE.xml' path='doc/member[@name="SCM_BUS_DEDICATED_MEMORY_STATE.ActivateState"]/*' />
     [NativeTypeName("BOOLEAN")]
     public byte ActivateState;
 }

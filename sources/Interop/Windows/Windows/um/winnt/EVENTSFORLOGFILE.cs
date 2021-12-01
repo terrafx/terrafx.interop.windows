@@ -5,17 +5,22 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='EVENTSFORLOGFILE.xml' path='doc/member[@name="EVENTSFORLOGFILE"]/*' />
 public unsafe partial struct EVENTSFORLOGFILE
 {
+    /// <include file='EVENTSFORLOGFILE.xml' path='doc/member[@name="EVENTSFORLOGFILE.ulSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint ulSize;
 
+    /// <include file='EVENTSFORLOGFILE.xml' path='doc/member[@name="EVENTSFORLOGFILE.szLogicalLogFile"]/*' />
     [NativeTypeName("WCHAR [256]")]
     public fixed ushort szLogicalLogFile[256];
 
+    /// <include file='EVENTSFORLOGFILE.xml' path='doc/member[@name="EVENTSFORLOGFILE.ulNumRecords"]/*' />
     [NativeTypeName("DWORD")]
     public uint ulNumRecords;
 
+    /// <include file='EVENTSFORLOGFILE.xml' path='doc/member[@name="EVENTSFORLOGFILE.pEventLogRecords"]/*' />
     [NativeTypeName("EVENTLOGRECORD []")]
     public EVENTLOGRECORD pEventLogRecords;
 }

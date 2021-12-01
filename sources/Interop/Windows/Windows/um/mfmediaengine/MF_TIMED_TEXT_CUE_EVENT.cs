@@ -7,10 +7,16 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MF_TIMED_TEXT_CUE_EVENT.xml' path='doc/member[@name="MF_TIMED_TEXT_CUE_EVENT"]/*' />
 [SupportedOSPlatform("windows10.0")]
 public enum MF_TIMED_TEXT_CUE_EVENT
 {
+    /// <include file='MF_TIMED_TEXT_CUE_EVENT.xml' path='doc/member[@name="MF_TIMED_TEXT_CUE_EVENT.MF_TIMED_TEXT_CUE_EVENT_ACTIVE"]/*' />
     MF_TIMED_TEXT_CUE_EVENT_ACTIVE = 0,
+
+    /// <include file='MF_TIMED_TEXT_CUE_EVENT.xml' path='doc/member[@name="MF_TIMED_TEXT_CUE_EVENT.MF_TIMED_TEXT_CUE_EVENT_INACTIVE"]/*' />
     MF_TIMED_TEXT_CUE_EVENT_INACTIVE = (MF_TIMED_TEXT_CUE_EVENT_ACTIVE + 1),
+
+    /// <include file='MF_TIMED_TEXT_CUE_EVENT.xml' path='doc/member[@name="MF_TIMED_TEXT_CUE_EVENT.MF_TIMED_TEXT_CUE_EVENT_CLEAR"]/*' />
     MF_TIMED_TEXT_CUE_EVENT_CLEAR = (MF_TIMED_TEXT_CUE_EVENT_INACTIVE + 1),
 }

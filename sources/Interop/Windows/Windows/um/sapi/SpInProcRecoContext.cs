@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SpInProcRecoContext.xml' path='doc/member[@name="SpInProcRecoContext"]/*' />
 [Guid("73AD6842-ACE0-45E8-A4DD-8795881A2C2A")]
 public partial struct SpInProcRecoContext
 {

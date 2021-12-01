@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAMVfwCaptureDialogs.xml' path='doc/member[@name="IAMVfwCaptureDialogs"]/*' />
 [Guid("D8D715A0-6E5E-11D0-B3F0-00AA003761C5")]
 [NativeTypeName("struct IAMVfwCaptureDialogs : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IAMVfwCaptureDialogs : IAMVfwCaptureDialogs.Interfa
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IAMVfwCaptureDialogs : IAMVfwCaptureDialogs.Interfa
         return ((delegate* unmanaged<IAMVfwCaptureDialogs*, Guid*, void**, int>)(lpVtbl[0]))((IAMVfwCaptureDialogs*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IAMVfwCaptureDialogs : IAMVfwCaptureDialogs.Interfa
         return ((delegate* unmanaged<IAMVfwCaptureDialogs*, uint>)(lpVtbl[1]))((IAMVfwCaptureDialogs*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IAMVfwCaptureDialogs : IAMVfwCaptureDialogs.Interfa
         return ((delegate* unmanaged<IAMVfwCaptureDialogs*, uint>)(lpVtbl[2]))((IAMVfwCaptureDialogs*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAMVfwCaptureDialogs.xml' path='doc/member[@name="IAMVfwCaptureDialogs.HasDialog"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT HasDialog(int iDialog)
@@ -46,6 +51,7 @@ public unsafe partial struct IAMVfwCaptureDialogs : IAMVfwCaptureDialogs.Interfa
         return ((delegate* unmanaged<IAMVfwCaptureDialogs*, int, int>)(lpVtbl[3]))((IAMVfwCaptureDialogs*)Unsafe.AsPointer(ref this), iDialog);
     }
 
+    /// <include file='IAMVfwCaptureDialogs.xml' path='doc/member[@name="IAMVfwCaptureDialogs.ShowDialog"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT ShowDialog(int iDialog, HWND hwnd)
@@ -53,6 +59,7 @@ public unsafe partial struct IAMVfwCaptureDialogs : IAMVfwCaptureDialogs.Interfa
         return ((delegate* unmanaged<IAMVfwCaptureDialogs*, int, HWND, int>)(lpVtbl[4]))((IAMVfwCaptureDialogs*)Unsafe.AsPointer(ref this), iDialog, hwnd);
     }
 
+    /// <include file='IAMVfwCaptureDialogs.xml' path='doc/member[@name="IAMVfwCaptureDialogs.SendDriverMessage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SendDriverMessage(int iDialog, int uMsg, [NativeTypeName("long")] int dw1, [NativeTypeName("long")] int dw2)

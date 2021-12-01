@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WINDOWTHEMEATTRIBUTETYPE.xml' path='doc/member[@name="WINDOWTHEMEATTRIBUTETYPE"]/*' />
 public enum WINDOWTHEMEATTRIBUTETYPE
 {
+    /// <include file='WINDOWTHEMEATTRIBUTETYPE.xml' path='doc/member[@name="WINDOWTHEMEATTRIBUTETYPE.WTA_NONCLIENT"]/*' />
     WTA_NONCLIENT = 1,
 }

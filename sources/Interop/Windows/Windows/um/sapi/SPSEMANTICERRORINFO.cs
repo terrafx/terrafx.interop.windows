@@ -5,19 +5,25 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SPSEMANTICERRORINFO.xml' path='doc/member[@name="SPSEMANTICERRORINFO"]/*' />
 public unsafe partial struct SPSEMANTICERRORINFO
 {
+    /// <include file='SPSEMANTICERRORINFO.xml' path='doc/member[@name="SPSEMANTICERRORINFO.ulLineNumber"]/*' />
     [NativeTypeName("ULONG")]
     public uint ulLineNumber;
 
+    /// <include file='SPSEMANTICERRORINFO.xml' path='doc/member[@name="SPSEMANTICERRORINFO.pszScriptLine"]/*' />
     [NativeTypeName("LPWSTR")]
     public ushort* pszScriptLine;
 
+    /// <include file='SPSEMANTICERRORINFO.xml' path='doc/member[@name="SPSEMANTICERRORINFO.pszSource"]/*' />
     [NativeTypeName("LPWSTR")]
     public ushort* pszSource;
 
+    /// <include file='SPSEMANTICERRORINFO.xml' path='doc/member[@name="SPSEMANTICERRORINFO.pszDescription"]/*' />
     [NativeTypeName("LPWSTR")]
     public ushort* pszDescription;
 
+    /// <include file='SPSEMANTICERRORINFO.xml' path='doc/member[@name="SPSEMANTICERRORINFO.hrResultCode"]/*' />
     public HRESULT hrResultCode;
 }

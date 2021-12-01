@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MSAAControl.xml' path='doc/member[@name="MSAAControl"]/*' />
 [Guid("08CD963F-7A3E-4F5C-9BD8-D692BB043C5B")]
 public partial struct MSAAControl
 {

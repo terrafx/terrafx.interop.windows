@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITfLangBarItemSink.xml' path='doc/member[@name="ITfLangBarItemSink"]/*' />
 [Guid("57DBE1A0-DE25-11D2-AFDD-00105A2799B5")]
 [NativeTypeName("struct ITfLangBarItemSink : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITfLangBarItemSink : ITfLangBarItemSink.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITfLangBarItemSink : ITfLangBarItemSink.Interface
         return ((delegate* unmanaged<ITfLangBarItemSink*, Guid*, void**, int>)(lpVtbl[0]))((ITfLangBarItemSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITfLangBarItemSink : ITfLangBarItemSink.Interface
         return ((delegate* unmanaged<ITfLangBarItemSink*, uint>)(lpVtbl[1]))((ITfLangBarItemSink*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITfLangBarItemSink : ITfLangBarItemSink.Interface
         return ((delegate* unmanaged<ITfLangBarItemSink*, uint>)(lpVtbl[2]))((ITfLangBarItemSink*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITfLangBarItemSink.xml' path='doc/member[@name="ITfLangBarItemSink.OnUpdate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT OnUpdate([NativeTypeName("DWORD")] uint dwFlags)

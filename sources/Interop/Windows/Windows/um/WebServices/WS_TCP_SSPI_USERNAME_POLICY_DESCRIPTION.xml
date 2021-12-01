@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_TCP_SSPI_USERNAME_POLICY_DESCRIPTION">
+    <summary>
+      <para>Describes the policy specifying TCP channel binding with windows SSPI transport
+security and username/password message security.</para>
+    </summary>
+  </member>
+  <member name="WS_TCP_SSPI_USERNAME_POLICY_DESCRIPTION.channelProperties">
+    <summary>
+      <para>Template description for the channel properties specified in policy.</para>
+    </summary>
+  </member>
+  <member name="WS_TCP_SSPI_USERNAME_POLICY_DESCRIPTION.securityProperties">
+    <summary>
+      <para>Template description for the security properties specified in policy.</para>
+    </summary>
+  </member>
+  <member name="WS_TCP_SSPI_USERNAME_POLICY_DESCRIPTION.sspiTransportSecurityBinding">
+    <summary>
+      <para>Windows SSPI security binding description.</para>
+    </summary>
+  </member>
+  <member name="WS_TCP_SSPI_USERNAME_POLICY_DESCRIPTION.usernameMessageSecurityBinding">
+    <summary>
+      <para>Username/password message security binding description.</para>
+    </summary>
+  </member>
+</doc>

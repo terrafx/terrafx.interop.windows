@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IPropertyStoreFactory.xml' path='doc/member[@name="IPropertyStoreFactory"]/*' />
 [Guid("BC110B6D-57E8-4148-A9C6-91015AB2F3A5")]
 [NativeTypeName("struct IPropertyStoreFactory : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IPropertyStoreFactory : IPropertyStoreFactory.Inter
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IPropertyStoreFactory : IPropertyStoreFactory.Inter
         return ((delegate* unmanaged<IPropertyStoreFactory*, Guid*, void**, int>)(lpVtbl[0]))((IPropertyStoreFactory*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IPropertyStoreFactory : IPropertyStoreFactory.Inter
         return ((delegate* unmanaged<IPropertyStoreFactory*, uint>)(lpVtbl[1]))((IPropertyStoreFactory*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IPropertyStoreFactory : IPropertyStoreFactory.Inter
         return ((delegate* unmanaged<IPropertyStoreFactory*, uint>)(lpVtbl[2]))((IPropertyStoreFactory*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IPropertyStoreFactory.xml' path='doc/member[@name="IPropertyStoreFactory.GetPropertyStore"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetPropertyStore(GETPROPERTYSTOREFLAGS flags, IUnknown* pUnkFactory, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
@@ -46,6 +51,7 @@ public unsafe partial struct IPropertyStoreFactory : IPropertyStoreFactory.Inter
         return ((delegate* unmanaged<IPropertyStoreFactory*, GETPROPERTYSTOREFLAGS, IUnknown*, Guid*, void**, int>)(lpVtbl[3]))((IPropertyStoreFactory*)Unsafe.AsPointer(ref this), flags, pUnkFactory, riid, ppv);
     }
 
+    /// <include file='IPropertyStoreFactory.xml' path='doc/member[@name="IPropertyStoreFactory.GetPropertyStoreForKeys"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetPropertyStoreForKeys([NativeTypeName("const PROPERTYKEY *")] PROPERTYKEY* rgKeys, uint cKeys, GETPROPERTYSTOREFLAGS flags, [NativeTypeName("const IID &")] Guid* riid, void** ppv)

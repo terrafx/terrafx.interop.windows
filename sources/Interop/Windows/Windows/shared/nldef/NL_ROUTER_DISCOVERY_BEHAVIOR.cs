@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NL_ROUTER_DISCOVERY_BEHAVIOR.xml' path='doc/member[@name="NL_ROUTER_DISCOVERY_BEHAVIOR"]/*' />
 public enum NL_ROUTER_DISCOVERY_BEHAVIOR
 {
+    /// <include file='NL_ROUTER_DISCOVERY_BEHAVIOR.xml' path='doc/member[@name="NL_ROUTER_DISCOVERY_BEHAVIOR.RouterDiscoveryDisabled"]/*' />
     RouterDiscoveryDisabled = 0,
+
+    /// <include file='NL_ROUTER_DISCOVERY_BEHAVIOR.xml' path='doc/member[@name="NL_ROUTER_DISCOVERY_BEHAVIOR.RouterDiscoveryEnabled"]/*' />
     RouterDiscoveryEnabled,
+
+    /// <include file='NL_ROUTER_DISCOVERY_BEHAVIOR.xml' path='doc/member[@name="NL_ROUTER_DISCOVERY_BEHAVIOR.RouterDiscoveryDhcp"]/*' />
     RouterDiscoveryDhcp,
+
+    /// <include file='NL_ROUTER_DISCOVERY_BEHAVIOR.xml' path='doc/member[@name="NL_ROUTER_DISCOVERY_BEHAVIOR.RouterDiscoveryUnchanged"]/*' />
     RouterDiscoveryUnchanged = -1,
 }

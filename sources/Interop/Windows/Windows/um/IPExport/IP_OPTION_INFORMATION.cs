@@ -5,20 +5,26 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IP_OPTION_INFORMATION.xml' path='doc/member[@name="IP_OPTION_INFORMATION"]/*' />
 public unsafe partial struct IP_OPTION_INFORMATION
 {
+    /// <include file='IP_OPTION_INFORMATION.xml' path='doc/member[@name="IP_OPTION_INFORMATION.Ttl"]/*' />
     [NativeTypeName("UCHAR")]
     public byte Ttl;
 
+    /// <include file='IP_OPTION_INFORMATION.xml' path='doc/member[@name="IP_OPTION_INFORMATION.Tos"]/*' />
     [NativeTypeName("UCHAR")]
     public byte Tos;
 
+    /// <include file='IP_OPTION_INFORMATION.xml' path='doc/member[@name="IP_OPTION_INFORMATION.Flags"]/*' />
     [NativeTypeName("UCHAR")]
     public byte Flags;
 
+    /// <include file='IP_OPTION_INFORMATION.xml' path='doc/member[@name="IP_OPTION_INFORMATION.OptionsSize"]/*' />
     [NativeTypeName("UCHAR")]
     public byte OptionsSize;
 
+    /// <include file='IP_OPTION_INFORMATION.xml' path='doc/member[@name="IP_OPTION_INFORMATION.OptionsData"]/*' />
     [NativeTypeName("PUCHAR")]
     public byte* OptionsData;
 }

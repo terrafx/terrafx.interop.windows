@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFSensorDevice.xml' path='doc/member[@name="IMFSensorDevice"]/*' />
 [Guid("FB9F48F2-2A18-4E28-9730-786F30F04DC4")]
 [NativeTypeName("struct IMFSensorDevice : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IMFSensorDevice : IMFSensorDevice.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IMFSensorDevice : IMFSensorDevice.Interface
         return ((delegate* unmanaged<IMFSensorDevice*, Guid*, void**, int>)(lpVtbl[0]))((IMFSensorDevice*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IMFSensorDevice : IMFSensorDevice.Interface
         return ((delegate* unmanaged<IMFSensorDevice*, uint>)(lpVtbl[1]))((IMFSensorDevice*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IMFSensorDevice : IMFSensorDevice.Interface
         return ((delegate* unmanaged<IMFSensorDevice*, uint>)(lpVtbl[2]))((IMFSensorDevice*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFSensorDevice.xml' path='doc/member[@name="IMFSensorDevice.GetDeviceId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetDeviceId([NativeTypeName("ULONGLONG *")] ulong* pDeviceId)
@@ -48,6 +53,7 @@ public unsafe partial struct IMFSensorDevice : IMFSensorDevice.Interface
         return ((delegate* unmanaged<IMFSensorDevice*, ulong*, int>)(lpVtbl[3]))((IMFSensorDevice*)Unsafe.AsPointer(ref this), pDeviceId);
     }
 
+    /// <include file='IMFSensorDevice.xml' path='doc/member[@name="IMFSensorDevice.GetDeviceType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetDeviceType(MFSensorDeviceType* pType)
@@ -55,6 +61,7 @@ public unsafe partial struct IMFSensorDevice : IMFSensorDevice.Interface
         return ((delegate* unmanaged<IMFSensorDevice*, MFSensorDeviceType*, int>)(lpVtbl[4]))((IMFSensorDevice*)Unsafe.AsPointer(ref this), pType);
     }
 
+    /// <include file='IMFSensorDevice.xml' path='doc/member[@name="IMFSensorDevice.GetFlags"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetFlags([NativeTypeName("ULONGLONG *")] ulong* pFlags)
@@ -62,6 +69,7 @@ public unsafe partial struct IMFSensorDevice : IMFSensorDevice.Interface
         return ((delegate* unmanaged<IMFSensorDevice*, ulong*, int>)(lpVtbl[5]))((IMFSensorDevice*)Unsafe.AsPointer(ref this), pFlags);
     }
 
+    /// <include file='IMFSensorDevice.xml' path='doc/member[@name="IMFSensorDevice.GetSymbolicLink"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetSymbolicLink([NativeTypeName("LPWSTR")] ushort* SymbolicLink, [NativeTypeName("LONG")] int cchSymbolicLink, [NativeTypeName("LONG *")] int* pcchWritten)
@@ -69,6 +77,7 @@ public unsafe partial struct IMFSensorDevice : IMFSensorDevice.Interface
         return ((delegate* unmanaged<IMFSensorDevice*, ushort*, int, int*, int>)(lpVtbl[6]))((IMFSensorDevice*)Unsafe.AsPointer(ref this), SymbolicLink, cchSymbolicLink, pcchWritten);
     }
 
+    /// <include file='IMFSensorDevice.xml' path='doc/member[@name="IMFSensorDevice.GetDeviceAttributes"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetDeviceAttributes(IMFAttributes** ppAttributes)
@@ -76,6 +85,7 @@ public unsafe partial struct IMFSensorDevice : IMFSensorDevice.Interface
         return ((delegate* unmanaged<IMFSensorDevice*, IMFAttributes**, int>)(lpVtbl[7]))((IMFSensorDevice*)Unsafe.AsPointer(ref this), ppAttributes);
     }
 
+    /// <include file='IMFSensorDevice.xml' path='doc/member[@name="IMFSensorDevice.GetStreamAttributesCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetStreamAttributesCount(MFSensorStreamType eType, [NativeTypeName("DWORD *")] uint* pdwCount)
@@ -83,6 +93,7 @@ public unsafe partial struct IMFSensorDevice : IMFSensorDevice.Interface
         return ((delegate* unmanaged<IMFSensorDevice*, MFSensorStreamType, uint*, int>)(lpVtbl[8]))((IMFSensorDevice*)Unsafe.AsPointer(ref this), eType, pdwCount);
     }
 
+    /// <include file='IMFSensorDevice.xml' path='doc/member[@name="IMFSensorDevice.GetStreamAttributes"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT GetStreamAttributes(MFSensorStreamType eType, [NativeTypeName("DWORD")] uint dwIndex, IMFAttributes** ppAttributes)
@@ -90,6 +101,7 @@ public unsafe partial struct IMFSensorDevice : IMFSensorDevice.Interface
         return ((delegate* unmanaged<IMFSensorDevice*, MFSensorStreamType, uint, IMFAttributes**, int>)(lpVtbl[9]))((IMFSensorDevice*)Unsafe.AsPointer(ref this), eType, dwIndex, ppAttributes);
     }
 
+    /// <include file='IMFSensorDevice.xml' path='doc/member[@name="IMFSensorDevice.SetSensorDeviceMode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT SetSensorDeviceMode(MFSensorDeviceMode eMode)
@@ -97,6 +109,7 @@ public unsafe partial struct IMFSensorDevice : IMFSensorDevice.Interface
         return ((delegate* unmanaged<IMFSensorDevice*, MFSensorDeviceMode, int>)(lpVtbl[10]))((IMFSensorDevice*)Unsafe.AsPointer(ref this), eMode);
     }
 
+    /// <include file='IMFSensorDevice.xml' path='doc/member[@name="IMFSensorDevice.GetSensorDeviceMode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT GetSensorDeviceMode(MFSensorDeviceMode* peMode)

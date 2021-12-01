@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_CHARSET.xml' path='doc/member[@name="WS_CHARSET"]/*' />
 public enum WS_CHARSET
 {
+    /// <include file='WS_CHARSET.xml' path='doc/member[@name="WS_CHARSET.WS_CHARSET_AUTO"]/*' />
     WS_CHARSET_AUTO = 0,
+
+    /// <include file='WS_CHARSET.xml' path='doc/member[@name="WS_CHARSET.WS_CHARSET_UTF8"]/*' />
     WS_CHARSET_UTF8 = 1,
+
+    /// <include file='WS_CHARSET.xml' path='doc/member[@name="WS_CHARSET.WS_CHARSET_UTF16LE"]/*' />
     WS_CHARSET_UTF16LE = 2,
+
+    /// <include file='WS_CHARSET.xml' path='doc/member[@name="WS_CHARSET.WS_CHARSET_UTF16BE"]/*' />
     WS_CHARSET_UTF16BE = 3,
 }

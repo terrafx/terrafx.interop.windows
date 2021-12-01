@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVEncDDChannelBWLowPassFilter.xml' path='doc/member[@name="CODECAPI_AVEncDDChannelBWLowPassFilter"]/*' />
 [Guid("E197821D-D2E7-43E2-AD2C-00582F518545")]
 public partial struct CODECAPI_AVEncDDChannelBWLowPassFilter
 {

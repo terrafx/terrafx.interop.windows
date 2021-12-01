@@ -10,6 +10,7 @@ namespace TerraFX.Interop.Windows;
 
 public static unsafe partial class Windows
 {
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImageList_CoCreateInstance"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     public static extern HRESULT ImageList_CoCreateInstance([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("const IUnknown *")] IUnknown* punkOuter, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 

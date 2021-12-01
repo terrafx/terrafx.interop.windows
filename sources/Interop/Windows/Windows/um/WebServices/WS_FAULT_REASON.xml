@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_FAULT_REASON">
+    <summary>
+      <para>Contains an explanation of the fault.</para>
+    </summary>
+  </member>
+  <member name="WS_FAULT_REASON.text">
+    <summary>
+      <para>Text describing the fault.</para>
+    </summary>
+  </member>
+  <member name="WS_FAULT_REASON.lang">
+    <summary>
+      <para>The language identifier that identifies the language of the text.</para>
+      <para>The identifier is serialized using the xml:lang attribute, and has
+values that follow <a href="https://www.ietf.org/rfc/rfc3066.txt">RFC3066.txt</a>.</para>
+    </summary>
+  </member>
+</doc>

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MF_FILE_ACCESSMODE">
+    <summary>
+      <para>Specifies the requested access mode for opening a file.</para>
+    </summary>
+    <seealso cref="MFBeginCreateFile" />
+    <seealso cref="MFCreateFile" />
+    <seealso cref="MFCreateTempFile" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+  </member>
+  <member name="MF_FILE_ACCESSMODE.MF_ACCESSMODE_READ">
+    <summary>
+      <para>Read mode.</para>
+    </summary>
+  </member>
+  <member name="MF_FILE_ACCESSMODE.MF_ACCESSMODE_WRITE">
+    <summary>
+      <para>Write mode.</para>
+    </summary>
+  </member>
+  <member name="MF_FILE_ACCESSMODE.MF_ACCESSMODE_READWRITE">
+    <summary>
+      <para>Read and write mode.</para>
+    </summary>
+  </member>
+</doc>

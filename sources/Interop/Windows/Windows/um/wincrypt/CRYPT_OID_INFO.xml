@@ -1,0 +1,404 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CRYPT_OID_INFO">
+    <summary>
+      <para>The <b>CRYPT_OID_INFO</b> structure contains information about an <a href="https://docs.microsoft.com//windows/desktop/SecGloss/o-gly">object identifier</a> (OID). These structures give the relationship among an OID identifier, its name, its group, and other information about the OID. These structures can be listed by using
+the <see cref="CryptEnumOIDInfo" /> function. New CRYPT_OID_STRUCTURES can be added by using
+the <see cref="CryptRegisterOIDInfo" /> function.</para>
+    </summary>
+    <seealso cref="CryptFindOIDInfo" />
+    <seealso cref="CryptRegisterOIDInfo" />
+    <seealso cref="CryptUnregisterOIDInfo" />
+  </member>
+  <member name="CRYPT_OID_INFO.cbSize">
+    <summary>
+      <para>The size, in bytes, of this structure.</para>
+    </summary>
+  </member>
+  <member name="CRYPT_OID_INFO.pszOID">
+    <summary>
+      <para>The OID associated with this OID information.</para>
+    </summary>
+  </member>
+  <member name="CRYPT_OID_INFO.pwszName">
+    <summary>
+      <para>The display name associated with an OID.</para>
+    </summary>
+  </member>
+  <member name="CRYPT_OID_INFO.dwGroupId">
+    <summary>
+      <para>The group identifier value associated with this OID information.</para>
+      <para>This member can be one of the following <b>dwGroupId</b> group identifiers.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>CRYPT_ENCRYPT_ALG_OID_GROUP_ID</b>
+          </description>
+          <description>
+            <para>Encryption algorithms</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>CRYPT_ENHKEY_USAGE_OID_GROUP_ID</b>
+          </description>
+          <description>
+            <para>Enhanced key usages</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>CRYPT_EXT_OR_ATTR_OID_GROUP_ID</b>
+          </description>
+          <description>
+            <para>Extensions or attributes</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>CRYPT_HASH_ALG_OID_GROUP_ID</b>
+          </description>
+          <description>
+            <para>Hash algorithms</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>CRYPT_POLICY_OID_GROUP_ID</b>
+          </description>
+          <description>
+            <para>Policies</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>CRYPT_PUBKEY_ALG_OID_GROUP_ID</b>
+          </description>
+          <description>
+            <para>Public key algorithms</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>CRYPT_RDN_ATTR_OID_GROUP_ID</b>
+          </description>
+          <description>
+            <para>RDN attributes</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>CRYPT_SIGN_ALG_OID_GROUP_ID</b>
+          </description>
+          <description>
+            <para>Signature algorithms</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="CRYPT_OID_INFO.DUMMYUNIONNAME">
+    <summary></summary>
+  </member>
+  <member name="CRYPT_OID_INFO.DUMMYUNIONNAME.dwValue">
+    <summary>
+      <para>A numeric value associated with this OID information. This member is used with <b>dwGroupId</b> CRYPT_SIGN_ALG_OID_GROUP_ID.</para>
+    </summary>
+  </member>
+  <member name="CRYPT_OID_INFO.DUMMYUNIONNAME.Algid">
+    <summary>
+      <para>The algorithm identifier associated with this OID information.</para>
+      <para>This member applies for the following values of <b>dwGroupId</b>:</para>
+      <list type="bullet">
+        <item>
+          <description>CRYPT_HASH_ALG_OID_GROUP_ID</description>
+        </item>
+        <item>
+          <description>CRYPT_ENCRYPT_ALG_OID_GROUP_ID</description>
+        </item>
+        <item>
+          <description>CRYPT_PUBKEY_ALG_OID_GROUP_ID</description>
+        </item>
+        <item>
+          <description>CRYPT_SIGN_ALG_OID_GROUP_ID</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="CRYPT_OID_INFO.DUMMYUNIONNAME.dwLength">
+    <summary>
+      <para>This member is not implemented. It is always set to zero.</para>
+    </summary>
+  </member>
+  <member name="CRYPT_OID_INFO.ExtraInfo">
+    <summary>
+      <para>Extra information used to find or register OID information. This member applies for the following values of <b>dwGroupId</b>:</para>
+      <list type="bullet">
+        <item>
+          <description>CRYPT_PUBKEY_ALG_OID_GROUP_ID</description>
+        </item>
+        <item>
+          <description>CRYPT_SIGN_ALG_OID_GROUP_ID</description>
+        </item>
+        <item>
+          <description>CRYPT_RDN_ATTR_OID_GROUP_ID</description>
+        </item>
+      </list>
+      <para>The OIDs in the CRYPT_ENCRYPT_ALG_OID_GROUP_ID OID group have a bit length set for the AES algorithms in the DWORD[0] member of the ExtraInfo member.</para>
+      <para>The OIDs in the CRYPT_PUBKEY_ALG_OID_GROUP_ID group have a flag set in the DWORD[0] member of the ExtraInfo member.</para>
+      <para>The OIDs in the ECC curve name public keys, for example, szOID_ECC_CURVE_P256 ("1.2.840.10045.3.1.7"), have a flag set in the DWORD[0] member, a BCRYPT_ECCKEY_BLOB dwMagic field value set in the DWORD[1] member, and a bit length where the BCRYPT_ECCKEY_BLOB cbKey value equals dwBitLength / 8 + ((dwBitLength % 8) ? 1 : 0) set in the DWORD[2] member of the ExtraInfo member.</para>
+      <para>The OIDs in the CRYPT_SIGN_ALG_OID_GROUP_ID group have a public key algorithm identifier set in the DWORD[0] member,  a flag set in the DWORD[1] member, and an optional provider type set in the DWORD[2] member of the ExtraInfo member.</para>
+      <para>The OIDs in the CRYPT_RDN_ATTR_OID_GROUP_ID group have a null-terminated list of acceptable RDN attribute value types set in an array of <b>DWORD</b> values in the ExtraInfo member. An omitted list implies an array of values where the first value in the array is  CERT_RDN_PRINTABLE_STRING, the second value in the array is CERT_RDN_UNICODE_STRING, and the third value in the array is zero.</para>
+      <para>The following values are used for the flags in the <b>ExtraInfo</b> member.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CRYPT_OID_INHIBIT_SIGNATURE_FORMAT_FLAG</b>
+                </description>
+              </item>
+              <item>
+                <description></description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>This flag is no longer used.</para>
+            <para>Stop the reformatting of the signature before the <see cref="CryptVerifySignature" /> function is called or after the <see cref="CryptSignHash" /> function is called.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CRYPT_OID_NO_NULL_ALGORITHM_PARA_FLAG</b>
+                </description>
+              </item>
+              <item>
+                <description></description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Omit <b>NULL</b> parameters when encoding.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CRYPT_OID_PUBKEY_ENCRYPT_ONLY_FLAG</b>
+                </description>
+              </item>
+              <item>
+                <description></description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The public key is only used for encryption.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CRYPT_OID_PUBKEY_SIGN_ONLY_FLAG</b>
+                </description>
+              </item>
+              <item>
+                <description></description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The public key is only used for signatures.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CRYPT_OID_USE_PUBKEY_PARA_FOR_PKCS7_FLAG</b>
+                </description>
+              </item>
+              <item>
+                <description></description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>This flag is no longer used.</para>
+            <para>Include the parameters of the public key algorithm in the <i>digestEncryptionAlgorithm</i> parameters for the PKCS #7 message.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="CRYPT_OID_INFO.pwszCNGAlgid">
+    <summary>
+      <para>The algorithm identifier string passed to the CNG functions (the BCrypt* and NCrypt* functions that are defined in Bcrypt.h and Ncrypt.h). CNG functions use algorithm identifier strings, such as L"SHA1", instead of the <a href="https://docs.microsoft.com//windows/desktop/SecCrypto/alg-id">ALG_ID</a> data type constants, such as <b>CALG_SHA1</b>.<b>Windows Server 2003 and Windows XP:  </b>This member is not available.</para>
+      <para>
+        <b>Note</b>  The  <b>pwszCNGAlgid</b> member is only available if you include the following statement in your code.</para>
+      <code>#define CRYPT_OID_INFO_HAS_EXTRA_FIELDS
+</code>
+      <para>This member applies for the following values of <b>dwGroupId</b>:</para>
+      <list type="bullet">
+        <item>
+          <description>CRYPT_HASH_ALG_OID_GROUP_ID</description>
+        </item>
+        <item>
+          <description>CRYPT_ENCRYPT_ALG_OID_GROUP_ID</description>
+        </item>
+        <item>
+          <description>CRYPT_PUBKEY_ALG_OID_GROUP_ID</description>
+        </item>
+        <item>
+          <description>CRYPT_SIGN_ALG_OID_GROUP_ID</description>
+        </item>
+      </list>
+      <para>Set the <b>pwszCNGAlgid</b> member to the empty string, L"", for the other values of <b>dwGroupId</b>.</para>
+      <para>The <b>pwszCNGAlgid</b> member can also be set to a string value that is not passed directly to the CNG functions. The following table lists these values and their meanings.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CRYPT_OID_INFO_ECC_PARAMETERS_ALGORITHM</b>
+                </description>
+              </item>
+              <item>
+                <description></description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The ECC curve algorithm is obtained from the encoded parameters of the OID algorithm.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CRYPT_OID_INFO_ECC_WRAP_PARAMETERS_ALGORITHM</b>
+                </description>
+              </item>
+              <item>
+                <description></description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The key wrap algorithm is obtained from the encoded parameters of the OID algorithm.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CRYPT_OID_INFO_HASH_PARAMETERS_ALGORITHM</b>
+                </description>
+              </item>
+              <item>
+                <description></description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The hash algorithm is obtained from the encoded parameters of the OID algorithm.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CRYPT_OID_INFO_MGF1_PARAMETERS_ALGORITHM</b>
+                </description>
+              </item>
+              <item>
+                <description></description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The PKCS #1 v2.1 mask generation hash algorithm is obtained from the encoded parameters of the OID algorithm.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CRYPT_OID_INFO_NO_SIGN_ALGORITHM</b>
+                </description>
+              </item>
+              <item>
+                <description></description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>A public key algorithm that indicates the signature value is an unsigned hash.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>CRYPT_OID_INFO_OAEP_PARAMETERS_ALGORITHM</b>
+                </description>
+              </item>
+              <item>
+                <description></description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The RSAES-OAEP padding hash algorithm is obtained from the encoded parameters of the OID algorithm.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="CRYPT_OID_INFO.pwszCNGExtraAlgid">
+    <summary>
+      <para>An extra algorithm string, other than the string in the <b>pwszCNGAlgid</b> member,  that can be passed to the CNG functions (the BCrypt* and NCrypt* functions that are defined in Bcrypt.h and Ncrypt.h).</para>
+      <para>
+        <b>Windows Server 2003 and Windows XP:  </b>This member is not available.</para>
+      <para>
+        <b>Note</b>  This member is only available if you include the following statement in your code.</para>
+      <code>#define CRYPT_OID_INFO_HAS_EXTRA_FIELDS
+</code>
+      <para>For the signature algorithms (CRYPT_SIGN_ALG_OID_GROUP_ID), this member is the public key algorithm string to pass to the CNG functions.</para>
+      <para>For ECC signatures, this member is the special CRYPT_OID_INFO_ECC_PARAMETERS_ALGORITHM string value.</para>
+      <para>For unsigned signatures, this member is the special CRYPT_OID_INFO_NO_SIGN_ALGORITHM string value.</para>
+      <para>For ECC curve name public keys, for example, szOID_ECC_CURVE_P256 ("1.2.840.10045.3.1.7"), this is the special CRYPT_OID_INFO_ECC_PARAMETERS_ALGORITHM string value.</para>
+      <para>For the other values of <b>dwGroupId</b>, set the <b>pwszCNGExtraAlgid</b> member to the empty string, L"".</para>
+    </summary>
+  </member>
+</doc>

@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFTimedTextFormattedText.GetSubformatting">
+    <summary>
+      <para>Gets a subformat in the formatted timed-text object.</para>
+    </summary>
+    <param name="index">
+      <para>Type: <b>DWORD</b></para>
+      <para>The index of the subformat in the formatted timed-text object.</para>
+    </param>
+    <param name="firstChar">
+      <para>Type: <b>DWORD*</b></para>
+      <para>A pointer to a variable that receives the first character of the subformat.</para>
+    </param>
+    <param name="charLength">
+      <para>Type: <b>DWORD*</b></para>
+      <para>A pointer to a variable that receives the length, in characters, of the subformat.</para>
+    </param>
+    <param name="style">
+      <para>Type: <b><see cref="IMFTimedTextStyle" />**</b></para>
+      <para>A pointer to a memory block that receives a pointer to the <see cref="IMFTimedTextStyle" /> interface for the subformat's timed-text style. This parameter can be <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFTimedTextFormattedText" />
+  </member>
+  <member name="IMFTimedTextFormattedText.GetSubformattingCount">
+    <summary>
+      <para>Gets the number of subformats in the formatted timed-text object.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>DWORD</b></para>
+      <para>Returns the number of subformats.</para>
+    </returns>
+    <seealso cref="IMFTimedTextFormattedText" />
+  </member>
+  <member name="IMFTimedTextFormattedText.GetText">
+    <summary>
+      <para>Gets the text in the formatted timed-text object.</para>
+    </summary>
+    <param name="text">
+      <para>Type: <b>LPCWSTR*</b></para>
+      <para>A pointer to a variable that receives the null-terminated wide-character string that contains the text.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFTimedTextFormattedText" />
+  </member>
+  <member name="IMFTimedTextFormattedText">
+    <summary>
+      <para>Represents a block of formatted timed-text.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+  </member>
+</doc>

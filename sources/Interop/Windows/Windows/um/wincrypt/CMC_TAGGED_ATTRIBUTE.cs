@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CMC_TAGGED_ATTRIBUTE.xml' path='doc/member[@name="CMC_TAGGED_ATTRIBUTE"]/*' />
 public partial struct CMC_TAGGED_ATTRIBUTE
 {
+    /// <include file='CMC_TAGGED_ATTRIBUTE.xml' path='doc/member[@name="CMC_TAGGED_ATTRIBUTE.dwBodyPartID"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwBodyPartID;
 
+    /// <include file='CMC_TAGGED_ATTRIBUTE.xml' path='doc/member[@name="CMC_TAGGED_ATTRIBUTE.Attribute"]/*' />
     public CRYPT_ATTRIBUTE Attribute;
 }

@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CERT_AUTHORITY_INFO_ACCESS.xml' path='doc/member[@name="CERT_AUTHORITY_INFO_ACCESS"]/*' />
 public unsafe partial struct CERT_AUTHORITY_INFO_ACCESS
 {
+    /// <include file='CERT_AUTHORITY_INFO_ACCESS.xml' path='doc/member[@name="CERT_AUTHORITY_INFO_ACCESS.cAccDescr"]/*' />
     [NativeTypeName("DWORD")]
     public uint cAccDescr;
 
+    /// <include file='CERT_AUTHORITY_INFO_ACCESS.xml' path='doc/member[@name="CERT_AUTHORITY_INFO_ACCESS.rgAccDescr"]/*' />
     [NativeTypeName("PCERT_ACCESS_DESCRIPTION")]
     public CERT_ACCESS_DESCRIPTION* rgAccDescr;
 }

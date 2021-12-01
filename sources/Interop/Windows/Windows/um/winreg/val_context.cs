@@ -5,13 +5,17 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='val_context.xml' path='doc/member[@name="val_context"]/*' />
 public unsafe partial struct val_context
 {
+    /// <include file='val_context.xml' path='doc/member[@name="val_context.valuelen"]/*' />
     public int valuelen;
 
+    /// <include file='val_context.xml' path='doc/member[@name="val_context.value_context"]/*' />
     [NativeTypeName("LPVOID")]
     public void* value_context;
 
+    /// <include file='val_context.xml' path='doc/member[@name="val_context.val_buff_ptr"]/*' />
     [NativeTypeName("LPVOID")]
     public void* val_buff_ptr;
 }

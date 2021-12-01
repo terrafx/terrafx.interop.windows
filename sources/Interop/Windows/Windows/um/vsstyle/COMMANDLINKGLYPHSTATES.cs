@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='COMMANDLINKGLYPHSTATES.xml' path='doc/member[@name="COMMANDLINKGLYPHSTATES"]/*' />
 public enum COMMANDLINKGLYPHSTATES
 {
+    /// <include file='COMMANDLINKGLYPHSTATES.xml' path='doc/member[@name="COMMANDLINKGLYPHSTATES.CMDLGS_NORMAL"]/*' />
     CMDLGS_NORMAL = 1,
+
+    /// <include file='COMMANDLINKGLYPHSTATES.xml' path='doc/member[@name="COMMANDLINKGLYPHSTATES.CMDLGS_HOT"]/*' />
     CMDLGS_HOT = 2,
+
+    /// <include file='COMMANDLINKGLYPHSTATES.xml' path='doc/member[@name="COMMANDLINKGLYPHSTATES.CMDLGS_PRESSED"]/*' />
     CMDLGS_PRESSED = 3,
+
+    /// <include file='COMMANDLINKGLYPHSTATES.xml' path='doc/member[@name="COMMANDLINKGLYPHSTATES.CMDLGS_DISABLED"]/*' />
     CMDLGS_DISABLED = 4,
+
+    /// <include file='COMMANDLINKGLYPHSTATES.xml' path='doc/member[@name="COMMANDLINKGLYPHSTATES.CMDLGS_DEFAULTED"]/*' />
     CMDLGS_DEFAULTED = 5,
 }

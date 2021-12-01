@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAppxContentGroupFilesEnumerator.xml' path='doc/member[@name="IAppxContentGroupFilesEnumerator"]/*' />
 [Guid("1A09A2FD-7440-44EB-8C84-848205A6A1CC")]
 [NativeTypeName("struct IAppxContentGroupFilesEnumerator : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IAppxContentGroupFilesEnumerator : IAppxContentGrou
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IAppxContentGroupFilesEnumerator : IAppxContentGrou
         return ((delegate* unmanaged<IAppxContentGroupFilesEnumerator*, Guid*, void**, int>)(lpVtbl[0]))((IAppxContentGroupFilesEnumerator*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IAppxContentGroupFilesEnumerator : IAppxContentGrou
         return ((delegate* unmanaged<IAppxContentGroupFilesEnumerator*, uint>)(lpVtbl[1]))((IAppxContentGroupFilesEnumerator*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IAppxContentGroupFilesEnumerator : IAppxContentGrou
         return ((delegate* unmanaged<IAppxContentGroupFilesEnumerator*, uint>)(lpVtbl[2]))((IAppxContentGroupFilesEnumerator*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAppxContentGroupFilesEnumerator.xml' path='doc/member[@name="IAppxContentGroupFilesEnumerator.GetCurrent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetCurrent([NativeTypeName("LPWSTR *")] ushort** file)
@@ -48,6 +53,7 @@ public unsafe partial struct IAppxContentGroupFilesEnumerator : IAppxContentGrou
         return ((delegate* unmanaged<IAppxContentGroupFilesEnumerator*, ushort**, int>)(lpVtbl[3]))((IAppxContentGroupFilesEnumerator*)Unsafe.AsPointer(ref this), file);
     }
 
+    /// <include file='IAppxContentGroupFilesEnumerator.xml' path='doc/member[@name="IAppxContentGroupFilesEnumerator.GetHasCurrent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetHasCurrent(BOOL* hasCurrent)
@@ -55,6 +61,7 @@ public unsafe partial struct IAppxContentGroupFilesEnumerator : IAppxContentGrou
         return ((delegate* unmanaged<IAppxContentGroupFilesEnumerator*, BOOL*, int>)(lpVtbl[4]))((IAppxContentGroupFilesEnumerator*)Unsafe.AsPointer(ref this), hasCurrent);
     }
 
+    /// <include file='IAppxContentGroupFilesEnumerator.xml' path='doc/member[@name="IAppxContentGroupFilesEnumerator.MoveNext"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT MoveNext(BOOL* hasNext)

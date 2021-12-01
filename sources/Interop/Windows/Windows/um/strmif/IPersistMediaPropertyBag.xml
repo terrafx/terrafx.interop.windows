@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IPersistMediaPropertyBag.InitNew">
+    <summary>
+      <para>The <code>InitNew</code> method initializes the object to receive new properties.</para>
+    </summary>
+    <returns>
+      <para>Returns S_OK.</para>
+    </returns>
+    <remarks>
+      <para>Calling this method on the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avi-mux-filter">AVI Mux</a> filter clears any properties that were previously set using the <see cref="Load" /> method.</para>
+      <para>Calling this method on the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avi-splitter-filter">AVI Splitter</a> filter or the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/wave-parser-filter">WAVE Parser</a> filter has no effect.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IPersistMediaPropertyBag Interface" />
+  </member>
+  <member name="IPersistMediaPropertyBag.Save">
+    <summary>
+      <para>The <code>Save</code> method saves properties from the filter into the media property bag.</para>
+    </summary>
+    <param name="pPropBag">
+      <para>Pointer to the <see cref="IMediaPropertyBag" /> interface of a media property bag created by the caller.</para>
+    </param>
+    <param name="fClearDirty">
+      <para>Reserved. Can be any value.</para>
+    </param>
+    <param name="fSaveAllProperties">
+      <para>Reserved. Can be any value.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_NOTIMPL</b>
+            </para>
+          </description>
+          <description>
+            <para>Not implemented.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>Insufficient memory.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>HRESULT_FROM_WIN32(ERROR_INVALID_DATA)</b>
+            </para>
+          </description>
+          <description>
+            <para>Invalid data.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>If you call this method on the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avi-splitter-filter">AVI Splitter</a> filter or the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/wave-parser-filter">WAVE Parser</a>, the filter reads any INFO and DISP chunks from the file and stores them in the media property bag. You can use the <see cref="IMediaPropertyBag.EnumProperty" /> method to retrieve the chunks.</para>
+      <para>The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avi-mux-filter">AVI Mux</a> filter does not implement this method.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IPersistMediaPropertyBag Interface" />
+  </member>
+  <member name="IPersistMediaPropertyBag">
+    <summary>
+      <para>The <code>IPersistMediaPropertyBag</code> interface sets and retrieves INFO and DISP chunks in Audio-Video Interleaved (AVI) streams. It uses the <see cref="IMediaPropertyBag" /> interface to store the chunks as name/value pairs.</para>
+      <para>The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avi-splitter-filter">AVI Splitter</a> filter and the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/wave-parser-filter">WAVE Parser</a> filter support this interface for reading INFO and DISP chunks from an AVI or WAV file. The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avi-mux-filter">AVI Mux</a> filter supports the interface for writing these chunks into a file.</para>
+      <para>
+        <code>IPersistMediaPropertyBag</code> is modeled after, but does not inherit from, the <b>IPersistPropertyBag</b> interface. For more information on <b>IPersistPropertyBag</b>, see the Platform SDK.</para>
+    </summary>
+  </member>
+</doc>

@@ -5,17 +5,23 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HLBWINFO.xml' path='doc/member[@name="HLBWINFO"]/*' />
 public partial struct HLBWINFO
 {
+    /// <include file='HLBWINFO.xml' path='doc/member[@name="HLBWINFO.cbSize"]/*' />
     [NativeTypeName("ULONG")]
     public uint cbSize;
 
+    /// <include file='HLBWINFO.xml' path='doc/member[@name="HLBWINFO.grfHLBWIF"]/*' />
     [NativeTypeName("DWORD")]
     public uint grfHLBWIF;
 
+    /// <include file='HLBWINFO.xml' path='doc/member[@name="HLBWINFO.rcFramePos"]/*' />
     public RECT rcFramePos;
 
+    /// <include file='HLBWINFO.xml' path='doc/member[@name="HLBWINFO.rcDocPos"]/*' />
     public RECT rcDocPos;
 
+    /// <include file='HLBWINFO.xml' path='doc/member[@name="HLBWINFO.hltbinfo"]/*' />
     public HLTBINFO hltbinfo;
 }

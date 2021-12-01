@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="EMRSETCOLORSPACE">
+    <summary>
+      <para>The <b>EMRSETCOLORSPACE</b>, <b>EMRSELECTCOLORSPACE</b>, and <b>EMRDELETECOLORSPACE</b> structures contain members for the <b>SetColorSpace</b> and <b>DeleteColorSpace</b> enhanced metafile records.</para>
+    </summary>
+    <remarks>
+      <para>There is no function that generates an enhanced metafile record with the <b>EMRSELECTCOLORSPACE</b> structure.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafile-structures">Metafile Structures</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafiles">Metafiles Overview</seealso>
+  </member>
+  <member name="EMRSETCOLORSPACE.emr">
+    <summary>
+      <para>Base structure for all record types.</para>
+    </summary>
+  </member>
+  <member name="EMRSETCOLORSPACE.ihCS">
+    <summary>
+      <para>Color space handle index.</para>
+    </summary>
+  </member>
+</doc>

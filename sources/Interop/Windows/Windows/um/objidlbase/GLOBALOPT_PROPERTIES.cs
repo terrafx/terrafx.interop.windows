@@ -7,15 +7,31 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='GLOBALOPT_PROPERTIES.xml' path='doc/member[@name="GLOBALOPT_PROPERTIES"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public enum GLOBALOPT_PROPERTIES
 {
+    /// <include file='GLOBALOPT_PROPERTIES.xml' path='doc/member[@name="GLOBALOPT_PROPERTIES.COMGLB_EXCEPTION_HANDLING"]/*' />
     COMGLB_EXCEPTION_HANDLING = 1,
+
+    /// <include file='GLOBALOPT_PROPERTIES.xml' path='doc/member[@name="GLOBALOPT_PROPERTIES.COMGLB_APPID"]/*' />
     COMGLB_APPID = 2,
+
+    /// <include file='GLOBALOPT_PROPERTIES.xml' path='doc/member[@name="GLOBALOPT_PROPERTIES.COMGLB_RPC_THREADPOOL_SETTING"]/*' />
     COMGLB_RPC_THREADPOOL_SETTING = 3,
+
+    /// <include file='GLOBALOPT_PROPERTIES.xml' path='doc/member[@name="GLOBALOPT_PROPERTIES.COMGLB_RO_SETTINGS"]/*' />
     COMGLB_RO_SETTINGS = 4,
+
+    /// <include file='GLOBALOPT_PROPERTIES.xml' path='doc/member[@name="GLOBALOPT_PROPERTIES.COMGLB_UNMARSHALING_POLICY"]/*' />
     COMGLB_UNMARSHALING_POLICY = 5,
+
+    /// <include file='GLOBALOPT_PROPERTIES.xml' path='doc/member[@name="GLOBALOPT_PROPERTIES.COMGLB_PROPERTIES_RESERVED1"]/*' />
     COMGLB_PROPERTIES_RESERVED1 = 6,
+
+    /// <include file='GLOBALOPT_PROPERTIES.xml' path='doc/member[@name="GLOBALOPT_PROPERTIES.COMGLB_PROPERTIES_RESERVED2"]/*' />
     COMGLB_PROPERTIES_RESERVED2 = 7,
+
+    /// <include file='GLOBALOPT_PROPERTIES.xml' path='doc/member[@name="GLOBALOPT_PROPERTIES.COMGLB_PROPERTIES_RESERVED3"]/*' />
     COMGLB_PROPERTIES_RESERVED3 = 8,
 }

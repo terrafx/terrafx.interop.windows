@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFVideoSampleAllocatorCallback.xml' path='doc/member[@name="IMFVideoSampleAllocatorCallback"]/*' />
 [Guid("992388B4-3372-4F67-8B6F-C84C071F4751")]
 [NativeTypeName("struct IMFVideoSampleAllocatorCallback : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMFVideoSampleAllocatorCallback : IMFVideoSampleAll
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMFVideoSampleAllocatorCallback : IMFVideoSampleAll
         return ((delegate* unmanaged<IMFVideoSampleAllocatorCallback*, Guid*, void**, int>)(lpVtbl[0]))((IMFVideoSampleAllocatorCallback*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMFVideoSampleAllocatorCallback : IMFVideoSampleAll
         return ((delegate* unmanaged<IMFVideoSampleAllocatorCallback*, uint>)(lpVtbl[1]))((IMFVideoSampleAllocatorCallback*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMFVideoSampleAllocatorCallback : IMFVideoSampleAll
         return ((delegate* unmanaged<IMFVideoSampleAllocatorCallback*, uint>)(lpVtbl[2]))((IMFVideoSampleAllocatorCallback*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFVideoSampleAllocatorCallback.xml' path='doc/member[@name="IMFVideoSampleAllocatorCallback.SetCallback"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetCallback(IMFVideoSampleAllocatorNotify* pNotify)
@@ -46,6 +51,7 @@ public unsafe partial struct IMFVideoSampleAllocatorCallback : IMFVideoSampleAll
         return ((delegate* unmanaged<IMFVideoSampleAllocatorCallback*, IMFVideoSampleAllocatorNotify*, int>)(lpVtbl[3]))((IMFVideoSampleAllocatorCallback*)Unsafe.AsPointer(ref this), pNotify);
     }
 
+    /// <include file='IMFVideoSampleAllocatorCallback.xml' path='doc/member[@name="IMFVideoSampleAllocatorCallback.GetFreeSampleCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetFreeSampleCount([NativeTypeName("LONG *")] int* plSamples)

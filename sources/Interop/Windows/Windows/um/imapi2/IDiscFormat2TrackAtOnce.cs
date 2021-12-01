@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IDiscFormat2TrackAtOnce.xml' path='doc/member[@name="IDiscFormat2TrackAtOnce"]/*' />
 [Guid("27354154-8F64-5B0F-8F00-5D77AFBE261E")]
 [NativeTypeName("struct IDiscFormat2TrackAtOnce : IDiscFormat2")]
 [NativeInheritance("IDiscFormat2")]
@@ -16,6 +17,7 @@ public unsafe partial struct IDiscFormat2TrackAtOnce : IDiscFormat2TrackAtOnce.I
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IDiscFormat2TrackAtOnce : IDiscFormat2TrackAtOnce.I
         return ((delegate* unmanaged<IDiscFormat2TrackAtOnce*, Guid*, void**, int>)(lpVtbl[0]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IDiscFormat2TrackAtOnce : IDiscFormat2TrackAtOnce.I
         return ((delegate* unmanaged<IDiscFormat2TrackAtOnce*, uint>)(lpVtbl[1]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IDiscFormat2TrackAtOnce : IDiscFormat2TrackAtOnce.I
         return ((delegate* unmanaged<IDiscFormat2TrackAtOnce*, uint>)(lpVtbl[2]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct IDiscFormat2TrackAtOnce : IDiscFormat2TrackAtOnce.I
         return ((delegate* unmanaged<IDiscFormat2TrackAtOnce*, uint*, int>)(lpVtbl[3]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct IDiscFormat2TrackAtOnce : IDiscFormat2TrackAtOnce.I
         return ((delegate* unmanaged<IDiscFormat2TrackAtOnce*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
@@ -60,6 +67,7 @@ public unsafe partial struct IDiscFormat2TrackAtOnce : IDiscFormat2TrackAtOnce.I
         return ((delegate* unmanaged<IDiscFormat2TrackAtOnce*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
+    /// <inheritdoc cref="IDispatch.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
@@ -67,6 +75,7 @@ public unsafe partial struct IDiscFormat2TrackAtOnce : IDiscFormat2TrackAtOnce.I
         return ((delegate* unmanaged<IDiscFormat2TrackAtOnce*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
+    /// <inheritdoc cref="IDiscFormat2.IsRecorderSupported" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT IsRecorderSupported(IDiscRecorder2* recorder, [NativeTypeName("VARIANT_BOOL *")] short* value)
@@ -74,6 +83,7 @@ public unsafe partial struct IDiscFormat2TrackAtOnce : IDiscFormat2TrackAtOnce.I
         return ((delegate* unmanaged<IDiscFormat2TrackAtOnce*, IDiscRecorder2*, short*, int>)(lpVtbl[7]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), recorder, value);
     }
 
+    /// <inheritdoc cref="IDiscFormat2.IsCurrentMediaSupported" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT IsCurrentMediaSupported(IDiscRecorder2* recorder, [NativeTypeName("VARIANT_BOOL *")] short* value)
@@ -81,6 +91,7 @@ public unsafe partial struct IDiscFormat2TrackAtOnce : IDiscFormat2TrackAtOnce.I
         return ((delegate* unmanaged<IDiscFormat2TrackAtOnce*, IDiscRecorder2*, short*, int>)(lpVtbl[8]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), recorder, value);
     }
 
+    /// <inheritdoc cref="IDiscFormat2.get_MediaPhysicallyBlank" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT get_MediaPhysicallyBlank([NativeTypeName("VARIANT_BOOL *")] short* value)
@@ -88,6 +99,7 @@ public unsafe partial struct IDiscFormat2TrackAtOnce : IDiscFormat2TrackAtOnce.I
         return ((delegate* unmanaged<IDiscFormat2TrackAtOnce*, short*, int>)(lpVtbl[9]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), value);
     }
 
+    /// <inheritdoc cref="IDiscFormat2.get_MediaHeuristicallyBlank" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT get_MediaHeuristicallyBlank([NativeTypeName("VARIANT_BOOL *")] short* value)
@@ -95,6 +107,7 @@ public unsafe partial struct IDiscFormat2TrackAtOnce : IDiscFormat2TrackAtOnce.I
         return ((delegate* unmanaged<IDiscFormat2TrackAtOnce*, short*, int>)(lpVtbl[10]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), value);
     }
 
+    /// <inheritdoc cref="IDiscFormat2.get_SupportedMediaTypes" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT get_SupportedMediaTypes(SAFEARRAY** value)
@@ -102,6 +115,7 @@ public unsafe partial struct IDiscFormat2TrackAtOnce : IDiscFormat2TrackAtOnce.I
         return ((delegate* unmanaged<IDiscFormat2TrackAtOnce*, SAFEARRAY**, int>)(lpVtbl[11]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), value);
     }
 
+    /// <include file='IDiscFormat2TrackAtOnce.xml' path='doc/member[@name="IDiscFormat2TrackAtOnce.PrepareMedia"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT PrepareMedia()
@@ -109,6 +123,7 @@ public unsafe partial struct IDiscFormat2TrackAtOnce : IDiscFormat2TrackAtOnce.I
         return ((delegate* unmanaged<IDiscFormat2TrackAtOnce*, int>)(lpVtbl[12]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDiscFormat2TrackAtOnce.xml' path='doc/member[@name="IDiscFormat2TrackAtOnce.AddAudioTrack"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT AddAudioTrack(IStream* data)
@@ -116,6 +131,7 @@ public unsafe partial struct IDiscFormat2TrackAtOnce : IDiscFormat2TrackAtOnce.I
         return ((delegate* unmanaged<IDiscFormat2TrackAtOnce*, IStream*, int>)(lpVtbl[13]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), data);
     }
 
+    /// <include file='IDiscFormat2TrackAtOnce.xml' path='doc/member[@name="IDiscFormat2TrackAtOnce.CancelAddTrack"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT CancelAddTrack()
@@ -123,6 +139,7 @@ public unsafe partial struct IDiscFormat2TrackAtOnce : IDiscFormat2TrackAtOnce.I
         return ((delegate* unmanaged<IDiscFormat2TrackAtOnce*, int>)(lpVtbl[14]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDiscFormat2TrackAtOnce.xml' path='doc/member[@name="IDiscFormat2TrackAtOnce.ReleaseMedia"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT ReleaseMedia()
@@ -130,6 +147,7 @@ public unsafe partial struct IDiscFormat2TrackAtOnce : IDiscFormat2TrackAtOnce.I
         return ((delegate* unmanaged<IDiscFormat2TrackAtOnce*, int>)(lpVtbl[15]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDiscFormat2TrackAtOnce.xml' path='doc/member[@name="IDiscFormat2TrackAtOnce.SetWriteSpeed"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT SetWriteSpeed([NativeTypeName("LONG")] int RequestedSectorsPerSecond, [NativeTypeName("VARIANT_BOOL")] short RotationTypeIsPureCAV)
@@ -137,6 +155,7 @@ public unsafe partial struct IDiscFormat2TrackAtOnce : IDiscFormat2TrackAtOnce.I
         return ((delegate* unmanaged<IDiscFormat2TrackAtOnce*, int, short, int>)(lpVtbl[16]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), RequestedSectorsPerSecond, RotationTypeIsPureCAV);
     }
 
+    /// <include file='IDiscFormat2TrackAtOnce.xml' path='doc/member[@name="IDiscFormat2TrackAtOnce.put_Recorder"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT put_Recorder(IDiscRecorder2* value)
@@ -144,6 +163,7 @@ public unsafe partial struct IDiscFormat2TrackAtOnce : IDiscFormat2TrackAtOnce.I
         return ((delegate* unmanaged<IDiscFormat2TrackAtOnce*, IDiscRecorder2*, int>)(lpVtbl[17]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), value);
     }
 
+    /// <include file='IDiscFormat2TrackAtOnce.xml' path='doc/member[@name="IDiscFormat2TrackAtOnce.get_Recorder"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT get_Recorder(IDiscRecorder2** value)
@@ -151,6 +171,7 @@ public unsafe partial struct IDiscFormat2TrackAtOnce : IDiscFormat2TrackAtOnce.I
         return ((delegate* unmanaged<IDiscFormat2TrackAtOnce*, IDiscRecorder2**, int>)(lpVtbl[18]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), value);
     }
 
+    /// <include file='IDiscFormat2TrackAtOnce.xml' path='doc/member[@name="IDiscFormat2TrackAtOnce.put_BufferUnderrunFreeDisabled"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT put_BufferUnderrunFreeDisabled([NativeTypeName("VARIANT_BOOL")] short value)
@@ -158,6 +179,7 @@ public unsafe partial struct IDiscFormat2TrackAtOnce : IDiscFormat2TrackAtOnce.I
         return ((delegate* unmanaged<IDiscFormat2TrackAtOnce*, short, int>)(lpVtbl[19]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), value);
     }
 
+    /// <include file='IDiscFormat2TrackAtOnce.xml' path='doc/member[@name="IDiscFormat2TrackAtOnce.get_BufferUnderrunFreeDisabled"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public HRESULT get_BufferUnderrunFreeDisabled([NativeTypeName("VARIANT_BOOL *")] short* value)
@@ -165,6 +187,7 @@ public unsafe partial struct IDiscFormat2TrackAtOnce : IDiscFormat2TrackAtOnce.I
         return ((delegate* unmanaged<IDiscFormat2TrackAtOnce*, short*, int>)(lpVtbl[20]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), value);
     }
 
+    /// <include file='IDiscFormat2TrackAtOnce.xml' path='doc/member[@name="IDiscFormat2TrackAtOnce.get_NumberOfExistingTracks"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
     public HRESULT get_NumberOfExistingTracks([NativeTypeName("LONG *")] int* value)
@@ -172,6 +195,7 @@ public unsafe partial struct IDiscFormat2TrackAtOnce : IDiscFormat2TrackAtOnce.I
         return ((delegate* unmanaged<IDiscFormat2TrackAtOnce*, int*, int>)(lpVtbl[21]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), value);
     }
 
+    /// <include file='IDiscFormat2TrackAtOnce.xml' path='doc/member[@name="IDiscFormat2TrackAtOnce.get_TotalSectorsOnMedia"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
     public HRESULT get_TotalSectorsOnMedia([NativeTypeName("LONG *")] int* value)
@@ -179,6 +203,7 @@ public unsafe partial struct IDiscFormat2TrackAtOnce : IDiscFormat2TrackAtOnce.I
         return ((delegate* unmanaged<IDiscFormat2TrackAtOnce*, int*, int>)(lpVtbl[22]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), value);
     }
 
+    /// <include file='IDiscFormat2TrackAtOnce.xml' path='doc/member[@name="IDiscFormat2TrackAtOnce.get_FreeSectorsOnMedia"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
     public HRESULT get_FreeSectorsOnMedia([NativeTypeName("LONG *")] int* value)
@@ -186,6 +211,7 @@ public unsafe partial struct IDiscFormat2TrackAtOnce : IDiscFormat2TrackAtOnce.I
         return ((delegate* unmanaged<IDiscFormat2TrackAtOnce*, int*, int>)(lpVtbl[23]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), value);
     }
 
+    /// <include file='IDiscFormat2TrackAtOnce.xml' path='doc/member[@name="IDiscFormat2TrackAtOnce.get_UsedSectorsOnMedia"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(24)]
     public HRESULT get_UsedSectorsOnMedia([NativeTypeName("LONG *")] int* value)
@@ -193,6 +219,7 @@ public unsafe partial struct IDiscFormat2TrackAtOnce : IDiscFormat2TrackAtOnce.I
         return ((delegate* unmanaged<IDiscFormat2TrackAtOnce*, int*, int>)(lpVtbl[24]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), value);
     }
 
+    /// <include file='IDiscFormat2TrackAtOnce.xml' path='doc/member[@name="IDiscFormat2TrackAtOnce.put_DoNotFinalizeMedia"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(25)]
     public HRESULT put_DoNotFinalizeMedia([NativeTypeName("VARIANT_BOOL")] short value)
@@ -200,6 +227,7 @@ public unsafe partial struct IDiscFormat2TrackAtOnce : IDiscFormat2TrackAtOnce.I
         return ((delegate* unmanaged<IDiscFormat2TrackAtOnce*, short, int>)(lpVtbl[25]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), value);
     }
 
+    /// <include file='IDiscFormat2TrackAtOnce.xml' path='doc/member[@name="IDiscFormat2TrackAtOnce.get_DoNotFinalizeMedia"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(26)]
     public HRESULT get_DoNotFinalizeMedia([NativeTypeName("VARIANT_BOOL *")] short* value)
@@ -207,6 +235,7 @@ public unsafe partial struct IDiscFormat2TrackAtOnce : IDiscFormat2TrackAtOnce.I
         return ((delegate* unmanaged<IDiscFormat2TrackAtOnce*, short*, int>)(lpVtbl[26]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), value);
     }
 
+    /// <include file='IDiscFormat2TrackAtOnce.xml' path='doc/member[@name="IDiscFormat2TrackAtOnce.get_ExpectedTableOfContents"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(27)]
     public HRESULT get_ExpectedTableOfContents(SAFEARRAY** value)
@@ -214,6 +243,7 @@ public unsafe partial struct IDiscFormat2TrackAtOnce : IDiscFormat2TrackAtOnce.I
         return ((delegate* unmanaged<IDiscFormat2TrackAtOnce*, SAFEARRAY**, int>)(lpVtbl[27]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), value);
     }
 
+    /// <include file='IDiscFormat2TrackAtOnce.xml' path='doc/member[@name="IDiscFormat2TrackAtOnce.get_CurrentPhysicalMediaType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(28)]
     public HRESULT get_CurrentPhysicalMediaType(IMAPI_MEDIA_PHYSICAL_TYPE* value)
@@ -221,6 +251,7 @@ public unsafe partial struct IDiscFormat2TrackAtOnce : IDiscFormat2TrackAtOnce.I
         return ((delegate* unmanaged<IDiscFormat2TrackAtOnce*, IMAPI_MEDIA_PHYSICAL_TYPE*, int>)(lpVtbl[28]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), value);
     }
 
+    /// <include file='IDiscFormat2TrackAtOnce.xml' path='doc/member[@name="IDiscFormat2TrackAtOnce.put_ClientName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(29)]
     public HRESULT put_ClientName([NativeTypeName("BSTR")] ushort* value)
@@ -228,6 +259,7 @@ public unsafe partial struct IDiscFormat2TrackAtOnce : IDiscFormat2TrackAtOnce.I
         return ((delegate* unmanaged<IDiscFormat2TrackAtOnce*, ushort*, int>)(lpVtbl[29]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), value);
     }
 
+    /// <include file='IDiscFormat2TrackAtOnce.xml' path='doc/member[@name="IDiscFormat2TrackAtOnce.get_ClientName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(30)]
     public HRESULT get_ClientName([NativeTypeName("BSTR *")] ushort** value)
@@ -235,6 +267,7 @@ public unsafe partial struct IDiscFormat2TrackAtOnce : IDiscFormat2TrackAtOnce.I
         return ((delegate* unmanaged<IDiscFormat2TrackAtOnce*, ushort**, int>)(lpVtbl[30]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), value);
     }
 
+    /// <include file='IDiscFormat2TrackAtOnce.xml' path='doc/member[@name="IDiscFormat2TrackAtOnce.get_RequestedWriteSpeed"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(31)]
     public HRESULT get_RequestedWriteSpeed([NativeTypeName("LONG *")] int* value)
@@ -242,6 +275,7 @@ public unsafe partial struct IDiscFormat2TrackAtOnce : IDiscFormat2TrackAtOnce.I
         return ((delegate* unmanaged<IDiscFormat2TrackAtOnce*, int*, int>)(lpVtbl[31]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), value);
     }
 
+    /// <include file='IDiscFormat2TrackAtOnce.xml' path='doc/member[@name="IDiscFormat2TrackAtOnce.get_RequestedRotationTypeIsPureCAV"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(32)]
     public HRESULT get_RequestedRotationTypeIsPureCAV([NativeTypeName("VARIANT_BOOL *")] short* value)
@@ -249,6 +283,7 @@ public unsafe partial struct IDiscFormat2TrackAtOnce : IDiscFormat2TrackAtOnce.I
         return ((delegate* unmanaged<IDiscFormat2TrackAtOnce*, short*, int>)(lpVtbl[32]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), value);
     }
 
+    /// <include file='IDiscFormat2TrackAtOnce.xml' path='doc/member[@name="IDiscFormat2TrackAtOnce.get_CurrentWriteSpeed"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(33)]
     public HRESULT get_CurrentWriteSpeed([NativeTypeName("LONG *")] int* value)
@@ -256,6 +291,7 @@ public unsafe partial struct IDiscFormat2TrackAtOnce : IDiscFormat2TrackAtOnce.I
         return ((delegate* unmanaged<IDiscFormat2TrackAtOnce*, int*, int>)(lpVtbl[33]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), value);
     }
 
+    /// <include file='IDiscFormat2TrackAtOnce.xml' path='doc/member[@name="IDiscFormat2TrackAtOnce.get_CurrentRotationTypeIsPureCAV"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(34)]
     public HRESULT get_CurrentRotationTypeIsPureCAV([NativeTypeName("VARIANT_BOOL *")] short* value)
@@ -263,6 +299,7 @@ public unsafe partial struct IDiscFormat2TrackAtOnce : IDiscFormat2TrackAtOnce.I
         return ((delegate* unmanaged<IDiscFormat2TrackAtOnce*, short*, int>)(lpVtbl[34]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), value);
     }
 
+    /// <include file='IDiscFormat2TrackAtOnce.xml' path='doc/member[@name="IDiscFormat2TrackAtOnce.get_SupportedWriteSpeeds"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(35)]
     public HRESULT get_SupportedWriteSpeeds(SAFEARRAY** supportedSpeeds)
@@ -270,6 +307,7 @@ public unsafe partial struct IDiscFormat2TrackAtOnce : IDiscFormat2TrackAtOnce.I
         return ((delegate* unmanaged<IDiscFormat2TrackAtOnce*, SAFEARRAY**, int>)(lpVtbl[35]))((IDiscFormat2TrackAtOnce*)Unsafe.AsPointer(ref this), supportedSpeeds);
     }
 
+    /// <include file='IDiscFormat2TrackAtOnce.xml' path='doc/member[@name="IDiscFormat2TrackAtOnce.get_SupportedWriteSpeedDescriptors"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(36)]
     public HRESULT get_SupportedWriteSpeedDescriptors(SAFEARRAY** supportedSpeedDescriptors)

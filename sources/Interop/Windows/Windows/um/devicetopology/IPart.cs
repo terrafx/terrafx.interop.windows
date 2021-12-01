@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IPart.xml' path='doc/member[@name="IPart"]/*' />
 [Guid("AE2DE0E4-5BCA-4F2D-AA46-5D13F8FDB3A9")]
 [NativeTypeName("struct IPart : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IPart : IPart.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IPart : IPart.Interface
         return ((delegate* unmanaged<IPart*, Guid*, void**, int>)(lpVtbl[0]))((IPart*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IPart : IPart.Interface
         return ((delegate* unmanaged<IPart*, uint>)(lpVtbl[1]))((IPart*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IPart : IPart.Interface
         return ((delegate* unmanaged<IPart*, uint>)(lpVtbl[2]))((IPart*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IPart.xml' path='doc/member[@name="IPart.GetName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetName([NativeTypeName("LPWSTR *")] ushort** ppwstrName)
@@ -46,6 +51,7 @@ public unsafe partial struct IPart : IPart.Interface
         return ((delegate* unmanaged<IPart*, ushort**, int>)(lpVtbl[3]))((IPart*)Unsafe.AsPointer(ref this), ppwstrName);
     }
 
+    /// <include file='IPart.xml' path='doc/member[@name="IPart.GetLocalId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetLocalId(uint* pnId)
@@ -53,6 +59,7 @@ public unsafe partial struct IPart : IPart.Interface
         return ((delegate* unmanaged<IPart*, uint*, int>)(lpVtbl[4]))((IPart*)Unsafe.AsPointer(ref this), pnId);
     }
 
+    /// <include file='IPart.xml' path='doc/member[@name="IPart.GetGlobalId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetGlobalId([NativeTypeName("LPWSTR *")] ushort** ppwstrGlobalId)
@@ -60,6 +67,7 @@ public unsafe partial struct IPart : IPart.Interface
         return ((delegate* unmanaged<IPart*, ushort**, int>)(lpVtbl[5]))((IPart*)Unsafe.AsPointer(ref this), ppwstrGlobalId);
     }
 
+    /// <include file='IPart.xml' path='doc/member[@name="IPart.GetPartType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetPartType(PartType* pPartType)
@@ -67,6 +75,7 @@ public unsafe partial struct IPart : IPart.Interface
         return ((delegate* unmanaged<IPart*, PartType*, int>)(lpVtbl[6]))((IPart*)Unsafe.AsPointer(ref this), pPartType);
     }
 
+    /// <include file='IPart.xml' path='doc/member[@name="IPart.GetSubType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetSubType(Guid* pSubType)
@@ -74,6 +83,7 @@ public unsafe partial struct IPart : IPart.Interface
         return ((delegate* unmanaged<IPart*, Guid*, int>)(lpVtbl[7]))((IPart*)Unsafe.AsPointer(ref this), pSubType);
     }
 
+    /// <include file='IPart.xml' path='doc/member[@name="IPart.GetControlInterfaceCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetControlInterfaceCount(uint* pCount)
@@ -81,6 +91,7 @@ public unsafe partial struct IPart : IPart.Interface
         return ((delegate* unmanaged<IPart*, uint*, int>)(lpVtbl[8]))((IPart*)Unsafe.AsPointer(ref this), pCount);
     }
 
+    /// <include file='IPart.xml' path='doc/member[@name="IPart.GetControlInterface"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT GetControlInterface(uint nIndex, IControlInterface** ppInterfaceDesc)
@@ -88,6 +99,7 @@ public unsafe partial struct IPart : IPart.Interface
         return ((delegate* unmanaged<IPart*, uint, IControlInterface**, int>)(lpVtbl[9]))((IPart*)Unsafe.AsPointer(ref this), nIndex, ppInterfaceDesc);
     }
 
+    /// <include file='IPart.xml' path='doc/member[@name="IPart.EnumPartsIncoming"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT EnumPartsIncoming(IPartsList** ppParts)
@@ -95,6 +107,7 @@ public unsafe partial struct IPart : IPart.Interface
         return ((delegate* unmanaged<IPart*, IPartsList**, int>)(lpVtbl[10]))((IPart*)Unsafe.AsPointer(ref this), ppParts);
     }
 
+    /// <include file='IPart.xml' path='doc/member[@name="IPart.EnumPartsOutgoing"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT EnumPartsOutgoing(IPartsList** ppParts)
@@ -102,6 +115,7 @@ public unsafe partial struct IPart : IPart.Interface
         return ((delegate* unmanaged<IPart*, IPartsList**, int>)(lpVtbl[11]))((IPart*)Unsafe.AsPointer(ref this), ppParts);
     }
 
+    /// <include file='IPart.xml' path='doc/member[@name="IPart.GetTopologyObject"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT GetTopologyObject(IDeviceTopology** ppTopology)
@@ -109,6 +123,7 @@ public unsafe partial struct IPart : IPart.Interface
         return ((delegate* unmanaged<IPart*, IDeviceTopology**, int>)(lpVtbl[12]))((IPart*)Unsafe.AsPointer(ref this), ppTopology);
     }
 
+    /// <include file='IPart.xml' path='doc/member[@name="IPart.Activate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT Activate([NativeTypeName("DWORD")] uint dwClsContext, [NativeTypeName("const IID &")] Guid* refiid, void** ppvObject)
@@ -116,6 +131,7 @@ public unsafe partial struct IPart : IPart.Interface
         return ((delegate* unmanaged<IPart*, uint, Guid*, void**, int>)(lpVtbl[13]))((IPart*)Unsafe.AsPointer(ref this), dwClsContext, refiid, ppvObject);
     }
 
+    /// <include file='IPart.xml' path='doc/member[@name="IPart.RegisterControlChangeCallback"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT RegisterControlChangeCallback([NativeTypeName("const GUID &")] Guid* riid, IControlChangeNotify* pNotify)
@@ -123,6 +139,7 @@ public unsafe partial struct IPart : IPart.Interface
         return ((delegate* unmanaged<IPart*, Guid*, IControlChangeNotify*, int>)(lpVtbl[14]))((IPart*)Unsafe.AsPointer(ref this), riid, pNotify);
     }
 
+    /// <include file='IPart.xml' path='doc/member[@name="IPart.UnregisterControlChangeCallback"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT UnregisterControlChangeCallback(IControlChangeNotify* pNotify)

@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MCGRIDINFO">
+    <summary>
+      <para>Contains information about part of a calendar control.</para>
+    </summary>
+  </member>
+  <member name="MCGRIDINFO.cbSize">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Size of this structure, in bytes.</para>
+    </summary>
+  </member>
+  <member name="MCGRIDINFO.dwPart">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">DWORD</a></b></para>
+      <para>The part of the calendar control for which information is being requested. One of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>MCGIP_CALENDARCONTROL</b>
+          </description>
+          <description>
+            <para>The entire calendar control, which may include up to 12 calendars.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>MCGIP_NEXT</b>
+          </description>
+          <description>
+            <para>The next button.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>MCGIP_PREV</b>
+          </description>
+          <description>
+            <para>The previous button.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>MCGIP_FOOTER</b>
+          </description>
+          <description>
+            <para>The footer.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>MCGIP_CALENDAR</b>
+          </description>
+          <description>
+            <para>One specific calendar. Used with <b>iCalendar</b> and <b>pszName</b>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>MCGIP_CALENDARHEADER</b>
+          </description>
+          <description>
+            <para>Calendar header. Used with <b>iCalendar</b> and <b>pszName</b>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>MCGIP_CALENDARBODY</b>
+          </description>
+          <description>
+            <para>Calendar body. Used with <b>iCalendar</b>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>MCGIP_CALENDARROW</b>
+          </description>
+          <description>
+            <para>A given calendar row.  Used with <b>iCalendar</b> and <b>iRow</b>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>MCGIP_CALENDARCELL</b>
+          </description>
+          <description>
+            <para>A given calendar cell. Used with <b>iCalendar</b>, <b>iRow</b>, <b>iCol</b>, <b>bSelected</b> and <b>pszName</b>.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="MCGRIDINFO.dwFlags">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">DWORD</a></b></para>
+      <para>Indicates what information is to be filled in. A combination of one or more of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>MCGIF_DATE</b>
+          </description>
+          <description>
+            <b>stStart</b> and <b>stEnd</b>.
+</description>
+        </item>
+        <item>
+          <description>
+            <b>MCGIF_RECT</b>
+          </description>
+          <description>
+            <b>rc</b>.
+</description>
+        </item>
+        <item>
+          <description>
+            <b>MCGIF_NAME</b>
+          </description>
+          <description>
+            <b>pszName</b>.
+</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="MCGRIDINFO.iCalendar">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>If <b>dwPart</b> is MCGIP_CALENDAR, MCGIP_CALENDARHEADER, MCGIP_CALENDARBODY, MCGIP_CALENDARROW, or MCGIP_CALENDARCELL, this member specifies the index of the calendar for which to retrieve information. For those parts, this must be a valid value even if there is only one calendar that is currently in the control.</para>
+    </summary>
+  </member>
+  <member name="MCGRIDINFO.iRow">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>If <b>dwPart</b> is MCGIP_CALENDARROW, specifies the row for which to return information.</para>
+    </summary>
+  </member>
+  <member name="MCGRIDINFO.iCol">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>If <b>dwPart</b> is MCGIP_CALENDARCELL, specifies the column of the cell for which to return information. The <b>iRow</b> member provides the row of the cell for which to return information.</para>
+    </summary>
+  </member>
+  <member name="MCGRIDINFO.bSelected">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BOOL</a></b></para>
+      <para>If <b>dwPart</b> is MCGIP_CALENDARCELL, indicates if the cell described by <b>iRow</b> and <b>iCol</b> is currently selected.</para>
+    </summary>
+  </member>
+  <member name="MCGRIDINFO.stStart">
+    <summary>
+      <para>Type: <b><see cref="SYSTEMTIME" /></b></para>
+      <para>Returns the start date specified by iCalendar. Used only when <b>dwFlags</b> contains MCGIF_DATE.</para>
+    </summary>
+  </member>
+  <member name="MCGRIDINFO.stEnd">
+    <summary>
+      <para>Type: <b><see cref="SYSTEMTIME" /></b></para>
+      <para>Returns the end date specified by iCalendar. Used only when <b>dwFlags</b> contains MCGIF_DATE.</para>
+    </summary>
+  </member>
+  <member name="MCGRIDINFO.rc">
+    <summary>
+      <para>Type: <b><see cref="RECT" /></b></para>
+      <para>Returns the rectangle of the part specified in <b>dwPart</b>. Set only if <b>dwFlags</b> contains MCGIF_RECT.</para>
+    </summary>
+  </member>
+  <member name="MCGRIDINFO.pszName">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">PWSTR</a></b></para>
+      <para>Pointer to a string for which <b>cchName</b> is the length. Set only if <b>dwFlags</b> contains MCGIF_NAME, and only for the following parts, as described in the <b>dwPart</b> member.</para>
+      <list type="bullet">
+        <item>
+          <description>MCGIP_CALENDAR: Returns the text of the selected dates. In the case of multiple selection, returns the date at the start of the selection.</description>
+        </item>
+        <item>
+          <description>MCGIP_CALENDARCELL: Returns the text of the cell indicated by <b>iRow</b> and <b>iCol</b>, for instance "11" if the 11th day was specified.</description>
+        </item>
+        <item>
+          <description>MCGIP_CALENDARHEADER: Returns the text of what it says in the calendar header, for instance "July, 2006".</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="MCGRIDINFO.cchName">
+    <summary>
+      <para>Type: <b>size_t</b></para>
+      <para>Length of <b>pszName</b>, in characters.</para>
+    </summary>
+  </member>
+</doc>

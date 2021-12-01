@@ -5,12 +5,24 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IF_ACCESS_TYPE.xml' path='doc/member[@name="IF_ACCESS_TYPE"]/*' />
 public enum IF_ACCESS_TYPE
 {
+    /// <include file='IF_ACCESS_TYPE.xml' path='doc/member[@name="IF_ACCESS_TYPE.IF_ACCESS_LOOPBACK"]/*' />
     IF_ACCESS_LOOPBACK = 1,
+
+    /// <include file='IF_ACCESS_TYPE.xml' path='doc/member[@name="IF_ACCESS_TYPE.IF_ACCESS_BROADCAST"]/*' />
     IF_ACCESS_BROADCAST = 2,
+
+    /// <include file='IF_ACCESS_TYPE.xml' path='doc/member[@name="IF_ACCESS_TYPE.IF_ACCESS_POINT_TO_POINT"]/*' />
     IF_ACCESS_POINT_TO_POINT = 3,
+
+    /// <include file='IF_ACCESS_TYPE.xml' path='doc/member[@name="IF_ACCESS_TYPE.IF_ACCESS_POINTTOPOINT"]/*' />
     IF_ACCESS_POINTTOPOINT = 3,
+
+    /// <include file='IF_ACCESS_TYPE.xml' path='doc/member[@name="IF_ACCESS_TYPE.IF_ACCESS_POINT_TO_MULTI_POINT"]/*' />
     IF_ACCESS_POINT_TO_MULTI_POINT = 4,
+
+    /// <include file='IF_ACCESS_TYPE.xml' path='doc/member[@name="IF_ACCESS_TYPE.IF_ACCESS_POINTTOMULTIPOINT"]/*' />
     IF_ACCESS_POINTTOMULTIPOINT = 4,
 }

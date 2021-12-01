@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IProgressDialog.xml' path='doc/member[@name="IProgressDialog"]/*' />
 [Guid("EBBC7C04-315E-11D2-B62F-006097DF5BD4")]
 [NativeTypeName("struct IProgressDialog : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IProgressDialog : IProgressDialog.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IProgressDialog : IProgressDialog.Interface
         return ((delegate* unmanaged<IProgressDialog*, Guid*, void**, int>)(lpVtbl[0]))((IProgressDialog*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IProgressDialog : IProgressDialog.Interface
         return ((delegate* unmanaged<IProgressDialog*, uint>)(lpVtbl[1]))((IProgressDialog*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IProgressDialog : IProgressDialog.Interface
         return ((delegate* unmanaged<IProgressDialog*, uint>)(lpVtbl[2]))((IProgressDialog*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IProgressDialog.xml' path='doc/member[@name="IProgressDialog.StartProgressDialog"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT StartProgressDialog(HWND hwndParent, IUnknown* punkEnableModless, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPCVOID")] void* pvResevered)
@@ -46,6 +51,7 @@ public unsafe partial struct IProgressDialog : IProgressDialog.Interface
         return ((delegate* unmanaged<IProgressDialog*, HWND, IUnknown*, uint, void*, int>)(lpVtbl[3]))((IProgressDialog*)Unsafe.AsPointer(ref this), hwndParent, punkEnableModless, dwFlags, pvResevered);
     }
 
+    /// <include file='IProgressDialog.xml' path='doc/member[@name="IProgressDialog.StopProgressDialog"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT StopProgressDialog()
@@ -53,6 +59,7 @@ public unsafe partial struct IProgressDialog : IProgressDialog.Interface
         return ((delegate* unmanaged<IProgressDialog*, int>)(lpVtbl[4]))((IProgressDialog*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IProgressDialog.xml' path='doc/member[@name="IProgressDialog.SetTitle"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetTitle([NativeTypeName("PCWSTR")] ushort* pwzTitle)
@@ -60,6 +67,7 @@ public unsafe partial struct IProgressDialog : IProgressDialog.Interface
         return ((delegate* unmanaged<IProgressDialog*, ushort*, int>)(lpVtbl[5]))((IProgressDialog*)Unsafe.AsPointer(ref this), pwzTitle);
     }
 
+    /// <include file='IProgressDialog.xml' path='doc/member[@name="IProgressDialog.SetAnimation"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT SetAnimation(HINSTANCE hInstAnimation, uint idAnimation)
@@ -67,6 +75,7 @@ public unsafe partial struct IProgressDialog : IProgressDialog.Interface
         return ((delegate* unmanaged<IProgressDialog*, HINSTANCE, uint, int>)(lpVtbl[6]))((IProgressDialog*)Unsafe.AsPointer(ref this), hInstAnimation, idAnimation);
     }
 
+    /// <include file='IProgressDialog.xml' path='doc/member[@name="IProgressDialog.HasUserCancelled"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public BOOL HasUserCancelled()
@@ -74,6 +83,7 @@ public unsafe partial struct IProgressDialog : IProgressDialog.Interface
         return ((delegate* unmanaged<IProgressDialog*, int>)(lpVtbl[7]))((IProgressDialog*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IProgressDialog.xml' path='doc/member[@name="IProgressDialog.SetProgress"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT SetProgress([NativeTypeName("DWORD")] uint dwCompleted, [NativeTypeName("DWORD")] uint dwTotal)
@@ -81,6 +91,7 @@ public unsafe partial struct IProgressDialog : IProgressDialog.Interface
         return ((delegate* unmanaged<IProgressDialog*, uint, uint, int>)(lpVtbl[8]))((IProgressDialog*)Unsafe.AsPointer(ref this), dwCompleted, dwTotal);
     }
 
+    /// <include file='IProgressDialog.xml' path='doc/member[@name="IProgressDialog.SetProgress64"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT SetProgress64([NativeTypeName("ULONGLONG")] ulong ullCompleted, [NativeTypeName("ULONGLONG")] ulong ullTotal)
@@ -88,6 +99,7 @@ public unsafe partial struct IProgressDialog : IProgressDialog.Interface
         return ((delegate* unmanaged<IProgressDialog*, ulong, ulong, int>)(lpVtbl[9]))((IProgressDialog*)Unsafe.AsPointer(ref this), ullCompleted, ullTotal);
     }
 
+    /// <include file='IProgressDialog.xml' path='doc/member[@name="IProgressDialog.SetLine"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT SetLine([NativeTypeName("DWORD")] uint dwLineNum, [NativeTypeName("PCWSTR")] ushort* pwzString, BOOL fCompactPath, [NativeTypeName("LPCVOID")] void* pvResevered)
@@ -95,6 +107,7 @@ public unsafe partial struct IProgressDialog : IProgressDialog.Interface
         return ((delegate* unmanaged<IProgressDialog*, uint, ushort*, BOOL, void*, int>)(lpVtbl[10]))((IProgressDialog*)Unsafe.AsPointer(ref this), dwLineNum, pwzString, fCompactPath, pvResevered);
     }
 
+    /// <include file='IProgressDialog.xml' path='doc/member[@name="IProgressDialog.SetCancelMsg"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT SetCancelMsg([NativeTypeName("PCWSTR")] ushort* pwzCancelMsg, [NativeTypeName("LPCVOID")] void* pvResevered)
@@ -102,6 +115,7 @@ public unsafe partial struct IProgressDialog : IProgressDialog.Interface
         return ((delegate* unmanaged<IProgressDialog*, ushort*, void*, int>)(lpVtbl[11]))((IProgressDialog*)Unsafe.AsPointer(ref this), pwzCancelMsg, pvResevered);
     }
 
+    /// <include file='IProgressDialog.xml' path='doc/member[@name="IProgressDialog.Timer"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT Timer([NativeTypeName("DWORD")] uint dwTimerAction, [NativeTypeName("LPCVOID")] void* pvResevered)

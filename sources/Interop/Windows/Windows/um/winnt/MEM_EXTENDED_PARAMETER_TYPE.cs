@@ -7,15 +7,31 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MEM_EXTENDED_PARAMETER_TYPE.xml' path='doc/member[@name="MEM_EXTENDED_PARAMETER_TYPE"]/*' />
 [SupportedOSPlatform("windows10.0")]
 public enum MEM_EXTENDED_PARAMETER_TYPE
 {
+    /// <include file='MEM_EXTENDED_PARAMETER_TYPE.xml' path='doc/member[@name="MEM_EXTENDED_PARAMETER_TYPE.MemExtendedParameterInvalidType"]/*' />
     MemExtendedParameterInvalidType = 0,
+
+    /// <include file='MEM_EXTENDED_PARAMETER_TYPE.xml' path='doc/member[@name="MEM_EXTENDED_PARAMETER_TYPE.MemExtendedParameterAddressRequirements"]/*' />
     MemExtendedParameterAddressRequirements,
+
+    /// <include file='MEM_EXTENDED_PARAMETER_TYPE.xml' path='doc/member[@name="MEM_EXTENDED_PARAMETER_TYPE.MemExtendedParameterNumaNode"]/*' />
     MemExtendedParameterNumaNode,
+
+    /// <include file='MEM_EXTENDED_PARAMETER_TYPE.xml' path='doc/member[@name="MEM_EXTENDED_PARAMETER_TYPE.MemExtendedParameterPartitionHandle"]/*' />
     MemExtendedParameterPartitionHandle,
+
+    /// <include file='MEM_EXTENDED_PARAMETER_TYPE.xml' path='doc/member[@name="MEM_EXTENDED_PARAMETER_TYPE.MemExtendedParameterUserPhysicalHandle"]/*' />
     MemExtendedParameterUserPhysicalHandle,
+
+    /// <include file='MEM_EXTENDED_PARAMETER_TYPE.xml' path='doc/member[@name="MEM_EXTENDED_PARAMETER_TYPE.MemExtendedParameterAttributeFlags"]/*' />
     MemExtendedParameterAttributeFlags,
+
+    /// <include file='MEM_EXTENDED_PARAMETER_TYPE.xml' path='doc/member[@name="MEM_EXTENDED_PARAMETER_TYPE.MemExtendedParameterImageMachine"]/*' />
     MemExtendedParameterImageMachine,
+
+    /// <include file='MEM_EXTENDED_PARAMETER_TYPE.xml' path='doc/member[@name="MEM_EXTENDED_PARAMETER_TYPE.MemExtendedParameterMax"]/*' />
     MemExtendedParameterMax,
 }

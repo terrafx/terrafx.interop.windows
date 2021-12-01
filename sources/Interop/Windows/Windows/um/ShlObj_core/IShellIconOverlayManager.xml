@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IShellIconOverlayManager.GetFileOverlayInfo">
+    <summary>
+      <para>Gets the index of the icon overlay or the icon image for the specified file with the specified attributes.</para>
+    </summary>
+    <param name="pwszPath">
+      <para>Type: <b>PCWSTR</b></para>
+      <para>The full path of the file.</para>
+    </param>
+    <param name="dwAttrib">
+      <para>Type: <b>DWORD</b></para>
+      <para>The attributes of the file. This parameter can be a combination of any of the file attribute flags (FILE_ATTRIBUTE_*) defined in the Windows header files. See <a href="https://docs.microsoft.com//windows/desktop/FileIO/file-attribute-constants">File Attribute Constants</a>.</para>
+    </param>
+    <param name="pIndex">
+      <para>Type: <b>int*</b></para>
+      <para>A pointer to the icon index in the system image list.</para>
+    </param>
+    <param name="dwflags">
+      <para>Type: <b>DWORD</b></para>
+      <para>For the index of the icon overlay, use SIOM_OVERLAYINDEX. For the index of the icon image, use SIOM_ICONINDEX.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The appropriate index was found.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>Failure for any reason.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IShellIconOverlay" />
+    <seealso cref="IShellIconOverlayManager" />
+  </member>
+  <member name="IShellIconOverlayManager.GetReservedOverlayInfo">
+    <summary>
+      <para>Gets the index of the icon overlay or the icon image for the specified file with the specified attributes from one of the reserved overlays.</para>
+    </summary>
+    <param name="pwszPath">
+      <para>Type: <b>PCWSTR</b></para>
+      <para>The full path of the file.</para>
+    </param>
+    <param name="dwAttrib">
+      <para>Type: <b>DWORD</b></para>
+      <para>The attributes of the file. This parameter can be a combination of any of the file attribute flags (FILE_ATTRIBUTE_*) defined in the Windows header files. See <a href="https://docs.microsoft.com//windows/desktop/FileIO/file-attribute-constants">File Attribute Constants</a>.</para>
+    </param>
+    <param name="pIndex">
+      <para>Type: <b>int*</b></para>
+      <para>The index of the icon image or icon overlay, depending on the value of <i>dwflags</i>.</para>
+    </param>
+    <param name="dwflags">
+      <para>Type: <b>DWORD</b></para>
+      <para>For the index of the icon overlay, use SIOM_OVERLAYINDEX. For the index of the icon image, use SIOM_ICONINDEX.</para>
+    </param>
+    <param name="iReservedID">
+      <para>Type: <b>int</b></para>
+      <para>The reserved icon overlay ID.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The appropriate index was found.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>Failure, for any reason.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IShellIconOverlay" />
+    <seealso cref="IShellIconOverlayManager" />
+  </member>
+  <member name="IShellIconOverlayManager.LoadNonloadedOverlayIdentifiers">
+    <summary>
+      <para>Loads any registered overlay identifiers, or handlers, that are not currently loaded.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Not out of memory.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>Out of memory.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IShellIconOverlayManager" />
+  </member>
+  <member name="IShellIconOverlayManager.OverlayIndexFromImageIndex">
+    <summary>
+      <para>Finds the index of an overlay image for the specified icon image. It can add an overlay if one is not found for the icon.</para>
+    </summary>
+    <param name="iImage">
+      <para>Type: <b>int</b></para>
+      <para>The existing shell image list index to look for.</para>
+    </param>
+    <param name="piIndex">
+      <para>Type: <b>int</b></para>
+      <para>The returned overlay index.</para>
+    </param>
+    <param name="fAdd">
+      <para>Type: <b>BOOL</b></para>
+      <para>Whether to add an image if one is not already present.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The image index was found.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>An error occurred or the image was not found.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IShellIconOverlay" />
+    <seealso cref="IShellIconOverlayManager" />
+  </member>
+  <member name="IShellIconOverlayManager.RefreshOverlayImages">
+    <summary>
+      <para>Refreshes the overlay cache, the image list, or both.</para>
+    </summary>
+    <param name="dwFlags">
+      <para>Type: <b>DWORD</b></para>
+      <para>Determines what to refresh. It can be a bitwise OR one of the following:</para>
+      <h4>SIOM_ICONINDEX</h4>
+      <para>Reloads the icons into the image list.</para>
+      <h4>SIOM_OVERLAYINDEX</h4>
+      <para>Reloads the overlay cache.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>This method always returns S_OK.</para>
+    </returns>
+    <seealso cref="IShellIconOverlay" />
+    <seealso cref="IShellIconOverlayManager" />
+  </member>
+</doc>

@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFMediaKeys.CreateSession">
+    <summary>
+      <para>Creates a media key session object using the specified initialization data and custom data.
+.</para>
+    </summary>
+    <param name="mimeType">
+      <para>The MIME type of the media container used for the content.</para>
+    </param>
+    <param name="initData">
+      <para>The initialization data for the key system.</para>
+    </param>
+    <param name="cb">
+      <para>The count in bytes of <i>initData</i>.</para>
+    </param>
+    <param name="customData">
+      <para>Custom data sent to the key system.</para>
+    </param>
+    <param name="cbCustomData">
+      <para>The count in bytes of <i>cbCustomData</i>.</para>
+    </param>
+    <param name="notify">
+      <para>notify</para>
+    </param>
+    <param name="ppSession">
+      <para>The media key session.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFMediaKeys" />
+  </member>
+  <member name="IMFMediaKeys.GetSuspendNotify">
+    <summary>
+      <para>Gets the suspend notify interface of the Content Decryption Module (CDM).</para>
+    </summary>
+    <param name="notify">
+      <para>The suspend notify interface of the Content Decryption Module (CDM).</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFMediaKeys" />
+  </member>
+  <member name="IMFMediaKeys.get_KeySystem">
+    <summary>
+      <para>Gets the key system string the <see cref="IMFMediaKeys" /> object was created with.</para>
+    </summary>
+    <param name="keySystem">
+      <para>The string name of the key system.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFMediaKeys" />
+  </member>
+  <member name="IMFMediaKeys.Shutdown">
+    <summary>
+      <para>Shuts down the associated Content Decryption Module (CDM).</para>
+    </summary>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>Shutdown</b> should be called by the application before final release.  The Content Decryption Module (CDM) reference and any other resources is released at this point.  However, related sessions are not freed or closed.</para>
+    </remarks>
+    <seealso cref="IMFMediaKeys" />
+  </member>
+  <member name="IMFMediaKeys">
+    <summary>
+      <para>Represents a media keys used for decrypting media data using a Digital Rights Management (DRM) key system.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+  </member>
+</doc>

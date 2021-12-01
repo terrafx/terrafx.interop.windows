@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SPTEXT.xml' path='doc/member[@name="SPTEXT"]/*' />
 public enum SPTEXT
 {
+    /// <include file='SPTEXT.xml' path='doc/member[@name="SPTEXT.SPTEXT_ACTIONDESCRIPTION"]/*' />
     SPTEXT_ACTIONDESCRIPTION = 1,
+
+    /// <include file='SPTEXT.xml' path='doc/member[@name="SPTEXT.SPTEXT_ACTIONDETAIL"]/*' />
     SPTEXT_ACTIONDETAIL = (SPTEXT_ACTIONDESCRIPTION + 1),
 }

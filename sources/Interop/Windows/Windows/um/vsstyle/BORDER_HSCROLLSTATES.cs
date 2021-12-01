@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='BORDER_HSCROLLSTATES.xml' path='doc/member[@name="BORDER_HSCROLLSTATES"]/*' />
 public enum BORDER_HSCROLLSTATES
 {
+    /// <include file='BORDER_HSCROLLSTATES.xml' path='doc/member[@name="BORDER_HSCROLLSTATES.LBPSH_NORMAL"]/*' />
     LBPSH_NORMAL = 1,
+
+    /// <include file='BORDER_HSCROLLSTATES.xml' path='doc/member[@name="BORDER_HSCROLLSTATES.LBPSH_FOCUSED"]/*' />
     LBPSH_FOCUSED = 2,
+
+    /// <include file='BORDER_HSCROLLSTATES.xml' path='doc/member[@name="BORDER_HSCROLLSTATES.LBPSH_HOT"]/*' />
     LBPSH_HOT = 3,
+
+    /// <include file='BORDER_HSCROLLSTATES.xml' path='doc/member[@name="BORDER_HSCROLLSTATES.LBPSH_DISABLED"]/*' />
     LBPSH_DISABLED = 4,
 }

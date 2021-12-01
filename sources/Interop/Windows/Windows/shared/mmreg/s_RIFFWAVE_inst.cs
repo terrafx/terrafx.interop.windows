@@ -5,21 +5,29 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='s_RIFFWAVE_inst.xml' path='doc/member[@name="s_RIFFWAVE_inst"]/*' />
 public partial struct s_RIFFWAVE_inst
 {
+    /// <include file='s_RIFFWAVE_inst.xml' path='doc/member[@name="s_RIFFWAVE_inst.bUnshiftedNote"]/*' />
     public byte bUnshiftedNote;
 
+    /// <include file='s_RIFFWAVE_inst.xml' path='doc/member[@name="s_RIFFWAVE_inst.chFineTune"]/*' />
     [NativeTypeName("char")]
     public sbyte chFineTune;
 
+    /// <include file='s_RIFFWAVE_inst.xml' path='doc/member[@name="s_RIFFWAVE_inst.chGain"]/*' />
     [NativeTypeName("char")]
     public sbyte chGain;
 
+    /// <include file='s_RIFFWAVE_inst.xml' path='doc/member[@name="s_RIFFWAVE_inst.bLowNote"]/*' />
     public byte bLowNote;
 
+    /// <include file='s_RIFFWAVE_inst.xml' path='doc/member[@name="s_RIFFWAVE_inst.bHighNote"]/*' />
     public byte bHighNote;
 
+    /// <include file='s_RIFFWAVE_inst.xml' path='doc/member[@name="s_RIFFWAVE_inst.bLowVelocity"]/*' />
     public byte bLowVelocity;
 
+    /// <include file='s_RIFFWAVE_inst.xml' path='doc/member[@name="s_RIFFWAVE_inst.bHighVelocity"]/*' />
     public byte bHighVelocity;
 }

@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CRYPT_TIMESTAMP_REQUEST">
+    <summary>
+      <para>The <b>CRYPT_TIMESTAMP_REQUEST</b> structure defines a time stamp request structure that corresponds to the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/a-gly">Abstract Syntax Notation One</a> (ASN.1) definition of a <b>TimeStampReq</b> type. The <b>CRYPT_TIMESTAMP_REQUEST</b> structure is used internally.</para>
+    </summary>
+  </member>
+  <member name="CRYPT_TIMESTAMP_REQUEST.dwVersion">
+    <summary>
+      <para>A <b>DWORD</b> value that specifies the version of the time stamp request.</para>
+      <para>This member can be one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TIMESTAMP_VERSION</b>
+                </description>
+              </item>
+              <item>
+                <description>    1</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>A version 1 time stamp request.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="CRYPT_TIMESTAMP_REQUEST.HashAlgorithm">
+    <summary>
+      <para>A <see cref="CRYPT_ALGORITHM_IDENTIFIER" /> structure that contains information about the algorithm used to calculate the hash.</para>
+    </summary>
+  </member>
+  <member name="CRYPT_TIMESTAMP_REQUEST.HashedMessage">
+    <summary>
+      <para>A <see cref="CRYPT_DER_BLOB" /> structure that specifies the hash values to be time stamped.</para>
+    </summary>
+  </member>
+  <member name="CRYPT_TIMESTAMP_REQUEST.pszTSAPolicyId">
+    <summary>
+      <para>Optional. A pointer to a null-terminated string that specifies the Time Stamping Authority (TSA) policy under which the time stamp token should be provided.</para>
+    </summary>
+  </member>
+  <member name="CRYPT_TIMESTAMP_REQUEST.Nonce">
+    <summary>
+      <para>Optional. A <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_INTEGER_BLOB</a> structure that contains the nonce value used by the client to verify the
+timeliness of the response when no local clock is available.</para>
+    </summary>
+  </member>
+  <member name="CRYPT_TIMESTAMP_REQUEST.fCertReq">
+    <summary>
+      <para>A Boolean value that indicates whether the TSA must include the certificates used to sign the time stamp token in the response.</para>
+    </summary>
+  </member>
+  <member name="CRYPT_TIMESTAMP_REQUEST.cExtension">
+    <summary>
+      <para>The number of elements in the array pointed to by the <b>rgExtension</b> member.</para>
+    </summary>
+  </member>
+  <member name="CRYPT_TIMESTAMP_REQUEST.rgExtension">
+    <summary>
+      <para>A pointer to an array of <see cref="CERT_EXTENSION" /> structures that contain extension information that is passed in the request.</para>
+    </summary>
+  </member>
+</doc>

@@ -10,6 +10,7 @@ using static TerraFX.Interop.Windows.SpeechLoadOption;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ISpeechRecoGrammar.xml' path='doc/member[@name="ISpeechRecoGrammar"]/*' />
 [Guid("B6D6F79F-2158-4E50-B5BC-9A9CCD852A09")]
 [NativeTypeName("struct ISpeechRecoGrammar : IDispatch")]
 [NativeInheritance("IDispatch")]
@@ -17,6 +18,7 @@ public unsafe partial struct ISpeechRecoGrammar : ISpeechRecoGrammar.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct ISpeechRecoGrammar : ISpeechRecoGrammar.Interface
         return ((delegate* unmanaged<ISpeechRecoGrammar*, Guid*, void**, int>)(lpVtbl[0]))((ISpeechRecoGrammar*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct ISpeechRecoGrammar : ISpeechRecoGrammar.Interface
         return ((delegate* unmanaged<ISpeechRecoGrammar*, uint>)(lpVtbl[1]))((ISpeechRecoGrammar*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct ISpeechRecoGrammar : ISpeechRecoGrammar.Interface
         return ((delegate* unmanaged<ISpeechRecoGrammar*, uint>)(lpVtbl[2]))((ISpeechRecoGrammar*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
@@ -47,6 +52,7 @@ public unsafe partial struct ISpeechRecoGrammar : ISpeechRecoGrammar.Interface
         return ((delegate* unmanaged<ISpeechRecoGrammar*, uint*, int>)(lpVtbl[3]))((ISpeechRecoGrammar*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
@@ -54,6 +60,7 @@ public unsafe partial struct ISpeechRecoGrammar : ISpeechRecoGrammar.Interface
         return ((delegate* unmanaged<ISpeechRecoGrammar*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((ISpeechRecoGrammar*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
@@ -61,6 +68,7 @@ public unsafe partial struct ISpeechRecoGrammar : ISpeechRecoGrammar.Interface
         return ((delegate* unmanaged<ISpeechRecoGrammar*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((ISpeechRecoGrammar*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
+    /// <inheritdoc cref="IDispatch.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
@@ -68,6 +76,7 @@ public unsafe partial struct ISpeechRecoGrammar : ISpeechRecoGrammar.Interface
         return ((delegate* unmanaged<ISpeechRecoGrammar*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((ISpeechRecoGrammar*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
+    /// <include file='ISpeechRecoGrammar.xml' path='doc/member[@name="ISpeechRecoGrammar.get_Id"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT get_Id(VARIANT* Id)
@@ -75,6 +84,7 @@ public unsafe partial struct ISpeechRecoGrammar : ISpeechRecoGrammar.Interface
         return ((delegate* unmanaged<ISpeechRecoGrammar*, VARIANT*, int>)(lpVtbl[7]))((ISpeechRecoGrammar*)Unsafe.AsPointer(ref this), Id);
     }
 
+    /// <include file='ISpeechRecoGrammar.xml' path='doc/member[@name="ISpeechRecoGrammar.get_RecoContext"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT get_RecoContext(ISpeechRecoContext** RecoContext)
@@ -82,6 +92,7 @@ public unsafe partial struct ISpeechRecoGrammar : ISpeechRecoGrammar.Interface
         return ((delegate* unmanaged<ISpeechRecoGrammar*, ISpeechRecoContext**, int>)(lpVtbl[8]))((ISpeechRecoGrammar*)Unsafe.AsPointer(ref this), RecoContext);
     }
 
+    /// <include file='ISpeechRecoGrammar.xml' path='doc/member[@name="ISpeechRecoGrammar.put_State"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT put_State(SpeechGrammarState State)
@@ -89,6 +100,7 @@ public unsafe partial struct ISpeechRecoGrammar : ISpeechRecoGrammar.Interface
         return ((delegate* unmanaged<ISpeechRecoGrammar*, SpeechGrammarState, int>)(lpVtbl[9]))((ISpeechRecoGrammar*)Unsafe.AsPointer(ref this), State);
     }
 
+    /// <include file='ISpeechRecoGrammar.xml' path='doc/member[@name="ISpeechRecoGrammar.get_State"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT get_State(SpeechGrammarState* State)
@@ -96,6 +108,7 @@ public unsafe partial struct ISpeechRecoGrammar : ISpeechRecoGrammar.Interface
         return ((delegate* unmanaged<ISpeechRecoGrammar*, SpeechGrammarState*, int>)(lpVtbl[10]))((ISpeechRecoGrammar*)Unsafe.AsPointer(ref this), State);
     }
 
+    /// <include file='ISpeechRecoGrammar.xml' path='doc/member[@name="ISpeechRecoGrammar.get_Rules"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT get_Rules(ISpeechGrammarRules** Rules)
@@ -103,6 +116,7 @@ public unsafe partial struct ISpeechRecoGrammar : ISpeechRecoGrammar.Interface
         return ((delegate* unmanaged<ISpeechRecoGrammar*, ISpeechGrammarRules**, int>)(lpVtbl[11]))((ISpeechRecoGrammar*)Unsafe.AsPointer(ref this), Rules);
     }
 
+    /// <include file='ISpeechRecoGrammar.xml' path='doc/member[@name="ISpeechRecoGrammar.Reset"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT Reset([NativeTypeName("SpeechLanguageId")] int NewLanguage = 0)
@@ -110,6 +124,7 @@ public unsafe partial struct ISpeechRecoGrammar : ISpeechRecoGrammar.Interface
         return ((delegate* unmanaged<ISpeechRecoGrammar*, int, int>)(lpVtbl[12]))((ISpeechRecoGrammar*)Unsafe.AsPointer(ref this), NewLanguage);
     }
 
+    /// <include file='ISpeechRecoGrammar.xml' path='doc/member[@name="ISpeechRecoGrammar.CmdLoadFromFile"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT CmdLoadFromFile([NativeTypeName("const BSTR")] ushort* FileName, SpeechLoadOption LoadOption = SLOStatic)
@@ -117,6 +132,7 @@ public unsafe partial struct ISpeechRecoGrammar : ISpeechRecoGrammar.Interface
         return ((delegate* unmanaged<ISpeechRecoGrammar*, ushort*, SpeechLoadOption, int>)(lpVtbl[13]))((ISpeechRecoGrammar*)Unsafe.AsPointer(ref this), FileName, LoadOption);
     }
 
+    /// <include file='ISpeechRecoGrammar.xml' path='doc/member[@name="ISpeechRecoGrammar.CmdLoadFromObject"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT CmdLoadFromObject([NativeTypeName("const BSTR")] ushort* ClassId, [NativeTypeName("const BSTR")] ushort* GrammarName, SpeechLoadOption LoadOption = SLOStatic)
@@ -124,6 +140,7 @@ public unsafe partial struct ISpeechRecoGrammar : ISpeechRecoGrammar.Interface
         return ((delegate* unmanaged<ISpeechRecoGrammar*, ushort*, ushort*, SpeechLoadOption, int>)(lpVtbl[14]))((ISpeechRecoGrammar*)Unsafe.AsPointer(ref this), ClassId, GrammarName, LoadOption);
     }
 
+    /// <include file='ISpeechRecoGrammar.xml' path='doc/member[@name="ISpeechRecoGrammar.CmdLoadFromResource"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT CmdLoadFromResource([NativeTypeName("long")] int hModule, VARIANT ResourceName, VARIANT ResourceType, [NativeTypeName("SpeechLanguageId")] int LanguageId, SpeechLoadOption LoadOption = SLOStatic)
@@ -131,6 +148,7 @@ public unsafe partial struct ISpeechRecoGrammar : ISpeechRecoGrammar.Interface
         return ((delegate* unmanaged<ISpeechRecoGrammar*, int, VARIANT, VARIANT, int, SpeechLoadOption, int>)(lpVtbl[15]))((ISpeechRecoGrammar*)Unsafe.AsPointer(ref this), hModule, ResourceName, ResourceType, LanguageId, LoadOption);
     }
 
+    /// <include file='ISpeechRecoGrammar.xml' path='doc/member[@name="ISpeechRecoGrammar.CmdLoadFromMemory"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT CmdLoadFromMemory(VARIANT GrammarData, SpeechLoadOption LoadOption = SLOStatic)
@@ -138,6 +156,7 @@ public unsafe partial struct ISpeechRecoGrammar : ISpeechRecoGrammar.Interface
         return ((delegate* unmanaged<ISpeechRecoGrammar*, VARIANT, SpeechLoadOption, int>)(lpVtbl[16]))((ISpeechRecoGrammar*)Unsafe.AsPointer(ref this), GrammarData, LoadOption);
     }
 
+    /// <include file='ISpeechRecoGrammar.xml' path='doc/member[@name="ISpeechRecoGrammar.CmdLoadFromProprietaryGrammar"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT CmdLoadFromProprietaryGrammar([NativeTypeName("const BSTR")] ushort* ProprietaryGuid, [NativeTypeName("const BSTR")] ushort* ProprietaryString, VARIANT ProprietaryData, SpeechLoadOption LoadOption = SLOStatic)
@@ -145,6 +164,7 @@ public unsafe partial struct ISpeechRecoGrammar : ISpeechRecoGrammar.Interface
         return ((delegate* unmanaged<ISpeechRecoGrammar*, ushort*, ushort*, VARIANT, SpeechLoadOption, int>)(lpVtbl[17]))((ISpeechRecoGrammar*)Unsafe.AsPointer(ref this), ProprietaryGuid, ProprietaryString, ProprietaryData, LoadOption);
     }
 
+    /// <include file='ISpeechRecoGrammar.xml' path='doc/member[@name="ISpeechRecoGrammar.CmdSetRuleState"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT CmdSetRuleState([NativeTypeName("const BSTR")] ushort* Name, SpeechRuleState State)
@@ -152,6 +172,7 @@ public unsafe partial struct ISpeechRecoGrammar : ISpeechRecoGrammar.Interface
         return ((delegate* unmanaged<ISpeechRecoGrammar*, ushort*, SpeechRuleState, int>)(lpVtbl[18]))((ISpeechRecoGrammar*)Unsafe.AsPointer(ref this), Name, State);
     }
 
+    /// <include file='ISpeechRecoGrammar.xml' path='doc/member[@name="ISpeechRecoGrammar.CmdSetRuleIdState"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT CmdSetRuleIdState([NativeTypeName("long")] int RuleId, SpeechRuleState State)
@@ -159,6 +180,7 @@ public unsafe partial struct ISpeechRecoGrammar : ISpeechRecoGrammar.Interface
         return ((delegate* unmanaged<ISpeechRecoGrammar*, int, SpeechRuleState, int>)(lpVtbl[19]))((ISpeechRecoGrammar*)Unsafe.AsPointer(ref this), RuleId, State);
     }
 
+    /// <include file='ISpeechRecoGrammar.xml' path='doc/member[@name="ISpeechRecoGrammar.DictationLoad"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public HRESULT DictationLoad([NativeTypeName("const BSTR")] ushort* TopicName = null, SpeechLoadOption LoadOption = SLOStatic)
@@ -166,6 +188,7 @@ public unsafe partial struct ISpeechRecoGrammar : ISpeechRecoGrammar.Interface
         return ((delegate* unmanaged<ISpeechRecoGrammar*, ushort*, SpeechLoadOption, int>)(lpVtbl[20]))((ISpeechRecoGrammar*)Unsafe.AsPointer(ref this), TopicName, LoadOption);
     }
 
+    /// <include file='ISpeechRecoGrammar.xml' path='doc/member[@name="ISpeechRecoGrammar.DictationUnload"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
     public HRESULT DictationUnload()
@@ -173,6 +196,7 @@ public unsafe partial struct ISpeechRecoGrammar : ISpeechRecoGrammar.Interface
         return ((delegate* unmanaged<ISpeechRecoGrammar*, int>)(lpVtbl[21]))((ISpeechRecoGrammar*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ISpeechRecoGrammar.xml' path='doc/member[@name="ISpeechRecoGrammar.DictationSetState"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
     public HRESULT DictationSetState(SpeechRuleState State)
@@ -180,6 +204,7 @@ public unsafe partial struct ISpeechRecoGrammar : ISpeechRecoGrammar.Interface
         return ((delegate* unmanaged<ISpeechRecoGrammar*, SpeechRuleState, int>)(lpVtbl[22]))((ISpeechRecoGrammar*)Unsafe.AsPointer(ref this), State);
     }
 
+    /// <include file='ISpeechRecoGrammar.xml' path='doc/member[@name="ISpeechRecoGrammar.SetWordSequenceData"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
     public HRESULT SetWordSequenceData([NativeTypeName("const BSTR")] ushort* Text, [NativeTypeName("long")] int TextLength, ISpeechTextSelectionInformation* Info)
@@ -187,6 +212,7 @@ public unsafe partial struct ISpeechRecoGrammar : ISpeechRecoGrammar.Interface
         return ((delegate* unmanaged<ISpeechRecoGrammar*, ushort*, int, ISpeechTextSelectionInformation*, int>)(lpVtbl[23]))((ISpeechRecoGrammar*)Unsafe.AsPointer(ref this), Text, TextLength, Info);
     }
 
+    /// <include file='ISpeechRecoGrammar.xml' path='doc/member[@name="ISpeechRecoGrammar.SetTextSelection"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(24)]
     public HRESULT SetTextSelection(ISpeechTextSelectionInformation* Info)
@@ -194,6 +220,7 @@ public unsafe partial struct ISpeechRecoGrammar : ISpeechRecoGrammar.Interface
         return ((delegate* unmanaged<ISpeechRecoGrammar*, ISpeechTextSelectionInformation*, int>)(lpVtbl[24]))((ISpeechRecoGrammar*)Unsafe.AsPointer(ref this), Info);
     }
 
+    /// <include file='ISpeechRecoGrammar.xml' path='doc/member[@name="ISpeechRecoGrammar.IsPronounceable"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(25)]
     public HRESULT IsPronounceable([NativeTypeName("const BSTR")] ushort* Word, SpeechWordPronounceable* WordPronounceable)

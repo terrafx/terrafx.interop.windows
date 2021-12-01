@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="TLIBATTR">
+    <summary>
+      <para>Contains information about a type library. Information from this structure is used to identify the type library and to provide national language support for member names.</para>
+    </summary>
+  </member>
+  <member name="TLIBATTR.guid">
+    <summary>
+      <para>The globally unique identifier.</para>
+    </summary>
+  </member>
+  <member name="TLIBATTR.lcid">
+    <summary>
+      <para>The locale identifier.</para>
+    </summary>
+  </member>
+  <member name="TLIBATTR.syskind">
+    <summary>
+      <para>The target hardware platform.</para>
+    </summary>
+  </member>
+  <member name="TLIBATTR.wMajorVerNum">
+    <summary>
+      <para>The major version number.</para>
+    </summary>
+  </member>
+  <member name="TLIBATTR.wMinorVerNum">
+    <summary>
+      <para>The minor version number.</para>
+    </summary>
+  </member>
+  <member name="TLIBATTR.wLibFlags">
+    <summary>
+      <para>The library flags.</para>
+    </summary>
+  </member>
+</doc>

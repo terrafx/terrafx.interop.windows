@@ -8,47 +8,64 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CMSG_CONTENT_ENCRYPT_INFO.xml' path='doc/member[@name="CMSG_CONTENT_ENCRYPT_INFO"]/*' />
 public unsafe partial struct CMSG_CONTENT_ENCRYPT_INFO
 {
+    /// <include file='CMSG_CONTENT_ENCRYPT_INFO.xml' path='doc/member[@name="CMSG_CONTENT_ENCRYPT_INFO.cbSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbSize;
 
+    /// <include file='CMSG_CONTENT_ENCRYPT_INFO.xml' path='doc/member[@name="CMSG_CONTENT_ENCRYPT_INFO.hCryptProv"]/*' />
     public HCRYPTPROV_LEGACY hCryptProv;
 
+    /// <include file='CMSG_CONTENT_ENCRYPT_INFO.xml' path='doc/member[@name="CMSG_CONTENT_ENCRYPT_INFO.ContentEncryptionAlgorithm"]/*' />
     public CRYPT_ALGORITHM_IDENTIFIER ContentEncryptionAlgorithm;
 
+    /// <include file='CMSG_CONTENT_ENCRYPT_INFO.xml' path='doc/member[@name="CMSG_CONTENT_ENCRYPT_INFO.pvEncryptionAuxInfo"]/*' />
     public void* pvEncryptionAuxInfo;
 
+    /// <include file='CMSG_CONTENT_ENCRYPT_INFO.xml' path='doc/member[@name="CMSG_CONTENT_ENCRYPT_INFO.cRecipients"]/*' />
     [NativeTypeName("DWORD")]
     public uint cRecipients;
 
+    /// <include file='CMSG_CONTENT_ENCRYPT_INFO.xml' path='doc/member[@name="CMSG_CONTENT_ENCRYPT_INFO.rgCmsRecipients"]/*' />
     [NativeTypeName("PCMSG_RECIPIENT_ENCODE_INFO")]
     public CMSG_RECIPIENT_ENCODE_INFO* rgCmsRecipients;
 
+    /// <include file='CMSG_CONTENT_ENCRYPT_INFO.xml' path='doc/member[@name="CMSG_CONTENT_ENCRYPT_INFO.pfnAlloc"]/*' />
     [NativeTypeName("PFN_CMSG_ALLOC")]
     public delegate* unmanaged<nuint, void*> pfnAlloc;
 
+    /// <include file='CMSG_CONTENT_ENCRYPT_INFO.xml' path='doc/member[@name="CMSG_CONTENT_ENCRYPT_INFO.pfnFree"]/*' />
     [NativeTypeName("PFN_CMSG_FREE")]
     public delegate* unmanaged<void*, void> pfnFree;
 
+    /// <include file='CMSG_CONTENT_ENCRYPT_INFO.xml' path='doc/member[@name="CMSG_CONTENT_ENCRYPT_INFO.dwEncryptFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwEncryptFlags;
 
+    /// <include file='CMSG_CONTENT_ENCRYPT_INFO.xml' path='doc/member[@name="CMSG_CONTENT_ENCRYPT_INFO.Anonymous"]/*' />
     [NativeTypeName("_CMSG_CONTENT_ENCRYPT_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/wincrypt.h:8442:5)")]
     public _Anonymous_e__Union Anonymous;
 
+    /// <include file='CMSG_CONTENT_ENCRYPT_INFO.xml' path='doc/member[@name="CMSG_CONTENT_ENCRYPT_INFO.dwFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFlags;
 
+    /// <include file='CMSG_CONTENT_ENCRYPT_INFO.xml' path='doc/member[@name="CMSG_CONTENT_ENCRYPT_INFO.fCNG"]/*' />
     public BOOL fCNG;
 
+    /// <include file='CMSG_CONTENT_ENCRYPT_INFO.xml' path='doc/member[@name="CMSG_CONTENT_ENCRYPT_INFO.pbCNGContentEncryptKeyObject"]/*' />
     public byte* pbCNGContentEncryptKeyObject;
 
+    /// <include file='CMSG_CONTENT_ENCRYPT_INFO.xml' path='doc/member[@name="CMSG_CONTENT_ENCRYPT_INFO.pbContentEncryptKey"]/*' />
     public byte* pbContentEncryptKey;
 
+    /// <include file='CMSG_CONTENT_ENCRYPT_INFO.xml' path='doc/member[@name="CMSG_CONTENT_ENCRYPT_INFO.cbContentEncryptKey"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbContentEncryptKey;
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.hContentEncryptKey"]/*' />
     public ref HCRYPTKEY hContentEncryptKey
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -58,6 +75,7 @@ public unsafe partial struct CMSG_CONTENT_ENCRYPT_INFO
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.hCNGContentEncryptKey"]/*' />
     public ref void* hCNGContentEncryptKey
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -67,12 +85,15 @@ public unsafe partial struct CMSG_CONTENT_ENCRYPT_INFO
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public unsafe partial struct _Anonymous_e__Union
     {
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.hContentEncryptKey"]/*' />
         [FieldOffset(0)]
         public HCRYPTKEY hContentEncryptKey;
 
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.hCNGContentEncryptKey"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("BCRYPT_KEY_HANDLE")]
         public void* hCNGContentEncryptKey;

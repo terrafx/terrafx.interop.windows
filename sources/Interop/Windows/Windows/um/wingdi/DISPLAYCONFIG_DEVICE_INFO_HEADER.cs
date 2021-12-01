@@ -5,15 +5,20 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DISPLAYCONFIG_DEVICE_INFO_HEADER.xml' path='doc/member[@name="DISPLAYCONFIG_DEVICE_INFO_HEADER"]/*' />
 public partial struct DISPLAYCONFIG_DEVICE_INFO_HEADER
 {
+    /// <include file='DISPLAYCONFIG_DEVICE_INFO_HEADER.xml' path='doc/member[@name="DISPLAYCONFIG_DEVICE_INFO_HEADER.type"]/*' />
     public DISPLAYCONFIG_DEVICE_INFO_TYPE type;
 
+    /// <include file='DISPLAYCONFIG_DEVICE_INFO_HEADER.xml' path='doc/member[@name="DISPLAYCONFIG_DEVICE_INFO_HEADER.size"]/*' />
     [NativeTypeName("UINT32")]
     public uint size;
 
+    /// <include file='DISPLAYCONFIG_DEVICE_INFO_HEADER.xml' path='doc/member[@name="DISPLAYCONFIG_DEVICE_INFO_HEADER.adapterId"]/*' />
     public LUID adapterId;
 
+    /// <include file='DISPLAYCONFIG_DEVICE_INFO_HEADER.xml' path='doc/member[@name="DISPLAYCONFIG_DEVICE_INFO_HEADER.id"]/*' />
     [NativeTypeName("UINT32")]
     public uint id;
 }

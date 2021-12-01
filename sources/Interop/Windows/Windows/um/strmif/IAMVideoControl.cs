@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAMVideoControl.xml' path='doc/member[@name="IAMVideoControl"]/*' />
 [Guid("6A2E0670-28E4-11D0-A18C-00A0C9118956")]
 [NativeTypeName("struct IAMVideoControl : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IAMVideoControl : IAMVideoControl.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IAMVideoControl : IAMVideoControl.Interface
         return ((delegate* unmanaged<IAMVideoControl*, Guid*, void**, int>)(lpVtbl[0]))((IAMVideoControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IAMVideoControl : IAMVideoControl.Interface
         return ((delegate* unmanaged<IAMVideoControl*, uint>)(lpVtbl[1]))((IAMVideoControl*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IAMVideoControl : IAMVideoControl.Interface
         return ((delegate* unmanaged<IAMVideoControl*, uint>)(lpVtbl[2]))((IAMVideoControl*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAMVideoControl.xml' path='doc/member[@name="IAMVideoControl.GetCaps"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetCaps(IPin* pPin, [NativeTypeName("long *")] int* pCapsFlags)
@@ -46,6 +51,7 @@ public unsafe partial struct IAMVideoControl : IAMVideoControl.Interface
         return ((delegate* unmanaged<IAMVideoControl*, IPin*, int*, int>)(lpVtbl[3]))((IAMVideoControl*)Unsafe.AsPointer(ref this), pPin, pCapsFlags);
     }
 
+    /// <include file='IAMVideoControl.xml' path='doc/member[@name="IAMVideoControl.SetMode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetMode(IPin* pPin, [NativeTypeName("long")] int Mode)
@@ -53,6 +59,7 @@ public unsafe partial struct IAMVideoControl : IAMVideoControl.Interface
         return ((delegate* unmanaged<IAMVideoControl*, IPin*, int, int>)(lpVtbl[4]))((IAMVideoControl*)Unsafe.AsPointer(ref this), pPin, Mode);
     }
 
+    /// <include file='IAMVideoControl.xml' path='doc/member[@name="IAMVideoControl.GetMode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetMode(IPin* pPin, [NativeTypeName("long *")] int* Mode)
@@ -60,6 +67,7 @@ public unsafe partial struct IAMVideoControl : IAMVideoControl.Interface
         return ((delegate* unmanaged<IAMVideoControl*, IPin*, int*, int>)(lpVtbl[5]))((IAMVideoControl*)Unsafe.AsPointer(ref this), pPin, Mode);
     }
 
+    /// <include file='IAMVideoControl.xml' path='doc/member[@name="IAMVideoControl.GetCurrentActualFrameRate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetCurrentActualFrameRate(IPin* pPin, [NativeTypeName("LONGLONG *")] long* ActualFrameRate)
@@ -67,6 +75,7 @@ public unsafe partial struct IAMVideoControl : IAMVideoControl.Interface
         return ((delegate* unmanaged<IAMVideoControl*, IPin*, long*, int>)(lpVtbl[6]))((IAMVideoControl*)Unsafe.AsPointer(ref this), pPin, ActualFrameRate);
     }
 
+    /// <include file='IAMVideoControl.xml' path='doc/member[@name="IAMVideoControl.GetMaxAvailableFrameRate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetMaxAvailableFrameRate(IPin* pPin, [NativeTypeName("long")] int iIndex, SIZE Dimensions, [NativeTypeName("LONGLONG *")] long* MaxAvailableFrameRate)
@@ -74,6 +83,7 @@ public unsafe partial struct IAMVideoControl : IAMVideoControl.Interface
         return ((delegate* unmanaged<IAMVideoControl*, IPin*, int, SIZE, long*, int>)(lpVtbl[7]))((IAMVideoControl*)Unsafe.AsPointer(ref this), pPin, iIndex, Dimensions, MaxAvailableFrameRate);
     }
 
+    /// <include file='IAMVideoControl.xml' path='doc/member[@name="IAMVideoControl.GetFrameRateList"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetFrameRateList(IPin* pPin, [NativeTypeName("long")] int iIndex, SIZE Dimensions, [NativeTypeName("long *")] int* ListSize, [NativeTypeName("LONGLONG **")] long** FrameRates)

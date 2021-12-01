@@ -5,20 +5,28 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NMTVASYNCDRAW.xml' path='doc/member[@name="NMTVASYNCDRAW"]/*' />
 public unsafe partial struct NMTVASYNCDRAW
 {
+    /// <include file='NMTVASYNCDRAW.xml' path='doc/member[@name="NMTVASYNCDRAW.hdr"]/*' />
     public NMHDR hdr;
 
+    /// <include file='NMTVASYNCDRAW.xml' path='doc/member[@name="NMTVASYNCDRAW.pimldp"]/*' />
     public IMAGELISTDRAWPARAMS* pimldp;
 
+    /// <include file='NMTVASYNCDRAW.xml' path='doc/member[@name="NMTVASYNCDRAW.hr"]/*' />
     public HRESULT hr;
 
+    /// <include file='NMTVASYNCDRAW.xml' path='doc/member[@name="NMTVASYNCDRAW.hItem"]/*' />
     public HTREEITEM hItem;
 
+    /// <include file='NMTVASYNCDRAW.xml' path='doc/member[@name="NMTVASYNCDRAW.lParam"]/*' />
     public LPARAM lParam;
 
+    /// <include file='NMTVASYNCDRAW.xml' path='doc/member[@name="NMTVASYNCDRAW.dwRetFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwRetFlags;
 
+    /// <include file='NMTVASYNCDRAW.xml' path='doc/member[@name="NMTVASYNCDRAW.iRetImageIndex"]/*' />
     public int iRetImageIndex;
 }

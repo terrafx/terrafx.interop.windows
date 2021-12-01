@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IVMRImageCompositor.CompositeImage">
+    <summary>
+      <para>The <code>CompositeImage</code> method composites the current frames available in each input stream.</para>
+    </summary>
+    <param name="pD3DDevice">
+      <para>Pointer to the <b>IUnknown</b> interface of the Direct3D device. The compositor must cast this to a <b>LPDIRECT3DDEVICE7</b> type.</para>
+    </param>
+    <param name="pddsRenderTarget">
+      <para>Specifies the DirectDraw surface that all drawing should be performed on.</para>
+    </param>
+    <param name="pmtRenderTarget">
+      <para>Specifies the media type of the DirectDraw surface.</para>
+    </param>
+    <param name="rtStart">
+      <para>Specifies the start time.</para>
+    </param>
+    <param name="rtEnd">
+      <para>Specifies the end time.</para>
+    </param>
+    <param name="dwClrBkGnd">
+      <para>Specifies the background color.</para>
+    </param>
+    <param name="pVideoStreamInfo">
+      <para>Pointer to an array of video stream info objects.</para>
+    </param>
+    <param name="cStreams">
+      <para>Specifies the number of streams to be mixed, which is equal to the size of the pVideoStreamInfo array.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, it returns an error code.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IVMRImageCompositor Interface" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
+  </member>
+  <member name="IVMRImageCompositor.InitCompositionTarget">
+    <summary>
+      <para>The <code>InitCompositionTarget</code> method informs the compositor that a new composition target has been created. The compositor should perform any necessary configuration work in this method. This could include attaching a Z or stencil buffer buffer for the new render target</para>
+    </summary>
+    <param name="pD3DDevice">
+      <para>Pointer to the <b>IUnknown</b> interface of the Direct3D device object.</para>
+    </param>
+    <param name="pddsRenderTarget">
+      <para>Specifies the DirectDraw surface.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, it returns an error code.</para>
+    </returns>
+    <seealso cref="IVMRImageCompositor Interface" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
+  </member>
+  <member name="IVMRImageCompositor.SetStreamMediaType">
+    <summary>
+      <para>The <code>SetStreamMediaType</code> method sets the media type for the input stream.</para>
+    </summary>
+    <param name="dwStrmID">
+      <para>Specifies the input stream. The value must be from 1 through 16.</para>
+    </param>
+    <param name="pmt">
+      <para>Pointer to an <see cref="AM_MEDIA_TYPE" /> structure that specifies the media type.</para>
+    </param>
+    <param name="fTexture">
+      <para>If <b>TRUE</b>, specifies that the target surface is a Direct3D texture surface.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, it returns an error code.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IVMRImageCompositor Interface" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
+  </member>
+  <member name="IVMRImageCompositor.TermCompositionTarget">
+    <summary>
+      <para>The <code>TermCompositionTarget</code> method informs the compositor that the current composition target is being replaced. Compositors should perform any necessary cleanup of the composition target in this method.</para>
+    </summary>
+    <param name="pD3DDevice">
+      <para>Pointer to the <b>IUnknown</b> interface of the Direct3D device object.</para>
+    </param>
+    <param name="pddsRenderTarget">
+      <para>Specifies the DirectDraw surface</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, it returns an error code.</para>
+    </returns>
+    <seealso cref="IVMRImageCompositor Interface" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
+  </member>
+  <member name="IVMRImageCompositor">
+    <summary>
+      <para>The <code>IVMRImageCompositor</code> interface is implemented by the default compositor for the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/video-mixing-renderer-filter-7">Video Mixing Renderer Filter 7</a> (VMR-7). It must also be implemented by any plug-in compositor that an application provides for the VMR-7. The VMR-7 calls the methods on this interface to inform the Compositor that it should composite the incoming video frames into a single output frame. Applications do not use this interface.</para>
+      <para>For the VMR-9, use the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/vmr9/nn-vmr9-ivmrimagecompositor9">IVMRImageCompositor9</a> interface.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
+  </member>
+</doc>

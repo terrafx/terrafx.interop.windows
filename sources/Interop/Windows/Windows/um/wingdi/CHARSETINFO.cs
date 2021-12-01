@@ -5,11 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CHARSETINFO.xml' path='doc/member[@name="CHARSETINFO"]/*' />
 public partial struct CHARSETINFO
 {
+    /// <include file='CHARSETINFO.xml' path='doc/member[@name="CHARSETINFO.ciCharset"]/*' />
     public uint ciCharset;
 
+    /// <include file='CHARSETINFO.xml' path='doc/member[@name="CHARSETINFO.ciACP"]/*' />
     public uint ciACP;
 
+    /// <include file='CHARSETINFO.xml' path='doc/member[@name="CHARSETINFO.fs"]/*' />
     public FONTSIGNATURE fs;
 }

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IErrorInfo.xml' path='doc/member[@name="IErrorInfo"]/*' />
 [Guid("1CF2B120-547D-101B-8E65-08002B2BD119")]
 [NativeTypeName("struct IErrorInfo : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IErrorInfo : IErrorInfo.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IErrorInfo : IErrorInfo.Interface
         return ((delegate* unmanaged<IErrorInfo*, Guid*, void**, int>)(lpVtbl[0]))((IErrorInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IErrorInfo : IErrorInfo.Interface
         return ((delegate* unmanaged<IErrorInfo*, uint>)(lpVtbl[1]))((IErrorInfo*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IErrorInfo : IErrorInfo.Interface
         return ((delegate* unmanaged<IErrorInfo*, uint>)(lpVtbl[2]))((IErrorInfo*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IErrorInfo.xml' path='doc/member[@name="IErrorInfo.GetGUID"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetGUID(Guid* pGUID)
@@ -46,6 +51,7 @@ public unsafe partial struct IErrorInfo : IErrorInfo.Interface
         return ((delegate* unmanaged<IErrorInfo*, Guid*, int>)(lpVtbl[3]))((IErrorInfo*)Unsafe.AsPointer(ref this), pGUID);
     }
 
+    /// <include file='IErrorInfo.xml' path='doc/member[@name="IErrorInfo.GetSource"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetSource([NativeTypeName("BSTR *")] ushort** pBstrSource)
@@ -53,6 +59,7 @@ public unsafe partial struct IErrorInfo : IErrorInfo.Interface
         return ((delegate* unmanaged<IErrorInfo*, ushort**, int>)(lpVtbl[4]))((IErrorInfo*)Unsafe.AsPointer(ref this), pBstrSource);
     }
 
+    /// <include file='IErrorInfo.xml' path='doc/member[@name="IErrorInfo.GetDescription"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetDescription([NativeTypeName("BSTR *")] ushort** pBstrDescription)
@@ -60,6 +67,7 @@ public unsafe partial struct IErrorInfo : IErrorInfo.Interface
         return ((delegate* unmanaged<IErrorInfo*, ushort**, int>)(lpVtbl[5]))((IErrorInfo*)Unsafe.AsPointer(ref this), pBstrDescription);
     }
 
+    /// <include file='IErrorInfo.xml' path='doc/member[@name="IErrorInfo.GetHelpFile"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetHelpFile([NativeTypeName("BSTR *")] ushort** pBstrHelpFile)
@@ -67,6 +75,7 @@ public unsafe partial struct IErrorInfo : IErrorInfo.Interface
         return ((delegate* unmanaged<IErrorInfo*, ushort**, int>)(lpVtbl[6]))((IErrorInfo*)Unsafe.AsPointer(ref this), pBstrHelpFile);
     }
 
+    /// <include file='IErrorInfo.xml' path='doc/member[@name="IErrorInfo.GetHelpContext"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetHelpContext([NativeTypeName("DWORD *")] uint* pdwHelpContext)

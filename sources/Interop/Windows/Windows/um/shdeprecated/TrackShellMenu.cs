@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TrackShellMenu.xml' path='doc/member[@name="TrackShellMenu"]/*' />
 [Guid("8278F931-2A3E-11D2-838F-00C04FD918D0")]
 public partial struct TrackShellMenu
 {

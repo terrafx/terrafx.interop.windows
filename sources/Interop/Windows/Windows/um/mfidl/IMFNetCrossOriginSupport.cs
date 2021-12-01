@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFNetCrossOriginSupport.xml' path='doc/member[@name="IMFNetCrossOriginSupport"]/*' />
 [Guid("BC2B7D44-A72D-49D5-8376-1480DEE58B22")]
 [NativeTypeName("struct IMFNetCrossOriginSupport : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IMFNetCrossOriginSupport : IMFNetCrossOriginSupport
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IMFNetCrossOriginSupport : IMFNetCrossOriginSupport
         return ((delegate* unmanaged<IMFNetCrossOriginSupport*, Guid*, void**, int>)(lpVtbl[0]))((IMFNetCrossOriginSupport*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IMFNetCrossOriginSupport : IMFNetCrossOriginSupport
         return ((delegate* unmanaged<IMFNetCrossOriginSupport*, uint>)(lpVtbl[1]))((IMFNetCrossOriginSupport*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IMFNetCrossOriginSupport : IMFNetCrossOriginSupport
         return ((delegate* unmanaged<IMFNetCrossOriginSupport*, uint>)(lpVtbl[2]))((IMFNetCrossOriginSupport*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFNetCrossOriginSupport.xml' path='doc/member[@name="IMFNetCrossOriginSupport.GetCrossOriginPolicy"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetCrossOriginPolicy(MF_CROSS_ORIGIN_POLICY* pPolicy)
@@ -48,6 +53,7 @@ public unsafe partial struct IMFNetCrossOriginSupport : IMFNetCrossOriginSupport
         return ((delegate* unmanaged<IMFNetCrossOriginSupport*, MF_CROSS_ORIGIN_POLICY*, int>)(lpVtbl[3]))((IMFNetCrossOriginSupport*)Unsafe.AsPointer(ref this), pPolicy);
     }
 
+    /// <include file='IMFNetCrossOriginSupport.xml' path='doc/member[@name="IMFNetCrossOriginSupport.GetSourceOrigin"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetSourceOrigin([NativeTypeName("LPWSTR *")] ushort** wszSourceOrigin)
@@ -55,6 +61,7 @@ public unsafe partial struct IMFNetCrossOriginSupport : IMFNetCrossOriginSupport
         return ((delegate* unmanaged<IMFNetCrossOriginSupport*, ushort**, int>)(lpVtbl[4]))((IMFNetCrossOriginSupport*)Unsafe.AsPointer(ref this), wszSourceOrigin);
     }
 
+    /// <include file='IMFNetCrossOriginSupport.xml' path='doc/member[@name="IMFNetCrossOriginSupport.IsSameOrigin"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT IsSameOrigin([NativeTypeName("LPCWSTR")] ushort* wszURL, BOOL* pfIsSameOrigin)

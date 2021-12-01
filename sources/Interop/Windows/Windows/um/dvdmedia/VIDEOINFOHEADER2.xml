@@ -1,0 +1,363 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="VIDEOINFOHEADER2">
+    <summary>
+      <para>The <b>VIDEOINFOHEADER2</b> structure describes the bitmap and color information for a video image, including interlace, copy protection, and pixel aspect ratio information.</para>
+    </summary>
+    <remarks>
+      <para>The picture aspect ratio is given by <b>dwPictAspectRatioX</b> and <b>dwPictAspectRatioY</b>. These specify the intended shape of the video image when it is displayed. The pixel aspect ratio is calculated from the <b>rcSource</b> rectangle and the picture aspect ratio.</para>
+      <para>The <b>dwInterlaceFlags</b> field indicates whether the video is interlaced, and if so, the format of the fields within the media samples. The following table shows the valid interlace modes for the Overlay Mixer and Video Mixing Renderer filters.</para>
+      <list type="table">
+        <listheader>
+          <description>Display Mode
+</description>
+          <description>Interlace Flags
+</description>
+          <description>Description
+</description>
+        </listheader>
+        <item>
+          <description>Progressive frames</description>
+          <description>None</description>
+          <description>The video stream is not interlaced.</description>
+        </item>
+        <item>
+          <description>Non-interleaved bob</description>
+          <description>AMINTERLACE_IsInterlaced |AMINTERLACE_1FieldPerSample |
+<para>AMINTERLACE_DisplayModeBobOnly</para></description>
+          <description>The entire video stream is interlaced, and each media sample contains a single video field.</description>
+        </item>
+        <item>
+          <description>Interleaved bob</description>
+          <description>AMINTERLACE_IsInterlaced |AMINTERLACE_DisplayModeBobOnly
+</description>
+          <description>The entire video stream is interlaced. Each media sample contains two video fields. Flags on the media sample indicate which field to display first.</description>
+        </item>
+        <item>
+          <description>Weave</description>
+          <description>AMINTERLACE_IsInterlaced |AMINTERLACE_FieldPatBothRegular |
+<para>AMINTERLACE_DisplayModeWeaveOnly</para></description>
+          <description>The video stream is interlaced, and each sample contains two video fields. The fields should not be deinterlaced.</description>
+        </item>
+        <item>
+          <description>Bob or weave</description>
+          <description>AMINTERLACE_IsInterlaced |AMINTERLACE_DisplayModeBobOrWeave
+</description>
+          <description>The video stream varies between progressive and interlaced content. Each media sample contains either a progressive frame or two video fields. Flags on the media sample indicate the correct way to display the contents.</description>
+        </item>
+      </list>
+      <para>If the video is interlaced, the media samples may carry flags that describe the contents of the sample (such as field 1 or field 2), along with the rendering requirements. These are specified by setting the <b>dwTypeSpecificFlags</b> member of each media sample's <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/strmif/ns-strmif-am_sample2_properties">AM_SAMPLE2_PROPERTIES</a> structure. The following table shows the valid media sample flags for each of the display modes listed in the previous table. To set these flags, call <see cref="IMediaSample2.SetProperties" /> on the media sample.</para>
+      <list type="table">
+        <listheader>
+          <description>Display Mode</description>
+          <description>Media Sample Properties</description>
+        </listheader>
+        <item>
+          <description>Progressive frames</description>
+          <description>None</description>
+        </item>
+        <item>
+          <description>Non-interleaved bob</description>
+          <description>AM_VIDEO_FLAG_FIELD1 or AM_VIDEO_FLAG_FIELD2</description>
+        </item>
+        <item>
+          <description>Interleaved bob</description>
+          <description>Field 1 first</description>
+          <description>AM_VIDEO_FLAG_FIELD1FIRST</description>
+        </item>
+        <item>
+          <description>Field 2 first</description>
+          <description>None</description>
+        </item>
+        <item>
+          <description>Weave</description>
+          <description>AM_VIDEO_FLAG_WEAVE</description>
+        </item>
+        <item>
+          <description>Bob or weave</description>
+          <description>Bob, field 1 first</description>
+          <description>AM_VIDEO_FLAG_FIELD1FIRST</description>
+        </item>
+        <item>
+          <description>Bob, field 2 first</description>
+          <description>None</description>
+        </item>
+        <item>
+          <description>Weave</description>
+          <description>AM_VIDEO_FLAG_WEAVE</description>
+        </item>
+      </list>
+      <para>Use the bit mask AMINTERLACE_FieldPatternMask to check the field pattern flags in <b>dwInterlaceFlags</b>:</para>
+      <code>
+switch (dwInterlaceFlags &amp;amp;amp;amp;amp;amp; AMINTERLACE_FieldPatternMask)
+{
+case AMINTERLACE_FieldPatField1Only:
+    // Stream never contains a Field 2.
+
+case AMINTERLACE_FieldPatField2Only:
+    // Stream never contains a Field 1.
+
+case AMINTERLACE_FieldPatBothRegular:
+    // One Field 2 for every Field 1.
+
+case AMINTERLACE_FieldPatBothIrregular:
+    // Random pattern of Field 1 and Field 2.
+}
+
+</code>
+      <para>Use the bit mask AMINTERLACE_DisplayModeMask to check the display mode flags in <b>dwInterlaceFlags</b>:</para>
+      <code>
+switch (dwInterlaceFlags &amp;amp;amp;amp;amp;amp; AMINTERLACE_DisplayModeMask)
+{
+case AMINTERLACE_DisplayModeBobOnly:
+    // Bob display mode only.
+
+case AMINTERLACE_DisplayModeWeaveOnly:
+    // Weave display mode only.
+
+case AMINTERLACE_DisplayModeBobOrWeave:
+    // Either bob or weave mode.
+}
+
+</code>
+      <para>Interlaced video samples must have valid time stamps. Otherwise, it is not guaranteed that the display driver can deinterlace the video. If you need to display an interlaced video frame with no time stamp, set the AM_VIDEO_FLAG_WEAVE flag on the sample as follows:</para>
+      <code>
+IMediaSample2* pSample2 = NULL;
+hr = pSample-&gt;QueryInterface(IID_IMediaSample2, (void**)&amp;amp;amp;amp;amp;amp;pSample2);
+if (SUCCEEDED(hr))
+{
+    AM_SAMPLE2_PROPERTIES Prop;
+    hr = pSample2-&gt;GetProperties(sizeof(Prop), (BYTE*)&amp;amp;amp;amp;amp;amp;Prop);
+    if (SUCCEEDED(hr))
+    {
+        Prop.dwTypeSpecificFlags = AM_VIDEO_FLAG_WEAVE;
+        hr = pSample2-&gt;SetProperties(sizeof(Prop), (BYTE*)&amp;amp;amp;amp;amp;amp;Prop);
+    }
+    pSample2-&gt;Release();
+}
+
+</code>
+      <para>This causes the driver to display the two fields as one frame, using weave mode, without deinterlacing.</para>
+      <h3>Extended Color Information</h3>
+      <para>If the AMCONTROL_COLORINFO_PRESENT flag is set in the <b>dwControlFlags</b> member, you can cast the <b>dwControlFlags</b> value to a <b>DXVA_ExtendedFormat</b> structure to access the extended color information, as shown in the following code.</para>
+      <code>
+VIDEOINFOHEADER2 *pVIH2;
+DXVA_ExtendedFormat&amp;amp;amp;amp;amp;amp; flags = (DXVA_ExtendedFormat&amp;amp;amp;amp;amp;amp;)pVIH2-&gt;dwControlFlags;
+
+</code>
+      <para>Ignore the <b>SampleFormat</b> member of the <b>DXVA_ExtendedFormat</b> structure, because it corresponds to the lower 8 bits of <b>dwControlFlags</b>, which are reserved for the AMCONTROL_xxx flags. The <b>DXVA_ExtendedFormat</b> structure is documented in the Windows DDK documentation.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-structures">DirectShow Structures</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/media-types">Media Types</seealso>
+  </member>
+  <member name="VIDEOINFOHEADER2.rcSource">
+    <summary>
+      <para>A <see cref="RECT" /> structure that specifies what part of the source stream should be used to fill the destination buffer. Renderers can use this field to ask the decoders to stretch or clip. For more information, see <a href="https://docs.microsoft.com//windows/desktop/DirectShow/source-and-target-rectangles-in-video-renderers">Source and Target Rectangles in Video Renderers</a>.</para>
+    </summary>
+  </member>
+  <member name="VIDEOINFOHEADER2.rcTarget">
+    <summary>
+      <para>A <see cref="RECT" /> structure that specifies that specifies what part of the destination buffer should be used</para>
+    </summary>
+  </member>
+  <member name="VIDEOINFOHEADER2.dwBitRate">
+    <summary>
+      <para>The approximate data rate of the video stream, in bits per second.</para>
+    </summary>
+  </member>
+  <member name="VIDEOINFOHEADER2.dwBitErrorRate">
+    <summary>
+      <para>The data error rate of the video stream, in bits per second.</para>
+    </summary>
+  </member>
+  <member name="VIDEOINFOHEADER2.AvgTimePerFrame">
+    <summary>
+      <para>The video frame's average display time, in 100-nanosecond units. For more information, see the Remarks section for the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/amvideo/ns-amvideo-videoinfoheader">VIDEOINFOHEADER</a> structure.</para>
+    </summary>
+  </member>
+  <member name="VIDEOINFOHEADER2.dwInterlaceFlags">
+    <summary>
+      <para>Flags that specify how the video is interlaced. This member is a bit-wise combination of zero or more of the following flags. The flags in Group 2 are mutually exclusive, and so are the flags in Group 3. (The flags in Group 2 are not recommended.) The flags in Group 1 may be combined with each other, and with one flag each from Group 2 and Group 3. See the table at the bottom of this page for more information about flag combinations.</para>
+      <list type="table">
+        <listheader>
+          <description>Group 1</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <b>AMINTERLACE_IsInterlaced</b>
+          </description>
+          <description>
+            <para>The stream is interlaced. If this flag is absent, the video is progressive and the other bits are irrelevant.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>AMINTERLACE_1FieldPerSample</b>
+          </description>
+          <description>
+            <para>Each media sample contains one field. If this flag is absent, each media sample contains two fields.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>AMINTERLACE_Field1First</b>
+          </description>
+          <description>
+            <para>Field 1 is first. If this flag is absent, field 2 is first. (The top field in PAL is field 1, and the top field in NTSC is field 2.)</para>
+          </description>
+        </item>
+      </list>
+      <list type="table">
+        <listheader>
+          <description>Group 2</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <b>AMINTERLACE_FieldPatField1Only</b>
+          </description>
+          <description>
+            <para>The stream never contains a field 2.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>AMINTERLACE_FieldPatField2Only</b>
+          </description>
+          <description>
+            <para>The stream never contains a field 1.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>AMINTERLACE_FieldPatBothRegular</b>
+          </description>
+          <description>
+            <para>There is one field 2 for every field 1.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>AMINTERLACE_FieldPatBothIrregular</b>
+          </description>
+          <description>
+            <para>The stream contains an irregular pattern of field 1 and field 2.</para>
+          </description>
+        </item>
+      </list>
+      <list type="table">
+        <listheader>
+          <description>Group 3</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <b>AMINTERLACE_DisplayModeBobOnly</b>
+          </description>
+          <description>
+            <para>Bob display mode only.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>AMINTERLACE_DisplayModeWeaveOnly</b>
+          </description>
+          <description>
+            <para>Weave display mode only.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>AMINTERLACE_DisplayModeBobOrWeave</b>
+          </description>
+          <description>
+            <para>Either bob or weave mode.</para>
+          </description>
+        </item>
+      </list>
+      <para>Set undefined flags to zero, or the connection will be rejected.</para>
+    </summary>
+  </member>
+  <member name="VIDEOINFOHEADER2.dwCopyProtectFlags">
+    <summary>
+      <para>Flag set with the AMCOPYPROTECT_RestrictDuplication value (0x00000001) to indicate that the duplication of the stream should be restricted. If undefined, specify zero or else the connection will be rejected.</para>
+    </summary>
+  </member>
+  <member name="VIDEOINFOHEADER2.dwPictAspectRatioX">
+    <summary>
+      <para>The X dimension of picture aspect ratio. For example, 16 for a 16-inch x 9-inch display.</para>
+    </summary>
+  </member>
+  <member name="VIDEOINFOHEADER2.dwPictAspectRatioY">
+    <summary>
+      <para>The Y dimension of picture aspect ratio. For example, 9 for a 16-inch x 9-inch display.</para>
+    </summary>
+  </member>
+  <member name="VIDEOINFOHEADER2.dwControlFlags">
+    <summary>
+      <para>This field was originally named <b>dwReserved</b>, and was required to be zero. The field was renamed to <b>dwControlFlags</b>, and must contain a bitwise OR of zero or more of the following flags:</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>AMCONTROL_USED</b>
+          </description>
+          <description>
+            <para>Indicates the dwControlFlags flags are used.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>AMCONTROL_PAD_TO_4x3</b>
+          </description>
+          <description>
+            <para>The image should be padded and displayed in a 4 x 3 area.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>AMCONTROL_PAD_TO_16x9</b>
+          </description>
+          <description>
+            <para>The image should be padded and displayed in a 16 x 9 area.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>AMCONTROL_COLORINFO_PRESENT</b>
+          </description>
+          <description>
+            <para>Additional color information is contained in the upper 24 bits of the <b>dwControlFlags</b> field.</para>
+          </description>
+        </item>
+      </list>
+      <para>The AMCONTROL_USED flag provides backward compatibility with older filters. If the AMCONTROL_USED flag is not set, the remaining bits in this field should be ignored. If a filter uses any of the other flags, it should set the AMCONTROL_USED flag.</para>
+      <para>The two AMCONTROL_PAD_xxx flags are used by decoders to determine the aspect ratio of the output rectangle. The source filter sets the AMCONTROL_USED flag and one of the padding flags and calls <see cref="QueryAccept" /> on the downstream pin. If the decoder rejects the type, the source filter should set the dwControlFlags field to zero. For more information on the use of these flags, see MPEG Decoder Preprocessing Transformations.</para>
+      <para>If the AMCONTROL_COLORINFO_PRESENT flag is set, it means the upper 24 bits of the dwControlFlags field are treated as a <b>DXVA_ExtendedFormat</b> structure. See Remarks for more information.</para>
+      <para>If this field contains any combination of flags that the filter does not support, the filter should reject the media type.</para>
+    </summary>
+  </member>
+  <member name="VIDEOINFOHEADER2.dwReserved1">
+    <summary>
+      <para>See description of <b>dwControlFlags</b>.</para>
+    </summary>
+  </member>
+  <member name="VIDEOINFOHEADER2.dwReserved2">
+    <summary>
+      <para>Reserved for future use. Must be zero.</para>
+    </summary>
+  </member>
+  <member name="VIDEOINFOHEADER2.bmiHeader">
+    <summary>
+      <para>
+        <see cref="BITMAPINFOHEADER" /> structure that contains color and dimension information for the video image bitmap.</para>
+      <para>When used inside a <b>VIDEOINFOHEADER2</b> structure, the semantics of the <see cref="BITMAPINFOHEADER" /> structure differ slightly from how the structure is used in GDI. For more information, refer to the topic <see cref="BITMAPINFOHEADER" />.</para>
+    </summary>
+  </member>
+</doc>

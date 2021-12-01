@@ -5,12 +5,16 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_CALL_PROPERTY.xml' path='doc/member[@name="WS_CALL_PROPERTY"]/*' />
 public unsafe partial struct WS_CALL_PROPERTY
 {
+    /// <include file='WS_CALL_PROPERTY.xml' path='doc/member[@name="WS_CALL_PROPERTY.id"]/*' />
     public WS_CALL_PROPERTY_ID id;
 
+    /// <include file='WS_CALL_PROPERTY.xml' path='doc/member[@name="WS_CALL_PROPERTY.value"]/*' />
     public void* value;
 
+    /// <include file='WS_CALL_PROPERTY.xml' path='doc/member[@name="WS_CALL_PROPERTY.valueSize"]/*' />
     [NativeTypeName("ULONG")]
     public uint valueSize;
 }

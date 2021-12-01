@@ -5,13 +5,17 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CMSG_STREAM_INFO.xml' path='doc/member[@name="CMSG_STREAM_INFO"]/*' />
 public unsafe partial struct CMSG_STREAM_INFO
 {
+    /// <include file='CMSG_STREAM_INFO.xml' path='doc/member[@name="CMSG_STREAM_INFO.cbContent"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbContent;
 
+    /// <include file='CMSG_STREAM_INFO.xml' path='doc/member[@name="CMSG_STREAM_INFO.pfnStreamOutput"]/*' />
     [NativeTypeName("PFN_CMSG_STREAM_OUTPUT")]
     public delegate* unmanaged<void*, byte*, uint, BOOL, BOOL> pfnStreamOutput;
 
+    /// <include file='CMSG_STREAM_INFO.xml' path='doc/member[@name="CMSG_STREAM_INFO.pvArg"]/*' />
     public void* pvArg;
 }

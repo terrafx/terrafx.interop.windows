@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="KBDLLHOOKSTRUCT">
+    <summary>
+      <para>Contains information about a low-level keyboard input event.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/winmsg/hooks">Hooks</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644985(v=vs.85)">LowLevelKeyboardProc</seealso>
+    <seealso cref="SetWindowsHookEx" />
+  </member>
+  <member name="KBDLLHOOKSTRUCT.vkCode">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>A <a href="https://docs.microsoft.com//windows/desktop/inputdev/virtual-key-codes">virtual-key code</a>. The code must be a value in the range 1 to 254.</para>
+    </summary>
+  </member>
+  <member name="KBDLLHOOKSTRUCT.scanCode">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>A hardware scan code for the key.</para>
+    </summary>
+  </member>
+  <member name="KBDLLHOOKSTRUCT.flags">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The extended-key flag, event-injected flags, context code, and transition-state flag. This member is specified as follows. An application can use the following values to test the keystroke flags. Testing LLKHF_INJECTED (bit 4) will tell you whether the event was injected. If it was, then testing LLKHF_LOWER_IL_INJECTED (bit 1) will tell you whether or not the event was injected from a process running at lower integrity level.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>LLKHF_EXTENDED</b>
+                </description>
+              </item>
+              <item>
+                <description>(KF_EXTENDED &gt;&gt; 8)</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Test the extended-key flag.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>LLKHF_LOWER_IL_INJECTED</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000002</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Test the event-injected (from a process running at lower integrity level) flag.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>LLKHF_INJECTED</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000010</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Test the event-injected (from any process) flag.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>LLKHF_ALTDOWN</b>
+                </description>
+              </item>
+              <item>
+                <description>(KF_ALTDOWN &gt;&gt; 8)</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Test the context code.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>LLKHF_UP</b>
+                </description>
+              </item>
+              <item>
+                <description>(KF_UP &gt;&gt; 8)</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Test the transition-state flag.</para>
+          </description>
+        </item>
+      </list>
+      <para>The following table describes the layout of this value.</para>
+      <list type="table">
+        <listheader>
+          <description>Bits</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>0</description>
+          <description>Specifies whether the key is an extended key, such as a function key or a key on the numeric keypad. The value is 1 if the key is an extended key; otherwise, it is 0.</description>
+        </item>
+        <item>
+          <description>1</description>
+          <description>Specifies whether the event was injected from a process running at lower integrity level. The value is 1 if that is the case; otherwise, it is 0. Note that bit 4 is also set whenever bit 1 is set.</description>
+        </item>
+        <item>
+          <description>2-3</description>
+          <description>Reserved.</description>
+        </item>
+        <item>
+          <description>4</description>
+          <description>Specifies whether the event was injected. The value is 1 if that is the case; otherwise, it is 0. Note that bit 1 is not necessarily set when bit 4 is set.</description>
+        </item>
+        <item>
+          <description>5</description>
+          <description>The context code. The value is 1 if the ALT key is pressed; otherwise, it is 0.</description>
+        </item>
+        <item>
+          <description>6</description>
+          <description>Reserved.</description>
+        </item>
+        <item>
+          <description>7</description>
+          <description>The transition state. The value is 0 if the key is pressed and 1 if it is being released.</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="KBDLLHOOKSTRUCT.time">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The time stamp for this message, equivalent to what <see cref="GetMessageTime" /> would return for this message.</para>
+    </summary>
+  </member>
+  <member name="KBDLLHOOKSTRUCT.dwExtraInfo">
+    <summary>
+      <para>Type: <b>ULONG_PTR</b></para>
+      <para>Additional information associated with the message.</para>
+    </summary>
+  </member>
+</doc>

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAudioTreble.xml' path='doc/member[@name="IAudioTreble"]/*' />
 [Guid("0A717812-694E-4907-B74B-BAFA5CFDCA7B")]
 [NativeTypeName("struct IAudioTreble : IPerChannelDbLevel")]
 [NativeInheritance("IPerChannelDbLevel")]
@@ -16,6 +17,7 @@ public unsafe partial struct IAudioTreble : IAudioTreble.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IAudioTreble : IAudioTreble.Interface
         return ((delegate* unmanaged<IAudioTreble*, Guid*, void**, int>)(lpVtbl[0]))((IAudioTreble*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IAudioTreble : IAudioTreble.Interface
         return ((delegate* unmanaged<IAudioTreble*, uint>)(lpVtbl[1]))((IAudioTreble*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IAudioTreble : IAudioTreble.Interface
         return ((delegate* unmanaged<IAudioTreble*, uint>)(lpVtbl[2]))((IAudioTreble*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IPerChannelDbLevel.GetChannelCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetChannelCount(uint* pcChannels)
@@ -46,6 +51,7 @@ public unsafe partial struct IAudioTreble : IAudioTreble.Interface
         return ((delegate* unmanaged<IAudioTreble*, uint*, int>)(lpVtbl[3]))((IAudioTreble*)Unsafe.AsPointer(ref this), pcChannels);
     }
 
+    /// <inheritdoc cref="IPerChannelDbLevel.GetLevelRange" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetLevelRange(uint nChannel, float* pfMinLevelDB, float* pfMaxLevelDB, float* pfStepping)
@@ -53,6 +59,7 @@ public unsafe partial struct IAudioTreble : IAudioTreble.Interface
         return ((delegate* unmanaged<IAudioTreble*, uint, float*, float*, float*, int>)(lpVtbl[4]))((IAudioTreble*)Unsafe.AsPointer(ref this), nChannel, pfMinLevelDB, pfMaxLevelDB, pfStepping);
     }
 
+    /// <inheritdoc cref="IPerChannelDbLevel.GetLevel" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetLevel(uint nChannel, float* pfLevelDB)
@@ -60,6 +67,7 @@ public unsafe partial struct IAudioTreble : IAudioTreble.Interface
         return ((delegate* unmanaged<IAudioTreble*, uint, float*, int>)(lpVtbl[5]))((IAudioTreble*)Unsafe.AsPointer(ref this), nChannel, pfLevelDB);
     }
 
+    /// <inheritdoc cref="IPerChannelDbLevel.SetLevel" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT SetLevel(uint nChannel, float fLevelDB, [NativeTypeName("LPCGUID")] Guid* pguidEventContext)
@@ -67,6 +75,7 @@ public unsafe partial struct IAudioTreble : IAudioTreble.Interface
         return ((delegate* unmanaged<IAudioTreble*, uint, float, Guid*, int>)(lpVtbl[6]))((IAudioTreble*)Unsafe.AsPointer(ref this), nChannel, fLevelDB, pguidEventContext);
     }
 
+    /// <inheritdoc cref="IPerChannelDbLevel.SetLevelUniform" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT SetLevelUniform(float fLevelDB, [NativeTypeName("LPCGUID")] Guid* pguidEventContext)
@@ -74,6 +83,7 @@ public unsafe partial struct IAudioTreble : IAudioTreble.Interface
         return ((delegate* unmanaged<IAudioTreble*, float, Guid*, int>)(lpVtbl[7]))((IAudioTreble*)Unsafe.AsPointer(ref this), fLevelDB, pguidEventContext);
     }
 
+    /// <inheritdoc cref="IPerChannelDbLevel.SetLevelAllChannels" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT SetLevelAllChannels([NativeTypeName("float []")] float* aLevelsDB, [NativeTypeName("ULONG")] uint cChannels, [NativeTypeName("LPCGUID")] Guid* pguidEventContext)

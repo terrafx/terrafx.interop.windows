@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ISyncMgrConflict.GetConflictIdInfo">
+    <summary>
+      <para>Gets information that identifies a conflict within a conflict store.</para>
+    </summary>
+    <param name="pConflictIdInfo">
+      <para>Type: <b><see cref="SYNCMGR_CONFLICT_ID_INFO" />*</b></para>
+      <para>A pointer to a conflict ID info structure. See <see cref="SYNCMGR_CONFLICT_ID_INFO" />.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>Note</b>  Each member should be allocated using <see cref="CoTaskMemAlloc" />. Free each member using <see cref="CoTaskMemFree" />.</para>
+      <para>This method contains two opaque blobs: One is the ID uniquely identifying a conflict within a conflict store. The other is optional extra information stored with the conflict that may be used by the implementation when creating conflict objects in <see cref="BindToConflict" /> and <see cref="RemoveConflicts" />.</para>
+      <para>The size of of the ID blob must be kept short so that the ID may be embedded inside the conflict's pointer to an item identifier list (PIDL) or parsing name.</para>
+    </remarks>
+  </member>
+  <member name="ISyncMgrConflict.GetItemsArray">
+    <summary>
+      <para>Retrieves a conflict items array.</para>
+    </summary>
+    <param name="ppArray">
+      <para>Type: <b><see cref="ISyncMgrConflictItems" />**</b></para>
+      <para>The address of a pointer to an <see cref="ISyncMgrConflictItems" /> array.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="ISyncMgrConflict.GetProperty">
+    <summary>
+      <para>Gets a conflict property, given a property key.</para>
+    </summary>
+    <param name="propkey">
+      <para>Type: <b>REFPROPERTYKEY</b></para>
+      <para>A reference to the property key for which the property is being requested. Any property key is valid here, including but not limited to the following values.</para>
+      <h4>PKEY_ItemNameDisplay</h4>
+      <para>Name of the conflict.</para>
+      <h4>PKEY_Sync_ConflictDescription</h4>
+      <para>Summary of the conflict.</para>
+      <h4>PKEY_Sync_HandlerID</h4>
+      <para>Sync handler that created the conflict.</para>
+      <h4>PKEY_Sync_ItemID</h4>
+      <para>Sync item that created the conflict.</para>
+      <h4>PKEY_DateModified</h4>
+      <para>Time the conflict was detected.</para>
+    </param>
+    <param name="ppropvar">
+      <para>Type: <b><see cref="PROPVARIANT" />*</b></para>
+      <para>When this method returns, contains a <see cref="PROPVARIANT" /> structure that contains the requested property.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The properties returned are properties of the conflict and not of the <b>IShellItems</b> that are in conflict.</para>
+      <para>If the <see cref="PROPERTYKEY" /> referenced in <i>propkey</i> is not present in the property store, this method returns S_OK and the <b>vt</b> member of the structure pointed to by <i>ppropvar</i> is set to VT_EMPTY.</para>
+    </remarks>
+  </member>
+  <member name="ISyncMgrConflict.GetResolutionHandler">
+    <summary>
+      <para>Gets the resolution handler for the conflict.</para>
+    </summary>
+    <param name="riid">
+      <para>Type: <b>REFIID</b></para>
+      <para>A reference to the ID for the resolution handler.</para>
+    </param>
+    <param name="ppvResolutionHandler">
+      <para>Type: <b>void**</b></para>
+      <para>When this method returns, contains the interface pointer requested in <i>riid</i>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="ISyncMgrConflict.Resolve">
+    <summary>
+      <para>Resolves the conflict using its own sync handler, controls UI.</para>
+    </summary>
+    <param name="pResolveInfo">
+      <para>Type: <b><see cref="ISyncMgrConflictResolveInfo" />*</b></para>
+      <para>A pointer to a <see cref="ISyncMgrConflictResolveInfo" />.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Note that the store must tell the sync center if the conflict was removed by calling <see cref="UpdateConflicts" /> after the conflict is resolved. The conflict is assumed to still exist until the store notifies the sync center of changes. The resolution choices for user selection are available through <see cref="ISyncMgrConflictResolveInfo" />.</para>
+    </remarks>
+  </member>
+  <member name="ISyncMgrConflict">
+    <summary>
+      <para>Exposes methods that provide information about a conflict retrieved from a conflict store, and allows the conflict to be resolved.</para>
+    </summary>
+  </member>
+</doc>

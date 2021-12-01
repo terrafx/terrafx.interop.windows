@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CERT_ECC_SIGNATURE.xml' path='doc/member[@name="CERT_ECC_SIGNATURE"]/*' />
 public partial struct CERT_ECC_SIGNATURE
 {
+    /// <include file='CERT_ECC_SIGNATURE.xml' path='doc/member[@name="CERT_ECC_SIGNATURE.r"]/*' />
     [NativeTypeName("CRYPT_UINT_BLOB")]
     public CRYPT_DATA_BLOB r;
 
+    /// <include file='CERT_ECC_SIGNATURE.xml' path='doc/member[@name="CERT_ECC_SIGNATURE.s"]/*' />
     [NativeTypeName("CRYPT_UINT_BLOB")]
     public CRYPT_DATA_BLOB s;
 }

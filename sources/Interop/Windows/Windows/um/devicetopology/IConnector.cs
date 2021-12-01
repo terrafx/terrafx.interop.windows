@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IConnector.xml' path='doc/member[@name="IConnector"]/*' />
 [Guid("9C2C4058-23F5-41DE-877A-DF3AF236A09E")]
 [NativeTypeName("struct IConnector : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IConnector : IConnector.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IConnector : IConnector.Interface
         return ((delegate* unmanaged<IConnector*, Guid*, void**, int>)(lpVtbl[0]))((IConnector*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IConnector : IConnector.Interface
         return ((delegate* unmanaged<IConnector*, uint>)(lpVtbl[1]))((IConnector*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IConnector : IConnector.Interface
         return ((delegate* unmanaged<IConnector*, uint>)(lpVtbl[2]))((IConnector*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IConnector.xml' path='doc/member[@name="IConnector.GetType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetType(ConnectorType* pType)
@@ -46,6 +51,7 @@ public unsafe partial struct IConnector : IConnector.Interface
         return ((delegate* unmanaged<IConnector*, ConnectorType*, int>)(lpVtbl[3]))((IConnector*)Unsafe.AsPointer(ref this), pType);
     }
 
+    /// <include file='IConnector.xml' path='doc/member[@name="IConnector.GetDataFlow"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetDataFlow(DataFlow* pFlow)
@@ -53,6 +59,7 @@ public unsafe partial struct IConnector : IConnector.Interface
         return ((delegate* unmanaged<IConnector*, DataFlow*, int>)(lpVtbl[4]))((IConnector*)Unsafe.AsPointer(ref this), pFlow);
     }
 
+    /// <include file='IConnector.xml' path='doc/member[@name="IConnector.ConnectTo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT ConnectTo(IConnector* pConnectTo)
@@ -60,6 +67,7 @@ public unsafe partial struct IConnector : IConnector.Interface
         return ((delegate* unmanaged<IConnector*, IConnector*, int>)(lpVtbl[5]))((IConnector*)Unsafe.AsPointer(ref this), pConnectTo);
     }
 
+    /// <include file='IConnector.xml' path='doc/member[@name="IConnector.Disconnect"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Disconnect()
@@ -67,6 +75,7 @@ public unsafe partial struct IConnector : IConnector.Interface
         return ((delegate* unmanaged<IConnector*, int>)(lpVtbl[6]))((IConnector*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IConnector.xml' path='doc/member[@name="IConnector.IsConnected"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT IsConnected(BOOL* pbConnected)
@@ -74,6 +83,7 @@ public unsafe partial struct IConnector : IConnector.Interface
         return ((delegate* unmanaged<IConnector*, BOOL*, int>)(lpVtbl[7]))((IConnector*)Unsafe.AsPointer(ref this), pbConnected);
     }
 
+    /// <include file='IConnector.xml' path='doc/member[@name="IConnector.GetConnectedTo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetConnectedTo(IConnector** ppConTo)
@@ -81,6 +91,7 @@ public unsafe partial struct IConnector : IConnector.Interface
         return ((delegate* unmanaged<IConnector*, IConnector**, int>)(lpVtbl[8]))((IConnector*)Unsafe.AsPointer(ref this), ppConTo);
     }
 
+    /// <include file='IConnector.xml' path='doc/member[@name="IConnector.GetConnectorIdConnectedTo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT GetConnectorIdConnectedTo([NativeTypeName("LPWSTR *")] ushort** ppwstrConnectorId)
@@ -88,6 +99,7 @@ public unsafe partial struct IConnector : IConnector.Interface
         return ((delegate* unmanaged<IConnector*, ushort**, int>)(lpVtbl[9]))((IConnector*)Unsafe.AsPointer(ref this), ppwstrConnectorId);
     }
 
+    /// <include file='IConnector.xml' path='doc/member[@name="IConnector.GetDeviceIdConnectedTo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT GetDeviceIdConnectedTo([NativeTypeName("LPWSTR *")] ushort** ppwstrDeviceId)

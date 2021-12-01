@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_MESSAGE_INITIALIZATION">
+    <summary>
+      <para>Specifies what headers the
+<see cref="WsInitializeMessage" /> should add to the message.</para>
+    </summary>
+  </member>
+  <member name="WS_MESSAGE_INITIALIZATION.WS_BLANK_MESSAGE">
+    <summary>
+      <para>The headers of the message are empty.</para>
+    </summary>
+  </member>
+  <member name="WS_MESSAGE_INITIALIZATION.WS_DUPLICATE_MESSAGE">
+    <summary>
+      <para>The headers are initialized to be the same as the source message's headers.</para>
+    </summary>
+  </member>
+  <member name="WS_MESSAGE_INITIALIZATION.WS_REQUEST_MESSAGE">
+    <summary>
+      <para>If using <see cref="WS_ADDRESSING_VERSION_0_9" /> or <b>WS_ADDRESSING_VERSION_1_0</b>,
+then a unique message ID is set as the MessageID header of the message.
+No other headers are added in the message.</para>
+    </summary>
+  </member>
+  <member name="WS_MESSAGE_INITIALIZATION.WS_REPLY_MESSAGE">
+    <summary>
+      <para>The ReplyTo header of the source message (an <see cref="WS_ENDPOINT_ADDRESS" />)
+is used to address the message.  The MessageID header of the source
+message is used to add a RelatesTo header to the message.  If the message
+will contain a fault reply, then <see cref="WS_FAULT_MESSAGE" /> should be
+used instead.</para>
+    </summary>
+  </member>
+  <member name="WS_MESSAGE_INITIALIZATION.WS_FAULT_MESSAGE">
+    <summary>
+      <para>The FaultTo or ReplyTo header of the source message (an <see cref="WS_ENDPOINT_ADDRESS" />)
+is used to address the message.  The MessageID header of the source message
+is used to add a RelatesTo header to the message.  This should only be
+used when the contents of the message will contain a fault.</para>
+    </summary>
+  </member>
+</doc>

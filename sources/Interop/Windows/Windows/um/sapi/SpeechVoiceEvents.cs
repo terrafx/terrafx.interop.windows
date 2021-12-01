@@ -5,17 +5,39 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SpeechVoiceEvents.xml' path='doc/member[@name="SpeechVoiceEvents"]/*' />
 public enum SpeechVoiceEvents
 {
+    /// <include file='SpeechVoiceEvents.xml' path='doc/member[@name="SpeechVoiceEvents.SVEStartInputStream"]/*' />
     SVEStartInputStream = (1 << 1),
+
+    /// <include file='SpeechVoiceEvents.xml' path='doc/member[@name="SpeechVoiceEvents.SVEEndInputStream"]/*' />
     SVEEndInputStream = (1 << 2),
+
+    /// <include file='SpeechVoiceEvents.xml' path='doc/member[@name="SpeechVoiceEvents.SVEVoiceChange"]/*' />
     SVEVoiceChange = (1 << 3),
+
+    /// <include file='SpeechVoiceEvents.xml' path='doc/member[@name="SpeechVoiceEvents.SVEBookmark"]/*' />
     SVEBookmark = (1 << 4),
+
+    /// <include file='SpeechVoiceEvents.xml' path='doc/member[@name="SpeechVoiceEvents.SVEWordBoundary"]/*' />
     SVEWordBoundary = (1 << 5),
+
+    /// <include file='SpeechVoiceEvents.xml' path='doc/member[@name="SpeechVoiceEvents.SVEPhoneme"]/*' />
     SVEPhoneme = (1 << 6),
+
+    /// <include file='SpeechVoiceEvents.xml' path='doc/member[@name="SpeechVoiceEvents.SVESentenceBoundary"]/*' />
     SVESentenceBoundary = (1 << 7),
+
+    /// <include file='SpeechVoiceEvents.xml' path='doc/member[@name="SpeechVoiceEvents.SVEViseme"]/*' />
     SVEViseme = (1 << 8),
+
+    /// <include file='SpeechVoiceEvents.xml' path='doc/member[@name="SpeechVoiceEvents.SVEAudioLevel"]/*' />
     SVEAudioLevel = (1 << 9),
+
+    /// <include file='SpeechVoiceEvents.xml' path='doc/member[@name="SpeechVoiceEvents.SVEPrivate"]/*' />
     SVEPrivate = (1 << 15),
+
+    /// <include file='SpeechVoiceEvents.xml' path='doc/member[@name="SpeechVoiceEvents.SVEAllEvents"]/*' />
     SVEAllEvents = 0x83fe,
 }

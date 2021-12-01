@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WICRawRotationCapabilities">
+    <summary>
+      <para>Specifies the rotation capabilities of the codec.</para>
+    </summary>
+  </member>
+  <member name="WICRawRotationCapabilities.WICRawRotationCapabilityNotSupported">
+    <summary>
+      <para>Rotation is not supported.</para>
+    </summary>
+  </member>
+  <member name="WICRawRotationCapabilities.WICRawRotationCapabilityGetSupported">
+    <summary>
+      <para>Set operations for rotation is not supported.</para>
+    </summary>
+  </member>
+  <member name="WICRawRotationCapabilities.WICRawRotationCapabilityNinetyDegreesSupported">
+    <summary>
+      <para>90 degree rotations are supported.</para>
+    </summary>
+  </member>
+  <member name="WICRawRotationCapabilities.WICRawRotationCapabilityFullySupported">
+    <summary>
+      <para>All rotation angles are supported.</para>
+    </summary>
+  </member>
+  <member name="WICRawRotationCapabilities.WICRAWROTATIONCAPABILITIES_FORCE_DWORD">
+    <summary></summary>
+  </member>
+</doc>

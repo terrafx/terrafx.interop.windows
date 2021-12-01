@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_INT8_DESCRIPTION.xml' path='doc/member[@name="WS_INT8_DESCRIPTION"]/*' />
 public partial struct WS_INT8_DESCRIPTION
 {
+    /// <include file='WS_INT8_DESCRIPTION.xml' path='doc/member[@name="WS_INT8_DESCRIPTION.minValue"]/*' />
     [NativeTypeName("char")]
     public sbyte minValue;
 
+    /// <include file='WS_INT8_DESCRIPTION.xml' path='doc/member[@name="WS_INT8_DESCRIPTION.maxValue"]/*' />
     [NativeTypeName("char")]
     public sbyte maxValue;
 }

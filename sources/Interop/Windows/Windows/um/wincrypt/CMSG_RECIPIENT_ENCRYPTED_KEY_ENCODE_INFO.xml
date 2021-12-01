@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CMSG_RECIPIENT_ENCRYPTED_KEY_ENCODE_INFO">
+    <summary>
+      <para>The <b>CMSG_RECIPIENT_ENCRYPTED_KEY_ENCODE_INFO</b> structure contains information on a message receiver used to decrypt the session key needed to decrypt the message contents. This structure is used with CMS low level messages using any of the key management methods.</para>
+    </summary>
+  </member>
+  <member name="CMSG_RECIPIENT_ENCRYPTED_KEY_ENCODE_INFO.cbSize">
+    <summary>
+      <para>The size, in bytes, of this data structure.</para>
+    </summary>
+  </member>
+  <member name="CMSG_RECIPIENT_ENCRYPTED_KEY_ENCODE_INFO.RecipientPublicKey">
+    <summary>
+      <para>A <see cref="CRYPT_BIT_BLOB" /> structure that contains the recipient's public key.</para>
+    </summary>
+  </member>
+  <member name="CMSG_RECIPIENT_ENCRYPTED_KEY_ENCODE_INFO.RecipientId">
+    <summary>
+      <para>The <see cref="CERT_ID" /> that identifies a message recipient's public key.</para>
+    </summary>
+  </member>
+  <member name="CMSG_RECIPIENT_ENCRYPTED_KEY_ENCODE_INFO.Date">
+    <summary>
+      <para>Optional <b>FILETIME</b>. Applicable only if the <see cref="CERT_ID" /> identifies the receiver's public key with a KEY_IDENTIFIER.</para>
+    </summary>
+  </member>
+  <member name="CMSG_RECIPIENT_ENCRYPTED_KEY_ENCODE_INFO.pOtherAttr">
+    <summary>
+      <para>Optional. Pointer to a <see cref="CRYPT_ATTRIBUTE_TYPE_VALUE" />. Applicable only if the CERT_ID identifies the receiver's public key with a KEY_IDENTIFIER.</para>
+    </summary>
+  </member>
+</doc>

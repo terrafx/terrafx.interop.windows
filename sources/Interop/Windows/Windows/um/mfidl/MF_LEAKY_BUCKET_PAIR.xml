@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MF_LEAKY_BUCKET_PAIR">
+    <summary>
+      <para>Specifies the buffering requirements of a file.</para>
+    </summary>
+    <remarks>
+      <para>This structure describes the buffering requirements for content encoded at the bit rate specified in the <b>dwBitrate</b>. The <b>msBufferWindow</b> member indicates how much data should be buffered before starting playback. The size of the buffer in bytes is <b>msBufferWinow</b>×<b>dwBitrate</b> / 8000.</para>
+    </remarks>
+    <seealso cref="MFBYTESTREAM_BUFFERING_PARAMS" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-structures">Media Foundation Structures</seealso>
+  </member>
+  <member name="MF_LEAKY_BUCKET_PAIR.dwBitrate">
+    <summary>
+      <para>Bit rate, in bits per second.</para>
+    </summary>
+  </member>
+  <member name="MF_LEAKY_BUCKET_PAIR.msBufferWindow">
+    <summary>
+      <para>Size of the buffer window, in milliseconds.</para>
+    </summary>
+  </member>
+</doc>

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CUSTDATAITEM">
+    <summary>
+      <para>Represents a custom data item.</para>
+    </summary>
+  </member>
+  <member name="CUSTDATAITEM.guid">
+    <summary>
+      <para>The unique identifier of the data item.</para>
+    </summary>
+  </member>
+  <member name="CUSTDATAITEM.varValue">
+    <summary>
+      <para>The value of the data item.</para>
+    </summary>
+  </member>
+</doc>

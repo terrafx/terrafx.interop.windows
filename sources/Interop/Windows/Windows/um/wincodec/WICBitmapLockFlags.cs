@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WICBitmapLockFlags.xml' path='doc/member[@name="WICBitmapLockFlags"]/*' />
 public enum WICBitmapLockFlags
 {
+    /// <include file='WICBitmapLockFlags.xml' path='doc/member[@name="WICBitmapLockFlags.WICBitmapLockRead"]/*' />
     WICBitmapLockRead = 0x1,
+
+    /// <include file='WICBitmapLockFlags.xml' path='doc/member[@name="WICBitmapLockFlags.WICBitmapLockWrite"]/*' />
     WICBitmapLockWrite = 0x2,
+
+    /// <include file='WICBitmapLockFlags.xml' path='doc/member[@name="WICBitmapLockFlags.WICBITMAPLOCKFLAGS_FORCE_DWORD"]/*' />
     WICBITMAPLOCKFLAGS_FORCE_DWORD = 0x7fffffff,
 }

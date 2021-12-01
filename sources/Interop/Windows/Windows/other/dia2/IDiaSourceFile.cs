@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IDiaSourceFile.xml' path='doc/member[@name="IDiaSourceFile"]/*' />
 [Guid("A2EF5353-F5A8-4EB3-90D2-CB526ACB3CDD")]
 [NativeTypeName("struct IDiaSourceFile : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IDiaSourceFile : IDiaSourceFile.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IDiaSourceFile : IDiaSourceFile.Interface
         return ((delegate* unmanaged<IDiaSourceFile*, Guid*, void**, int>)(lpVtbl[0]))((IDiaSourceFile*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IDiaSourceFile : IDiaSourceFile.Interface
         return ((delegate* unmanaged<IDiaSourceFile*, uint>)(lpVtbl[1]))((IDiaSourceFile*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IDiaSourceFile : IDiaSourceFile.Interface
         return ((delegate* unmanaged<IDiaSourceFile*, uint>)(lpVtbl[2]))((IDiaSourceFile*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDiaSourceFile.xml' path='doc/member[@name="IDiaSourceFile.get_uniqueId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT get_uniqueId([NativeTypeName("DWORD *")] uint* pRetVal)
@@ -46,6 +51,7 @@ public unsafe partial struct IDiaSourceFile : IDiaSourceFile.Interface
         return ((delegate* unmanaged<IDiaSourceFile*, uint*, int>)(lpVtbl[3]))((IDiaSourceFile*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
+    /// <include file='IDiaSourceFile.xml' path='doc/member[@name="IDiaSourceFile.get_fileName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT get_fileName([NativeTypeName("BSTR *")] ushort** pRetVal)
@@ -53,6 +59,7 @@ public unsafe partial struct IDiaSourceFile : IDiaSourceFile.Interface
         return ((delegate* unmanaged<IDiaSourceFile*, ushort**, int>)(lpVtbl[4]))((IDiaSourceFile*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
+    /// <include file='IDiaSourceFile.xml' path='doc/member[@name="IDiaSourceFile.get_checksumType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT get_checksumType([NativeTypeName("DWORD *")] uint* pRetVal)
@@ -60,6 +67,7 @@ public unsafe partial struct IDiaSourceFile : IDiaSourceFile.Interface
         return ((delegate* unmanaged<IDiaSourceFile*, uint*, int>)(lpVtbl[5]))((IDiaSourceFile*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
+    /// <include file='IDiaSourceFile.xml' path='doc/member[@name="IDiaSourceFile.get_compilands"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT get_compilands(IDiaEnumSymbols** pRetVal)
@@ -67,6 +75,7 @@ public unsafe partial struct IDiaSourceFile : IDiaSourceFile.Interface
         return ((delegate* unmanaged<IDiaSourceFile*, IDiaEnumSymbols**, int>)(lpVtbl[6]))((IDiaSourceFile*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
+    /// <include file='IDiaSourceFile.xml' path='doc/member[@name="IDiaSourceFile.get_checksum"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT get_checksum([NativeTypeName("DWORD")] uint cbData, [NativeTypeName("DWORD *")] uint* pcbData, byte* pbData)

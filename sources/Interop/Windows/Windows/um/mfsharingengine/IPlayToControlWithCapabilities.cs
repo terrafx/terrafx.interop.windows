@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IPlayToControlWithCapabilities.xml' path='doc/member[@name="IPlayToControlWithCapabilities"]/*' />
 [Guid("AA9DD80F-C50A-4220-91C1-332287F82A34")]
 [NativeTypeName("struct IPlayToControlWithCapabilities : IPlayToControl")]
 [NativeInheritance("IPlayToControl")]
@@ -18,6 +19,7 @@ public unsafe partial struct IPlayToControlWithCapabilities : IPlayToControlWith
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IPlayToControlWithCapabilities : IPlayToControlWith
         return ((delegate* unmanaged<IPlayToControlWithCapabilities*, Guid*, void**, int>)(lpVtbl[0]))((IPlayToControlWithCapabilities*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IPlayToControlWithCapabilities : IPlayToControlWith
         return ((delegate* unmanaged<IPlayToControlWithCapabilities*, uint>)(lpVtbl[1]))((IPlayToControlWithCapabilities*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IPlayToControlWithCapabilities : IPlayToControlWith
         return ((delegate* unmanaged<IPlayToControlWithCapabilities*, uint>)(lpVtbl[2]))((IPlayToControlWithCapabilities*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IPlayToControl.Connect" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Connect(IMFSharingEngineClassFactory* pFactory)
@@ -48,6 +53,7 @@ public unsafe partial struct IPlayToControlWithCapabilities : IPlayToControlWith
         return ((delegate* unmanaged<IPlayToControlWithCapabilities*, IMFSharingEngineClassFactory*, int>)(lpVtbl[3]))((IPlayToControlWithCapabilities*)Unsafe.AsPointer(ref this), pFactory);
     }
 
+    /// <inheritdoc cref="IPlayToControl.Disconnect" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Disconnect()
@@ -55,6 +61,7 @@ public unsafe partial struct IPlayToControlWithCapabilities : IPlayToControlWith
         return ((delegate* unmanaged<IPlayToControlWithCapabilities*, int>)(lpVtbl[4]))((IPlayToControlWithCapabilities*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IPlayToControlWithCapabilities.xml' path='doc/member[@name="IPlayToControlWithCapabilities.GetCapabilities"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetCapabilities(PLAYTO_SOURCE_CREATEFLAGS* pCapabilities)

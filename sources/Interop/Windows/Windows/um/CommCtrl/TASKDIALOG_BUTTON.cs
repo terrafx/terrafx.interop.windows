@@ -7,11 +7,14 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TASKDIALOG_BUTTON.xml' path='doc/member[@name="TASKDIALOG_BUTTON"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public unsafe partial struct TASKDIALOG_BUTTON
 {
+    /// <include file='TASKDIALOG_BUTTON.xml' path='doc/member[@name="TASKDIALOG_BUTTON.nButtonID"]/*' />
     public int nButtonID;
 
+    /// <include file='TASKDIALOG_BUTTON.xml' path='doc/member[@name="TASKDIALOG_BUTTON.pszButtonText"]/*' />
     [NativeTypeName("PCWSTR")]
     public ushort* pszButtonText;
 }

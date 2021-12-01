@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SHREGENUM_FLAGS.xml' path='doc/member[@name="SHREGENUM_FLAGS"]/*' />
 public enum SHREGENUM_FLAGS
 {
+    /// <include file='SHREGENUM_FLAGS.xml' path='doc/member[@name="SHREGENUM_FLAGS.SHREGENUM_DEFAULT"]/*' />
     SHREGENUM_DEFAULT = 0x00000000,
+
+    /// <include file='SHREGENUM_FLAGS.xml' path='doc/member[@name="SHREGENUM_FLAGS.SHREGENUM_HKCU"]/*' />
     SHREGENUM_HKCU = 0x00000001,
+
+    /// <include file='SHREGENUM_FLAGS.xml' path='doc/member[@name="SHREGENUM_FLAGS.SHREGENUM_HKLM"]/*' />
     SHREGENUM_HKLM = 0x00000010,
+
+    /// <include file='SHREGENUM_FLAGS.xml' path='doc/member[@name="SHREGENUM_FLAGS.SHREGENUM_BOTH"]/*' />
     SHREGENUM_BOTH = 0x00000011,
 }

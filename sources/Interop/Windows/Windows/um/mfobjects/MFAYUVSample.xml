@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MFAYUVSample">
+    <summary>
+      <para>Describes a 4:4:4:4 Y'Cb'Cr' sample.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-structures">Media Foundation Structures</seealso>
+  </member>
+  <member name="MFAYUVSample.bCrValue">
+    <summary>
+      <para>Cr (chroma difference) value.</para>
+    </summary>
+  </member>
+  <member name="MFAYUVSample.bCbValue">
+    <summary>
+      <para>Cb (chroma difference) value.</para>
+    </summary>
+  </member>
+  <member name="MFAYUVSample.bYValue">
+    <summary>
+      <para>Y (luma) value.</para>
+    </summary>
+  </member>
+  <member name="MFAYUVSample.bSampleAlpha8">
+    <summary>
+      <para>Alpha value.</para>
+    </summary>
+  </member>
+</doc>

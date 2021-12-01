@@ -8,26 +8,35 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CRYPT_KEY_SIGN_MESSAGE_PARA.xml' path='doc/member[@name="CRYPT_KEY_SIGN_MESSAGE_PARA"]/*' />
 public unsafe partial struct CRYPT_KEY_SIGN_MESSAGE_PARA
 {
+    /// <include file='CRYPT_KEY_SIGN_MESSAGE_PARA.xml' path='doc/member[@name="CRYPT_KEY_SIGN_MESSAGE_PARA.cbSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbSize;
 
+    /// <include file='CRYPT_KEY_SIGN_MESSAGE_PARA.xml' path='doc/member[@name="CRYPT_KEY_SIGN_MESSAGE_PARA.dwMsgAndCertEncodingType"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwMsgAndCertEncodingType;
 
+    /// <include file='CRYPT_KEY_SIGN_MESSAGE_PARA.xml' path='doc/member[@name="CRYPT_KEY_SIGN_MESSAGE_PARA.Anonymous"]/*' />
     [NativeTypeName("_CRYPT_KEY_SIGN_MESSAGE_PARA::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/wincrypt.h:16157:5)")]
     public _Anonymous_e__Union Anonymous;
 
+    /// <include file='CRYPT_KEY_SIGN_MESSAGE_PARA.xml' path='doc/member[@name="CRYPT_KEY_SIGN_MESSAGE_PARA.dwKeySpec"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwKeySpec;
 
+    /// <include file='CRYPT_KEY_SIGN_MESSAGE_PARA.xml' path='doc/member[@name="CRYPT_KEY_SIGN_MESSAGE_PARA.HashAlgorithm"]/*' />
     public CRYPT_ALGORITHM_IDENTIFIER HashAlgorithm;
 
+    /// <include file='CRYPT_KEY_SIGN_MESSAGE_PARA.xml' path='doc/member[@name="CRYPT_KEY_SIGN_MESSAGE_PARA.pvHashAuxInfo"]/*' />
     public void* pvHashAuxInfo;
 
+    /// <include file='CRYPT_KEY_SIGN_MESSAGE_PARA.xml' path='doc/member[@name="CRYPT_KEY_SIGN_MESSAGE_PARA.PubKeyAlgorithm"]/*' />
     public CRYPT_ALGORITHM_IDENTIFIER PubKeyAlgorithm;
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.hCryptProv"]/*' />
     public ref HCRYPTPROV hCryptProv
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -37,6 +46,7 @@ public unsafe partial struct CRYPT_KEY_SIGN_MESSAGE_PARA
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.hNCryptKey"]/*' />
     public ref nuint hNCryptKey
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -46,12 +56,15 @@ public unsafe partial struct CRYPT_KEY_SIGN_MESSAGE_PARA
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public partial struct _Anonymous_e__Union
     {
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.hCryptProv"]/*' />
         [FieldOffset(0)]
         public HCRYPTPROV hCryptProv;
 
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.hNCryptKey"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("NCRYPT_KEY_HANDLE")]
         public nuint hNCryptKey;

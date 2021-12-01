@@ -7,10 +7,16 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SHELL_UI_COMPONENT.xml' path='doc/member[@name="SHELL_UI_COMPONENT"]/*' />
 [SupportedOSPlatform("windows8.1")]
 public enum SHELL_UI_COMPONENT
 {
+    /// <include file='SHELL_UI_COMPONENT.xml' path='doc/member[@name="SHELL_UI_COMPONENT.SHELL_UI_COMPONENT_TASKBARS"]/*' />
     SHELL_UI_COMPONENT_TASKBARS = 0,
+
+    /// <include file='SHELL_UI_COMPONENT.xml' path='doc/member[@name="SHELL_UI_COMPONENT.SHELL_UI_COMPONENT_NOTIFICATIONAREA"]/*' />
     SHELL_UI_COMPONENT_NOTIFICATIONAREA = 1,
+
+    /// <include file='SHELL_UI_COMPONENT.xml' path='doc/member[@name="SHELL_UI_COMPONENT.SHELL_UI_COMPONENT_DESKBAND"]/*' />
     SHELL_UI_COMPONENT_DESKBAND = 2,
 }

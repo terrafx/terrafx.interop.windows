@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SPC_STATEMENT_TYPE.xml' path='doc/member[@name="SPC_STATEMENT_TYPE"]/*' />
 public unsafe partial struct SPC_STATEMENT_TYPE
 {
+    /// <include file='SPC_STATEMENT_TYPE.xml' path='doc/member[@name="SPC_STATEMENT_TYPE.cKeyPurposeId"]/*' />
     [NativeTypeName("DWORD")]
     public uint cKeyPurposeId;
 
+    /// <include file='SPC_STATEMENT_TYPE.xml' path='doc/member[@name="SPC_STATEMENT_TYPE.rgpszKeyPurposeId"]/*' />
     [NativeTypeName("LPSTR *")]
     public sbyte** rgpszKeyPurposeId;
 }

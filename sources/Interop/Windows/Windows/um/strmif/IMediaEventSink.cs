@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMediaEventSink.xml' path='doc/member[@name="IMediaEventSink"]/*' />
 [Guid("56A868A2-0AD4-11CE-B03A-0020AF0BA770")]
 [NativeTypeName("struct IMediaEventSink : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMediaEventSink : IMediaEventSink.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMediaEventSink : IMediaEventSink.Interface
         return ((delegate* unmanaged<IMediaEventSink*, Guid*, void**, int>)(lpVtbl[0]))((IMediaEventSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMediaEventSink : IMediaEventSink.Interface
         return ((delegate* unmanaged<IMediaEventSink*, uint>)(lpVtbl[1]))((IMediaEventSink*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMediaEventSink : IMediaEventSink.Interface
         return ((delegate* unmanaged<IMediaEventSink*, uint>)(lpVtbl[2]))((IMediaEventSink*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMediaEventSink.xml' path='doc/member[@name="IMediaEventSink.Notify"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Notify([NativeTypeName("long")] int EventCode, [NativeTypeName("LONG_PTR")] nint EventParam1, [NativeTypeName("LONG_PTR")] nint EventParam2)

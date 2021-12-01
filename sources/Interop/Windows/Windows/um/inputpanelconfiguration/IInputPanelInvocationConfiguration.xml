@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IInputPanelInvocationConfiguration.RequireTouchInEditControl">
+    <summary>
+      <para>Requires an explicit user tap in an edit field before the touch keyboard invokes.</para>
+    </summary>
+    <returns>
+      <para>The <b>RequireTouchInEditControl</b> method always returns <b>S_OK</b>.</para>
+    </returns>
+    <remarks>
+      <para>When the <b>RequireTouchInEditControl</b> method is called, all future focus changes require an explicit user tap in an edit field before the touch keyboard invokes. You can call the <b>RequireTouchInEditControl</b> method multiple times, but there's no way to undo the setting.</para>
+      <para>This setting applies for any focus event that takes place to a window that is running in the process that called it. The <b>RequireTouchInEditControl</b> method doesn't affect owned windows in another process that have an ownership chain to the current process that called <b>RequireTouchInEditControl</b>.</para>
+      <para>The <b>RequireTouchInEditControl</b> method always returns <b>S_OK</b>. If this API is used, then the <b>IsUIBusy</b> property has no effect. The two interaction models are essentially mutually exclusive.</para>
+      <para>The following code shows how to call the <b>RequireTouchInEditControl</b> method.</para>
+      <code>#include &lt;inputpanelconfiguration.h&gt;
+#include &lt;inputpanelconfiguration_i.c&gt;
+
+IInputPanelInvocationConfiguration *pInputPanelInvocationConfiguration;
+CoCreateInstance(CLSID_InputPanelConfiguration, NULL, CLSCTX_INPROC_SERVER, IID_PPV_ARGS(&amp;amp;amp;amp;amp;amp;pInputPanelInvocationConfiguration));
+pInputPanelInvocationConfiguration-&gt;RequireTouchInEditControl();
+
+</code>
+      <para>
+        <b>Note</b>  Calling <see cref="Release" /> before the app finishes drawing UI can cause undefined behavior. If the touch keyboard isn't already running, calling <b>Release</b> could cause tiptsf.dll to be unloaded, because there are no more references to the dll. If this occurs, the state set by the <b>RequireTouchInEditControl</b> method is lost.</para>
+      <para>If you need to delay the invocation of the touch keyboard until a later time, like when animations or direct manipulation have completed, use  the <b>IsUIBusy</b> custom UI automation property. For more info, see <a href="https://docs.microsoft.com//windows/desktop/WinAuto/uiauto-regcustompropseventpatterns">Registering Custom Properties, Events, and Control Patterns</a>.</para>
+      <para>When you set <b>IsUIBusy</b> to <b>True</b>, the touch keyboard doesn't change visual state based on focus changes within the app. It's still able to change visual state based on overriding user action, like using a physical keyboard or manual dismissal.</para>
+      <para>When you set <b>IsUIBusy</b> to <b>False</b>, the touch keyboard resumes its default behavior and queries synchronously for the control that  has focus.</para>
+      <para>The following code shows how to register the <b>IsUIBusy</b> custom UI automation property.</para>
+      <code>/* 03391bea-6681-474b-955c-60f664397ac6 */
+DEFINE_GUID(
+    GUID_UIBusy,
+    0x03391bea, 0x6681, 0x474b, 0x95, 0x5c, 0x60, 0xf6, 0x64, 0x39, 0x7a, 0xc6);
+
+UIAutomationPropertyInfo customPropertyInfo =
+            {
+                GUID_UIBusy,
+                L"IsUIBusy",
+                UIAutomationType_Bool
+            };
+
+            CComPtr&lt;IUIAutomationRegistrar&gt; spRegistrar;
+            hr = spRegistrar.CoCreateInstance(
+                CLSID_CUIAutomationRegistrar,
+                nullptr,
+                CLSCTX_INPROC_SERVER);
+            if (SUCCEEDED(hr))
+            {
+                PATTERNID customPropertyId;
+                hr = spRegistrar-&gt;RegisterProperty(&amp;amp;amp;amp;amp;amp;customPropertyInfo, &amp;amp;amp;amp;amp;amp;customPropertyId);
+            }
+
+</code>
+    </remarks>
+    <seealso cref="IInputPanelInvocationConfiguration" />
+  </member>
+  <member name="IInputPanelInvocationConfiguration">
+    <summary>
+      <para>Enables Windows Store apps to opt out of the automatic invocation behavior.</para>
+    </summary>
+    <remarks>
+      <para>Clients can request that the touch keyboard and handwriting input panel check to see that a user tapped in the edit control with focus before invoking.</para>
+    </remarks>
+    <seealso cref="IInputPanelConfiguration" />
+    <seealso cref="IUnknown" />
+  </member>
+</doc>

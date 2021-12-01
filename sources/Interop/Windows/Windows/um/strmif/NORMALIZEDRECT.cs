@@ -5,13 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NORMALIZEDRECT.xml' path='doc/member[@name="NORMALIZEDRECT"]/*' />
 public partial struct NORMALIZEDRECT
 {
+    /// <include file='NORMALIZEDRECT.xml' path='doc/member[@name="NORMALIZEDRECT.left"]/*' />
     public float left;
 
+    /// <include file='NORMALIZEDRECT.xml' path='doc/member[@name="NORMALIZEDRECT.top"]/*' />
     public float top;
 
+    /// <include file='NORMALIZEDRECT.xml' path='doc/member[@name="NORMALIZEDRECT.right"]/*' />
     public float right;
 
+    /// <include file='NORMALIZEDRECT.xml' path='doc/member[@name="NORMALIZEDRECT.bottom"]/*' />
     public float bottom;
 }

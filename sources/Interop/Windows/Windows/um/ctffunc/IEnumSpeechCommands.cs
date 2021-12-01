@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IEnumSpeechCommands.xml' path='doc/member[@name="IEnumSpeechCommands"]/*' />
 [Guid("8C5DAC4F-083C-4B85-A4C9-71746048ADCA")]
 [NativeTypeName("struct IEnumSpeechCommands : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IEnumSpeechCommands : IEnumSpeechCommands.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IEnumSpeechCommands : IEnumSpeechCommands.Interface
         return ((delegate* unmanaged<IEnumSpeechCommands*, Guid*, void**, int>)(lpVtbl[0]))((IEnumSpeechCommands*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IEnumSpeechCommands : IEnumSpeechCommands.Interface
         return ((delegate* unmanaged<IEnumSpeechCommands*, uint>)(lpVtbl[1]))((IEnumSpeechCommands*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IEnumSpeechCommands : IEnumSpeechCommands.Interface
         return ((delegate* unmanaged<IEnumSpeechCommands*, uint>)(lpVtbl[2]))((IEnumSpeechCommands*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IEnumSpeechCommands.xml' path='doc/member[@name="IEnumSpeechCommands.Clone"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Clone(IEnumSpeechCommands** ppEnum)
@@ -46,6 +51,7 @@ public unsafe partial struct IEnumSpeechCommands : IEnumSpeechCommands.Interface
         return ((delegate* unmanaged<IEnumSpeechCommands*, IEnumSpeechCommands**, int>)(lpVtbl[3]))((IEnumSpeechCommands*)Unsafe.AsPointer(ref this), ppEnum);
     }
 
+    /// <include file='IEnumSpeechCommands.xml' path='doc/member[@name="IEnumSpeechCommands.Next"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Next([NativeTypeName("ULONG")] uint ulCount, [NativeTypeName("WCHAR **")] ushort** pSpCmds, [NativeTypeName("ULONG *")] uint* pcFetched)
@@ -53,6 +59,7 @@ public unsafe partial struct IEnumSpeechCommands : IEnumSpeechCommands.Interface
         return ((delegate* unmanaged<IEnumSpeechCommands*, uint, ushort**, uint*, int>)(lpVtbl[4]))((IEnumSpeechCommands*)Unsafe.AsPointer(ref this), ulCount, pSpCmds, pcFetched);
     }
 
+    /// <include file='IEnumSpeechCommands.xml' path='doc/member[@name="IEnumSpeechCommands.Reset"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT Reset()
@@ -60,6 +67,7 @@ public unsafe partial struct IEnumSpeechCommands : IEnumSpeechCommands.Interface
         return ((delegate* unmanaged<IEnumSpeechCommands*, int>)(lpVtbl[5]))((IEnumSpeechCommands*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IEnumSpeechCommands.xml' path='doc/member[@name="IEnumSpeechCommands.Skip"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Skip([NativeTypeName("ULONG")] uint ulCount)

@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DISPLAYCONFIG_TARGET_MODE.xml' path='doc/member[@name="DISPLAYCONFIG_TARGET_MODE"]/*' />
 public partial struct DISPLAYCONFIG_TARGET_MODE
 {
+    /// <include file='DISPLAYCONFIG_TARGET_MODE.xml' path='doc/member[@name="DISPLAYCONFIG_TARGET_MODE.targetVideoSignalInfo"]/*' />
     public DISPLAYCONFIG_VIDEO_SIGNAL_INFO targetVideoSignalInfo;
 }

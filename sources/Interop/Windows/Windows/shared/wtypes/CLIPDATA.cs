@@ -5,13 +5,17 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CLIPDATA.xml' path='doc/member[@name="CLIPDATA"]/*' />
 public unsafe partial struct CLIPDATA
 {
+    /// <include file='CLIPDATA.xml' path='doc/member[@name="CLIPDATA.cbSize"]/*' />
     [NativeTypeName("ULONG")]
     public uint cbSize;
 
+    /// <include file='CLIPDATA.xml' path='doc/member[@name="CLIPDATA.ulClipFmt"]/*' />
     [NativeTypeName("LONG")]
     public int ulClipFmt;
 
+    /// <include file='CLIPDATA.xml' path='doc/member[@name="CLIPDATA.pClipData"]/*' />
     public byte* pClipData;
 }

@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='eAVDecAudioDualMonoReproMode.xml' path='doc/member[@name="eAVDecAudioDualMonoReproMode"]/*' />
 public enum eAVDecAudioDualMonoReproMode
 {
+    /// <include file='eAVDecAudioDualMonoReproMode.xml' path='doc/member[@name="eAVDecAudioDualMonoReproMode.eAVDecAudioDualMonoReproMode_STEREO"]/*' />
     eAVDecAudioDualMonoReproMode_STEREO = 0,
+
+    /// <include file='eAVDecAudioDualMonoReproMode.xml' path='doc/member[@name="eAVDecAudioDualMonoReproMode.eAVDecAudioDualMonoReproMode_LEFT_MONO"]/*' />
     eAVDecAudioDualMonoReproMode_LEFT_MONO = 1,
+
+    /// <include file='eAVDecAudioDualMonoReproMode.xml' path='doc/member[@name="eAVDecAudioDualMonoReproMode.eAVDecAudioDualMonoReproMode_RIGHT_MONO"]/*' />
     eAVDecAudioDualMonoReproMode_RIGHT_MONO = 2,
+
+    /// <include file='eAVDecAudioDualMonoReproMode.xml' path='doc/member[@name="eAVDecAudioDualMonoReproMode.eAVDecAudioDualMonoReproMode_MIX_MONO"]/*' />
     eAVDecAudioDualMonoReproMode_MIX_MONO = 3,
 }

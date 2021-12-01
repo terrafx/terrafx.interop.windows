@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DSSSEED.xml' path='doc/member[@name="DSSSEED"]/*' />
 public unsafe partial struct DSSSEED
 {
+    /// <include file='DSSSEED.xml' path='doc/member[@name="DSSSEED.counter"]/*' />
     [NativeTypeName("DWORD")]
     public uint counter;
 
+    /// <include file='DSSSEED.xml' path='doc/member[@name="DSSSEED.seed"]/*' />
     [NativeTypeName("BYTE [20]")]
     public fixed byte seed[20];
 }

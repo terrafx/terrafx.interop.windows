@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVEncCommonFormatConstraint.xml' path='doc/member[@name="CODECAPI_AVEncCommonFormatConstraint"]/*' />
 [Guid("57CBB9B8-116F-4951-B40C-C2A035ED8F17")]
 public partial struct CODECAPI_AVEncCommonFormatConstraint
 {

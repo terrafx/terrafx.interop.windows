@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SYNCMGR_PROGRESS_STATUS">
+    <summary>
+      <para>Specifies the current progress status of a synchronization process. Used by <see cref="ISyncMgrSyncCallback.ReportProgress" />.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGR_PROGRESS_STATUS.SYNCMGR_PS_UPDATING">
+    <summary>
+      <para>The progress status is currently being updated by the handler.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGR_PROGRESS_STATUS.SYNCMGR_PS_UPDATING_INDETERMINATE">
+    <summary>
+      <para>Ignore step parameters. The progress bar cycles from left to right on a timer internal to the sync folder. This is known as marquee mode.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGR_PROGRESS_STATUS.SYNCMGR_PS_SUCCEEDED">
+    <summary>
+      <para>The synchronization is complete.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGR_PROGRESS_STATUS.SYNCMGR_PS_FAILED">
+    <summary>
+      <para>Indicates something went wrong during the synchronization.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGR_PROGRESS_STATUS.SYNCMGR_PS_CANCELED">
+    <summary>
+      <para>The user canceled the synchronization before it completed. Upon receipt of this value, Sync Center updates the UI and enables the option to restart the sync for that item.</para>
+    </summary>
+  </member>
+  <member name="SYNCMGR_PROGRESS_STATUS.SYNCMGR_PS_DISCONNECTED">
+    <summary>
+      <para>The device being synchronized was disconnected before the sync completed..</para>
+    </summary>
+  </member>
+  <member name="SYNCMGR_PROGRESS_STATUS.SYNCMGR_PS_MAX">
+    <summary>
+      <para>Used only to declare the largest valid value in this enumeration. Do not use with <see cref="ISyncMgrSyncCallback.ReportProgress" />.</para>
+    </summary>
+  </member>
+</doc>

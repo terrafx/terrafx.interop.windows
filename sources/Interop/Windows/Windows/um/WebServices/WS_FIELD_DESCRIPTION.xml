@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_FIELD_DESCRIPTION">
+    <summary>
+      <para>Represents serialization information about a field within a structure.</para>
+    </summary>
+  </member>
+  <member name="WS_FIELD_DESCRIPTION.mapping">
+    <summary>
+      <para>Identifies how the field maps to the XML.  See <see cref="WS_FIELD_MAPPING" /> for
+the ways that the field can be exposed in the XML content.</para>
+    </summary>
+  </member>
+  <member name="WS_FIELD_DESCRIPTION.localName">
+    <summary>
+      <para>The XML local name to use for the field.</para>
+      <para>This field is required, except in the following case, where it may be <b>NULL</b>.
+If the mapping field is <see cref="WS_REPEATING_ELEMENT_FIELD_MAPPING" />, then
+this identifies the local name of the "wrapper" element that is the parent element
+of the array item elements.  Setting this field (and the ns field) to <b>NULL</b> will omit the wrapper element.  The ns and localName fields must be either both
+specified or both <b>NULL</b>.</para>
+    </summary>
+  </member>
+  <member name="WS_FIELD_DESCRIPTION.ns">
+    <summary>
+      <para>The XML namespace to use for the field.</para>
+      <para>This field is required, except in the following case, where it may be <b>NULL</b>.
+If the mapping field is <see cref="WS_REPEATING_ELEMENT_FIELD_MAPPING" />, then
+this identifies the namespace of the "wrapper" element that is the parent element
+of the array item elements.  Setting this field (and the localName field) to <b>NULL</b> will omit the wrapper element.  The ns and localName fields must be either both
+specified or both <b>NULL</b>.</para>
+    </summary>
+  </member>
+  <member name="WS_FIELD_DESCRIPTION.type">
+    <summary>
+      <para>The type of the field.  See <see cref="WS_TYPE" /> for a list of supported types.</para>
+    </summary>
+  </member>
+  <member name="WS_FIELD_DESCRIPTION.typeDescription">
+    <summary>
+      <para>Additional information about the type.  Each type has a different description
+structure.  This may be <b>NULL</b>, depending on the <see cref="WS_TYPE" />.</para>
+    </summary>
+  </member>
+  <member name="WS_FIELD_DESCRIPTION.offset">
+    <summary>
+      <para>The offset of the field within the containing structure.</para>
+    </summary>
+  </member>
+  <member name="WS_FIELD_DESCRIPTION.options">
+    <summary>
+      <para>Additional flags for the field.  See <see cref="WS_FIELD_OPTIONS" /> for
+a list of flags.  If no flags are needed, this may be 0.</para>
+    </summary>
+  </member>
+  <member name="WS_FIELD_DESCRIPTION.defaultValue">
+    <summary>
+      <para>Points to a default value for the field.  This is used in the following instances:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <see cref="WS_FIELD_OPTIONAL" /> was specified, and the XML did not contain
+the value.
+</description>
+        </item>
+        <item>
+          <description>
+            <see cref="WS_NO_FIELD_MAPPING" /> was specified.
+</description>
+        </item>
+      </list>
+      <para>If defaultValue is <b>NULL</b>, then it is the same as having a default value
+of all zero's.</para>
+    </summary>
+  </member>
+  <member name="WS_FIELD_DESCRIPTION.countOffset">
+    <summary>
+      <para>The structure offset of the ULONG field that represents the number of items in the array.</para>
+      <para>This field is used when using <see cref="WS_REPEATING_ELEMENT_FIELD_MAPPING" /> or array types
+(<see cref="WS_CHAR_ARRAY_TYPE" />, <b>WS_UTF8_ARRAY_TYPE</b>, <b>WS_BYTE_ARRAY_TYPE</b>).
+In other cases, it does not need to be specified (it can be 0).</para>
+    </summary>
+  </member>
+  <member name="WS_FIELD_DESCRIPTION.itemLocalName">
+    <summary>
+      <para>The XML local name to use for the repeating elements when
+using <see cref="WS_REPEATING_ELEMENT_FIELD_MAPPING" />.</para>
+      <para>In other cases this field does not need to be specified (it can be <b>NULL</b>).</para>
+    </summary>
+  </member>
+  <member name="WS_FIELD_DESCRIPTION.itemNs">
+    <summary>
+      <para>The XML namespace to use for the repeating elements when
+using <see cref="WS_REPEATING_ELEMENT_FIELD_MAPPING" />.</para>
+      <para>In other cases this field does not need to be specified (it can be <b>NULL</b>).</para>
+    </summary>
+  </member>
+  <member name="WS_FIELD_DESCRIPTION.itemRange">
+    <summary>
+      <para>The minimum and maximum number of repeating elements
+that may appear when using <see cref="WS_REPEATING_ELEMENT_FIELD_MAPPING" />,
+<b>WS_REPEATING_ELEMENT_CHOICE_FIELD_MAPPING</b>,
+or <b>WS_REPEATING_ANY_ELEMENT_FIELD_MAPPING</b>.
+If not specified (<b>NULL</b>), the minimum is 0, and the maximum is MAX ULONG.</para>
+      <para>In other cases this field does not need to be specified (it can be <b>NULL</b>).</para>
+    </summary>
+  </member>
+</doc>

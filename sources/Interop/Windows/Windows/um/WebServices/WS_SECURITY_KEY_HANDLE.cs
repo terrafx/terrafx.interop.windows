@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_SECURITY_KEY_HANDLE.xml' path='doc/member[@name="WS_SECURITY_KEY_HANDLE"]/*' />
 public partial struct WS_SECURITY_KEY_HANDLE
 {
+    /// <include file='WS_SECURITY_KEY_HANDLE.xml' path='doc/member[@name="WS_SECURITY_KEY_HANDLE.keyHandleType"]/*' />
     public WS_SECURITY_KEY_HANDLE_TYPE keyHandleType;
 }

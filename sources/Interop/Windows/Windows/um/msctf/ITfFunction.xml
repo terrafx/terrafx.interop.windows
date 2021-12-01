@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ITfFunction.GetDisplayName">
+    <summary>
+      <para>Obtains the function display name.</para>
+    </summary>
+    <param name="pbstrName">
+      <para>Pointer to a BSTR value that receives the display name. This value must be allocated using <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oleauto/nf-oleauto-sysallocstring">SysAllocString</a>. The caller must free this memory using <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oleauto/nf-oleauto-sysfreestring">SysFreeString</a> when it is no longer required.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>A memory allocation failure occurred.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <i>pbstrName</i> is invalid.
+</description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="ITfFunction" />
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oleauto/nf-oleauto-sysallocstring">SysAllocString</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oleauto/nf-oleauto-sysfreestring">SysFreeString</seealso>
+  </member>
+  <member name="ITfFunction">
+    <summary>
+      <para>The <b>ITfFunction</b> interface is the base interface for the individual function interfaces. This interface is implemented by the provider of the function object and used by any component to obtain the display name of the function object. Instances of this interface are not obtained directly. This interface is always part of a derived interface, such as <see cref="ITfFnShowHelp" />.</para>
+    </summary>
+    <seealso cref="ITfFnShowHelp " />
+    <seealso cref="IUnknown" />
+  </member>
+</doc>

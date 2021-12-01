@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAMovieSetup.xml' path='doc/member[@name="IAMovieSetup"]/*' />
 [Guid("A3D8CEC0-7E5A-11CF-BBC5-00805F6CEF20")]
 [NativeTypeName("struct IAMovieSetup : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IAMovieSetup : IAMovieSetup.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IAMovieSetup : IAMovieSetup.Interface
         return ((delegate* unmanaged<IAMovieSetup*, Guid*, void**, int>)(lpVtbl[0]))((IAMovieSetup*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IAMovieSetup : IAMovieSetup.Interface
         return ((delegate* unmanaged<IAMovieSetup*, uint>)(lpVtbl[1]))((IAMovieSetup*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IAMovieSetup : IAMovieSetup.Interface
         return ((delegate* unmanaged<IAMovieSetup*, uint>)(lpVtbl[2]))((IAMovieSetup*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAMovieSetup.xml' path='doc/member[@name="IAMovieSetup.Register"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Register()
@@ -46,6 +51,7 @@ public unsafe partial struct IAMovieSetup : IAMovieSetup.Interface
         return ((delegate* unmanaged<IAMovieSetup*, int>)(lpVtbl[3]))((IAMovieSetup*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAMovieSetup.xml' path='doc/member[@name="IAMovieSetup.Unregister"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Unregister()

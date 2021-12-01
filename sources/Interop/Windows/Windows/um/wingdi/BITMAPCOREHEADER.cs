@@ -5,20 +5,26 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='BITMAPCOREHEADER.xml' path='doc/member[@name="BITMAPCOREHEADER"]/*' />
 public partial struct BITMAPCOREHEADER
 {
+    /// <include file='BITMAPCOREHEADER.xml' path='doc/member[@name="BITMAPCOREHEADER.bcSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint bcSize;
 
+    /// <include file='BITMAPCOREHEADER.xml' path='doc/member[@name="BITMAPCOREHEADER.bcWidth"]/*' />
     [NativeTypeName("WORD")]
     public ushort bcWidth;
 
+    /// <include file='BITMAPCOREHEADER.xml' path='doc/member[@name="BITMAPCOREHEADER.bcHeight"]/*' />
     [NativeTypeName("WORD")]
     public ushort bcHeight;
 
+    /// <include file='BITMAPCOREHEADER.xml' path='doc/member[@name="BITMAPCOREHEADER.bcPlanes"]/*' />
     [NativeTypeName("WORD")]
     public ushort bcPlanes;
 
+    /// <include file='BITMAPCOREHEADER.xml' path='doc/member[@name="BITMAPCOREHEADER.bcBitCount"]/*' />
     [NativeTypeName("WORD")]
     public ushort bcBitCount;
 }

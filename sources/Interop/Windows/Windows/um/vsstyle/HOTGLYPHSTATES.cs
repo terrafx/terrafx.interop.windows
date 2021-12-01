@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HOTGLYPHSTATES.xml' path='doc/member[@name="HOTGLYPHSTATES"]/*' />
 public enum HOTGLYPHSTATES
 {
+    /// <include file='HOTGLYPHSTATES.xml' path='doc/member[@name="HOTGLYPHSTATES.HGLPS_CLOSED"]/*' />
     HGLPS_CLOSED = 1,
+
+    /// <include file='HOTGLYPHSTATES.xml' path='doc/member[@name="HOTGLYPHSTATES.HGLPS_OPENED"]/*' />
     HGLPS_OPENED = 2,
 }

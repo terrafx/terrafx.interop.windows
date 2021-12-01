@@ -7,10 +7,13 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='APPX_PACKAGE_SETTINGS.xml' path='doc/member[@name="APPX_PACKAGE_SETTINGS"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public unsafe partial struct APPX_PACKAGE_SETTINGS
 {
+    /// <include file='APPX_PACKAGE_SETTINGS.xml' path='doc/member[@name="APPX_PACKAGE_SETTINGS.forceZip32"]/*' />
     public BOOL forceZip32;
 
+    /// <include file='APPX_PACKAGE_SETTINGS.xml' path='doc/member[@name="APPX_PACKAGE_SETTINGS.hashMethod"]/*' />
     public IUri* hashMethod;
 }

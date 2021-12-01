@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMAPI_READ_TRACK_ADDRESS_TYPE.xml' path='doc/member[@name="IMAPI_READ_TRACK_ADDRESS_TYPE"]/*' />
 public enum IMAPI_READ_TRACK_ADDRESS_TYPE
 {
+    /// <include file='IMAPI_READ_TRACK_ADDRESS_TYPE.xml' path='doc/member[@name="IMAPI_READ_TRACK_ADDRESS_TYPE.IMAPI_READ_TRACK_ADDRESS_TYPE_LBA"]/*' />
     IMAPI_READ_TRACK_ADDRESS_TYPE_LBA = 0,
+
+    /// <include file='IMAPI_READ_TRACK_ADDRESS_TYPE.xml' path='doc/member[@name="IMAPI_READ_TRACK_ADDRESS_TYPE.IMAPI_READ_TRACK_ADDRESS_TYPE_TRACK"]/*' />
     IMAPI_READ_TRACK_ADDRESS_TYPE_TRACK = 1,
+
+    /// <include file='IMAPI_READ_TRACK_ADDRESS_TYPE.xml' path='doc/member[@name="IMAPI_READ_TRACK_ADDRESS_TYPE.IMAPI_READ_TRACK_ADDRESS_TYPE_SESSION"]/*' />
     IMAPI_READ_TRACK_ADDRESS_TYPE_SESSION = 2,
 }

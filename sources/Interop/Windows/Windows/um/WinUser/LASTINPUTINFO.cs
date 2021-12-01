@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='LASTINPUTINFO.xml' path='doc/member[@name="LASTINPUTINFO"]/*' />
 public partial struct LASTINPUTINFO
 {
+    /// <include file='LASTINPUTINFO.xml' path='doc/member[@name="LASTINPUTINFO.cbSize"]/*' />
     public uint cbSize;
 
+    /// <include file='LASTINPUTINFO.xml' path='doc/member[@name="LASTINPUTINFO.dwTime"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwTime;
 }

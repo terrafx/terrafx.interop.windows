@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TBINFO.xml' path='doc/member[@name="TBINFO"]/*' />
 public partial struct TBINFO
 {
+    /// <include file='TBINFO.xml' path='doc/member[@name="TBINFO.cbuttons"]/*' />
     public uint cbuttons;
 
+    /// <include file='TBINFO.xml' path='doc/member[@name="TBINFO.uFlags"]/*' />
     public uint uFlags;
 }

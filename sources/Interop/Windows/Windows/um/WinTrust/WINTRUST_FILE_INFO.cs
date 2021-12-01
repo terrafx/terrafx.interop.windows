@@ -7,15 +7,20 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WINTRUST_FILE_INFO.xml' path='doc/member[@name="WINTRUST_FILE_INFO"]/*' />
 public unsafe partial struct WINTRUST_FILE_INFO
 {
+    /// <include file='WINTRUST_FILE_INFO.xml' path='doc/member[@name="WINTRUST_FILE_INFO.cbStruct"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbStruct;
 
+    /// <include file='WINTRUST_FILE_INFO.xml' path='doc/member[@name="WINTRUST_FILE_INFO.pcwszFilePath"]/*' />
     [NativeTypeName("LPCWSTR")]
     public ushort* pcwszFilePath;
 
+    /// <include file='WINTRUST_FILE_INFO.xml' path='doc/member[@name="WINTRUST_FILE_INFO.hFile"]/*' />
     public HANDLE hFile;
 
+    /// <include file='WINTRUST_FILE_INFO.xml' path='doc/member[@name="WINTRUST_FILE_INFO.pgKnownSubject"]/*' />
     public Guid* pgKnownSubject;
 }

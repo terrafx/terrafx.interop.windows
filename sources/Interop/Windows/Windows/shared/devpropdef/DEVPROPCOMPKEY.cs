@@ -5,12 +5,16 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DEVPROPCOMPKEY.xml' path='doc/member[@name="DEVPROPCOMPKEY"]/*' />
 public unsafe partial struct DEVPROPCOMPKEY
 {
+    /// <include file='DEVPROPCOMPKEY.xml' path='doc/member[@name="DEVPROPCOMPKEY.Key"]/*' />
     public DEVPROPKEY Key;
 
+    /// <include file='DEVPROPCOMPKEY.xml' path='doc/member[@name="DEVPROPCOMPKEY.Store"]/*' />
     public DEVPROPSTORE Store;
 
+    /// <include file='DEVPROPCOMPKEY.xml' path='doc/member[@name="DEVPROPCOMPKEY.LocaleName"]/*' />
     [NativeTypeName("PCWSTR")]
     public ushort* LocaleName;
 }

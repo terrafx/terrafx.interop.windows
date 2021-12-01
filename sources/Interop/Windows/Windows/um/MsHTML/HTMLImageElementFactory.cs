@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HTMLImageElementFactory.xml' path='doc/member[@name="HTMLImageElementFactory"]/*' />
 [Guid("3050F38F-98B5-11CF-BB82-00AA00BDCE0B")]
 public partial struct HTMLImageElementFactory
 {

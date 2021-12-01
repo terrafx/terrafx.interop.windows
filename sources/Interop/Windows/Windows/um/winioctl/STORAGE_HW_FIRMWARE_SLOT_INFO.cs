@@ -7,18 +7,23 @@ using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STORAGE_HW_FIRMWARE_SLOT_INFO.xml' path='doc/member[@name="STORAGE_HW_FIRMWARE_SLOT_INFO"]/*' />
 public unsafe partial struct STORAGE_HW_FIRMWARE_SLOT_INFO
 {
+    /// <include file='STORAGE_HW_FIRMWARE_SLOT_INFO.xml' path='doc/member[@name="STORAGE_HW_FIRMWARE_SLOT_INFO.Version"]/*' />
     [NativeTypeName("DWORD")]
     public uint Version;
 
+    /// <include file='STORAGE_HW_FIRMWARE_SLOT_INFO.xml' path='doc/member[@name="STORAGE_HW_FIRMWARE_SLOT_INFO.Size"]/*' />
     [NativeTypeName("DWORD")]
     public uint Size;
 
+    /// <include file='STORAGE_HW_FIRMWARE_SLOT_INFO.xml' path='doc/member[@name="STORAGE_HW_FIRMWARE_SLOT_INFO.SlotNumber"]/*' />
     public byte SlotNumber;
 
     public byte _bitfield;
 
+    /// <include file='STORAGE_HW_FIRMWARE_SLOT_INFO.xml' path='doc/member[@name="STORAGE_HW_FIRMWARE_SLOT_INFO.ReadOnly"]/*' />
     [NativeTypeName("byte : 1")]
     public byte ReadOnly
     {
@@ -35,6 +40,7 @@ public unsafe partial struct STORAGE_HW_FIRMWARE_SLOT_INFO
         }
     }
 
+    /// <include file='STORAGE_HW_FIRMWARE_SLOT_INFO.xml' path='doc/member[@name="STORAGE_HW_FIRMWARE_SLOT_INFO.Reserved0"]/*' />
     [NativeTypeName("byte : 7")]
     public byte Reserved0
     {
@@ -51,9 +57,11 @@ public unsafe partial struct STORAGE_HW_FIRMWARE_SLOT_INFO
         }
     }
 
+    /// <include file='STORAGE_HW_FIRMWARE_SLOT_INFO.xml' path='doc/member[@name="STORAGE_HW_FIRMWARE_SLOT_INFO.Reserved1"]/*' />
     [NativeTypeName("BYTE [6]")]
     public fixed byte Reserved1[6];
 
+    /// <include file='STORAGE_HW_FIRMWARE_SLOT_INFO.xml' path='doc/member[@name="STORAGE_HW_FIRMWARE_SLOT_INFO.Revision"]/*' />
     [NativeTypeName("BYTE [16]")]
     public fixed byte Revision[16];
 }

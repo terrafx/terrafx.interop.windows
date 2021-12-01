@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ITfSystemLangBarItem.SetIcon">
+    <summary>
+      <para>Modifies the icon displayed for the system language bar menu.</para>
+    </summary>
+    <param name="hIcon">
+      <para>Contains the handle to the new icon.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_NOTIMPL</b>
+            </para>
+          </description>
+          <description>
+            <para>The system language bar menu does not allow its icon to be modified.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>In response to this method, the system language bar menu should call <see cref="ITfLangBarItemSink.OnUpdate" /> with TF_LBI_ICON to force the language bar to obtain the new icon.</para>
+    </remarks>
+  </member>
+  <member name="ITfSystemLangBarItem.SetTooltipString">
+    <summary>
+      <para>Modifies the tooltip text displayed for the system language bar menu.</para>
+    </summary>
+    <param name="pchToolTip">
+      <para>A string that appears as a tooltip.</para>
+    </param>
+    <param name="cch">
+      <para>Size, in characters, of the string.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_NOTIMPL</b>
+            </para>
+          </description>
+          <description>
+            <para>The tooltip string for the system language bar menu cannot be modified.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>In response to this method, the system language bar menu should call <see cref="ITfLangBarItemSink.OnUpdate" /> with TF_LBI_TOOLTIP to force the language bar to obtain the new tooltip text.</para>
+    </remarks>
+  </member>
+  <member name="ITfSystemLangBarItem">
+    <summary>
+      <para>The <b>ITfSystemLangBarItem</b> interface is implemented by a system language bar menu and is used by a system language bar extension to modify the icon and/or tooltip string displayed for the menu. The extension can obtain an instance of this interface by by calling QueryInterface on the <see cref="ITfLangBarItem" /> object with IID_ITfSystemLangBarItem.</para>
+    </summary>
+    <remarks>
+      <para>A system language bar menu is an object on the language bar that supports menu items added to it by third-partyextensions. The system item must support the <see cref="ITfSource" /> interface and support the IID_ITfSystemLangBarItemSink identifier in its <see cref="ITfSource.AdviseSink" /> implementation. The system item should also implement the <b>ITfSystemLangBarItem</b> interface. The system item uses the <see cref="ITfSystemLangBarItemSink" /> interface to enable the extension to add items.</para>
+    </remarks>
+    <seealso cref="ITfSource" />
+    <seealso cref="ITfSource.AdviseSink" />
+    <seealso cref="ITfSystemLangBarItemSink" />
+    <seealso cref="IUnknown" />
+  </member>
+</doc>

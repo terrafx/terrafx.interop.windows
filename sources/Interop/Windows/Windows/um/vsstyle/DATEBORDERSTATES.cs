@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DATEBORDERSTATES.xml' path='doc/member[@name="DATEBORDERSTATES"]/*' />
 public enum DATEBORDERSTATES
 {
+    /// <include file='DATEBORDERSTATES.xml' path='doc/member[@name="DATEBORDERSTATES.DPDB_NORMAL"]/*' />
     DPDB_NORMAL = 1,
+
+    /// <include file='DATEBORDERSTATES.xml' path='doc/member[@name="DATEBORDERSTATES.DPDB_HOT"]/*' />
     DPDB_HOT = 2,
+
+    /// <include file='DATEBORDERSTATES.xml' path='doc/member[@name="DATEBORDERSTATES.DPDB_FOCUSED"]/*' />
     DPDB_FOCUSED = 3,
+
+    /// <include file='DATEBORDERSTATES.xml' path='doc/member[@name="DATEBORDERSTATES.DPDB_DISABLED"]/*' />
     DPDB_DISABLED = 4,
 }

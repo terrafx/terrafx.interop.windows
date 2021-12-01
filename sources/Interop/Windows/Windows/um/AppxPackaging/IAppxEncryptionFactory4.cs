@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAppxEncryptionFactory4.xml' path='doc/member[@name="IAppxEncryptionFactory4"]/*' />
 [Guid("A879611F-12FD-41FE-85D5-06AE779BBAF5")]
 [NativeTypeName("struct IAppxEncryptionFactory4 : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IAppxEncryptionFactory4 : IAppxEncryptionFactory4.I
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IAppxEncryptionFactory4 : IAppxEncryptionFactory4.I
         return ((delegate* unmanaged<IAppxEncryptionFactory4*, Guid*, void**, int>)(lpVtbl[0]))((IAppxEncryptionFactory4*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IAppxEncryptionFactory4 : IAppxEncryptionFactory4.I
         return ((delegate* unmanaged<IAppxEncryptionFactory4*, uint>)(lpVtbl[1]))((IAppxEncryptionFactory4*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IAppxEncryptionFactory4 : IAppxEncryptionFactory4.I
         return ((delegate* unmanaged<IAppxEncryptionFactory4*, uint>)(lpVtbl[2]))((IAppxEncryptionFactory4*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAppxEncryptionFactory4.xml' path='doc/member[@name="IAppxEncryptionFactory4.EncryptPackage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT EncryptPackage(IStream* inputStream, IStream* outputStream, [NativeTypeName("const APPX_ENCRYPTED_PACKAGE_SETTINGS2 *")] APPX_ENCRYPTED_PACKAGE_SETTINGS2* settings, [NativeTypeName("const APPX_KEY_INFO *")] APPX_KEY_INFO* keyInfo, [NativeTypeName("const APPX_ENCRYPTED_EXEMPTIONS *")] APPX_ENCRYPTED_EXEMPTIONS* exemptedFiles, [NativeTypeName("UINT64")] ulong memoryLimit)

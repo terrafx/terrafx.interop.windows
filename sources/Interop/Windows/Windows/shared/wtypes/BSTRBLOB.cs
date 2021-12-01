@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='BSTRBLOB.xml' path='doc/member[@name="BSTRBLOB"]/*' />
 public unsafe partial struct BSTRBLOB
 {
+    /// <include file='BSTRBLOB.xml' path='doc/member[@name="BSTRBLOB.cbSize"]/*' />
     [NativeTypeName("ULONG")]
     public uint cbSize;
 
+    /// <include file='BSTRBLOB.xml' path='doc/member[@name="BSTRBLOB.pData"]/*' />
     public byte* pData;
 }

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFMediaSource.xml' path='doc/member[@name="IMFMediaSource"]/*' />
 [Guid("279A808D-AEC7-40C8-9C6B-A6B492C78A66")]
 [NativeTypeName("struct IMFMediaSource : IMFMediaEventGenerator")]
 [NativeInheritance("IMFMediaEventGenerator")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMFMediaSource : IMFMediaSource.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMFMediaSource : IMFMediaSource.Interface
         return ((delegate* unmanaged<IMFMediaSource*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaSource*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMFMediaSource : IMFMediaSource.Interface
         return ((delegate* unmanaged<IMFMediaSource*, uint>)(lpVtbl[1]))((IMFMediaSource*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMFMediaSource : IMFMediaSource.Interface
         return ((delegate* unmanaged<IMFMediaSource*, uint>)(lpVtbl[2]))((IMFMediaSource*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IMFMediaEventGenerator.GetEvent" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetEvent([NativeTypeName("DWORD")] uint dwFlags, IMFMediaEvent** ppEvent)
@@ -46,6 +51,7 @@ public unsafe partial struct IMFMediaSource : IMFMediaSource.Interface
         return ((delegate* unmanaged<IMFMediaSource*, uint, IMFMediaEvent**, int>)(lpVtbl[3]))((IMFMediaSource*)Unsafe.AsPointer(ref this), dwFlags, ppEvent);
     }
 
+    /// <inheritdoc cref="IMFMediaEventGenerator.BeginGetEvent" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT BeginGetEvent(IMFAsyncCallback* pCallback, IUnknown* punkState)
@@ -53,6 +59,7 @@ public unsafe partial struct IMFMediaSource : IMFMediaSource.Interface
         return ((delegate* unmanaged<IMFMediaSource*, IMFAsyncCallback*, IUnknown*, int>)(lpVtbl[4]))((IMFMediaSource*)Unsafe.AsPointer(ref this), pCallback, punkState);
     }
 
+    /// <inheritdoc cref="IMFMediaEventGenerator.EndGetEvent" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT EndGetEvent(IMFAsyncResult* pResult, IMFMediaEvent** ppEvent)
@@ -60,6 +67,7 @@ public unsafe partial struct IMFMediaSource : IMFMediaSource.Interface
         return ((delegate* unmanaged<IMFMediaSource*, IMFAsyncResult*, IMFMediaEvent**, int>)(lpVtbl[5]))((IMFMediaSource*)Unsafe.AsPointer(ref this), pResult, ppEvent);
     }
 
+    /// <inheritdoc cref="IMFMediaEventGenerator.QueueEvent" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT QueueEvent([NativeTypeName("MediaEventType")] uint met, [NativeTypeName("const GUID &")] Guid* guidExtendedType, HRESULT hrStatus, [NativeTypeName("const PROPVARIANT *")] PROPVARIANT* pvValue)
@@ -67,6 +75,7 @@ public unsafe partial struct IMFMediaSource : IMFMediaSource.Interface
         return ((delegate* unmanaged<IMFMediaSource*, uint, Guid*, HRESULT, PROPVARIANT*, int>)(lpVtbl[6]))((IMFMediaSource*)Unsafe.AsPointer(ref this), met, guidExtendedType, hrStatus, pvValue);
     }
 
+    /// <include file='IMFMediaSource.xml' path='doc/member[@name="IMFMediaSource.GetCharacteristics"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetCharacteristics([NativeTypeName("DWORD *")] uint* pdwCharacteristics)
@@ -74,6 +83,7 @@ public unsafe partial struct IMFMediaSource : IMFMediaSource.Interface
         return ((delegate* unmanaged<IMFMediaSource*, uint*, int>)(lpVtbl[7]))((IMFMediaSource*)Unsafe.AsPointer(ref this), pdwCharacteristics);
     }
 
+    /// <include file='IMFMediaSource.xml' path='doc/member[@name="IMFMediaSource.CreatePresentationDescriptor"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT CreatePresentationDescriptor(IMFPresentationDescriptor** ppPresentationDescriptor)
@@ -81,6 +91,7 @@ public unsafe partial struct IMFMediaSource : IMFMediaSource.Interface
         return ((delegate* unmanaged<IMFMediaSource*, IMFPresentationDescriptor**, int>)(lpVtbl[8]))((IMFMediaSource*)Unsafe.AsPointer(ref this), ppPresentationDescriptor);
     }
 
+    /// <include file='IMFMediaSource.xml' path='doc/member[@name="IMFMediaSource.Start"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT Start(IMFPresentationDescriptor* pPresentationDescriptor, [NativeTypeName("const GUID *")] Guid* pguidTimeFormat, [NativeTypeName("const PROPVARIANT *")] PROPVARIANT* pvarStartPosition)
@@ -88,6 +99,7 @@ public unsafe partial struct IMFMediaSource : IMFMediaSource.Interface
         return ((delegate* unmanaged<IMFMediaSource*, IMFPresentationDescriptor*, Guid*, PROPVARIANT*, int>)(lpVtbl[9]))((IMFMediaSource*)Unsafe.AsPointer(ref this), pPresentationDescriptor, pguidTimeFormat, pvarStartPosition);
     }
 
+    /// <include file='IMFMediaSource.xml' path='doc/member[@name="IMFMediaSource.Stop"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT Stop()
@@ -95,6 +107,7 @@ public unsafe partial struct IMFMediaSource : IMFMediaSource.Interface
         return ((delegate* unmanaged<IMFMediaSource*, int>)(lpVtbl[10]))((IMFMediaSource*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFMediaSource.xml' path='doc/member[@name="IMFMediaSource.Pause"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT Pause()
@@ -102,6 +115,7 @@ public unsafe partial struct IMFMediaSource : IMFMediaSource.Interface
         return ((delegate* unmanaged<IMFMediaSource*, int>)(lpVtbl[11]))((IMFMediaSource*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFMediaSource.xml' path='doc/member[@name="IMFMediaSource.Shutdown"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT Shutdown()

@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TVITEMPART.xml' path='doc/member[@name="TVITEMPART"]/*' />
 public enum TVITEMPART
 {
+    /// <include file='TVITEMPART.xml' path='doc/member[@name="TVITEMPART.TVGIPR_BUTTON"]/*' />
     TVGIPR_BUTTON = 0x0001,
 }

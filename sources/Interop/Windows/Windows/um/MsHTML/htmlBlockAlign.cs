@@ -5,12 +5,24 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='htmlBlockAlign.xml' path='doc/member[@name="htmlBlockAlign"]/*' />
 public enum htmlBlockAlign
 {
+    /// <include file='htmlBlockAlign.xml' path='doc/member[@name="htmlBlockAlign.htmlBlockAlignNotSet"]/*' />
     htmlBlockAlignNotSet = 0,
+
+    /// <include file='htmlBlockAlign.xml' path='doc/member[@name="htmlBlockAlign.htmlBlockAlignLeft"]/*' />
     htmlBlockAlignLeft = 1,
+
+    /// <include file='htmlBlockAlign.xml' path='doc/member[@name="htmlBlockAlign.htmlBlockAlignCenter"]/*' />
     htmlBlockAlignCenter = 2,
+
+    /// <include file='htmlBlockAlign.xml' path='doc/member[@name="htmlBlockAlign.htmlBlockAlignRight"]/*' />
     htmlBlockAlignRight = 3,
+
+    /// <include file='htmlBlockAlign.xml' path='doc/member[@name="htmlBlockAlign.htmlBlockAlignJustify"]/*' />
     htmlBlockAlignJustify = 4,
+
+    /// <include file='htmlBlockAlign.xml' path='doc/member[@name="htmlBlockAlign.htmlBlockAlign_Max"]/*' />
     htmlBlockAlign_Max = 2147483647,
 }

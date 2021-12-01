@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CRYPT_MASK_GEN_ALGORITHM.xml' path='doc/member[@name="CRYPT_MASK_GEN_ALGORITHM"]/*' />
 public unsafe partial struct CRYPT_MASK_GEN_ALGORITHM
 {
+    /// <include file='CRYPT_MASK_GEN_ALGORITHM.xml' path='doc/member[@name="CRYPT_MASK_GEN_ALGORITHM.pszObjId"]/*' />
     [NativeTypeName("LPSTR")]
     public sbyte* pszObjId;
 
+    /// <include file='CRYPT_MASK_GEN_ALGORITHM.xml' path='doc/member[@name="CRYPT_MASK_GEN_ALGORITHM.HashAlgorithm"]/*' />
     public CRYPT_ALGORITHM_IDENTIFIER HashAlgorithm;
 }

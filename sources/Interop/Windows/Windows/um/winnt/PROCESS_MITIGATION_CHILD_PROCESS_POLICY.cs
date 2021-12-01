@@ -8,11 +8,14 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PROCESS_MITIGATION_CHILD_PROCESS_POLICY.xml' path='doc/member[@name="PROCESS_MITIGATION_CHILD_PROCESS_POLICY"]/*' />
 public partial struct PROCESS_MITIGATION_CHILD_PROCESS_POLICY
 {
+    /// <include file='PROCESS_MITIGATION_CHILD_PROCESS_POLICY.xml' path='doc/member[@name="PROCESS_MITIGATION_CHILD_PROCESS_POLICY.Anonymous"]/*' />
     [NativeTypeName("_PROCESS_MITIGATION_CHILD_PROCESS_POLICY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:12884:5)")]
     public _Anonymous_e__Union Anonymous;
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Flags"]/*' />
     public ref uint Flags
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -22,6 +25,7 @@ public partial struct PROCESS_MITIGATION_CHILD_PROCESS_POLICY
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.NoChildProcessCreation"]/*' />
     public uint NoChildProcessCreation
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -37,6 +41,7 @@ public partial struct PROCESS_MITIGATION_CHILD_PROCESS_POLICY
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.AuditNoChildProcessCreation"]/*' />
     public uint AuditNoChildProcessCreation
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -52,6 +57,7 @@ public partial struct PROCESS_MITIGATION_CHILD_PROCESS_POLICY
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.AllowSecureProcessCreation"]/*' />
     public uint AllowSecureProcessCreation
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -67,6 +73,7 @@ public partial struct PROCESS_MITIGATION_CHILD_PROCESS_POLICY
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.ReservedFlags"]/*' />
     public uint ReservedFlags
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -82,21 +89,26 @@ public partial struct PROCESS_MITIGATION_CHILD_PROCESS_POLICY
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public partial struct _Anonymous_e__Union
     {
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Flags"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("DWORD")]
         public uint Flags;
 
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("_PROCESS_MITIGATION_CHILD_PROCESS_POLICY::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:12886:9)")]
         public _Anonymous_e__Struct Anonymous;
 
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />
         public partial struct _Anonymous_e__Struct
         {
             public uint _bitfield;
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.NoChildProcessCreation"]/*' />
             [NativeTypeName("DWORD : 1")]
             public uint NoChildProcessCreation
             {
@@ -113,6 +125,7 @@ public partial struct PROCESS_MITIGATION_CHILD_PROCESS_POLICY
                 }
             }
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.AuditNoChildProcessCreation"]/*' />
             [NativeTypeName("DWORD : 1")]
             public uint AuditNoChildProcessCreation
             {
@@ -129,6 +142,7 @@ public partial struct PROCESS_MITIGATION_CHILD_PROCESS_POLICY
                 }
             }
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.AllowSecureProcessCreation"]/*' />
             [NativeTypeName("DWORD : 1")]
             public uint AllowSecureProcessCreation
             {
@@ -145,6 +159,7 @@ public partial struct PROCESS_MITIGATION_CHILD_PROCESS_POLICY
                 }
             }
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.ReservedFlags"]/*' />
             [NativeTypeName("DWORD : 29")]
             public uint ReservedFlags
             {

@@ -5,13 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TOKEN_CONTROL.xml' path='doc/member[@name="TOKEN_CONTROL"]/*' />
 public partial struct TOKEN_CONTROL
 {
+    /// <include file='TOKEN_CONTROL.xml' path='doc/member[@name="TOKEN_CONTROL.TokenId"]/*' />
     public LUID TokenId;
 
+    /// <include file='TOKEN_CONTROL.xml' path='doc/member[@name="TOKEN_CONTROL.AuthenticationId"]/*' />
     public LUID AuthenticationId;
 
+    /// <include file='TOKEN_CONTROL.xml' path='doc/member[@name="TOKEN_CONTROL.ModifiedId"]/*' />
     public LUID ModifiedId;
 
+    /// <include file='TOKEN_CONTROL.xml' path='doc/member[@name="TOKEN_CONTROL.TokenSource"]/*' />
     public TOKEN_SOURCE TokenSource;
 }

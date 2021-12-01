@@ -5,16 +5,22 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='EVENTMSG.xml' path='doc/member[@name="EVENTMSG"]/*' />
 public partial struct EVENTMSG
 {
+    /// <include file='EVENTMSG.xml' path='doc/member[@name="EVENTMSG.message"]/*' />
     public uint message;
 
+    /// <include file='EVENTMSG.xml' path='doc/member[@name="EVENTMSG.paramL"]/*' />
     public uint paramL;
 
+    /// <include file='EVENTMSG.xml' path='doc/member[@name="EVENTMSG.paramH"]/*' />
     public uint paramH;
 
+    /// <include file='EVENTMSG.xml' path='doc/member[@name="EVENTMSG.time"]/*' />
     [NativeTypeName("DWORD")]
     public uint time;
 
+    /// <include file='EVENTMSG.xml' path='doc/member[@name="EVENTMSG.hwnd"]/*' />
     public HWND hwnd;
 }

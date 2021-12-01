@@ -5,29 +5,38 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='RECONVERTSTRING.xml' path='doc/member[@name="RECONVERTSTRING"]/*' />
 public partial struct RECONVERTSTRING
 {
+    /// <include file='RECONVERTSTRING.xml' path='doc/member[@name="RECONVERTSTRING.dwSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwSize;
 
+    /// <include file='RECONVERTSTRING.xml' path='doc/member[@name="RECONVERTSTRING.dwVersion"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwVersion;
 
+    /// <include file='RECONVERTSTRING.xml' path='doc/member[@name="RECONVERTSTRING.dwStrLen"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwStrLen;
 
+    /// <include file='RECONVERTSTRING.xml' path='doc/member[@name="RECONVERTSTRING.dwStrOffset"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwStrOffset;
 
+    /// <include file='RECONVERTSTRING.xml' path='doc/member[@name="RECONVERTSTRING.dwCompStrLen"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwCompStrLen;
 
+    /// <include file='RECONVERTSTRING.xml' path='doc/member[@name="RECONVERTSTRING.dwCompStrOffset"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwCompStrOffset;
 
+    /// <include file='RECONVERTSTRING.xml' path='doc/member[@name="RECONVERTSTRING.dwTargetStrLen"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwTargetStrLen;
 
+    /// <include file='RECONVERTSTRING.xml' path='doc/member[@name="RECONVERTSTRING.dwTargetStrOffset"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwTargetStrOffset;
 }

@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CERT_ALT_NAME_ENTRY">
+    <summary>
+      <para>The <b>CERT_ALT_NAME_ENTRY</b> structure contains an alternative name in one of a variety of name forms. These names are bound by a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certification authority</a> (CA) to a certificate's public key.</para>
+      <para>A  structure can be <b>CERT_ALT_NAME_ENTRY</b> member of a
+<see cref="CERT_ALT_NAME_INFO" /> structure.</para>
+    </summary>
+    <seealso cref="CERT_ALT_NAME_INFO" />
+    <seealso cref="CRYPT_ATTRIBUTE_TYPE_VALUE" />
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_INTEGER_BLOB</seealso>
+  </member>
+  <member name="CERT_ALT_NAME_ENTRY.dwAltNameChoice">
+    <summary>
+      <para>Indicates the <b>union</b> variant used for the alternative name.</para>
+      <para>This can be one of the following values:</para>
+      <list type="bullet">
+        <item>
+          <description>CERT_ALT_NAME_OTHER_NAME</description>
+        </item>
+        <item>
+          <description>CERT_ALT_NAME_RFC822_NAME</description>
+        </item>
+        <item>
+          <description>CERT_ALT_NAME_DNS_NAME</description>
+        </item>
+        <item>
+          <description>CERT_ALT_NAME_DIRECTORY_NAME</description>
+        </item>
+        <item>
+          <description>CERT_ALT_NAME_URL</description>
+        </item>
+        <item>
+          <description>CERT_ALT_NAME_IP_ADDRESS</description>
+        </item>
+        <item>
+          <description>CERT_ALT_NAME_REGISTERED_ID</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="CERT_ALT_NAME_ENTRY.DUMMYUNIONNAME">
+    <summary></summary>
+  </member>
+  <member name="CERT_ALT_NAME_ENTRY.DUMMYUNIONNAME.pOtherName">
+    <summary>
+      <para>A pointer to a <b>CERT_OTHER_NAME</b> structure, which includes an <a href="https://docs.microsoft.com//windows/desktop/SecGloss/o-gly">object identifier</a> (OID) and a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/b-gly">BLOB</a> containing the name.</para>
+    </summary>
+  </member>
+  <member name="CERT_ALT_NAME_ENTRY.DUMMYUNIONNAME.pwszRfc822Name">
+    <summary>
+      <para>Email address as a Unicode string.</para>
+    </summary>
+  </member>
+  <member name="CERT_ALT_NAME_ENTRY.DUMMYUNIONNAME.pwszDNSName">
+    <summary>
+      <para>DNS name as an IA5 string.</para>
+    </summary>
+  </member>
+  <member name="CERT_ALT_NAME_ENTRY.DUMMYUNIONNAME.DirectoryName">
+    <summary>
+      <para>A <a href="https://docs.microsoft.com//windows/desktop/SecGloss/b-gly">BLOB</a> structure that contains a directory name.</para>
+    </summary>
+  </member>
+  <member name="CERT_ALT_NAME_ENTRY.DUMMYUNIONNAME.pwszURL">
+    <summary>
+      <para>URL as a IA5 string.</para>
+    </summary>
+  </member>
+  <member name="CERT_ALT_NAME_ENTRY.DUMMYUNIONNAME.IPAddress">
+    <summary>
+      <para>Octet string that is an Internet Protocol address defined in accordance with Internet <a href="https://www.ietf.org/rfc/rfc791.txt">RFC 791</a>.</para>
+    </summary>
+  </member>
+  <member name="CERT_ALT_NAME_ENTRY.DUMMYUNIONNAME.pszRegisteredID">
+    <summary>
+      <para>Object identifier (OID) of any registered object.</para>
+    </summary>
+  </member>
+</doc>

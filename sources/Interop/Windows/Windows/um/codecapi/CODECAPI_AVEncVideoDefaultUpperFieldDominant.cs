@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVEncVideoDefaultUpperFieldDominant.xml' path='doc/member[@name="CODECAPI_AVEncVideoDefaultUpperFieldDominant"]/*' />
 [Guid("810167C4-0BC1-47CA-8FC2-57055A1474A5")]
 public partial struct CODECAPI_AVEncVideoDefaultUpperFieldDominant
 {

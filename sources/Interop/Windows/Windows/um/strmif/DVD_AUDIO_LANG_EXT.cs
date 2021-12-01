@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DVD_AUDIO_LANG_EXT.xml' path='doc/member[@name="DVD_AUDIO_LANG_EXT"]/*' />
 public enum DVD_AUDIO_LANG_EXT
 {
+    /// <include file='DVD_AUDIO_LANG_EXT.xml' path='doc/member[@name="DVD_AUDIO_LANG_EXT.DVD_AUD_EXT_NotSpecified"]/*' />
     DVD_AUD_EXT_NotSpecified = 0,
+
+    /// <include file='DVD_AUDIO_LANG_EXT.xml' path='doc/member[@name="DVD_AUDIO_LANG_EXT.DVD_AUD_EXT_Captions"]/*' />
     DVD_AUD_EXT_Captions = 1,
+
+    /// <include file='DVD_AUDIO_LANG_EXT.xml' path='doc/member[@name="DVD_AUDIO_LANG_EXT.DVD_AUD_EXT_VisuallyImpaired"]/*' />
     DVD_AUD_EXT_VisuallyImpaired = 2,
+
+    /// <include file='DVD_AUDIO_LANG_EXT.xml' path='doc/member[@name="DVD_AUDIO_LANG_EXT.DVD_AUD_EXT_DirectorComments1"]/*' />
     DVD_AUD_EXT_DirectorComments1 = 3,
+
+    /// <include file='DVD_AUDIO_LANG_EXT.xml' path='doc/member[@name="DVD_AUDIO_LANG_EXT.DVD_AUD_EXT_DirectorComments2"]/*' />
     DVD_AUD_EXT_DirectorComments2 = 4,
 }

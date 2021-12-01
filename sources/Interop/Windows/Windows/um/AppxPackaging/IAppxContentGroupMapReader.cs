@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAppxContentGroupMapReader.xml' path='doc/member[@name="IAppxContentGroupMapReader"]/*' />
 [Guid("418726D8-DD99-4F5D-9886-157ADD20DE01")]
 [NativeTypeName("struct IAppxContentGroupMapReader : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IAppxContentGroupMapReader : IAppxContentGroupMapRe
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IAppxContentGroupMapReader : IAppxContentGroupMapRe
         return ((delegate* unmanaged<IAppxContentGroupMapReader*, Guid*, void**, int>)(lpVtbl[0]))((IAppxContentGroupMapReader*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IAppxContentGroupMapReader : IAppxContentGroupMapRe
         return ((delegate* unmanaged<IAppxContentGroupMapReader*, uint>)(lpVtbl[1]))((IAppxContentGroupMapReader*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IAppxContentGroupMapReader : IAppxContentGroupMapRe
         return ((delegate* unmanaged<IAppxContentGroupMapReader*, uint>)(lpVtbl[2]))((IAppxContentGroupMapReader*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAppxContentGroupMapReader.xml' path='doc/member[@name="IAppxContentGroupMapReader.GetRequiredGroup"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetRequiredGroup(IAppxContentGroup** requiredGroup)
@@ -48,6 +53,7 @@ public unsafe partial struct IAppxContentGroupMapReader : IAppxContentGroupMapRe
         return ((delegate* unmanaged<IAppxContentGroupMapReader*, IAppxContentGroup**, int>)(lpVtbl[3]))((IAppxContentGroupMapReader*)Unsafe.AsPointer(ref this), requiredGroup);
     }
 
+    /// <include file='IAppxContentGroupMapReader.xml' path='doc/member[@name="IAppxContentGroupMapReader.GetAutomaticGroups"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetAutomaticGroups(IAppxContentGroupsEnumerator** automaticGroupsEnumerator)

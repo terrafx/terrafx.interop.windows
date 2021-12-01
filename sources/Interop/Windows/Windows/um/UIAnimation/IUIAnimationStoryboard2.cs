@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IUIAnimationStoryboard2.xml' path='doc/member[@name="IUIAnimationStoryboard2"]/*' />
 [Guid("AE289CD2-12D4-4945-9419-9E41BE034DF2")]
 [NativeTypeName("struct IUIAnimationStoryboard2 : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IUIAnimationStoryboard2 : IUIAnimationStoryboard2.I
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IUIAnimationStoryboard2 : IUIAnimationStoryboard2.I
         return ((delegate* unmanaged<IUIAnimationStoryboard2*, Guid*, void**, int>)(lpVtbl[0]))((IUIAnimationStoryboard2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IUIAnimationStoryboard2 : IUIAnimationStoryboard2.I
         return ((delegate* unmanaged<IUIAnimationStoryboard2*, uint>)(lpVtbl[1]))((IUIAnimationStoryboard2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IUIAnimationStoryboard2 : IUIAnimationStoryboard2.I
         return ((delegate* unmanaged<IUIAnimationStoryboard2*, uint>)(lpVtbl[2]))((IUIAnimationStoryboard2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IUIAnimationStoryboard2.xml' path='doc/member[@name="IUIAnimationStoryboard2.AddTransition"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT AddTransition(IUIAnimationVariable2* variable, IUIAnimationTransition2* transition)
@@ -46,6 +51,7 @@ public unsafe partial struct IUIAnimationStoryboard2 : IUIAnimationStoryboard2.I
         return ((delegate* unmanaged<IUIAnimationStoryboard2*, IUIAnimationVariable2*, IUIAnimationTransition2*, int>)(lpVtbl[3]))((IUIAnimationStoryboard2*)Unsafe.AsPointer(ref this), variable, transition);
     }
 
+    /// <include file='IUIAnimationStoryboard2.xml' path='doc/member[@name="IUIAnimationStoryboard2.AddKeyframeAtOffset"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT AddKeyframeAtOffset([NativeTypeName("UI_ANIMATION_KEYFRAME")] UI_ANIMATION_KEYFRAME* existingKeyframe, [NativeTypeName("UI_ANIMATION_SECONDS")] double offset, [NativeTypeName("UI_ANIMATION_KEYFRAME *")] UI_ANIMATION_KEYFRAME** keyframe)
@@ -53,6 +59,7 @@ public unsafe partial struct IUIAnimationStoryboard2 : IUIAnimationStoryboard2.I
         return ((delegate* unmanaged<IUIAnimationStoryboard2*, UI_ANIMATION_KEYFRAME*, double, UI_ANIMATION_KEYFRAME**, int>)(lpVtbl[4]))((IUIAnimationStoryboard2*)Unsafe.AsPointer(ref this), existingKeyframe, offset, keyframe);
     }
 
+    /// <include file='IUIAnimationStoryboard2.xml' path='doc/member[@name="IUIAnimationStoryboard2.AddKeyframeAfterTransition"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT AddKeyframeAfterTransition(IUIAnimationTransition2* transition, [NativeTypeName("UI_ANIMATION_KEYFRAME *")] UI_ANIMATION_KEYFRAME** keyframe)
@@ -60,6 +67,7 @@ public unsafe partial struct IUIAnimationStoryboard2 : IUIAnimationStoryboard2.I
         return ((delegate* unmanaged<IUIAnimationStoryboard2*, IUIAnimationTransition2*, UI_ANIMATION_KEYFRAME**, int>)(lpVtbl[5]))((IUIAnimationStoryboard2*)Unsafe.AsPointer(ref this), transition, keyframe);
     }
 
+    /// <include file='IUIAnimationStoryboard2.xml' path='doc/member[@name="IUIAnimationStoryboard2.AddTransitionAtKeyframe"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT AddTransitionAtKeyframe(IUIAnimationVariable2* variable, IUIAnimationTransition2* transition, [NativeTypeName("UI_ANIMATION_KEYFRAME")] UI_ANIMATION_KEYFRAME* startKeyframe)
@@ -67,6 +75,7 @@ public unsafe partial struct IUIAnimationStoryboard2 : IUIAnimationStoryboard2.I
         return ((delegate* unmanaged<IUIAnimationStoryboard2*, IUIAnimationVariable2*, IUIAnimationTransition2*, UI_ANIMATION_KEYFRAME*, int>)(lpVtbl[6]))((IUIAnimationStoryboard2*)Unsafe.AsPointer(ref this), variable, transition, startKeyframe);
     }
 
+    /// <include file='IUIAnimationStoryboard2.xml' path='doc/member[@name="IUIAnimationStoryboard2.AddTransitionBetweenKeyframes"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT AddTransitionBetweenKeyframes(IUIAnimationVariable2* variable, IUIAnimationTransition2* transition, [NativeTypeName("UI_ANIMATION_KEYFRAME")] UI_ANIMATION_KEYFRAME* startKeyframe, [NativeTypeName("UI_ANIMATION_KEYFRAME")] UI_ANIMATION_KEYFRAME* endKeyframe)
@@ -74,6 +83,7 @@ public unsafe partial struct IUIAnimationStoryboard2 : IUIAnimationStoryboard2.I
         return ((delegate* unmanaged<IUIAnimationStoryboard2*, IUIAnimationVariable2*, IUIAnimationTransition2*, UI_ANIMATION_KEYFRAME*, UI_ANIMATION_KEYFRAME*, int>)(lpVtbl[7]))((IUIAnimationStoryboard2*)Unsafe.AsPointer(ref this), variable, transition, startKeyframe, endKeyframe);
     }
 
+    /// <include file='IUIAnimationStoryboard2.xml' path='doc/member[@name="IUIAnimationStoryboard2.RepeatBetweenKeyframes"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT RepeatBetweenKeyframes([NativeTypeName("UI_ANIMATION_KEYFRAME")] UI_ANIMATION_KEYFRAME* startKeyframe, [NativeTypeName("UI_ANIMATION_KEYFRAME")] UI_ANIMATION_KEYFRAME* endKeyframe, double cRepetition, UI_ANIMATION_REPEAT_MODE repeatMode, [Optional] IUIAnimationLoopIterationChangeHandler2* pIterationChangeHandler, [NativeTypeName("UINT_PTR")] [Optional] nuint id, [Optional] BOOL fRegisterForNextAnimationEvent)
@@ -81,6 +91,7 @@ public unsafe partial struct IUIAnimationStoryboard2 : IUIAnimationStoryboard2.I
         return ((delegate* unmanaged<IUIAnimationStoryboard2*, UI_ANIMATION_KEYFRAME*, UI_ANIMATION_KEYFRAME*, double, UI_ANIMATION_REPEAT_MODE, IUIAnimationLoopIterationChangeHandler2*, nuint, BOOL, int>)(lpVtbl[8]))((IUIAnimationStoryboard2*)Unsafe.AsPointer(ref this), startKeyframe, endKeyframe, cRepetition, repeatMode, pIterationChangeHandler, id, fRegisterForNextAnimationEvent);
     }
 
+    /// <include file='IUIAnimationStoryboard2.xml' path='doc/member[@name="IUIAnimationStoryboard2.HoldVariable"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT HoldVariable(IUIAnimationVariable2* variable)
@@ -88,6 +99,7 @@ public unsafe partial struct IUIAnimationStoryboard2 : IUIAnimationStoryboard2.I
         return ((delegate* unmanaged<IUIAnimationStoryboard2*, IUIAnimationVariable2*, int>)(lpVtbl[9]))((IUIAnimationStoryboard2*)Unsafe.AsPointer(ref this), variable);
     }
 
+    /// <include file='IUIAnimationStoryboard2.xml' path='doc/member[@name="IUIAnimationStoryboard2.SetLongestAcceptableDelay"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT SetLongestAcceptableDelay([NativeTypeName("UI_ANIMATION_SECONDS")] double delay)
@@ -95,6 +107,7 @@ public unsafe partial struct IUIAnimationStoryboard2 : IUIAnimationStoryboard2.I
         return ((delegate* unmanaged<IUIAnimationStoryboard2*, double, int>)(lpVtbl[10]))((IUIAnimationStoryboard2*)Unsafe.AsPointer(ref this), delay);
     }
 
+    /// <include file='IUIAnimationStoryboard2.xml' path='doc/member[@name="IUIAnimationStoryboard2.SetSkipDuration"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT SetSkipDuration([NativeTypeName("UI_ANIMATION_SECONDS")] double secondsDuration)
@@ -102,6 +115,7 @@ public unsafe partial struct IUIAnimationStoryboard2 : IUIAnimationStoryboard2.I
         return ((delegate* unmanaged<IUIAnimationStoryboard2*, double, int>)(lpVtbl[11]))((IUIAnimationStoryboard2*)Unsafe.AsPointer(ref this), secondsDuration);
     }
 
+    /// <include file='IUIAnimationStoryboard2.xml' path='doc/member[@name="IUIAnimationStoryboard2.Schedule"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT Schedule([NativeTypeName("UI_ANIMATION_SECONDS")] double timeNow, UI_ANIMATION_SCHEDULING_RESULT* schedulingResult = null)
@@ -109,6 +123,7 @@ public unsafe partial struct IUIAnimationStoryboard2 : IUIAnimationStoryboard2.I
         return ((delegate* unmanaged<IUIAnimationStoryboard2*, double, UI_ANIMATION_SCHEDULING_RESULT*, int>)(lpVtbl[12]))((IUIAnimationStoryboard2*)Unsafe.AsPointer(ref this), timeNow, schedulingResult);
     }
 
+    /// <include file='IUIAnimationStoryboard2.xml' path='doc/member[@name="IUIAnimationStoryboard2.Conclude"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT Conclude()
@@ -116,6 +131,7 @@ public unsafe partial struct IUIAnimationStoryboard2 : IUIAnimationStoryboard2.I
         return ((delegate* unmanaged<IUIAnimationStoryboard2*, int>)(lpVtbl[13]))((IUIAnimationStoryboard2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IUIAnimationStoryboard2.xml' path='doc/member[@name="IUIAnimationStoryboard2.Finish"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT Finish([NativeTypeName("UI_ANIMATION_SECONDS")] double completionDeadline)
@@ -123,6 +139,7 @@ public unsafe partial struct IUIAnimationStoryboard2 : IUIAnimationStoryboard2.I
         return ((delegate* unmanaged<IUIAnimationStoryboard2*, double, int>)(lpVtbl[14]))((IUIAnimationStoryboard2*)Unsafe.AsPointer(ref this), completionDeadline);
     }
 
+    /// <include file='IUIAnimationStoryboard2.xml' path='doc/member[@name="IUIAnimationStoryboard2.Abandon"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT Abandon()
@@ -130,6 +147,7 @@ public unsafe partial struct IUIAnimationStoryboard2 : IUIAnimationStoryboard2.I
         return ((delegate* unmanaged<IUIAnimationStoryboard2*, int>)(lpVtbl[15]))((IUIAnimationStoryboard2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IUIAnimationStoryboard2.xml' path='doc/member[@name="IUIAnimationStoryboard2.SetTag"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT SetTag(IUnknown* @object, [NativeTypeName("UINT32")] uint id)
@@ -137,6 +155,7 @@ public unsafe partial struct IUIAnimationStoryboard2 : IUIAnimationStoryboard2.I
         return ((delegate* unmanaged<IUIAnimationStoryboard2*, IUnknown*, uint, int>)(lpVtbl[16]))((IUIAnimationStoryboard2*)Unsafe.AsPointer(ref this), @object, id);
     }
 
+    /// <include file='IUIAnimationStoryboard2.xml' path='doc/member[@name="IUIAnimationStoryboard2.GetTag"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT GetTag(IUnknown** @object, [NativeTypeName("UINT32 *")] uint* id)
@@ -144,6 +163,7 @@ public unsafe partial struct IUIAnimationStoryboard2 : IUIAnimationStoryboard2.I
         return ((delegate* unmanaged<IUIAnimationStoryboard2*, IUnknown**, uint*, int>)(lpVtbl[17]))((IUIAnimationStoryboard2*)Unsafe.AsPointer(ref this), @object, id);
     }
 
+    /// <include file='IUIAnimationStoryboard2.xml' path='doc/member[@name="IUIAnimationStoryboard2.GetStatus"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT GetStatus(UI_ANIMATION_STORYBOARD_STATUS* status)
@@ -151,6 +171,7 @@ public unsafe partial struct IUIAnimationStoryboard2 : IUIAnimationStoryboard2.I
         return ((delegate* unmanaged<IUIAnimationStoryboard2*, UI_ANIMATION_STORYBOARD_STATUS*, int>)(lpVtbl[18]))((IUIAnimationStoryboard2*)Unsafe.AsPointer(ref this), status);
     }
 
+    /// <include file='IUIAnimationStoryboard2.xml' path='doc/member[@name="IUIAnimationStoryboard2.GetElapsedTime"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT GetElapsedTime([NativeTypeName("UI_ANIMATION_SECONDS *")] double* elapsedTime)
@@ -158,6 +179,7 @@ public unsafe partial struct IUIAnimationStoryboard2 : IUIAnimationStoryboard2.I
         return ((delegate* unmanaged<IUIAnimationStoryboard2*, double*, int>)(lpVtbl[19]))((IUIAnimationStoryboard2*)Unsafe.AsPointer(ref this), elapsedTime);
     }
 
+    /// <include file='IUIAnimationStoryboard2.xml' path='doc/member[@name="IUIAnimationStoryboard2.SetStoryboardEventHandler"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public HRESULT SetStoryboardEventHandler(IUIAnimationStoryboardEventHandler2* handler, [Optional] BOOL fRegisterStatusChangeForNextAnimationEvent, [Optional] BOOL fRegisterUpdateForNextAnimationEvent)

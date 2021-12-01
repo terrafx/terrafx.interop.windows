@@ -5,15 +5,20 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='GET_DEVICE_INTERNAL_STATUS_DATA_REQUEST.xml' path='doc/member[@name="GET_DEVICE_INTERNAL_STATUS_DATA_REQUEST"]/*' />
 public partial struct GET_DEVICE_INTERNAL_STATUS_DATA_REQUEST
 {
+    /// <include file='GET_DEVICE_INTERNAL_STATUS_DATA_REQUEST.xml' path='doc/member[@name="GET_DEVICE_INTERNAL_STATUS_DATA_REQUEST.Version"]/*' />
     [NativeTypeName("DWORD")]
     public uint Version;
 
+    /// <include file='GET_DEVICE_INTERNAL_STATUS_DATA_REQUEST.xml' path='doc/member[@name="GET_DEVICE_INTERNAL_STATUS_DATA_REQUEST.Size"]/*' />
     [NativeTypeName("DWORD")]
     public uint Size;
 
+    /// <include file='GET_DEVICE_INTERNAL_STATUS_DATA_REQUEST.xml' path='doc/member[@name="GET_DEVICE_INTERNAL_STATUS_DATA_REQUEST.RequestDataType"]/*' />
     public DEVICE_INTERNAL_STATUS_DATA_REQUEST_TYPE RequestDataType;
 
+    /// <include file='GET_DEVICE_INTERNAL_STATUS_DATA_REQUEST.xml' path='doc/member[@name="GET_DEVICE_INTERNAL_STATUS_DATA_REQUEST.RequestDataSet"]/*' />
     public DEVICE_INTERNAL_STATUS_DATA_SET RequestDataSet;
 }

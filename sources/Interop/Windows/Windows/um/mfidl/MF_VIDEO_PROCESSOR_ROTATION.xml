@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MF_VIDEO_PROCESSOR_ROTATION">
+    <summary>
+      <para>Specifies how to rotate a video image.</para>
+    </summary>
+    <seealso cref="IMFVideoProcessorControl.SetRotation" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+  </member>
+  <member name="MF_VIDEO_PROCESSOR_ROTATION.ROTATION_NONE">
+    <summary>
+      <para>Do not rotate the image.</para>
+    </summary>
+  </member>
+  <member name="MF_VIDEO_PROCESSOR_ROTATION.ROTATION_NORMAL">
+    <summary>
+      <para>Rotate the image to the correct viewing orientation.</para>
+    </summary>
+  </member>
+</doc>

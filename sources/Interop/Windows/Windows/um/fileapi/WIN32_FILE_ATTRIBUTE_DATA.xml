@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WIN32_FILE_ATTRIBUTE_DATA">
+    <summary>
+      <para>Contains attribute information for a file or directory. The
+<see cref="GetFileAttributesEx" /> function uses this
+structure.</para>
+    </summary>
+    <remarks>
+      <para>Not all file systems can record creation and last access time, and not all file systems record them in the
+same manner. For example, on the FAT file system, create time has a resolution of 10 milliseconds, write time has
+a resolution of 2 seconds, and access time has a resolution of 1 day. On the NTFS file
+system, access time has a resolution of 1 hour. For more information, see
+<a href="https://docs.microsoft.com//windows/desktop/SysInfo/file-times">File Times</a>.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/FileIO/file-attribute-constants">File Attribute Constants</seealso>
+    <seealso cref="GetFileAttributesEx" />
+  </member>
+  <member name="WIN32_FILE_ATTRIBUTE_DATA.dwFileAttributes">
+    <summary>
+      <para>The file system attribute information for a file or directory.</para>
+      <para>For possible values and their descriptions, see <a href="https://docs.microsoft.com//windows/desktop/FileIO/file-attribute-constants">File Attribute Constants</a>.</para>
+    </summary>
+  </member>
+  <member name="WIN32_FILE_ATTRIBUTE_DATA.ftCreationTime">
+    <summary>
+      <para>A <see cref="FILETIME" /> structure that specifies when the file or
+directory is created.</para>
+      <para>If the underlying file system does not support creation time, this member is zero.</para>
+    </summary>
+  </member>
+  <member name="WIN32_FILE_ATTRIBUTE_DATA.ftLastAccessTime">
+    <summary>
+      <para>A <see cref="FILETIME" /> structure.</para>
+      <para>For a file, the structure specifies when the file is last read from or written to.</para>
+      <para>For a directory, the structure specifies when the directory is created.</para>
+      <para>For both files and directories, the specified date is correct, but the time of day is always set to midnight.
+If the underlying file system does not support last access time, this member is zero.</para>
+    </summary>
+  </member>
+  <member name="WIN32_FILE_ATTRIBUTE_DATA.ftLastWriteTime">
+    <summary>
+      <para>A <see cref="FILETIME" /> structure.</para>
+      <para>For a file, the structure specifies when the file is last written to.</para>
+      <para>For a directory, the structure specifies when the directory is created.</para>
+      <para>If the underlying file system does not support last write time, this member is zero.</para>
+    </summary>
+  </member>
+  <member name="WIN32_FILE_ATTRIBUTE_DATA.nFileSizeHigh">
+    <summary>
+      <para>The high-order
+<b>DWORD</b> of the file size.</para>
+      <para>This member does not have a meaning for directories.</para>
+    </summary>
+  </member>
+  <member name="WIN32_FILE_ATTRIBUTE_DATA.nFileSizeLow">
+    <summary>
+      <para>The low-order <b>DWORD</b> of the file size.</para>
+      <para>This member does not have a meaning for directories.</para>
+    </summary>
+  </member>
+</doc>

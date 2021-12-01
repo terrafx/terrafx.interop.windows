@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ISpLexicon.xml' path='doc/member[@name="ISpLexicon"]/*' />
 [Guid("DA41A7C2-5383-4DB2-916B-6C1719E3DB58")]
 [NativeTypeName("struct ISpLexicon : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ISpLexicon : ISpLexicon.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ISpLexicon : ISpLexicon.Interface
         return ((delegate* unmanaged<ISpLexicon*, Guid*, void**, int>)(lpVtbl[0]))((ISpLexicon*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ISpLexicon : ISpLexicon.Interface
         return ((delegate* unmanaged<ISpLexicon*, uint>)(lpVtbl[1]))((ISpLexicon*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ISpLexicon : ISpLexicon.Interface
         return ((delegate* unmanaged<ISpLexicon*, uint>)(lpVtbl[2]))((ISpLexicon*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ISpLexicon.xml' path='doc/member[@name="ISpLexicon.GetPronunciations"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetPronunciations([NativeTypeName("LPCWSTR")] ushort* pszWord, [NativeTypeName("WORD")] ushort LangID, [NativeTypeName("DWORD")] uint dwFlags, SPWORDPRONUNCIATIONLIST* pWordPronunciationList)
@@ -46,6 +51,7 @@ public unsafe partial struct ISpLexicon : ISpLexicon.Interface
         return ((delegate* unmanaged<ISpLexicon*, ushort*, ushort, uint, SPWORDPRONUNCIATIONLIST*, int>)(lpVtbl[3]))((ISpLexicon*)Unsafe.AsPointer(ref this), pszWord, LangID, dwFlags, pWordPronunciationList);
     }
 
+    /// <include file='ISpLexicon.xml' path='doc/member[@name="ISpLexicon.AddPronunciation"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT AddPronunciation([NativeTypeName("LPCWSTR")] ushort* pszWord, [NativeTypeName("WORD")] ushort LangID, SPPARTOFSPEECH ePartOfSpeech, [NativeTypeName("PCSPPHONEID")] ushort* pszPronunciation)
@@ -53,6 +59,7 @@ public unsafe partial struct ISpLexicon : ISpLexicon.Interface
         return ((delegate* unmanaged<ISpLexicon*, ushort*, ushort, SPPARTOFSPEECH, ushort*, int>)(lpVtbl[4]))((ISpLexicon*)Unsafe.AsPointer(ref this), pszWord, LangID, ePartOfSpeech, pszPronunciation);
     }
 
+    /// <include file='ISpLexicon.xml' path='doc/member[@name="ISpLexicon.RemovePronunciation"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT RemovePronunciation([NativeTypeName("LPCWSTR")] ushort* pszWord, [NativeTypeName("WORD")] ushort LangID, SPPARTOFSPEECH ePartOfSpeech, [NativeTypeName("PCSPPHONEID")] ushort* pszPronunciation)
@@ -60,6 +67,7 @@ public unsafe partial struct ISpLexicon : ISpLexicon.Interface
         return ((delegate* unmanaged<ISpLexicon*, ushort*, ushort, SPPARTOFSPEECH, ushort*, int>)(lpVtbl[5]))((ISpLexicon*)Unsafe.AsPointer(ref this), pszWord, LangID, ePartOfSpeech, pszPronunciation);
     }
 
+    /// <include file='ISpLexicon.xml' path='doc/member[@name="ISpLexicon.GetGeneration"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetGeneration([NativeTypeName("DWORD *")] uint* pdwGeneration)
@@ -67,6 +75,7 @@ public unsafe partial struct ISpLexicon : ISpLexicon.Interface
         return ((delegate* unmanaged<ISpLexicon*, uint*, int>)(lpVtbl[6]))((ISpLexicon*)Unsafe.AsPointer(ref this), pdwGeneration);
     }
 
+    /// <include file='ISpLexicon.xml' path='doc/member[@name="ISpLexicon.GetGenerationChange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetGenerationChange([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD *")] uint* pdwGeneration, SPWORDLIST* pWordList)
@@ -74,6 +83,7 @@ public unsafe partial struct ISpLexicon : ISpLexicon.Interface
         return ((delegate* unmanaged<ISpLexicon*, uint, uint*, SPWORDLIST*, int>)(lpVtbl[7]))((ISpLexicon*)Unsafe.AsPointer(ref this), dwFlags, pdwGeneration, pWordList);
     }
 
+    /// <include file='ISpLexicon.xml' path='doc/member[@name="ISpLexicon.GetWords"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetWords([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD *")] uint* pdwGeneration, [NativeTypeName("DWORD *")] uint* pdwCookie, SPWORDLIST* pWordList)

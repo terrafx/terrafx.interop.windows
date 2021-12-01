@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WbemLocator.xml' path='doc/member[@name="WbemLocator"]/*' />
 [Guid("4590F811-1D3A-11D0-891F-00AA004B2E24")]
 public partial struct WbemLocator
 {

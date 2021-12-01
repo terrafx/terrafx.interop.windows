@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITfCategoryMgr.xml' path='doc/member[@name="ITfCategoryMgr"]/*' />
 [Guid("C3ACEFB5-F69D-4905-938F-FCADCF4BE830")]
 [NativeTypeName("struct ITfCategoryMgr : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITfCategoryMgr : ITfCategoryMgr.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITfCategoryMgr : ITfCategoryMgr.Interface
         return ((delegate* unmanaged<ITfCategoryMgr*, Guid*, void**, int>)(lpVtbl[0]))((ITfCategoryMgr*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITfCategoryMgr : ITfCategoryMgr.Interface
         return ((delegate* unmanaged<ITfCategoryMgr*, uint>)(lpVtbl[1]))((ITfCategoryMgr*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITfCategoryMgr : ITfCategoryMgr.Interface
         return ((delegate* unmanaged<ITfCategoryMgr*, uint>)(lpVtbl[2]))((ITfCategoryMgr*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITfCategoryMgr.xml' path='doc/member[@name="ITfCategoryMgr.RegisterCategory"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT RegisterCategory([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("const GUID &")] Guid* rcatid, [NativeTypeName("const GUID &")] Guid* rguid)
@@ -46,6 +51,7 @@ public unsafe partial struct ITfCategoryMgr : ITfCategoryMgr.Interface
         return ((delegate* unmanaged<ITfCategoryMgr*, Guid*, Guid*, Guid*, int>)(lpVtbl[3]))((ITfCategoryMgr*)Unsafe.AsPointer(ref this), rclsid, rcatid, rguid);
     }
 
+    /// <include file='ITfCategoryMgr.xml' path='doc/member[@name="ITfCategoryMgr.UnregisterCategory"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT UnregisterCategory([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("const GUID &")] Guid* rcatid, [NativeTypeName("const GUID &")] Guid* rguid)
@@ -53,6 +59,7 @@ public unsafe partial struct ITfCategoryMgr : ITfCategoryMgr.Interface
         return ((delegate* unmanaged<ITfCategoryMgr*, Guid*, Guid*, Guid*, int>)(lpVtbl[4]))((ITfCategoryMgr*)Unsafe.AsPointer(ref this), rclsid, rcatid, rguid);
     }
 
+    /// <include file='ITfCategoryMgr.xml' path='doc/member[@name="ITfCategoryMgr.EnumCategoriesInItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT EnumCategoriesInItem([NativeTypeName("const GUID &")] Guid* rguid, IEnumGUID** ppEnum)
@@ -60,6 +67,7 @@ public unsafe partial struct ITfCategoryMgr : ITfCategoryMgr.Interface
         return ((delegate* unmanaged<ITfCategoryMgr*, Guid*, IEnumGUID**, int>)(lpVtbl[5]))((ITfCategoryMgr*)Unsafe.AsPointer(ref this), rguid, ppEnum);
     }
 
+    /// <include file='ITfCategoryMgr.xml' path='doc/member[@name="ITfCategoryMgr.EnumItemsInCategory"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT EnumItemsInCategory([NativeTypeName("const GUID &")] Guid* rcatid, IEnumGUID** ppEnum)
@@ -67,6 +75,7 @@ public unsafe partial struct ITfCategoryMgr : ITfCategoryMgr.Interface
         return ((delegate* unmanaged<ITfCategoryMgr*, Guid*, IEnumGUID**, int>)(lpVtbl[6]))((ITfCategoryMgr*)Unsafe.AsPointer(ref this), rcatid, ppEnum);
     }
 
+    /// <include file='ITfCategoryMgr.xml' path='doc/member[@name="ITfCategoryMgr.FindClosestCategory"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT FindClosestCategory([NativeTypeName("const GUID &")] Guid* rguid, Guid* pcatid, [NativeTypeName("const GUID **")] Guid** ppcatidList, [NativeTypeName("ULONG")] uint ulCount)
@@ -74,6 +83,7 @@ public unsafe partial struct ITfCategoryMgr : ITfCategoryMgr.Interface
         return ((delegate* unmanaged<ITfCategoryMgr*, Guid*, Guid*, Guid**, uint, int>)(lpVtbl[7]))((ITfCategoryMgr*)Unsafe.AsPointer(ref this), rguid, pcatid, ppcatidList, ulCount);
     }
 
+    /// <include file='ITfCategoryMgr.xml' path='doc/member[@name="ITfCategoryMgr.RegisterGUIDDescription"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT RegisterGUIDDescription([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("const GUID &")] Guid* rguid, [NativeTypeName("const WCHAR *")] ushort* pchDesc, [NativeTypeName("ULONG")] uint cch)
@@ -81,6 +91,7 @@ public unsafe partial struct ITfCategoryMgr : ITfCategoryMgr.Interface
         return ((delegate* unmanaged<ITfCategoryMgr*, Guid*, Guid*, ushort*, uint, int>)(lpVtbl[8]))((ITfCategoryMgr*)Unsafe.AsPointer(ref this), rclsid, rguid, pchDesc, cch);
     }
 
+    /// <include file='ITfCategoryMgr.xml' path='doc/member[@name="ITfCategoryMgr.UnregisterGUIDDescription"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT UnregisterGUIDDescription([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("const GUID &")] Guid* rguid)
@@ -88,6 +99,7 @@ public unsafe partial struct ITfCategoryMgr : ITfCategoryMgr.Interface
         return ((delegate* unmanaged<ITfCategoryMgr*, Guid*, Guid*, int>)(lpVtbl[9]))((ITfCategoryMgr*)Unsafe.AsPointer(ref this), rclsid, rguid);
     }
 
+    /// <include file='ITfCategoryMgr.xml' path='doc/member[@name="ITfCategoryMgr.GetGUIDDescription"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT GetGUIDDescription([NativeTypeName("const GUID &")] Guid* rguid, [NativeTypeName("BSTR *")] ushort** pbstrDesc)
@@ -95,6 +107,7 @@ public unsafe partial struct ITfCategoryMgr : ITfCategoryMgr.Interface
         return ((delegate* unmanaged<ITfCategoryMgr*, Guid*, ushort**, int>)(lpVtbl[10]))((ITfCategoryMgr*)Unsafe.AsPointer(ref this), rguid, pbstrDesc);
     }
 
+    /// <include file='ITfCategoryMgr.xml' path='doc/member[@name="ITfCategoryMgr.RegisterGUIDDWORD"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT RegisterGUIDDWORD([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("const GUID &")] Guid* rguid, [NativeTypeName("DWORD")] uint dw)
@@ -102,6 +115,7 @@ public unsafe partial struct ITfCategoryMgr : ITfCategoryMgr.Interface
         return ((delegate* unmanaged<ITfCategoryMgr*, Guid*, Guid*, uint, int>)(lpVtbl[11]))((ITfCategoryMgr*)Unsafe.AsPointer(ref this), rclsid, rguid, dw);
     }
 
+    /// <include file='ITfCategoryMgr.xml' path='doc/member[@name="ITfCategoryMgr.UnregisterGUIDDWORD"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT UnregisterGUIDDWORD([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("const GUID &")] Guid* rguid)
@@ -109,6 +123,7 @@ public unsafe partial struct ITfCategoryMgr : ITfCategoryMgr.Interface
         return ((delegate* unmanaged<ITfCategoryMgr*, Guid*, Guid*, int>)(lpVtbl[12]))((ITfCategoryMgr*)Unsafe.AsPointer(ref this), rclsid, rguid);
     }
 
+    /// <include file='ITfCategoryMgr.xml' path='doc/member[@name="ITfCategoryMgr.GetGUIDDWORD"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT GetGUIDDWORD([NativeTypeName("const GUID &")] Guid* rguid, [NativeTypeName("DWORD *")] uint* pdw)
@@ -116,6 +131,7 @@ public unsafe partial struct ITfCategoryMgr : ITfCategoryMgr.Interface
         return ((delegate* unmanaged<ITfCategoryMgr*, Guid*, uint*, int>)(lpVtbl[13]))((ITfCategoryMgr*)Unsafe.AsPointer(ref this), rguid, pdw);
     }
 
+    /// <include file='ITfCategoryMgr.xml' path='doc/member[@name="ITfCategoryMgr.RegisterGUID"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT RegisterGUID([NativeTypeName("const GUID &")] Guid* rguid, [NativeTypeName("TfGuidAtom *")] uint* pguidatom)
@@ -123,6 +139,7 @@ public unsafe partial struct ITfCategoryMgr : ITfCategoryMgr.Interface
         return ((delegate* unmanaged<ITfCategoryMgr*, Guid*, uint*, int>)(lpVtbl[14]))((ITfCategoryMgr*)Unsafe.AsPointer(ref this), rguid, pguidatom);
     }
 
+    /// <include file='ITfCategoryMgr.xml' path='doc/member[@name="ITfCategoryMgr.GetGUID"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT GetGUID([NativeTypeName("TfGuidAtom")] uint guidatom, Guid* pguid)
@@ -130,6 +147,7 @@ public unsafe partial struct ITfCategoryMgr : ITfCategoryMgr.Interface
         return ((delegate* unmanaged<ITfCategoryMgr*, uint, Guid*, int>)(lpVtbl[15]))((ITfCategoryMgr*)Unsafe.AsPointer(ref this), guidatom, pguid);
     }
 
+    /// <include file='ITfCategoryMgr.xml' path='doc/member[@name="ITfCategoryMgr.IsEqualTfGuidAtom"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT IsEqualTfGuidAtom([NativeTypeName("TfGuidAtom")] uint guidatom, [NativeTypeName("const GUID &")] Guid* rguid, BOOL* pfEqual)

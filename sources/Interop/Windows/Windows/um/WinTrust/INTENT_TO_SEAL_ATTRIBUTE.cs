@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='INTENT_TO_SEAL_ATTRIBUTE.xml' path='doc/member[@name="INTENT_TO_SEAL_ATTRIBUTE"]/*' />
 public partial struct INTENT_TO_SEAL_ATTRIBUTE
 {
+    /// <include file='INTENT_TO_SEAL_ATTRIBUTE.xml' path='doc/member[@name="INTENT_TO_SEAL_ATTRIBUTE.version"]/*' />
     [NativeTypeName("ULONG")]
     public uint version;
 
+    /// <include file='INTENT_TO_SEAL_ATTRIBUTE.xml' path='doc/member[@name="INTENT_TO_SEAL_ATTRIBUTE.seal"]/*' />
     [NativeTypeName("BOOLEAN")]
     public byte seal;
 }

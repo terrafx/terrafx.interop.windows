@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFSchemeHandler.xml' path='doc/member[@name="IMFSchemeHandler"]/*' />
 [Guid("6D4C7B74-52A0-4BB7-B0DB-55F29F47A668")]
 [NativeTypeName("struct IMFSchemeHandler : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMFSchemeHandler : IMFSchemeHandler.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMFSchemeHandler : IMFSchemeHandler.Interface
         return ((delegate* unmanaged<IMFSchemeHandler*, Guid*, void**, int>)(lpVtbl[0]))((IMFSchemeHandler*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMFSchemeHandler : IMFSchemeHandler.Interface
         return ((delegate* unmanaged<IMFSchemeHandler*, uint>)(lpVtbl[1]))((IMFSchemeHandler*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMFSchemeHandler : IMFSchemeHandler.Interface
         return ((delegate* unmanaged<IMFSchemeHandler*, uint>)(lpVtbl[2]))((IMFSchemeHandler*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFSchemeHandler.xml' path='doc/member[@name="IMFSchemeHandler.BeginCreateObject"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT BeginCreateObject([NativeTypeName("LPCWSTR")] ushort* pwszURL, [NativeTypeName("DWORD")] uint dwFlags, IPropertyStore* pProps, IUnknown** ppIUnknownCancelCookie, IMFAsyncCallback* pCallback, IUnknown* punkState)
@@ -46,6 +51,7 @@ public unsafe partial struct IMFSchemeHandler : IMFSchemeHandler.Interface
         return ((delegate* unmanaged<IMFSchemeHandler*, ushort*, uint, IPropertyStore*, IUnknown**, IMFAsyncCallback*, IUnknown*, int>)(lpVtbl[3]))((IMFSchemeHandler*)Unsafe.AsPointer(ref this), pwszURL, dwFlags, pProps, ppIUnknownCancelCookie, pCallback, punkState);
     }
 
+    /// <include file='IMFSchemeHandler.xml' path='doc/member[@name="IMFSchemeHandler.EndCreateObject"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT EndCreateObject(IMFAsyncResult* pResult, MF_OBJECT_TYPE* pObjectType, IUnknown** ppObject)
@@ -53,6 +59,7 @@ public unsafe partial struct IMFSchemeHandler : IMFSchemeHandler.Interface
         return ((delegate* unmanaged<IMFSchemeHandler*, IMFAsyncResult*, MF_OBJECT_TYPE*, IUnknown**, int>)(lpVtbl[4]))((IMFSchemeHandler*)Unsafe.AsPointer(ref this), pResult, pObjectType, ppObject);
     }
 
+    /// <include file='IMFSchemeHandler.xml' path='doc/member[@name="IMFSchemeHandler.CancelObjectCreation"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT CancelObjectCreation(IUnknown* pIUnknownCancelCookie)

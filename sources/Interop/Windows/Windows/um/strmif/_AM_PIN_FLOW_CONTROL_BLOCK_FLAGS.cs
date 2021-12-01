@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='_AM_PIN_FLOW_CONTROL_BLOCK_FLAGS.xml' path='doc/member[@name="_AM_PIN_FLOW_CONTROL_BLOCK_FLAGS"]/*' />
 public enum _AM_PIN_FLOW_CONTROL_BLOCK_FLAGS
 {
+    /// <include file='_AM_PIN_FLOW_CONTROL_BLOCK_FLAGS.xml' path='doc/member[@name="_AM_PIN_FLOW_CONTROL_BLOCK_FLAGS.AM_PIN_FLOW_CONTROL_BLOCK"]/*' />
     AM_PIN_FLOW_CONTROL_BLOCK = 0x1,
 }

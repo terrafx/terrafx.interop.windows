@@ -7,9 +7,11 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='FILE_ALIGNMENT_INFO.xml' path='doc/member[@name="FILE_ALIGNMENT_INFO"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public partial struct FILE_ALIGNMENT_INFO
 {
+    /// <include file='FILE_ALIGNMENT_INFO.xml' path='doc/member[@name="FILE_ALIGNMENT_INFO.AlignmentRequirement"]/*' />
     [NativeTypeName("ULONG")]
     public uint AlignmentRequirement;
 }

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CERT_HASHED_URL">
+    <summary>
+      <para>The <b>CERT_HASHED_URL</b> structure contains a hashed URL.</para>
+    </summary>
+    <seealso cref="CERT_BIOMETRIC_DATA" />
+    <seealso cref="CERT_LOGOTYPE_DETAILS" />
+    <seealso cref="CERT_LOGOTYPE_REFERENCE" />
+  </member>
+  <member name="CERT_HASHED_URL.HashAlgorithm">
+    <summary>
+      <para>A <see cref="CRYPT_ALGORITHM_IDENTIFIER" /> structure that specifies the hash algorithm used to create the URL hash.</para>
+    </summary>
+  </member>
+  <member name="CERT_HASHED_URL.Hash">
+    <summary>
+      <para>A <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_HASH_BLOB</a> structure that contains the hash value.</para>
+    </summary>
+  </member>
+  <member name="CERT_HASHED_URL.pwszUrl">
+    <summary>
+      <para>The address of a null-terminated Unicode string that contains the URL. This member is optional for biometric data and may be <b>NULL</b>.</para>
+    </summary>
+  </member>
+</doc>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="UMS_SCHEDULER_STARTUP_INFO">
+    <summary>
+      <para>Specifies attributes for a user-mode scheduling (UMS) scheduler thread. The <see cref="EnterUmsSchedulingMode" /> function uses this structure.</para>
+    </summary>
+  </member>
+  <member name="UMS_SCHEDULER_STARTUP_INFO.UmsVersion">
+    <summary>
+      <para>The UMS version for which the application was built. This parameter must be <b>UMS_VERSION</b>.</para>
+    </summary>
+  </member>
+  <member name="UMS_SCHEDULER_STARTUP_INFO.CompletionList">
+    <summary>
+      <para>A pointer to a UMS completion list to associate with the calling thread.</para>
+    </summary>
+  </member>
+  <member name="UMS_SCHEDULER_STARTUP_INFO.SchedulerProc">
+    <summary>
+      <para>A pointer to an application-defined <a href="https://docs.microsoft.com//windows/desktop/api/winnt/nc-winnt-rtl_ums_scheduler_entry_point">UmsSchedulerProc</a> entry point function. The system calls this function when the calling thread has been converted to UMS and is ready to run UMS worker threads. Subsequently, it calls this function when a UMS worker thread running on the calling thread yields or blocks.</para>
+    </summary>
+  </member>
+  <member name="UMS_SCHEDULER_STARTUP_INFO.SchedulerParam">
+    <summary>
+      <para>An application-defined parameter to pass to the specified <a href="https://docs.microsoft.com//windows/desktop/api/winnt/nc-winnt-rtl_ums_scheduler_entry_point">UmsSchedulerProc</a> function.</para>
+    </summary>
+  </member>
+</doc>

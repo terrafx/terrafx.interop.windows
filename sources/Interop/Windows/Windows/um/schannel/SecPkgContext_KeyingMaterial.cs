@@ -7,12 +7,15 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SecPkgContext_KeyingMaterial.xml' path='doc/member[@name="SecPkgContext_KeyingMaterial"]/*' />
 [SupportedOSPlatform("windows10.0")]
 public unsafe partial struct SecPkgContext_KeyingMaterial
 {
+    /// <include file='SecPkgContext_KeyingMaterial.xml' path='doc/member[@name="SecPkgContext_KeyingMaterial.cbKeyingMaterial"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbKeyingMaterial;
 
+    /// <include file='SecPkgContext_KeyingMaterial.xml' path='doc/member[@name="SecPkgContext_KeyingMaterial.pbKeyingMaterial"]/*' />
     [NativeTypeName("PBYTE")]
     public byte* pbKeyingMaterial;
 }

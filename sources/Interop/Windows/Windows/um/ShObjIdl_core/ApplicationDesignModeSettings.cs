@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ApplicationDesignModeSettings.xml' path='doc/member[@name="ApplicationDesignModeSettings"]/*' />
 [Guid("958A6FB5-DCB2-4FAF-AAFD-7FB054AD1A3B")]
 public partial struct ApplicationDesignModeSettings
 {

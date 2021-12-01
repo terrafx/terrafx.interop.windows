@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SYNCMGR_CONFLICT_ID_INFO.xml' path='doc/member[@name="SYNCMGR_CONFLICT_ID_INFO"]/*' />
 public unsafe partial struct SYNCMGR_CONFLICT_ID_INFO
 {
+    /// <include file='SYNCMGR_CONFLICT_ID_INFO.xml' path='doc/member[@name="SYNCMGR_CONFLICT_ID_INFO.pblobID"]/*' />
     public BYTE_BLOB* pblobID;
 
+    /// <include file='SYNCMGR_CONFLICT_ID_INFO.xml' path='doc/member[@name="SYNCMGR_CONFLICT_ID_INFO.pblobExtra"]/*' />
     public BYTE_BLOB* pblobExtra;
 }

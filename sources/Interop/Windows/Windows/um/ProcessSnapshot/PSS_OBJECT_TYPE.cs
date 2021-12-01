@@ -7,14 +7,28 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PSS_OBJECT_TYPE.xml' path='doc/member[@name="PSS_OBJECT_TYPE"]/*' />
 [SupportedOSPlatform("windows8.1")]
 public enum PSS_OBJECT_TYPE
 {
+    /// <include file='PSS_OBJECT_TYPE.xml' path='doc/member[@name="PSS_OBJECT_TYPE.PSS_OBJECT_TYPE_UNKNOWN"]/*' />
     PSS_OBJECT_TYPE_UNKNOWN = 0,
+
+    /// <include file='PSS_OBJECT_TYPE.xml' path='doc/member[@name="PSS_OBJECT_TYPE.PSS_OBJECT_TYPE_PROCESS"]/*' />
     PSS_OBJECT_TYPE_PROCESS = 1,
+
+    /// <include file='PSS_OBJECT_TYPE.xml' path='doc/member[@name="PSS_OBJECT_TYPE.PSS_OBJECT_TYPE_THREAD"]/*' />
     PSS_OBJECT_TYPE_THREAD = 2,
+
+    /// <include file='PSS_OBJECT_TYPE.xml' path='doc/member[@name="PSS_OBJECT_TYPE.PSS_OBJECT_TYPE_MUTANT"]/*' />
     PSS_OBJECT_TYPE_MUTANT = 3,
+
+    /// <include file='PSS_OBJECT_TYPE.xml' path='doc/member[@name="PSS_OBJECT_TYPE.PSS_OBJECT_TYPE_EVENT"]/*' />
     PSS_OBJECT_TYPE_EVENT = 4,
+
+    /// <include file='PSS_OBJECT_TYPE.xml' path='doc/member[@name="PSS_OBJECT_TYPE.PSS_OBJECT_TYPE_SECTION"]/*' />
     PSS_OBJECT_TYPE_SECTION = 5,
+
+    /// <include file='PSS_OBJECT_TYPE.xml' path='doc/member[@name="PSS_OBJECT_TYPE.PSS_OBJECT_TYPE_SEMAPHORE"]/*' />
     PSS_OBJECT_TYPE_SEMAPHORE = 6,
 }

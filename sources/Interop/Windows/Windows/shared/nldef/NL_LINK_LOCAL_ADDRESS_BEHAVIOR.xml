@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="NL_LINK_LOCAL_ADDRESS_BEHAVIOR">
+    <summary>
+      <para>The NL_LINK_LOCAL_ADDRESS_BEHAVIOR enumeration type defines the link local address behavior.</para>
+    </summary>
+  </member>
+  <member name="NL_LINK_LOCAL_ADDRESS_BEHAVIOR.LinkLocalAlwaysOff">
+    <summary>
+      <para>A link local IP address should never be used.</para>
+    </summary>
+  </member>
+  <member name="NL_LINK_LOCAL_ADDRESS_BEHAVIOR.LinkLocalDelayed">
+    <summary>
+      <para>A link local IP address should be used only if no other address is available. This setting is the
+default setting for an IPv4 interface.</para>
+    </summary>
+  </member>
+  <member name="NL_LINK_LOCAL_ADDRESS_BEHAVIOR.LinkLocalAlwaysOn">
+    <summary>
+      <para>A link local IP address should always be used. This setting is the default setting for an IPv6
+interface.</para>
+    </summary>
+  </member>
+  <member name="NL_LINK_LOCAL_ADDRESS_BEHAVIOR.LinkLocalUnchanged">
+    <summary>
+      <para>When the properties of an IP interface are being set, the value for link local address behavior
+should be unchanged.</para>
+    </summary>
+  </member>
+</doc>

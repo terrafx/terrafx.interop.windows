@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='BINARY_BLOB_CREDENTIAL_INFO.xml' path='doc/member[@name="BINARY_BLOB_CREDENTIAL_INFO"]/*' />
 public unsafe partial struct BINARY_BLOB_CREDENTIAL_INFO
 {
+    /// <include file='BINARY_BLOB_CREDENTIAL_INFO.xml' path='doc/member[@name="BINARY_BLOB_CREDENTIAL_INFO.cbBlob"]/*' />
     [NativeTypeName("ULONG")]
     public uint cbBlob;
 
+    /// <include file='BINARY_BLOB_CREDENTIAL_INFO.xml' path='doc/member[@name="BINARY_BLOB_CREDENTIAL_INFO.pbBlob"]/*' />
     [NativeTypeName("LPBYTE")]
     public byte* pbBlob;
 }

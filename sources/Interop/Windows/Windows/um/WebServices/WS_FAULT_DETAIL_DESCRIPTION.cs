@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_FAULT_DETAIL_DESCRIPTION.xml' path='doc/member[@name="WS_FAULT_DETAIL_DESCRIPTION"]/*' />
 public unsafe partial struct WS_FAULT_DETAIL_DESCRIPTION
 {
+    /// <include file='WS_FAULT_DETAIL_DESCRIPTION.xml' path='doc/member[@name="WS_FAULT_DETAIL_DESCRIPTION.action"]/*' />
     public WS_XML_STRING* action;
 
+    /// <include file='WS_FAULT_DETAIL_DESCRIPTION.xml' path='doc/member[@name="WS_FAULT_DETAIL_DESCRIPTION.detailElementDescription"]/*' />
     public WS_ELEMENT_DESCRIPTION* detailElementDescription;
 }

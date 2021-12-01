@@ -5,17 +5,22 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TXFS_CREATE_MINIVERSION_INFO.xml' path='doc/member[@name="TXFS_CREATE_MINIVERSION_INFO"]/*' />
 public partial struct TXFS_CREATE_MINIVERSION_INFO
 {
+    /// <include file='TXFS_CREATE_MINIVERSION_INFO.xml' path='doc/member[@name="TXFS_CREATE_MINIVERSION_INFO.StructureVersion"]/*' />
     [NativeTypeName("WORD")]
     public ushort StructureVersion;
 
+    /// <include file='TXFS_CREATE_MINIVERSION_INFO.xml' path='doc/member[@name="TXFS_CREATE_MINIVERSION_INFO.StructureLength"]/*' />
     [NativeTypeName("WORD")]
     public ushort StructureLength;
 
+    /// <include file='TXFS_CREATE_MINIVERSION_INFO.xml' path='doc/member[@name="TXFS_CREATE_MINIVERSION_INFO.BaseVersion"]/*' />
     [NativeTypeName("DWORD")]
     public uint BaseVersion;
 
+    /// <include file='TXFS_CREATE_MINIVERSION_INFO.xml' path='doc/member[@name="TXFS_CREATE_MINIVERSION_INFO.MiniVersion"]/*' />
     [NativeTypeName("WORD")]
     public ushort MiniVersion;
 }

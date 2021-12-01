@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVEncStatAudioPeakPCMValue.xml' path='doc/member[@name="CODECAPI_AVEncStatAudioPeakPCMValue"]/*' />
 [Guid("DCE7FD34-DC00-4C16-821B-35D9EB00FB1A")]
 public partial struct CODECAPI_AVEncStatAudioPeakPCMValue
 {

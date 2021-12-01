@@ -5,12 +5,24 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TREEITEMSTATES.xml' path='doc/member[@name="TREEITEMSTATES"]/*' />
 public enum TREEITEMSTATES
 {
+    /// <include file='TREEITEMSTATES.xml' path='doc/member[@name="TREEITEMSTATES.TREIS_NORMAL"]/*' />
     TREIS_NORMAL = 1,
+
+    /// <include file='TREEITEMSTATES.xml' path='doc/member[@name="TREEITEMSTATES.TREIS_HOT"]/*' />
     TREIS_HOT = 2,
+
+    /// <include file='TREEITEMSTATES.xml' path='doc/member[@name="TREEITEMSTATES.TREIS_SELECTED"]/*' />
     TREIS_SELECTED = 3,
+
+    /// <include file='TREEITEMSTATES.xml' path='doc/member[@name="TREEITEMSTATES.TREIS_DISABLED"]/*' />
     TREIS_DISABLED = 4,
+
+    /// <include file='TREEITEMSTATES.xml' path='doc/member[@name="TREEITEMSTATES.TREIS_SELECTEDNOTFOCUS"]/*' />
     TREIS_SELECTEDNOTFOCUS = 5,
+
+    /// <include file='TREEITEMSTATES.xml' path='doc/member[@name="TREEITEMSTATES.TREIS_HOTSELECTED"]/*' />
     TREIS_HOTSELECTED = 6,
 }

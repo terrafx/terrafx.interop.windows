@@ -5,13 +5,17 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ACTIVATION_CONTEXT_RUN_LEVEL_INFORMATION.xml' path='doc/member[@name="ACTIVATION_CONTEXT_RUN_LEVEL_INFORMATION"]/*' />
 public partial struct ACTIVATION_CONTEXT_RUN_LEVEL_INFORMATION
 {
+    /// <include file='ACTIVATION_CONTEXT_RUN_LEVEL_INFORMATION.xml' path='doc/member[@name="ACTIVATION_CONTEXT_RUN_LEVEL_INFORMATION.ulFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint ulFlags;
 
+    /// <include file='ACTIVATION_CONTEXT_RUN_LEVEL_INFORMATION.xml' path='doc/member[@name="ACTIVATION_CONTEXT_RUN_LEVEL_INFORMATION.RunLevel"]/*' />
     public ACTCTX_REQUESTED_RUN_LEVEL RunLevel;
 
+    /// <include file='ACTIVATION_CONTEXT_RUN_LEVEL_INFORMATION.xml' path='doc/member[@name="ACTIVATION_CONTEXT_RUN_LEVEL_INFORMATION.UiAccess"]/*' />
     [NativeTypeName("DWORD")]
     public uint UiAccess;
 }

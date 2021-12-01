@@ -7,10 +7,12 @@ using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WOW64_ARCHITECTURE_INFORMATION.xml' path='doc/member[@name="WOW64_ARCHITECTURE_INFORMATION"]/*' />
 public partial struct WOW64_ARCHITECTURE_INFORMATION
 {
     public uint _bitfield;
 
+    /// <include file='WOW64_ARCHITECTURE_INFORMATION.xml' path='doc/member[@name="WOW64_ARCHITECTURE_INFORMATION.Machine"]/*' />
     [NativeTypeName("DWORD : 16")]
     public uint Machine
     {
@@ -27,6 +29,7 @@ public partial struct WOW64_ARCHITECTURE_INFORMATION
         }
     }
 
+    /// <include file='WOW64_ARCHITECTURE_INFORMATION.xml' path='doc/member[@name="WOW64_ARCHITECTURE_INFORMATION.KernelMode"]/*' />
     [NativeTypeName("DWORD : 1")]
     public uint KernelMode
     {
@@ -43,6 +46,7 @@ public partial struct WOW64_ARCHITECTURE_INFORMATION
         }
     }
 
+    /// <include file='WOW64_ARCHITECTURE_INFORMATION.xml' path='doc/member[@name="WOW64_ARCHITECTURE_INFORMATION.UserMode"]/*' />
     [NativeTypeName("DWORD : 1")]
     public uint UserMode
     {
@@ -59,6 +63,7 @@ public partial struct WOW64_ARCHITECTURE_INFORMATION
         }
     }
 
+    /// <include file='WOW64_ARCHITECTURE_INFORMATION.xml' path='doc/member[@name="WOW64_ARCHITECTURE_INFORMATION.Native"]/*' />
     [NativeTypeName("DWORD : 1")]
     public uint Native
     {
@@ -75,6 +80,7 @@ public partial struct WOW64_ARCHITECTURE_INFORMATION
         }
     }
 
+    /// <include file='WOW64_ARCHITECTURE_INFORMATION.xml' path='doc/member[@name="WOW64_ARCHITECTURE_INFORMATION.Process"]/*' />
     [NativeTypeName("DWORD : 1")]
     public uint Process
     {
@@ -91,6 +97,7 @@ public partial struct WOW64_ARCHITECTURE_INFORMATION
         }
     }
 
+    /// <include file='WOW64_ARCHITECTURE_INFORMATION.xml' path='doc/member[@name="WOW64_ARCHITECTURE_INFORMATION.ReservedZero0"]/*' />
     [NativeTypeName("DWORD : 12")]
     public uint ReservedZero0
     {

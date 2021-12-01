@@ -5,12 +5,24 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='styleGridRowAlign.xml' path='doc/member[@name="styleGridRowAlign"]/*' />
 public enum styleGridRowAlign
 {
+    /// <include file='styleGridRowAlign.xml' path='doc/member[@name="styleGridRowAlign.styleGridRowAlignCenter"]/*' />
     styleGridRowAlignCenter = 0,
+
+    /// <include file='styleGridRowAlign.xml' path='doc/member[@name="styleGridRowAlign.styleGridRowAlignEnd"]/*' />
     styleGridRowAlignEnd = 1,
+
+    /// <include file='styleGridRowAlign.xml' path='doc/member[@name="styleGridRowAlign.styleGridRowAlignStart"]/*' />
     styleGridRowAlignStart = 2,
+
+    /// <include file='styleGridRowAlign.xml' path='doc/member[@name="styleGridRowAlign.styleGridRowAlignStretch"]/*' />
     styleGridRowAlignStretch = 3,
+
+    /// <include file='styleGridRowAlign.xml' path='doc/member[@name="styleGridRowAlign.styleGridRowAlignNotSet"]/*' />
     styleGridRowAlignNotSet = 4,
+
+    /// <include file='styleGridRowAlign.xml' path='doc/member[@name="styleGridRowAlign.styleGridRowAlign_Max"]/*' />
     styleGridRowAlign_Max = 2147483647,
 }

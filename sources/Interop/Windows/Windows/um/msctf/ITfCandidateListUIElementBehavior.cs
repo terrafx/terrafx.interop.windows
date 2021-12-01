@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITfCandidateListUIElementBehavior.xml' path='doc/member[@name="ITfCandidateListUIElementBehavior"]/*' />
 [Guid("85FAD185-58CE-497A-9460-355366B64B9A")]
 [NativeTypeName("struct ITfCandidateListUIElementBehavior : ITfCandidateListUIElement")]
 [NativeInheritance("ITfCandidateListUIElement")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITfCandidateListUIElementBehavior : ITfCandidateLis
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITfCandidateListUIElementBehavior : ITfCandidateLis
         return ((delegate* unmanaged<ITfCandidateListUIElementBehavior*, Guid*, void**, int>)(lpVtbl[0]))((ITfCandidateListUIElementBehavior*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITfCandidateListUIElementBehavior : ITfCandidateLis
         return ((delegate* unmanaged<ITfCandidateListUIElementBehavior*, uint>)(lpVtbl[1]))((ITfCandidateListUIElementBehavior*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITfCandidateListUIElementBehavior : ITfCandidateLis
         return ((delegate* unmanaged<ITfCandidateListUIElementBehavior*, uint>)(lpVtbl[2]))((ITfCandidateListUIElementBehavior*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ITfUIElement.GetDescription" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetDescription([NativeTypeName("BSTR *")] ushort** pbstrDescription)
@@ -46,6 +51,7 @@ public unsafe partial struct ITfCandidateListUIElementBehavior : ITfCandidateLis
         return ((delegate* unmanaged<ITfCandidateListUIElementBehavior*, ushort**, int>)(lpVtbl[3]))((ITfCandidateListUIElementBehavior*)Unsafe.AsPointer(ref this), pbstrDescription);
     }
 
+    /// <inheritdoc cref="ITfUIElement.GetGUID" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetGUID(Guid* pguid)
@@ -53,6 +59,7 @@ public unsafe partial struct ITfCandidateListUIElementBehavior : ITfCandidateLis
         return ((delegate* unmanaged<ITfCandidateListUIElementBehavior*, Guid*, int>)(lpVtbl[4]))((ITfCandidateListUIElementBehavior*)Unsafe.AsPointer(ref this), pguid);
     }
 
+    /// <inheritdoc cref="ITfUIElement.Show" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT Show(BOOL bShow)
@@ -60,6 +67,7 @@ public unsafe partial struct ITfCandidateListUIElementBehavior : ITfCandidateLis
         return ((delegate* unmanaged<ITfCandidateListUIElementBehavior*, BOOL, int>)(lpVtbl[5]))((ITfCandidateListUIElementBehavior*)Unsafe.AsPointer(ref this), bShow);
     }
 
+    /// <inheritdoc cref="ITfUIElement.IsShown" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT IsShown(BOOL* pbShow)
@@ -67,6 +75,7 @@ public unsafe partial struct ITfCandidateListUIElementBehavior : ITfCandidateLis
         return ((delegate* unmanaged<ITfCandidateListUIElementBehavior*, BOOL*, int>)(lpVtbl[6]))((ITfCandidateListUIElementBehavior*)Unsafe.AsPointer(ref this), pbShow);
     }
 
+    /// <inheritdoc cref="ITfCandidateListUIElement.GetUpdatedFlags" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetUpdatedFlags([NativeTypeName("DWORD *")] uint* pdwFlags)
@@ -74,6 +83,7 @@ public unsafe partial struct ITfCandidateListUIElementBehavior : ITfCandidateLis
         return ((delegate* unmanaged<ITfCandidateListUIElementBehavior*, uint*, int>)(lpVtbl[7]))((ITfCandidateListUIElementBehavior*)Unsafe.AsPointer(ref this), pdwFlags);
     }
 
+    /// <inheritdoc cref="ITfCandidateListUIElement.GetDocumentMgr" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetDocumentMgr(ITfDocumentMgr** ppdim)
@@ -81,6 +91,7 @@ public unsafe partial struct ITfCandidateListUIElementBehavior : ITfCandidateLis
         return ((delegate* unmanaged<ITfCandidateListUIElementBehavior*, ITfDocumentMgr**, int>)(lpVtbl[8]))((ITfCandidateListUIElementBehavior*)Unsafe.AsPointer(ref this), ppdim);
     }
 
+    /// <inheritdoc cref="ITfCandidateListUIElement.GetCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT GetCount(uint* puCount)
@@ -88,6 +99,7 @@ public unsafe partial struct ITfCandidateListUIElementBehavior : ITfCandidateLis
         return ((delegate* unmanaged<ITfCandidateListUIElementBehavior*, uint*, int>)(lpVtbl[9]))((ITfCandidateListUIElementBehavior*)Unsafe.AsPointer(ref this), puCount);
     }
 
+    /// <inheritdoc cref="ITfCandidateListUIElement.GetSelection" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT GetSelection(uint* puIndex)
@@ -95,6 +107,7 @@ public unsafe partial struct ITfCandidateListUIElementBehavior : ITfCandidateLis
         return ((delegate* unmanaged<ITfCandidateListUIElementBehavior*, uint*, int>)(lpVtbl[10]))((ITfCandidateListUIElementBehavior*)Unsafe.AsPointer(ref this), puIndex);
     }
 
+    /// <inheritdoc cref="ITfCandidateListUIElement.GetString" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT GetString(uint uIndex, [NativeTypeName("BSTR *")] ushort** pstr)
@@ -102,6 +115,7 @@ public unsafe partial struct ITfCandidateListUIElementBehavior : ITfCandidateLis
         return ((delegate* unmanaged<ITfCandidateListUIElementBehavior*, uint, ushort**, int>)(lpVtbl[11]))((ITfCandidateListUIElementBehavior*)Unsafe.AsPointer(ref this), uIndex, pstr);
     }
 
+    /// <inheritdoc cref="ITfCandidateListUIElement.GetPageIndex" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT GetPageIndex(uint* pIndex, uint uSize, uint* puPageCnt)
@@ -109,6 +123,7 @@ public unsafe partial struct ITfCandidateListUIElementBehavior : ITfCandidateLis
         return ((delegate* unmanaged<ITfCandidateListUIElementBehavior*, uint*, uint, uint*, int>)(lpVtbl[12]))((ITfCandidateListUIElementBehavior*)Unsafe.AsPointer(ref this), pIndex, uSize, puPageCnt);
     }
 
+    /// <inheritdoc cref="ITfCandidateListUIElement.SetPageIndex" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT SetPageIndex(uint* pIndex, uint uPageCnt)
@@ -116,6 +131,7 @@ public unsafe partial struct ITfCandidateListUIElementBehavior : ITfCandidateLis
         return ((delegate* unmanaged<ITfCandidateListUIElementBehavior*, uint*, uint, int>)(lpVtbl[13]))((ITfCandidateListUIElementBehavior*)Unsafe.AsPointer(ref this), pIndex, uPageCnt);
     }
 
+    /// <inheritdoc cref="ITfCandidateListUIElement.GetCurrentPage" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT GetCurrentPage(uint* puPage)
@@ -123,6 +139,7 @@ public unsafe partial struct ITfCandidateListUIElementBehavior : ITfCandidateLis
         return ((delegate* unmanaged<ITfCandidateListUIElementBehavior*, uint*, int>)(lpVtbl[14]))((ITfCandidateListUIElementBehavior*)Unsafe.AsPointer(ref this), puPage);
     }
 
+    /// <include file='ITfCandidateListUIElementBehavior.xml' path='doc/member[@name="ITfCandidateListUIElementBehavior.SetSelection"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT SetSelection(uint nIndex)
@@ -130,6 +147,7 @@ public unsafe partial struct ITfCandidateListUIElementBehavior : ITfCandidateLis
         return ((delegate* unmanaged<ITfCandidateListUIElementBehavior*, uint, int>)(lpVtbl[15]))((ITfCandidateListUIElementBehavior*)Unsafe.AsPointer(ref this), nIndex);
     }
 
+    /// <include file='ITfCandidateListUIElementBehavior.xml' path='doc/member[@name="ITfCandidateListUIElementBehavior.Finalize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT Finalize()
@@ -137,6 +155,7 @@ public unsafe partial struct ITfCandidateListUIElementBehavior : ITfCandidateLis
         return ((delegate* unmanaged<ITfCandidateListUIElementBehavior*, int>)(lpVtbl[16]))((ITfCandidateListUIElementBehavior*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITfCandidateListUIElementBehavior.xml' path='doc/member[@name="ITfCandidateListUIElementBehavior.Abort"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT Abort()

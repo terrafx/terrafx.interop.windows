@@ -7,15 +7,19 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='BINDPTR.xml' path='doc/member[@name="BINDPTR"]/*' />
 [StructLayout(LayoutKind.Explicit)]
 public unsafe partial struct BINDPTR
 {
+    /// <include file='BINDPTR.xml' path='doc/member[@name="BINDPTR.lpfuncdesc"]/*' />
     [FieldOffset(0)]
     public FUNCDESC* lpfuncdesc;
 
+    /// <include file='BINDPTR.xml' path='doc/member[@name="BINDPTR.lpvardesc"]/*' />
     [FieldOffset(0)]
     public VARDESC* lpvardesc;
 
+    /// <include file='BINDPTR.xml' path='doc/member[@name="BINDPTR.lptcomp"]/*' />
     [FieldOffset(0)]
     public ITypeComp* lptcomp;
 }

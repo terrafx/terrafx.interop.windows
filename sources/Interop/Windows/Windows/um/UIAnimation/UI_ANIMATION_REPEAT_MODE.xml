@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="UI_ANIMATION_REPEAT_MODE">
+    <summary>
+      <para>Defines the pattern for a loop iteration.</para>
+    </summary>
+  </member>
+  <member name="UI_ANIMATION_REPEAT_MODE.UI_ANIMATION_REPEAT_MODE_NORMAL">
+    <summary>
+      <para>The start of a  loop begins with the first value (v1-&gt;v2, v1-&gt;v2, v1-&gt;v2, and so on).</para>
+    </summary>
+  </member>
+  <member name="UI_ANIMATION_REPEAT_MODE.UI_ANIMATION_REPEAT_MODE_ALTERNATE">
+    <summary>
+      <para>The  start of a loop alternates between values (v1-&gt;v2, v2-&gt;v1, v1-&gt;v2, and so on).</para>
+    </summary>
+  </member>
+</doc>

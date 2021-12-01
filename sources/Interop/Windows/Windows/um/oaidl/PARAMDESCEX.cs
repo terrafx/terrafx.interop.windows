@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PARAMDESCEX.xml' path='doc/member[@name="PARAMDESCEX"]/*' />
 public partial struct PARAMDESCEX
 {
+    /// <include file='PARAMDESCEX.xml' path='doc/member[@name="PARAMDESCEX.cBytes"]/*' />
     [NativeTypeName("ULONG")]
     public uint cBytes;
 
+    /// <include file='PARAMDESCEX.xml' path='doc/member[@name="PARAMDESCEX.varDefaultValue"]/*' />
     [NativeTypeName("VARIANTARG")]
     public VARIANT varDefaultValue;
 }

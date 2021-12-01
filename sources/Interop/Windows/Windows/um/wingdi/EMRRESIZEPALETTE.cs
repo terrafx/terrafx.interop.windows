@@ -5,13 +5,17 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='EMRRESIZEPALETTE.xml' path='doc/member[@name="EMRRESIZEPALETTE"]/*' />
 public partial struct EMRRESIZEPALETTE
 {
+    /// <include file='EMRRESIZEPALETTE.xml' path='doc/member[@name="EMRRESIZEPALETTE.emr"]/*' />
     public EMR emr;
 
+    /// <include file='EMRRESIZEPALETTE.xml' path='doc/member[@name="EMRRESIZEPALETTE.ihPal"]/*' />
     [NativeTypeName("DWORD")]
     public uint ihPal;
 
+    /// <include file='EMRRESIZEPALETTE.xml' path='doc/member[@name="EMRRESIZEPALETTE.cEntries"]/*' />
     [NativeTypeName("DWORD")]
     public uint cEntries;
 }

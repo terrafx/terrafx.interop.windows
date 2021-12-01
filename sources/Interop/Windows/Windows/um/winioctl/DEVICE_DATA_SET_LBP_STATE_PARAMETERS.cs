@@ -5,17 +5,22 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DEVICE_DATA_SET_LBP_STATE_PARAMETERS.xml' path='doc/member[@name="DEVICE_DATA_SET_LBP_STATE_PARAMETERS"]/*' />
 public partial struct DEVICE_DATA_SET_LBP_STATE_PARAMETERS
 {
+    /// <include file='DEVICE_DATA_SET_LBP_STATE_PARAMETERS.xml' path='doc/member[@name="DEVICE_DATA_SET_LBP_STATE_PARAMETERS.Version"]/*' />
     [NativeTypeName("DWORD")]
     public uint Version;
 
+    /// <include file='DEVICE_DATA_SET_LBP_STATE_PARAMETERS.xml' path='doc/member[@name="DEVICE_DATA_SET_LBP_STATE_PARAMETERS.Size"]/*' />
     [NativeTypeName("DWORD")]
     public uint Size;
 
+    /// <include file='DEVICE_DATA_SET_LBP_STATE_PARAMETERS.xml' path='doc/member[@name="DEVICE_DATA_SET_LBP_STATE_PARAMETERS.Flags"]/*' />
     [NativeTypeName("DWORD")]
     public uint Flags;
 
+    /// <include file='DEVICE_DATA_SET_LBP_STATE_PARAMETERS.xml' path='doc/member[@name="DEVICE_DATA_SET_LBP_STATE_PARAMETERS.OutputVersion"]/*' />
     [NativeTypeName("DWORD")]
     public uint OutputVersion;
 }

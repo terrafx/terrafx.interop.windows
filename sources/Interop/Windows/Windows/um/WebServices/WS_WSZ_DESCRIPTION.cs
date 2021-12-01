@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_WSZ_DESCRIPTION.xml' path='doc/member[@name="WS_WSZ_DESCRIPTION"]/*' />
 public partial struct WS_WSZ_DESCRIPTION
 {
+    /// <include file='WS_WSZ_DESCRIPTION.xml' path='doc/member[@name="WS_WSZ_DESCRIPTION.minCharCount"]/*' />
     [NativeTypeName("ULONG")]
     public uint minCharCount;
 
+    /// <include file='WS_WSZ_DESCRIPTION.xml' path='doc/member[@name="WS_WSZ_DESCRIPTION.maxCharCount"]/*' />
     [NativeTypeName("ULONG")]
     public uint maxCharCount;
 }

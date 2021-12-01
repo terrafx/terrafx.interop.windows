@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='AccStore.xml' path='doc/member[@name="AccStore"]/*' />
 [Guid("5440837F-4BFF-4AE5-A1B1-7722ECC6332A")]
 public partial struct AccStore
 {

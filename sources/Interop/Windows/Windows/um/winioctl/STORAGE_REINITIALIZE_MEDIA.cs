@@ -7,24 +7,31 @@ using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STORAGE_REINITIALIZE_MEDIA.xml' path='doc/member[@name="STORAGE_REINITIALIZE_MEDIA"]/*' />
 public partial struct STORAGE_REINITIALIZE_MEDIA
 {
+    /// <include file='STORAGE_REINITIALIZE_MEDIA.xml' path='doc/member[@name="STORAGE_REINITIALIZE_MEDIA.Version"]/*' />
     [NativeTypeName("DWORD")]
     public uint Version;
 
+    /// <include file='STORAGE_REINITIALIZE_MEDIA.xml' path='doc/member[@name="STORAGE_REINITIALIZE_MEDIA.Size"]/*' />
     [NativeTypeName("DWORD")]
     public uint Size;
 
+    /// <include file='STORAGE_REINITIALIZE_MEDIA.xml' path='doc/member[@name="STORAGE_REINITIALIZE_MEDIA.TimeoutInSeconds"]/*' />
     [NativeTypeName("DWORD")]
     public uint TimeoutInSeconds;
 
+    /// <include file='STORAGE_REINITIALIZE_MEDIA.xml' path='doc/member[@name="STORAGE_REINITIALIZE_MEDIA.SanitizeOption"]/*' />
     [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:5569:5)")]
     public _SanitizeOption_e__Struct SanitizeOption;
 
+    /// <include file='_SanitizeOption_e__Struct.xml' path='doc/member[@name="_SanitizeOption_e__Struct"]/*' />
     public partial struct _SanitizeOption_e__Struct
     {
         public uint _bitfield;
 
+        /// <include file='_SanitizeOption_e__Struct.xml' path='doc/member[@name="_SanitizeOption_e__Struct.SanitizeMethod"]/*' />
         [NativeTypeName("DWORD : 4")]
         public uint SanitizeMethod
         {
@@ -41,6 +48,7 @@ public partial struct STORAGE_REINITIALIZE_MEDIA
             }
         }
 
+        /// <include file='_SanitizeOption_e__Struct.xml' path='doc/member[@name="_SanitizeOption_e__Struct.DisallowUnrestrictedSanitizeExit"]/*' />
         [NativeTypeName("DWORD : 1")]
         public uint DisallowUnrestrictedSanitizeExit
         {
@@ -57,6 +65,7 @@ public partial struct STORAGE_REINITIALIZE_MEDIA
             }
         }
 
+        /// <include file='_SanitizeOption_e__Struct.xml' path='doc/member[@name="_SanitizeOption_e__Struct.Reserved"]/*' />
         [NativeTypeName("DWORD : 27")]
         public uint Reserved
         {

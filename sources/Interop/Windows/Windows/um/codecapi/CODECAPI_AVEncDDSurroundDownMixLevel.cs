@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVEncDDSurroundDownMixLevel.xml' path='doc/member[@name="CODECAPI_AVEncDDSurroundDownMixLevel"]/*' />
 [Guid("7B20D6E5-0BCF-4273-A487-506B047997E9")]
 public partial struct CODECAPI_AVEncDDSurroundDownMixLevel
 {

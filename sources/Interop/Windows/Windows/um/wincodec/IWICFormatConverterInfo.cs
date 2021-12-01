@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IWICFormatConverterInfo.xml' path='doc/member[@name="IWICFormatConverterInfo"]/*' />
 [Guid("9F34FB65-13F4-4F15-BC57-3726B5E53D9F")]
 [NativeTypeName("struct IWICFormatConverterInfo : IWICComponentInfo")]
 [NativeInheritance("IWICComponentInfo")]
@@ -16,6 +17,7 @@ public unsafe partial struct IWICFormatConverterInfo : IWICFormatConverterInfo.I
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IWICFormatConverterInfo : IWICFormatConverterInfo.I
         return ((delegate* unmanaged<IWICFormatConverterInfo*, Guid*, void**, int>)(lpVtbl[0]))((IWICFormatConverterInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IWICFormatConverterInfo : IWICFormatConverterInfo.I
         return ((delegate* unmanaged<IWICFormatConverterInfo*, uint>)(lpVtbl[1]))((IWICFormatConverterInfo*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IWICFormatConverterInfo : IWICFormatConverterInfo.I
         return ((delegate* unmanaged<IWICFormatConverterInfo*, uint>)(lpVtbl[2]))((IWICFormatConverterInfo*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IWICComponentInfo.GetComponentType" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetComponentType(WICComponentType* pType)
@@ -46,6 +51,7 @@ public unsafe partial struct IWICFormatConverterInfo : IWICFormatConverterInfo.I
         return ((delegate* unmanaged<IWICFormatConverterInfo*, WICComponentType*, int>)(lpVtbl[3]))((IWICFormatConverterInfo*)Unsafe.AsPointer(ref this), pType);
     }
 
+    /// <inheritdoc cref="IWICComponentInfo.GetCLSID" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetCLSID([NativeTypeName("CLSID *")] Guid* pclsid)
@@ -53,6 +59,7 @@ public unsafe partial struct IWICFormatConverterInfo : IWICFormatConverterInfo.I
         return ((delegate* unmanaged<IWICFormatConverterInfo*, Guid*, int>)(lpVtbl[4]))((IWICFormatConverterInfo*)Unsafe.AsPointer(ref this), pclsid);
     }
 
+    /// <inheritdoc cref="IWICComponentInfo.GetSigningStatus" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetSigningStatus([NativeTypeName("DWORD *")] uint* pStatus)
@@ -60,6 +67,7 @@ public unsafe partial struct IWICFormatConverterInfo : IWICFormatConverterInfo.I
         return ((delegate* unmanaged<IWICFormatConverterInfo*, uint*, int>)(lpVtbl[5]))((IWICFormatConverterInfo*)Unsafe.AsPointer(ref this), pStatus);
     }
 
+    /// <inheritdoc cref="IWICComponentInfo.GetAuthor" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetAuthor(uint cchAuthor, [NativeTypeName("WCHAR *")] ushort* wzAuthor, uint* pcchActual)
@@ -67,6 +75,7 @@ public unsafe partial struct IWICFormatConverterInfo : IWICFormatConverterInfo.I
         return ((delegate* unmanaged<IWICFormatConverterInfo*, uint, ushort*, uint*, int>)(lpVtbl[6]))((IWICFormatConverterInfo*)Unsafe.AsPointer(ref this), cchAuthor, wzAuthor, pcchActual);
     }
 
+    /// <inheritdoc cref="IWICComponentInfo.GetVendorGUID" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetVendorGUID(Guid* pguidVendor)
@@ -74,6 +83,7 @@ public unsafe partial struct IWICFormatConverterInfo : IWICFormatConverterInfo.I
         return ((delegate* unmanaged<IWICFormatConverterInfo*, Guid*, int>)(lpVtbl[7]))((IWICFormatConverterInfo*)Unsafe.AsPointer(ref this), pguidVendor);
     }
 
+    /// <inheritdoc cref="IWICComponentInfo.GetVersion" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetVersion(uint cchVersion, [NativeTypeName("WCHAR *")] ushort* wzVersion, uint* pcchActual)
@@ -81,6 +91,7 @@ public unsafe partial struct IWICFormatConverterInfo : IWICFormatConverterInfo.I
         return ((delegate* unmanaged<IWICFormatConverterInfo*, uint, ushort*, uint*, int>)(lpVtbl[8]))((IWICFormatConverterInfo*)Unsafe.AsPointer(ref this), cchVersion, wzVersion, pcchActual);
     }
 
+    /// <inheritdoc cref="IWICComponentInfo.GetSpecVersion" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT GetSpecVersion(uint cchSpecVersion, [NativeTypeName("WCHAR *")] ushort* wzSpecVersion, uint* pcchActual)
@@ -88,6 +99,7 @@ public unsafe partial struct IWICFormatConverterInfo : IWICFormatConverterInfo.I
         return ((delegate* unmanaged<IWICFormatConverterInfo*, uint, ushort*, uint*, int>)(lpVtbl[9]))((IWICFormatConverterInfo*)Unsafe.AsPointer(ref this), cchSpecVersion, wzSpecVersion, pcchActual);
     }
 
+    /// <inheritdoc cref="IWICComponentInfo.GetFriendlyName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT GetFriendlyName(uint cchFriendlyName, [NativeTypeName("WCHAR *")] ushort* wzFriendlyName, uint* pcchActual)
@@ -95,6 +107,7 @@ public unsafe partial struct IWICFormatConverterInfo : IWICFormatConverterInfo.I
         return ((delegate* unmanaged<IWICFormatConverterInfo*, uint, ushort*, uint*, int>)(lpVtbl[10]))((IWICFormatConverterInfo*)Unsafe.AsPointer(ref this), cchFriendlyName, wzFriendlyName, pcchActual);
     }
 
+    /// <include file='IWICFormatConverterInfo.xml' path='doc/member[@name="IWICFormatConverterInfo.GetPixelFormats"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT GetPixelFormats(uint cFormats, [NativeTypeName("WICPixelFormatGUID *")] Guid* pPixelFormatGUIDs, uint* pcActual)
@@ -102,6 +115,7 @@ public unsafe partial struct IWICFormatConverterInfo : IWICFormatConverterInfo.I
         return ((delegate* unmanaged<IWICFormatConverterInfo*, uint, Guid*, uint*, int>)(lpVtbl[11]))((IWICFormatConverterInfo*)Unsafe.AsPointer(ref this), cFormats, pPixelFormatGUIDs, pcActual);
     }
 
+    /// <include file='IWICFormatConverterInfo.xml' path='doc/member[@name="IWICFormatConverterInfo.CreateInstance"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT CreateInstance(IWICFormatConverter** ppIConverter)

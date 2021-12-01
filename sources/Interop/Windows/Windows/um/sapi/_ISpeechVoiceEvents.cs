@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='_ISpeechVoiceEvents.xml' path='doc/member[@name="_ISpeechVoiceEvents"]/*' />
 [Guid("A372ACD1-3BEF-4BBD-8FFB-CB3E2B416AF8")]
 [NativeTypeName("struct _ISpeechVoiceEvents : IDispatch")]
 [NativeInheritance("IDispatch")]
@@ -16,6 +17,7 @@ public unsafe partial struct _ISpeechVoiceEvents : _ISpeechVoiceEvents.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct _ISpeechVoiceEvents : _ISpeechVoiceEvents.Interface
         return ((delegate* unmanaged<_ISpeechVoiceEvents*, Guid*, void**, int>)(lpVtbl[0]))((_ISpeechVoiceEvents*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct _ISpeechVoiceEvents : _ISpeechVoiceEvents.Interface
         return ((delegate* unmanaged<_ISpeechVoiceEvents*, uint>)(lpVtbl[1]))((_ISpeechVoiceEvents*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct _ISpeechVoiceEvents : _ISpeechVoiceEvents.Interface
         return ((delegate* unmanaged<_ISpeechVoiceEvents*, uint>)(lpVtbl[2]))((_ISpeechVoiceEvents*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct _ISpeechVoiceEvents : _ISpeechVoiceEvents.Interface
         return ((delegate* unmanaged<_ISpeechVoiceEvents*, uint*, int>)(lpVtbl[3]))((_ISpeechVoiceEvents*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct _ISpeechVoiceEvents : _ISpeechVoiceEvents.Interface
         return ((delegate* unmanaged<_ISpeechVoiceEvents*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((_ISpeechVoiceEvents*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
@@ -60,6 +67,7 @@ public unsafe partial struct _ISpeechVoiceEvents : _ISpeechVoiceEvents.Interface
         return ((delegate* unmanaged<_ISpeechVoiceEvents*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((_ISpeechVoiceEvents*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
+    /// <inheritdoc cref="IDispatch.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)

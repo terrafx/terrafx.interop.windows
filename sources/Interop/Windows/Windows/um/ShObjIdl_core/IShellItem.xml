@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IShellItem.BindToHandler">
+    <summary>
+      <para>Binds to a handler for an item as specified by the handler ID value (BHID).</para>
+    </summary>
+    <param name="pbc">
+      <para>Type: <b><see cref="IBindCtx" />*</b></para>
+      <para>A pointer to an <see cref="IBindCtx" /> interface on a bind context object. Used to pass optional parameters to the handler. The contents of the bind context are handler-specific. For example, when binding to <b>BHID_Stream</b>, the <a href="https://docs.microsoft.com//windows/desktop/Stg/stgm-constants">STGM</a> flags in the bind context indicate the mode of access desired (read or read/write).</para>
+    </param>
+    <param name="bhid">
+      <para>Type: <b>REFGUID</b></para>
+      <para>Reference to a GUID that specifies which handler will be created. One of the following values defined in Shlguid.h:</para>
+      <h4>BHID_SFObject</h4>
+      <para>Restricts usage to <see cref="BindToObject" />.</para>
+      <h4>BHID_SFUIObject</h4>
+      <para>Restricts usage to <see cref="GetUIObjectOf" />.</para>
+      <h4>BHID_SFViewObject</h4>
+      <para>Restricts usage to <see cref="CreateViewObject" />.</para>
+      <h4>BHID_Storage</h4>
+      <para>Attempts to retrieve the storage RIID, but defaults to Shell implementation on failure.</para>
+      <h4>BHID_Stream</h4>
+      <para>Restricts usage to <see cref="IStream" />.</para>
+      <h4>BHID_LinkTargetItem</h4>
+      <para>CLSID_ShellItem is initialized with the target of this item (can only be SFGAO_LINK). See <see cref="GetAttributesOf" /> for a description of SFGAO_LINK.</para>
+      <h4>BHID_StorageEnum</h4>
+      <para>If the item is a folder, gets an <see cref="IEnumShellItems" /> object with which to enumerate the storage contents.</para>
+      <h4>BHID_Transfer</h4>
+      <para>
+        <b>Introduced in Windows Vista</b>: If the item is a folder, gets an <see cref="ITransferSource" /> or <see cref="ITransferDestination" /> object.</para>
+      <h4>BHID_PropertyStore</h4>
+      <para>
+        <b>Introduced in Windows Vista</b>: Restricts usage to <see cref="IPropertyStore" /> or <see cref="IPropertyStoreFactory" />.</para>
+      <h4>BHID_ThumbnailHandler</h4>
+      <para>
+        <b>Introduced in Windows Vista</b>: Restricts usage to <see cref="IExtractImage" /> or <see cref="IThumbnailProvider" />.</para>
+      <h4>BHID_EnumItems</h4>
+      <para>
+        <b>Introduced in Windows Vista</b>: If the item is a folder, gets an <see cref="IEnumShellItems" /> object that enumerates all items in the folder. This includes folders, nonfolders, and hidden items.</para>
+      <h4>BHID_DataObject</h4>
+      <para>
+        <b>Introduced in Windows Vista</b>: Gets an <see cref="IDataObject" /> object for use with an item or an array of items.</para>
+      <h4>BHID_AssociationArray</h4>
+      <para>
+        <b>Introduced in Windows Vista</b>: Gets an <see cref="IQueryAssociations" /> object for use with an item or an array of items.</para>
+      <h4>BHID_Filter</h4>
+      <para>
+        <b>Introduced in Windows Vista</b>: Restricts usage to <see cref="IFilter" />.</para>
+      <h4>BHID_EnumAssocHandlers</h4>
+      <para>
+        <b>Introduced in Windows 7</b>: Gets an <see cref="IEnumAssocHandlers" /> object used to enumerate the recommended association handlers for the given item.</para>
+      <h4>BHID_RandomAccessStream</h4>
+      <para>
+        <b>Introduced in Windows 8</b>: Gets an <a href="https://docs.microsoft.com//previous-versions/hh438400(v=vs.85)">IRandomAccessStream</a> object for the item.</para>
+      <h4>BHID_FilePlaceholder</h4>
+      <para>
+        <b>Introduced in Windows 8.1</b>: Gets an object used to provide placeholder file functionality.</para>
+    </param>
+    <param name="riid">
+      <para>Type: <b>REFIID</b></para>
+      <para>IID of the object type to retrieve.</para>
+    </param>
+    <param name="ppv">
+      <para>Type: <b>void**</b></para>
+      <para>When this method returns, contains a pointer of type <i>riid</i> that is returned by the handler specified by <i>rbhid</i>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IShellFolder" />
+    <seealso cref="IShellItem" />
+  </member>
+  <member name="IShellItem.Compare">
+    <summary>
+      <para>Compares two <see cref="IShellItem" /> objects.</para>
+    </summary>
+    <param name="psi">
+      <para>Type: <b><see cref="IShellItem" />*</b></para>
+      <para>A pointer to an <see cref="IShellItem" /> object to compare with the existing <b>IShellItem</b> object.</para>
+    </param>
+    <param name="hint">
+      <para>Type: <b><see cref="SICHINTF" /></b></para>
+      <para>One of the <see cref="SICHINTF" /> values that determines how to perform the comparison. See <b>SICHINTF</b> for the list of possible values for this parameter.</para>
+    </param>
+    <param name="piOrder">
+      <para>Type: <b>int*</b></para>
+      <para>This parameter receives the result of the comparison. If the two items are the same this parameter equals zero; if they are different the parameter is nonzero.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_OK if the items are the same, S_FALSE if they are different, or an error value otherwise.</para>
+    </returns>
+    <remarks>
+      <para>The data type used in the second parameter, SICHINTF, is defined as:</para>
+      <code>typedef DWORD SICHINTF;
+</code>
+    </remarks>
+    <seealso cref="IShellFolder" />
+    <seealso cref="IShellItem" />
+  </member>
+  <member name="IShellItem.GetAttributes">
+    <summary>
+      <para>Gets a requested set of attributes of the <see cref="IShellItem" /> object.</para>
+    </summary>
+    <param name="sfgaoMask">
+      <para>Type: <b>SFGAOF</b></para>
+      <para>Specifies the attributes to retrieve. One or more of the <a href="https://docs.microsoft.com//windows/desktop/shell/sfgao">SFGAO</a> values. Use a bitwise OR operator to determine the attributes to retrieve.</para>
+    </param>
+    <param name="psfgaoAttribs">
+      <para>Type: <b>SFGAOF*</b></para>
+      <para>A pointer to a value that, when this method returns successfully, contains the requested attributes. One or more of the <a href="https://docs.microsoft.com//windows/desktop/shell/sfgao">SFGAO</a> values. Only those attributes specified by <i>sfgaoMask</i> are returned; other attribute values are undefined.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_OK if the attributes returned exactly match those requested in <i>sfgaoMask</i>, S_FALSE if the attributes do not exactly match, or a standard COM error value otherwise.</para>
+    </returns>
+    <seealso cref="GetAttributes" />
+    <seealso cref="GetAttributesOf" />
+    <seealso cref="IShellItem" />
+  </member>
+  <member name="IShellItem.GetDisplayName">
+    <summary>
+      <para>Gets the display name of the <see cref="IShellItem" /> object.</para>
+    </summary>
+    <param name="sigdnName">
+      <para>Type: <b><see cref="SIGDN" /></b></para>
+      <para>One of the <see cref="SIGDN" /> values that indicates how the name should look.</para>
+    </param>
+    <param name="ppszName">
+      <para>Type: <b>LPWSTR*</b></para>
+      <para>A value that, when this function returns successfully, receives the address of a pointer to the retrieved display name.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>It is the responsibility of the caller to free the string pointed to by <i>ppszName</i> when it is no longer needed. Call <see cref="CoTaskMemFree" /> on *<i>ppszName</i> to free the memory.</para>
+    </remarks>
+    <seealso cref="IShellFolder" />
+    <seealso cref="IShellItem" />
+  </member>
+  <member name="IShellItem.GetParent">
+    <summary>
+      <para>Gets the parent of an <see cref="IShellItem" /> object.</para>
+    </summary>
+    <param name="ppsi">
+      <para>Type: <b><see cref="IShellItem" />**</b></para>
+      <para>The address of a pointer to the parent of an <see cref="IShellItem" /> interface.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_OK if successful, or an error value otherwise.</para>
+    </returns>
+    <seealso cref="IShellFolder" />
+    <seealso cref="IShellItem" />
+  </member>
+  <member name="IShellItem">
+    <summary>
+      <para>Exposes methods that retrieve information about a Shell item. <b>IShellItem</b> and <see cref="IShellItem2" /> are the preferred representations of items in any new code.</para>
+    </summary>
+    <remarks>
+      <h3>When to Implement</h3>
+      <para>Third parties do not implement this interface; only use the implementation provided with the system.</para>
+    </remarks>
+    <seealso cref="IShellItem2" />
+  </member>
+</doc>

@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CERT_QC_STATEMENT">
+    <summary>
+      <para>The <b>CERT_QC_STATEMENT</b> structure represents a single statement in a sequence of one or more statements for inclusion in a  Qualified Certificate (QC) statements extension. This structure populates the <b>rgStatement</b> member of the <see cref="CERT_QC_STATEMENTS_EXT_INFO" /> structure.</para>
+    </summary>
+  </member>
+  <member name="CERT_QC_STATEMENT.pszStatementId">
+    <summary>
+      <para>A pointer to a string that contains the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/o-gly">object identifier</a> (OID) for the defined statement.</para>
+      <para>The Wincrypt.h file defines the following <a href="https://docs.microsoft.com//windows/desktop/SecGloss/o-gly">object identifiers</a> (OIDs) for use with this member, but this member can be any OID as required by an application.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_QC_EU_COMPLIANCE</b>
+                </description>
+              </item>
+              <item>
+                <description>"0.4.0.1862.1.1"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>European Union</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>szOID_QC_SSCD</b>
+                </description>
+              </item>
+              <item>
+                <description>"0.4.0.1862.1.4"</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Secure Signature Creation Device</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="CERT_QC_STATEMENT.StatementInfo">
+    <summary>
+      <para>An optional <a href="https://docs.microsoft.com//windows/desktop/SecGloss/b-gly">BLOB</a> that contains additional information that qualifies the defined statement. The <b>pszStatementId</b> member defines the syntax of this parameter.</para>
+    </summary>
+  </member>
+</doc>

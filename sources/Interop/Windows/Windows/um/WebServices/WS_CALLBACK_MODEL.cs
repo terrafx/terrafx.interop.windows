@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_CALLBACK_MODEL.xml' path='doc/member[@name="WS_CALLBACK_MODEL"]/*' />
 public enum WS_CALLBACK_MODEL
 {
+    /// <include file='WS_CALLBACK_MODEL.xml' path='doc/member[@name="WS_CALLBACK_MODEL.WS_SHORT_CALLBACK"]/*' />
     WS_SHORT_CALLBACK = 0,
+
+    /// <include file='WS_CALLBACK_MODEL.xml' path='doc/member[@name="WS_CALLBACK_MODEL.WS_LONG_CALLBACK"]/*' />
     WS_LONG_CALLBACK = 1,
 }

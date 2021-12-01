@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_HTTP_SSL_USERNAME_SECURITY_CONTEXT_BINDING_TEMPLATE">
+    <summary>
+      <para>Security template information to be filled in by application.
+Associated with <see cref="WS_HTTP_SSL_USERNAME_SECURITY_CONTEXT_BINDING_TEMPLATE_TYPE" />.</para>
+    </summary>
+  </member>
+  <member name="WS_HTTP_SSL_USERNAME_SECURITY_CONTEXT_BINDING_TEMPLATE.channelProperties">
+    <summary>
+      <para>Application provided additional channel properties for both bootstrap channel and service channel
+that cannot be represented in policy.</para>
+    </summary>
+  </member>
+  <member name="WS_HTTP_SSL_USERNAME_SECURITY_CONTEXT_BINDING_TEMPLATE.securityProperties">
+    <summary>
+      <para>Application provided additional security properties for the bootstrap channel
+that cannot be represented in policy.</para>
+    </summary>
+  </member>
+  <member name="WS_HTTP_SSL_USERNAME_SECURITY_CONTEXT_BINDING_TEMPLATE.sslTransportSecurityBinding">
+    <summary>
+      <para>Application provided SSL transport security binding information for both bootstrap channel and
+service channel that cannot be represented
+in policy.</para>
+    </summary>
+  </member>
+  <member name="WS_HTTP_SSL_USERNAME_SECURITY_CONTEXT_BINDING_TEMPLATE.usernameMessageSecurityBinding">
+    <summary>
+      <para>Application provided username binding information for the bootstrap channel that cannot be represented in policy.</para>
+    </summary>
+  </member>
+  <member name="WS_HTTP_SSL_USERNAME_SECURITY_CONTEXT_BINDING_TEMPLATE.securityContextSecurityBinding">
+    <summary>
+      <para>Application provided security context message binding information for service channel that cannot be represented in policy.</para>
+    </summary>
+  </member>
+</doc>

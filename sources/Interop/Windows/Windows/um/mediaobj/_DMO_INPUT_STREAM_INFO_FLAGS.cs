@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='_DMO_INPUT_STREAM_INFO_FLAGS.xml' path='doc/member[@name="_DMO_INPUT_STREAM_INFO_FLAGS"]/*' />
 public enum _DMO_INPUT_STREAM_INFO_FLAGS
 {
+    /// <include file='_DMO_INPUT_STREAM_INFO_FLAGS.xml' path='doc/member[@name="_DMO_INPUT_STREAM_INFO_FLAGS.DMO_INPUT_STREAMF_WHOLE_SAMPLES"]/*' />
     DMO_INPUT_STREAMF_WHOLE_SAMPLES = 0x1,
+
+    /// <include file='_DMO_INPUT_STREAM_INFO_FLAGS.xml' path='doc/member[@name="_DMO_INPUT_STREAM_INFO_FLAGS.DMO_INPUT_STREAMF_SINGLE_SAMPLE_PER_BUFFER"]/*' />
     DMO_INPUT_STREAMF_SINGLE_SAMPLE_PER_BUFFER = 0x2,
+
+    /// <include file='_DMO_INPUT_STREAM_INFO_FLAGS.xml' path='doc/member[@name="_DMO_INPUT_STREAM_INFO_FLAGS.DMO_INPUT_STREAMF_FIXED_SAMPLE_SIZE"]/*' />
     DMO_INPUT_STREAMF_FIXED_SAMPLE_SIZE = 0x4,
+
+    /// <include file='_DMO_INPUT_STREAM_INFO_FLAGS.xml' path='doc/member[@name="_DMO_INPUT_STREAM_INFO_FLAGS.DMO_INPUT_STREAMF_HOLDS_BUFFERS"]/*' />
     DMO_INPUT_STREAMF_HOLDS_BUFFERS = 0x8,
 }

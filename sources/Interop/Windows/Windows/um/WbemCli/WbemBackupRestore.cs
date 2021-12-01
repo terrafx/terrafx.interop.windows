@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WbemBackupRestore.xml' path='doc/member[@name="WbemBackupRestore"]/*' />
 [Guid("C49E32C6-BC8B-11D2-85D4-00105A1F8304")]
 public partial struct WbemBackupRestore
 {

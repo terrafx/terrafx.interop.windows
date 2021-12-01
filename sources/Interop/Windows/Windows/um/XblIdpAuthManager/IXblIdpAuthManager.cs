@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IXblIdpAuthManager.xml' path='doc/member[@name="IXblIdpAuthManager"]/*' />
 [Guid("EB5DDB08-8BBF-449B-AC21-B02DDEB3B136")]
 [NativeTypeName("struct IXblIdpAuthManager : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IXblIdpAuthManager : IXblIdpAuthManager.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IXblIdpAuthManager : IXblIdpAuthManager.Interface
         return ((delegate* unmanaged<IXblIdpAuthManager*, Guid*, void**, int>)(lpVtbl[0]))((IXblIdpAuthManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IXblIdpAuthManager : IXblIdpAuthManager.Interface
         return ((delegate* unmanaged<IXblIdpAuthManager*, uint>)(lpVtbl[1]))((IXblIdpAuthManager*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IXblIdpAuthManager : IXblIdpAuthManager.Interface
         return ((delegate* unmanaged<IXblIdpAuthManager*, uint>)(lpVtbl[2]))((IXblIdpAuthManager*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IXblIdpAuthManager.xml' path='doc/member[@name="IXblIdpAuthManager.SetGamerAccount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetGamerAccount([NativeTypeName("LPCWSTR")] ushort* msaAccountId, [NativeTypeName("LPCWSTR")] ushort* xuid)
@@ -46,6 +51,7 @@ public unsafe partial struct IXblIdpAuthManager : IXblIdpAuthManager.Interface
         return ((delegate* unmanaged<IXblIdpAuthManager*, ushort*, ushort*, int>)(lpVtbl[3]))((IXblIdpAuthManager*)Unsafe.AsPointer(ref this), msaAccountId, xuid);
     }
 
+    /// <include file='IXblIdpAuthManager.xml' path='doc/member[@name="IXblIdpAuthManager.GetGamerAccount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetGamerAccount([NativeTypeName("LPWSTR *")] ushort** msaAccountId, [NativeTypeName("LPWSTR *")] ushort** xuid)
@@ -53,6 +59,7 @@ public unsafe partial struct IXblIdpAuthManager : IXblIdpAuthManager.Interface
         return ((delegate* unmanaged<IXblIdpAuthManager*, ushort**, ushort**, int>)(lpVtbl[4]))((IXblIdpAuthManager*)Unsafe.AsPointer(ref this), msaAccountId, xuid);
     }
 
+    /// <include file='IXblIdpAuthManager.xml' path='doc/member[@name="IXblIdpAuthManager.SetAppViewInitialized"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetAppViewInitialized([NativeTypeName("LPCWSTR")] ushort* appSid, [NativeTypeName("LPCWSTR")] ushort* msaAccountId)
@@ -60,6 +67,7 @@ public unsafe partial struct IXblIdpAuthManager : IXblIdpAuthManager.Interface
         return ((delegate* unmanaged<IXblIdpAuthManager*, ushort*, ushort*, int>)(lpVtbl[5]))((IXblIdpAuthManager*)Unsafe.AsPointer(ref this), appSid, msaAccountId);
     }
 
+    /// <include file='IXblIdpAuthManager.xml' path='doc/member[@name="IXblIdpAuthManager.GetEnvironment"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetEnvironment([NativeTypeName("LPWSTR *")] ushort** environment)
@@ -67,6 +75,7 @@ public unsafe partial struct IXblIdpAuthManager : IXblIdpAuthManager.Interface
         return ((delegate* unmanaged<IXblIdpAuthManager*, ushort**, int>)(lpVtbl[6]))((IXblIdpAuthManager*)Unsafe.AsPointer(ref this), environment);
     }
 
+    /// <include file='IXblIdpAuthManager.xml' path='doc/member[@name="IXblIdpAuthManager.GetSandbox"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetSandbox([NativeTypeName("LPWSTR *")] ushort** sandbox)
@@ -74,6 +83,7 @@ public unsafe partial struct IXblIdpAuthManager : IXblIdpAuthManager.Interface
         return ((delegate* unmanaged<IXblIdpAuthManager*, ushort**, int>)(lpVtbl[7]))((IXblIdpAuthManager*)Unsafe.AsPointer(ref this), sandbox);
     }
 
+    /// <include file='IXblIdpAuthManager.xml' path='doc/member[@name="IXblIdpAuthManager.GetTokenAndSignatureWithTokenResult"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetTokenAndSignatureWithTokenResult([NativeTypeName("LPCWSTR")] ushort* msaAccountId, [NativeTypeName("LPCWSTR")] ushort* appSid, [NativeTypeName("LPCWSTR")] ushort* msaTarget, [NativeTypeName("LPCWSTR")] ushort* msaPolicy, [NativeTypeName("LPCWSTR")] ushort* httpMethod, [NativeTypeName("LPCWSTR")] ushort* uri, [NativeTypeName("LPCWSTR")] ushort* headers, byte* body, [NativeTypeName("DWORD")] uint bodySize, BOOL forceRefresh, IXblIdpAuthTokenResult** result)

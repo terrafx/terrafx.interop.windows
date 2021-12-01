@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_POLICY_EXTENSION">
+    <summary>
+      <para>The base class for all policy extension structures. Policy extensions
+are assertions that are directly handled by applications such as custom assertions.</para>
+    </summary>
+  </member>
+  <member name="WS_POLICY_EXTENSION.type">
+    <summary>
+      <para>This value depends on which type of policy extension that is used.</para>
+    </summary>
+  </member>
+</doc>

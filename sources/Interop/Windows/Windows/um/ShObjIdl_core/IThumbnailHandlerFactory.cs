@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IThumbnailHandlerFactory.xml' path='doc/member[@name="IThumbnailHandlerFactory"]/*' />
 [Guid("E35B4B2E-00DA-4BC1-9F13-38BC11F5D417")]
 [NativeTypeName("struct IThumbnailHandlerFactory : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IThumbnailHandlerFactory : IThumbnailHandlerFactory
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IThumbnailHandlerFactory : IThumbnailHandlerFactory
         return ((delegate* unmanaged<IThumbnailHandlerFactory*, Guid*, void**, int>)(lpVtbl[0]))((IThumbnailHandlerFactory*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IThumbnailHandlerFactory : IThumbnailHandlerFactory
         return ((delegate* unmanaged<IThumbnailHandlerFactory*, uint>)(lpVtbl[1]))((IThumbnailHandlerFactory*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IThumbnailHandlerFactory : IThumbnailHandlerFactory
         return ((delegate* unmanaged<IThumbnailHandlerFactory*, uint>)(lpVtbl[2]))((IThumbnailHandlerFactory*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IThumbnailHandlerFactory.xml' path='doc/member[@name="IThumbnailHandlerFactory.GetThumbnailHandler"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetThumbnailHandler([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlChild, IBindCtx* pbc, [NativeTypeName("const IID &")] Guid* riid, void** ppv)

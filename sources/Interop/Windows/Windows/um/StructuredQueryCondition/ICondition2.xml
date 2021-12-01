@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ICondition2.GetLeafConditionInfo">
+    <summary>
+      <para>Retrieves the property name, operation, and value from a leaf search condition node.</para>
+    </summary>
+    <param name="ppropkey">
+      <para>Type: <b><see cref="PROPERTYKEY" />*</b></para>
+      <para>Receives the name of the property of the leaf condition as a PROPERTYKEY.</para>
+    </param>
+    <param name="pcop">
+      <para>Type: <b><see cref="CONDITION_OPERATION" />*</b></para>
+      <para>Receives the operation of the leaf condition as a <see cref="CONDITION_OPERATION" /> enumeration.</para>
+    </param>
+    <param name="ppropvar">
+      <para>Type: <b><see cref="PROPVARIANT" />*</b></para>
+      <para>Receives the property value of the leaf condition as a <see cref="PROPVARIANT" />.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_OK if successful, E_FAIL if this is not a leaf node, or an error value otherwise.</para>
+    </returns>
+    <remarks>
+      <para>Any or all of the three parameters can be <b>NULL</b>.</para>
+      <para>The <a href="https://github.com/microsoft/windows-classic-samples/tree/master/samples/win7samples/winui/windowssearch/structuredquerysample">StructuredQuerySample</a> demonstrates how to read lines from the console, parse them using the system schema, and display the resulting condition trees.</para>
+    </remarks>
+    <seealso cref="CONDITION_OPERATION" />
+    <seealso cref="CONDITION_TYPE" />
+    <seealso cref="ICondition" />
+    <seealso cref="ICondition2" />
+  </member>
+  <member name="ICondition2.GetLocale">
+    <summary>
+      <para>Retrieves the property name, operation, and value from a leaf search condition node.</para>
+    </summary>
+    <param name="ppszLocaleName">
+      <para>Type: <b>LPWSTR*</b></para>
+      <para>Receives the name of the locale of the leaf condition as a Unicode string. This parameter can be <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_OK if successful, E_FAIL if this is not a leaf node, or an error value otherwise.</para>
+    </returns>
+    <seealso cref="CONDITION_OPERATION" />
+    <seealso cref="CONDITION_TYPE" />
+    <seealso cref="ICondition" />
+    <seealso cref="ICondition2" />
+  </member>
+  <member name="ICondition2">
+    <summary>
+      <para>Extends the functionality of the <see cref="ICondition" /> interface. <b>ICondition2</b> provides methods for retrieving information about a search condition.</para>
+    </summary>
+    <remarks>
+      <para>The <a href="https://github.com/microsoft/windows-classic-samples/tree/master/samples/win7samples/winui/windowssearch/structuredquerysample">StructuredQuerySample</a> demonstrates how to read lines from the console, parse them using the system schema, and display the resulting condition trees.</para>
+    </remarks>
+    <seealso cref="CONDITION_OPERATION" />
+    <seealso cref="CONDITION_TYPE" />
+    <seealso cref="ICondition" />
+  </member>
+</doc>

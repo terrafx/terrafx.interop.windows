@@ -5,16 +5,22 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STORAGE_BREAK_RESERVATION_REQUEST.xml' path='doc/member[@name="STORAGE_BREAK_RESERVATION_REQUEST"]/*' />
 public partial struct STORAGE_BREAK_RESERVATION_REQUEST
 {
+    /// <include file='STORAGE_BREAK_RESERVATION_REQUEST.xml' path='doc/member[@name="STORAGE_BREAK_RESERVATION_REQUEST.Length"]/*' />
     [NativeTypeName("DWORD")]
     public uint Length;
 
+    /// <include file='STORAGE_BREAK_RESERVATION_REQUEST.xml' path='doc/member[@name="STORAGE_BREAK_RESERVATION_REQUEST._unused"]/*' />
     public byte _unused;
 
+    /// <include file='STORAGE_BREAK_RESERVATION_REQUEST.xml' path='doc/member[@name="STORAGE_BREAK_RESERVATION_REQUEST.PathId"]/*' />
     public byte PathId;
 
+    /// <include file='STORAGE_BREAK_RESERVATION_REQUEST.xml' path='doc/member[@name="STORAGE_BREAK_RESERVATION_REQUEST.TargetId"]/*' />
     public byte TargetId;
 
+    /// <include file='STORAGE_BREAK_RESERVATION_REQUEST.xml' path='doc/member[@name="STORAGE_BREAK_RESERVATION_REQUEST.Lun"]/*' />
     public byte Lun;
 }

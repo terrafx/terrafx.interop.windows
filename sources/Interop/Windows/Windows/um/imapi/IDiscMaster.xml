@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDiscMaster.ClearFormatContent">
+    <summary>
+      <para>Clears the contents of an unburned image (the current stash file).</para>
+    </summary>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
+    </returns>
+    <remarks>
+      <para>The stash file is an internal structure that is used to stage a disc before recording it to media.</para>
+      <para>
+        <see cref="SetActiveDiscRecorder" /> determines if there is an IMAPI multi-session disc in the active drive. If so, IMAPI enters multi-session mode automatically. Using
+<b>ClearFormatContent</b> after multi-session mode had been established causes IMAPI to return to single-session mode. This means that a blank disc is required for a
+<see cref="RecordDisc" /> burn.</para>
+      <para>
+        <b>Caution</b>  Use care when calling this method. There is no confirmation and no recovery. If an application fills the image file with data, then calls this method, the data is gone.</para>
+    </remarks>
+    <seealso cref="IDiscMaster" />
+  </member>
+  <member name="IDiscMaster.Close">
+    <summary>
+      <para>Closes the interface so other applications can use it.</para>
+    </summary>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation.</para>
+    </returns>
+    <remarks>
+      <para>Content not committed to media through a call to
+<see cref="RecordDisc" /> is lost.</para>
+      <para>Closing an already closed interface returns S_OK.</para>
+    </remarks>
+    <seealso cref="IDiscMaster" />
+  </member>
+  <member name="IDiscMaster.EnumDiscMasterFormats">
+    <summary>
+      <para>Retrieves an enumerator for all disc mastering formats supported by this disc master object. A disc master format specifies the structure of the content in a staged image file (data/audio) and the interface that manages the staged image.</para>
+    </summary>
+    <param name="ppEnum">
+      <para>Address of a pointer to the <b>IEnumDiscMasterFormats</b> enumerator.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>MSDiscMasterObj</b> returns an enumerator that identifies the supported formats by their interface IDs. Currently, there are two formats: IID_IRedbookDiscMaster (
+<see cref="IRedbookDiscMaster" />) and IID_IJolietDiscMaster (
+<see cref="IJolietDiscMaster" />).</para>
+      <para>
+        <b>IEnumDiscMasterFormats</b> is standard COM enumerator, as documented in
+<b>IEnumXXXX</b>. Each call to <b>Next</b> returns an array of IIDs, one IID per supported disc master format. To select the active format and retrieve a pointer to a format specific interface, use
+<see cref="SetActiveDiscMasterFormat" />. (Do not use <b>QueryInterface</b>, because the interface will not be associated with the active format).</para>
+    </remarks>
+    <seealso cref="IDiscMaster" />
+  </member>
+  <member name="IDiscMaster.EnumDiscRecorders">
+    <summary>
+      <para>Retrieves an enumerator for all disc recorders supported by the active disc master format.</para>
+    </summary>
+    <param name="ppEnum">
+      <para>Address of a pointer to the <b>IEnumDiscRecorders</b> enumerator.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>IEnumDiscRecorders</b> is a standard COM enumerator, as documented in
+<b>IEnumXXXX</b>. Each call to <b>Next</b> returns an array of pointers to
+<see cref="IDiscRecorder" />. Each recorder interface represents a single available recorder already associated with an underlying physical disc recorder.</para>
+      <para>The list of available recorders may change due to Plug and Play arrivals or departures, or a call to
+<see cref="SetActiveDiscMasterFormat" />. An application is notified of these changes when it receives a call to
+<see cref="IDiscMasterProgressEvents.NotifyPnPActivity" />. When a change occurs, the application should call this method again to retrieve a new enumerator, because each enumerator contains a snapshot of the devices supported at the time of the enumeration.</para>
+      <para>When a device is removed, its pointer and
+<see cref="IDiscRecorder" /> interface must remain valid even though the underlying physical device is missing. In this case, operations on an
+<b>IDiscRecorder</b> or a request to record a disc may return IMAPI_E_DEVICE_NOTPRESENT.</para>
+      <para>The <b>MaxWriteSpeed</b> property is updated when this method is called. The default setting is the highest available write speed.</para>
+    </remarks>
+    <seealso cref="IDiscMaster" />
+  </member>
+  <member name="IDiscMaster.GetActiveDiscMasterFormat">
+    <summary>
+      <para>Retrieves the active disc recorder format. The active format specifies both the structure of the staged image file content (audio/data) and the COM interface that must be used to manipulate that staged image.</para>
+    </summary>
+    <param name="lpiid">
+      <para>IID of the currently active format.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>MSDiscMasterObj</b> supports the IIDs for two formats: IID_IRedbookDiscMaster (<see cref="IRedbookDiscMaster" />) and IID_IJolietDiscMaster (<see cref="IJolietDiscMaster" />). To select the active format and retrieve a pointer to a format-specific interface, use
+<see cref="SetActiveDiscMasterFormat" />.</para>
+    </remarks>
+    <seealso cref="IDiscMaster" />
+  </member>
+  <member name="IDiscMaster.GetActiveDiscRecorder">
+    <summary>
+      <para>Retrieves an interface pointer to the active disc recorder. The active disc recorder is the recorder where a burn will occur when
+<see cref="RecordDisc" /> is called.</para>
+    </summary>
+    <param name="ppRecorder">
+      <para>Pointer to the
+<see cref="IDiscRecorder" /> interface of the currently selected disc recorder.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
+    </returns>
+    <remarks>
+      <para>There is no default active disc recorder. An application using this method must specifically select both an active mastering format and an active disc recorder before initiating a burn.</para>
+      <blockquote>
+        <para>[!NOTE]
+The active disc recorder can be invalidated by removing the device or changing the active disc mastering format. For example, a USB CD-R device may be disconnected from the machine while the application is still running (the application is alerted to this condition by a call to
+<see cref="IDiscMasterProgressEvents.NotifyPnPActivity" />). In either case, you must select a new active disc recorder.</para>
+      </blockquote>
+    </remarks>
+    <seealso cref="IDiscMaster" />
+  </member>
+  <member name="IDiscMaster.Open">
+    <summary>
+      <para>Opens an upper-level IMAPI object for access by a client application.</para>
+    </summary>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
+    </returns>
+    <seealso cref="IDiscMaster" />
+  </member>
+  <member name="IDiscMaster.ProgressAdvise">
+    <summary>
+      <para>Registers an application for progress notifications.</para>
+    </summary>
+    <param name="pEvents">
+      <para>Pointer to an
+<see cref="IDiscMasterProgressEvents" /> interface that receives the progress notifications.</para>
+    </param>
+    <param name="pvCookie">
+      <para>Uniquely identifies this registration. Save this value because it will be needed by the
+<see cref="ProgressUnadvise" /> method.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
+    </returns>
+    <seealso cref="IDiscMaster" />
+  </member>
+  <member name="IDiscMaster.ProgressUnadvise">
+    <summary>
+      <para>Cancels progress notifications for an application.</para>
+    </summary>
+    <param name="vCookie">
+      <para>Value returned by a previous call to the
+<see cref="ProgressAdvise" /> method.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
+    </returns>
+    <seealso cref="IDiscMaster" />
+  </member>
+  <member name="IDiscMaster.RecordDisc">
+    <summary>
+      <para>Burns the staged image to media in the active disc recorder.</para>
+    </summary>
+    <param name="bSimulate">
+      <para>Indicates whether the media is burned. If this parameter is <b>TRUE</b>, media in the active disc recorder is not actually burned. Instead, a simulated burn is performed. The simulation is a good test of a disc recorder, because most of the operations are performed as in a real burn. If this parameter is <b>FALSE</b>, then the media in the recorder is actually burned.</para>
+    </param>
+    <param name="bEjectAfterBurn">
+      <para>Indicates whether to eject the media after the burn. If this parameter is <b>TRUE</b>, the media is ejected. If this parameter is <b>FALSE</b>, the media is not ejected.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
+    </returns>
+    <remarks>
+      <para>This method returns when the burn is complete, although progress callbacks are made if registered with the
+<see cref="ProgressAdvise" /> method. Any errors cause this method to return, with little or no corrective action on the part of this method.</para>
+      <para>The staged image data is not valid after a call to
+<b>RecordDisc</b>. This allows the application to perform either a simulated or actual burn of the media. For security, the contents of the stash file are cleared automatically after successful completion of the first call to this method. A disc must be restaged to burn it again.</para>
+      <para>The
+<b>RecordDisc</b> method expects to work with blank media for audio. Otherwise, the media may need to be erased (for example, CD-RW media in a CD-RW drive). See
+<see cref="IDiscRecorder.Erase" />.</para>
+      <para>The
+<see cref="SetActiveDiscRecorder" /> method determines if there is an IMAPI multi-session disc in the active drive upon setting. If so, IMAPI goes into multi-session mode automatically. If in multi-session mode and a call is made to
+<b>RecordDisc</b>, the same disc that established multi-session mode must be in the active recorder or an error code of IMAPI_E_WRONGDISC will be returned.</para>
+    </remarks>
+    <seealso cref="IDiscMaster" />
+  </member>
+  <member name="IDiscMaster.SetActiveDiscMasterFormat">
+    <summary>
+      <para>Sets the currently active disc recorder format. The active format specifies both the structure of the staged image file content (audio/data) and the COM interface that must be used to manipulate that staged image.</para>
+    </summary>
+    <param name="riid">
+      <para>IID of the currently active format.</para>
+    </param>
+    <param name="ppUnk">
+      <para>Pointer to the COM interface for the new disc format.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
+    </returns>
+    <remarks>
+      <para>A successful call to this method clears the contents of the currently staged image. In addition, it may change the list of supported disc recorders. This is because not all recorders support all formats. Changes to the recorder list are announced with
+<see cref="IDiscMasterProgressEvents.NotifyPnPActivity" />. If the currently selected recorder is not a member of the new set of supported devices, then there will no longer be an active recorder (similar to the state after the first call to
+<see cref="Open" />). In this case, the application must select a new active recorder before initiating a burn.</para>
+      <para>
+        <b>MSDiscMasterObj</b> supports only the following IIDs: IID_IRedbookDiscMaster (<see cref="IRedbookDiscMaster" />) and IID_IJolietDiscMaster (<see cref="IJolietDiscMaster" />). If there is no format set, the default is Joliet format. It is the responsibility of every application to select a format master through the use of
+<see cref="EnumDiscMasterFormats" /> and this method.</para>
+      <para>
+        <b>Note</b>  A call to this method may change the list of available recorders. See the Remarks section of
+<see cref="EnumDiscRecorders" /> for more information.</para>
+    </remarks>
+    <seealso cref="IDiscMaster" />
+  </member>
+  <member name="IDiscMaster.SetActiveDiscRecorder">
+    <summary>
+      <para>Selects an active disc recorder. The active disc recorder is the recorder where a burn will occur when
+<see cref="RecordDisc" /> is called.</para>
+    </summary>
+    <param name="pRecorder">
+      <para>Pointer to the
+<see cref="IDiscRecorder" /> interface of a disc recorder object. This pointer should have been returned by a previous call to
+<see cref="EnumDiscRecorders" />.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>SetActiveDiscRecorder</b> must be called after the media to be used has been inserted, and before calling
+<see cref="IJolietDiscMaster.AddData" />.</para>
+      <para>Selecting a recorder while in an active Joliet format will cause IMAPI to read information from the currently installed recorder disc. If this disc is a previous IMAPI Joliet disc and has space for another session, IMAPI automatically sets itself to multi-session mode. This disc must be in the active recorder when
+<see cref="RecordDisc" /> is called.</para>
+      <para>The <b>MaxWriteSpeed</b> property is updated when this method is called. The default setting is the highest write speed.</para>
+    </remarks>
+    <seealso cref="IDiscMaster" />
+  </member>
+  <member name="IDiscMaster">
+    <summary>
+      <para>The
+<b>IDiscMaster</b> interface allows an application to reserve an image mastering API, enumerate disc mastering formats and disc recorders supported by an image mastering object, and start a simulated or actual burn of a disc. Although an image mastering object can support several formats, it may not be possible to access all formats through a specific recorder. For this reason, you must select a recorder with
+<see cref="SetActiveDiscRecorder" /> after selecting a format with
+<see cref="SetActiveDiscMasterFormat" />.</para>
+    </summary>
+  </member>
+</doc>

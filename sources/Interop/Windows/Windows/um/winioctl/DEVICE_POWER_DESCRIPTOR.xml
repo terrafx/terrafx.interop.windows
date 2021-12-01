@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DEVICE_POWER_DESCRIPTOR">
+    <summary>
+      <para>The <b>DEVICE_POWER_DESCRIPTOR</b></para>
+      <para>structure describes the power capabilities of a storage device.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/FileIO/disk-management-structures">Disk Management Structures</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_query_property">IOCTL_STORAGE_QUERY_PROPERTY</seealso>
+    <seealso cref="STORAGE_PROPERTY_QUERY" />
+  </member>
+  <member name="DEVICE_POWER_DESCRIPTOR.Version">
+    <summary>
+      <para>Contains the size of this structure, in bytes. The value of this member will change as members are added to
+the structure.</para>
+    </summary>
+  </member>
+  <member name="DEVICE_POWER_DESCRIPTOR.Size">
+    <summary>
+      <para>Specifies the total size of the data returned, in bytes. This may include data that follows this
+structure.</para>
+    </summary>
+  </member>
+  <member name="DEVICE_POWER_DESCRIPTOR.DeviceAttentionSupported">
+    <summary>
+      <para>True if device attention is supported. Otherwise, false.</para>
+    </summary>
+  </member>
+  <member name="DEVICE_POWER_DESCRIPTOR.AsynchronousNotificationSupported">
+    <summary>
+      <para>True if the device supports asynchronous notifications, delivered via
+<b>IOCTL_STORAGE_EVENT_NOTIFICATION</b>. Otherwise, false.</para>
+    </summary>
+  </member>
+  <member name="DEVICE_POWER_DESCRIPTOR.IdlePowerManagementEnabled">
+    <summary>
+      <para>True if the device has been registered for runtime idle power management. Otherwise, false.</para>
+    </summary>
+  </member>
+  <member name="DEVICE_POWER_DESCRIPTOR.D3ColdEnabled">
+    <summary>
+      <para>True if the device will be powered off when put into D3 power state. Otherwise, false.</para>
+    </summary>
+  </member>
+  <member name="DEVICE_POWER_DESCRIPTOR.D3ColdSupported">
+    <summary>
+      <para>True if the platform supports <b>D3ColdEnabled</b> for this device. Otherwise,
+false.</para>
+    </summary>
+  </member>
+  <member name="DEVICE_POWER_DESCRIPTOR.NoVerifyDuringIdlePower">
+    <summary></summary>
+  </member>
+  <member name="DEVICE_POWER_DESCRIPTOR.Reserved">
+    <summary>
+      <para>Reserved.</para>
+    </summary>
+  </member>
+  <member name="DEVICE_POWER_DESCRIPTOR.IdleTimeoutInMS">
+    <summary>
+      <para>The idle timeout value in milliseconds. This member is ignored unless
+<b>IdlePowerManagementEnabled</b> is true.</para>
+    </summary>
+  </member>
+</doc>

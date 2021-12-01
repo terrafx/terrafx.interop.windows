@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITfProperty.xml' path='doc/member[@name="ITfProperty"]/*' />
 [Guid("E2449660-9542-11D2-BF46-00105A2799B5")]
 [NativeTypeName("struct ITfProperty : ITfReadOnlyProperty")]
 [NativeInheritance("ITfReadOnlyProperty")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITfProperty : ITfProperty.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITfProperty : ITfProperty.Interface
         return ((delegate* unmanaged<ITfProperty*, Guid*, void**, int>)(lpVtbl[0]))((ITfProperty*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITfProperty : ITfProperty.Interface
         return ((delegate* unmanaged<ITfProperty*, uint>)(lpVtbl[1]))((ITfProperty*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITfProperty : ITfProperty.Interface
         return ((delegate* unmanaged<ITfProperty*, uint>)(lpVtbl[2]))((ITfProperty*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ITfReadOnlyProperty.GetType" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetType(Guid* pguid)
@@ -46,6 +51,7 @@ public unsafe partial struct ITfProperty : ITfProperty.Interface
         return ((delegate* unmanaged<ITfProperty*, Guid*, int>)(lpVtbl[3]))((ITfProperty*)Unsafe.AsPointer(ref this), pguid);
     }
 
+    /// <inheritdoc cref="ITfReadOnlyProperty.EnumRanges" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT EnumRanges([NativeTypeName("TfEditCookie")] uint ec, IEnumTfRanges** ppEnum, ITfRange* pTargetRange)
@@ -53,6 +59,7 @@ public unsafe partial struct ITfProperty : ITfProperty.Interface
         return ((delegate* unmanaged<ITfProperty*, uint, IEnumTfRanges**, ITfRange*, int>)(lpVtbl[4]))((ITfProperty*)Unsafe.AsPointer(ref this), ec, ppEnum, pTargetRange);
     }
 
+    /// <inheritdoc cref="ITfReadOnlyProperty.GetValue" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetValue([NativeTypeName("TfEditCookie")] uint ec, ITfRange* pRange, VARIANT* pvarValue)
@@ -60,6 +67,7 @@ public unsafe partial struct ITfProperty : ITfProperty.Interface
         return ((delegate* unmanaged<ITfProperty*, uint, ITfRange*, VARIANT*, int>)(lpVtbl[5]))((ITfProperty*)Unsafe.AsPointer(ref this), ec, pRange, pvarValue);
     }
 
+    /// <inheritdoc cref="ITfReadOnlyProperty.GetContext" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetContext(ITfContext** ppContext)
@@ -67,6 +75,7 @@ public unsafe partial struct ITfProperty : ITfProperty.Interface
         return ((delegate* unmanaged<ITfProperty*, ITfContext**, int>)(lpVtbl[6]))((ITfProperty*)Unsafe.AsPointer(ref this), ppContext);
     }
 
+    /// <include file='ITfProperty.xml' path='doc/member[@name="ITfProperty.FindRange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT FindRange([NativeTypeName("TfEditCookie")] uint ec, ITfRange* pRange, ITfRange** ppRange, TfAnchor aPos)
@@ -74,6 +83,7 @@ public unsafe partial struct ITfProperty : ITfProperty.Interface
         return ((delegate* unmanaged<ITfProperty*, uint, ITfRange*, ITfRange**, TfAnchor, int>)(lpVtbl[7]))((ITfProperty*)Unsafe.AsPointer(ref this), ec, pRange, ppRange, aPos);
     }
 
+    /// <include file='ITfProperty.xml' path='doc/member[@name="ITfProperty.SetValueStore"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT SetValueStore([NativeTypeName("TfEditCookie")] uint ec, ITfRange* pRange, ITfPropertyStore* pPropStore)
@@ -81,6 +91,7 @@ public unsafe partial struct ITfProperty : ITfProperty.Interface
         return ((delegate* unmanaged<ITfProperty*, uint, ITfRange*, ITfPropertyStore*, int>)(lpVtbl[8]))((ITfProperty*)Unsafe.AsPointer(ref this), ec, pRange, pPropStore);
     }
 
+    /// <include file='ITfProperty.xml' path='doc/member[@name="ITfProperty.SetValue"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT SetValue([NativeTypeName("TfEditCookie")] uint ec, ITfRange* pRange, [NativeTypeName("const VARIANT *")] VARIANT* pvarValue)
@@ -88,6 +99,7 @@ public unsafe partial struct ITfProperty : ITfProperty.Interface
         return ((delegate* unmanaged<ITfProperty*, uint, ITfRange*, VARIANT*, int>)(lpVtbl[9]))((ITfProperty*)Unsafe.AsPointer(ref this), ec, pRange, pvarValue);
     }
 
+    /// <include file='ITfProperty.xml' path='doc/member[@name="ITfProperty.Clear"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT Clear([NativeTypeName("TfEditCookie")] uint ec, ITfRange* pRange)

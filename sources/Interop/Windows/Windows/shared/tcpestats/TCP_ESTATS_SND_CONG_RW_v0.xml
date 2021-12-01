@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="TCP_ESTATS_SND_CONG_RW_v0">
+    <summary>
+      <para>The <b>TCP_ESTATS_SND_CONG_RW_v0</b> structure contains read/write configuration information for extended TCP statistics on sender congestion for a TCP connection.</para>
+    </summary>
+    <remarks>
+      <para>The <b>TCP_ESTATS_SND_CONG_RW_v0</b> structure is used as part of the TCP extended statistics feature available on Windows Vista and later.</para>
+      <para>The <b>TCP_ESTATS_SND_CONG_RW_v0</b> is defined as version 0 of the structure for  read/write configuration information on sender congestion for a TCP connection.</para>
+      <para>Extended TCP statistics on sender congestion for a TCP connection are enabled and disabled using this structure and the <see cref="SetPerTcp6ConnectionEStats" /> and <see cref="SetPerTcpConnectionEStats" /> functions when <b>TcpConnectionEstatsSndCongs</b> is passed in the <i>EstatsType</i> parameter.</para>
+      <para>The <b>TCP_ESTATS_SND_CONG_RW_v0</b> structure is retrieved by calls to  the <see cref="GetPerTcp6ConnectionEStats" /> or <see cref="GetPerTcpConnectionEStats" /> functions when <b>TcpConnectionEstatsSndCong</b> is passed in the <i>EstatsType</i> parameter.</para>
+    </remarks>
+    <seealso cref="GetPerTcp6ConnectionEStats" />
+    <seealso cref="GetPerTcpConnectionEStats" />
+    <seealso cref="SetPerTcp6ConnectionEStats" />
+    <seealso cref="SetPerTcpConnectionEStats" />
+    <seealso cref="TCP_ESTATS_TYPE" />
+  </member>
+  <member name="TCP_ESTATS_SND_CONG_RW_v0.EnableCollection">
+    <summary>
+      <para>A value that indicates if extended statistics on a TCP connection should be collected for sender congestion.</para>
+      <para>If this member is set to <b>TRUE</b>, extended statistics on the TCP connection are enabled. If this member is set to <b>FALSE</b>, extended statistics on the TCP connection are disabled.</para>
+      <para>The default state for this member when not set is disabled.</para>
+    </summary>
+  </member>
+</doc>

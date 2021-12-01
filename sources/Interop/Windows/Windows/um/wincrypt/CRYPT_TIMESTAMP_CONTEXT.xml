@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CRYPT_TIMESTAMP_CONTEXT">
+    <summary>
+      <para>The <b>CRYPT_TIMESTAMP_CONTEXT</b> structure contains both the encoded and decoded representations of a time stamp token.</para>
+    </summary>
+  </member>
+  <member name="CRYPT_TIMESTAMP_CONTEXT.cbEncoded">
+    <summary>
+      <para>The size, in bytes, of the buffer pointed to by the <b>pbEncoded</b> member.</para>
+    </summary>
+  </member>
+  <member name="CRYPT_TIMESTAMP_CONTEXT.pbEncoded">
+    <summary>
+      <para>A pointer to a buffer that contains an <a href="https://docs.microsoft.com//windows/desktop/SecGloss/a-gly">Abstract Syntax Notation One</a> (ASN.1) encoded content information sequence. This value should be stored for future time stamp validations on the signature. Applications can use the <see cref="CertOpenStore" /> function  with the <b>CERT_STORE_PROV_PKCS7</b> flag to find additional certificates or <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certificate revocation lists</a> (CRLs) related to the TSA time stamp signature.</para>
+    </summary>
+  </member>
+  <member name="CRYPT_TIMESTAMP_CONTEXT.pTimeStamp">
+    <summary>
+      <para>A pointer to a <see cref="CRYPT_TIMESTAMP_INFO" /> structure that contains a signed data content type in Cryptographic Message Syntax (CMS) format.</para>
+    </summary>
+  </member>
+</doc>

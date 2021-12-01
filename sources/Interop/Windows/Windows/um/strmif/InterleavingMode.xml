@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="InterleavingMode">
+    <summary>
+      <para>Specifies how video frames and audio samples will be written to disk.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-enumerated-types">DirectShow Enumerated Types</seealso>
+  </member>
+  <member name="InterleavingMode.INTERLEAVE_NONE">
+    <summary>
+      <para>Noninterleaved. Frames are written in the order they arrive. Files must be interleaved for playback at a later time. In this mode, the AVI Mux filter attempts to use unbuffered, overlapped write operations, to increase throughput.</para>
+    </summary>
+  </member>
+  <member name="InterleavingMode.INTERLEAVE_CAPTURE">
+    <summary>
+      <para>Approximate interleaving with less overhead than <b>INTERLEAVE_FULL</b>. This mode is suitable for video capture. The AVI Mux attempts to use unbuffered, overlapped write operations. Unless the interleaving parameters are configured properly, however, frames may be dropped if one stream blocks while it waits for data from another stream. In particular, audio buffers should be less than .5 second, or else the video stream will block for excessive periods of time.</para>
+    </summary>
+  </member>
+  <member name="InterleavingMode.INTERLEAVE_FULL">
+    <summary>
+      <para>Full, precise interleaving of audio samples and video frames. Streams will block indefinitely, waiting for equal amounts of data before interleaving. This mode is suitable for authoring and playback.</para>
+    </summary>
+  </member>
+  <member name="InterleavingMode.INTERLEAVE_NONE_BUFFERED">
+    <summary>
+      <para>Noninterleaved. This mode is equivalent to <b>INTERLEAVE_NONE</b> but uses less file space and system overhead.</para>
+    </summary>
+  </member>
+</doc>

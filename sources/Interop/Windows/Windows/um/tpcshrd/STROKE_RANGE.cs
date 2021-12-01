@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STROKE_RANGE.xml' path='doc/member[@name="STROKE_RANGE"]/*' />
 public partial struct STROKE_RANGE
 {
+    /// <include file='STROKE_RANGE.xml' path='doc/member[@name="STROKE_RANGE.iStrokeBegin"]/*' />
     [NativeTypeName("ULONG")]
     public uint iStrokeBegin;
 
+    /// <include file='STROKE_RANGE.xml' path='doc/member[@name="STROKE_RANGE.iStrokeEnd"]/*' />
     [NativeTypeName("ULONG")]
     public uint iStrokeEnd;
 }

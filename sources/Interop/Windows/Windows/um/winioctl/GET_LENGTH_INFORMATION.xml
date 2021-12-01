@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="GET_LENGTH_INFORMATION">
+    <summary>
+      <para>Contains disk, volume, or partition length information used by the
+<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_disk_get_length_info">IOCTL_DISK_GET_LENGTH_INFO</a> control code.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_disk_get_length_info">IOCTL_DISK_GET_LENGTH_INFO</seealso>
+  </member>
+  <member name="GET_LENGTH_INFORMATION.Length">
+    <summary>
+      <para>The length of the disk, volume, or partition, in bytes.</para>
+    </summary>
+  </member>
+</doc>

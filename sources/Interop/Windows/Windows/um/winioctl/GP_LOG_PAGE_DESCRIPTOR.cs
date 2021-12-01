@@ -7,12 +7,15 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='GP_LOG_PAGE_DESCRIPTOR.xml' path='doc/member[@name="GP_LOG_PAGE_DESCRIPTOR"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct GP_LOG_PAGE_DESCRIPTOR
 {
+    /// <include file='GP_LOG_PAGE_DESCRIPTOR.xml' path='doc/member[@name="GP_LOG_PAGE_DESCRIPTOR.LogAddress"]/*' />
     [NativeTypeName("WORD")]
     public ushort LogAddress;
 
+    /// <include file='GP_LOG_PAGE_DESCRIPTOR.xml' path='doc/member[@name="GP_LOG_PAGE_DESCRIPTOR.LogSectors"]/*' />
     [NativeTypeName("WORD")]
     public ushort LogSectors;
 }

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="EMRSETPIXELV">
+    <summary>
+      <para>The <b>EMRSETPIXELV</b> structure contains members for the <see cref="SetPixelV" /> enhanced metafile record. When an enhanced metafile is created, calls to <see cref="SetPixel" /> are also recorded in this record.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/colorref">COLORREF</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafile-structures">Metafile Structures</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafiles">Metafiles Overview</seealso>
+    <seealso cref="RGB" />
+    <seealso cref="SetPixel" />
+    <seealso cref="SetPixelV" />
+  </member>
+  <member name="EMRSETPIXELV.emr">
+    <summary>
+      <para>The base structure for all record types.</para>
+    </summary>
+  </member>
+  <member name="EMRSETPIXELV.ptlPixel">
+    <summary>
+      <para>Logical coordinates of pixel.</para>
+    </summary>
+  </member>
+  <member name="EMRSETPIXELV.crColor">
+    <summary>
+      <para>Color value. To make a <a href="https://docs.microsoft.com//windows/desktop/gdi/colorref">COLORREF</a> value, use the <see cref="RGB" /> macro.</para>
+    </summary>
+  </member>
+</doc>

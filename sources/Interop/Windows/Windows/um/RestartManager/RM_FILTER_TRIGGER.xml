@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="RM_FILTER_TRIGGER">
+    <summary>
+      <para>Describes the restart or shutdown actions for an application or service.</para>
+    </summary>
+    <seealso cref="RM_FILTER_INFO" />
+  </member>
+  <member name="RM_FILTER_TRIGGER.RmFilterTriggerInvalid">
+    <summary>
+      <para>An invalid filter trigger.</para>
+    </summary>
+  </member>
+  <member name="RM_FILTER_TRIGGER.RmFilterTriggerFile">
+    <summary>
+      <para>Modifies the shutdown or restart actions for an application identified by its   executable filename.</para>
+    </summary>
+  </member>
+  <member name="RM_FILTER_TRIGGER.RmFilterTriggerProcess">
+    <summary>
+      <para>Modifies the shutdown or restart actions for an application identified by a <see cref="RM_UNIQUE_PROCESS" /> structure.</para>
+    </summary>
+  </member>
+  <member name="RM_FILTER_TRIGGER.RmFilterTriggerService">
+    <summary>
+      <para>Modifies the shutdown or restart actions for a service identified by a service short name.</para>
+    </summary>
+  </member>
+</doc>

@@ -8,35 +8,47 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PROPSHEETHEADERW_V1.xml' path='doc/member[@name="PROPSHEETHEADERW_V1"]/*' />
 public unsafe partial struct PROPSHEETHEADERW_V1
 {
+    /// <include file='PROPSHEETHEADERW_V1.xml' path='doc/member[@name="PROPSHEETHEADERW_V1.dwSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwSize;
 
+    /// <include file='PROPSHEETHEADERW_V1.xml' path='doc/member[@name="PROPSHEETHEADERW_V1.dwFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFlags;
 
+    /// <include file='PROPSHEETHEADERW_V1.xml' path='doc/member[@name="PROPSHEETHEADERW_V1.hwndParent"]/*' />
     public HWND hwndParent;
 
+    /// <include file='PROPSHEETHEADERW_V1.xml' path='doc/member[@name="PROPSHEETHEADERW_V1.hInstance"]/*' />
     public HINSTANCE hInstance;
 
+    /// <include file='PROPSHEETHEADERW_V1.xml' path='doc/member[@name="PROPSHEETHEADERW_V1.Anonymous1"]/*' />
     [NativeTypeName("_PROPSHEETHEADERW_V1::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/prsht.h:520:5)")]
     public _Anonymous1_e__Union Anonymous1;
 
+    /// <include file='PROPSHEETHEADERW_V1.xml' path='doc/member[@name="PROPSHEETHEADERW_V1.pszCaption"]/*' />
     [NativeTypeName("LPCWSTR")]
     public ushort* pszCaption;
 
+    /// <include file='PROPSHEETHEADERW_V1.xml' path='doc/member[@name="PROPSHEETHEADERW_V1.nPages"]/*' />
     public uint nPages;
 
+    /// <include file='PROPSHEETHEADERW_V1.xml' path='doc/member[@name="PROPSHEETHEADERW_V1.Anonymous2"]/*' />
     [NativeTypeName("_PROPSHEETHEADERW_V1::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/prsht.h:520:5)")]
     public _Anonymous2_e__Union Anonymous2;
 
+    /// <include file='PROPSHEETHEADERW_V1.xml' path='doc/member[@name="PROPSHEETHEADERW_V1.Anonymous3"]/*' />
     [NativeTypeName("_PROPSHEETHEADERW_V1::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/prsht.h:520:5)")]
     public _Anonymous3_e__Union Anonymous3;
 
+    /// <include file='PROPSHEETHEADERW_V1.xml' path='doc/member[@name="PROPSHEETHEADERW_V1.pfnCallback"]/*' />
     [NativeTypeName("PFNPROPSHEETCALLBACK")]
     public delegate* unmanaged<HWND, uint, LPARAM, int> pfnCallback;
 
+    /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.hIcon"]/*' />
     public ref HICON hIcon
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -46,6 +58,7 @@ public unsafe partial struct PROPSHEETHEADERW_V1
         }
     }
 
+    /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.pszIcon"]/*' />
     public ref ushort* pszIcon
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -55,6 +68,7 @@ public unsafe partial struct PROPSHEETHEADERW_V1
         }
     }
 
+    /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.nStartPage"]/*' />
     public ref uint nStartPage
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -64,6 +78,7 @@ public unsafe partial struct PROPSHEETHEADERW_V1
         }
     }
 
+    /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.pStartPage"]/*' />
     public ref ushort* pStartPage
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -73,6 +88,7 @@ public unsafe partial struct PROPSHEETHEADERW_V1
         }
     }
 
+    /// <include file='_Anonymous3_e__Union.xml' path='doc/member[@name="_Anonymous3_e__Union.ppsp"]/*' />
     public ref PROPSHEETPAGEW* ppsp
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -82,6 +98,7 @@ public unsafe partial struct PROPSHEETHEADERW_V1
         }
     }
 
+    /// <include file='_Anonymous3_e__Union.xml' path='doc/member[@name="_Anonymous3_e__Union.phpage"]/*' />
     public ref HPROPSHEETPAGE* phpage
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -91,35 +108,44 @@ public unsafe partial struct PROPSHEETHEADERW_V1
         }
     }
 
+    /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public unsafe partial struct _Anonymous1_e__Union
     {
+        /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.hIcon"]/*' />
         [FieldOffset(0)]
         public HICON hIcon;
 
+        /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.pszIcon"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("LPCWSTR")]
         public ushort* pszIcon;
     }
 
+    /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public unsafe partial struct _Anonymous2_e__Union
     {
+        /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.nStartPage"]/*' />
         [FieldOffset(0)]
         public uint nStartPage;
 
+        /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.pStartPage"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("LPCWSTR")]
         public ushort* pStartPage;
     }
 
+    /// <include file='_Anonymous3_e__Union.xml' path='doc/member[@name="_Anonymous3_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public unsafe partial struct _Anonymous3_e__Union
     {
+        /// <include file='_Anonymous3_e__Union.xml' path='doc/member[@name="_Anonymous3_e__Union.ppsp"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("LPCPROPSHEETPAGEW")]
         public PROPSHEETPAGEW* ppsp;
 
+        /// <include file='_Anonymous3_e__Union.xml' path='doc/member[@name="_Anonymous3_e__Union.phpage"]/*' />
         [FieldOffset(0)]
         public HPROPSHEETPAGE* phpage;
     }

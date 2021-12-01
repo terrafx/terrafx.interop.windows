@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='EMRSETMITERLIMIT.xml' path='doc/member[@name="EMRSETMITERLIMIT"]/*' />
 public partial struct EMRSETMITERLIMIT
 {
+    /// <include file='EMRSETMITERLIMIT.xml' path='doc/member[@name="EMRSETMITERLIMIT.emr"]/*' />
     public EMR emr;
 
+    /// <include file='EMRSETMITERLIMIT.xml' path='doc/member[@name="EMRSETMITERLIMIT.eMiterLimit"]/*' />
     public float eMiterLimit;
 }

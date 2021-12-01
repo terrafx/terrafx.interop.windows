@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='styleWrapThrough.xml' path='doc/member[@name="styleWrapThrough"]/*' />
 public enum styleWrapThrough
 {
+    /// <include file='styleWrapThrough.xml' path='doc/member[@name="styleWrapThrough.styleWrapThroughNotSet"]/*' />
     styleWrapThroughNotSet = 0,
+
+    /// <include file='styleWrapThrough.xml' path='doc/member[@name="styleWrapThrough.styleWrapThroughWrap"]/*' />
     styleWrapThroughWrap = 1,
+
+    /// <include file='styleWrapThrough.xml' path='doc/member[@name="styleWrapThrough.styleWrapThroughNone"]/*' />
     styleWrapThroughNone = 2,
+
+    /// <include file='styleWrapThrough.xml' path='doc/member[@name="styleWrapThrough.styleWrapThrough_Max"]/*' />
     styleWrapThrough_Max = 2147483647,
 }

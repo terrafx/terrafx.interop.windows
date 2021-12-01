@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DATEPICKERPARTS.xml' path='doc/member[@name="DATEPICKERPARTS"]/*' />
 public enum DATEPICKERPARTS
 {
+    /// <include file='DATEPICKERPARTS.xml' path='doc/member[@name="DATEPICKERPARTS.DP_DATETEXT"]/*' />
     DP_DATETEXT = 1,
+
+    /// <include file='DATEPICKERPARTS.xml' path='doc/member[@name="DATEPICKERPARTS.DP_DATEBORDER"]/*' />
     DP_DATEBORDER = 2,
+
+    /// <include file='DATEPICKERPARTS.xml' path='doc/member[@name="DATEPICKERPARTS.DP_SHOWCALENDARBUTTONRIGHT"]/*' />
     DP_SHOWCALENDARBUTTONRIGHT = 3,
 }

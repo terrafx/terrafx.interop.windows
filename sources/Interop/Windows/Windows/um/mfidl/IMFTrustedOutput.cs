@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFTrustedOutput.xml' path='doc/member[@name="IMFTrustedOutput"]/*' />
 [Guid("D19F8E95-B126-4446-890C-5DCB7AD71453")]
 [NativeTypeName("struct IMFTrustedOutput : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMFTrustedOutput : IMFTrustedOutput.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMFTrustedOutput : IMFTrustedOutput.Interface
         return ((delegate* unmanaged<IMFTrustedOutput*, Guid*, void**, int>)(lpVtbl[0]))((IMFTrustedOutput*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMFTrustedOutput : IMFTrustedOutput.Interface
         return ((delegate* unmanaged<IMFTrustedOutput*, uint>)(lpVtbl[1]))((IMFTrustedOutput*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMFTrustedOutput : IMFTrustedOutput.Interface
         return ((delegate* unmanaged<IMFTrustedOutput*, uint>)(lpVtbl[2]))((IMFTrustedOutput*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFTrustedOutput.xml' path='doc/member[@name="IMFTrustedOutput.GetOutputTrustAuthorityCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetOutputTrustAuthorityCount([NativeTypeName("DWORD *")] uint* pcOutputTrustAuthorities)
@@ -46,6 +51,7 @@ public unsafe partial struct IMFTrustedOutput : IMFTrustedOutput.Interface
         return ((delegate* unmanaged<IMFTrustedOutput*, uint*, int>)(lpVtbl[3]))((IMFTrustedOutput*)Unsafe.AsPointer(ref this), pcOutputTrustAuthorities);
     }
 
+    /// <include file='IMFTrustedOutput.xml' path='doc/member[@name="IMFTrustedOutput.GetOutputTrustAuthorityByIndex"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetOutputTrustAuthorityByIndex([NativeTypeName("DWORD")] uint dwIndex, IMFOutputTrustAuthority** ppauthority)
@@ -53,6 +59,7 @@ public unsafe partial struct IMFTrustedOutput : IMFTrustedOutput.Interface
         return ((delegate* unmanaged<IMFTrustedOutput*, uint, IMFOutputTrustAuthority**, int>)(lpVtbl[4]))((IMFTrustedOutput*)Unsafe.AsPointer(ref this), dwIndex, ppauthority);
     }
 
+    /// <include file='IMFTrustedOutput.xml' path='doc/member[@name="IMFTrustedOutput.IsFinal"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT IsFinal(BOOL* pfIsFinal)

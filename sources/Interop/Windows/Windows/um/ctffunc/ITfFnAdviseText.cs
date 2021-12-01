@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITfFnAdviseText.xml' path='doc/member[@name="ITfFnAdviseText"]/*' />
 [Guid("3527268B-7D53-4DD9-92B7-7296AE461249")]
 [NativeTypeName("struct ITfFnAdviseText : ITfFunction")]
 [NativeInheritance("ITfFunction")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITfFnAdviseText : ITfFnAdviseText.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITfFnAdviseText : ITfFnAdviseText.Interface
         return ((delegate* unmanaged<ITfFnAdviseText*, Guid*, void**, int>)(lpVtbl[0]))((ITfFnAdviseText*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITfFnAdviseText : ITfFnAdviseText.Interface
         return ((delegate* unmanaged<ITfFnAdviseText*, uint>)(lpVtbl[1]))((ITfFnAdviseText*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITfFnAdviseText : ITfFnAdviseText.Interface
         return ((delegate* unmanaged<ITfFnAdviseText*, uint>)(lpVtbl[2]))((ITfFnAdviseText*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ITfFunction.GetDisplayName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetDisplayName([NativeTypeName("BSTR *")] ushort** pbstrName)
@@ -46,6 +51,7 @@ public unsafe partial struct ITfFnAdviseText : ITfFnAdviseText.Interface
         return ((delegate* unmanaged<ITfFnAdviseText*, ushort**, int>)(lpVtbl[3]))((ITfFnAdviseText*)Unsafe.AsPointer(ref this), pbstrName);
     }
 
+    /// <include file='ITfFnAdviseText.xml' path='doc/member[@name="ITfFnAdviseText.OnTextUpdate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT OnTextUpdate(ITfRange* pRange, [NativeTypeName("const WCHAR *")] ushort* pchText, [NativeTypeName("LONG")] int cch)
@@ -53,6 +59,7 @@ public unsafe partial struct ITfFnAdviseText : ITfFnAdviseText.Interface
         return ((delegate* unmanaged<ITfFnAdviseText*, ITfRange*, ushort*, int, int>)(lpVtbl[4]))((ITfFnAdviseText*)Unsafe.AsPointer(ref this), pRange, pchText, cch);
     }
 
+    /// <include file='ITfFnAdviseText.xml' path='doc/member[@name="ITfFnAdviseText.OnLatticeUpdate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT OnLatticeUpdate(ITfRange* pRange, ITfLMLattice* pLattice)

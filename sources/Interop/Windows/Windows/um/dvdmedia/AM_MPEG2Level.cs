@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='AM_MPEG2Level.xml' path='doc/member[@name="AM_MPEG2Level"]/*' />
 public enum AM_MPEG2Level
 {
+    /// <include file='AM_MPEG2Level.xml' path='doc/member[@name="AM_MPEG2Level.AM_MPEG2Level_Low"]/*' />
     AM_MPEG2Level_Low = 1,
+
+    /// <include file='AM_MPEG2Level.xml' path='doc/member[@name="AM_MPEG2Level.AM_MPEG2Level_Main"]/*' />
     AM_MPEG2Level_Main = 2,
+
+    /// <include file='AM_MPEG2Level.xml' path='doc/member[@name="AM_MPEG2Level.AM_MPEG2Level_High1440"]/*' />
     AM_MPEG2Level_High1440 = 3,
+
+    /// <include file='AM_MPEG2Level.xml' path='doc/member[@name="AM_MPEG2Level.AM_MPEG2Level_High"]/*' />
     AM_MPEG2Level_High = 4,
 }

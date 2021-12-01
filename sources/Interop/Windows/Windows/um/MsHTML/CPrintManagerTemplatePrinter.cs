@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CPrintManagerTemplatePrinter.xml' path='doc/member[@name="CPrintManagerTemplatePrinter"]/*' />
 [Guid("63619F54-9D71-4C23-A08D-50D7F18DB2E9")]
 public partial struct CPrintManagerTemplatePrinter
 {

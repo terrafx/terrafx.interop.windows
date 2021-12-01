@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MIDIHDR">
+    <summary>
+      <para>The <b>MIDIHDR</b> structure defines the header used to identify a MIDI system-exclusive or stream buffer.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//previous-versions/dd798448(v=vs.85)">MIDIEVENT</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Multimedia/musical-instrument-digital-interface--midi">Musical Instrument Digital Interface (MIDI)</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/dd798459(v=vs.85)">midiInPrepareHeader</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/dd798477(v=vs.85)">midiOutPrepareHeader</seealso>
+  </member>
+  <member name="MIDIHDR.lpData">
+    <summary>
+      <para>Pointer to MIDI data.</para>
+    </summary>
+  </member>
+  <member name="MIDIHDR.dwBufferLength">
+    <summary>
+      <para>Size of the buffer.</para>
+    </summary>
+  </member>
+  <member name="MIDIHDR.dwBytesRecorded">
+    <summary>
+      <para>Actual amount of data in the buffer. This value should be less than or equal to the value given in the <b>dwBufferLength</b> member.</para>
+    </summary>
+  </member>
+  <member name="MIDIHDR.dwUser">
+    <summary>
+      <para>Custom user data.</para>
+    </summary>
+  </member>
+  <member name="MIDIHDR.dwFlags">
+    <summary>
+      <para>Flags giving information about the buffer.</para>
+      <list type="table">
+        <listheader>
+          <description>Name</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <b>MHDR_DONE</b>
+          </description>
+          <description>
+            <para>Set by the device driver to indicate that it is finished with the buffer and is returning it to the application.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>MHDR_INQUEUE</b>
+          </description>
+          <description>
+            <para>Set by Windows to indicate that the buffer is queued for playback.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>MHDR_ISSTRM</b>
+          </description>
+          <description>
+            <para>Set to indicate that the buffer is a stream buffer.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>MHDR_PREPARED</b>
+          </description>
+          <description>
+            <para>Set by Windows to indicate that the buffer has been prepared by using the <a href="https://docs.microsoft.com//previous-versions/dd798459(v=vs.85)">midiInPrepareHeader</a> or <a href="https://docs.microsoft.com//previous-versions/dd798477(v=vs.85)">midiOutPrepareHeader</a> function.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="MIDIHDR.lpNext">
+    <summary>
+      <para>Reserved; do not use.</para>
+    </summary>
+  </member>
+  <member name="MIDIHDR.reserved">
+    <summary>
+      <para>Reserved; do not use.</para>
+    </summary>
+  </member>
+  <member name="MIDIHDR.dwOffset">
+    <summary>
+      <para>Offset into the buffer when a callback is performed. (This callback is generated because the MEVT_F_CALLBACK flag is set in the <b>dwEvent</b> member of the <a href="https://docs.microsoft.com//previous-versions/dd798448(v=vs.85)">MIDIEVENT</a> structure.) This offset enables an application to determine which event caused the callback.</para>
+    </summary>
+  </member>
+  <member name="MIDIHDR.dwReserved">
+    <summary>
+      <para>Reserved; do not use.</para>
+    </summary>
+  </member>
+</doc>

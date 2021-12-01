@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SecPkgContext_Certificates.xml' path='doc/member[@name="SecPkgContext_Certificates"]/*' />
 public unsafe partial struct SecPkgContext_Certificates
 {
+    /// <include file='SecPkgContext_Certificates.xml' path='doc/member[@name="SecPkgContext_Certificates.cCertificates"]/*' />
     [NativeTypeName("DWORD")]
     public uint cCertificates;
 
+    /// <include file='SecPkgContext_Certificates.xml' path='doc/member[@name="SecPkgContext_Certificates.cbCertificateChain"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbCertificateChain;
 
+    /// <include file='SecPkgContext_Certificates.xml' path='doc/member[@name="SecPkgContext_Certificates.pbCertificateChain"]/*' />
     [NativeTypeName("PBYTE")]
     public byte* pbCertificateChain;
 }

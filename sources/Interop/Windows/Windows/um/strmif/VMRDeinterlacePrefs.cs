@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='VMRDeinterlacePrefs.xml' path='doc/member[@name="VMRDeinterlacePrefs"]/*' />
 public enum VMRDeinterlacePrefs
 {
+    /// <include file='VMRDeinterlacePrefs.xml' path='doc/member[@name="VMRDeinterlacePrefs.DeinterlacePref_NextBest"]/*' />
     DeinterlacePref_NextBest = 0x1,
+
+    /// <include file='VMRDeinterlacePrefs.xml' path='doc/member[@name="VMRDeinterlacePrefs.DeinterlacePref_BOB"]/*' />
     DeinterlacePref_BOB = 0x2,
+
+    /// <include file='VMRDeinterlacePrefs.xml' path='doc/member[@name="VMRDeinterlacePrefs.DeinterlacePref_Weave"]/*' />
     DeinterlacePref_Weave = 0x4,
+
+    /// <include file='VMRDeinterlacePrefs.xml' path='doc/member[@name="VMRDeinterlacePrefs.DeinterlacePref_Mask"]/*' />
     DeinterlacePref_Mask = 0x7,
 }

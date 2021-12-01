@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DWMFLIP3DWINDOWPOLICY.xml' path='doc/member[@name="DWMFLIP3DWINDOWPOLICY"]/*' />
 public enum DWMFLIP3DWINDOWPOLICY
 {
+    /// <include file='DWMFLIP3DWINDOWPOLICY.xml' path='doc/member[@name="DWMFLIP3DWINDOWPOLICY.DWMFLIP3D_DEFAULT"]/*' />
     DWMFLIP3D_DEFAULT,
+
+    /// <include file='DWMFLIP3DWINDOWPOLICY.xml' path='doc/member[@name="DWMFLIP3DWINDOWPOLICY.DWMFLIP3D_EXCLUDEBELOW"]/*' />
     DWMFLIP3D_EXCLUDEBELOW,
+
+    /// <include file='DWMFLIP3DWINDOWPOLICY.xml' path='doc/member[@name="DWMFLIP3DWINDOWPOLICY.DWMFLIP3D_EXCLUDEABOVE"]/*' />
     DWMFLIP3D_EXCLUDEABOVE,
+
+    /// <include file='DWMFLIP3DWINDOWPOLICY.xml' path='doc/member[@name="DWMFLIP3DWINDOWPOLICY.DWMFLIP3D_LAST"]/*' />
     DWMFLIP3D_LAST,
 }

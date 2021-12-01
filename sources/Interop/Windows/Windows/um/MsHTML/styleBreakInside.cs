@@ -5,12 +5,24 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='styleBreakInside.xml' path='doc/member[@name="styleBreakInside"]/*' />
 public enum styleBreakInside
 {
+    /// <include file='styleBreakInside.xml' path='doc/member[@name="styleBreakInside.styleBreakInsideNotSet"]/*' />
     styleBreakInsideNotSet = 0,
+
+    /// <include file='styleBreakInside.xml' path='doc/member[@name="styleBreakInside.styleBreakInsideAuto"]/*' />
     styleBreakInsideAuto = 1,
+
+    /// <include file='styleBreakInside.xml' path='doc/member[@name="styleBreakInside.styleBreakInsideAvoid"]/*' />
     styleBreakInsideAvoid = 2,
+
+    /// <include file='styleBreakInside.xml' path='doc/member[@name="styleBreakInside.styleBreakInsideAvoidPage"]/*' />
     styleBreakInsideAvoidPage = 3,
+
+    /// <include file='styleBreakInside.xml' path='doc/member[@name="styleBreakInside.styleBreakInsideAvoidColumn"]/*' />
     styleBreakInsideAvoidColumn = 4,
+
+    /// <include file='styleBreakInside.xml' path='doc/member[@name="styleBreakInside.styleBreakInside_Max"]/*' />
     styleBreakInside_Max = 2147483647,
 }

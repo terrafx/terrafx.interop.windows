@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITextStoreACPServices.xml' path='doc/member[@name="ITextStoreACPServices"]/*' />
 [Guid("AA80E901-2021-11D2-93E0-0060B067B86E")]
 [NativeTypeName("struct ITextStoreACPServices : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITextStoreACPServices : ITextStoreACPServices.Inter
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITextStoreACPServices : ITextStoreACPServices.Inter
         return ((delegate* unmanaged<ITextStoreACPServices*, Guid*, void**, int>)(lpVtbl[0]))((ITextStoreACPServices*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITextStoreACPServices : ITextStoreACPServices.Inter
         return ((delegate* unmanaged<ITextStoreACPServices*, uint>)(lpVtbl[1]))((ITextStoreACPServices*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITextStoreACPServices : ITextStoreACPServices.Inter
         return ((delegate* unmanaged<ITextStoreACPServices*, uint>)(lpVtbl[2]))((ITextStoreACPServices*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITextStoreACPServices.xml' path='doc/member[@name="ITextStoreACPServices.Serialize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Serialize(ITfProperty* pProp, ITfRange* pRange, TF_PERSISTENT_PROPERTY_HEADER_ACP* pHdr, IStream* pStream)
@@ -46,6 +51,7 @@ public unsafe partial struct ITextStoreACPServices : ITextStoreACPServices.Inter
         return ((delegate* unmanaged<ITextStoreACPServices*, ITfProperty*, ITfRange*, TF_PERSISTENT_PROPERTY_HEADER_ACP*, IStream*, int>)(lpVtbl[3]))((ITextStoreACPServices*)Unsafe.AsPointer(ref this), pProp, pRange, pHdr, pStream);
     }
 
+    /// <include file='ITextStoreACPServices.xml' path='doc/member[@name="ITextStoreACPServices.Unserialize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Unserialize(ITfProperty* pProp, [NativeTypeName("const TF_PERSISTENT_PROPERTY_HEADER_ACP *")] TF_PERSISTENT_PROPERTY_HEADER_ACP* pHdr, IStream* pStream, ITfPersistentPropertyLoaderACP* pLoader)
@@ -53,6 +59,7 @@ public unsafe partial struct ITextStoreACPServices : ITextStoreACPServices.Inter
         return ((delegate* unmanaged<ITextStoreACPServices*, ITfProperty*, TF_PERSISTENT_PROPERTY_HEADER_ACP*, IStream*, ITfPersistentPropertyLoaderACP*, int>)(lpVtbl[4]))((ITextStoreACPServices*)Unsafe.AsPointer(ref this), pProp, pHdr, pStream, pLoader);
     }
 
+    /// <include file='ITextStoreACPServices.xml' path='doc/member[@name="ITextStoreACPServices.ForceLoadProperty"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT ForceLoadProperty(ITfProperty* pProp)
@@ -60,6 +67,7 @@ public unsafe partial struct ITextStoreACPServices : ITextStoreACPServices.Inter
         return ((delegate* unmanaged<ITextStoreACPServices*, ITfProperty*, int>)(lpVtbl[5]))((ITextStoreACPServices*)Unsafe.AsPointer(ref this), pProp);
     }
 
+    /// <include file='ITextStoreACPServices.xml' path='doc/member[@name="ITextStoreACPServices.CreateRange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT CreateRange([NativeTypeName("LONG")] int acpStart, [NativeTypeName("LONG")] int acpEnd, ITfRangeACP** ppRange)

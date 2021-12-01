@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IStreamInterleave.xml' path='doc/member[@name="IStreamInterleave"]/*' />
 [Guid("27354147-7F64-5B0F-8F00-5D77AFBE261E")]
 [NativeTypeName("struct IStreamInterleave : IStream")]
 [NativeInheritance("IStream")]
@@ -16,6 +17,7 @@ public unsafe partial struct IStreamInterleave : IStreamInterleave.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IStreamInterleave : IStreamInterleave.Interface
         return ((delegate* unmanaged<IStreamInterleave*, Guid*, void**, int>)(lpVtbl[0]))((IStreamInterleave*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IStreamInterleave : IStreamInterleave.Interface
         return ((delegate* unmanaged<IStreamInterleave*, uint>)(lpVtbl[1]))((IStreamInterleave*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IStreamInterleave : IStreamInterleave.Interface
         return ((delegate* unmanaged<IStreamInterleave*, uint>)(lpVtbl[2]))((IStreamInterleave*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ISequentialStream.Read" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Read(void* pv, [NativeTypeName("ULONG")] uint cb, [NativeTypeName("ULONG *")] uint* pcbRead)
@@ -46,6 +51,7 @@ public unsafe partial struct IStreamInterleave : IStreamInterleave.Interface
         return ((delegate* unmanaged<IStreamInterleave*, void*, uint, uint*, int>)(lpVtbl[3]))((IStreamInterleave*)Unsafe.AsPointer(ref this), pv, cb, pcbRead);
     }
 
+    /// <inheritdoc cref="ISequentialStream.Write" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Write([NativeTypeName("const void *")] void* pv, [NativeTypeName("ULONG")] uint cb, [NativeTypeName("ULONG *")] uint* pcbWritten)
@@ -53,6 +59,7 @@ public unsafe partial struct IStreamInterleave : IStreamInterleave.Interface
         return ((delegate* unmanaged<IStreamInterleave*, void*, uint, uint*, int>)(lpVtbl[4]))((IStreamInterleave*)Unsafe.AsPointer(ref this), pv, cb, pcbWritten);
     }
 
+    /// <inheritdoc cref="IStream.Seek" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT Seek(LARGE_INTEGER dlibMove, [NativeTypeName("DWORD")] uint dwOrigin, ULARGE_INTEGER* plibNewPosition)
@@ -60,6 +67,7 @@ public unsafe partial struct IStreamInterleave : IStreamInterleave.Interface
         return ((delegate* unmanaged<IStreamInterleave*, LARGE_INTEGER, uint, ULARGE_INTEGER*, int>)(lpVtbl[5]))((IStreamInterleave*)Unsafe.AsPointer(ref this), dlibMove, dwOrigin, plibNewPosition);
     }
 
+    /// <inheritdoc cref="IStream.SetSize" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT SetSize(ULARGE_INTEGER libNewSize)
@@ -67,6 +75,7 @@ public unsafe partial struct IStreamInterleave : IStreamInterleave.Interface
         return ((delegate* unmanaged<IStreamInterleave*, ULARGE_INTEGER, int>)(lpVtbl[6]))((IStreamInterleave*)Unsafe.AsPointer(ref this), libNewSize);
     }
 
+    /// <inheritdoc cref="IStream.CopyTo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT CopyTo(IStream* pstm, ULARGE_INTEGER cb, ULARGE_INTEGER* pcbRead, ULARGE_INTEGER* pcbWritten)
@@ -74,6 +83,7 @@ public unsafe partial struct IStreamInterleave : IStreamInterleave.Interface
         return ((delegate* unmanaged<IStreamInterleave*, IStream*, ULARGE_INTEGER, ULARGE_INTEGER*, ULARGE_INTEGER*, int>)(lpVtbl[7]))((IStreamInterleave*)Unsafe.AsPointer(ref this), pstm, cb, pcbRead, pcbWritten);
     }
 
+    /// <inheritdoc cref="IStream.Commit" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT Commit([NativeTypeName("DWORD")] uint grfCommitFlags)
@@ -81,6 +91,7 @@ public unsafe partial struct IStreamInterleave : IStreamInterleave.Interface
         return ((delegate* unmanaged<IStreamInterleave*, uint, int>)(lpVtbl[8]))((IStreamInterleave*)Unsafe.AsPointer(ref this), grfCommitFlags);
     }
 
+    /// <inheritdoc cref="IStream.Revert" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT Revert()
@@ -88,6 +99,7 @@ public unsafe partial struct IStreamInterleave : IStreamInterleave.Interface
         return ((delegate* unmanaged<IStreamInterleave*, int>)(lpVtbl[9]))((IStreamInterleave*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IStream.LockRegion" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT LockRegion(ULARGE_INTEGER libOffset, ULARGE_INTEGER cb, [NativeTypeName("DWORD")] uint dwLockType)
@@ -95,6 +107,7 @@ public unsafe partial struct IStreamInterleave : IStreamInterleave.Interface
         return ((delegate* unmanaged<IStreamInterleave*, ULARGE_INTEGER, ULARGE_INTEGER, uint, int>)(lpVtbl[10]))((IStreamInterleave*)Unsafe.AsPointer(ref this), libOffset, cb, dwLockType);
     }
 
+    /// <inheritdoc cref="IStream.UnlockRegion" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT UnlockRegion(ULARGE_INTEGER libOffset, ULARGE_INTEGER cb, [NativeTypeName("DWORD")] uint dwLockType)
@@ -102,6 +115,7 @@ public unsafe partial struct IStreamInterleave : IStreamInterleave.Interface
         return ((delegate* unmanaged<IStreamInterleave*, ULARGE_INTEGER, ULARGE_INTEGER, uint, int>)(lpVtbl[11]))((IStreamInterleave*)Unsafe.AsPointer(ref this), libOffset, cb, dwLockType);
     }
 
+    /// <inheritdoc cref="IStream.Stat" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT Stat(STATSTG* pstatstg, [NativeTypeName("DWORD")] uint grfStatFlag)
@@ -109,6 +123,7 @@ public unsafe partial struct IStreamInterleave : IStreamInterleave.Interface
         return ((delegate* unmanaged<IStreamInterleave*, STATSTG*, uint, int>)(lpVtbl[12]))((IStreamInterleave*)Unsafe.AsPointer(ref this), pstatstg, grfStatFlag);
     }
 
+    /// <inheritdoc cref="IStream.Clone" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT Clone(IStream** ppstm)
@@ -116,6 +131,7 @@ public unsafe partial struct IStreamInterleave : IStreamInterleave.Interface
         return ((delegate* unmanaged<IStreamInterleave*, IStream**, int>)(lpVtbl[13]))((IStreamInterleave*)Unsafe.AsPointer(ref this), ppstm);
     }
 
+    /// <include file='IStreamInterleave.xml' path='doc/member[@name="IStreamInterleave.Initialize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT Initialize(IStream** streams, [NativeTypeName("ULONG *")] uint* interleaveSizes, [NativeTypeName("ULONG")] uint streamCount)

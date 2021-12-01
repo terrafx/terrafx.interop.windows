@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IWICPixelFormatInfo2.GetNumericRepresentation">
+    <summary>
+      <para>Retrieves the <see cref="WICPixelFormatNumericRepresentation" /> of the pixel format.</para>
+    </summary>
+    <param name="pNumericRepresentation">
+      <para>Type: <b><see cref="WICPixelFormatNumericRepresentation" />*</b></para>
+      <para>The address of a <see cref="WICPixelFormatNumericRepresentation" /> variable that you've defined. On successful completion, the function sets your variable to the <b>WICPixelFormatNumericRepresentation</b> of the pixel format.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IWICPixelFormatInfo2" />
+  </member>
+  <member name="IWICPixelFormatInfo2.SupportsTransparency">
+    <summary>
+      <para>Returns whether the format supports transparent pixels.</para>
+    </summary>
+    <param name="pfSupportsTransparency">
+      <para>Type: <b>BOOL*</b></para>
+      <para>Returns <b>TRUE</b> if the pixel format supports transparency; otherwise, <b>FALSE</b>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>An indexed pixel format will not return <b>TRUE</b> even though it may have some transparency support.</para>
+    </remarks>
+    <seealso cref="IWICPixelFormatInfo2" />
+  </member>
+  <member name="IWICPixelFormatInfo2">
+    <summary>
+      <para>Extends <see cref="IWICPixelFormatInfo" /> by providing additional information about a pixel format.</para>
+    </summary>
+  </member>
+</doc>

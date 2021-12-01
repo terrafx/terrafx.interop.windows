@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MEMORY_RESOURCE_NOTIFICATION_TYPE.xml' path='doc/member[@name="MEMORY_RESOURCE_NOTIFICATION_TYPE"]/*' />
 public enum MEMORY_RESOURCE_NOTIFICATION_TYPE
 {
+    /// <include file='MEMORY_RESOURCE_NOTIFICATION_TYPE.xml' path='doc/member[@name="MEMORY_RESOURCE_NOTIFICATION_TYPE.LowMemoryResourceNotification"]/*' />
     LowMemoryResourceNotification,
+
+    /// <include file='MEMORY_RESOURCE_NOTIFICATION_TYPE.xml' path='doc/member[@name="MEMORY_RESOURCE_NOTIFICATION_TYPE.HighMemoryResourceNotification"]/*' />
     HighMemoryResourceNotification,
 }

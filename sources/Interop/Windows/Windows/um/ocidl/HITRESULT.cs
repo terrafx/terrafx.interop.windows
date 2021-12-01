@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HITRESULT.xml' path='doc/member[@name="HITRESULT"]/*' />
 public enum HITRESULT
 {
+    /// <include file='HITRESULT.xml' path='doc/member[@name="HITRESULT.HITRESULT_OUTSIDE"]/*' />
     HITRESULT_OUTSIDE = 0,
+
+    /// <include file='HITRESULT.xml' path='doc/member[@name="HITRESULT.HITRESULT_TRANSPARENT"]/*' />
     HITRESULT_TRANSPARENT = 1,
+
+    /// <include file='HITRESULT.xml' path='doc/member[@name="HITRESULT.HITRESULT_CLOSE"]/*' />
     HITRESULT_CLOSE = 2,
+
+    /// <include file='HITRESULT.xml' path='doc/member[@name="HITRESULT.HITRESULT_HIT"]/*' />
     HITRESULT_HIT = 3,
 }

@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MF_MEDIA_ENGINE_PRELOAD">
+    <summary>
+      <para>Defines preload hints for the Media Engine. These values correspond to the <b>preload</b> attribute of the <b>HTMLMediaElement</b> interface in HTML5.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+  </member>
+  <member name="MF_MEDIA_ENGINE_PRELOAD.MF_MEDIA_ENGINE_PRELOAD_MISSING">
+    <summary>
+      <para>The <b>preload</b> attribute is missing.</para>
+    </summary>
+  </member>
+  <member name="MF_MEDIA_ENGINE_PRELOAD.MF_MEDIA_ENGINE_PRELOAD_EMPTY">
+    <summary>
+      <para>The <b>preload</b> attribute is an empty string. This value is equivalent to <b>MF_MEDIA_ENGINE_PRELOAD_AUTOMATIC</b>.</para>
+    </summary>
+  </member>
+  <member name="MF_MEDIA_ENGINE_PRELOAD.MF_MEDIA_ENGINE_PRELOAD_NONE">
+    <summary>
+      <para>The <b>preload</b> attribute is "none". This value is a hint to the user agent not to preload the resource.</para>
+    </summary>
+  </member>
+  <member name="MF_MEDIA_ENGINE_PRELOAD.MF_MEDIA_ENGINE_PRELOAD_METADATA">
+    <summary>
+      <para>The <b>preload</b> attribute is "metadata". This value is a hint to the user agent to fetch the resource metadata.</para>
+    </summary>
+  </member>
+  <member name="MF_MEDIA_ENGINE_PRELOAD.MF_MEDIA_ENGINE_PRELOAD_AUTOMATIC">
+    <summary>
+      <para>The <b>preload</b> attribute is "auto". This value is a hint to the user agent to preload the entire resource.</para>
+    </summary>
+  </member>
+</doc>

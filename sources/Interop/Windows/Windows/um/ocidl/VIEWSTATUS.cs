@@ -5,12 +5,24 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='VIEWSTATUS.xml' path='doc/member[@name="VIEWSTATUS"]/*' />
 public enum VIEWSTATUS
 {
+    /// <include file='VIEWSTATUS.xml' path='doc/member[@name="VIEWSTATUS.VIEWSTATUS_OPAQUE"]/*' />
     VIEWSTATUS_OPAQUE = 1,
+
+    /// <include file='VIEWSTATUS.xml' path='doc/member[@name="VIEWSTATUS.VIEWSTATUS_SOLIDBKGND"]/*' />
     VIEWSTATUS_SOLIDBKGND = 2,
+
+    /// <include file='VIEWSTATUS.xml' path='doc/member[@name="VIEWSTATUS.VIEWSTATUS_DVASPECTOPAQUE"]/*' />
     VIEWSTATUS_DVASPECTOPAQUE = 4,
+
+    /// <include file='VIEWSTATUS.xml' path='doc/member[@name="VIEWSTATUS.VIEWSTATUS_DVASPECTTRANSPARENT"]/*' />
     VIEWSTATUS_DVASPECTTRANSPARENT = 8,
+
+    /// <include file='VIEWSTATUS.xml' path='doc/member[@name="VIEWSTATUS.VIEWSTATUS_SURFACE"]/*' />
     VIEWSTATUS_SURFACE = 16,
+
+    /// <include file='VIEWSTATUS.xml' path='doc/member[@name="VIEWSTATUS.VIEWSTATUS_3DSURFACE"]/*' />
     VIEWSTATUS_3DSURFACE = 32,
 }

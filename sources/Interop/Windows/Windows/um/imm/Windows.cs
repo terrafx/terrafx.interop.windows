@@ -9,208 +9,272 @@ namespace TerraFX.Interop.Windows;
 
 public static unsafe partial class Windows
 {
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmInstallIMEA"]/*' />
     [DllImport("imm32", ExactSpelling = true)]
     public static extern HKL ImmInstallIMEA([NativeTypeName("LPCSTR")] sbyte* lpszIMEFileName, [NativeTypeName("LPCSTR")] sbyte* lpszLayoutText);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmInstallIMEW"]/*' />
     [DllImport("imm32", ExactSpelling = true)]
     public static extern HKL ImmInstallIMEW([NativeTypeName("LPCWSTR")] ushort* lpszIMEFileName, [NativeTypeName("LPCWSTR")] ushort* lpszLayoutText);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmGetDefaultIMEWnd"]/*' />
     [DllImport("imm32", ExactSpelling = true)]
     public static extern HWND ImmGetDefaultIMEWnd(HWND param0);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmGetDescriptionA"]/*' />
     [DllImport("imm32", ExactSpelling = true)]
     public static extern uint ImmGetDescriptionA(HKL param0, [NativeTypeName("LPSTR")] sbyte* lpszDescription, uint uBufLen);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmGetDescriptionW"]/*' />
     [DllImport("imm32", ExactSpelling = true)]
     public static extern uint ImmGetDescriptionW(HKL param0, [NativeTypeName("LPWSTR")] ushort* lpszDescription, uint uBufLen);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmGetIMEFileNameA"]/*' />
     [DllImport("imm32", ExactSpelling = true)]
     public static extern uint ImmGetIMEFileNameA(HKL param0, [NativeTypeName("LPSTR")] sbyte* lpszFileName, uint uBufLen);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmGetIMEFileNameW"]/*' />
     [DllImport("imm32", ExactSpelling = true)]
     public static extern uint ImmGetIMEFileNameW(HKL param0, [NativeTypeName("LPWSTR")] ushort* lpszFileName, uint uBufLen);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmGetProperty"]/*' />
     [DllImport("imm32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint ImmGetProperty(HKL param0, [NativeTypeName("DWORD")] uint param1);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmIsIME"]/*' />
     [DllImport("imm32", ExactSpelling = true)]
     public static extern BOOL ImmIsIME(HKL param0);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmSimulateHotKey"]/*' />
     [DllImport("imm32", ExactSpelling = true)]
     public static extern BOOL ImmSimulateHotKey(HWND param0, [NativeTypeName("DWORD")] uint param1);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmCreateContext"]/*' />
     [DllImport("imm32", ExactSpelling = true)]
     public static extern HIMC ImmCreateContext();
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmDestroyContext"]/*' />
     [DllImport("imm32", ExactSpelling = true)]
     public static extern BOOL ImmDestroyContext(HIMC param0);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmGetContext"]/*' />
     [DllImport("imm32", ExactSpelling = true)]
     public static extern HIMC ImmGetContext(HWND param0);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmReleaseContext"]/*' />
     [DllImport("imm32", ExactSpelling = true)]
     public static extern BOOL ImmReleaseContext(HWND param0, HIMC param1);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmAssociateContext"]/*' />
     [DllImport("imm32", ExactSpelling = true)]
     public static extern HIMC ImmAssociateContext(HWND param0, HIMC param1);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmAssociateContextEx"]/*' />
     [DllImport("imm32", ExactSpelling = true)]
     public static extern BOOL ImmAssociateContextEx(HWND param0, HIMC param1, [NativeTypeName("DWORD")] uint param2);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmGetCompositionStringA"]/*' />
     [DllImport("imm32", ExactSpelling = true)]
     [return: NativeTypeName("LONG")]
     public static extern int ImmGetCompositionStringA(HIMC param0, [NativeTypeName("DWORD")] uint param1, [NativeTypeName("LPVOID")] void* lpBuf, [NativeTypeName("DWORD")] uint dwBufLen);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmGetCompositionStringW"]/*' />
     [DllImport("imm32", ExactSpelling = true)]
     [return: NativeTypeName("LONG")]
     public static extern int ImmGetCompositionStringW(HIMC param0, [NativeTypeName("DWORD")] uint param1, [NativeTypeName("LPVOID")] void* lpBuf, [NativeTypeName("DWORD")] uint dwBufLen);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmSetCompositionStringA"]/*' />
     [DllImport("imm32", ExactSpelling = true)]
     public static extern BOOL ImmSetCompositionStringA(HIMC param0, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("LPVOID")] void* lpComp, [NativeTypeName("DWORD")] uint dwCompLen, [NativeTypeName("LPVOID")] void* lpRead, [NativeTypeName("DWORD")] uint dwReadLen);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmSetCompositionStringW"]/*' />
     [DllImport("imm32", ExactSpelling = true)]
     public static extern BOOL ImmSetCompositionStringW(HIMC param0, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("LPVOID")] void* lpComp, [NativeTypeName("DWORD")] uint dwCompLen, [NativeTypeName("LPVOID")] void* lpRead, [NativeTypeName("DWORD")] uint dwReadLen);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmGetCandidateListCountA"]/*' />
     [DllImport("imm32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint ImmGetCandidateListCountA(HIMC param0, [NativeTypeName("LPDWORD")] uint* lpdwListCount);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmGetCandidateListCountW"]/*' />
     [DllImport("imm32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint ImmGetCandidateListCountW(HIMC param0, [NativeTypeName("LPDWORD")] uint* lpdwListCount);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmGetCandidateListA"]/*' />
     [DllImport("imm32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint ImmGetCandidateListA(HIMC param0, [NativeTypeName("DWORD")] uint deIndex, [NativeTypeName("LPCANDIDATELIST")] CANDIDATELIST* lpCandList, [NativeTypeName("DWORD")] uint dwBufLen);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmGetCandidateListW"]/*' />
     [DllImport("imm32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint ImmGetCandidateListW(HIMC param0, [NativeTypeName("DWORD")] uint deIndex, [NativeTypeName("LPCANDIDATELIST")] CANDIDATELIST* lpCandList, [NativeTypeName("DWORD")] uint dwBufLen);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmGetGuideLineA"]/*' />
     [DllImport("imm32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint ImmGetGuideLineA(HIMC param0, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("LPSTR")] sbyte* lpBuf, [NativeTypeName("DWORD")] uint dwBufLen);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmGetGuideLineW"]/*' />
     [DllImport("imm32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint ImmGetGuideLineW(HIMC param0, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("LPWSTR")] ushort* lpBuf, [NativeTypeName("DWORD")] uint dwBufLen);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmGetConversionStatus"]/*' />
     [DllImport("imm32", ExactSpelling = true)]
     public static extern BOOL ImmGetConversionStatus(HIMC param0, [NativeTypeName("LPDWORD")] uint* lpfdwConversion, [NativeTypeName("LPDWORD")] uint* lpfdwSentence);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmSetConversionStatus"]/*' />
     [DllImport("imm32", ExactSpelling = true)]
     public static extern BOOL ImmSetConversionStatus(HIMC param0, [NativeTypeName("DWORD")] uint param1, [NativeTypeName("DWORD")] uint param2);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmGetOpenStatus"]/*' />
     [DllImport("imm32", ExactSpelling = true)]
     public static extern BOOL ImmGetOpenStatus(HIMC param0);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmSetOpenStatus"]/*' />
     [DllImport("imm32", ExactSpelling = true)]
     public static extern BOOL ImmSetOpenStatus(HIMC param0, BOOL param1);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmGetCompositionFontA"]/*' />
     [DllImport("imm32", ExactSpelling = true)]
     public static extern BOOL ImmGetCompositionFontA(HIMC param0, [NativeTypeName("LPLOGFONTA")] LOGFONTA* lplf);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmGetCompositionFontW"]/*' />
     [DllImport("imm32", ExactSpelling = true)]
     public static extern BOOL ImmGetCompositionFontW(HIMC param0, [NativeTypeName("LPLOGFONTW")] LOGFONTW* lplf);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmSetCompositionFontA"]/*' />
     [DllImport("imm32", ExactSpelling = true)]
     public static extern BOOL ImmSetCompositionFontA(HIMC param0, [NativeTypeName("LPLOGFONTA")] LOGFONTA* lplf);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmSetCompositionFontW"]/*' />
     [DllImport("imm32", ExactSpelling = true)]
     public static extern BOOL ImmSetCompositionFontW(HIMC param0, [NativeTypeName("LPLOGFONTW")] LOGFONTW* lplf);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmConfigureIMEA"]/*' />
     [DllImport("imm32", ExactSpelling = true)]
     public static extern BOOL ImmConfigureIMEA(HKL param0, HWND param1, [NativeTypeName("DWORD")] uint param2, [NativeTypeName("LPVOID")] void* param3);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmConfigureIMEW"]/*' />
     [DllImport("imm32", ExactSpelling = true)]
     public static extern BOOL ImmConfigureIMEW(HKL param0, HWND param1, [NativeTypeName("DWORD")] uint param2, [NativeTypeName("LPVOID")] void* param3);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmEscapeA"]/*' />
     [DllImport("imm32", ExactSpelling = true)]
     public static extern LRESULT ImmEscapeA(HKL param0, HIMC param1, uint param2, [NativeTypeName("LPVOID")] void* param3);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmEscapeW"]/*' />
     [DllImport("imm32", ExactSpelling = true)]
     public static extern LRESULT ImmEscapeW(HKL param0, HIMC param1, uint param2, [NativeTypeName("LPVOID")] void* param3);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmGetConversionListA"]/*' />
     [DllImport("imm32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint ImmGetConversionListA(HKL param0, HIMC param1, [NativeTypeName("LPCSTR")] sbyte* lpSrc, [NativeTypeName("LPCANDIDATELIST")] CANDIDATELIST* lpDst, [NativeTypeName("DWORD")] uint dwBufLen, uint uFlag);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmGetConversionListW"]/*' />
     [DllImport("imm32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint ImmGetConversionListW(HKL param0, HIMC param1, [NativeTypeName("LPCWSTR")] ushort* lpSrc, [NativeTypeName("LPCANDIDATELIST")] CANDIDATELIST* lpDst, [NativeTypeName("DWORD")] uint dwBufLen, uint uFlag);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmNotifyIME"]/*' />
     [DllImport("imm32", ExactSpelling = true)]
     public static extern BOOL ImmNotifyIME(HIMC param0, [NativeTypeName("DWORD")] uint dwAction, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("DWORD")] uint dwValue);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmGetStatusWindowPos"]/*' />
     [DllImport("imm32", ExactSpelling = true)]
     public static extern BOOL ImmGetStatusWindowPos(HIMC param0, [NativeTypeName("LPPOINT")] POINT* lpptPos);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmSetStatusWindowPos"]/*' />
     [DllImport("imm32", ExactSpelling = true)]
     public static extern BOOL ImmSetStatusWindowPos(HIMC param0, [NativeTypeName("LPPOINT")] POINT* lpptPos);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmGetCompositionWindow"]/*' />
     [DllImport("imm32", ExactSpelling = true)]
     public static extern BOOL ImmGetCompositionWindow(HIMC param0, [NativeTypeName("LPCOMPOSITIONFORM")] COMPOSITIONFORM* lpCompForm);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmSetCompositionWindow"]/*' />
     [DllImport("imm32", ExactSpelling = true)]
     public static extern BOOL ImmSetCompositionWindow(HIMC param0, [NativeTypeName("LPCOMPOSITIONFORM")] COMPOSITIONFORM* lpCompForm);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmGetCandidateWindow"]/*' />
     [DllImport("imm32", ExactSpelling = true)]
     public static extern BOOL ImmGetCandidateWindow(HIMC param0, [NativeTypeName("DWORD")] uint param1, [NativeTypeName("LPCANDIDATEFORM")] CANDIDATEFORM* lpCandidate);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmSetCandidateWindow"]/*' />
     [DllImport("imm32", ExactSpelling = true)]
     public static extern BOOL ImmSetCandidateWindow(HIMC param0, [NativeTypeName("LPCANDIDATEFORM")] CANDIDATEFORM* lpCandidate);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmIsUIMessageA"]/*' />
     [DllImport("imm32", ExactSpelling = true)]
     public static extern BOOL ImmIsUIMessageA(HWND param0, uint param1, WPARAM param2, LPARAM param3);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmIsUIMessageW"]/*' />
     [DllImport("imm32", ExactSpelling = true)]
     public static extern BOOL ImmIsUIMessageW(HWND param0, uint param1, WPARAM param2, LPARAM param3);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmGetVirtualKey"]/*' />
     [DllImport("imm32", ExactSpelling = true)]
     public static extern uint ImmGetVirtualKey(HWND param0);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmRegisterWordA"]/*' />
     [DllImport("imm32", ExactSpelling = true)]
     public static extern BOOL ImmRegisterWordA(HKL param0, [NativeTypeName("LPCSTR")] sbyte* lpszReading, [NativeTypeName("DWORD")] uint param2, [NativeTypeName("LPCSTR")] sbyte* lpszRegister);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmRegisterWordW"]/*' />
     [DllImport("imm32", ExactSpelling = true)]
     public static extern BOOL ImmRegisterWordW(HKL param0, [NativeTypeName("LPCWSTR")] ushort* lpszReading, [NativeTypeName("DWORD")] uint param2, [NativeTypeName("LPCWSTR")] ushort* lpszRegister);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmUnregisterWordA"]/*' />
     [DllImport("imm32", ExactSpelling = true)]
     public static extern BOOL ImmUnregisterWordA(HKL param0, [NativeTypeName("LPCSTR")] sbyte* lpszReading, [NativeTypeName("DWORD")] uint param2, [NativeTypeName("LPCSTR")] sbyte* lpszUnregister);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmUnregisterWordW"]/*' />
     [DllImport("imm32", ExactSpelling = true)]
     public static extern BOOL ImmUnregisterWordW(HKL param0, [NativeTypeName("LPCWSTR")] ushort* lpszReading, [NativeTypeName("DWORD")] uint param2, [NativeTypeName("LPCWSTR")] ushort* lpszUnregister);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmGetRegisterWordStyleA"]/*' />
     [DllImport("imm32", ExactSpelling = true)]
     public static extern uint ImmGetRegisterWordStyleA(HKL param0, uint nItem, [NativeTypeName("LPSTYLEBUFA")] STYLEBUFA* lpStyleBuf);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmGetRegisterWordStyleW"]/*' />
     [DllImport("imm32", ExactSpelling = true)]
     public static extern uint ImmGetRegisterWordStyleW(HKL param0, uint nItem, [NativeTypeName("LPSTYLEBUFW")] STYLEBUFW* lpStyleBuf);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmEnumRegisterWordA"]/*' />
     [DllImport("imm32", ExactSpelling = true)]
     public static extern uint ImmEnumRegisterWordA(HKL param0, [NativeTypeName("REGISTERWORDENUMPROCA")] delegate* unmanaged<sbyte*, uint, sbyte*, void*, int> param1, [NativeTypeName("LPCSTR")] sbyte* lpszReading, [NativeTypeName("DWORD")] uint param3, [NativeTypeName("LPCSTR")] sbyte* lpszRegister, [NativeTypeName("LPVOID")] void* param5);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmEnumRegisterWordW"]/*' />
     [DllImport("imm32", ExactSpelling = true)]
     public static extern uint ImmEnumRegisterWordW(HKL param0, [NativeTypeName("REGISTERWORDENUMPROCW")] delegate* unmanaged<ushort*, uint, ushort*, void*, int> param1, [NativeTypeName("LPCWSTR")] ushort* lpszReading, [NativeTypeName("DWORD")] uint param3, [NativeTypeName("LPCWSTR")] ushort* lpszRegister, [NativeTypeName("LPVOID")] void* param5);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmDisableIME"]/*' />
     [DllImport("imm32", ExactSpelling = true)]
     public static extern BOOL ImmDisableIME([NativeTypeName("DWORD")] uint param0);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmEnumInputContext"]/*' />
     [DllImport("imm32", ExactSpelling = true)]
     public static extern BOOL ImmEnumInputContext([NativeTypeName("DWORD")] uint idThread, [NativeTypeName("IMCENUMPROC")] delegate* unmanaged<HIMC, LPARAM, BOOL> lpfn, LPARAM lParam);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmGetImeMenuItemsA"]/*' />
     [DllImport("imm32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint ImmGetImeMenuItemsA(HIMC param0, [NativeTypeName("DWORD")] uint param1, [NativeTypeName("DWORD")] uint param2, [NativeTypeName("LPIMEMENUITEMINFOA")] IMEMENUITEMINFOA* lpImeParentMenu, [NativeTypeName("LPIMEMENUITEMINFOA")] IMEMENUITEMINFOA* lpImeMenu, [NativeTypeName("DWORD")] uint dwSize);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmGetImeMenuItemsW"]/*' />
     [DllImport("imm32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint ImmGetImeMenuItemsW(HIMC param0, [NativeTypeName("DWORD")] uint param1, [NativeTypeName("DWORD")] uint param2, [NativeTypeName("LPIMEMENUITEMINFOW")] IMEMENUITEMINFOW* lpImeParentMenu, [NativeTypeName("LPIMEMENUITEMINFOW")] IMEMENUITEMINFOW* lpImeMenu, [NativeTypeName("DWORD")] uint dwSize);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmDisableTextFrameService"]/*' />
     [DllImport("imm32", ExactSpelling = true)]
     public static extern BOOL ImmDisableTextFrameService([NativeTypeName("DWORD")] uint idThread);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmDisableLegacyIME"]/*' />
     [DllImport("imm32", ExactSpelling = true)]
     public static extern BOOL ImmDisableLegacyIME();
 

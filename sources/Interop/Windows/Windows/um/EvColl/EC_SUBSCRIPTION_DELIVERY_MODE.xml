@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="EC_SUBSCRIPTION_DELIVERY_MODE">
+    <summary>
+      <para>The <b>EC_SUBSCRIPTION_DELIVERY_MODE</b> enumeration defines values that indicate how events are delivered in a  subscription. Events are delivered through subscriptions using either the push or pull model. For more information, see <a href="https://docs.microsoft.com//windows/desktop/WES/subscribing-to-events">Subscribing to Events</a>.</para>
+    </summary>
+  </member>
+  <member name="EC_SUBSCRIPTION_DELIVERY_MODE.EcDeliveryModePull">
+    <summary>
+      <para>Events are delivered through the subscription using the pull model.</para>
+    </summary>
+  </member>
+  <member name="EC_SUBSCRIPTION_DELIVERY_MODE.EcDeliveryModePush">
+    <summary>
+      <para>Events are delivered through the subscription using the push model.</para>
+    </summary>
+  </member>
+</doc>

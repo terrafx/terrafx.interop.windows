@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MONITOR_DPI_TYPE">
+    <summary>
+      <para>Identifies the dots per inch (dpi) setting for a monitor.</para>
+    </summary>
+    <remarks>
+      <para>All of these settings are affected by the <see cref="PROCESS_DPI_AWARENESS" /> of your application</para>
+    </remarks>
+    <seealso cref="GetDpiForMonitor" />
+  </member>
+  <member name="MONITOR_DPI_TYPE.MDT_EFFECTIVE_DPI">
+    <summary>
+      <para>The effective DPI. This value should be used when determining the correct scale factor for scaling UI elements. This incorporates the scale factor set by the user for this specific display.</para>
+    </summary>
+  </member>
+  <member name="MONITOR_DPI_TYPE.MDT_ANGULAR_DPI">
+    <summary>
+      <para>The angular DPI. This DPI ensures rendering at a compliant angular resolution on the screen. This does not include the scale factor set by the user for this specific display.</para>
+    </summary>
+  </member>
+  <member name="MONITOR_DPI_TYPE.MDT_RAW_DPI">
+    <summary>
+      <para>The raw DPI. This value is the linear DPI of the screen as measured on the screen itself. Use this value when you want to read the pixel density and not the recommended scaling setting. This does not include the scale factor set by the user for this specific display and is not guaranteed to be a supported DPI value.</para>
+    </summary>
+  </member>
+  <member name="MONITOR_DPI_TYPE.MDT_DEFAULT">
+    <summary>
+      <para>The default DPI setting for a monitor is MDT_EFFECTIVE_DPI.</para>
+    </summary>
+  </member>
+</doc>

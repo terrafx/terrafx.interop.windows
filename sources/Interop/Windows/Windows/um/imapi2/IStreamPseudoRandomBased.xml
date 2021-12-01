@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IStreamPseudoRandomBased.get_ExtendedSeed">
+    <summary>
+      <para>Retrieves an array of seed values used by the random number generator.</para>
+    </summary>
+    <param name="values">
+      <para>Array of seed values used by the random number generator.</para>
+    </param>
+    <param name="eCount">
+      <para>Number of seed values in the <i>values</i> array.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_NOTIMPL</b>
+            </para>
+          </description>
+          <description>
+            <para>Not implemented.</para>
+            <para>Value: 0x80004001</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IStreamPseudoRandomBased" />
+    <seealso cref="IStreamPseudoRandomBased.get_Seed" />
+    <seealso cref="IStreamPseudoRandomBased.put_ExtendedSeed" />
+  </member>
+  <member name="IStreamPseudoRandomBased.get_Seed">
+    <summary>
+      <para>Retrieves the seed value used by the random number generator.</para>
+    </summary>
+    <param name="value">
+      <para>Seed value for the random number generator.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>Pointer is not valid.</para>
+            <para>Value: 0x80004003</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IStreamPseudoRandomBased" />
+    <seealso cref="IStreamPseudoRandomBased.get_ExtendedSeed" />
+    <seealso cref="IStreamPseudoRandomBased.put_Seed" />
+  </member>
+  <member name="IStreamPseudoRandomBased.put_ExtendedSeed">
+    <summary>
+      <para>Sets a list of seed values for the random number generator and seeks to the start of stream.<b>Note</b>  This interface is currently not implemented.</para>
+    </summary>
+    <param name="values">
+      <para>Array of seed values used by the random number generator.</para>
+    </param>
+    <param name="eCount">
+      <para>Number of seed values in the <i>values</i> array.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_NOTIMPL</b>
+            </para>
+          </description>
+          <description>
+            <para>Not implemented.</para>
+            <para>Value: 0x80004001</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Use this method to provide a seed value greater than 32 bits.</para>
+    </remarks>
+    <seealso cref="IStreamPseudoRandomBased" />
+    <seealso cref="IStreamPseudoRandomBased.get_ExtendedSeed" />
+    <seealso cref="IStreamPseudoRandomBased.put_Seed" />
+  </member>
+  <member name="IStreamPseudoRandomBased.put_Seed">
+    <summary>
+      <para>Sets the seed value used by the random number generator and seeks to the start of stream.</para>
+    </summary>
+    <param name="value">
+      <para>Seed value for the random number generator.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation.</para>
+    </returns>
+    <seealso cref="IStreamPseudoRandomBased" />
+    <seealso cref="IStreamPseudoRandomBased.get_Seed" />
+    <seealso cref="IStreamPseudoRandomBased.put_ExtendedSeed" />
+  </member>
+  <member name="IStreamPseudoRandomBased">
+    <summary>
+      <para>Use this interface to generate a read-only data stream whose data is initialized with pseudo-random data (not cryptographically safe). You must call the <b>SetSize</b> method to set the requested size of the stream.</para>
+      <para>To create an instance of this interface, call the <b>CoCreateInstance</b> function. Use __uuidof(MsftStreamPrng001) for the class identifier and __uuidof(IStreamPseudoRandomBased) for the interface identifier.</para>
+    </summary>
+    <remarks>
+      <para>To create the <b>MsftStreamPrgn001</b> object in a script, use IMAPI2.MsftStreamPrgn001 as the program identifier when calling <b>CreateObject</b>.</para>
+    </remarks>
+    <seealso cref="IStreamConcatenate" />
+    <seealso cref="IStreamInterleave" />
+  </member>
+</doc>

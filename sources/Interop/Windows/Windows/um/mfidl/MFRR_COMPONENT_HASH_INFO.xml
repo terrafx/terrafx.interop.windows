@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MFRR_COMPONENT_HASH_INFO">
+    <summary>
+      <para>Contains information about a revoked component.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-structures">Media Foundation Structures</seealso>
+  </member>
+  <member name="MFRR_COMPONENT_HASH_INFO.ulReason">
+    <summary>
+      <para>Specifies the reason for the revocation. The following values are defined.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>MF_BOOT_DRIVER_VERIFICATION_FAILED</b>
+          </description>
+          <description>
+            <para>A boot driver could not be verified.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>MF_COMPONENT_CERT_REVOKED</b>
+          </description>
+          <description>
+            <para>A certificate in a trusted component's certificate chain was revoked.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>MF_COMPONENT_HS_CERT_REVOKED</b>
+          </description>
+          <description>
+            <para>The high-security certificate for authenticating the protected environment (PE) was revoked.</para>
+            <para>The high-security certificate is typically used by ITAs that handle high-definition content and next-generation formats such as HD-DVD.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>MF_COMPONENT_INVALID_EKU</b>
+          </description>
+          <description>
+            <para>A certificate's extended key usage (EKU) object is invalid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>MF_COMPONENT_INVALID_ROOT</b>
+          </description>
+          <description>
+            <para>The root certificate is not valid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>MF_COMPONENT_LS_CERT_REVOKED</b>
+          </description>
+          <description>
+            <para>The low-security certificate for authenticating the PE was revoked.</para>
+            <para>The low-security certificate is typically used by ITAs that handle standard-definition content and current-generation formats.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>MF_COMPONENT_REVOKED</b>
+          </description>
+          <description>
+            <para>A trusted component was revoked.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>MF_GRL_ABSENT</b>
+          </description>
+          <description>
+            <para>The GRL was not found.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>MF_GRL_LOAD_FAILED</b>
+          </description>
+          <description>
+            <para>Could not load the global revocation list (GRL).</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>MF_INVALID_GRL_SIGNATURE</b>
+          </description>
+          <description>
+            <para>The GRL signature is invalid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>MF_MINCRYPT_FAILURE</b>
+          </description>
+          <description>
+            <para>A certificate chain was not well-formed, or a boot driver is unsigned or is signed with an untrusted certificate.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>MF_TEST_SIGNED_COMPONENT_LOADING</b>
+          </description>
+          <description>
+            <para>A component was signed by a test certificate.</para>
+          </description>
+        </item>
+      </list>
+      <para>In addition, one of the following flags might be present, indicating the type of component that failed to load.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>MF_USER_MODE_COMPONENT_LOAD</b>
+          </description>
+          <description>
+            <para>User-mode component.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>MF_KERNEL_MODE_COMPONENT_LOAD</b>
+          </description>
+          <description>
+            <para>Kernel-mode component.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="MFRR_COMPONENT_HASH_INFO.rgHeaderHash">
+    <summary>
+      <para>Contains a hash of the file header.</para>
+    </summary>
+  </member>
+  <member name="MFRR_COMPONENT_HASH_INFO.rgPublicKeyHash">
+    <summary>
+      <para>Contains a hash of the public key in the component's certificate.</para>
+    </summary>
+  </member>
+  <member name="MFRR_COMPONENT_HASH_INFO.wszName">
+    <summary>
+      <para>File name of the revoked component.</para>
+    </summary>
+  </member>
+</doc>

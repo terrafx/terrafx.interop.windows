@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFAttributes.xml' path='doc/member[@name="IMFAttributes"]/*' />
 [Guid("2CD2D921-C447-44A7-A13C-4ADABFC247E3")]
 [NativeTypeName("struct IMFAttributes : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMFAttributes : IMFAttributes.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMFAttributes : IMFAttributes.Interface
         return ((delegate* unmanaged<IMFAttributes*, Guid*, void**, int>)(lpVtbl[0]))((IMFAttributes*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMFAttributes : IMFAttributes.Interface
         return ((delegate* unmanaged<IMFAttributes*, uint>)(lpVtbl[1]))((IMFAttributes*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMFAttributes : IMFAttributes.Interface
         return ((delegate* unmanaged<IMFAttributes*, uint>)(lpVtbl[2]))((IMFAttributes*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFAttributes.xml' path='doc/member[@name="IMFAttributes.GetItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetItem([NativeTypeName("const GUID &")] Guid* guidKey, PROPVARIANT* pValue)
@@ -46,6 +51,7 @@ public unsafe partial struct IMFAttributes : IMFAttributes.Interface
         return ((delegate* unmanaged<IMFAttributes*, Guid*, PROPVARIANT*, int>)(lpVtbl[3]))((IMFAttributes*)Unsafe.AsPointer(ref this), guidKey, pValue);
     }
 
+    /// <include file='IMFAttributes.xml' path='doc/member[@name="IMFAttributes.GetItemType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetItemType([NativeTypeName("const GUID &")] Guid* guidKey, MF_ATTRIBUTE_TYPE* pType)
@@ -53,6 +59,7 @@ public unsafe partial struct IMFAttributes : IMFAttributes.Interface
         return ((delegate* unmanaged<IMFAttributes*, Guid*, MF_ATTRIBUTE_TYPE*, int>)(lpVtbl[4]))((IMFAttributes*)Unsafe.AsPointer(ref this), guidKey, pType);
     }
 
+    /// <include file='IMFAttributes.xml' path='doc/member[@name="IMFAttributes.CompareItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT CompareItem([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("const PROPVARIANT &")] PROPVARIANT* Value, BOOL* pbResult)
@@ -60,6 +67,7 @@ public unsafe partial struct IMFAttributes : IMFAttributes.Interface
         return ((delegate* unmanaged<IMFAttributes*, Guid*, PROPVARIANT*, BOOL*, int>)(lpVtbl[5]))((IMFAttributes*)Unsafe.AsPointer(ref this), guidKey, Value, pbResult);
     }
 
+    /// <include file='IMFAttributes.xml' path='doc/member[@name="IMFAttributes.Compare"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Compare(IMFAttributes* pTheirs, MF_ATTRIBUTES_MATCH_TYPE MatchType, BOOL* pbResult)
@@ -67,6 +75,7 @@ public unsafe partial struct IMFAttributes : IMFAttributes.Interface
         return ((delegate* unmanaged<IMFAttributes*, IMFAttributes*, MF_ATTRIBUTES_MATCH_TYPE, BOOL*, int>)(lpVtbl[6]))((IMFAttributes*)Unsafe.AsPointer(ref this), pTheirs, MatchType, pbResult);
     }
 
+    /// <include file='IMFAttributes.xml' path='doc/member[@name="IMFAttributes.GetUINT32"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetUINT32([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("UINT32 *")] uint* punValue)
@@ -74,6 +83,7 @@ public unsafe partial struct IMFAttributes : IMFAttributes.Interface
         return ((delegate* unmanaged<IMFAttributes*, Guid*, uint*, int>)(lpVtbl[7]))((IMFAttributes*)Unsafe.AsPointer(ref this), guidKey, punValue);
     }
 
+    /// <include file='IMFAttributes.xml' path='doc/member[@name="IMFAttributes.GetUINT64"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetUINT64([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("UINT64 *")] ulong* punValue)
@@ -81,6 +91,7 @@ public unsafe partial struct IMFAttributes : IMFAttributes.Interface
         return ((delegate* unmanaged<IMFAttributes*, Guid*, ulong*, int>)(lpVtbl[8]))((IMFAttributes*)Unsafe.AsPointer(ref this), guidKey, punValue);
     }
 
+    /// <include file='IMFAttributes.xml' path='doc/member[@name="IMFAttributes.GetDouble"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT GetDouble([NativeTypeName("const GUID &")] Guid* guidKey, double* pfValue)
@@ -88,6 +99,7 @@ public unsafe partial struct IMFAttributes : IMFAttributes.Interface
         return ((delegate* unmanaged<IMFAttributes*, Guid*, double*, int>)(lpVtbl[9]))((IMFAttributes*)Unsafe.AsPointer(ref this), guidKey, pfValue);
     }
 
+    /// <include file='IMFAttributes.xml' path='doc/member[@name="IMFAttributes.GetGUID"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT GetGUID([NativeTypeName("const GUID &")] Guid* guidKey, Guid* pguidValue)
@@ -95,6 +107,7 @@ public unsafe partial struct IMFAttributes : IMFAttributes.Interface
         return ((delegate* unmanaged<IMFAttributes*, Guid*, Guid*, int>)(lpVtbl[10]))((IMFAttributes*)Unsafe.AsPointer(ref this), guidKey, pguidValue);
     }
 
+    /// <include file='IMFAttributes.xml' path='doc/member[@name="IMFAttributes.GetStringLength"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT GetStringLength([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("UINT32 *")] uint* pcchLength)
@@ -102,6 +115,7 @@ public unsafe partial struct IMFAttributes : IMFAttributes.Interface
         return ((delegate* unmanaged<IMFAttributes*, Guid*, uint*, int>)(lpVtbl[11]))((IMFAttributes*)Unsafe.AsPointer(ref this), guidKey, pcchLength);
     }
 
+    /// <include file='IMFAttributes.xml' path='doc/member[@name="IMFAttributes.GetString"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT GetString([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("LPWSTR")] ushort* pwszValue, [NativeTypeName("UINT32")] uint cchBufSize, [NativeTypeName("UINT32 *")] uint* pcchLength)
@@ -109,6 +123,7 @@ public unsafe partial struct IMFAttributes : IMFAttributes.Interface
         return ((delegate* unmanaged<IMFAttributes*, Guid*, ushort*, uint, uint*, int>)(lpVtbl[12]))((IMFAttributes*)Unsafe.AsPointer(ref this), guidKey, pwszValue, cchBufSize, pcchLength);
     }
 
+    /// <include file='IMFAttributes.xml' path='doc/member[@name="IMFAttributes.GetAllocatedString"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT GetAllocatedString([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("LPWSTR *")] ushort** ppwszValue, [NativeTypeName("UINT32 *")] uint* pcchLength)
@@ -116,6 +131,7 @@ public unsafe partial struct IMFAttributes : IMFAttributes.Interface
         return ((delegate* unmanaged<IMFAttributes*, Guid*, ushort**, uint*, int>)(lpVtbl[13]))((IMFAttributes*)Unsafe.AsPointer(ref this), guidKey, ppwszValue, pcchLength);
     }
 
+    /// <include file='IMFAttributes.xml' path='doc/member[@name="IMFAttributes.GetBlobSize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT GetBlobSize([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("UINT32 *")] uint* pcbBlobSize)
@@ -123,6 +139,7 @@ public unsafe partial struct IMFAttributes : IMFAttributes.Interface
         return ((delegate* unmanaged<IMFAttributes*, Guid*, uint*, int>)(lpVtbl[14]))((IMFAttributes*)Unsafe.AsPointer(ref this), guidKey, pcbBlobSize);
     }
 
+    /// <include file='IMFAttributes.xml' path='doc/member[@name="IMFAttributes.GetBlob"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT GetBlob([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("UINT8 *")] byte* pBuf, [NativeTypeName("UINT32")] uint cbBufSize, [NativeTypeName("UINT32 *")] uint* pcbBlobSize)
@@ -130,6 +147,7 @@ public unsafe partial struct IMFAttributes : IMFAttributes.Interface
         return ((delegate* unmanaged<IMFAttributes*, Guid*, byte*, uint, uint*, int>)(lpVtbl[15]))((IMFAttributes*)Unsafe.AsPointer(ref this), guidKey, pBuf, cbBufSize, pcbBlobSize);
     }
 
+    /// <include file='IMFAttributes.xml' path='doc/member[@name="IMFAttributes.GetAllocatedBlob"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT GetAllocatedBlob([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("UINT8 **")] byte** ppBuf, [NativeTypeName("UINT32 *")] uint* pcbSize)
@@ -137,6 +155,7 @@ public unsafe partial struct IMFAttributes : IMFAttributes.Interface
         return ((delegate* unmanaged<IMFAttributes*, Guid*, byte**, uint*, int>)(lpVtbl[16]))((IMFAttributes*)Unsafe.AsPointer(ref this), guidKey, ppBuf, pcbSize);
     }
 
+    /// <include file='IMFAttributes.xml' path='doc/member[@name="IMFAttributes.GetUnknown"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT GetUnknown([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppv)
@@ -144,6 +163,7 @@ public unsafe partial struct IMFAttributes : IMFAttributes.Interface
         return ((delegate* unmanaged<IMFAttributes*, Guid*, Guid*, void**, int>)(lpVtbl[17]))((IMFAttributes*)Unsafe.AsPointer(ref this), guidKey, riid, ppv);
     }
 
+    /// <include file='IMFAttributes.xml' path='doc/member[@name="IMFAttributes.SetItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT SetItem([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("const PROPVARIANT &")] PROPVARIANT* Value)
@@ -151,6 +171,7 @@ public unsafe partial struct IMFAttributes : IMFAttributes.Interface
         return ((delegate* unmanaged<IMFAttributes*, Guid*, PROPVARIANT*, int>)(lpVtbl[18]))((IMFAttributes*)Unsafe.AsPointer(ref this), guidKey, Value);
     }
 
+    /// <include file='IMFAttributes.xml' path='doc/member[@name="IMFAttributes.DeleteItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT DeleteItem([NativeTypeName("const GUID &")] Guid* guidKey)
@@ -158,6 +179,7 @@ public unsafe partial struct IMFAttributes : IMFAttributes.Interface
         return ((delegate* unmanaged<IMFAttributes*, Guid*, int>)(lpVtbl[19]))((IMFAttributes*)Unsafe.AsPointer(ref this), guidKey);
     }
 
+    /// <include file='IMFAttributes.xml' path='doc/member[@name="IMFAttributes.DeleteAllItems"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public HRESULT DeleteAllItems()
@@ -165,6 +187,7 @@ public unsafe partial struct IMFAttributes : IMFAttributes.Interface
         return ((delegate* unmanaged<IMFAttributes*, int>)(lpVtbl[20]))((IMFAttributes*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFAttributes.xml' path='doc/member[@name="IMFAttributes.SetUINT32"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
     public HRESULT SetUINT32([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("UINT32")] uint unValue)
@@ -172,6 +195,7 @@ public unsafe partial struct IMFAttributes : IMFAttributes.Interface
         return ((delegate* unmanaged<IMFAttributes*, Guid*, uint, int>)(lpVtbl[21]))((IMFAttributes*)Unsafe.AsPointer(ref this), guidKey, unValue);
     }
 
+    /// <include file='IMFAttributes.xml' path='doc/member[@name="IMFAttributes.SetUINT64"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
     public HRESULT SetUINT64([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("UINT64")] ulong unValue)
@@ -179,6 +203,7 @@ public unsafe partial struct IMFAttributes : IMFAttributes.Interface
         return ((delegate* unmanaged<IMFAttributes*, Guid*, ulong, int>)(lpVtbl[22]))((IMFAttributes*)Unsafe.AsPointer(ref this), guidKey, unValue);
     }
 
+    /// <include file='IMFAttributes.xml' path='doc/member[@name="IMFAttributes.SetDouble"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
     public HRESULT SetDouble([NativeTypeName("const GUID &")] Guid* guidKey, double fValue)
@@ -186,6 +211,7 @@ public unsafe partial struct IMFAttributes : IMFAttributes.Interface
         return ((delegate* unmanaged<IMFAttributes*, Guid*, double, int>)(lpVtbl[23]))((IMFAttributes*)Unsafe.AsPointer(ref this), guidKey, fValue);
     }
 
+    /// <include file='IMFAttributes.xml' path='doc/member[@name="IMFAttributes.SetGUID"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(24)]
     public HRESULT SetGUID([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("const GUID &")] Guid* guidValue)
@@ -193,6 +219,7 @@ public unsafe partial struct IMFAttributes : IMFAttributes.Interface
         return ((delegate* unmanaged<IMFAttributes*, Guid*, Guid*, int>)(lpVtbl[24]))((IMFAttributes*)Unsafe.AsPointer(ref this), guidKey, guidValue);
     }
 
+    /// <include file='IMFAttributes.xml' path='doc/member[@name="IMFAttributes.SetString"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(25)]
     public HRESULT SetString([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("LPCWSTR")] ushort* wszValue)
@@ -200,6 +227,7 @@ public unsafe partial struct IMFAttributes : IMFAttributes.Interface
         return ((delegate* unmanaged<IMFAttributes*, Guid*, ushort*, int>)(lpVtbl[25]))((IMFAttributes*)Unsafe.AsPointer(ref this), guidKey, wszValue);
     }
 
+    /// <include file='IMFAttributes.xml' path='doc/member[@name="IMFAttributes.SetBlob"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(26)]
     public HRESULT SetBlob([NativeTypeName("const GUID &")] Guid* guidKey, [NativeTypeName("const UINT8 *")] byte* pBuf, [NativeTypeName("UINT32")] uint cbBufSize)
@@ -207,6 +235,7 @@ public unsafe partial struct IMFAttributes : IMFAttributes.Interface
         return ((delegate* unmanaged<IMFAttributes*, Guid*, byte*, uint, int>)(lpVtbl[26]))((IMFAttributes*)Unsafe.AsPointer(ref this), guidKey, pBuf, cbBufSize);
     }
 
+    /// <include file='IMFAttributes.xml' path='doc/member[@name="IMFAttributes.SetUnknown"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(27)]
     public HRESULT SetUnknown([NativeTypeName("const GUID &")] Guid* guidKey, IUnknown* pUnknown)
@@ -214,6 +243,7 @@ public unsafe partial struct IMFAttributes : IMFAttributes.Interface
         return ((delegate* unmanaged<IMFAttributes*, Guid*, IUnknown*, int>)(lpVtbl[27]))((IMFAttributes*)Unsafe.AsPointer(ref this), guidKey, pUnknown);
     }
 
+    /// <include file='IMFAttributes.xml' path='doc/member[@name="IMFAttributes.LockStore"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(28)]
     public HRESULT LockStore()
@@ -221,6 +251,7 @@ public unsafe partial struct IMFAttributes : IMFAttributes.Interface
         return ((delegate* unmanaged<IMFAttributes*, int>)(lpVtbl[28]))((IMFAttributes*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFAttributes.xml' path='doc/member[@name="IMFAttributes.UnlockStore"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(29)]
     public HRESULT UnlockStore()
@@ -228,6 +259,7 @@ public unsafe partial struct IMFAttributes : IMFAttributes.Interface
         return ((delegate* unmanaged<IMFAttributes*, int>)(lpVtbl[29]))((IMFAttributes*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFAttributes.xml' path='doc/member[@name="IMFAttributes.GetCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(30)]
     public HRESULT GetCount([NativeTypeName("UINT32 *")] uint* pcItems)
@@ -235,6 +267,7 @@ public unsafe partial struct IMFAttributes : IMFAttributes.Interface
         return ((delegate* unmanaged<IMFAttributes*, uint*, int>)(lpVtbl[30]))((IMFAttributes*)Unsafe.AsPointer(ref this), pcItems);
     }
 
+    /// <include file='IMFAttributes.xml' path='doc/member[@name="IMFAttributes.GetItemByIndex"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(31)]
     public HRESULT GetItemByIndex([NativeTypeName("UINT32")] uint unIndex, Guid* pguidKey, PROPVARIANT* pValue)
@@ -242,6 +275,7 @@ public unsafe partial struct IMFAttributes : IMFAttributes.Interface
         return ((delegate* unmanaged<IMFAttributes*, uint, Guid*, PROPVARIANT*, int>)(lpVtbl[31]))((IMFAttributes*)Unsafe.AsPointer(ref this), unIndex, pguidKey, pValue);
     }
 
+    /// <include file='IMFAttributes.xml' path='doc/member[@name="IMFAttributes.CopyAllItems"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(32)]
     public HRESULT CopyAllItems(IMFAttributes* pDest)

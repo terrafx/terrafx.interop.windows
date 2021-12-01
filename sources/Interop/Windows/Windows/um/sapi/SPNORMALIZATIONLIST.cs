@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SPNORMALIZATIONLIST.xml' path='doc/member[@name="SPNORMALIZATIONLIST"]/*' />
 public unsafe partial struct SPNORMALIZATIONLIST
 {
+    /// <include file='SPNORMALIZATIONLIST.xml' path='doc/member[@name="SPNORMALIZATIONLIST.ulSize"]/*' />
     [NativeTypeName("ULONG")]
     public uint ulSize;
 
+    /// <include file='SPNORMALIZATIONLIST.xml' path='doc/member[@name="SPNORMALIZATIONLIST.ppszzNormalizedList"]/*' />
     [NativeTypeName("WCHAR **")]
     public ushort** ppszzNormalizedList;
 }

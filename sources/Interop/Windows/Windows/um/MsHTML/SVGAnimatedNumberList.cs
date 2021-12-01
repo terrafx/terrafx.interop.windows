@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SVGAnimatedNumberList.xml' path='doc/member[@name="SVGAnimatedNumberList"]/*' />
 [Guid("3051058A-98B5-11CF-BB82-00AA00BDCE0B")]
 public partial struct SVGAnimatedNumberList
 {

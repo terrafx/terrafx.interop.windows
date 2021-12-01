@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ISVGPointList.xml' path='doc/member[@name="ISVGPointList"]/*' />
 [Guid("305104F5-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct ISVGPointList : IDispatch")]
 [NativeInheritance("IDispatch")]
@@ -16,6 +17,7 @@ public unsafe partial struct ISVGPointList : ISVGPointList.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ISVGPointList : ISVGPointList.Interface
         return ((delegate* unmanaged<ISVGPointList*, Guid*, void**, int>)(lpVtbl[0]))((ISVGPointList*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ISVGPointList : ISVGPointList.Interface
         return ((delegate* unmanaged<ISVGPointList*, uint>)(lpVtbl[1]))((ISVGPointList*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ISVGPointList : ISVGPointList.Interface
         return ((delegate* unmanaged<ISVGPointList*, uint>)(lpVtbl[2]))((ISVGPointList*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct ISVGPointList : ISVGPointList.Interface
         return ((delegate* unmanaged<ISVGPointList*, uint*, int>)(lpVtbl[3]))((ISVGPointList*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct ISVGPointList : ISVGPointList.Interface
         return ((delegate* unmanaged<ISVGPointList*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((ISVGPointList*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
@@ -60,6 +67,7 @@ public unsafe partial struct ISVGPointList : ISVGPointList.Interface
         return ((delegate* unmanaged<ISVGPointList*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((ISVGPointList*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
+    /// <inheritdoc cref="IDispatch.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
@@ -67,6 +75,7 @@ public unsafe partial struct ISVGPointList : ISVGPointList.Interface
         return ((delegate* unmanaged<ISVGPointList*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((ISVGPointList*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
+    /// <include file='ISVGPointList.xml' path='doc/member[@name="ISVGPointList.put_numberOfItems"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT put_numberOfItems([NativeTypeName("long")] int v)
@@ -74,6 +83,7 @@ public unsafe partial struct ISVGPointList : ISVGPointList.Interface
         return ((delegate* unmanaged<ISVGPointList*, int, int>)(lpVtbl[7]))((ISVGPointList*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='ISVGPointList.xml' path='doc/member[@name="ISVGPointList.get_numberOfItems"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT get_numberOfItems([NativeTypeName("long *")] int* p)
@@ -81,6 +91,7 @@ public unsafe partial struct ISVGPointList : ISVGPointList.Interface
         return ((delegate* unmanaged<ISVGPointList*, int*, int>)(lpVtbl[8]))((ISVGPointList*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='ISVGPointList.xml' path='doc/member[@name="ISVGPointList.clear"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT clear()
@@ -88,6 +99,7 @@ public unsafe partial struct ISVGPointList : ISVGPointList.Interface
         return ((delegate* unmanaged<ISVGPointList*, int>)(lpVtbl[9]))((ISVGPointList*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ISVGPointList.xml' path='doc/member[@name="ISVGPointList.initialize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT initialize(ISVGPoint* pNewItem, ISVGPoint** ppResult)
@@ -95,6 +107,7 @@ public unsafe partial struct ISVGPointList : ISVGPointList.Interface
         return ((delegate* unmanaged<ISVGPointList*, ISVGPoint*, ISVGPoint**, int>)(lpVtbl[10]))((ISVGPointList*)Unsafe.AsPointer(ref this), pNewItem, ppResult);
     }
 
+    /// <include file='ISVGPointList.xml' path='doc/member[@name="ISVGPointList.getItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT getItem([NativeTypeName("long")] int index, ISVGPoint** ppResult)
@@ -102,6 +115,7 @@ public unsafe partial struct ISVGPointList : ISVGPointList.Interface
         return ((delegate* unmanaged<ISVGPointList*, int, ISVGPoint**, int>)(lpVtbl[11]))((ISVGPointList*)Unsafe.AsPointer(ref this), index, ppResult);
     }
 
+    /// <include file='ISVGPointList.xml' path='doc/member[@name="ISVGPointList.insertItemBefore"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT insertItemBefore(ISVGPoint* pNewItem, [NativeTypeName("long")] int index, ISVGPoint** ppResult)
@@ -109,6 +123,7 @@ public unsafe partial struct ISVGPointList : ISVGPointList.Interface
         return ((delegate* unmanaged<ISVGPointList*, ISVGPoint*, int, ISVGPoint**, int>)(lpVtbl[12]))((ISVGPointList*)Unsafe.AsPointer(ref this), pNewItem, index, ppResult);
     }
 
+    /// <include file='ISVGPointList.xml' path='doc/member[@name="ISVGPointList.replaceItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT replaceItem(ISVGPoint* pNewItem, [NativeTypeName("long")] int index, ISVGPoint** ppResult)
@@ -116,6 +131,7 @@ public unsafe partial struct ISVGPointList : ISVGPointList.Interface
         return ((delegate* unmanaged<ISVGPointList*, ISVGPoint*, int, ISVGPoint**, int>)(lpVtbl[13]))((ISVGPointList*)Unsafe.AsPointer(ref this), pNewItem, index, ppResult);
     }
 
+    /// <include file='ISVGPointList.xml' path='doc/member[@name="ISVGPointList.removeItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT removeItem([NativeTypeName("long")] int index, ISVGPoint** ppResult)
@@ -123,6 +139,7 @@ public unsafe partial struct ISVGPointList : ISVGPointList.Interface
         return ((delegate* unmanaged<ISVGPointList*, int, ISVGPoint**, int>)(lpVtbl[14]))((ISVGPointList*)Unsafe.AsPointer(ref this), index, ppResult);
     }
 
+    /// <include file='ISVGPointList.xml' path='doc/member[@name="ISVGPointList.appendItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT appendItem(ISVGPoint* pNewItem, ISVGPoint** ppResult)

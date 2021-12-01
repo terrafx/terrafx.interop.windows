@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFByteStream.xml' path='doc/member[@name="IMFByteStream"]/*' />
 [Guid("AD4C1B00-4BF7-422F-9175-756693D9130D")]
 [NativeTypeName("struct IMFByteStream : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMFByteStream : IMFByteStream.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMFByteStream : IMFByteStream.Interface
         return ((delegate* unmanaged<IMFByteStream*, Guid*, void**, int>)(lpVtbl[0]))((IMFByteStream*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMFByteStream : IMFByteStream.Interface
         return ((delegate* unmanaged<IMFByteStream*, uint>)(lpVtbl[1]))((IMFByteStream*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMFByteStream : IMFByteStream.Interface
         return ((delegate* unmanaged<IMFByteStream*, uint>)(lpVtbl[2]))((IMFByteStream*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFByteStream.xml' path='doc/member[@name="IMFByteStream.GetCapabilities"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetCapabilities([NativeTypeName("DWORD *")] uint* pdwCapabilities)
@@ -46,6 +51,7 @@ public unsafe partial struct IMFByteStream : IMFByteStream.Interface
         return ((delegate* unmanaged<IMFByteStream*, uint*, int>)(lpVtbl[3]))((IMFByteStream*)Unsafe.AsPointer(ref this), pdwCapabilities);
     }
 
+    /// <include file='IMFByteStream.xml' path='doc/member[@name="IMFByteStream.GetLength"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetLength([NativeTypeName("QWORD *")] ulong* pqwLength)
@@ -53,6 +59,7 @@ public unsafe partial struct IMFByteStream : IMFByteStream.Interface
         return ((delegate* unmanaged<IMFByteStream*, ulong*, int>)(lpVtbl[4]))((IMFByteStream*)Unsafe.AsPointer(ref this), pqwLength);
     }
 
+    /// <include file='IMFByteStream.xml' path='doc/member[@name="IMFByteStream.SetLength"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetLength([NativeTypeName("QWORD")] ulong qwLength)
@@ -60,6 +67,7 @@ public unsafe partial struct IMFByteStream : IMFByteStream.Interface
         return ((delegate* unmanaged<IMFByteStream*, ulong, int>)(lpVtbl[5]))((IMFByteStream*)Unsafe.AsPointer(ref this), qwLength);
     }
 
+    /// <include file='IMFByteStream.xml' path='doc/member[@name="IMFByteStream.GetCurrentPosition"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetCurrentPosition([NativeTypeName("QWORD *")] ulong* pqwPosition)
@@ -67,6 +75,7 @@ public unsafe partial struct IMFByteStream : IMFByteStream.Interface
         return ((delegate* unmanaged<IMFByteStream*, ulong*, int>)(lpVtbl[6]))((IMFByteStream*)Unsafe.AsPointer(ref this), pqwPosition);
     }
 
+    /// <include file='IMFByteStream.xml' path='doc/member[@name="IMFByteStream.SetCurrentPosition"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT SetCurrentPosition([NativeTypeName("QWORD")] ulong qwPosition)
@@ -74,6 +83,7 @@ public unsafe partial struct IMFByteStream : IMFByteStream.Interface
         return ((delegate* unmanaged<IMFByteStream*, ulong, int>)(lpVtbl[7]))((IMFByteStream*)Unsafe.AsPointer(ref this), qwPosition);
     }
 
+    /// <include file='IMFByteStream.xml' path='doc/member[@name="IMFByteStream.IsEndOfStream"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT IsEndOfStream(BOOL* pfEndOfStream)
@@ -81,6 +91,7 @@ public unsafe partial struct IMFByteStream : IMFByteStream.Interface
         return ((delegate* unmanaged<IMFByteStream*, BOOL*, int>)(lpVtbl[8]))((IMFByteStream*)Unsafe.AsPointer(ref this), pfEndOfStream);
     }
 
+    /// <include file='IMFByteStream.xml' path='doc/member[@name="IMFByteStream.Read"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT Read(byte* pb, [NativeTypeName("ULONG")] uint cb, [NativeTypeName("ULONG *")] uint* pcbRead)
@@ -88,6 +99,7 @@ public unsafe partial struct IMFByteStream : IMFByteStream.Interface
         return ((delegate* unmanaged<IMFByteStream*, byte*, uint, uint*, int>)(lpVtbl[9]))((IMFByteStream*)Unsafe.AsPointer(ref this), pb, cb, pcbRead);
     }
 
+    /// <include file='IMFByteStream.xml' path='doc/member[@name="IMFByteStream.BeginRead"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT BeginRead(byte* pb, [NativeTypeName("ULONG")] uint cb, IMFAsyncCallback* pCallback, IUnknown* punkState)
@@ -95,6 +107,7 @@ public unsafe partial struct IMFByteStream : IMFByteStream.Interface
         return ((delegate* unmanaged<IMFByteStream*, byte*, uint, IMFAsyncCallback*, IUnknown*, int>)(lpVtbl[10]))((IMFByteStream*)Unsafe.AsPointer(ref this), pb, cb, pCallback, punkState);
     }
 
+    /// <include file='IMFByteStream.xml' path='doc/member[@name="IMFByteStream.EndRead"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT EndRead(IMFAsyncResult* pResult, [NativeTypeName("ULONG *")] uint* pcbRead)
@@ -102,6 +115,7 @@ public unsafe partial struct IMFByteStream : IMFByteStream.Interface
         return ((delegate* unmanaged<IMFByteStream*, IMFAsyncResult*, uint*, int>)(lpVtbl[11]))((IMFByteStream*)Unsafe.AsPointer(ref this), pResult, pcbRead);
     }
 
+    /// <include file='IMFByteStream.xml' path='doc/member[@name="IMFByteStream.Write"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT Write([NativeTypeName("const BYTE *")] byte* pb, [NativeTypeName("ULONG")] uint cb, [NativeTypeName("ULONG *")] uint* pcbWritten)
@@ -109,6 +123,7 @@ public unsafe partial struct IMFByteStream : IMFByteStream.Interface
         return ((delegate* unmanaged<IMFByteStream*, byte*, uint, uint*, int>)(lpVtbl[12]))((IMFByteStream*)Unsafe.AsPointer(ref this), pb, cb, pcbWritten);
     }
 
+    /// <include file='IMFByteStream.xml' path='doc/member[@name="IMFByteStream.BeginWrite"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT BeginWrite([NativeTypeName("const BYTE *")] byte* pb, [NativeTypeName("ULONG")] uint cb, IMFAsyncCallback* pCallback, IUnknown* punkState)
@@ -116,6 +131,7 @@ public unsafe partial struct IMFByteStream : IMFByteStream.Interface
         return ((delegate* unmanaged<IMFByteStream*, byte*, uint, IMFAsyncCallback*, IUnknown*, int>)(lpVtbl[13]))((IMFByteStream*)Unsafe.AsPointer(ref this), pb, cb, pCallback, punkState);
     }
 
+    /// <include file='IMFByteStream.xml' path='doc/member[@name="IMFByteStream.EndWrite"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT EndWrite(IMFAsyncResult* pResult, [NativeTypeName("ULONG *")] uint* pcbWritten)
@@ -123,6 +139,7 @@ public unsafe partial struct IMFByteStream : IMFByteStream.Interface
         return ((delegate* unmanaged<IMFByteStream*, IMFAsyncResult*, uint*, int>)(lpVtbl[14]))((IMFByteStream*)Unsafe.AsPointer(ref this), pResult, pcbWritten);
     }
 
+    /// <include file='IMFByteStream.xml' path='doc/member[@name="IMFByteStream.Seek"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT Seek(MFBYTESTREAM_SEEK_ORIGIN SeekOrigin, [NativeTypeName("LONGLONG")] long llSeekOffset, [NativeTypeName("DWORD")] uint dwSeekFlags, [NativeTypeName("QWORD *")] ulong* pqwCurrentPosition)
@@ -130,6 +147,7 @@ public unsafe partial struct IMFByteStream : IMFByteStream.Interface
         return ((delegate* unmanaged<IMFByteStream*, MFBYTESTREAM_SEEK_ORIGIN, long, uint, ulong*, int>)(lpVtbl[15]))((IMFByteStream*)Unsafe.AsPointer(ref this), SeekOrigin, llSeekOffset, dwSeekFlags, pqwCurrentPosition);
     }
 
+    /// <include file='IMFByteStream.xml' path='doc/member[@name="IMFByteStream.Flush"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT Flush()
@@ -137,6 +155,7 @@ public unsafe partial struct IMFByteStream : IMFByteStream.Interface
         return ((delegate* unmanaged<IMFByteStream*, int>)(lpVtbl[16]))((IMFByteStream*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFByteStream.xml' path='doc/member[@name="IMFByteStream.Close"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT Close()

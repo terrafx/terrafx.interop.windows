@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="FILE_ATTRIBUTE_TAG_INFO">
+    <summary>
+      <para>Receives the requested  file attribute information. Used for any handles. Use only when
+calling <see cref="GetFileInformationByHandleEx" />.</para>
+    </summary>
+    <seealso cref="FILE_INFO_BY_HANDLE_CLASS" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/FileIO/file-attribute-constants">File Attribute Constants</seealso>
+    <seealso cref="GetFileInformationByHandleEx" />
+  </member>
+  <member name="FILE_ATTRIBUTE_TAG_INFO.FileAttributes">
+    <summary>
+      <para>The file attribute information.</para>
+    </summary>
+  </member>
+  <member name="FILE_ATTRIBUTE_TAG_INFO.ReparseTag">
+    <summary>
+      <para>The reparse tag.</para>
+    </summary>
+  </member>
+</doc>

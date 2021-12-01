@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IVersionInfo.GetBuildVersion">
+    <summary>
+      <para>Clients call <b>IVersionInfo.GetBuildVersion</b> to retrieve build information for a specified component.
+<b>Note</b>  Active Accessibility Text Services is deprecated. Please see
+<a href="https://docs.microsoft.com//windows/win32/tsf/text-services-framework">Microsoft Windows Text Services Framework</a> for more information on advanced text input and natural language technologies.</para>
+    </summary>
+    <param name="ulSub">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">ULONG</a></b></para>
+      <para>The ordinal position of the component in the tree.</para>
+    </param>
+    <param name="pdwMajor">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">DWORD</a>*</b></para>
+      <para>The major build version of the component specified in <i>ulSub</i>.</para>
+    </param>
+    <param name="pdwMinor">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">DWORD</a>*</b></para>
+      <para>The minor build version of the component specified in <i>ulSub</i>.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
+      <para>If successful, returns S_OK. If not successful, returns a standard <a href="https://docs.microsoft.com//windows/desktop/WinAuto/return-values">COM error code</a>.</para>
+    </returns>
+  </member>
+  <member name="IVersionInfo.GetComponentDescription">
+    <summary>
+      <para>Clients call this method to retrieve a description of the component.</para>
+      <para>
+        <b>Note</b>  Active Accessibility Text Services is deprecated. Please see
+<a href="https://docs.microsoft.com//windows/win32/tsf/text-services-framework">Microsoft Windows Text Services Framework</a> for more information on advanced text input and natural language technologies.</para>
+    </summary>
+    <param name="ulSub">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">ULONG</a></b></para>
+      <para>The ordinal position of the component in the tree.</para>
+    </param>
+    <param name="pImplStr">
+      <para>Type: <b>BSTR*</b></para>
+      <para>String of the form of "Company, suite, component, version." This is for human consumption and is not expected to be
+parsed.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
+      <para>If successful, returns S_OK. If not successful, returns a standard <a href="https://docs.microsoft.com//windows/desktop/WinAuto/return-values">COM error code</a>.</para>
+    </returns>
+  </member>
+  <member name="IVersionInfo.GetImplementationID">
+    <summary>
+      <para>Clients call <b>IVersionInfo.GetImplementationID</b> to retrieve a unique identifier for the component.
+<b>Note</b>  Active Accessibility Text Services is deprecated. Please see
+<a href="https://docs.microsoft.com//windows/win32/tsf/text-services-framework">Microsoft Windows Text Services Framework</a> for more information on advanced text input and natural language technologies.</para>
+    </summary>
+    <param name="ulSub">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">ULONG</a></b></para>
+      <para>The ordinal position of the component in the tree.</para>
+    </param>
+    <param name="implid">
+      <para>Type: <b>GUID*</b></para>
+      <para>An implementation identifier for the component. The implementation identifier is unique for this component and is used only for comparing components.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
+      <para>If successful, returns S_OK. If not successful, returns a standard <a href="https://docs.microsoft.com//windows/desktop/WinAuto/return-values">COM error code</a>.</para>
+    </returns>
+  </member>
+  <member name="IVersionInfo.GetInstanceDescription">
+    <summary>
+      <para>Clients call this method to retrieve a description of the instance.
+<b>Note</b>  Active Accessibility Text Services is deprecated. Please see
+<a href="https://docs.microsoft.com//windows/win32/tsf/text-services-framework">Microsoft Windows Text Services Framework</a> for more information on advanced text input and natural language technologies.</para>
+    </summary>
+    <param name="ulSub">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">ULONG</a></b></para>
+      <para>The ordinal position of the component in the tree.</para>
+    </param>
+    <param name="pImplStr">
+      <para>Type: <b>BSTR*</b></para>
+      <para>Additional useful strings for the component, such as the internal object state.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
+      <para>If successful, returns S_OK. If not successful, returns a standard <a href="https://docs.microsoft.com//windows/desktop/WinAuto/return-values">COM error code</a>.</para>
+    </returns>
+  </member>
+  <member name="IVersionInfo.GetSubcomponentCount">
+    <summary>
+      <para>Clients call <b>IVersionInfo.GetSubcomponentCount</b></para>
+      <para>to determine the number of subcomponents for which version information is returned.
+<b>Note</b>  Active Accessibility Text Services is deprecated. Please see
+<a href="https://docs.microsoft.com//windows/win32/tsf/text-services-framework">Microsoft Windows Text Services Framework</a> for more information on advanced text input and natural language technologies.</para>
+    </summary>
+    <param name="ulSub">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">ULONG</a></b></para>
+      <para>The ordinal position of the component in the tree.</para>
+    </param>
+    <param name="ulCount">
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">ULONG</a>*</b></para>
+      <para>The number of subcomponents that this component will expose version information about.</para>
+    </param>
+    <returns>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
+      <para>If successful, returns S_OK. If not successful, returns a standard <a href="https://docs.microsoft.com//windows/desktop/WinAuto/return-values">COM error code</a>.</para>
+    </returns>
+  </member>
+</doc>

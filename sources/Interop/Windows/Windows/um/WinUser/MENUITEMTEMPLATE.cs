@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MENUITEMTEMPLATE.xml' path='doc/member[@name="MENUITEMTEMPLATE"]/*' />
 public unsafe partial struct MENUITEMTEMPLATE
 {
+    /// <include file='MENUITEMTEMPLATE.xml' path='doc/member[@name="MENUITEMTEMPLATE.mtOption"]/*' />
     [NativeTypeName("WORD")]
     public ushort mtOption;
 
+    /// <include file='MENUITEMTEMPLATE.xml' path='doc/member[@name="MENUITEMTEMPLATE.mtID"]/*' />
     [NativeTypeName("WORD")]
     public ushort mtID;
 
+    /// <include file='MENUITEMTEMPLATE.xml' path='doc/member[@name="MENUITEMTEMPLATE.mtString"]/*' />
     [NativeTypeName("WCHAR [1]")]
     public fixed ushort mtString[1];
 }

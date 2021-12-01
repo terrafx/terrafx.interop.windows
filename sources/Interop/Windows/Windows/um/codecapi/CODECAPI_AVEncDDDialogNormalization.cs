@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVEncDDDialogNormalization.xml' path='doc/member[@name="CODECAPI_AVEncDDDialogNormalization"]/*' />
 [Guid("D7055ACF-F125-437D-A704-79C79F0404A8")]
 public partial struct CODECAPI_AVEncDDDialogNormalization
 {

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="TOKEN_SOURCE">
+    <summary>
+      <para>The <b>TOKEN_SOURCE</b> structure identifies the source of an <a href="https://docs.microsoft.com//windows/desktop/SecGloss/a-gly">access token</a>.</para>
+    </summary>
+    <seealso cref="GetTokenInformation" />
+    <seealso cref="LUID" />
+    <seealso cref="TOKEN_CONTROL" />
+    <seealso cref="TOKEN_DEFAULT_DACL" />
+    <seealso cref="TOKEN_GROUPS" />
+    <seealso cref="TOKEN_INFORMATION_CLASS" />
+    <seealso cref="TOKEN_OWNER" />
+    <seealso cref="TOKEN_PRIMARY_GROUP" />
+    <seealso cref="TOKEN_PRIVILEGES" />
+    <seealso cref="TOKEN_STATISTICS" />
+    <seealso cref="TOKEN_TYPE" />
+    <seealso cref="TOKEN_USER" />
+  </member>
+  <member name="TOKEN_SOURCE.SourceName">
+    <summary>
+      <para>Specifies an 8-byte character string used to identify the source of an access token. This is used to distinguish between such sources as Session Manager, LAN Manager, and RPC Server. A string, rather than a constant, is used to identify the source so users and developers can make extensions to the system, such as by adding other networks, that act as the source of access tokens.</para>
+    </summary>
+  </member>
+  <member name="TOKEN_SOURCE.SourceIdentifier">
+    <summary>
+      <para>Specifies a locally unique identifier (<a href="https://docs.microsoft.com//windows/desktop/SecGloss/l-gly">LUID</a>) provided by the source component named by the <b>SourceName</b> member. This value aids the source component in relating context blocks, such as session-control structures, to the token. This value is typically, but not necessarily, an LUID.</para>
+    </summary>
+  </member>
+</doc>

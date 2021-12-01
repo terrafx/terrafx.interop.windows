@@ -7,25 +7,33 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STORAGE_TEMPERATURE_THRESHOLD.xml' path='doc/member[@name="STORAGE_TEMPERATURE_THRESHOLD"]/*' />
 [SupportedOSPlatform("windows10.0")]
 public partial struct STORAGE_TEMPERATURE_THRESHOLD
 {
+    /// <include file='STORAGE_TEMPERATURE_THRESHOLD.xml' path='doc/member[@name="STORAGE_TEMPERATURE_THRESHOLD.Version"]/*' />
     [NativeTypeName("DWORD")]
     public uint Version;
 
+    /// <include file='STORAGE_TEMPERATURE_THRESHOLD.xml' path='doc/member[@name="STORAGE_TEMPERATURE_THRESHOLD.Size"]/*' />
     [NativeTypeName("DWORD")]
     public uint Size;
 
+    /// <include file='STORAGE_TEMPERATURE_THRESHOLD.xml' path='doc/member[@name="STORAGE_TEMPERATURE_THRESHOLD.Flags"]/*' />
     [NativeTypeName("WORD")]
     public ushort Flags;
 
+    /// <include file='STORAGE_TEMPERATURE_THRESHOLD.xml' path='doc/member[@name="STORAGE_TEMPERATURE_THRESHOLD.Index"]/*' />
     [NativeTypeName("WORD")]
     public ushort Index;
 
+    /// <include file='STORAGE_TEMPERATURE_THRESHOLD.xml' path='doc/member[@name="STORAGE_TEMPERATURE_THRESHOLD.Threshold"]/*' />
     public short Threshold;
 
+    /// <include file='STORAGE_TEMPERATURE_THRESHOLD.xml' path='doc/member[@name="STORAGE_TEMPERATURE_THRESHOLD.OverThreshold"]/*' />
     [NativeTypeName("BOOLEAN")]
     public byte OverThreshold;
 
+    /// <include file='STORAGE_TEMPERATURE_THRESHOLD.xml' path='doc/member[@name="STORAGE_TEMPERATURE_THRESHOLD.Reserved"]/*' />
     public byte Reserved;
 }

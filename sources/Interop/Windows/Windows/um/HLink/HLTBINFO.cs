@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HLTBINFO.xml' path='doc/member[@name="HLTBINFO"]/*' />
 public partial struct HLTBINFO
 {
+    /// <include file='HLTBINFO.xml' path='doc/member[@name="HLTBINFO.uDockType"]/*' />
     [NativeTypeName("ULONG")]
     public uint uDockType;
 
+    /// <include file='HLTBINFO.xml' path='doc/member[@name="HLTBINFO.rcTbPos"]/*' />
     public RECT rcTbPos;
 }

@@ -1,0 +1,262 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IShellView.AddPropertySheetPages">
+    <summary>
+      <para>Allows the view to add pages to the <b>Options</b> property sheet from the <b>View</b> menu.</para>
+    </summary>
+    <param name="dwReserved">
+      <para>Type: <b>DWORD</b></para>
+      <para>Reserved.</para>
+    </param>
+    <param name="pfn">
+      <para>Type: <b>LPFNADDPROPSHEETPAGE</b></para>
+      <para>The address of the callback function used to add the pages.</para>
+    </param>
+    <param name="lparam">
+      <para>Type: <b>LPARAM</b></para>
+      <para>A value that must be passed as the callback function's <i>lparam</i> parameter.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_OK if successful, or a COM-defined error value otherwise.</para>
+    </returns>
+    <remarks>
+      <h3>Notes to Implementers</h3>
+      <para>Windows Explorer calls this method when it is opening the <b>Options</b> property sheet from the <b>View</b> menu. Views can add pages by creating them and calling the callback function with the page handles.</para>
+    </remarks>
+    <seealso cref="IShellView" />
+  </member>
+  <member name="IShellView.CreateViewWindow">
+    <summary>
+      <para>Creates a view window. This can be either the right pane of Windows Explorer or the client window of a folder window.</para>
+    </summary>
+    <param name="psvPrevious">
+      <para>Type: <b><see cref="IShellView" />*</b></para>
+      <para>The address of the <see cref="IShellView" /> interface of the view window being exited. Views can use this parameter to communicate with a previous view of the same implementation. This interface can be used to optimize browsing between like views. This pointer may be <b>NULL</b>.</para>
+    </param>
+    <param name="pfs">
+      <para>Type: <b>LPCFOLDERSETTINGS</b></para>
+      <para>The address of a <see cref="FOLDERSETTINGS" /> structure. The view should use this when creating its view.</para>
+    </param>
+    <param name="psb">
+      <para>Type: <b><see cref="IShellBrowser" />*</b></para>
+      <para>The address of the current instance of the <see cref="IShellBrowser" /> interface. The view should call this interface's <see cref="AddRef" /> method and keep the interface pointer to allow communication with the Windows Explorer window.</para>
+    </param>
+    <param name="prcView">
+      <para>Type: <b><see cref="RECT" />*</b></para>
+      <para>The dimensions of the new view, in client coordinates.</para>
+    </param>
+    <param name="phWnd">
+      <para>Type: <b>HWND*</b></para>
+      <para>The address of the window handle being created.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns a success code if successful, or a COM error code otherwise. Use the <see cref="SUCCEEDED" /> and <see cref="FAILED" /> macros to determine whether the operation succeeded or failed.</para>
+    </returns>
+    <remarks>
+      <h3>Notes to Calling applications</h3>
+      <para>Call this method when the view needs to be created.</para>
+      <h3>Notes to Implementers</h3>
+      <para>Create your view window and restore any persistent state by calling the <see cref="GetViewStateStream" /> method. Store the <see cref="IShellBrowser" /> pointer for further use.</para>
+    </remarks>
+    <seealso cref="IShellView" />
+  </member>
+  <member name="IShellView.DestroyViewWindow">
+    <summary>
+      <para>Destroys the view window.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_OK if successful, or a COM-defined error value otherwise.</para>
+    </returns>
+    <remarks>
+      <para>Windows Explorer calls this method when a folder window or Windows Explorer is being closed.</para>
+      <h3>Notes to Implementers</h3>
+      <para>Clean up all states that represent the view, including the window and any other associated resources.</para>
+    </remarks>
+    <seealso cref="IShellView" />
+  </member>
+  <member name="IShellView.EnableModeless">
+    <summary>
+      <para>Enables or disables modeless dialog boxes. This method is not currently implemented.</para>
+    </summary>
+    <param name="fEnable">
+      <para>Type: <b>BOOL</b></para>
+      <para>Nonzero to enable modeless dialog box windows or zero to disable them.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_OK if successful, or a COM-defined error value otherwise.</para>
+    </returns>
+    <seealso cref="IShellView" />
+  </member>
+  <member name="IShellView.GetCurrentInfo">
+    <summary>
+      <para>Gets the current folder settings.</para>
+    </summary>
+    <param name="pfs">
+      <para>Type: <b>LPFOLDERSETTINGS</b></para>
+      <para>The address of a <see cref="FOLDERSETTINGS" /> structure to receive the settings.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_OK if successful, or a COM-defined error value otherwise.</para>
+    </returns>
+    <remarks>
+      <para>Windows Explorer uses this method to query the view for standard settings.</para>
+      <h3>Note to Calling Applications</h3>
+      <para>This method is used to retrieve the current view settings of the view.</para>
+      <h3>Notes to Implementers</h3>
+      <para>Return as many of the settings as apply. This is intended to maintain the same basic settings when the user browses from view to view. For example, if the user sets the Details view, that view should be maintained as the user goes from one folder to the other in Windows Explorer mode.</para>
+    </remarks>
+    <seealso cref="IShellView" />
+  </member>
+  <member name="IShellView.GetItemObject">
+    <summary>
+      <para>Gets an interface that refers to data presented in the view.</para>
+    </summary>
+    <param name="uItem">
+      <para>Type: <b>UINT</b></para>
+      <para>The constants that refer to an aspect of the view. This parameter can be any one of the <see cref="_SVGIO" /> constants.</para>
+    </param>
+    <param name="riid">
+      <para>Type: <b>REFIID</b></para>
+      <para>The identifier of the COM interface being requested.</para>
+    </param>
+    <param name="ppv">
+      <para>Type: <b>LPVOID*</b></para>
+      <para>The address that receives the interface pointer. If an error occurs, the pointer returned must be <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Used by the common dialog boxes to retrieve the selected items from the view.</para>
+    </remarks>
+    <seealso cref="IShellView" />
+  </member>
+  <member name="IShellView.Refresh">
+    <summary>
+      <para>Refreshes the view's contents in response to user input.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_OK if successful, or a COM-defined error value otherwise.</para>
+    </returns>
+    <remarks>
+      <para>Tells the view to refresh its contents, revalidating any view information it has.</para>
+      <h3>Note to Calling Applications</h3>
+      <para>Windows Explorer calls this method when the F5 key is pressed on an already open view.</para>
+      <h3>Notes to Implementers</h3>
+      <para>Refill the view by going to any underlying storage for the contents.</para>
+    </remarks>
+    <seealso cref="IShellView" />
+  </member>
+  <member name="IShellView.SaveViewState">
+    <summary>
+      <para>Saves the Shell's view settings so the current state can be restored during a subsequent browsing session.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_OK if successful, or a COM-defined error value otherwise.</para>
+    </returns>
+    <remarks>
+      <para>The Shell view obtains a view stream by calling the <see cref="GetViewStateStream" /> method and stores the current view state in that stream.</para>
+      <h3>Note to Calling Applications</h3>
+      <para>Windows Explorer calls this method when it wants to save the view state for a view.</para>
+      <h3>Notes to Implementers</h3>
+      <para>Be sure to make the format of the data stored in the stream robust enough that different versions of the implementation can read it without error.</para>
+    </remarks>
+    <seealso cref="IShellView" />
+  </member>
+  <member name="IShellView.SelectItem">
+    <summary>
+      <para>Changes the selection state of one or more items within the Shell view window.</para>
+    </summary>
+    <param name="pidlItem">
+      <para>Type: <b>PCUITEMID_CHILD</b></para>
+      <para>The address of the <see cref="ITEMIDLIST" /> structure.</para>
+    </param>
+    <param name="uFlags">
+      <para>Type: <b>UINT</b></para>
+      <para>One of the <see cref="_SVSIF" /> constants that specify the type of selection to apply.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <h3>Notes to Implementers</h3>
+      <para>This method is used to implement the Target command from the <b>File</b> menu of the Shell shortcut property sheet.</para>
+    </remarks>
+    <seealso cref="IShellView" />
+  </member>
+  <member name="IShellView.TranslateAccelerator">
+    <summary>
+      <para>Translates keyboard shortcut (accelerator) key strokes when a namespace extension's view has the focus.</para>
+    </summary>
+    <param name="pmsg">
+      <para>Type: <b>LPMSG</b></para>
+      <para>The address of the message to be translated.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_OK if successful, or a COM-defined error value otherwise.</para>
+      <para>If the view returns S_OK, it indicates that the message was translated and should not be translated or dispatched by Windows Explorer.</para>
+    </returns>
+    <remarks>
+      <para>This method is called by Windows Explorer to let the view translate its keyboard shortcuts.</para>
+      <h3>Notes to Calling Applications</h3>
+      <para>Windows Explorer calls this method before any other translation if the view has the focus. If the view does not have the focus, it is called after Windows Explorer translates its own keyboard shortcuts.</para>
+      <h3>Notes to Implementers</h3>
+      <para>By default, the view should return S_FALSE so that Windows Explorer can either do its own keyboard shortcut translation or normal menu dispatching. The view should return S_OK only if it has processed the message as the keyboard shortcut and does not want Windows Explorer to process it further.</para>
+    </remarks>
+    <seealso cref="IShellView" />
+  </member>
+  <member name="IShellView.UIActivate">
+    <summary>
+      <para>Called when the activation state of the view window is changed by an event that is not caused by the Shell view itself. For example, if the TAB key is pressed when the tree has the focus, the view should be given the focus.</para>
+    </summary>
+    <param name="uState">
+      <para>Type: <b>UINT</b></para>
+      <para>Flag specifying the activation state of the window. This parameter can be one of the following values.</para>
+      <h4>SVUIA_ACTIVATE_FOCUS</h4>
+      <para>Windows Explorer has just created the view window with the input focus. This means the Shell view should be able to set menu items appropriate for the focused state.</para>
+      <h4>SVUIA_ACTIVATE_NOFOCUS</h4>
+      <para>The Shell view is losing the input focus, or it has just been created without the input focus. The Shell view should be able to set menu items appropriate for the nonfocused state. This means no selection-specific items should be added.</para>
+      <h4>SVUIA_DEACTIVATE</h4>
+      <para>Windows Explorer is about to destroy the Shell view window. The Shell view should remove all extended user interfaces. These are typically merged menus and merged modeless pop-up windows.</para>
+      <h4>SVUIA_INPLACEACTIVATE</h4>
+      <para>The Shell view is active without focus. This flag is only used when <b>UIActivate</b> is exposed through the <see cref="IShellView2" /> interface.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns <b>S_OK</b> if successful, or a COM-defined error value otherwise.</para>
+    </returns>
+    <remarks>
+      <para>Before remerging menu items, the Shell view typically hooks the <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-setfocus">WM_SETFOCUS</a> message and calls the <see cref="OnViewWindowActive" /> method. The Shell view should not hook the <a href="https://docs.microsoft.com//windows/desktop/Controls/nm-killfocus">NM_KILLFOCUS</a> message to remerge menu items.</para>
+      <h3>Notes to Calling Applications</h3>
+      <para>Call this method to inform the view of an activation state change.</para>
+      <h3>Notes to Implementers</h3>
+      <para>Use this method to track the activation state and change any behavior, as appropriate.</para>
+    </remarks>
+    <seealso cref="IShellView" />
+  </member>
+  <member name="IShellView">
+    <summary>
+      <para>Exposes methods that present a view in the Windows Explorer or folder windows.</para>
+    </summary>
+    <remarks>
+      <para>The object that exposes <b>IShellView</b> is typically created by a call to the <see cref="IShellFolder.CreateViewObject" /> method. This provides the channel of communication between a view object and Windows Explorer's outermost frame window. The communication involves the translation of messages, the state of the frame window (activated or deactivated), the state of the document window (activated or deactivated), and the merging of menus and toolbar items.</para>
+      <para>This interface is implemented by namespace extensions that display themselves in Windows Explorer's namespace. This object is created by the <see cref="IShellFolder" /> object that hosts the view.</para>
+      <para>These methods are used by the Shell view's Windows Explorer window to manipulate objects while they are active.</para>
+      <para>
+        <b>IShellView</b> is derived from <see cref="IOleWindow" />. The listed methods are specific to <b>IShellView</b>.</para>
+      <para>A special instance of <b>IShellView</b> known as the default Shell folder view object can be created by calling <see cref="SHCreateShellFolderView" /> or <see cref="SHCreateShellFolderViewEx" />. This instance can be differentiated from standard implementations by calling <see cref="QueryInterface" /> on an <b>IShellView</b> object using the IID_CDefView IID. This call succeeds only when made on the default Shell folder view object.</para>
+    </remarks>
+  </member>
+</doc>

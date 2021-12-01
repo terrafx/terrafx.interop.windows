@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CRYPT_URL_INFO">
+    <summary>
+      <para>The <b>CRYPT_URL_INFO</b> structure contains information about groupings of URLs.</para>
+    </summary>
+  </member>
+  <member name="CRYPT_URL_INFO.cbSize">
+    <summary>
+      <para>The size, in bytes, of the structure.</para>
+    </summary>
+  </member>
+  <member name="CRYPT_URL_INFO.dwSyncDeltaTime">
+    <summary>
+      <para>Number of seconds between synchronizations.</para>
+    </summary>
+  </member>
+  <member name="CRYPT_URL_INFO.cGroup">
+    <summary>
+      <para>Number of elements in the rgcGroupEntry array of URL groups.</para>
+    </summary>
+  </member>
+  <member name="CRYPT_URL_INFO.rgcGroupEntry">
+    <summary>
+      <para>Array of URL groups returned.</para>
+    </summary>
+  </member>
+</doc>

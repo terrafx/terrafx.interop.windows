@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IPropertyStoreCache.GetState">
+    <summary>
+      <para>Gets the state of a specified property key.</para>
+    </summary>
+    <param name="key">
+      <para>Type: <b>REFPROPERTYKEY</b></para>
+      <para>A reference to a <see cref="PROPERTYKEY" /> structure.</para>
+    </param>
+    <param name="pstate">
+      <para>Type: <b><see cref="PSC_STATE" />*</b></para>
+      <para>A pointer to a <see cref="PSC_STATE" /> enumeration value.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IPropertyStoreCache.GetValueAndState">
+    <summary>
+      <para>Gets value and state data for a property key.</para>
+    </summary>
+    <param name="key">
+      <para>Type: <b>REFPROPERTYKEY</b></para>
+      <para>A reference to a <see cref="PROPERTYKEY" /> structure identifying the property.</para>
+    </param>
+    <param name="ppropvar">
+      <para>Type: <b><see cref="PROPVARIANT" />*</b></para>
+      <para>A pointer to a <see cref="PROPVARIANT" /> structure for the property data.</para>
+    </param>
+    <param name="pstate">
+      <para>Type: <b><see cref="PSC_STATE" />*</b></para>
+      <para>A pointer to a <see cref="PSC_STATE" /> enumeration value declaring the current state of the property.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IPropertyStoreCache.SetValueAndState">
+    <summary>
+      <para>Sets value and state data for a property key.</para>
+    </summary>
+    <param name="key">
+      <para>Type: <b>REFPROPERTYKEY</b></para>
+      <para>A reference to a <see cref="PROPERTYKEY" /> structure identifying the property.</para>
+    </param>
+    <param name="ppropvar">
+      <para>Type: <b>const <see cref="PROPVARIANT" />*</b></para>
+      <para>A pointer to a <see cref="PROPVARIANT" /> structure containing the property data.</para>
+    </param>
+    <param name="state">
+      <para>Type: <b><see cref="PSC_STATE" /></b></para>
+      <para>A value from the <see cref="PSC_STATE" /> enumeration declaring the state of the property.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IPropertyStoreCache">
+    <summary>
+      <para>Exposes methods that allow a handler to manage various states for each property.</para>
+    </summary>
+    <remarks>
+      <para>This interface also provides the methods of the <see cref="IPropertyStore" /> interface, from which it inherits.</para>
+      <h3>When to Implement</h3>
+      <para>An implementation of this interface is provided by CLSID_InMemoryPropertyStore. Users should never need to implement it themselves.</para>
+      <para>CLSID_InMemoryPropertyStore implements <see cref="IPropertyStoreCache" /> instead of <see cref="IPropertyStore" /> so that it can store additional state information (<see cref="PSC_STATE" />) about each of the properties in the cache. This information can be useful for property handler implementers. It can also be useful in other scenarios where a cache of property values is needed.</para>
+    </remarks>
+  </member>
+</doc>

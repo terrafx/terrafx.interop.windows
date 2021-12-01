@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SpatialAudioHrtfDistanceDecay">
+    <summary>
+      <para>Represents the decay model that is applied over distance from the position of an <see cref="ISpatialAudioObjectForHrtf" /> to the position of the listener.</para>
+    </summary>
+  </member>
+  <member name="SpatialAudioHrtfDistanceDecay.Type">
+    <summary>
+      <para>The type of decay, natural or custom. The default value for this field is  <b>SpatialAudioHrtfDistanceDecay_NaturalDecay</b>.</para>
+    </summary>
+  </member>
+  <member name="SpatialAudioHrtfDistanceDecay.MaxGain">
+    <summary></summary>
+  </member>
+  <member name="SpatialAudioHrtfDistanceDecay.MinGain">
+    <summary></summary>
+  </member>
+  <member name="SpatialAudioHrtfDistanceDecay.UnityGainDistance">
+    <summary></summary>
+  </member>
+  <member name="SpatialAudioHrtfDistanceDecay.CutoffDistance">
+    <summary>
+      <h4>- float</h4>
+      <para>The maximum gain limit applied at any distance. Applies to both natural and custom decay. This value is specified in dB, with a range from -96 to 12 inclusive. The default value is 12 dB.</para>
+      <para>The minimum gain limit applied at any distance. Applies to both natural and custom decay. This value is specified in dB, with a range from -96 to 12 inclusive. The default value is -96 dB.</para>
+      <para>The distance at which the gain is 0dB. Applies to natural decay only. This value is specified in meters, with a range from 0.05 to infinity (<b>FLT_MAX</b>). The default value is 1 meter.</para>
+      <para>The distance at which  the output is silent. Applies to natural decay only. This value is specified in meters, with a range from zero (non-inclusive) to infinity (<b>FLT_MAX</b>). The default value is <b>INFINITY</b>.</para>
+    </summary>
+  </member>
+</doc>

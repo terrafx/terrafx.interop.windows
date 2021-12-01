@@ -9,12 +9,15 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PACKAGE_VERSION.xml' path='doc/member[@name="PACKAGE_VERSION"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public partial struct PACKAGE_VERSION
 {
+    /// <include file='PACKAGE_VERSION.xml' path='doc/member[@name="PACKAGE_VERSION.Anonymous"]/*' />
     [NativeTypeName("PACKAGE_VERSION::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/appmodel.h:57:5)")]
     public _Anonymous_e__Union Anonymous;
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Version"]/*' />
     public ref ulong Version
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -24,6 +27,7 @@ public partial struct PACKAGE_VERSION
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Revision"]/*' />
     public ref ushort Revision
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -33,6 +37,7 @@ public partial struct PACKAGE_VERSION
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Build"]/*' />
     public ref ushort Build
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -42,6 +47,7 @@ public partial struct PACKAGE_VERSION
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Minor"]/*' />
     public ref ushort Minor
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -51,6 +57,7 @@ public partial struct PACKAGE_VERSION
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Major"]/*' />
     public ref ushort Major
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -60,25 +67,33 @@ public partial struct PACKAGE_VERSION
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit, Pack = 4)]
     public partial struct _Anonymous_e__Union
     {
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Version"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("UINT64")]
         public ulong Version;
 
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("PACKAGE_VERSION::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/appmodel.h:59:9)")]
         public _Anonymous_e__Struct Anonymous;
 
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />
         public partial struct _Anonymous_e__Struct
         {
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Revision"]/*' />
             public ushort Revision;
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Build"]/*' />
             public ushort Build;
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Minor"]/*' />
             public ushort Minor;
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Major"]/*' />
             public ushort Major;
         }
     }

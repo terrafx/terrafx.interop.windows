@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAppxManifestDriverConstraint.xml' path='doc/member[@name="IAppxManifestDriverConstraint"]/*' />
 [Guid("C031BEE4-BBCC-48EA-A237-C34045C80A07")]
 [NativeTypeName("struct IAppxManifestDriverConstraint : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IAppxManifestDriverConstraint : IAppxManifestDriver
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IAppxManifestDriverConstraint : IAppxManifestDriver
         return ((delegate* unmanaged<IAppxManifestDriverConstraint*, Guid*, void**, int>)(lpVtbl[0]))((IAppxManifestDriverConstraint*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IAppxManifestDriverConstraint : IAppxManifestDriver
         return ((delegate* unmanaged<IAppxManifestDriverConstraint*, uint>)(lpVtbl[1]))((IAppxManifestDriverConstraint*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IAppxManifestDriverConstraint : IAppxManifestDriver
         return ((delegate* unmanaged<IAppxManifestDriverConstraint*, uint>)(lpVtbl[2]))((IAppxManifestDriverConstraint*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAppxManifestDriverConstraint.xml' path='doc/member[@name="IAppxManifestDriverConstraint.GetName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetName([NativeTypeName("LPWSTR *")] ushort** name)
@@ -46,6 +51,7 @@ public unsafe partial struct IAppxManifestDriverConstraint : IAppxManifestDriver
         return ((delegate* unmanaged<IAppxManifestDriverConstraint*, ushort**, int>)(lpVtbl[3]))((IAppxManifestDriverConstraint*)Unsafe.AsPointer(ref this), name);
     }
 
+    /// <include file='IAppxManifestDriverConstraint.xml' path='doc/member[@name="IAppxManifestDriverConstraint.GetMinVersion"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetMinVersion([NativeTypeName("UINT64 *")] ulong* minVersion)
@@ -53,6 +59,7 @@ public unsafe partial struct IAppxManifestDriverConstraint : IAppxManifestDriver
         return ((delegate* unmanaged<IAppxManifestDriverConstraint*, ulong*, int>)(lpVtbl[4]))((IAppxManifestDriverConstraint*)Unsafe.AsPointer(ref this), minVersion);
     }
 
+    /// <include file='IAppxManifestDriverConstraint.xml' path='doc/member[@name="IAppxManifestDriverConstraint.GetMinDate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetMinDate([NativeTypeName("LPWSTR *")] ushort** minDate)

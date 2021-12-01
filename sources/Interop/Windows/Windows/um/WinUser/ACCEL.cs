@@ -5,13 +5,17 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ACCEL.xml' path='doc/member[@name="ACCEL"]/*' />
 public partial struct ACCEL
 {
+    /// <include file='ACCEL.xml' path='doc/member[@name="ACCEL.fVirt"]/*' />
     public byte fVirt;
 
+    /// <include file='ACCEL.xml' path='doc/member[@name="ACCEL.key"]/*' />
     [NativeTypeName("WORD")]
     public ushort key;
 
+    /// <include file='ACCEL.xml' path='doc/member[@name="ACCEL.cmd"]/*' />
     [NativeTypeName("WORD")]
     public ushort cmd;
 }

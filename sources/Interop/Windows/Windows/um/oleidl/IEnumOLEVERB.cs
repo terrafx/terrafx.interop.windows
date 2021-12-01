@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IEnumOLEVERB.xml' path='doc/member[@name="IEnumOLEVERB"]/*' />
 [Guid("00000104-0000-0000-C000-000000000046")]
 [NativeTypeName("struct IEnumOLEVERB : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IEnumOLEVERB : IEnumOLEVERB.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IEnumOLEVERB : IEnumOLEVERB.Interface
         return ((delegate* unmanaged<IEnumOLEVERB*, Guid*, void**, int>)(lpVtbl[0]))((IEnumOLEVERB*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IEnumOLEVERB : IEnumOLEVERB.Interface
         return ((delegate* unmanaged<IEnumOLEVERB*, uint>)(lpVtbl[1]))((IEnumOLEVERB*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IEnumOLEVERB : IEnumOLEVERB.Interface
         return ((delegate* unmanaged<IEnumOLEVERB*, uint>)(lpVtbl[2]))((IEnumOLEVERB*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IEnumOLEVERB.xml' path='doc/member[@name="IEnumOLEVERB.Next"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Next([NativeTypeName("ULONG")] uint celt, [NativeTypeName("LPOLEVERB")] OLEVERB* rgelt, [NativeTypeName("ULONG *")] uint* pceltFetched)
@@ -46,6 +51,7 @@ public unsafe partial struct IEnumOLEVERB : IEnumOLEVERB.Interface
         return ((delegate* unmanaged<IEnumOLEVERB*, uint, OLEVERB*, uint*, int>)(lpVtbl[3]))((IEnumOLEVERB*)Unsafe.AsPointer(ref this), celt, rgelt, pceltFetched);
     }
 
+    /// <include file='IEnumOLEVERB.xml' path='doc/member[@name="IEnumOLEVERB.Skip"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Skip([NativeTypeName("ULONG")] uint celt)
@@ -53,6 +59,7 @@ public unsafe partial struct IEnumOLEVERB : IEnumOLEVERB.Interface
         return ((delegate* unmanaged<IEnumOLEVERB*, uint, int>)(lpVtbl[4]))((IEnumOLEVERB*)Unsafe.AsPointer(ref this), celt);
     }
 
+    /// <include file='IEnumOLEVERB.xml' path='doc/member[@name="IEnumOLEVERB.Reset"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT Reset()
@@ -60,6 +67,7 @@ public unsafe partial struct IEnumOLEVERB : IEnumOLEVERB.Interface
         return ((delegate* unmanaged<IEnumOLEVERB*, int>)(lpVtbl[5]))((IEnumOLEVERB*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IEnumOLEVERB.xml' path='doc/member[@name="IEnumOLEVERB.Clone"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Clone(IEnumOLEVERB** ppenum)

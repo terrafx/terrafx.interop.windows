@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SyncMgrClient.xml' path='doc/member[@name="SyncMgrClient"]/*' />
 [Guid("1202DB60-1DAC-42C5-AED5-1ABDD432248E")]
 public partial struct SyncMgrClient
 {

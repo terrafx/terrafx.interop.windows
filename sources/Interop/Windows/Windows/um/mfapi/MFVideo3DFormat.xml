@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MFVideo3DFormat">
+    <summary>
+      <para>Specifies how 3D video frames are stored in memory.</para>
+    </summary>
+    <remarks>
+      <para>This enumeration is used with the <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-mt-video-3d-format">MF_MT_VIDEO_3D_FORMAT</a> attribute.</para>
+    </remarks>
+  </member>
+  <member name="MFVideo3DFormat.MFVideo3DSampleFormat_BaseView">
+    <summary>
+      <para>The base view is stored in a single buffer. The other view is discarded.</para>
+    </summary>
+  </member>
+  <member name="MFVideo3DFormat.MFVideo3DSampleFormat_MultiView">
+    <summary>
+      <para>Each media sample contains multiple buffers, one for each view.</para>
+    </summary>
+  </member>
+  <member name="MFVideo3DFormat.MFVideo3DSampleFormat_Packed_LeftRight">
+    <summary>
+      <para>Each media sample contains one buffer, with both views packed side-by-side into a single frame.</para>
+    </summary>
+  </member>
+  <member name="MFVideo3DFormat.MFVideo3DSampleFormat_Packed_TopBottom">
+    <summary>
+      <para>Each media sample contains one buffer, with both views packed top-and-bottom into a single frame.</para>
+    </summary>
+  </member>
+</doc>

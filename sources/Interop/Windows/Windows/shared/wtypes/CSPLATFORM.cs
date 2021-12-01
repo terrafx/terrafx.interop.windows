@@ -5,17 +5,22 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CSPLATFORM.xml' path='doc/member[@name="CSPLATFORM"]/*' />
 public partial struct CSPLATFORM
 {
+    /// <include file='CSPLATFORM.xml' path='doc/member[@name="CSPLATFORM.dwPlatformId"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwPlatformId;
 
+    /// <include file='CSPLATFORM.xml' path='doc/member[@name="CSPLATFORM.dwVersionHi"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwVersionHi;
 
+    /// <include file='CSPLATFORM.xml' path='doc/member[@name="CSPLATFORM.dwVersionLo"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwVersionLo;
 
+    /// <include file='CSPLATFORM.xml' path='doc/member[@name="CSPLATFORM.dwProcessorArch"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwProcessorArch;
 }

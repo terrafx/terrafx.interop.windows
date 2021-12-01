@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFMediaError.GetErrorCode">
+    <summary>
+      <para>Gets the error code.</para>
+    </summary>
+    <returns>
+      <para>Returns a value from the <see cref="MF_MEDIA_ENGINE_ERR" /> enumeration.</para>
+    </returns>
+    <seealso cref="IMFMediaError" />
+  </member>
+  <member name="IMFMediaError.GetExtendedErrorCode">
+    <summary>
+      <para>Gets the extended error code.</para>
+    </summary>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value that gives additional information about the last error.</para>
+    </returns>
+    <seealso cref="IMFMediaError" />
+  </member>
+  <member name="IMFMediaError.SetErrorCode">
+    <summary>
+      <para>Sets the error code.</para>
+    </summary>
+    <param name="error">
+      <para>The error code, specified as an <see cref="MF_MEDIA_ENGINE_ERR" /> value.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFMediaError" />
+  </member>
+  <member name="IMFMediaError.SetExtendedErrorCode">
+    <summary>
+      <para>Sets the extended error code.</para>
+    </summary>
+    <param name="error">
+      <para>An <b>HRESULT</b> value that gives additional information about the last error.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFMediaError" />
+  </member>
+  <member name="IMFMediaError">
+    <summary>
+      <para>Provides the current error status for the Media Engine.</para>
+    </summary>
+    <remarks>
+      <para>The <b>IMFMediaError</b> interface corresponds to the <b>MediaError</b> object in HTML5.</para>
+      <para>To get a pointer to this interface, call <see cref="IMFMediaEngine.GetError" />.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+  </member>
+</doc>

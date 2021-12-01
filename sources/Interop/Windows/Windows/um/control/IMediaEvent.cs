@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMediaEvent.xml' path='doc/member[@name="IMediaEvent"]/*' />
 [Guid("56A868B6-0AD4-11CE-B03A-0020AF0BA770")]
 [NativeTypeName("struct IMediaEvent : IDispatch")]
 [NativeInheritance("IDispatch")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMediaEvent : IMediaEvent.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMediaEvent : IMediaEvent.Interface
         return ((delegate* unmanaged<IMediaEvent*, Guid*, void**, int>)(lpVtbl[0]))((IMediaEvent*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMediaEvent : IMediaEvent.Interface
         return ((delegate* unmanaged<IMediaEvent*, uint>)(lpVtbl[1]))((IMediaEvent*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMediaEvent : IMediaEvent.Interface
         return ((delegate* unmanaged<IMediaEvent*, uint>)(lpVtbl[2]))((IMediaEvent*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct IMediaEvent : IMediaEvent.Interface
         return ((delegate* unmanaged<IMediaEvent*, uint*, int>)(lpVtbl[3]))((IMediaEvent*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct IMediaEvent : IMediaEvent.Interface
         return ((delegate* unmanaged<IMediaEvent*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IMediaEvent*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
@@ -60,6 +67,7 @@ public unsafe partial struct IMediaEvent : IMediaEvent.Interface
         return ((delegate* unmanaged<IMediaEvent*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IMediaEvent*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
+    /// <inheritdoc cref="IDispatch.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
@@ -67,6 +75,7 @@ public unsafe partial struct IMediaEvent : IMediaEvent.Interface
         return ((delegate* unmanaged<IMediaEvent*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IMediaEvent*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
+    /// <include file='IMediaEvent.xml' path='doc/member[@name="IMediaEvent.GetEventHandle"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetEventHandle([NativeTypeName("OAEVENT *")] nint* hEvent)
@@ -74,6 +83,7 @@ public unsafe partial struct IMediaEvent : IMediaEvent.Interface
         return ((delegate* unmanaged<IMediaEvent*, nint*, int>)(lpVtbl[7]))((IMediaEvent*)Unsafe.AsPointer(ref this), hEvent);
     }
 
+    /// <include file='IMediaEvent.xml' path='doc/member[@name="IMediaEvent.GetEvent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetEvent([NativeTypeName("long *")] int* lEventCode, [NativeTypeName("LONG_PTR *")] nint* lParam1, [NativeTypeName("LONG_PTR *")] nint* lParam2, [NativeTypeName("long")] int msTimeout)
@@ -81,6 +91,7 @@ public unsafe partial struct IMediaEvent : IMediaEvent.Interface
         return ((delegate* unmanaged<IMediaEvent*, int*, nint*, nint*, int, int>)(lpVtbl[8]))((IMediaEvent*)Unsafe.AsPointer(ref this), lEventCode, lParam1, lParam2, msTimeout);
     }
 
+    /// <include file='IMediaEvent.xml' path='doc/member[@name="IMediaEvent.WaitForCompletion"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT WaitForCompletion([NativeTypeName("long")] int msTimeout, [NativeTypeName("long *")] int* pEvCode)
@@ -88,6 +99,7 @@ public unsafe partial struct IMediaEvent : IMediaEvent.Interface
         return ((delegate* unmanaged<IMediaEvent*, int, int*, int>)(lpVtbl[9]))((IMediaEvent*)Unsafe.AsPointer(ref this), msTimeout, pEvCode);
     }
 
+    /// <include file='IMediaEvent.xml' path='doc/member[@name="IMediaEvent.CancelDefaultHandling"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT CancelDefaultHandling([NativeTypeName("long")] int lEvCode)
@@ -95,6 +107,7 @@ public unsafe partial struct IMediaEvent : IMediaEvent.Interface
         return ((delegate* unmanaged<IMediaEvent*, int, int>)(lpVtbl[10]))((IMediaEvent*)Unsafe.AsPointer(ref this), lEvCode);
     }
 
+    /// <include file='IMediaEvent.xml' path='doc/member[@name="IMediaEvent.RestoreDefaultHandling"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT RestoreDefaultHandling([NativeTypeName("long")] int lEvCode)
@@ -102,6 +115,7 @@ public unsafe partial struct IMediaEvent : IMediaEvent.Interface
         return ((delegate* unmanaged<IMediaEvent*, int, int>)(lpVtbl[11]))((IMediaEvent*)Unsafe.AsPointer(ref this), lEvCode);
     }
 
+    /// <include file='IMediaEvent.xml' path='doc/member[@name="IMediaEvent.FreeEventParams"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT FreeEventParams([NativeTypeName("long")] int lEvCode, [NativeTypeName("LONG_PTR")] nint lParam1, [NativeTypeName("LONG_PTR")] nint lParam2)

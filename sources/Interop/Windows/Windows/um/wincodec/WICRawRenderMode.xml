@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WICRawRenderMode">
+    <summary>
+      <para>Specifies the render intent of the next <see cref="CopyPixels" /> call.</para>
+    </summary>
+  </member>
+  <member name="WICRawRenderMode.WICRawRenderModeDraft">
+    <summary>
+      <para>Use speed priority mode.</para>
+    </summary>
+  </member>
+  <member name="WICRawRenderMode.WICRawRenderModeNormal">
+    <summary>
+      <para>Use normal priority mode. Balance of speed and quality.</para>
+    </summary>
+  </member>
+  <member name="WICRawRenderMode.WICRawRenderModeBestQuality">
+    <summary>
+      <para>Use best quality mode.</para>
+    </summary>
+  </member>
+  <member name="WICRawRenderMode.WICRAWRENDERMODE_FORCE_DWORD">
+    <summary></summary>
+  </member>
+</doc>

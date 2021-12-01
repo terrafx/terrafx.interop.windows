@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ICatalogFileInfo.xml' path='doc/member[@name="ICatalogFileInfo"]/*' />
 [Guid("711C7600-6B48-11D1-B403-00AA00B92AF1")]
 [NativeTypeName("struct ICatalogFileInfo : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ICatalogFileInfo : ICatalogFileInfo.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ICatalogFileInfo : ICatalogFileInfo.Interface
         return ((delegate* unmanaged<ICatalogFileInfo*, Guid*, void**, int>)(lpVtbl[0]))((ICatalogFileInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ICatalogFileInfo : ICatalogFileInfo.Interface
         return ((delegate* unmanaged<ICatalogFileInfo*, uint>)(lpVtbl[1]))((ICatalogFileInfo*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ICatalogFileInfo : ICatalogFileInfo.Interface
         return ((delegate* unmanaged<ICatalogFileInfo*, uint>)(lpVtbl[2]))((ICatalogFileInfo*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ICatalogFileInfo.xml' path='doc/member[@name="ICatalogFileInfo.GetCatalogFile"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetCatalogFile([NativeTypeName("LPSTR *")] sbyte** ppszCatalogFile)
@@ -46,6 +51,7 @@ public unsafe partial struct ICatalogFileInfo : ICatalogFileInfo.Interface
         return ((delegate* unmanaged<ICatalogFileInfo*, sbyte**, int>)(lpVtbl[3]))((ICatalogFileInfo*)Unsafe.AsPointer(ref this), ppszCatalogFile);
     }
 
+    /// <include file='ICatalogFileInfo.xml' path='doc/member[@name="ICatalogFileInfo.GetJavaTrust"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetJavaTrust(void** ppJavaTrust)

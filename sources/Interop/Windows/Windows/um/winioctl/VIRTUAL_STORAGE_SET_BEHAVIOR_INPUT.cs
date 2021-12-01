@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='VIRTUAL_STORAGE_SET_BEHAVIOR_INPUT.xml' path='doc/member[@name="VIRTUAL_STORAGE_SET_BEHAVIOR_INPUT"]/*' />
 public partial struct VIRTUAL_STORAGE_SET_BEHAVIOR_INPUT
 {
+    /// <include file='VIRTUAL_STORAGE_SET_BEHAVIOR_INPUT.xml' path='doc/member[@name="VIRTUAL_STORAGE_SET_BEHAVIOR_INPUT.Size"]/*' />
     [NativeTypeName("DWORD")]
     public uint Size;
 
+    /// <include file='VIRTUAL_STORAGE_SET_BEHAVIOR_INPUT.xml' path='doc/member[@name="VIRTUAL_STORAGE_SET_BEHAVIOR_INPUT.BehaviorCode"]/*' />
     public VIRTUAL_STORAGE_BEHAVIOR_CODE BehaviorCode;
 }

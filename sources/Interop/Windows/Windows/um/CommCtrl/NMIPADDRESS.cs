@@ -5,11 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NMIPADDRESS.xml' path='doc/member[@name="NMIPADDRESS"]/*' />
 public partial struct NMIPADDRESS
 {
+    /// <include file='NMIPADDRESS.xml' path='doc/member[@name="NMIPADDRESS.hdr"]/*' />
     public NMHDR hdr;
 
+    /// <include file='NMIPADDRESS.xml' path='doc/member[@name="NMIPADDRESS.iField"]/*' />
     public int iField;
 
+    /// <include file='NMIPADDRESS.xml' path='doc/member[@name="NMIPADDRESS.iValue"]/*' />
     public int iValue;
 }

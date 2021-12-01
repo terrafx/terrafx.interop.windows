@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='GRADIENT_RECT.xml' path='doc/member[@name="GRADIENT_RECT"]/*' />
 public partial struct GRADIENT_RECT
 {
+    /// <include file='GRADIENT_RECT.xml' path='doc/member[@name="GRADIENT_RECT.UpperLeft"]/*' />
     [NativeTypeName("ULONG")]
     public uint UpperLeft;
 
+    /// <include file='GRADIENT_RECT.xml' path='doc/member[@name="GRADIENT_RECT.LowerRight"]/*' />
     [NativeTypeName("ULONG")]
     public uint LowerRight;
 }

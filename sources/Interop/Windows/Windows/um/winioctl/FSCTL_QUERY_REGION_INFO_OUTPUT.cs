@@ -9,32 +9,42 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='FSCTL_QUERY_REGION_INFO_OUTPUT.xml' path='doc/member[@name="FSCTL_QUERY_REGION_INFO_OUTPUT"]/*' />
 public partial struct FSCTL_QUERY_REGION_INFO_OUTPUT
 {
+    /// <include file='FSCTL_QUERY_REGION_INFO_OUTPUT.xml' path='doc/member[@name="FSCTL_QUERY_REGION_INFO_OUTPUT.Version"]/*' />
     [NativeTypeName("DWORD")]
     public uint Version;
 
+    /// <include file='FSCTL_QUERY_REGION_INFO_OUTPUT.xml' path='doc/member[@name="FSCTL_QUERY_REGION_INFO_OUTPUT.Size"]/*' />
     [NativeTypeName("DWORD")]
     public uint Size;
 
+    /// <include file='FSCTL_QUERY_REGION_INFO_OUTPUT.xml' path='doc/member[@name="FSCTL_QUERY_REGION_INFO_OUTPUT.Flags"]/*' />
     [NativeTypeName("DWORD")]
     public uint Flags;
 
+    /// <include file='FSCTL_QUERY_REGION_INFO_OUTPUT.xml' path='doc/member[@name="FSCTL_QUERY_REGION_INFO_OUTPUT.Reserved"]/*' />
     [NativeTypeName("DWORD")]
     public uint Reserved;
 
+    /// <include file='FSCTL_QUERY_REGION_INFO_OUTPUT.xml' path='doc/member[@name="FSCTL_QUERY_REGION_INFO_OUTPUT.Alignment"]/*' />
     [NativeTypeName("DWORDLONG")]
     public ulong Alignment;
 
+    /// <include file='FSCTL_QUERY_REGION_INFO_OUTPUT.xml' path='doc/member[@name="FSCTL_QUERY_REGION_INFO_OUTPUT.TotalNumberOfRegions"]/*' />
     [NativeTypeName("DWORD")]
     public uint TotalNumberOfRegions;
 
+    /// <include file='FSCTL_QUERY_REGION_INFO_OUTPUT.xml' path='doc/member[@name="FSCTL_QUERY_REGION_INFO_OUTPUT.NumberOfRegionsReturned"]/*' />
     [NativeTypeName("DWORD")]
     public uint NumberOfRegionsReturned;
 
+    /// <include file='FSCTL_QUERY_REGION_INFO_OUTPUT.xml' path='doc/member[@name="FSCTL_QUERY_REGION_INFO_OUTPUT.Regions"]/*' />
     [NativeTypeName("FILE_STORAGE_TIER_REGION [1]")]
     public _Regions_e__FixedBuffer Regions;
 
+    /// <include file='_Regions_e__FixedBuffer.xml' path='doc/member[@name="_Regions_e__FixedBuffer"]/*' />
     public partial struct _Regions_e__FixedBuffer
     {
         public FILE_STORAGE_TIER_REGION e0;

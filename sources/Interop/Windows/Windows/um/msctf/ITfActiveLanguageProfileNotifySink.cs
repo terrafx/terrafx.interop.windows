@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITfActiveLanguageProfileNotifySink.xml' path='doc/member[@name="ITfActiveLanguageProfileNotifySink"]/*' />
 [Guid("B246CB75-A93E-4652-BF8C-B3FE0CFD7E57")]
 [NativeTypeName("struct ITfActiveLanguageProfileNotifySink : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITfActiveLanguageProfileNotifySink : ITfActiveLangu
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITfActiveLanguageProfileNotifySink : ITfActiveLangu
         return ((delegate* unmanaged<ITfActiveLanguageProfileNotifySink*, Guid*, void**, int>)(lpVtbl[0]))((ITfActiveLanguageProfileNotifySink*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITfActiveLanguageProfileNotifySink : ITfActiveLangu
         return ((delegate* unmanaged<ITfActiveLanguageProfileNotifySink*, uint>)(lpVtbl[1]))((ITfActiveLanguageProfileNotifySink*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITfActiveLanguageProfileNotifySink : ITfActiveLangu
         return ((delegate* unmanaged<ITfActiveLanguageProfileNotifySink*, uint>)(lpVtbl[2]))((ITfActiveLanguageProfileNotifySink*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITfActiveLanguageProfileNotifySink.xml' path='doc/member[@name="ITfActiveLanguageProfileNotifySink.OnActivated"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT OnActivated([NativeTypeName("const IID &")] Guid* clsid, [NativeTypeName("const GUID &")] Guid* guidProfile, BOOL fActivated)

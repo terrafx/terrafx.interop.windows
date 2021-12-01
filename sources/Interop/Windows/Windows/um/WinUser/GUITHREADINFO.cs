@@ -5,25 +5,35 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='GUITHREADINFO.xml' path='doc/member[@name="GUITHREADINFO"]/*' />
 public partial struct GUITHREADINFO
 {
+    /// <include file='GUITHREADINFO.xml' path='doc/member[@name="GUITHREADINFO.cbSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbSize;
 
+    /// <include file='GUITHREADINFO.xml' path='doc/member[@name="GUITHREADINFO.flags"]/*' />
     [NativeTypeName("DWORD")]
     public uint flags;
 
+    /// <include file='GUITHREADINFO.xml' path='doc/member[@name="GUITHREADINFO.hwndActive"]/*' />
     public HWND hwndActive;
 
+    /// <include file='GUITHREADINFO.xml' path='doc/member[@name="GUITHREADINFO.hwndFocus"]/*' />
     public HWND hwndFocus;
 
+    /// <include file='GUITHREADINFO.xml' path='doc/member[@name="GUITHREADINFO.hwndCapture"]/*' />
     public HWND hwndCapture;
 
+    /// <include file='GUITHREADINFO.xml' path='doc/member[@name="GUITHREADINFO.hwndMenuOwner"]/*' />
     public HWND hwndMenuOwner;
 
+    /// <include file='GUITHREADINFO.xml' path='doc/member[@name="GUITHREADINFO.hwndMoveSize"]/*' />
     public HWND hwndMoveSize;
 
+    /// <include file='GUITHREADINFO.xml' path='doc/member[@name="GUITHREADINFO.hwndCaret"]/*' />
     public HWND hwndCaret;
 
+    /// <include file='GUITHREADINFO.xml' path='doc/member[@name="GUITHREADINFO.rcCaret"]/*' />
     public RECT rcCaret;
 }

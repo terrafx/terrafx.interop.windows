@@ -5,13 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITEMSPACING.xml' path='doc/member[@name="ITEMSPACING"]/*' />
 public partial struct ITEMSPACING
 {
+    /// <include file='ITEMSPACING.xml' path='doc/member[@name="ITEMSPACING.cxSmall"]/*' />
     public int cxSmall;
 
+    /// <include file='ITEMSPACING.xml' path='doc/member[@name="ITEMSPACING.cySmall"]/*' />
     public int cySmall;
 
+    /// <include file='ITEMSPACING.xml' path='doc/member[@name="ITEMSPACING.cxLarge"]/*' />
     public int cxLarge;
 
+    /// <include file='ITEMSPACING.xml' path='doc/member[@name="ITEMSPACING.cyLarge"]/*' />
     public int cyLarge;
 }

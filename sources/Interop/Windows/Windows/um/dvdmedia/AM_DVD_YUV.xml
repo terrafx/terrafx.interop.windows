@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="AM_DVD_YUV">
+    <summary>
+      <para>Contains DVD YUV subpicture data.</para>
+    </summary>
+    <remarks>
+      <para>This structure is contained within the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/dvdmedia/ns-dvdmedia-am_property_sppal">AM_PROPERTY_SPPAL</a> structure.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-subpicture-property-set">DVD Subpicture Property Set</seealso>
+  </member>
+  <member name="AM_DVD_YUV.Reserved">
+    <summary>
+      <para>Reserved.</para>
+    </summary>
+  </member>
+  <member name="AM_DVD_YUV.Y">
+    <summary>
+      <para>Y color data.</para>
+    </summary>
+  </member>
+  <member name="AM_DVD_YUV.U">
+    <summary>
+      <para>U color data.</para>
+    </summary>
+  </member>
+  <member name="AM_DVD_YUV.V">
+    <summary>
+      <para>V color data.</para>
+    </summary>
+  </member>
+</doc>

@@ -7,9 +7,13 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MF_VIDEO_PROCESSOR_ROTATION.xml' path='doc/member[@name="MF_VIDEO_PROCESSOR_ROTATION"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public enum MF_VIDEO_PROCESSOR_ROTATION
 {
+    /// <include file='MF_VIDEO_PROCESSOR_ROTATION.xml' path='doc/member[@name="MF_VIDEO_PROCESSOR_ROTATION.ROTATION_NONE"]/*' />
     ROTATION_NONE = 0,
+
+    /// <include file='MF_VIDEO_PROCESSOR_ROTATION.xml' path='doc/member[@name="MF_VIDEO_PROCESSOR_ROTATION.ROTATION_NORMAL"]/*' />
     ROTATION_NORMAL = 1,
 }

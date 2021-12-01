@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CRYPT_ENROLLMENT_NAME_VALUE_PAIR.xml' path='doc/member[@name="CRYPT_ENROLLMENT_NAME_VALUE_PAIR"]/*' />
 public unsafe partial struct CRYPT_ENROLLMENT_NAME_VALUE_PAIR
 {
+    /// <include file='CRYPT_ENROLLMENT_NAME_VALUE_PAIR.xml' path='doc/member[@name="CRYPT_ENROLLMENT_NAME_VALUE_PAIR.pwszName"]/*' />
     [NativeTypeName("LPWSTR")]
     public ushort* pwszName;
 
+    /// <include file='CRYPT_ENROLLMENT_NAME_VALUE_PAIR.xml' path='doc/member[@name="CRYPT_ENROLLMENT_NAME_VALUE_PAIR.pwszValue"]/*' />
     [NativeTypeName("LPWSTR")]
     public ushort* pwszValue;
 }

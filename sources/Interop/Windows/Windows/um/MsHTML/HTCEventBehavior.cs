@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HTCEventBehavior.xml' path='doc/member[@name="HTCEventBehavior"]/*' />
 [Guid("3050F4FE-98B5-11CF-BB82-00AA00BDCE0B")]
 public partial struct HTCEventBehavior
 {

@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='tagBANDSITECID.xml' path='doc/member[@name="tagBANDSITECID"]/*' />
 public enum tagBANDSITECID
 {
+    /// <include file='tagBANDSITECID.xml' path='doc/member[@name="tagBANDSITECID.BSID_BANDADDED"]/*' />
     BSID_BANDADDED = 0,
+
+    /// <include file='tagBANDSITECID.xml' path='doc/member[@name="tagBANDSITECID.BSID_BANDREMOVED"]/*' />
     BSID_BANDREMOVED = (BSID_BANDADDED + 1),
 }

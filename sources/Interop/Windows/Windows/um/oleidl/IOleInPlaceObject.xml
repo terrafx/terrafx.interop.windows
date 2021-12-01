@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IOleInPlaceObject.InPlaceDeactivate">
+    <summary>
+      <para>Deactivates an active in-place object and discards the object's undo state.</para>
+    </summary>
+    <returns>
+      <para>This method returns S_OK on success. Other possible return values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_UNEXPECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>An unexpected error occurred.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <h3>Notes to Callers</h3>
+      <para>This method is called by an active object's immediate container to deactivate the active object and discard its undo state.</para>
+      <h3>Notes to Implementers</h3>
+      <para>On return from <b>IOleInPlaceObject.InPlaceDeactivate</b>, the object discards its undo state. The object application should not shut down immediately after this call. Instead, it should wait for an explicit call to <see cref="IOleObject.Close" /> or for the object's reference count to reach zero.</para>
+      <para>Before deactivating, the object application should give the container a chance to put its user interface back on the frame window by calling <see cref="IOleInPlaceSite.OnUIDeactivate" />.</para>
+      <para>If the in-place user interface is still visible during the call to <b>IOleInPlaceObject.InPlaceDeactivate</b>, the object application should call its own <b>IOleInPlaceObject.InPlaceDeactivate</b> method to hide the user interface. The in-place user interface can be optionally destroyed during calls to <b>IOleInPlaceObject.InPlaceDeactivate</b> and <b>IOleInPlaceObject.InPlaceDeactivate</b>. But if the user interface has not already been destroyed when the container calls <see cref="IOleObject.Close" />, then it must be destroyed during the call to <b>IOleObject.Close</b>.</para>
+      <para>During the call to <see cref="IOleObject.Close" />, the object should check to see whether it is still active in place. If so, it should call <b>IOleInPlaceObject.InPlaceDeactivate</b>.</para>
+    </remarks>
+    <seealso cref="IOleInPlaceObject" />
+    <seealso cref="IOleInPlaceSite.OnInPlaceDeactivate" />
+    <seealso cref="IOleInPlaceSite.OnUIDeactivate" />
+    <seealso cref="IOleObject.Close" />
+  </member>
+  <member name="IOleInPlaceObject.ReactivateAndUndo">
+    <summary>
+      <para>Reactivates a previously deactivated object, undoing the last state of the object.</para>
+    </summary>
+    <returns>
+      <para>This method returns S_OK on success. Other possible return values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_NOTUNDOABLE</b>
+            </para>
+          </description>
+          <description>
+            <para>The undo state is not available.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>There is insufficient memory available for the operation.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_UNEXPECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>An unexpected error has occurred.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>If the user chooses the <b>Undo</b> command before the undo state of the object is lost, the object's immediate container calls <b>IOleInPlaceObject.ReactivateAndUndo</b> to activate the user interface, carry out the undo operation, and return the object to the active state.</para>
+    </remarks>
+    <seealso cref="IOleInPlaceObject" />
+  </member>
+  <member name="IOleInPlaceObject.SetObjectRects">
+    <summary>
+      <para>Specifies how much of the in-place object is to be visible.</para>
+    </summary>
+    <param name="lprcPosRect">
+      <para>A pointer to the <see cref="RECT" /> structure containing the position of the in-place object using the client coordinates of its parent window.</para>
+    </param>
+    <param name="lprcClipRect">
+      <para>A pointer to the outer rectangle containing the in-place object's position rectangle (<i>lprcPosRect</i>). This rectangle is relative to the client area of the object's parent window.</para>
+    </param>
+    <returns>
+      <para>This method returns S_OK on success. Other possible return values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>The specified pointer is invalid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>There is insufficient memory available for the operation.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_UNEXPECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>An unexpected error has occurred.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>It is possible for <i>lprcClipRect</i> to change without <i>lprcPosRect</i> changing.</para>
+      <para>The size of an in-place object's rectangle is always calculated in pixels. This is different from other OLE object's visualizations, which are in <b>HIMETRIC</b>.</para>
+      <para>
+        <b>Note</b>  While executing <b>IOleInPlaceObject.SetObjectRects</b>, do not make calls to the <see cref="PeekMessage" /> or <a href="https://docs.microsoft.com//previous-versions/windows/desktop/fax/-mfax-faxaccountincomingarchive-getmessage-vb">GetMessage</a> functions, or a dialog box. Doing so may cause the system to deadlock. There are further restrictions on which OLE interface methods and functions can be called from within <b>IOleInPlaceObject.SetObjectRects</b>.</para>
+      <h3>Notes to Callers</h3>
+      <para>The container should call <b>IOleInPlaceObject.SetObjectRects</b> whenever the window position of the in-place object and/or the visible part of the in-place object changes.</para>
+      <h3>Notes to Implementers</h3>
+      <para>The object must size its in-place window to match the intersection of <i>lprcPosRect</i> and <i>lprcClipRect</i>. The object must also draw its contents into the object's in-place window so that proper clipping takes place.</para>
+      <para>The object should compare its width and height with those provided by its container (conveyed through <i>lprcPosRect</i>). If the comparison does not result in a match, the container is applying scaling to the object. The object must then decide whether it should continue the in-place editing in the scale/zoom mode or deactivate.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/fax/-mfax-faxaccountincomingarchive-getmessage-vb">GetMessage</seealso>
+    <seealso cref="IOleInPlaceObject" />
+    <seealso cref="IOleInPlaceSite.OnPosRectChange" />
+    <seealso cref="PeekMessage" />
+  </member>
+  <member name="IOleInPlaceObject.UIDeactivate">
+    <summary>
+      <para>Deactivates and removes the user interface of an active in-place object.</para>
+    </summary>
+    <returns>
+      <para>This method returns S_OK on success. Other possible return values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_UNEXPECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>An unexpected error has occurred.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <h3>Notes to Callers</h3>
+      <para>This method is called by the object's immediate container when, for example, the user has clicked in the client area outside the object.</para>
+      <para>If the container has called <b>IOleInPlaceObject.UIDeactivate</b>, it should later call <see cref="IOleInPlaceObject.InPlaceDeactivate" /> to properly clean up resources. The container can assume that stopping or releasing the object cleans up resources if necessary. The object must be prepared to do so if <b>IOleInPlaceObject.InPlaceDeactivate</b> has not been called. but either <b>IOleInPlaceObject.UIDeactivate</b> or <see cref="IOleObject.Close" /> has been called.</para>
+      <h3>Notes to Implementers</h3>
+      <para>Resources such as menus and windows can be either cleaned up or kept in a hidden state until your object is completely deactivated by calls to either <see cref="IOleInPlaceObject.InPlaceDeactivate" /> or <see cref="IOleObject.Close" />. The object application must call <see cref="IOleInPlaceSite.OnUIDeactivate" /> before doing anything with the composite menus so that the container can first be detached from the frame window. On deactivating the in-place object's user interface, the object is left in a ready state so it can be quickly reactivated. The object stays in this state until the undo state of the document changes. The container should then call <b>IOleInPlaceObject.InPlaceDeactivate</b> to tell the object to discard its undo state.</para>
+    </remarks>
+    <seealso cref="IOleInPlaceObject" />
+    <seealso cref="IOleInPlaceObject.InPlaceDeactivate" />
+    <seealso cref="IOleInPlaceObject.ReactivateAndUndo" />
+    <seealso cref="IOleInPlaceSite.OnUIDeactivate" />
+    <seealso cref="IOleObject.Close" />
+  </member>
+  <member name="IOleInPlaceObject">
+    <summary>
+      <para>Manages the activation and deactivation of in-place objects, and determines how much of the in-place object should be visible.</para>
+      <para>You can obtain a pointer to <b>IOleInPlaceObject</b> by calling <see cref="IUnknown.QueryInterface" /> on <see cref="IOleObject" />.</para>
+    </summary>
+    <seealso cref="IOleObject" />
+    <seealso cref="IOleWindow" />
+  </member>
+</doc>

@@ -9,19 +9,24 @@ namespace TerraFX.Interop.Windows;
 
 public static unsafe partial class Windows
 {
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreatePropertySheetPageA"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     public static extern HPROPSHEETPAGE CreatePropertySheetPageA([NativeTypeName("LPCPROPSHEETPAGEA")] PROPSHEETPAGEA* constPropSheetPagePointer);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreatePropertySheetPageW"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     public static extern HPROPSHEETPAGE CreatePropertySheetPageW([NativeTypeName("LPCPROPSHEETPAGEW")] PROPSHEETPAGEW* constPropSheetPagePointer);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DestroyPropertySheetPage"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     public static extern BOOL DestroyPropertySheetPage(HPROPSHEETPAGE param0);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PropertySheetA"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     [return: NativeTypeName("INT_PTR")]
     public static extern nint PropertySheetA([NativeTypeName("LPCPROPSHEETHEADERA")] PROPSHEETHEADERA_V2* param0);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PropertySheetW"]/*' />
     [DllImport("comctl32", ExactSpelling = true)]
     [return: NativeTypeName("INT_PTR")]
     public static extern nint PropertySheetW([NativeTypeName("LPCPROPSHEETHEADERW")] PROPSHEETHEADERW_V2* param0);

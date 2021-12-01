@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IExtensionServices.xml' path='doc/member[@name="IExtensionServices"]/*' />
 [Guid("79EAC9CB-BAF9-11CE-8C82-00AA004BA90B")]
 [NativeTypeName("struct IExtensionServices : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IExtensionServices : IExtensionServices.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IExtensionServices : IExtensionServices.Interface
         return ((delegate* unmanaged<IExtensionServices*, Guid*, void**, int>)(lpVtbl[0]))((IExtensionServices*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IExtensionServices : IExtensionServices.Interface
         return ((delegate* unmanaged<IExtensionServices*, uint>)(lpVtbl[1]))((IExtensionServices*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IExtensionServices : IExtensionServices.Interface
         return ((delegate* unmanaged<IExtensionServices*, uint>)(lpVtbl[2]))((IExtensionServices*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IExtensionServices.xml' path='doc/member[@name="IExtensionServices.SetAdditionalHeaders"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetAdditionalHeaders([NativeTypeName("LPCWSTR")] ushort* pwzAdditionalHeaders)
@@ -46,6 +51,7 @@ public unsafe partial struct IExtensionServices : IExtensionServices.Interface
         return ((delegate* unmanaged<IExtensionServices*, ushort*, int>)(lpVtbl[3]))((IExtensionServices*)Unsafe.AsPointer(ref this), pwzAdditionalHeaders);
     }
 
+    /// <include file='IExtensionServices.xml' path='doc/member[@name="IExtensionServices.SetAuthenticateData"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetAuthenticateData(HWND phwnd, [NativeTypeName("LPCWSTR")] ushort* pwzUsername, [NativeTypeName("LPCWSTR")] ushort* pwzPassword)

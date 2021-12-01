@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IAMClockAdjust.SetClockDelta">
+    <summary>
+      <para>The <code>SetClockDelta</code> method adjusts the clock time.</para>
+    </summary>
+    <param name="rtDelta">
+      <para>Specifies the amount by which to adjust the clock, as a <a href="https://docs.microsoft.com//windows/desktop/DirectShow/reference-time">REFERENCE_TIME</a> value. A positive value moves the clock forward, and a negative value moves the clock backward.</para>
+    </param>
+    <returns>
+      <para>Returns S_OK or an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The time values returned by <see cref="IReferenceClock.GetTime" /> are monotonically increasing. If you set the clock back, <b>GetTime</b> continues to report the old time until the internal clock catches up.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMClockAdjust Interface" />
+  </member>
+  <member name="IAMClockAdjust">
+    <summary>
+      <para>The <code>IAMClockAdjust</code> interface adjusts the reference clock. The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/system-reference-clock">System Reference Clock</a> exposes this interface.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/interfaces">Interfaces</seealso>
+  </member>
+</doc>

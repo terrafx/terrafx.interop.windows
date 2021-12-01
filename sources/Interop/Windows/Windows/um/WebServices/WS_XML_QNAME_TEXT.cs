@@ -5,13 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_XML_QNAME_TEXT.xml' path='doc/member[@name="WS_XML_QNAME_TEXT"]/*' />
 public unsafe partial struct WS_XML_QNAME_TEXT
 {
+    /// <include file='WS_XML_QNAME_TEXT.xml' path='doc/member[@name="WS_XML_QNAME_TEXT.text"]/*' />
     public WS_XML_TEXT text;
 
+    /// <include file='WS_XML_QNAME_TEXT.xml' path='doc/member[@name="WS_XML_QNAME_TEXT.prefix"]/*' />
     public WS_XML_STRING* prefix;
 
+    /// <include file='WS_XML_QNAME_TEXT.xml' path='doc/member[@name="WS_XML_QNAME_TEXT.localName"]/*' />
     public WS_XML_STRING* localName;
 
+    /// <include file='WS_XML_QNAME_TEXT.xml' path='doc/member[@name="WS_XML_QNAME_TEXT.ns"]/*' />
     public WS_XML_STRING* ns;
 }

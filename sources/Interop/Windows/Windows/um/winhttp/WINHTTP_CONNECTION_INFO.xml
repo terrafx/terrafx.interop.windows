@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WINHTTP_CONNECTION_INFO">
+    <summary>
+      <para>The <b>WINHTTP_CONNECTION_INFO</b> structure contains the source and destination IP address of the request that generated the response.</para>
+    </summary>
+    <remarks>
+      <para>When <see cref="WinHttpReceiveResponse" /> returns, the application can retrieve the source and destination IP address of the request that generated the response. The application calls <see cref="WinHttpQueryOption" /> with the <b>WINHTTP_OPTION_CONNECTION_INFO</b> option, and provides the <b>WINHTTP_CONNECTION_INFO</b> structure in the <i>lpBuffer</i> parameter.</para>
+      <h4>Examples</h4>
+      <para>The following code example shows the call to <see cref="WinHttpQueryOption" />. Winsock2.h must be included before Winhttp.h when using the <b>WINHTTP_OPTION_CONNECTION_INFO</b> option.</para>
+      <para>If the original request was redirected, the <b>WINHTTP_CONNECTION_INFO</b> structure contains the IP address and port of the request that resulted from the first non-30X response.</para>
+      <code>WINHTTP_CONNECTION_INFO ConnInfo;
+DWORD dwConnInfoSize = sizeof(WINHTTP_CONNECTION_INFO);
+
+WinHttpQueryOption( hRequest,
+                    WINHTTP_OPTION_CONNECTION_INFO,
+                    &amp;amp;amp;amp;amp;amp;ConnInfo,
+                    &amp;amp;amp;amp;amp;amp;dwConnInfoSize);
+
+</code>
+    </remarks>
+  </member>
+  <member name="WINHTTP_CONNECTION_INFO.cbSize">
+    <summary>
+      <para>The size, in bytes, of the <b>WINHTTP_CONNECTION_INFO</b> structure.</para>
+    </summary>
+  </member>
+  <member name="WINHTTP_CONNECTION_INFO.LocalAddress">
+    <summary>
+      <para>A <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms740504(v=vs.85)">SOCKADDR_STORAGE</a> structure that contains the local IP address and port of the original request.</para>
+    </summary>
+  </member>
+  <member name="WINHTTP_CONNECTION_INFO.RemoteAddress">
+    <summary>
+      <para>A <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms740504(v=vs.85)">SOCKADDR_STORAGE</a> structure that contains the remote IP address and port of the original request.</para>
+    </summary>
+  </member>
+</doc>

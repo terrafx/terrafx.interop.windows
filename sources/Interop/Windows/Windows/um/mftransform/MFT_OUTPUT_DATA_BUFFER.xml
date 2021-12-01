@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MFT_OUTPUT_DATA_BUFFER">
+    <summary>
+      <para>Contains information about an output buffer for a Media Foundation transform. This structure is used in the <see cref="IMFTransform.ProcessOutput" /> method.</para>
+    </summary>
+    <remarks>
+      <para>You must provide an <b>MFT_OUTPUT_DATA_BUFFER</b> structure for each selected output stream.</para>
+      <para>MFTs can support two different allocation models for output samples:</para>
+      <list type="bullet">
+        <item>
+          <description>The MFT allocates the output sample.
+</description>
+        </item>
+        <item>
+          <description>The client allocates the output sample.
+</description>
+        </item>
+      </list>
+      <para>To find which model the MFT supports for a given output stream, call <see cref="IMFTransform.GetOutputStreamInfo" /> and check the value of <b>dwFlags</b>.</para>
+      <list type="table">
+        <listheader>
+          <description>Flag</description>
+          <description>Allocation Model</description>
+        </listheader>
+        <item>
+          <description>MFT_OUTPUT_STREAM_PROVIDES_SAMPLES</description>
+          <description>The MFT allocates the output samples for the stream. Set <b>pSample</b> to <b>NULL</b> for this stream.</description>
+        </item>
+        <item>
+          <description>MFT_OUTPUT_STREAM_CAN_PROVIDE_SAMPLES</description>
+          <description>The MFT supports both allocation models.</description>
+        </item>
+        <item>
+          <description>Neither (default)</description>
+          <description>The client must allocate the output samples for the stream.</description>
+        </item>
+      </list>
+      <para>The behavior of <see cref="ProcessOutput" /> depends on the initial value of <b>pSample</b> and the value of the <i>dwFlags</i> parameter in the <b>ProcessOutput</b> method.</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <para>If <b>pSample</b> is <b>NULL</b> and <i>dwFlags</i> contains the MFT_PROCESS_OUTPUT_DISCARD_WHEN_NO_BUFFER flag, the MFT discards the output data.</para>
+            <para>Restriction: This output stream must have the MFT_OUTPUT_STREAM_DISCARDABLE or MFT_OUTPUT_STREAM_LAZY_READ flag. (To get the flags for the output stream, call the <see cref="IMFTransform.GetOutputStreamInfo" /> method.)</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>If <b>pSample</b> is <b>NULL</b> and <i>dwFlags</i> does not contain the MFT_PROCESS_OUTPUT_DISCARD_WHEN_NO_BUFFER, the MFT provides a sample for the output data. The MFT sets <b>pSample</b> to point to the sample that it provides. The MFT can either allocate a new sample or re-use an input sample.</para>
+            <para>Restriction: This output stream must have the MFT_OUTPUT_STREAM_PROVIDES_SAMPLES or MFT_OUTPUT_STREAM_CAN_PROVIDE_SAMPLES flag.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>If <b>pSample</b> is non-<b>NULL</b>, the MFT uses the sample provided by the caller.</para>
+            <para>Restriction: This output stream must not have the MFT_OUTPUT_STREAM_PROVIDES_SAMPLES flag.</para>
+          </description>
+        </item>
+      </list>
+      <para>Any other combinations are invalid and cause <see cref="ProcessOutput" /> to return E_INVALIDARG.</para>
+      <para>Each call to <see cref="ProcessOutput" /> can produce zero or more events and up to one sample per output stream.</para>
+    </remarks>
+    <seealso cref="IMFTransform.ProcessOutput" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-structures">Media Foundation Structures</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-transforms">Media Foundation Transforms</seealso>
+  </member>
+  <member name="MFT_OUTPUT_DATA_BUFFER.dwStreamID">
+    <summary>
+      <para>Output stream identifier. Before calling <see cref="ProcessOutput" />, set this member to a valid stream identifier.</para>
+      <para>Exception: If the <see cref="IMFTransform.GetStreamIDs" /> method returns E_NOTIMPL, the MFT ignores this member and uses the indexes of the <i>pOutputSamples</i> array in the <see cref="ProcessOutput" /> method as the stream identifiers. In other words, it uses the first element in the array for stream 0, the second for stream 1, and so forth. It is recommended (but not required) that the caller set <b>dwStreamID</b> equal to the array index in this case.</para>
+    </summary>
+  </member>
+  <member name="MFT_OUTPUT_DATA_BUFFER.pSample">
+    <summary>
+      <para>Pointer to the <see cref="IMFSample" /> interface. Before calling <see cref="ProcessOutput" />, set this member equal to a valid <b>IMFSample</b> pointer or <b>NULL</b>. See Remarks for more information.</para>
+    </summary>
+  </member>
+  <member name="MFT_OUTPUT_DATA_BUFFER.dwStatus">
+    <summary>
+      <para>Before calling <see cref="ProcessOutput" />, set this member to zero. When the method returns, the MFT might set the member equal to a value from the <see cref="_MFT_OUTPUT_DATA_BUFFER_FLAGS" /> enumeration. Otherwise, the MFT leaves this member equal to zero.</para>
+    </summary>
+  </member>
+  <member name="MFT_OUTPUT_DATA_BUFFER.pEvents">
+    <summary>
+      <para>Before calling <see cref="ProcessOutput" />, set this member to <b>NULL</b>. On output, the MFT might set this member to a valid <see cref="IMFCollection" /> interface pointer. The pointer represents a collecton that contains zero or more events. To get each event, call <see cref="IMFCollection.GetElement" /> and query the returned <b>IUnknown</b> pointer for the <see cref="IMFMediaEvent" /> interface. When the <b>ProcessOutput</b> method returns, the caller is responsible for releasing the <b>IMFCollection</b> pointer if the pointer is not <b>NULL</b>.</para>
+    </summary>
+  </member>
+</doc>

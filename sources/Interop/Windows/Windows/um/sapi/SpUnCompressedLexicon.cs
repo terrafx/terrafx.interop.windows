@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SpUnCompressedLexicon.xml' path='doc/member[@name="SpUnCompressedLexicon"]/*' />
 [Guid("C9E37C15-DF92-4727-85D6-72E5EEB6995A")]
 public partial struct SpUnCompressedLexicon
 {

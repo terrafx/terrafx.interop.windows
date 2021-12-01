@@ -5,18 +5,24 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='FILE_STREAM_INFO.xml' path='doc/member[@name="FILE_STREAM_INFO"]/*' />
 public unsafe partial struct FILE_STREAM_INFO
 {
+    /// <include file='FILE_STREAM_INFO.xml' path='doc/member[@name="FILE_STREAM_INFO.NextEntryOffset"]/*' />
     [NativeTypeName("DWORD")]
     public uint NextEntryOffset;
 
+    /// <include file='FILE_STREAM_INFO.xml' path='doc/member[@name="FILE_STREAM_INFO.StreamNameLength"]/*' />
     [NativeTypeName("DWORD")]
     public uint StreamNameLength;
 
+    /// <include file='FILE_STREAM_INFO.xml' path='doc/member[@name="FILE_STREAM_INFO.StreamSize"]/*' />
     public LARGE_INTEGER StreamSize;
 
+    /// <include file='FILE_STREAM_INFO.xml' path='doc/member[@name="FILE_STREAM_INFO.StreamAllocationSize"]/*' />
     public LARGE_INTEGER StreamAllocationSize;
 
+    /// <include file='FILE_STREAM_INFO.xml' path='doc/member[@name="FILE_STREAM_INFO.StreamName"]/*' />
     [NativeTypeName("WCHAR [1]")]
     public fixed ushort StreamName[1];
 }

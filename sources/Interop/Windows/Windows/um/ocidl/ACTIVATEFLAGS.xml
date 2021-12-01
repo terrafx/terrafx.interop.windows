@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ACTIVATEFLAGS">
+    <summary>
+      <para>Indicates whether an object is activated as a windowless object. It is used in <see cref="IOleInPlaceSiteEx.OnInPlaceActivateEx" />.</para>
+    </summary>
+    <seealso cref="IOleInPlaceSiteEx.OnInPlaceActivateEx" />
+  </member>
+  <member name="ACTIVATEFLAGS.ACTIVATE_WINDOWLESS">
+    <summary>
+      <para>Indicates that the object is activated in place as a windowless object. In the <see cref="IOleInPlaceSiteEx.OnInPlaceActivateEx" /> method, the container uses this value returned in the <i>dwFlags</i> parameter instead of calling the <see cref="IOleInPlaceObjectWindowless.GetWindow" />  method to determine if the object is windowless or not.</para>
+    </summary>
+  </member>
+</doc>

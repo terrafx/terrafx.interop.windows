@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="eAVEncDDHeadphoneMode">
+    <summary>
+      <para>Specifies headphone mode for a Dolby Digital audio stream. This enumeration is used with the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avencddheadphonemode-property">AVEncDDHeadphoneMode</a> property.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-enumerations">Codec API Enumerations</seealso>
+    <seealso cref="ICodecAPI Interface" />
+  </member>
+  <member name="eAVEncDDHeadphoneMode.eAVEncDDHeadphoneMode_NotIndicated">
+    <summary>
+      <para>Headphone mode is not indicated.</para>
+    </summary>
+  </member>
+  <member name="eAVEncDDHeadphoneMode.eAVEncDDHeadphoneMode_NotEncoded">
+    <summary>
+      <para>Headphone mode is disabled.</para>
+    </summary>
+  </member>
+  <member name="eAVEncDDHeadphoneMode.eAVEncDDHeadphoneMode_Encoded">
+    <summary>
+      <para>Headphone mode is enabled.</para>
+    </summary>
+  </member>
+</doc>

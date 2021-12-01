@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IExpDispSupport.xml' path='doc/member[@name="IExpDispSupport"]/*' />
 [Guid("0D7D1D00-6FC0-11D0-A974-00C04FD705A2")]
 [NativeTypeName("struct IExpDispSupport : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IExpDispSupport : IExpDispSupport.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IExpDispSupport : IExpDispSupport.Interface
         return ((delegate* unmanaged<IExpDispSupport*, Guid*, void**, int>)(lpVtbl[0]))((IExpDispSupport*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IExpDispSupport : IExpDispSupport.Interface
         return ((delegate* unmanaged<IExpDispSupport*, uint>)(lpVtbl[1]))((IExpDispSupport*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IExpDispSupport : IExpDispSupport.Interface
         return ((delegate* unmanaged<IExpDispSupport*, uint>)(lpVtbl[2]))((IExpDispSupport*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IExpDispSupport.xml' path='doc/member[@name="IExpDispSupport.FindConnectionPoint"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT FindConnectionPoint([NativeTypeName("const IID &")] Guid* riid, IConnectionPoint** ppccp)
@@ -46,6 +51,7 @@ public unsafe partial struct IExpDispSupport : IExpDispSupport.Interface
         return ((delegate* unmanaged<IExpDispSupport*, Guid*, IConnectionPoint**, int>)(lpVtbl[3]))((IExpDispSupport*)Unsafe.AsPointer(ref this), riid, ppccp);
     }
 
+    /// <include file='IExpDispSupport.xml' path='doc/member[@name="IExpDispSupport.OnTranslateAccelerator"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT OnTranslateAccelerator(MSG* pMsg, [NativeTypeName("DWORD")] uint grfModifiers)
@@ -53,6 +59,7 @@ public unsafe partial struct IExpDispSupport : IExpDispSupport.Interface
         return ((delegate* unmanaged<IExpDispSupport*, MSG*, uint, int>)(lpVtbl[4]))((IExpDispSupport*)Unsafe.AsPointer(ref this), pMsg, grfModifiers);
     }
 
+    /// <include file='IExpDispSupport.xml' path='doc/member[@name="IExpDispSupport.OnInvoke"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT OnInvoke([NativeTypeName("DISPID")] int dispidMember, [NativeTypeName("const IID &")] Guid* iid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pdispparams, VARIANT* pVarResult, EXCEPINFO* pexcepinfo, uint* puArgErr)

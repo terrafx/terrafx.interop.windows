@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_DATETIME.xml' path='doc/member[@name="WS_DATETIME"]/*' />
 public partial struct WS_DATETIME
 {
+    /// <include file='WS_DATETIME.xml' path='doc/member[@name="WS_DATETIME.ticks"]/*' />
     [NativeTypeName("unsigned long long")]
     public ulong ticks;
 
+    /// <include file='WS_DATETIME.xml' path='doc/member[@name="WS_DATETIME.format"]/*' />
     public WS_DATETIME_FORMAT format;
 }

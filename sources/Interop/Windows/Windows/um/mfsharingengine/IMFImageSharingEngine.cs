@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFImageSharingEngine.xml' path='doc/member[@name="IMFImageSharingEngine"]/*' />
 [Guid("CFA0AE8E-7E1C-44D2-AE68-FC4C148A6354")]
 [NativeTypeName("struct IMFImageSharingEngine : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IMFImageSharingEngine : IMFImageSharingEngine.Inter
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IMFImageSharingEngine : IMFImageSharingEngine.Inter
         return ((delegate* unmanaged<IMFImageSharingEngine*, Guid*, void**, int>)(lpVtbl[0]))((IMFImageSharingEngine*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IMFImageSharingEngine : IMFImageSharingEngine.Inter
         return ((delegate* unmanaged<IMFImageSharingEngine*, uint>)(lpVtbl[1]))((IMFImageSharingEngine*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IMFImageSharingEngine : IMFImageSharingEngine.Inter
         return ((delegate* unmanaged<IMFImageSharingEngine*, uint>)(lpVtbl[2]))((IMFImageSharingEngine*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFImageSharingEngine.xml' path='doc/member[@name="IMFImageSharingEngine.SetSource"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetSource(IUnknown* pStream)
@@ -48,6 +53,7 @@ public unsafe partial struct IMFImageSharingEngine : IMFImageSharingEngine.Inter
         return ((delegate* unmanaged<IMFImageSharingEngine*, IUnknown*, int>)(lpVtbl[3]))((IMFImageSharingEngine*)Unsafe.AsPointer(ref this), pStream);
     }
 
+    /// <include file='IMFImageSharingEngine.xml' path='doc/member[@name="IMFImageSharingEngine.GetDevice"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetDevice(DEVICE_INFO* pDevice)
@@ -55,6 +61,7 @@ public unsafe partial struct IMFImageSharingEngine : IMFImageSharingEngine.Inter
         return ((delegate* unmanaged<IMFImageSharingEngine*, DEVICE_INFO*, int>)(lpVtbl[4]))((IMFImageSharingEngine*)Unsafe.AsPointer(ref this), pDevice);
     }
 
+    /// <include file='IMFImageSharingEngine.xml' path='doc/member[@name="IMFImageSharingEngine.Shutdown"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT Shutdown()

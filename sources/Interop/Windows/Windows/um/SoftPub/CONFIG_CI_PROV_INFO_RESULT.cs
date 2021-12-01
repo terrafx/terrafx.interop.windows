@@ -5,16 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CONFIG_CI_PROV_INFO_RESULT.xml' path='doc/member[@name="CONFIG_CI_PROV_INFO_RESULT"]/*' />
 public partial struct CONFIG_CI_PROV_INFO_RESULT
 {
+    /// <include file='CONFIG_CI_PROV_INFO_RESULT.xml' path='doc/member[@name="CONFIG_CI_PROV_INFO_RESULT.hr"]/*' />
     public HRESULT hr;
 
+    /// <include file='CONFIG_CI_PROV_INFO_RESULT.xml' path='doc/member[@name="CONFIG_CI_PROV_INFO_RESULT.dwResult"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwResult;
 
+    /// <include file='CONFIG_CI_PROV_INFO_RESULT.xml' path='doc/member[@name="CONFIG_CI_PROV_INFO_RESULT.dwPolicyIndex"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwPolicyIndex;
 
+    /// <include file='CONFIG_CI_PROV_INFO_RESULT.xml' path='doc/member[@name="CONFIG_CI_PROV_INFO_RESULT.fIsExplicitDeny"]/*' />
     [NativeTypeName("BOOLEAN")]
     public byte fIsExplicitDeny;
 }

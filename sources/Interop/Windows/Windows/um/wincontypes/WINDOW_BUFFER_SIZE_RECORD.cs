@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WINDOW_BUFFER_SIZE_RECORD.xml' path='doc/member[@name="WINDOW_BUFFER_SIZE_RECORD"]/*' />
 public partial struct WINDOW_BUFFER_SIZE_RECORD
 {
+    /// <include file='WINDOW_BUFFER_SIZE_RECORD.xml' path='doc/member[@name="WINDOW_BUFFER_SIZE_RECORD.dwSize"]/*' />
     public COORD dwSize;
 }

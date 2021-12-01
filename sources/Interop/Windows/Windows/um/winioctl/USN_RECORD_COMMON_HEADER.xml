@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="USN_RECORD_COMMON_HEADER">
+    <summary>
+      <para>Contains the information for an update sequence number (USN) common header which is common through <see cref="USN_RECORD_V2" />, <see cref="USN_RECORD_V3" /> and <see cref="USN_RECORD_V4" />.</para>
+    </summary>
+    <seealso cref="USN_RECORD_EXTENT" />
+    <seealso cref="USN_RECORD_V2" />
+    <seealso cref="USN_RECORD_V3" />
+    <seealso cref="USN_RECORD_V4" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/FileIO/volume-management-structures">Volume Management Structures</seealso>
+  </member>
+  <member name="USN_RECORD_COMMON_HEADER.RecordLength">
+    <summary>
+      <para>The total length of a record, in bytes.</para>
+      <para>Because USN record is a variable size, the <b>RecordLength</b> member should be used when calculating the address of the next record in an output buffer, for example, a buffer that is returned from operations for the <see cref="DeviceIoControl" /> function that work with different USN record types.</para>
+      <para>For <see cref="USN_RECORD_V4" />, the size in bytes of any change journal record is at most the size of the structure, plus (NumberOfExtents-1) times size of the <see cref="USN_RECORD_EXTENT" />.</para>
+    </summary>
+  </member>
+  <member name="USN_RECORD_COMMON_HEADER.MajorVersion">
+    <summary>
+      <para>The major version number of the change journal software for this record.</para>
+      <para>For example, if the change journal software is version 4.0, the major version number is 4.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>2</description>
+          <description>The structure is a <see cref="USN_RECORD_V2" /> structure and the remainder of the structure should be parsed using that layout.</description>
+        </item>
+        <item>
+          <description>3</description>
+          <description>The structure is a <see cref="USN_RECORD_V3" /> structure and the remainder of the structure should be parsed using that layout.</description>
+        </item>
+        <item>
+          <description>4</description>
+          <description>The structure is a <see cref="USN_RECORD_V4" /> structure and the remainder of the structure should be parsed using that layout.</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="USN_RECORD_COMMON_HEADER.MinorVersion">
+    <summary>
+      <para>The minor version number of the change journal software for this record. For example, if the change journal software is version 4.0, the minor version number is zero.</para>
+    </summary>
+  </member>
+</doc>

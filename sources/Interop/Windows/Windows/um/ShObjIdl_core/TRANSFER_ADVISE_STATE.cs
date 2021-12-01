@@ -7,11 +7,19 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TRANSFER_ADVISE_STATE.xml' path='doc/member[@name="TRANSFER_ADVISE_STATE"]/*' />
 [Flags]
 public enum TRANSFER_ADVISE_STATE
 {
+    /// <include file='TRANSFER_ADVISE_STATE.xml' path='doc/member[@name="TRANSFER_ADVISE_STATE.TS_NONE"]/*' />
     TS_NONE = 0,
+
+    /// <include file='TRANSFER_ADVISE_STATE.xml' path='doc/member[@name="TRANSFER_ADVISE_STATE.TS_PERFORMING"]/*' />
     TS_PERFORMING = 0x1,
+
+    /// <include file='TRANSFER_ADVISE_STATE.xml' path='doc/member[@name="TRANSFER_ADVISE_STATE.TS_PREPARING"]/*' />
     TS_PREPARING = 0x2,
+
+    /// <include file='TRANSFER_ADVISE_STATE.xml' path='doc/member[@name="TRANSFER_ADVISE_STATE.TS_INDETERMINATE"]/*' />
     TS_INDETERMINATE = 0x4,
 }

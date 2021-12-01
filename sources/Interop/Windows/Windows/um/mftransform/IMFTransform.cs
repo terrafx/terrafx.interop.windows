@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFTransform.xml' path='doc/member[@name="IMFTransform"]/*' />
 [Guid("BF94C121-5B05-4E6F-8000-BA598961414D")]
 [NativeTypeName("struct IMFTransform : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMFTransform : IMFTransform.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMFTransform : IMFTransform.Interface
         return ((delegate* unmanaged<IMFTransform*, Guid*, void**, int>)(lpVtbl[0]))((IMFTransform*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMFTransform : IMFTransform.Interface
         return ((delegate* unmanaged<IMFTransform*, uint>)(lpVtbl[1]))((IMFTransform*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMFTransform : IMFTransform.Interface
         return ((delegate* unmanaged<IMFTransform*, uint>)(lpVtbl[2]))((IMFTransform*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFTransform.xml' path='doc/member[@name="IMFTransform.GetStreamLimits"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetStreamLimits([NativeTypeName("DWORD *")] uint* pdwInputMinimum, [NativeTypeName("DWORD *")] uint* pdwInputMaximum, [NativeTypeName("DWORD *")] uint* pdwOutputMinimum, [NativeTypeName("DWORD *")] uint* pdwOutputMaximum)
@@ -46,6 +51,7 @@ public unsafe partial struct IMFTransform : IMFTransform.Interface
         return ((delegate* unmanaged<IMFTransform*, uint*, uint*, uint*, uint*, int>)(lpVtbl[3]))((IMFTransform*)Unsafe.AsPointer(ref this), pdwInputMinimum, pdwInputMaximum, pdwOutputMinimum, pdwOutputMaximum);
     }
 
+    /// <include file='IMFTransform.xml' path='doc/member[@name="IMFTransform.GetStreamCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetStreamCount([NativeTypeName("DWORD *")] uint* pcInputStreams, [NativeTypeName("DWORD *")] uint* pcOutputStreams)
@@ -53,6 +59,7 @@ public unsafe partial struct IMFTransform : IMFTransform.Interface
         return ((delegate* unmanaged<IMFTransform*, uint*, uint*, int>)(lpVtbl[4]))((IMFTransform*)Unsafe.AsPointer(ref this), pcInputStreams, pcOutputStreams);
     }
 
+    /// <include file='IMFTransform.xml' path='doc/member[@name="IMFTransform.GetStreamIDs"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetStreamIDs([NativeTypeName("DWORD")] uint dwInputIDArraySize, [NativeTypeName("DWORD *")] uint* pdwInputIDs, [NativeTypeName("DWORD")] uint dwOutputIDArraySize, [NativeTypeName("DWORD *")] uint* pdwOutputIDs)
@@ -60,6 +67,7 @@ public unsafe partial struct IMFTransform : IMFTransform.Interface
         return ((delegate* unmanaged<IMFTransform*, uint, uint*, uint, uint*, int>)(lpVtbl[5]))((IMFTransform*)Unsafe.AsPointer(ref this), dwInputIDArraySize, pdwInputIDs, dwOutputIDArraySize, pdwOutputIDs);
     }
 
+    /// <include file='IMFTransform.xml' path='doc/member[@name="IMFTransform.GetInputStreamInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetInputStreamInfo([NativeTypeName("DWORD")] uint dwInputStreamID, MFT_INPUT_STREAM_INFO* pStreamInfo)
@@ -67,6 +75,7 @@ public unsafe partial struct IMFTransform : IMFTransform.Interface
         return ((delegate* unmanaged<IMFTransform*, uint, MFT_INPUT_STREAM_INFO*, int>)(lpVtbl[6]))((IMFTransform*)Unsafe.AsPointer(ref this), dwInputStreamID, pStreamInfo);
     }
 
+    /// <include file='IMFTransform.xml' path='doc/member[@name="IMFTransform.GetOutputStreamInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetOutputStreamInfo([NativeTypeName("DWORD")] uint dwOutputStreamID, MFT_OUTPUT_STREAM_INFO* pStreamInfo)
@@ -74,6 +83,7 @@ public unsafe partial struct IMFTransform : IMFTransform.Interface
         return ((delegate* unmanaged<IMFTransform*, uint, MFT_OUTPUT_STREAM_INFO*, int>)(lpVtbl[7]))((IMFTransform*)Unsafe.AsPointer(ref this), dwOutputStreamID, pStreamInfo);
     }
 
+    /// <include file='IMFTransform.xml' path='doc/member[@name="IMFTransform.GetAttributes"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetAttributes(IMFAttributes** pAttributes)
@@ -81,6 +91,7 @@ public unsafe partial struct IMFTransform : IMFTransform.Interface
         return ((delegate* unmanaged<IMFTransform*, IMFAttributes**, int>)(lpVtbl[8]))((IMFTransform*)Unsafe.AsPointer(ref this), pAttributes);
     }
 
+    /// <include file='IMFTransform.xml' path='doc/member[@name="IMFTransform.GetInputStreamAttributes"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT GetInputStreamAttributes([NativeTypeName("DWORD")] uint dwInputStreamID, IMFAttributes** pAttributes)
@@ -88,6 +99,7 @@ public unsafe partial struct IMFTransform : IMFTransform.Interface
         return ((delegate* unmanaged<IMFTransform*, uint, IMFAttributes**, int>)(lpVtbl[9]))((IMFTransform*)Unsafe.AsPointer(ref this), dwInputStreamID, pAttributes);
     }
 
+    /// <include file='IMFTransform.xml' path='doc/member[@name="IMFTransform.GetOutputStreamAttributes"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT GetOutputStreamAttributes([NativeTypeName("DWORD")] uint dwOutputStreamID, IMFAttributes** pAttributes)
@@ -95,6 +107,7 @@ public unsafe partial struct IMFTransform : IMFTransform.Interface
         return ((delegate* unmanaged<IMFTransform*, uint, IMFAttributes**, int>)(lpVtbl[10]))((IMFTransform*)Unsafe.AsPointer(ref this), dwOutputStreamID, pAttributes);
     }
 
+    /// <include file='IMFTransform.xml' path='doc/member[@name="IMFTransform.DeleteInputStream"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT DeleteInputStream([NativeTypeName("DWORD")] uint dwStreamID)
@@ -102,6 +115,7 @@ public unsafe partial struct IMFTransform : IMFTransform.Interface
         return ((delegate* unmanaged<IMFTransform*, uint, int>)(lpVtbl[11]))((IMFTransform*)Unsafe.AsPointer(ref this), dwStreamID);
     }
 
+    /// <include file='IMFTransform.xml' path='doc/member[@name="IMFTransform.AddInputStreams"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT AddInputStreams([NativeTypeName("DWORD")] uint cStreams, [NativeTypeName("DWORD *")] uint* adwStreamIDs)
@@ -109,6 +123,7 @@ public unsafe partial struct IMFTransform : IMFTransform.Interface
         return ((delegate* unmanaged<IMFTransform*, uint, uint*, int>)(lpVtbl[12]))((IMFTransform*)Unsafe.AsPointer(ref this), cStreams, adwStreamIDs);
     }
 
+    /// <include file='IMFTransform.xml' path='doc/member[@name="IMFTransform.GetInputAvailableType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT GetInputAvailableType([NativeTypeName("DWORD")] uint dwInputStreamID, [NativeTypeName("DWORD")] uint dwTypeIndex, IMFMediaType** ppType)
@@ -116,6 +131,7 @@ public unsafe partial struct IMFTransform : IMFTransform.Interface
         return ((delegate* unmanaged<IMFTransform*, uint, uint, IMFMediaType**, int>)(lpVtbl[13]))((IMFTransform*)Unsafe.AsPointer(ref this), dwInputStreamID, dwTypeIndex, ppType);
     }
 
+    /// <include file='IMFTransform.xml' path='doc/member[@name="IMFTransform.GetOutputAvailableType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT GetOutputAvailableType([NativeTypeName("DWORD")] uint dwOutputStreamID, [NativeTypeName("DWORD")] uint dwTypeIndex, IMFMediaType** ppType)
@@ -123,6 +139,7 @@ public unsafe partial struct IMFTransform : IMFTransform.Interface
         return ((delegate* unmanaged<IMFTransform*, uint, uint, IMFMediaType**, int>)(lpVtbl[14]))((IMFTransform*)Unsafe.AsPointer(ref this), dwOutputStreamID, dwTypeIndex, ppType);
     }
 
+    /// <include file='IMFTransform.xml' path='doc/member[@name="IMFTransform.SetInputType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT SetInputType([NativeTypeName("DWORD")] uint dwInputStreamID, IMFMediaType* pType, [NativeTypeName("DWORD")] uint dwFlags)
@@ -130,6 +147,7 @@ public unsafe partial struct IMFTransform : IMFTransform.Interface
         return ((delegate* unmanaged<IMFTransform*, uint, IMFMediaType*, uint, int>)(lpVtbl[15]))((IMFTransform*)Unsafe.AsPointer(ref this), dwInputStreamID, pType, dwFlags);
     }
 
+    /// <include file='IMFTransform.xml' path='doc/member[@name="IMFTransform.SetOutputType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT SetOutputType([NativeTypeName("DWORD")] uint dwOutputStreamID, IMFMediaType* pType, [NativeTypeName("DWORD")] uint dwFlags)
@@ -137,6 +155,7 @@ public unsafe partial struct IMFTransform : IMFTransform.Interface
         return ((delegate* unmanaged<IMFTransform*, uint, IMFMediaType*, uint, int>)(lpVtbl[16]))((IMFTransform*)Unsafe.AsPointer(ref this), dwOutputStreamID, pType, dwFlags);
     }
 
+    /// <include file='IMFTransform.xml' path='doc/member[@name="IMFTransform.GetInputCurrentType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT GetInputCurrentType([NativeTypeName("DWORD")] uint dwInputStreamID, IMFMediaType** ppType)
@@ -144,6 +163,7 @@ public unsafe partial struct IMFTransform : IMFTransform.Interface
         return ((delegate* unmanaged<IMFTransform*, uint, IMFMediaType**, int>)(lpVtbl[17]))((IMFTransform*)Unsafe.AsPointer(ref this), dwInputStreamID, ppType);
     }
 
+    /// <include file='IMFTransform.xml' path='doc/member[@name="IMFTransform.GetOutputCurrentType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT GetOutputCurrentType([NativeTypeName("DWORD")] uint dwOutputStreamID, IMFMediaType** ppType)
@@ -151,6 +171,7 @@ public unsafe partial struct IMFTransform : IMFTransform.Interface
         return ((delegate* unmanaged<IMFTransform*, uint, IMFMediaType**, int>)(lpVtbl[18]))((IMFTransform*)Unsafe.AsPointer(ref this), dwOutputStreamID, ppType);
     }
 
+    /// <include file='IMFTransform.xml' path='doc/member[@name="IMFTransform.GetInputStatus"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT GetInputStatus([NativeTypeName("DWORD")] uint dwInputStreamID, [NativeTypeName("DWORD *")] uint* pdwFlags)
@@ -158,6 +179,7 @@ public unsafe partial struct IMFTransform : IMFTransform.Interface
         return ((delegate* unmanaged<IMFTransform*, uint, uint*, int>)(lpVtbl[19]))((IMFTransform*)Unsafe.AsPointer(ref this), dwInputStreamID, pdwFlags);
     }
 
+    /// <include file='IMFTransform.xml' path='doc/member[@name="IMFTransform.GetOutputStatus"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public HRESULT GetOutputStatus([NativeTypeName("DWORD *")] uint* pdwFlags)
@@ -165,6 +187,7 @@ public unsafe partial struct IMFTransform : IMFTransform.Interface
         return ((delegate* unmanaged<IMFTransform*, uint*, int>)(lpVtbl[20]))((IMFTransform*)Unsafe.AsPointer(ref this), pdwFlags);
     }
 
+    /// <include file='IMFTransform.xml' path='doc/member[@name="IMFTransform.SetOutputBounds"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
     public HRESULT SetOutputBounds([NativeTypeName("LONGLONG")] long hnsLowerBound, [NativeTypeName("LONGLONG")] long hnsUpperBound)
@@ -172,6 +195,7 @@ public unsafe partial struct IMFTransform : IMFTransform.Interface
         return ((delegate* unmanaged<IMFTransform*, long, long, int>)(lpVtbl[21]))((IMFTransform*)Unsafe.AsPointer(ref this), hnsLowerBound, hnsUpperBound);
     }
 
+    /// <include file='IMFTransform.xml' path='doc/member[@name="IMFTransform.ProcessEvent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
     public HRESULT ProcessEvent([NativeTypeName("DWORD")] uint dwInputStreamID, IMFMediaEvent* pEvent)
@@ -179,6 +203,7 @@ public unsafe partial struct IMFTransform : IMFTransform.Interface
         return ((delegate* unmanaged<IMFTransform*, uint, IMFMediaEvent*, int>)(lpVtbl[22]))((IMFTransform*)Unsafe.AsPointer(ref this), dwInputStreamID, pEvent);
     }
 
+    /// <include file='IMFTransform.xml' path='doc/member[@name="IMFTransform.ProcessMessage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
     public HRESULT ProcessMessage(MFT_MESSAGE_TYPE eMessage, [NativeTypeName("ULONG_PTR")] nuint ulParam)
@@ -186,6 +211,7 @@ public unsafe partial struct IMFTransform : IMFTransform.Interface
         return ((delegate* unmanaged<IMFTransform*, MFT_MESSAGE_TYPE, nuint, int>)(lpVtbl[23]))((IMFTransform*)Unsafe.AsPointer(ref this), eMessage, ulParam);
     }
 
+    /// <include file='IMFTransform.xml' path='doc/member[@name="IMFTransform.ProcessInput"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(24)]
     public HRESULT ProcessInput([NativeTypeName("DWORD")] uint dwInputStreamID, IMFSample* pSample, [NativeTypeName("DWORD")] uint dwFlags)
@@ -193,6 +219,7 @@ public unsafe partial struct IMFTransform : IMFTransform.Interface
         return ((delegate* unmanaged<IMFTransform*, uint, IMFSample*, uint, int>)(lpVtbl[24]))((IMFTransform*)Unsafe.AsPointer(ref this), dwInputStreamID, pSample, dwFlags);
     }
 
+    /// <include file='IMFTransform.xml' path='doc/member[@name="IMFTransform.ProcessOutput"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(25)]
     public HRESULT ProcessOutput([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD")] uint cOutputBufferCount, MFT_OUTPUT_DATA_BUFFER* pOutputSamples, [NativeTypeName("DWORD *")] uint* pdwStatus)

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="STRRET">
+    <summary>
+      <para>Contains strings returned from the <see cref="IShellFolder" /> interface methods.</para>
+    </summary>
+    <seealso cref="IShellFolder.GetDisplayNameOf" />
+  </member>
+  <member name="STRRET.uType">
+    <summary>
+      <para>Type: <b>UINT</b></para>
+      <para>A value that specifies the desired format of the string. This can be one of the following values.</para>
+      <h4>STRRET_CSTR</h4>
+      <para>The string is returned in the <b>cStr</b> member.</para>
+      <h4>STRRET_OFFSET</h4>
+      <para>The <b>uOffset</b> member value indicates the number of bytes from the beginning of the item identifier list where the string is located.</para>
+      <h4>STRRET_WSTR</h4>
+      <para>The string is at the address specified by <b>pOleStr</b> member.</para>
+    </summary>
+  </member>
+  <member name="STRRET.DUMMYUNIONNAME">
+    <summary></summary>
+  </member>
+  <member name="STRRET.DUMMYUNIONNAME.pOleStr">
+    <summary>
+      <para>Type: <b>LPWSTR</b></para>
+      <para>A pointer to the string. This memory must be allocated with <see cref="CoTaskMemAlloc" />. It is the calling application's responsibility to free this memory with <see cref="CoTaskMemFree" /> when it is no longer needed.</para>
+    </summary>
+  </member>
+  <member name="STRRET.DUMMYUNIONNAME.uOffset">
+    <summary>
+      <para>Type: <b>UINT</b></para>
+      <para>The offset into the item identifier list.</para>
+    </summary>
+  </member>
+  <member name="STRRET.DUMMYUNIONNAME.cStr">
+    <summary>
+      <para>Type: <b>CHAR[MAX_PATH]</b></para>
+      <para>The buffer to receive the display name.</para>
+    </summary>
+  </member>
+</doc>

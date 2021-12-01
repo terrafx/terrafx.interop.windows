@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ITfCleanupContextDurationSink.OnEndCleanupContext">
+    <summary>
+      <para>Called when a context cleanup operation completes.</para>
+    </summary>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>A context cleanup occurs when:</para>
+      <list type="bullet">
+        <item>
+          <description>The text service is deactivated while a context is still on the context stack. This can occur when the active text service is changed or when the active language changes while the text service is active.</description>
+        </item>
+        <item>
+          <description>
+            <see cref="ITfThreadMgr.Deactivate" /> is called while a context is still on the context stack.</description>
+        </item>
+      </list>
+      <para>
+        <see cref="ITfCleanupContextDurationSink.OnStartCleanupContext" /> is called just before the TSF manager begins making <see cref="ITfCleanupContextSink.OnCleanupContext" /> notifications. When all of the OnCleanupContext notifications complete, the TSF manager calls <b>OnEndCleanupContext</b>.</para>
+    </remarks>
+    <seealso cref="ITfCleanupContextDurationSink interface" />
+    <seealso cref="ITfCleanupContextDurationSink.OnStartCleanupContext" />
+    <seealso cref="ITfCleanupContextSink.OnCleanupContext" />
+  </member>
+  <member name="ITfCleanupContextDurationSink.OnStartCleanupContext">
+    <summary>
+      <para>Called when a context cleanup operation is about to begin.</para>
+    </summary>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>A context cleanup occurs when:</para>
+      <list type="bullet">
+        <item>
+          <description>The text service is deactivated while a context is still on the context stack. This can occur when the active text service is changed or when the active language changes while the text service is active.</description>
+        </item>
+        <item>
+          <description>
+            <see cref="ITfThreadMgr.Deactivate" /> is called while a context is still on the context stack.</description>
+        </item>
+      </list>
+      <para>
+        <see cref="ITfCleanupContextDurationSink.OnStartCleanupContext" /> is called just before the TSF manager begins making <see cref="ITfCleanupContextSink.OnCleanupContext" /> notifications. When all of the OnCleanupContext notifications complete, the TSF manager calls <b>OnEndCleanupContext</b>.</para>
+    </remarks>
+    <seealso cref="ITfCleanupContextDurationSink interface" />
+    <seealso cref="ITfCleanupContextDurationSink.OnEndCleanupContext" />
+    <seealso cref="ITfCleanupContextSink.OnCleanupContext" />
+  </member>
+  <member name="ITfCleanupContextDurationSink">
+    <summary>
+      <para>The <b>ITfCleanupContextDurationSink</b> interface is implemented by a text service to receive notifications when a context cleanup operation is performed. This notification sink is installed by calling <see cref="ITfSourceSingle.AdviseSingleSink" /> with IID_ITfCleanupContextDurationSink.</para>
+    </summary>
+    <remarks>
+      <para>A context cleanup occurs when:</para>
+      <list type="bullet">
+        <item>
+          <description>The text service is deactivated while a context is still on the context stack. This can occur when the active text service is changed or when the active language changes while the text service is active.</description>
+        </item>
+        <item>
+          <description>
+            <see cref="ITfThreadMgr.Deactivate " /> is called while a context is still on the context stack.</description>
+        </item>
+      </list>
+      <para>A text service can use the notifications of this interface to prevent itself from performing any context initialization during the context cleanup operation.</para>
+    </remarks>
+    <seealso cref="ITfSourceSingle.AdviseSingleSink " />
+    <seealso cref="ITfThreadMgr.Deactivate " />
+    <seealso cref="IUnknown" />
+  </member>
+</doc>

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CSPLATFORM">
+    <summary>
+      <para>Contains an operating system platform and processor architecture.</para>
+    </summary>
+    <seealso cref="QUERYCONTEXT" />
+  </member>
+  <member name="CSPLATFORM.dwPlatformId">
+    <summary>
+      <para>The operating system platform. See the <b>dwPlatformId</b> member of <see cref="OSVERSIONINFO" />.</para>
+    </summary>
+  </member>
+  <member name="CSPLATFORM.dwVersionHi">
+    <summary>
+      <para>The major version of the operating system.</para>
+    </summary>
+  </member>
+  <member name="CSPLATFORM.dwVersionLo">
+    <summary>
+      <para>The minor version of the operating system.</para>
+    </summary>
+  </member>
+  <member name="CSPLATFORM.dwProcessorArch">
+    <summary>
+      <para>The processor architecture.
+See the <b>wProcessorArchitecture</b> member of <see cref="SYSTEM_INFO" />.</para>
+    </summary>
+  </member>
+</doc>

@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DEVICE_DSM_OFFLOAD_WRITE_PARAMETERS">
+    <summary>
+      <para>Specifies parameters for the offload write operation. An offload write operation is
+initiated by specifying <b>DeviceDsmAction_OffloadWrite</b> in the
+<b>Action</b> member of the
+<see cref="DEVICE_MANAGE_DATA_SET_ATTRIBUTES" /></para>
+      <para>structure passed in a
+<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_manage_data_set_attributes">IOCTL_STORAGE_MANAGE_DATA_SET_ATTRIBUTES</a></para>
+      <para>control code.</para>
+    </summary>
+    <seealso cref="DEVICE_MANAGE_DATA_SET_ATTRIBUTES" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/DevIO/device-management-structures">Device Management Structures</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_manage_data_set_attributes">IOCTL_STORAGE_MANAGE_DATA_SET_ATTRIBUTES</seealso>
+    <seealso cref="STORAGE_OFFLOAD_TOKEN" />
+  </member>
+  <member name="DEVICE_DSM_OFFLOAD_WRITE_PARAMETERS.Flags">
+    <summary>
+      <para>Set to 0.</para>
+    </summary>
+  </member>
+  <member name="DEVICE_DSM_OFFLOAD_WRITE_PARAMETERS.Reserved">
+    <summary>
+      <para>Reserved.</para>
+    </summary>
+  </member>
+  <member name="DEVICE_DSM_OFFLOAD_WRITE_PARAMETERS.TokenOffset">
+    <summary>
+      <para>The starting offset to copy from the range bound to the token</para>
+    </summary>
+  </member>
+  <member name="DEVICE_DSM_OFFLOAD_WRITE_PARAMETERS.Token">
+    <summary>
+      <para>
+        <see cref="STORAGE_OFFLOAD_TOKEN" /> structure containing
+the token returned from the offload read operation.</para>
+    </summary>
+  </member>
+</doc>

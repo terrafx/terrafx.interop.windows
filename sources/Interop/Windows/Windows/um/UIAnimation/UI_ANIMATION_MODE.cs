@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='UI_ANIMATION_MODE.xml' path='doc/member[@name="UI_ANIMATION_MODE"]/*' />
 public enum UI_ANIMATION_MODE
 {
+    /// <include file='UI_ANIMATION_MODE.xml' path='doc/member[@name="UI_ANIMATION_MODE.UI_ANIMATION_MODE_DISABLED"]/*' />
     UI_ANIMATION_MODE_DISABLED = 0,
+
+    /// <include file='UI_ANIMATION_MODE.xml' path='doc/member[@name="UI_ANIMATION_MODE.UI_ANIMATION_MODE_SYSTEM_DEFAULT"]/*' />
     UI_ANIMATION_MODE_SYSTEM_DEFAULT = 1,
+
+    /// <include file='UI_ANIMATION_MODE.xml' path='doc/member[@name="UI_ANIMATION_MODE.UI_ANIMATION_MODE_ENABLED"]/*' />
     UI_ANIMATION_MODE_ENABLED = 2,
 }

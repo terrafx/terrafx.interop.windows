@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IGraphBuilder.xml' path='doc/member[@name="IGraphBuilder"]/*' />
 [Guid("56A868A9-0AD4-11CE-B03A-0020AF0BA770")]
 [NativeTypeName("struct IGraphBuilder : IFilterGraph")]
 [NativeInheritance("IFilterGraph")]
@@ -16,6 +17,7 @@ public unsafe partial struct IGraphBuilder : IGraphBuilder.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IGraphBuilder : IGraphBuilder.Interface
         return ((delegate* unmanaged<IGraphBuilder*, Guid*, void**, int>)(lpVtbl[0]))((IGraphBuilder*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IGraphBuilder : IGraphBuilder.Interface
         return ((delegate* unmanaged<IGraphBuilder*, uint>)(lpVtbl[1]))((IGraphBuilder*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IGraphBuilder : IGraphBuilder.Interface
         return ((delegate* unmanaged<IGraphBuilder*, uint>)(lpVtbl[2]))((IGraphBuilder*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IFilterGraph.AddFilter" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT AddFilter(IBaseFilter* pFilter, [NativeTypeName("LPCWSTR")] ushort* pName)
@@ -46,6 +51,7 @@ public unsafe partial struct IGraphBuilder : IGraphBuilder.Interface
         return ((delegate* unmanaged<IGraphBuilder*, IBaseFilter*, ushort*, int>)(lpVtbl[3]))((IGraphBuilder*)Unsafe.AsPointer(ref this), pFilter, pName);
     }
 
+    /// <inheritdoc cref="IFilterGraph.RemoveFilter" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT RemoveFilter(IBaseFilter* pFilter)
@@ -53,6 +59,7 @@ public unsafe partial struct IGraphBuilder : IGraphBuilder.Interface
         return ((delegate* unmanaged<IGraphBuilder*, IBaseFilter*, int>)(lpVtbl[4]))((IGraphBuilder*)Unsafe.AsPointer(ref this), pFilter);
     }
 
+    /// <inheritdoc cref="IFilterGraph.EnumFilters" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT EnumFilters(IEnumFilters** ppEnum)
@@ -60,6 +67,7 @@ public unsafe partial struct IGraphBuilder : IGraphBuilder.Interface
         return ((delegate* unmanaged<IGraphBuilder*, IEnumFilters**, int>)(lpVtbl[5]))((IGraphBuilder*)Unsafe.AsPointer(ref this), ppEnum);
     }
 
+    /// <inheritdoc cref="IFilterGraph.FindFilterByName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT FindFilterByName([NativeTypeName("LPCWSTR")] ushort* pName, IBaseFilter** ppFilter)
@@ -67,6 +75,7 @@ public unsafe partial struct IGraphBuilder : IGraphBuilder.Interface
         return ((delegate* unmanaged<IGraphBuilder*, ushort*, IBaseFilter**, int>)(lpVtbl[6]))((IGraphBuilder*)Unsafe.AsPointer(ref this), pName, ppFilter);
     }
 
+    /// <inheritdoc cref="IFilterGraph.ConnectDirect" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT ConnectDirect(IPin* ppinOut, IPin* ppinIn, [NativeTypeName("const AM_MEDIA_TYPE *")] AM_MEDIA_TYPE* pmt)
@@ -74,6 +83,7 @@ public unsafe partial struct IGraphBuilder : IGraphBuilder.Interface
         return ((delegate* unmanaged<IGraphBuilder*, IPin*, IPin*, AM_MEDIA_TYPE*, int>)(lpVtbl[7]))((IGraphBuilder*)Unsafe.AsPointer(ref this), ppinOut, ppinIn, pmt);
     }
 
+    /// <inheritdoc cref="IFilterGraph.Reconnect" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT Reconnect(IPin* ppin)
@@ -81,6 +91,7 @@ public unsafe partial struct IGraphBuilder : IGraphBuilder.Interface
         return ((delegate* unmanaged<IGraphBuilder*, IPin*, int>)(lpVtbl[8]))((IGraphBuilder*)Unsafe.AsPointer(ref this), ppin);
     }
 
+    /// <inheritdoc cref="IFilterGraph.Disconnect" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT Disconnect(IPin* ppin)
@@ -88,6 +99,7 @@ public unsafe partial struct IGraphBuilder : IGraphBuilder.Interface
         return ((delegate* unmanaged<IGraphBuilder*, IPin*, int>)(lpVtbl[9]))((IGraphBuilder*)Unsafe.AsPointer(ref this), ppin);
     }
 
+    /// <inheritdoc cref="IFilterGraph.SetDefaultSyncSource" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT SetDefaultSyncSource()
@@ -95,6 +107,7 @@ public unsafe partial struct IGraphBuilder : IGraphBuilder.Interface
         return ((delegate* unmanaged<IGraphBuilder*, int>)(lpVtbl[10]))((IGraphBuilder*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IGraphBuilder.xml' path='doc/member[@name="IGraphBuilder.Connect"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT Connect(IPin* ppinOut, IPin* ppinIn)
@@ -102,6 +115,7 @@ public unsafe partial struct IGraphBuilder : IGraphBuilder.Interface
         return ((delegate* unmanaged<IGraphBuilder*, IPin*, IPin*, int>)(lpVtbl[11]))((IGraphBuilder*)Unsafe.AsPointer(ref this), ppinOut, ppinIn);
     }
 
+    /// <include file='IGraphBuilder.xml' path='doc/member[@name="IGraphBuilder.Render"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT Render(IPin* ppinOut)
@@ -109,6 +123,7 @@ public unsafe partial struct IGraphBuilder : IGraphBuilder.Interface
         return ((delegate* unmanaged<IGraphBuilder*, IPin*, int>)(lpVtbl[12]))((IGraphBuilder*)Unsafe.AsPointer(ref this), ppinOut);
     }
 
+    /// <include file='IGraphBuilder.xml' path='doc/member[@name="IGraphBuilder.RenderFile"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT RenderFile([NativeTypeName("LPCWSTR")] ushort* lpcwstrFile, [NativeTypeName("LPCWSTR")] ushort* lpcwstrPlayList)
@@ -116,6 +131,7 @@ public unsafe partial struct IGraphBuilder : IGraphBuilder.Interface
         return ((delegate* unmanaged<IGraphBuilder*, ushort*, ushort*, int>)(lpVtbl[13]))((IGraphBuilder*)Unsafe.AsPointer(ref this), lpcwstrFile, lpcwstrPlayList);
     }
 
+    /// <include file='IGraphBuilder.xml' path='doc/member[@name="IGraphBuilder.AddSourceFilter"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT AddSourceFilter([NativeTypeName("LPCWSTR")] ushort* lpcwstrFileName, [NativeTypeName("LPCWSTR")] ushort* lpcwstrFilterName, IBaseFilter** ppFilter)
@@ -123,6 +139,7 @@ public unsafe partial struct IGraphBuilder : IGraphBuilder.Interface
         return ((delegate* unmanaged<IGraphBuilder*, ushort*, ushort*, IBaseFilter**, int>)(lpVtbl[14]))((IGraphBuilder*)Unsafe.AsPointer(ref this), lpcwstrFileName, lpcwstrFilterName, ppFilter);
     }
 
+    /// <include file='IGraphBuilder.xml' path='doc/member[@name="IGraphBuilder.SetLogFile"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT SetLogFile([NativeTypeName("DWORD_PTR")] nuint hFile)
@@ -130,6 +147,7 @@ public unsafe partial struct IGraphBuilder : IGraphBuilder.Interface
         return ((delegate* unmanaged<IGraphBuilder*, nuint, int>)(lpVtbl[15]))((IGraphBuilder*)Unsafe.AsPointer(ref this), hFile);
     }
 
+    /// <include file='IGraphBuilder.xml' path='doc/member[@name="IGraphBuilder.Abort"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT Abort()
@@ -137,6 +155,7 @@ public unsafe partial struct IGraphBuilder : IGraphBuilder.Interface
         return ((delegate* unmanaged<IGraphBuilder*, int>)(lpVtbl[16]))((IGraphBuilder*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IGraphBuilder.xml' path='doc/member[@name="IGraphBuilder.ShouldOperationContinue"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT ShouldOperationContinue()

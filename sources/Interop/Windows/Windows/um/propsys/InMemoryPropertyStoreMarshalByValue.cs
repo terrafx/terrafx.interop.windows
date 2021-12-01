@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='InMemoryPropertyStoreMarshalByValue.xml' path='doc/member[@name="InMemoryPropertyStoreMarshalByValue"]/*' />
 [Guid("D4CA0E2D-6DA7-4B75-A97C-5F306F0EAEDC")]
 public partial struct InMemoryPropertyStoreMarshalByValue
 {

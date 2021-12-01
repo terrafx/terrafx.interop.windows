@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MF_QUALITY_LEVEL">
+    <summary>
+      <para>Specifies the quality level for a pipeline component. The quality level determines how the component consumes or produces samples.</para>
+    </summary>
+    <remarks>
+      <para>Each successive quality level decreases the amount of processing that is needed, while also reducing the resulting quality of the audio or video. The specific algorithm used to reduce quality depends on the component. Mode 1 is the least aggressive mode, and mode 5 is the most aggressive. A component is not required to implement all five levels. Also, the same quality level might not be comparable between two different components.</para>
+      <para>Video decoders can often reduce quality by leaving out certain post-processing steps. The enhanced video renderer (EVR) can sometimes reduce quality by switching to a different deinterlacing mode.</para>
+    </remarks>
+    <seealso cref="IMFQualityAdvise" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+  </member>
+  <member name="MF_QUALITY_LEVEL.MF_QUALITY_NORMAL">
+    <summary>
+      <para>Normal quality.</para>
+    </summary>
+  </member>
+  <member name="MF_QUALITY_LEVEL.MF_QUALITY_NORMAL_MINUS_1">
+    <summary>
+      <para>One level below normal quality.</para>
+    </summary>
+  </member>
+  <member name="MF_QUALITY_LEVEL.MF_QUALITY_NORMAL_MINUS_2">
+    <summary>
+      <para>Two levels below normal quality.</para>
+    </summary>
+  </member>
+  <member name="MF_QUALITY_LEVEL.MF_QUALITY_NORMAL_MINUS_3">
+    <summary>
+      <para>Three levels below normal quality.</para>
+    </summary>
+  </member>
+  <member name="MF_QUALITY_LEVEL.MF_QUALITY_NORMAL_MINUS_4">
+    <summary>
+      <para>Four levels below normal quality.</para>
+    </summary>
+  </member>
+  <member name="MF_QUALITY_LEVEL.MF_QUALITY_NORMAL_MINUS_5">
+    <summary>
+      <para>Five levels below normal quality.</para>
+    </summary>
+  </member>
+  <member name="MF_QUALITY_LEVEL.MF_NUM_QUALITY_LEVELS">
+    <summary>
+      <para>Maximum number of quality levels. This value is not a valid flag.</para>
+    </summary>
+  </member>
+</doc>

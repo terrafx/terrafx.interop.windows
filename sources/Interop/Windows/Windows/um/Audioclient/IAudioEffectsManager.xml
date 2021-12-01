@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IAudioEffectsManager.GetAudioEffects">
+    <summary>
+      <para>Gets the current list of audio effects for the associated audio stream.</para>
+    </summary>
+    <param name="effects">
+      <para>Receives a pointer to an array of <see cref="AUDIO_EFFECT" /> structures representing the current list of audio effects.</para>
+    </param>
+    <param name="numEffects">
+      <para>Receives the number of <b>AUDIO_EFFECT</b> structures returned in <i>effects</i>.</para>
+    </param>
+    <returns>
+      <para>Returns an HRESULT including but not limited to the following.</para>
+      <para>| Value | Description |
+|-------|-------------|
+| S_OK  | Success     |
+| AUDCLNT_E_DEVICE_INVALIDATED | The associated audio stream has been destroyed. |</para>
+    </returns>
+    <remarks>
+      <para>The caller is responsible for freeing the array using <see cref="CoTaskMemFree" />.</para>
+      <para>Register an <see cref="IAudioEffectsChangedNotificationClient" /> to receive notifications when the list of audio effects changes.</para>
+    </remarks>
+    <seealso cref="AUDIO_EFFECT" />
+    <seealso cref="IAudioEffectsChangedNotificationClient" />
+  </member>
+  <member name="IAudioEffectsManager.RegisterAudioEffectsChangedNotificationCallback">
+    <summary>
+      <para>Registers an <see cref="IAudioEffectsChangedNotificationClient" /> interface. This callback interface allows applications to receive notifications when the list of audio effects changes or the resources needed to enable an effect changes, i.e. when the value of the <i>canSetState</i> field of the associated <see cref="AUDIO_EFFECT" /> changes.</para>
+    </summary>
+    <param name="client">
+      <para>The <b>IAudioEffectsChangedNotificationClient</b> interface to register.</para>
+    </param>
+    <returns>
+      <para>| Value | Description |
+|-------|-------------|
+| S_OK  | Success     |
+| AUDCLNT_E_DEVICE_INVALIDATED | The associated audio stream has been destroyed. |</para>
+    </returns>
+    <remarks>
+      <para>Unregister the callback interface by calling <see cref="UnregisterAudioEffectsChangedNotificationCallback" />.</para>
+    </remarks>
+  </member>
+  <member name="IAudioEffectsManager.SetAudioEffectState">
+    <summary>
+      <para>Sets the state of the specified audio effect.</para>
+    </summary>
+    <param name="effectId">
+      <para>The GUID identifier of the effect for which the state is being changed. Audio effect GUIDs are defined in <a href="https://docs.microsoft.com//windows-hardware/drivers/audio/ksmedia-h">ksmedia.h</a>.</para>
+    </param>
+    <param name="state">
+      <para>A value from the <see cref="AUDIO_EFFECT_STATE" /> enumerating specifying the state to set.</para>
+    </param>
+    <returns>
+      <para>Returns an HRESULT including but not limited to the following.</para>
+      <para>| Value | Description |
+|-------|-------------|
+| S_OK  | Success     |
+| AUDCLNT_E_EFFECT_NOT_AVAILABLE | The specifed effect is not available |
+| AUDCLNT_E_EFFECT_STATE_READ_ONLY | The specified effect has a state that is read-only |
+| AUDCLNT_E_DEVICE_INVALIDATED | The associated audio stream has been destroyed. |</para>
+    </returns>
+    <remarks>
+      <para>Get the current list of audio effects for the associated audio stream by calling <see cref="GetAudioEffects" />.</para>
+    </remarks>
+  </member>
+  <member name="IAudioEffectsManager.UnregisterAudioEffectsChangedNotificationCallback">
+    <summary>
+      <para>Unregisters an <see cref="IAudioEffectsChangedNotificationClient" /> interface.</para>
+    </summary>
+    <param name="client">
+      <para>The <b>IAudioEffectsChangedNotificationClient</b> interface to unregister.</para>
+    </param>
+    <returns>
+      <para>| Value | Description |
+|-------|-------------|
+| S_OK  | Success     |
+| AUDCLNT_E_DEVICE_INVALIDATED | The associated audio stream has been destroyed. |</para>
+    </returns>
+    <remarks>
+      <para>Register the callback interface by calling <see cref="RegisterAudioEffectsChangedNotificationCallback" />.</para>
+    </remarks>
+  </member>
+  <member name="IAudioEffectsManager">
+    <summary>
+      <para>Provides management functionality for the audio effects pipeline for the associated audio stream, allowing applications to get the current list of effects, set the state of effects, and to register for notifications when the list of effects or effect states change.</para>
+    </summary>
+    <remarks>
+      <para>Get an instance of this interface by calling <see cref="IAudioClient.GetService" /> passing in the interface pointer of the <b>IAudioEffectsManager</b> interface.</para>
+      <code>wil.com_ptr_nothrow&lt;IAudioEffectsManager&gt; audioEffectsManager;
+RETURN_IF_FAILED(client-&gt;GetService(IID_PPV_ARGS(&amp;amp;amp;amp;amp;amp;audioEffectsManager)));
+</code>
+    </remarks>
+  </member>
+</doc>

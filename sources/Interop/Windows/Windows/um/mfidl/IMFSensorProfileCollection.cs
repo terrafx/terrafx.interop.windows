@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFSensorProfileCollection.xml' path='doc/member[@name="IMFSensorProfileCollection"]/*' />
 [Guid("C95EA55B-0187-48BE-9353-8D2507662351")]
 [NativeTypeName("struct IMFSensorProfileCollection : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IMFSensorProfileCollection : IMFSensorProfileCollec
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IMFSensorProfileCollection : IMFSensorProfileCollec
         return ((delegate* unmanaged<IMFSensorProfileCollection*, Guid*, void**, int>)(lpVtbl[0]))((IMFSensorProfileCollection*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IMFSensorProfileCollection : IMFSensorProfileCollec
         return ((delegate* unmanaged<IMFSensorProfileCollection*, uint>)(lpVtbl[1]))((IMFSensorProfileCollection*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IMFSensorProfileCollection : IMFSensorProfileCollec
         return ((delegate* unmanaged<IMFSensorProfileCollection*, uint>)(lpVtbl[2]))((IMFSensorProfileCollection*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFSensorProfileCollection.xml' path='doc/member[@name="IMFSensorProfileCollection.GetProfileCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     [return: NativeTypeName("DWORD")]
@@ -49,6 +54,7 @@ public unsafe partial struct IMFSensorProfileCollection : IMFSensorProfileCollec
         return ((delegate* unmanaged<IMFSensorProfileCollection*, uint>)(lpVtbl[3]))((IMFSensorProfileCollection*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFSensorProfileCollection.xml' path='doc/member[@name="IMFSensorProfileCollection.GetProfile"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetProfile([NativeTypeName("DWORD")] uint Index, IMFSensorProfile** ppProfile)
@@ -56,6 +62,7 @@ public unsafe partial struct IMFSensorProfileCollection : IMFSensorProfileCollec
         return ((delegate* unmanaged<IMFSensorProfileCollection*, uint, IMFSensorProfile**, int>)(lpVtbl[4]))((IMFSensorProfileCollection*)Unsafe.AsPointer(ref this), Index, ppProfile);
     }
 
+    /// <include file='IMFSensorProfileCollection.xml' path='doc/member[@name="IMFSensorProfileCollection.AddProfile"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT AddProfile(IMFSensorProfile* pProfile)
@@ -63,6 +70,7 @@ public unsafe partial struct IMFSensorProfileCollection : IMFSensorProfileCollec
         return ((delegate* unmanaged<IMFSensorProfileCollection*, IMFSensorProfile*, int>)(lpVtbl[5]))((IMFSensorProfileCollection*)Unsafe.AsPointer(ref this), pProfile);
     }
 
+    /// <include file='IMFSensorProfileCollection.xml' path='doc/member[@name="IMFSensorProfileCollection.FindProfile"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT FindProfile(SENSORPROFILEID* ProfileId, IMFSensorProfile** ppProfile)
@@ -70,6 +78,7 @@ public unsafe partial struct IMFSensorProfileCollection : IMFSensorProfileCollec
         return ((delegate* unmanaged<IMFSensorProfileCollection*, SENSORPROFILEID*, IMFSensorProfile**, int>)(lpVtbl[6]))((IMFSensorProfileCollection*)Unsafe.AsPointer(ref this), ProfileId, ppProfile);
     }
 
+    /// <include file='IMFSensorProfileCollection.xml' path='doc/member[@name="IMFSensorProfileCollection.RemoveProfileByIndex"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public void RemoveProfileByIndex([NativeTypeName("DWORD")] uint Index)
@@ -77,6 +86,7 @@ public unsafe partial struct IMFSensorProfileCollection : IMFSensorProfileCollec
         ((delegate* unmanaged<IMFSensorProfileCollection*, uint, void>)(lpVtbl[7]))((IMFSensorProfileCollection*)Unsafe.AsPointer(ref this), Index);
     }
 
+    /// <include file='IMFSensorProfileCollection.xml' path='doc/member[@name="IMFSensorProfileCollection.RemoveProfile"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public void RemoveProfile(SENSORPROFILEID* ProfileId)

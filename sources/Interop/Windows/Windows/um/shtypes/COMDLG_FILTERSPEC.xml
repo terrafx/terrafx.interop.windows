@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="COMDLG_FILTERSPEC">
+    <summary>
+      <para>Used generically to filter elements.</para>
+    </summary>
+  </member>
+  <member name="COMDLG_FILTERSPEC.pszName">
+    <summary>
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>A pointer to a buffer that contains the friendly name of the filter.</para>
+    </summary>
+  </member>
+  <member name="COMDLG_FILTERSPEC.pszSpec">
+    <summary>
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>A pointer to a buffer that contains the filter pattern.</para>
+    </summary>
+  </member>
+</doc>

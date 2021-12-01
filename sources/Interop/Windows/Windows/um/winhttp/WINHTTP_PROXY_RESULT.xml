@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WINHTTP_PROXY_RESULT">
+    <summary>
+      <para>The <b>WINHTTP_PROXY_RESULT</b> structure contains  collection of proxy result entries provided by <see cref="WinHttpGetProxyResult" />.</para>
+    </summary>
+    <seealso cref="WINHTTP_PROXY_RESULT_ENTRY" />
+    <seealso cref="WinHttpFreeProxyResult" />
+    <seealso cref="WinHttpGetProxyResult" />
+  </member>
+  <member name="WINHTTP_PROXY_RESULT.cEntries">
+    <summary>
+      <para>The number of entries in the <b>pEntries</b> array.</para>
+    </summary>
+  </member>
+  <member name="WINHTTP_PROXY_RESULT.pEntries">
+    <summary>
+      <para>A pointer to an array of <see cref="WINHTTP_PROXY_RESULT_ENTRY" /> structures.</para>
+    </summary>
+  </member>
+</doc>

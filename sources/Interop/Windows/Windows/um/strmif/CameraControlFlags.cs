@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CameraControlFlags.xml' path='doc/member[@name="CameraControlFlags"]/*' />
 public enum CameraControlFlags
 {
+    /// <include file='CameraControlFlags.xml' path='doc/member[@name="CameraControlFlags.CameraControl_Flags_Auto"]/*' />
     CameraControl_Flags_Auto = 0x1,
+
+    /// <include file='CameraControlFlags.xml' path='doc/member[@name="CameraControlFlags.CameraControl_Flags_Manual"]/*' />
     CameraControl_Flags_Manual = 0x2,
 }

@@ -5,18 +5,24 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HMAC_INFO.xml' path='doc/member[@name="HMAC_INFO"]/*' />
 public unsafe partial struct HMAC_INFO
 {
+    /// <include file='HMAC_INFO.xml' path='doc/member[@name="HMAC_INFO.HashAlgid"]/*' />
     [NativeTypeName("ALG_ID")]
     public uint HashAlgid;
 
+    /// <include file='HMAC_INFO.xml' path='doc/member[@name="HMAC_INFO.pbInnerString"]/*' />
     public byte* pbInnerString;
 
+    /// <include file='HMAC_INFO.xml' path='doc/member[@name="HMAC_INFO.cbInnerString"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbInnerString;
 
+    /// <include file='HMAC_INFO.xml' path='doc/member[@name="HMAC_INFO.pbOuterString"]/*' />
     public byte* pbOuterString;
 
+    /// <include file='HMAC_INFO.xml' path='doc/member[@name="HMAC_INFO.cbOuterString"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbOuterString;
 }

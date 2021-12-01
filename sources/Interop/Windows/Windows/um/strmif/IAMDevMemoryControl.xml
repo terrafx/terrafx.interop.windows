@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IAMDevMemoryControl.GetDevId">
+    <summary>
+      <para>
+        <b>Note</b>  The <b>IAMDevMemoryControl</b> interface is deprecated.</para>
+      <para>Retrieves the device ID of the on-board memory allocator.</para>
+    </summary>
+    <param name="pdwDevId">
+      <para>Pointer to the device ID.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value that depends on the implementation of the interface.</para>
+    </returns>
+    <remarks>
+      <para>This method retrieves a unique ID that the hardware filter can use to verify that the specified allocator passed uses its on-board memory (because there can be more than one). The ID will be the same one as used to create the allocator object (using <b>CoCreateInstance</b>). For another filter to be able to use the on-board memory, it must have the same device ID as the on-board memory allocator.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMDevMemoryControl Interface" />
+  </member>
+  <member name="IAMDevMemoryControl.QueryWriteSync">
+    <summary>
+      <para>
+        <b>Note</b>  The <b>IAMDevMemoryControl</b> interface is deprecated.</para>
+      <para>Checks if the memory supported by the allocator requires the use of the <see cref="IAMDevMemoryControl.WriteSync" /> method.</para>
+    </summary>
+    <returns>
+      <para>Returns S_OK if the method is required, or S_FALSE otherwise.</para>
+    </returns>
+    <remarks>
+      <para>Not all on-board memory needs to have <see cref="WriteSync" /> called to synchronize with the completed write. This method is used to check if the call is necessary.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMDevMemoryControl Interface" />
+  </member>
+  <member name="IAMDevMemoryControl.WriteSync">
+    <summary>
+      <para>
+        <b>Note</b>  The <b>IAMDevMemoryControl</b> interface is deprecated.</para>
+      <para>Used to synchronize with the completed write. This method returns when any data being written to the particular allocator region is fully written into the memory.</para>
+    </summary>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>A time-out has occurred without this method confirming that data was written.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The data was successfully written into memory.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_NOT_COMMITTED</b>
+            </para>
+          </description>
+          <description>
+            <para>The allocator hasn't called the <see cref="IMemAllocator.Commit" /> method.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method guarantees that all prior write operations to allocated memory have succeeded. Subsequent memory write operations require another call to <code>WriteSync</code>.</para>
+      <para>This method is implementation dependent, and is used (when necessary) to synchronize memory write operations to the memory. The driver of the on-board memory provides the implementation.</para>
+      <para>The <see cref="IAMDevMemoryControl" /> interface is typically found on memory that is accessed through a Peripheral Component Interconnect (PCI) bridge. (A PCI is a local bus for personal computers that provides a high-speed data path between the processor and peripheral devices.) Memory behind a PCI bridge must be synchronized after a memory write operation completes, if another device will access that memory from behind the PCI bridge. This is because the host access to the memory is buffered through the PCI bridge FIFO (first in first out), and the host will assume the write is completed before the bridge actually writes the data. A subsequent action by a device behind the bridge, such as a SCSI controller, might read the memory before the write is completed, if the <b>IAMDevMemoryControl.WriteSync</b> method is not called.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMDevMemoryControl Interface" />
+  </member>
+  <member name="IAMDevMemoryControl">
+    <summary>
+      <para>
+        <b>Note</b>  This interface is no longer supported by the AVI Splitter.</para>
+      <para>
+        <b>Note</b>  It was defined to support certain older hardware decoders that required AVI files to be read directly into hardware memory. The interface enables the AVI parser to allocate memory from the downstream filter but still provide its own allocator. There should be no need for any newer devices to support this interface.</para>
+      <para>A device memory control object supports <code>IAMDevMemoryControl</code>. This object is aggregated with an <see cref="IMemAllocator" /> object that is used in the connection. Typically, filters will call the <see cref="IAMDevMemoryAllocator.GetDevMemoryObject" /> method to obtain a pointer to this interface.</para>
+      <para>Implement this interface with the <see cref="IAMDevMemoryAllocator" /> interface when pins need to have greater control of memory allocation.</para>
+      <para>Use this interface to synchronize the completion of writing data to a memory allocator, and to get the device ID of the on-board memory allocator.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/deprecated-interfaces">Deprecated Interfaces</seealso>
+  </member>
+</doc>

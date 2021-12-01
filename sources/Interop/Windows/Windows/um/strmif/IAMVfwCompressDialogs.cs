@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAMVfwCompressDialogs.xml' path='doc/member[@name="IAMVfwCompressDialogs"]/*' />
 [Guid("D8D715A3-6E5E-11D0-B3F0-00AA003761C5")]
 [NativeTypeName("struct IAMVfwCompressDialogs : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IAMVfwCompressDialogs : IAMVfwCompressDialogs.Inter
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IAMVfwCompressDialogs : IAMVfwCompressDialogs.Inter
         return ((delegate* unmanaged<IAMVfwCompressDialogs*, Guid*, void**, int>)(lpVtbl[0]))((IAMVfwCompressDialogs*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IAMVfwCompressDialogs : IAMVfwCompressDialogs.Inter
         return ((delegate* unmanaged<IAMVfwCompressDialogs*, uint>)(lpVtbl[1]))((IAMVfwCompressDialogs*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IAMVfwCompressDialogs : IAMVfwCompressDialogs.Inter
         return ((delegate* unmanaged<IAMVfwCompressDialogs*, uint>)(lpVtbl[2]))((IAMVfwCompressDialogs*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAMVfwCompressDialogs.xml' path='doc/member[@name="IAMVfwCompressDialogs.ShowDialog"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT ShowDialog(int iDialog, HWND hwnd)
@@ -46,6 +51,7 @@ public unsafe partial struct IAMVfwCompressDialogs : IAMVfwCompressDialogs.Inter
         return ((delegate* unmanaged<IAMVfwCompressDialogs*, int, HWND, int>)(lpVtbl[3]))((IAMVfwCompressDialogs*)Unsafe.AsPointer(ref this), iDialog, hwnd);
     }
 
+    /// <include file='IAMVfwCompressDialogs.xml' path='doc/member[@name="IAMVfwCompressDialogs.GetState"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetState([NativeTypeName("LPVOID")] void* pState, int* pcbState)
@@ -53,6 +59,7 @@ public unsafe partial struct IAMVfwCompressDialogs : IAMVfwCompressDialogs.Inter
         return ((delegate* unmanaged<IAMVfwCompressDialogs*, void*, int*, int>)(lpVtbl[4]))((IAMVfwCompressDialogs*)Unsafe.AsPointer(ref this), pState, pcbState);
     }
 
+    /// <include file='IAMVfwCompressDialogs.xml' path='doc/member[@name="IAMVfwCompressDialogs.SetState"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetState([NativeTypeName("LPVOID")] void* pState, int cbState)
@@ -60,6 +67,7 @@ public unsafe partial struct IAMVfwCompressDialogs : IAMVfwCompressDialogs.Inter
         return ((delegate* unmanaged<IAMVfwCompressDialogs*, void*, int, int>)(lpVtbl[5]))((IAMVfwCompressDialogs*)Unsafe.AsPointer(ref this), pState, cbState);
     }
 
+    /// <include file='IAMVfwCompressDialogs.xml' path='doc/member[@name="IAMVfwCompressDialogs.SendDriverMessage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT SendDriverMessage(int uMsg, [NativeTypeName("long")] int dw1, [NativeTypeName("long")] int dw2)

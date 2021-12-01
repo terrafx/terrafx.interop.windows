@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="POWER_ACTION">
+    <summary>
+      <para>Defines values that are used to specify system power action types.</para>
+    </summary>
+    <seealso cref="POWER_ACTION_POLICY" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/Power/power-management-portal">Power Management</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Power/power-management-enumeration-types">Power Management Enumeration Types</seealso>
+  </member>
+  <member name="POWER_ACTION.PowerActionNone">
+    <summary>
+      <para>No system power action.</para>
+    </summary>
+  </member>
+  <member name="POWER_ACTION.PowerActionReserved">
+    <summary>
+      <para>Reserved; do not use.</para>
+    </summary>
+  </member>
+  <member name="POWER_ACTION.PowerActionSleep">
+    <summary>
+      <para>Sleep.</para>
+    </summary>
+  </member>
+  <member name="POWER_ACTION.PowerActionHibernate">
+    <summary>
+      <para>Hibernate.</para>
+    </summary>
+  </member>
+  <member name="POWER_ACTION.PowerActionShutdown">
+    <summary>
+      <para>Shutdown.</para>
+    </summary>
+  </member>
+  <member name="POWER_ACTION.PowerActionShutdownReset">
+    <summary>
+      <para>Shutdown and reset.</para>
+    </summary>
+  </member>
+  <member name="POWER_ACTION.PowerActionShutdownOff">
+    <summary>
+      <para>Shutdown and power off.</para>
+    </summary>
+  </member>
+  <member name="POWER_ACTION.PowerActionWarmEject">
+    <summary>
+      <para>Warm eject.</para>
+    </summary>
+  </member>
+  <member name="POWER_ACTION.PowerActionDisplayOff">
+    <summary></summary>
+  </member>
+</doc>

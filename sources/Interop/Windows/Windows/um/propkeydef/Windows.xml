@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="Windows.DEFINE_PROPERTYKEY">
+    <summary>
+      <para>Used to pack a format identifier (FMTID) and property identifier (PID) into a <see cref="PROPERTYKEY" /> structure that represents a property key.</para>
+    </summary>
+    <param name="name">
+      <para>The name of a <see cref="PROPERTYKEY" /> structure that represents a property key.</para>
+    </param>
+    <param name="l">
+      <para>The value of the <b>Data1</b> member of the <b>fmtid</b> member of the <see cref="PROPERTYKEY" /> structure.</para>
+    </param>
+    <param name="w1">
+      <para>The value of the <b>Data2</b> member of the <b>fmtid</b> member of the <see cref="PROPERTYKEY" /> structure.</para>
+    </param>
+    <param name="w2">
+      <para>The value of the <b>Data3</b> member of the <b>fmtid</b> member of the <see cref="PROPERTYKEY" /> structure.</para>
+    </param>
+    <param name="b1">
+      <para>The value of the <b>Data4[0]</b> member of the <b>fmtid</b> member of the <see cref="PROPERTYKEY" /> structure.</para>
+    </param>
+    <param name="b2">
+      <para>The value of the <b>Data4[1]</b> member of the <b>fmtid</b> member of the <see cref="PROPERTYKEY" /> structure.</para>
+    </param>
+    <param name="b3">
+      <para>The value of the <b>Data4[2]</b> member of the <b>fmtid</b> member of the <see cref="PROPERTYKEY" /> structure.</para>
+    </param>
+    <param name="b4">
+      <para>The value of the <b>Data4[3]</b> member of the <b>fmtid</b> member of the <see cref="PROPERTYKEY" /> structure.</para>
+    </param>
+    <param name="b5">
+      <para>The value of the <b>Data4[4]</b> member of the <b>fmtid</b> member of the <see cref="PROPERTYKEY" /> structure.</para>
+    </param>
+    <param name="b6">
+      <para>The value of the <b>Data4[5]</b> member of the <b>fmtid</b> member of the <see cref="PROPERTYKEY" /> structure.</para>
+    </param>
+    <param name="b7">
+      <para>The value of the <b>Data4[6]</b> member of the <b>fmtid</b> member of the <see cref="PROPERTYKEY" /> structure.</para>
+    </param>
+    <param name="b8">
+      <para>The value of the <b>Data4[7]</b> member of the <b>fmtid</b> member of the <see cref="PROPERTYKEY" /> structure.</para>
+    </param>
+    <param name="pid">
+      <para>A property identifier (PID). It is recommended that you set this value to PID_FIRST_USABLE. Any value greater than or equal to 2 is acceptable.</para>
+      <para>
+        <b>Note</b>  Values of 0 and 1 are reserved and should not be used.</para>
+    </param>
+    <remarks>
+      <para>The <b>DEFINE_PROPERTYKEY</b> macro is defined as follows.</para>
+      <code>#ifdef INITGUID
+#define DEFINE_PROPERTYKEY(name, l, w1, w2, b1, b2, b3, b4, b5, b6, b7, b8, pid) \
+EXTERN_C const PROPERTYKEY DECLSPEC_SELECTANY name = \
+{ { l, w1, w2, { b1, b2,  b3,  b4,  b5,  b6,  b7,  b8 } }, pid }
+#else
+#define DEFINE_PROPERTYKEY(name, l, w1, w2, b1, b2, b3, b4, b5, b6, b7, b8, pid) \
+EXTERN_C const PROPERTYKEY name
+#endif // INITGUID
+</code>
+      <para>When using this macro, you have two options:</para>
+      <list type="bullet">
+        <item>
+          <description>Include Initguid.h in your project. In this case, the macro declares the property key names and defines the property keys for you. This approach works in most cases, but can cause naming collisions in large, complex projects.</description>
+        </item>
+        <item>
+          <description>Do not include Initguid.h. Instead, compile your definitions into a static library file that has the .lib file name extension. In this case, the macro declares the property key names for the compiler to use, but you must reference your .lib file in the linker settings for your project. This approach works best in large projects that use multiple modules because it avoids the naming collisions mentioned in option 1.</description>
+        </item>
+      </list>
+      <para>Using the macro without including Initguid.h and without referencing a library file raises the LNK2001 linker error.</para>
+    </remarks>
+  </member>
+  <member name="Windows.IsEqualPropertyKey">
+    <summary>
+      <para>Compares the members of two <see cref="PROPERTYKEY" /> structures and returns whether they are equal.</para>
+    </summary>
+    <param name="a">
+      <para>The first <see cref="PROPERTYKEY" />.</para>
+    </param>
+    <param name="b">
+      <para>The second <see cref="PROPERTYKEY" />.</para>
+    </param>
+    <remarks>
+      <para>The <b>IsEqualPropertyKey</b> macro is defined as follows.</para>
+      <code>#define IsEqualPropertyKey(a, b)   (((a).pid == (b).pid) &amp;amp;amp;amp;amp;amp;&amp;amp;amp;amp;amp;amp; IsEqualIID((a).fmtid, (b).fmtid) )
+</code>
+    </remarks>
+  </member>
+</doc>

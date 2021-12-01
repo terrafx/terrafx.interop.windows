@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SPSTREAMFORMATTYPE.xml' path='doc/member[@name="SPSTREAMFORMATTYPE"]/*' />
 public enum SPSTREAMFORMATTYPE
 {
+    /// <include file='SPSTREAMFORMATTYPE.xml' path='doc/member[@name="SPSTREAMFORMATTYPE.SPWF_INPUT"]/*' />
     SPWF_INPUT = 0,
+
+    /// <include file='SPSTREAMFORMATTYPE.xml' path='doc/member[@name="SPSTREAMFORMATTYPE.SPWF_SRENGINE"]/*' />
     SPWF_SRENGINE = (SPWF_INPUT + 1),
 }

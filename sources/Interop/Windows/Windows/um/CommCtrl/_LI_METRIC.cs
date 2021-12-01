@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='_LI_METRIC.xml' path='doc/member[@name="_LI_METRIC"]/*' />
 public enum _LI_METRIC
 {
+    /// <include file='_LI_METRIC.xml' path='doc/member[@name="_LI_METRIC.LIM_SMALL"]/*' />
     LIM_SMALL,
+
+    /// <include file='_LI_METRIC.xml' path='doc/member[@name="_LI_METRIC.LIM_LARGE"]/*' />
     LIM_LARGE,
 }

@@ -5,11 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CRL_DIST_POINT.xml' path='doc/member[@name="CRL_DIST_POINT"]/*' />
 public partial struct CRL_DIST_POINT
 {
+    /// <include file='CRL_DIST_POINT.xml' path='doc/member[@name="CRL_DIST_POINT.DistPointName"]/*' />
     public CRL_DIST_POINT_NAME DistPointName;
 
+    /// <include file='CRL_DIST_POINT.xml' path='doc/member[@name="CRL_DIST_POINT.ReasonFlags"]/*' />
     public CRYPT_BIT_BLOB ReasonFlags;
 
+    /// <include file='CRL_DIST_POINT.xml' path='doc/member[@name="CRL_DIST_POINT.CRLIssuer"]/*' />
     public CERT_ALT_NAME_INFO CRLIssuer;
 }

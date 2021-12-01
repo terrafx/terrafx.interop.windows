@@ -7,14 +7,18 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SENDCMDOUTPARAMS.xml' path='doc/member[@name="SENDCMDOUTPARAMS"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public unsafe partial struct SENDCMDOUTPARAMS
 {
+    /// <include file='SENDCMDOUTPARAMS.xml' path='doc/member[@name="SENDCMDOUTPARAMS.cBufferSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint cBufferSize;
 
+    /// <include file='SENDCMDOUTPARAMS.xml' path='doc/member[@name="SENDCMDOUTPARAMS.DriverStatus"]/*' />
     public DRIVERSTATUS DriverStatus;
 
+    /// <include file='SENDCMDOUTPARAMS.xml' path='doc/member[@name="SENDCMDOUTPARAMS.bBuffer"]/*' />
     [NativeTypeName("BYTE [1]")]
     public fixed byte bBuffer[1];
 }

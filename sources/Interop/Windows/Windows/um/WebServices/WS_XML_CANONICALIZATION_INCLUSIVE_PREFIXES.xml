@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_XML_CANONICALIZATION_INCLUSIVE_PREFIXES">
+    <summary>
+      <para>An array of XML prefixes that should be treated as
+inclusive prefixes during exclusive XML canonicalization.  The
+treatment of inclusive prefixes is defined in
+RFC 3741.</para>
+    </summary>
+  </member>
+  <member name="WS_XML_CANONICALIZATION_INCLUSIVE_PREFIXES.prefixCount">
+    <summary>
+      <para>The number of prefixes.</para>
+    </summary>
+  </member>
+  <member name="WS_XML_CANONICALIZATION_INCLUSIVE_PREFIXES.prefixes">
+    <summary>
+      <para>The array of prefixes.</para>
+    </summary>
+  </member>
+</doc>

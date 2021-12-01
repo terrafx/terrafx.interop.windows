@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITfCompositionView.xml' path='doc/member[@name="ITfCompositionView"]/*' />
 [Guid("D7540241-F9A1-4364-BEFC-DBCD2C4395B7")]
 [NativeTypeName("struct ITfCompositionView : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITfCompositionView : ITfCompositionView.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITfCompositionView : ITfCompositionView.Interface
         return ((delegate* unmanaged<ITfCompositionView*, Guid*, void**, int>)(lpVtbl[0]))((ITfCompositionView*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITfCompositionView : ITfCompositionView.Interface
         return ((delegate* unmanaged<ITfCompositionView*, uint>)(lpVtbl[1]))((ITfCompositionView*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITfCompositionView : ITfCompositionView.Interface
         return ((delegate* unmanaged<ITfCompositionView*, uint>)(lpVtbl[2]))((ITfCompositionView*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITfCompositionView.xml' path='doc/member[@name="ITfCompositionView.GetOwnerClsid"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetOwnerClsid([NativeTypeName("CLSID *")] Guid* pclsid)
@@ -46,6 +51,7 @@ public unsafe partial struct ITfCompositionView : ITfCompositionView.Interface
         return ((delegate* unmanaged<ITfCompositionView*, Guid*, int>)(lpVtbl[3]))((ITfCompositionView*)Unsafe.AsPointer(ref this), pclsid);
     }
 
+    /// <include file='ITfCompositionView.xml' path='doc/member[@name="ITfCompositionView.GetRange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetRange(ITfRange** ppRange)

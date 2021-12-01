@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IStreamConcatenate.Append">
+    <summary>
+      <para>Appends a stream to this stream.</para>
+    </summary>
+    <param name="stream">
+      <para>An <b>IStream</b> interface of the stream to append to this stream.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_NOTIMPL</b>
+            </para>
+          </description>
+          <description>
+            <para>Not implemented.</para>
+            <para>Value: 0x80004001</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>You must call the <see cref="IStreamConcatenate.Initialize" /> or <see cref="IStreamConcatenate.Initialize2" /> method prior to calling this method.</para>
+      <para>To append more than one stream to this stream, call the <see cref="IStreamConcatenate.Append2" /> method.</para>
+    </remarks>
+    <seealso cref="IStreamConcatenate" />
+    <seealso cref="IStreamConcatenate.Append2" />
+  </member>
+  <member name="IStreamConcatenate.Append2">
+    <summary>
+      <para>Appends an array of streams to this stream.</para>
+    </summary>
+    <param name="streams">
+      <para>Array of  <b>IStream</b> interfaces of the streams to append to this stream.</para>
+    </param>
+    <param name="streamCount">
+      <para>Number of streams in <i>streams</i>.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_NOTIMPL</b>
+            </para>
+          </description>
+          <description>
+            <para>Not implemented.</para>
+            <para>Value: 0x80004001</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>You must call the <see cref="IStreamConcatenate.Initialize" /> or <see cref="IStreamConcatenate.Initialize2" /> method prior to calling this method.</para>
+      <para>To append a single stream to this stream, call the <see cref="IStreamConcatenate.Append" /> method.</para>
+    </remarks>
+    <seealso cref="IStreamConcatenate" />
+    <seealso cref="IStreamConcatenate.Append" />
+  </member>
+  <member name="IStreamConcatenate.Initialize">
+    <summary>
+      <para>Initializes this stream from two input streams.</para>
+    </summary>
+    <param name="stream1">
+      <para>An <b>IStream</b> interface of the first stream to add to this stream.</para>
+    </param>
+    <param name="stream2">
+      <para>An <b>IStream</b> interface of the second stream to add to this stream.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>Pointer is not valid.</para>
+            <para>Value: 0x80004003</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>Failed to allocate the required memory.</para>
+            <para>Value: 0x8007000E</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>One or more arguments are not valid.</para>
+            <para>Value: 0x80070057</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>When using the <see cref="IStreamConcatenate" /> interface, the following  scenarios will result in undefined behaviors, and should be avoided:</para>
+      <list type="bullet">
+        <item>
+          <description>Each partial stream composing the MsftStreamConcatenate object is actually the same stream.</description>
+        </item>
+        <item>
+          <description>Any of the concatenated streams are modified (read from, written to, or seeked on) outside of IMAPI.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="IStreamConcatenate" />
+    <seealso cref="IStreamConcatenate.Initialize2" />
+  </member>
+  <member name="IStreamConcatenate.Initialize2">
+    <summary>
+      <para>Initializes this stream from an array of input streams.</para>
+    </summary>
+    <param name="streams">
+      <para>Array of  <b>IStream</b> interfaces of the streams to add to this stream.</para>
+    </param>
+    <param name="streamCount">
+      <para>Number of streams in <i>streams</i>.</para>
+    </param>
+    <returns>
+      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>Pointer is not valid.</para>
+            <para>Value: 0x80004003</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>Failed to allocate the required memory.</para>
+            <para>Value: 0x8007000E</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>This stream has already been initialized.</para>
+            <para>Value: 0x80070057</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>When using the <see cref="IStreamConcatenate" /> interface, the following  scenarios will result in undefined behaviors, and should be avoided:</para>
+      <list type="bullet">
+        <item>
+          <description>Each partial stream composing the MsftStreamConcatenate object is actually the same stream.</description>
+        </item>
+        <item>
+          <description>Any of the concatenated streams are modified (read from, written to, or seeked on) outside of IMAPI.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="IStreamConcatenate" />
+    <seealso cref="IStreamConcatenate.Initialize" />
+  </member>
+  <member name="IStreamConcatenate">
+    <summary>
+      <para>Use this interface to combine several data streams into a single stream.</para>
+      <para>To create an instance of this interface, call the <b>CoCreateInstance</b> function. Use__uuidof(MsftStreamConcatenate) for the class identifier and __uuidof(IStreamConcatenate) for the interface identifier.</para>
+    </summary>
+    <remarks>
+      <para>To create the  MsftStreamConcatenate object in a script, use IMAPI2.MsftStreamConcatenate as the program identifier when calling CreateObject.</para>
+      <para>When using this interface, the following  scenarios will result in undefined behaviors, and should be avoided:</para>
+      <list type="bullet">
+        <item>
+          <description>Each partial stream composing the MsftStreamConcatenate object is actually the same stream.</description>
+        </item>
+        <item>
+          <description>Any of the concatenated streams are modified (read from, written to, or seeked on) outside of IMAPI.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="IStreamInterleave" />
+    <seealso cref="IStreamPseudoRandomBased" />
+  </member>
+</doc>

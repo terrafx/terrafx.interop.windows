@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IVMRMonitorConfig.xml' path='doc/member[@name="IVMRMonitorConfig"]/*' />
 [Guid("9CF0B1B6-FBAA-4B7F-88CF-CF1F130A0DCE")]
 [NativeTypeName("struct IVMRMonitorConfig : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IVMRMonitorConfig : IVMRMonitorConfig.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IVMRMonitorConfig : IVMRMonitorConfig.Interface
         return ((delegate* unmanaged<IVMRMonitorConfig*, Guid*, void**, int>)(lpVtbl[0]))((IVMRMonitorConfig*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IVMRMonitorConfig : IVMRMonitorConfig.Interface
         return ((delegate* unmanaged<IVMRMonitorConfig*, uint>)(lpVtbl[1]))((IVMRMonitorConfig*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IVMRMonitorConfig : IVMRMonitorConfig.Interface
         return ((delegate* unmanaged<IVMRMonitorConfig*, uint>)(lpVtbl[2]))((IVMRMonitorConfig*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IVMRMonitorConfig.xml' path='doc/member[@name="IVMRMonitorConfig.SetMonitor"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetMonitor([NativeTypeName("const VMRGUID *")] VMRGUID* pGUID)
@@ -46,6 +51,7 @@ public unsafe partial struct IVMRMonitorConfig : IVMRMonitorConfig.Interface
         return ((delegate* unmanaged<IVMRMonitorConfig*, VMRGUID*, int>)(lpVtbl[3]))((IVMRMonitorConfig*)Unsafe.AsPointer(ref this), pGUID);
     }
 
+    /// <include file='IVMRMonitorConfig.xml' path='doc/member[@name="IVMRMonitorConfig.GetMonitor"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetMonitor(VMRGUID* pGUID)
@@ -53,6 +59,7 @@ public unsafe partial struct IVMRMonitorConfig : IVMRMonitorConfig.Interface
         return ((delegate* unmanaged<IVMRMonitorConfig*, VMRGUID*, int>)(lpVtbl[4]))((IVMRMonitorConfig*)Unsafe.AsPointer(ref this), pGUID);
     }
 
+    /// <include file='IVMRMonitorConfig.xml' path='doc/member[@name="IVMRMonitorConfig.SetDefaultMonitor"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetDefaultMonitor([NativeTypeName("const VMRGUID *")] VMRGUID* pGUID)
@@ -60,6 +67,7 @@ public unsafe partial struct IVMRMonitorConfig : IVMRMonitorConfig.Interface
         return ((delegate* unmanaged<IVMRMonitorConfig*, VMRGUID*, int>)(lpVtbl[5]))((IVMRMonitorConfig*)Unsafe.AsPointer(ref this), pGUID);
     }
 
+    /// <include file='IVMRMonitorConfig.xml' path='doc/member[@name="IVMRMonitorConfig.GetDefaultMonitor"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetDefaultMonitor(VMRGUID* pGUID)
@@ -67,6 +75,7 @@ public unsafe partial struct IVMRMonitorConfig : IVMRMonitorConfig.Interface
         return ((delegate* unmanaged<IVMRMonitorConfig*, VMRGUID*, int>)(lpVtbl[6]))((IVMRMonitorConfig*)Unsafe.AsPointer(ref this), pGUID);
     }
 
+    /// <include file='IVMRMonitorConfig.xml' path='doc/member[@name="IVMRMonitorConfig.GetAvailableMonitors"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetAvailableMonitors(VMRMONITORINFO* pInfo, [NativeTypeName("DWORD")] uint dwMaxInfoArraySize, [NativeTypeName("DWORD *")] uint* pdwNumDevices)

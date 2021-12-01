@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ManipulationProcessor.xml' path='doc/member[@name="ManipulationProcessor"]/*' />
 [Guid("597D4FB0-47FD-4AFF-89B9-C6CFAE8CF08E")]
 public partial struct ManipulationProcessor
 {

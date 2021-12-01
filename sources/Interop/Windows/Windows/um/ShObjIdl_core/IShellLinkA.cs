@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IShellLinkA.xml' path='doc/member[@name="IShellLinkA"]/*' />
 [Guid("000214EE-0000-0000-C000-000000000046")]
 [NativeTypeName("struct IShellLinkA : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IShellLinkA : IShellLinkA.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IShellLinkA : IShellLinkA.Interface
         return ((delegate* unmanaged<IShellLinkA*, Guid*, void**, int>)(lpVtbl[0]))((IShellLinkA*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IShellLinkA : IShellLinkA.Interface
         return ((delegate* unmanaged<IShellLinkA*, uint>)(lpVtbl[1]))((IShellLinkA*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IShellLinkA : IShellLinkA.Interface
         return ((delegate* unmanaged<IShellLinkA*, uint>)(lpVtbl[2]))((IShellLinkA*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IShellLinkA.xml' path='doc/member[@name="IShellLinkA.GetPath"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetPath([NativeTypeName("LPSTR")] sbyte* pszFile, int cch, WIN32_FIND_DATAA* pfd, [NativeTypeName("DWORD")] uint fFlags)
@@ -46,6 +51,7 @@ public unsafe partial struct IShellLinkA : IShellLinkA.Interface
         return ((delegate* unmanaged<IShellLinkA*, sbyte*, int, WIN32_FIND_DATAA*, uint, int>)(lpVtbl[3]))((IShellLinkA*)Unsafe.AsPointer(ref this), pszFile, cch, pfd, fFlags);
     }
 
+    /// <include file='IShellLinkA.xml' path='doc/member[@name="IShellLinkA.GetIDList"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetIDList([NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidl)
@@ -53,6 +59,7 @@ public unsafe partial struct IShellLinkA : IShellLinkA.Interface
         return ((delegate* unmanaged<IShellLinkA*, ITEMIDLIST**, int>)(lpVtbl[4]))((IShellLinkA*)Unsafe.AsPointer(ref this), ppidl);
     }
 
+    /// <include file='IShellLinkA.xml' path='doc/member[@name="IShellLinkA.SetIDList"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetIDList([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl)
@@ -60,6 +67,7 @@ public unsafe partial struct IShellLinkA : IShellLinkA.Interface
         return ((delegate* unmanaged<IShellLinkA*, ITEMIDLIST*, int>)(lpVtbl[5]))((IShellLinkA*)Unsafe.AsPointer(ref this), pidl);
     }
 
+    /// <include file='IShellLinkA.xml' path='doc/member[@name="IShellLinkA.GetDescription"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetDescription([NativeTypeName("LPSTR")] sbyte* pszName, int cch)
@@ -67,6 +75,7 @@ public unsafe partial struct IShellLinkA : IShellLinkA.Interface
         return ((delegate* unmanaged<IShellLinkA*, sbyte*, int, int>)(lpVtbl[6]))((IShellLinkA*)Unsafe.AsPointer(ref this), pszName, cch);
     }
 
+    /// <include file='IShellLinkA.xml' path='doc/member[@name="IShellLinkA.SetDescription"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT SetDescription([NativeTypeName("LPCSTR")] sbyte* pszName)
@@ -74,6 +83,7 @@ public unsafe partial struct IShellLinkA : IShellLinkA.Interface
         return ((delegate* unmanaged<IShellLinkA*, sbyte*, int>)(lpVtbl[7]))((IShellLinkA*)Unsafe.AsPointer(ref this), pszName);
     }
 
+    /// <include file='IShellLinkA.xml' path='doc/member[@name="IShellLinkA.GetWorkingDirectory"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetWorkingDirectory([NativeTypeName("LPSTR")] sbyte* pszDir, int cch)
@@ -81,6 +91,7 @@ public unsafe partial struct IShellLinkA : IShellLinkA.Interface
         return ((delegate* unmanaged<IShellLinkA*, sbyte*, int, int>)(lpVtbl[8]))((IShellLinkA*)Unsafe.AsPointer(ref this), pszDir, cch);
     }
 
+    /// <include file='IShellLinkA.xml' path='doc/member[@name="IShellLinkA.SetWorkingDirectory"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT SetWorkingDirectory([NativeTypeName("LPCSTR")] sbyte* pszDir)
@@ -88,6 +99,7 @@ public unsafe partial struct IShellLinkA : IShellLinkA.Interface
         return ((delegate* unmanaged<IShellLinkA*, sbyte*, int>)(lpVtbl[9]))((IShellLinkA*)Unsafe.AsPointer(ref this), pszDir);
     }
 
+    /// <include file='IShellLinkA.xml' path='doc/member[@name="IShellLinkA.GetArguments"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT GetArguments([NativeTypeName("LPSTR")] sbyte* pszArgs, int cch)
@@ -95,6 +107,7 @@ public unsafe partial struct IShellLinkA : IShellLinkA.Interface
         return ((delegate* unmanaged<IShellLinkA*, sbyte*, int, int>)(lpVtbl[10]))((IShellLinkA*)Unsafe.AsPointer(ref this), pszArgs, cch);
     }
 
+    /// <include file='IShellLinkA.xml' path='doc/member[@name="IShellLinkA.SetArguments"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT SetArguments([NativeTypeName("LPCSTR")] sbyte* pszArgs)
@@ -102,6 +115,7 @@ public unsafe partial struct IShellLinkA : IShellLinkA.Interface
         return ((delegate* unmanaged<IShellLinkA*, sbyte*, int>)(lpVtbl[11]))((IShellLinkA*)Unsafe.AsPointer(ref this), pszArgs);
     }
 
+    /// <include file='IShellLinkA.xml' path='doc/member[@name="IShellLinkA.GetHotkey"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT GetHotkey([NativeTypeName("WORD *")] ushort* pwHotkey)
@@ -109,6 +123,7 @@ public unsafe partial struct IShellLinkA : IShellLinkA.Interface
         return ((delegate* unmanaged<IShellLinkA*, ushort*, int>)(lpVtbl[12]))((IShellLinkA*)Unsafe.AsPointer(ref this), pwHotkey);
     }
 
+    /// <include file='IShellLinkA.xml' path='doc/member[@name="IShellLinkA.SetHotkey"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT SetHotkey([NativeTypeName("WORD")] ushort wHotkey)
@@ -116,6 +131,7 @@ public unsafe partial struct IShellLinkA : IShellLinkA.Interface
         return ((delegate* unmanaged<IShellLinkA*, ushort, int>)(lpVtbl[13]))((IShellLinkA*)Unsafe.AsPointer(ref this), wHotkey);
     }
 
+    /// <include file='IShellLinkA.xml' path='doc/member[@name="IShellLinkA.GetShowCmd"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT GetShowCmd(int* piShowCmd)
@@ -123,6 +139,7 @@ public unsafe partial struct IShellLinkA : IShellLinkA.Interface
         return ((delegate* unmanaged<IShellLinkA*, int*, int>)(lpVtbl[14]))((IShellLinkA*)Unsafe.AsPointer(ref this), piShowCmd);
     }
 
+    /// <include file='IShellLinkA.xml' path='doc/member[@name="IShellLinkA.SetShowCmd"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT SetShowCmd(int iShowCmd)
@@ -130,6 +147,7 @@ public unsafe partial struct IShellLinkA : IShellLinkA.Interface
         return ((delegate* unmanaged<IShellLinkA*, int, int>)(lpVtbl[15]))((IShellLinkA*)Unsafe.AsPointer(ref this), iShowCmd);
     }
 
+    /// <include file='IShellLinkA.xml' path='doc/member[@name="IShellLinkA.GetIconLocation"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT GetIconLocation([NativeTypeName("LPSTR")] sbyte* pszIconPath, int cch, int* piIcon)
@@ -137,6 +155,7 @@ public unsafe partial struct IShellLinkA : IShellLinkA.Interface
         return ((delegate* unmanaged<IShellLinkA*, sbyte*, int, int*, int>)(lpVtbl[16]))((IShellLinkA*)Unsafe.AsPointer(ref this), pszIconPath, cch, piIcon);
     }
 
+    /// <include file='IShellLinkA.xml' path='doc/member[@name="IShellLinkA.SetIconLocation"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT SetIconLocation([NativeTypeName("LPCSTR")] sbyte* pszIconPath, int iIcon)
@@ -144,6 +163,7 @@ public unsafe partial struct IShellLinkA : IShellLinkA.Interface
         return ((delegate* unmanaged<IShellLinkA*, sbyte*, int, int>)(lpVtbl[17]))((IShellLinkA*)Unsafe.AsPointer(ref this), pszIconPath, iIcon);
     }
 
+    /// <include file='IShellLinkA.xml' path='doc/member[@name="IShellLinkA.SetRelativePath"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT SetRelativePath([NativeTypeName("LPCSTR")] sbyte* pszPathRel, [NativeTypeName("DWORD")] uint dwReserved)
@@ -151,6 +171,7 @@ public unsafe partial struct IShellLinkA : IShellLinkA.Interface
         return ((delegate* unmanaged<IShellLinkA*, sbyte*, uint, int>)(lpVtbl[18]))((IShellLinkA*)Unsafe.AsPointer(ref this), pszPathRel, dwReserved);
     }
 
+    /// <include file='IShellLinkA.xml' path='doc/member[@name="IShellLinkA.Resolve"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT Resolve(HWND hwnd, [NativeTypeName("DWORD")] uint fFlags)
@@ -158,6 +179,7 @@ public unsafe partial struct IShellLinkA : IShellLinkA.Interface
         return ((delegate* unmanaged<IShellLinkA*, HWND, uint, int>)(lpVtbl[19]))((IShellLinkA*)Unsafe.AsPointer(ref this), hwnd, fFlags);
     }
 
+    /// <include file='IShellLinkA.xml' path='doc/member[@name="IShellLinkA.SetPath"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public HRESULT SetPath([NativeTypeName("LPCSTR")] sbyte* pszFile)

@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='LOCKTYPE.xml' path='doc/member[@name="LOCKTYPE"]/*' />
 public enum LOCKTYPE
 {
+    /// <include file='LOCKTYPE.xml' path='doc/member[@name="LOCKTYPE.LOCK_WRITE"]/*' />
     LOCK_WRITE = 1,
+
+    /// <include file='LOCKTYPE.xml' path='doc/member[@name="LOCKTYPE.LOCK_EXCLUSIVE"]/*' />
     LOCK_EXCLUSIVE = 2,
+
+    /// <include file='LOCKTYPE.xml' path='doc/member[@name="LOCKTYPE.LOCK_ONLYONCE"]/*' />
     LOCK_ONLYONCE = 4,
 }

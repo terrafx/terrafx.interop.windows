@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DLLVERSIONINFO2">
+    <summary>
+      <para>Receives DLL-specific version information. It is used with the <a href="https://docs.microsoft.com//windows/desktop/api/shlwapi/nc-shlwapi-dllgetversionproc">DllGetVersion</a> function.</para>
+    </summary>
+    <remarks>
+      <para>Your application must set the <b>cbSize</b> member of the structure pointed to by <b>info1</b> to <b>sizeof(</b><b>DLLVERSIONINFO2</b><b>)</b> before calling <a href="https://docs.microsoft.com//windows/desktop/api/shlwapi/nc-shlwapi-dllgetversionproc">DllGetVersion</a>. Otherwise, no value will be assigned to the <b>dwFlags</b> or <b>ullVersion</b> member of the <b>DLLVERSIONINFO2</b> structure.</para>
+    </remarks>
+  </member>
+  <member name="DLLVERSIONINFO2.info1">
+    <summary>
+      <para>Type: <b><see cref="DLLVERSIONINFO" /></b></para>
+      <para>A <see cref="DLLVERSIONINFO" /> structure. This member is included to provide backward compatibility with applications that are not expecting a <b>DLLVERSIONINFO2</b> structure.</para>
+    </summary>
+  </member>
+  <member name="DLLVERSIONINFO2.dwFlags">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>Reserved.</para>
+    </summary>
+  </member>
+  <member name="DLLVERSIONINFO2.ullVersion">
+    <summary>
+      <para>Type: <b>ULONGLONG</b></para>
+      <para>A value that contains the version information. It is divided into four 16-bitfields containing the major and minor version numbers, the build number, and the hotfix version, in that order. Use the <see cref="MAKEDLLVERULL" /> macro to construct this value.</para>
+    </summary>
+  </member>
+</doc>

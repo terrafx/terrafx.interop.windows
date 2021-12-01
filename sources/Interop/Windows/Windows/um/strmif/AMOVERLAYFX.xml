@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="AMOVERLAYFX">
+    <summary>
+      <para>Specifies effects on a DirectDraw hardware overlay surface.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-enumerated-types">DirectShow Enumerated Types</seealso>
+    <seealso cref="IAMOverlayFX Interface" />
+  </member>
+  <member name="AMOVERLAYFX.AMOVERFX_NOFX">
+    <summary>
+      <para>Normal video (no effects).</para>
+    </summary>
+  </member>
+  <member name="AMOVERLAYFX.AMOVERFX_MIRRORLEFTRIGHT">
+    <summary>
+      <para>Mirror the overlay across the vertical axis.</para>
+    </summary>
+  </member>
+  <member name="AMOVERLAYFX.AMOVERFX_MIRRORUPDOWN">
+    <summary>
+      <para>Mirror the overlay across the horizontal axis.</para>
+    </summary>
+  </member>
+  <member name="AMOVERLAYFX.AMOVERFX_DEINTERLACE">
+    <summary>
+      <para>When used in <see cref="IAMOverlayFX.QueryOverlayFXCaps" />, this flag specifies whether the hardware can support the DirectDraw 7 DDOVERFX_DEINTERLACE hint. When used with the <see cref="IAMOverlayFX.GetOverlayFX" /> or <see cref="IAMOverlayFX.SetOverlayFX" /> methods, this flag indicates that the overlay should be deinterlaced if possible.</para>
+    </summary>
+  </member>
+</doc>

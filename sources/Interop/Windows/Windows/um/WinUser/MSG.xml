@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MSG">
+    <summary>
+      <para>Contains message information from a thread's message queue.</para>
+    </summary>
+    <seealso cref="GetMessage" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/winmsg/messages-and-message-queues">Messages and Message Queues</seealso>
+    <seealso cref="PeekMessage" />
+    <seealso cref="PostThreadMessage" />
+  </member>
+  <member name="MSG.hwnd">
+    <summary>
+      <para>Type: <b>HWND</b></para>
+      <para>A handle to the window whose window procedure receives the message. This member is <b>NULL</b> when the message is a thread message.</para>
+    </summary>
+  </member>
+  <member name="MSG.message">
+    <summary>
+      <para>Type: <b>UINT</b></para>
+      <para>The message identifier. Applications can only use the low word; the high word is reserved by the system.</para>
+    </summary>
+  </member>
+  <member name="MSG.wParam">
+    <summary>
+      <para>Type: <b>WPARAM</b></para>
+      <para>Additional information about the message. The exact meaning depends on the value of the
+<b>message</b> member.</para>
+    </summary>
+  </member>
+  <member name="MSG.lParam">
+    <summary>
+      <para>Type: <b>LPARAM</b></para>
+      <para>Additional information about the message. The exact meaning depends on the value of the
+<b>message</b> member.</para>
+    </summary>
+  </member>
+  <member name="MSG.time">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The time at which the message was posted.</para>
+    </summary>
+  </member>
+  <member name="MSG.pt">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/dd162805(v=vs.85)">POINT</a></b></para>
+      <para>The cursor position, in screen coordinates, when the message was posted.</para>
+    </summary>
+  </member>
+  <member name="MSG.lPrivate">
+    <summary></summary>
+  </member>
+</doc>

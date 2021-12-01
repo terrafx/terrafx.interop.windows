@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_ISSUED_TOKEN_MESSAGE_SECURITY_BINDING_CONSTRAINT">
+    <summary>
+      <para>A security binding constraint that can be used to extract information
+about how to obtain an issued token from an issuing party.</para>
+    </summary>
+    <remarks>
+      <para>The information extracted using this binding constraint can be used
+with <see cref="WsRequestSecurityToken" /> to obtain an issued token.
+The issued token can then be used with the
+<see cref="WS_XML_TOKEN_MESSAGE_SECURITY_BINDING" /> security binding.</para>
+      <para>This binding constraint is typically used in federated security
+scenarios.</para>
+    </remarks>
+  </member>
+  <member name="WS_ISSUED_TOKEN_MESSAGE_SECURITY_BINDING_CONSTRAINT.bindingConstraint">
+    <summary>
+      <para>The base binding constraint that this binding constraint derives from.</para>
+      <para>There are currently no binding-specific properties defined for this binding constraint.</para>
+    </summary>
+  </member>
+  <member name="WS_ISSUED_TOKEN_MESSAGE_SECURITY_BINDING_CONSTRAINT.bindingUsage">
+    <summary>
+      <para>This specifies how the issued token should be attached to a message.</para>
+    </summary>
+  </member>
+  <member name="WS_ISSUED_TOKEN_MESSAGE_SECURITY_BINDING_CONSTRAINT.claimConstraints">
+    <summary>
+      <para>This field contains a list of claim types that
+are allowed in the policy.  Each claim type is
+a URI which identifies the type of claim.</para>
+    </summary>
+  </member>
+  <member name="WS_ISSUED_TOKEN_MESSAGE_SECURITY_BINDING_CONSTRAINT.claimConstraintCount">
+    <summary>
+      <para>The number of elements in the claimConstraints array.</para>
+      <para>If this value is 0, then the claimConstraints array may be
+<b>NULL</b>, and any claims are allowed to appear in the policy.</para>
+    </summary>
+  </member>
+  <member name="WS_ISSUED_TOKEN_MESSAGE_SECURITY_BINDING_CONSTRAINT.requestSecurityTokenPropertyConstraints">
+    <summary>
+      <para>A set of property constraints relating to how to request a security token.</para>
+      <para>See <see cref="WS_REQUEST_SECURITY_TOKEN_PROPERTY_CONSTRAINT" /> for more information.</para>
+    </summary>
+  </member>
+  <member name="WS_ISSUED_TOKEN_MESSAGE_SECURITY_BINDING_CONSTRAINT.requestSecurityTokenPropertyConstraintCount">
+    <summary>
+      <para>The number of elements in the requestSecurityTokenPropertyConstraints array.</para>
+      <para>If the array has zero elements, the requestSecurityTokenPropertyConstraints field may be <b>NULL</b>.</para>
+    </summary>
+  </member>
+  <member name="WS_ISSUED_TOKEN_MESSAGE_SECURITY_BINDING_CONSTRAINT.out">
+    <summary>
+      <para>When <see cref="WsMatchPolicyAlternative" /> returns NOERROR, the
+entire contents of this structure will be filled out.</para>
+    </summary>
+  </member>
+  <member name="WS_ISSUED_TOKEN_MESSAGE_SECURITY_BINDING_CONSTRAINT.out.issuerAddress">
+    <summary></summary>
+  </member>
+  <member name="WS_ISSUED_TOKEN_MESSAGE_SECURITY_BINDING_CONSTRAINT.out.requestSecurityTokenTemplate">
+    <summary></summary>
+  </member>
+</doc>

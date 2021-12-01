@@ -5,21 +5,28 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='RSOP_TARGET.xml' path='doc/member[@name="RSOP_TARGET"]/*' />
 public unsafe partial struct RSOP_TARGET
 {
+    /// <include file='RSOP_TARGET.xml' path='doc/member[@name="RSOP_TARGET.pwszAccountName"]/*' />
     [NativeTypeName("WCHAR *")]
     public ushort* pwszAccountName;
 
+    /// <include file='RSOP_TARGET.xml' path='doc/member[@name="RSOP_TARGET.pwszNewSOM"]/*' />
     [NativeTypeName("WCHAR *")]
     public ushort* pwszNewSOM;
 
+    /// <include file='RSOP_TARGET.xml' path='doc/member[@name="RSOP_TARGET.psaSecurityGroups"]/*' />
     public SAFEARRAY* psaSecurityGroups;
 
+    /// <include file='RSOP_TARGET.xml' path='doc/member[@name="RSOP_TARGET.pRsopToken"]/*' />
     [NativeTypeName("PRSOPTOKEN")]
     public void* pRsopToken;
 
+    /// <include file='RSOP_TARGET.xml' path='doc/member[@name="RSOP_TARGET.pGPOList"]/*' />
     [NativeTypeName("PGROUP_POLICY_OBJECT")]
     public GROUP_POLICY_OBJECTW* pGPOList;
 
+    /// <include file='RSOP_TARGET.xml' path='doc/member[@name="RSOP_TARGET.pWbemServices"]/*' />
     public IWbemServices* pWbemServices;
 }

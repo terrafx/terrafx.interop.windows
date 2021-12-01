@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IQueryInfo.GetInfoFlags">
+    <summary>
+      <para>Gets the information flags for an item. This method is not currently used.</para>
+    </summary>
+    <param name="pdwFlags">
+      <para>Type: <b>DWORD*</b></para>
+      <para>A pointer to a value that receives the flags for the item. If no flags are to be returned, this value should be set to zero.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_OK if <i>pdwFlags</i> returns any flag values, or a COM-defined error value otherwise.</para>
+    </returns>
+    <seealso cref="IQueryInfo" />
+  </member>
+  <member name="IQueryInfo.GetInfoTip">
+    <summary>
+      <para>Gets the info tip text for an item.</para>
+    </summary>
+    <param name="dwFlags">
+      <para>Type: <b>DWORD</b></para>
+      <para>Flags that direct the handling of the item from which you're retrieving the info tip text. This value is commonly zero (<b>QITIPF_DEFAULT</b>). The following values are recognized.</para>
+      <h4>QITIPF_DEFAULT (0x00000000)</h4>
+      <para>No special handling.</para>
+      <h4>QITIPF_USENAME (0x00000001)</h4>
+      <para>Provide the name of the item in <i>ppwszTip</i> rather than the info tip text.</para>
+      <h4>QITIPF_LINKNOTARGET (0x00000002)</h4>
+      <para>If the item is a shortcut, retrieve the info tip text of the shortcut rather than its target.</para>
+      <h4>QITIPF_LINKUSETARGET (0x00000004)</h4>
+      <para>If the item is a shortcut, retrieve the info tip text of the shortcut's target.</para>
+      <h4>QITIPF_USESLOWTIP (0x00000008)</h4>
+      <para>Search the entire namespace for the information. This value can result in a delayed response time.</para>
+      <h4>QITIPF_SINGLELINE (0x00000010)</h4>
+      <para>
+        <b>Windows Vista and later</b>. Put the info tip on a single line.</para>
+    </param>
+    <param name="ppwszTip">
+      <para>Type: <b>PWSTR*</b></para>
+      <para>The address of a Unicode string pointer that, when this method returns successfully, receives the tip string pointer. Applications that implement this method must allocate memory for <i>ppwszTip</i> by calling <see cref="CoTaskMemAlloc" />. Calling applications must call <see cref="CoTaskMemFree" /> to free the memory when it is no longer needed.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_OK if the function succeeds. If no info tip text is available, <i>ppwszTip</i> is set to <b>NULL</b>. Otherwise, returns a COM-defined error value.</para>
+    </returns>
+    <seealso cref="IQueryInfo" />
+  </member>
+  <member name="IQueryInfo">
+    <summary>
+      <para>Exposes methods that the Shell uses to retrieve flags and info tip information for an item that resides in an <see cref="IShellFolder" /> implementation. Info tips are usually displayed inside a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/hh449606(v=vs.85)">tooltip</a> control.</para>
+    </summary>
+    <remarks>
+      <para>This interface is obtained by calling <see cref="IShellFolder.GetUIObjectOf" /> and passing IID_IQueryInfo for the interface identifier. The item for which info tip information is being requested is contained in the <i>apidl</i> argument of the <b>IShellFolder.GetUIObjectOf</b> call. If <b>IQueryInfo</b> is not supplied by the folder, the Shell will use the standard display text in the info tip.</para>
+      <h3>When to Implement</h3>
+      <para>Implement <b>IQueryInfo</b> to provide flags and text information that differs from the normal text that is displayed for an item in a folder. For example, if your folder contained file objects, you could use the info tip to provide the entire path and file name for the item rather than just the file name.</para>
+      <h3>When to Use</h3>
+      <para>In most cases, you do not use this interface directly. The Shell will use this interface when it requires additional information to display inside of an info tip. However, you can use <b>IQueryInfo</b> directly if you want to obtain info tip information from another object.</para>
+    </remarks>
+  </member>
+</doc>

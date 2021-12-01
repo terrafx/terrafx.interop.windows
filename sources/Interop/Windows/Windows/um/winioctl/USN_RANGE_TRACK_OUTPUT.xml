@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="USN_RANGE_TRACK_OUTPUT">
+    <summary>
+      <para>Contains returned update sequence number (USN) from <a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_usn_track_modified_ranges">FSCTL_USN_TRACK_MODIFIED_RANGES</a> control code.</para>
+    </summary>
+    <remarks>
+      <para>This structure is optional.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_usn_track_modified_ranges">FSCTL_USN_TRACK_MODIFIED_RANGES</seealso>
+  </member>
+  <member name="USN_RANGE_TRACK_OUTPUT.Usn">
+    <summary>
+      <para>Returned update sequence number (USN) that identifies at what point in the USN Journal that range tracking was enabled.</para>
+    </summary>
+  </member>
+</doc>

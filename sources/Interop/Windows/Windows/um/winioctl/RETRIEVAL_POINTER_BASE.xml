@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="RETRIEVAL_POINTER_BASE">
+    <summary>
+      <para>Contains the output for the <a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_get_retrieval_pointer_base">FSCTL_GET_RETRIEVAL_POINTER_BASE</a> control code.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_get_retrieval_pointer_base">FSCTL_GET_RETRIEVAL_POINTER_BASE</seealso>
+  </member>
+  <member name="RETRIEVAL_POINTER_BASE.FileAreaOffset">
+    <summary>
+      <para>The volume-relative sector offset to the first allocatable unit on the file system, also referred to as the base of the cluster heap.</para>
+    </summary>
+  </member>
+</doc>

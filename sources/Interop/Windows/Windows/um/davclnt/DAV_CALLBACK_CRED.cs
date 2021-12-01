@@ -5,13 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DAV_CALLBACK_CRED.xml' path='doc/member[@name="DAV_CALLBACK_CRED"]/*' />
 public partial struct DAV_CALLBACK_CRED
 {
+    /// <include file='DAV_CALLBACK_CRED.xml' path='doc/member[@name="DAV_CALLBACK_CRED.AuthBlob"]/*' />
     public DAV_CALLBACK_AUTH_BLOB AuthBlob;
 
+    /// <include file='DAV_CALLBACK_CRED.xml' path='doc/member[@name="DAV_CALLBACK_CRED.UNPBlob"]/*' />
     public DAV_CALLBACK_AUTH_UNP UNPBlob;
 
+    /// <include file='DAV_CALLBACK_CRED.xml' path='doc/member[@name="DAV_CALLBACK_CRED.bAuthBlobValid"]/*' />
     public BOOL bAuthBlobValid;
 
+    /// <include file='DAV_CALLBACK_CRED.xml' path='doc/member[@name="DAV_CALLBACK_CRED.bSave"]/*' />
     public BOOL bSave;
 }

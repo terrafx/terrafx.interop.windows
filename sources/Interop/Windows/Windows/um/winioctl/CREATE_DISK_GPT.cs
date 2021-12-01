@@ -7,10 +7,13 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CREATE_DISK_GPT.xml' path='doc/member[@name="CREATE_DISK_GPT"]/*' />
 public partial struct CREATE_DISK_GPT
 {
+    /// <include file='CREATE_DISK_GPT.xml' path='doc/member[@name="CREATE_DISK_GPT.DiskId"]/*' />
     public Guid DiskId;
 
+    /// <include file='CREATE_DISK_GPT.xml' path='doc/member[@name="CREATE_DISK_GPT.MaxPartitionCount"]/*' />
     [NativeTypeName("DWORD")]
     public uint MaxPartitionCount;
 }

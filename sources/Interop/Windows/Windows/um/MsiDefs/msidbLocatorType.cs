@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='msidbLocatorType.xml' path='doc/member[@name="msidbLocatorType"]/*' />
 public enum msidbLocatorType
 {
+    /// <include file='msidbLocatorType.xml' path='doc/member[@name="msidbLocatorType.msidbLocatorTypeDirectory"]/*' />
     msidbLocatorTypeDirectory = 0x00000000,
+
+    /// <include file='msidbLocatorType.xml' path='doc/member[@name="msidbLocatorType.msidbLocatorTypeFileName"]/*' />
     msidbLocatorTypeFileName = 0x00000001,
+
+    /// <include file='msidbLocatorType.xml' path='doc/member[@name="msidbLocatorType.msidbLocatorTypeRawValue"]/*' />
     msidbLocatorTypeRawValue = 0x00000002,
+
+    /// <include file='msidbLocatorType.xml' path='doc/member[@name="msidbLocatorType.msidbLocatorType64bit"]/*' />
     msidbLocatorType64bit = 0x00000010,
 }

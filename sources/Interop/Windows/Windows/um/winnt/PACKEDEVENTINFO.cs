@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PACKEDEVENTINFO.xml' path='doc/member[@name="PACKEDEVENTINFO"]/*' />
 public partial struct PACKEDEVENTINFO
 {
+    /// <include file='PACKEDEVENTINFO.xml' path='doc/member[@name="PACKEDEVENTINFO.ulSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint ulSize;
 
+    /// <include file='PACKEDEVENTINFO.xml' path='doc/member[@name="PACKEDEVENTINFO.ulNumEventsForLogFile"]/*' />
     [NativeTypeName("DWORD")]
     public uint ulNumEventsForLogFile;
 
+    /// <include file='PACKEDEVENTINFO.xml' path='doc/member[@name="PACKEDEVENTINFO.ulOffsets"]/*' />
     [NativeTypeName("DWORD []")]
     public uint ulOffsets;
 }

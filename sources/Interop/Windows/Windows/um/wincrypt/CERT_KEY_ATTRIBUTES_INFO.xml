@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CERT_KEY_ATTRIBUTES_INFO">
+    <summary>
+      <para>The <b>CERT_KEY_ATTRIBUTES_INFO</b> structure contains optional additional information about the public key being certified. It can include a key identifier, an indication of the intended use of that key, or an indication of the period of use of the corresponding private key.</para>
+      <para>
+        <see cref="CryptDecodeObject" /> creates an instance of this structure when performed on a
+<see cref="CERT_EXTENSION" /> structure's <b>Value</b> member with its the structure's <b>pszObjId</b> member set to szOID_KEY_ATTRIBUTES.</para>
+      <para>An instance of this structure can be used as input to <see cref="CryptEncodeObject" /> to create an appropriate <see cref="CERT_EXTENSION" />.</para>
+    </summary>
+    <seealso cref="CERT_EXTENSION" />
+    <seealso cref="CERT_PRIVATE_KEY_VALIDITY" />
+    <seealso cref="CRYPT_BIT_BLOB" />
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_INTEGER_BLOB</seealso>
+    <seealso cref="CryptDecodeObject" />
+  </member>
+  <member name="CERT_KEY_ATTRIBUTES_INFO.KeyId">
+    <summary>
+      <para>A <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_DATA_BLOB</a> structure with a unique identifier of a key.</para>
+    </summary>
+  </member>
+  <member name="CERT_KEY_ATTRIBUTES_INFO.IntendedKeyUsage">
+    <summary>
+      <para>
+        <b>CRYPT_BIT_BLOB</b> with it <b>pbData</b> member indicating the intended purpose of the key. For a list of usage bit values, see the <b>RestrictedKeyUsage</b> member of
+the <see cref="CERT_KEY_USAGE_RESTRICTION_INFO" /> structure.</para>
+      <para>This member can be used to find the correct key or certificate of a user who has multiple keys or certificates. Its indication of usage is advisory field, only, and does not imply that usage of the key is restricted to the purpose indicated. The list of intended uses is not necessarily all-inclusive, and the field can be omitted. If a key is to be restricted to a particular use a <see cref="CERT_KEY_USAGE_RESTRICTION_INFO" /> extension must be used.</para>
+    </summary>
+  </member>
+  <member name="CERT_KEY_ATTRIBUTES_INFO.pPrivateKeyUsagePeriod">
+    <summary>
+      <para>A pointer to a
+<see cref="CERT_PRIVATE_KEY_VALIDITY" /> structure that indicates the period of use of the private key corresponding to the certified public key. This member is optional and can be set to <b>NULL</b>.</para>
+    </summary>
+  </member>
+</doc>

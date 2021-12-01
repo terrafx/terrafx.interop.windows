@@ -5,8 +5,10 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='POWER_PLATFORM_INFORMATION.xml' path='doc/member[@name="POWER_PLATFORM_INFORMATION"]/*' />
 public partial struct POWER_PLATFORM_INFORMATION
 {
+    /// <include file='POWER_PLATFORM_INFORMATION.xml' path='doc/member[@name="POWER_PLATFORM_INFORMATION.AoAc"]/*' />
     [NativeTypeName("BOOLEAN")]
     public byte AoAc;
 }

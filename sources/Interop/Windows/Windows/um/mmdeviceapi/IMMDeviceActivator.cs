@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMMDeviceActivator.xml' path='doc/member[@name="IMMDeviceActivator"]/*' />
 [Guid("3B0D0EA4-D0A9-4B0E-935B-09516746FAC0")]
 [NativeTypeName("struct IMMDeviceActivator : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMMDeviceActivator : IMMDeviceActivator.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMMDeviceActivator : IMMDeviceActivator.Interface
         return ((delegate* unmanaged<IMMDeviceActivator*, Guid*, void**, int>)(lpVtbl[0]))((IMMDeviceActivator*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMMDeviceActivator : IMMDeviceActivator.Interface
         return ((delegate* unmanaged<IMMDeviceActivator*, uint>)(lpVtbl[1]))((IMMDeviceActivator*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMMDeviceActivator : IMMDeviceActivator.Interface
         return ((delegate* unmanaged<IMMDeviceActivator*, uint>)(lpVtbl[2]))((IMMDeviceActivator*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMMDeviceActivator.xml' path='doc/member[@name="IMMDeviceActivator.Activate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Activate([NativeTypeName("const IID &")] Guid* iid, IMMDevice* pDevice, PROPVARIANT* pActivationParams, void** ppInterface)

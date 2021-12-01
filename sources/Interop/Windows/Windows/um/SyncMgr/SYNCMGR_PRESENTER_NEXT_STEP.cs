@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SYNCMGR_PRESENTER_NEXT_STEP.xml' path='doc/member[@name="SYNCMGR_PRESENTER_NEXT_STEP"]/*' />
 public enum SYNCMGR_PRESENTER_NEXT_STEP
 {
+    /// <include file='SYNCMGR_PRESENTER_NEXT_STEP.xml' path='doc/member[@name="SYNCMGR_PRESENTER_NEXT_STEP.SYNCMGR_PNS_CONTINUE"]/*' />
     SYNCMGR_PNS_CONTINUE = 0,
+
+    /// <include file='SYNCMGR_PRESENTER_NEXT_STEP.xml' path='doc/member[@name="SYNCMGR_PRESENTER_NEXT_STEP.SYNCMGR_PNS_DEFAULT"]/*' />
     SYNCMGR_PNS_DEFAULT = (SYNCMGR_PNS_CONTINUE + 1),
+
+    /// <include file='SYNCMGR_PRESENTER_NEXT_STEP.xml' path='doc/member[@name="SYNCMGR_PRESENTER_NEXT_STEP.SYNCMGR_PNS_CANCEL"]/*' />
     SYNCMGR_PNS_CANCEL = (SYNCMGR_PNS_DEFAULT + 1),
 }

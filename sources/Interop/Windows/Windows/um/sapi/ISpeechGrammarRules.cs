@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ISpeechGrammarRules.xml' path='doc/member[@name="ISpeechGrammarRules"]/*' />
 [Guid("6FFA3B44-FC2D-40D1-8AFC-32911C7F1AD1")]
 [NativeTypeName("struct ISpeechGrammarRules : IDispatch")]
 [NativeInheritance("IDispatch")]
@@ -16,6 +17,7 @@ public unsafe partial struct ISpeechGrammarRules : ISpeechGrammarRules.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ISpeechGrammarRules : ISpeechGrammarRules.Interface
         return ((delegate* unmanaged<ISpeechGrammarRules*, Guid*, void**, int>)(lpVtbl[0]))((ISpeechGrammarRules*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ISpeechGrammarRules : ISpeechGrammarRules.Interface
         return ((delegate* unmanaged<ISpeechGrammarRules*, uint>)(lpVtbl[1]))((ISpeechGrammarRules*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ISpeechGrammarRules : ISpeechGrammarRules.Interface
         return ((delegate* unmanaged<ISpeechGrammarRules*, uint>)(lpVtbl[2]))((ISpeechGrammarRules*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct ISpeechGrammarRules : ISpeechGrammarRules.Interface
         return ((delegate* unmanaged<ISpeechGrammarRules*, uint*, int>)(lpVtbl[3]))((ISpeechGrammarRules*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct ISpeechGrammarRules : ISpeechGrammarRules.Interface
         return ((delegate* unmanaged<ISpeechGrammarRules*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((ISpeechGrammarRules*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
@@ -60,6 +67,7 @@ public unsafe partial struct ISpeechGrammarRules : ISpeechGrammarRules.Interface
         return ((delegate* unmanaged<ISpeechGrammarRules*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((ISpeechGrammarRules*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
+    /// <inheritdoc cref="IDispatch.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
@@ -67,6 +75,7 @@ public unsafe partial struct ISpeechGrammarRules : ISpeechGrammarRules.Interface
         return ((delegate* unmanaged<ISpeechGrammarRules*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((ISpeechGrammarRules*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
+    /// <include file='ISpeechGrammarRules.xml' path='doc/member[@name="ISpeechGrammarRules.get_Count"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT get_Count([NativeTypeName("long *")] int* Count)
@@ -74,6 +83,7 @@ public unsafe partial struct ISpeechGrammarRules : ISpeechGrammarRules.Interface
         return ((delegate* unmanaged<ISpeechGrammarRules*, int*, int>)(lpVtbl[7]))((ISpeechGrammarRules*)Unsafe.AsPointer(ref this), Count);
     }
 
+    /// <include file='ISpeechGrammarRules.xml' path='doc/member[@name="ISpeechGrammarRules.FindRule"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT FindRule(VARIANT RuleNameOrId, ISpeechGrammarRule** Rule)
@@ -81,6 +91,7 @@ public unsafe partial struct ISpeechGrammarRules : ISpeechGrammarRules.Interface
         return ((delegate* unmanaged<ISpeechGrammarRules*, VARIANT, ISpeechGrammarRule**, int>)(lpVtbl[8]))((ISpeechGrammarRules*)Unsafe.AsPointer(ref this), RuleNameOrId, Rule);
     }
 
+    /// <include file='ISpeechGrammarRules.xml' path='doc/member[@name="ISpeechGrammarRules.Item"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT Item([NativeTypeName("long")] int Index, ISpeechGrammarRule** Rule)
@@ -88,6 +99,7 @@ public unsafe partial struct ISpeechGrammarRules : ISpeechGrammarRules.Interface
         return ((delegate* unmanaged<ISpeechGrammarRules*, int, ISpeechGrammarRule**, int>)(lpVtbl[9]))((ISpeechGrammarRules*)Unsafe.AsPointer(ref this), Index, Rule);
     }
 
+    /// <include file='ISpeechGrammarRules.xml' path='doc/member[@name="ISpeechGrammarRules.get__NewEnum"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT get__NewEnum(IUnknown** EnumVARIANT)
@@ -95,6 +107,7 @@ public unsafe partial struct ISpeechGrammarRules : ISpeechGrammarRules.Interface
         return ((delegate* unmanaged<ISpeechGrammarRules*, IUnknown**, int>)(lpVtbl[10]))((ISpeechGrammarRules*)Unsafe.AsPointer(ref this), EnumVARIANT);
     }
 
+    /// <include file='ISpeechGrammarRules.xml' path='doc/member[@name="ISpeechGrammarRules.get_Dynamic"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT get_Dynamic([NativeTypeName("VARIANT_BOOL *")] short* Dynamic)
@@ -102,6 +115,7 @@ public unsafe partial struct ISpeechGrammarRules : ISpeechGrammarRules.Interface
         return ((delegate* unmanaged<ISpeechGrammarRules*, short*, int>)(lpVtbl[11]))((ISpeechGrammarRules*)Unsafe.AsPointer(ref this), Dynamic);
     }
 
+    /// <include file='ISpeechGrammarRules.xml' path='doc/member[@name="ISpeechGrammarRules.Add"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT Add([NativeTypeName("BSTR")] ushort* RuleName, SpeechRuleAttributes Attributes, [NativeTypeName("long")] int RuleId, ISpeechGrammarRule** Rule)
@@ -109,6 +123,7 @@ public unsafe partial struct ISpeechGrammarRules : ISpeechGrammarRules.Interface
         return ((delegate* unmanaged<ISpeechGrammarRules*, ushort*, SpeechRuleAttributes, int, ISpeechGrammarRule**, int>)(lpVtbl[12]))((ISpeechGrammarRules*)Unsafe.AsPointer(ref this), RuleName, Attributes, RuleId, Rule);
     }
 
+    /// <include file='ISpeechGrammarRules.xml' path='doc/member[@name="ISpeechGrammarRules.Commit"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT Commit()
@@ -116,6 +131,7 @@ public unsafe partial struct ISpeechGrammarRules : ISpeechGrammarRules.Interface
         return ((delegate* unmanaged<ISpeechGrammarRules*, int>)(lpVtbl[13]))((ISpeechGrammarRules*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ISpeechGrammarRules.xml' path='doc/member[@name="ISpeechGrammarRules.CommitAndSave"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT CommitAndSave([NativeTypeName("BSTR *")] ushort** ErrorText, VARIANT* SaveStream)

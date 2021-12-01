@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='_MFT_SET_TYPE_FLAGS.xml' path='doc/member[@name="_MFT_SET_TYPE_FLAGS"]/*' />
 public enum _MFT_SET_TYPE_FLAGS
 {
+    /// <include file='_MFT_SET_TYPE_FLAGS.xml' path='doc/member[@name="_MFT_SET_TYPE_FLAGS.MFT_SET_TYPE_TEST_ONLY"]/*' />
     MFT_SET_TYPE_TEST_ONLY = 0x1,
 }

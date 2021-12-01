@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFClock.GetClockCharacteristics">
+    <summary>
+      <para>Retrieves the characteristics of the clock.</para>
+    </summary>
+    <param name="pdwCharacteristics">
+      <para>Receives a bitwise OR of values from the <see cref="MFCLOCK_CHARACTERISTICS_FLAGS" /> enumeration indicating the characteristics of the clock.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IMFClock" />
+  </member>
+  <member name="IMFClock.GetContinuityKey">
+    <summary>
+      <para>Retrieves the clock's continuity key. (Not supported.)</para>
+    </summary>
+    <param name="pdwContinuityKey">
+      <para>Receives the continuity key.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Continuity keys are currently not supported in Media Foundation. Clocks must return the value zero in the <i>pdwContinuityKey</i> parameter.</para>
+    </remarks>
+    <seealso cref="IMFClock" />
+  </member>
+  <member name="IMFClock.GetCorrelatedTime">
+    <summary>
+      <para>Retrieves the last clock time that was correlated with system time.</para>
+    </summary>
+    <param name="dwReserved">
+      <para>Reserved, must be zero.</para>
+    </param>
+    <param name="pllClockTime">
+      <para>Receives the last known clock time, in units of the clock's frequency.</para>
+    </param>
+    <param name="phnsSystemTime">
+      <para>Receives the system time that corresponds to the clock time returned in <i>pllClockTime</i>, in 100-nanosecond units.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_CLOCK_NO_TIME_SOURCE</b>
+            </para>
+          </description>
+          <description>
+            <para>The clock does not have a time source.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>At some fixed interval, a clock correlates its internal clock ticks with the system time. (The system time is the time returned by the high-resolution performance counter.) This method returns:</para>
+      <list type="bullet">
+        <item>
+          <description>The most recent clock time that was correlated with system time.
+</description>
+        </item>
+        <item>
+          <description>The system time when the correlation was performed.
+</description>
+        </item>
+      </list>
+      <para>The clock time is returned in the <i>pllClockTime</i> parameter and is expressed in units of the clock's frequency. If the clock's <see cref="IMFClock.GetClockCharacteristics" /> method returns the <b>MFCLOCK_CHARACTERISTICS_FLAG_FREQUENCY_10MHZ</b> flag, the clock's frequency is 10 MHz (each clock tick is 100 nanoseconds). Otherwise, you can get the clock's frequency by calling <see cref="IMFClock.GetProperties" />. The frequency is given in the <b>qwClockFrequency</b> member of the <see cref="MFCLOCK_PROPERTIES" /> structure returned by that method.</para>
+      <para>The system time is returned in the <i>phnsSystemTime</i> parameter, and is always expressed in 100-nanosecond units.</para>
+      <para>To find out how often the clock correlates its clock time with the system time, call <see cref="GetProperties" />. The correlation interval is given in the <b>qwCorrelationRate</b> member of the <see cref="MFCLOCK_PROPERTIES" /> structure. If <b>qwCorrelationRate</b> is zero, it means the clock performs the correlation whenever <b>GetCorrelatedTime</b> is called. Otherwise, you can calculate the current clock time by extrapolating from the last correlated time.</para>
+      <para>Some clocks support rate changes through the <see cref="IMFRateControl" /> interface. If so, the clock time advances at a speed of frequency × current rate. If a clock does not expose the <b>IMFRateControl</b> interface, the rate is always 1.0.</para>
+      <para>For the presentation clock, the clock time is the presentation time, and is always relative to the starting time specified in <see cref="IMFPresentationClock.Start" />. You can also get the presentation time by calling <see cref="IMFPresentationClock.GetTime" />.</para>
+    </remarks>
+    <seealso cref="IMFClock" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/mftime">MFTIME</seealso>
+  </member>
+  <member name="IMFClock.GetProperties">
+    <summary>
+      <para>Retrieves the properties of the clock.</para>
+    </summary>
+    <param name="pClockProperties">
+      <para>Pointer to an <see cref="MFCLOCK_PROPERTIES" /> structure that receives the properties.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IMFClock" />
+  </member>
+  <member name="IMFClock.GetState">
+    <summary>
+      <para>Retrieves the current state of the clock.</para>
+    </summary>
+    <param name="dwReserved">
+      <para>Reserved, must be zero.</para>
+    </param>
+    <param name="peClockState">
+      <para>Receives the clock state, as a member of the <see cref="MFCLOCK_STATE" /> enumeration.</para>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method succeeded.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IMFClock" />
+  </member>
+  <member name="IMFClock">
+    <summary>
+      <para>Provides timing information from a clock in Microsoft Media Foundation.</para>
+      <para>Clocks and some media sinks expose this interface through <b>QueryInterface</b>.</para>
+    </summary>
+    <remarks>
+      <para>The <b>IMFClock</b> interface applies to any kind of clock. The presentation clock exposes the <see cref="IMFPresentationClock" /> interface in addition to <b>IMFClock</b>.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/presentation-clock">Presentation Clock</seealso>
+  </member>
+</doc>

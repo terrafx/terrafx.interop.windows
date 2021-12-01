@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="VARDESC">
+    <summary>
+      <para>Describes a variable, constant, or data member.</para>
+    </summary>
+  </member>
+  <member name="VARDESC.memid">
+    <summary>
+      <para>The member ID.</para>
+    </summary>
+  </member>
+  <member name="VARDESC.lpstrSchema">
+    <summary>
+      <para>Reserved.</para>
+    </summary>
+  </member>
+  <member name="VARDESC.DUMMYUNIONNAME">
+    <summary></summary>
+  </member>
+  <member name="VARDESC.DUMMYUNIONNAME.oInst">
+    <summary>
+      <para>With VAR_PERINSTANCE, the offset of this variable within the instance.</para>
+    </summary>
+  </member>
+  <member name="VARDESC.DUMMYUNIONNAME.lpvarValue">
+    <summary>
+      <para>With VAR_CONST, the value of the constant.</para>
+    </summary>
+  </member>
+  <member name="VARDESC.elemdescVar">
+    <summary>
+      <para>The variable type.</para>
+    </summary>
+  </member>
+  <member name="VARDESC.wVarFlags">
+    <summary>
+      <para>The variable flags. See <see cref="VARFLAGS" />.</para>
+    </summary>
+  </member>
+  <member name="VARDESC.varkind">
+    <summary>
+      <para>The variable type.</para>
+    </summary>
+  </member>
+</doc>

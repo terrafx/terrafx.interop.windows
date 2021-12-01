@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='eAVDecDDMatrixDecodingMode.xml' path='doc/member[@name="eAVDecDDMatrixDecodingMode"]/*' />
 public enum eAVDecDDMatrixDecodingMode
 {
+    /// <include file='eAVDecDDMatrixDecodingMode.xml' path='doc/member[@name="eAVDecDDMatrixDecodingMode.eAVDecDDMatrixDecodingMode_OFF"]/*' />
     eAVDecDDMatrixDecodingMode_OFF = 0,
+
+    /// <include file='eAVDecDDMatrixDecodingMode.xml' path='doc/member[@name="eAVDecDDMatrixDecodingMode.eAVDecDDMatrixDecodingMode_ON"]/*' />
     eAVDecDDMatrixDecodingMode_ON = 1,
+
+    /// <include file='eAVDecDDMatrixDecodingMode.xml' path='doc/member[@name="eAVDecDDMatrixDecodingMode.eAVDecDDMatrixDecodingMode_AUTO"]/*' />
     eAVDecDDMatrixDecodingMode_AUTO = 2,
 }

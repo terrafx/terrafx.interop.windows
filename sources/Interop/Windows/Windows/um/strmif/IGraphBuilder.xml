@@ -1,0 +1,541 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IGraphBuilder.Disconnect">
+    <summary>
+      <para>The <code>Disconnect</code> method disconnects this pin.</para>
+    </summary>
+    <param name="ppin">
+      <para>Pointer to the pin to disconnect.</para>
+    </param>
+    <returns>
+      <para>Returns one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>Pin was not connected. No error.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>Failure.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer argument.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_NOT_STOPPED</b>
+            </para>
+          </description>
+          <description>
+            <para>The filter is not stopped, but does not support reconnection while in a running state.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method does not completely break the connection. To completely break the connection, both ends must be disconnected.</para>
+      <para>To remove a filter from the filter graph entirely, call the <see cref="IFilterGraph.RemoveFilter" /> method.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IFilterGraph Interface" />
+  </member>
+  <member name="IGraphBuilder.EnumFilters">
+    <summary>
+      <para>The <code>EnumFilters</code> method provides an enumerator for all filters in the graph.</para>
+    </summary>
+    <param name="ppEnum">
+      <para>Receives a pointer to the <see cref="IEnumFilters" /> interface. Use this interface to enumerate the filters. The caller must release the interface.</para>
+    </param>
+    <returns>
+      <para>Returns one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>Insufficient memory to create the enumerator.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer argument.
+</description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IFilterGraph Interface" />
+  </member>
+  <member name="IGraphBuilder.Abort">
+    <summary>
+      <para>The <code>Abort</code> method requests the Filter Graph Manager to halt its current task as quickly as possible.</para>
+      <para>The current task may or may not fail to complete. Possibly the fastest option for the Filter Graph Manager is to complete the task.</para>
+    </summary>
+    <returns>
+      <para>Returns S_OK.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IGraphBuilder Interface" />
+  </member>
+  <member name="IGraphBuilder.AddSourceFilter">
+    <summary>
+      <para>The <code>AddSourceFilter</code> method adds a source filter for a specified file to the filter graph.</para>
+    </summary>
+    <param name="lpcwstrFileName">
+      <para>Specifies the name of the file to load.</para>
+    </param>
+    <param name="lpcwstrFilterName">
+      <para>Specifies a name for the source filter.</para>
+    </param>
+    <param name="ppFilter">
+      <para>Receives a pointer to the filter's <see cref="IBaseFilter" /> interface. The caller must release the interface.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b>. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_NOINTERFACE</b>
+            </para>
+          </description>
+          <description>
+            <para>The source filter does not support the <see cref="IFileSourceFilter" /> interface.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>Insufficient memory.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer argument.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_CANNOT_LOAD_SOURCE_FILTER</b>
+            </para>
+          </description>
+          <description>
+            <para>The source filter for this file could not be loaded.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_NOT_FOUND</b>
+            </para>
+          </description>
+          <description>
+            <para>File or object not found.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_UNKNOWN_FILE_TYPE</b>
+            </para>
+          </description>
+          <description>
+            <para>The media type of this file was not recognized.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method searches for an installed filter that can read the specified file. If it finds one, the method adds it to the filter graph and returns a pointer to the filter's <b>IBaseFilter</b> interface. To determine the media type and compression scheme of the file, the Filter Graph Manager reads the first few bytes of the file, looking for specific patterns of bytes, as documented in the article <a href="https://docs.microsoft.com//windows/desktop/DirectShow/registering-a-custom-file-type">Registering a Custom File Type</a>.</para>
+      <para>The application is responsible for building the rest of the filter graph. To do so, call <see cref="IBaseFilter.EnumPins" /> to enumerate the output pins on the source filter. Then use either the <see cref="IGraphBuilder.Connect" /> method or the <see cref="IGraphBuilder.Render" /> method.</para>
+      <para>If the method succeeds, the <b>IBaseFilter</b> interface has an outstanding reference count. The caller must release the interface.</para>
+      <para>To render a file for default playback, use the <see cref="IGraphBuilder.RenderFile" /> method.</para>
+      <para>The Filter Graph Manager holds a reference count on the filter until the filter is removed from the graph or the Filter Graph Manager is released.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IGraphBuilder Interface" />
+  </member>
+  <member name="IGraphBuilder.Connect">
+    <summary>
+      <para>The <code>Connect</code> method connects the two pins, using intermediates if necessary.</para>
+    </summary>
+    <param name="ppinOut">
+      <para>Pointer to the <see cref="IPin" /> interface on the output pin.</para>
+    </param>
+    <param name="ppinIn">
+      <para>Pointer to the <b>IPin</b> interface on the input pin.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b>. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_S_PARTIAL_RENDER</b>
+            </para>
+          </description>
+          <description>
+            <para>Partial success; some of the streams from this pin use an unsupported format.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_ABORT</b>
+            </para>
+          </description>
+          <description>
+            <para>Operation aborted.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer argument.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_CANNOT_CONNECT</b>
+            </para>
+          </description>
+          <description>
+            <para>No combination of intermediate filters could be found to make the connection.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_NOT_IN_GRAPH</b>
+            </para>
+          </description>
+          <description>
+            <para>At least one of the filters is not in the filter graph.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method connects two pins directly or indirectly, adding intermediate filters if necessary. The method starts by attempting a direct connection. If that fails, it tries to use any filters that are already in the filter graph and have unconnected input pins. (It enumerates these in an arbitrary order.) If that fails, it searches for filters in the registry, and tries them in order of merit. For more information, see <a href="https://docs.microsoft.com//windows/desktop/DirectShow/intelligent-connect">Intelligent Connect</a>.</para>
+      <para>During the connection process, the Filter Graph Manager ignores pins on intermediate filters if the pin name begins with a tilde (~). For more information, see <see cref="PIN_INFO" />.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IGraphBuilder Interface" />
+  </member>
+  <member name="IGraphBuilder.Render">
+    <summary>
+      <para>The <code>Render</code> method builds a filter graph that renders the data from a specified output pin.</para>
+    </summary>
+    <param name="ppinOut">
+      <para>Pointer to the <see cref="IPin" /> interface on an output pin.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b>. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_S_AUDIO_NOT_RENDERED</b>
+            </para>
+          </description>
+          <description>
+            <para>Partial success; the audio was not rendered.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_S_DUPLICATE_NAME</b>
+            </para>
+          </description>
+          <description>
+            <para>Success; the Filter Graph Manager modified a filter name to avoid duplication.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_S_PARTIAL_RENDER</b>
+            </para>
+          </description>
+          <description>
+            <para>Partial success; some of the streams in this movie are in an unsupported format.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_S_VIDEO_NOT_RENDERED</b>
+            </para>
+          </description>
+          <description>
+            <para>Partial success; the video was not rendered.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_ABORT</b>
+            </para>
+          </description>
+          <description>
+            <para>Operation aborted.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>Insufficient memory.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer argument.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_CANNOT_CONNECT</b>
+            </para>
+          </description>
+          <description>
+            <para>No combination of intermediate filters could be found to make the connection.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_CANNOT_RENDER</b>
+            </para>
+          </description>
+          <description>
+            <para>No combination of filters could be found to render the stream.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_NO_ACCEPTABLE_TYPES</b>
+            </para>
+          </description>
+          <description>
+            <para>There is no common media type between these pins.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_E_NOT_IN_GRAPH</b>
+            </para>
+          </description>
+          <description>
+            <para>The filter to which this pin belongs is not in the filter graph.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method renders the data from a specified output pin, adding new filters to the graph as needed. Filters are tried in the same order as for the <see cref="IGraphBuilder.Connect" /> method. For more information, see <a href="https://docs.microsoft.com//windows/desktop/DirectShow/intelligent-connect">Intelligent Connect</a>.</para>
+      <para>During the connection process, the Filter Graph Manager ignores pins on intermediate filters if the pin name begins with a tilde (~). For more information, see <see cref="PIN_INFO" />.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IGraphBuilder Interface" />
+  </member>
+  <member name="IGraphBuilder.SetLogFile">
+    <summary>
+      <para>The <code>SetLogFile</code> method sets the file for logging actions taken when attempting to perform an operation.</para>
+    </summary>
+    <param name="hFile">
+      <para>Handle to the log file.</para>
+    </param>
+    <returns>
+      <para>Returns S_OK.</para>
+    </returns>
+    <remarks>
+      <para>This method is for use in debugging; it is intended to help you determine the cause of any failure to automatically build a filter graph.</para>
+      <para>The <i>hFile</i> parameter must be an open file handle. Your application is responsible for opening the file and for closing it when you are done logging. Before closing the file handle, call <code>SetLogFile</code> with a <b>NULL</b> file handle. This will ensure that the component does not attempt to use the file handle after you have closed it.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IGraphBuilder Interface" />
+  </member>
+  <member name="IGraphBuilder.ShouldOperationContinue">
+    <summary>
+      <para>The <code>ShouldOperationContinue</code> method queries whether the current operation should continue. A filter that is performing some operation at the request of the graph can call this method to determine whether it should continue. Applications will not normally call this method.</para>
+    </summary>
+    <returns>
+      <para>Returns an <b>HRESULT</b>. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The current operation should continue.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>The current operation should not continue.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_UNEXPECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>Unexpected error.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IGraphBuilder Interface" />
+  </member>
+  <member name="IGraphBuilder">
+    <summary>
+      <para>This interface provides methods that enable an application to build a filter graph. The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/filter-graph-manager">Filter Graph Manager</a> implements this interface.</para>
+      <para>The <b>IGraphBuilder</b> interface inherits from the <see cref="IFilterGraph" /> interface. <b>IFilterGraph</b> provides basic operations, such as adding a filter to the graph or connecting two pins. <b>IGraphBuilder</b> adds further methods that construct graphs from partial information. For example, the <see cref="IGraphBuilder.RenderFile" /> method builds a graph for file playback, given the name of the file. The <see cref="IGraphBuilder.Render" /> method renders data from an output pin by connecting new filters to the pin.</para>
+      <para>Using these methods, an application does not need to specify every filter and pin connection in the graph. Instead, the Filter Graph Manager selects filters that are registered on the user's system, adds them to the graph, and connects them. For more information, see <a href="https://docs.microsoft.com//windows/desktop/DirectShow/intelligent-connect">Intelligent Connect</a>.</para>
+    </summary>
+    <seealso cref="IFilterGraph" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/interfaces">Interfaces</seealso>
+  </member>
+</doc>

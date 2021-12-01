@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SpatialAudioHrtfDirectivityType.xml' path='doc/member[@name="SpatialAudioHrtfDirectivityType"]/*' />
 public enum SpatialAudioHrtfDirectivityType
 {
+    /// <include file='SpatialAudioHrtfDirectivityType.xml' path='doc/member[@name="SpatialAudioHrtfDirectivityType.SpatialAudioHrtfDirectivity_OmniDirectional"]/*' />
     SpatialAudioHrtfDirectivity_OmniDirectional = 0,
+
+    /// <include file='SpatialAudioHrtfDirectivityType.xml' path='doc/member[@name="SpatialAudioHrtfDirectivityType.SpatialAudioHrtfDirectivity_Cardioid"]/*' />
     SpatialAudioHrtfDirectivity_Cardioid = (SpatialAudioHrtfDirectivity_OmniDirectional + 1),
+
+    /// <include file='SpatialAudioHrtfDirectivityType.xml' path='doc/member[@name="SpatialAudioHrtfDirectivityType.SpatialAudioHrtfDirectivity_Cone"]/*' />
     SpatialAudioHrtfDirectivity_Cone = (SpatialAudioHrtfDirectivity_Cardioid + 1),
 }

@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAppxManifestTargetDeviceFamily.xml' path='doc/member[@name="IAppxManifestTargetDeviceFamily"]/*' />
 [Guid("9091B09B-C8D5-4F31-8687-A338259FAEFB")]
 [NativeTypeName("struct IAppxManifestTargetDeviceFamily : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IAppxManifestTargetDeviceFamily : IAppxManifestTarg
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IAppxManifestTargetDeviceFamily : IAppxManifestTarg
         return ((delegate* unmanaged<IAppxManifestTargetDeviceFamily*, Guid*, void**, int>)(lpVtbl[0]))((IAppxManifestTargetDeviceFamily*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IAppxManifestTargetDeviceFamily : IAppxManifestTarg
         return ((delegate* unmanaged<IAppxManifestTargetDeviceFamily*, uint>)(lpVtbl[1]))((IAppxManifestTargetDeviceFamily*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IAppxManifestTargetDeviceFamily : IAppxManifestTarg
         return ((delegate* unmanaged<IAppxManifestTargetDeviceFamily*, uint>)(lpVtbl[2]))((IAppxManifestTargetDeviceFamily*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAppxManifestTargetDeviceFamily.xml' path='doc/member[@name="IAppxManifestTargetDeviceFamily.GetName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetName([NativeTypeName("LPWSTR *")] ushort** name)
@@ -48,6 +53,7 @@ public unsafe partial struct IAppxManifestTargetDeviceFamily : IAppxManifestTarg
         return ((delegate* unmanaged<IAppxManifestTargetDeviceFamily*, ushort**, int>)(lpVtbl[3]))((IAppxManifestTargetDeviceFamily*)Unsafe.AsPointer(ref this), name);
     }
 
+    /// <include file='IAppxManifestTargetDeviceFamily.xml' path='doc/member[@name="IAppxManifestTargetDeviceFamily.GetMinVersion"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetMinVersion([NativeTypeName("UINT64 *")] ulong* minVersion)
@@ -55,6 +61,7 @@ public unsafe partial struct IAppxManifestTargetDeviceFamily : IAppxManifestTarg
         return ((delegate* unmanaged<IAppxManifestTargetDeviceFamily*, ulong*, int>)(lpVtbl[4]))((IAppxManifestTargetDeviceFamily*)Unsafe.AsPointer(ref this), minVersion);
     }
 
+    /// <include file='IAppxManifestTargetDeviceFamily.xml' path='doc/member[@name="IAppxManifestTargetDeviceFamily.GetMaxVersionTested"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetMaxVersionTested([NativeTypeName("UINT64 *")] ulong* maxVersionTested)

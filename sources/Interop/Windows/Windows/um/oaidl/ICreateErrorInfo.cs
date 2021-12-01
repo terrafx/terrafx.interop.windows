@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ICreateErrorInfo.xml' path='doc/member[@name="ICreateErrorInfo"]/*' />
 [Guid("22F03340-547D-101B-8E65-08002B2BD119")]
 [NativeTypeName("struct ICreateErrorInfo : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ICreateErrorInfo : ICreateErrorInfo.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ICreateErrorInfo : ICreateErrorInfo.Interface
         return ((delegate* unmanaged<ICreateErrorInfo*, Guid*, void**, int>)(lpVtbl[0]))((ICreateErrorInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ICreateErrorInfo : ICreateErrorInfo.Interface
         return ((delegate* unmanaged<ICreateErrorInfo*, uint>)(lpVtbl[1]))((ICreateErrorInfo*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ICreateErrorInfo : ICreateErrorInfo.Interface
         return ((delegate* unmanaged<ICreateErrorInfo*, uint>)(lpVtbl[2]))((ICreateErrorInfo*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ICreateErrorInfo.xml' path='doc/member[@name="ICreateErrorInfo.SetGUID"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetGUID([NativeTypeName("const GUID &")] Guid* rguid)
@@ -46,6 +51,7 @@ public unsafe partial struct ICreateErrorInfo : ICreateErrorInfo.Interface
         return ((delegate* unmanaged<ICreateErrorInfo*, Guid*, int>)(lpVtbl[3]))((ICreateErrorInfo*)Unsafe.AsPointer(ref this), rguid);
     }
 
+    /// <include file='ICreateErrorInfo.xml' path='doc/member[@name="ICreateErrorInfo.SetSource"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetSource([NativeTypeName("LPOLESTR")] ushort* szSource)
@@ -53,6 +59,7 @@ public unsafe partial struct ICreateErrorInfo : ICreateErrorInfo.Interface
         return ((delegate* unmanaged<ICreateErrorInfo*, ushort*, int>)(lpVtbl[4]))((ICreateErrorInfo*)Unsafe.AsPointer(ref this), szSource);
     }
 
+    /// <include file='ICreateErrorInfo.xml' path='doc/member[@name="ICreateErrorInfo.SetDescription"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetDescription([NativeTypeName("LPOLESTR")] ushort* szDescription)
@@ -60,6 +67,7 @@ public unsafe partial struct ICreateErrorInfo : ICreateErrorInfo.Interface
         return ((delegate* unmanaged<ICreateErrorInfo*, ushort*, int>)(lpVtbl[5]))((ICreateErrorInfo*)Unsafe.AsPointer(ref this), szDescription);
     }
 
+    /// <include file='ICreateErrorInfo.xml' path='doc/member[@name="ICreateErrorInfo.SetHelpFile"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT SetHelpFile([NativeTypeName("LPOLESTR")] ushort* szHelpFile)
@@ -67,6 +75,7 @@ public unsafe partial struct ICreateErrorInfo : ICreateErrorInfo.Interface
         return ((delegate* unmanaged<ICreateErrorInfo*, ushort*, int>)(lpVtbl[6]))((ICreateErrorInfo*)Unsafe.AsPointer(ref this), szHelpFile);
     }
 
+    /// <include file='ICreateErrorInfo.xml' path='doc/member[@name="ICreateErrorInfo.SetHelpContext"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT SetHelpContext([NativeTypeName("DWORD")] uint dwHelpContext)

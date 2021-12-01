@@ -7,11 +7,14 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ROI_AREA.xml' path='doc/member[@name="ROI_AREA"]/*' />
 [SupportedOSPlatform("windows8.1")]
 public partial struct ROI_AREA
 {
+    /// <include file='ROI_AREA.xml' path='doc/member[@name="ROI_AREA.rect"]/*' />
     public RECT rect;
 
+    /// <include file='ROI_AREA.xml' path='doc/member[@name="ROI_AREA.QPDelta"]/*' />
     [NativeTypeName("INT32")]
     public int QPDelta;
 }

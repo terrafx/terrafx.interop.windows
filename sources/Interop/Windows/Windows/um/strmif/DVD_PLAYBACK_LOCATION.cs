@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DVD_PLAYBACK_LOCATION.xml' path='doc/member[@name="DVD_PLAYBACK_LOCATION"]/*' />
 public partial struct DVD_PLAYBACK_LOCATION
 {
+    /// <include file='DVD_PLAYBACK_LOCATION.xml' path='doc/member[@name="DVD_PLAYBACK_LOCATION.TitleNum"]/*' />
     [NativeTypeName("ULONG")]
     public uint TitleNum;
 
+    /// <include file='DVD_PLAYBACK_LOCATION.xml' path='doc/member[@name="DVD_PLAYBACK_LOCATION.ChapterNum"]/*' />
     [NativeTypeName("ULONG")]
     public uint ChapterNum;
 
+    /// <include file='DVD_PLAYBACK_LOCATION.xml' path='doc/member[@name="DVD_PLAYBACK_LOCATION.TimeCode"]/*' />
     [NativeTypeName("ULONG")]
     public uint TimeCode;
 }

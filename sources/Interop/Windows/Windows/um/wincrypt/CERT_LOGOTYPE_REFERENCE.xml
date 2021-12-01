@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CERT_LOGOTYPE_REFERENCE">
+    <summary>
+      <para>The <b>CERT_LOGOTYPE_REFERENCE</b> structure contains logotype reference information.</para>
+    </summary>
+  </member>
+  <member name="CERT_LOGOTYPE_REFERENCE.cHashedUrl">
+    <summary>
+      <para>The number of elements in the <b>rgHashedUrl</b> array.</para>
+    </summary>
+  </member>
+  <member name="CERT_LOGOTYPE_REFERENCE.rgHashedUrl">
+    <summary>
+      <para>An array of <see cref="CERT_HASHED_URL" /> structures that contain the hashed URL of the logotype. The <b>cHashedUrl</b> member contains the number of elements in this array.</para>
+    </summary>
+  </member>
+</doc>

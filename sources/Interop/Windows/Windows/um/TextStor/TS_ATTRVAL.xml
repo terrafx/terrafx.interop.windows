@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="TS_ATTRVAL">
+    <summary>
+      <para>The <b>TS_ATTRVAL</b> structure contains document attribute values.</para>
+    </summary>
+    <remarks>
+      <para>An application uses attributes to expose its data to TSF, whereas text services use properties to expose their data to TSF. <b>TS_ATTRVAL</b> is used in <see cref="ITextStoreACP" /> and <see cref="ITextStoreAnchor" /> methods.</para>
+    </remarks>
+    <seealso cref="ITextStoreACP " />
+    <seealso cref="ITextStoreACP.RequestAttrsTransitioningAtPosition " />
+    <seealso cref="ITextStoreACP.RequestSupportedAttrs " />
+    <seealso cref="ITextStoreACP.RetrieveRequestedAttrs " />
+    <seealso cref="ITextStoreAnchor " />
+    <seealso cref="ITextStoreAnchor.RequestAttrsTransitioningAtPosition " />
+    <seealso cref="ITextStoreAnchor.RequestSupportedAttrs " />
+    <seealso cref="ITextStoreAnchor.RetrieveRequestedAttrs " />
+    <seealso href="https://docs.microsoft.com//previous-versions/ms971350(v=msdn.10)">Microsoft Active Accessibility</seealso>
+    <seealso cref="TF_PROPERTYVAL " />
+    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/ts-attrid">TS_ATTRID
+</seealso>
+  </member>
+  <member name="TS_ATTRVAL.idAttr">
+    <summary>
+      <para>GUID for the attribute type.</para>
+    </summary>
+  </member>
+  <member name="TS_ATTRVAL.dwOverlapId">
+    <summary>
+      <para>A unique identifier of this attribute when overlapped with other attributes. This is a feature in <a href="https://docs.microsoft.com//previous-versions/ms971350(v=msdn.10)">Microsoft Active Accessibility</a>. In TSF, this parameter value is zero (0). Any nonzero value is ignored.</para>
+    </summary>
+  </member>
+  <member name="TS_ATTRVAL.varValue">
+    <summary>
+      <para>Value of the attribute.</para>
+    </summary>
+  </member>
+</doc>

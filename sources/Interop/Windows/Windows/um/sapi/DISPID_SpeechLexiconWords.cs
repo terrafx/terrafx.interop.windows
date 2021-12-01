@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DISPID_SpeechLexiconWords.xml' path='doc/member[@name="DISPID_SpeechLexiconWords"]/*' />
 public enum DISPID_SpeechLexiconWords
 {
+    /// <include file='DISPID_SpeechLexiconWords.xml' path='doc/member[@name="DISPID_SpeechLexiconWords.DISPID_SLWsCount"]/*' />
     DISPID_SLWsCount = 1,
+
+    /// <include file='DISPID_SpeechLexiconWords.xml' path='doc/member[@name="DISPID_SpeechLexiconWords.DISPID_SLWsItem"]/*' />
     DISPID_SLWsItem = (0),
+
+    /// <include file='DISPID_SpeechLexiconWords.xml' path='doc/member[@name="DISPID_SpeechLexiconWords.DISPID_SLWs_NewEnum"]/*' />
     DISPID_SLWs_NewEnum = (-4),
 }

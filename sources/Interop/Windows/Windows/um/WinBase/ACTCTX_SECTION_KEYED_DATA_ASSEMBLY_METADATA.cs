@@ -5,20 +5,26 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ACTCTX_SECTION_KEYED_DATA_ASSEMBLY_METADATA.xml' path='doc/member[@name="ACTCTX_SECTION_KEYED_DATA_ASSEMBLY_METADATA"]/*' />
 public unsafe partial struct ACTCTX_SECTION_KEYED_DATA_ASSEMBLY_METADATA
 {
+    /// <include file='ACTCTX_SECTION_KEYED_DATA_ASSEMBLY_METADATA.xml' path='doc/member[@name="ACTCTX_SECTION_KEYED_DATA_ASSEMBLY_METADATA.lpInformation"]/*' />
     [NativeTypeName("PVOID")]
     public void* lpInformation;
 
+    /// <include file='ACTCTX_SECTION_KEYED_DATA_ASSEMBLY_METADATA.xml' path='doc/member[@name="ACTCTX_SECTION_KEYED_DATA_ASSEMBLY_METADATA.lpSectionBase"]/*' />
     [NativeTypeName("PVOID")]
     public void* lpSectionBase;
 
+    /// <include file='ACTCTX_SECTION_KEYED_DATA_ASSEMBLY_METADATA.xml' path='doc/member[@name="ACTCTX_SECTION_KEYED_DATA_ASSEMBLY_METADATA.ulSectionLength"]/*' />
     [NativeTypeName("ULONG")]
     public uint ulSectionLength;
 
+    /// <include file='ACTCTX_SECTION_KEYED_DATA_ASSEMBLY_METADATA.xml' path='doc/member[@name="ACTCTX_SECTION_KEYED_DATA_ASSEMBLY_METADATA.lpSectionGlobalDataBase"]/*' />
     [NativeTypeName("PVOID")]
     public void* lpSectionGlobalDataBase;
 
+    /// <include file='ACTCTX_SECTION_KEYED_DATA_ASSEMBLY_METADATA.xml' path='doc/member[@name="ACTCTX_SECTION_KEYED_DATA_ASSEMBLY_METADATA.ulSectionGlobalDataLength"]/*' />
     [NativeTypeName("ULONG")]
     public uint ulSectionGlobalDataLength;
 }

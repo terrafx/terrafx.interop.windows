@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='URL_ENCODING.xml' path='doc/member[@name="URL_ENCODING"]/*' />
 public enum URL_ENCODING
 {
+    /// <include file='URL_ENCODING.xml' path='doc/member[@name="URL_ENCODING.URL_ENCODING_NONE"]/*' />
     URL_ENCODING_NONE = 0,
+
+    /// <include file='URL_ENCODING.xml' path='doc/member[@name="URL_ENCODING.URL_ENCODING_ENABLE_UTF8"]/*' />
     URL_ENCODING_ENABLE_UTF8 = 0x10000000,
+
+    /// <include file='URL_ENCODING.xml' path='doc/member[@name="URL_ENCODING.URL_ENCODING_DISABLE_UTF8"]/*' />
     URL_ENCODING_DISABLE_UTF8 = 0x20000000,
 }

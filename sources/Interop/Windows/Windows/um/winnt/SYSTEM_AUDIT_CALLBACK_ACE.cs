@@ -5,13 +5,17 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SYSTEM_AUDIT_CALLBACK_ACE.xml' path='doc/member[@name="SYSTEM_AUDIT_CALLBACK_ACE"]/*' />
 public partial struct SYSTEM_AUDIT_CALLBACK_ACE
 {
+    /// <include file='SYSTEM_AUDIT_CALLBACK_ACE.xml' path='doc/member[@name="SYSTEM_AUDIT_CALLBACK_ACE.Header"]/*' />
     public ACE_HEADER Header;
 
+    /// <include file='SYSTEM_AUDIT_CALLBACK_ACE.xml' path='doc/member[@name="SYSTEM_AUDIT_CALLBACK_ACE.Mask"]/*' />
     [NativeTypeName("ACCESS_MASK")]
     public uint Mask;
 
+    /// <include file='SYSTEM_AUDIT_CALLBACK_ACE.xml' path='doc/member[@name="SYSTEM_AUDIT_CALLBACK_ACE.SidStart"]/*' />
     [NativeTypeName("DWORD")]
     public uint SidStart;
 }

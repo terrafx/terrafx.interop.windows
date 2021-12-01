@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PICTUREATTRIBUTES">
+    <summary>
+      <para>Specifies attributes of a picture object as returned through the <see cref="IPicture.get_Attributes" /> method.</para>
+    </summary>
+    <seealso cref="IPicture.get_Attributes" />
+  </member>
+  <member name="PICTUREATTRIBUTES.PICTURE_SCALABLE">
+    <summary>
+      <para>The picture object is scalable, such that it can be redrawn with a different size than was used to create the picture originally. Metafile-based pictures are considered scalable; icon and bitmap pictures, while they can be scaled, do not express this attribute because both involve bitmap stretching instead of true scaling.</para>
+    </summary>
+  </member>
+  <member name="PICTUREATTRIBUTES.PICTURE_TRANSPARENT">
+    <summary>
+      <para>The picture object contains an image that has transparent areas, such that drawing the picture will not necessarily fill in all the spaces in the rectangle it occupies. Metafile and icon pictures have this attribute; bitmap pictures do not.</para>
+    </summary>
+  </member>
+</doc>

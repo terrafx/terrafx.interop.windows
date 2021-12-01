@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_VOID_DESCRIPTION">
+    <summary>
+      <para>Specifies information about a field which is neither serialized nor
+deserialized.</para>
+      <para>This is used with <see cref="WS_VOID_TYPE" /> and <see cref="WS_NO_FIELD_MAPPING" /> within a <see cref="WS_FIELD_DESCRIPTION" />.</para>
+      <para>This type description is only required when <see cref="WS_FIELD_POINTER" /> is not
+being used.</para>
+    </summary>
+  </member>
+  <member name="WS_VOID_DESCRIPTION.size">
+    <summary>
+      <para>The size of the field.</para>
+    </summary>
+  </member>
+</doc>

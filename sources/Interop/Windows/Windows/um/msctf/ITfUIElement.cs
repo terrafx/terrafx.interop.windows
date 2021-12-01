@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITfUIElement.xml' path='doc/member[@name="ITfUIElement"]/*' />
 [Guid("EA1EA137-19DF-11D7-A6D2-00065B84435C")]
 [NativeTypeName("struct ITfUIElement : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITfUIElement : ITfUIElement.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITfUIElement : ITfUIElement.Interface
         return ((delegate* unmanaged<ITfUIElement*, Guid*, void**, int>)(lpVtbl[0]))((ITfUIElement*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITfUIElement : ITfUIElement.Interface
         return ((delegate* unmanaged<ITfUIElement*, uint>)(lpVtbl[1]))((ITfUIElement*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITfUIElement : ITfUIElement.Interface
         return ((delegate* unmanaged<ITfUIElement*, uint>)(lpVtbl[2]))((ITfUIElement*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITfUIElement.xml' path='doc/member[@name="ITfUIElement.GetDescription"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetDescription([NativeTypeName("BSTR *")] ushort** pbstrDescription)
@@ -46,6 +51,7 @@ public unsafe partial struct ITfUIElement : ITfUIElement.Interface
         return ((delegate* unmanaged<ITfUIElement*, ushort**, int>)(lpVtbl[3]))((ITfUIElement*)Unsafe.AsPointer(ref this), pbstrDescription);
     }
 
+    /// <include file='ITfUIElement.xml' path='doc/member[@name="ITfUIElement.GetGUID"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetGUID(Guid* pguid)
@@ -53,6 +59,7 @@ public unsafe partial struct ITfUIElement : ITfUIElement.Interface
         return ((delegate* unmanaged<ITfUIElement*, Guid*, int>)(lpVtbl[4]))((ITfUIElement*)Unsafe.AsPointer(ref this), pguid);
     }
 
+    /// <include file='ITfUIElement.xml' path='doc/member[@name="ITfUIElement.Show"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT Show(BOOL bShow)
@@ -60,6 +67,7 @@ public unsafe partial struct ITfUIElement : ITfUIElement.Interface
         return ((delegate* unmanaged<ITfUIElement*, BOOL, int>)(lpVtbl[5]))((ITfUIElement*)Unsafe.AsPointer(ref this), bShow);
     }
 
+    /// <include file='ITfUIElement.xml' path='doc/member[@name="ITfUIElement.IsShown"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT IsShown(BOOL* pbShow)

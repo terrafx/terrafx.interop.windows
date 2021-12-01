@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IPlayToSourceClassFactory.CreateInstance">
+    <summary>
+      <para>Creates an instance of the <b>PlayToController</b> object.</para>
+    </summary>
+    <param name="dwFlags">
+      <para>A bitwise <b>OR</b> of flags from the <see cref="PLAYTO_SOURCE_CREATEFLAGS" /> enumeration.</para>
+    </param>
+    <param name="pControl">
+      <para>A pointer to the <see cref="IPlayToControl" /> interface.</para>
+    </param>
+    <param name="ppSource">
+      <para>Receives a pointer to the <see cref="IInspectable" /> interface. The caller must release the interface.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IPlayToSourceClassFactory" />
+  </member>
+  <member name="IPlayToSourceClassFactory">
+    <summary>
+      <para>Creates an instance of the <a href="https://docs.microsoft.com//uwp/api/windows.media.playto.playtosource">PlayToSource</a> object.</para>
+    </summary>
+    <remarks>
+      <para>To get a pointer to this interface, call <see cref="CoCreateInstance" />. The CLSID is <b>CLSID_PlayToSourceClassFactory</b>.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+  </member>
+</doc>

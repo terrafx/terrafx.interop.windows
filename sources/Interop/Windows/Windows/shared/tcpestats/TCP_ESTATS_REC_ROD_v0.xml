@@ -1,0 +1,252 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="TCP_ESTATS_REC_ROD_v0">
+    <summary>
+      <para>The <b>TCP_ESTATS_REC_ROD_v0</b> structure contains read-only dynamic information for extended TCP statistics on the local receiver for a TCP connection.</para>
+    </summary>
+    <remarks>
+      <para>The <b>TCP_ESTATS_REC_ROD_v0</b> structure is used as part of the TCP extended statistics feature available on Windows Vista and later.</para>
+      <para>The <b>TCP_ESTATS_REC_ROD_v0</b> is defined as version 0 of the structure for  read-only dynamic information for extended TCP statistics on the local receiver for a TCP connection.  This information is available after the connection has been established.</para>
+      <para>The <b>TCP_ESTATS_REC_ROD_v0</b> structure is retrieved by calls to  the <see cref="GetPerTcp6ConnectionEStats" /> or <see cref="GetPerTcpConnectionEStats" /> functions when <b>TcpConnectionEstatsRec</b> is passed in the <i>EstatsType</i> parameter. Extended TCP statistics need to be enabled to retrieve this structure.</para>
+      <para>TCP congestion control and congestion control algorithms are discussed in detail in the IETF RFC 2581 on TCP Congestion Control. For more information, see <a href="http://tools.ietf.org/html/rfc2581">http://www.ietf.org/rfc/rfc2581.txt</a>.</para>
+      <para>Explicit Congestion Notification in IP is discussed in detail in the IETF RFC 2581 on The Addition of Explicit Congestion Notification
+(ECN) to IP. For more information, see <a href="http://tools.ietf.org/html/rfc3168">http://www.ietf.org/rfc/rfc3168.txt</a>.</para>
+      <para>The members of this structure are defined in the IETF RFC on the TCP Extended Statistics MIB. For more information, see <a href="http://tools.ietf.org/html/rfc4898">http://www.ietf.org/rfc/rfc4898.txt</a>.</para>
+      <para>The following is the mapping of the members in the <b>TCP_ESTATS_REC_ROD_v0</b> structure to the entries defined in RFC 4898 for extended TCP statistics:</para>
+      <list type="table">
+        <listheader>
+          <description>Term</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <b>CurRwinSent</b>
+          </description>
+          <description>
+            <para>tcpEStatsPerfCurRwinSent</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>MaxRwinSent</b>
+          </description>
+          <description>
+            <para>tcpEStatsPerfMaxRwinSent</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>MinRwinSent</b>
+          </description>
+          <description>
+            <para>No mapping to this member.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>LimRwin</b>
+          </description>
+          <description>
+            <para>tcpEStatsTuneLimRwin</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>DupAckEpisodes</b>
+          </description>
+          <description>
+            <para>tcpEStatsPathDupAckEpisodes</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>DupAcksOut</b>
+          </description>
+          <description>
+            <para>tcpEStatsPathDupAcksOut</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>CeRcvd</b>
+          </description>
+          <description>
+            <para>tcpEStatsPathCERcvd</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>EcnSent</b>
+          </description>
+          <description>
+            <para>No mapping to this member.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>EcnNoncesRcvd</b>
+          </description>
+          <description>
+            <para>No mapping to this member.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>CurReasmQueue</b>
+          </description>
+          <description>
+            <para>tcpEStatsStackCurReasmQueue</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>MaxReasmQueue</b>
+          </description>
+          <description>
+            <para>tcpEStatsStackMaxReasmQueue</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>CurAppRQueue</b>
+          </description>
+          <description>
+            <para>tcpEStatsAppCurAppRQueue</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>MaxAppRQueue</b>
+          </description>
+          <description>
+            <para>tcpEStatsAppMaxAppRQueue</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>WinScaleSent</b>
+          </description>
+          <description>
+            <para>tcpEStatsStackWinScaleSent</para>
+          </description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="GetPerTcp6ConnectionEStats" />
+    <seealso cref="GetPerTcpConnectionEStats" />
+    <seealso cref="TCP_ESTATS_TYPE" />
+  </member>
+  <member name="TCP_ESTATS_REC_ROD_v0.CurRwinSent">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The most recent window advertisement, in bytes, that has been sent.</para>
+    </summary>
+  </member>
+  <member name="TCP_ESTATS_REC_ROD_v0.MaxRwinSent">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The maximum window advertisement, in bytes, that has been sent.</para>
+    </summary>
+  </member>
+  <member name="TCP_ESTATS_REC_ROD_v0.MinRwinSent">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The minimum window advertisement, in bytes, that has been sent.</para>
+    </summary>
+  </member>
+  <member name="TCP_ESTATS_REC_ROD_v0.LimRwin">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The maximum window advertisement, in bytes, that may
+be sent.</para>
+    </summary>
+  </member>
+  <member name="TCP_ESTATS_REC_ROD_v0.DupAckEpisodes">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The number of Duplicate Acks Sent when prior Ack was not
+duplicate.  This is the number of times that a contiguous
+series of duplicate acknowledgments have been sent.</para>
+      <para>This is an indication of the number of data segments lost
+or reordered on the path from the remote TCP endpoint to
+the near TCP endpoint.</para>
+    </summary>
+  </member>
+  <member name="TCP_ESTATS_REC_ROD_v0.DupAcksOut">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The number of duplicate ACKs sent.</para>
+      <para>The ratio of the change
+in the <b>DupAcksOut</b> member to the change in
+the <b>DupAckEpisodes</b> member  is an indication of reorder or
+recovery distance over some interval.</para>
+    </summary>
+  </member>
+  <member name="TCP_ESTATS_REC_ROD_v0.CeRcvd">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The number of segments received with IP headers bearing
+Congestion Experienced (CE) markings.</para>
+    </summary>
+  </member>
+  <member name="TCP_ESTATS_REC_ROD_v0.EcnSent">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>Reserved for future use. This member is always set to zero.</para>
+    </summary>
+  </member>
+  <member name="TCP_ESTATS_REC_ROD_v0.EcnNoncesRcvd">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>Reserved for future use. This member is always set to zero.</para>
+    </summary>
+  </member>
+  <member name="TCP_ESTATS_REC_ROD_v0.CurReasmQueue">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The current number of bytes of sequence space spanned by
+the reassembly queue.</para>
+      <para>This is generally the difference
+between rcv.nxt and the sequence number of the right most
+edge of the reassembly queue.</para>
+    </summary>
+  </member>
+  <member name="TCP_ESTATS_REC_ROD_v0.MaxReasmQueue">
+    <summary>
+      <para>Type: <b>ULONG</b></para>
+      <para>The maximum number of bytes of sequence space spanned by
+the reassembly queue.</para>
+      <para>This is the maximum value of the <b>CurReasmQueue</b> member.</para>
+    </summary>
+  </member>
+  <member name="TCP_ESTATS_REC_ROD_v0.CurAppRQueue">
+    <summary>
+      <para>Type: <b>SIZE_T</b></para>
+      <para>The current number of bytes of application data that has
+been acknowledged by TCP but not yet delivered to the
+application.</para>
+    </summary>
+  </member>
+  <member name="TCP_ESTATS_REC_ROD_v0.MaxAppRQueue">
+    <summary>
+      <para>Type: <b>SIZE_T</b></para>
+      <para>The maximum number of bytes of application data that has
+been acknowledged by TCP but not yet delivered to the
+application.</para>
+    </summary>
+  </member>
+  <member name="TCP_ESTATS_REC_ROD_v0.WinScaleSent">
+    <summary>
+      <para>Type: <b>UCHAR</b></para>
+      <para>The value of the transmitted window scale option if one was
+sent; otherwise, a value of -1.</para>
+      <para>Note that if both the <b>WinScaleSent</b> member and
+the <b>WinScaleRcvd</b> member of the <see cref="TCP_ESTATS_OBS_REC_ROD_v0" /> structure are not -1, then Rcv.Wind.Scale
+will be the same as this value and used to scale receiver
+window announcements from the local host to the remote
+host.</para>
+    </summary>
+  </member>
+</doc>

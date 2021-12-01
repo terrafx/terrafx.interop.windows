@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STGMOVE.xml' path='doc/member[@name="STGMOVE"]/*' />
 public enum STGMOVE
 {
+    /// <include file='STGMOVE.xml' path='doc/member[@name="STGMOVE.STGMOVE_MOVE"]/*' />
     STGMOVE_MOVE = 0,
+
+    /// <include file='STGMOVE.xml' path='doc/member[@name="STGMOVE.STGMOVE_COPY"]/*' />
     STGMOVE_COPY = 1,
+
+    /// <include file='STGMOVE.xml' path='doc/member[@name="STGMOVE.STGMOVE_SHALLOWCOPY"]/*' />
     STGMOVE_SHALLOWCOPY = 2,
 }

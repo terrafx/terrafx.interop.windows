@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="FaceCharacterizationBlobHeader">
+    <summary>
+      <para>The <b>FaceCharacterizationBlobHeader</b> structure  describes the size and count information of the blob format for the <b>MF_CAPTURE_METADATA_FACEROICHARACTERIZATIONS</b> attribute.</para>
+    </summary>
+  </member>
+  <member name="FaceCharacterizationBlobHeader.Size">
+    <summary>
+      <para>Size of this header + all following <see cref="FaceCharacterization" /> structures.</para>
+    </summary>
+  </member>
+  <member name="FaceCharacterizationBlobHeader.Count">
+    <summary>
+      <para>Number of <b>FaceCharacterization</b> structures in the blob. Must match the number of <see cref="FaceRectInfo" /> structures in <see cref="FaceRectInfoBlobHeader" />.</para>
+    </summary>
+  </member>
+</doc>

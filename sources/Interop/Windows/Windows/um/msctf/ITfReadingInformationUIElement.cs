@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITfReadingInformationUIElement.xml' path='doc/member[@name="ITfReadingInformationUIElement"]/*' />
 [Guid("EA1EA139-19DF-11D7-A6D2-00065B84435C")]
 [NativeTypeName("struct ITfReadingInformationUIElement : ITfUIElement")]
 [NativeInheritance("ITfUIElement")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITfReadingInformationUIElement : ITfReadingInformat
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITfReadingInformationUIElement : ITfReadingInformat
         return ((delegate* unmanaged<ITfReadingInformationUIElement*, Guid*, void**, int>)(lpVtbl[0]))((ITfReadingInformationUIElement*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITfReadingInformationUIElement : ITfReadingInformat
         return ((delegate* unmanaged<ITfReadingInformationUIElement*, uint>)(lpVtbl[1]))((ITfReadingInformationUIElement*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITfReadingInformationUIElement : ITfReadingInformat
         return ((delegate* unmanaged<ITfReadingInformationUIElement*, uint>)(lpVtbl[2]))((ITfReadingInformationUIElement*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ITfUIElement.GetDescription" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetDescription([NativeTypeName("BSTR *")] ushort** pbstrDescription)
@@ -46,6 +51,7 @@ public unsafe partial struct ITfReadingInformationUIElement : ITfReadingInformat
         return ((delegate* unmanaged<ITfReadingInformationUIElement*, ushort**, int>)(lpVtbl[3]))((ITfReadingInformationUIElement*)Unsafe.AsPointer(ref this), pbstrDescription);
     }
 
+    /// <inheritdoc cref="ITfUIElement.GetGUID" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetGUID(Guid* pguid)
@@ -53,6 +59,7 @@ public unsafe partial struct ITfReadingInformationUIElement : ITfReadingInformat
         return ((delegate* unmanaged<ITfReadingInformationUIElement*, Guid*, int>)(lpVtbl[4]))((ITfReadingInformationUIElement*)Unsafe.AsPointer(ref this), pguid);
     }
 
+    /// <inheritdoc cref="ITfUIElement.Show" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT Show(BOOL bShow)
@@ -60,6 +67,7 @@ public unsafe partial struct ITfReadingInformationUIElement : ITfReadingInformat
         return ((delegate* unmanaged<ITfReadingInformationUIElement*, BOOL, int>)(lpVtbl[5]))((ITfReadingInformationUIElement*)Unsafe.AsPointer(ref this), bShow);
     }
 
+    /// <inheritdoc cref="ITfUIElement.IsShown" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT IsShown(BOOL* pbShow)
@@ -67,6 +75,7 @@ public unsafe partial struct ITfReadingInformationUIElement : ITfReadingInformat
         return ((delegate* unmanaged<ITfReadingInformationUIElement*, BOOL*, int>)(lpVtbl[6]))((ITfReadingInformationUIElement*)Unsafe.AsPointer(ref this), pbShow);
     }
 
+    /// <include file='ITfReadingInformationUIElement.xml' path='doc/member[@name="ITfReadingInformationUIElement.GetUpdatedFlags"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetUpdatedFlags([NativeTypeName("DWORD *")] uint* pdwFlags)
@@ -74,6 +83,7 @@ public unsafe partial struct ITfReadingInformationUIElement : ITfReadingInformat
         return ((delegate* unmanaged<ITfReadingInformationUIElement*, uint*, int>)(lpVtbl[7]))((ITfReadingInformationUIElement*)Unsafe.AsPointer(ref this), pdwFlags);
     }
 
+    /// <include file='ITfReadingInformationUIElement.xml' path='doc/member[@name="ITfReadingInformationUIElement.GetContext"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetContext(ITfContext** ppic)
@@ -81,6 +91,7 @@ public unsafe partial struct ITfReadingInformationUIElement : ITfReadingInformat
         return ((delegate* unmanaged<ITfReadingInformationUIElement*, ITfContext**, int>)(lpVtbl[8]))((ITfReadingInformationUIElement*)Unsafe.AsPointer(ref this), ppic);
     }
 
+    /// <include file='ITfReadingInformationUIElement.xml' path='doc/member[@name="ITfReadingInformationUIElement.GetString"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT GetString([NativeTypeName("BSTR *")] ushort** pstr)
@@ -88,6 +99,7 @@ public unsafe partial struct ITfReadingInformationUIElement : ITfReadingInformat
         return ((delegate* unmanaged<ITfReadingInformationUIElement*, ushort**, int>)(lpVtbl[9]))((ITfReadingInformationUIElement*)Unsafe.AsPointer(ref this), pstr);
     }
 
+    /// <include file='ITfReadingInformationUIElement.xml' path='doc/member[@name="ITfReadingInformationUIElement.GetMaxReadingStringLength"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT GetMaxReadingStringLength(uint* pcchMax)
@@ -95,6 +107,7 @@ public unsafe partial struct ITfReadingInformationUIElement : ITfReadingInformat
         return ((delegate* unmanaged<ITfReadingInformationUIElement*, uint*, int>)(lpVtbl[10]))((ITfReadingInformationUIElement*)Unsafe.AsPointer(ref this), pcchMax);
     }
 
+    /// <include file='ITfReadingInformationUIElement.xml' path='doc/member[@name="ITfReadingInformationUIElement.GetErrorIndex"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT GetErrorIndex(uint* pErrorIndex)
@@ -102,6 +115,7 @@ public unsafe partial struct ITfReadingInformationUIElement : ITfReadingInformat
         return ((delegate* unmanaged<ITfReadingInformationUIElement*, uint*, int>)(lpVtbl[11]))((ITfReadingInformationUIElement*)Unsafe.AsPointer(ref this), pErrorIndex);
     }
 
+    /// <include file='ITfReadingInformationUIElement.xml' path='doc/member[@name="ITfReadingInformationUIElement.IsVerticalOrderPreferred"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT IsVerticalOrderPreferred(BOOL* pfVertical)

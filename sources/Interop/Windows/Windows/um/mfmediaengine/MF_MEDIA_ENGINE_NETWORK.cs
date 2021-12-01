@@ -7,11 +7,19 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MF_MEDIA_ENGINE_NETWORK.xml' path='doc/member[@name="MF_MEDIA_ENGINE_NETWORK"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public enum MF_MEDIA_ENGINE_NETWORK
 {
+    /// <include file='MF_MEDIA_ENGINE_NETWORK.xml' path='doc/member[@name="MF_MEDIA_ENGINE_NETWORK.MF_MEDIA_ENGINE_NETWORK_EMPTY"]/*' />
     MF_MEDIA_ENGINE_NETWORK_EMPTY = 0,
+
+    /// <include file='MF_MEDIA_ENGINE_NETWORK.xml' path='doc/member[@name="MF_MEDIA_ENGINE_NETWORK.MF_MEDIA_ENGINE_NETWORK_IDLE"]/*' />
     MF_MEDIA_ENGINE_NETWORK_IDLE = 1,
+
+    /// <include file='MF_MEDIA_ENGINE_NETWORK.xml' path='doc/member[@name="MF_MEDIA_ENGINE_NETWORK.MF_MEDIA_ENGINE_NETWORK_LOADING"]/*' />
     MF_MEDIA_ENGINE_NETWORK_LOADING = 2,
+
+    /// <include file='MF_MEDIA_ENGINE_NETWORK.xml' path='doc/member[@name="MF_MEDIA_ENGINE_NETWORK.MF_MEDIA_ENGINE_NETWORK_NO_SOURCE"]/*' />
     MF_MEDIA_ENGINE_NETWORK_NO_SOURCE = 3,
 }

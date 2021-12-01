@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAppxBundleManifestPackageInfo3.xml' path='doc/member[@name="IAppxBundleManifestPackageInfo3"]/*' />
 [Guid("6BA74B98-BB74-4296-80D0-5F4256A99675")]
 [NativeTypeName("struct IAppxBundleManifestPackageInfo3 : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IAppxBundleManifestPackageInfo3 : IAppxBundleManife
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IAppxBundleManifestPackageInfo3 : IAppxBundleManife
         return ((delegate* unmanaged<IAppxBundleManifestPackageInfo3*, Guid*, void**, int>)(lpVtbl[0]))((IAppxBundleManifestPackageInfo3*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IAppxBundleManifestPackageInfo3 : IAppxBundleManife
         return ((delegate* unmanaged<IAppxBundleManifestPackageInfo3*, uint>)(lpVtbl[1]))((IAppxBundleManifestPackageInfo3*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IAppxBundleManifestPackageInfo3 : IAppxBundleManife
         return ((delegate* unmanaged<IAppxBundleManifestPackageInfo3*, uint>)(lpVtbl[2]))((IAppxBundleManifestPackageInfo3*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAppxBundleManifestPackageInfo3.xml' path='doc/member[@name="IAppxBundleManifestPackageInfo3.GetTargetDeviceFamilies"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTargetDeviceFamilies(IAppxManifestTargetDeviceFamiliesEnumerator** targetDeviceFamilies)

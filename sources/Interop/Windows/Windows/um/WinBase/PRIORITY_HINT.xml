@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PRIORITY_HINT">
+    <summary>
+      <para>Defines values that are used with the <see cref="FILE_IO_PRIORITY_HINT_INFO" /> structure to specify the priority hint for a file I/O operation.</para>
+    </summary>
+    <seealso cref="FILE_IO_PRIORITY_HINT_INFO" />
+    <seealso cref="SetFileInformationByHandle" />
+  </member>
+  <member name="PRIORITY_HINT.IoPriorityHintVeryLow">
+    <summary>
+      <para>The lowest possible priority hint level. The system uses this value for background I/O operations.</para>
+    </summary>
+  </member>
+  <member name="PRIORITY_HINT.IoPriorityHintLow">
+    <summary>
+      <para>A low-priority hint level.</para>
+    </summary>
+  </member>
+  <member name="PRIORITY_HINT.IoPriorityHintNormal">
+    <summary>
+      <para>A normal-priority hint level. This value is the default setting for an I/O operation.</para>
+    </summary>
+  </member>
+  <member name="PRIORITY_HINT.MaximumIoPriorityHintType">
+    <summary>
+      <para>This value is used for validation. Supported values are less than this value.</para>
+    </summary>
+  </member>
+</doc>

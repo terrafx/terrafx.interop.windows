@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PROPERTYUI_FLAGS">
+    <summary>
+      <para>Specifies property features.</para>
+    </summary>
+  </member>
+  <member name="PROPERTYUI_FLAGS.PUIF_DEFAULT">
+    <summary>
+      <para>There are no special features defined.</para>
+    </summary>
+  </member>
+  <member name="PROPERTYUI_FLAGS.PUIF_RIGHTALIGN">
+    <summary>
+      <para>The property should be right aligned.</para>
+    </summary>
+  </member>
+  <member name="PROPERTYUI_FLAGS.PUIF_NOLABELININFOTIP">
+    <summary>
+      <para>The property should not display a label in the infotip.</para>
+    </summary>
+  </member>
+</doc>

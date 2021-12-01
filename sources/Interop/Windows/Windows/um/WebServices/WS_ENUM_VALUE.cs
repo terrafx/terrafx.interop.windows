@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_ENUM_VALUE.xml' path='doc/member[@name="WS_ENUM_VALUE"]/*' />
 public unsafe partial struct WS_ENUM_VALUE
 {
+    /// <include file='WS_ENUM_VALUE.xml' path='doc/member[@name="WS_ENUM_VALUE.value"]/*' />
     public int value;
 
+    /// <include file='WS_ENUM_VALUE.xml' path='doc/member[@name="WS_ENUM_VALUE.name"]/*' />
     public WS_XML_STRING* name;
 }

@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFTimedTextRegion.xml' path='doc/member[@name="IMFTimedTextRegion"]/*' />
 [Guid("C8D22AFC-BC47-4BDF-9B04-787E49CE3F58")]
 [NativeTypeName("struct IMFTimedTextRegion : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IMFTimedTextRegion : IMFTimedTextRegion.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IMFTimedTextRegion : IMFTimedTextRegion.Interface
         return ((delegate* unmanaged<IMFTimedTextRegion*, Guid*, void**, int>)(lpVtbl[0]))((IMFTimedTextRegion*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IMFTimedTextRegion : IMFTimedTextRegion.Interface
         return ((delegate* unmanaged<IMFTimedTextRegion*, uint>)(lpVtbl[1]))((IMFTimedTextRegion*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IMFTimedTextRegion : IMFTimedTextRegion.Interface
         return ((delegate* unmanaged<IMFTimedTextRegion*, uint>)(lpVtbl[2]))((IMFTimedTextRegion*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFTimedTextRegion.xml' path='doc/member[@name="IMFTimedTextRegion.GetName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetName([NativeTypeName("LPWSTR *")] ushort** name)
@@ -48,6 +53,7 @@ public unsafe partial struct IMFTimedTextRegion : IMFTimedTextRegion.Interface
         return ((delegate* unmanaged<IMFTimedTextRegion*, ushort**, int>)(lpVtbl[3]))((IMFTimedTextRegion*)Unsafe.AsPointer(ref this), name);
     }
 
+    /// <include file='IMFTimedTextRegion.xml' path='doc/member[@name="IMFTimedTextRegion.GetPosition"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetPosition(double* pX, double* pY, MF_TIMED_TEXT_UNIT_TYPE* unitType)
@@ -55,6 +61,7 @@ public unsafe partial struct IMFTimedTextRegion : IMFTimedTextRegion.Interface
         return ((delegate* unmanaged<IMFTimedTextRegion*, double*, double*, MF_TIMED_TEXT_UNIT_TYPE*, int>)(lpVtbl[4]))((IMFTimedTextRegion*)Unsafe.AsPointer(ref this), pX, pY, unitType);
     }
 
+    /// <include file='IMFTimedTextRegion.xml' path='doc/member[@name="IMFTimedTextRegion.GetExtent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetExtent(double* pWidth, double* pHeight, MF_TIMED_TEXT_UNIT_TYPE* unitType)
@@ -62,6 +69,7 @@ public unsafe partial struct IMFTimedTextRegion : IMFTimedTextRegion.Interface
         return ((delegate* unmanaged<IMFTimedTextRegion*, double*, double*, MF_TIMED_TEXT_UNIT_TYPE*, int>)(lpVtbl[5]))((IMFTimedTextRegion*)Unsafe.AsPointer(ref this), pWidth, pHeight, unitType);
     }
 
+    /// <include file='IMFTimedTextRegion.xml' path='doc/member[@name="IMFTimedTextRegion.GetBackgroundColor"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetBackgroundColor(MFARGB* bgColor)
@@ -69,6 +77,7 @@ public unsafe partial struct IMFTimedTextRegion : IMFTimedTextRegion.Interface
         return ((delegate* unmanaged<IMFTimedTextRegion*, MFARGB*, int>)(lpVtbl[6]))((IMFTimedTextRegion*)Unsafe.AsPointer(ref this), bgColor);
     }
 
+    /// <include file='IMFTimedTextRegion.xml' path='doc/member[@name="IMFTimedTextRegion.GetWritingMode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetWritingMode(MF_TIMED_TEXT_WRITING_MODE* writingMode)
@@ -76,6 +85,7 @@ public unsafe partial struct IMFTimedTextRegion : IMFTimedTextRegion.Interface
         return ((delegate* unmanaged<IMFTimedTextRegion*, MF_TIMED_TEXT_WRITING_MODE*, int>)(lpVtbl[7]))((IMFTimedTextRegion*)Unsafe.AsPointer(ref this), writingMode);
     }
 
+    /// <include file='IMFTimedTextRegion.xml' path='doc/member[@name="IMFTimedTextRegion.GetDisplayAlignment"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetDisplayAlignment(MF_TIMED_TEXT_DISPLAY_ALIGNMENT* displayAlign)
@@ -83,6 +93,7 @@ public unsafe partial struct IMFTimedTextRegion : IMFTimedTextRegion.Interface
         return ((delegate* unmanaged<IMFTimedTextRegion*, MF_TIMED_TEXT_DISPLAY_ALIGNMENT*, int>)(lpVtbl[8]))((IMFTimedTextRegion*)Unsafe.AsPointer(ref this), displayAlign);
     }
 
+    /// <include file='IMFTimedTextRegion.xml' path='doc/member[@name="IMFTimedTextRegion.GetLineHeight"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT GetLineHeight(double* pLineHeight, MF_TIMED_TEXT_UNIT_TYPE* unitType)
@@ -90,6 +101,7 @@ public unsafe partial struct IMFTimedTextRegion : IMFTimedTextRegion.Interface
         return ((delegate* unmanaged<IMFTimedTextRegion*, double*, MF_TIMED_TEXT_UNIT_TYPE*, int>)(lpVtbl[9]))((IMFTimedTextRegion*)Unsafe.AsPointer(ref this), pLineHeight, unitType);
     }
 
+    /// <include file='IMFTimedTextRegion.xml' path='doc/member[@name="IMFTimedTextRegion.GetClipOverflow"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT GetClipOverflow(BOOL* clipOverflow)
@@ -97,6 +109,7 @@ public unsafe partial struct IMFTimedTextRegion : IMFTimedTextRegion.Interface
         return ((delegate* unmanaged<IMFTimedTextRegion*, BOOL*, int>)(lpVtbl[10]))((IMFTimedTextRegion*)Unsafe.AsPointer(ref this), clipOverflow);
     }
 
+    /// <include file='IMFTimedTextRegion.xml' path='doc/member[@name="IMFTimedTextRegion.GetPadding"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT GetPadding(double* before, double* start, double* after, double* end, MF_TIMED_TEXT_UNIT_TYPE* unitType)
@@ -104,6 +117,7 @@ public unsafe partial struct IMFTimedTextRegion : IMFTimedTextRegion.Interface
         return ((delegate* unmanaged<IMFTimedTextRegion*, double*, double*, double*, double*, MF_TIMED_TEXT_UNIT_TYPE*, int>)(lpVtbl[11]))((IMFTimedTextRegion*)Unsafe.AsPointer(ref this), before, start, after, end, unitType);
     }
 
+    /// <include file='IMFTimedTextRegion.xml' path='doc/member[@name="IMFTimedTextRegion.GetWrap"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT GetWrap(BOOL* wrap)
@@ -111,6 +125,7 @@ public unsafe partial struct IMFTimedTextRegion : IMFTimedTextRegion.Interface
         return ((delegate* unmanaged<IMFTimedTextRegion*, BOOL*, int>)(lpVtbl[12]))((IMFTimedTextRegion*)Unsafe.AsPointer(ref this), wrap);
     }
 
+    /// <include file='IMFTimedTextRegion.xml' path='doc/member[@name="IMFTimedTextRegion.GetZIndex"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT GetZIndex([NativeTypeName("INT32 *")] int* zIndex)
@@ -118,6 +133,7 @@ public unsafe partial struct IMFTimedTextRegion : IMFTimedTextRegion.Interface
         return ((delegate* unmanaged<IMFTimedTextRegion*, int*, int>)(lpVtbl[13]))((IMFTimedTextRegion*)Unsafe.AsPointer(ref this), zIndex);
     }
 
+    /// <include file='IMFTimedTextRegion.xml' path='doc/member[@name="IMFTimedTextRegion.GetScrollMode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT GetScrollMode(MF_TIMED_TEXT_SCROLL_MODE* scrollMode)

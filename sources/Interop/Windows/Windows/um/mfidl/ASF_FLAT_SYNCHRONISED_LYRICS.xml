@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ASF_FLAT_SYNCHRONISED_LYRICS">
+    <summary>
+      <para>Contains synchronized lyrics stored as metadata for a media source. This structure is used as the data item for the <b>WM/Lyrics_Synchronised</b> metadata attribute.</para>
+    </summary>
+    <remarks>
+      <para>The <b>WM/Lyrics_Synchronised</b> attribute is defined in the Windows Media Format SDK. The attribute contains lyrics synchronized to times in the source file.</para>
+      <para>To get this attribute from a media source, call <see cref="IMFMetadata.GetProperty" />, passing in the constant g_wszWMLyrics_Synchronised for the <i>pwszName</i> parameter. The method retrieves a <b>PROPVARIANT</b> that contains a binary array (VT_BLOB). The layout of the array is as follows:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <b>ASF_FLAT_SYNCHRONISED_LYRICS</b> structure.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>Null-terminated wide-character string that contains a description.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>Lyric data. The format of the lyric data is described in the Windows Media Format SDK documentation.</para>
+          </description>
+        </item>
+      </list>
+      <para>This format differs from the <b>WM_SYNCHRONISED_LYRICS</b> structure used in the Windows Media Format SDK. The <b>WM_SYNCHRONISED_LYRICS</b> structure contains internal pointers to two strings and the lyric data. If the structure is copied, these pointers become invalid. The <b>ASF_FLAT_SYNCHRONISED_LYRICS</b> structure does not contain internal pointers, so it is safe to copy the structure.</para>
+    </remarks>
+    <seealso cref="IMFMetadata" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-structures">Media Foundation Structures</seealso>
+  </member>
+  <member name="ASF_FLAT_SYNCHRONISED_LYRICS.bTimeStampFormat">
+    <summary>
+      <para>Specifies the format of time stamps in the lyrics. This member is equivalent to the <b>bTimeStampFormat</b> member in the <b>WM_SYNCHRONISED_LYRICS</b> structure. The <b>WM_SYNCHRONISED_LYRICS</b> structure is documented in the Windows Media Format SDK.</para>
+    </summary>
+  </member>
+  <member name="ASF_FLAT_SYNCHRONISED_LYRICS.bContentType">
+    <summary>
+      <para>Specifies the type of synchronized strings that are in the lyric data. This member is equivalent to the <b>bContentType</b> member in the <b>WM_SYNCHRONISED_LYRICS</b> structure.</para>
+    </summary>
+  </member>
+  <member name="ASF_FLAT_SYNCHRONISED_LYRICS.dwLyricsLen">
+    <summary>
+      <para>Size, in bytes, of the lyric data.</para>
+    </summary>
+  </member>
+</doc>

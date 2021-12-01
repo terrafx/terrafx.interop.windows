@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="AppPolicyMediaFoundationCodecLoading">
+    <summary>
+      <para>The AppPolicyMediaFoundationCodecLoading enumeration indicates whether a process’s policy allows it to load non-Windows (third-party) plugins.</para>
+    </summary>
+  </member>
+  <member name="AppPolicyMediaFoundationCodecLoading.AppPolicyMediaFoundationCodecLoading_All">
+    <summary>
+      <para>Indicates that the process’s policy allows it to load non-Windows (third-party) plugins.</para>
+    </summary>
+  </member>
+  <member name="AppPolicyMediaFoundationCodecLoading.AppPolicyMediaFoundationCodecLoading_InboxOnly">
+    <summary>
+      <para>Indicates that the process’s policy does not allow it to load non-Windows (third-party) plugins.</para>
+    </summary>
+  </member>
+</doc>

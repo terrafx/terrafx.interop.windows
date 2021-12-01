@@ -5,8 +5,10 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WTS_THUMBNAILID.xml' path='doc/member[@name="WTS_THUMBNAILID"]/*' />
 public unsafe partial struct WTS_THUMBNAILID
 {
+    /// <include file='WTS_THUMBNAILID.xml' path='doc/member[@name="WTS_THUMBNAILID.rgbKey"]/*' />
     [NativeTypeName("BYTE [16]")]
     public fixed byte rgbKey[16];
 }

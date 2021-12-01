@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='OIBDG_FLAGS.xml' path='doc/member[@name="OIBDG_FLAGS"]/*' />
 public enum OIBDG_FLAGS
 {
+    /// <include file='OIBDG_FLAGS.xml' path='doc/member[@name="OIBDG_FLAGS.OIBDG_APARTMENTTHREADED"]/*' />
     OIBDG_APARTMENTTHREADED = 0x100,
+
+    /// <include file='OIBDG_FLAGS.xml' path='doc/member[@name="OIBDG_FLAGS.OIBDG_DATAONLY"]/*' />
     OIBDG_DATAONLY = 0x1000,
 }

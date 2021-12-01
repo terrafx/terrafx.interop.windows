@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFDeviceTransformCallback.OnBufferSent">
+    <summary>
+      <para>Called when system-allocated frame buffers are sent to the device driver.</para>
+    </summary>
+    <param name="pCallbackAttributes">
+      <para>The attributes containing the callback data. The System-allocated frame buffer information is stored in the attribute with the MF_DMFT_FRAME_BUFFER_INFO key.</para>
+    </param>
+    <param name="pinId">
+      <para>The identifier of the device pin to which the frame buffers are sent.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The frame buffer header information provided by this callback is read-only. You should not try to allocate, deallocate, open, or close anything within the header.</para>
+    </remarks>
+    <seealso cref="IMFDeviceTransformCallback" />
+  </member>
+  <member name="IMFDeviceTransformCallback">
+    <summary>
+      <para>Implement this callback to receive notifications when system-allocated frame buffers are sent to the device driver.</para>
+    </summary>
+  </member>
+</doc>

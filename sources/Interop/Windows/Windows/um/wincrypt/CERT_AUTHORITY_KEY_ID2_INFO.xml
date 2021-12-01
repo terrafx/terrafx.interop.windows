@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CERT_AUTHORITY_KEY_ID2_INFO">
+    <summary>
+      <para>The <b>CERT_AUTHORITY_KEY_ID2_INFO</b> structure identifies the key used to sign a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certificate</a> or <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">CRL</a>. It differs from the
+<see cref="CERT_AUTHORITY_KEY_ID_INFO" /> structure in that the certificate issuer is a
+<see cref="CERT_ALT_NAME_INFO" /> instead of a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CERT_NAME_BLOB</a>. Otherwise, the structures are used in the same way.</para>
+      <para>The key can be identified by an explicit key identifier, by giving a certificate's issuer and serial number, or by both. If both are used, the certificate issuer must ensure that the explicit key identifier, the certificate issuer and the serial number are consistent.</para>
+      <para>
+        <see cref="CryptDecodeObject" /> creates an instance of this structure when performed on a
+<see cref="CERT_EXTENSION" /> structure's <b>Value</b> member with its the structure's <b>pszObjId</b> member set to szOID_AUTHORITY_KEY_IDENTIFIER2.</para>
+      <para>An instance of this structure can be used as input to <see cref="CryptEncodeObject" /> to create an appropriate <see cref="CERT_EXTENSION" />.</para>
+    </summary>
+    <seealso cref="CERT_ALT_NAME_INFO" />
+    <seealso cref="CERT_AUTHORITY_KEY_ID_INFO" />
+  </member>
+  <member name="CERT_AUTHORITY_KEY_ID2_INFO.KeyId">
+    <summary>
+      <para>A <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_DATA_BLOB</a> structure that contains a unique identifier of a public key.</para>
+    </summary>
+  </member>
+  <member name="CERT_AUTHORITY_KEY_ID2_INFO.AuthorityCertIssuer">
+    <summary>
+      <para>
+        <see cref="CERT_ALT_NAME_INFO" /> that includes the encoded name of the CA that issued the certificate. The <b>cAltEntry</b> member of the structure may be set to zero if the name is not to be used to identify the CA.</para>
+    </summary>
+  </member>
+  <member name="CERT_AUTHORITY_KEY_ID2_INFO.AuthorityCertSerialNumber">
+    <summary>
+      <para>A <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_INTEGER_BLOB</a> structure that includes the serial number of the certificate associated with the private key used to sign this certificate. For more information, see
+<see cref="CERT_INFO" />.</para>
+    </summary>
+  </member>
+</doc>

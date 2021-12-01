@@ -7,11 +7,14 @@ using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HANDLETABLE.xml' path='doc/member[@name="HANDLETABLE"]/*' />
 public partial struct HANDLETABLE
 {
+    /// <include file='HANDLETABLE.xml' path='doc/member[@name="HANDLETABLE.objectHandle"]/*' />
     [NativeTypeName("HGDIOBJ [1]")]
     public _objectHandle_e__FixedBuffer objectHandle;
 
+    /// <include file='_objectHandle_e__FixedBuffer.xml' path='doc/member[@name="_objectHandle_e__FixedBuffer"]/*' />
     public unsafe partial struct _objectHandle_e__FixedBuffer
     {
         public HGDIOBJ e0;

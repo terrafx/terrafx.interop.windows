@@ -8,31 +8,41 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MIB_UDPROW2.xml' path='doc/member[@name="MIB_UDPROW2"]/*' />
 public unsafe partial struct MIB_UDPROW2
 {
+    /// <include file='MIB_UDPROW2.xml' path='doc/member[@name="MIB_UDPROW2.dwLocalAddr"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwLocalAddr;
 
+    /// <include file='MIB_UDPROW2.xml' path='doc/member[@name="MIB_UDPROW2.dwLocalPort"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwLocalPort;
 
+    /// <include file='MIB_UDPROW2.xml' path='doc/member[@name="MIB_UDPROW2.dwOwningPid"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwOwningPid;
 
+    /// <include file='MIB_UDPROW2.xml' path='doc/member[@name="MIB_UDPROW2.liCreateTimestamp"]/*' />
     public LARGE_INTEGER liCreateTimestamp;
 
+    /// <include file='MIB_UDPROW2.xml' path='doc/member[@name="MIB_UDPROW2.Anonymous"]/*' />
     [NativeTypeName("_MIB_UDPROW2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/udpmib.h:92:5)")]
     public _Anonymous_e__Union Anonymous;
 
+    /// <include file='MIB_UDPROW2.xml' path='doc/member[@name="MIB_UDPROW2.OwningModuleInfo"]/*' />
     [NativeTypeName("ULONGLONG [16]")]
     public fixed ulong OwningModuleInfo[16];
 
+    /// <include file='MIB_UDPROW2.xml' path='doc/member[@name="MIB_UDPROW2.dwRemoteAddr"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwRemoteAddr;
 
+    /// <include file='MIB_UDPROW2.xml' path='doc/member[@name="MIB_UDPROW2.dwRemotePort"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwRemotePort;
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.SpecificPortBind"]/*' />
     public int SpecificPortBind
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -48,6 +58,7 @@ public unsafe partial struct MIB_UDPROW2
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.dwFlags"]/*' />
     public ref int dwFlags
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -57,20 +68,25 @@ public unsafe partial struct MIB_UDPROW2
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public partial struct _Anonymous_e__Union
     {
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("_MIB_UDPROW2::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/udpmib.h:93:9)")]
         public _Anonymous_e__Struct Anonymous;
 
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.dwFlags"]/*' />
         [FieldOffset(0)]
         public int dwFlags;
 
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />
         public partial struct _Anonymous_e__Struct
         {
             public int _bitfield;
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.SpecificPortBind"]/*' />
             [NativeTypeName("int : 1")]
             public int SpecificPortBind
             {

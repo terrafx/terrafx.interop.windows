@@ -7,25 +7,35 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DMO_MEDIA_TYPE.xml' path='doc/member[@name="DMO_MEDIA_TYPE"]/*' />
 public unsafe partial struct DMO_MEDIA_TYPE
 {
+    /// <include file='DMO_MEDIA_TYPE.xml' path='doc/member[@name="DMO_MEDIA_TYPE.majortype"]/*' />
     public Guid majortype;
 
+    /// <include file='DMO_MEDIA_TYPE.xml' path='doc/member[@name="DMO_MEDIA_TYPE.subtype"]/*' />
     public Guid subtype;
 
+    /// <include file='DMO_MEDIA_TYPE.xml' path='doc/member[@name="DMO_MEDIA_TYPE.bFixedSizeSamples"]/*' />
     public BOOL bFixedSizeSamples;
 
+    /// <include file='DMO_MEDIA_TYPE.xml' path='doc/member[@name="DMO_MEDIA_TYPE.bTemporalCompression"]/*' />
     public BOOL bTemporalCompression;
 
+    /// <include file='DMO_MEDIA_TYPE.xml' path='doc/member[@name="DMO_MEDIA_TYPE.lSampleSize"]/*' />
     [NativeTypeName("ULONG")]
     public uint lSampleSize;
 
+    /// <include file='DMO_MEDIA_TYPE.xml' path='doc/member[@name="DMO_MEDIA_TYPE.formattype"]/*' />
     public Guid formattype;
 
+    /// <include file='DMO_MEDIA_TYPE.xml' path='doc/member[@name="DMO_MEDIA_TYPE.pUnk"]/*' />
     public IUnknown* pUnk;
 
+    /// <include file='DMO_MEDIA_TYPE.xml' path='doc/member[@name="DMO_MEDIA_TYPE.cbFormat"]/*' />
     [NativeTypeName("ULONG")]
     public uint cbFormat;
 
+    /// <include file='DMO_MEDIA_TYPE.xml' path='doc/member[@name="DMO_MEDIA_TYPE.pbFormat"]/*' />
     public byte* pbFormat;
 }

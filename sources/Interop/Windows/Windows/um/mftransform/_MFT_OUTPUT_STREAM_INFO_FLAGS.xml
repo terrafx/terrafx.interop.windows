@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="_MFT_OUTPUT_STREAM_INFO_FLAGS">
+    <summary>
+      <para>Describes an output stream on a Media Foundation transform (MFT).</para>
+    </summary>
+    <remarks>
+      <para>Before the client sets the media types on the MFT, the only flag guaranteed to be accurate is the MFT_OUTPUT_STREAM_OPTIONAL flag. For all other flags, the client should first set the media type on every non-optional stream.</para>
+      <para>The MFT_OUTPUT_STREAM_DISCARDABLE and MFT_OUTPUT_STREAM_LAZY_READ flags define different behaviors for how the MFT can discard output data.</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <para>MFT_OUTPUT_STREAM_DISCARDABLE: The MFT discards output data only if the client calls <see cref="ProcessOutput" /> with the MFT_PROCESS_OUTPUT_DISCARD_WHEN_NO_BUFFER flag. The MFT never discards data when the client calls <see cref="ProcessInput" />.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>MFT_OUTPUT_STREAM_LAZY_READ: If the client continues to call <see cref="ProcessInput" /> without collecting the output from this stream, the MFT eventually discards the output. If all output streams have the MFT_OUTPUT_STREAM_LAZY_READ flag, the MFT never refuses more input data.</para>
+          </description>
+        </item>
+      </list>
+      <para>If neither of these flags is set, the MFT never discards output data.</para>
+    </remarks>
+    <seealso cref="MFT_OUTPUT_STREAM_INFO" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-transforms">Media Foundation Transforms</seealso>
+  </member>
+  <member name="_MFT_OUTPUT_STREAM_INFO_FLAGS.MFT_OUTPUT_STREAM_WHOLE_SAMPLES">
+    <summary>
+      <para>Each media sample (<see cref="IMFSample" /> interface) of output data from the MFT contains complete, unbroken units of data. The definition of a <i>unit of data</i> depends on the media type: For uncompressed video, a video frame; for compressed data, a compressed packet; for uncompressed audio, a single audio frame.</para>
+      <para>For uncompressed audio formats, this flag is always implied. (It is valid to set the flag, but not required.) An uncompressed audio frame should never span more than one media sample.</para>
+    </summary>
+  </member>
+  <member name="_MFT_OUTPUT_STREAM_INFO_FLAGS.MFT_OUTPUT_STREAM_SINGLE_SAMPLE_PER_BUFFER">
+    <summary>
+      <para>Each output sample contains exactly one unit of data, as defined for the MFT_OUTPUT_STREAM_WHOLE_SAMPLES flag.</para>
+      <para>If this flag is present, the MFT_OUTPUT_STREAM_WHOLE_SAMPLES flag must also be present.</para>
+      <para>An MFT that outputs uncompressed audio should not set this flag. For efficiency, it should output more than one audio frame at a time.</para>
+    </summary>
+  </member>
+  <member name="_MFT_OUTPUT_STREAM_INFO_FLAGS.MFT_OUTPUT_STREAM_FIXED_SAMPLE_SIZE">
+    <summary>
+      <para>All output samples are the same size.</para>
+    </summary>
+  </member>
+  <member name="_MFT_OUTPUT_STREAM_INFO_FLAGS.MFT_OUTPUT_STREAM_DISCARDABLE">
+    <summary>
+      <para>The MFT can discard the output data from this output stream, if requested by the client. To discard the output, set the MFT_PROCESS_OUTPUT_DISCARD_WHEN_NO_BUFFER flag in the <see cref="IMFTransform.ProcessOutput" /> method.</para>
+    </summary>
+  </member>
+  <member name="_MFT_OUTPUT_STREAM_INFO_FLAGS.MFT_OUTPUT_STREAM_OPTIONAL">
+    <summary>
+      <para>This output stream is optional. The client can deselect the stream by not setting a media type or by setting a <b>NULL</b> media type. When an optional stream is deselected, it does not produce any output data.</para>
+    </summary>
+  </member>
+  <member name="_MFT_OUTPUT_STREAM_INFO_FLAGS.MFT_OUTPUT_STREAM_PROVIDES_SAMPLES">
+    <summary>
+      <para>The MFT provides the output samples for this stream, either by allocating them internally or by operating directly on the input samples. The MFT cannot use output samples provided by the client for this stream.</para>
+      <para>If this flag is not set, the MFT must set <b>cbSize</b> to a nonzero value in the <see cref="MFT_OUTPUT_STREAM_INFO" /> structure, so that the client can allocate the correct buffer size. For more information, see <see cref="IMFTransform.GetOutputStreamInfo" />. This flag cannot be combined with the MFT_OUTPUT_STREAM_CAN_PROVIDE_SAMPLES flag.</para>
+    </summary>
+  </member>
+  <member name="_MFT_OUTPUT_STREAM_INFO_FLAGS.MFT_OUTPUT_STREAM_CAN_PROVIDE_SAMPLES">
+    <summary>
+      <para>The MFT can either provide output samples for this stream or it can use samples that the client allocates. This flag cannot be combined with the MFT_OUTPUT_STREAM_PROVIDES_SAMPLES flag.</para>
+      <para>If the MFT does not set this flag or the MFT_OUTPUT_STREAM_PROVIDES_SAMPLES flag, the client must allocate the samples for this output stream. The MFT will not provide its own samples.</para>
+    </summary>
+  </member>
+  <member name="_MFT_OUTPUT_STREAM_INFO_FLAGS.MFT_OUTPUT_STREAM_LAZY_READ">
+    <summary>
+      <para>The MFT does not require the client to process the output for this stream. If the client continues to send input data without getting the output from this stream, the MFT simply discards the previous input.</para>
+    </summary>
+  </member>
+  <member name="_MFT_OUTPUT_STREAM_INFO_FLAGS.MFT_OUTPUT_STREAM_REMOVABLE">
+    <summary>
+      <para>The MFT might remove this output stream during streaming. This flag typically applies to demultiplexers, where the input data contains multiple streams that can start and stop during streaming. For more information, see <see cref="IMFTransform.ProcessOutput" />.</para>
+    </summary>
+  </member>
+</doc>

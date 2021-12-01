@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IWICPlanarBitmapFrameEncode.WritePixels">
+    <summary>
+      <para>Writes lines from the source planes to the encoded format.</para>
+    </summary>
+    <param name="lineCount">
+      <para>Type: <b>UINT</b></para>
+      <para>The number of lines to encode.  See the Remarks section for WIC Jpeg specific line count restrictions.</para>
+    </param>
+    <param name="pPlanes">
+      <para>Type: <b><see cref="WICBitmapPlane" />*</b></para>
+      <para>Specifies the source buffers for each component plane encoded.</para>
+    </param>
+    <param name="cPlanes">
+      <para>Type: <b>UINT</b></para>
+      <para>The number of component planes specified by the <i>pPlanes</i> parameter.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If the planes and source rectangle do not meet the requirements, this method fails with <b>WINCODEC_ERR_IMAGESIZEOUTOFRANGE</b>.</para>
+      <para>If the <see cref="IWICBitmapSource" /> format does not meet the encoder requirements, this method fails with <b>WINCODEC_ERR_UNSUPPORTEDPIXELFORMAT</b>.</para>
+    </returns>
+    <remarks>
+      <para>Successive <b>WritePixels</b> calls are assumed sequentially add scanlines to the output image.  <see cref="IWICBitmapFrameEncode.Initialize" />, <see cref="IWICBitmapFrameEncode.SetSize" /> and <see cref="IWICBitmapFrameEncode.SetPixelFormat" /> must be called before this method or it will fail.</para>
+      <para>The interleaved pixel format set via <see cref="IWICBitmapFrameEncode.SetPixelFormat" /> and the codec specific encode parameters determine the supported planar formats.</para>
+      <para>WIC JPEG Encoder:
+QueryInterface can be used to obtain this interface from the WIC JPEG <see cref="IWICBitmapFrameEncode" /> implementation.  When using this method to encode Y’CbCr data with the WIC JPEG encoder, chroma subsampling can be configured with encoder options during frame creation.  See the <a href="https://docs.microsoft.com//windows/desktop/wic/-wic-creating-encoder">Encoding Overview</a> and <see cref="IWICBitmapEncoder.CreateNewFrame" /> for more details.</para>
+      <para>Depending upon the configured chroma subsampling, the lineCount parameter has the following restrictions:</para>
+      <list type="table">
+        <listheader>
+          <description>Chroma Subsampling</description>
+          <description>Line Count Restriction</description>
+          <description>Chroma Plane Width</description>
+          <description>Chroma  Plane Height</description>
+        </listheader>
+        <item>
+          <description>4:2:0</description>
+          <description>Multiple of 2, unless the call covers the last scanline of the image</description>
+          <description>lumaWidth / 2 Rounded up to the nearest integer.</description>
+          <description>lumaHeight / 2 Rounded up to the nearest integer.</description>
+        </item>
+        <item>
+          <description>4:2:2</description>
+          <description>Any</description>
+          <description>lumaWidth / 2 Rounded up to the nearest integer.</description>
+          <description>Any</description>
+        </item>
+        <item>
+          <description>4:4:4</description>
+          <description>Any</description>
+          <description>Any</description>
+          <description>Any</description>
+        </item>
+        <item>
+          <description>4:4:0</description>
+          <description>Multiple of 2, unless the call covers the last scanline of the image</description>
+          <description>Any</description>
+          <description>llumaHeight / 2 Rounded up to the nearest integer.</description>
+        </item>
+      </list>
+      <para>The full scanline width must be encoded, and the width of the bitmap sources must match their planar configuration.</para>
+      <para>Additionally, if a pixel format is set via <see cref="IWICBitmapFrameEncode.SetPixelFormat" />, it must be GUID_WICPixelFormat24bppBGR.</para>
+      <para>The supported pixel formats of the bitmap sources passed into this method are as follows:</para>
+      <list type="table">
+        <listheader>
+          <description>Plane Count</description>
+          <description>Plane 1</description>
+          <description>Plane 2</description>
+          <description>Plane 3</description>
+        </listheader>
+        <item>
+          <description>3</description>
+          <description>GUID_WICPixelFormat8bppY</description>
+          <description>GUID_WICPixelFormat8bppCb</description>
+          <description>GUID_WICPixelFormat8bppCr</description>
+        </item>
+        <item>
+          <description>2</description>
+          <description>GUID_WICPixelFormat8bppY</description>
+          <description>GUID_WICPixelFormat16bppCbCr</description>
+          <description>N/A</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-creating-encoder">Encoding Overview</seealso>
+    <seealso cref="IWICBitmapEncoder.CreateNewFrame" />
+    <seealso cref="IWICPlanarBitmapFrameEncode" />
+  </member>
+  <member name="IWICPlanarBitmapFrameEncode.WriteSource">
+    <summary>
+      <para>Writes lines from the source planes to the encoded format.</para>
+    </summary>
+    <param name="ppPlanes">
+      <para>Type: <b><see cref="IWICBitmapSource" />**</b></para>
+      <para>Specifies an array of <see cref="IWICBitmapSource" /> that represent image planes.</para>
+    </param>
+    <param name="cPlanes">
+      <para>Type: <b>UINT</b></para>
+      <para>The number of component planes specified by the planes parameter.</para>
+    </param>
+    <param name="prcSource">
+      <para>Type: <b>WICRect*</b></para>
+      <para>The source rectangle of pixels to encode from the <see cref="IWICBitmapSource" /> planes.  Null indicates the entire source.  The source rect width must match the width set through <see cref="SetSize" />. Repeated <b>WriteSource</b> calls can be made as long as the total accumulated source rect height is the same as set through <b>SetSize</b>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If the planes and source rectangle do not meet the requirements, this method fails with <b>WINCODEC_ERR_IMAGESIZEOUTOFRANGE</b>.</para>
+      <para>If the <see cref="IWICBitmapSource" /> format does not meet the encoder requirements, this method fails with <b>WINCODEC_ERR_UNSUPPORTEDPIXELFORMAT</b>.</para>
+    </returns>
+    <remarks>
+      <para>Successive <b>WriteSource</b> calls are assumed sequentially add scanlines to the output image.  <see cref="IWICBitmapFrameEncode.Initialize" />, <see cref="IWICBitmapFrameEncode.SetSize" /> and <see cref="IWICBitmapFrameEncode.SetPixelFormat" /> must be called before this method or it will fail.</para>
+      <para>The interleaved pixel format set via <see cref="IWICBitmapFrameEncode.SetPixelFormat" /> and the codec specific encode parameters determine the supported planar formats.</para>
+      <para>WIC JPEG Encoder:
+QueryInterface can be used to obtain this interface from the WIC JPEG <see cref="IWICBitmapFrameEncode" /> implementation.  When using this method to encode Y’CbCr data with the WIC JPEG encoder, chroma subsampling can be configured with encoder options during frame creation.  See the <a href="https://docs.microsoft.com//windows/desktop/wic/-wic-creating-encoder">Encoding Overview</a> and <see cref="IWICBitmapEncoder.CreateNewFrame" /> for more details.</para>
+      <para>Depending upon the configured chroma subsampling, the lineCount parameter has the following restrictions:</para>
+      <list type="table">
+        <listheader>
+          <description>Chroma Subsampling</description>
+          <description>X Coordinate</description>
+          <description>Y Coordinate</description>
+          <description>Chroma Width</description>
+          <description>Chroma Height</description>
+        </listheader>
+        <item>
+          <description>4:2:0</description>
+          <description>Multiple of 2</description>
+          <description>Multiple of 2</description>
+          <description>lumaWidth / 2 Rounded up to the nearest integer.</description>
+          <description>lumaHeight / 2 Rounded up to the nearest integer.</description>
+        </item>
+        <item>
+          <description>4:2:2</description>
+          <description>Multiple of 2</description>
+          <description>Any</description>
+          <description>lumaWidth / 2 Rounded up to the nearest integer.</description>
+          <description>Any</description>
+        </item>
+        <item>
+          <description>4:4:4</description>
+          <description>Any</description>
+          <description>Any</description>
+          <description>Any</description>
+          <description>Any</description>
+        </item>
+        <item>
+          <description>4:4:0</description>
+          <description>Any</description>
+          <description>Multiple of 2</description>
+          <description>lumaWidth</description>
+          <description>llumaHeight / 2 Rounded up to the nearest integer.</description>
+        </item>
+      </list>
+      <para>The full scanline width must be encoded, and the width of the bitmap sources must match their planar configuration.</para>
+      <para>Additionally, if a pixel format is set via <see cref="IWICBitmapFrameEncode.SetPixelFormat" />, it must be GUID_WICPixelFormat24bppBGR.</para>
+      <para>The supported pixel formats of the bitmap sources passed into this method are as follows:</para>
+      <list type="table">
+        <listheader>
+          <description>Plane Count</description>
+          <description>Plane 1</description>
+          <description>Plane 2</description>
+          <description>Plane 3</description>
+        </listheader>
+        <item>
+          <description>3</description>
+          <description>GUID_WICPixelFormat8bppY</description>
+          <description>GUID_WICPixelFormat8bppCb</description>
+          <description>GUID_WICPixelFormat8bppCr</description>
+        </item>
+        <item>
+          <description>2</description>
+          <description>GUID_WICPixelFormat8bppY</description>
+          <description>GUID_WICPixelFormat16bppCbCr</description>
+          <description>N/A</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-creating-encoder">Encoding Overview</seealso>
+    <seealso cref="IWICBitmapEncoder.CreateNewFrame" />
+    <seealso cref="IWICPlanarBitmapFrameEncode" />
+  </member>
+  <member name="IWICPlanarBitmapFrameEncode">
+    <summary>
+      <para>Allows planar component image pixels to be written to an encoder.   When supported by the encoder, this allows an application to encode planar component image data without first converting to an interleaved pixel format.</para>
+      <para>You can use</para>
+      <para>QueryInterface to obtain this interface from the Windows provided implementation of <see cref="IWICBitmapFrameEncode" /> for the JPEG encoder.</para>
+    </summary>
+    <remarks>
+      <para>Encoding YCbCr data using <b>IWICPlanarBitmapFrameEncode</b> is similar but not identical to encoding interleaved data using <a href="https://docs.microsoft.com//windows/desktop/wic/-wic-imp-iwicbitmapframeencode">IWICBitmapFrameEncode</a>. The planar interface only exposes the ability to write planar frame image data, and you should continue to use the frame encode interface to set metadata or a thumbnail and to commit at the end of the operation.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/wic/jpeg-ycbcr-support">JPEG YCbCr Support</seealso>
+  </member>
+</doc>

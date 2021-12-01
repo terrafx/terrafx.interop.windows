@@ -5,20 +5,26 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CERT_STORE_PROV_FIND_INFO.xml' path='doc/member[@name="CERT_STORE_PROV_FIND_INFO"]/*' />
 public unsafe partial struct CERT_STORE_PROV_FIND_INFO
 {
+    /// <include file='CERT_STORE_PROV_FIND_INFO.xml' path='doc/member[@name="CERT_STORE_PROV_FIND_INFO.cbSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbSize;
 
+    /// <include file='CERT_STORE_PROV_FIND_INFO.xml' path='doc/member[@name="CERT_STORE_PROV_FIND_INFO.dwMsgAndCertEncodingType"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwMsgAndCertEncodingType;
 
+    /// <include file='CERT_STORE_PROV_FIND_INFO.xml' path='doc/member[@name="CERT_STORE_PROV_FIND_INFO.dwFindFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFindFlags;
 
+    /// <include file='CERT_STORE_PROV_FIND_INFO.xml' path='doc/member[@name="CERT_STORE_PROV_FIND_INFO.dwFindType"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFindType;
 
+    /// <include file='CERT_STORE_PROV_FIND_INFO.xml' path='doc/member[@name="CERT_STORE_PROV_FIND_INFO.pvFindPara"]/*' />
     [NativeTypeName("const void *")]
     public void* pvFindPara;
 }

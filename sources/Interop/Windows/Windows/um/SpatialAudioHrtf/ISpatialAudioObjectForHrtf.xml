@@ -1,0 +1,311 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ISpatialAudioObjectForHrtf.SetDirectivity">
+    <summary>
+      <para>Sets the spatial audio directivity model for the <see cref="ISpatialAudioObjectForHrtf" />.</para>
+    </summary>
+    <param name="directivity">
+      <para>The spatial audio directivity model. This value can be one of the following structures:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <see cref="SpatialAudioHrtfDirectivity" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="SpatialAudioHrtfDirectivityCardioid" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="SpatialAudioHrtfDirectivityCone" />
+          </description>
+        </item>
+      </list>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>SPTLAUDCLNT_E_OUT_OF_ORDER</b>
+            </para>
+          </description>
+          <description>
+            <para>
+              <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/mt779299(v=vs.85)">ISpatialAudioObjectRenderStreamBase.BeginUpdatingAudioObjects</a> was not called before the call to <b>SetDirectivity</b>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>SPTLAUDCLNT_E_RESOURCES_INVALIDATED</b>
+            </para>
+          </description>
+          <description>
+            <para>
+              <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/mt779275(v=vs.85)">SetEndOfStream</a> was called either explicitly or implicitly in a previous audio processing pass. <b>SetEndOfStream</b> is called implicitly by the system if <b>GetBuffer</b> is not called within an audio processing pass (between calls to <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/mt779299(v=vs.85)">ISpatialAudioObjectRenderStreamBase.BeginUpdatingAudioObjects</a> and <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/mt779300(v=vs.85)">ISpatialAudioObjectRenderStreamBase.EndUpdatingAudioObjects</a>).</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The <see cref="SpatialAudioHrtfDirectivity" /> structure represents an omnidirectional model that can be linearly interpolated with a cardioid or cone model.</para>
+      <para>If <b>SetDirectivity</b> is not called, the default type of <see cref="SpatialAudioHrtfDirectivity_OmniDirectional" /> is used with no interpolation.</para>
+    </remarks>
+    <seealso cref="ISpatialAudioObjectForHrtf" />
+  </member>
+  <member name="ISpatialAudioObjectForHrtf.SetDistanceDecay">
+    <summary>
+      <para>Sets the decay model that is applied over distance from the position of an <see cref="ISpatialAudioObjectForHrtf" /> to the position of the listener.</para>
+    </summary>
+    <param name="distanceDecay">
+      <para>The decay model.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>SPTLAUDCLNT_E_OUT_OF_ORDER</b>
+            </para>
+          </description>
+          <description>
+            <para>
+              <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/mt779299(v=vs.85)">ISpatialAudioObjectRenderStreamBase.BeginUpdatingAudioObjects</a> was not called before the call to <b>SetDistanceDecay</b>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>SPTLAUDCLNT_E_RESOURCES_INVALIDATED</b>
+            </para>
+          </description>
+          <description>
+            <para>
+              <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/mt779275(v=vs.85)">SetEndOfStream</a> was called either explicitly or implicitly in a previous audio processing pass. <b>SetEndOfStream</b> is called implicitly by the system if <b>GetBuffer</b> is not called within an audio processing pass (between calls to <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/mt779299(v=vs.85)">ISpatialAudioObjectRenderStreamBase.BeginUpdatingAudioObjects</a> and <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/mt779300(v=vs.85)">ISpatialAudioObjectRenderStreamBase.EndUpdatingAudioObjects</a>).</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>If <b>SetEnvironment</b> is not called, the default values are used.</para>
+    </remarks>
+    <seealso cref="ISpatialAudioObjectForHrtf" />
+  </member>
+  <member name="ISpatialAudioObjectForHrtf.SetEnvironment">
+    <summary>
+      <para>Sets the type of acoustic environment that is simulated when audio is processed for the <see cref="ISpatialAudioObjectForHrtf" />.</para>
+    </summary>
+    <param name="environment">
+      <para>A value specifying the type of acoustic environment that is simulated when audio is processed for the <see cref="ISpatialAudioObjectForHrtf" />.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>SPTLAUDCLNT_E_OUT_OF_ORDER</b>
+            </para>
+          </description>
+          <description>
+            <para>
+              <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/mt779299(v=vs.85)">ISpatialAudioObjectRenderStreamBase.BeginUpdatingAudioObjects</a> was not called before the call to <b>SetEnvironment</b>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>SPTLAUDCLNT_E_RESOURCES_INVALIDATED</b>
+            </para>
+          </description>
+          <description>
+            <para>
+              <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/mt779275(v=vs.85)">SetEndOfStream</a> was called either explicitly or implicitly in a previous audio processing pass. <b>SetEndOfStream</b> is called implicitly by the system if <b>GetBuffer</b> is not called within an audio processing pass (between calls to <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/mt779299(v=vs.85)">ISpatialAudioObjectRenderStreamBase.BeginUpdatingAudioObjects</a> and <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/mt779300(v=vs.85)">ISpatialAudioObjectRenderStreamBase.EndUpdatingAudioObjects</a>).</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>If <b>SetEnvironment</b> is not called, the default value of <see cref="SpatialAudioHrtfEnvironment_Small" /> is used.</para>
+    </remarks>
+    <seealso cref="ISpatialAudioObjectForHrtf" />
+  </member>
+  <member name="ISpatialAudioObjectForHrtf.SetGain">
+    <summary>
+      <para>Sets the gain for the <see cref="ISpatialAudioObjectForHrtf" /> in dB.</para>
+    </summary>
+    <param name="gain">
+      <para>The gain for the <see cref="ISpatialAudioObjectForHrtf" /> in dB.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>SPTLAUDCLNT_E_OUT_OF_ORDER</b>
+            </para>
+          </description>
+          <description>
+            <para>
+              <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/mt779299(v=vs.85)">ISpatialAudioObjectRenderStreamBase.BeginUpdatingAudioObjects</a> was not called before the call to <b>SetGain</b>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>SPTLAUDCLNT_E_RESOURCES_INVALIDATED</b>
+            </para>
+          </description>
+          <description>
+            <para>
+              <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/mt779275(v=vs.85)">SetEndOfStream</a> was called either explicitly or implicitly in a previous audio processing pass. <b>SetEndOfStream</b> is called implicitly by the system if <b>GetBuffer</b> is not called within an audio processing pass (between calls to <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/mt779299(v=vs.85)">ISpatialAudioObjectRenderStreamBase.BeginUpdatingAudioObjects</a> and <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/mt779300(v=vs.85)">ISpatialAudioObjectRenderStreamBase.EndUpdatingAudioObjects</a>).</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This is valid only for spatial audio objects configured to use the <see cref="SpatialAudioHrtfDistanceDecay_CustomDecay" /> decay type. Set the decay type of an <see cref="ISpatialAudioObjectForHrtf" /> object by calling <see cref="SetDistanceDecay" />. Set the default decay type for an all objects in an HRTF render stream by setting the <b>DistanceDecay</b> field of the <see cref="SpatialAudioHrtfActivationParams" /> passed into <see cref="ISpatialAudioClient.ActivateSpatialAudioStream" />.</para>
+      <para>If <b>SetGain</b> is never called, the default value of 0.0 is used. After <b>SetGain</b> is called, the gain that is set will be used for the audio object until the gain is changed with another call to <b>SetGain</b>.</para>
+    </remarks>
+    <seealso cref="ISpatialAudioObjectForHrtf" />
+  </member>
+  <member name="ISpatialAudioObjectForHrtf.SetOrientation">
+    <summary>
+      <para>Sets the orientation in 3D space, relative to the listener's frame of reference, from which the <see cref="ISpatialAudioObjectForHrtf" /> audio data will be rendered.</para>
+    </summary>
+    <param name="orientation">
+      <para>An array of floats defining row-major 3x3 rotation matrix.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>SPTLAUDCLNT_E_OUT_OF_ORDER</b>
+            </para>
+          </description>
+          <description>
+            <para>
+              <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/mt779299(v=vs.85)">ISpatialAudioObjectRenderStreamBase.BeginUpdatingAudioObjects</a> was not called before the call to <b>SetOrientation</b>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>SPTLAUDCLNT_E_RESOURCES_INVALIDATED</b>
+            </para>
+          </description>
+          <description>
+            <para>
+              <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/mt779275(v=vs.85)">SetEndOfStream</a> was called either explicitly or implicitly in a previous audio processing pass. <b>SetEndOfStream</b> is called implicitly by the system if <b>GetBuffer</b> is not called within an audio processing pass (between calls to <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/mt779299(v=vs.85)">ISpatialAudioObjectRenderStreamBase.BeginUpdatingAudioObjects</a> and <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/mt779300(v=vs.85)">ISpatialAudioObjectRenderStreamBase.EndUpdatingAudioObjects</a>).</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>If <b>SetOrientation</b> is never called, the default value of an identity matrix is used. After <b>SetOrientation</b> is called, the orientation that is set will be used for the audio object until the orientation is changed with another call to <b>SetOrientation</b>.</para>
+    </remarks>
+    <seealso cref="ISpatialAudioObjectForHrtf" />
+  </member>
+  <member name="ISpatialAudioObjectForHrtf.SetPosition">
+    <summary>
+      <para>Sets the position in 3D space, relative to the listener, from which the <see cref="ISpatialAudioObjectForHrtf" /> audio data will be rendered.</para>
+    </summary>
+    <param name="x">
+      <para>The x position of the audio object, in meters, relative to the listener. Positive values are to the right of the listener and negative values are to the left.</para>
+    </param>
+    <param name="y">
+      <para>The y position of the audio object, in meters, relative to the listener. Positive values are above the listener and negative values are below.</para>
+    </param>
+    <param name="z">
+      <para>The z position of the audio object, in meters, relative to the listener. Positive values are behind the listener and negative values are in front.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>SPTLAUDCLNT_E_OUT_OF_ORDER</b>
+            </para>
+          </description>
+          <description>
+            <para>
+              <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/mt779299(v=vs.85)">ISpatialAudioObjectRenderStreamBase.BeginUpdatingAudioObjects</a> was not called before the call to <b>SetPosition</b>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>SPTLAUDCLNT_E_RESOURCES_INVALIDATED</b>
+            </para>
+          </description>
+          <description>
+            <para>
+              <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/mt779275(v=vs.85)">SetEndOfStream</a> was called either explicitly or implicitly in a previous audio processing pass. <b>SetEndOfStream</b> is called implicitly by the system if <b>GetBuffer</b> is not called within an audio processing pass (between calls to <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/mt779299(v=vs.85)">ISpatialAudioObjectRenderStreamBase.BeginUpdatingAudioObjects</a> and <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/mt779300(v=vs.85)">ISpatialAudioObjectRenderStreamBase.EndUpdatingAudioObjects</a>).</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b> SPTLAUDCLNT_E_PROPERTY_NOT_SUPPORTED </b>
+            </para>
+          </description>
+          <description>
+            <para>The <see cref="ISpatialAudioObjectForHrtf" /> is not of type <b>AudioObjectType_Dynamic</b>. Set the type of the audio object with the <i>type</i> parameter to the  <see cref="ISpatialAudioObjectRenderStreamBase.ActivateSpatialAudioObjectForHrtf" /> method.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method can only be called on a  <see cref="ISpatialAudioObjectForHrtf" /> that is of type <b>AudioObjectType_Dynamic</b>. Set the type of the audio object with the <i>type</i> parameter to the  <see cref="ISpatialAudioObjectRenderStreamForHrtf.ActivateSpatialAudioObjectForHrtf" /> method.</para>
+      <para>Position values use a right-handed Cartesian coordinate system, where each unit represents 1 meter. The coordinate system is relative to the listener where the origin (x=0.0, y=0.0, z=0.0) represents the center point between the listener's ears.</para>
+      <para>If <b>SetPosition</b> is never called, the origin (x=0.0, y=0.0, z=0.0) is used as the default position. After <b>SetPosition</b> is called, the position that is set will be used for the audio object until the position is changed with another call to <b>SetPosition</b>.</para>
+    </remarks>
+    <seealso cref="ISpatialAudioObjectForHrtf" />
+  </member>
+  <member name="ISpatialAudioObjectForHrtf">
+    <summary>
+      <para>Represents an object that provides audio data to  be  rendered from a position in 3D space, relative to the user, a head-relative transfer function (HRTF). Spatial audio objects can be static or dynamic, which you specify with the <i>type</i> parameter to the <see cref="ISpatialAudioObjectRenderStreamForHrtf.ActivateSpatialAudioObjectForHrtf" />   method. Dynamic audio objects can be placed in an arbitrary position in space and can be moved over time. Static audio objects are assigned to one or more channels, defined in the <see cref="AudioObjectType" /> enumeration, that each correlate to a fixed speaker location that may be a physical or a virtualized speaker</para>
+      <para>This interface is a part of  Windows Sonic, Microsoft’s audio platform for more immersive audio which includes integrated spatial sound on Xbox and Windows.</para>
+    </summary>
+    <remarks>
+      <para>
+        <b>Note</b>  Many of the methods provided by this interface are implemented in the inherited <see cref="ISpatialAudioObjectBase" /> interface.</para>
+    </remarks>
+    <seealso cref="ISpatialAudioObjectBase" />
+  </member>
+</doc>

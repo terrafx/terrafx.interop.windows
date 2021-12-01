@@ -8,19 +8,25 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='OVERLAPPED.xml' path='doc/member[@name="OVERLAPPED"]/*' />
 public unsafe partial struct OVERLAPPED
 {
+    /// <include file='OVERLAPPED.xml' path='doc/member[@name="OVERLAPPED.Internal"]/*' />
     [NativeTypeName("ULONG_PTR")]
     public nuint Internal;
 
+    /// <include file='OVERLAPPED.xml' path='doc/member[@name="OVERLAPPED.InternalHigh"]/*' />
     [NativeTypeName("ULONG_PTR")]
     public nuint InternalHigh;
 
+    /// <include file='OVERLAPPED.xml' path='doc/member[@name="OVERLAPPED.Anonymous"]/*' />
     [NativeTypeName("_OVERLAPPED::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/minwinbase.h:55:5)")]
     public _Anonymous_e__Union Anonymous;
 
+    /// <include file='OVERLAPPED.xml' path='doc/member[@name="OVERLAPPED.hEvent"]/*' />
     public HANDLE hEvent;
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Offset"]/*' />
     public ref uint Offset
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -30,6 +36,7 @@ public unsafe partial struct OVERLAPPED
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.OffsetHigh"]/*' />
     public ref uint OffsetHigh
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -39,6 +46,7 @@ public unsafe partial struct OVERLAPPED
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Pointer"]/*' />
     public ref void* Pointer
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -48,22 +56,28 @@ public unsafe partial struct OVERLAPPED
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public unsafe partial struct _Anonymous_e__Union
     {
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("_OVERLAPPED::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/minwinbase.h:56:9)")]
         public _Anonymous_e__Struct Anonymous;
 
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Pointer"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("PVOID")]
         public void* Pointer;
 
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />
         public partial struct _Anonymous_e__Struct
         {
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Offset"]/*' />
             [NativeTypeName("DWORD")]
             public uint Offset;
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.OffsetHigh"]/*' />
             [NativeTypeName("DWORD")]
             public uint OffsetHigh;
         }

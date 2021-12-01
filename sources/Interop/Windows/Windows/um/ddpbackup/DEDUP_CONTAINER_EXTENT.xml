@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DEDUP_CONTAINER_EXTENT">
+    <summary>
+      <para>A logical container file may be stored in a single segment or multiple segments in the backup store.
+<b>DEDUP_CONTAINER_EXTENT</b> represents a single
+extent of a specific container file as stored in the backup store. The extent may be the full container file or a
+portion of the file.</para>
+    </summary>
+    <remarks>
+      <para>For example, in an incremental backup scheme, the container may reside in the store either as one complete file
+generated in a full backup, or as multiple incremental files that contain changes in the file since the previous
+backup.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/ddpbackup/nf-ddpbackup-idedupreadfilecallback-ordercontainersrestore">IDedupReadFileCallback.OrderContainersRestore</seealso>
+  </member>
+  <member name="DEDUP_CONTAINER_EXTENT.ContainerIndex">
+    <summary>
+      <para>The index in the container list passed to
+<a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/ddpbackup/nf-ddpbackup-idedupreadfilecallback-ordercontainersrestore">IDedupReadFileCallback.OrderContainersRestore</a></para>
+      <para>to which this container extent structure corresponds.</para>
+    </summary>
+  </member>
+  <member name="DEDUP_CONTAINER_EXTENT.StartOffset">
+    <summary>
+      <para>Offset, in bytes, from the beginning of the container to the beginning of the extent.</para>
+    </summary>
+  </member>
+  <member name="DEDUP_CONTAINER_EXTENT.Length">
+    <summary>
+      <para>Length, in bytes, of the extent.</para>
+    </summary>
+  </member>
+</doc>

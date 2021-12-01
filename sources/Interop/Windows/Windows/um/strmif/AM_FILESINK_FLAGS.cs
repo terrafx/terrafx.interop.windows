@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='AM_FILESINK_FLAGS.xml' path='doc/member[@name="AM_FILESINK_FLAGS"]/*' />
 public enum AM_FILESINK_FLAGS
 {
+    /// <include file='AM_FILESINK_FLAGS.xml' path='doc/member[@name="AM_FILESINK_FLAGS.AM_FILE_OVERWRITE"]/*' />
     AM_FILE_OVERWRITE = 0x1,
 }

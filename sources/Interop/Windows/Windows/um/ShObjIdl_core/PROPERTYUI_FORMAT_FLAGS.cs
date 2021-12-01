@@ -7,12 +7,22 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PROPERTYUI_FORMAT_FLAGS.xml' path='doc/member[@name="PROPERTYUI_FORMAT_FLAGS"]/*' />
 [Flags]
 public enum PROPERTYUI_FORMAT_FLAGS
 {
+    /// <include file='PROPERTYUI_FORMAT_FLAGS.xml' path='doc/member[@name="PROPERTYUI_FORMAT_FLAGS.PUIFFDF_DEFAULT"]/*' />
     PUIFFDF_DEFAULT = 0,
+
+    /// <include file='PROPERTYUI_FORMAT_FLAGS.xml' path='doc/member[@name="PROPERTYUI_FORMAT_FLAGS.PUIFFDF_RIGHTTOLEFT"]/*' />
     PUIFFDF_RIGHTTOLEFT = 0x1,
+
+    /// <include file='PROPERTYUI_FORMAT_FLAGS.xml' path='doc/member[@name="PROPERTYUI_FORMAT_FLAGS.PUIFFDF_SHORTFORMAT"]/*' />
     PUIFFDF_SHORTFORMAT = 0x2,
+
+    /// <include file='PROPERTYUI_FORMAT_FLAGS.xml' path='doc/member[@name="PROPERTYUI_FORMAT_FLAGS.PUIFFDF_NOTIME"]/*' />
     PUIFFDF_NOTIME = 0x4,
+
+    /// <include file='PROPERTYUI_FORMAT_FLAGS.xml' path='doc/member[@name="PROPERTYUI_FORMAT_FLAGS.PUIFFDF_FRIENDLYDATE"]/*' />
     PUIFFDF_FRIENDLYDATE = 0x8,
 }

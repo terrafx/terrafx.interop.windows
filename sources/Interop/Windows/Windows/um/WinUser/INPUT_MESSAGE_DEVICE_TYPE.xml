@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="INPUT_MESSAGE_DEVICE_TYPE">
+    <summary>
+      <para>The type of device that sent the input message.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/input_sourceid/enumerations">Enumerations</seealso>
+  </member>
+  <member name="INPUT_MESSAGE_DEVICE_TYPE.IMDT_UNAVAILABLE">
+    <summary>
+      <para>The device type isn't identified.</para>
+    </summary>
+  </member>
+  <member name="INPUT_MESSAGE_DEVICE_TYPE.IMDT_KEYBOARD">
+    <summary>
+      <para>Keyboard input.</para>
+    </summary>
+  </member>
+  <member name="INPUT_MESSAGE_DEVICE_TYPE.IMDT_MOUSE">
+    <summary>
+      <para>Mouse input.</para>
+    </summary>
+  </member>
+  <member name="INPUT_MESSAGE_DEVICE_TYPE.IMDT_TOUCH">
+    <summary>
+      <para>Touch input.</para>
+    </summary>
+  </member>
+  <member name="INPUT_MESSAGE_DEVICE_TYPE.IMDT_PEN">
+    <summary>
+      <para>Pen or stylus input.</para>
+    </summary>
+  </member>
+  <member name="INPUT_MESSAGE_DEVICE_TYPE.IMDT_TOUCHPAD">
+    <summary>
+      <para>Touchpad input (Windows 8.1 and later).</para>
+    </summary>
+  </member>
+</doc>

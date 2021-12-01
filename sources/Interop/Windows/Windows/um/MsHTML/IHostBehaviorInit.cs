@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IHostBehaviorInit.xml' path='doc/member[@name="IHostBehaviorInit"]/*' />
 [Guid("3050F842-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IHostBehaviorInit : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IHostBehaviorInit : IHostBehaviorInit.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IHostBehaviorInit : IHostBehaviorInit.Interface
         return ((delegate* unmanaged<IHostBehaviorInit*, Guid*, void**, int>)(lpVtbl[0]))((IHostBehaviorInit*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IHostBehaviorInit : IHostBehaviorInit.Interface
         return ((delegate* unmanaged<IHostBehaviorInit*, uint>)(lpVtbl[1]))((IHostBehaviorInit*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IHostBehaviorInit : IHostBehaviorInit.Interface
         return ((delegate* unmanaged<IHostBehaviorInit*, uint>)(lpVtbl[2]))((IHostBehaviorInit*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IHostBehaviorInit.xml' path='doc/member[@name="IHostBehaviorInit.PopulateNamespaceTable"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT PopulateNamespaceTable()

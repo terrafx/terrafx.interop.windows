@@ -9,13 +9,17 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NRESARRAY.xml' path='doc/member[@name="NRESARRAY"]/*' />
 public partial struct NRESARRAY
 {
+    /// <include file='NRESARRAY.xml' path='doc/member[@name="NRESARRAY.cItems"]/*' />
     public uint cItems;
 
+    /// <include file='NRESARRAY.xml' path='doc/member[@name="NRESARRAY.nr"]/*' />
     [NativeTypeName("NETRESOURCE [1]")]
     public _nr_e__FixedBuffer nr;
 
+    /// <include file='_nr_e__FixedBuffer.xml' path='doc/member[@name="_nr_e__FixedBuffer"]/*' />
     public partial struct _nr_e__FixedBuffer
     {
         public NETRESOURCEW e0;

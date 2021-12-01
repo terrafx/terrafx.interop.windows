@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="GROUP_AFFINITY">
+    <summary>
+      <para>Represents a processor group-specific affinity, such as the affinity of a thread.</para>
+    </summary>
+    <seealso cref="CACHE_RELATIONSHIP" />
+    <seealso cref="NUMA_NODE_RELATIONSHIP" />
+    <seealso cref="PROCESSOR_RELATIONSHIP" />
+  </member>
+  <member name="GROUP_AFFINITY.Mask">
+    <summary>
+      <para>A bitmap that specifies the affinity for zero or more processors within the specified group.</para>
+    </summary>
+  </member>
+  <member name="GROUP_AFFINITY.Group">
+    <summary>
+      <para>The processor group number.</para>
+    </summary>
+  </member>
+  <member name="GROUP_AFFINITY.Reserved">
+    <summary>
+      <para>This member is reserved.</para>
+    </summary>
+  </member>
+</doc>

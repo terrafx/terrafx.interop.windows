@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PROPENUMTYPE.xml' path='doc/member[@name="PROPENUMTYPE"]/*' />
 public enum PROPENUMTYPE
 {
+    /// <include file='PROPENUMTYPE.xml' path='doc/member[@name="PROPENUMTYPE.PET_DISCRETEVALUE"]/*' />
     PET_DISCRETEVALUE = 0,
+
+    /// <include file='PROPENUMTYPE.xml' path='doc/member[@name="PROPENUMTYPE.PET_RANGEDVALUE"]/*' />
     PET_RANGEDVALUE = 1,
+
+    /// <include file='PROPENUMTYPE.xml' path='doc/member[@name="PROPENUMTYPE.PET_DEFAULTVALUE"]/*' />
     PET_DEFAULTVALUE = 2,
+
+    /// <include file='PROPENUMTYPE.xml' path='doc/member[@name="PROPENUMTYPE.PET_ENDRANGE"]/*' />
     PET_ENDRANGE = 3,
 }

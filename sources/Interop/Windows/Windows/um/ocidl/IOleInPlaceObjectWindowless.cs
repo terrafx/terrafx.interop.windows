@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IOleInPlaceObjectWindowless.xml' path='doc/member[@name="IOleInPlaceObjectWindowless"]/*' />
 [Guid("1C2056CC-5EF4-101B-8BC8-00AA003E3B29")]
 [NativeTypeName("struct IOleInPlaceObjectWindowless : IOleInPlaceObject")]
 [NativeInheritance("IOleInPlaceObject")]
@@ -16,6 +17,7 @@ public unsafe partial struct IOleInPlaceObjectWindowless : IOleInPlaceObjectWind
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IOleInPlaceObjectWindowless : IOleInPlaceObjectWind
         return ((delegate* unmanaged<IOleInPlaceObjectWindowless*, Guid*, void**, int>)(lpVtbl[0]))((IOleInPlaceObjectWindowless*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IOleInPlaceObjectWindowless : IOleInPlaceObjectWind
         return ((delegate* unmanaged<IOleInPlaceObjectWindowless*, uint>)(lpVtbl[1]))((IOleInPlaceObjectWindowless*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IOleInPlaceObjectWindowless : IOleInPlaceObjectWind
         return ((delegate* unmanaged<IOleInPlaceObjectWindowless*, uint>)(lpVtbl[2]))((IOleInPlaceObjectWindowless*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IOleWindow.GetWindow" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetWindow(HWND* phwnd)
@@ -46,6 +51,7 @@ public unsafe partial struct IOleInPlaceObjectWindowless : IOleInPlaceObjectWind
         return ((delegate* unmanaged<IOleInPlaceObjectWindowless*, HWND*, int>)(lpVtbl[3]))((IOleInPlaceObjectWindowless*)Unsafe.AsPointer(ref this), phwnd);
     }
 
+    /// <inheritdoc cref="IOleWindow.ContextSensitiveHelp" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT ContextSensitiveHelp(BOOL fEnterMode)
@@ -53,6 +59,7 @@ public unsafe partial struct IOleInPlaceObjectWindowless : IOleInPlaceObjectWind
         return ((delegate* unmanaged<IOleInPlaceObjectWindowless*, BOOL, int>)(lpVtbl[4]))((IOleInPlaceObjectWindowless*)Unsafe.AsPointer(ref this), fEnterMode);
     }
 
+    /// <inheritdoc cref="IOleInPlaceObject.InPlaceDeactivate" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT InPlaceDeactivate()
@@ -60,6 +67,7 @@ public unsafe partial struct IOleInPlaceObjectWindowless : IOleInPlaceObjectWind
         return ((delegate* unmanaged<IOleInPlaceObjectWindowless*, int>)(lpVtbl[5]))((IOleInPlaceObjectWindowless*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IOleInPlaceObject.UIDeactivate" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT UIDeactivate()
@@ -67,6 +75,7 @@ public unsafe partial struct IOleInPlaceObjectWindowless : IOleInPlaceObjectWind
         return ((delegate* unmanaged<IOleInPlaceObjectWindowless*, int>)(lpVtbl[6]))((IOleInPlaceObjectWindowless*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IOleInPlaceObject.SetObjectRects" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT SetObjectRects([NativeTypeName("LPCRECT")] RECT* lprcPosRect, [NativeTypeName("LPCRECT")] RECT* lprcClipRect)
@@ -74,6 +83,7 @@ public unsafe partial struct IOleInPlaceObjectWindowless : IOleInPlaceObjectWind
         return ((delegate* unmanaged<IOleInPlaceObjectWindowless*, RECT*, RECT*, int>)(lpVtbl[7]))((IOleInPlaceObjectWindowless*)Unsafe.AsPointer(ref this), lprcPosRect, lprcClipRect);
     }
 
+    /// <inheritdoc cref="IOleInPlaceObject.ReactivateAndUndo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT ReactivateAndUndo()
@@ -81,6 +91,7 @@ public unsafe partial struct IOleInPlaceObjectWindowless : IOleInPlaceObjectWind
         return ((delegate* unmanaged<IOleInPlaceObjectWindowless*, int>)(lpVtbl[8]))((IOleInPlaceObjectWindowless*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IOleInPlaceObjectWindowless.xml' path='doc/member[@name="IOleInPlaceObjectWindowless.OnWindowMessage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT OnWindowMessage(uint msg, WPARAM wParam, LPARAM lParam, LRESULT* plResult)
@@ -88,6 +99,7 @@ public unsafe partial struct IOleInPlaceObjectWindowless : IOleInPlaceObjectWind
         return ((delegate* unmanaged<IOleInPlaceObjectWindowless*, uint, WPARAM, LPARAM, LRESULT*, int>)(lpVtbl[9]))((IOleInPlaceObjectWindowless*)Unsafe.AsPointer(ref this), msg, wParam, lParam, plResult);
     }
 
+    /// <include file='IOleInPlaceObjectWindowless.xml' path='doc/member[@name="IOleInPlaceObjectWindowless.GetDropTarget"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT GetDropTarget(IDropTarget** ppDropTarget)

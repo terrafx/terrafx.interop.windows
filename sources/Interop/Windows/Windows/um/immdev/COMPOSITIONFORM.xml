@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="COMPOSITIONFORM">
+    <summary>
+      <para>Contains style and position information for a composition window.</para>
+    </summary>
+    <remarks>
+      <para>Some IME windows adjust the composition window position specified by the system or the application. The CFS_FORCE_POSITION directs the IME window to skip this adjustment.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Intl/input-method-manager">Input Method Manager</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Intl/input-method-manager-structures">Input Method Manager Structures</seealso>
+  </member>
+  <member name="COMPOSITIONFORM.dwStyle">
+    <summary>
+      <para>Position style. This member can be one of the following values:</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>CFS_DEFAULT</description>
+          <description>Move the composition window to the default position. The IME window can display the composition window outside the client area, such as in a floating window.</description>
+        </item>
+        <item>
+          <description>CFS_FORCE_POSITION</description>
+          <description>Display the upper left corner of the composition window at exactly the position specified by <b>ptCurrentPos</b>. The coordinates are relative to the upper left corner of the window containing the composition window and are not subject to adjustment by the IME.</description>
+        </item>
+        <item>
+          <description>CFS_POINT</description>
+          <description>Display the upper left corner of the composition window at the position specified by <b>ptCurrentPos</b>. The coordinates are relative to the upper left corner of the window containing the composition window and are subject to adjustment by the IME.</description>
+        </item>
+        <item>
+          <description>CFS_RECT</description>
+          <description>Display the composition window at the position specified by <b>rcArea</b>. The coordinates are relative to the upper left of the window containing the composition window.</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="COMPOSITIONFORM.ptCurrentPos">
+    <summary>
+      <para>A <a href="https://docs.microsoft.com//previous-versions/dd162805(v=vs.85)">POINT</a> structure containing the coordinates of the upper left corner of the composition window.</para>
+    </summary>
+  </member>
+  <member name="COMPOSITIONFORM.rcArea">
+    <summary>
+      <para>A <see cref="RECT" /> structure containing the coordinates of the upper left and lower right corners of the composition window.</para>
+    </summary>
+  </member>
+</doc>

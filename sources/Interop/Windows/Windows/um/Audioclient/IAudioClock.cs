@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAudioClock.xml' path='doc/member[@name="IAudioClock"]/*' />
 [Guid("CD63314F-3FBA-4A1B-812C-EF96358728E7")]
 [NativeTypeName("struct IAudioClock : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IAudioClock : IAudioClock.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IAudioClock : IAudioClock.Interface
         return ((delegate* unmanaged<IAudioClock*, Guid*, void**, int>)(lpVtbl[0]))((IAudioClock*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IAudioClock : IAudioClock.Interface
         return ((delegate* unmanaged<IAudioClock*, uint>)(lpVtbl[1]))((IAudioClock*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IAudioClock : IAudioClock.Interface
         return ((delegate* unmanaged<IAudioClock*, uint>)(lpVtbl[2]))((IAudioClock*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAudioClock.xml' path='doc/member[@name="IAudioClock.GetFrequency"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetFrequency([NativeTypeName("UINT64 *")] ulong* pu64Frequency)
@@ -46,6 +51,7 @@ public unsafe partial struct IAudioClock : IAudioClock.Interface
         return ((delegate* unmanaged<IAudioClock*, ulong*, int>)(lpVtbl[3]))((IAudioClock*)Unsafe.AsPointer(ref this), pu64Frequency);
     }
 
+    /// <include file='IAudioClock.xml' path='doc/member[@name="IAudioClock.GetPosition"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetPosition([NativeTypeName("UINT64 *")] ulong* pu64Position, [NativeTypeName("UINT64 *")] ulong* pu64QPCPosition)
@@ -53,6 +59,7 @@ public unsafe partial struct IAudioClock : IAudioClock.Interface
         return ((delegate* unmanaged<IAudioClock*, ulong*, ulong*, int>)(lpVtbl[4]))((IAudioClock*)Unsafe.AsPointer(ref this), pu64Position, pu64QPCPosition);
     }
 
+    /// <include file='IAudioClock.xml' path='doc/member[@name="IAudioClock.GetCharacteristics"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetCharacteristics([NativeTypeName("DWORD *")] uint* pdwCharacteristics)

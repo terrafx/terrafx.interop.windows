@@ -7,18 +7,24 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='AMCOPPCommand.xml' path='doc/member[@name="AMCOPPCommand"]/*' />
 public unsafe partial struct AMCOPPCommand
 {
+    /// <include file='AMCOPPCommand.xml' path='doc/member[@name="AMCOPPCommand.macKDI"]/*' />
     public Guid macKDI;
 
+    /// <include file='AMCOPPCommand.xml' path='doc/member[@name="AMCOPPCommand.guidCommandID"]/*' />
     public Guid guidCommandID;
 
+    /// <include file='AMCOPPCommand.xml' path='doc/member[@name="AMCOPPCommand.dwSequence"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwSequence;
 
+    /// <include file='AMCOPPCommand.xml' path='doc/member[@name="AMCOPPCommand.cbSizeData"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbSizeData;
 
+    /// <include file='AMCOPPCommand.xml' path='doc/member[@name="AMCOPPCommand.CommandData"]/*' />
     [NativeTypeName("BYTE [4056]")]
     public fixed byte CommandData[4056];
 }

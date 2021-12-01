@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='LUID_AND_ATTRIBUTES.xml' path='doc/member[@name="LUID_AND_ATTRIBUTES"]/*' />
 public partial struct LUID_AND_ATTRIBUTES
 {
+    /// <include file='LUID_AND_ATTRIBUTES.xml' path='doc/member[@name="LUID_AND_ATTRIBUTES.Luid"]/*' />
     public LUID Luid;
 
+    /// <include file='LUID_AND_ATTRIBUTES.xml' path='doc/member[@name="LUID_AND_ATTRIBUTES.Attributes"]/*' />
     [NativeTypeName("DWORD")]
     public uint Attributes;
 }

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IUniformResourceLocatorW.xml' path='doc/member[@name="IUniformResourceLocatorW"]/*' />
 [Guid("CABB0DA0-DA57-11CF-9974-0020AFD79762")]
 [NativeTypeName("struct IUniformResourceLocatorW : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IUniformResourceLocatorW : IUniformResourceLocatorW
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IUniformResourceLocatorW : IUniformResourceLocatorW
         return ((delegate* unmanaged<IUniformResourceLocatorW*, Guid*, void**, int>)(lpVtbl[0]))((IUniformResourceLocatorW*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IUniformResourceLocatorW : IUniformResourceLocatorW
         return ((delegate* unmanaged<IUniformResourceLocatorW*, uint>)(lpVtbl[1]))((IUniformResourceLocatorW*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IUniformResourceLocatorW : IUniformResourceLocatorW
         return ((delegate* unmanaged<IUniformResourceLocatorW*, uint>)(lpVtbl[2]))((IUniformResourceLocatorW*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IUniformResourceLocatorW.xml' path='doc/member[@name="IUniformResourceLocatorW.SetURL"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetURL([NativeTypeName("LPCWSTR")] ushort* pcszURL, [NativeTypeName("DWORD")] uint dwInFlags)
@@ -46,6 +51,7 @@ public unsafe partial struct IUniformResourceLocatorW : IUniformResourceLocatorW
         return ((delegate* unmanaged<IUniformResourceLocatorW*, ushort*, uint, int>)(lpVtbl[3]))((IUniformResourceLocatorW*)Unsafe.AsPointer(ref this), pcszURL, dwInFlags);
     }
 
+    /// <include file='IUniformResourceLocatorW.xml' path='doc/member[@name="IUniformResourceLocatorW.GetURL"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetURL([NativeTypeName("LPWSTR *")] ushort** ppszURL)
@@ -53,6 +59,7 @@ public unsafe partial struct IUniformResourceLocatorW : IUniformResourceLocatorW
         return ((delegate* unmanaged<IUniformResourceLocatorW*, ushort**, int>)(lpVtbl[4]))((IUniformResourceLocatorW*)Unsafe.AsPointer(ref this), ppszURL);
     }
 
+    /// <include file='IUniformResourceLocatorW.xml' path='doc/member[@name="IUniformResourceLocatorW.InvokeCommand"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT InvokeCommand([NativeTypeName("PURLINVOKECOMMANDINFOW")] URLINVOKECOMMANDINFOW* purlici)

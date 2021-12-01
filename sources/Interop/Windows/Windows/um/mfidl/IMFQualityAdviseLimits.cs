@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFQualityAdviseLimits.xml' path='doc/member[@name="IMFQualityAdviseLimits"]/*' />
 [Guid("DFCD8E4D-30B5-4567-ACAA-8EB5B7853DC9")]
 [NativeTypeName("struct IMFQualityAdviseLimits : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMFQualityAdviseLimits : IMFQualityAdviseLimits.Int
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMFQualityAdviseLimits : IMFQualityAdviseLimits.Int
         return ((delegate* unmanaged<IMFQualityAdviseLimits*, Guid*, void**, int>)(lpVtbl[0]))((IMFQualityAdviseLimits*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMFQualityAdviseLimits : IMFQualityAdviseLimits.Int
         return ((delegate* unmanaged<IMFQualityAdviseLimits*, uint>)(lpVtbl[1]))((IMFQualityAdviseLimits*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMFQualityAdviseLimits : IMFQualityAdviseLimits.Int
         return ((delegate* unmanaged<IMFQualityAdviseLimits*, uint>)(lpVtbl[2]))((IMFQualityAdviseLimits*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFQualityAdviseLimits.xml' path='doc/member[@name="IMFQualityAdviseLimits.GetMaximumDropMode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetMaximumDropMode(MF_QUALITY_DROP_MODE* peDropMode)
@@ -46,6 +51,7 @@ public unsafe partial struct IMFQualityAdviseLimits : IMFQualityAdviseLimits.Int
         return ((delegate* unmanaged<IMFQualityAdviseLimits*, MF_QUALITY_DROP_MODE*, int>)(lpVtbl[3]))((IMFQualityAdviseLimits*)Unsafe.AsPointer(ref this), peDropMode);
     }
 
+    /// <include file='IMFQualityAdviseLimits.xml' path='doc/member[@name="IMFQualityAdviseLimits.GetMinimumQualityLevel"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetMinimumQualityLevel(MF_QUALITY_LEVEL* peQualityLevel)

@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMAPI_FORMAT2_TAO_WRITE_ACTION">
+    <summary>
+      <para>Defines values that indicate the current state of the write operation when using the <see cref="IDiscFormat2TrackAtOnceEventArgs" /> interface.</para>
+    </summary>
+    <seealso cref="DDiscFormat2TrackAtOnceEvents.Update" />
+  </member>
+  <member name="IMAPI_FORMAT2_TAO_WRITE_ACTION.IMAPI_FORMAT2_TAO_WRITE_ACTION_UNKNOWN">
+    <summary>
+      <para>Indicates an unknown state.</para>
+    </summary>
+  </member>
+  <member name="IMAPI_FORMAT2_TAO_WRITE_ACTION.IMAPI_FORMAT2_TAO_WRITE_ACTION_PREPARING">
+    <summary>
+      <para>Preparing to write the track.</para>
+    </summary>
+  </member>
+  <member name="IMAPI_FORMAT2_TAO_WRITE_ACTION.IMAPI_FORMAT2_TAO_WRITE_ACTION_WRITING">
+    <summary>
+      <para>Writing the track.</para>
+    </summary>
+  </member>
+  <member name="IMAPI_FORMAT2_TAO_WRITE_ACTION.IMAPI_FORMAT2_TAO_WRITE_ACTION_FINISHING">
+    <summary>
+      <para>Closing the track or closing the session.</para>
+    </summary>
+  </member>
+  <member name="IMAPI_FORMAT2_TAO_WRITE_ACTION.IMAPI_FORMAT2_TAO_WRITE_ACTION_VERIFYING">
+    <summary></summary>
+  </member>
+</doc>

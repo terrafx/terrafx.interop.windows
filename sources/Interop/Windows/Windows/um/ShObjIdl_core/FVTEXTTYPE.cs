@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='FVTEXTTYPE.xml' path='doc/member[@name="FVTEXTTYPE"]/*' />
 public enum FVTEXTTYPE
 {
+    /// <include file='FVTEXTTYPE.xml' path='doc/member[@name="FVTEXTTYPE.FVST_EMPTYTEXT"]/*' />
     FVST_EMPTYTEXT = 0,
 }

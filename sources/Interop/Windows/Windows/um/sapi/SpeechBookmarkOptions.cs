@@ -7,8 +7,12 @@ using static TerraFX.Interop.Windows.SPBOOKMARKOPTIONS;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SpeechBookmarkOptions.xml' path='doc/member[@name="SpeechBookmarkOptions"]/*' />
 public enum SpeechBookmarkOptions
 {
+    /// <include file='SpeechBookmarkOptions.xml' path='doc/member[@name="SpeechBookmarkOptions.SBONone"]/*' />
     SBONone = SPBO_NONE,
+
+    /// <include file='SpeechBookmarkOptions.xml' path='doc/member[@name="SpeechBookmarkOptions.SBOPause"]/*' />
     SBOPause = SPBO_PAUSE,
 }

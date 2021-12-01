@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WCM_PROPERTY">
+    <summary>
+      <para>The <b>WCM_PROPERTY</b> enumerated type specifies a property of a connection.</para>
+    </summary>
+  </member>
+  <member name="WCM_PROPERTY.wcm_global_property_domain_policy">
+    <summary>
+      <para>Domain policy.</para>
+    </summary>
+  </member>
+  <member name="WCM_PROPERTY.wcm_global_property_minimize_policy">
+    <summary>
+      <para>Minimize policy.</para>
+    </summary>
+  </member>
+  <member name="WCM_PROPERTY.wcm_global_property_roaming_policy">
+    <summary>
+      <para>Roaming policy.</para>
+    </summary>
+  </member>
+  <member name="WCM_PROPERTY.wcm_global_property_powermanagement_policy">
+    <summary>
+      <para>Power management policy.</para>
+    </summary>
+  </member>
+  <member name="WCM_PROPERTY.wcm_intf_property_connection_cost">
+    <summary>
+      <para>The cost level and flags for the connection</para>
+    </summary>
+  </member>
+  <member name="WCM_PROPERTY.wcm_intf_property_dataplan_status">
+    <summary>
+      <para>The plan data associated with the new cost.</para>
+    </summary>
+  </member>
+  <member name="WCM_PROPERTY.wcm_intf_property_hotspot_profile">
+    <summary>
+      <para>The hotspot profile.</para>
+    </summary>
+  </member>
+</doc>

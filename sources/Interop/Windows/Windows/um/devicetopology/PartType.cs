@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PartType.xml' path='doc/member[@name="PartType"]/*' />
 public enum PartType
 {
+    /// <include file='PartType.xml' path='doc/member[@name="PartType.Connector"]/*' />
     Connector = 0,
+
+    /// <include file='PartType.xml' path='doc/member[@name="PartType.Subunit"]/*' />
     Subunit = (Connector + 1),
 }

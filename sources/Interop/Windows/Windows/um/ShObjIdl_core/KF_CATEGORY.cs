@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='KF_CATEGORY.xml' path='doc/member[@name="KF_CATEGORY"]/*' />
 public enum KF_CATEGORY
 {
+    /// <include file='KF_CATEGORY.xml' path='doc/member[@name="KF_CATEGORY.KF_CATEGORY_VIRTUAL"]/*' />
     KF_CATEGORY_VIRTUAL = 1,
+
+    /// <include file='KF_CATEGORY.xml' path='doc/member[@name="KF_CATEGORY.KF_CATEGORY_FIXED"]/*' />
     KF_CATEGORY_FIXED = 2,
+
+    /// <include file='KF_CATEGORY.xml' path='doc/member[@name="KF_CATEGORY.KF_CATEGORY_COMMON"]/*' />
     KF_CATEGORY_COMMON = 3,
+
+    /// <include file='KF_CATEGORY.xml' path='doc/member[@name="KF_CATEGORY.KF_CATEGORY_PERUSER"]/*' />
     KF_CATEGORY_PERUSER = 4,
 }

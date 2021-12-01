@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='EMRLINETO.xml' path='doc/member[@name="EMRLINETO"]/*' />
 public partial struct EMRLINETO
 {
+    /// <include file='EMRLINETO.xml' path='doc/member[@name="EMRLINETO.emr"]/*' />
     public EMR emr;
 
+    /// <include file='EMRLINETO.xml' path='doc/member[@name="EMRLINETO.ptl"]/*' />
     public POINTL ptl;
 }

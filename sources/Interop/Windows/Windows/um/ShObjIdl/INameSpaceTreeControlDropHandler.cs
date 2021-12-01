@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='INameSpaceTreeControlDropHandler.xml' path='doc/member[@name="INameSpaceTreeControlDropHandler"]/*' />
 [Guid("F9C665D6-C2F2-4C19-BF33-8322D7352F51")]
 [NativeTypeName("struct INameSpaceTreeControlDropHandler : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct INameSpaceTreeControlDropHandler : INameSpaceTreeCo
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct INameSpaceTreeControlDropHandler : INameSpaceTreeCo
         return ((delegate* unmanaged<INameSpaceTreeControlDropHandler*, Guid*, void**, int>)(lpVtbl[0]))((INameSpaceTreeControlDropHandler*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct INameSpaceTreeControlDropHandler : INameSpaceTreeCo
         return ((delegate* unmanaged<INameSpaceTreeControlDropHandler*, uint>)(lpVtbl[1]))((INameSpaceTreeControlDropHandler*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct INameSpaceTreeControlDropHandler : INameSpaceTreeCo
         return ((delegate* unmanaged<INameSpaceTreeControlDropHandler*, uint>)(lpVtbl[2]))((INameSpaceTreeControlDropHandler*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='INameSpaceTreeControlDropHandler.xml' path='doc/member[@name="INameSpaceTreeControlDropHandler.OnDragEnter"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT OnDragEnter(IShellItem* psiOver, IShellItemArray* psiaData, BOOL fOutsideSource, [NativeTypeName("DWORD")] uint grfKeyState, [NativeTypeName("DWORD *")] uint* pdwEffect)
@@ -46,6 +51,7 @@ public unsafe partial struct INameSpaceTreeControlDropHandler : INameSpaceTreeCo
         return ((delegate* unmanaged<INameSpaceTreeControlDropHandler*, IShellItem*, IShellItemArray*, BOOL, uint, uint*, int>)(lpVtbl[3]))((INameSpaceTreeControlDropHandler*)Unsafe.AsPointer(ref this), psiOver, psiaData, fOutsideSource, grfKeyState, pdwEffect);
     }
 
+    /// <include file='INameSpaceTreeControlDropHandler.xml' path='doc/member[@name="INameSpaceTreeControlDropHandler.OnDragOver"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT OnDragOver(IShellItem* psiOver, IShellItemArray* psiaData, [NativeTypeName("DWORD")] uint grfKeyState, [NativeTypeName("DWORD *")] uint* pdwEffect)
@@ -53,6 +59,7 @@ public unsafe partial struct INameSpaceTreeControlDropHandler : INameSpaceTreeCo
         return ((delegate* unmanaged<INameSpaceTreeControlDropHandler*, IShellItem*, IShellItemArray*, uint, uint*, int>)(lpVtbl[4]))((INameSpaceTreeControlDropHandler*)Unsafe.AsPointer(ref this), psiOver, psiaData, grfKeyState, pdwEffect);
     }
 
+    /// <include file='INameSpaceTreeControlDropHandler.xml' path='doc/member[@name="INameSpaceTreeControlDropHandler.OnDragPosition"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT OnDragPosition(IShellItem* psiOver, IShellItemArray* psiaData, int iNewPosition, int iOldPosition)
@@ -60,6 +67,7 @@ public unsafe partial struct INameSpaceTreeControlDropHandler : INameSpaceTreeCo
         return ((delegate* unmanaged<INameSpaceTreeControlDropHandler*, IShellItem*, IShellItemArray*, int, int, int>)(lpVtbl[5]))((INameSpaceTreeControlDropHandler*)Unsafe.AsPointer(ref this), psiOver, psiaData, iNewPosition, iOldPosition);
     }
 
+    /// <include file='INameSpaceTreeControlDropHandler.xml' path='doc/member[@name="INameSpaceTreeControlDropHandler.OnDrop"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT OnDrop(IShellItem* psiOver, IShellItemArray* psiaData, int iPosition, [NativeTypeName("DWORD")] uint grfKeyState, [NativeTypeName("DWORD *")] uint* pdwEffect)
@@ -67,6 +75,7 @@ public unsafe partial struct INameSpaceTreeControlDropHandler : INameSpaceTreeCo
         return ((delegate* unmanaged<INameSpaceTreeControlDropHandler*, IShellItem*, IShellItemArray*, int, uint, uint*, int>)(lpVtbl[6]))((INameSpaceTreeControlDropHandler*)Unsafe.AsPointer(ref this), psiOver, psiaData, iPosition, grfKeyState, pdwEffect);
     }
 
+    /// <include file='INameSpaceTreeControlDropHandler.xml' path='doc/member[@name="INameSpaceTreeControlDropHandler.OnDropPosition"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT OnDropPosition(IShellItem* psiOver, IShellItemArray* psiaData, int iNewPosition, int iOldPosition)
@@ -74,6 +83,7 @@ public unsafe partial struct INameSpaceTreeControlDropHandler : INameSpaceTreeCo
         return ((delegate* unmanaged<INameSpaceTreeControlDropHandler*, IShellItem*, IShellItemArray*, int, int, int>)(lpVtbl[7]))((INameSpaceTreeControlDropHandler*)Unsafe.AsPointer(ref this), psiOver, psiaData, iNewPosition, iOldPosition);
     }
 
+    /// <include file='INameSpaceTreeControlDropHandler.xml' path='doc/member[@name="INameSpaceTreeControlDropHandler.OnDragLeave"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT OnDragLeave(IShellItem* psiOver)

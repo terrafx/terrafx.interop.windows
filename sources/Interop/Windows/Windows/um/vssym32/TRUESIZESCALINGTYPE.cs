@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TRUESIZESCALINGTYPE.xml' path='doc/member[@name="TRUESIZESCALINGTYPE"]/*' />
 public enum TRUESIZESCALINGTYPE
 {
+    /// <include file='TRUESIZESCALINGTYPE.xml' path='doc/member[@name="TRUESIZESCALINGTYPE.TSST_NONE"]/*' />
     TSST_NONE = 0,
+
+    /// <include file='TRUESIZESCALINGTYPE.xml' path='doc/member[@name="TRUESIZESCALINGTYPE.TSST_SIZE"]/*' />
     TSST_SIZE = 1,
+
+    /// <include file='TRUESIZESCALINGTYPE.xml' path='doc/member[@name="TRUESIZESCALINGTYPE.TSST_DPI"]/*' />
     TSST_DPI = 2,
 }

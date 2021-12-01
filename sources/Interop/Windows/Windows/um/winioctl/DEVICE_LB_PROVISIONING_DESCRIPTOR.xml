@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DEVICE_LB_PROVISIONING_DESCRIPTOR">
+    <summary>
+      <para>The
+<b>DEVICE_LB_PROVISIONING_DESCRIPTOR</b></para>
+      <para>structure is one of the query result structures returned from an
+<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_query_property">IOCTL_STORAGE_QUERY_PROPERTY</a> request. This
+structure contains the thin provisioning capabilities for a storage device.</para>
+    </summary>
+    <remarks>
+      <para>This structure is returned from a
+<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_query_property">IOCTL_STORAGE_QUERY_PROPERTY</a> request when the
+<b>PropertyId</b> member of
+<see cref="STORAGE_PROPERTY_QUERY" /> is set to
+<b>StorageDeviceLBProvisioningProperty</b>.</para>
+      <para>If <b>UnmapGranularityAlignmentValid</b> = 0, then any code using
+<b>UnmapGranularityAlignment</b> should assume it has a value of 0.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/FileIO/disk-management-structures">Disk Management Structures</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_query_property">IOCTL_STORAGE_QUERY_PROPERTY</seealso>
+    <seealso cref="STORAGE_PROPERTY_QUERY" />
+  </member>
+  <member name="DEVICE_LB_PROVISIONING_DESCRIPTOR.Version">
+    <summary>
+      <para>Contains the size of this structure, in bytes. The value of this member will change as members are added to
+the structure.</para>
+    </summary>
+  </member>
+  <member name="DEVICE_LB_PROVISIONING_DESCRIPTOR.Size">
+    <summary>
+      <para>Specifies the total size of the data returned, in bytes. This may include data that follows this
+structure.</para>
+    </summary>
+  </member>
+  <member name="DEVICE_LB_PROVISIONING_DESCRIPTOR.ThinProvisioningEnabled">
+    <summary>
+      <para>The thin provisioning–enabled status.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <para>0</para>
+          </description>
+          <description>
+            <para>Thin provisioning is disabled.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>1</para>
+          </description>
+          <description>
+            <para>Thin provisioning is enabled.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="DEVICE_LB_PROVISIONING_DESCRIPTOR.ThinProvisioningReadZeros">
+    <summary>
+      <para>Reads to unmapped regions return zeros.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <para>0</para>
+          </description>
+          <description>
+            <para>Data read from unmapped regions is undefined.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>1</para>
+          </description>
+          <description>
+            <para>Reads return zeros.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="DEVICE_LB_PROVISIONING_DESCRIPTOR.AnchorSupported">
+    <summary>
+      <para>Deterministic read after trim support.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <para>0</para>
+          </description>
+          <description>
+            <para>Deterministic read after trim is not supported.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>1</para>
+          </description>
+          <description>
+            <para>Deterministic read after trim is supported.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="DEVICE_LB_PROVISIONING_DESCRIPTOR.UnmapGranularityAlignmentValid">
+    <summary>
+      <para>The validity of unmap granularity alignment for the device.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <para>0</para>
+          </description>
+          <description>
+            <para>Unmap granularity alignment is not valid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>1</para>
+          </description>
+          <description>
+            <para>Unmap granularity alignment is valid.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="DEVICE_LB_PROVISIONING_DESCRIPTOR.Reserved0">
+    <summary>
+      <para>Reserved.</para>
+    </summary>
+  </member>
+  <member name="DEVICE_LB_PROVISIONING_DESCRIPTOR.Reserved1">
+    <summary>
+      <para>Reserved.</para>
+    </summary>
+  </member>
+  <member name="DEVICE_LB_PROVISIONING_DESCRIPTOR.OptimalUnmapGranularity">
+    <summary>
+      <para>The optimal number of logical sectors for unmap granularity for the device.</para>
+    </summary>
+  </member>
+  <member name="DEVICE_LB_PROVISIONING_DESCRIPTOR.UnmapGranularityAlignment">
+    <summary>
+      <para>The current value, in logical sectors, set for unmap granularity alignment on the device.</para>
+    </summary>
+  </member>
+  <member name="DEVICE_LB_PROVISIONING_DESCRIPTOR.MaxUnmapLbaCount">
+    <summary>
+      <para>
+        <b>Starting in Windows 10: </b>The maximum number of LBAs that can be unmapped in a single unmap command, in logical blocks.</para>
+    </summary>
+  </member>
+  <member name="DEVICE_LB_PROVISIONING_DESCRIPTOR.MaxUnmapBlockDescriptorCount">
+    <summary>
+      <para>
+        <b>Starting in Windows 10: </b>The maximum number of descriptors allowed in a single unmap command.</para>
+    </summary>
+  </member>
+</doc>

@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PROTOCOL_ARGUMENT.xml' path='doc/member[@name="PROTOCOL_ARGUMENT"]/*' />
 public unsafe partial struct PROTOCOL_ARGUMENT
 {
+    /// <include file='PROTOCOL_ARGUMENT.xml' path='doc/member[@name="PROTOCOL_ARGUMENT.szMethod"]/*' />
     [NativeTypeName("LPCWSTR")]
     public ushort* szMethod;
 
+    /// <include file='PROTOCOL_ARGUMENT.xml' path='doc/member[@name="PROTOCOL_ARGUMENT.szTargetUrl"]/*' />
     [NativeTypeName("LPCWSTR")]
     public ushort* szTargetUrl;
 }

@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="RIP_INFO">
+    <summary>
+      <para>Contains the error that caused the RIP debug event.</para>
+    </summary>
+    <seealso cref="DEBUG_EVENT" />
+  </member>
+  <member name="RIP_INFO.dwError">
+    <summary>
+      <para>The error that caused the RIP debug event. For more information, see
+<a href="https://docs.microsoft.com//windows/desktop/Debug/error-handling">Error Handling</a>.</para>
+    </summary>
+  </member>
+  <member name="RIP_INFO.dwType">
+    <summary>
+      <para>Any additional information about the type of error that caused the RIP debug event. This member can be one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>SLE_ERROR</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000001</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Indicates that invalid data was passed to the function that failed. This caused the application to fail.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>SLE_MINORERROR</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000002</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Indicates that invalid data was passed to the function, but the error probably will not cause the application to fail.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>SLE_WARNING</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000003</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Indicates that potentially invalid data was passed to the function, but the function completed processing.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>0</para>
+          </description>
+          <description>
+            <para>Indicates that only <b>dwError</b> was set.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+</doc>

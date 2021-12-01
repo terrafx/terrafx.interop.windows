@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IROTData.xml' path='doc/member[@name="IROTData"]/*' />
 [Guid("F29F6BC0-5021-11CE-AA15-00006901293F")]
 [NativeTypeName("struct IROTData : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IROTData : IROTData.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IROTData : IROTData.Interface
         return ((delegate* unmanaged<IROTData*, Guid*, void**, int>)(lpVtbl[0]))((IROTData*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IROTData : IROTData.Interface
         return ((delegate* unmanaged<IROTData*, uint>)(lpVtbl[1]))((IROTData*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IROTData : IROTData.Interface
         return ((delegate* unmanaged<IROTData*, uint>)(lpVtbl[2]))((IROTData*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IROTData.xml' path='doc/member[@name="IROTData.GetComparisonData"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetComparisonData(byte* pbData, [NativeTypeName("ULONG")] uint cbMax, [NativeTypeName("ULONG *")] uint* pcbData)

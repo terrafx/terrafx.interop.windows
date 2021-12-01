@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CMC_TAGGED_OTHER_MSG.xml' path='doc/member[@name="CMC_TAGGED_OTHER_MSG"]/*' />
 public unsafe partial struct CMC_TAGGED_OTHER_MSG
 {
+    /// <include file='CMC_TAGGED_OTHER_MSG.xml' path='doc/member[@name="CMC_TAGGED_OTHER_MSG.dwBodyPartID"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwBodyPartID;
 
+    /// <include file='CMC_TAGGED_OTHER_MSG.xml' path='doc/member[@name="CMC_TAGGED_OTHER_MSG.pszObjId"]/*' />
     [NativeTypeName("LPSTR")]
     public sbyte* pszObjId;
 
+    /// <include file='CMC_TAGGED_OTHER_MSG.xml' path='doc/member[@name="CMC_TAGGED_OTHER_MSG.Value"]/*' />
     [NativeTypeName("CRYPT_OBJID_BLOB")]
     public CRYPT_DATA_BLOB Value;
 }

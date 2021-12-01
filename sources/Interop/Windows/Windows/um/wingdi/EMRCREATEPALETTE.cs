@@ -5,12 +5,16 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='EMRCREATEPALETTE.xml' path='doc/member[@name="EMRCREATEPALETTE"]/*' />
 public partial struct EMRCREATEPALETTE
 {
+    /// <include file='EMRCREATEPALETTE.xml' path='doc/member[@name="EMRCREATEPALETTE.emr"]/*' />
     public EMR emr;
 
+    /// <include file='EMRCREATEPALETTE.xml' path='doc/member[@name="EMRCREATEPALETTE.ihPal"]/*' />
     [NativeTypeName("DWORD")]
     public uint ihPal;
 
+    /// <include file='EMRCREATEPALETTE.xml' path='doc/member[@name="EMRCREATEPALETTE.lgpl"]/*' />
     public LOGPALETTE lgpl;
 }

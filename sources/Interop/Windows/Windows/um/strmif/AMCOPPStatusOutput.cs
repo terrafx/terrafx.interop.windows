@@ -7,13 +7,17 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='AMCOPPStatusOutput.xml' path='doc/member[@name="AMCOPPStatusOutput"]/*' />
 public unsafe partial struct AMCOPPStatusOutput
 {
+    /// <include file='AMCOPPStatusOutput.xml' path='doc/member[@name="AMCOPPStatusOutput.macKDI"]/*' />
     public Guid macKDI;
 
+    /// <include file='AMCOPPStatusOutput.xml' path='doc/member[@name="AMCOPPStatusOutput.cbSizeData"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbSizeData;
 
+    /// <include file='AMCOPPStatusOutput.xml' path='doc/member[@name="AMCOPPStatusOutput.COPPStatus"]/*' />
     [NativeTypeName("BYTE [4076]")]
     public fixed byte COPPStatus[4076];
 }

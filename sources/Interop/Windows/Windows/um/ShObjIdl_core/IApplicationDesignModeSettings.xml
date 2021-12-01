@@ -1,0 +1,327 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IApplicationDesignModeSettings.ComputeApplicationSize">
+    <summary>
+      <para>Gets the size of the Windows Store app, based on the current set of spoofed settings.</para>
+      <para>You must call <see cref="IInitializeWithWindow.Initialize" /> to set a proxy core window before calling this method.</para>
+      <para>In addition, each of these methods must be called before calling <b>ComputeApplicationSize</b>, or the call will fail.</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <see cref="SetApplicationViewState" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="SetNativeDisplaySize" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="SetScaleFactor" />
+          </description>
+        </item>
+      </list>
+    </summary>
+    <param name="applicationSizePixels">
+      <para>When this method returns successfully, receives a pointer to the size that the Windows Store app should occupy, based on the current set of spoofed settings.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns S_OK. Otherwise, it returns an HRESULT error code, including the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_NOT_SET</b>
+            </para>
+          </description>
+          <description>
+            <para>
+              <see cref="IInitializeWithWindow.Initialize" /> has not been called to set a proxy core window.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IApplicationDesignModeSettings" />
+  </member>
+  <member name="IApplicationDesignModeSettings.IsApplicationViewStateSupported">
+    <summary>
+      <para>Determines whether a particular application view state is supported for specific spoofed display size and scale factor settings.</para>
+      <para>You must call <see cref="IInitializeWithWindow.Initialize" /> to set a proxy core window before calling this method.</para>
+    </summary>
+    <param name="viewState">
+      <para>One of the enumeration values that indicates the application view state for which support is being determined.</para>
+    </param>
+    <param name="nativeDisplaySizePixels">
+      <para>The native size of the display to spoof.</para>
+    </param>
+    <param name="scaleFactor">
+      <para>One of the enumeration values that indicates the device scale factor to spoof.</para>
+    </param>
+    <param name="supported">
+      <para>When this method returns successfully, receives a pointer to a Boolean value which is set to <b>TRUE</b> if the application view state is supported for the given display size and scale factor, and <b>FALSE</b> if it is not.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns S_OK. Otherwise, it returns an HRESULT error code, including the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_NOT_SET</b>
+            </para>
+          </description>
+          <description>
+            <para>
+              <see cref="IInitializeWithWindow.Initialize" /> has not been called to set a proxy core window.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IApplicationDesignModeSettings" />
+  </member>
+  <member name="IApplicationDesignModeSettings.SetApplicationViewState">
+    <summary>
+      <para>Sets a spoofed application view state (full-screen landscape, full-screen portrait, filled, or snapped) to be used for a Windows Store app running in design mode.</para>
+      <para>You must call <see cref="IInitializeWithWindow.Initialize" /> to set a proxy core window before calling this method.</para>
+      <para>
+        <b>SetApplicationViewState</b> must be called before calling <see cref="ComputeApplicationSize" />.</para>
+    </summary>
+    <param name="viewState">
+      <para>One of the <see cref="APPLICATION_VIEW_STATE" /> enumeration values that indicates the application view state to spoof.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns S_OK. Otherwise, it returns an HRESULT error code, including the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_NOT_SET</b>
+            </para>
+          </description>
+          <description>
+            <para>
+              <see cref="IInitializeWithWindow.Initialize" /> has not been called to set a proxy core window.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IApplicationDesignModeSettings" />
+  </member>
+  <member name="IApplicationDesignModeSettings.SetNativeDisplaySize">
+    <summary>
+      <para>Sets a spoofed native display size to be used for a Windows Store app running in design mode.</para>
+      <para>You must call <see cref="IInitializeWithWindow.Initialize" /> to set a proxy core window before calling this method.</para>
+      <para>
+        <b>SetNativeDisplaySize</b> must be called before calling <see cref="ComputeApplicationSize" />.</para>
+    </summary>
+    <param name="nativeDisplaySizePixels">
+      <para>The native size of the display to spoof, as a <a href="https://docs.microsoft.com//previous-versions/dd145106(v=vs.85)">SIZE</a> structure. The specified size will be normalized to a landscape orientation. To spoof orientation, see <see cref="SetApplicationViewState" />.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns S_OK. Otherwise, it returns an HRESULT error code, including the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_NOT_SET</b>
+            </para>
+          </description>
+          <description>
+            <para>
+              <see cref="IInitializeWithWindow.Initialize" /> has not been called to set a proxy core window.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_MONITOR_RESOLUTION_TOO_LOW </b>
+            </para>
+          </description>
+          <description>
+            <para>You cannot launch or switch to an immersive app when the resolution is this low. This is currently defined as any resolution below 800 horizontal or 600 vertical pixels when in landscape orientation.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IApplicationDesignModeSettings" />
+  </member>
+  <member name="IApplicationDesignModeSettings.SetScaleFactor">
+    <summary>
+      <para>Sets a spoofed device scale factor to be used for a Windows Store app running in design mode.</para>
+      <para>You must call <see cref="IInitializeWithWindow.Initialize" /> to set a proxy core window before calling this method.</para>
+      <para>
+        <b>SetScaleFactor</b> must be called before calling <see cref="ComputeApplicationSize" />.</para>
+    </summary>
+    <param name="scaleFactor">
+      <para>One of the <see cref="DEVICE_SCALE_FACTOR" /> enumeration values that indicates the device scale factor to spoof.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns S_OK. Otherwise, it returns an HRESULT error code, including the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_NOT_SET</b>
+            </para>
+          </description>
+          <description>
+            <para>
+              <see cref="IInitializeWithWindow.Initialize" /> has not been called to set a proxy core window.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IApplicationDesignModeSettings" />
+  </member>
+  <member name="IApplicationDesignModeSettings.TriggerEdgeGesture">
+    <summary>
+      <para>Sends a spoofed edge gesture event to the proxy core window on the caller's thread. This gesture toggles the app's app bar, if the app supports one. The caller can specify the type of input that triggered the edge gesture.</para>
+      <para>You must call <see cref="IInitializeWithWindow.Initialize" /> to set a proxy core window before calling this method.</para>
+    </summary>
+    <param name="edgeGestureKind">
+      <para>Indicates the <b>EDGE_GESTURE_KIND</b> input type that generated the spoofed edge gesture. If touch (<b>EGK_TOUCH</b>) is specified, both the <b>Starting</b> and <b>Completed</b> edge gesture events are sent. Otherwise, only the <b>Completed</b> event is sent. One of the following values:</para>
+      <h4>EGK_TOUCH (0)</h4>
+      <para>The edge gesture event was generated by a swipe on a touch-enabled screen.</para>
+      <h4>EGK_KEYBOARD (1)</h4>
+      <para>The edge gesture event was generated by the Win+Z key sequence on the keyboard.</para>
+      <h4>EGK_MOUSE (2)</h4>
+      <para>The edge gesture event was generated by a right mouse click.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns S_OK. Otherwise, it returns an HRESULT error code, including the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_NOT_SET</b>
+            </para>
+          </description>
+          <description>
+            <para>
+              <see cref="IInitializeWithWindow.Initialize" /> has not been called to set a proxy core window.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IApplicationDesignModeSettings" />
+  </member>
+  <member name="IApplicationDesignModeSettings">
+    <summary>
+      <para>Enables development tool applications to dynamically spoof system and user states, such as native display resolution, device scale factor, and application view state, for the purpose of testing Windows Store apps running in design mode for a wide range of form factors without the need for the actual hardware. Also enables testing of changes in normally user-controlled state to test Windows Store apps under a variety of scenarios.</para>
+    </summary>
+    <remarks>
+      <para>This interface is acquired by cocreating CLSID_ApplicationDesignModeSettings.</para>
+      <para>Users will normally follow a usage pattern similar to the following:</para>
+      <list type="number">
+        <item>
+          <description>Call <see cref="CoCreateInstance" /> with CLSID_ApplicationDesignModeSettings to create the application design mode settings object on a thread in the Windows Store app process.</description>
+        </item>
+        <item>
+          <description>Call <see cref="QueryInterface" /> on the application design mode settings object to obtain an <see cref="IInitializeWithWindow" /> object.</description>
+        </item>
+        <item>
+          <description>Call the <see cref="Initialize" /> method of the <see cref="IInitializeWithWindow" /> object, passing in the HWND for the proxy core window. This must be done before any "set" methods are called and will only succeed once per process.</description>
+        </item>
+        <item>
+          <description>Call <see cref="QueryInterface" /> for <b>IApplicationDesignModeSettings</b> and spoof the necessary test state by calling its appropriate methods (<see cref="SetNativeDisplaySize" />, <see cref="SetScaleFactor" />, etc.). These methods will trigger the appropriate Windows Runtime events to fire for the Windows Store app.</description>
+        </item>
+        <item>
+          <description>Call the <see cref="ComputeApplicationSize" /> method to determine the proper size for the app, based on the currently spoofed state. All layout "set" methods must have already been called or this call will fail. The developer tool application is responsible for positioning and sizing the app windows, when appropriate.</description>
+        </item>
+      </list>
+      <h3>When to implement</h3>
+      <para>Do not implement this interface; the implementation is supplied with Windows.</para>
+      <h3>When to use</h3>
+      <para>Use the methods of this interface to test your Windows Store app under various spoofed configurations and scenarios.</para>
+      <h4>Examples</h4>
+      <para>This example shows the methods of this interface in use.</para>
+      <code>
+IApplicationDesignModeSettings *pDesignModeSettings;
+
+// CoCreate the design mode settings object
+HRESULT hr = CoCreateInstance(CLSID_ApplicationDesignModeSettings, nullptr, CLSCTX_INPROC, IID_PPV_ARGS(&amp;amp;amp;amp;amp;amp;pDesignModeSettings));
+if (SUCCEEDED(hr))
+{
+    IInitializeWithWindow *pInitializeWithWindow;
+    hr = pDesignModeSettings-&gt;QueryInterface(IID_PPV_ARGS(&amp;amp;amp;amp;amp;amp;pInitializeWithWindow);
+    if (SUCCEEDED(hr))
+    {
+        // Before we spoof any state, we must first initialize the design
+        // mode settings object with a proxy core window. Since apps
+        // running in design mode don't have an actual core window, we must
+        // supply an HWND that can be used as a proxy.
+        hr = pInitializeWithWindow-&gt;Initialize(hwndProxyCoreWindow);
+        pInitializeWithWindow-&gt;Release();
+    }
+
+    if (SUCCEEDED(hr))
+    {
+        // Verify that our desired spoofed settings are supported.
+        SIZE sizeNativeDisplay = {1366, 768};
+        SCALE_FACTOR scaleFactor = SCALE_100_PERCENT;
+        APPLICATION_VIEW_STATE viewState = AVS_FULLSCREEN_LANDSCAPE;
+        BOOL fSupported;
+        hr = pDesignModeSettings-&gt;IsApplicationViewStateSupported(viewState,
+                                                                  sizeNativeDisplay,
+                                                                  scaleFactor,
+                                                                  &amp;amp;amp;amp;amp;amp;fSupported);
+    }
+
+    if (SUCCEEDED(hr) &amp;amp;amp;amp;amp;amp;&amp;amp;amp;amp;amp;amp; fSupported))
+    {
+        // Set the spoofed native display size.
+        hr = pDesignModeSettings-&gt;SetNativeDisplaySize(sizeNativeDisplay);
+
+        if (SUCCEEDED(hr))
+        {
+            // Set the spoofed scale factor to 100%.
+            hr = pDesignModeSettings-&gt;SetScaleFactor(SCALE_100_PERCENT);
+        }
+
+        if (SUCCEEDED(hr))
+        {
+            // Set the spoofed application view state to full-screen landscape.
+            hr = pDesignModeSettings-&gt;SetApplicationViewState(AVS_FULLSCREEN_LANDSCAPE);
+        }
+
+        if (SUCCEEDED(hr))
+        {
+            // Now that all the necessary state has been spoofed, calculate
+            // the size that the app should occupy.
+            SIZE sizeApplication;
+            hr = pDesignModeSettings-&gt;ComputeApplicationSize(&amp;amp;amp;amp;amp;amp;sizeApplication);
+        }
+    }
+
+    pDesignModeSettings-&gt;Release();
+}
+</code>
+    </remarks>
+  </member>
+</doc>

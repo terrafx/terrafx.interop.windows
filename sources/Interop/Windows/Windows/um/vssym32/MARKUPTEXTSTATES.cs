@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MARKUPTEXTSTATES.xml' path='doc/member[@name="MARKUPTEXTSTATES"]/*' />
 public enum MARKUPTEXTSTATES
 {
+    /// <include file='MARKUPTEXTSTATES.xml' path='doc/member[@name="MARKUPTEXTSTATES.EMT_NORMALTEXT"]/*' />
     EMT_NORMALTEXT = 1,
+
+    /// <include file='MARKUPTEXTSTATES.xml' path='doc/member[@name="MARKUPTEXTSTATES.EMT_LINKTEXT"]/*' />
     EMT_LINKTEXT = 2,
 }

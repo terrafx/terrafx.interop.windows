@@ -7,15 +7,20 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='AudioClientProperties.xml' path='doc/member[@name="AudioClientProperties"]/*' />
 [SupportedOSPlatform("windows10.0.22000.0")]
 public partial struct AudioClientProperties
 {
+    /// <include file='AudioClientProperties.xml' path='doc/member[@name="AudioClientProperties.cbSize"]/*' />
     [NativeTypeName("UINT32")]
     public uint cbSize;
 
+    /// <include file='AudioClientProperties.xml' path='doc/member[@name="AudioClientProperties.bIsOffload"]/*' />
     public BOOL bIsOffload;
 
+    /// <include file='AudioClientProperties.xml' path='doc/member[@name="AudioClientProperties.eCategory"]/*' />
     public AUDIO_STREAM_CATEGORY eCategory;
 
+    /// <include file='AudioClientProperties.xml' path='doc/member[@name="AudioClientProperties.Options"]/*' />
     public AUDCLNT_STREAMOPTIONS Options;
 }

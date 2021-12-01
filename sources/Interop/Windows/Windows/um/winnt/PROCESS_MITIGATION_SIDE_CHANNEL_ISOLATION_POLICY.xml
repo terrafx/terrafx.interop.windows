@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PROCESS_MITIGATION_SIDE_CHANNEL_ISOLATION_POLICY">
+    <summary>
+      <para>This data structure provides the status of process policies that are related to the mitigation of side channels. This can include side channel attacks involving speculative execution and page combining.</para>
+    </summary>
+  </member>
+  <member name="PROCESS_MITIGATION_SIDE_CHANNEL_ISOLATION_POLICY.DUMMYUNIONNAME">
+    <summary></summary>
+  </member>
+  <member name="PROCESS_MITIGATION_SIDE_CHANNEL_ISOLATION_POLICY.DUMMYUNIONNAME.Flags">
+    <summary>
+      <para>This member is reserved for system use.</para>
+    </summary>
+  </member>
+  <member name="PROCESS_MITIGATION_SIDE_CHANNEL_ISOLATION_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME">
+    <summary></summary>
+  </member>
+  <member name="PROCESS_MITIGATION_SIDE_CHANNEL_ISOLATION_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME.SmtBranchTargetIsolation">
+    <summary>
+      <para>Prevent branch target pollution cross-SMT-thread in user mode.</para>
+    </summary>
+  </member>
+  <member name="PROCESS_MITIGATION_SIDE_CHANNEL_ISOLATION_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME.IsolateSecurityDomain">
+    <summary>
+      <para>Isolate this process into a distinct security domain, even from other processes running as the same security context.  This
+prevents branch target injection cross-process.</para>
+      <para>Page combining is limited to processes within the same security
+domain.  This flag effectively limits the process to
+only combining internally to the process itself,
+except for common pages and unless further restricted by the
+<b>DisablePageCombine</b> policy.</para>
+    </summary>
+  </member>
+  <member name="PROCESS_MITIGATION_SIDE_CHANNEL_ISOLATION_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME.DisablePageCombine">
+    <summary>
+      <para>Disable all page combining for this process, even internally to
+the process itself, except for common pages.</para>
+    </summary>
+  </member>
+  <member name="PROCESS_MITIGATION_SIDE_CHANNEL_ISOLATION_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME.SpeculativeStoreBypassDisable">
+    <summary>
+      <para>Memory Disambiguation Disable.</para>
+    </summary>
+  </member>
+  <member name="PROCESS_MITIGATION_SIDE_CHANNEL_ISOLATION_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME.ReservedFlags">
+    <summary>
+      <para>This member is reserved for system use.</para>
+    </summary>
+  </member>
+</doc>

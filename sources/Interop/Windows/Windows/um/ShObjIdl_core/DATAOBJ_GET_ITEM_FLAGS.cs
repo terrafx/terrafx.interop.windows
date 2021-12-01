@@ -7,12 +7,22 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DATAOBJ_GET_ITEM_FLAGS.xml' path='doc/member[@name="DATAOBJ_GET_ITEM_FLAGS"]/*' />
 [Flags]
 public enum DATAOBJ_GET_ITEM_FLAGS
 {
+    /// <include file='DATAOBJ_GET_ITEM_FLAGS.xml' path='doc/member[@name="DATAOBJ_GET_ITEM_FLAGS.DOGIF_DEFAULT"]/*' />
     DOGIF_DEFAULT = 0,
+
+    /// <include file='DATAOBJ_GET_ITEM_FLAGS.xml' path='doc/member[@name="DATAOBJ_GET_ITEM_FLAGS.DOGIF_TRAVERSE_LINK"]/*' />
     DOGIF_TRAVERSE_LINK = 0x1,
+
+    /// <include file='DATAOBJ_GET_ITEM_FLAGS.xml' path='doc/member[@name="DATAOBJ_GET_ITEM_FLAGS.DOGIF_NO_HDROP"]/*' />
     DOGIF_NO_HDROP = 0x2,
+
+    /// <include file='DATAOBJ_GET_ITEM_FLAGS.xml' path='doc/member[@name="DATAOBJ_GET_ITEM_FLAGS.DOGIF_NO_URL"]/*' />
     DOGIF_NO_URL = 0x4,
+
+    /// <include file='DATAOBJ_GET_ITEM_FLAGS.xml' path='doc/member[@name="DATAOBJ_GET_ITEM_FLAGS.DOGIF_ONLY_IF_ONE"]/*' />
     DOGIF_ONLY_IF_ONE = 0x8,
 }

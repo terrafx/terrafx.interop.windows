@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IOleWindow.xml' path='doc/member[@name="IOleWindow"]/*' />
 [Guid("00000114-0000-0000-C000-000000000046")]
 [NativeTypeName("struct IOleWindow : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IOleWindow : IOleWindow.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IOleWindow : IOleWindow.Interface
         return ((delegate* unmanaged<IOleWindow*, Guid*, void**, int>)(lpVtbl[0]))((IOleWindow*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IOleWindow : IOleWindow.Interface
         return ((delegate* unmanaged<IOleWindow*, uint>)(lpVtbl[1]))((IOleWindow*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IOleWindow : IOleWindow.Interface
         return ((delegate* unmanaged<IOleWindow*, uint>)(lpVtbl[2]))((IOleWindow*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IOleWindow.xml' path='doc/member[@name="IOleWindow.GetWindow"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetWindow(HWND* phwnd)
@@ -46,6 +51,7 @@ public unsafe partial struct IOleWindow : IOleWindow.Interface
         return ((delegate* unmanaged<IOleWindow*, HWND*, int>)(lpVtbl[3]))((IOleWindow*)Unsafe.AsPointer(ref this), phwnd);
     }
 
+    /// <include file='IOleWindow.xml' path='doc/member[@name="IOleWindow.ContextSensitiveHelp"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT ContextSensitiveHelp(BOOL fEnterMode)

@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IGraphVersion.QueryVersion">
+    <summary>
+      <para>The <code>QueryVersion</code> method retrieves the current graph version number.</para>
+    </summary>
+    <param name="pVersion">
+      <para>Pointer to the current graph version.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value that depends on the implementation. <b>HRESULT</b> can be one of the following standard constants, or other values not listed.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>Failure.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer argument.
+</description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>Invalid argument.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_NOTIMPL</b>
+            </para>
+          </description>
+          <description>
+            <para>Method isn't supported.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK or NOERROR</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The version number is incremented every time there is a change in the set of filters in the graph or in their connections. If the version number has changed since the last enumeration, the graph must be re-enumerated.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IGraphVersion Interface" />
+  </member>
+  <member name="IGraphVersion">
+    <summary>
+      <para>The <code>IGraphVersion</code> interface is implemented on the Filter Graph Manager to provide a way for plug-in distributors and applications to know when the graph has changed. If the graph has changed, and the application or plug-in distributor has an interface on a particular filter or pin, it should requery the graph to see if its pointers are still valid, or if there are new ones it should use.</para>
+    </summary>
+  </member>
+</doc>

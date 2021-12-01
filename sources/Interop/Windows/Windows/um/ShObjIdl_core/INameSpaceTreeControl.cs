@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='INameSpaceTreeControl.xml' path='doc/member[@name="INameSpaceTreeControl"]/*' />
 [Guid("028212A3-B627-47E9-8856-C14265554E4F")]
 [NativeTypeName("struct INameSpaceTreeControl : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct INameSpaceTreeControl : INameSpaceTreeControl.Inter
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct INameSpaceTreeControl : INameSpaceTreeControl.Inter
         return ((delegate* unmanaged<INameSpaceTreeControl*, Guid*, void**, int>)(lpVtbl[0]))((INameSpaceTreeControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct INameSpaceTreeControl : INameSpaceTreeControl.Inter
         return ((delegate* unmanaged<INameSpaceTreeControl*, uint>)(lpVtbl[1]))((INameSpaceTreeControl*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct INameSpaceTreeControl : INameSpaceTreeControl.Inter
         return ((delegate* unmanaged<INameSpaceTreeControl*, uint>)(lpVtbl[2]))((INameSpaceTreeControl*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='INameSpaceTreeControl.xml' path='doc/member[@name="INameSpaceTreeControl.Initialize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Initialize(HWND hwndParent, RECT* prc, [NativeTypeName("NSTCSTYLE")] uint nsctsFlags)
@@ -46,6 +51,7 @@ public unsafe partial struct INameSpaceTreeControl : INameSpaceTreeControl.Inter
         return ((delegate* unmanaged<INameSpaceTreeControl*, HWND, RECT*, uint, int>)(lpVtbl[3]))((INameSpaceTreeControl*)Unsafe.AsPointer(ref this), hwndParent, prc, nsctsFlags);
     }
 
+    /// <include file='INameSpaceTreeControl.xml' path='doc/member[@name="INameSpaceTreeControl.TreeAdvise"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT TreeAdvise(IUnknown* punk, [NativeTypeName("DWORD *")] uint* pdwCookie)
@@ -53,6 +59,7 @@ public unsafe partial struct INameSpaceTreeControl : INameSpaceTreeControl.Inter
         return ((delegate* unmanaged<INameSpaceTreeControl*, IUnknown*, uint*, int>)(lpVtbl[4]))((INameSpaceTreeControl*)Unsafe.AsPointer(ref this), punk, pdwCookie);
     }
 
+    /// <include file='INameSpaceTreeControl.xml' path='doc/member[@name="INameSpaceTreeControl.TreeUnadvise"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT TreeUnadvise([NativeTypeName("DWORD")] uint dwCookie)
@@ -60,6 +67,7 @@ public unsafe partial struct INameSpaceTreeControl : INameSpaceTreeControl.Inter
         return ((delegate* unmanaged<INameSpaceTreeControl*, uint, int>)(lpVtbl[5]))((INameSpaceTreeControl*)Unsafe.AsPointer(ref this), dwCookie);
     }
 
+    /// <include file='INameSpaceTreeControl.xml' path='doc/member[@name="INameSpaceTreeControl.AppendRoot"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT AppendRoot(IShellItem* psiRoot, [NativeTypeName("SHCONTF")] uint grfEnumFlags, [NativeTypeName("NSTCROOTSTYLE")] uint grfRootStyle, IShellItemFilter* pif)
@@ -67,6 +75,7 @@ public unsafe partial struct INameSpaceTreeControl : INameSpaceTreeControl.Inter
         return ((delegate* unmanaged<INameSpaceTreeControl*, IShellItem*, uint, uint, IShellItemFilter*, int>)(lpVtbl[6]))((INameSpaceTreeControl*)Unsafe.AsPointer(ref this), psiRoot, grfEnumFlags, grfRootStyle, pif);
     }
 
+    /// <include file='INameSpaceTreeControl.xml' path='doc/member[@name="INameSpaceTreeControl.InsertRoot"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT InsertRoot(int iIndex, IShellItem* psiRoot, [NativeTypeName("SHCONTF")] uint grfEnumFlags, [NativeTypeName("NSTCROOTSTYLE")] uint grfRootStyle, IShellItemFilter* pif)
@@ -74,6 +83,7 @@ public unsafe partial struct INameSpaceTreeControl : INameSpaceTreeControl.Inter
         return ((delegate* unmanaged<INameSpaceTreeControl*, int, IShellItem*, uint, uint, IShellItemFilter*, int>)(lpVtbl[7]))((INameSpaceTreeControl*)Unsafe.AsPointer(ref this), iIndex, psiRoot, grfEnumFlags, grfRootStyle, pif);
     }
 
+    /// <include file='INameSpaceTreeControl.xml' path='doc/member[@name="INameSpaceTreeControl.RemoveRoot"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT RemoveRoot(IShellItem* psiRoot)
@@ -81,6 +91,7 @@ public unsafe partial struct INameSpaceTreeControl : INameSpaceTreeControl.Inter
         return ((delegate* unmanaged<INameSpaceTreeControl*, IShellItem*, int>)(lpVtbl[8]))((INameSpaceTreeControl*)Unsafe.AsPointer(ref this), psiRoot);
     }
 
+    /// <include file='INameSpaceTreeControl.xml' path='doc/member[@name="INameSpaceTreeControl.RemoveAllRoots"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT RemoveAllRoots()
@@ -88,6 +99,7 @@ public unsafe partial struct INameSpaceTreeControl : INameSpaceTreeControl.Inter
         return ((delegate* unmanaged<INameSpaceTreeControl*, int>)(lpVtbl[9]))((INameSpaceTreeControl*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='INameSpaceTreeControl.xml' path='doc/member[@name="INameSpaceTreeControl.GetRootItems"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT GetRootItems(IShellItemArray** ppsiaRootItems)
@@ -95,6 +107,7 @@ public unsafe partial struct INameSpaceTreeControl : INameSpaceTreeControl.Inter
         return ((delegate* unmanaged<INameSpaceTreeControl*, IShellItemArray**, int>)(lpVtbl[10]))((INameSpaceTreeControl*)Unsafe.AsPointer(ref this), ppsiaRootItems);
     }
 
+    /// <include file='INameSpaceTreeControl.xml' path='doc/member[@name="INameSpaceTreeControl.SetItemState"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT SetItemState(IShellItem* psi, [NativeTypeName("NSTCITEMSTATE")] uint nstcisMask, [NativeTypeName("NSTCITEMSTATE")] uint nstcisFlags)
@@ -102,6 +115,7 @@ public unsafe partial struct INameSpaceTreeControl : INameSpaceTreeControl.Inter
         return ((delegate* unmanaged<INameSpaceTreeControl*, IShellItem*, uint, uint, int>)(lpVtbl[11]))((INameSpaceTreeControl*)Unsafe.AsPointer(ref this), psi, nstcisMask, nstcisFlags);
     }
 
+    /// <include file='INameSpaceTreeControl.xml' path='doc/member[@name="INameSpaceTreeControl.GetItemState"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT GetItemState(IShellItem* psi, [NativeTypeName("NSTCITEMSTATE")] uint nstcisMask, [NativeTypeName("NSTCITEMSTATE *")] uint* pnstcisFlags)
@@ -109,6 +123,7 @@ public unsafe partial struct INameSpaceTreeControl : INameSpaceTreeControl.Inter
         return ((delegate* unmanaged<INameSpaceTreeControl*, IShellItem*, uint, uint*, int>)(lpVtbl[12]))((INameSpaceTreeControl*)Unsafe.AsPointer(ref this), psi, nstcisMask, pnstcisFlags);
     }
 
+    /// <include file='INameSpaceTreeControl.xml' path='doc/member[@name="INameSpaceTreeControl.GetSelectedItems"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT GetSelectedItems(IShellItemArray** psiaItems)
@@ -116,6 +131,7 @@ public unsafe partial struct INameSpaceTreeControl : INameSpaceTreeControl.Inter
         return ((delegate* unmanaged<INameSpaceTreeControl*, IShellItemArray**, int>)(lpVtbl[13]))((INameSpaceTreeControl*)Unsafe.AsPointer(ref this), psiaItems);
     }
 
+    /// <include file='INameSpaceTreeControl.xml' path='doc/member[@name="INameSpaceTreeControl.GetItemCustomState"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT GetItemCustomState(IShellItem* psi, int* piStateNumber)
@@ -123,6 +139,7 @@ public unsafe partial struct INameSpaceTreeControl : INameSpaceTreeControl.Inter
         return ((delegate* unmanaged<INameSpaceTreeControl*, IShellItem*, int*, int>)(lpVtbl[14]))((INameSpaceTreeControl*)Unsafe.AsPointer(ref this), psi, piStateNumber);
     }
 
+    /// <include file='INameSpaceTreeControl.xml' path='doc/member[@name="INameSpaceTreeControl.SetItemCustomState"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT SetItemCustomState(IShellItem* psi, int iStateNumber)
@@ -130,6 +147,7 @@ public unsafe partial struct INameSpaceTreeControl : INameSpaceTreeControl.Inter
         return ((delegate* unmanaged<INameSpaceTreeControl*, IShellItem*, int, int>)(lpVtbl[15]))((INameSpaceTreeControl*)Unsafe.AsPointer(ref this), psi, iStateNumber);
     }
 
+    /// <include file='INameSpaceTreeControl.xml' path='doc/member[@name="INameSpaceTreeControl.EnsureItemVisible"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT EnsureItemVisible(IShellItem* psi)
@@ -137,6 +155,7 @@ public unsafe partial struct INameSpaceTreeControl : INameSpaceTreeControl.Inter
         return ((delegate* unmanaged<INameSpaceTreeControl*, IShellItem*, int>)(lpVtbl[16]))((INameSpaceTreeControl*)Unsafe.AsPointer(ref this), psi);
     }
 
+    /// <include file='INameSpaceTreeControl.xml' path='doc/member[@name="INameSpaceTreeControl.SetTheme"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT SetTheme([NativeTypeName("LPCWSTR")] ushort* pszTheme)
@@ -144,6 +163,7 @@ public unsafe partial struct INameSpaceTreeControl : INameSpaceTreeControl.Inter
         return ((delegate* unmanaged<INameSpaceTreeControl*, ushort*, int>)(lpVtbl[17]))((INameSpaceTreeControl*)Unsafe.AsPointer(ref this), pszTheme);
     }
 
+    /// <include file='INameSpaceTreeControl.xml' path='doc/member[@name="INameSpaceTreeControl.GetNextItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT GetNextItem(IShellItem* psi, NSTCGNI nstcgi, IShellItem** ppsiNext)
@@ -151,6 +171,7 @@ public unsafe partial struct INameSpaceTreeControl : INameSpaceTreeControl.Inter
         return ((delegate* unmanaged<INameSpaceTreeControl*, IShellItem*, NSTCGNI, IShellItem**, int>)(lpVtbl[18]))((INameSpaceTreeControl*)Unsafe.AsPointer(ref this), psi, nstcgi, ppsiNext);
     }
 
+    /// <include file='INameSpaceTreeControl.xml' path='doc/member[@name="INameSpaceTreeControl.HitTest"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT HitTest(POINT* ppt, IShellItem** ppsiOut)
@@ -158,6 +179,7 @@ public unsafe partial struct INameSpaceTreeControl : INameSpaceTreeControl.Inter
         return ((delegate* unmanaged<INameSpaceTreeControl*, POINT*, IShellItem**, int>)(lpVtbl[19]))((INameSpaceTreeControl*)Unsafe.AsPointer(ref this), ppt, ppsiOut);
     }
 
+    /// <include file='INameSpaceTreeControl.xml' path='doc/member[@name="INameSpaceTreeControl.GetItemRect"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public HRESULT GetItemRect(IShellItem* psi, RECT* prect)
@@ -165,6 +187,7 @@ public unsafe partial struct INameSpaceTreeControl : INameSpaceTreeControl.Inter
         return ((delegate* unmanaged<INameSpaceTreeControl*, IShellItem*, RECT*, int>)(lpVtbl[20]))((INameSpaceTreeControl*)Unsafe.AsPointer(ref this), psi, prect);
     }
 
+    /// <include file='INameSpaceTreeControl.xml' path='doc/member[@name="INameSpaceTreeControl.CollapseAll"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
     public HRESULT CollapseAll()

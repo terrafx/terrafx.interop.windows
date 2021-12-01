@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STORAGE_DIAGNOSTIC_TARGET_TYPE.xml' path='doc/member[@name="STORAGE_DIAGNOSTIC_TARGET_TYPE"]/*' />
 public enum STORAGE_DIAGNOSTIC_TARGET_TYPE
 {
+    /// <include file='STORAGE_DIAGNOSTIC_TARGET_TYPE.xml' path='doc/member[@name="STORAGE_DIAGNOSTIC_TARGET_TYPE.StorageDiagnosticTargetTypeUndefined"]/*' />
     StorageDiagnosticTargetTypeUndefined = 0,
+
+    /// <include file='STORAGE_DIAGNOSTIC_TARGET_TYPE.xml' path='doc/member[@name="STORAGE_DIAGNOSTIC_TARGET_TYPE.StorageDiagnosticTargetTypePort"]/*' />
     StorageDiagnosticTargetTypePort,
+
+    /// <include file='STORAGE_DIAGNOSTIC_TARGET_TYPE.xml' path='doc/member[@name="STORAGE_DIAGNOSTIC_TARGET_TYPE.StorageDiagnosticTargetTypeMiniport"]/*' />
     StorageDiagnosticTargetTypeMiniport,
+
+    /// <include file='STORAGE_DIAGNOSTIC_TARGET_TYPE.xml' path='doc/member[@name="STORAGE_DIAGNOSTIC_TARGET_TYPE.StorageDiagnosticTargetTypeHbaFirmware"]/*' />
     StorageDiagnosticTargetTypeHbaFirmware,
+
+    /// <include file='STORAGE_DIAGNOSTIC_TARGET_TYPE.xml' path='doc/member[@name="STORAGE_DIAGNOSTIC_TARGET_TYPE.StorageDiagnosticTargetTypeMax"]/*' />
     StorageDiagnosticTargetTypeMax,
 }

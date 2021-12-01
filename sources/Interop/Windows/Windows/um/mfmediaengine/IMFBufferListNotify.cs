@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFBufferListNotify.xml' path='doc/member[@name="IMFBufferListNotify"]/*' />
 [Guid("24CD47F7-81D8-4785-ADB2-AF697A963CD2")]
 [NativeTypeName("struct IMFBufferListNotify : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IMFBufferListNotify : IMFBufferListNotify.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IMFBufferListNotify : IMFBufferListNotify.Interface
         return ((delegate* unmanaged<IMFBufferListNotify*, Guid*, void**, int>)(lpVtbl[0]))((IMFBufferListNotify*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IMFBufferListNotify : IMFBufferListNotify.Interface
         return ((delegate* unmanaged<IMFBufferListNotify*, uint>)(lpVtbl[1]))((IMFBufferListNotify*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IMFBufferListNotify : IMFBufferListNotify.Interface
         return ((delegate* unmanaged<IMFBufferListNotify*, uint>)(lpVtbl[2]))((IMFBufferListNotify*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFBufferListNotify.xml' path='doc/member[@name="IMFBufferListNotify.OnAddSourceBuffer"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public void OnAddSourceBuffer()
@@ -48,6 +53,7 @@ public unsafe partial struct IMFBufferListNotify : IMFBufferListNotify.Interface
         ((delegate* unmanaged<IMFBufferListNotify*, void>)(lpVtbl[3]))((IMFBufferListNotify*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFBufferListNotify.xml' path='doc/member[@name="IMFBufferListNotify.OnRemoveSourceBuffer"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public void OnRemoveSourceBuffer()

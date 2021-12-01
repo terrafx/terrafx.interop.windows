@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMediaFilter.xml' path='doc/member[@name="IMediaFilter"]/*' />
 [Guid("56A86899-0AD4-11CE-B03A-0020AF0BA770")]
 [NativeTypeName("struct IMediaFilter : IPersist")]
 [NativeInheritance("IPersist")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMediaFilter : IMediaFilter.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMediaFilter : IMediaFilter.Interface
         return ((delegate* unmanaged<IMediaFilter*, Guid*, void**, int>)(lpVtbl[0]))((IMediaFilter*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMediaFilter : IMediaFilter.Interface
         return ((delegate* unmanaged<IMediaFilter*, uint>)(lpVtbl[1]))((IMediaFilter*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMediaFilter : IMediaFilter.Interface
         return ((delegate* unmanaged<IMediaFilter*, uint>)(lpVtbl[2]))((IMediaFilter*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IPersist.GetClassID" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetClassID([NativeTypeName("CLSID *")] Guid* pClassID)
@@ -46,6 +51,7 @@ public unsafe partial struct IMediaFilter : IMediaFilter.Interface
         return ((delegate* unmanaged<IMediaFilter*, Guid*, int>)(lpVtbl[3]))((IMediaFilter*)Unsafe.AsPointer(ref this), pClassID);
     }
 
+    /// <include file='IMediaFilter.xml' path='doc/member[@name="IMediaFilter.Stop"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Stop()
@@ -53,6 +59,7 @@ public unsafe partial struct IMediaFilter : IMediaFilter.Interface
         return ((delegate* unmanaged<IMediaFilter*, int>)(lpVtbl[4]))((IMediaFilter*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMediaFilter.xml' path='doc/member[@name="IMediaFilter.Pause"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT Pause()
@@ -60,6 +67,7 @@ public unsafe partial struct IMediaFilter : IMediaFilter.Interface
         return ((delegate* unmanaged<IMediaFilter*, int>)(lpVtbl[5]))((IMediaFilter*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMediaFilter.xml' path='doc/member[@name="IMediaFilter.Run"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Run([NativeTypeName("REFERENCE_TIME")] long tStart)
@@ -67,6 +75,7 @@ public unsafe partial struct IMediaFilter : IMediaFilter.Interface
         return ((delegate* unmanaged<IMediaFilter*, long, int>)(lpVtbl[6]))((IMediaFilter*)Unsafe.AsPointer(ref this), tStart);
     }
 
+    /// <include file='IMediaFilter.xml' path='doc/member[@name="IMediaFilter.GetState"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetState([NativeTypeName("DWORD")] uint dwMilliSecsTimeout, FILTER_STATE* State)
@@ -74,6 +83,7 @@ public unsafe partial struct IMediaFilter : IMediaFilter.Interface
         return ((delegate* unmanaged<IMediaFilter*, uint, FILTER_STATE*, int>)(lpVtbl[7]))((IMediaFilter*)Unsafe.AsPointer(ref this), dwMilliSecsTimeout, State);
     }
 
+    /// <include file='IMediaFilter.xml' path='doc/member[@name="IMediaFilter.SetSyncSource"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT SetSyncSource(IReferenceClock* pClock)
@@ -81,6 +91,7 @@ public unsafe partial struct IMediaFilter : IMediaFilter.Interface
         return ((delegate* unmanaged<IMediaFilter*, IReferenceClock*, int>)(lpVtbl[8]))((IMediaFilter*)Unsafe.AsPointer(ref this), pClock);
     }
 
+    /// <include file='IMediaFilter.xml' path='doc/member[@name="IMediaFilter.GetSyncSource"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT GetSyncSource(IReferenceClock** pClock)

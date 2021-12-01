@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IUIAnimationTimerEventHandler.OnPostUpdate">
+    <summary>
+      <para>Handles events that occur after an animation update is finished.</para>
+    </summary>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">UIAnimation Error Codes</a> for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>The <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd317021(v=vs.85)">UIAnimationTimer</a> object calls this method only when calls to <see cref="IUIAnimationTimerUpdateHandler.OnUpdate" /> return a result of <b>UI_ANIMATION_UPDATE_VARIABLES_CHANGED</b>.</para>
+      <para>For each tick, a timer calls the following sequence of methods:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <see cref="IUIAnimationTimerEventHandler.OnPreUpdate" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IUIAnimationTimerUpdateHandler.OnUpdate" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>IUIAnimationTimerEventHandler.OnPostUpdate</b>
+          </description>
+        </item>
+      </list>
+      <para>
+        <see cref="OnPreUpdate" /> and <b>OnPostUpdate</b> are called on the <see cref="IUIAnimationTimerEventHandler" /> registered with <see cref="IUIAnimationTimer.SetTimerEventHandler" />. <see cref="OnUpdate" /> is called on the <see cref="IUIAnimationTimerUpdateHandler" />  registered with <see cref="IUIAnimationTimer.SetTimerUpdateHandler" />.</para>
+    </remarks>
+    <seealso cref="IUIAnimationTimer.SetTimerEventHandler" />
+    <seealso cref="IUIAnimationTimerEventHandler" />
+  </member>
+  <member name="IUIAnimationTimerEventHandler.OnPreUpdate">
+    <summary>
+      <para>Handles events that occur before an animation update begins.</para>
+    </summary>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">UIAnimation Error Codes</a> for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>For each tick, a timer calls the following sequence of methods:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <b>IUIAnimationTimerEventHandler.OnPreUpdate</b>
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IUIAnimationTimerUpdateHandler.OnUpdate" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IUIAnimationTimerEventHandler.OnPostUpdate" />
+          </description>
+        </item>
+      </list>
+      <b>OnPreUpdate</b> and <see cref="OnPostUpdate" /> are called on the <see cref="IUIAnimationTimerEventHandler" /> registered with the <see cref="IUIAnimationTimer.SetTimerEventHandler" /> method. <see cref="OnUpdate" /> is called on the <see cref="IUIAnimationTimerUpdateHandler" />  registered with the <see cref="IUIAnimationTimer.SetTimerUpdateHandler" /> method.
+</remarks>
+    <seealso cref="IUIAnimationTimerEventHandler" />
+    <seealso cref="SetTimerEventHandler" />
+  </member>
+  <member name="IUIAnimationTimerEventHandler.OnRenderingTooSlow">
+    <summary>
+      <para>Handles events that occur when the rendering frame rate
+for an animation falls below a minimum desirable frame rate.</para>
+    </summary>
+    <param name="framesPerSecond">
+      <para>The current frame rate, in frames per second.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">UIAnimation Error Codes</a> for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>The minimum desirable frame rate is specified using the <see cref="IUIAnimationTimer.SetFrameRateThreshold" /> method.</para>
+    </remarks>
+    <seealso cref="IUIAnimationTimer.SetFrameRateThreshold" />
+    <seealso cref="IUIAnimationTimer.SetTimerEventHandler" />
+    <seealso cref="IUIAnimationTimerEventHandler" />
+  </member>
+  <member name="IUIAnimationTimerEventHandler">
+    <summary>
+      <para>Defines methods for handling timing events.</para>
+    </summary>
+    <remarks>
+      <para>Use
+<see cref="SetTimerEventHandler" /> to specify the timing events handler for an instance of
+<see cref="IUIAnimationTimer" />.</para>
+      <h4>Examples</h4>
+      <para>For an example, see <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/updating---application-driven-animation">Read the Animation Variable Values and Draw Frames</a>.</para>
+    </remarks>
+    <seealso cref="IUIAnimationTimer" />
+    <seealso cref="IUIAnimationTimerClientEventHandler" />
+    <seealso cref="IUIAnimationTimerUpdateHandler " />
+    <seealso cref="IUnknown" />
+  </member>
+</doc>

@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WebWizardHost.xml' path='doc/member[@name="WebWizardHost"]/*' />
 [Guid("C827F149-55C1-4D28-935E-57E47CAED973")]
 public partial struct WebWizardHost
 {

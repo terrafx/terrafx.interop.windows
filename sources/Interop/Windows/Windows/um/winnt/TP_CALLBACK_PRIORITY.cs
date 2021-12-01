@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TP_CALLBACK_PRIORITY.xml' path='doc/member[@name="TP_CALLBACK_PRIORITY"]/*' />
 public enum TP_CALLBACK_PRIORITY
 {
+    /// <include file='TP_CALLBACK_PRIORITY.xml' path='doc/member[@name="TP_CALLBACK_PRIORITY.TP_CALLBACK_PRIORITY_HIGH"]/*' />
     TP_CALLBACK_PRIORITY_HIGH,
+
+    /// <include file='TP_CALLBACK_PRIORITY.xml' path='doc/member[@name="TP_CALLBACK_PRIORITY.TP_CALLBACK_PRIORITY_NORMAL"]/*' />
     TP_CALLBACK_PRIORITY_NORMAL,
+
+    /// <include file='TP_CALLBACK_PRIORITY.xml' path='doc/member[@name="TP_CALLBACK_PRIORITY.TP_CALLBACK_PRIORITY_LOW"]/*' />
     TP_CALLBACK_PRIORITY_LOW,
+
+    /// <include file='TP_CALLBACK_PRIORITY.xml' path='doc/member[@name="TP_CALLBACK_PRIORITY.TP_CALLBACK_PRIORITY_INVALID"]/*' />
     TP_CALLBACK_PRIORITY_INVALID,
+
+    /// <include file='TP_CALLBACK_PRIORITY.xml' path='doc/member[@name="TP_CALLBACK_PRIORITY.TP_CALLBACK_PRIORITY_COUNT"]/*' />
     TP_CALLBACK_PRIORITY_COUNT = TP_CALLBACK_PRIORITY_INVALID,
 }

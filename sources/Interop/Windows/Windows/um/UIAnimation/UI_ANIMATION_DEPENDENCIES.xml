@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="UI_ANIMATION_DEPENDENCIES">
+    <summary>
+      <para>Defines which aspects of an interpolator  depend on a given input.</para>
+    </summary>
+    <remarks>
+      <para>Multiple <b>UI_ANIMATION_DEPENDENCIES</b> values can be combined using a bitwise-OR operation.</para>
+    </remarks>
+    <seealso cref="IUIAnimationInterpolator.GetDependencies" />
+  </member>
+  <member name="UI_ANIMATION_DEPENDENCIES.UI_ANIMATION_DEPENDENCY_NONE">
+    <summary>
+      <para>No aspect depends on the input.</para>
+    </summary>
+  </member>
+  <member name="UI_ANIMATION_DEPENDENCIES.UI_ANIMATION_DEPENDENCY_INTERMEDIATE_VALUES">
+    <summary>
+      <para>The intermediate values depend on the input.</para>
+    </summary>
+  </member>
+  <member name="UI_ANIMATION_DEPENDENCIES.UI_ANIMATION_DEPENDENCY_FINAL_VALUE">
+    <summary>
+      <para>The final value depends on the input.</para>
+    </summary>
+  </member>
+  <member name="UI_ANIMATION_DEPENDENCIES.UI_ANIMATION_DEPENDENCY_FINAL_VELOCITY">
+    <summary>
+      <para>The final velocity depends on the input.</para>
+    </summary>
+  </member>
+  <member name="UI_ANIMATION_DEPENDENCIES.UI_ANIMATION_DEPENDENCY_DURATION">
+    <summary>
+      <para>The duration depends on the input.</para>
+    </summary>
+  </member>
+</doc>

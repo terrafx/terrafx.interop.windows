@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAMPluginControl.xml' path='doc/member[@name="IAMPluginControl"]/*' />
 [Guid("0E26A181-F40C-4635-8786-976284B52981")]
 [NativeTypeName("struct IAMPluginControl : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IAMPluginControl : IAMPluginControl.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IAMPluginControl : IAMPluginControl.Interface
         return ((delegate* unmanaged<IAMPluginControl*, Guid*, void**, int>)(lpVtbl[0]))((IAMPluginControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IAMPluginControl : IAMPluginControl.Interface
         return ((delegate* unmanaged<IAMPluginControl*, uint>)(lpVtbl[1]))((IAMPluginControl*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IAMPluginControl : IAMPluginControl.Interface
         return ((delegate* unmanaged<IAMPluginControl*, uint>)(lpVtbl[2]))((IAMPluginControl*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAMPluginControl.xml' path='doc/member[@name="IAMPluginControl.GetPreferredClsid"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetPreferredClsid([NativeTypeName("const GUID &")] Guid* subType, [NativeTypeName("CLSID *")] Guid* clsid)
@@ -46,6 +51,7 @@ public unsafe partial struct IAMPluginControl : IAMPluginControl.Interface
         return ((delegate* unmanaged<IAMPluginControl*, Guid*, Guid*, int>)(lpVtbl[3]))((IAMPluginControl*)Unsafe.AsPointer(ref this), subType, clsid);
     }
 
+    /// <include file='IAMPluginControl.xml' path='doc/member[@name="IAMPluginControl.GetPreferredClsidByIndex"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetPreferredClsidByIndex([NativeTypeName("DWORD")] uint index, Guid* subType, [NativeTypeName("CLSID *")] Guid* clsid)
@@ -53,6 +59,7 @@ public unsafe partial struct IAMPluginControl : IAMPluginControl.Interface
         return ((delegate* unmanaged<IAMPluginControl*, uint, Guid*, Guid*, int>)(lpVtbl[4]))((IAMPluginControl*)Unsafe.AsPointer(ref this), index, subType, clsid);
     }
 
+    /// <include file='IAMPluginControl.xml' path='doc/member[@name="IAMPluginControl.SetPreferredClsid"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetPreferredClsid([NativeTypeName("const GUID &")] Guid* subType, [NativeTypeName("const CLSID *")] Guid* clsid)
@@ -60,6 +67,7 @@ public unsafe partial struct IAMPluginControl : IAMPluginControl.Interface
         return ((delegate* unmanaged<IAMPluginControl*, Guid*, Guid*, int>)(lpVtbl[5]))((IAMPluginControl*)Unsafe.AsPointer(ref this), subType, clsid);
     }
 
+    /// <include file='IAMPluginControl.xml' path='doc/member[@name="IAMPluginControl.IsDisabled"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT IsDisabled([NativeTypeName("const IID &")] Guid* clsid)
@@ -67,6 +75,7 @@ public unsafe partial struct IAMPluginControl : IAMPluginControl.Interface
         return ((delegate* unmanaged<IAMPluginControl*, Guid*, int>)(lpVtbl[6]))((IAMPluginControl*)Unsafe.AsPointer(ref this), clsid);
     }
 
+    /// <include file='IAMPluginControl.xml' path='doc/member[@name="IAMPluginControl.GetDisabledByIndex"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetDisabledByIndex([NativeTypeName("DWORD")] uint index, [NativeTypeName("CLSID *")] Guid* clsid)
@@ -74,6 +83,7 @@ public unsafe partial struct IAMPluginControl : IAMPluginControl.Interface
         return ((delegate* unmanaged<IAMPluginControl*, uint, Guid*, int>)(lpVtbl[7]))((IAMPluginControl*)Unsafe.AsPointer(ref this), index, clsid);
     }
 
+    /// <include file='IAMPluginControl.xml' path='doc/member[@name="IAMPluginControl.SetDisabled"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT SetDisabled([NativeTypeName("const IID &")] Guid* clsid, BOOL disabled)
@@ -81,6 +91,7 @@ public unsafe partial struct IAMPluginControl : IAMPluginControl.Interface
         return ((delegate* unmanaged<IAMPluginControl*, Guid*, BOOL, int>)(lpVtbl[8]))((IAMPluginControl*)Unsafe.AsPointer(ref this), clsid, disabled);
     }
 
+    /// <include file='IAMPluginControl.xml' path='doc/member[@name="IAMPluginControl.IsLegacyDisabled"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT IsLegacyDisabled([NativeTypeName("LPCWSTR")] ushort* dllName)

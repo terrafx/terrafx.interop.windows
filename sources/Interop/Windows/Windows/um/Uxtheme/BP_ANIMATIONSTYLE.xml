@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="BP_ANIMATIONSTYLE">
+    <summary>
+      <para>Used in the <see cref="BP_ANIMATIONPARAMS" /> structure to declare animation options.</para>
+    </summary>
+  </member>
+  <member name="BP_ANIMATIONSTYLE.BPAS_NONE">
+    <summary>
+      <para>No animation. Not implemented in Windows Vista.</para>
+    </summary>
+  </member>
+  <member name="BP_ANIMATIONSTYLE.BPAS_LINEAR">
+    <summary>
+      <para>Linear fade animation.</para>
+    </summary>
+  </member>
+  <member name="BP_ANIMATIONSTYLE.BPAS_CUBIC">
+    <summary>
+      <para>Cubic fade animation. Not implemented in Windows Vista.</para>
+    </summary>
+  </member>
+  <member name="BP_ANIMATIONSTYLE.BPAS_SINE">
+    <summary>
+      <para>Sinusoid fade animation. Not implemented in Windows Vista.</para>
+    </summary>
+  </member>
+</doc>

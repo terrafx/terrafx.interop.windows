@@ -5,44 +5,58 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='VS_FIXEDFILEINFO.xml' path='doc/member[@name="VS_FIXEDFILEINFO"]/*' />
 public partial struct VS_FIXEDFILEINFO
 {
+    /// <include file='VS_FIXEDFILEINFO.xml' path='doc/member[@name="VS_FIXEDFILEINFO.dwSignature"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwSignature;
 
+    /// <include file='VS_FIXEDFILEINFO.xml' path='doc/member[@name="VS_FIXEDFILEINFO.dwStrucVersion"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwStrucVersion;
 
+    /// <include file='VS_FIXEDFILEINFO.xml' path='doc/member[@name="VS_FIXEDFILEINFO.dwFileVersionMS"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFileVersionMS;
 
+    /// <include file='VS_FIXEDFILEINFO.xml' path='doc/member[@name="VS_FIXEDFILEINFO.dwFileVersionLS"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFileVersionLS;
 
+    /// <include file='VS_FIXEDFILEINFO.xml' path='doc/member[@name="VS_FIXEDFILEINFO.dwProductVersionMS"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwProductVersionMS;
 
+    /// <include file='VS_FIXEDFILEINFO.xml' path='doc/member[@name="VS_FIXEDFILEINFO.dwProductVersionLS"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwProductVersionLS;
 
+    /// <include file='VS_FIXEDFILEINFO.xml' path='doc/member[@name="VS_FIXEDFILEINFO.dwFileFlagsMask"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFileFlagsMask;
 
+    /// <include file='VS_FIXEDFILEINFO.xml' path='doc/member[@name="VS_FIXEDFILEINFO.dwFileFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFileFlags;
 
+    /// <include file='VS_FIXEDFILEINFO.xml' path='doc/member[@name="VS_FIXEDFILEINFO.dwFileOS"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFileOS;
 
+    /// <include file='VS_FIXEDFILEINFO.xml' path='doc/member[@name="VS_FIXEDFILEINFO.dwFileType"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFileType;
 
+    /// <include file='VS_FIXEDFILEINFO.xml' path='doc/member[@name="VS_FIXEDFILEINFO.dwFileSubtype"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFileSubtype;
 
+    /// <include file='VS_FIXEDFILEINFO.xml' path='doc/member[@name="VS_FIXEDFILEINFO.dwFileDateMS"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFileDateMS;
 
+    /// <include file='VS_FIXEDFILEINFO.xml' path='doc/member[@name="VS_FIXEDFILEINFO.dwFileDateLS"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFileDateLS;
 }

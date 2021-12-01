@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="LHITTESTINFO">
+    <summary>
+      <para>Used to get information about the link corresponding to a given location.</para>
+    </summary>
+    <remarks>
+      <para>To convert from screen coordinates to client coordinates, use <see cref="ScreenToClient" />.</para>
+      <para>
+        <b>Note</b>  If the <a href="https://docs.microsoft.com//windows/desktop/Controls/lm-hittest">LM_HITTEST</a> message succeeds, the system fills in <see cref="LITEM.iLink" /> and <b>LITEM.szID</b>. If the <b>LM_HITTEST</b> message fails, do not assume that any information in <b>LITEM</b> is valid.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Controls/lm-hittest">LM_HITTEST</seealso>
+    <seealso cref="ScreenToClient" />
+  </member>
+  <member name="LHITTESTINFO.pt">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/dd162805(v=vs.85)">POINT</a></b></para>
+      <para>Location for the hit-test, in client coordinates (not screen coordinates).</para>
+    </summary>
+  </member>
+  <member name="LHITTESTINFO.item">
+    <summary>
+      <para>Type: <b><see cref="LITEM" /></b></para>
+      <para>Receives information about the link corresponding to <b>pt</b>.</para>
+    </summary>
+  </member>
+</doc>

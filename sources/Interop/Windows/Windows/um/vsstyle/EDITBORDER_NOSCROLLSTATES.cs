@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='EDITBORDER_NOSCROLLSTATES.xml' path='doc/member[@name="EDITBORDER_NOSCROLLSTATES"]/*' />
 public enum EDITBORDER_NOSCROLLSTATES
 {
+    /// <include file='EDITBORDER_NOSCROLLSTATES.xml' path='doc/member[@name="EDITBORDER_NOSCROLLSTATES.EPSN_NORMAL"]/*' />
     EPSN_NORMAL = 1,
+
+    /// <include file='EDITBORDER_NOSCROLLSTATES.xml' path='doc/member[@name="EDITBORDER_NOSCROLLSTATES.EPSN_HOT"]/*' />
     EPSN_HOT = 2,
+
+    /// <include file='EDITBORDER_NOSCROLLSTATES.xml' path='doc/member[@name="EDITBORDER_NOSCROLLSTATES.EPSN_FOCUSED"]/*' />
     EPSN_FOCUSED = 3,
+
+    /// <include file='EDITBORDER_NOSCROLLSTATES.xml' path='doc/member[@name="EDITBORDER_NOSCROLLSTATES.EPSN_DISABLED"]/*' />
     EPSN_DISABLED = 4,
 }

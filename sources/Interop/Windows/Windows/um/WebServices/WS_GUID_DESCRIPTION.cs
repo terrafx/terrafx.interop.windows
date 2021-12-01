@@ -7,7 +7,9 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_GUID_DESCRIPTION.xml' path='doc/member[@name="WS_GUID_DESCRIPTION"]/*' />
 public partial struct WS_GUID_DESCRIPTION
 {
+    /// <include file='WS_GUID_DESCRIPTION.xml' path='doc/member[@name="WS_GUID_DESCRIPTION.value"]/*' />
     public Guid value;
 }

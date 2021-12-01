@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CRYPT_KEY_PROV_INFO">
+    <summary>
+      <para>The <b>CRYPT_KEY_PROV_INFO</b> structure contains information about a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/k-gly">key container</a> within a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">cryptographic service provider</a> (CSP).</para>
+    </summary>
+    <seealso cref="CRYPT_KEY_PROV_PARAM" />
+    <seealso cref="CertGetCertificateContextProperty" />
+    <seealso cref="CertSetCertificateContextProperty" />
+  </member>
+  <member name="CRYPT_KEY_PROV_INFO.pwszContainerName">
+    <summary>
+      <para>A pointer to a null-terminated Unicode string that contains the name of the key container.</para>
+      <para>When the <b>dwProvType</b> member is zero, this string contains the name of a key within a CNG key storage provider. This string is passed as the <i>pwszKeyName</i> parameter to the <see cref="NCryptOpenKey" /> function.</para>
+    </summary>
+  </member>
+  <member name="CRYPT_KEY_PROV_INFO.pwszProvName">
+    <summary>
+      <para>A pointer to a null-terminated Unicode string that contains the name of the CSP.</para>
+      <para>When the <b>dwProvType</b> member is zero, this string contains the name of a CNG key storage provider. This string is passed as the <i>pwszProviderName</i> parameter to the <see cref="NCryptOpenStorageProvider" /> function.</para>
+    </summary>
+  </member>
+  <member name="CRYPT_KEY_PROV_INFO.dwProvType">
+    <summary>
+      <para>Specifies the CSP type. This can be zero or one of the <a href="https://docs.microsoft.com//windows/desktop/SecCrypto/cryptographic-provider-types">Cryptographic Provider Types</a>.</para>
+      <para>If this member is zero, the key container is one of the CNG key storage providers.</para>
+    </summary>
+  </member>
+  <member name="CRYPT_KEY_PROV_INFO.dwFlags">
+    <summary>
+      <para>A set of flags that indicate additional information about the provider. This can be zero or one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>CERT_SET_KEY_PROV_HANDLE_PROP_ID / CERT_SET_KEY_CONTEXT_PROP_ID</b>
+          </description>
+          <description>
+            <para>Enables the handle to the key provider to be kept open for subsequent calls to the cryptographic functions.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>CRYPT_MACHINE_KEYSET / NCRYPT_MACHINE_KEY_FLAG</b>
+          </description>
+          <description>
+            <para>The key container contains machine keys. If this flag is not present, the key container contains user keys.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>CRYPT_SILENT / NCRYPT_SILENT_FLAG</b>
+          </description>
+          <description>
+            <para>The key container will attempt to open any keys silently without any user interface prompts.</para>
+          </description>
+        </item>
+      </list>
+      <para>The cryptographic functions
+<see cref="CryptDecryptMessage" />,
+<see cref="CryptSignMessage" />,
+<see cref="CryptDecryptAndVerifyMessageSignature" />, and
+<see cref="CryptSignAndEncryptMessage" /> internally perform <see cref="CryptAcquireContext" /> operations using the <b>CRYPT_KEY_PROV_INFO</b> from a certificate. When the <b>CERT_SET_KEY_CONTEXT_PROP_ID</b> or <b>CERT_SET_KEY_PROV_HANDLE_PROP_ID</b> flag is set, these cryptographic functions then can call
+<see cref="CertSetCertificateContextProperty" /> with <b>CERT_KEY_CONTEXT_PROP_ID</b>. This call enables the handle to the key provider to be kept open for subsequent calls to the cryptographic functions mentioned that use that same certificate, which eliminates the need to perform additional calls to <b>CryptAcquireContext</b>, improving efficiency. Also, because some providers can require that a password be entered for calls to <b>CryptAcquireContext</b>, it is desirable for applications to minimize the number of <b>CryptAcquireContext</b> calls made. Handles to key providers that were kept open are automatically released when the store is closed.</para>
+      <para>For example, consider an email application where five encrypted messages have been received, all encrypted with the public key from the same certificate. If the handle to the key provider is kept open after the first message is processed, calls to
+<see cref="CryptAcquireContext" /> are not required for the four remaining messages.</para>
+    </summary>
+  </member>
+  <member name="CRYPT_KEY_PROV_INFO.cProvParam">
+    <summary>
+      <para>The number of elements in the <b>rgProvParam</b> array.</para>
+      <para>When the <b>dwProvType</b> member is zero, this member is not used and must be zero.</para>
+    </summary>
+  </member>
+  <member name="CRYPT_KEY_PROV_INFO.rgProvParam">
+    <summary>
+      <para>An array of <see cref="CRYPT_KEY_PROV_PARAM" /> structures that contain the parameters for the key container. The <b>cProvParam</b> member contains the number of elements in this array.</para>
+      <para>When the <b>dwProvType</b> member is zero, this member is not used and must be <b>NULL</b>.</para>
+    </summary>
+  </member>
+  <member name="CRYPT_KEY_PROV_INFO.dwKeySpec">
+    <summary>
+      <para>The specification of the private key to retrieve.</para>
+      <para>The following values are defined for the default provider.</para>
+      <para>When the <b>dwProvType</b> member is zero, this value is passed as the <i>dwLegacyKeySpec</i> parameter to the <see cref="NCryptOpenKey" /> function.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>AT_KEYEXCHANGE</b>
+          </description>
+          <description>
+            <para>Keys used to encrypt/decrypt session keys.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>AT_SIGNATURE</b>
+          </description>
+          <description>
+            <para>Keys used to create and verify digital signatures.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+</doc>

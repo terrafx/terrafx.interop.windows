@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="STORAGE_DEVICE_ATTRIBUTES_DESCRIPTOR">
+    <summary>
+      <para>Reserved for future use.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_DEVICE_ATTRIBUTES_DESCRIPTOR.Version">
+    <summary>
+      <para>Contains the version of the data reported.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_DEVICE_ATTRIBUTES_DESCRIPTOR.Size">
+    <summary>
+      <para>Indicates the quantity of data reported, in bytes. This is the <code>sizeof(STORAGE_DEVICE_ATTRIBUTES_DESCRIPTOR)</code>.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_DEVICE_ATTRIBUTES_DESCRIPTOR.Attributes">
+    <summary>
+      <para>Reserved for future use.</para>
+    </summary>
+  </member>
+</doc>

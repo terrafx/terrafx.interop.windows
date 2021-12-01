@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CROSS_SLIDE_FLAGS">
+    <summary>
+      <para>Specifies the state of the cross-slide interaction.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/ns-interactioncontext-interaction_arguments_cross_slide">INTERACTION_ARGUMENTS_CROSS_SLIDE</seealso>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/enumerations">Interaction Context Enumerations</seealso>
+  </member>
+  <member name="CROSS_SLIDE_FLAGS.CROSS_SLIDE_FLAGS_NONE">
+    <summary>
+      <para>No cross-slide interaction.</para>
+    </summary>
+  </member>
+  <member name="CROSS_SLIDE_FLAGS.CROSS_SLIDE_FLAGS_SELECT">
+    <summary>
+      <para>Cross-slide interaction has crossed a distance threshold and is in select mode.</para>
+    </summary>
+  </member>
+  <member name="CROSS_SLIDE_FLAGS.CROSS_SLIDE_FLAGS_SPEED_BUMP">
+    <summary>
+      <para>Cross-slide interaction is in speed bump mode.</para>
+    </summary>
+  </member>
+  <member name="CROSS_SLIDE_FLAGS.CROSS_SLIDE_FLAGS_REARRANGE">
+    <summary>
+      <para>Cross-slide interaction has crossed the speed bump threshold and is in rearrange (drag and drop) mode.</para>
+    </summary>
+  </member>
+  <member name="CROSS_SLIDE_FLAGS.CROSS_SLIDE_FLAGS_MAX">
+    <summary>
+      <para>Maximum number of interactions exceeded.</para>
+    </summary>
+  </member>
+</doc>

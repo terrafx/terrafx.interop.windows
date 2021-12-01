@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="RECONVERTSTRING">
+    <summary>
+      <para>Defines the strings for IME reconversion. It is the first item in a memory block that contains the strings for reconversion.</para>
+    </summary>
+    <remarks>
+      <para>The <b>dwCompStrOffset</b> and <b>dwTargetOffset</b> members are the relative positions in <b>dwStrOffset</b>. For a Unicode IME, <b>dwStrLen</b>, <b>dwCompStrLen</b>, and <b>dwTargetStrLen</b> are TCHAR values, that is, character counts. The members <b>dwStrOffset</b>, <b>dwCompStrOffset</b>, and <b>dwTargetStrOffset</b> specify byte counts.</para>
+      <para>If an application starts the reconversion process by calling <see cref="ImmSetCompositionString" /> with SCS_SETRECONVERTSTRING and SCS_QUERYRECONVERTSTRING, the application must allocate the necessary memory for the <b>RECONVERTSTRING</b> structure as well as the composition string buffer. IME should not use this memory later. If IME starts the process, IME should allocate necessary memory for the structure and the composition string buffer.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Intl/imr-confirmreconvertstring">IMR_CONFIRMRECONVERTSTRING</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Intl/imr-reconvertstring">IMR_RECONVERTSTRING</seealso>
+    <seealso cref="ImmSetCompositionString" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/Intl/input-method-manager">Input Method Manager</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Intl/input-method-manager-structures">Input Method Manager Structures</seealso>
+  </member>
+  <member name="RECONVERTSTRING.dwSize">
+    <summary>
+      <para>Size of this structure and the memory block it heads.</para>
+    </summary>
+  </member>
+  <member name="RECONVERTSTRING.dwVersion">
+    <summary>
+      <para>Version number. Must be 0.</para>
+    </summary>
+  </member>
+  <member name="RECONVERTSTRING.dwStrLen">
+    <summary>
+      <para>Length of the string that contains the composition string.</para>
+    </summary>
+  </member>
+  <member name="RECONVERTSTRING.dwStrOffset">
+    <summary>
+      <para>Offset from the start position of this structure.</para>
+    </summary>
+  </member>
+  <member name="RECONVERTSTRING.dwCompStrLen">
+    <summary>
+      <para>Length of the string that will be the composition string.</para>
+    </summary>
+  </member>
+  <member name="RECONVERTSTRING.dwCompStrOffset">
+    <summary>
+      <para>Offset of the string that will be the composition string.</para>
+    </summary>
+  </member>
+  <member name="RECONVERTSTRING.dwTargetStrLen">
+    <summary>
+      <para>Length of the string that is related to the target clause in the composition string.</para>
+    </summary>
+  </member>
+  <member name="RECONVERTSTRING.dwTargetStrOffset">
+    <summary>
+      <para>Offset of the target string.</para>
+    </summary>
+  </member>
+</doc>

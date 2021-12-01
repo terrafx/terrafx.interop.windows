@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="NSTCCUSTOMDRAW">
+    <summary>
+      <para>Custom draw structure used by <see cref="INameSpaceTreeControlCustomDraw" /> methods.</para>
+    </summary>
+  </member>
+  <member name="NSTCCUSTOMDRAW.psi">
+    <summary>
+      <para>Type: <b><see cref="IShellItem" />*</b></para>
+      <para>A pointer to a Shell item.</para>
+    </summary>
+  </member>
+  <member name="NSTCCUSTOMDRAW.uItemState">
+    <summary>
+      <para>Type: <b>UINT</b></para>
+      <para>The current item state. See <see cref="NMCUSTOMDRAW" /> for more detail.</para>
+    </summary>
+  </member>
+  <member name="NSTCCUSTOMDRAW.nstcis">
+    <summary>
+      <para>Type: <b><see cref="NSTCITEMSTATE" /></b></para>
+      <para>The state of a tree item. See <see cref="NSTCITEMSTATE" />.</para>
+    </summary>
+  </member>
+  <member name="NSTCCUSTOMDRAW.pszText">
+    <summary>
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>A pointer to a null-terminated Unicode string that contains the item text, if the structure specifies item attributes.</para>
+    </summary>
+  </member>
+  <member name="NSTCCUSTOMDRAW.iImage">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>The index in the tree-view control's image list.</para>
+    </summary>
+  </member>
+  <member name="NSTCCUSTOMDRAW.himl">
+    <summary>
+      <para>Type: <b>HIMAGELIST</b></para>
+      <para>A handle to an image list.</para>
+    </summary>
+  </member>
+  <member name="NSTCCUSTOMDRAW.iLevel">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>The zero-based level of the item being drawn.</para>
+    </summary>
+  </member>
+  <member name="NSTCCUSTOMDRAW.iIndent">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>A tree-level indent.</para>
+    </summary>
+  </member>
+</doc>

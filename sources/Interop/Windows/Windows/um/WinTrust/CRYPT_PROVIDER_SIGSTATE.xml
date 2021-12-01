@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CRYPT_PROVIDER_SIGSTATE">
+    <summary>
+      <para>The <b>CRYPT_PROVIDER_SIGSTATE</b> structure is used to communicate between policy providers and Wintrust.</para>
+    </summary>
+    <seealso cref="WINTRUST_SIGNATURE_SETTINGS" />
+  </member>
+  <member name="CRYPT_PROVIDER_SIGSTATE.cbStruct">
+    <summary>
+      <para>Size, in bytes, of this structure.</para>
+    </summary>
+  </member>
+  <member name="CRYPT_PROVIDER_SIGSTATE.rhSecondarySigs">
+    <summary>
+      <para>Pointer to an array of secondary signature handles.</para>
+    </summary>
+  </member>
+  <member name="CRYPT_PROVIDER_SIGSTATE.hPrimarySig">
+    <summary>
+      <para>Handle of the primary signature.</para>
+    </summary>
+  </member>
+  <member name="CRYPT_PROVIDER_SIGSTATE.fFirstAttemptMade">
+    <summary>
+      <para>Specifies whether the first attempt to verify a signature has been made.</para>
+    </summary>
+  </member>
+  <member name="CRYPT_PROVIDER_SIGSTATE.fNoMoreSigs">
+    <summary>
+      <para>Specifies whether there exist further signatures that await verification.</para>
+    </summary>
+  </member>
+  <member name="CRYPT_PROVIDER_SIGSTATE.cSecondarySigs">
+    <summary>
+      <para>Number of secondary signatures.</para>
+    </summary>
+  </member>
+  <member name="CRYPT_PROVIDER_SIGSTATE.dwCurrentIndex">
+    <summary>
+      <para>Index of the signature currently being verified.</para>
+    </summary>
+  </member>
+  <member name="CRYPT_PROVIDER_SIGSTATE.fSupportMultiSig">
+    <summary>
+      <para>Specifies whether the policy provider supports multiple signatures.</para>
+    </summary>
+  </member>
+  <member name="CRYPT_PROVIDER_SIGSTATE.dwCryptoPolicySupport">
+    <summary>
+      <para>Identifies the portion of the policy provider that  supports cryptographic policy. This can be one of the following values:</para>
+      <list type="bullet">
+        <item>
+          <description>WSS_OBJTRUST_SUPPORT</description>
+        </item>
+        <item>
+          <description>WSS_SIGTRUST_SUPPORT</description>
+        </item>
+        <item>
+          <description>WSS_CERTTRUST_SUPPORT</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="CRYPT_PROVIDER_SIGSTATE.iAttemptCount">
+    <summary></summary>
+  </member>
+  <member name="CRYPT_PROVIDER_SIGSTATE.fCheckedSealing">
+    <summary></summary>
+  </member>
+  <member name="CRYPT_PROVIDER_SIGSTATE.pSealingSignature">
+    <summary></summary>
+  </member>
+</doc>

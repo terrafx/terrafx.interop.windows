@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_FAULT_ERROR_PROPERTY_ID">
+    <summary>
+      <para>Information about a fault.</para>
+    </summary>
+  </member>
+  <member name="WS_FAULT_ERROR_PROPERTY_ID.WS_FAULT_ERROR_PROPERTY_FAULT">
+    <summary>
+      <para>An optional <see cref="WS_FAULT" /> value that is the fault representation of the error.  If no
+fault representation is present, then the value is <b>NULL</b>.</para>
+      <para>To set the WS_FAULT value, pass a WS_FAULT* to <see cref="WsSetFaultErrorProperty" />.
+The error object will make a copy of the WS_FAULT.  The error object will also
+add the fault string of the fault to the set of error strings in the error object
+if the language of the fault string matches that of the error object.</para>
+      <para>To get the WS_FAULT value, pass a WS_FAULT** to <see cref="WsGetFaultErrorProperty" />,
+which will either return <b>NULL</b> (indicating no fault has been set), or will
+return a non-<b>NULL</b> pointer to the WS_FAULT.  The non-<b>NULL</b> pointer is valid until
+<see cref="WsResetError" /> or <see cref="WsFreeError" /> are called for the error object.</para>
+      <para>The default value is <b>NULL</b>.</para>
+    </summary>
+  </member>
+  <member name="WS_FAULT_ERROR_PROPERTY_ID.WS_FAULT_ERROR_PROPERTY_ACTION">
+    <summary>
+      <para>An optional <see cref="WS_XML_STRING" /> value representing the action to use for the fault.
+If the length of the string is zero, then no action is present.</para>
+      <para>To get the string value, pass a WS_XML_STRING* to <see cref="WsGetFaultErrorProperty" />.
+The returned string is valid until <see cref="WsResetError" /> or <see cref="WsFreeError" /></para>
+      <para>are called for the error object.</para>
+      <para>To set the string value, pass a WS_XML_STRING* to <see cref="WsSetFaultErrorProperty" />.
+The error object will make a copy of the string.</para>
+      <para>The default value is a zero-length string.</para>
+    </summary>
+  </member>
+  <member name="WS_FAULT_ERROR_PROPERTY_ID.WS_FAULT_ERROR_PROPERTY_HEADER">
+    <summary>
+      <para>An optional <a href="https://docs.microsoft.com//windows/desktop/wsw/ws-xml-buffer">WS_XML_BUFFER</a> value representing a header to
+add to the fault message relating to the fault.
+If the pointer to the XML_BUFFER is <b>NULL</b>, then no header is present.</para>
+      <para>To get the header value, pass a WS_XML_BUFFER** to <see cref="WsGetFaultErrorProperty" />.
+The returned WS_XML_BUFFER is valid until <see cref="WsResetError" /> or <see cref="WsFreeError" /></para>
+      <para>are called for the error object.</para>
+      <para>To set the header value, pass a WS_XML_BUFFER** to <see cref="WsSetFaultErrorProperty" />.
+The error object will make a copy of the buffer.</para>
+      <para>The default value is <b>NULL</b>.</para>
+    </summary>
+  </member>
+</doc>

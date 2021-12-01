@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_GUID_AVEncWMV.xml' path='doc/member[@name="CODECAPI_GUID_AVEncWMV"]/*' />
 [Guid("4E0FEF9B-1D43-41BD-B8BD-4D7BF7457A2A")]
 public partial struct CODECAPI_GUID_AVEncWMV
 {

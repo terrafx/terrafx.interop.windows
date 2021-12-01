@@ -5,12 +5,16 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_XML_READER_BUFFER_INPUT.xml' path='doc/member[@name="WS_XML_READER_BUFFER_INPUT"]/*' />
 public unsafe partial struct WS_XML_READER_BUFFER_INPUT
 {
+    /// <include file='WS_XML_READER_BUFFER_INPUT.xml' path='doc/member[@name="WS_XML_READER_BUFFER_INPUT.input"]/*' />
     public WS_XML_READER_INPUT input;
 
+    /// <include file='WS_XML_READER_BUFFER_INPUT.xml' path='doc/member[@name="WS_XML_READER_BUFFER_INPUT.encodedData"]/*' />
     public void* encodedData;
 
+    /// <include file='WS_XML_READER_BUFFER_INPUT.xml' path='doc/member[@name="WS_XML_READER_BUFFER_INPUT.encodedDataSize"]/*' />
     [NativeTypeName("ULONG")]
     public uint encodedDataSize;
 }

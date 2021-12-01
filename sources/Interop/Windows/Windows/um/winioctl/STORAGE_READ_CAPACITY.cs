@@ -5,18 +5,24 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STORAGE_READ_CAPACITY.xml' path='doc/member[@name="STORAGE_READ_CAPACITY"]/*' />
 public partial struct STORAGE_READ_CAPACITY
 {
+    /// <include file='STORAGE_READ_CAPACITY.xml' path='doc/member[@name="STORAGE_READ_CAPACITY.Version"]/*' />
     [NativeTypeName("DWORD")]
     public uint Version;
 
+    /// <include file='STORAGE_READ_CAPACITY.xml' path='doc/member[@name="STORAGE_READ_CAPACITY.Size"]/*' />
     [NativeTypeName("DWORD")]
     public uint Size;
 
+    /// <include file='STORAGE_READ_CAPACITY.xml' path='doc/member[@name="STORAGE_READ_CAPACITY.BlockLength"]/*' />
     [NativeTypeName("DWORD")]
     public uint BlockLength;
 
+    /// <include file='STORAGE_READ_CAPACITY.xml' path='doc/member[@name="STORAGE_READ_CAPACITY.NumberOfBlocks"]/*' />
     public LARGE_INTEGER NumberOfBlocks;
 
+    /// <include file='STORAGE_READ_CAPACITY.xml' path='doc/member[@name="STORAGE_READ_CAPACITY.DiskLength"]/*' />
     public LARGE_INTEGER DiskLength;
 }

@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MsftMultisessionSequential.xml' path='doc/member[@name="MsftMultisessionSequential"]/*' />
 [Guid("27354122-7F64-5B0F-8F00-5D77AFBE261E")]
 public partial struct MsftMultisessionSequential
 {

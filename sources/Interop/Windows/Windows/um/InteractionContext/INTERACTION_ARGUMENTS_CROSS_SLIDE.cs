@@ -7,8 +7,10 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='INTERACTION_ARGUMENTS_CROSS_SLIDE.xml' path='doc/member[@name="INTERACTION_ARGUMENTS_CROSS_SLIDE"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public partial struct INTERACTION_ARGUMENTS_CROSS_SLIDE
 {
+    /// <include file='INTERACTION_ARGUMENTS_CROSS_SLIDE.xml' path='doc/member[@name="INTERACTION_ARGUMENTS_CROSS_SLIDE.flags"]/*' />
     public CROSS_SLIDE_FLAGS flags;
 }

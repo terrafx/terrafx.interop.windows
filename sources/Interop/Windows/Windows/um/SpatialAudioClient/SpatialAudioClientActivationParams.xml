@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SpatialAudioClientActivationParams">
+    <summary>
+      <para>Represents optional activation parameters for a spatial audio render stream. Pass this structure to <see cref="ActivateAudioInterfaceAsync" /> when activating an <see cref="ISpatialAudioClient" /> interface.</para>
+    </summary>
+    <remarks>
+      <para>The following example code shows how to initialize this structure.</para>
+      <code>PROPVARIANT var;
+PropVariantInit(&amp;amp;amp;amp;amp;amp;var);
+auto p = reinterpret_cast&lt;SpatialAudioClientActivationParams *&gt;(CoTaskMemAlloc(sizeof(SpatialAudioClientActivationParams)));
+if (nullptr == p) { ... }
+p-&gt;tracingContextId = /* context identifier */;
+p-&gt;appId = /* app identifier */;
+p-&gt;majorVersion = /* app version info */;
+p-&gt;majorVersionN = /* app version info */;
+var.vt = VT_BLOB;
+var.blob.cbSize = sizeof(*p);
+var.blob.pBlobData = reinterpret_cast&lt;BYTE *&gt;(p);
+hr = ActivateAudioInterfaceAsync(device, __uuidof(ISpatialAudioClient), &amp;amp;amp;amp;amp;amp;var, ...);
+// ...
+ropVariantClear(&amp;amp;amp;amp;amp;amp;var);
+</code>
+      <para>To access the <b>ActivateAudioIntefaceAsync</b>, you will need to link to mmdevapi.lib.</para>
+    </remarks>
+  </member>
+  <member name="SpatialAudioClientActivationParams.tracingContextId">
+    <summary>
+      <para>An app-defined context identifier, used for event logging.</para>
+    </summary>
+  </member>
+  <member name="SpatialAudioClientActivationParams.appId">
+    <summary>
+      <para>An identifier for the client app, used for event logging.</para>
+      <h4>majorVersion</h4>
+      <para>The major version number of the client app, used for event logging.</para>
+      <h5>minorVersion1</h5>
+      <para>The first minor version number of the client app, used for event logging.</para>
+      <h6>minorVersion2</h6>
+      <para>The second minor version number of the client app, used for event logging.</para>
+      <para>####### minorVersion3</para>
+      <para>The third minor version number of the client app, used for event logging.</para>
+    </summary>
+  </member>
+  <member name="SpatialAudioClientActivationParams.majorVersion">
+    <summary></summary>
+  </member>
+  <member name="SpatialAudioClientActivationParams.minorVersion1">
+    <summary></summary>
+  </member>
+  <member name="SpatialAudioClientActivationParams.minorVersion2">
+    <summary></summary>
+  </member>
+  <member name="SpatialAudioClientActivationParams.minorVersion3">
+    <summary></summary>
+  </member>
+</doc>

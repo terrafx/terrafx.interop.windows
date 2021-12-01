@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_XML_DICTIONARY">
+    <summary>
+      <para>Represents a set of unique strings.  This information is used by the binary
+encoding to write a more compact xml document.</para>
+    </summary>
+    <remarks>
+      <para>All strings and values within a dictionary must be unique.  Dictionaries are
+always assumed to be well-formed, so it is up to the creator of the dictionary
+to ensure that this is the case.</para>
+      <para>A dictionary might be declared as:</para>
+      <code>struct PurchaseOrderDictionary
+{
+    WS_XML_DICTIONARY dictionary;
+    WS_XML_STRING quantity;
+    WS_XML_STRING productName;
+    WS_XML_STRING purchaseOrder;
+    WS_XML_STRING purchaseOrderNamespace;
+};
+
+static PurchaseOrderDictionary purchaseOrderDictionary =
+{
+    {
+        { /* A unique GUID generated from uuidgen */ },
+        &amp;amp;amp;amp;amp;amp;amp;purchaseOrderDictionary.quantity,
+        4,
+        TRUE
+    },
+    WS_XML_STRING_DICTIONARY_VALUE("Quantity",           &amp;amp;amp;amp;amp;amp;amp;purchaseOrderDictionary.dictionary, 0),
+    WS_XML_STRING_DICTIONARY_VALUE("ProductName",        &amp;amp;amp;amp;amp;amp;amp;purchaseOrderDictionary.dictionary, 1),
+    WS_XML_STRING_DICTIONARY_VALUE("PurchaseOrder",      &amp;amp;amp;amp;amp;amp;amp;purchaseOrderDictionary.dictionary, 2),
+    WS_XML_STRING_DICTIONARY_VALUE("http://example.com", &amp;amp;amp;amp;amp;amp;amp;purchaseOrderDictionary.dictionary, 3),
+};
+
+</code>
+      <para>Strings from the dictionary might be used as:</para>
+      <code>WsWriteStartElement(xmlWriter, NULL, &amp;amp;amp;amp;amp;amp;amp;purchaseOrderDictionary.purchaseOrder, &amp;amp;amp;amp;amp;amp;amp;purchaseOrderDictionary.purchaseOrderNamespace, error);
+</code>
+    </remarks>
+  </member>
+  <member name="WS_XML_DICTIONARY.guid">
+    <summary>
+      <para>A guid that uniquely identifies the set of strings represented by the dictionary.
+The guid is never transmitted or persisted, and needs to only be unique for the lifetime of the process.</para>
+    </summary>
+  </member>
+  <member name="WS_XML_DICTIONARY.strings">
+    <summary>
+      <para>The set of unique strings that comprise the dictionary.</para>
+    </summary>
+  </member>
+  <member name="WS_XML_DICTIONARY.stringCount">
+    <summary>
+      <para>Specifies the number of strings in the dictionary.</para>
+    </summary>
+  </member>
+  <member name="WS_XML_DICTIONARY.isConst">
+    <summary>
+      <para>Indicates if the dictionary and its contents are declared const and that they will be kept valid for the
+entire lifetime of any object with which strings in the dictionary are used.</para>
+      <para>If this is <b>TRUE</b>, then the strings can be manipulated more efficiently.</para>
+    </summary>
+  </member>
+</doc>

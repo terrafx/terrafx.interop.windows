@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DEF_SHARE_ID.xml' path='doc/member[@name="DEF_SHARE_ID"]/*' />
 public enum DEF_SHARE_ID
 {
+    /// <include file='DEF_SHARE_ID.xml' path='doc/member[@name="DEF_SHARE_ID.DEFSHAREID_USERS"]/*' />
     DEFSHAREID_USERS = 1,
+
+    /// <include file='DEF_SHARE_ID.xml' path='doc/member[@name="DEF_SHARE_ID.DEFSHAREID_PUBLIC"]/*' />
     DEFSHAREID_PUBLIC = 2,
 }

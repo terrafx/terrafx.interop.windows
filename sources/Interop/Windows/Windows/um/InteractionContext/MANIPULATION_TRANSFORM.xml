@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MANIPULATION_TRANSFORM">
+    <summary>
+      <para>Defines the transformation data for a manipulation.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/structures">Interaction Context Structures</seealso>
+  </member>
+  <member name="MANIPULATION_TRANSFORM.translationX">
+    <summary>
+      <para>Translation along the x-axis, in HIMETRIC units.</para>
+    </summary>
+  </member>
+  <member name="MANIPULATION_TRANSFORM.translationY">
+    <summary>
+      <para>Translation along the y-axis, in HIMETRIC units.</para>
+    </summary>
+  </member>
+  <member name="MANIPULATION_TRANSFORM.scale">
+    <summary>
+      <para>Change in scale as a percentage, in HIMETRIC units.</para>
+    </summary>
+  </member>
+  <member name="MANIPULATION_TRANSFORM.expansion">
+    <summary>
+      <para>Expansion in user-defined coordinates, in HIMETRIC units.</para>
+    </summary>
+  </member>
+  <member name="MANIPULATION_TRANSFORM.rotation">
+    <summary>
+      <para>Change in rotation, in radians.</para>
+    </summary>
+  </member>
+</doc>

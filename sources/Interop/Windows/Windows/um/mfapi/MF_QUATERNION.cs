@@ -7,14 +7,19 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MF_QUATERNION.xml' path='doc/member[@name="MF_QUATERNION"]/*' />
 [SupportedOSPlatform("windows10.0")]
 public partial struct MF_QUATERNION
 {
+    /// <include file='MF_QUATERNION.xml' path='doc/member[@name="MF_QUATERNION.x"]/*' />
     public float x;
 
+    /// <include file='MF_QUATERNION.xml' path='doc/member[@name="MF_QUATERNION.y"]/*' />
     public float y;
 
+    /// <include file='MF_QUATERNION.xml' path='doc/member[@name="MF_QUATERNION.z"]/*' />
     public float z;
 
+    /// <include file='MF_QUATERNION.xml' path='doc/member[@name="MF_QUATERNION.w"]/*' />
     public float w;
 }

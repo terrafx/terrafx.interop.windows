@@ -5,8 +5,10 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CSV_IS_OWNED_BY_CSVFS.xml' path='doc/member[@name="CSV_IS_OWNED_BY_CSVFS"]/*' />
 public partial struct CSV_IS_OWNED_BY_CSVFS
 {
+    /// <include file='CSV_IS_OWNED_BY_CSVFS.xml' path='doc/member[@name="CSV_IS_OWNED_BY_CSVFS.OwnedByCSVFS"]/*' />
     [NativeTypeName("BOOLEAN")]
     public byte OwnedByCSVFS;
 }

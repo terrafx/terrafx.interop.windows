@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IApplicationDocumentLists.GetList">
+    <summary>
+      <para>Retrieves an object that represents the collection of destinations listed in the <b>Recent</b> or <b>Frequent</b> category in a Jump List.</para>
+    </summary>
+    <param name="listtype">
+      <para>Type: <b>APPDOCLISTTYPE</b></para>
+      <para>One of the following values that specifies from which category the list of destinations should be retrieved.</para>
+      <h4>ADLT_RECENT (0x0)</h4>
+      <para>0x0. The <b>Recent</b> category, which lists those items most recently accessed.</para>
+      <h4>ADLT_FREQUENT (0x1)</h4>
+      <para>0x1. The <b>Frequent</b> category, which lists the items that have been accessed the greatest number of times.</para>
+    </param>
+    <param name="cItemsDesired">
+      <para>Type: <b>UINT</b></para>
+      <para>The number of items to retrieve from the list specified in <i>listtype</i>. Set this parameter to 0 to retrieve the full list.</para>
+    </param>
+    <param name="riid">
+      <para>Type: <b>REFIID</b></para>
+      <para>A reference to the IID of the interface to retrieve through <i>ppv</i>, typically IID_IObjectArray or IID_IEnumObjects.</para>
+    </param>
+    <param name="ppv">
+      <para>Type: <b>void**</b></para>
+      <para>When this method returns, contains the interface pointer requested in <i>riid</i>. This is typically an <see cref="IObjectArray" /> or <see cref="IEnumObjects" /> which represents a collection of <see cref="IShellItem" /> or <see cref="IShellLink" /> objects (or a mix of the two) that represent the retrieved items from the list.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>An item can appear in both the <b>Recent</b> and <b>Frequent</b> lists.</para>
+      <para>If a user pins an item in the <b>Recent</b> or <b>Frequent</b> categories, the item is no longer shown in its original category to avoid duplication in the Jump List. However, the item will still be returned by this method.</para>
+    </remarks>
+    <seealso cref="IApplicationDocumentLists" />
+    <seealso cref="IApplicationDocumentLists.SetAppID" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/shell/taskbar-extensions">Taskbar Extensions</seealso>
+  </member>
+  <member name="IApplicationDocumentLists.SetAppID">
+    <summary>
+      <para>Specifies a unique Application User Model ID (AppUserModelID) for the application whose destination lists are being retrieved. This method is optional.</para>
+    </summary>
+    <param name="pszAppID">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>A pointer to the AppUserModelID of the process whose taskbar button representation receives the Jump List.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>If the application has an explicit AppUserModelID, this method must be called before you call <see cref="GetList" />.</para>
+      <para>After an AppUserModelID is specified through an object's <b>SetAppID</b> method, the AppUserModelID is saved in the object for that object's lifetime, providing that it is not overwritten by another call to <b>SetAppID</b>.</para>
+      <para>Some applications will not declare an explicit AppUserModelID and should not call this method. In that case, the application's identity is deduced when <see cref="IApplicationDocumentLists.GetList" /> is called. However, there is a performance benefit in avoiding those calculations, so applications that provide custom Jump Lists are encouraged to use <see cref="explicit AppUserModelIDs" />.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/shell/appids">Application User Model IDs (AppUserModelIDs)</seealso>
+    <seealso cref="IApplicationDocumentLists" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/shell/taskbar-extensions">Taskbar Extensions</seealso>
+  </member>
+  <member name="IApplicationDocumentLists">
+    <summary>
+      <para>Exposes methods that allow an application to retrieve the contents of the <b>Recent</b> or <b>Frequent</b> categories in a Jump List.</para>
+    </summary>
+    <remarks>
+      <h3>When to Implement</h3>
+      <para>An implementation of this interface is provided in Windows as CLSID_ApplicationDocumentLists. This interface is not implemented by third parties.</para>
+      <h3>When to Use</h3>
+      <para>An application calls the methods of this interface when it wants to retrieve a Jump List's <b>Recent</b> or <b>Frequent</b> list. These lists are generated through calls to <see cref="SHAddToRecentDocs" />, either explicitly or by the system when a file is opened through Windows Explorer or the common file dialog is used to open, save, or create a file.</para>
+      <para>
+        <b>IApplicationDocumentLists</b> is used only with the automatically generated <b>Recent</b> or <b>Frequent</b> categories. It cannot retrieve a list of items that the user has pinned to the Jump List. That list cannot be retrieved programmatically because it cannot be manipulated programmatically; it is strictly under the user's control. <b>IApplicationDocumentLists</b> also cannot access custom categories or the task list.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/shell/taskbar-extensions">Taskbar Extensions</seealso>
+  </member>
+</doc>

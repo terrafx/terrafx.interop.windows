@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7"]/*' />
 [Guid("305104B7-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IHTMLWindow7 : IDispatch")]
 [NativeInheritance("IDispatch")]
@@ -16,6 +17,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, uint>)(lpVtbl[1]))((IHTMLWindow7*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, uint>)(lpVtbl[2]))((IHTMLWindow7*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, uint*, int>)(lpVtbl[3]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
@@ -60,6 +67,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
+    /// <inheritdoc cref="IDispatch.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
@@ -67,6 +75,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.getSelection"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT getSelection(IHTMLSelection** ppIHTMLSelection)
@@ -74,6 +83,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, IHTMLSelection**, int>)(lpVtbl[7]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), ppIHTMLSelection);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.getComputedStyle"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT getComputedStyle(IHTMLDOMNode* varArgIn, [NativeTypeName("BSTR")] ushort* bstrPseudoElt, IHTMLCSSStyleDeclaration** ppComputedStyle)
@@ -81,6 +91,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, IHTMLDOMNode*, ushort*, IHTMLCSSStyleDeclaration**, int>)(lpVtbl[8]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), varArgIn, bstrPseudoElt, ppComputedStyle);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.get_styleMedia"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT get_styleMedia(IHTMLStyleMedia** p)
@@ -88,6 +99,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, IHTMLStyleMedia**, int>)(lpVtbl[9]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.put_performance"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT put_performance(VARIANT v)
@@ -95,6 +107,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT, int>)(lpVtbl[10]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.get_performance"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT get_performance(VARIANT* p)
@@ -102,6 +115,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT*, int>)(lpVtbl[11]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.get_innerWidth"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT get_innerWidth([NativeTypeName("long *")] int* p)
@@ -109,6 +123,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, int*, int>)(lpVtbl[12]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.get_innerHeight"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT get_innerHeight([NativeTypeName("long *")] int* p)
@@ -116,6 +131,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, int*, int>)(lpVtbl[13]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.get_pageXOffset"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT get_pageXOffset([NativeTypeName("long *")] int* p)
@@ -123,6 +139,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, int*, int>)(lpVtbl[14]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.get_pageYOffset"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT get_pageYOffset([NativeTypeName("long *")] int* p)
@@ -130,6 +147,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, int*, int>)(lpVtbl[15]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.get_screenX"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT get_screenX([NativeTypeName("long *")] int* p)
@@ -137,6 +155,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, int*, int>)(lpVtbl[16]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.get_screenY"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT get_screenY([NativeTypeName("long *")] int* p)
@@ -144,6 +163,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, int*, int>)(lpVtbl[17]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.get_outerWidth"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT get_outerWidth([NativeTypeName("long *")] int* p)
@@ -151,6 +171,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, int*, int>)(lpVtbl[18]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.get_outerHeight"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT get_outerHeight([NativeTypeName("long *")] int* p)
@@ -158,6 +179,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, int*, int>)(lpVtbl[19]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.put_onabort"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public HRESULT put_onabort(VARIANT v)
@@ -165,6 +187,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT, int>)(lpVtbl[20]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.get_onabort"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
     public HRESULT get_onabort(VARIANT* p)
@@ -172,6 +195,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT*, int>)(lpVtbl[21]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.put_oncanplay"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
     public HRESULT put_oncanplay(VARIANT v)
@@ -179,6 +203,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT, int>)(lpVtbl[22]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.get_oncanplay"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
     public HRESULT get_oncanplay(VARIANT* p)
@@ -186,6 +211,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT*, int>)(lpVtbl[23]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.put_oncanplaythrough"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(24)]
     public HRESULT put_oncanplaythrough(VARIANT v)
@@ -193,6 +219,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT, int>)(lpVtbl[24]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.get_oncanplaythrough"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(25)]
     public HRESULT get_oncanplaythrough(VARIANT* p)
@@ -200,6 +227,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT*, int>)(lpVtbl[25]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.put_onchange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(26)]
     public HRESULT put_onchange(VARIANT v)
@@ -207,6 +235,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT, int>)(lpVtbl[26]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.get_onchange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(27)]
     public HRESULT get_onchange(VARIANT* p)
@@ -214,6 +243,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT*, int>)(lpVtbl[27]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.put_onclick"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(28)]
     public HRESULT put_onclick(VARIANT v)
@@ -221,6 +251,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT, int>)(lpVtbl[28]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.get_onclick"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(29)]
     public HRESULT get_onclick(VARIANT* p)
@@ -228,6 +259,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT*, int>)(lpVtbl[29]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.put_oncontextmenu"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(30)]
     public HRESULT put_oncontextmenu(VARIANT v)
@@ -235,6 +267,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT, int>)(lpVtbl[30]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.get_oncontextmenu"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(31)]
     public HRESULT get_oncontextmenu(VARIANT* p)
@@ -242,6 +275,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT*, int>)(lpVtbl[31]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.put_ondblclick"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(32)]
     public HRESULT put_ondblclick(VARIANT v)
@@ -249,6 +283,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT, int>)(lpVtbl[32]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.get_ondblclick"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(33)]
     public HRESULT get_ondblclick(VARIANT* p)
@@ -256,6 +291,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT*, int>)(lpVtbl[33]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.put_ondrag"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(34)]
     public HRESULT put_ondrag(VARIANT v)
@@ -263,6 +299,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT, int>)(lpVtbl[34]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.get_ondrag"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(35)]
     public HRESULT get_ondrag(VARIANT* p)
@@ -270,6 +307,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT*, int>)(lpVtbl[35]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.put_ondragend"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(36)]
     public HRESULT put_ondragend(VARIANT v)
@@ -277,6 +315,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT, int>)(lpVtbl[36]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.get_ondragend"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(37)]
     public HRESULT get_ondragend(VARIANT* p)
@@ -284,6 +323,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT*, int>)(lpVtbl[37]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.put_ondragenter"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(38)]
     public HRESULT put_ondragenter(VARIANT v)
@@ -291,6 +331,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT, int>)(lpVtbl[38]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.get_ondragenter"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(39)]
     public HRESULT get_ondragenter(VARIANT* p)
@@ -298,6 +339,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT*, int>)(lpVtbl[39]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.put_ondragleave"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(40)]
     public HRESULT put_ondragleave(VARIANT v)
@@ -305,6 +347,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT, int>)(lpVtbl[40]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.get_ondragleave"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(41)]
     public HRESULT get_ondragleave(VARIANT* p)
@@ -312,6 +355,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT*, int>)(lpVtbl[41]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.put_ondragover"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(42)]
     public HRESULT put_ondragover(VARIANT v)
@@ -319,6 +363,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT, int>)(lpVtbl[42]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.get_ondragover"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(43)]
     public HRESULT get_ondragover(VARIANT* p)
@@ -326,6 +371,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT*, int>)(lpVtbl[43]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.put_ondragstart"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(44)]
     public HRESULT put_ondragstart(VARIANT v)
@@ -333,6 +379,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT, int>)(lpVtbl[44]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.get_ondragstart"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(45)]
     public HRESULT get_ondragstart(VARIANT* p)
@@ -340,6 +387,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT*, int>)(lpVtbl[45]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.put_ondrop"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(46)]
     public HRESULT put_ondrop(VARIANT v)
@@ -347,6 +395,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT, int>)(lpVtbl[46]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.get_ondrop"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(47)]
     public HRESULT get_ondrop(VARIANT* p)
@@ -354,6 +403,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT*, int>)(lpVtbl[47]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.put_ondurationchange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(48)]
     public HRESULT put_ondurationchange(VARIANT v)
@@ -361,6 +411,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT, int>)(lpVtbl[48]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.get_ondurationchange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(49)]
     public HRESULT get_ondurationchange(VARIANT* p)
@@ -368,6 +419,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT*, int>)(lpVtbl[49]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.put_onfocusin"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(50)]
     public HRESULT put_onfocusin(VARIANT v)
@@ -375,6 +427,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT, int>)(lpVtbl[50]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.get_onfocusin"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(51)]
     public HRESULT get_onfocusin(VARIANT* p)
@@ -382,6 +435,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT*, int>)(lpVtbl[51]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.put_onfocusout"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(52)]
     public HRESULT put_onfocusout(VARIANT v)
@@ -389,6 +443,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT, int>)(lpVtbl[52]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.get_onfocusout"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(53)]
     public HRESULT get_onfocusout(VARIANT* p)
@@ -396,6 +451,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT*, int>)(lpVtbl[53]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.put_oninput"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(54)]
     public HRESULT put_oninput(VARIANT v)
@@ -403,6 +459,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT, int>)(lpVtbl[54]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.get_oninput"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(55)]
     public HRESULT get_oninput(VARIANT* p)
@@ -410,6 +467,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT*, int>)(lpVtbl[55]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.put_onemptied"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(56)]
     public HRESULT put_onemptied(VARIANT v)
@@ -417,6 +475,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT, int>)(lpVtbl[56]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.get_onemptied"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(57)]
     public HRESULT get_onemptied(VARIANT* p)
@@ -424,6 +483,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT*, int>)(lpVtbl[57]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.put_onended"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(58)]
     public HRESULT put_onended(VARIANT v)
@@ -431,6 +491,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT, int>)(lpVtbl[58]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.get_onended"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(59)]
     public HRESULT get_onended(VARIANT* p)
@@ -438,6 +499,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT*, int>)(lpVtbl[59]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.put_onkeydown"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(60)]
     public HRESULT put_onkeydown(VARIANT v)
@@ -445,6 +507,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT, int>)(lpVtbl[60]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.get_onkeydown"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(61)]
     public HRESULT get_onkeydown(VARIANT* p)
@@ -452,6 +515,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT*, int>)(lpVtbl[61]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.put_onkeypress"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(62)]
     public HRESULT put_onkeypress(VARIANT v)
@@ -459,6 +523,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT, int>)(lpVtbl[62]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.get_onkeypress"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(63)]
     public HRESULT get_onkeypress(VARIANT* p)
@@ -466,6 +531,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT*, int>)(lpVtbl[63]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.put_onkeyup"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(64)]
     public HRESULT put_onkeyup(VARIANT v)
@@ -473,6 +539,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT, int>)(lpVtbl[64]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.get_onkeyup"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(65)]
     public HRESULT get_onkeyup(VARIANT* p)
@@ -480,6 +547,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT*, int>)(lpVtbl[65]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.put_onloadeddata"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(66)]
     public HRESULT put_onloadeddata(VARIANT v)
@@ -487,6 +555,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT, int>)(lpVtbl[66]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.get_onloadeddata"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(67)]
     public HRESULT get_onloadeddata(VARIANT* p)
@@ -494,6 +563,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT*, int>)(lpVtbl[67]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.put_onloadedmetadata"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(68)]
     public HRESULT put_onloadedmetadata(VARIANT v)
@@ -501,6 +571,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT, int>)(lpVtbl[68]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.get_onloadedmetadata"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(69)]
     public HRESULT get_onloadedmetadata(VARIANT* p)
@@ -508,6 +579,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT*, int>)(lpVtbl[69]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.put_onloadstart"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(70)]
     public HRESULT put_onloadstart(VARIANT v)
@@ -515,6 +587,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT, int>)(lpVtbl[70]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.get_onloadstart"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(71)]
     public HRESULT get_onloadstart(VARIANT* p)
@@ -522,6 +595,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT*, int>)(lpVtbl[71]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.put_onmousedown"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(72)]
     public HRESULT put_onmousedown(VARIANT v)
@@ -529,6 +603,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT, int>)(lpVtbl[72]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.get_onmousedown"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(73)]
     public HRESULT get_onmousedown(VARIANT* p)
@@ -536,6 +611,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT*, int>)(lpVtbl[73]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.put_onmouseenter"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(74)]
     public HRESULT put_onmouseenter(VARIANT v)
@@ -543,6 +619,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT, int>)(lpVtbl[74]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.get_onmouseenter"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(75)]
     public HRESULT get_onmouseenter(VARIANT* p)
@@ -550,6 +627,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT*, int>)(lpVtbl[75]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.put_onmouseleave"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(76)]
     public HRESULT put_onmouseleave(VARIANT v)
@@ -557,6 +635,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT, int>)(lpVtbl[76]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.get_onmouseleave"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(77)]
     public HRESULT get_onmouseleave(VARIANT* p)
@@ -564,6 +643,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT*, int>)(lpVtbl[77]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.put_onmousemove"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(78)]
     public HRESULT put_onmousemove(VARIANT v)
@@ -571,6 +651,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT, int>)(lpVtbl[78]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.get_onmousemove"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(79)]
     public HRESULT get_onmousemove(VARIANT* p)
@@ -578,6 +659,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT*, int>)(lpVtbl[79]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.put_onmouseout"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(80)]
     public HRESULT put_onmouseout(VARIANT v)
@@ -585,6 +667,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT, int>)(lpVtbl[80]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.get_onmouseout"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(81)]
     public HRESULT get_onmouseout(VARIANT* p)
@@ -592,6 +675,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT*, int>)(lpVtbl[81]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.put_onmouseover"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(82)]
     public HRESULT put_onmouseover(VARIANT v)
@@ -599,6 +683,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT, int>)(lpVtbl[82]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.get_onmouseover"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(83)]
     public HRESULT get_onmouseover(VARIANT* p)
@@ -606,6 +691,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT*, int>)(lpVtbl[83]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.put_onmouseup"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(84)]
     public HRESULT put_onmouseup(VARIANT v)
@@ -613,6 +699,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT, int>)(lpVtbl[84]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.get_onmouseup"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(85)]
     public HRESULT get_onmouseup(VARIANT* p)
@@ -620,6 +707,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT*, int>)(lpVtbl[85]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.put_onmousewheel"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(86)]
     public HRESULT put_onmousewheel(VARIANT v)
@@ -627,6 +715,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT, int>)(lpVtbl[86]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.get_onmousewheel"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(87)]
     public HRESULT get_onmousewheel(VARIANT* p)
@@ -634,6 +723,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT*, int>)(lpVtbl[87]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.put_onoffline"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(88)]
     public HRESULT put_onoffline(VARIANT v)
@@ -641,6 +731,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT, int>)(lpVtbl[88]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.get_onoffline"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(89)]
     public HRESULT get_onoffline(VARIANT* p)
@@ -648,6 +739,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT*, int>)(lpVtbl[89]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.put_ononline"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(90)]
     public HRESULT put_ononline(VARIANT v)
@@ -655,6 +747,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT, int>)(lpVtbl[90]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.get_ononline"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(91)]
     public HRESULT get_ononline(VARIANT* p)
@@ -662,6 +755,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT*, int>)(lpVtbl[91]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.put_onprogress"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(92)]
     public HRESULT put_onprogress(VARIANT v)
@@ -669,6 +763,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT, int>)(lpVtbl[92]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.get_onprogress"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(93)]
     public HRESULT get_onprogress(VARIANT* p)
@@ -676,6 +771,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT*, int>)(lpVtbl[93]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.put_onratechange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(94)]
     public HRESULT put_onratechange(VARIANT v)
@@ -683,6 +779,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT, int>)(lpVtbl[94]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.get_onratechange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(95)]
     public HRESULT get_onratechange(VARIANT* p)
@@ -690,6 +787,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT*, int>)(lpVtbl[95]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.put_onreadystatechange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(96)]
     public HRESULT put_onreadystatechange(VARIANT v)
@@ -697,6 +795,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT, int>)(lpVtbl[96]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.get_onreadystatechange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(97)]
     public HRESULT get_onreadystatechange(VARIANT* p)
@@ -704,6 +803,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT*, int>)(lpVtbl[97]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.put_onreset"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(98)]
     public HRESULT put_onreset(VARIANT v)
@@ -711,6 +811,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT, int>)(lpVtbl[98]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.get_onreset"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(99)]
     public HRESULT get_onreset(VARIANT* p)
@@ -718,6 +819,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT*, int>)(lpVtbl[99]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.put_onseeked"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(100)]
     public HRESULT put_onseeked(VARIANT v)
@@ -725,6 +827,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT, int>)(lpVtbl[100]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.get_onseeked"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(101)]
     public HRESULT get_onseeked(VARIANT* p)
@@ -732,6 +835,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT*, int>)(lpVtbl[101]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.put_onseeking"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(102)]
     public HRESULT put_onseeking(VARIANT v)
@@ -739,6 +843,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT, int>)(lpVtbl[102]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.get_onseeking"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(103)]
     public HRESULT get_onseeking(VARIANT* p)
@@ -746,6 +851,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT*, int>)(lpVtbl[103]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.put_onselect"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(104)]
     public HRESULT put_onselect(VARIANT v)
@@ -753,6 +859,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT, int>)(lpVtbl[104]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.get_onselect"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(105)]
     public HRESULT get_onselect(VARIANT* p)
@@ -760,6 +867,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT*, int>)(lpVtbl[105]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.put_onstalled"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(106)]
     public HRESULT put_onstalled(VARIANT v)
@@ -767,6 +875,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT, int>)(lpVtbl[106]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.get_onstalled"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(107)]
     public HRESULT get_onstalled(VARIANT* p)
@@ -774,6 +883,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT*, int>)(lpVtbl[107]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.put_onstorage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(108)]
     public HRESULT put_onstorage(VARIANT v)
@@ -781,6 +891,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT, int>)(lpVtbl[108]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.get_onstorage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(109)]
     public HRESULT get_onstorage(VARIANT* p)
@@ -788,6 +899,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT*, int>)(lpVtbl[109]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.put_onsubmit"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(110)]
     public HRESULT put_onsubmit(VARIANT v)
@@ -795,6 +907,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT, int>)(lpVtbl[110]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.get_onsubmit"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(111)]
     public HRESULT get_onsubmit(VARIANT* p)
@@ -802,6 +915,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT*, int>)(lpVtbl[111]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.put_onsuspend"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(112)]
     public HRESULT put_onsuspend(VARIANT v)
@@ -809,6 +923,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT, int>)(lpVtbl[112]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.get_onsuspend"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(113)]
     public HRESULT get_onsuspend(VARIANT* p)
@@ -816,6 +931,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT*, int>)(lpVtbl[113]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.put_ontimeupdate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(114)]
     public HRESULT put_ontimeupdate(VARIANT v)
@@ -823,6 +939,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT, int>)(lpVtbl[114]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.get_ontimeupdate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(115)]
     public HRESULT get_ontimeupdate(VARIANT* p)
@@ -830,6 +947,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT*, int>)(lpVtbl[115]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.put_onpause"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(116)]
     public HRESULT put_onpause(VARIANT v)
@@ -837,6 +955,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT, int>)(lpVtbl[116]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.get_onpause"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(117)]
     public HRESULT get_onpause(VARIANT* p)
@@ -844,6 +963,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT*, int>)(lpVtbl[117]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.put_onplay"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(118)]
     public HRESULT put_onplay(VARIANT v)
@@ -851,6 +971,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT, int>)(lpVtbl[118]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.get_onplay"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(119)]
     public HRESULT get_onplay(VARIANT* p)
@@ -858,6 +979,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT*, int>)(lpVtbl[119]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.put_onplaying"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(120)]
     public HRESULT put_onplaying(VARIANT v)
@@ -865,6 +987,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT, int>)(lpVtbl[120]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.get_onplaying"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(121)]
     public HRESULT get_onplaying(VARIANT* p)
@@ -872,6 +995,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT*, int>)(lpVtbl[121]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.put_onvolumechange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(122)]
     public HRESULT put_onvolumechange(VARIANT v)
@@ -879,6 +1003,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT, int>)(lpVtbl[122]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.get_onvolumechange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(123)]
     public HRESULT get_onvolumechange(VARIANT* p)
@@ -886,6 +1011,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT*, int>)(lpVtbl[123]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.put_onwaiting"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(124)]
     public HRESULT put_onwaiting(VARIANT v)
@@ -893,6 +1019,7 @@ public unsafe partial struct IHTMLWindow7 : IHTMLWindow7.Interface
         return ((delegate* unmanaged<IHTMLWindow7*, VARIANT, int>)(lpVtbl[124]))((IHTMLWindow7*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLWindow7.xml' path='doc/member[@name="IHTMLWindow7.get_onwaiting"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(125)]
     public HRESULT get_onwaiting(VARIANT* p)

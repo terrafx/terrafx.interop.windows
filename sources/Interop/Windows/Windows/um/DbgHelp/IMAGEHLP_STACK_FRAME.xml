@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMAGEHLP_STACK_FRAME">
+    <summary>
+      <para>Contains the stack frame information. This structure is used with the
+<see cref="SymSetContext" /> function.</para>
+    </summary>
+    <seealso cref="SymSetContext" />
+  </member>
+  <member name="IMAGEHLP_STACK_FRAME.InstructionOffset">
+    <summary>
+      <para>The program counter.</para>
+      <para>
+        <b>x86:  </b>The program counter is EIP.</para>
+      <para>
+        <b>Intel Itanium:  </b>The program counter is a combination of the bundle address and a slot indicator of 0, 4, or 8 for the slot within the bundle.</para>
+      <para>
+        <b>x64:  </b>The program counter is RIP.</para>
+    </summary>
+  </member>
+  <member name="IMAGEHLP_STACK_FRAME.ReturnOffset">
+    <summary>
+      <para>The return address.</para>
+    </summary>
+  </member>
+  <member name="IMAGEHLP_STACK_FRAME.FrameOffset">
+    <summary>
+      <para>The frame pointer.</para>
+      <para>
+        <b>x86:  </b>The frame pointer is EBP.</para>
+      <para>
+        <b>Intel Itanium:  </b>There is no frame pointer, but <b>AddrBStore</b> is used.</para>
+      <para>
+        <b>x64:  </b>The frame pointer is RBP. AMD-64 does not always use this value.</para>
+    </summary>
+  </member>
+  <member name="IMAGEHLP_STACK_FRAME.StackOffset">
+    <summary>
+      <para>The stack pointer.</para>
+      <para>
+        <b>x86:  </b>The stack pointer is ESP.</para>
+      <para>
+        <b>Intel Itanium:  </b>The stack pointer is SP.</para>
+      <para>
+        <b>x64:  </b>The stack pointer is RSP.</para>
+    </summary>
+  </member>
+  <member name="IMAGEHLP_STACK_FRAME.BackingStoreOffset">
+    <summary>
+      <para>
+        <b>Intel Itanium:  </b>The backing store address.</para>
+    </summary>
+  </member>
+  <member name="IMAGEHLP_STACK_FRAME.FuncTableEntry">
+    <summary>
+      <para>
+        <b>x86:  </b>An
+<see cref="FPO_DATA" /> structure. If there is no function table entry, this member is <b>NULL</b>.</para>
+    </summary>
+  </member>
+  <member name="IMAGEHLP_STACK_FRAME.Params">
+    <summary>
+      <para>The possible arguments to the function.</para>
+    </summary>
+  </member>
+  <member name="IMAGEHLP_STACK_FRAME.Reserved">
+    <summary>
+      <para>This member is reserved for system use.</para>
+    </summary>
+  </member>
+  <member name="IMAGEHLP_STACK_FRAME.Virtual">
+    <summary>
+      <para>If this is a virtual frame, this member is <b>TRUE</b>. Otherwise, this member is <b>FALSE</b>.</para>
+    </summary>
+  </member>
+  <member name="IMAGEHLP_STACK_FRAME.Reserved2">
+    <summary>
+      <para>This member is reserved for system use.</para>
+    </summary>
+  </member>
+</doc>

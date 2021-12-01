@@ -5,14 +5,19 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_THUMBPRINT_CERT_CREDENTIAL.xml' path='doc/member[@name="WS_THUMBPRINT_CERT_CREDENTIAL"]/*' />
 public partial struct WS_THUMBPRINT_CERT_CREDENTIAL
 {
+    /// <include file='WS_THUMBPRINT_CERT_CREDENTIAL.xml' path='doc/member[@name="WS_THUMBPRINT_CERT_CREDENTIAL.credential"]/*' />
     public WS_CERT_CREDENTIAL credential;
 
+    /// <include file='WS_THUMBPRINT_CERT_CREDENTIAL.xml' path='doc/member[@name="WS_THUMBPRINT_CERT_CREDENTIAL.storeLocation"]/*' />
     [NativeTypeName("ULONG")]
     public uint storeLocation;
 
+    /// <include file='WS_THUMBPRINT_CERT_CREDENTIAL.xml' path='doc/member[@name="WS_THUMBPRINT_CERT_CREDENTIAL.storeName"]/*' />
     public WS_STRING storeName;
 
+    /// <include file='WS_THUMBPRINT_CERT_CREDENTIAL.xml' path='doc/member[@name="WS_THUMBPRINT_CERT_CREDENTIAL.thumbprint"]/*' />
     public WS_STRING thumbprint;
 }

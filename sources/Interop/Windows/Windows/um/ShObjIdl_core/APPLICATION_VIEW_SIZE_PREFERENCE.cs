@@ -5,13 +5,27 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='APPLICATION_VIEW_SIZE_PREFERENCE.xml' path='doc/member[@name="APPLICATION_VIEW_SIZE_PREFERENCE"]/*' />
 public enum APPLICATION_VIEW_SIZE_PREFERENCE
 {
+    /// <include file='APPLICATION_VIEW_SIZE_PREFERENCE.xml' path='doc/member[@name="APPLICATION_VIEW_SIZE_PREFERENCE.AVSP_DEFAULT"]/*' />
     AVSP_DEFAULT = 0,
+
+    /// <include file='APPLICATION_VIEW_SIZE_PREFERENCE.xml' path='doc/member[@name="APPLICATION_VIEW_SIZE_PREFERENCE.AVSP_USE_LESS"]/*' />
     AVSP_USE_LESS = 1,
+
+    /// <include file='APPLICATION_VIEW_SIZE_PREFERENCE.xml' path='doc/member[@name="APPLICATION_VIEW_SIZE_PREFERENCE.AVSP_USE_HALF"]/*' />
     AVSP_USE_HALF = 2,
+
+    /// <include file='APPLICATION_VIEW_SIZE_PREFERENCE.xml' path='doc/member[@name="APPLICATION_VIEW_SIZE_PREFERENCE.AVSP_USE_MORE"]/*' />
     AVSP_USE_MORE = 3,
+
+    /// <include file='APPLICATION_VIEW_SIZE_PREFERENCE.xml' path='doc/member[@name="APPLICATION_VIEW_SIZE_PREFERENCE.AVSP_USE_MINIMUM"]/*' />
     AVSP_USE_MINIMUM = 4,
+
+    /// <include file='APPLICATION_VIEW_SIZE_PREFERENCE.xml' path='doc/member[@name="APPLICATION_VIEW_SIZE_PREFERENCE.AVSP_USE_NONE"]/*' />
     AVSP_USE_NONE = 5,
+
+    /// <include file='APPLICATION_VIEW_SIZE_PREFERENCE.xml' path='doc/member[@name="APPLICATION_VIEW_SIZE_PREFERENCE.AVSP_CUSTOM"]/*' />
     AVSP_CUSTOM = 6,
 }

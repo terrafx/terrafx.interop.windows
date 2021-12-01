@@ -7,11 +7,14 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ASF_FLAT_PICTURE.xml' path='doc/member[@name="ASF_FLAT_PICTURE"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct ASF_FLAT_PICTURE
 {
+    /// <include file='ASF_FLAT_PICTURE.xml' path='doc/member[@name="ASF_FLAT_PICTURE.bPictureType"]/*' />
     public byte bPictureType;
 
+    /// <include file='ASF_FLAT_PICTURE.xml' path='doc/member[@name="ASF_FLAT_PICTURE.dwDataLen"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwDataLen;
 }

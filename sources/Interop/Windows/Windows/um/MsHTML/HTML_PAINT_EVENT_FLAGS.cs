@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HTML_PAINT_EVENT_FLAGS.xml' path='doc/member[@name="HTML_PAINT_EVENT_FLAGS"]/*' />
 public enum HTML_PAINT_EVENT_FLAGS
 {
+    /// <include file='HTML_PAINT_EVENT_FLAGS.xml' path='doc/member[@name="HTML_PAINT_EVENT_FLAGS.HTMLPAINT_EVENT_TARGET"]/*' />
     HTMLPAINT_EVENT_TARGET = 0x1,
+
+    /// <include file='HTML_PAINT_EVENT_FLAGS.xml' path='doc/member[@name="HTML_PAINT_EVENT_FLAGS.HTMLPAINT_EVENT_SETCURSOR"]/*' />
     HTMLPAINT_EVENT_SETCURSOR = 0x2,
+
+    /// <include file='HTML_PAINT_EVENT_FLAGS.xml' path='doc/member[@name="HTML_PAINT_EVENT_FLAGS.HTML_PAINT_EVENT_FLAGS_Max"]/*' />
     HTML_PAINT_EVENT_FLAGS_Max = 2147483647,
 }

@@ -5,8 +5,10 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PREVENT_MEDIA_REMOVAL.xml' path='doc/member[@name="PREVENT_MEDIA_REMOVAL"]/*' />
 public partial struct PREVENT_MEDIA_REMOVAL
 {
+    /// <include file='PREVENT_MEDIA_REMOVAL.xml' path='doc/member[@name="PREVENT_MEDIA_REMOVAL.PreventMediaRemoval"]/*' />
     [NativeTypeName("BOOLEAN")]
     public byte PreventMediaRemoval;
 }

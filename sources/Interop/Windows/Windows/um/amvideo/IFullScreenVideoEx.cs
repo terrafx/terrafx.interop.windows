@@ -8,12 +8,14 @@ using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IFullScreenVideoEx.xml' path='doc/member[@name="IFullScreenVideoEx"]/*' />
 [NativeTypeName("struct IFullScreenVideoEx : IFullScreenVideo")]
 [NativeInheritance("IFullScreenVideo")]
 public unsafe partial struct IFullScreenVideoEx : IFullScreenVideoEx.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -21,6 +23,7 @@ public unsafe partial struct IFullScreenVideoEx : IFullScreenVideoEx.Interface
         return ((delegate* unmanaged<IFullScreenVideoEx*, Guid*, void**, int>)(lpVtbl[0]))((IFullScreenVideoEx*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -29,6 +32,7 @@ public unsafe partial struct IFullScreenVideoEx : IFullScreenVideoEx.Interface
         return ((delegate* unmanaged<IFullScreenVideoEx*, uint>)(lpVtbl[1]))((IFullScreenVideoEx*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -37,6 +41,7 @@ public unsafe partial struct IFullScreenVideoEx : IFullScreenVideoEx.Interface
         return ((delegate* unmanaged<IFullScreenVideoEx*, uint>)(lpVtbl[2]))((IFullScreenVideoEx*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IFullScreenVideo.CountModes" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT CountModes([NativeTypeName("long *")] int* pModes)
@@ -44,6 +49,7 @@ public unsafe partial struct IFullScreenVideoEx : IFullScreenVideoEx.Interface
         return ((delegate* unmanaged<IFullScreenVideoEx*, int*, int>)(lpVtbl[3]))((IFullScreenVideoEx*)Unsafe.AsPointer(ref this), pModes);
     }
 
+    /// <inheritdoc cref="IFullScreenVideo.GetModeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetModeInfo([NativeTypeName("long")] int Mode, [NativeTypeName("long *")] int* pWidth, [NativeTypeName("long *")] int* pHeight, [NativeTypeName("long *")] int* pDepth)
@@ -51,6 +57,7 @@ public unsafe partial struct IFullScreenVideoEx : IFullScreenVideoEx.Interface
         return ((delegate* unmanaged<IFullScreenVideoEx*, int, int*, int*, int*, int>)(lpVtbl[4]))((IFullScreenVideoEx*)Unsafe.AsPointer(ref this), Mode, pWidth, pHeight, pDepth);
     }
 
+    /// <inheritdoc cref="IFullScreenVideo.GetCurrentMode" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetCurrentMode([NativeTypeName("long *")] int* pMode)
@@ -58,6 +65,7 @@ public unsafe partial struct IFullScreenVideoEx : IFullScreenVideoEx.Interface
         return ((delegate* unmanaged<IFullScreenVideoEx*, int*, int>)(lpVtbl[5]))((IFullScreenVideoEx*)Unsafe.AsPointer(ref this), pMode);
     }
 
+    /// <inheritdoc cref="IFullScreenVideo.IsModeAvailable" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT IsModeAvailable([NativeTypeName("long")] int Mode)
@@ -65,6 +73,7 @@ public unsafe partial struct IFullScreenVideoEx : IFullScreenVideoEx.Interface
         return ((delegate* unmanaged<IFullScreenVideoEx*, int, int>)(lpVtbl[6]))((IFullScreenVideoEx*)Unsafe.AsPointer(ref this), Mode);
     }
 
+    /// <inheritdoc cref="IFullScreenVideo.IsModeEnabled" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT IsModeEnabled([NativeTypeName("long")] int Mode)
@@ -72,6 +81,7 @@ public unsafe partial struct IFullScreenVideoEx : IFullScreenVideoEx.Interface
         return ((delegate* unmanaged<IFullScreenVideoEx*, int, int>)(lpVtbl[7]))((IFullScreenVideoEx*)Unsafe.AsPointer(ref this), Mode);
     }
 
+    /// <inheritdoc cref="IFullScreenVideo.SetEnabled" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT SetEnabled([NativeTypeName("long")] int Mode, [NativeTypeName("long")] int bEnabled)
@@ -79,6 +89,7 @@ public unsafe partial struct IFullScreenVideoEx : IFullScreenVideoEx.Interface
         return ((delegate* unmanaged<IFullScreenVideoEx*, int, int, int>)(lpVtbl[8]))((IFullScreenVideoEx*)Unsafe.AsPointer(ref this), Mode, bEnabled);
     }
 
+    /// <inheritdoc cref="IFullScreenVideo.GetClipFactor" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT GetClipFactor([NativeTypeName("long *")] int* pClipFactor)
@@ -86,6 +97,7 @@ public unsafe partial struct IFullScreenVideoEx : IFullScreenVideoEx.Interface
         return ((delegate* unmanaged<IFullScreenVideoEx*, int*, int>)(lpVtbl[9]))((IFullScreenVideoEx*)Unsafe.AsPointer(ref this), pClipFactor);
     }
 
+    /// <inheritdoc cref="IFullScreenVideo.SetClipFactor" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT SetClipFactor([NativeTypeName("long")] int ClipFactor)
@@ -93,6 +105,7 @@ public unsafe partial struct IFullScreenVideoEx : IFullScreenVideoEx.Interface
         return ((delegate* unmanaged<IFullScreenVideoEx*, int, int>)(lpVtbl[10]))((IFullScreenVideoEx*)Unsafe.AsPointer(ref this), ClipFactor);
     }
 
+    /// <inheritdoc cref="IFullScreenVideo.SetMessageDrain" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT SetMessageDrain(HWND hwnd)
@@ -100,6 +113,7 @@ public unsafe partial struct IFullScreenVideoEx : IFullScreenVideoEx.Interface
         return ((delegate* unmanaged<IFullScreenVideoEx*, HWND, int>)(lpVtbl[11]))((IFullScreenVideoEx*)Unsafe.AsPointer(ref this), hwnd);
     }
 
+    /// <inheritdoc cref="IFullScreenVideo.GetMessageDrain" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT GetMessageDrain(HWND* hwnd)
@@ -107,6 +121,7 @@ public unsafe partial struct IFullScreenVideoEx : IFullScreenVideoEx.Interface
         return ((delegate* unmanaged<IFullScreenVideoEx*, HWND*, int>)(lpVtbl[12]))((IFullScreenVideoEx*)Unsafe.AsPointer(ref this), hwnd);
     }
 
+    /// <inheritdoc cref="IFullScreenVideo.SetMonitor" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT SetMonitor([NativeTypeName("long")] int Monitor)
@@ -114,6 +129,7 @@ public unsafe partial struct IFullScreenVideoEx : IFullScreenVideoEx.Interface
         return ((delegate* unmanaged<IFullScreenVideoEx*, int, int>)(lpVtbl[13]))((IFullScreenVideoEx*)Unsafe.AsPointer(ref this), Monitor);
     }
 
+    /// <inheritdoc cref="IFullScreenVideo.GetMonitor" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT GetMonitor([NativeTypeName("long *")] int* Monitor)
@@ -121,6 +137,7 @@ public unsafe partial struct IFullScreenVideoEx : IFullScreenVideoEx.Interface
         return ((delegate* unmanaged<IFullScreenVideoEx*, int*, int>)(lpVtbl[14]))((IFullScreenVideoEx*)Unsafe.AsPointer(ref this), Monitor);
     }
 
+    /// <inheritdoc cref="IFullScreenVideo.HideOnDeactivate" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT HideOnDeactivate([NativeTypeName("long")] int Hide)
@@ -128,6 +145,7 @@ public unsafe partial struct IFullScreenVideoEx : IFullScreenVideoEx.Interface
         return ((delegate* unmanaged<IFullScreenVideoEx*, int, int>)(lpVtbl[15]))((IFullScreenVideoEx*)Unsafe.AsPointer(ref this), Hide);
     }
 
+    /// <inheritdoc cref="IFullScreenVideo.IsHideOnDeactivate" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT IsHideOnDeactivate()
@@ -135,6 +153,7 @@ public unsafe partial struct IFullScreenVideoEx : IFullScreenVideoEx.Interface
         return ((delegate* unmanaged<IFullScreenVideoEx*, int>)(lpVtbl[16]))((IFullScreenVideoEx*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IFullScreenVideo.SetCaption" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT SetCaption([NativeTypeName("BSTR")] ushort* strCaption)
@@ -142,6 +161,7 @@ public unsafe partial struct IFullScreenVideoEx : IFullScreenVideoEx.Interface
         return ((delegate* unmanaged<IFullScreenVideoEx*, ushort*, int>)(lpVtbl[17]))((IFullScreenVideoEx*)Unsafe.AsPointer(ref this), strCaption);
     }
 
+    /// <inheritdoc cref="IFullScreenVideo.GetCaption" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT GetCaption([NativeTypeName("BSTR *")] ushort** pstrCaption)
@@ -149,6 +169,7 @@ public unsafe partial struct IFullScreenVideoEx : IFullScreenVideoEx.Interface
         return ((delegate* unmanaged<IFullScreenVideoEx*, ushort**, int>)(lpVtbl[18]))((IFullScreenVideoEx*)Unsafe.AsPointer(ref this), pstrCaption);
     }
 
+    /// <inheritdoc cref="IFullScreenVideo.SetDefault" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT SetDefault()
@@ -156,6 +177,7 @@ public unsafe partial struct IFullScreenVideoEx : IFullScreenVideoEx.Interface
         return ((delegate* unmanaged<IFullScreenVideoEx*, int>)(lpVtbl[19]))((IFullScreenVideoEx*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IFullScreenVideoEx.xml' path='doc/member[@name="IFullScreenVideoEx.SetAcceleratorTable"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public HRESULT SetAcceleratorTable(HWND hwnd, HACCEL hAccel)
@@ -163,6 +185,7 @@ public unsafe partial struct IFullScreenVideoEx : IFullScreenVideoEx.Interface
         return ((delegate* unmanaged<IFullScreenVideoEx*, HWND, HACCEL, int>)(lpVtbl[20]))((IFullScreenVideoEx*)Unsafe.AsPointer(ref this), hwnd, hAccel);
     }
 
+    /// <include file='IFullScreenVideoEx.xml' path='doc/member[@name="IFullScreenVideoEx.GetAcceleratorTable"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
     public HRESULT GetAcceleratorTable(HWND* phwnd, HACCEL* phAccel)
@@ -170,6 +193,7 @@ public unsafe partial struct IFullScreenVideoEx : IFullScreenVideoEx.Interface
         return ((delegate* unmanaged<IFullScreenVideoEx*, HWND*, HACCEL*, int>)(lpVtbl[21]))((IFullScreenVideoEx*)Unsafe.AsPointer(ref this), phwnd, phAccel);
     }
 
+    /// <include file='IFullScreenVideoEx.xml' path='doc/member[@name="IFullScreenVideoEx.KeepPixelAspectRatio"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
     public HRESULT KeepPixelAspectRatio([NativeTypeName("long")] int KeepAspect)
@@ -177,6 +201,7 @@ public unsafe partial struct IFullScreenVideoEx : IFullScreenVideoEx.Interface
         return ((delegate* unmanaged<IFullScreenVideoEx*, int, int>)(lpVtbl[22]))((IFullScreenVideoEx*)Unsafe.AsPointer(ref this), KeepAspect);
     }
 
+    /// <include file='IFullScreenVideoEx.xml' path='doc/member[@name="IFullScreenVideoEx.IsKeepPixelAspectRatio"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
     public HRESULT IsKeepPixelAspectRatio([NativeTypeName("long *")] int* pKeepAspect)

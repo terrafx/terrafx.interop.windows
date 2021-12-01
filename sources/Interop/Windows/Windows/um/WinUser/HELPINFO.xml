@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="HELPINFO">
+    <summary>
+      <para>Contains information about an item for which context-sensitive help has been requested.</para>
+    </summary>
+  </member>
+  <member name="HELPINFO.cbSize">
+    <summary>
+      <para>Type: <b>UINT</b></para>
+      <para>The structure size, in bytes.</para>
+    </summary>
+  </member>
+  <member name="HELPINFO.iContextType">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>The type of context for which help is requested. This member can be one of the following values.</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <para>
+              <b>HELPINFO_MENUITEM</b>: Help requested for a menu item.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>HELPINFO_WINDOW</b>: Help requested for a control or window.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="HELPINFO.iCtrlId">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>The identifier of the window or control if <b>iContextType</b> is <b>HELPINFO_WINDOW</b>, or identifier of the menu item if <b>iContextType</b> is <b>HELPINFO_MENUITEM</b>.</para>
+    </summary>
+  </member>
+  <member name="HELPINFO.hItemHandle">
+    <summary>
+      <para>Type: <b>HANDLE</b></para>
+      <para>The identifier of the child window or control if <b>iContextType</b> is <b>HELPINFO_WINDOW</b>, or identifier of the associated menu if <b>iContextType</b> is <b>HELPINFO_MENUITEM</b>.</para>
+    </summary>
+  </member>
+  <member name="HELPINFO.dwContextId">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The help context identifier of the window or control.</para>
+    </summary>
+  </member>
+  <member name="HELPINFO.MousePos">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/dd162805(v=vs.85)">POINT</a></b></para>
+      <para>The <a href="https://docs.microsoft.com//previous-versions/dd162805(v=vs.85)">POINT</a> structure that contains the screen coordinates of the mouse cursor. This is useful for providing help based on the position of the mouse cursor.</para>
+    </summary>
+  </member>
+</doc>

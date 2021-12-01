@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMAGEHLP_SYMBOL_SRC.xml' path='doc/member[@name="IMAGEHLP_SYMBOL_SRC"]/*' />
 public unsafe partial struct IMAGEHLP_SYMBOL_SRC
 {
+    /// <include file='IMAGEHLP_SYMBOL_SRC.xml' path='doc/member[@name="IMAGEHLP_SYMBOL_SRC.sizeofstruct"]/*' />
     [NativeTypeName("DWORD")]
     public uint sizeofstruct;
 
+    /// <include file='IMAGEHLP_SYMBOL_SRC.xml' path='doc/member[@name="IMAGEHLP_SYMBOL_SRC.type"]/*' />
     [NativeTypeName("DWORD")]
     public uint type;
 
+    /// <include file='IMAGEHLP_SYMBOL_SRC.xml' path='doc/member[@name="IMAGEHLP_SYMBOL_SRC.file"]/*' />
     [NativeTypeName("char [260]")]
     public fixed sbyte file[260];
 }

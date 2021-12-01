@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DIALOGICOKIADPCMWAVEFORMAT.xml' path='doc/member[@name="DIALOGICOKIADPCMWAVEFORMAT"]/*' />
 public partial struct DIALOGICOKIADPCMWAVEFORMAT
 {
+    /// <include file='DIALOGICOKIADPCMWAVEFORMAT.xml' path='doc/member[@name="DIALOGICOKIADPCMWAVEFORMAT.ewf"]/*' />
     public WAVEFORMATEX ewf;
 }

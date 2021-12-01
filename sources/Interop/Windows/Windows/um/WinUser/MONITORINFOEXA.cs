@@ -5,12 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MONITORINFOEXA.xml' path='doc/member[@name="MONITORINFOEXA"]/*' />
 [NativeTypeName("struct tagMONITORINFOEXA : tagMONITORINFO")]
 [NativeInheritance("tagMONITORINFO")]
 public unsafe partial struct MONITORINFOEXA
 {
     public MONITORINFO Base;
 
+    /// <include file='MONITORINFOEXA.xml' path='doc/member[@name="MONITORINFOEXA.szDevice"]/*' />
     [NativeTypeName("CHAR [32]")]
     public fixed sbyte szDevice[32];
 }

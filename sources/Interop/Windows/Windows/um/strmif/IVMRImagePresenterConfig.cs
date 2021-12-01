@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IVMRImagePresenterConfig.xml' path='doc/member[@name="IVMRImagePresenterConfig"]/*' />
 [Guid("9F3A1C85-8555-49BA-935F-BE5B5B29D178")]
 [NativeTypeName("struct IVMRImagePresenterConfig : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IVMRImagePresenterConfig : IVMRImagePresenterConfig
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IVMRImagePresenterConfig : IVMRImagePresenterConfig
         return ((delegate* unmanaged<IVMRImagePresenterConfig*, Guid*, void**, int>)(lpVtbl[0]))((IVMRImagePresenterConfig*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IVMRImagePresenterConfig : IVMRImagePresenterConfig
         return ((delegate* unmanaged<IVMRImagePresenterConfig*, uint>)(lpVtbl[1]))((IVMRImagePresenterConfig*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IVMRImagePresenterConfig : IVMRImagePresenterConfig
         return ((delegate* unmanaged<IVMRImagePresenterConfig*, uint>)(lpVtbl[2]))((IVMRImagePresenterConfig*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IVMRImagePresenterConfig.xml' path='doc/member[@name="IVMRImagePresenterConfig.SetRenderingPrefs"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetRenderingPrefs([NativeTypeName("DWORD")] uint dwRenderFlags)
@@ -46,6 +51,7 @@ public unsafe partial struct IVMRImagePresenterConfig : IVMRImagePresenterConfig
         return ((delegate* unmanaged<IVMRImagePresenterConfig*, uint, int>)(lpVtbl[3]))((IVMRImagePresenterConfig*)Unsafe.AsPointer(ref this), dwRenderFlags);
     }
 
+    /// <include file='IVMRImagePresenterConfig.xml' path='doc/member[@name="IVMRImagePresenterConfig.GetRenderingPrefs"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetRenderingPrefs([NativeTypeName("DWORD *")] uint* dwRenderFlags)

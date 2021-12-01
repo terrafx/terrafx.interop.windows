@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CRYPT_PSOURCE_ALGORITHM.xml' path='doc/member[@name="CRYPT_PSOURCE_ALGORITHM"]/*' />
 public unsafe partial struct CRYPT_PSOURCE_ALGORITHM
 {
+    /// <include file='CRYPT_PSOURCE_ALGORITHM.xml' path='doc/member[@name="CRYPT_PSOURCE_ALGORITHM.pszObjId"]/*' />
     [NativeTypeName("LPSTR")]
     public sbyte* pszObjId;
 
+    /// <include file='CRYPT_PSOURCE_ALGORITHM.xml' path='doc/member[@name="CRYPT_PSOURCE_ALGORITHM.EncodingParameters"]/*' />
     public CRYPT_DATA_BLOB EncodingParameters;
 }

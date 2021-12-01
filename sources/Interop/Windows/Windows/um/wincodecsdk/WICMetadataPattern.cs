@@ -5,16 +5,22 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WICMetadataPattern.xml' path='doc/member[@name="WICMetadataPattern"]/*' />
 public unsafe partial struct WICMetadataPattern
 {
+    /// <include file='WICMetadataPattern.xml' path='doc/member[@name="WICMetadataPattern.Position"]/*' />
     public ULARGE_INTEGER Position;
 
+    /// <include file='WICMetadataPattern.xml' path='doc/member[@name="WICMetadataPattern.Length"]/*' />
     [NativeTypeName("ULONG")]
     public uint Length;
 
+    /// <include file='WICMetadataPattern.xml' path='doc/member[@name="WICMetadataPattern.Pattern"]/*' />
     public byte* Pattern;
 
+    /// <include file='WICMetadataPattern.xml' path='doc/member[@name="WICMetadataPattern.Mask"]/*' />
     public byte* Mask;
 
+    /// <include file='WICMetadataPattern.xml' path='doc/member[@name="WICMetadataPattern.DataOffset"]/*' />
     public ULARGE_INTEGER DataOffset;
 }

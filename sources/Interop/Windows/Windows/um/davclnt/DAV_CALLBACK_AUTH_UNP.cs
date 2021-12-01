@@ -5,17 +5,22 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DAV_CALLBACK_AUTH_UNP.xml' path='doc/member[@name="DAV_CALLBACK_AUTH_UNP"]/*' />
 public unsafe partial struct DAV_CALLBACK_AUTH_UNP
 {
+    /// <include file='DAV_CALLBACK_AUTH_UNP.xml' path='doc/member[@name="DAV_CALLBACK_AUTH_UNP.pszUserName"]/*' />
     [NativeTypeName("LPWSTR")]
     public ushort* pszUserName;
 
+    /// <include file='DAV_CALLBACK_AUTH_UNP.xml' path='doc/member[@name="DAV_CALLBACK_AUTH_UNP.ulUserNameLength"]/*' />
     [NativeTypeName("ULONG")]
     public uint ulUserNameLength;
 
+    /// <include file='DAV_CALLBACK_AUTH_UNP.xml' path='doc/member[@name="DAV_CALLBACK_AUTH_UNP.pszPassword"]/*' />
     [NativeTypeName("LPWSTR")]
     public ushort* pszPassword;
 
+    /// <include file='DAV_CALLBACK_AUTH_UNP.xml' path='doc/member[@name="DAV_CALLBACK_AUTH_UNP.ulPasswordLength"]/*' />
     [NativeTypeName("ULONG")]
     public uint ulPasswordLength;
 }

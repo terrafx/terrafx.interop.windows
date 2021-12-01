@@ -5,19 +5,25 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='EMRSETICMPROFILE.xml' path='doc/member[@name="EMRSETICMPROFILE"]/*' />
 public unsafe partial struct EMRSETICMPROFILE
 {
+    /// <include file='EMRSETICMPROFILE.xml' path='doc/member[@name="EMRSETICMPROFILE.emr"]/*' />
     public EMR emr;
 
+    /// <include file='EMRSETICMPROFILE.xml' path='doc/member[@name="EMRSETICMPROFILE.dwFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFlags;
 
+    /// <include file='EMRSETICMPROFILE.xml' path='doc/member[@name="EMRSETICMPROFILE.cbName"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbName;
 
+    /// <include file='EMRSETICMPROFILE.xml' path='doc/member[@name="EMRSETICMPROFILE.cbData"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbData;
 
+    /// <include file='EMRSETICMPROFILE.xml' path='doc/member[@name="EMRSETICMPROFILE.Data"]/*' />
     [NativeTypeName("BYTE [1]")]
     public fixed byte Data[1];
 }

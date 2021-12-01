@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MSHLFLAGS">
+    <summary>
+      <para>Specifies why the marshaling is to be done.</para>
+    </summary>
+    <seealso cref="CoGetStandardMarshal" />
+    <seealso cref="CoMarshalInterface" />
+    <seealso cref="ICallFrame" />
+    <seealso cref="IMarshal" />
+  </member>
+  <member name="MSHLFLAGS.MSHLFLAGS_NORMAL">
+    <summary>
+      <para>The marshaling is occurring because an interface pointer is being passed from one process to another. This is the normal case. The data packet produced by the marshaling process will be unmarshaled in the destination process. The marshaled data packet can be unmarshaled just once, or not at all. If the receiver unmarshals the data packet successfully, the <see cref="CoReleaseMarshalData" /> function is automatically called on the data packet as part of the unmarshaling process. If the receiver does not or cannot unmarshal the data packet, the sender must call <b>CoReleaseMarshalData</b> on the data packet.</para>
+    </summary>
+  </member>
+  <member name="MSHLFLAGS.MSHLFLAGS_TABLESTRONG">
+    <summary>
+      <para>The marshaling is occurring because the data packet is to be stored in a globally accessible table from which it can be unmarshaled one or more times, or not at all. The presence of the data packet in the table counts as a strong reference to the interface being marshaled, meaning that it is sufficient to keep the object alive. When the data packet is removed from the table, the table implementer must call the <see cref="CoReleaseMarshalData" /> function on the data packet.</para>
+      <para>MSHLFLAGS_TABLESTRONG is used by the <see cref="RegisterDragDrop" /> function when registering a window as a drop target. This keeps the window registered as a drop target no matter how many times the end user drags across the window. The <see cref="RevokeDragDrop" /> function calls <see cref="CoReleaseMarshalData" />.</para>
+    </summary>
+  </member>
+  <member name="MSHLFLAGS.MSHLFLAGS_TABLEWEAK">
+    <summary>
+      <para>The marshaling is occurring because the data packet is to be stored in a globally accessible table from which it can be unmarshaled one or more times, or not at all. However, the presence of the data packet in the table acts as a weak reference to the interface being marshaled, meaning that it is not sufficient to keep the object alive. When the data packet is removed from the table, the table implementer must call the <see cref="CoReleaseMarshalData" /> function on the data packet.</para>
+      <para>MSHLFLAGS_TABLEWEAK is typically used when registering an object in the running object table (ROT). This prevents the object's entry in the ROT from keeping the object alive in the absence of any other connections. See <see cref="IRunningObjectTable.Register" /> for more information.</para>
+    </summary>
+  </member>
+  <member name="MSHLFLAGS.MSHLFLAGS_NOPING">
+    <summary>
+      <para>Adding this flag to an original object marshaling (as opposed to marshaling a proxy) will disable the ping protocol for that object.</para>
+    </summary>
+  </member>
+  <member name="MSHLFLAGS.MSHLFLAGS_RESERVED1">
+    <summary></summary>
+  </member>
+  <member name="MSHLFLAGS.MSHLFLAGS_RESERVED2">
+    <summary></summary>
+  </member>
+  <member name="MSHLFLAGS.MSHLFLAGS_RESERVED3">
+    <summary></summary>
+  </member>
+  <member name="MSHLFLAGS.MSHLFLAGS_RESERVED4">
+    <summary></summary>
+  </member>
+</doc>

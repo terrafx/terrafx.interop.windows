@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TCPIP_OWNER_MODULE_INFO_CLASS.xml' path='doc/member[@name="TCPIP_OWNER_MODULE_INFO_CLASS"]/*' />
 public enum TCPIP_OWNER_MODULE_INFO_CLASS
 {
+    /// <include file='TCPIP_OWNER_MODULE_INFO_CLASS.xml' path='doc/member[@name="TCPIP_OWNER_MODULE_INFO_CLASS.TCPIP_OWNER_MODULE_INFO_BASIC"]/*' />
     TCPIP_OWNER_MODULE_INFO_BASIC,
 }

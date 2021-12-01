@@ -9,14 +9,18 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MIB_TCP6TABLE.xml' path='doc/member[@name="MIB_TCP6TABLE"]/*' />
 public partial struct MIB_TCP6TABLE
 {
+    /// <include file='MIB_TCP6TABLE.xml' path='doc/member[@name="MIB_TCP6TABLE.dwNumEntries"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwNumEntries;
 
+    /// <include file='MIB_TCP6TABLE.xml' path='doc/member[@name="MIB_TCP6TABLE.table"]/*' />
     [NativeTypeName("MIB_TCP6ROW [1]")]
     public _table_e__FixedBuffer table;
 
+    /// <include file='_table_e__FixedBuffer.xml' path='doc/member[@name="_table_e__FixedBuffer"]/*' />
     public partial struct _table_e__FixedBuffer
     {
         public MIB_TCP6ROW e0;

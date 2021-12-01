@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_XML_BOOL_TEXT">
+    <summary>
+      <para>A Boolean value that represents the text "true" or "false".</para>
+    </summary>
+  </member>
+  <member name="WS_XML_BOOL_TEXT.text">
+    <summary>
+      <para>The base type for all types that derive from <see cref="WS_XML_TEXT" />.</para>
+    </summary>
+  </member>
+  <member name="WS_XML_BOOL_TEXT.value">
+    <summary>
+      <para>The Boolean value.  0 represents the text "false", while 1 represents the text "true".</para>
+    </summary>
+  </member>
+</doc>

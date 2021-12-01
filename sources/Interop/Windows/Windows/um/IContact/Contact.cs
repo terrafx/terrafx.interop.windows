@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='Contact.xml' path='doc/member[@name="Contact"]/*' />
 [Guid("61B68808-8EEE-4FD1-ACB8-3D804C8DB056")]
 public partial struct Contact
 {

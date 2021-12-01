@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='AppPolicyThreadInitializationType.xml' path='doc/member[@name="AppPolicyThreadInitializationType"]/*' />
 public enum AppPolicyThreadInitializationType
 {
+    /// <include file='AppPolicyThreadInitializationType.xml' path='doc/member[@name="AppPolicyThreadInitializationType.AppPolicyThreadInitializationType_None"]/*' />
     AppPolicyThreadInitializationType_None = 0,
+
+    /// <include file='AppPolicyThreadInitializationType.xml' path='doc/member[@name="AppPolicyThreadInitializationType.AppPolicyThreadInitializationType_InitializeWinRT"]/*' />
     AppPolicyThreadInitializationType_InitializeWinRT = 1,
 }

@@ -7,8 +7,10 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PSS_VA_CLONE_INFORMATION.xml' path='doc/member[@name="PSS_VA_CLONE_INFORMATION"]/*' />
 [SupportedOSPlatform("windows8.1")]
 public partial struct PSS_VA_CLONE_INFORMATION
 {
+    /// <include file='PSS_VA_CLONE_INFORMATION.xml' path='doc/member[@name="PSS_VA_CLONE_INFORMATION.VaCloneHandle"]/*' />
     public HANDLE VaCloneHandle;
 }

@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MIMEASSOCIATIONDIALOG_IN_FLAGS.xml' path='doc/member[@name="MIMEASSOCIATIONDIALOG_IN_FLAGS"]/*' />
 public enum MIMEASSOCIATIONDIALOG_IN_FLAGS
 {
+    /// <include file='MIMEASSOCIATIONDIALOG_IN_FLAGS.xml' path='doc/member[@name="MIMEASSOCIATIONDIALOG_IN_FLAGS.MIMEASSOCDLG_FL_REGISTER_ASSOC"]/*' />
     MIMEASSOCDLG_FL_REGISTER_ASSOC = 0x0001,
 }

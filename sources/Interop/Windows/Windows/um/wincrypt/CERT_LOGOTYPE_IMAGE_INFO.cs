@@ -8,29 +8,38 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CERT_LOGOTYPE_IMAGE_INFO.xml' path='doc/member[@name="CERT_LOGOTYPE_IMAGE_INFO"]/*' />
 public unsafe partial struct CERT_LOGOTYPE_IMAGE_INFO
 {
+    /// <include file='CERT_LOGOTYPE_IMAGE_INFO.xml' path='doc/member[@name="CERT_LOGOTYPE_IMAGE_INFO.dwLogotypeImageInfoChoice"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwLogotypeImageInfoChoice;
 
+    /// <include file='CERT_LOGOTYPE_IMAGE_INFO.xml' path='doc/member[@name="CERT_LOGOTYPE_IMAGE_INFO.dwFileSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFileSize;
 
+    /// <include file='CERT_LOGOTYPE_IMAGE_INFO.xml' path='doc/member[@name="CERT_LOGOTYPE_IMAGE_INFO.dwXSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwXSize;
 
+    /// <include file='CERT_LOGOTYPE_IMAGE_INFO.xml' path='doc/member[@name="CERT_LOGOTYPE_IMAGE_INFO.dwYSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwYSize;
 
+    /// <include file='CERT_LOGOTYPE_IMAGE_INFO.xml' path='doc/member[@name="CERT_LOGOTYPE_IMAGE_INFO.dwLogotypeImageResolutionChoice"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwLogotypeImageResolutionChoice;
 
+    /// <include file='CERT_LOGOTYPE_IMAGE_INFO.xml' path='doc/member[@name="CERT_LOGOTYPE_IMAGE_INFO.Anonymous"]/*' />
     [NativeTypeName("_CERT_LOGOTYPE_IMAGE_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/wincrypt.h:5456:5)")]
     public _Anonymous_e__Union Anonymous;
 
+    /// <include file='CERT_LOGOTYPE_IMAGE_INFO.xml' path='doc/member[@name="CERT_LOGOTYPE_IMAGE_INFO.pwszLanguage"]/*' />
     [NativeTypeName("LPWSTR")]
     public ushort* pwszLanguage;
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.dwNumBits"]/*' />
     public ref uint dwNumBits
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -40,6 +49,7 @@ public unsafe partial struct CERT_LOGOTYPE_IMAGE_INFO
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.dwTableSize"]/*' />
     public ref uint dwTableSize
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -49,13 +59,16 @@ public unsafe partial struct CERT_LOGOTYPE_IMAGE_INFO
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public partial struct _Anonymous_e__Union
     {
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.dwNumBits"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("DWORD")]
         public uint dwNumBits;
 
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.dwTableSize"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("DWORD")]
         public uint dwTableSize;

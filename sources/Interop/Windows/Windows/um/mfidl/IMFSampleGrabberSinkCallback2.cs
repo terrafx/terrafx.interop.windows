@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFSampleGrabberSinkCallback2.xml' path='doc/member[@name="IMFSampleGrabberSinkCallback2"]/*' />
 [Guid("CA86AA50-C46E-429E-AB27-16D6AC6844CB")]
 [NativeTypeName("struct IMFSampleGrabberSinkCallback2 : IMFSampleGrabberSinkCallback")]
 [NativeInheritance("IMFSampleGrabberSinkCallback")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMFSampleGrabberSinkCallback2 : IMFSampleGrabberSin
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMFSampleGrabberSinkCallback2 : IMFSampleGrabberSin
         return ((delegate* unmanaged<IMFSampleGrabberSinkCallback2*, Guid*, void**, int>)(lpVtbl[0]))((IMFSampleGrabberSinkCallback2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMFSampleGrabberSinkCallback2 : IMFSampleGrabberSin
         return ((delegate* unmanaged<IMFSampleGrabberSinkCallback2*, uint>)(lpVtbl[1]))((IMFSampleGrabberSinkCallback2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMFSampleGrabberSinkCallback2 : IMFSampleGrabberSin
         return ((delegate* unmanaged<IMFSampleGrabberSinkCallback2*, uint>)(lpVtbl[2]))((IMFSampleGrabberSinkCallback2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IMFClockStateSink.OnClockStart" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT OnClockStart([NativeTypeName("MFTIME")] long hnsSystemTime, [NativeTypeName("LONGLONG")] long llClockStartOffset)
@@ -46,6 +51,7 @@ public unsafe partial struct IMFSampleGrabberSinkCallback2 : IMFSampleGrabberSin
         return ((delegate* unmanaged<IMFSampleGrabberSinkCallback2*, long, long, int>)(lpVtbl[3]))((IMFSampleGrabberSinkCallback2*)Unsafe.AsPointer(ref this), hnsSystemTime, llClockStartOffset);
     }
 
+    /// <inheritdoc cref="IMFClockStateSink.OnClockStop" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT OnClockStop([NativeTypeName("MFTIME")] long hnsSystemTime)
@@ -53,6 +59,7 @@ public unsafe partial struct IMFSampleGrabberSinkCallback2 : IMFSampleGrabberSin
         return ((delegate* unmanaged<IMFSampleGrabberSinkCallback2*, long, int>)(lpVtbl[4]))((IMFSampleGrabberSinkCallback2*)Unsafe.AsPointer(ref this), hnsSystemTime);
     }
 
+    /// <inheritdoc cref="IMFClockStateSink.OnClockPause" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT OnClockPause([NativeTypeName("MFTIME")] long hnsSystemTime)
@@ -60,6 +67,7 @@ public unsafe partial struct IMFSampleGrabberSinkCallback2 : IMFSampleGrabberSin
         return ((delegate* unmanaged<IMFSampleGrabberSinkCallback2*, long, int>)(lpVtbl[5]))((IMFSampleGrabberSinkCallback2*)Unsafe.AsPointer(ref this), hnsSystemTime);
     }
 
+    /// <inheritdoc cref="IMFClockStateSink.OnClockRestart" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT OnClockRestart([NativeTypeName("MFTIME")] long hnsSystemTime)
@@ -67,6 +75,7 @@ public unsafe partial struct IMFSampleGrabberSinkCallback2 : IMFSampleGrabberSin
         return ((delegate* unmanaged<IMFSampleGrabberSinkCallback2*, long, int>)(lpVtbl[6]))((IMFSampleGrabberSinkCallback2*)Unsafe.AsPointer(ref this), hnsSystemTime);
     }
 
+    /// <inheritdoc cref="IMFClockStateSink.OnClockSetRate" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT OnClockSetRate([NativeTypeName("MFTIME")] long hnsSystemTime, float flRate)
@@ -74,6 +83,7 @@ public unsafe partial struct IMFSampleGrabberSinkCallback2 : IMFSampleGrabberSin
         return ((delegate* unmanaged<IMFSampleGrabberSinkCallback2*, long, float, int>)(lpVtbl[7]))((IMFSampleGrabberSinkCallback2*)Unsafe.AsPointer(ref this), hnsSystemTime, flRate);
     }
 
+    /// <inheritdoc cref="IMFSampleGrabberSinkCallback.OnSetPresentationClock" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT OnSetPresentationClock(IMFPresentationClock* pPresentationClock)
@@ -81,6 +91,7 @@ public unsafe partial struct IMFSampleGrabberSinkCallback2 : IMFSampleGrabberSin
         return ((delegate* unmanaged<IMFSampleGrabberSinkCallback2*, IMFPresentationClock*, int>)(lpVtbl[8]))((IMFSampleGrabberSinkCallback2*)Unsafe.AsPointer(ref this), pPresentationClock);
     }
 
+    /// <inheritdoc cref="IMFSampleGrabberSinkCallback.OnProcessSample" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT OnProcessSample([NativeTypeName("const GUID &")] Guid* guidMajorMediaType, [NativeTypeName("DWORD")] uint dwSampleFlags, [NativeTypeName("LONGLONG")] long llSampleTime, [NativeTypeName("LONGLONG")] long llSampleDuration, [NativeTypeName("const BYTE *")] byte* pSampleBuffer, [NativeTypeName("DWORD")] uint dwSampleSize)
@@ -88,6 +99,7 @@ public unsafe partial struct IMFSampleGrabberSinkCallback2 : IMFSampleGrabberSin
         return ((delegate* unmanaged<IMFSampleGrabberSinkCallback2*, Guid*, uint, long, long, byte*, uint, int>)(lpVtbl[9]))((IMFSampleGrabberSinkCallback2*)Unsafe.AsPointer(ref this), guidMajorMediaType, dwSampleFlags, llSampleTime, llSampleDuration, pSampleBuffer, dwSampleSize);
     }
 
+    /// <inheritdoc cref="IMFSampleGrabberSinkCallback.OnShutdown" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT OnShutdown()
@@ -95,6 +107,7 @@ public unsafe partial struct IMFSampleGrabberSinkCallback2 : IMFSampleGrabberSin
         return ((delegate* unmanaged<IMFSampleGrabberSinkCallback2*, int>)(lpVtbl[10]))((IMFSampleGrabberSinkCallback2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFSampleGrabberSinkCallback2.xml' path='doc/member[@name="IMFSampleGrabberSinkCallback2.OnProcessSampleEx"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT OnProcessSampleEx([NativeTypeName("const GUID &")] Guid* guidMajorMediaType, [NativeTypeName("DWORD")] uint dwSampleFlags, [NativeTypeName("LONGLONG")] long llSampleTime, [NativeTypeName("LONGLONG")] long llSampleDuration, [NativeTypeName("const BYTE *")] byte* pSampleBuffer, [NativeTypeName("DWORD")] uint dwSampleSize, IMFAttributes* pAttributes)

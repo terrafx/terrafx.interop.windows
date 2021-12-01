@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IUIAnimationVariableChangeHandler2.xml' path='doc/member[@name="IUIAnimationVariableChangeHandler2"]/*' />
 [Guid("63ACC8D2-6EAE-4BB0-B879-586DD8CFBE42")]
 [NativeTypeName("struct IUIAnimationVariableChangeHandler2 : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IUIAnimationVariableChangeHandler2 : IUIAnimationVa
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IUIAnimationVariableChangeHandler2 : IUIAnimationVa
         return ((delegate* unmanaged<IUIAnimationVariableChangeHandler2*, Guid*, void**, int>)(lpVtbl[0]))((IUIAnimationVariableChangeHandler2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IUIAnimationVariableChangeHandler2 : IUIAnimationVa
         return ((delegate* unmanaged<IUIAnimationVariableChangeHandler2*, uint>)(lpVtbl[1]))((IUIAnimationVariableChangeHandler2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IUIAnimationVariableChangeHandler2 : IUIAnimationVa
         return ((delegate* unmanaged<IUIAnimationVariableChangeHandler2*, uint>)(lpVtbl[2]))((IUIAnimationVariableChangeHandler2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IUIAnimationVariableChangeHandler2.xml' path='doc/member[@name="IUIAnimationVariableChangeHandler2.OnValueChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT OnValueChanged(IUIAnimationStoryboard2* storyboard, IUIAnimationVariable2* variable, double* newValue, double* previousValue, uint cDimension)

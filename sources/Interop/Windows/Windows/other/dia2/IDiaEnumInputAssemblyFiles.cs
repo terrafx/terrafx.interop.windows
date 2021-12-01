@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IDiaEnumInputAssemblyFiles.xml' path='doc/member[@name="IDiaEnumInputAssemblyFiles"]/*' />
 [Guid("1C7FF653-51F7-457E-8419-B20F57EF7E4D")]
 [NativeTypeName("struct IDiaEnumInputAssemblyFiles : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IDiaEnumInputAssemblyFiles : IDiaEnumInputAssemblyF
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IDiaEnumInputAssemblyFiles : IDiaEnumInputAssemblyF
         return ((delegate* unmanaged<IDiaEnumInputAssemblyFiles*, Guid*, void**, int>)(lpVtbl[0]))((IDiaEnumInputAssemblyFiles*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IDiaEnumInputAssemblyFiles : IDiaEnumInputAssemblyF
         return ((delegate* unmanaged<IDiaEnumInputAssemblyFiles*, uint>)(lpVtbl[1]))((IDiaEnumInputAssemblyFiles*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IDiaEnumInputAssemblyFiles : IDiaEnumInputAssemblyF
         return ((delegate* unmanaged<IDiaEnumInputAssemblyFiles*, uint>)(lpVtbl[2]))((IDiaEnumInputAssemblyFiles*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDiaEnumInputAssemblyFiles.xml' path='doc/member[@name="IDiaEnumInputAssemblyFiles.get__NewEnum"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT get__NewEnum(IUnknown** pRetVal)
@@ -46,6 +51,7 @@ public unsafe partial struct IDiaEnumInputAssemblyFiles : IDiaEnumInputAssemblyF
         return ((delegate* unmanaged<IDiaEnumInputAssemblyFiles*, IUnknown**, int>)(lpVtbl[3]))((IDiaEnumInputAssemblyFiles*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
+    /// <include file='IDiaEnumInputAssemblyFiles.xml' path='doc/member[@name="IDiaEnumInputAssemblyFiles.get_Count"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT get_Count([NativeTypeName("LONG *")] int* pRetVal)
@@ -53,6 +59,7 @@ public unsafe partial struct IDiaEnumInputAssemblyFiles : IDiaEnumInputAssemblyF
         return ((delegate* unmanaged<IDiaEnumInputAssemblyFiles*, int*, int>)(lpVtbl[4]))((IDiaEnumInputAssemblyFiles*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
+    /// <include file='IDiaEnumInputAssemblyFiles.xml' path='doc/member[@name="IDiaEnumInputAssemblyFiles.Item"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT Item([NativeTypeName("DWORD")] uint index, IDiaInputAssemblyFile** file)
@@ -60,6 +67,7 @@ public unsafe partial struct IDiaEnumInputAssemblyFiles : IDiaEnumInputAssemblyF
         return ((delegate* unmanaged<IDiaEnumInputAssemblyFiles*, uint, IDiaInputAssemblyFile**, int>)(lpVtbl[5]))((IDiaEnumInputAssemblyFiles*)Unsafe.AsPointer(ref this), index, file);
     }
 
+    /// <include file='IDiaEnumInputAssemblyFiles.xml' path='doc/member[@name="IDiaEnumInputAssemblyFiles.Next"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Next([NativeTypeName("ULONG")] uint celt, IDiaInputAssemblyFile** rgelt, [NativeTypeName("ULONG *")] uint* pceltFetched)
@@ -67,6 +75,7 @@ public unsafe partial struct IDiaEnumInputAssemblyFiles : IDiaEnumInputAssemblyF
         return ((delegate* unmanaged<IDiaEnumInputAssemblyFiles*, uint, IDiaInputAssemblyFile**, uint*, int>)(lpVtbl[6]))((IDiaEnumInputAssemblyFiles*)Unsafe.AsPointer(ref this), celt, rgelt, pceltFetched);
     }
 
+    /// <include file='IDiaEnumInputAssemblyFiles.xml' path='doc/member[@name="IDiaEnumInputAssemblyFiles.Skip"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT Skip([NativeTypeName("ULONG")] uint celt)
@@ -74,6 +83,7 @@ public unsafe partial struct IDiaEnumInputAssemblyFiles : IDiaEnumInputAssemblyF
         return ((delegate* unmanaged<IDiaEnumInputAssemblyFiles*, uint, int>)(lpVtbl[7]))((IDiaEnumInputAssemblyFiles*)Unsafe.AsPointer(ref this), celt);
     }
 
+    /// <include file='IDiaEnumInputAssemblyFiles.xml' path='doc/member[@name="IDiaEnumInputAssemblyFiles.Reset"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT Reset()
@@ -81,6 +91,7 @@ public unsafe partial struct IDiaEnumInputAssemblyFiles : IDiaEnumInputAssemblyF
         return ((delegate* unmanaged<IDiaEnumInputAssemblyFiles*, int>)(lpVtbl[8]))((IDiaEnumInputAssemblyFiles*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDiaEnumInputAssemblyFiles.xml' path='doc/member[@name="IDiaEnumInputAssemblyFiles.Clone"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT Clone(IDiaEnumInputAssemblyFiles** ppenum)

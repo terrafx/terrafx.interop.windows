@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="Windows.MFCreateSinkWriterFromMediaSink">
+    <summary>
+      <para>Creates the sink writer from a media sink.</para>
+    </summary>
+    <param name="pMediaSink">
+      <para>Pointer to the <see cref="IMFMediaSink" /> interface of a media sink.</para>
+    </param>
+    <param name="pAttributes">
+      <para>Pointer to the <see cref="IMFAttributes" /> interface. You can use this parameter to configure the sink writer. For more information, see <a href="https://docs.microsoft.com//windows/desktop/medfound/sink-writer-attributes">Sink Writer Attributes</a>. This parameter can be <b>NULL</b>.</para>
+    </param>
+    <param name="ppSinkWriter">
+      <para>Receives a pointer to the <see cref="IMFSinkWriter" /> interface. The caller must release the interface.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Call <b>CoInitialize(Ex)</b> and <see cref="MFStartup" /> before calling this function.</para>
+      <para>When you are done using the media sink, call the media sink's <see cref="IMFMediaSink.Shutdown" /> method. (The sink writer does not shut down the media sink.) Release the sink writer before calling <b>Shutdown</b> on the media sink.</para>
+      <para>This function is available on Windows Vista if Platform Update Supplement for Windows Vista is installed.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-functions">Media Foundation Functions</seealso>
+  </member>
+  <member name="Windows.MFCreateSinkWriterFromURL">
+    <summary>
+      <para>Creates the sink writer from a URL or byte stream.</para>
+    </summary>
+    <param name="pwszOutputURL">
+      <para>A null-terminated string that contains the URL of the output file. This parameter can be <b>NULL</b>.</para>
+    </param>
+    <param name="pByteStream">
+      <para>Pointer to the <see cref="IMFByteStream" /> interface of a byte stream. This parameter can be <b>NULL</b>.</para>
+      <para>If this parameter is a valid pointer, the sink writer writes to the provided byte stream. (The byte stream must be writable.) Otherwise, if <i>pByteStream</i> is <b>NULL</b>, the sink writer creates a new file named <i>pwszOutputURL</i>.</para>
+    </param>
+    <param name="pAttributes">
+      <para>Pointer to the <see cref="IMFAttributes" /> interface. You can use this parameter to configure the sink writer. For more information, see <a href="https://docs.microsoft.com//windows/desktop/medfound/sink-writer-attributes">Sink Writer Attributes</a>. This parameter can be <b>NULL</b>.</para>
+    </param>
+    <param name="ppSinkWriter">
+      <para>Receives a pointer to the <see cref="IMFSinkWriter" /> interface. The caller must release the interface.</para>
+    </param>
+    <returns>
+      <para>This function can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>MF_E_NOT_FOUND</b>
+            </para>
+          </description>
+          <description>
+            <para>The specified URL was not found.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Call <b>CoInitialize(Ex)</b> and <see cref="MFStartup" /> before calling this function.</para>
+      <para>The first three parameters to this function can be <b>NULL</b>; however, only certain combinations are valid:</para>
+      <list type="table">
+        <listheader>
+          <description>Description</description>
+          <description>
+            <i>pwszOutputURL</i>
+          </description>
+          <description>
+            <i>pByteStream</i>
+          </description>
+          <description>
+            <i>pAttributes</i>
+          </description>
+        </listheader>
+        <item>
+          <description>Specify a byte stream, with no URL.</description>
+          <description>
+            <b>NULL</b>
+          </description>
+          <description>non-<b>NULL</b></description>
+          <description>Required (must not be <b>NULL</b>).</description>
+        </item>
+        <item>
+          <description>Specify a URL, with no byte stream.</description>
+          <description>not <b>NULL</b></description>
+          <description>
+            <b>NULL</b>
+          </description>
+          <description>Optional (may be <b>NULL</b>).</description>
+        </item>
+        <item>
+          <description>Specify both a URL and a byte stream.</description>
+          <description>non-<b>NULL</b></description>
+          <description>non-<b>NULL</b></description>
+          <description>Optional (may be <b>NULL</b>).</description>
+        </item>
+      </list>
+      <para>The <i>pAttributes</i> parameter is required in the first case and optional in the others.</para>
+      <list type="bullet">
+        <item>
+          <description>Case 1: Specify a byte stream without a URL. The <i>pAttributes</i> parameter must point to an attribute store that contains the <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-transcode-containertype">MF_TRANSCODE_CONTAINERTYPE</a> attribute. The sink writer uses the  MF_TRANSCODE_CONTAINERTYPE attribute to determine the type of file container to write, such as ASF or MP4.</description>
+        </item>
+        <item>
+          <description>Case 2: Specify a URL without a byte stream. The sink writer creates a new file named <i>pwszOutputURL</i>. If <i>pAttributes</i> specifies an attribute store with the <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-transcode-containertype">MF_TRANSCODE_CONTAINERTYPE</a> attribute, the sink writer uses that attribute to determine the type of file container. Otherwise, if the MF_TRANSCODE_CONTAINERTYPE attribute is absent or <i>pAttributes</i> is <b>NULL</b>, the sink writer uses the file name extension to select the container type; for example, ".asf" for an ASF file.</description>
+        </item>
+        <item>
+          <description>Case 3: Specify both a URL and a byte stream. The sink writer writes to the byte stream. The URL provided in <i>pwszOutputURL</i> is informational only; the sink writer does not create a new file. If <i>pAttributes</i> specifies an attribute store with the <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-transcode-containertype">MF_TRANSCODE_CONTAINERTYPE</a> attribute, the sink writer uses that attribute to determine the type of file container. Otherwise, the sink writer uses the file name extension to select the container type. The MF_TRANSCODE_CONTAINERTYPE attribute overrides the URL file name extension in this case.</description>
+        </item>
+      </list>
+      <para>This function is available on Windows Vista if Platform Update Supplement for Windows Vista is installed.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-functions">Media Foundation Functions</seealso>
+  </member>
+  <member name="Windows.MFCreateSourceReaderFromByteStream">
+    <summary>
+      <para>Creates the source reader from a byte stream.</para>
+    </summary>
+    <param name="pByteStream">
+      <para>A pointer to the <see cref="IMFByteStream" /> interface of a byte stream. This byte stream will provide the source data for the source reader.</para>
+    </param>
+    <param name="pAttributes">
+      <para>Pointer to the <see cref="IMFAttributes" /> interface. You can use this parameter to configure the source reader. For more information, see <a href="https://docs.microsoft.com//windows/desktop/medfound/source-reader-attributes">Source Reader Attributes</a>. This parameter can be <b>NULL</b>.</para>
+    </param>
+    <param name="ppSourceReader">
+      <para>Receives a pointer to the <see cref="IMFSourceReader" /> interface. The caller must release the interface.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Call <b>CoInitialize(Ex)</b> and <see cref="MFStartup" /> before calling this function.</para>
+      <para>Internally, the source reader calls the <see cref="IMFSourceResolver.CreateObjectFromByteStream" /> method to create a media source from the byte stream. Therefore, a byte-stream handler must be registered for the byte stream. For more information about byte-stream handlers, see <a href="https://docs.microsoft.com//windows/desktop/medfound/scheme-handlers-and-byte-stream-handlers">Scheme Handlers and Byte-Stream Handlers</a>.</para>
+      <para>This function is available on Windows Vista if Platform Update Supplement for Windows Vista is installed.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-functions">Media Foundation Functions</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/source-reader">Source Reader</seealso>
+  </member>
+  <member name="Windows.MFCreateSourceReaderFromURL">
+    <summary>
+      <para>Creates the source reader from a URL.</para>
+    </summary>
+    <param name="pwszURL">
+      <para>The URL  of a media file to open.</para>
+    </param>
+    <param name="pAttributes">
+      <para>Pointer to the <see cref="IMFAttributes" /> interface. You can use this parameter to configure the source reader. For more information, see <a href="https://docs.microsoft.com//windows/desktop/medfound/source-reader-attributes">Source Reader Attributes</a>. This parameter can be <b>NULL</b>.</para>
+    </param>
+    <param name="ppSourceReader">
+      <para>Receives a pointer to the <see cref="IMFSourceReader" /> interface. The caller must release the interface.</para>
+    </param>
+    <returns>
+      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Call <b>CoInitialize(Ex)</b> and <see cref="MFStartup" /> before calling this function.</para>
+      <para>Internally, the source reader calls the <see cref="IMFSourceResolver.CreateObjectFromURL" /> method to create a media source from the URL.</para>
+      <para>This function is available on Windows Vista if Platform Update Supplement for Windows Vista is installed.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-functions">Media Foundation Functions</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/source-reader">Source Reader</seealso>
+  </member>
+</doc>

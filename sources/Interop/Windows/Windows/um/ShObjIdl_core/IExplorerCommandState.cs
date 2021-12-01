@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IExplorerCommandState.xml' path='doc/member[@name="IExplorerCommandState"]/*' />
 [Guid("BDDACB60-7657-47AE-8445-D23E1ACF82AE")]
 [NativeTypeName("struct IExplorerCommandState : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IExplorerCommandState : IExplorerCommandState.Inter
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IExplorerCommandState : IExplorerCommandState.Inter
         return ((delegate* unmanaged<IExplorerCommandState*, Guid*, void**, int>)(lpVtbl[0]))((IExplorerCommandState*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IExplorerCommandState : IExplorerCommandState.Inter
         return ((delegate* unmanaged<IExplorerCommandState*, uint>)(lpVtbl[1]))((IExplorerCommandState*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IExplorerCommandState : IExplorerCommandState.Inter
         return ((delegate* unmanaged<IExplorerCommandState*, uint>)(lpVtbl[2]))((IExplorerCommandState*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IExplorerCommandState.xml' path='doc/member[@name="IExplorerCommandState.GetState"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetState(IShellItemArray* psiItemArray, BOOL fOkToBeSlow, [NativeTypeName("EXPCMDSTATE *")] uint* pCmdState)

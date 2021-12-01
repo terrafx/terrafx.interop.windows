@@ -5,20 +5,26 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CMC_ADD_EXTENSIONS_INFO.xml' path='doc/member[@name="CMC_ADD_EXTENSIONS_INFO"]/*' />
 public unsafe partial struct CMC_ADD_EXTENSIONS_INFO
 {
+    /// <include file='CMC_ADD_EXTENSIONS_INFO.xml' path='doc/member[@name="CMC_ADD_EXTENSIONS_INFO.dwCmcDataReference"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwCmcDataReference;
 
+    /// <include file='CMC_ADD_EXTENSIONS_INFO.xml' path='doc/member[@name="CMC_ADD_EXTENSIONS_INFO.cCertReference"]/*' />
     [NativeTypeName("DWORD")]
     public uint cCertReference;
 
+    /// <include file='CMC_ADD_EXTENSIONS_INFO.xml' path='doc/member[@name="CMC_ADD_EXTENSIONS_INFO.rgdwCertReference"]/*' />
     [NativeTypeName("DWORD *")]
     public uint* rgdwCertReference;
 
+    /// <include file='CMC_ADD_EXTENSIONS_INFO.xml' path='doc/member[@name="CMC_ADD_EXTENSIONS_INFO.cExtension"]/*' />
     [NativeTypeName("DWORD")]
     public uint cExtension;
 
+    /// <include file='CMC_ADD_EXTENSIONS_INFO.xml' path='doc/member[@name="CMC_ADD_EXTENSIONS_INFO.rgExtension"]/*' />
     [NativeTypeName("PCERT_EXTENSION")]
     public CERT_EXTENSION* rgExtension;
 }

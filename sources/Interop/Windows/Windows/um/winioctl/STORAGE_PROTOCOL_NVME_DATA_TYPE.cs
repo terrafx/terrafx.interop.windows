@@ -7,11 +7,19 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STORAGE_PROTOCOL_NVME_DATA_TYPE.xml' path='doc/member[@name="STORAGE_PROTOCOL_NVME_DATA_TYPE"]/*' />
 [SupportedOSPlatform("windows10.0")]
 public enum STORAGE_PROTOCOL_NVME_DATA_TYPE
 {
+    /// <include file='STORAGE_PROTOCOL_NVME_DATA_TYPE.xml' path='doc/member[@name="STORAGE_PROTOCOL_NVME_DATA_TYPE.NVMeDataTypeUnknown"]/*' />
     NVMeDataTypeUnknown = 0,
+
+    /// <include file='STORAGE_PROTOCOL_NVME_DATA_TYPE.xml' path='doc/member[@name="STORAGE_PROTOCOL_NVME_DATA_TYPE.NVMeDataTypeIdentify"]/*' />
     NVMeDataTypeIdentify,
+
+    /// <include file='STORAGE_PROTOCOL_NVME_DATA_TYPE.xml' path='doc/member[@name="STORAGE_PROTOCOL_NVME_DATA_TYPE.NVMeDataTypeLogPage"]/*' />
     NVMeDataTypeLogPage,
+
+    /// <include file='STORAGE_PROTOCOL_NVME_DATA_TYPE.xml' path='doc/member[@name="STORAGE_PROTOCOL_NVME_DATA_TYPE.NVMeDataTypeFeature"]/*' />
     NVMeDataTypeFeature,
 }

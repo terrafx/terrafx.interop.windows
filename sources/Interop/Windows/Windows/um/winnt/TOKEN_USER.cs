@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TOKEN_USER.xml' path='doc/member[@name="TOKEN_USER"]/*' />
 public partial struct TOKEN_USER
 {
+    /// <include file='TOKEN_USER.xml' path='doc/member[@name="TOKEN_USER.User"]/*' />
     public SID_AND_ATTRIBUTES User;
 }

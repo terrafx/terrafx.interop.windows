@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class Windows
 {
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.HRESULT_FROM_WIN32"]/*' />
     public static HRESULT HRESULT_FROM_WIN32([NativeTypeName("unsigned long")] uint x)
     {
         return (HRESULT)(x) <= 0 ? (HRESULT)(x) : (HRESULT)(((x) & 0x0000FFFF) | (7 << 16) | 0x80000000);

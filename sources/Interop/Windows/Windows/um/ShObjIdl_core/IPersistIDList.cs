@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IPersistIDList.xml' path='doc/member[@name="IPersistIDList"]/*' />
 [Guid("1079ACFC-29BD-11D3-8E0D-00C04F6837D5")]
 [NativeTypeName("struct IPersistIDList : IPersist")]
 [NativeInheritance("IPersist")]
@@ -16,6 +17,7 @@ public unsafe partial struct IPersistIDList : IPersistIDList.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IPersistIDList : IPersistIDList.Interface
         return ((delegate* unmanaged<IPersistIDList*, Guid*, void**, int>)(lpVtbl[0]))((IPersistIDList*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IPersistIDList : IPersistIDList.Interface
         return ((delegate* unmanaged<IPersistIDList*, uint>)(lpVtbl[1]))((IPersistIDList*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IPersistIDList : IPersistIDList.Interface
         return ((delegate* unmanaged<IPersistIDList*, uint>)(lpVtbl[2]))((IPersistIDList*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IPersist.GetClassID" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetClassID([NativeTypeName("CLSID *")] Guid* pClassID)
@@ -46,6 +51,7 @@ public unsafe partial struct IPersistIDList : IPersistIDList.Interface
         return ((delegate* unmanaged<IPersistIDList*, Guid*, int>)(lpVtbl[3]))((IPersistIDList*)Unsafe.AsPointer(ref this), pClassID);
     }
 
+    /// <include file='IPersistIDList.xml' path='doc/member[@name="IPersistIDList.SetIDList"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetIDList([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl)
@@ -53,6 +59,7 @@ public unsafe partial struct IPersistIDList : IPersistIDList.Interface
         return ((delegate* unmanaged<IPersistIDList*, ITEMIDLIST*, int>)(lpVtbl[4]))((IPersistIDList*)Unsafe.AsPointer(ref this), pidl);
     }
 
+    /// <include file='IPersistIDList.xml' path='doc/member[@name="IPersistIDList.GetIDList"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDList([NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidl)

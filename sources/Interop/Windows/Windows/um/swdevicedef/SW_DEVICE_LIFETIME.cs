@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SW_DEVICE_LIFETIME.xml' path='doc/member[@name="SW_DEVICE_LIFETIME"]/*' />
 public enum SW_DEVICE_LIFETIME
 {
+    /// <include file='SW_DEVICE_LIFETIME.xml' path='doc/member[@name="SW_DEVICE_LIFETIME.SWDeviceLifetimeHandle"]/*' />
     SWDeviceLifetimeHandle,
+
+    /// <include file='SW_DEVICE_LIFETIME.xml' path='doc/member[@name="SW_DEVICE_LIFETIME.SWDeviceLifetimeParentPresent"]/*' />
     SWDeviceLifetimeParentPresent,
+
+    /// <include file='SW_DEVICE_LIFETIME.xml' path='doc/member[@name="SW_DEVICE_LIFETIME.SWDeviceLifetimeMax"]/*' />
     SWDeviceLifetimeMax,
 }

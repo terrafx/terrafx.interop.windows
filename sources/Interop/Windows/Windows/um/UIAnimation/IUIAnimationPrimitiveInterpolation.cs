@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IUIAnimationPrimitiveInterpolation.xml' path='doc/member[@name="IUIAnimationPrimitiveInterpolation"]/*' />
 [Guid("BAB20D63-4361-45DA-A24F-AB8508846B5B")]
 [NativeTypeName("struct IUIAnimationPrimitiveInterpolation : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IUIAnimationPrimitiveInterpolation : IUIAnimationPr
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IUIAnimationPrimitiveInterpolation : IUIAnimationPr
         return ((delegate* unmanaged<IUIAnimationPrimitiveInterpolation*, Guid*, void**, int>)(lpVtbl[0]))((IUIAnimationPrimitiveInterpolation*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IUIAnimationPrimitiveInterpolation : IUIAnimationPr
         return ((delegate* unmanaged<IUIAnimationPrimitiveInterpolation*, uint>)(lpVtbl[1]))((IUIAnimationPrimitiveInterpolation*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IUIAnimationPrimitiveInterpolation : IUIAnimationPr
         return ((delegate* unmanaged<IUIAnimationPrimitiveInterpolation*, uint>)(lpVtbl[2]))((IUIAnimationPrimitiveInterpolation*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IUIAnimationPrimitiveInterpolation.xml' path='doc/member[@name="IUIAnimationPrimitiveInterpolation.AddCubic"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT AddCubic(uint dimension, [NativeTypeName("UI_ANIMATION_SECONDS")] double beginOffset, float constantCoefficient, float linearCoefficient, float quadraticCoefficient, float cubicCoefficient)
@@ -46,6 +51,7 @@ public unsafe partial struct IUIAnimationPrimitiveInterpolation : IUIAnimationPr
         return ((delegate* unmanaged<IUIAnimationPrimitiveInterpolation*, uint, double, float, float, float, float, int>)(lpVtbl[3]))((IUIAnimationPrimitiveInterpolation*)Unsafe.AsPointer(ref this), dimension, beginOffset, constantCoefficient, linearCoefficient, quadraticCoefficient, cubicCoefficient);
     }
 
+    /// <include file='IUIAnimationPrimitiveInterpolation.xml' path='doc/member[@name="IUIAnimationPrimitiveInterpolation.AddSinusoidal"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT AddSinusoidal(uint dimension, [NativeTypeName("UI_ANIMATION_SECONDS")] double beginOffset, float bias, float amplitude, float frequency, float phase)

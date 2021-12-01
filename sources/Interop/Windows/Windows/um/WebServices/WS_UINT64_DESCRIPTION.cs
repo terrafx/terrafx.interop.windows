@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_UINT64_DESCRIPTION.xml' path='doc/member[@name="WS_UINT64_DESCRIPTION"]/*' />
 public partial struct WS_UINT64_DESCRIPTION
 {
+    /// <include file='WS_UINT64_DESCRIPTION.xml' path='doc/member[@name="WS_UINT64_DESCRIPTION.minValue"]/*' />
     [NativeTypeName("unsigned long long")]
     public ulong minValue;
 
+    /// <include file='WS_UINT64_DESCRIPTION.xml' path='doc/member[@name="WS_UINT64_DESCRIPTION.maxValue"]/*' />
     [NativeTypeName("unsigned long long")]
     public ulong maxValue;
 }

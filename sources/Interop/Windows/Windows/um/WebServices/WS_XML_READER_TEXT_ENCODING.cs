@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_XML_READER_TEXT_ENCODING.xml' path='doc/member[@name="WS_XML_READER_TEXT_ENCODING"]/*' />
 public partial struct WS_XML_READER_TEXT_ENCODING
 {
+    /// <include file='WS_XML_READER_TEXT_ENCODING.xml' path='doc/member[@name="WS_XML_READER_TEXT_ENCODING.encoding"]/*' />
     public WS_XML_READER_ENCODING encoding;
 
+    /// <include file='WS_XML_READER_TEXT_ENCODING.xml' path='doc/member[@name="WS_XML_READER_TEXT_ENCODING.charSet"]/*' />
     public WS_CHARSET charSet;
 }

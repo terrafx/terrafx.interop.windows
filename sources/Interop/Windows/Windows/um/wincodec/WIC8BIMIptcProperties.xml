@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WIC8BIMIptcProperties">
+    <summary>
+      <para>Specifies the identifiers of the metadata items in an 8BIM IPTC block.</para>
+    </summary>
+  </member>
+  <member name="WIC8BIMIptcProperties.WIC8BIMIptcPString">
+    <summary>
+      <para>[VT_LPSTR] A name that identifies the 8BIM block.</para>
+    </summary>
+  </member>
+  <member name="WIC8BIMIptcProperties.WIC8BIMIptcEmbeddedIPTC">
+    <summary></summary>
+  </member>
+  <member name="WIC8BIMIptcProperties.WIC8BIMIptcProperties_FORCE_DWORD">
+    <summary>
+      <h4>- WIC8BIMEmbeddedIPTC</h4>
+      <para>[VT_UNKNOWN] The IPTC block embedded in this 8BIM IPTC block.</para>
+    </summary>
+  </member>
+</doc>

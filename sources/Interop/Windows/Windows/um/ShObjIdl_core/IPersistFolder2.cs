@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IPersistFolder2.xml' path='doc/member[@name="IPersistFolder2"]/*' />
 [Guid("1AC3D9F0-175C-11D1-95BE-00609797EA4F")]
 [NativeTypeName("struct IPersistFolder2 : IPersistFolder")]
 [NativeInheritance("IPersistFolder")]
@@ -16,6 +17,7 @@ public unsafe partial struct IPersistFolder2 : IPersistFolder2.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IPersistFolder2 : IPersistFolder2.Interface
         return ((delegate* unmanaged<IPersistFolder2*, Guid*, void**, int>)(lpVtbl[0]))((IPersistFolder2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IPersistFolder2 : IPersistFolder2.Interface
         return ((delegate* unmanaged<IPersistFolder2*, uint>)(lpVtbl[1]))((IPersistFolder2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IPersistFolder2 : IPersistFolder2.Interface
         return ((delegate* unmanaged<IPersistFolder2*, uint>)(lpVtbl[2]))((IPersistFolder2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IPersist.GetClassID" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetClassID([NativeTypeName("CLSID *")] Guid* pClassID)
@@ -46,6 +51,7 @@ public unsafe partial struct IPersistFolder2 : IPersistFolder2.Interface
         return ((delegate* unmanaged<IPersistFolder2*, Guid*, int>)(lpVtbl[3]))((IPersistFolder2*)Unsafe.AsPointer(ref this), pClassID);
     }
 
+    /// <inheritdoc cref="IPersistFolder.Initialize" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Initialize([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl)
@@ -53,6 +59,7 @@ public unsafe partial struct IPersistFolder2 : IPersistFolder2.Interface
         return ((delegate* unmanaged<IPersistFolder2*, ITEMIDLIST*, int>)(lpVtbl[4]))((IPersistFolder2*)Unsafe.AsPointer(ref this), pidl);
     }
 
+    /// <include file='IPersistFolder2.xml' path='doc/member[@name="IPersistFolder2.GetCurFolder"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetCurFolder([NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidl)

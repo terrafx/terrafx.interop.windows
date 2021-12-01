@@ -5,12 +5,16 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MODULE_TYPE_INFO.xml' path='doc/member[@name="MODULE_TYPE_INFO"]/*' />
 public unsafe partial struct MODULE_TYPE_INFO
 {
+    /// <include file='MODULE_TYPE_INFO.xml' path='doc/member[@name="MODULE_TYPE_INFO.dataLength"]/*' />
     public ushort dataLength;
 
+    /// <include file='MODULE_TYPE_INFO.xml' path='doc/member[@name="MODULE_TYPE_INFO.leaf"]/*' />
     public ushort leaf;
 
+    /// <include file='MODULE_TYPE_INFO.xml' path='doc/member[@name="MODULE_TYPE_INFO.data"]/*' />
     [NativeTypeName("BYTE [1]")]
     public fixed byte data[1];
 }

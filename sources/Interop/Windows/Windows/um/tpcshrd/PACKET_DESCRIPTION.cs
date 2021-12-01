@@ -7,18 +7,24 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PACKET_DESCRIPTION.xml' path='doc/member[@name="PACKET_DESCRIPTION"]/*' />
 public unsafe partial struct PACKET_DESCRIPTION
 {
+    /// <include file='PACKET_DESCRIPTION.xml' path='doc/member[@name="PACKET_DESCRIPTION.cbPacketSize"]/*' />
     [NativeTypeName("ULONG")]
     public uint cbPacketSize;
 
+    /// <include file='PACKET_DESCRIPTION.xml' path='doc/member[@name="PACKET_DESCRIPTION.cPacketProperties"]/*' />
     [NativeTypeName("ULONG")]
     public uint cPacketProperties;
 
+    /// <include file='PACKET_DESCRIPTION.xml' path='doc/member[@name="PACKET_DESCRIPTION.pPacketProperties"]/*' />
     public PACKET_PROPERTY* pPacketProperties;
 
+    /// <include file='PACKET_DESCRIPTION.xml' path='doc/member[@name="PACKET_DESCRIPTION.cButtons"]/*' />
     [NativeTypeName("ULONG")]
     public uint cButtons;
 
+    /// <include file='PACKET_DESCRIPTION.xml' path='doc/member[@name="PACKET_DESCRIPTION.pguidButtons"]/*' />
     public Guid* pguidButtons;
 }

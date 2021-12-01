@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="STACKFRAME_EX">
+    <summary>
+      <para>Represents an extended stack frame.</para>
+    </summary>
+  </member>
+  <member name="STACKFRAME_EX.AddrPC">
+    <summary>
+      <para>An <see cref="ADDRESS64" /> structure that specifies the program
+counter.</para>
+      <para>
+        <b>x86:  </b>The program counter is EIP.</para>
+      <para>
+        <b>Intel Itanium:  </b>The program counter is StIIP.</para>
+      <para>
+        <b>x64:  </b>The program counter is RIP.</para>
+    </summary>
+  </member>
+  <member name="STACKFRAME_EX.AddrReturn">
+    <summary>
+      <para>An <see cref="ADDRESS64" /> structure that specifies
+the return address.</para>
+    </summary>
+  </member>
+  <member name="STACKFRAME_EX.AddrFrame">
+    <summary>
+      <para>An <see cref="ADDRESS64" /> structure that specifies
+the frame pointer.</para>
+      <para>
+        <b>x86:  </b>The frame pointer is EBP.</para>
+      <para>
+        <b>Intel Itanium:  </b>There is no frame pointer, but <b>AddrBStore</b> is used.</para>
+      <para>
+        <b>x64:  </b>The frame pointer is RBP or RDI. This value is not always used.</para>
+    </summary>
+  </member>
+  <member name="STACKFRAME_EX.AddrStack">
+    <summary>
+      <para>An <see cref="ADDRESS64" /> structure that specifies
+the stack pointer.</para>
+      <para>
+        <b>x86:  </b>The stack pointer is ESP.</para>
+      <para>
+        <b>Intel Itanium:  </b>The stack pointer is SP.</para>
+      <para>
+        <b>x64:  </b>The stack pointer is RSP.</para>
+    </summary>
+  </member>
+  <member name="STACKFRAME_EX.AddrBStore">
+    <summary>
+      <para>
+        <b>Intel Itanium:  </b>An <see cref="ADDRESS64" /> structure that specifies
+the backing store (RsBSP).</para>
+    </summary>
+  </member>
+  <member name="STACKFRAME_EX.FuncTableEntry">
+    <summary>
+      <para>On x86 computers, this member is an <see cref="FPO_DATA" /></para>
+      <para>structure. If there is no function table entry, this member is <b>NULL</b>.</para>
+    </summary>
+  </member>
+  <member name="STACKFRAME_EX.Params">
+    <summary>
+      <para>The possible arguments to the function.</para>
+    </summary>
+  </member>
+  <member name="STACKFRAME_EX.Far">
+    <summary>
+      <para>This member is <b>TRUE</b> if this is a WOW far call.</para>
+    </summary>
+  </member>
+  <member name="STACKFRAME_EX.Virtual">
+    <summary>
+      <para>This member is <b>TRUE</b> if this is a virtual frame.</para>
+    </summary>
+  </member>
+  <member name="STACKFRAME_EX.Reserved">
+    <summary>
+      <para>This member is used internally by the <see cref="StackWalkEx" /></para>
+      <para>function.</para>
+    </summary>
+  </member>
+  <member name="STACKFRAME_EX.KdHelp">
+    <summary>
+      <para>A <see cref="KDHELP64" /> structure that specifies helper data for
+walking kernel callback frames.</para>
+    </summary>
+  </member>
+  <member name="STACKFRAME_EX.StackFrameSize">
+    <summary>
+      <para>Set to <code>sizeof(STACKFRAME_EX)</code>.</para>
+    </summary>
+  </member>
+  <member name="STACKFRAME_EX.InlineFrameContext">
+    <summary>
+      <para>Specifies the type of the inline frame context.</para>
+      <h4>INLINE_FRAME_CONTEXT_INIT (0)</h4>
+      <h4>INLINE_FRAME_CONTEXT_IGNORE (0xffffffff)</h4>
+    </summary>
+  </member>
+</doc>

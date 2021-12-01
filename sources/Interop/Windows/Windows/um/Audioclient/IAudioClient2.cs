@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAudioClient2.xml' path='doc/member[@name="IAudioClient2"]/*' />
 [Guid("726778CD-F60A-4EDA-82DE-E47610CD78AA")]
 [NativeTypeName("struct IAudioClient2 : IAudioClient")]
 [NativeInheritance("IAudioClient")]
@@ -18,6 +19,7 @@ public unsafe partial struct IAudioClient2 : IAudioClient2.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IAudioClient2 : IAudioClient2.Interface
         return ((delegate* unmanaged<IAudioClient2*, Guid*, void**, int>)(lpVtbl[0]))((IAudioClient2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IAudioClient2 : IAudioClient2.Interface
         return ((delegate* unmanaged<IAudioClient2*, uint>)(lpVtbl[1]))((IAudioClient2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IAudioClient2 : IAudioClient2.Interface
         return ((delegate* unmanaged<IAudioClient2*, uint>)(lpVtbl[2]))((IAudioClient2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IAudioClient.Initialize" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Initialize(AUDCLNT_SHAREMODE ShareMode, [NativeTypeName("DWORD")] uint StreamFlags, [NativeTypeName("REFERENCE_TIME")] long hnsBufferDuration, [NativeTypeName("REFERENCE_TIME")] long hnsPeriodicity, [NativeTypeName("const WAVEFORMATEX *")] WAVEFORMATEX* pFormat, [NativeTypeName("LPCGUID")] Guid* AudioSessionGuid)
@@ -48,6 +53,7 @@ public unsafe partial struct IAudioClient2 : IAudioClient2.Interface
         return ((delegate* unmanaged<IAudioClient2*, AUDCLNT_SHAREMODE, uint, long, long, WAVEFORMATEX*, Guid*, int>)(lpVtbl[3]))((IAudioClient2*)Unsafe.AsPointer(ref this), ShareMode, StreamFlags, hnsBufferDuration, hnsPeriodicity, pFormat, AudioSessionGuid);
     }
 
+    /// <inheritdoc cref="IAudioClient.GetBufferSize" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetBufferSize([NativeTypeName("UINT32 *")] uint* pNumBufferFrames)
@@ -55,6 +61,7 @@ public unsafe partial struct IAudioClient2 : IAudioClient2.Interface
         return ((delegate* unmanaged<IAudioClient2*, uint*, int>)(lpVtbl[4]))((IAudioClient2*)Unsafe.AsPointer(ref this), pNumBufferFrames);
     }
 
+    /// <inheritdoc cref="IAudioClient.GetStreamLatency" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetStreamLatency([NativeTypeName("REFERENCE_TIME *")] long* phnsLatency)
@@ -62,6 +69,7 @@ public unsafe partial struct IAudioClient2 : IAudioClient2.Interface
         return ((delegate* unmanaged<IAudioClient2*, long*, int>)(lpVtbl[5]))((IAudioClient2*)Unsafe.AsPointer(ref this), phnsLatency);
     }
 
+    /// <inheritdoc cref="IAudioClient.GetCurrentPadding" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetCurrentPadding([NativeTypeName("UINT32 *")] uint* pNumPaddingFrames)
@@ -69,6 +77,7 @@ public unsafe partial struct IAudioClient2 : IAudioClient2.Interface
         return ((delegate* unmanaged<IAudioClient2*, uint*, int>)(lpVtbl[6]))((IAudioClient2*)Unsafe.AsPointer(ref this), pNumPaddingFrames);
     }
 
+    /// <inheritdoc cref="IAudioClient.IsFormatSupported" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT IsFormatSupported(AUDCLNT_SHAREMODE ShareMode, [NativeTypeName("const WAVEFORMATEX *")] WAVEFORMATEX* pFormat, WAVEFORMATEX** ppClosestMatch)
@@ -76,6 +85,7 @@ public unsafe partial struct IAudioClient2 : IAudioClient2.Interface
         return ((delegate* unmanaged<IAudioClient2*, AUDCLNT_SHAREMODE, WAVEFORMATEX*, WAVEFORMATEX**, int>)(lpVtbl[7]))((IAudioClient2*)Unsafe.AsPointer(ref this), ShareMode, pFormat, ppClosestMatch);
     }
 
+    /// <inheritdoc cref="IAudioClient.GetMixFormat" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetMixFormat(WAVEFORMATEX** ppDeviceFormat)
@@ -83,6 +93,7 @@ public unsafe partial struct IAudioClient2 : IAudioClient2.Interface
         return ((delegate* unmanaged<IAudioClient2*, WAVEFORMATEX**, int>)(lpVtbl[8]))((IAudioClient2*)Unsafe.AsPointer(ref this), ppDeviceFormat);
     }
 
+    /// <inheritdoc cref="IAudioClient.GetDevicePeriod" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT GetDevicePeriod([NativeTypeName("REFERENCE_TIME *")] long* phnsDefaultDevicePeriod, [NativeTypeName("REFERENCE_TIME *")] long* phnsMinimumDevicePeriod)
@@ -90,6 +101,7 @@ public unsafe partial struct IAudioClient2 : IAudioClient2.Interface
         return ((delegate* unmanaged<IAudioClient2*, long*, long*, int>)(lpVtbl[9]))((IAudioClient2*)Unsafe.AsPointer(ref this), phnsDefaultDevicePeriod, phnsMinimumDevicePeriod);
     }
 
+    /// <inheritdoc cref="IAudioClient.Start" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT Start()
@@ -97,6 +109,7 @@ public unsafe partial struct IAudioClient2 : IAudioClient2.Interface
         return ((delegate* unmanaged<IAudioClient2*, int>)(lpVtbl[10]))((IAudioClient2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IAudioClient.Stop" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT Stop()
@@ -104,6 +117,7 @@ public unsafe partial struct IAudioClient2 : IAudioClient2.Interface
         return ((delegate* unmanaged<IAudioClient2*, int>)(lpVtbl[11]))((IAudioClient2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IAudioClient.Reset" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT Reset()
@@ -111,6 +125,7 @@ public unsafe partial struct IAudioClient2 : IAudioClient2.Interface
         return ((delegate* unmanaged<IAudioClient2*, int>)(lpVtbl[12]))((IAudioClient2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IAudioClient.SetEventHandle" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT SetEventHandle(HANDLE eventHandle)
@@ -118,6 +133,7 @@ public unsafe partial struct IAudioClient2 : IAudioClient2.Interface
         return ((delegate* unmanaged<IAudioClient2*, HANDLE, int>)(lpVtbl[13]))((IAudioClient2*)Unsafe.AsPointer(ref this), eventHandle);
     }
 
+    /// <inheritdoc cref="IAudioClient.GetService" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT GetService([NativeTypeName("const IID &")] Guid* riid, void** ppv)
@@ -125,6 +141,7 @@ public unsafe partial struct IAudioClient2 : IAudioClient2.Interface
         return ((delegate* unmanaged<IAudioClient2*, Guid*, void**, int>)(lpVtbl[14]))((IAudioClient2*)Unsafe.AsPointer(ref this), riid, ppv);
     }
 
+    /// <include file='IAudioClient2.xml' path='doc/member[@name="IAudioClient2.IsOffloadCapable"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT IsOffloadCapable(AUDIO_STREAM_CATEGORY Category, BOOL* pbOffloadCapable)
@@ -132,6 +149,7 @@ public unsafe partial struct IAudioClient2 : IAudioClient2.Interface
         return ((delegate* unmanaged<IAudioClient2*, AUDIO_STREAM_CATEGORY, BOOL*, int>)(lpVtbl[15]))((IAudioClient2*)Unsafe.AsPointer(ref this), Category, pbOffloadCapable);
     }
 
+    /// <include file='IAudioClient2.xml' path='doc/member[@name="IAudioClient2.SetClientProperties"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT SetClientProperties([NativeTypeName("const AudioClientProperties *")] AudioClientProperties* pProperties)
@@ -139,6 +157,7 @@ public unsafe partial struct IAudioClient2 : IAudioClient2.Interface
         return ((delegate* unmanaged<IAudioClient2*, AudioClientProperties*, int>)(lpVtbl[16]))((IAudioClient2*)Unsafe.AsPointer(ref this), pProperties);
     }
 
+    /// <include file='IAudioClient2.xml' path='doc/member[@name="IAudioClient2.GetBufferSizeLimits"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT GetBufferSizeLimits([NativeTypeName("const WAVEFORMATEX *")] WAVEFORMATEX* pFormat, BOOL bEventDriven, [NativeTypeName("REFERENCE_TIME *")] long* phnsMinBufferDuration, [NativeTypeName("REFERENCE_TIME *")] long* phnsMaxBufferDuration)

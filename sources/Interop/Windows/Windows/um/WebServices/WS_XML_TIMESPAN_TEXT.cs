@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_XML_TIMESPAN_TEXT.xml' path='doc/member[@name="WS_XML_TIMESPAN_TEXT"]/*' />
 public partial struct WS_XML_TIMESPAN_TEXT
 {
+    /// <include file='WS_XML_TIMESPAN_TEXT.xml' path='doc/member[@name="WS_XML_TIMESPAN_TEXT.text"]/*' />
     public WS_XML_TEXT text;
 
+    /// <include file='WS_XML_TIMESPAN_TEXT.xml' path='doc/member[@name="WS_XML_TIMESPAN_TEXT.value"]/*' />
     public WS_TIMESPAN value;
 }

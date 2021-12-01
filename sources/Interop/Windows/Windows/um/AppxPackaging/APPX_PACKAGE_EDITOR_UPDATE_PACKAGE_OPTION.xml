@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_OPTION">
+    <summary>
+      <para>Options to use when updating an app package.</para>
+    </summary>
+    <seealso cref="UpdatePackage" />
+  </member>
+  <member name="APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_OPTION.APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_OPTION_APPEND_DELTA">
+    <summary>
+      <para>Appends the delta (difference) of the baseline package and the updated package.</para>
+    </summary>
+  </member>
+</doc>

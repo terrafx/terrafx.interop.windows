@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IHTMLSelectElement.xml' path='doc/member[@name="IHTMLSelectElement"]/*' />
 [Guid("3050F244-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IHTMLSelectElement : IDispatch")]
 [NativeInheritance("IDispatch")]
@@ -16,6 +17,7 @@ public unsafe partial struct IHTMLSelectElement : IHTMLSelectElement.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IHTMLSelectElement : IHTMLSelectElement.Interface
         return ((delegate* unmanaged<IHTMLSelectElement*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLSelectElement*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IHTMLSelectElement : IHTMLSelectElement.Interface
         return ((delegate* unmanaged<IHTMLSelectElement*, uint>)(lpVtbl[1]))((IHTMLSelectElement*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IHTMLSelectElement : IHTMLSelectElement.Interface
         return ((delegate* unmanaged<IHTMLSelectElement*, uint>)(lpVtbl[2]))((IHTMLSelectElement*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct IHTMLSelectElement : IHTMLSelectElement.Interface
         return ((delegate* unmanaged<IHTMLSelectElement*, uint*, int>)(lpVtbl[3]))((IHTMLSelectElement*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct IHTMLSelectElement : IHTMLSelectElement.Interface
         return ((delegate* unmanaged<IHTMLSelectElement*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IHTMLSelectElement*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
@@ -60,6 +67,7 @@ public unsafe partial struct IHTMLSelectElement : IHTMLSelectElement.Interface
         return ((delegate* unmanaged<IHTMLSelectElement*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLSelectElement*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
+    /// <inheritdoc cref="IDispatch.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
@@ -67,6 +75,7 @@ public unsafe partial struct IHTMLSelectElement : IHTMLSelectElement.Interface
         return ((delegate* unmanaged<IHTMLSelectElement*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IHTMLSelectElement*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
+    /// <include file='IHTMLSelectElement.xml' path='doc/member[@name="IHTMLSelectElement.put_size"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT put_size([NativeTypeName("long")] int v)
@@ -74,6 +83,7 @@ public unsafe partial struct IHTMLSelectElement : IHTMLSelectElement.Interface
         return ((delegate* unmanaged<IHTMLSelectElement*, int, int>)(lpVtbl[7]))((IHTMLSelectElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLSelectElement.xml' path='doc/member[@name="IHTMLSelectElement.get_size"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT get_size([NativeTypeName("long *")] int* p)
@@ -81,6 +91,7 @@ public unsafe partial struct IHTMLSelectElement : IHTMLSelectElement.Interface
         return ((delegate* unmanaged<IHTMLSelectElement*, int*, int>)(lpVtbl[8]))((IHTMLSelectElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLSelectElement.xml' path='doc/member[@name="IHTMLSelectElement.put_multiple"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT put_multiple([NativeTypeName("VARIANT_BOOL")] short v)
@@ -88,6 +99,7 @@ public unsafe partial struct IHTMLSelectElement : IHTMLSelectElement.Interface
         return ((delegate* unmanaged<IHTMLSelectElement*, short, int>)(lpVtbl[9]))((IHTMLSelectElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLSelectElement.xml' path='doc/member[@name="IHTMLSelectElement.get_multiple"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT get_multiple([NativeTypeName("VARIANT_BOOL *")] short* p)
@@ -95,6 +107,7 @@ public unsafe partial struct IHTMLSelectElement : IHTMLSelectElement.Interface
         return ((delegate* unmanaged<IHTMLSelectElement*, short*, int>)(lpVtbl[10]))((IHTMLSelectElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLSelectElement.xml' path='doc/member[@name="IHTMLSelectElement.put_name"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT put_name([NativeTypeName("BSTR")] ushort* v)
@@ -102,6 +115,7 @@ public unsafe partial struct IHTMLSelectElement : IHTMLSelectElement.Interface
         return ((delegate* unmanaged<IHTMLSelectElement*, ushort*, int>)(lpVtbl[11]))((IHTMLSelectElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLSelectElement.xml' path='doc/member[@name="IHTMLSelectElement.get_name"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT get_name([NativeTypeName("BSTR *")] ushort** p)
@@ -109,6 +123,7 @@ public unsafe partial struct IHTMLSelectElement : IHTMLSelectElement.Interface
         return ((delegate* unmanaged<IHTMLSelectElement*, ushort**, int>)(lpVtbl[12]))((IHTMLSelectElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLSelectElement.xml' path='doc/member[@name="IHTMLSelectElement.get_options"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT get_options(IDispatch** p)
@@ -116,6 +131,7 @@ public unsafe partial struct IHTMLSelectElement : IHTMLSelectElement.Interface
         return ((delegate* unmanaged<IHTMLSelectElement*, IDispatch**, int>)(lpVtbl[13]))((IHTMLSelectElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLSelectElement.xml' path='doc/member[@name="IHTMLSelectElement.put_onchange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT put_onchange(VARIANT v)
@@ -123,6 +139,7 @@ public unsafe partial struct IHTMLSelectElement : IHTMLSelectElement.Interface
         return ((delegate* unmanaged<IHTMLSelectElement*, VARIANT, int>)(lpVtbl[14]))((IHTMLSelectElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLSelectElement.xml' path='doc/member[@name="IHTMLSelectElement.get_onchange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT get_onchange(VARIANT* p)
@@ -130,6 +147,7 @@ public unsafe partial struct IHTMLSelectElement : IHTMLSelectElement.Interface
         return ((delegate* unmanaged<IHTMLSelectElement*, VARIANT*, int>)(lpVtbl[15]))((IHTMLSelectElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLSelectElement.xml' path='doc/member[@name="IHTMLSelectElement.put_selectedIndex"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT put_selectedIndex([NativeTypeName("long")] int v)
@@ -137,6 +155,7 @@ public unsafe partial struct IHTMLSelectElement : IHTMLSelectElement.Interface
         return ((delegate* unmanaged<IHTMLSelectElement*, int, int>)(lpVtbl[16]))((IHTMLSelectElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLSelectElement.xml' path='doc/member[@name="IHTMLSelectElement.get_selectedIndex"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT get_selectedIndex([NativeTypeName("long *")] int* p)
@@ -144,6 +163,7 @@ public unsafe partial struct IHTMLSelectElement : IHTMLSelectElement.Interface
         return ((delegate* unmanaged<IHTMLSelectElement*, int*, int>)(lpVtbl[17]))((IHTMLSelectElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLSelectElement.xml' path='doc/member[@name="IHTMLSelectElement.get_type"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT get_type([NativeTypeName("BSTR *")] ushort** p)
@@ -151,6 +171,7 @@ public unsafe partial struct IHTMLSelectElement : IHTMLSelectElement.Interface
         return ((delegate* unmanaged<IHTMLSelectElement*, ushort**, int>)(lpVtbl[18]))((IHTMLSelectElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLSelectElement.xml' path='doc/member[@name="IHTMLSelectElement.put_value"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT put_value([NativeTypeName("BSTR")] ushort* v)
@@ -158,6 +179,7 @@ public unsafe partial struct IHTMLSelectElement : IHTMLSelectElement.Interface
         return ((delegate* unmanaged<IHTMLSelectElement*, ushort*, int>)(lpVtbl[19]))((IHTMLSelectElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLSelectElement.xml' path='doc/member[@name="IHTMLSelectElement.get_value"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public HRESULT get_value([NativeTypeName("BSTR *")] ushort** p)
@@ -165,6 +187,7 @@ public unsafe partial struct IHTMLSelectElement : IHTMLSelectElement.Interface
         return ((delegate* unmanaged<IHTMLSelectElement*, ushort**, int>)(lpVtbl[20]))((IHTMLSelectElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLSelectElement.xml' path='doc/member[@name="IHTMLSelectElement.put_disabled"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
     public HRESULT put_disabled([NativeTypeName("VARIANT_BOOL")] short v)
@@ -172,6 +195,7 @@ public unsafe partial struct IHTMLSelectElement : IHTMLSelectElement.Interface
         return ((delegate* unmanaged<IHTMLSelectElement*, short, int>)(lpVtbl[21]))((IHTMLSelectElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLSelectElement.xml' path='doc/member[@name="IHTMLSelectElement.get_disabled"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
     public HRESULT get_disabled([NativeTypeName("VARIANT_BOOL *")] short* p)
@@ -179,6 +203,7 @@ public unsafe partial struct IHTMLSelectElement : IHTMLSelectElement.Interface
         return ((delegate* unmanaged<IHTMLSelectElement*, short*, int>)(lpVtbl[22]))((IHTMLSelectElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLSelectElement.xml' path='doc/member[@name="IHTMLSelectElement.get_form"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
     public HRESULT get_form(IHTMLFormElement** p)
@@ -186,6 +211,7 @@ public unsafe partial struct IHTMLSelectElement : IHTMLSelectElement.Interface
         return ((delegate* unmanaged<IHTMLSelectElement*, IHTMLFormElement**, int>)(lpVtbl[23]))((IHTMLSelectElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLSelectElement.xml' path='doc/member[@name="IHTMLSelectElement.add"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(24)]
     public HRESULT add(IHTMLElement* element, VARIANT before)
@@ -193,6 +219,7 @@ public unsafe partial struct IHTMLSelectElement : IHTMLSelectElement.Interface
         return ((delegate* unmanaged<IHTMLSelectElement*, IHTMLElement*, VARIANT, int>)(lpVtbl[24]))((IHTMLSelectElement*)Unsafe.AsPointer(ref this), element, before);
     }
 
+    /// <include file='IHTMLSelectElement.xml' path='doc/member[@name="IHTMLSelectElement.remove"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(25)]
     public HRESULT remove([NativeTypeName("long")] int index = -1)
@@ -200,6 +227,7 @@ public unsafe partial struct IHTMLSelectElement : IHTMLSelectElement.Interface
         return ((delegate* unmanaged<IHTMLSelectElement*, int, int>)(lpVtbl[25]))((IHTMLSelectElement*)Unsafe.AsPointer(ref this), index);
     }
 
+    /// <include file='IHTMLSelectElement.xml' path='doc/member[@name="IHTMLSelectElement.put_length"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(26)]
     public HRESULT put_length([NativeTypeName("long")] int v)
@@ -207,6 +235,7 @@ public unsafe partial struct IHTMLSelectElement : IHTMLSelectElement.Interface
         return ((delegate* unmanaged<IHTMLSelectElement*, int, int>)(lpVtbl[26]))((IHTMLSelectElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLSelectElement.xml' path='doc/member[@name="IHTMLSelectElement.get_length"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(27)]
     public HRESULT get_length([NativeTypeName("long *")] int* p)
@@ -214,6 +243,7 @@ public unsafe partial struct IHTMLSelectElement : IHTMLSelectElement.Interface
         return ((delegate* unmanaged<IHTMLSelectElement*, int*, int>)(lpVtbl[27]))((IHTMLSelectElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLSelectElement.xml' path='doc/member[@name="IHTMLSelectElement.get__newEnum"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(28)]
     public HRESULT get__newEnum(IUnknown** p)
@@ -221,6 +251,7 @@ public unsafe partial struct IHTMLSelectElement : IHTMLSelectElement.Interface
         return ((delegate* unmanaged<IHTMLSelectElement*, IUnknown**, int>)(lpVtbl[28]))((IHTMLSelectElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLSelectElement.xml' path='doc/member[@name="IHTMLSelectElement.item"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(29)]
     public HRESULT item(VARIANT name, VARIANT index, IDispatch** pdisp)
@@ -228,6 +259,7 @@ public unsafe partial struct IHTMLSelectElement : IHTMLSelectElement.Interface
         return ((delegate* unmanaged<IHTMLSelectElement*, VARIANT, VARIANT, IDispatch**, int>)(lpVtbl[29]))((IHTMLSelectElement*)Unsafe.AsPointer(ref this), name, index, pdisp);
     }
 
+    /// <include file='IHTMLSelectElement.xml' path='doc/member[@name="IHTMLSelectElement.tags"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(30)]
     public HRESULT tags(VARIANT tagName, IDispatch** pdisp)

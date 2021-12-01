@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFSensorActivityMonitor.xml' path='doc/member[@name="IMFSensorActivityMonitor"]/*' />
 [Guid("D0CEF145-B3F4-4340-A2E5-7A5080CA05CB")]
 [NativeTypeName("struct IMFSensorActivityMonitor : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IMFSensorActivityMonitor : IMFSensorActivityMonitor
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IMFSensorActivityMonitor : IMFSensorActivityMonitor
         return ((delegate* unmanaged<IMFSensorActivityMonitor*, Guid*, void**, int>)(lpVtbl[0]))((IMFSensorActivityMonitor*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IMFSensorActivityMonitor : IMFSensorActivityMonitor
         return ((delegate* unmanaged<IMFSensorActivityMonitor*, uint>)(lpVtbl[1]))((IMFSensorActivityMonitor*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IMFSensorActivityMonitor : IMFSensorActivityMonitor
         return ((delegate* unmanaged<IMFSensorActivityMonitor*, uint>)(lpVtbl[2]))((IMFSensorActivityMonitor*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFSensorActivityMonitor.xml' path='doc/member[@name="IMFSensorActivityMonitor.Start"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Start()
@@ -48,6 +53,7 @@ public unsafe partial struct IMFSensorActivityMonitor : IMFSensorActivityMonitor
         return ((delegate* unmanaged<IMFSensorActivityMonitor*, int>)(lpVtbl[3]))((IMFSensorActivityMonitor*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFSensorActivityMonitor.xml' path='doc/member[@name="IMFSensorActivityMonitor.Stop"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Stop()

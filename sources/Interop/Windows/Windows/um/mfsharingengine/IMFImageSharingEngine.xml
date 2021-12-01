@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFImageSharingEngine.GetDevice">
+    <summary>
+      <para>Gets information about the image sharing device.</para>
+    </summary>
+    <param name="pDevice">
+      <para>A pointer to a <see cref="DEVICE_INFO" /> structure. The method fills in this structure with the device information.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The method allocates memory for the <b>BSTR</b> members of the <see cref="DEVICE_INFO" /> structure. The caller must free the memory for each <b>BSTR</b> by calling <b>SysFreeString</b>.</para>
+    </remarks>
+    <seealso cref="IMFImageSharingEngine" />
+  </member>
+  <member name="IMFImageSharingEngine.SetSource">
+    <summary>
+      <para>Sets the source stream.</para>
+    </summary>
+    <param name="pStream">
+      <para>The source stream.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFImageSharingEngine" />
+  </member>
+  <member name="IMFImageSharingEngine.Shutdown">
+    <summary>
+      <para>Shuts down the image sharing engine.</para>
+    </summary>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IMFImageSharingEngine" />
+  </member>
+  <member name="IMFImageSharingEngine">
+    <summary>
+      <para>Enables image sharing.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+  </member>
+</doc>

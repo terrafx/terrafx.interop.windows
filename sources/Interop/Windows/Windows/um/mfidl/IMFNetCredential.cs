@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFNetCredential.xml' path='doc/member[@name="IMFNetCredential"]/*' />
 [Guid("5B87EF6A-7ED8-434F-BA0E-184FAC1628D1")]
 [NativeTypeName("struct IMFNetCredential : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMFNetCredential : IMFNetCredential.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMFNetCredential : IMFNetCredential.Interface
         return ((delegate* unmanaged<IMFNetCredential*, Guid*, void**, int>)(lpVtbl[0]))((IMFNetCredential*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMFNetCredential : IMFNetCredential.Interface
         return ((delegate* unmanaged<IMFNetCredential*, uint>)(lpVtbl[1]))((IMFNetCredential*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMFNetCredential : IMFNetCredential.Interface
         return ((delegate* unmanaged<IMFNetCredential*, uint>)(lpVtbl[2]))((IMFNetCredential*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFNetCredential.xml' path='doc/member[@name="IMFNetCredential.SetUser"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetUser(byte* pbData, [NativeTypeName("DWORD")] uint cbData, BOOL fDataIsEncrypted)
@@ -46,6 +51,7 @@ public unsafe partial struct IMFNetCredential : IMFNetCredential.Interface
         return ((delegate* unmanaged<IMFNetCredential*, byte*, uint, BOOL, int>)(lpVtbl[3]))((IMFNetCredential*)Unsafe.AsPointer(ref this), pbData, cbData, fDataIsEncrypted);
     }
 
+    /// <include file='IMFNetCredential.xml' path='doc/member[@name="IMFNetCredential.SetPassword"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetPassword(byte* pbData, [NativeTypeName("DWORD")] uint cbData, BOOL fDataIsEncrypted)
@@ -53,6 +59,7 @@ public unsafe partial struct IMFNetCredential : IMFNetCredential.Interface
         return ((delegate* unmanaged<IMFNetCredential*, byte*, uint, BOOL, int>)(lpVtbl[4]))((IMFNetCredential*)Unsafe.AsPointer(ref this), pbData, cbData, fDataIsEncrypted);
     }
 
+    /// <include file='IMFNetCredential.xml' path='doc/member[@name="IMFNetCredential.GetUser"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetUser(byte* pbData, [NativeTypeName("DWORD *")] uint* pcbData, BOOL fEncryptData)
@@ -60,6 +67,7 @@ public unsafe partial struct IMFNetCredential : IMFNetCredential.Interface
         return ((delegate* unmanaged<IMFNetCredential*, byte*, uint*, BOOL, int>)(lpVtbl[5]))((IMFNetCredential*)Unsafe.AsPointer(ref this), pbData, pcbData, fEncryptData);
     }
 
+    /// <include file='IMFNetCredential.xml' path='doc/member[@name="IMFNetCredential.GetPassword"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetPassword(byte* pbData, [NativeTypeName("DWORD *")] uint* pcbData, BOOL fEncryptData)
@@ -67,6 +75,7 @@ public unsafe partial struct IMFNetCredential : IMFNetCredential.Interface
         return ((delegate* unmanaged<IMFNetCredential*, byte*, uint*, BOOL, int>)(lpVtbl[6]))((IMFNetCredential*)Unsafe.AsPointer(ref this), pbData, pcbData, fEncryptData);
     }
 
+    /// <include file='IMFNetCredential.xml' path='doc/member[@name="IMFNetCredential.LoggedOnUser"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT LoggedOnUser(BOOL* pfLoggedOnUser)

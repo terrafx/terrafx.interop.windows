@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IAdviseSinkEx.OnViewStatusChange">
+    <summary>
+      <para>Notifies the sink that a view status of an object has changed.</para>
+    </summary>
+    <param name="dwViewStatus">
+      <para>The new view status. Possible values are from the <see cref="VIEWSTATUS" /> enumeration.</para>
+    </param>
+    <returns>
+      <para>This method returns S_OK on success.</para>
+    </returns>
+    <remarks>
+      <para>It is important that objects call the <see cref="IAdviseSink:OnViewChange" /> method whenever the object's view changes even when the object is in place active. Containers rely on this notification to keep an object's view up-to-date.</para>
+    </remarks>
+    <seealso cref="IAdviseSink:OnViewChange" />
+    <seealso cref="IAdviseSinkEx" />
+  </member>
+  <member name="IAdviseSinkEx">
+    <summary>
+      <para>This interface is derived from <see cref="IAdviseSink" /> to provide extensions for notifying the sink of changes in an object's view status.</para>
+    </summary>
+    <seealso cref="IAdviseSink" />
+    <seealso cref="IViewObject.SetAdvise" />
+  </member>
+</doc>

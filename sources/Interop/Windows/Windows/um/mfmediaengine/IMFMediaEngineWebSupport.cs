@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFMediaEngineWebSupport.xml' path='doc/member[@name="IMFMediaEngineWebSupport"]/*' />
 [Guid("BA2743A1-07E0-48EF-84B6-9A2ED023CA6C")]
 [NativeTypeName("struct IMFMediaEngineWebSupport : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMFMediaEngineWebSupport : IMFMediaEngineWebSupport
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMFMediaEngineWebSupport : IMFMediaEngineWebSupport
         return ((delegate* unmanaged<IMFMediaEngineWebSupport*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaEngineWebSupport*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMFMediaEngineWebSupport : IMFMediaEngineWebSupport
         return ((delegate* unmanaged<IMFMediaEngineWebSupport*, uint>)(lpVtbl[1]))((IMFMediaEngineWebSupport*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMFMediaEngineWebSupport : IMFMediaEngineWebSupport
         return ((delegate* unmanaged<IMFMediaEngineWebSupport*, uint>)(lpVtbl[2]))((IMFMediaEngineWebSupport*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFMediaEngineWebSupport.xml' path='doc/member[@name="IMFMediaEngineWebSupport.ShouldDelayTheLoadEvent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public BOOL ShouldDelayTheLoadEvent()
@@ -46,6 +51,7 @@ public unsafe partial struct IMFMediaEngineWebSupport : IMFMediaEngineWebSupport
         return ((delegate* unmanaged<IMFMediaEngineWebSupport*, int>)(lpVtbl[3]))((IMFMediaEngineWebSupport*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFMediaEngineWebSupport.xml' path='doc/member[@name="IMFMediaEngineWebSupport.ConnectWebAudio"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT ConnectWebAudio([NativeTypeName("DWORD")] uint dwSampleRate, IAudioSourceProvider** ppSourceProvider)
@@ -53,6 +59,7 @@ public unsafe partial struct IMFMediaEngineWebSupport : IMFMediaEngineWebSupport
         return ((delegate* unmanaged<IMFMediaEngineWebSupport*, uint, IAudioSourceProvider**, int>)(lpVtbl[4]))((IMFMediaEngineWebSupport*)Unsafe.AsPointer(ref this), dwSampleRate, ppSourceProvider);
     }
 
+    /// <include file='IMFMediaEngineWebSupport.xml' path='doc/member[@name="IMFMediaEngineWebSupport.DisconnectWebAudio"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT DisconnectWebAudio()

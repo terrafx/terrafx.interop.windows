@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='EC_HOST_UI_MODE.xml' path='doc/member[@name="EC_HOST_UI_MODE"]/*' />
 public enum EC_HOST_UI_MODE
 {
+    /// <include file='EC_HOST_UI_MODE.xml' path='doc/member[@name="EC_HOST_UI_MODE.ECHUIM_DESKTOP"]/*' />
     ECHUIM_DESKTOP = 0,
+
+    /// <include file='EC_HOST_UI_MODE.xml' path='doc/member[@name="EC_HOST_UI_MODE.ECHUIM_IMMERSIVE"]/*' />
     ECHUIM_IMMERSIVE = (ECHUIM_DESKTOP + 1),
+
+    /// <include file='EC_HOST_UI_MODE.xml' path='doc/member[@name="EC_HOST_UI_MODE.ECHUIM_SYSTEM_LAUNCHER"]/*' />
     ECHUIM_SYSTEM_LAUNCHER = (ECHUIM_IMMERSIVE + 1),
 }

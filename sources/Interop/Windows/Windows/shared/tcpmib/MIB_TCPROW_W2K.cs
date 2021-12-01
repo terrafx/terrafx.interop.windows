@@ -5,20 +5,26 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MIB_TCPROW_W2K.xml' path='doc/member[@name="MIB_TCPROW_W2K"]/*' />
 public partial struct MIB_TCPROW_W2K
 {
+    /// <include file='MIB_TCPROW_W2K.xml' path='doc/member[@name="MIB_TCPROW_W2K.dwState"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwState;
 
+    /// <include file='MIB_TCPROW_W2K.xml' path='doc/member[@name="MIB_TCPROW_W2K.dwLocalAddr"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwLocalAddr;
 
+    /// <include file='MIB_TCPROW_W2K.xml' path='doc/member[@name="MIB_TCPROW_W2K.dwLocalPort"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwLocalPort;
 
+    /// <include file='MIB_TCPROW_W2K.xml' path='doc/member[@name="MIB_TCPROW_W2K.dwRemoteAddr"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwRemoteAddr;
 
+    /// <include file='MIB_TCPROW_W2K.xml' path='doc/member[@name="MIB_TCPROW_W2K.dwRemotePort"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwRemotePort;
 }

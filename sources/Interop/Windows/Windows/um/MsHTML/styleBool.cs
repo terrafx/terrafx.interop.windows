@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='styleBool.xml' path='doc/member[@name="styleBool"]/*' />
 public enum styleBool
 {
+    /// <include file='styleBool.xml' path='doc/member[@name="styleBool.styleBoolFalse"]/*' />
     styleBoolFalse = 0,
+
+    /// <include file='styleBool.xml' path='doc/member[@name="styleBool.styleBoolTrue"]/*' />
     styleBoolTrue = 1,
+
+    /// <include file='styleBool.xml' path='doc/member[@name="styleBool.styleBool_Max"]/*' />
     styleBool_Max = 2147483647,
 }

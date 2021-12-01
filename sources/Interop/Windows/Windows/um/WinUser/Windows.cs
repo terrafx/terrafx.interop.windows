@@ -11,2653 +11,3352 @@ namespace TerraFX.Interop.Windows;
 
 public static unsafe partial class Windows
 {
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.wvsprintfA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern int wvsprintfA([NativeTypeName("LPSTR")] sbyte* param0, [NativeTypeName("LPCSTR")] sbyte* param1, [NativeTypeName("va_list")] sbyte* arglist);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.wvsprintfW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern int wvsprintfW([NativeTypeName("LPWSTR")] ushort* param0, [NativeTypeName("LPCWSTR")] ushort* param1, [NativeTypeName("va_list")] sbyte* arglist);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.wsprintfA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern int wsprintfA([NativeTypeName("LPSTR")] sbyte* param0, [NativeTypeName("LPCSTR")] sbyte* param1);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.wsprintfW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern int wsprintfW([NativeTypeName("LPWSTR")] ushort* param0, [NativeTypeName("LPCWSTR")] ushort* param1);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LoadKeyboardLayoutA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HKL LoadKeyboardLayoutA([NativeTypeName("LPCSTR")] sbyte* pwszKLID, uint Flags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LoadKeyboardLayoutW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HKL LoadKeyboardLayoutW([NativeTypeName("LPCWSTR")] ushort* pwszKLID, uint Flags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ActivateKeyboardLayout"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HKL ActivateKeyboardLayout(HKL hkl, uint Flags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ToUnicodeEx"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern int ToUnicodeEx(uint wVirtKey, uint wScanCode, [NativeTypeName("const BYTE *")] byte* lpKeyState, [NativeTypeName("LPWSTR")] ushort* pwszBuff, int cchBuff, uint wFlags, HKL dwhkl);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.UnloadKeyboardLayout"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL UnloadKeyboardLayout(HKL hkl);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetKeyboardLayoutNameA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL GetKeyboardLayoutNameA([NativeTypeName("LPSTR")] sbyte* pwszKLID);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetKeyboardLayoutNameW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL GetKeyboardLayoutNameW([NativeTypeName("LPWSTR")] ushort* pwszKLID);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetKeyboardLayoutList"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern int GetKeyboardLayoutList(int nBuff, HKL* lpList);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetKeyboardLayout"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern HKL GetKeyboardLayout([NativeTypeName("DWORD")] uint idThread);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetMouseMovePointsEx"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern int GetMouseMovePointsEx(uint cbSize, [NativeTypeName("LPMOUSEMOVEPOINT")] MOUSEMOVEPOINT* lppt, [NativeTypeName("LPMOUSEMOVEPOINT")] MOUSEMOVEPOINT* lpptBuf, int nBufPoints, [NativeTypeName("DWORD")] uint resolution);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateDesktopA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HDESK CreateDesktopA([NativeTypeName("LPCSTR")] sbyte* lpszDesktop, [NativeTypeName("LPCSTR")] sbyte* lpszDevice, DEVMODEA* pDevmode, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("ACCESS_MASK")] uint dwDesiredAccess, [NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpsa);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateDesktopW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HDESK CreateDesktopW([NativeTypeName("LPCWSTR")] ushort* lpszDesktop, [NativeTypeName("LPCWSTR")] ushort* lpszDevice, DEVMODEW* pDevmode, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("ACCESS_MASK")] uint dwDesiredAccess, [NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpsa);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateDesktopExA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HDESK CreateDesktopExA([NativeTypeName("LPCSTR")] sbyte* lpszDesktop, [NativeTypeName("LPCSTR")] sbyte* lpszDevice, DEVMODEA* pDevmode, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("ACCESS_MASK")] uint dwDesiredAccess, [NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpsa, [NativeTypeName("ULONG")] uint ulHeapSize, [NativeTypeName("PVOID")] void* pvoid);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateDesktopExW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HDESK CreateDesktopExW([NativeTypeName("LPCWSTR")] ushort* lpszDesktop, [NativeTypeName("LPCWSTR")] ushort* lpszDevice, DEVMODEW* pDevmode, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("ACCESS_MASK")] uint dwDesiredAccess, [NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpsa, [NativeTypeName("ULONG")] uint ulHeapSize, [NativeTypeName("PVOID")] void* pvoid);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.OpenDesktopA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HDESK OpenDesktopA([NativeTypeName("LPCSTR")] sbyte* lpszDesktop, [NativeTypeName("DWORD")] uint dwFlags, BOOL fInherit, [NativeTypeName("ACCESS_MASK")] uint dwDesiredAccess);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.OpenDesktopW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HDESK OpenDesktopW([NativeTypeName("LPCWSTR")] ushort* lpszDesktop, [NativeTypeName("DWORD")] uint dwFlags, BOOL fInherit, [NativeTypeName("ACCESS_MASK")] uint dwDesiredAccess);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.OpenInputDesktop"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HDESK OpenInputDesktop([NativeTypeName("DWORD")] uint dwFlags, BOOL fInherit, [NativeTypeName("ACCESS_MASK")] uint dwDesiredAccess);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EnumDesktopsA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL EnumDesktopsA(HWINSTA hwinsta, [NativeTypeName("DESKTOPENUMPROCA")] delegate* unmanaged<sbyte*, LPARAM, BOOL> lpEnumFunc, LPARAM lParam);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EnumDesktopsW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL EnumDesktopsW(HWINSTA hwinsta, [NativeTypeName("DESKTOPENUMPROCW")] delegate* unmanaged<ushort*, LPARAM, BOOL> lpEnumFunc, LPARAM lParam);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EnumDesktopWindows"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL EnumDesktopWindows(HDESK hDesktop, [NativeTypeName("WNDENUMPROC")] delegate* unmanaged<HWND, LPARAM, BOOL> lpfn, LPARAM lParam);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SwitchDesktop"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SwitchDesktop(HDESK hDesktop);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetThreadDesktop"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SetThreadDesktop(HDESK hDesktop);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CloseDesktop"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL CloseDesktop(HDESK hDesktop);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetThreadDesktop"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HDESK GetThreadDesktop([NativeTypeName("DWORD")] uint dwThreadId);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateWindowStationA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HWINSTA CreateWindowStationA([NativeTypeName("LPCSTR")] sbyte* lpwinsta, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("ACCESS_MASK")] uint dwDesiredAccess, [NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpsa);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateWindowStationW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HWINSTA CreateWindowStationW([NativeTypeName("LPCWSTR")] ushort* lpwinsta, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("ACCESS_MASK")] uint dwDesiredAccess, [NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpsa);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.OpenWindowStationA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HWINSTA OpenWindowStationA([NativeTypeName("LPCSTR")] sbyte* lpszWinSta, BOOL fInherit, [NativeTypeName("ACCESS_MASK")] uint dwDesiredAccess);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.OpenWindowStationW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HWINSTA OpenWindowStationW([NativeTypeName("LPCWSTR")] ushort* lpszWinSta, BOOL fInherit, [NativeTypeName("ACCESS_MASK")] uint dwDesiredAccess);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EnumWindowStationsA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL EnumWindowStationsA([NativeTypeName("WINSTAENUMPROCA")] delegate* unmanaged<sbyte*, LPARAM, BOOL> lpEnumFunc, LPARAM lParam);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EnumWindowStationsW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL EnumWindowStationsW([NativeTypeName("WINSTAENUMPROCW")] delegate* unmanaged<ushort*, LPARAM, BOOL> lpEnumFunc, LPARAM lParam);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CloseWindowStation"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL CloseWindowStation(HWINSTA hWinSta);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetProcessWindowStation"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SetProcessWindowStation(HWINSTA hWinSta);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetProcessWindowStation"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HWINSTA GetProcessWindowStation();
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetUserObjectSecurity"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SetUserObjectSecurity(HANDLE hObj, [NativeTypeName("PSECURITY_INFORMATION")] uint* pSIRequested, [NativeTypeName("PSECURITY_DESCRIPTOR")] void* pSID);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetUserObjectSecurity"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL GetUserObjectSecurity(HANDLE hObj, [NativeTypeName("PSECURITY_INFORMATION")] uint* pSIRequested, [NativeTypeName("PSECURITY_DESCRIPTOR")] void* pSID, [NativeTypeName("DWORD")] uint nLength, [NativeTypeName("LPDWORD")] uint* lpnLengthNeeded);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetUserObjectInformationA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL GetUserObjectInformationA(HANDLE hObj, int nIndex, [NativeTypeName("PVOID")] void* pvInfo, [NativeTypeName("DWORD")] uint nLength, [NativeTypeName("LPDWORD")] uint* lpnLengthNeeded);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetUserObjectInformationW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL GetUserObjectInformationW(HANDLE hObj, int nIndex, [NativeTypeName("PVOID")] void* pvInfo, [NativeTypeName("DWORD")] uint nLength, [NativeTypeName("LPDWORD")] uint* lpnLengthNeeded);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetUserObjectInformationA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SetUserObjectInformationA(HANDLE hObj, int nIndex, [NativeTypeName("PVOID")] void* pvInfo, [NativeTypeName("DWORD")] uint nLength);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetUserObjectInformationW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SetUserObjectInformationW(HANDLE hObj, int nIndex, [NativeTypeName("PVOID")] void* pvInfo, [NativeTypeName("DWORD")] uint nLength);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IsHungAppWindow"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL IsHungAppWindow(HWND hwnd);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DisableProcessWindowsGhosting"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern void DisableProcessWindowsGhosting();
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RegisterWindowMessageA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern uint RegisterWindowMessageA([NativeTypeName("LPCSTR")] sbyte* lpString);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RegisterWindowMessageW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern uint RegisterWindowMessageW([NativeTypeName("LPCWSTR")] ushort* lpString);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.TrackMouseEvent"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL TrackMouseEvent([NativeTypeName("LPTRACKMOUSEEVENT")] TRACKMOUSEEVENT* lpEventTrack);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DrawEdge"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL DrawEdge(HDC hdc, [NativeTypeName("LPRECT")] RECT* qrc, uint edge, uint grfFlags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DrawFrameControl"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL DrawFrameControl(HDC param0, [NativeTypeName("LPRECT")] RECT* param1, uint param2, uint param3);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DrawCaption"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL DrawCaption(HWND hwnd, HDC hdc, [NativeTypeName("const RECT *")] RECT* lprect, uint flags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DrawAnimatedRects"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL DrawAnimatedRects(HWND hwnd, int idAni, [NativeTypeName("const RECT *")] RECT* lprcFrom, [NativeTypeName("const RECT *")] RECT* lprcTo);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetMessageA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL GetMessageA([NativeTypeName("LPMSG")] MSG* lpMsg, HWND hWnd, uint wMsgFilterMin, uint wMsgFilterMax);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetMessageW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL GetMessageW([NativeTypeName("LPMSG")] MSG* lpMsg, HWND hWnd, uint wMsgFilterMin, uint wMsgFilterMax);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.TranslateMessage"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL TranslateMessage([NativeTypeName("const MSG *")] MSG* lpMsg);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DispatchMessageA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern LRESULT DispatchMessageA([NativeTypeName("const MSG *")] MSG* lpMsg);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DispatchMessageW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern LRESULT DispatchMessageW([NativeTypeName("const MSG *")] MSG* lpMsg);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetMessageQueue"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL SetMessageQueue(int cMessagesMax);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PeekMessageA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL PeekMessageA([NativeTypeName("LPMSG")] MSG* lpMsg, HWND hWnd, uint wMsgFilterMin, uint wMsgFilterMax, uint wRemoveMsg);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PeekMessageW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL PeekMessageW([NativeTypeName("LPMSG")] MSG* lpMsg, HWND hWnd, uint wMsgFilterMin, uint wMsgFilterMax, uint wRemoveMsg);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RegisterHotKey"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL RegisterHotKey(HWND hWnd, int id, uint fsModifiers, uint vk);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.UnregisterHotKey"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL UnregisterHotKey(HWND hWnd, int id);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ExitWindowsEx"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL ExitWindowsEx(uint uFlags, [NativeTypeName("DWORD")] uint dwReason);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SwapMouseButton"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL SwapMouseButton(BOOL fSwap);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetMessagePos"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint GetMessagePos();
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetMessageTime"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [return: NativeTypeName("LONG")]
     public static extern int GetMessageTime();
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetMessageExtraInfo"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern LPARAM GetMessageExtraInfo();
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetUnpredictedMessagePos"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     [SupportedOSPlatform("windows8.0")]
     public static extern uint GetUnpredictedMessagePos();
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IsWow64Message"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL IsWow64Message();
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetMessageExtraInfo"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern LPARAM SetMessageExtraInfo(LPARAM lParam);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SendMessageA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern LRESULT SendMessageA(HWND hWnd, uint Msg, WPARAM wParam, LPARAM lParam);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SendMessageW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern LRESULT SendMessageW(HWND hWnd, uint Msg, WPARAM wParam, LPARAM lParam);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SendMessageTimeoutA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern LRESULT SendMessageTimeoutA(HWND hWnd, uint Msg, WPARAM wParam, LPARAM lParam, uint fuFlags, uint uTimeout, [NativeTypeName("PDWORD_PTR")] nuint* lpdwResult);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SendMessageTimeoutW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern LRESULT SendMessageTimeoutW(HWND hWnd, uint Msg, WPARAM wParam, LPARAM lParam, uint fuFlags, uint uTimeout, [NativeTypeName("PDWORD_PTR")] nuint* lpdwResult);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SendNotifyMessageA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SendNotifyMessageA(HWND hWnd, uint Msg, WPARAM wParam, LPARAM lParam);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SendNotifyMessageW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SendNotifyMessageW(HWND hWnd, uint Msg, WPARAM wParam, LPARAM lParam);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SendMessageCallbackA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SendMessageCallbackA(HWND hWnd, uint Msg, WPARAM wParam, LPARAM lParam, [NativeTypeName("SENDASYNCPROC")] delegate* unmanaged<HWND, uint, nuint, LRESULT, void> lpResultCallBack, [NativeTypeName("ULONG_PTR")] nuint dwData);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SendMessageCallbackW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SendMessageCallbackW(HWND hWnd, uint Msg, WPARAM wParam, LPARAM lParam, [NativeTypeName("SENDASYNCPROC")] delegate* unmanaged<HWND, uint, nuint, LRESULT, void> lpResultCallBack, [NativeTypeName("ULONG_PTR")] nuint dwData);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.BroadcastSystemMessageExA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("long")]
     public static extern int BroadcastSystemMessageExA([NativeTypeName("DWORD")] uint flags, [NativeTypeName("LPDWORD")] uint* lpInfo, uint Msg, WPARAM wParam, LPARAM lParam, [NativeTypeName("PBSMINFO")] BSMINFO* pbsmInfo);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.BroadcastSystemMessageExW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("long")]
     public static extern int BroadcastSystemMessageExW([NativeTypeName("DWORD")] uint flags, [NativeTypeName("LPDWORD")] uint* lpInfo, uint Msg, WPARAM wParam, LPARAM lParam, [NativeTypeName("PBSMINFO")] BSMINFO* pbsmInfo);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.BroadcastSystemMessageA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("long")]
     public static extern int BroadcastSystemMessageA([NativeTypeName("DWORD")] uint flags, [NativeTypeName("LPDWORD")] uint* lpInfo, uint Msg, WPARAM wParam, LPARAM lParam);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.BroadcastSystemMessageW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("long")]
     public static extern int BroadcastSystemMessageW([NativeTypeName("DWORD")] uint flags, [NativeTypeName("LPDWORD")] uint* lpInfo, uint Msg, WPARAM wParam, LPARAM lParam);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RegisterDeviceNotificationA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HDEVNOTIFY RegisterDeviceNotificationA(HANDLE hRecipient, [NativeTypeName("LPVOID")] void* NotificationFilter, [NativeTypeName("DWORD")] uint Flags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RegisterDeviceNotificationW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HDEVNOTIFY RegisterDeviceNotificationW(HANDLE hRecipient, [NativeTypeName("LPVOID")] void* NotificationFilter, [NativeTypeName("DWORD")] uint Flags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.UnregisterDeviceNotification"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL UnregisterDeviceNotification(HDEVNOTIFY Handle);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RegisterPowerSettingNotification"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HPOWERNOTIFY RegisterPowerSettingNotification(HANDLE hRecipient, [NativeTypeName("LPCGUID")] Guid* PowerSettingGuid, [NativeTypeName("DWORD")] uint Flags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.UnregisterPowerSettingNotification"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL UnregisterPowerSettingNotification(HPOWERNOTIFY Handle);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RegisterSuspendResumeNotification"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     [SupportedOSPlatform("windows8.0")]
     public static extern HPOWERNOTIFY RegisterSuspendResumeNotification(HANDLE hRecipient, [NativeTypeName("DWORD")] uint Flags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.UnregisterSuspendResumeNotification"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     [SupportedOSPlatform("windows8.0")]
     public static extern BOOL UnregisterSuspendResumeNotification(HPOWERNOTIFY Handle);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PostMessageA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL PostMessageA(HWND hWnd, uint Msg, WPARAM wParam, LPARAM lParam);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PostMessageW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL PostMessageW(HWND hWnd, uint Msg, WPARAM wParam, LPARAM lParam);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PostThreadMessageA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL PostThreadMessageA([NativeTypeName("DWORD")] uint idThread, uint Msg, WPARAM wParam, LPARAM lParam);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PostThreadMessageW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL PostThreadMessageW([NativeTypeName("DWORD")] uint idThread, uint Msg, WPARAM wParam, LPARAM lParam);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.AttachThreadInput"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL AttachThreadInput([NativeTypeName("DWORD")] uint idAttach, [NativeTypeName("DWORD")] uint idAttachTo, BOOL fAttach);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ReplyMessage"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL ReplyMessage(LRESULT lResult);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WaitMessage"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL WaitMessage();
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WaitForInputIdle"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint WaitForInputIdle(HANDLE hProcess, [NativeTypeName("DWORD")] uint dwMilliseconds);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DefWindowProcA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern LRESULT DefWindowProcA(HWND hWnd, uint Msg, WPARAM wParam, LPARAM lParam);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DefWindowProcW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern LRESULT DefWindowProcW(HWND hWnd, uint Msg, WPARAM wParam, LPARAM lParam);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PostQuitMessage"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern void PostQuitMessage(int nExitCode);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CallWindowProcA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern LRESULT CallWindowProcA([NativeTypeName("WNDPROC")] delegate* unmanaged<HWND, uint, WPARAM, LPARAM, LRESULT> lpPrevWndFunc, HWND hWnd, uint Msg, WPARAM wParam, LPARAM lParam);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CallWindowProcW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern LRESULT CallWindowProcW([NativeTypeName("WNDPROC")] delegate* unmanaged<HWND, uint, WPARAM, LPARAM, LRESULT> lpPrevWndFunc, HWND hWnd, uint Msg, WPARAM wParam, LPARAM lParam);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.InSendMessage"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL InSendMessage();
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.InSendMessageEx"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint InSendMessageEx([NativeTypeName("LPVOID")] void* lpReserved);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetDoubleClickTime"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern uint GetDoubleClickTime();
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetDoubleClickTime"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SetDoubleClickTime(uint param0);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RegisterClassA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("ATOM")]
     public static extern ushort RegisterClassA([NativeTypeName("const WNDCLASSA *")] WNDCLASSA* lpWndClass);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RegisterClassW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("ATOM")]
     public static extern ushort RegisterClassW([NativeTypeName("const WNDCLASSW *")] WNDCLASSW* lpWndClass);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.UnregisterClassA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL UnregisterClassA([NativeTypeName("LPCSTR")] sbyte* lpClassName, HINSTANCE hInstance);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.UnregisterClassW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL UnregisterClassW([NativeTypeName("LPCWSTR")] ushort* lpClassName, HINSTANCE hInstance);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetClassInfoA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL GetClassInfoA(HINSTANCE hInstance, [NativeTypeName("LPCSTR")] sbyte* lpClassName, [NativeTypeName("LPWNDCLASSA")] WNDCLASSA* lpWndClass);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetClassInfoW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL GetClassInfoW(HINSTANCE hInstance, [NativeTypeName("LPCWSTR")] ushort* lpClassName, [NativeTypeName("LPWNDCLASSW")] WNDCLASSW* lpWndClass);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RegisterClassExA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("ATOM")]
     public static extern ushort RegisterClassExA([NativeTypeName("const WNDCLASSEXA *")] WNDCLASSEXA* param0);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RegisterClassExW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("ATOM")]
     public static extern ushort RegisterClassExW([NativeTypeName("const WNDCLASSEXW *")] WNDCLASSEXW* param0);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetClassInfoExA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL GetClassInfoExA(HINSTANCE hInstance, [NativeTypeName("LPCSTR")] sbyte* lpszClass, [NativeTypeName("LPWNDCLASSEXA")] WNDCLASSEXA* lpwcx);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetClassInfoExW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL GetClassInfoExW(HINSTANCE hInstance, [NativeTypeName("LPCWSTR")] ushort* lpszClass, [NativeTypeName("LPWNDCLASSEXW")] WNDCLASSEXW* lpwcx);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateWindowExA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HWND CreateWindowExA([NativeTypeName("DWORD")] uint dwExStyle, [NativeTypeName("LPCSTR")] sbyte* lpClassName, [NativeTypeName("LPCSTR")] sbyte* lpWindowName, [NativeTypeName("DWORD")] uint dwStyle, int X, int Y, int nWidth, int nHeight, HWND hWndParent, HMENU hMenu, HINSTANCE hInstance, [NativeTypeName("LPVOID")] void* lpParam);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateWindowExW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HWND CreateWindowExW([NativeTypeName("DWORD")] uint dwExStyle, [NativeTypeName("LPCWSTR")] ushort* lpClassName, [NativeTypeName("LPCWSTR")] ushort* lpWindowName, [NativeTypeName("DWORD")] uint dwStyle, int X, int Y, int nWidth, int nHeight, HWND hWndParent, HMENU hMenu, HINSTANCE hInstance, [NativeTypeName("LPVOID")] void* lpParam);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IsWindow"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL IsWindow(HWND hWnd);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IsMenu"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL IsMenu(HMENU hMenu);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IsChild"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL IsChild(HWND hWndParent, HWND hWnd);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DestroyWindow"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL DestroyWindow(HWND hWnd);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ShowWindow"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL ShowWindow(HWND hWnd, int nCmdShow);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.AnimateWindow"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL AnimateWindow(HWND hWnd, [NativeTypeName("DWORD")] uint dwTime, [NativeTypeName("DWORD")] uint dwFlags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.UpdateLayeredWindow"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL UpdateLayeredWindow(HWND hWnd, HDC hdcDst, POINT* pptDst, SIZE* psize, HDC hdcSrc, POINT* pptSrc, COLORREF crKey, BLENDFUNCTION* pblend, [NativeTypeName("DWORD")] uint dwFlags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.UpdateLayeredWindowIndirect"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL UpdateLayeredWindowIndirect(HWND hWnd, [NativeTypeName("const UPDATELAYEREDWINDOWINFO *")] UPDATELAYEREDWINDOWINFO* pULWInfo);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetLayeredWindowAttributes"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL GetLayeredWindowAttributes(HWND hwnd, COLORREF* pcrKey, byte* pbAlpha, [NativeTypeName("DWORD *")] uint* pdwFlags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PrintWindow"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL PrintWindow(HWND hwnd, HDC hdcBlt, uint nFlags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetLayeredWindowAttributes"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SetLayeredWindowAttributes(HWND hwnd, COLORREF crKey, byte bAlpha, [NativeTypeName("DWORD")] uint dwFlags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ShowWindowAsync"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL ShowWindowAsync(HWND hWnd, int nCmdShow);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FlashWindow"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL FlashWindow(HWND hWnd, BOOL bInvert);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FlashWindowEx"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL FlashWindowEx([NativeTypeName("PFLASHWINFO")] FLASHWINFO* pfwi);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ShowOwnedPopups"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL ShowOwnedPopups(HWND hWnd, BOOL fShow);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.OpenIcon"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL OpenIcon(HWND hWnd);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CloseWindow"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL CloseWindow(HWND hWnd);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MoveWindow"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL MoveWindow(HWND hWnd, int X, int Y, int nWidth, int nHeight, BOOL bRepaint);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetWindowPos"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SetWindowPos(HWND hWnd, HWND hWndInsertAfter, int X, int Y, int cx, int cy, uint uFlags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetWindowPlacement"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL GetWindowPlacement(HWND hWnd, WINDOWPLACEMENT* lpwndpl);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetWindowPlacement"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SetWindowPlacement(HWND hWnd, [NativeTypeName("const WINDOWPLACEMENT *")] WINDOWPLACEMENT* lpwndpl);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetWindowDisplayAffinity"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL GetWindowDisplayAffinity(HWND hWnd, [NativeTypeName("DWORD *")] uint* pdwAffinity);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetWindowDisplayAffinity"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SetWindowDisplayAffinity(HWND hWnd, [NativeTypeName("DWORD")] uint dwAffinity);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.BeginDeferWindowPos"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HDWP BeginDeferWindowPos(int nNumWindows);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DeferWindowPos"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HDWP DeferWindowPos(HDWP hWinPosInfo, HWND hWnd, HWND hWndInsertAfter, int x, int y, int cx, int cy, uint uFlags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EndDeferWindowPos"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL EndDeferWindowPos(HDWP hWinPosInfo);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IsWindowVisible"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL IsWindowVisible(HWND hWnd);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IsIconic"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL IsIconic(HWND hWnd);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.AnyPopup"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL AnyPopup();
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.BringWindowToTop"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL BringWindowToTop(HWND hWnd);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IsZoomed"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL IsZoomed(HWND hWnd);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateDialogParamA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HWND CreateDialogParamA(HINSTANCE hInstance, [NativeTypeName("LPCSTR")] sbyte* lpTemplateName, HWND hWndParent, [NativeTypeName("DLGPROC")] delegate* unmanaged<HWND, uint, WPARAM, LPARAM, nint> lpDialogFunc, LPARAM dwInitParam);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateDialogParamW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HWND CreateDialogParamW(HINSTANCE hInstance, [NativeTypeName("LPCWSTR")] ushort* lpTemplateName, HWND hWndParent, [NativeTypeName("DLGPROC")] delegate* unmanaged<HWND, uint, WPARAM, LPARAM, nint> lpDialogFunc, LPARAM dwInitParam);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateDialogIndirectParamA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HWND CreateDialogIndirectParamA(HINSTANCE hInstance, [NativeTypeName("LPCDLGTEMPLATEA")] DLGTEMPLATE* lpTemplate, HWND hWndParent, [NativeTypeName("DLGPROC")] delegate* unmanaged<HWND, uint, WPARAM, LPARAM, nint> lpDialogFunc, LPARAM dwInitParam);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateDialogIndirectParamW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HWND CreateDialogIndirectParamW(HINSTANCE hInstance, [NativeTypeName("LPCDLGTEMPLATEW")] DLGTEMPLATE* lpTemplate, HWND hWndParent, [NativeTypeName("DLGPROC")] delegate* unmanaged<HWND, uint, WPARAM, LPARAM, nint> lpDialogFunc, LPARAM dwInitParam);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DialogBoxParamA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("INT_PTR")]
     public static extern nint DialogBoxParamA(HINSTANCE hInstance, [NativeTypeName("LPCSTR")] sbyte* lpTemplateName, HWND hWndParent, [NativeTypeName("DLGPROC")] delegate* unmanaged<HWND, uint, WPARAM, LPARAM, nint> lpDialogFunc, LPARAM dwInitParam);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DialogBoxParamW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("INT_PTR")]
     public static extern nint DialogBoxParamW(HINSTANCE hInstance, [NativeTypeName("LPCWSTR")] ushort* lpTemplateName, HWND hWndParent, [NativeTypeName("DLGPROC")] delegate* unmanaged<HWND, uint, WPARAM, LPARAM, nint> lpDialogFunc, LPARAM dwInitParam);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DialogBoxIndirectParamA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("INT_PTR")]
     public static extern nint DialogBoxIndirectParamA(HINSTANCE hInstance, [NativeTypeName("LPCDLGTEMPLATEA")] DLGTEMPLATE* hDialogTemplate, HWND hWndParent, [NativeTypeName("DLGPROC")] delegate* unmanaged<HWND, uint, WPARAM, LPARAM, nint> lpDialogFunc, LPARAM dwInitParam);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DialogBoxIndirectParamW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("INT_PTR")]
     public static extern nint DialogBoxIndirectParamW(HINSTANCE hInstance, [NativeTypeName("LPCDLGTEMPLATEW")] DLGTEMPLATE* hDialogTemplate, HWND hWndParent, [NativeTypeName("DLGPROC")] delegate* unmanaged<HWND, uint, WPARAM, LPARAM, nint> lpDialogFunc, LPARAM dwInitParam);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EndDialog"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL EndDialog(HWND hDlg, [NativeTypeName("INT_PTR")] nint nResult);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetDlgItem"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HWND GetDlgItem(HWND hDlg, int nIDDlgItem);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetDlgItemInt"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SetDlgItemInt(HWND hDlg, int nIDDlgItem, uint uValue, BOOL bSigned);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetDlgItemInt"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern uint GetDlgItemInt(HWND hDlg, int nIDDlgItem, BOOL* lpTranslated, BOOL bSigned);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetDlgItemTextA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SetDlgItemTextA(HWND hDlg, int nIDDlgItem, [NativeTypeName("LPCSTR")] sbyte* lpString);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetDlgItemTextW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SetDlgItemTextW(HWND hDlg, int nIDDlgItem, [NativeTypeName("LPCWSTR")] ushort* lpString);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetDlgItemTextA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern uint GetDlgItemTextA(HWND hDlg, int nIDDlgItem, [NativeTypeName("LPSTR")] sbyte* lpString, int cchMax);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetDlgItemTextW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern uint GetDlgItemTextW(HWND hDlg, int nIDDlgItem, [NativeTypeName("LPWSTR")] ushort* lpString, int cchMax);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CheckDlgButton"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL CheckDlgButton(HWND hDlg, int nIDButton, uint uCheck);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CheckRadioButton"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL CheckRadioButton(HWND hDlg, int nIDFirstButton, int nIDLastButton, int nIDCheckButton);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IsDlgButtonChecked"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern uint IsDlgButtonChecked(HWND hDlg, int nIDButton);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SendDlgItemMessageA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern LRESULT SendDlgItemMessageA(HWND hDlg, int nIDDlgItem, uint Msg, WPARAM wParam, LPARAM lParam);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SendDlgItemMessageW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern LRESULT SendDlgItemMessageW(HWND hDlg, int nIDDlgItem, uint Msg, WPARAM wParam, LPARAM lParam);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetNextDlgGroupItem"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HWND GetNextDlgGroupItem(HWND hDlg, HWND hCtl, BOOL bPrevious);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetNextDlgTabItem"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HWND GetNextDlgTabItem(HWND hDlg, HWND hCtl, BOOL bPrevious);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetDlgCtrlID"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern int GetDlgCtrlID(HWND hWnd);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetDialogBaseUnits"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [return: NativeTypeName("long")]
     public static extern int GetDialogBaseUnits();
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DefDlgProcA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern LRESULT DefDlgProcA(HWND hDlg, uint Msg, WPARAM wParam, LPARAM lParam);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DefDlgProcW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern LRESULT DefDlgProcW(HWND hDlg, uint Msg, WPARAM wParam, LPARAM lParam);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetDialogControlDpiChangeBehavior"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL SetDialogControlDpiChangeBehavior(HWND hWnd, DIALOG_CONTROL_DPI_CHANGE_BEHAVIORS mask, DIALOG_CONTROL_DPI_CHANGE_BEHAVIORS values);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetDialogControlDpiChangeBehavior"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     [SupportedOSPlatform("windows10.0.15063.0")]
     public static extern DIALOG_CONTROL_DPI_CHANGE_BEHAVIORS GetDialogControlDpiChangeBehavior(HWND hWnd);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetDialogDpiChangeBehavior"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     [SupportedOSPlatform("windows10.0.15063.0")]
     public static extern BOOL SetDialogDpiChangeBehavior(HWND hDlg, DIALOG_DPI_CHANGE_BEHAVIORS mask, DIALOG_DPI_CHANGE_BEHAVIORS values);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetDialogDpiChangeBehavior"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     [SupportedOSPlatform("windows10.0.15063.0")]
     public static extern DIALOG_DPI_CHANGE_BEHAVIORS GetDialogDpiChangeBehavior(HWND hDlg);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CallMsgFilterA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL CallMsgFilterA([NativeTypeName("LPMSG")] MSG* lpMsg, int nCode);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CallMsgFilterW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL CallMsgFilterW([NativeTypeName("LPMSG")] MSG* lpMsg, int nCode);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.OpenClipboard"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL OpenClipboard(HWND hWndNewOwner);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CloseClipboard"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL CloseClipboard();
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetClipboardSequenceNumber"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint GetClipboardSequenceNumber();
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetClipboardOwner"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HWND GetClipboardOwner();
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetClipboardViewer"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HWND SetClipboardViewer(HWND hWndNewViewer);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetClipboardViewer"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HWND GetClipboardViewer();
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ChangeClipboardChain"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL ChangeClipboardChain(HWND hWndRemove, HWND hWndNewNext);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetClipboardData"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HANDLE SetClipboardData(uint uFormat, HANDLE hMem);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetClipboardData"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HANDLE GetClipboardData(uint uFormat);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RegisterClipboardFormatA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern uint RegisterClipboardFormatA([NativeTypeName("LPCSTR")] sbyte* lpszFormat);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RegisterClipboardFormatW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern uint RegisterClipboardFormatW([NativeTypeName("LPCWSTR")] ushort* lpszFormat);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CountClipboardFormats"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern int CountClipboardFormats();
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EnumClipboardFormats"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern uint EnumClipboardFormats(uint format);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetClipboardFormatNameA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern int GetClipboardFormatNameA(uint format, [NativeTypeName("LPSTR")] sbyte* lpszFormatName, int cchMaxCount);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetClipboardFormatNameW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern int GetClipboardFormatNameW(uint format, [NativeTypeName("LPWSTR")] ushort* lpszFormatName, int cchMaxCount);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EmptyClipboard"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL EmptyClipboard();
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IsClipboardFormatAvailable"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL IsClipboardFormatAvailable(uint format);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetPriorityClipboardFormat"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern int GetPriorityClipboardFormat(uint* paFormatPriorityList, int cFormats);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetOpenClipboardWindow"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HWND GetOpenClipboardWindow();
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.AddClipboardFormatListener"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL AddClipboardFormatListener(HWND hwnd);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RemoveClipboardFormatListener"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL RemoveClipboardFormatListener(HWND hwnd);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetUpdatedClipboardFormats"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL GetUpdatedClipboardFormats([NativeTypeName("PUINT")] uint* lpuiFormats, uint cFormats, [NativeTypeName("PUINT")] uint* pcFormatsOut);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CharToOemA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL CharToOemA([NativeTypeName("LPCSTR")] sbyte* pSrc, [NativeTypeName("LPSTR")] sbyte* pDst);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CharToOemW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL CharToOemW([NativeTypeName("LPCWSTR")] ushort* pSrc, [NativeTypeName("LPSTR")] sbyte* pDst);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.OemToCharA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL OemToCharA([NativeTypeName("LPCSTR")] sbyte* pSrc, [NativeTypeName("LPSTR")] sbyte* pDst);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.OemToCharW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL OemToCharW([NativeTypeName("LPCSTR")] sbyte* pSrc, [NativeTypeName("LPWSTR")] ushort* pDst);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CharToOemBuffA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL CharToOemBuffA([NativeTypeName("LPCSTR")] sbyte* lpszSrc, [NativeTypeName("LPSTR")] sbyte* lpszDst, [NativeTypeName("DWORD")] uint cchDstLength);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CharToOemBuffW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL CharToOemBuffW([NativeTypeName("LPCWSTR")] ushort* lpszSrc, [NativeTypeName("LPSTR")] sbyte* lpszDst, [NativeTypeName("DWORD")] uint cchDstLength);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.OemToCharBuffA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL OemToCharBuffA([NativeTypeName("LPCSTR")] sbyte* lpszSrc, [NativeTypeName("LPSTR")] sbyte* lpszDst, [NativeTypeName("DWORD")] uint cchDstLength);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.OemToCharBuffW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL OemToCharBuffW([NativeTypeName("LPCSTR")] sbyte* lpszSrc, [NativeTypeName("LPWSTR")] ushort* lpszDst, [NativeTypeName("DWORD")] uint cchDstLength);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CharUpperA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("LPSTR")]
     public static extern sbyte* CharUpperA([NativeTypeName("LPSTR")] sbyte* lpsz);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CharUpperW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("LPWSTR")]
     public static extern ushort* CharUpperW([NativeTypeName("LPWSTR")] ushort* lpsz);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CharUpperBuffA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint CharUpperBuffA([NativeTypeName("LPSTR")] sbyte* lpsz, [NativeTypeName("DWORD")] uint cchLength);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CharUpperBuffW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint CharUpperBuffW([NativeTypeName("LPWSTR")] ushort* lpsz, [NativeTypeName("DWORD")] uint cchLength);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CharLowerA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("LPSTR")]
     public static extern sbyte* CharLowerA([NativeTypeName("LPSTR")] sbyte* lpsz);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CharLowerW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("LPWSTR")]
     public static extern ushort* CharLowerW([NativeTypeName("LPWSTR")] ushort* lpsz);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CharLowerBuffA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint CharLowerBuffA([NativeTypeName("LPSTR")] sbyte* lpsz, [NativeTypeName("DWORD")] uint cchLength);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CharLowerBuffW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint CharLowerBuffW([NativeTypeName("LPWSTR")] ushort* lpsz, [NativeTypeName("DWORD")] uint cchLength);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CharNextA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [return: NativeTypeName("LPSTR")]
     public static extern sbyte* CharNextA([NativeTypeName("LPCSTR")] sbyte* lpsz);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CharNextW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [return: NativeTypeName("LPWSTR")]
     public static extern ushort* CharNextW([NativeTypeName("LPCWSTR")] ushort* lpsz);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CharPrevA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [return: NativeTypeName("LPSTR")]
     public static extern sbyte* CharPrevA([NativeTypeName("LPCSTR")] sbyte* lpszStart, [NativeTypeName("LPCSTR")] sbyte* lpszCurrent);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CharPrevW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [return: NativeTypeName("LPWSTR")]
     public static extern ushort* CharPrevW([NativeTypeName("LPCWSTR")] ushort* lpszStart, [NativeTypeName("LPCWSTR")] ushort* lpszCurrent);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CharNextExA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [return: NativeTypeName("LPSTR")]
     public static extern sbyte* CharNextExA([NativeTypeName("WORD")] ushort CodePage, [NativeTypeName("LPCSTR")] sbyte* lpCurrentChar, [NativeTypeName("DWORD")] uint dwFlags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CharPrevExA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [return: NativeTypeName("LPSTR")]
     public static extern sbyte* CharPrevExA([NativeTypeName("WORD")] ushort CodePage, [NativeTypeName("LPCSTR")] sbyte* lpStart, [NativeTypeName("LPCSTR")] sbyte* lpCurrentChar, [NativeTypeName("DWORD")] uint dwFlags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IsCharAlphaA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL IsCharAlphaA([NativeTypeName("CHAR")] sbyte ch);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IsCharAlphaW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL IsCharAlphaW([NativeTypeName("WCHAR")] ushort ch);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IsCharAlphaNumericA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL IsCharAlphaNumericA([NativeTypeName("CHAR")] sbyte ch);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IsCharAlphaNumericW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL IsCharAlphaNumericW([NativeTypeName("WCHAR")] ushort ch);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IsCharUpperA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL IsCharUpperA([NativeTypeName("CHAR")] sbyte ch);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IsCharUpperW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL IsCharUpperW([NativeTypeName("WCHAR")] ushort ch);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IsCharLowerA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL IsCharLowerA([NativeTypeName("CHAR")] sbyte ch);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IsCharLowerW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL IsCharLowerW([NativeTypeName("WCHAR")] ushort ch);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetFocus"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HWND SetFocus(HWND hWnd);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetActiveWindow"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern HWND GetActiveWindow();
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetFocus"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern HWND GetFocus();
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetKBCodePage"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern uint GetKBCodePage();
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetKeyState"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern short GetKeyState(int nVirtKey);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetAsyncKeyState"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern short GetAsyncKeyState(int vKey);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetKeyboardState"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL GetKeyboardState([NativeTypeName("PBYTE")] byte* lpKeyState);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetKeyboardState"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SetKeyboardState([NativeTypeName("LPBYTE")] byte* lpKeyState);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetKeyNameTextA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern int GetKeyNameTextA([NativeTypeName("LONG")] int lParam, [NativeTypeName("LPSTR")] sbyte* lpString, int cchSize);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetKeyNameTextW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern int GetKeyNameTextW([NativeTypeName("LONG")] int lParam, [NativeTypeName("LPWSTR")] ushort* lpString, int cchSize);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetKeyboardType"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern int GetKeyboardType(int nTypeFlag);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ToAscii"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern int ToAscii(uint uVirtKey, uint uScanCode, [NativeTypeName("const BYTE *")] byte* lpKeyState, [NativeTypeName("LPWORD")] ushort* lpChar, uint uFlags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ToAsciiEx"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern int ToAsciiEx(uint uVirtKey, uint uScanCode, [NativeTypeName("const BYTE *")] byte* lpKeyState, [NativeTypeName("LPWORD")] ushort* lpChar, uint uFlags, HKL dwhkl);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ToUnicode"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern int ToUnicode(uint wVirtKey, uint wScanCode, [NativeTypeName("const BYTE *")] byte* lpKeyState, [NativeTypeName("LPWSTR")] ushort* pwszBuff, int cchBuff, uint wFlags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.OemKeyScan"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint OemKeyScan([NativeTypeName("WORD")] ushort wOemChar);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VkKeyScanA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern short VkKeyScanA([NativeTypeName("CHAR")] sbyte ch);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VkKeyScanW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern short VkKeyScanW([NativeTypeName("WCHAR")] ushort ch);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VkKeyScanExA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern short VkKeyScanExA([NativeTypeName("CHAR")] sbyte ch, HKL dwhkl);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VkKeyScanExW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern short VkKeyScanExW([NativeTypeName("WCHAR")] ushort ch, HKL dwhkl);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.keybd_event"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern void keybd_event(byte bVk, byte bScan, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("ULONG_PTR")] nuint dwExtraInfo);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.mouse_event"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern void mouse_event([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD")] uint dx, [NativeTypeName("DWORD")] uint dy, [NativeTypeName("DWORD")] uint dwData, [NativeTypeName("ULONG_PTR")] nuint dwExtraInfo);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SendInput"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern uint SendInput(uint cInputs, [NativeTypeName("LPINPUT")] INPUT* pInputs, int cbSize);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetTouchInputInfo"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL GetTouchInputInfo(HTOUCHINPUT hTouchInput, uint cInputs, [NativeTypeName("PTOUCHINPUT")] TOUCHINPUT* pInputs, int cbSize);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CloseTouchInputHandle"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL CloseTouchInputHandle(HTOUCHINPUT hTouchInput);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RegisterTouchWindow"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL RegisterTouchWindow(HWND hwnd, [NativeTypeName("ULONG")] uint ulFlags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.UnregisterTouchWindow"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL UnregisterTouchWindow(HWND hwnd);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IsTouchWindow"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL IsTouchWindow(HWND hwnd, [NativeTypeName("PULONG")] uint* pulFlags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.InitializeTouchInjection"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     [SupportedOSPlatform("windows8.0")]
     public static extern BOOL InitializeTouchInjection([NativeTypeName("UINT32")] uint maxCount, [NativeTypeName("DWORD")] uint dwMode);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.InjectTouchInput"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     [SupportedOSPlatform("windows8.0")]
     public static extern BOOL InjectTouchInput([NativeTypeName("UINT32")] uint count, [NativeTypeName("const POINTER_TOUCH_INFO *")] POINTER_TOUCH_INFO* contacts);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetPointerType"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     [SupportedOSPlatform("windows8.0")]
     public static extern BOOL GetPointerType([NativeTypeName("UINT32")] uint pointerId, [NativeTypeName("POINTER_INPUT_TYPE *")] uint* pointerType);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetPointerCursorId"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     [SupportedOSPlatform("windows8.0")]
     public static extern BOOL GetPointerCursorId([NativeTypeName("UINT32")] uint pointerId, [NativeTypeName("UINT32 *")] uint* cursorId);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetPointerInfo"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     [SupportedOSPlatform("windows8.0")]
     public static extern BOOL GetPointerInfo([NativeTypeName("UINT32")] uint pointerId, POINTER_INFO* pointerInfo);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetPointerInfoHistory"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     [SupportedOSPlatform("windows8.0")]
     public static extern BOOL GetPointerInfoHistory([NativeTypeName("UINT32")] uint pointerId, [NativeTypeName("UINT32 *")] uint* entriesCount, POINTER_INFO* pointerInfo);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetPointerFrameInfo"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     [SupportedOSPlatform("windows8.0")]
     public static extern BOOL GetPointerFrameInfo([NativeTypeName("UINT32")] uint pointerId, [NativeTypeName("UINT32 *")] uint* pointerCount, POINTER_INFO* pointerInfo);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetPointerFrameInfoHistory"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     [SupportedOSPlatform("windows8.0")]
     public static extern BOOL GetPointerFrameInfoHistory([NativeTypeName("UINT32")] uint pointerId, [NativeTypeName("UINT32 *")] uint* entriesCount, [NativeTypeName("UINT32 *")] uint* pointerCount, POINTER_INFO* pointerInfo);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetPointerTouchInfo"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     [SupportedOSPlatform("windows8.0")]
     public static extern BOOL GetPointerTouchInfo([NativeTypeName("UINT32")] uint pointerId, POINTER_TOUCH_INFO* touchInfo);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetPointerTouchInfoHistory"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     [SupportedOSPlatform("windows8.0")]
     public static extern BOOL GetPointerTouchInfoHistory([NativeTypeName("UINT32")] uint pointerId, [NativeTypeName("UINT32 *")] uint* entriesCount, POINTER_TOUCH_INFO* touchInfo);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetPointerFrameTouchInfo"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     [SupportedOSPlatform("windows8.0")]
     public static extern BOOL GetPointerFrameTouchInfo([NativeTypeName("UINT32")] uint pointerId, [NativeTypeName("UINT32 *")] uint* pointerCount, POINTER_TOUCH_INFO* touchInfo);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetPointerFrameTouchInfoHistory"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     [SupportedOSPlatform("windows8.0")]
     public static extern BOOL GetPointerFrameTouchInfoHistory([NativeTypeName("UINT32")] uint pointerId, [NativeTypeName("UINT32 *")] uint* entriesCount, [NativeTypeName("UINT32 *")] uint* pointerCount, POINTER_TOUCH_INFO* touchInfo);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetPointerPenInfo"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     [SupportedOSPlatform("windows8.0")]
     public static extern BOOL GetPointerPenInfo([NativeTypeName("UINT32")] uint pointerId, POINTER_PEN_INFO* penInfo);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetPointerPenInfoHistory"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     [SupportedOSPlatform("windows8.0")]
     public static extern BOOL GetPointerPenInfoHistory([NativeTypeName("UINT32")] uint pointerId, [NativeTypeName("UINT32 *")] uint* entriesCount, POINTER_PEN_INFO* penInfo);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetPointerFramePenInfo"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     [SupportedOSPlatform("windows8.0")]
     public static extern BOOL GetPointerFramePenInfo([NativeTypeName("UINT32")] uint pointerId, [NativeTypeName("UINT32 *")] uint* pointerCount, POINTER_PEN_INFO* penInfo);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetPointerFramePenInfoHistory"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     [SupportedOSPlatform("windows8.0")]
     public static extern BOOL GetPointerFramePenInfoHistory([NativeTypeName("UINT32")] uint pointerId, [NativeTypeName("UINT32 *")] uint* entriesCount, [NativeTypeName("UINT32 *")] uint* pointerCount, POINTER_PEN_INFO* penInfo);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SkipPointerFrameMessages"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     [SupportedOSPlatform("windows8.0")]
     public static extern BOOL SkipPointerFrameMessages([NativeTypeName("UINT32")] uint pointerId);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RegisterPointerInputTarget"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     [SupportedOSPlatform("windows8.0")]
     public static extern BOOL RegisterPointerInputTarget(HWND hwnd, [NativeTypeName("POINTER_INPUT_TYPE")] uint pointerType);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.UnregisterPointerInputTarget"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     [SupportedOSPlatform("windows8.0")]
     public static extern BOOL UnregisterPointerInputTarget(HWND hwnd, [NativeTypeName("POINTER_INPUT_TYPE")] uint pointerType);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RegisterPointerInputTargetEx"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SupportedOSPlatform("windows10.0")]
     public static extern BOOL RegisterPointerInputTargetEx(HWND hwnd, [NativeTypeName("POINTER_INPUT_TYPE")] uint pointerType, BOOL fObserve);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.UnregisterPointerInputTargetEx"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SupportedOSPlatform("windows10.0")]
     public static extern BOOL UnregisterPointerInputTargetEx(HWND hwnd, [NativeTypeName("POINTER_INPUT_TYPE")] uint pointerType);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateSyntheticPointerDevice"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     [SupportedOSPlatform("windows10.0.17763.0")]
     public static extern HSYNTHETICPOINTERDEVICE CreateSyntheticPointerDevice([NativeTypeName("POINTER_INPUT_TYPE")] uint pointerType, [NativeTypeName("ULONG")] uint maxCount, POINTER_FEEDBACK_MODE mode);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.InjectSyntheticPointerInput"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     [SupportedOSPlatform("windows10.0.17763.0")]
     public static extern BOOL InjectSyntheticPointerInput(HSYNTHETICPOINTERDEVICE device, [NativeTypeName("const POINTER_TYPE_INFO *")] POINTER_TYPE_INFO* pointerInfo, [NativeTypeName("UINT32")] uint count);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DestroySyntheticPointerDevice"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SupportedOSPlatform("windows10.0.17763.0")]
     public static extern void DestroySyntheticPointerDevice(HSYNTHETICPOINTERDEVICE device);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EnableMouseInPointer"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     [SupportedOSPlatform("windows8.0")]
     public static extern BOOL EnableMouseInPointer(BOOL fEnable);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IsMouseInPointerEnabled"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SupportedOSPlatform("windows8.0")]
     public static extern BOOL IsMouseInPointerEnabled();
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RegisterTouchHitTestingWindow"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     [SupportedOSPlatform("windows8.0")]
     public static extern BOOL RegisterTouchHitTestingWindow(HWND hwnd, [NativeTypeName("ULONG")] uint value);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EvaluateProximityToRect"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     [SupportedOSPlatform("windows8.0")]
     public static extern BOOL EvaluateProximityToRect([NativeTypeName("const RECT *")] RECT* controlBoundingBox, [NativeTypeName("const TOUCH_HIT_TESTING_INPUT *")] TOUCH_HIT_TESTING_INPUT* pHitTestingInput, TOUCH_HIT_TESTING_PROXIMITY_EVALUATION* pProximityEval);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EvaluateProximityToPolygon"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     [SupportedOSPlatform("windows8.0")]
     public static extern BOOL EvaluateProximityToPolygon([NativeTypeName("UINT32")] uint numVertices, [NativeTypeName("const POINT *")] POINT* controlPolygon, [NativeTypeName("const TOUCH_HIT_TESTING_INPUT *")] TOUCH_HIT_TESTING_INPUT* pHitTestingInput, TOUCH_HIT_TESTING_PROXIMITY_EVALUATION* pProximityEval);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PackTouchHitTestingProximityEvaluation"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     [SupportedOSPlatform("windows8.0")]
     public static extern LRESULT PackTouchHitTestingProximityEvaluation([NativeTypeName("const TOUCH_HIT_TESTING_INPUT *")] TOUCH_HIT_TESTING_INPUT* pHitTestingInput, [NativeTypeName("const TOUCH_HIT_TESTING_PROXIMITY_EVALUATION *")] TOUCH_HIT_TESTING_PROXIMITY_EVALUATION* pProximityEval);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetWindowFeedbackSetting"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SupportedOSPlatform("windows8.0")]
     public static extern BOOL GetWindowFeedbackSetting(HWND hwnd, FEEDBACK_TYPE feedback, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("UINT32 *")] uint* pSize, void* config);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetWindowFeedbackSetting"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SupportedOSPlatform("windows8.0")]
     public static extern BOOL SetWindowFeedbackSetting(HWND hwnd, FEEDBACK_TYPE feedback, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("UINT32")] uint size, [NativeTypeName("const void *")] void* configuration);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetPointerInputTransform"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     [SupportedOSPlatform("windows8.1")]
     public static extern BOOL GetPointerInputTransform([NativeTypeName("UINT32")] uint pointerId, [NativeTypeName("UINT32")] uint historyCount, INPUT_TRANSFORM* inputTransform);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetLastInputInfo"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL GetLastInputInfo([NativeTypeName("PLASTINPUTINFO")] LASTINPUTINFO* plii);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MapVirtualKeyA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern uint MapVirtualKeyA(uint uCode, uint uMapType);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MapVirtualKeyW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern uint MapVirtualKeyW(uint uCode, uint uMapType);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MapVirtualKeyExA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern uint MapVirtualKeyExA(uint uCode, uint uMapType, HKL dwhkl);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MapVirtualKeyExW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern uint MapVirtualKeyExW(uint uCode, uint uMapType, HKL dwhkl);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetInputState"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL GetInputState();
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetQueueStatus"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint GetQueueStatus(uint flags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetCapture"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern HWND GetCapture();
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetCapture"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern HWND SetCapture(HWND hWnd);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ReleaseCapture"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL ReleaseCapture();
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsgWaitForMultipleObjects"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint MsgWaitForMultipleObjects([NativeTypeName("DWORD")] uint nCount, [NativeTypeName("const HANDLE *")] HANDLE* pHandles, BOOL fWaitAll, [NativeTypeName("DWORD")] uint dwMilliseconds, [NativeTypeName("DWORD")] uint dwWakeMask);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsgWaitForMultipleObjectsEx"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint MsgWaitForMultipleObjectsEx([NativeTypeName("DWORD")] uint nCount, [NativeTypeName("const HANDLE *")] HANDLE* pHandles, [NativeTypeName("DWORD")] uint dwMilliseconds, [NativeTypeName("DWORD")] uint dwWakeMask, [NativeTypeName("DWORD")] uint dwFlags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetTimer"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("UINT_PTR")]
     public static extern nuint SetTimer(HWND hWnd, [NativeTypeName("UINT_PTR")] nuint nIDEvent, uint uElapse, [NativeTypeName("TIMERPROC")] delegate* unmanaged<HWND, uint, nuint, uint, void> lpTimerFunc);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetCoalescableTimer"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("UINT_PTR")]
     [SupportedOSPlatform("windows8.0")]
     public static extern nuint SetCoalescableTimer(HWND hWnd, [NativeTypeName("UINT_PTR")] nuint nIDEvent, uint uElapse, [NativeTypeName("TIMERPROC")] delegate* unmanaged<HWND, uint, nuint, uint, void> lpTimerFunc, [NativeTypeName("ULONG")] uint uToleranceDelay);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.KillTimer"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL KillTimer(HWND hWnd, [NativeTypeName("UINT_PTR")] nuint uIDEvent);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IsWindowUnicode"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL IsWindowUnicode(HWND hWnd);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EnableWindow"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL EnableWindow(HWND hWnd, BOOL bEnable);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IsWindowEnabled"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL IsWindowEnabled(HWND hWnd);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LoadAcceleratorsA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HACCEL LoadAcceleratorsA(HINSTANCE hInstance, [NativeTypeName("LPCSTR")] sbyte* lpTableName);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LoadAcceleratorsW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HACCEL LoadAcceleratorsW(HINSTANCE hInstance, [NativeTypeName("LPCWSTR")] ushort* lpTableName);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateAcceleratorTableA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HACCEL CreateAcceleratorTableA([NativeTypeName("LPACCEL")] ACCEL* paccel, int cAccel);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateAcceleratorTableW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HACCEL CreateAcceleratorTableW([NativeTypeName("LPACCEL")] ACCEL* paccel, int cAccel);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DestroyAcceleratorTable"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL DestroyAcceleratorTable(HACCEL hAccel);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CopyAcceleratorTableA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern int CopyAcceleratorTableA(HACCEL hAccelSrc, [NativeTypeName("LPACCEL")] ACCEL* lpAccelDst, int cAccelEntries);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CopyAcceleratorTableW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern int CopyAcceleratorTableW(HACCEL hAccelSrc, [NativeTypeName("LPACCEL")] ACCEL* lpAccelDst, int cAccelEntries);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.TranslateAcceleratorA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern int TranslateAcceleratorA(HWND hWnd, HACCEL hAccTable, [NativeTypeName("LPMSG")] MSG* lpMsg);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.TranslateAcceleratorW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern int TranslateAcceleratorW(HWND hWnd, HACCEL hAccTable, [NativeTypeName("LPMSG")] MSG* lpMsg);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetSystemMetrics"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern int GetSystemMetrics(int nIndex);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetSystemMetricsForDpi"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     [SupportedOSPlatform("windows10.0.14393.0")]
     public static extern int GetSystemMetricsForDpi(int nIndex, uint dpi);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LoadMenuA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HMENU LoadMenuA(HINSTANCE hInstance, [NativeTypeName("LPCSTR")] sbyte* lpMenuName);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LoadMenuW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HMENU LoadMenuW(HINSTANCE hInstance, [NativeTypeName("LPCWSTR")] ushort* lpMenuName);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LoadMenuIndirectA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HMENU LoadMenuIndirectA([NativeTypeName("const MENUTEMPLATEA *")] void* lpMenuTemplate);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LoadMenuIndirectW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HMENU LoadMenuIndirectW([NativeTypeName("const MENUTEMPLATEW *")] void* lpMenuTemplate);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetMenu"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern HMENU GetMenu(HWND hWnd);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetMenu"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SetMenu(HWND hWnd, HMENU hMenu);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ChangeMenuA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL ChangeMenuA(HMENU hMenu, uint cmd, [NativeTypeName("LPCSTR")] sbyte* lpszNewItem, uint cmdInsert, uint flags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ChangeMenuW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL ChangeMenuW(HMENU hMenu, uint cmd, [NativeTypeName("LPCWSTR")] ushort* lpszNewItem, uint cmdInsert, uint flags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.HiliteMenuItem"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL HiliteMenuItem(HWND hWnd, HMENU hMenu, uint uIDHiliteItem, uint uHilite);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetMenuStringA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern int GetMenuStringA(HMENU hMenu, uint uIDItem, [NativeTypeName("LPSTR")] sbyte* lpString, int cchMax, uint flags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetMenuStringW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern int GetMenuStringW(HMENU hMenu, uint uIDItem, [NativeTypeName("LPWSTR")] ushort* lpString, int cchMax, uint flags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetMenuState"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern uint GetMenuState(HMENU hMenu, uint uId, uint uFlags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DrawMenuBar"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL DrawMenuBar(HWND hWnd);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetSystemMenu"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern HMENU GetSystemMenu(HWND hWnd, BOOL bRevert);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateMenu"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HMENU CreateMenu();
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreatePopupMenu"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HMENU CreatePopupMenu();
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DestroyMenu"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL DestroyMenu(HMENU hMenu);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CheckMenuItem"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint CheckMenuItem(HMENU hMenu, uint uIDCheckItem, uint uCheck);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EnableMenuItem"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL EnableMenuItem(HMENU hMenu, uint uIDEnableItem, uint uEnable);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetSubMenu"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern HMENU GetSubMenu(HMENU hMenu, int nPos);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetMenuItemID"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern uint GetMenuItemID(HMENU hMenu, int nPos);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetMenuItemCount"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern int GetMenuItemCount(HMENU hMenu);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.InsertMenuA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL InsertMenuA(HMENU hMenu, uint uPosition, uint uFlags, [NativeTypeName("UINT_PTR")] nuint uIDNewItem, [NativeTypeName("LPCSTR")] sbyte* lpNewItem);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.InsertMenuW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL InsertMenuW(HMENU hMenu, uint uPosition, uint uFlags, [NativeTypeName("UINT_PTR")] nuint uIDNewItem, [NativeTypeName("LPCWSTR")] ushort* lpNewItem);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.AppendMenuA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL AppendMenuA(HMENU hMenu, uint uFlags, [NativeTypeName("UINT_PTR")] nuint uIDNewItem, [NativeTypeName("LPCSTR")] sbyte* lpNewItem);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.AppendMenuW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL AppendMenuW(HMENU hMenu, uint uFlags, [NativeTypeName("UINT_PTR")] nuint uIDNewItem, [NativeTypeName("LPCWSTR")] ushort* lpNewItem);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ModifyMenuA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL ModifyMenuA(HMENU hMnu, uint uPosition, uint uFlags, [NativeTypeName("UINT_PTR")] nuint uIDNewItem, [NativeTypeName("LPCSTR")] sbyte* lpNewItem);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ModifyMenuW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL ModifyMenuW(HMENU hMnu, uint uPosition, uint uFlags, [NativeTypeName("UINT_PTR")] nuint uIDNewItem, [NativeTypeName("LPCWSTR")] ushort* lpNewItem);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RemoveMenu"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL RemoveMenu(HMENU hMenu, uint uPosition, uint uFlags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DeleteMenu"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL DeleteMenu(HMENU hMenu, uint uPosition, uint uFlags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetMenuItemBitmaps"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SetMenuItemBitmaps(HMENU hMenu, uint uPosition, uint uFlags, HBITMAP hBitmapUnchecked, HBITMAP hBitmapChecked);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetMenuCheckMarkDimensions"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [return: NativeTypeName("LONG")]
     public static extern int GetMenuCheckMarkDimensions();
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.TrackPopupMenu"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL TrackPopupMenu(HMENU hMenu, uint uFlags, int x, int y, int nReserved, HWND hWnd, [NativeTypeName("const RECT *")] RECT* prcRect);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.TrackPopupMenuEx"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL TrackPopupMenuEx(HMENU hMenu, uint uFlags, int x, int y, HWND hwnd, [NativeTypeName("LPTPMPARAMS")] TPMPARAMS* lptpm);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CalculatePopupWindowPosition"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL CalculatePopupWindowPosition([NativeTypeName("const POINT *")] POINT* anchorPoint, [NativeTypeName("const SIZE *")] SIZE* windowSize, uint flags, RECT* excludeRect, RECT* popupWindowPosition);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetMenuInfo"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL GetMenuInfo(HMENU param0, [NativeTypeName("LPMENUINFO")] MENUINFO* param1);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetMenuInfo"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SetMenuInfo(HMENU param0, [NativeTypeName("LPCMENUINFO")] MENUINFO* param1);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EndMenu"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL EndMenu();
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.InsertMenuItemA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL InsertMenuItemA(HMENU hmenu, uint item, BOOL fByPosition, [NativeTypeName("LPCMENUITEMINFOA")] MENUITEMINFOA* lpmi);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.InsertMenuItemW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL InsertMenuItemW(HMENU hmenu, uint item, BOOL fByPosition, [NativeTypeName("LPCMENUITEMINFOW")] MENUITEMINFOW* lpmi);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetMenuItemInfoA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL GetMenuItemInfoA(HMENU hmenu, uint item, BOOL fByPosition, [NativeTypeName("LPMENUITEMINFOA")] MENUITEMINFOA* lpmii);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetMenuItemInfoW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL GetMenuItemInfoW(HMENU hmenu, uint item, BOOL fByPosition, [NativeTypeName("LPMENUITEMINFOW")] MENUITEMINFOW* lpmii);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetMenuItemInfoA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SetMenuItemInfoA(HMENU hmenu, uint item, BOOL fByPositon, [NativeTypeName("LPCMENUITEMINFOA")] MENUITEMINFOA* lpmii);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetMenuItemInfoW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SetMenuItemInfoW(HMENU hmenu, uint item, BOOL fByPositon, [NativeTypeName("LPCMENUITEMINFOW")] MENUITEMINFOW* lpmii);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetMenuDefaultItem"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern uint GetMenuDefaultItem(HMENU hMenu, uint fByPos, uint gmdiFlags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetMenuDefaultItem"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SetMenuDefaultItem(HMENU hMenu, uint uItem, uint fByPos);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetMenuItemRect"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL GetMenuItemRect(HWND hWnd, HMENU hMenu, uint uItem, [NativeTypeName("LPRECT")] RECT* lprcItem);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MenuItemFromPoint"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern int MenuItemFromPoint(HWND hWnd, HMENU hMenu, POINT ptScreen);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DragObject"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint DragObject(HWND hwndParent, HWND hwndFrom, uint fmt, [NativeTypeName("ULONG_PTR")] nuint data, HCURSOR hcur);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DragDetect"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL DragDetect(HWND hwnd, POINT pt);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DrawIcon"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL DrawIcon(HDC hDC, int X, int Y, HICON hIcon);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DrawTextA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern int DrawTextA(HDC hdc, [NativeTypeName("LPCSTR")] sbyte* lpchText, int cchText, [NativeTypeName("LPRECT")] RECT* lprc, uint format);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DrawTextW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern int DrawTextW(HDC hdc, [NativeTypeName("LPCWSTR")] ushort* lpchText, int cchText, [NativeTypeName("LPRECT")] RECT* lprc, uint format);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DrawTextExA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern int DrawTextExA(HDC hdc, [NativeTypeName("LPSTR")] sbyte* lpchText, int cchText, [NativeTypeName("LPRECT")] RECT* lprc, uint format, [NativeTypeName("LPDRAWTEXTPARAMS")] DRAWTEXTPARAMS* lpdtp);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DrawTextExW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern int DrawTextExW(HDC hdc, [NativeTypeName("LPWSTR")] ushort* lpchText, int cchText, [NativeTypeName("LPRECT")] RECT* lprc, uint format, [NativeTypeName("LPDRAWTEXTPARAMS")] DRAWTEXTPARAMS* lpdtp);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GrayStringA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL GrayStringA(HDC hDC, HBRUSH hBrush, [NativeTypeName("GRAYSTRINGPROC")] delegate* unmanaged<HDC, LPARAM, int, BOOL> lpOutputFunc, LPARAM lpData, int nCount, int X, int Y, int nWidth, int nHeight);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GrayStringW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL GrayStringW(HDC hDC, HBRUSH hBrush, [NativeTypeName("GRAYSTRINGPROC")] delegate* unmanaged<HDC, LPARAM, int, BOOL> lpOutputFunc, LPARAM lpData, int nCount, int X, int Y, int nWidth, int nHeight);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DrawStateA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL DrawStateA(HDC hdc, HBRUSH hbrFore, [NativeTypeName("DRAWSTATEPROC")] delegate* unmanaged<HDC, LPARAM, WPARAM, int, int, BOOL> qfnCallBack, LPARAM lData, WPARAM wData, int x, int y, int cx, int cy, uint uFlags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DrawStateW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL DrawStateW(HDC hdc, HBRUSH hbrFore, [NativeTypeName("DRAWSTATEPROC")] delegate* unmanaged<HDC, LPARAM, WPARAM, int, int, BOOL> qfnCallBack, LPARAM lData, WPARAM wData, int x, int y, int cx, int cy, uint uFlags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.TabbedTextOutA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [return: NativeTypeName("LONG")]
     public static extern int TabbedTextOutA(HDC hdc, int x, int y, [NativeTypeName("LPCSTR")] sbyte* lpString, int chCount, int nTabPositions, [NativeTypeName("const INT *")] int* lpnTabStopPositions, int nTabOrigin);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.TabbedTextOutW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [return: NativeTypeName("LONG")]
     public static extern int TabbedTextOutW(HDC hdc, int x, int y, [NativeTypeName("LPCWSTR")] ushort* lpString, int chCount, int nTabPositions, [NativeTypeName("const INT *")] int* lpnTabStopPositions, int nTabOrigin);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetTabbedTextExtentA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint GetTabbedTextExtentA(HDC hdc, [NativeTypeName("LPCSTR")] sbyte* lpString, int chCount, int nTabPositions, [NativeTypeName("const INT *")] int* lpnTabStopPositions);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetTabbedTextExtentW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint GetTabbedTextExtentW(HDC hdc, [NativeTypeName("LPCWSTR")] ushort* lpString, int chCount, int nTabPositions, [NativeTypeName("const INT *")] int* lpnTabStopPositions);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.UpdateWindow"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL UpdateWindow(HWND hWnd);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetActiveWindow"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HWND SetActiveWindow(HWND hWnd);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetForegroundWindow"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern HWND GetForegroundWindow();
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PaintDesktop"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL PaintDesktop(HDC hdc);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SwitchToThisWindow"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern void SwitchToThisWindow(HWND hwnd, BOOL fUnknown);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetForegroundWindow"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL SetForegroundWindow(HWND hWnd);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.AllowSetForegroundWindow"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL AllowSetForegroundWindow([NativeTypeName("DWORD")] uint dwProcessId);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LockSetForegroundWindow"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL LockSetForegroundWindow(uint uLockCode);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WindowFromDC"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern HWND WindowFromDC(HDC hDC);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetDC"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern HDC GetDC(HWND hWnd);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetDCEx"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern HDC GetDCEx(HWND hWnd, HRGN hrgnClip, [NativeTypeName("DWORD")] uint flags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetWindowDC"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern HDC GetWindowDC(HWND hWnd);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ReleaseDC"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern int ReleaseDC(HWND hWnd, HDC hDC);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.BeginPaint"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern HDC BeginPaint(HWND hWnd, [NativeTypeName("LPPAINTSTRUCT")] PAINTSTRUCT* lpPaint);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EndPaint"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL EndPaint(HWND hWnd, [NativeTypeName("const PAINTSTRUCT *")] PAINTSTRUCT* lpPaint);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetUpdateRect"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL GetUpdateRect(HWND hWnd, [NativeTypeName("LPRECT")] RECT* lpRect, BOOL bErase);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetUpdateRgn"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern int GetUpdateRgn(HWND hWnd, HRGN hRgn, BOOL bErase);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetWindowRgn"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern int SetWindowRgn(HWND hWnd, HRGN hRgn, BOOL bRedraw);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetWindowRgn"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern int GetWindowRgn(HWND hWnd, HRGN hRgn);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetWindowRgnBox"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern int GetWindowRgnBox(HWND hWnd, [NativeTypeName("LPRECT")] RECT* lprc);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ExcludeUpdateRgn"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern int ExcludeUpdateRgn(HDC hDC, HWND hWnd);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.InvalidateRect"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL InvalidateRect(HWND hWnd, [NativeTypeName("const RECT *")] RECT* lpRect, BOOL bErase);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ValidateRect"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL ValidateRect(HWND hWnd, [NativeTypeName("const RECT *")] RECT* lpRect);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.InvalidateRgn"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL InvalidateRgn(HWND hWnd, HRGN hRgn, BOOL bErase);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ValidateRgn"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL ValidateRgn(HWND hWnd, HRGN hRgn);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RedrawWindow"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL RedrawWindow(HWND hWnd, [NativeTypeName("const RECT *")] RECT* lprcUpdate, HRGN hrgnUpdate, uint flags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LockWindowUpdate"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL LockWindowUpdate(HWND hWndLock);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ScrollWindow"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL ScrollWindow(HWND hWnd, int XAmount, int YAmount, [NativeTypeName("const RECT *")] RECT* lpRect, [NativeTypeName("const RECT *")] RECT* lpClipRect);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ScrollDC"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL ScrollDC(HDC hDC, int dx, int dy, [NativeTypeName("const RECT *")] RECT* lprcScroll, [NativeTypeName("const RECT *")] RECT* lprcClip, HRGN hrgnUpdate, [NativeTypeName("LPRECT")] RECT* lprcUpdate);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ScrollWindowEx"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern int ScrollWindowEx(HWND hWnd, int dx, int dy, [NativeTypeName("const RECT *")] RECT* prcScroll, [NativeTypeName("const RECT *")] RECT* prcClip, HRGN hrgnUpdate, [NativeTypeName("LPRECT")] RECT* prcUpdate, uint flags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetScrollPos"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern int SetScrollPos(HWND hWnd, int nBar, int nPos, BOOL bRedraw);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetScrollPos"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern int GetScrollPos(HWND hWnd, int nBar);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetScrollRange"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SetScrollRange(HWND hWnd, int nBar, int nMinPos, int nMaxPos, BOOL bRedraw);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetScrollRange"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL GetScrollRange(HWND hWnd, int nBar, [NativeTypeName("LPINT")] int* lpMinPos, [NativeTypeName("LPINT")] int* lpMaxPos);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ShowScrollBar"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL ShowScrollBar(HWND hWnd, int wBar, BOOL bShow);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EnableScrollBar"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL EnableScrollBar(HWND hWnd, uint wSBflags, uint wArrows);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetPropA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SetPropA(HWND hWnd, [NativeTypeName("LPCSTR")] sbyte* lpString, HANDLE hData);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetPropW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SetPropW(HWND hWnd, [NativeTypeName("LPCWSTR")] ushort* lpString, HANDLE hData);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetPropA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern HANDLE GetPropA(HWND hWnd, [NativeTypeName("LPCSTR")] sbyte* lpString);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetPropW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern HANDLE GetPropW(HWND hWnd, [NativeTypeName("LPCWSTR")] ushort* lpString);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RemovePropA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern HANDLE RemovePropA(HWND hWnd, [NativeTypeName("LPCSTR")] sbyte* lpString);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RemovePropW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern HANDLE RemovePropW(HWND hWnd, [NativeTypeName("LPCWSTR")] ushort* lpString);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EnumPropsExA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern int EnumPropsExA(HWND hWnd, [NativeTypeName("PROPENUMPROCEXA")] delegate* unmanaged<HWND, sbyte*, HANDLE, nuint, BOOL> lpEnumFunc, LPARAM lParam);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EnumPropsExW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern int EnumPropsExW(HWND hWnd, [NativeTypeName("PROPENUMPROCEXW")] delegate* unmanaged<HWND, ushort*, HANDLE, nuint, BOOL> lpEnumFunc, LPARAM lParam);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EnumPropsA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern int EnumPropsA(HWND hWnd, [NativeTypeName("PROPENUMPROCA")] delegate* unmanaged<HWND, sbyte*, HANDLE, BOOL> lpEnumFunc);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EnumPropsW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern int EnumPropsW(HWND hWnd, [NativeTypeName("PROPENUMPROCW")] delegate* unmanaged<HWND, ushort*, HANDLE, BOOL> lpEnumFunc);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetWindowTextA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SetWindowTextA(HWND hWnd, [NativeTypeName("LPCSTR")] sbyte* lpString);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetWindowTextW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SetWindowTextW(HWND hWnd, [NativeTypeName("LPCWSTR")] ushort* lpString);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetWindowTextA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern int GetWindowTextA(HWND hWnd, [NativeTypeName("LPSTR")] sbyte* lpString, int nMaxCount);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetWindowTextW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern int GetWindowTextW(HWND hWnd, [NativeTypeName("LPWSTR")] ushort* lpString, int nMaxCount);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetWindowTextLengthA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern int GetWindowTextLengthA(HWND hWnd);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetWindowTextLengthW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern int GetWindowTextLengthW(HWND hWnd);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetClientRect"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL GetClientRect(HWND hWnd, [NativeTypeName("LPRECT")] RECT* lpRect);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetWindowRect"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL GetWindowRect(HWND hWnd, [NativeTypeName("LPRECT")] RECT* lpRect);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.AdjustWindowRect"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL AdjustWindowRect([NativeTypeName("LPRECT")] RECT* lpRect, [NativeTypeName("DWORD")] uint dwStyle, BOOL bMenu);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.AdjustWindowRectEx"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL AdjustWindowRectEx([NativeTypeName("LPRECT")] RECT* lpRect, [NativeTypeName("DWORD")] uint dwStyle, BOOL bMenu, [NativeTypeName("DWORD")] uint dwExStyle);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.AdjustWindowRectExForDpi"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     [SupportedOSPlatform("windows10.0.14393.0")]
     public static extern BOOL AdjustWindowRectExForDpi([NativeTypeName("LPRECT")] RECT* lpRect, [NativeTypeName("DWORD")] uint dwStyle, BOOL bMenu, [NativeTypeName("DWORD")] uint dwExStyle, uint dpi);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetWindowContextHelpId"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SetWindowContextHelpId(HWND param0, [NativeTypeName("DWORD")] uint param1);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetWindowContextHelpId"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint GetWindowContextHelpId(HWND param0);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetMenuContextHelpId"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SetMenuContextHelpId(HMENU param0, [NativeTypeName("DWORD")] uint param1);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetMenuContextHelpId"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint GetMenuContextHelpId(HMENU param0);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MessageBoxA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern int MessageBoxA(HWND hWnd, [NativeTypeName("LPCSTR")] sbyte* lpText, [NativeTypeName("LPCSTR")] sbyte* lpCaption, uint uType);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MessageBoxW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern int MessageBoxW(HWND hWnd, [NativeTypeName("LPCWSTR")] ushort* lpText, [NativeTypeName("LPCWSTR")] ushort* lpCaption, uint uType);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MessageBoxExA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern int MessageBoxExA(HWND hWnd, [NativeTypeName("LPCSTR")] sbyte* lpText, [NativeTypeName("LPCSTR")] sbyte* lpCaption, uint uType, [NativeTypeName("WORD")] ushort wLanguageId);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MessageBoxExW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern int MessageBoxExW(HWND hWnd, [NativeTypeName("LPCWSTR")] ushort* lpText, [NativeTypeName("LPCWSTR")] ushort* lpCaption, uint uType, [NativeTypeName("WORD")] ushort wLanguageId);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MessageBoxIndirectA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern int MessageBoxIndirectA([NativeTypeName("const MSGBOXPARAMSA *")] MSGBOXPARAMSA* lpmbp);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MessageBoxIndirectW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern int MessageBoxIndirectW([NativeTypeName("const MSGBOXPARAMSW *")] MSGBOXPARAMSW* lpmbp);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MessageBeep"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL MessageBeep(uint uType);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ShowCursor"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern int ShowCursor(BOOL bShow);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetCursorPos"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SetCursorPos(int X, int Y);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetPhysicalCursorPos"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL SetPhysicalCursorPos(int X, int Y);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetCursor"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern HCURSOR SetCursor(HCURSOR hCursor);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetCursorPos"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL GetCursorPos([NativeTypeName("LPPOINT")] POINT* lpPoint);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetPhysicalCursorPos"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL GetPhysicalCursorPos([NativeTypeName("LPPOINT")] POINT* lpPoint);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetClipCursor"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL GetClipCursor([NativeTypeName("LPRECT")] RECT* lpRect);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetCursor"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern HCURSOR GetCursor();
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateCaret"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL CreateCaret(HWND hWnd, HBITMAP hBitmap, int nWidth, int nHeight);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetCaretBlinkTime"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern uint GetCaretBlinkTime();
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetCaretBlinkTime"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SetCaretBlinkTime(uint uMSeconds);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DestroyCaret"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL DestroyCaret();
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.HideCaret"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL HideCaret(HWND hWnd);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ShowCaret"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL ShowCaret(HWND hWnd);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetCaretPos"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SetCaretPos(int X, int Y);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetCaretPos"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL GetCaretPos([NativeTypeName("LPPOINT")] POINT* lpPoint);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ClientToScreen"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL ClientToScreen(HWND hWnd, [NativeTypeName("LPPOINT")] POINT* lpPoint);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ScreenToClient"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL ScreenToClient(HWND hWnd, [NativeTypeName("LPPOINT")] POINT* lpPoint);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LogicalToPhysicalPoint"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL LogicalToPhysicalPoint(HWND hWnd, [NativeTypeName("LPPOINT")] POINT* lpPoint);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PhysicalToLogicalPoint"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL PhysicalToLogicalPoint(HWND hWnd, [NativeTypeName("LPPOINT")] POINT* lpPoint);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LogicalToPhysicalPointForPerMonitorDPI"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SupportedOSPlatform("windows8.1")]
     public static extern BOOL LogicalToPhysicalPointForPerMonitorDPI(HWND hWnd, [NativeTypeName("LPPOINT")] POINT* lpPoint);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PhysicalToLogicalPointForPerMonitorDPI"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SupportedOSPlatform("windows8.1")]
     public static extern BOOL PhysicalToLogicalPointForPerMonitorDPI(HWND hWnd, [NativeTypeName("LPPOINT")] POINT* lpPoint);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MapWindowPoints"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern int MapWindowPoints(HWND hWndFrom, HWND hWndTo, [NativeTypeName("LPPOINT")] POINT* lpPoints, uint cPoints);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WindowFromPoint"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern HWND WindowFromPoint(POINT Point);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WindowFromPhysicalPoint"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern HWND WindowFromPhysicalPoint(POINT Point);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ChildWindowFromPoint"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern HWND ChildWindowFromPoint(HWND hWndParent, POINT Point);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ClipCursor"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL ClipCursor([NativeTypeName("const RECT *")] RECT* lpRect);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ChildWindowFromPointEx"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern HWND ChildWindowFromPointEx(HWND hwnd, POINT pt, uint flags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetSysColor"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     [SuppressGCTransition]
     public static extern uint GetSysColor(int nIndex);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetSysColorBrush"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern HBRUSH GetSysColorBrush(int nIndex);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetSysColors"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SetSysColors(int cElements, [NativeTypeName("const INT *")] int* lpaElements, [NativeTypeName("const COLORREF *")] COLORREF* lpaRgbValues);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DrawFocusRect"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL DrawFocusRect(HDC hDC, [NativeTypeName("const RECT *")] RECT* lprc);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FillRect"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern int FillRect(HDC hDC, [NativeTypeName("const RECT *")] RECT* lprc, HBRUSH hbr);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FrameRect"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern int FrameRect(HDC hDC, [NativeTypeName("const RECT *")] RECT* lprc, HBRUSH hbr);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.InvertRect"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL InvertRect(HDC hDC, [NativeTypeName("const RECT *")] RECT* lprc);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetRect"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL SetRect([NativeTypeName("LPRECT")] RECT* lprc, int xLeft, int yTop, int xRight, int yBottom);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetRectEmpty"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL SetRectEmpty([NativeTypeName("LPRECT")] RECT* lprc);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CopyRect"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL CopyRect([NativeTypeName("LPRECT")] RECT* lprcDst, [NativeTypeName("const RECT *")] RECT* lprcSrc);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.InflateRect"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL InflateRect([NativeTypeName("LPRECT")] RECT* lprc, int dx, int dy);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IntersectRect"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL IntersectRect([NativeTypeName("LPRECT")] RECT* lprcDst, [NativeTypeName("const RECT *")] RECT* lprcSrc1, [NativeTypeName("const RECT *")] RECT* lprcSrc2);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.UnionRect"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL UnionRect([NativeTypeName("LPRECT")] RECT* lprcDst, [NativeTypeName("const RECT *")] RECT* lprcSrc1, [NativeTypeName("const RECT *")] RECT* lprcSrc2);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SubtractRect"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL SubtractRect([NativeTypeName("LPRECT")] RECT* lprcDst, [NativeTypeName("const RECT *")] RECT* lprcSrc1, [NativeTypeName("const RECT *")] RECT* lprcSrc2);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.OffsetRect"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL OffsetRect([NativeTypeName("LPRECT")] RECT* lprc, int dx, int dy);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IsRectEmpty"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL IsRectEmpty([NativeTypeName("const RECT *")] RECT* lprc);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EqualRect"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL EqualRect([NativeTypeName("const RECT *")] RECT* lprc1, [NativeTypeName("const RECT *")] RECT* lprc2);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PtInRect"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL PtInRect([NativeTypeName("const RECT *")] RECT* lprc, POINT pt);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetWindowWord"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [return: NativeTypeName("WORD")]
     public static extern ushort GetWindowWord(HWND hWnd, int nIndex);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetWindowWord"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [return: NativeTypeName("WORD")]
     public static extern ushort SetWindowWord(HWND hWnd, int nIndex, [NativeTypeName("WORD")] ushort wNewWord);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetWindowLongA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("LONG")]
     public static extern int GetWindowLongA(HWND hWnd, int nIndex);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetWindowLongW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("LONG")]
     public static extern int GetWindowLongW(HWND hWnd, int nIndex);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetWindowLongA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("LONG")]
     public static extern int SetWindowLongA(HWND hWnd, int nIndex, [NativeTypeName("LONG")] int dwNewLong);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetWindowLongW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("LONG")]
     public static extern int SetWindowLongW(HWND hWnd, int nIndex, [NativeTypeName("LONG")] int dwNewLong);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetClassWord"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("WORD")]
     public static extern ushort GetClassWord(HWND hWnd, int nIndex);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetClassWord"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("WORD")]
     public static extern ushort SetClassWord(HWND hWnd, int nIndex, [NativeTypeName("WORD")] ushort wNewWord);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetClassLongA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("DWORD")]
     public static extern uint GetClassLongA(HWND hWnd, int nIndex);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetClassLongW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("DWORD")]
     public static extern uint GetClassLongW(HWND hWnd, int nIndex);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetClassLongA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("DWORD")]
     public static extern uint SetClassLongA(HWND hWnd, int nIndex, [NativeTypeName("LONG")] int dwNewLong);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetClassLongW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("DWORD")]
     public static extern uint SetClassLongW(HWND hWnd, int nIndex, [NativeTypeName("LONG")] int dwNewLong);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetProcessDefaultLayout"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL GetProcessDefaultLayout([NativeTypeName("DWORD *")] uint* pdwDefaultLayout);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetProcessDefaultLayout"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SetProcessDefaultLayout([NativeTypeName("DWORD")] uint dwDefaultLayout);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetDesktopWindow"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern HWND GetDesktopWindow();
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetParent"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HWND GetParent(HWND hWnd);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetParent"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HWND SetParent(HWND hWndChild, HWND hWndNewParent);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EnumChildWindows"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL EnumChildWindows(HWND hWndParent, [NativeTypeName("WNDENUMPROC")] delegate* unmanaged<HWND, LPARAM, BOOL> lpEnumFunc, LPARAM lParam);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FindWindowA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HWND FindWindowA([NativeTypeName("LPCSTR")] sbyte* lpClassName, [NativeTypeName("LPCSTR")] sbyte* lpWindowName);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FindWindowW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HWND FindWindowW([NativeTypeName("LPCWSTR")] ushort* lpClassName, [NativeTypeName("LPCWSTR")] ushort* lpWindowName);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FindWindowExA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HWND FindWindowExA(HWND hWndParent, HWND hWndChildAfter, [NativeTypeName("LPCSTR")] sbyte* lpszClass, [NativeTypeName("LPCSTR")] sbyte* lpszWindow);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FindWindowExW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HWND FindWindowExW(HWND hWndParent, HWND hWndChildAfter, [NativeTypeName("LPCWSTR")] ushort* lpszClass, [NativeTypeName("LPCWSTR")] ushort* lpszWindow);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetShellWindow"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern HWND GetShellWindow();
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RegisterShellHookWindow"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL RegisterShellHookWindow(HWND hwnd);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DeregisterShellHookWindow"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL DeregisterShellHookWindow(HWND hwnd);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EnumWindows"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL EnumWindows([NativeTypeName("WNDENUMPROC")] delegate* unmanaged<HWND, LPARAM, BOOL> lpEnumFunc, LPARAM lParam);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EnumThreadWindows"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL EnumThreadWindows([NativeTypeName("DWORD")] uint dwThreadId, [NativeTypeName("WNDENUMPROC")] delegate* unmanaged<HWND, LPARAM, BOOL> lpfn, LPARAM lParam);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetClassNameA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern int GetClassNameA(HWND hWnd, [NativeTypeName("LPSTR")] sbyte* lpClassName, int nMaxCount);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetClassNameW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern int GetClassNameW(HWND hWnd, [NativeTypeName("LPWSTR")] ushort* lpClassName, int nMaxCount);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetTopWindow"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HWND GetTopWindow(HWND hWnd);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetWindowThreadProcessId"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint GetWindowThreadProcessId(HWND hWnd, [NativeTypeName("LPDWORD")] uint* lpdwProcessId);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IsGUIThread"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL IsGUIThread(BOOL bConvert);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetLastActivePopup"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern HWND GetLastActivePopup(HWND hWnd);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetWindow"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HWND GetWindow(HWND hWnd, uint uCmd);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetWindowsHookA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern HHOOK SetWindowsHookA(int nFilterType, [NativeTypeName("HOOKPROC")] delegate* unmanaged<int, WPARAM, LPARAM, LRESULT> pfnFilterProc);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetWindowsHookW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern HHOOK SetWindowsHookW(int nFilterType, [NativeTypeName("HOOKPROC")] delegate* unmanaged<int, WPARAM, LPARAM, LRESULT> pfnFilterProc);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.UnhookWindowsHook"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL UnhookWindowsHook(int nCode, [NativeTypeName("HOOKPROC")] delegate* unmanaged<int, WPARAM, LPARAM, LRESULT> pfnFilterProc);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetWindowsHookExA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HHOOK SetWindowsHookExA(int idHook, [NativeTypeName("HOOKPROC")] delegate* unmanaged<int, WPARAM, LPARAM, LRESULT> lpfn, HINSTANCE hmod, [NativeTypeName("DWORD")] uint dwThreadId);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetWindowsHookExW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HHOOK SetWindowsHookExW(int idHook, [NativeTypeName("HOOKPROC")] delegate* unmanaged<int, WPARAM, LPARAM, LRESULT> lpfn, HINSTANCE hmod, [NativeTypeName("DWORD")] uint dwThreadId);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.UnhookWindowsHookEx"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL UnhookWindowsHookEx(HHOOK hhk);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CallNextHookEx"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern LRESULT CallNextHookEx(HHOOK hhk, int nCode, WPARAM wParam, LPARAM lParam);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CheckMenuRadioItem"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL CheckMenuRadioItem(HMENU hmenu, uint first, uint last, uint check, uint flags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LoadBitmapA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern HBITMAP LoadBitmapA(HINSTANCE hInstance, [NativeTypeName("LPCSTR")] sbyte* lpBitmapName);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LoadBitmapW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern HBITMAP LoadBitmapW(HINSTANCE hInstance, [NativeTypeName("LPCWSTR")] ushort* lpBitmapName);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LoadCursorA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HCURSOR LoadCursorA(HINSTANCE hInstance, [NativeTypeName("LPCSTR")] sbyte* lpCursorName);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LoadCursorW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HCURSOR LoadCursorW(HINSTANCE hInstance, [NativeTypeName("LPCWSTR")] ushort* lpCursorName);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LoadCursorFromFileA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HCURSOR LoadCursorFromFileA([NativeTypeName("LPCSTR")] sbyte* lpFileName);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LoadCursorFromFileW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HCURSOR LoadCursorFromFileW([NativeTypeName("LPCWSTR")] ushort* lpFileName);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateCursor"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HCURSOR CreateCursor(HINSTANCE hInst, int xHotSpot, int yHotSpot, int nWidth, int nHeight, [NativeTypeName("const void *")] void* pvANDPlane, [NativeTypeName("const void *")] void* pvXORPlane);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DestroyCursor"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL DestroyCursor(HCURSOR hCursor);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetSystemCursor"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SetSystemCursor(HCURSOR hcur, [NativeTypeName("DWORD")] uint id);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LoadIconA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HICON LoadIconA(HINSTANCE hInstance, [NativeTypeName("LPCSTR")] sbyte* lpIconName);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LoadIconW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HICON LoadIconW(HINSTANCE hInstance, [NativeTypeName("LPCWSTR")] ushort* lpIconName);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PrivateExtractIconsA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern uint PrivateExtractIconsA([NativeTypeName("LPCSTR")] sbyte* szFileName, int nIconIndex, int cxIcon, int cyIcon, HICON* phicon, uint* piconid, uint nIcons, uint flags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PrivateExtractIconsW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern uint PrivateExtractIconsW([NativeTypeName("LPCWSTR")] ushort* szFileName, int nIconIndex, int cxIcon, int cyIcon, HICON* phicon, uint* piconid, uint nIcons, uint flags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateIcon"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HICON CreateIcon(HINSTANCE hInstance, int nWidth, int nHeight, byte cPlanes, byte cBitsPixel, [NativeTypeName("const BYTE *")] byte* lpbANDbits, [NativeTypeName("const BYTE *")] byte* lpbXORbits);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DestroyIcon"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL DestroyIcon(HICON hIcon);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LookupIconIdFromDirectory"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern int LookupIconIdFromDirectory([NativeTypeName("PBYTE")] byte* presbits, BOOL fIcon);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LookupIconIdFromDirectoryEx"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern int LookupIconIdFromDirectoryEx([NativeTypeName("PBYTE")] byte* presbits, BOOL fIcon, int cxDesired, int cyDesired, uint Flags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateIconFromResource"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HICON CreateIconFromResource([NativeTypeName("PBYTE")] byte* presbits, [NativeTypeName("DWORD")] uint dwResSize, BOOL fIcon, [NativeTypeName("DWORD")] uint dwVer);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateIconFromResourceEx"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HICON CreateIconFromResourceEx([NativeTypeName("PBYTE")] byte* presbits, [NativeTypeName("DWORD")] uint dwResSize, BOOL fIcon, [NativeTypeName("DWORD")] uint dwVer, int cxDesired, int cyDesired, uint Flags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LoadImageA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HANDLE LoadImageA(HINSTANCE hInst, [NativeTypeName("LPCSTR")] sbyte* name, uint type, int cx, int cy, uint fuLoad);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LoadImageW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HANDLE LoadImageW(HINSTANCE hInst, [NativeTypeName("LPCWSTR")] ushort* name, uint type, int cx, int cy, uint fuLoad);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CopyImage"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HANDLE CopyImage(HANDLE h, uint type, int cx, int cy, uint flags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DrawIconEx"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL DrawIconEx(HDC hdc, int xLeft, int yTop, HICON hIcon, int cxWidth, int cyWidth, uint istepIfAniCur, HBRUSH hbrFlickerFreeDraw, uint diFlags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateIconIndirect"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HICON CreateIconIndirect([NativeTypeName("PICONINFO")] ICONINFO* piconinfo);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CopyIcon"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HICON CopyIcon(HICON hIcon);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetIconInfo"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL GetIconInfo(HICON hIcon, [NativeTypeName("PICONINFO")] ICONINFO* piconinfo);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetIconInfoExA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL GetIconInfoExA(HICON hicon, [NativeTypeName("PICONINFOEXA")] ICONINFOEXA* piconinfo);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetIconInfoExW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL GetIconInfoExW(HICON hicon, [NativeTypeName("PICONINFOEXW")] ICONINFOEXW* piconinfo);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IsDialogMessageA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL IsDialogMessageA(HWND hDlg, [NativeTypeName("LPMSG")] MSG* lpMsg);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IsDialogMessageW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL IsDialogMessageW(HWND hDlg, [NativeTypeName("LPMSG")] MSG* lpMsg);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MapDialogRect"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL MapDialogRect(HWND hDlg, [NativeTypeName("LPRECT")] RECT* lpRect);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DlgDirListA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern int DlgDirListA(HWND hDlg, [NativeTypeName("LPSTR")] sbyte* lpPathSpec, int nIDListBox, int nIDStaticPath, uint uFileType);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DlgDirListW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern int DlgDirListW(HWND hDlg, [NativeTypeName("LPWSTR")] ushort* lpPathSpec, int nIDListBox, int nIDStaticPath, uint uFileType);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DlgDirSelectExA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL DlgDirSelectExA(HWND hwndDlg, [NativeTypeName("LPSTR")] sbyte* lpString, int chCount, int idListBox);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DlgDirSelectExW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL DlgDirSelectExW(HWND hwndDlg, [NativeTypeName("LPWSTR")] ushort* lpString, int chCount, int idListBox);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DlgDirListComboBoxA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern int DlgDirListComboBoxA(HWND hDlg, [NativeTypeName("LPSTR")] sbyte* lpPathSpec, int nIDComboBox, int nIDStaticPath, uint uFiletype);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DlgDirListComboBoxW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern int DlgDirListComboBoxW(HWND hDlg, [NativeTypeName("LPWSTR")] ushort* lpPathSpec, int nIDComboBox, int nIDStaticPath, uint uFiletype);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DlgDirSelectComboBoxExA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL DlgDirSelectComboBoxExA(HWND hwndDlg, [NativeTypeName("LPSTR")] sbyte* lpString, int cchOut, int idComboBox);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DlgDirSelectComboBoxExW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL DlgDirSelectComboBoxExW(HWND hwndDlg, [NativeTypeName("LPWSTR")] ushort* lpString, int cchOut, int idComboBox);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetScrollInfo"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern int SetScrollInfo(HWND hwnd, int nBar, [NativeTypeName("LPCSCROLLINFO")] SCROLLINFO* lpsi, BOOL redraw);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetScrollInfo"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL GetScrollInfo(HWND hwnd, int nBar, [NativeTypeName("LPSCROLLINFO")] SCROLLINFO* lpsi);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DefFrameProcA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern LRESULT DefFrameProcA(HWND hWnd, HWND hWndMDIClient, uint uMsg, WPARAM wParam, LPARAM lParam);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DefFrameProcW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern LRESULT DefFrameProcW(HWND hWnd, HWND hWndMDIClient, uint uMsg, WPARAM wParam, LPARAM lParam);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DefMDIChildProcA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern LRESULT DefMDIChildProcA(HWND hWnd, uint uMsg, WPARAM wParam, LPARAM lParam);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DefMDIChildProcW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern LRESULT DefMDIChildProcW(HWND hWnd, uint uMsg, WPARAM wParam, LPARAM lParam);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.TranslateMDISysAccel"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL TranslateMDISysAccel(HWND hWndClient, [NativeTypeName("LPMSG")] MSG* lpMsg);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ArrangeIconicWindows"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern uint ArrangeIconicWindows(HWND hWnd);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateMDIWindowA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HWND CreateMDIWindowA([NativeTypeName("LPCSTR")] sbyte* lpClassName, [NativeTypeName("LPCSTR")] sbyte* lpWindowName, [NativeTypeName("DWORD")] uint dwStyle, int X, int Y, int nWidth, int nHeight, HWND hWndParent, HINSTANCE hInstance, LPARAM lParam);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateMDIWindowW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HWND CreateMDIWindowW([NativeTypeName("LPCWSTR")] ushort* lpClassName, [NativeTypeName("LPCWSTR")] ushort* lpWindowName, [NativeTypeName("DWORD")] uint dwStyle, int X, int Y, int nWidth, int nHeight, HWND hWndParent, HINSTANCE hInstance, LPARAM lParam);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.TileWindows"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("WORD")]
     public static extern ushort TileWindows(HWND hwndParent, uint wHow, [NativeTypeName("const RECT *")] RECT* lpRect, uint cKids, [NativeTypeName("const HWND *")] HWND* lpKids);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CascadeWindows"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("WORD")]
     public static extern ushort CascadeWindows(HWND hwndParent, uint wHow, [NativeTypeName("const RECT *")] RECT* lpRect, uint cKids, [NativeTypeName("const HWND *")] HWND* lpKids);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WinHelpA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL WinHelpA(HWND hWndMain, [NativeTypeName("LPCSTR")] sbyte* lpszHelp, uint uCommand, [NativeTypeName("ULONG_PTR")] nuint dwData);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WinHelpW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL WinHelpW(HWND hWndMain, [NativeTypeName("LPCWSTR")] ushort* lpszHelp, uint uCommand, [NativeTypeName("ULONG_PTR")] nuint dwData);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetGuiResources"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("DWORD")]
     public static extern uint GetGuiResources(HANDLE hProcess, [NativeTypeName("DWORD")] uint uiFlags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ChangeDisplaySettingsA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [return: NativeTypeName("LONG")]
     public static extern int ChangeDisplaySettingsA(DEVMODEA* lpDevMode, [NativeTypeName("DWORD")] uint dwFlags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ChangeDisplaySettingsW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [return: NativeTypeName("LONG")]
     public static extern int ChangeDisplaySettingsW(DEVMODEW* lpDevMode, [NativeTypeName("DWORD")] uint dwFlags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ChangeDisplaySettingsExA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [return: NativeTypeName("LONG")]
     public static extern int ChangeDisplaySettingsExA([NativeTypeName("LPCSTR")] sbyte* lpszDeviceName, DEVMODEA* lpDevMode, HWND hwnd, [NativeTypeName("DWORD")] uint dwflags, [NativeTypeName("LPVOID")] void* lParam);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ChangeDisplaySettingsExW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [return: NativeTypeName("LONG")]
     public static extern int ChangeDisplaySettingsExW([NativeTypeName("LPCWSTR")] ushort* lpszDeviceName, DEVMODEW* lpDevMode, HWND hwnd, [NativeTypeName("DWORD")] uint dwflags, [NativeTypeName("LPVOID")] void* lParam);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EnumDisplaySettingsA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL EnumDisplaySettingsA([NativeTypeName("LPCSTR")] sbyte* lpszDeviceName, [NativeTypeName("DWORD")] uint iModeNum, DEVMODEA* lpDevMode);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EnumDisplaySettingsW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL EnumDisplaySettingsW([NativeTypeName("LPCWSTR")] ushort* lpszDeviceName, [NativeTypeName("DWORD")] uint iModeNum, DEVMODEW* lpDevMode);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EnumDisplaySettingsExA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL EnumDisplaySettingsExA([NativeTypeName("LPCSTR")] sbyte* lpszDeviceName, [NativeTypeName("DWORD")] uint iModeNum, DEVMODEA* lpDevMode, [NativeTypeName("DWORD")] uint dwFlags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EnumDisplaySettingsExW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL EnumDisplaySettingsExW([NativeTypeName("LPCWSTR")] ushort* lpszDeviceName, [NativeTypeName("DWORD")] uint iModeNum, DEVMODEW* lpDevMode, [NativeTypeName("DWORD")] uint dwFlags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EnumDisplayDevicesA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL EnumDisplayDevicesA([NativeTypeName("LPCSTR")] sbyte* lpDevice, [NativeTypeName("DWORD")] uint iDevNum, [NativeTypeName("PDISPLAY_DEVICEA")] DISPLAY_DEVICEA* lpDisplayDevice, [NativeTypeName("DWORD")] uint dwFlags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EnumDisplayDevicesW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL EnumDisplayDevicesW([NativeTypeName("LPCWSTR")] ushort* lpDevice, [NativeTypeName("DWORD")] uint iDevNum, [NativeTypeName("PDISPLAY_DEVICEW")] DISPLAY_DEVICEW* lpDisplayDevice, [NativeTypeName("DWORD")] uint dwFlags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetDisplayConfigBufferSizes"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [return: NativeTypeName("LONG")]
     public static extern int GetDisplayConfigBufferSizes([NativeTypeName("UINT32")] uint flags, [NativeTypeName("UINT32 *")] uint* numPathArrayElements, [NativeTypeName("UINT32 *")] uint* numModeInfoArrayElements);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetDisplayConfig"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [return: NativeTypeName("LONG")]
     public static extern int SetDisplayConfig([NativeTypeName("UINT32")] uint numPathArrayElements, DISPLAYCONFIG_PATH_INFO* pathArray, [NativeTypeName("UINT32")] uint numModeInfoArrayElements, DISPLAYCONFIG_MODE_INFO* modeInfoArray, [NativeTypeName("UINT32")] uint flags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.QueryDisplayConfig"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [return: NativeTypeName("LONG")]
     public static extern int QueryDisplayConfig([NativeTypeName("UINT32")] uint flags, [NativeTypeName("UINT32 *")] uint* numPathArrayElements, DISPLAYCONFIG_PATH_INFO* pathArray, [NativeTypeName("UINT32 *")] uint* numModeInfoArrayElements, DISPLAYCONFIG_MODE_INFO* modeInfoArray, DISPLAYCONFIG_TOPOLOGY_ID* currentTopologyId);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DisplayConfigGetDeviceInfo"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [return: NativeTypeName("LONG")]
     public static extern int DisplayConfigGetDeviceInfo(DISPLAYCONFIG_DEVICE_INFO_HEADER* requestPacket);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DisplayConfigSetDeviceInfo"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [return: NativeTypeName("LONG")]
     public static extern int DisplayConfigSetDeviceInfo(DISPLAYCONFIG_DEVICE_INFO_HEADER* setPacket);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SystemParametersInfoA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SystemParametersInfoA(uint uiAction, uint uiParam, [NativeTypeName("PVOID")] void* pvParam, uint fWinIni);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SystemParametersInfoW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SystemParametersInfoW(uint uiAction, uint uiParam, [NativeTypeName("PVOID")] void* pvParam, uint fWinIni);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SystemParametersInfoForDpi"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     [SupportedOSPlatform("windows10.0.14393.0")]
     public static extern BOOL SystemParametersInfoForDpi(uint uiAction, uint uiParam, [NativeTypeName("PVOID")] void* pvParam, uint fWinIni, uint dpi);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SoundSentry"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL SoundSentry();
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetDebugErrorLevel"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern void SetDebugErrorLevel([NativeTypeName("DWORD")] uint dwLevel);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetLastErrorEx"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern void SetLastErrorEx([NativeTypeName("DWORD")] uint dwErrCode, [NativeTypeName("DWORD")] uint dwType);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.InternalGetWindowText"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern int InternalGetWindowText(HWND hWnd, [NativeTypeName("LPWSTR")] ushort* pString, int cchMaxCount);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CancelShutdown"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL CancelShutdown();
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MonitorFromPoint"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern HMONITOR MonitorFromPoint(POINT pt, [NativeTypeName("DWORD")] uint dwFlags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MonitorFromRect"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern HMONITOR MonitorFromRect([NativeTypeName("LPCRECT")] RECT* lprc, [NativeTypeName("DWORD")] uint dwFlags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MonitorFromWindow"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern HMONITOR MonitorFromWindow(HWND hwnd, [NativeTypeName("DWORD")] uint dwFlags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetMonitorInfoA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL GetMonitorInfoA(HMONITOR hMonitor, [NativeTypeName("LPMONITORINFO")] MONITORINFO* lpmi);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetMonitorInfoW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL GetMonitorInfoW(HMONITOR hMonitor, [NativeTypeName("LPMONITORINFO")] MONITORINFO* lpmi);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EnumDisplayMonitors"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL EnumDisplayMonitors(HDC hdc, [NativeTypeName("LPCRECT")] RECT* lprcClip, [NativeTypeName("MONITORENUMPROC")] delegate* unmanaged<HMONITOR, HDC, RECT*, LPARAM, BOOL> lpfnEnum, LPARAM dwData);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.NotifyWinEvent"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern void NotifyWinEvent([NativeTypeName("DWORD")] uint @event, HWND hwnd, [NativeTypeName("LONG")] int idObject, [NativeTypeName("LONG")] int idChild);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetWinEventHook"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern HWINEVENTHOOK SetWinEventHook([NativeTypeName("DWORD")] uint eventMin, [NativeTypeName("DWORD")] uint eventMax, HMODULE hmodWinEventProc, [NativeTypeName("WINEVENTPROC")] delegate* unmanaged<HWINEVENTHOOK, uint, HWND, int, int, uint, uint, void> pfnWinEventProc, [NativeTypeName("DWORD")] uint idProcess, [NativeTypeName("DWORD")] uint idThread, [NativeTypeName("DWORD")] uint dwFlags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IsWinEventHookInstalled"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL IsWinEventHookInstalled([NativeTypeName("DWORD")] uint @event);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.UnhookWinEvent"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL UnhookWinEvent(HWINEVENTHOOK hWinEventHook);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetGUIThreadInfo"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL GetGUIThreadInfo([NativeTypeName("DWORD")] uint idThread, [NativeTypeName("PGUITHREADINFO")] GUITHREADINFO* pgui);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.BlockInput"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL BlockInput(BOOL fBlockIt);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetProcessDPIAware"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL SetProcessDPIAware();
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IsProcessDPIAware"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL IsProcessDPIAware();
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetThreadDpiAwarenessContext"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SupportedOSPlatform("windows10.0.14393.0")]
     public static extern DPI_AWARENESS_CONTEXT SetThreadDpiAwarenessContext(DPI_AWARENESS_CONTEXT dpiContext);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetThreadDpiAwarenessContext"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SupportedOSPlatform("windows10.0.14393.0")]
     public static extern DPI_AWARENESS_CONTEXT GetThreadDpiAwarenessContext();
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetWindowDpiAwarenessContext"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SupportedOSPlatform("windows10.0.14393.0")]
     public static extern DPI_AWARENESS_CONTEXT GetWindowDpiAwarenessContext(HWND hwnd);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetAwarenessFromDpiAwarenessContext"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SupportedOSPlatform("windows10.0.14393.0")]
     public static extern DPI_AWARENESS GetAwarenessFromDpiAwarenessContext(DPI_AWARENESS_CONTEXT value);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetDpiFromDpiAwarenessContext"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SupportedOSPlatform("windows10.0.17134.0")]
     public static extern uint GetDpiFromDpiAwarenessContext(DPI_AWARENESS_CONTEXT value);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.AreDpiAwarenessContextsEqual"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SupportedOSPlatform("windows10.0.14393.0")]
     public static extern BOOL AreDpiAwarenessContextsEqual(DPI_AWARENESS_CONTEXT dpiContextA, DPI_AWARENESS_CONTEXT dpiContextB);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IsValidDpiAwarenessContext"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SupportedOSPlatform("windows10.0.14393.0")]
     public static extern BOOL IsValidDpiAwarenessContext(DPI_AWARENESS_CONTEXT value);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetDpiForWindow"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SupportedOSPlatform("windows10.0.14393.0")]
     public static extern uint GetDpiForWindow(HWND hwnd);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetDpiForSystem"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SupportedOSPlatform("windows10.0.14393.0")]
     public static extern uint GetDpiForSystem();
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetSystemDpiForProcess"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SupportedOSPlatform("windows10.0.17134.0")]
     public static extern uint GetSystemDpiForProcess(HANDLE hProcess);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EnableNonClientDpiScaling"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     [SupportedOSPlatform("windows10.0.14393.0")]
     public static extern BOOL EnableNonClientDpiScaling(HWND hwnd);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.InheritWindowMonitor"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL InheritWindowMonitor(HWND hwnd, HWND hwndInherit);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetProcessDpiAwarenessContext"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     [SupportedOSPlatform("windows10.0.15063.0")]
     public static extern BOOL SetProcessDpiAwarenessContext(DPI_AWARENESS_CONTEXT value);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetDpiAwarenessContextForProcess"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern DPI_AWARENESS_CONTEXT GetDpiAwarenessContextForProcess(HANDLE hProcess);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetThreadDpiHostingBehavior"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SupportedOSPlatform("windows10.0.17134.0")]
     public static extern DPI_HOSTING_BEHAVIOR SetThreadDpiHostingBehavior(DPI_HOSTING_BEHAVIOR value);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetThreadDpiHostingBehavior"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SupportedOSPlatform("windows10.0.17134.0")]
     public static extern DPI_HOSTING_BEHAVIOR GetThreadDpiHostingBehavior();
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetWindowDpiHostingBehavior"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SupportedOSPlatform("windows10.0.17134.0")]
     public static extern DPI_HOSTING_BEHAVIOR GetWindowDpiHostingBehavior(HWND hwnd);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetWindowModuleFileNameA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern uint GetWindowModuleFileNameA(HWND hwnd, [NativeTypeName("LPSTR")] sbyte* pszFileName, uint cchFileNameMax);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetWindowModuleFileNameW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern uint GetWindowModuleFileNameW(HWND hwnd, [NativeTypeName("LPWSTR")] ushort* pszFileName, uint cchFileNameMax);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetCursorInfo"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL GetCursorInfo([NativeTypeName("PCURSORINFO")] CURSORINFO* pci);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetWindowInfo"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL GetWindowInfo(HWND hwnd, [NativeTypeName("PWINDOWINFO")] WINDOWINFO* pwi);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetTitleBarInfo"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL GetTitleBarInfo(HWND hwnd, [NativeTypeName("PTITLEBARINFO")] TITLEBARINFO* pti);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetMenuBarInfo"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL GetMenuBarInfo(HWND hwnd, [NativeTypeName("LONG")] int idObject, [NativeTypeName("LONG")] int idItem, [NativeTypeName("PMENUBARINFO")] MENUBARINFO* pmbi);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetScrollBarInfo"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL GetScrollBarInfo(HWND hwnd, [NativeTypeName("LONG")] int idObject, [NativeTypeName("PSCROLLBARINFO")] SCROLLBARINFO* psbi);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetComboBoxInfo"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL GetComboBoxInfo(HWND hwndCombo, [NativeTypeName("PCOMBOBOXINFO")] COMBOBOXINFO* pcbi);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetAncestor"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern HWND GetAncestor(HWND hwnd, uint gaFlags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RealChildWindowFromPoint"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern HWND RealChildWindowFromPoint(HWND hwndParent, POINT ptParentClientCoords);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RealGetWindowClassA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern uint RealGetWindowClassA(HWND hwnd, [NativeTypeName("LPSTR")] sbyte* ptszClassName, uint cchClassNameMax);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RealGetWindowClassW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern uint RealGetWindowClassW(HWND hwnd, [NativeTypeName("LPWSTR")] ushort* ptszClassName, uint cchClassNameMax);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetAltTabInfoA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL GetAltTabInfoA(HWND hwnd, int iItem, [NativeTypeName("PALTTABINFO")] ALTTABINFO* pati, [NativeTypeName("LPSTR")] sbyte* pszItemText, uint cchItemText);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetAltTabInfoW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL GetAltTabInfoW(HWND hwnd, int iItem, [NativeTypeName("PALTTABINFO")] ALTTABINFO* pati, [NativeTypeName("LPWSTR")] ushort* pszItemText, uint cchItemText);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetListBoxInfo"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint GetListBoxInfo(HWND hwnd);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LockWorkStation"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL LockWorkStation();
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.UserHandleGrantAccess"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL UserHandleGrantAccess(HANDLE hUserHandle, HANDLE hJob, BOOL bGrant);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetRawInputData"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern uint GetRawInputData(HRAWINPUT hRawInput, uint uiCommand, [NativeTypeName("LPVOID")] void* pData, [NativeTypeName("PUINT")] uint* pcbSize, uint cbSizeHeader);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetRawInputDeviceInfoA"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern uint GetRawInputDeviceInfoA(HANDLE hDevice, uint uiCommand, [NativeTypeName("LPVOID")] void* pData, [NativeTypeName("PUINT")] uint* pcbSize);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetRawInputDeviceInfoW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern uint GetRawInputDeviceInfoW(HANDLE hDevice, uint uiCommand, [NativeTypeName("LPVOID")] void* pData, [NativeTypeName("PUINT")] uint* pcbSize);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetRawInputBuffer"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern uint GetRawInputBuffer([NativeTypeName("PRAWINPUT")] RAWINPUT* pData, [NativeTypeName("PUINT")] uint* pcbSize, uint cbSizeHeader);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RegisterRawInputDevices"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL RegisterRawInputDevices([NativeTypeName("PCRAWINPUTDEVICE")] RAWINPUTDEVICE* pRawInputDevices, uint uiNumDevices, uint cbSize);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetRegisteredRawInputDevices"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern uint GetRegisteredRawInputDevices([NativeTypeName("PRAWINPUTDEVICE")] RAWINPUTDEVICE* pRawInputDevices, [NativeTypeName("PUINT")] uint* puiNumDevices, uint cbSize);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetRawInputDeviceList"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern uint GetRawInputDeviceList([NativeTypeName("PRAWINPUTDEVICELIST")] RAWINPUTDEVICELIST* pRawInputDeviceList, [NativeTypeName("PUINT")] uint* puiNumDevices, uint cbSize);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DefRawInputProc"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern LRESULT DefRawInputProc([NativeTypeName("PRAWINPUT *")] RAWINPUT** paRawInput, int nInput, uint cbSizeHeader);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetPointerDevices"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     [SupportedOSPlatform("windows8.0")]
     public static extern BOOL GetPointerDevices([NativeTypeName("UINT32 *")] uint* deviceCount, POINTER_DEVICE_INFO* pointerDevices);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetPointerDevice"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     [SupportedOSPlatform("windows8.0")]
     public static extern BOOL GetPointerDevice(HANDLE device, POINTER_DEVICE_INFO* pointerDevice);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetPointerDeviceProperties"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     [SupportedOSPlatform("windows8.0")]
     public static extern BOOL GetPointerDeviceProperties(HANDLE device, [NativeTypeName("UINT32 *")] uint* propertyCount, POINTER_DEVICE_PROPERTY* pointerProperties);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RegisterPointerDeviceNotifications"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     [SupportedOSPlatform("windows8.0")]
     public static extern BOOL RegisterPointerDeviceNotifications(HWND window, BOOL notifyRange);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetPointerDeviceRects"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     [SupportedOSPlatform("windows8.0")]
     public static extern BOOL GetPointerDeviceRects(HANDLE device, RECT* pointerDeviceRect, RECT* displayRect);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetPointerDeviceCursors"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     [SupportedOSPlatform("windows8.0")]
     public static extern BOOL GetPointerDeviceCursors(HANDLE device, [NativeTypeName("UINT32 *")] uint* cursorCount, POINTER_DEVICE_CURSOR_INFO* deviceCursors);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetRawPointerDeviceData"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     [SupportedOSPlatform("windows8.0")]
     public static extern BOOL GetRawPointerDeviceData([NativeTypeName("UINT32")] uint pointerId, [NativeTypeName("UINT32")] uint historyCount, [NativeTypeName("UINT32")] uint propertiesCount, POINTER_DEVICE_PROPERTY* pProperties, [NativeTypeName("LONG *")] int* pValues);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ChangeWindowMessageFilter"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL ChangeWindowMessageFilter(uint message, [NativeTypeName("DWORD")] uint dwFlag);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ChangeWindowMessageFilterEx"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL ChangeWindowMessageFilterEx(HWND hwnd, uint message, [NativeTypeName("DWORD")] uint action, [NativeTypeName("PCHANGEFILTERSTRUCT")] CHANGEFILTERSTRUCT* pChangeFilterStruct);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetGestureInfo"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL GetGestureInfo(HGESTUREINFO hGestureInfo, [NativeTypeName("PGESTUREINFO")] GESTUREINFO* pGestureInfo);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetGestureExtraArgs"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL GetGestureExtraArgs(HGESTUREINFO hGestureInfo, uint cbExtraArgs, [NativeTypeName("PBYTE")] byte* pExtraArgs);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CloseGestureInfoHandle"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL CloseGestureInfoHandle(HGESTUREINFO hGestureInfo);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetGestureConfig"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SetGestureConfig(HWND hwnd, [NativeTypeName("DWORD")] uint dwReserved, uint cIDs, [NativeTypeName("PGESTURECONFIG")] GESTURECONFIG* pGestureConfig, uint cbSize);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetGestureConfig"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL GetGestureConfig(HWND hwnd, [NativeTypeName("DWORD")] uint dwReserved, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PUINT")] uint* pcIDs, [NativeTypeName("PGESTURECONFIG")] GESTURECONFIG* pGestureConfig, uint cbSize);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ShutdownBlockReasonCreate"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL ShutdownBlockReasonCreate(HWND hWnd, [NativeTypeName("LPCWSTR")] ushort* pwszReason);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ShutdownBlockReasonQuery"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL ShutdownBlockReasonQuery(HWND hWnd, [NativeTypeName("LPWSTR")] ushort* pwszBuff, [NativeTypeName("DWORD *")] uint* pcchBuff);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ShutdownBlockReasonDestroy"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL ShutdownBlockReasonDestroy(HWND hWnd);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetCurrentInputMessageSource"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     [SupportedOSPlatform("windows8.0")]
     public static extern BOOL GetCurrentInputMessageSource(INPUT_MESSAGE_SOURCE* inputMessageSource);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetCIMSSM"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SupportedOSPlatform("windows8.0")]
     public static extern BOOL GetCIMSSM(INPUT_MESSAGE_SOURCE* inputMessageSource);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetAutoRotationState"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL GetAutoRotationState([NativeTypeName("PAR_STATE")] AR_STATE* pState);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetDisplayAutoRotationPreferences"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SupportedOSPlatform("windows8.0")]
     public static extern BOOL GetDisplayAutoRotationPreferences(ORIENTATION_PREFERENCE* pOrientation);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetDisplayAutoRotationPreferences"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     public static extern BOOL SetDisplayAutoRotationPreferences(ORIENTATION_PREFERENCE orientation);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IsImmersiveProcess"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     [SupportedOSPlatform("windows8.0")]
     public static extern BOOL IsImmersiveProcess(HANDLE hProcess);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetProcessRestrictionExemption"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
     [SupportedOSPlatform("windows8.0")]

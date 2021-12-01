@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WICComponentType">
+    <summary>
+      <para>Specifies the type of Windows Imaging Component (WIC) component.</para>
+    </summary>
+  </member>
+  <member name="WICComponentType.WICDecoder">
+    <summary>
+      <para>A WIC decoder.</para>
+    </summary>
+  </member>
+  <member name="WICComponentType.WICEncoder">
+    <summary>
+      <para>A WIC encoder.</para>
+    </summary>
+  </member>
+  <member name="WICComponentType.WICPixelFormatConverter">
+    <summary>
+      <para>A WIC pixel converter.</para>
+    </summary>
+  </member>
+  <member name="WICComponentType.WICMetadataReader">
+    <summary>
+      <para>A WIC metadata reader.</para>
+    </summary>
+  </member>
+  <member name="WICComponentType.WICMetadataWriter">
+    <summary>
+      <para>A WIC metadata writer.</para>
+    </summary>
+  </member>
+  <member name="WICComponentType.WICPixelFormat">
+    <summary>
+      <para>A WIC pixel format.</para>
+    </summary>
+  </member>
+  <member name="WICComponentType.WICAllComponents">
+    <summary>
+      <para>All WIC components.</para>
+    </summary>
+  </member>
+  <member name="WICComponentType.WICCOMPONENTTYPE_FORCE_DWORD">
+    <summary></summary>
+  </member>
+</doc>

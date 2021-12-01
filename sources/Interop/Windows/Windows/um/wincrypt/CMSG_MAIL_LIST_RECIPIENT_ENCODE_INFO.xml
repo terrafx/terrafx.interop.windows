@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CMSG_MAIL_LIST_RECIPIENT_ENCODE_INFO">
+    <summary>
+      <para>The <b>CMSG_MAIL_LIST_RECIPIENT_ENCODE_INFO</b> structure is used with previously distributed <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">symmetric keys</a> for decrypting the content key encryption key (KEK).</para>
+    </summary>
+  </member>
+  <member name="CMSG_MAIL_LIST_RECIPIENT_ENCODE_INFO.cbSize">
+    <summary>
+      <para>The size, in bytes, of this data structure.</para>
+    </summary>
+  </member>
+  <member name="CMSG_MAIL_LIST_RECIPIENT_ENCODE_INFO.KeyEncryptionAlgorithm">
+    <summary>
+      <para>A
+<see cref="CRYPT_ALGORITHM_IDENTIFIER" /> structure that indicates the encryption algorithm used.</para>
+    </summary>
+  </member>
+  <member name="CMSG_MAIL_LIST_RECIPIENT_ENCODE_INFO.pvKeyEncryptionAuxInfo">
+    <summary>
+      <para>A pointer to a structure that contains any additional encryption information.</para>
+    </summary>
+  </member>
+  <member name="CMSG_MAIL_LIST_RECIPIENT_ENCODE_INFO.hCryptProv">
+    <summary>
+      <para>The provider used to do the recipient key encryption and export. If <b>NULL</b>, the provider specified in <see cref="CMSG_ENVELOPED_ENCODE_INFO" /> is used.</para>
+    </summary>
+  </member>
+  <member name="CMSG_MAIL_LIST_RECIPIENT_ENCODE_INFO.dwKeyChoice">
+    <summary>
+      <para>Indicates which member of the following union will be used. Currently only CMSG_MAIL_LIST_HANDLE_KEY_CHOICE can be used.</para>
+    </summary>
+  </member>
+  <member name="CMSG_MAIL_LIST_RECIPIENT_ENCODE_INFO.DUMMYUNIONNAME">
+    <summary></summary>
+  </member>
+  <member name="CMSG_MAIL_LIST_RECIPIENT_ENCODE_INFO.DUMMYUNIONNAME.hKeyEncryptionKey">
+    <summary>
+      <para>An <b>HCRYPTKEY</b> value used with the CMSG_MAIL_LIST_HANDLE_KEY_CHOICE value of the <i>dwKeyChoice</i> parameter.</para>
+    </summary>
+  </member>
+  <member name="CMSG_MAIL_LIST_RECIPIENT_ENCODE_INFO.DUMMYUNIONNAME.pvKeyEncryptionKey">
+    <summary>
+      <para>A pointer to a void. Reserved for a future potential pointer choice.</para>
+    </summary>
+  </member>
+  <member name="CMSG_MAIL_LIST_RECIPIENT_ENCODE_INFO.KeyId">
+    <summary>
+      <para>A <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_DATA_BLOB</a> key identifier of the key-encryption key that was previously distributed to the message sender and one or more recipients.</para>
+    </summary>
+  </member>
+  <member name="CMSG_MAIL_LIST_RECIPIENT_ENCODE_INFO.Date">
+    <summary>
+      <para>Optional <b>FILETIME</b> value. When present, specifies a single key encryption key (KEK) from a set that was previously distributed.</para>
+    </summary>
+  </member>
+  <member name="CMSG_MAIL_LIST_RECIPIENT_ENCODE_INFO.pOtherAttr">
+    <summary>
+      <para>Optional pointer to a
+<see cref="CRYPT_ATTRIBUTE_TYPE_VALUE" /> structure that contains encryption attributes.</para>
+    </summary>
+  </member>
+</doc>

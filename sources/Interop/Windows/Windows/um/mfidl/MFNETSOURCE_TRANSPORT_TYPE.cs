@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MFNETSOURCE_TRANSPORT_TYPE.xml' path='doc/member[@name="MFNETSOURCE_TRANSPORT_TYPE"]/*' />
 public enum MFNETSOURCE_TRANSPORT_TYPE
 {
+    /// <include file='MFNETSOURCE_TRANSPORT_TYPE.xml' path='doc/member[@name="MFNETSOURCE_TRANSPORT_TYPE.MFNETSOURCE_UDP"]/*' />
     MFNETSOURCE_UDP = 0,
+
+    /// <include file='MFNETSOURCE_TRANSPORT_TYPE.xml' path='doc/member[@name="MFNETSOURCE_TRANSPORT_TYPE.MFNETSOURCE_TCP"]/*' />
     MFNETSOURCE_TCP = (MFNETSOURCE_UDP + 1),
 }

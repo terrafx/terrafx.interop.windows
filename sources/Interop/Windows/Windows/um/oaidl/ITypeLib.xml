@@ -1,0 +1,633 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ITypeLib.FindName">
+    <summary>
+      <para>Finds occurrences of a type description in a type library. This may be used to quickly verify that a name exists in a type library.</para>
+    </summary>
+    <param name="szNameBuf">
+      <para>The name to search for.</para>
+    </param>
+    <param name="lHashVal">
+      <para>A hash value to speed up the search, computed by the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oleauto/nf-oleauto-lhashvalofnamesys">LHashValOfNameSys</a> function. If <i>lHashVal</i> = 0, a value is computed.</para>
+    </param>
+    <param name="ppTInfo">
+      <para>An array of pointers to the type descriptions that contain the name specified in <i>szNameBuf</i>. This parameter cannot be null.</para>
+    </param>
+    <param name="rgMemId">
+      <para>An array of the found items; <i>rgMemId</i>[<i>i</i>] is the MEMBERID that indexes into the type description specified by <i>ppTInfo</i>[<i>i</i>]. This parameter cannot be null.</para>
+    </param>
+    <param name="pcFound">
+      <para>On entry, indicates how many instances to look for. For example, *<i>pcFound</i> = 1 can be called to find the first occurrence. The search stops when one is found.</para>
+      <para>On exit, indicates the number of instances that were found. If the in and out values of *<i>pcFound</i> are identical, there may be more type descriptions that contain the name.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>S_OK
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_INVALIDARG
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>One or more of the arguments is not valid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_OUTOFMEMORY
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Insufficient memory to complete the operation.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Passing *<i>pcFound</i> = <i>n</i> indicates that there is enough room in the <i>ppTInfo</i> and <i>rgMemId</i> arrays for <i>n</i> (<i>ptinfo</i>, <i>memid</i>) pairs. The function returns MEMBERID_NIL in <i>rgMemId</i>[<i>i</i>], if the name in <i>szNameBuf</i> is the name of the type information in <i>ppTInfo</i>[<i>i</i>].</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-itypelib">ITypeLib</seealso>
+  </member>
+  <member name="ITypeLib.GetDocumentation">
+    <summary>
+      <para>Retrieves the documentation string for the library, the complete Help file name and path, and the context identifier for the library Help topic in the Help file.</para>
+    </summary>
+    <param name="index">
+      <para>The index of the type description whose documentation is to be returned. If <i>index</i> is -1, then the documentation for the library itself is returned.</para>
+    </param>
+    <param name="pBstrName">
+      <para>The name of the specified item. If the caller does not need the item name, then <i>pBstrName</i> can be null.</para>
+    </param>
+    <param name="pBstrDocString">
+      <para>The documentation string for the specified item. If the caller does not need the documentation string, then <i>pBstrDocString</i> can be null..</para>
+    </param>
+    <param name="pdwHelpContext">
+      <para>The Help context identifier (ID) associated with the specified item. If the caller does not need the Help context ID, then <i>pdwHelpContext</i> can be null.</para>
+    </param>
+    <param name="pBstrHelpFile">
+      <para>The fully qualified name of the Help file. If the caller does not need the Help file name, then <i>pBstrHelpFile</i> can be null.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>S_OK
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_INVALIDARG
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>One or more of the arguments is not valid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>STG_E_INSUFFICIENTMEMORY
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Insufficient memory to complete the operation.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The caller should free the parameters <i>pBstrName</i>, <i>pBstrDocString</i>, and <i>pBstrHelpFile</i>.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-itypelib">ITypeLib</seealso>
+  </member>
+  <member name="ITypeLib.GetLibAttr">
+    <summary>
+      <para>Retrieves the structure that contains the library's attributes.</para>
+    </summary>
+    <param name="ppTLibAttr">
+      <para>The library's attributes.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>S_OK
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_INVALIDARG
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>One or more of the arguments is not valid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_OUTOFMEMORY
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Insufficient memory to complete the operation.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Use <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nf-oaidl-itypelib-releasetlibattr">ITypeLib.ReleaseTLibAttr</a> to free the memory occupied by the TLIBATTR structure.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-itypelib">ITypeLib</seealso>
+  </member>
+  <member name="ITypeLib.GetTypeComp">
+    <summary>
+      <para>Enables a client compiler to bind to the types, variables, constants, and global functions for a library.</para>
+    </summary>
+    <param name="ppTComp">
+      <para>The <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-itypecomp">ITypeComp</a> instance for this <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-itypelib">ITypeLib</a>. A client compiler uses the methods in the <b>ITypeComp</b> interface to bind to types in <b>ITypeLib</b>, as well as to the global functions, variables, and constants defined in <b>ITypeLib</b></para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>S_OK
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_INVALIDARG
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>One or more of the arguments is not valid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_OUTOFMEMORY
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Insufficient memory to complete the operation.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The <see cref="Bind" /> function of the returned <b>TypeComp</b> binds to global functions, variables, constants, enumerated values, and coclass members. The <b>Bind</b> function also binds the names of the TYPEKIND enumerations of TKIND_MODULE, TKIND_ENUM, and TKIND_COCLASS. These names shadow any global names defined within the type information. The members of TKIND_ENUM, TKIND_MODULE, and TKIND_COCLASS types marked as Application objects can be directly bound to from <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-itypecomp">ITypeComp</a> without specifying the name of the module.</para>
+      <para>
+        <see cref="ITypeComp.Bind" /> and <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nf-oaidl-itypecomp-bindtype">ITypeComp.BindType</a> accept only unqualified names. <b>ITypeLib.GetTypeComp</b> returns a pointer to the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-itypecomp">ITypeComp</a> interface, which is then used to bind to global elements in the library. The names of some types (TKIND_ENUM, TKIND_MODULE, and TKIND_COCLASS) share the name space with variables, functions, constants, and enumerators.</para>
+      <para>If a member requires qualification to differentiate it from other items in the name space, <b>GetTypeComp</b> can be called successively for each qualifier in order to bind to the desired member. This allows programming language compilers to access members of modules, enumerations, and coclasses, even though the member can't be bound to with a qualified name.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-itypelib">ITypeLib</seealso>
+  </member>
+  <member name="ITypeLib.GetTypeInfo">
+    <summary>
+      <para>Retrieves the specified type description in the library.</para>
+    </summary>
+    <param name="index">
+      <para>The index of the interface to be returned.</para>
+    </param>
+    <param name="ppTInfo">
+      <para>If successful, returns a pointer to the pointer to the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-itypeinfo">ITypeInfo</a> interface.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>S_OK
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>TYPE_E_ELEMENTNOTFOUND</b>
+            </para>
+          </description>
+          <description>
+            <para>The <i>index</i> parameter is outside the range of  to <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nf-oaidl-itypelib-gettypeinfocount">GetTypeInfoCount</a> - 1.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_INVALIDARG
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>One or more of the arguments is not valid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_OUTOFMEMORY
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Insufficient memory to complete the operation.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>For dual interfaces, <b>GetTypeInfo</b> returns only the TKIND_DISPATCH type information. To get the TKIND_INTERFACE type information, <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nf-oaidl-itypeinfo-getreftypeofimpltype">GetRefTypeOfImplType</a> can be called on the TKIND_DISPATCH type information, passing an index of –1. Then, the returned type information handle can be passed to <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nf-oaidl-itypeinfo-getreftypeinfo">GetRefTypeInfo</a>.</para>
+      <h4>Examples</h4>
+      <para>The following example gets the TKIND_INTERFACE type information for a dual interface.</para>
+      <code>HRESULT hr;
+hr = ptlib-&gt;GetTypeInfo((unsigned int) dwIndex, &amp;amp;amp;amp;amp;amp;ptypeinfoDisp);
+if (FAILED(hr)) {
+   //free resources
+   return hr;
+}
+hr = ptypeinfoDisp-&gt;GetRefTypeOfImplType(-1, &amp;amp;amp;amp;amp;amp;phreftype);
+if (FAILED(hr)) {
+   //free resources
+   return hr;
+
+hr = ptypeinfoDisp-&gt;GetRefTypeInfo(phreftype, &amp;amp;amp;amp;amp;amp;ptypeinfoInt);
+if (FAILED(hr)) {
+   //free resources
+   return hr;
+
+//
+</code>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-itypelib">ITypeLib</seealso>
+  </member>
+  <member name="ITypeLib.GetTypeInfoCount">
+    <summary>
+      <para>Provides the number of type descriptions that are in a type library.</para>
+    </summary>
+    <returns>
+      <para>The number of type descriptions in the type library.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-itypelib">ITypeLib</seealso>
+  </member>
+  <member name="ITypeLib.GetTypeInfoOfGuid">
+    <summary>
+      <para>Retrieves the type description that corresponds to the specified GUID.</para>
+    </summary>
+    <param name="guid">
+      <para>The GUID of the type description.</para>
+    </param>
+    <param name="ppTinfo">
+      <para>The <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-itypeinfo">ITypeInfo</a> interface.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>S_OK
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>TYPE_E_ELEMENTNOTFOUND</b>
+            </para>
+          </description>
+          <description>
+            <para>No type description was found in the library with the specified GUID.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_INVALIDARG
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>One or more of the arguments is not valid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_OUTOFMEMORY
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Insufficient memory to complete the operation.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-itypelib">ITypeLib</seealso>
+  </member>
+  <member name="ITypeLib.GetTypeInfoType">
+    <summary>
+      <para>Retrieves the type of a type description.</para>
+    </summary>
+    <param name="index">
+      <para>The index of the type description within the type library.</para>
+    </param>
+    <param name="pTKind">
+      <para>The <see cref="TYPEKIND" /> enumeration value for the type description.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>S_OK
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>TYPE_E_ELEMENTNOTFOUND</b>
+            </para>
+          </description>
+          <description>
+            <para>The <i>index</i> parameter is outside the range of  to <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nf-oaidl-itypelib-gettypeinfocount">GetTypeInfoCount</a> - 1.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-itypelib">ITypeLib</seealso>
+  </member>
+  <member name="ITypeLib.IsName">
+    <summary>
+      <para>Indicates whether a passed-in string contains the name of a type or member described in the library.</para>
+    </summary>
+    <param name="szNameBuf">
+      <para>The string to test. If this method is successful, <i>szNameBuf</i> is modified to match the case (capitalization) found in the type library.</para>
+    </param>
+    <param name="lHashVal">
+      <para>The hash value of <i>szNameBuf</i>.</para>
+    </param>
+    <param name="pfName">
+      <para>True if <i>szNameBuf</i> was found in the type library; otherwise false.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>S_OK
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_INVALIDARG
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>One or more of the arguments is not valid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>E_OUTOFMEMORY
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Insufficient memory to complete the operation.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-itypelib">ITypeLib</seealso>
+  </member>
+  <member name="ITypeLib.ReleaseTLibAttr">
+    <summary>
+      <para>Releases the TLIBATTR originally obtained from <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nf-oaidl-itypelib-getlibattr">GetLibAttr</a>.</para>
+    </summary>
+    <param name="pTLibAttr">
+      <para>The TLIBATTR to be freed.</para>
+    </param>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-itypelib">ITypeLib</seealso>
+  </member>
+  <member name="ITypeLib">
+    <summary>
+      <para>Represents a type library, the data that describes a set of objects. A type library can be a stand-alone binary file (.TLB), a resource in a dynamic link library or executable file (.DLL, .OLB, or .EXE).</para>
+    </summary>
+    <remarks>
+      <para>The system registry contains a list of all the installed type libraries. Type library organization is illustrated in the following figure:</para>
+      <para>.:image type="content" source="./images/oa03_10.Png" border="false" alt-text="Diagram showing the organization of installed type libraries as they are listed in the system registry.".:</para>
+      <para>The <b>ITypeLib</b> interface provides methods for accessing a library of type descriptions. This interface supports the following:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <para>Generalized containment for type information. <b>ITypeLib</b> allows iteration over the type descriptions contained in the library.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>Global functions and data. A type library can contain descriptions of a set of modules (.DLLs) that exports data and functions. The type library supports compiling references to the exported data and functions.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>General information, including a user-readable name for the library and help for the library as a whole.</para>
+          </description>
+        </item>
+      </list>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//previous-versions/ms221172(v=vs.85)">Type Description Interfaces and Functions </seealso>
+  </member>
+</doc>

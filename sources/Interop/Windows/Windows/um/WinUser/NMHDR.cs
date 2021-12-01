@@ -5,12 +5,16 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NMHDR.xml' path='doc/member[@name="NMHDR"]/*' />
 public partial struct NMHDR
 {
+    /// <include file='NMHDR.xml' path='doc/member[@name="NMHDR.hwndFrom"]/*' />
     public HWND hwndFrom;
 
+    /// <include file='NMHDR.xml' path='doc/member[@name="NMHDR.idFrom"]/*' />
     [NativeTypeName("UINT_PTR")]
     public nuint idFrom;
 
+    /// <include file='NMHDR.xml' path='doc/member[@name="NMHDR.code"]/*' />
     public uint code;
 }

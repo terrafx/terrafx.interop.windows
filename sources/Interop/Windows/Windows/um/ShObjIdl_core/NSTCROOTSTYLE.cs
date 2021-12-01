@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NSTCROOTSTYLE.xml' path='doc/member[@name="NSTCROOTSTYLE"]/*' />
 public enum NSTCROOTSTYLE
 {
+    /// <include file='NSTCROOTSTYLE.xml' path='doc/member[@name="NSTCROOTSTYLE.NSTCRS_VISIBLE"]/*' />
     NSTCRS_VISIBLE = 0,
+
+    /// <include file='NSTCROOTSTYLE.xml' path='doc/member[@name="NSTCROOTSTYLE.NSTCRS_HIDDEN"]/*' />
     NSTCRS_HIDDEN = 0x1,
+
+    /// <include file='NSTCROOTSTYLE.xml' path='doc/member[@name="NSTCROOTSTYLE.NSTCRS_EXPANDED"]/*' />
     NSTCRS_EXPANDED = 0x2,
 }

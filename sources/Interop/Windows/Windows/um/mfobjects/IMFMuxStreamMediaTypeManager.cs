@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFMuxStreamMediaTypeManager.xml' path='doc/member[@name="IMFMuxStreamMediaTypeManager"]/*' />
 [Guid("505A2C72-42F7-4690-AEAB-8F513D0FFDB8")]
 [NativeTypeName("struct IMFMuxStreamMediaTypeManager : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IMFMuxStreamMediaTypeManager : IMFMuxStreamMediaTyp
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IMFMuxStreamMediaTypeManager : IMFMuxStreamMediaTyp
         return ((delegate* unmanaged<IMFMuxStreamMediaTypeManager*, Guid*, void**, int>)(lpVtbl[0]))((IMFMuxStreamMediaTypeManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IMFMuxStreamMediaTypeManager : IMFMuxStreamMediaTyp
         return ((delegate* unmanaged<IMFMuxStreamMediaTypeManager*, uint>)(lpVtbl[1]))((IMFMuxStreamMediaTypeManager*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IMFMuxStreamMediaTypeManager : IMFMuxStreamMediaTyp
         return ((delegate* unmanaged<IMFMuxStreamMediaTypeManager*, uint>)(lpVtbl[2]))((IMFMuxStreamMediaTypeManager*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFMuxStreamMediaTypeManager.xml' path='doc/member[@name="IMFMuxStreamMediaTypeManager.GetStreamCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetStreamCount([NativeTypeName("DWORD *")] uint* pdwMuxStreamCount)
@@ -48,6 +53,7 @@ public unsafe partial struct IMFMuxStreamMediaTypeManager : IMFMuxStreamMediaTyp
         return ((delegate* unmanaged<IMFMuxStreamMediaTypeManager*, uint*, int>)(lpVtbl[3]))((IMFMuxStreamMediaTypeManager*)Unsafe.AsPointer(ref this), pdwMuxStreamCount);
     }
 
+    /// <include file='IMFMuxStreamMediaTypeManager.xml' path='doc/member[@name="IMFMuxStreamMediaTypeManager.GetMediaType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetMediaType([NativeTypeName("DWORD")] uint dwMuxStreamIndex, IMFMediaType** ppMediaType)
@@ -55,6 +61,7 @@ public unsafe partial struct IMFMuxStreamMediaTypeManager : IMFMuxStreamMediaTyp
         return ((delegate* unmanaged<IMFMuxStreamMediaTypeManager*, uint, IMFMediaType**, int>)(lpVtbl[4]))((IMFMuxStreamMediaTypeManager*)Unsafe.AsPointer(ref this), dwMuxStreamIndex, ppMediaType);
     }
 
+    /// <include file='IMFMuxStreamMediaTypeManager.xml' path='doc/member[@name="IMFMuxStreamMediaTypeManager.GetStreamConfigurationCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetStreamConfigurationCount([NativeTypeName("DWORD *")] uint* pdwCount)
@@ -62,6 +69,7 @@ public unsafe partial struct IMFMuxStreamMediaTypeManager : IMFMuxStreamMediaTyp
         return ((delegate* unmanaged<IMFMuxStreamMediaTypeManager*, uint*, int>)(lpVtbl[5]))((IMFMuxStreamMediaTypeManager*)Unsafe.AsPointer(ref this), pdwCount);
     }
 
+    /// <include file='IMFMuxStreamMediaTypeManager.xml' path='doc/member[@name="IMFMuxStreamMediaTypeManager.AddStreamConfiguration"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT AddStreamConfiguration([NativeTypeName("ULONGLONG")] ulong ullStreamMask)
@@ -69,6 +77,7 @@ public unsafe partial struct IMFMuxStreamMediaTypeManager : IMFMuxStreamMediaTyp
         return ((delegate* unmanaged<IMFMuxStreamMediaTypeManager*, ulong, int>)(lpVtbl[6]))((IMFMuxStreamMediaTypeManager*)Unsafe.AsPointer(ref this), ullStreamMask);
     }
 
+    /// <include file='IMFMuxStreamMediaTypeManager.xml' path='doc/member[@name="IMFMuxStreamMediaTypeManager.RemoveStreamConfiguration"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT RemoveStreamConfiguration([NativeTypeName("ULONGLONG")] ulong ullStreamMask)
@@ -76,6 +85,7 @@ public unsafe partial struct IMFMuxStreamMediaTypeManager : IMFMuxStreamMediaTyp
         return ((delegate* unmanaged<IMFMuxStreamMediaTypeManager*, ulong, int>)(lpVtbl[7]))((IMFMuxStreamMediaTypeManager*)Unsafe.AsPointer(ref this), ullStreamMask);
     }
 
+    /// <include file='IMFMuxStreamMediaTypeManager.xml' path='doc/member[@name="IMFMuxStreamMediaTypeManager.GetStreamConfiguration"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetStreamConfiguration([NativeTypeName("DWORD")] uint ulIndex, [NativeTypeName("ULONGLONG *")] ulong* pullStreamMask)

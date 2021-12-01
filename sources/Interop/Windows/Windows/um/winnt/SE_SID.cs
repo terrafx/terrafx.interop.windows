@@ -7,12 +7,15 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SE_SID.xml' path='doc/member[@name="SE_SID"]/*' />
 [StructLayout(LayoutKind.Explicit)]
 public unsafe partial struct SE_SID
 {
+    /// <include file='SE_SID.xml' path='doc/member[@name="SE_SID.Sid"]/*' />
     [FieldOffset(0)]
     public SID Sid;
 
+    /// <include file='SE_SID.xml' path='doc/member[@name="SE_SID.Buffer"]/*' />
     [FieldOffset(0)]
     [NativeTypeName("BYTE [68]")]
     public fixed byte Buffer[68];

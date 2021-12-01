@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="TAPE_SET_DRIVE_PARAMETERS">
+    <summary>
+      <para>The
+<b>TAPE_SET_DRIVE_PARAMETERS</b> structure describes the tape drive. It is used by the <see cref="SetTapeParameters" /> function.</para>
+    </summary>
+    <seealso cref="SetTapeParameters" />
+  </member>
+  <member name="TAPE_SET_DRIVE_PARAMETERS.ECC">
+    <summary>
+      <para>If this member is <b>TRUE</b>, hardware error correction is supported. Otherwise, it is not.</para>
+    </summary>
+  </member>
+  <member name="TAPE_SET_DRIVE_PARAMETERS.Compression">
+    <summary>
+      <para>If this member is <b>TRUE</b>, hardware data compression is enabled. Otherwise, it is disabled.</para>
+    </summary>
+  </member>
+  <member name="TAPE_SET_DRIVE_PARAMETERS.DataPadding">
+    <summary>
+      <para>If this member is <b>TRUE</b>, data padding is enabled. Otherwise, it is disabled. Data padding keeps the tape streaming at a constant speed.</para>
+    </summary>
+  </member>
+  <member name="TAPE_SET_DRIVE_PARAMETERS.ReportSetmarks">
+    <summary>
+      <para>If this member is <b>TRUE</b>, setmark reporting is enabled. Otherwise, it is disabled.</para>
+    </summary>
+  </member>
+  <member name="TAPE_SET_DRIVE_PARAMETERS.EOTWarningZoneSize">
+    <summary>
+      <para>Number of bytes between the end-of-tape warning and the physical end of the tape.</para>
+    </summary>
+  </member>
+</doc>

@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CERT_POLICIES_INFO.xml' path='doc/member[@name="CERT_POLICIES_INFO"]/*' />
 public unsafe partial struct CERT_POLICIES_INFO
 {
+    /// <include file='CERT_POLICIES_INFO.xml' path='doc/member[@name="CERT_POLICIES_INFO.cPolicyInfo"]/*' />
     [NativeTypeName("DWORD")]
     public uint cPolicyInfo;
 
+    /// <include file='CERT_POLICIES_INFO.xml' path='doc/member[@name="CERT_POLICIES_INFO.rgPolicyInfo"]/*' />
     public CERT_POLICY_INFO* rgPolicyInfo;
 }

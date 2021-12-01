@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CBTACTIVATESTRUCT">
+    <summary>
+      <para>Contains information passed to a <b>WH_CBT</b> hook procedure, <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644977(v=vs.85)">CBTProc</a>, before a window is activated.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644977(v=vs.85)">CBTProc</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/winmsg/hooks">Hooks</seealso>
+    <seealso cref="SetWindowsHookEx" />
+  </member>
+  <member name="CBTACTIVATESTRUCT.fMouse">
+    <summary>
+      <para>Type: <b>BOOL</b></para>
+      <para>This member is <b>TRUE</b> if a mouse click is causing the activation or <b>FALSE</b> if it is not.</para>
+    </summary>
+  </member>
+  <member name="CBTACTIVATESTRUCT.hWndActive">
+    <summary>
+      <para>Type: <b>HWND</b></para>
+      <para>A handle to the active window.</para>
+    </summary>
+  </member>
+</doc>

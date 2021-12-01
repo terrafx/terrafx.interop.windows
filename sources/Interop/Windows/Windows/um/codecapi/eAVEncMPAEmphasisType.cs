@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='eAVEncMPAEmphasisType.xml' path='doc/member[@name="eAVEncMPAEmphasisType"]/*' />
 public enum eAVEncMPAEmphasisType
 {
+    /// <include file='eAVEncMPAEmphasisType.xml' path='doc/member[@name="eAVEncMPAEmphasisType.eAVEncMPAEmphasisType_None"]/*' />
     eAVEncMPAEmphasisType_None = 0,
+
+    /// <include file='eAVEncMPAEmphasisType.xml' path='doc/member[@name="eAVEncMPAEmphasisType.eAVEncMPAEmphasisType_50_15"]/*' />
     eAVEncMPAEmphasisType_50_15 = 1,
+
+    /// <include file='eAVEncMPAEmphasisType.xml' path='doc/member[@name="eAVEncMPAEmphasisType.eAVEncMPAEmphasisType_Reserved"]/*' />
     eAVEncMPAEmphasisType_Reserved = 2,
+
+    /// <include file='eAVEncMPAEmphasisType.xml' path='doc/member[@name="eAVEncMPAEmphasisType.eAVEncMPAEmphasisType_CCITT_J17"]/*' />
     eAVEncMPAEmphasisType_CCITT_J17 = 3,
 }

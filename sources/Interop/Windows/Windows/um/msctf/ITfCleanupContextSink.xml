@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ITfCleanupContextSink.OnCleanupContext">
+    <summary>
+      <para>Called during a context cleanup operation.</para>
+    </summary>
+    <param name="ecWrite">
+      <para>Contains a <a href="https://docs.microsoft.com//windows/desktop/TSF/tfeditcookie">TfEditCookie</a> value that identifies the edit context cleaned up. The edit context is guaranteed to have a read/write lock.</para>
+    </param>
+    <param name="pic">
+      <para>Pointer to an <see cref="ITfContext" /> interface that represents the context cleaned up.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>A context cleanup occurs when:</para>
+      <list type="bullet">
+        <item>
+          <description>The text service is deactivated while a context is still on the context stack. This can occur when the active text service is changed or when the active language changes while the text service is active.</description>
+        </item>
+        <item>
+          <description>
+            <see cref="ITfThreadMgr.Deactivate" /> is called while a context is still on the context stack.</description>
+        </item>
+      </list>
+      <para>
+        <see cref="ITfCleanupContextDurationSink.OnStartCleanupContext" /> is called just before the TSF manager begins making <see cref="ITfCleanupContextSink.OnCleanupContext" /> notifications. When all of the OnCleanupContext notifications complete, the TSF manager calls <b>OnEndCleanupContext</b>.</para>
+    </remarks>
+    <seealso cref="ITfCleanupContextSink interface" />
+    <seealso cref="ITfContext interface" />
+    <seealso href="https://docs.microsoft.com//windows/win32/tsf/tfeditcookie">TfEditCookie</seealso>
+  </member>
+  <member name="ITfCleanupContextSink">
+    <summary>
+      <para>The <b>ITfCleanupContextSink</b> interface is implemented by a text service to receive notifications when a context cleanup operation occurs. This notification sink is installed by calling <see cref="ITfSourceSingle.AdviseSingleSink" /> with IID_ITfCleanupContextSink.</para>
+    </summary>
+    <remarks>
+      <para>A context cleanup occurs when:</para>
+      <list type="bullet">
+        <item>
+          <description>The text service is deactivated while a context is still on the context stack. This can occur when the active text service is changed or when the active language changes while the text service is active.</description>
+        </item>
+        <item>
+          <description>
+            <see cref="ITfThreadMgr.Deactivate " /> is called while a context is still on the context stack.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="ITfSourceSingle.AdviseSingleSink " />
+    <seealso cref="ITfThreadMgr.Deactivate " />
+    <seealso cref="IUnknown" />
+  </member>
+</doc>

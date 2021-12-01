@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVDecVideoSWPowerLevel.xml' path='doc/member[@name="CODECAPI_AVDecVideoSWPowerLevel"]/*' />
 [Guid("FB5D2347-4DD8-4509-AED0-DB5FA9AA93F4")]
 public partial struct CODECAPI_AVDecVideoSWPowerLevel
 {

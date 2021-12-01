@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="RAWINPUT">
+    <summary>
+      <para>Contains the raw input from a device.</para>
+    </summary>
+    <remarks>
+      <para>The handle to this structure is passed in the <i>lParam</i> parameter of <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-input">WM_INPUT</a>.</para>
+      <para>To get detailed information -- such as the header and the content of the raw input -- call <see cref="GetRawInputData" />.</para>
+      <para>To read the <b>RAWINPUT</b> in the message loop as a buffered read, call <see cref="GetRawInputBuffer" />.</para>
+      <para>To get device specific information, call <see cref="GetRawInputDeviceInfo" /> with the <i>hDevice</i> from <see cref="RAWINPUTHEADER" />.</para>
+      <para>Raw input is available only when the application calls <see cref="RegisterRawInputDevices" /> with valid device specifications.</para>
+    </remarks>
+    <seealso cref="GetRawInputBuffer" />
+    <seealso cref="GetRawInputData" />
+    <seealso cref="RAWHID" />
+    <seealso cref="RAWINPUTHEADER" />
+    <seealso cref="RAWKEYBOARD" />
+    <seealso cref="RAWMOUSE" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/inputdev/raw-input">Raw Input</seealso>
+  </member>
+  <member name="RAWINPUT.header">
+    <summary>
+      <para>Type: <b><see cref="RAWINPUTHEADER" /></b></para>
+      <para>The raw input data.</para>
+    </summary>
+  </member>
+  <member name="RAWINPUT.data">
+    <summary></summary>
+  </member>
+  <member name="RAWINPUT.data.mouse">
+    <summary>
+      <para>
+        <b>Type: <b><see cref="RAWMOUSE" /></b></b>
+      </para>
+      <para>If the data comes from a mouse, this is the raw input data.</para>
+    </summary>
+  </member>
+  <member name="RAWINPUT.data.keyboard">
+    <summary>
+      <para>
+        <b>Type: <b><see cref="RAWKEYBOARD" /></b></b>
+      </para>
+      <para>If the data comes from a keyboard, this is the raw input data.</para>
+    </summary>
+  </member>
+  <member name="RAWINPUT.data.hid">
+    <summary>
+      <para>
+        <b>Type: <b><see cref="RAWHID" /></b></b>
+      </para>
+      <para>If the data comes from an HID, this is the raw input data.</para>
+    </summary>
+  </member>
+</doc>

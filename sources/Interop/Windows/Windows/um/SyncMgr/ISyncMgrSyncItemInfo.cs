@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ISyncMgrSyncItemInfo.xml' path='doc/member[@name="ISyncMgrSyncItemInfo"]/*' />
 [Guid("E7FD9502-BE0C-4464-90A1-2B5277031232")]
 [NativeTypeName("struct ISyncMgrSyncItemInfo : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ISyncMgrSyncItemInfo : ISyncMgrSyncItemInfo.Interfa
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ISyncMgrSyncItemInfo : ISyncMgrSyncItemInfo.Interfa
         return ((delegate* unmanaged<ISyncMgrSyncItemInfo*, Guid*, void**, int>)(lpVtbl[0]))((ISyncMgrSyncItemInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ISyncMgrSyncItemInfo : ISyncMgrSyncItemInfo.Interfa
         return ((delegate* unmanaged<ISyncMgrSyncItemInfo*, uint>)(lpVtbl[1]))((ISyncMgrSyncItemInfo*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ISyncMgrSyncItemInfo : ISyncMgrSyncItemInfo.Interfa
         return ((delegate* unmanaged<ISyncMgrSyncItemInfo*, uint>)(lpVtbl[2]))((ISyncMgrSyncItemInfo*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ISyncMgrSyncItemInfo.xml' path='doc/member[@name="ISyncMgrSyncItemInfo.GetTypeLabel"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeLabel([NativeTypeName("LPWSTR *")] ushort** ppszTypeLabel)
@@ -46,6 +51,7 @@ public unsafe partial struct ISyncMgrSyncItemInfo : ISyncMgrSyncItemInfo.Interfa
         return ((delegate* unmanaged<ISyncMgrSyncItemInfo*, ushort**, int>)(lpVtbl[3]))((ISyncMgrSyncItemInfo*)Unsafe.AsPointer(ref this), ppszTypeLabel);
     }
 
+    /// <include file='ISyncMgrSyncItemInfo.xml' path='doc/member[@name="ISyncMgrSyncItemInfo.GetComment"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetComment([NativeTypeName("LPWSTR *")] ushort** ppszComment)
@@ -53,6 +59,7 @@ public unsafe partial struct ISyncMgrSyncItemInfo : ISyncMgrSyncItemInfo.Interfa
         return ((delegate* unmanaged<ISyncMgrSyncItemInfo*, ushort**, int>)(lpVtbl[4]))((ISyncMgrSyncItemInfo*)Unsafe.AsPointer(ref this), ppszComment);
     }
 
+    /// <include file='ISyncMgrSyncItemInfo.xml' path='doc/member[@name="ISyncMgrSyncItemInfo.GetLastSyncTime"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetLastSyncTime(FILETIME* pftLastSync)
@@ -60,6 +67,7 @@ public unsafe partial struct ISyncMgrSyncItemInfo : ISyncMgrSyncItemInfo.Interfa
         return ((delegate* unmanaged<ISyncMgrSyncItemInfo*, FILETIME*, int>)(lpVtbl[5]))((ISyncMgrSyncItemInfo*)Unsafe.AsPointer(ref this), pftLastSync);
     }
 
+    /// <include file='ISyncMgrSyncItemInfo.xml' path='doc/member[@name="ISyncMgrSyncItemInfo.IsEnabled"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT IsEnabled()
@@ -67,6 +75,7 @@ public unsafe partial struct ISyncMgrSyncItemInfo : ISyncMgrSyncItemInfo.Interfa
         return ((delegate* unmanaged<ISyncMgrSyncItemInfo*, int>)(lpVtbl[6]))((ISyncMgrSyncItemInfo*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ISyncMgrSyncItemInfo.xml' path='doc/member[@name="ISyncMgrSyncItemInfo.IsConnected"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT IsConnected()

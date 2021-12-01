@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WBEM_FLAVOR_TYPE">
+    <summary>
+      <para>Lists qualifier flavors.</para>
+    </summary>
+    <seealso cref="IWbemQualifierSet.Put" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/qualifier-flavors">Qualifier Flavors</seealso>
+  </member>
+  <member name="WBEM_FLAVOR_TYPE.WBEM_FLAVOR_DONT_PROPAGATE">
+    <summary>
+      <para>The qualifier is not propagated to instances or derived classes.</para>
+    </summary>
+  </member>
+  <member name="WBEM_FLAVOR_TYPE.WBEM_FLAVOR_FLAG_PROPAGATE_TO_INSTANCE">
+    <summary>
+      <para>The qualifier is propagated to instances.</para>
+    </summary>
+  </member>
+  <member name="WBEM_FLAVOR_TYPE.WBEM_FLAVOR_FLAG_PROPAGATE_TO_DERIVED_CLASS">
+    <summary>
+      <para>The qualifier is propagated to derived classes. This flavor is only appropriate for qualifiers defined for a class and cannot be attached to a qualifier describing a class instance.</para>
+    </summary>
+  </member>
+  <member name="WBEM_FLAVOR_TYPE.WBEM_FLAVOR_MASK_PROPAGATION">
+    <summary></summary>
+  </member>
+  <member name="WBEM_FLAVOR_TYPE.WBEM_FLAVOR_OVERRIDABLE">
+    <summary>
+      <para>When propagated to a derived class or instance, the value of the qualifier can be overridden. Setting EnableOverride is optional because being able to override the qualifier value is the default functionality for propagated qualifiers.</para>
+    </summary>
+  </member>
+  <member name="WBEM_FLAVOR_TYPE.WBEM_FLAVOR_NOT_OVERRIDABLE">
+    <summary>
+      <para>The qualifier cannot be overridden in a derived class or instance. Note that being able to override a propagated qualifier is the default.</para>
+    </summary>
+  </member>
+  <member name="WBEM_FLAVOR_TYPE.WBEM_FLAVOR_MASK_PERMISSIONS">
+    <summary></summary>
+  </member>
+  <member name="WBEM_FLAVOR_TYPE.WBEM_FLAVOR_ORIGIN_LOCAL">
+    <summary>
+      <para>For a class: the property belongs to the derived-most class.</para>
+      <para>For an instance: the property is modified at the instance level (that is, either a value was supplied or a qualifier was added/modified).</para>
+    </summary>
+  </member>
+  <member name="WBEM_FLAVOR_TYPE.WBEM_FLAVOR_ORIGIN_PROPAGATED">
+    <summary>
+      <para>For a class: The property was inherited from the parent class.</para>
+      <para>For an instance: The property, while inherited from the parent class, has not been modified at the instance level.</para>
+    </summary>
+  </member>
+  <member name="WBEM_FLAVOR_TYPE.WBEM_FLAVOR_ORIGIN_SYSTEM">
+    <summary>
+      <para>The property is a standard system property.</para>
+    </summary>
+  </member>
+  <member name="WBEM_FLAVOR_TYPE.WBEM_FLAVOR_MASK_ORIGIN">
+    <summary></summary>
+  </member>
+  <member name="WBEM_FLAVOR_TYPE.WBEM_FLAVOR_NOT_AMENDED">
+    <summary></summary>
+  </member>
+  <member name="WBEM_FLAVOR_TYPE.WBEM_FLAVOR_AMENDED">
+    <summary>
+      <para>The qualifier is not required in the basic class definition and can be moved to the amendment to be localized.</para>
+    </summary>
+  </member>
+  <member name="WBEM_FLAVOR_TYPE.WBEM_FLAVOR_MASK_AMENDED">
+    <summary></summary>
+  </member>
+</doc>

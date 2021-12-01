@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IPropertyChange.ApplyToPropVariant">
+    <summary>
+      <para>Applies a change to a property value.</para>
+    </summary>
+    <param name="propvarIn">
+      <para>Type: <b>REFPROPVARIANT</b></para>
+      <para>A reference to a source <see cref="PROPVARIANT" /> structure.</para>
+    </param>
+    <param name="ppropvarOut">
+      <para>Type: <b><see cref="PROPVARIANT" />*</b></para>
+      <para>A pointer to a changed <see cref="PROPVARIANT" /> structure.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IPropertyChange" />
+    <seealso cref="PSCreateSimplePropertyChange" />
+  </member>
+  <member name="IPropertyChange">
+    <summary>
+      <para>Exposes a method that encapsulates a change to a single property.</para>
+    </summary>
+    <seealso cref="IObjectWithPropertyKey" />
+    <seealso cref="PSCreateSimplePropertyChange" />
+  </member>
+</doc>

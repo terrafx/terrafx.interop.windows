@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='BlockRange.xml' path='doc/member[@name="BlockRange"]/*' />
 [Guid("B507CA27-2204-11DD-966A-001AA01BBC58")]
 public partial struct BlockRange
 {

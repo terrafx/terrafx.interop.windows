@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='EDGE_GESTURE_KIND.xml' path='doc/member[@name="EDGE_GESTURE_KIND"]/*' />
 public enum EDGE_GESTURE_KIND
 {
+    /// <include file='EDGE_GESTURE_KIND.xml' path='doc/member[@name="EDGE_GESTURE_KIND.EGK_TOUCH"]/*' />
     EGK_TOUCH = 0,
+
+    /// <include file='EDGE_GESTURE_KIND.xml' path='doc/member[@name="EDGE_GESTURE_KIND.EGK_KEYBOARD"]/*' />
     EGK_KEYBOARD = (EGK_TOUCH + 1),
+
+    /// <include file='EDGE_GESTURE_KIND.xml' path='doc/member[@name="EDGE_GESTURE_KIND.EGK_MOUSE"]/*' />
     EGK_MOUSE = (EGK_KEYBOARD + 1),
 }

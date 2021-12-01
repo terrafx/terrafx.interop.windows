@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFMediaSourceExtension.xml' path='doc/member[@name="IMFMediaSourceExtension"]/*' />
 [Guid("E467B94E-A713-4562-A802-816A42E9008A")]
 [NativeTypeName("struct IMFMediaSourceExtension : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IMFMediaSourceExtension : IMFMediaSourceExtension.I
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IMFMediaSourceExtension : IMFMediaSourceExtension.I
         return ((delegate* unmanaged<IMFMediaSourceExtension*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaSourceExtension*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IMFMediaSourceExtension : IMFMediaSourceExtension.I
         return ((delegate* unmanaged<IMFMediaSourceExtension*, uint>)(lpVtbl[1]))((IMFMediaSourceExtension*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IMFMediaSourceExtension : IMFMediaSourceExtension.I
         return ((delegate* unmanaged<IMFMediaSourceExtension*, uint>)(lpVtbl[2]))((IMFMediaSourceExtension*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFMediaSourceExtension.xml' path='doc/member[@name="IMFMediaSourceExtension.GetSourceBuffers"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public IMFSourceBufferList* GetSourceBuffers()
@@ -48,6 +53,7 @@ public unsafe partial struct IMFMediaSourceExtension : IMFMediaSourceExtension.I
         return ((delegate* unmanaged<IMFMediaSourceExtension*, IMFSourceBufferList*>)(lpVtbl[3]))((IMFMediaSourceExtension*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFMediaSourceExtension.xml' path='doc/member[@name="IMFMediaSourceExtension.GetActiveSourceBuffers"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public IMFSourceBufferList* GetActiveSourceBuffers()
@@ -55,6 +61,7 @@ public unsafe partial struct IMFMediaSourceExtension : IMFMediaSourceExtension.I
         return ((delegate* unmanaged<IMFMediaSourceExtension*, IMFSourceBufferList*>)(lpVtbl[4]))((IMFMediaSourceExtension*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFMediaSourceExtension.xml' path='doc/member[@name="IMFMediaSourceExtension.GetReadyState"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public MF_MSE_READY GetReadyState()
@@ -62,6 +69,7 @@ public unsafe partial struct IMFMediaSourceExtension : IMFMediaSourceExtension.I
         return ((delegate* unmanaged<IMFMediaSourceExtension*, MF_MSE_READY>)(lpVtbl[5]))((IMFMediaSourceExtension*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFMediaSourceExtension.xml' path='doc/member[@name="IMFMediaSourceExtension.GetDuration"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public double GetDuration()
@@ -69,6 +77,7 @@ public unsafe partial struct IMFMediaSourceExtension : IMFMediaSourceExtension.I
         return ((delegate* unmanaged<IMFMediaSourceExtension*, double>)(lpVtbl[6]))((IMFMediaSourceExtension*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFMediaSourceExtension.xml' path='doc/member[@name="IMFMediaSourceExtension.SetDuration"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT SetDuration(double duration)
@@ -76,6 +85,7 @@ public unsafe partial struct IMFMediaSourceExtension : IMFMediaSourceExtension.I
         return ((delegate* unmanaged<IMFMediaSourceExtension*, double, int>)(lpVtbl[7]))((IMFMediaSourceExtension*)Unsafe.AsPointer(ref this), duration);
     }
 
+    /// <include file='IMFMediaSourceExtension.xml' path='doc/member[@name="IMFMediaSourceExtension.AddSourceBuffer"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT AddSourceBuffer([NativeTypeName("BSTR")] ushort* type, IMFSourceBufferNotify* pNotify, IMFSourceBuffer** ppSourceBuffer)
@@ -83,6 +93,7 @@ public unsafe partial struct IMFMediaSourceExtension : IMFMediaSourceExtension.I
         return ((delegate* unmanaged<IMFMediaSourceExtension*, ushort*, IMFSourceBufferNotify*, IMFSourceBuffer**, int>)(lpVtbl[8]))((IMFMediaSourceExtension*)Unsafe.AsPointer(ref this), type, pNotify, ppSourceBuffer);
     }
 
+    /// <include file='IMFMediaSourceExtension.xml' path='doc/member[@name="IMFMediaSourceExtension.RemoveSourceBuffer"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT RemoveSourceBuffer(IMFSourceBuffer* pSourceBuffer)
@@ -90,6 +101,7 @@ public unsafe partial struct IMFMediaSourceExtension : IMFMediaSourceExtension.I
         return ((delegate* unmanaged<IMFMediaSourceExtension*, IMFSourceBuffer*, int>)(lpVtbl[9]))((IMFMediaSourceExtension*)Unsafe.AsPointer(ref this), pSourceBuffer);
     }
 
+    /// <include file='IMFMediaSourceExtension.xml' path='doc/member[@name="IMFMediaSourceExtension.SetEndOfStream"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT SetEndOfStream(MF_MSE_ERROR error)
@@ -97,6 +109,7 @@ public unsafe partial struct IMFMediaSourceExtension : IMFMediaSourceExtension.I
         return ((delegate* unmanaged<IMFMediaSourceExtension*, MF_MSE_ERROR, int>)(lpVtbl[10]))((IMFMediaSourceExtension*)Unsafe.AsPointer(ref this), error);
     }
 
+    /// <include file='IMFMediaSourceExtension.xml' path='doc/member[@name="IMFMediaSourceExtension.IsTypeSupported"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public BOOL IsTypeSupported([NativeTypeName("BSTR")] ushort* type)
@@ -104,6 +117,7 @@ public unsafe partial struct IMFMediaSourceExtension : IMFMediaSourceExtension.I
         return ((delegate* unmanaged<IMFMediaSourceExtension*, ushort*, int>)(lpVtbl[11]))((IMFMediaSourceExtension*)Unsafe.AsPointer(ref this), type);
     }
 
+    /// <include file='IMFMediaSourceExtension.xml' path='doc/member[@name="IMFMediaSourceExtension.GetSourceBuffer"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public IMFSourceBuffer* GetSourceBuffer([NativeTypeName("DWORD")] uint dwStreamIndex)

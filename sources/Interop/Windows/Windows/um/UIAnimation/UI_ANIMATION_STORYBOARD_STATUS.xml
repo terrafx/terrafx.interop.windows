@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="UI_ANIMATION_STORYBOARD_STATUS">
+    <summary>
+      <para>Defines  the status for a storyboard.</para>
+    </summary>
+    <remarks>
+      <para>Unless <see cref="IUIAnimationStoryboard.GetStatus" /> is called from a handler for <see cref="OnStoryboardStatusChanged" /> events, it returns only the following status values:</para>
+      <list type="bullet">
+        <item>
+          <description>UI_ANIMATION_STORYBOARD_BUILDING</description>
+        </item>
+        <item>
+          <description>UI_ANIMATION_STORYBOARD_SCHEDULED</description>
+        </item>
+        <item>
+          <description>UI_ANIMATION_STORYBOARD_PLAYING</description>
+        </item>
+        <item>
+          <description>UI_ANIMATION_STORYBOARD_READY</description>
+        </item>
+      </list>
+      <para>All status values can be passed to  <see cref="IUIAnimationStoryboardEventHandler.OnStoryboardStatusChanged" />.</para>
+      <para>The following diagram illustrates the transitions between these states.</para>
+      <para>
+        <img alt="Diagram that shows how the animation manager schedules the storyboard and manages the animation." src="https://docs.microsoft.com/windows/win32/api/UIAnimation/images/StateDiagram.png" />
+      </para>
+    </remarks>
+    <seealso cref="IUIAnimationStoryboard.GetStatus" />
+    <seealso cref="IUIAnimationStoryboardEventHandler.OnStoryboardStatusChanged" />
+  </member>
+  <member name="UI_ANIMATION_STORYBOARD_STATUS.UI_ANIMATION_STORYBOARD_BUILDING">
+    <summary>
+      <para>The storyboard has never been scheduled.</para>
+    </summary>
+  </member>
+  <member name="UI_ANIMATION_STORYBOARD_STATUS.UI_ANIMATION_STORYBOARD_SCHEDULED">
+    <summary>
+      <para>The storyboard is scheduled to play.</para>
+    </summary>
+  </member>
+  <member name="UI_ANIMATION_STORYBOARD_STATUS.UI_ANIMATION_STORYBOARD_CANCELLED">
+    <summary>
+      <para>The storyboard was canceled.</para>
+    </summary>
+  </member>
+  <member name="UI_ANIMATION_STORYBOARD_STATUS.UI_ANIMATION_STORYBOARD_PLAYING">
+    <summary>
+      <para>The storyboard is currently playing.</para>
+    </summary>
+  </member>
+  <member name="UI_ANIMATION_STORYBOARD_STATUS.UI_ANIMATION_STORYBOARD_TRUNCATED">
+    <summary>
+      <para>The storyboard was truncated.</para>
+    </summary>
+  </member>
+  <member name="UI_ANIMATION_STORYBOARD_STATUS.UI_ANIMATION_STORYBOARD_FINISHED">
+    <summary>
+      <para>The storyboard has finished playing.</para>
+    </summary>
+  </member>
+  <member name="UI_ANIMATION_STORYBOARD_STATUS.UI_ANIMATION_STORYBOARD_READY">
+    <summary>
+      <para>The storyboard is built and ready for scheduling.</para>
+    </summary>
+  </member>
+  <member name="UI_ANIMATION_STORYBOARD_STATUS.UI_ANIMATION_STORYBOARD_INSUFFICIENT_PRIORITY">
+    <summary>
+      <para>Scheduling the storyboard failed because a scheduling conflict occurred and the currently scheduled storyboard has higher priority.</para>
+    </summary>
+  </member>
+</doc>

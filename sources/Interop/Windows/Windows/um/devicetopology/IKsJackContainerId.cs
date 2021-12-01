@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IKsJackContainerId.xml' path='doc/member[@name="IKsJackContainerId"]/*' />
 [Guid("C99AF463-D629-4EC4-8C00-E54D68154248")]
 [NativeTypeName("struct IKsJackContainerId : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IKsJackContainerId : IKsJackContainerId.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IKsJackContainerId : IKsJackContainerId.Interface
         return ((delegate* unmanaged<IKsJackContainerId*, Guid*, void**, int>)(lpVtbl[0]))((IKsJackContainerId*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IKsJackContainerId : IKsJackContainerId.Interface
         return ((delegate* unmanaged<IKsJackContainerId*, uint>)(lpVtbl[1]))((IKsJackContainerId*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IKsJackContainerId : IKsJackContainerId.Interface
         return ((delegate* unmanaged<IKsJackContainerId*, uint>)(lpVtbl[2]))((IKsJackContainerId*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IKsJackContainerId.xml' path='doc/member[@name="IKsJackContainerId.GetJackContainerId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetJackContainerId(Guid* pJackContainerId)

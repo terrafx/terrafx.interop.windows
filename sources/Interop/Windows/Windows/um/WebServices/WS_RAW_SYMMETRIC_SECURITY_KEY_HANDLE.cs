@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_RAW_SYMMETRIC_SECURITY_KEY_HANDLE.xml' path='doc/member[@name="WS_RAW_SYMMETRIC_SECURITY_KEY_HANDLE"]/*' />
 public partial struct WS_RAW_SYMMETRIC_SECURITY_KEY_HANDLE
 {
+    /// <include file='WS_RAW_SYMMETRIC_SECURITY_KEY_HANDLE.xml' path='doc/member[@name="WS_RAW_SYMMETRIC_SECURITY_KEY_HANDLE.keyHandle"]/*' />
     public WS_SECURITY_KEY_HANDLE keyHandle;
 
+    /// <include file='WS_RAW_SYMMETRIC_SECURITY_KEY_HANDLE.xml' path='doc/member[@name="WS_RAW_SYMMETRIC_SECURITY_KEY_HANDLE.rawKeyBytes"]/*' />
     public WS_BYTES rawKeyBytes;
 }

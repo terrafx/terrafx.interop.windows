@@ -5,13 +5,17 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WIN_TRUST_SUBJECT_FILE_AND_DISPLAY.xml' path='doc/member[@name="WIN_TRUST_SUBJECT_FILE_AND_DISPLAY"]/*' />
 public unsafe partial struct WIN_TRUST_SUBJECT_FILE_AND_DISPLAY
 {
+    /// <include file='WIN_TRUST_SUBJECT_FILE_AND_DISPLAY.xml' path='doc/member[@name="WIN_TRUST_SUBJECT_FILE_AND_DISPLAY.hFile"]/*' />
     public HANDLE hFile;
 
+    /// <include file='WIN_TRUST_SUBJECT_FILE_AND_DISPLAY.xml' path='doc/member[@name="WIN_TRUST_SUBJECT_FILE_AND_DISPLAY.lpPath"]/*' />
     [NativeTypeName("LPCWSTR")]
     public ushort* lpPath;
 
+    /// <include file='WIN_TRUST_SUBJECT_FILE_AND_DISPLAY.xml' path='doc/member[@name="WIN_TRUST_SUBJECT_FILE_AND_DISPLAY.lpDisplayName"]/*' />
     [NativeTypeName("LPCWSTR")]
     public ushort* lpDisplayName;
 }

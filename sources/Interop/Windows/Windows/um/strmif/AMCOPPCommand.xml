@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="AMCOPPCommand">
+    <summary>
+      <para>The AMCOPPCommand structure contains a Certified Output Protection Protocol (COPP) command.</para>
+    </summary>
+    <remarks>
+      <para>The following COPP commands are defined.</para>
+      <list type="table">
+        <listheader>
+          <description>
+            <b>GUID</b>
+          </description>
+          <description>Description
+</description>
+        </listheader>
+        <item>
+          <description>DXVA_COPPSetProtectionLevel</description>
+          <description>Sets a specified protection type to a specified protection level.</description>
+        </item>
+      </list>
+      <para>For more information, see the Windows DDK documentation.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-structures">DirectShow Structures</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-certified-output-protection-protocol--copp">Using Certified Output Protection Protocol (COPP)</seealso>
+  </member>
+  <member name="AMCOPPCommand.macKDI">
+    <summary>
+      <para>Message Authentication Code (MAC) of the command data. Use AES-based one-key CBC MAC (OMAC) to calculate this value.</para>
+    </summary>
+  </member>
+  <member name="AMCOPPCommand.guidCommandID">
+    <summary>
+      <para>GUID that specifies the command.</para>
+    </summary>
+  </member>
+  <member name="AMCOPPCommand.dwSequence">
+    <summary>
+      <para>Sequence number. The application must keep a running count of the COPP commands issued. For each command, increment the sequence number by one.</para>
+    </summary>
+  </member>
+  <member name="AMCOPPCommand.cbSizeData">
+    <summary>
+      <para>Number of bytes of valid data in the <b>CommandData</b> member.</para>
+    </summary>
+  </member>
+  <member name="AMCOPPCommand.CommandData">
+    <summary>
+      <para>Data for the command. The meaning of the data depends on the command.</para>
+    </summary>
+  </member>
+</doc>

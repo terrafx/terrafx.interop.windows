@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ICopyHookW.xml' path='doc/member[@name="ICopyHookW"]/*' />
 [Guid("000214FC-0000-0000-C000-000000000046")]
 [NativeTypeName("struct ICopyHookW : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ICopyHookW : ICopyHookW.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ICopyHookW : ICopyHookW.Interface
         return ((delegate* unmanaged<ICopyHookW*, Guid*, void**, int>)(lpVtbl[0]))((ICopyHookW*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ICopyHookW : ICopyHookW.Interface
         return ((delegate* unmanaged<ICopyHookW*, uint>)(lpVtbl[1]))((ICopyHookW*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ICopyHookW : ICopyHookW.Interface
         return ((delegate* unmanaged<ICopyHookW*, uint>)(lpVtbl[2]))((ICopyHookW*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ICopyHookW.xml' path='doc/member[@name="ICopyHookW.CopyCallback"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public uint CopyCallback(HWND hwnd, uint wFunc, uint wFlags, [NativeTypeName("PCWSTR")] ushort* pszSrcFile, [NativeTypeName("DWORD")] uint dwSrcAttribs, [NativeTypeName("PCWSTR")] ushort* pszDestFile, [NativeTypeName("DWORD")] uint dwDestAttribs)

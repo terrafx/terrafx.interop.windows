@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MF_MEDIASOURCE_STATUS_INFO.xml' path='doc/member[@name="MF_MEDIASOURCE_STATUS_INFO"]/*' />
 public enum MF_MEDIASOURCE_STATUS_INFO
 {
+    /// <include file='MF_MEDIASOURCE_STATUS_INFO.xml' path='doc/member[@name="MF_MEDIASOURCE_STATUS_INFO.MF_MEDIASOURCE_STATUS_INFO_FULLYSUPPORTED"]/*' />
     MF_MEDIASOURCE_STATUS_INFO_FULLYSUPPORTED = 0,
+
+    /// <include file='MF_MEDIASOURCE_STATUS_INFO.xml' path='doc/member[@name="MF_MEDIASOURCE_STATUS_INFO.MF_MEDIASOURCE_STATUS_INFO_UNKNOWN"]/*' />
     MF_MEDIASOURCE_STATUS_INFO_UNKNOWN = 1,
 }

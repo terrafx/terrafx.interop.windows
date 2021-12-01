@@ -5,16 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SCM_PD_FIRMWARE_ACTIVATE.xml' path='doc/member[@name="SCM_PD_FIRMWARE_ACTIVATE"]/*' />
 public partial struct SCM_PD_FIRMWARE_ACTIVATE
 {
+    /// <include file='SCM_PD_FIRMWARE_ACTIVATE.xml' path='doc/member[@name="SCM_PD_FIRMWARE_ACTIVATE.Version"]/*' />
     [NativeTypeName("DWORD")]
     public uint Version;
 
+    /// <include file='SCM_PD_FIRMWARE_ACTIVATE.xml' path='doc/member[@name="SCM_PD_FIRMWARE_ACTIVATE.Size"]/*' />
     [NativeTypeName("DWORD")]
     public uint Size;
 
+    /// <include file='SCM_PD_FIRMWARE_ACTIVATE.xml' path='doc/member[@name="SCM_PD_FIRMWARE_ACTIVATE.Flags"]/*' />
     [NativeTypeName("DWORD")]
     public uint Flags;
 
+    /// <include file='SCM_PD_FIRMWARE_ACTIVATE.xml' path='doc/member[@name="SCM_PD_FIRMWARE_ACTIVATE.Slot"]/*' />
     public byte Slot;
 }

@@ -5,13 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_ATTRIBUTE_DESCRIPTION.xml' path='doc/member[@name="WS_ATTRIBUTE_DESCRIPTION"]/*' />
 public unsafe partial struct WS_ATTRIBUTE_DESCRIPTION
 {
+    /// <include file='WS_ATTRIBUTE_DESCRIPTION.xml' path='doc/member[@name="WS_ATTRIBUTE_DESCRIPTION.attributeLocalName"]/*' />
     public WS_XML_STRING* attributeLocalName;
 
+    /// <include file='WS_ATTRIBUTE_DESCRIPTION.xml' path='doc/member[@name="WS_ATTRIBUTE_DESCRIPTION.attributeNs"]/*' />
     public WS_XML_STRING* attributeNs;
 
+    /// <include file='WS_ATTRIBUTE_DESCRIPTION.xml' path='doc/member[@name="WS_ATTRIBUTE_DESCRIPTION.type"]/*' />
     public WS_TYPE type;
 
+    /// <include file='WS_ATTRIBUTE_DESCRIPTION.xml' path='doc/member[@name="WS_ATTRIBUTE_DESCRIPTION.typeDescription"]/*' />
     public void* typeDescription;
 }

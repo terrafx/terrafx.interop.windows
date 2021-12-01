@@ -5,18 +5,24 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STORAGE_DIAGNOSTIC_REQUEST.xml' path='doc/member[@name="STORAGE_DIAGNOSTIC_REQUEST"]/*' />
 public partial struct STORAGE_DIAGNOSTIC_REQUEST
 {
+    /// <include file='STORAGE_DIAGNOSTIC_REQUEST.xml' path='doc/member[@name="STORAGE_DIAGNOSTIC_REQUEST.Version"]/*' />
     [NativeTypeName("DWORD")]
     public uint Version;
 
+    /// <include file='STORAGE_DIAGNOSTIC_REQUEST.xml' path='doc/member[@name="STORAGE_DIAGNOSTIC_REQUEST.Size"]/*' />
     [NativeTypeName("DWORD")]
     public uint Size;
 
+    /// <include file='STORAGE_DIAGNOSTIC_REQUEST.xml' path='doc/member[@name="STORAGE_DIAGNOSTIC_REQUEST.Flags"]/*' />
     [NativeTypeName("DWORD")]
     public uint Flags;
 
+    /// <include file='STORAGE_DIAGNOSTIC_REQUEST.xml' path='doc/member[@name="STORAGE_DIAGNOSTIC_REQUEST.TargetType"]/*' />
     public STORAGE_DIAGNOSTIC_TARGET_TYPE TargetType;
 
+    /// <include file='STORAGE_DIAGNOSTIC_REQUEST.xml' path='doc/member[@name="STORAGE_DIAGNOSTIC_REQUEST.Level"]/*' />
     public STORAGE_DIAGNOSTIC_LEVEL Level;
 }

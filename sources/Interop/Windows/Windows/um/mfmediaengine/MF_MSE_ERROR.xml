@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MF_MSE_ERROR">
+    <summary>
+      <para>Defines the different error states of the Media Source Extension.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+  </member>
+  <member name="MF_MSE_ERROR.MF_MSE_ERROR_NOERROR">
+    <summary>
+      <para>Specifies no error.</para>
+    </summary>
+  </member>
+  <member name="MF_MSE_ERROR.MF_MSE_ERROR_NETWORK">
+    <summary>
+      <para>Specifies an error with the network.</para>
+    </summary>
+  </member>
+  <member name="MF_MSE_ERROR.MF_MSE_ERROR_DECODE">
+    <summary>
+      <para>Specifies an error with decoding.</para>
+    </summary>
+  </member>
+  <member name="MF_MSE_ERROR.MF_MSE_ERROR_UNKNOWN_ERROR">
+    <summary>
+      <para>Specifies an unknown error.</para>
+    </summary>
+  </member>
+</doc>

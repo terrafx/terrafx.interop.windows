@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IApplicationActivationManager.xml' path='doc/member[@name="IApplicationActivationManager"]/*' />
 [Guid("2E941141-7F97-4756-BA1D-9DECDE894A3D")]
 [NativeTypeName("struct IApplicationActivationManager : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IApplicationActivationManager : IApplicationActivat
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IApplicationActivationManager : IApplicationActivat
         return ((delegate* unmanaged<IApplicationActivationManager*, Guid*, void**, int>)(lpVtbl[0]))((IApplicationActivationManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IApplicationActivationManager : IApplicationActivat
         return ((delegate* unmanaged<IApplicationActivationManager*, uint>)(lpVtbl[1]))((IApplicationActivationManager*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IApplicationActivationManager : IApplicationActivat
         return ((delegate* unmanaged<IApplicationActivationManager*, uint>)(lpVtbl[2]))((IApplicationActivationManager*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IApplicationActivationManager.xml' path='doc/member[@name="IApplicationActivationManager.ActivateApplication"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT ActivateApplication([NativeTypeName("LPCWSTR")] ushort* appUserModelId, [NativeTypeName("LPCWSTR")] ushort* arguments, ACTIVATEOPTIONS options, [NativeTypeName("DWORD *")] uint* processId)
@@ -46,6 +51,7 @@ public unsafe partial struct IApplicationActivationManager : IApplicationActivat
         return ((delegate* unmanaged<IApplicationActivationManager*, ushort*, ushort*, ACTIVATEOPTIONS, uint*, int>)(lpVtbl[3]))((IApplicationActivationManager*)Unsafe.AsPointer(ref this), appUserModelId, arguments, options, processId);
     }
 
+    /// <include file='IApplicationActivationManager.xml' path='doc/member[@name="IApplicationActivationManager.ActivateForFile"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT ActivateForFile([NativeTypeName("LPCWSTR")] ushort* appUserModelId, IShellItemArray* itemArray, [NativeTypeName("LPCWSTR")] ushort* verb, [NativeTypeName("DWORD *")] uint* processId)
@@ -53,6 +59,7 @@ public unsafe partial struct IApplicationActivationManager : IApplicationActivat
         return ((delegate* unmanaged<IApplicationActivationManager*, ushort*, IShellItemArray*, ushort*, uint*, int>)(lpVtbl[4]))((IApplicationActivationManager*)Unsafe.AsPointer(ref this), appUserModelId, itemArray, verb, processId);
     }
 
+    /// <include file='IApplicationActivationManager.xml' path='doc/member[@name="IApplicationActivationManager.ActivateForProtocol"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT ActivateForProtocol([NativeTypeName("LPCWSTR")] ushort* appUserModelId, IShellItemArray* itemArray, [NativeTypeName("DWORD *")] uint* processId)

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_ASYNC_OPERATION">
+    <summary>
+      <para>Used with the <see cref="WsAsyncExecute" /> to specify the next function
+to invoke in a series of async operations.</para>
+    </summary>
+  </member>
+  <member name="WS_ASYNC_OPERATION.function">
+    <summary>
+      <para>The asynchronous function to invoke.</para>
+    </summary>
+  </member>
+</doc>

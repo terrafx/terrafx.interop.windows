@@ -5,13 +5,27 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='svgFeblendMode.xml' path='doc/member[@name="svgFeblendMode"]/*' />
 public enum svgFeblendMode
 {
+    /// <include file='svgFeblendMode.xml' path='doc/member[@name="svgFeblendMode.SVG_FEBLEND_MODE_UNKNOWN"]/*' />
     SVG_FEBLEND_MODE_UNKNOWN = 0,
+
+    /// <include file='svgFeblendMode.xml' path='doc/member[@name="svgFeblendMode.SVG_FEBLEND_MODE_NORMAL"]/*' />
     SVG_FEBLEND_MODE_NORMAL = 1,
+
+    /// <include file='svgFeblendMode.xml' path='doc/member[@name="svgFeblendMode.SVG_FEBLEND_MODE_MULTIPLY"]/*' />
     SVG_FEBLEND_MODE_MULTIPLY = 2,
+
+    /// <include file='svgFeblendMode.xml' path='doc/member[@name="svgFeblendMode.SVG_FEBLEND_MODE_SCREEN"]/*' />
     SVG_FEBLEND_MODE_SCREEN = 3,
+
+    /// <include file='svgFeblendMode.xml' path='doc/member[@name="svgFeblendMode.SVG_FEBLEND_MODE_DARKEN"]/*' />
     SVG_FEBLEND_MODE_DARKEN = 4,
+
+    /// <include file='svgFeblendMode.xml' path='doc/member[@name="svgFeblendMode.SVG_FEBLEND_MODE_LIGHTEN"]/*' />
     SVG_FEBLEND_MODE_LIGHTEN = 5,
+
+    /// <include file='svgFeblendMode.xml' path='doc/member[@name="svgFeblendMode.svgFeblendMode_Max"]/*' />
     svgFeblendMode_Max = 2147483647,
 }

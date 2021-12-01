@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DDiscFormat2DataEvents.Update">
+    <summary>
+      <para>Implement this method to receive progress notification of the current write operation.</para>
+    </summary>
+    <param name="object">
+      <para>The <see cref="IDiscFormat2Data" /> interface that initiated the write operation.</para>
+      <para>This parameter is a <b>MsftDiscFormat2Data</b> object in script.</para>
+    </param>
+    <param name="progress">
+      <para>An <see cref="IDiscFormat2DataEventArgs" /> interface that you use to determine the progress of the write operation.</para>
+      <para>This parameter is a <b>MsftDiscFormat2Data</b> object in script.</para>
+    </param>
+    <returns>
+      <para>Return values are ignored.</para>
+    </returns>
+    <remarks>
+      <para>Notifications are sent in response to calling the <see cref="IDiscFormat2Data.Write" /> method.</para>
+      <para>Notification is sent when the current action changes:</para>
+      <list type="bullet">
+        <item>
+          <description>Once when initializing the hardware</description>
+        </item>
+        <item>
+          <description>Once when calibrating the power</description>
+        </item>
+        <item>
+          <description>Once when formatting the media, if required by the media type</description>
+        </item>
+        <item>
+          <description>Every 0.5 seconds during the write operation</description>
+        </item>
+        <item>
+          <description>Once after the operation completes</description>
+        </item>
+      </list>
+      <para>To stop the write process, call the <see cref="IDiscFormat2Data.CancelWrite" /> method.</para>
+    </remarks>
+    <seealso cref="DDiscFormat2DataEvents" />
+    <seealso cref="IDiscFormat2Data" />
+  </member>
+  <member name="DDiscFormat2DataEvents">
+    <summary>
+      <para>Implement this interface to receive notifications of the current write operation.</para>
+    </summary>
+    <seealso cref="IDiscFormat2Data" />
+  </member>
+</doc>

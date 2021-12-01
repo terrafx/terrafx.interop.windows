@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_XML_WRITER_OUTPUT">
+    <summary>
+      <para>Specifies where the writer should emit the bytes that comprise the xml document.</para>
+    </summary>
+  </member>
+  <member name="WS_XML_WRITER_OUTPUT.outputType">
+    <summary>
+      <para>Indicates the type of output this structure refers to.</para>
+    </summary>
+  </member>
+</doc>

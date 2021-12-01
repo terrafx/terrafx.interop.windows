@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFStreamDescriptor.GetMediaTypeHandler">
+    <summary>
+      <para>Retrieves a media type handler for the stream. The media type handler can be used to enumerate supported media types for the stream, get the current media type, and set the media type.</para>
+    </summary>
+    <param name="ppMediaTypeHandler">
+      <para>Receives a pointer to the <see cref="IMFMediaTypeHandler" /> interface. The caller must release the interface.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
+      <list type="bullet">
+        <item>
+          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
+        </item>
+        <item>
+          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="IMFStreamDescriptor" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/presentation-descriptors">Presentation Descriptors</seealso>
+  </member>
+  <member name="IMFStreamDescriptor.GetStreamIdentifier">
+    <summary>
+      <para>Retrieves an identifier for the stream.</para>
+    </summary>
+    <param name="pdwStreamIdentifier">
+      <para>Receives the stream identifier.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The stream identifier uniquely identifies a stream within a presentation. It does not change throughout the lifetime of the stream. For example, if the presentation changes while the source is running, the index number of the stream may change, but the stream identifier does not.</para>
+      <para>In general, stream identifiers do not have a specific meaning, other than to identify the stream. Some media sources may assign stream identifiers based on meaningful values, such as packet identifiers, but this depends on the implementation.</para>
+      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
+      <list type="bullet">
+        <item>
+          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
+        </item>
+        <item>
+          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="IMFStreamDescriptor" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/presentation-descriptors">Presentation Descriptors</seealso>
+  </member>
+  <member name="IMFStreamDescriptor">
+    <summary>
+      <para>Gets information about one stream in a media source.</para>
+    </summary>
+    <remarks>
+      <para>A presentation descriptor contains one or more stream descriptors. To get the stream descriptors from a presentation descriptor, call <see cref="IMFPresentationDescriptor.GetStreamDescriptorByIndex" />. To create a new stream descriptor, call <see cref="MFCreateStreamDescriptor" />.</para>
+      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
+      <list type="bullet">
+        <item>
+          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
+        </item>
+        <item>
+          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="IMFAttributes" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/presentation-descriptors">Presentation Descriptors</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/stream-descriptor-attributes">Stream Descriptor Attributes</seealso>
+  </member>
+</doc>

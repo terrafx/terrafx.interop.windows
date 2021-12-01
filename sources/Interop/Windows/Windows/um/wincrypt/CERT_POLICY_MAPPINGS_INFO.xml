@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CERT_POLICY_MAPPINGS_INFO">
+    <summary>
+      <para>The <b>CERT_POLICY_MAPPINGS_INFO</b> structure provides mapping between the policy OIDs of two domains.</para>
+    </summary>
+  </member>
+  <member name="CERT_POLICY_MAPPINGS_INFO.cPolicyMapping">
+    <summary>
+      <para>Count of the number of elements in the <b>rgPolicyMapping</b> array.</para>
+    </summary>
+  </member>
+  <member name="CERT_POLICY_MAPPINGS_INFO.rgPolicyMapping">
+    <summary>
+      <para>Array of
+<see cref="CERT_POLICY_MAPPING" /> structures. Each element of this array provides pair of OIDs mapping the identifies of one domain to identifiers in the other domain.</para>
+    </summary>
+  </member>
+</doc>

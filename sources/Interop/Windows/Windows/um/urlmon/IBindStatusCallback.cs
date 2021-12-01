@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IBindStatusCallback.xml' path='doc/member[@name="IBindStatusCallback"]/*' />
 [Guid("79EAC9C1-BAF9-11CE-8C82-00AA004BA90B")]
 [NativeTypeName("struct IBindStatusCallback : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IBindStatusCallback : IBindStatusCallback.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IBindStatusCallback : IBindStatusCallback.Interface
         return ((delegate* unmanaged<IBindStatusCallback*, Guid*, void**, int>)(lpVtbl[0]))((IBindStatusCallback*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IBindStatusCallback : IBindStatusCallback.Interface
         return ((delegate* unmanaged<IBindStatusCallback*, uint>)(lpVtbl[1]))((IBindStatusCallback*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IBindStatusCallback : IBindStatusCallback.Interface
         return ((delegate* unmanaged<IBindStatusCallback*, uint>)(lpVtbl[2]))((IBindStatusCallback*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IBindStatusCallback.xml' path='doc/member[@name="IBindStatusCallback.OnStartBinding"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT OnStartBinding([NativeTypeName("DWORD")] uint dwReserved, IBinding* pib)
@@ -46,6 +51,7 @@ public unsafe partial struct IBindStatusCallback : IBindStatusCallback.Interface
         return ((delegate* unmanaged<IBindStatusCallback*, uint, IBinding*, int>)(lpVtbl[3]))((IBindStatusCallback*)Unsafe.AsPointer(ref this), dwReserved, pib);
     }
 
+    /// <include file='IBindStatusCallback.xml' path='doc/member[@name="IBindStatusCallback.GetPriority"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetPriority([NativeTypeName("LONG *")] int* pnPriority)
@@ -53,6 +59,7 @@ public unsafe partial struct IBindStatusCallback : IBindStatusCallback.Interface
         return ((delegate* unmanaged<IBindStatusCallback*, int*, int>)(lpVtbl[4]))((IBindStatusCallback*)Unsafe.AsPointer(ref this), pnPriority);
     }
 
+    /// <include file='IBindStatusCallback.xml' path='doc/member[@name="IBindStatusCallback.OnLowResource"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT OnLowResource([NativeTypeName("DWORD")] uint reserved)
@@ -60,6 +67,7 @@ public unsafe partial struct IBindStatusCallback : IBindStatusCallback.Interface
         return ((delegate* unmanaged<IBindStatusCallback*, uint, int>)(lpVtbl[5]))((IBindStatusCallback*)Unsafe.AsPointer(ref this), reserved);
     }
 
+    /// <include file='IBindStatusCallback.xml' path='doc/member[@name="IBindStatusCallback.OnProgress"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT OnProgress([NativeTypeName("ULONG")] uint ulProgress, [NativeTypeName("ULONG")] uint ulProgressMax, [NativeTypeName("ULONG")] uint ulStatusCode, [NativeTypeName("LPCWSTR")] ushort* szStatusText)
@@ -67,6 +75,7 @@ public unsafe partial struct IBindStatusCallback : IBindStatusCallback.Interface
         return ((delegate* unmanaged<IBindStatusCallback*, uint, uint, uint, ushort*, int>)(lpVtbl[6]))((IBindStatusCallback*)Unsafe.AsPointer(ref this), ulProgress, ulProgressMax, ulStatusCode, szStatusText);
     }
 
+    /// <include file='IBindStatusCallback.xml' path='doc/member[@name="IBindStatusCallback.OnStopBinding"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT OnStopBinding(HRESULT hresult, [NativeTypeName("LPCWSTR")] ushort* szError)
@@ -74,6 +83,7 @@ public unsafe partial struct IBindStatusCallback : IBindStatusCallback.Interface
         return ((delegate* unmanaged<IBindStatusCallback*, HRESULT, ushort*, int>)(lpVtbl[7]))((IBindStatusCallback*)Unsafe.AsPointer(ref this), hresult, szError);
     }
 
+    /// <include file='IBindStatusCallback.xml' path='doc/member[@name="IBindStatusCallback.GetBindInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetBindInfo([NativeTypeName("DWORD *")] uint* grfBINDF, BINDINFO* pbindinfo)
@@ -81,6 +91,7 @@ public unsafe partial struct IBindStatusCallback : IBindStatusCallback.Interface
         return ((delegate* unmanaged<IBindStatusCallback*, uint*, BINDINFO*, int>)(lpVtbl[8]))((IBindStatusCallback*)Unsafe.AsPointer(ref this), grfBINDF, pbindinfo);
     }
 
+    /// <include file='IBindStatusCallback.xml' path='doc/member[@name="IBindStatusCallback.OnDataAvailable"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT OnDataAvailable([NativeTypeName("DWORD")] uint grfBSCF, [NativeTypeName("DWORD")] uint dwSize, FORMATETC* pformatetc, STGMEDIUM* pstgmed)
@@ -88,6 +99,7 @@ public unsafe partial struct IBindStatusCallback : IBindStatusCallback.Interface
         return ((delegate* unmanaged<IBindStatusCallback*, uint, uint, FORMATETC*, STGMEDIUM*, int>)(lpVtbl[9]))((IBindStatusCallback*)Unsafe.AsPointer(ref this), grfBSCF, dwSize, pformatetc, pstgmed);
     }
 
+    /// <include file='IBindStatusCallback.xml' path='doc/member[@name="IBindStatusCallback.OnObjectAvailable"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT OnObjectAvailable([NativeTypeName("const IID &")] Guid* riid, IUnknown* punk)

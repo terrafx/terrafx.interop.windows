@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFSinkWriterEncoderConfig.xml' path='doc/member[@name="IMFSinkWriterEncoderConfig"]/*' />
 [Guid("17C3779E-3CDE-4EDE-8C60-3899F5F53AD6")]
 [NativeTypeName("struct IMFSinkWriterEncoderConfig : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IMFSinkWriterEncoderConfig : IMFSinkWriterEncoderCo
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IMFSinkWriterEncoderConfig : IMFSinkWriterEncoderCo
         return ((delegate* unmanaged<IMFSinkWriterEncoderConfig*, Guid*, void**, int>)(lpVtbl[0]))((IMFSinkWriterEncoderConfig*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IMFSinkWriterEncoderConfig : IMFSinkWriterEncoderCo
         return ((delegate* unmanaged<IMFSinkWriterEncoderConfig*, uint>)(lpVtbl[1]))((IMFSinkWriterEncoderConfig*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IMFSinkWriterEncoderConfig : IMFSinkWriterEncoderCo
         return ((delegate* unmanaged<IMFSinkWriterEncoderConfig*, uint>)(lpVtbl[2]))((IMFSinkWriterEncoderConfig*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFSinkWriterEncoderConfig.xml' path='doc/member[@name="IMFSinkWriterEncoderConfig.SetTargetMediaType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetTargetMediaType([NativeTypeName("DWORD")] uint dwStreamIndex, IMFMediaType* pTargetMediaType, IMFAttributes* pEncodingParameters)
@@ -48,6 +53,7 @@ public unsafe partial struct IMFSinkWriterEncoderConfig : IMFSinkWriterEncoderCo
         return ((delegate* unmanaged<IMFSinkWriterEncoderConfig*, uint, IMFMediaType*, IMFAttributes*, int>)(lpVtbl[3]))((IMFSinkWriterEncoderConfig*)Unsafe.AsPointer(ref this), dwStreamIndex, pTargetMediaType, pEncodingParameters);
     }
 
+    /// <include file='IMFSinkWriterEncoderConfig.xml' path='doc/member[@name="IMFSinkWriterEncoderConfig.PlaceEncodingParameters"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT PlaceEncodingParameters([NativeTypeName("DWORD")] uint dwStreamIndex, IMFAttributes* pEncodingParameters)

@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CERT_TRUST_STATUS.xml' path='doc/member[@name="CERT_TRUST_STATUS"]/*' />
 public partial struct CERT_TRUST_STATUS
 {
+    /// <include file='CERT_TRUST_STATUS.xml' path='doc/member[@name="CERT_TRUST_STATUS.dwErrorStatus"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwErrorStatus;
 
+    /// <include file='CERT_TRUST_STATUS.xml' path='doc/member[@name="CERT_TRUST_STATUS.dwInfoStatus"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwInfoStatus;
 }

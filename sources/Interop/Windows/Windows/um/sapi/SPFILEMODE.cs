@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SPFILEMODE.xml' path='doc/member[@name="SPFILEMODE"]/*' />
 public enum SPFILEMODE
 {
+    /// <include file='SPFILEMODE.xml' path='doc/member[@name="SPFILEMODE.SPFM_OPEN_READONLY"]/*' />
     SPFM_OPEN_READONLY = 0,
+
+    /// <include file='SPFILEMODE.xml' path='doc/member[@name="SPFILEMODE.SPFM_OPEN_READWRITE"]/*' />
     SPFM_OPEN_READWRITE = (SPFM_OPEN_READONLY + 1),
+
+    /// <include file='SPFILEMODE.xml' path='doc/member[@name="SPFILEMODE.SPFM_CREATE"]/*' />
     SPFM_CREATE = (SPFM_OPEN_READWRITE + 1),
+
+    /// <include file='SPFILEMODE.xml' path='doc/member[@name="SPFILEMODE.SPFM_CREATE_ALWAYS"]/*' />
     SPFM_CREATE_ALWAYS = (SPFM_CREATE + 1),
+
+    /// <include file='SPFILEMODE.xml' path='doc/member[@name="SPFILEMODE.SPFM_NUM_MODES"]/*' />
     SPFM_NUM_MODES = (SPFM_CREATE_ALWAYS + 1),
 }

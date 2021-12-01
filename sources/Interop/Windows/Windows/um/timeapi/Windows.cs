@@ -9,22 +9,27 @@ namespace TerraFX.Interop.Windows;
 
 public static unsafe partial class Windows
 {
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.timeGetSystemTime"]/*' />
     [DllImport("winmm", ExactSpelling = true)]
     [return: NativeTypeName("MMRESULT")]
     public static extern uint timeGetSystemTime([NativeTypeName("LPMMTIME")] MMTIME* pmmt, uint cbmmt);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.timeGetTime"]/*' />
     [DllImport("winmm", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint timeGetTime();
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.timeGetDevCaps"]/*' />
     [DllImport("winmm", ExactSpelling = true)]
     [return: NativeTypeName("MMRESULT")]
     public static extern uint timeGetDevCaps([NativeTypeName("LPTIMECAPS")] TIMECAPS* ptc, uint cbtc);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.timeBeginPeriod"]/*' />
     [DllImport("winmm", ExactSpelling = true)]
     [return: NativeTypeName("MMRESULT")]
     public static extern uint timeBeginPeriod(uint uPeriod);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.timeEndPeriod"]/*' />
     [DllImport("winmm", ExactSpelling = true)]
     [return: NativeTypeName("MMRESULT")]
     public static extern uint timeEndPeriod(uint uPeriod);

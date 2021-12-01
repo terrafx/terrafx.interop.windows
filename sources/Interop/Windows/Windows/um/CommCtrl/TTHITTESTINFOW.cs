@@ -5,11 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TTHITTESTINFOW.xml' path='doc/member[@name="TTHITTESTINFOW"]/*' />
 public partial struct TTHITTESTINFOW
 {
+    /// <include file='TTHITTESTINFOW.xml' path='doc/member[@name="TTHITTESTINFOW.hwnd"]/*' />
     public HWND hwnd;
 
+    /// <include file='TTHITTESTINFOW.xml' path='doc/member[@name="TTHITTESTINFOW.pt"]/*' />
     public POINT pt;
 
+    /// <include file='TTHITTESTINFOW.xml' path='doc/member[@name="TTHITTESTINFOW.ti"]/*' />
     public TTTOOLINFOW ti;
 }

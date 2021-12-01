@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SPINPARTS.xml' path='doc/member[@name="SPINPARTS"]/*' />
 public enum SPINPARTS
 {
+    /// <include file='SPINPARTS.xml' path='doc/member[@name="SPINPARTS.SPNP_UP"]/*' />
     SPNP_UP = 1,
+
+    /// <include file='SPINPARTS.xml' path='doc/member[@name="SPINPARTS.SPNP_DOWN"]/*' />
     SPNP_DOWN = 2,
+
+    /// <include file='SPINPARTS.xml' path='doc/member[@name="SPINPARTS.SPNP_UPHORZ"]/*' />
     SPNP_UPHORZ = 3,
+
+    /// <include file='SPINPARTS.xml' path='doc/member[@name="SPINPARTS.SPNP_DOWNHORZ"]/*' />
     SPNP_DOWNHORZ = 4,
 }

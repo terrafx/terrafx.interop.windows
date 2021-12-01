@@ -5,8 +5,10 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SPBINARYGRAMMAR.xml' path='doc/member[@name="SPBINARYGRAMMAR"]/*' />
 public partial struct SPBINARYGRAMMAR
 {
+    /// <include file='SPBINARYGRAMMAR.xml' path='doc/member[@name="SPBINARYGRAMMAR.ulTotalSerializedSize"]/*' />
     [NativeTypeName("ULONG")]
     public uint ulTotalSerializedSize;
 }

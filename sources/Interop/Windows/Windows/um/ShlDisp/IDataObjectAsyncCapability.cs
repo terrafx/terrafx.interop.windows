@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IDataObjectAsyncCapability.xml' path='doc/member[@name="IDataObjectAsyncCapability"]/*' />
 [Guid("3D8B0590-F691-11D2-8EA9-006097DF5BD4")]
 [NativeTypeName("struct IDataObjectAsyncCapability : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IDataObjectAsyncCapability : IDataObjectAsyncCapabi
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IDataObjectAsyncCapability : IDataObjectAsyncCapabi
         return ((delegate* unmanaged<IDataObjectAsyncCapability*, Guid*, void**, int>)(lpVtbl[0]))((IDataObjectAsyncCapability*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IDataObjectAsyncCapability : IDataObjectAsyncCapabi
         return ((delegate* unmanaged<IDataObjectAsyncCapability*, uint>)(lpVtbl[1]))((IDataObjectAsyncCapability*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IDataObjectAsyncCapability : IDataObjectAsyncCapabi
         return ((delegate* unmanaged<IDataObjectAsyncCapability*, uint>)(lpVtbl[2]))((IDataObjectAsyncCapability*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDataObjectAsyncCapability.xml' path='doc/member[@name="IDataObjectAsyncCapability.SetAsyncMode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetAsyncMode(BOOL fDoOpAsync)
@@ -48,6 +53,7 @@ public unsafe partial struct IDataObjectAsyncCapability : IDataObjectAsyncCapabi
         return ((delegate* unmanaged<IDataObjectAsyncCapability*, BOOL, int>)(lpVtbl[3]))((IDataObjectAsyncCapability*)Unsafe.AsPointer(ref this), fDoOpAsync);
     }
 
+    /// <include file='IDataObjectAsyncCapability.xml' path='doc/member[@name="IDataObjectAsyncCapability.GetAsyncMode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetAsyncMode(BOOL* pfIsOpAsync)
@@ -55,6 +61,7 @@ public unsafe partial struct IDataObjectAsyncCapability : IDataObjectAsyncCapabi
         return ((delegate* unmanaged<IDataObjectAsyncCapability*, BOOL*, int>)(lpVtbl[4]))((IDataObjectAsyncCapability*)Unsafe.AsPointer(ref this), pfIsOpAsync);
     }
 
+    /// <include file='IDataObjectAsyncCapability.xml' path='doc/member[@name="IDataObjectAsyncCapability.StartOperation"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT StartOperation(IBindCtx* pbcReserved)
@@ -62,6 +69,7 @@ public unsafe partial struct IDataObjectAsyncCapability : IDataObjectAsyncCapabi
         return ((delegate* unmanaged<IDataObjectAsyncCapability*, IBindCtx*, int>)(lpVtbl[5]))((IDataObjectAsyncCapability*)Unsafe.AsPointer(ref this), pbcReserved);
     }
 
+    /// <include file='IDataObjectAsyncCapability.xml' path='doc/member[@name="IDataObjectAsyncCapability.InOperation"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT InOperation(BOOL* pfInAsyncOp)
@@ -69,6 +77,7 @@ public unsafe partial struct IDataObjectAsyncCapability : IDataObjectAsyncCapabi
         return ((delegate* unmanaged<IDataObjectAsyncCapability*, BOOL*, int>)(lpVtbl[6]))((IDataObjectAsyncCapability*)Unsafe.AsPointer(ref this), pfInAsyncOp);
     }
 
+    /// <include file='IDataObjectAsyncCapability.xml' path='doc/member[@name="IDataObjectAsyncCapability.EndOperation"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT EndOperation(HRESULT hResult, IBindCtx* pbcReserved, [NativeTypeName("DWORD")] uint dwEffects)

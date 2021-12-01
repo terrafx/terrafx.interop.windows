@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HIDP_REPORT_TYPE.xml' path='doc/member[@name="HIDP_REPORT_TYPE"]/*' />
 public enum HIDP_REPORT_TYPE
 {
+    /// <include file='HIDP_REPORT_TYPE.xml' path='doc/member[@name="HIDP_REPORT_TYPE.HidP_Input"]/*' />
     HidP_Input,
+
+    /// <include file='HIDP_REPORT_TYPE.xml' path='doc/member[@name="HIDP_REPORT_TYPE.HidP_Output"]/*' />
     HidP_Output,
+
+    /// <include file='HIDP_REPORT_TYPE.xml' path='doc/member[@name="HIDP_REPORT_TYPE.HidP_Feature"]/*' />
     HidP_Feature,
 }

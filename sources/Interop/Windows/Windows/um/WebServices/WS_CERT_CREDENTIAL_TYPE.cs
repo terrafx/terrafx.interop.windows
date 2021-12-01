@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_CERT_CREDENTIAL_TYPE.xml' path='doc/member[@name="WS_CERT_CREDENTIAL_TYPE"]/*' />
 public enum WS_CERT_CREDENTIAL_TYPE
 {
+    /// <include file='WS_CERT_CREDENTIAL_TYPE.xml' path='doc/member[@name="WS_CERT_CREDENTIAL_TYPE.WS_SUBJECT_NAME_CERT_CREDENTIAL_TYPE"]/*' />
     WS_SUBJECT_NAME_CERT_CREDENTIAL_TYPE = 1,
+
+    /// <include file='WS_CERT_CREDENTIAL_TYPE.xml' path='doc/member[@name="WS_CERT_CREDENTIAL_TYPE.WS_THUMBPRINT_CERT_CREDENTIAL_TYPE"]/*' />
     WS_THUMBPRINT_CERT_CREDENTIAL_TYPE = 2,
+
+    /// <include file='WS_CERT_CREDENTIAL_TYPE.xml' path='doc/member[@name="WS_CERT_CREDENTIAL_TYPE.WS_CUSTOM_CERT_CREDENTIAL_TYPE"]/*' />
     WS_CUSTOM_CERT_CREDENTIAL_TYPE = 3,
 }

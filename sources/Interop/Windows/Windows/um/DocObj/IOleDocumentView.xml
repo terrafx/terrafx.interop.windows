@@ -1,0 +1,603 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IOleDocumentView.ApplyViewState">
+    <summary>
+      <para>Initializes a view with view state previously saved in call to <see cref="IOleDocumentView.SaveViewState" />.</para>
+    </summary>
+    <param name="pstm">
+      <para>A pointer to a stream containing data from which the view should initialize itself.</para>
+    </param>
+    <returns>
+      <para>This method returns S_OK on success. Other possible return values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>The value in <i>pstm</i> is <b>NULL</b>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_NOTIMPL</b>
+            </para>
+          </description>
+          <description>
+            <para>This view has no meaningful state to load. This error should be rare because most views will have at least some state information worth loading.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Typically, this function is called after an existing view has been created in the container but before that view has been displayed. It is the responsibility of the view to validate the data in the view stream; the container does not attempt to interpret the view's state data.</para>
+    </remarks>
+    <seealso cref="IOleDocument.CreateView" />
+    <seealso cref="IOleDocumentView" />
+    <seealso cref="IOleDocumentView.SaveViewState" />
+  </member>
+  <member name="IOleDocumentView.Clone">
+    <summary>
+      <para>Creates a duplicate view object with an internal state identical to that of the current view.</para>
+    </summary>
+    <param name="pIPSiteNew">
+      <para>A pointer to a <see cref="IOleInPlaceSite" /> interface that represents the view site in which the new view object will be activated. On receiving this pointer, the view being cloned should pass it to the new view's <see cref="IOleDocumentView.SetInPlaceSite" /> method. This pointer can be <b>NULL</b>, in which case the caller is responsible for calling <b>IOleDocumentView.SetInPlaceSite</b> on the new view directly.</para>
+    </param>
+    <param name="ppViewNew">
+      <para>A pointer to an <see cref="IOleDocumentView" /> pointer variable that receives the interface pointer to the new view object. The caller is responsible for releasing <i>ppViewNew</i> when it is no longer needed.</para>
+    </param>
+    <returns>
+      <para>This method returns S_OK on success. Other possible return values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>The operation failed.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>The value in <i>ppViewNew</i> is <b>NULL</b>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_NOTIMPL</b>
+            </para>
+          </description>
+          <description>
+            <para>The view object does not implement this interface.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method is useful for creating a new view with a different viewport and view site but with the same view context as the view being cloned. Typically, containers hosting an MDI application will call this method to provide "Window/New window" capability.</para>
+    </remarks>
+    <seealso cref="IOleDocumentView" />
+    <seealso cref="IOleDocumentView.SetInPlaceSite" />
+  </member>
+  <member name="IOleDocumentView.CloseView">
+    <summary>
+      <para>Instructs a document view to close itself and release its <see cref="IOleInPlaceSite" /> pointer.</para>
+    </summary>
+    <param name="dwReserved">
+      <para>This parameter is reserved and cannot be <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>This method returns S_OK on success.</para>
+    </returns>
+    <remarks>
+      <para>When a separate window is no longer needed, the container calls <b>IOleDocumentView.CloseView</b>, whereupon the view releases its site pointer to the separate window and destroys the window. Unlike the normal in-place deactivation sequence for active documents, a document view continues to hold the <see cref="IOleInPlaceSite" /> pointer. This pointer is released only when the view's container calls <see cref="SetInPlaceSite" />, with <i>pIPSite</i> set to <b>NULL</b>, or calls <b>IOleDocumentView.CloseView</b>.</para>
+      <para>When a user closes a view's separate window, the view should not shut itself down. Instead, it should call <see cref="IOleInPlaceSite.OnInPlaceActivate" />. The view site then decides whether to call <see cref="IOleDocumentView.UIActivate" /> with <b>FALSE</b> immediately or later. In this way, a document view displayed in a separate window remains available for activation in the container's own window.</para>
+      <para>The container must call this method before it deletes the view, that is, releases its last reference to the view. In general, implementation of this method will call <see cref="IOleDocumentView.Show" /> with <b>FALSE</b> to hide the view if it is not already hidden, then call <see cref="SetInPlaceSite" /> with <b>NULL</b> to deactivate itself and release the view site pointer.</para>
+      <para>Because <b>IOleDocumentView.CloseView</b> is called when a container is going to completely shut down a view, this method must be implemented and has no reason to fail.</para>
+    </remarks>
+    <seealso cref="IOleDocumentView" />
+    <seealso cref="IOleDocumentView.SetInPlaceSite" />
+    <seealso cref="IOleDocumentView.Show" />
+  </member>
+  <member name="IOleDocumentView.GetDocument">
+    <summary>
+      <para>Obtains the <see cref="IUnknown" /> interface pointer on the document object that owns this view.</para>
+    </summary>
+    <param name="ppunk">
+      <para>A pointer to an <see cref="IUnknown" /> interface pointer that receives a pointer to the document object that owns this view.</para>
+    </param>
+    <returns>
+      <para>This method returns S_OK on success. S_OK is the only valid return value for this method.</para>
+    </returns>
+    <remarks>
+      <para>The caller is responsible for incrementing the reference count on the interface pointer obtained by this method. The caller must call <see cref="IUnknown.Release" /> on this pointer when it is no longer needed.</para>
+      <para>Because a view object must always be contained or aggregated in a document object, this method will always succeed. Before returning, this method should call <see cref="IUnknown.AddRef" /> on the pointer stored in <i>ppunk</i>.</para>
+    </remarks>
+    <seealso cref="IOleDocumentView" />
+    <seealso cref="IUnknown" />
+  </member>
+  <member name="IOleDocumentView.GetInPlaceSite">
+    <summary>
+      <para>Retrieves the view site associated with this view object.</para>
+    </summary>
+    <param name="ppIPSite">
+      <para>A pointer to an <see cref="IOleInPlaceSite" /> pointer variable that receives the interface pointer to the document's view site.</para>
+    </param>
+    <returns>
+      <para>This method returns S_OK on success. Other possible values include:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>The operation failed.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>
+        <b>IOleDocumentView.GetInPlaceSite</b> obtains the most recent <see cref="IOleInPlaceSite" /> pointer passed by <see cref="IOleDocumentView.SetInPlaceSite" />, or <b>NULL</b> if <b>IOleDocumentView.SetInPlaceSite</b> has not yet been called. If this pointer is not <b>NULL</b>, this method will call <see cref="IUnknown.AddRef" /> on the pointer. The caller is responsible for releasing it. A document view must implement this method completely; E_NOTIMPL is not an acceptable return value.</para>
+    </remarks>
+    <seealso cref="IOleDocumentView" />
+    <seealso cref="IOleDocumentView.SetInPlaceSite" />
+    <seealso cref="IOleInPlaceSite" />
+  </member>
+  <member name="IOleDocumentView.GetRect">
+    <summary>
+      <para>Retrieves the rectangular coordinates of the viewport in which the view is or will be activated.</para>
+    </summary>
+    <param name="prcView">
+      <para>A pointer to a <see cref="RECT" /> structure to contain the coordinates of the current viewport set with <see cref="IOleDocumentView.SetRect" />.</para>
+    </param>
+    <returns>
+      <para>This method returns S_OK on success. Other possible return values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_UNEXPECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>This view has not yet seen a call to <see cref="IOleDocumentView.SetRect" /> or <see cref="IOleDocumentView.SetRectComplex" /> and therefore has no rectangle to return.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>For a single document interface (SDI) application, the viewport is the client area of the frame window minus the space allocated for toolbars, status bar, and such. For a multiple document interface (MDI) window, the viewport is the client area of the MDI document window minus any other frame-level user-interface elements.</para>
+      <para>The viewport coordinates obtained by this method are those set in the most recent call to either <see cref="IOleDocumentView.SetRect" /> or <see cref="IOleDocumentView.SetRectComplex" />.</para>
+      <para>A document view must implement this method completely; E_NOTIMPL is not an acceptable return value.</para>
+    </remarks>
+    <seealso cref="IOleDocumentView" />
+    <seealso cref="IOleDocumentView.SetRect" />
+    <seealso cref="IOleDocumentView.SetRectComplex" />
+  </member>
+  <member name="IOleDocumentView.Open">
+    <summary>
+      <para>Displays a document view in a separate pop-up window. The semantics are equivalent to <see cref="IOleObject.DoVerb" /> with OLEIVERB_OPEN.</para>
+    </summary>
+    <returns>
+      <para>This method returns S_OK on success. Other possible return values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>The operation failed.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>Insufficient memory  available for the operation.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_UNEXPECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>An unexpected error occurred.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_NOTIMPL</b>
+            </para>
+          </description>
+          <description>
+            <para>The document object that owns this view does not support separate window activation.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>A user viewing a document object in a container application such as a browser or "binder" may want to see two or more views or documents at once. Because the browser displays only one view at a time, the container needs a way to ask the other views or documents to display themselves, as required, in separate windows. The <b>IOleDocumentView.Open</b> method provides that way.</para>
+      <h3>Notes to Callers</h3>
+      <para>A successful call to <b>IOleDocumentView.Open</b> should be followed by a call to <see cref="IOleDocumentView.Show" /> to hide the window or to show the window and bring it to the foreground. While the view is active in its separate window, a container can show or hide the window as many times as it may require.</para>
+      <h3>Notes to Implementers</h3>
+      <para>A document object indicates that it does not support activation in a separate window by setting the <see cref="DOCMISC" />_CANTOPENEDIT status flag and returning E_NOTIMPL to containers that call this method.</para>
+      <para>Implementation consists mainly of the view object calling its own <see cref="IOleInPlaceObject.InPlaceDeactivate" /> method, which leaves the document object in a running state but without in-place activation. The document object's user interface is not visible until the container calls <see cref="IOleDocumentView.Show" /> (see Notes to Callers above).</para>
+    </remarks>
+    <seealso cref="IOleDocumentView" />
+    <seealso cref="IOleDocumentView.CloseView" />
+    <seealso cref="IOleDocumentView.Show" />
+    <seealso cref="IOleDocumentView.UIActivate" />
+    <seealso cref="IOleInPlaceObject.InPlaceDeactivate" />
+    <seealso cref="IOleInPlaceSite" />
+    <seealso cref="IOleInPlaceSite.OnInPlaceActivate" />
+  </member>
+  <member name="IOleDocumentView.SaveViewState">
+    <summary>
+      <para>Saves the view state into the specified stream.</para>
+    </summary>
+    <param name="pstm">
+      <para>A pointer to the stream in which the view is to save its state data.</para>
+    </param>
+    <returns>
+      <para>This method returns S_OK on success. Other possible return values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>The value in pstm is <b>NULL</b>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_NOTIMPL</b>
+            </para>
+          </description>
+          <description>
+            <para>This view has no meaningful state to save. This error should be rare because most views have at least some state information worth saving.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The view's state includes properties such as the view type, zoom factor, and location of insertion point. The container typically calls this function before deactivating the view. The stream can then later be used to reinitialize a view of the same document to this saved state through <see cref="IOleDocumentView.ApplyViewState" />.</para>
+      <para>According to the rules governing <see cref="IPersistStream" />, a view must write its CLSID as the first element in the stream. Any cross-platform file format compatibility issues that apply to the document's storage representation also apply to this context.</para>
+    </remarks>
+    <seealso cref="IOleDocumentView" />
+    <seealso cref="IOleDocumentView.ApplyViewState" />
+    <seealso cref="IPersistStream" />
+  </member>
+  <member name="IOleDocumentView.SetInPlaceSite">
+    <summary>
+      <para>Associates a container's document view site with a document's view object.</para>
+    </summary>
+    <param name="pIPSite">
+      <para>A pointer to the document view site's <see cref="IOleInPlaceSite" /> interface. This parameter can be <b>NULL</b>, in which case the document view object loses all asociation with the container.</para>
+    </param>
+    <returns>
+      <para>This method returns S_OK if a document view site was successfully associated (or disassociated if <i>pIPSite</i> is <b>NULL</b>) with a document view object. Other possible return values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>The operation failed.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>As part of activating a document object, a container must pass the object a pointer to the container's implementation of <see cref="IOleInPlaceSite" />. This pointer designates the document view site that is to be associated with the view on which this method is called.</para>
+      <para>A container normally passes this pointer in response to a document's request to be activated. A document makes such a request by calling <see cref="IOleDocumentSite.ActivateMe" /> and passing the container a pointer to the view to be activated. The container, in turn, uses this pointer to call <b>IOleDocumentView.SetInPlaceSite</b>.</para>
+      <h3>Notes to Callers</h3>
+      <para>If the container is requesting creation and activation of a new instance of a document object, rather than merely the activation of a loaded instance of a document object, the view site is passed in the <i>pIPSite</i> argument of <see cref="IOleDocument.CreateView" />. Therefore, an explicit call to <b>IOleDocumentView.SetInPlaceSite</b> is unnecessary.</para>
+      <h3>Notes to Implementers</h3>
+      <para>If this method is called on a view that is already associated with a view site, the view must do some housekeeping in preparation for activating itself in the new site. First, the view must deactivate itself in the current site and release its pointer to that site. Next, if the new <see cref="IOleInPlaceSite" /> pointer is not <b>NULL</b>, the view should both save the pointer and call <see cref="IUnknown.AddRef" /> on it. The view should then wait for the container to tell it when to activate itself in the new view site.</para>
+      <para>A document view must implement this method completely; E_NOTIMPL is not an acceptable return value.</para>
+    </remarks>
+    <seealso cref="IOleDocumentView" />
+    <seealso cref="IOleDocumentView.SetInPlaceSite" />
+  </member>
+  <member name="IOleDocumentView.SetRect">
+    <summary>
+      <para>Sets the rectangular coordinates of the viewport in which the view is to be activated or resets the coordinates of the viewport in which a view is currently activated.</para>
+    </summary>
+    <param name="prcView">
+      <para>A pointer to a <see cref="RECT" /> structure containing the coordinates of the viewport.</para>
+    </param>
+    <returns>
+      <para>This method returns S_OK on success. Other possible return values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>The operation failed.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>For a single document interface (SDI) application, the viewport is the client area of the frame window minus the space allocated for toolbars, status bar, and such. For a multiple document interface (MDI) window, the viewport is the client area of the MDI document window minus any other frame-level user-interface elements.</para>
+      <h3>Notes to Callers</h3>
+      <para>Calling <b>IOleDocumentView.SetRect</b> or <see cref="IOleDocumentView.SetRectComplex" /> is part of the normal activation sequence for document objects, usually following a call to <see cref="IOleDocumentView.UIActivate" /> and preceding a call to <see cref="IOleDocumentView.Show" />.</para>
+      <para>Whenever the window used to display a document object is resized, the container should call <b>IOleDocumentView.SetRect</b> (or <see cref="IOleDocumentView.SetRectComplex" />) to tell the document view object to resize itself to the new window dimensions.</para>
+      <h3>Notes to Implementers</h3>
+      <para>The coordinates of the viewport are within the coordinates of the view window, which is obtained through <see cref="IOleWindow.GetWindow" />. The view must resize itself to fit the new coordinates passed in <i>prcView</i>.</para>
+      <para>This method is defined with the [input_sync] attribute, which means that the view object cannot yield or make another, non input_sync RPC call while executing this method.</para>
+      <para>A document view must implement this method completely; E_NOTIMPL is not an acceptable return value.</para>
+    </remarks>
+    <seealso cref="IOleDocumentView" />
+  </member>
+  <member name="IOleDocumentView.SetRectComplex">
+    <summary>
+      <para>Sets the rectangular coordinates of the viewport, scroll bars, and size box.</para>
+    </summary>
+    <param name="prcView">
+      <para>A pointer to a <see cref="RECT" /> structure containing the coordinates of the viewport.</para>
+    </param>
+    <param name="prcHScroll">
+      <para>A pointer to a <see cref="RECT" /> structure containing the coordinates of the horizontal scroll bar.</para>
+    </param>
+    <param name="prcVScroll">
+      <para>A pointer to a <see cref="RECT" /> structure containing the coordinates of the vertical scroll bar.</para>
+    </param>
+    <param name="prcSizeBox">
+      <para>A pointer to a <see cref="RECT" /> structure containing the coordinates of the size box.</para>
+    </param>
+    <returns>
+      <para>This method returns S_OK on success. Other possible return values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>The operation failed.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_NOTIMPL</b>
+            </para>
+          </description>
+          <description>
+            <para>The document object that owns this view does not support complex rectangles.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>View frames that support a workbook metaphor, in which a single document comprises multiple sheets or pages, typically call this method to set the coordinates to be used in common by all the sheets or pages.</para>
+      <h3>Notes to Callers</h3>
+      <para>Calling <b>IOleDocumentView.SetRectComplex</b> is part of the normal activation sequence for document objects that support complex rectangles, usually following a call to <see cref="IOleDocumentView.UIActivate" /> and preceding a call to <see cref="IOleDocumentView.Show" />.</para>
+      <para>Whenever the window used to display a document object is resized, the container should call <b>IOleDocumentView.SetRectComplex</b> or <see cref="IOleDocumentView.SetRect" /> to tell the view object to resize itself to the new window dimensions.</para>
+      <h3>Notes to Implementers</h3>
+      <para>Document objects that support complex rectangles mark themselves with <see cref="DOCMISC" />_SUPPORTCOMPLEXRECTANGLES, as described in <b>DOCMISC</b> and <see cref="IOleDocument.GetDocMiscStatus" />. Document objects that do not support this method can return E_NOTIMPL.</para>
+      <para>Upon receiving a call to this method, a view should resize itself to fit the coordinates specified in prcView and fit its scrollbars and size box to the areas described in <i>prcHScroll</i>, <i>prcVScroll</i>, and <i>prcSizeBox</i>.</para>
+      <para>This method is defined with the [input_sync] attribute, which means that the implementing object cannot yield or make another, non input_sync RPC call while executing this method.</para>
+    </remarks>
+    <seealso cref="IOleDocument.GetDocMiscStatus" />
+    <seealso cref="IOleDocumentView" />
+  </member>
+  <member name="IOleDocumentView.Show">
+    <summary>
+      <para>Activates or deactivates a view.</para>
+    </summary>
+    <param name="fShow">
+      <para>If <b>TRUE</b>, the view is to show itself. If <b>FALSE</b>, the view is to hide itself.</para>
+    </param>
+    <returns>
+      <para>This method returns S_OK on success. Other possible return values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>The operation failed.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>Insufficient memory available for operation.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_UNEXPECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>An unexpected error occurred.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Calling <b>Show</b> is the last step in the activation sequence, because before showing itself a document object must know exactly what space it occupies and have all its tools available.</para>
+      <h3>Notes to Callers</h3>
+      <para>A call to this method for the purpose of activating a view should follow calls to <see cref="IOleDocumentView.SetInPlaceSite" />, <see cref="IOleDocumentView.UIActivate" />, and <see cref="IOleDocumentView.SetRect" /> (or <see cref="IOleDocumentView.SetRectComplex" />).</para>
+      <h3>Notes to Implementers</h3>
+      <para>Implementations of this method should embody the following pseudocode.</para>
+      <code>if (fShow)
+    {
+    In-place activate the view but do not UI activate it.
+    Show the view window.
+    }
+else
+    {
+    Call IOleDocumentView.UIActivate(FALSE) on this view
+    Hide the view window
+    }
+</code>
+      <para>All views of a document object must at least support in-place activation; E_NOTIMPL is not an acceptable value.</para>
+    </remarks>
+    <seealso cref="IOleDocumentView" />
+    <seealso cref="IOleDocumentView.SetInPlaceSite" />
+    <seealso cref="IOleDocumentView.SetRect" />
+    <seealso cref="IOleDocumentView.SetRectComplex" />
+    <seealso cref="IOleDocumentView.UIActivate" />
+  </member>
+  <member name="IOleDocumentView.UIActivate">
+    <summary>
+      <para>Activates or deactivates a document view's user interface elements, such as menus, toolbars, and accelerators.</para>
+    </summary>
+    <param name="fUIActivate">
+      <para>If <b>TRUE</b>, the view is to activate its user interface. If <b>FALSE</b>, the view is to deactivate its user interface.</para>
+    </param>
+    <returns>
+      <para>This method returns S_OK on success. Other possible return values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>The operation failed.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>Insufficient memory available for operation.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_UNEXPECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>An unexpected error occurred.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <h3>Notes to Callers</h3>
+      <para>Calling this method before calling <see cref="IOleDocumentView.SetInPlaceSite" /> returns E_UNEXPECTED, because the view must be associated with a view site before it can activate itself.</para>
+      <para>When <b>IOleDocumentView.UIActivate</b> is called as part of the activation sequence, the call should precede a call to <see cref="IOleDocumentView.SetRect" /> or <see cref="IOleDocumentView.SetRectComplex" />, because otherwise the view dimensions would not account for toolbar space.</para>
+      <para>To deactivate a view, the container should call <see cref="IOleDocumentView.Show" /> with <b>FALSE</b>, followed by <b>IOleDocumentView.UIActivate</b> with <b>FALSE</b>.</para>
+      <h3>Notes to Implementers</h3>
+      <para>Implementations of this method should embody the following pseudocode.</para>
+      <code>if (fActivate)
+    {
+    UI activate the view (do menu merging, show frame level tools, process accelerators)
+    Take focus, and bring the view window forward.
+    }
+else
+    call IOleInPlaceObject.UIDeactivate on this view
+</code>
+      <para>In addition, the view can and should participate in extended <b>Help</b> menu merging.</para>
+      <para>All views of a document object must support in-place activation. E_NOTIMPL is not an acceptable return value.</para>
+    </remarks>
+    <seealso cref="IOleDocumentView" />
+    <seealso cref="IOleDocumentView.SetInPlaceSite" />
+    <seealso cref="IOleDocumentView.SetRect" />
+    <seealso cref="IOleDocumentView.SetRectComplex" />
+    <seealso cref="IOleDocumentView.Show" />
+  </member>
+  <member name="IOleDocumentView">
+    <summary>
+      <para>The <b>IOleDocumentView</b> interface enables a container to communicate with each view supported by a document object.</para>
+      <para>A document object that supports multiple views of its data represents each view as a separate object. Each document view object implements <b>IOleDocumentView</b>, along with <see cref="IOleInPlaceObject" />, <see cref="IOleInPlaceActiveObject" />, and optional interfaces such as <see cref="IPrint" /> and <see cref="IOleCommandTarget" />. A document object that supports only a single view does not require that view to be implemented as a separate object. Instead, both document and view can be implemented as a single class.</para>
+    </summary>
+  </member>
+</doc>

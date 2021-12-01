@@ -7,11 +7,19 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='POINTER_DEVICE_CURSOR_TYPE.xml' path='doc/member[@name="POINTER_DEVICE_CURSOR_TYPE"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public enum POINTER_DEVICE_CURSOR_TYPE
 {
+    /// <include file='POINTER_DEVICE_CURSOR_TYPE.xml' path='doc/member[@name="POINTER_DEVICE_CURSOR_TYPE.POINTER_DEVICE_CURSOR_TYPE_UNKNOWN"]/*' />
     POINTER_DEVICE_CURSOR_TYPE_UNKNOWN = 0x00000000,
+
+    /// <include file='POINTER_DEVICE_CURSOR_TYPE.xml' path='doc/member[@name="POINTER_DEVICE_CURSOR_TYPE.POINTER_DEVICE_CURSOR_TYPE_TIP"]/*' />
     POINTER_DEVICE_CURSOR_TYPE_TIP = 0x00000001,
+
+    /// <include file='POINTER_DEVICE_CURSOR_TYPE.xml' path='doc/member[@name="POINTER_DEVICE_CURSOR_TYPE.POINTER_DEVICE_CURSOR_TYPE_ERASER"]/*' />
     POINTER_DEVICE_CURSOR_TYPE_ERASER = 0x00000002,
+
+    /// <include file='POINTER_DEVICE_CURSOR_TYPE.xml' path='doc/member[@name="POINTER_DEVICE_CURSOR_TYPE.POINTER_DEVICE_CURSOR_TYPE_MAX"]/*' />
     POINTER_DEVICE_CURSOR_TYPE_MAX = unchecked((int)(0xFFFFFFFF)),
 }

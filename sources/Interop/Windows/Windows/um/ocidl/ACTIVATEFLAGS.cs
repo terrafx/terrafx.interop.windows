@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ACTIVATEFLAGS.xml' path='doc/member[@name="ACTIVATEFLAGS"]/*' />
 public enum ACTIVATEFLAGS
 {
+    /// <include file='ACTIVATEFLAGS.xml' path='doc/member[@name="ACTIVATEFLAGS.ACTIVATE_WINDOWLESS"]/*' />
     ACTIVATE_WINDOWLESS = 1,
 }

@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CMC_ADD_ATTRIBUTES_INFO">
+    <summary>
+      <para>The <b>CMC_ADD_ATTRIBUTES_INFO</b> structure contains certificate attributes to be added to a certificate.</para>
+    </summary>
+  </member>
+  <member name="CMC_ADD_ATTRIBUTES_INFO.dwCmcDataReference">
+    <summary>
+      <para>
+        <b>DWORD</b> data reference number.</para>
+    </summary>
+  </member>
+  <member name="CMC_ADD_ATTRIBUTES_INFO.cCertReference">
+    <summary>
+      <para>Count of elements in the <b>rgdwCertReference</b> array.</para>
+    </summary>
+  </member>
+  <member name="CMC_ADD_ATTRIBUTES_INFO.rgdwCertReference">
+    <summary>
+      <para>Array of certificate reference numbers.</para>
+    </summary>
+  </member>
+  <member name="CMC_ADD_ATTRIBUTES_INFO.cAttribute">
+    <summary>
+      <para>Count of the elements in the <b>rgAttribute</b> array.</para>
+    </summary>
+  </member>
+  <member name="CMC_ADD_ATTRIBUTES_INFO.rgAttribute">
+    <summary>
+      <para>Array of pointers to the
+<see cref="CRYPT_ATTRIBUTE" /> certificate attributes to be added.</para>
+    </summary>
+  </member>
+</doc>

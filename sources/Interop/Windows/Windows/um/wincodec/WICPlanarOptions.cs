@@ -7,10 +7,16 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WICPlanarOptions.xml' path='doc/member[@name="WICPlanarOptions"]/*' />
 [SupportedOSPlatform("windows8.1")]
 public enum WICPlanarOptions
 {
+    /// <include file='WICPlanarOptions.xml' path='doc/member[@name="WICPlanarOptions.WICPlanarOptionsDefault"]/*' />
     WICPlanarOptionsDefault = 0,
+
+    /// <include file='WICPlanarOptions.xml' path='doc/member[@name="WICPlanarOptions.WICPlanarOptionsPreserveSubsampling"]/*' />
     WICPlanarOptionsPreserveSubsampling = 0x1,
+
+    /// <include file='WICPlanarOptions.xml' path='doc/member[@name="WICPlanarOptions.WICPLANAROPTIONS_FORCE_DWORD"]/*' />
     WICPLANAROPTIONS_FORCE_DWORD = 0x7fffffff,
 }

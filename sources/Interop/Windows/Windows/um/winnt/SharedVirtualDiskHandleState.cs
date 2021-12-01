@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SharedVirtualDiskHandleState.xml' path='doc/member[@name="SharedVirtualDiskHandleState"]/*' />
 public enum SharedVirtualDiskHandleState
 {
+    /// <include file='SharedVirtualDiskHandleState.xml' path='doc/member[@name="SharedVirtualDiskHandleState.SharedVirtualDiskHandleStateNone"]/*' />
     SharedVirtualDiskHandleStateNone = 0,
+
+    /// <include file='SharedVirtualDiskHandleState.xml' path='doc/member[@name="SharedVirtualDiskHandleState.SharedVirtualDiskHandleStateFileShared"]/*' />
     SharedVirtualDiskHandleStateFileShared = 1,
+
+    /// <include file='SharedVirtualDiskHandleState.xml' path='doc/member[@name="SharedVirtualDiskHandleState.SharedVirtualDiskHandleStateHandleShared"]/*' />
     SharedVirtualDiskHandleStateHandleShared = 3,
 }

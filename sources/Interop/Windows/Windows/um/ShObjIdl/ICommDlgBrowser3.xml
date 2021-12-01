@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ICommDlgBrowser3.GetCurrentFilter">
+    <summary>
+      <para>Gets the current filter as a Unicode string.</para>
+    </summary>
+    <param name="pszFileSpec">
+      <para>Type: <b>LPWSTR</b></para>
+      <para>Contains a pointer to the current filter path/file as a Unicode string.</para>
+    </param>
+    <param name="cchFileSpec">
+      <para>Type: <b>int</b></para>
+      <para>Specifies the path/file length, in characters.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="ICommDlgBrowser3.OnColumnClicked">
+    <summary>
+      <para>Called after a specified column is clicked in the <see cref="IShellView" /> interface.</para>
+    </summary>
+    <param name="ppshv">
+      <para>Type: <b><see cref="IShellView" />*</b></para>
+      <para>A pointer to the <see cref="IShellView" /> interface of the hosted view.</para>
+    </param>
+    <param name="iColumn">
+      <para>Type: <b>int</b></para>
+      <para>The index of the column clicked.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="ICommDlgBrowser3.OnPreViewCreated">
+    <summary>
+      <para>Called after a specified preview is created in the <see cref="IShellView" /> interface.</para>
+    </summary>
+    <param name="ppshv">
+      <para>Type: <b><see cref="IShellView" />*</b></para>
+      <para>A pointer to the <see cref="IShellView" /> interface of the hosted view.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="ICommDlgBrowser3">
+    <summary>
+      <para>Extends the capabilities of <see cref="ICommDlgBrowser2" />, and used by the common file dialog boxes when they host a Shell browser.</para>
+    </summary>
+    <remarks>
+      <para>This interface also provides the methods of the <see cref="ICommDlgBrowser" /> and <see cref="ICommDlgBrowser2" /> interfaces, from which it inherits.</para>
+      <para>A pointer to <b>ICommDlgBrowser3</b> can be obtained by calling <see cref="QueryInterface" /> on the <see cref="ICommDlgBrowser2" /> object.</para>
+    </remarks>
+  </member>
+</doc>

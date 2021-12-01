@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PSS_PROCESS_FLAGS">
+    <summary>
+      <para>Flags that describe a process.</para>
+    </summary>
+    <remarks>
+      <para>There are <b>PSS_PROCESS_FLAGS</b> members in the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/processsnapshot/ns-processsnapshot-pss_process_information">PSS_PROCESS_INFORMATION</a> and <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/processsnapshot/ns-processsnapshot-pss_handle_entry">PSS_HANDLE_ENTRY</a> structures.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/proc_snap/process-snapshotting-portal">Process Snapshotting</seealso>
+  </member>
+  <member name="PSS_PROCESS_FLAGS.PSS_PROCESS_FLAGS_NONE">
+    <summary>
+      <para>No flag.</para>
+    </summary>
+  </member>
+  <member name="PSS_PROCESS_FLAGS.PSS_PROCESS_FLAGS_PROTECTED">
+    <summary>
+      <para>The process is protected.</para>
+    </summary>
+  </member>
+  <member name="PSS_PROCESS_FLAGS.PSS_PROCESS_FLAGS_WOW64">
+    <summary>
+      <para>The process is a 32-bit process running on a 64-bit native OS.</para>
+    </summary>
+  </member>
+  <member name="PSS_PROCESS_FLAGS.PSS_PROCESS_FLAGS_RESERVED_03">
+    <summary>
+      <para>Undefined.</para>
+    </summary>
+  </member>
+  <member name="PSS_PROCESS_FLAGS.PSS_PROCESS_FLAGS_RESERVED_04">
+    <summary>
+      <para>Undefined.</para>
+    </summary>
+  </member>
+  <member name="PSS_PROCESS_FLAGS.PSS_PROCESS_FLAGS_FROZEN">
+    <summary>
+      <para>The process is frozen; for example,  a debugger is attached and broken into the process or a Store process is suspended by a lifetime management service.</para>
+    </summary>
+  </member>
+</doc>

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="APPX_BUNDLE_PAYLOAD_PACKAGE_TYPE">
+    <summary>
+      <para>Specifies the type of package for a <see cref="IAppxBundleManifestPackageInfo" /> object.</para>
+    </summary>
+  </member>
+  <member name="APPX_BUNDLE_PAYLOAD_PACKAGE_TYPE.APPX_BUNDLE_PAYLOAD_PACKAGE_TYPE_APPLICATION">
+    <summary>
+      <para>The package is an app.</para>
+    </summary>
+  </member>
+  <member name="APPX_BUNDLE_PAYLOAD_PACKAGE_TYPE.APPX_BUNDLE_PAYLOAD_PACKAGE_TYPE_RESOURCE">
+    <summary>
+      <para>The package is a resource.</para>
+    </summary>
+  </member>
+</doc>

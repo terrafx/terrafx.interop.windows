@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFMediaSession.xml' path='doc/member[@name="IMFMediaSession"]/*' />
 [Guid("90377834-21D0-4DEE-8214-BA2E3E6C1127")]
 [NativeTypeName("struct IMFMediaSession : IMFMediaEventGenerator")]
 [NativeInheritance("IMFMediaEventGenerator")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMFMediaSession : IMFMediaSession.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMFMediaSession : IMFMediaSession.Interface
         return ((delegate* unmanaged<IMFMediaSession*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaSession*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMFMediaSession : IMFMediaSession.Interface
         return ((delegate* unmanaged<IMFMediaSession*, uint>)(lpVtbl[1]))((IMFMediaSession*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMFMediaSession : IMFMediaSession.Interface
         return ((delegate* unmanaged<IMFMediaSession*, uint>)(lpVtbl[2]))((IMFMediaSession*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IMFMediaEventGenerator.GetEvent" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetEvent([NativeTypeName("DWORD")] uint dwFlags, IMFMediaEvent** ppEvent)
@@ -46,6 +51,7 @@ public unsafe partial struct IMFMediaSession : IMFMediaSession.Interface
         return ((delegate* unmanaged<IMFMediaSession*, uint, IMFMediaEvent**, int>)(lpVtbl[3]))((IMFMediaSession*)Unsafe.AsPointer(ref this), dwFlags, ppEvent);
     }
 
+    /// <inheritdoc cref="IMFMediaEventGenerator.BeginGetEvent" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT BeginGetEvent(IMFAsyncCallback* pCallback, IUnknown* punkState)
@@ -53,6 +59,7 @@ public unsafe partial struct IMFMediaSession : IMFMediaSession.Interface
         return ((delegate* unmanaged<IMFMediaSession*, IMFAsyncCallback*, IUnknown*, int>)(lpVtbl[4]))((IMFMediaSession*)Unsafe.AsPointer(ref this), pCallback, punkState);
     }
 
+    /// <inheritdoc cref="IMFMediaEventGenerator.EndGetEvent" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT EndGetEvent(IMFAsyncResult* pResult, IMFMediaEvent** ppEvent)
@@ -60,6 +67,7 @@ public unsafe partial struct IMFMediaSession : IMFMediaSession.Interface
         return ((delegate* unmanaged<IMFMediaSession*, IMFAsyncResult*, IMFMediaEvent**, int>)(lpVtbl[5]))((IMFMediaSession*)Unsafe.AsPointer(ref this), pResult, ppEvent);
     }
 
+    /// <inheritdoc cref="IMFMediaEventGenerator.QueueEvent" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT QueueEvent([NativeTypeName("MediaEventType")] uint met, [NativeTypeName("const GUID &")] Guid* guidExtendedType, HRESULT hrStatus, [NativeTypeName("const PROPVARIANT *")] PROPVARIANT* pvValue)
@@ -67,6 +75,7 @@ public unsafe partial struct IMFMediaSession : IMFMediaSession.Interface
         return ((delegate* unmanaged<IMFMediaSession*, uint, Guid*, HRESULT, PROPVARIANT*, int>)(lpVtbl[6]))((IMFMediaSession*)Unsafe.AsPointer(ref this), met, guidExtendedType, hrStatus, pvValue);
     }
 
+    /// <include file='IMFMediaSession.xml' path='doc/member[@name="IMFMediaSession.SetTopology"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT SetTopology([NativeTypeName("DWORD")] uint dwSetTopologyFlags, IMFTopology* pTopology)
@@ -74,6 +83,7 @@ public unsafe partial struct IMFMediaSession : IMFMediaSession.Interface
         return ((delegate* unmanaged<IMFMediaSession*, uint, IMFTopology*, int>)(lpVtbl[7]))((IMFMediaSession*)Unsafe.AsPointer(ref this), dwSetTopologyFlags, pTopology);
     }
 
+    /// <include file='IMFMediaSession.xml' path='doc/member[@name="IMFMediaSession.ClearTopologies"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT ClearTopologies()
@@ -81,6 +91,7 @@ public unsafe partial struct IMFMediaSession : IMFMediaSession.Interface
         return ((delegate* unmanaged<IMFMediaSession*, int>)(lpVtbl[8]))((IMFMediaSession*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFMediaSession.xml' path='doc/member[@name="IMFMediaSession.Start"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT Start([NativeTypeName("const GUID *")] Guid* pguidTimeFormat, [NativeTypeName("const PROPVARIANT *")] PROPVARIANT* pvarStartPosition)
@@ -88,6 +99,7 @@ public unsafe partial struct IMFMediaSession : IMFMediaSession.Interface
         return ((delegate* unmanaged<IMFMediaSession*, Guid*, PROPVARIANT*, int>)(lpVtbl[9]))((IMFMediaSession*)Unsafe.AsPointer(ref this), pguidTimeFormat, pvarStartPosition);
     }
 
+    /// <include file='IMFMediaSession.xml' path='doc/member[@name="IMFMediaSession.Pause"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT Pause()
@@ -95,6 +107,7 @@ public unsafe partial struct IMFMediaSession : IMFMediaSession.Interface
         return ((delegate* unmanaged<IMFMediaSession*, int>)(lpVtbl[10]))((IMFMediaSession*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFMediaSession.xml' path='doc/member[@name="IMFMediaSession.Stop"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT Stop()
@@ -102,6 +115,7 @@ public unsafe partial struct IMFMediaSession : IMFMediaSession.Interface
         return ((delegate* unmanaged<IMFMediaSession*, int>)(lpVtbl[11]))((IMFMediaSession*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFMediaSession.xml' path='doc/member[@name="IMFMediaSession.Close"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT Close()
@@ -109,6 +123,7 @@ public unsafe partial struct IMFMediaSession : IMFMediaSession.Interface
         return ((delegate* unmanaged<IMFMediaSession*, int>)(lpVtbl[12]))((IMFMediaSession*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFMediaSession.xml' path='doc/member[@name="IMFMediaSession.Shutdown"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT Shutdown()
@@ -116,6 +131,7 @@ public unsafe partial struct IMFMediaSession : IMFMediaSession.Interface
         return ((delegate* unmanaged<IMFMediaSession*, int>)(lpVtbl[13]))((IMFMediaSession*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFMediaSession.xml' path='doc/member[@name="IMFMediaSession.GetClock"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT GetClock(IMFClock** ppClock)
@@ -123,6 +139,7 @@ public unsafe partial struct IMFMediaSession : IMFMediaSession.Interface
         return ((delegate* unmanaged<IMFMediaSession*, IMFClock**, int>)(lpVtbl[14]))((IMFMediaSession*)Unsafe.AsPointer(ref this), ppClock);
     }
 
+    /// <include file='IMFMediaSession.xml' path='doc/member[@name="IMFMediaSession.GetSessionCapabilities"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT GetSessionCapabilities([NativeTypeName("DWORD *")] uint* pdwCaps)
@@ -130,6 +147,7 @@ public unsafe partial struct IMFMediaSession : IMFMediaSession.Interface
         return ((delegate* unmanaged<IMFMediaSession*, uint*, int>)(lpVtbl[15]))((IMFMediaSession*)Unsafe.AsPointer(ref this), pdwCaps);
     }
 
+    /// <include file='IMFMediaSession.xml' path='doc/member[@name="IMFMediaSession.GetFullTopology"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT GetFullTopology([NativeTypeName("DWORD")] uint dwGetFullTopologyFlags, [NativeTypeName("TOPOID")] ulong TopoId, IMFTopology** ppFullTopology)

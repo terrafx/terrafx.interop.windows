@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SharedVirtualDiskSupportType.xml' path='doc/member[@name="SharedVirtualDiskSupportType"]/*' />
 public enum SharedVirtualDiskSupportType
 {
+    /// <include file='SharedVirtualDiskSupportType.xml' path='doc/member[@name="SharedVirtualDiskSupportType.SharedVirtualDisksUnsupported"]/*' />
     SharedVirtualDisksUnsupported = 0,
+
+    /// <include file='SharedVirtualDiskSupportType.xml' path='doc/member[@name="SharedVirtualDiskSupportType.SharedVirtualDisksSupported"]/*' />
     SharedVirtualDisksSupported = 1,
+
+    /// <include file='SharedVirtualDiskSupportType.xml' path='doc/member[@name="SharedVirtualDiskSupportType.SharedVirtualDiskSnapshotsSupported"]/*' />
     SharedVirtualDiskSnapshotsSupported = 3,
+
+    /// <include file='SharedVirtualDiskSupportType.xml' path='doc/member[@name="SharedVirtualDiskSupportType.SharedVirtualDiskCDPSnapshotsSupported"]/*' />
     SharedVirtualDiskCDPSnapshotsSupported = 7,
 }

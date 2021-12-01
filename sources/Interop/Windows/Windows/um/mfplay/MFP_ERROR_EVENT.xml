@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MFP_ERROR_EVENT">
+    <summary>
+      <para>
+        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</para>
+      <para>Event structure for the <b>MFP_EVENT_TYPE_ERROR</b> event. This event is sent if an error occurs during playback.</para>
+    </summary>
+    <remarks>
+      <para>To get a pointer to this structure, cast the <i>pEventHeader</i> parameter of the <see cref="IMFPMediaPlayerCallback.OnMediaPlayerEvent" />  method.  You can use the <see cref="MFP_GET_ERROR_EVENT" /> macro for this purpose.</para>
+      <para>This event is not used to signal the failure of an asynchronous <see cref="IMFPMediaPlayer" /> method. If an asynchronous method fails, the error is reported in the standard event listed for that method. The <b>MFP_EVENT_TYPE_ERROR</b> event is used for errors that happen outside the context of an asynchronous method call.</para>
+    </remarks>
+    <seealso cref="IMFPMediaPlayerCallback" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-structures">Media Foundation Structures</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/using-mfplay-for-audio-video-playback">Using MFPlay for Audio/Video Playback</seealso>
+  </member>
+  <member name="MFP_ERROR_EVENT.header">
+    <summary>
+      <para>
+        <see cref="MFP_EVENT_HEADER" /> structure that contains data common to all <see cref="IMFPMediaPlayer" /> events. The <b>hrEvent</b> member of the structure contains the error code.</para>
+    </summary>
+  </member>
+</doc>

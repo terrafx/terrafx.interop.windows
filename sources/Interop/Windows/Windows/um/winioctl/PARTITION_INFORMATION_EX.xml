@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PARTITION_INFORMATION_EX">
+    <summary>
+      <para>Contains partition information for standard <i>AT-style</i> master boot record (MBR) and Extensible Firmware Interface (EFI) disks.</para>
+    </summary>
+    <remarks>
+      <para>If the partition is on a disk formatted as type master boot record (MBR), partition size totals are limited. For more information, see the Remarks section of <a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_disk_set_drive_layout">IOCTL_DISK_SET_DRIVE_LAYOUT</a>.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/FileIO/file-system-recognition">File System Recognition</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_disk_get_partition_info_ex">IOCTL_DISK_GET_PARTITION_INFO_EX</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_disk_set_partition_info_ex">IOCTL_DISK_SET_PARTITION_INFO_EX</seealso>
+    <seealso cref="PARTITION_INFORMATION_GPT" />
+    <seealso cref="PARTITION_INFORMATION_MBR" />
+    <seealso cref="PARTITION_STYLE" />
+  </member>
+  <member name="PARTITION_INFORMATION_EX.PartitionStyle">
+    <summary>
+      <para>The format of the partition. For a list of values, see
+<see cref="PARTITION_STYLE" />.</para>
+    </summary>
+  </member>
+  <member name="PARTITION_INFORMATION_EX.StartingOffset">
+    <summary>
+      <para>The starting offset of the partition.</para>
+    </summary>
+  </member>
+  <member name="PARTITION_INFORMATION_EX.PartitionLength">
+    <summary>
+      <para>The size of the partition, in bytes.</para>
+    </summary>
+  </member>
+  <member name="PARTITION_INFORMATION_EX.PartitionNumber">
+    <summary>
+      <para>The number of the partition (1-based).</para>
+    </summary>
+  </member>
+  <member name="PARTITION_INFORMATION_EX.RewritePartition">
+    <summary>
+      <para>If this member is <b>TRUE</b>, the partition is rewritable. The value of this parameter should be set to <b>TRUE</b>.</para>
+    </summary>
+  </member>
+  <member name="PARTITION_INFORMATION_EX.IsServicePartition">
+    <summary></summary>
+  </member>
+  <member name="PARTITION_INFORMATION_EX.DUMMYUNIONNAME">
+    <summary></summary>
+  </member>
+  <member name="PARTITION_INFORMATION_EX.DUMMYUNIONNAME.Mbr">
+    <summary>
+      <para>A
+<see cref="PARTITION_INFORMATION_MBR" /> structure that specifies partition information specific to master boot record (MBR) disks. The MBR partition format is the standard <i>AT-style</i> format.</para>
+    </summary>
+  </member>
+  <member name="PARTITION_INFORMATION_EX.DUMMYUNIONNAME.Gpt">
+    <summary>
+      <para>A
+<see cref="PARTITION_INFORMATION_GPT" /> structure that specifies partition information specific to GUID partition table (GPT) disks. The GPT format corresponds to the EFI partition format.</para>
+    </summary>
+  </member>
+</doc>

@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SOCKADDR_IN6_PAIR.xml' path='doc/member[@name="SOCKADDR_IN6_PAIR"]/*' />
 public unsafe partial struct SOCKADDR_IN6_PAIR
 {
+    /// <include file='SOCKADDR_IN6_PAIR.xml' path='doc/member[@name="SOCKADDR_IN6_PAIR.SourceAddress"]/*' />
     [NativeTypeName("PSOCKADDR_IN6")]
     public SOCKADDR_IN6* SourceAddress;
 
+    /// <include file='SOCKADDR_IN6_PAIR.xml' path='doc/member[@name="SOCKADDR_IN6_PAIR.DestinationAddress"]/*' />
     [NativeTypeName("PSOCKADDR_IN6")]
     public SOCKADDR_IN6* DestinationAddress;
 }

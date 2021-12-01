@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MEMCTX.xml' path='doc/member[@name="MEMCTX"]/*' />
 public enum MEMCTX
 {
+    /// <include file='MEMCTX.xml' path='doc/member[@name="MEMCTX.MEMCTX_TASK"]/*' />
     MEMCTX_TASK = 1,
+
+    /// <include file='MEMCTX.xml' path='doc/member[@name="MEMCTX.MEMCTX_SHARED"]/*' />
     MEMCTX_SHARED = 2,
+
+    /// <include file='MEMCTX.xml' path='doc/member[@name="MEMCTX.MEMCTX_MACSYSTEM"]/*' />
     MEMCTX_MACSYSTEM = 3,
+
+    /// <include file='MEMCTX.xml' path='doc/member[@name="MEMCTX.MEMCTX_UNKNOWN"]/*' />
     MEMCTX_UNKNOWN = -1,
+
+    /// <include file='MEMCTX.xml' path='doc/member[@name="MEMCTX.MEMCTX_SAME"]/*' />
     MEMCTX_SAME = -2,
 }

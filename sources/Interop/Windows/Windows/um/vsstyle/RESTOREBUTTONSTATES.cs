@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='RESTOREBUTTONSTATES.xml' path='doc/member[@name="RESTOREBUTTONSTATES"]/*' />
 public enum RESTOREBUTTONSTATES
 {
+    /// <include file='RESTOREBUTTONSTATES.xml' path='doc/member[@name="RESTOREBUTTONSTATES.RBS_NORMAL"]/*' />
     RBS_NORMAL = 1,
+
+    /// <include file='RESTOREBUTTONSTATES.xml' path='doc/member[@name="RESTOREBUTTONSTATES.RBS_HOT"]/*' />
     RBS_HOT = 2,
+
+    /// <include file='RESTOREBUTTONSTATES.xml' path='doc/member[@name="RESTOREBUTTONSTATES.RBS_PUSHED"]/*' />
     RBS_PUSHED = 3,
+
+    /// <include file='RESTOREBUTTONSTATES.xml' path='doc/member[@name="RESTOREBUTTONSTATES.RBS_DISABLED"]/*' />
     RBS_DISABLED = 4,
 }

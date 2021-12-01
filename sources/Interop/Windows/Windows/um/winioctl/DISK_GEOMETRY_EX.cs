@@ -5,12 +5,16 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DISK_GEOMETRY_EX.xml' path='doc/member[@name="DISK_GEOMETRY_EX"]/*' />
 public unsafe partial struct DISK_GEOMETRY_EX
 {
+    /// <include file='DISK_GEOMETRY_EX.xml' path='doc/member[@name="DISK_GEOMETRY_EX.Geometry"]/*' />
     public DISK_GEOMETRY Geometry;
 
+    /// <include file='DISK_GEOMETRY_EX.xml' path='doc/member[@name="DISK_GEOMETRY_EX.DiskSize"]/*' />
     public LARGE_INTEGER DiskSize;
 
+    /// <include file='DISK_GEOMETRY_EX.xml' path='doc/member[@name="DISK_GEOMETRY_EX.Data"]/*' />
     [NativeTypeName("BYTE [1]")]
     public fixed byte Data[1];
 }

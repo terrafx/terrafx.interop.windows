@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_POLICY_EXTENSION.xml' path='doc/member[@name="WS_POLICY_EXTENSION"]/*' />
 public partial struct WS_POLICY_EXTENSION
 {
+    /// <include file='WS_POLICY_EXTENSION.xml' path='doc/member[@name="WS_POLICY_EXTENSION.type"]/*' />
     public WS_POLICY_EXTENSION_TYPE type;
 }

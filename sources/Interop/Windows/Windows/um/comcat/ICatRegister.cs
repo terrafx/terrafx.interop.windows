@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ICatRegister.xml' path='doc/member[@name="ICatRegister"]/*' />
 [Guid("0002E012-0000-0000-C000-000000000046")]
 [NativeTypeName("struct ICatRegister : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ICatRegister : ICatRegister.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ICatRegister : ICatRegister.Interface
         return ((delegate* unmanaged<ICatRegister*, Guid*, void**, int>)(lpVtbl[0]))((ICatRegister*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ICatRegister : ICatRegister.Interface
         return ((delegate* unmanaged<ICatRegister*, uint>)(lpVtbl[1]))((ICatRegister*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ICatRegister : ICatRegister.Interface
         return ((delegate* unmanaged<ICatRegister*, uint>)(lpVtbl[2]))((ICatRegister*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ICatRegister.xml' path='doc/member[@name="ICatRegister.RegisterCategories"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT RegisterCategories([NativeTypeName("ULONG")] uint cCategories, [NativeTypeName("CATEGORYINFO []")] CATEGORYINFO* rgCategoryInfo)
@@ -46,6 +51,7 @@ public unsafe partial struct ICatRegister : ICatRegister.Interface
         return ((delegate* unmanaged<ICatRegister*, uint, CATEGORYINFO*, int>)(lpVtbl[3]))((ICatRegister*)Unsafe.AsPointer(ref this), cCategories, rgCategoryInfo);
     }
 
+    /// <include file='ICatRegister.xml' path='doc/member[@name="ICatRegister.UnRegisterCategories"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT UnRegisterCategories([NativeTypeName("ULONG")] uint cCategories, [NativeTypeName("CATID []")] Guid* rgcatid)
@@ -53,6 +59,7 @@ public unsafe partial struct ICatRegister : ICatRegister.Interface
         return ((delegate* unmanaged<ICatRegister*, uint, Guid*, int>)(lpVtbl[4]))((ICatRegister*)Unsafe.AsPointer(ref this), cCategories, rgcatid);
     }
 
+    /// <include file='ICatRegister.xml' path='doc/member[@name="ICatRegister.RegisterClassImplCategories"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT RegisterClassImplCategories([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("ULONG")] uint cCategories, [NativeTypeName("CATID []")] Guid* rgcatid)
@@ -60,6 +67,7 @@ public unsafe partial struct ICatRegister : ICatRegister.Interface
         return ((delegate* unmanaged<ICatRegister*, Guid*, uint, Guid*, int>)(lpVtbl[5]))((ICatRegister*)Unsafe.AsPointer(ref this), rclsid, cCategories, rgcatid);
     }
 
+    /// <include file='ICatRegister.xml' path='doc/member[@name="ICatRegister.UnRegisterClassImplCategories"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT UnRegisterClassImplCategories([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("ULONG")] uint cCategories, [NativeTypeName("CATID []")] Guid* rgcatid)
@@ -67,6 +75,7 @@ public unsafe partial struct ICatRegister : ICatRegister.Interface
         return ((delegate* unmanaged<ICatRegister*, Guid*, uint, Guid*, int>)(lpVtbl[6]))((ICatRegister*)Unsafe.AsPointer(ref this), rclsid, cCategories, rgcatid);
     }
 
+    /// <include file='ICatRegister.xml' path='doc/member[@name="ICatRegister.RegisterClassReqCategories"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT RegisterClassReqCategories([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("ULONG")] uint cCategories, [NativeTypeName("CATID []")] Guid* rgcatid)
@@ -74,6 +83,7 @@ public unsafe partial struct ICatRegister : ICatRegister.Interface
         return ((delegate* unmanaged<ICatRegister*, Guid*, uint, Guid*, int>)(lpVtbl[7]))((ICatRegister*)Unsafe.AsPointer(ref this), rclsid, cCategories, rgcatid);
     }
 
+    /// <include file='ICatRegister.xml' path='doc/member[@name="ICatRegister.UnRegisterClassReqCategories"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT UnRegisterClassReqCategories([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("ULONG")] uint cCategories, [NativeTypeName("CATID []")] Guid* rgcatid)

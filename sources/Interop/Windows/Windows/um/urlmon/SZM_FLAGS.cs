@@ -7,9 +7,13 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SZM_FLAGS.xml' path='doc/member[@name="SZM_FLAGS"]/*' />
 [Flags]
 public enum SZM_FLAGS
 {
+    /// <include file='SZM_FLAGS.xml' path='doc/member[@name="SZM_FLAGS.SZM_CREATE"]/*' />
     SZM_CREATE = 0,
+
+    /// <include file='SZM_FLAGS.xml' path='doc/member[@name="SZM_FLAGS.SZM_DELETE"]/*' />
     SZM_DELETE = 0x1,
 }

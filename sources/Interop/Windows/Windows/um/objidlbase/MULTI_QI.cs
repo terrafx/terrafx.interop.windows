@@ -7,12 +7,16 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MULTI_QI.xml' path='doc/member[@name="MULTI_QI"]/*' />
 public unsafe partial struct MULTI_QI
 {
+    /// <include file='MULTI_QI.xml' path='doc/member[@name="MULTI_QI.pIID"]/*' />
     [NativeTypeName("const IID *")]
     public Guid* pIID;
 
+    /// <include file='MULTI_QI.xml' path='doc/member[@name="MULTI_QI.pItf"]/*' />
     public IUnknown* pItf;
 
+    /// <include file='MULTI_QI.xml' path='doc/member[@name="MULTI_QI.hr"]/*' />
     public HRESULT hr;
 }

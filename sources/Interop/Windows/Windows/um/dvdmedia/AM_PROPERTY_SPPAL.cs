@@ -9,11 +9,14 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='AM_PROPERTY_SPPAL.xml' path='doc/member[@name="AM_PROPERTY_SPPAL"]/*' />
 public partial struct AM_PROPERTY_SPPAL
 {
+    /// <include file='AM_PROPERTY_SPPAL.xml' path='doc/member[@name="AM_PROPERTY_SPPAL.sppal"]/*' />
     [NativeTypeName("AM_DVD_YUV [16]")]
     public _sppal_e__FixedBuffer sppal;
 
+    /// <include file='_sppal_e__FixedBuffer.xml' path='doc/member[@name="_sppal_e__FixedBuffer"]/*' />
     public partial struct _sppal_e__FixedBuffer
     {
         public AM_DVD_YUV e0;

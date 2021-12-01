@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TASKDIALOG_ICON_ELEMENTS.xml' path='doc/member[@name="TASKDIALOG_ICON_ELEMENTS"]/*' />
 public enum TASKDIALOG_ICON_ELEMENTS
 {
+    /// <include file='TASKDIALOG_ICON_ELEMENTS.xml' path='doc/member[@name="TASKDIALOG_ICON_ELEMENTS.TDIE_ICON_MAIN"]/*' />
     TDIE_ICON_MAIN,
+
+    /// <include file='TASKDIALOG_ICON_ELEMENTS.xml' path='doc/member[@name="TASKDIALOG_ICON_ELEMENTS.TDIE_ICON_FOOTER"]/*' />
     TDIE_ICON_FOOTER,
 }

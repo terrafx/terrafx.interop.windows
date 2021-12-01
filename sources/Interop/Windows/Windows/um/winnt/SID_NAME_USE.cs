@@ -5,17 +5,39 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SID_NAME_USE.xml' path='doc/member[@name="SID_NAME_USE"]/*' />
 public enum SID_NAME_USE
 {
+    /// <include file='SID_NAME_USE.xml' path='doc/member[@name="SID_NAME_USE.SidTypeUser"]/*' />
     SidTypeUser = 1,
+
+    /// <include file='SID_NAME_USE.xml' path='doc/member[@name="SID_NAME_USE.SidTypeGroup"]/*' />
     SidTypeGroup,
+
+    /// <include file='SID_NAME_USE.xml' path='doc/member[@name="SID_NAME_USE.SidTypeDomain"]/*' />
     SidTypeDomain,
+
+    /// <include file='SID_NAME_USE.xml' path='doc/member[@name="SID_NAME_USE.SidTypeAlias"]/*' />
     SidTypeAlias,
+
+    /// <include file='SID_NAME_USE.xml' path='doc/member[@name="SID_NAME_USE.SidTypeWellKnownGroup"]/*' />
     SidTypeWellKnownGroup,
+
+    /// <include file='SID_NAME_USE.xml' path='doc/member[@name="SID_NAME_USE.SidTypeDeletedAccount"]/*' />
     SidTypeDeletedAccount,
+
+    /// <include file='SID_NAME_USE.xml' path='doc/member[@name="SID_NAME_USE.SidTypeInvalid"]/*' />
     SidTypeInvalid,
+
+    /// <include file='SID_NAME_USE.xml' path='doc/member[@name="SID_NAME_USE.SidTypeUnknown"]/*' />
     SidTypeUnknown,
+
+    /// <include file='SID_NAME_USE.xml' path='doc/member[@name="SID_NAME_USE.SidTypeComputer"]/*' />
     SidTypeComputer,
+
+    /// <include file='SID_NAME_USE.xml' path='doc/member[@name="SID_NAME_USE.SidTypeLabel"]/*' />
     SidTypeLabel,
+
+    /// <include file='SID_NAME_USE.xml' path='doc/member[@name="SID_NAME_USE.SidTypeLogonSession"]/*' />
     SidTypeLogonSession,
 }

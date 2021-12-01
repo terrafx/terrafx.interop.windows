@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMallocSpy.xml' path='doc/member[@name="IMallocSpy"]/*' />
 [Guid("0000001D-0000-0000-C000-000000000046")]
 [NativeTypeName("struct IMallocSpy : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMallocSpy : IMallocSpy.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMallocSpy : IMallocSpy.Interface
         return ((delegate* unmanaged<IMallocSpy*, Guid*, void**, int>)(lpVtbl[0]))((IMallocSpy*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMallocSpy : IMallocSpy.Interface
         return ((delegate* unmanaged<IMallocSpy*, uint>)(lpVtbl[1]))((IMallocSpy*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMallocSpy : IMallocSpy.Interface
         return ((delegate* unmanaged<IMallocSpy*, uint>)(lpVtbl[2]))((IMallocSpy*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMallocSpy.xml' path='doc/member[@name="IMallocSpy.PreAlloc"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     [return: NativeTypeName("SIZE_T")]
@@ -47,6 +52,7 @@ public unsafe partial struct IMallocSpy : IMallocSpy.Interface
         return ((delegate* unmanaged<IMallocSpy*, nuint, nuint>)(lpVtbl[3]))((IMallocSpy*)Unsafe.AsPointer(ref this), cbRequest);
     }
 
+    /// <include file='IMallocSpy.xml' path='doc/member[@name="IMallocSpy.PostAlloc"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public void* PostAlloc(void* pActual)
@@ -54,6 +60,7 @@ public unsafe partial struct IMallocSpy : IMallocSpy.Interface
         return ((delegate* unmanaged<IMallocSpy*, void*, void*>)(lpVtbl[4]))((IMallocSpy*)Unsafe.AsPointer(ref this), pActual);
     }
 
+    /// <include file='IMallocSpy.xml' path='doc/member[@name="IMallocSpy.PreFree"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public void* PreFree(void* pRequest, BOOL fSpyed)
@@ -61,6 +68,7 @@ public unsafe partial struct IMallocSpy : IMallocSpy.Interface
         return ((delegate* unmanaged<IMallocSpy*, void*, BOOL, void*>)(lpVtbl[5]))((IMallocSpy*)Unsafe.AsPointer(ref this), pRequest, fSpyed);
     }
 
+    /// <include file='IMallocSpy.xml' path='doc/member[@name="IMallocSpy.PostFree"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public void PostFree(BOOL fSpyed)
@@ -68,6 +76,7 @@ public unsafe partial struct IMallocSpy : IMallocSpy.Interface
         ((delegate* unmanaged<IMallocSpy*, BOOL, void>)(lpVtbl[6]))((IMallocSpy*)Unsafe.AsPointer(ref this), fSpyed);
     }
 
+    /// <include file='IMallocSpy.xml' path='doc/member[@name="IMallocSpy.PreRealloc"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     [return: NativeTypeName("SIZE_T")]
@@ -76,6 +85,7 @@ public unsafe partial struct IMallocSpy : IMallocSpy.Interface
         return ((delegate* unmanaged<IMallocSpy*, void*, nuint, void**, BOOL, nuint>)(lpVtbl[7]))((IMallocSpy*)Unsafe.AsPointer(ref this), pRequest, cbRequest, ppNewRequest, fSpyed);
     }
 
+    /// <include file='IMallocSpy.xml' path='doc/member[@name="IMallocSpy.PostRealloc"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public void* PostRealloc(void* pActual, BOOL fSpyed)
@@ -83,6 +93,7 @@ public unsafe partial struct IMallocSpy : IMallocSpy.Interface
         return ((delegate* unmanaged<IMallocSpy*, void*, BOOL, void*>)(lpVtbl[8]))((IMallocSpy*)Unsafe.AsPointer(ref this), pActual, fSpyed);
     }
 
+    /// <include file='IMallocSpy.xml' path='doc/member[@name="IMallocSpy.PreGetSize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public void* PreGetSize(void* pRequest, BOOL fSpyed)
@@ -90,6 +101,7 @@ public unsafe partial struct IMallocSpy : IMallocSpy.Interface
         return ((delegate* unmanaged<IMallocSpy*, void*, BOOL, void*>)(lpVtbl[9]))((IMallocSpy*)Unsafe.AsPointer(ref this), pRequest, fSpyed);
     }
 
+    /// <include file='IMallocSpy.xml' path='doc/member[@name="IMallocSpy.PostGetSize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     [return: NativeTypeName("SIZE_T")]
@@ -98,6 +110,7 @@ public unsafe partial struct IMallocSpy : IMallocSpy.Interface
         return ((delegate* unmanaged<IMallocSpy*, nuint, BOOL, nuint>)(lpVtbl[10]))((IMallocSpy*)Unsafe.AsPointer(ref this), cbActual, fSpyed);
     }
 
+    /// <include file='IMallocSpy.xml' path='doc/member[@name="IMallocSpy.PreDidAlloc"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public void* PreDidAlloc(void* pRequest, BOOL fSpyed)
@@ -105,6 +118,7 @@ public unsafe partial struct IMallocSpy : IMallocSpy.Interface
         return ((delegate* unmanaged<IMallocSpy*, void*, BOOL, void*>)(lpVtbl[11]))((IMallocSpy*)Unsafe.AsPointer(ref this), pRequest, fSpyed);
     }
 
+    /// <include file='IMallocSpy.xml' path='doc/member[@name="IMallocSpy.PostDidAlloc"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public int PostDidAlloc(void* pRequest, BOOL fSpyed, int fActual)
@@ -112,6 +126,7 @@ public unsafe partial struct IMallocSpy : IMallocSpy.Interface
         return ((delegate* unmanaged<IMallocSpy*, void*, BOOL, int, int>)(lpVtbl[12]))((IMallocSpy*)Unsafe.AsPointer(ref this), pRequest, fSpyed, fActual);
     }
 
+    /// <include file='IMallocSpy.xml' path='doc/member[@name="IMallocSpy.PreHeapMinimize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public void PreHeapMinimize()
@@ -119,6 +134,7 @@ public unsafe partial struct IMallocSpy : IMallocSpy.Interface
         ((delegate* unmanaged<IMallocSpy*, void>)(lpVtbl[13]))((IMallocSpy*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMallocSpy.xml' path='doc/member[@name="IMallocSpy.PostHeapMinimize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public void PostHeapMinimize()

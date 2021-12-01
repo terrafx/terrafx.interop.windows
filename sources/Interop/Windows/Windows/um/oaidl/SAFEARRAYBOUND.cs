@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SAFEARRAYBOUND.xml' path='doc/member[@name="SAFEARRAYBOUND"]/*' />
 public partial struct SAFEARRAYBOUND
 {
+    /// <include file='SAFEARRAYBOUND.xml' path='doc/member[@name="SAFEARRAYBOUND.cElements"]/*' />
     [NativeTypeName("ULONG")]
     public uint cElements;
 
+    /// <include file='SAFEARRAYBOUND.xml' path='doc/member[@name="SAFEARRAYBOUND.lLbound"]/*' />
     [NativeTypeName("LONG")]
     public int lLbound;
 }

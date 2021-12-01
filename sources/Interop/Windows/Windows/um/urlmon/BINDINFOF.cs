@@ -7,9 +7,13 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='BINDINFOF.xml' path='doc/member[@name="BINDINFOF"]/*' />
 [Flags]
 public enum BINDINFOF
 {
+    /// <include file='BINDINFOF.xml' path='doc/member[@name="BINDINFOF.BINDINFOF_URLENCODESTGMEDDATA"]/*' />
     BINDINFOF_URLENCODESTGMEDDATA = 0x1,
+
+    /// <include file='BINDINFOF.xml' path='doc/member[@name="BINDINFOF.BINDINFOF_URLENCODEDEXTRAINFO"]/*' />
     BINDINFOF_URLENCODEDEXTRAINFO = 0x2,
 }

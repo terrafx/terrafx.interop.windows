@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ISyncMgrResolutionHandler.xml' path='doc/member[@name="ISyncMgrResolutionHandler"]/*' />
 [Guid("40A3D052-8BFF-4C4B-A338-D4A395700DE9")]
 [NativeTypeName("struct ISyncMgrResolutionHandler : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ISyncMgrResolutionHandler : ISyncMgrResolutionHandl
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ISyncMgrResolutionHandler : ISyncMgrResolutionHandl
         return ((delegate* unmanaged<ISyncMgrResolutionHandler*, Guid*, void**, int>)(lpVtbl[0]))((ISyncMgrResolutionHandler*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ISyncMgrResolutionHandler : ISyncMgrResolutionHandl
         return ((delegate* unmanaged<ISyncMgrResolutionHandler*, uint>)(lpVtbl[1]))((ISyncMgrResolutionHandler*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ISyncMgrResolutionHandler : ISyncMgrResolutionHandl
         return ((delegate* unmanaged<ISyncMgrResolutionHandler*, uint>)(lpVtbl[2]))((ISyncMgrResolutionHandler*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ISyncMgrResolutionHandler.xml' path='doc/member[@name="ISyncMgrResolutionHandler.QueryAbilities"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT QueryAbilities([NativeTypeName("SYNCMGR_RESOLUTION_ABILITIES_FLAGS *")] uint* pdwAbilities)
@@ -46,6 +51,7 @@ public unsafe partial struct ISyncMgrResolutionHandler : ISyncMgrResolutionHandl
         return ((delegate* unmanaged<ISyncMgrResolutionHandler*, uint*, int>)(lpVtbl[3]))((ISyncMgrResolutionHandler*)Unsafe.AsPointer(ref this), pdwAbilities);
     }
 
+    /// <include file='ISyncMgrResolutionHandler.xml' path='doc/member[@name="ISyncMgrResolutionHandler.KeepOther"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT KeepOther(IShellItem* psiOther, SYNCMGR_RESOLUTION_FEEDBACK* pFeedback)
@@ -53,6 +59,7 @@ public unsafe partial struct ISyncMgrResolutionHandler : ISyncMgrResolutionHandl
         return ((delegate* unmanaged<ISyncMgrResolutionHandler*, IShellItem*, SYNCMGR_RESOLUTION_FEEDBACK*, int>)(lpVtbl[4]))((ISyncMgrResolutionHandler*)Unsafe.AsPointer(ref this), psiOther, pFeedback);
     }
 
+    /// <include file='ISyncMgrResolutionHandler.xml' path='doc/member[@name="ISyncMgrResolutionHandler.KeepRecent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT KeepRecent(SYNCMGR_RESOLUTION_FEEDBACK* pFeedback)
@@ -60,6 +67,7 @@ public unsafe partial struct ISyncMgrResolutionHandler : ISyncMgrResolutionHandl
         return ((delegate* unmanaged<ISyncMgrResolutionHandler*, SYNCMGR_RESOLUTION_FEEDBACK*, int>)(lpVtbl[5]))((ISyncMgrResolutionHandler*)Unsafe.AsPointer(ref this), pFeedback);
     }
 
+    /// <include file='ISyncMgrResolutionHandler.xml' path='doc/member[@name="ISyncMgrResolutionHandler.RemoveFromSyncSet"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT RemoveFromSyncSet(SYNCMGR_RESOLUTION_FEEDBACK* pFeedback)
@@ -67,6 +75,7 @@ public unsafe partial struct ISyncMgrResolutionHandler : ISyncMgrResolutionHandl
         return ((delegate* unmanaged<ISyncMgrResolutionHandler*, SYNCMGR_RESOLUTION_FEEDBACK*, int>)(lpVtbl[6]))((ISyncMgrResolutionHandler*)Unsafe.AsPointer(ref this), pFeedback);
     }
 
+    /// <include file='ISyncMgrResolutionHandler.xml' path='doc/member[@name="ISyncMgrResolutionHandler.KeepItems"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT KeepItems(ISyncMgrConflictResolutionItems* pArray, SYNCMGR_RESOLUTION_FEEDBACK* pFeedback)

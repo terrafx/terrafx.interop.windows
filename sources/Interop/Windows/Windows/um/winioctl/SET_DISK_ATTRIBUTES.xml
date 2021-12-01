@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SET_DISK_ATTRIBUTES">
+    <summary>
+      <para>Specifies the attributes to be set on a disk device. Passed as the input buffer to the
+<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_disk_set_disk_attributes">IOCTL_DISK_SET_DISK_ATTRIBUTES</a> control
+code.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/FileIO/disk-management-structures">Disk Management Structures</seealso>
+    <seealso cref="GET_DISK_ATTRIBUTES" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_disk_set_disk_attributes">IOCTL_DISK_SET_DISK_ATTRIBUTES</seealso>
+  </member>
+  <member name="SET_DISK_ATTRIBUTES.Version">
+    <summary>
+      <para>Set to <code>sizeof(GET_DISK_ATTRIBUTES)</code>.</para>
+    </summary>
+  </member>
+  <member name="SET_DISK_ATTRIBUTES.Persist">
+    <summary>
+      <para>If <b>TRUE</b>, these settings are persisted across reboots.</para>
+    </summary>
+  </member>
+  <member name="SET_DISK_ATTRIBUTES.Reserved1">
+    <summary>
+      <para>Reserved. Must be set to <b>FALSE</b> (0).</para>
+    </summary>
+  </member>
+  <member name="SET_DISK_ATTRIBUTES.Attributes">
+    <summary>
+      <para>Specifies attributes.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>DISK_ATTRIBUTE_OFFLINE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0000000000000001</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The disk is offline.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>DISK_ATTRIBUTE_READ_ONLY</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0000000000000002</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The disk is read-only.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="SET_DISK_ATTRIBUTES.AttributesMask">
+    <summary>
+      <para>Indicates which attributes are being changed.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>DISK_ATTRIBUTE_OFFLINE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0000000000000001</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The offline attribute is being changed.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>DISK_ATTRIBUTE_READ_ONLY</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0000000000000002</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The read-only attribute is being changed.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="SET_DISK_ATTRIBUTES.Reserved2">
+    <summary>
+      <para>Reserved. Must be set to 0.</para>
+    </summary>
+  </member>
+</doc>

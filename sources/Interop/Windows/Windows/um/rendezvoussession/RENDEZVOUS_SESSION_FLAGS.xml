@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="RENDEZVOUS_SESSION_FLAGS">
+    <summary>
+      <para>Provides the list of possible flags for the session invitation.</para>
+    </summary>
+  </member>
+  <member name="RENDEZVOUS_SESSION_FLAGS.RSF_NONE">
+    <summary>
+      <para>No such value.</para>
+    </summary>
+  </member>
+  <member name="RENDEZVOUS_SESSION_FLAGS.RSF_INVITER">
+    <summary>
+      <para>The party that sets the session object is the inviter.</para>
+    </summary>
+  </member>
+  <member name="RENDEZVOUS_SESSION_FLAGS.RSF_INVITEE">
+    <summary>
+      <para>The party that sets the session object is the recipient.</para>
+    </summary>
+  </member>
+  <member name="RENDEZVOUS_SESSION_FLAGS.RSF_ORIGINAL_INVITER">
+    <summary></summary>
+  </member>
+  <member name="RENDEZVOUS_SESSION_FLAGS.RSF_REMOTE_LEGACYSESSION">
+    <summary></summary>
+  </member>
+  <member name="RENDEZVOUS_SESSION_FLAGS.RSF_REMOTE_WIN7SESSION">
+    <summary></summary>
+  </member>
+</doc>

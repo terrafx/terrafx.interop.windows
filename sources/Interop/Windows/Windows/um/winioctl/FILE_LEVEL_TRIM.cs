@@ -10,18 +10,23 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='FILE_LEVEL_TRIM.xml' path='doc/member[@name="FILE_LEVEL_TRIM"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public partial struct FILE_LEVEL_TRIM
 {
+    /// <include file='FILE_LEVEL_TRIM.xml' path='doc/member[@name="FILE_LEVEL_TRIM.Key"]/*' />
     [NativeTypeName("DWORD")]
     public uint Key;
 
+    /// <include file='FILE_LEVEL_TRIM.xml' path='doc/member[@name="FILE_LEVEL_TRIM.NumRanges"]/*' />
     [NativeTypeName("DWORD")]
     public uint NumRanges;
 
+    /// <include file='FILE_LEVEL_TRIM.xml' path='doc/member[@name="FILE_LEVEL_TRIM.Ranges"]/*' />
     [NativeTypeName("FILE_LEVEL_TRIM_RANGE [1]")]
     public _Ranges_e__FixedBuffer Ranges;
 
+    /// <include file='_Ranges_e__FixedBuffer.xml' path='doc/member[@name="_Ranges_e__FixedBuffer"]/*' />
     public partial struct _Ranges_e__FixedBuffer
     {
         public FILE_LEVEL_TRIM_RANGE e0;

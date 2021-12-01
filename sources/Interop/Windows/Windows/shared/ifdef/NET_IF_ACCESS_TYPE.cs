@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NET_IF_ACCESS_TYPE.xml' path='doc/member[@name="NET_IF_ACCESS_TYPE"]/*' />
 public enum NET_IF_ACCESS_TYPE
 {
+    /// <include file='NET_IF_ACCESS_TYPE.xml' path='doc/member[@name="NET_IF_ACCESS_TYPE.NET_IF_ACCESS_LOOPBACK"]/*' />
     NET_IF_ACCESS_LOOPBACK = 1,
+
+    /// <include file='NET_IF_ACCESS_TYPE.xml' path='doc/member[@name="NET_IF_ACCESS_TYPE.NET_IF_ACCESS_BROADCAST"]/*' />
     NET_IF_ACCESS_BROADCAST = 2,
+
+    /// <include file='NET_IF_ACCESS_TYPE.xml' path='doc/member[@name="NET_IF_ACCESS_TYPE.NET_IF_ACCESS_POINT_TO_POINT"]/*' />
     NET_IF_ACCESS_POINT_TO_POINT = 3,
+
+    /// <include file='NET_IF_ACCESS_TYPE.xml' path='doc/member[@name="NET_IF_ACCESS_TYPE.NET_IF_ACCESS_POINT_TO_MULTI_POINT"]/*' />
     NET_IF_ACCESS_POINT_TO_MULTI_POINT = 4,
+
+    /// <include file='NET_IF_ACCESS_TYPE.xml' path='doc/member[@name="NET_IF_ACCESS_TYPE.NET_IF_ACCESS_MAXIMUM"]/*' />
     NET_IF_ACCESS_MAXIMUM = 5,
 }

@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='eAVEncDDPreferredStereoDownMixMode.xml' path='doc/member[@name="eAVEncDDPreferredStereoDownMixMode"]/*' />
 public enum eAVEncDDPreferredStereoDownMixMode
 {
+    /// <include file='eAVEncDDPreferredStereoDownMixMode.xml' path='doc/member[@name="eAVEncDDPreferredStereoDownMixMode.eAVEncDDPreferredStereoDownMixMode_LtRt"]/*' />
     eAVEncDDPreferredStereoDownMixMode_LtRt = 0,
+
+    /// <include file='eAVEncDDPreferredStereoDownMixMode.xml' path='doc/member[@name="eAVEncDDPreferredStereoDownMixMode.eAVEncDDPreferredStereoDownMixMode_LoRo"]/*' />
     eAVEncDDPreferredStereoDownMixMode_LoRo = 1,
 }

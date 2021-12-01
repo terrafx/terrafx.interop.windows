@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IShellFolderView.GetArrangeParam">
+    <summary>
+      <para>Gets the arrangement parameter of the view, which is how the view has been sorted.</para>
+      <para>
+        <b>Note</b>  This method is deprecated as of Windows Vista. It might be altered or unavailable in subsequent versions of Windows. We recommend that you use <see cref="IFolderView2.GetSortColumns" /> instead.</para>
+    </summary>
+    <param name="plParamSort">
+      <para>Type: <b>LPARAM*</b></para>
+      <para>The lower sixteen bits of <i>plParamSort</i> define the sorting rule. Most applications set the sorting rule to the default value of zero, indicating that the items should be sorted by name. The system does not define any other sorting rules. Some folder objects might allow calling applications to use the lower sixteen bits of <i>plParamSort</i> to specify folder-specific sorting rules. The rules and their associated <i>plParamSort</i> values are defined by the folder.</para>
+      <para>When the system folder view object calls <b>IShellFolderView.GetArrangeParam</b>, the lower sixteen bits of <i>plParamSort</i> are used to specify the column to be used for the arranging.</para>
+      <para>The upper sixteen bits of <i>plParamSort</i> are used for flags that modify the sorting rule. The system currently defines the following modifier flags.</para>
+      <h4>SHCIDS_ALLFIELDS</h4>
+      <para>
+        <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/bb776779(v=vs.85)">Version 5.0</a>. Arrange all the information contained in the <see cref="ITEMIDLIST" /> structure, not just the display names. This flag is valid only for folder objects that support the <see cref="IShellFolder2" /> interface. For instance, if the two items are files, the folder arranges their names, sizes, file times, attributes, and any other information in the structures. If this flag is set, the lower sixteen bits of <i>plParamSort</i> must be zero.</para>
+      <h4>SHCIDS_CANONICALONLY</h4>
+      <para>
+        <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/bb776779(v=vs.85)">Version 5.0</a>. When arranging by name, arrange the system names but not the display names. When this flag is passed, the two items are arranged by whatever criteria the Shell folder determines most efficient, as long as it implements a consistent sort function. This flag cannot be combined with other flags.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IShellFolderView.MoveIcons">
+    <summary>
+      <para>This method is not implemented.</para>
+    </summary>
+    <param name="pDataObject">
+      <para>Type: <b><see cref="IDataObject" />*</b></para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>This method is not implemented.</para>
+    </returns>
+  </member>
+</doc>

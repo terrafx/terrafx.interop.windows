@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CERT_RDN">
+    <summary>
+      <para>The <b>CERT_RDN</b> structure contains a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/r-gly">relative distinguished name</a> (RDN) consisting of an array of
+<see cref="CERT_RDN_ATTR" /> structures.</para>
+    </summary>
+    <seealso cref="CERT_NAME_INFO" />
+    <seealso cref="CERT_RDN_ATTR" />
+    <seealso cref="CertFindCertificateInStore" />
+    <seealso cref="CertIsRDNAttrsInCertificateName" />
+    <seealso cref="CertNameToStr" />
+  </member>
+  <member name="CERT_RDN.cRDNAttr">
+    <summary>
+      <para>Number of elements in the <b>rgRDNAttr</b> array.</para>
+    </summary>
+  </member>
+  <member name="CERT_RDN.rgRDNAttr">
+    <summary>
+      <para>Array of
+<see cref="CERT_RDN_ATTR" /> structures.</para>
+    </summary>
+  </member>
+</doc>

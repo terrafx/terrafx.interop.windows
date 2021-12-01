@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PROCESS_DYNAMIC_EH_CONTINUATION_TARGET">
+    <summary>
+      <para>Contains dynamic exception handling continuation targets. The <see cref="SetProcessDynamicEHContinuationTargets" /> function uses this structure.</para>
+    </summary>
+  </member>
+  <member name="PROCESS_DYNAMIC_EH_CONTINUATION_TARGET.TargetAddress">
+    <summary>
+      <para>The address of a dynamic exception handling continuation target.</para>
+    </summary>
+  </member>
+  <member name="PROCESS_DYNAMIC_EH_CONTINUATION_TARGET.Flags">
+    <summary>
+      <para>Flags that apply to the dynamic exception handling continuation target in <i>TargetAddress</i>.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>DYNAMIC_EH_CONTINUATION_TARGET_ADD</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000001UL</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Dynamic exception handling continuation target should be added. If this flag is not set, the target is removed. This is an input flag.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>DYNAMIC_EH_CONTINUATION_TARGET_PROCESSED</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000002UL</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Dynamic exception handling continuation target has been successfully processed (either added or removed).
+This is an output flag used to report which targets were successfully processed when processing an array of multiple targets.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+</doc>

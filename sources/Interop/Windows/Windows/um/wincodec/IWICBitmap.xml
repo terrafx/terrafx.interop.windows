@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IWICBitmap.Lock">
+    <summary>
+      <para>Provides access to a rectangular area of the bitmap.</para>
+    </summary>
+    <param name="prcLock">
+      <para>Type: <b>const <see cref="WICRect" />*</b></para>
+      <para>The rectangle to be accessed.</para>
+    </param>
+    <param name="flags">
+      <para>Type: <b>DWORD</b></para>
+      <para>The access mode you wish to obtain for the lock. This is a bitwise combination of <see cref="WICBitmapLockFlags" /> for read, write, or read and write access.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>WICBitmapLockRead</b>
+          </description>
+          <description>
+            <para>The read access lock.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>WICBitmapLockWrite</b>
+          </description>
+          <description>
+            <para>The write access lock.</para>
+          </description>
+        </item>
+      </list>
+    </param>
+    <param name="ppILock">
+      <para>Type: <b><see cref="IWICBitmapLock" />**</b></para>
+      <para>A pointer that receives the locked memory location.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Locks are exclusive for writing but can be shared for reading. You cannot call <see cref="CopyPixels" /> while the <see cref="IWICBitmap" /> is locked for writing. Doing so will return an error, since locks are exclusive.</para>
+      <h4>Examples</h4>
+      <para>In the following example, an <see cref="IWICBitmap" /> is created and the image data is cleared using an <see cref="IWICBitmapLock" />.</para>
+      <code>
+
+    IWICImagingFactory *pFactory = NULL;
+    IWICBitmap *pBitmap = NULL;
+
+    UINT uiWidth = 640;
+    UINT uiHeight = 480;
+    WICPixelFormatGUID formatGUID = GUID_WICPixelFormat32bppBGRA;
+
+    WICRect rcLock = { 0, 0, uiWidth, uiHeight };
+    IWICBitmapLock *pLock = NULL;
+
+    HRESULT hr = CoCreateInstance(
+        CLSID_WICImagingFactory,
+        NULL,
+        CLSCTX_INPROC_SERVER,
+        IID_IWICImagingFactory,
+        (LPVOID*)&amp;amp;amp;amp;amp;amp;pFactory
+        );
+
+    if (SUCCEEDED(hr))
+    {
+        hr = pFactory-&gt;CreateBitmap(uiWidth, uiHeight, formatGUID, WICBitmapCacheOnDemand, &amp;amp;amp;amp;amp;amp;pBitmap);
+    }
+
+    if (SUCCEEDED(hr))
+    {
+        hr = pBitmap-&gt;Lock(&amp;amp;amp;amp;amp;amp;rcLock, WICBitmapLockWrite, &amp;amp;amp;amp;amp;amp;pLock);
+
+        if (SUCCEEDED(hr))
+        {
+            UINT cbBufferSize = 0;
+            UINT cbStride = 0;
+            BYTE *pv = NULL;
+
+            hr = pLock-&gt;GetStride(&amp;amp;amp;amp;amp;amp;cbStride);
+
+            if (SUCCEEDED(hr))
+            {
+                hr = pLock-&gt;GetDataPointer(&amp;amp;amp;amp;amp;amp;cbBufferSize, &amp;amp;amp;amp;amp;amp;pv);
+            }
+
+            // Clear the image data
+            ZeroMemory(pv, cbBufferSize);
+
+            // Release the bitmap lock.
+            pLock-&gt;Release();
+        }
+    }
+
+    if (pBitmap)
+    {
+        pBitmap-&gt;Release();
+    }
+
+    if (pFactory)
+    {
+        pFactory-&gt;Release();
+    }
+
+    return hr;
+
+</code>
+    </remarks>
+  </member>
+  <member name="IWICBitmap.SetPalette">
+    <summary>
+      <para>Provides access for palette modifications.</para>
+    </summary>
+    <param name="pIPalette">
+      <para>Type: <b><see cref="IWICPalette" />*</b></para>
+      <para>The palette to use for conversion.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IWICBitmap.SetResolution">
+    <summary>
+      <para>Changes the physical resolution of the image.</para>
+    </summary>
+    <param name="dpiX">
+      <para>Type: <b>double</b></para>
+      <para>The horizontal resolution.</para>
+    </param>
+    <param name="dpiY">
+      <para>Type: <b>double</b></para>
+      <para>The vertical resolution.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This method has no effect on the actual pixels or samples stored in the bitmap.
+Instead the interpretation of the sampling rate is modified.
+This means that a 96 DPI image which is 96 pixels wide is one inch.
+If the physical resolution is modified to 48 DPI, then the bitmap is considered to be 2 inches wide but has the same number of pixels.
+If the resolution is less than <b>REAL_EPSILON</b> (1.192092896e-07F) the error code <b>WINCODEC_ERR_INVALIDPARAMETER</b> is returned.</para>
+    </remarks>
+  </member>
+  <member name="IWICBitmap">
+    <summary>
+      <para>Defines methods that add the concept of writeability and static in-memory representations of bitmaps to <see cref="IWICBitmapSource" />.</para>
+    </summary>
+    <remarks>
+      <para>
+        <b>IWICBitmap</b> inherits from <see cref="IWICBitmapSource" /> and therefore also inherits the <see cref="CopyPixels" /> method.
+When pixels need to be moved to a new memory location, <b>CopyPixels</b> is often the most efficient.</para>
+      <para>Because of the internal memory representation implied by the <b>IWICBitmap</b>, in-place modification and processing using the <see cref="Lock" /> is more efficient than <see cref="CopyPixels" />, usually reducing to a simple pointer access directly into the memory owned by the bitmap rather than a copy.
+This is contrasted to procedural bitmaps which implement only <b>CopyPixels</b> because there is no internal memory representation and one would need to be created on demand to satisfy a call to <b>Lock</b>.</para>
+    </remarks>
+  </member>
+</doc>

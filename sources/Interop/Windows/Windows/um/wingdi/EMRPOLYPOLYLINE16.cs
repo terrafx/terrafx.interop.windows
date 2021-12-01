@@ -9,24 +9,32 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='EMRPOLYPOLYLINE16.xml' path='doc/member[@name="EMRPOLYPOLYLINE16"]/*' />
 public unsafe partial struct EMRPOLYPOLYLINE16
 {
+    /// <include file='EMRPOLYPOLYLINE16.xml' path='doc/member[@name="EMRPOLYPOLYLINE16.emr"]/*' />
     public EMR emr;
 
+    /// <include file='EMRPOLYPOLYLINE16.xml' path='doc/member[@name="EMRPOLYPOLYLINE16.rclBounds"]/*' />
     public RECTL rclBounds;
 
+    /// <include file='EMRPOLYPOLYLINE16.xml' path='doc/member[@name="EMRPOLYPOLYLINE16.nPolys"]/*' />
     [NativeTypeName("DWORD")]
     public uint nPolys;
 
+    /// <include file='EMRPOLYPOLYLINE16.xml' path='doc/member[@name="EMRPOLYPOLYLINE16.cpts"]/*' />
     [NativeTypeName("DWORD")]
     public uint cpts;
 
+    /// <include file='EMRPOLYPOLYLINE16.xml' path='doc/member[@name="EMRPOLYPOLYLINE16.aPolyCounts"]/*' />
     [NativeTypeName("DWORD [1]")]
     public fixed uint aPolyCounts[1];
 
+    /// <include file='EMRPOLYPOLYLINE16.xml' path='doc/member[@name="EMRPOLYPOLYLINE16.apts"]/*' />
     [NativeTypeName("POINTS [1]")]
     public _apts_e__FixedBuffer apts;
 
+    /// <include file='_apts_e__FixedBuffer.xml' path='doc/member[@name="_apts_e__FixedBuffer"]/*' />
     public partial struct _apts_e__FixedBuffer
     {
         public POINTS e0;

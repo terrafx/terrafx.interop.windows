@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='OMAP.xml' path='doc/member[@name="OMAP"]/*' />
 public partial struct OMAP
 {
+    /// <include file='OMAP.xml' path='doc/member[@name="OMAP.rva"]/*' />
     [NativeTypeName("ULONG")]
     public uint rva;
 
+    /// <include file='OMAP.xml' path='doc/member[@name="OMAP.rvaTo"]/*' />
     [NativeTypeName("ULONG")]
     public uint rvaTo;
 }

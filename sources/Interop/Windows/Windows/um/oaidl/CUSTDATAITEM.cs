@@ -7,10 +7,13 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CUSTDATAITEM.xml' path='doc/member[@name="CUSTDATAITEM"]/*' />
 public partial struct CUSTDATAITEM
 {
+    /// <include file='CUSTDATAITEM.xml' path='doc/member[@name="CUSTDATAITEM.guid"]/*' />
     public Guid guid;
 
+    /// <include file='CUSTDATAITEM.xml' path='doc/member[@name="CUSTDATAITEM.varValue"]/*' />
     [NativeTypeName("VARIANTARG")]
     public VARIANT varValue;
 }

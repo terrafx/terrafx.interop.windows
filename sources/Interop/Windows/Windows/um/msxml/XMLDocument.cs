@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='XMLDocument.xml' path='doc/member[@name="XMLDocument"]/*' />
 [Guid("CFC399AF-D876-11D0-9C10-00C04FC99C8E")]
 public partial struct XMLDocument
 {

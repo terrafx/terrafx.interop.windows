@@ -9,15 +9,20 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ARRAYDESC.xml' path='doc/member[@name="ARRAYDESC"]/*' />
 public partial struct ARRAYDESC
 {
+    /// <include file='ARRAYDESC.xml' path='doc/member[@name="ARRAYDESC.tdescElem"]/*' />
     public TYPEDESC tdescElem;
 
+    /// <include file='ARRAYDESC.xml' path='doc/member[@name="ARRAYDESC.cDims"]/*' />
     public ushort cDims;
 
+    /// <include file='ARRAYDESC.xml' path='doc/member[@name="ARRAYDESC.rgbounds"]/*' />
     [NativeTypeName("SAFEARRAYBOUND [1]")]
     public _rgbounds_e__FixedBuffer rgbounds;
 
+    /// <include file='_rgbounds_e__FixedBuffer.xml' path='doc/member[@name="_rgbounds_e__FixedBuffer"]/*' />
     public partial struct _rgbounds_e__FixedBuffer
     {
         public SAFEARRAYBOUND e0;

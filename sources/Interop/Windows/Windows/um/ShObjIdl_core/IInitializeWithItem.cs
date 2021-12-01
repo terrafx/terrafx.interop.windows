@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IInitializeWithItem.xml' path='doc/member[@name="IInitializeWithItem"]/*' />
 [Guid("7F73BE3F-FB79-493C-A6C7-7EE14E245841")]
 [NativeTypeName("struct IInitializeWithItem : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IInitializeWithItem : IInitializeWithItem.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IInitializeWithItem : IInitializeWithItem.Interface
         return ((delegate* unmanaged<IInitializeWithItem*, Guid*, void**, int>)(lpVtbl[0]))((IInitializeWithItem*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IInitializeWithItem : IInitializeWithItem.Interface
         return ((delegate* unmanaged<IInitializeWithItem*, uint>)(lpVtbl[1]))((IInitializeWithItem*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IInitializeWithItem : IInitializeWithItem.Interface
         return ((delegate* unmanaged<IInitializeWithItem*, uint>)(lpVtbl[2]))((IInitializeWithItem*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IInitializeWithItem.xml' path='doc/member[@name="IInitializeWithItem.Initialize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Initialize(IShellItem* psi, [NativeTypeName("DWORD")] uint grfMode)

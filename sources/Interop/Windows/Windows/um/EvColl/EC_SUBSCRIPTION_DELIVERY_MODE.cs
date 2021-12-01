@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='EC_SUBSCRIPTION_DELIVERY_MODE.xml' path='doc/member[@name="EC_SUBSCRIPTION_DELIVERY_MODE"]/*' />
 public enum EC_SUBSCRIPTION_DELIVERY_MODE
 {
+    /// <include file='EC_SUBSCRIPTION_DELIVERY_MODE.xml' path='doc/member[@name="EC_SUBSCRIPTION_DELIVERY_MODE.EcDeliveryModePull"]/*' />
     EcDeliveryModePull = 1,
+
+    /// <include file='EC_SUBSCRIPTION_DELIVERY_MODE.xml' path='doc/member[@name="EC_SUBSCRIPTION_DELIVERY_MODE.EcDeliveryModePush"]/*' />
     EcDeliveryModePush,
 }

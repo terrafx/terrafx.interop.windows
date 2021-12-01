@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HTMLAnchorElement.xml' path='doc/member[@name="HTMLAnchorElement"]/*' />
 [Guid("3050F248-98B5-11CF-BB82-00AA00BDCE0B")]
 public partial struct HTMLAnchorElement
 {

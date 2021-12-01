@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DISK_DETECTION_INFO">
+    <summary>
+      <para>Contains detected drive parameters.</para>
+    </summary>
+    <seealso cref="DISK_EX_INT13_INFO" />
+    <seealso cref="DISK_INT13_INFO" />
+    <seealso cref="DISK_GEOMETRY_EX" />
+  </member>
+  <member name="DISK_DETECTION_INFO.SizeOfDetectInfo">
+    <summary>
+      <para>The size of the structure, in bytes.</para>
+    </summary>
+  </member>
+  <member name="DISK_DETECTION_INFO.DetectionType">
+    <summary>
+      <para>The detected partition type.</para>
+      <para>This member can be one of the following values from the <b>DETECTION_TYPE</b> enumeration.</para>
+      <para>| Value | Enumeration | Meaning |
+| --- | --- | --- |
+| <b>DetectExInt13</b> | 2 | The disk has an extended Int13 partition. |
+| <b>DetectInt13</b> | 1 | The disk has a standard Int13 partition. |
+| <b>DetectNone</b> | 0 | The disk does not have an Int13 or an extended Int13 partition. |</para>
+    </summary>
+  </member>
+  <member name="DISK_DETECTION_INFO.DUMMYUNIONNAME">
+    <summary></summary>
+  </member>
+  <member name="DISK_DETECTION_INFO.DUMMYUNIONNAME.DUMMYSTRUCTNAME">
+    <summary></summary>
+  </member>
+  <member name="DISK_DETECTION_INFO.DUMMYUNIONNAME.DUMMYSTRUCTNAME.Int13">
+    <summary>
+      <para>If <b>DetectionType</b> is DetectInt13, the union is a <see cref="DISK_INT13_INFO" /> structure.</para>
+    </summary>
+  </member>
+  <member name="DISK_DETECTION_INFO.DUMMYUNIONNAME.DUMMYSTRUCTNAME.ExInt13">
+    <summary>
+      <para>If <b>DetectionType</b> is DetectExInt13, the union is a <see cref="DISK_EX_INT13_INFO" /> structure.</para>
+    </summary>
+  </member>
+</doc>

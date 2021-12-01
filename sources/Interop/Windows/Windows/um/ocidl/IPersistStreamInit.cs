@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IPersistStreamInit.xml' path='doc/member[@name="IPersistStreamInit"]/*' />
 [Guid("7FD52380-4E07-101B-AE2D-08002B2EC713")]
 [NativeTypeName("struct IPersistStreamInit : IPersist")]
 [NativeInheritance("IPersist")]
@@ -16,6 +17,7 @@ public unsafe partial struct IPersistStreamInit : IPersistStreamInit.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IPersistStreamInit : IPersistStreamInit.Interface
         return ((delegate* unmanaged<IPersistStreamInit*, Guid*, void**, int>)(lpVtbl[0]))((IPersistStreamInit*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IPersistStreamInit : IPersistStreamInit.Interface
         return ((delegate* unmanaged<IPersistStreamInit*, uint>)(lpVtbl[1]))((IPersistStreamInit*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IPersistStreamInit : IPersistStreamInit.Interface
         return ((delegate* unmanaged<IPersistStreamInit*, uint>)(lpVtbl[2]))((IPersistStreamInit*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IPersist.GetClassID" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetClassID([NativeTypeName("CLSID *")] Guid* pClassID)
@@ -46,6 +51,7 @@ public unsafe partial struct IPersistStreamInit : IPersistStreamInit.Interface
         return ((delegate* unmanaged<IPersistStreamInit*, Guid*, int>)(lpVtbl[3]))((IPersistStreamInit*)Unsafe.AsPointer(ref this), pClassID);
     }
 
+    /// <include file='IPersistStreamInit.xml' path='doc/member[@name="IPersistStreamInit.IsDirty"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT IsDirty()
@@ -53,6 +59,7 @@ public unsafe partial struct IPersistStreamInit : IPersistStreamInit.Interface
         return ((delegate* unmanaged<IPersistStreamInit*, int>)(lpVtbl[4]))((IPersistStreamInit*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IPersistStreamInit.xml' path='doc/member[@name="IPersistStreamInit.Load"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT Load([NativeTypeName("LPSTREAM")] IStream* pStm)
@@ -60,6 +67,7 @@ public unsafe partial struct IPersistStreamInit : IPersistStreamInit.Interface
         return ((delegate* unmanaged<IPersistStreamInit*, IStream*, int>)(lpVtbl[5]))((IPersistStreamInit*)Unsafe.AsPointer(ref this), pStm);
     }
 
+    /// <include file='IPersistStreamInit.xml' path='doc/member[@name="IPersistStreamInit.Save"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Save([NativeTypeName("LPSTREAM")] IStream* pStm, BOOL fClearDirty)
@@ -67,6 +75,7 @@ public unsafe partial struct IPersistStreamInit : IPersistStreamInit.Interface
         return ((delegate* unmanaged<IPersistStreamInit*, IStream*, BOOL, int>)(lpVtbl[6]))((IPersistStreamInit*)Unsafe.AsPointer(ref this), pStm, fClearDirty);
     }
 
+    /// <include file='IPersistStreamInit.xml' path='doc/member[@name="IPersistStreamInit.GetSizeMax"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetSizeMax(ULARGE_INTEGER* pCbSize)
@@ -74,6 +83,7 @@ public unsafe partial struct IPersistStreamInit : IPersistStreamInit.Interface
         return ((delegate* unmanaged<IPersistStreamInit*, ULARGE_INTEGER*, int>)(lpVtbl[7]))((IPersistStreamInit*)Unsafe.AsPointer(ref this), pCbSize);
     }
 
+    /// <include file='IPersistStreamInit.xml' path='doc/member[@name="IPersistStreamInit.InitNew"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT InitNew()

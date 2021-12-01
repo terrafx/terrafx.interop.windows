@@ -5,16 +5,36 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SYNCMGRSTATUS.xml' path='doc/member[@name="SYNCMGRSTATUS"]/*' />
 public enum SYNCMGRSTATUS
 {
+    /// <include file='SYNCMGRSTATUS.xml' path='doc/member[@name="SYNCMGRSTATUS.SYNCMGRSTATUS_STOPPED"]/*' />
     SYNCMGRSTATUS_STOPPED = 0,
+
+    /// <include file='SYNCMGRSTATUS.xml' path='doc/member[@name="SYNCMGRSTATUS.SYNCMGRSTATUS_SKIPPED"]/*' />
     SYNCMGRSTATUS_SKIPPED = 0x1,
+
+    /// <include file='SYNCMGRSTATUS.xml' path='doc/member[@name="SYNCMGRSTATUS.SYNCMGRSTATUS_PENDING"]/*' />
     SYNCMGRSTATUS_PENDING = 0x2,
+
+    /// <include file='SYNCMGRSTATUS.xml' path='doc/member[@name="SYNCMGRSTATUS.SYNCMGRSTATUS_UPDATING"]/*' />
     SYNCMGRSTATUS_UPDATING = 0x3,
+
+    /// <include file='SYNCMGRSTATUS.xml' path='doc/member[@name="SYNCMGRSTATUS.SYNCMGRSTATUS_SUCCEEDED"]/*' />
     SYNCMGRSTATUS_SUCCEEDED = 0x4,
+
+    /// <include file='SYNCMGRSTATUS.xml' path='doc/member[@name="SYNCMGRSTATUS.SYNCMGRSTATUS_FAILED"]/*' />
     SYNCMGRSTATUS_FAILED = 0x5,
+
+    /// <include file='SYNCMGRSTATUS.xml' path='doc/member[@name="SYNCMGRSTATUS.SYNCMGRSTATUS_PAUSED"]/*' />
     SYNCMGRSTATUS_PAUSED = 0x6,
+
+    /// <include file='SYNCMGRSTATUS.xml' path='doc/member[@name="SYNCMGRSTATUS.SYNCMGRSTATUS_RESUMING"]/*' />
     SYNCMGRSTATUS_RESUMING = 0x7,
+
+    /// <include file='SYNCMGRSTATUS.xml' path='doc/member[@name="SYNCMGRSTATUS.SYNCMGRSTATUS_UPDATING_INDETERMINATE"]/*' />
     SYNCMGRSTATUS_UPDATING_INDETERMINATE = 0x8,
+
+    /// <include file='SYNCMGRSTATUS.xml' path='doc/member[@name="SYNCMGRSTATUS.SYNCMGRSTATUS_DELETED"]/*' />
     SYNCMGRSTATUS_DELETED = 0x100,
 }

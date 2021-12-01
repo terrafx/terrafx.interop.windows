@@ -5,18 +5,24 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CMS_DH_KEY_INFO.xml' path='doc/member[@name="CMS_DH_KEY_INFO"]/*' />
 public unsafe partial struct CMS_DH_KEY_INFO
 {
+    /// <include file='CMS_DH_KEY_INFO.xml' path='doc/member[@name="CMS_DH_KEY_INFO.dwVersion"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwVersion;
 
+    /// <include file='CMS_DH_KEY_INFO.xml' path='doc/member[@name="CMS_DH_KEY_INFO.Algid"]/*' />
     [NativeTypeName("ALG_ID")]
     public uint Algid;
 
+    /// <include file='CMS_DH_KEY_INFO.xml' path='doc/member[@name="CMS_DH_KEY_INFO.pszContentEncObjId"]/*' />
     [NativeTypeName("LPSTR")]
     public sbyte* pszContentEncObjId;
 
+    /// <include file='CMS_DH_KEY_INFO.xml' path='doc/member[@name="CMS_DH_KEY_INFO.PubInfo"]/*' />
     public CRYPT_DATA_BLOB PubInfo;
 
+    /// <include file='CMS_DH_KEY_INFO.xml' path='doc/member[@name="CMS_DH_KEY_INFO.pReserved"]/*' />
     public void* pReserved;
 }

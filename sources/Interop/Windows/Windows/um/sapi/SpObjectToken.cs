@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SpObjectToken.xml' path='doc/member[@name="SpObjectToken"]/*' />
 [Guid("EF411752-3736-4CB4-9C8C-8EF4CCB58EFE")]
 public partial struct SpObjectToken
 {

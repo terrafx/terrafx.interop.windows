@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ISpeechCommandProvider.xml' path='doc/member[@name="ISpeechCommandProvider"]/*' />
 [Guid("38E09D4C-586D-435A-B592-C8A86691DEC6")]
 [NativeTypeName("struct ISpeechCommandProvider : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ISpeechCommandProvider : ISpeechCommandProvider.Int
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ISpeechCommandProvider : ISpeechCommandProvider.Int
         return ((delegate* unmanaged<ISpeechCommandProvider*, Guid*, void**, int>)(lpVtbl[0]))((ISpeechCommandProvider*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ISpeechCommandProvider : ISpeechCommandProvider.Int
         return ((delegate* unmanaged<ISpeechCommandProvider*, uint>)(lpVtbl[1]))((ISpeechCommandProvider*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ISpeechCommandProvider : ISpeechCommandProvider.Int
         return ((delegate* unmanaged<ISpeechCommandProvider*, uint>)(lpVtbl[2]))((ISpeechCommandProvider*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ISpeechCommandProvider.xml' path='doc/member[@name="ISpeechCommandProvider.EnumSpeechCommands"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT EnumSpeechCommands([NativeTypeName("LANGID")] ushort langid, IEnumSpeechCommands** ppEnum)
@@ -46,6 +51,7 @@ public unsafe partial struct ISpeechCommandProvider : ISpeechCommandProvider.Int
         return ((delegate* unmanaged<ISpeechCommandProvider*, ushort, IEnumSpeechCommands**, int>)(lpVtbl[3]))((ISpeechCommandProvider*)Unsafe.AsPointer(ref this), langid, ppEnum);
     }
 
+    /// <include file='ISpeechCommandProvider.xml' path='doc/member[@name="ISpeechCommandProvider.ProcessCommand"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT ProcessCommand([NativeTypeName("const WCHAR *")] ushort* pszCommand, [NativeTypeName("ULONG")] uint cch, [NativeTypeName("LANGID")] ushort langid)

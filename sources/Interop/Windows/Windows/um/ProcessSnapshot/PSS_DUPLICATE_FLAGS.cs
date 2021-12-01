@@ -8,10 +8,14 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PSS_DUPLICATE_FLAGS.xml' path='doc/member[@name="PSS_DUPLICATE_FLAGS"]/*' />
 [Flags]
 [SupportedOSPlatform("windows8.1")]
 public enum PSS_DUPLICATE_FLAGS
 {
+    /// <include file='PSS_DUPLICATE_FLAGS.xml' path='doc/member[@name="PSS_DUPLICATE_FLAGS.PSS_DUPLICATE_NONE"]/*' />
     PSS_DUPLICATE_NONE = 0x00,
+
+    /// <include file='PSS_DUPLICATE_FLAGS.xml' path='doc/member[@name="PSS_DUPLICATE_FLAGS.PSS_DUPLICATE_CLOSE_SOURCE"]/*' />
     PSS_DUPLICATE_CLOSE_SOURCE = 0x01,
 }

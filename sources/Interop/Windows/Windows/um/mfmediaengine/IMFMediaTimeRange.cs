@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFMediaTimeRange.xml' path='doc/member[@name="IMFMediaTimeRange"]/*' />
 [Guid("DB71A2FC-078A-414E-9DF9-8C2531B0AA6C")]
 [NativeTypeName("struct IMFMediaTimeRange : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IMFMediaTimeRange : IMFMediaTimeRange.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IMFMediaTimeRange : IMFMediaTimeRange.Interface
         return ((delegate* unmanaged<IMFMediaTimeRange*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaTimeRange*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IMFMediaTimeRange : IMFMediaTimeRange.Interface
         return ((delegate* unmanaged<IMFMediaTimeRange*, uint>)(lpVtbl[1]))((IMFMediaTimeRange*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IMFMediaTimeRange : IMFMediaTimeRange.Interface
         return ((delegate* unmanaged<IMFMediaTimeRange*, uint>)(lpVtbl[2]))((IMFMediaTimeRange*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFMediaTimeRange.xml' path='doc/member[@name="IMFMediaTimeRange.GetLength"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     [return: NativeTypeName("DWORD")]
@@ -49,6 +54,7 @@ public unsafe partial struct IMFMediaTimeRange : IMFMediaTimeRange.Interface
         return ((delegate* unmanaged<IMFMediaTimeRange*, uint>)(lpVtbl[3]))((IMFMediaTimeRange*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFMediaTimeRange.xml' path='doc/member[@name="IMFMediaTimeRange.GetStart"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetStart([NativeTypeName("DWORD")] uint index, double* pStart)
@@ -56,6 +62,7 @@ public unsafe partial struct IMFMediaTimeRange : IMFMediaTimeRange.Interface
         return ((delegate* unmanaged<IMFMediaTimeRange*, uint, double*, int>)(lpVtbl[4]))((IMFMediaTimeRange*)Unsafe.AsPointer(ref this), index, pStart);
     }
 
+    /// <include file='IMFMediaTimeRange.xml' path='doc/member[@name="IMFMediaTimeRange.GetEnd"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetEnd([NativeTypeName("DWORD")] uint index, double* pEnd)
@@ -63,6 +70,7 @@ public unsafe partial struct IMFMediaTimeRange : IMFMediaTimeRange.Interface
         return ((delegate* unmanaged<IMFMediaTimeRange*, uint, double*, int>)(lpVtbl[5]))((IMFMediaTimeRange*)Unsafe.AsPointer(ref this), index, pEnd);
     }
 
+    /// <include file='IMFMediaTimeRange.xml' path='doc/member[@name="IMFMediaTimeRange.ContainsTime"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public BOOL ContainsTime(double time)
@@ -70,6 +78,7 @@ public unsafe partial struct IMFMediaTimeRange : IMFMediaTimeRange.Interface
         return ((delegate* unmanaged<IMFMediaTimeRange*, double, int>)(lpVtbl[6]))((IMFMediaTimeRange*)Unsafe.AsPointer(ref this), time);
     }
 
+    /// <include file='IMFMediaTimeRange.xml' path='doc/member[@name="IMFMediaTimeRange.AddRange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT AddRange(double startTime, double endTime)
@@ -77,6 +86,7 @@ public unsafe partial struct IMFMediaTimeRange : IMFMediaTimeRange.Interface
         return ((delegate* unmanaged<IMFMediaTimeRange*, double, double, int>)(lpVtbl[7]))((IMFMediaTimeRange*)Unsafe.AsPointer(ref this), startTime, endTime);
     }
 
+    /// <include file='IMFMediaTimeRange.xml' path='doc/member[@name="IMFMediaTimeRange.Clear"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT Clear()

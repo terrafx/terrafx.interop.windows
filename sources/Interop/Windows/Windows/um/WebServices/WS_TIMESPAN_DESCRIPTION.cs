@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_TIMESPAN_DESCRIPTION.xml' path='doc/member[@name="WS_TIMESPAN_DESCRIPTION"]/*' />
 public partial struct WS_TIMESPAN_DESCRIPTION
 {
+    /// <include file='WS_TIMESPAN_DESCRIPTION.xml' path='doc/member[@name="WS_TIMESPAN_DESCRIPTION.minValue"]/*' />
     public WS_TIMESPAN minValue;
 
+    /// <include file='WS_TIMESPAN_DESCRIPTION.xml' path='doc/member[@name="WS_TIMESPAN_DESCRIPTION.maxValue"]/*' />
     public WS_TIMESPAN maxValue;
 }

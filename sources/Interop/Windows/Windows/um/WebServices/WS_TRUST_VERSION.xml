@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_TRUST_VERSION">
+    <summary>
+      <para>Defines the WS-Trust specification version to be used with message
+security and mixed-mode security.</para>
+    </summary>
+    <remarks>
+      <para>Windows 7 and Windows Server 2008 R2: WWSAPI only supports <a href="http://specs.xmlsoap.org/ws/2005/02/trust/ws-trust.pdf">Ws-Trust</a> and <a href="http://specs.xmlsoap.org/ws/2005/02/sc/ws-secureconversation.pdf">Ws-SecureConversation</a> as defined by <a href="https://docs.microsoft.com//openspecs/windows_protocols/ms-lwssp/376af2f8-f4fe-4577-bfd5-370ac12cac2e">Lightweight Web Services Security Profile (LWSSP)</a>. For details regarding Microsoft's implementation please see the <a href="https://docs.microsoft.com//openspecs/windows_protocols/ms-lwssp/d4f0f509-e14a-47b5-81e8-ade06a51d1ed">MESSAGE Syntax</a> section of LWSSP.</para>
+    </remarks>
+  </member>
+  <member name="WS_TRUST_VERSION.WS_TRUST_VERSION_FEBRUARY_2005">
+    <summary>
+      <para>WS-Trust with the specification URI of http://schemas.xmlsoap.org/ws/2005/02/trust</para>
+    </summary>
+  </member>
+  <member name="WS_TRUST_VERSION.WS_TRUST_VERSION_1_3">
+    <summary>
+      <para>WS-Trust 1.3 with the specification URI of http://docs.oasis-open.org/ws-sx/ws-trust/200512</para>
+    </summary>
+  </member>
+</doc>

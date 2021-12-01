@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DVD_TITLE_APPMODE">
+    <summary>
+      <para>Indicates whether a DVD title is a karaoke title. This enumeration is a member of the <see cref="DVD_TitleAttributes" /> structure, which is filled when an application calls the <see cref="IDvdInfo2.GetTitleAttributes" /> method.</para>
+    </summary>
+    <remarks>
+      <para>When the DVD Navigator encounters a karaoke title on a disc, it goes into "karaoke mode" and informs the audio decoder. The decoder must respond by initially muting the three auxiliary channels. Applications can then selectively control the volume and mixing configuration of these channels using the karaoke-related methods in the <see cref="IDvdControl2" /> interface For more information, see <a href="https://docs.microsoft.com//windows/desktop/DirectShow/playing-karaoke-audio-streams">Playing Karaoke Audio Streams</a>.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-enumerated-types">DirectShow Enumerated Types</seealso>
+  </member>
+  <member name="DVD_TITLE_APPMODE.DVD_AppMode_Not_Specified">
+    <summary>
+      <para>The disc does not provide any application mode information about this title.</para>
+    </summary>
+  </member>
+  <member name="DVD_TITLE_APPMODE.DVD_AppMode_Karaoke">
+    <summary>
+      <para>Title contains karaoke content.</para>
+    </summary>
+  </member>
+  <member name="DVD_TITLE_APPMODE.DVD_AppMode_Other">
+    <summary>
+      <para>Title contains a type of content that the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-navigator-filter">DVD Navigator Filter</a> does not recognize, so the application should treat the title as a regular DVD-Video title.</para>
+    </summary>
+  </member>
+</doc>

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IPropertyStoreCache.xml' path='doc/member[@name="IPropertyStoreCache"]/*' />
 [Guid("3017056D-9A91-4E90-937D-746C72ABBF4F")]
 [NativeTypeName("struct IPropertyStoreCache : IPropertyStore")]
 [NativeInheritance("IPropertyStore")]
@@ -16,6 +17,7 @@ public unsafe partial struct IPropertyStoreCache : IPropertyStoreCache.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IPropertyStoreCache : IPropertyStoreCache.Interface
         return ((delegate* unmanaged<IPropertyStoreCache*, Guid*, void**, int>)(lpVtbl[0]))((IPropertyStoreCache*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IPropertyStoreCache : IPropertyStoreCache.Interface
         return ((delegate* unmanaged<IPropertyStoreCache*, uint>)(lpVtbl[1]))((IPropertyStoreCache*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IPropertyStoreCache : IPropertyStoreCache.Interface
         return ((delegate* unmanaged<IPropertyStoreCache*, uint>)(lpVtbl[2]))((IPropertyStoreCache*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IPropertyStore.GetCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetCount([NativeTypeName("DWORD *")] uint* cProps)
@@ -46,6 +51,7 @@ public unsafe partial struct IPropertyStoreCache : IPropertyStoreCache.Interface
         return ((delegate* unmanaged<IPropertyStoreCache*, uint*, int>)(lpVtbl[3]))((IPropertyStoreCache*)Unsafe.AsPointer(ref this), cProps);
     }
 
+    /// <inheritdoc cref="IPropertyStore.GetAt" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetAt([NativeTypeName("DWORD")] uint iProp, PROPERTYKEY* pkey)
@@ -53,6 +59,7 @@ public unsafe partial struct IPropertyStoreCache : IPropertyStoreCache.Interface
         return ((delegate* unmanaged<IPropertyStoreCache*, uint, PROPERTYKEY*, int>)(lpVtbl[4]))((IPropertyStoreCache*)Unsafe.AsPointer(ref this), iProp, pkey);
     }
 
+    /// <inheritdoc cref="IPropertyStore.GetValue" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetValue([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key, PROPVARIANT* pv)
@@ -60,6 +67,7 @@ public unsafe partial struct IPropertyStoreCache : IPropertyStoreCache.Interface
         return ((delegate* unmanaged<IPropertyStoreCache*, PROPERTYKEY*, PROPVARIANT*, int>)(lpVtbl[5]))((IPropertyStoreCache*)Unsafe.AsPointer(ref this), key, pv);
     }
 
+    /// <inheritdoc cref="IPropertyStore.SetValue" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT SetValue([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key, [NativeTypeName("const PROPVARIANT &")] PROPVARIANT* propvar)
@@ -67,6 +75,7 @@ public unsafe partial struct IPropertyStoreCache : IPropertyStoreCache.Interface
         return ((delegate* unmanaged<IPropertyStoreCache*, PROPERTYKEY*, PROPVARIANT*, int>)(lpVtbl[6]))((IPropertyStoreCache*)Unsafe.AsPointer(ref this), key, propvar);
     }
 
+    /// <inheritdoc cref="IPropertyStore.Commit" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT Commit()
@@ -74,6 +83,7 @@ public unsafe partial struct IPropertyStoreCache : IPropertyStoreCache.Interface
         return ((delegate* unmanaged<IPropertyStoreCache*, int>)(lpVtbl[7]))((IPropertyStoreCache*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IPropertyStoreCache.xml' path='doc/member[@name="IPropertyStoreCache.GetState"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetState([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key, PSC_STATE* pstate)
@@ -81,6 +91,7 @@ public unsafe partial struct IPropertyStoreCache : IPropertyStoreCache.Interface
         return ((delegate* unmanaged<IPropertyStoreCache*, PROPERTYKEY*, PSC_STATE*, int>)(lpVtbl[8]))((IPropertyStoreCache*)Unsafe.AsPointer(ref this), key, pstate);
     }
 
+    /// <include file='IPropertyStoreCache.xml' path='doc/member[@name="IPropertyStoreCache.GetValueAndState"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT GetValueAndState([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key, PROPVARIANT* ppropvar, PSC_STATE* pstate)
@@ -88,6 +99,7 @@ public unsafe partial struct IPropertyStoreCache : IPropertyStoreCache.Interface
         return ((delegate* unmanaged<IPropertyStoreCache*, PROPERTYKEY*, PROPVARIANT*, PSC_STATE*, int>)(lpVtbl[9]))((IPropertyStoreCache*)Unsafe.AsPointer(ref this), key, ppropvar, pstate);
     }
 
+    /// <include file='IPropertyStoreCache.xml' path='doc/member[@name="IPropertyStoreCache.SetState"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT SetState([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key, PSC_STATE state)
@@ -95,6 +107,7 @@ public unsafe partial struct IPropertyStoreCache : IPropertyStoreCache.Interface
         return ((delegate* unmanaged<IPropertyStoreCache*, PROPERTYKEY*, PSC_STATE, int>)(lpVtbl[10]))((IPropertyStoreCache*)Unsafe.AsPointer(ref this), key, state);
     }
 
+    /// <include file='IPropertyStoreCache.xml' path='doc/member[@name="IPropertyStoreCache.SetValueAndState"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT SetValueAndState([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key, [NativeTypeName("const PROPVARIANT *")] PROPVARIANT* ppropvar, PSC_STATE state)

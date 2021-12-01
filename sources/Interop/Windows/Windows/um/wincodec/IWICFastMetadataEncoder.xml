@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IWICFastMetadataEncoder.Commit">
+    <summary>
+      <para>Finalizes metadata changes to the image stream.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>If the commit fails and returns <b>WINCODEC_ERR_STREAMNOTAVAILABLE</b>, ensure that the image decoder was loaded using the <b>WICDecodeMetadataCacheOnDemand</b> option. A fast metadata encoder is not supported when the decoder is created using the <b>WICDecodeMetadataCacheOnLoad</b> option.</para>
+      <para>If the commit fails for any reason, you will need to re-encode the image to ensure the new metadata is added to the image.</para>
+    </remarks>
+  </member>
+  <member name="IWICFastMetadataEncoder.GetMetadataQueryWriter">
+    <summary>
+      <para>Retrieves a metadata query writer for fast metadata encoding.</para>
+    </summary>
+    <param name="ppIMetadataQueryWriter">
+      <para>Type: <b><see cref="IWICMetadataQueryWriter" />**</b></para>
+      <para>When this method returns, contains a pointer to the fast metadata encoder's metadata query writer.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IWICFastMetadataEncoder" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-codec-metadataquerylanguage">Metadata Query Language Overview</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-codec-readingwritingmetadata">Overview of Reading and Writing Image Metadata</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-about-metadata">WIC Metadata Overview</seealso>
+  </member>
+  <member name="IWICFastMetadataEncoder">
+    <summary>
+      <para>Exposes methods used for in-place metadata editing. A fast metadata encoder enables you to add and remove metadata to an image without having to fully re-encode the image.</para>
+    </summary>
+    <remarks>
+      <para>A decoder must be created using the <see cref="WICDecodeOptions" /> value <b>WICDecodeMetadataCacheOnDemand</b> to perform in-place metadata updates.
+Using the <b>WICDecodeMetadataCacheOnLoad</b> option causes the decoder to release the file stream necessary to perform the metadata updates.</para>
+      <para>Not all metadata formats support fast metadata encoding. The native metadata handlers that support metadata are IFD, Exif, XMP, and GPS.</para>
+      <para>If a fast metadata encoder fails, the image will need to be fully re-encoded to add the metadata.</para>
+      <h4>Examples</h4>
+      <para>The following demonstrates how to obtain a fast metadata encoder from an image frame and use its query writer to write a metadata item.</para>
+      <code>IWICFastMetadataEncoder *pFME = NULL;
+IWICMetadataQueryWriter *pFMEQW = NULL;
+
+hr = pFactory-&gt;CreateFastMetadataEncoderFromFrameDecode(pFrameDecode, &amp;amp;amp;amp;amp;amp;pFME);
+
+if (SUCCEEDED(hr))
+{
+     hr = pFME-&gt;GetMetadataQueryWriter(&amp;amp;amp;amp;amp;amp;pFMEQW);
+}
+
+if (SUCCEEDED(hr))
+{
+     // Add additional metadata
+     PROPVARIANT value;
+
+     PropVariantInit(&amp;amp;amp;amp;amp;amp;value);
+
+     value.vt = VT_UI2;
+     value.uiVal = 99;
+     hr = pFMEQW-&gt;SetMetadataByName(L"/app1/ifd/{ushort=18249}", &amp;amp;amp;amp;amp;amp;value);
+
+     PropVariantClear(&amp;amp;amp;amp;amp;amp;value);
+}
+
+if (SUCCEEDED(hr))
+{
+     hr = pFME-&gt;Commit();
+}
+</code>
+    </remarks>
+  </member>
+</doc>

@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SCH_EXTENSION_DATA.xml' path='doc/member[@name="SCH_EXTENSION_DATA"]/*' />
 public unsafe partial struct SCH_EXTENSION_DATA
 {
+    /// <include file='SCH_EXTENSION_DATA.xml' path='doc/member[@name="SCH_EXTENSION_DATA.ExtensionType"]/*' />
     [NativeTypeName("WORD")]
     public ushort ExtensionType;
 
+    /// <include file='SCH_EXTENSION_DATA.xml' path='doc/member[@name="SCH_EXTENSION_DATA.pExtData"]/*' />
     [NativeTypeName("const BYTE *")]
     public byte* pExtData;
 
+    /// <include file='SCH_EXTENSION_DATA.xml' path='doc/member[@name="SCH_EXTENSION_DATA.cbExtData"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbExtData;
 }

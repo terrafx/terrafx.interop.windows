@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TfIntegratableCandidateListSelectionStyle.xml' path='doc/member[@name="TfIntegratableCandidateListSelectionStyle"]/*' />
 public enum TfIntegratableCandidateListSelectionStyle
 {
+    /// <include file='TfIntegratableCandidateListSelectionStyle.xml' path='doc/member[@name="TfIntegratableCandidateListSelectionStyle.STYLE_ACTIVE_SELECTION"]/*' />
     STYLE_ACTIVE_SELECTION = 0,
+
+    /// <include file='TfIntegratableCandidateListSelectionStyle.xml' path='doc/member[@name="TfIntegratableCandidateListSelectionStyle.STYLE_IMPLIED_SELECTION"]/*' />
     STYLE_IMPLIED_SELECTION = 0x1,
 }

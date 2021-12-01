@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMemAllocatorCallbackTemp.xml' path='doc/member[@name="IMemAllocatorCallbackTemp"]/*' />
 [Guid("379A0CF0-C1DE-11D2-ABF5-00A0C905F375")]
 [NativeTypeName("struct IMemAllocatorCallbackTemp : IMemAllocator")]
 [NativeInheritance("IMemAllocator")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMemAllocatorCallbackTemp : IMemAllocatorCallbackTe
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMemAllocatorCallbackTemp : IMemAllocatorCallbackTe
         return ((delegate* unmanaged<IMemAllocatorCallbackTemp*, Guid*, void**, int>)(lpVtbl[0]))((IMemAllocatorCallbackTemp*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMemAllocatorCallbackTemp : IMemAllocatorCallbackTe
         return ((delegate* unmanaged<IMemAllocatorCallbackTemp*, uint>)(lpVtbl[1]))((IMemAllocatorCallbackTemp*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMemAllocatorCallbackTemp : IMemAllocatorCallbackTe
         return ((delegate* unmanaged<IMemAllocatorCallbackTemp*, uint>)(lpVtbl[2]))((IMemAllocatorCallbackTemp*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IMemAllocator.SetProperties" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetProperties(ALLOCATOR_PROPERTIES* pRequest, ALLOCATOR_PROPERTIES* pActual)
@@ -46,6 +51,7 @@ public unsafe partial struct IMemAllocatorCallbackTemp : IMemAllocatorCallbackTe
         return ((delegate* unmanaged<IMemAllocatorCallbackTemp*, ALLOCATOR_PROPERTIES*, ALLOCATOR_PROPERTIES*, int>)(lpVtbl[3]))((IMemAllocatorCallbackTemp*)Unsafe.AsPointer(ref this), pRequest, pActual);
     }
 
+    /// <inheritdoc cref="IMemAllocator.GetProperties" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetProperties(ALLOCATOR_PROPERTIES* pProps)
@@ -53,6 +59,7 @@ public unsafe partial struct IMemAllocatorCallbackTemp : IMemAllocatorCallbackTe
         return ((delegate* unmanaged<IMemAllocatorCallbackTemp*, ALLOCATOR_PROPERTIES*, int>)(lpVtbl[4]))((IMemAllocatorCallbackTemp*)Unsafe.AsPointer(ref this), pProps);
     }
 
+    /// <inheritdoc cref="IMemAllocator.Commit" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT Commit()
@@ -60,6 +67,7 @@ public unsafe partial struct IMemAllocatorCallbackTemp : IMemAllocatorCallbackTe
         return ((delegate* unmanaged<IMemAllocatorCallbackTemp*, int>)(lpVtbl[5]))((IMemAllocatorCallbackTemp*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IMemAllocator.Decommit" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Decommit()
@@ -67,6 +75,7 @@ public unsafe partial struct IMemAllocatorCallbackTemp : IMemAllocatorCallbackTe
         return ((delegate* unmanaged<IMemAllocatorCallbackTemp*, int>)(lpVtbl[6]))((IMemAllocatorCallbackTemp*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IMemAllocator.GetBuffer" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetBuffer(IMediaSample** ppBuffer, [NativeTypeName("REFERENCE_TIME *")] long* pStartTime, [NativeTypeName("REFERENCE_TIME *")] long* pEndTime, [NativeTypeName("DWORD")] uint dwFlags)
@@ -74,6 +83,7 @@ public unsafe partial struct IMemAllocatorCallbackTemp : IMemAllocatorCallbackTe
         return ((delegate* unmanaged<IMemAllocatorCallbackTemp*, IMediaSample**, long*, long*, uint, int>)(lpVtbl[7]))((IMemAllocatorCallbackTemp*)Unsafe.AsPointer(ref this), ppBuffer, pStartTime, pEndTime, dwFlags);
     }
 
+    /// <inheritdoc cref="IMemAllocator.ReleaseBuffer" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT ReleaseBuffer(IMediaSample* pBuffer)
@@ -81,6 +91,7 @@ public unsafe partial struct IMemAllocatorCallbackTemp : IMemAllocatorCallbackTe
         return ((delegate* unmanaged<IMemAllocatorCallbackTemp*, IMediaSample*, int>)(lpVtbl[8]))((IMemAllocatorCallbackTemp*)Unsafe.AsPointer(ref this), pBuffer);
     }
 
+    /// <include file='IMemAllocatorCallbackTemp.xml' path='doc/member[@name="IMemAllocatorCallbackTemp.SetNotify"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT SetNotify(IMemAllocatorNotifyCallbackTemp* pNotify)
@@ -88,6 +99,7 @@ public unsafe partial struct IMemAllocatorCallbackTemp : IMemAllocatorCallbackTe
         return ((delegate* unmanaged<IMemAllocatorCallbackTemp*, IMemAllocatorNotifyCallbackTemp*, int>)(lpVtbl[9]))((IMemAllocatorCallbackTemp*)Unsafe.AsPointer(ref this), pNotify);
     }
 
+    /// <include file='IMemAllocatorCallbackTemp.xml' path='doc/member[@name="IMemAllocatorCallbackTemp.GetFreeCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT GetFreeCount([NativeTypeName("LONG *")] int* plBuffersFree)

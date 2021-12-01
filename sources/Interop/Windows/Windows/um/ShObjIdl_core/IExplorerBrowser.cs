@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IExplorerBrowser.xml' path='doc/member[@name="IExplorerBrowser"]/*' />
 [Guid("DFD3B6B5-C10C-4BE9-85F6-A66969F402F6")]
 [NativeTypeName("struct IExplorerBrowser : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IExplorerBrowser : IExplorerBrowser.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IExplorerBrowser : IExplorerBrowser.Interface
         return ((delegate* unmanaged<IExplorerBrowser*, Guid*, void**, int>)(lpVtbl[0]))((IExplorerBrowser*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IExplorerBrowser : IExplorerBrowser.Interface
         return ((delegate* unmanaged<IExplorerBrowser*, uint>)(lpVtbl[1]))((IExplorerBrowser*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IExplorerBrowser : IExplorerBrowser.Interface
         return ((delegate* unmanaged<IExplorerBrowser*, uint>)(lpVtbl[2]))((IExplorerBrowser*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IExplorerBrowser.xml' path='doc/member[@name="IExplorerBrowser.Initialize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Initialize(HWND hwndParent, [NativeTypeName("const RECT *")] RECT* prc, [NativeTypeName("const FOLDERSETTINGS *")] FOLDERSETTINGS* pfs)
@@ -46,6 +51,7 @@ public unsafe partial struct IExplorerBrowser : IExplorerBrowser.Interface
         return ((delegate* unmanaged<IExplorerBrowser*, HWND, RECT*, FOLDERSETTINGS*, int>)(lpVtbl[3]))((IExplorerBrowser*)Unsafe.AsPointer(ref this), hwndParent, prc, pfs);
     }
 
+    /// <include file='IExplorerBrowser.xml' path='doc/member[@name="IExplorerBrowser.Destroy"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Destroy()
@@ -53,6 +59,7 @@ public unsafe partial struct IExplorerBrowser : IExplorerBrowser.Interface
         return ((delegate* unmanaged<IExplorerBrowser*, int>)(lpVtbl[4]))((IExplorerBrowser*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IExplorerBrowser.xml' path='doc/member[@name="IExplorerBrowser.SetRect"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetRect(HDWP* phdwp, RECT rcBrowser)
@@ -60,6 +67,7 @@ public unsafe partial struct IExplorerBrowser : IExplorerBrowser.Interface
         return ((delegate* unmanaged<IExplorerBrowser*, HDWP*, RECT, int>)(lpVtbl[5]))((IExplorerBrowser*)Unsafe.AsPointer(ref this), phdwp, rcBrowser);
     }
 
+    /// <include file='IExplorerBrowser.xml' path='doc/member[@name="IExplorerBrowser.SetPropertyBag"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT SetPropertyBag([NativeTypeName("LPCWSTR")] ushort* pszPropertyBag)
@@ -67,6 +75,7 @@ public unsafe partial struct IExplorerBrowser : IExplorerBrowser.Interface
         return ((delegate* unmanaged<IExplorerBrowser*, ushort*, int>)(lpVtbl[6]))((IExplorerBrowser*)Unsafe.AsPointer(ref this), pszPropertyBag);
     }
 
+    /// <include file='IExplorerBrowser.xml' path='doc/member[@name="IExplorerBrowser.SetEmptyText"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT SetEmptyText([NativeTypeName("LPCWSTR")] ushort* pszEmptyText)
@@ -74,6 +83,7 @@ public unsafe partial struct IExplorerBrowser : IExplorerBrowser.Interface
         return ((delegate* unmanaged<IExplorerBrowser*, ushort*, int>)(lpVtbl[7]))((IExplorerBrowser*)Unsafe.AsPointer(ref this), pszEmptyText);
     }
 
+    /// <include file='IExplorerBrowser.xml' path='doc/member[@name="IExplorerBrowser.SetFolderSettings"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT SetFolderSettings([NativeTypeName("const FOLDERSETTINGS *")] FOLDERSETTINGS* pfs)
@@ -81,6 +91,7 @@ public unsafe partial struct IExplorerBrowser : IExplorerBrowser.Interface
         return ((delegate* unmanaged<IExplorerBrowser*, FOLDERSETTINGS*, int>)(lpVtbl[8]))((IExplorerBrowser*)Unsafe.AsPointer(ref this), pfs);
     }
 
+    /// <include file='IExplorerBrowser.xml' path='doc/member[@name="IExplorerBrowser.Advise"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT Advise(IExplorerBrowserEvents* psbe, [NativeTypeName("DWORD *")] uint* pdwCookie)
@@ -88,6 +99,7 @@ public unsafe partial struct IExplorerBrowser : IExplorerBrowser.Interface
         return ((delegate* unmanaged<IExplorerBrowser*, IExplorerBrowserEvents*, uint*, int>)(lpVtbl[9]))((IExplorerBrowser*)Unsafe.AsPointer(ref this), psbe, pdwCookie);
     }
 
+    /// <include file='IExplorerBrowser.xml' path='doc/member[@name="IExplorerBrowser.Unadvise"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT Unadvise([NativeTypeName("DWORD")] uint dwCookie)
@@ -95,6 +107,7 @@ public unsafe partial struct IExplorerBrowser : IExplorerBrowser.Interface
         return ((delegate* unmanaged<IExplorerBrowser*, uint, int>)(lpVtbl[10]))((IExplorerBrowser*)Unsafe.AsPointer(ref this), dwCookie);
     }
 
+    /// <include file='IExplorerBrowser.xml' path='doc/member[@name="IExplorerBrowser.SetOptions"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT SetOptions(EXPLORER_BROWSER_OPTIONS dwFlag)
@@ -102,6 +115,7 @@ public unsafe partial struct IExplorerBrowser : IExplorerBrowser.Interface
         return ((delegate* unmanaged<IExplorerBrowser*, EXPLORER_BROWSER_OPTIONS, int>)(lpVtbl[11]))((IExplorerBrowser*)Unsafe.AsPointer(ref this), dwFlag);
     }
 
+    /// <include file='IExplorerBrowser.xml' path='doc/member[@name="IExplorerBrowser.GetOptions"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT GetOptions(EXPLORER_BROWSER_OPTIONS* pdwFlag)
@@ -109,6 +123,7 @@ public unsafe partial struct IExplorerBrowser : IExplorerBrowser.Interface
         return ((delegate* unmanaged<IExplorerBrowser*, EXPLORER_BROWSER_OPTIONS*, int>)(lpVtbl[12]))((IExplorerBrowser*)Unsafe.AsPointer(ref this), pdwFlag);
     }
 
+    /// <include file='IExplorerBrowser.xml' path='doc/member[@name="IExplorerBrowser.BrowseToIDList"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT BrowseToIDList([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, uint uFlags)
@@ -116,6 +131,7 @@ public unsafe partial struct IExplorerBrowser : IExplorerBrowser.Interface
         return ((delegate* unmanaged<IExplorerBrowser*, ITEMIDLIST*, uint, int>)(lpVtbl[13]))((IExplorerBrowser*)Unsafe.AsPointer(ref this), pidl, uFlags);
     }
 
+    /// <include file='IExplorerBrowser.xml' path='doc/member[@name="IExplorerBrowser.BrowseToObject"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT BrowseToObject(IUnknown* punk, uint uFlags)
@@ -123,6 +139,7 @@ public unsafe partial struct IExplorerBrowser : IExplorerBrowser.Interface
         return ((delegate* unmanaged<IExplorerBrowser*, IUnknown*, uint, int>)(lpVtbl[14]))((IExplorerBrowser*)Unsafe.AsPointer(ref this), punk, uFlags);
     }
 
+    /// <include file='IExplorerBrowser.xml' path='doc/member[@name="IExplorerBrowser.FillFromObject"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT FillFromObject(IUnknown* punk, EXPLORER_BROWSER_FILL_FLAGS dwFlags)
@@ -130,6 +147,7 @@ public unsafe partial struct IExplorerBrowser : IExplorerBrowser.Interface
         return ((delegate* unmanaged<IExplorerBrowser*, IUnknown*, EXPLORER_BROWSER_FILL_FLAGS, int>)(lpVtbl[15]))((IExplorerBrowser*)Unsafe.AsPointer(ref this), punk, dwFlags);
     }
 
+    /// <include file='IExplorerBrowser.xml' path='doc/member[@name="IExplorerBrowser.RemoveAll"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT RemoveAll()
@@ -137,6 +155,7 @@ public unsafe partial struct IExplorerBrowser : IExplorerBrowser.Interface
         return ((delegate* unmanaged<IExplorerBrowser*, int>)(lpVtbl[16]))((IExplorerBrowser*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IExplorerBrowser.xml' path='doc/member[@name="IExplorerBrowser.GetCurrentView"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT GetCurrentView([NativeTypeName("const IID &")] Guid* riid, void** ppv)

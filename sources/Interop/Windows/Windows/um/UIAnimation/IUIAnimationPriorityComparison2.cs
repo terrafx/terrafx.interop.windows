@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IUIAnimationPriorityComparison2.xml' path='doc/member[@name="IUIAnimationPriorityComparison2"]/*' />
 [Guid("5B6D7A37-4621-467C-8B05-70131DE62DDB")]
 [NativeTypeName("struct IUIAnimationPriorityComparison2 : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IUIAnimationPriorityComparison2 : IUIAnimationPrior
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IUIAnimationPriorityComparison2 : IUIAnimationPrior
         return ((delegate* unmanaged<IUIAnimationPriorityComparison2*, Guid*, void**, int>)(lpVtbl[0]))((IUIAnimationPriorityComparison2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IUIAnimationPriorityComparison2 : IUIAnimationPrior
         return ((delegate* unmanaged<IUIAnimationPriorityComparison2*, uint>)(lpVtbl[1]))((IUIAnimationPriorityComparison2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IUIAnimationPriorityComparison2 : IUIAnimationPrior
         return ((delegate* unmanaged<IUIAnimationPriorityComparison2*, uint>)(lpVtbl[2]))((IUIAnimationPriorityComparison2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IUIAnimationPriorityComparison2.xml' path='doc/member[@name="IUIAnimationPriorityComparison2.HasPriority"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT HasPriority(IUIAnimationStoryboard2* scheduledStoryboard, IUIAnimationStoryboard2* newStoryboard, UI_ANIMATION_PRIORITY_EFFECT priorityEffect)

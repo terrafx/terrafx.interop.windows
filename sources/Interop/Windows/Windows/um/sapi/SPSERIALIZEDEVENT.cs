@@ -7,10 +7,12 @@ using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SPSERIALIZEDEVENT.xml' path='doc/member[@name="SPSERIALIZEDEVENT"]/*' />
 public partial struct SPSERIALIZEDEVENT
 {
     public int _bitfield;
 
+    /// <include file='SPSERIALIZEDEVENT.xml' path='doc/member[@name="SPSERIALIZEDEVENT.eEventId"]/*' />
     [NativeTypeName("SPEVENTENUM : 16")]
     public SPEVENTENUM eEventId
     {
@@ -27,6 +29,7 @@ public partial struct SPSERIALIZEDEVENT
         }
     }
 
+    /// <include file='SPSERIALIZEDEVENT.xml' path='doc/member[@name="SPSERIALIZEDEVENT.elParamType"]/*' />
     [NativeTypeName("SPEVENTLPARAMTYPE : 16")]
     public SPEVENTLPARAMTYPE elParamType
     {
@@ -43,15 +46,19 @@ public partial struct SPSERIALIZEDEVENT
         }
     }
 
+    /// <include file='SPSERIALIZEDEVENT.xml' path='doc/member[@name="SPSERIALIZEDEVENT.ulStreamNum"]/*' />
     [NativeTypeName("ULONG")]
     public uint ulStreamNum;
 
+    /// <include file='SPSERIALIZEDEVENT.xml' path='doc/member[@name="SPSERIALIZEDEVENT.ullAudioStreamOffset"]/*' />
     [NativeTypeName("ULONGLONG")]
     public ulong ullAudioStreamOffset;
 
+    /// <include file='SPSERIALIZEDEVENT.xml' path='doc/member[@name="SPSERIALIZEDEVENT.SerializedwParam"]/*' />
     [NativeTypeName("ULONG")]
     public uint SerializedwParam;
 
+    /// <include file='SPSERIALIZEDEVENT.xml' path='doc/member[@name="SPSERIALIZEDEVENT.SerializedlParam"]/*' />
     [NativeTypeName("LONG")]
     public int SerializedlParam;
 }

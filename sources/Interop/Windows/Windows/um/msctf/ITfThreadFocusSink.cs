@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITfThreadFocusSink.xml' path='doc/member[@name="ITfThreadFocusSink"]/*' />
 [Guid("C0F1DB0C-3A20-405C-A303-96B6010A885F")]
 [NativeTypeName("struct ITfThreadFocusSink : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITfThreadFocusSink : ITfThreadFocusSink.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITfThreadFocusSink : ITfThreadFocusSink.Interface
         return ((delegate* unmanaged<ITfThreadFocusSink*, Guid*, void**, int>)(lpVtbl[0]))((ITfThreadFocusSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITfThreadFocusSink : ITfThreadFocusSink.Interface
         return ((delegate* unmanaged<ITfThreadFocusSink*, uint>)(lpVtbl[1]))((ITfThreadFocusSink*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITfThreadFocusSink : ITfThreadFocusSink.Interface
         return ((delegate* unmanaged<ITfThreadFocusSink*, uint>)(lpVtbl[2]))((ITfThreadFocusSink*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITfThreadFocusSink.xml' path='doc/member[@name="ITfThreadFocusSink.OnSetThreadFocus"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT OnSetThreadFocus()
@@ -46,6 +51,7 @@ public unsafe partial struct ITfThreadFocusSink : ITfThreadFocusSink.Interface
         return ((delegate* unmanaged<ITfThreadFocusSink*, int>)(lpVtbl[3]))((ITfThreadFocusSink*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITfThreadFocusSink.xml' path='doc/member[@name="ITfThreadFocusSink.OnKillThreadFocus"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT OnKillThreadFocus()

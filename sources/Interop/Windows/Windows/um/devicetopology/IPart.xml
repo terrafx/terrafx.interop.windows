@@ -1,0 +1,863 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IPart.Activate">
+    <summary>
+      <para>The <b>Activate</b> method activates a function-specific interface on a connector or subunit.</para>
+    </summary>
+    <param name="dwClsContext">
+      <para>The execution context in which the code that manages the newly created object will run. The caller can restrict the context by setting this parameter to the bitwise <b>OR</b> of one or more <b>CLSCTX</b> enumeration values. The client can avoid imposing any context restrictions by specifying CLSCTX_ALL. For more information about <b>CLSCTX</b>, see the Windows SDK documentation.</para>
+    </param>
+    <param name="refiid">
+      <para>The interface ID for the requested control function. The client should set this parameter to one of the following <b>REFIID</b> values:</para>
+      <para>IID_IAudioAutoGainControl</para>
+      <para>IID_IAudioBass</para>
+      <para>IID_IAudioChannelConfig</para>
+      <para>IID_IAudioInputSelector</para>
+      <para>IID_IAudioLoudness</para>
+      <para>IID_IAudioMidrange</para>
+      <para>IID_IAudioMute</para>
+      <para>IID_IAudioOutputSelector</para>
+      <para>IID_IAudioPeakMeter</para>
+      <para>IID_IAudioTreble</para>
+      <para>IID_IAudioVolumeLevel</para>
+      <para>IID_IDeviceSpecificProperty</para>
+      <para>IID_IKsFormatSupport</para>
+      <para>IID_IKsJackDescription</para>
+      <para>IID_IKsJackDescription2</para>
+      <para>For more information, see Remarks.</para>
+    </param>
+    <param name="ppvObject">
+      <para>Pointer to a pointer variable into which the method writes the address of the interface that is specified by parameter <i>refiid</i>. Through this method, the caller obtains a counted reference to the interface. The caller is responsible for releasing the interface, when it is no longer needed, by calling the interface's <b>Release</b> method. If the <b>Activate</b> call fails,  <i>*ppObject</i> is <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>The CLSCTX_INPROC_SERVER bit in <i>dwClsContext</i> is zero.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>Pointer <i>ppvObject</i> is <b>NULL</b>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_NOINTERFACE</b>
+            </para>
+          </description>
+          <description>
+            <para>The part object does not support the requested interface.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The <b>Activate</b> method supports the following function-specific control interfaces:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <see cref="IAudioAutoGainControl" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IAudioBass" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IAudioChannelConfig" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IAudioInputSelector" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IAudioLoudness" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IAudioMidrange" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IAudioMute" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IAudioOutputSelector" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IAudioPeakMeter" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IAudioTreble" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IAudioVolumeLevel" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IDeviceSpecificProperty" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IKsFormatSupport" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IKsJackDescription" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="IKsJackDescription2" />
+          </description>
+        </item>
+      </list>
+      <para>To obtain the interface ID of the function-specific control interface of a part, call the part's <see cref="IControlInterface.GetIID" /> method. To obtain the interface ID of a function-specific control interface type, use the <b>__uuidof</b> operator. For example, the interface ID of <b>IAudioAutoGainControl</b> is defined as follows:</para>
+      <code>
+const IID IID_IAudioAutoGainControl  __uuidof(IAudioAutoGainControl)
+
+</code>
+      <para>For more information about the <b>__uuidof</b> operator, see the Windows SDK documentation.</para>
+    </remarks>
+    <seealso cref="IControlInterface.GetIID" />
+    <seealso cref="IPart Interface" />
+  </member>
+  <member name="IPart.EnumPartsIncoming">
+    <summary>
+      <para>The <b>EnumPartsIncoming</b> method gets a list of all the incoming parts—that is, the parts that reside on data paths that are upstream from this part.</para>
+    </summary>
+    <param name="ppParts">
+      <para>Pointer to a pointer variable into which the method writes the address of an <see cref="IPartsList" /> interface that encapsulates the list of parts that are immediately upstream from this part. Through this method, the caller obtains a counted reference to the interface. The caller is responsible for releasing the interface, when it is no longer needed, by calling the interface's <b>Release</b> method. If the <b>EnumPartsIncoming</b> call fails,  <i>*ppParts</i> is <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>Pointer <i>ppParts</i> is <b>NULL</b>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_NOTFOUND</b>
+            </para>
+          </description>
+          <description>
+            <para>This part has no links to upstream parts.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>Out of memory.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>A client application can traverse a device topology against the direction of audio data flow by iteratively calling this method at each step in the traversal to get the list of parts that lie immediately upstream from the current part.</para>
+      <para>If this part has no links to upstream parts, the method returns error code E_NOTFOUND and does not create a parts list (<i>*ppParts</i> is <b>NULL</b>). For example, the method returns this error code if the <b>IPart</b> interface represents a connector through which data enters a device topology.</para>
+    </remarks>
+    <seealso cref="IPart Interface" />
+    <seealso cref="IPartsList Interface" />
+  </member>
+  <member name="IPart.EnumPartsOutgoing">
+    <summary>
+      <para>The <b>EnumPartsOutgoing</b> method retrieves a list of all the outgoing parts—that is, the parts that reside on data paths that are downstream from this part.</para>
+    </summary>
+    <param name="ppParts">
+      <para>Pointer to a pointer variable into which the method writes the address of an <see cref="IPartsList" /> interface that encapsulates the list of parts that are immediately downstream from this part. Through this method, the caller obtains a counted reference to the interface. The caller is responsible for releasing the interface, when it is no longer needed, by calling the interface's <b>Release</b> method. If the <b>EnumPartsOutgoing</b> call fails,  <i>*ppParts</i> is <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>Pointer <i>ppParts</i> is <b>NULL</b>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_NOTFOUND</b>
+            </para>
+          </description>
+          <description>
+            <para>This part has no links to downstream parts.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>Out of memory.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>A client application can traverse a device topology in the direction of audio data flow by iteratively calling this method at each step in the traversal to get the list of parts that lie immediately downstream from the current part.</para>
+      <para>If this part has no links to downstream parts, the method returns error code E_NOTFOUND and does not create a parts list (<i>*ppParts</i> is <b>NULL</b>). For example, the method returns this error code if the <b>IPart</b> interface represents a connector through which data exits a device topology.</para>
+      <para>For a code example that uses the <b>EnumPartsOutgoing</b> method, see the implementation of the SelectCaptureDevice function in <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/device-topologies">Device Topologies</a>.</para>
+    </remarks>
+    <seealso cref="IPart Interface" />
+    <seealso cref="IPartsList Interface" />
+  </member>
+  <member name="IPart.GetControlInterface">
+    <summary>
+      <para>The <b>GetControlInterface</b> method gets a reference to the specified control interface, if this part supports it.</para>
+    </summary>
+    <param name="nIndex">
+      <para>The control interface number. If a part supports <i>n</i> control interfaces, the control interfaces are numbered from 0 to <i>n</i>– 1.</para>
+    </param>
+    <param name="ppInterfaceDesc">
+      <para>Pointer to a pointer variable into which the method writes the address of the <see cref="IControlInterface" /> interface of the specified audio function. Through this method, the caller obtains a counted reference to the interface. The caller is responsible for releasing the interface, when it is no longer needed, by calling the interface's <b>Release</b> method. If the <b>GetControlInterface</b> call fails,  <i>*ppFunction</i> is <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>Pointer <i>ppFunction</i> is <b>NULL</b>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>Parameter <i>nIndex</i> is out of range.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_NOTFOUND</b>
+            </para>
+          </description>
+          <description>
+            <para>The part does not have a control interface.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IControlInterface Interface" />
+    <seealso cref="IPart Interface" />
+  </member>
+  <member name="IPart.GetControlInterfaceCount">
+    <summary>
+      <para>The <b>GetControlInterfaceCount</b> method gets the number of control interfaces that this part supports.</para>
+    </summary>
+    <param name="pCount">
+      <para>Pointer to a <b>UINT</b> variable into which the method writes the number of control interfaces on this part.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>Pointer <i>pCount</i> is <b>NULL</b>.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IPart Interface" />
+  </member>
+  <member name="IPart.GetGlobalId">
+    <summary>
+      <para>The <b>GetGlobalId</b> method gets the global ID of this part.</para>
+    </summary>
+    <param name="ppwstrGlobalId">
+      <para>Pointer to a pointer variable into which the method writes the address of a null-terminated, wide-character string that contains the global ID. The method allocates the storage for the string. The caller is responsible for freeing the storage, when it is no longer needed, by calling the <b>CoTaskMemFree</b> function. If the <b>GetGlobalId</b> call fails,  <i>*ppwstrGlobalId</i> is <b>NULL</b>. For information about <b>CoTaskMemFree</b>, see the Windows SDK documentation.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>Pointer <i>ppwstrGlobalId</i> is <b>NULL</b>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>Out of memory.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>A global ID is a string that uniquely identifies a part among all parts in all device topologies in the system. Clients should treat this string as opaque. That is, clients should <i>not</i> attempt to parse the contents of the string to obtain information about the part. The reason is that the string format is undefined and might change from one implementation of the DeviceTopology API to the next.</para>
+    </remarks>
+    <seealso cref="IPart Interface" />
+  </member>
+  <member name="IPart.GetLocalId">
+    <summary>
+      <para>The <b>GetLocalId</b> method gets the local ID of this part.</para>
+    </summary>
+    <param name="pnId">
+      <para>Pointer to a <b>UINT</b> variable into which the method writes the local ID of this part.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>Pointer <i>pnId</i> is <b>NULL</b>.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>When you have a pointer to a part object, you can call this method to get the local ID of the part. A local ID is a number that uniquely identifies a part among all parts in a device topology.</para>
+      <para>The <see cref="IAudioInputSelector.GetSelection" /> and <see cref="IAudioOutputSelector.GetSelection" /> methods retrieve the local ID of a connected part. The <see cref="IAudioInputSelector.SetSelection" /> and <see cref="IAudioOutputSelector.SetSelection" /> methods select the input or output that is connected to a part that is identified by its local ID. The <see cref="IDeviceTopology.GetPartById" /> method gets a part that is identified by its local ID.</para>
+      <para>For code examples that use the <b>GetLocalId</b> method, see the following topics:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/device-topologies">Device Topologies</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/using-the-ikscontrol-interface-to-access-audio-properties">Using the IKsControl Interface to Access Audio Properties</a>
+          </description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="IAudioInputSelector.GetSelection" />
+    <seealso cref="IAudioInputSelector.SetSelection" />
+    <seealso cref="IAudioOutputSelector.GetSelection" />
+    <seealso cref="IAudioOutputSelector.SetSelection" />
+    <seealso cref="IDeviceTopology.GetPartById" />
+    <seealso cref="IPart Interface" />
+  </member>
+  <member name="IPart.GetName">
+    <summary>
+      <para>The <b>GetName</b> method gets the friendly name of this part.</para>
+    </summary>
+    <param name="ppwstrName">
+      <para>Pointer to a pointer variable into which the method writes the address of a null-terminated, wide-character string that contains the friendly name of this part. The method allocates the storage for the string. The caller is responsible for freeing the storage, when it is no longer needed, by calling the <b>CoTaskMemFree</b> function. If the <b>GetName</b> call fails,  <i>*ppwstrName</i> is <b>NULL</b>. For information about <b>CoTaskMemFree</b>, see the Windows SDK documentation.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>Pointer <i>ppwstrName</i> is <b>NULL</b>.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IPart Interface" />
+  </member>
+  <member name="IPart.GetPartType">
+    <summary>
+      <para>The <b>GetPartType</b> method gets the part type of this part.</para>
+    </summary>
+    <param name="pPartType">
+      <para>Pointer to a <see cref="PartType" /> variable into which the method writes the part type. The part type is one of the following <b>PartType</b> enumeration values, which indicate whether the part is a connector or subunit:</para>
+      <para>Connector</para>
+      <para>Subunit</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>Pointer <i>pPartType</i> is <b>NULL</b>.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>For a code example that uses this method, see the implementation of the SelectCaptureDevice function in <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/device-topologies">Device Topologies</a>.</para>
+    </remarks>
+    <seealso cref="IPart Interface" />
+  </member>
+  <member name="IPart.GetSubType">
+    <summary>
+      <para>The <b>GetSubType</b> method gets the part subtype of this part.</para>
+    </summary>
+    <param name="pSubType">
+      <para>Pointer to a GUID variable into which the method writes the subtype GUID for this part.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>Pointer <i>pSubType</i> is <b>NULL</b>.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>This method typically retrieves one of the KSNODETYPE_<i>Xxx</i> GUID values from header file Ksmedia.h, although some custom drivers might provide other GUID values. For more information about KSNODETYPE_<i>Xxx</i> GUIDs, see the Windows DDK documentation.</para>
+      <para>As explained in <see cref="IPart Interface" />, a part can be either a connector or a subunit.</para>
+      <para>For a part that is a connector, this method retrieves the pin-category GUID that the driver has assigned to the connector. The following are examples of pin-category GUIDs:</para>
+      <list type="bullet">
+        <item>
+          <description>KSNODETYPE_ANALOG_CONNECTOR, if the connector is part of the data path to or from an analog device such as a microphone or speakers.</description>
+        </item>
+        <item>
+          <description>KSNODETYPE_SPDIF_INTERFACE, if the connector is part of the data path to or from an S/PDIF port.</description>
+        </item>
+      </list>
+      <para>For more information, see the discussion of the pin-category property, KSPROPERTY_PIN_CATEGORY, in the Windows DDK documentation.</para>
+      <para>For a part that is a subunit, this method retrieves a subtype GUID that indicates the stream-processing function that the subunit performs. For example, for a volume-control subunit, the method retrieves GUID value KSNODETYPE_VOLUME.</para>
+      <para>The following table lists some of the subtype GUIDs that can be retrieved by the <b>GetSubType</b> method for a subunit.</para>
+      <list type="table">
+        <listheader>
+          <description>Subtype GUID
+</description>
+          <description>Control interface
+</description>
+          <description>Required or optional
+</description>
+        </listheader>
+        <item>
+          <description>KSNODETYPE_3D_EFFECTS</description>
+          <description>
+            <see cref="IAudioChannelConfig" />
+          </description>
+          <description>Optional</description>
+        </item>
+        <item>
+          <description>KSNODETYPE_AGC</description>
+          <description>
+            <see cref="IAudioAutoGainControl" />
+          </description>
+          <description>Required</description>
+        </item>
+        <item>
+          <description>KSNODETYPE_DAC</description>
+          <description>
+            <see cref="IAudioChannelConfig" />
+          </description>
+          <description>Optional</description>
+        </item>
+        <item>
+          <description>KSNODETYPE_DEMUX</description>
+          <description>
+            <see cref="IAudioOutputSelector" />
+          </description>
+          <description>Required</description>
+        </item>
+        <item>
+          <description>KSNODETYPE_DEV_SPECIFIC</description>
+          <description>
+            <see cref="IDeviceSpecificProperty" />
+          </description>
+          <description>Required</description>
+        </item>
+        <item>
+          <description>KSNODETYPE_LOUDNESS</description>
+          <description>
+            <see cref="IAudioLoudness" />
+          </description>
+          <description>Required</description>
+        </item>
+        <item>
+          <description>KSNODETYPE_MUTE</description>
+          <description>
+            <see cref="IAudioMute" />
+          </description>
+          <description>Required</description>
+        </item>
+        <item>
+          <description>KSNODETYPE_MUX</description>
+          <description>
+            <see cref="IAudioInputSelector" />
+          </description>
+          <description>Required</description>
+        </item>
+        <item>
+          <description>KSNODETYPE_PEAKMETER</description>
+          <description>
+            <see cref="IAudioPeakMeter" />
+          </description>
+          <description>Required</description>
+        </item>
+        <item>
+          <description>KSNODETYPE_PROLOGIC_DECODER</description>
+          <description>
+            <see cref="IAudioChannelConfig" />
+          </description>
+          <description>Optional</description>
+        </item>
+        <item>
+          <description>KSNODETYPE_TONE</description>
+          <description>
+            <see cref="IAudioBass" />
+            <para>
+              <see cref="IAudioMidrange" />
+            </para>
+            <para>
+              <see cref="IAudioTreble" />
+            </para>
+          </description>
+          <description>OptionalOptional
+<para>Optional</para></description>
+        </item>
+        <item>
+          <description>KSNODETYPE_VOLUME</description>
+          <description>
+            <see cref="IAudioChannelConfig" />
+            <para>
+              <see cref="IAudioVolumeLevel" />
+            </para>
+          </description>
+          <description>OptionalRequired
+</description>
+        </item>
+      </list>
+      <para>In the preceding table, the middle column lists the control interfaces that are supported by subunits of the subtype specified in the left column. The right column indicates whether the subunit's support for a control interface is required or optional. If support is required, an application can rely on a subunit of the specified subtype to support the control interface. If support is optional, a subunit of the specified subtype can, but does not necessarily, support the control interface.</para>
+      <para>The control interfaces in the preceding table provide convenient access to the properties of subunits. However, some subunits have properties for which no corresponding control interfaces exist. Applications can access these properties through the <a href="https://docs.microsoft.com//windows-hardware/drivers/ddi/content/ksproxy/nn-ksproxy-ikscontrol">IKsControl</a> interface. For more information, see <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/using-the-ikscontrol-interface-to-access-audio-properties">Using the IKsControl Interface to Access Audio Properties</a>.</para>
+    </remarks>
+    <seealso cref="IPart Interface" />
+  </member>
+  <member name="IPart.GetTopologyObject">
+    <summary>
+      <para>The <b>GetTopologyObject</b> method gets a reference to the <see cref="IDeviceTopology" /> interface of the device-topology object that contains this part.</para>
+    </summary>
+    <param name="ppTopology">
+      <para>Pointer to a pointer variable into which the method writes the address of the <b>IDeviceTopology</b> interface of the device-topology object. The caller obtains a counted reference to the interface from this method. Through this method, the caller obtains a counted reference to the interface. The caller is responsible for releasing the interface, when it is no longer needed, by calling the interface's <b>Release</b> method. If the <b>GetTopologyObject</b> call fails,  <i>*ppTopology</i> is <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>Pointer <i>ppTopology</i> is <b>NULL</b>.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>For code examples that use this method, see the following topics:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/device-topologies">Device Topologies</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/using-the-ikscontrol-interface-to-access-audio-properties">Using the IKsControl Interface to Access Audio Properties</a>
+          </description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="IDeviceTopology Interface" />
+    <seealso cref="IPart Interface" />
+  </member>
+  <member name="IPart.RegisterControlChangeCallback">
+    <summary>
+      <para>The <b>RegisterControlChangeCallback</b> method registers the <see cref="IControlChangeNotify" /> interface, which the client implements to receive notifications of status changes in this part.</para>
+    </summary>
+    <param name="riid">
+      <para>The function-specific control interface that is to be monitored for control changes. For more information, see Remarks.</para>
+    </param>
+    <param name="pNotify">
+      <para>Pointer to the client's <see cref="IControlChangeNotify" /> interface. If the method succeeds, it calls the <see cref="AddRef" /> method on the client's <b>IControlChangeNotify</b> interface.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>Parameter <i>riid</i> is not a valid control-interface identifier.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <para>Pointer <i>pNotify</i> is <b>NULL</b>.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Set parameter <i>riid</i> to one of the following GUID values:</para>
+      <list type="bullet">
+        <item>
+          <description>IID_IAudioAutoGainControl</description>
+        </item>
+        <item>
+          <description>IID_IAudioBass</description>
+        </item>
+        <item>
+          <description>IID_IAudioChannelConfig</description>
+        </item>
+        <item>
+          <description>IID_IAudioInputSelector</description>
+        </item>
+        <item>
+          <description>IID_IAudioLoudness</description>
+        </item>
+        <item>
+          <description>IID_IAudioMidrange</description>
+        </item>
+        <item>
+          <description>IID_IAudioMute</description>
+        </item>
+        <item>
+          <description>IID_IAudioOutputSelector</description>
+        </item>
+        <item>
+          <description>IID_IAudioPeakMeter</description>
+        </item>
+        <item>
+          <description>IID_IAudioTreble</description>
+        </item>
+        <item>
+          <description>IID_IAudioVolumeLevel</description>
+        </item>
+        <item>
+          <description>IID_IDeviceSpecificProperty</description>
+        </item>
+        <item>
+          <description>IID_IKsFormatSupport</description>
+        </item>
+        <item>
+          <description>IID_IKsJackDescription</description>
+        </item>
+      </list>
+      <para>To obtain the interface ID of the function-specific control interface for a part, call the part's <see cref="IControlInterface.GetIID" /> method. To obtain the interface ID of a function-specific control interface type, use the <b>__uuidof</b> operator. For example, the interface ID of <see cref="IAudioAutoGainControl" /> is defined as follows:</para>
+      <code>
+const IID IID_IAudioAutoGainControl  __uuidof(IAudioAutoGainControl)
+
+</code>
+      <para>For more information about the <b>__uuidof</b> operator, see the Windows SDK documentation.</para>
+      <para>Before the client releases its final reference to the <see cref="IControlChangeNotify" /> interface, it should call the <see cref="IPart.UnregisterControlChangeCallback" /> method to unregister the interface. Otherwise, the application leaks the resources held by the <b>IControlChangeNotify</b> and <see cref="IPart" /> objects. Note that <b>RegisterControlChangeCallback</b> calls the client's <see cref="IControlChangeNotify.AddRef" /> method, and <b>UnregisterControlChangeCallback</b> calls the <see cref="IControlChangeNotify.Release" /> method. If the client errs by releasing its reference to the <b>IControlChangeNotify</b> interface before calling <b>UnregisterControlChangeCallback</b>, the <b>IPart</b> object never releases its reference to the <b>IControlChangeNotify</b> interface. For example, a poorly designed <b>IControlChangeNotify</b> implementation might call <b>UnregisterControlChangeCallback</b> from the destructor for the <b>IControlChangeNotify</b> object. In this case, the client will not call <b>UnregisterControlChangeCallback</b> until the <b>IPart</b> object releases its reference to the <b>IControlChangeNotify</b> interface, and the <b>IPart</b> object will not release its reference to the <b>IControlChangeNotify</b> interface until the client calls <b>UnregisterControlChangeCallback</b>. For more information about the <b>AddRef</b> and <b>Release</b> methods, see the discussion of the <see cref="IUnknown" /> interface in the Windows SDK documentation.</para>
+    </remarks>
+    <seealso cref="IControlChangeNotify Interface" />
+    <seealso cref="IControlInterface.GetIID" />
+    <seealso cref="IPart Interface" />
+    <seealso cref="IPart.UnregisterControlChangeCallback" />
+  </member>
+  <member name="IPart.UnregisterControlChangeCallback">
+    <summary>
+      <para>The <b>UnregisterControlChangeCallback</b> method removes the registration of an <see cref="IControlChangeNotify" /> interface that the client previously registered by a call to the <see cref="IPart.RegisterControlChangeCallback" /> method.</para>
+    </summary>
+    <param name="pNotify">
+      <para>Pointer to the <b>IControlChangeNotify</b> interface whose registration is to be deleted. The client passed this same interface pointer to the part object in a previous call to the <b>IPart.RegisterControlChangeCallback</b> method. If the <b>UnregisterControlChangeCallback</b> method succeeds, it calls the <b>Release</b> method on the client's <b>IControlChangeNotify</b> interface.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>Pointer <i>pNotify</i> is <b>NULL</b>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_NOTFOUND</b>
+            </para>
+          </description>
+          <description>
+            <para>Interface instance  <i>*pNotify</i> is not currently registered.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Before the client releases its final reference to the <b>IControlChangeNotify</b> interface, it should call <b>UnregisterControlChangeCallback</b> to unregister the interface. Otherwise, the application leaks the resources held by the <b>IControlChangeNotify</b> and <b>IPart</b> objects. Note that the <b>IPart.RegisterControlChangeCallback</b> method calls the client's <b>IControlChangeNotify.AddRef</b> method, and <b>UnregisterControlChangeCallback</b> calls the <b>IControlChangeNotify.Release</b> method. If the client errs by releasing its reference to the <b>IControlChangeNotify</b> interface before calling <b>UnregisterControlChangeCallback</b>, the <b>IPart</b> object never releases its reference to the <b>IControlChangeNotify</b> interface. For example, a poorly designed <b>IControlChangeNotify</b> implementation might call <b>UnregisterControlChangeCallback</b> from the destructor for the <b>IControlChangeNotify</b> object. In this case, the client will not call <b>UnregisterControlChangeCallback</b> until the <b>IPart</b> object releases its reference to the <b>IControlChangeNotify</b> interface, and the <b>IPart</b> object will not release its reference to the <b>IControlChangeNotify</b> interface until the client calls <b>UnregisterControlChangeCallback</b>. For more information about the <b>AddRef</b> and <b>Release</b> methods, see the discussion of the <b>IUnknown</b> interface in the Windows SDK documentation.</para>
+    </remarks>
+    <seealso cref="IControlChangeNotify Interface" />
+    <seealso cref="IPart Interface" />
+    <seealso cref="IPart.RegisterControlChangeCallback" />
+  </member>
+  <member name="IPart">
+    <summary>
+      <para>The <b>IPart</b> interface represents a part (connector or subunit) of a device topology. A client obtains a reference to an <b>IPart</b> interface by calling the <see cref="IDeviceTopology.GetPartById" /> or <see cref="IPartsList.GetPart" /> method, or by calling the <b>QueryInterface</b> method of the <see cref="IConnector" /> or <see cref="ISubunit" /> interface on a part object and setting the method's <i>iid</i> parameter to <b>REFIID</b> IID_IPart.</para>
+      <para>An object with an <b>IPart</b> interface can encapsulate one of the following device topology parts:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <b>Connector.</b> This is a part that connects to another device to form a data path for transmitting an audio stream between devices.</description>
+        </item>
+        <item>
+          <description>
+            <b>Subunit.</b> This is a part that processes an audio stream (for example, volume control).</description>
+        </item>
+      </list>
+      <para>The <b>IPart</b> interface of a connector or subunit object represents the generic functions that are common to all parts, and the object's <b>IConnector</b> or <b>ISubunit</b> interface represents the functions that are specific to a connector or subunit. In addition, a part might support one or more control interfaces for controlling or monitoring the function of the part. For example, the client controls a volume-control subunit through its <see cref="IAudioVolumeLevel" /> interface.</para>
+      <para>The <b>IPart</b> interface provides methods for getting the name, local ID, global ID, and part type of a connector or subunit. In addition, <b>IPart</b> can activate a control interface on a connector or subunit.</para>
+      <para>For code examples that use the <b>IPart</b> interface, see the implementations of the GetHardwareDeviceTopology and SelectCaptureDevice functions in <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/device-topologies">Device Topologies</a>.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/CoreAudio/core-audio-interfaces">Core Audio Interfaces</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/CoreAudio/devicetopology-api">DeviceTopology API</seealso>
+    <seealso cref="IAudioVolumeLevel Interface" />
+    <seealso cref="IConnector Interface" />
+    <seealso cref="IDeviceTopology.GetPartById" />
+    <seealso cref="IPartsList.GetPart" />
+    <seealso cref="ISubunit Interface" />
+  </member>
+</doc>

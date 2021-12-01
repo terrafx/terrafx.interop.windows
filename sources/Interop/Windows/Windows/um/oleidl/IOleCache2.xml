@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IOleCache2.DiscardCache">
+    <summary>
+      <para>Discards the caches found in memory.</para>
+    </summary>
+    <param name="dwDiscardOptions">
+      <para>A value from the <see cref="DISCARDCACHE" /> enumeration that indicates whether data is to be saved prior to being discarded. Containers that have drawn a large object and need to free up memory can specify DISCARDCACHE_SAVEIFDIRTY so that the newest presentation is saved for the next time the object must be drawn.</para>
+      <para>Containers that have activated an embedded object, made some changes, and then called <see cref="IOleObject.Close" /> with OLECLOSE_NOSAVE to roll back the changes can specify DISCARDCACHE_NOSAVE to ensure that the native and presentation data are not out of synchronization.</para>
+    </param>
+    <returns>
+      <para>This method returns S_OK on success. Other possible return values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>OLE_E_NOSTORAGE</b>
+            </para>
+          </description>
+          <description>
+            <para>There is no storage available for saving the data in the cache.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>STG_E_MEDIUMFULL</b>
+            </para>
+          </description>
+          <description>
+            <para>The storage medium is full.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The <b>IOleCache2.DiscardCache</b> method is commonly used to handle low memory conditions by freeing memory currently being used by presentation caches.</para>
+      <para>After it is discarded, a cache will satisfy subsequent <see cref="IDataObject.GetData" /> calls by reverting to disk-based data.</para>
+    </remarks>
+    <seealso cref="IOleCache" />
+    <seealso cref="IOleCache2" />
+    <seealso cref="IOleCacheControl" />
+  </member>
+  <member name="IOleCache2.UpdateCache">
+    <summary>
+      <para>Updates the specified caches. This method is used when the application needs precise control over caching.</para>
+    </summary>
+    <param name="pDataObject">
+      <para>A pointer to the <see cref="IDataObject" /> interface on the data object from which the cache is updated. Object handlers and in-process servers typically pass a non-<b>NULL</b> value. A container application usually passes <b>NULL</b>, and the source is obtained from the currently running object.</para>
+    </param>
+    <param name="grfUpdf">
+      <para>The type of cache to be updated. This parameter can be one or more of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>UPDFCACHE_NODATACACHE
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Updates caches created by using ADVF_NODATA in the call to <see cref="IOleCache.Cache" />.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>UPDFCACHE_ONSAVECACHE
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Updates caches created by using ADVFCACHE_ONSAVE in the call to <see cref="IOleCache.Cache" />.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>UPDFCACHE_ONSTOPCACHE
+</b>
+                </description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Updates caches created by using ADVFCACHE_ONSTOP in the call to <see cref="IOleCache.Cache" />.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>UPDFCACHE_NORMALCACHE</b>
+          </description>
+          <description>
+            <para>Dynamically updates the caches (as is normally done when the object sends out <see cref="OnDataChange" /> notices).</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>UPDFCACHE_IFBLANK</b>
+          </description>
+          <description>
+            <para>Updates the cache if blank, regardless of any other flag specified.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>UPDFCACHE_ONLYIFBLANK</b>
+          </description>
+          <description>
+            <para>Updates only caches that are blank.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>UPDFCACHE_ IFBLANKORONSAVECACHE</b>
+          </description>
+          <description>
+            <para>The equivalent of using an OR operation to combine UPDFCACHE_IFBLANK and UPDFCACHE_ONSAVECACHE.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>UPDFCACHE_ALL</b>
+          </description>
+          <description>
+            <para>Updates all caches.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>UPDFCACHE_ ALLBUTNODATACACHE</b>
+          </description>
+          <description>
+            <para>Updates all caches except those created with ADVF_NODATA in the call to <see cref="IOleCache.Cache" />. Thus, you can control updates to the caches created with the ADVF_NODATA flag and only update these caches explicitly.</para>
+          </description>
+        </item>
+      </list>
+    </param>
+    <param name="pReserved">
+      <para>This parameter is reserved and must be <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>This method returns S_OK on success. Other possible return values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>One of the arguments is not valid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_UNEXPECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>An unexpected error has occurred.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>Insufficient memory is available for this operation.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>OLE_E_NOTRUNNING</b>
+            </para>
+          </description>
+          <description>
+            <para>The specified <i>pDataObject</i> is not running.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>CACHE_E_NOCACHE_UPDATED</b>
+            </para>
+          </description>
+          <description>
+            <para>None of the caches were updated.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>CACHE_S_SOMECACHES_NOTUPDATED</b>
+            </para>
+          </description>
+          <description>
+            <para>Some of the caches were updated.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IDataObject" />
+    <seealso cref="IOleCache" />
+    <seealso cref="IOleCache2" />
+    <seealso cref="IOleCacheControl" />
+  </member>
+  <member name="IOleCache2">
+    <summary>
+      <para>Enables object clients to selectively update each cache that was created with <see cref="IOleCache.Cache" />.</para>
+    </summary>
+    <seealso cref="CreateDataCache" />
+    <seealso cref="IOleCache" />
+    <seealso cref="IOleCacheControl" />
+  </member>
+</doc>

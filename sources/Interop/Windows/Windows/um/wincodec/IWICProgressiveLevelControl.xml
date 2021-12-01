@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IWICProgressiveLevelControl.GetCurrentLevel">
+    <summary>
+      <para>Gets the decoder's current progressive level.</para>
+    </summary>
+    <param name="pnLevel">
+      <para>Type: <b>UINT*</b></para>
+      <para>Indicates the current level specified.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The level always defaults to the highest progressive level. In order to decode a lower progressive level, <see cref="SetCurrentLevel" /> must first be called.</para>
+    </remarks>
+    <seealso cref="IWICProgressiveLevelControl" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-progressive-decoding">Progressive Decoding Overview</seealso>
+  </member>
+  <member name="IWICProgressiveLevelControl.GetLevelCount">
+    <summary>
+      <para>Gets the number of levels of progressive decoding supported by the CODEC.</para>
+    </summary>
+    <param name="pcLevels">
+      <para>Type: <b>UINT*</b></para>
+      <para>Indicates the number of levels supported by the CODEC.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Users should not use this function to iterate through the progressive levels of a progressive JPEG image. JPEG progressive levels are determined by the image and do not have a fixed level count. Using this method will force the application to wait for all progressive levels to be downloaded before it can return. Instead, applications should use the following code to iterate through the progressive levels of a progressive JPEG image.</para>
+      <h4>Examples</h4>
+      <code>IWICProgressiveLevelControl *pProgressive = NULL;
+
+HRESULT hr = (pBitmapFrame-&gt;QueryInterface(
+   IID_IWICProgressiveLevelControl,
+   (void**) &amp;amp;amp;amp;amp;amp;pProgressive));
+
+if (SUCCEEDED(hr))
+{
+   for (UINT uCurrentLevel = 0; SUCCEEDED(hr); uCurrentLevel++)
+   {
+      hr = pProgressive-&gt;SetCurrentLevel(uCurrentLevel);
+      if (WINCODEC_ERR_INVALIDPROGRESSIVELEVEL == hr)
+      {
+         // No more levels
+         break;
+      }
+
+      if (SUCCEEDED(hr))
+      {
+         // Output the current level
+         hr = pBitmapFrame-&gt;CopyPixels(...);
+      }
+   }
+}
+
+if (pProgressive)
+{
+   pProgressive-&gt;Release();
+}
+</code>
+    </remarks>
+    <seealso cref="IWICProgressiveLevelControl" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-progressive-decoding">Progressive Decoding Overview</seealso>
+  </member>
+  <member name="IWICProgressiveLevelControl.SetCurrentLevel">
+    <summary>
+      <para>Specifies the level to retrieve on the next call to <see cref="CopyPixels" />.</para>
+    </summary>
+    <param name="nLevel">
+      <para>Type: <b>UINT</b></para>
+      <para>Specifies which level to return next. If greater than the total number of levels supported, an error will be returned.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>A call does not have to request every level supported.
+If a caller requests level 1, without having previously requested level 0, the bits returned by the next call to <see cref="CopyPixels" /> will include both levels.</para>
+      <para>If the requested level is invalid, the error returned is <a href="https://docs.microsoft.com//windows/desktop/wic/-wic-codec-error-codes">WINCODEC_ERR_INVALIDPROGRESSIVELEVEL</a>.</para>
+      <h4>Examples</h4>
+      <para>Users should use this method to iterate through the progressive levels of a progressive JPEG image rather than the <see cref="GetCurrentLevel" /> method. JPEG progressive levels are determined by the image and do not have a fixed level count.
+Using <b>GetCurrentLevel</b> method will force the application to wait for all progressive levels to be downloaded before it can return.
+Instead, applications should use the following code to iterate through the progressive levels of a progressive JPEG image.</para>
+      <code>IWICProgressiveLevelControl *pProgressive = NULL;
+
+HRESULT hr = (pBitmapFrame-&gt;QueryInterface(
+   IID_IWICProgressiveLevelControl,
+   (void**) &amp;amp;amp;amp;amp;amp;pProgressive));
+
+if (SUCCEEDED(hr))
+{
+   for (UINT uCurrentLevel = 0; SUCCEEDED(hr); uCurrentLevel++)
+   {
+      hr = pProgressive-&gt;SetCurrentLevel(uCurrentLevel);
+      if (WINCODEC_ERR_INVALIDPROGRESSIVELEVEL == hr)
+      {
+         // No more levels
+         break;
+      }
+
+      if (SUCCEEDED(hr))
+      {
+         // Output the current level
+         hr = pBitmapFrame-&gt;CopyPixels(...);
+      }
+   }
+}
+
+if (pProgressive)
+{
+   pProgressive-&gt;Release();
+}
+
+</code>
+    </remarks>
+    <seealso cref="IWICProgressiveLevelControl" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-progressive-decoding">Progressive Decoding Overview</seealso>
+  </member>
+  <member name="IWICProgressiveLevelControl">
+    <summary>
+      <para>Exposes methods for obtaining information about and controlling progressive decoding.</para>
+    </summary>
+    <remarks>
+      <para>Images can only be progressively decoded if they were progressively encoded. Progressive images automatically start at the highest (best quality) progressive level. The caller must manually set the decoder to a lower progressive level.</para>
+      <para>E_NOTIMPL is returned if the codec does not support progressive level decoding.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-progressive-decoding">Progressive Decoding Overview</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-sample-progressive-decoding">WIC Progressive Decoding Sample</seealso>
+  </member>
+</doc>

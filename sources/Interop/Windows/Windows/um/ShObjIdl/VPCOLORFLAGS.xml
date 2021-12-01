@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="VPCOLORFLAGS">
+    <summary>
+      <para>Specifies the use of a color. Used by <see cref="IVisualProperties" /> methods.</para>
+    </summary>
+  </member>
+  <member name="VPCOLORFLAGS.VPCF_TEXT">
+    <summary>
+      <para>A text color.</para>
+    </summary>
+  </member>
+  <member name="VPCOLORFLAGS.VPCF_BACKGROUND">
+    <summary>
+      <para>A background color.</para>
+    </summary>
+  </member>
+  <member name="VPCOLORFLAGS.VPCF_SORTCOLUMN">
+    <summary>
+      <para>A sort-column color.</para>
+    </summary>
+  </member>
+  <member name="VPCOLORFLAGS.VPCF_SUBTEXT">
+    <summary>
+      <para>A subtext color.</para>
+    </summary>
+  </member>
+  <member name="VPCOLORFLAGS.VPCF_TEXTBACKGROUND">
+    <summary>
+      <para>
+        <b>Windows 7 and later</b>. A text background color.</para>
+    </summary>
+  </member>
+</doc>

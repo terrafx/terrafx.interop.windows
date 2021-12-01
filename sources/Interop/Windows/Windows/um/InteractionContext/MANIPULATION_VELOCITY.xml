@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MANIPULATION_VELOCITY">
+    <summary>
+      <para>Defines the velocity data of a manipulation.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/structures">Interaction Context Structures</seealso>
+  </member>
+  <member name="MANIPULATION_VELOCITY.velocityX">
+    <summary>
+      <para>The velocity along the x-axis.</para>
+    </summary>
+  </member>
+  <member name="MANIPULATION_VELOCITY.velocityY">
+    <summary>
+      <para>The velocity along the y-axis.</para>
+    </summary>
+  </member>
+  <member name="MANIPULATION_VELOCITY.velocityExpansion">
+    <summary>
+      <para>The velocity expansion.</para>
+    </summary>
+  </member>
+  <member name="MANIPULATION_VELOCITY.velocityAngular">
+    <summary>
+      <para>The angular velocity.</para>
+    </summary>
+  </member>
+</doc>

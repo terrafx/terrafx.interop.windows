@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='eTlsSignatureAlgorithm.xml' path='doc/member[@name="eTlsSignatureAlgorithm"]/*' />
 public enum eTlsSignatureAlgorithm
 {
+    /// <include file='eTlsSignatureAlgorithm.xml' path='doc/member[@name="eTlsSignatureAlgorithm.TlsSignatureAlgorithm_Anonymous"]/*' />
     TlsSignatureAlgorithm_Anonymous = 0,
+
+    /// <include file='eTlsSignatureAlgorithm.xml' path='doc/member[@name="eTlsSignatureAlgorithm.TlsSignatureAlgorithm_Rsa"]/*' />
     TlsSignatureAlgorithm_Rsa = 1,
+
+    /// <include file='eTlsSignatureAlgorithm.xml' path='doc/member[@name="eTlsSignatureAlgorithm.TlsSignatureAlgorithm_Dsa"]/*' />
     TlsSignatureAlgorithm_Dsa = 2,
+
+    /// <include file='eTlsSignatureAlgorithm.xml' path='doc/member[@name="eTlsSignatureAlgorithm.TlsSignatureAlgorithm_Ecdsa"]/*' />
     TlsSignatureAlgorithm_Ecdsa = 3,
 }

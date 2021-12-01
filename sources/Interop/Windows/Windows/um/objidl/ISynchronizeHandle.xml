@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ISynchronizeHandle.GetHandle">
+    <summary>
+      <para>Retrieves a handle to the synchronization object.</para>
+    </summary>
+    <param name="ph">
+      <para>A pointer to the variable that receives a handle to the synchronization object.</para>
+    </param>
+    <returns>
+      <para>This method can return the standard return values E_INVALIDARG, E_OUTOFMEMORY, E_FAIL, and S_OK.</para>
+    </returns>
+    <remarks>
+      <para>Do not close the handle returned in the <i>ph</i> parameter.
+The lifetime of the handle is controlled by the object that implements the ISynchronizeHandle interface.</para>
+    </remarks>
+    <seealso cref="ISynchronizeEvent.SetEventHandle" />
+    <seealso cref="ISynchronizeHandle" />
+  </member>
+  <member name="ISynchronizeHandle">
+    <summary>
+      <para>Retrieves a handle associated with a synchronization object.</para>
+    </summary>
+    <seealso cref="ISynchronizeEvent" />
+  </member>
+</doc>

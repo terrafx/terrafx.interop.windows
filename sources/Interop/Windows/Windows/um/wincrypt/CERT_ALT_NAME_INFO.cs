@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CERT_ALT_NAME_INFO.xml' path='doc/member[@name="CERT_ALT_NAME_INFO"]/*' />
 public unsafe partial struct CERT_ALT_NAME_INFO
 {
+    /// <include file='CERT_ALT_NAME_INFO.xml' path='doc/member[@name="CERT_ALT_NAME_INFO.cAltEntry"]/*' />
     [NativeTypeName("DWORD")]
     public uint cAltEntry;
 
+    /// <include file='CERT_ALT_NAME_INFO.xml' path='doc/member[@name="CERT_ALT_NAME_INFO.rgAltEntry"]/*' />
     [NativeTypeName("PCERT_ALT_NAME_ENTRY")]
     public CERT_ALT_NAME_ENTRY* rgAltEntry;
 }

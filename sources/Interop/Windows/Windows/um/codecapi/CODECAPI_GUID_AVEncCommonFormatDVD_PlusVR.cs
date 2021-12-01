@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_GUID_AVEncCommonFormatDVD_PlusVR.xml' path='doc/member[@name="CODECAPI_GUID_AVEncCommonFormatDVD_PlusVR"]/*' />
 [Guid("E74C6F2E-EC37-478D-9AF4-A5E135B6271C")]
 public partial struct CODECAPI_GUID_AVEncCommonFormatDVD_PlusVR
 {

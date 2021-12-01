@@ -5,8 +5,10 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MIB_IFNUMBER.xml' path='doc/member[@name="MIB_IFNUMBER"]/*' />
 public partial struct MIB_IFNUMBER
 {
+    /// <include file='MIB_IFNUMBER.xml' path='doc/member[@name="MIB_IFNUMBER.dwValue"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwValue;
 }

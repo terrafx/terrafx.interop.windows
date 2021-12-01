@@ -5,13 +5,27 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SHARE_ROLE.xml' path='doc/member[@name="SHARE_ROLE"]/*' />
 public enum SHARE_ROLE
 {
+    /// <include file='SHARE_ROLE.xml' path='doc/member[@name="SHARE_ROLE.SHARE_ROLE_INVALID"]/*' />
     SHARE_ROLE_INVALID = -1,
+
+    /// <include file='SHARE_ROLE.xml' path='doc/member[@name="SHARE_ROLE.SHARE_ROLE_READER"]/*' />
     SHARE_ROLE_READER = 0,
+
+    /// <include file='SHARE_ROLE.xml' path='doc/member[@name="SHARE_ROLE.SHARE_ROLE_CONTRIBUTOR"]/*' />
     SHARE_ROLE_CONTRIBUTOR = 1,
+
+    /// <include file='SHARE_ROLE.xml' path='doc/member[@name="SHARE_ROLE.SHARE_ROLE_CO_OWNER"]/*' />
     SHARE_ROLE_CO_OWNER = 2,
+
+    /// <include file='SHARE_ROLE.xml' path='doc/member[@name="SHARE_ROLE.SHARE_ROLE_OWNER"]/*' />
     SHARE_ROLE_OWNER = 3,
+
+    /// <include file='SHARE_ROLE.xml' path='doc/member[@name="SHARE_ROLE.SHARE_ROLE_CUSTOM"]/*' />
     SHARE_ROLE_CUSTOM = 4,
+
+    /// <include file='SHARE_ROLE.xml' path='doc/member[@name="SHARE_ROLE.SHARE_ROLE_MIXED"]/*' />
     SHARE_ROLE_MIXED = 5,
 }

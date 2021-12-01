@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CRYPT_TIMESTAMP_ACCURACY.xml' path='doc/member[@name="CRYPT_TIMESTAMP_ACCURACY"]/*' />
 public partial struct CRYPT_TIMESTAMP_ACCURACY
 {
+    /// <include file='CRYPT_TIMESTAMP_ACCURACY.xml' path='doc/member[@name="CRYPT_TIMESTAMP_ACCURACY.dwSeconds"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwSeconds;
 
+    /// <include file='CRYPT_TIMESTAMP_ACCURACY.xml' path='doc/member[@name="CRYPT_TIMESTAMP_ACCURACY.dwMillis"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwMillis;
 
+    /// <include file='CRYPT_TIMESTAMP_ACCURACY.xml' path='doc/member[@name="CRYPT_TIMESTAMP_ACCURACY.dwMicros"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwMicros;
 }

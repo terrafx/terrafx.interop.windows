@@ -7,10 +7,16 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CWMO_FLAGS.xml' path='doc/member[@name="CWMO_FLAGS"]/*' />
 [Flags]
 public enum CWMO_FLAGS
 {
+    /// <include file='CWMO_FLAGS.xml' path='doc/member[@name="CWMO_FLAGS.CWMO_DEFAULT"]/*' />
     CWMO_DEFAULT = 0,
+
+    /// <include file='CWMO_FLAGS.xml' path='doc/member[@name="CWMO_FLAGS.CWMO_DISPATCH_CALLS"]/*' />
     CWMO_DISPATCH_CALLS = 1,
+
+    /// <include file='CWMO_FLAGS.xml' path='doc/member[@name="CWMO_FLAGS.CWMO_DISPATCH_WINDOW_MESSAGES"]/*' />
     CWMO_DISPATCH_WINDOW_MESSAGES = 2,
 }

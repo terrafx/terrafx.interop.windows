@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SPPHRASERNG.xml' path='doc/member[@name="SPPHRASERNG"]/*' />
 public enum SPPHRASERNG
 {
+    /// <include file='SPPHRASERNG.xml' path='doc/member[@name="SPPHRASERNG.SPPR_ALL_ELEMENTS"]/*' />
     SPPR_ALL_ELEMENTS = -1,
 }

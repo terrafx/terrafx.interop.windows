@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PackageOrigin">
+    <summary>
+      <para>Specifies the origin of a package.</para>
+    </summary>
+    <seealso cref="GetStagedPackageOrigin" />
+  </member>
+  <member name="PackageOrigin.PackageOrigin_Unknown">
+    <summary>
+      <para>The package's origin is unknown.</para>
+    </summary>
+  </member>
+  <member name="PackageOrigin.PackageOrigin_Unsigned">
+    <summary>
+      <para>The package originated as unsigned.</para>
+    </summary>
+  </member>
+  <member name="PackageOrigin.PackageOrigin_Inbox">
+    <summary>
+      <para>The package was included inbox.</para>
+    </summary>
+  </member>
+  <member name="PackageOrigin.PackageOrigin_Store">
+    <summary>
+      <para>The package originated from the Windows Store.</para>
+    </summary>
+  </member>
+  <member name="PackageOrigin.PackageOrigin_DeveloperUnsigned">
+    <summary>
+      <para>The package originated as developer unsigned.</para>
+    </summary>
+  </member>
+  <member name="PackageOrigin.PackageOrigin_DeveloperSigned">
+    <summary>
+      <para>The package originated as developer signed.</para>
+    </summary>
+  </member>
+  <member name="PackageOrigin.PackageOrigin_LineOfBusiness">
+    <summary>
+      <para>The package originated as a line-of-business app.</para>
+    </summary>
+  </member>
+</doc>

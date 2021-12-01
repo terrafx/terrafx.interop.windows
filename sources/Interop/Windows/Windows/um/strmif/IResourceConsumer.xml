@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IResourceConsumer.AcquireResource">
+    <summary>
+      <para>The <code>AcquireResource</code> method notifies the resource consumer that a resource might be acquired.</para>
+    </summary>
+    <param name="idResource">
+      <para>Resource identifier of the resource to be acquired.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Consumer has successfully acquired the resource.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>Consumer has not acquired the resource but will use <see cref="IResourceManager.NotifyAcquire" /> when it does.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>VFW_S_RESOURCE_NOT_NEEDED</b>
+            </para>
+          </description>
+          <description>
+            <para>Consumer no longer needs the resource.</para>
+          </description>
+        </item>
+      </list>
+      <para>The method may return some other error code, if the consumer fails to acquire the resource.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IResourceConsumer Interface" />
+  </member>
+  <member name="IResourceConsumer.ReleaseResource">
+    <summary>
+      <para>The <code>ReleaseResource</code> method requests the resource consumer to release the specified resource.</para>
+    </summary>
+    <param name="idResource">
+      <para>Resource identifier to be released.</para>
+    </param>
+    <returns>
+      <para>Returns S_OK if the consumer has released it and requires it again when it becomes available, or S_FALSE if the consumer has not released it but will use <see cref="IResourceManager.NotifyRelease" /> when it does.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IResourceConsumer Interface" />
+  </member>
+  <member name="IResourceConsumer">
+    <summary>
+      <para>The <code>IResourceConsumer</code> interface provides a callback mechanism for objects using the <see cref="IResourceManager" /> interface.</para>
+      <para>An object must implement <code>IResourceConsumer</code> if it uses the <see cref="IResourceManager" /> interface to request resources from the filter graph manager. The filter graph manager calls methods on <code>IResourceConsumer</code> to notify the object when a resource becomes available, or when the object should release a resource that it acquired.</para>
+      <para>Applications typically do not use or implement this interface.</para>
+    </summary>
+    <seealso cref="IResourceManager Interface" />
+  </member>
+</doc>

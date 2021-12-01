@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="OVERLAPPED_ENTRY">
+    <summary>
+      <para>Contains the information returned by a call to the
+<a href="https://docs.microsoft.com//windows/desktop/FileIO/getqueuedcompletionstatusex-func">GetQueuedCompletionStatusEx</a></para>
+      <para>function.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/FileIO/getqueuedcompletionstatusex-func">GetQueuedCompletionStatusEx</seealso>
+    <seealso cref="OVERLAPPED" />
+  </member>
+  <member name="OVERLAPPED_ENTRY.lpCompletionKey">
+    <summary>
+      <para>Receives the completion key value associated with the file handle whose I/O operation has completed. A
+completion key is a per-file key that is specified in a call to
+<a href="https://docs.microsoft.com//windows/desktop/FileIO/createiocompletionport">CreateIoCompletionPort</a>.</para>
+    </summary>
+  </member>
+  <member name="OVERLAPPED_ENTRY.lpOverlapped">
+    <summary>
+      <para>Receives the address of the <see cref="OVERLAPPED" /> structure
+that was specified when the completed I/O operation was started.</para>
+    </summary>
+  </member>
+  <member name="OVERLAPPED_ENTRY.Internal">
+    <summary>
+      <para>Reserved.</para>
+    </summary>
+  </member>
+  <member name="OVERLAPPED_ENTRY.dwNumberOfBytesTransferred">
+    <summary>
+      <para>Receives the number of bytes transferred during the I/O operation that has completed.</para>
+    </summary>
+  </member>
+</doc>

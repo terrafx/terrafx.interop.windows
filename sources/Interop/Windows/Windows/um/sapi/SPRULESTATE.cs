@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SPRULESTATE.xml' path='doc/member[@name="SPRULESTATE"]/*' />
 public enum SPRULESTATE
 {
+    /// <include file='SPRULESTATE.xml' path='doc/member[@name="SPRULESTATE.SPRS_INACTIVE"]/*' />
     SPRS_INACTIVE = 0,
+
+    /// <include file='SPRULESTATE.xml' path='doc/member[@name="SPRULESTATE.SPRS_ACTIVE"]/*' />
     SPRS_ACTIVE = 1,
+
+    /// <include file='SPRULESTATE.xml' path='doc/member[@name="SPRULESTATE.SPRS_ACTIVE_WITH_AUTO_PAUSE"]/*' />
     SPRS_ACTIVE_WITH_AUTO_PAUSE = 3,
+
+    /// <include file='SPRULESTATE.xml' path='doc/member[@name="SPRULESTATE.SPRS_ACTIVE_USER_DELIMITED"]/*' />
     SPRS_ACTIVE_USER_DELIMITED = 4,
 }

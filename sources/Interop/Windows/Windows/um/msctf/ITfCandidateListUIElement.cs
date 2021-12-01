@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITfCandidateListUIElement.xml' path='doc/member[@name="ITfCandidateListUIElement"]/*' />
 [Guid("EA1EA138-19DF-11D7-A6D2-00065B84435C")]
 [NativeTypeName("struct ITfCandidateListUIElement : ITfUIElement")]
 [NativeInheritance("ITfUIElement")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITfCandidateListUIElement : ITfCandidateListUIEleme
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITfCandidateListUIElement : ITfCandidateListUIEleme
         return ((delegate* unmanaged<ITfCandidateListUIElement*, Guid*, void**, int>)(lpVtbl[0]))((ITfCandidateListUIElement*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITfCandidateListUIElement : ITfCandidateListUIEleme
         return ((delegate* unmanaged<ITfCandidateListUIElement*, uint>)(lpVtbl[1]))((ITfCandidateListUIElement*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITfCandidateListUIElement : ITfCandidateListUIEleme
         return ((delegate* unmanaged<ITfCandidateListUIElement*, uint>)(lpVtbl[2]))((ITfCandidateListUIElement*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ITfUIElement.GetDescription" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetDescription([NativeTypeName("BSTR *")] ushort** pbstrDescription)
@@ -46,6 +51,7 @@ public unsafe partial struct ITfCandidateListUIElement : ITfCandidateListUIEleme
         return ((delegate* unmanaged<ITfCandidateListUIElement*, ushort**, int>)(lpVtbl[3]))((ITfCandidateListUIElement*)Unsafe.AsPointer(ref this), pbstrDescription);
     }
 
+    /// <inheritdoc cref="ITfUIElement.GetGUID" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetGUID(Guid* pguid)
@@ -53,6 +59,7 @@ public unsafe partial struct ITfCandidateListUIElement : ITfCandidateListUIEleme
         return ((delegate* unmanaged<ITfCandidateListUIElement*, Guid*, int>)(lpVtbl[4]))((ITfCandidateListUIElement*)Unsafe.AsPointer(ref this), pguid);
     }
 
+    /// <inheritdoc cref="ITfUIElement.Show" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT Show(BOOL bShow)
@@ -60,6 +67,7 @@ public unsafe partial struct ITfCandidateListUIElement : ITfCandidateListUIEleme
         return ((delegate* unmanaged<ITfCandidateListUIElement*, BOOL, int>)(lpVtbl[5]))((ITfCandidateListUIElement*)Unsafe.AsPointer(ref this), bShow);
     }
 
+    /// <inheritdoc cref="ITfUIElement.IsShown" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT IsShown(BOOL* pbShow)
@@ -67,6 +75,7 @@ public unsafe partial struct ITfCandidateListUIElement : ITfCandidateListUIEleme
         return ((delegate* unmanaged<ITfCandidateListUIElement*, BOOL*, int>)(lpVtbl[6]))((ITfCandidateListUIElement*)Unsafe.AsPointer(ref this), pbShow);
     }
 
+    /// <include file='ITfCandidateListUIElement.xml' path='doc/member[@name="ITfCandidateListUIElement.GetUpdatedFlags"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetUpdatedFlags([NativeTypeName("DWORD *")] uint* pdwFlags)
@@ -74,6 +83,7 @@ public unsafe partial struct ITfCandidateListUIElement : ITfCandidateListUIEleme
         return ((delegate* unmanaged<ITfCandidateListUIElement*, uint*, int>)(lpVtbl[7]))((ITfCandidateListUIElement*)Unsafe.AsPointer(ref this), pdwFlags);
     }
 
+    /// <include file='ITfCandidateListUIElement.xml' path='doc/member[@name="ITfCandidateListUIElement.GetDocumentMgr"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetDocumentMgr(ITfDocumentMgr** ppdim)
@@ -81,6 +91,7 @@ public unsafe partial struct ITfCandidateListUIElement : ITfCandidateListUIEleme
         return ((delegate* unmanaged<ITfCandidateListUIElement*, ITfDocumentMgr**, int>)(lpVtbl[8]))((ITfCandidateListUIElement*)Unsafe.AsPointer(ref this), ppdim);
     }
 
+    /// <include file='ITfCandidateListUIElement.xml' path='doc/member[@name="ITfCandidateListUIElement.GetCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT GetCount(uint* puCount)
@@ -88,6 +99,7 @@ public unsafe partial struct ITfCandidateListUIElement : ITfCandidateListUIEleme
         return ((delegate* unmanaged<ITfCandidateListUIElement*, uint*, int>)(lpVtbl[9]))((ITfCandidateListUIElement*)Unsafe.AsPointer(ref this), puCount);
     }
 
+    /// <include file='ITfCandidateListUIElement.xml' path='doc/member[@name="ITfCandidateListUIElement.GetSelection"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT GetSelection(uint* puIndex)
@@ -95,6 +107,7 @@ public unsafe partial struct ITfCandidateListUIElement : ITfCandidateListUIEleme
         return ((delegate* unmanaged<ITfCandidateListUIElement*, uint*, int>)(lpVtbl[10]))((ITfCandidateListUIElement*)Unsafe.AsPointer(ref this), puIndex);
     }
 
+    /// <include file='ITfCandidateListUIElement.xml' path='doc/member[@name="ITfCandidateListUIElement.GetString"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT GetString(uint uIndex, [NativeTypeName("BSTR *")] ushort** pstr)
@@ -102,6 +115,7 @@ public unsafe partial struct ITfCandidateListUIElement : ITfCandidateListUIEleme
         return ((delegate* unmanaged<ITfCandidateListUIElement*, uint, ushort**, int>)(lpVtbl[11]))((ITfCandidateListUIElement*)Unsafe.AsPointer(ref this), uIndex, pstr);
     }
 
+    /// <include file='ITfCandidateListUIElement.xml' path='doc/member[@name="ITfCandidateListUIElement.GetPageIndex"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT GetPageIndex(uint* pIndex, uint uSize, uint* puPageCnt)
@@ -109,6 +123,7 @@ public unsafe partial struct ITfCandidateListUIElement : ITfCandidateListUIEleme
         return ((delegate* unmanaged<ITfCandidateListUIElement*, uint*, uint, uint*, int>)(lpVtbl[12]))((ITfCandidateListUIElement*)Unsafe.AsPointer(ref this), pIndex, uSize, puPageCnt);
     }
 
+    /// <include file='ITfCandidateListUIElement.xml' path='doc/member[@name="ITfCandidateListUIElement.SetPageIndex"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT SetPageIndex(uint* pIndex, uint uPageCnt)
@@ -116,6 +131,7 @@ public unsafe partial struct ITfCandidateListUIElement : ITfCandidateListUIEleme
         return ((delegate* unmanaged<ITfCandidateListUIElement*, uint*, uint, int>)(lpVtbl[13]))((ITfCandidateListUIElement*)Unsafe.AsPointer(ref this), pIndex, uPageCnt);
     }
 
+    /// <include file='ITfCandidateListUIElement.xml' path='doc/member[@name="ITfCandidateListUIElement.GetCurrentPage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT GetCurrentPage(uint* puPage)

@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HYPERLINKSTATES.xml' path='doc/member[@name="HYPERLINKSTATES"]/*' />
 public enum HYPERLINKSTATES
 {
+    /// <include file='HYPERLINKSTATES.xml' path='doc/member[@name="HYPERLINKSTATES.HLS_NORMALTEXT"]/*' />
     HLS_NORMALTEXT = 1,
+
+    /// <include file='HYPERLINKSTATES.xml' path='doc/member[@name="HYPERLINKSTATES.HLS_LINKTEXT"]/*' />
     HLS_LINKTEXT = 2,
 }

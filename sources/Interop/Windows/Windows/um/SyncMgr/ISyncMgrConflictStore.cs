@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ISyncMgrConflictStore.xml' path='doc/member[@name="ISyncMgrConflictStore"]/*' />
 [Guid("CF8FC579-C396-4774-85F1-D908A831156E")]
 [NativeTypeName("struct ISyncMgrConflictStore : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ISyncMgrConflictStore : ISyncMgrConflictStore.Inter
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ISyncMgrConflictStore : ISyncMgrConflictStore.Inter
         return ((delegate* unmanaged<ISyncMgrConflictStore*, Guid*, void**, int>)(lpVtbl[0]))((ISyncMgrConflictStore*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ISyncMgrConflictStore : ISyncMgrConflictStore.Inter
         return ((delegate* unmanaged<ISyncMgrConflictStore*, uint>)(lpVtbl[1]))((ISyncMgrConflictStore*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ISyncMgrConflictStore : ISyncMgrConflictStore.Inter
         return ((delegate* unmanaged<ISyncMgrConflictStore*, uint>)(lpVtbl[2]))((ISyncMgrConflictStore*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ISyncMgrConflictStore.xml' path='doc/member[@name="ISyncMgrConflictStore.EnumConflicts"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT EnumConflicts([NativeTypeName("LPCWSTR")] ushort* pszHandlerID, [NativeTypeName("LPCWSTR")] ushort* pszItemID, IEnumSyncMgrConflict** ppEnum)
@@ -46,6 +51,7 @@ public unsafe partial struct ISyncMgrConflictStore : ISyncMgrConflictStore.Inter
         return ((delegate* unmanaged<ISyncMgrConflictStore*, ushort*, ushort*, IEnumSyncMgrConflict**, int>)(lpVtbl[3]))((ISyncMgrConflictStore*)Unsafe.AsPointer(ref this), pszHandlerID, pszItemID, ppEnum);
     }
 
+    /// <include file='ISyncMgrConflictStore.xml' path='doc/member[@name="ISyncMgrConflictStore.BindToConflict"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT BindToConflict([NativeTypeName("const SYNCMGR_CONFLICT_ID_INFO *")] SYNCMGR_CONFLICT_ID_INFO* pConflictIdInfo, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
@@ -53,6 +59,7 @@ public unsafe partial struct ISyncMgrConflictStore : ISyncMgrConflictStore.Inter
         return ((delegate* unmanaged<ISyncMgrConflictStore*, SYNCMGR_CONFLICT_ID_INFO*, Guid*, void**, int>)(lpVtbl[4]))((ISyncMgrConflictStore*)Unsafe.AsPointer(ref this), pConflictIdInfo, riid, ppv);
     }
 
+    /// <include file='ISyncMgrConflictStore.xml' path='doc/member[@name="ISyncMgrConflictStore.RemoveConflicts"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT RemoveConflicts([NativeTypeName("const SYNCMGR_CONFLICT_ID_INFO *")] SYNCMGR_CONFLICT_ID_INFO* rgConflictIdInfo, [NativeTypeName("DWORD")] uint cConflicts)
@@ -60,6 +67,7 @@ public unsafe partial struct ISyncMgrConflictStore : ISyncMgrConflictStore.Inter
         return ((delegate* unmanaged<ISyncMgrConflictStore*, SYNCMGR_CONFLICT_ID_INFO*, uint, int>)(lpVtbl[5]))((ISyncMgrConflictStore*)Unsafe.AsPointer(ref this), rgConflictIdInfo, cConflicts);
     }
 
+    /// <include file='ISyncMgrConflictStore.xml' path='doc/member[@name="ISyncMgrConflictStore.GetCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetCount([NativeTypeName("LPCWSTR")] ushort* pszHandlerID, [NativeTypeName("LPCWSTR")] ushort* pszItemID, [NativeTypeName("DWORD *")] uint* pnConflicts)

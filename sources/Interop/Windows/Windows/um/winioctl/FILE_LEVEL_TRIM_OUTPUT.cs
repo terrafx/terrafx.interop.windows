@@ -7,9 +7,11 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='FILE_LEVEL_TRIM_OUTPUT.xml' path='doc/member[@name="FILE_LEVEL_TRIM_OUTPUT"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public partial struct FILE_LEVEL_TRIM_OUTPUT
 {
+    /// <include file='FILE_LEVEL_TRIM_OUTPUT.xml' path='doc/member[@name="FILE_LEVEL_TRIM_OUTPUT.NumRangesProcessed"]/*' />
     [NativeTypeName("DWORD")]
     public uint NumRangesProcessed;
 }

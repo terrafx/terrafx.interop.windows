@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ShellWindowTypeConstants">
+    <summary>
+      <para>Specifies types of Shell windows.</para>
+    </summary>
+    <seealso cref="IBrowserService.RegisterWindow" />
+    <seealso cref="IShellWindows" />
+    <seealso cref="IShellWindows.FindWindowSW" />
+    <seealso cref="IShellWindows.Register" />
+    <seealso cref="IShellWindows.RegisterPending" />
+  </member>
+  <member name="ShellWindowTypeConstants.SWC_EXPLORER">
+    <summary>
+      <para>An Windows Explorer (Explorer.exe) window.</para>
+    </summary>
+  </member>
+  <member name="ShellWindowTypeConstants.SWC_BROWSER">
+    <summary>
+      <para>An Internet Explorer (Iexplore.exe) browser window.</para>
+    </summary>
+  </member>
+  <member name="ShellWindowTypeConstants.SWC_3RDPARTY">
+    <summary>
+      <para>A non-Microsoft browser window.</para>
+    </summary>
+  </member>
+  <member name="ShellWindowTypeConstants.SWC_CALLBACK">
+    <summary>
+      <para>A creation callback window.</para>
+    </summary>
+  </member>
+  <member name="ShellWindowTypeConstants.SWC_DESKTOP">
+    <summary>
+      <para>
+        <b>Windows Vista and later</b>. The Windows desktop.</para>
+    </summary>
+  </member>
+</doc>

@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IAppxManifestMainPackageDependency.GetName">
+    <summary>
+      <para>Gets the name of the main package dependency from the AppxManifest.xml.</para>
+    </summary>
+    <param name="name">
+      <para>The name of the main package dependency.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IAppxManifestMainPackageDependency" />
+  </member>
+  <member name="IAppxManifestMainPackageDependency.GetPackageFamilyName">
+    <summary>
+      <para>Gets the package family name of the main package dependency from the AppxManifest.xml.</para>
+    </summary>
+    <param name="packageFamilyName">
+      <para>The package family name of the main package dependency.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IAppxManifestMainPackageDependency" />
+  </member>
+  <member name="IAppxManifestMainPackageDependency.GetPublisher">
+    <summary>
+      <para>Gets the publisher of the main package dependency from the AppxManifest.xml.</para>
+    </summary>
+    <param name="publisher">
+      <para>The publisher of the main package dependency.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IAppxManifestMainPackageDependency" />
+  </member>
+  <member name="IAppxManifestMainPackageDependency">
+    <summary>
+      <para>Provides access to attribute values of the main package dependency.</para>
+    </summary>
+  </member>
+</doc>

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFMediaSourceTopologyProvider.xml' path='doc/member[@name="IMFMediaSourceTopologyProvider"]/*' />
 [Guid("0E1D6009-C9F3-442D-8C51-A42D2D49452F")]
 [NativeTypeName("struct IMFMediaSourceTopologyProvider : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMFMediaSourceTopologyProvider : IMFMediaSourceTopo
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMFMediaSourceTopologyProvider : IMFMediaSourceTopo
         return ((delegate* unmanaged<IMFMediaSourceTopologyProvider*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaSourceTopologyProvider*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMFMediaSourceTopologyProvider : IMFMediaSourceTopo
         return ((delegate* unmanaged<IMFMediaSourceTopologyProvider*, uint>)(lpVtbl[1]))((IMFMediaSourceTopologyProvider*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMFMediaSourceTopologyProvider : IMFMediaSourceTopo
         return ((delegate* unmanaged<IMFMediaSourceTopologyProvider*, uint>)(lpVtbl[2]))((IMFMediaSourceTopologyProvider*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFMediaSourceTopologyProvider.xml' path='doc/member[@name="IMFMediaSourceTopologyProvider.GetMediaSourceTopology"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetMediaSourceTopology(IMFPresentationDescriptor* pPresentationDescriptor, IMFTopology** ppTopology)

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_UNIQUE_ID_DESCRIPTION">
+    <summary>
+      <para>An optional type description used with <see cref="WS_UNIQUE_ID_TYPE" /> to specify constraints on the set of values
+which can be deserialized.</para>
+    </summary>
+  </member>
+  <member name="WS_UNIQUE_ID_DESCRIPTION.minCharCount">
+    <summary>
+      <para>The minimum number of characters.  This only pertains
+to the case where the unique ID is represented as a string.</para>
+    </summary>
+  </member>
+  <member name="WS_UNIQUE_ID_DESCRIPTION.maxCharCount">
+    <summary>
+      <para>The maximum number of characters.  This only pertains
+to the case where the unique ID is represented as a string.</para>
+    </summary>
+  </member>
+</doc>

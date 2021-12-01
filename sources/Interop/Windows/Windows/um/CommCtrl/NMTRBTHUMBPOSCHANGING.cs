@@ -5,12 +5,16 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NMTRBTHUMBPOSCHANGING.xml' path='doc/member[@name="NMTRBTHUMBPOSCHANGING"]/*' />
 public partial struct NMTRBTHUMBPOSCHANGING
 {
+    /// <include file='NMTRBTHUMBPOSCHANGING.xml' path='doc/member[@name="NMTRBTHUMBPOSCHANGING.hdr"]/*' />
     public NMHDR hdr;
 
+    /// <include file='NMTRBTHUMBPOSCHANGING.xml' path='doc/member[@name="NMTRBTHUMBPOSCHANGING.dwPos"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwPos;
 
+    /// <include file='NMTRBTHUMBPOSCHANGING.xml' path='doc/member[@name="NMTRBTHUMBPOSCHANGING.nReason"]/*' />
     public int nReason;
 }

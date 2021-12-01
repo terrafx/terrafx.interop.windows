@@ -5,13 +5,27 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IF_OPER_STATUS.xml' path='doc/member[@name="IF_OPER_STATUS"]/*' />
 public enum IF_OPER_STATUS
 {
+    /// <include file='IF_OPER_STATUS.xml' path='doc/member[@name="IF_OPER_STATUS.IfOperStatusUp"]/*' />
     IfOperStatusUp = 1,
+
+    /// <include file='IF_OPER_STATUS.xml' path='doc/member[@name="IF_OPER_STATUS.IfOperStatusDown"]/*' />
     IfOperStatusDown,
+
+    /// <include file='IF_OPER_STATUS.xml' path='doc/member[@name="IF_OPER_STATUS.IfOperStatusTesting"]/*' />
     IfOperStatusTesting,
+
+    /// <include file='IF_OPER_STATUS.xml' path='doc/member[@name="IF_OPER_STATUS.IfOperStatusUnknown"]/*' />
     IfOperStatusUnknown,
+
+    /// <include file='IF_OPER_STATUS.xml' path='doc/member[@name="IF_OPER_STATUS.IfOperStatusDormant"]/*' />
     IfOperStatusDormant,
+
+    /// <include file='IF_OPER_STATUS.xml' path='doc/member[@name="IF_OPER_STATUS.IfOperStatusNotPresent"]/*' />
     IfOperStatusNotPresent,
+
+    /// <include file='IF_OPER_STATUS.xml' path='doc/member[@name="IF_OPER_STATUS.IfOperStatusLowerLayerDown"]/*' />
     IfOperStatusLowerLayerDown,
 }

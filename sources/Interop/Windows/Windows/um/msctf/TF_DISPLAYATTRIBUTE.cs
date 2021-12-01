@@ -5,17 +5,24 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TF_DISPLAYATTRIBUTE.xml' path='doc/member[@name="TF_DISPLAYATTRIBUTE"]/*' />
 public partial struct TF_DISPLAYATTRIBUTE
 {
+    /// <include file='TF_DISPLAYATTRIBUTE.xml' path='doc/member[@name="TF_DISPLAYATTRIBUTE.crText"]/*' />
     public TF_DA_COLOR crText;
 
+    /// <include file='TF_DISPLAYATTRIBUTE.xml' path='doc/member[@name="TF_DISPLAYATTRIBUTE.crBk"]/*' />
     public TF_DA_COLOR crBk;
 
+    /// <include file='TF_DISPLAYATTRIBUTE.xml' path='doc/member[@name="TF_DISPLAYATTRIBUTE.lsStyle"]/*' />
     public TF_DA_LINESTYLE lsStyle;
 
+    /// <include file='TF_DISPLAYATTRIBUTE.xml' path='doc/member[@name="TF_DISPLAYATTRIBUTE.fBoldLine"]/*' />
     public BOOL fBoldLine;
 
+    /// <include file='TF_DISPLAYATTRIBUTE.xml' path='doc/member[@name="TF_DISPLAYATTRIBUTE.crLine"]/*' />
     public TF_DA_COLOR crLine;
 
+    /// <include file='TF_DISPLAYATTRIBUTE.xml' path='doc/member[@name="TF_DISPLAYATTRIBUTE.bAttr"]/*' />
     public TF_DA_ATTR_INFO bAttr;
 }

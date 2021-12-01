@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_CHARSET">
+    <summary>
+      <para>Identifies the character set of a document.</para>
+    </summary>
+  </member>
+  <member name="WS_CHARSET.WS_CHARSET_AUTO">
+    <summary>
+      <para>Specifies that the charset of a document should be determined automatically by inspecting
+the BOM (Byte Order Marks) of the document and the xml declaration if present.</para>
+    </summary>
+  </member>
+  <member name="WS_CHARSET.WS_CHARSET_UTF8">
+    <summary>
+      <para>Specifies that the charset of a document is UTF-8.</para>
+    </summary>
+  </member>
+  <member name="WS_CHARSET.WS_CHARSET_UTF16LE">
+    <summary>
+      <para>Specifies that the charset of a document is UTF-16LE.</para>
+    </summary>
+  </member>
+  <member name="WS_CHARSET.WS_CHARSET_UTF16BE">
+    <summary>
+      <para>Specifies that the charset of a document is UTF-16BE.</para>
+    </summary>
+  </member>
+</doc>

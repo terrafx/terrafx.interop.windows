@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_HTTP_HEADER_AUTH_SECURITY_BINDING">
+    <summary>
+      <para>The security binding subtype for specifying the use of HTTP header authentication against a target service or a HTTP proxy server
+based on the basic, digest (RFC 2617) and the SPNEGO (RFC4559) protocols.
+Since this security binding operates at the HTTP header level, it is supported only with the <see cref="WS_HTTP_CHANNEL_BINDING" />.
+By default, this security binding is used for the target service. However  <see cref="WS_SECURITY_BINDING_PROPERTY_HTTP_HEADER_AUTH_TARGET" /></para>
+      <para>security binding property can be specified to use it for a HTTP proxy server. This binding provides client authentication, but not message protection
+since the HTTP body is unaffected by this binding. While this security binding can be used alone, such usage is not recommended;
+more typically, HTTP header authentication is done in conjunction with transport level security provided by a security binding such as the
+<see cref="WS_SSL_TRANSPORT_SECURITY_BINDING" />. To use this binding without SSL, the security description property <b>WS_SECURITY_PROPERTY_TRANSPORT_PROTECTION_LEVEL</b> must be explicitly set to <b>WS_PROTECTION_LEVEL_NONE</b>.</para>
+      <para>With this security binding, the following security binding properties may be specified:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <see cref="WS_SECURITY_BINDING_PROPERTY_HTTP_HEADER_AUTH_SCHEME" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="WS_SECURITY_BINDING_PROPERTY_HTTP_HEADER_AUTH_TARGET" /> (client side only)</description>
+        </item>
+        <item>
+          <description>
+            <see cref="WS_SECURITY_BINDING_PROPERTY_HTTP_HEADER_AUTH_BASIC_REALM" /> (server side only)</description>
+        </item>
+        <item>
+          <description>
+            <see cref="WS_SECURITY_BINDING_PROPERTY_HTTP_HEADER_AUTH_DIGEST_REALM" /> (server side only)</description>
+        </item>
+        <item>
+          <description>
+            <see cref="WS_SECURITY_BINDING_PROPERTY_HTTP_HEADER_AUTH_DIGEST_DOMAIN" /> (server side only)</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="WS_HTTP_HEADER_AUTH_SECURITY_BINDING.binding">
+    <summary>
+      <para>The base type from which this security binding subtype and all other security binding subtypes derive.</para>
+    </summary>
+  </member>
+  <member name="WS_HTTP_HEADER_AUTH_SECURITY_BINDING.clientCredential">
+    <summary>
+      <para>The Windows Integrated Authentication credential to be used to
+authenticate the client.  This is required on the client side and must
+be <b>NULL</b> on the server side.</para>
+      <para>If the credential used is a <see cref="WS_DEFAULT_WINDOWS_INTEGRATED_AUTH_CREDENTIAL" /> then
+<see cref="WS_SECURITY_BINDING_PROPERTY_HTTP_HEADER_AUTH_SCHEME" /> must be set to
+<see cref="WS_HTTP_HEADER_AUTH_SCHEME_NONE" />, <b>WS_HTTP_HEADER_AUTH_SCHEME_NTLM</b>,
+<b>WS_HTTP_HEADER_AUTH_SCHEME_NEGOTIATE</b> or <b>WS_HTTP_HEADER_AUTH_SCHEME_PASSPORT</b>.
+<b>WS_HTTP_HEADER_AUTH_SCHEME_PASSPORT</b> defaults to using the Passport keyring.</para>
+    </summary>
+  </member>
+</doc>

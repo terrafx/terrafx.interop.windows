@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PUBAPPINFOFLAGS.xml' path='doc/member[@name="PUBAPPINFOFLAGS"]/*' />
 public enum PUBAPPINFOFLAGS
 {
+    /// <include file='PUBAPPINFOFLAGS.xml' path='doc/member[@name="PUBAPPINFOFLAGS.PAI_SOURCE"]/*' />
     PAI_SOURCE = 0x1,
+
+    /// <include file='PUBAPPINFOFLAGS.xml' path='doc/member[@name="PUBAPPINFOFLAGS.PAI_ASSIGNEDTIME"]/*' />
     PAI_ASSIGNEDTIME = 0x2,
+
+    /// <include file='PUBAPPINFOFLAGS.xml' path='doc/member[@name="PUBAPPINFOFLAGS.PAI_PUBLISHEDTIME"]/*' />
     PAI_PUBLISHEDTIME = 0x4,
+
+    /// <include file='PUBAPPINFOFLAGS.xml' path='doc/member[@name="PUBAPPINFOFLAGS.PAI_SCHEDULEDTIME"]/*' />
     PAI_SCHEDULEDTIME = 0x8,
+
+    /// <include file='PUBAPPINFOFLAGS.xml' path='doc/member[@name="PUBAPPINFOFLAGS.PAI_EXPIRETIME"]/*' />
     PAI_EXPIRETIME = 0x10,
 }

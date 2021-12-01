@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="VMRMixerPrefs">
+    <summary>
+      <para>The <b>VMRMixerPrefs</b> enumeration contains flags that specify decimation, filtering, and color space information that will be used when the video image is created on the DirectDraw surface.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-enumerated-types">DirectShow Enumerated Types</seealso>
+    <seealso cref="IVMRMixerControl.GetMixingPrefs" />
+    <seealso cref="IVMRMixerControl.SetMixingPrefs" />
+  </member>
+  <member name="VMRMixerPrefs.MixerPref_NoDecimation">
+    <summary>
+      <para>No decimation. The video will be rendered onto the surface in its native size.</para>
+    </summary>
+  </member>
+  <member name="VMRMixerPrefs.MixerPref_DecimateOutput">
+    <summary>
+      <para>Decimate output by 2 in the x and y directions.</para>
+    </summary>
+  </member>
+  <member name="VMRMixerPrefs.MixerPref_ARAdjustXorY">
+    <summary>
+      <para>Adjust the horizontal or vertical size of the video streams to match the target aspect ratio. If this flag is not present, the VMR adjusts the horizontal size only. For more information, see <a href="https://docs.microsoft.com//windows/desktop/DirectShow/aspect-ratio-correction">Aspect Ratio Correction</a>.</para>
+    </summary>
+  </member>
+  <member name="VMRMixerPrefs.MixerPref_DecimationReserved">
+    <summary>
+      <para>Reserved.</para>
+    </summary>
+  </member>
+  <member name="VMRMixerPrefs.MixerPref_DecimateMask">
+    <summary>
+      <para>Bitmask to isolate the flags that control decimation. (This value is not a valid flag.)</para>
+    </summary>
+  </member>
+  <member name="VMRMixerPrefs.MixerPref_BiLinearFiltering">
+    <summary>
+      <para>Use bi-linear filtering. This is the default type of filtering, but not all cards can support it.</para>
+    </summary>
+  </member>
+  <member name="VMRMixerPrefs.MixerPref_PointFiltering">
+    <summary>
+      <para>Use point filtering.</para>
+    </summary>
+  </member>
+  <member name="VMRMixerPrefs.MixerPref_FilteringMask">
+    <summary>
+      <para>Bitmask to isolate the flags the control filtering. (This value is not a valid flag.)</para>
+    </summary>
+  </member>
+  <member name="VMRMixerPrefs.MixerPref_RenderTargetRGB">
+    <summary>
+      <para>The render target is an RGB surface.</para>
+    </summary>
+  </member>
+  <member name="VMRMixerPrefs.MixerPref_RenderTargetYUV">
+    <summary>
+      <para>The render target is a YUV surface. Requires Windows XP Service Pack 2. For more information, see <a href="https://docs.microsoft.com//windows/desktop/DirectShow/yuv-mixing-mode">YUV Mixing Mode</a>.</para>
+    </summary>
+  </member>
+  <member name="VMRMixerPrefs.MixerPref_RenderTargetYUV420">
+    <summary>
+      <para>The render target is a YUV 4:2:0 surface. <b>Note</b>  Deprecated.</para>
+    </summary>
+  </member>
+  <member name="VMRMixerPrefs.MixerPref_RenderTargetYUV422">
+    <summary>
+      <para>The render target is a YUV 4:2:2 surface. <b>Note</b>  Deprecated.</para>
+    </summary>
+  </member>
+  <member name="VMRMixerPrefs.MixerPref_RenderTargetYUV444">
+    <summary>
+      <para>The render target is a YUV 4:4:4 surface. <b>Note</b>  Deprecated.</para>
+    </summary>
+  </member>
+  <member name="VMRMixerPrefs.MixerPref_RenderTargetReserved">
+    <summary>
+      <para>Reserved.</para>
+    </summary>
+  </member>
+  <member name="VMRMixerPrefs.MixerPref_RenderTargetMask">
+    <summary>
+      <para>Bitmask to isolate flags that control the render target. (This value is not a valid flag.)</para>
+    </summary>
+  </member>
+  <member name="VMRMixerPrefs.MixerPref_DynamicSwitchToBOB">
+    <summary>
+      <para>In YUV mixing mode only, this flag switches the VMR to bob deinterlacing. You can add or remove this flag while the filter graph is running; the change will be applied when the VMR mixer composes the next video frame.</para>
+    </summary>
+  </member>
+  <member name="VMRMixerPrefs.MixerPref_DynamicDecimateBy2">
+    <summary>
+      <para>In YUV mixing mode only, this flag causes the VMR to decimate the image by a factor of 2 horizontally and vertically. You can add or remove this flag while the filter graph is running; the change is applied when the VMR mixer composes the next video frame.</para>
+    </summary>
+  </member>
+  <member name="VMRMixerPrefs.MixerPref_DynamicReserved">
+    <summary>
+      <para>Reserved.</para>
+    </summary>
+  </member>
+  <member name="VMRMixerPrefs.MixerPref_DynamicMask">
+    <summary>
+      <para>Bitmask to isolate the MixerPref_DynamicSwitchToBOB and MixerPref_DynamicDecimateBy2 flags. (This value is not a valid flag.)</para>
+    </summary>
+  </member>
+</doc>

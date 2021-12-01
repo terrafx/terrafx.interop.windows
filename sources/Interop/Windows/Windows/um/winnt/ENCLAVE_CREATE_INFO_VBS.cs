@@ -7,12 +7,15 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ENCLAVE_CREATE_INFO_VBS.xml' path='doc/member[@name="ENCLAVE_CREATE_INFO_VBS"]/*' />
 [SupportedOSPlatform("windows10.0.16299.0")]
 public unsafe partial struct ENCLAVE_CREATE_INFO_VBS
 {
+    /// <include file='ENCLAVE_CREATE_INFO_VBS.xml' path='doc/member[@name="ENCLAVE_CREATE_INFO_VBS.Flags"]/*' />
     [NativeTypeName("DWORD")]
     public uint Flags;
 
+    /// <include file='ENCLAVE_CREATE_INFO_VBS.xml' path='doc/member[@name="ENCLAVE_CREATE_INFO_VBS.OwnerID"]/*' />
     [NativeTypeName("BYTE [32]")]
     public fixed byte OwnerID[32];
 }

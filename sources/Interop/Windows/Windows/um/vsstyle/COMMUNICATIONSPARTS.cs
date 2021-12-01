@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='COMMUNICATIONSPARTS.xml' path='doc/member[@name="COMMUNICATIONSPARTS"]/*' />
 public enum COMMUNICATIONSPARTS
 {
+    /// <include file='COMMUNICATIONSPARTS.xml' path='doc/member[@name="COMMUNICATIONSPARTS.CSST_TAB"]/*' />
     CSST_TAB = 1,
 }

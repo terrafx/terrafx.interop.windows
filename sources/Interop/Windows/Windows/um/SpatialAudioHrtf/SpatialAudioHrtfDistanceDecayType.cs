@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SpatialAudioHrtfDistanceDecayType.xml' path='doc/member[@name="SpatialAudioHrtfDistanceDecayType"]/*' />
 public enum SpatialAudioHrtfDistanceDecayType
 {
+    /// <include file='SpatialAudioHrtfDistanceDecayType.xml' path='doc/member[@name="SpatialAudioHrtfDistanceDecayType.SpatialAudioHrtfDistanceDecay_NaturalDecay"]/*' />
     SpatialAudioHrtfDistanceDecay_NaturalDecay = 0,
+
+    /// <include file='SpatialAudioHrtfDistanceDecayType.xml' path='doc/member[@name="SpatialAudioHrtfDistanceDecayType.SpatialAudioHrtfDistanceDecay_CustomDecay"]/*' />
     SpatialAudioHrtfDistanceDecay_CustomDecay = (SpatialAudioHrtfDistanceDecay_NaturalDecay + 1),
 }

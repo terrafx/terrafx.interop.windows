@@ -9,20 +9,26 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DRIVE_LAYOUT_INFORMATION_EX.xml' path='doc/member[@name="DRIVE_LAYOUT_INFORMATION_EX"]/*' />
 public partial struct DRIVE_LAYOUT_INFORMATION_EX
 {
+    /// <include file='DRIVE_LAYOUT_INFORMATION_EX.xml' path='doc/member[@name="DRIVE_LAYOUT_INFORMATION_EX.PartitionStyle"]/*' />
     [NativeTypeName("DWORD")]
     public uint PartitionStyle;
 
+    /// <include file='DRIVE_LAYOUT_INFORMATION_EX.xml' path='doc/member[@name="DRIVE_LAYOUT_INFORMATION_EX.PartitionCount"]/*' />
     [NativeTypeName("DWORD")]
     public uint PartitionCount;
 
+    /// <include file='DRIVE_LAYOUT_INFORMATION_EX.xml' path='doc/member[@name="DRIVE_LAYOUT_INFORMATION_EX.Anonymous"]/*' />
     [NativeTypeName("_DRIVE_LAYOUT_INFORMATION_EX::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winioctl.h:9213:5)")]
     public _Anonymous_e__Union Anonymous;
 
+    /// <include file='DRIVE_LAYOUT_INFORMATION_EX.xml' path='doc/member[@name="DRIVE_LAYOUT_INFORMATION_EX.PartitionEntry"]/*' />
     [NativeTypeName("PARTITION_INFORMATION_EX [1]")]
     public _PartitionEntry_e__FixedBuffer PartitionEntry;
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Mbr"]/*' />
     public ref DRIVE_LAYOUT_INFORMATION_MBR Mbr
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -32,6 +38,7 @@ public partial struct DRIVE_LAYOUT_INFORMATION_EX
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Gpt"]/*' />
     public ref DRIVE_LAYOUT_INFORMATION_GPT Gpt
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -41,16 +48,20 @@ public partial struct DRIVE_LAYOUT_INFORMATION_EX
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public partial struct _Anonymous_e__Union
     {
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Mbr"]/*' />
         [FieldOffset(0)]
         public DRIVE_LAYOUT_INFORMATION_MBR Mbr;
 
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Gpt"]/*' />
         [FieldOffset(0)]
         public DRIVE_LAYOUT_INFORMATION_GPT Gpt;
     }
 
+    /// <include file='_PartitionEntry_e__FixedBuffer.xml' path='doc/member[@name="_PartitionEntry_e__FixedBuffer"]/*' />
     public partial struct _PartitionEntry_e__FixedBuffer
     {
         public PARTITION_INFORMATION_EX e0;

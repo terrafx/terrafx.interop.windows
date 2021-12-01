@@ -7,15 +7,20 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PARTITION_INFORMATION_GPT.xml' path='doc/member[@name="PARTITION_INFORMATION_GPT"]/*' />
 public unsafe partial struct PARTITION_INFORMATION_GPT
 {
+    /// <include file='PARTITION_INFORMATION_GPT.xml' path='doc/member[@name="PARTITION_INFORMATION_GPT.PartitionType"]/*' />
     public Guid PartitionType;
 
+    /// <include file='PARTITION_INFORMATION_GPT.xml' path='doc/member[@name="PARTITION_INFORMATION_GPT.PartitionId"]/*' />
     public Guid PartitionId;
 
+    /// <include file='PARTITION_INFORMATION_GPT.xml' path='doc/member[@name="PARTITION_INFORMATION_GPT.Attributes"]/*' />
     [NativeTypeName("DWORD64")]
     public ulong Attributes;
 
+    /// <include file='PARTITION_INFORMATION_GPT.xml' path='doc/member[@name="PARTITION_INFORMATION_GPT.Name"]/*' />
     [NativeTypeName("WCHAR [36]")]
     public fixed ushort Name[36];
 }

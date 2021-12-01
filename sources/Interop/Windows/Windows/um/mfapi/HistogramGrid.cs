@@ -5,13 +5,17 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HistogramGrid.xml' path='doc/member[@name="HistogramGrid"]/*' />
 public partial struct HistogramGrid
 {
+    /// <include file='HistogramGrid.xml' path='doc/member[@name="HistogramGrid.Width"]/*' />
     [NativeTypeName("ULONG")]
     public uint Width;
 
+    /// <include file='HistogramGrid.xml' path='doc/member[@name="HistogramGrid.Height"]/*' />
     [NativeTypeName("ULONG")]
     public uint Height;
 
+    /// <include file='HistogramGrid.xml' path='doc/member[@name="HistogramGrid.Region"]/*' />
     public RECT Region;
 }

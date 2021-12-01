@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CapturedMetadataExposureCompensation.xml' path='doc/member[@name="CapturedMetadataExposureCompensation"]/*' />
 public partial struct CapturedMetadataExposureCompensation
 {
+    /// <include file='CapturedMetadataExposureCompensation.xml' path='doc/member[@name="CapturedMetadataExposureCompensation.Flags"]/*' />
     [NativeTypeName("UINT64")]
     public ulong Flags;
 
+    /// <include file='CapturedMetadataExposureCompensation.xml' path='doc/member[@name="CapturedMetadataExposureCompensation.Value"]/*' />
     [NativeTypeName("INT32")]
     public int Value;
 }

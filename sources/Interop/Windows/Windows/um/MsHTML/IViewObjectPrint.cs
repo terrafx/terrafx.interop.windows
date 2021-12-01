@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IViewObjectPrint.xml' path='doc/member[@name="IViewObjectPrint"]/*' />
 [Guid("305106E3-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IViewObjectPrint : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IViewObjectPrint : IViewObjectPrint.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IViewObjectPrint : IViewObjectPrint.Interface
         return ((delegate* unmanaged<IViewObjectPrint*, Guid*, void**, int>)(lpVtbl[0]))((IViewObjectPrint*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IViewObjectPrint : IViewObjectPrint.Interface
         return ((delegate* unmanaged<IViewObjectPrint*, uint>)(lpVtbl[1]))((IViewObjectPrint*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IViewObjectPrint : IViewObjectPrint.Interface
         return ((delegate* unmanaged<IViewObjectPrint*, uint>)(lpVtbl[2]))((IViewObjectPrint*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IViewObjectPrint.xml' path='doc/member[@name="IViewObjectPrint.GetPrintBitmap"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetPrintBitmap(IUnknown** ppPrintBitmap)

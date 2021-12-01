@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CMSG_KEY_AGREE_RECIPIENT_ENCODE_INFO">
+    <summary>
+      <para>The <b>CMSG_KEY_AGREE_RECIPIENT_ENCODE_INFO</b> structure contains information about a message recipient that is using key agreement key management.This structure is used with the <see cref="CMSG_RECIPIENT_ENCODE_INFO" /> structure.</para>
+    </summary>
+    <seealso cref="CERT_ID" />
+    <seealso cref="CMSG_RC2_AUX_INFO" />
+    <seealso cref="CMSG_RECIPIENT_ENCODE_INFO" />
+    <seealso cref="CMSG_RECIPIENT_ENCRYPTED_KEY_ENCODE_INFO" />
+    <seealso cref="CRYPT_ALGORITHM_IDENTIFIER" />
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_DATA_BLOB</seealso>
+    <seealso cref="CryptAcquireContext" />
+  </member>
+  <member name="CMSG_KEY_AGREE_RECIPIENT_ENCODE_INFO.cbSize">
+    <summary>
+      <para>The size, in bytes, of this structure.</para>
+    </summary>
+  </member>
+  <member name="CMSG_KEY_AGREE_RECIPIENT_ENCODE_INFO.KeyEncryptionAlgorithm">
+    <summary>
+      <para>A <see cref="CRYPT_ALGORITHM_IDENTIFIER" /> structure that specifies the algorithm used for encryption.</para>
+      <para>For ECC recipients, the <b>pszObjId</b> member of the  <see cref="CRYPT_ALGORITHM_IDENTIFIER" /> structure should be set to szOID_DH_SINGLE_PASS_STDDH_SHA1_KDF with the <b>dwKeyChoice</b> member of this <b>CMSG_KEY_AGREE_RECIPIENT_ENCODE_INFO</b> structure set to CMSG_KEY_AGREE_EPHEMERAL_KEY_CHOICE.</para>
+    </summary>
+  </member>
+  <member name="CMSG_KEY_AGREE_RECIPIENT_ENCODE_INFO.pvKeyEncryptionAuxInfo">
+    <summary>
+      <para>This member is not currently used. It must be set to <b>NULL</b>.</para>
+    </summary>
+  </member>
+  <member name="CMSG_KEY_AGREE_RECIPIENT_ENCODE_INFO.KeyWrapAlgorithm">
+    <summary>
+      <para>A <see cref="CRYPT_ALGORITHM_IDENTIFIER" /> structure that specifies the algorithm used for key wrapping.</para>
+    </summary>
+  </member>
+  <member name="CMSG_KEY_AGREE_RECIPIENT_ENCODE_INFO.pvKeyWrapAuxInfo">
+    <summary>
+      <para>A pointer to a <see cref="CMSG_RC2_AUX_INFO" /> structure that specifies the key wrapping bit length. This member is only used if the <b>KeyWrapAlgorithm</b> member specifies an RC2 algorithm. If <b>KeyWrapAlgorithm</b> specifies an algorithm other than an RC2 algorithm, this member is not used and must be <b>NULL</b>.</para>
+    </summary>
+  </member>
+  <member name="CMSG_KEY_AGREE_RECIPIENT_ENCODE_INFO.hCryptProv">
+    <summary>
+      <para>This member is not used and should be set to <b>NULL</b>.</para>
+      <para>
+        <b>Windows Server 2003 and Windows XP:  </b>A handle to a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">cryptographic service provider</a> (CSP) obtained by using the <see cref="CryptAcquireContext" /> function. This member is optional and can be <b>NULL</b>.This member's data type is <b>HCRYPTPROV</b>.</para>
+    </summary>
+  </member>
+  <member name="CMSG_KEY_AGREE_RECIPIENT_ENCODE_INFO.dwKeySpec">
+    <summary>
+      <para>This member is not currently used.</para>
+    </summary>
+  </member>
+  <member name="CMSG_KEY_AGREE_RECIPIENT_ENCODE_INFO.dwKeyChoice">
+    <summary>
+      <para>Indicates the type of key agreement. This member can be one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>CMSG_KEY_AGREE_EPHEMERAL_KEY_CHOICE</b>
+          </description>
+          <description>
+            <para>Create a temporary <a href="https://docs.microsoft.com//windows/desktop/SecGloss/p-gly">public/private key pair</a> to encrypt the content encryption key.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>CMSG_KEY_AGREE_STATIC_KEY_CHOICE</b>
+          </description>
+          <description>
+            <para>This value is not currently used.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="CMSG_KEY_AGREE_RECIPIENT_ENCODE_INFO.DUMMYUNIONNAME">
+    <summary></summary>
+  </member>
+  <member name="CMSG_KEY_AGREE_RECIPIENT_ENCODE_INFO.DUMMYUNIONNAME.pEphemeralAlgorithm">
+    <summary>
+      <para>A pointer to a
+<see cref="CRYPT_ALGORITHM_IDENTIFIER" /> structure that contains the ephemeral public key algorithm and parameters. This member is used when the <b>dwKeyChoice</b> member contains <b>CMSG_KEY_AGREE_EPHEMERAL_KEY_CHOICE</b>.</para>
+    </summary>
+  </member>
+  <member name="CMSG_KEY_AGREE_RECIPIENT_ENCODE_INFO.DUMMYUNIONNAME.pSenderId">
+    <summary>
+      <para>A pointer to a <see cref="CERT_ID" /> structure. This member is used when the <b>dwKeyChoice</b> member contains <b>CMSG_KEY_AGREE_STATIC_KEY_CHOICE</b>. This member is not currently used.</para>
+    </summary>
+  </member>
+  <member name="CMSG_KEY_AGREE_RECIPIENT_ENCODE_INFO.UserKeyingMaterial">
+    <summary>
+      <para>A <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_DATA_BLOB</a> structure that contains user keying material (UKM) provided by the sender to ensure that a different key is generated each time the same two parties generate a pair-wise key. This member is optional and all members should be set to zero if not used.</para>
+    </summary>
+  </member>
+  <member name="CMSG_KEY_AGREE_RECIPIENT_ENCODE_INFO.cRecipientEncryptedKeys">
+    <summary>
+      <para>The number of elements in the <b>rgpRecipientEncryptedKeys</b> array.</para>
+    </summary>
+  </member>
+  <member name="CMSG_KEY_AGREE_RECIPIENT_ENCODE_INFO.rgpRecipientEncryptedKeys">
+    <summary>
+      <para>An array of  <see cref="CMSG_RECIPIENT_ENCRYPTED_KEY_ENCODE_INFO" /> structures, one for each recipient to receive this key agreement key. The <b>cRecipientEncryptedKeys</b> member contains the number of elements in this structure.</para>
+    </summary>
+  </member>
+</doc>

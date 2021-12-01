@@ -114,6 +114,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ActivateAudioInterfaceAsync"]/*' />
     [DllImport("mmdevapi", ExactSpelling = true)]
     [SupportedOSPlatform("windows8.0")]
     public static extern HRESULT ActivateAudioInterfaceAsync([NativeTypeName("LPCWSTR")] ushort* deviceInterfacePath, [NativeTypeName("const IID &")] Guid* riid, PROPVARIANT* activationParams, IActivateAudioInterfaceCompletionHandler* completionHandler, IActivateAudioInterfaceAsyncOperation** activationOperation);

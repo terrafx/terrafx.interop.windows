@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='AppPolicyProcessTerminationMethod.xml' path='doc/member[@name="AppPolicyProcessTerminationMethod"]/*' />
 public enum AppPolicyProcessTerminationMethod
 {
+    /// <include file='AppPolicyProcessTerminationMethod.xml' path='doc/member[@name="AppPolicyProcessTerminationMethod.AppPolicyProcessTerminationMethod_ExitProcess"]/*' />
     AppPolicyProcessTerminationMethod_ExitProcess = 0,
+
+    /// <include file='AppPolicyProcessTerminationMethod.xml' path='doc/member[@name="AppPolicyProcessTerminationMethod.AppPolicyProcessTerminationMethod_TerminateProcess"]/*' />
     AppPolicyProcessTerminationMethod_TerminateProcess = 1,
 }

@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="AM_MPEG2Level">
+    <summary>
+      <para>Indicates an MPEG-2 video level as specified in the MPEG-2 video standard (ISO13818-2).</para>
+    </summary>
+    <remarks>
+      <para>DVD MPEG-2 video decoders should support AM_MPEG2Level_Low or AM_MPEG2Level_Main.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-enumerated-types">DirectShow Enumerated Types</seealso>
+  </member>
+  <member name="AM_MPEG2Level.AM_MPEG2Level_Low">
+    <summary>
+      <para>Low level.</para>
+    </summary>
+  </member>
+  <member name="AM_MPEG2Level.AM_MPEG2Level_Main">
+    <summary>
+      <para>Main level.</para>
+    </summary>
+  </member>
+  <member name="AM_MPEG2Level.AM_MPEG2Level_High1440">
+    <summary>
+      <para>High 1440 level.</para>
+    </summary>
+  </member>
+  <member name="AM_MPEG2Level.AM_MPEG2Level_High">
+    <summary>
+      <para>High level.</para>
+    </summary>
+  </member>
+</doc>

@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="OLECMDID_WINDOWSTATE_FLAG">
+    <summary>
+      <para>Specifies the window state.</para>
+    </summary>
+    <remarks>
+      <para>A value from this enumeration is passed as the <i>nCmdExecOpt</i> parameter to <see cref="IOleCommandTarget.Exec" /> in conjunction with passing the OLECMDID_WINDOWSTATECHANGED value of the <see cref="OLECMDID" /> enumeration as the <i>nCmdID</i> parameter.</para>
+    </remarks>
+    <seealso cref="OLECMDID" />
+  </member>
+  <member name="OLECMDID_WINDOWSTATE_FLAG.OLECMDIDF_WINDOWSTATE_USERVISIBLE">
+    <summary>
+      <para>The window is visible.</para>
+    </summary>
+  </member>
+  <member name="OLECMDID_WINDOWSTATE_FLAG.OLECMDIDF_WINDOWSTATE_ENABLED">
+    <summary>
+      <para>The window has focus.</para>
+    </summary>
+  </member>
+  <member name="OLECMDID_WINDOWSTATE_FLAG.OLECMDIDF_WINDOWSTATE_USERVISIBLE_VALID">
+    <summary>
+      <para>The window is visible and valid.</para>
+    </summary>
+  </member>
+  <member name="OLECMDID_WINDOWSTATE_FLAG.OLECMDIDF_WINDOWSTATE_ENABLED_VALID">
+    <summary>
+      <para>The window has focus and is valid.</para>
+    </summary>
+  </member>
+</doc>

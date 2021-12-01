@@ -5,12 +5,16 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MFP_MEDIAITEM_CREATED_EVENT.xml' path='doc/member[@name="MFP_MEDIAITEM_CREATED_EVENT"]/*' />
 public unsafe partial struct MFP_MEDIAITEM_CREATED_EVENT
 {
+    /// <include file='MFP_MEDIAITEM_CREATED_EVENT.xml' path='doc/member[@name="MFP_MEDIAITEM_CREATED_EVENT.header"]/*' />
     public MFP_EVENT_HEADER header;
 
+    /// <include file='MFP_MEDIAITEM_CREATED_EVENT.xml' path='doc/member[@name="MFP_MEDIAITEM_CREATED_EVENT.pMediaItem"]/*' />
     public IMFPMediaItem* pMediaItem;
 
+    /// <include file='MFP_MEDIAITEM_CREATED_EVENT.xml' path='doc/member[@name="MFP_MEDIAITEM_CREATED_EVENT.dwUserData"]/*' />
     [NativeTypeName("DWORD_PTR")]
     public nuint dwUserData;
 }

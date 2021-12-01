@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMediaEventSink.Notify">
+    <summary>
+      <para>The <code>Notify</code> method notifies the Filter Graph Manager of an event.</para>
+    </summary>
+    <param name="EventCode">
+      <para>Identifier of the event.</para>
+    </param>
+    <param name="EventParam1">
+      <para>First event parameter.</para>
+    </param>
+    <param name="EventParam2">
+      <para>Second event parameter.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value.</para>
+    </returns>
+    <remarks>
+      <para>The event is queued but not delivered to the application on this thread. For a list of notification codes and event parameter values, see <a href="https://docs.microsoft.com//windows/desktop/DirectShow/event-notification-codes">Event Notification Codes</a>.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IMediaEventSink Interface" />
+  </member>
+  <member name="IMediaEventSink">
+    <summary>
+      <para>Notifies the Filter Graph Manager of events that occur within the filter graph. Filters use this interface to report events. The Filter Graph Manager exposes this interface.</para>
+      <para>Applications do not use <code>IMediaEventSink</code>. To retrieve events, applications use the <see cref="IMediaEventEx" /> interface.</para>
+    </summary>
+  </member>
+</doc>

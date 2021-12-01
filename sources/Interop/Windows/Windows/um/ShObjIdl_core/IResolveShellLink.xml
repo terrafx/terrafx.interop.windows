@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IResolveShellLink.ResolveShellLink">
+    <summary>
+      <para>Requests that a folder object resolve a Shell link.</para>
+    </summary>
+    <param name="punkLink">
+      <para>Type: <b><see cref="IUnknown" />*</b></para>
+      <para>Pointer to the object's <see cref="IShellLink" /> interface. This interface can then be queried to determine the contents of the link.</para>
+    </param>
+    <param name="hwnd">
+      <para>Type: <b>HWND</b></para>
+      <para>Handle to the window that the Shell uses as the parent for a dialog box. The Shell displays the dialog box if it needs to prompt the user for more information while resolving the link.</para>
+    </param>
+    <param name="fFlags">
+      <para>Type: <b>DWORD</b></para>
+      <para>Action flags. This parameter can be a combination of the following values.</para>
+      <h4>SLR_INVOKE_MSI</h4>
+      <para>Call the Windows Installer.</para>
+      <h4>SLR_NOLINKINFO</h4>
+      <para>Disable distributed link tracking. By default, distributed link tracking tracks removable media across multiple devices based on the volume name. It also uses the UNC path to track remote file systems whose drive letter has changed. Setting <b>SLR_NOLINKINFO</b> disables both types of tracking.</para>
+      <h4>SLR_NO_UI</h4>
+      <para>Do not display a dialog box if the link cannot be resolved. When <b>SLR_NO_UI</b> is set, the high-order word of <i>fFlags</i> specifies a time-out duration, in milliseconds. The function returns if the link cannot be resolved within the time-out duration. If the high-order word is set to zero, the time-out duration defaults to 3000 milliseconds (3 seconds).</para>
+      <h4>SLR_NOUPDATE</h4>
+      <para>Do not update the link information.</para>
+      <h4>SLR_NOSEARCH</h4>
+      <para>Do not execute the search heuristics.</para>
+      <h4>SLR_NOTRACK</h4>
+      <para>Do not use distributed link tracking.</para>
+      <h4>SLR_UPDATE</h4>
+      <para>If the link object has changed, update its path and list of identifiers. If <b>SLR_UPDATE</b> is set, you do not need to call <see cref="IPersistFile.IsDirty" /> to determine whether the link object has changed.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This method should attempt to find the target of a Shell link, even if the target has been moved or renamed.</para>
+    </remarks>
+    <seealso cref="IResolveShellLink" />
+  </member>
+  <member name="IResolveShellLink">
+    <summary>
+      <para>Exposes a method that enables an application to request that a Shell folder object resolve a link for one of its items.</para>
+    </summary>
+    <remarks>
+      <para>Namespace extensions implement this object to support link resolution.</para>
+      <para>This interface is not typically used by applications.</para>
+      <para>With <a href="https://docs.microsoft.com//windows/desktop/shell/nse-works">namespace extensions</a>, shortcut objects (.lnk files) implement the essential functionality of <see cref="IShellLink.Resolve" /> by calling <see cref="IResolveShellLink.ResolveShellLink" />. <b>IResolveShellLink</b> is exported by a link resolution object that is created on request by the Shell folder.</para>
+      <para>To retrieve a pointer to a link resolution object's <b>IResolveShellLink</b> interface:</para>
+      <list type="bullet">
+        <item>
+          <description>For an object that is contained by a folder, call the folder's <see cref="IShellFolder.GetUIObjectOf" /> method and request an <b>IResolveShellLink</b> pointer (IID_IResolveShellLink).</description>
+        </item>
+        <item>
+          <description>For the folder object itself, call the folder's <see cref="IShellFolder.CreateViewObject" /> method and request an <b>IResolveShellLink</b> pointer (IID_IResolveShellLink).</description>
+        </item>
+      </list>
+      <b>Note</b>  Prior to Windows Vista this interface was declared in Shlobj.h.
+</remarks>
+  </member>
+</doc>

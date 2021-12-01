@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DISPATCHERQUEUE_THREAD_TYPE.xml' path='doc/member[@name="DISPATCHERQUEUE_THREAD_TYPE"]/*' />
 public enum DISPATCHERQUEUE_THREAD_TYPE
 {
+    /// <include file='DISPATCHERQUEUE_THREAD_TYPE.xml' path='doc/member[@name="DISPATCHERQUEUE_THREAD_TYPE.DQTYPE_THREAD_DEDICATED"]/*' />
     DQTYPE_THREAD_DEDICATED = 1,
+
+    /// <include file='DISPATCHERQUEUE_THREAD_TYPE.xml' path='doc/member[@name="DISPATCHERQUEUE_THREAD_TYPE.DQTYPE_THREAD_CURRENT"]/*' />
     DQTYPE_THREAD_CURRENT = 2,
 }

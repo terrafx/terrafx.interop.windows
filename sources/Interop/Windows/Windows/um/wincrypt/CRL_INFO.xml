@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CRL_INFO">
+    <summary>
+      <para>The <b>CRL_INFO</b> structure contains the information of a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certificate revocation list</a> (CRL).</para>
+    </summary>
+    <seealso cref="CERT_EXTENSION" />
+    <seealso cref="CRL_ENTRY" />
+    <seealso cref="CRYPT_ALGORITHM_IDENTIFIER" />
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_INTEGER_BLOB</seealso>
+    <seealso cref="CertVerifyCRLRevocation" />
+    <seealso cref="CryptSignAndEncodeCertificate" />
+  </member>
+  <member name="CRL_INFO.dwVersion">
+    <summary>
+      <para>Version number of the CRL. Currently defined version numbers are shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>CRL_V1</b>
+          </description>
+          <description>
+            <para>version 1</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>CRL_V2</b>
+          </description>
+          <description>
+            <para>version 2</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="CRL_INFO.SignatureAlgorithm">
+    <summary>
+      <para>
+        <see cref="CRYPT_ALGORITHM_IDENTIFIER" /> structure that contains the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/o-gly">object identifier</a> (OID) of a signature algorithm and any associated additional parameters.</para>
+    </summary>
+  </member>
+  <member name="CRL_INFO.Issuer">
+    <summary>
+      <para>A <a href="https://docs.microsoft.com//windows/desktop/SecGloss/b-gly">BLOB</a> structure that contains an encoded certificate issuer's name.</para>
+    </summary>
+  </member>
+  <member name="CRL_INFO.ThisUpdate">
+    <summary>
+      <para>Indication of the date and time of the CRL's published. If the time is after 1950 and before 2050, it is UTC-time encoded as an 8-byte date/time precise to seconds with a 2-digit year (that is, YYMMDDHHMMSS plus 2 bytes). Otherwise, it is generalized-time encoded as an 8-byte year precise to milliseconds with a 4-byte year.</para>
+    </summary>
+  </member>
+  <member name="CRL_INFO.NextUpdate">
+    <summary>
+      <para>Indication of the date and time for the CRL's next available scheduled update. If the time is after 1950 and before 2050, it is UTC-time encoded as an 8-byte date/time precise to seconds with a 2-digit year (that is, YYMMDDHHMMSS plus 2 bytes). Otherwise, it is generalized-time encoded as an 8-byte date time precise to milliseconds with a 4-byte year.</para>
+    </summary>
+  </member>
+  <member name="CRL_INFO.cCRLEntry">
+    <summary>
+      <para>Number of elements in the <b>rgCRLEntry</b> array.</para>
+    </summary>
+  </member>
+  <member name="CRL_INFO.rgCRLEntry">
+    <summary>
+      <para>Array of pointers to
+<see cref="CRL_ENTRY" /> structures. Each of these structures represents a revoked certificate.</para>
+    </summary>
+  </member>
+  <member name="CRL_INFO.cExtension">
+    <summary>
+      <para>Number of elements in the <b>rgExtension</b> array.</para>
+    </summary>
+  </member>
+  <member name="CRL_INFO.rgExtension">
+    <summary>
+      <para>Array of pointers to
+<see cref="CERT_EXTENSION" /> structures, each holding information about the CRL.</para>
+    </summary>
+  </member>
+</doc>

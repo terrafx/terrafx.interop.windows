@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ISyncMgrEnumItems.Clone">
+    <summary>
+      <para>Creates another items enumerator with the same state as the current enumerator to iterate over the same list. This method makes it possible to record a point in the enumeration sequence in order to return to that point at a later time.</para>
+    </summary>
+    <param name="ppenum">
+      <para>Type: <b>ppenum**</b></para>
+      <para>The address of a variable that receives the <see cref="ISyncMgrEnumItems" /> interface pointer.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Return S_OK if the method succeeds.</para>
+    </returns>
+    <remarks>
+      <para>The calling application must release the new enumerator separately from the first enumerator.</para>
+    </remarks>
+  </member>
+  <member name="ISyncMgrEnumItems.Next">
+    <summary>
+      <para>Enumerates the next <i>celt</i> elements in the enumerator's list, returning them in <i>rgelt</i> along with the actual number of enumerated elements in <i>pceltFetched</i>.</para>
+    </summary>
+    <param name="celt">
+      <para>Type: <b>ULONG</b></para>
+      <para>The number of items in the array.</para>
+    </param>
+    <param name="rgelt">
+      <para>Type: <b><see cref="SYNCMGRITEM" />*</b></para>
+      <para>The address of array containing items.</para>
+    </param>
+    <param name="pceltFetched">
+      <para>Type: <b>ULONG*</b></para>
+      <para>The address of variable containing actual number of items.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Return S_OK if the method succeeds.</para>
+    </returns>
+    <remarks>
+      <para>E_NOTIMPL is not allowed as a return value. If an error value is returned, no entries in the <i>rgelt</i> array are valid on exit and require no release.</para>
+    </remarks>
+  </member>
+  <member name="ISyncMgrEnumItems.Reset">
+    <summary>
+      <para>Instructs the enumerator to position itself at the beginning of the list of elements.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Return S_OK if the method succeeds.</para>
+    </returns>
+    <remarks>
+      <para>There is no guarantee that the same set of elements are enumerated on each pass through the list, nor are the elements necessarily enumerated in the same order. The exact behavior depends on the collection being enumerated. The operation is too memory-intensive for some collections, such as files in a directory, to maintain a specific state.</para>
+    </remarks>
+  </member>
+  <member name="ISyncMgrEnumItems.Skip">
+    <summary>
+      <para>Instructs the enumerator to skip the next <i>celt</i> elements in the enumeration so that the next call to <see cref="ISyncMgrEnumItems.Next" /> does not return those elements.</para>
+    </summary>
+    <param name="celt">
+      <para>Type: <b>ULONG</b></para>
+      <para>The number of items to skip.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Return S_OK if the method succeeds.</para>
+    </returns>
+  </member>
+  <member name="ISyncMgrEnumItems">
+    <summary>
+      <para>Exposes methods that enumerate through an array of <see cref="SYNCMGRITEM" /> structures. Each of these structures provides information about an item that can be synchronized. <b>ISyncMgrEnumItems</b> has the same methods as all standard enumerator interfaces: Next, Skip, Reset, and Clone.</para>
+    </summary>
+    <remarks>
+      <h3>When to Implement</h3>
+      <para>If the registered application works with the synchronization manager to synchronize items, it must implement an enumerator object with this interface to enumerate through the items.</para>
+      <h3>When to Use</h3>
+      <para>The synchronization manager obtains a pointer to this interface and calls each method during the synchronization process.</para>
+    </remarks>
+    <seealso cref="SYNCMGRITEM" />
+  </member>
+</doc>

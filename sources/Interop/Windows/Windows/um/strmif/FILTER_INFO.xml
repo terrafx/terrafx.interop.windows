@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="FILTER_INFO">
+    <summary>
+      <para>The <code>FILTER_INFO</code> structure contains information about a filter.</para>
+    </summary>
+    <remarks>
+      <para>If the <b>pGraph</b> member is not <b>NULL</b>, the application should release the <see cref="IFilterGraph" /> interface when it is finished using it.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-structures">DirectShow Structures</seealso>
+  </member>
+  <member name="FILTER_INFO.achName">
+    <summary>
+      <para>Null-terminated string containing the name of the filter.</para>
+    </summary>
+  </member>
+  <member name="FILTER_INFO.pGraph">
+    <summary>
+      <para>If the filter is member of a filter graph, contains a pointer to the filter graph's <see cref="IFilterGraph" /> interface. If the filter is not a member of a filter graph, this value of this member is <b>NULL</b>.</para>
+    </summary>
+  </member>
+</doc>

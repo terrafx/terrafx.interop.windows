@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_FAULT_DESCRIPTION">
+    <summary>
+      <para>Information about a mapping between an <see cref="WS_FAULT" /> and an XML element.</para>
+    </summary>
+  </member>
+  <member name="WS_FAULT_DESCRIPTION.envelopeVersion">
+    <summary>
+      <para>The SOAP version to use when serializing the fault.</para>
+    </summary>
+  </member>
+</doc>

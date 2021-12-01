@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SYSTEM_POWER_CONDITION.xml' path='doc/member[@name="SYSTEM_POWER_CONDITION"]/*' />
 public enum SYSTEM_POWER_CONDITION
 {
+    /// <include file='SYSTEM_POWER_CONDITION.xml' path='doc/member[@name="SYSTEM_POWER_CONDITION.PoAc"]/*' />
     PoAc,
+
+    /// <include file='SYSTEM_POWER_CONDITION.xml' path='doc/member[@name="SYSTEM_POWER_CONDITION.PoDc"]/*' />
     PoDc,
+
+    /// <include file='SYSTEM_POWER_CONDITION.xml' path='doc/member[@name="SYSTEM_POWER_CONDITION.PoHot"]/*' />
     PoHot,
+
+    /// <include file='SYSTEM_POWER_CONDITION.xml' path='doc/member[@name="SYSTEM_POWER_CONDITION.PoConditionMaximum"]/*' />
     PoConditionMaximum,
 }

@@ -5,29 +5,38 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='XML_ERROR.xml' path='doc/member[@name="XML_ERROR"]/*' />
 public unsafe partial struct XML_ERROR
 {
+    /// <include file='XML_ERROR.xml' path='doc/member[@name="XML_ERROR._nLine"]/*' />
     [NativeTypeName("unsigned int")]
     public uint _nLine;
 
+    /// <include file='XML_ERROR.xml' path='doc/member[@name="XML_ERROR._pchBuf"]/*' />
     [NativeTypeName("BSTR")]
     public ushort* _pchBuf;
 
+    /// <include file='XML_ERROR.xml' path='doc/member[@name="XML_ERROR._cchBuf"]/*' />
     [NativeTypeName("unsigned int")]
     public uint _cchBuf;
 
+    /// <include file='XML_ERROR.xml' path='doc/member[@name="XML_ERROR._ich"]/*' />
     [NativeTypeName("unsigned int")]
     public uint _ich;
 
+    /// <include file='XML_ERROR.xml' path='doc/member[@name="XML_ERROR._pszFound"]/*' />
     [NativeTypeName("BSTR")]
     public ushort* _pszFound;
 
+    /// <include file='XML_ERROR.xml' path='doc/member[@name="XML_ERROR._pszExpected"]/*' />
     [NativeTypeName("BSTR")]
     public ushort* _pszExpected;
 
+    /// <include file='XML_ERROR.xml' path='doc/member[@name="XML_ERROR._reserved1"]/*' />
     [NativeTypeName("DWORD")]
     public uint _reserved1;
 
+    /// <include file='XML_ERROR.xml' path='doc/member[@name="XML_ERROR._reserved2"]/*' />
     [NativeTypeName("DWORD")]
     public uint _reserved2;
 }

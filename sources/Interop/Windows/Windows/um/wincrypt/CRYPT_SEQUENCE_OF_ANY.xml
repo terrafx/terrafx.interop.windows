@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CRYPT_SEQUENCE_OF_ANY">
+    <summary>
+      <para>The <b>CRYPT_SEQUENCE_OF_ANY</b> structure contains an arbitrary list of encoded BLOBs.</para>
+    </summary>
+  </member>
+  <member name="CRYPT_SEQUENCE_OF_ANY.cValue">
+    <summary>
+      <para>Number of elements in the <b>rgValue</b> array.</para>
+    </summary>
+  </member>
+  <member name="CRYPT_SEQUENCE_OF_ANY.rgValue">
+    <summary>
+      <para>An array of
+<a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_DER_BLOB</a> structures.</para>
+    </summary>
+  </member>
+</doc>

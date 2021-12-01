@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMFCameraOcclusionStateMonitor.GetSupportedStates">
+    <summary>
+      <para>Gets the occlusion states supported by the current device.</para>
+    </summary>
+    <returns>
+      <para>A <b>DWORD</b> containing a bitwise OR combination of values from the <see cref="MFCameraOcclusionState" /> enumeration.</para>
+    </returns>
+    <remarks>
+      <para>To get the current occlusion state, call the <see cref="IMFCameraOcclusionStateReport.GetOcclusionState" /> method on the <see cref="IMFCameraOcclusionStateReport" /> passed to the <see cref="IMFCameraOcclusionStateReportCallback.OnOcclusionStateReport" /> callback.</para>
+    </remarks>
+    <seealso cref="IMFCameraOcclusionStateReport" />
+    <seealso cref="IMFCameraOcclusionStateReportCallback.OnOcclusionStateReport" />
+  </member>
+  <member name="IMFCameraOcclusionStateMonitor.Start">
+    <summary>
+      <para>Starts the camera occlusion state monitor.</para>
+    </summary>
+    <returns>
+      <para>Returns an HRESULT value, including but not limited to the following values:</para>
+      <para>| Error code | Description |
+|------------|-------------|
+| S_OK    | Succeeded |</para>
+    </returns>
+  </member>
+  <member name="IMFCameraOcclusionStateMonitor.Stop">
+    <summary>
+      <para>Stops the camera occlusion state monitor.</para>
+    </summary>
+    <returns>
+      <para>Returns an HRESULT value, including but not limited to the following values:</para>
+      <para>| Error code | Description |
+|------------|-------------|
+| S_OK    | Succeeded |</para>
+    </returns>
+  </member>
+  <member name="IMFCameraOcclusionStateMonitor">
+    <summary>
+      <para>Monitors the occlusion state of a camera device.</para>
+    </summary>
+    <remarks>
+      <para>Many devices provide mechanisms, such as a mechanical shutter, that allow the user to occlude the camera device for privacy. Other devices may occlude the camera in certain postures. This interface allows applications to receive notifications when the occlusion state of the camera changes so they can disable or modify their camera capture behavior when the camera is occluded. Note that some devices may have a mechanical camera shutter without a mechanism for sensing or reporting the state of the shutter, and therefore the camera occlusion APIs are unable to provide occlusion information on these devices. Also, some devices may not have a dedicated camera shutter but will still update the occlusion status of the camera based on whether the device lid is open or closed.</para>
+      <para>Create an instance of this interface by calling <see cref="MFCreateCameraOcclusionStateMonitor" />, passing in an implementation of <see cref="IMFCameraOcclusionStateReportCallback" />. After the monitor is started, the <see cref="IMFCameraOcclusionStateReportCallback.OnOcclusionStateReport" /> callback is passed an instance of <see cref="IMFCameraOcclusionStateReport" /> on which you can call <see cref="GetOcclusionState" /> to get the new camera occlusion state.</para>
+    </remarks>
+    <seealso cref="MFCreateCameraOcclusionStateMonitor" />
+    <seealso cref="IMFCameraOcclusionStateReportCallback" />
+    <seealso cref="IMFCameraOcclusionStateReport" />
+  </member>
+</doc>

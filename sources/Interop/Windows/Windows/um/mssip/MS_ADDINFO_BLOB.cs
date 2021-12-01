@@ -5,18 +5,24 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MS_ADDINFO_BLOB.xml' path='doc/member[@name="MS_ADDINFO_BLOB"]/*' />
 public unsafe partial struct MS_ADDINFO_BLOB
 {
+    /// <include file='MS_ADDINFO_BLOB.xml' path='doc/member[@name="MS_ADDINFO_BLOB.cbStruct"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbStruct;
 
+    /// <include file='MS_ADDINFO_BLOB.xml' path='doc/member[@name="MS_ADDINFO_BLOB.cbMemObject"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbMemObject;
 
+    /// <include file='MS_ADDINFO_BLOB.xml' path='doc/member[@name="MS_ADDINFO_BLOB.pbMemObject"]/*' />
     public byte* pbMemObject;
 
+    /// <include file='MS_ADDINFO_BLOB.xml' path='doc/member[@name="MS_ADDINFO_BLOB.cbMemSignedMsg"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbMemSignedMsg;
 
+    /// <include file='MS_ADDINFO_BLOB.xml' path='doc/member[@name="MS_ADDINFO_BLOB.pbMemSignedMsg"]/*' />
     public byte* pbMemSignedMsg;
 }

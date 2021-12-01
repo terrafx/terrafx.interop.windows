@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NTFS_FILE_RECORD_INPUT_BUFFER.xml' path='doc/member[@name="NTFS_FILE_RECORD_INPUT_BUFFER"]/*' />
 public partial struct NTFS_FILE_RECORD_INPUT_BUFFER
 {
+    /// <include file='NTFS_FILE_RECORD_INPUT_BUFFER.xml' path='doc/member[@name="NTFS_FILE_RECORD_INPUT_BUFFER.FileReferenceNumber"]/*' />
     public LARGE_INTEGER FileReferenceNumber;
 }

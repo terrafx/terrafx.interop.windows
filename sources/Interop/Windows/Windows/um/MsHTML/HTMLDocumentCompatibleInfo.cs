@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HTMLDocumentCompatibleInfo.xml' path='doc/member[@name="HTMLDocumentCompatibleInfo"]/*' />
 [Guid("3051041B-98B5-11CF-BB82-00AA00BDCE0B")]
 public partial struct HTMLDocumentCompatibleInfo
 {

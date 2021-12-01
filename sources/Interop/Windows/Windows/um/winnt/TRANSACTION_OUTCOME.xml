@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="TRANSACTION_OUTCOME">
+    <summary>
+      <para>Defines the outcomes (results) that KTM can assign to a transaction.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Ktm/about-ktm">About KTM</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Ktm/ktm-reference">KTM Reference</seealso>
+  </member>
+  <member name="TRANSACTION_OUTCOME.TransactionOutcomeUndetermined">
+    <summary>
+      <para>The transaction has not yet been committed or rolled back.</para>
+    </summary>
+  </member>
+  <member name="TRANSACTION_OUTCOME.TransactionOutcomeCommitted">
+    <summary>
+      <para>The transaction has been committed.</para>
+    </summary>
+  </member>
+  <member name="TRANSACTION_OUTCOME.TransactionOutcomeAborted">
+    <summary>
+      <para>The transaction has been rolled back.</para>
+    </summary>
+  </member>
+</doc>

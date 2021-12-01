@@ -5,14 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMAGE_BOUND_IMPORT_DESCRIPTOR.xml' path='doc/member[@name="IMAGE_BOUND_IMPORT_DESCRIPTOR"]/*' />
 public partial struct IMAGE_BOUND_IMPORT_DESCRIPTOR
 {
+    /// <include file='IMAGE_BOUND_IMPORT_DESCRIPTOR.xml' path='doc/member[@name="IMAGE_BOUND_IMPORT_DESCRIPTOR.TimeDateStamp"]/*' />
     [NativeTypeName("DWORD")]
     public uint TimeDateStamp;
 
+    /// <include file='IMAGE_BOUND_IMPORT_DESCRIPTOR.xml' path='doc/member[@name="IMAGE_BOUND_IMPORT_DESCRIPTOR.OffsetModuleName"]/*' />
     [NativeTypeName("WORD")]
     public ushort OffsetModuleName;
 
+    /// <include file='IMAGE_BOUND_IMPORT_DESCRIPTOR.xml' path='doc/member[@name="IMAGE_BOUND_IMPORT_DESCRIPTOR.NumberOfModuleForwarderRefs"]/*' />
     [NativeTypeName("WORD")]
     public ushort NumberOfModuleForwarderRefs;
 }

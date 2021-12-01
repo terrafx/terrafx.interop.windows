@@ -5,11 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CIEXYZTRIPLE.xml' path='doc/member[@name="CIEXYZTRIPLE"]/*' />
 public partial struct CIEXYZTRIPLE
 {
+    /// <include file='CIEXYZTRIPLE.xml' path='doc/member[@name="CIEXYZTRIPLE.ciexyzRed"]/*' />
     public CIEXYZ ciexyzRed;
 
+    /// <include file='CIEXYZTRIPLE.xml' path='doc/member[@name="CIEXYZTRIPLE.ciexyzGreen"]/*' />
     public CIEXYZ ciexyzGreen;
 
+    /// <include file='CIEXYZTRIPLE.xml' path='doc/member[@name="CIEXYZTRIPLE.ciexyzBlue"]/*' />
     public CIEXYZ ciexyzBlue;
 }

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IDiaImageData.xml' path='doc/member[@name="IDiaImageData"]/*' />
 [Guid("C8E40ED2-A1D9-4221-8692-3CE661184B44")]
 [NativeTypeName("struct IDiaImageData : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IDiaImageData : IDiaImageData.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IDiaImageData : IDiaImageData.Interface
         return ((delegate* unmanaged<IDiaImageData*, Guid*, void**, int>)(lpVtbl[0]))((IDiaImageData*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IDiaImageData : IDiaImageData.Interface
         return ((delegate* unmanaged<IDiaImageData*, uint>)(lpVtbl[1]))((IDiaImageData*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IDiaImageData : IDiaImageData.Interface
         return ((delegate* unmanaged<IDiaImageData*, uint>)(lpVtbl[2]))((IDiaImageData*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDiaImageData.xml' path='doc/member[@name="IDiaImageData.get_relativeVirtualAddress"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT get_relativeVirtualAddress([NativeTypeName("DWORD *")] uint* pRetVal)
@@ -46,6 +51,7 @@ public unsafe partial struct IDiaImageData : IDiaImageData.Interface
         return ((delegate* unmanaged<IDiaImageData*, uint*, int>)(lpVtbl[3]))((IDiaImageData*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
+    /// <include file='IDiaImageData.xml' path='doc/member[@name="IDiaImageData.get_virtualAddress"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT get_virtualAddress([NativeTypeName("ULONGLONG *")] ulong* pRetVal)
@@ -53,6 +59,7 @@ public unsafe partial struct IDiaImageData : IDiaImageData.Interface
         return ((delegate* unmanaged<IDiaImageData*, ulong*, int>)(lpVtbl[4]))((IDiaImageData*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
+    /// <include file='IDiaImageData.xml' path='doc/member[@name="IDiaImageData.get_imageBase"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT get_imageBase([NativeTypeName("ULONGLONG *")] ulong* pRetVal)

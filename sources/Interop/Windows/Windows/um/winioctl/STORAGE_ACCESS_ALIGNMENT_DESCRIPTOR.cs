@@ -5,26 +5,34 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STORAGE_ACCESS_ALIGNMENT_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_ACCESS_ALIGNMENT_DESCRIPTOR"]/*' />
 public partial struct STORAGE_ACCESS_ALIGNMENT_DESCRIPTOR
 {
+    /// <include file='STORAGE_ACCESS_ALIGNMENT_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_ACCESS_ALIGNMENT_DESCRIPTOR.Version"]/*' />
     [NativeTypeName("DWORD")]
     public uint Version;
 
+    /// <include file='STORAGE_ACCESS_ALIGNMENT_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_ACCESS_ALIGNMENT_DESCRIPTOR.Size"]/*' />
     [NativeTypeName("DWORD")]
     public uint Size;
 
+    /// <include file='STORAGE_ACCESS_ALIGNMENT_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_ACCESS_ALIGNMENT_DESCRIPTOR.BytesPerCacheLine"]/*' />
     [NativeTypeName("DWORD")]
     public uint BytesPerCacheLine;
 
+    /// <include file='STORAGE_ACCESS_ALIGNMENT_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_ACCESS_ALIGNMENT_DESCRIPTOR.BytesOffsetForCacheAlignment"]/*' />
     [NativeTypeName("DWORD")]
     public uint BytesOffsetForCacheAlignment;
 
+    /// <include file='STORAGE_ACCESS_ALIGNMENT_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_ACCESS_ALIGNMENT_DESCRIPTOR.BytesPerLogicalSector"]/*' />
     [NativeTypeName("DWORD")]
     public uint BytesPerLogicalSector;
 
+    /// <include file='STORAGE_ACCESS_ALIGNMENT_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_ACCESS_ALIGNMENT_DESCRIPTOR.BytesPerPhysicalSector"]/*' />
     [NativeTypeName("DWORD")]
     public uint BytesPerPhysicalSector;
 
+    /// <include file='STORAGE_ACCESS_ALIGNMENT_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_ACCESS_ALIGNMENT_DESCRIPTOR.BytesOffsetForSectorAlignment"]/*' />
     [NativeTypeName("DWORD")]
     public uint BytesOffsetForSectorAlignment;
 }

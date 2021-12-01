@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MSDiscRecorderObj.xml' path='doc/member[@name="MSDiscRecorderObj"]/*' />
 [Guid("520CCA61-51A5-11D3-9144-00104BA11C5E")]
 public partial struct MSDiscRecorderObj
 {

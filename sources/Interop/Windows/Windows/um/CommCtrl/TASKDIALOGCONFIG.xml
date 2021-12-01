@@ -1,0 +1,452 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="TASKDIALOGCONFIG">
+    <summary>
+      <para>The <b>TASKDIALOGCONFIG</b> structure contains information used to display a task dialog. The <see cref="TaskDialogIndirect" /> function uses this structure.</para>
+    </summary>
+  </member>
+  <member name="TASKDIALOGCONFIG.cbSize">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>Specifies the structure size, in bytes.</para>
+    </summary>
+  </member>
+  <member name="TASKDIALOGCONFIG.hwndParent">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
+      <para>Handle to the parent window. This member can be <b>NULL</b>.</para>
+    </summary>
+  </member>
+  <member name="TASKDIALOGCONFIG.hInstance">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HINSTANCE</a></b></para>
+      <para>Handle to the module that contains the icon resource identified by the <b>pszMainIcon</b> or <b>pszFooterIcon</b> members, and the string resources identified by the <b>pszWindowTitle</b>, <b>pszMainInstruction</b>, <b>pszContent</b>, <b>pszVerificationText</b>, <b>pszExpandedInformation</b>, <b>pszExpandedControlText</b>, <b>pszCollapsedControlText</b> or <b>pszFooter</b> members.</para>
+    </summary>
+  </member>
+  <member name="TASKDIALOGCONFIG.dwFlags">
+    <summary>
+      <para>Type: <b>TASKDIALOG_FLAGS</b></para>
+      <para>Specifies the behavior of the task dialog. This parameter can be a combination of flags from the following group:</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>TDF_ENABLE_HYPERLINKS</b>
+          </description>
+          <description>
+            <para>Enables hyperlink processing for the strings specified in the <b>pszContent</b>, <b>pszExpandedInformation</b> and <b>pszFooter</b> members. When enabled, these members may point to strings that contain hyperlinks in the following form:</para>
+            <code>&lt;A HREF="executablestring"&gt;Hyperlink Text&lt;/A&gt;
+</code>
+            <para>
+              <b>Warning: Enabling hyperlinks when using content from an unsafe source may cause security vulnerabilities.</b>
+            </para>
+            <para>
+              <b>Note</b>  Task Dialogs will not actually execute any hyperlinks. Hyperlink execution must be handled in the callback function specified by <b>pfCallback</b>. For more details, see <a href="https://docs.microsoft.com//windows/desktop/api/commctrl/nc-commctrl-pftaskdialogcallback">TaskDialogCallbackProc</a>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>TDF_USE_HICON_MAIN</b>
+          </description>
+          <description>
+            <para>Indicates that the dialog should use the icon referenced by the handle in the <b>hMainIcon</b> member as the primary icon in the task dialog. If this flag is specified, the <b>pszMainIcon</b> member is ignored.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>TDF_USE_HICON_FOOTER</b>
+          </description>
+          <description>
+            <para>Indicates that the dialog should use the icon referenced by the handle in the <b>hFooterIcon</b> member as the footer icon in the task dialog.  If this flag is specified, the <b>pszFooterIcon</b> member is ignored.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>TDF_ALLOW_DIALOG_CANCELLATION</b>
+          </description>
+          <description>
+            <para>Indicates that the dialog should be able to be closed using Alt-F4, Escape, and the title bar's close button even if no cancel button is specified in either the <b>dwCommonButtons</b> or <b>pButtons</b> members.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>TDF_USE_COMMAND_LINKS</b>
+          </description>
+          <description>
+            <para>Indicates that the buttons specified in the <b>pButtons</b> member are to be displayed as command links (using a standard task dialog glyph) instead of push buttons.  When using command links, all characters up to the first new line character in the <b>pszButtonText</b>  member will be treated as the command link's main text, and the remainder will be treated as the command link's note.  This flag is ignored if the <b>cButtons</b> member is zero.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>TDF_USE_COMMAND_LINKS_NO_ICON</b>
+          </description>
+          <description>
+            <para>Indicates that the buttons specified in the <b>pButtons</b> member are to be displayed as command links (without a glyph) instead of push buttons.  When using command links, all characters up to the first new line character in the <b>pszButtonText</b> member will be treated as the command link's main text, and the remainder will be treated as the command link's note.  This flag is ignored if the <b>cButtons</b> member is zero.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>TDF_EXPAND_FOOTER_AREA</b>
+          </description>
+          <description>
+            <para>Indicates that the string specified by the <b>pszExpandedInformation</b> member is displayed at the bottom of the dialog's footer area instead of immediately after the dialog's content. This flag is ignored if the <b>pszExpandedInformation</b> member is <b>NULL</b>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>TDF_EXPANDED_BY_DEFAULT</b>
+          </description>
+          <description>
+            <para>Indicates that the string specified by the <b>pszExpandedInformation</b> member is displayed when the dialog is initially displayed.  This flag is ignored if the <b>pszExpandedInformation</b> member is <b>NULL</b>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>TDF_VERIFICATION_FLAG_CHECKED</b>
+          </description>
+          <description>
+            <para>Indicates that the verification checkbox in the dialog is checked when the dialog is initially displayed.  This flag is ignored if the <b>pszVerificationText</b> parameter is <b>NULL</b>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>TDF_SHOW_PROGRESS_BAR</b>
+          </description>
+          <description>
+            <para>Indicates that a Progress Bar is to be displayed.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>TDF_SHOW_MARQUEE_PROGRESS_BAR</b>
+          </description>
+          <description>
+            <para>Indicates that an Marquee Progress Bar is to be displayed.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>TDF_CALLBACK_TIMER</b>
+          </description>
+          <description>
+            <para>Indicates that the task dialog's callback is to be called approximately every 200 milliseconds.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>TDF_POSITION_RELATIVE_TO_WINDOW</b>
+          </description>
+          <description>
+            <para>Indicates that the task dialog is positioned (centered) relative to the window specified by <b>hwndParent</b>. If the flag is not supplied (or no <b>hwndParent</b> member is specified), the task dialog is positioned (centered) relative to the monitor.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>TDF_RTL_LAYOUT</b>
+          </description>
+          <description>
+            <para>Indicates that text is displayed reading right to left.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>TDF_NO_DEFAULT_RADIO_BUTTON</b>
+          </description>
+          <description>
+            <para>Indicates that no default item will be selected.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>TDF_CAN_BE_MINIMIZED</b>
+          </description>
+          <description>
+            <para>Indicates that the task dialog can be minimized.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>TDIF_SIZE_TO_CONTENT</b>
+          </description>
+          <description>
+            <para>This flag is deprecated. Use <b>TDF_SIZE_TO_CONTENT</b> instead.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>TDF_SIZE_TO_CONTENT</b>
+          </description>
+          <description>
+            <para>Indicates that the width of the task dialog is determined by the width of its content area. This flag is ignored if <b>cxWidth</b> is not set to 0.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="TASKDIALOGCONFIG.dwCommonButtons">
+    <summary>
+      <para>Type: <b>TASKDIALOG_COMMON_BUTTON_FLAGS</b></para>
+      <para>Specifies the push buttons displayed in the task dialog. If no common buttons are specified and no custom buttons are specified using the <b>cButtons</b> and <b>pButtons</b> members, the task dialog will contain the <b>OK</b> button by default. This parameter may be a combination of flags from the following group:</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>TDCBF_OK_BUTTON</b>
+          </description>
+          <description>
+            <para>The task dialog contains the push button: <b>OK</b>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>TDCBF_YES_BUTTON</b>
+          </description>
+          <description>
+            <para>The task dialog contains the push button: <b>Yes</b>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>TDCBF_NO_BUTTON</b>
+          </description>
+          <description>
+            <para>The task dialog contains the push button: <b>No</b>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>TDCBF_CANCEL_BUTTON</b>
+          </description>
+          <description>
+            <para>The task dialog contains the push button: <b>Cancel</b>. If this button is specified, the task dialog will respond to typical cancel actions (Alt-F4 and Escape).</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>TDCBF_RETRY_BUTTON</b>
+          </description>
+          <description>
+            <para>The task dialog contains the push button: <b>Retry</b>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>TDCBF_CLOSE_BUTTON</b>
+          </description>
+          <description>
+            <para>The task dialog contains the push button: <b>Close</b>.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="TASKDIALOGCONFIG.pszWindowTitle">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">PCWSTR</a></b></para>
+      <para>Pointer that references the string to be used for the task dialog title.  This parameter can be either a null-terminated string or an integer resource identifier passed to the <see cref="MAKEINTRESOURCE" /> macro. If this parameter is <b>NULL</b>, the filename of the executable program is used.</para>
+    </summary>
+  </member>
+  <member name="TASKDIALOGCONFIG.DUMMYUNIONNAME">
+    <summary></summary>
+  </member>
+  <member name="TASKDIALOGCONFIG.DUMMYUNIONNAME.hMainIcon">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HICON</a></b></para>
+      <para>A handle to an Icon that is to be displayed in the task dialog.  This member is ignored unless the TDF_USE_HICON_MAIN flag is specified.  If this member is <b>NULL</b> and the TDF_USE_HICON_MAIN is specified, no icon will be displayed.</para>
+    </summary>
+  </member>
+  <member name="TASKDIALOGCONFIG.DUMMYUNIONNAME.pszMainIcon">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">PCWSTR</a></b></para>
+      <para>Pointer that references the icon to be displayed in the task dialog. This parameter is ignored if the USE_HICON_MAIN flag is specified. Otherwise, if this parameter is <b>NULL</b> or the <b>hInstance</b> parameter is <b>NULL</b>, no icon will be displayed. This parameter must be an integer resource identifier passed to the <see cref="MAKEINTRESOURCE" /> macro or one of the following predefined values:</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>TD_ERROR_ICON</b>
+          </description>
+          <description>
+            <para>A stop-sign icon appears in the task dialog.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>TD_WARNING_ICON</b>
+          </description>
+          <description>
+            <para>An exclamation-point icon appears in the task dialog.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>TD_INFORMATION_ICON</b>
+          </description>
+          <description>
+            <para>An icon consisting of a lowercase letter i in a circle appears in the task dialog.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>TD_SHIELD_ICON</b>
+          </description>
+          <description>
+            <para>A shield icon appears in the task dialog.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="TASKDIALOGCONFIG.pszMainInstruction">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">PCWSTR</a></b></para>
+      <para>Pointer that references the string to be used for the main instruction. This parameter can be either a null-terminated string or an integer resource identifier passed to the <see cref="MAKEINTRESOURCE" /> macro.</para>
+    </summary>
+  </member>
+  <member name="TASKDIALOGCONFIG.pszContent">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">PCWSTR</a></b></para>
+      <para>Pointer that references the string to be used for the dialog's primary content. This parameter can be either a null-terminated string or an integer resource identifier passed to the <see cref="MAKEINTRESOURCE" /> macro. If the ENABLE_HYPERLINKS flag is specified for the <b>dwFlags</b> member, then this string may contain hyperlinks in the form: &lt;A HREF="executablestring"&gt;Hyperlink Text&lt;/A&gt;.  <b>WARNING: Enabling hyperlinks when using content from an unsafe source may cause security vulnerabilities.</b></para>
+    </summary>
+  </member>
+  <member name="TASKDIALOGCONFIG.cButtons">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The number of entries in the <b>pButtons</b> array that is used to create buttons or command links in the task dialog. If this member is zero and no common buttons have been specified using the <b>dwCommonButtons</b> member, then the task dialog will have a single <b>OK</b> button displayed.</para>
+    </summary>
+  </member>
+  <member name="TASKDIALOGCONFIG.pButtons">
+    <summary>
+      <para>Type: <b>const <see cref="TASKDIALOG_BUTTON" />*</b></para>
+      <para>Pointer to an array of <see cref="TASKDIALOG_BUTTON" /> structures containing the definition of the custom buttons that are to be displayed in the task dialog.  This array must contain at least the number of entries that are specified by the <b>cButtons</b> member.</para>
+    </summary>
+  </member>
+  <member name="TASKDIALOGCONFIG.nDefaultButton">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>The default button for the task dialog.  This may be any of the values specified in <b>nButtonID</b> members of one of the <see cref="TASKDIALOG_BUTTON" /> structures in the <b>pButtons</b> array, or one of the IDs corresponding to the buttons specified in the <b>dwCommonButtons</b> member:</para>
+      <list type="table">
+        <listheader>
+          <description>IDCANCEL</description>
+          <description>Make the <b>Cancel</b> button the default.</description>
+        </listheader>
+        <item>
+          <description>IDNO</description>
+          <description>Make the <b>No</b> button the default.</description>
+        </item>
+        <item>
+          <description>IDOK</description>
+          <description>Make the <b>OK</b> button the default.</description>
+        </item>
+        <item>
+          <description>IDRETRY</description>
+          <description>Make the <b>Retry</b> button the default.</description>
+        </item>
+        <item>
+          <description>IDYES</description>
+          <description>Make the <b>Yes</b> button the default.</description>
+        </item>
+        <item>
+          <description>IDCLOSE</description>
+          <description>Make the <b>Close</b> button the default.</description>
+        </item>
+      </list>
+      <para>If this member is zero or its value does not correspond to any button ID in the dialog, then the first button in the dialog will be the default.</para>
+    </summary>
+  </member>
+  <member name="TASKDIALOGCONFIG.cRadioButtons">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The number of entries in the <b>pRadioButtons</b> array that is used to create radio buttons in the task dialog.</para>
+    </summary>
+  </member>
+  <member name="TASKDIALOGCONFIG.pRadioButtons">
+    <summary>
+      <para>Type: <b>const <see cref="TASKDIALOG_BUTTON" />*</b></para>
+      <para>Pointer to an array of <see cref="TASKDIALOG_BUTTON" /> structures containing the definition of the radio buttons that are to be displayed in the task dialog.  This array must contain at least the number of entries that are specified by the <b>cRadioButtons</b> member. This parameter can be <b>NULL</b>.</para>
+    </summary>
+  </member>
+  <member name="TASKDIALOGCONFIG.nDefaultRadioButton">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>The button ID of the radio button that is selected by default. If this value does not correspond to a button ID, the first button in the array is selected by default.</para>
+    </summary>
+  </member>
+  <member name="TASKDIALOGCONFIG.pszVerificationText">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">PCWSTR</a></b></para>
+      <para>Pointer that references the string to be used to label the verification checkbox. This parameter can be either a null-terminated string or an integer resource identifier passed to the <see cref="MAKEINTRESOURCE" /> macro. If this parameter is <b>NULL</b>, the verification checkbox is not displayed in the task dialog. If the <i>pfVerificationFlagChecked</i> parameter of <see cref="TaskDialogIndirect" /> is <b>NULL</b>, the checkbox is not enabled.</para>
+    </summary>
+  </member>
+  <member name="TASKDIALOGCONFIG.pszExpandedInformation">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">PCWSTR</a></b></para>
+      <para>Pointer that references the string to be used for displaying additional information. This parameter can be either a null-terminated string or an integer resource identifier passed to the <see cref="MAKEINTRESOURCE" /> macro.   The additional information is displayed either immediately below the content or below the footer text depending on whether the TDF_EXPAND_FOOTER_AREA flag is specified.  If the TDF_ENABLE_HYPERLINKS flag is specified for the <b>dwFlags</b> member, then this string may contain hyperlinks in the form: &lt;A HREF="executablestring"&gt;Hyperlink Text&lt;/A&gt;. <b>WARNING: Enabling hyperlinks when using content from an unsafe source may cause security vulnerabilities.</b></para>
+    </summary>
+  </member>
+  <member name="TASKDIALOGCONFIG.pszExpandedControlText">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">PCWSTR</a></b></para>
+      <para>Pointer that references the string to be used to label the button for collapsing the expandable information. This parameter can be either a null-terminated string or an integer resource identifier passed to the <see cref="MAKEINTRESOURCE" /> macro. This member is ignored when the <b>pszExpandedInformation</b> member is <b>NULL</b>.  If this member is <b>NULL</b> and the <b>pszCollapsedControlText</b> is specified, then the <b>pszCollapsedControlText</b> value will be used for this member as well.</para>
+    </summary>
+  </member>
+  <member name="TASKDIALOGCONFIG.pszCollapsedControlText">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">PCWSTR</a></b></para>
+      <para>Pointer that references the string to be used to label the button for expanding the expandable information. This parameter can be either a null-terminated string or an integer resource identifier passed to the <see cref="MAKEINTRESOURCE" /> macro. This member is ignored when the <b>pszExpandedInformation</b> member is <b>NULL</b>.  If this member is <b>NULL</b> and the <b>pszCollapsedControlText</b> is specified, then the <b>pszCollapsedControlText</b> value will be used for this member as well.</para>
+    </summary>
+  </member>
+  <member name="TASKDIALOGCONFIG.DUMMYUNIONNAME2">
+    <summary></summary>
+  </member>
+  <member name="TASKDIALOGCONFIG.DUMMYUNIONNAME2.hFooterIcon">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HICON</a></b></para>
+      <para>A handle to an Icon that is to be displayed in the footer of the task dialog.  This member is ignored unless the TDF_USE_HICON_FOOTER flag is specified and the <b>pszFooterIcon</b> is not. If this member is <b>NULL</b> and the TDF_USE_HICON_FOOTER is specified, no icon is displayed.</para>
+    </summary>
+  </member>
+  <member name="TASKDIALOGCONFIG.DUMMYUNIONNAME2.pszFooterIcon">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">PCWSTR</a></b></para>
+      <para>Pointer that references the icon to be displayed in the footer area of the task dialog. This parameter is ignored if the TDF_USE_HICON_FOOTER flag is specified, or if <b>pszFooter</b> is <b>NULL</b>. Otherwise, if this parameter is <b>NULL</b> or the <b>hInstance</b> parameter is <b>NULL</b>, no icon is displayed. This parameter must be an integer resource identifier passed to the <see cref="MAKEINTRESOURCE" /> macro or one of the predefined values listed for <b>pszMainIcon</b>.</para>
+    </summary>
+  </member>
+  <member name="TASKDIALOGCONFIG.pszFooter">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">PCWSTR</a></b></para>
+      <para>Pointer to the string to be used in the footer area of the task dialog. This parameter can be either a null-terminated string or an integer resource identifier passed to the <see cref="MAKEINTRESOURCE" /> macro. If the TDF_ENABLE_HYPERLINKS flag is specified for the <b>dwFlags</b> member, then this string may contain hyperlinks in this form.</para>
+      <code>&lt;A HREF="executablestring"&gt;Hyperlink Text&lt;/A&gt;
+</code>
+      <para>
+        <b>Warning</b>  Enabling hyperlinks when using content from an unsafe source may cause security vulnerabilities.</para>
+    </summary>
+  </member>
+  <member name="TASKDIALOGCONFIG.pfCallback">
+    <summary>
+      <para>Type: <b>PFTASKDIALOGCALLBACK</b></para>
+      <para>Pointer to an application-defined callback function. For more information see <a href="https://docs.microsoft.com//windows/desktop/api/commctrl/nc-commctrl-pftaskdialogcallback">TaskDialogCallbackProc</a>.</para>
+    </summary>
+  </member>
+  <member name="TASKDIALOGCONFIG.lpCallbackData">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LONG_PTR</a></b></para>
+      <para>A pointer to application-defined reference data. This value is defined by the caller.</para>
+    </summary>
+  </member>
+  <member name="TASKDIALOGCONFIG.cxWidth">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The width of the task dialog's client area, in dialog units. If 0, the task dialog manager will calculate the ideal width.</para>
+    </summary>
+  </member>
+</doc>

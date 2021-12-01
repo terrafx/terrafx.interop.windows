@@ -1,0 +1,345 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IStream.Clone">
+    <summary>
+      <para>The <b>Clone</b> method creates a new stream object with its own seek pointer that references the same bytes as the original stream.</para>
+    </summary>
+    <param name="ppstm">
+      <para>When successful, pointer to the location of an
+<see cref="IStream" /> pointer to the new stream object. If an error occurs, this parameter is <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <para>| Return code | Description |
+|----------------|---------------|
+|S_OK | The stream was successfully cloned.|
+|E_PENDING | Asynchronous Storage only: Part or all of the stream's data is currently unavailable. |
+|STG_E_INSUFFICIENTMEMORY | The stream was not cloned due to a lack of memory.|
+|STG_E_INVALIDPOINTER | The ppStm pointer is not valid.|
+|STG_E_REVERTED | The object has been invalidated by a revert operation above it in the transaction tree.|</para>
+    </returns>
+    <remarks>
+      <para>The <b>Clone</b> method creates a new stream object for accessing the same bytes but using a separate seek pointer. The new stream object sees the same data as the source-stream object. Changes written to one object are immediately visible in the other. Range locking is shared between the stream objects.</para>
+      <para>The initial setting of the seek pointer in the cloned stream instance is the same as the current setting of the seek pointer in the original stream at the time of the clone operation.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Stg/istream-compound-file-implementation">IStream - Compound File Implementation</seealso>
+    <seealso cref="IStream.CopyTo" />
+  </member>
+  <member name="IStream.Commit">
+    <summary>
+      <para>The <b>Commit</b>  method ensures that any changes made to a stream object open in transacted mode are reflected in the parent storage. If the stream object is open in direct mode, <b>IStream.Commit</b> has no effect other than flushing all memory buffers to the next-level storage object. The COM compound file implementation of streams does not support opening streams in transacted mode.</para>
+    </summary>
+    <param name="grfCommitFlags">
+      <para>Controls how the changes for the stream object are committed. See the
+<see cref="STGC" /> enumeration for a definition of these values.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <para>| Return code | Description |
+|----------------|---------------|
+|S_OK | Changes to the stream object were successfully committed to the parent level.|
+|E_PENDING | Asynchronous Storage only: Part or all of the stream's data is currently unavailable. |
+|STG_E_MEDIUMFULL | The commit operation failed due to lack of space on the storage device.|
+|STG_E_REVERTED | The object has been invalidated by a revert operation above it in the transaction tree.|</para>
+    </returns>
+    <remarks>
+      <para>The <b>Commit</b>  method ensures that changes to a stream object opened in transacted mode are reflected in the parent storage. Changes that have been made to the stream since it was opened or last committed are reflected to the parent storage object. If the parent is opened in transacted mode, the parent may revert at a later time, rolling back the changes to this stream object. The compound file implementation does not support the opening of streams in transacted mode, so this method has very little effect other than to flush memory buffers. For more information, see
+<a href="https://docs.microsoft.com//windows/desktop/Stg/istream-compound-file-implementation">IStream - Compound File Implementation</a>.</para>
+      <para>If the stream is open in direct mode, this method ensures that any memory buffers have been flushed out to the underlying storage object. This is much like a flush in traditional file systems.</para>
+      <para>The <b>IStream.Commit</b> method is useful on a direct mode stream when the implementation of the
+<see cref="IStream" /> interface is a wrapper for underlying file system APIs. In this case, <b>IStream.Commit</b> would be connected to the file system's flush call.</para>
+    </remarks>
+    <seealso cref="IStorage.Commit" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/Stg/istream-compound-file-implementation">IStream - Compound File Implementation</seealso>
+  </member>
+  <member name="IStream.CopyTo">
+    <summary>
+      <para>The <b>CopyTo</b> method copies a specified number of bytes from the current seek pointer in the stream to the current seek pointer in another stream.</para>
+    </summary>
+    <param name="pstm">
+      <para>A pointer to the destination stream. The stream pointed to by <i>pstm</i> can be a new stream or a clone of the source stream.</para>
+    </param>
+    <param name="cb">
+      <para>The number of bytes to copy from the source stream.</para>
+    </param>
+    <param name="pcbRead">
+      <para>A pointer to the location where this method writes the actual number of bytes read from the source. You can set this pointer to <b>NULL</b>. In this case, this method does not provide the actual number of bytes read.</para>
+    </param>
+    <param name="pcbWritten">
+      <para>A pointer to the location where this method writes the actual number of bytes written to the destination. You can set this pointer to <b>NULL</b>. In this case, this method does not provide the actual number of bytes written.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <para>| Return code | Description |
+|----------------|---------------|
+|S_OK | The stream object was successfully copied.|
+|E_PENDING | Asynchronous Storage only: Part or all of the data to be copied is currently unavailable. |
+|STG_E_INVALIDPOINTER | The value of one of the pointer parameters is invalid.|
+|STG_E_MEDIUMFULL | The stream is not copied because there is no space left on the storage device.|
+|STG_E_REVERTED | The object has been invalidated by a revert operation above it in the transaction tree.|</para>
+    </returns>
+    <remarks>
+      <para>The <b>CopyTo</b> method copies the specified bytes from one stream to another. It can also be used to copy a stream to itself. The seek pointer in each stream instance is adjusted for the number of bytes read or written. This method is equivalent to reading <i>cb</i> bytes into memory using
+<see cref="ISequentialStream.Read" /> and then immediately writing them to the destination stream using
+<see cref="ISequentialStream.Write" />, although <b>IStream.CopyTo</b> will be more efficient.</para>
+      <para>The destination stream can be a clone of the source stream created by calling the
+<see cref="IStream.Clone" /> method.</para>
+      <para>If <b>IStream.CopyTo</b> returns an error, you cannot assume that the seek pointers are valid for either the source or destination. Additionally, the values of <i>pcbRead</i> and <i>pcbWritten</i> are not meaningful even though they are returned.</para>
+      <para>If <b>IStream.CopyTo</b> returns successfully, the actual number of bytes read and written are the same.</para>
+      <para>To copy the remainder of the source from the current seek pointer, specify the maximum large integer value for the <i>cb</i> parameter. If the seek pointer is the beginning of the stream, this operation copies the entire stream.</para>
+    </remarks>
+    <seealso cref="ISequentialStream.Read" />
+    <seealso cref="ISequentialStream.Write" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/Stg/istream-compound-file-implementation">IStream - Compound File Implementation</seealso>
+    <seealso cref="IStream.Clone" />
+  </member>
+  <member name="IStream.LockRegion">
+    <summary>
+      <para>The <b>LockRegion</b> method restricts access to a specified range of bytes in the stream. Supporting this functionality is optional since some file systems do not provide it.</para>
+    </summary>
+    <param name="libOffset">
+      <para>Integer that specifies the byte offset for the beginning of the range.</para>
+    </param>
+    <param name="cb">
+      <para>Integer that specifies the length of the range, in bytes, to be restricted.</para>
+    </param>
+    <param name="dwLockType">
+      <para>Specifies the restrictions being requested on accessing the range.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <para>| Return code | Description |
+|----------------|---------------|
+|S_OK | The specified range of bytes was locked.|
+|E_PENDING | Asynchronous Storage only: Part or all of the stream's data is currently unavailable. |
+|STG_E_INVALIDFUNCTION | Locking is not supported at all or the specific type of lock requested is not supported.|
+|STG_E_LOCKVIOLATION | Requested lock is supported, but cannot be granted because of an existing lock.|
+|STG_E_REVERTED | The object has been invalidated by a revert operation above it in the transaction tree.|</para>
+    </returns>
+    <remarks>
+      <para>The byte range of the stream can be extended.  Locking an extended range for the stream is useful as a method of communication between different instances of the stream without changing data that is actually part of the stream.</para>
+      <para>Three types of locking can be supported: locking to exclude other writers, locking to exclude other readers or writers, and locking that allows only one requester to obtain a lock on the given range, which is usually an alias for one of the other two lock types. A given stream instance might support either of the first two types, or both. The lock type is specified by <i>dwLockType</i>, using a value from the
+<see cref="LOCKTYPE" /> enumeration.</para>
+      <para>Any region locked with <b>IStream.LockRegion</b> must later be explicitly unlocked by calling
+<see cref="IStream.UnlockRegion" /> with exactly the same values for the <i>libOffset</i>, <i>cb</i>, and <i>dwLockType</i> parameters. The region must be unlocked before the stream is released. Two adjacent regions cannot be locked separately and then unlocked with a single unlock call.</para>
+      <h3>Notes to Callers</h3>
+      <para>Since the type of locking supported is optional and can vary in different implementations of
+<see cref="IStream" />, you must provide code to deal with the STG_E_INVALIDFUNCTION error.</para>
+      <para>The <b>LockRegion</b> method has no effect in the compound file implementation, because the implementation does not support range locking.</para>
+      <h3>Notes to Implementers</h3>
+      <para>Support for this method is optional for implementations of stream objects since it may not be supported by the underlying file system. The type of locking supported is also optional. The STG_E_INVALIDFUNCTION error is returned if the requested type of locking is not supported.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Stg/istream-compound-file-implementation">IStream - Compound File Implementation</seealso>
+    <seealso cref="IStream.UnlockRegion" />
+    <seealso cref="LOCKTYPE" />
+  </member>
+  <member name="IStream.Revert">
+    <summary>
+      <para>The <b>Revert</b> method discards all changes that have been made to a transacted stream since the last
+<see cref="IStream.Commit" /> call. On streams open in direct mode and streams using the COM compound file implementation of <b>IStream.Revert</b>, this method has no effect.</para>
+    </summary>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <para>| Return code | Description |
+|----------------|---------------|
+|S_OK | The stream was successfully reverted to its previous version.|
+|E_PENDING | Asynchronous Storage only: Part or all of the stream's data is currently unavailable. |</para>
+    </returns>
+    <remarks>
+      <para>The <b>Revert</b> method discards changes made to a transacted stream since the last commit operation.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Stg/istream-compound-file-implementation">IStream - Compound File Implementation</seealso>
+    <seealso cref="IStream.Commit" />
+  </member>
+  <member name="IStream.Seek">
+    <summary>
+      <para>The <b>Seek</b> method changes the seek pointer to a new location.  The new location is relative to either the beginning of the stream, the end of the stream, or the current seek pointer.</para>
+    </summary>
+    <param name="dlibMove">
+      <para>The displacement to be added to the location indicated by the <i>dwOrigin</i> parameter. If <i>dwOrigin</i> is <b>STREAM_SEEK_SET</b>, this is interpreted as an unsigned value rather than a signed value.</para>
+    </param>
+    <param name="dwOrigin">
+      <para>The origin for the displacement specified in <i>dlibMove</i>. The origin can be the beginning of the file (<b>STREAM_SEEK_SET</b>), the current seek pointer (<b>STREAM_SEEK_CUR</b>), or the end of the file (<b>STREAM_SEEK_END</b>). For more information about values, see the <see cref="STREAM_SEEK" /> enumeration.</para>
+    </param>
+    <param name="plibNewPosition">
+      <para>A pointer to the location where this method writes the value of the new seek pointer from the beginning of the stream.</para>
+      <para>You can set this pointer to <b>NULL</b>. In this case, this method does not provide the new seek pointer.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <para>| Return code | Description |
+|----------------|---------------|
+|S_OK | The seek pointer was successfully adjusted.|
+|E_PENDING | Asynchronous Storage only: Part or all of the stream data is currently unavailable. |
+|STG_E_INVALIDPOINTER | Indicates that <i>plibNewPosition</i> points to invalid memory, because <i>plibNewPosition</i> is not read.|
+|STG_E_INVALIDFUNCTION | The <i>dwOrigin</i> parameter contains an invalid value, or the <i>dlibMove</i> parameter contains a bad offset value. For example, the result of the seek pointer is a negative offset value.|
+|STG_E_REVERTED | The object has been invalidated by a revert operation above it in the transaction tree.|</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>IStream.Seek</b> changes the seek pointer so that subsequent read and write operations can be performed at a different location in the stream object. It is an error to seek before the beginning of the stream. It is not, however, an error to seek past the end of the stream. Seeking past the end of the stream is useful for subsequent write operations, as the stream byte range will be extended to the new seek position immediately before the write is complete.</para>
+      <para>You can also use this method to obtain the current value of the seek pointer by calling this method with the <i>dwOrigin</i> parameter set to <b>STREAM_SEEK_CUR</b> and the <i>dlibMove</i> parameter set to 0 so that the seek pointer is not changed. The current seek pointer is returned in the <i>plibNewPosition</i> parameter.</para>
+    </remarks>
+    <seealso cref="ISequentialStream.Read" />
+    <seealso cref="ISequentialStream.Write" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/Stg/istream-compound-file-implementation">IStream - Compound File Implementation</seealso>
+    <seealso cref="STREAM_SEEK" />
+  </member>
+  <member name="IStream.SetSize">
+    <summary>
+      <para>The <b>SetSize</b> method changes the size of the stream object.</para>
+    </summary>
+    <param name="libNewSize">
+      <para>Specifies the new size, in bytes, of the stream.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <para>| Return code | Description |
+|----------------|---------------|
+|S_OK | The size of the stream object was successfully changed.|
+|E_PENDING | Asynchronous Storage only: Part or all of the stream's data is currently unavailable.|
+|STG_E_MEDIUMFULL | The stream size is not changed because there is no space left on the storage device.|
+|STG_E_INVALIDFUNCTION | The value of the <i>libNewSize</i> parameter is not supported by the implementation. Not all streams support greater than 232 bytes. If a stream does not support more than 232 bytes, the high DWORD data type of <i>libNewSize</i> must be zero. If it is nonzero, the implementation may return STG_E_INVALIDFUNCTION. In general, COM-based implementations of the IStream interface do not support streams larger than 232 bytes.|
+|STG_E_REVERTED | The object has been invalidated by a revert operation above it in the transaction tree.|</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>IStream.SetSize</b> changes the size of the stream object. Call this method to preallocate space for the stream. If the <i>libNewSize</i> parameter is larger than the current stream size, the stream is extended to the indicated size by filling the intervening space with bytes of undefined value. This operation is similar to the
+<see cref="ISequentialStream.Write" /> method if the seek pointer is past the current end of the stream.</para>
+      <para>If the <i>libNewSize</i> parameter is smaller than the current stream, the stream is truncated to the indicated size.</para>
+      <para>The seek pointer is not affected by the change in stream size.</para>
+      <para>Calling <b>IStream.SetSize</b> can be an effective way to obtain a large chunk of contiguous space.</para>
+    </remarks>
+    <seealso cref="ISequentialStream.Write" />
+    <seealso cref="IStream" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/Stg/istream-compound-file-implementation">IStream - Compound File Implementation</seealso>
+  </member>
+  <member name="IStream.Stat">
+    <summary>
+      <para>The <b>Stat</b> method retrieves the
+<see cref="STATSTG" /> structure for this stream.</para>
+    </summary>
+    <param name="pstatstg">
+      <para>Pointer to a
+<see cref="STATSTG" /> structure where this method places information about this stream object.</para>
+    </param>
+    <param name="grfStatFlag">
+      <para>Specifies that this method does not return some of the members in the
+<see cref="STATSTG" /> structure, thus saving a memory allocation operation. Values are taken from the
+<see cref="STATFLAG" /> enumeration.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <para>| Return code | Description |
+|----------------|---------------|
+|S_OK | The STATSTG structure was successfully returned at the specified location.|
+|E_PENDING | Asynchronous Storage only: Part or all of the stream's data is currently unavailable. |
+|STG_E_ACCESSDENIED | The caller does not have enough permissions for accessing statistics for this storage object.|
+|STG_E_INSUFFICIENTMEMORY | The STATSTG structure was not returned due to a lack of memory.|
+|STG_E_INVALIDFLAG | The value for the <i>grfStateFlag</i> parameter is not valid.|
+|STG_E_INVALIDPOINTER | The <i>pStatStg</i> pointer is not valid.|
+|STG_E_REVERTED | The object has been invalidated by a revert operation above it in the transaction tree.|</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>IStream.Stat</b> retrieves a pointer to the
+<see cref="STATSTG" /> structure that contains information about this open stream. When this stream is within a structured storage and
+<see cref="IStorage.EnumElements" /> is called, it creates an enumerator object with the
+<see cref="IEnumSTATSTG" /> interface on it, which can be called to enumerate the storages and streams through the
+<b>STATSTG</b> structures associated with each of them.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Stg/istream-compound-file-implementation">IStream - Compound File Implementation</seealso>
+    <seealso cref="STATFLAG" />
+    <seealso cref="STATSTG" />
+  </member>
+  <member name="IStream.UnlockRegion">
+    <summary>
+      <para>The <b>UnlockRegion</b> method removes the access restriction on a range of bytes previously restricted with
+<see cref="IStream.LockRegion" />.</para>
+    </summary>
+    <param name="libOffset">
+      <para>Specifies the byte offset for the beginning of the range.</para>
+    </param>
+    <param name="cb">
+      <para>Specifies, in bytes, the length of the range to be restricted.</para>
+    </param>
+    <param name="dwLockType">
+      <para>Specifies the access restrictions previously placed on the range.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <para>| Return code | Description |
+|----------------|---------------|
+|S_OK | The byte range was unlocked.|
+|E_PENDING | Asynchronous Storage only: Part or all of the stream's data is currently unavailable.|
+|STG_E_INVALIDFUNCTION | Locking is not supported at all or the specific type of lock requested is not supported.|
+|STG_E_LOCKVIOLATION | The requested unlock operation cannot be granted.|
+|STG_E_REVERTED | The object has been invalidated by a revert operation above it in the transaction tree.|</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>IStream.UnlockRegion</b> unlocks a region previously locked with the
+<see cref="IStream.LockRegion" /> method. Locked regions must later be explicitly unlocked by calling <b>IStream.UnlockRegion</b> with exactly the same values for the <i>libOffset</i>, <i>cb</i>, and <i>dwLockType</i> parameters. The region must be unlocked before the stream is released. Two adjacent regions cannot be locked separately and then unlocked with a single unlock call.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/Stg/istream-compound-file-implementation">IStream - Compound File Implementation</seealso>
+    <seealso cref="IStream.LockRegion" />
+    <seealso cref="LOCKTYPE" />
+  </member>
+  <member name="IStream">
+    <summary>
+      <para>The
+<b>IStream</b> interface lets you read and write data to stream objects. Stream objects contain the data in a structured storage object, where storages provide the structure. Simple data can be written directly to a stream but, most frequently, streams are elements nested within a storage object. They are similar to standard files.</para>
+      <para>The
+<b>IStream</b> interface defines methods similar to the MS-DOS FAT file functions. For example, each stream object has its own access rights and a seek pointer. The main difference between a DOS file and a stream object is that in the latter case, streams are opened using an
+<b>IStream</b> interface pointer rather than a file handle.</para>
+      <para>The methods in this interface present your object's data as a contiguous sequence of bytes that you can read or write. There are also methods for committing and reverting changes on streams that are open in transacted mode and methods for restricting access to a range of bytes in the stream.</para>
+      <para>Streams can remain open for long periods of time without consuming file-system resources. The <see cref="IUnknown.Release" /> method is similar to a close function on a file. Once released, the stream object is no longer valid and cannot be used.</para>
+      <para>Clients of asynchronous monikers can choose between a data-pull or data-push model for driving an asynchronous
+<see cref="IMoniker.BindToStorage" /> operation and for receiving asynchronous notifications. See
+<a href="https://docs.microsoft.com//windows/desktop/com/url-monikers">URL Monikers</a> for more information. The following table compares the behavior of asynchronous
+<see cref="ISequentialStream.Read" /> and
+<see cref="IStream.Seek" /> calls returned in <a href="https://msdn.microsoft.com/9755eda0-4d33-49e1-9bdd-f50a906e826f">IBindStatusCallback.OnDataAvailable</a> in these two download models:</para>
+      <list type="table">
+        <listheader>
+          <description>IStream method call</description>
+          <description>Behavior in data-pull model</description>
+          <description>Behavior in data-push model</description>
+        </listheader>
+        <item>
+          <description>
+            <b>Read</b> is called to read partial data (that is, not all the available data)</description>
+          <description>Returns S_OK. The client must continue to read all available data before returning from <a href="https://msdn.microsoft.com/9755eda0-4d33-49e1-9bdd-f50a906e826f">IBindStatusCallback.OnDataAvailable</a> or else the bind operation is blocked. (that is, read until S_FALSE or E_PENDING is returned)</description>
+          <description>Returns S_OK. Even if the client returns from <a href="https://msdn.microsoft.com/9755eda0-4d33-49e1-9bdd-f50a906e826f">IBindStatusCallback.OnDataAvailable</a> at this point the bind operation continues and <b>IBindStatusCallback.OnDataAvailable</b> will be called again repeatedly until the binding finishes.</description>
+        </item>
+        <item>
+          <description>
+            <b>Read</b> is called to read all the available data</description>
+          <description>Returns E_PENDING if the bind operation has not completed, and <a href="https://msdn.microsoft.com/9755eda0-4d33-49e1-9bdd-f50a906e826f">IBindStatusCallback.OnDataAvailable</a> will be called again when more data is available.</description>
+          <description>Same as data-pull model.</description>
+        </item>
+        <item>
+          <description>
+            <b>Read</b> is called to read all the available data and the bind operation is over (end of file)</description>
+          <description>Returns S_FALSE. There will be a subsequent call to <a href="https://msdn.microsoft.com/9755eda0-4d33-49e1-9bdd-f50a906e826f">IBindStatusCallback.OnDataAvailable</a> with the <i>grfBSC</i> flag set to BSCF_LASTDATANOTIFICATION.</description>
+          <description>Same as data-pull model.</description>
+        </item>
+        <item>
+          <description>
+            <b>Seek</b> is called</description>
+          <description>
+            <b>Seek</b> does not work in data-pull model</description>
+          <description>
+            <b>Seek</b> does not work in data-push model.</description>
+        </item>
+      </list>
+      <para>For general information on this topic, see
+<a href="https://docs.microsoft.com//windows/desktop/com/asynchronous-monikers">Asynchronous Monikers</a> and
+<a href="https://docs.microsoft.com//windows/desktop/com/data-pull-model-vs.-data-push-model">Data-Pull-Model versus Data Push-Model</a> for more specific information. Also, see
+<a href="https://docs.microsoft.com//windows/desktop/com/managing-memory-allocation">Managing Memory Allocation</a> for details on COM's rules for managing memory.</para>
+    </summary>
+    <seealso cref="ISequentialStream" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/Stg/istream-compound-file-implementation">IStream - Compound File Implementation</seealso>
+  </member>
+</doc>

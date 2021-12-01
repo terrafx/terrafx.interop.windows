@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_ASYNC_CONTEXT.xml' path='doc/member[@name="WS_ASYNC_CONTEXT"]/*' />
 public unsafe partial struct WS_ASYNC_CONTEXT
 {
+    /// <include file='WS_ASYNC_CONTEXT.xml' path='doc/member[@name="WS_ASYNC_CONTEXT.callback"]/*' />
     [NativeTypeName("WS_ASYNC_CALLBACK")]
     public delegate* unmanaged<HRESULT, WS_CALLBACK_MODEL, void*, void> callback;
 
+    /// <include file='WS_ASYNC_CONTEXT.xml' path='doc/member[@name="WS_ASYNC_CONTEXT.callbackState"]/*' />
     public void* callbackState;
 }

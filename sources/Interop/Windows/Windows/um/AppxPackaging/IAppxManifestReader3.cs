@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAppxManifestReader3.xml' path='doc/member[@name="IAppxManifestReader3"]/*' />
 [Guid("C43825AB-69B7-400A-9709-CC37F5A72D24")]
 [NativeTypeName("struct IAppxManifestReader3 : IAppxManifestReader2")]
 [NativeInheritance("IAppxManifestReader2")]
@@ -16,6 +17,7 @@ public unsafe partial struct IAppxManifestReader3 : IAppxManifestReader3.Interfa
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IAppxManifestReader3 : IAppxManifestReader3.Interfa
         return ((delegate* unmanaged<IAppxManifestReader3*, Guid*, void**, int>)(lpVtbl[0]))((IAppxManifestReader3*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IAppxManifestReader3 : IAppxManifestReader3.Interfa
         return ((delegate* unmanaged<IAppxManifestReader3*, uint>)(lpVtbl[1]))((IAppxManifestReader3*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IAppxManifestReader3 : IAppxManifestReader3.Interfa
         return ((delegate* unmanaged<IAppxManifestReader3*, uint>)(lpVtbl[2]))((IAppxManifestReader3*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IAppxManifestReader.GetPackageId" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetPackageId(IAppxManifestPackageId** packageId)
@@ -46,6 +51,7 @@ public unsafe partial struct IAppxManifestReader3 : IAppxManifestReader3.Interfa
         return ((delegate* unmanaged<IAppxManifestReader3*, IAppxManifestPackageId**, int>)(lpVtbl[3]))((IAppxManifestReader3*)Unsafe.AsPointer(ref this), packageId);
     }
 
+    /// <inheritdoc cref="IAppxManifestReader.GetProperties" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetProperties(IAppxManifestProperties** packageProperties)
@@ -53,6 +59,7 @@ public unsafe partial struct IAppxManifestReader3 : IAppxManifestReader3.Interfa
         return ((delegate* unmanaged<IAppxManifestReader3*, IAppxManifestProperties**, int>)(lpVtbl[4]))((IAppxManifestReader3*)Unsafe.AsPointer(ref this), packageProperties);
     }
 
+    /// <inheritdoc cref="IAppxManifestReader.GetPackageDependencies" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetPackageDependencies(IAppxManifestPackageDependenciesEnumerator** dependencies)
@@ -60,6 +67,7 @@ public unsafe partial struct IAppxManifestReader3 : IAppxManifestReader3.Interfa
         return ((delegate* unmanaged<IAppxManifestReader3*, IAppxManifestPackageDependenciesEnumerator**, int>)(lpVtbl[5]))((IAppxManifestReader3*)Unsafe.AsPointer(ref this), dependencies);
     }
 
+    /// <inheritdoc cref="IAppxManifestReader.GetCapabilities" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetCapabilities(APPX_CAPABILITIES* capabilities)
@@ -67,6 +75,7 @@ public unsafe partial struct IAppxManifestReader3 : IAppxManifestReader3.Interfa
         return ((delegate* unmanaged<IAppxManifestReader3*, APPX_CAPABILITIES*, int>)(lpVtbl[6]))((IAppxManifestReader3*)Unsafe.AsPointer(ref this), capabilities);
     }
 
+    /// <inheritdoc cref="IAppxManifestReader.GetResources" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetResources(IAppxManifestResourcesEnumerator** resources)
@@ -74,6 +83,7 @@ public unsafe partial struct IAppxManifestReader3 : IAppxManifestReader3.Interfa
         return ((delegate* unmanaged<IAppxManifestReader3*, IAppxManifestResourcesEnumerator**, int>)(lpVtbl[7]))((IAppxManifestReader3*)Unsafe.AsPointer(ref this), resources);
     }
 
+    /// <inheritdoc cref="IAppxManifestReader.GetDeviceCapabilities" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetDeviceCapabilities(IAppxManifestDeviceCapabilitiesEnumerator** deviceCapabilities)
@@ -81,6 +91,7 @@ public unsafe partial struct IAppxManifestReader3 : IAppxManifestReader3.Interfa
         return ((delegate* unmanaged<IAppxManifestReader3*, IAppxManifestDeviceCapabilitiesEnumerator**, int>)(lpVtbl[8]))((IAppxManifestReader3*)Unsafe.AsPointer(ref this), deviceCapabilities);
     }
 
+    /// <inheritdoc cref="IAppxManifestReader.GetPrerequisite" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT GetPrerequisite([NativeTypeName("LPCWSTR")] ushort* name, [NativeTypeName("UINT64 *")] ulong* value)
@@ -88,6 +99,7 @@ public unsafe partial struct IAppxManifestReader3 : IAppxManifestReader3.Interfa
         return ((delegate* unmanaged<IAppxManifestReader3*, ushort*, ulong*, int>)(lpVtbl[9]))((IAppxManifestReader3*)Unsafe.AsPointer(ref this), name, value);
     }
 
+    /// <inheritdoc cref="IAppxManifestReader.GetApplications" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT GetApplications(IAppxManifestApplicationsEnumerator** applications)
@@ -95,6 +107,7 @@ public unsafe partial struct IAppxManifestReader3 : IAppxManifestReader3.Interfa
         return ((delegate* unmanaged<IAppxManifestReader3*, IAppxManifestApplicationsEnumerator**, int>)(lpVtbl[10]))((IAppxManifestReader3*)Unsafe.AsPointer(ref this), applications);
     }
 
+    /// <inheritdoc cref="IAppxManifestReader.GetStream" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT GetStream(IStream** manifestStream)
@@ -102,6 +115,7 @@ public unsafe partial struct IAppxManifestReader3 : IAppxManifestReader3.Interfa
         return ((delegate* unmanaged<IAppxManifestReader3*, IStream**, int>)(lpVtbl[11]))((IAppxManifestReader3*)Unsafe.AsPointer(ref this), manifestStream);
     }
 
+    /// <inheritdoc cref="IAppxManifestReader2.GetQualifiedResources" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT GetQualifiedResources(IAppxManifestQualifiedResourcesEnumerator** resources)
@@ -109,6 +123,7 @@ public unsafe partial struct IAppxManifestReader3 : IAppxManifestReader3.Interfa
         return ((delegate* unmanaged<IAppxManifestReader3*, IAppxManifestQualifiedResourcesEnumerator**, int>)(lpVtbl[12]))((IAppxManifestReader3*)Unsafe.AsPointer(ref this), resources);
     }
 
+    /// <include file='IAppxManifestReader3.xml' path='doc/member[@name="IAppxManifestReader3.GetCapabilitiesByCapabilityClass"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT GetCapabilitiesByCapabilityClass(APPX_CAPABILITY_CLASS_TYPE capabilityClass, IAppxManifestCapabilitiesEnumerator** capabilities)
@@ -116,6 +131,7 @@ public unsafe partial struct IAppxManifestReader3 : IAppxManifestReader3.Interfa
         return ((delegate* unmanaged<IAppxManifestReader3*, APPX_CAPABILITY_CLASS_TYPE, IAppxManifestCapabilitiesEnumerator**, int>)(lpVtbl[13]))((IAppxManifestReader3*)Unsafe.AsPointer(ref this), capabilityClass, capabilities);
     }
 
+    /// <include file='IAppxManifestReader3.xml' path='doc/member[@name="IAppxManifestReader3.GetTargetDeviceFamilies"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT GetTargetDeviceFamilies(IAppxManifestTargetDeviceFamiliesEnumerator** targetDeviceFamilies)

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="eAVDecAudioDualMonoReproMode">
+    <summary>
+      <para>Specifies how the decoder reproduces dual mono audio. This enumeration is used with the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avdecaudiodualmonorepromode-property">AVDecAudioDualMonoReproMode</a> property.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-enumerations">Codec API Enumerations</seealso>
+    <seealso cref="ICodecAPI Interface" />
+  </member>
+  <member name="eAVDecAudioDualMonoReproMode.eAVDecAudioDualMonoReproMode_STEREO">
+    <summary>
+      <para>Output channel 1 (Ch1) to the left speaker and channel 2 (Ch2) to the right speaker.</para>
+    </summary>
+  </member>
+  <member name="eAVDecAudioDualMonoReproMode.eAVDecAudioDualMonoReproMode_LEFT_MONO">
+    <summary>
+      <para>Output Ch1 to the left and right speakers.</para>
+    </summary>
+  </member>
+  <member name="eAVDecAudioDualMonoReproMode.eAVDecAudioDualMonoReproMode_RIGHT_MONO">
+    <summary>
+      <para>Output Ch2 to the left and right speakers.</para>
+    </summary>
+  </member>
+  <member name="eAVDecAudioDualMonoReproMode.eAVDecAudioDualMonoReproMode_MIX_MONO">
+    <summary>
+      <para>Mix Ch1 and Ch2 and output the mix to the left and right speakers.</para>
+    </summary>
+  </member>
+</doc>

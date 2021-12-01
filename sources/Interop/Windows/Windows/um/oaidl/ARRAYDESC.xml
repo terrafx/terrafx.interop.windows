@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ARRAYDESC">
+    <summary>
+      <para>Describes an array, its element type, and its dimension.</para>
+    </summary>
+    <seealso cref="TYPEDESC" />
+  </member>
+  <member name="ARRAYDESC.tdescElem">
+    <summary>
+      <para>The element type.</para>
+    </summary>
+  </member>
+  <member name="ARRAYDESC.cDims">
+    <summary>
+      <para>The dimension count.</para>
+    </summary>
+  </member>
+  <member name="ARRAYDESC.rgbounds">
+    <summary>
+      <para>A variable-length array containing one element for each dimension.</para>
+    </summary>
+  </member>
+</doc>

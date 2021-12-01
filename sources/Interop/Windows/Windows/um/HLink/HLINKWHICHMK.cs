@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HLINKWHICHMK.xml' path='doc/member[@name="HLINKWHICHMK"]/*' />
 public enum HLINKWHICHMK
 {
+    /// <include file='HLINKWHICHMK.xml' path='doc/member[@name="HLINKWHICHMK.HLINKWHICHMK_CONTAINER"]/*' />
     HLINKWHICHMK_CONTAINER = 1,
+
+    /// <include file='HLINKWHICHMK.xml' path='doc/member[@name="HLINKWHICHMK.HLINKWHICHMK_BASE"]/*' />
     HLINKWHICHMK_BASE = 2,
 }

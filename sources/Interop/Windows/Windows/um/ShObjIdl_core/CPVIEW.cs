@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CPVIEW.xml' path='doc/member[@name="CPVIEW"]/*' />
 public enum CPVIEW
 {
+    /// <include file='CPVIEW.xml' path='doc/member[@name="CPVIEW.CPVIEW_CLASSIC"]/*' />
     CPVIEW_CLASSIC = 0,
+
+    /// <include file='CPVIEW.xml' path='doc/member[@name="CPVIEW.CPVIEW_ALLITEMS"]/*' />
     CPVIEW_ALLITEMS = CPVIEW_CLASSIC,
+
+    /// <include file='CPVIEW.xml' path='doc/member[@name="CPVIEW.CPVIEW_CATEGORY"]/*' />
     CPVIEW_CATEGORY = 1,
+
+    /// <include file='CPVIEW.xml' path='doc/member[@name="CPVIEW.CPVIEW_HOME"]/*' />
     CPVIEW_HOME = CPVIEW_CATEGORY,
 }

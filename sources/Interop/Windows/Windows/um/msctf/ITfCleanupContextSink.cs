@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITfCleanupContextSink.xml' path='doc/member[@name="ITfCleanupContextSink"]/*' />
 [Guid("01689689-7ACB-4E9B-AB7C-7EA46B12B522")]
 [NativeTypeName("struct ITfCleanupContextSink : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITfCleanupContextSink : ITfCleanupContextSink.Inter
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITfCleanupContextSink : ITfCleanupContextSink.Inter
         return ((delegate* unmanaged<ITfCleanupContextSink*, Guid*, void**, int>)(lpVtbl[0]))((ITfCleanupContextSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITfCleanupContextSink : ITfCleanupContextSink.Inter
         return ((delegate* unmanaged<ITfCleanupContextSink*, uint>)(lpVtbl[1]))((ITfCleanupContextSink*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITfCleanupContextSink : ITfCleanupContextSink.Inter
         return ((delegate* unmanaged<ITfCleanupContextSink*, uint>)(lpVtbl[2]))((ITfCleanupContextSink*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITfCleanupContextSink.xml' path='doc/member[@name="ITfCleanupContextSink.OnCleanupContext"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT OnCleanupContext([NativeTypeName("TfEditCookie")] uint ecWrite, ITfContext* pic)

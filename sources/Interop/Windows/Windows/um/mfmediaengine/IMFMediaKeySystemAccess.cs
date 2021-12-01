@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFMediaKeySystemAccess.xml' path='doc/member[@name="IMFMediaKeySystemAccess"]/*' />
 [Guid("AEC63FDA-7A97-4944-B35C-6C6DF8085CC3")]
 [NativeTypeName("struct IMFMediaKeySystemAccess : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMFMediaKeySystemAccess : IMFMediaKeySystemAccess.I
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMFMediaKeySystemAccess : IMFMediaKeySystemAccess.I
         return ((delegate* unmanaged<IMFMediaKeySystemAccess*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaKeySystemAccess*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMFMediaKeySystemAccess : IMFMediaKeySystemAccess.I
         return ((delegate* unmanaged<IMFMediaKeySystemAccess*, uint>)(lpVtbl[1]))((IMFMediaKeySystemAccess*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMFMediaKeySystemAccess : IMFMediaKeySystemAccess.I
         return ((delegate* unmanaged<IMFMediaKeySystemAccess*, uint>)(lpVtbl[2]))((IMFMediaKeySystemAccess*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFMediaKeySystemAccess.xml' path='doc/member[@name="IMFMediaKeySystemAccess.CreateMediaKeys"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT CreateMediaKeys(IPropertyStore* pCdmCustomConfig, IMFMediaKeys2** ppKeys)
@@ -46,6 +51,7 @@ public unsafe partial struct IMFMediaKeySystemAccess : IMFMediaKeySystemAccess.I
         return ((delegate* unmanaged<IMFMediaKeySystemAccess*, IPropertyStore*, IMFMediaKeys2**, int>)(lpVtbl[3]))((IMFMediaKeySystemAccess*)Unsafe.AsPointer(ref this), pCdmCustomConfig, ppKeys);
     }
 
+    /// <include file='IMFMediaKeySystemAccess.xml' path='doc/member[@name="IMFMediaKeySystemAccess.get_SupportedConfiguration"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT get_SupportedConfiguration(IPropertyStore** ppSupportedConfiguration)
@@ -53,6 +59,7 @@ public unsafe partial struct IMFMediaKeySystemAccess : IMFMediaKeySystemAccess.I
         return ((delegate* unmanaged<IMFMediaKeySystemAccess*, IPropertyStore**, int>)(lpVtbl[4]))((IMFMediaKeySystemAccess*)Unsafe.AsPointer(ref this), ppSupportedConfiguration);
     }
 
+    /// <include file='IMFMediaKeySystemAccess.xml' path='doc/member[@name="IMFMediaKeySystemAccess.get_KeySystem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT get_KeySystem([NativeTypeName("BSTR *")] ushort** pKeySystem)

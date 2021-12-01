@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IReferenceClock2.xml' path='doc/member[@name="IReferenceClock2"]/*' />
 [Guid("36B73885-C2C8-11CF-8B46-00805F6CEF60")]
 [NativeTypeName("struct IReferenceClock2 : IReferenceClock")]
 [NativeInheritance("IReferenceClock")]
@@ -16,6 +17,7 @@ public unsafe partial struct IReferenceClock2 : IReferenceClock2.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IReferenceClock2 : IReferenceClock2.Interface
         return ((delegate* unmanaged<IReferenceClock2*, Guid*, void**, int>)(lpVtbl[0]))((IReferenceClock2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IReferenceClock2 : IReferenceClock2.Interface
         return ((delegate* unmanaged<IReferenceClock2*, uint>)(lpVtbl[1]))((IReferenceClock2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IReferenceClock2 : IReferenceClock2.Interface
         return ((delegate* unmanaged<IReferenceClock2*, uint>)(lpVtbl[2]))((IReferenceClock2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IReferenceClock.GetTime" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTime([NativeTypeName("REFERENCE_TIME *")] long* pTime)
@@ -46,6 +51,7 @@ public unsafe partial struct IReferenceClock2 : IReferenceClock2.Interface
         return ((delegate* unmanaged<IReferenceClock2*, long*, int>)(lpVtbl[3]))((IReferenceClock2*)Unsafe.AsPointer(ref this), pTime);
     }
 
+    /// <inheritdoc cref="IReferenceClock.AdviseTime" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT AdviseTime([NativeTypeName("REFERENCE_TIME")] long baseTime, [NativeTypeName("REFERENCE_TIME")] long streamTime, HEVENT hEvent, [NativeTypeName("DWORD_PTR *")] nuint* pdwAdviseCookie)
@@ -53,6 +59,7 @@ public unsafe partial struct IReferenceClock2 : IReferenceClock2.Interface
         return ((delegate* unmanaged<IReferenceClock2*, long, long, HEVENT, nuint*, int>)(lpVtbl[4]))((IReferenceClock2*)Unsafe.AsPointer(ref this), baseTime, streamTime, hEvent, pdwAdviseCookie);
     }
 
+    /// <inheritdoc cref="IReferenceClock.AdvisePeriodic" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT AdvisePeriodic([NativeTypeName("REFERENCE_TIME")] long startTime, [NativeTypeName("REFERENCE_TIME")] long periodTime, HSEMAPHORE hSemaphore, [NativeTypeName("DWORD_PTR *")] nuint* pdwAdviseCookie)
@@ -60,6 +67,7 @@ public unsafe partial struct IReferenceClock2 : IReferenceClock2.Interface
         return ((delegate* unmanaged<IReferenceClock2*, long, long, HSEMAPHORE, nuint*, int>)(lpVtbl[5]))((IReferenceClock2*)Unsafe.AsPointer(ref this), startTime, periodTime, hSemaphore, pdwAdviseCookie);
     }
 
+    /// <inheritdoc cref="IReferenceClock.Unadvise" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Unadvise([NativeTypeName("DWORD_PTR")] nuint dwAdviseCookie)

@@ -8,11 +8,14 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PRJ_VIRTUALIZATION_INSTANCE_INFO.xml' path='doc/member[@name="PRJ_VIRTUALIZATION_INSTANCE_INFO"]/*' />
 [SupportedOSPlatform("windows10.0.17763.0")]
 public partial struct PRJ_VIRTUALIZATION_INSTANCE_INFO
 {
+    /// <include file='PRJ_VIRTUALIZATION_INSTANCE_INFO.xml' path='doc/member[@name="PRJ_VIRTUALIZATION_INSTANCE_INFO.InstanceID"]/*' />
     public Guid InstanceID;
 
+    /// <include file='PRJ_VIRTUALIZATION_INSTANCE_INFO.xml' path='doc/member[@name="PRJ_VIRTUALIZATION_INSTANCE_INFO.WriteAlignment"]/*' />
     [NativeTypeName("UINT32")]
     public uint WriteAlignment;
 }

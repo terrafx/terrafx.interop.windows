@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IPlayToControl.Connect">
+    <summary>
+      <para>Connects the media element to the media sharing engine.</para>
+    </summary>
+    <param name="pFactory">
+      <para>A pointer to the <see cref="IMFSharingEngineClassFactory" /> interface. The media element uses this interface to create the Sharing Engine.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IPlayToControl" />
+  </member>
+  <member name="IPlayToControl.Disconnect">
+    <summary>
+      <para>Disconnects the media element from the media sharing engine.</para>
+    </summary>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IPlayToControl" />
+  </member>
+  <member name="IPlayToControl">
+    <summary>
+      <para>Enables the <b>PlayToConnection</b> object to connect to a media element.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+  </member>
+</doc>

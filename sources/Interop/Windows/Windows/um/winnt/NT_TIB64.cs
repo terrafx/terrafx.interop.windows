@@ -8,29 +8,38 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NT_TIB64.xml' path='doc/member[@name="NT_TIB64"]/*' />
 public partial struct NT_TIB64
 {
+    /// <include file='NT_TIB64.xml' path='doc/member[@name="NT_TIB64.ExceptionList"]/*' />
     [NativeTypeName("DWORD64")]
     public ulong ExceptionList;
 
+    /// <include file='NT_TIB64.xml' path='doc/member[@name="NT_TIB64.StackBase"]/*' />
     [NativeTypeName("DWORD64")]
     public ulong StackBase;
 
+    /// <include file='NT_TIB64.xml' path='doc/member[@name="NT_TIB64.StackLimit"]/*' />
     [NativeTypeName("DWORD64")]
     public ulong StackLimit;
 
+    /// <include file='NT_TIB64.xml' path='doc/member[@name="NT_TIB64.SubSystemTib"]/*' />
     [NativeTypeName("DWORD64")]
     public ulong SubSystemTib;
 
+    /// <include file='NT_TIB64.xml' path='doc/member[@name="NT_TIB64.Anonymous"]/*' />
     [NativeTypeName("_NT_TIB64::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:12512:5)")]
     public _Anonymous_e__Union Anonymous;
 
+    /// <include file='NT_TIB64.xml' path='doc/member[@name="NT_TIB64.ArbitraryUserPointer"]/*' />
     [NativeTypeName("DWORD64")]
     public ulong ArbitraryUserPointer;
 
+    /// <include file='NT_TIB64.xml' path='doc/member[@name="NT_TIB64.Self"]/*' />
     [NativeTypeName("DWORD64")]
     public ulong Self;
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.FiberData"]/*' />
     public ref ulong FiberData
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -40,6 +49,7 @@ public partial struct NT_TIB64
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Version"]/*' />
     public ref uint Version
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -49,13 +59,16 @@ public partial struct NT_TIB64
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public partial struct _Anonymous_e__Union
     {
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.FiberData"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("DWORD64")]
         public ulong FiberData;
 
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Version"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("DWORD")]
         public uint Version;

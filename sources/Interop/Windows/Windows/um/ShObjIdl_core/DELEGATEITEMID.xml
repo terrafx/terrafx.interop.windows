@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DELEGATEITEMID">
+    <summary>
+      <para>Used by delegate folders in place of a standard <see cref="ITEMIDLIST" /> structure.</para>
+    </summary>
+  </member>
+  <member name="DELEGATEITEMID.cbSize">
+    <summary>
+      <para>Type: <b>WORD</b></para>
+      <para>The size, in bytes, of this structure.</para>
+    </summary>
+  </member>
+  <member name="DELEGATEITEMID.wOuter">
+    <summary>
+      <para>Type: <b>WORD</b></para>
+      <para>Private data owned by the delegating (outer) folder.</para>
+    </summary>
+  </member>
+  <member name="DELEGATEITEMID.cbInner">
+    <summary>
+      <para>Type: <b>WORD</b></para>
+      <para>The size, in bytes, of the delegate's data. The first <b>cbInner</b> bytes of the <b>rgb</b> array contain this data. The remaining data in <b>rgb</b> belongs to the outer folder.</para>
+    </summary>
+  </member>
+  <member name="DELEGATEITEMID.rgb">
+    <summary>
+      <para>Type: <b>BYTE[1]</b></para>
+      <para>An array holding the inner folder's data, which is opaque to the outer folder, followed by outer folder's data.</para>
+    </summary>
+  </member>
+</doc>

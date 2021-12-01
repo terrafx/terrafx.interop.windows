@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CONTROLLABELSTATES.xml' path='doc/member[@name="CONTROLLABELSTATES"]/*' />
 public enum CONTROLLABELSTATES
 {
+    /// <include file='CONTROLLABELSTATES.xml' path='doc/member[@name="CONTROLLABELSTATES.TS_CONTROLLABEL_NORMAL"]/*' />
     TS_CONTROLLABEL_NORMAL = 1,
+
+    /// <include file='CONTROLLABELSTATES.xml' path='doc/member[@name="CONTROLLABELSTATES.TS_CONTROLLABEL_DISABLED"]/*' />
     TS_CONTROLLABEL_DISABLED = 2,
 }

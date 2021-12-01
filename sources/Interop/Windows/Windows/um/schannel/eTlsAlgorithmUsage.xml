@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="eTlsAlgorithmUsage">
+    <summary>
+      <para>Specifies the algorithm being used to disable cryptographic settings.</para>
+    </summary>
+    <seealso cref="CRYPTO_SETTINGS" />
+  </member>
+  <member name="eTlsAlgorithmUsage.TlsParametersCngAlgUsageKeyExchange">
+    <summary>
+      <para>Key exchange algorithm. (<i>e.g. RSA, ECDHE, DHE</i>)</para>
+    </summary>
+  </member>
+  <member name="eTlsAlgorithmUsage.TlsParametersCngAlgUsageSignature">
+    <summary>
+      <para>Signature algorithm. (<i>e.g. RSA, DSA, ECDSA</i>)</para>
+    </summary>
+  </member>
+  <member name="eTlsAlgorithmUsage.TlsParametersCngAlgUsageCipher">
+    <summary>
+      <para>Encryption algorithm. (<i>e.g. AES, DES, RC4</i>)</para>
+    </summary>
+  </member>
+  <member name="eTlsAlgorithmUsage.TlsParametersCngAlgUsageDigest">
+    <summary>
+      <para>Digest of cipher suite. (<i>e.g. SHA1, SHA256, SHA384</i>)</para>
+    </summary>
+  </member>
+  <member name="eTlsAlgorithmUsage.TlsParametersCngAlgUsageCertSig">
+    <summary>
+      <para>Signature and/or hash used to sign certificate. (<i>e.g. RSA, DSA, ECDSA, SHA1, SHA256</i>)</para>
+    </summary>
+  </member>
+</doc>

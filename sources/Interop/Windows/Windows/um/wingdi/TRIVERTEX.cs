@@ -5,23 +5,30 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TRIVERTEX.xml' path='doc/member[@name="TRIVERTEX"]/*' />
 public partial struct TRIVERTEX
 {
+    /// <include file='TRIVERTEX.xml' path='doc/member[@name="TRIVERTEX.x"]/*' />
     [NativeTypeName("LONG")]
     public int x;
 
+    /// <include file='TRIVERTEX.xml' path='doc/member[@name="TRIVERTEX.y"]/*' />
     [NativeTypeName("LONG")]
     public int y;
 
+    /// <include file='TRIVERTEX.xml' path='doc/member[@name="TRIVERTEX.Red"]/*' />
     [NativeTypeName("COLOR16")]
     public ushort Red;
 
+    /// <include file='TRIVERTEX.xml' path='doc/member[@name="TRIVERTEX.Green"]/*' />
     [NativeTypeName("COLOR16")]
     public ushort Green;
 
+    /// <include file='TRIVERTEX.xml' path='doc/member[@name="TRIVERTEX.Blue"]/*' />
     [NativeTypeName("COLOR16")]
     public ushort Blue;
 
+    /// <include file='TRIVERTEX.xml' path='doc/member[@name="TRIVERTEX.Alpha"]/*' />
     [NativeTypeName("COLOR16")]
     public ushort Alpha;
 }

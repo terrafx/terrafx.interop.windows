@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="AUDIO_SYSTEMEFFECTS_PROPERTYSTORE_TYPE">
+    <summary>
+      <para>Specifies the type of an audio system effects property store.</para>
+    </summary>
+  </member>
+  <member name="AUDIO_SYSTEMEFFECTS_PROPERTYSTORE_TYPE.AUDIO_SYSTEMEFFECTS_PROPERTYSTORE_TYPE_DEFAULT">
+    <summary>
+      <para>Default property store. Contains custom effects properties and is populated from the INF file. Properties will not be persisted across OS upgrades.</para>
+    </summary>
+  </member>
+  <member name="AUDIO_SYSTEMEFFECTS_PROPERTYSTORE_TYPE.AUDIO_SYSTEMEFFECTS_PROPERTYSTORE_TYPE_USER">
+    <summary>
+      <para>User property store. Contains user settings pertaining to effects properties and will be persisted by the OS across upgrades and migrations.</para>
+    </summary>
+  </member>
+  <member name="AUDIO_SYSTEMEFFECTS_PROPERTYSTORE_TYPE.AUDIO_SYSTEMEFFECTS_PROPERTYSTORE_TYPE_VOLATILE">
+    <summary>
+      <para>The volatile property store. Contains audio effects properties that are lost on device reboot. The store is cleared each time the endpoint transitions to active</para>
+    </summary>
+  </member>
+  <member name="AUDIO_SYSTEMEFFECTS_PROPERTYSTORE_TYPE.AUDIO_SYSTEMEFFECTS_PROPERTYSTORE_TYPE_ENUM_COUNT">
+    <summary></summary>
+  </member>
+</doc>

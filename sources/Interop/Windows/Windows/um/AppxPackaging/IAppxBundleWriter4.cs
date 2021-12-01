@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAppxBundleWriter4.xml' path='doc/member[@name="IAppxBundleWriter4"]/*' />
 [Guid("9CD9D523-5009-4C01-9882-DC029FBD47A3")]
 [NativeTypeName("struct IAppxBundleWriter4 : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IAppxBundleWriter4 : IAppxBundleWriter4.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IAppxBundleWriter4 : IAppxBundleWriter4.Interface
         return ((delegate* unmanaged<IAppxBundleWriter4*, Guid*, void**, int>)(lpVtbl[0]))((IAppxBundleWriter4*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IAppxBundleWriter4 : IAppxBundleWriter4.Interface
         return ((delegate* unmanaged<IAppxBundleWriter4*, uint>)(lpVtbl[1]))((IAppxBundleWriter4*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IAppxBundleWriter4 : IAppxBundleWriter4.Interface
         return ((delegate* unmanaged<IAppxBundleWriter4*, uint>)(lpVtbl[2]))((IAppxBundleWriter4*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAppxBundleWriter4.xml' path='doc/member[@name="IAppxBundleWriter4.AddPayloadPackage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT AddPayloadPackage([NativeTypeName("LPCWSTR")] ushort* fileName, IStream* packageStream, BOOL isDefaultApplicablePackage)
@@ -48,6 +53,7 @@ public unsafe partial struct IAppxBundleWriter4 : IAppxBundleWriter4.Interface
         return ((delegate* unmanaged<IAppxBundleWriter4*, ushort*, IStream*, BOOL, int>)(lpVtbl[3]))((IAppxBundleWriter4*)Unsafe.AsPointer(ref this), fileName, packageStream, isDefaultApplicablePackage);
     }
 
+    /// <include file='IAppxBundleWriter4.xml' path='doc/member[@name="IAppxBundleWriter4.AddPackageReference"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT AddPackageReference([NativeTypeName("LPCWSTR")] ushort* fileName, IStream* inputStream, BOOL isDefaultApplicablePackage)
@@ -55,6 +61,7 @@ public unsafe partial struct IAppxBundleWriter4 : IAppxBundleWriter4.Interface
         return ((delegate* unmanaged<IAppxBundleWriter4*, ushort*, IStream*, BOOL, int>)(lpVtbl[4]))((IAppxBundleWriter4*)Unsafe.AsPointer(ref this), fileName, inputStream, isDefaultApplicablePackage);
     }
 
+    /// <include file='IAppxBundleWriter4.xml' path='doc/member[@name="IAppxBundleWriter4.AddExternalPackageReference"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT AddExternalPackageReference([NativeTypeName("LPCWSTR")] ushort* fileName, IStream* inputStream, BOOL isDefaultApplicablePackage)

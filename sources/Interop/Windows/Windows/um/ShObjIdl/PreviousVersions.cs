@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PreviousVersions.xml' path='doc/member[@name="PreviousVersions"]/*' />
 [Guid("596AB062-B4D2-4215-9F74-E9109B0A8153")]
 public partial struct PreviousVersions
 {

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IElementBehaviorSiteLayout.xml' path='doc/member[@name="IElementBehaviorSiteLayout"]/*' />
 [Guid("3050F6B7-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IElementBehaviorSiteLayout : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IElementBehaviorSiteLayout : IElementBehaviorSiteLa
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IElementBehaviorSiteLayout : IElementBehaviorSiteLa
         return ((delegate* unmanaged<IElementBehaviorSiteLayout*, Guid*, void**, int>)(lpVtbl[0]))((IElementBehaviorSiteLayout*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IElementBehaviorSiteLayout : IElementBehaviorSiteLa
         return ((delegate* unmanaged<IElementBehaviorSiteLayout*, uint>)(lpVtbl[1]))((IElementBehaviorSiteLayout*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IElementBehaviorSiteLayout : IElementBehaviorSiteLa
         return ((delegate* unmanaged<IElementBehaviorSiteLayout*, uint>)(lpVtbl[2]))((IElementBehaviorSiteLayout*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IElementBehaviorSiteLayout.xml' path='doc/member[@name="IElementBehaviorSiteLayout.InvalidateLayoutInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT InvalidateLayoutInfo()
@@ -46,6 +51,7 @@ public unsafe partial struct IElementBehaviorSiteLayout : IElementBehaviorSiteLa
         return ((delegate* unmanaged<IElementBehaviorSiteLayout*, int>)(lpVtbl[3]))((IElementBehaviorSiteLayout*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IElementBehaviorSiteLayout.xml' path='doc/member[@name="IElementBehaviorSiteLayout.InvalidateSize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT InvalidateSize()
@@ -53,6 +59,7 @@ public unsafe partial struct IElementBehaviorSiteLayout : IElementBehaviorSiteLa
         return ((delegate* unmanaged<IElementBehaviorSiteLayout*, int>)(lpVtbl[4]))((IElementBehaviorSiteLayout*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IElementBehaviorSiteLayout.xml' path='doc/member[@name="IElementBehaviorSiteLayout.GetMediaResolution"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetMediaResolution(SIZE* psizeResolution)

@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVEncDDDCHighPassFilter.xml' path='doc/member[@name="CODECAPI_AVEncDDDCHighPassFilter"]/*' />
 [Guid("9565239F-861C-4AC8-BFDA-E00CB4DB8548")]
 public partial struct CODECAPI_AVEncDDDCHighPassFilter
 {

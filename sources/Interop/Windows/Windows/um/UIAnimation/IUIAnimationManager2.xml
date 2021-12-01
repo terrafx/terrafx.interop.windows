@@ -1,0 +1,421 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IUIAnimationManager2.AbandonAllStoryboards">
+    <summary>
+      <para>Abandons all active storyboards.</para>
+    </summary>
+    <returns>
+      <para>If this method succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>Calling this method is equivalent to calling the <see cref="IUIAnimationStoryboard.Abandon" /> method for each active storyboard.</para>
+      <para>A storyboard is considered active if a call to the <see cref="IUIAnimationStoryboard.GetStatus" /> method returns <see cref="UI_ANIMATION_STORYBOARD_PLAYING" /></para>
+      <para>or <see cref="UI_ANIMATION_STORYBOARD_SCHEDULED" />.</para>
+    </remarks>
+    <seealso cref="IUIAnimationManager2" />
+    <seealso cref="IUIAnimationStoryboard.Abandon" />
+    <seealso cref="IUIAnimationStoryboard.GetStatus" />
+    <seealso cref="UI_ANIMATION_STORYBOARD_STATUS" />
+  </member>
+  <member name="IUIAnimationManager2.CreateAnimationVariable">
+    <summary>
+      <para>Creates a new animation variable.</para>
+    </summary>
+    <param name="initialValue">
+      <para>The initial value for the animation variable.</para>
+    </param>
+    <param name="variable">
+      <para>The new animation variable.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns S_OK. Otherwise, it returns an  <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>The initial value of an animation variable is specified when the variable is created. After an animation variable is created, its value cannot be changed directly; it must be updated through the animation manager.</para>
+      <para>An animation variable is typically created to represent each visual characteristic that is to be animated. For example, an application might create two animation variables for the X and Y coordinates of an object that can move freely within a window.</para>
+    </remarks>
+    <seealso cref="IUIAnimationManager2" />
+  </member>
+  <member name="IUIAnimationManager2.CreateAnimationVectorVariable">
+    <summary>
+      <para>Creates a new animation variable for each specified dimension.</para>
+    </summary>
+    <param name="initialValue">
+      <para>A vector (of size <i>cDimension</i>) of  initial values for the animation variable.</para>
+    </param>
+    <param name="cDimension">
+      <para>The number of dimensions that require animated values. This parameter specifies the number of values listed in <i>initialValue</i>.</para>
+    </param>
+    <param name="variable">
+      <para>The new animation variable.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns S_OK. Otherwise, it returns an  <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>The initial value of an animation variable is specified when the variable is created. After an animation variable is created, its value cannot be changed directly; it must be updated through the animation manager.</para>
+      <para>An animation variable is typically created to represent each visual characteristic that is to be animated. For example, an application might create three animation variables for the X, Y, and Z coordinates of an object that can move freely within a three-dimensional space.</para>
+    </remarks>
+    <seealso cref="IUIAnimationManager2" />
+  </member>
+  <member name="IUIAnimationManager2.CreateStoryboard">
+    <summary>
+      <para>Creates a new storyboard.</para>
+    </summary>
+    <param name="storyboard">
+      <para>The new storyboard.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns S_OK. Otherwise, it returns an  <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
+    </returns>
+    <seealso cref="IUIAnimationManager2" />
+  </member>
+  <member name="IUIAnimationManager2.EstimateNextEventTime">
+    <summary>
+      <para>Retrieves an estimate of  the time interval before the next animation event.</para>
+    </summary>
+    <param name="seconds">
+      <para>The estimated time, in seconds.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns S_OK. Otherwise, it returns an  <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
+    </returns>
+    <seealso cref="IUIAnimationManager2" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/UIAnimation/ui-animation-seconds-infinite">UI_ANIMATION_SECONDS_INFINITE
+</seealso>
+  </member>
+  <member name="IUIAnimationManager2.FinishAllStoryboards">
+    <summary>
+      <para>Finishes all active storyboards within the specified time interval.</para>
+    </summary>
+    <param name="completionDeadline">
+      <para>The maximum time interval during which all storyboards must be finished.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns S_OK. Otherwise, it returns an  <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>Calling the <b>FinishAllStoryboards</b> method ensures that all active storyboards finish within the specified completion deadline. If a storyboard is scheduled to play past the deadline, it is compressed.</para>
+      <para>A storyboard is considered active if a call to the <see cref="IUIAnimationStoryboard.GetStatus" /> method returns <see cref="UI_ANIMATION_STORYBOARD_PLAYING" /></para>
+      <para>or <see cref="UI_ANIMATION_STORYBOARD_SCHEDULED" />.</para>
+    </remarks>
+    <seealso cref="IUIAnimationManager2" />
+    <seealso cref="IUIAnimationStoryboard.Finish" />
+    <seealso cref="IUIAnimationStoryboard.GetStatus" />
+    <seealso cref="UI_ANIMATION_STORYBOARD_STATUS" />
+  </member>
+  <member name="IUIAnimationManager2.GetStatus">
+    <summary>
+      <para>Gets the status of the animation manager.</para>
+    </summary>
+    <param name="status">
+      <para>The status of the animation manager.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns S_OK. Otherwise, it returns an  <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
+    </returns>
+    <seealso cref="IUIAnimationManager2" />
+    <seealso cref="IUIAnimationManagerEventHandler.OnManagerStatusChanged" />
+    <seealso cref="UI_ANIMATION_MANAGER_STATUS" />
+  </member>
+  <member name="IUIAnimationManager2.GetStoryboardFromTag">
+    <summary>
+      <para>Gets the storyboard with the specified tag.</para>
+    </summary>
+    <param name="object">
+      <para>The object portion of the tag.
+This parameter can be NULL.</para>
+    </param>
+    <param name="id">
+      <para>The identifier portion of the tag.</para>
+    </param>
+    <param name="storyboard">
+      <para>The storyboard that matches the specified tag, or <b>NULL</b> if no match is found.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns S_OK. Otherwise, it returns an  <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>A tag is a pairing of an integer identifier (<i>id</i>) with a COM object (<i>object</i>). An application can use tags to identify animation variables and storyboards. NULL is a valid object component of a tag; therefore, the <i>object</i> parameter can be NULL.</para>
+      <para>Tags are not necessarily unique; this method returns UI_E_AMBIGUOUS_MATCH if more than one storyboard exists with the specified tag.</para>
+    </remarks>
+    <seealso cref="IUIAnimationManager2" />
+    <seealso cref="IUIAnimationStoryboard2" />
+    <seealso cref="IUIAnimationStoryboard.GetTag " />
+    <seealso cref="IUIAnimationStoryboard.SetTag " />
+  </member>
+  <member name="IUIAnimationManager2.GetVariableFromTag">
+    <summary>
+      <para>Gets the animation variable with the specified tag.</para>
+    </summary>
+    <param name="object">
+      <para>The object portion of the tag.
+This parameter can be NULL.</para>
+    </param>
+    <param name="id">
+      <para>The identifier portion of the tag.</para>
+    </param>
+    <param name="variable">
+      <para>The animation variable that matches the specified tag, or <b>NULL</b> if no match is found.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns S_OK. Otherwise, it returns an  <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>A tag is a pairing of an integer identifier (<i>id</i>) with a COM object (<i>object</i>). An application can use tags to identify animation variables and storyboards. NULL is a valid object component of a tag; therefore, the <i>object</i> parameter can be NULL.</para>
+      <para>Tags are not necessarily unique; this method returns <b>UI_E_AMBIGUOUS_MATCH</b> if more than one animation variable exists with the specified tag.</para>
+    </remarks>
+    <seealso cref="IUIAnimationManager2" />
+    <seealso cref="IUIAnimationStoryboard2" />
+    <seealso cref="IUIAnimationStoryboard.GetTag " />
+    <seealso cref="IUIAnimationStoryboard.SetTag " />
+  </member>
+  <member name="IUIAnimationManager2.Pause">
+    <summary>
+      <para>Pauses all animations.</para>
+    </summary>
+    <returns>
+      <para>If this method succeeds, it returns S_OK. Otherwise, it returns an  <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>When an animation manager is paused, its status is set to <see cref="UI_ANIMATION_MANAGER_IDLE" />.</para>
+    </remarks>
+    <seealso cref="IUIAnimationManager" />
+    <seealso cref="IUIAnimationManager2" />
+    <seealso cref="IUIAnimationManager.GetStatus" />
+    <seealso cref="IUIAnimationManager.Resume" />
+    <seealso cref="UI_ANIMATION_MANAGER_STATUS" />
+  </member>
+  <member name="IUIAnimationManager2.Resume">
+    <summary>
+      <para>Resumes all animations.</para>
+    </summary>
+    <returns>
+      <para>If this method succeeds, it returns S_OK. Otherwise, it returns an  <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>When an animation manager is resumed, and at least one animation is currently scheduled or playing, its status is set to <see cref="UI_ANIMATION_MANAGER_BUSY" />.</para>
+    </remarks>
+    <seealso cref="IUIAnimationManager2" />
+    <seealso cref="IUIAnimationManager.GetStatus" />
+    <seealso cref="IUIAnimationManager.Pause" />
+    <seealso cref="UI_ANIMATION_MANAGER_STATUS" />
+  </member>
+  <member name="IUIAnimationManager2.ScheduleTransition">
+    <summary>
+      <para>Creates and schedules a single-transition storyboard.</para>
+    </summary>
+    <param name="variable">
+      <para>The animation variable.</para>
+    </param>
+    <param name="transition">
+      <para>A transition to be applied to the animation variable.</para>
+    </param>
+    <param name="timeNow">
+      <para>The current system time.</para>
+    </param>
+    <returns>
+      <para>Returns S_OK if successful; otherwise an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>This method schedules a new storyboard by creating the storyboard, applying the specified transition to the specified variable, and then scheduling the storyboard.</para>
+    </remarks>
+    <seealso cref="IUIAnimationManager2" />
+    <seealso cref="IUIAnimationStoryboard" />
+    <seealso cref="IUIAnimationStoryboard2" />
+    <seealso cref="IUIAnimationTimer.GetTime" />
+    <seealso cref="IUIAnimationTransition" />
+    <seealso cref="IUIAnimationTransition2" />
+    <seealso cref="IUIAnimationTransitionLibrary" />
+    <seealso cref="IUIAnimationTransitionLibrary2" />
+    <seealso cref="IUIAnimationVariable" />
+    <seealso cref="IUIAnimationVariable2" />
+  </member>
+  <member name="IUIAnimationManager2.SetAnimationMode">
+    <summary>
+      <para>Sets the animation mode.</para>
+    </summary>
+    <param name="mode">
+      <para>The animation mode.</para>
+    </param>
+    <returns>
+      <para>Returns S_OK if successful; otherwise an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>Use this method to enable or disable animation globally. While animation is disabled, all storyboards finish immediately when they are scheduled. The default mode is <see cref="UI_ANIMATION_MODE_SYSTEM_DEFAULT" />, which lets Windows decide when to enable or disable animation in the application.</para>
+    </remarks>
+    <seealso cref="IUIAnimationManager2" />
+    <seealso cref="UI_ANIMATION_MODE" />
+  </member>
+  <member name="IUIAnimationManager2.SetCancelPriorityComparison">
+    <summary>
+      <para>Sets the priority comparison handler that determines whether  a scheduled storyboard can be canceled.</para>
+    </summary>
+    <param name="comparison">
+      <para>The priority comparison handler for cancelation.</para>
+      <para>The specified object must implement the <see cref="IUIAnimationPriorityComparison2" /> interface or be <b>NULL</b>. See Remarks for more info.</para>
+    </param>
+    <returns>
+      <para>Returns <b>S_OK</b> if successful; otherwise an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>Setting a priority comparison handler with this method enables the application to indicate when scheduling conflicts can be resolved by canceling storyboards.</para>
+      <para>A scheduled storyboard can be canceled only if it hasn't started playing and the priority comparison object registered with this method returns <b>S_OK</b>. Canceled storyboards are completely removed from the schedule.</para>
+      <para>Passing <b>NULL</b> for the <i>comparison</i> parameter causes Windows Animation to release its reference to any priority comparison handler object that you passed in earlier. This technique can be essential for breaking reference cycles without having to call the <see cref="IUIAnimationManager2.Shutdown" /> method.</para>
+    </remarks>
+    <seealso cref="IUIAnimationManager2" />
+    <seealso cref="IUIAnimationManager2.SetCompressPriorityComparison" />
+    <seealso cref="IUIAnimationManager2.SetConcludePriorityComparison" />
+    <seealso cref="IUIAnimationManager2.SetTrimPriorityComparison" />
+    <seealso cref="IUIAnimationPriorityComparison" />
+  </member>
+  <member name="IUIAnimationManager2.SetCompressPriorityComparison">
+    <summary>
+      <para>Sets the priority comparison handler that determines whether  a scheduled storyboard can be compressed.</para>
+    </summary>
+    <param name="comparison">
+      <para>The priority comparison handler for compression.</para>
+      <para>The specified object must implement the <see cref="IUIAnimationPriorityComparison2" /> interface or be <b>NULL</b>. See Remarks for more info.</para>
+    </param>
+    <returns>
+      <para>Returns <b>S_OK</b> if successful; otherwise an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>Setting a priority comparison handler with this method enables the application to indicate when scheduling conflicts can be resolved by compressing  the scheduled storyboard and any other storyboards animating the same variables.</para>
+      <para>A storyboard can be compressed only if the priority comparison object registered with this method returns <b>S_OK</b> for all the other scheduled storyboards that will be affected by compression. When the storyboards are compressed, time is temporarily accelerated for affected storyboards, so they play faster.</para>
+      <para>Passing <b>NULL</b> for the <i>comparison</i> parameter causes Windows Animation to release its reference to any handler object that you passed in earlier. This technique can be essential for breaking reference cycles without having to call the <see cref="IUIAnimationManager2.Shutdown" /> method.</para>
+    </remarks>
+    <seealso cref="IUIAnimationManager2" />
+    <seealso cref="IUIAnimationManager2.SetCancelPriorityComparison" />
+    <seealso cref="IUIAnimationManager2.SetConcludePriorityComparison" />
+    <seealso cref="IUIAnimationManager2.SetTrimPriorityComparison" />
+    <seealso cref="IUIAnimationPriorityComparison" />
+  </member>
+  <member name="IUIAnimationManager2.SetConcludePriorityComparison">
+    <summary>
+      <para>Sets the priority comparison handler that determines whether  a scheduled storyboard can be concluded.</para>
+    </summary>
+    <param name="comparison">
+      <para>The priority comparison handler for conclusion. The specified object must implement the <see cref="IUIAnimationPriorityComparison2" /> interface or be <b>NULL</b>.
+See Remarks for more info.</para>
+    </param>
+    <returns>
+      <para>Returns <b>S_OK</b> if successful; otherwise an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>Setting a priority comparison handler with this method enables the application to indicate when scheduling conflicts can be resolved by concluding the scheduled storyboard.</para>
+      <para>A scheduled storyboard can be concluded only if it contains a loop with a repetition count of <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/ui-animation-repeat-indefinitely">UI_ANIMATION_REPEAT_INDEFINITELY</a> and the priority comparison object registered with this method returns <b>S_OK</b>. If the storyboard is concluded, the current repetition of the loop completes, and the rest of the storyboard then plays.</para>
+      <para>Passing <b>NULL</b> for the <i>comparison</i> parameter causes Windows Animation to release its reference to any handler object that you passed in earlier. This technique can be essential for breaking reference cycles without having to call the <see cref="IUIAnimationManager2.Shutdown" /> method.</para>
+    </remarks>
+    <seealso cref="IUIAnimationManager2" />
+    <seealso cref="IUIAnimationManager2.SetCancelPriorityComparison" />
+    <seealso cref="IUIAnimationManager2.SetCompressPriorityComparison" />
+    <seealso cref="IUIAnimationManager2.SetTrimPriorityComparison" />
+    <seealso cref="IUIAnimationPriorityComparison" />
+  </member>
+  <member name="IUIAnimationManager2.SetDefaultLongestAcceptableDelay">
+    <summary>
+      <para>Sets the default acceptable animation delay. This is the length of time that may pass before storyboards begin.</para>
+    </summary>
+    <param name="delay">
+      <para>The default delay. This parameter can be a positive value, or <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/ui-animation-seconds-eventually">UI_ANIMATION_SECONDS_EVENTUALLY</a> (-1) to indicate that any finite delay is acceptable.</para>
+    </param>
+    <returns>
+      <para>Returns S_OK if successful; otherwise an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>For Windows Animation to schedule a storyboard successfully, the storyboard must begin before the longest acceptable delay has elapsed. Windows Animation determines this delay in the following order: the delay value set by calling <see cref="IUIAnimationStoryboard.SetLongestAcceptableDelay" /> for this specific storyboard, the delay value set by calling this method, or 0.0 if neither method has been called.</para>
+    </remarks>
+    <seealso cref="IUIAnimationManager2" />
+    <seealso cref="IUIAnimationStoryboard.SetLongestAcceptableDelay" />
+  </member>
+  <member name="IUIAnimationManager2.SetManagerEventHandler">
+    <summary>
+      <para>Specifies a handler for animation manager status updates.</para>
+    </summary>
+    <param name="handler">
+      <para>The event handler to be called when the status of the animation manager changes.</para>
+      <para>The specified object must implement the <see cref="IUIAnimationManagerEventHandler" /> interface or be <b>NULL</b>. See Remarks for more info.</para>
+    </param>
+    <param name="fRegisterForNextAnimationEvent">
+      <para>If <b>TRUE</b>, specifies that <see cref="IUIAnimationManager2.EstimateNextEventTime" /> will incorporate <i>handler</i> into its estimate of the time interval until the next animation event. No default value.</para>
+    </param>
+    <returns>
+      <para>Returns <b>S_OK</b> if successful; otherwise an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>Passing <b>NULL</b> for the <i>handler</i> parameter causes Windows Animation to release its reference to any handler object that you passed in earlier. This technique can be essential for breaking reference cycles without having to call the <see cref="IUIAnimationManager2.Shutdown" /> method.</para>
+    </remarks>
+    <seealso cref="IUIAnimationManager2" />
+    <seealso cref="IUIAnimationManagerEventHandler" />
+  </member>
+  <member name="IUIAnimationManager2.SetTrimPriorityComparison">
+    <summary>
+      <para>Sets the priority comparison handler that determines whether  a scheduled storyboard can be trimmed.</para>
+    </summary>
+    <param name="comparison">
+      <para>The priority comparison handler for trimming.</para>
+      <para>The specified object must implement the <see cref="IUIAnimationPriorityComparison" /> interface or be <b>NULL</b>.</para>
+      <para>See Remarks for more info.</para>
+    </param>
+    <returns>
+      <para>Returns <b>S_OK</b> if successful; otherwise an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>Setting a priority comparison handler with this method enables the application to indicate when  scheduling conflicts can be resolved by trimming the scheduled storyboard.</para>
+      <para>A scheduled storyboard can be trimmed only if the priority comparison object registered with this method returns <b>S_OK</b>. If the new storyboard trims the scheduled storyboard,  the scheduled storyboard can no longer affect a variable after the new storyboard begins to animate that variable.</para>
+      <para>Passing <b>NULL</b> for the <i>comparison</i> parameter causes Windows Animation to release its reference to any handler object that you passed in earlier. This technique can be essential for breaking reference cycles without having to call the <see cref="IUIAnimationManager2.Shutdown" /> method.</para>
+    </remarks>
+    <seealso cref="IUIAnimationManager2" />
+    <seealso cref="IUIAnimationManager2.SetCancelPriorityComparison" />
+    <seealso cref="IUIAnimationManager2.SetCompressPriorityComparison" />
+    <seealso cref="IUIAnimationManager2.SetConcludePriorityComparison" />
+    <seealso cref="IUIAnimationPriorityComparison" />
+  </member>
+  <member name="IUIAnimationManager2.Shutdown">
+    <summary>
+      <para>Shuts down the animation manager and all its associated objects.</para>
+    </summary>
+    <returns>
+      <para>Returns S_OK if successful; otherwise an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>Calling this method directs the animation manager, and all the objects it created, to
+release all their pointers to other objects. After <b>IUIAnimationManager2.Shutdown</b> has been called, no other methods may be called on the animation manager or on any objects that it created. An application can call this method to clean up if there is any possibility that the application has introduced a reference cycle that includes some animation objects.</para>
+    </remarks>
+    <seealso cref="IUIAnimationManager2" />
+  </member>
+  <member name="IUIAnimationManager2.Update">
+    <summary>
+      <para>Updates the values of all animation variables.</para>
+    </summary>
+    <param name="timeNow">
+      <para>The current system time. This parameter must be greater than or equal to 0.0.</para>
+    </param>
+    <param name="updateResult">
+      <para>The result of the update.
+You can omit this parameter from calls to this method.</para>
+    </param>
+    <returns>
+      <para>Returns S_OK if successful; otherwise an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>Calling this method advances the animation manager to <i>timeNow</i>, changes the status of all storyboards as necessary, and updates any animation variables to appropriate interpolated values. If the animation manager is paused, no storyboards or variables are updated. If the animation  mode is <see cref="UI_ANIMATION_MODE_DISABLED" />, all scheduled storyboards finish playing immediately. If the values of any variables change during this call, the value of <i>updateResult</i> is <see cref="UI_ANIMATION_UPDATE_VARIABLES_CHANGED" />; otherwise, it is <see cref="UI_ANIMATION_UPDATE_NO_CHANGE" />.</para>
+    </remarks>
+    <seealso cref="IUIAnimationManager2" />
+    <seealso cref="IUIAnimationManager2.Pause" />
+    <seealso cref="IUIAnimationManager2.Resume" />
+    <seealso cref="IUIAnimationManager.SetAnimationMode" />
+    <seealso cref="UI_ANIMATION_MODE" />
+    <seealso cref="UI_ANIMATION_UPDATE_RESULT" />
+  </member>
+  <member name="IUIAnimationManager2">
+    <summary>
+      <para>Defines an <b>animation manager</b>, which provides a central interface for creating and managing animations in multiple dimensions.</para>
+    </summary>
+    <seealso cref="IUnknown" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/UIAnimation/-interfaces-main">Interfaces</seealso>
+  </member>
+</doc>

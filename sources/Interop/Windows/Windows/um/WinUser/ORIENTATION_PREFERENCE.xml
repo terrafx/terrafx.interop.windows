@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ORIENTATION_PREFERENCE">
+    <summary>
+      <para>Indicates the screen orientation preference for a desktop app process.</para>
+    </summary>
+  </member>
+  <member name="ORIENTATION_PREFERENCE.ORIENTATION_PREFERENCE_NONE">
+    <summary>
+      <para>The process has no device orientation preferences. The system may choose any available setting.</para>
+    </summary>
+  </member>
+  <member name="ORIENTATION_PREFERENCE.ORIENTATION_PREFERENCE_LANDSCAPE">
+    <summary>
+      <para>The process represents a desktop app that can be used in landscape mode.</para>
+    </summary>
+  </member>
+  <member name="ORIENTATION_PREFERENCE.ORIENTATION_PREFERENCE_PORTRAIT">
+    <summary>
+      <para>The process represents a desktop app that can be used in portrait mode.</para>
+    </summary>
+  </member>
+  <member name="ORIENTATION_PREFERENCE.ORIENTATION_PREFERENCE_LANDSCAPE_FLIPPED">
+    <summary>
+      <para>The process represents a desktop app that can be used in flipped landscape mode.</para>
+    </summary>
+  </member>
+  <member name="ORIENTATION_PREFERENCE.ORIENTATION_PREFERENCE_PORTRAIT_FLIPPED">
+    <summary>
+      <para>The process represents a desktop app that can be used in flipped portrait mode.</para>
+    </summary>
+  </member>
+</doc>

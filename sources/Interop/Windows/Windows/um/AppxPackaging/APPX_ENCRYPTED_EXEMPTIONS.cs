@@ -7,12 +7,15 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='APPX_ENCRYPTED_EXEMPTIONS.xml' path='doc/member[@name="APPX_ENCRYPTED_EXEMPTIONS"]/*' />
 [SupportedOSPlatform("windows10.0")]
 public unsafe partial struct APPX_ENCRYPTED_EXEMPTIONS
 {
+    /// <include file='APPX_ENCRYPTED_EXEMPTIONS.xml' path='doc/member[@name="APPX_ENCRYPTED_EXEMPTIONS.count"]/*' />
     [NativeTypeName("UINT32")]
     public uint count;
 
+    /// <include file='APPX_ENCRYPTED_EXEMPTIONS.xml' path='doc/member[@name="APPX_ENCRYPTED_EXEMPTIONS.plainTextFiles"]/*' />
     [NativeTypeName("LPCWSTR *")]
     public ushort** plainTextFiles;
 }

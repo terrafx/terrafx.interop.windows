@@ -5,19 +5,25 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MSLLHOOKSTRUCT.xml' path='doc/member[@name="MSLLHOOKSTRUCT"]/*' />
 public partial struct MSLLHOOKSTRUCT
 {
+    /// <include file='MSLLHOOKSTRUCT.xml' path='doc/member[@name="MSLLHOOKSTRUCT.pt"]/*' />
     public POINT pt;
 
+    /// <include file='MSLLHOOKSTRUCT.xml' path='doc/member[@name="MSLLHOOKSTRUCT.mouseData"]/*' />
     [NativeTypeName("DWORD")]
     public uint mouseData;
 
+    /// <include file='MSLLHOOKSTRUCT.xml' path='doc/member[@name="MSLLHOOKSTRUCT.flags"]/*' />
     [NativeTypeName("DWORD")]
     public uint flags;
 
+    /// <include file='MSLLHOOKSTRUCT.xml' path='doc/member[@name="MSLLHOOKSTRUCT.time"]/*' />
     [NativeTypeName("DWORD")]
     public uint time;
 
+    /// <include file='MSLLHOOKSTRUCT.xml' path='doc/member[@name="MSLLHOOKSTRUCT.dwExtraInfo"]/*' />
     [NativeTypeName("ULONG_PTR")]
     public nuint dwExtraInfo;
 }

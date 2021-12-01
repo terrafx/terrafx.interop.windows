@@ -5,16 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='EDITBALLOONTIP.xml' path='doc/member[@name="EDITBALLOONTIP"]/*' />
 public unsafe partial struct EDITBALLOONTIP
 {
+    /// <include file='EDITBALLOONTIP.xml' path='doc/member[@name="EDITBALLOONTIP.cbStruct"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbStruct;
 
+    /// <include file='EDITBALLOONTIP.xml' path='doc/member[@name="EDITBALLOONTIP.pszTitle"]/*' />
     [NativeTypeName("LPCWSTR")]
     public ushort* pszTitle;
 
+    /// <include file='EDITBALLOONTIP.xml' path='doc/member[@name="EDITBALLOONTIP.pszText"]/*' />
     [NativeTypeName("LPCWSTR")]
     public ushort* pszText;
 
+    /// <include file='EDITBALLOONTIP.xml' path='doc/member[@name="EDITBALLOONTIP.ttiIcon"]/*' />
     public int ttiIcon;
 }

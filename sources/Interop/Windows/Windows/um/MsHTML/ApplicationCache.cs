@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ApplicationCache.xml' path='doc/member[@name="ApplicationCache"]/*' />
 [Guid("30510829-98B5-11CF-BB82-00AA00BDCE0B")]
 public partial struct ApplicationCache
 {

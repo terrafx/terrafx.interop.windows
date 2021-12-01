@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="VMRDeinterlaceCaps">
+    <summary>
+      <para>The <code>VMRDeinterlaceCaps</code> structure describes the capabilities of a deinterlacing mode.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-structures">DirectShow Structures</seealso>
+    <seealso cref="IVMRDeinterlaceControl Interface" />
+  </member>
+  <member name="VMRDeinterlaceCaps.dwSize">
+    <summary>
+      <para>Size of the structure, in bytes.</para>
+    </summary>
+  </member>
+  <member name="VMRDeinterlaceCaps.dwNumPreviousOutputFrames">
+    <summary>
+      <para>Number of previously de-interlaced frames that must be fed back to the hardware to deinterlace the next field. (Used by recursive deinterlacing algorithms.)</para>
+    </summary>
+  </member>
+  <member name="VMRDeinterlaceCaps.dwNumForwardRefSamples">
+    <summary>
+      <para>Number of future samples needed to deinterlace the current field.</para>
+    </summary>
+  </member>
+  <member name="VMRDeinterlaceCaps.dwNumBackwardRefSamples">
+    <summary>
+      <para>Number of past samples needed to deinterlace the current field.</para>
+    </summary>
+  </member>
+  <member name="VMRDeinterlaceCaps.DeinterlaceTechnology">
+    <summary>
+      <para>Bitwise combination of flags from the <see cref="VMRDeinterlaceTech" /> enumeration type. These flags are used to describe the deinterlacing algorithm.</para>
+    </summary>
+  </member>
+</doc>

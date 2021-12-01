@@ -5,16 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SPPHRASEREPLACEMENT.xml' path='doc/member[@name="SPPHRASEREPLACEMENT"]/*' />
 public unsafe partial struct SPPHRASEREPLACEMENT
 {
+    /// <include file='SPPHRASEREPLACEMENT.xml' path='doc/member[@name="SPPHRASEREPLACEMENT.bDisplayAttributes"]/*' />
     public byte bDisplayAttributes;
 
+    /// <include file='SPPHRASEREPLACEMENT.xml' path='doc/member[@name="SPPHRASEREPLACEMENT.pszReplacementText"]/*' />
     [NativeTypeName("LPCWSTR")]
     public ushort* pszReplacementText;
 
+    /// <include file='SPPHRASEREPLACEMENT.xml' path='doc/member[@name="SPPHRASEREPLACEMENT.ulFirstElement"]/*' />
     [NativeTypeName("ULONG")]
     public uint ulFirstElement;
 
+    /// <include file='SPPHRASEREPLACEMENT.xml' path='doc/member[@name="SPPHRASEREPLACEMENT.ulCountOfElements"]/*' />
     [NativeTypeName("ULONG")]
     public uint ulCountOfElements;
 }

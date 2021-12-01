@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IP_UNIDIRECTIONAL_ADAPTER_ADDRESS.xml' path='doc/member[@name="IP_UNIDIRECTIONAL_ADAPTER_ADDRESS"]/*' />
 public unsafe partial struct IP_UNIDIRECTIONAL_ADAPTER_ADDRESS
 {
+    /// <include file='IP_UNIDIRECTIONAL_ADAPTER_ADDRESS.xml' path='doc/member[@name="IP_UNIDIRECTIONAL_ADAPTER_ADDRESS.NumAdapters"]/*' />
     [NativeTypeName("ULONG")]
     public uint NumAdapters;
 
+    /// <include file='IP_UNIDIRECTIONAL_ADAPTER_ADDRESS.xml' path='doc/member[@name="IP_UNIDIRECTIONAL_ADAPTER_ADDRESS.Address"]/*' />
     [NativeTypeName("IPAddr [1]")]
     public fixed uint Address[1];
 }

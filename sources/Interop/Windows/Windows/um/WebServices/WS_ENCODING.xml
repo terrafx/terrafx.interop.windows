@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_ENCODING">
+    <summary>
+      <para>The different encodings (message formats).</para>
+    </summary>
+  </member>
+  <member name="WS_ENCODING.WS_ENCODING_XML_BINARY_1">
+    <summary>
+      <para>The binary XML encoding.</para>
+      <para>Although the data is still in the XML
+infoset format, this encoding typically results in smaller messages
+that require less CPU to produce and consume.</para>
+      <para>This encoding requires SOAP 1.2 (<see cref="WS_ENVELOPE_VERSION_SOAP_1_2" />).</para>
+    </summary>
+  </member>
+  <member name="WS_ENCODING.WS_ENCODING_XML_BINARY_SESSION_1">
+    <summary>
+      <para>The binary XML session encoding.</para>
+      <para>Although the data is still in the XML
+infoset format, this encoding typically results in smaller messages
+that require less CPU to produce and consume.</para>
+      <para>This encoding is like <see cref="WS_ENCODING_XML_BINARY_1" /> but adds the
+feature of a session dictionary.  Because this encoding requires a
+session, it may only be used on sessionful channel types
+(<see cref="WS_CHANNEL_TYPE_DUPLEX_SESSION" />).</para>
+      <para>The session dictionary is a data structure maintained by both the
+sending and receiving side of a channel.  The session dictionary
+is used to optimize the transmission of string data.  The first time
+a particular string is written, it is encoded using in the full string
+format.  If the same string is written again, then it will use a smaller
+tokenized form, which can reduce message size.</para>
+      <para>The writer of the string data selects which strings are candidates for
+the session dictionary by filling out the dictionary and id fields of
+the <see cref="WS_XML_STRING" /> structure.</para>
+      <para>The size of the session dictionary is configured using
+<see cref="WS_CHANNEL_PROPERTY_MAX_SESSION_DICTIONARY_SIZE" />.</para>
+      <para>This encoding requires SOAP 1.2 (<see cref="WS_ENVELOPE_VERSION_SOAP_1_2" />).</para>
+    </summary>
+  </member>
+  <member name="WS_ENCODING.WS_ENCODING_XML_MTOM_UTF8">
+    <summary>
+      <para>The MTOM encoding.</para>
+      <para>The MTOM encoding optimizes for binary data by avoiding the costs
+of converting binary data to base64 format.  For messages containing
+large amounts of binary data, this encoding usually results in smaller
+messages that require less CPU to produce and consume
+than with a text encoding.  This encoding is typically not as efficient as
+a binary encoding, however.</para>
+      <para>The XML part of the MTOM package is written
+using <see cref="WS_CHARSET_UTF8" />, but may be in any <b>WS_CHARSET</b> when read.</para>
+    </summary>
+  </member>
+  <member name="WS_ENCODING.WS_ENCODING_XML_MTOM_UTF16BE">
+    <summary>
+      <para>The MTOM encoding.</para>
+      <para>The MTOM encoding optimizes for binary data by avoiding the costs
+of converting binary data to base64 format.  For messages containing
+large amounts of binary data, this encoding usually results in smaller
+messages that require less CPU to produce and consume
+than with a text encoding.  This encoding is typically not as efficient as
+a binary encoding, however.</para>
+      <para>The XML part of the MTOM package is written
+using <see cref="WS_CHARSET_UTF16BE" />, but may be in any <b>WS_CHARSET</b> when read.</para>
+    </summary>
+  </member>
+  <member name="WS_ENCODING.WS_ENCODING_XML_MTOM_UTF16LE">
+    <summary>
+      <para>The MTOM encoding.</para>
+      <para>The MTOM encoding optimizes for binary data by avoiding the costs
+of converting binary data to base64 format.  For messages containing
+large amounts of binary data, this encoding usually results in smaller
+messages that require less CPU to produce and consume
+than with a text encoding.  This encoding is typically not as efficient as
+a binary encoding, however.</para>
+      <para>The XML part of the MTOM package is written
+using <see cref="WS_CHARSET_UTF16LE" />, but may be in any <b>WS_CHARSET</b> when read.</para>
+    </summary>
+  </member>
+  <member name="WS_ENCODING.WS_ENCODING_XML_UTF8">
+    <summary>
+      <para>The text encoding (XML 1.0 format).</para>
+      <para>Data is written using <see cref="WS_CHARSET_UTF8" />,
+but may be in any <b>WS_CHARSET</b> when read.</para>
+    </summary>
+  </member>
+  <member name="WS_ENCODING.WS_ENCODING_XML_UTF16BE">
+    <summary>
+      <para>The text encoding (XML 1.0 format).</para>
+      <para>Data is written using <see cref="WS_CHARSET_UTF16BE" />,
+but may be in any <b>WS_CHARSET</b> when read.</para>
+    </summary>
+  </member>
+  <member name="WS_ENCODING.WS_ENCODING_XML_UTF16LE">
+    <summary>
+      <para>The text encoding (XML 1.0 format).</para>
+      <para>Data is written using <see cref="WS_CHARSET_UTF16LE" />,
+but may be in any <b>WS_CHARSET</b> when read.</para>
+    </summary>
+  </member>
+  <member name="WS_ENCODING.WS_ENCODING_RAW">
+    <summary></summary>
+  </member>
+</doc>

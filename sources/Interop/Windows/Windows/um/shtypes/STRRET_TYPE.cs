@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STRRET_TYPE.xml' path='doc/member[@name="STRRET_TYPE"]/*' />
 public enum STRRET_TYPE
 {
+    /// <include file='STRRET_TYPE.xml' path='doc/member[@name="STRRET_TYPE.STRRET_WSTR"]/*' />
     STRRET_WSTR = 0,
+
+    /// <include file='STRRET_TYPE.xml' path='doc/member[@name="STRRET_TYPE.STRRET_OFFSET"]/*' />
     STRRET_OFFSET = 0x1,
+
+    /// <include file='STRRET_TYPE.xml' path='doc/member[@name="STRRET_TYPE.STRRET_CSTR"]/*' />
     STRRET_CSTR = 0x2,
 }

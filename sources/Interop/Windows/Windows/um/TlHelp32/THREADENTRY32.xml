@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="THREADENTRY32">
+    <summary>
+      <para>Describes an entry from a list of the threads executing in the system when a snapshot was taken.</para>
+    </summary>
+    <seealso cref="Thread32First" />
+    <seealso cref="Thread32Next" />
+  </member>
+  <member name="THREADENTRY32.dwSize">
+    <summary>
+      <para>The size of the structure, in bytes. Before calling the
+<see cref="Thread32First" /> function, set this member to <code>sizeof(THREADENTRY32)</code>. If you do not initialize <b>dwSize</b>,
+<b>Thread32First</b> fails.</para>
+    </summary>
+  </member>
+  <member name="THREADENTRY32.cntUsage">
+    <summary>
+      <para>This member is no longer used and is always set to zero.</para>
+    </summary>
+  </member>
+  <member name="THREADENTRY32.th32ThreadID">
+    <summary>
+      <para>The thread identifier, compatible with the thread identifier returned by the
+<see cref="CreateProcess" /> function.</para>
+    </summary>
+  </member>
+  <member name="THREADENTRY32.th32OwnerProcessID">
+    <summary>
+      <para>The identifier of the process that created the thread.</para>
+    </summary>
+  </member>
+  <member name="THREADENTRY32.tpBasePri">
+    <summary>
+      <para>The kernel base priority level assigned to the thread. The priority is a number from 0 to 31, with 0 representing the lowest possible thread priority. For more information, see <b>KeQueryPriorityThread</b>.</para>
+    </summary>
+  </member>
+  <member name="THREADENTRY32.tpDeltaPri">
+    <summary>
+      <para>This member is no longer used and is always set to zero.</para>
+    </summary>
+  </member>
+  <member name="THREADENTRY32.dwFlags">
+    <summary>
+      <para>This member is no longer used and is always set to zero.</para>
+    </summary>
+  </member>
+</doc>

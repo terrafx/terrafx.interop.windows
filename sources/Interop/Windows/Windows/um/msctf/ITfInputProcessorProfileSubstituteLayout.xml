@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ITfInputProcessorProfileSubstituteLayout.GetSubstituteKeyboardLayout">
+    <summary>
+      <para>Retrieves the input locale identifier (keyboard layout).</para>
+    </summary>
+    <param name="rclsid">
+      <para>Contains the class identifier of the text service.</para>
+    </param>
+    <param name="langid">
+      <para>Specifies the language of the profile. See <a href="https://docs.microsoft.com//windows/desktop/Intl/language-identifiers">Language Identifiers</a>.</para>
+    </param>
+    <param name="guidProfile">
+      <para>Identifies the profile GUID.</para>
+    </param>
+    <param name="phKL">
+      <para>Pointer to an <b>HKL</b> value that specifies the substitute input locale identifier.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="ITfInputProcessorProfileSubstituteLayout" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/Intl/language-identifiers">Language Identifiers</seealso>
+    <seealso cref="LoadKeyboardLayout" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/text-service-registration">Text Service Registration</seealso>
+  </member>
+  <member name="ITfInputProcessorProfileSubstituteLayout">
+    <summary>
+      <para>This  interface is implemented by the TSF manager and is used by an application or text service to manipulate the substitute input locale identifier (keyboard layout) of a text service profile. The interface ID is IID_ITfInputProcessorProfileSubstituteLayout.</para>
+    </summary>
+    <seealso cref="ITfInputProcessorProfiles" />
+    <seealso cref="IUnknown" />
+  </member>
+</doc>

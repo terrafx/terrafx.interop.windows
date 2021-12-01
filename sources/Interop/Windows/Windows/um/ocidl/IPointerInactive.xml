@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IPointerInactive.GetActivationPolicy">
+    <summary>
+      <para>Retrieves the current activation policy for the object. This method is called by the container on receipt of a WM_SETCURSOR or WM_MOUSEMOVE message when an inactive object is under the mouse pointer.</para>
+    </summary>
+    <param name="pdwPolicy">
+      <para>A pointer to a variable that receives the activation policy. Possible values come from the <see cref="POINTERINACTIVE" /> enumeration.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, the return value is S_OK. Otherwise, it is E_FAIL.</para>
+    </returns>
+    <remarks>
+      <para>The object can request to be in-place activated as soon as the mouse enters it through the POINTERINACTIVE_ACTIVATEONENTRY value. An object that provides more visual feedback than simply setting the mouse pointer would use this value. For example, if the object supports special visual feedback, it must enter the active state so it can draw the visual feedback that it supports.</para>
+      <para>An object can also use this method to request activation when the mouse is dragged over them during a drag and drop operation through the POINTERINACTIVE_ACTIVATEONDRAG.</para>
+      <para>If the object returns one of these values, the container should activate the object immediately and forward the Window message that triggered the call. The object then stays active and processes subsequent messages through its own window until the container gets another WM_SETCURSOR or WM_MOUSEMOVE. At this point, the container should deactivate the object.</para>
+      <para>For windowless OLE objects this mechanism is slightly different. See <see cref="IOleInPlaceSiteWindowless" /> for more information on drag and drop operations for windowless objects.</para>
+      <para>If the object returns both the POINTERINACTIVE_ACTIVATEONENTRY and the POINTERINACTIVE_DEACTIVATEONLEAVE values, the object is activated only when the mouse is over the object. If the POINTERINACTIVE_ACTIVATEONENTRY value alone is set, the object is activated once when the mouse first enters it, and it remains active.</para>
+      <h3>Notes to Callers</h3>
+      <para>The activation policy should not be cached. The container should call this method each time the mouse enters an inactive object.</para>
+    </remarks>
+    <seealso cref="IOleInPlaceSiteWindowless" />
+    <seealso cref="IPointerInactive" />
+  </member>
+  <member name="IPointerInactive.OnInactiveMouseMove">
+    <summary>
+      <para>Notifies the object that the mouse pointer has moved over it so the object can fire mouse events. This method is called by the container on receipt of a WM_MOUSEMOVE method when an inactive object is under the mouse pointer.</para>
+    </summary>
+    <param name="pRectBounds">
+      <para>The object bounding rectangle, in client coordinates of the containing window. This parameter tells the object its exact position and size on the screen when the WM_MOUSEMOVE message was received. This value is specified in units of the client's coordinate system.</para>
+    </param>
+    <param name="x">
+      <para>The horizontal coordinate of mouse location in units of the client's containing window.</para>
+    </param>
+    <param name="y">
+      <para>The vertical coordinate of mouse location in units of the client's containing window.</para>
+    </param>
+    <param name="grfKeyState">
+      <para>The current state of the keyboard modifier keys on the keyboard. Possible values can be a combination of any of the values MK_CONTROL, MK_SHIFT, MK_ALT, MK_BUTTON, MK_LBUTTON, MK_MBUTTON, and MK_RBUTTON.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, the return value is S_OK. Otherwise, it is E_FAIL.</para>
+    </returns>
+    <remarks>
+      <para>The container calls this method to notify the object that the mouse pointer is over the object after checking the object's activation policy by calling the <see cref="IPointerInactive.GetActivationPolicy" /> method. If the object has not requested to be activated in-place through that call, the container dispatches subsequent WM_MOUSEMOVE messages to the inactive object by calling <b>OnInactiveMouseMove</b> as long as the mouse pointer stays over the object. The object can then fire mouse move events.</para>
+      <para>To avoid rounding errors and to make the job easier on the object implementer, this method takes window coordinates in the units of its containing client window, that is, the window in which the object is displayed, instead of the usual <b>HIMETRIC</b> units. Thus, the same coordinates and code path can be used when the object is active and inactive. The window coordinates specify the mouse position. The bounding rectangle is also specified in the same coordinate system.</para>
+    </remarks>
+    <seealso cref="IPointerInactive" />
+  </member>
+  <member name="IPointerInactive.OnInactiveSetCursor">
+    <summary>
+      <para>Sets the mouse pointer for an inactive object. This method is called by the container on receipt of a WM_SETCURSOR method when an inactive object is under the mouse pointer.</para>
+    </summary>
+    <param name="pRectBounds">
+      <para>The object bounding rectangle specified in client coordinate units of the containing window. This parameter tells the object its exact position and size on the screen when the WM_SETCURSOR message was received. This value is specified in units of the client's coordinate system.</para>
+    </param>
+    <param name="x">
+      <para>The horizontal coordinate of mouse location in units of the client's containing window.</para>
+    </param>
+    <param name="y">
+      <para>The vertical coordinate of mouse location in units of the client's containing window.</para>
+    </param>
+    <param name="dwMouseMsg">
+      <para>The identifier of the mouse message for which a WM_SETCURSOR occurred.</para>
+    </param>
+    <param name="fSetAlways">
+      <para>If this value is <b>TRUE</b>, the object must set the cursor; if this value is <b>FALSE</b>, the object is not obligated to set the cursor, and should return S_FALSE in that case.</para>
+    </param>
+    <returns>
+      <para>This method can return the standard return value E_FAIL, as well as the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The mouse pointer was successfully set.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_FALSE</b>
+            </para>
+          </description>
+          <description>
+            <para>The object did not set the cursor; the container should either set the cursor or call the object again with the parameter <i>fSetAlways</i> set to <b>TRUE</b>.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>The container calls this method to set the mouse pointer over an inactive object after checking the object's activation policy by calling the <see cref="IPointerInactive.GetActivationPolicy" /> method. If the object has not requested to be activated in-place through that call, the container dispatches subsequent WM_SETCURSOR messages to the inactive object by calling <b>OnInactiveSetCursor</b> as long as the mouse pointer stays over the object.</para>
+      <para>To avoid rounding errors and to make the job easier on the object implementer, this method takes window coordinates in the units of its containing client window, that is, the window in which the object is displayed, instead of the usual <b>HIMETRIC</b> units. Thus, the same coordinates and code path can be used when the object is active and inactive. The window coordinates specify the mouse position. The bounding rectangle is also specified in the same coordinate system.</para>
+      <para>
+        <b>OnInactiveSetCursor</b> takes an additional parameter, <i>fSetAlways</i>, that indicates whether the object is obligated to set the cursor or not. Containers should first call this method with this parameter <b>FALSE</b>. The object may return S_FALSE to indicate that it did not set the cursor. In that case, the container should either set the cursor itself, or, if it does not wish to do this, call the <b>OnInactiveSetCursor</b> method again with <i>fSetAlways</i> being <b>TRUE</b>.</para>
+    </remarks>
+    <seealso cref="IPointerInactive" />
+  </member>
+  <member name="IPointerInactive">
+    <summary>
+      <para>Enables an object to remain inactive most of the time, yet still participate in interaction with the mouse, including drag and drop.</para>
+      <para>Objects can be active (in-place or UI active) or they can be inactive (loaded or running). An active object creates a window and can receive Windows mouse and keyboard messages. An inactive object can render itself and provide a representation of its data in a given format. While they provide more functionality, active objects also consume more resources than inactive objects. Typically, they are larger and slower than inactive objects. Thus, keeping an object inactive can provide performance improvements.</para>
+      <para>However, an object, such as a control, needs to be able to control the mouse pointer, fire mouse events, and act as a drop target so it can participate in the user interface of its container application.</para>
+    </summary>
+  </member>
+</doc>

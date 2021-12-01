@@ -5,22 +5,29 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SERVERSILO_BASIC_INFORMATION.xml' path='doc/member[@name="SERVERSILO_BASIC_INFORMATION"]/*' />
 public unsafe partial struct SERVERSILO_BASIC_INFORMATION
 {
+    /// <include file='SERVERSILO_BASIC_INFORMATION.xml' path='doc/member[@name="SERVERSILO_BASIC_INFORMATION.ServiceSessionId"]/*' />
     [NativeTypeName("DWORD")]
     public uint ServiceSessionId;
 
+    /// <include file='SERVERSILO_BASIC_INFORMATION.xml' path='doc/member[@name="SERVERSILO_BASIC_INFORMATION.State"]/*' />
     public SERVERSILO_STATE State;
 
+    /// <include file='SERVERSILO_BASIC_INFORMATION.xml' path='doc/member[@name="SERVERSILO_BASIC_INFORMATION.ExitStatus"]/*' />
     [NativeTypeName("DWORD")]
     public uint ExitStatus;
 
+    /// <include file='SERVERSILO_BASIC_INFORMATION.xml' path='doc/member[@name="SERVERSILO_BASIC_INFORMATION.IsDownlevelContainer"]/*' />
     [NativeTypeName("BOOLEAN")]
     public byte IsDownlevelContainer;
 
+    /// <include file='SERVERSILO_BASIC_INFORMATION.xml' path='doc/member[@name="SERVERSILO_BASIC_INFORMATION.ApiSetSchema"]/*' />
     [NativeTypeName("PVOID")]
     public void* ApiSetSchema;
 
+    /// <include file='SERVERSILO_BASIC_INFORMATION.xml' path='doc/member[@name="SERVERSILO_BASIC_INFORMATION.HostApiSetSchema"]/*' />
     [NativeTypeName("PVOID")]
     public void* HostApiSetSchema;
 }

@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NET_IF_ALIAS_LH.xml' path='doc/member[@name="NET_IF_ALIAS_LH"]/*' />
 public partial struct NET_IF_ALIAS_LH
 {
+    /// <include file='NET_IF_ALIAS_LH.xml' path='doc/member[@name="NET_IF_ALIAS_LH.ifAliasLength"]/*' />
     public ushort ifAliasLength;
 
+    /// <include file='NET_IF_ALIAS_LH.xml' path='doc/member[@name="NET_IF_ALIAS_LH.ifAliasOffset"]/*' />
     public ushort ifAliasOffset;
 }

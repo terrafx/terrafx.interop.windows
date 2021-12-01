@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DISPLAYCONFIG_2DREGION">
+    <summary>
+      <para>The DISPLAYCONFIG_2DREGION structure represents a point or an offset in a two-dimensional space.</para>
+    </summary>
+  </member>
+  <member name="DISPLAYCONFIG_2DREGION.cx">
+    <summary>
+      <para>The horizontal component of the point or offset.</para>
+    </summary>
+  </member>
+  <member name="DISPLAYCONFIG_2DREGION.cy">
+    <summary>
+      <para>The vertical component of the point or offset.</para>
+    </summary>
+  </member>
+</doc>

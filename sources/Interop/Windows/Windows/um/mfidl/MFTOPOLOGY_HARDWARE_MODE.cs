@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MFTOPOLOGY_HARDWARE_MODE.xml' path='doc/member[@name="MFTOPOLOGY_HARDWARE_MODE"]/*' />
 public enum MFTOPOLOGY_HARDWARE_MODE
 {
+    /// <include file='MFTOPOLOGY_HARDWARE_MODE.xml' path='doc/member[@name="MFTOPOLOGY_HARDWARE_MODE.MFTOPOLOGY_HWMODE_SOFTWARE_ONLY"]/*' />
     MFTOPOLOGY_HWMODE_SOFTWARE_ONLY = 0,
+
+    /// <include file='MFTOPOLOGY_HARDWARE_MODE.xml' path='doc/member[@name="MFTOPOLOGY_HARDWARE_MODE.MFTOPOLOGY_HWMODE_USE_HARDWARE"]/*' />
     MFTOPOLOGY_HWMODE_USE_HARDWARE = 1,
+
+    /// <include file='MFTOPOLOGY_HARDWARE_MODE.xml' path='doc/member[@name="MFTOPOLOGY_HARDWARE_MODE.MFTOPOLOGY_HWMODE_USE_ONLY_HARDWARE"]/*' />
     MFTOPOLOGY_HWMODE_USE_ONLY_HARDWARE = 2,
 }

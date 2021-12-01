@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ITfInsertAtSelection.InsertEmbeddedAtSelection">
+    <summary>
+      <para>The <b>ITfInsertAtSelection.InsertEmbeddedAtSelection</b> method inserts an <see cref="IDataObject" /> object at the selection or insertion point.</para>
+    </summary>
+    <param name="ec">
+      <para>Identifies the edit context. This is obtained from <see cref="ITfDocumentMgr.CreateContext" /> or <see cref="ITfEditSession.DoEditSession" />.</para>
+    </param>
+    <param name="dwFlags">
+      <para>Bit field with one of the following values:</para>
+      <para>TF_IAS_NOQUERY</para>
+      <para>The <i>ppRange</i> parameter is <b>NULL</b> on exit.</para>
+      <para>TF_IAS_QUERYONLY</para>
+      <para>Context is not modified but the <i>ppRange</i> parameter is set as if the insert occurred. Read-only access is sufficient. If this flag is not set, the <i>ec</i> parameter must have read/write access.</para>
+      <para>TF_IAS_NO_DEFAULT_COMPOSITION</para>
+      <para>The TSF manager does not create a default composition if a composition is required. The caller must create a composition object that covers the inserted text before releasing the context lock.</para>
+    </param>
+    <param name="pDataObject">
+      <para>Pointer to object to insert.</para>
+    </param>
+    <param name="ppRange">
+      <para>Position of the inserted object. Optional.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>TF_E_NOLOCK</b>
+            </para>
+          </description>
+          <description>
+            <para>The <i>ec</i> parameter is an invalid edit cookie.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>TF_E_DISCONNECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>Context object is not on a document stack.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>TS_E_NOSELECTION</b>
+            </para>
+          </description>
+          <description>
+            <para>Context has no selection.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>TS_E_READONLY</b>
+            </para>
+          </description>
+          <description>
+            <para>Selection is read-only.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>TF_E_FORMAT</b>
+            </para>
+          </description>
+          <description>
+            <para>Context owner cannot handle objects of the type provided by the <i>pDataObject</i> parameter.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>Callers can use the <see cref="ITfQueryEmbedded.QueryInsertEmbedded" /> method to determine if a particular object type is likely to be accepted by this method.</para>
+      <para>To insert text instead of an <b>IDataObject</b> object, use the <see cref="ITfInsertAtSelection.InsertTextAtSelection" /> method.</para>
+    </remarks>
+    <seealso cref="IDataObject" />
+    <seealso cref="ITfDocumentMgr.CreateContext " />
+    <seealso cref="ITfEditSession.DoEditSession " />
+    <seealso cref="ITfInsertAtSelection " />
+    <seealso cref="ITfInsertAtSelection.InsertTextAtSelection " />
+    <seealso cref="ITfQueryEmbedded.QueryInsertEmbedded " />
+  </member>
+  <member name="ITfInsertAtSelection.InsertTextAtSelection">
+    <summary>
+      <para>Inserts text at the selection or insertion point.</para>
+    </summary>
+    <param name="ec">
+      <para>Identifies the edit context. This is obtained from <see cref="ITfDocumentMgr.CreateContext" /> or <see cref="ITfEditSession.DoEditSession" />.</para>
+    </param>
+    <param name="dwFlags">
+      <para>Bit field with one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>TF_IAS_NOQUERY</b>
+          </description>
+          <description>
+            <i>ppRange</i> is <b>NULL</b>. This flag cannot be combined with the TF_IAS_QUERYONLY flag.
+</description>
+        </item>
+        <item>
+          <description>
+            <b>TF_IAS_QUERYONLY</b>
+          </description>
+          <description>
+            <para>The context is not modified, but <i>ppRange</i> is set as if the insert had occurred. Read-only access is sufficient. If this flag is not set, <i>ec</i> must have read/write access. This flag cannot be combined with the TF_IAS_NOQUERY flag.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>TF_IAS_NO_DEFAULT_COMPOSITION</b>
+          </description>
+          <description>
+            <para>The manager will not create a default composition if a composition is required. The caller must create a composition object that covers the inserted text before releasing the context lock.</para>
+          </description>
+        </item>
+      </list>
+    </param>
+    <param name="pchText">
+      <para>Specifies the text to insert.</para>
+    </param>
+    <param name="cch">
+      <para>Specifies the character count of the text in <i>pchText</i>.</para>
+    </param>
+    <param name="ppRange">
+      <para>Receives the position of the inserted object.</para>
+    </param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method was successful.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>TF_E_NOLOCK</b>
+            </para>
+          </description>
+          <description>
+            <para>The text service does not have a document lock</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>TF_E_DISCONNECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>Context object is not on a document stack.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>TS_E_NOSELECTION</b>
+            </para>
+          </description>
+          <description>
+            <para>Context has no selection.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>TS_E_READONLY</b>
+            </para>
+          </description>
+          <description>
+            <para>Selection is read-only.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>To insert an <see cref="IDataObject" /> object instead of text, use <see cref="ITfInsertAtSelection.InsertEmbeddedAtSelection" />.</para>
+    </remarks>
+    <seealso cref="IDataObject" />
+    <seealso cref="ITfDocumentMgr.CreateContext " />
+    <seealso cref="ITfEditSession.DoEditSession " />
+    <seealso cref="ITfInsertAtSelection " />
+    <seealso cref="ITfInsertAtSelection.InsertEmbeddedAtSelection " />
+  </member>
+  <member name="ITfInsertAtSelection">
+    <summary>
+      <para>The <b>ITfInsertAtSelection</b> interface is implemented by the manager and is used by a text service to insert text or an embedded object in a context. The text service obtains this interface by calling ITfContext.QueryInterface.</para>
+    </summary>
+  </member>
+</doc>

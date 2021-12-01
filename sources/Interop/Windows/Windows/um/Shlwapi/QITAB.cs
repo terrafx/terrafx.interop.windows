@@ -7,11 +7,14 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='QITAB.xml' path='doc/member[@name="QITAB"]/*' />
 public unsafe partial struct QITAB
 {
+    /// <include file='QITAB.xml' path='doc/member[@name="QITAB.piid"]/*' />
     [NativeTypeName("const IID *")]
     public Guid* piid;
 
+    /// <include file='QITAB.xml' path='doc/member[@name="QITAB.dwOffset"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwOffset;
 }

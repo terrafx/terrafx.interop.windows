@@ -5,22 +5,31 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='AM_DVD_RENDERSTATUS.xml' path='doc/member[@name="AM_DVD_RENDERSTATUS"]/*' />
 public partial struct AM_DVD_RENDERSTATUS
 {
+    /// <include file='AM_DVD_RENDERSTATUS.xml' path='doc/member[@name="AM_DVD_RENDERSTATUS.hrVPEStatus"]/*' />
     public HRESULT hrVPEStatus;
 
+    /// <include file='AM_DVD_RENDERSTATUS.xml' path='doc/member[@name="AM_DVD_RENDERSTATUS.bDvdVolInvalid"]/*' />
     public BOOL bDvdVolInvalid;
 
+    /// <include file='AM_DVD_RENDERSTATUS.xml' path='doc/member[@name="AM_DVD_RENDERSTATUS.bDvdVolUnknown"]/*' />
     public BOOL bDvdVolUnknown;
 
+    /// <include file='AM_DVD_RENDERSTATUS.xml' path='doc/member[@name="AM_DVD_RENDERSTATUS.bNoLine21In"]/*' />
     public BOOL bNoLine21In;
 
+    /// <include file='AM_DVD_RENDERSTATUS.xml' path='doc/member[@name="AM_DVD_RENDERSTATUS.bNoLine21Out"]/*' />
     public BOOL bNoLine21Out;
 
+    /// <include file='AM_DVD_RENDERSTATUS.xml' path='doc/member[@name="AM_DVD_RENDERSTATUS.iNumStreams"]/*' />
     public int iNumStreams;
 
+    /// <include file='AM_DVD_RENDERSTATUS.xml' path='doc/member[@name="AM_DVD_RENDERSTATUS.iNumStreamsFailed"]/*' />
     public int iNumStreamsFailed;
 
+    /// <include file='AM_DVD_RENDERSTATUS.xml' path='doc/member[@name="AM_DVD_RENDERSTATUS.dwFailedStreamsFlag"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFailedStreamsFlag;
 }

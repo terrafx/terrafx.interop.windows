@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='textpathMethodtype.xml' path='doc/member[@name="textpathMethodtype"]/*' />
 public enum textpathMethodtype
 {
+    /// <include file='textpathMethodtype.xml' path='doc/member[@name="textpathMethodtype.TEXTPATH_METHODTYPE_UNKNOWN"]/*' />
     TEXTPATH_METHODTYPE_UNKNOWN = 0,
+
+    /// <include file='textpathMethodtype.xml' path='doc/member[@name="textpathMethodtype.TEXTPATH_METHODTYPE_ALIGN"]/*' />
     TEXTPATH_METHODTYPE_ALIGN = 1,
+
+    /// <include file='textpathMethodtype.xml' path='doc/member[@name="textpathMethodtype.TEXTPATH_METHODTYPE_STRETCH"]/*' />
     TEXTPATH_METHODTYPE_STRETCH = 2,
+
+    /// <include file='textpathMethodtype.xml' path='doc/member[@name="textpathMethodtype.textpathMethodtype_Max"]/*' />
     textpathMethodtype_Max = 2147483647,
 }

@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="TCP_ESTATS_SND_CONG_ROS_v0">
+    <summary>
+      <para>The <b>TCP_ESTATS_SND_CONG_ROS_v0</b> structure contains read-only static information for extended TCP statistics on the maximum congestion window for a TCP connection.</para>
+    </summary>
+    <remarks>
+      <para>The <b>TCP_ESTATS_SND_CONG_ROS_v0</b> structure is used as part of the TCP extended statistics feature available on Windows Vista and later.</para>
+      <para>The <b>TCP_ESTATS_SND_CONG_ROS_v0</b> is defined as version 0 of the structure for  read-only dynamic information on basic sender congestion data for a TCP connection.  This information is available after the connection has been established.</para>
+      <para>The <b>TCP_ESTATS_SND_CONG_ROS_v0</b> structure is retrieved by calls to  the <see cref="GetPerTcp6ConnectionEStats" /> or <see cref="GetPerTcpConnectionEStats" /> functions when <b>TcpConnectionEstatsSndCong</b> is passed in the <i>EstatsType</i> parameter. Extended TCP statistics need to be enabled to retrieve this structure.</para>
+      <para>TCP congestion control and congestion control algorithms are discussed in detail in the IETF RFC on TCP Congestion Control. For more information, see <a href="http://tools.ietf.org/html/rfc2581">http://www.ietf.org/rfc/rfc2581.txt</a>.</para>
+      <para>The members of this structure are defined in the IETF RFC on the TCP Extended Statistics MIB. For more information, see <a href="http://tools.ietf.org/html/rfc4898">http://www.ietf.org/rfc/rfc4898.txt</a>.</para>
+      <para>The following is the mapping of the members in the <b>TCP_ESTATS_SND_CONG_ROS_v0</b> structure to the entries defined in RFC 4898 for extended TCP statistics:</para>
+      <list type="table">
+        <listheader>
+          <description>Term</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <b>LimCwnd</b>
+          </description>
+          <description>
+            <para>tcpEStatsTuneLimCwnd</para>
+          </description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="GetPerTcp6ConnectionEStats" />
+    <seealso cref="GetPerTcpConnectionEStats" />
+    <seealso cref="TCP_ESTATS_TYPE" />
+  </member>
+  <member name="TCP_ESTATS_SND_CONG_ROS_v0.LimCwnd">
+    <summary>
+      <para>The maximum size, in bytes, of the congestion window that may be
+used.</para>
+    </summary>
+  </member>
+</doc>

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IPackageExecutionStateChangeNotification.xml' path='doc/member[@name="IPackageExecutionStateChangeNotification"]/*' />
 [Guid("1BB12A62-2AD8-432B-8CCF-0C2C52AFCD5B")]
 [NativeTypeName("struct IPackageExecutionStateChangeNotification : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IPackageExecutionStateChangeNotification : IPackage
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IPackageExecutionStateChangeNotification : IPackage
         return ((delegate* unmanaged<IPackageExecutionStateChangeNotification*, Guid*, void**, int>)(lpVtbl[0]))((IPackageExecutionStateChangeNotification*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IPackageExecutionStateChangeNotification : IPackage
         return ((delegate* unmanaged<IPackageExecutionStateChangeNotification*, uint>)(lpVtbl[1]))((IPackageExecutionStateChangeNotification*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IPackageExecutionStateChangeNotification : IPackage
         return ((delegate* unmanaged<IPackageExecutionStateChangeNotification*, uint>)(lpVtbl[2]))((IPackageExecutionStateChangeNotification*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IPackageExecutionStateChangeNotification.xml' path='doc/member[@name="IPackageExecutionStateChangeNotification.OnStateChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT OnStateChanged([NativeTypeName("LPCWSTR")] ushort* pszPackageFullName, PACKAGE_EXECUTION_STATE pesNewState)

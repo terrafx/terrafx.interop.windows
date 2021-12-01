@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='tagSORTDIRECTION.xml' path='doc/member[@name="tagSORTDIRECTION"]/*' />
 public enum tagSORTDIRECTION
 {
+    /// <include file='tagSORTDIRECTION.xml' path='doc/member[@name="tagSORTDIRECTION.SORT_DESCENDING"]/*' />
     SORT_DESCENDING = -1,
+
+    /// <include file='tagSORTDIRECTION.xml' path='doc/member[@name="tagSORTDIRECTION.SORT_ASCENDING"]/*' />
     SORT_ASCENDING = 1,
 }

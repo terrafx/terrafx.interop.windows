@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_DECIMAL_DESCRIPTION.xml' path='doc/member[@name="WS_DECIMAL_DESCRIPTION"]/*' />
 public partial struct WS_DECIMAL_DESCRIPTION
 {
+    /// <include file='WS_DECIMAL_DESCRIPTION.xml' path='doc/member[@name="WS_DECIMAL_DESCRIPTION.minValue"]/*' />
     public DECIMAL minValue;
 
+    /// <include file='WS_DECIMAL_DESCRIPTION.xml' path='doc/member[@name="WS_DECIMAL_DESCRIPTION.maxValue"]/*' />
     public DECIMAL maxValue;
 }

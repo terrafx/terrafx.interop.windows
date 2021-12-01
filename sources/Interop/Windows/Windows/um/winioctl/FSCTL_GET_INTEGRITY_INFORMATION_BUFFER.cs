@@ -7,21 +7,27 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='FSCTL_GET_INTEGRITY_INFORMATION_BUFFER.xml' path='doc/member[@name="FSCTL_GET_INTEGRITY_INFORMATION_BUFFER"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public partial struct FSCTL_GET_INTEGRITY_INFORMATION_BUFFER
 {
+    /// <include file='FSCTL_GET_INTEGRITY_INFORMATION_BUFFER.xml' path='doc/member[@name="FSCTL_GET_INTEGRITY_INFORMATION_BUFFER.ChecksumAlgorithm"]/*' />
     [NativeTypeName("WORD")]
     public ushort ChecksumAlgorithm;
 
+    /// <include file='FSCTL_GET_INTEGRITY_INFORMATION_BUFFER.xml' path='doc/member[@name="FSCTL_GET_INTEGRITY_INFORMATION_BUFFER.Reserved"]/*' />
     [NativeTypeName("WORD")]
     public ushort Reserved;
 
+    /// <include file='FSCTL_GET_INTEGRITY_INFORMATION_BUFFER.xml' path='doc/member[@name="FSCTL_GET_INTEGRITY_INFORMATION_BUFFER.Flags"]/*' />
     [NativeTypeName("DWORD")]
     public uint Flags;
 
+    /// <include file='FSCTL_GET_INTEGRITY_INFORMATION_BUFFER.xml' path='doc/member[@name="FSCTL_GET_INTEGRITY_INFORMATION_BUFFER.ChecksumChunkSizeInBytes"]/*' />
     [NativeTypeName("DWORD")]
     public uint ChecksumChunkSizeInBytes;
 
+    /// <include file='FSCTL_GET_INTEGRITY_INFORMATION_BUFFER.xml' path='doc/member[@name="FSCTL_GET_INTEGRITY_INFORMATION_BUFFER.ClusterSizeInBytes"]/*' />
     [NativeTypeName("DWORD")]
     public uint ClusterSizeInBytes;
 }

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IRegTreeItem.xml' path='doc/member[@name="IRegTreeItem"]/*' />
 [Guid("A9521922-0812-4D44-9EC3-7FD38C726F3D")]
 [NativeTypeName("struct IRegTreeItem : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IRegTreeItem : IRegTreeItem.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IRegTreeItem : IRegTreeItem.Interface
         return ((delegate* unmanaged<IRegTreeItem*, Guid*, void**, int>)(lpVtbl[0]))((IRegTreeItem*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IRegTreeItem : IRegTreeItem.Interface
         return ((delegate* unmanaged<IRegTreeItem*, uint>)(lpVtbl[1]))((IRegTreeItem*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IRegTreeItem : IRegTreeItem.Interface
         return ((delegate* unmanaged<IRegTreeItem*, uint>)(lpVtbl[2]))((IRegTreeItem*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IRegTreeItem.xml' path='doc/member[@name="IRegTreeItem.GetCheckState"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetCheckState(BOOL* pbCheck)
@@ -46,6 +51,7 @@ public unsafe partial struct IRegTreeItem : IRegTreeItem.Interface
         return ((delegate* unmanaged<IRegTreeItem*, BOOL*, int>)(lpVtbl[3]))((IRegTreeItem*)Unsafe.AsPointer(ref this), pbCheck);
     }
 
+    /// <include file='IRegTreeItem.xml' path='doc/member[@name="IRegTreeItem.SetCheckState"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetCheckState(BOOL bCheck)

@@ -10,6 +10,7 @@ using TerraFX.Interop.DirectX;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IViewObjectPresentSite.xml' path='doc/member[@name="IViewObjectPresentSite"]/*' />
 [Guid("305106E1-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IViewObjectPresentSite : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -17,6 +18,7 @@ public unsafe partial struct IViewObjectPresentSite : IViewObjectPresentSite.Int
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct IViewObjectPresentSite : IViewObjectPresentSite.Int
         return ((delegate* unmanaged<IViewObjectPresentSite*, Guid*, void**, int>)(lpVtbl[0]))((IViewObjectPresentSite*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct IViewObjectPresentSite : IViewObjectPresentSite.Int
         return ((delegate* unmanaged<IViewObjectPresentSite*, uint>)(lpVtbl[1]))((IViewObjectPresentSite*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct IViewObjectPresentSite : IViewObjectPresentSite.Int
         return ((delegate* unmanaged<IViewObjectPresentSite*, uint>)(lpVtbl[2]))((IViewObjectPresentSite*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IViewObjectPresentSite.xml' path='doc/member[@name="IViewObjectPresentSite.CreateSurfacePresenter"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT CreateSurfacePresenter(IUnknown* pDevice, uint width, uint height, uint backBufferCount, DXGI_FORMAT format, VIEW_OBJECT_ALPHA_MODE mode, ISurfacePresenter** ppQueue)
@@ -47,6 +52,7 @@ public unsafe partial struct IViewObjectPresentSite : IViewObjectPresentSite.Int
         return ((delegate* unmanaged<IViewObjectPresentSite*, IUnknown*, uint, uint, uint, DXGI_FORMAT, VIEW_OBJECT_ALPHA_MODE, ISurfacePresenter**, int>)(lpVtbl[3]))((IViewObjectPresentSite*)Unsafe.AsPointer(ref this), pDevice, width, height, backBufferCount, format, mode, ppQueue);
     }
 
+    /// <include file='IViewObjectPresentSite.xml' path='doc/member[@name="IViewObjectPresentSite.IsHardwareComposition"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT IsHardwareComposition(BOOL* pIsHardwareComposition)
@@ -54,6 +60,7 @@ public unsafe partial struct IViewObjectPresentSite : IViewObjectPresentSite.Int
         return ((delegate* unmanaged<IViewObjectPresentSite*, BOOL*, int>)(lpVtbl[4]))((IViewObjectPresentSite*)Unsafe.AsPointer(ref this), pIsHardwareComposition);
     }
 
+    /// <include file='IViewObjectPresentSite.xml' path='doc/member[@name="IViewObjectPresentSite.SetCompositionMode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetCompositionMode(VIEW_OBJECT_COMPOSITION_MODE mode)

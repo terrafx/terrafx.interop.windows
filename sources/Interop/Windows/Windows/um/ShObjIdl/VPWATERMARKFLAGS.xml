@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="VPWATERMARKFLAGS">
+    <summary>
+      <para>Specifies watermark flags. Used by <see cref="IVisualProperties.SetWatermark" />.</para>
+    </summary>
+  </member>
+  <member name="VPWATERMARKFLAGS.VPWF_DEFAULT">
+    <summary>
+      <para>Default Windows XP behavior.</para>
+    </summary>
+  </member>
+  <member name="VPWATERMARKFLAGS.VPWF_ALPHABLEND">
+    <summary>
+      <para>Alpha blend the respective bitmap; assumed 24-bit color + 8-bit alpha.</para>
+    </summary>
+  </member>
+</doc>

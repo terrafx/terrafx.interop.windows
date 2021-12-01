@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SPENDSRSTREAMFLAGS.xml' path='doc/member[@name="SPENDSRSTREAMFLAGS"]/*' />
 public enum SPENDSRSTREAMFLAGS
 {
+    /// <include file='SPENDSRSTREAMFLAGS.xml' path='doc/member[@name="SPENDSRSTREAMFLAGS.SPESF_NONE"]/*' />
     SPESF_NONE = 0,
+
+    /// <include file='SPENDSRSTREAMFLAGS.xml' path='doc/member[@name="SPENDSRSTREAMFLAGS.SPESF_STREAM_RELEASED"]/*' />
     SPESF_STREAM_RELEASED = (1 << 0),
+
+    /// <include file='SPENDSRSTREAMFLAGS.xml' path='doc/member[@name="SPENDSRSTREAMFLAGS.SPESF_EMULATED"]/*' />
     SPESF_EMULATED = (1 << 1),
 }

@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="INewMenuClient.IncludeItems">
+    <summary>
+      <para>Allows the view to filter the items shown in the menu.</para>
+    </summary>
+    <param name="pflags">
+      <para>Type: <b>NMCII_FLAGS*</b></para>
+      <para>Pointer to a value that, when this method returns successfully, contains one of the following values:</para>
+      <h4>NMCII_NONE (0x0000)</h4>
+      <para>0x0000.</para>
+      <h4>NMCII_ITEMS (0x0001)</h4>
+      <para>0x0001. Non-folder items.</para>
+      <h4>NMCII_FOLDERS (0x0002)</h4>
+      <para>0x0002. Folder items.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="INewMenuClient.SelectAndEditItem">
+    <summary>
+      <para>Selects or edits the specified item in the menu.</para>
+    </summary>
+    <param name="pidlItem">
+      <para>Type: <b>PCIDLIST_ABSOLUTE</b></para>
+    </param>
+    <param name="flags">
+      <para>Type: <b>NMCSAEI_FLAGS</b></para>
+      <h4>NMCSAEI_SELECT (0x0000)</h4>
+      <para>0x0000. Select the item.</para>
+      <h4>NMCSAEI_EDIT (0x0001)</h4>
+      <para>0x0001. Edit the item.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="INewMenuClient">
+    <summary>
+      <para>Exposes methods that allow manipulation of items in a Windows 7 menu.</para>
+    </summary>
+  </member>
+</doc>

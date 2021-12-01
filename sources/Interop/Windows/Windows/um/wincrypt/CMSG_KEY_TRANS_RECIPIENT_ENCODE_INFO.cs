@@ -5,18 +5,25 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CMSG_KEY_TRANS_RECIPIENT_ENCODE_INFO.xml' path='doc/member[@name="CMSG_KEY_TRANS_RECIPIENT_ENCODE_INFO"]/*' />
 public unsafe partial struct CMSG_KEY_TRANS_RECIPIENT_ENCODE_INFO
 {
+    /// <include file='CMSG_KEY_TRANS_RECIPIENT_ENCODE_INFO.xml' path='doc/member[@name="CMSG_KEY_TRANS_RECIPIENT_ENCODE_INFO.cbSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbSize;
 
+    /// <include file='CMSG_KEY_TRANS_RECIPIENT_ENCODE_INFO.xml' path='doc/member[@name="CMSG_KEY_TRANS_RECIPIENT_ENCODE_INFO.KeyEncryptionAlgorithm"]/*' />
     public CRYPT_ALGORITHM_IDENTIFIER KeyEncryptionAlgorithm;
 
+    /// <include file='CMSG_KEY_TRANS_RECIPIENT_ENCODE_INFO.xml' path='doc/member[@name="CMSG_KEY_TRANS_RECIPIENT_ENCODE_INFO.pvKeyEncryptionAuxInfo"]/*' />
     public void* pvKeyEncryptionAuxInfo;
 
+    /// <include file='CMSG_KEY_TRANS_RECIPIENT_ENCODE_INFO.xml' path='doc/member[@name="CMSG_KEY_TRANS_RECIPIENT_ENCODE_INFO.hCryptProv"]/*' />
     public HCRYPTPROV_LEGACY hCryptProv;
 
+    /// <include file='CMSG_KEY_TRANS_RECIPIENT_ENCODE_INFO.xml' path='doc/member[@name="CMSG_KEY_TRANS_RECIPIENT_ENCODE_INFO.RecipientPublicKey"]/*' />
     public CRYPT_BIT_BLOB RecipientPublicKey;
 
+    /// <include file='CMSG_KEY_TRANS_RECIPIENT_ENCODE_INFO.xml' path='doc/member[@name="CMSG_KEY_TRANS_RECIPIENT_ENCODE_INFO.RecipientId"]/*' />
     public CERT_ID RecipientId;
 }

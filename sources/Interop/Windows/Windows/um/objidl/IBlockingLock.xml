@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IBlockingLock.Lock">
+    <summary>
+      <para>Requests a lock on a shared resource.</para>
+    </summary>
+    <param name="dwTimeout">
+      <para>The time interval after which the attempted lock operation fails.</para>
+    </param>
+    <returns>
+      <para>This method can return the standard return values E_INVALIDARG, E_OUTOFMEMORY, E_UNEXPECTED, E_FAIL, and S_OK.</para>
+    </returns>
+    <seealso cref="IBlockingLock" />
+  </member>
+  <member name="IBlockingLock.Unlock">
+    <summary>
+      <para>Releases a lock on a shared resource.</para>
+    </summary>
+    <returns>
+      <para>This method can return the standard return values E_INVALIDARG, E_OUTOFMEMORY, E_UNEXPECTED, E_FAIL, and S_OK.</para>
+    </returns>
+    <seealso cref="IBlockingLock" />
+  </member>
+  <member name="IBlockingLock">
+    <summary>
+      <para>Provides a semaphore that can be used to provide temporarily exclusive access to a shared resource such as a file.</para>
+    </summary>
+  </member>
+</doc>

@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DISPID_SpeechPhraseAlternate.xml' path='doc/member[@name="DISPID_SpeechPhraseAlternate"]/*' />
 public enum DISPID_SpeechPhraseAlternate
 {
+    /// <include file='DISPID_SpeechPhraseAlternate.xml' path='doc/member[@name="DISPID_SpeechPhraseAlternate.DISPID_SPARecoResult"]/*' />
     DISPID_SPARecoResult = 1,
+
+    /// <include file='DISPID_SpeechPhraseAlternate.xml' path='doc/member[@name="DISPID_SpeechPhraseAlternate.DISPID_SPAStartElementInResult"]/*' />
     DISPID_SPAStartElementInResult = (DISPID_SPARecoResult + 1),
+
+    /// <include file='DISPID_SpeechPhraseAlternate.xml' path='doc/member[@name="DISPID_SpeechPhraseAlternate.DISPID_SPANumberOfElementsInResult"]/*' />
     DISPID_SPANumberOfElementsInResult = (DISPID_SPAStartElementInResult + 1),
+
+    /// <include file='DISPID_SpeechPhraseAlternate.xml' path='doc/member[@name="DISPID_SpeechPhraseAlternate.DISPID_SPAPhraseInfo"]/*' />
     DISPID_SPAPhraseInfo = (DISPID_SPANumberOfElementsInResult + 1),
+
+    /// <include file='DISPID_SpeechPhraseAlternate.xml' path='doc/member[@name="DISPID_SpeechPhraseAlternate.DISPID_SPACommit"]/*' />
     DISPID_SPACommit = (DISPID_SPAPhraseInfo + 1),
 }

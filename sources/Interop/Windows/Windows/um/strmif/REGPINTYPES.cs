@@ -7,11 +7,14 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='REGPINTYPES.xml' path='doc/member[@name="REGPINTYPES"]/*' />
 public unsafe partial struct REGPINTYPES
 {
+    /// <include file='REGPINTYPES.xml' path='doc/member[@name="REGPINTYPES.clsMajorType"]/*' />
     [NativeTypeName("const CLSID *")]
     public Guid* clsMajorType;
 
+    /// <include file='REGPINTYPES.xml' path='doc/member[@name="REGPINTYPES.clsMinorType"]/*' />
     [NativeTypeName("const CLSID *")]
     public Guid* clsMinorType;
 }

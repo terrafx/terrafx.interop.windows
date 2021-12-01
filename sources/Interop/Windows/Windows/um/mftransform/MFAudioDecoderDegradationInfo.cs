@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MFAudioDecoderDegradationInfo.xml' path='doc/member[@name="MFAudioDecoderDegradationInfo"]/*' />
 public partial struct MFAudioDecoderDegradationInfo
 {
+    /// <include file='MFAudioDecoderDegradationInfo.xml' path='doc/member[@name="MFAudioDecoderDegradationInfo.eDegradationReason"]/*' />
     public MFT_AUDIO_DECODER_DEGRADATION_REASON eDegradationReason;
 
+    /// <include file='MFAudioDecoderDegradationInfo.xml' path='doc/member[@name="MFAudioDecoderDegradationInfo.eType"]/*' />
     public MFT_AUDIO_DECODER_DEGRADATION_TYPE eType;
 }

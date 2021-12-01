@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MONIKERPROPERTY.xml' path='doc/member[@name="MONIKERPROPERTY"]/*' />
 public enum MONIKERPROPERTY
 {
+    /// <include file='MONIKERPROPERTY.xml' path='doc/member[@name="MONIKERPROPERTY.MIMETYPEPROP"]/*' />
     MIMETYPEPROP = 0,
+
+    /// <include file='MONIKERPROPERTY.xml' path='doc/member[@name="MONIKERPROPERTY.USE_SRC_URL"]/*' />
     USE_SRC_URL = 0x1,
+
+    /// <include file='MONIKERPROPERTY.xml' path='doc/member[@name="MONIKERPROPERTY.CLASSIDPROP"]/*' />
     CLASSIDPROP = 0x2,
+
+    /// <include file='MONIKERPROPERTY.xml' path='doc/member[@name="MONIKERPROPERTY.TRUSTEDDOWNLOADPROP"]/*' />
     TRUSTEDDOWNLOADPROP = 0x3,
+
+    /// <include file='MONIKERPROPERTY.xml' path='doc/member[@name="MONIKERPROPERTY.POPUPLEVELPROP"]/*' />
     POPUPLEVELPROP = 0x4,
 }

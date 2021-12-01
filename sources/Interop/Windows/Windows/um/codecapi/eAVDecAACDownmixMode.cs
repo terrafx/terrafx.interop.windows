@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='eAVDecAACDownmixMode.xml' path='doc/member[@name="eAVDecAACDownmixMode"]/*' />
 public enum eAVDecAACDownmixMode
 {
+    /// <include file='eAVDecAACDownmixMode.xml' path='doc/member[@name="eAVDecAACDownmixMode.eAVDecAACUseISODownmix"]/*' />
     eAVDecAACUseISODownmix = 0,
+
+    /// <include file='eAVDecAACDownmixMode.xml' path='doc/member[@name="eAVDecAACDownmixMode.eAVDecAACUseARIBDownmix"]/*' />
     eAVDecAACUseARIBDownmix = 1,
 }

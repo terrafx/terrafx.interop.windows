@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAssocHandler.xml' path='doc/member[@name="IAssocHandler"]/*' />
 [Guid("F04061AC-1659-4A3F-A954-775AA57FC083")]
 [NativeTypeName("struct IAssocHandler : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IAssocHandler : IAssocHandler.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IAssocHandler : IAssocHandler.Interface
         return ((delegate* unmanaged<IAssocHandler*, Guid*, void**, int>)(lpVtbl[0]))((IAssocHandler*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IAssocHandler : IAssocHandler.Interface
         return ((delegate* unmanaged<IAssocHandler*, uint>)(lpVtbl[1]))((IAssocHandler*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IAssocHandler : IAssocHandler.Interface
         return ((delegate* unmanaged<IAssocHandler*, uint>)(lpVtbl[2]))((IAssocHandler*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAssocHandler.xml' path='doc/member[@name="IAssocHandler.GetName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetName([NativeTypeName("LPWSTR *")] ushort** ppsz)
@@ -46,6 +51,7 @@ public unsafe partial struct IAssocHandler : IAssocHandler.Interface
         return ((delegate* unmanaged<IAssocHandler*, ushort**, int>)(lpVtbl[3]))((IAssocHandler*)Unsafe.AsPointer(ref this), ppsz);
     }
 
+    /// <include file='IAssocHandler.xml' path='doc/member[@name="IAssocHandler.GetUIName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetUIName([NativeTypeName("LPWSTR *")] ushort** ppsz)
@@ -53,6 +59,7 @@ public unsafe partial struct IAssocHandler : IAssocHandler.Interface
         return ((delegate* unmanaged<IAssocHandler*, ushort**, int>)(lpVtbl[4]))((IAssocHandler*)Unsafe.AsPointer(ref this), ppsz);
     }
 
+    /// <include file='IAssocHandler.xml' path='doc/member[@name="IAssocHandler.GetIconLocation"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIconLocation([NativeTypeName("LPWSTR *")] ushort** ppszPath, int* pIndex)
@@ -60,6 +67,7 @@ public unsafe partial struct IAssocHandler : IAssocHandler.Interface
         return ((delegate* unmanaged<IAssocHandler*, ushort**, int*, int>)(lpVtbl[5]))((IAssocHandler*)Unsafe.AsPointer(ref this), ppszPath, pIndex);
     }
 
+    /// <include file='IAssocHandler.xml' path='doc/member[@name="IAssocHandler.IsRecommended"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT IsRecommended()
@@ -67,6 +75,7 @@ public unsafe partial struct IAssocHandler : IAssocHandler.Interface
         return ((delegate* unmanaged<IAssocHandler*, int>)(lpVtbl[6]))((IAssocHandler*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAssocHandler.xml' path='doc/member[@name="IAssocHandler.MakeDefault"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT MakeDefault([NativeTypeName("LPCWSTR")] ushort* pszDescription)
@@ -74,6 +83,7 @@ public unsafe partial struct IAssocHandler : IAssocHandler.Interface
         return ((delegate* unmanaged<IAssocHandler*, ushort*, int>)(lpVtbl[7]))((IAssocHandler*)Unsafe.AsPointer(ref this), pszDescription);
     }
 
+    /// <include file='IAssocHandler.xml' path='doc/member[@name="IAssocHandler.Invoke"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT Invoke(IDataObject* pdo)
@@ -81,6 +91,7 @@ public unsafe partial struct IAssocHandler : IAssocHandler.Interface
         return ((delegate* unmanaged<IAssocHandler*, IDataObject*, int>)(lpVtbl[8]))((IAssocHandler*)Unsafe.AsPointer(ref this), pdo);
     }
 
+    /// <include file='IAssocHandler.xml' path='doc/member[@name="IAssocHandler.CreateInvoker"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT CreateInvoker(IDataObject* pdo, IAssocHandlerInvoker** ppInvoker)

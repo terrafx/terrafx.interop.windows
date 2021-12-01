@@ -7,11 +7,14 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='POINTER_DEVICE_CURSOR_INFO.xml' path='doc/member[@name="POINTER_DEVICE_CURSOR_INFO"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public partial struct POINTER_DEVICE_CURSOR_INFO
 {
+    /// <include file='POINTER_DEVICE_CURSOR_INFO.xml' path='doc/member[@name="POINTER_DEVICE_CURSOR_INFO.cursorId"]/*' />
     [NativeTypeName("UINT32")]
     public uint cursorId;
 
+    /// <include file='POINTER_DEVICE_CURSOR_INFO.xml' path='doc/member[@name="POINTER_DEVICE_CURSOR_INFO.cursor"]/*' />
     public POINTER_DEVICE_CURSOR_TYPE cursor;
 }

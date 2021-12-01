@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFMediaEngineSupportsSourceTransfer.xml' path='doc/member[@name="IMFMediaEngineSupportsSourceTransfer"]/*' />
 [Guid("A724B056-1B2E-4642-A6F3-DB9420C52908")]
 [NativeTypeName("struct IMFMediaEngineSupportsSourceTransfer : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IMFMediaEngineSupportsSourceTransfer : IMFMediaEngi
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IMFMediaEngineSupportsSourceTransfer : IMFMediaEngi
         return ((delegate* unmanaged<IMFMediaEngineSupportsSourceTransfer*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaEngineSupportsSourceTransfer*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IMFMediaEngineSupportsSourceTransfer : IMFMediaEngi
         return ((delegate* unmanaged<IMFMediaEngineSupportsSourceTransfer*, uint>)(lpVtbl[1]))((IMFMediaEngineSupportsSourceTransfer*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IMFMediaEngineSupportsSourceTransfer : IMFMediaEngi
         return ((delegate* unmanaged<IMFMediaEngineSupportsSourceTransfer*, uint>)(lpVtbl[2]))((IMFMediaEngineSupportsSourceTransfer*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFMediaEngineSupportsSourceTransfer.xml' path='doc/member[@name="IMFMediaEngineSupportsSourceTransfer.ShouldTransferSource"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT ShouldTransferSource(BOOL* pfShouldTransfer)
@@ -48,6 +53,7 @@ public unsafe partial struct IMFMediaEngineSupportsSourceTransfer : IMFMediaEngi
         return ((delegate* unmanaged<IMFMediaEngineSupportsSourceTransfer*, BOOL*, int>)(lpVtbl[3]))((IMFMediaEngineSupportsSourceTransfer*)Unsafe.AsPointer(ref this), pfShouldTransfer);
     }
 
+    /// <include file='IMFMediaEngineSupportsSourceTransfer.xml' path='doc/member[@name="IMFMediaEngineSupportsSourceTransfer.DetachMediaSource"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT DetachMediaSource(IMFByteStream** ppByteStream, IMFMediaSource** ppMediaSource, IMFMediaSourceExtension** ppMSE)
@@ -55,6 +61,7 @@ public unsafe partial struct IMFMediaEngineSupportsSourceTransfer : IMFMediaEngi
         return ((delegate* unmanaged<IMFMediaEngineSupportsSourceTransfer*, IMFByteStream**, IMFMediaSource**, IMFMediaSourceExtension**, int>)(lpVtbl[4]))((IMFMediaEngineSupportsSourceTransfer*)Unsafe.AsPointer(ref this), ppByteStream, ppMediaSource, ppMSE);
     }
 
+    /// <include file='IMFMediaEngineSupportsSourceTransfer.xml' path='doc/member[@name="IMFMediaEngineSupportsSourceTransfer.AttachMediaSource"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT AttachMediaSource(IMFByteStream* pByteStream, IMFMediaSource* pMediaSource, IMFMediaSourceExtension* pMSE)

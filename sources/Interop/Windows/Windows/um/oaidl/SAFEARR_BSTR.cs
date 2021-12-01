@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SAFEARR_BSTR.xml' path='doc/member[@name="SAFEARR_BSTR"]/*' />
 public unsafe partial struct SAFEARR_BSTR
 {
+    /// <include file='SAFEARR_BSTR.xml' path='doc/member[@name="SAFEARR_BSTR.Size"]/*' />
     [NativeTypeName("ULONG")]
     public uint Size;
 
+    /// <include file='SAFEARR_BSTR.xml' path='doc/member[@name="SAFEARR_BSTR.aBstr"]/*' />
     [NativeTypeName("wireBSTR *")]
     public FLAGGED_WORD_BLOB** aBstr;
 }

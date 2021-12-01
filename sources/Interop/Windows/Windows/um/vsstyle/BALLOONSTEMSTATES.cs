@@ -5,12 +5,24 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='BALLOONSTEMSTATES.xml' path='doc/member[@name="BALLOONSTEMSTATES"]/*' />
 public enum BALLOONSTEMSTATES
 {
+    /// <include file='BALLOONSTEMSTATES.xml' path='doc/member[@name="BALLOONSTEMSTATES.TTBSS_POINTINGUPLEFTWALL"]/*' />
     TTBSS_POINTINGUPLEFTWALL = 1,
+
+    /// <include file='BALLOONSTEMSTATES.xml' path='doc/member[@name="BALLOONSTEMSTATES.TTBSS_POINTINGUPCENTERED"]/*' />
     TTBSS_POINTINGUPCENTERED = 2,
+
+    /// <include file='BALLOONSTEMSTATES.xml' path='doc/member[@name="BALLOONSTEMSTATES.TTBSS_POINTINGUPRIGHTWALL"]/*' />
     TTBSS_POINTINGUPRIGHTWALL = 3,
+
+    /// <include file='BALLOONSTEMSTATES.xml' path='doc/member[@name="BALLOONSTEMSTATES.TTBSS_POINTINGDOWNRIGHTWALL"]/*' />
     TTBSS_POINTINGDOWNRIGHTWALL = 4,
+
+    /// <include file='BALLOONSTEMSTATES.xml' path='doc/member[@name="BALLOONSTEMSTATES.TTBSS_POINTINGDOWNCENTERED"]/*' />
     TTBSS_POINTINGDOWNCENTERED = 5,
+
+    /// <include file='BALLOONSTEMSTATES.xml' path='doc/member[@name="BALLOONSTEMSTATES.TTBSS_POINTINGDOWNLEFTWALL"]/*' />
     TTBSS_POINTINGDOWNLEFTWALL = 6,
 }

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_BOOL_DESCRIPTION">
+    <summary>
+      <para>Specifies constraints on the set of values
+which can be deserialized.This type description is used with <see cref="WS_BOOL_TYPE" /> and is optional.</para>
+    </summary>
+  </member>
+  <member name="WS_BOOL_DESCRIPTION.value">
+    <summary>
+      <para>Specifies the required value.</para>
+    </summary>
+  </member>
+</doc>

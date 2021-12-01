@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="STORAGE_MINIPORT_DESCRIPTOR">
+    <summary>
+      <para>Reserved for system use.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/FileIO/disk-management-structures">Disk Management Structures</seealso>
+    <seealso cref="STORAGE_PORT_CODE_SET" />
+  </member>
+  <member name="STORAGE_MINIPORT_DESCRIPTOR.Version">
+    <summary>
+      <para>Contains the size of this structure, in bytes. The value of this member will change as members are added to
+the structure.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_MINIPORT_DESCRIPTOR.Size">
+    <summary>
+      <para>Specifies the total size of the data returned, in bytes. This may include data that follows this
+structure.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_MINIPORT_DESCRIPTOR.Portdriver">
+    <summary>
+      <para>Type of port driver as enumerated by the
+<see cref="STORAGE_PORT_CODE_SET" /> enumeration.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>StoragePortCodeSetReserved</b>
+                </description>
+              </item>
+              <item>
+                <description>0</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Indicates an unknown storage adapter driver type.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>StoragePortCodeSetStorport</b>
+                </description>
+              </item>
+              <item>
+                <description>1</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Storage adapter driver is a Storport-miniport driver.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>StoragePortCodeSetSCSIport</b>
+                </description>
+              </item>
+              <item>
+                <description>2</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Storage adapter driver is a SCSI Port-miniport driver.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="STORAGE_MINIPORT_DESCRIPTOR.LUNResetSupported">
+    <summary>
+      <para>Indicates whether a LUN reset is supported.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_MINIPORT_DESCRIPTOR.TargetResetSupported">
+    <summary>
+      <para>Indicates whether a target reset is supported.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_MINIPORT_DESCRIPTOR.IoTimeoutValue">
+    <summary></summary>
+  </member>
+  <member name="STORAGE_MINIPORT_DESCRIPTOR.ExtraIoInfoSupported">
+    <summary></summary>
+  </member>
+  <member name="STORAGE_MINIPORT_DESCRIPTOR.Reserved0">
+    <summary></summary>
+  </member>
+  <member name="STORAGE_MINIPORT_DESCRIPTOR.Reserved1">
+    <summary></summary>
+  </member>
+</doc>

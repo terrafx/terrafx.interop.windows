@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SpPhoneticAlphabetConverter.xml' path='doc/member[@name="SpPhoneticAlphabetConverter"]/*' />
 [Guid("4F414126-DFE3-4629-99EE-797978317EAD")]
 public partial struct SpPhoneticAlphabetConverter
 {

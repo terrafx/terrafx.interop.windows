@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAudioSessionEnumerator.xml' path='doc/member[@name="IAudioSessionEnumerator"]/*' />
 [Guid("E2F5BB11-0570-40CA-ACDD-3AA01277DEE8")]
 [NativeTypeName("struct IAudioSessionEnumerator : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IAudioSessionEnumerator : IAudioSessionEnumerator.I
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IAudioSessionEnumerator : IAudioSessionEnumerator.I
         return ((delegate* unmanaged<IAudioSessionEnumerator*, Guid*, void**, int>)(lpVtbl[0]))((IAudioSessionEnumerator*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IAudioSessionEnumerator : IAudioSessionEnumerator.I
         return ((delegate* unmanaged<IAudioSessionEnumerator*, uint>)(lpVtbl[1]))((IAudioSessionEnumerator*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IAudioSessionEnumerator : IAudioSessionEnumerator.I
         return ((delegate* unmanaged<IAudioSessionEnumerator*, uint>)(lpVtbl[2]))((IAudioSessionEnumerator*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAudioSessionEnumerator.xml' path='doc/member[@name="IAudioSessionEnumerator.GetCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetCount(int* SessionCount)
@@ -46,6 +51,7 @@ public unsafe partial struct IAudioSessionEnumerator : IAudioSessionEnumerator.I
         return ((delegate* unmanaged<IAudioSessionEnumerator*, int*, int>)(lpVtbl[3]))((IAudioSessionEnumerator*)Unsafe.AsPointer(ref this), SessionCount);
     }
 
+    /// <include file='IAudioSessionEnumerator.xml' path='doc/member[@name="IAudioSessionEnumerator.GetSession"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetSession(int SessionCount, IAudioSessionControl** Session)

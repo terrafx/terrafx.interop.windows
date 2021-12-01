@@ -7,7 +7,9 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NOTIFY_USER_POWER_SETTING.xml' path='doc/member[@name="NOTIFY_USER_POWER_SETTING"]/*' />
 public partial struct NOTIFY_USER_POWER_SETTING
 {
+    /// <include file='NOTIFY_USER_POWER_SETTING.xml' path='doc/member[@name="NOTIFY_USER_POWER_SETTING.Guid"]/*' />
     public Guid Guid;
 }

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMalloc.xml' path='doc/member[@name="IMalloc"]/*' />
 [Guid("00000002-0000-0000-C000-000000000046")]
 [NativeTypeName("struct IMalloc : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMalloc : IMalloc.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMalloc : IMalloc.Interface
         return ((delegate* unmanaged<IMalloc*, Guid*, void**, int>)(lpVtbl[0]))((IMalloc*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMalloc : IMalloc.Interface
         return ((delegate* unmanaged<IMalloc*, uint>)(lpVtbl[1]))((IMalloc*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMalloc : IMalloc.Interface
         return ((delegate* unmanaged<IMalloc*, uint>)(lpVtbl[2]))((IMalloc*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMalloc.xml' path='doc/member[@name="IMalloc.Alloc"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public void* Alloc([NativeTypeName("SIZE_T")] nuint cb)
@@ -46,6 +51,7 @@ public unsafe partial struct IMalloc : IMalloc.Interface
         return ((delegate* unmanaged<IMalloc*, nuint, void*>)(lpVtbl[3]))((IMalloc*)Unsafe.AsPointer(ref this), cb);
     }
 
+    /// <include file='IMalloc.xml' path='doc/member[@name="IMalloc.Realloc"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public void* Realloc(void* pv, [NativeTypeName("SIZE_T")] nuint cb)
@@ -53,6 +59,7 @@ public unsafe partial struct IMalloc : IMalloc.Interface
         return ((delegate* unmanaged<IMalloc*, void*, nuint, void*>)(lpVtbl[4]))((IMalloc*)Unsafe.AsPointer(ref this), pv, cb);
     }
 
+    /// <include file='IMalloc.xml' path='doc/member[@name="IMalloc.Free"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public void Free(void* pv)
@@ -60,6 +67,7 @@ public unsafe partial struct IMalloc : IMalloc.Interface
         ((delegate* unmanaged<IMalloc*, void*, void>)(lpVtbl[5]))((IMalloc*)Unsafe.AsPointer(ref this), pv);
     }
 
+    /// <include file='IMalloc.xml' path='doc/member[@name="IMalloc.GetSize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     [return: NativeTypeName("SIZE_T")]
@@ -68,6 +76,7 @@ public unsafe partial struct IMalloc : IMalloc.Interface
         return ((delegate* unmanaged<IMalloc*, void*, nuint>)(lpVtbl[6]))((IMalloc*)Unsafe.AsPointer(ref this), pv);
     }
 
+    /// <include file='IMalloc.xml' path='doc/member[@name="IMalloc.DidAlloc"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public int DidAlloc(void* pv)
@@ -75,6 +84,7 @@ public unsafe partial struct IMalloc : IMalloc.Interface
         return ((delegate* unmanaged<IMalloc*, void*, int>)(lpVtbl[7]))((IMalloc*)Unsafe.AsPointer(ref this), pv);
     }
 
+    /// <include file='IMalloc.xml' path='doc/member[@name="IMalloc.HeapMinimize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public void HeapMinimize()

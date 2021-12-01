@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IThumbnailCapture.CaptureThumbnail">
+    <summary>
+      <para>Retrieves a thumbnail representation of an <a href="https://docs.microsoft.com//dotnet/api/mshtml.ihtmldocument2?view=powershellsdk-1.1.0">IHTMLDocument2</a> document.</para>
+      <para>
+        <b>Note</b>  This method is deprecated as of Windows 7. The feature it supported is no longer present in Windows.</para>
+    </summary>
+    <param name="pMaxSize">
+      <para>Type: <b>const <a href="https://docs.microsoft.com//previous-versions/dd145106(v=vs.85)">SIZE</a>*</b></para>
+      <para>A pointer to a <a href="https://docs.microsoft.com//previous-versions/dd145106(v=vs.85)">SIZE</a> structure that specifies the maximum size of the bitmap, in pixels.</para>
+    </param>
+    <param name="pHTMLDoc2">
+      <para>Type: <b><see cref="IUnknown" />*</b></para>
+      <para>A pointer to an <a href="https://docs.microsoft.com//dotnet/api/mshtml.ihtmldocument2?view=powershellsdk-1.1.0">IHTMLDocument2</a> interface's <see cref="IUnknown" /> interface.</para>
+    </param>
+    <param name="phbmThumbnail">
+      <para>Type: <b>HBITMAP*</b></para>
+      <para>A handle to a bitmap that represents the document object.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//dotnet/api/mshtml.ihtmldocument2?view=powershellsdk-1.1.0">IHTMLDocument2</seealso>
+    <seealso cref="IThumbnailCapture" />
+  </member>
+  <member name="IThumbnailCapture">
+    <summary>
+      <para>Exposes a method that obtains a thumbnail representation of an HTML wallpaper.</para>
+      <para>
+        <b>Note</b>  This interface is deprecated as of Windows 7. The feature it supported is no longer present in Windows.</para>
+    </summary>
+  </member>
+</doc>

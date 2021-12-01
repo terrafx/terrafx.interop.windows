@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="FIND_BY_SID_DATA">
+    <summary>
+      <para>Contains data for the
+<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_find_files_by_sid">FSCTL_FIND_FILES_BY_SID</a> control
+code.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_find_files_by_sid">FSCTL_FIND_FILES_BY_SID</seealso>
+  </member>
+  <member name="FIND_BY_SID_DATA.Restart">
+    <summary>
+      <para>Indicates whether to restart the search. This member should be 1 on first call, so the search will start
+from the root. For subsequent calls, this member should be zero so the search will resume at the point where it
+stopped.</para>
+    </summary>
+  </member>
+  <member name="FIND_BY_SID_DATA.Sid">
+    <summary>
+      <para>A <see cref="SID" /> structure that specifies the desired creator
+owner.</para>
+    </summary>
+  </member>
+</doc>

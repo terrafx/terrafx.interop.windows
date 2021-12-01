@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_SECURITY_HEADER_VERSION.xml' path='doc/member[@name="WS_SECURITY_HEADER_VERSION"]/*' />
 public enum WS_SECURITY_HEADER_VERSION
 {
+    /// <include file='WS_SECURITY_HEADER_VERSION.xml' path='doc/member[@name="WS_SECURITY_HEADER_VERSION.WS_SECURITY_HEADER_VERSION_1_0"]/*' />
     WS_SECURITY_HEADER_VERSION_1_0 = 0x1,
+
+    /// <include file='WS_SECURITY_HEADER_VERSION.xml' path='doc/member[@name="WS_SECURITY_HEADER_VERSION.WS_SECURITY_HEADER_VERSION_1_1"]/*' />
     WS_SECURITY_HEADER_VERSION_1_1 = 0x2,
 }

@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HTMLOptionElement.xml' path='doc/member[@name="HTMLOptionElement"]/*' />
 [Guid("3050F24D-98B5-11CF-BB82-00AA00BDCE0B")]
 public partial struct HTMLOptionElement
 {

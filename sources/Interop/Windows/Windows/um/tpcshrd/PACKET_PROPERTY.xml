@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PACKET_PROPERTY">
+    <summary>
+      <para>Describes a packet property that is reported by the tablet driver.</para>
+    </summary>
+    <seealso cref="PACKET_DESCRIPTION Structure" />
+    <seealso cref="PROPERTY_METRICS Structure" />
+  </member>
+  <member name="PACKET_PROPERTY.guid">
+    <summary>
+      <para>The property. This value is not limited to the set of predefined GUIDs. An application or a device driver may define new GUIDs at any time.</para>
+    </summary>
+  </member>
+  <member name="PACKET_PROPERTY.PropertyMetrics">
+    <summary>
+      <para>The range, units, and resolution of the packet property.</para>
+    </summary>
+  </member>
+</doc>

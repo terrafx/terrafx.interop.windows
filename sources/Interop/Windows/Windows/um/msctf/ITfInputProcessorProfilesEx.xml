@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ITfInputProcessorProfilesEx.SetLanguageProfileDisplayName">
+    <summary>
+      <para>Redistributable: Requires TSF 1.0 on Windows 2000.</para>
+      <para>Header: Declared in Msctf.idl and Msctf.h.</para>
+      <para>Library: Included as a resource in Msctf.dll.</para>
+    </summary>
+    <param name="rclsid"></param>
+    <param name="langid"></param>
+    <param name="guidProfile"></param>
+    <param name="pchFile"></param>
+    <param name="cchFile"></param>
+    <param name="uResId"></param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="ITfInputProcessorProfiles.AddLanguageProfile " />
+    <seealso cref="ITfInputProcessorProfilesEx" />
+  </member>
+  <member name="ITfInputProcessorProfilesEx">
+    <summary>
+      <para>This  interface is implemented by the TSF manager and used by a text service or application to set the display description of the language profile. To obtain an instance of this interface, call <b>ITfInputProcessorProfiles.QueryInterface</b> with <b>IID_ITfInputProcessorProfilesEx</b>.</para>
+    </summary>
+    <seealso cref="ITfInputProcessorProfiles" />
+    <seealso cref="IUnknown" />
+  </member>
+</doc>

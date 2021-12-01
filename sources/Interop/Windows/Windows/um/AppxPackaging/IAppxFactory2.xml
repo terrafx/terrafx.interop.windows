@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IAppxFactory2.CreateContentGroupMapReader">
+    <summary>
+      <para>Creates an <see cref="IAppxContentGroupMapReader" />.</para>
+    </summary>
+    <param name="inputStream">
+      <para>The stream that delivers the content group map XML for reading.</para>
+    </param>
+    <param name="contentGroupMapReader">
+      <para>The content group map reader.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IAppxFactory2" />
+  </member>
+  <member name="IAppxFactory2.CreateContentGroupMapWriter">
+    <summary>
+      <para>Creates an <see cref="IAppxContentGroupMapWriter" />.</para>
+    </summary>
+    <param name="stream">
+      <para>The stream that receives the content group map.</para>
+    </param>
+    <param name="contentGroupMapWriter">
+      <para>Provides a write-only object model for a content group map.</para>
+    </param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IAppxFactory2" />
+  </member>
+  <member name="IAppxFactory2.CreateSourceContentGroupMapReader">
+    <summary>
+      <para>Creates an <see cref="IAppxSourceContentGroupMapReader" />.</para>
+    </summary>
+    <param name="inputStream">
+      <para>The stream that delivers the source content group map XML for reading.</para>
+    </param>
+    <param name="reader"></param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso cref="IAppxFactory2" />
+  </member>
+  <member name="IAppxFactory2">
+    <summary>
+      <para>Creates objects for reading and writing app packages.</para>
+    </summary>
+  </member>
+</doc>

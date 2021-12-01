@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IPropertyChange.xml' path='doc/member[@name="IPropertyChange"]/*' />
 [Guid("F917BC8A-1BBA-4478-A245-1BDE03EB9431")]
 [NativeTypeName("struct IPropertyChange : IObjectWithPropertyKey")]
 [NativeInheritance("IObjectWithPropertyKey")]
@@ -16,6 +17,7 @@ public unsafe partial struct IPropertyChange : IPropertyChange.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IPropertyChange : IPropertyChange.Interface
         return ((delegate* unmanaged<IPropertyChange*, Guid*, void**, int>)(lpVtbl[0]))((IPropertyChange*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IPropertyChange : IPropertyChange.Interface
         return ((delegate* unmanaged<IPropertyChange*, uint>)(lpVtbl[1]))((IPropertyChange*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IPropertyChange : IPropertyChange.Interface
         return ((delegate* unmanaged<IPropertyChange*, uint>)(lpVtbl[2]))((IPropertyChange*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IObjectWithPropertyKey.SetPropertyKey" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetPropertyKey([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key)
@@ -46,6 +51,7 @@ public unsafe partial struct IPropertyChange : IPropertyChange.Interface
         return ((delegate* unmanaged<IPropertyChange*, PROPERTYKEY*, int>)(lpVtbl[3]))((IPropertyChange*)Unsafe.AsPointer(ref this), key);
     }
 
+    /// <inheritdoc cref="IObjectWithPropertyKey.GetPropertyKey" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetPropertyKey(PROPERTYKEY* pkey)
@@ -53,6 +59,7 @@ public unsafe partial struct IPropertyChange : IPropertyChange.Interface
         return ((delegate* unmanaged<IPropertyChange*, PROPERTYKEY*, int>)(lpVtbl[4]))((IPropertyChange*)Unsafe.AsPointer(ref this), pkey);
     }
 
+    /// <include file='IPropertyChange.xml' path='doc/member[@name="IPropertyChange.ApplyToPropVariant"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT ApplyToPropVariant([NativeTypeName("const PROPVARIANT &")] PROPVARIANT* propvarIn, PROPVARIANT* ppropvarOut)

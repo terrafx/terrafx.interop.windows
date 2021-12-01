@@ -7,12 +7,15 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WIN32_MEMORY_RANGE_ENTRY.xml' path='doc/member[@name="WIN32_MEMORY_RANGE_ENTRY"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public unsafe partial struct WIN32_MEMORY_RANGE_ENTRY
 {
+    /// <include file='WIN32_MEMORY_RANGE_ENTRY.xml' path='doc/member[@name="WIN32_MEMORY_RANGE_ENTRY.VirtualAddress"]/*' />
     [NativeTypeName("PVOID")]
     public void* VirtualAddress;
 
+    /// <include file='WIN32_MEMORY_RANGE_ENTRY.xml' path='doc/member[@name="WIN32_MEMORY_RANGE_ENTRY.NumberOfBytes"]/*' />
     [NativeTypeName("SIZE_T")]
     public nuint NumberOfBytes;
 }

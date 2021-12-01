@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVEncMP12MuxSysRateBound.xml' path='doc/member[@name="CODECAPI_AVEncMP12MuxSysRateBound"]/*' />
 [Guid("05F0428A-EE30-489D-AE28-205C72446710")]
 public partial struct CODECAPI_AVEncMP12MuxSysRateBound
 {

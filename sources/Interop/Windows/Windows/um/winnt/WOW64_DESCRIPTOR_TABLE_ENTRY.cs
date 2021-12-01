@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WOW64_DESCRIPTOR_TABLE_ENTRY.xml' path='doc/member[@name="WOW64_DESCRIPTOR_TABLE_ENTRY"]/*' />
 public partial struct WOW64_DESCRIPTOR_TABLE_ENTRY
 {
+    /// <include file='WOW64_DESCRIPTOR_TABLE_ENTRY.xml' path='doc/member[@name="WOW64_DESCRIPTOR_TABLE_ENTRY.Selector"]/*' />
     [NativeTypeName("DWORD")]
     public uint Selector;
 
+    /// <include file='WOW64_DESCRIPTOR_TABLE_ENTRY.xml' path='doc/member[@name="WOW64_DESCRIPTOR_TABLE_ENTRY.Descriptor"]/*' />
     public WOW64_LDT_ENTRY Descriptor;
 }

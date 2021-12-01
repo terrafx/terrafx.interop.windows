@@ -5,8 +5,10 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SET_PURGE_FAILURE_MODE_INPUT.xml' path='doc/member[@name="SET_PURGE_FAILURE_MODE_INPUT"]/*' />
 public partial struct SET_PURGE_FAILURE_MODE_INPUT
 {
+    /// <include file='SET_PURGE_FAILURE_MODE_INPUT.xml' path='doc/member[@name="SET_PURGE_FAILURE_MODE_INPUT.Flags"]/*' />
     [NativeTypeName("DWORD")]
     public uint Flags;
 }

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ICSSFilter.xml' path='doc/member[@name="ICSSFilter"]/*' />
 [Guid("3050F3EC-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct ICSSFilter : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ICSSFilter : ICSSFilter.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ICSSFilter : ICSSFilter.Interface
         return ((delegate* unmanaged<ICSSFilter*, Guid*, void**, int>)(lpVtbl[0]))((ICSSFilter*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ICSSFilter : ICSSFilter.Interface
         return ((delegate* unmanaged<ICSSFilter*, uint>)(lpVtbl[1]))((ICSSFilter*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ICSSFilter : ICSSFilter.Interface
         return ((delegate* unmanaged<ICSSFilter*, uint>)(lpVtbl[2]))((ICSSFilter*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ICSSFilter.xml' path='doc/member[@name="ICSSFilter.SetSite"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetSite(ICSSFilterSite* pSink)
@@ -46,6 +51,7 @@ public unsafe partial struct ICSSFilter : ICSSFilter.Interface
         return ((delegate* unmanaged<ICSSFilter*, ICSSFilterSite*, int>)(lpVtbl[3]))((ICSSFilter*)Unsafe.AsPointer(ref this), pSink);
     }
 
+    /// <include file='ICSSFilter.xml' path='doc/member[@name="ICSSFilter.OnAmbientPropertyChange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT OnAmbientPropertyChange([NativeTypeName("LONG")] int dispid)

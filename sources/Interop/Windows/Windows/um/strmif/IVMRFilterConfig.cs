@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IVMRFilterConfig.xml' path='doc/member[@name="IVMRFilterConfig"]/*' />
 [Guid("9E5530C5-7034-48B4-BB46-0B8A6EFC8E36")]
 [NativeTypeName("struct IVMRFilterConfig : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IVMRFilterConfig : IVMRFilterConfig.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IVMRFilterConfig : IVMRFilterConfig.Interface
         return ((delegate* unmanaged<IVMRFilterConfig*, Guid*, void**, int>)(lpVtbl[0]))((IVMRFilterConfig*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IVMRFilterConfig : IVMRFilterConfig.Interface
         return ((delegate* unmanaged<IVMRFilterConfig*, uint>)(lpVtbl[1]))((IVMRFilterConfig*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IVMRFilterConfig : IVMRFilterConfig.Interface
         return ((delegate* unmanaged<IVMRFilterConfig*, uint>)(lpVtbl[2]))((IVMRFilterConfig*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IVMRFilterConfig.xml' path='doc/member[@name="IVMRFilterConfig.SetImageCompositor"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetImageCompositor(IVMRImageCompositor* lpVMRImgCompositor)
@@ -46,6 +51,7 @@ public unsafe partial struct IVMRFilterConfig : IVMRFilterConfig.Interface
         return ((delegate* unmanaged<IVMRFilterConfig*, IVMRImageCompositor*, int>)(lpVtbl[3]))((IVMRFilterConfig*)Unsafe.AsPointer(ref this), lpVMRImgCompositor);
     }
 
+    /// <include file='IVMRFilterConfig.xml' path='doc/member[@name="IVMRFilterConfig.SetNumberOfStreams"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetNumberOfStreams([NativeTypeName("DWORD")] uint dwMaxStreams)
@@ -53,6 +59,7 @@ public unsafe partial struct IVMRFilterConfig : IVMRFilterConfig.Interface
         return ((delegate* unmanaged<IVMRFilterConfig*, uint, int>)(lpVtbl[4]))((IVMRFilterConfig*)Unsafe.AsPointer(ref this), dwMaxStreams);
     }
 
+    /// <include file='IVMRFilterConfig.xml' path='doc/member[@name="IVMRFilterConfig.GetNumberOfStreams"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetNumberOfStreams([NativeTypeName("DWORD *")] uint* pdwMaxStreams)
@@ -60,6 +67,7 @@ public unsafe partial struct IVMRFilterConfig : IVMRFilterConfig.Interface
         return ((delegate* unmanaged<IVMRFilterConfig*, uint*, int>)(lpVtbl[5]))((IVMRFilterConfig*)Unsafe.AsPointer(ref this), pdwMaxStreams);
     }
 
+    /// <include file='IVMRFilterConfig.xml' path='doc/member[@name="IVMRFilterConfig.SetRenderingPrefs"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT SetRenderingPrefs([NativeTypeName("DWORD")] uint dwRenderFlags)
@@ -67,6 +75,7 @@ public unsafe partial struct IVMRFilterConfig : IVMRFilterConfig.Interface
         return ((delegate* unmanaged<IVMRFilterConfig*, uint, int>)(lpVtbl[6]))((IVMRFilterConfig*)Unsafe.AsPointer(ref this), dwRenderFlags);
     }
 
+    /// <include file='IVMRFilterConfig.xml' path='doc/member[@name="IVMRFilterConfig.GetRenderingPrefs"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetRenderingPrefs([NativeTypeName("DWORD *")] uint* pdwRenderFlags)
@@ -74,6 +83,7 @@ public unsafe partial struct IVMRFilterConfig : IVMRFilterConfig.Interface
         return ((delegate* unmanaged<IVMRFilterConfig*, uint*, int>)(lpVtbl[7]))((IVMRFilterConfig*)Unsafe.AsPointer(ref this), pdwRenderFlags);
     }
 
+    /// <include file='IVMRFilterConfig.xml' path='doc/member[@name="IVMRFilterConfig.SetRenderingMode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT SetRenderingMode([NativeTypeName("DWORD")] uint Mode)
@@ -81,6 +91,7 @@ public unsafe partial struct IVMRFilterConfig : IVMRFilterConfig.Interface
         return ((delegate* unmanaged<IVMRFilterConfig*, uint, int>)(lpVtbl[8]))((IVMRFilterConfig*)Unsafe.AsPointer(ref this), Mode);
     }
 
+    /// <include file='IVMRFilterConfig.xml' path='doc/member[@name="IVMRFilterConfig.GetRenderingMode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT GetRenderingMode([NativeTypeName("DWORD *")] uint* pMode)

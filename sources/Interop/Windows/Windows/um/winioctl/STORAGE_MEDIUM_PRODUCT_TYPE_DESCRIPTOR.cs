@@ -7,15 +7,19 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STORAGE_MEDIUM_PRODUCT_TYPE_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_MEDIUM_PRODUCT_TYPE_DESCRIPTOR"]/*' />
 [SupportedOSPlatform("windows8.1")]
 public partial struct STORAGE_MEDIUM_PRODUCT_TYPE_DESCRIPTOR
 {
+    /// <include file='STORAGE_MEDIUM_PRODUCT_TYPE_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_MEDIUM_PRODUCT_TYPE_DESCRIPTOR.Version"]/*' />
     [NativeTypeName("DWORD")]
     public uint Version;
 
+    /// <include file='STORAGE_MEDIUM_PRODUCT_TYPE_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_MEDIUM_PRODUCT_TYPE_DESCRIPTOR.Size"]/*' />
     [NativeTypeName("DWORD")]
     public uint Size;
 
+    /// <include file='STORAGE_MEDIUM_PRODUCT_TYPE_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_MEDIUM_PRODUCT_TYPE_DESCRIPTOR.MediumProductType"]/*' />
     [NativeTypeName("DWORD")]
     public uint MediumProductType;
 }

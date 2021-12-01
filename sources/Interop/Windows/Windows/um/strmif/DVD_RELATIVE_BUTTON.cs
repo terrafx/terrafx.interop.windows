@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DVD_RELATIVE_BUTTON.xml' path='doc/member[@name="DVD_RELATIVE_BUTTON"]/*' />
 public enum DVD_RELATIVE_BUTTON
 {
+    /// <include file='DVD_RELATIVE_BUTTON.xml' path='doc/member[@name="DVD_RELATIVE_BUTTON.DVD_Relative_Upper"]/*' />
     DVD_Relative_Upper = 1,
+
+    /// <include file='DVD_RELATIVE_BUTTON.xml' path='doc/member[@name="DVD_RELATIVE_BUTTON.DVD_Relative_Lower"]/*' />
     DVD_Relative_Lower = 2,
+
+    /// <include file='DVD_RELATIVE_BUTTON.xml' path='doc/member[@name="DVD_RELATIVE_BUTTON.DVD_Relative_Left"]/*' />
     DVD_Relative_Left = 3,
+
+    /// <include file='DVD_RELATIVE_BUTTON.xml' path='doc/member[@name="DVD_RELATIVE_BUTTON.DVD_Relative_Right"]/*' />
     DVD_Relative_Right = 4,
 }

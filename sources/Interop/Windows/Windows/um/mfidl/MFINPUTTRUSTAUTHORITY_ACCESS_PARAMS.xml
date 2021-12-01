@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS">
+    <summary>
+      <para>Contains parameters for the <see cref="IMFInputTrustAuthority.BindAccess" /> or <see cref="IMFInputTrustAuthority.UpdateAccess" /> method.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-structures">Media Foundation Structures</seealso>
+  </member>
+  <member name="MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS.dwSize">
+    <summary>
+      <para>Size of the structure, in bytes.</para>
+    </summary>
+  </member>
+  <member name="MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS.dwVer">
+    <summary>
+      <para>Version number. This value must be zero.</para>
+    </summary>
+  </member>
+  <member name="MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS.cbSignatureOffset">
+    <summary>
+      <para>Offset of the signature from the start of the structure, in bytes.</para>
+    </summary>
+  </member>
+  <member name="MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS.cbSignatureSize">
+    <summary>
+      <para>Size of the signature, in bytes.</para>
+    </summary>
+  </member>
+  <member name="MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS.cbExtensionOffset">
+    <summary>
+      <para>Offset of the extension blob from the start of the structure, in bytes.</para>
+    </summary>
+  </member>
+  <member name="MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS.cbExtensionSize">
+    <summary>
+      <para>Size of the extension blob, in bytes.</para>
+    </summary>
+  </member>
+  <member name="MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS.cActions">
+    <summary>
+      <para>Number of elements in the <b>rgOutputActions</b> array.</para>
+    </summary>
+  </member>
+  <member name="MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS.rgOutputActions">
+    <summary>
+      <para>Array of <see cref="MFINPUTTRUSTAUTHORITY_ACCESS_ACTION" /> structures. The number of elements in the array is specified in the <b>cActions</b> member.</para>
+    </summary>
+  </member>
+</doc>

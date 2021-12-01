@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SYNCMGR_EVENT_FLAGS.xml' path='doc/member[@name="SYNCMGR_EVENT_FLAGS"]/*' />
 public enum SYNCMGR_EVENT_FLAGS
 {
+    /// <include file='SYNCMGR_EVENT_FLAGS.xml' path='doc/member[@name="SYNCMGR_EVENT_FLAGS.SYNCMGR_EF_NONE"]/*' />
     SYNCMGR_EF_NONE = 0,
+
+    /// <include file='SYNCMGR_EVENT_FLAGS.xml' path='doc/member[@name="SYNCMGR_EVENT_FLAGS.SYNCMGR_EF_VALID"]/*' />
     SYNCMGR_EF_VALID = 0,
 }

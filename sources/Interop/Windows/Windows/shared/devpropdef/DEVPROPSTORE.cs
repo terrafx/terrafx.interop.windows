@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DEVPROPSTORE.xml' path='doc/member[@name="DEVPROPSTORE"]/*' />
 public enum DEVPROPSTORE
 {
+    /// <include file='DEVPROPSTORE.xml' path='doc/member[@name="DEVPROPSTORE.DEVPROP_STORE_SYSTEM"]/*' />
     DEVPROP_STORE_SYSTEM,
+
+    /// <include file='DEVPROPSTORE.xml' path='doc/member[@name="DEVPROPSTORE.DEVPROP_STORE_USER"]/*' />
     DEVPROP_STORE_USER,
 }

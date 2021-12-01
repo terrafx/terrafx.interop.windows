@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IShellView2.xml' path='doc/member[@name="IShellView2"]/*' />
 [Guid("88E39E80-3578-11CF-AE69-08002B2E1262")]
 [NativeTypeName("struct IShellView2 : IShellView")]
 [NativeInheritance("IShellView")]
@@ -16,6 +17,7 @@ public unsafe partial struct IShellView2 : IShellView2.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IShellView2 : IShellView2.Interface
         return ((delegate* unmanaged<IShellView2*, Guid*, void**, int>)(lpVtbl[0]))((IShellView2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IShellView2 : IShellView2.Interface
         return ((delegate* unmanaged<IShellView2*, uint>)(lpVtbl[1]))((IShellView2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IShellView2 : IShellView2.Interface
         return ((delegate* unmanaged<IShellView2*, uint>)(lpVtbl[2]))((IShellView2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IOleWindow.GetWindow" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetWindow(HWND* phwnd)
@@ -46,6 +51,7 @@ public unsafe partial struct IShellView2 : IShellView2.Interface
         return ((delegate* unmanaged<IShellView2*, HWND*, int>)(lpVtbl[3]))((IShellView2*)Unsafe.AsPointer(ref this), phwnd);
     }
 
+    /// <inheritdoc cref="IOleWindow.ContextSensitiveHelp" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT ContextSensitiveHelp(BOOL fEnterMode)
@@ -53,6 +59,7 @@ public unsafe partial struct IShellView2 : IShellView2.Interface
         return ((delegate* unmanaged<IShellView2*, BOOL, int>)(lpVtbl[4]))((IShellView2*)Unsafe.AsPointer(ref this), fEnterMode);
     }
 
+    /// <inheritdoc cref="IShellView.TranslateAcceleratorW" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT TranslateAcceleratorW(MSG* pmsg)
@@ -60,6 +67,7 @@ public unsafe partial struct IShellView2 : IShellView2.Interface
         return ((delegate* unmanaged<IShellView2*, MSG*, int>)(lpVtbl[5]))((IShellView2*)Unsafe.AsPointer(ref this), pmsg);
     }
 
+    /// <inheritdoc cref="IShellView.EnableModeless" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT EnableModeless(BOOL fEnable)
@@ -67,6 +75,7 @@ public unsafe partial struct IShellView2 : IShellView2.Interface
         return ((delegate* unmanaged<IShellView2*, BOOL, int>)(lpVtbl[6]))((IShellView2*)Unsafe.AsPointer(ref this), fEnable);
     }
 
+    /// <inheritdoc cref="IShellView.UIActivate" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT UIActivate(uint uState)
@@ -74,6 +83,7 @@ public unsafe partial struct IShellView2 : IShellView2.Interface
         return ((delegate* unmanaged<IShellView2*, uint, int>)(lpVtbl[7]))((IShellView2*)Unsafe.AsPointer(ref this), uState);
     }
 
+    /// <inheritdoc cref="IShellView.Refresh" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT Refresh()
@@ -81,6 +91,7 @@ public unsafe partial struct IShellView2 : IShellView2.Interface
         return ((delegate* unmanaged<IShellView2*, int>)(lpVtbl[8]))((IShellView2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IShellView.CreateViewWindow" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT CreateViewWindow(IShellView* psvPrevious, [NativeTypeName("LPCFOLDERSETTINGS")] FOLDERSETTINGS* pfs, IShellBrowser* psb, RECT* prcView, HWND* phWnd)
@@ -88,6 +99,7 @@ public unsafe partial struct IShellView2 : IShellView2.Interface
         return ((delegate* unmanaged<IShellView2*, IShellView*, FOLDERSETTINGS*, IShellBrowser*, RECT*, HWND*, int>)(lpVtbl[9]))((IShellView2*)Unsafe.AsPointer(ref this), psvPrevious, pfs, psb, prcView, phWnd);
     }
 
+    /// <inheritdoc cref="IShellView.DestroyViewWindow" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT DestroyViewWindow()
@@ -95,6 +107,7 @@ public unsafe partial struct IShellView2 : IShellView2.Interface
         return ((delegate* unmanaged<IShellView2*, int>)(lpVtbl[10]))((IShellView2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IShellView.GetCurrentInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT GetCurrentInfo([NativeTypeName("LPFOLDERSETTINGS")] FOLDERSETTINGS* pfs)
@@ -102,6 +115,7 @@ public unsafe partial struct IShellView2 : IShellView2.Interface
         return ((delegate* unmanaged<IShellView2*, FOLDERSETTINGS*, int>)(lpVtbl[11]))((IShellView2*)Unsafe.AsPointer(ref this), pfs);
     }
 
+    /// <inheritdoc cref="IShellView.AddPropertySheetPages" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT AddPropertySheetPages([NativeTypeName("DWORD")] uint dwReserved, [NativeTypeName("LPFNSVADDPROPSHEETPAGE")] delegate* unmanaged<HPROPSHEETPAGE, LPARAM, BOOL> pfn, LPARAM lparam)
@@ -109,6 +123,7 @@ public unsafe partial struct IShellView2 : IShellView2.Interface
         return ((delegate* unmanaged<IShellView2*, uint, delegate* unmanaged<HPROPSHEETPAGE, LPARAM, BOOL>, LPARAM, int>)(lpVtbl[12]))((IShellView2*)Unsafe.AsPointer(ref this), dwReserved, pfn, lparam);
     }
 
+    /// <inheritdoc cref="IShellView.SaveViewState" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT SaveViewState()
@@ -116,6 +131,7 @@ public unsafe partial struct IShellView2 : IShellView2.Interface
         return ((delegate* unmanaged<IShellView2*, int>)(lpVtbl[13]))((IShellView2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IShellView.SelectItem" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT SelectItem([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlItem, [NativeTypeName("SVSIF")] uint uFlags)
@@ -123,6 +139,7 @@ public unsafe partial struct IShellView2 : IShellView2.Interface
         return ((delegate* unmanaged<IShellView2*, ITEMIDLIST*, uint, int>)(lpVtbl[14]))((IShellView2*)Unsafe.AsPointer(ref this), pidlItem, uFlags);
     }
 
+    /// <inheritdoc cref="IShellView.GetItemObject" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT GetItemObject(uint uItem, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
@@ -130,6 +147,7 @@ public unsafe partial struct IShellView2 : IShellView2.Interface
         return ((delegate* unmanaged<IShellView2*, uint, Guid*, void**, int>)(lpVtbl[15]))((IShellView2*)Unsafe.AsPointer(ref this), uItem, riid, ppv);
     }
 
+    /// <include file='IShellView2.xml' path='doc/member[@name="IShellView2.GetView"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT GetView([NativeTypeName("SHELLVIEWID *")] Guid* pvid, [NativeTypeName("ULONG")] uint uView)
@@ -137,6 +155,7 @@ public unsafe partial struct IShellView2 : IShellView2.Interface
         return ((delegate* unmanaged<IShellView2*, Guid*, uint, int>)(lpVtbl[16]))((IShellView2*)Unsafe.AsPointer(ref this), pvid, uView);
     }
 
+    /// <include file='IShellView2.xml' path='doc/member[@name="IShellView2.CreateViewWindow2"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT CreateViewWindow2([NativeTypeName("LPSV2CVW2_PARAMS")] SV2CVW2_PARAMS* lpParams)
@@ -144,6 +163,7 @@ public unsafe partial struct IShellView2 : IShellView2.Interface
         return ((delegate* unmanaged<IShellView2*, SV2CVW2_PARAMS*, int>)(lpVtbl[17]))((IShellView2*)Unsafe.AsPointer(ref this), lpParams);
     }
 
+    /// <include file='IShellView2.xml' path='doc/member[@name="IShellView2.HandleRename"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT HandleRename([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlNew)
@@ -151,6 +171,7 @@ public unsafe partial struct IShellView2 : IShellView2.Interface
         return ((delegate* unmanaged<IShellView2*, ITEMIDLIST*, int>)(lpVtbl[18]))((IShellView2*)Unsafe.AsPointer(ref this), pidlNew);
     }
 
+    /// <include file='IShellView2.xml' path='doc/member[@name="IShellView2.SelectAndPositionItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT SelectAndPositionItem([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlItem, uint uFlags, POINT* ppt)

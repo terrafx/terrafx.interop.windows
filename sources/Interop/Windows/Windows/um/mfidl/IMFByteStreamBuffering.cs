@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFByteStreamBuffering.xml' path='doc/member[@name="IMFByteStreamBuffering"]/*' />
 [Guid("6D66D782-1D4F-4DB7-8C63-CB8C77F1EF5E")]
 [NativeTypeName("struct IMFByteStreamBuffering : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMFByteStreamBuffering : IMFByteStreamBuffering.Int
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMFByteStreamBuffering : IMFByteStreamBuffering.Int
         return ((delegate* unmanaged<IMFByteStreamBuffering*, Guid*, void**, int>)(lpVtbl[0]))((IMFByteStreamBuffering*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMFByteStreamBuffering : IMFByteStreamBuffering.Int
         return ((delegate* unmanaged<IMFByteStreamBuffering*, uint>)(lpVtbl[1]))((IMFByteStreamBuffering*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMFByteStreamBuffering : IMFByteStreamBuffering.Int
         return ((delegate* unmanaged<IMFByteStreamBuffering*, uint>)(lpVtbl[2]))((IMFByteStreamBuffering*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFByteStreamBuffering.xml' path='doc/member[@name="IMFByteStreamBuffering.SetBufferingParams"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetBufferingParams(MFBYTESTREAM_BUFFERING_PARAMS* pParams)
@@ -46,6 +51,7 @@ public unsafe partial struct IMFByteStreamBuffering : IMFByteStreamBuffering.Int
         return ((delegate* unmanaged<IMFByteStreamBuffering*, MFBYTESTREAM_BUFFERING_PARAMS*, int>)(lpVtbl[3]))((IMFByteStreamBuffering*)Unsafe.AsPointer(ref this), pParams);
     }
 
+    /// <include file='IMFByteStreamBuffering.xml' path='doc/member[@name="IMFByteStreamBuffering.EnableBuffering"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT EnableBuffering(BOOL fEnable)
@@ -53,6 +59,7 @@ public unsafe partial struct IMFByteStreamBuffering : IMFByteStreamBuffering.Int
         return ((delegate* unmanaged<IMFByteStreamBuffering*, BOOL, int>)(lpVtbl[4]))((IMFByteStreamBuffering*)Unsafe.AsPointer(ref this), fEnable);
     }
 
+    /// <include file='IMFByteStreamBuffering.xml' path='doc/member[@name="IMFByteStreamBuffering.StopBuffering"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT StopBuffering()

@@ -7,16 +7,22 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MFVIDEOFORMAT.xml' path='doc/member[@name="MFVIDEOFORMAT"]/*' />
 public partial struct MFVIDEOFORMAT
 {
+    /// <include file='MFVIDEOFORMAT.xml' path='doc/member[@name="MFVIDEOFORMAT.dwSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwSize;
 
+    /// <include file='MFVIDEOFORMAT.xml' path='doc/member[@name="MFVIDEOFORMAT.videoInfo"]/*' />
     public MFVideoInfo videoInfo;
 
+    /// <include file='MFVIDEOFORMAT.xml' path='doc/member[@name="MFVIDEOFORMAT.guidFormat"]/*' />
     public Guid guidFormat;
 
+    /// <include file='MFVIDEOFORMAT.xml' path='doc/member[@name="MFVIDEOFORMAT.compressedInfo"]/*' />
     public MFVideoCompressedInfo compressedInfo;
 
+    /// <include file='MFVIDEOFORMAT.xml' path='doc/member[@name="MFVIDEOFORMAT.surfaceInfo"]/*' />
     public MFVideoSurfaceInfo surfaceInfo;
 }

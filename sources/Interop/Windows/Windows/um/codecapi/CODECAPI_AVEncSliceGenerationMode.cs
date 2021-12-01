@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVEncSliceGenerationMode.xml' path='doc/member[@name="CODECAPI_AVEncSliceGenerationMode"]/*' />
 [Guid("8A6BC67F-9497-4286-B46B-02DB8D60EDBC")]
 public partial struct CODECAPI_AVEncSliceGenerationMode
 {

@@ -7,11 +7,14 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SHARDAPPIDINFO.xml' path='doc/member[@name="SHARDAPPIDINFO"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public unsafe partial struct SHARDAPPIDINFO
 {
+    /// <include file='SHARDAPPIDINFO.xml' path='doc/member[@name="SHARDAPPIDINFO.psi"]/*' />
     public IShellItem* psi;
 
+    /// <include file='SHARDAPPIDINFO.xml' path='doc/member[@name="SHARDAPPIDINFO.pszAppID"]/*' />
     [NativeTypeName("PCWSTR")]
     public ushort* pszAppID;
 }

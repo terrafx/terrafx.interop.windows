@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DISK_EXTENT">
+    <summary>
+      <para>Represents a disk extent.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com/ni-winioctl-ioctl_volume_get_volume_disk_extents.md">IOCTL_VOLUME_GET_VOLUME_DISK_EXTENTS</seealso>
+    <seealso cref="LARGE_INTEGER" />
+    <seealso cref="VOLUME_DISK_EXTENTS" />
+  </member>
+  <member name="DISK_EXTENT.DiskNumber">
+    <summary>
+      <para>The number of the disk that contains this extent.</para>
+      <para>This is the same number that is used to construct the name of the disk, for example, the <i>X</i> in "\\?\PhysicalDrive<i>X</i>" or "\\?\\Harddisk<i>X</i>".</para>
+    </summary>
+  </member>
+  <member name="DISK_EXTENT.StartingOffset">
+    <summary>
+      <para>The offset from the beginning of the disk to the extent, in bytes.</para>
+    </summary>
+  </member>
+  <member name="DISK_EXTENT.ExtentLength">
+    <summary>
+      <para>The number of bytes in this extent.</para>
+    </summary>
+  </member>
+</doc>

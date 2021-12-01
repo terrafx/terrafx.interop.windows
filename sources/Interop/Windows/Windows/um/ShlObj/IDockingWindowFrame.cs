@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IDockingWindowFrame.xml' path='doc/member[@name="IDockingWindowFrame"]/*' />
 [Guid("47D2657A-7B27-11D0-8CA9-00A0C92DBFE8")]
 [NativeTypeName("struct IDockingWindowFrame : IOleWindow")]
 [NativeInheritance("IOleWindow")]
@@ -16,6 +17,7 @@ public unsafe partial struct IDockingWindowFrame : IDockingWindowFrame.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IDockingWindowFrame : IDockingWindowFrame.Interface
         return ((delegate* unmanaged<IDockingWindowFrame*, Guid*, void**, int>)(lpVtbl[0]))((IDockingWindowFrame*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IDockingWindowFrame : IDockingWindowFrame.Interface
         return ((delegate* unmanaged<IDockingWindowFrame*, uint>)(lpVtbl[1]))((IDockingWindowFrame*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IDockingWindowFrame : IDockingWindowFrame.Interface
         return ((delegate* unmanaged<IDockingWindowFrame*, uint>)(lpVtbl[2]))((IDockingWindowFrame*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IOleWindow.GetWindow" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetWindow(HWND* phwnd)
@@ -46,6 +51,7 @@ public unsafe partial struct IDockingWindowFrame : IDockingWindowFrame.Interface
         return ((delegate* unmanaged<IDockingWindowFrame*, HWND*, int>)(lpVtbl[3]))((IDockingWindowFrame*)Unsafe.AsPointer(ref this), phwnd);
     }
 
+    /// <inheritdoc cref="IOleWindow.ContextSensitiveHelp" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT ContextSensitiveHelp(BOOL fEnterMode)
@@ -53,6 +59,7 @@ public unsafe partial struct IDockingWindowFrame : IDockingWindowFrame.Interface
         return ((delegate* unmanaged<IDockingWindowFrame*, BOOL, int>)(lpVtbl[4]))((IDockingWindowFrame*)Unsafe.AsPointer(ref this), fEnterMode);
     }
 
+    /// <include file='IDockingWindowFrame.xml' path='doc/member[@name="IDockingWindowFrame.AddToolbar"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT AddToolbar(IUnknown* punkSrc, [NativeTypeName("PCWSTR")] ushort* pwszItem, [NativeTypeName("DWORD")] uint dwAddFlags)
@@ -60,6 +67,7 @@ public unsafe partial struct IDockingWindowFrame : IDockingWindowFrame.Interface
         return ((delegate* unmanaged<IDockingWindowFrame*, IUnknown*, ushort*, uint, int>)(lpVtbl[5]))((IDockingWindowFrame*)Unsafe.AsPointer(ref this), punkSrc, pwszItem, dwAddFlags);
     }
 
+    /// <include file='IDockingWindowFrame.xml' path='doc/member[@name="IDockingWindowFrame.RemoveToolbar"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT RemoveToolbar(IUnknown* punkSrc, [NativeTypeName("DWORD")] uint dwRemoveFlags)
@@ -67,6 +75,7 @@ public unsafe partial struct IDockingWindowFrame : IDockingWindowFrame.Interface
         return ((delegate* unmanaged<IDockingWindowFrame*, IUnknown*, uint, int>)(lpVtbl[6]))((IDockingWindowFrame*)Unsafe.AsPointer(ref this), punkSrc, dwRemoveFlags);
     }
 
+    /// <include file='IDockingWindowFrame.xml' path='doc/member[@name="IDockingWindowFrame.FindToolbar"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT FindToolbar([NativeTypeName("PCWSTR")] ushort* pwszItem, [NativeTypeName("const IID &")] Guid* riid, void** ppv)

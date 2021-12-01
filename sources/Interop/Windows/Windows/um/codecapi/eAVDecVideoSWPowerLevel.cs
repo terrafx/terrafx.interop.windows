@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='eAVDecVideoSWPowerLevel.xml' path='doc/member[@name="eAVDecVideoSWPowerLevel"]/*' />
 public enum eAVDecVideoSWPowerLevel
 {
+    /// <include file='eAVDecVideoSWPowerLevel.xml' path='doc/member[@name="eAVDecVideoSWPowerLevel.eAVDecVideoSWPowerLevel_BatteryLife"]/*' />
     eAVDecVideoSWPowerLevel_BatteryLife = 0,
+
+    /// <include file='eAVDecVideoSWPowerLevel.xml' path='doc/member[@name="eAVDecVideoSWPowerLevel.eAVDecVideoSWPowerLevel_Balanced"]/*' />
     eAVDecVideoSWPowerLevel_Balanced = 50,
+
+    /// <include file='eAVDecVideoSWPowerLevel.xml' path='doc/member[@name="eAVDecVideoSWPowerLevel.eAVDecVideoSWPowerLevel_VideoQuality"]/*' />
     eAVDecVideoSWPowerLevel_VideoQuality = 100,
 }

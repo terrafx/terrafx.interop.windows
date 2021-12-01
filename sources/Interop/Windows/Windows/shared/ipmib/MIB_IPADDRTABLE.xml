@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MIB_IPADDRTABLE">
+    <summary>
+      <para>The
+<b>MIB_IPADDRTABLE</b> structure contains a table of IPv4 address entries.</para>
+    </summary>
+    <remarks>
+      <para>The <see cref="GetIpAddrTable" /> function retrieves the interface–to–IPv4 address mapping table on a local computer and returns this information in an <b>MIB_IPADDRTABLE</b> structure.</para>
+      <para>The <b>MIB_IPADDRTABLE</b> structure may contain padding for alignment between the <b>dwNumEntries</b> member and the first <see cref="MIB_IPADDRROW" /> array entry in the <b>table</b> member. Padding for alignment may also be present between the <b>MIB_IPADDRROW</b> array entries in the <b>table</b> member. Any access to a <b>MIB_IPADDRROW</b> array entry should assume  padding may exist.</para>
+      <para>On the Microsoft Windows Software Development Kit (SDK) released for Windows Vista and later, the organization of header files has changed and the <see cref="MIB_IPADDRROW" /> is defined in the <i>Ipmib.h</i> header file not in the <i>Iprtrmib.h</i> header file. Note that the <i>Ipmib.h</i> header file is automatically included in <i>Iprtrmib.h</i> which is automatically included in the <i>Iphlpapi.h</i> header file. The <i>Ipmib.h</i> and <i>Iprtrmib.h</i> header files should never be used directly.</para>
+      <h4>Examples</h4>
+      <para>To view an example that retrieves the <b>MIB_IPADDRTABLE</b> structure and then prints out the <see cref="MIB_IPADDRROW" /> structures in this table, see the <see cref="GetIpAddrTable" /> function.</para>
+    </remarks>
+    <seealso cref="GetIpAddrTable" />
+    <seealso cref="MIB_IPADDRROW" />
+  </member>
+  <member name="MIB_IPADDRTABLE.dwNumEntries">
+    <summary>
+      <para>The number of IPv4 address entries in the table.</para>
+    </summary>
+  </member>
+  <member name="MIB_IPADDRTABLE.table">
+    <summary>
+      <para>A pointer to a table of IPv4 address entries implemented as an array of
+<see cref="MIB_IPADDRROW" /> structures.</para>
+    </summary>
+  </member>
+</doc>

@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HELPLINKSTATES.xml' path='doc/member[@name="HELPLINKSTATES"]/*' />
 public enum HELPLINKSTATES
 {
+    /// <include file='HELPLINKSTATES.xml' path='doc/member[@name="HELPLINKSTATES.CPHL_NORMAL"]/*' />
     CPHL_NORMAL = 1,
+
+    /// <include file='HELPLINKSTATES.xml' path='doc/member[@name="HELPLINKSTATES.CPHL_HOT"]/*' />
     CPHL_HOT = 2,
+
+    /// <include file='HELPLINKSTATES.xml' path='doc/member[@name="HELPLINKSTATES.CPHL_PRESSED"]/*' />
     CPHL_PRESSED = 3,
+
+    /// <include file='HELPLINKSTATES.xml' path='doc/member[@name="HELPLINKSTATES.CPHL_DISABLED"]/*' />
     CPHL_DISABLED = 4,
 }

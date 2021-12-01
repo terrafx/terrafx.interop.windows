@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ISpatialAudioObjectForMetadataCommands.WriteNextMetadataCommand">
+    <summary>
+      <para>Writes a metadata command to the spatial audio object, each command may only be added once per object per processing cycle. Valid commands and value lengths are defined by the metadata format specified in the <see cref="SpatialAudioObjectRenderStreamForMetadataActivationParams" /> when the <see cref="ISpatialAudioObjectRenderStreamForMetadata" /> was created.</para>
+    </summary>
+    <param name="commandID">
+      <para>The ID of the metadata command.</para>
+    </param>
+    <param name="valueBuffer">
+      <para>The buffer containing the value data for the metadata command.</para>
+    </param>
+    <param name="valueBufferLength">
+      <para>The length of the <i>valueBuffer</i>.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK.</para>
+    </returns>
+    <seealso cref="ISpatialAudioObjectForMetadataCommands" />
+  </member>
+  <member name="ISpatialAudioObjectForMetadataCommands">
+    <summary>
+      <para>Used to write metadata commands for spatial audio. Valid commands and value lengths are defined by the metadata format specified in the <see cref="SpatialAudioObjectRenderStreamForMetadataActivationParams" /> when the <see cref="ISpatialAudioObjectRenderStreamForMetadata" /> was created.</para>
+      <para>This interface is a part of  Windows Sonic, Microsoft’s audio platform for more immersive audio which includes integrated spatial sound on Xbox and Windows.</para>
+    </summary>
+    <remarks>
+      <para>
+        <b>Note</b>  Many of the methods provided by this interface are implemented in the inherited <see cref="ISpatialAudioObjectBase" /> interface.</para>
+    </remarks>
+    <seealso cref="ISpatialAudioObjectBase" />
+  </member>
+</doc>

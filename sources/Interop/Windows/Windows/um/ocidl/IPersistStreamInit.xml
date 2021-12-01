@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IPersistStreamInit.GetSizeMax">
+    <summary>
+      <para>Retrieves the size of the stream needed to save the object.</para>
+    </summary>
+    <param name="pCbSize">
+      <para>The size in bytes of the stream needed to save this object, in bytes.</para>
+    </param>
+    <returns>
+      <para>This method returns S_OK to indicate that the size was retrieved successfully.</para>
+    </returns>
+    <remarks>
+      <para>This method returns the size needed to save an object. You can call this method to determine the size and set the necessary buffers before calling the <see cref="IPersistStreamInit.Save" /> method.</para>
+      <h3>Notes to Implementers</h3>
+      <para>The <b>GetSizeMax</b> implementation should return a conservative estimate of the necessary size because the caller might call the <see cref="IPersistStreamInit.Save" /> method with a non-growable stream.</para>
+    </remarks>
+    <seealso cref="IPersistStreamInit" />
+  </member>
+  <member name="IPersistStreamInit.InitNew">
+    <summary>
+      <para>Initializes an object to a default state. This method is to be called instead of <see cref="IPersistStreamInit.Load" />.</para>
+    </summary>
+    <returns>
+      <para>This method can return the standard return valuesE_OUTOFMEMORY and E_UNEXPECTED, as well as the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method completed successfully.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_NOTIMPL</b>
+            </para>
+          </description>
+          <description>
+            <para>The object requires no default initialization. This error code is allowed because an object may choose to implement <see cref="IPersistStreamInit" /> simply for orthogonality or in anticipation of a future need for this method.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>If the object has already been initialized with <see cref="IPersistStreamInit.Load" />, then this method must return E_UNEXPECTED.</para>
+    </remarks>
+    <seealso cref="IPersistStreamInit" />
+  </member>
+  <member name="IPersistStreamInit.IsDirty">
+    <summary>
+      <para>Determines whether an object has changed since it was last saved to its stream.</para>
+    </summary>
+    <returns>
+      <para>This method returns S_OK to indicate that the object has changed. Otherwise, it returns S_FALSE.</para>
+    </returns>
+    <remarks>
+      <para>Use this method to determine whether an object should be saved before closing it. The dirty flag for an object is conditionally cleared in the <see cref="IPersistStreamInit.Save" /> method.</para>
+      <h3>Notes to Callers</h3>
+      <para>You should treat any error return codes as an indication that the object has changed. Unless this method explicitly returns S_FALSE, assume that the object must be saved.</para>
+      <para>Note that the OLE-provided implementations of the <b>IPersistStreamInit.IsDirty</b> method in the OLE-provided moniker interfaces always return S_FALSE because their internal state never changes.</para>
+    </remarks>
+    <seealso cref="IPersistStreamInit" />
+  </member>
+  <member name="IPersistStreamInit.Load">
+    <summary>
+      <para>Initializes an object from the stream where it was saved previously.</para>
+    </summary>
+    <param name="pStm">
+      <para>An <see cref="IStream" /> pointer to the stream from which the object should be loaded.</para>
+    </param>
+    <returns>
+      <para>This method can return the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method completed successfully.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_OUTOFMEMORY</b>
+            </para>
+          </description>
+          <description>
+            <para>The object was not loaded due to lack of memory.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_FAIL</b>
+            </para>
+          </description>
+          <description>
+            <para>The object was not loaded due to some reason other than a lack of memory.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>If the object has already been initialized with <see cref="IPersistStreamInit.InitNew" />, then this method must return E_UNEXPECTED.</para>
+      <para>This method loads an object from its associated stream. The seek pointer is set as it was in the most recent <see cref="IPersistStreamInit.Save" /> method. This method can seek and read from the stream, but cannot write to it.</para>
+    </remarks>
+    <seealso cref="IPersistStreamInit" />
+  </member>
+  <member name="IPersistStreamInit.Save">
+    <summary>
+      <para>Saves an object to the specified stream.</para>
+    </summary>
+    <param name="pStm">
+      <para>An <see cref="IStream" /> pointer to the stream into which the object should be saved.</para>
+    </param>
+    <param name="fClearDirty">
+      <para>Indicates whether to clear the dirty flag after the save is complete. If <b>TRUE</b>, the flag should be cleared. If <b>FALSE</b>, the flag should be left unchanged.</para>
+    </param>
+    <returns>
+      <para>This method can return the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The method completed successfully.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>STG_E_CANTSAVE</b>
+            </para>
+          </description>
+          <description>
+            <para>The object could not save itself to the stream. This error could indicate, for example, that the object contains another object that is not serializable to a stream or that an <see cref="ISequentialStream.Write" /> call returned STG_E_CANTSAVE.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>STG_E_MEDIUMFULL</b>
+            </para>
+          </description>
+          <description>
+            <para>The object could not be saved because there is no space left on the storage device.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>
+        <b>IPersistStreamInit.Save</b> saves an object into the specified stream and indicates whether the object should reset its dirty flag.</para>
+      <para>The seek pointer is positioned at the location in the stream at which the object should begin writing its data. The object calls the <see cref="ISequentialStream.Write" /> method to write its data.</para>
+      <para>On exit, the seek pointer must be positioned immediately past the object data. The position of the seek pointer is undefined if an error returns.</para>
+      <h3>Notes to Implementers</h3>
+      <para>The <b>IPersistStreamInit.Save</b> method does not write the CLSID to the stream. The caller is responsible for writing the CLSID.</para>
+      <para>The <b>IPersistStreamInit.Save</b> method can read from, write to, and seek in the stream; but it must not seek to a location in the stream before that of the seek pointer on entry.</para>
+    </remarks>
+    <seealso cref="IPersistStreamInit" />
+  </member>
+  <member name="IPersistStreamInit">
+    <summary>
+      <para>A replacement for <see cref="IPersistStream" /> that adds an initialization method.</para>
+      <para>This interface is not derived from <see cref="IPersistStream" />; it is mutually exclusive with <b>IPersistStream</b>. An object chooses to support only one of the two interfaces, based on whether it requires the <see cref="InitNew" /> method.</para>
+    </summary>
+    <seealso cref="IPersistStream" />
+  </member>
+</doc>

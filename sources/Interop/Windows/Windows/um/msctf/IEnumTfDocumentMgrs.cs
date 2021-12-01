@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IEnumTfDocumentMgrs.xml' path='doc/member[@name="IEnumTfDocumentMgrs"]/*' />
 [Guid("AA80E808-2021-11D2-93E0-0060B067B86E")]
 [NativeTypeName("struct IEnumTfDocumentMgrs : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IEnumTfDocumentMgrs : IEnumTfDocumentMgrs.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IEnumTfDocumentMgrs : IEnumTfDocumentMgrs.Interface
         return ((delegate* unmanaged<IEnumTfDocumentMgrs*, Guid*, void**, int>)(lpVtbl[0]))((IEnumTfDocumentMgrs*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IEnumTfDocumentMgrs : IEnumTfDocumentMgrs.Interface
         return ((delegate* unmanaged<IEnumTfDocumentMgrs*, uint>)(lpVtbl[1]))((IEnumTfDocumentMgrs*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IEnumTfDocumentMgrs : IEnumTfDocumentMgrs.Interface
         return ((delegate* unmanaged<IEnumTfDocumentMgrs*, uint>)(lpVtbl[2]))((IEnumTfDocumentMgrs*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IEnumTfDocumentMgrs.xml' path='doc/member[@name="IEnumTfDocumentMgrs.Clone"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Clone(IEnumTfDocumentMgrs** ppEnum)
@@ -46,6 +51,7 @@ public unsafe partial struct IEnumTfDocumentMgrs : IEnumTfDocumentMgrs.Interface
         return ((delegate* unmanaged<IEnumTfDocumentMgrs*, IEnumTfDocumentMgrs**, int>)(lpVtbl[3]))((IEnumTfDocumentMgrs*)Unsafe.AsPointer(ref this), ppEnum);
     }
 
+    /// <include file='IEnumTfDocumentMgrs.xml' path='doc/member[@name="IEnumTfDocumentMgrs.Next"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Next([NativeTypeName("ULONG")] uint ulCount, ITfDocumentMgr** rgDocumentMgr, [NativeTypeName("ULONG *")] uint* pcFetched)
@@ -53,6 +59,7 @@ public unsafe partial struct IEnumTfDocumentMgrs : IEnumTfDocumentMgrs.Interface
         return ((delegate* unmanaged<IEnumTfDocumentMgrs*, uint, ITfDocumentMgr**, uint*, int>)(lpVtbl[4]))((IEnumTfDocumentMgrs*)Unsafe.AsPointer(ref this), ulCount, rgDocumentMgr, pcFetched);
     }
 
+    /// <include file='IEnumTfDocumentMgrs.xml' path='doc/member[@name="IEnumTfDocumentMgrs.Reset"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT Reset()
@@ -60,6 +67,7 @@ public unsafe partial struct IEnumTfDocumentMgrs : IEnumTfDocumentMgrs.Interface
         return ((delegate* unmanaged<IEnumTfDocumentMgrs*, int>)(lpVtbl[5]))((IEnumTfDocumentMgrs*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IEnumTfDocumentMgrs.xml' path='doc/member[@name="IEnumTfDocumentMgrs.Skip"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Skip([NativeTypeName("ULONG")] uint ulCount)

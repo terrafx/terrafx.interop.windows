@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAccessibilityDockingService.xml' path='doc/member[@name="IAccessibilityDockingService"]/*' />
 [Guid("8849DC22-CEDF-4C95-998D-051419DD3F76")]
 [NativeTypeName("struct IAccessibilityDockingService : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IAccessibilityDockingService : IAccessibilityDockin
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IAccessibilityDockingService : IAccessibilityDockin
         return ((delegate* unmanaged<IAccessibilityDockingService*, Guid*, void**, int>)(lpVtbl[0]))((IAccessibilityDockingService*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IAccessibilityDockingService : IAccessibilityDockin
         return ((delegate* unmanaged<IAccessibilityDockingService*, uint>)(lpVtbl[1]))((IAccessibilityDockingService*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IAccessibilityDockingService : IAccessibilityDockin
         return ((delegate* unmanaged<IAccessibilityDockingService*, uint>)(lpVtbl[2]))((IAccessibilityDockingService*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAccessibilityDockingService.xml' path='doc/member[@name="IAccessibilityDockingService.GetAvailableSize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetAvailableSize(HMONITOR hMonitor, uint* pcxFixed, uint* pcyMax)
@@ -48,6 +53,7 @@ public unsafe partial struct IAccessibilityDockingService : IAccessibilityDockin
         return ((delegate* unmanaged<IAccessibilityDockingService*, HMONITOR, uint*, uint*, int>)(lpVtbl[3]))((IAccessibilityDockingService*)Unsafe.AsPointer(ref this), hMonitor, pcxFixed, pcyMax);
     }
 
+    /// <include file='IAccessibilityDockingService.xml' path='doc/member[@name="IAccessibilityDockingService.DockWindow"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT DockWindow(HWND hwnd, HMONITOR hMonitor, uint cyRequested, IAccessibilityDockingServiceCallback* pCallback)
@@ -55,6 +61,7 @@ public unsafe partial struct IAccessibilityDockingService : IAccessibilityDockin
         return ((delegate* unmanaged<IAccessibilityDockingService*, HWND, HMONITOR, uint, IAccessibilityDockingServiceCallback*, int>)(lpVtbl[4]))((IAccessibilityDockingService*)Unsafe.AsPointer(ref this), hwnd, hMonitor, cyRequested, pCallback);
     }
 
+    /// <include file='IAccessibilityDockingService.xml' path='doc/member[@name="IAccessibilityDockingService.UndockWindow"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT UndockWindow(HWND hwnd)

@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IF_PHYSICAL_ADDRESS_LH.xml' path='doc/member[@name="IF_PHYSICAL_ADDRESS_LH"]/*' />
 public unsafe partial struct IF_PHYSICAL_ADDRESS_LH
 {
+    /// <include file='IF_PHYSICAL_ADDRESS_LH.xml' path='doc/member[@name="IF_PHYSICAL_ADDRESS_LH.Length"]/*' />
     public ushort Length;
 
+    /// <include file='IF_PHYSICAL_ADDRESS_LH.xml' path='doc/member[@name="IF_PHYSICAL_ADDRESS_LH.Address"]/*' />
     [NativeTypeName("UCHAR [32]")]
     public fixed byte Address[32];
 }

@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="NMCHAR">
+    <summary>
+      <para>Contains information used with character notification messages.</para>
+    </summary>
+  </member>
+  <member name="NMCHAR.hdr">
+    <summary>
+      <para>Type: <b><see cref="NMHDR" /></b></para>
+      <para>An <see cref="NMHDR" /> structure that contains additional information about this notification.</para>
+    </summary>
+  </member>
+  <member name="NMCHAR.ch">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The character that is being processed.</para>
+    </summary>
+  </member>
+  <member name="NMCHAR.dwItemPrev">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">DWORD</a></b></para>
+      <para>A 32-bit value that is determined by the control that is sending the notification.</para>
+    </summary>
+  </member>
+  <member name="NMCHAR.dwItemNext">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">DWORD</a></b></para>
+      <para>A 32-bit value that is determined by the control that is sending the notification.</para>
+    </summary>
+  </member>
+</doc>

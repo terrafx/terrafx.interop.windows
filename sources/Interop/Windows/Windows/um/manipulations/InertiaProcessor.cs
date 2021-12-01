@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='InertiaProcessor.xml' path='doc/member[@name="InertiaProcessor"]/*' />
 [Guid("ABB27087-4CE0-4E58-A0CB-E24DF96814BE")]
 public partial struct InertiaProcessor
 {

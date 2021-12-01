@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='OLEGETMONIKER.xml' path='doc/member[@name="OLEGETMONIKER"]/*' />
 public enum OLEGETMONIKER
 {
+    /// <include file='OLEGETMONIKER.xml' path='doc/member[@name="OLEGETMONIKER.OLEGETMONIKER_ONLYIFTHERE"]/*' />
     OLEGETMONIKER_ONLYIFTHERE = 1,
+
+    /// <include file='OLEGETMONIKER.xml' path='doc/member[@name="OLEGETMONIKER.OLEGETMONIKER_FORCEASSIGN"]/*' />
     OLEGETMONIKER_FORCEASSIGN = 2,
+
+    /// <include file='OLEGETMONIKER.xml' path='doc/member[@name="OLEGETMONIKER.OLEGETMONIKER_UNASSIGN"]/*' />
     OLEGETMONIKER_UNASSIGN = 3,
+
+    /// <include file='OLEGETMONIKER.xml' path='doc/member[@name="OLEGETMONIKER.OLEGETMONIKER_TEMPFORUSER"]/*' />
     OLEGETMONIKER_TEMPFORUSER = 4,
 }

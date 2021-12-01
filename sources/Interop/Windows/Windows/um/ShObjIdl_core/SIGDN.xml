@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SIGDN">
+    <summary>
+      <para>Requests the form of an item's display name to retrieve through <see cref="IShellItem.GetDisplayName" /> and <see cref="SHGetNameFromIDList" />.</para>
+    </summary>
+    <remarks>
+      <para>Different forms of an item's name can be retrieved through the item's properties, including those listed here. Note that not all properties are present on all items, so only those appropriate to the item will appear.</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/properties/props-system-filename">PKEY_FileName</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/properties/props-system-itemfoldernamedisplay">PKEY_ItemFolderNameDisplay</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/properties/props-system-itemfolderpathdisplay">PKEY_ItemFolderPathDisplay</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/properties/props-system-itemfolderpathdisplaynarrow">PKEY_ItemFolderPathDisplayNarrow</a>
+          </description>
+        </item>
+      </list>
+    </remarks>
+  </member>
+  <member name="SIGDN.SIGDN_NORMALDISPLAY">
+    <summary>
+      <para>0x00000000. Returns the display name relative to the parent folder. In UI this name is generally ideal for display to the user.</para>
+    </summary>
+  </member>
+  <member name="SIGDN.SIGDN_PARENTRELATIVEPARSING">
+    <summary>
+      <para>(int)0x80018001. Returns the parsing name relative to the parent folder. This name is not suitable for use in UI.</para>
+    </summary>
+  </member>
+  <member name="SIGDN.SIGDN_DESKTOPABSOLUTEPARSING">
+    <summary>
+      <para>(int)0x80028000. Returns the parsing name relative to the desktop. This name is not suitable for use in UI.</para>
+    </summary>
+  </member>
+  <member name="SIGDN.SIGDN_PARENTRELATIVEEDITING">
+    <summary>
+      <para>(int)0x80031001. Returns the editing name relative to the parent folder. In UI this name is suitable for display to the user.</para>
+    </summary>
+  </member>
+  <member name="SIGDN.SIGDN_DESKTOPABSOLUTEEDITING">
+    <summary>
+      <para>(int)0x8004c000. Returns the editing name relative to the desktop. In UI this name is suitable for display to the user.</para>
+    </summary>
+  </member>
+  <member name="SIGDN.SIGDN_FILESYSPATH">
+    <summary>
+      <para>(int)0x80058000. Returns the item's file system path, if it has one. Only items that report <a href="https://docs.microsoft.com//windows/desktop/shell/sfgao">SFGAO_FILESYSTEM</a> have a file system path. When an item does not have a file system path, a call to <see cref="IShellItem.GetDisplayName" /> on that item will fail. In UI this name is suitable for display to the user in some cases, but note that it might not be specified for all items.</para>
+    </summary>
+  </member>
+  <member name="SIGDN.SIGDN_URL">
+    <summary>
+      <para>(int)0x80068000. Returns the item's URL, if it has one. Some items do not have a URL, and in those cases a call to <see cref="IShellItem.GetDisplayName" /> will fail. This name is suitable for display to the user in some cases, but note that it might not be specified for all items.</para>
+    </summary>
+  </member>
+  <member name="SIGDN.SIGDN_PARENTRELATIVEFORADDRESSBAR">
+    <summary>
+      <para>(int)0x8007c001. Returns the path relative to the parent folder in a friendly format as displayed in an address bar. This name is suitable for display to the user.</para>
+    </summary>
+  </member>
+  <member name="SIGDN.SIGDN_PARENTRELATIVE">
+    <summary>
+      <para>(int)0x80080001. Returns the path relative to the parent folder.</para>
+    </summary>
+  </member>
+  <member name="SIGDN.SIGDN_PARENTRELATIVEFORUI">
+    <summary>
+      <para>(int)0x80094001. <b>Introduced in Windows 8</b>.</para>
+    </summary>
+  </member>
+</doc>

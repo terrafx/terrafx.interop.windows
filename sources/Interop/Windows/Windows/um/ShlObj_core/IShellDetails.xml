@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IShellDetails.ColumnClick">
+    <summary>
+      <para>Rearranges a column.</para>
+    </summary>
+    <param name="iColumn">
+      <para>Type: <b>UINT</b></para>
+      <para>The index of the column to be rearranged.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_FALSE to tell the calling application to sort the selected column. Otherwise, returns S_OK if successful, a COM error code otherwise.</para>
+    </returns>
+    <remarks>
+      <para>This method is called when a client of a folder object wants to sort the object's items based on the contents of one of the Details columns. Folder objects typically return S_FALSE.</para>
+      <h3>Note to Implementers</h3>
+      <para>For Windows 2000 and later systems, folder objects should implement <see cref="IShellFolder2" /> instead of this interface. However, if your application needs to function on earlier systems, it should also expose <see cref="IShellDetails" />.</para>
+    </remarks>
+    <seealso cref="IShellDetails" />
+    <seealso cref="IShellDetails.GetDetailsOf" />
+  </member>
+  <member name="IShellDetails.GetDetailsOf">
+    <summary>
+      <para>Gets detailed information on an item in a Shell folder.</para>
+    </summary>
+    <param name="pidl">
+      <para>Type: <b>PCUITEMID_CHILD</b></para>
+      <para>The PIDL of the item that you are requesting information for. If this parameter is set to <b>NULL</b>, the title of the information field specified by <i>iColumn</i> will be returned in the <see cref="SHELLDETAILS" /> structure pointed to by <i>pDetails</i>.</para>
+    </param>
+    <param name="iColumn">
+      <para>Type: <b>UINT</b></para>
+      <para>The zero-based index of the desired information field. It is identical to column number of the information as it is displayed in a Windows Explorer Details view.</para>
+    </param>
+    <param name="pDetails">
+      <para>Type: <b>SHELLDETAILS*</b></para>
+      <para>A pointer to a <see cref="SHELLDETAILS" /> structure with the detail information.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_OK if successful. Returns E_FAIL if <i>iColumn</i> exceeds the number of columns supported by the folder. Otherwise, returns a standard COM error code.</para>
+    </returns>
+    <remarks>
+      <para>This method has been superseded by the <see cref="IShellFolder2" /> methods for Shell <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/bb776779(v=vs.85)">version 5.0</a> and later.</para>
+      <para>The <b>IShellDetails.GetDetailsOf</b> method provides access to the information that is displayed in the Windows Explorer Details view of a Shell folder. The column numbers, column titles, and item information that you see in the Details view are identical to those returned by <b>IShellDetails.GetDetailsOf</b>.</para>
+      <para>The available information fields and their column numbers vary depending on the particular folder. To enumerate the available fields call <b>IShellDetails.GetDetailsOf</b> with <i>pidl</i> set to <b>NULL</b> for increasing values of <i>iColumn</i>. This approach provides you with the title associated with each column index. When <i>iColumn</i> exceeds the number of columns supported by the folder, <b>IShellDetails.GetDetailsOf</b> will return E_FAIL. Bear in mind that these titles are localizable, and may not be the same for all locales.</para>
+      <para>File system folders have a large standard set of information fields. The first four fields are standard for all file system folders.</para>
+      <list type="table">
+        <listheader>
+          <description>Column Index</description>
+          <description>Column Title</description>
+        </listheader>
+        <item>
+          <description>0</description>
+          <description>Name</description>
+        </item>
+        <item>
+          <description>1</description>
+          <description>Size</description>
+        </item>
+        <item>
+          <description>2</description>
+          <description>Type</description>
+        </item>
+        <item>
+          <description>3</description>
+          <description>Date Modified</description>
+        </item>
+      </list>
+      <para>File system folders may support a number of additional fields. However, they are not required to do so and the column indexes assigned to these fields may vary.</para>
+      <para>Each virtual folder has its own unique set of information fields. Typically, the item's display name is in column zero, but the order and content of the available fields depend on the implementation of the particular folder object.</para>
+      <h3>Note to Implementers</h3>
+      <para>Folder objects should implement <see cref="IShellFolder2" /> instead of this interface.</para>
+    </remarks>
+  </member>
+  <member name="IShellDetails">
+    <summary>
+      <para>Exposed by Shell folders to provide detailed information about the items in a folder. This is the same information that is displayed by the Windows Explorer when the view of the folder is set to Details. For Windows 2000 and later systems, <b>IShellDetails</b> is superseded by <see cref="IShellFolder2" />.</para>
+    </summary>
+    <remarks>
+      <para>For Windows 2000 and later systems, folder objects should implement <see cref="IShellFolder2" /> instead of this interface. However, if your application needs to function on earlier systems, <b>IShellDetails</b> should also be exposed.</para>
+    </remarks>
+  </member>
+</doc>

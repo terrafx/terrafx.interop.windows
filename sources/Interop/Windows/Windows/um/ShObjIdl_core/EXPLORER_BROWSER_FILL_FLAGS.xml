@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="EXPLORER_BROWSER_FILL_FLAGS">
+    <summary>
+      <para>These flags are used with <see cref="IExplorerBrowser.FillFromObject" />.</para>
+    </summary>
+  </member>
+  <member name="EXPLORER_BROWSER_FILL_FLAGS.EBF_NONE">
+    <summary>
+      <para>No flags.</para>
+    </summary>
+  </member>
+  <member name="EXPLORER_BROWSER_FILL_FLAGS.EBF_SELECTFROMDATAOBJECT">
+    <summary>
+      <para>Causes <see cref="IExplorerBrowser.FillFromObject" /> to first populate the results folder with the contents of the parent folders of the items in the data object, and then select only the items that are in the data object.</para>
+    </summary>
+  </member>
+  <member name="EXPLORER_BROWSER_FILL_FLAGS.EBF_NODROPTARGET">
+    <summary>
+      <para>Do not allow dropping on the folder. In other words, do not register a drop target for the view. Applications can then register their own drop targets.</para>
+    </summary>
+  </member>
+</doc>

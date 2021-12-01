@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IAppxPackageWriter2.Close">
+    <summary>
+      <para>Closes the package writer object's output stream.</para>
+    </summary>
+    <param name="manifest">
+      <para>The stream that provides the contents of the manifest for the package. The stream must support <see cref="Read" />, <see cref="Seek" />, and <see cref="Stat" />.</para>
+    </param>
+    <param name="contentGroupMap">
+      <para>The stream that provides the contents of the content group map for the package.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an error code that includes, but is not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_NOT_VALID_STATE </b>
+            </para>
+          </description>
+          <description>
+            <para>The writer is closed.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>APPX_E_INVALID_MANIFEST</b>
+            </para>
+          </description>
+          <description>
+            <para>The input stream contains a manifest that is not valid.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="IAppxPackageWriter2" />
+  </member>
+  <member name="IAppxPackageWriter2">
+    <summary>
+      <para>Provides a write-only object model for app packages.</para>
+    </summary>
+  </member>
+</doc>

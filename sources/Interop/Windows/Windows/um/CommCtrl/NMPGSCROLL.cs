@@ -7,21 +7,29 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NMPGSCROLL.xml' path='doc/member[@name="NMPGSCROLL"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct NMPGSCROLL
 {
+    /// <include file='NMPGSCROLL.xml' path='doc/member[@name="NMPGSCROLL.hdr"]/*' />
     public NMHDR hdr;
 
+    /// <include file='NMPGSCROLL.xml' path='doc/member[@name="NMPGSCROLL.fwKeys"]/*' />
     [NativeTypeName("WORD")]
     public ushort fwKeys;
 
+    /// <include file='NMPGSCROLL.xml' path='doc/member[@name="NMPGSCROLL.rcParent"]/*' />
     public RECT rcParent;
 
+    /// <include file='NMPGSCROLL.xml' path='doc/member[@name="NMPGSCROLL.iDir"]/*' />
     public int iDir;
 
+    /// <include file='NMPGSCROLL.xml' path='doc/member[@name="NMPGSCROLL.iXpos"]/*' />
     public int iXpos;
 
+    /// <include file='NMPGSCROLL.xml' path='doc/member[@name="NMPGSCROLL.iYpos"]/*' />
     public int iYpos;
 
+    /// <include file='NMPGSCROLL.xml' path='doc/member[@name="NMPGSCROLL.iScroll"]/*' />
     public int iScroll;
 }

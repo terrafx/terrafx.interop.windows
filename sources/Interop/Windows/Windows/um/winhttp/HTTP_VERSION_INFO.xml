@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="HTTP_VERSION_INFO">
+    <summary>
+      <para>The <b>HTTP_VERSION_INFO</b> structure contains the global HTTP version.</para>
+    </summary>
+    <remarks>
+      <para>
+        <b>Note</b>  For Windows XP and Windows 2000, see the <a href="https://docs.microsoft.com//windows/desktop/WinHttp/winhttp-start-page">Run-Time Requirements</a> section of the WinHttp start page.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/WinHttp/winhttp-versions">WinHTTP Versions</seealso>
+  </member>
+  <member name="HTTP_VERSION_INFO.dwMajorVersion">
+    <summary>
+      <para>Major version number. Must be 1.</para>
+    </summary>
+  </member>
+  <member name="HTTP_VERSION_INFO.dwMinorVersion">
+    <summary>
+      <para>Minor version number. Can be either 1 or 0.</para>
+    </summary>
+  </member>
+</doc>

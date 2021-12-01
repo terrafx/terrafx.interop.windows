@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IDelegateFolder.xml' path='doc/member[@name="IDelegateFolder"]/*' />
 [Guid("ADD8BA80-002B-11D0-8F0F-00C04FD7D062")]
 [NativeTypeName("struct IDelegateFolder : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IDelegateFolder : IDelegateFolder.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IDelegateFolder : IDelegateFolder.Interface
         return ((delegate* unmanaged<IDelegateFolder*, Guid*, void**, int>)(lpVtbl[0]))((IDelegateFolder*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IDelegateFolder : IDelegateFolder.Interface
         return ((delegate* unmanaged<IDelegateFolder*, uint>)(lpVtbl[1]))((IDelegateFolder*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IDelegateFolder : IDelegateFolder.Interface
         return ((delegate* unmanaged<IDelegateFolder*, uint>)(lpVtbl[2]))((IDelegateFolder*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDelegateFolder.xml' path='doc/member[@name="IDelegateFolder.SetItemAlloc"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetItemAlloc(IMalloc* pmalloc)

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="_MFP_CREATION_OPTIONS">
+    <summary>
+      <para>
+        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</para>
+      <para>Specifies options for the <see cref="MFPCreateMediaPlayer" /> function.</para>
+    </summary>
+    <remarks>
+      <para>The following <b>typedef</b> is defined for combining flags from this enumeration.</para>
+      <code>typedef UINT32 MFP_CREATION_OPTIONS;
+</code>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+  </member>
+  <member name="_MFP_CREATION_OPTIONS.MFP_OPTION_NONE">
+    <summary>
+      <para>Use the default creation options.</para>
+    </summary>
+  </member>
+  <member name="_MFP_CREATION_OPTIONS.MFP_OPTION_FREE_THREADED_CALLBACK">
+    <summary>
+      <para>If set, the MFPlay player object invokes the application's <see cref="IMFPMediaPlayerCallback" /> callback on another thread, and not the thread that called the <see cref="MFPCreateMediaPlayer" /> function. Therefore, the callback must be thread safe.</para>
+      <para>If this flag is not set, the player object invokes the callback on the same thread that calls <see cref="MFPCreateMediaPlayer" />. This thread must have a message loop. Internally, the player object creates a hidden window to dispatch the callback, similar to the mechanism used for single-threaded apartments (STAs) in COM.</para>
+    </summary>
+  </member>
+  <member name="_MFP_CREATION_OPTIONS.MFP_OPTION_NO_MMCSS">
+    <summary>
+      <para>Do not register the playback topology with the Multimedia Class Scheduler Service (MMCSS). By default, the MFPlay object registers the playback topology with MMCSS, which typically results in a better playback experience. For more information, see <see cref="IMFWorkQueueServices" />.</para>
+    </summary>
+  </member>
+  <member name="_MFP_CREATION_OPTIONS.MFP_OPTION_NO_REMOTE_DESKTOP_OPTIMIZATION">
+    <summary>
+      <para>Disables optimizations that are otherwise performed when the application runs in a Remote Desktop Services (RDS, formerly Terminal Services) environment.</para>
+    </summary>
+  </member>
+</doc>

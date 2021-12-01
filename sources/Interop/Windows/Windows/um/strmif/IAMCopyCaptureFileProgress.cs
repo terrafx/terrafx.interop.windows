@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAMCopyCaptureFileProgress.xml' path='doc/member[@name="IAMCopyCaptureFileProgress"]/*' />
 [Guid("670D1D20-A068-11D0-B3F0-00AA003761C5")]
 [NativeTypeName("struct IAMCopyCaptureFileProgress : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IAMCopyCaptureFileProgress : IAMCopyCaptureFileProg
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IAMCopyCaptureFileProgress : IAMCopyCaptureFileProg
         return ((delegate* unmanaged<IAMCopyCaptureFileProgress*, Guid*, void**, int>)(lpVtbl[0]))((IAMCopyCaptureFileProgress*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IAMCopyCaptureFileProgress : IAMCopyCaptureFileProg
         return ((delegate* unmanaged<IAMCopyCaptureFileProgress*, uint>)(lpVtbl[1]))((IAMCopyCaptureFileProgress*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IAMCopyCaptureFileProgress : IAMCopyCaptureFileProg
         return ((delegate* unmanaged<IAMCopyCaptureFileProgress*, uint>)(lpVtbl[2]))((IAMCopyCaptureFileProgress*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAMCopyCaptureFileProgress.xml' path='doc/member[@name="IAMCopyCaptureFileProgress.Progress"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Progress(int iProgress)

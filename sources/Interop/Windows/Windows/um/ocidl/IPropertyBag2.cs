@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IPropertyBag2.xml' path='doc/member[@name="IPropertyBag2"]/*' />
 [Guid("22F55882-280B-11D0-A8A9-00A0C90C2004")]
 [NativeTypeName("struct IPropertyBag2 : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IPropertyBag2 : IPropertyBag2.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IPropertyBag2 : IPropertyBag2.Interface
         return ((delegate* unmanaged<IPropertyBag2*, Guid*, void**, int>)(lpVtbl[0]))((IPropertyBag2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IPropertyBag2 : IPropertyBag2.Interface
         return ((delegate* unmanaged<IPropertyBag2*, uint>)(lpVtbl[1]))((IPropertyBag2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IPropertyBag2 : IPropertyBag2.Interface
         return ((delegate* unmanaged<IPropertyBag2*, uint>)(lpVtbl[2]))((IPropertyBag2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IPropertyBag2.xml' path='doc/member[@name="IPropertyBag2.Read"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Read([NativeTypeName("ULONG")] uint cProperties, PROPBAG2* pPropBag, IErrorLog* pErrLog, VARIANT* pvarValue, HRESULT* phrError)
@@ -46,6 +51,7 @@ public unsafe partial struct IPropertyBag2 : IPropertyBag2.Interface
         return ((delegate* unmanaged<IPropertyBag2*, uint, PROPBAG2*, IErrorLog*, VARIANT*, HRESULT*, int>)(lpVtbl[3]))((IPropertyBag2*)Unsafe.AsPointer(ref this), cProperties, pPropBag, pErrLog, pvarValue, phrError);
     }
 
+    /// <include file='IPropertyBag2.xml' path='doc/member[@name="IPropertyBag2.Write"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Write([NativeTypeName("ULONG")] uint cProperties, PROPBAG2* pPropBag, VARIANT* pvarValue)
@@ -53,6 +59,7 @@ public unsafe partial struct IPropertyBag2 : IPropertyBag2.Interface
         return ((delegate* unmanaged<IPropertyBag2*, uint, PROPBAG2*, VARIANT*, int>)(lpVtbl[4]))((IPropertyBag2*)Unsafe.AsPointer(ref this), cProperties, pPropBag, pvarValue);
     }
 
+    /// <include file='IPropertyBag2.xml' path='doc/member[@name="IPropertyBag2.CountProperties"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT CountProperties([NativeTypeName("ULONG *")] uint* pcProperties)
@@ -60,6 +67,7 @@ public unsafe partial struct IPropertyBag2 : IPropertyBag2.Interface
         return ((delegate* unmanaged<IPropertyBag2*, uint*, int>)(lpVtbl[5]))((IPropertyBag2*)Unsafe.AsPointer(ref this), pcProperties);
     }
 
+    /// <include file='IPropertyBag2.xml' path='doc/member[@name="IPropertyBag2.GetPropertyInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetPropertyInfo([NativeTypeName("ULONG")] uint iProperty, [NativeTypeName("ULONG")] uint cProperties, PROPBAG2* pPropBag, [NativeTypeName("ULONG *")] uint* pcProperties)
@@ -67,6 +75,7 @@ public unsafe partial struct IPropertyBag2 : IPropertyBag2.Interface
         return ((delegate* unmanaged<IPropertyBag2*, uint, uint, PROPBAG2*, uint*, int>)(lpVtbl[6]))((IPropertyBag2*)Unsafe.AsPointer(ref this), iProperty, cProperties, pPropBag, pcProperties);
     }
 
+    /// <include file='IPropertyBag2.xml' path='doc/member[@name="IPropertyBag2.LoadObject"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT LoadObject([NativeTypeName("LPCOLESTR")] ushort* pstrName, [NativeTypeName("DWORD")] uint dwHint, IUnknown* pUnkObject, IErrorLog* pErrLog)

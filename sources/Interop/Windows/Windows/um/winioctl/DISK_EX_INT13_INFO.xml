@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DISK_EX_INT13_INFO">
+    <summary>
+      <para>Contains extended Int13 drive parameters.</para>
+    </summary>
+    <seealso cref="DISK_DETECTION_INFO" />
+  </member>
+  <member name="DISK_EX_INT13_INFO.ExBufferSize">
+    <summary>
+      <para>The size of the extended drive parameter buffer for this partition or disk.  For valid values, see the BIOS documentation.</para>
+    </summary>
+  </member>
+  <member name="DISK_EX_INT13_INFO.ExFlags">
+    <summary>
+      <para>The information flags for this partition or disk.  For valid values, see the BIOS documentation.</para>
+    </summary>
+  </member>
+  <member name="DISK_EX_INT13_INFO.ExCylinders">
+    <summary>
+      <para>The number of cylinders per head.  For valid values, see the BIOS documentation.</para>
+    </summary>
+  </member>
+  <member name="DISK_EX_INT13_INFO.ExHeads">
+    <summary>
+      <para>The maximum number of heads for this hard disk.  For valid values, see the BIOS documentation.</para>
+    </summary>
+  </member>
+  <member name="DISK_EX_INT13_INFO.ExSectorsPerTrack">
+    <summary>
+      <para>The number of sectors per track.  For valid values, see the BIOS documentation.</para>
+    </summary>
+  </member>
+  <member name="DISK_EX_INT13_INFO.ExSectorsPerDrive">
+    <summary>
+      <para>The total number of sectors for this disk.  For valid values, see the BIOS documentation.</para>
+    </summary>
+  </member>
+  <member name="DISK_EX_INT13_INFO.ExSectorSize">
+    <summary>
+      <para>The sector size for this disk.  For valid values, see the BIOS documentation.</para>
+    </summary>
+  </member>
+  <member name="DISK_EX_INT13_INFO.ExReserved">
+    <summary>
+      <para>Reserved for future use.</para>
+    </summary>
+  </member>
+</doc>

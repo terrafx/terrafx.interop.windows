@@ -5,13 +5,17 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DLLVERSIONINFO2.xml' path='doc/member[@name="DLLVERSIONINFO2"]/*' />
 public partial struct DLLVERSIONINFO2
 {
+    /// <include file='DLLVERSIONINFO2.xml' path='doc/member[@name="DLLVERSIONINFO2.info1"]/*' />
     public DLLVERSIONINFO info1;
 
+    /// <include file='DLLVERSIONINFO2.xml' path='doc/member[@name="DLLVERSIONINFO2.dwFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFlags;
 
+    /// <include file='DLLVERSIONINFO2.xml' path='doc/member[@name="DLLVERSIONINFO2.ullVersion"]/*' />
     [NativeTypeName("ULONGLONG")]
     public ulong ullVersion;
 }

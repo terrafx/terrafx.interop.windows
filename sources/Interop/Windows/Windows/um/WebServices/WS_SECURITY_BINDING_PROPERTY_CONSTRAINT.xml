@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_SECURITY_BINDING_PROPERTY_CONSTRAINT">
+    <summary>
+      <para>This structure is used to specify a set of constraints
+for a particular security binding property.
+Any property constraints that are not specified will use
+the default constraints.</para>
+    </summary>
+  </member>
+  <member name="WS_SECURITY_BINDING_PROPERTY_CONSTRAINT.id">
+    <summary>
+      <para>The id of the security binding property.  The following security
+binding property constraints may be specified:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <see cref="WS_SECURITY_BINDING_PROPERTY_HTTP_HEADER_AUTH_SCHEME" />
+            <para>This property constraint may be specified when the
+<see cref="WS_HTTP_HEADER_AUTH_SECURITY_BINDING_CONSTRAINT_TYPE" /> security binding is specified.</para>
+            <list type="bullet">
+              <item>
+                <description>
+                  <see cref="WS_HTTP_HEADER_AUTH_SECURITY_BINDING_CONSTRAINT_TYPE" />
+                </description>
+              </item>
+            </list>
+            <para>If this property is not specified, then the default constraint value
+of <see cref="WS_HTTP_HEADER_AUTH_SCHEME_NEGOTIATE" /> will be used.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="WS_SECURITY_BINDING_PROPERTY_CONSTRAINT.allowedValues">
+    <summary>
+      <para>An array of values which are acceptable.  The type of
+the values in the array correspond to the type of the values
+of the security binding property.  See the documentation for
+a particular security binding property to determine the type of the
+property.</para>
+    </summary>
+  </member>
+  <member name="WS_SECURITY_BINDING_PROPERTY_CONSTRAINT.allowedValuesSize">
+    <summary>
+      <para>The total size of the allowedValues array, in bytes.  This
+size must be a multiple of the size of the type of the value
+of the property.</para>
+    </summary>
+  </member>
+  <member name="WS_SECURITY_BINDING_PROPERTY_CONSTRAINT.out">
+    <summary>
+      <para>When <see cref="WsMatchPolicyAlternative" /> returns NOERROR, the
+fields of the property structure will be filled out as follows:</para>
+    </summary>
+  </member>
+  <member name="WS_SECURITY_BINDING_PROPERTY_CONSTRAINT.out.securityBindingProperty">
+    <summary></summary>
+  </member>
+</doc>

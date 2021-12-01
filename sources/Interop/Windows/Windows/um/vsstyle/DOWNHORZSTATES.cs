@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DOWNHORZSTATES.xml' path='doc/member[@name="DOWNHORZSTATES"]/*' />
 public enum DOWNHORZSTATES
 {
+    /// <include file='DOWNHORZSTATES.xml' path='doc/member[@name="DOWNHORZSTATES.DNHZS_NORMAL"]/*' />
     DNHZS_NORMAL = 1,
+
+    /// <include file='DOWNHORZSTATES.xml' path='doc/member[@name="DOWNHORZSTATES.DNHZS_HOT"]/*' />
     DNHZS_HOT = 2,
+
+    /// <include file='DOWNHORZSTATES.xml' path='doc/member[@name="DOWNHORZSTATES.DNHZS_PRESSED"]/*' />
     DNHZS_PRESSED = 3,
+
+    /// <include file='DOWNHORZSTATES.xml' path='doc/member[@name="DOWNHORZSTATES.DNHZS_DISABLED"]/*' />
     DNHZS_DISABLED = 4,
 }

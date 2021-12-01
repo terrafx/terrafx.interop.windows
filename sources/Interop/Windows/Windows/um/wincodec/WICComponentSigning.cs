@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WICComponentSigning.xml' path='doc/member[@name="WICComponentSigning"]/*' />
 public enum WICComponentSigning
 {
+    /// <include file='WICComponentSigning.xml' path='doc/member[@name="WICComponentSigning.WICComponentSigned"]/*' />
     WICComponentSigned = 0x1,
+
+    /// <include file='WICComponentSigning.xml' path='doc/member[@name="WICComponentSigning.WICComponentUnsigned"]/*' />
     WICComponentUnsigned = 0x2,
+
+    /// <include file='WICComponentSigning.xml' path='doc/member[@name="WICComponentSigning.WICComponentSafe"]/*' />
     WICComponentSafe = 0x4,
+
+    /// <include file='WICComponentSigning.xml' path='doc/member[@name="WICComponentSigning.WICComponentDisabled"]/*' />
     WICComponentDisabled = unchecked((int)(0x80000000)),
+
+    /// <include file='WICComponentSigning.xml' path='doc/member[@name="WICComponentSigning.WICCOMPONENTSIGNING_FORCE_DWORD"]/*' />
     WICCOMPONENTSIGNING_FORCE_DWORD = 0x7fffffff,
 }

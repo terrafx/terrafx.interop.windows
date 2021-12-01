@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IEnumRegisterWordW.xml' path='doc/member[@name="IEnumRegisterWordW"]/*' />
 [Guid("4955DD31-B159-11D0-8FCF-00AA006BCC59")]
 [NativeTypeName("struct IEnumRegisterWordW : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IEnumRegisterWordW : IEnumRegisterWordW.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IEnumRegisterWordW : IEnumRegisterWordW.Interface
         return ((delegate* unmanaged<IEnumRegisterWordW*, Guid*, void**, int>)(lpVtbl[0]))((IEnumRegisterWordW*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IEnumRegisterWordW : IEnumRegisterWordW.Interface
         return ((delegate* unmanaged<IEnumRegisterWordW*, uint>)(lpVtbl[1]))((IEnumRegisterWordW*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IEnumRegisterWordW : IEnumRegisterWordW.Interface
         return ((delegate* unmanaged<IEnumRegisterWordW*, uint>)(lpVtbl[2]))((IEnumRegisterWordW*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IEnumRegisterWordW.xml' path='doc/member[@name="IEnumRegisterWordW.Clone"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Clone(IEnumRegisterWordW** ppEnum)
@@ -46,6 +51,7 @@ public unsafe partial struct IEnumRegisterWordW : IEnumRegisterWordW.Interface
         return ((delegate* unmanaged<IEnumRegisterWordW*, IEnumRegisterWordW**, int>)(lpVtbl[3]))((IEnumRegisterWordW*)Unsafe.AsPointer(ref this), ppEnum);
     }
 
+    /// <include file='IEnumRegisterWordW.xml' path='doc/member[@name="IEnumRegisterWordW.Next"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Next([NativeTypeName("ULONG")] uint ulCount, REGISTERWORDW* rgRegisterWord, [NativeTypeName("ULONG *")] uint* pcFetched)
@@ -53,6 +59,7 @@ public unsafe partial struct IEnumRegisterWordW : IEnumRegisterWordW.Interface
         return ((delegate* unmanaged<IEnumRegisterWordW*, uint, REGISTERWORDW*, uint*, int>)(lpVtbl[4]))((IEnumRegisterWordW*)Unsafe.AsPointer(ref this), ulCount, rgRegisterWord, pcFetched);
     }
 
+    /// <include file='IEnumRegisterWordW.xml' path='doc/member[@name="IEnumRegisterWordW.Reset"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT Reset()
@@ -60,6 +67,7 @@ public unsafe partial struct IEnumRegisterWordW : IEnumRegisterWordW.Interface
         return ((delegate* unmanaged<IEnumRegisterWordW*, int>)(lpVtbl[5]))((IEnumRegisterWordW*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IEnumRegisterWordW.xml' path='doc/member[@name="IEnumRegisterWordW.Skip"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Skip([NativeTypeName("ULONG")] uint ulCount)

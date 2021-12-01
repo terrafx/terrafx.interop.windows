@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TfGravity.xml' path='doc/member[@name="TfGravity"]/*' />
 public enum TfGravity
 {
+    /// <include file='TfGravity.xml' path='doc/member[@name="TfGravity.TF_GRAVITY_BACKWARD"]/*' />
     TF_GRAVITY_BACKWARD = 0,
+
+    /// <include file='TfGravity.xml' path='doc/member[@name="TfGravity.TF_GRAVITY_FORWARD"]/*' />
     TF_GRAVITY_FORWARD = 1,
 }

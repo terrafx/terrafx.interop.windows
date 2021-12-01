@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IElementNamespaceFactory2.xml' path='doc/member[@name="IElementNamespaceFactory2"]/*' />
 [Guid("3050F805-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IElementNamespaceFactory2 : IElementNamespaceFactory")]
 [NativeInheritance("IElementNamespaceFactory")]
@@ -16,6 +17,7 @@ public unsafe partial struct IElementNamespaceFactory2 : IElementNamespaceFactor
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IElementNamespaceFactory2 : IElementNamespaceFactor
         return ((delegate* unmanaged<IElementNamespaceFactory2*, Guid*, void**, int>)(lpVtbl[0]))((IElementNamespaceFactory2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IElementNamespaceFactory2 : IElementNamespaceFactor
         return ((delegate* unmanaged<IElementNamespaceFactory2*, uint>)(lpVtbl[1]))((IElementNamespaceFactory2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IElementNamespaceFactory2 : IElementNamespaceFactor
         return ((delegate* unmanaged<IElementNamespaceFactory2*, uint>)(lpVtbl[2]))((IElementNamespaceFactory2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IElementNamespaceFactory.Create" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Create(IElementNamespace* pNamespace)
@@ -46,6 +51,7 @@ public unsafe partial struct IElementNamespaceFactory2 : IElementNamespaceFactor
         return ((delegate* unmanaged<IElementNamespaceFactory2*, IElementNamespace*, int>)(lpVtbl[3]))((IElementNamespaceFactory2*)Unsafe.AsPointer(ref this), pNamespace);
     }
 
+    /// <include file='IElementNamespaceFactory2.xml' path='doc/member[@name="IElementNamespaceFactory2.CreateWithImplementation"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT CreateWithImplementation(IElementNamespace* pNamespace, [NativeTypeName("BSTR")] ushort* bstrImplementation)

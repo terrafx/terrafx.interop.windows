@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WICGifApplicationExtensionProperties.xml' path='doc/member[@name="WICGifApplicationExtensionProperties"]/*' />
 public enum WICGifApplicationExtensionProperties : uint
 {
+    /// <include file='WICGifApplicationExtensionProperties.xml' path='doc/member[@name="WICGifApplicationExtensionProperties.WICGifApplicationExtensionApplication"]/*' />
     WICGifApplicationExtensionApplication = 0x1,
+
+    /// <include file='WICGifApplicationExtensionProperties.xml' path='doc/member[@name="WICGifApplicationExtensionProperties.WICGifApplicationExtensionData"]/*' />
     WICGifApplicationExtensionData = 0x2,
+
+    /// <include file='WICGifApplicationExtensionProperties.xml' path='doc/member[@name="WICGifApplicationExtensionProperties.WICGifApplicationExtensionProperties_FORCE_DWORD"]/*' />
     WICGifApplicationExtensionProperties_FORCE_DWORD = 0x7fffffff,
 }

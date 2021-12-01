@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DISK_GEOMETRY">
+    <summary>
+      <para>Describes the geometry of disk devices and media.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com/ni-winioctl-ioctl_disk_get_drive_geometry.md">IOCTL_DISK_GET_DRIVE_GEOMETRY</seealso>
+    <seealso href="https://docs.microsoft.com/ni-winioctl-ioctl_storage_get_media_types.md">IOCTL_STORAGE_GET_MEDIA_TYPES</seealso>
+    <seealso cref="MEDIA_TYPE" />
+  </member>
+  <member name="DISK_GEOMETRY.Cylinders">
+    <summary>
+      <para>The number of cylinders. See <see cref="LARGE_INTEGER" />.</para>
+    </summary>
+  </member>
+  <member name="DISK_GEOMETRY.MediaType">
+    <summary>
+      <para>The type of media. For a list of values, see <see cref="MEDIA_TYPE" />.</para>
+    </summary>
+  </member>
+  <member name="DISK_GEOMETRY.TracksPerCylinder">
+    <summary>
+      <para>The number of tracks per cylinder.</para>
+    </summary>
+  </member>
+  <member name="DISK_GEOMETRY.SectorsPerTrack">
+    <summary>
+      <para>The number of sectors per track.</para>
+    </summary>
+  </member>
+  <member name="DISK_GEOMETRY.BytesPerSector">
+    <summary>
+      <para>The number of bytes per sector.</para>
+    </summary>
+  </member>
+</doc>

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CRYPT_ENROLLMENT_NAME_VALUE_PAIR">
+    <summary>
+      <para>The <b>CRYPT_ENROLLMENT_NAME_VALUE_PAIR</b> structure is used to create certificate requests on behalf of a user.</para>
+    </summary>
+  </member>
+  <member name="CRYPT_ENROLLMENT_NAME_VALUE_PAIR.pwszName">
+    <summary>
+      <para>Name of a certificate requester.</para>
+    </summary>
+  </member>
+  <member name="CRYPT_ENROLLMENT_NAME_VALUE_PAIR.pwszValue">
+    <summary>
+      <para>Name of the user for whom the certificate is being requested.</para>
+    </summary>
+  </member>
+</doc>

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ISimpleFrameSite.xml' path='doc/member[@name="ISimpleFrameSite"]/*' />
 [Guid("742B0E01-14E6-101B-914E-00AA00300CAB")]
 [NativeTypeName("struct ISimpleFrameSite : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ISimpleFrameSite : ISimpleFrameSite.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ISimpleFrameSite : ISimpleFrameSite.Interface
         return ((delegate* unmanaged<ISimpleFrameSite*, Guid*, void**, int>)(lpVtbl[0]))((ISimpleFrameSite*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ISimpleFrameSite : ISimpleFrameSite.Interface
         return ((delegate* unmanaged<ISimpleFrameSite*, uint>)(lpVtbl[1]))((ISimpleFrameSite*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ISimpleFrameSite : ISimpleFrameSite.Interface
         return ((delegate* unmanaged<ISimpleFrameSite*, uint>)(lpVtbl[2]))((ISimpleFrameSite*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ISimpleFrameSite.xml' path='doc/member[@name="ISimpleFrameSite.PreMessageFilter"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT PreMessageFilter(HWND hWnd, uint msg, WPARAM wp, LPARAM lp, LRESULT* plResult, [NativeTypeName("DWORD *")] uint* pdwCookie)
@@ -46,6 +51,7 @@ public unsafe partial struct ISimpleFrameSite : ISimpleFrameSite.Interface
         return ((delegate* unmanaged<ISimpleFrameSite*, HWND, uint, WPARAM, LPARAM, LRESULT*, uint*, int>)(lpVtbl[3]))((ISimpleFrameSite*)Unsafe.AsPointer(ref this), hWnd, msg, wp, lp, plResult, pdwCookie);
     }
 
+    /// <include file='ISimpleFrameSite.xml' path='doc/member[@name="ISimpleFrameSite.PostMessageFilter"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT PostMessageFilter(HWND hWnd, uint msg, WPARAM wp, LPARAM lp, LRESULT* plResult, [NativeTypeName("DWORD")] uint dwCookie)

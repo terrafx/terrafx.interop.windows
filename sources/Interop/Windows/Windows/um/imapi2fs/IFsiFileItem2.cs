@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IFsiFileItem2.xml' path='doc/member[@name="IFsiFileItem2"]/*' />
 [Guid("199D0C19-11E1-40EB-8EC2-C8C822A07792")]
 [NativeTypeName("struct IFsiFileItem2 : IFsiFileItem")]
 [NativeInheritance("IFsiFileItem")]
@@ -16,6 +17,7 @@ public unsafe partial struct IFsiFileItem2 : IFsiFileItem2.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IFsiFileItem2 : IFsiFileItem2.Interface
         return ((delegate* unmanaged<IFsiFileItem2*, Guid*, void**, int>)(lpVtbl[0]))((IFsiFileItem2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IFsiFileItem2 : IFsiFileItem2.Interface
         return ((delegate* unmanaged<IFsiFileItem2*, uint>)(lpVtbl[1]))((IFsiFileItem2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IFsiFileItem2 : IFsiFileItem2.Interface
         return ((delegate* unmanaged<IFsiFileItem2*, uint>)(lpVtbl[2]))((IFsiFileItem2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct IFsiFileItem2 : IFsiFileItem2.Interface
         return ((delegate* unmanaged<IFsiFileItem2*, uint*, int>)(lpVtbl[3]))((IFsiFileItem2*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct IFsiFileItem2 : IFsiFileItem2.Interface
         return ((delegate* unmanaged<IFsiFileItem2*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IFsiFileItem2*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
@@ -60,6 +67,7 @@ public unsafe partial struct IFsiFileItem2 : IFsiFileItem2.Interface
         return ((delegate* unmanaged<IFsiFileItem2*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IFsiFileItem2*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
+    /// <inheritdoc cref="IDispatch.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
@@ -67,6 +75,7 @@ public unsafe partial struct IFsiFileItem2 : IFsiFileItem2.Interface
         return ((delegate* unmanaged<IFsiFileItem2*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IFsiFileItem2*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
+    /// <inheritdoc cref="IFsiItem.get_Name" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT get_Name([NativeTypeName("BSTR *")] ushort** pVal)
@@ -74,6 +83,7 @@ public unsafe partial struct IFsiFileItem2 : IFsiFileItem2.Interface
         return ((delegate* unmanaged<IFsiFileItem2*, ushort**, int>)(lpVtbl[7]))((IFsiFileItem2*)Unsafe.AsPointer(ref this), pVal);
     }
 
+    /// <inheritdoc cref="IFsiItem.get_FullPath" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT get_FullPath([NativeTypeName("BSTR *")] ushort** pVal)
@@ -81,6 +91,7 @@ public unsafe partial struct IFsiFileItem2 : IFsiFileItem2.Interface
         return ((delegate* unmanaged<IFsiFileItem2*, ushort**, int>)(lpVtbl[8]))((IFsiFileItem2*)Unsafe.AsPointer(ref this), pVal);
     }
 
+    /// <inheritdoc cref="IFsiItem.get_CreationTime" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT get_CreationTime([NativeTypeName("DATE *")] double* pVal)
@@ -88,6 +99,7 @@ public unsafe partial struct IFsiFileItem2 : IFsiFileItem2.Interface
         return ((delegate* unmanaged<IFsiFileItem2*, double*, int>)(lpVtbl[9]))((IFsiFileItem2*)Unsafe.AsPointer(ref this), pVal);
     }
 
+    /// <inheritdoc cref="IFsiItem.put_CreationTime" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT put_CreationTime([NativeTypeName("DATE")] double newVal)
@@ -95,6 +107,7 @@ public unsafe partial struct IFsiFileItem2 : IFsiFileItem2.Interface
         return ((delegate* unmanaged<IFsiFileItem2*, double, int>)(lpVtbl[10]))((IFsiFileItem2*)Unsafe.AsPointer(ref this), newVal);
     }
 
+    /// <inheritdoc cref="IFsiItem.get_LastAccessedTime" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT get_LastAccessedTime([NativeTypeName("DATE *")] double* pVal)
@@ -102,6 +115,7 @@ public unsafe partial struct IFsiFileItem2 : IFsiFileItem2.Interface
         return ((delegate* unmanaged<IFsiFileItem2*, double*, int>)(lpVtbl[11]))((IFsiFileItem2*)Unsafe.AsPointer(ref this), pVal);
     }
 
+    /// <inheritdoc cref="IFsiItem.put_LastAccessedTime" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT put_LastAccessedTime([NativeTypeName("DATE")] double newVal)
@@ -109,6 +123,7 @@ public unsafe partial struct IFsiFileItem2 : IFsiFileItem2.Interface
         return ((delegate* unmanaged<IFsiFileItem2*, double, int>)(lpVtbl[12]))((IFsiFileItem2*)Unsafe.AsPointer(ref this), newVal);
     }
 
+    /// <inheritdoc cref="IFsiItem.get_LastModifiedTime" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT get_LastModifiedTime([NativeTypeName("DATE *")] double* pVal)
@@ -116,6 +131,7 @@ public unsafe partial struct IFsiFileItem2 : IFsiFileItem2.Interface
         return ((delegate* unmanaged<IFsiFileItem2*, double*, int>)(lpVtbl[13]))((IFsiFileItem2*)Unsafe.AsPointer(ref this), pVal);
     }
 
+    /// <inheritdoc cref="IFsiItem.put_LastModifiedTime" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT put_LastModifiedTime([NativeTypeName("DATE")] double newVal)
@@ -123,6 +139,7 @@ public unsafe partial struct IFsiFileItem2 : IFsiFileItem2.Interface
         return ((delegate* unmanaged<IFsiFileItem2*, double, int>)(lpVtbl[14]))((IFsiFileItem2*)Unsafe.AsPointer(ref this), newVal);
     }
 
+    /// <inheritdoc cref="IFsiItem.get_IsHidden" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT get_IsHidden([NativeTypeName("VARIANT_BOOL *")] short* pVal)
@@ -130,6 +147,7 @@ public unsafe partial struct IFsiFileItem2 : IFsiFileItem2.Interface
         return ((delegate* unmanaged<IFsiFileItem2*, short*, int>)(lpVtbl[15]))((IFsiFileItem2*)Unsafe.AsPointer(ref this), pVal);
     }
 
+    /// <inheritdoc cref="IFsiItem.put_IsHidden" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT put_IsHidden([NativeTypeName("VARIANT_BOOL")] short newVal)
@@ -137,6 +155,7 @@ public unsafe partial struct IFsiFileItem2 : IFsiFileItem2.Interface
         return ((delegate* unmanaged<IFsiFileItem2*, short, int>)(lpVtbl[16]))((IFsiFileItem2*)Unsafe.AsPointer(ref this), newVal);
     }
 
+    /// <inheritdoc cref="IFsiItem.FileSystemName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT FileSystemName(FsiFileSystems fileSystem, [NativeTypeName("BSTR *")] ushort** pVal)
@@ -144,6 +163,7 @@ public unsafe partial struct IFsiFileItem2 : IFsiFileItem2.Interface
         return ((delegate* unmanaged<IFsiFileItem2*, FsiFileSystems, ushort**, int>)(lpVtbl[17]))((IFsiFileItem2*)Unsafe.AsPointer(ref this), fileSystem, pVal);
     }
 
+    /// <inheritdoc cref="IFsiItem.FileSystemPath" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT FileSystemPath(FsiFileSystems fileSystem, [NativeTypeName("BSTR *")] ushort** pVal)
@@ -151,6 +171,7 @@ public unsafe partial struct IFsiFileItem2 : IFsiFileItem2.Interface
         return ((delegate* unmanaged<IFsiFileItem2*, FsiFileSystems, ushort**, int>)(lpVtbl[18]))((IFsiFileItem2*)Unsafe.AsPointer(ref this), fileSystem, pVal);
     }
 
+    /// <inheritdoc cref="IFsiFileItem.get_DataSize" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT get_DataSize([NativeTypeName("LONGLONG *")] long* pVal)
@@ -158,6 +179,7 @@ public unsafe partial struct IFsiFileItem2 : IFsiFileItem2.Interface
         return ((delegate* unmanaged<IFsiFileItem2*, long*, int>)(lpVtbl[19]))((IFsiFileItem2*)Unsafe.AsPointer(ref this), pVal);
     }
 
+    /// <inheritdoc cref="IFsiFileItem.get_DataSize32BitLow" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public HRESULT get_DataSize32BitLow([NativeTypeName("LONG *")] int* pVal)
@@ -165,6 +187,7 @@ public unsafe partial struct IFsiFileItem2 : IFsiFileItem2.Interface
         return ((delegate* unmanaged<IFsiFileItem2*, int*, int>)(lpVtbl[20]))((IFsiFileItem2*)Unsafe.AsPointer(ref this), pVal);
     }
 
+    /// <inheritdoc cref="IFsiFileItem.get_DataSize32BitHigh" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
     public HRESULT get_DataSize32BitHigh([NativeTypeName("LONG *")] int* pVal)
@@ -172,6 +195,7 @@ public unsafe partial struct IFsiFileItem2 : IFsiFileItem2.Interface
         return ((delegate* unmanaged<IFsiFileItem2*, int*, int>)(lpVtbl[21]))((IFsiFileItem2*)Unsafe.AsPointer(ref this), pVal);
     }
 
+    /// <inheritdoc cref="IFsiFileItem.get_Data" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
     public HRESULT get_Data(IStream** pVal)
@@ -179,6 +203,7 @@ public unsafe partial struct IFsiFileItem2 : IFsiFileItem2.Interface
         return ((delegate* unmanaged<IFsiFileItem2*, IStream**, int>)(lpVtbl[22]))((IFsiFileItem2*)Unsafe.AsPointer(ref this), pVal);
     }
 
+    /// <inheritdoc cref="IFsiFileItem.put_Data" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
     public HRESULT put_Data(IStream* newVal)
@@ -186,6 +211,7 @@ public unsafe partial struct IFsiFileItem2 : IFsiFileItem2.Interface
         return ((delegate* unmanaged<IFsiFileItem2*, IStream*, int>)(lpVtbl[23]))((IFsiFileItem2*)Unsafe.AsPointer(ref this), newVal);
     }
 
+    /// <include file='IFsiFileItem2.xml' path='doc/member[@name="IFsiFileItem2.get_FsiNamedStreams"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(24)]
     public HRESULT get_FsiNamedStreams(IFsiNamedStreams** streams)
@@ -193,6 +219,7 @@ public unsafe partial struct IFsiFileItem2 : IFsiFileItem2.Interface
         return ((delegate* unmanaged<IFsiFileItem2*, IFsiNamedStreams**, int>)(lpVtbl[24]))((IFsiFileItem2*)Unsafe.AsPointer(ref this), streams);
     }
 
+    /// <include file='IFsiFileItem2.xml' path='doc/member[@name="IFsiFileItem2.get_IsNamedStream"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(25)]
     public HRESULT get_IsNamedStream([NativeTypeName("VARIANT_BOOL *")] short* pVal)
@@ -200,6 +227,7 @@ public unsafe partial struct IFsiFileItem2 : IFsiFileItem2.Interface
         return ((delegate* unmanaged<IFsiFileItem2*, short*, int>)(lpVtbl[25]))((IFsiFileItem2*)Unsafe.AsPointer(ref this), pVal);
     }
 
+    /// <include file='IFsiFileItem2.xml' path='doc/member[@name="IFsiFileItem2.AddStream"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(26)]
     public HRESULT AddStream([NativeTypeName("BSTR")] ushort* name, IStream* streamData)
@@ -207,6 +235,7 @@ public unsafe partial struct IFsiFileItem2 : IFsiFileItem2.Interface
         return ((delegate* unmanaged<IFsiFileItem2*, ushort*, IStream*, int>)(lpVtbl[26]))((IFsiFileItem2*)Unsafe.AsPointer(ref this), name, streamData);
     }
 
+    /// <include file='IFsiFileItem2.xml' path='doc/member[@name="IFsiFileItem2.RemoveStream"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(27)]
     public HRESULT RemoveStream([NativeTypeName("BSTR")] ushort* name)
@@ -214,6 +243,7 @@ public unsafe partial struct IFsiFileItem2 : IFsiFileItem2.Interface
         return ((delegate* unmanaged<IFsiFileItem2*, ushort*, int>)(lpVtbl[27]))((IFsiFileItem2*)Unsafe.AsPointer(ref this), name);
     }
 
+    /// <include file='IFsiFileItem2.xml' path='doc/member[@name="IFsiFileItem2.get_IsRealTime"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(28)]
     public HRESULT get_IsRealTime([NativeTypeName("VARIANT_BOOL *")] short* pVal)
@@ -221,6 +251,7 @@ public unsafe partial struct IFsiFileItem2 : IFsiFileItem2.Interface
         return ((delegate* unmanaged<IFsiFileItem2*, short*, int>)(lpVtbl[28]))((IFsiFileItem2*)Unsafe.AsPointer(ref this), pVal);
     }
 
+    /// <include file='IFsiFileItem2.xml' path='doc/member[@name="IFsiFileItem2.put_IsRealTime"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(29)]
     public HRESULT put_IsRealTime([NativeTypeName("VARIANT_BOOL")] short newVal)

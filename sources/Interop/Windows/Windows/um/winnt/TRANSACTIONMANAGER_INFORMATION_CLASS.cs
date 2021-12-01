@@ -5,12 +5,24 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TRANSACTIONMANAGER_INFORMATION_CLASS.xml' path='doc/member[@name="TRANSACTIONMANAGER_INFORMATION_CLASS"]/*' />
 public enum TRANSACTIONMANAGER_INFORMATION_CLASS
 {
+    /// <include file='TRANSACTIONMANAGER_INFORMATION_CLASS.xml' path='doc/member[@name="TRANSACTIONMANAGER_INFORMATION_CLASS.TransactionManagerBasicInformation"]/*' />
     TransactionManagerBasicInformation,
+
+    /// <include file='TRANSACTIONMANAGER_INFORMATION_CLASS.xml' path='doc/member[@name="TRANSACTIONMANAGER_INFORMATION_CLASS.TransactionManagerLogInformation"]/*' />
     TransactionManagerLogInformation,
+
+    /// <include file='TRANSACTIONMANAGER_INFORMATION_CLASS.xml' path='doc/member[@name="TRANSACTIONMANAGER_INFORMATION_CLASS.TransactionManagerLogPathInformation"]/*' />
     TransactionManagerLogPathInformation,
+
+    /// <include file='TRANSACTIONMANAGER_INFORMATION_CLASS.xml' path='doc/member[@name="TRANSACTIONMANAGER_INFORMATION_CLASS.TransactionManagerRecoveryInformation"]/*' />
     TransactionManagerRecoveryInformation = 4,
+
+    /// <include file='TRANSACTIONMANAGER_INFORMATION_CLASS.xml' path='doc/member[@name="TRANSACTIONMANAGER_INFORMATION_CLASS.TransactionManagerOnlineProbeInformation"]/*' />
     TransactionManagerOnlineProbeInformation = 3,
+
+    /// <include file='TRANSACTIONMANAGER_INFORMATION_CLASS.xml' path='doc/member[@name="TRANSACTIONMANAGER_INFORMATION_CLASS.TransactionManagerOldestTransactionInformation"]/*' />
     TransactionManagerOldestTransactionInformation = 5,
 }

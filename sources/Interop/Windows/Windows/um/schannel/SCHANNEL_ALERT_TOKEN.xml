@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SCHANNEL_ALERT_TOKEN">
+    <summary>
+      <para>Generates a <a href="https://docs.microsoft.com//windows/desktop/SecAuthN/secure-sockets-layer-protocol">Secure Sockets Layer Protocol</a> (SSL) or Transport Layer Security Protocol (TLS) alert to be sent to the target of a call to either the <see cref="InitializeSecurityContext (Schannel)" /> function or the <see cref="AcceptSecurityContext (Schannel)" />  function.</para>
+    </summary>
+    <remarks>
+      <para>Add an alert message to a client context by using this structure as the value of the <i>pInput</i> parameter in a call to the <see cref="ApplyControlToken" /> function.</para>
+    </remarks>
+  </member>
+  <member name="SCHANNEL_ALERT_TOKEN.dwTokenType">
+    <summary>
+      <para>Specifies the type of this structure. Set the value of this member to <b>SCHANNEL_ALERT</b>.</para>
+    </summary>
+  </member>
+  <member name="SCHANNEL_ALERT_TOKEN.dwAlertType">
+    <summary>
+      <para>Specifies the alert type. This must be one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TLS1_ALERT_WARNING</b>
+                </description>
+              </item>
+              <item>
+                <description>1</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The message is a warning.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TLS1_ALERT_FATAL</b>
+                </description>
+              </item>
+              <item>
+                <description>2</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The message is a fatal error. The connection is closed immediately.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="SCHANNEL_ALERT_TOKEN.dwAlertNumber">
+    <summary>
+      <para>One of the alert messages defined by the TLS protocol specification. For descriptions of the defined messages, see  <a href="http://tools.ietf.org/html/rfc5246#section-7.2">RFC 5246</a>,  <a href="http://tools.ietf.org/html/rfc4346#section-7.2">RFC 4346</a>, or  <a href="http://tools.ietf.org/html/rfc2246#section-7.2">RFC 2246</a>. This member must be one of the following values.</para>
+      <h4>TLS1_ALERT_CLOSE_NOTIFY (0)</h4>
+      <h4>TLS1_ALERT_UNEXPECTED_MESSAGE (10)</h4>
+      <h4>TLS1_ALERT_BAD_RECORD_MAC (20)</h4>
+      <h4>TLS1_ALERT_DECRYPTION_FAILED (21)</h4>
+      <h4>TLS1_ALERT_RECORD_OVERFLOW (22)</h4>
+      <h4>TLS1_ALERT_DECOMPRESSION_FAIL (30)</h4>
+      <h4>TLS1_ALERT_HANDSHAKE_FAILURE (40)</h4>
+      <h4>TLS1_ALERT_BAD_CERTIFICATE (42)</h4>
+      <h4>TLS1_ALERT_UNSUPPORTED_CERT (43)</h4>
+      <h4>TLS1_ALERT_CERTIFICATE_REVOKED (44)</h4>
+      <h4>TLS1_ALERT_CERTIFICATE_EXPIRED (45)</h4>
+      <h4>TLS1_ALERT_CERTIFICATE_UNKNOWN (46)</h4>
+      <h4>TLS1_ALERT_ILLEGAL_PARAMETER (47)</h4>
+      <h4>TLS1_ALERT_UNKNOWN_CA (48)</h4>
+      <h4>TLS1_ALERT_ACCESS_DENIED (49)</h4>
+      <h4>TLS1_ALERT_DECODE_ERROR (50)</h4>
+      <h4>TLS1_ALERT_DECRYPT_ERROR (51)</h4>
+      <h4>TLS1_ALERT_EXPORT_RESTRICTION (60)</h4>
+      <h4>TLS1_ALERT_PROTOCOL_VERSION (70)</h4>
+      <h4>TLS1_ALERT_INSUFFIENT_SECURITY (71)</h4>
+      <h4>TLS1_ALERT_INTERNAL_ERROR (80)</h4>
+      <h4>TLS1_ALERT_USER_CANCELED (90)</h4>
+      <h4>TLS1_ALERT_NO_RENEGOTIATION (100)</h4>
+      <h4>TLS1_ALERT_UNSUPPORTED_EXT (110)</h4>
+    </summary>
+  </member>
+</doc>

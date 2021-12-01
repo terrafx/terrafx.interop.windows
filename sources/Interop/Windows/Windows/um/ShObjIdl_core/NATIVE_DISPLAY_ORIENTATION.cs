@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NATIVE_DISPLAY_ORIENTATION.xml' path='doc/member[@name="NATIVE_DISPLAY_ORIENTATION"]/*' />
 public enum NATIVE_DISPLAY_ORIENTATION
 {
+    /// <include file='NATIVE_DISPLAY_ORIENTATION.xml' path='doc/member[@name="NATIVE_DISPLAY_ORIENTATION.NDO_LANDSCAPE"]/*' />
     NDO_LANDSCAPE = 0,
+
+    /// <include file='NATIVE_DISPLAY_ORIENTATION.xml' path='doc/member[@name="NATIVE_DISPLAY_ORIENTATION.NDO_PORTRAIT"]/*' />
     NDO_PORTRAIT = (NDO_LANDSCAPE + 1),
 }

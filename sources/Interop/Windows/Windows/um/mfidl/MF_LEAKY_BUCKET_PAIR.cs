@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MF_LEAKY_BUCKET_PAIR.xml' path='doc/member[@name="MF_LEAKY_BUCKET_PAIR"]/*' />
 public partial struct MF_LEAKY_BUCKET_PAIR
 {
+    /// <include file='MF_LEAKY_BUCKET_PAIR.xml' path='doc/member[@name="MF_LEAKY_BUCKET_PAIR.dwBitrate"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwBitrate;
 
+    /// <include file='MF_LEAKY_BUCKET_PAIR.xml' path='doc/member[@name="MF_LEAKY_BUCKET_PAIR.msBufferWindow"]/*' />
     [NativeTypeName("DWORD")]
     public uint msBufferWindow;
 }

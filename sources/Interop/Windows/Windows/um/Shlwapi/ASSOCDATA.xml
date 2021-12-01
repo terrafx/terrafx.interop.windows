@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ASSOCDATA">
+    <summary>
+      <para>Used by <see cref="IQueryAssociations.GetData" /> to define the type of data that is to be returned.</para>
+    </summary>
+  </member>
+  <member name="ASSOCDATA.ASSOCDATA_MSIDESCRIPTOR">
+    <summary>
+      <para>The component descriptor to pass to the Windows Installer API.</para>
+    </summary>
+  </member>
+  <member name="ASSOCDATA.ASSOCDATA_NOACTIVATEHANDLER">
+    <summary>
+      <para>Attempts to activate a window are restricted. There is no data associated with this value.</para>
+    </summary>
+  </member>
+  <member name="ASSOCDATA.ASSOCDATA_UNUSED1">
+    <summary></summary>
+  </member>
+  <member name="ASSOCDATA.ASSOCDATA_HASPERUSERASSOC">
+    <summary>
+      <para>Defaults to user specified association.</para>
+    </summary>
+  </member>
+  <member name="ASSOCDATA.ASSOCDATA_EDITFLAGS">
+    <summary>
+      <para>
+        <b>Internet Explorer version 6 or later</b>. Gets the data stored in the EditFlags value of a file association <a href="https://docs.microsoft.com//windows/desktop/shell/fa-progids">PROGID</a> registry key. This value consists of one or more <see cref="FILETYPEATTRIBUTEFLAGS" />. Compare against those values to determine which attributes have been set.</para>
+    </summary>
+  </member>
+  <member name="ASSOCDATA.ASSOCDATA_VALUE">
+    <summary>
+      <para>
+        <b>Internet Explorer version 6 or later</b>. Uses the <i>pwszExtra</i> parameter from the <see cref="IQueryAssociations.GetData" /> method as the value name.</para>
+    </summary>
+  </member>
+  <member name="ASSOCDATA.ASSOCDATA_MAX">
+    <summary>
+      <h4>- ASSOCDATA_QUERYCLASSSTORE</h4>
+      <para>If this value is present, applications should check the Windows 2000 class store.</para>
+    </summary>
+  </member>
+</doc>

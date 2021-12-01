@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDeskBand2.CanRenderComposited">
+    <summary>
+      <para>Indicates the deskband's ability to be displayed as translucent.
+<b>Important</b>  You should use <a href="https://docs.microsoft.com//windows/desktop/shell/taskbar-extensions">thumbnail toolbars</a> in new development in place of desk bands, which are not supported as of Windows 7.</para>
+    </summary>
+    <param name="pfCanRenderComposited">
+      <para>Type: <b>BOOL*</b></para>
+      <para>When this method returns, contains a <b>BOOL</b> indicating ability.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IDeskBand2.GetCompositionState">
+    <summary>
+      <para>Gets the composition state.
+<b>Important</b>  You should use <a href="https://docs.microsoft.com//windows/desktop/shell/taskbar-extensions">thumbnail toolbars</a> in new development in place of desk bands, which are not supported as of Windows 7.</para>
+    </summary>
+    <param name="pfCompositionEnabled">
+      <para>Type: <b>BOOL*</b></para>
+      <para>When this method returns, contains a <b>BOOL</b> that indicates state.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IDeskBand2.SetCompositionState">
+    <summary>
+      <para>Sets the composition state.
+<b>Important</b>  You should use <a href="https://docs.microsoft.com//windows/desktop/shell/taskbar-extensions">thumbnail toolbars</a> in new development in place of desk bands, which are not supported as of Windows 7.</para>
+    </summary>
+    <param name="fCompositionEnabled">
+      <para>Type: <b>BOOL</b></para>
+      <para>
+        <b>TRUE</b> to enable the composition state; otherwise, <b>FALSE</b>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IDeskBand2">
+    <summary>
+      <para>Exposes methods to enable and query translucency effects in a deskband object.
+<b>Important</b>  You should use <a href="https://docs.microsoft.com//windows/desktop/shell/taskbar-extensions">thumbnail toolbars</a> in new development in place of desk bands, which are not supported as of Windows 7.</para>
+    </summary>
+    <remarks>
+      <para>This interface also provides the methods of the <see cref="IOleWindow" />, <see cref="IDockingWindow" />, and <see cref="IDeskBand" /> interfaces, from which it inherits.</para>
+      <para>If implemented in all active deskbands, this interface allows the taskbar to be displayed using translucent effects. If an active deskband does not implement <b>IDeskBand2</b>, then translucency is disabled for the entire taskbar.</para>
+      <para>A deskband can implement <b>IDeskBand2</b> as a communication conduit between itself and the taskbar as follows:</para>
+      <list type="bullet">
+        <item>
+          <description>Taskbar calls <see cref="IDeskBand2.CanRenderComposited" /> to learn if a deskband supports translucency. If one or more do not, the entire taskbar is rendered opaque.</description>
+        </item>
+        <item>
+          <description>Taskbar calls <see cref="IDeskBand2.SetCompositionState" /> as appropriate in response to a user turning translucent effects on or off. The taskbar should attempt to render itself translucent or opaque in response to this call.</description>
+        </item>
+        <item>
+          <description>
+            <see cref="IDeskBand2.GetCompositionState" /> is the counterpart of <see cref="IDeskBand2.SetCompositionState" />.</description>
+        </item>
+      </list>
+    </remarks>
+  </member>
+</doc>

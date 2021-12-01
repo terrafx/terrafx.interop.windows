@@ -5,12 +5,16 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CMSG_ENCRYPTED_ENCODE_INFO.xml' path='doc/member[@name="CMSG_ENCRYPTED_ENCODE_INFO"]/*' />
 public unsafe partial struct CMSG_ENCRYPTED_ENCODE_INFO
 {
+    /// <include file='CMSG_ENCRYPTED_ENCODE_INFO.xml' path='doc/member[@name="CMSG_ENCRYPTED_ENCODE_INFO.cbSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbSize;
 
+    /// <include file='CMSG_ENCRYPTED_ENCODE_INFO.xml' path='doc/member[@name="CMSG_ENCRYPTED_ENCODE_INFO.ContentEncryptionAlgorithm"]/*' />
     public CRYPT_ALGORITHM_IDENTIFIER ContentEncryptionAlgorithm;
 
+    /// <include file='CMSG_ENCRYPTED_ENCODE_INFO.xml' path='doc/member[@name="CMSG_ENCRYPTED_ENCODE_INFO.pvEncryptionAuxInfo"]/*' />
     public void* pvEncryptionAuxInfo;
 }

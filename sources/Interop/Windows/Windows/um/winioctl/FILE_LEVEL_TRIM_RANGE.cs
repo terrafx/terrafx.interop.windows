@@ -7,12 +7,15 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='FILE_LEVEL_TRIM_RANGE.xml' path='doc/member[@name="FILE_LEVEL_TRIM_RANGE"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public partial struct FILE_LEVEL_TRIM_RANGE
 {
+    /// <include file='FILE_LEVEL_TRIM_RANGE.xml' path='doc/member[@name="FILE_LEVEL_TRIM_RANGE.Offset"]/*' />
     [NativeTypeName("DWORDLONG")]
     public ulong Offset;
 
+    /// <include file='FILE_LEVEL_TRIM_RANGE.xml' path='doc/member[@name="FILE_LEVEL_TRIM_RANGE.Length"]/*' />
     [NativeTypeName("DWORDLONG")]
     public ulong Length;
 }

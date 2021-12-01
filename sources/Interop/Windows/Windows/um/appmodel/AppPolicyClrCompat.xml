@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="AppPolicyClrCompat">
+    <summary>
+      <para>The AppPolicyClrCompat enumeration indicates the application type of a process so that you can determine whether to enable private reflection and/or make managed objects agile.</para>
+    </summary>
+  </member>
+  <member name="AppPolicyClrCompat.AppPolicyClrCompat_Other">
+    <summary>
+      <para>Indicates an application type other than the ones indicated by the other enumerated constants. The Common Language Runtime (CLR) should not be called by applications that are not Universal Windows Platform (UWP), Win32, nor Desktop Bridge.</para>
+    </summary>
+  </member>
+  <member name="AppPolicyClrCompat.AppPolicyClrCompat_ClassicDesktop">
+    <summary>
+      <para>Indicates a desktop/Win32 application, or an NT service. You can support private reflection on framework types.</para>
+    </summary>
+  </member>
+  <member name="AppPolicyClrCompat.AppPolicyClrCompat_Universal">
+    <summary>
+      <para>Indicates a Universal Windows Platform (UWP) application. You should disable private reflection on framework types, but you can support IAgileObject.</para>
+    </summary>
+  </member>
+  <member name="AppPolicyClrCompat.AppPolicyClrCompat_PackagedDesktop">
+    <summary>
+      <para>Indicates a Desktop Bridge application. You can support private reflection on framework types, and you can support IAgileObject.</para>
+    </summary>
+  </member>
+</doc>

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ISuspensionDependencyManager.xml' path='doc/member[@name="ISuspensionDependencyManager"]/*' />
 [Guid("52B83A42-2543-416A-81D9-C0DE7969C8B3")]
 [NativeTypeName("struct ISuspensionDependencyManager : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ISuspensionDependencyManager : ISuspensionDependenc
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ISuspensionDependencyManager : ISuspensionDependenc
         return ((delegate* unmanaged<ISuspensionDependencyManager*, Guid*, void**, int>)(lpVtbl[0]))((ISuspensionDependencyManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ISuspensionDependencyManager : ISuspensionDependenc
         return ((delegate* unmanaged<ISuspensionDependencyManager*, uint>)(lpVtbl[1]))((ISuspensionDependencyManager*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ISuspensionDependencyManager : ISuspensionDependenc
         return ((delegate* unmanaged<ISuspensionDependencyManager*, uint>)(lpVtbl[2]))((ISuspensionDependencyManager*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ISuspensionDependencyManager.xml' path='doc/member[@name="ISuspensionDependencyManager.RegisterAsChild"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT RegisterAsChild(HANDLE processHandle)
@@ -46,6 +51,7 @@ public unsafe partial struct ISuspensionDependencyManager : ISuspensionDependenc
         return ((delegate* unmanaged<ISuspensionDependencyManager*, HANDLE, int>)(lpVtbl[3]))((ISuspensionDependencyManager*)Unsafe.AsPointer(ref this), processHandle);
     }
 
+    /// <include file='ISuspensionDependencyManager.xml' path='doc/member[@name="ISuspensionDependencyManager.GroupChildWithParent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GroupChildWithParent(HANDLE childProcessHandle)
@@ -53,6 +59,7 @@ public unsafe partial struct ISuspensionDependencyManager : ISuspensionDependenc
         return ((delegate* unmanaged<ISuspensionDependencyManager*, HANDLE, int>)(lpVtbl[4]))((ISuspensionDependencyManager*)Unsafe.AsPointer(ref this), childProcessHandle);
     }
 
+    /// <include file='ISuspensionDependencyManager.xml' path='doc/member[@name="ISuspensionDependencyManager.UngroupChildFromParent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT UngroupChildFromParent(HANDLE childProcessHandle)

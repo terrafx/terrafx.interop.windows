@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STARTUPINFOEXW.xml' path='doc/member[@name="STARTUPINFOEXW"]/*' />
 public partial struct STARTUPINFOEXW
 {
+    /// <include file='STARTUPINFOEXW.xml' path='doc/member[@name="STARTUPINFOEXW.StartupInfo"]/*' />
     public STARTUPINFOW StartupInfo;
 
+    /// <include file='STARTUPINFOEXW.xml' path='doc/member[@name="STARTUPINFOEXW.lpAttributeList"]/*' />
     public LPPROC_THREAD_ATTRIBUTE_LIST lpAttributeList;
 }

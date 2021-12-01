@@ -5,12 +5,16 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='EMRCREATEPEN.xml' path='doc/member[@name="EMRCREATEPEN"]/*' />
 public partial struct EMRCREATEPEN
 {
+    /// <include file='EMRCREATEPEN.xml' path='doc/member[@name="EMRCREATEPEN.emr"]/*' />
     public EMR emr;
 
+    /// <include file='EMRCREATEPEN.xml' path='doc/member[@name="EMRCREATEPEN.ihPen"]/*' />
     [NativeTypeName("DWORD")]
     public uint ihPen;
 
+    /// <include file='EMRCREATEPEN.xml' path='doc/member[@name="EMRCREATEPEN.lopn"]/*' />
     public LOGPEN lopn;
 }

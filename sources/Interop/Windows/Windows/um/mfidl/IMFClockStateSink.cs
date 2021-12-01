@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFClockStateSink.xml' path='doc/member[@name="IMFClockStateSink"]/*' />
 [Guid("F6696E82-74F7-4F3D-A178-8A5E09C3659F")]
 [NativeTypeName("struct IMFClockStateSink : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMFClockStateSink : IMFClockStateSink.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMFClockStateSink : IMFClockStateSink.Interface
         return ((delegate* unmanaged<IMFClockStateSink*, Guid*, void**, int>)(lpVtbl[0]))((IMFClockStateSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMFClockStateSink : IMFClockStateSink.Interface
         return ((delegate* unmanaged<IMFClockStateSink*, uint>)(lpVtbl[1]))((IMFClockStateSink*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMFClockStateSink : IMFClockStateSink.Interface
         return ((delegate* unmanaged<IMFClockStateSink*, uint>)(lpVtbl[2]))((IMFClockStateSink*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFClockStateSink.xml' path='doc/member[@name="IMFClockStateSink.OnClockStart"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT OnClockStart([NativeTypeName("MFTIME")] long hnsSystemTime, [NativeTypeName("LONGLONG")] long llClockStartOffset)
@@ -46,6 +51,7 @@ public unsafe partial struct IMFClockStateSink : IMFClockStateSink.Interface
         return ((delegate* unmanaged<IMFClockStateSink*, long, long, int>)(lpVtbl[3]))((IMFClockStateSink*)Unsafe.AsPointer(ref this), hnsSystemTime, llClockStartOffset);
     }
 
+    /// <include file='IMFClockStateSink.xml' path='doc/member[@name="IMFClockStateSink.OnClockStop"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT OnClockStop([NativeTypeName("MFTIME")] long hnsSystemTime)
@@ -53,6 +59,7 @@ public unsafe partial struct IMFClockStateSink : IMFClockStateSink.Interface
         return ((delegate* unmanaged<IMFClockStateSink*, long, int>)(lpVtbl[4]))((IMFClockStateSink*)Unsafe.AsPointer(ref this), hnsSystemTime);
     }
 
+    /// <include file='IMFClockStateSink.xml' path='doc/member[@name="IMFClockStateSink.OnClockPause"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT OnClockPause([NativeTypeName("MFTIME")] long hnsSystemTime)
@@ -60,6 +67,7 @@ public unsafe partial struct IMFClockStateSink : IMFClockStateSink.Interface
         return ((delegate* unmanaged<IMFClockStateSink*, long, int>)(lpVtbl[5]))((IMFClockStateSink*)Unsafe.AsPointer(ref this), hnsSystemTime);
     }
 
+    /// <include file='IMFClockStateSink.xml' path='doc/member[@name="IMFClockStateSink.OnClockRestart"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT OnClockRestart([NativeTypeName("MFTIME")] long hnsSystemTime)
@@ -67,6 +75,7 @@ public unsafe partial struct IMFClockStateSink : IMFClockStateSink.Interface
         return ((delegate* unmanaged<IMFClockStateSink*, long, int>)(lpVtbl[6]))((IMFClockStateSink*)Unsafe.AsPointer(ref this), hnsSystemTime);
     }
 
+    /// <include file='IMFClockStateSink.xml' path='doc/member[@name="IMFClockStateSink.OnClockSetRate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT OnClockSetRate([NativeTypeName("MFTIME")] long hnsSystemTime, float flRate)

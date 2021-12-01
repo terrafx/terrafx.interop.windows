@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SD_ENUM_SDS_INPUT.xml' path='doc/member[@name="SD_ENUM_SDS_INPUT"]/*' />
 public partial struct SD_ENUM_SDS_INPUT
 {
+    /// <include file='SD_ENUM_SDS_INPUT.xml' path='doc/member[@name="SD_ENUM_SDS_INPUT.StartingOffset"]/*' />
     [NativeTypeName("DWORDLONG")]
     public ulong StartingOffset;
 
+    /// <include file='SD_ENUM_SDS_INPUT.xml' path='doc/member[@name="SD_ENUM_SDS_INPUT.MaxSDEntriesToReturn"]/*' />
     [NativeTypeName("DWORDLONG")]
     public ulong MaxSDEntriesToReturn;
 }

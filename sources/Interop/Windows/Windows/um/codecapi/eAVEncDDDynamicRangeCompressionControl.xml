@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="eAVEncDDDynamicRangeCompressionControl">
+    <summary>
+      <para>Specifies the dynamic range control profile in a Dolby Digital audio stream. This enumeration is used with the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avencdddynamicrangecompressioncontrol-property">AVEncDDDynamicRangeCompressionControl</a> property.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-enumerations">Codec API Enumerations</seealso>
+    <seealso cref="ICodecAPI Interface" />
+  </member>
+  <member name="eAVEncDDDynamicRangeCompressionControl.eAVEncDDDynamicRangeCompressionControl_None">
+    <summary>
+      <para>No dynamic range compression.</para>
+    </summary>
+  </member>
+  <member name="eAVEncDDDynamicRangeCompressionControl.eAVEncDDDynamicRangeCompressionControl_FilmStandard">
+    <summary>
+      <para>Film standard profile.</para>
+    </summary>
+  </member>
+  <member name="eAVEncDDDynamicRangeCompressionControl.eAVEncDDDynamicRangeCompressionControl_FilmLight">
+    <summary>
+      <para>Film light profile.</para>
+    </summary>
+  </member>
+  <member name="eAVEncDDDynamicRangeCompressionControl.eAVEncDDDynamicRangeCompressionControl_MusicStandard">
+    <summary>
+      <para>Music standard profile.</para>
+    </summary>
+  </member>
+  <member name="eAVEncDDDynamicRangeCompressionControl.eAVEncDDDynamicRangeCompressionControl_MusicLight">
+    <summary>
+      <para>Music light profile.</para>
+    </summary>
+  </member>
+  <member name="eAVEncDDDynamicRangeCompressionControl.eAVEncDDDynamicRangeCompressionControl_Speech">
+    <summary>
+      <para>Speech profile.</para>
+    </summary>
+  </member>
+</doc>

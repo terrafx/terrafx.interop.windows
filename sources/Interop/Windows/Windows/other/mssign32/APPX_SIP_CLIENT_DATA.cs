@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='APPX_SIP_CLIENT_DATA.xml' path='doc/member[@name="APPX_SIP_CLIENT_DATA"]/*' />
 public unsafe partial struct APPX_SIP_CLIENT_DATA
 {
+    /// <include file='APPX_SIP_CLIENT_DATA.xml' path='doc/member[@name="APPX_SIP_CLIENT_DATA.pSignerParams"]/*' />
     [NativeTypeName("PSIGNER_SIGN_EX2_PARAMS")]
     public SIGNER_SIGN_EX2_PARAMS* pSignerParams;
 
+    /// <include file='APPX_SIP_CLIENT_DATA.xml' path='doc/member[@name="APPX_SIP_CLIENT_DATA.pAppxSipState"]/*' />
     public IUnknown* pAppxSipState;
 }

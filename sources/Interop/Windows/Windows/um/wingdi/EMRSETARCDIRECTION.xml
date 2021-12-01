@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="EMRSETARCDIRECTION">
+    <summary>
+      <para>The <b>EMRSETARCDIRECTION</b> structure contains members for the <b>SetArcDirection</b> enhanced metafile record.</para>
+    </summary>
+    <seealso cref="Arc" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafile-structures">Metafile Structures</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafiles">Metafiles Overview</seealso>
+    <seealso cref="SetArcDirection" />
+  </member>
+  <member name="EMRSETARCDIRECTION.emr">
+    <summary>
+      <para>The base structure for all record types.</para>
+    </summary>
+  </member>
+  <member name="EMRSETARCDIRECTION.iArcDirection">
+    <summary>
+      <para>Arc direction. This member can be either the AD_CLOCKWISE or AD_COUNTERCLOCKWISE value.</para>
+    </summary>
+  </member>
+</doc>

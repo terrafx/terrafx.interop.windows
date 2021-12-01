@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WICRawParameterSet">
+    <summary>
+      <para>Specifies the parameter set used by a raw codec.</para>
+    </summary>
+  </member>
+  <member name="WICRawParameterSet.WICAsShotParameterSet">
+    <summary>
+      <para>An as shot parameter set.</para>
+    </summary>
+  </member>
+  <member name="WICRawParameterSet.WICUserAdjustedParameterSet">
+    <summary>
+      <para>A user adjusted parameter set.</para>
+    </summary>
+  </member>
+  <member name="WICRawParameterSet.WICAutoAdjustedParameterSet">
+    <summary>
+      <para>A codec adjusted parameter set.</para>
+    </summary>
+  </member>
+  <member name="WICRawParameterSet.WICRAWPARAMETERSET_FORCE_DWORD">
+    <summary></summary>
+  </member>
+</doc>

@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="COMPONENT">
+    <summary>
+      <para>Used by Windows 2000 to hold information about a component. This structure replaces the <see cref="IE4COMPONENT" /> structure.</para>
+    </summary>
+  </member>
+  <member name="COMPONENT.dwSize">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The size of the structure.</para>
+    </summary>
+  </member>
+  <member name="COMPONENT.dwID">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>Reserved. Set to zero.</para>
+    </summary>
+  </member>
+  <member name="COMPONENT.iComponentType">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>The component type. It can take one of the following values.</para>
+      <h4>COMP_TYPE_HTMLDOC</h4>
+      <para>HTML document</para>
+      <h4>COMP_TYPE_PICTURE</h4>
+      <para>Picture</para>
+      <h4>COMP_TYPE_WEBSITE</h4>
+      <para>Website</para>
+      <h4>COMP_TYPE_CONTROL</h4>
+      <para>ActiveX control. This value is valid only for <see cref="IActiveDesktop.AddDesktopItem" />.</para>
+    </summary>
+  </member>
+  <member name="COMPONENT.fChecked">
+    <summary>
+      <para>Type: <b>BOOL</b></para>
+      <para>A value that is set to <b>TRUE</b> if the component is enabled, or <b>FALSE</b> if it's not.</para>
+    </summary>
+  </member>
+  <member name="COMPONENT.fDirty">
+    <summary>
+      <para>Type: <b>BOOL</b></para>
+      <para>A value that is set to <b>TRUE</b> if the component has been modified and not yet saved to disk. It will be set to <b>FALSE</b> if the component has not been modified, or if it has been modified and saved to disk.</para>
+    </summary>
+  </member>
+  <member name="COMPONENT.fNoScroll">
+    <summary>
+      <para>Type: <b>BOOL</b></para>
+      <para>A value that is set to <b>TRUE</b> if the component is scrollable, or <b>FALSE</b> if not.</para>
+    </summary>
+  </member>
+  <member name="COMPONENT.cpPos">
+    <summary>
+      <para>Type: <b><see cref="COMPPOS" /></b></para>
+      <para>A <see cref="COMPPOS" /> structure containing position and size information.</para>
+    </summary>
+  </member>
+  <member name="COMPONENT.wszFriendlyName">
+    <summary>
+      <para>Type: <b>WCHAR[MAX_PATH]</b></para>
+      <para>The component's friendly name.</para>
+    </summary>
+  </member>
+  <member name="COMPONENT.wszSource">
+    <summary>
+      <para>Type: <b>WCHAR[INTERNET_MAX_URL_LENGTH]</b></para>
+      <para>The component's URL.</para>
+    </summary>
+  </member>
+  <member name="COMPONENT.wszSubscribedURL">
+    <summary>
+      <para>Type: <b>WCHAR[INTERNET_MAX_URL_LENGTH]</b></para>
+      <para>The subscribed URL.</para>
+    </summary>
+  </member>
+  <member name="COMPONENT.dwCurItemState">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The current state of the component. It can take one of the following values.</para>
+      <h4>IS_NORMAL</h4>
+      <para>Normal screen</para>
+      <h4>IS_FULLSCREEN</h4>
+      <para>Full screen</para>
+      <h4>IS_SPLIT</h4>
+      <para>Split screen</para>
+    </summary>
+  </member>
+  <member name="COMPONENT.csiOriginal">
+    <summary>
+      <para>Type: <b><see cref="COMPSTATEINFO" /></b></para>
+      <para>A <see cref="COMPSTATEINFO" /> structure with the state of the component when it was first added.</para>
+    </summary>
+  </member>
+  <member name="COMPONENT.csiRestored">
+    <summary>
+      <para>Type: <b><see cref="COMPSTATEINFO" /></b></para>
+      <para>A <see cref="COMPSTATEINFO" /> structure with the restored state of the component.</para>
+    </summary>
+  </member>
+</doc>

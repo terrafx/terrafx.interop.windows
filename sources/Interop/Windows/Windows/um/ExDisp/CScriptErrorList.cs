@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CScriptErrorList.xml' path='doc/member[@name="CScriptErrorList"]/*' />
 [Guid("EFD01300-160F-11D2-BB2E-00805FF7EFCA")]
 public partial struct CScriptErrorList
 {

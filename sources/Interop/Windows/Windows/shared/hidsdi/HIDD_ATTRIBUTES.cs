@@ -5,14 +5,19 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HIDD_ATTRIBUTES.xml' path='doc/member[@name="HIDD_ATTRIBUTES"]/*' />
 public partial struct HIDD_ATTRIBUTES
 {
+    /// <include file='HIDD_ATTRIBUTES.xml' path='doc/member[@name="HIDD_ATTRIBUTES.Size"]/*' />
     [NativeTypeName("ULONG")]
     public uint Size;
 
+    /// <include file='HIDD_ATTRIBUTES.xml' path='doc/member[@name="HIDD_ATTRIBUTES.VendorID"]/*' />
     public ushort VendorID;
 
+    /// <include file='HIDD_ATTRIBUTES.xml' path='doc/member[@name="HIDD_ATTRIBUTES.ProductID"]/*' />
     public ushort ProductID;
 
+    /// <include file='HIDD_ATTRIBUTES.xml' path='doc/member[@name="HIDD_ATTRIBUTES.VersionNumber"]/*' />
     public ushort VersionNumber;
 }

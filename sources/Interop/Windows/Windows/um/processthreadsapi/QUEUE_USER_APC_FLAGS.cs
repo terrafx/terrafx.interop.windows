@@ -7,9 +7,13 @@ using System;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='QUEUE_USER_APC_FLAGS.xml' path='doc/member[@name="QUEUE_USER_APC_FLAGS"]/*' />
 [Flags]
 public enum QUEUE_USER_APC_FLAGS
 {
+    /// <include file='QUEUE_USER_APC_FLAGS.xml' path='doc/member[@name="QUEUE_USER_APC_FLAGS.QUEUE_USER_APC_FLAGS_NONE"]/*' />
     QUEUE_USER_APC_FLAGS_NONE = 0x0,
+
+    /// <include file='QUEUE_USER_APC_FLAGS.xml' path='doc/member[@name="QUEUE_USER_APC_FLAGS.QUEUE_USER_APC_FLAGS_SPECIAL_USER_APC"]/*' />
     QUEUE_USER_APC_FLAGS_SPECIAL_USER_APC = 0x1,
 }

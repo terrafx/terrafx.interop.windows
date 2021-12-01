@@ -5,24 +5,32 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SECURITY_DESCRIPTOR.xml' path='doc/member[@name="SECURITY_DESCRIPTOR"]/*' />
 public unsafe partial struct SECURITY_DESCRIPTOR
 {
+    /// <include file='SECURITY_DESCRIPTOR.xml' path='doc/member[@name="SECURITY_DESCRIPTOR.Revision"]/*' />
     public byte Revision;
 
+    /// <include file='SECURITY_DESCRIPTOR.xml' path='doc/member[@name="SECURITY_DESCRIPTOR.Sbz1"]/*' />
     public byte Sbz1;
 
+    /// <include file='SECURITY_DESCRIPTOR.xml' path='doc/member[@name="SECURITY_DESCRIPTOR.Control"]/*' />
     [NativeTypeName("SECURITY_DESCRIPTOR_CONTROL")]
     public ushort Control;
 
+    /// <include file='SECURITY_DESCRIPTOR.xml' path='doc/member[@name="SECURITY_DESCRIPTOR.Owner"]/*' />
     [NativeTypeName("PSID")]
     public void* Owner;
 
+    /// <include file='SECURITY_DESCRIPTOR.xml' path='doc/member[@name="SECURITY_DESCRIPTOR.Group"]/*' />
     [NativeTypeName("PSID")]
     public void* Group;
 
+    /// <include file='SECURITY_DESCRIPTOR.xml' path='doc/member[@name="SECURITY_DESCRIPTOR.Sacl"]/*' />
     [NativeTypeName("PACL")]
     public ACL* Sacl;
 
+    /// <include file='SECURITY_DESCRIPTOR.xml' path='doc/member[@name="SECURITY_DESCRIPTOR.Dacl"]/*' />
     [NativeTypeName("PACL")]
     public ACL* Dacl;
 }

@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="Windows.DefScreenSaverProc">
+    <summary>
+      <para>Provides default processing for any messages that a screen saver application does not process.</para>
+    </summary>
+    <param name="hWnd">
+      <para>Type: <b>HWND</b></para>
+      <para>The identifier of the screen saver window.</para>
+    </param>
+    <param name="msg">
+      <para>Type: <b>UINT</b></para>
+      <para>The message to be processed. The <b>DefScreenSaverProc</b> function responds to messages that affect the screen saver's operation, as detailed in the Remarks section.</para>
+      <para>If a screen saver application must perform a different action in response to any of these messages, the application's <see cref="ScreenSaverProc" /> window procedure should process the message.</para>
+    </param>
+    <param name="wParam">
+      <para>Type: <b>WPARAM</b></para>
+      <para>Additional message-specific information.</para>
+    </param>
+    <param name="lParam">
+      <para>Type: <b>LPARAM</b></para>
+      <para>Additional message-specific information.</para>
+    </param>
+    <returns>
+      <para>Type: <b>LONG</b></para>
+      <para>The return value specifies the result of the message processing and depends on the message sent.</para>
+    </returns>
+    <remarks>
+      <para>A screen saver application's <see cref="ScreenSaverProc" /> window procedure should use <b>DefScreenSaverProc</b> instead of the <see cref="DefWindowProc" /> function to provide default message processing. The <b>DefScreenSaverProc</b> function passes any messages that do not affect screen saver operation to <b>DefWindowProc</b>.</para>
+      <para>The following table describes how the <b>DefScreenSaverProc</b> processes a variety of window messages.</para>
+      <list type="table">
+        <listheader>
+          <description>Message</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-activate">WM_ACTIVATE</a>, <a href="https://docs.microsoft.com//windows/desktop/winmsg/wm-activateapp">WM_ACTIVATEAPP</a>, <a href="https://docs.microsoft.com//windows/desktop/winmsg/wm-ncactivate">WM_NCACTIVATE</a></description>
+          <description>Closes the screen saver if the <i>wParam</i> parameter is <b>FALSE</b>. A <i>wParam</i> value of <b>FALSE</b> indicates that the screen saver is losing the input focus. The screen saver is closed by sending a <a href="https://docs.microsoft.com//windows/desktop/winmsg/wm-close">WM_CLOSE</a> message.</description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/menurc/wm-setcursor">WM_SETCURSOR</a>
+          </description>
+          <description>Removes the cursor from the screen by setting the cursor to <b>NULL</b>.</description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-lbuttondown">WM_LBUTTONDOWN</a>, <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-rbuttondown">WM_RBUTTONDOWN</a>, <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-mbuttondown">WM_MBUTTONDOWN</a>, <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-keydown">WM_KEYDOWN</a>, <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-keyup">WM_KEYUP</a>, <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-mousemove">WM_MOUSEMOVE</a></description>
+          <description>Calls the <see cref="PostQuitMessage" /> function to close the screen saver.</description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/winmsg/wm-destroy">WM_DESTROY</a>
+          </description>
+          <description>Posts a <a href="https://docs.microsoft.com//windows/desktop/winmsg/wm-close">WM_CLOSE</a> message to close the screen saver window.</description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/menurc/wm-syscommand">WM_SYSCOMMAND</a>
+          </description>
+          <description>Returns <b>FALSE</b> if the <i>wParam</i> parameter of <a href="https://docs.microsoft.com//windows/desktop/menurc/wm-syscommand">WM_SYSCOMMAND</a> is either <b>SC_CLOSE</b> or <b>SC_SCREENSAVE</b>.</description>
+        </item>
+      </list>
+    </remarks>
+  </member>
+  <member name="Windows.RegisterDialogClasses">
+    <summary>
+      <para>Registers any nonstandard window classes required by a screen saver's configuration dialog box.</para>
+    </summary>
+    <param name="hInst">
+      <para>Type: <b>HANDLE</b></para>
+      <para>An identifier of an instance of the module registering the window classes.</para>
+    </param>
+    <returns>
+      <para>Type: <b>BOOL</b></para>
+      <para>Returns nonzero if successful, or zero otherwise.</para>
+      <para>To retrieve extended error information, call <see cref="GetLastError" />.</para>
+    </returns>
+    <remarks>
+      <para>The <b>RegisterDialogClasses</b> function should not be exported. It is called by routines defined in the Scrnsave.lib file.</para>
+      <para>If a screen saver does not register any special window classes for the configuration dialog box, the <b>RegisterDialogClasses</b> function must return <b>TRUE</b>.</para>
+    </remarks>
+    <seealso cref="ScreenSaverConfigureDialog" />
+  </member>
+  <member name="Windows.ScreenSaverConfigureDialog">
+    <summary>
+      <para>Receives messages sent to a screen saver's configuration dialog box. A screen saver that allows user configuration must define this function.</para>
+    </summary>
+    <param name="hDlg">
+      <para>Type: <b>HWND</b></para>
+      <para>The identifier of the configuration dialog box.</para>
+    </param>
+    <param name="message">
+      <para>Type: <b>UINT</b></para>
+      <para>A message that was sent to the screen saver's configuration dialog box.</para>
+    </param>
+    <param name="wParam">
+      <para>Type: <b>WPARAM</b></para>
+      <para>Additional message-specific information.</para>
+    </param>
+    <param name="lParam">
+      <para>Type: <b>LPARAM</b></para>
+      <para>Additional message-specific information.</para>
+    </param>
+    <returns>
+      <para>Type: <b>BOOL</b></para>
+      <para>If the function successfully processes the message, it should return <b>TRUE</b>. If not, it should return <b>FALSE</b>, except in response to a <a href="https://docs.microsoft.com//windows/desktop/dlgbox/wm-initdialog">WM_INITDIALOG</a> message. In response to a <b>WM_INITDIALOG</b> message, <b>ScreenSaverConfigureDialog</b> should return <b>FALSE</b> if it calls the <see cref="SetFocus" /> function to set the keyboard focus to one of the controls in the dialog box. Otherwise, the function should return <b>TRUE</b>, in which case the system sets the keyboard focus to the first control in the dialog box that can be given the focus.</para>
+    </returns>
+    <remarks>
+      <para>The dialog box template for the configuration dialog box must have the <b>DLG_SCRNSAVECONFIGURE</b> identifier.</para>
+      <para>The dialog box procedure is used only if the application specifies the default window class (<b>WC_DIALOG</b>) for the dialog box. The application uses the default class if no explicit class is given in the dialog box template. Although the dialog box procedure is similar to a window procedure, it must not call the <see cref="DefWindowProc" /> function to process unwanted messages. Unwanted messages are processed internally by the default dialog box procedure.</para>
+      <para>The <b>ScreenSaverConfigureDialog</b> function must be exported by including it in the EXPORTS statement in the application's module-definition (.def) file.</para>
+    </remarks>
+    <seealso cref="RegisterDialogClasses" />
+  </member>
+  <member name="Windows.ScreenSaverProc">
+    <summary>
+      <para>Receives messages sent to the specified screen saver window.</para>
+    </summary>
+    <param name="hWnd">
+      <para>Type: <b>HWND</b></para>
+      <para>An identifier of the window.</para>
+    </param>
+    <param name="message">
+      <para>Type: <b>UINT</b></para>
+      <para>A message sent to the screen saver window.</para>
+    </param>
+    <param name="wParam">
+      <para>Type: <b>WPARAM</b></para>
+      <para>Additional message-specific information.</para>
+    </param>
+    <param name="lParam">
+      <para>Type: <b>LPARAM</b></para>
+      <para>Additional message-specific information.</para>
+    </param>
+    <returns>
+      <para>Type: <b>LONG</b></para>
+      <para>The return value is the result of the message processing and depends on the message sent.</para>
+    </returns>
+    <remarks>
+      <para>A screen saver's <b>ScreenSaverProc</b> window procedure should use the <see cref="DefScreenSaverProc" /> function instead of the <see cref="DefWindowProc" /> function to provide default message processing. The <b>DefScreenSaverProc</b> function passes any messages that do not affect screen saver operations to <b>DefWindowProc</b>.</para>
+      <para>The <b>ScreenSaverProc</b> function must be exported by including it in the EXPORTS statement in the application's module-definition (.def) file.</para>
+    </remarks>
+  </member>
+</doc>

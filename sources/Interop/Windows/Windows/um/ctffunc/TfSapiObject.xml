@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="TfSapiObject">
+    <summary>
+      <para>Elements of the <b>TfSapiObject</b> enumeration are used with the <see cref="ITfFnGetSAPIObject.Get" /> method to specify a specific type of Speech API (SAPI) object.</para>
+    </summary>
+    <seealso cref="ITfFnGetSAPIObject.Get " />
+  </member>
+  <member name="TfSapiObject.GETIF_RESMGR">
+    <summary>
+      <para>Specifies an ISpResourceManager object.</para>
+    </summary>
+  </member>
+  <member name="TfSapiObject.GETIF_RECOCONTEXT">
+    <summary>
+      <para>Specifies an ISpRecoContext object.</para>
+    </summary>
+  </member>
+  <member name="TfSapiObject.GETIF_RECOGNIZER">
+    <summary>
+      <para>Specifies an ISpRecognizer object.</para>
+    </summary>
+  </member>
+  <member name="TfSapiObject.GETIF_VOICE">
+    <summary>
+      <para>Specifies an ISpVoice object.</para>
+    </summary>
+  </member>
+  <member name="TfSapiObject.GETIF_DICTGRAM">
+    <summary>
+      <para>Specifies an ISpRecoGrammar object.</para>
+    </summary>
+  </member>
+  <member name="TfSapiObject.GETIF_RECOGNIZERNOINIT">
+    <summary>
+      <para>Specifies an ISpRecognizer object. SAPI will not be initialized if it is not already.</para>
+    </summary>
+  </member>
+</doc>

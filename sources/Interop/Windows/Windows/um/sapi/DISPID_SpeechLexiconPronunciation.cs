@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DISPID_SpeechLexiconPronunciation.xml' path='doc/member[@name="DISPID_SpeechLexiconPronunciation"]/*' />
 public enum DISPID_SpeechLexiconPronunciation
 {
+    /// <include file='DISPID_SpeechLexiconPronunciation.xml' path='doc/member[@name="DISPID_SpeechLexiconPronunciation.DISPID_SLPType"]/*' />
     DISPID_SLPType = 1,
+
+    /// <include file='DISPID_SpeechLexiconPronunciation.xml' path='doc/member[@name="DISPID_SpeechLexiconPronunciation.DISPID_SLPLangId"]/*' />
     DISPID_SLPLangId = (DISPID_SLPType + 1),
+
+    /// <include file='DISPID_SpeechLexiconPronunciation.xml' path='doc/member[@name="DISPID_SpeechLexiconPronunciation.DISPID_SLPPartOfSpeech"]/*' />
     DISPID_SLPPartOfSpeech = (DISPID_SLPLangId + 1),
+
+    /// <include file='DISPID_SpeechLexiconPronunciation.xml' path='doc/member[@name="DISPID_SpeechLexiconPronunciation.DISPID_SLPPhoneIds"]/*' />
     DISPID_SLPPhoneIds = (DISPID_SLPPartOfSpeech + 1),
+
+    /// <include file='DISPID_SpeechLexiconPronunciation.xml' path='doc/member[@name="DISPID_SpeechLexiconPronunciation.DISPID_SLPSymbolic"]/*' />
     DISPID_SLPSymbolic = (DISPID_SLPPhoneIds + 1),
 }

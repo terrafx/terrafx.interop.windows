@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAMTuner.xml' path='doc/member[@name="IAMTuner"]/*' />
 [Guid("211A8761-03AC-11D1-8D13-00AA00BD8339")]
 [NativeTypeName("struct IAMTuner : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IAMTuner : IAMTuner.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IAMTuner : IAMTuner.Interface
         return ((delegate* unmanaged<IAMTuner*, Guid*, void**, int>)(lpVtbl[0]))((IAMTuner*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IAMTuner : IAMTuner.Interface
         return ((delegate* unmanaged<IAMTuner*, uint>)(lpVtbl[1]))((IAMTuner*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IAMTuner : IAMTuner.Interface
         return ((delegate* unmanaged<IAMTuner*, uint>)(lpVtbl[2]))((IAMTuner*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAMTuner.xml' path='doc/member[@name="IAMTuner.put_Channel"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT put_Channel([NativeTypeName("long")] int lChannel, [NativeTypeName("long")] int lVideoSubChannel, [NativeTypeName("long")] int lAudioSubChannel)
@@ -46,6 +51,7 @@ public unsafe partial struct IAMTuner : IAMTuner.Interface
         return ((delegate* unmanaged<IAMTuner*, int, int, int, int>)(lpVtbl[3]))((IAMTuner*)Unsafe.AsPointer(ref this), lChannel, lVideoSubChannel, lAudioSubChannel);
     }
 
+    /// <include file='IAMTuner.xml' path='doc/member[@name="IAMTuner.get_Channel"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT get_Channel([NativeTypeName("long *")] int* plChannel, [NativeTypeName("long *")] int* plVideoSubChannel, [NativeTypeName("long *")] int* plAudioSubChannel)
@@ -53,6 +59,7 @@ public unsafe partial struct IAMTuner : IAMTuner.Interface
         return ((delegate* unmanaged<IAMTuner*, int*, int*, int*, int>)(lpVtbl[4]))((IAMTuner*)Unsafe.AsPointer(ref this), plChannel, plVideoSubChannel, plAudioSubChannel);
     }
 
+    /// <include file='IAMTuner.xml' path='doc/member[@name="IAMTuner.ChannelMinMax"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT ChannelMinMax([NativeTypeName("long *")] int* lChannelMin, [NativeTypeName("long *")] int* lChannelMax)
@@ -60,6 +67,7 @@ public unsafe partial struct IAMTuner : IAMTuner.Interface
         return ((delegate* unmanaged<IAMTuner*, int*, int*, int>)(lpVtbl[5]))((IAMTuner*)Unsafe.AsPointer(ref this), lChannelMin, lChannelMax);
     }
 
+    /// <include file='IAMTuner.xml' path='doc/member[@name="IAMTuner.put_CountryCode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT put_CountryCode([NativeTypeName("long")] int lCountryCode)
@@ -67,6 +75,7 @@ public unsafe partial struct IAMTuner : IAMTuner.Interface
         return ((delegate* unmanaged<IAMTuner*, int, int>)(lpVtbl[6]))((IAMTuner*)Unsafe.AsPointer(ref this), lCountryCode);
     }
 
+    /// <include file='IAMTuner.xml' path='doc/member[@name="IAMTuner.get_CountryCode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT get_CountryCode([NativeTypeName("long *")] int* plCountryCode)
@@ -74,6 +83,7 @@ public unsafe partial struct IAMTuner : IAMTuner.Interface
         return ((delegate* unmanaged<IAMTuner*, int*, int>)(lpVtbl[7]))((IAMTuner*)Unsafe.AsPointer(ref this), plCountryCode);
     }
 
+    /// <include file='IAMTuner.xml' path='doc/member[@name="IAMTuner.put_TuningSpace"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT put_TuningSpace([NativeTypeName("long")] int lTuningSpace)
@@ -81,6 +91,7 @@ public unsafe partial struct IAMTuner : IAMTuner.Interface
         return ((delegate* unmanaged<IAMTuner*, int, int>)(lpVtbl[8]))((IAMTuner*)Unsafe.AsPointer(ref this), lTuningSpace);
     }
 
+    /// <include file='IAMTuner.xml' path='doc/member[@name="IAMTuner.get_TuningSpace"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT get_TuningSpace([NativeTypeName("long *")] int* plTuningSpace)
@@ -88,6 +99,7 @@ public unsafe partial struct IAMTuner : IAMTuner.Interface
         return ((delegate* unmanaged<IAMTuner*, int*, int>)(lpVtbl[9]))((IAMTuner*)Unsafe.AsPointer(ref this), plTuningSpace);
     }
 
+    /// <include file='IAMTuner.xml' path='doc/member[@name="IAMTuner.Logon"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT Logon(HANDLE hCurrentUser)
@@ -95,6 +107,7 @@ public unsafe partial struct IAMTuner : IAMTuner.Interface
         return ((delegate* unmanaged<IAMTuner*, HANDLE, int>)(lpVtbl[10]))((IAMTuner*)Unsafe.AsPointer(ref this), hCurrentUser);
     }
 
+    /// <include file='IAMTuner.xml' path='doc/member[@name="IAMTuner.Logout"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT Logout()
@@ -102,6 +115,7 @@ public unsafe partial struct IAMTuner : IAMTuner.Interface
         return ((delegate* unmanaged<IAMTuner*, int>)(lpVtbl[11]))((IAMTuner*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAMTuner.xml' path='doc/member[@name="IAMTuner.SignalPresent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT SignalPresent([NativeTypeName("long *")] int* plSignalStrength)
@@ -109,6 +123,7 @@ public unsafe partial struct IAMTuner : IAMTuner.Interface
         return ((delegate* unmanaged<IAMTuner*, int*, int>)(lpVtbl[12]))((IAMTuner*)Unsafe.AsPointer(ref this), plSignalStrength);
     }
 
+    /// <include file='IAMTuner.xml' path='doc/member[@name="IAMTuner.put_Mode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT put_Mode(AMTunerModeType lMode)
@@ -116,6 +131,7 @@ public unsafe partial struct IAMTuner : IAMTuner.Interface
         return ((delegate* unmanaged<IAMTuner*, AMTunerModeType, int>)(lpVtbl[13]))((IAMTuner*)Unsafe.AsPointer(ref this), lMode);
     }
 
+    /// <include file='IAMTuner.xml' path='doc/member[@name="IAMTuner.get_Mode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT get_Mode(AMTunerModeType* plMode)
@@ -123,6 +139,7 @@ public unsafe partial struct IAMTuner : IAMTuner.Interface
         return ((delegate* unmanaged<IAMTuner*, AMTunerModeType*, int>)(lpVtbl[14]))((IAMTuner*)Unsafe.AsPointer(ref this), plMode);
     }
 
+    /// <include file='IAMTuner.xml' path='doc/member[@name="IAMTuner.GetAvailableModes"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT GetAvailableModes([NativeTypeName("long *")] int* plModes)
@@ -130,6 +147,7 @@ public unsafe partial struct IAMTuner : IAMTuner.Interface
         return ((delegate* unmanaged<IAMTuner*, int*, int>)(lpVtbl[15]))((IAMTuner*)Unsafe.AsPointer(ref this), plModes);
     }
 
+    /// <include file='IAMTuner.xml' path='doc/member[@name="IAMTuner.RegisterNotificationCallBack"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT RegisterNotificationCallBack(IAMTunerNotification* pNotify, [NativeTypeName("long")] int lEvents)
@@ -137,6 +155,7 @@ public unsafe partial struct IAMTuner : IAMTuner.Interface
         return ((delegate* unmanaged<IAMTuner*, IAMTunerNotification*, int, int>)(lpVtbl[16]))((IAMTuner*)Unsafe.AsPointer(ref this), pNotify, lEvents);
     }
 
+    /// <include file='IAMTuner.xml' path='doc/member[@name="IAMTuner.UnRegisterNotificationCallBack"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT UnRegisterNotificationCallBack(IAMTunerNotification* pNotify)

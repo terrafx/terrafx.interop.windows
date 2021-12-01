@@ -10,6 +10,7 @@ using TerraFX.Interop.DirectX;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IVMRVideoStreamControl.xml' path='doc/member[@name="IVMRVideoStreamControl"]/*' />
 [Guid("058D1F11-2A54-4BEF-BD54-DF706626B727")]
 [NativeTypeName("struct IVMRVideoStreamControl : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -17,6 +18,7 @@ public unsafe partial struct IVMRVideoStreamControl : IVMRVideoStreamControl.Int
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -24,6 +26,7 @@ public unsafe partial struct IVMRVideoStreamControl : IVMRVideoStreamControl.Int
         return ((delegate* unmanaged<IVMRVideoStreamControl*, Guid*, void**, int>)(lpVtbl[0]))((IVMRVideoStreamControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -32,6 +35,7 @@ public unsafe partial struct IVMRVideoStreamControl : IVMRVideoStreamControl.Int
         return ((delegate* unmanaged<IVMRVideoStreamControl*, uint>)(lpVtbl[1]))((IVMRVideoStreamControl*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -40,6 +44,7 @@ public unsafe partial struct IVMRVideoStreamControl : IVMRVideoStreamControl.Int
         return ((delegate* unmanaged<IVMRVideoStreamControl*, uint>)(lpVtbl[2]))((IVMRVideoStreamControl*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IVMRVideoStreamControl.xml' path='doc/member[@name="IVMRVideoStreamControl.SetColorKey"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetColorKey([NativeTypeName("LPDDCOLORKEY")] DDCOLORKEY* lpClrKey)
@@ -47,6 +52,7 @@ public unsafe partial struct IVMRVideoStreamControl : IVMRVideoStreamControl.Int
         return ((delegate* unmanaged<IVMRVideoStreamControl*, DDCOLORKEY*, int>)(lpVtbl[3]))((IVMRVideoStreamControl*)Unsafe.AsPointer(ref this), lpClrKey);
     }
 
+    /// <include file='IVMRVideoStreamControl.xml' path='doc/member[@name="IVMRVideoStreamControl.GetColorKey"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetColorKey([NativeTypeName("LPDDCOLORKEY")] DDCOLORKEY* lpClrKey)
@@ -54,6 +60,7 @@ public unsafe partial struct IVMRVideoStreamControl : IVMRVideoStreamControl.Int
         return ((delegate* unmanaged<IVMRVideoStreamControl*, DDCOLORKEY*, int>)(lpVtbl[4]))((IVMRVideoStreamControl*)Unsafe.AsPointer(ref this), lpClrKey);
     }
 
+    /// <include file='IVMRVideoStreamControl.xml' path='doc/member[@name="IVMRVideoStreamControl.SetStreamActiveState"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetStreamActiveState(BOOL fActive)
@@ -61,6 +68,7 @@ public unsafe partial struct IVMRVideoStreamControl : IVMRVideoStreamControl.Int
         return ((delegate* unmanaged<IVMRVideoStreamControl*, BOOL, int>)(lpVtbl[5]))((IVMRVideoStreamControl*)Unsafe.AsPointer(ref this), fActive);
     }
 
+    /// <include file='IVMRVideoStreamControl.xml' path='doc/member[@name="IVMRVideoStreamControl.GetStreamActiveState"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetStreamActiveState(BOOL* lpfActive)

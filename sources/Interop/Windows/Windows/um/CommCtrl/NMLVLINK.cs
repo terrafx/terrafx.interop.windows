@@ -5,13 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NMLVLINK.xml' path='doc/member[@name="NMLVLINK"]/*' />
 public partial struct NMLVLINK
 {
+    /// <include file='NMLVLINK.xml' path='doc/member[@name="NMLVLINK.hdr"]/*' />
     public NMHDR hdr;
 
+    /// <include file='NMLVLINK.xml' path='doc/member[@name="NMLVLINK.link"]/*' />
     public LITEM link;
 
+    /// <include file='NMLVLINK.xml' path='doc/member[@name="NMLVLINK.iItem"]/*' />
     public int iItem;
 
+    /// <include file='NMLVLINK.xml' path='doc/member[@name="NMLVLINK.iSubItem"]/*' />
     public int iSubItem;
 }

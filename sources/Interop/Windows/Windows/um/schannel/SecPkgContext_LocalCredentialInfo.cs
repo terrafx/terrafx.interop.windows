@@ -5,20 +5,26 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SecPkgContext_LocalCredentialInfo.xml' path='doc/member[@name="SecPkgContext_LocalCredentialInfo"]/*' />
 public unsafe partial struct SecPkgContext_LocalCredentialInfo
 {
+    /// <include file='SecPkgContext_LocalCredentialInfo.xml' path='doc/member[@name="SecPkgContext_LocalCredentialInfo.cbCertificateChain"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbCertificateChain;
 
+    /// <include file='SecPkgContext_LocalCredentialInfo.xml' path='doc/member[@name="SecPkgContext_LocalCredentialInfo.pbCertificateChain"]/*' />
     [NativeTypeName("PBYTE")]
     public byte* pbCertificateChain;
 
+    /// <include file='SecPkgContext_LocalCredentialInfo.xml' path='doc/member[@name="SecPkgContext_LocalCredentialInfo.cCertificates"]/*' />
     [NativeTypeName("DWORD")]
     public uint cCertificates;
 
+    /// <include file='SecPkgContext_LocalCredentialInfo.xml' path='doc/member[@name="SecPkgContext_LocalCredentialInfo.fFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint fFlags;
 
+    /// <include file='SecPkgContext_LocalCredentialInfo.xml' path='doc/member[@name="SecPkgContext_LocalCredentialInfo.dwBits"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwBits;
 }

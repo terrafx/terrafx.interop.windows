@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITravelLogEntry.xml' path='doc/member[@name="ITravelLogEntry"]/*' />
 [Guid("7EBFDD87-AD18-11D3-A4C5-00C04F72D6B8")]
 [NativeTypeName("struct ITravelLogEntry : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITravelLogEntry : ITravelLogEntry.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITravelLogEntry : ITravelLogEntry.Interface
         return ((delegate* unmanaged<ITravelLogEntry*, Guid*, void**, int>)(lpVtbl[0]))((ITravelLogEntry*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITravelLogEntry : ITravelLogEntry.Interface
         return ((delegate* unmanaged<ITravelLogEntry*, uint>)(lpVtbl[1]))((ITravelLogEntry*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITravelLogEntry : ITravelLogEntry.Interface
         return ((delegate* unmanaged<ITravelLogEntry*, uint>)(lpVtbl[2]))((ITravelLogEntry*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITravelLogEntry.xml' path='doc/member[@name="ITravelLogEntry.GetTitle"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTitle([NativeTypeName("LPWSTR *")] ushort** ppszTitle)
@@ -46,6 +51,7 @@ public unsafe partial struct ITravelLogEntry : ITravelLogEntry.Interface
         return ((delegate* unmanaged<ITravelLogEntry*, ushort**, int>)(lpVtbl[3]))((ITravelLogEntry*)Unsafe.AsPointer(ref this), ppszTitle);
     }
 
+    /// <include file='ITravelLogEntry.xml' path='doc/member[@name="ITravelLogEntry.GetURL"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetURL([NativeTypeName("LPWSTR *")] ushort** ppszURL)

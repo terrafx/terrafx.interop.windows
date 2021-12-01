@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='FIND_BY_SID_DATA.xml' path='doc/member[@name="FIND_BY_SID_DATA"]/*' />
 public partial struct FIND_BY_SID_DATA
 {
+    /// <include file='FIND_BY_SID_DATA.xml' path='doc/member[@name="FIND_BY_SID_DATA.Restart"]/*' />
     [NativeTypeName("DWORD")]
     public uint Restart;
 
+    /// <include file='FIND_BY_SID_DATA.xml' path='doc/member[@name="FIND_BY_SID_DATA.Sid"]/*' />
     public SID Sid;
 }

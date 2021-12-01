@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DISPIDSPTSI.xml' path='doc/member[@name="DISPIDSPTSI"]/*' />
 public enum DISPIDSPTSI
 {
+    /// <include file='DISPIDSPTSI.xml' path='doc/member[@name="DISPIDSPTSI.DISPIDSPTSI_ActiveOffset"]/*' />
     DISPIDSPTSI_ActiveOffset = 1,
+
+    /// <include file='DISPIDSPTSI.xml' path='doc/member[@name="DISPIDSPTSI.DISPIDSPTSI_ActiveLength"]/*' />
     DISPIDSPTSI_ActiveLength = (DISPIDSPTSI_ActiveOffset + 1),
+
+    /// <include file='DISPIDSPTSI.xml' path='doc/member[@name="DISPIDSPTSI.DISPIDSPTSI_SelectionOffset"]/*' />
     DISPIDSPTSI_SelectionOffset = (DISPIDSPTSI_ActiveLength + 1),
+
+    /// <include file='DISPIDSPTSI.xml' path='doc/member[@name="DISPIDSPTSI.DISPIDSPTSI_SelectionLength"]/*' />
     DISPIDSPTSI_SelectionLength = (DISPIDSPTSI_SelectionOffset + 1),
 }

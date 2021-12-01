@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVDecAACDownmixMode.xml' path='doc/member[@name="CODECAPI_AVDecAACDownmixMode"]/*' />
 [Guid("01274475-F6BB-4017-B084-81A763C942D4")]
 public partial struct CODECAPI_AVDecAACDownmixMode
 {

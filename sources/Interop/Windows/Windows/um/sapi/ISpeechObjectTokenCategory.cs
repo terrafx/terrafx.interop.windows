@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ISpeechObjectTokenCategory.xml' path='doc/member[@name="ISpeechObjectTokenCategory"]/*' />
 [Guid("CA7EAC50-2D01-4145-86D4-5AE7D70F4469")]
 [NativeTypeName("struct ISpeechObjectTokenCategory : IDispatch")]
 [NativeInheritance("IDispatch")]
@@ -16,6 +17,7 @@ public unsafe partial struct ISpeechObjectTokenCategory : ISpeechObjectTokenCate
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ISpeechObjectTokenCategory : ISpeechObjectTokenCate
         return ((delegate* unmanaged<ISpeechObjectTokenCategory*, Guid*, void**, int>)(lpVtbl[0]))((ISpeechObjectTokenCategory*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ISpeechObjectTokenCategory : ISpeechObjectTokenCate
         return ((delegate* unmanaged<ISpeechObjectTokenCategory*, uint>)(lpVtbl[1]))((ISpeechObjectTokenCategory*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ISpeechObjectTokenCategory : ISpeechObjectTokenCate
         return ((delegate* unmanaged<ISpeechObjectTokenCategory*, uint>)(lpVtbl[2]))((ISpeechObjectTokenCategory*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct ISpeechObjectTokenCategory : ISpeechObjectTokenCate
         return ((delegate* unmanaged<ISpeechObjectTokenCategory*, uint*, int>)(lpVtbl[3]))((ISpeechObjectTokenCategory*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct ISpeechObjectTokenCategory : ISpeechObjectTokenCate
         return ((delegate* unmanaged<ISpeechObjectTokenCategory*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((ISpeechObjectTokenCategory*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
@@ -60,6 +67,7 @@ public unsafe partial struct ISpeechObjectTokenCategory : ISpeechObjectTokenCate
         return ((delegate* unmanaged<ISpeechObjectTokenCategory*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((ISpeechObjectTokenCategory*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
+    /// <inheritdoc cref="IDispatch.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
@@ -67,6 +75,7 @@ public unsafe partial struct ISpeechObjectTokenCategory : ISpeechObjectTokenCate
         return ((delegate* unmanaged<ISpeechObjectTokenCategory*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((ISpeechObjectTokenCategory*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
+    /// <include file='ISpeechObjectTokenCategory.xml' path='doc/member[@name="ISpeechObjectTokenCategory.get_Id"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT get_Id([NativeTypeName("BSTR *")] ushort** Id)
@@ -74,6 +83,7 @@ public unsafe partial struct ISpeechObjectTokenCategory : ISpeechObjectTokenCate
         return ((delegate* unmanaged<ISpeechObjectTokenCategory*, ushort**, int>)(lpVtbl[7]))((ISpeechObjectTokenCategory*)Unsafe.AsPointer(ref this), Id);
     }
 
+    /// <include file='ISpeechObjectTokenCategory.xml' path='doc/member[@name="ISpeechObjectTokenCategory.put_Default"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT put_Default([NativeTypeName("const BSTR")] ushort* TokenId)
@@ -81,6 +91,7 @@ public unsafe partial struct ISpeechObjectTokenCategory : ISpeechObjectTokenCate
         return ((delegate* unmanaged<ISpeechObjectTokenCategory*, ushort*, int>)(lpVtbl[8]))((ISpeechObjectTokenCategory*)Unsafe.AsPointer(ref this), TokenId);
     }
 
+    /// <include file='ISpeechObjectTokenCategory.xml' path='doc/member[@name="ISpeechObjectTokenCategory.get_Default"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT get_Default([NativeTypeName("BSTR *")] ushort** TokenId)
@@ -88,6 +99,7 @@ public unsafe partial struct ISpeechObjectTokenCategory : ISpeechObjectTokenCate
         return ((delegate* unmanaged<ISpeechObjectTokenCategory*, ushort**, int>)(lpVtbl[9]))((ISpeechObjectTokenCategory*)Unsafe.AsPointer(ref this), TokenId);
     }
 
+    /// <include file='ISpeechObjectTokenCategory.xml' path='doc/member[@name="ISpeechObjectTokenCategory.SetId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT SetId([NativeTypeName("const BSTR")] ushort* Id, [NativeTypeName("VARIANT_BOOL")] short CreateIfNotExist = 0)
@@ -95,6 +107,7 @@ public unsafe partial struct ISpeechObjectTokenCategory : ISpeechObjectTokenCate
         return ((delegate* unmanaged<ISpeechObjectTokenCategory*, ushort*, short, int>)(lpVtbl[10]))((ISpeechObjectTokenCategory*)Unsafe.AsPointer(ref this), Id, CreateIfNotExist);
     }
 
+    /// <include file='ISpeechObjectTokenCategory.xml' path='doc/member[@name="ISpeechObjectTokenCategory.GetDataKey"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT GetDataKey(SpeechDataKeyLocation Location, ISpeechDataKey** DataKey)
@@ -102,6 +115,7 @@ public unsafe partial struct ISpeechObjectTokenCategory : ISpeechObjectTokenCate
         return ((delegate* unmanaged<ISpeechObjectTokenCategory*, SpeechDataKeyLocation, ISpeechDataKey**, int>)(lpVtbl[11]))((ISpeechObjectTokenCategory*)Unsafe.AsPointer(ref this), Location, DataKey);
     }
 
+    /// <include file='ISpeechObjectTokenCategory.xml' path='doc/member[@name="ISpeechObjectTokenCategory.EnumerateTokens"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT EnumerateTokens([NativeTypeName("BSTR")] ushort* RequiredAttributes, [NativeTypeName("BSTR")] ushort* OptionalAttributes, ISpeechObjectTokens** Tokens)

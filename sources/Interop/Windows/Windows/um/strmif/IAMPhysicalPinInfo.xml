@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IAMPhysicalPinInfo.GetPhysicalType">
+    <summary>
+      <para>
+        <b>Note</b>  The <code>IAMPhysicalPinInfo</code> interface is deprecated.</para>
+      <para>Retrieves the type and name of the physical pin.</para>
+    </summary>
+    <param name="pType">
+      <para>Pointer to a variable that receives a value indicating the pin's type. The <see cref="PhysicalConnectorType" /> enumeration defines the pin type values.</para>
+    </param>
+    <param name="ppszType">
+      <para>Address of a pointer to a buffer that receives a human-readable string identifying the pin type.</para>
+    </param>
+    <returns>
+      <para>Returns S_OK if a valid physical pin value is found. Otherwise, returns VFW_E_NO_ACCEPTABLE_TYPES.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMPhysicalPinInfo Interface" />
+  </member>
+  <member name="IAMPhysicalPinInfo">
+    <summary>
+      <para>
+        <b>Note</b>  This interface has been deprecated. It will continue to be supported for backward compatibility with existing applications, but new applications and filters should not use it.</para>
+      <para>This interface enables an application or filter to retrieve information about a pin that represents a physical hardware connections.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/deprecated-interfaces">Deprecated Interfaces</seealso>
+  </member>
+</doc>

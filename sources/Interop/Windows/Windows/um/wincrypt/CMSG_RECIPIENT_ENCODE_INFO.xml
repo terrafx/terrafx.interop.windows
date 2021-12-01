@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CMSG_RECIPIENT_ENCODE_INFO">
+    <summary>
+      <para>The <b>CMSG_RECIPIENT_ENCODE_INFO</b> structure contains information a message recipient's content encryption key management type.
+<b>Note</b>  Only key transport recipients are supported in PKCS #7 version 1.5.</para>
+    </summary>
+  </member>
+  <member name="CMSG_RECIPIENT_ENCODE_INFO.dwRecipientChoice">
+    <summary>
+      <para>Indicates the union member to be used. The following values are defined.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <b>CMSG_KEY_TRANS_RECIPIENT</b>
+          </description>
+          <description>
+            <para>Use with key transport key management</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>CMSG_KEY_AGREE_RECIPIENT</b>
+          </description>
+          <description>
+            <para>Used with key agreement key management</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>CMSG_MAIL_LIST_RECIPIENT</b>
+          </description>
+          <description>
+            <para>Use with previously distributed key encryption key management</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="CMSG_RECIPIENT_ENCODE_INFO.DUMMYUNIONNAME">
+    <summary></summary>
+  </member>
+  <member name="CMSG_RECIPIENT_ENCODE_INFO.DUMMYUNIONNAME.pKeyTrans">
+    <summary>
+      <para>A pointer to a
+<see cref="CMSG_KEY_TRANS_RECIPIENT_ENCODE_INFO" /> structure. Used with CMSG_KEY_TRANS_RECIPIENT</para>
+    </summary>
+  </member>
+  <member name="CMSG_RECIPIENT_ENCODE_INFO.DUMMYUNIONNAME.pKeyAgree">
+    <summary>
+      <para>A pointer to a
+<see cref="CMSG_KEY_AGREE_RECIPIENT_ENCODE_INFO" /> structure. Used with CMSG_KEY_AGREE_RECIPIENT</para>
+    </summary>
+  </member>
+  <member name="CMSG_RECIPIENT_ENCODE_INFO.DUMMYUNIONNAME.pMailList">
+    <summary>
+      <para>A pointer to a
+<see cref="CMSG_MAIL_LIST_RECIPIENT_ENCODE_INFO" /> structure. Used with CMSG_MAIL_LIST_RECIPIENT</para>
+    </summary>
+  </member>
+</doc>

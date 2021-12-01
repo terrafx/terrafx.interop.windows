@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ASSOCIATIONLEVEL.xml' path='doc/member[@name="ASSOCIATIONLEVEL"]/*' />
 public enum ASSOCIATIONLEVEL
 {
+    /// <include file='ASSOCIATIONLEVEL.xml' path='doc/member[@name="ASSOCIATIONLEVEL.AL_MACHINE"]/*' />
     AL_MACHINE = 0,
+
+    /// <include file='ASSOCIATIONLEVEL.xml' path='doc/member[@name="ASSOCIATIONLEVEL.AL_EFFECTIVE"]/*' />
     AL_EFFECTIVE = (AL_MACHINE + 1),
+
+    /// <include file='ASSOCIATIONLEVEL.xml' path='doc/member[@name="ASSOCIATIONLEVEL.AL_USER"]/*' />
     AL_USER = (AL_EFFECTIVE + 1),
 }

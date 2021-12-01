@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IExecuteCommand.Execute">
+    <summary>
+      <para>Invoke the verb on the selected items. Call this method after you have called the other methods of this interface.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IExecuteCommand.SetDirectory">
+    <summary>
+      <para>Sets a new working directory.</para>
+    </summary>
+    <param name="pszDirectory">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>Pointer to a null-terminated string with the fully qualified path of the new working directory. If this value is <b>NULL</b>, the current working directory is used.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IExecuteCommand.SetKeyState">
+    <summary>
+      <para>Sets a value based on the current state of the keys CTRL and SHIFT.</para>
+    </summary>
+    <param name="grfKeyState">
+      <para>Type: <b>DWORD</b></para>
+      <para>One or both of the following flags to indicate whether the key is pressed.</para>
+      <h4>MK_CONTROL</h4>
+      <para>The CTRL key is pressed.</para>
+      <h4>MK_SHIFT</h4>
+      <para>The SHIFT key is pressed.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IExecuteCommand.SetNoShowUI">
+    <summary>
+      <para>Indicates whether any UI associated with the selected Shell item should be displayed.</para>
+    </summary>
+    <param name="fNoShowUI">
+      <para>Type: <b>BOOL</b></para>
+      <para>
+        <b>TRUE</b> to block display of any associated UI; <b>FALSE</b> to display the UI. <b>FALSE</b> is the default value.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IExecuteCommand.SetParameters">
+    <summary>
+      <para>Provides parameter values for the verb.</para>
+    </summary>
+    <param name="pszParameters">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>Pointer to a string that contains parameter values. The format and contents of this string is determined by the verb that is to be invoked.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IExecuteCommand.SetPosition">
+    <summary>
+      <para>Sets the coordinates of a point used for display.</para>
+    </summary>
+    <param name="pt">
+      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/dd162805(v=vs.85)">POINT</a></b></para>
+      <para>The screen coordinates at which the user right-clicked to invoke the shortcut menu from which a command was chosen. Applications can use this information to present any UI. This is particularly useful in a multi-monitor situation. The default position is the center of the default monitor.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IExecuteCommand.SetShowWindow">
+    <summary>
+      <para>Sets the specified window's visual state.</para>
+    </summary>
+    <param name="nShow">
+      <para>Type: <b>int</b></para>
+      <para>It can be any of the values that can be specified in the <i>nCmdShow</i> parameter for the <see cref="ShowWindow" /> function.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IExecuteCommand">
+    <summary>
+      <para>Exposes methods that set a given state or parameter related to the command verb, as well as a method to invoke that verb.</para>
+    </summary>
+    <remarks>
+      <h3>When to Implement</h3>
+      <para>Implement this interface when you choose it as your method to invoke the verb to perform an action on selected items. The items are passed as a Shell item array through <see cref="IObjectWithSelection.SetSelection" />, so the object must also implement <see cref="IObjectWithSelection" />.</para>
+      <h3>When to Use</h3>
+      <para>Do not call the methods of <b>IExecuteCommand</b> directly. Windows Explorer calls your <b>IExecuteCommand</b> methods when the user wants to perform an action on the items.</para>
+      <para>Note that, apart from <see cref="Execute" />, the methods of this interface pass system information to the handler. The system itself calls these methods, setting the parameters appropriately based on system settings and conditions.</para>
+    </remarks>
+  </member>
+</doc>

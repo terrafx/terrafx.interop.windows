@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DWMTRANSITION_OWNEDWINDOW_TARGET">
+    <summary>
+      <para>Identifies the target.</para>
+    </summary>
+  </member>
+  <member name="DWMTRANSITION_OWNEDWINDOW_TARGET.DWMTRANSITION_OWNEDWINDOW_NULL">
+    <summary>
+      <para>Indicates no animation.</para>
+    </summary>
+  </member>
+  <member name="DWMTRANSITION_OWNEDWINDOW_TARGET.DWMTRANSITION_OWNEDWINDOW_REPOSITION">
+    <summary>
+      <para>Indicates that the window is repositioned.</para>
+    </summary>
+  </member>
+</doc>

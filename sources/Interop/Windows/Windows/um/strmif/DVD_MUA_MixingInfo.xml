@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DVD_MUA_MixingInfo">
+    <summary>
+      <para>The <code>DVD_MUA_MixingInfo</code> structure describes the surround sound mixing information for the channels in one audio stream in a specified title.</para>
+    </summary>
+    <remarks>
+      <para>Applications cannot use the information contained in this structure to change the mixing unless they have a way to communicate with a custom audio decoder that has been inserted manually into the filter graph. The default audio decoder handles Linear Pulse Code Modulated (LPCM) audio using the mixing information on the digital video disc (DVD), but applications have no way to instruct the decoder to modify the mixing values. This means that current DVD playback applications should have no need to access the multichannel-related data structures.</para>
+      <para>The <see cref="DVD_MultichannelAudioAttributes" /> structure contains information about one audio stream in a specified title. An array of up to eight <code>DVD_MUA_MixingInfo</code> structures will be populated in this structure, if the following conditions are true.</para>
+      <list type="bullet">
+        <item>
+          <description>DVD_AudioAttributes.AppMode = DVD_AudioMode_Surround</description>
+        </item>
+        <item>
+          <description>DVD_AudioAttributes.AudioFormat = DVD_AudioFormat_LPCM</description>
+        </item>
+        <item>
+          <description>DVD_AudioAttributes.fHasMultichannelInfo = 1</description>
+        </item>
+      </list>
+      <para>Possible values for <b>dwSpeakerPosition</b> are defined in Ksmedia.h as follows:</para>
+      <list type="table">
+        <listheader>
+          <description>Define
+</description>
+          <description>Value
+</description>
+        </listheader>
+        <item>
+          <description>KSAUDIO_SPEAKER_LEFT</description>
+          <description>0x1</description>
+        </item>
+        <item>
+          <description>KSAUDIO_SPEAKER_RIGHT</description>
+          <description>0x2</description>
+        </item>
+        <item>
+          <description>KSAUDIO_SPEAKER_CENTER</description>
+          <description>0x4</description>
+        </item>
+        <item>
+          <description>KSAUDIO_SPEAKER_SURROUND_LEFT</description>
+          <description>0x8</description>
+        </item>
+        <item>
+          <description>KSAUDIO_SPEAKER_SURROUND_RIGHT</description>
+          <description>0x10</description>
+        </item>
+        <item>
+          <description>KSAUDIO_SPEAKER_SUBWOOFER</description>
+          <description>0x20</description>
+        </item>
+        <item>
+          <description>KSAUDIO_SPEAKER_LEFT_OF_CENTER</description>
+          <description>0x40</description>
+        </item>
+        <item>
+          <description>KSAUDIO_SPEAKER_RIGHT_OF_CENTER</description>
+          <description>0x80</description>
+        </item>
+        <item>
+          <description>KSAUDIO_SPEAKER_SURROUND_MONO</description>
+          <description>0x100</description>
+        </item>
+        <item>
+          <description>KSAUDIO_SPEAKER_SIDE_LEFT</description>
+          <description>0x200</description>
+        </item>
+        <item>
+          <description>KSAUDIO_SPEAKER_SIDE_RIGHT</description>
+          <description>0x400</description>
+        </item>
+        <item>
+          <description>KSAUDIO_SPEAKER_TOP</description>
+          <description>0x800</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="DVD_AudioAttributes" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-structures">DirectShow Structures</seealso>
+  </member>
+  <member name="DVD_MUA_MixingInfo.fMixTo0">
+    <summary>
+      <para>Variable of type BOOL; <b>TRUE</b> means the channel is mixed to channel 0.</para>
+    </summary>
+  </member>
+  <member name="DVD_MUA_MixingInfo.fMixTo1">
+    <summary>
+      <para>Variable of type BOOL; <b>TRUE</b> means the channel is mixed to channel 1.</para>
+    </summary>
+  </member>
+  <member name="DVD_MUA_MixingInfo.fMix0InPhase">
+    <summary>
+      <para>Variable of type BOOL; <b>TRUE</b> means the channel is mixed in phase to channel 0.</para>
+    </summary>
+  </member>
+  <member name="DVD_MUA_MixingInfo.fMix1InPhase">
+    <summary>
+      <para>Variable of type BOOL; <b>TRUE</b> means the channel is mixed in phase to channel 1.</para>
+    </summary>
+  </member>
+  <member name="DVD_MUA_MixingInfo.dwSpeakerPosition">
+    <summary>
+      <para>The speaker for which this channel is intended. See Remarks.</para>
+    </summary>
+  </member>
+</doc>

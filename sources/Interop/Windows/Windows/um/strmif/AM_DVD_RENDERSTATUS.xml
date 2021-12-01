@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="AM_DVD_RENDERSTATUS">
+    <summary>
+      <para>The AM_DVD_RENDERSTATUS structure contains codes indicating the status of DVD-Video playback. These codes are used in the <see cref="IDvdGraphBuilder.RenderDvdVideoVolume" /> method.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-structures">DirectShow Structures</seealso>
+    <seealso cref="IDvdGraphBuilder.RenderDvdVideoVolume" />
+  </member>
+  <member name="AM_DVD_RENDERSTATUS.hrVPEStatus">
+    <summary>
+      <para>Overlay/VPE error code. Zero indicates success; any other value is failure.</para>
+    </summary>
+  </member>
+  <member name="AM_DVD_RENDERSTATUS.bDvdVolInvalid">
+    <summary>
+      <para>
+        <b>TRUE</b> if the specified DVD volume to be played does not exist; <b>FALSE</b> otherwise.</para>
+    </summary>
+  </member>
+  <member name="AM_DVD_RENDERSTATUS.bDvdVolUnknown">
+    <summary>
+      <para>
+        <b>TRUE</b> if no DVD volume is specified or if it isn't found; <b>FALSE</b> otherwise.</para>
+    </summary>
+  </member>
+  <member name="AM_DVD_RENDERSTATUS.bNoLine21In">
+    <summary>
+      <para>
+        <b>TRUE</b> if the video decoder doesn't produce line 21 (closed captioning) data; <b>FALSE</b> otherwise.</para>
+    </summary>
+  </member>
+  <member name="AM_DVD_RENDERSTATUS.bNoLine21Out">
+    <summary>
+      <para>
+        <b>TRUE</b> if the video decoder can't be shown as closed captioning on video due to a problem with graph building; <b>FALSE</b> otherwise.</para>
+    </summary>
+  </member>
+  <member name="AM_DVD_RENDERSTATUS.iNumStreams">
+    <summary>
+      <para>Number of DVD streams to render.</para>
+    </summary>
+  </member>
+  <member name="AM_DVD_RENDERSTATUS.iNumStreamsFailed">
+    <summary>
+      <para>Number of streams that failed to render.</para>
+    </summary>
+  </member>
+  <member name="AM_DVD_RENDERSTATUS.dwFailedStreamsFlag">
+    <summary>
+      <para>Combination of <see cref="AM_DVD_STREAM_FLAGS" /> flags indicating which streams failed.</para>
+    </summary>
+  </member>
+</doc>

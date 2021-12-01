@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_HTTP_HEADER_MAPPING">
+    <summary>
+      <para>Specifies an individual header that is mapped as part of <see cref="WS_HTTP_MESSAGE_MAPPING" />.</para>
+    </summary>
+  </member>
+  <member name="WS_HTTP_HEADER_MAPPING.headerName">
+    <summary>
+      <para>The name of the HTTP header.</para>
+    </summary>
+  </member>
+  <member name="WS_HTTP_HEADER_MAPPING.headerMappingOptions">
+    <summary>
+      <para>A set of flags that control how headers are mapped.
+See <see cref="WS_HTTP_HEADER_MAPPING_OPTIONS" /> for more information.</para>
+    </summary>
+  </member>
+</doc>

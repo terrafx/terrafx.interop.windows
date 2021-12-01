@@ -5,13 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NMCUSTOMSPLITRECTINFO.xml' path='doc/member[@name="NMCUSTOMSPLITRECTINFO"]/*' />
 public partial struct NMCUSTOMSPLITRECTINFO
 {
+    /// <include file='NMCUSTOMSPLITRECTINFO.xml' path='doc/member[@name="NMCUSTOMSPLITRECTINFO.hdr"]/*' />
     public NMHDR hdr;
 
+    /// <include file='NMCUSTOMSPLITRECTINFO.xml' path='doc/member[@name="NMCUSTOMSPLITRECTINFO.rcClient"]/*' />
     public RECT rcClient;
 
+    /// <include file='NMCUSTOMSPLITRECTINFO.xml' path='doc/member[@name="NMCUSTOMSPLITRECTINFO.rcButton"]/*' />
     public RECT rcButton;
 
+    /// <include file='NMCUSTOMSPLITRECTINFO.xml' path='doc/member[@name="NMCUSTOMSPLITRECTINFO.rcSplit"]/*' />
     public RECT rcSplit;
 }

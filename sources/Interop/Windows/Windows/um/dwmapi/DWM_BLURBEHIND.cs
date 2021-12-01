@@ -7,15 +7,20 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DWM_BLURBEHIND.xml' path='doc/member[@name="DWM_BLURBEHIND"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct DWM_BLURBEHIND
 {
+    /// <include file='DWM_BLURBEHIND.xml' path='doc/member[@name="DWM_BLURBEHIND.dwFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFlags;
 
+    /// <include file='DWM_BLURBEHIND.xml' path='doc/member[@name="DWM_BLURBEHIND.fEnable"]/*' />
     public BOOL fEnable;
 
+    /// <include file='DWM_BLURBEHIND.xml' path='doc/member[@name="DWM_BLURBEHIND.hRgnBlur"]/*' />
     public HRGN hRgnBlur;
 
+    /// <include file='DWM_BLURBEHIND.xml' path='doc/member[@name="DWM_BLURBEHIND.fTransitionOnMaximized"]/*' />
     public BOOL fTransitionOnMaximized;
 }

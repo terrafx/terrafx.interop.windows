@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="_AMRESCTL_RESERVEFLAGS">
+    <summary>
+      <para>Specifies whether to increment or decrement the number of resources currently being reserved.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-enumerated-types">DirectShow Enumerated Types</seealso>
+  </member>
+  <member name="_AMRESCTL_RESERVEFLAGS.AMRESCTL_RESERVEFLAGS_RESERVE">
+    <summary>
+      <para>Increment the reserved resource count.</para>
+    </summary>
+  </member>
+  <member name="_AMRESCTL_RESERVEFLAGS.AMRESCTL_RESERVEFLAGS_UNRESERVE">
+    <summary>
+      <para>Decrement the reserved resource count.</para>
+    </summary>
+  </member>
+</doc>

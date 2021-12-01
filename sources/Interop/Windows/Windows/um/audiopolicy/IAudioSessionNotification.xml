@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IAudioSessionNotification.OnSessionCreated">
+    <summary>
+      <para>The <b>OnSessionCreated</b> method notifies the registered processes that the audio session has been created.</para>
+    </summary>
+    <param name="NewSession">
+      <para>Pointer to the <see cref="IAudioSessionControl" /> interface of the audio session that was created.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK.</para>
+    </returns>
+    <remarks>
+      <para>After registering its <see cref="IAudioSessionNotification" /> interface, the application receives event notifications in the form of callbacks through the methods of the interface.</para>
+      <para>The audio engine calls <b>OnSessionCreated</b> when a new session is activated on the device endpoint.
+This method is called from the session manager thread.  This method must take a reference to the session in the <i>NewSession</i> parameter if it wants to keep the reference after this call completes.</para>
+    </remarks>
+    <seealso cref="IAudioSessionNotification" />
+  </member>
+  <member name="IAudioSessionNotification">
+    <summary>
+      <para>The <b>IAudioSessionNotification</b> interface provides  notification when an audio session is created.</para>
+    </summary>
+    <remarks>
+      <para>Unlike the other WASAPI interfaces, which are implemented by the WASAPI system component, the <b>IAudioSessionNotification</b> interface is implemented by the application. To receive event notifications, the application passes to the <see cref="IAudioSessionManager2.RegisterSessionNotification" /> method a pointer to its <b>IAudioSessionNotification</b> implementation .</para>
+      <para>After registering its <b>IAudioSessionNotification</b> interface, the application receives event notifications in the form of callbacks through the methods in the interface.</para>
+      <para>When the application no longer needs to receive notifications, it calls the <see cref="IAudioSessionManager2.UnregisterSessionNotification" /> method. This method removes the registration of an <b>IAudioSessionNotification</b> interface that the application previously registered.</para>
+      <para>The application must not register or unregister notification callbacks during an event callback.</para>
+      <para>The session enumerator might not be aware of the new sessions that are reported through <b>IAudioSessionNotification</b>. So if an application exclusively relies on the session enumerator for getting all the sessions for an audio endpoint, the results might not be accurate. To work around this, the application should manually maintain a list. For more information, see <see cref="IAudioSessionEnumerator" />.</para>
+      <para>
+        <b>Note</b>  Make sure that the application initializes COM with Multithreaded Apartment (MTA) model by calling <code>CoInitializeEx(NULL, COINIT_MULTITHREADED)</code> in a non-UI thread. If MTA is not initialized, the application does not receive session notifications from the session manager.
+Threads that run the user interface of an application should be initialized apartment threading model.</para>
+      <h4>Examples</h4>
+      <para>The following code example shows a sample implementation of the <b>IAudioSessionNotification</b> interface.</para>
+      <code>class CSessionNotifications: public IAudioSessionNotification
+{
+private:
+
+    LONG             m_cRefAll;
+    HWND m_hwndMain;
+
+    ~CSessionManager(){};
+
+public:
+
+
+    CSessionManager(HWND hWnd):
+    m_cRefAll(1),
+    m_hwndMain (hWnd)
+
+    {}
+
+    // IUnknown
+    HRESULT STDMETHODCALLTYPE QueryInterface(REFIID riid, void **ppv)
+    {
+        if (IID_IUnknown == riid)
+        {
+            AddRef();
+            *ppvInterface = (IUnknown*)this;
+        }
+        else if (__uuidof(IAudioSessionNotification) == riid)
+        {
+            AddRef();
+            *ppvInterface = (IAudioSessionNotification*)this;
+        }
+        else
+        {
+            *ppvInterface = NULL;
+            return E_NOINTERFACE;
+        }
+        return S_OK;
+    }
+
+    ULONG STDMETHODCALLTYPE AddRef()
+    {
+        return InterlockedIncrement(&amp;amp;amp;amp;amp;amp;m_cRefAll);
+    }
+
+    ULONG STDMETHODCALLTYPE Release)()
+    {
+        ULONG ulRef = InterlockedDecrement(&amp;amp;amp;amp;amp;amp;m_cRefAll);
+        if (0 == ulRef)
+        {
+            delete this;
+        }
+        return ulRef;
+    }
+
+    HRESULT OnSessionCreated(IAudioSessionControl *pNewSession)
+    {
+        if (pNewSession)
+        {
+            PostMessage(m_hwndMain, WM_SESSION_CREATED, 0, 0);
+        }
+    }
+};
+</code>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/CoreAudio/core-audio-interfaces">Core Audio Interfaces</seealso>
+  </member>
+</doc>

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MFTOPOLOGY_HARDWARE_MODE">
+    <summary>
+      <para>Specifies whether the topology loader will insert hardware-based Media Foundation transforms (MFTs) into the topology.</para>
+    </summary>
+    <remarks>
+      <para>This enumeration is used with the <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-topology-hardware-mode">MF_TOPOLOGY_HARDWARE_MODE</a> topology attribute.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+  </member>
+  <member name="MFTOPOLOGY_HARDWARE_MODE.MFTOPOLOGY_HWMODE_SOFTWARE_ONLY">
+    <summary>
+      <para>Use only software  MFTs. Do not use hardware-based MFTs. This mode is the default, for backward compatibility with existing applications.</para>
+    </summary>
+  </member>
+  <member name="MFTOPOLOGY_HARDWARE_MODE.MFTOPOLOGY_HWMODE_USE_HARDWARE">
+    <summary>
+      <para>Use hardware-based MFTs when possible, and software MFTs otherwise. This mode is the recommended one.</para>
+    </summary>
+  </member>
+  <member name="MFTOPOLOGY_HARDWARE_MODE.MFTOPOLOGY_HWMODE_USE_ONLY_HARDWARE">
+    <summary>
+      <para>If hardware-based MFTs are available, the topoloader will insert
+them.  If not, the connection will fail.</para>
+      <para>Supported in Windows 8.1 and later.</para>
+    </summary>
+  </member>
+</doc>

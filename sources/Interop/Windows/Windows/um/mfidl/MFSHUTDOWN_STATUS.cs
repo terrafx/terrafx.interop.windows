@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MFSHUTDOWN_STATUS.xml' path='doc/member[@name="MFSHUTDOWN_STATUS"]/*' />
 public enum MFSHUTDOWN_STATUS
 {
+    /// <include file='MFSHUTDOWN_STATUS.xml' path='doc/member[@name="MFSHUTDOWN_STATUS.MFSHUTDOWN_INITIATED"]/*' />
     MFSHUTDOWN_INITIATED = 0,
+
+    /// <include file='MFSHUTDOWN_STATUS.xml' path='doc/member[@name="MFSHUTDOWN_STATUS.MFSHUTDOWN_COMPLETED"]/*' />
     MFSHUTDOWN_COMPLETED = (MFSHUTDOWN_INITIATED + 1),
 }

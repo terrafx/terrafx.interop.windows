@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='AppPolicyMediaFoundationCodecLoading.xml' path='doc/member[@name="AppPolicyMediaFoundationCodecLoading"]/*' />
 public enum AppPolicyMediaFoundationCodecLoading
 {
+    /// <include file='AppPolicyMediaFoundationCodecLoading.xml' path='doc/member[@name="AppPolicyMediaFoundationCodecLoading.AppPolicyMediaFoundationCodecLoading_All"]/*' />
     AppPolicyMediaFoundationCodecLoading_All = 0,
+
+    /// <include file='AppPolicyMediaFoundationCodecLoading.xml' path='doc/member[@name="AppPolicyMediaFoundationCodecLoading.AppPolicyMediaFoundationCodecLoading_InboxOnly"]/*' />
     AppPolicyMediaFoundationCodecLoading_InboxOnly = 1,
 }

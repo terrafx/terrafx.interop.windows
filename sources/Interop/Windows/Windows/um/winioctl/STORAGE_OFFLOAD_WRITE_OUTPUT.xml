@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="STORAGE_OFFLOAD_WRITE_OUTPUT">
+    <summary>
+      <para>Output structure for the <b>DeviceDsmAction_OffloadWrite</b> action of the
+<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_manage_data_set_attributes">IOCTL_STORAGE_MANAGE_DATA_SET_ATTRIBUTES</a></para>
+      <para>control code.</para>
+    </summary>
+    <seealso cref="DEVICE_MANAGE_DATA_SET_ATTRIBUTES_OUTPUT" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/DevIO/device-management-structures">Device Management Structures</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_manage_data_set_attributes">IOCTL_STORAGE_MANAGE_DATA_SET_ATTRIBUTES</seealso>
+  </member>
+  <member name="STORAGE_OFFLOAD_WRITE_OUTPUT.OffloadWriteFlags">
+    <summary>
+      <para>Out flags</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>STORAGE_OFFLOAD_WRITE_RANGE_TRUNCATED</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0001</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The range written is less than the range specified.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>STORAGE_OFFLOAD_TOKEN_INVALID</b>
+                </description>
+              </item>
+              <item>
+                <description>0x0002</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>The token specified is not valid.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="STORAGE_OFFLOAD_WRITE_OUTPUT.Reserved">
+    <summary>
+      <para>Reserved.</para>
+    </summary>
+  </member>
+  <member name="STORAGE_OFFLOAD_WRITE_OUTPUT.LengthCopied">
+    <summary>
+      <para>The length of the copied content.</para>
+    </summary>
+  </member>
+</doc>

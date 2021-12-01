@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="_DMO_PROCESS_OUTPUT_FLAGS">
+    <summary>
+      <para>The <code>DMO_PROCESS_OUTPUT_FLAGS</code> enumeration defines flags that specify output processing requests.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dmo-enumerated-types">DMO Enumerated Types</seealso>
+    <seealso cref="IMediaObject.ProcessOutput" />
+  </member>
+  <member name="_DMO_PROCESS_OUTPUT_FLAGS.DMO_PROCESS_OUTPUT_DISCARD_WHEN_NO_BUFFER">
+    <summary>
+      <para>Discard the output when the pointer to the output buffer is <b>NULL</b>.</para>
+    </summary>
+  </member>
+</doc>

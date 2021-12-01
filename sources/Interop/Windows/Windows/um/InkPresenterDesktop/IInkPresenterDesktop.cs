@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IInkPresenterDesktop.xml' path='doc/member[@name="IInkPresenterDesktop"]/*' />
 [Guid("73F3C0D9-2E8B-48F3-895E-20CBD27B723B")]
 [NativeTypeName("struct IInkPresenterDesktop : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IInkPresenterDesktop : IInkPresenterDesktop.Interfa
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IInkPresenterDesktop : IInkPresenterDesktop.Interfa
         return ((delegate* unmanaged<IInkPresenterDesktop*, Guid*, void**, int>)(lpVtbl[0]))((IInkPresenterDesktop*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IInkPresenterDesktop : IInkPresenterDesktop.Interfa
         return ((delegate* unmanaged<IInkPresenterDesktop*, uint>)(lpVtbl[1]))((IInkPresenterDesktop*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IInkPresenterDesktop : IInkPresenterDesktop.Interfa
         return ((delegate* unmanaged<IInkPresenterDesktop*, uint>)(lpVtbl[2]))((IInkPresenterDesktop*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IInkPresenterDesktop.xml' path='doc/member[@name="IInkPresenterDesktop.SetRootVisual"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetRootVisual(IUnknown* rootVisual, IUnknown* device)
@@ -48,6 +53,7 @@ public unsafe partial struct IInkPresenterDesktop : IInkPresenterDesktop.Interfa
         return ((delegate* unmanaged<IInkPresenterDesktop*, IUnknown*, IUnknown*, int>)(lpVtbl[3]))((IInkPresenterDesktop*)Unsafe.AsPointer(ref this), rootVisual, device);
     }
 
+    /// <include file='IInkPresenterDesktop.xml' path='doc/member[@name="IInkPresenterDesktop.SetCommitRequestHandler"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetCommitRequestHandler(IInkCommitRequestHandler* handler)
@@ -55,6 +61,7 @@ public unsafe partial struct IInkPresenterDesktop : IInkPresenterDesktop.Interfa
         return ((delegate* unmanaged<IInkPresenterDesktop*, IInkCommitRequestHandler*, int>)(lpVtbl[4]))((IInkPresenterDesktop*)Unsafe.AsPointer(ref this), handler);
     }
 
+    /// <include file='IInkPresenterDesktop.xml' path='doc/member[@name="IInkPresenterDesktop.GetSize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetSize(float* width, float* height)
@@ -62,6 +69,7 @@ public unsafe partial struct IInkPresenterDesktop : IInkPresenterDesktop.Interfa
         return ((delegate* unmanaged<IInkPresenterDesktop*, float*, float*, int>)(lpVtbl[5]))((IInkPresenterDesktop*)Unsafe.AsPointer(ref this), width, height);
     }
 
+    /// <include file='IInkPresenterDesktop.xml' path='doc/member[@name="IInkPresenterDesktop.SetSize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT SetSize(float width, float height)
@@ -69,6 +77,7 @@ public unsafe partial struct IInkPresenterDesktop : IInkPresenterDesktop.Interfa
         return ((delegate* unmanaged<IInkPresenterDesktop*, float, float, int>)(lpVtbl[6]))((IInkPresenterDesktop*)Unsafe.AsPointer(ref this), width, height);
     }
 
+    /// <include file='IInkPresenterDesktop.xml' path='doc/member[@name="IInkPresenterDesktop.OnHighContrastChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT OnHighContrastChanged()

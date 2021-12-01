@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IFileIsInUse.CloseFile">
+    <summary>
+      <para>Closes the file currently in use.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Only files that return the <see cref="capability flag" /> OF_CAP_CANCLOSE can be closed by this method. If that flag is returned, the user can be presented with a dialog box that includes a <b>Close</b> option that calls this method.</para>
+    </remarks>
+  </member>
+  <member name="IFileIsInUse.GetAppName">
+    <summary>
+      <para>Retrieves the name of the application that is using the file.</para>
+    </summary>
+    <param name="ppszName">
+      <para>Type: <b>LPWSTR*</b></para>
+      <para>The address of a pointer to a buffer that, when this method returns successfully, receives the application name.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This information can be passed to the user in a dialog box so that the user knows the source of the conflict and can act accordingly. For instance "File.txt is in use by Litware."</para>
+    </remarks>
+  </member>
+  <member name="IFileIsInUse.GetCapabilities">
+    <summary>
+      <para>Determines whether the file can be closed and whether the UI is capable of switching to the window of the application that is using the file.</para>
+    </summary>
+    <param name="pdwCapFlags">
+      <para>Type: <b>DWORD*</b></para>
+      <para>A pointer to a value that, when this method returns successfully, receives the capability flags. One or both of the following values:</para>
+      <h4>OF_CAP_CANSWITCHTO (0x0001)</h4>
+      <para>0x0001. The UI can switch to the top-level window of the application that is using the file.</para>
+      <h4>OF_CAP_CANCLOSE (0x0002)</h4>
+      <para>0x0002. The file can be closed.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The capabilities returned by this method can be used in the composition of the dialog box presented to the user that informs them of the sharing conflict. For instance, if the OF_CAP_CANSWITCHTO flag is retrieved, a button can be added to the dialog box that will switch the user to the conflicting application window (based on the <b>HWND</b> information retrieved by <see cref="IFileIsInUse.GetSwitchToHWND" />) so that the user can address the situation as they see fit. If the OF_CAP_CANCLOSE flag is retrieved, the dialog box can present a <b>Close</b> button that calls the <see cref="CloseFile" /> method.</para>
+    </remarks>
+  </member>
+  <member name="IFileIsInUse.GetSwitchToHWND">
+    <summary>
+      <para>Retrieves the handle of the top-level window of the application that is using the file.</para>
+    </summary>
+    <param name="phwnd">
+      <para>Type: <b>HWND*</b></para>
+      <para>A pointer to an <b>HWND</b> value that, when this method returns successfully, receives the window handle.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Only files that return the <see cref="capability flag" /> OF_CAP_CANSWITCHTO can be switched to.</para>
+    </remarks>
+  </member>
+  <member name="IFileIsInUse.GetUsage">
+    <summary>
+      <para>Gets a value that indicates how the file in use is being used.</para>
+    </summary>
+    <param name="pfut">
+      <para>Type: <b><see cref="FILE_USAGE_TYPE" />*</b></para>
+      <para>Pointer to a value that, when this method returns successfully, receives one of the <see cref="FILE_USAGE_TYPE" /> values.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IFileIsInUse">
+    <summary>
+      <para>Exposes methods that can be called to get information on or close a file that is in use by another application. When an application attempts to access a file and finds that file already in use, it can use the methods of this interface to gather information to present to the user in a dialog box.</para>
+    </summary>
+    <remarks>
+      <para>In versions of Windows before Windows Vista, when a user attempted to access a file that was open in another application, the user would simply receive a dialog box with a message stating that the file was already open. The message instructed that the user close the other application, but did not identify it. Other than that suggestion, the dialog box provided no user action to address the situation. This interface provides methods that can lead to a more informative dialog box from which the user can take direct action.</para>
+      <h3>The Running Object Table</h3>
+      <para>When an application opens a file, that application registers the file by inserting the instantiated <b>IFileIsInUse</b> object into the running object table (ROT). The ROT is a globally accessible lookup table that keeps track of currently running objects. These objects can be identified by a moniker. When a client attempts to bind a moniker to an object, the moniker checks the ROT to determine whether the object is already running. This allows the moniker to bind to the current instance rather than loading a new instance.</para>
+      <para>Perform these steps to add a file to the ROT:</para>
+      <list type="number">
+        <item>
+          <description>Call the <see cref="GetRunningObjectTable" /> function to retrieve an instance of <see cref="IRunningObjectTable" />.</description>
+        </item>
+        <item>
+          <description>Create an <b>IFileIsInUse</b> object for the file that is currently in use.</description>
+        </item>
+        <item>
+          <description>Create an <see cref="IMoniker" /> object for the file that is currently in use.</description>
+        </item>
+        <item>
+          <description>Insert the <b>IFileIsInUse</b> and <see cref="IMoniker" /> objects into the ROT by calling <see cref="IRunningObjectTable.Register" />.</description>
+        </item>
+      </list>
+      <para>In the call to <see cref="Register" />, specify the <b>ROTFLAGS_ALLOWANYCLIENT</b> flag. This allows the ROT entry to work across security boundaries. Use of this flag requires the calling application to have an explicit Application User Model ID (AppUserModelID) (<a href="https://docs.microsoft.com//windows/desktop/properties/props-system-appusermodel-id">System.AppUserModel.ID</a>). An explicit AppUserModelID allows the Component Object Model (COM) to inspect the application's security settings. An attempt to call <b>Register</b> with ROTFLAGS_ALLOWANYCLIENT and no explicit AppUserModelID will fail. You can call <b>Register</b> without the ROTFLAGS_ALLOWANYCLIENT flag and the application will work correctly, but only within its own security level.</para>
+      <para>The value retrieved in the <see cref="Register" /> method's [out] parameter is used to identify the entry in later calls to retrieve or remove it from the ROT.</para>
+      <h3>When to Implement</h3>
+      <para>Applications that open file types that can be opened by other applications should implement <b>IFileIsInUse</b>. An application's implementation of this interface enables Windows Explorer to discover the source of sharing errors, which enables users to address and retry operations that fail due to those errors.</para>
+      <h3>When to Use</h3>
+      <para>An application calls <b>IFileIsInUse</b> to communicate with other applications to resolve sharing errors. These errors occur in response to user action in the file system. For example, when a user attempts to rename a folder while a file in that folder is open in an application, the renaming operation fails. Windows Explorer can call that application's implementation of <b>IFileIsInUse</b> to help the user identify the conflict and resolve this issue.</para>
+      <h3>Sample</h3>
+      <para>See the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ee330722(v=vs.85)">File Is in Use</a> sample, which demonstrates how to implement <b>IFileIsInUse</b> and register a file with the ROT. It then shows how to customize the <b>File In Use</b> dialog to display additional information and options for files currently opened in an application.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/shell/appids">Application User Model IDs (AppUserModelIDs)</seealso>
+  </member>
+</doc>

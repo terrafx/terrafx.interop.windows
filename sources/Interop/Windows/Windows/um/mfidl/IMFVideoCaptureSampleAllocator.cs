@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFVideoCaptureSampleAllocator.xml' path='doc/member[@name="IMFVideoCaptureSampleAllocator"]/*' />
 [Guid("725B77C7-CA9F-4FE5-9D72-9946BF9B3C70")]
 [NativeTypeName("struct IMFVideoCaptureSampleAllocator : IMFVideoSampleAllocator")]
 [NativeInheritance("IMFVideoSampleAllocator")]
@@ -18,6 +19,7 @@ public unsafe partial struct IMFVideoCaptureSampleAllocator : IMFVideoCaptureSam
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IMFVideoCaptureSampleAllocator : IMFVideoCaptureSam
         return ((delegate* unmanaged<IMFVideoCaptureSampleAllocator*, Guid*, void**, int>)(lpVtbl[0]))((IMFVideoCaptureSampleAllocator*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IMFVideoCaptureSampleAllocator : IMFVideoCaptureSam
         return ((delegate* unmanaged<IMFVideoCaptureSampleAllocator*, uint>)(lpVtbl[1]))((IMFVideoCaptureSampleAllocator*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IMFVideoCaptureSampleAllocator : IMFVideoCaptureSam
         return ((delegate* unmanaged<IMFVideoCaptureSampleAllocator*, uint>)(lpVtbl[2]))((IMFVideoCaptureSampleAllocator*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IMFVideoSampleAllocator.SetDirectXManager" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetDirectXManager(IUnknown* pManager)
@@ -48,6 +53,7 @@ public unsafe partial struct IMFVideoCaptureSampleAllocator : IMFVideoCaptureSam
         return ((delegate* unmanaged<IMFVideoCaptureSampleAllocator*, IUnknown*, int>)(lpVtbl[3]))((IMFVideoCaptureSampleAllocator*)Unsafe.AsPointer(ref this), pManager);
     }
 
+    /// <inheritdoc cref="IMFVideoSampleAllocator.UninitializeSampleAllocator" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT UninitializeSampleAllocator()
@@ -55,6 +61,7 @@ public unsafe partial struct IMFVideoCaptureSampleAllocator : IMFVideoCaptureSam
         return ((delegate* unmanaged<IMFVideoCaptureSampleAllocator*, int>)(lpVtbl[4]))((IMFVideoCaptureSampleAllocator*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IMFVideoSampleAllocator.InitializeSampleAllocator" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT InitializeSampleAllocator([NativeTypeName("DWORD")] uint cRequestedFrames, IMFMediaType* pMediaType)
@@ -62,6 +69,7 @@ public unsafe partial struct IMFVideoCaptureSampleAllocator : IMFVideoCaptureSam
         return ((delegate* unmanaged<IMFVideoCaptureSampleAllocator*, uint, IMFMediaType*, int>)(lpVtbl[5]))((IMFVideoCaptureSampleAllocator*)Unsafe.AsPointer(ref this), cRequestedFrames, pMediaType);
     }
 
+    /// <inheritdoc cref="IMFVideoSampleAllocator.AllocateSample" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT AllocateSample(IMFSample** ppSample)
@@ -69,6 +77,7 @@ public unsafe partial struct IMFVideoCaptureSampleAllocator : IMFVideoCaptureSam
         return ((delegate* unmanaged<IMFVideoCaptureSampleAllocator*, IMFSample**, int>)(lpVtbl[6]))((IMFVideoCaptureSampleAllocator*)Unsafe.AsPointer(ref this), ppSample);
     }
 
+    /// <include file='IMFVideoCaptureSampleAllocator.xml' path='doc/member[@name="IMFVideoCaptureSampleAllocator.InitializeCaptureSampleAllocator"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT InitializeCaptureSampleAllocator([NativeTypeName("DWORD")] uint cbSampleSize, [NativeTypeName("DWORD")] uint cbCaptureMetadataSize, [NativeTypeName("DWORD")] uint cbAlignment, [NativeTypeName("DWORD")] uint cMinimumSamples, IMFAttributes* pAttributes, IMFMediaType* pMediaType)

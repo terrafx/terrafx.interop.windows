@@ -5,12 +5,16 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_CHANNEL_PROPERTY.xml' path='doc/member[@name="WS_CHANNEL_PROPERTY"]/*' />
 public unsafe partial struct WS_CHANNEL_PROPERTY
 {
+    /// <include file='WS_CHANNEL_PROPERTY.xml' path='doc/member[@name="WS_CHANNEL_PROPERTY.id"]/*' />
     public WS_CHANNEL_PROPERTY_ID id;
 
+    /// <include file='WS_CHANNEL_PROPERTY.xml' path='doc/member[@name="WS_CHANNEL_PROPERTY.value"]/*' />
     public void* value;
 
+    /// <include file='WS_CHANNEL_PROPERTY.xml' path='doc/member[@name="WS_CHANNEL_PROPERTY.valueSize"]/*' />
     [NativeTypeName("ULONG")]
     public uint valueSize;
 }

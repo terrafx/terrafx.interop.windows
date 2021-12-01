@@ -5,43 +5,57 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='JOBOBJECT_IO_RATE_CONTROL_INFORMATION_NATIVE_V2.xml' path='doc/member[@name="JOBOBJECT_IO_RATE_CONTROL_INFORMATION_NATIVE_V2"]/*' />
 public unsafe partial struct JOBOBJECT_IO_RATE_CONTROL_INFORMATION_NATIVE_V2
 {
+    /// <include file='JOBOBJECT_IO_RATE_CONTROL_INFORMATION_NATIVE_V2.xml' path='doc/member[@name="JOBOBJECT_IO_RATE_CONTROL_INFORMATION_NATIVE_V2.MaxIops"]/*' />
     [NativeTypeName("LONG64")]
     public long MaxIops;
 
+    /// <include file='JOBOBJECT_IO_RATE_CONTROL_INFORMATION_NATIVE_V2.xml' path='doc/member[@name="JOBOBJECT_IO_RATE_CONTROL_INFORMATION_NATIVE_V2.MaxBandwidth"]/*' />
     [NativeTypeName("LONG64")]
     public long MaxBandwidth;
 
+    /// <include file='JOBOBJECT_IO_RATE_CONTROL_INFORMATION_NATIVE_V2.xml' path='doc/member[@name="JOBOBJECT_IO_RATE_CONTROL_INFORMATION_NATIVE_V2.ReservationIops"]/*' />
     [NativeTypeName("LONG64")]
     public long ReservationIops;
 
+    /// <include file='JOBOBJECT_IO_RATE_CONTROL_INFORMATION_NATIVE_V2.xml' path='doc/member[@name="JOBOBJECT_IO_RATE_CONTROL_INFORMATION_NATIVE_V2.VolumeName"]/*' />
     [NativeTypeName("PWSTR")]
     public ushort* VolumeName;
 
+    /// <include file='JOBOBJECT_IO_RATE_CONTROL_INFORMATION_NATIVE_V2.xml' path='doc/member[@name="JOBOBJECT_IO_RATE_CONTROL_INFORMATION_NATIVE_V2.BaseIoSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint BaseIoSize;
 
+    /// <include file='JOBOBJECT_IO_RATE_CONTROL_INFORMATION_NATIVE_V2.xml' path='doc/member[@name="JOBOBJECT_IO_RATE_CONTROL_INFORMATION_NATIVE_V2.ControlFlags"]/*' />
     public JOB_OBJECT_IO_RATE_CONTROL_FLAGS ControlFlags;
 
+    /// <include file='JOBOBJECT_IO_RATE_CONTROL_INFORMATION_NATIVE_V2.xml' path='doc/member[@name="JOBOBJECT_IO_RATE_CONTROL_INFORMATION_NATIVE_V2.VolumeNameLength"]/*' />
     [NativeTypeName("WORD")]
     public ushort VolumeNameLength;
 
+    /// <include file='JOBOBJECT_IO_RATE_CONTROL_INFORMATION_NATIVE_V2.xml' path='doc/member[@name="JOBOBJECT_IO_RATE_CONTROL_INFORMATION_NATIVE_V2.CriticalReservationIops"]/*' />
     [NativeTypeName("LONG64")]
     public long CriticalReservationIops;
 
+    /// <include file='JOBOBJECT_IO_RATE_CONTROL_INFORMATION_NATIVE_V2.xml' path='doc/member[@name="JOBOBJECT_IO_RATE_CONTROL_INFORMATION_NATIVE_V2.ReservationBandwidth"]/*' />
     [NativeTypeName("LONG64")]
     public long ReservationBandwidth;
 
+    /// <include file='JOBOBJECT_IO_RATE_CONTROL_INFORMATION_NATIVE_V2.xml' path='doc/member[@name="JOBOBJECT_IO_RATE_CONTROL_INFORMATION_NATIVE_V2.CriticalReservationBandwidth"]/*' />
     [NativeTypeName("LONG64")]
     public long CriticalReservationBandwidth;
 
+    /// <include file='JOBOBJECT_IO_RATE_CONTROL_INFORMATION_NATIVE_V2.xml' path='doc/member[@name="JOBOBJECT_IO_RATE_CONTROL_INFORMATION_NATIVE_V2.MaxTimePercent"]/*' />
     [NativeTypeName("LONG64")]
     public long MaxTimePercent;
 
+    /// <include file='JOBOBJECT_IO_RATE_CONTROL_INFORMATION_NATIVE_V2.xml' path='doc/member[@name="JOBOBJECT_IO_RATE_CONTROL_INFORMATION_NATIVE_V2.ReservationTimePercent"]/*' />
     [NativeTypeName("LONG64")]
     public long ReservationTimePercent;
 
+    /// <include file='JOBOBJECT_IO_RATE_CONTROL_INFORMATION_NATIVE_V2.xml' path='doc/member[@name="JOBOBJECT_IO_RATE_CONTROL_INFORMATION_NATIVE_V2.CriticalReservationTimePercent"]/*' />
     [NativeTypeName("LONG64")]
     public long CriticalReservationTimePercent;
 }

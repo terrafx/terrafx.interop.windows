@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WCM_PROFILE_INFO_LIST">
+    <summary>
+      <para>The <b>WCM_PROFILE_INFO_LIST</b> structure contains a list of profiles in preferred order.</para>
+    </summary>
+    <seealso cref="WCM_PROFILE_INFO" />
+  </member>
+  <member name="WCM_PROFILE_INFO_LIST.dwNumberOfItems">
+    <summary>
+      <para>Type: <b>DWORD</b></para>
+      <para>The number of profiles in the list.</para>
+    </summary>
+  </member>
+  <member name="WCM_PROFILE_INFO_LIST.ProfileInfo.unique">
+    <summary></summary>
+  </member>
+  <member name="WCM_PROFILE_INFO_LIST.ProfileInfo.size_is">
+    <summary></summary>
+  </member>
+  <member name="WCM_PROFILE_INFO_LIST.ProfileInfo.size_is.dwNumberOfItems">
+    <summary></summary>
+  </member>
+  <member name="WCM_PROFILE_INFO_LIST.ProfileInfo">
+    <summary>
+      <para>Type: <b><see cref="WCM_PROFILE_INFO" />[1]</b></para>
+      <para>Information about each profile.</para>
+    </summary>
+  </member>
+</doc>

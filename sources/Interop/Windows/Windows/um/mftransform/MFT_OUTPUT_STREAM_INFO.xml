@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MFT_OUTPUT_STREAM_INFO">
+    <summary>
+      <para>Contains information about an output stream on a Media Foundation transform (MFT). To get these values, call <see cref="IMFTransform.GetOutputStreamInfo" />.</para>
+    </summary>
+    <remarks>
+      <para>Before the media types are set, the only values that should be considered valid is the MFT_OUTPUT_STREAM_OPTIONAL flag in the <b>dwFlags</b> member. This flag indicates that the stream is optional and does not require a media type.</para>
+      <para>After you set a media type on all of the input and output streams (not including optional streams), all of the values returned by the <see cref="GetOutputStreamInfo" /> method are valid. They might change if you set different media types.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-structures">Media Foundation Structures</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-transforms">Media Foundation Transforms</seealso>
+  </member>
+  <member name="MFT_OUTPUT_STREAM_INFO.dwFlags">
+    <summary>
+      <para>Bitwise <b>OR</b> of zero or more flags from the <see cref="_MFT_OUTPUT_STREAM_INFO_FLAGS" /> enumeration.</para>
+    </summary>
+  </member>
+  <member name="MFT_OUTPUT_STREAM_INFO.cbSize">
+    <summary>
+      <para>Minimum size of each output buffer, in bytes. If the MFT does not require a specific size, the value is zero. For uncompressed audio, the value should be the audio frame size, which you can get from the <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-mt-audio-block-alignment-attribute">MF_MT_AUDIO_BLOCK_ALIGNMENT</a> attribute in the media type.</para>
+      <para>If the <b>dwFlags</b> member contains the MFT_OUTPUT_STREAM_PROVIDES_SAMPLES flag, the value is zero, because the MFT allocates the output buffers.</para>
+    </summary>
+  </member>
+  <member name="MFT_OUTPUT_STREAM_INFO.cbAlignment">
+    <summary>
+      <para>The memory alignment required for output buffers. If the MFT does not require a specific alignment, the value is zero. If the <b>dwFlags</b> member contains the MFT_OUTPUT_STREAM_PROVIDES_SAMPLES flag, this value is the alignment that the MFT uses internally when it allocates samples. It is recommended, but not required, that MFTs allocate buffers with at least a 16-byte memory alignment.</para>
+    </summary>
+  </member>
+</doc>

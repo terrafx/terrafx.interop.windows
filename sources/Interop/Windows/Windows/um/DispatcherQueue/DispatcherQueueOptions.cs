@@ -5,12 +5,16 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DispatcherQueueOptions.xml' path='doc/member[@name="DispatcherQueueOptions"]/*' />
 public partial struct DispatcherQueueOptions
 {
+    /// <include file='DispatcherQueueOptions.xml' path='doc/member[@name="DispatcherQueueOptions.dwSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwSize;
 
+    /// <include file='DispatcherQueueOptions.xml' path='doc/member[@name="DispatcherQueueOptions.threadType"]/*' />
     public DISPATCHERQUEUE_THREAD_TYPE threadType;
 
+    /// <include file='DispatcherQueueOptions.xml' path='doc/member[@name="DispatcherQueueOptions.apartmentType"]/*' />
     public DISPATCHERQUEUE_THREAD_APARTMENTTYPE apartmentType;
 }

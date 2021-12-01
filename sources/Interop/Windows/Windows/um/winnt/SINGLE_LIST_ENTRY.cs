@@ -5,8 +5,10 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SINGLE_LIST_ENTRY.xml' path='doc/member[@name="SINGLE_LIST_ENTRY"]/*' />
 public unsafe partial struct SINGLE_LIST_ENTRY
 {
+    /// <include file='SINGLE_LIST_ENTRY.xml' path='doc/member[@name="SINGLE_LIST_ENTRY.Next"]/*' />
     [NativeTypeName("struct _SINGLE_LIST_ENTRY *")]
     public SINGLE_LIST_ENTRY* Next;
 }

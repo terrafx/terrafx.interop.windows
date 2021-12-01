@@ -5,16 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DMO_OUTPUT_DATA_BUFFER.xml' path='doc/member[@name="DMO_OUTPUT_DATA_BUFFER"]/*' />
 public unsafe partial struct DMO_OUTPUT_DATA_BUFFER
 {
+    /// <include file='DMO_OUTPUT_DATA_BUFFER.xml' path='doc/member[@name="DMO_OUTPUT_DATA_BUFFER.pBuffer"]/*' />
     public IMediaBuffer* pBuffer;
 
+    /// <include file='DMO_OUTPUT_DATA_BUFFER.xml' path='doc/member[@name="DMO_OUTPUT_DATA_BUFFER.dwStatus"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwStatus;
 
+    /// <include file='DMO_OUTPUT_DATA_BUFFER.xml' path='doc/member[@name="DMO_OUTPUT_DATA_BUFFER.rtTimestamp"]/*' />
     [NativeTypeName("REFERENCE_TIME")]
     public long rtTimestamp;
 
+    /// <include file='DMO_OUTPUT_DATA_BUFFER.xml' path='doc/member[@name="DMO_OUTPUT_DATA_BUFFER.rtTimelength"]/*' />
     [NativeTypeName("REFERENCE_TIME")]
     public long rtTimelength;
 }

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ISyncMgrConflict.xml' path='doc/member[@name="ISyncMgrConflict"]/*' />
 [Guid("9C204249-C443-4BA4-85ED-C972681DB137")]
 [NativeTypeName("struct ISyncMgrConflict : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ISyncMgrConflict : ISyncMgrConflict.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ISyncMgrConflict : ISyncMgrConflict.Interface
         return ((delegate* unmanaged<ISyncMgrConflict*, Guid*, void**, int>)(lpVtbl[0]))((ISyncMgrConflict*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ISyncMgrConflict : ISyncMgrConflict.Interface
         return ((delegate* unmanaged<ISyncMgrConflict*, uint>)(lpVtbl[1]))((ISyncMgrConflict*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ISyncMgrConflict : ISyncMgrConflict.Interface
         return ((delegate* unmanaged<ISyncMgrConflict*, uint>)(lpVtbl[2]))((ISyncMgrConflict*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ISyncMgrConflict.xml' path='doc/member[@name="ISyncMgrConflict.GetProperty"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetProperty([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* propkey, PROPVARIANT* ppropvar)
@@ -46,6 +51,7 @@ public unsafe partial struct ISyncMgrConflict : ISyncMgrConflict.Interface
         return ((delegate* unmanaged<ISyncMgrConflict*, PROPERTYKEY*, PROPVARIANT*, int>)(lpVtbl[3]))((ISyncMgrConflict*)Unsafe.AsPointer(ref this), propkey, ppropvar);
     }
 
+    /// <include file='ISyncMgrConflict.xml' path='doc/member[@name="ISyncMgrConflict.GetConflictIdInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetConflictIdInfo(SYNCMGR_CONFLICT_ID_INFO* pConflictIdInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct ISyncMgrConflict : ISyncMgrConflict.Interface
         return ((delegate* unmanaged<ISyncMgrConflict*, SYNCMGR_CONFLICT_ID_INFO*, int>)(lpVtbl[4]))((ISyncMgrConflict*)Unsafe.AsPointer(ref this), pConflictIdInfo);
     }
 
+    /// <include file='ISyncMgrConflict.xml' path='doc/member[@name="ISyncMgrConflict.GetItemsArray"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetItemsArray(ISyncMgrConflictItems** ppArray)
@@ -60,6 +67,7 @@ public unsafe partial struct ISyncMgrConflict : ISyncMgrConflict.Interface
         return ((delegate* unmanaged<ISyncMgrConflict*, ISyncMgrConflictItems**, int>)(lpVtbl[5]))((ISyncMgrConflict*)Unsafe.AsPointer(ref this), ppArray);
     }
 
+    /// <include file='ISyncMgrConflict.xml' path='doc/member[@name="ISyncMgrConflict.Resolve"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Resolve(ISyncMgrConflictResolveInfo* pResolveInfo)
@@ -67,6 +75,7 @@ public unsafe partial struct ISyncMgrConflict : ISyncMgrConflict.Interface
         return ((delegate* unmanaged<ISyncMgrConflict*, ISyncMgrConflictResolveInfo*, int>)(lpVtbl[6]))((ISyncMgrConflict*)Unsafe.AsPointer(ref this), pResolveInfo);
     }
 
+    /// <include file='ISyncMgrConflict.xml' path='doc/member[@name="ISyncMgrConflict.GetResolutionHandler"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetResolutionHandler([NativeTypeName("const IID &")] Guid* riid, void** ppvResolutionHandler)

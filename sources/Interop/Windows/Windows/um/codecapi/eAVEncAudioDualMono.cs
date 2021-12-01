@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='eAVEncAudioDualMono.xml' path='doc/member[@name="eAVEncAudioDualMono"]/*' />
 public enum eAVEncAudioDualMono
 {
+    /// <include file='eAVEncAudioDualMono.xml' path='doc/member[@name="eAVEncAudioDualMono.eAVEncAudioDualMono_SameAsInput"]/*' />
     eAVEncAudioDualMono_SameAsInput = 0,
+
+    /// <include file='eAVEncAudioDualMono.xml' path='doc/member[@name="eAVEncAudioDualMono.eAVEncAudioDualMono_Off"]/*' />
     eAVEncAudioDualMono_Off = 1,
+
+    /// <include file='eAVEncAudioDualMono.xml' path='doc/member[@name="eAVEncAudioDualMono.eAVEncAudioDualMono_On"]/*' />
     eAVEncAudioDualMono_On = 2,
 }

@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IFileSaveDialog.ApplyProperties">
+    <summary>
+      <para>Applies a set of properties to an item using the Shell's copy engine.</para>
+    </summary>
+    <param name="psi">
+      <para>Type: <b><see cref="IShellItem" />*</b></para>
+      <para>Pointer to the <see cref="IShellItem" /> that represents the file being saved. This is usually the item retrieved by <see cref="GetResult" />.</para>
+    </param>
+    <param name="pStore">
+      <para>Type: <b><see cref="IPropertyStore" />*</b></para>
+      <para>Pointer to the <see cref="IPropertyStore" /> that represents the property values to be applied to the file. This can be the property store returned by <see cref="IFileSaveDialog.GetProperties" />.</para>
+    </param>
+    <param name="hwnd">
+      <para>Type: <b>HWND</b></para>
+      <para>The handle of the application window.</para>
+    </param>
+    <param name="pSink">
+      <para>Type: <b><see cref="IFileOperationProgressSink" />*</b></para>
+      <para>Pointer to an optional <b>IFileOperationProgressSink</b> that the calling application can use if they want to be notified of the progress of the property stamping. This value may be <b>NULL</b>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This method should be used when the application has turned on property collection (<see cref="IFileSaveDialog.SetCollectedProperties" />), but does not persist the properties themselves into the saved file.</para>
+      <para>
+        <b>Note</b>  The file represented by the item specified in <i>psi</i> must exist in physical storage before making the call to <b>IFileSaveDialog.ApplyProperties</b>, so it must have been previously saved at some point.</para>
+    </remarks>
+  </member>
+  <member name="IFileSaveDialog.GetProperties">
+    <summary>
+      <para>Retrieves the set of property values for a saved item or an item in the process of being saved.</para>
+    </summary>
+    <param name="ppStore">
+      <para>Type: <b><see cref="IPropertyStore" />**</b></para>
+      <para>Address of a pointer to an <see cref="IPropertyStore" /> that receives the property values.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This method can be called while the dialog is showing to retrieve the current set of values in the metadata collection pane. It can also be called after the dialog has closed, to retrieve the final set of values.</para>
+      <para>The call to this method will fail unless property collection has been turned on with a call to <see cref="IFileSaveDialog.SetCollectedProperties" />.</para>
+    </remarks>
+  </member>
+  <member name="IFileSaveDialog.SetCollectedProperties">
+    <summary>
+      <para>Specifies which properties will be collected in the save dialog.</para>
+    </summary>
+    <param name="pList">
+      <para>Type: <b><see cref="IPropertyDescriptionList" />*</b></para>
+      <para>Pointer to the interface that represents the list of properties to collect. This parameter can be <b>NULL</b>.</para>
+    </param>
+    <param name="fAppendDefault">
+      <para>Type: <b>BOOL</b></para>
+      <para>
+        <b>TRUE</b> to show default properties for the currently selected filetype in addition to the properties specified by <i>pList</i>. <b>FALSE</b> to show only properties specified by <i>pList</i>.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The calling application can use the <see cref="PSGetPropertyDescriptionListFromString" /> function to construct an <see cref="IPropertyDescriptionList" /> from a string such as "prop:Comments;Subject;".</para>
+      <para>For more information about property schemas, see
+<a href="https://docs.microsoft.com//windows/desktop/properties/building-property-handlers-property-schemas">Property Schemas</a>.</para>
+      <para>
+        <b>IFileSaveDialog.SetCollectedProperties</b> can be called at any time before the dialog is displayed or while it is visible. If different properties are to be collected depending on the chosen filetype, then <b>IFileSaveDialog.SetCollectedProperties</b> can be called in response to <see cref="OnTypeChange" />.</para>
+      <para>
+        <b>Note</b>  By default, no properties are collected in the save dialog.</para>
+    </remarks>
+    <seealso cref="IFileSaveDialog" />
+    <seealso cref="IFileSaveDialog.SetProperties" />
+  </member>
+  <member name="IFileSaveDialog.SetProperties">
+    <summary>
+      <para>Provides a property store that defines the default values to be used for the item being saved.</para>
+    </summary>
+    <param name="pStore">
+      <para>Type: <b><see cref="IPropertyStore" />*</b></para>
+      <para>Pointer to the interface that represents the property store that contains the associated metadata.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This method can be called at any time before the dialog is opened or while the dialog is showing. If an item has inherent properties, this method should be called with those properties before showing the dialog.</para>
+      <para>When using <b>Save As</b>, the application should provide the properties of the item being saved to the <b>Save</b> dialog. Those properties should be retreived from the original item by calling <see cref="GetPropertyStore" /> with the <see cref="GPS_HANDLERPROPERTIESONLY" /> flag.</para>
+      <para>To retrieve the properties of the saved item (which may have been modified by the user) after the dialog closes, call <see cref="IFileSaveDialog.GetProperties" />.</para>
+      <para>To turn on property collection and indicate which properties should be displayed in the <b>Save</b> dialog, use <see cref="IFileSaveDialog.SetCollectedProperties" />.</para>
+    </remarks>
+    <seealso cref="IFileSaveDialog" />
+    <seealso cref="IFileSaveDialog.GetProperties" />
+    <seealso cref="IFileSaveDialog.SetCollectedProperties" />
+  </member>
+  <member name="IFileSaveDialog.SetSaveAsItem">
+    <summary>
+      <para>Sets an item to be used as the initial entry in a <b>Save As</b> dialog.</para>
+    </summary>
+    <param name="psi">
+      <para>Type: <b><see cref="IShellItem" />*</b></para>
+      <para>Pointer to an <see cref="IShellItem" /> that represents the item.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The name of the item is displayed in the file name edit box, and the containing folder is opened in the view. This would generally be used when the application is saving an item that already exists. For new items, use <see cref="IFileDialog.SetFileName" />.</para>
+    </remarks>
+  </member>
+  <member name="IFileSaveDialog">
+    <summary>
+      <para>Extends the <see cref="IFileDialog" /> interface by adding methods specific to the save dialog, which include those that provide support for the collection of metadata to be persisted with the file.</para>
+    </summary>
+    <remarks>
+      <h3>When to Implement</h3>
+      <b>IFileSaveDialog</b> is implemented by the common file save dialog (CLSID_FileSaveDialog).
+<para>This interface also provides the methods of the <see cref="IFileDialog" /> interface, from which it inherits.</para></remarks>
+    <seealso cref="IFileDialog" />
+    <seealso cref="IFileOpenDialog" />
+  </member>
+</doc>

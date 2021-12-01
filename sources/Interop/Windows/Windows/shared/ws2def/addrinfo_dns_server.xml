@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="addrinfo_dns_server">
+    <summary>
+      <para>Represents a custom Domain Name System (DNS) server, used in the Winsock APIs.</para>
+    </summary>
+    <seealso cref="ADDRINFOEX6" />
+  </member>
+  <member name="addrinfo_dns_server.ai_servertype">
+    <summary>
+      <para>The type of DNS server. Can be one of the following values.</para>
+      <para>| Constant                   | Value  | Meaning                    |
+|----------------------------|--------|----------------------------|
+| <b>AI_DNS_SERVER_TYPE_UDP</b> | 1      | A regular DNS server.      |
+| <b>AI_DNS_SERVER_TYPE_DOH</b> | 2      | A <i>DNS-over-HTTPS</i> server. |</para>
+    </summary>
+  </member>
+  <member name="addrinfo_dns_server.ai_flags">
+    <summary>
+      <para>A bitmap containing any of the following options.</para>
+      <para>| Constant | Value | Meaning |
+|-|-|-|
+| <b>AI_DNS_SERVER_UDP_FALLBACK</b> | 0x1 | This server can also be used for non-secure name resolution. |</para>
+    </summary>
+  </member>
+  <member name="addrinfo_dns_server.ai_addrlen">
+    <summary>
+      <para>The length in bytes of the socket address structure that <i>ai_addr</i> points to.</para>
+    </summary>
+  </member>
+  <member name="addrinfo_dns_server.ai_addr">
+    <summary>
+      <para>A pointer to a socket address structure containing the address of the custom server. Only <b>SOCKADDR_IN</b> and <b>SOCKADDR_IN6</b> structures are supported. The <i>sa_family</i> member must be set to <b>AF_INET</b> or <b>AF_INET6</b>. The rest of the structure must be zeroed out, with the exception of the <b>SOCKADDR_IN.sin_addr</b> member for IPv4, or <b>SOCKADDR_IN6.sin6_addr</b> for IPv6.</para>
+    </summary>
+  </member>
+  <member name="addrinfo_dns_server.ai_template">
+    <summary>
+      <para>If <i>ai_servertype</i> is set to <b>AI_DNS_SERVER_TYPE_DOH</b>, then this member must point to a <b>NULL</b>-terminated wide string representing the <i>DNS-over-HTTPS</i> template for this server.</para>
+      <para>If <i>ai_servertype</i> is set to <b>AI_DNS_SERVER_TYPE_UDP</b>, then this field must be <b>NULL</b>.</para>
+    </summary>
+  </member>
+</doc>

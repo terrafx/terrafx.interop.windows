@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="FILE_ID_INFO">
+    <summary>
+      <para>Contains identification information for a file. This structure is returned from the
+<see cref="GetFileInformationByHandleEx" /> function when
+<b>FileIdInfo</b> is passed in the <i>FileInformationClass</i></para>
+      <para>parameter.</para>
+    </summary>
+    <seealso cref="FILE_ID_128" />
+    <seealso cref="FILE_INFO_BY_HANDLE_CLASS" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/FileIO/file-management-structures">File Management Structures</seealso>
+    <seealso cref="GetFileInformationByHandleEx" />
+  </member>
+  <member name="FILE_ID_INFO.VolumeSerialNumber">
+    <summary>
+      <para>The serial number of the volume that contains a file.</para>
+    </summary>
+  </member>
+  <member name="FILE_ID_INFO.FileId">
+    <summary>
+      <para>The 128-bit file identifier for the file. The file identifier and the volume serial number uniquely identify
+a file on a single computer. To determine whether two open handles represent the same file, combine the
+identifier and the volume serial number for each file and compare them.</para>
+    </summary>
+  </member>
+</doc>

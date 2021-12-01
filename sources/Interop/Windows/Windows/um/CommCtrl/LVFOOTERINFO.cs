@@ -5,14 +5,19 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='LVFOOTERINFO.xml' path='doc/member[@name="LVFOOTERINFO"]/*' />
 public unsafe partial struct LVFOOTERINFO
 {
+    /// <include file='LVFOOTERINFO.xml' path='doc/member[@name="LVFOOTERINFO.mask"]/*' />
     public uint mask;
 
+    /// <include file='LVFOOTERINFO.xml' path='doc/member[@name="LVFOOTERINFO.pszText"]/*' />
     [NativeTypeName("LPWSTR")]
     public ushort* pszText;
 
+    /// <include file='LVFOOTERINFO.xml' path='doc/member[@name="LVFOOTERINFO.cchTextMax"]/*' />
     public int cchTextMax;
 
+    /// <include file='LVFOOTERINFO.xml' path='doc/member[@name="LVFOOTERINFO.cItems"]/*' />
     public uint cItems;
 }

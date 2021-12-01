@@ -8,10 +8,14 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PSS_THREAD_FLAGS.xml' path='doc/member[@name="PSS_THREAD_FLAGS"]/*' />
 [Flags]
 [SupportedOSPlatform("windows8.1")]
 public enum PSS_THREAD_FLAGS
 {
+    /// <include file='PSS_THREAD_FLAGS.xml' path='doc/member[@name="PSS_THREAD_FLAGS.PSS_THREAD_FLAGS_NONE"]/*' />
     PSS_THREAD_FLAGS_NONE = 0x0000,
+
+    /// <include file='PSS_THREAD_FLAGS.xml' path='doc/member[@name="PSS_THREAD_FLAGS.PSS_THREAD_FLAGS_TERMINATED"]/*' />
     PSS_THREAD_FLAGS_TERMINATED = 0x0001,
 }

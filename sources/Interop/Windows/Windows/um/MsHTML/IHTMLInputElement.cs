@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement"]/*' />
 [Guid("3050F5D2-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IHTMLInputElement : IDispatch")]
 [NativeInheritance("IDispatch")]
@@ -16,6 +17,7 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface
         return ((delegate* unmanaged<IHTMLInputElement*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface
         return ((delegate* unmanaged<IHTMLInputElement*, uint>)(lpVtbl[1]))((IHTMLInputElement*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface
         return ((delegate* unmanaged<IHTMLInputElement*, uint>)(lpVtbl[2]))((IHTMLInputElement*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface
         return ((delegate* unmanaged<IHTMLInputElement*, uint*, int>)(lpVtbl[3]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface
         return ((delegate* unmanaged<IHTMLInputElement*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
@@ -60,6 +67,7 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface
         return ((delegate* unmanaged<IHTMLInputElement*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
+    /// <inheritdoc cref="IDispatch.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
@@ -67,6 +75,7 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface
         return ((delegate* unmanaged<IHTMLInputElement*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
+    /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.put_type"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT put_type([NativeTypeName("BSTR")] ushort* v)
@@ -74,6 +83,7 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface
         return ((delegate* unmanaged<IHTMLInputElement*, ushort*, int>)(lpVtbl[7]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.get_type"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT get_type([NativeTypeName("BSTR *")] ushort** p)
@@ -81,6 +91,7 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface
         return ((delegate* unmanaged<IHTMLInputElement*, ushort**, int>)(lpVtbl[8]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.put_value"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT put_value([NativeTypeName("BSTR")] ushort* v)
@@ -88,6 +99,7 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface
         return ((delegate* unmanaged<IHTMLInputElement*, ushort*, int>)(lpVtbl[9]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.get_value"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT get_value([NativeTypeName("BSTR *")] ushort** p)
@@ -95,6 +107,7 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface
         return ((delegate* unmanaged<IHTMLInputElement*, ushort**, int>)(lpVtbl[10]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.put_name"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT put_name([NativeTypeName("BSTR")] ushort* v)
@@ -102,6 +115,7 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface
         return ((delegate* unmanaged<IHTMLInputElement*, ushort*, int>)(lpVtbl[11]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.get_name"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT get_name([NativeTypeName("BSTR *")] ushort** p)
@@ -109,6 +123,7 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface
         return ((delegate* unmanaged<IHTMLInputElement*, ushort**, int>)(lpVtbl[12]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.put_status"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT put_status([NativeTypeName("VARIANT_BOOL")] short v)
@@ -116,6 +131,7 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface
         return ((delegate* unmanaged<IHTMLInputElement*, short, int>)(lpVtbl[13]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.get_status"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT get_status([NativeTypeName("VARIANT_BOOL *")] short* p)
@@ -123,6 +139,7 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface
         return ((delegate* unmanaged<IHTMLInputElement*, short*, int>)(lpVtbl[14]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.put_disabled"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT put_disabled([NativeTypeName("VARIANT_BOOL")] short v)
@@ -130,6 +147,7 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface
         return ((delegate* unmanaged<IHTMLInputElement*, short, int>)(lpVtbl[15]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.get_disabled"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT get_disabled([NativeTypeName("VARIANT_BOOL *")] short* p)
@@ -137,6 +155,7 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface
         return ((delegate* unmanaged<IHTMLInputElement*, short*, int>)(lpVtbl[16]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.get_form"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT get_form(IHTMLFormElement** p)
@@ -144,6 +163,7 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface
         return ((delegate* unmanaged<IHTMLInputElement*, IHTMLFormElement**, int>)(lpVtbl[17]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.put_size"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT put_size([NativeTypeName("long")] int v)
@@ -151,6 +171,7 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface
         return ((delegate* unmanaged<IHTMLInputElement*, int, int>)(lpVtbl[18]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.get_size"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT get_size([NativeTypeName("long *")] int* p)
@@ -158,6 +179,7 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface
         return ((delegate* unmanaged<IHTMLInputElement*, int*, int>)(lpVtbl[19]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.put_maxLength"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public HRESULT put_maxLength([NativeTypeName("long")] int v)
@@ -165,6 +187,7 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface
         return ((delegate* unmanaged<IHTMLInputElement*, int, int>)(lpVtbl[20]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.get_maxLength"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
     public HRESULT get_maxLength([NativeTypeName("long *")] int* p)
@@ -172,6 +195,7 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface
         return ((delegate* unmanaged<IHTMLInputElement*, int*, int>)(lpVtbl[21]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.select"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
     public HRESULT select()
@@ -179,6 +203,7 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface
         return ((delegate* unmanaged<IHTMLInputElement*, int>)(lpVtbl[22]))((IHTMLInputElement*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.put_onchange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
     public HRESULT put_onchange(VARIANT v)
@@ -186,6 +211,7 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface
         return ((delegate* unmanaged<IHTMLInputElement*, VARIANT, int>)(lpVtbl[23]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.get_onchange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(24)]
     public HRESULT get_onchange(VARIANT* p)
@@ -193,6 +219,7 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface
         return ((delegate* unmanaged<IHTMLInputElement*, VARIANT*, int>)(lpVtbl[24]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.put_onselect"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(25)]
     public HRESULT put_onselect(VARIANT v)
@@ -200,6 +227,7 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface
         return ((delegate* unmanaged<IHTMLInputElement*, VARIANT, int>)(lpVtbl[25]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.get_onselect"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(26)]
     public HRESULT get_onselect(VARIANT* p)
@@ -207,6 +235,7 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface
         return ((delegate* unmanaged<IHTMLInputElement*, VARIANT*, int>)(lpVtbl[26]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.put_defaultValue"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(27)]
     public HRESULT put_defaultValue([NativeTypeName("BSTR")] ushort* v)
@@ -214,6 +243,7 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface
         return ((delegate* unmanaged<IHTMLInputElement*, ushort*, int>)(lpVtbl[27]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.get_defaultValue"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(28)]
     public HRESULT get_defaultValue([NativeTypeName("BSTR *")] ushort** p)
@@ -221,6 +251,7 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface
         return ((delegate* unmanaged<IHTMLInputElement*, ushort**, int>)(lpVtbl[28]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.put_readOnly"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(29)]
     public HRESULT put_readOnly([NativeTypeName("VARIANT_BOOL")] short v)
@@ -228,6 +259,7 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface
         return ((delegate* unmanaged<IHTMLInputElement*, short, int>)(lpVtbl[29]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.get_readOnly"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(30)]
     public HRESULT get_readOnly([NativeTypeName("VARIANT_BOOL *")] short* p)
@@ -235,6 +267,7 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface
         return ((delegate* unmanaged<IHTMLInputElement*, short*, int>)(lpVtbl[30]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.createTextRange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(31)]
     public HRESULT createTextRange(IHTMLTxtRange** range)
@@ -242,6 +275,7 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface
         return ((delegate* unmanaged<IHTMLInputElement*, IHTMLTxtRange**, int>)(lpVtbl[31]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), range);
     }
 
+    /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.put_indeterminate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(32)]
     public HRESULT put_indeterminate([NativeTypeName("VARIANT_BOOL")] short v)
@@ -249,6 +283,7 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface
         return ((delegate* unmanaged<IHTMLInputElement*, short, int>)(lpVtbl[32]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.get_indeterminate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(33)]
     public HRESULT get_indeterminate([NativeTypeName("VARIANT_BOOL *")] short* p)
@@ -256,6 +291,7 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface
         return ((delegate* unmanaged<IHTMLInputElement*, short*, int>)(lpVtbl[33]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.put_defaultChecked"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(34)]
     public HRESULT put_defaultChecked([NativeTypeName("VARIANT_BOOL")] short v)
@@ -263,6 +299,7 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface
         return ((delegate* unmanaged<IHTMLInputElement*, short, int>)(lpVtbl[34]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.get_defaultChecked"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(35)]
     public HRESULT get_defaultChecked([NativeTypeName("VARIANT_BOOL *")] short* p)
@@ -270,6 +307,7 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface
         return ((delegate* unmanaged<IHTMLInputElement*, short*, int>)(lpVtbl[35]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.put_checked"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(36)]
     public HRESULT put_checked([NativeTypeName("VARIANT_BOOL")] short v)
@@ -277,6 +315,7 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface
         return ((delegate* unmanaged<IHTMLInputElement*, short, int>)(lpVtbl[36]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.get_checked"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(37)]
     public HRESULT get_checked([NativeTypeName("VARIANT_BOOL *")] short* p)
@@ -284,6 +323,7 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface
         return ((delegate* unmanaged<IHTMLInputElement*, short*, int>)(lpVtbl[37]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.put_border"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(38)]
     public HRESULT put_border(VARIANT v)
@@ -291,6 +331,7 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface
         return ((delegate* unmanaged<IHTMLInputElement*, VARIANT, int>)(lpVtbl[38]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.get_border"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(39)]
     public HRESULT get_border(VARIANT* p)
@@ -298,6 +339,7 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface
         return ((delegate* unmanaged<IHTMLInputElement*, VARIANT*, int>)(lpVtbl[39]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.put_vspace"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(40)]
     public HRESULT put_vspace([NativeTypeName("long")] int v)
@@ -305,6 +347,7 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface
         return ((delegate* unmanaged<IHTMLInputElement*, int, int>)(lpVtbl[40]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.get_vspace"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(41)]
     public HRESULT get_vspace([NativeTypeName("long *")] int* p)
@@ -312,6 +355,7 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface
         return ((delegate* unmanaged<IHTMLInputElement*, int*, int>)(lpVtbl[41]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.put_hspace"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(42)]
     public HRESULT put_hspace([NativeTypeName("long")] int v)
@@ -319,6 +363,7 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface
         return ((delegate* unmanaged<IHTMLInputElement*, int, int>)(lpVtbl[42]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.get_hspace"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(43)]
     public HRESULT get_hspace([NativeTypeName("long *")] int* p)
@@ -326,6 +371,7 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface
         return ((delegate* unmanaged<IHTMLInputElement*, int*, int>)(lpVtbl[43]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.put_alt"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(44)]
     public HRESULT put_alt([NativeTypeName("BSTR")] ushort* v)
@@ -333,6 +379,7 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface
         return ((delegate* unmanaged<IHTMLInputElement*, ushort*, int>)(lpVtbl[44]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.get_alt"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(45)]
     public HRESULT get_alt([NativeTypeName("BSTR *")] ushort** p)
@@ -340,6 +387,7 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface
         return ((delegate* unmanaged<IHTMLInputElement*, ushort**, int>)(lpVtbl[45]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.put_src"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(46)]
     public HRESULT put_src([NativeTypeName("BSTR")] ushort* v)
@@ -347,6 +395,7 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface
         return ((delegate* unmanaged<IHTMLInputElement*, ushort*, int>)(lpVtbl[46]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.get_src"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(47)]
     public HRESULT get_src([NativeTypeName("BSTR *")] ushort** p)
@@ -354,6 +403,7 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface
         return ((delegate* unmanaged<IHTMLInputElement*, ushort**, int>)(lpVtbl[47]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.put_lowsrc"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(48)]
     public HRESULT put_lowsrc([NativeTypeName("BSTR")] ushort* v)
@@ -361,6 +411,7 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface
         return ((delegate* unmanaged<IHTMLInputElement*, ushort*, int>)(lpVtbl[48]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.get_lowsrc"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(49)]
     public HRESULT get_lowsrc([NativeTypeName("BSTR *")] ushort** p)
@@ -368,6 +419,7 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface
         return ((delegate* unmanaged<IHTMLInputElement*, ushort**, int>)(lpVtbl[49]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.put_vrml"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(50)]
     public HRESULT put_vrml([NativeTypeName("BSTR")] ushort* v)
@@ -375,6 +427,7 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface
         return ((delegate* unmanaged<IHTMLInputElement*, ushort*, int>)(lpVtbl[50]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.get_vrml"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(51)]
     public HRESULT get_vrml([NativeTypeName("BSTR *")] ushort** p)
@@ -382,6 +435,7 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface
         return ((delegate* unmanaged<IHTMLInputElement*, ushort**, int>)(lpVtbl[51]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.put_dynsrc"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(52)]
     public HRESULT put_dynsrc([NativeTypeName("BSTR")] ushort* v)
@@ -389,6 +443,7 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface
         return ((delegate* unmanaged<IHTMLInputElement*, ushort*, int>)(lpVtbl[52]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.get_dynsrc"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(53)]
     public HRESULT get_dynsrc([NativeTypeName("BSTR *")] ushort** p)
@@ -396,6 +451,7 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface
         return ((delegate* unmanaged<IHTMLInputElement*, ushort**, int>)(lpVtbl[53]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.get_readyState"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(54)]
     public HRESULT get_readyState([NativeTypeName("BSTR *")] ushort** p)
@@ -403,6 +459,7 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface
         return ((delegate* unmanaged<IHTMLInputElement*, ushort**, int>)(lpVtbl[54]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.get_complete"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(55)]
     public HRESULT get_complete([NativeTypeName("VARIANT_BOOL *")] short* p)
@@ -410,6 +467,7 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface
         return ((delegate* unmanaged<IHTMLInputElement*, short*, int>)(lpVtbl[55]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.put_loop"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(56)]
     public HRESULT put_loop(VARIANT v)
@@ -417,6 +475,7 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface
         return ((delegate* unmanaged<IHTMLInputElement*, VARIANT, int>)(lpVtbl[56]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.get_loop"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(57)]
     public HRESULT get_loop(VARIANT* p)
@@ -424,6 +483,7 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface
         return ((delegate* unmanaged<IHTMLInputElement*, VARIANT*, int>)(lpVtbl[57]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.put_align"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(58)]
     public HRESULT put_align([NativeTypeName("BSTR")] ushort* v)
@@ -431,6 +491,7 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface
         return ((delegate* unmanaged<IHTMLInputElement*, ushort*, int>)(lpVtbl[58]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.get_align"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(59)]
     public HRESULT get_align([NativeTypeName("BSTR *")] ushort** p)
@@ -438,6 +499,7 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface
         return ((delegate* unmanaged<IHTMLInputElement*, ushort**, int>)(lpVtbl[59]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.put_onload"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(60)]
     public HRESULT put_onload(VARIANT v)
@@ -445,6 +507,7 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface
         return ((delegate* unmanaged<IHTMLInputElement*, VARIANT, int>)(lpVtbl[60]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.get_onload"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(61)]
     public HRESULT get_onload(VARIANT* p)
@@ -452,6 +515,7 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface
         return ((delegate* unmanaged<IHTMLInputElement*, VARIANT*, int>)(lpVtbl[61]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.put_onerror"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(62)]
     public HRESULT put_onerror(VARIANT v)
@@ -459,6 +523,7 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface
         return ((delegate* unmanaged<IHTMLInputElement*, VARIANT, int>)(lpVtbl[62]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.get_onerror"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(63)]
     public HRESULT get_onerror(VARIANT* p)
@@ -466,6 +531,7 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface
         return ((delegate* unmanaged<IHTMLInputElement*, VARIANT*, int>)(lpVtbl[63]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.put_onabort"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(64)]
     public HRESULT put_onabort(VARIANT v)
@@ -473,6 +539,7 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface
         return ((delegate* unmanaged<IHTMLInputElement*, VARIANT, int>)(lpVtbl[64]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.get_onabort"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(65)]
     public HRESULT get_onabort(VARIANT* p)
@@ -480,6 +547,7 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface
         return ((delegate* unmanaged<IHTMLInputElement*, VARIANT*, int>)(lpVtbl[65]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.put_width"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(66)]
     public HRESULT put_width([NativeTypeName("long")] int v)
@@ -487,6 +555,7 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface
         return ((delegate* unmanaged<IHTMLInputElement*, int, int>)(lpVtbl[66]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.get_width"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(67)]
     public HRESULT get_width([NativeTypeName("long *")] int* p)
@@ -494,6 +563,7 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface
         return ((delegate* unmanaged<IHTMLInputElement*, int*, int>)(lpVtbl[67]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.put_height"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(68)]
     public HRESULT put_height([NativeTypeName("long")] int v)
@@ -501,6 +571,7 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface
         return ((delegate* unmanaged<IHTMLInputElement*, int, int>)(lpVtbl[68]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.get_height"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(69)]
     public HRESULT get_height([NativeTypeName("long *")] int* p)
@@ -508,6 +579,7 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface
         return ((delegate* unmanaged<IHTMLInputElement*, int*, int>)(lpVtbl[69]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.put_start"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(70)]
     public HRESULT put_start([NativeTypeName("BSTR")] ushort* v)
@@ -515,6 +587,7 @@ public unsafe partial struct IHTMLInputElement : IHTMLInputElement.Interface
         return ((delegate* unmanaged<IHTMLInputElement*, ushort*, int>)(lpVtbl[70]))((IHTMLInputElement*)Unsafe.AsPointer(ref this), v);
     }
 
+    /// <include file='IHTMLInputElement.xml' path='doc/member[@name="IHTMLInputElement.get_start"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(71)]
     public HRESULT get_start([NativeTypeName("BSTR *")] ushort** p)

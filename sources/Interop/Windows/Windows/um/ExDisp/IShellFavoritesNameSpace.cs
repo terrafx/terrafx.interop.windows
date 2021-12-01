@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IShellFavoritesNameSpace.xml' path='doc/member[@name="IShellFavoritesNameSpace"]/*' />
 [Guid("55136804-B2DE-11D1-B9F2-00A0C98BC547")]
 [NativeTypeName("struct IShellFavoritesNameSpace : IDispatch")]
 [NativeInheritance("IDispatch")]
@@ -16,6 +17,7 @@ public unsafe partial struct IShellFavoritesNameSpace : IShellFavoritesNameSpace
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IShellFavoritesNameSpace : IShellFavoritesNameSpace
         return ((delegate* unmanaged<IShellFavoritesNameSpace*, Guid*, void**, int>)(lpVtbl[0]))((IShellFavoritesNameSpace*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IShellFavoritesNameSpace : IShellFavoritesNameSpace
         return ((delegate* unmanaged<IShellFavoritesNameSpace*, uint>)(lpVtbl[1]))((IShellFavoritesNameSpace*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IShellFavoritesNameSpace : IShellFavoritesNameSpace
         return ((delegate* unmanaged<IShellFavoritesNameSpace*, uint>)(lpVtbl[2]))((IShellFavoritesNameSpace*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct IShellFavoritesNameSpace : IShellFavoritesNameSpace
         return ((delegate* unmanaged<IShellFavoritesNameSpace*, uint*, int>)(lpVtbl[3]))((IShellFavoritesNameSpace*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct IShellFavoritesNameSpace : IShellFavoritesNameSpace
         return ((delegate* unmanaged<IShellFavoritesNameSpace*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IShellFavoritesNameSpace*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
@@ -60,6 +67,7 @@ public unsafe partial struct IShellFavoritesNameSpace : IShellFavoritesNameSpace
         return ((delegate* unmanaged<IShellFavoritesNameSpace*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IShellFavoritesNameSpace*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
+    /// <inheritdoc cref="IDispatch.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
@@ -67,6 +75,7 @@ public unsafe partial struct IShellFavoritesNameSpace : IShellFavoritesNameSpace
         return ((delegate* unmanaged<IShellFavoritesNameSpace*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IShellFavoritesNameSpace*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
+    /// <include file='IShellFavoritesNameSpace.xml' path='doc/member[@name="IShellFavoritesNameSpace.MoveSelectionUp"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT MoveSelectionUp()
@@ -74,6 +83,7 @@ public unsafe partial struct IShellFavoritesNameSpace : IShellFavoritesNameSpace
         return ((delegate* unmanaged<IShellFavoritesNameSpace*, int>)(lpVtbl[7]))((IShellFavoritesNameSpace*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IShellFavoritesNameSpace.xml' path='doc/member[@name="IShellFavoritesNameSpace.MoveSelectionDown"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT MoveSelectionDown()
@@ -81,6 +91,7 @@ public unsafe partial struct IShellFavoritesNameSpace : IShellFavoritesNameSpace
         return ((delegate* unmanaged<IShellFavoritesNameSpace*, int>)(lpVtbl[8]))((IShellFavoritesNameSpace*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IShellFavoritesNameSpace.xml' path='doc/member[@name="IShellFavoritesNameSpace.ResetSort"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT ResetSort()
@@ -88,6 +99,7 @@ public unsafe partial struct IShellFavoritesNameSpace : IShellFavoritesNameSpace
         return ((delegate* unmanaged<IShellFavoritesNameSpace*, int>)(lpVtbl[9]))((IShellFavoritesNameSpace*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IShellFavoritesNameSpace.xml' path='doc/member[@name="IShellFavoritesNameSpace.NewFolder"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT NewFolder()
@@ -95,6 +107,7 @@ public unsafe partial struct IShellFavoritesNameSpace : IShellFavoritesNameSpace
         return ((delegate* unmanaged<IShellFavoritesNameSpace*, int>)(lpVtbl[10]))((IShellFavoritesNameSpace*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IShellFavoritesNameSpace.xml' path='doc/member[@name="IShellFavoritesNameSpace.Synchronize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT Synchronize()
@@ -102,6 +115,7 @@ public unsafe partial struct IShellFavoritesNameSpace : IShellFavoritesNameSpace
         return ((delegate* unmanaged<IShellFavoritesNameSpace*, int>)(lpVtbl[11]))((IShellFavoritesNameSpace*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IShellFavoritesNameSpace.xml' path='doc/member[@name="IShellFavoritesNameSpace.Import"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT Import()
@@ -109,6 +123,7 @@ public unsafe partial struct IShellFavoritesNameSpace : IShellFavoritesNameSpace
         return ((delegate* unmanaged<IShellFavoritesNameSpace*, int>)(lpVtbl[12]))((IShellFavoritesNameSpace*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IShellFavoritesNameSpace.xml' path='doc/member[@name="IShellFavoritesNameSpace.Export"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT Export()
@@ -116,6 +131,7 @@ public unsafe partial struct IShellFavoritesNameSpace : IShellFavoritesNameSpace
         return ((delegate* unmanaged<IShellFavoritesNameSpace*, int>)(lpVtbl[13]))((IShellFavoritesNameSpace*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IShellFavoritesNameSpace.xml' path='doc/member[@name="IShellFavoritesNameSpace.InvokeContextMenuCommand"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT InvokeContextMenuCommand([NativeTypeName("BSTR")] ushort* strCommand)
@@ -123,6 +139,7 @@ public unsafe partial struct IShellFavoritesNameSpace : IShellFavoritesNameSpace
         return ((delegate* unmanaged<IShellFavoritesNameSpace*, ushort*, int>)(lpVtbl[14]))((IShellFavoritesNameSpace*)Unsafe.AsPointer(ref this), strCommand);
     }
 
+    /// <include file='IShellFavoritesNameSpace.xml' path='doc/member[@name="IShellFavoritesNameSpace.MoveSelectionTo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT MoveSelectionTo()
@@ -130,6 +147,7 @@ public unsafe partial struct IShellFavoritesNameSpace : IShellFavoritesNameSpace
         return ((delegate* unmanaged<IShellFavoritesNameSpace*, int>)(lpVtbl[15]))((IShellFavoritesNameSpace*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IShellFavoritesNameSpace.xml' path='doc/member[@name="IShellFavoritesNameSpace.get_SubscriptionsEnabled"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT get_SubscriptionsEnabled([NativeTypeName("VARIANT_BOOL *")] short* pBool)
@@ -137,6 +155,7 @@ public unsafe partial struct IShellFavoritesNameSpace : IShellFavoritesNameSpace
         return ((delegate* unmanaged<IShellFavoritesNameSpace*, short*, int>)(lpVtbl[16]))((IShellFavoritesNameSpace*)Unsafe.AsPointer(ref this), pBool);
     }
 
+    /// <include file='IShellFavoritesNameSpace.xml' path='doc/member[@name="IShellFavoritesNameSpace.CreateSubscriptionForSelection"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT CreateSubscriptionForSelection([NativeTypeName("VARIANT_BOOL *")] short* pBool)
@@ -144,6 +163,7 @@ public unsafe partial struct IShellFavoritesNameSpace : IShellFavoritesNameSpace
         return ((delegate* unmanaged<IShellFavoritesNameSpace*, short*, int>)(lpVtbl[17]))((IShellFavoritesNameSpace*)Unsafe.AsPointer(ref this), pBool);
     }
 
+    /// <include file='IShellFavoritesNameSpace.xml' path='doc/member[@name="IShellFavoritesNameSpace.DeleteSubscriptionForSelection"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT DeleteSubscriptionForSelection([NativeTypeName("VARIANT_BOOL *")] short* pBool)
@@ -151,6 +171,7 @@ public unsafe partial struct IShellFavoritesNameSpace : IShellFavoritesNameSpace
         return ((delegate* unmanaged<IShellFavoritesNameSpace*, short*, int>)(lpVtbl[18]))((IShellFavoritesNameSpace*)Unsafe.AsPointer(ref this), pBool);
     }
 
+    /// <include file='IShellFavoritesNameSpace.xml' path='doc/member[@name="IShellFavoritesNameSpace.SetRoot"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT SetRoot([NativeTypeName("BSTR")] ushort* bstrFullPath)

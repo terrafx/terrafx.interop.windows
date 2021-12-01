@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IDOMWheelEvent.xml' path='doc/member[@name="IDOMWheelEvent"]/*' />
 [Guid("305106D2-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IDOMWheelEvent : IDispatch")]
 [NativeInheritance("IDispatch")]
@@ -16,6 +17,7 @@ public unsafe partial struct IDOMWheelEvent : IDOMWheelEvent.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IDOMWheelEvent : IDOMWheelEvent.Interface
         return ((delegate* unmanaged<IDOMWheelEvent*, Guid*, void**, int>)(lpVtbl[0]))((IDOMWheelEvent*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IDOMWheelEvent : IDOMWheelEvent.Interface
         return ((delegate* unmanaged<IDOMWheelEvent*, uint>)(lpVtbl[1]))((IDOMWheelEvent*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IDOMWheelEvent : IDOMWheelEvent.Interface
         return ((delegate* unmanaged<IDOMWheelEvent*, uint>)(lpVtbl[2]))((IDOMWheelEvent*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct IDOMWheelEvent : IDOMWheelEvent.Interface
         return ((delegate* unmanaged<IDOMWheelEvent*, uint*, int>)(lpVtbl[3]))((IDOMWheelEvent*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct IDOMWheelEvent : IDOMWheelEvent.Interface
         return ((delegate* unmanaged<IDOMWheelEvent*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IDOMWheelEvent*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
@@ -60,6 +67,7 @@ public unsafe partial struct IDOMWheelEvent : IDOMWheelEvent.Interface
         return ((delegate* unmanaged<IDOMWheelEvent*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IDOMWheelEvent*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
+    /// <inheritdoc cref="IDispatch.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
@@ -67,6 +75,7 @@ public unsafe partial struct IDOMWheelEvent : IDOMWheelEvent.Interface
         return ((delegate* unmanaged<IDOMWheelEvent*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IDOMWheelEvent*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
+    /// <include file='IDOMWheelEvent.xml' path='doc/member[@name="IDOMWheelEvent.get_deltaX"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT get_deltaX([NativeTypeName("long *")] int* p)
@@ -74,6 +83,7 @@ public unsafe partial struct IDOMWheelEvent : IDOMWheelEvent.Interface
         return ((delegate* unmanaged<IDOMWheelEvent*, int*, int>)(lpVtbl[7]))((IDOMWheelEvent*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IDOMWheelEvent.xml' path='doc/member[@name="IDOMWheelEvent.get_deltaY"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT get_deltaY([NativeTypeName("long *")] int* p)
@@ -81,6 +91,7 @@ public unsafe partial struct IDOMWheelEvent : IDOMWheelEvent.Interface
         return ((delegate* unmanaged<IDOMWheelEvent*, int*, int>)(lpVtbl[8]))((IDOMWheelEvent*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IDOMWheelEvent.xml' path='doc/member[@name="IDOMWheelEvent.get_deltaZ"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT get_deltaZ([NativeTypeName("long *")] int* p)
@@ -88,6 +99,7 @@ public unsafe partial struct IDOMWheelEvent : IDOMWheelEvent.Interface
         return ((delegate* unmanaged<IDOMWheelEvent*, int*, int>)(lpVtbl[9]))((IDOMWheelEvent*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IDOMWheelEvent.xml' path='doc/member[@name="IDOMWheelEvent.get_deltaMode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT get_deltaMode([NativeTypeName("ULONG *")] uint* p)
@@ -95,6 +107,7 @@ public unsafe partial struct IDOMWheelEvent : IDOMWheelEvent.Interface
         return ((delegate* unmanaged<IDOMWheelEvent*, uint*, int>)(lpVtbl[10]))((IDOMWheelEvent*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IDOMWheelEvent.xml' path='doc/member[@name="IDOMWheelEvent.initWheelEvent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT initWheelEvent([NativeTypeName("BSTR")] ushort* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, IHTMLWindow2* viewArg, [NativeTypeName("long")] int detailArg, [NativeTypeName("long")] int screenXArg, [NativeTypeName("long")] int screenYArg, [NativeTypeName("long")] int clientXArg, [NativeTypeName("long")] int clientYArg, ushort buttonArg, IEventTarget* relatedTargetArg, [NativeTypeName("BSTR")] ushort* modifiersListArg, [NativeTypeName("long")] int deltaX, [NativeTypeName("long")] int deltaY, [NativeTypeName("long")] int deltaZ, [NativeTypeName("ULONG")] uint deltaMode)

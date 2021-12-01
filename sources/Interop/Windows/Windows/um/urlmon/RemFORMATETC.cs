@@ -5,20 +5,26 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='RemFORMATETC.xml' path='doc/member[@name="RemFORMATETC"]/*' />
 public partial struct RemFORMATETC
 {
+    /// <include file='RemFORMATETC.xml' path='doc/member[@name="RemFORMATETC.cfFormat"]/*' />
     [NativeTypeName("DWORD")]
     public uint cfFormat;
 
+    /// <include file='RemFORMATETC.xml' path='doc/member[@name="RemFORMATETC.ptd"]/*' />
     [NativeTypeName("DWORD")]
     public uint ptd;
 
+    /// <include file='RemFORMATETC.xml' path='doc/member[@name="RemFORMATETC.dwAspect"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwAspect;
 
+    /// <include file='RemFORMATETC.xml' path='doc/member[@name="RemFORMATETC.lindex"]/*' />
     [NativeTypeName("LONG")]
     public int lindex;
 
+    /// <include file='RemFORMATETC.xml' path='doc/member[@name="RemFORMATETC.tymed"]/*' />
     [NativeTypeName("DWORD")]
     public uint tymed;
 }

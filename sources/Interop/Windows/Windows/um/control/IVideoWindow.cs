@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IVideoWindow.xml' path='doc/member[@name="IVideoWindow"]/*' />
 [Guid("56A868B4-0AD4-11CE-B03A-0020AF0BA770")]
 [NativeTypeName("struct IVideoWindow : IDispatch")]
 [NativeInheritance("IDispatch")]
@@ -16,6 +17,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface
         return ((delegate* unmanaged<IVideoWindow*, Guid*, void**, int>)(lpVtbl[0]))((IVideoWindow*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface
         return ((delegate* unmanaged<IVideoWindow*, uint>)(lpVtbl[1]))((IVideoWindow*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface
         return ((delegate* unmanaged<IVideoWindow*, uint>)(lpVtbl[2]))((IVideoWindow*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface
         return ((delegate* unmanaged<IVideoWindow*, uint*, int>)(lpVtbl[3]))((IVideoWindow*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface
         return ((delegate* unmanaged<IVideoWindow*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IVideoWindow*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
@@ -60,6 +67,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface
         return ((delegate* unmanaged<IVideoWindow*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IVideoWindow*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
+    /// <inheritdoc cref="IDispatch.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
@@ -67,6 +75,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface
         return ((delegate* unmanaged<IVideoWindow*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IVideoWindow*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
+    /// <include file='IVideoWindow.xml' path='doc/member[@name="IVideoWindow.put_Caption"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT put_Caption([NativeTypeName("BSTR")] ushort* strCaption)
@@ -74,6 +83,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface
         return ((delegate* unmanaged<IVideoWindow*, ushort*, int>)(lpVtbl[7]))((IVideoWindow*)Unsafe.AsPointer(ref this), strCaption);
     }
 
+    /// <include file='IVideoWindow.xml' path='doc/member[@name="IVideoWindow.get_Caption"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT get_Caption([NativeTypeName("BSTR *")] ushort** strCaption)
@@ -81,6 +91,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface
         return ((delegate* unmanaged<IVideoWindow*, ushort**, int>)(lpVtbl[8]))((IVideoWindow*)Unsafe.AsPointer(ref this), strCaption);
     }
 
+    /// <include file='IVideoWindow.xml' path='doc/member[@name="IVideoWindow.put_WindowStyle"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT put_WindowStyle([NativeTypeName("long")] int WindowStyle)
@@ -88,6 +99,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface
         return ((delegate* unmanaged<IVideoWindow*, int, int>)(lpVtbl[9]))((IVideoWindow*)Unsafe.AsPointer(ref this), WindowStyle);
     }
 
+    /// <include file='IVideoWindow.xml' path='doc/member[@name="IVideoWindow.get_WindowStyle"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT get_WindowStyle([NativeTypeName("long *")] int* WindowStyle)
@@ -95,6 +107,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface
         return ((delegate* unmanaged<IVideoWindow*, int*, int>)(lpVtbl[10]))((IVideoWindow*)Unsafe.AsPointer(ref this), WindowStyle);
     }
 
+    /// <include file='IVideoWindow.xml' path='doc/member[@name="IVideoWindow.put_WindowStyleEx"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT put_WindowStyleEx([NativeTypeName("long")] int WindowStyleEx)
@@ -102,6 +115,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface
         return ((delegate* unmanaged<IVideoWindow*, int, int>)(lpVtbl[11]))((IVideoWindow*)Unsafe.AsPointer(ref this), WindowStyleEx);
     }
 
+    /// <include file='IVideoWindow.xml' path='doc/member[@name="IVideoWindow.get_WindowStyleEx"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT get_WindowStyleEx([NativeTypeName("long *")] int* WindowStyleEx)
@@ -109,6 +123,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface
         return ((delegate* unmanaged<IVideoWindow*, int*, int>)(lpVtbl[12]))((IVideoWindow*)Unsafe.AsPointer(ref this), WindowStyleEx);
     }
 
+    /// <include file='IVideoWindow.xml' path='doc/member[@name="IVideoWindow.put_AutoShow"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT put_AutoShow([NativeTypeName("long")] int AutoShow)
@@ -116,6 +131,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface
         return ((delegate* unmanaged<IVideoWindow*, int, int>)(lpVtbl[13]))((IVideoWindow*)Unsafe.AsPointer(ref this), AutoShow);
     }
 
+    /// <include file='IVideoWindow.xml' path='doc/member[@name="IVideoWindow.get_AutoShow"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT get_AutoShow([NativeTypeName("long *")] int* AutoShow)
@@ -123,6 +139,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface
         return ((delegate* unmanaged<IVideoWindow*, int*, int>)(lpVtbl[14]))((IVideoWindow*)Unsafe.AsPointer(ref this), AutoShow);
     }
 
+    /// <include file='IVideoWindow.xml' path='doc/member[@name="IVideoWindow.put_WindowState"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT put_WindowState([NativeTypeName("long")] int WindowState)
@@ -130,6 +147,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface
         return ((delegate* unmanaged<IVideoWindow*, int, int>)(lpVtbl[15]))((IVideoWindow*)Unsafe.AsPointer(ref this), WindowState);
     }
 
+    /// <include file='IVideoWindow.xml' path='doc/member[@name="IVideoWindow.get_WindowState"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT get_WindowState([NativeTypeName("long *")] int* WindowState)
@@ -137,6 +155,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface
         return ((delegate* unmanaged<IVideoWindow*, int*, int>)(lpVtbl[16]))((IVideoWindow*)Unsafe.AsPointer(ref this), WindowState);
     }
 
+    /// <include file='IVideoWindow.xml' path='doc/member[@name="IVideoWindow.put_BackgroundPalette"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT put_BackgroundPalette([NativeTypeName("long")] int BackgroundPalette)
@@ -144,6 +163,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface
         return ((delegate* unmanaged<IVideoWindow*, int, int>)(lpVtbl[17]))((IVideoWindow*)Unsafe.AsPointer(ref this), BackgroundPalette);
     }
 
+    /// <include file='IVideoWindow.xml' path='doc/member[@name="IVideoWindow.get_BackgroundPalette"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT get_BackgroundPalette([NativeTypeName("long *")] int* pBackgroundPalette)
@@ -151,6 +171,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface
         return ((delegate* unmanaged<IVideoWindow*, int*, int>)(lpVtbl[18]))((IVideoWindow*)Unsafe.AsPointer(ref this), pBackgroundPalette);
     }
 
+    /// <include file='IVideoWindow.xml' path='doc/member[@name="IVideoWindow.put_Visible"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT put_Visible([NativeTypeName("long")] int Visible)
@@ -158,6 +179,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface
         return ((delegate* unmanaged<IVideoWindow*, int, int>)(lpVtbl[19]))((IVideoWindow*)Unsafe.AsPointer(ref this), Visible);
     }
 
+    /// <include file='IVideoWindow.xml' path='doc/member[@name="IVideoWindow.get_Visible"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     public HRESULT get_Visible([NativeTypeName("long *")] int* pVisible)
@@ -165,6 +187,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface
         return ((delegate* unmanaged<IVideoWindow*, int*, int>)(lpVtbl[20]))((IVideoWindow*)Unsafe.AsPointer(ref this), pVisible);
     }
 
+    /// <include file='IVideoWindow.xml' path='doc/member[@name="IVideoWindow.put_Left"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
     public HRESULT put_Left([NativeTypeName("long")] int Left)
@@ -172,6 +195,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface
         return ((delegate* unmanaged<IVideoWindow*, int, int>)(lpVtbl[21]))((IVideoWindow*)Unsafe.AsPointer(ref this), Left);
     }
 
+    /// <include file='IVideoWindow.xml' path='doc/member[@name="IVideoWindow.get_Left"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
     public HRESULT get_Left([NativeTypeName("long *")] int* pLeft)
@@ -179,6 +203,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface
         return ((delegate* unmanaged<IVideoWindow*, int*, int>)(lpVtbl[22]))((IVideoWindow*)Unsafe.AsPointer(ref this), pLeft);
     }
 
+    /// <include file='IVideoWindow.xml' path='doc/member[@name="IVideoWindow.put_Width"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
     public HRESULT put_Width([NativeTypeName("long")] int Width)
@@ -186,6 +211,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface
         return ((delegate* unmanaged<IVideoWindow*, int, int>)(lpVtbl[23]))((IVideoWindow*)Unsafe.AsPointer(ref this), Width);
     }
 
+    /// <include file='IVideoWindow.xml' path='doc/member[@name="IVideoWindow.get_Width"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(24)]
     public HRESULT get_Width([NativeTypeName("long *")] int* pWidth)
@@ -193,6 +219,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface
         return ((delegate* unmanaged<IVideoWindow*, int*, int>)(lpVtbl[24]))((IVideoWindow*)Unsafe.AsPointer(ref this), pWidth);
     }
 
+    /// <include file='IVideoWindow.xml' path='doc/member[@name="IVideoWindow.put_Top"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(25)]
     public HRESULT put_Top([NativeTypeName("long")] int Top)
@@ -200,6 +227,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface
         return ((delegate* unmanaged<IVideoWindow*, int, int>)(lpVtbl[25]))((IVideoWindow*)Unsafe.AsPointer(ref this), Top);
     }
 
+    /// <include file='IVideoWindow.xml' path='doc/member[@name="IVideoWindow.get_Top"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(26)]
     public HRESULT get_Top([NativeTypeName("long *")] int* pTop)
@@ -207,6 +235,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface
         return ((delegate* unmanaged<IVideoWindow*, int*, int>)(lpVtbl[26]))((IVideoWindow*)Unsafe.AsPointer(ref this), pTop);
     }
 
+    /// <include file='IVideoWindow.xml' path='doc/member[@name="IVideoWindow.put_Height"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(27)]
     public HRESULT put_Height([NativeTypeName("long")] int Height)
@@ -214,6 +243,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface
         return ((delegate* unmanaged<IVideoWindow*, int, int>)(lpVtbl[27]))((IVideoWindow*)Unsafe.AsPointer(ref this), Height);
     }
 
+    /// <include file='IVideoWindow.xml' path='doc/member[@name="IVideoWindow.get_Height"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(28)]
     public HRESULT get_Height([NativeTypeName("long *")] int* pHeight)
@@ -221,6 +251,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface
         return ((delegate* unmanaged<IVideoWindow*, int*, int>)(lpVtbl[28]))((IVideoWindow*)Unsafe.AsPointer(ref this), pHeight);
     }
 
+    /// <include file='IVideoWindow.xml' path='doc/member[@name="IVideoWindow.put_Owner"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(29)]
     public HRESULT put_Owner(OAHWND Owner)
@@ -228,6 +259,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface
         return ((delegate* unmanaged<IVideoWindow*, OAHWND, int>)(lpVtbl[29]))((IVideoWindow*)Unsafe.AsPointer(ref this), Owner);
     }
 
+    /// <include file='IVideoWindow.xml' path='doc/member[@name="IVideoWindow.get_Owner"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(30)]
     public HRESULT get_Owner(OAHWND* Owner)
@@ -235,6 +267,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface
         return ((delegate* unmanaged<IVideoWindow*, OAHWND*, int>)(lpVtbl[30]))((IVideoWindow*)Unsafe.AsPointer(ref this), Owner);
     }
 
+    /// <include file='IVideoWindow.xml' path='doc/member[@name="IVideoWindow.put_MessageDrain"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(31)]
     public HRESULT put_MessageDrain(OAHWND Drain)
@@ -242,6 +275,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface
         return ((delegate* unmanaged<IVideoWindow*, OAHWND, int>)(lpVtbl[31]))((IVideoWindow*)Unsafe.AsPointer(ref this), Drain);
     }
 
+    /// <include file='IVideoWindow.xml' path='doc/member[@name="IVideoWindow.get_MessageDrain"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(32)]
     public HRESULT get_MessageDrain(OAHWND* Drain)
@@ -249,6 +283,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface
         return ((delegate* unmanaged<IVideoWindow*, OAHWND*, int>)(lpVtbl[32]))((IVideoWindow*)Unsafe.AsPointer(ref this), Drain);
     }
 
+    /// <include file='IVideoWindow.xml' path='doc/member[@name="IVideoWindow.get_BorderColor"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(33)]
     public HRESULT get_BorderColor([NativeTypeName("long *")] int* Color)
@@ -256,6 +291,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface
         return ((delegate* unmanaged<IVideoWindow*, int*, int>)(lpVtbl[33]))((IVideoWindow*)Unsafe.AsPointer(ref this), Color);
     }
 
+    /// <include file='IVideoWindow.xml' path='doc/member[@name="IVideoWindow.put_BorderColor"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(34)]
     public HRESULT put_BorderColor([NativeTypeName("long")] int Color)
@@ -263,6 +299,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface
         return ((delegate* unmanaged<IVideoWindow*, int, int>)(lpVtbl[34]))((IVideoWindow*)Unsafe.AsPointer(ref this), Color);
     }
 
+    /// <include file='IVideoWindow.xml' path='doc/member[@name="IVideoWindow.get_FullScreenMode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(35)]
     public HRESULT get_FullScreenMode([NativeTypeName("long *")] int* FullScreenMode)
@@ -270,6 +307,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface
         return ((delegate* unmanaged<IVideoWindow*, int*, int>)(lpVtbl[35]))((IVideoWindow*)Unsafe.AsPointer(ref this), FullScreenMode);
     }
 
+    /// <include file='IVideoWindow.xml' path='doc/member[@name="IVideoWindow.put_FullScreenMode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(36)]
     public HRESULT put_FullScreenMode([NativeTypeName("long")] int FullScreenMode)
@@ -277,6 +315,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface
         return ((delegate* unmanaged<IVideoWindow*, int, int>)(lpVtbl[36]))((IVideoWindow*)Unsafe.AsPointer(ref this), FullScreenMode);
     }
 
+    /// <include file='IVideoWindow.xml' path='doc/member[@name="IVideoWindow.SetWindowForeground"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(37)]
     public HRESULT SetWindowForeground([NativeTypeName("long")] int Focus)
@@ -284,6 +323,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface
         return ((delegate* unmanaged<IVideoWindow*, int, int>)(lpVtbl[37]))((IVideoWindow*)Unsafe.AsPointer(ref this), Focus);
     }
 
+    /// <include file='IVideoWindow.xml' path='doc/member[@name="IVideoWindow.NotifyOwnerMessage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(38)]
     public HRESULT NotifyOwnerMessage(OAHWND hwnd, [NativeTypeName("long")] int uMsg, [NativeTypeName("LONG_PTR")] nint wParam, [NativeTypeName("LONG_PTR")] nint lParam)
@@ -291,6 +331,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface
         return ((delegate* unmanaged<IVideoWindow*, OAHWND, int, nint, nint, int>)(lpVtbl[38]))((IVideoWindow*)Unsafe.AsPointer(ref this), hwnd, uMsg, wParam, lParam);
     }
 
+    /// <include file='IVideoWindow.xml' path='doc/member[@name="IVideoWindow.SetWindowPosition"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(39)]
     public HRESULT SetWindowPosition([NativeTypeName("long")] int Left, [NativeTypeName("long")] int Top, [NativeTypeName("long")] int Width, [NativeTypeName("long")] int Height)
@@ -298,6 +339,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface
         return ((delegate* unmanaged<IVideoWindow*, int, int, int, int, int>)(lpVtbl[39]))((IVideoWindow*)Unsafe.AsPointer(ref this), Left, Top, Width, Height);
     }
 
+    /// <include file='IVideoWindow.xml' path='doc/member[@name="IVideoWindow.GetWindowPosition"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(40)]
     public HRESULT GetWindowPosition([NativeTypeName("long *")] int* pLeft, [NativeTypeName("long *")] int* pTop, [NativeTypeName("long *")] int* pWidth, [NativeTypeName("long *")] int* pHeight)
@@ -305,6 +347,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface
         return ((delegate* unmanaged<IVideoWindow*, int*, int*, int*, int*, int>)(lpVtbl[40]))((IVideoWindow*)Unsafe.AsPointer(ref this), pLeft, pTop, pWidth, pHeight);
     }
 
+    /// <include file='IVideoWindow.xml' path='doc/member[@name="IVideoWindow.GetMinIdealImageSize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(41)]
     public HRESULT GetMinIdealImageSize([NativeTypeName("long *")] int* pWidth, [NativeTypeName("long *")] int* pHeight)
@@ -312,6 +355,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface
         return ((delegate* unmanaged<IVideoWindow*, int*, int*, int>)(lpVtbl[41]))((IVideoWindow*)Unsafe.AsPointer(ref this), pWidth, pHeight);
     }
 
+    /// <include file='IVideoWindow.xml' path='doc/member[@name="IVideoWindow.GetMaxIdealImageSize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(42)]
     public HRESULT GetMaxIdealImageSize([NativeTypeName("long *")] int* pWidth, [NativeTypeName("long *")] int* pHeight)
@@ -319,6 +363,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface
         return ((delegate* unmanaged<IVideoWindow*, int*, int*, int>)(lpVtbl[42]))((IVideoWindow*)Unsafe.AsPointer(ref this), pWidth, pHeight);
     }
 
+    /// <include file='IVideoWindow.xml' path='doc/member[@name="IVideoWindow.GetRestorePosition"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(43)]
     public HRESULT GetRestorePosition([NativeTypeName("long *")] int* pLeft, [NativeTypeName("long *")] int* pTop, [NativeTypeName("long *")] int* pWidth, [NativeTypeName("long *")] int* pHeight)
@@ -326,6 +371,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface
         return ((delegate* unmanaged<IVideoWindow*, int*, int*, int*, int*, int>)(lpVtbl[43]))((IVideoWindow*)Unsafe.AsPointer(ref this), pLeft, pTop, pWidth, pHeight);
     }
 
+    /// <include file='IVideoWindow.xml' path='doc/member[@name="IVideoWindow.HideCursor"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(44)]
     public HRESULT HideCursor([NativeTypeName("long")] int HideCursor)
@@ -333,6 +379,7 @@ public unsafe partial struct IVideoWindow : IVideoWindow.Interface
         return ((delegate* unmanaged<IVideoWindow*, int, int>)(lpVtbl[44]))((IVideoWindow*)Unsafe.AsPointer(ref this), HideCursor);
     }
 
+    /// <include file='IVideoWindow.xml' path='doc/member[@name="IVideoWindow.IsCursorHidden"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(45)]
     public HRESULT IsCursorHidden([NativeTypeName("long *")] int* CursorHidden)

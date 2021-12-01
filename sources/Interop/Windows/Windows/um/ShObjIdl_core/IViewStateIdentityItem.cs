@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IViewStateIdentityItem.xml' path='doc/member[@name="IViewStateIdentityItem"]/*' />
 [Guid("9D264146-A94F-4195-9F9F-3BB12CE0C955")]
 [NativeTypeName("struct IViewStateIdentityItem : IRelatedItem")]
 [NativeInheritance("IRelatedItem")]
@@ -16,6 +17,7 @@ public unsafe partial struct IViewStateIdentityItem : IViewStateIdentityItem.Int
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IViewStateIdentityItem : IViewStateIdentityItem.Int
         return ((delegate* unmanaged<IViewStateIdentityItem*, Guid*, void**, int>)(lpVtbl[0]))((IViewStateIdentityItem*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IViewStateIdentityItem : IViewStateIdentityItem.Int
         return ((delegate* unmanaged<IViewStateIdentityItem*, uint>)(lpVtbl[1]))((IViewStateIdentityItem*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IViewStateIdentityItem : IViewStateIdentityItem.Int
         return ((delegate* unmanaged<IViewStateIdentityItem*, uint>)(lpVtbl[2]))((IViewStateIdentityItem*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IRelatedItem.GetItemIDList" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetItemIDList([NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidl)
@@ -46,6 +51,7 @@ public unsafe partial struct IViewStateIdentityItem : IViewStateIdentityItem.Int
         return ((delegate* unmanaged<IViewStateIdentityItem*, ITEMIDLIST**, int>)(lpVtbl[3]))((IViewStateIdentityItem*)Unsafe.AsPointer(ref this), ppidl);
     }
 
+    /// <inheritdoc cref="IRelatedItem.GetItem" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetItem(IShellItem** ppsi)

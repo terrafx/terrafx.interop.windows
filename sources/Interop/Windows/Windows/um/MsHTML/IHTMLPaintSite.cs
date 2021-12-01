@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IHTMLPaintSite.xml' path='doc/member[@name="IHTMLPaintSite"]/*' />
 [Guid("3050F6A7-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IHTMLPaintSite : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IHTMLPaintSite : IHTMLPaintSite.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IHTMLPaintSite : IHTMLPaintSite.Interface
         return ((delegate* unmanaged<IHTMLPaintSite*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLPaintSite*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IHTMLPaintSite : IHTMLPaintSite.Interface
         return ((delegate* unmanaged<IHTMLPaintSite*, uint>)(lpVtbl[1]))((IHTMLPaintSite*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IHTMLPaintSite : IHTMLPaintSite.Interface
         return ((delegate* unmanaged<IHTMLPaintSite*, uint>)(lpVtbl[2]))((IHTMLPaintSite*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IHTMLPaintSite.xml' path='doc/member[@name="IHTMLPaintSite.InvalidatePainterInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT InvalidatePainterInfo()
@@ -46,6 +51,7 @@ public unsafe partial struct IHTMLPaintSite : IHTMLPaintSite.Interface
         return ((delegate* unmanaged<IHTMLPaintSite*, int>)(lpVtbl[3]))((IHTMLPaintSite*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IHTMLPaintSite.xml' path='doc/member[@name="IHTMLPaintSite.InvalidateRect"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT InvalidateRect(RECT* prcInvalid)
@@ -53,6 +59,7 @@ public unsafe partial struct IHTMLPaintSite : IHTMLPaintSite.Interface
         return ((delegate* unmanaged<IHTMLPaintSite*, RECT*, int>)(lpVtbl[4]))((IHTMLPaintSite*)Unsafe.AsPointer(ref this), prcInvalid);
     }
 
+    /// <include file='IHTMLPaintSite.xml' path='doc/member[@name="IHTMLPaintSite.InvalidateRegion"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT InvalidateRegion(HRGN rgnInvalid)
@@ -60,6 +67,7 @@ public unsafe partial struct IHTMLPaintSite : IHTMLPaintSite.Interface
         return ((delegate* unmanaged<IHTMLPaintSite*, HRGN, int>)(lpVtbl[5]))((IHTMLPaintSite*)Unsafe.AsPointer(ref this), rgnInvalid);
     }
 
+    /// <include file='IHTMLPaintSite.xml' path='doc/member[@name="IHTMLPaintSite.GetDrawInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetDrawInfo([NativeTypeName("LONG")] int lFlags, HTML_PAINT_DRAW_INFO* pDrawInfo)
@@ -67,6 +75,7 @@ public unsafe partial struct IHTMLPaintSite : IHTMLPaintSite.Interface
         return ((delegate* unmanaged<IHTMLPaintSite*, int, HTML_PAINT_DRAW_INFO*, int>)(lpVtbl[6]))((IHTMLPaintSite*)Unsafe.AsPointer(ref this), lFlags, pDrawInfo);
     }
 
+    /// <include file='IHTMLPaintSite.xml' path='doc/member[@name="IHTMLPaintSite.TransformGlobalToLocal"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT TransformGlobalToLocal(POINT ptGlobal, POINT* pptLocal)
@@ -74,6 +83,7 @@ public unsafe partial struct IHTMLPaintSite : IHTMLPaintSite.Interface
         return ((delegate* unmanaged<IHTMLPaintSite*, POINT, POINT*, int>)(lpVtbl[7]))((IHTMLPaintSite*)Unsafe.AsPointer(ref this), ptGlobal, pptLocal);
     }
 
+    /// <include file='IHTMLPaintSite.xml' path='doc/member[@name="IHTMLPaintSite.TransformLocalToGlobal"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT TransformLocalToGlobal(POINT ptLocal, POINT* pptGlobal)
@@ -81,6 +91,7 @@ public unsafe partial struct IHTMLPaintSite : IHTMLPaintSite.Interface
         return ((delegate* unmanaged<IHTMLPaintSite*, POINT, POINT*, int>)(lpVtbl[8]))((IHTMLPaintSite*)Unsafe.AsPointer(ref this), ptLocal, pptGlobal);
     }
 
+    /// <include file='IHTMLPaintSite.xml' path='doc/member[@name="IHTMLPaintSite.GetHitTestCookie"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT GetHitTestCookie([NativeTypeName("LONG *")] int* plCookie)

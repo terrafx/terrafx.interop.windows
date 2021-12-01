@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HTMLTableRow.xml' path='doc/member[@name="HTMLTableRow"]/*' />
 [Guid("3050F26D-98B5-11CF-BB82-00AA00BDCE0B")]
 public partial struct HTMLTableRow
 {

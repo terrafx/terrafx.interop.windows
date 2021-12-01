@@ -7,24 +7,31 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CRYPT_OBJECT_LOCATOR_PROVIDER_TABLE.xml' path='doc/member[@name="CRYPT_OBJECT_LOCATOR_PROVIDER_TABLE"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public unsafe partial struct CRYPT_OBJECT_LOCATOR_PROVIDER_TABLE
 {
+    /// <include file='CRYPT_OBJECT_LOCATOR_PROVIDER_TABLE.xml' path='doc/member[@name="CRYPT_OBJECT_LOCATOR_PROVIDER_TABLE.cbSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbSize;
 
+    /// <include file='CRYPT_OBJECT_LOCATOR_PROVIDER_TABLE.xml' path='doc/member[@name="CRYPT_OBJECT_LOCATOR_PROVIDER_TABLE.pfnGet"]/*' />
     [NativeTypeName("PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_GET")]
     public delegate* unmanaged<void*, CRYPT_DATA_BLOB*, uint, CRYPT_DATA_BLOB*, byte**, uint*, ushort**, CRYPT_DATA_BLOB**, BOOL> pfnGet;
 
+    /// <include file='CRYPT_OBJECT_LOCATOR_PROVIDER_TABLE.xml' path='doc/member[@name="CRYPT_OBJECT_LOCATOR_PROVIDER_TABLE.pfnRelease"]/*' />
     [NativeTypeName("PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_RELEASE")]
     public delegate* unmanaged<uint, void*, void> pfnRelease;
 
+    /// <include file='CRYPT_OBJECT_LOCATOR_PROVIDER_TABLE.xml' path='doc/member[@name="CRYPT_OBJECT_LOCATOR_PROVIDER_TABLE.pfnFreePassword"]/*' />
     [NativeTypeName("PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_FREE_PASSWORD")]
     public delegate* unmanaged<void*, ushort*, void> pfnFreePassword;
 
+    /// <include file='CRYPT_OBJECT_LOCATOR_PROVIDER_TABLE.xml' path='doc/member[@name="CRYPT_OBJECT_LOCATOR_PROVIDER_TABLE.pfnFree"]/*' />
     [NativeTypeName("PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_FREE")]
     public delegate* unmanaged<void*, byte*, void> pfnFree;
 
+    /// <include file='CRYPT_OBJECT_LOCATOR_PROVIDER_TABLE.xml' path='doc/member[@name="CRYPT_OBJECT_LOCATOR_PROVIDER_TABLE.pfnFreeIdentifier"]/*' />
     [NativeTypeName("PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_FREE_IDENTIFIER")]
     public delegate* unmanaged<void*, CRYPT_DATA_BLOB*, void> pfnFreeIdentifier;
 }

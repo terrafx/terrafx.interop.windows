@@ -13,109 +13,142 @@ namespace TerraFX.Interop.Windows;
 
 public static unsafe partial class Windows
 {
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateMediaSession"]/*' />
     [DllImport("mf", ExactSpelling = true)]
     public static extern HRESULT MFCreateMediaSession(IMFAttributes* pConfiguration, IMFMediaSession** ppMediaSession);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreatePMPMediaSession"]/*' />
     [DllImport("mf", ExactSpelling = true)]
     public static extern HRESULT MFCreatePMPMediaSession([NativeTypeName("DWORD")] uint dwCreationFlags, IMFAttributes* pConfiguration, IMFMediaSession** ppMediaSession, IMFActivate** ppEnablerActivate);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateSourceResolver"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFCreateSourceResolver(IMFSourceResolver** ppISourceResolver);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreatePropertyStore"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT CreatePropertyStore(IPropertyStore** ppStore);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFGetSupportedSchemes"]/*' />
     [DllImport("mf", ExactSpelling = true)]
     public static extern HRESULT MFGetSupportedSchemes(PROPVARIANT* pPropVarSchemeArray);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFGetSupportedMimeTypes"]/*' />
     [DllImport("mf", ExactSpelling = true)]
     public static extern HRESULT MFGetSupportedMimeTypes(PROPVARIANT* pPropVarMimeTypeArray);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateTopology"]/*' />
     [DllImport("mf", ExactSpelling = true)]
     public static extern HRESULT MFCreateTopology(IMFTopology** ppTopo);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateTopologyNode"]/*' />
     [DllImport("mf", ExactSpelling = true)]
     public static extern HRESULT MFCreateTopologyNode(MF_TOPOLOGY_TYPE NodeType, IMFTopologyNode** ppNode);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFGetTopoNodeCurrentType"]/*' />
     [DllImport("mf", ExactSpelling = true)]
     public static extern HRESULT MFGetTopoNodeCurrentType(IMFTopologyNode* pNode, [NativeTypeName("DWORD")] uint dwStreamIndex, BOOL fOutput, IMFMediaType** ppType);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFGetService"]/*' />
     [DllImport("mf", ExactSpelling = true)]
     public static extern HRESULT MFGetService(IUnknown* punkObject, [NativeTypeName("const GUID &")] Guid* guidService, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppvObject);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFGetSystemTime"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     [return: NativeTypeName("MFTIME")]
     public static extern long MFGetSystemTime();
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreatePresentationClock"]/*' />
     [DllImport("mf", ExactSpelling = true)]
     public static extern HRESULT MFCreatePresentationClock(IMFPresentationClock** ppPresentationClock);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateSystemTimeSource"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFCreateSystemTimeSource(IMFPresentationTimeSource** ppSystemTimeSource);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreatePresentationDescriptor"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFCreatePresentationDescriptor([NativeTypeName("DWORD")] uint cStreamDescriptors, IMFStreamDescriptor** apStreamDescriptors, IMFPresentationDescriptor** ppPresentationDescriptor);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFRequireProtectedEnvironment"]/*' />
     [DllImport("mf", ExactSpelling = true)]
     public static extern HRESULT MFRequireProtectedEnvironment(IMFPresentationDescriptor* pPresentationDescriptor);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSerializePresentationDescriptor"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFSerializePresentationDescriptor(IMFPresentationDescriptor* pPD, [NativeTypeName("DWORD *")] uint* pcbData, byte** ppbData);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFDeserializePresentationDescriptor"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFDeserializePresentationDescriptor([NativeTypeName("DWORD")] uint cbData, byte* pbData, IMFPresentationDescriptor** ppPD);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateStreamDescriptor"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFCreateStreamDescriptor([NativeTypeName("DWORD")] uint dwStreamIdentifier, [NativeTypeName("DWORD")] uint cMediaTypes, IMFMediaType** apMediaTypes, IMFStreamDescriptor** ppDescriptor);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateSimpleTypeHandler"]/*' />
     [DllImport("mf", ExactSpelling = true)]
     public static extern HRESULT MFCreateSimpleTypeHandler(IMFMediaTypeHandler** ppHandler);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFShutdownObject"]/*' />
     [DllImport("mf", ExactSpelling = true)]
     public static extern HRESULT MFShutdownObject(IUnknown* pUnk);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateAudioRenderer"]/*' />
     [DllImport("mf", ExactSpelling = true)]
     public static extern HRESULT MFCreateAudioRenderer(IMFAttributes* pAudioAttributes, IMFMediaSink** ppSink);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateAudioRendererActivate"]/*' />
     [DllImport("mf", ExactSpelling = true)]
     public static extern HRESULT MFCreateAudioRendererActivate(IMFActivate** ppActivate);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateVideoRendererActivate"]/*' />
     [DllImport("mf", ExactSpelling = true)]
     public static extern HRESULT MFCreateVideoRendererActivate(HWND hwndVideo, IMFActivate** ppActivate);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateMPEG4MediaSink"]/*' />
     [DllImport("mf", ExactSpelling = true)]
     public static extern HRESULT MFCreateMPEG4MediaSink(IMFByteStream* pIByteStream, IMFMediaType* pVideoMediaType, IMFMediaType* pAudioMediaType, IMFMediaSink** ppIMediaSink);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreate3GPMediaSink"]/*' />
     [DllImport("mf", ExactSpelling = true)]
     public static extern HRESULT MFCreate3GPMediaSink(IMFByteStream* pIByteStream, IMFMediaType* pVideoMediaType, IMFMediaType* pAudioMediaType, IMFMediaSink** ppIMediaSink);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateMP3MediaSink"]/*' />
     [DllImport("mf", ExactSpelling = true)]
     public static extern HRESULT MFCreateMP3MediaSink(IMFByteStream* pTargetByteStream, IMFMediaSink** ppMediaSink);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateAC3MediaSink"]/*' />
     [DllImport("mf", ExactSpelling = true)]
     [SupportedOSPlatform("windows8.0")]
     public static extern HRESULT MFCreateAC3MediaSink(IMFByteStream* pTargetByteStream, IMFMediaType* pAudioMediaType, IMFMediaSink** ppMediaSink);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateADTSMediaSink"]/*' />
     [DllImport("mf", ExactSpelling = true)]
     [SupportedOSPlatform("windows8.0")]
     public static extern HRESULT MFCreateADTSMediaSink(IMFByteStream* pTargetByteStream, IMFMediaType* pAudioMediaType, IMFMediaSink** ppMediaSink);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateMuxSink"]/*' />
     [DllImport("mf", ExactSpelling = true)]
     [SupportedOSPlatform("windows8.0")]
     public static extern HRESULT MFCreateMuxSink(Guid guidOutputSubType, IMFAttributes* pOutputAttributes, IMFByteStream* pOutputByteStream, IMFMediaSink** ppMuxSink);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateFMPEG4MediaSink"]/*' />
     [DllImport("mf", ExactSpelling = true)]
     [SupportedOSPlatform("windows8.0")]
     public static extern HRESULT MFCreateFMPEG4MediaSink(IMFByteStream* pIByteStream, IMFMediaType* pVideoMediaType, IMFMediaType* pAudioMediaType, IMFMediaSink** ppIMediaSink);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateAVIMediaSink"]/*' />
     [DllImport("mfsrcsnk", ExactSpelling = true)]
     [SupportedOSPlatform("windows8.1")]
     public static extern HRESULT MFCreateAVIMediaSink(IMFByteStream* pIByteStream, IMFMediaType* pVideoMediaType, IMFMediaType* pAudioMediaType, IMFMediaSink** ppIMediaSink);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateWAVEMediaSink"]/*' />
     [DllImport("mfsrcsnk", ExactSpelling = true)]
     [SupportedOSPlatform("windows8.1")]
     public static extern HRESULT MFCreateWAVEMediaSink(IMFByteStream* pTargetByteStream, IMFMediaType* pAudioMediaType, IMFMediaSink** ppMediaSink);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateTopoLoader"]/*' />
     [DllImport("mf", ExactSpelling = true)]
     public static extern HRESULT MFCreateTopoLoader(IMFTopoLoader** ppObj);
 
@@ -369,24 +402,31 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateSampleGrabberSinkActivate"]/*' />
     [DllImport("mf", ExactSpelling = true)]
     public static extern HRESULT MFCreateSampleGrabberSinkActivate(IMFMediaType* pIMFMediaType, IMFSampleGrabberSinkCallback* pIMFSampleGrabberSinkCallback, IMFActivate** ppIActivate);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateStandardQualityManager"]/*' />
     [DllImport("mf", ExactSpelling = true)]
     public static extern HRESULT MFCreateStandardQualityManager(IMFQualityManager** ppQualityManager);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateSequencerSource"]/*' />
     [DllImport("mf", ExactSpelling = true)]
     public static extern HRESULT MFCreateSequencerSource(IUnknown* pReserved, IMFSequencerSource** ppSequencerSource);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateSequencerSegmentOffset"]/*' />
     [DllImport("mf", ExactSpelling = true)]
     public static extern HRESULT MFCreateSequencerSegmentOffset([NativeTypeName("MFSequencerElementId")] uint dwId, [NativeTypeName("MFTIME")] long hnsOffset, PROPVARIANT* pvarSegmentOffset);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateAggregateSource"]/*' />
     [DllImport("mf", ExactSpelling = true)]
     public static extern HRESULT MFCreateAggregateSource(IMFCollection* pSourceCollection, IMFMediaSource** ppAggSource);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateCredentialCache"]/*' />
     [DllImport("mf", ExactSpelling = true)]
     public static extern HRESULT MFCreateCredentialCache(IMFNetCredentialCache** ppCache);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateProxyLocator"]/*' />
     [DllImport("mf", ExactSpelling = true)]
     public static extern HRESULT MFCreateProxyLocator([NativeTypeName("LPCWSTR")] ushort* pszProtocol, IPropertyStore* pProxyConfig, IMFNetProxyLocator** ppProxyLocator);
 
@@ -415,6 +455,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateNetSchemePlugin"]/*' />
     [DllImport("mf", ExactSpelling = true)]
     public static extern HRESULT MFCreateNetSchemePlugin([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppvHandler);
 
@@ -518,67 +559,86 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreatePMPServer"]/*' />
     [DllImport("mf", ExactSpelling = true)]
     public static extern HRESULT MFCreatePMPServer([NativeTypeName("DWORD")] uint dwCreationFlags, IMFPMPServer** ppPMPServer);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateRemoteDesktopPlugin"]/*' />
     [DllImport("mf", ExactSpelling = true)]
     public static extern HRESULT MFCreateRemoteDesktopPlugin(IMFRemoteDesktopPlugin** ppPlugin);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateNamedPropertyStore"]/*' />
     [DllImport("mf", ExactSpelling = true)]
     public static extern HRESULT CreateNamedPropertyStore(INamedPropertyStore** ppStore);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateSampleCopierMFT"]/*' />
     [DllImport("mf", ExactSpelling = true)]
     public static extern HRESULT MFCreateSampleCopierMFT(IMFTransform** ppCopierMFT);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateTranscodeProfile"]/*' />
     [DllImport("mf", ExactSpelling = true)]
     public static extern HRESULT MFCreateTranscodeProfile(IMFTranscodeProfile** ppTranscodeProfile);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateTranscodeTopology"]/*' />
     [DllImport("mf", ExactSpelling = true)]
     public static extern HRESULT MFCreateTranscodeTopology(IMFMediaSource* pSrc, [NativeTypeName("LPCWSTR")] ushort* pwszOutputFilePath, IMFTranscodeProfile* pProfile, IMFTopology** ppTranscodeTopo);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateTranscodeTopologyFromByteStream"]/*' />
     [DllImport("mf", ExactSpelling = true)]
     [SupportedOSPlatform("windows8.0")]
     public static extern HRESULT MFCreateTranscodeTopologyFromByteStream(IMFMediaSource* pSrc, IMFByteStream* pOutputStream, IMFTranscodeProfile* pProfile, IMFTopology** ppTranscodeTopo);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFTranscodeGetAudioOutputAvailableTypes"]/*' />
     [DllImport("mf", ExactSpelling = true)]
     public static extern HRESULT MFTranscodeGetAudioOutputAvailableTypes([NativeTypeName("const GUID &")] Guid* guidSubType, [NativeTypeName("DWORD")] uint dwMFTFlags, IMFAttributes* pCodecConfig, IMFCollection** ppAvailableTypes);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateTranscodeSinkActivate"]/*' />
     [DllImport("mf", ExactSpelling = true)]
     public static extern HRESULT MFCreateTranscodeSinkActivate(IMFActivate** ppActivate);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateTrackedSample"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     [SupportedOSPlatform("windows8.0")]
     public static extern HRESULT MFCreateTrackedSample(IMFTrackedSample** ppMFSample);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateMFByteStreamOnStream"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFCreateMFByteStreamOnStream(IStream* pStream, IMFByteStream** ppByteStream);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateStreamOnMFByteStream"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     [SupportedOSPlatform("windows8.0")]
     public static extern HRESULT MFCreateStreamOnMFByteStream(IMFByteStream* pByteStream, IStream** ppStream);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateMFByteStreamOnStreamEx"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     [SupportedOSPlatform("windows8.0")]
     public static extern HRESULT MFCreateMFByteStreamOnStreamEx(IUnknown* punkStream, IMFByteStream** ppByteStream);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateStreamOnMFByteStreamEx"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     [SupportedOSPlatform("windows8.0")]
     public static extern HRESULT MFCreateStreamOnMFByteStreamEx(IMFByteStream* pByteStream, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateMediaTypeFromProperties"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     [SupportedOSPlatform("windows8.0")]
     public static extern HRESULT MFCreateMediaTypeFromProperties(IUnknown* punkStream, IMFMediaType** ppMediaType);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreatePropertiesFromMediaType"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     [SupportedOSPlatform("windows8.0")]
     public static extern HRESULT MFCreatePropertiesFromMediaType(IMFMediaType* pMediaType, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFEnumDeviceSources"]/*' />
     [DllImport("mf", ExactSpelling = true)]
     public static extern HRESULT MFEnumDeviceSources(IMFAttributes* pAttributes, IMFActivate*** pppSourceActivate, [NativeTypeName("UINT32 *")] uint* pcSourceActivate);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateDeviceSource"]/*' />
     [DllImport("mf", ExactSpelling = true)]
     public static extern HRESULT MFCreateDeviceSource(IMFAttributes* pAttributes, IMFMediaSource** ppSource);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateDeviceSourceActivate"]/*' />
     [DllImport("mf", ExactSpelling = true)]
     public static extern HRESULT MFCreateDeviceSourceActivate(IMFAttributes* pAttributes, IMFActivate** ppActivate);
 
@@ -682,46 +742,57 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateProtectedEnvironmentAccess"]/*' />
     [DllImport("mf", ExactSpelling = true)]
     [SupportedOSPlatform("windows8.0")]
     public static extern HRESULT MFCreateProtectedEnvironmentAccess(IMFProtectedEnvironmentAccess** ppAccess);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFLoadSignedLibrary"]/*' />
     [DllImport("mf", ExactSpelling = true)]
     [SupportedOSPlatform("windows8.0")]
     public static extern HRESULT MFLoadSignedLibrary([NativeTypeName("LPCWSTR")] ushort* pszName, IMFSignedLibrary** ppLib);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFGetSystemId"]/*' />
     [DllImport("mf", ExactSpelling = true)]
     [SupportedOSPlatform("windows8.0")]
     public static extern HRESULT MFGetSystemId(IMFSystemId** ppId);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFGetLocalId"]/*' />
     [DllImport("mf", ExactSpelling = true)]
     [SupportedOSPlatform("windows8.0")]
     public static extern HRESULT MFGetLocalId([NativeTypeName("const BYTE *")] byte* verifier, [NativeTypeName("UINT32")] uint size, [NativeTypeName("LPWSTR *")] ushort** id);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateContentProtectionDevice"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     [SupportedOSPlatform("windows10.0")]
     public static extern HRESULT MFCreateContentProtectionDevice([NativeTypeName("const GUID &")] Guid* ProtectionSystemId, IMFContentProtectionDevice** ContentProtectionDevice);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFIsContentProtectionDeviceSupported"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     [SupportedOSPlatform("windows10.0")]
     public static extern HRESULT MFIsContentProtectionDeviceSupported([NativeTypeName("const GUID &")] Guid* ProtectionSystemId, BOOL* isSupported);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateContentDecryptorContext"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     [SupportedOSPlatform("windows10.0")]
     public static extern HRESULT MFCreateContentDecryptorContext([NativeTypeName("const GUID &")] Guid* guidMediaProtectionSystemId, IMFDXGIDeviceManager* pD3DManager, IMFContentProtectionDevice* pContentProtectionDevice, IMFContentDecryptorContext** ppContentDecryptorContext);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateSensorGroup"]/*' />
     [DllImport("mfsensorgroup", ExactSpelling = true)]
     [SupportedOSPlatform("windows10.0.14393.0")]
     public static extern HRESULT MFCreateSensorGroup([NativeTypeName("LPCWSTR")] ushort* SensorGroupSymbolicLink, IMFSensorGroup** ppSensorGroup);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateSensorProfile"]/*' />
     [DllImport("mfsensorgroup", ExactSpelling = true)]
     [SupportedOSPlatform("windows10.0.17134.0")]
     public static extern HRESULT MFCreateSensorProfile([NativeTypeName("const GUID &")] Guid* ProfileType, [NativeTypeName("UINT32")] uint ProfileIndex, [NativeTypeName("LPCWSTR")] ushort* Constraints, IMFSensorProfile** ppProfile);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateSensorProfileCollection"]/*' />
     [DllImport("mfsensorgroup", ExactSpelling = true)]
     [SupportedOSPlatform("windows10.0.15063.0")]
     public static extern HRESULT MFCreateSensorProfileCollection(IMFSensorProfileCollection** ppSensorProfile);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateSensorActivityMonitor"]/*' />
     [DllImport("mfsensorgroup", ExactSpelling = true)]
     public static extern HRESULT MFCreateSensorActivityMonitor(IMFSensorActivitiesReportCallback* pCallback, IMFSensorActivityMonitor** ppActivityMonitor);
 
@@ -775,6 +846,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateRelativePanelWatcher"]/*' />
     [DllImport("mfsensorgroup", ExactSpelling = true)]
     [SupportedOSPlatform("windows10.0.19041.0")]
     public static extern HRESULT MFCreateRelativePanelWatcher([NativeTypeName("PCWSTR")] ushort* videoDeviceId, [NativeTypeName("PCWSTR")] ushort* displayMonitorDeviceId, IMFRelativePanelWatcher** ppRelativePanelWatcher);

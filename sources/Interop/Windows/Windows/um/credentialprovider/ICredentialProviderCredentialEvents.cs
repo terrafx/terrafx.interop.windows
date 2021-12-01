@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ICredentialProviderCredentialEvents.xml' path='doc/member[@name="ICredentialProviderCredentialEvents"]/*' />
 [Guid("FA6FA76B-66B7-4B11-95F1-86171118E816")]
 [NativeTypeName("struct ICredentialProviderCredentialEvents : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ICredentialProviderCredentialEvents : ICredentialPr
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ICredentialProviderCredentialEvents : ICredentialPr
         return ((delegate* unmanaged<ICredentialProviderCredentialEvents*, Guid*, void**, int>)(lpVtbl[0]))((ICredentialProviderCredentialEvents*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ICredentialProviderCredentialEvents : ICredentialPr
         return ((delegate* unmanaged<ICredentialProviderCredentialEvents*, uint>)(lpVtbl[1]))((ICredentialProviderCredentialEvents*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ICredentialProviderCredentialEvents : ICredentialPr
         return ((delegate* unmanaged<ICredentialProviderCredentialEvents*, uint>)(lpVtbl[2]))((ICredentialProviderCredentialEvents*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ICredentialProviderCredentialEvents.xml' path='doc/member[@name="ICredentialProviderCredentialEvents.SetFieldState"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetFieldState(ICredentialProviderCredential* pcpc, [NativeTypeName("DWORD")] uint dwFieldID, CREDENTIAL_PROVIDER_FIELD_STATE cpfs)
@@ -46,6 +51,7 @@ public unsafe partial struct ICredentialProviderCredentialEvents : ICredentialPr
         return ((delegate* unmanaged<ICredentialProviderCredentialEvents*, ICredentialProviderCredential*, uint, CREDENTIAL_PROVIDER_FIELD_STATE, int>)(lpVtbl[3]))((ICredentialProviderCredentialEvents*)Unsafe.AsPointer(ref this), pcpc, dwFieldID, cpfs);
     }
 
+    /// <include file='ICredentialProviderCredentialEvents.xml' path='doc/member[@name="ICredentialProviderCredentialEvents.SetFieldInteractiveState"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetFieldInteractiveState(ICredentialProviderCredential* pcpc, [NativeTypeName("DWORD")] uint dwFieldID, CREDENTIAL_PROVIDER_FIELD_INTERACTIVE_STATE cpfis)
@@ -53,6 +59,7 @@ public unsafe partial struct ICredentialProviderCredentialEvents : ICredentialPr
         return ((delegate* unmanaged<ICredentialProviderCredentialEvents*, ICredentialProviderCredential*, uint, CREDENTIAL_PROVIDER_FIELD_INTERACTIVE_STATE, int>)(lpVtbl[4]))((ICredentialProviderCredentialEvents*)Unsafe.AsPointer(ref this), pcpc, dwFieldID, cpfis);
     }
 
+    /// <include file='ICredentialProviderCredentialEvents.xml' path='doc/member[@name="ICredentialProviderCredentialEvents.SetFieldString"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT SetFieldString(ICredentialProviderCredential* pcpc, [NativeTypeName("DWORD")] uint dwFieldID, [NativeTypeName("LPCWSTR")] ushort* psz)
@@ -60,6 +67,7 @@ public unsafe partial struct ICredentialProviderCredentialEvents : ICredentialPr
         return ((delegate* unmanaged<ICredentialProviderCredentialEvents*, ICredentialProviderCredential*, uint, ushort*, int>)(lpVtbl[5]))((ICredentialProviderCredentialEvents*)Unsafe.AsPointer(ref this), pcpc, dwFieldID, psz);
     }
 
+    /// <include file='ICredentialProviderCredentialEvents.xml' path='doc/member[@name="ICredentialProviderCredentialEvents.SetFieldCheckbox"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT SetFieldCheckbox(ICredentialProviderCredential* pcpc, [NativeTypeName("DWORD")] uint dwFieldID, BOOL bChecked, [NativeTypeName("LPCWSTR")] ushort* pszLabel)
@@ -67,6 +75,7 @@ public unsafe partial struct ICredentialProviderCredentialEvents : ICredentialPr
         return ((delegate* unmanaged<ICredentialProviderCredentialEvents*, ICredentialProviderCredential*, uint, BOOL, ushort*, int>)(lpVtbl[6]))((ICredentialProviderCredentialEvents*)Unsafe.AsPointer(ref this), pcpc, dwFieldID, bChecked, pszLabel);
     }
 
+    /// <include file='ICredentialProviderCredentialEvents.xml' path='doc/member[@name="ICredentialProviderCredentialEvents.SetFieldBitmap"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT SetFieldBitmap(ICredentialProviderCredential* pcpc, [NativeTypeName("DWORD")] uint dwFieldID, HBITMAP hbmp)
@@ -74,6 +83,7 @@ public unsafe partial struct ICredentialProviderCredentialEvents : ICredentialPr
         return ((delegate* unmanaged<ICredentialProviderCredentialEvents*, ICredentialProviderCredential*, uint, HBITMAP, int>)(lpVtbl[7]))((ICredentialProviderCredentialEvents*)Unsafe.AsPointer(ref this), pcpc, dwFieldID, hbmp);
     }
 
+    /// <include file='ICredentialProviderCredentialEvents.xml' path='doc/member[@name="ICredentialProviderCredentialEvents.SetFieldComboBoxSelectedItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT SetFieldComboBoxSelectedItem(ICredentialProviderCredential* pcpc, [NativeTypeName("DWORD")] uint dwFieldID, [NativeTypeName("DWORD")] uint dwSelectedItem)
@@ -81,6 +91,7 @@ public unsafe partial struct ICredentialProviderCredentialEvents : ICredentialPr
         return ((delegate* unmanaged<ICredentialProviderCredentialEvents*, ICredentialProviderCredential*, uint, uint, int>)(lpVtbl[8]))((ICredentialProviderCredentialEvents*)Unsafe.AsPointer(ref this), pcpc, dwFieldID, dwSelectedItem);
     }
 
+    /// <include file='ICredentialProviderCredentialEvents.xml' path='doc/member[@name="ICredentialProviderCredentialEvents.DeleteFieldComboBoxItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT DeleteFieldComboBoxItem(ICredentialProviderCredential* pcpc, [NativeTypeName("DWORD")] uint dwFieldID, [NativeTypeName("DWORD")] uint dwItem)
@@ -88,6 +99,7 @@ public unsafe partial struct ICredentialProviderCredentialEvents : ICredentialPr
         return ((delegate* unmanaged<ICredentialProviderCredentialEvents*, ICredentialProviderCredential*, uint, uint, int>)(lpVtbl[9]))((ICredentialProviderCredentialEvents*)Unsafe.AsPointer(ref this), pcpc, dwFieldID, dwItem);
     }
 
+    /// <include file='ICredentialProviderCredentialEvents.xml' path='doc/member[@name="ICredentialProviderCredentialEvents.AppendFieldComboBoxItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT AppendFieldComboBoxItem(ICredentialProviderCredential* pcpc, [NativeTypeName("DWORD")] uint dwFieldID, [NativeTypeName("LPCWSTR")] ushort* pszItem)
@@ -95,6 +107,7 @@ public unsafe partial struct ICredentialProviderCredentialEvents : ICredentialPr
         return ((delegate* unmanaged<ICredentialProviderCredentialEvents*, ICredentialProviderCredential*, uint, ushort*, int>)(lpVtbl[10]))((ICredentialProviderCredentialEvents*)Unsafe.AsPointer(ref this), pcpc, dwFieldID, pszItem);
     }
 
+    /// <include file='ICredentialProviderCredentialEvents.xml' path='doc/member[@name="ICredentialProviderCredentialEvents.SetFieldSubmitButton"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT SetFieldSubmitButton(ICredentialProviderCredential* pcpc, [NativeTypeName("DWORD")] uint dwFieldID, [NativeTypeName("DWORD")] uint dwAdjacentTo)
@@ -102,6 +115,7 @@ public unsafe partial struct ICredentialProviderCredentialEvents : ICredentialPr
         return ((delegate* unmanaged<ICredentialProviderCredentialEvents*, ICredentialProviderCredential*, uint, uint, int>)(lpVtbl[11]))((ICredentialProviderCredentialEvents*)Unsafe.AsPointer(ref this), pcpc, dwFieldID, dwAdjacentTo);
     }
 
+    /// <include file='ICredentialProviderCredentialEvents.xml' path='doc/member[@name="ICredentialProviderCredentialEvents.OnCreatingWindow"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT OnCreatingWindow(HWND* phwndOwner)

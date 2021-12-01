@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFMediaKeys2.xml' path='doc/member[@name="IMFMediaKeys2"]/*' />
 [Guid("45892507-AD66-4DE2-83A2-ACBB13CD8D43")]
 [NativeTypeName("struct IMFMediaKeys2 : IMFMediaKeys")]
 [NativeInheritance("IMFMediaKeys")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMFMediaKeys2 : IMFMediaKeys2.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMFMediaKeys2 : IMFMediaKeys2.Interface
         return ((delegate* unmanaged<IMFMediaKeys2*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaKeys2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMFMediaKeys2 : IMFMediaKeys2.Interface
         return ((delegate* unmanaged<IMFMediaKeys2*, uint>)(lpVtbl[1]))((IMFMediaKeys2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMFMediaKeys2 : IMFMediaKeys2.Interface
         return ((delegate* unmanaged<IMFMediaKeys2*, uint>)(lpVtbl[2]))((IMFMediaKeys2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IMFMediaKeys.CreateSession" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT CreateSession([NativeTypeName("BSTR")] ushort* mimeType, [NativeTypeName("const BYTE *")] byte* initData, [NativeTypeName("DWORD")] uint cb, [NativeTypeName("const BYTE *")] byte* customData, [NativeTypeName("DWORD")] uint cbCustomData, IMFMediaKeySessionNotify* notify, IMFMediaKeySession** ppSession)
@@ -46,6 +51,7 @@ public unsafe partial struct IMFMediaKeys2 : IMFMediaKeys2.Interface
         return ((delegate* unmanaged<IMFMediaKeys2*, ushort*, byte*, uint, byte*, uint, IMFMediaKeySessionNotify*, IMFMediaKeySession**, int>)(lpVtbl[3]))((IMFMediaKeys2*)Unsafe.AsPointer(ref this), mimeType, initData, cb, customData, cbCustomData, notify, ppSession);
     }
 
+    /// <inheritdoc cref="IMFMediaKeys.get_KeySystem" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT get_KeySystem([NativeTypeName("BSTR *")] ushort** keySystem)
@@ -53,6 +59,7 @@ public unsafe partial struct IMFMediaKeys2 : IMFMediaKeys2.Interface
         return ((delegate* unmanaged<IMFMediaKeys2*, ushort**, int>)(lpVtbl[4]))((IMFMediaKeys2*)Unsafe.AsPointer(ref this), keySystem);
     }
 
+    /// <inheritdoc cref="IMFMediaKeys.Shutdown" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT Shutdown()
@@ -60,6 +67,7 @@ public unsafe partial struct IMFMediaKeys2 : IMFMediaKeys2.Interface
         return ((delegate* unmanaged<IMFMediaKeys2*, int>)(lpVtbl[5]))((IMFMediaKeys2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IMFMediaKeys.GetSuspendNotify" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetSuspendNotify(IMFCdmSuspendNotify** notify)
@@ -67,6 +75,7 @@ public unsafe partial struct IMFMediaKeys2 : IMFMediaKeys2.Interface
         return ((delegate* unmanaged<IMFMediaKeys2*, IMFCdmSuspendNotify**, int>)(lpVtbl[6]))((IMFMediaKeys2*)Unsafe.AsPointer(ref this), notify);
     }
 
+    /// <include file='IMFMediaKeys2.xml' path='doc/member[@name="IMFMediaKeys2.CreateSession2"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT CreateSession2(MF_MEDIAKEYSESSION_TYPE eSessionType, IMFMediaKeySessionNotify2* pMFMediaKeySessionNotify2, IMFMediaKeySession2** ppSession)
@@ -74,6 +83,7 @@ public unsafe partial struct IMFMediaKeys2 : IMFMediaKeys2.Interface
         return ((delegate* unmanaged<IMFMediaKeys2*, MF_MEDIAKEYSESSION_TYPE, IMFMediaKeySessionNotify2*, IMFMediaKeySession2**, int>)(lpVtbl[7]))((IMFMediaKeys2*)Unsafe.AsPointer(ref this), eSessionType, pMFMediaKeySessionNotify2, ppSession);
     }
 
+    /// <include file='IMFMediaKeys2.xml' path='doc/member[@name="IMFMediaKeys2.SetServerCertificate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT SetServerCertificate([NativeTypeName("const BYTE *")] byte* pbServerCertificate, [NativeTypeName("DWORD")] uint cb)
@@ -81,6 +91,7 @@ public unsafe partial struct IMFMediaKeys2 : IMFMediaKeys2.Interface
         return ((delegate* unmanaged<IMFMediaKeys2*, byte*, uint, int>)(lpVtbl[8]))((IMFMediaKeys2*)Unsafe.AsPointer(ref this), pbServerCertificate, cb);
     }
 
+    /// <include file='IMFMediaKeys2.xml' path='doc/member[@name="IMFMediaKeys2.GetDOMException"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT GetDOMException(HRESULT systemCode, HRESULT* code)

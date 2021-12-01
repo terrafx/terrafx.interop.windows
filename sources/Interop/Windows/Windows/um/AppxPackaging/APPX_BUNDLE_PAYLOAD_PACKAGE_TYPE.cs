@@ -7,9 +7,13 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='APPX_BUNDLE_PAYLOAD_PACKAGE_TYPE.xml' path='doc/member[@name="APPX_BUNDLE_PAYLOAD_PACKAGE_TYPE"]/*' />
 [SupportedOSPlatform("windows8.1")]
 public enum APPX_BUNDLE_PAYLOAD_PACKAGE_TYPE
 {
+    /// <include file='APPX_BUNDLE_PAYLOAD_PACKAGE_TYPE.xml' path='doc/member[@name="APPX_BUNDLE_PAYLOAD_PACKAGE_TYPE.APPX_BUNDLE_PAYLOAD_PACKAGE_TYPE_APPLICATION"]/*' />
     APPX_BUNDLE_PAYLOAD_PACKAGE_TYPE_APPLICATION = 0,
+
+    /// <include file='APPX_BUNDLE_PAYLOAD_PACKAGE_TYPE.xml' path='doc/member[@name="APPX_BUNDLE_PAYLOAD_PACKAGE_TYPE.APPX_BUNDLE_PAYLOAD_PACKAGE_TYPE_RESOURCE"]/*' />
     APPX_BUNDLE_PAYLOAD_PACKAGE_TYPE_RESOURCE = 1,
 }

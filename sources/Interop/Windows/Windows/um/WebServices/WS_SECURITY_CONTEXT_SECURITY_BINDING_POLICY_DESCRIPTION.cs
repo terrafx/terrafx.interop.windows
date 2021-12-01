@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_SECURITY_CONTEXT_SECURITY_BINDING_POLICY_DESCRIPTION.xml' path='doc/member[@name="WS_SECURITY_CONTEXT_SECURITY_BINDING_POLICY_DESCRIPTION"]/*' />
 public partial struct WS_SECURITY_CONTEXT_SECURITY_BINDING_POLICY_DESCRIPTION
 {
+    /// <include file='WS_SECURITY_CONTEXT_SECURITY_BINDING_POLICY_DESCRIPTION.xml' path='doc/member[@name="WS_SECURITY_CONTEXT_SECURITY_BINDING_POLICY_DESCRIPTION.securityContextMessageSecurityBinding"]/*' />
     public WS_SECURITY_CONTEXT_MESSAGE_SECURITY_BINDING_POLICY_DESCRIPTION securityContextMessageSecurityBinding;
 
+    /// <include file='WS_SECURITY_CONTEXT_SECURITY_BINDING_POLICY_DESCRIPTION.xml' path='doc/member[@name="WS_SECURITY_CONTEXT_SECURITY_BINDING_POLICY_DESCRIPTION.securityProperties"]/*' />
     public WS_SECURITY_PROPERTIES securityProperties;
 }

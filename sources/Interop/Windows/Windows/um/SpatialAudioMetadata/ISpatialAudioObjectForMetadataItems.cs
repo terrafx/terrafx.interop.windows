@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ISpatialAudioObjectForMetadataItems.xml' path='doc/member[@name="ISpatialAudioObjectForMetadataItems"]/*' />
 [Guid("DDEA49FF-3BC0-4377-8AAD-9FBCFD808566")]
 [NativeTypeName("struct ISpatialAudioObjectForMetadataItems : ISpatialAudioObjectBase")]
 [NativeInheritance("ISpatialAudioObjectBase")]
@@ -18,6 +19,7 @@ public unsafe partial struct ISpatialAudioObjectForMetadataItems : ISpatialAudio
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct ISpatialAudioObjectForMetadataItems : ISpatialAudio
         return ((delegate* unmanaged<ISpatialAudioObjectForMetadataItems*, Guid*, void**, int>)(lpVtbl[0]))((ISpatialAudioObjectForMetadataItems*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct ISpatialAudioObjectForMetadataItems : ISpatialAudio
         return ((delegate* unmanaged<ISpatialAudioObjectForMetadataItems*, uint>)(lpVtbl[1]))((ISpatialAudioObjectForMetadataItems*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct ISpatialAudioObjectForMetadataItems : ISpatialAudio
         return ((delegate* unmanaged<ISpatialAudioObjectForMetadataItems*, uint>)(lpVtbl[2]))((ISpatialAudioObjectForMetadataItems*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="ISpatialAudioObjectBase.GetBuffer" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetBuffer(byte** buffer, [NativeTypeName("UINT32 *")] uint* bufferLength)
@@ -48,6 +53,7 @@ public unsafe partial struct ISpatialAudioObjectForMetadataItems : ISpatialAudio
         return ((delegate* unmanaged<ISpatialAudioObjectForMetadataItems*, byte**, uint*, int>)(lpVtbl[3]))((ISpatialAudioObjectForMetadataItems*)Unsafe.AsPointer(ref this), buffer, bufferLength);
     }
 
+    /// <inheritdoc cref="ISpatialAudioObjectBase.SetEndOfStream" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SetEndOfStream([NativeTypeName("UINT32")] uint frameCount)
@@ -55,6 +61,7 @@ public unsafe partial struct ISpatialAudioObjectForMetadataItems : ISpatialAudio
         return ((delegate* unmanaged<ISpatialAudioObjectForMetadataItems*, uint, int>)(lpVtbl[4]))((ISpatialAudioObjectForMetadataItems*)Unsafe.AsPointer(ref this), frameCount);
     }
 
+    /// <inheritdoc cref="ISpatialAudioObjectBase.IsActive" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT IsActive(BOOL* isActive)
@@ -62,6 +69,7 @@ public unsafe partial struct ISpatialAudioObjectForMetadataItems : ISpatialAudio
         return ((delegate* unmanaged<ISpatialAudioObjectForMetadataItems*, BOOL*, int>)(lpVtbl[5]))((ISpatialAudioObjectForMetadataItems*)Unsafe.AsPointer(ref this), isActive);
     }
 
+    /// <inheritdoc cref="ISpatialAudioObjectBase.GetAudioObjectType" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetAudioObjectType(AudioObjectType* audioObjectType)
@@ -69,6 +77,7 @@ public unsafe partial struct ISpatialAudioObjectForMetadataItems : ISpatialAudio
         return ((delegate* unmanaged<ISpatialAudioObjectForMetadataItems*, AudioObjectType*, int>)(lpVtbl[6]))((ISpatialAudioObjectForMetadataItems*)Unsafe.AsPointer(ref this), audioObjectType);
     }
 
+    /// <include file='ISpatialAudioObjectForMetadataItems.xml' path='doc/member[@name="ISpatialAudioObjectForMetadataItems.GetSpatialAudioMetadataItems"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetSpatialAudioMetadataItems(ISpatialAudioMetadataItems** metadataItems)

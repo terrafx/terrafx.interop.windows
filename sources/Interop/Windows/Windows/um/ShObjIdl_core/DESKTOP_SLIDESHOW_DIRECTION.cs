@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DESKTOP_SLIDESHOW_DIRECTION.xml' path='doc/member[@name="DESKTOP_SLIDESHOW_DIRECTION"]/*' />
 public enum DESKTOP_SLIDESHOW_DIRECTION
 {
+    /// <include file='DESKTOP_SLIDESHOW_DIRECTION.xml' path='doc/member[@name="DESKTOP_SLIDESHOW_DIRECTION.DSD_FORWARD"]/*' />
     DSD_FORWARD = 0,
+
+    /// <include file='DESKTOP_SLIDESHOW_DIRECTION.xml' path='doc/member[@name="DESKTOP_SLIDESHOW_DIRECTION.DSD_BACKWARD"]/*' />
     DSD_BACKWARD = 1,
 }

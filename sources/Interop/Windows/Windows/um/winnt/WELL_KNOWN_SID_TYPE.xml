@@ -1,0 +1,596 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WELL_KNOWN_SID_TYPE">
+    <summary>
+      <para>The <b>WELL_KNOWN_SID_TYPE</b> enumeration is a list of commonly used <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">security identifiers</a> (SIDs). Programs can pass these values to the <see cref="CreateWellKnownSid" /> function to create a SID from this list.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/SecAuthZ/allowing-anonymous-access">Allowing Anonymous Access</seealso>
+    <seealso cref="CreateWellKnownSid" />
+    <seealso cref="IsWellKnownSid" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/SecAuthZ/well-known-sids">Well-known SIDs</seealso>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinNullSid">
+    <summary>
+      <para>Indicates a null SID.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinWorldSid">
+    <summary>
+      <para>Indicates a SID that matches everyone.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinLocalSid">
+    <summary>
+      <para>Indicates a local SID.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinCreatorOwnerSid">
+    <summary>
+      <para>Indicates a SID that matches the owner or creator of an object.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinCreatorGroupSid">
+    <summary>
+      <para>Indicates a SID that matches the creator group of an object.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinCreatorOwnerServerSid">
+    <summary>
+      <para>Indicates a creator owner server SID.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinCreatorGroupServerSid">
+    <summary>
+      <para>Indicates a creator group server SID.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinNtAuthoritySid">
+    <summary>
+      <para>Indicates a SID for the Windows NT authority account.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinDialupSid">
+    <summary>
+      <para>Indicates a SID for a dial-up account.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinNetworkSid">
+    <summary>
+      <para>Indicates a SID for a network account. This SID is added to the process of a token when it logs on across a network. The corresponding logon type is LOGON32_LOGON_NETWORK.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinBatchSid">
+    <summary>
+      <para>Indicates a SID for a batch process. This SID is added to the process of a token when it logs on as a batch job. The corresponding logon type is LOGON32_LOGON_BATCH.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinInteractiveSid">
+    <summary>
+      <para>Indicates a SID for an interactive account. This SID is added to the process of a token when it logs on interactively. The corresponding logon type is LOGON32_LOGON_INTERACTIVE.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinServiceSid">
+    <summary>
+      <para>Indicates a SID for a service. This SID is added to the process of a token when it logs on as a service. The corresponding logon type is LOGON32_LOGON_SERVICE.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinAnonymousSid">
+    <summary>
+      <para>Indicates a SID for the anonymous account.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinProxySid">
+    <summary>
+      <para>Indicates a proxy SID.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinEnterpriseControllersSid">
+    <summary>
+      <para>Indicates a SID for an enterprise controller.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinSelfSid">
+    <summary>
+      <para>Indicates a SID for self.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinAuthenticatedUserSid">
+    <summary>
+      <para>Indicates a SID that matches any authenticated user.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinRestrictedCodeSid">
+    <summary>
+      <para>Indicates a SID for restricted code.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinTerminalServerSid">
+    <summary>
+      <para>Indicates a SID that matches a terminal server account.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinRemoteLogonIdSid">
+    <summary>
+      <para>Indicates a SID that matches remote logons.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinLogonIdsSid">
+    <summary>
+      <para>Indicates a SID that matches logon IDs.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinLocalSystemSid">
+    <summary>
+      <para>Indicates a SID that matches the local system.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinLocalServiceSid">
+    <summary>
+      <para>Indicates a SID that matches a local service.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinNetworkServiceSid">
+    <summary>
+      <para>Indicates a SID that matches a network service.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinBuiltinDomainSid">
+    <summary>
+      <para>Indicates a SID that matches the domain account.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinBuiltinAdministratorsSid">
+    <summary>
+      <para>Indicates a SID that matches the administrator group.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinBuiltinUsersSid">
+    <summary>
+      <para>Indicates a SID that matches built-in user accounts.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinBuiltinGuestsSid">
+    <summary>
+      <para>Indicates a SID that matches the guest account.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinBuiltinPowerUsersSid">
+    <summary>
+      <para>Indicates a SID that matches the power users group.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinBuiltinAccountOperatorsSid">
+    <summary>
+      <para>Indicates a SID that matches the account operators account.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinBuiltinSystemOperatorsSid">
+    <summary>
+      <para>Indicates a SID that matches the system operators group.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinBuiltinPrintOperatorsSid">
+    <summary>
+      <para>Indicates a SID that matches the print operators group.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinBuiltinBackupOperatorsSid">
+    <summary>
+      <para>Indicates a SID that matches the backup operators group.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinBuiltinReplicatorSid">
+    <summary>
+      <para>Indicates a SID that matches the replicator account.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinBuiltinPreWindows2000CompatibleAccessSid">
+    <summary>
+      <para>Indicates a SID that matches pre-Windows 2000 compatible accounts.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinBuiltinRemoteDesktopUsersSid">
+    <summary>
+      <para>Indicates a SID that matches remote desktop users.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinBuiltinNetworkConfigurationOperatorsSid">
+    <summary>
+      <para>Indicates a SID that matches the network operators group.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinAccountAdministratorSid">
+    <summary>
+      <para>Indicates a SID that matches the account administrator's account.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinAccountGuestSid">
+    <summary>
+      <para>Indicates a SID that matches the account guest group.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinAccountKrbtgtSid">
+    <summary>
+      <para>Indicates a SID that matches account Kerberos target group.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinAccountDomainAdminsSid">
+    <summary>
+      <para>Indicates a SID that matches the account domain administrator group.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinAccountDomainUsersSid">
+    <summary>
+      <para>Indicates a SID that matches the account domain users group.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinAccountDomainGuestsSid">
+    <summary>
+      <para>Indicates a SID that matches the account domain guests group.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinAccountComputersSid">
+    <summary>
+      <para>Indicates a SID that matches the account computer group.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinAccountControllersSid">
+    <summary>
+      <para>Indicates a SID that matches the account controller group.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinAccountCertAdminsSid">
+    <summary>
+      <para>Indicates a SID that matches the certificate administrators group.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinAccountSchemaAdminsSid">
+    <summary>
+      <para>Indicates a SID that matches the schema administrators group.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinAccountEnterpriseAdminsSid">
+    <summary>
+      <para>Indicates a SID that matches the enterprise administrators group.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinAccountPolicyAdminsSid">
+    <summary>
+      <para>Indicates a SID that matches the policy administrators group.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinAccountRasAndIasServersSid">
+    <summary>
+      <para>Indicates a SID that matches the RAS and IAS server account.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinNTLMAuthenticationSid">
+    <summary>
+      <para>Indicates a SID present when the Microsoft NTLM authentication package authenticated the client.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinDigestAuthenticationSid">
+    <summary>
+      <para>Indicates a SID present when the Microsoft Digest authentication package authenticated the client.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinSChannelAuthenticationSid">
+    <summary>
+      <para>Indicates a SID present when the Secure Channel (SSL/TLS) authentication package authenticated the client.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinThisOrganizationSid">
+    <summary>
+      <para>Indicates a SID present when the user authenticated from within the forest or across a trust that does not have the selective authentication option enabled. If this SID is present, then WinOtherOrganizationSid cannot be present.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinOtherOrganizationSid">
+    <summary>
+      <para>Indicates a SID present when the user authenticated across a forest with the selective authentication option enabled. If this SID is present, then WinThisOrganizationSid cannot be present.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinBuiltinIncomingForestTrustBuildersSid">
+    <summary>
+      <para>Indicates a SID that allows a user to create incoming forest trusts. It is added to the token of users who are a member of the Incoming Forest Trust Builders built-in group in the root domain of the forest.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinBuiltinPerfMonitoringUsersSid">
+    <summary>
+      <para>Indicates a SID that matches the performance monitor user group.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinBuiltinPerfLoggingUsersSid">
+    <summary>
+      <para>Indicates a SID that matches the performance log user group.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinBuiltinAuthorizationAccessSid">
+    <summary>
+      <para>Indicates a SID that matches the Windows Authorization Access group.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinBuiltinTerminalServerLicenseServersSid">
+    <summary>
+      <para>Indicates a SID is present in a server that can issue terminal server licenses.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinBuiltinDCOMUsersSid">
+    <summary>
+      <para>Indicates a SID that matches the distributed COM user group.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinBuiltinIUsersSid">
+    <summary>
+      <para>Indicates a SID that matches the Internet  built-in user group.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinIUserSid">
+    <summary>
+      <para>Indicates a SID that matches the Internet user group.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinBuiltinCryptoOperatorsSid">
+    <summary>
+      <para>Indicates a SID that allows a user to use cryptographic operations. It is added to the token of users who are a member of the CryptoOperators built-in group.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinUntrustedLabelSid">
+    <summary>
+      <para>Indicates a SID that matches an untrusted label.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinLowLabelSid">
+    <summary>
+      <para>Indicates a SID that matches a low level of trust label.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinMediumLabelSid">
+    <summary>
+      <para>Indicates a SID that matches a medium level of trust label.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinHighLabelSid">
+    <summary>
+      <para>Indicates a SID that matches a high level of trust label.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinSystemLabelSid">
+    <summary>
+      <para>Indicates a SID that matches a system label.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinWriteRestrictedCodeSid">
+    <summary>
+      <para>Indicates a SID that matches a write restricted code group.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinCreatorOwnerRightsSid">
+    <summary>
+      <para>Indicates a SID that matches a creator and owner rights group.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinCacheablePrincipalsGroupSid">
+    <summary>
+      <para>Indicates a SID that matches a cacheable principals group.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinNonCacheablePrincipalsGroupSid">
+    <summary>
+      <para>Indicates a SID that matches a non-cacheable principals group.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinEnterpriseReadonlyControllersSid">
+    <summary>
+      <para>Indicates a SID that matches an enterprise wide read-only controllers group.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinAccountReadonlyControllersSid">
+    <summary>
+      <para>Indicates a SID that matches an account read-only controllers group.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinBuiltinEventLogReadersGroup">
+    <summary>
+      <para>Indicates a SID that matches an event log readers group.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinNewEnterpriseReadonlyControllersSid">
+    <summary>
+      <para>Indicates a SID that matches a read-only enterprise domain controller.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinBuiltinCertSvcDComAccessGroup">
+    <summary>
+      <para>Indicates a SID that matches the built-in DCOM certification services access group.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinMediumPlusLabelSid">
+    <summary>
+      <para>Indicates a SID that matches the medium plus integrity label.</para>
+      <para>
+        <b>Windows Server 2008 R2, Windows 7, Windows Server 2008, Windows Vista, Windows Server 2003 and Windows XP:  </b>This value is not available.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinLocalLogonSid">
+    <summary>
+      <para>Indicates a SID that matches a local logon group.</para>
+      <para>
+        <b>Windows Server 2008 R2, Windows 7, Windows Server 2008, Windows Vista, Windows Server 2003 and Windows XP:  </b>This value is not available.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinConsoleLogonSid">
+    <summary>
+      <para>Indicates a SID that matches a console logon group.</para>
+      <para>
+        <b>Windows Server 2008 R2, Windows 7, Windows Server 2008, Windows Vista, Windows Server 2003 and Windows XP:  </b>This value is not available.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinThisOrganizationCertificateSid">
+    <summary>
+      <para>Indicates a SID that matches a certificate for the given organization.</para>
+      <para>
+        <b>Windows Server 2008 R2, Windows 7, Windows Server 2008, Windows Vista, Windows Server 2003 and Windows XP:  </b>This value is not available.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinApplicationPackageAuthoritySid">
+    <summary>
+      <para>Indicates a SID that matches the application package authority.</para>
+      <para>
+        <b>Windows Server 2008 R2, Windows 7, Windows Server 2008, Windows Vista, Windows Server 2003 and Windows XP:  </b>This value is not available.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinBuiltinAnyPackageSid">
+    <summary>
+      <para>Indicates a SID that applies to all app containers.</para>
+      <para>
+        <b>Windows Server 2008 R2, Windows 7, Windows Server 2008, Windows Vista, Windows Server 2003 and Windows XP:  </b>This value is not available.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinCapabilityInternetClientSid">
+    <summary>
+      <para>Indicates a SID of Internet client capability for app containers.</para>
+      <para>
+        <b>Windows Server 2008 R2, Windows 7, Windows Server 2008, Windows Vista, Windows Server 2003 and Windows XP:  </b>This value is not available.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinCapabilityInternetClientServerSid">
+    <summary>
+      <para>Indicates a SID of Internet client and server capability for app containers.</para>
+      <para>
+        <b>Windows Server 2008 R2, Windows 7, Windows Server 2008, Windows Vista, Windows Server 2003 and Windows XP:  </b>This value is not available.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinCapabilityPrivateNetworkClientServerSid">
+    <summary>
+      <para>Indicates a SID of private network client and server capability for app containers.</para>
+      <para>
+        <b>Windows Server 2008 R2, Windows 7, Windows Server 2008, Windows Vista, Windows Server 2003 and Windows XP:  </b>This value is not available.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinCapabilityPicturesLibrarySid">
+    <summary>
+      <para>Indicates a SID for pictures library capability for app containers.</para>
+      <para>
+        <b>Windows Server 2008 R2, Windows 7, Windows Server 2008, Windows Vista, Windows Server 2003 and Windows XP:  </b>This value is not available.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinCapabilityVideosLibrarySid">
+    <summary>
+      <para>Indicates a SID for videos library capability for app containers.</para>
+      <para>
+        <b>Windows Server 2008 R2, Windows 7, Windows Server 2008, Windows Vista, Windows Server 2003 and Windows XP:  </b>This value is not available.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinCapabilityMusicLibrarySid">
+    <summary>
+      <para>Indicates a SID for music library capability for app containers.</para>
+      <para>
+        <b>Windows Server 2008 R2, Windows 7, Windows Server 2008, Windows Vista, Windows Server 2003 and Windows XP:  </b>This value is not available.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinCapabilityDocumentsLibrarySid">
+    <summary>
+      <para>Indicates a SID for documents library capability for app containers.</para>
+      <para>
+        <b>Windows Server 2008 R2, Windows 7, Windows Server 2008, Windows Vista, Windows Server 2003 and Windows XP:  </b>This value is not available.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinCapabilitySharedUserCertificatesSid">
+    <summary>
+      <para>Indicates a SID for shared user certificates capability for app containers.</para>
+      <para>
+        <b>Windows Server 2008 R2, Windows 7, Windows Server 2008, Windows Vista, Windows Server 2003 and Windows XP:  </b>This value is not available.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinCapabilityEnterpriseAuthenticationSid">
+    <summary>
+      <para>Indicates a SID for Windows credentials capability for app containers.</para>
+      <para>
+        <b>Windows Server 2008 R2, Windows 7, Windows Server 2008, Windows Vista, Windows Server 2003 and Windows XP:  </b>This value is not available.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinCapabilityRemovableStorageSid">
+    <summary>
+      <para>Indicates a SID for removable storage capability for app containers.</para>
+      <para>
+        <b>Windows Server 2008 R2, Windows 7, Windows Server 2008, Windows Vista, Windows Server 2003 and Windows XP:  </b>This value is not available.</para>
+    </summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinBuiltinRDSRemoteAccessServersSid">
+    <summary></summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinBuiltinRDSEndpointServersSid">
+    <summary></summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinBuiltinRDSManagementServersSid">
+    <summary></summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinUserModeDriversSid">
+    <summary></summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinBuiltinHyperVAdminsSid">
+    <summary></summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinAccountCloneableControllersSid">
+    <summary></summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinBuiltinAccessControlAssistanceOperatorsSid">
+    <summary></summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinBuiltinRemoteManagementUsersSid">
+    <summary></summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinAuthenticationAuthorityAssertedSid">
+    <summary></summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinAuthenticationServiceAssertedSid">
+    <summary></summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinLocalAccountSid">
+    <summary></summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinLocalAccountAndAdministratorSid">
+    <summary></summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinAccountProtectedUsersSid">
+    <summary></summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinCapabilityAppointmentsSid">
+    <summary></summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinCapabilityContactsSid">
+    <summary></summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinAccountDefaultSystemManagedSid">
+    <summary></summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinBuiltinDefaultSystemManagedGroupSid">
+    <summary></summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinBuiltinStorageReplicaAdminsSid">
+    <summary></summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinAccountKeyAdminsSid">
+    <summary></summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinAccountEnterpriseKeyAdminsSid">
+    <summary></summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinAuthenticationKeyTrustSid">
+    <summary></summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinAuthenticationKeyPropertyMFASid">
+    <summary></summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinAuthenticationKeyPropertyAttestationSid">
+    <summary></summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinAuthenticationFreshKeyAuthSid">
+    <summary></summary>
+  </member>
+  <member name="WELL_KNOWN_SID_TYPE.WinBuiltinDeviceOwnersSid">
+    <summary></summary>
+  </member>
+</doc>

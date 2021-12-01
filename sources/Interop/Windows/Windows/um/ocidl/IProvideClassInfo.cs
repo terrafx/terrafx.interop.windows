@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IProvideClassInfo.xml' path='doc/member[@name="IProvideClassInfo"]/*' />
 [Guid("B196B283-BAB4-101A-B69C-00AA00341D07")]
 [NativeTypeName("struct IProvideClassInfo : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IProvideClassInfo : IProvideClassInfo.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IProvideClassInfo : IProvideClassInfo.Interface
         return ((delegate* unmanaged<IProvideClassInfo*, Guid*, void**, int>)(lpVtbl[0]))((IProvideClassInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IProvideClassInfo : IProvideClassInfo.Interface
         return ((delegate* unmanaged<IProvideClassInfo*, uint>)(lpVtbl[1]))((IProvideClassInfo*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IProvideClassInfo : IProvideClassInfo.Interface
         return ((delegate* unmanaged<IProvideClassInfo*, uint>)(lpVtbl[2]))((IProvideClassInfo*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IProvideClassInfo.xml' path='doc/member[@name="IProvideClassInfo.GetClassInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetClassInfo(ITypeInfo** ppTI)

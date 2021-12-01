@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TBADDBITMAP.xml' path='doc/member[@name="TBADDBITMAP"]/*' />
 public partial struct TBADDBITMAP
 {
+    /// <include file='TBADDBITMAP.xml' path='doc/member[@name="TBADDBITMAP.hInst"]/*' />
     public HINSTANCE hInst;
 
+    /// <include file='TBADDBITMAP.xml' path='doc/member[@name="TBADDBITMAP.nID"]/*' />
     [NativeTypeName("UINT_PTR")]
     public nuint nID;
 }

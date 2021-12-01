@@ -5,11 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IP_MREQ_SOURCE.xml' path='doc/member[@name="IP_MREQ_SOURCE"]/*' />
 public partial struct IP_MREQ_SOURCE
 {
+    /// <include file='IP_MREQ_SOURCE.xml' path='doc/member[@name="IP_MREQ_SOURCE.imr_multiaddr"]/*' />
     public IN_ADDR imr_multiaddr;
 
+    /// <include file='IP_MREQ_SOURCE.xml' path='doc/member[@name="IP_MREQ_SOURCE.imr_sourceaddr"]/*' />
     public IN_ADDR imr_sourceaddr;
 
+    /// <include file='IP_MREQ_SOURCE.xml' path='doc/member[@name="IP_MREQ_SOURCE.imr_interface"]/*' />
     public IN_ADDR imr_interface;
 }

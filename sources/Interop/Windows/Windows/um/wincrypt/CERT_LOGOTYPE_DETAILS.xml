@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CERT_LOGOTYPE_DETAILS">
+    <summary>
+      <para>The <b>CERT_LOGOTYPE_DETAILS</b> structure contains additional information about a logotype.</para>
+    </summary>
+    <seealso cref="CERT_LOGOTYPE_AUDIO" />
+    <seealso cref="CERT_LOGOTYPE_IMAGE" />
+  </member>
+  <member name="CERT_LOGOTYPE_DETAILS.pwszMimeType">
+    <summary>
+      <para>The address of a null-terminated Unicode string that contains the Multipurpose Internet Mail Extensions (MIME) type of the logotype.</para>
+    </summary>
+  </member>
+  <member name="CERT_LOGOTYPE_DETAILS.cHashedUrl">
+    <summary>
+      <para>The number of elements in the <b>rgHashedUrl</b> array.</para>
+    </summary>
+  </member>
+  <member name="CERT_LOGOTYPE_DETAILS.rgHashedUrl">
+    <summary>
+      <para>An array of <see cref="CERT_HASHED_URL" /> structures that contain the hashed URLs of the logotype. The <b>cHashedUrl</b> member contains the number of elements in this array.</para>
+    </summary>
+  </member>
+</doc>

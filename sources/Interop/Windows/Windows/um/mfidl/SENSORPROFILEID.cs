@@ -8,14 +8,18 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SENSORPROFILEID.xml' path='doc/member[@name="SENSORPROFILEID"]/*' />
 [SupportedOSPlatform("windows10.0.16299.0")]
 public partial struct SENSORPROFILEID
 {
+    /// <include file='SENSORPROFILEID.xml' path='doc/member[@name="SENSORPROFILEID.Type"]/*' />
     public Guid Type;
 
+    /// <include file='SENSORPROFILEID.xml' path='doc/member[@name="SENSORPROFILEID.Index"]/*' />
     [NativeTypeName("UINT32")]
     public uint Index;
 
+    /// <include file='SENSORPROFILEID.xml' path='doc/member[@name="SENSORPROFILEID.Unused"]/*' />
     [NativeTypeName("UINT32")]
     public uint Unused;
 }

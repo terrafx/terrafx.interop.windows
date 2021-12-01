@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IPropertyChangeArray.Append">
+    <summary>
+      <para>Inserts a change operation at the end of an array.</para>
+    </summary>
+    <param name="ppropChange">
+      <para>Type: <b><see cref="IPropertyChange" />*</b></para>
+      <para>A pointer to the interface that contains the change.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IPropertyChangeArray.AppendOrReplace">
+    <summary>
+      <para>Replaces the first occurrence of a change that affects the same property key as the provided change.  If the property key is not already in the array, this method appends the change to the end of the array.</para>
+    </summary>
+    <param name="ppropChange">
+      <para>Type: <b><see cref="IPropertyChange" />*</b></para>
+      <para>A pointer to the interface that contains the change</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns <b>S_OK</b> if successful, or an error value otherwise.</para>
+    </returns>
+  </member>
+  <member name="IPropertyChangeArray.GetAt">
+    <summary>
+      <para>Gets the change operation at a specified array index.</para>
+    </summary>
+    <param name="iIndex">
+      <para>Type: <b>UINT</b></para>
+      <para>The index of the change to retrieve.</para>
+    </param>
+    <param name="riid">
+      <para>Type: <b>REFIID</b></para>
+      <para>A reference to the desired IID.</para>
+    </param>
+    <param name="ppv">
+      <para>Type: <b>void**</b></para>
+      <para>The address of a pointer to the interface specified by <i>riid</i>, usually <see cref="IPropertyChange" />.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IPropertyChangeArray.GetCount">
+    <summary>
+      <para>Gets the number of change operations in the array.</para>
+    </summary>
+    <param name="pcOperations">
+      <para>Type: <b>UINT*</b></para>
+      <para>A pointer to the number of change operations.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Always returns <b>S_OK</b>.</para>
+    </returns>
+  </member>
+  <member name="IPropertyChangeArray.InsertAt">
+    <summary>
+      <para>Inserts a change operation into an array at the specified position.</para>
+    </summary>
+    <param name="iIndex">
+      <para>Type: <b>UINT</b></para>
+      <para>The index at which the change is inserted.</para>
+    </param>
+    <param name="ppropChange">
+      <para>Type: <b><see cref="IPropertyChange" />*</b></para>
+      <para>A pointer to the interface that contains the change.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IPropertyChangeArray.IsKeyInArray">
+    <summary>
+      <para>Specifies whether a particular property key exists in the change array.</para>
+    </summary>
+    <param name="key">
+      <para>Type: <b>REFPROPERTYKEY</b></para>
+      <para>A reference to the <see cref="PROPERTYKEY" /> structure of interest.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns <b>S_OK</b> if key is found; otherwise, E_FAIL.</para>
+    </returns>
+  </member>
+  <member name="IPropertyChangeArray.RemoveAt">
+    <summary>
+      <para>Removes a specified change.</para>
+    </summary>
+    <param name="iIndex">
+      <para>Type: <b>UINT</b></para>
+      <para>The index of the change to remove.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IPropertyChangeArray">
+    <summary>
+      <para>Exposes methods for several multiple change operations that may be passed to <see cref="IFileOperation" />.</para>
+    </summary>
+    <remarks>
+      <para>Either call <see cref="CoCreateInstance" /> with a class identifier (CLSID) of <b>CLSID_PropertyChangeArray</b> or call <see cref="PSCreatePropertyChangeArray" /> to obtain a standard implementation of this interface. This is a container interface that allows multiple changes to be passed to a single file operation to prevent accessing a file multiple times.</para>
+    </remarks>
+  </member>
+</doc>

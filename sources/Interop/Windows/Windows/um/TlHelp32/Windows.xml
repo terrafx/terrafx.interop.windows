@@ -1,0 +1,897 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="Windows.CreateToolhelp32Snapshot">
+    <summary>
+      <para>Takes a snapshot of the specified processes, as well as the heaps, modules, and threads used by these processes.</para>
+    </summary>
+    <param name="dwFlags">
+      <para>The portions of the system to be included in the snapshot. This parameter can be one or more of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TH32CS_INHERIT</b>
+                </description>
+              </item>
+              <item>
+                <description>0x80000000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Indicates that the snapshot handle is to be inheritable.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>TH32CS_SNAPALL</b>
+          </description>
+          <description>
+            <para>Includes all processes and threads in the system, plus the heaps and modules of the process specified in <i>th32ProcessID</i>. Equivalent to specifying the <b>TH32CS_SNAPHEAPLIST</b>,
+<b>TH32CS_SNAPMODULE</b>, <b>TH32CS_SNAPPROCESS</b>, and
+<b>TH32CS_SNAPTHREAD</b> values combined using an OR operation ('|').</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TH32CS_SNAPHEAPLIST</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000001</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Includes all heaps of the process specified in <i>th32ProcessID</i> in the snapshot. To enumerate the heaps, see
+<see cref="Heap32ListFirst" />.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TH32CS_SNAPMODULE</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000008</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Includes all modules of the process specified in <i>th32ProcessID</i> in the snapshot. To enumerate the modules, see
+<see cref="Module32First" />. If the function fails with <b>ERROR_BAD_LENGTH</b>, retry the function until it succeeds.</para>
+            <para>
+              <b>64-bit Windows:  </b>Using this flag in a 32-bit process includes the 32-bit modules of the process specified in <i>th32ProcessID</i>, while using it in a 64-bit process includes the 64-bit modules. To include the 32-bit modules of the process specified in <i>th32ProcessID</i> from a 64-bit process, use the <b>TH32CS_SNAPMODULE32</b> flag.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TH32CS_SNAPMODULE32</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000010</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Includes all 32-bit modules of the process specified in <i>th32ProcessID</i> in the snapshot when called from a 64-bit process. This flag can be combined with <b>TH32CS_SNAPMODULE</b> or <b>TH32CS_SNAPALL</b>.  If the function fails with <b>ERROR_BAD_LENGTH</b>, retry the function until it succeeds.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TH32CS_SNAPPROCESS</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000002</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Includes all processes in the system in the snapshot. To enumerate the processes, see
+<see cref="Process32First" />.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>TH32CS_SNAPTHREAD</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000004</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Includes all threads in the system in the snapshot. To enumerate the threads, see
+<see cref="Thread32First" />.</para>
+            <para>To identify the threads that belong to a specific process, compare its process identifier to the <b>th32OwnerProcessID</b> member of the
+<see cref="THREADENTRY32" /> structure when enumerating the threads.</para>
+          </description>
+        </item>
+      </list>
+    </param>
+    <param name="th32ProcessID">
+      <para>The process identifier of the process to be included in the snapshot. This parameter can be zero to indicate the current process. This parameter is used when the <b>TH32CS_SNAPHEAPLIST</b>, <b>TH32CS_SNAPMODULE</b>, <b>TH32CS_SNAPMODULE32</b>, or <b>TH32CS_SNAPALL</b> value is specified. Otherwise, it is ignored and all processes are included in the snapshot.</para>
+      <para>If the specified process is the Idle process or one of the CSRSS processes, this function fails and the last error code is <b>ERROR_ACCESS_DENIED</b> because their access restrictions prevent user-level code from opening them.</para>
+      <para>If the specified process is a 64-bit process and the caller is a 32-bit process, this function fails and the last error code is <b>ERROR_PARTIAL_COPY</b> (299).</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, it returns an open handle to the specified snapshot.</para>
+      <para>If the function fails, it returns <b>INVALID_HANDLE_VALUE</b>. To get extended error information, call
+<see cref="GetLastError" />. Possible error codes include <b>ERROR_BAD_LENGTH</b>.</para>
+    </returns>
+    <remarks>
+      <para>The snapshot taken by this function is examined by the other tool help functions to provide their results. Access to the snapshot is read only. The snapshot handle acts as an object handle and is subject to the same rules regarding which processes and threads it is valid in.</para>
+      <para>To enumerate the heap or module states for all processes, specify <b>TH32CS_SNAPALL</b> and set <i>th32ProcessID</i> to zero. Then, for each additional process in the snapshot, call
+<b>CreateToolhelp32Snapshot</b> again, specifying its process identifier and the <b>TH32CS_SNAPHEAPLIST</b> or <b>TH32_SNAPMODULE</b> value.</para>
+      <para>When taking snapshots that include heaps and modules for a process other than the current process, the <b>CreateToolhelp32Snapshot</b> function can fail or return incorrect information for a variety of reasons. For example, if the loader data table in the target process is corrupted or not initialized, or if the module list changes during the function call as a result of DLLs being loaded or unloaded, the function might fail with <b>ERROR_BAD_LENGTH</b> or other error code. Ensure that the target process was not started in a suspended state,  and try calling the function again.  If the function fails with <b>ERROR_BAD_LENGTH</b> when called with <b>TH32CS_SNAPMODULE</b> or <b>TH32CS_SNAPMODULE32</b>,   call the function again until it succeeds.</para>
+      <para>The <b>TH32CS_SNAPMODULE</b> and <b>TH32CS_SNAPMODULE32</b> flags do not retrieve handles for modules that were loaded with the <b>LOAD_LIBRARY_AS_DATAFILE</b> or similar flags. For more information, see <see cref="LoadLibraryEx" />.</para>
+      <para>To destroy the snapshot, use the
+<see cref="CloseHandle" /> function.</para>
+      <para>Note that you can use the <see cref="QueryFullProcessImageName" /> function to retrieve the full name of an executable image for both 32- and 64-bit processes from a 32-bit process.</para>
+      <h4>Examples</h4>
+      <para>For an example, see
+<a href="https://docs.microsoft.com//windows/desktop/ToolHelp/taking-a-snapshot-and-viewing-processes">Taking a Snapshot and Viewing Processes</a>.</para>
+    </remarks>
+    <seealso cref="CloseHandle" />
+    <seealso cref="Heap32ListFirst" />
+    <seealso cref="Module32First" />
+    <seealso cref="Process32First" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/ToolHelp/snapshots-of-the-system">Snapshots of the System</seealso>
+    <seealso cref="Thread32First" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/ToolHelp/tool-help-functions">Tool Help Functions</seealso>
+  </member>
+  <member name="Windows.Heap32First">
+    <summary>
+      <para>Retrieves information about the first block of a heap that has been allocated by a process.</para>
+    </summary>
+    <param name="lphe">
+      <para>A pointer to a
+<see cref="HEAPENTRY32" /> structure.</para>
+    </param>
+    <param name="th32ProcessID">
+      <para>The identifier of the process context that owns the heap.</para>
+    </param>
+    <param name="th32HeapID">
+      <para>The identifier of the heap to be enumerated.</para>
+    </param>
+    <returns>
+      <para>Returns <b>TRUE</b> if information for the first heap block has been copied to the buffer or <b>FALSE</b> otherwise. The <b>ERROR_NO_MORE_FILES</b> error value is returned by the
+<see cref="GetLastError" /> function if the heap is invalid or empty.</para>
+    </returns>
+    <remarks>
+      <para>The calling application must set the <b>dwSize</b> member of
+<see cref="HEAPENTRY32" /> to the size, in bytes, of the structure.
+<b>Heap32First</b> changes <b>dwSize</b> to the number of bytes written to the structure. This will never be greater than the initial value of <b>dwSize</b>, but it may be smaller. If the value is smaller, do not rely on the values of any members whose offsets are greater than this value.</para>
+      <para>To access subsequent blocks of the same heap, use the
+<see cref="Heap32Next" /> function.</para>
+      <para>Walking the heap with <b>Heap32First</b> and <b>Heap32Next</b> is inefficient, particularly for large heaps.
+Use
+<see cref="HeapWalk" /> instead.</para>
+      <h4>Examples</h4>
+      <para>For an example, see
+<a href="https://docs.microsoft.com//windows/desktop/ToolHelp/traversing-the-heap-list">Traversing the Heap List</a>.</para>
+    </remarks>
+    <seealso cref="HEAPENTRY32" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/ToolHelp/heap-lists-and-heap-walking">Heap Lists and Heap Walking</seealso>
+    <seealso cref="Heap32Next" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/ToolHelp/tool-help-functions">Tool Help Functions</seealso>
+  </member>
+  <member name="Windows.Heap32ListFirst">
+    <summary>
+      <para>Retrieves information about the first heap that has been allocated by a specified process.</para>
+    </summary>
+    <param name="hSnapshot">
+      <para>A handle to the snapshot returned from a previous call to the
+<see cref="CreateToolhelp32Snapshot" /> function.</para>
+    </param>
+    <param name="lphl">
+      <para>A pointer to a
+<see cref="HEAPLIST32" /> structure.</para>
+    </param>
+    <returns>
+      <para>Returns <b>TRUE</b> if the first entry of the heap list has been copied to the buffer or <b>FALSE</b> otherwise. The <b>ERROR_NO_MORE_FILES</b> error value is returned by the
+<see cref="GetLastError" /> function when no heap list exists or the snapshot does not contain heap list information.</para>
+    </returns>
+    <remarks>
+      <para>The calling application must set the <b>dwSize</b> member of
+<see cref="HEAPLIST32" /> to the size, in bytes, of the structure.
+<b>Heap32ListFirst</b> changes <b>dwSize</b> to the number of bytes written to the structure. This will never be greater than the initial value of <b>dwSize</b>, but it may be smaller. If the value is smaller, do not rely on the values of any members whose offsets are greater than this value.</para>
+      <para>To retrieve information about other heaps in the heap list, use the
+<see cref="Heap32ListNext" /> function.</para>
+      <h4>Examples</h4>
+      <para>For an example, see
+<a href="https://docs.microsoft.com//windows/desktop/ToolHelp/traversing-the-heap-list">Traversing the Heap List</a>.</para>
+    </remarks>
+    <seealso cref="CreateToolhelp32Snapshot" />
+    <seealso cref="HEAPLIST32" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/ToolHelp/heap-lists-and-heap-walking">Heap Lists and Heap Walking</seealso>
+    <seealso cref="Heap32ListNext" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/ToolHelp/tool-help-functions">Tool Help Functions</seealso>
+  </member>
+  <member name="Windows.Heap32ListNext">
+    <summary>
+      <para>Retrieves information about the next heap that has been allocated by a process.</para>
+    </summary>
+    <param name="hSnapshot">
+      <para>A handle to the snapshot returned from a previous call to the
+<see cref="CreateToolhelp32Snapshot" /> function.</para>
+    </param>
+    <param name="lphl">
+      <para>A pointer to a
+<see cref="HEAPLIST32" /> structure.</para>
+    </param>
+    <returns>
+      <para>Returns <b>TRUE</b> if the next entry of the heap list has been copied to the buffer or <b>FALSE</b> otherwise. The <b>ERROR_NO_MORE_FILES</b> error value is returned by the
+<see cref="GetLastError" /> function when no more entries in the heap list exist.</para>
+    </returns>
+    <remarks>
+      <para>To retrieve information about the first heap in a heap list, use the
+<see cref="Heap32ListFirst" /> function.</para>
+      <h4>Examples</h4>
+      <para>For an example, see
+<a href="https://docs.microsoft.com//windows/desktop/ToolHelp/traversing-the-heap-list">Traversing the Heap List</a>.</para>
+    </remarks>
+    <seealso cref="CreateToolhelp32Snapshot" />
+    <seealso cref="HEAPLIST32" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/ToolHelp/heap-lists-and-heap-walking">Heap Lists and Heap Walking</seealso>
+    <seealso cref="Heap32ListFirst" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/ToolHelp/tool-help-functions">Tool Help Functions</seealso>
+  </member>
+  <member name="Windows.Heap32Next">
+    <summary>
+      <para>Retrieves information about the next block of a heap that has been allocated by a process.</para>
+    </summary>
+    <param name="lphe">
+      <para>A pointer to a
+<see cref="HEAPENTRY32" /> structure.</para>
+    </param>
+    <returns>
+      <para>Returns <b>TRUE</b> if information about the next block in the heap has been copied to the buffer or <b>FALSE</b> otherwise. The
+<see cref="GetLastError" /> function returns <b>ERROR_NO_MORE_FILES</b> when no more objects in the heap exist and <b>ERROR_INVALID_DATA</b> if the heap appears to be corrupt or is modified during the walk in such a way that
+<b>Heap32Next</b> cannot continue.</para>
+    </returns>
+    <remarks>
+      <para>To retrieve information for the first block of a heap, use the
+<see cref="Heap32First" /> function.</para>
+      <para>The <b>Heap32Next</b> function does not maintain a reference to the target process. If the target process dies, the system may create a new process using the same process identifier. Therefore, the caller should maintain a reference to the target process as long as it is using <b>Heap32Next</b>.</para>
+      <para>Walking the heap with <b>Heap32First</b> and <b>Heap32Next</b> is inefficient, particularly for large heaps.
+Use
+<see cref="HeapWalk" /> instead.</para>
+      <h4>Examples</h4>
+      <para>For an example, see
+<a href="https://docs.microsoft.com//windows/desktop/ToolHelp/traversing-the-heap-list">Traversing the Heap List</a>.</para>
+    </remarks>
+    <seealso cref="HEAPENTRY32" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/ToolHelp/heap-lists-and-heap-walking">Heap Lists and Heap Walking</seealso>
+    <seealso cref="Heap32First" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/ToolHelp/tool-help-functions">Tool Help Functions</seealso>
+  </member>
+  <member name="Windows.Module32First">
+    <summary>
+      <para>Retrieves information about the first module associated with a process.</para>
+    </summary>
+    <param name="hSnapshot">
+      <para>A handle to the snapshot returned from a previous call to the
+<see cref="CreateToolhelp32Snapshot" /> function.</para>
+    </param>
+    <param name="lpme">
+      <para>A pointer to a
+<see cref="MODULEENTRY32" /> structure.</para>
+    </param>
+    <returns>
+      <para>Returns <b>TRUE</b> if the first entry of the module list has been copied to the buffer or <b>FALSE</b> otherwise. The <b>ERROR_NO_MORE_FILES</b> error value is returned by the
+<see cref="GetLastError" /> function if no modules exist or the snapshot does not contain module information.</para>
+    </returns>
+    <remarks>
+      <para>The calling application must set the <b>dwSize</b> member of
+<see cref="MODULEENTRY32" /> to the size, in bytes, of the structure.</para>
+      <para>To retrieve information about other modules associated with the specified process, use the
+<see cref="Module32Next" /> function.</para>
+      <h4>Examples</h4>
+      <para>For an example, see
+<a href="https://docs.microsoft.com//windows/desktop/ToolHelp/traversing-the-module-list">Traversing the Module List</a>.</para>
+    </remarks>
+    <seealso cref="CreateToolhelp32Snapshot" />
+    <seealso cref="MODULEENTRY32" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/ToolHelp/module-walking">Module Walking</seealso>
+    <seealso cref="Module32Next" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/ToolHelp/tool-help-functions">Tool Help Functions</seealso>
+  </member>
+  <member name="Windows.Module32FirstW">
+    <summary>
+      <para>Retrieves information about the first module associated with a process.</para>
+    </summary>
+    <param name="hSnapshot">
+      <para>A handle to the snapshot returned from a previous call to the
+<see cref="CreateToolhelp32Snapshot" /> function.</para>
+    </param>
+    <param name="lpme">
+      <para>A pointer to a
+<see cref="MODULEENTRY32" /> structure.</para>
+    </param>
+    <returns>
+      <para>Returns <b>TRUE</b> if the first entry of the module list has been copied to the buffer or <b>FALSE</b> otherwise. The <b>ERROR_NO_MORE_FILES</b> error value is returned by the
+<see cref="GetLastError" /> function if no modules exist or the snapshot does not contain module information.</para>
+    </returns>
+    <remarks>
+      <para>The calling application must set the <b>dwSize</b> member of
+<see cref="MODULEENTRY32" /> to the size, in bytes, of the structure.</para>
+      <para>To retrieve information about other modules associated with the specified process, use the
+<see cref="Module32Next" /> function.</para>
+      <h4>Examples</h4>
+      <para>For an example, see
+<a href="https://docs.microsoft.com//windows/desktop/ToolHelp/traversing-the-module-list">Traversing the Module List</a>.</para>
+    </remarks>
+    <seealso cref="CreateToolhelp32Snapshot" />
+    <seealso cref="MODULEENTRY32" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/ToolHelp/module-walking">Module Walking</seealso>
+    <seealso cref="Module32Next" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/ToolHelp/tool-help-functions">Tool Help Functions</seealso>
+  </member>
+  <member name="Windows.Module32First">
+    <summary>
+      <para>Retrieves information about the first module associated with a process.</para>
+    </summary>
+    <param name="hSnapshot">
+      <para>A handle to the snapshot returned from a previous call to the
+<see cref="CreateToolhelp32Snapshot" /> function.</para>
+    </param>
+    <param name="lpme">
+      <para>A pointer to a
+<see cref="MODULEENTRY32W" /> structure.</para>
+    </param>
+    <returns>
+      <para>Returns <b>TRUE</b> if the first entry of the module list has been copied to the buffer or <b>FALSE</b> otherwise. The <b>ERROR_NO_MORE_FILES</b> error value is returned by the
+<see cref="GetLastError" /> function if no modules exist or the snapshot does not contain module information.</para>
+    </returns>
+    <remarks>
+      <para>The calling application must set the <b>dwSize</b> member of
+<see cref="MODULEENTRY32W" /> to the size, in bytes, of the structure.</para>
+      <para>To retrieve information about other modules associated with the specified process, use the
+<see cref="Module32NextW" /> function.</para>
+      <h4>Examples</h4>
+      <para>For an example, see
+<a href="https://docs.microsoft.com//windows/desktop/ToolHelp/traversing-the-module-list">Traversing the Module List</a>.</para>
+      <blockquote>
+        <para>[!NOTE]
+The tlhelp32.h header defines Module32First as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+    <seealso cref="CreateToolhelp32Snapshot" />
+    <seealso cref="MODULEENTRY32W" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/ToolHelp/module-walking">Module Walking</seealso>
+    <seealso cref="Module32NextW" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/ToolHelp/tool-help-functions">Tool Help Functions</seealso>
+  </member>
+  <member name="Windows.Module32FirstW">
+    <summary>
+      <para>Retrieves information about the first module associated with a process.</para>
+    </summary>
+    <param name="hSnapshot">
+      <para>A handle to the snapshot returned from a previous call to the
+<see cref="CreateToolhelp32Snapshot" /> function.</para>
+    </param>
+    <param name="lpme">
+      <para>A pointer to a
+<see cref="MODULEENTRY32W" /> structure.</para>
+    </param>
+    <returns>
+      <para>Returns <b>TRUE</b> if the first entry of the module list has been copied to the buffer or <b>FALSE</b> otherwise. The <b>ERROR_NO_MORE_FILES</b> error value is returned by the
+<see cref="GetLastError" /> function if no modules exist or the snapshot does not contain module information.</para>
+    </returns>
+    <remarks>
+      <para>The calling application must set the <b>dwSize</b> member of
+<see cref="MODULEENTRY32W" /> to the size, in bytes, of the structure.</para>
+      <para>To retrieve information about other modules associated with the specified process, use the
+<see cref="Module32NextW" /> function.</para>
+      <h4>Examples</h4>
+      <para>For an example, see
+<a href="https://docs.microsoft.com//windows/desktop/ToolHelp/traversing-the-module-list">Traversing the Module List</a>.</para>
+      <blockquote>
+        <para>[!NOTE]
+The tlhelp32.h header defines Module32First as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+    <seealso cref="CreateToolhelp32Snapshot" />
+    <seealso cref="MODULEENTRY32W" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/ToolHelp/module-walking">Module Walking</seealso>
+    <seealso cref="Module32NextW" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/ToolHelp/tool-help-functions">Tool Help Functions</seealso>
+  </member>
+  <member name="Windows.Module32Next">
+    <summary>
+      <para>Retrieves information about the next module associated with a process or thread.</para>
+    </summary>
+    <param name="hSnapshot">
+      <para>A handle to the snapshot returned from a previous call to the
+<see cref="CreateToolhelp32Snapshot" /> function.</para>
+    </param>
+    <param name="lpme">
+      <para>A pointer to a
+<see cref="MODULEENTRY32" /> structure.</para>
+    </param>
+    <returns>
+      <para>Returns <b>TRUE</b> if the next entry of the module list has been copied to the buffer or <b>FALSE</b> otherwise. The <b>ERROR_NO_MORE_FILES</b> error value is returned by the
+<see cref="GetLastError" /> function if no more modules exist.</para>
+    </returns>
+    <remarks>
+      <para>To retrieve information about first module associated with a process, use the
+<see cref="Module32First" /> function.</para>
+      <h4>Examples</h4>
+      <para>For an example, see
+<a href="https://docs.microsoft.com//windows/desktop/ToolHelp/traversing-the-module-list">Traversing the Module List</a>.</para>
+    </remarks>
+    <seealso cref="CreateToolhelp32Snapshot" />
+    <seealso cref="MODULEENTRY32" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/ToolHelp/module-walking">Module Walking</seealso>
+    <seealso cref="Module32First" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/ToolHelp/tool-help-functions">Tool Help Functions</seealso>
+  </member>
+  <member name="Windows.Module32NextW">
+    <summary>
+      <para>Retrieves information about the next module associated with a process or thread.</para>
+    </summary>
+    <param name="hSnapshot">
+      <para>A handle to the snapshot returned from a previous call to the
+<see cref="CreateToolhelp32Snapshot" /> function.</para>
+    </param>
+    <param name="lpme">
+      <para>A pointer to a
+<see cref="MODULEENTRY32" /> structure.</para>
+    </param>
+    <returns>
+      <para>Returns <b>TRUE</b> if the next entry of the module list has been copied to the buffer or <b>FALSE</b> otherwise. The <b>ERROR_NO_MORE_FILES</b> error value is returned by the
+<see cref="GetLastError" /> function if no more modules exist.</para>
+    </returns>
+    <remarks>
+      <para>To retrieve information about first module associated with a process, use the
+<see cref="Module32First" /> function.</para>
+      <h4>Examples</h4>
+      <para>For an example, see
+<a href="https://docs.microsoft.com//windows/desktop/ToolHelp/traversing-the-module-list">Traversing the Module List</a>.</para>
+    </remarks>
+    <seealso cref="CreateToolhelp32Snapshot" />
+    <seealso cref="MODULEENTRY32" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/ToolHelp/module-walking">Module Walking</seealso>
+    <seealso cref="Module32First" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/ToolHelp/tool-help-functions">Tool Help Functions</seealso>
+  </member>
+  <member name="Windows.Module32Next">
+    <summary>
+      <para>Retrieves information about the next module associated with a process or thread.</para>
+    </summary>
+    <param name="hSnapshot">
+      <para>A handle to the snapshot returned from a previous call to the
+<see cref="CreateToolhelp32Snapshot" /> function.</para>
+    </param>
+    <param name="lpme">
+      <para>A pointer to a
+<see cref="MODULEENTRY32W" /> structure.</para>
+    </param>
+    <returns>
+      <para>Returns <b>TRUE</b> if the next entry of the module list has been copied to the buffer or <b>FALSE</b> otherwise. The <b>ERROR_NO_MORE_FILES</b> error value is returned by the
+<see cref="GetLastError" /> function if no more modules exist.</para>
+    </returns>
+    <remarks>
+      <para>To retrieve information about first module associated with a process, use the
+<see cref="Module32FirstW" /> function.</para>
+      <h4>Examples</h4>
+      <para>For an example, see
+<a href="https://docs.microsoft.com//windows/desktop/ToolHelp/traversing-the-module-list">Traversing the Module List</a>.</para>
+      <blockquote>
+        <para>[!NOTE]
+The tlhelp32.h header defines Module32Next as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+    <seealso cref="CreateToolhelp32Snapshot" />
+    <seealso cref="MODULEENTRY32W" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/ToolHelp/module-walking">Module Walking</seealso>
+    <seealso cref="Module32FirstW" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/ToolHelp/tool-help-functions">Tool Help Functions</seealso>
+  </member>
+  <member name="Windows.Module32NextW">
+    <summary>
+      <para>Retrieves information about the next module associated with a process or thread.</para>
+    </summary>
+    <param name="hSnapshot">
+      <para>A handle to the snapshot returned from a previous call to the
+<see cref="CreateToolhelp32Snapshot" /> function.</para>
+    </param>
+    <param name="lpme">
+      <para>A pointer to a
+<see cref="MODULEENTRY32W" /> structure.</para>
+    </param>
+    <returns>
+      <para>Returns <b>TRUE</b> if the next entry of the module list has been copied to the buffer or <b>FALSE</b> otherwise. The <b>ERROR_NO_MORE_FILES</b> error value is returned by the
+<see cref="GetLastError" /> function if no more modules exist.</para>
+    </returns>
+    <remarks>
+      <para>To retrieve information about first module associated with a process, use the
+<see cref="Module32FirstW" /> function.</para>
+      <h4>Examples</h4>
+      <para>For an example, see
+<a href="https://docs.microsoft.com//windows/desktop/ToolHelp/traversing-the-module-list">Traversing the Module List</a>.</para>
+      <blockquote>
+        <para>[!NOTE]
+The tlhelp32.h header defines Module32Next as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+    <seealso cref="CreateToolhelp32Snapshot" />
+    <seealso cref="MODULEENTRY32W" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/ToolHelp/module-walking">Module Walking</seealso>
+    <seealso cref="Module32FirstW" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/ToolHelp/tool-help-functions">Tool Help Functions</seealso>
+  </member>
+  <member name="Windows.Process32First">
+    <summary>
+      <para>Retrieves information about the first process encountered in a system snapshot.</para>
+    </summary>
+    <param name="hSnapshot">
+      <para>A handle to the snapshot returned from a previous call to the
+<see cref="CreateToolhelp32Snapshot" /> function.</para>
+    </param>
+    <param name="lppe">
+      <para>A pointer to a
+<see cref="PROCESSENTRY32" /> structure. It contains process information such as the name of the executable file, the process identifier, and the process identifier of the parent process.</para>
+    </param>
+    <returns>
+      <para>Returns <b>TRUE</b> if the first entry of the process list has been copied to the buffer or <b>FALSE</b> otherwise. The <b>ERROR_NO_MORE_FILES</b> error value is returned by the
+<see cref="GetLastError" /> function if no processes exist or the snapshot does not contain process information.</para>
+    </returns>
+    <remarks>
+      <para>The calling application must set the <b>dwSize</b> member of
+<see cref="PROCESSENTRY32" /> to the size, in bytes, of the structure.</para>
+      <para>To retrieve information about other processes recorded in the same snapshot, use the
+<see cref="Process32Next" /> function.</para>
+      <h4>Examples</h4>
+      <para>For an example, see
+<a href="https://docs.microsoft.com//windows/desktop/ToolHelp/taking-a-snapshot-and-viewing-processes">Taking a Snapshot and Viewing Processes</a>.</para>
+    </remarks>
+    <seealso cref="CreateToolhelp32Snapshot" />
+    <seealso cref="PROCESSENTRY32" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/ToolHelp/process-walking">Process Walking</seealso>
+    <seealso cref="Process32Next" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/ToolHelp/tool-help-functions">Tool Help Functions</seealso>
+  </member>
+  <member name="Windows.Process32FirstW">
+    <summary>
+      <para>Retrieves information about the first process encountered in a system snapshot.</para>
+    </summary>
+    <param name="hSnapshot">
+      <para>A handle to the snapshot returned from a previous call to the
+<see cref="CreateToolhelp32Snapshot" /> function.</para>
+    </param>
+    <param name="lppe">
+      <para>A pointer to a
+<see cref="PROCESSENTRY32" /> structure. It contains process information such as the name of the executable file, the process identifier, and the process identifier of the parent process.</para>
+    </param>
+    <returns>
+      <para>Returns <b>TRUE</b> if the first entry of the process list has been copied to the buffer or <b>FALSE</b> otherwise. The <b>ERROR_NO_MORE_FILES</b> error value is returned by the
+<see cref="GetLastError" /> function if no processes exist or the snapshot does not contain process information.</para>
+    </returns>
+    <remarks>
+      <para>The calling application must set the <b>dwSize</b> member of
+<see cref="PROCESSENTRY32" /> to the size, in bytes, of the structure.</para>
+      <para>To retrieve information about other processes recorded in the same snapshot, use the
+<see cref="Process32Next" /> function.</para>
+      <h4>Examples</h4>
+      <para>For an example, see
+<a href="https://docs.microsoft.com//windows/desktop/ToolHelp/taking-a-snapshot-and-viewing-processes">Taking a Snapshot and Viewing Processes</a>.</para>
+    </remarks>
+    <seealso cref="CreateToolhelp32Snapshot" />
+    <seealso cref="PROCESSENTRY32" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/ToolHelp/process-walking">Process Walking</seealso>
+    <seealso cref="Process32Next" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/ToolHelp/tool-help-functions">Tool Help Functions</seealso>
+  </member>
+  <member name="Windows.Process32First">
+    <summary>
+      <para>Retrieves information about the first process encountered in a system snapshot.</para>
+    </summary>
+    <param name="hSnapshot">
+      <para>A handle to the snapshot returned from a previous call to the
+<see cref="CreateToolhelp32Snapshot" /> function.</para>
+    </param>
+    <param name="lppe">
+      <para>A pointer to a
+<see cref="PROCESSENTRY32W" /> structure. It contains process information such as the name of the executable file, the process identifier, and the process identifier of the parent process.</para>
+    </param>
+    <returns>
+      <para>Returns <b>TRUE</b> if the first entry of the process list has been copied to the buffer or <b>FALSE</b> otherwise. The <b>ERROR_NO_MORE_FILES</b> error value is returned by the
+<see cref="GetLastError" /> function if no processes exist or the snapshot does not contain process information.</para>
+    </returns>
+    <remarks>
+      <para>The calling application must set the <b>dwSize</b> member of
+<see cref="PROCESSENTRY32W" /> to the size, in bytes, of the structure.</para>
+      <para>To retrieve information about other processes recorded in the same snapshot, use the
+<see cref="Process32Next" /> function.</para>
+      <h4>Examples</h4>
+      <para>For an example, see
+<a href="https://docs.microsoft.com//windows/desktop/ToolHelp/taking-a-snapshot-and-viewing-processes">Taking a Snapshot and Viewing Processes</a>.</para>
+      <blockquote>
+        <para>[!NOTE]
+The tlhelp32.h header defines Process32First as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+    <seealso cref="CreateToolhelp32Snapshot" />
+    <seealso cref="PROCESSENTRY32W" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/ToolHelp/process-walking">Process Walking</seealso>
+    <seealso cref="Process32NextW" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/ToolHelp/tool-help-functions">Tool Help Functions</seealso>
+  </member>
+  <member name="Windows.Process32FirstW">
+    <summary>
+      <para>Retrieves information about the first process encountered in a system snapshot.</para>
+    </summary>
+    <param name="hSnapshot">
+      <para>A handle to the snapshot returned from a previous call to the
+<see cref="CreateToolhelp32Snapshot" /> function.</para>
+    </param>
+    <param name="lppe">
+      <para>A pointer to a
+<see cref="PROCESSENTRY32W" /> structure. It contains process information such as the name of the executable file, the process identifier, and the process identifier of the parent process.</para>
+    </param>
+    <returns>
+      <para>Returns <b>TRUE</b> if the first entry of the process list has been copied to the buffer or <b>FALSE</b> otherwise. The <b>ERROR_NO_MORE_FILES</b> error value is returned by the
+<see cref="GetLastError" /> function if no processes exist or the snapshot does not contain process information.</para>
+    </returns>
+    <remarks>
+      <para>The calling application must set the <b>dwSize</b> member of
+<see cref="PROCESSENTRY32W" /> to the size, in bytes, of the structure.</para>
+      <para>To retrieve information about other processes recorded in the same snapshot, use the
+<see cref="Process32Next" /> function.</para>
+      <h4>Examples</h4>
+      <para>For an example, see
+<a href="https://docs.microsoft.com//windows/desktop/ToolHelp/taking-a-snapshot-and-viewing-processes">Taking a Snapshot and Viewing Processes</a>.</para>
+      <blockquote>
+        <para>[!NOTE]
+The tlhelp32.h header defines Process32First as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+    <seealso cref="CreateToolhelp32Snapshot" />
+    <seealso cref="PROCESSENTRY32W" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/ToolHelp/process-walking">Process Walking</seealso>
+    <seealso cref="Process32NextW" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/ToolHelp/tool-help-functions">Tool Help Functions</seealso>
+  </member>
+  <member name="Windows.Process32Next">
+    <summary>
+      <para>Retrieves information about the next process recorded in a system snapshot.</para>
+    </summary>
+    <param name="hSnapshot">
+      <para>A handle to the snapshot returned from a previous call to the
+<see cref="CreateToolhelp32Snapshot" /> function.</para>
+    </param>
+    <param name="lppe">
+      <para>A pointer to a
+<see cref="PROCESSENTRY32" /> structure.</para>
+    </param>
+    <returns>
+      <para>Returns <b>TRUE</b> if the next entry of the process list has been copied to the buffer or <b>FALSE</b> otherwise. The <b>ERROR_NO_MORE_FILES</b> error value is returned by the
+<see cref="GetLastError" /> function if no processes exist or the snapshot does not contain process information.</para>
+    </returns>
+    <remarks>
+      <para>To retrieve information about the first process recorded in a snapshot, use the
+<see cref="Process32First" /> function.</para>
+      <h4>Examples</h4>
+      <para>For an example, see
+<a href="https://docs.microsoft.com//windows/desktop/ToolHelp/taking-a-snapshot-and-viewing-processes">Taking a Snapshot and Viewing Processes</a>.</para>
+    </remarks>
+    <seealso cref="CreateToolhelp32Snapshot" />
+    <seealso cref="PROCESSENTRY32" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/ToolHelp/process-walking">Process Walking</seealso>
+    <seealso cref="Process32First" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/ToolHelp/tool-help-functions">Tool Help Functions</seealso>
+  </member>
+  <member name="Windows.Process32NextW">
+    <summary>
+      <para>Retrieves information about the next process recorded in a system snapshot.</para>
+    </summary>
+    <param name="hSnapshot">
+      <para>A handle to the snapshot returned from a previous call to the
+<see cref="CreateToolhelp32Snapshot" /> function.</para>
+    </param>
+    <param name="lppe">
+      <para>A pointer to a
+<see cref="PROCESSENTRY32" /> structure.</para>
+    </param>
+    <returns>
+      <para>Returns <b>TRUE</b> if the next entry of the process list has been copied to the buffer or <b>FALSE</b> otherwise. The <b>ERROR_NO_MORE_FILES</b> error value is returned by the
+<see cref="GetLastError" /> function if no processes exist or the snapshot does not contain process information.</para>
+    </returns>
+    <remarks>
+      <para>To retrieve information about the first process recorded in a snapshot, use the
+<see cref="Process32First" /> function.</para>
+      <h4>Examples</h4>
+      <para>For an example, see
+<a href="https://docs.microsoft.com//windows/desktop/ToolHelp/taking-a-snapshot-and-viewing-processes">Taking a Snapshot and Viewing Processes</a>.</para>
+    </remarks>
+    <seealso cref="CreateToolhelp32Snapshot" />
+    <seealso cref="PROCESSENTRY32" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/ToolHelp/process-walking">Process Walking</seealso>
+    <seealso cref="Process32First" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/ToolHelp/tool-help-functions">Tool Help Functions</seealso>
+  </member>
+  <member name="Windows.Process32Next">
+    <summary>
+      <para>Retrieves information about the next process recorded in a system snapshot.</para>
+    </summary>
+    <param name="hSnapshot">
+      <para>A handle to the snapshot returned from a previous call to the
+<see cref="CreateToolhelp32Snapshot" /> function.</para>
+    </param>
+    <param name="lppe">
+      <para>A pointer to a
+<see cref="PROCESSENTRY32W" /> structure.</para>
+    </param>
+    <returns>
+      <para>Returns <b>TRUE</b> if the next entry of the process list has been copied to the buffer or <b>FALSE</b> otherwise. The <b>ERROR_NO_MORE_FILES</b> error value is returned by the
+<see cref="GetLastError" /> function if no processes exist or the snapshot does not contain process information.</para>
+    </returns>
+    <remarks>
+      <para>To retrieve information about the first process recorded in a snapshot, use the
+<see cref="Process32FirstW" /> function.</para>
+      <h4>Examples</h4>
+      <para>For an example, see
+<a href="https://docs.microsoft.com//windows/desktop/ToolHelp/taking-a-snapshot-and-viewing-processes">Taking a Snapshot and Viewing Processes</a>.</para>
+      <blockquote>
+        <para>[!NOTE]
+The tlhelp32.h header defines Process32Next as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+    <seealso cref="CreateToolhelp32Snapshot" />
+    <seealso cref="PROCESSENTRY32W" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/ToolHelp/process-walking">Process Walking</seealso>
+    <seealso cref="Process32FirstW" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/ToolHelp/tool-help-functions">Tool Help Functions</seealso>
+  </member>
+  <member name="Windows.Process32NextW">
+    <summary>
+      <para>Retrieves information about the next process recorded in a system snapshot.</para>
+    </summary>
+    <param name="hSnapshot">
+      <para>A handle to the snapshot returned from a previous call to the
+<see cref="CreateToolhelp32Snapshot" /> function.</para>
+    </param>
+    <param name="lppe">
+      <para>A pointer to a
+<see cref="PROCESSENTRY32W" /> structure.</para>
+    </param>
+    <returns>
+      <para>Returns <b>TRUE</b> if the next entry of the process list has been copied to the buffer or <b>FALSE</b> otherwise. The <b>ERROR_NO_MORE_FILES</b> error value is returned by the
+<see cref="GetLastError" /> function if no processes exist or the snapshot does not contain process information.</para>
+    </returns>
+    <remarks>
+      <para>To retrieve information about the first process recorded in a snapshot, use the
+<see cref="Process32FirstW" /> function.</para>
+      <h4>Examples</h4>
+      <para>For an example, see
+<a href="https://docs.microsoft.com//windows/desktop/ToolHelp/taking-a-snapshot-and-viewing-processes">Taking a Snapshot and Viewing Processes</a>.</para>
+      <blockquote>
+        <para>[!NOTE]
+The tlhelp32.h header defines Process32Next as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
+      </blockquote>
+    </remarks>
+    <seealso cref="CreateToolhelp32Snapshot" />
+    <seealso cref="PROCESSENTRY32W" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/ToolHelp/process-walking">Process Walking</seealso>
+    <seealso cref="Process32FirstW" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/ToolHelp/tool-help-functions">Tool Help Functions</seealso>
+  </member>
+  <member name="Windows.Thread32First">
+    <summary>
+      <para>Retrieves information about the first thread of any process encountered in a system snapshot.</para>
+    </summary>
+    <param name="hSnapshot">
+      <para>A handle to the snapshot returned from a previous call to the
+<see cref="CreateToolhelp32Snapshot" /> function.</para>
+    </param>
+    <param name="lpte">
+      <para>A pointer to a
+<see cref="THREADENTRY32" /> structure.</para>
+    </param>
+    <returns>
+      <para>Returns <b>TRUE</b> if the first entry of the thread list has been copied to the buffer or <b>FALSE</b> otherwise. The <b>ERROR_NO_MORE_FILES</b> error value is returned by the
+<see cref="GetLastError" /> function if no threads exist or the snapshot does not contain thread information.</para>
+    </returns>
+    <remarks>
+      <para>The calling application must set the <b>dwSize</b> member of
+<see cref="THREADENTRY32" /> to the size, in bytes, of the structure.
+<b>Thread32First</b> changes <b>dwSize</b> to the number of bytes written to the structure. This will never be greater than the initial value of <b>dwSize</b>, but it may be smaller. If the value is smaller, do not rely on the values of any members whose offsets are greater than this value.</para>
+      <para>To retrieve information about other threads recorded in the same snapshot, use the
+<see cref="Thread32Next" /> function.</para>
+      <h4>Examples</h4>
+      <para>For an example, see
+<a href="https://docs.microsoft.com//windows/desktop/ToolHelp/traversing-the-thread-list">Traversing the Thread List</a>.</para>
+    </remarks>
+    <seealso cref="CreateToolhelp32Snapshot" />
+    <seealso cref="THREADENTRY32" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/ToolHelp/thread-walking">Thread Walking</seealso>
+    <seealso cref="Thread32Next" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/ToolHelp/tool-help-functions">Tool Help Functions</seealso>
+  </member>
+  <member name="Windows.Thread32Next">
+    <summary>
+      <para>Retrieves information about the next thread of any process encountered in the system memory snapshot.</para>
+    </summary>
+    <param name="hSnapshot">
+      <para>A handle to the snapshot returned from a previous call to the
+<see cref="CreateToolhelp32Snapshot" /> function.</para>
+    </param>
+    <param name="lpte">
+      <para>A pointer to a
+<see cref="THREADENTRY32" /> structure.</para>
+    </param>
+    <returns>
+      <para>Returns <b>TRUE</b> if the next entry of the thread list has been copied to the buffer or <b>FALSE</b> otherwise. The <b>ERROR_NO_MORE_FILES</b> error value is returned by the
+<see cref="GetLastError" /> function if no threads exist or the snapshot does not contain thread information.</para>
+    </returns>
+    <remarks>
+      <para>To retrieve information about the first thread recorded in a snapshot, use the
+<see cref="Thread32First" /> function.</para>
+      <h4>Examples</h4>
+      <para>For an example, see
+<a href="https://docs.microsoft.com//windows/desktop/ToolHelp/traversing-the-thread-list">Traversing the Thread List</a>.</para>
+    </remarks>
+    <seealso cref="CreateToolhelp32Snapshot" />
+    <seealso cref="THREADENTRY32" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/ToolHelp/thread-walking">Thread Walking</seealso>
+    <seealso cref="Thread32First" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/ToolHelp/tool-help-functions">Tool Help Functions</seealso>
+  </member>
+  <member name="Windows.Toolhelp32ReadProcessMemory">
+    <summary>
+      <para>Copies memory allocated to another process into an application-supplied buffer.</para>
+    </summary>
+    <param name="th32ProcessID">
+      <para>The identifier of the process whose memory is being copied. This parameter can be zero to copy the memory of the current process.</para>
+    </param>
+    <param name="lpBaseAddress">
+      <para>The base address in the specified process to read. Before transferring any data, the system verifies that all data in the base address and memory of the specified size is accessible for read access. If this is the case, the function proceeds. Otherwise, the function fails.</para>
+    </param>
+    <param name="lpBuffer">
+      <para>A pointer to a buffer that receives the contents of the address space of the specified process.</para>
+    </param>
+    <param name="cbRead">
+      <para>The number of bytes to read from the specified process.</para>
+    </param>
+    <param name="lpNumberOfBytesRead">
+      <para>The number of bytes copied to the specified buffer. If this parameter is <b>NULL</b>, it is ignored.</para>
+    </param>
+    <returns>
+      <para>Returns <b>TRUE</b> if successful.</para>
+    </returns>
+    <remarks>
+      <para>This function opens a handle to the target process and closes it once the read operation has completed. If you're planning to perform several reads, use <see cref="ReadProcessMemory" /> instead.</para>
+    </remarks>
+    <seealso cref="Process32First" />
+    <seealso cref="Process32Next" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/ToolHelp/tool-help-functions">Tool Help Functions</seealso>
+  </member>
+</doc>

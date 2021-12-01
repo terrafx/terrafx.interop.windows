@@ -8,15 +8,20 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WICBitmapPlane.xml' path='doc/member[@name="WICBitmapPlane"]/*' />
 [SupportedOSPlatform("windows8.1")]
 public unsafe partial struct WICBitmapPlane
 {
+    /// <include file='WICBitmapPlane.xml' path='doc/member[@name="WICBitmapPlane.Format"]/*' />
     [NativeTypeName("WICPixelFormatGUID")]
     public Guid Format;
 
+    /// <include file='WICBitmapPlane.xml' path='doc/member[@name="WICBitmapPlane.pbBuffer"]/*' />
     public byte* pbBuffer;
 
+    /// <include file='WICBitmapPlane.xml' path='doc/member[@name="WICBitmapPlane.cbStride"]/*' />
     public uint cbStride;
 
+    /// <include file='WICBitmapPlane.xml' path='doc/member[@name="WICBitmapPlane.cbBufferSize"]/*' />
     public uint cbBufferSize;
 }

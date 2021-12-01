@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='GLOBALOPT_RPCTP_VALUES.xml' path='doc/member[@name="GLOBALOPT_RPCTP_VALUES"]/*' />
 public enum GLOBALOPT_RPCTP_VALUES
 {
+    /// <include file='GLOBALOPT_RPCTP_VALUES.xml' path='doc/member[@name="GLOBALOPT_RPCTP_VALUES.COMGLB_RPC_THREADPOOL_SETTING_DEFAULT_POOL"]/*' />
     COMGLB_RPC_THREADPOOL_SETTING_DEFAULT_POOL = 0,
+
+    /// <include file='GLOBALOPT_RPCTP_VALUES.xml' path='doc/member[@name="GLOBALOPT_RPCTP_VALUES.COMGLB_RPC_THREADPOOL_SETTING_PRIVATE_POOL"]/*' />
     COMGLB_RPC_THREADPOOL_SETTING_PRIVATE_POOL = 1,
 }

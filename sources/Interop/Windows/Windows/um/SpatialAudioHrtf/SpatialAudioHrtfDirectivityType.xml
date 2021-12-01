@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SpatialAudioHrtfDirectivityType">
+    <summary>
+      <para>Specifies the shape in which sound is emitted by an <see cref="ISpatialAudioObjectForHrtf" />.</para>
+    </summary>
+  </member>
+  <member name="SpatialAudioHrtfDirectivityType.SpatialAudioHrtfDirectivity_OmniDirectional">
+    <summary>
+      <para>The sound is emitted in all directions.</para>
+    </summary>
+  </member>
+  <member name="SpatialAudioHrtfDirectivityType.SpatialAudioHrtfDirectivity_Cardioid">
+    <summary>
+      <para>The sound is emitted in a cardioid shape.</para>
+    </summary>
+  </member>
+  <member name="SpatialAudioHrtfDirectivityType.SpatialAudioHrtfDirectivity_Cone">
+    <summary>
+      <para>The sound is emitted in a cone shape.</para>
+    </summary>
+  </member>
+</doc>

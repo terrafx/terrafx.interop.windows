@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="EmulationType">
+    <summary>
+      <para>Defines values for media types that the boot image is intended to emulate.</para>
+    </summary>
+    <remarks>
+      <para>Other values not defined here may exist. Consumers of this enumeration should not presume this list to be the only set of valid values.</para>
+      <para>For complete details of these emulation types, see the "El Torito" Bootable CD-ROM format specification at  <a href="https://www.microsoft.com/?ref=go">http://www.phoenix.com/docs/specscdrom.pdf</a>.</para>
+    </remarks>
+    <seealso cref="IBootOptions.get_Emulation" />
+    <seealso cref="IBootOptions.put_Emulation" />
+  </member>
+  <member name="EmulationType.EmulationNone">
+    <summary>
+      <para>No emulation. The BIOS will not emulate any device type or special sector size for the CD during boot from the CD.</para>
+    </summary>
+  </member>
+  <member name="EmulationType.Emulation12MFloppy">
+    <summary>
+      <para>Emulates a 1.2 MB floppy disk.</para>
+    </summary>
+  </member>
+  <member name="EmulationType.Emulation144MFloppy">
+    <summary>
+      <para>Emulates a 1.44 MB floppy disk.</para>
+    </summary>
+  </member>
+  <member name="EmulationType.Emulation288MFloppy">
+    <summary>
+      <para>Emulates a 2.88 MB floppy disk.</para>
+    </summary>
+  </member>
+  <member name="EmulationType.EmulationHardDisk">
+    <summary>
+      <para>Emulates a hard disk.</para>
+    </summary>
+  </member>
+</doc>

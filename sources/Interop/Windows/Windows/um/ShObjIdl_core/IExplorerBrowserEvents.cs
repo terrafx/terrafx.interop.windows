@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IExplorerBrowserEvents.xml' path='doc/member[@name="IExplorerBrowserEvents"]/*' />
 [Guid("361BBDC7-E6EE-4E13-BE58-58E2240C810F")]
 [NativeTypeName("struct IExplorerBrowserEvents : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IExplorerBrowserEvents : IExplorerBrowserEvents.Int
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IExplorerBrowserEvents : IExplorerBrowserEvents.Int
         return ((delegate* unmanaged<IExplorerBrowserEvents*, Guid*, void**, int>)(lpVtbl[0]))((IExplorerBrowserEvents*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IExplorerBrowserEvents : IExplorerBrowserEvents.Int
         return ((delegate* unmanaged<IExplorerBrowserEvents*, uint>)(lpVtbl[1]))((IExplorerBrowserEvents*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IExplorerBrowserEvents : IExplorerBrowserEvents.Int
         return ((delegate* unmanaged<IExplorerBrowserEvents*, uint>)(lpVtbl[2]))((IExplorerBrowserEvents*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IExplorerBrowserEvents.xml' path='doc/member[@name="IExplorerBrowserEvents.OnNavigationPending"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT OnNavigationPending([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlFolder)
@@ -46,6 +51,7 @@ public unsafe partial struct IExplorerBrowserEvents : IExplorerBrowserEvents.Int
         return ((delegate* unmanaged<IExplorerBrowserEvents*, ITEMIDLIST*, int>)(lpVtbl[3]))((IExplorerBrowserEvents*)Unsafe.AsPointer(ref this), pidlFolder);
     }
 
+    /// <include file='IExplorerBrowserEvents.xml' path='doc/member[@name="IExplorerBrowserEvents.OnViewCreated"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT OnViewCreated(IShellView* psv)
@@ -53,6 +59,7 @@ public unsafe partial struct IExplorerBrowserEvents : IExplorerBrowserEvents.Int
         return ((delegate* unmanaged<IExplorerBrowserEvents*, IShellView*, int>)(lpVtbl[4]))((IExplorerBrowserEvents*)Unsafe.AsPointer(ref this), psv);
     }
 
+    /// <include file='IExplorerBrowserEvents.xml' path='doc/member[@name="IExplorerBrowserEvents.OnNavigationComplete"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT OnNavigationComplete([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlFolder)
@@ -60,6 +67,7 @@ public unsafe partial struct IExplorerBrowserEvents : IExplorerBrowserEvents.Int
         return ((delegate* unmanaged<IExplorerBrowserEvents*, ITEMIDLIST*, int>)(lpVtbl[5]))((IExplorerBrowserEvents*)Unsafe.AsPointer(ref this), pidlFolder);
     }
 
+    /// <include file='IExplorerBrowserEvents.xml' path='doc/member[@name="IExplorerBrowserEvents.OnNavigationFailed"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT OnNavigationFailed([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlFolder)

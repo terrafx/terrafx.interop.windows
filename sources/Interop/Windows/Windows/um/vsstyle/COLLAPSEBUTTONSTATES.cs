@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='COLLAPSEBUTTONSTATES.xml' path='doc/member[@name="COLLAPSEBUTTONSTATES"]/*' />
 public enum COLLAPSEBUTTONSTATES
 {
+    /// <include file='COLLAPSEBUTTONSTATES.xml' path='doc/member[@name="COLLAPSEBUTTONSTATES.LVCB_NORMAL"]/*' />
     LVCB_NORMAL = 1,
+
+    /// <include file='COLLAPSEBUTTONSTATES.xml' path='doc/member[@name="COLLAPSEBUTTONSTATES.LVCB_HOVER"]/*' />
     LVCB_HOVER = 2,
+
+    /// <include file='COLLAPSEBUTTONSTATES.xml' path='doc/member[@name="COLLAPSEBUTTONSTATES.LVCB_PUSHED"]/*' />
     LVCB_PUSHED = 3,
 }

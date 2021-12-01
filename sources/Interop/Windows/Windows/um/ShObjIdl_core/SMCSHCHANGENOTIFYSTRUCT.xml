@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SMCSHCHANGENOTIFYSTRUCT">
+    <summary>
+      <para>Contains information about change notification. It is used by <see cref="IShellMenuCallback.CallbackSM" />.</para>
+    </summary>
+  </member>
+  <member name="SMCSHCHANGENOTIFYSTRUCT.lEvent">
+    <summary>
+      <para>Type: <b>long</b></para>
+      <para>An SHCNE value that specifies the type of change that took place. See <see cref="SHChangeNotify" /> for a complete list of these values.</para>
+    </summary>
+  </member>
+  <member name="SMCSHCHANGENOTIFYSTRUCT.pidl1">
+    <summary>
+      <para>Type: <b>PCIDLIST_ABSOLUTE</b></para>
+      <para>PIDL provided by the change notification. The target of this PIDL varies depending on the value of <b>lEvent</b>.</para>
+    </summary>
+  </member>
+  <member name="SMCSHCHANGENOTIFYSTRUCT.pidl2">
+    <summary>
+      <para>Type: <b>PCIDLIST_ABSOLUTE</b></para>
+      <para>A second PIDL provided by the change notification. Not all <b>lEvent</b> values make use of this parameter, in which case its value is <b>NULL</b>.</para>
+    </summary>
+  </member>
+</doc>

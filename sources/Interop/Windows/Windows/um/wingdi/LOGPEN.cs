@@ -5,11 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='LOGPEN.xml' path='doc/member[@name="LOGPEN"]/*' />
 public partial struct LOGPEN
 {
+    /// <include file='LOGPEN.xml' path='doc/member[@name="LOGPEN.lopnStyle"]/*' />
     public uint lopnStyle;
 
+    /// <include file='LOGPEN.xml' path='doc/member[@name="LOGPEN.lopnWidth"]/*' />
     public POINT lopnWidth;
 
+    /// <include file='LOGPEN.xml' path='doc/member[@name="LOGPEN.lopnColor"]/*' />
     public COLORREF lopnColor;
 }

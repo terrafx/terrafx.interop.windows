@@ -5,25 +5,33 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='EMRCREATEMONOBRUSH.xml' path='doc/member[@name="EMRCREATEMONOBRUSH"]/*' />
 public partial struct EMRCREATEMONOBRUSH
 {
+    /// <include file='EMRCREATEMONOBRUSH.xml' path='doc/member[@name="EMRCREATEMONOBRUSH.emr"]/*' />
     public EMR emr;
 
+    /// <include file='EMRCREATEMONOBRUSH.xml' path='doc/member[@name="EMRCREATEMONOBRUSH.ihBrush"]/*' />
     [NativeTypeName("DWORD")]
     public uint ihBrush;
 
+    /// <include file='EMRCREATEMONOBRUSH.xml' path='doc/member[@name="EMRCREATEMONOBRUSH.iUsage"]/*' />
     [NativeTypeName("DWORD")]
     public uint iUsage;
 
+    /// <include file='EMRCREATEMONOBRUSH.xml' path='doc/member[@name="EMRCREATEMONOBRUSH.offBmi"]/*' />
     [NativeTypeName("DWORD")]
     public uint offBmi;
 
+    /// <include file='EMRCREATEMONOBRUSH.xml' path='doc/member[@name="EMRCREATEMONOBRUSH.cbBmi"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbBmi;
 
+    /// <include file='EMRCREATEMONOBRUSH.xml' path='doc/member[@name="EMRCREATEMONOBRUSH.offBits"]/*' />
     [NativeTypeName("DWORD")]
     public uint offBits;
 
+    /// <include file='EMRCREATEMONOBRUSH.xml' path='doc/member[@name="EMRCREATEMONOBRUSH.cbBits"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbBits;
 }

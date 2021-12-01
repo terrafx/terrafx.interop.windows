@@ -5,12 +5,16 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_XML_BUFFER_PROPERTY.xml' path='doc/member[@name="WS_XML_BUFFER_PROPERTY"]/*' />
 public unsafe partial struct WS_XML_BUFFER_PROPERTY
 {
+    /// <include file='WS_XML_BUFFER_PROPERTY.xml' path='doc/member[@name="WS_XML_BUFFER_PROPERTY.id"]/*' />
     public WS_XML_BUFFER_PROPERTY_ID id;
 
+    /// <include file='WS_XML_BUFFER_PROPERTY.xml' path='doc/member[@name="WS_XML_BUFFER_PROPERTY.value"]/*' />
     public void* value;
 
+    /// <include file='WS_XML_BUFFER_PROPERTY.xml' path='doc/member[@name="WS_XML_BUFFER_PROPERTY.valueSize"]/*' />
     [NativeTypeName("ULONG")]
     public uint valueSize;
 }

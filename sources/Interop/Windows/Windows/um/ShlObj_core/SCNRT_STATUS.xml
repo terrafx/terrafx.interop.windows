@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SCNRT_STATUS">
+    <summary>
+      <para>Indicates whether to enable or disable Async Register and Deregister for <see cref="SHChangeNotifyRegisterThread" />.</para>
+    </summary>
+    <seealso cref="SHChangeNotifyRegisterThread" />
+  </member>
+  <member name="SCNRT_STATUS.SCNRT_ENABLE">
+    <summary>
+      <para>Enable Async Register and Deregister for <see cref="SHChangeNotifyRegisterThread" />.</para>
+    </summary>
+  </member>
+  <member name="SCNRT_STATUS.SCNRT_DISABLE">
+    <summary>
+      <para>Disable Async Register and Deregister for <see cref="SHChangeNotifyRegisterThread" />.</para>
+    </summary>
+  </member>
+</doc>

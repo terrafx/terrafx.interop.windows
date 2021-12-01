@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MINCAPTIONSTATES.xml' path='doc/member[@name="MINCAPTIONSTATES"]/*' />
 public enum MINCAPTIONSTATES
 {
+    /// <include file='MINCAPTIONSTATES.xml' path='doc/member[@name="MINCAPTIONSTATES.MNCS_ACTIVE"]/*' />
     MNCS_ACTIVE = 1,
+
+    /// <include file='MINCAPTIONSTATES.xml' path='doc/member[@name="MINCAPTIONSTATES.MNCS_INACTIVE"]/*' />
     MNCS_INACTIVE = 2,
+
+    /// <include file='MINCAPTIONSTATES.xml' path='doc/member[@name="MINCAPTIONSTATES.MNCS_DISABLED"]/*' />
     MNCS_DISABLED = 3,
 }

@@ -1,0 +1,373 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="Windows.DavAddConnection">
+    <summary>
+      <para>Creates a secure connection to a WebDAV server or to a remote file or directory on a WebDAV server.</para>
+    </summary>
+    <param name="ConnectionHandle">
+      <para>A pointer to a variable that receives the connection handle.</para>
+    </param>
+    <param name="RemoteName">
+      <para>A pointer to a <b>null</b>-terminated Unicode string that contains the path to the remote file or directory. This string must begin with the "https://" prefix.</para>
+    </param>
+    <param name="UserName">
+      <para>A pointer to a <b>null</b>-terminated Unicode string that contains the user name to be used for the connection. This parameter is optional and can be <b>NULL</b>.</para>
+    </param>
+    <param name="Password">
+      <para>A pointer to a <b>null</b>-terminated Unicode string that contains the password to be used for the connection. This parameter is optional and can be <b>NULL</b>.</para>
+    </param>
+    <param name="ClientCert">
+      <para>A pointer to a buffer that contains the client certificate to be used for the connection. The certificate must be in a serialized form.</para>
+    </param>
+    <param name="CertSize">
+      <para>Size, in bytes, of the client certificate.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the return value is ERROR_SUCCESS.</para>
+      <para>If the function fails, the return value is a <a href="https://docs.microsoft.com//windows/desktop/Debug/system-error-codes">system error code</a>.</para>
+    </returns>
+    <remarks>
+      <para>To close the connection, use the <see cref="DavDeleteConnection" /> function.</para>
+      <para>Use this function when you are connecting to a WebDAV server using the Secure Sockets Layer (SSL) protocol and therefore must specify a certificate. To connect to a WebDAV server without specifying a certificate, use a Windows networking function such as <see cref="WNetAddConnection2" /> or <see cref="WNetAddConnection3" />.</para>
+    </remarks>
+    <seealso cref="CertOpenSystemStore" />
+  </member>
+  <member name="Windows.DavCancelConnectionsToServer">
+    <summary>
+      <para>Closes all connections to a WebDAV server or a remote file or directory on a WebDAV server.</para>
+    </summary>
+    <param name="lpName">
+      <para>Pointer to a null-terminated Unicode string that contains the name of the remote file or server. This string must be in one of the following formats:</para>
+      <list type="bullet">
+        <item>
+          <description>http://<i>server</i>/<i>path</i></description>
+        </item>
+        <item>
+          <description>\\<i>server</i>\<i>path</i></description>
+        </item>
+        <item>
+          <description>
+            <i>server</i>
+          </description>
+        </item>
+      </list>
+      <para>where <i>server</i> is the name of a WebDAV server, and <i>path</i> is the path to a remote file or directory on the server.</para>
+    </param>
+    <param name="fForce">
+      <para>A Boolean value that specifies whether the connection should be closed if there are open files. Set this parameter to <b>FALSE</b> if the connection should be closed only if there are no open files. Set this parameter to <b>TRUE</b> if the connection should be closed even if there are open files.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the return value is ERROR_SUCCESS.</para>
+      <para>If the function fails, the return value is a <a href="https://docs.microsoft.com//windows/desktop/Debug/system-error-codes">system error code</a> or network error code such as one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>ERROR_INVALID_PARAMETER</b>
+            </para>
+          </description>
+          <description>
+            <para>The <i>lpName</i> parameter contained a value that was not valid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>WN_BAD_NETNAME</b>
+            </para>
+          </description>
+          <description>
+            <para>The <i>lpName</i> parameter contained a value that was not a valid remote file  name.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>WN_NOT_CONNECTED</b>
+            </para>
+          </description>
+          <description>
+            <para>No connections to the remote file or server were found.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>WN_OPEN_FILES</b>
+            </para>
+          </description>
+          <description>
+            <para>There are open files on the connection, and <i>fForce</i> parameter was set to <b>FALSE</b>.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.DavDeleteConnection">
+    <summary>
+      <para>Closes a connection that was created by using the <see cref="DavAddConnection" /> function.</para>
+    </summary>
+    <param name="ConnectionHandle">
+      <para>A handle to an open connection that was  created by using the  <see cref="DavAddConnection" /> function.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the return value is ERROR_SUCCESS.</para>
+      <para>If the function fails, the return value is a <a href="https://docs.microsoft.com//windows/desktop/Debug/system-error-codes">system error code</a>.</para>
+    </returns>
+    <seealso cref="CertCloseStore" />
+  </member>
+  <member name="Windows.DavFlushFile">
+    <summary>
+      <para>Flushes the data from the local version of a remote file to the WebDAV server.</para>
+    </summary>
+    <param name="hFile">
+      <para>A handle to an open file on a WebDAV server.</para>
+      <para>The file handle must have the GENERIC_WRITE access right. For more information, see
+<a href="https://docs.microsoft.com//windows/desktop/FileIO/file-security-and-access-rights">File Security and Access Rights</a>.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds,  or if <i>hFile</i> is a handle to an encrypted file, the return value is ERROR_SUCCESS.</para>
+      <para>If the function fails, the return value is a <a href="https://docs.microsoft.com//windows/desktop/Debug/system-error-codes">system error code</a>.</para>
+    </returns>
+    <remarks>
+      <para>When an application creates or opens a remote file on a WebDAV server, the WebDAV service downloads the file to the local computer, and the application receives a handle to the open file on the server. Any changes that the application makes to the local file have no effect on the remote file until the file handle is closed  and the local version of the file is uploaded to the server. Because the file handle is closed at the same time that the file is saved to the server, the application cannot check whether the file was saved successfully.</para>
+      <para>To  avoid this problem, use the  <b>DavFlushFile</b> function to flush the data from the local version of the file to the remote file on the WebDAV server. If the function succeeds, this means that the file was saved successfully.</para>
+      <para>This function does not flush encrypted files. If <i>hFile</i> is a handle to an encrypted file, <b>DavFlushFile</b> returns ERROR_SUCCESS without flushing the file data.</para>
+    </remarks>
+    <seealso cref="CreateFile" />
+    <seealso cref="FlushFileBuffers" />
+    <seealso cref="OpenFile" />
+    <seealso cref="WriteFile" />
+  </member>
+  <member name="Windows.DavGetExtendedError">
+    <summary>
+      <para>Retrieves the extended error code information that the WebDAV server returned for the previous failed I/O operation.</para>
+    </summary>
+    <param name="hFile">
+      <para>A handle to an open file for which the previous I/O operation has failed. If the previous operation is a failed create operation, in which case there is no open file handle, specify INVALID_HANDLE_VALUE for this parameter.</para>
+    </param>
+    <param name="ExtError">
+      <para>Pointer to a variable that receives the extended error code.</para>
+    </param>
+    <param name="ExtErrorString">
+      <para>Pointer to a buffer  that receives the extended error information as a null-terminated Unicode string.</para>
+    </param>
+    <param name="cChSize">
+      <para>A pointer to a variable that on input specifies the size, in Unicode characters, of the buffer that the <i>ExtErrorString</i> parameter points to. This value must be at least 1024 characters.</para>
+      <para>If the function succeeds, on output the variable receives the number of characters that are actually copied into the buffer. If the function fails with ERROR_INSUFFICIENT_BUFFER, the variable receives 1024, but no characters are copied into the <i>ExtErrorString</i> buffer.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the return value is ERROR_SUCCESS.</para>
+      <para>If the function fails, the return value is a <a href="https://docs.microsoft.com//windows/desktop/Debug/system-error-codes">system error code</a>, such as one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>ERROR_INVALID_PARAMETER</b>
+            </para>
+          </description>
+          <description>
+            <para>One or more parameter values were not valid.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>ERROR_INSUFFICIENT_BUFFER</b>
+            </para>
+          </description>
+          <description>
+            <para>The value that the <i>cChSize</i> parameter points to was less than 1024.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>If you call  this function for a file handle whose previous I/O  operation was successful, it returns ERROR_INVALID_PARAMETER.</para>
+    </remarks>
+    <seealso cref="CreateFile" />
+    <seealso cref="OpenFile" />
+    <seealso cref="WriteFile" />
+  </member>
+  <member name="Windows.DavGetTheLockOwnerOfTheFile">
+    <summary>
+      <para>Returns the file lock owner for a file that is locked on a WebDAV server.</para>
+    </summary>
+    <param name="FileName">
+      <para>A pointer to a <b>null</b>-terminated Unicode string that contains the name of a locked file on the WebDAV server. This string must be in one of the following formats:</para>
+      <list type="bullet">
+        <item>
+          <description>\\<i>server</i>\<i>path</i>\<i>filename</i></description>
+        </item>
+        <item>
+          <description>
+            <i>drive</i>:\<i>filename</i></description>
+        </item>
+      </list>
+      <para>where <i>server</i> is the name of a server, <i>path</i> is the path to a remote file on the server, <i>filename</i> is a valid file name, and <i>drive</i> is the drive letter that a remote share is mapped to on the local computer. (A <i>share</i> is a directory on a server that is made available to users over the network.)</para>
+    </param>
+    <param name="LockOwnerName">
+      <para>A pointer to a caller-allocated buffer  that receives the name of the owner of the file lock. This parameter is optional and can be <b>NULL</b>. If it is <b>NULL</b>, the <i>LockOwnerNameLengthInBytes</i> parameter must point to zero on input.</para>
+    </param>
+    <param name="LockOwnerNameLengthInBytes">
+      <para>A pointer to a variable that on input specifies the maximum size, in Unicode characters, of the buffer that the <i>LockOwnerName</i> parameter points to. If the function succeeds, on output the variable receives the number of characters that were copied into the buffer. If the function fails with ERROR_INSUFFICIENT_BUFFER, on output the variable receives the number of characters needed to store the lock owner name, including the terminating <b>NULL</b> character.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the return value is ERROR_SUCCESS.</para>
+      <para>If the function fails, the return value is a <a href="https://docs.microsoft.com//windows/desktop/Debug/system-error-codes">system error code</a>, such as one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>ERROR_INSUFFICIENT_BUFFER</b>
+            </para>
+          </description>
+          <description>
+            <para>The buffer that the <i>LockOwnerName</i> parameter points to was not large enough to store the lock owner name.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>ERROR_INVALID_PARAMETER</b>
+            </para>
+          </description>
+          <description>
+            <para>One or more parameter values were not valid. For example, this error code is returned if the <i>FileName</i> parameter is a <b>null</b> pointer.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>If a call to a function such as <see cref="CreateFile" /> for a file on a WebDAV server fails with ERROR_LOCK_VIOLATION, you can use the <b>DavGetTheLockOwnerOfTheFile</b> function to determine the owner of the file lock.</para>
+      <para>To obtain the required buffer length for the <i>LockOwnerName</i> buffer, call <b>DavGetTheLockOwnerOfTheFile</b> with <i>LockOwnerName</i> set to <b>NULL</b> and <i>LockOwnerNameLengthInBytes</i> set to zero. The return value is ERROR_INSUFFICIENT_BUFFER, and on output the <i>LockOwnerNameLengthInBytes</i> parameter receives the required buffer length.</para>
+    </remarks>
+  </member>
+  <member name="Windows.DavGetUNCFromHTTPPath">
+    <summary>
+      <para>Converts the specified HTTP path to an equivalent UNC path.</para>
+    </summary>
+    <param name="Url">
+      <para>A pointer to a <b>null</b>-terminated Unicode string that contains the HTTP path. This string can be in any of the following formats, where <i>server</i> is the server name and <i>path</i> is the path to a remote file or directory on the server:</para>
+      <list type="bullet">
+        <item>
+          <description>http://<i>server</i>/<i>path</i></description>
+        </item>
+        <item>
+          <description>http://<i>server</i></description>
+        </item>
+        <item>
+          <description>\\http://<i>server</i>/<i>path</i></description>
+        </item>
+        <item>
+          <description>\\http://<i>server</i></description>
+        </item>
+        <item>
+          <description>https://<i>server</i>/<i>path</i></description>
+        </item>
+        <item>
+          <description>https://<i>server</i></description>
+        </item>
+        <item>
+          <description>\\https://<i>server</i>/<i>path</i></description>
+        </item>
+        <item>
+          <description>\\https://<i>server</i></description>
+        </item>
+        <item>
+          <description>\\<i>server</i>\<i>path</i></description>
+        </item>
+        <item>
+          <description>\\<i>server</i></description>
+        </item>
+      </list>
+    </param>
+    <param name="UncPath">
+      <para>A pointer to a caller-allocated buffer  that receives the UNC path as a <b>null</b>-terminated Unicode string.</para>
+    </param>
+    <param name="lpSize">
+      <para>A pointer to a variable that on input specifies the maximum size, in Unicode characters, of the buffer that the <i>UncPath</i> parameter points to. If the function succeeds, on output the variable receives the number of characters that were copied into the buffer, including the terminating <b>NULL</b> character. If the function fails with ERROR_INSUFFICIENT_BUFFER, on output the variable receives the number of characters needed to store the UNC path, including the terminating <b>NULL</b> character.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the return value is ERROR_SUCCESS.</para>
+      <para>If the function fails, the return value is a <a href="https://docs.microsoft.com//windows/desktop/Debug/system-error-codes">system error code</a>, such as the following value.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>ERROR_INSUFFICIENT_BUFFER</b>
+            </para>
+          </description>
+          <description>
+            <para>The buffer that the <i>UncPath</i> parameter points to was not large enough to store the UNC path.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.DavInvalidateCache">
+    <summary>
+      <para>Invalidates the contents of the local cache for a remote file on a WebDAV server.</para>
+    </summary>
+    <param name="URLName">
+      <para>A pointer to a Unicode string that contains the name of a remote file on a WebDAV server. This name can be an HTTP path name (URL) or a UNC path name.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the return value is ERROR_SUCCESS.</para>
+      <para>If the function fails, the return value is a <a href="https://docs.microsoft.com//windows/desktop/Debug/system-error-codes">system error code</a>.</para>
+    </returns>
+    <remarks>
+      <para>The  <b>DavInvalidateCache</b> function marks the contents of the locally cached file (for the specified URL) for deletion. If this function succeeds, the local file cache is no longer valid. This function fails if there are any handles opened against the file either by the same process or by a different process on the local computer.</para>
+      <para>If the item that is named in the <i>URLName</i> parameter is not present in the cache, <b>DavInvalidateCache</b> returns ERROR_SUCCESS without invalidating the cache.</para>
+    </remarks>
+  </member>
+  <member name="Windows.DavRegisterAuthCallback">
+    <summary>
+      <para>Registers an application-defined callback function that the WebDAV client can use to prompt the user for credentials.</para>
+    </summary>
+    <param name="CallBack">
+      <para>A pointer to a function of type <a href="https://docs.microsoft.com//windows/desktop/api/davclnt/nc-davclnt-pfndavauthcallback">PFNDAVAUTHCALLBACK</a>.</para>
+    </param>
+    <param name="Version">
+      <para>This parameter is reserved for future use.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the return value is an opaque handle. Note that <b>OPAQUE_HANDLE</b> is defined to be a <b>DWORD</b> value.</para>
+    </returns>
+    <remarks>
+      <para>The WebDAV client uses the callback function when it is unable to connect to a remote resource using default credentials.</para>
+      <para>To unregister the callback function, use the <see cref="DavUnregisterAuthCallback" /> function, passing the returned opaque handle in the <i>hCallback</i>  parameter.</para>
+    </remarks>
+    <seealso cref="DavUnregisterAuthCallback" />
+  </member>
+  <member name="Windows.DavUnregisterAuthCallback">
+    <summary>
+      <para>Unregisters a registered callback function that the WebDAV client uses to prompt the user for credentials.</para>
+    </summary>
+    <param name="hCallback">
+      <para>The opaque handle that was returned by the <see cref="DavRegisterAuthCallback" /> function.</para>
+    </param>
+    <remarks>
+      <para>To register the callback function, use the <see cref="DavRegisterAuthCallback" /> function.</para>
+    </remarks>
+    <seealso cref="DavRegisterAuthCallback" />
+  </member>
+</doc>

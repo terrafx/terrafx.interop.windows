@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DispHTMLRuleStyle.xml' path='doc/member[@name="DispHTMLRuleStyle"]/*' />
 [Guid("3050F55C-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct DispHTMLRuleStyle : IDispatch")]
 [NativeInheritance("IDispatch")]
@@ -16,6 +17,7 @@ public unsafe partial struct DispHTMLRuleStyle : DispHTMLRuleStyle.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct DispHTMLRuleStyle : DispHTMLRuleStyle.Interface
         return ((delegate* unmanaged<DispHTMLRuleStyle*, Guid*, void**, int>)(lpVtbl[0]))((DispHTMLRuleStyle*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct DispHTMLRuleStyle : DispHTMLRuleStyle.Interface
         return ((delegate* unmanaged<DispHTMLRuleStyle*, uint>)(lpVtbl[1]))((DispHTMLRuleStyle*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct DispHTMLRuleStyle : DispHTMLRuleStyle.Interface
         return ((delegate* unmanaged<DispHTMLRuleStyle*, uint>)(lpVtbl[2]))((DispHTMLRuleStyle*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct DispHTMLRuleStyle : DispHTMLRuleStyle.Interface
         return ((delegate* unmanaged<DispHTMLRuleStyle*, uint*, int>)(lpVtbl[3]))((DispHTMLRuleStyle*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct DispHTMLRuleStyle : DispHTMLRuleStyle.Interface
         return ((delegate* unmanaged<DispHTMLRuleStyle*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((DispHTMLRuleStyle*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
@@ -60,6 +67,7 @@ public unsafe partial struct DispHTMLRuleStyle : DispHTMLRuleStyle.Interface
         return ((delegate* unmanaged<DispHTMLRuleStyle*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((DispHTMLRuleStyle*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
+    /// <inheritdoc cref="IDispatch.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)

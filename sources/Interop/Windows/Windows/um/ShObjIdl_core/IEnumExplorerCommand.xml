@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IEnumExplorerCommand.Clone">
+    <summary>
+      <para>Not currently implemented.</para>
+    </summary>
+    <param name="ppenum">
+      <para>Type: <b><see cref="IEnumExplorerCommand" />**</b></para>
+      <para>Currently unused.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IEnumExplorerCommand.Next">
+    <summary>
+      <para>Retrieves a specified number of elements that directly follow the current element.</para>
+    </summary>
+    <param name="celt">
+      <para>Type: <b>ULONG</b></para>
+      <para>Specifies the number of elements to fetch.</para>
+    </param>
+    <param name="pUICommand">
+      <para>Type: <b><see cref="IExplorerCommand" />**</b></para>
+      <para>Address of an <see cref="IExplorerCommand" /> interface pointer array of <i>celt</i> elements that, when this method returns, is an array of pointers to the retrieved elements.</para>
+    </param>
+    <param name="pceltFetched">
+      <para>Type: <b>ULONG*</b></para>
+      <para>When this method returns, contains a pointer to the number of elements actually retrieved. This pointer can be <b>NULL</b> if this information is not needed.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IEnumExplorerCommand.Reset">
+    <summary>
+      <para>Resets the enumeration to 0.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IEnumExplorerCommand.Skip">
+    <summary>
+      <para>Not currently implemented.</para>
+    </summary>
+    <param name="celt">
+      <para>Type: <b>ULONG</b></para>
+      <para>Currently unused.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IEnumExplorerCommand">
+    <summary>
+      <para>Provided by an <see cref="IExplorerCommandProvider" />. This interface contains the enumeration of commands to be put into the command bar.</para>
+    </summary>
+    <remarks>
+      <para>None of the methods of this interface should talk to network resources. They are called on the UI thread; communicating with network resources would cause the UI to stop responding.</para>
+    </remarks>
+  </member>
+</doc>

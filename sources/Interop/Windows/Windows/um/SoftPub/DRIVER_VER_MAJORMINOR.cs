@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DRIVER_VER_MAJORMINOR.xml' path='doc/member[@name="DRIVER_VER_MAJORMINOR"]/*' />
 public partial struct DRIVER_VER_MAJORMINOR
 {
+    /// <include file='DRIVER_VER_MAJORMINOR.xml' path='doc/member[@name="DRIVER_VER_MAJORMINOR.dwMajor"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwMajor;
 
+    /// <include file='DRIVER_VER_MAJORMINOR.xml' path='doc/member[@name="DRIVER_VER_MAJORMINOR.dwMinor"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwMinor;
 }

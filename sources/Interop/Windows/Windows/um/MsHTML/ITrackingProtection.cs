@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITrackingProtection.xml' path='doc/member[@name="ITrackingProtection"]/*' />
 [Guid("30510803-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct ITrackingProtection : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITrackingProtection : ITrackingProtection.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITrackingProtection : ITrackingProtection.Interface
         return ((delegate* unmanaged<ITrackingProtection*, Guid*, void**, int>)(lpVtbl[0]))((ITrackingProtection*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITrackingProtection : ITrackingProtection.Interface
         return ((delegate* unmanaged<ITrackingProtection*, uint>)(lpVtbl[1]))((ITrackingProtection*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITrackingProtection : ITrackingProtection.Interface
         return ((delegate* unmanaged<ITrackingProtection*, uint>)(lpVtbl[2]))((ITrackingProtection*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITrackingProtection.xml' path='doc/member[@name="ITrackingProtection.EvaluateUrl"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT EvaluateUrl([NativeTypeName("BSTR")] ushort* bstrUrl, BOOL* pfAllowed)
@@ -46,6 +51,7 @@ public unsafe partial struct ITrackingProtection : ITrackingProtection.Interface
         return ((delegate* unmanaged<ITrackingProtection*, ushort*, BOOL*, int>)(lpVtbl[3]))((ITrackingProtection*)Unsafe.AsPointer(ref this), bstrUrl, pfAllowed);
     }
 
+    /// <include file='ITrackingProtection.xml' path='doc/member[@name="ITrackingProtection.GetEnabled"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetEnabled(BOOL* pfEnabled)

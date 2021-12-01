@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='AccClientDocMgr.xml' path='doc/member[@name="AccClientDocMgr"]/*' />
 [Guid("FC48CC30-4F3E-4FA1-803B-AD0E196A83B1")]
 public partial struct AccClientDocMgr
 {

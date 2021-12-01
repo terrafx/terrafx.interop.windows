@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MENUITEMTEMPLATE">
+    <summary>
+      <para>Defines a menu item in a menu template.</para>
+    </summary>
+    <seealso cref="LoadMenuIndirect" />
+    <seealso cref="MENUITEMTEMPLATEHEADER" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/menurc/menus">Menus</seealso>
+  </member>
+  <member name="MENUITEMTEMPLATE.mtOption">
+    <summary>
+      <para>Type: <b>WORD</b></para>
+      <para>One or more of the following predefined menu options that control the appearance of the menu item as shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>MF_CHECKED</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000008L</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Indicates that the menu item has a check mark next to it.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>MF_GRAYED</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000001L</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Indicates that the menu item is initially inactive and drawn with a gray effect.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>MF_HELP</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00004000L</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Indicates that the menu item has a vertical separator to its left.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>MF_MENUBARBREAK</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000020L</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Indicates that the menu item is placed in a new column. The old and new columns are separated by a bar.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>MF_MENUBREAK</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000040L</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Indicates that the menu item is placed in a new column.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>MF_OWNERDRAW</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000100L</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Indicates that the owner window of the menu is responsible for drawing all visual aspects of the menu item, including highlighted, selected, and inactive states. This option is not valid for an item in a menu bar.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>MF_POPUP</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000010L</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Indicates that the item is one that opens a drop-down menu or submenu.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="MENUITEMTEMPLATE.mtID">
+    <summary>
+      <para>Type: <b>WORD</b></para>
+      <para>The menu item identifier of a command item; a command item sends a command message to its owner window. The <b>MENUITEMTEMPLATE</b> structure for an item that opens a drop-down menu or submenu does not contain the
+<b>mtID</b> member.</para>
+    </summary>
+  </member>
+  <member name="MENUITEMTEMPLATE.mtString">
+    <summary>
+      <para>Type: <b>WCHAR[1]</b></para>
+      <para>The menu item.</para>
+    </summary>
+  </member>
+</doc>

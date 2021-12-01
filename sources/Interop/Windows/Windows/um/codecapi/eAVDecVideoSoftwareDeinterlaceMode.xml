@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="eAVDecVideoSoftwareDeinterlaceMode">
+    <summary>
+      <para>Specifies a video decoder's software deinterlace mode. This enumeration is used with the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avdecvideosoftwaredeinterlacemode-property">AVDecVideoSoftwareDeinterlaceMode</a> property.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-enumerations">Codec API Enumerations</seealso>
+    <seealso cref="ICodecAPI Interface" />
+  </member>
+  <member name="eAVDecVideoSoftwareDeinterlaceMode.eAVDecVideoSoftwareDeinterlaceMode_NoDeinterlacing">
+    <summary>
+      <para>No software deinterlacing.</para>
+    </summary>
+  </member>
+  <member name="eAVDecVideoSoftwareDeinterlaceMode.eAVDecVideoSoftwareDeinterlaceMode_ProgressiveDeinterlacing">
+    <summary>
+      <para>Progressive deinterlacing.</para>
+    </summary>
+  </member>
+  <member name="eAVDecVideoSoftwareDeinterlaceMode.eAVDecVideoSoftwareDeinterlaceMode_BOBDeinterlacing">
+    <summary>
+      <para>Bob deinterlacing.</para>
+    </summary>
+  </member>
+  <member name="eAVDecVideoSoftwareDeinterlaceMode.eAVDecVideoSoftwareDeinterlaceMode_SmartBOBDeinterlacing">
+    <summary>
+      <para>"Smart" bob deinterlacing.</para>
+    </summary>
+  </member>
+</doc>

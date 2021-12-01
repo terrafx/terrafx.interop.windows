@@ -1,0 +1,278 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IAMVideoCompression.get_KeyFrameRate">
+    <summary>
+      <para>The <code>get_KeyFrameRate</code> method retrieves the current key-frame rate.</para>
+    </summary>
+    <param name="pKeyFrameRate">
+      <para>Pointer to a variable that receives the current key-frame rate. If the value is negative, the filter will use the default key-frame rate. If the value is zero, only the first frame is a key frame.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value.</para>
+    </returns>
+    <remarks>
+      <para>The key-frame rate is the number of frames per key frame. For example, if the rate is 15, then a key frame occurs every 15 frames.</para>
+      <para>To determine if the filter supports this method, call the <see cref="IAMVideoCompression.GetInfo" /> method and check for the <b>CompressionCaps_CanKeyFrame</b> flag in the <i>pCapabilities</i> parameter. The <b>GetInfo</b> method also returns the default key-frame rate.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMVideoCompression Interface" />
+    <seealso cref="IAMVideoCompression.put_KeyFrameRate" />
+  </member>
+  <member name="IAMVideoCompression.get_PFramesPerKeyFrame">
+    <summary>
+      <para>The <code>get_PFramesPerKeyFrame</code> method retrieves the rate of predicted (P) frames per key frame.</para>
+    </summary>
+    <param name="pPFramesPerKeyFrame">
+      <para>Pointer to a variable that receives the number of P frames per key frame. If the value is negative, the filter will use the default rate.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value.</para>
+    </returns>
+    <remarks>
+      <para>To determine if the filter supports this method, call the <see cref="IAMVideoCompression.GetInfo" /> method and check for the <b>CompressionCaps_CanBFrame</b> flag in the <i>pCapabilities</i> parameter. The <b>GetInfo</b> method also returns the default P-frame rate.</para>
+      <para>P frames are used in MPEG compression; in general, this property does not apply to other compression formats. For example, suppose a key frame occurs once every 10 frames, and there are three P frames per key frame. The P frames will be spaced evenly between the key frames. The remaining six frames are bidirectional (B) frames.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMVideoCompression Interface" />
+    <seealso cref="IAMVideoCompression.put_KeyFrameRate" />
+  </member>
+  <member name="IAMVideoCompression.get_Quality">
+    <summary>
+      <para>The <code>get_Quality</code> method retrieves the current compression quality.</para>
+    </summary>
+    <param name="pQuality">
+      <para>Pointer to a variable that receives the relative compression quality. The quality is expressed as a value between 0.0 and 1.0, where 1.0 indicates the best quality and 0.0 indicates the worst quality. If the value is negative, the filter will use the default quality.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value.</para>
+    </returns>
+    <remarks>
+      <para>The exact meaning of the quality setting depends on the filter.</para>
+      <para>To determine if the filter supports this method, call the <see cref="IAMVideoCompression.GetInfo" /> method and check for the <b>CompressionCaps_CanQuality</b> flag in the <i>pCapabilities</i> parameter. The <b>GetInfo</b> method also returns the default quality.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMVideoCompression Interface" />
+    <seealso cref="IAMVideoCompression.put_Quality" />
+  </member>
+  <member name="IAMVideoCompression.get_WindowSize">
+    <summary>
+      <para>The <code>get_WindowSize</code> method retrieves the number of frames over which the compressor will maintain the average data rate.</para>
+      <para>For example, assuming a data rate of 100K/sec and a frame rate of 10 frames per second, if the window size is 1, then every frame will be 10K or less. If the window size is 5, then every five consecutive frames will average 10K per frame, but individual frames may exceed this size.</para>
+      <para>The default window size is 1.</para>
+    </summary>
+    <param name="pWindowSize">
+      <para>Pointer to a variable that receives the window size, expressed as a number of frames.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_NOTIMPL</b>
+            </para>
+          </description>
+          <description>
+            <para>Not implemented.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_POINTER</b>
+            </para>
+          </description>
+          <description>
+            <b>NULL</b> pointer argument.
+</description>
+        </item>
+      </list>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMVideoCompression Interface" />
+    <seealso cref="IAMVideoCompression.put_WindowSize" />
+  </member>
+  <member name="IAMVideoCompression.OverrideFrameSize">
+    <summary>
+      <para>The <code>OverrideFrameSize</code> method overrides the frame size of a specified frame.</para>
+    </summary>
+    <param name="FrameNumber">
+      <para>Specifies the frame number. The first frame that the filter delivers is numbered zero.</para>
+    </param>
+    <param name="Size">
+      <para>Specifies the maximum size of the specified frame, in bytes.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_NOTIMPL</b>
+            </para>
+          </description>
+          <description>
+            <para>Not implemented.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>If the filter supports this method, the <see cref="IAMVideoCompression.GetInfo" /> method will return the <b>CompressionCaps_CanCrunch</b> flag in the <i>pCapabilities</i> parameter. However, this flag can also indicate that the filter supports setting the bit rate, so it does not guarantee that the <code>OverrideFrameSize</code> method is supported.</para>
+    </remarks>
+    <seealso cref="CompressionCaps Enumeration" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMVideoCompression Interface" />
+  </member>
+  <member name="IAMVideoCompression.OverrideKeyFrame">
+    <summary>
+      <para>The <code>OverrideKeyFrame</code> method instructs the filter to compress a particular frame as a key frame.</para>
+    </summary>
+    <param name="FrameNumber">
+      <para>Specifies the frame number. The first frame that the filter delivers is numbered zero.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>Success.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>E_NOTIMPL</b>
+            </para>
+          </description>
+          <description>
+            <para>Not implemented.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>If the filter supports this method, you can use it to override the normal key-frame distribution for a particular frame. After the filter creates a key frame, it might reset its count to determine when the next key frame should occur. For example, if the key-frame rate is 10, and an application uses this method to force frame 5 as a key frame, the filter might wait another 10 frames (until frame 15) before it creates the next key frame.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMVideoCompression Interface" />
+  </member>
+  <member name="IAMVideoCompression.put_KeyFrameRate">
+    <summary>
+      <para>The <code>put_KeyFrameRate</code> method sets the key-frame rate.</para>
+    </summary>
+    <param name="KeyFrameRate">
+      <para>Desired key-frame rate. If the value is negative, the filter will use the default key-frame rate. If the value is zero, only the first frame will be a key frame.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value.</para>
+    </returns>
+    <remarks>
+      <para>To determine if the filter supports this method, call the <see cref="IAMVideoCompression.GetInfo" /> method and check for the <b>CompressionCaps_CanKeyFrame</b> flag in the <i>pCapabilities</i> parameter. The <b>GetInfo</b> method also returns the default key-frame rate.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMVideoCompression Interface" />
+    <seealso cref="IAMVideoCompression.get_KeyFrameRate" />
+  </member>
+  <member name="IAMVideoCompression.put_PFramesPerKeyFrame">
+    <summary>
+      <para>The <code>put_PFramesPerKeyFrame</code> method sets the rate of predicted (P) frames per key frame.</para>
+    </summary>
+    <param name="PFramesPerKeyFrame">
+      <para>Specifies the number of P frames per key frame. If the value is negative, the filter will use the default rate.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value.</para>
+    </returns>
+    <remarks>
+      <para>To determine if the filter supports this method, call the <see cref="IAMVideoCompression.GetInfo" /> method and check for the <b>CompressionCaps_CanBFrame</b> flag in the <i>pCapabilities</i> parameter. The <b>GetInfo</b> method also returns the default P-frame rate.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMVideoCompression Interface" />
+    <seealso cref="IAMVideoCompression.get_PFramesPerKeyFrame" />
+  </member>
+  <member name="IAMVideoCompression.put_Quality">
+    <summary>
+      <para>The <code>put_Quality</code> method sets the compression quality.</para>
+    </summary>
+    <param name="Quality">
+      <para>Specifies the quality as a value between 0.0 and 1.0, where 1.0 indicates the best quality and 0.0 indicates the worst quality. If the value is negative, the filter will use the default quality.</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value.</para>
+    </returns>
+    <remarks>
+      <para>To determine if the filter supports this method, call the <see cref="IAMVideoCompression.GetInfo" /> method and check for the <b>CompressionCaps_CanQuality</b> flag in the <i>pCapabilities</i> parameter. The <b>GetInfo</b> method also returns the default quality.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMVideoCompression Interface" />
+    <seealso cref="IAMVideoCompression.get_Quality" />
+  </member>
+  <member name="IAMVideoCompression.put_WindowSize">
+    <summary>
+      <para>The <code>put_WindowSize</code> method sets the number of frames over which the compressor must maintain an average data rate.</para>
+      <para>For example, assuming a data rate of 100K/sec and a frame rate of 10 frames per second, if the window size is 1, then every frame will be 10K or less. If the window size is 5, then every five consecutive frames must average 10K per frame, but individual frames may exceed this size.</para>
+    </summary>
+    <param name="WindowSize">
+      <para>Specifies the window size, expressed as a number of frames. .</para>
+    </param>
+    <returns>
+      <para>Returns an <b>HRESULT</b> value.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IAMVideoCompression Interface" />
+    <seealso cref="IAMVideoCompression.get_WindowSize" />
+  </member>
+  <member name="IAMVideoCompression">
+    <summary>
+      <para>The <b>IAMVideoCompression</b> interface sets and retrieves video compression properties. It is supported by some video compression filters, and also by some video capture filters that output compressed video. Filters that support this interface expose it through their output pins.</para>
+      <para>An application can use this interface to control how video is compressed, including characteristics such as the key-frame rate or the compression quality.</para>
+      <para>A filter that supports this interface might not support every method. Use the <see cref="IAMVideoCompression.GetInfo" /> method to determine which methods the filter supports.</para>
+      <para>
+        <b>Note</b>  To use this interface on a capture filter, you might need to connect the filter to another filter in the graph.</para>
+    </summary>
+    <remarks>
+      <para>For Windows Driver Model (WDM) devices, the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/wdm-video-capture-filter">WDM Video Capture Filter</a> automatically exposes this interface if the WDM driver supports the <a href="https://docs.microsoft.com//windows-hardware/drivers/stream/propsetid-vidcap-videocompression">PROPSETID_VIDCAP_VIDEOCOMPRESSION</a> property set. For more information, see the <a href="https://docs.microsoft.com//windows-hardware/drivers/gettingstarted/">Windows Driver Kit (WDK)</a> documentation.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/interfaces">Interfaces</seealso>
+  </member>
+</doc>

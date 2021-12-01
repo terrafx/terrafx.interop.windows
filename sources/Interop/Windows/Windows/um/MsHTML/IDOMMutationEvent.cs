@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IDOMMutationEvent.xml' path='doc/member[@name="IDOMMutationEvent"]/*' />
 [Guid("305106DA-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IDOMMutationEvent : IDispatch")]
 [NativeInheritance("IDispatch")]
@@ -16,6 +17,7 @@ public unsafe partial struct IDOMMutationEvent : IDOMMutationEvent.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IDOMMutationEvent : IDOMMutationEvent.Interface
         return ((delegate* unmanaged<IDOMMutationEvent*, Guid*, void**, int>)(lpVtbl[0]))((IDOMMutationEvent*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IDOMMutationEvent : IDOMMutationEvent.Interface
         return ((delegate* unmanaged<IDOMMutationEvent*, uint>)(lpVtbl[1]))((IDOMMutationEvent*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IDOMMutationEvent : IDOMMutationEvent.Interface
         return ((delegate* unmanaged<IDOMMutationEvent*, uint>)(lpVtbl[2]))((IDOMMutationEvent*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct IDOMMutationEvent : IDOMMutationEvent.Interface
         return ((delegate* unmanaged<IDOMMutationEvent*, uint*, int>)(lpVtbl[3]))((IDOMMutationEvent*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct IDOMMutationEvent : IDOMMutationEvent.Interface
         return ((delegate* unmanaged<IDOMMutationEvent*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IDOMMutationEvent*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
@@ -60,6 +67,7 @@ public unsafe partial struct IDOMMutationEvent : IDOMMutationEvent.Interface
         return ((delegate* unmanaged<IDOMMutationEvent*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IDOMMutationEvent*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
+    /// <inheritdoc cref="IDispatch.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
@@ -67,6 +75,7 @@ public unsafe partial struct IDOMMutationEvent : IDOMMutationEvent.Interface
         return ((delegate* unmanaged<IDOMMutationEvent*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IDOMMutationEvent*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
+    /// <include file='IDOMMutationEvent.xml' path='doc/member[@name="IDOMMutationEvent.get_relatedNode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT get_relatedNode(IDispatch** p)
@@ -74,6 +83,7 @@ public unsafe partial struct IDOMMutationEvent : IDOMMutationEvent.Interface
         return ((delegate* unmanaged<IDOMMutationEvent*, IDispatch**, int>)(lpVtbl[7]))((IDOMMutationEvent*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IDOMMutationEvent.xml' path='doc/member[@name="IDOMMutationEvent.get_prevValue"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT get_prevValue([NativeTypeName("BSTR *")] ushort** p)
@@ -81,6 +91,7 @@ public unsafe partial struct IDOMMutationEvent : IDOMMutationEvent.Interface
         return ((delegate* unmanaged<IDOMMutationEvent*, ushort**, int>)(lpVtbl[8]))((IDOMMutationEvent*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IDOMMutationEvent.xml' path='doc/member[@name="IDOMMutationEvent.get_newValue"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT get_newValue([NativeTypeName("BSTR *")] ushort** p)
@@ -88,6 +99,7 @@ public unsafe partial struct IDOMMutationEvent : IDOMMutationEvent.Interface
         return ((delegate* unmanaged<IDOMMutationEvent*, ushort**, int>)(lpVtbl[9]))((IDOMMutationEvent*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IDOMMutationEvent.xml' path='doc/member[@name="IDOMMutationEvent.get_attrName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT get_attrName([NativeTypeName("BSTR *")] ushort** p)
@@ -95,6 +107,7 @@ public unsafe partial struct IDOMMutationEvent : IDOMMutationEvent.Interface
         return ((delegate* unmanaged<IDOMMutationEvent*, ushort**, int>)(lpVtbl[10]))((IDOMMutationEvent*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IDOMMutationEvent.xml' path='doc/member[@name="IDOMMutationEvent.get_attrChange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT get_attrChange(ushort* p)
@@ -102,6 +115,7 @@ public unsafe partial struct IDOMMutationEvent : IDOMMutationEvent.Interface
         return ((delegate* unmanaged<IDOMMutationEvent*, ushort*, int>)(lpVtbl[11]))((IDOMMutationEvent*)Unsafe.AsPointer(ref this), p);
     }
 
+    /// <include file='IDOMMutationEvent.xml' path='doc/member[@name="IDOMMutationEvent.initMutationEvent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT initMutationEvent([NativeTypeName("BSTR")] ushort* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, IDispatch* relatedNodeArg, [NativeTypeName("BSTR")] ushort* prevValueArg, [NativeTypeName("BSTR")] ushort* newValueArg, [NativeTypeName("BSTR")] ushort* attrNameArg, ushort attrChangeArg)

@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVDecHEAACDynamicRangeControl.xml' path='doc/member[@name="CODECAPI_AVDecHEAACDynamicRangeControl"]/*' />
 [Guid("287C8ABE-69A4-4D39-8080-D3D9712178A0")]
 public partial struct CODECAPI_AVDecHEAACDynamicRangeControl
 {

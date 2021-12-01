@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_MESSAGE_DESCRIPTION">
+    <summary>
+      <para>The schema for the input/output <a href="https://docs.microsoft.com//windows/desktop/wsw/ws-message">WS_MESSAGE</a> for a given operation description.</para>
+    </summary>
+  </member>
+  <member name="WS_MESSAGE_DESCRIPTION.action">
+    <summary>
+      <para>The action associated with the respective input/output <a href="https://docs.microsoft.com//windows/desktop/wsw/ws-message">WS_MESSAGE</a>.</para>
+      <para>If the message does not have an action, this field can be <b>NULL</b>.</para>
+    </summary>
+  </member>
+  <member name="WS_MESSAGE_DESCRIPTION.bodyElementDescription">
+    <summary>
+      <para>The description of the value within the body of the <a href="https://docs.microsoft.com//windows/desktop/wsw/ws-message">WS_MESSAGE</a>.</para>
+      <para>If <b>NULL</b>, then the message body is assumed to be empty.</para>
+      <para>If non-<b>NULL</b>, this value is read or written as described in
+<see cref="WsWriteBody" /> and <see cref="WsReadBody" />.</para>
+    </summary>
+  </member>
+</doc>

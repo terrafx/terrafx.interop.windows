@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CODECAPI_AVEncCommonStreamEndHandling.xml' path='doc/member[@name="CODECAPI_AVEncCommonStreamEndHandling"]/*' />
 [Guid("6AAD30AF-6BA8-4CCC-8FCA-18D19BEAEB1C")]
 public partial struct CODECAPI_AVEncCommonStreamEndHandling
 {

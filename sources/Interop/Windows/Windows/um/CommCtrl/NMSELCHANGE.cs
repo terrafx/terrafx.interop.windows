@@ -5,11 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NMSELCHANGE.xml' path='doc/member[@name="NMSELCHANGE"]/*' />
 public partial struct NMSELCHANGE
 {
+    /// <include file='NMSELCHANGE.xml' path='doc/member[@name="NMSELCHANGE.nmhdr"]/*' />
     public NMHDR nmhdr;
 
+    /// <include file='NMSELCHANGE.xml' path='doc/member[@name="NMSELCHANGE.stSelStart"]/*' />
     public SYSTEMTIME stSelStart;
 
+    /// <include file='NMSELCHANGE.xml' path='doc/member[@name="NMSELCHANGE.stSelEnd"]/*' />
     public SYSTEMTIME stSelEnd;
 }

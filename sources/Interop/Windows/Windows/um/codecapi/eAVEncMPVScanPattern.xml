@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="eAVEncMPVScanPattern">
+    <summary>
+      <para>Specifies the macroblock scan pattern. This enumeration is used with the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avencmpvscanpattern-property">AVEncMPVScanPattern</a> property.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-enumerations">Codec API Enumerations</seealso>
+    <seealso cref="ICodecAPI Interface" />
+  </member>
+  <member name="eAVEncMPVScanPattern.eAVEncMPVScanPattern_Auto">
+    <summary>
+      <para>The encoder selects the scan pattern.</para>
+    </summary>
+  </member>
+  <member name="eAVEncMPVScanPattern.eAVEncMPVScanPattern_ZigZagScan">
+    <summary>
+      <para>Zig-zag scan.</para>
+    </summary>
+  </member>
+  <member name="eAVEncMPVScanPattern.eAVEncMPVScanPattern_AlternateScan">
+    <summary>
+      <para>Alternate-vertical scan.</para>
+    </summary>
+  </member>
+</doc>

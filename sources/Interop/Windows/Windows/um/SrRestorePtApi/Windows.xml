@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="Windows.SRRemoveRestorePoint">
+    <summary>
+      <para>Deletes the specified restore point.</para>
+    </summary>
+    <param name="dwRPNum">
+      <para>The sequence number of the restore point.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the return value is ERROR_SUCCESS.</para>
+      <para>If the specified restore point does not exist or cannot be removed, the return value is ERROR_INVALID_DATA. All other error codes indicate an internal error.</para>
+    </returns>
+    <remarks>
+      <para>Applications should not call System Restore functions using load-time dynamic linking. Instead, use the <see cref="LoadLibrary" /> function to load SrClient.dll and <see cref="GetProcAddress" /> to call the function.</para>
+    </remarks>
+    <seealso cref="SRSetRestorePoint" />
+  </member>
+</doc>

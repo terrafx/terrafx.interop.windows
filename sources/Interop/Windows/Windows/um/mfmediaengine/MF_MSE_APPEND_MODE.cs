@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MF_MSE_APPEND_MODE.xml' path='doc/member[@name="MF_MSE_APPEND_MODE"]/*' />
 public enum MF_MSE_APPEND_MODE
 {
+    /// <include file='MF_MSE_APPEND_MODE.xml' path='doc/member[@name="MF_MSE_APPEND_MODE.MF_MSE_APPEND_MODE_SEGMENTS"]/*' />
     MF_MSE_APPEND_MODE_SEGMENTS = 0,
+
+    /// <include file='MF_MSE_APPEND_MODE.xml' path='doc/member[@name="MF_MSE_APPEND_MODE.MF_MSE_APPEND_MODE_SEQUENCE"]/*' />
     MF_MSE_APPEND_MODE_SEQUENCE = 1,
 }

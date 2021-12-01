@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CERT_QC_STATEMENTS_EXT_INFO">
+    <summary>
+      <para>The <b>CERT_QC_STATEMENTS_EXT_INFO</b> structure contains a sequence of one or more statements that make up the Qualified Certificate (QC) statements extension for a QC.</para>
+    </summary>
+    <seealso href="https://www.ietf.org/rfc/rfc3280.txt">RFC 3280</seealso>
+    <seealso href="https://www.ietf.org/rfc/rfc3739.txt">RFC 3739</seealso>
+  </member>
+  <member name="CERT_QC_STATEMENTS_EXT_INFO.cStatement">
+    <summary>
+      <para>A value that represents the size, in bytes, of the <b>rgStatement</b> array.</para>
+    </summary>
+  </member>
+  <member name="CERT_QC_STATEMENTS_EXT_INFO.rgStatement">
+    <summary>
+      <para>An array of <see cref="CERT_QC_STATEMENT" /> structures that contains the sequence of statements that make up the QC statements extension.</para>
+    </summary>
+  </member>
+</doc>

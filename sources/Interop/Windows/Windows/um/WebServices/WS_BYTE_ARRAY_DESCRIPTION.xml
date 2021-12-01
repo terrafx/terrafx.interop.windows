@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_BYTE_ARRAY_DESCRIPTION">
+    <summary>
+      <para>Specifies constraints on the set of values
+which can be deserialized.This type description is used with <see cref="WS_BYTE_ARRAY_TYPE" /> and is optional.</para>
+    </summary>
+  </member>
+  <member name="WS_BYTE_ARRAY_DESCRIPTION.minByteCount">
+    <summary>
+      <para>Specifies the minimum number of bytes.</para>
+    </summary>
+  </member>
+  <member name="WS_BYTE_ARRAY_DESCRIPTION.maxByteCount">
+    <summary>
+      <para>Specifies the maximum number of bytes.</para>
+    </summary>
+  </member>
+</doc>

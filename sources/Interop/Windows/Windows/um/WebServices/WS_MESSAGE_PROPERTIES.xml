@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_MESSAGE_PROPERTIES">
+    <summary>
+      <para>Specifies a set of <see cref="WS_MESSAGE_PROPERTY" /> structures.</para>
+    </summary>
+  </member>
+  <member name="WS_MESSAGE_PROPERTIES.properties">
+    <summary>
+      <para>An array of properties.  The number of elements in the array is specified
+using the propertyCount parameter.  This field may be <b>NULL</b> if the propertyCount
+is 0.</para>
+    </summary>
+  </member>
+  <member name="WS_MESSAGE_PROPERTIES.propertyCount">
+    <summary>
+      <para>The number of elements in the properties array.</para>
+    </summary>
+  </member>
+</doc>

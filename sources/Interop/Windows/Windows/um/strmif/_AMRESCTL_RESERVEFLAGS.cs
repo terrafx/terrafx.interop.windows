@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='_AMRESCTL_RESERVEFLAGS.xml' path='doc/member[@name="_AMRESCTL_RESERVEFLAGS"]/*' />
 public enum _AMRESCTL_RESERVEFLAGS
 {
+    /// <include file='_AMRESCTL_RESERVEFLAGS.xml' path='doc/member[@name="_AMRESCTL_RESERVEFLAGS.AMRESCTL_RESERVEFLAGS_RESERVE"]/*' />
     AMRESCTL_RESERVEFLAGS_RESERVE = 0,
+
+    /// <include file='_AMRESCTL_RESERVEFLAGS.xml' path='doc/member[@name="_AMRESCTL_RESERVEFLAGS.AMRESCTL_RESERVEFLAGS_UNRESERVE"]/*' />
     AMRESCTL_RESERVEFLAGS_UNRESERVE = 0x1,
 }

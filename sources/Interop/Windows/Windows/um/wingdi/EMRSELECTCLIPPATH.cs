@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='EMRSELECTCLIPPATH.xml' path='doc/member[@name="EMRSELECTCLIPPATH"]/*' />
 public partial struct EMRSELECTCLIPPATH
 {
+    /// <include file='EMRSELECTCLIPPATH.xml' path='doc/member[@name="EMRSELECTCLIPPATH.emr"]/*' />
     public EMR emr;
 
+    /// <include file='EMRSELECTCLIPPATH.xml' path='doc/member[@name="EMRSELECTCLIPPATH.iMode"]/*' />
     [NativeTypeName("DWORD")]
     public uint iMode;
 }

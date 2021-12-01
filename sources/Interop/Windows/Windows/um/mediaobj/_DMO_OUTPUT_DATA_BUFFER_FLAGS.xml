@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="_DMO_OUTPUT_DATA_BUFFER_FLAGS">
+    <summary>
+      <para>The <b>DMO_OUTPUT_DATA_BUFFER_FLAGS</b> enumeration defines flags that describe an output buffer.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dmo-enumerated-types">DMO Enumerated Types</seealso>
+    <seealso cref="IMediaObject.ProcessOutput" />
+  </member>
+  <member name="_DMO_OUTPUT_DATA_BUFFER_FLAGS.DMO_OUTPUT_DATA_BUFFERF_SYNCPOINT">
+    <summary>
+      <para>The beginning of the data is a synchronization point.
+A <i>synchronization point</i> is a random access point. For encoded video, this a sample that can be used as a decoding start point (key frame). For uncompressed audio or video, every sample is a synchronization point.</para>
+    </summary>
+  </member>
+  <member name="_DMO_OUTPUT_DATA_BUFFER_FLAGS.DMO_OUTPUT_DATA_BUFFERF_TIME">
+    <summary>
+      <para>The buffer's time stamp is valid.</para>
+      <para>The buffer's indicated time length is valid.</para>
+    </summary>
+  </member>
+  <member name="_DMO_OUTPUT_DATA_BUFFER_FLAGS.DMO_OUTPUT_DATA_BUFFERF_TIMELENGTH">
+    <summary>
+      <para>The buffer's indicated time length is valid.</para>
+    </summary>
+  </member>
+  <member name="_DMO_OUTPUT_DATA_BUFFER_FLAGS.DMO_OUTPUT_DATA_BUFFERF_DISCONTINUITY">
+    <summary></summary>
+  </member>
+  <member name="_DMO_OUTPUT_DATA_BUFFER_FLAGS.DMO_OUTPUT_DATA_BUFFERF_INCOMPLETE">
+    <summary>
+      <para>There is still input data available for processing, but the output buffer is full.</para>
+    </summary>
+  </member>
+</doc>

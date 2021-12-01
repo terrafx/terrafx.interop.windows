@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PAGEACTION_UI.xml' path='doc/member[@name="PAGEACTION_UI"]/*' />
 public enum PAGEACTION_UI
 {
+    /// <include file='PAGEACTION_UI.xml' path='doc/member[@name="PAGEACTION_UI.PAGEACTION_UI_DEFAULT"]/*' />
     PAGEACTION_UI_DEFAULT = 0,
+
+    /// <include file='PAGEACTION_UI.xml' path='doc/member[@name="PAGEACTION_UI.PAGEACTION_UI_MODAL"]/*' />
     PAGEACTION_UI_MODAL = 1,
+
+    /// <include file='PAGEACTION_UI.xml' path='doc/member[@name="PAGEACTION_UI.PAGEACTION_UI_MODELESS"]/*' />
     PAGEACTION_UI_MODELESS = 2,
+
+    /// <include file='PAGEACTION_UI.xml' path='doc/member[@name="PAGEACTION_UI.PAGEACTION_UI_SILENT"]/*' />
     PAGEACTION_UI_SILENT = 3,
 }

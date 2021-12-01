@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PAGERANGE.xml' path='doc/member[@name="PAGERANGE"]/*' />
 public partial struct PAGERANGE
 {
+    /// <include file='PAGERANGE.xml' path='doc/member[@name="PAGERANGE.nFromPage"]/*' />
     [NativeTypeName("LONG")]
     public int nFromPage;
 
+    /// <include file='PAGERANGE.xml' path='doc/member[@name="PAGERANGE.nToPage"]/*' />
     [NativeTypeName("LONG")]
     public int nToPage;
 }

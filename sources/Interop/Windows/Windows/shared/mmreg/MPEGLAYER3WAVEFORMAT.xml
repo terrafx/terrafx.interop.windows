@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MPEGLAYER3WAVEFORMAT">
+    <summary>
+      <para>The <b>MPEGLAYER3WAVEFORMAT</b> structure describes an MPEG Audio Layer-3 (MP3) audio format.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-structures">DirectShow Structures</seealso>
+  </member>
+  <member name="MPEGLAYER3WAVEFORMAT.wfx">
+    <summary>
+      <para>
+        <a href="https://docs.microsoft.com//previous-versions/dd757713(v=vs.85)">WAVEFORMATEX</a> structure that specifies the basic audio format. The <b>wFormatTag</b> member must be <b>WAVE_FORMAT_MPEGLAYER3</b>. The <b>cbSize</b> member must be at least 12. (For <b>cbSize</b>, you can use the constant <b>MPEGLAYER3_WFX_EXTRA_BYTES</b>, defined in the Mmreg.h.)</para>
+    </summary>
+  </member>
+  <member name="MPEGLAYER3WAVEFORMAT.wID">
+    <summary>
+      <para>Set this structure member to <b>MPEGLAYER3_ID_MPEG</b>.</para>
+    </summary>
+  </member>
+  <member name="MPEGLAYER3WAVEFORMAT.fdwFlags">
+    <summary>
+      <para>Indicates whether padding is used to adjust the average bitrate to the sampling rate. Use one of the following values:</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>MPEGLAYER3_FLAG_PADDING_ISO</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000000</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Insert padding as needed to achieve the stated average bitrate.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>MPEGLAYER3_FLAG_PADDING_ON</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000001</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Always insert padding. The average bit rate may be higher than stated.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>MPEGLAYER3_FLAG_PADDING_OFF</b>
+                </description>
+              </item>
+              <item>
+                <description>0x00000002</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>Never insert padding. The average bit rate may be lower than stated.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="MPEGLAYER3WAVEFORMAT.nBlockSize">
+    <summary>
+      <para>Block size in bytes. This value equals the frame length in bytes x <b>nFramesPerBlock</b>. For MP3 audio, the frame length is calculated as follows: 144 x (bitrate / sample rate) + padding.</para>
+    </summary>
+  </member>
+  <member name="MPEGLAYER3WAVEFORMAT.nFramesPerBlock">
+    <summary>
+      <para>Number of audio frames per block.</para>
+    </summary>
+  </member>
+  <member name="MPEGLAYER3WAVEFORMAT.nCodecDelay">
+    <summary>
+      <para>Encoder delay in samples. If you do not know this value, set this structure member to zero.</para>
+    </summary>
+  </member>
+</doc>

@@ -5,12 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MOUSEHOOKSTRUCTEX.xml' path='doc/member[@name="MOUSEHOOKSTRUCTEX"]/*' />
 [NativeTypeName("struct tagMOUSEHOOKSTRUCTEX : tagMOUSEHOOKSTRUCT")]
 [NativeInheritance("tagMOUSEHOOKSTRUCT")]
 public partial struct MOUSEHOOKSTRUCTEX
 {
     public MOUSEHOOKSTRUCT Base;
 
+    /// <include file='MOUSEHOOKSTRUCTEX.xml' path='doc/member[@name="MOUSEHOOKSTRUCTEX.mouseData"]/*' />
     [NativeTypeName("DWORD")]
     public uint mouseData;
 }

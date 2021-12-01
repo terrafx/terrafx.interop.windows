@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='LINE_DIRECTION.xml' path='doc/member[@name="LINE_DIRECTION"]/*' />
 public enum LINE_DIRECTION
 {
+    /// <include file='LINE_DIRECTION.xml' path='doc/member[@name="LINE_DIRECTION.LINE_DIRECTION_RightToLeft"]/*' />
     LINE_DIRECTION_RightToLeft = 1,
+
+    /// <include file='LINE_DIRECTION.xml' path='doc/member[@name="LINE_DIRECTION.LINE_DIRECTION_LeftToRight"]/*' />
     LINE_DIRECTION_LeftToRight = 2,
+
+    /// <include file='LINE_DIRECTION.xml' path='doc/member[@name="LINE_DIRECTION.LINE_DIRECTION_Max"]/*' />
     LINE_DIRECTION_Max = 2147483647,
 }

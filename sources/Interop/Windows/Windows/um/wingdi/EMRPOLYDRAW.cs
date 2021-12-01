@@ -9,21 +9,28 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='EMRPOLYDRAW.xml' path='doc/member[@name="EMRPOLYDRAW"]/*' />
 public unsafe partial struct EMRPOLYDRAW
 {
+    /// <include file='EMRPOLYDRAW.xml' path='doc/member[@name="EMRPOLYDRAW.emr"]/*' />
     public EMR emr;
 
+    /// <include file='EMRPOLYDRAW.xml' path='doc/member[@name="EMRPOLYDRAW.rclBounds"]/*' />
     public RECTL rclBounds;
 
+    /// <include file='EMRPOLYDRAW.xml' path='doc/member[@name="EMRPOLYDRAW.cptl"]/*' />
     [NativeTypeName("DWORD")]
     public uint cptl;
 
+    /// <include file='EMRPOLYDRAW.xml' path='doc/member[@name="EMRPOLYDRAW.aptl"]/*' />
     [NativeTypeName("POINTL [1]")]
     public _aptl_e__FixedBuffer aptl;
 
+    /// <include file='EMRPOLYDRAW.xml' path='doc/member[@name="EMRPOLYDRAW.abTypes"]/*' />
     [NativeTypeName("BYTE [1]")]
     public fixed byte abTypes[1];
 
+    /// <include file='_aptl_e__FixedBuffer.xml' path='doc/member[@name="_aptl_e__FixedBuffer"]/*' />
     public partial struct _aptl_e__FixedBuffer
     {
         public POINTL e0;

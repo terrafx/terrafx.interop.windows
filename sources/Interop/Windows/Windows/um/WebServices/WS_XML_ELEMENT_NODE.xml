@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_XML_ELEMENT_NODE">
+    <summary>
+      <para>Represents a start element in xml (e.g.
+&lt;a:purchaseOrder xmlns:a="http://tempuri.org" id="5"&gt;)</para>
+    </summary>
+  </member>
+  <member name="WS_XML_ELEMENT_NODE.node">
+    <summary>
+      <para>The base type for all types that derive from <see cref="WS_XML_NODE" />.</para>
+    </summary>
+  </member>
+  <member name="WS_XML_ELEMENT_NODE.prefix">
+    <summary>
+      <para>The prefix of the element.  In the example, it refers to "a".  Empty prefixes are represented by a zero length <see cref="WS_XML_STRING" />.</para>
+    </summary>
+  </member>
+  <member name="WS_XML_ELEMENT_NODE.localName">
+    <summary>
+      <para>The localName of the element.  In the example, it refers to "purchaseOrder".</para>
+    </summary>
+  </member>
+  <member name="WS_XML_ELEMENT_NODE.ns">
+    <summary>
+      <para>The resolved namespace of the prefix.  In the example, it refers to "http://tempuri.org".</para>
+    </summary>
+  </member>
+  <member name="WS_XML_ELEMENT_NODE.attributeCount">
+    <summary>
+      <para>The number of attributes on the element.  In the example, it would be 2.</para>
+    </summary>
+  </member>
+  <member name="WS_XML_ELEMENT_NODE.attributes">
+    <summary>
+      <para>The array of attributes for the element.</para>
+    </summary>
+  </member>
+  <member name="WS_XML_ELEMENT_NODE.isEmpty">
+    <summary>
+      <para>Whether the element is an empty element or not.  In the example, it would be <b>FALSE</b>.</para>
+    </summary>
+  </member>
+</doc>

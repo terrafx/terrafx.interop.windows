@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IWbemUnsecuredApartment.xml' path='doc/member[@name="IWbemUnsecuredApartment"]/*' />
 [Guid("31739D04-3471-4CF4-9A7C-57A44AE71956")]
 [NativeTypeName("struct IWbemUnsecuredApartment : IUnsecuredApartment")]
 [NativeInheritance("IUnsecuredApartment")]
@@ -16,6 +17,7 @@ public unsafe partial struct IWbemUnsecuredApartment : IWbemUnsecuredApartment.I
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IWbemUnsecuredApartment : IWbemUnsecuredApartment.I
         return ((delegate* unmanaged<IWbemUnsecuredApartment*, Guid*, void**, int>)(lpVtbl[0]))((IWbemUnsecuredApartment*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IWbemUnsecuredApartment : IWbemUnsecuredApartment.I
         return ((delegate* unmanaged<IWbemUnsecuredApartment*, uint>)(lpVtbl[1]))((IWbemUnsecuredApartment*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IWbemUnsecuredApartment : IWbemUnsecuredApartment.I
         return ((delegate* unmanaged<IWbemUnsecuredApartment*, uint>)(lpVtbl[2]))((IWbemUnsecuredApartment*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnsecuredApartment.CreateObjectStub" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT CreateObjectStub(IUnknown* pObject, IUnknown** ppStub)
@@ -46,6 +51,7 @@ public unsafe partial struct IWbemUnsecuredApartment : IWbemUnsecuredApartment.I
         return ((delegate* unmanaged<IWbemUnsecuredApartment*, IUnknown*, IUnknown**, int>)(lpVtbl[3]))((IWbemUnsecuredApartment*)Unsafe.AsPointer(ref this), pObject, ppStub);
     }
 
+    /// <include file='IWbemUnsecuredApartment.xml' path='doc/member[@name="IWbemUnsecuredApartment.CreateSinkStub"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT CreateSinkStub(IWbemObjectSink* pSink, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPCWSTR")] ushort* wszReserved, IWbemObjectSink** ppStub)

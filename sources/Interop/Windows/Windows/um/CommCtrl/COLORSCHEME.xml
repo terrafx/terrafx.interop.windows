@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="COLORSCHEME">
+    <summary>
+      <para>Contains information for the drawing of buttons in a toolbar or rebar.</para>
+    </summary>
+  </member>
+  <member name="COLORSCHEME.dwSize">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">DWORD</a></b></para>
+      <para>The size of this structure, in bytes.</para>
+    </summary>
+  </member>
+  <member name="COLORSCHEME.clrBtnHighlight">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">COLORREF</a></b></para>
+      <para>The <a href="https://docs.microsoft.com//windows/desktop/gdi/colorref">COLORREF</a> value that represents the highlight color of the buttons. Use
+<b>CLR_DEFAULT</b> for the default highlight color.</para>
+    </summary>
+  </member>
+  <member name="COLORSCHEME.clrBtnShadow">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">COLORREF</a></b></para>
+      <para>The <a href="https://docs.microsoft.com//windows/desktop/gdi/colorref">COLORREF</a> value that represents the shadow color of the buttons. Use
+<b>CLR_DEFAULT</b> for the default shadow color.</para>
+    </summary>
+  </member>
+</doc>

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DDP_FILE_EXTENT">
+    <summary>
+      <para>
+        <b>DDP_FILE_EXTENT</b> represents the extent of data in a
+file that is to be read in a pending call to
+<a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/ddpbackup/nf-ddpbackup-idedupreadfilecallback-readbackupfile">ReadBackupFile</a>.</para>
+    </summary>
+    <remarks>
+      <para>Data Deduplication needs to read only the portions of a container file that back the restore target file.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/ddpbackup/nf-ddpbackup-idedupreadfilecallback-previewcontainerread">IDedupReadFileCallback.PreviewContainerRead</seealso>
+  </member>
+  <member name="DDP_FILE_EXTENT.Length">
+    <summary>
+      <para>Length, in bytes, of the extent.</para>
+    </summary>
+  </member>
+  <member name="DDP_FILE_EXTENT.Offset">
+    <summary>
+      <para>Offset, in bytes, from the beginning of the file to the beginning of the extent.</para>
+    </summary>
+  </member>
+</doc>

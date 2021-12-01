@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IWICBitmapSource.CopyPalette">
+    <summary>
+      <para>Retrieves the color table for indexed pixel formats.</para>
+    </summary>
+    <param name="pIPalette">
+      <para>Type: <b><see cref="IWICPalette" />*</b></para>
+      <para>An <see cref="IWICPalette" />. A palette can be created using the <see cref="CreatePalette" /> method.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>WINCODEC_ERR_PALETTEUNAVAILABLE</b>
+            </para>
+          </description>
+          <description>
+            <para>The palette was unavailable.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>S_OK</b>
+            </para>
+          </description>
+          <description>
+            <para>The palette was successfully copied.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <remarks>
+      <para>If the <see cref="IWICBitmapSource" /> is an <see cref="IWICBitmapFrameDecode" />, the function may return the image's global palette if a frame-level palette is not available.
+The global palette may also be retrieved using the <see cref="CopyPalette" /> method.</para>
+    </remarks>
+  </member>
+  <member name="IWICBitmapSource.CopyPixels">
+    <summary>
+      <para>Instructs the object to produce pixels.</para>
+    </summary>
+    <param name="prc">
+      <para>Type: <b>const <see cref="WICRect" />*</b></para>
+      <para>The rectangle to copy. A <b>NULL</b> value specifies the entire bitmap.</para>
+    </param>
+    <param name="cbStride">
+      <para>Type: <b>UINT</b></para>
+      <para>The stride of the bitmap</para>
+    </param>
+    <param name="cbBufferSize">
+      <para>Type: <b>UINT</b></para>
+      <para>The size of the buffer.</para>
+    </param>
+    <param name="pbBuffer">
+      <para>Type: <b>BYTE*</b></para>
+      <para>A pointer to the buffer.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>CopyPixels</b> is one of the two main image processing routines (the other being <see cref="Lock" />) triggering the actual processing.
+It instructs the object to produce pixels according to its algorithm - this may involve decoding a portion of a JPEG stored on disk, copying a block of memory, or even analytically computing a complex gradient.
+The algorithm is completely dependent on the object implementing the interface.</para>
+      <para>The caller can restrict the operation to a rectangle of interest (ROI) using the prc parameter.
+The ROI sub-rectangle must be fully contained in the bounds of the bitmap.
+Specifying a <b>NULL</b> ROI implies that the whole bitmap should be returned.</para>
+      <para>The caller controls the memory management and must provide an output buffer (<i>pbBuffer</i>) for the results of the copy along with the buffer's bounds (<i>cbBufferSize</i>).
+The cbStride parameter defines the count of bytes between two vertically adjacent pixels in the output buffer.
+The caller must ensure that there is sufficient buffer to complete the call based on the width, height and pixel format of the bitmap and the sub-rectangle provided to the copy method.</para>
+      <para>If the caller needs to perform numerous copies of an expensive <see cref="IWICBitmapSource" /> such as a JPEG, it is recommended to create an in-memory <see cref="IWICBitmap" /> first.</para>
+      <h3>Codec Developer Remarks</h3>
+      <para>The callee must only write to the first (prc-&gt;Width*bitsperpixel+7)/8 bytes of each line of the output buffer (in this case, a line is a consecutive string of <i>cbStride</i> bytes).</para>
+    </remarks>
+  </member>
+  <member name="IWICBitmapSource.GetPixelFormat">
+    <summary>
+      <para>Retrieves the pixel format of the bitmap source..</para>
+    </summary>
+    <param name="pPixelFormat">
+      <para>Type: <b>WICPixelFormatGUID*</b></para>
+      <para>Receives the pixel format GUID the bitmap is stored in. For a list of available pixel formats, see the <a href="https://docs.microsoft.com//windows/desktop/wic/-wic-codec-native-pixel-formats">Native Pixel Formats</a> topic.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>The pixel format returned by this method is not necessarily the pixel format the image is stored as.
+The codec may perform a format conversion from the storage pixel format to an output pixel format.</para>
+    </remarks>
+  </member>
+  <member name="IWICBitmapSource.GetResolution">
+    <summary>
+      <para>Retrieves the sampling rate between pixels and physical world measurements.</para>
+    </summary>
+    <param name="pDpiX">
+      <para>Type: <b>double*</b></para>
+      <para>A pointer that receives the x-axis dpi resolution.</para>
+    </param>
+    <param name="pDpiY">
+      <para>Type: <b>double*</b></para>
+      <para>A pointer that receives the y-axis dpi resolution.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Some formats, such as GIF and ICO, do not have full DPI support.
+For GIF, this method calculates the DPI values from the aspect ratio, using a base DPI of (96.0, 96.0).
+The ICO format does not support DPI at all, and the method always returns (96.0,96.0) for ICO images.</para>
+      <para>Additionally, WIC itself does not transform images based on the DPI values in an image.
+It is up to the caller to transform an image based on the resolution returned.</para>
+    </remarks>
+  </member>
+  <member name="IWICBitmapSource.GetSize">
+    <summary>
+      <para>Retrieves the pixel width and height of the bitmap.</para>
+    </summary>
+    <param name="puiWidth">
+      <para>Type: <b>UINT*</b></para>
+      <para>A pointer that receives the pixel width of the bitmap.</para>
+    </param>
+    <param name="puiHeight">
+      <para>Type: <b>UINT*</b></para>
+      <para>A pointer that receives the pixel height of the bitmap</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="IWICBitmapSource">
+    <summary>
+      <para>Exposes methods that refers to a source from which pixels are retrieved, but cannot be written back to.</para>
+    </summary>
+    <remarks>
+      <para>This interface provides a common way of accessing and linking together bitmaps, decoders, format converters, and scalers. Components that implement this interface can be connected together in a graph to pull imaging data through.</para>
+      <para>This interface defines only the notion of readability or being able to produce pixels. Modifying or writing to a bitmap is considered to be a specialization specific to bitmaps which have storage and is defined in the descendant interface <see cref="IWICBitmap" />.</para>
+    </remarks>
+    <seealso cref="IWICBitmap" />
+  </member>
+</doc>

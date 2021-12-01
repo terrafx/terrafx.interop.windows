@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IFolderViewSettings.xml' path='doc/member[@name="IFolderViewSettings"]/*' />
 [Guid("AE8C987D-8797-4ED3-BE72-2A47DD938DB0")]
 [NativeTypeName("struct IFolderViewSettings : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IFolderViewSettings : IFolderViewSettings.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IFolderViewSettings : IFolderViewSettings.Interface
         return ((delegate* unmanaged<IFolderViewSettings*, Guid*, void**, int>)(lpVtbl[0]))((IFolderViewSettings*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IFolderViewSettings : IFolderViewSettings.Interface
         return ((delegate* unmanaged<IFolderViewSettings*, uint>)(lpVtbl[1]))((IFolderViewSettings*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IFolderViewSettings : IFolderViewSettings.Interface
         return ((delegate* unmanaged<IFolderViewSettings*, uint>)(lpVtbl[2]))((IFolderViewSettings*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IFolderViewSettings.xml' path='doc/member[@name="IFolderViewSettings.GetColumnPropertyList"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetColumnPropertyList([NativeTypeName("const IID &")] Guid* riid, void** ppv)
@@ -46,6 +51,7 @@ public unsafe partial struct IFolderViewSettings : IFolderViewSettings.Interface
         return ((delegate* unmanaged<IFolderViewSettings*, Guid*, void**, int>)(lpVtbl[3]))((IFolderViewSettings*)Unsafe.AsPointer(ref this), riid, ppv);
     }
 
+    /// <include file='IFolderViewSettings.xml' path='doc/member[@name="IFolderViewSettings.GetGroupByProperty"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetGroupByProperty(PROPERTYKEY* pkey, BOOL* pfGroupAscending)
@@ -53,6 +59,7 @@ public unsafe partial struct IFolderViewSettings : IFolderViewSettings.Interface
         return ((delegate* unmanaged<IFolderViewSettings*, PROPERTYKEY*, BOOL*, int>)(lpVtbl[4]))((IFolderViewSettings*)Unsafe.AsPointer(ref this), pkey, pfGroupAscending);
     }
 
+    /// <include file='IFolderViewSettings.xml' path='doc/member[@name="IFolderViewSettings.GetViewMode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetViewMode(FOLDERLOGICALVIEWMODE* plvm)
@@ -60,6 +67,7 @@ public unsafe partial struct IFolderViewSettings : IFolderViewSettings.Interface
         return ((delegate* unmanaged<IFolderViewSettings*, FOLDERLOGICALVIEWMODE*, int>)(lpVtbl[5]))((IFolderViewSettings*)Unsafe.AsPointer(ref this), plvm);
     }
 
+    /// <include file='IFolderViewSettings.xml' path='doc/member[@name="IFolderViewSettings.GetIconSize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetIconSize(uint* puIconSize)
@@ -67,6 +75,7 @@ public unsafe partial struct IFolderViewSettings : IFolderViewSettings.Interface
         return ((delegate* unmanaged<IFolderViewSettings*, uint*, int>)(lpVtbl[6]))((IFolderViewSettings*)Unsafe.AsPointer(ref this), puIconSize);
     }
 
+    /// <include file='IFolderViewSettings.xml' path='doc/member[@name="IFolderViewSettings.GetFolderFlags"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetFolderFlags(FOLDERFLAGS* pfolderMask, FOLDERFLAGS* pfolderFlags)
@@ -74,6 +83,7 @@ public unsafe partial struct IFolderViewSettings : IFolderViewSettings.Interface
         return ((delegate* unmanaged<IFolderViewSettings*, FOLDERFLAGS*, FOLDERFLAGS*, int>)(lpVtbl[7]))((IFolderViewSettings*)Unsafe.AsPointer(ref this), pfolderMask, pfolderFlags);
     }
 
+    /// <include file='IFolderViewSettings.xml' path='doc/member[@name="IFolderViewSettings.GetSortColumns"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetSortColumns(SORTCOLUMN* rgSortColumns, uint cColumnsIn, uint* pcColumnsOut)
@@ -81,6 +91,7 @@ public unsafe partial struct IFolderViewSettings : IFolderViewSettings.Interface
         return ((delegate* unmanaged<IFolderViewSettings*, SORTCOLUMN*, uint, uint*, int>)(lpVtbl[8]))((IFolderViewSettings*)Unsafe.AsPointer(ref this), rgSortColumns, cColumnsIn, pcColumnsOut);
     }
 
+    /// <include file='IFolderViewSettings.xml' path='doc/member[@name="IFolderViewSettings.GetGroupSubsetCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT GetGroupSubsetCount(uint* pcVisibleRows)

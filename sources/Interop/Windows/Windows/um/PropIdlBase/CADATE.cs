@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CADATE.xml' path='doc/member[@name="CADATE"]/*' />
 public unsafe partial struct CADATE
 {
+    /// <include file='CADATE.xml' path='doc/member[@name="CADATE.cElems"]/*' />
     [NativeTypeName("ULONG")]
     public uint cElems;
 
+    /// <include file='CADATE.xml' path='doc/member[@name="CADATE.pElems"]/*' />
     [NativeTypeName("DATE *")]
     public double* pElems;
 }

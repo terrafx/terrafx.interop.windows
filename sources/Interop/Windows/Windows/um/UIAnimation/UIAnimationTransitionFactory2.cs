@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='UIAnimationTransitionFactory2.xml' path='doc/member[@name="UIAnimationTransitionFactory2"]/*' />
 [Guid("84302F97-7F7B-4040-B190-72AC9D18E420")]
 public partial struct UIAnimationTransitionFactory2
 {

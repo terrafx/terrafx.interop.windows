@@ -1,0 +1,355 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IUIAnimationTransitionLibrary.CreateAccelerateDecelerateTransition">
+    <summary>
+      <para>Creates an accelerate-decelerate transition.</para>
+    </summary>
+    <param name="duration">
+      <para>The duration of the transition.</para>
+    </param>
+    <param name="finalValue">
+      <para>The value of the animation variable at the end of the transition.</para>
+    </param>
+    <param name="accelerationRatio">
+      <para>The ratio of the time spent accelerating to the duration.</para>
+    </param>
+    <param name="decelerationRatio">
+      <para>The ratio of the time spent decelerating to the duration.</para>
+    </param>
+    <param name="transition">
+      <para>The new accelerate-decelerate transition.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>During an accelerate-decelerate transition, the animation variable
+speeds up and then slows down over the duration of the transition, ending at a specified value. You can control how quickly the variable accelerates and decelerates independently, by specifying different acceleration and deceleration ratios.</para>
+      <para>When the initial velocity is zero, the acceleration ratio is the fraction of the duration that the variable will spend accelerating; likewise with the deceleration ratio. If the initial velocity is nonzero, it is the fraction of the time between the velocity reaching zero and the end of transition. The acceleration ratio and the deceleration ratio should sum to a maximum of 1.0.</para>
+      <para>The figures below show the effect on animation variables with different initial velocities during accelerate-decelerate transitions.</para>
+      <para>
+        <img alt="Diagram showing accelerate-decelerate transitions" src="https://docs.microsoft.com/windows/win32/api/UIAnimation/Images/AccelerateDecelerateTransition.png" />
+        <b>Note</b>  d' in the above figure on the right shows the time between the velocity reaching zero and the end of the transition.</para>
+      <h4>Examples</h4>
+      <para>For an example, see <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/updating---timer-driven-animation">Create a Storyboard and Add Transitions</a>.</para>
+    </remarks>
+    <seealso cref="IUIAnimationTransition" />
+    <seealso cref="IUIAnimationTransitionLibrary" />
+  </member>
+  <member name="IUIAnimationTransitionLibrary.CreateConstantTransition">
+    <summary>
+      <para>Creates a constant transition.</para>
+    </summary>
+    <param name="duration">
+      <para>The duration of the transition.</para>
+    </param>
+    <param name="transition">
+      <para>The new constant transition.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>During a constant transition, the value of an animation variable remains at the initial value over the duration of the transition.</para>
+      <para>The figure below shows the effect on an animation variable over time during a constant-duration transition.</para>
+      <para>
+        <img alt="Diagram showing a constant-duration transition" src="https://docs.microsoft.com/windows/win32/api/UIAnimation/Images/ConstantTransition.png" />
+      </para>
+    </remarks>
+    <seealso cref="IUIAnimationTransition" />
+    <seealso cref="IUIAnimationTransitionLibrary" />
+  </member>
+  <member name="IUIAnimationTransitionLibrary.CreateCubicTransition">
+    <summary>
+      <para>Creates a cubic transition.</para>
+    </summary>
+    <param name="duration">
+      <para>The duration of the transition.</para>
+    </param>
+    <param name="finalValue">
+      <para>The value of the animation variable at the end of the transition.</para>
+    </param>
+    <param name="finalVelocity">
+      <para>The velocity of the variable at the end of the transition.</para>
+    </param>
+    <param name="transition">
+      <para>The new cubic transition.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>During a cubic transition, the value of the animation variable changes from its initial value to a specified final value over the duration of the transition, ending at a specified velocity.</para>
+      <para>The figure below shows the effect on an animation variable over time during a cubic transition.</para>
+      <para>
+        <img alt="Diagram showing a cubic transition" src="https://docs.microsoft.com/windows/win32/api/UIAnimation/Images/CubicTransition.png" />
+      </para>
+    </remarks>
+    <seealso cref="IUIAnimationTransition" />
+    <seealso cref="IUIAnimationTransitionLibrary" />
+  </member>
+  <member name="IUIAnimationTransitionLibrary.CreateDiscreteTransition">
+    <summary>
+      <para>Creates a discrete transition.</para>
+    </summary>
+    <param name="delay">
+      <para>The amount of time by which to delay the instantaneous switch to the final value.</para>
+    </param>
+    <param name="finalValue">
+      <para>The value of the animation variable at the end of the transition.</para>
+    </param>
+    <param name="hold">
+      <para>The amount of time by which to hold the variable at its final value.</para>
+    </param>
+    <param name="transition">
+      <para>The new discrete transition.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>During a discrete transition, the animation variable remains at the initial value for a specified delay time, then switches instantaneously to a specified final value and remains at that value for a given hold time.</para>
+      <para>The figure below shows the effect on an animation variable over time during a discrete transition.</para>
+      <para>
+        <img alt="Diagram showing a discrete transition" src="https://docs.microsoft.com/windows/win32/api/UIAnimation/Images/DiscreteTransition.png" />
+      </para>
+    </remarks>
+    <seealso cref="IUIAnimationTransition" />
+    <seealso cref="IUIAnimationTransitionLibrary" />
+  </member>
+  <member name="IUIAnimationTransitionLibrary.CreateInstantaneousTransition">
+    <summary>
+      <para>Creates an instantaneous transition.</para>
+    </summary>
+    <param name="finalValue">
+      <para>The value of the animation variable at the end of the transition.</para>
+    </param>
+    <param name="transition">
+      <para>The new instantaneous transition.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>During an instantaneous transition,
+the value of the animation variable changes instantly from its current value to a specified final value. The duration of this transition is always zero.</para>
+      <para>The figure below shows the effect on an animation variable over time during an instantaneous transition.</para>
+      <para>
+        <img alt="Diagram showing an instantaneous transition" src="https://docs.microsoft.com/windows/win32/api/UIAnimation/Images/InstantaneousTransition.png" />
+      </para>
+    </remarks>
+    <seealso cref="IUIAnimationTransition" />
+    <seealso cref="IUIAnimationTransitionLibrary" />
+  </member>
+  <member name="IUIAnimationTransitionLibrary.CreateLinearTransition">
+    <summary>
+      <para>Creates a linear transition.</para>
+    </summary>
+    <param name="duration">
+      <para>The duration of the transition.</para>
+    </param>
+    <param name="finalValue">
+      <para>The value of the animation variable at the end of the transition.</para>
+    </param>
+    <param name="transition">
+      <para>The new linear transition.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>During a linear transition, the value of the animation variable transitions linearly from its initial value to a  specified final value.</para>
+      <para>The figure below shows the effect on an animation variable over time during a linear transition.</para>
+      <para>
+        <img alt="Diagram showing a linear transition" src="https://docs.microsoft.com/windows/win32/api/UIAnimation/Images/LinearTransition.png" />
+      </para>
+    </remarks>
+    <seealso cref="IUIAnimationTransition" />
+    <seealso cref="IUIAnimationTransitionLibrary" />
+  </member>
+  <member name="IUIAnimationTransitionLibrary.CreateLinearTransitionFromSpeed">
+    <summary>
+      <para>Creates a linear-speed transition.</para>
+    </summary>
+    <param name="speed">
+      <para>The absolute value of the velocity.</para>
+    </param>
+    <param name="finalValue">
+      <para>The value of the animation variable at the end of the transition.</para>
+    </param>
+    <param name="transition">
+      <para>The new linear-speed transition.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>During a linear-speed transition, the value of the animation variable changes at a specified rate. The duration of the transition is determined by  the difference between the initial value and the specified final value.</para>
+      <para>The figure below shows the effect on an animation variable over time during a linear-speed transition.</para>
+      <para>
+        <img alt="Diagram showing the linear transition from speed" src="https://docs.microsoft.com/windows/win32/api/UIAnimation/Images/LinearTransitionFromSpeed.png" />
+      </para>
+    </remarks>
+    <seealso cref="IUIAnimationTransition" />
+    <seealso cref="IUIAnimationTransitionLibrary" />
+  </member>
+  <member name="IUIAnimationTransitionLibrary.CreateParabolicTransitionFromAcceleration">
+    <summary>
+      <para>Creates a parabolic-acceleration transition.</para>
+    </summary>
+    <param name="finalValue">
+      <para>The value of the animation variable at the end of the transition.</para>
+    </param>
+    <param name="finalVelocity">
+      <para>The velocity at the end of the transition.</para>
+    </param>
+    <param name="acceleration">
+      <para>The acceleration during the transition.</para>
+    </param>
+    <param name="transition">
+      <para>The new parabolic-acceleration transition.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>During a parabolic-acceleration transition, the value of the animation variable changes from the  initial value to the final value ending at the specified velocity.  You can control how quickly the variable reaches the final value by specifying the rate of acceleration.</para>
+      <para>The figure below shows the effect on an animation variable over time during a parabolic-acceleration transition.</para>
+      <para>
+        <img alt="Diagram showing a parabolic-acceleration transition" src="https://docs.microsoft.com/windows/win32/api/UIAnimation/Images/ParabolicTransitionFromAcceleration.png" />
+      </para>
+    </remarks>
+    <seealso cref="IUIAnimationTransition" />
+    <seealso cref="IUIAnimationTransitionLibrary" />
+  </member>
+  <member name="IUIAnimationTransitionLibrary.CreateReversalTransition">
+    <summary>
+      <para>Creates a reversal transition.</para>
+    </summary>
+    <param name="duration">
+      <para>The duration of the transition.</para>
+    </param>
+    <param name="transition">
+      <para>The new reversal transition.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>A reversal transition smoothly changes direction over the specified duration. The final value will be the same as the initial value and the final velocity will be the negative of the initial velocity. The figure below shows such a reversal transition.</para>
+      <para>
+        <img alt="Diagram showing a reversal transition" src="https://docs.microsoft.com/windows/win32/api/UIAnimation/Images/ReversalTransition.png" />
+      </para>
+    </remarks>
+    <seealso cref="IUIAnimationTransition" />
+    <seealso cref="IUIAnimationTransitionLibrary" />
+  </member>
+  <member name="IUIAnimationTransitionLibrary.CreateSinusoidalTransitionFromRange">
+    <summary>
+      <para>Creates a sinusoidal-range  transition, with a specified range of oscillation.</para>
+    </summary>
+    <param name="duration">
+      <para>The duration of the transition.</para>
+    </param>
+    <param name="minimumValue">
+      <para>The value of the animation variable at a trough of the sinusoidal wave.</para>
+    </param>
+    <param name="maximumValue">
+      <para>The value of the animation variable at a peak of the sinusoidal wave.</para>
+    </param>
+    <param name="period">
+      <para>The period of oscillation of the sinusoidal wave, in seconds.</para>
+    </param>
+    <param name="slope">
+      <para>The slope at the start of the transition.</para>
+    </param>
+    <param name="transition">
+      <para>The new sinusoidal-range transition.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>The value of the animation variable fluctuates between the specified minimum and maximum values over the entire duration of a  sinusodial-range transition. The <i>slope</i> parameter is used to disambiguate between the two possible sine waves specified by the other parameters.</para>
+      <para>The figure below shows the effect on an animation variable over time during a sinusoidal-range transition. Passing in the <b>UI_ANIMATION_SLOPE_INCREASING</b> enumeration value yields a wave like the solid curve shown in the figure, whereas the <b>UI_ANIMATION_SLOPE_DECREASING</b> value yields a wave like the dashed curve.</para>
+      <para>
+        <img alt="Diagram showing a sinusoidal-range transition" src="https://docs.microsoft.com/windows/win32/api/UIAnimation/Images/SinusolidalTransitionFromRange.png" />
+      </para>
+    </remarks>
+    <seealso cref="IUIAnimationTransition" />
+    <seealso cref="IUIAnimationTransitionLibrary" />
+  </member>
+  <member name="IUIAnimationTransitionLibrary.CreateSinusoidalTransitionFromVelocity">
+    <summary>
+      <para>Creates a sinusoidal-velocity transition, with an amplitude determined by the initial velocity.</para>
+    </summary>
+    <param name="duration">
+      <para>The duration of the transition.</para>
+    </param>
+    <param name="period">
+      <para>The period of oscillation of the sinusoidal wave in seconds.</para>
+    </param>
+    <param name="transition">
+      <para>The new sinusoidal-velocity transition.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>The value of the animation variable oscillates around the initial value over the entire duration of a sinusoidal-range transition. The amplitude of the oscillation is determined by the velocity when the transition begins.</para>
+      <para>The figure below shows the effect on an animation variable over time during a sinusoidal-velocity transition.</para>
+      <para>
+        <img alt="Diagram showing a sinusoidal-velocity transition" src="https://docs.microsoft.com/windows/win32/api/UIAnimation/Images/SinusolidalTransitionFromVelocity.png" />
+      </para>
+    </remarks>
+    <seealso cref="IUIAnimationTransition" />
+    <seealso cref="IUIAnimationTransitionLibrary" />
+  </member>
+  <member name="IUIAnimationTransitionLibrary.CreateSmoothStopTransition">
+    <summary>
+      <para>Creates a smooth-stop transition.</para>
+    </summary>
+    <param name="maximumDuration">
+      <para>The maximum duration of the transition.</para>
+    </param>
+    <param name="finalValue">
+      <para>The value of the animation variable at the end of the transition.</para>
+    </param>
+    <param name="transition">
+      <para>The new smooth-stop transition.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>A smooth-stop transition slows down as it approaches the specified final value, and reaches it with a velocity of zero. The duration of the transition is determined by the initial velocity, the difference between the initial and final values, and the specified maximum duration. If there is no solution consisting of a single parabolic arc, this method creates a cubic transition.</para>
+      <para>The figure below shows the effect on an animation variable over time during a smooth-stop transition.</para>
+      <para>
+        <img alt="Diagram showing a smooth stop transition" src="https://docs.microsoft.com/windows/win32/api/UIAnimation/Images/SmoothStopTransition.png" />
+      </para>
+    </remarks>
+    <seealso cref="IUIAnimationTransition" />
+    <seealso cref="IUIAnimationTransitionLibrary" />
+  </member>
+  <member name="IUIAnimationTransitionLibrary">
+    <summary>
+      <para>Defines a library of standard transitions.</para>
+    </summary>
+    <remarks>
+      <para>Windows Animation includes a library of common transitions that developers can apply to variables through a storyboard. The parameters for specifying a transition depend on the type of transition. For some transitions, the duration of the transition is an explicit parameter; for others, the duration is determined by other parameters, such as speed or acceleration when the transition begins. A transition's initial value or velocity can be overridden if a discontinuous jump is desired, and duration can be queried after the transition is added to a storyboard.</para>
+      <para>If an application requires an effect that cannot be specified using the transition library, developers can implement custom transitions. A custom transition is created by first implementing the interpolator function for the transition, and then by using a factory object to generate transitions from interpolators. An interpolator must implement the <see cref="IUIAnimationInterpolator" /> interface; an implementation of the transition factory object is provided by <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd317024(v=vs.85)">UIAnimationTransitionFactory</a>.</para>
+      <h4>Examples</h4>
+      <para>For an example that creates the transition library object, see <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/adding-animation-to-an-application">Create the Main Animation Objects</a>.</para>
+    </remarks>
+    <seealso cref="IUIAnimationManager.ScheduleTransition" />
+    <seealso cref="IUIAnimationStoryboard.AddKeyframeAfterTransition" />
+    <seealso cref="IUIAnimationStoryboard.AddTransition" />
+    <seealso cref="IUIAnimationStoryboard.AddTransitionAtKeyframe" />
+    <seealso cref="IUIAnimationStoryboard.AddTransitionBetweenKeyframes" />
+    <seealso cref="IUIAnimationTransition" />
+    <seealso cref="IUnknown" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/UIAnimation/storyboard-construction">Storyboard Overview</seealso>
+  </member>
+</doc>

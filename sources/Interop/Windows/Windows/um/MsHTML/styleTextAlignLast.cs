@@ -5,13 +5,27 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='styleTextAlignLast.xml' path='doc/member[@name="styleTextAlignLast"]/*' />
 public enum styleTextAlignLast
 {
+    /// <include file='styleTextAlignLast.xml' path='doc/member[@name="styleTextAlignLast.styleTextAlignLastNotSet"]/*' />
     styleTextAlignLastNotSet = 0,
+
+    /// <include file='styleTextAlignLast.xml' path='doc/member[@name="styleTextAlignLast.styleTextAlignLastLeft"]/*' />
     styleTextAlignLastLeft = 1,
+
+    /// <include file='styleTextAlignLast.xml' path='doc/member[@name="styleTextAlignLast.styleTextAlignLastCenter"]/*' />
     styleTextAlignLastCenter = 2,
+
+    /// <include file='styleTextAlignLast.xml' path='doc/member[@name="styleTextAlignLast.styleTextAlignLastRight"]/*' />
     styleTextAlignLastRight = 3,
+
+    /// <include file='styleTextAlignLast.xml' path='doc/member[@name="styleTextAlignLast.styleTextAlignLastJustify"]/*' />
     styleTextAlignLastJustify = 4,
+
+    /// <include file='styleTextAlignLast.xml' path='doc/member[@name="styleTextAlignLast.styleTextAlignLastAuto"]/*' />
     styleTextAlignLastAuto = 5,
+
+    /// <include file='styleTextAlignLast.xml' path='doc/member[@name="styleTextAlignLast.styleTextAlignLast_Max"]/*' />
     styleTextAlignLast_Max = 2147483647,
 }

@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SYSTEMCLOSESTATES.xml' path='doc/member[@name="SYSTEMCLOSESTATES"]/*' />
 public enum SYSTEMCLOSESTATES
 {
+    /// <include file='SYSTEMCLOSESTATES.xml' path='doc/member[@name="SYSTEMCLOSESTATES.MSYSC_NORMAL"]/*' />
     MSYSC_NORMAL = 1,
+
+    /// <include file='SYSTEMCLOSESTATES.xml' path='doc/member[@name="SYSTEMCLOSESTATES.MSYSC_DISABLED"]/*' />
     MSYSC_DISABLED = 2,
 }

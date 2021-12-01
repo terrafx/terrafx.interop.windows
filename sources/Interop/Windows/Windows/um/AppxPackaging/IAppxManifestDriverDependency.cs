@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAppxManifestDriverDependency.xml' path='doc/member[@name="IAppxManifestDriverDependency"]/*' />
 [Guid("1210CB94-5A92-4602-BE24-79F318AF4AF9")]
 [NativeTypeName("struct IAppxManifestDriverDependency : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IAppxManifestDriverDependency : IAppxManifestDriver
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IAppxManifestDriverDependency : IAppxManifestDriver
         return ((delegate* unmanaged<IAppxManifestDriverDependency*, Guid*, void**, int>)(lpVtbl[0]))((IAppxManifestDriverDependency*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IAppxManifestDriverDependency : IAppxManifestDriver
         return ((delegate* unmanaged<IAppxManifestDriverDependency*, uint>)(lpVtbl[1]))((IAppxManifestDriverDependency*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IAppxManifestDriverDependency : IAppxManifestDriver
         return ((delegate* unmanaged<IAppxManifestDriverDependency*, uint>)(lpVtbl[2]))((IAppxManifestDriverDependency*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAppxManifestDriverDependency.xml' path='doc/member[@name="IAppxManifestDriverDependency.GetDriverConstraints"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetDriverConstraints(IAppxManifestDriverConstraintsEnumerator** driverConstraints)

@@ -5,17 +5,23 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DIBSECTION.xml' path='doc/member[@name="DIBSECTION"]/*' />
 public unsafe partial struct DIBSECTION
 {
+    /// <include file='DIBSECTION.xml' path='doc/member[@name="DIBSECTION.dsBm"]/*' />
     public BITMAP dsBm;
 
+    /// <include file='DIBSECTION.xml' path='doc/member[@name="DIBSECTION.dsBmih"]/*' />
     public BITMAPINFOHEADER dsBmih;
 
+    /// <include file='DIBSECTION.xml' path='doc/member[@name="DIBSECTION.dsBitfields"]/*' />
     [NativeTypeName("DWORD [3]")]
     public fixed uint dsBitfields[3];
 
+    /// <include file='DIBSECTION.xml' path='doc/member[@name="DIBSECTION.dshSection"]/*' />
     public HANDLE dshSection;
 
+    /// <include file='DIBSECTION.xml' path='doc/member[@name="DIBSECTION.dsOffset"]/*' />
     [NativeTypeName("DWORD")]
     public uint dsOffset;
 }

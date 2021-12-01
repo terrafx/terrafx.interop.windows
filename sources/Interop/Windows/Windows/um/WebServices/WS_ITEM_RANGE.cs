@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_ITEM_RANGE.xml' path='doc/member[@name="WS_ITEM_RANGE"]/*' />
 public partial struct WS_ITEM_RANGE
 {
+    /// <include file='WS_ITEM_RANGE.xml' path='doc/member[@name="WS_ITEM_RANGE.minItemCount"]/*' />
     [NativeTypeName("ULONG")]
     public uint minItemCount;
 
+    /// <include file='WS_ITEM_RANGE.xml' path='doc/member[@name="WS_ITEM_RANGE.maxItemCount"]/*' />
     [NativeTypeName("ULONG")]
     public uint maxItemCount;
 }

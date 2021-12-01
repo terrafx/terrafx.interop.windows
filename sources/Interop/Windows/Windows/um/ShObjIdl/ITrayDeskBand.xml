@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ITrayDeskBand.DeskBandRegistrationChanged">
+    <summary>
+      <para>Refreshes the deskband registration cache.</para>
+    </summary>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Call this method immediately after making a change to the deskband registration. For example, through the CLSID_StdComponentCategoriesMgr object.</para>
+    </remarks>
+  </member>
+  <member name="ITrayDeskBand.HideDeskBand">
+    <summary>
+      <para>Hides a specified deskband.</para>
+    </summary>
+    <param name="clsid">
+      <para>Type: <b>REFCLSID</b></para>
+      <para>A reference to a deskband CLSID.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="ITrayDeskBand.IsDeskBandShown">
+    <summary>
+      <para>Indicates whether a deskband is shown.</para>
+    </summary>
+    <param name="clsid">
+      <para>Type: <b>REFCLSID</b></para>
+      <para>A reference to a deskband CLSID.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>Returns S_OK if the deskband is shown, S_FALSE if the deskband is not shown, or an error value otherwise.</para>
+    </returns>
+  </member>
+  <member name="ITrayDeskBand.ShowDeskBand">
+    <summary>
+      <para>Shows a specified deskband.</para>
+    </summary>
+    <param name="clsid">
+      <para>Type: <b>REFCLSID</b></para>
+      <para>A reference to a deskband CLSID.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="ITrayDeskBand">
+    <summary>
+      <para>Exposes methods that show, hide, and query deskbands.</para>
+    </summary>
+  </member>
+</doc>

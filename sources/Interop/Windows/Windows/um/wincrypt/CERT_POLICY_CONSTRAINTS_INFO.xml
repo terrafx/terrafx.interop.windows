@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CERT_POLICY_CONSTRAINTS_INFO">
+    <summary>
+      <para>The <b>CERT_POLICY_CONSTRAINTS_INFO</b> structure contains established policies for accepting certificates as trusted.</para>
+    </summary>
+  </member>
+  <member name="CERT_POLICY_CONSTRAINTS_INFO.fRequireExplicitPolicy">
+    <summary>
+      <para>
+        <b>BOOL</b> flag indicating whether explicit policy information is required.</para>
+    </summary>
+  </member>
+  <member name="CERT_POLICY_CONSTRAINTS_INFO.dwRequireExplicitPolicySkipCerts">
+    <summary>
+      <para>
+        <b>DWORD</b> indicating the number of required explicit policy certificates.</para>
+    </summary>
+  </member>
+  <member name="CERT_POLICY_CONSTRAINTS_INFO.fInhibitPolicyMapping">
+    <summary>
+      <para>
+        <b>BOOL</b> flag indicating whether policy mapping is inhibited.</para>
+    </summary>
+  </member>
+  <member name="CERT_POLICY_CONSTRAINTS_INFO.dwInhibitPolicyMappingSkipCerts">
+    <summary>
+      <para>
+        <b>DWORD</b> indicating the number of policy mapping certificates to be skipped.</para>
+    </summary>
+  </member>
+</doc>

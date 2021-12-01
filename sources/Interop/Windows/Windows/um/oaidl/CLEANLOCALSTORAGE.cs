@@ -5,13 +5,17 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CLEANLOCALSTORAGE.xml' path='doc/member[@name="CLEANLOCALSTORAGE"]/*' />
 public unsafe partial struct CLEANLOCALSTORAGE
 {
+    /// <include file='CLEANLOCALSTORAGE.xml' path='doc/member[@name="CLEANLOCALSTORAGE.pInterface"]/*' />
     public IUnknown* pInterface;
 
+    /// <include file='CLEANLOCALSTORAGE.xml' path='doc/member[@name="CLEANLOCALSTORAGE.pStorage"]/*' />
     [NativeTypeName("PVOID")]
     public void* pStorage;
 
+    /// <include file='CLEANLOCALSTORAGE.xml' path='doc/member[@name="CLEANLOCALSTORAGE.flags"]/*' />
     [NativeTypeName("DWORD")]
     public uint flags;
 }

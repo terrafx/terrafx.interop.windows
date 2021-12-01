@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IUIAnimationTimer.Disable">
+    <summary>
+      <para>Disables the animation timer.</para>
+    </summary>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
+    </returns>
+    <seealso cref="IUIAnimationTimer" />
+    <seealso cref="IUIAnimationTimer.Enable" />
+    <seealso cref="IUIAnimationTimer.IsEnabled" />
+  </member>
+  <member name="IUIAnimationTimer.Enable">
+    <summary>
+      <para>Enables the animation timer.</para>
+    </summary>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
+    </returns>
+    <seealso cref="IUIAnimationTimer" />
+    <seealso cref="IUIAnimationTimer.Disable" />
+    <seealso cref="IUIAnimationTimer.IsEnabled" />
+  </member>
+  <member name="IUIAnimationTimer.GetTime">
+    <summary>
+      <para>Gets the current time.</para>
+    </summary>
+    <param name="seconds">
+      <para>The current time, in <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/ui-animation-seconds">UI_ANIMATION_SECONDS</a>.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>This method can be used in both the application-driven and timer-driven  configurations to retrieve the system time in <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/ui-animation-seconds">UI_ANIMATION_SECONDS</a>, the units used throughout the Windows Animation API.</para>
+      <h4>Examples</h4>
+      <para>For an example, see <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/introducing-windows-animation-manager">Update the Animation Manager and Draw Frames</a>.</para>
+    </remarks>
+    <seealso cref="IUIAnimationTimer" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/UIAnimation/ui-animation-seconds">UI_ANIMATION_SECONDS</seealso>
+  </member>
+  <member name="IUIAnimationTimer.IsEnabled">
+    <summary>
+      <para>Determines whether the timer is currently enabled.</para>
+    </summary>
+    <returns>
+      <para>Returns S_OK if the animation timer is enabled, S_FALSE if the animation timer is disabled, or an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
+    </returns>
+    <seealso cref="IUIAnimationTimer" />
+    <seealso cref="IUIAnimationTimer.Disable" />
+    <seealso cref="IUIAnimationTimer.Enable" />
+  </member>
+  <member name="IUIAnimationTimer.SetFrameRateThreshold">
+    <summary>
+      <para>Sets the frame rate below which the timer notifies the application that rendering is too slow.</para>
+    </summary>
+    <param name="framesPerSecond">
+      <para>The minimum desirable frame rate, in frames per second.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>If the rendering frame rate for an animation falls below the specified frame rate, an
+<see cref="IUIAnimationTimerEventHandler.OnRenderingTooSlow" /> event is raised.</para>
+    </remarks>
+    <seealso cref="IUIAnimationTimer" />
+    <seealso cref="IUIAnimationTimerEventHandler" />
+  </member>
+  <member name="IUIAnimationTimer.SetTimerEventHandler">
+    <summary>
+      <para>Specifies a timer event handler.</para>
+    </summary>
+    <param name="handler">
+      <para>A timer event handler.  The specified object must implement the
+<see cref="IUIAnimationTimerEventHandler" /> interface or be <b>NULL</b>. See Remarks.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>Timing events include the <see cref="OnPreUpdate" />,
+<see cref="OnPostUpdate" />, and
+<see cref="OnRenderingTooSlow" /> methods of the <see cref="IUIAnimationTimerEventHandler" /> interface.</para>
+      <para>Passing <b>NULL</b> for the <i>handler</i> parameter causes Windows Animation to release its reference to any handler object you passed in earlier. This technique can be essential for breaking reference cycles without having to call the <see cref="IUIAnimationManager.Shutdown" /> method.</para>
+      <h4>Examples</h4>
+      <para>For an example, see <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/introducing-windows-animation-manager">Update the Animation Manager and Draw Frames</a>.</para>
+    </remarks>
+    <seealso cref="IUIAnimationTimer" />
+    <seealso cref="IUIAnimationTimer.SetFrameRateThreshold" />
+    <seealso cref="IUIAnimationTimer.SetTimerUpdateHandler" />
+    <seealso cref="IUIAnimationTimerEventHandler" />
+  </member>
+  <member name="IUIAnimationTimer.SetTimerUpdateHandler">
+    <summary>
+      <para>Specifies a timer update handler.</para>
+    </summary>
+    <param name="updateHandler">
+      <para>A timer update handler, or <b>NULL</b> (see Remarks).  The specified object must implement the
+<see cref="IUIAnimationTimerUpdateHandler" /> interface.</para>
+    </param>
+    <param name="idleBehavior">
+      <para>A member of
+<see cref="UI_ANIMATION_IDLE_BEHAVIOR" /></para>
+      <para>that specifies the behavior of the timer when it is idle.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If the update handler is already connected to a timer, this method returns <b>UI_E_TIMER_CLIENT_ALREADY_CONNECTED</b>. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
+    </returns>
+    <remarks>
+      <para>The timer update handler receives time updates (ticks) from the timer. The timer indicates an update by calling
+the <see cref="IUIAnimationTimerUpdateHandler.OnUpdate" /></para>
+      <para>method on the specified handler.</para>
+      <para>Passing <b>NULL</b> for the <i>updateHandler</i> parameter causes Windows Animation to release its reference to any handler object you passed in earlier. This technique can be essential for breaking reference cycles without having to call the <see cref="IUIAnimationManager.Shutdown" /> method.</para>
+      <h4>Examples</h4>
+      <para>For an example, see <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/introducing-windows-animation-manager">Update the Animation Manager</a>.</para>
+    </remarks>
+    <seealso cref="IUIAnimationTimer" />
+    <seealso cref="IUIAnimationTimer.SetTimerEventHandler" />
+    <seealso cref="IUIAnimationTimerUpdateHandler" />
+  </member>
+  <member name="IUIAnimationTimer">
+    <summary>
+      <para>Defines an animation timer, which provides services for managing animation timing.</para>
+    </summary>
+    <remarks>
+      <para>A timer helps to manage animation rendering by automatically indicating the passage of a small unit of time, called a tick. In turn, ticks can trigger animation rendering or other animation events. Each animation timer provides timing for a single animation manager.</para>
+      <para>The timing system is designed to provide the necessary timing services needed to support animations and does not require applications to play an explicit role in generating the ticks. The animation timer can be set up to automatically update the animation manager for each tick without application-side handling.</para>
+      <para>An application may not need to use a timer with Windows Animation, depending on the graphics platform it is using. For example, an application drawing with Direct2D or Direct3D can synchronize to monitor's refresh rate, yielding very smooth animation. However, such applications may still find the <b>IUIAnimationTimer</b> interface useful for its <see cref="GetTime" /> method, which returns an accurate system time in <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/ui-animation-seconds">UI_ANIMATION_SECONDS</a>, the units used throughout the Windows Animation API.</para>
+      <h4>Examples</h4>
+      <para>For an example that creates the animation timer object, see <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/adding-animation-to-an-application">Create the Main Animation Objects</a>.</para>
+    </remarks>
+    <seealso cref="IUIAnimationTimerClientEventHandler" />
+    <seealso cref="IUIAnimationTimerEventHandler" />
+    <seealso cref="IUIAnimationTimerUpdateHandler" />
+    <seealso cref="IUnknown" />
+  </member>
+</doc>

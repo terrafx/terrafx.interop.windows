@@ -9,14 +9,18 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TOKEN_GROUPS.xml' path='doc/member[@name="TOKEN_GROUPS"]/*' />
 public partial struct TOKEN_GROUPS
 {
+    /// <include file='TOKEN_GROUPS.xml' path='doc/member[@name="TOKEN_GROUPS.GroupCount"]/*' />
     [NativeTypeName("DWORD")]
     public uint GroupCount;
 
+    /// <include file='TOKEN_GROUPS.xml' path='doc/member[@name="TOKEN_GROUPS.Groups"]/*' />
     [NativeTypeName("SID_AND_ATTRIBUTES [1]")]
     public _Groups_e__FixedBuffer Groups;
 
+    /// <include file='_Groups_e__FixedBuffer.xml' path='doc/member[@name="_Groups_e__FixedBuffer"]/*' />
     public partial struct _Groups_e__FixedBuffer
     {
         public SID_AND_ATTRIBUTES e0;

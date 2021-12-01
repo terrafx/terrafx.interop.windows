@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="COMPRESS_INFORMATION_CLASS">
+    <summary>
+      <para>The values of this enumeration identify the type of information class being set or retrieved.</para>
+    </summary>
+  </member>
+  <member name="COMPRESS_INFORMATION_CLASS.COMPRESS_INFORMATION_CLASS_INVALID">
+    <summary>
+      <para>Invalid information class</para>
+    </summary>
+  </member>
+  <member name="COMPRESS_INFORMATION_CLASS.COMPRESS_INFORMATION_CLASS_BLOCK_SIZE">
+    <summary>
+      <para>Customized block size. The value specified may be from 65536 to 67108864 bytes. This value can be used only with the LZMS compression algorithm. A minimum size of 1 MB is suggested to get a better compression ratio. An information class of this type is sizeof(DWORD).</para>
+    </summary>
+  </member>
+  <member name="COMPRESS_INFORMATION_CLASS.COMPRESS_INFORMATION_CLASS_LEVEL">
+    <summary>
+      <para>Desired level of compression. The default value is <b>(DWORD)0</b>. The value <b>(DWORD)1</b> can improve the compression ratio with a slightly slower compression speed. This value can be used only with the XPRESS compression algorithm or the XPRESS with Huffman encoding compression algorithm. An information class of this type is sizeof(DWORD).</para>
+    </summary>
+  </member>
+</doc>

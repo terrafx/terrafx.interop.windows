@@ -5,12 +5,24 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IP_PREFIX_ORIGIN.xml' path='doc/member[@name="IP_PREFIX_ORIGIN"]/*' />
 public enum IP_PREFIX_ORIGIN
 {
+    /// <include file='IP_PREFIX_ORIGIN.xml' path='doc/member[@name="IP_PREFIX_ORIGIN.IpPrefixOriginOther"]/*' />
     IpPrefixOriginOther = 0,
+
+    /// <include file='IP_PREFIX_ORIGIN.xml' path='doc/member[@name="IP_PREFIX_ORIGIN.IpPrefixOriginManual"]/*' />
     IpPrefixOriginManual,
+
+    /// <include file='IP_PREFIX_ORIGIN.xml' path='doc/member[@name="IP_PREFIX_ORIGIN.IpPrefixOriginWellKnown"]/*' />
     IpPrefixOriginWellKnown,
+
+    /// <include file='IP_PREFIX_ORIGIN.xml' path='doc/member[@name="IP_PREFIX_ORIGIN.IpPrefixOriginDhcp"]/*' />
     IpPrefixOriginDhcp,
+
+    /// <include file='IP_PREFIX_ORIGIN.xml' path='doc/member[@name="IP_PREFIX_ORIGIN.IpPrefixOriginRouterAdvertisement"]/*' />
     IpPrefixOriginRouterAdvertisement,
+
+    /// <include file='IP_PREFIX_ORIGIN.xml' path='doc/member[@name="IP_PREFIX_ORIGIN.IpPrefixOriginUnchanged"]/*' />
     IpPrefixOriginUnchanged = 1 << 4,
 }

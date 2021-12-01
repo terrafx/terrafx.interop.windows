@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SHOWCALENDARBUTTONRIGHTSTATES.xml' path='doc/member[@name="SHOWCALENDARBUTTONRIGHTSTATES"]/*' />
 public enum SHOWCALENDARBUTTONRIGHTSTATES
 {
+    /// <include file='SHOWCALENDARBUTTONRIGHTSTATES.xml' path='doc/member[@name="SHOWCALENDARBUTTONRIGHTSTATES.DPSCBR_NORMAL"]/*' />
     DPSCBR_NORMAL = 1,
+
+    /// <include file='SHOWCALENDARBUTTONRIGHTSTATES.xml' path='doc/member[@name="SHOWCALENDARBUTTONRIGHTSTATES.DPSCBR_HOT"]/*' />
     DPSCBR_HOT = 2,
+
+    /// <include file='SHOWCALENDARBUTTONRIGHTSTATES.xml' path='doc/member[@name="SHOWCALENDARBUTTONRIGHTSTATES.DPSCBR_PRESSED"]/*' />
     DPSCBR_PRESSED = 3,
+
+    /// <include file='SHOWCALENDARBUTTONRIGHTSTATES.xml' path='doc/member[@name="SHOWCALENDARBUTTONRIGHTSTATES.DPSCBR_DISABLED"]/*' />
     DPSCBR_DISABLED = 4,
 }

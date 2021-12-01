@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CRYPT_OBJID_TABLE.xml' path='doc/member[@name="CRYPT_OBJID_TABLE"]/*' />
 public unsafe partial struct CRYPT_OBJID_TABLE
 {
+    /// <include file='CRYPT_OBJID_TABLE.xml' path='doc/member[@name="CRYPT_OBJID_TABLE.dwAlgId"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwAlgId;
 
+    /// <include file='CRYPT_OBJID_TABLE.xml' path='doc/member[@name="CRYPT_OBJID_TABLE.pszObjId"]/*' />
     [NativeTypeName("LPCSTR")]
     public sbyte* pszObjId;
 }

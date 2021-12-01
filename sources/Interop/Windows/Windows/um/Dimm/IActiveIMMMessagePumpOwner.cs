@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IActiveIMMMessagePumpOwner.xml' path='doc/member[@name="IActiveIMMMessagePumpOwner"]/*' />
 [Guid("B5CF2CFA-8AEB-11D1-9364-0060B067B86E")]
 [NativeTypeName("struct IActiveIMMMessagePumpOwner : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IActiveIMMMessagePumpOwner : IActiveIMMMessagePumpO
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IActiveIMMMessagePumpOwner : IActiveIMMMessagePumpO
         return ((delegate* unmanaged<IActiveIMMMessagePumpOwner*, Guid*, void**, int>)(lpVtbl[0]))((IActiveIMMMessagePumpOwner*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IActiveIMMMessagePumpOwner : IActiveIMMMessagePumpO
         return ((delegate* unmanaged<IActiveIMMMessagePumpOwner*, uint>)(lpVtbl[1]))((IActiveIMMMessagePumpOwner*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IActiveIMMMessagePumpOwner : IActiveIMMMessagePumpO
         return ((delegate* unmanaged<IActiveIMMMessagePumpOwner*, uint>)(lpVtbl[2]))((IActiveIMMMessagePumpOwner*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IActiveIMMMessagePumpOwner.xml' path='doc/member[@name="IActiveIMMMessagePumpOwner.Start"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Start()
@@ -46,6 +51,7 @@ public unsafe partial struct IActiveIMMMessagePumpOwner : IActiveIMMMessagePumpO
         return ((delegate* unmanaged<IActiveIMMMessagePumpOwner*, int>)(lpVtbl[3]))((IActiveIMMMessagePumpOwner*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IActiveIMMMessagePumpOwner.xml' path='doc/member[@name="IActiveIMMMessagePumpOwner.End"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT End()
@@ -53,6 +59,7 @@ public unsafe partial struct IActiveIMMMessagePumpOwner : IActiveIMMMessagePumpO
         return ((delegate* unmanaged<IActiveIMMMessagePumpOwner*, int>)(lpVtbl[4]))((IActiveIMMMessagePumpOwner*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IActiveIMMMessagePumpOwner.xml' path='doc/member[@name="IActiveIMMMessagePumpOwner.OnTranslateMessage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT OnTranslateMessage([NativeTypeName("const MSG *")] MSG* pMsg)
@@ -60,6 +67,7 @@ public unsafe partial struct IActiveIMMMessagePumpOwner : IActiveIMMMessagePumpO
         return ((delegate* unmanaged<IActiveIMMMessagePumpOwner*, MSG*, int>)(lpVtbl[5]))((IActiveIMMMessagePumpOwner*)Unsafe.AsPointer(ref this), pMsg);
     }
 
+    /// <include file='IActiveIMMMessagePumpOwner.xml' path='doc/member[@name="IActiveIMMMessagePumpOwner.Pause"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Pause([NativeTypeName("DWORD *")] uint* pdwCookie)
@@ -67,6 +75,7 @@ public unsafe partial struct IActiveIMMMessagePumpOwner : IActiveIMMMessagePumpO
         return ((delegate* unmanaged<IActiveIMMMessagePumpOwner*, uint*, int>)(lpVtbl[6]))((IActiveIMMMessagePumpOwner*)Unsafe.AsPointer(ref this), pdwCookie);
     }
 
+    /// <include file='IActiveIMMMessagePumpOwner.xml' path='doc/member[@name="IActiveIMMMessagePumpOwner.Resume"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT Resume([NativeTypeName("DWORD")] uint dwCookie)

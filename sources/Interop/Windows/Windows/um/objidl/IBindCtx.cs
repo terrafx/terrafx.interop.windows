@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IBindCtx.xml' path='doc/member[@name="IBindCtx"]/*' />
 [Guid("0000000E-0000-0000-C000-000000000046")]
 [NativeTypeName("struct IBindCtx : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IBindCtx : IBindCtx.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IBindCtx : IBindCtx.Interface
         return ((delegate* unmanaged<IBindCtx*, Guid*, void**, int>)(lpVtbl[0]))((IBindCtx*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IBindCtx : IBindCtx.Interface
         return ((delegate* unmanaged<IBindCtx*, uint>)(lpVtbl[1]))((IBindCtx*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IBindCtx : IBindCtx.Interface
         return ((delegate* unmanaged<IBindCtx*, uint>)(lpVtbl[2]))((IBindCtx*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IBindCtx.xml' path='doc/member[@name="IBindCtx.RegisterObjectBound"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT RegisterObjectBound(IUnknown* punk)
@@ -46,6 +51,7 @@ public unsafe partial struct IBindCtx : IBindCtx.Interface
         return ((delegate* unmanaged<IBindCtx*, IUnknown*, int>)(lpVtbl[3]))((IBindCtx*)Unsafe.AsPointer(ref this), punk);
     }
 
+    /// <include file='IBindCtx.xml' path='doc/member[@name="IBindCtx.RevokeObjectBound"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT RevokeObjectBound(IUnknown* punk)
@@ -53,6 +59,7 @@ public unsafe partial struct IBindCtx : IBindCtx.Interface
         return ((delegate* unmanaged<IBindCtx*, IUnknown*, int>)(lpVtbl[4]))((IBindCtx*)Unsafe.AsPointer(ref this), punk);
     }
 
+    /// <include file='IBindCtx.xml' path='doc/member[@name="IBindCtx.ReleaseBoundObjects"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT ReleaseBoundObjects()
@@ -60,6 +67,7 @@ public unsafe partial struct IBindCtx : IBindCtx.Interface
         return ((delegate* unmanaged<IBindCtx*, int>)(lpVtbl[5]))((IBindCtx*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IBindCtx.xml' path='doc/member[@name="IBindCtx.SetBindOptions"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT SetBindOptions(BIND_OPTS* pbindopts)
@@ -67,6 +75,7 @@ public unsafe partial struct IBindCtx : IBindCtx.Interface
         return ((delegate* unmanaged<IBindCtx*, BIND_OPTS*, int>)(lpVtbl[6]))((IBindCtx*)Unsafe.AsPointer(ref this), pbindopts);
     }
 
+    /// <include file='IBindCtx.xml' path='doc/member[@name="IBindCtx.GetBindOptions"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetBindOptions(BIND_OPTS* pbindopts)
@@ -74,6 +83,7 @@ public unsafe partial struct IBindCtx : IBindCtx.Interface
         return ((delegate* unmanaged<IBindCtx*, BIND_OPTS*, int>)(lpVtbl[7]))((IBindCtx*)Unsafe.AsPointer(ref this), pbindopts);
     }
 
+    /// <include file='IBindCtx.xml' path='doc/member[@name="IBindCtx.GetRunningObjectTable"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetRunningObjectTable(IRunningObjectTable** pprot)
@@ -81,6 +91,7 @@ public unsafe partial struct IBindCtx : IBindCtx.Interface
         return ((delegate* unmanaged<IBindCtx*, IRunningObjectTable**, int>)(lpVtbl[8]))((IBindCtx*)Unsafe.AsPointer(ref this), pprot);
     }
 
+    /// <include file='IBindCtx.xml' path='doc/member[@name="IBindCtx.RegisterObjectParam"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT RegisterObjectParam([NativeTypeName("LPOLESTR")] ushort* pszKey, IUnknown* punk)
@@ -88,6 +99,7 @@ public unsafe partial struct IBindCtx : IBindCtx.Interface
         return ((delegate* unmanaged<IBindCtx*, ushort*, IUnknown*, int>)(lpVtbl[9]))((IBindCtx*)Unsafe.AsPointer(ref this), pszKey, punk);
     }
 
+    /// <include file='IBindCtx.xml' path='doc/member[@name="IBindCtx.GetObjectParam"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT GetObjectParam([NativeTypeName("LPOLESTR")] ushort* pszKey, IUnknown** ppunk)
@@ -95,6 +107,7 @@ public unsafe partial struct IBindCtx : IBindCtx.Interface
         return ((delegate* unmanaged<IBindCtx*, ushort*, IUnknown**, int>)(lpVtbl[10]))((IBindCtx*)Unsafe.AsPointer(ref this), pszKey, ppunk);
     }
 
+    /// <include file='IBindCtx.xml' path='doc/member[@name="IBindCtx.EnumObjectParam"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT EnumObjectParam(IEnumString** ppenum)
@@ -102,6 +115,7 @@ public unsafe partial struct IBindCtx : IBindCtx.Interface
         return ((delegate* unmanaged<IBindCtx*, IEnumString**, int>)(lpVtbl[11]))((IBindCtx*)Unsafe.AsPointer(ref this), ppenum);
     }
 
+    /// <include file='IBindCtx.xml' path='doc/member[@name="IBindCtx.RevokeObjectParam"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT RevokeObjectParam([NativeTypeName("LPOLESTR")] ushort* pszKey)

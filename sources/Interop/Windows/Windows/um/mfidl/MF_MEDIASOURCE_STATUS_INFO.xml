@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MF_MEDIASOURCE_STATUS_INFO">
+    <summary>
+      <para>Specifies the status of a media source.</para>
+    </summary>
+  </member>
+  <member name="MF_MEDIASOURCE_STATUS_INFO.MF_MEDIASOURCE_STATUS_INFO_FULLYSUPPORTED">
+    <summary>
+      <para>The media source is fully supported.</para>
+    </summary>
+  </member>
+  <member name="MF_MEDIASOURCE_STATUS_INFO.MF_MEDIASOURCE_STATUS_INFO_UNKNOWN">
+    <summary>
+      <para>The status is unknown.</para>
+      <blockquote>
+        <blockquote>
+          <blockquote>
+            <blockquote>
+              <blockquote>
+                <blockquote>
+                  <blockquote>
+                    <para>master</para>
+                  </blockquote>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+          </blockquote>
+        </blockquote>
+      </blockquote>
+    </summary>
+  </member>
+</doc>

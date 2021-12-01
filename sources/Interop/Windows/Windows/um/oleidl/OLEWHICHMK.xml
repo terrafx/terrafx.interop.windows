@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="OLEWHICHMK">
+    <summary>
+      <para>Indicates which part of an object's moniker is being set or retrieved.</para>
+    </summary>
+    <seealso cref="IOleClientSite.GetMoniker" />
+    <seealso cref="IOleObject.GetMoniker" />
+    <seealso cref="IOleObject.SetMoniker" />
+  </member>
+  <member name="OLEWHICHMK.OLEWHICHMK_CONTAINER">
+    <summary>
+      <para>The moniker of the object's container. Typically, this is a file moniker. This moniker is not persistently stored inside the object, since the container can be renamed even while the object is not loaded.</para>
+    </summary>
+  </member>
+  <member name="OLEWHICHMK.OLEWHICHMK_OBJREL">
+    <summary>
+      <para>The moniker of the object relative to its container. Typically, this is an item moniker, and it is part of the persistent state of the object. If this moniker is composed on to the end of the container's moniker, the resulting moniker is the full moniker of the object.</para>
+    </summary>
+  </member>
+  <member name="OLEWHICHMK.OLEWHICHMK_OBJFULL">
+    <summary>
+      <para>The full moniker of the object. Binding to this moniker results in a connection to the object. This moniker is not persistently stored inside the object, since the container can be renamed even while the object is not loaded.</para>
+    </summary>
+  </member>
+</doc>

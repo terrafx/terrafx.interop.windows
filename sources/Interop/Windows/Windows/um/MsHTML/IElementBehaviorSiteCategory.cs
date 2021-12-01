@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IElementBehaviorSiteCategory.xml' path='doc/member[@name="IElementBehaviorSiteCategory"]/*' />
 [Guid("3050F4EE-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IElementBehaviorSiteCategory : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IElementBehaviorSiteCategory : IElementBehaviorSite
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IElementBehaviorSiteCategory : IElementBehaviorSite
         return ((delegate* unmanaged<IElementBehaviorSiteCategory*, Guid*, void**, int>)(lpVtbl[0]))((IElementBehaviorSiteCategory*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IElementBehaviorSiteCategory : IElementBehaviorSite
         return ((delegate* unmanaged<IElementBehaviorSiteCategory*, uint>)(lpVtbl[1]))((IElementBehaviorSiteCategory*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IElementBehaviorSiteCategory : IElementBehaviorSite
         return ((delegate* unmanaged<IElementBehaviorSiteCategory*, uint>)(lpVtbl[2]))((IElementBehaviorSiteCategory*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IElementBehaviorSiteCategory.xml' path='doc/member[@name="IElementBehaviorSiteCategory.GetRelatedBehaviors"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetRelatedBehaviors([NativeTypeName("LONG")] int lDirection, [NativeTypeName("LPOLESTR")] ushort* pchCategory, IEnumUnknown** ppEnumerator)

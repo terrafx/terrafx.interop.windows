@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SYSTEM_MANDATORY_LABEL_ACE">
+    <summary>
+      <para>The <b>SYSTEM_MANDATORY_LABEL_ACE</b> structure defines an  <a href="https://docs.microsoft.com//windows/desktop/SecGloss/a-gly">access control entry</a> (ACE) for the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">system access control list</a> (SACL) that specifies the mandatory access level and policy for a securable object.</para>
+    </summary>
+    <seealso cref="ACL" />
+  </member>
+  <member name="SYSTEM_MANDATORY_LABEL_ACE.Header">
+    <summary>
+      <para>An <see cref="ACE_HEADER" /> structure that specifies the size and type of the ACE. The structure also contains flags that control inheritance of the ACE by child objects. The <b>AceType</b> member of the <b>ACE_HEADER</b> structure must be set to <b>SYSTEM_MANDATORY_LABEL_ACE_TYPE</b>, and the <b>AceSize</b> member must be set to the total number of bytes allocated for the <b>SYSTEM_MANDATORY_LABEL_ACE</b> structure.</para>
+    </summary>
+  </member>
+  <member name="SYSTEM_MANDATORY_LABEL_ACE.Mask">
+    <summary>
+      <para>The access policy for principals with a mandatory integrity level lower than the object associated with the SACL that contains this ACE.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>SYSTEM_MANDATORY_LABEL_NO_WRITE_UP</b>
+                </description>
+              </item>
+              <item>
+                <description>0x1</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>A principal with a lower mandatory level than the object cannot write to the object.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>SYSTEM_MANDATORY_LABEL_NO_READ_UP</b>
+                </description>
+              </item>
+              <item>
+                <description>0x2</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>A principal with a lower mandatory level than the object cannot read the object.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <list type="bullet">
+              <item>
+                <description>
+                  <b>SYSTEM_MANDATORY_LABEL_NO_EXECUTE_UP</b>
+                </description>
+              </item>
+              <item>
+                <description>0x4</description>
+              </item>
+            </list>
+          </description>
+          <description>
+            <para>A principal with a lower mandatory level than the object cannot execute the object.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="SYSTEM_MANDATORY_LABEL_ACE.SidStart">
+    <summary>
+      <para>Specifies the first <b>DWORD</b> of a <see cref="SID" />. The remaining bytes of the <b>SID</b>  are stored in contiguous memory after the <b>SidStart</b> member. The identifier authority of the <b>SID</b> must be <b>SECURITY_MANDATORY_LABEL_AUTHORITY</b>. The <a href="https://docs.microsoft.com//windows/desktop/SecGloss/r-gly">RID</a> of the <b>SID</b> specifies the mandatory integrity level of the object associated with the SACL that contains this ACE. The <i>RID</i> must be one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>
+            <para>0x1000</para>
+          </description>
+          <description>
+            <para>Low integrity level.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>0x2000</para>
+          </description>
+          <description>
+            <para>Medium integrity level.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>0x3000</para>
+          </description>
+          <description>
+            <para>High integrity level.</para>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+</doc>

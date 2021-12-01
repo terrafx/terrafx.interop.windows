@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="NMTBSAVE">
+    <summary>
+      <para>This structure is passed to applications when they receive a <a href="https://docs.microsoft.com//windows/desktop/Controls/tbn-save">TBN_SAVE</a> notification code. It contains information about the button currently being saved. Applications can modify the values of the members to save additional information.</para>
+    </summary>
+  </member>
+  <member name="NMTBSAVE.hdr">
+    <summary>
+      <para>Type: <b><see cref="NMHDR" /></b></para>
+      <para>An <see cref="NMHDR" /> structure that contains additional information about the notification.</para>
+    </summary>
+  </member>
+  <member name="NMTBSAVE.pData">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">DWORD</a>*</b></para>
+      <para>A pointer to the data stream used to store the save information. When complete, it will contain blocks of Shell-defined information for each button, alternating with blocks defined by the application. Applications may also choose to place a block of global data at the start of
+<b>pData</b>. The format and length of the application-defined blocks are determined by the application. When the save starts, the Shell will pass the amount of memory it needs in
+<b>cbData</b>, but no memory will be allocated. You must allocate enough memory for
+<b>pData</b> to hold your data, plus the Shell's.</para>
+    </summary>
+  </member>
+  <member name="NMTBSAVE.pCurrent">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">DWORD</a>*</b></para>
+      <para>A pointer to the start of the unused portion of the data stream. You should load your data here, and then advance
+<b>pCurrent</b> to the start of the remaining unused portion. The Shell will then load the information for the next button, advance
+<b>pCurrent</b>, and so on.</para>
+    </summary>
+  </member>
+  <member name="NMTBSAVE.cbData">
+    <summary>
+      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
+      <para>The size of the data stream. When the save starts,
+<b>cbData</b> will be set to the amount of data needed by the Shell. You should change it to the total amount allocated.</para>
+    </summary>
+  </member>
+  <member name="NMTBSAVE.iItem">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>This parameter is usually the zero-based index of the button currently being saved. It is set to -1 to indicate that a save is starting.</para>
+    </summary>
+  </member>
+  <member name="NMTBSAVE.cButtons">
+    <summary>
+      <para>Type: <b>int</b></para>
+      <para>An estimate of the number of buttons. Because it is based on the size of the data stream, it may be incorrect. The client should update it as appropriate.</para>
+    </summary>
+  </member>
+  <member name="NMTBSAVE.tbButton">
+    <summary>
+      <para>Type: <b><see cref="TBBUTTON" /></b></para>
+      <para>A <see cref="TBBUTTON" /> structure that contains information about the button currently being saved.</para>
+    </summary>
+  </member>
+</doc>

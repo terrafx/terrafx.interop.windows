@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SpAudioFormat.xml' path='doc/member[@name="SpAudioFormat"]/*' />
 [Guid("9EF96870-E160-4792-820D-48CF0649E4EC")]
 public partial struct SpAudioFormat
 {

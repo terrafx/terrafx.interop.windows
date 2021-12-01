@@ -5,9 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DVD_MUA_Coeff.xml' path='doc/member[@name="DVD_MUA_Coeff"]/*' />
 public partial struct DVD_MUA_Coeff
 {
+    /// <include file='DVD_MUA_Coeff.xml' path='doc/member[@name="DVD_MUA_Coeff.log2_alpha"]/*' />
     public double log2_alpha;
 
+    /// <include file='DVD_MUA_Coeff.xml' path='doc/member[@name="DVD_MUA_Coeff.log2_beta"]/*' />
     public double log2_beta;
 }

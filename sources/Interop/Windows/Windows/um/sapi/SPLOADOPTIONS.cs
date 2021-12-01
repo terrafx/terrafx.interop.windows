@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SPLOADOPTIONS.xml' path='doc/member[@name="SPLOADOPTIONS"]/*' />
 public enum SPLOADOPTIONS
 {
+    /// <include file='SPLOADOPTIONS.xml' path='doc/member[@name="SPLOADOPTIONS.SPLO_STATIC"]/*' />
     SPLO_STATIC = 0,
+
+    /// <include file='SPLOADOPTIONS.xml' path='doc/member[@name="SPLOADOPTIONS.SPLO_DYNAMIC"]/*' />
     SPLO_DYNAMIC = 1,
 }

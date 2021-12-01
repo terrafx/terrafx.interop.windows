@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IInternetProtocolSinkStackable.xml' path='doc/member[@name="IInternetProtocolSinkStackable"]/*' />
 [Guid("79EAC9F0-BAF9-11CE-8C82-00AA004BA90B")]
 [NativeTypeName("struct IInternetProtocolSinkStackable : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IInternetProtocolSinkStackable : IInternetProtocolS
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IInternetProtocolSinkStackable : IInternetProtocolS
         return ((delegate* unmanaged<IInternetProtocolSinkStackable*, Guid*, void**, int>)(lpVtbl[0]))((IInternetProtocolSinkStackable*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IInternetProtocolSinkStackable : IInternetProtocolS
         return ((delegate* unmanaged<IInternetProtocolSinkStackable*, uint>)(lpVtbl[1]))((IInternetProtocolSinkStackable*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IInternetProtocolSinkStackable : IInternetProtocolS
         return ((delegate* unmanaged<IInternetProtocolSinkStackable*, uint>)(lpVtbl[2]))((IInternetProtocolSinkStackable*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IInternetProtocolSinkStackable.xml' path='doc/member[@name="IInternetProtocolSinkStackable.SwitchSink"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SwitchSink(IInternetProtocolSink* pOIProtSink)
@@ -46,6 +51,7 @@ public unsafe partial struct IInternetProtocolSinkStackable : IInternetProtocolS
         return ((delegate* unmanaged<IInternetProtocolSinkStackable*, IInternetProtocolSink*, int>)(lpVtbl[3]))((IInternetProtocolSinkStackable*)Unsafe.AsPointer(ref this), pOIProtSink);
     }
 
+    /// <include file='IInternetProtocolSinkStackable.xml' path='doc/member[@name="IInternetProtocolSinkStackable.CommitSwitch"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT CommitSwitch()
@@ -53,6 +59,7 @@ public unsafe partial struct IInternetProtocolSinkStackable : IInternetProtocolS
         return ((delegate* unmanaged<IInternetProtocolSinkStackable*, int>)(lpVtbl[4]))((IInternetProtocolSinkStackable*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IInternetProtocolSinkStackable.xml' path='doc/member[@name="IInternetProtocolSinkStackable.RollbackSwitch"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT RollbackSwitch()

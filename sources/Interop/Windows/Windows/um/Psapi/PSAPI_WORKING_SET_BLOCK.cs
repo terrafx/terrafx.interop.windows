@@ -8,17 +8,21 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PSAPI_WORKING_SET_BLOCK.xml' path='doc/member[@name="PSAPI_WORKING_SET_BLOCK"]/*' />
 [StructLayout(LayoutKind.Explicit)]
 public partial struct PSAPI_WORKING_SET_BLOCK
 {
+    /// <include file='PSAPI_WORKING_SET_BLOCK.xml' path='doc/member[@name="PSAPI_WORKING_SET_BLOCK.Flags"]/*' />
     [FieldOffset(0)]
     [NativeTypeName("ULONG_PTR")]
     public nuint Flags;
 
+    /// <include file='PSAPI_WORKING_SET_BLOCK.xml' path='doc/member[@name="PSAPI_WORKING_SET_BLOCK.Anonymous"]/*' />
     [FieldOffset(0)]
     [NativeTypeName("_PSAPI_WORKING_SET_BLOCK::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/Psapi.h:386:5)")]
     public _Anonymous_e__Struct Anonymous;
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Protection"]/*' />
     public nuint Protection
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -34,6 +38,7 @@ public partial struct PSAPI_WORKING_SET_BLOCK
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.ShareCount"]/*' />
     public nuint ShareCount
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -49,6 +54,7 @@ public partial struct PSAPI_WORKING_SET_BLOCK
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Shared"]/*' />
     public nuint Shared
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -64,6 +70,7 @@ public partial struct PSAPI_WORKING_SET_BLOCK
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Reserved"]/*' />
     public nuint Reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -79,6 +86,7 @@ public partial struct PSAPI_WORKING_SET_BLOCK
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.VirtualPage"]/*' />
     public nuint VirtualPage
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -94,10 +102,12 @@ public partial struct PSAPI_WORKING_SET_BLOCK
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />
     public partial struct _Anonymous_e__Struct
     {
         public nuint _bitfield;
 
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Protection"]/*' />
         [NativeTypeName("ULONG_PTR : 5")]
         public nuint Protection
         {
@@ -114,6 +124,7 @@ public partial struct PSAPI_WORKING_SET_BLOCK
             }
         }
 
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.ShareCount"]/*' />
         [NativeTypeName("ULONG_PTR : 3")]
         public nuint ShareCount
         {
@@ -130,6 +141,7 @@ public partial struct PSAPI_WORKING_SET_BLOCK
             }
         }
 
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Shared"]/*' />
         [NativeTypeName("ULONG_PTR : 1")]
         public nuint Shared
         {
@@ -146,6 +158,7 @@ public partial struct PSAPI_WORKING_SET_BLOCK
             }
         }
 
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Reserved"]/*' />
         [NativeTypeName("ULONG_PTR : 3")]
         public nuint Reserved
         {
@@ -162,6 +175,7 @@ public partial struct PSAPI_WORKING_SET_BLOCK
             }
         }
 
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.VirtualPage"]/*' />
         [NativeTypeName("ULONG_PTR : 52")]
         public nuint VirtualPage
         {

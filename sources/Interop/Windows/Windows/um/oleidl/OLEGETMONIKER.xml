@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="OLEGETMONIKER">
+    <summary>
+      <para>Controls aspects of the behavior of the <see cref="IOleObject.GetMoniker" /> and <see cref="IOleClientSite.GetMoniker" /> methods.</para>
+    </summary>
+    <remarks>
+      <para>If the OLEGETMONIKER_FORCEASSIGN flag causes a container to create a moniker for the object, the container should notify the object by calling the <see cref="IOleObject.GetMoniker" /> method.</para>
+    </remarks>
+    <seealso cref="IMoniker" />
+    <seealso cref="IOleClientSite.GetMoniker" />
+    <seealso cref="IOleObject.GetMoniker" />
+  </member>
+  <member name="OLEGETMONIKER.OLEGETMONIKER_ONLYIFTHERE">
+    <summary>
+      <para>If a moniker for the object or container does not exist, <see cref="IOleClientSite.GetMoniker" /> should return E_FAIL and not assign a moniker.</para>
+    </summary>
+  </member>
+  <member name="OLEGETMONIKER.OLEGETMONIKER_FORCEASSIGN">
+    <summary>
+      <para>If a moniker for the object or container does not exist, <see cref="IOleClientSite.GetMoniker" /> should create one.</para>
+    </summary>
+  </member>
+  <member name="OLEGETMONIKER.OLEGETMONIKER_UNASSIGN">
+    <summary>
+      <para>
+        <see cref="IOleClientSite.GetMoniker" /> can release the object's moniker (although it is not required to do so). This constant is not valid in <see cref="IOleObject.GetMoniker" />.</para>
+    </summary>
+  </member>
+  <member name="OLEGETMONIKER.OLEGETMONIKER_TEMPFORUSER">
+    <summary>
+      <para>If a moniker for the object does not exist, <see cref="IOleObject.GetMoniker" /> can create a temporary moniker that can be used for display purposes (<see cref="IMoniker.GetDisplayName" />) but not for binding. This enables the object server to return a descriptive name for the object without incurring the overhead of creating and maintaining a moniker until a link is actually created.</para>
+    </summary>
+  </member>
+</doc>

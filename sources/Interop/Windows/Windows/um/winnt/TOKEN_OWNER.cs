@@ -5,8 +5,10 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TOKEN_OWNER.xml' path='doc/member[@name="TOKEN_OWNER"]/*' />
 public unsafe partial struct TOKEN_OWNER
 {
+    /// <include file='TOKEN_OWNER.xml' path='doc/member[@name="TOKEN_OWNER.Owner"]/*' />
     [NativeTypeName("PSID")]
     public void* Owner;
 }

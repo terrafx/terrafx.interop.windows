@@ -5,16 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MFExtendedCameraIntrinsic_IntrinsicModel.xml' path='doc/member[@name="MFExtendedCameraIntrinsic_IntrinsicModel"]/*' />
 public partial struct MFExtendedCameraIntrinsic_IntrinsicModel
 {
+    /// <include file='MFExtendedCameraIntrinsic_IntrinsicModel.xml' path='doc/member[@name="MFExtendedCameraIntrinsic_IntrinsicModel.Width"]/*' />
     [NativeTypeName("UINT32")]
     public uint Width;
 
+    /// <include file='MFExtendedCameraIntrinsic_IntrinsicModel.xml' path='doc/member[@name="MFExtendedCameraIntrinsic_IntrinsicModel.Height"]/*' />
     [NativeTypeName("UINT32")]
     public uint Height;
 
+    /// <include file='MFExtendedCameraIntrinsic_IntrinsicModel.xml' path='doc/member[@name="MFExtendedCameraIntrinsic_IntrinsicModel.SplitFrameId"]/*' />
     [NativeTypeName("UINT32")]
     public uint SplitFrameId;
 
+    /// <include file='MFExtendedCameraIntrinsic_IntrinsicModel.xml' path='doc/member[@name="MFExtendedCameraIntrinsic_IntrinsicModel.CameraModel"]/*' />
     public MFCameraIntrinsic_CameraModel CameraModel;
 }

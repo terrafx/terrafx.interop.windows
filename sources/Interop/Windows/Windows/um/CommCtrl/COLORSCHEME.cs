@@ -5,12 +5,16 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='COLORSCHEME.xml' path='doc/member[@name="COLORSCHEME"]/*' />
 public partial struct COLORSCHEME
 {
+    /// <include file='COLORSCHEME.xml' path='doc/member[@name="COLORSCHEME.dwSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwSize;
 
+    /// <include file='COLORSCHEME.xml' path='doc/member[@name="COLORSCHEME.clrBtnHighlight"]/*' />
     public COLORREF clrBtnHighlight;
 
+    /// <include file='COLORSCHEME.xml' path='doc/member[@name="COLORSCHEME.clrBtnShadow"]/*' />
     public COLORREF clrBtnShadow;
 }

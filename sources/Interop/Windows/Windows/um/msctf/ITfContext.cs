@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITfContext.xml' path='doc/member[@name="ITfContext"]/*' />
 [Guid("AA80E7FD-2021-11D2-93E0-0060B067B86E")]
 [NativeTypeName("struct ITfContext : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITfContext : ITfContext.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITfContext : ITfContext.Interface
         return ((delegate* unmanaged<ITfContext*, Guid*, void**, int>)(lpVtbl[0]))((ITfContext*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITfContext : ITfContext.Interface
         return ((delegate* unmanaged<ITfContext*, uint>)(lpVtbl[1]))((ITfContext*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITfContext : ITfContext.Interface
         return ((delegate* unmanaged<ITfContext*, uint>)(lpVtbl[2]))((ITfContext*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITfContext.xml' path='doc/member[@name="ITfContext.RequestEditSession"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT RequestEditSession([NativeTypeName("TfClientId")] uint tid, ITfEditSession* pes, [NativeTypeName("DWORD")] uint dwFlags, HRESULT* phrSession)
@@ -46,6 +51,7 @@ public unsafe partial struct ITfContext : ITfContext.Interface
         return ((delegate* unmanaged<ITfContext*, uint, ITfEditSession*, uint, HRESULT*, int>)(lpVtbl[3]))((ITfContext*)Unsafe.AsPointer(ref this), tid, pes, dwFlags, phrSession);
     }
 
+    /// <include file='ITfContext.xml' path='doc/member[@name="ITfContext.InWriteSession"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT InWriteSession([NativeTypeName("TfClientId")] uint tid, BOOL* pfWriteSession)
@@ -53,6 +59,7 @@ public unsafe partial struct ITfContext : ITfContext.Interface
         return ((delegate* unmanaged<ITfContext*, uint, BOOL*, int>)(lpVtbl[4]))((ITfContext*)Unsafe.AsPointer(ref this), tid, pfWriteSession);
     }
 
+    /// <include file='ITfContext.xml' path='doc/member[@name="ITfContext.GetSelection"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetSelection([NativeTypeName("TfEditCookie")] uint ec, [NativeTypeName("ULONG")] uint ulIndex, [NativeTypeName("ULONG")] uint ulCount, TF_SELECTION* pSelection, [NativeTypeName("ULONG *")] uint* pcFetched)
@@ -60,6 +67,7 @@ public unsafe partial struct ITfContext : ITfContext.Interface
         return ((delegate* unmanaged<ITfContext*, uint, uint, uint, TF_SELECTION*, uint*, int>)(lpVtbl[5]))((ITfContext*)Unsafe.AsPointer(ref this), ec, ulIndex, ulCount, pSelection, pcFetched);
     }
 
+    /// <include file='ITfContext.xml' path='doc/member[@name="ITfContext.SetSelection"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT SetSelection([NativeTypeName("TfEditCookie")] uint ec, [NativeTypeName("ULONG")] uint ulCount, [NativeTypeName("const TF_SELECTION *")] TF_SELECTION* pSelection)
@@ -67,6 +75,7 @@ public unsafe partial struct ITfContext : ITfContext.Interface
         return ((delegate* unmanaged<ITfContext*, uint, uint, TF_SELECTION*, int>)(lpVtbl[6]))((ITfContext*)Unsafe.AsPointer(ref this), ec, ulCount, pSelection);
     }
 
+    /// <include file='ITfContext.xml' path='doc/member[@name="ITfContext.GetStart"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetStart([NativeTypeName("TfEditCookie")] uint ec, ITfRange** ppStart)
@@ -74,6 +83,7 @@ public unsafe partial struct ITfContext : ITfContext.Interface
         return ((delegate* unmanaged<ITfContext*, uint, ITfRange**, int>)(lpVtbl[7]))((ITfContext*)Unsafe.AsPointer(ref this), ec, ppStart);
     }
 
+    /// <include file='ITfContext.xml' path='doc/member[@name="ITfContext.GetEnd"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetEnd([NativeTypeName("TfEditCookie")] uint ec, ITfRange** ppEnd)
@@ -81,6 +91,7 @@ public unsafe partial struct ITfContext : ITfContext.Interface
         return ((delegate* unmanaged<ITfContext*, uint, ITfRange**, int>)(lpVtbl[8]))((ITfContext*)Unsafe.AsPointer(ref this), ec, ppEnd);
     }
 
+    /// <include file='ITfContext.xml' path='doc/member[@name="ITfContext.GetActiveView"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT GetActiveView(ITfContextView** ppView)
@@ -88,6 +99,7 @@ public unsafe partial struct ITfContext : ITfContext.Interface
         return ((delegate* unmanaged<ITfContext*, ITfContextView**, int>)(lpVtbl[9]))((ITfContext*)Unsafe.AsPointer(ref this), ppView);
     }
 
+    /// <include file='ITfContext.xml' path='doc/member[@name="ITfContext.EnumViews"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT EnumViews(IEnumTfContextViews** ppEnum)
@@ -95,6 +107,7 @@ public unsafe partial struct ITfContext : ITfContext.Interface
         return ((delegate* unmanaged<ITfContext*, IEnumTfContextViews**, int>)(lpVtbl[10]))((ITfContext*)Unsafe.AsPointer(ref this), ppEnum);
     }
 
+    /// <include file='ITfContext.xml' path='doc/member[@name="ITfContext.GetStatus"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT GetStatus([NativeTypeName("TF_STATUS *")] TS_STATUS* pdcs)
@@ -102,6 +115,7 @@ public unsafe partial struct ITfContext : ITfContext.Interface
         return ((delegate* unmanaged<ITfContext*, TS_STATUS*, int>)(lpVtbl[11]))((ITfContext*)Unsafe.AsPointer(ref this), pdcs);
     }
 
+    /// <include file='ITfContext.xml' path='doc/member[@name="ITfContext.GetProperty"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT GetProperty([NativeTypeName("const GUID &")] Guid* guidProp, ITfProperty** ppProp)
@@ -109,6 +123,7 @@ public unsafe partial struct ITfContext : ITfContext.Interface
         return ((delegate* unmanaged<ITfContext*, Guid*, ITfProperty**, int>)(lpVtbl[12]))((ITfContext*)Unsafe.AsPointer(ref this), guidProp, ppProp);
     }
 
+    /// <include file='ITfContext.xml' path='doc/member[@name="ITfContext.GetAppProperty"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT GetAppProperty([NativeTypeName("const GUID &")] Guid* guidProp, ITfReadOnlyProperty** ppProp)
@@ -116,6 +131,7 @@ public unsafe partial struct ITfContext : ITfContext.Interface
         return ((delegate* unmanaged<ITfContext*, Guid*, ITfReadOnlyProperty**, int>)(lpVtbl[13]))((ITfContext*)Unsafe.AsPointer(ref this), guidProp, ppProp);
     }
 
+    /// <include file='ITfContext.xml' path='doc/member[@name="ITfContext.TrackProperties"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT TrackProperties([NativeTypeName("const GUID **")] Guid** prgProp, [NativeTypeName("ULONG")] uint cProp, [NativeTypeName("const GUID **")] Guid** prgAppProp, [NativeTypeName("ULONG")] uint cAppProp, ITfReadOnlyProperty** ppProperty)
@@ -123,6 +139,7 @@ public unsafe partial struct ITfContext : ITfContext.Interface
         return ((delegate* unmanaged<ITfContext*, Guid**, uint, Guid**, uint, ITfReadOnlyProperty**, int>)(lpVtbl[14]))((ITfContext*)Unsafe.AsPointer(ref this), prgProp, cProp, prgAppProp, cAppProp, ppProperty);
     }
 
+    /// <include file='ITfContext.xml' path='doc/member[@name="ITfContext.EnumProperties"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT EnumProperties(IEnumTfProperties** ppEnum)
@@ -130,6 +147,7 @@ public unsafe partial struct ITfContext : ITfContext.Interface
         return ((delegate* unmanaged<ITfContext*, IEnumTfProperties**, int>)(lpVtbl[15]))((ITfContext*)Unsafe.AsPointer(ref this), ppEnum);
     }
 
+    /// <include file='ITfContext.xml' path='doc/member[@name="ITfContext.GetDocumentMgr"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT GetDocumentMgr(ITfDocumentMgr** ppDm)
@@ -137,6 +155,7 @@ public unsafe partial struct ITfContext : ITfContext.Interface
         return ((delegate* unmanaged<ITfContext*, ITfDocumentMgr**, int>)(lpVtbl[16]))((ITfContext*)Unsafe.AsPointer(ref this), ppDm);
     }
 
+    /// <include file='ITfContext.xml' path='doc/member[@name="ITfContext.CreateRangeBackup"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT CreateRangeBackup([NativeTypeName("TfEditCookie")] uint ec, ITfRange* pRange, ITfRangeBackup** ppBackup)

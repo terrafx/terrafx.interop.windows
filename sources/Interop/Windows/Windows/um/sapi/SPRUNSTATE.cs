@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SPRUNSTATE.xml' path='doc/member[@name="SPRUNSTATE"]/*' />
 public enum SPRUNSTATE
 {
+    /// <include file='SPRUNSTATE.xml' path='doc/member[@name="SPRUNSTATE.SPRS_DONE"]/*' />
     SPRS_DONE = (1 << 0),
+
+    /// <include file='SPRUNSTATE.xml' path='doc/member[@name="SPRUNSTATE.SPRS_IS_SPEAKING"]/*' />
     SPRS_IS_SPEAKING = (1 << 1),
 }

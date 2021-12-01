@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="eAVEncMPAEmphasisType">
+    <summary>
+      <para>Specifies the type of de-emphasis filter that should be used when decoding. This enumeration is used with the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avencmpaemphasistype-property">AVEncMPAEmphasisType</a> property.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-enumerations">Codec API Enumerations</seealso>
+    <seealso cref="ICodecAPI Interface" />
+  </member>
+  <member name="eAVEncMPAEmphasisType.eAVEncMPAEmphasisType_None">
+    <summary>
+      <para>None.</para>
+    </summary>
+  </member>
+  <member name="eAVEncMPAEmphasisType.eAVEncMPAEmphasisType_50_15">
+    <summary>
+      <para>50/15 Î¼s.</para>
+    </summary>
+  </member>
+  <member name="eAVEncMPAEmphasisType.eAVEncMPAEmphasisType_Reserved">
+    <summary>
+      <para>Reserved.</para>
+    </summary>
+  </member>
+  <member name="eAVEncMPAEmphasisType.eAVEncMPAEmphasisType_CCITT_J17">
+    <summary>
+      <para>CCITT J.17.</para>
+    </summary>
+  </member>
+</doc>

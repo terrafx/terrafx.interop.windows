@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ITfFnGetPreferredTouchKeyboardLayout.GetLayout">
+    <summary>
+      <para>Obtains the touch keyboard layout identifier of the layout that the IME directs the touch keyboard to show while the IME is active.</para>
+    </summary>
+    <param name="pTKBLayoutType">
+      <para>Pointer to a <see cref="TKBLayoutType" /> enumeration that receives the layout type.</para>
+    </param>
+    <param name="pwPreferredLayoutId">
+      <para>Pointer to a <b>WORD</b> value that receives the layout identifier.</para>
+    </param>
+    <returns>
+      <para>The touch keyboard always expects S_OK.</para>
+    </returns>
+    <remarks>
+      <para>
+        <see cref="TKBLayoutType" /> is an enumeration with the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>TKBLT_UNDEFINED</description>
+          <description>Undefined.</description>
+        </listheader>
+        <item>
+          <description>TKBLT_CLASSIC</description>
+          <description>
+            <para>The touch keyboard is to use a classic layout.</para>
+            <para>Classic layouts represent the legacy layouts of physical keyboards.</para>
+          </description>
+        </item>
+        <item>
+          <description>TKBLT_OPTIMIZED</description>
+          <description>
+            <para>The touch keyboard is to use a touch-optimized layout.</para>
+            <para>Touch-optimized layouts have been specifically designed with touch in mind.</para>
+          </description>
+        </item>
+      </list>
+      <para>The layout identifiers returned by this API must be one from the following list.
+Each identifier is specific to a certain language, and these are all specific to the touch keyboard.
+There is no way to request support for other layouts, or to add new touch optimized layouts dynamically.</para>
+      <list type="table">
+        <listheader>
+          <description>Layout Definition                                                                                    </description>
+          <description>Value</description>
+          <description>Supported Input Language</description>
+        </listheader>
+        <item>
+          <description>TKBL_UNDEFINED</description>
+          <description>0</description>
+          <description>n/a</description>
+        </item>
+        <item>
+          <description>TKBL_CLASSIC_TRADITIONAL_CHINESE_PHONETIC</description>
+          <description>0x0404</description>
+          <description>CHT</description>
+        </item>
+        <item>
+          <description>TKBL_CLASSIC_TRADITIONAL_CHINESE_CHANGJIE</description>
+          <description>0xF042</description>
+          <description>CHT</description>
+        </item>
+        <item>
+          <description>TKBL_CLASSIC_TRADITIONAL_CHINESE_DAYI</description>
+          <description>0xF043</description>
+          <description>CHT</description>
+        </item>
+        <item>
+          <description>TKBL_OPT_JAPANESE_ABC</description>
+          <description>0x0411</description>
+          <description>JPN</description>
+        </item>
+        <item>
+          <description>TKBL_OPT_KOREAN_HANGUL_2_BULSIK</description>
+          <description>0x0412</description>
+          <description>KOR</description>
+        </item>
+        <item>
+          <description>TKBL_OPT_SIMPLIFIED_CHINESE_PINYIN</description>
+          <description>0x0804</description>
+          <description>CHS</description>
+        </item>
+        <item>
+          <description>TKBL_OPT_TRADITIONAL_CHINESE_PHONETIC</description>
+          <description>0x0404</description>
+          <description>CHT</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="ITfFnGetPreferredTouchKeyboardLayout" />
+  </member>
+  <member name="ITfFnGetPreferredTouchKeyboardLayout">
+    <summary>
+      <para>The <b>ITfFnGetPreferredTouchKeyboardLayout</b> interface is implemented by a text service to specify the use of a particular keyboard layout supported by the inbox Windows 8 touch keyboard.</para>
+      <para>When an IME is active the touch keyboard will use <see cref="ITfFunctionProvider.GetFunction" /> with <b>IID_ITfFnGetPreferredTouchKeyboardLayout</b> to query the IME for this function.</para>
+      <para>If the function is not supported by the IME, then the touch keyboard will show the default layout for the language.</para>
+    </summary>
+    <remarks>
+      <para>For more information on the layouts which can be specified, see GetLayout.</para>
+      <para>This interface applies only to IMEs written using the Text Services Framework and not to legacy IMM32 IMEs, and it only applies to the following input languages:</para>
+      <list type="bullet">
+        <item>
+          <description>Japanese</description>
+        </item>
+        <item>
+          <description>Korean</description>
+        </item>
+        <item>
+          <description>Simplified Chinese</description>
+        </item>
+        <item>
+          <description>Traditional Chinese</description>
+        </item>
+      </list>
+    </remarks>
+    <seealso cref="ITfFunction" />
+  </member>
+</doc>

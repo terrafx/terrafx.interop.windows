@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PPM_THERMAL_POLICY_EVENT.xml' path='doc/member[@name="PPM_THERMAL_POLICY_EVENT"]/*' />
 public partial struct PPM_THERMAL_POLICY_EVENT
 {
+    /// <include file='PPM_THERMAL_POLICY_EVENT.xml' path='doc/member[@name="PPM_THERMAL_POLICY_EVENT.Mode"]/*' />
     public byte Mode;
 
+    /// <include file='PPM_THERMAL_POLICY_EVENT.xml' path='doc/member[@name="PPM_THERMAL_POLICY_EVENT.Processors"]/*' />
     [NativeTypeName("DWORD64")]
     public ulong Processors;
 }

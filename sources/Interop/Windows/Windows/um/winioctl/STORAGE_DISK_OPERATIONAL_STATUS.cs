@@ -5,15 +5,33 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='STORAGE_DISK_OPERATIONAL_STATUS.xml' path='doc/member[@name="STORAGE_DISK_OPERATIONAL_STATUS"]/*' />
 public enum STORAGE_DISK_OPERATIONAL_STATUS
 {
+    /// <include file='STORAGE_DISK_OPERATIONAL_STATUS.xml' path='doc/member[@name="STORAGE_DISK_OPERATIONAL_STATUS.DiskOpStatusNone"]/*' />
     DiskOpStatusNone = 0,
+
+    /// <include file='STORAGE_DISK_OPERATIONAL_STATUS.xml' path='doc/member[@name="STORAGE_DISK_OPERATIONAL_STATUS.DiskOpStatusUnknown"]/*' />
     DiskOpStatusUnknown,
+
+    /// <include file='STORAGE_DISK_OPERATIONAL_STATUS.xml' path='doc/member[@name="STORAGE_DISK_OPERATIONAL_STATUS.DiskOpStatusOk"]/*' />
     DiskOpStatusOk,
+
+    /// <include file='STORAGE_DISK_OPERATIONAL_STATUS.xml' path='doc/member[@name="STORAGE_DISK_OPERATIONAL_STATUS.DiskOpStatusPredictingFailure"]/*' />
     DiskOpStatusPredictingFailure,
+
+    /// <include file='STORAGE_DISK_OPERATIONAL_STATUS.xml' path='doc/member[@name="STORAGE_DISK_OPERATIONAL_STATUS.DiskOpStatusInService"]/*' />
     DiskOpStatusInService,
+
+    /// <include file='STORAGE_DISK_OPERATIONAL_STATUS.xml' path='doc/member[@name="STORAGE_DISK_OPERATIONAL_STATUS.DiskOpStatusHardwareError"]/*' />
     DiskOpStatusHardwareError,
+
+    /// <include file='STORAGE_DISK_OPERATIONAL_STATUS.xml' path='doc/member[@name="STORAGE_DISK_OPERATIONAL_STATUS.DiskOpStatusNotUsable"]/*' />
     DiskOpStatusNotUsable,
+
+    /// <include file='STORAGE_DISK_OPERATIONAL_STATUS.xml' path='doc/member[@name="STORAGE_DISK_OPERATIONAL_STATUS.DiskOpStatusTransientError"]/*' />
     DiskOpStatusTransientError,
+
+    /// <include file='STORAGE_DISK_OPERATIONAL_STATUS.xml' path='doc/member[@name="STORAGE_DISK_OPERATIONAL_STATUS.DiskOpStatusMissing"]/*' />
     DiskOpStatusMissing,
 }

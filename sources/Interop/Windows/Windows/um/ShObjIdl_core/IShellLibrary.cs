@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IShellLibrary.xml' path='doc/member[@name="IShellLibrary"]/*' />
 [Guid("11A66EFA-382E-451A-9234-1E0E12EF3085")]
 [NativeTypeName("struct IShellLibrary : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IShellLibrary : IShellLibrary.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IShellLibrary : IShellLibrary.Interface
         return ((delegate* unmanaged<IShellLibrary*, Guid*, void**, int>)(lpVtbl[0]))((IShellLibrary*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IShellLibrary : IShellLibrary.Interface
         return ((delegate* unmanaged<IShellLibrary*, uint>)(lpVtbl[1]))((IShellLibrary*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IShellLibrary : IShellLibrary.Interface
         return ((delegate* unmanaged<IShellLibrary*, uint>)(lpVtbl[2]))((IShellLibrary*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IShellLibrary.xml' path='doc/member[@name="IShellLibrary.LoadLibraryFromItem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT LoadLibraryFromItem(IShellItem* psiLibrary, [NativeTypeName("DWORD")] uint grfMode)
@@ -46,6 +51,7 @@ public unsafe partial struct IShellLibrary : IShellLibrary.Interface
         return ((delegate* unmanaged<IShellLibrary*, IShellItem*, uint, int>)(lpVtbl[3]))((IShellLibrary*)Unsafe.AsPointer(ref this), psiLibrary, grfMode);
     }
 
+    /// <include file='IShellLibrary.xml' path='doc/member[@name="IShellLibrary.LoadLibraryFromKnownFolder"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT LoadLibraryFromKnownFolder([NativeTypeName("const KNOWNFOLDERID &")] Guid* kfidLibrary, [NativeTypeName("DWORD")] uint grfMode)
@@ -53,6 +59,7 @@ public unsafe partial struct IShellLibrary : IShellLibrary.Interface
         return ((delegate* unmanaged<IShellLibrary*, Guid*, uint, int>)(lpVtbl[4]))((IShellLibrary*)Unsafe.AsPointer(ref this), kfidLibrary, grfMode);
     }
 
+    /// <include file='IShellLibrary.xml' path='doc/member[@name="IShellLibrary.AddFolder"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT AddFolder(IShellItem* psiLocation)
@@ -60,6 +67,7 @@ public unsafe partial struct IShellLibrary : IShellLibrary.Interface
         return ((delegate* unmanaged<IShellLibrary*, IShellItem*, int>)(lpVtbl[5]))((IShellLibrary*)Unsafe.AsPointer(ref this), psiLocation);
     }
 
+    /// <include file='IShellLibrary.xml' path='doc/member[@name="IShellLibrary.RemoveFolder"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT RemoveFolder(IShellItem* psiLocation)
@@ -67,6 +75,7 @@ public unsafe partial struct IShellLibrary : IShellLibrary.Interface
         return ((delegate* unmanaged<IShellLibrary*, IShellItem*, int>)(lpVtbl[6]))((IShellLibrary*)Unsafe.AsPointer(ref this), psiLocation);
     }
 
+    /// <include file='IShellLibrary.xml' path='doc/member[@name="IShellLibrary.GetFolders"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetFolders(LIBRARYFOLDERFILTER lff, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
@@ -74,6 +83,7 @@ public unsafe partial struct IShellLibrary : IShellLibrary.Interface
         return ((delegate* unmanaged<IShellLibrary*, LIBRARYFOLDERFILTER, Guid*, void**, int>)(lpVtbl[7]))((IShellLibrary*)Unsafe.AsPointer(ref this), lff, riid, ppv);
     }
 
+    /// <include file='IShellLibrary.xml' path='doc/member[@name="IShellLibrary.ResolveFolder"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT ResolveFolder(IShellItem* psiFolderToResolve, [NativeTypeName("DWORD")] uint dwTimeout, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
@@ -81,6 +91,7 @@ public unsafe partial struct IShellLibrary : IShellLibrary.Interface
         return ((delegate* unmanaged<IShellLibrary*, IShellItem*, uint, Guid*, void**, int>)(lpVtbl[8]))((IShellLibrary*)Unsafe.AsPointer(ref this), psiFolderToResolve, dwTimeout, riid, ppv);
     }
 
+    /// <include file='IShellLibrary.xml' path='doc/member[@name="IShellLibrary.GetDefaultSaveFolder"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT GetDefaultSaveFolder(DEFAULTSAVEFOLDERTYPE dsft, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
@@ -88,6 +99,7 @@ public unsafe partial struct IShellLibrary : IShellLibrary.Interface
         return ((delegate* unmanaged<IShellLibrary*, DEFAULTSAVEFOLDERTYPE, Guid*, void**, int>)(lpVtbl[9]))((IShellLibrary*)Unsafe.AsPointer(ref this), dsft, riid, ppv);
     }
 
+    /// <include file='IShellLibrary.xml' path='doc/member[@name="IShellLibrary.SetDefaultSaveFolder"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT SetDefaultSaveFolder(DEFAULTSAVEFOLDERTYPE dsft, IShellItem* psi)
@@ -95,6 +107,7 @@ public unsafe partial struct IShellLibrary : IShellLibrary.Interface
         return ((delegate* unmanaged<IShellLibrary*, DEFAULTSAVEFOLDERTYPE, IShellItem*, int>)(lpVtbl[10]))((IShellLibrary*)Unsafe.AsPointer(ref this), dsft, psi);
     }
 
+    /// <include file='IShellLibrary.xml' path='doc/member[@name="IShellLibrary.GetOptions"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT GetOptions(LIBRARYOPTIONFLAGS* plofOptions)
@@ -102,6 +115,7 @@ public unsafe partial struct IShellLibrary : IShellLibrary.Interface
         return ((delegate* unmanaged<IShellLibrary*, LIBRARYOPTIONFLAGS*, int>)(lpVtbl[11]))((IShellLibrary*)Unsafe.AsPointer(ref this), plofOptions);
     }
 
+    /// <include file='IShellLibrary.xml' path='doc/member[@name="IShellLibrary.SetOptions"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT SetOptions(LIBRARYOPTIONFLAGS lofMask, LIBRARYOPTIONFLAGS lofOptions)
@@ -109,6 +123,7 @@ public unsafe partial struct IShellLibrary : IShellLibrary.Interface
         return ((delegate* unmanaged<IShellLibrary*, LIBRARYOPTIONFLAGS, LIBRARYOPTIONFLAGS, int>)(lpVtbl[12]))((IShellLibrary*)Unsafe.AsPointer(ref this), lofMask, lofOptions);
     }
 
+    /// <include file='IShellLibrary.xml' path='doc/member[@name="IShellLibrary.GetFolderType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT GetFolderType([NativeTypeName("FOLDERTYPEID *")] Guid* pftid)
@@ -116,6 +131,7 @@ public unsafe partial struct IShellLibrary : IShellLibrary.Interface
         return ((delegate* unmanaged<IShellLibrary*, Guid*, int>)(lpVtbl[13]))((IShellLibrary*)Unsafe.AsPointer(ref this), pftid);
     }
 
+    /// <include file='IShellLibrary.xml' path='doc/member[@name="IShellLibrary.SetFolderType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT SetFolderType([NativeTypeName("const FOLDERTYPEID &")] Guid* ftid)
@@ -123,6 +139,7 @@ public unsafe partial struct IShellLibrary : IShellLibrary.Interface
         return ((delegate* unmanaged<IShellLibrary*, Guid*, int>)(lpVtbl[14]))((IShellLibrary*)Unsafe.AsPointer(ref this), ftid);
     }
 
+    /// <include file='IShellLibrary.xml' path='doc/member[@name="IShellLibrary.GetIcon"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT GetIcon([NativeTypeName("LPWSTR *")] ushort** ppszIcon)
@@ -130,6 +147,7 @@ public unsafe partial struct IShellLibrary : IShellLibrary.Interface
         return ((delegate* unmanaged<IShellLibrary*, ushort**, int>)(lpVtbl[15]))((IShellLibrary*)Unsafe.AsPointer(ref this), ppszIcon);
     }
 
+    /// <include file='IShellLibrary.xml' path='doc/member[@name="IShellLibrary.SetIcon"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT SetIcon([NativeTypeName("LPCWSTR")] ushort* pszIcon)
@@ -137,6 +155,7 @@ public unsafe partial struct IShellLibrary : IShellLibrary.Interface
         return ((delegate* unmanaged<IShellLibrary*, ushort*, int>)(lpVtbl[16]))((IShellLibrary*)Unsafe.AsPointer(ref this), pszIcon);
     }
 
+    /// <include file='IShellLibrary.xml' path='doc/member[@name="IShellLibrary.Commit"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT Commit()
@@ -144,6 +163,7 @@ public unsafe partial struct IShellLibrary : IShellLibrary.Interface
         return ((delegate* unmanaged<IShellLibrary*, int>)(lpVtbl[17]))((IShellLibrary*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IShellLibrary.xml' path='doc/member[@name="IShellLibrary.Save"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT Save(IShellItem* psiFolderToSaveIn, [NativeTypeName("LPCWSTR")] ushort* pszLibraryName, LIBRARYSAVEFLAGS lsf, IShellItem** ppsiSavedTo)
@@ -151,6 +171,7 @@ public unsafe partial struct IShellLibrary : IShellLibrary.Interface
         return ((delegate* unmanaged<IShellLibrary*, IShellItem*, ushort*, LIBRARYSAVEFLAGS, IShellItem**, int>)(lpVtbl[18]))((IShellLibrary*)Unsafe.AsPointer(ref this), psiFolderToSaveIn, pszLibraryName, lsf, ppsiSavedTo);
     }
 
+    /// <include file='IShellLibrary.xml' path='doc/member[@name="IShellLibrary.SaveInKnownFolder"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT SaveInKnownFolder([NativeTypeName("const KNOWNFOLDERID &")] Guid* kfidToSaveIn, [NativeTypeName("LPCWSTR")] ushort* pszLibraryName, LIBRARYSAVEFLAGS lsf, IShellItem** ppsiSavedTo)

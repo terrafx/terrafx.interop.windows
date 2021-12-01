@@ -5,13 +5,27 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='eTlsHashAlgorithm.xml' path='doc/member[@name="eTlsHashAlgorithm"]/*' />
 public enum eTlsHashAlgorithm
 {
+    /// <include file='eTlsHashAlgorithm.xml' path='doc/member[@name="eTlsHashAlgorithm.TlsHashAlgorithm_None"]/*' />
     TlsHashAlgorithm_None = 0,
+
+    /// <include file='eTlsHashAlgorithm.xml' path='doc/member[@name="eTlsHashAlgorithm.TlsHashAlgorithm_Md5"]/*' />
     TlsHashAlgorithm_Md5 = 1,
+
+    /// <include file='eTlsHashAlgorithm.xml' path='doc/member[@name="eTlsHashAlgorithm.TlsHashAlgorithm_Sha1"]/*' />
     TlsHashAlgorithm_Sha1 = 2,
+
+    /// <include file='eTlsHashAlgorithm.xml' path='doc/member[@name="eTlsHashAlgorithm.TlsHashAlgorithm_Sha224"]/*' />
     TlsHashAlgorithm_Sha224 = 3,
+
+    /// <include file='eTlsHashAlgorithm.xml' path='doc/member[@name="eTlsHashAlgorithm.TlsHashAlgorithm_Sha256"]/*' />
     TlsHashAlgorithm_Sha256 = 4,
+
+    /// <include file='eTlsHashAlgorithm.xml' path='doc/member[@name="eTlsHashAlgorithm.TlsHashAlgorithm_Sha384"]/*' />
     TlsHashAlgorithm_Sha384 = 5,
+
+    /// <include file='eTlsHashAlgorithm.xml' path='doc/member[@name="eTlsHashAlgorithm.TlsHashAlgorithm_Sha512"]/*' />
     TlsHashAlgorithm_Sha512 = 6,
 }

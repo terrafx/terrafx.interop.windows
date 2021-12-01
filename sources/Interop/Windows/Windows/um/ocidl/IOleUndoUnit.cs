@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IOleUndoUnit.xml' path='doc/member[@name="IOleUndoUnit"]/*' />
 [Guid("894AD3B0-EF97-11CE-9BC9-00AA00608E01")]
 [NativeTypeName("struct IOleUndoUnit : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IOleUndoUnit : IOleUndoUnit.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IOleUndoUnit : IOleUndoUnit.Interface
         return ((delegate* unmanaged<IOleUndoUnit*, Guid*, void**, int>)(lpVtbl[0]))((IOleUndoUnit*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IOleUndoUnit : IOleUndoUnit.Interface
         return ((delegate* unmanaged<IOleUndoUnit*, uint>)(lpVtbl[1]))((IOleUndoUnit*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IOleUndoUnit : IOleUndoUnit.Interface
         return ((delegate* unmanaged<IOleUndoUnit*, uint>)(lpVtbl[2]))((IOleUndoUnit*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IOleUndoUnit.xml' path='doc/member[@name="IOleUndoUnit.Do"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT Do(IOleUndoManager* pUndoManager)
@@ -46,6 +51,7 @@ public unsafe partial struct IOleUndoUnit : IOleUndoUnit.Interface
         return ((delegate* unmanaged<IOleUndoUnit*, IOleUndoManager*, int>)(lpVtbl[3]))((IOleUndoUnit*)Unsafe.AsPointer(ref this), pUndoManager);
     }
 
+    /// <include file='IOleUndoUnit.xml' path='doc/member[@name="IOleUndoUnit.GetDescription"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetDescription([NativeTypeName("BSTR *")] ushort** pBstr)
@@ -53,6 +59,7 @@ public unsafe partial struct IOleUndoUnit : IOleUndoUnit.Interface
         return ((delegate* unmanaged<IOleUndoUnit*, ushort**, int>)(lpVtbl[4]))((IOleUndoUnit*)Unsafe.AsPointer(ref this), pBstr);
     }
 
+    /// <include file='IOleUndoUnit.xml' path='doc/member[@name="IOleUndoUnit.GetUnitType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetUnitType([NativeTypeName("CLSID *")] Guid* pClsid, [NativeTypeName("LONG *")] int* plID)
@@ -60,6 +67,7 @@ public unsafe partial struct IOleUndoUnit : IOleUndoUnit.Interface
         return ((delegate* unmanaged<IOleUndoUnit*, Guid*, int*, int>)(lpVtbl[5]))((IOleUndoUnit*)Unsafe.AsPointer(ref this), pClsid, plID);
     }
 
+    /// <include file='IOleUndoUnit.xml' path='doc/member[@name="IOleUndoUnit.OnNextAdd"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT OnNextAdd()

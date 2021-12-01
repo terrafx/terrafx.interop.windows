@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IPV6_MREQ.xml' path='doc/member[@name="IPV6_MREQ"]/*' />
 public partial struct IPV6_MREQ
 {
+    /// <include file='IPV6_MREQ.xml' path='doc/member[@name="IPV6_MREQ.ipv6mr_multiaddr"]/*' />
     public IN6_ADDR ipv6mr_multiaddr;
 
+    /// <include file='IPV6_MREQ.xml' path='doc/member[@name="IPV6_MREQ.ipv6mr_interface"]/*' />
     [NativeTypeName("ULONG")]
     public uint ipv6mr_interface;
 }

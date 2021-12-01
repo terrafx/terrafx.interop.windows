@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='AUDIOFILE_AF36WAVEFORMAT.xml' path='doc/member[@name="AUDIOFILE_AF36WAVEFORMAT"]/*' />
 public partial struct AUDIOFILE_AF36WAVEFORMAT
 {
+    /// <include file='AUDIOFILE_AF36WAVEFORMAT.xml' path='doc/member[@name="AUDIOFILE_AF36WAVEFORMAT.wfx"]/*' />
     public WAVEFORMATEX wfx;
 }

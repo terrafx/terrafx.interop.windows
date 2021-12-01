@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CAUB.xml' path='doc/member[@name="CAUB"]/*' />
 public unsafe partial struct CAUB
 {
+    /// <include file='CAUB.xml' path='doc/member[@name="CAUB.cElems"]/*' />
     [NativeTypeName("ULONG")]
     public uint cElems;
 
+    /// <include file='CAUB.xml' path='doc/member[@name="CAUB.pElems"]/*' />
     [NativeTypeName("UCHAR *")]
     public byte* pElems;
 }

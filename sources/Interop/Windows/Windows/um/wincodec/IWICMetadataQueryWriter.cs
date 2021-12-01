@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IWICMetadataQueryWriter.xml' path='doc/member[@name="IWICMetadataQueryWriter"]/*' />
 [Guid("A721791A-0DEF-4D06-BD91-2118BF1DB10B")]
 [NativeTypeName("struct IWICMetadataQueryWriter : IWICMetadataQueryReader")]
 [NativeInheritance("IWICMetadataQueryReader")]
@@ -16,6 +17,7 @@ public unsafe partial struct IWICMetadataQueryWriter : IWICMetadataQueryWriter.I
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IWICMetadataQueryWriter : IWICMetadataQueryWriter.I
         return ((delegate* unmanaged<IWICMetadataQueryWriter*, Guid*, void**, int>)(lpVtbl[0]))((IWICMetadataQueryWriter*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IWICMetadataQueryWriter : IWICMetadataQueryWriter.I
         return ((delegate* unmanaged<IWICMetadataQueryWriter*, uint>)(lpVtbl[1]))((IWICMetadataQueryWriter*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IWICMetadataQueryWriter : IWICMetadataQueryWriter.I
         return ((delegate* unmanaged<IWICMetadataQueryWriter*, uint>)(lpVtbl[2]))((IWICMetadataQueryWriter*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IWICMetadataQueryReader.GetContainerFormat" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetContainerFormat(Guid* pguidContainerFormat)
@@ -46,6 +51,7 @@ public unsafe partial struct IWICMetadataQueryWriter : IWICMetadataQueryWriter.I
         return ((delegate* unmanaged<IWICMetadataQueryWriter*, Guid*, int>)(lpVtbl[3]))((IWICMetadataQueryWriter*)Unsafe.AsPointer(ref this), pguidContainerFormat);
     }
 
+    /// <inheritdoc cref="IWICMetadataQueryReader.GetLocation" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetLocation(uint cchMaxLength, [NativeTypeName("WCHAR *")] ushort* wzNamespace, uint* pcchActualLength)
@@ -53,6 +59,7 @@ public unsafe partial struct IWICMetadataQueryWriter : IWICMetadataQueryWriter.I
         return ((delegate* unmanaged<IWICMetadataQueryWriter*, uint, ushort*, uint*, int>)(lpVtbl[4]))((IWICMetadataQueryWriter*)Unsafe.AsPointer(ref this), cchMaxLength, wzNamespace, pcchActualLength);
     }
 
+    /// <inheritdoc cref="IWICMetadataQueryReader.GetMetadataByName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetMetadataByName([NativeTypeName("LPCWSTR")] ushort* wzName, PROPVARIANT* pvarValue)
@@ -60,6 +67,7 @@ public unsafe partial struct IWICMetadataQueryWriter : IWICMetadataQueryWriter.I
         return ((delegate* unmanaged<IWICMetadataQueryWriter*, ushort*, PROPVARIANT*, int>)(lpVtbl[5]))((IWICMetadataQueryWriter*)Unsafe.AsPointer(ref this), wzName, pvarValue);
     }
 
+    /// <inheritdoc cref="IWICMetadataQueryReader.GetEnumerator" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetEnumerator(IEnumString** ppIEnumString)
@@ -67,6 +75,7 @@ public unsafe partial struct IWICMetadataQueryWriter : IWICMetadataQueryWriter.I
         return ((delegate* unmanaged<IWICMetadataQueryWriter*, IEnumString**, int>)(lpVtbl[6]))((IWICMetadataQueryWriter*)Unsafe.AsPointer(ref this), ppIEnumString);
     }
 
+    /// <include file='IWICMetadataQueryWriter.xml' path='doc/member[@name="IWICMetadataQueryWriter.SetMetadataByName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT SetMetadataByName([NativeTypeName("LPCWSTR")] ushort* wzName, [NativeTypeName("const PROPVARIANT *")] PROPVARIANT* pvarValue)
@@ -74,6 +83,7 @@ public unsafe partial struct IWICMetadataQueryWriter : IWICMetadataQueryWriter.I
         return ((delegate* unmanaged<IWICMetadataQueryWriter*, ushort*, PROPVARIANT*, int>)(lpVtbl[7]))((IWICMetadataQueryWriter*)Unsafe.AsPointer(ref this), wzName, pvarValue);
     }
 
+    /// <include file='IWICMetadataQueryWriter.xml' path='doc/member[@name="IWICMetadataQueryWriter.RemoveMetadataByName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT RemoveMetadataByName([NativeTypeName("LPCWSTR")] ushort* wzName)

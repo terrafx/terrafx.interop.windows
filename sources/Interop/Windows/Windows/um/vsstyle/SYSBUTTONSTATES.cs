@@ -5,10 +5,18 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SYSBUTTONSTATES.xml' path='doc/member[@name="SYSBUTTONSTATES"]/*' />
 public enum SYSBUTTONSTATES
 {
+    /// <include file='SYSBUTTONSTATES.xml' path='doc/member[@name="SYSBUTTONSTATES.SBS_NORMAL"]/*' />
     SBS_NORMAL = 1,
+
+    /// <include file='SYSBUTTONSTATES.xml' path='doc/member[@name="SYSBUTTONSTATES.SBS_HOT"]/*' />
     SBS_HOT = 2,
+
+    /// <include file='SYSBUTTONSTATES.xml' path='doc/member[@name="SYSBUTTONSTATES.SBS_PUSHED"]/*' />
     SBS_PUSHED = 3,
+
+    /// <include file='SYSBUTTONSTATES.xml' path='doc/member[@name="SYSBUTTONSTATES.SBS_DISABLED"]/*' />
     SBS_DISABLED = 4,
 }

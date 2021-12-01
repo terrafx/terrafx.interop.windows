@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WICMetadataCreationOptions">
+    <summary>
+      <para>Specifies metadata creation options.</para>
+    </summary>
+  </member>
+  <member name="WICMetadataCreationOptions.WICMetadataCreationDefault">
+    <summary>
+      <para>The default metadata creation options. The default value is <b>WICMetadataCreationAllowUnknown</b>.</para>
+    </summary>
+  </member>
+  <member name="WICMetadataCreationOptions.WICMetadataCreationAllowUnknown">
+    <summary>
+      <para>Allow unknown metadata creation.</para>
+    </summary>
+  </member>
+  <member name="WICMetadataCreationOptions.WICMetadataCreationFailUnknown">
+    <summary>
+      <para>Fail on unknown metadata creation.</para>
+    </summary>
+  </member>
+  <member name="WICMetadataCreationOptions.WICMetadataCreationMask">
+    <summary>
+      <para>The <see cref="WICMetadataCreationOptions" /> mask.</para>
+    </summary>
+  </member>
+</doc>

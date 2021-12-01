@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IRpcChannelBuffer2.xml' path='doc/member[@name="IRpcChannelBuffer2"]/*' />
 [Guid("594F31D0-7F19-11D0-B194-00A0C90DC8BF")]
 [NativeTypeName("struct IRpcChannelBuffer2 : IRpcChannelBuffer")]
 [NativeInheritance("IRpcChannelBuffer")]
@@ -16,6 +17,7 @@ public unsafe partial struct IRpcChannelBuffer2 : IRpcChannelBuffer2.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IRpcChannelBuffer2 : IRpcChannelBuffer2.Interface
         return ((delegate* unmanaged<IRpcChannelBuffer2*, Guid*, void**, int>)(lpVtbl[0]))((IRpcChannelBuffer2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IRpcChannelBuffer2 : IRpcChannelBuffer2.Interface
         return ((delegate* unmanaged<IRpcChannelBuffer2*, uint>)(lpVtbl[1]))((IRpcChannelBuffer2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IRpcChannelBuffer2 : IRpcChannelBuffer2.Interface
         return ((delegate* unmanaged<IRpcChannelBuffer2*, uint>)(lpVtbl[2]))((IRpcChannelBuffer2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IRpcChannelBuffer.GetBuffer" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetBuffer(RPCOLEMESSAGE* pMessage, [NativeTypeName("const IID &")] Guid* riid)
@@ -46,6 +51,7 @@ public unsafe partial struct IRpcChannelBuffer2 : IRpcChannelBuffer2.Interface
         return ((delegate* unmanaged<IRpcChannelBuffer2*, RPCOLEMESSAGE*, Guid*, int>)(lpVtbl[3]))((IRpcChannelBuffer2*)Unsafe.AsPointer(ref this), pMessage, riid);
     }
 
+    /// <inheritdoc cref="IRpcChannelBuffer.SendReceive" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT SendReceive(RPCOLEMESSAGE* pMessage, [NativeTypeName("ULONG *")] uint* pStatus)
@@ -53,6 +59,7 @@ public unsafe partial struct IRpcChannelBuffer2 : IRpcChannelBuffer2.Interface
         return ((delegate* unmanaged<IRpcChannelBuffer2*, RPCOLEMESSAGE*, uint*, int>)(lpVtbl[4]))((IRpcChannelBuffer2*)Unsafe.AsPointer(ref this), pMessage, pStatus);
     }
 
+    /// <inheritdoc cref="IRpcChannelBuffer.FreeBuffer" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT FreeBuffer(RPCOLEMESSAGE* pMessage)
@@ -60,6 +67,7 @@ public unsafe partial struct IRpcChannelBuffer2 : IRpcChannelBuffer2.Interface
         return ((delegate* unmanaged<IRpcChannelBuffer2*, RPCOLEMESSAGE*, int>)(lpVtbl[5]))((IRpcChannelBuffer2*)Unsafe.AsPointer(ref this), pMessage);
     }
 
+    /// <inheritdoc cref="IRpcChannelBuffer.GetDestCtx" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetDestCtx([NativeTypeName("DWORD *")] uint* pdwDestContext, void** ppvDestContext)
@@ -67,6 +75,7 @@ public unsafe partial struct IRpcChannelBuffer2 : IRpcChannelBuffer2.Interface
         return ((delegate* unmanaged<IRpcChannelBuffer2*, uint*, void**, int>)(lpVtbl[6]))((IRpcChannelBuffer2*)Unsafe.AsPointer(ref this), pdwDestContext, ppvDestContext);
     }
 
+    /// <inheritdoc cref="IRpcChannelBuffer.IsConnected" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT IsConnected()
@@ -74,6 +83,7 @@ public unsafe partial struct IRpcChannelBuffer2 : IRpcChannelBuffer2.Interface
         return ((delegate* unmanaged<IRpcChannelBuffer2*, int>)(lpVtbl[7]))((IRpcChannelBuffer2*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IRpcChannelBuffer2.xml' path='doc/member[@name="IRpcChannelBuffer2.GetProtocolVersion"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT GetProtocolVersion([NativeTypeName("DWORD *")] uint* pdwVersion)

@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='AM_AC3_ALTERNATE_AUDIO.xml' path='doc/member[@name="AM_AC3_ALTERNATE_AUDIO"]/*' />
 public partial struct AM_AC3_ALTERNATE_AUDIO
 {
+    /// <include file='AM_AC3_ALTERNATE_AUDIO.xml' path='doc/member[@name="AM_AC3_ALTERNATE_AUDIO.fStereo"]/*' />
     public BOOL fStereo;
 
+    /// <include file='AM_AC3_ALTERNATE_AUDIO.xml' path='doc/member[@name="AM_AC3_ALTERNATE_AUDIO.DualMode"]/*' />
     [NativeTypeName("ULONG")]
     public uint DualMode;
 }

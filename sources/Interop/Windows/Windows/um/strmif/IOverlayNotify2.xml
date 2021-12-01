@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IOverlayNotify2.OnDisplayChange">
+    <summary>
+      <para>The <code>OnDisplayChange</code> method provides notification that the exposed window area has changed.</para>
+    </summary>
+    <param name="hMonitor">
+      <para>Handle to the monitor used for displaying the overlay.</para>
+    </param>
+    <returns>
+      <para>Returns S_OK if successful. If the method fails, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
+    <seealso cref="IOverlayNotify2 Interface" />
+  </member>
+  <member name="IOverlayNotify2">
+    <summary>
+      <para>The <code>IOverlayNotify2</code> interface derives from the <see cref="IOverlayNotify" /> interface. <code>IOverlayNotify2</code> gives asynchronous notifications of changes to the rendering window, identifying changes to the exposed window area. The advise link optionally supports this for the purpose of accepting <see cref="IOverlayNotify2.OnDisplayChange" /> notification.</para>
+      <para>To get notifications that the exposed window area has changed, decoders that do their own drawing should implement an <code>IOverlayNotify2</code> interface.</para>
+      <para>The video renderer is the only filter that calls the method on this interface. This is done automatically by the default video renderer.</para>
+    </summary>
+    <seealso cref="IOverlayNotify" />
+  </member>
+</doc>

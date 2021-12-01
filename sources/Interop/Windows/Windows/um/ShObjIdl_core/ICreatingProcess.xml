@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ICreatingProcess.OnCreating">
+    <summary>
+      <para>Allows you to modify the parameters of  the process being created.</para>
+    </summary>
+    <param name="pcpi">
+      <para>A pointer to an <see cref="ICreateProcessInputs" /> interface which allows you to set some parameters for the process that is being created.</para>
+    </param>
+    <returns>
+      <para>
+        <b> S_OK</b> if the method succeeds. Otherwise, an <b>HRESULT</b> error code, and the process is not created.</para>
+    </returns>
+    <seealso cref="CreateProcess" />
+    <seealso cref="ICreatingProcess" />
+  </member>
+  <member name="ICreatingProcess">
+    <summary>
+      <para>Used by <see cref="ShellExecuteEx" /> and <see cref="IContextMenu" /> to allow the caller to alter some parameters of the  process being created.</para>
+    </summary>
+    <remarks>
+      <para>The caller should install an object into the site chain which implements <a href="https://docs.microsoft.com//dotnet/api/microsoft.visualstudio.shell.package.microsoft-visualstudio-ole-interop-iserviceprovider-queryservice?view=visualstudiosdk-2017">IServiceProvider.QueryService</a> and responds to the <b>SID_ExecuteCreatingProcess</b> service ID with an object that implements the <b>ICreatingProcess</b> interface.</para>
+      <para>After performing the desired operations, the object should forward the <see cref="ICreatingProcess.OnCreating" /> call up the site chain to allow other members of the site chain to participate.</para>
+    </remarks>
+    <seealso cref="CreateProcess" />
+    <seealso cref="ICreateProcessInputs" />
+  </member>
+</doc>

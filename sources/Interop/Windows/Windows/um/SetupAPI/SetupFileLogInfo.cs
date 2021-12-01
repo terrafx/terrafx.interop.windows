@@ -5,12 +5,24 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SetupFileLogInfo.xml' path='doc/member[@name="SetupFileLogInfo"]/*' />
 public enum SetupFileLogInfo
 {
+    /// <include file='SetupFileLogInfo.xml' path='doc/member[@name="SetupFileLogInfo.SetupFileLogSourceFilename"]/*' />
     SetupFileLogSourceFilename,
+
+    /// <include file='SetupFileLogInfo.xml' path='doc/member[@name="SetupFileLogInfo.SetupFileLogChecksum"]/*' />
     SetupFileLogChecksum,
+
+    /// <include file='SetupFileLogInfo.xml' path='doc/member[@name="SetupFileLogInfo.SetupFileLogDiskTagfile"]/*' />
     SetupFileLogDiskTagfile,
+
+    /// <include file='SetupFileLogInfo.xml' path='doc/member[@name="SetupFileLogInfo.SetupFileLogDiskDescription"]/*' />
     SetupFileLogDiskDescription,
+
+    /// <include file='SetupFileLogInfo.xml' path='doc/member[@name="SetupFileLogInfo.SetupFileLogOtherInfo"]/*' />
     SetupFileLogOtherInfo,
+
+    /// <include file='SetupFileLogInfo.xml' path='doc/member[@name="SetupFileLogInfo.SetupFileLogMax"]/*' />
     SetupFileLogMax,
 }

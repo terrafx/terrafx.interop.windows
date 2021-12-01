@@ -5,13 +5,27 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DISPLAY_MOVEUNIT.xml' path='doc/member[@name="DISPLAY_MOVEUNIT"]/*' />
 public enum DISPLAY_MOVEUNIT
 {
+    /// <include file='DISPLAY_MOVEUNIT.xml' path='doc/member[@name="DISPLAY_MOVEUNIT.DISPLAY_MOVEUNIT_PreviousLine"]/*' />
     DISPLAY_MOVEUNIT_PreviousLine = 1,
+
+    /// <include file='DISPLAY_MOVEUNIT.xml' path='doc/member[@name="DISPLAY_MOVEUNIT.DISPLAY_MOVEUNIT_NextLine"]/*' />
     DISPLAY_MOVEUNIT_NextLine = 2,
+
+    /// <include file='DISPLAY_MOVEUNIT.xml' path='doc/member[@name="DISPLAY_MOVEUNIT.DISPLAY_MOVEUNIT_CurrentLineStart"]/*' />
     DISPLAY_MOVEUNIT_CurrentLineStart = 3,
+
+    /// <include file='DISPLAY_MOVEUNIT.xml' path='doc/member[@name="DISPLAY_MOVEUNIT.DISPLAY_MOVEUNIT_CurrentLineEnd"]/*' />
     DISPLAY_MOVEUNIT_CurrentLineEnd = 4,
+
+    /// <include file='DISPLAY_MOVEUNIT.xml' path='doc/member[@name="DISPLAY_MOVEUNIT.DISPLAY_MOVEUNIT_TopOfWindow"]/*' />
     DISPLAY_MOVEUNIT_TopOfWindow = 5,
+
+    /// <include file='DISPLAY_MOVEUNIT.xml' path='doc/member[@name="DISPLAY_MOVEUNIT.DISPLAY_MOVEUNIT_BottomOfWindow"]/*' />
     DISPLAY_MOVEUNIT_BottomOfWindow = 6,
+
+    /// <include file='DISPLAY_MOVEUNIT.xml' path='doc/member[@name="DISPLAY_MOVEUNIT.DISPLAY_MOVEUNIT_Max"]/*' />
     DISPLAY_MOVEUNIT_Max = 2147483647,
 }

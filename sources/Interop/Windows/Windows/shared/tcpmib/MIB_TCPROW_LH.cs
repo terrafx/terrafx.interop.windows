@@ -8,23 +8,30 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MIB_TCPROW_LH.xml' path='doc/member[@name="MIB_TCPROW_LH"]/*' />
 public partial struct MIB_TCPROW_LH
 {
+    /// <include file='MIB_TCPROW_LH.xml' path='doc/member[@name="MIB_TCPROW_LH.Anonymous"]/*' />
     [NativeTypeName("_MIB_TCPROW_LH::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/shared/tcpmib.h:69:5)")]
     public _Anonymous_e__Union Anonymous;
 
+    /// <include file='MIB_TCPROW_LH.xml' path='doc/member[@name="MIB_TCPROW_LH.dwLocalAddr"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwLocalAddr;
 
+    /// <include file='MIB_TCPROW_LH.xml' path='doc/member[@name="MIB_TCPROW_LH.dwLocalPort"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwLocalPort;
 
+    /// <include file='MIB_TCPROW_LH.xml' path='doc/member[@name="MIB_TCPROW_LH.dwRemoteAddr"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwRemoteAddr;
 
+    /// <include file='MIB_TCPROW_LH.xml' path='doc/member[@name="MIB_TCPROW_LH.dwRemotePort"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwRemotePort;
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.dwState"]/*' />
     public ref uint dwState
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -34,6 +41,7 @@ public partial struct MIB_TCPROW_LH
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.State"]/*' />
     public ref MIB_TCP_STATE State
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -43,13 +51,16 @@ public partial struct MIB_TCPROW_LH
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public partial struct _Anonymous_e__Union
     {
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.dwState"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("DWORD")]
         public uint dwState;
 
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.State"]/*' />
         [FieldOffset(0)]
         public MIB_TCP_STATE State;
     }

@@ -9,12 +9,15 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PROCESS_MITIGATION_SYSTEM_CALL_DISABLE_POLICY.xml' path='doc/member[@name="PROCESS_MITIGATION_SYSTEM_CALL_DISABLE_POLICY"]/*' />
 [SupportedOSPlatform("windows8.0")]
 public partial struct PROCESS_MITIGATION_SYSTEM_CALL_DISABLE_POLICY
 {
+    /// <include file='PROCESS_MITIGATION_SYSTEM_CALL_DISABLE_POLICY.xml' path='doc/member[@name="PROCESS_MITIGATION_SYSTEM_CALL_DISABLE_POLICY.Anonymous"]/*' />
     [NativeTypeName("_PROCESS_MITIGATION_SYSTEM_CALL_DISABLE_POLICY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:12760:5)")]
     public _Anonymous_e__Union Anonymous;
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Flags"]/*' />
     public ref uint Flags
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -24,6 +27,7 @@ public partial struct PROCESS_MITIGATION_SYSTEM_CALL_DISABLE_POLICY
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.DisallowWin32kSystemCalls"]/*' />
     public uint DisallowWin32kSystemCalls
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -39,6 +43,7 @@ public partial struct PROCESS_MITIGATION_SYSTEM_CALL_DISABLE_POLICY
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.AuditDisallowWin32kSystemCalls"]/*' />
     public uint AuditDisallowWin32kSystemCalls
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -54,6 +59,7 @@ public partial struct PROCESS_MITIGATION_SYSTEM_CALL_DISABLE_POLICY
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.ReservedFlags"]/*' />
     public uint ReservedFlags
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -69,21 +75,26 @@ public partial struct PROCESS_MITIGATION_SYSTEM_CALL_DISABLE_POLICY
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public partial struct _Anonymous_e__Union
     {
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Flags"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("DWORD")]
         public uint Flags;
 
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("_PROCESS_MITIGATION_SYSTEM_CALL_DISABLE_POLICY::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/winnt.h:12762:9)")]
         public _Anonymous_e__Struct Anonymous;
 
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />
         public partial struct _Anonymous_e__Struct
         {
             public uint _bitfield;
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.DisallowWin32kSystemCalls"]/*' />
             [NativeTypeName("DWORD : 1")]
             public uint DisallowWin32kSystemCalls
             {
@@ -100,6 +111,7 @@ public partial struct PROCESS_MITIGATION_SYSTEM_CALL_DISABLE_POLICY
                 }
             }
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.AuditDisallowWin32kSystemCalls"]/*' />
             [NativeTypeName("DWORD : 1")]
             public uint AuditDisallowWin32kSystemCalls
             {
@@ -116,6 +128,7 @@ public partial struct PROCESS_MITIGATION_SYSTEM_CALL_DISABLE_POLICY
                 }
             }
 
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.ReservedFlags"]/*' />
             [NativeTypeName("DWORD : 30")]
             public uint ReservedFlags
             {

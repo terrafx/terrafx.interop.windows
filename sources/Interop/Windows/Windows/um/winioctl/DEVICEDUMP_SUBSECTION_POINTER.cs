@@ -7,15 +7,19 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DEVICEDUMP_SUBSECTION_POINTER.xml' path='doc/member[@name="DEVICEDUMP_SUBSECTION_POINTER"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
 public partial struct DEVICEDUMP_SUBSECTION_POINTER
 {
+    /// <include file='DEVICEDUMP_SUBSECTION_POINTER.xml' path='doc/member[@name="DEVICEDUMP_SUBSECTION_POINTER.dwSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwSize;
 
+    /// <include file='DEVICEDUMP_SUBSECTION_POINTER.xml' path='doc/member[@name="DEVICEDUMP_SUBSECTION_POINTER.dwFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFlags;
 
+    /// <include file='DEVICEDUMP_SUBSECTION_POINTER.xml' path='doc/member[@name="DEVICEDUMP_SUBSECTION_POINTER.dwOffset"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwOffset;
 }

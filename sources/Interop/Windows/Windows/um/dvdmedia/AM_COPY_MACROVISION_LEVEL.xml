@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="AM_COPY_MACROVISION_LEVEL">
+    <summary>
+      <para>Identifies the analog copy protection level.</para>
+    </summary>
+    <remarks>
+      <para>The <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/dvdmedia/ns-dvdmedia-am_copy_macrovision">AM_COPY_MACROVISION</a> structure uses this data type.</para>
+    </remarks>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-copy-protection-property-set">DVD Copy Protection Property Set</seealso>
+  </member>
+  <member name="AM_COPY_MACROVISION_LEVEL.AM_MACROVISION_DISABLED">
+    <summary>
+      <para>Disabled.</para>
+    </summary>
+  </member>
+  <member name="AM_COPY_MACROVISION_LEVEL.AM_MACROVISION_LEVEL1">
+    <summary>
+      <para>Level 1.</para>
+    </summary>
+  </member>
+  <member name="AM_COPY_MACROVISION_LEVEL.AM_MACROVISION_LEVEL2">
+    <summary>
+      <para>Level 2.</para>
+    </summary>
+  </member>
+  <member name="AM_COPY_MACROVISION_LEVEL.AM_MACROVISION_LEVEL3">
+    <summary>
+      <para>Level 3.</para>
+    </summary>
+  </member>
+</doc>

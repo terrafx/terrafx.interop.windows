@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='ITfReverseConversionList.xml' path='doc/member[@name="ITfReverseConversionList"]/*' />
 [Guid("151D69F0-86F4-4674-B721-56911E797F47")]
 [NativeTypeName("struct ITfReverseConversionList : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct ITfReverseConversionList : ITfReverseConversionList
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct ITfReverseConversionList : ITfReverseConversionList
         return ((delegate* unmanaged<ITfReverseConversionList*, Guid*, void**, int>)(lpVtbl[0]))((ITfReverseConversionList*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct ITfReverseConversionList : ITfReverseConversionList
         return ((delegate* unmanaged<ITfReverseConversionList*, uint>)(lpVtbl[1]))((ITfReverseConversionList*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct ITfReverseConversionList : ITfReverseConversionList
         return ((delegate* unmanaged<ITfReverseConversionList*, uint>)(lpVtbl[2]))((ITfReverseConversionList*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='ITfReverseConversionList.xml' path='doc/member[@name="ITfReverseConversionList.GetLength"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetLength(uint* puIndex)
@@ -46,6 +51,7 @@ public unsafe partial struct ITfReverseConversionList : ITfReverseConversionList
         return ((delegate* unmanaged<ITfReverseConversionList*, uint*, int>)(lpVtbl[3]))((ITfReverseConversionList*)Unsafe.AsPointer(ref this), puIndex);
     }
 
+    /// <include file='ITfReverseConversionList.xml' path='doc/member[@name="ITfReverseConversionList.GetString"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetString(uint uIndex, [NativeTypeName("BSTR *")] ushort** pbstr)

@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IFileDialog2.SetCancelButtonLabel">
+    <summary>
+      <para>Replaces the default text "Cancel" on the common file dialog's <b>Cancel</b> button.</para>
+    </summary>
+    <param name="pszLabel">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>Pointer to a string that contains the new text to display on the button.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>Changing the text on the Cancel button can be useful for situations where the IFileDialogEvents.OnFileOk method is used to accumulate items, and the button text should be Done instead of Cancel, for example.</para>
+    </remarks>
+    <seealso cref="IFileDialog2" />
+  </member>
+  <member name="IFileDialog2.SetNavigationRoot">
+    <summary>
+      <para>Specifies a top-level location from which to begin browsing a namespace, for instance in the <b>Save</b> dialog's <b>Browse folder</b> option. Users cannot navigate above this location.</para>
+    </summary>
+    <param name="psi">
+      <para>Type: <b><see cref="IShellItem" /></b></para>
+      <para>Pointer to an <see cref="IShellItem" /> object that represents the navigation root.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>
+        <b>SetNavigationRoot</b> can be used by applications that want to restrict navigation to a certain area of the Shell namespace. Items in the navigation pane are replaced with the supplied item, to guide the user from navigating outside of this part of the namespace.</para>
+      <para>This method cannot be called while the dialog is being displayed.</para>
+    </remarks>
+    <seealso cref="IFileDialog2" />
+  </member>
+  <member name="IFileDialog2">
+    <summary>
+      <para>Extends the <see cref="IFileDialog" /> interface by providing methods that allow the caller to name a specific, restricted location that can be browsed in the common file dialog as well as to specify alternate text to display as a label on the <b>Cancel</b> button.</para>
+    </summary>
+    <remarks>
+      <para>This interface also provides the methods of the <see cref="IFileDialog" /> interface, from which it inherits.</para>
+      <h3>When to Implement</h3>
+      <para>An implementation of this interface is provided with Windows. Third parties do not provide custom implementations.</para>
+      <h3>When to Use</h3>
+      <para>Use the methods of this interface in two instances:</para>
+      <list type="bullet">
+        <item>
+          <description>When you want to restrict the dialog's navigation to a specific namespace.</description>
+        </item>
+        <item>
+          <description>When you need the dialog's <b>Cancel</b> button to be labeled differently in keeping with your functionality.</description>
+        </item>
+      </list>
+    </remarks>
+  </member>
+</doc>

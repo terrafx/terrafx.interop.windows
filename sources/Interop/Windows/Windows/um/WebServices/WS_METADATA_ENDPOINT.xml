@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_METADATA_ENDPOINT">
+    <summary>
+      <para>Information about a single endpoint that was
+read from metadata documents.</para>
+    </summary>
+  </member>
+  <member name="WS_METADATA_ENDPOINT.endpointAddress">
+    <summary>
+      <para>The address of the endpoint.</para>
+    </summary>
+  </member>
+  <member name="WS_METADATA_ENDPOINT.endpointPolicy">
+    <summary>
+      <para>An opaque handle representing the policy of the endpoint.
+This handle is good until the metadata object
+is freed or reset.</para>
+    </summary>
+  </member>
+  <member name="WS_METADATA_ENDPOINT.portName">
+    <summary>
+      <para>The WSDL port name of the endpoint, if available.</para>
+    </summary>
+  </member>
+  <member name="WS_METADATA_ENDPOINT.serviceName">
+    <summary>
+      <para>The WSDL service name of the endpoint, if available.</para>
+    </summary>
+  </member>
+  <member name="WS_METADATA_ENDPOINT.serviceNs">
+    <summary>
+      <para>The WSDL service namespace of the endpoint, if available.</para>
+    </summary>
+  </member>
+  <member name="WS_METADATA_ENDPOINT.bindingName">
+    <summary>
+      <para>The WSDL binding name of the endpoint, if available.</para>
+    </summary>
+  </member>
+  <member name="WS_METADATA_ENDPOINT.bindingNs">
+    <summary>
+      <para>The WSDL binding namespace of the endpoint, if available.</para>
+    </summary>
+  </member>
+  <member name="WS_METADATA_ENDPOINT.portTypeName">
+    <summary>
+      <para>The WSDL portType name of the endpoint, if available.</para>
+    </summary>
+  </member>
+  <member name="WS_METADATA_ENDPOINT.portTypeNs">
+    <summary>
+      <para>The WSDL portType namespace of the endpoint, if available.</para>
+    </summary>
+  </member>
+</doc>

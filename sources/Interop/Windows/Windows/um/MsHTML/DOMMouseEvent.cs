@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='DOMMouseEvent.xml' path='doc/member[@name="DOMMouseEvent"]/*' />
 [Guid("305106CF-98B5-11CF-BB82-00AA00BDCE0B")]
 public partial struct DOMMouseEvent
 {

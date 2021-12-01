@@ -5,13 +5,17 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='REMSECURITY_ATTRIBUTES.xml' path='doc/member[@name="REMSECURITY_ATTRIBUTES"]/*' />
 public partial struct REMSECURITY_ATTRIBUTES
 {
+    /// <include file='REMSECURITY_ATTRIBUTES.xml' path='doc/member[@name="REMSECURITY_ATTRIBUTES.nLength"]/*' />
     [NativeTypeName("DWORD")]
     public uint nLength;
 
+    /// <include file='REMSECURITY_ATTRIBUTES.xml' path='doc/member[@name="REMSECURITY_ATTRIBUTES.lpSecurityDescriptor"]/*' />
     [NativeTypeName("DWORD")]
     public uint lpSecurityDescriptor;
 
+    /// <include file='REMSECURITY_ATTRIBUTES.xml' path='doc/member[@name="REMSECURITY_ATTRIBUTES.bInheritHandle"]/*' />
     public BOOL bInheritHandle;
 }

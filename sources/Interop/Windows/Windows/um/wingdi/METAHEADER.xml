@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="METAHEADER">
+    <summary>
+      <para>The <b>METAHEADER</b> structure contains information about a Windows-format metafile.</para>
+    </summary>
+    <seealso cref="METARECORD" />
+    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafile-structures">Metafile Structures</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafiles">Metafiles Overview</seealso>
+  </member>
+  <member name="METAHEADER.mtType">
+    <summary>
+      <para>Specifies whether the metafile is in memory or recorded in a disk file. This member can be one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <item>
+          <description>1</description>
+          <description>Metafile is in memory.</description>
+        </item>
+        <item>
+          <description>2</description>
+          <description>Metafile is in a disk file.</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="METAHEADER.mtHeaderSize">
+    <summary>
+      <para>The size, in words, of the metafile header.</para>
+    </summary>
+  </member>
+  <member name="METAHEADER.mtVersion">
+    <summary>
+      <para>The system version number. The version number for metafiles that support device-independent bitmaps (DIBs) is 0x0300. Otherwise, the version number is 0x0100.</para>
+    </summary>
+  </member>
+  <member name="METAHEADER.mtSize">
+    <summary>
+      <para>The size, in words, of the file.</para>
+    </summary>
+  </member>
+  <member name="METAHEADER.mtNoObjects">
+    <summary>
+      <para>The maximum number of objects that exist in the metafile at the same time.</para>
+    </summary>
+  </member>
+  <member name="METAHEADER.mtMaxRecord">
+    <summary>
+      <para>The size, in words, of the largest record in the metafile.</para>
+    </summary>
+  </member>
+  <member name="METAHEADER.mtNoParameters">
+    <summary>
+      <para>Reserved.</para>
+    </summary>
+  </member>
+</doc>

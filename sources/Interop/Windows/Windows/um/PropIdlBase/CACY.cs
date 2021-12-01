@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CACY.xml' path='doc/member[@name="CACY"]/*' />
 public unsafe partial struct CACY
 {
+    /// <include file='CACY.xml' path='doc/member[@name="CACY.cElems"]/*' />
     [NativeTypeName("ULONG")]
     public uint cElems;
 
+    /// <include file='CACY.xml' path='doc/member[@name="CACY.pElems"]/*' />
     public CY* pElems;
 }

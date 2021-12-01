@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='UPDATEMETADATASTATES.xml' path='doc/member[@name="UPDATEMETADATASTATES"]/*' />
 public enum UPDATEMETADATASTATES
 {
+    /// <include file='UPDATEMETADATASTATES.xml' path='doc/member[@name="UPDATEMETADATASTATES.DDUPDATEMETADATA_HIGHLIGHT"]/*' />
     DDUPDATEMETADATA_HIGHLIGHT = 1,
+
+    /// <include file='UPDATEMETADATASTATES.xml' path='doc/member[@name="UPDATEMETADATASTATES.DDUPDATEMETADATA_NOHIGHLIGHT"]/*' />
     DDUPDATEMETADATA_NOHIGHLIGHT = 2,
 }

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IDiscFormat2Erase.xml' path='doc/member[@name="IDiscFormat2Erase"]/*' />
 [Guid("27354156-8F64-5B0F-8F00-5D77AFBE261E")]
 [NativeTypeName("struct IDiscFormat2Erase : IDiscFormat2")]
 [NativeInheritance("IDiscFormat2")]
@@ -16,6 +17,7 @@ public unsafe partial struct IDiscFormat2Erase : IDiscFormat2Erase.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IDiscFormat2Erase : IDiscFormat2Erase.Interface
         return ((delegate* unmanaged<IDiscFormat2Erase*, Guid*, void**, int>)(lpVtbl[0]))((IDiscFormat2Erase*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IDiscFormat2Erase : IDiscFormat2Erase.Interface
         return ((delegate* unmanaged<IDiscFormat2Erase*, uint>)(lpVtbl[1]))((IDiscFormat2Erase*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IDiscFormat2Erase : IDiscFormat2Erase.Interface
         return ((delegate* unmanaged<IDiscFormat2Erase*, uint>)(lpVtbl[2]))((IDiscFormat2Erase*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
@@ -46,6 +51,7 @@ public unsafe partial struct IDiscFormat2Erase : IDiscFormat2Erase.Interface
         return ((delegate* unmanaged<IDiscFormat2Erase*, uint*, int>)(lpVtbl[3]))((IDiscFormat2Erase*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetTypeInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
@@ -53,6 +59,7 @@ public unsafe partial struct IDiscFormat2Erase : IDiscFormat2Erase.Interface
         return ((delegate* unmanaged<IDiscFormat2Erase*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IDiscFormat2Erase*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
+    /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
@@ -60,6 +67,7 @@ public unsafe partial struct IDiscFormat2Erase : IDiscFormat2Erase.Interface
         return ((delegate* unmanaged<IDiscFormat2Erase*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IDiscFormat2Erase*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
+    /// <inheritdoc cref="IDispatch.Invoke" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
@@ -67,6 +75,7 @@ public unsafe partial struct IDiscFormat2Erase : IDiscFormat2Erase.Interface
         return ((delegate* unmanaged<IDiscFormat2Erase*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IDiscFormat2Erase*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
+    /// <inheritdoc cref="IDiscFormat2.IsRecorderSupported" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT IsRecorderSupported(IDiscRecorder2* recorder, [NativeTypeName("VARIANT_BOOL *")] short* value)
@@ -74,6 +83,7 @@ public unsafe partial struct IDiscFormat2Erase : IDiscFormat2Erase.Interface
         return ((delegate* unmanaged<IDiscFormat2Erase*, IDiscRecorder2*, short*, int>)(lpVtbl[7]))((IDiscFormat2Erase*)Unsafe.AsPointer(ref this), recorder, value);
     }
 
+    /// <inheritdoc cref="IDiscFormat2.IsCurrentMediaSupported" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT IsCurrentMediaSupported(IDiscRecorder2* recorder, [NativeTypeName("VARIANT_BOOL *")] short* value)
@@ -81,6 +91,7 @@ public unsafe partial struct IDiscFormat2Erase : IDiscFormat2Erase.Interface
         return ((delegate* unmanaged<IDiscFormat2Erase*, IDiscRecorder2*, short*, int>)(lpVtbl[8]))((IDiscFormat2Erase*)Unsafe.AsPointer(ref this), recorder, value);
     }
 
+    /// <inheritdoc cref="IDiscFormat2.get_MediaPhysicallyBlank" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     public HRESULT get_MediaPhysicallyBlank([NativeTypeName("VARIANT_BOOL *")] short* value)
@@ -88,6 +99,7 @@ public unsafe partial struct IDiscFormat2Erase : IDiscFormat2Erase.Interface
         return ((delegate* unmanaged<IDiscFormat2Erase*, short*, int>)(lpVtbl[9]))((IDiscFormat2Erase*)Unsafe.AsPointer(ref this), value);
     }
 
+    /// <inheritdoc cref="IDiscFormat2.get_MediaHeuristicallyBlank" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     public HRESULT get_MediaHeuristicallyBlank([NativeTypeName("VARIANT_BOOL *")] short* value)
@@ -95,6 +107,7 @@ public unsafe partial struct IDiscFormat2Erase : IDiscFormat2Erase.Interface
         return ((delegate* unmanaged<IDiscFormat2Erase*, short*, int>)(lpVtbl[10]))((IDiscFormat2Erase*)Unsafe.AsPointer(ref this), value);
     }
 
+    /// <inheritdoc cref="IDiscFormat2.get_SupportedMediaTypes" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     public HRESULT get_SupportedMediaTypes(SAFEARRAY** value)
@@ -102,6 +115,7 @@ public unsafe partial struct IDiscFormat2Erase : IDiscFormat2Erase.Interface
         return ((delegate* unmanaged<IDiscFormat2Erase*, SAFEARRAY**, int>)(lpVtbl[11]))((IDiscFormat2Erase*)Unsafe.AsPointer(ref this), value);
     }
 
+    /// <include file='IDiscFormat2Erase.xml' path='doc/member[@name="IDiscFormat2Erase.put_Recorder"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     public HRESULT put_Recorder(IDiscRecorder2* value)
@@ -109,6 +123,7 @@ public unsafe partial struct IDiscFormat2Erase : IDiscFormat2Erase.Interface
         return ((delegate* unmanaged<IDiscFormat2Erase*, IDiscRecorder2*, int>)(lpVtbl[12]))((IDiscFormat2Erase*)Unsafe.AsPointer(ref this), value);
     }
 
+    /// <include file='IDiscFormat2Erase.xml' path='doc/member[@name="IDiscFormat2Erase.get_Recorder"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     public HRESULT get_Recorder(IDiscRecorder2** value)
@@ -116,6 +131,7 @@ public unsafe partial struct IDiscFormat2Erase : IDiscFormat2Erase.Interface
         return ((delegate* unmanaged<IDiscFormat2Erase*, IDiscRecorder2**, int>)(lpVtbl[13]))((IDiscFormat2Erase*)Unsafe.AsPointer(ref this), value);
     }
 
+    /// <include file='IDiscFormat2Erase.xml' path='doc/member[@name="IDiscFormat2Erase.put_FullErase"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     public HRESULT put_FullErase([NativeTypeName("VARIANT_BOOL")] short value)
@@ -123,6 +139,7 @@ public unsafe partial struct IDiscFormat2Erase : IDiscFormat2Erase.Interface
         return ((delegate* unmanaged<IDiscFormat2Erase*, short, int>)(lpVtbl[14]))((IDiscFormat2Erase*)Unsafe.AsPointer(ref this), value);
     }
 
+    /// <include file='IDiscFormat2Erase.xml' path='doc/member[@name="IDiscFormat2Erase.get_FullErase"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     public HRESULT get_FullErase([NativeTypeName("VARIANT_BOOL *")] short* value)
@@ -130,6 +147,7 @@ public unsafe partial struct IDiscFormat2Erase : IDiscFormat2Erase.Interface
         return ((delegate* unmanaged<IDiscFormat2Erase*, short*, int>)(lpVtbl[15]))((IDiscFormat2Erase*)Unsafe.AsPointer(ref this), value);
     }
 
+    /// <include file='IDiscFormat2Erase.xml' path='doc/member[@name="IDiscFormat2Erase.get_CurrentPhysicalMediaType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     public HRESULT get_CurrentPhysicalMediaType(IMAPI_MEDIA_PHYSICAL_TYPE* value)
@@ -137,6 +155,7 @@ public unsafe partial struct IDiscFormat2Erase : IDiscFormat2Erase.Interface
         return ((delegate* unmanaged<IDiscFormat2Erase*, IMAPI_MEDIA_PHYSICAL_TYPE*, int>)(lpVtbl[16]))((IDiscFormat2Erase*)Unsafe.AsPointer(ref this), value);
     }
 
+    /// <include file='IDiscFormat2Erase.xml' path='doc/member[@name="IDiscFormat2Erase.put_ClientName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     public HRESULT put_ClientName([NativeTypeName("BSTR")] ushort* value)
@@ -144,6 +163,7 @@ public unsafe partial struct IDiscFormat2Erase : IDiscFormat2Erase.Interface
         return ((delegate* unmanaged<IDiscFormat2Erase*, ushort*, int>)(lpVtbl[17]))((IDiscFormat2Erase*)Unsafe.AsPointer(ref this), value);
     }
 
+    /// <include file='IDiscFormat2Erase.xml' path='doc/member[@name="IDiscFormat2Erase.get_ClientName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     public HRESULT get_ClientName([NativeTypeName("BSTR *")] ushort** value)
@@ -151,6 +171,7 @@ public unsafe partial struct IDiscFormat2Erase : IDiscFormat2Erase.Interface
         return ((delegate* unmanaged<IDiscFormat2Erase*, ushort**, int>)(lpVtbl[18]))((IDiscFormat2Erase*)Unsafe.AsPointer(ref this), value);
     }
 
+    /// <include file='IDiscFormat2Erase.xml' path='doc/member[@name="IDiscFormat2Erase.EraseMedia"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     public HRESULT EraseMedia()

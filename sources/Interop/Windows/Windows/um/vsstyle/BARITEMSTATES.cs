@@ -5,12 +5,24 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='BARITEMSTATES.xml' path='doc/member[@name="BARITEMSTATES"]/*' />
 public enum BARITEMSTATES
 {
+    /// <include file='BARITEMSTATES.xml' path='doc/member[@name="BARITEMSTATES.MBI_NORMAL"]/*' />
     MBI_NORMAL = 1,
+
+    /// <include file='BARITEMSTATES.xml' path='doc/member[@name="BARITEMSTATES.MBI_HOT"]/*' />
     MBI_HOT = 2,
+
+    /// <include file='BARITEMSTATES.xml' path='doc/member[@name="BARITEMSTATES.MBI_PUSHED"]/*' />
     MBI_PUSHED = 3,
+
+    /// <include file='BARITEMSTATES.xml' path='doc/member[@name="BARITEMSTATES.MBI_DISABLED"]/*' />
     MBI_DISABLED = 4,
+
+    /// <include file='BARITEMSTATES.xml' path='doc/member[@name="BARITEMSTATES.MBI_DISABLEDHOT"]/*' />
     MBI_DISABLEDHOT = 5,
+
+    /// <include file='BARITEMSTATES.xml' path='doc/member[@name="BARITEMSTATES.MBI_DISABLEDPUSHED"]/*' />
     MBI_DISABLEDPUSHED = 6,
 }

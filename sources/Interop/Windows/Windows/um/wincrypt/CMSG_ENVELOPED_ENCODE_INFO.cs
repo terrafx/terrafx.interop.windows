@@ -5,20 +5,27 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CMSG_ENVELOPED_ENCODE_INFO.xml' path='doc/member[@name="CMSG_ENVELOPED_ENCODE_INFO"]/*' />
 public unsafe partial struct CMSG_ENVELOPED_ENCODE_INFO
 {
+    /// <include file='CMSG_ENVELOPED_ENCODE_INFO.xml' path='doc/member[@name="CMSG_ENVELOPED_ENCODE_INFO.cbSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint cbSize;
 
+    /// <include file='CMSG_ENVELOPED_ENCODE_INFO.xml' path='doc/member[@name="CMSG_ENVELOPED_ENCODE_INFO.hCryptProv"]/*' />
     public HCRYPTPROV_LEGACY hCryptProv;
 
+    /// <include file='CMSG_ENVELOPED_ENCODE_INFO.xml' path='doc/member[@name="CMSG_ENVELOPED_ENCODE_INFO.ContentEncryptionAlgorithm"]/*' />
     public CRYPT_ALGORITHM_IDENTIFIER ContentEncryptionAlgorithm;
 
+    /// <include file='CMSG_ENVELOPED_ENCODE_INFO.xml' path='doc/member[@name="CMSG_ENVELOPED_ENCODE_INFO.pvEncryptionAuxInfo"]/*' />
     public void* pvEncryptionAuxInfo;
 
+    /// <include file='CMSG_ENVELOPED_ENCODE_INFO.xml' path='doc/member[@name="CMSG_ENVELOPED_ENCODE_INFO.cRecipients"]/*' />
     [NativeTypeName("DWORD")]
     public uint cRecipients;
 
+    /// <include file='CMSG_ENVELOPED_ENCODE_INFO.xml' path='doc/member[@name="CMSG_ENVELOPED_ENCODE_INFO.rgpRecipients"]/*' />
     [NativeTypeName("PCERT_INFO *")]
     public CERT_INFO** rgpRecipients;
 }

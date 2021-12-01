@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="FILTER_STATE">
+    <summary>
+      <para>Specifies a filter's state or the state of the filter graph.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/data-flow-in-the-filter-graph">Data Flow in the Filter Graph</seealso>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-enumerated-types">DirectShow Enumerated Types</seealso>
+    <seealso cref="IMediaControl.GetState" />
+    <seealso cref="IMediaFilter.GetState" />
+  </member>
+  <member name="FILTER_STATE.State_Stopped">
+    <summary>
+      <para>Stopped. The filter is not processing data.</para>
+    </summary>
+  </member>
+  <member name="FILTER_STATE.State_Paused">
+    <summary>
+      <para>Paused. The filter is processing data, but not rendering it.</para>
+    </summary>
+  </member>
+  <member name="FILTER_STATE.State_Running">
+    <summary>
+      <para>Running. The filter is processing and rendering data.</para>
+    </summary>
+  </member>
+</doc>

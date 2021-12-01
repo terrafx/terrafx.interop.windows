@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ISyncMgrEventStore.GetEvent">
+    <summary>
+      <para>Gets a specified event object.</para>
+    </summary>
+    <param name="rguidEventID">
+      <para>Type: <b>REFGUID</b></para>
+      <para>A reference to event <b>GUID</b>.</para>
+    </param>
+    <param name="ppEvent">
+      <para>Type: <b><see cref="ISyncMgrEvent" />**</b></para>
+      <para>The address of <see cref="ISyncMgrEvent" /> interface pointer.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="ISyncMgrEventStore.GetEventCount">
+    <summary>
+      <para>Gets the event count.</para>
+    </summary>
+    <param name="pcEvents">
+      <para>Type: <b>ULONG*</b></para>
+      <para>A pointer to event count value.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="ISyncMgrEventStore.GetEventEnumerator">
+    <summary>
+      <para>Gets an enumerator for a handler's events.</para>
+    </summary>
+    <param name="ppenum">
+      <para>Type: <b><see cref="IEnumSyncMgrEvents" />**</b></para>
+      <para>When this method returns, contains the address of a pointer to an <see cref="IEnumSyncMgrEvents" /> instance that can be used to access the handler's events.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>This method is called by Sync Center when the user navigates to the Sync Results folder or clicks the <b>Errors</b> link for a handler.</para>
+      <h4>Examples</h4>
+      <para>The following example shows an implementation of <b>ISyncMgrEventStore.GetEventEnumerator</b>.</para>
+      <code>STDMETHODIMP CMyDeviceEventStore.GetEventEnumerator(
+                                __out IEnumSyncMgrEvents **ppenum)
+{
+    HRESULT hr = CEnumMyDeviceSyncMgrEvents_Create(ppenum);
+    return hr;
+}
+
+</code>
+    </remarks>
+  </member>
+  <member name="ISyncMgrEventStore.RemoveEvent">
+    <summary>
+      <para>Removes events, as specified.</para>
+    </summary>
+    <param name="pguidEventIDs">
+      <para>Type: <b>GUID*</b></para>
+      <para>A pointer to event <b>GUID</b>.</para>
+    </param>
+    <param name="cEvents">
+      <para>Type: <b>ULONG</b></para>
+      <para>The count of events to remove.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+  </member>
+  <member name="ISyncMgrEventStore">
+    <summary>
+      <para>Exposes methods that allow a handler to provide its own event store and manage its own sync events, instead of using the default Sync Center event store. These events are displayed in the Sync Results folder.</para>
+    </summary>
+    <remarks>
+      <h3>When to Implement</h3>
+      <para>Sync Center provides a default event store that handlers can use to report events, which are then displayed in the Sync Results folder. If a component already logs events, it might be more convenient for it to provide its own event store that enumerates events for that handler. The event store in that case would simply translate the event as logged by the component into a form that can be used by Sync Center.</para>
+      <para>Sync Center requests an event store from a handler by first examining the mask returned by <see cref="ISyncMgrHandler.GetCapabilities" /> for the SYNCMGR_HCM_EVENT_STORE flag. If that value is present, Sync Center calls <see cref="ISyncMgrHandler.GetObject" /> with the SYNCMGR_OBJECTID_EventStore value. The handler can also provide an event store filtered by item by setting the SYNCMGR_ICM_EVENT_STORE flag in the mask returned from <see cref="ISyncMgrSyncItem.GetCapabilities" />.</para>
+      <para>If events are added to the event store, the handler (or a related component) should call <see cref="ISyncMgrControl.UpdateEvents" /> so that the Sync Results folder and the error counts can be updated.</para>
+    </remarks>
+  </member>
+</doc>

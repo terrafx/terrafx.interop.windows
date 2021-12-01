@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IHTMLEditServices.xml' path='doc/member[@name="IHTMLEditServices"]/*' />
 [Guid("3050F663-98B5-11CF-BB82-00AA00BDCE0B")]
 [NativeTypeName("struct IHTMLEditServices : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IHTMLEditServices : IHTMLEditServices.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IHTMLEditServices : IHTMLEditServices.Interface
         return ((delegate* unmanaged<IHTMLEditServices*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLEditServices*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IHTMLEditServices : IHTMLEditServices.Interface
         return ((delegate* unmanaged<IHTMLEditServices*, uint>)(lpVtbl[1]))((IHTMLEditServices*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IHTMLEditServices : IHTMLEditServices.Interface
         return ((delegate* unmanaged<IHTMLEditServices*, uint>)(lpVtbl[2]))((IHTMLEditServices*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IHTMLEditServices.xml' path='doc/member[@name="IHTMLEditServices.AddDesigner"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT AddDesigner(IHTMLEditDesigner* pIDesigner)
@@ -46,6 +51,7 @@ public unsafe partial struct IHTMLEditServices : IHTMLEditServices.Interface
         return ((delegate* unmanaged<IHTMLEditServices*, IHTMLEditDesigner*, int>)(lpVtbl[3]))((IHTMLEditServices*)Unsafe.AsPointer(ref this), pIDesigner);
     }
 
+    /// <include file='IHTMLEditServices.xml' path='doc/member[@name="IHTMLEditServices.RemoveDesigner"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT RemoveDesigner(IHTMLEditDesigner* pIDesigner)
@@ -53,6 +59,7 @@ public unsafe partial struct IHTMLEditServices : IHTMLEditServices.Interface
         return ((delegate* unmanaged<IHTMLEditServices*, IHTMLEditDesigner*, int>)(lpVtbl[4]))((IHTMLEditServices*)Unsafe.AsPointer(ref this), pIDesigner);
     }
 
+    /// <include file='IHTMLEditServices.xml' path='doc/member[@name="IHTMLEditServices.GetSelectionServices"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetSelectionServices(IMarkupContainer* pIContainer, ISelectionServices** ppSelSvc)
@@ -60,6 +67,7 @@ public unsafe partial struct IHTMLEditServices : IHTMLEditServices.Interface
         return ((delegate* unmanaged<IHTMLEditServices*, IMarkupContainer*, ISelectionServices**, int>)(lpVtbl[5]))((IHTMLEditServices*)Unsafe.AsPointer(ref this), pIContainer, ppSelSvc);
     }
 
+    /// <include file='IHTMLEditServices.xml' path='doc/member[@name="IHTMLEditServices.MoveToSelectionAnchor"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT MoveToSelectionAnchor(IMarkupPointer* pIStartAnchor)
@@ -67,6 +75,7 @@ public unsafe partial struct IHTMLEditServices : IHTMLEditServices.Interface
         return ((delegate* unmanaged<IHTMLEditServices*, IMarkupPointer*, int>)(lpVtbl[6]))((IHTMLEditServices*)Unsafe.AsPointer(ref this), pIStartAnchor);
     }
 
+    /// <include file='IHTMLEditServices.xml' path='doc/member[@name="IHTMLEditServices.MoveToSelectionEnd"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT MoveToSelectionEnd(IMarkupPointer* pIEndAnchor)
@@ -74,6 +83,7 @@ public unsafe partial struct IHTMLEditServices : IHTMLEditServices.Interface
         return ((delegate* unmanaged<IHTMLEditServices*, IMarkupPointer*, int>)(lpVtbl[7]))((IHTMLEditServices*)Unsafe.AsPointer(ref this), pIEndAnchor);
     }
 
+    /// <include file='IHTMLEditServices.xml' path='doc/member[@name="IHTMLEditServices.SelectRange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     public HRESULT SelectRange(IMarkupPointer* pStart, IMarkupPointer* pEnd, SELECTION_TYPE eType)

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MIB_BEST_IF">
+    <summary>
+      <para>The
+<b>MIB_BEST_IF</b> structure stores the index of the interface that has the best route to a particular destination IPv4 address.</para>
+    </summary>
+    <remarks>
+      <para>On the Microsoft Windows Software Development Kit (SDK) released for Windows Vista and later, the organization of header files has changed and the <b>MIB_BEST_IF</b> structure is defined in the <i>Ipmib.h</i> header file not in the <i>Iprtrmib.h</i> header file. Note that the <i>Ipmib.h</i> header file is automatically included in <i>Iprtrmib.h</i> which is automatically included in the <i>Iphlpapi.h</i> header file. The  <i>Ipmib.h</i> and <i>Iprtrmib.h</i> header files should never be used directly.</para>
+    </remarks>
+    <seealso cref="GetBestInterface" />
+    <seealso cref="GetBestRoute" />
+  </member>
+  <member name="MIB_BEST_IF.dwDestAddr">
+    <summary>
+      <para>Specifies the IPv4 address of the destination.</para>
+    </summary>
+  </member>
+  <member name="MIB_BEST_IF.dwIfIndex">
+    <summary>
+      <para>Specifies the index of the interface that has the best route to the destination address specified by the <b>dwDestAddr</b> member.</para>
+    </summary>
+  </member>
+</doc>

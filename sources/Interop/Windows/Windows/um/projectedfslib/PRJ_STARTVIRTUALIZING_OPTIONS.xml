@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PRJ_STARTVIRTUALIZING_OPTIONS">
+    <summary>
+      <para>Options to provide when starting a virtualization instance.</para>
+    </summary>
+  </member>
+  <member name="PRJ_STARTVIRTUALIZING_OPTIONS.Flags">
+    <summary>
+      <para>A flag for starting virtualization.</para>
+    </summary>
+  </member>
+  <member name="PRJ_STARTVIRTUALIZING_OPTIONS.PoolThreadCount">
+    <summary>
+      <para>The number of threads the provider wants to create to service callbacks.</para>
+    </summary>
+  </member>
+  <member name="PRJ_STARTVIRTUALIZING_OPTIONS.ConcurrentThreadCount">
+    <summary>
+      <para>The maximum number of threads the provider wants to run concurrently to process callbacks.</para>
+    </summary>
+  </member>
+  <member name="PRJ_STARTVIRTUALIZING_OPTIONS.NotificationMappings">
+    <summary>
+      <para>An array of zero or more notification mappings. See the Remarks section of PRJ_NOTIFICATION MAPPING for more details.</para>
+    </summary>
+  </member>
+  <member name="PRJ_STARTVIRTUALIZING_OPTIONS.NotificationMappingsCount">
+    <summary>
+      <para>The number of notification mappings provided in NotificationMappings.</para>
+    </summary>
+  </member>
+</doc>

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="eAVDecHEAACDynamicRangeControl">
+    <summary>
+      <para>Specifies whether an AAC decoder performs dynamic range control. This enumeration is used with the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avdecheaacdynamicrangecontrol-property">AVDecHEAACDynamicRangeControl</a> property.</para>
+    </summary>
+    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-enumerations">Codec API Enumerations</seealso>
+    <seealso cref="ICodecAPI Interface" />
+  </member>
+  <member name="eAVDecHEAACDynamicRangeControl.eAVDecHEAACDynamicRangeControl_OFF">
+    <summary>
+      <para>The decoder does not apply dynamic range control.</para>
+    </summary>
+  </member>
+  <member name="eAVDecHEAACDynamicRangeControl.eAVDecHEAACDynamicRangeControl_ON">
+    <summary>
+      <para>The decoder applies dynamic range control to any AAC stream that contains an extension payload of type EXT_DYNAMIC_RANGE, as defined in ISO/IEC 14496-3 (Table 4.105, "Values of the extension_type field").</para>
+    </summary>
+  </member>
+</doc>

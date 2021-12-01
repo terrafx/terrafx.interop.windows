@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DISPLAYCONFIG_MODE_INFO_TYPE">
+    <summary>
+      <para>The DISPLAYCONFIG_MODE_INFO_TYPE enumeration specifies that the information that is contained within the <see cref="DISPLAYCONFIG_MODE_INFO" /> structure is either source or target mode.</para>
+    </summary>
+    <seealso cref="DISPLAYCONFIG_MODE_INFO" />
+  </member>
+  <member name="DISPLAYCONFIG_MODE_INFO_TYPE.DISPLAYCONFIG_MODE_INFO_TYPE_SOURCE">
+    <summary>
+      <para>Indicates that the <see cref="DISPLAYCONFIG_MODE_INFO" /> structure contains source mode information.</para>
+    </summary>
+  </member>
+  <member name="DISPLAYCONFIG_MODE_INFO_TYPE.DISPLAYCONFIG_MODE_INFO_TYPE_TARGET">
+    <summary>
+      <para>Indicates that the <see cref="DISPLAYCONFIG_MODE_INFO" /> structure contains target mode information.</para>
+    </summary>
+  </member>
+  <member name="DISPLAYCONFIG_MODE_INFO_TYPE.DISPLAYCONFIG_MODE_INFO_TYPE_DESKTOP_IMAGE">
+    <summary>
+      <para>Indicates that the <see cref="DISPLAYCONFIG_MODE_INFO" /> structure contains a valid <see cref="DISPLAYCONFIG_DESKTOP_IMAGE_INFO" /> structure. Supported starting in Windows 10.</para>
+    </summary>
+  </member>
+  <member name="DISPLAYCONFIG_MODE_INFO_TYPE.DISPLAYCONFIG_MODE_INFO_TYPE_FORCE_UINT32">
+    <summary>
+      <para>Forces this enumeration to compile to 32 bits in size. Without this value, some compilers would allow this enumeration to compile to a size other than 32 bits. You should not use this value.</para>
+    </summary>
+  </member>
+</doc>

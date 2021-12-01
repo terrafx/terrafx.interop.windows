@@ -5,9 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='msidbServiceConfigEvent.xml' path='doc/member[@name="msidbServiceConfigEvent"]/*' />
 public enum msidbServiceConfigEvent
 {
+    /// <include file='msidbServiceConfigEvent.xml' path='doc/member[@name="msidbServiceConfigEvent.msidbServiceConfigEventInstall"]/*' />
     msidbServiceConfigEventInstall = 0x00000001,
+
+    /// <include file='msidbServiceConfigEvent.xml' path='doc/member[@name="msidbServiceConfigEvent.msidbServiceConfigEventUninstall"]/*' />
     msidbServiceConfigEventUninstall = 0x00000002,
+
+    /// <include file='msidbServiceConfigEvent.xml' path='doc/member[@name="msidbServiceConfigEvent.msidbServiceConfigEventReinstall"]/*' />
     msidbServiceConfigEventReinstall = 0x00000004,
 }

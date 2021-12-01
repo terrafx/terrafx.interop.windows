@@ -5,18 +5,24 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CERT_SELECT_CHAIN_PARA.xml' path='doc/member[@name="CERT_SELECT_CHAIN_PARA"]/*' />
 public unsafe partial struct CERT_SELECT_CHAIN_PARA
 {
+    /// <include file='CERT_SELECT_CHAIN_PARA.xml' path='doc/member[@name="CERT_SELECT_CHAIN_PARA.hChainEngine"]/*' />
     public HCERTCHAINENGINE hChainEngine;
 
+    /// <include file='CERT_SELECT_CHAIN_PARA.xml' path='doc/member[@name="CERT_SELECT_CHAIN_PARA.pTime"]/*' />
     [NativeTypeName("PFILETIME")]
     public FILETIME* pTime;
 
+    /// <include file='CERT_SELECT_CHAIN_PARA.xml' path='doc/member[@name="CERT_SELECT_CHAIN_PARA.hAdditionalStore"]/*' />
     public HCERTSTORE hAdditionalStore;
 
+    /// <include file='CERT_SELECT_CHAIN_PARA.xml' path='doc/member[@name="CERT_SELECT_CHAIN_PARA.pChainPara"]/*' />
     [NativeTypeName("PCERT_CHAIN_PARA")]
     public CERT_CHAIN_PARA* pChainPara;
 
+    /// <include file='CERT_SELECT_CHAIN_PARA.xml' path='doc/member[@name="CERT_SELECT_CHAIN_PARA.dwFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFlags;
 }

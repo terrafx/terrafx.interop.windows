@@ -5,11 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='EMRSETPIXELV.xml' path='doc/member[@name="EMRSETPIXELV"]/*' />
 public partial struct EMRSETPIXELV
 {
+    /// <include file='EMRSETPIXELV.xml' path='doc/member[@name="EMRSETPIXELV.emr"]/*' />
     public EMR emr;
 
+    /// <include file='EMRSETPIXELV.xml' path='doc/member[@name="EMRSETPIXELV.ptlPixel"]/*' />
     public POINTL ptlPixel;
 
+    /// <include file='EMRSETPIXELV.xml' path='doc/member[@name="EMRSETPIXELV.crColor"]/*' />
     public COLORREF crColor;
 }

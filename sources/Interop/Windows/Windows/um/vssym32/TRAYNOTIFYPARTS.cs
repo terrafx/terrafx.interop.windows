@@ -5,8 +5,12 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='TRAYNOTIFYPARTS.xml' path='doc/member[@name="TRAYNOTIFYPARTS"]/*' />
 public enum TRAYNOTIFYPARTS
 {
+    /// <include file='TRAYNOTIFYPARTS.xml' path='doc/member[@name="TRAYNOTIFYPARTS.TNP_BACKGROUND"]/*' />
     TNP_BACKGROUND = 1,
+
+    /// <include file='TRAYNOTIFYPARTS.xml' path='doc/member[@name="TRAYNOTIFYPARTS.TNP_ANIMBACKGROUND"]/*' />
     TNP_ANIMBACKGROUND = 2,
 }

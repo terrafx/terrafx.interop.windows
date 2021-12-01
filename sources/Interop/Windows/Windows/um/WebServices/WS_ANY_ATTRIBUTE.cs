@@ -5,11 +5,15 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_ANY_ATTRIBUTE.xml' path='doc/member[@name="WS_ANY_ATTRIBUTE"]/*' />
 public unsafe partial struct WS_ANY_ATTRIBUTE
 {
+    /// <include file='WS_ANY_ATTRIBUTE.xml' path='doc/member[@name="WS_ANY_ATTRIBUTE.localName"]/*' />
     public WS_XML_STRING localName;
 
+    /// <include file='WS_ANY_ATTRIBUTE.xml' path='doc/member[@name="WS_ANY_ATTRIBUTE.ns"]/*' />
     public WS_XML_STRING ns;
 
+    /// <include file='WS_ANY_ATTRIBUTE.xml' path='doc/member[@name="WS_ANY_ATTRIBUTE.value"]/*' />
     public WS_XML_TEXT* value;
 }

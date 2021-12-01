@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ISpatialAudioMetadataClient.ActivateSpatialAudioMetadataCopier">
+    <summary>
+      <para>Creates an <see cref="ISpatialAudioMetadataWriter" /> object for copying spatial audio metadata items from one <see cref="ISpatialAudioMetadataItems" /> object to another.</para>
+    </summary>
+    <param name="metadataCopier">
+      <para>Receives a pointer to an instance of <see cref="ISpatialAudioMetadataWriter" />.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>The provided pointer  is not valid.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="ISpatialAudioMetadataClient" />
+  </member>
+  <member name="ISpatialAudioMetadataClient.ActivateSpatialAudioMetadataItems">
+    <summary>
+      <para>Creates an <see cref="ISpatialAudioMetadataItems" /> object for storing spatial audio metadata items.</para>
+    </summary>
+    <param name="maxItemCount">
+      <para>The maximum number of metadata items that can be stored in the returned <see cref="ISpatialAudioMetadataItems" />.</para>
+    </param>
+    <param name="frameCount">
+      <para>The valid range of frame offset positions for metadata items stored in the returned <see cref="ISpatialAudioMetadataItems" />.</para>
+    </param>
+    <param name="metadataItemsBuffer">
+      <para>If a pointer is supplied, returns an <see cref="ISpatialAudioMetadataItemsBuffer" /> interface which provides methods for attaching caller-provided memory for storage of metadata items.  If this parameter is NULL, the object will allocate internal storage for the items.   This interface cannot be obtained via <see cref="QueryInterface" />.</para>
+    </param>
+    <param name="metadataItems">
+      <para>Receives an instance <see cref="ISpatialAudioMetadataItems" /> object which can be populated with metadata items using an  by <see cref="ISpatialAudioMetadataWriter" /> or <see cref="ISpatialAudioMetadataCopier" /> and can be read with an <see cref="ISpatialAudioMetadataReader" />.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>The pointer provided in the <i>metadataItems</i> parameter  is not valid.</para>
+            <para>The value of <i>maxItemCount</i> or <i>frameCount</i> is 0.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="ISpatialAudioMetadataClient" />
+  </member>
+  <member name="ISpatialAudioMetadataClient.ActivateSpatialAudioMetadataReader">
+    <summary>
+      <para>Creates an <see cref="ISpatialAudioMetadataWriter" /> object for reading spatial audio metadata items from an <see cref="ISpatialAudioMetadataItems" /> object.</para>
+    </summary>
+    <param name="metadataReader">
+      <para>Receives a pointer to an instance of <see cref="ISpatialAudioMetadataReader" />.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>The provided pointer  is not valid.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="ISpatialAudioMetadataClient" />
+  </member>
+  <member name="ISpatialAudioMetadataClient.ActivateSpatialAudioMetadataWriter">
+    <summary>
+      <para>Creates an <see cref="ISpatialAudioMetadataWriter" /> object for writing spatial audio metadata items to an <see cref="ISpatialAudioMetadataItems" /> object.</para>
+    </summary>
+    <param name="overflowMode">
+      <para>A value that specifies the behavior when attempting to write more metadata items to the <see cref="ISpatialAudioMetadataItems" /> than the maximum number of items specified when calling <see cref="ActivateSpatialAudioMetadataItems" />.</para>
+    </param>
+    <param name="metadataWriter">
+      <para>Receives a pointer to an instance of <see cref="ISpatialAudioMetadataWriter" />.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>The provided pointer  is not valid.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="ISpatialAudioMetadataClient" />
+  </member>
+  <member name="ISpatialAudioMetadataClient.GetSpatialAudioMetadataItemsBufferLength">
+    <summary>
+      <para>Gets the length of the buffer required to store the specified number of spatial audio metadata items. Use this method to determine the correct buffer size to use when attaching caller-provided memory through the <see cref="ISpatialAudioMetadataItemsBuffer" /> interface.</para>
+    </summary>
+    <param name="maxItemCount">
+      <para>The maximum number of metadata items to be stored in an <see cref="ISpatialAudioMetadataItems" /> object.</para>
+    </param>
+    <param name="bufferLength">
+      <para>The length of the buffer required to store the number of spatial audio metadata items specified in the <i>maxItemCount</i> parameter.</para>
+    </param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <item>
+          <description>
+            <para>
+              <b>E_INVALIDARG</b>
+            </para>
+          </description>
+          <description>
+            <para>The provided pointer  is not valid.</para>
+            <para>The value of <i>maxItemCount</i> or <i>frameCount</i> is 0.</para>
+          </description>
+        </item>
+      </list>
+    </returns>
+    <seealso cref="ISpatialAudioMetadataClient" />
+  </member>
+  <member name="ISpatialAudioMetadataClient">
+    <summary>
+      <para>Provides a class factory for creating
+<see cref="ISpatialAudioMetadataItems" />, <see cref="ISpatialAudioMetadataWriter" />, <see cref="ISpatialAudioMetadataReader" />, and <see cref="ISpatialAudioMetadataCopier" /> objects.
+When an <b>ISpatialAudioMetadataItems</b> is activated, a metadata format  ID is specified,     which defines the metadata format enforced for all objects created from this factory.
+If the specified format is not supported by the current audio render endpoint, the class factory will not successfully activate the interface and will return an error.</para>
+      <para>This interface is a part of  Windows Sonic, Microsoft’s audio platform for more immersive audio which includes integrated spatial sound on Xbox and Windows.</para>
+    </summary>
+  </member>
+</doc>

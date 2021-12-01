@@ -7,10 +7,16 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='PROCESS_DPI_AWARENESS.xml' path='doc/member[@name="PROCESS_DPI_AWARENESS"]/*' />
 [SupportedOSPlatform("windows8.1")]
 public enum PROCESS_DPI_AWARENESS
 {
+    /// <include file='PROCESS_DPI_AWARENESS.xml' path='doc/member[@name="PROCESS_DPI_AWARENESS.PROCESS_DPI_UNAWARE"]/*' />
     PROCESS_DPI_UNAWARE = 0,
+
+    /// <include file='PROCESS_DPI_AWARENESS.xml' path='doc/member[@name="PROCESS_DPI_AWARENESS.PROCESS_SYSTEM_DPI_AWARE"]/*' />
     PROCESS_SYSTEM_DPI_AWARE = 1,
+
+    /// <include file='PROCESS_DPI_AWARENESS.xml' path='doc/member[@name="PROCESS_DPI_AWARENESS.PROCESS_PER_MONITOR_DPI_AWARE"]/*' />
     PROCESS_PER_MONITOR_DPI_AWARE = 2,
 }

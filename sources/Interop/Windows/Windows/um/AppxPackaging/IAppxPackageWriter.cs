@@ -10,6 +10,7 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAppxPackageWriter.xml' path='doc/member[@name="IAppxPackageWriter"]/*' />
 [Guid("9099E33B-246F-41E4-881A-008EB613F858")]
 [NativeTypeName("struct IAppxPackageWriter : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -18,6 +19,7 @@ public unsafe partial struct IAppxPackageWriter : IAppxPackageWriter.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -25,6 +27,7 @@ public unsafe partial struct IAppxPackageWriter : IAppxPackageWriter.Interface
         return ((delegate* unmanaged<IAppxPackageWriter*, Guid*, void**, int>)(lpVtbl[0]))((IAppxPackageWriter*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -33,6 +36,7 @@ public unsafe partial struct IAppxPackageWriter : IAppxPackageWriter.Interface
         return ((delegate* unmanaged<IAppxPackageWriter*, uint>)(lpVtbl[1]))((IAppxPackageWriter*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -41,6 +45,7 @@ public unsafe partial struct IAppxPackageWriter : IAppxPackageWriter.Interface
         return ((delegate* unmanaged<IAppxPackageWriter*, uint>)(lpVtbl[2]))((IAppxPackageWriter*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAppxPackageWriter.xml' path='doc/member[@name="IAppxPackageWriter.AddPayloadFile"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT AddPayloadFile([NativeTypeName("LPCWSTR")] ushort* fileName, [NativeTypeName("LPCWSTR")] ushort* contentType, APPX_COMPRESSION_OPTION compressionOption, IStream* inputStream)
@@ -48,6 +53,7 @@ public unsafe partial struct IAppxPackageWriter : IAppxPackageWriter.Interface
         return ((delegate* unmanaged<IAppxPackageWriter*, ushort*, ushort*, APPX_COMPRESSION_OPTION, IStream*, int>)(lpVtbl[3]))((IAppxPackageWriter*)Unsafe.AsPointer(ref this), fileName, contentType, compressionOption, inputStream);
     }
 
+    /// <include file='IAppxPackageWriter.xml' path='doc/member[@name="IAppxPackageWriter.Close"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT Close(IStream* manifest)

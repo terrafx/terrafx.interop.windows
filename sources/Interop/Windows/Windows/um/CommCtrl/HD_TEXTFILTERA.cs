@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HD_TEXTFILTERA.xml' path='doc/member[@name="HD_TEXTFILTERA"]/*' />
 public unsafe partial struct HD_TEXTFILTERA
 {
+    /// <include file='HD_TEXTFILTERA.xml' path='doc/member[@name="HD_TEXTFILTERA.pszText"]/*' />
     [NativeTypeName("LPSTR")]
     public sbyte* pszText;
 
+    /// <include file='HD_TEXTFILTERA.xml' path='doc/member[@name="HD_TEXTFILTERA.cchTextMax"]/*' />
     public int cchTextMax;
 }

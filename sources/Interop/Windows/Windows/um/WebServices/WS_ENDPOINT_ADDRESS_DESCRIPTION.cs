@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='WS_ENDPOINT_ADDRESS_DESCRIPTION.xml' path='doc/member[@name="WS_ENDPOINT_ADDRESS_DESCRIPTION"]/*' />
 public partial struct WS_ENDPOINT_ADDRESS_DESCRIPTION
 {
+    /// <include file='WS_ENDPOINT_ADDRESS_DESCRIPTION.xml' path='doc/member[@name="WS_ENDPOINT_ADDRESS_DESCRIPTION.addressingVersion"]/*' />
     public WS_ADDRESSING_VERSION addressingVersion;
 }

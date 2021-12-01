@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SpResourceManager.xml' path='doc/member[@name="SpResourceManager"]/*' />
 [Guid("96749373-3391-11D2-9EE3-00C04F797396")]
 public partial struct SpResourceManager
 {

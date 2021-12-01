@@ -5,7 +5,9 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='EMPTYMARKUPPARTS.xml' path='doc/member[@name="EMPTYMARKUPPARTS"]/*' />
 public enum EMPTYMARKUPPARTS
 {
+    /// <include file='EMPTYMARKUPPARTS.xml' path='doc/member[@name="EMPTYMARKUPPARTS.EMP_MARKUPTEXT"]/*' />
     EMP_MARKUPTEXT = 1,
 }

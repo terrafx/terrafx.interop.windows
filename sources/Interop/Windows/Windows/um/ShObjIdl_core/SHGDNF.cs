@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SHGDNF.xml' path='doc/member[@name="SHGDNF"]/*' />
 public enum SHGDNF
 {
+    /// <include file='SHGDNF.xml' path='doc/member[@name="SHGDNF.SHGDN_NORMAL"]/*' />
     SHGDN_NORMAL = 0,
+
+    /// <include file='SHGDNF.xml' path='doc/member[@name="SHGDNF.SHGDN_INFOLDER"]/*' />
     SHGDN_INFOLDER = 0x1,
+
+    /// <include file='SHGDNF.xml' path='doc/member[@name="SHGDNF.SHGDN_FOREDITING"]/*' />
     SHGDN_FOREDITING = 0x1000,
+
+    /// <include file='SHGDNF.xml' path='doc/member[@name="SHGDNF.SHGDN_FORADDRESSBAR"]/*' />
     SHGDN_FORADDRESSBAR = 0x4000,
+
+    /// <include file='SHGDNF.xml' path='doc/member[@name="SHGDNF.SHGDN_FORPARSING"]/*' />
     SHGDN_FORPARSING = 0x8000,
 }

@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WS_SERVICE_METADATA">
+    <summary>
+      <para>Specifies the service metadata documents array. This can be a collection of
+WSDL/XSD documents represented as an array of WS_STRING.</para>
+    </summary>
+  </member>
+  <member name="WS_SERVICE_METADATA.documentCount">
+    <summary>
+      <para>The count of metadata documents being specified.</para>
+    </summary>
+  </member>
+  <member name="WS_SERVICE_METADATA.documents">
+    <summary>
+      <para>A <see cref="WS_SERVICE_METADATA_DOCUMENT" />* array where element represents a WS_SERVICE_METADATA_DOCUMENT for each individual XML Schema, WSDL or a Policy document.
+The service model expects this to be valid for the lifetime of the <a href="https://docs.microsoft.com//windows/desktop/wsw/ws-service-host">WS_SERVICE_HOST</a>.</para>
+    </summary>
+  </member>
+  <member name="WS_SERVICE_METADATA.serviceName">
+    <summary>
+      <para>Reference to WS_XML_STRING representing the name of the service in the WSDL document. Note that this field must be specified along with the serviceNs field. The service model expects this to be valid for the lifetime
+of the <a href="https://docs.microsoft.com//windows/desktop/wsw/ws-service-host">WS_SERVICE_HOST</a>.</para>
+    </summary>
+  </member>
+  <member name="WS_SERVICE_METADATA.serviceNs">
+    <summary>
+      <para>Reference to WS_XML_STRING representing the namespace of the service in the WSDL document. Note that this field must be specified along with the serviceName field.
+The service model expects this to be valid for the lifetime of the <a href="https://docs.microsoft.com//windows/desktop/wsw/ws-service-host">WS_SERVICE_HOST</a>.</para>
+    </summary>
+  </member>
+</doc>

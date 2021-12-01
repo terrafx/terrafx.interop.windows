@@ -5,13 +5,17 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='NMLVEMPTYMARKUP.xml' path='doc/member[@name="NMLVEMPTYMARKUP"]/*' />
 public unsafe partial struct NMLVEMPTYMARKUP
 {
+    /// <include file='NMLVEMPTYMARKUP.xml' path='doc/member[@name="NMLVEMPTYMARKUP.hdr"]/*' />
     public NMHDR hdr;
 
+    /// <include file='NMLVEMPTYMARKUP.xml' path='doc/member[@name="NMLVEMPTYMARKUP.dwFlags"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwFlags;
 
+    /// <include file='NMLVEMPTYMARKUP.xml' path='doc/member[@name="NMLVEMPTYMARKUP.szMarkup"]/*' />
     [NativeTypeName("WCHAR [2084]")]
     public fixed ushort szMarkup[2084];
 }

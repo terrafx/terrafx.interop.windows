@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IAppActivationUIInfo.xml' path='doc/member[@name="IAppActivationUIInfo"]/*' />
 [Guid("ABAD189D-9FA3-4278-B3CA-8CA448A88DCB")]
 [NativeTypeName("struct IAppActivationUIInfo : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IAppActivationUIInfo : IAppActivationUIInfo.Interfa
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IAppActivationUIInfo : IAppActivationUIInfo.Interfa
         return ((delegate* unmanaged<IAppActivationUIInfo*, Guid*, void**, int>)(lpVtbl[0]))((IAppActivationUIInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IAppActivationUIInfo : IAppActivationUIInfo.Interfa
         return ((delegate* unmanaged<IAppActivationUIInfo*, uint>)(lpVtbl[1]))((IAppActivationUIInfo*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IAppActivationUIInfo : IAppActivationUIInfo.Interfa
         return ((delegate* unmanaged<IAppActivationUIInfo*, uint>)(lpVtbl[2]))((IAppActivationUIInfo*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IAppActivationUIInfo.xml' path='doc/member[@name="IAppActivationUIInfo.GetMonitor"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetMonitor(HMONITOR* value)
@@ -46,6 +51,7 @@ public unsafe partial struct IAppActivationUIInfo : IAppActivationUIInfo.Interfa
         return ((delegate* unmanaged<IAppActivationUIInfo*, HMONITOR*, int>)(lpVtbl[3]))((IAppActivationUIInfo*)Unsafe.AsPointer(ref this), value);
     }
 
+    /// <include file='IAppActivationUIInfo.xml' path='doc/member[@name="IAppActivationUIInfo.GetInvokePoint"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetInvokePoint(POINT* value)
@@ -53,6 +59,7 @@ public unsafe partial struct IAppActivationUIInfo : IAppActivationUIInfo.Interfa
         return ((delegate* unmanaged<IAppActivationUIInfo*, POINT*, int>)(lpVtbl[4]))((IAppActivationUIInfo*)Unsafe.AsPointer(ref this), value);
     }
 
+    /// <include file='IAppActivationUIInfo.xml' path='doc/member[@name="IAppActivationUIInfo.GetShowCommand"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT GetShowCommand(int* value)
@@ -60,6 +67,7 @@ public unsafe partial struct IAppActivationUIInfo : IAppActivationUIInfo.Interfa
         return ((delegate* unmanaged<IAppActivationUIInfo*, int*, int>)(lpVtbl[5]))((IAppActivationUIInfo*)Unsafe.AsPointer(ref this), value);
     }
 
+    /// <include file='IAppActivationUIInfo.xml' path='doc/member[@name="IAppActivationUIInfo.GetShowUI"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     public HRESULT GetShowUI(BOOL* value)
@@ -67,6 +75,7 @@ public unsafe partial struct IAppActivationUIInfo : IAppActivationUIInfo.Interfa
         return ((delegate* unmanaged<IAppActivationUIInfo*, BOOL*, int>)(lpVtbl[6]))((IAppActivationUIInfo*)Unsafe.AsPointer(ref this), value);
     }
 
+    /// <include file='IAppActivationUIInfo.xml' path='doc/member[@name="IAppActivationUIInfo.GetKeyState"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     public HRESULT GetKeyState([NativeTypeName("DWORD *")] uint* value)

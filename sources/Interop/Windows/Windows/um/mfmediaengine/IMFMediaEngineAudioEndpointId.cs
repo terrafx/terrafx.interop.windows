@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IMFMediaEngineAudioEndpointId.xml' path='doc/member[@name="IMFMediaEngineAudioEndpointId"]/*' />
 [Guid("7A3BAC98-0E76-49FB-8C20-8A86FD98EAF2")]
 [NativeTypeName("struct IMFMediaEngineAudioEndpointId : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IMFMediaEngineAudioEndpointId : IMFMediaEngineAudio
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IMFMediaEngineAudioEndpointId : IMFMediaEngineAudio
         return ((delegate* unmanaged<IMFMediaEngineAudioEndpointId*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaEngineAudioEndpointId*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IMFMediaEngineAudioEndpointId : IMFMediaEngineAudio
         return ((delegate* unmanaged<IMFMediaEngineAudioEndpointId*, uint>)(lpVtbl[1]))((IMFMediaEngineAudioEndpointId*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IMFMediaEngineAudioEndpointId : IMFMediaEngineAudio
         return ((delegate* unmanaged<IMFMediaEngineAudioEndpointId*, uint>)(lpVtbl[2]))((IMFMediaEngineAudioEndpointId*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IMFMediaEngineAudioEndpointId.xml' path='doc/member[@name="IMFMediaEngineAudioEndpointId.SetAudioEndpointId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT SetAudioEndpointId([NativeTypeName("LPCWSTR")] ushort* pszEndpointId)
@@ -46,6 +51,7 @@ public unsafe partial struct IMFMediaEngineAudioEndpointId : IMFMediaEngineAudio
         return ((delegate* unmanaged<IMFMediaEngineAudioEndpointId*, ushort*, int>)(lpVtbl[3]))((IMFMediaEngineAudioEndpointId*)Unsafe.AsPointer(ref this), pszEndpointId);
     }
 
+    /// <include file='IMFMediaEngineAudioEndpointId.xml' path='doc/member[@name="IMFMediaEngineAudioEndpointId.GetAudioEndpointId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetAudioEndpointId([NativeTypeName("LPWSTR *")] ushort** ppszEndpointId)

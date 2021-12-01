@@ -5,11 +5,21 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='SPRECOSTATE.xml' path='doc/member[@name="SPRECOSTATE"]/*' />
 public enum SPRECOSTATE
 {
+    /// <include file='SPRECOSTATE.xml' path='doc/member[@name="SPRECOSTATE.SPRST_INACTIVE"]/*' />
     SPRST_INACTIVE = 0,
+
+    /// <include file='SPRECOSTATE.xml' path='doc/member[@name="SPRECOSTATE.SPRST_ACTIVE"]/*' />
     SPRST_ACTIVE = (SPRST_INACTIVE + 1),
+
+    /// <include file='SPRECOSTATE.xml' path='doc/member[@name="SPRECOSTATE.SPRST_ACTIVE_ALWAYS"]/*' />
     SPRST_ACTIVE_ALWAYS = (SPRST_ACTIVE + 1),
+
+    /// <include file='SPRECOSTATE.xml' path='doc/member[@name="SPRECOSTATE.SPRST_INACTIVE_WITH_PURGE"]/*' />
     SPRST_INACTIVE_WITH_PURGE = (SPRST_ACTIVE_ALWAYS + 1),
+
+    /// <include file='SPRECOSTATE.xml' path='doc/member[@name="SPRECOSTATE.SPRST_NUM_STATES"]/*' />
     SPRST_NUM_STATES = (SPRST_INACTIVE_WITH_PURGE + 1),
 }

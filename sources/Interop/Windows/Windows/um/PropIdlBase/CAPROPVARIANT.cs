@@ -5,10 +5,13 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='CAPROPVARIANT.xml' path='doc/member[@name="CAPROPVARIANT"]/*' />
 public unsafe partial struct CAPROPVARIANT
 {
+    /// <include file='CAPROPVARIANT.xml' path='doc/member[@name="CAPROPVARIANT.cElems"]/*' />
     [NativeTypeName("ULONG")]
     public uint cElems;
 
+    /// <include file='CAPROPVARIANT.xml' path='doc/member[@name="CAPROPVARIANT.pElems"]/*' />
     public PROPVARIANT* pElems;
 }

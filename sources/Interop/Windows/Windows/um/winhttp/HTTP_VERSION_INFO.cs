@@ -5,11 +5,14 @@
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='HTTP_VERSION_INFO.xml' path='doc/member[@name="HTTP_VERSION_INFO"]/*' />
 public partial struct HTTP_VERSION_INFO
 {
+    /// <include file='HTTP_VERSION_INFO.xml' path='doc/member[@name="HTTP_VERSION_INFO.dwMajorVersion"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwMajorVersion;
 
+    /// <include file='HTTP_VERSION_INFO.xml' path='doc/member[@name="HTTP_VERSION_INFO.dwMinorVersion"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwMinorVersion;
 }

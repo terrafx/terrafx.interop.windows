@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ISyncMgrHandlerCollection.BindToHandler">
+    <summary>
+      <para>Instantiates a specified sync handler when called by Sync Center.</para>
+    </summary>
+    <param name="pszHandlerID">
+      <para>Type: <b>LPCWSTR</b></para>
+      <para>The ID of the sync handler.</para>
+    </param>
+    <param name="riid">
+      <para>Type: <b>REFIID</b></para>
+      <para>The IID of the requested interface. This will typically be IID_ISyncMgrHandler. If the method fails when passed IID_ISyncMgrHandler, it is recalled using IID_ISyncMgrSynchronize, the IID of the older <see cref="ISyncMgrSynchronize" /> interface. When the method returns successfully, a pointer to the requested interface is referenced in the <i>ppv</i> parameter.</para>
+    </param>
+    <param name="ppv">
+      <para>Type: <b>void**</b></para>
+      <para>When this method returns, contains an address of a pointer to an interface representing the sync handler.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>It is possible for this method to be called by Sync Center without it first calling <see cref="ISyncMgrHandlerCollection.GetHandlerEnumerator" />. This is because Sync Center caches information about handlers and their items. The handler collection can return an interface pointer for an existing sync handler or it can create a new instance.</para>
+    </remarks>
+    <seealso cref="ISyncMgrHandler" />
+    <seealso cref="ISyncMgrHandlerCollection" />
+  </member>
+  <member name="ISyncMgrHandlerCollection.GetHandlerEnumerator">
+    <summary>
+      <para>Gets an enumerator that provides access to the IDs of sync handlers exposed to and managed by the user.</para>
+    </summary>
+    <param name="ppenum">
+      <para>Type: <b><see cref="IEnumString" />**</b></para>
+      <para>When this method returns, contains an address of a pointer to an instance of <see cref="IEnumString" /> that enumerates the IDs of known sync handlers.</para>
+    </param>
+    <returns>
+      <para>Type: <b>HRESULT</b></para>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+    </returns>
+    <remarks>
+      <para>A sync handler ID is a string that uniquely represents the handler. The ID must be unique across all handlers in the system and is limited to a maximum length of <b>MAX_SYNCMGR_ID</b>, including the terminating null character.</para>
+      <para>Earlier versions of Windows relied on GUIDs to represent handler and item IDs. Windows Vista uses strings for their greater flexibility. It is still recommended that the string contain a GUID to ensure uniqueness, but it can also contain other information of use to the handler, specific to the application or device.</para>
+    </remarks>
+  </member>
+  <member name="ISyncMgrHandlerCollection">
+    <summary>
+      <para>Exposes methods that provide an enumerator of sync handler IDs and instantiate those sync handlers.</para>
+    </summary>
+    <remarks>
+      <para>The author of a sync handler implements this interface to support multiple devices or computers and sync their details independently. Sync Center uses the handler collection to request instantiation of individual sync handlers. <b>ISyncMgrHandlerCollection</b> also allows a sync handler author to add handlers dynamically to Sync Center as opposed to registering each one individually in the registry.</para>
+      <para>The following example shows an outline implementation of this interface.</para>
+      <code>class CMyHandlerCollection : public ISyncMgrHandlerCollection
+{
+public:
+    // IUnknown
+    // ISyncMgrHandlerCollection
+    IFACEMETHODIMP GetHandlerEnumerator(__out IEnumString **ppenum);
+    IFACEMETHODIMP BindToHandler(
+        __in LPCWSTR    pszHandlerID,
+        __in REFIID     riid,
+        __out void    **ppv);
+};
+
+STDMETHODIMP CMyHandlerCollection.GetHandlerEnumerator(
+    __out IEnumString **ppenum)
+{
+    // IDs are retrieved from a data source such as the registry.
+    // IDs could be retrieved either by this collection class
+    // or the factory method.
+    return CEnumMyHandlerIDs_Create(ppenum);
+}
+
+STDMETHODIMP CMyHandlerCollection.BindToHandler(
+    __in LPCWSTR    pszHandlerID,
+    __in REFIID     riid,
+    __out void    **ppv)
+{
+    // Map the pszHandlerID to the handler to create. This could be done
+    // by the factory method or by some other method.
+    return CMyHandler_Create(pszHandlerID, riid, ppv);
+}
+
+</code>
+    </remarks>
+  </member>
+</doc>

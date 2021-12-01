@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='IDvdGraphBuilder.xml' path='doc/member[@name="IDvdGraphBuilder"]/*' />
 [Guid("FCC152B6-F372-11D0-8E00-00C04FD7C08B")]
 [NativeTypeName("struct IDvdGraphBuilder : IUnknown")]
 [NativeInheritance("IUnknown")]
@@ -16,6 +17,7 @@ public unsafe partial struct IDvdGraphBuilder : IDvdGraphBuilder.Interface
 {
     public void** lpVtbl;
 
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
@@ -23,6 +25,7 @@ public unsafe partial struct IDvdGraphBuilder : IDvdGraphBuilder.Interface
         return ((delegate* unmanaged<IDvdGraphBuilder*, Guid*, void**, int>)(lpVtbl[0]))((IDvdGraphBuilder*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
+    /// <inheritdoc cref="IUnknown.AddRef" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("ULONG")]
@@ -31,6 +34,7 @@ public unsafe partial struct IDvdGraphBuilder : IDvdGraphBuilder.Interface
         return ((delegate* unmanaged<IDvdGraphBuilder*, uint>)(lpVtbl[1]))((IDvdGraphBuilder*)Unsafe.AsPointer(ref this));
     }
 
+    /// <inheritdoc cref="IUnknown.Release" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("ULONG")]
@@ -39,6 +43,7 @@ public unsafe partial struct IDvdGraphBuilder : IDvdGraphBuilder.Interface
         return ((delegate* unmanaged<IDvdGraphBuilder*, uint>)(lpVtbl[2]))((IDvdGraphBuilder*)Unsafe.AsPointer(ref this));
     }
 
+    /// <include file='IDvdGraphBuilder.xml' path='doc/member[@name="IDvdGraphBuilder.GetFiltergraph"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     public HRESULT GetFiltergraph(IGraphBuilder** ppGB)
@@ -46,6 +51,7 @@ public unsafe partial struct IDvdGraphBuilder : IDvdGraphBuilder.Interface
         return ((delegate* unmanaged<IDvdGraphBuilder*, IGraphBuilder**, int>)(lpVtbl[3]))((IDvdGraphBuilder*)Unsafe.AsPointer(ref this), ppGB);
     }
 
+    /// <include file='IDvdGraphBuilder.xml' path='doc/member[@name="IDvdGraphBuilder.GetDvdInterface"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     public HRESULT GetDvdInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvIF)
@@ -53,6 +59,7 @@ public unsafe partial struct IDvdGraphBuilder : IDvdGraphBuilder.Interface
         return ((delegate* unmanaged<IDvdGraphBuilder*, Guid*, void**, int>)(lpVtbl[4]))((IDvdGraphBuilder*)Unsafe.AsPointer(ref this), riid, ppvIF);
     }
 
+    /// <include file='IDvdGraphBuilder.xml' path='doc/member[@name="IDvdGraphBuilder.RenderDvdVideoVolume"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     public HRESULT RenderDvdVideoVolume([NativeTypeName("LPCWSTR")] ushort* lpcwszPathName, [NativeTypeName("DWORD")] uint dwFlags, AM_DVD_RENDERSTATUS* pStatus)

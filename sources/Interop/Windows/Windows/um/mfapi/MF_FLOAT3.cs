@@ -7,12 +7,16 @@ using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
+/// <include file='MF_FLOAT3.xml' path='doc/member[@name="MF_FLOAT3"]/*' />
 [SupportedOSPlatform("windows10.0")]
 public partial struct MF_FLOAT3
 {
+    /// <include file='MF_FLOAT3.xml' path='doc/member[@name="MF_FLOAT3.x"]/*' />
     public float x;
 
+    /// <include file='MF_FLOAT3.xml' path='doc/member[@name="MF_FLOAT3.y"]/*' />
     public float y;
 
+    /// <include file='MF_FLOAT3.xml' path='doc/member[@name="MF_FLOAT3.z"]/*' />
     public float z;
 }
