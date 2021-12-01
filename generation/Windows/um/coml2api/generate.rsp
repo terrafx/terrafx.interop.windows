@@ -1,0 +1,16 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--file
+um-coml2api.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop.Windows
+--output
+../../../../sources/Interop/Windows/Windows/um/coml2api
+--test-output
+../../../../tests/Interop/Windows/Windows/um/coml2api
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.20348.0/um/coml2api.h
+--with-librarypath
+*=ole32
